@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Règles";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 22:50:09';
+$cvs_date = 'Date: 2004/04/03 16:17:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 include_once "header.inc";
@@ -20,8 +20,7 @@ C'est pourquoi il est essentiel que les mainteneurs de paquets vérifient,  scru
 </p>
 <p>
 Chaque paquet distribué en tant que binaire doit contenir une copie de la licence.
-Elle doit être installée dans le répertoire de documentation,
-c'est à dire dans <code>%p/share/doc/%n</code>.
+Elle doit être installée dans le répertoire de documentation, c'est à dire dans <code>%p/share/doc/%n</code>.
 (Dans InstallScript, il faut, évidemment, utiliser %i au lieu de %p.
 Le champ DocFiles gère les détails automatiquement.)
 S'il n'y a pas de licence explicite dans le source original, placez un fichier texte contenant une note à propos du statut du paquet.
@@ -30,8 +29,7 @@ La règle de Fink est de toujours faire ainsi, même si ce n'est pas expliciteme
 </p>
 <p>
 Pour automatiser le plus possible la maintenance de la distribution binaire, tout paquet distribué doit avoir un champ <code>License</code>.
-Ce champ indique la nature de la licence et est utilisé pour décider
-quels paquets font partie de la distribution et quels paquets doivent en être exclus.
+Ce champ indique la nature de la licence et est utilisé pour décider quels paquets font partie de la distribution et quels paquets doivent en être exclus.
 Le champ ne peut exister que si les termes réels de la licence sont inclus dans le paquet binaire, comme expliqué ci-dessus.
 </p>
 <p>
@@ -57,8 +55,7 @@ Ceci inclue la licence BSD dite "original", la licence BSD "modified" et la lice
 <li><code>Artistic/GPL</code> - licence duale, combinée Artistic/GPL.</li> 
 
 <li><code>GNU Free Documentation License</code> et <code>Linux
-Documentation Project</code> - si la documentation incluse dans un paquet l'est explicitement sous une de ces licences, alors ce sera indiqué par l'ajout de <code>/GFDL</code> ou <code>/LDP</code> au code de la licence, ce qui donne l'une des combinaisons autorisées suivantes : "GFDL",
-"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", ou "GPL/LGPL/LDP".
+Documentation Project</code> - si la documentation incluse dans un paquet l'est explicitement sous une de ces licences, alors ce sera indiqué par l'ajout de <code>/GFDL</code> ou <code>/LDP</code> au code de la licence, ce qui donne l'une des combinaisons autorisées suivantes : "GFDL", "GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", ou "GPL/LGPL/LDP".
 </li>
 
 <li><code>OSI-Approved</code> - pour les autres licences Open Source approuvées par l'Initiative Open Source (OSI) <a href="http://www.opensource.org/"></a>. L'une des règles de l'OSI est que la libre distribution de binaires et de sources est autorisée. Ce code peut aussi servir de cadre aux paquets à licence duale.</li>
@@ -67,8 +64,7 @@ Documentation Project</code> - si la documentation incluse dans un paquet l'est 
 Utilisez ceci pour les paquets qui sont accessibles en tant que sources à usage libre auprès de l'auteur, mais dont la libre redistribution n'est pas autorisée. </li>
 
 <li><code>Restrictive/Distributable</code> - pour des licences restrictives qui admettent une distribution des binaires et du source.
-Utilisez ceci pour les paquets qui sont accessibles en tant que sources
-auprès de l'auteur, autorisent la distribution du source et des binaires, mais ont des restrictions qui en font des licences non open-sources.</li>
+Utilisez ceci pour les paquets qui sont accessibles en tant que sources auprès de l'auteur, autorisent la distribution du source et des binaires, mais ont des restrictions qui en font des licences non open-sources.</li>
 
 <li><code>Commercial</code> - pour des licences restrictives de type commercial.
 Utilisez ceci pour des paquets  de type commercial ( par exemple graticiels, partagiciels qui n'autorisent pas la libre redistribution du source ou des binaires.</li>
@@ -84,10 +80,8 @@ Il est essentiel qu'un paquet n'installe aucun fichier en dehors du répertoire 
 </p>
 <p>
 Il peut y avoir des exceptions quand on ne peut faire autrement, par exemple avec XFree86.
-Dans ce cas, le paquet doit tester l'existence de fichiers avant l'installation
-et refuser de s'installer si cela amène à écraser des fichiers déjà existants.
-Le paquet doit s'assurer que tous les fichiers qu'il aura installés en dehors 
-du répertoire de Fink seront supprimés lorsque le paquet lui-même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés sur place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).
+Dans ce cas, le paquet doit tester l'existence de fichiers avant l'installation et refuser de s'installer si cela amène à écraser des fichiers déjà existants.
+Le paquet doit s'assurer que tous les fichiers qu'il aura installés en dehors du répertoire de Fink seront supprimés lorsque le paquet lui-même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés sur place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).
 </p>
 
 
@@ -104,8 +98,7 @@ Tout paquet qui construit des librairies partagées et qui, soit (1) est placé 
 <li>mettre les headers et les liens finaux venant de libfoo.dylib dans un paquet caractérisé par <code>BuildDependsOnly: True</code>, et prévoir qu'aucun autre paquet ne dépendra de lui.</li>
 </ul>
 <p>
-Un mainteneur, qui a de bonnes raisons de s'écarter de ces règles et ne 
-scinde pas le paquet, devra expliquer pourquoi dans le champ DescPackaging.
+Un mainteneur, qui a de bonnes raisons de s'écarter de ces règles et ne scinde pas le paquet, devra expliquer pourquoi dans le champ DescPackaging.
 </p><p>
 Pour certains paquets, tout peut être fait avec un paquet principal et un paquet -shlibs ; dans d'autres cas, vous aurez besoin d'un troisième paquet. Le nouveau champ <code>SplitOff</code> facilite ce processus.
 </p><p>
@@ -118,8 +111,7 @@ Pour l'option 1, utilisez le schéma suivant :
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Paquet</th><th align="left">Contenu</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Librairies partagées</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binaires, etc...</p></td></tr></table>
 
 <p>
-Avec l'option 2, il est plus difficile de mettre à jour un paquet existant : 
-quand vous réalisez la mise à jour, vous devez ajouter <code>BuildDepends: foo-dev</code> à chaque paquet qui a un champ <code>Depends: foo</code>.
+Avec l'option 2, il est plus difficile de mettre à jour un paquet existant : quand vous réalisez la mise à jour, vous devez ajouter <code>BuildDepends: foo-dev</code> à chaque paquet qui a un champ <code>Depends: foo</code>.
 Autre problème de mise à jour à garder à l'esprit : un paquet qui dépend indirectement du vôtre (par l'intermédiaire d'un paquet tiers) peut nécessiter qu'on lui ajoute <code>BuildDepends: foo</code> ou <code>BuildDepends: foo-dev</code> pour assurer une mise à jour correcte. C'est à vous de veiller à ce que que le champ <code>BuildDepends</code> soit renseigné si nécessaire.
 </p>
 <p><b>Règles détaillées</b></p>
@@ -156,8 +148,7 @@ Quand ce système sera complètement opérationnel, il ne sera plus permis à un
 <p>
 dans la description du paquet barN.
 </p><p>
-Si votre paquet inclut à la fois des librairies partagées et des binaires, et si 
-les binaires doivent être présents à l'exécution (et pas seulement à la compilation), alors les binaires doivent être regroupés dans un troisième paquet, qui peut être appelé barN-bin.
+Si votre paquet inclut à la fois des librairies partagées et des binaires, et si les binaires doivent être présents à l'exécution (et pas seulement à la compilation), alors les binaires doivent être regroupés dans un troisième paquet, qui peut être appelé barN-bin.
 Les autres paquets peuvent dépendre de barN-bin comme de barN-shlibs.
 </p><p>
 Lors de la construction de librairies partagées de version majeure N, il est important que le "nom d'installation" soit <code>%p/lib/bar.N.dylib</code>.  
@@ -223,8 +214,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 <p>
-Durant l'exécution du champ <code>SplitOff</code>, les fichiers et les répertoires spécifiés sont déplacés du répertoire d'installation %I du paquet principal vers le répertoire d'installation %i du paquet splitoff.  (Il y a une convention similaire pour les noms : %N est le nom
-du paquet principal, et %n est le nom du paquet actif.)
+Durant l'exécution du champ <code>SplitOff</code>, les fichiers et les répertoires spécifiés sont déplacés du répertoire d'installation %I du paquet principal vers le répertoire d'installation %i du paquet splitoff.  (Il y a une convention similaire pour les noms : %N est le nom du paquet principal, et %n est le nom du paquet actif.)
 La commande <code>DocFiles</code> place ensuite une copie de la documentation dans <code>%i/share/doc/barN-shlibs</code>.
 </p><p>
 Notez que nous avons inclus la version courante exacte de barN-shlibs comme dépendance du paquet principal barN (qui peut être abrégé en %N-shlibs (= %v-%r) ).
@@ -269,8 +259,7 @@ Les utilisateurs verront alors barN et barM apparaître et disparaître au gré 
 <b>Mise à jour d'un paquet de fink existant :</b>
 </p><p>
 Le meilleur moyen de mettre à jour un paquet fink existant qui installe des librairies, qu'elles soient statiques ou partagées, est de créer une nouvelle version foo du paquet, accompagné d'un nouveau paquet foo-shlibs, qui satisfait aux règles ci-dessus.
-Si des librairies partagées (ou d'autres fichiers présents maintenant dans 
-foo-shlibs) étaient installées auparavant, ces nouveaux paquets doivent stipuler : 
+Si des librairies partagées (ou d'autres fichiers présents maintenant dans foo-shlibs) étaient installées auparavant, ces nouveaux paquets doivent stipuler : 
 </p>
 <pre>
   Replaces: foo (&lt;&lt; earliest.compliant.version)
@@ -317,25 +306,23 @@ Traditionnellement, les paquets Fink pour les modules Perl ont un suffixe <code>
 Les modules Perl qui sont dépendants des versions sont les modules dits XS, qui contiennent fréquemment du code C compilé ainsi que des routines écrites en langage Perl.
 Il y a de nombreuses façons de les reconnaître, notamment par la présence d'un fichier avec un suffixe <code>.bundle</code>.
 </p><p>
-Un module perl qui dépend des versions doit être construit en utilisant un binaire versionné de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires versionnés des répertoires standards de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>.
+Un module perl qui dépend des versions doit être construit en utilisant un binaire dont le nom comporte le numéro de version de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires des répertoires standards de perl ; les noms de ces sous-répertoires doivent comporter le numéro de version de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>.
 Une nouvelle convention, en cours d'introduction,  consiste à utiliser le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0.  Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui bientôt incluront perl 5.6.1 et perl 5.8.0.  
 </p><p>
-La nouvelle directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire versionné de perl et stocke les fichiers dans les bons sous-répertoires.
+La nouvelle directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire dont le nom comporte le numéro de version de perl et stocke les fichiers dans les bons sous-répertoires.
 (Cette directive est disponible à partir de la version 0.13.0 de fink.)
 </p><p>
 Il est permis de créer un paquet <code>-pm</code>, qui est essentiellement un paquet "lot", qui charge la variante <code>-pm560</code> ou une autre variante existante.
 Cette stratégie est encouragée pour les paquets existants de Fink contenant des modules XS, afin d'assurer une mise à jour sans problème.
 </p><p>
-Effective à partir de la version 0.13.0 de fink, la commande <code>fink validate</code>, quand elle est appliquée à un fichier <code>.deb</code>, teste si le paquet fink est un module XS qui a été installé dans un répertoire non versionné, et, génère, dans ce cas, une alerte.
+Effective à partir de la version 0.13.0 de fink, la commande <code>fink validate</code>, quand elle est appliquée à un fichier <code>.deb</code>, teste si le paquet fink est un module XS qui a été installé dans un répertoire dont le nom ne comporte pas le numéro de version, et, génère, dans ce cas, une alerte.
 </p>
 
 
 <h2><a name="emacs">3.5 Règles Emacs</a></h2>
-<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
-http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
+<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
 Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.
 </p>
-
 
 
 <p align="right">

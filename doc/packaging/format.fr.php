@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 22:50:09';
+$cvs_date = 'Date: 2004/04/03 16:17:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -25,14 +25,11 @@ En voici la liste de la racine au bas de l'arborescence :
 </p>
 <ul>
 <li><code>dists</code> est à la racine.  Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
-<li>La distribution. Il y en a trois : <code>stable</code>,
-<code>unstable</code> et <code>local</code>. Le répertoire <code>local</code>
+<li>La distribution. Il y en a trois : <code>stable</code>, <code>unstable</code> et <code>local</code>. Le répertoire <code>local</code>
 est sous le contrôle de l'utilisateur/administrateur local. Les répertoires 
 <code>stable</code> et <code>unstable</code> font partie de Fink.</li>
-<li>L'arbre. L'arbre <code>main</code> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial 
-<code>crypto</code>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
-<li><code>finkinfo</code>
-et <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contient les descriptions de paquets Fink et leurs rustines, tandis que <code>binary-darwin-powerpc</code> contient les paquets binaires <code>.deb</code>.</li>
+<li>L'arbre. L'arbre <code>main</code> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial <code>crypto</code>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
+<li><code>finkinfo</code> et <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contient les descriptions de paquets Fink et leurs rustines, tandis que <code>binary-darwin-powerpc</code> contient les paquets binaires <code>.deb</code>.</li>
 <li>Sections. L'arbre <code>main</code> est subdivisé en sections thématiques pour en faciliter la gestion. L'arbre <code>crypto</code> n'est, lui, pas subdivisé en sections à l'heure actuelle.</li>
 </ul>
 
@@ -47,8 +44,7 @@ Chaque ligne commence par une clé, suivie de deux-points et d'une espace, puis 
 Il y a deux notations pour les champs qui peuvent s'étendre sur plusieurs lignes.
 </p><p>
 La notation recommandée est basée sur la syntaxe "here-document" - "données ci-après", utilisée dans les scripts shell.
-Dans cette syntaxe, la première ligne est composée de la clé, suivie du symbole redoublé <code>&lt;&lt;</code>
-comme valeur.
+Dans cette syntaxe, la première ligne est composée de la clé, suivie du symbole redoublé <code>&lt;&lt;</code> comme valeur.
 Toutes les lignes suivantes sont considérées comme valeurs, jusqu'à la rencontre d'une ligne ne contenant que <code>&lt;&lt;</code>.
 L'exemple ci-dessus ressemble maintenant à :
 </p>
@@ -63,8 +59,7 @@ Avec ce format, l'indentation est optionnelle, mais vous pouvez l'utiliser pour 
 </p><p>
 On peut imbriquer plusieurs "here-document". Cela arrive souvent dans un champ
  <code>SplitOff</code> ou <code>SplitOff<b>N</b></code>.
- Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe
- permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document".
+ Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document".
 En voici un exemple :
 </p>
 <pre>
@@ -88,12 +83,10 @@ Exemple :
 Notez l'indentation obligatoire des lignes.
 </p><p>
 Dans les deux formats, les lignes vides ainsi que celles débutant avec un dièse (#) sont ignorées.
-Dans Fink, les clés (noms des champs) ne sont pas sensibles à la casse, vous pouvez donc écrire
-indifféremment : <code>InstallScript</code>, <code>installscript</code> ou
+Dans Fink, les clés (noms des champs) ne sont pas sensibles à la casse, vous pouvez donc écrire indifféremment : <code>InstallScript</code>, <code>installscript</code> ou
 <code>INSTALLSCRIPT</code>.
 Cependant, on conseille la première forme, où chaque initiale de mot est mise en majuscules, pour des raisons de lisibilité.
-Certains champs prennent une valeur booléenne ; sont traitées comme vraies, les valeurs suivantes :
-"true", "yes", "on", "1" (toutes insensibles à la casse) ; toute autre valeur est traitée comme fausse.
+Certains champs prennent une valeur booléenne ; sont traitées comme vraies, les valeurs suivantes : "true", "yes", "on", "1" (toutes insensibles à la casse) ; toute autre valeur est traitée comme fausse.
 </p>
 
 
@@ -134,13 +127,11 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 répertoire <b>d</b>ans lequel le paquet est construit, par exemple : 
-<code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que 
-<code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
+<code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
-répertoire <b>D</b>ans lequel le paquet parent est construit (le même que %d à moins d'être dans un
-<code>SplitOff</code>)
+répertoire <b>D</b>ans lequel le paquet parent est construit (le même que %d à moins d'être dans un <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%i</td><td>
 <p>
@@ -183,12 +174,10 @@ La forme _raw correspond à la chaîne précise du sous-type, tandis que la form
 </p>
 </td></tr><tr valign="top"><td>%ni, %Ni</td><td>
 <p>
-la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à 
-%n et %N, àl'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
+la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
 (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.
 </p>
 </td></tr></table>
-
 
 
 <p align="right">

@@ -1,14 +1,13 @@
 <?
 $title = "Paquets - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 22:50:09';
+$cvs_date = 'Date: 2004/04/03 16:17:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="format.php?phpLang=fr" title="Descriptions de paquets"><link rel="prev" href="index.php?phpLang=fr" title="Paquets Contents">';
 
 include_once "header.inc";
 ?>
 
 <h1>Paquets - 1 Introduction</h1>
-
 
 
 
@@ -29,7 +28,6 @@ Le paquet peut aussi contenir des métainformations pour le paquet lui-même.
 L'installation d'un paquet binaire consiste simplement à le dépaqueter, puisqu'il est déjà dans un format prêt à l'emploi.
 Comme Fink construit les paquets avec le gestionnaire de paquets dpkg, les paquets binaires ont le format dpkg et ont une extension .deb.
 </p>
-
 
 
 <h2><a name="ident">1.2 Identification d'un paquet</a></h2>
