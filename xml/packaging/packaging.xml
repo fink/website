@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.23 2002/03/19 22:54:53 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.24 2002/04/03 15:05:21 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -362,10 +362,16 @@ then turn to the question of upgrading existing fink packages.  For
 examples of the policy in action, see the  libpng, libjpeg  and 
 libtiff packages.
 </p><p>
-Software which has been ported to Darwin should build shared libraries (as 
-opposed to static libraries) whenever possible.  When this has been done,
+Software which has been ported to Darwin should build shared libraries 
+whenever possible.  (Package maintainers
+are also free to build static libraries as well, if appropriate
+for their packages; or they may submit packages containing only static
+libraries if they wish.)
+Whenever shared libraries are being built,
 <em>two</em> closely related fink packages should be made, named foo 
-and foo-shlibs.  These can be made with a single .info file, using
+and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
+files go in foo.  These two packages
+can be made with a single .info file, using
 the <code>SplitOff</code> field, as described below.  
 (In fact, it is often necessary
 to make more than two packages from the source, and this can be done
