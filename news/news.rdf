@@ -4,9 +4,29 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 24 Oct 2003 23:25:49 EDT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Oct 2003 16:06:17 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Look Ma, a logo for Fink</title>
+    <link>http://fink.sf.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink</link>
+    <dc:date>2003-10-25</dc:date>
+    <description>
+	As you surely noticed, Fink has a logo. This is the result of our
+	Logo contest held earlier this year.
+	This new, official, logo has been displayed since the 24th of October and
+	those of you who wondered how it has been picked and what the name of the
+	winner is should read up in the PR section.
+	
+	
+	The longer explanation also features a larger version of the logo itself,
+	so that you may have a closer look at its details. We like our new logo,
+	we hope that you will like it too.
+	
+	IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Upgrade to gcc 3.3 and/or 10.3</title>
     <link>http://fink.sf.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3</link>
@@ -447,20 +467,6 @@ news.rdf This feed reflects the contents of the Fink News Page. The Feed is upda
   current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
   under 10.1 will be brought to Fink version 0.4.1a, while users
   upgrading under 10.2 will be brought to Fink version 0.5.0a.
-  
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>New Upgrade Matrix coming</title>
-    <link>http://fink.sf.net/news/#2002-12-11%20New%20Upgrade%20Matrix%20coming</link>
-    <dc:date>2002-12-11</dc:date>
-    <description>
-  The Fink team is aware of the shortcomings of the current
-  Upgrade Matrix page, which is inadequate for upgrading
-to Fink 0.5.0a.  Please be patient as we construct
-  a new version of that page, whose existence will be announced
-  here.  In the meantime, some of you may wish to use the test version of the Jaguar updater which was
-made available on 2002-09-08.
   
   </description>
   </item>

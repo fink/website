@@ -1,14 +1,28 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/25 02:54:20';
+$cvs_date = 'Date: 2003/10/25 03:26:39';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-10-24 Upgrade to gcc 3.3 and/or 10.3"><span class="news-date">2003-10-24: </span><span class="news-headline">Upgrade to gcc 3.3 and/or 10.3</span></a><?php gray_line(); ?>
+<a name="2003-10-25 Look Ma, a logo for Fink"><span class="news-date">2003-10-25: </span><span class="news-headline">Look Ma, a logo for Fink</span></a><?php gray_line(); ?>
+	<p>As you surely noticed, Fink has a logo. This is the result of our
+	Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
+	This new, official, logo has been displayed since the 24th of October and
+	those of you who wondered how it has been picked and what the name of the
+	winner is should read up in the PR <a href="<?php print $root; ?>pr/index.php">section</a>.
+	</p>
+	<p>
+	The longer explanation also features a larger version of the logo itself,
+	so that you may have a closer look at its details. We like our new logo,
+	we hope that you will like it too.
+	</p>
+	<p>IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	</p>
+		<a name="2003-10-24 Upgrade to gcc 3.3 and/or 10.3"><span class="news-date">2003-10-24: </span><span class="news-headline">Upgrade to gcc 3.3 and/or 10.3</span></a><?php gray_line(); ?>
 	<p>It is now possible to upgrade Fink to take full advantage of the gcc 3.3
 compiler, or to use OS X 10.3 if you have that installed.  Binary packages
 corresponding to these upgrades are not yet available, so if you make 
