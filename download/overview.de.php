@@ -1,7 +1,7 @@
 <?
 $title = "Download Überblick";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/11 12:33:20 $';
+$cvs_date = '$Date: 2004/04/11 17:27:55 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ Quell-Pakete brauchen einige Zeit zur Installation. Denn zur Erzeugung ausführb
 <p>
 <b>Alle Fink-Installationen sind gleich.</b>
 Egal wie Sie Fink installiert haben, Sie können Pakete stets mit Hilfe ihrer Quelldateien zu erzeugen.
-Gleichermaßen können Sie heruntergeladene Binärpakete installieren, <u>solange Fink im Verzeichnis <tt>/sw/tt> installiert ist</u>.
+Gleichermaßen können Sie heruntergeladene Binärpakete installieren, <u>solange Fink im Verzeichnis <tt>/sw</tt> installiert ist</u>.
 Alles, was Sie tun müssen, ist entsprechende Tools und Update-Verfahren zu nutzen.
 </p>
 
