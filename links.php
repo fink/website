@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/11 16:42:28 $';
+$cvs_date = '$Date: 2001/09/11 18:34:53 $';
 
 include "header.inc";
 ?>
@@ -41,6 +41,9 @@ target="_blank">http://www.geeklair.net/downloads/</a> - run by
 target="_blank">http://macosx.forked.net/</a></li>
 <li><a href="http://www-jlc.kek.jp/~fujiik/macosx/10.0.X/"
 target="_blank">HEP on X</a> - A collection of RPM packages</li>
+<li><a href="http://24.5.29.77:10080/OSX-Darwin/"
+target="_blank">http://24.5.29.77:10080/OSX-Darwin/</a> - run by
+Michael A. Peters</li>
 </ul>
 
 <p>Sites with related information</p>
