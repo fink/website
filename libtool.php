@@ -1,7 +1,7 @@
 <?
 $title = "libtool patch";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/16 09:23:05 $';
+$cvs_date = '$Date: 2001/01/16 09:24:32 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -35,12 +35,12 @@ href="files/ltmain.sh">ltmain.sh</a> (110K).</p>
 href="http://www.gnu.org/software/libtool/libtool.html">libtool
 homepage</a>.</p>
 
+<p>For patches to packages that do not use GNU libtool, see the <a
+href="patches.php">patches page</a>.</p>
+
 <p>Side note: Apple's Developer Tools contain a program also called
 libtool, which can be used to build shared libraries. However, this is
 completely unrelated.</p>
-
-<p>For patches to packages that do not use GNU libtool, see the <a
-href="patches.php">patches page</a>.</p>
 
 
 <?
