@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.42 2002/07/25 13:23:10 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.43 2002/09/01 18:17:04 benh57 Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -663,8 +663,33 @@ have come as a surprise.
 </p>
 </answer></faqentry>
 
+<faqentry name="compile-myself"><question><p>How do I compile something
+myself using fink-installed software?</p></question>
+<answer>
+<p>When compiling something yourself outside of fink, the compiler and
+linker need to be told where to find the fink-installed libraries and
+headers. For a package that uses standard configure/make process, you
+need to set the CFLAGS, CPPFLAGS, CXXFLAGS, and LDFLAGS environment
+variables:
+</p>
+<codeblock>
+setenv CFLAGS -I/sw/include
+setenv LDFLAGS -L/sw/lib
+setenv CXXFLAGS $CFLAGS
+setenv CPPFLAGS $CXXFLAGS
+</codeblock>
+<p>
+It is often easiest just to add these to your .tcshrc or .cshrc so they
+are set automatically.
+If a package does not use these variables, you may need to add the
+"-I/sw/include" (for headers) and "-L/sw/lib" (for libraries) to the
+compile lines yourself. Some packages may use similar non-standard
+variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
+"./configure --help" will usually give you a list of the extra configure
+options.
+</p>
+</answer></faqentry>
 </chapter>
-
 
 <chapter filename="usage-packages">
 <title>Package Usage Problems - Specific Packages</title>
