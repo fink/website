@@ -470,14 +470,17 @@ which depend on <code>foo</code>.
 
 
 <h2><a name="perlmods">3.4 Perl Modules</a></h2>
-<p>Fink has a new policy about perl modules, effective in May, 2003.
+<p>Fink's policy about perl modules, originally implemented in
+May 2003,  has been revised as of April 2004.
 </p><p>
-Traditionally, the Fink packages for perl modules have the suffix 
-<code>-pm</code>, and have been build using the <code>Type: perl</code> 
+Traditionally, the Fink packages for perl modules had the suffix 
+<code>-pm</code>, and were built using the <code>Type: perl</code> 
 directive, which stores the perl module's files in <code>/sw/lib/perl5</code> and/or
-<code>/sw/lib/perl5/darwin</code>.  Under the new policy, this storage location is only 
+<code>/sw/lib/perl5/darwin</code>.  Under the policy
+now in place, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
-being used to compile them.
+being used to compile them (and which do not depend on other perl modules
+that lack this independence-of-version).
 </p><p>
 The perl modules which are version-dependent are the so-called XS modules,
 which frequently contain compiled C code as well as pure perl routines.
@@ -487,21 +490,36 @@ of a file with a suffix <code>.bundle</code>.
 A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.6.0</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-<code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  A new convention
-is being introduced of using the suffix <code>-pm560</code> for
+<code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  By convention, package names
+use the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
-are in force for other versions of perl, which will soon include 
-perl 5.6.1 and perl 5.8.0.  
+are in force for other versions of perl, which include 
+perl 5.6.1 (in the 10.2 trees only),  perl 5.8.0, perl 5.8.1, and
+perl 5.8.4 (coming soon).
 </p><p>
-The new directive <code>Type: perl 5.6.0</code> automatically uses the
+The directive <code>Type: perl 5.6.0</code> automatically uses the
 versioned perl binary and stores the files in the correct subdirectories. 
 (This directive is available starting with version 0.13.0 of fink.)
 </p><p>
-It is permitted to create a <code>-pm</code> package which is essentially
+Under the May 2003 policy, it was permitted to create a 
+<code>-pm</code> package which is essentially 
 a "bundle" package that loads the <code>-pm560</code> variant or any
-others which may be exist.  This strategy is encouraged for existing
-Fink packages for XS modules, in order to provide a smooth upgrade path.
-</p><p>
+others which may be exist.  Under the April 2004 policy this is discouraged,
+and after a transitional period it will be outlawed entirely.  (The
+one exception will be the package <code>storable-pm</code> which needs
+to be in this form for bootstrapping purposes.)
+</p>
+<p>As of fink 0.20.1, the system-perl virtual package automatically
+"Provides" certain perl modules when the version of Perl present on
+the system is at
+least 5.8.0.  In the case of system-perl-5.8.1-1, these are:
+<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm, 
+file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm, 
+i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm, 
+mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm, 
+time-hires-pm581.</b>
+</p>
+<p>
 Effective with version 0.13.0 of fink, the <code>fink validate</code>
 command when applied to a <code>.deb</code> file will check to see if
 the fink package is an XS module which has been installed in a non-versioned 
