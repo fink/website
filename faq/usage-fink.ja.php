@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/27 00:34:25';
+$cvs_date = 'Date: 2004/04/11 00:17:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 include_once "header.inc";
@@ -113,7 +113,7 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 <a name="sudo">
 <div class="question"><p><b>Q5.9: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
 <div class="answer"><p><b>A:</b> sudo がパスワードを聞いてこないように設定することができます。
-root 権限で <code>/etc/sudoers</code> を開き、次の行を追加します:</p><pre>username ALL = NOPASSWD: ALL</pre><p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p></div>
+root 権限で <code>visudo</code> を開き、次の行を追加します:</p><pre>username ALL = NOPASSWD: ALL</pre><p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p></div>
 </a>
 <a name="exec-init-csh">
 <div class="question"><p><b>Q5.10: init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。
@@ -236,7 +236,9 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 <div class="answer"><p><b>A:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <code>/sw/sbin</code> が出てこないなら、環境変数を
 <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a>
 内の Users Guide を参照してください。
-<code>/sw/sbin</code> があるが、他のディレクトリ (例えば /usr/local/bin) がそれより前にある場合、 PATH の順序を変えて先頭近くに移動するか、どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <code>install-info</code> のファイル名を一時的に変える必要があります。</p></div>
+<code>/sw/sbin</code> があるが、他のディレクトリ (例えば /usr/local/bin) 
+がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
+どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <code>install-info</code> のディレクトリ名を一時的に変える必要があります。</p></div>
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b>Q5.18: 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</b></p></div>
