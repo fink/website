@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.27 2002/04/14 23:10:35 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.28 2002/04/17 13:10:27 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -997,7 +997,7 @@ alternate default values for the compile and install scripts to be used.
 This field gives the nature of the license under which the package is
 distributed.
 The value must be one of the values described in <xref
-chapter="policy" section="license">Package Licenses</xref> earlier in
+chapter="policy" section="licenses">Package Licenses</xref> earlier in
 this document.
 Additionally, this field must only be given if the package actually
 complies to the packaging policy in these respects, i.e. a copy of the
