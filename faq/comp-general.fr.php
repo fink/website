@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/15 02:42:47';
+$cvs_date = 'Date: 2004/09/23 00:42:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -169,7 +169,11 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="question"><p><b><? echo FINK_Q ; ?>6.21: Lors du téléchargement d'un paquet, Fink tente de le faire à partir d'un site dont le nom contient <q>distfiles</q> et ne trouve pas le fichier.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink tente d'utiliser l'un de ses sites <q>Maîtres</q>. Ils servent à garantir que les sources des paquets de Fink sont disponibles même lorsque le site original a changé d'adresse. Cette erreur apparaît lorsqu'une nouvelle version d'un paquet est publiée, mais que les miroirs maîtres n'ont pas encore eu le temps de la prendre en compte.</p><p>Pour pallier cela, exécutez <code>fink configure</code> et changez l'ordre de recherche de telle sorte que les miroirs maîtres soient utilisés en dernier.</p></div>
     </a>
- <p align="right"><? echo FINK_NEXT ; ?>:
+    <a name="compile-options">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: Comment utiliser des options variables lors de la compilation d'un paquet.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> et le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de construction de paquets</a>.</p><p><b>Note :</b> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p></div>
+    </a>
+   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=fr">7. Problèmes de compilation de certains paquets</a></p>
 <? include_once "../footer.inc"; ?>
 

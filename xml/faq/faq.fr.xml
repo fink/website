@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.35 2004/09/15 02:42:47 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.36 2004/09/23 00:42:32 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -246,6 +246,19 @@ Un miroir Fink est un serveur rsync qui reflète les fichiers de description act
         <p>Les utilisateurs de 10.2 peuvent télécharger la mise à jour d'août 2003 sur <link url="http://developer.apple.com/">Apple Developer Connection</link>
 (enregistrement gratuit obligatoire).</p>
         <p>Les utilisateurs de 10.3 doivent installer les outils de développement compatibles avec Panther (c'est-à-dire XCode). Vous devez trouver un CD contenant XCode parmi ceux reçus avec Panther.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="fink-0220">
+      <question>
+        <p>Aucune mise à jour de paquets de Fink n'a eu lieu depuis un moment</p>
+      </question>
+      <answer>
+        <p>Vérifiez la version de fink avec la commande suivante :</p>
+        <codeblock>fink --version</codeblock>
+        <p>Il existe un problème dans <code>fink-0.22.0</code>, qui fait que la mise à jour par rsync ne fonctionne plus. Pour mettre à jour fink, passez à la mise à jour via CVS avec la commande suivante : </p>
+        <codeblock>fink selfupdate-cvs	</codeblock>
+        <p>Cela vous permettra de passer à une nouvelle version de <code>fink</code>. Une fois cela fait, nous vous recommandons de revenir au mode de mise à jour par rsync avec la commande suivante :</p>
+        <codeblock>fink selfupdate-rsync</codeblock>
       </answer>
     </faqentry>
   </chapter>
@@ -1025,7 +1038,16 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Pour pallier cela, exécutez <code>fink configure</code> et changez l'ordre de recherche de telle sorte que les miroirs maîtres soient utilisés en dernier.</p>
       </answer>
     </faqentry>
- </chapter>
+    <faqentry name="compile-options">
+      <question>
+        <p>Comment utiliser des options variables lors de la compilation d'un paquet.</p>
+      </question>
+      <answer>
+        <p>La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</link> et le <link url="http://fink.sourceforge.net/doc/packaging/index.php">Guide de construction de paquets</link>.</p>
+        <p><em>Note :</em> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p>
+      </answer>
+    </faqentry>
+   </chapter>
   <chapter filename="comp-packages">
     <title>Problèmes de compilation de certains paquets</title>
     <shorttitle>Compilation (2)</shorttitle>
