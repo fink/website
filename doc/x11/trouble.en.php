@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 21:40:13';
+$cvs_date = 'Date: 2004/05/13 01:48:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
 include_once "header.inc";
@@ -176,8 +176,7 @@ and <code>XDarwinStartup</code>, a small executable file.
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
-See the <a href="inst-xfree86.php?phpLang=en#rootless">Roaming
-Rootless Servers</a> section for more hints.
+If you installed XFree86 with Fink then you need to reinstall the <code>xfree86</code> package (or <code>xfree86-rootless</code> for OS 10.2 and earlier).  If you installed it by yourself, then get the files from a copy of Xquartz.tgz.
 </p>
       <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
 &gt; Error:            Can't find file "unknown" for geometry include

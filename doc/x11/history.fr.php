@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/09 11:05:39';
+$cvs_date = 'Date: 2004/05/13 01:48:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.12 2004/05/09 11:05:39 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.13 2004/05/13 01:48:06 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -715,31 +715,12 @@ XDarwin 1.0a2 et les versions suivantes lancent un shell interactif en arrière-
       <codeblock>Fatal server error:
 failed to connect as window server!</codeblock>
       <p>
-Class: Fatal.
-This means that the console-mode server (for pure Darwin) got started
-while you were logged into Aqua.
-Usually this happens when you installed the official XFree86 binary
-distribution and left out the Xquartz.tgz tarball.
-It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you issue the command <code>XDarwin</code> in a Terminal
-window to start the server (you should use startx instead in that
-case, see <xref chapter="run-xfree86" >Starting XFree86</xref>).
+Sévérité : fatal.
+Cela signifie que le serveur a démarré en mode console (pour Darwin seul), alors que vous étiez connecté sous Aqua. Ceci arrive lorsque vous installez la distribution officielle binaire XFree86 et que vous oubliez d'installer l'archive tar Xquartz.tgz. Cela peut aussi survenir quand les liens symboliques dans /usr/X11R6/bin ne pointent pas sur les bons fichiers et quand vous lancez la commande <code>XDarwin</code> dans une fenêtre de Terminal pour démarrer le serveur (vous devez utiliser startx dans ce cas, voir <xref chapter="run-xfree86" >Lancement de XFree86</xref>).
 </p>
       <p>
-In any case, you can run <code>ls -l /usr/X11R6/bin/X*</code> and
-check the output.
-You should see four relevant entries:
-<code>X</code>, a symlink pointing at <code>XDarwinStartup</code>;
-<code>XDarwin</code>, an executable file (this is the console
-mode server);
-<code>XDarwinQuartz</code>, a symlink pointing at
-<filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename>;
-and <code>XDarwinStartup</code>, a small executable file.
-If any of these are missing or pointing at different files, you need
-to fix that.
-How you do that depends on the method you used to install XFree86.
-See the <xref section="rootless" chapter="inst-xfree86" >Roaming
-Rootless Servers</xref> section for more hints.
+Vous pouvez toujours lancer la commande <code>ls -l /usr/X11R6/bin/X*</code> et vérifier son résultat. Vous devez voir quatre lignes remarquables :
+<code>X</code>, un lien symbolique pointant sur <code>XDarwinStartup</code> ; <code>XDarwin</code>, un fichier exécutable (c'est le serveur en mode console) ; <code>XDarwinQuartz</code>, un lien symbolique pointant sur <filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename> ; et <code>XDarwinStartup</code>, un petit fichier exécutable. Si l'un de ces fichiers manque ou ne pointe pas sur le bon fichier, vous devez corriger l'erreur. La façon de le faire dépend de la méthode que vous avez utilisée pour installer XFree86. Si vous avez installé XFree86 via Fink, vous devez réinstaller le paquet <code>xfree86</code> (ou <code>xfree86-rootless</code> pour Mac OS 10.2 ou versions antérieures). Si vous l'avez installé manuellement, vous devez récupérer les fichiers à partir d'une copie de Xquartz.tgz.
 </p>
       <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
 > Error:            Can't find file &quot;unknown&quot; for geometry include
@@ -747,21 +728,13 @@ Rootless Servers</xref> section for more hints.
 >                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</codeblock>
       <p>
-Class: Mostly harmless.
-As the message says, it is not fatal.
-To my knowledge, XDarwin doesn't use the XKB extension at all.
-Probably some client program tries to use it anyway...
+Sévérité : quasi inoffensif.
+Cette erreur n'est pas fatale. À ma connaissance, XDarwin n'utilise pas du tout l'extension XKB. Il est probable qu'un programme client tente, malgré tout, de l'utiliser...
 </p>
       <codeblock>startx: Command not found.</codeblock>
       <p>
-Class: Fatal.
-This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
-initialization files are not set up to add /usr/X11R6/bin to the PATH
-variable.
-If you use Fink and haven't changed your default shell, adding the
-line <code>source /sw/bin/init.csh</code> to <filename>.cshrc</filename>
-in your home directory (as recommended by the Fink instructions) should
-be sufficient.
+Sévérité : fatal.
+Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <code>source /sw/bin/init.csh</code> au fichier <filename>.cshrc</filename> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.
 </p>
       <codeblock>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
@@ -769,29 +742,14 @@ _XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
 Cannot establish any listening sockets - Make sure an X server isn't already
 running</codeblock>
       <p>
-Class: Fatal.
-This can happen when you accidentally run several instances of XDarwin
-at once,
-or maybe after an unclean shutdown (i.e. crash) of XDarwin.
-It might also be a file permission problem with the sockets for local
-connections.
-You can try to clean that up with <code>rm -rf /tmp/.X11-unix</code>.
-Restarting the computer also helps in most cases (Mac OS X
-automatically cleans up /tmp when it boots, and the network stack is
-reset).
+Sévérité : fatal.
+Ceci arrive quand vous lancez involontairement plusieurs instances de XDarwin en même temps, ou après une déconnexion sauvage (un crash) de XDarwin. Cela peut provenir aussi d'un problème de permission sur les fichiers sockets utilisés pour les connexions locales. Vous pouvez tenter de résoudre le problème en exécutant <code>rm -rf /tmp/.X11-unix</code>. Le redémarrage de l'ordinateur résout aussi le problème dans la plupart des cas (Mac OS X vide automatiquement le répertoire /tmp lors du démarrage, et la pile réseau est redéfinie).
 </p>
       <codeblock>Xlib: connection to &quot;:0.0&quot; refused by server
 Xlib: Client is not authorized to connect to Server</codeblock>
       <p>
-Class: Fatal.
-The client programs can't connect to the display server (XDarwin)
-because they use bogus authentication data.
-This can be caused by some VNC installations,
-by running XDarwin through sudo,
-and probably some other freak accidents.
-The usual fix is to delete the .Xauthority file (which stores the
-authentication data) in your home directory and re-create an empty
-file:
+Sévérité : fatal.
+Les programmes client sont incapables de se connecter au serveur d'affichage (XDarwin), car ils utilisent des données d'authentification incorrectes. La cause peut en être certaines installations VNC, le lancement de XDarwin via sudo, ou autres bizarreries. Pour résoudre le problème, il suffit de supprimer le fichier .Xauthority (qui stocke les données d'authentification) situé dans votre répertoire utilisateur et de recréer un fichier vide de la façon suivante :
 </p>
       <codeblock>cd
 rm .Xauthority
@@ -799,18 +757,7 @@ touch .Xauthority</codeblock>
 <!--
 <codeblock>more error messages still to come...</codeblock>
 -->      <p>
-Another common cause for XFree86 startup failures is an incorrect
-<filename>.xinitrc</filename> file.
-What happens is that the <filename>.xinitrc</filename> is run and for some
-reason terminates almost immediately.
-<code>xinit</code> interprets this as &quot;the user's session has ended&quot;
-and kills XDarwin.
-See the <xref section="xinitrc" chapter="run-xfree86" >.xinitrc
-section</xref> for more details.
-Remember to set up the PATH and to have one long-lived program that is
-not started in the background.
-It is a good idea to add <code>exec xterm</code> as a fallback when
-your window manager or similar can't be found.
+Une autre cause fréquente d'échec de démarrage de XFree86 est un fichier <filename>.xinitrc</filename> incorrect. Le fichier <filename>.xinitrc</filename> est lancé et, pour une raison inconnue, se termine quasi immédiatement. <code>xinit</code> interprète cette fin comme &quot;une fin de session demandée par l'utilisateur&quot; et tue XDarwin. Voir la <xref section="xinitrc" chapter="run-xfree86" >section Fichier .xinitrc</xref> pour de plus amples informations. N'oubliez pas de définir le PATH et de choisir comme dernière commande un programme de longue durée ne tournant pas en arrière-plan. Conseil : ajoutez <code>exec xterm</code> comme roue de secours pour le cas où il serait impossible de trouver votre gestionnaire de fenêtres ou un programme équivalent.
 </p>
 <!--
 <p>
