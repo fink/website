@@ -285,6 +285,13 @@ If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your 
 <a name="invisible-sw"><div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
+<a name="selfupdate-su-failed"><div class="question"><p><b>Q3.20: When I try to do a <tt><nobr>fink selfupdate-cvs</nobr></tt>, I get &quot;<tt><nobr>### execution of su failed, exit code 1</nobr></tt>&quot;.  What does this mean?</b></p></div>
+<div class="answer"><p><b>A:</b> This almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  When you run selfupdate-cvs, you very likely will have lines that start with &quot;C&quot;, like so:
+</p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>The &quot;C&quot; means CVS had a conflict in trying to update the latest version.</p><p>The fix is to delete any files that show up as starting with &quot;C&quot; in the output of selfupdate-cvs, and try again.</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</pre></div>
+</a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.80 2003/01/21 14:19:56 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.81 2003/01/29 16:43:28 rangerrick Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -581,6 +581,19 @@ If you use tcsh and happen to have a <code>.tcshrc</code> file in your home dire
 <answer><p>You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p>
 <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
 <p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p>
+</answer>
+</faqentry>
+<faqentry name="selfupdate-su-failed"><question><p>When I try to do a <code>fink selfupdate-cvs</code>, I get "<code>### execution of su failed, exit code 1</code>".  What does this mean?</p>
+</question>
+<answer><p>This almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  When you run selfupdate-cvs, you very likely will have lines that start with "C", like so:
+</p>
+<codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
+<p>The "C" means CVS had a conflict in trying to update the latest version.</p>
+<p>The fix is to delete any files that show up as starting with "C" in the output of selfupdate-cvs, and try again.</p>
+<codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</codeblock>
 </answer>
 </faqentry>
 </chapter>
