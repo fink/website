@@ -3,8 +3,7 @@
 <document filename="index" lang="fr">
   <title>Guide d'internationalisation de Fink (i18n)</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.xml,v 1.13 2004/03/10 02:23:16 alexkhansen Exp
-  $</cvsid>
+  <cvsid>$Id: multilingual.fr.xml,v 1.10 2004/07/11 19:09:04 michga Exp $</cvsid>
   <preface>
     <p><em>Ce document est en cours de rédaction.</em></p>
     <p>Voici le guide d'internationalisation du site web de Fink. Ce document a été conçu pour servir de vade mecum aux personnes qui désirent contribuer à l'internationalisation du site.</p>
