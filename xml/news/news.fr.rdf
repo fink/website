@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2004-11-15T21:28:50+01:00</dc:date>
+    <dc:date>2004-11-22T13:17:18+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.">
+      <title>Solution to gcc problems.</title>
+      <link>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</link>
+      <guid>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</guid>
+      <description>
+
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+
+
+
+</description>
+      <content:encoded>
+
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+
+
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#15%2F10%2F2004%20R%E9solution%20de%20probl%E8mes%20concernant%20gcc">
       <title>Résolution de problèmes concernant gcc</title>
       <link>http://fink.sourceforge.net/news/#15%2F10%2F2004%20R%E9solution%20de%20probl%E8mes%20concernant%20gcc</link>
@@ -378,45 +413,6 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
 		
 		
 			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
-		
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#17%2F11%2F2003%20Fink%200.6.2%20est%20disponible">
-      <title>Fink 0.6.2 est disponible</title>
-      <link>http://fink.sourceforge.net/news/#17%2F11%2F2003%20Fink%200.6.2%20est%20disponible</link>
-      <guid>http://fink.sourceforge.net/news/#17%2F11%2F2003%20Fink%200.6.2%20est%20disponible</guid>
-      <description>
-		
-			Les binaires et sources de la dernière version de Fink, numérotée 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinée à corriger deux bogues de la version précédente : celui de la suppression utilisateur / dselect, ainsi qu'un problème d'autorisations attribuées aux fichiers. Le bogue dselect a été résolu en mettant à jour les paquets fink, dpkg et apt. Après mise à jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problème. Cependant, si vous avez utilisé dselect sous une version  au moins égale à la version 0.6.0, vérifiez l'intégrité du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par défaut. 
-		
-		
-			Les utilisateurs qui ont installé des fichiers binaires à partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent à l'utilisateur UID 20011 et non à l'utilisateur root. Pour corriger ce problème, lancez la commande :
-		
-
-sudo find /sw/ -user 2011 -exec chown root:admin {} \;
-
-		
-			Cette version, comme la précédente, a été créée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement, à quelques exceptions* près, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3. 
-		
-		
-			*Quelques exceptions : emacs, qt. 
-		
-		</description>
-      <content:encoded>
-		
-			Les binaires et sources de la dernière version de Fink, numérotée 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinée à corriger deux bogues de la version précédente : celui de la suppression utilisateur / dselect, ainsi qu'un problème d'autorisations attribuées aux fichiers. Le bogue dselect a été résolu en mettant à jour les paquets fink, dpkg et apt. Après mise à jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problème. Cependant, si vous avez utilisé dselect sous une version  au moins égale à la version 0.6.0, vérifiez l'intégrité du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par défaut. 
-		
-		
-			Les utilisateurs qui ont installé des fichiers binaires à partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent à l'utilisateur UID 20011 et non à l'utilisateur root. Pour corriger ce problème, lancez la commande :
-		
-
-sudo find /sw/ -user 2011 -exec chown root:admin {} \;
-
-		
-			Cette version, comme la précédente, a été créée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement, à quelques exceptions* près, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3. 
-		
-		
-			*Quelques exceptions : emacs, qt. 
 		
 		</content:encoded>
     </item>

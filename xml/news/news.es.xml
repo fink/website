@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.14 2004/11/22 08:45:25 zifra Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.15 2004/11/22 12:16:54 zifra Exp $</cvsid>
 
 <newsitem>
 <date>2004-11-20</date>
-<headline>solución a los problemas con gcc.</headline>
+<headline>Solución a los problemas con gcc.</headline>
 <body>
 <p>
 Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
 (tras registro gratutito) en connect.apple.com.  Este actualizador elimina
 el problema del compilador gcc3 en XCode 1.5.  Si estás usando  XCode 1.5, 
-debes instalarlo.  (El insrtalador funcionará correctamente tanto
+debes instalarlo.  (El instalador funcionará correctamente tanto
 para aquellos usuarios que no han utilizado el parche recomendado por
 el proyecto Fink como para aquellos que lo usaron en su momento.)
 </p><p>

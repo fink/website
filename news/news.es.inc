@@ -1,14 +1,14 @@
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20 Solución a los problemas con gcc."><span class="news-date">2004-11-20: </span><span class="news-headline">Solución a los problemas con gcc.</span></a><?php gray_line(); ?>
 <p>
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
+Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
+(tras registro gratutito) en connect.apple.com.  Este actualizador elimina
+el problema del compilador gcc3 en XCode 1.5.  Si estás usando  XCode 1.5, 
+debes instalarlo.  (El instalador funcionará correctamente tanto
+para aquellos usuarios que no han utilizado el parche recomendado por
+el proyecto Fink como para aquellos que lo usaron en su momento.)
 </p><p>
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
+Agradecemos a Apple su respuesta a nuestros informes sobre este asunto
+y el trabajo realizado para resolverlo rápidamente.
 </p>
 
 
