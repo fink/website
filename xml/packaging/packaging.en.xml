@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.22 2004/04/16 01:06:34 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.23 2004/04/16 01:42:15 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -323,6 +323,10 @@ You must not assume that
 <filename>%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
 in <filename>/sw/etc/fink.conf</filename>.
+The innermost directory is named based on the <code>Source</code>
+filename, or is the value of the <code>SourceDirectory</code> field
+(if present), or is not used if <code>NoSourceDirectory</code>
+is <code>true</code>.
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the
