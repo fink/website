@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/09/28 12:37:10 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/10/21 20:14:11 $';
 
 include "header.inc";
 ?>
@@ -22,7 +22,9 @@ New to Fink?
 These quick start instructions are here to get you up to speed with
 the binary release.
 </p>
-
+<p>
+<b>Note</b>: Currently, these instructions only apply to <b>10.1</b> users. New Jaguar users <a href="../news/jag-bootstrap.php">install here</A>. Jaguar users with previous fink installs <a href="../news/jaguar.php">upgrade here</a>.
+</p>
 <ol>
 <li><p>
 Download the installer disk image:<br>
