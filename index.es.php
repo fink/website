@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/02 23:18:06 $';
+$cvs_date = '$Date: 2004/09/03 01:22:46 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -10,7 +10,6 @@ $metatags = '<meta name="description" content="Fink, una distribución de softwa
 
 include "header.inc";
 ?>
-
 
 <p>
 El proyecto de Fink desea traer el gran mundo del software de Unix de
