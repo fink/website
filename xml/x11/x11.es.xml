@@ -1,0 +1,1415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="es">
+  <title>Ejecutando X11 en Darwin y Mac OS X</title>
+  <shorttitle>Ejecutando X11</shorttitle>
+  <cvsid>$Id: x11.es.xml,v 1.1 2004/10/25 10:15:38 michga Exp $</cvsid>
+  <preface>
+    <p>
+Este documento es sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
+Mac OS X y Darwin de Apple.
+Proporciona una introducción y una historia del desarrollo y, a partir de ahí, 
+describe el estado actual del arte y las múltiples elecciones disponibles para 
+utilizar X11 con/sin  Fink.
+</p>
+  </preface>
+  <chapter filename="intro">
+    <title>Introduction</title>
+    <shorttitle>Intro</shorttitle>
+    <section name="def-x11">
+      <title>¿Qué es X11?</title>
+      <p>
+<link url="http://www.x.org/">X Window System</link> Versión 11
+o, más brevemente, X11 es un sistema de visualización de gráficos (graphics 
+display system) con una arquitectura cliente-servidor trasparente a la red.
+Permite a la aplicaciones dibujar píxeles, líneas, texto, imágenes, etc. en
+tu pantalla.
+X11 también viene con bibliotecas adicionales que permiten a las aplicaciones 
+dibujar interfaces de usuario (botones, campos de texto y similares)
+</p>
+      <p>
+X11 es el sistema gráfico estándar de facto en el mundo Unix.
+Acompaña a Linux, a los *BSDs y a muchos sabores comerciales de Unix.
+Los entornos de escritorio CDE, KDE y GNOME se ejecutan sobre él.
+</p>
+    </section>
+    <section name="def-macosx">
+      <title>¿Qué es Mac OS X?</title>
+      <p>
+        <link url="http://www.apple.com/macosx/">Mac OS X</link> es un sistema operativo fabricado por <link url="http://www.apple.com/">Apple
+Computer</link>. Al igual que sus predecesores NeXTStep y OpenStep, está basado en BSD y por lo tanto es un miembro de la familia de sistemas operativos Unix.
+Sin embargo, viene con un sistema de visualización de gráficos propietario
+llamado Quartz y cuya apariencia es denominada Aqua, aunque los dos nombres se 
+intercambian con frecuencia.
+</p>
+    </section>
+    <section name="def-darwin">
+      <title>¿Qué es Darwin?</title>
+      <p>
+        <link url="http://OpenDarwin.org/">Darwin</link> es básicamente  una  versión reducida de  Mac OS X disponible libre de cargos y con su código fuente 
+completo. No contiene ni Quartz, ni Aqua ni ninguna otra tecnología relacionada 
+y, por defecto, sólamente ofrece una consola de texto.</p>
+    </section>
+    <section name="def-xfree86">
+      <title>¿Qué es XFree86?</title>
+      <p>
+        <link url="http://www.xfree86.org/">XFree86</link> es una implementación 
+de X11 con código libre (open source).
+Fue desarrollada inicialmente para ejecutarse en PeCés Intel x86, de ahí su 
+nombre. Actualmente se ejecuta en muchas plataformas y en muchos sistemas 
+operativos incluyend OS/2, Darwin, Mac OS X and Windows.
+</p>
+    </section>
+    <section name="def-xtools">
+      <title>¿Qué es Xtools?</title>
+      <p>
+Xtools es un producto de <link url="http://www.tenon.com/">Tenon
+Intersystems</link>.
+Es una versión de X11 para Mac OS X, basada en XFree86.
+</p>
+    </section>
+    <section name="client-server">
+      <title>Cliente y servidor</title>
+      <p>
+X11 tiene una arquitectura cliente-servidor.
+Hay un programa central que hace el dibujado real y que coordina el acceso por 
+varias aplicaciones: ese es el servidor.
+Una aplicación que nececesite dibujar usando X11 se conecta al servidor y le dice 
+qué dibujar. En el mundo X11 estas aplicaciones se llaman clientes.</p>
+      <p>
+X11 permite que servidores y clientes estén en diferentes máquinas, 
+lo que provoca a menudo confusiones terminológicas.
+En un entorno con estaciones de trabajo y servidores, puedes ejecutar el servidor 
+X11 en una estación de trabajo y las aplicaciones clientes de X11 en el servidor.
+Debe quedar claro que cuando hablamos de "servidor" nos referimos al programa 
+servidor de visualización X11, no a la máquina oculta en tu armario.
+</p>
+    </section>
+    <section name="rootless">
+      <title>¿Qué significa "rootless" (desarraigado)?</title>
+      <p>
+Un pequeño inciso:
+X11 modela la pantalla como una jerarquía de ventana contenidas unas en otras, lo 
+que se conoce como estructura de árbol. En la cima de esta jerarquía está una 
+ventana especial que tiene el tamaño de la pantalla y que contiene a todas las 
+demás ventanas. Esta ventana contiene el escritorio y se denomina "ventana raíz" 
+(root=raíz, rootless=sin raíces, desarraigado).
+</p>
+      <p>
+De vuelta al asunto:
+Como cualquier entorno gráfico, X11 fue escrito para funcionar en solitario y 
+tener control absoluto sobre la pantalla. Pero en Mac OS X, Quartz gobierna 
+siempre la pantalla y, por lo tanto, es necesario efectuar algunos ajustes para 
+que ambos entornos puedan convivir.
+</p>
+      <p>
+Un ajuste es permitir que los dos hagan turnos. Cada entorno usa una pantalla 
+completa, pero sólamente uno es visible. El usuario puede cambiar de entorno en 
+cualquier momento. Este modo se denomina de pantalla completa (full-screen) o 
+enraizado (rooted). Se le llama rooted porque hay una ventana raíz totalmente 
+normal en la pantalla de X11 que funciona como en cualquier otro sistema.
+</p>
+      <p>
+Otra posibilidad de ajuste es mezclar los dos entornos ventana a ventana. Así se 
+elimina la necesidad de cambiar de entorno (y de pantalla) continuamente. Esto 
+elimina también la ventana "raíz" de X11, porque Quartz se ocupa del escritorio.
+Como no hay ventana "raíz" (visible), este modo se llama "desarraigado" 
+(rootless). Es el modo más cómodo de utilizar X11 en Mac OS X.
+</p>
+    </section>
+    <section name="wm">
+      <title>¿Qué es un gestor de ventanas (window manager)?</title>
+      <p>
+En muchos entornos gráficos la apariencia de los marcos de las ventanas (barra de 
+títulos, botones de cierre, etc) está definida por el sistema. X11 es diferente. 
+Con X11 los marcos de las ventanas (también llamados "decoración") los provee un 
+programa separado, llamado gestor de ventanas. En muchos aspectos, el gestor de 
+ventanas es como cualquier otra aplicación cliente: arranca de la misma forma 
+y se comunica con el servidor X a través de los mismos canales
+</p>
+      <p>
+Se puede escoger entre un gran número de gestores de ventana diferentes.
+Una extensa lista se encuentra en 
+<link url="http://www.xwinman.org/">xwinman.org</link>.
+Algunos de los más populares permiten al usuario personalizar la apariencia vía los llamados <link url="http://www.themes.org/">temas</link>.
+Muchos gestores de ventana proporcionan también funcionalidades adicionales, 
+tales como menús desplegables (pop up) en la ventana raíz, muelles (docks, 
+como el de quartz) y botones lanzaderas (para abrir documentos, 
+aplicaciones o menús)
+</p>
+      <p>
+Muchos gestores de ventanas han sido empaquetado en Fink; aquí hay una<link url="http://fink.sourceforge.net/pdb/section.php/x11-wm">    
+lista actualizada.
+</link>
+      </p>
+    </section>
+    <section name="desktop">
+      <title>¿Qué son Quartz/Aqua, Gnome y KDE?</title>
+      <p>
+Son entornos de escritorio y hay muchos más. Su propósito es aportar marcos de 
+trabajo adicionales a las aplicaciones para que su apariencia y comportamiento 
+sean visualmente consistentes.Por ejemplo: 
+</p>
+      <p> Visualizador de gráficos : X11
+</p>
+      <p> Gestor de ventanas:
+<link url="http://sawmill.sourceforge.net/">sawfish</link>
+      </p>
+      <p> Escritorio: <link url="http://www.gnome.org/">Gnome</link>
+      </p>
+      <p>
+Las fronteras entre visualizador de gráficos, gestor de ventanas y escritorio son 
+borrosas porque funciones similares (y, en ocasiones, la misma) pueden estar 
+implementadas en varios de ellos. Esta es una de las razones por las que un 
+gestor de ventanas concreto puede no ser compatible con un escritorio concreto.
+
+</p>
+      <p>
+Muchas aplicaciones se desarrollan para integrase en un escritorio particular.
+Frecuentemente, instalando las bibliotecas del entorno de escritorio (y otras 
+relacionadas) una aplicación desarrollada para un escritorio concreto puede 
+trabajar con pocas o ninguna pérdida de funcionalidad.  
+Ejemplo de esto es la cada vez más numerosa 
+<link url="http://fink.sourceforge.net/pdb/section.php/gnome">
+selección de aplicaciones GNOME 
+</link>
+disponibles para ser instaladas y ejecutadas sin instalar GNOME.  
+Desafortunadamente, el mismo 
+<link url="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+progreso no ha podido ser aún hecho
+</link>
+con <link url="http://www.kde.org/">aplicaciones KDE.</link>
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="history">
+    <title>Historia</title>
+    <shorttitle>Historia</shorttitle>
+    <preface>
+      <p>[Disculpas por el lenguaje épico. No pude resistirme...]</p>
+    </preface>
+    <section name="early">
+      <title>Los primeros días de la creación</title>
+      <p>
+En el principio, era el vacío.
+Darwin vivía su infancia, Mac OS X estaba aún en desarrollo y no había 
+implementaciones de X11 para ninguno de ellos.</p>
+      <p>
+Entonces llegó John Carmack y su puerto de XFree86 para Mac OS X Server,
+el cual era el único SO de la familia Darwin disponible en esos tiempos.
+Después ese puerto (port) fue actualizado para XFree86 4.0 y Darwin 1.0 por Dave
+Zarzycki.
+Las correcciones (patches) encontraron su vía en el repositorio CVS de Darwin y 
+durmieron allí, esperando que las cosas pasaran.
+</p>
+    </section>
+    <section name="xonx-forms">
+      <title>XonX forms</title>
+      <p>
+Un buen día  Torrey T. Lyons llegó y le dio a las correcciones las atenciones que 
+estaban esperando. Finalmente, él les dio un nuevo hogar, el repositorio CVS 
+oficial de XFree86.
+Esto ocurrió durante los tiempos de la Beta Pública de Mac OS X y de Darwin 1.2.
+XFree86 4.0.2 trabajaba bien con Darwin, pero sobre Mac OS X los usuarios debían 
+abandonar  Aqua y marchar sobre la consolar para ejecutarlo.
+Entonces Torrey montó a su alrededor el <link url="http://mrcla.com/XonX/">equipo 
+XonX</link> y se dispuso a llevar XFree86 a Mac OS X.
+</p>
+      <p>
+En esos tiempos Tenon empezó a construir Xtools, usando XFree86
+4.0 como base.
+</p>
+    </section>
+    <section name="root-or-not">
+      <title>To root or not to root</title>
+      <p>
+Pronto el equipo XonX tuvo XFree86 ejecutándose en modo pantalla completa en paralelo a  Quartz y puso las implementaciones de prueba a disposición de los usuarios más avezados.
+Estas implementaciones (test releases) sedenominaban  XFree86-Aqua o XAqua para 
+abreviar. Desde que Torrey había tomado el liderato, los cambios iban 
+directamente al repositorio CVS de XFree86's, que se encaminaba directamente 
+a la versión 4.1.0.
+</p>
+      <p>
+En estos primeros etapas la interconexión con Aqua se efectuaba a través de una 
+pequeña aplicación denominada Xmaster.app (escrita en Carbon y 
+luego reescrita en  Cocoa).
+Después, el código de Xmaster se integró en el servidor X propiamente dicho, 
+dando lugar al nacimiento de XDarwin.app.
+También se añadieron en ese momento las bibliotecas compartidas (y Tenon fue 
+convencido para que usara el conjunto de correcciones oficila en lugar de los 
+suyos propios para así asegurar la compatibilidad binaria).
+Había incluso buenos progresos en el modo rootless (usando la API Carbon), pero 
+era demasiado tarde para incluirlo en XFree86 4.1.0.
+Y las correciones del modo  rootless se hicieron libres, y flotaron alrededor de 
+la red.
+Después XFree86 4.1.0 salió sólo con el modo de pantalla completa, 
+el trabajo en el modo rootless continuó, ahora usando la API Cocoa.
+Un modo rootless experimental fue incluido en el repositorio CVS de XFree86.
+</p>
+      <p>
+Mientras tanto, Apple produjo Mac OS X 10.0 y Darwin 1.3. Tenon produjo 
+Xtools 1.0 algunos semanas más tarde.
+</p>
+      <p>El desarrollo continuó integrando el modo rootless en XFree86,
+para que cuando XFree86 4.2.0 saliera en Enero del 2002, la versión 
+Darwin/Mac OS X hubiera sido completamente integrada en la 
+distribución principal de XFree86.
+</p>
+    </section>
+  </chapter>
+  <chapter filename="inst-xfree86">
+    <title>Obteniendo e instalando XFree86</title>
+    <shorttitle>Instalando XFree86</shorttitle>
+    <section name="fink">
+      <title>Instalando a través de Fink</title>
+      <p>
+Fink te permite instalar X11 como quieras 
+y además proporciona los paquetes XFree86. Si
+usas <code>fink install ...</code>, descargará el código fuente y lo compilará
+en tu ordenador. Si usas <code>apt-get install ...</code> o el "frontend"
+<code>dselect</code>, descargará e instalará paquetes binarios 
+precompilados, similares a los de la distribución oficial de XFree86.
+</p>
+      <p>
+El paquete <code>xfree86-base</code> contiene el paquete
+XFree86 4.2.1.1 (4.2.0 para los usuarios de  10.1) completo 
+excepto el servidor XDarwin.  
+El paquete <code>xfree86-rootless</code> es el servidor estándar XFree86 de la 
+versión estable 4.2.1.1. Soporta las dos operaciones (pantalla completa y 
+rootless) y tiene soporte OpenGL.  
+(En los primeros tiempos, Fink tenía también un paquete 
+<code>xfree86-server</code> que proporcionaba únicamente modo de pantalla 
+completa, pero esta ha dejado de ser una opción intereresante).
+Tienes también la opción de instalar el servidor tú mismo; mira más abajo. En ese 
+caso debes instalar sólamente <code>xfree86-base</code> o correrás el riesgo de 
+que Fink sobreescriba el servidor instalado manualmente.  Nótese que la versión 
+actual estable de <code> xfree86-base</code> (4.2.1.1-3) genera  
+<code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code> y 
+<code>xfree86-rootless-shlibs</code> durante el proceso de construcción (build 
+process).  En ese caso, se deben instalar los cuatro paquetes para obtener una 
+configuración activa de XFree86.
+</p>
+      <p>Los paquetes<code> xfree86-base-threaded</code> and 
+<code>xfree86-rootless-threaded</code> son esencialmente los mismos modificados 
+para soportar hebras (N.T.: "threading", un concepto de sistemas operativos) 
+requerido por algunas aplicaciones como <filename>xine</filename>.</p>
+      <p>XFree86 4.2.11 (sin hebras / "unthreaded") está considerado la versión básica estable para usar con Fink en Mac OS X 10.2.  
+XFree86 4.3.0 está también disponible, 
+pero está considerada más experimental, por lo que se encuentra en la 
+rama inestable. Tiene soporte de hebras ("trheading") incorporado y es
+más rápida que la versión 4.2.1.1.  
+Para instalar esta versión hay que instalar el paquete <code>xfree86</code>. 
+Obsérvese que, a artir de esta versión, ya no se separan los paquetes -base 
+y -rootless packages, y que las bibliotecas se han desplazado a  
+<code>xfree86-shlibs</code>.  Si construyes binarios desde la versión
+4.3, no funcionarán ni con la 4.2.1.1 ni con las X11 de Apple, así que ¡cuidado!.</p>
+      <p>
+        <em>Usuarios de 10.3:</em>  Necesitan instalar la versión 4.3.99.16-2 o 
+posterior, que son "prereleases" de XFree86-4.4.  Si estás trabajando 
+desde la distribución binaria, asegúrate de actualizar la descripción de los 
+paquetes (p.e. vía <code>sudo apt-get update</code>).</p>
+    </section>
+    <section name="apple-binary">
+      <title>Binarios de Apple</title>
+      <p>
+El 7 de enero del 2003 Apple publicó
+ <link url="http://www.apple.com/macosx/x11/">una implementación modificada de X11 basada en XFree86-4.2</link> que incluía renderización mediante Quartz y
+OpenGL acelerado.  El 10 de febrero del mismo año se publica una nueva versión 
+con características adicionales y corrección de errores.  Una tercera (i.e. Beta 3) sale el  17 de Marzo del 2003 con más características adicionales 
+y corrección de errores.  Esta versión es utilizable en Jaguar.
+</p>
+      <p>El 24 de octubre del 2003, Apple publicó Panther (10.3) que incluía 
+una versión de su propia distribución de X11.  Esta versión está basada en 
+XFree86-4.3.</p>
+      <p>
+Al usar los binarios de Apple, necesitas asegurarse que el paquete
+<em>X11 User</em> está instalado y debes 
+<link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">actualizar</link>
+Fink.</p>
+      <p>Bajo <code>fink-0.16.2</code> es necesario instalar el paquete 
+<em>X11 SDK</em> también.  Después de hacer esto, Fink puede crear
+un paquete virtual <code>system-xfree86</code>.</p>
+      <p>Bajo <code>fink-0.17.0</code> instalar X11 SDK solo es necesario si necesitas construir paquetes desde el código fuente.  
+En ese caso, incluso si no se posee el SDK hay paquetes virtuales
+<code>system-xfree86</code> y <code>system-xfree86-shlibs</code>, representando 
+este último a las librerías compartidas. Si instalas el SDK, existe un paquete
+<code>system-xfree86-dev</code> representando a las cabeceras.
+</p>
+      <p>
+Si tienes una distribución de XFree86 instalada, sea a través de Fink 
+o por algún otro método, debes seguir las 
+<xref chapter="inst-xfree86" section="switching-x11">instrucciones para
+reemplazar un paquete X11 por otro</xref>.  Asegúrate de eliminar todos 
+los paquetes existentes y después instala X11 de Apple (y X11 SDK, 
+si se necesita o se desea).
+</p>
+      <p>
+Algunas notas de uso del X11 de Apple:
+</p>
+      <ul>
+        <li>
+          <p>El paquete <filename>autocutsel</filename> no se usa ya. Si estás arrancando X11 con él habilitado, debes deshabilitarlo.</p>
+        </li>
+        <li>
+          <p>X11 usa tu fichero <filename>~/.xinitrc</filename> existente.  Si
+necesitas el efecto completo de la integración con Quartz, debes usar
+<filename>/usr/X11R6/bin/quartz-wm</filename>
+  como gestor de ventanas, o borrar <filename>~/.xinitrc</filename> 
+completamente.</p>
+          <p>Si necesitas integración con cortar-y-pegar, pero también usar 
+un gestor de ventanas diferente, puedes hacer como en el siguiente ejemplo: 
+</p>
+          <codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
+exec /sw/bin/fvwm2</codeblock>
+          <p>Es posible, por supuesto, llamar a cualquier otro gestor de 
+ventanas, a <code>startkde</code>, etc.</p>
+        </li>
+        <li>
+          <p>
+            <filename>quartz-wm</filename> no soporta completamente todas 
+las funcionalidades de los gestores de ventanas de Gnome/KDE, por lo que pueden
+ocurrir extraños comportamientos en ventanas que no deberían tener decoración, 
+pero a pesar de ello la tienen.</p>
+        </li>
+        <li>
+          <p>X11 de Apple no respeta las configuraciones por defecto de los 
+entornos de Fink.  
+Para arrancar aplicaciones instaladas a través de Fink 
+(p.e. gestores de ventana, sesiones de gnome, otras de 
+<filename>/sw/bin</filename>) ponga lo que sigue cerca 
+del principio de <filename>~/.xinitrc</filename> (i.e. después del 
+"<filename>#!/bin/sh</filename>" inicial pero antes de ejecutar 
+ningún programa):</p>
+          <codeblock> . /sw/bin/init.sh
+</codeblock>
+          <p>para inicializar el entorno de Fink.  
+Nota:  Se usa <filename>init.sh</filename> en lugar de 
+<filename>init.csh</filename> porque <filename>.xinitrc</filename> se ejecuta por <filename>sh</filename> y no por <filename>tcsh</filename>.</p>
+        </li>
+        <li>
+          <p>Las aplicaciones que llaman a otros programas situados en el árbol 
+de Fink para algunas de sus funciones requieren un tratamiento 
+especial cuando son invocadas desde el menú Aplicaciones.  En lugar de colocar la 
+ruta completa hasta el fichero, p.e.</p>
+          <codeblock>/sw/bin/emacs</codeblock>
+          <p>hay que usar algo como lo siguiente, si se está usando bash 
+como shell por defecto:</p>
+          <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+          <p>o, si se está usando tcsh:</p>
+          <codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+          <p>Así nos aseguramos que la aplicación tiene la información correcta
+en PATH. Se debe usar esta sintaxis para cualquier aplicación instalada vía Fink.</p>
+        </li>
+        <li>
+          <p>Si estás intentando construir un paquete a mano usando X11 de 
+Apple y obtienes un fallo como éste:</p>
+          <codeblock>ld: err.o illegal reference to symbol: _XSetIOErrorHandler 
+defined in indirectly referenced dynamic library 
+/usr/X11R6/lib/libX11.6.dylib</codeblock>
+          <p>entonces necesitas asegurarte de que <code>-lX11</code> se ha usado durante el enlazado (linking).  Comprueba las opciones de 
+ configuración de tu paquete para ver como incluir el argumento extra.</p>
+        </li>
+        <li>
+          <p>Si usas el paquete <code>xfree86</code> package, y después cambias al X11 de  Apple's X11 (en 10.2.x o en 10.3.x), cualquier paquete construido a 
+través de  <code>xfree86</code> deberá ser reconstruido, pues los binarios son incompatibles.</p>
+        </li>
+      </ul>
+    </section>
+    <section name="official-binary">
+      <title>Binarios oficiales</title>
+      <p>
+El proyecto XFree86 tiene una distribución binaria oficial de XFree86
+4.2.0, la cual puede ser actualizada a  4.2.1.1 mediante parches.
+La puedes enciontrar en tu    <link url="http://www.xfree86.org/MIRRORS.shtml">réplica de XFree86</link> 
+favorita, en el directorio <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
+Asegúrate de obtener <filename>Xprog.tgz</filename> y 
+ <filename>Xquartz.tgz</filename>
+aunque estén marcados como optativos.
+Si no estás demasiado seguro de lo que necesitas, 
+descarga el directorio completo.
+Ejecuta el script <filename>Xinstall.sh</filename> como superusuario (root) para 
+instalar el material descargado.
+(Es posible que necesites leer las
+ <link url="http://www.xfree86.org/4.2.0/Install.html">instrucciones 
+oficiales</link> antes de la instalación).   
+Si lo prefieres, puedes usar los  
+<link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">
+binarios</link> de XonX, que provienen del mismo código fuente, pero son más fáciles de usar.  En cualquier caso descarga, descomprime y ejecuta las siguientes actualizaciones:</p>
+      <ol>
+        <li>Usuarios 10.1: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>.  Usuarios 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>
+        </li>
+        <li>Usuarios de 10.1 y 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</link>
+        </li>
+      </ol>
+      <p>También hay una distribución oficial binaria de la versión 4.3.0 
+en las <link url="http://www.xfree86.org/MIRRORS.shtml">réplicas de XFree86 </link> en el directorio <code>4.3.0/binaries/Darwin-ppc-6.x</code>.
+Asegúrate de obetener <filename>Xprog.tgz</filename> y 
+ <filename>Xquartz.tgz</filename>
+aunque estén marcados como optativos.
+Si no estás demasiado seguro de lo que necesitas, 
+descarga el directorio completo.
+Ejecuta el script <filename>Xinstall.sh</filename> como superusuario (root) para 
+instalar el material descargado.
+(Es posible que necesites leer las
+ <link url="http://www.xfree86.org/4.2.0/Install.html">instrucciones 
+
+oficiales</link> antes de la instalación).</p>
+      <p>Cualquiera que sea la versión instalada, ya dispones de XFree86
+con un servidor a pantalla completa o rootless ejecutable bajo Mac OS X.
+</p>
+    </section>
+    <section name="official-source">
+      <title>Fuentes oficiales</title>
+      <p>
+Si tienes tiempo disponible, puedes construir XFree86 4.2.0 desde el código 
+fuente. Éste está disponible en tu 
+<link url="http://www.xfree86.org/MIRRORS.shtml">réplica de XFree86</link> 
+favorita, en el directorio <code>4.2.0/source</code>.
+Descarga las tres bolas tar <filename>X420src-#.tgz</filename> y expándelas
+en el mismo directorio. Puedes personalizar la construcción
+poniendo definiciones de macros en el fichero
+<filename>config/cf/host.def</filename> que está en el árbol fuente de XFree86.
+<!--
+To build on pure Darwin, create the file
+<code>config/cf/host.def</code> in the XFree86 source tree and put the
+following line in it:
+</p>
+<codeblock>#define DarwinQuartzSupport NO</codeblock>
+<p>
+You can add further defines to that file if you want; see
+-->
+Mira el fichero <filename>config/cf/darwin.cf</filename> para algunas cuestiones puntuales.
+(Nota: Sólamente las macros con #ifndef pueden ser sobrescritas en host.def.)
+</p>
+      <p>
+Cuando estés contento con la configuración, compila e instala XFree86
+con los siguientes comandos:
+</p>
+      <codeblock>make World
+sudo make install install.man</codeblock>
+      <p>Para actualizar  4.2.1.1, sigue las instrucciones en <xref section="official-binary">Binarios oficiales</xref> section.</p>
+      <p>Para instalar 4.3.0, sigue las instrucciones anteriores, 
+reemplazando "2" por "3" y no actualices a 4.2.1.1.</p>
+      <p>
+Como con los binarios oficiales, ya dispones de XFree86
+con un servidor a pantalla completa o rootless ejecutable bajo Mac OS X.
+.
+</p>
+    </section>
+    <section name="latest-cvs">
+      <title>Versión para desarrolladores: lo último</title>
+      <p>
+Si además de tiempo tienes nervios de sobra puedes obtener 
+la última versión de desarrollo de XFree86 del repositorio CVS
+público.
+Nótese que el código está en constante desarrollo. Lo que obtengas 
+hoy es normalmente distinto de lo que obtuviste ayer.</p>
+      <p>
+Para instalar, sigue las instrucciones del  
+<link url="http://www.xfree86.org/cvs/">CVS de XFree86
+</link> para descargar el módulo <filename>xc</filename>.
+Después sigue las instrucciones de compilación del código aquí debajo.
+</p>
+    </section>
+    <!--><section name="xonx-bin" >
+<title>The XonX binary test releases (XAqua,
+XDarwin)</title>
+<p>
+In the time before 4.1.0 was released, the XonX team put out a series
+of binary test releases with the name XAqua.
+These releases are obsolete and should not be used.
+</p>
+<p>
+With the introduction of rootless mode into XFree86's mainline CVS
+(after 4.1.0 was released), the XonX team once again started to
+put out binary test releases, this time under the name XDarwin.
+Este eventually resulted in the XDarwin released with 4.2.0.
+</p>
+<p>The <link url="http://www.mrcla.com/XonX/" >XonX
+web page</link> indicates that post-4.2.0 testing versions of XDarwin may
+someday be released, but none have been as yet.  They would presumably be 
+installed on top of XFree86 4.2.0 (or later).
+</p>
+</section><-->
+    <section name="macgimp">
+      <title>MacGimp</title>
+      <p>
+El instalador descargable ofrecido por el personal de MacGimp  
+durante 2001
+no contiene XFree86, pero puede sobreescribir algunas ficheros de configuración de XFree86.
+</p>
+      <p>
+El CD que <link url="http://www.macgimp.com/">MacGimp, Inc.</link>
+ofrece a la venta contiene una versión indeterminada de XFree86.
+No está claro que versión es; parece ser una mezcla de
+4.0.3, 4.1.0 y alguna versión de desarrollo no implementada.
+El servidor usa modo rootless mode, usando un parche anterior a la versión
+4.1.0.
+</p>
+    </section>
+    <!--><section name="rootless" >
+<title>Roaming Rootless Servers</title>
+<p>
+There are various rootless server binaries roaming around
+the net.  With the release of the official 4.2.0 binaries
+this should not be a desirable way to install XFree86.
+</p>
+</section><-->
+    <section name="switching-x11">
+      <title>Reemplazando X11</title>
+      <p>
+Si has  instalado alguno de los paquetes X11 de Fink y, por alguna razón 
+u otra has decidido que necesitas eliminarlo, el procedimiento a seguir 
+es simple. Tienes que forzar la eliminación de los viejos paquetes 
+y después instalar los nuevos, con el objetivo de preservar las consistencia
+de la base de datos dpkg.
+</p>
+      <p>
+Hay dos formas diferentes de hacer esto:
+</p>
+      <ol>
+        <li>
+          <p>Usar FinkCommander</p>
+          <p>
+Si usas <link url="http://finkcommander.sourceforge.net/">FinkCommander</link>, 
+puedes forzar la eliminación a través del menú. Por ejemplo, si tienes  <filename>xfree86-rootless</filename> instalado pero necesitas la versión 
+threaded, debe seleccionar los paquetes 
+<filename>xfree86-rootless</filename>,
+   <filename>xfree86-rootless-shlibs</filename>, 
+<filename>xfree86-base</filename> y
+   <filename>xfree86-base-shlibs</filename> packages y entonces ejecutar:
+  </p>
+          <codeblock>Source -&gt; Force Remove</codeblock>
+        </li>
+        <li>
+          <p>Eliminar manualmente desde la línea de comandos</p>
+          <p>
+   Para eliminar manualmente se usa <filename>dpkg</filename> con la 
+opción --force-depends, así:
+  </p>
+          <codeblock>sudo dpkg -r --force-depends xfree86-rootless\ 
+xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
+          <p>
+  Obsérvese que si tienes aplicaciones que requieren XFree86 threaded, puedes 
+tener problemas con tu base de datos dpkg si fuerzas la 
+eliminación e instalas un paquete  XFree86 diferente o un paquete fantasma representándolo.
+  </p>
+        </li>
+      </ol>
+      <p>Por otro lado, si tienes una versión de X11 no instalada desde Fink 
+necesitas eliminarla usando la línea de comandos:</p>
+      <codeblock>sudo rm -rf /usr/X11R6 /etc/X11</codeblock>
+      <p>Esto sigue siendo cierto para cualquier paquete X11 no instalado a través de Fink.  Necesitarás también eliminar <filename>XDarwin.app</filename> | 
+<code>X11.app</code>, dependiendo de cuál tengas instalado.  Asegúrate 
+de comprobar tu fichero <filename>.xinitrc</filename> si has eliminado el X11 
+de Apple para que no lance  <filename>quartz-wm</filename>.  Puedes entonces instalar cualquier variedad 
+de X11 que desees, manualmente o vía Fink.</p>
+    </section>
+    <section name="fink-summary">
+      <title>Índice de paquetes Fink</title>
+      <p>
+Un breve esquema de las opciones de instalación y de los paquetes 
+de Fink a instalar</p>
+      <itemtable labeld="Paquetes de Fink" labelt="Tipo de instalación">
+        <item>
+          <itemt>4.2.x construido vía Fink</itemt>
+          <itemd>
+            <p>
+              <code>xfree86-base</code> y <code>xfree86-rootless</code> (y sus <code>-shlibs</code>)</p>
+            <p>o <code>xfree86-base-threaded</code> y <code>xfree86-rootless-threaded</code> (y <code>-shlibs</code>)</p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>4.3.x construido via Fink</itemt>
+          <itemd>
+            <p>
+              <code>xfree86</code> y <code>xfree86-shlibs</code>
+            </p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>4.x binarios oficiales</itemt>
+          <itemd>
+            <p>
+              <code>system-xfree86</code> solo (+ paquetes asociados)</p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>4.x construidos desde fuentes o desde las últimas fuentes 
+CVS</itemt>
+          <itemd>
+            <p>
+              <code>system-xfree86</code> solo (+ paquetes asociados)</p>
+          </itemd>
+        </item>
+        <!--obsolete><item>
+<itemt>4.2.x base system built via Fink + binary rootless server</itemt>
+<itemd>
+<p>
+<code>xfree86-base</code> only</p>
+</itemd>
+</item><-->
+        <item>
+          <itemt>4.2.x de Apple</itemt>
+          <itemd>
+            <p>
+              <code>system-xfree86</code> solo (+ paquetes asociados)
+</p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>4.3.x de Apple</itemt>
+          <itemd>
+            <p>
+              <code>system-xfree86</code> solo (+ paquetes asociados)
+</p>
+          </itemd>
+        </item>
+      </itemtable>
+    </section>
+  </chapter>
+  <chapter filename="run-xfree86">
+    <title>Arrancando XFree86</title>
+    <shorttitle>Arrancando XFree86</shorttitle>
+    <section name="darwin">
+      <title>Darwin</title>
+      <p>
+En Darwin puro, XFree86 se comporta como en cualquier otro Unix.
+La forma normal de arrancar es via <code>startx</code> desde la consola;
+que arranca el servidor y algunos clientes iniciales, tales como
+el gestor de ventanas y un emulador de terminal con una shell.
+En Darwin puro no es necesario especificar parámetros, así que basta 
+con teclear:
+</p>
+      <codeblock>startx</codeblock>
+      <p>
+Se puede personalizar qué es lo que se arranca a través de varios ficheros
+en tu directorio raíz.
+<filename>.xinitrc</filename> controla qué clientes se arrancan.
+<filename>.xserverrc</filename> controla opciones de servidor, incluso 
+arrancar otro servidor.
+Si hay problemas (normalemnte, el problema es obtener una pantalla vacía o
+que XFree86 te mande de vuelta a la consola), puedes arrancar sin problemas
+moviendo estos ficheros fuera de su localización.
+Si <code>startx</code> no encuentra los ficheros, usará modo seguro de arranque, el cual debería  funcionar siempre.
+</p>
+      <p>
+Alternativamente, puedes arrancar el servidor directamente mediante alguna
+de las opciones XDMCP, como ésta:
+</p>
+      <codeblock>X -query remotehost</codeblock>
+      <p>
+Los detalles pueden obtenerse del manual de <code>Xserver</code>.
+</p>
+      <p>
+Finalmente, está la opción  <code>xdm</code>; lee su manual 
+para los detalles.
+</p>
+      <p>
+Nota: Si estás ejecutando  Mac OS X anterior a Panther, puedes teclear <code>&gt;console</code>
+en la ventana de inicio y obrtendrás una consola de texto equivalente
+a Darwin puro. Si no ves un campo donde entrar un nombre de usuario
+en la ventana de inicio, teclea la primera letra de cualquier nombre de usuario, y a continuación opción-enter.
+Puedes usar entonces todos los métodos descritos anteriormente, 
+con la excepción de <code>xdm</code>.
+</p>
+      <p>
+Nota: En Mac OS X Panther, no se puede arrancar XFree86 desde la consola 
+de inicio.
+</p>
+    </section>
+    <section name="macosx-41">
+      <title>Mac OS X + XFree86 4.x.y</title>
+      <p>
+Hay básicamente dos formas de arrancar XFree86 bajo Mac OS X.
+Una es hacer doble clic en la el icono de la aplicación XDarwin.app, situada
+en la carpeta Aplicaciones, o en el icono de un alias de esta aplicación 
+(en el dock, p.e.).  Esto te permitirá escoger entre modo de pantalla 
+completa o modo rootless en un diálogo al arrancar. Puedes deshabilitar este diálogo y poner XDarwin permanentemente en le modo de funcionamiento que prefieras en el menú de Preferencias.  
+</p>
+      <p>
+Antes de 4.2.0 arrancará en modo pantalla completa automáticamente y no hay ninguna forma de obtener el modo rootless mediante doble clic en la aplicación.the
+</p>
+      <p>
+La otra forma de arrancar XFree86 bajo Mac OS X es mediante el comando <code>startx</code> desde Terminal.app.
+Si arrancas el servidor de esta forma, puedes decirle que 
+se ejecute en paralelo con Quartz.
+Esto se hace pasándole la opción <code>-fullscreen</code> así:
+</p>
+      <codeblock>startx -- -fullscreen</codeblock>
+      <p>
+Eso arrancará el servidor en modo pantalla completa mas los 
+clientes en tu <filename>.xinitrc</filename>.  
+</p>
+      <p>
+NOTE: antes de 4.2, <code>-quartz</code> era usado para el modo 
+de pantalla completa.
+</p>
+      <p>
+Si tienes un servidor que soporta el modo rootless, puedes arrancar en ese 
+modo con la opción <code>-rootless</code>:</p>
+      <codeblock>startx -- -rootless</codeblock>
+      <p>
+La opción <code>-quartz</code> ya no selecciona el modo de pantalla completa,
+sino que usa el modo por defecto en las preferencias.
+</p>
+      <p>A partir de la versión 4.3, si usas <code>startx</code> sin argumentos, obtendrás el cuadro de diálogo de inicio.</p>
+    </section>
+    <section name="xinitrc">
+      <title>El fichero .xinitrc</title>
+      <p>
+Para arrancar algunos clientes X con el servidor X, se usa un fichero 
+de nombre  <filename>.xinitrc</filename> en el directorio 
+raíz. Puede usarse, p.e., para arrancar el gestor de ventanas y algunos
+terminales X o un entorno de escritorio GNOME.
+El fichero <filename>.xinitrc</filename> es un script de shell que contiene los comandos necesarios para ello. <em>No</em>hyace falta poner el conocido 
+<code>#!/bin/sh</code>
+en la primera línea ni poner el bit de ejecutable en los permisos;
+xinit sabe como ejecutar este fichero en una shell.
+</p>
+      <p>
+Si no hay fichero <filename>.xinitrc</filename> en tu directorio 
+raíz, XFree86 usará el fichero por defecto:
+<filename>/private/etc/X11/xinit/xinitrc</filename>.
+Es posible utilizar este como punto de partida para empezar a 
+editar tu propio .xinitrc:
+</p>
+      <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
+      <p>
+Si estás usando Fink, debes poner  source <filename>init.sh</filename> justo 
+al principio para garantizar una definición correcta de tu entorno.
+</p>
+      <p>
+Puedes poner cualquier tipo de comandos en un fichero 
+<filename>.xinitrc</filename>,
+pero hay que tener cuidado con algunos puntos.
+Primero, el shell que interpreta el fichero esperarará por defecto
+que cada programa finalice antes de empezar el siguiente. Eso significa que 
+si esperas que varios programas funcionen en paralelo, hay que avisárselo al
+shelll poniendolos "en último plano" ("background") añadiendo un 
+<code>&amp;</code> al final de la línea.
+</p>
+      <p>
+En segundo lugar, <code>xinit</code> espera que el script 
+<filename>.xinitrc</filename> termine e interpreta el final como 
+"la sesión ha terminado, ahora debo matar 
+al servidor X  también".
+Esto significa que el último comando usado en en tu fichero  <filename>.xinitrc</filename>
+no puede ser ejecutado en último plano y debe ser un programa de larga vida.
+Por eso suele usarse el gestor de ventanas para este propósito.
+De hecho, muchos gestores de ventanas asumen que <code>xinit</code> les 
+espera para terminar y usan eso para hacer funcionar el item de menú "Fin de sesión" ("Log out").
+(Nota: Para ahorrar algo de memoria y ciclos de CPU, puedes 
+pone <code>exec</code> al principio de la última línea, como en el ejemplo
+que sigue)
+</p>
+      <p>
+Un simple ejemplo que arranca GNOME:
+</p>
+      <codeblock>. /sw/bin/init.sh
+exec gnome-session</codeblock>
+      <p>Un ejemplo más complejo para usuarios de bash que apaga las alertas 
+de X11, arranca algunos clientes y finalmente ejecuta el gestor de 
+ventanas 
+Enlightenment:</p>
+      <codeblock>. /sw/bin/init.sh
+
+xset b off
+
+xclock -geometry -0+0 &amp;
+xterm &amp;
+xterm &amp;
+
+exec enlightenment</codeblock>
+      <p>Para arrancar GNOME 2.2 bajo X11 de Apple, usa la siguiente secuencia:
+</p>
+      <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</codeblock>
+      <p>Para GNOME 2.4 bajo X11 de Apple, metacity arranca automáticamente y 
+por lo tanto la secuencia se reduce a:</p>
+      <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</codeblock>
+      <p>Para arrancar KDE 3.2 (version &lt; 3.2.2-21) bajo X11 de Apple:</p>
+      <codeblock>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</codeblock>
+      <p>Y finalmente, para arrancar la última versión inestable de KDE 
+bajo X11 de Apple:</p>
+      <codeblock>. /sw/bin/init.sh
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</codeblock>
+    </section>
+  </chapter>
+  <chapter filename="xtools">
+    <title>Xtools</title>
+    <shorttitle>Xtools</shorttitle>
+    <section name="install">
+      <title>Instalando Xtools</title>
+      <p>
+Para variar, es fácil. Obtén el instalador, haz doble clic y sigue 
+las instrucciones. Asegúrate de seleccionar el volumen de arranque 
+cuando te lo pregunten.
+</p>
+      <p>
+Si estás usando Fink, debes instalar el paquete <code>system-xtools</code> 
+después de instalar Xtools.
+Este paquete no instala ficheros, 
+sólo comprueba que las bibliotecas y otros ficheros existen y 
+actua como un paquete fantasma en el sistema de  dependencias de Fink.
+</p>
+    </section>
+    <section name="run">
+      <title>Ejecutando Xtools</title>
+      <p>
+Para ejecutar Xtools, doble clic en Xtools.app en tu carpeta Aplicaciones. 
+Como XFree86, Xtools ejecutará los clientes que especifiques en tu fichero
+<filename>.xinitrc</filename>.
+Xtools permite además arrancar clientes desde el menú.
+</p>
+    </section>
+    <section name="opengl">
+      <title>Notas sobre OpenGL</title>
+      <p>
+Xtools utiliza aceleración física OpenGL en modo rootless  y viene
+con las bibliotecas para necesarias para proporcionar soporte.
+Pero, mientras la biblioteca principal es perfecta, las bibliotecas libGLU and libglut están presentes únicamente como bibliotecas
+estáticas, lo cual no es suficiente para una compatibilidad binaria 
+completa con XFree86.
+También hay cabeceras perdidas.
+Fink no puede, en este momento, ofrecer una solución. Esperamos que 
+el problema se resuelva en Xtools 1.1.
+</p>
+    </section>
+  </chapter>
+  <chapter filename="other">
+    <title>Otras posibilidades X11</title>
+    <shorttitle>Otro material</shorttitle>
+    <section name="vnc">
+      <title>VNC</title>
+      <p>
+VNC es un sistema de visualización de gráficos con capacidades de red
+similar en diseño a X11.
+Sin embargo trabaja en un nivel más bajo, lo que hace su implementación más fácil.
+Con el servidor Xvnc y un cliente Mac OS X es posible ejecutar 
+aplicacione X11 con Mac OS X.
+La página <link url="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">página 
+Xvnc</link> de Jeff Whitaker proporciona más información.
+</p>
+    </section>
+    <section name="wiredx">
+      <title>WiredX</title>
+      <p>
+        <link url="http://www.jcraft.com/wiredx/">WiredX</link> es un
+servidor X11 escrito en X11.
+También soporta modo rootless.
+En el sitio web se puede obtener un paquete instalador Installer.app.
+</p>
+    </section>
+    <section name="exodus">
+      <title>eXodus</title>
+      <p>
+De acuerdo con su sitio web, 
+<link url="http://www.powerlan-usa.com/exodus/">eXodus 8</link> 
+de Powerlan USA se ejecuta en modo nativo en Mac OS X.
+Se desconoce que código usa y cómo soporta los clientes locales.
+Debido a ésto no hay soporte especial para eXodus en Fink.
+Si tienes más información, por favor acércanosla.
+</p>
+    </section>
+  </chapter>
+  <chapter filename="trouble">
+    <title>Resolviendo problemas con XFree86</title>
+    <shorttitle>Resolviendo problemas</shorttitle>
+    <section name="immedate-quit">
+      <title>Cuando lanzo XDarwin, termina o se cuelga inmediatamente.</title>
+      <p>
+Antes de nada: ¡No te asustes!
+Hay montones de cosas que pueden no funcionar correctamente con XFree86
+y un buen número de ellas pueden causar fallos de arranque.
+De hecho, no es inusual que Darwin se cuelgue si se encuentra problemas
+de arranque. Esta sección intenta proporcionar una lista de 
+problemas posibles. Pero, lo primero es recopilar dos importantes informaciones:
+</p>
+      <p>
+        <em>Versión de XDarwin.</em>
+Puedes encontrar la versión de XDarwin version en el  Finder haciendo clic
+<em>una sóla vez</em> en el icono de XDarwin y seleccionando "Mostrar Información"
+desde el  menú.
+La versión se incrementa sólamente cuando el proyecto XonX saca una nueva implementación  binaria de prueba. Es decir "1.0a1" puede ser cualquier 
+versión entre 1.0a1 y 1.0a2.
+</p>
+      <p>
+        <em>Mensajes de error.</em>
+Son esenciales para la comprensión de los problemas a los que nos enfrentaremos. 
+Cómo obtener los mensajes de error depende de la forma en que se lance XDarwin.
+Si ejecutaste <code>startx</code> desde una ventana de Terminal, 
+tendrás los mensajes en esa ventana. Recuerda que puedes hacer "scroll" 
+hacia arriba para buscar los mensajes.
+Si arrancaste XDarwin mediante doble clic en el icono, los mensajes terminarán en 
+el log del sistema, al que se puede acceder a través de la aplicación Consola en
+la carpeta Utilidades.
+Asegúrate de coger el conjunto correcto de errores, i.e., el último.
+</p>
+      <p>
+Comencemos con una lista de mensajes posibles:
+</p>
+      <codeblock>_XSERVTransmkdir: Owner of /tmp/.X11-unix should 
+be set to root</codeblock>
+      <codeblock>_IceTransmkdir: Owner of /tmp/.ICE-unix should 
+be set to root</codeblock>
+      <p>
+Tipo: Inofensivo.
+X11 crea directorios ocultos en /tmp para almacenar los ficheros socket 
+de las conexiones locales.
+Por razones de seguridad X11 prefiere que estos directorios sean propiedad
+del superusuario (root), pero como son accesibles para escritura por cualquiera, X11 funcionará sin problemas.
+(Nota: Es muy difícil definir al superusuario como propietario de 
+estos directorios porque Mac OS X vacía /tmp en los reinicios y XDarwin 
+se ejecuta sin privilegios -que no  necesita-  de superusuario).
+</p>
+      <codeblock>QuartzAudioInit: AddIOProc returned 1852797029</codeblock>
+      <codeblock>-[NSCFArray objectAtIndex:]: index (2) beyond 
+bounds (2)</codeblock>
+      <codeblock>kCGErorIllegalArgument : CGSGetDisplayBounds 
+(display 35434400)</codeblock>
+      <codeblock>No core keyboard</codeblock>
+      <p>
+Tipo: Falso.
+Hay errores que aparecen cuando el servidor intenta restablecerse después 
+de un error previo. Se imprime una nueva copia de los mensajes
+de arranque, seguidos de uno o más de los mensajes anteriores porque el 
+reinicio del servidor no funciona en determinadas versiones de XDarwin.
+Cuando veas estos mensajes, simplemente ve más arriba en la ventana
+del Terminal (resp. Consola) y mira otro conjunto de mensajes.
+Esta situación ocurre en todas las versiones superiores o iguales a la 
+1.0a3 de XDarwin. El problema fue solucionado después de que 
+1.0a3 fuera publicada.
+</p>
+      <codeblock>cat: /Users/chrisp/.Xauthority: No such file or directory</codeblock>
+      <p>
+Tipo: Casi inofensivo.
+No se sabe de dónde vienen estos mensajes pero se sabe que no tienen 
+impacto ninguno en el desarrollo de las operaciones. Pueden eliminarse
+ejecutando <code>touch .Xauthority</code> en tu directorio raíz.
+</p>
+      <codeblock>Gdk-WARNING **: locale not supported by C library</codeblock>
+      <p>
+Tipo: Inofensivo.
+Significa justo lo que dice: el sistema locale no es osportado por la librería C, 
+pero no impide trabajar a la aplicación.
+Para más información, <xref section="locale">ver más adelante</xref>.
+</p>
+      <codeblock>Gdk-WARNING **: locale not supported by Xlib, locale set to C
+Gdk-WARNING **: can not set locale modifiers</codeblock>
+      <p>
+Tipo: Malo, pero no fatal.
+Estos mensajes pueden aparecer junto al anterior. Significa que los ficheros 
+de datos locale de XFree86 no están.
+Aparentemente este mensaje aparece de forma errática cuando se constuye 
+XFree86 compilándolo desde las fuentes.
+La mayor parte de las aplicaciones seguirán funcionando. Una excepción 
+notable es GNU Emacs.
+</p>
+      <codeblock>Unable to open keymapping file USA.keymapping.
+Reverting to kernel keymapping.</codeblock>
+      <p>
+Tipo: A manudo fatal.
+Puede suceder con XDarwin 1.0a1, con la opción de teclado "Load from file"
+habilitada.
+Esta versión necesita una ruta completa para cargar un fichero
+desde el diálogo de preferencias, pero busca automáticamente el fichero
+si se le solicita desde la línea de comandos. 
+Normalmente, a este mensaje .e sigue el "assert" que viene a continuación.
+Para evitarlo, sigue las instruciones que se dan más adelante.
+</p>
+      <codeblock>Fatal server error:
+assert failed on line 454 of darwinKeyboard.c!</codeblock>
+      <codeblock>Fatal server error:
+Could not get kernel keymapping! Load keymapping from file instead.</codeblock>
+      <p>
+Tipo: Fatal.
+Los cambios que  Apple hizo en Mac OS X 10.1 rompen el código de XFree86 
+que lee el formato de teclado desde el núcleo del sistema operativo resultando este mensaje de error.
+Debes usar la opción de keymapping "Load from file" en Mac OS X 10.1., en las preferencias de XDarwin. 
+Asegúrate que hay un fichero seleccionado, (i.e. usa el botón "Pick file") -
+activar simpelmente la caja de comprobación puede no ser suficiente en 
+algunas versiones de XDarwin.
+Si no puedes obtener el diálogo de Prefencias porque 
+XDarwin se cierra antes de darte una oportunidad, simplemente ejecútalo 
+desde el Terminal con el comando
+<code>startx -- -quartz -keymap USA.keymapping</code>.
+Esto permite normalmente que XDarwin arranque, y entonces puedes hacer 
+la elección permanente en el menú de Preferencias.
+</p>
+      <codeblock>Fatal server error:
+Could not find keymapping file .</codeblock>
+      <p>Tipo: Fatal (como se indica).  Este error se debe a la ausencia de mapas de teclado (keymapping) en Panther.  Necesitas instalar <code>xfree86-4.3.99-16</code> o posterior, porque estas versiones no necesitan esos ficheros.</p>
+      <codeblock>Warning: no access to tty (Inappropriate ioctl for device).
+Thus no job control in this shell.</codeblock>
+      <p>
+Tipo: Bastante inofensivo.
+XDarwin 1.0a2 y posteriores lanzan un shell interactivo en segundo plano para 
+ejecutar el fichero de arranque de clientes (.xinitrc).
+Esto es así para uqe no sea necesariuo añadir sentencias para establecer
+la variable PATH en tu fichero. Algunas shells indican que no están conectadas a un terminal real, pero el mensaje puede ser ignorado porque esta instancia de shell no se usa para nada que requiera el control de trabajos ni procesos similares.
+</p>
+      <codeblock>Fatal server error:
+failed to connect as window server!</codeblock>
+      <p>
+Tipo: Fatal.
+Significa que el servidor en modo consola (para Darwin puro) arrancó
+mientras se estaba en Aqua.
+Normalmente esto ocurre si se ha instalado el binario de la 
+distribución oficial de XFree86 pero no la bola tar Xquartz.tgz.
+También puede ocurrir cuando se pierden los enlaces simbólicos 
+en /usr/X11R6/bin o cuando se invoca el comando <code>XDarwin</code> 
+en una ventana de termianl para arrancar el servidor (se debe
+usar startx en lugar de ese comando, véase
+
+<xref chapter="run-xfree86">Arrancando XFree86</xref>).
+</p>
+      <p>
+En cualquier caso, puedes ejecutar <code>ls -l /usr/X11R6/bin/X*</code> 
+y comprobar la salida.
+Hay que examinar cuatro entradas relevantes:
+<code>X</code>, un enlace simbólico apuntando a  <code>XDarwinStartup</code>;
+<code>XDarwin</code>, un fichero ejecutable (esto es el servidor 
+en modo consola);
+<code>XDarwinQuartz</code>, un enlace simbólico apuntando a 
+<filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename>;
+y <code>XDarwinStartup</code>, pequeño fichero ejecutable.
+Si algunos de estos ficheros no existe o está apuntando a algún lugar
+equivocado, debes corregirlo.
+Cómo hacer esto depende del modo en que hayas instalado XFree86.
+Si lo instalaste desde Fink entonces necesitas reinstalar el paquete 
+<code>xfree86</code> (o <code>xfree86-rootless</code> para OS 10.2 y 
+anteriores).  Si lo instalaste tú mismo, obtén los ficheros desde 
+una copia Xquartz.tgz.
+</p>
+      <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
+&gt; Error:            Can't find file "unknown" for geometry include
+&gt;                   Exiting
+&gt;                   Abandoning geometry file "(null)"
+Errors from xkbcomp are not fatal to the X server</codeblock>
+      <p>
+Tipo: Casi inofensivo.
+Como el mensaje dice, no es fatal. Hasta donde sabemos. Xdarwin no utiliza 
+la extensión XKB para nada. Quizás algún cliente intenta usarla de algún modo...
+</p>
+      <codeblock>startx: Command not found.</codeblock>
+      <p>
+Tipo: Fatal.
+Ocurre con XDarwin 1.0a2 y 1.0a3 cuando los ficheros 
+de  inicialización del shell no han tienen nigún comando para añadir /usr/X11R6/bin a la variable PATH.
+Si usas Fink y no has cambiado tu shell por defecto, debería ser suficiente 
+añadir la línea <code>source /sw/bin/init.csh</code> al fichero 
+<filename>.cshrc</filename> en tu directorio de usuario.
+</p>
+      <codeblock>_XSERVTransSocketUNIXCreateListener: 
+...SocketCreateListener() failed
+_XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
+      <codeblock>Fatal server error:
+Cannot establish any listening sockets - Make sure an X server isn't already
+running</codeblock>
+      <p>
+Tipo: Fatal.
+Puede suceder si ejecutas accidentalemente varias instancias de 
+XDarwin a la vez o después de un cierre sucio (i.e. crash) de XDarwin.
+También puede ser debido a un problema de permisos de ficheros con los 
+sockets de las conexiones locale.
+Puedes intentar limpiar esto con <code>rm -rf /tmp/.X11-unix</code>.
+Reiniciar el ordenador también puede ayudar (Mac OS X
+limpia automáticamente  /tmp cuando arranca y la pila de red se reinicia).
+</p>
+      <codeblock>Xlib: connection to ":0.0" refused by server
+Xlib: Client is not authorized to connect to Server</codeblock>
+      <p>
+Tipo: Fatal.
+Los programas clientes no pueden conectarse con el servidor de visualización 
+(XDarwin) porque este usa datos falsos de autentificación. Puede ser causado 
+por algunas instalaciones de VNC,
+por ejecutar XDarwin a través sudo,
+y probablemente  por algunos otros raros accidentes.
+El método normal para arreglar esto es borrar el 
+fichero .Xauthority  (que almacena los datos de autentificación) 
+en tu directorio de usuario y re-crear un fichero vacío:
+</p>
+      <codeblock>cd
+rm .Xauthority
+touch .Xauthority</codeblock>
+      <!--
+<codeblock>more error messages still to come...</codeblock>
+-->
+      <p>
+Otra causa común de fallos en el arranque de XFree86  
+es un fichero <filename>.xinitrc</filename> incorrecto.
+El fichero <filename>.xinitrc</filename> se ejecuta y, por alguna 
+razón, termina casi inmediatamente. 
+<code>xinit</code> interpreta esto como "la sesión de usuario 
+ha terminado" y finaliza XDarwin.
+Véase la sección <xref chapter="run-xfree86" section="xinitrc">.xinitrc
+</xref> para más detalles.
+Recuerda configurar la variable PATH y tener un programa de larga 
+vida que no arranque en segundo plano.
+Es una buena idea añadir <code>exec xterm</code> como ayuda de emergencia
+cuando no se halla el gestor de ventanas o similar.
+</p>
+      <!--
+<p>
+Some common problems that lead to this:
+</p>
+<ul>
+
+<li><p>
+All apps are started in the background.
+Instead the last one must be started if the foreground (no
+<code>&amp;</code> at the end of the line), or better with
+<code>exec</code>.
+</p></li>
+
+<li><p>
+The app that should run in the foreground can't be found.
+Este can happen when you give just the name without the path
+(e.g. <code>xterm</code>), but forget to set the shell's search path
+(environment variable PATH).
+Neither /usr/X11R6/bin nor /sw/bin are in the default path.
+If you use Fink, just add an <code>source /sw/bin/init.sh</code> to
+the start of the <code>.xinitrc</code>.
+To set the path manually, use this piece:
+</p>
+<codeblock>PATH=$PATH:/usr/X11R6/bin
+export PATH</codeblock>
+</li>
+
+<li><p>
+The app that should run in the foreground doesn't start or quits
+immediately for some other reason.
+There are many possibilities here, like missing libraries or missing
+configuration files.
+WindowMaker for instance requires that you run
+<code>wmaker.inst</code> once before using it.
+A good troubleshooting tactic in this situation is to replace the
+forground app with <code>xterm</code> and launch it manually from the
+xterm that comes up.
+Este way you can see diagnostic messages.
+</p></li>
+
+</ul>
+<p>
+Of course, there's always the last reason: a bug in XDarwin.
+But most of the time, it really boils down to one of the above, even
+when XDarwin crashes after some seconds.
+</p>
+-->
+    </section>
+    <section name="black">
+      <title>Iconos negros en el panel GNOME panel o en el menú de una aplicación GNOME</title>
+      <p>
+Un problema común es que los iconos u otras imágenes se ven como rectángulos 
+o siluetas negras. En último extremo, esto está provocado por limitaciones 
+del núcleo del sistema operativo. Apple ha sido informada del problema, pero 
+por lo visto hasta ahora no parece que quiera arreglarlo. Véanse los
+archivos del 
+<link url="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
+bug report</link> para más detalles.
+</p>
+      <p>
+La situación actual es que la extensión MIT-SHM del protocolo 
+X11 es prácticamente inutilizable en Darwin y en Mac OS X.
+Hay dos formas de anular este protocolo: en el servidor y en los clientes.
+Los  servidores XFree86 instalados por Fink (i.e. los paquetes xfree86-server and
+xfree86-rootless) lo tienen apagado.
+El GIMP y el panel GNOME panel también.
+Si notas iconos negros en otra aplicación, arranca con la opción 
+<code>--no-xshm</code> en la línea de comandos.
+</p>
+    </section>
+    <section name="keyboard">
+      <title>El teclado no funciona en XFree86</title>
+      <p>
+Un problema conocido que sólamente afecta a los portátiles
+(PowerBook, iBook).
+La opción de mapa de teclado "Load from file" en las preferencias de XDarwin se implementó para trabajar con este problema.
+Ahora se ha convertido en el método por defecto porque el método antiguo
+(leer el mapa desde el núcleo) dejó de funcionar con  Mac OS X 10.1.
+Si no tienes habilitada esta opción, puedes hacerlo en el diálogo de Preferencias de XDarwin. Comprueba la caja de comprobación de 
+"Load from file" y selecciona el fichero de teclado a cargar.
+Tras reiniciar XDarwin, el teclado debería funcionar (véase abajo).
+</p>
+      <p>
+Si estás arrancando XFree86 desde la línea de comandos, puedes pasarle
+el nombre del fichero de teclado como una opción, así:
+</p>
+      <codeblock>startx -- -quartz -keymap USA.keymapping</codeblock>
+    </section>
+    <section name="delete-key">
+      <title>La tecla de borrar no funciona</title>
+      <p>
+Ocurre cuando usas la opción "Load keymapping from file" 
+descrita anteriormente.
+El fichero de mapeo describe la tecla de borrar como "Delete", no como
+"Backspace".
+Se puede corregir poniendo la siguiente línea en tu fichero .xinitrc
+file:
+</p>
+      <codeblock>xmodmap -e "keycode 59 = BackSpace"</codeblock>
+      <p>
+XDarwin 1.0a2 y posteriores poseen el código necesario para mapear la 
+tecla de borrar adecuadamente.
+</p>
+    </section>
+    <section name="locale">
+      <title>"Warning: locale not supported by C library"</title>
+      <p>
+Mensajes comunes, pero inofensivos. Significan lo que dicen: 
+la internacionalización no está soportada a través de las 
+librerías C estándares, el progrma usará los mensajes en inglés
+por defecto, formatos de fecha y así sucesivamente...
+Hay varias formas de comportarse con respecto a ésto:
+</p>
+      <ul>
+        <li>
+          <p>
+Ignorar los mensajes.
+</p>
+        </li>
+        <li>
+          <p>
+Evitar los mensales eliminando la variable de entorno LANG.
+Nótese que esto eliminará la internacionalización de los programas que
+realmente la soportan (vía gettext/libintl).
+Ejemplo para .xinitrc:
+</p>
+          <codeblock>unset LANG</codeblock>
+          <p>
+Ejemplo para .cshrc:
+</p>
+          <codeblock>unsetenv LANG</codeblock>
+        </li>
+        <li>
+          <p>
+(Sólo 10.1) Usa el paquete de Fink <code>libxpg4</code>.
+Construye una pequeña biblioteca que contiene únicamente funciones locale
+operativas y está preparada para cargarse antes de las variables 
+del sistema (usando la variable de entorno
+DYLD_INSERT_LIBRARIES).
+Debes tener una variable de entorno totalmente cualificada, e.g.
+ <code>de_DE.ISO_8859-1</code> en vez <code>de</code>
+o <code>de_DE</code>.
+</p>
+        </li>
+        <li>
+          <p>
+Pídele a Apple que incluya soporte real para locale en las futuras versines de 
+Mac OS X.
+</p>
+        </li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="tips">
+    <title>Consejos de uso</title>
+    <shorttitle>Consejos</shorttitle>
+    <section name="terminal-app">
+      <title>Arrancar aplicaciones X11 desde Terminal.app</title>
+      <p>
+Para lanzar aplicaciones X11 desde una ventana del  Terminal.app window, debes 
+inicializar la variable de entorno "DISPLAY".
+Este variable le dice a las aplicaciones donde encontrar 
+el servidor de ventanas X11.
+Si XDarwin se ejecuta en la misma máquina que el servidor, puedes hacerlo de las maneras siguientes:
+</p>
+      <ul>
+        <li><p>Usuarios tcsh:</p>
+      <codeblock>setenv DISPLAY :0.0</codeblock>
+</li>
+        <li><p>Usuarios bash:</p>
+<codeblock>export DISPLAY=":0.0"</codeblock>
+</li>
+      </ul>
+      <p>
+Es interesante tener una configuración que lance XDarwin.app en el arranque 
+(configurable en el panel de Arranque de las Preferencias del Sistema
+en Mac OS 10.2, o en el panel Cuentas en Mac OS 10.3):
+</p>
+      <ul>
+        <li><p>Los usuarios tcshañadirán a su fichero .cshrc:</p>
+      <codeblock>if (! $?DISPLAY) then
+  setenv DISPLAY :0.0
+endif</codeblock>
+</li>
+        <li><p>Los usuarios de bash añadirán esta línea 
+en su fichero .bashrc:</p>
+<codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
+</li>
+      </ul>
+      <p>
+Esto inicia  DISPLAY automáticamente en cada shell, pero no sobreescribe el valor actual cuando DISPLAY ha sido inicializado previamente.
+De esa manera, se puede seguir ejecutando aplicaciones X11 a distancia mediante ssh o por un túnel X11.
+</p>
+    </section>
+    <section name="open">
+      <title>Lanzando aplicaciones Aqua desde un xterm</title>
+      <p>
+Una manera de lanzar aplicaciones Aqua desde un xterm (realmente, 
+desde cualquier shell) es el comando <code>open</code>.
+Algunos ejemplos:
+</p>
+      <codeblock>open /Applications/TextEdit.app
+open SomeDocument.rtf
+open -a /Applications/TextEdit.app index.html</codeblock>
+      <p>
+El segundo ejemplo abre el documento en la aplicación que está asociada con él.
+El tercer ejemplo proporciona explícitamente la aplicación a utilizar.
+</p>
+    </section>
+    <section name="copy-n-paste">
+      <title>Copiar y Pegar</title>
+      <p>
+Copiar y Pegar funciona generalmente entre los entornos Aqua y X11, pero hay algunos errores. 
+Emacs es especialemente delicado con la selección en curso.
+Copiar y Pegar desde Classic a X11 no funciona.
+</p>
+      <p>
+Lo importante es utilizar el método adecuado según el entorno en el que estemos.
+Para transferir texto desde Aqua a X11, usa Cmd-C en Aqua, luego pasa la 
+ventana de destino al frente y usa el botón central del ratón, 
+i.e. opción-clic en un ratón de un sólo botón (puede ser configurado 
+en las Preferencias de XDarwin), para pegar.
+Para transferir texto desde X11 a Aqua, simplemente selecciona el texto 
+con el ratón en X11 y usa Cmd-V en Aqua para pegarlo.
+</p>
+      <p>
+El sistema X11 tiene realmente portapaeles separados (llamados 
+"buffers de corte" en lenguaje X11) y algunas aplicaciones tienen puntos de vista
+curiosos sobre cuáles deben usar. Por eso, la combinación de 
+GNU Emacs or XEmacs algunas veces no funcion.
+El programa <code>autocutsel</code> puede ayudar aquí: sincroniza automáticamente los dos buffers de corte principales.
+Para ejecutarlo instala el paquete de Fink autocutsel y añade 
+la siguiente línea a tu fichero .xinitrc:
+</p>
+      <codeblock>autocutsel &amp;</codeblock>
+      <p>
+(Asegúrate de añadirla  <em>antes</em> de la línea que invoca al 
+gestor de ventanas, ¡esa nunca termina de ejecutarse! 
+No pongas la línea al final o nunca se ejecutará) 
+Y recuerda que en el X11 de Apple ya no es necesario (véase <xref chapter="inst-xfree86" section="apple-binary">Binarios de Apple</xref>).
+</p>
+      <p>Si estás usando X11 de Apple, entonces puedes usar 
+Comando-C o Edit-&gt;Copy, como en las aplicaciones Mac, para copiar texto en el 
+portapapeles, y el botón central o Comando-V para pegar desde le portapapeles 
+al X11 de Apple.</p>
+      <p>En cualquier caso, si encuentras problemas copiando o pegando desde
+Aqua a X11 o viceversa, intenta en primer lugar copiar de nuevo, (puede 
+ocurrir que la copia no se hubiera efectuado en el primer intento), y utilizar aplicaciones intermedias tales como TextEdit o Terminal.app en el lado Aqua y 
+nedit o un xterm en el lado X11. Según mi experiencia, siempre hay una solución.</p>
+    </section>
+  </chapter>
+</document>
