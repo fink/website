@@ -1,9 +1,9 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2002/11/24 12:36:57';
 
-$metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="prev" href="packages.php" title="Installing Packages">';
+$metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="conf.php" title="The Fink Configuration File"><link rel="prev" href="packages.php" title="Installing Packages">';
 
 include "header.inc";
 ?>
@@ -96,7 +96,8 @@ packages.
 </p>
 
 
-
+<p align="right">
+Next: <a href="conf.php">5 The Fink Configuration File</a></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2002/11/24 12:36:57';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -168,7 +168,7 @@ To install a package, you just give apt-get the name, like this:
 </p>
 <pre>sudo apt-get install lynx</pre>
 <p>
-If apt-get determines that the packages requires other pckages to be
+If apt-get determines that the packages requires other packages to be
 installed, it will show you the list and ask for confirmation.
 It then downloads and installs the requested packages.
 Removing packages is just as easy:

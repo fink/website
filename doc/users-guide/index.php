@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2002/11/24 12:36:57';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -56,7 +56,17 @@ apt-get</a></li>
 <li><a href="upgrade.php#src">4.2 Upgrading the Source Distribution</a></li>
 <li><a href="upgrade.php#mix">4.3 Mixing Binaries and Source</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.11 2002/04/14 23:10:35 fingolfin Exp $</i></p>
+<li><a href="conf.php"><b>5 The Fink Configuration File</b></a></li>
+<ul>
+<li><a href="conf.php#about">5.1 About fink.conf</a></li>
+<li><a href="conf.php#syntax">5.2 fink.conf syntax</a></li>
+<li><a href="conf.php#required">5.3 Required Settings</a></li>
+<li><a href="conf.php#optional">5.4 Optional User Settings</a></li>
+<li><a href="conf.php#downloding">5.5 Download Settings</a></li>
+<li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
+<li><a href="conf.php#developer">5.7 Developer Settings</a></li>
+</ul>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.12 2002/11/24 12:36:57 finlayd Exp $</i></p>
 
 
 <?
