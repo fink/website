@@ -1,7 +1,7 @@
 <?
-$title = "Package database - Section ";
+$title = "Package Database - Section ";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/13 20:26:30 $';
+$cvs_date = '$Date: 2001/07/20 17:42:30 $';
 
 $uses_pathinfo = 1;
 
@@ -30,14 +30,18 @@ if ($section == "-") {
 <ul>
 <?
 
-$q = "SELECT DISTINCT name FROM package WHERE section='$section' ORDER BY name ASC";
+$q = "SELECT name,descshort FROM package ".
+     "WHERE section='$section' AND flag=1 ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if ($rs) {
   while ($row = mysql_fetch_array($rs)) {
-    print '<li><a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a></li>'."\n";
+    $desc = " - ".$row[descshort];
+    if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
+      $desc = "";
+    print '<li><a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a>'.$desc."</li>\n";
   }
 } else {
-  print '<li><b>error during query</b></li>';
+  print '<li><b>error during query:</b> '.mysql_error().'</li>';
 }
 
 ?>

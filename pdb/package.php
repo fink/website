@@ -1,7 +1,7 @@
 <?
-$title = "Package database - Package ";
+$title = "Package Database - Package ";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/13 20:26:30 $';
+$cvs_date = '$Date: 2001/07/20 17:42:30 $';
 
 $uses_pathinfo = 1;
 
@@ -27,10 +27,10 @@ if ($package == "-") {
 
 <?
 
-$q = "SELECT * FROM package WHERE name='$package'";
+$q = "SELECT * FROM package WHERE name='$package' ORDER BY flag DESC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
-  print '<p><b>error during query</b></p>';
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
   $firstrow = $row = mysql_fetch_array($rs);
   $rmap = array();

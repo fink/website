@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.23 2001/07/19 12:52:44 chrisp Exp $ */
+/* $Id: header.inc,v 1.24 2001/07/20 17:42:30 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -7,6 +7,7 @@ $pages_main = array(
   "download.php", "Download", 0,
   "faq/index.php", "F.A.Q.", 0,
   "doc/index.php", "Documentation", 0,
+  "pdb/index.php", "Packages", 0,
   "people.php", "Contributors", 0,
   "links.php", "Links", 0
 );
@@ -91,8 +92,10 @@ href="<? print $root ?>index.php"><img src="<? print $root
 alt="Download" /></a><a href="<? print $root
 ?>faq/index.php"><img src="<? print $root ?>img/menu-faq.gif"
 width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root ?>doc/index.php"><img
-src="<? print $root ?>img/menu-docs.gif" width="44" height="22"
-border="0" alt="Docs" /></a></td>
+src="<? print $root ?>img/menu-docu.gif" width="110" height="22"
+border="0" alt="Documentation" /></a><a href="<? print $root ?>pdb/index.php"><img
+src="<? print $root ?>img/menu-packages.gif" width="70" height="22"
+border="0" alt="Packages" /></a></td>
 
 <td align="right" background="<? print $root ?>img/menu-back.gif"><img src="<? print $root ?>img/menu-back.gif"
 width="160" height="22" border="0" alt="" /></td>

@@ -1,7 +1,7 @@
 <?
-$title = "Package database";
+$title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/13 20:26:30 $';
+$cvs_date = '$Date: 2001/07/20 17:42:30 $';
 
 include "header.inc";
 
@@ -13,10 +13,17 @@ mysql_select_db($db_name, $dbh);
 
 <h1>Package Database</h1>
 
-<p><a href="list.php">Flat list of all packages</a></p>
+<p>
+This database lists all available Fink packages.
+It knows about the "stable" tree of the latest release and
+about all packages in CVS ("current-stable" and "current-unstable").
+Note that some packages are only available in the "unstable" tree.
+</p>
 
-<p>Browse by section:</p>
-
+<p>
+You can browse the <a href="list.php">complete list of packages</a>,
+or you can browse by section:
+</p>
 <ul>
 <?
 
@@ -27,7 +34,7 @@ if ($rs) {
     print '<li><a href="section.php/'.$row[section].'">'.$row[section].'</a></li>'."\n";
   }
 } else {
-  print '<li><b>error during query</b></li>';
+  print '<li><b>error during query:</b> '.mysql_error().'</li>';
 }
 
 ?>
