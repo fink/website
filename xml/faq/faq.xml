@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.108 2003/05/07 01:57:29 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.109 2003/05/08 01:37:40 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1290,7 +1290,7 @@ sort this out.
 </question>
 <answer>
 <p>
-You are missing a file that is supposed to be installed by <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink reinstall xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p>
+You are missing a file that is supposed to be installed by <code>xfree86-base-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> for binaries.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x-bugs" >

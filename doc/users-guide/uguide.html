@@ -288,17 +288,18 @@ In any case what will happen is that <tt style="white-space: nowrap;">~/.tcshrc<
 <tt style="white-space: nowrap;">~/.cshrc</tt> is ignored.
 The recommended procedure is to edit <tt style="white-space: nowrap;">~/.tcshrc</tt> in a similar 
 manner to how you edited
-<tt style="white-space: nowrap;">~/.cshrc</tt> above, and add the following line at the end 
-(replace 
-&quot;/Users/you&quot; with your actual home
-directory):</p>
-<pre>source /Users/you/.cshrc</pre>
+<tt style="white-space: nowrap;">~/.cshrc</tt> above, and add the following line at the end:</p>
+<pre>source ~/.cshrc</pre>
 <p>That way, if you ever need to remove <tt style="white-space: nowrap;">~/.tcshrc</tt>, you will be able to run Fink.</p></li>
 
 <li><p>You followed the instructions under <tt style="white-space: nowrap;">/usr/share/tcsh/examples/README</tt>.</p>
-<p>These instructions tell you to create a <tt style="white-space: nowrap;">~/.tcshrc</tt> and a<tt style="white-space: nowrap;"> ~/.login</tt> .  The problem in this case is with <tt style="white-space: nowrap;">~/.login</tt>, which gets run after <tt style="white-space: nowrap;">~/.tcshrc</tt>, and sources <tt style="white-space: nowrap;">/usr/share/tcsh/examples/login</tt>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is modify <tt style="white-space: nowrap;">~/Library/init/tcsh/path</tt> (create it if necessary), and add (once again, replace &quot;/Users/you&quot; with your actual home directory):</p> 
-<pre>source /Users/you/.cshrc</pre>
-<p>to it.</p></li>
+<p>These instructions tell you to create a <tt style="white-space: nowrap;">~/.tcshrc</tt> and a<tt style="white-space: nowrap;"> ~/.login</tt> .  The problem in this case is with <tt style="white-space: nowrap;">~/.login</tt>, which gets run after <tt style="white-space: nowrap;">~/.tcshrc</tt>, and sources <tt style="white-space: nowrap;">/usr/share/tcsh/examples/login</tt>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <tt style="white-space: nowrap;">~/Library/init/tcsh/path</tt>:</p> 
+<pre>mkdir ~/Library/init
+mkdir ~/Library/init/tcsh
+pico ~/library/init/tcsh/path</pre>
+<p>and put:</p> 
+<pre>source ~/.cshrc</pre>
+<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <tt style="white-space: nowrap;">~/.login</tt> doesn't get read.</p></li>
 </ol>
 <p>
 Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
@@ -1159,4 +1160,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: uguide.xml,v 1.21 2003/04/16 01:57:24 dmrrsn Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: uguide.xml,v 1.22 2003/05/08 01:37:40 alexkhansen Exp $</i></p></body></html>

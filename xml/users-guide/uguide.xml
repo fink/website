@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.21 2003/04/16 01:57:24 dmrrsn Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.22 2003/05/08 01:37:40 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -295,17 +295,18 @@ In any case what will happen is that <code>~/.tcshrc</code> gets read and
 <code>~/.cshrc</code> is ignored.
 The recommended procedure is to edit <code>~/.tcshrc</code> in a similar 
 manner to how you edited
-<code>~/.cshrc</code> above, and add the following line at the end 
-(replace 
-"/Users/you" with your actual home
-directory):</p>
-<codeblock>source /Users/you/.cshrc</codeblock>
+<code>~/.cshrc</code> above, and add the following line at the end:</p>
+<codeblock>source ~/.cshrc</codeblock>
 <p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p></li>
 
 <li><p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
-<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is modify <code>~/Library/init/tcsh/path</code> (create it if necessary), and add (once again, replace "/Users/you" with your actual home directory):</p> 
-<codeblock>source /Users/you/.cshrc</codeblock>
-<p>to it.</p></li>
+<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p> 
+<codeblock>mkdir ~/Library/init
+mkdir ~/Library/init/tcsh
+pico ~/library/init/tcsh/path</codeblock>
+<p>and put:</p> 
+<codeblock>source ~/.cshrc</codeblock>
+<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p></li>
 </ol>
 <p>
 Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal

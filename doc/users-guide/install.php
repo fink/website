@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/04/16 01:57:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/05/08 01:37:40';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -151,17 +151,18 @@ In any case what will happen is that <code>~/.tcshrc</code> gets read and
 <code>~/.cshrc</code> is ignored.
 The recommended procedure is to edit <code>~/.tcshrc</code> in a similar 
 manner to how you edited
-<code>~/.cshrc</code> above, and add the following line at the end 
-(replace 
-&quot;/Users/you&quot; with your actual home
-directory):</p>
-<pre>source /Users/you/.cshrc</pre>
+<code>~/.cshrc</code> above, and add the following line at the end:</p>
+<pre>source ~/.cshrc</pre>
 <p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p></li>
 
 <li><p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
-<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is modify <code>~/Library/init/tcsh/path</code> (create it if necessary), and add (once again, replace &quot;/Users/you&quot; with your actual home directory):</p> 
-<pre>source /Users/you/.cshrc</pre>
-<p>to it.</p></li>
+<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p> 
+<pre>mkdir ~/Library/init
+mkdir ~/Library/init/tcsh
+pico ~/library/init/tcsh/path</pre>
+<p>and put:</p> 
+<pre>source ~/.cshrc</pre>
+<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p></li>
 </ol>
 <p>
 Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
