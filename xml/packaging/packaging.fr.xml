@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.38 2004/07/21 06:30:41 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.39 2004/07/21 18:40:51 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1134,9 +1134,6 @@ Indiquez juste la liste des fichiers à renommer dans ce champ. Vous pouvez util
 </p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
-<p>
-<em>Note :</em> ce champ est implémenté via une fonctionnalité spéciale de l'outil BSD tar. L'outil GNU tar ne gère pas cette fonctionnalité. Fink utilise GNU tar par défaut (car certaines archives tar ne peuvent être décompressées que par GNU tar) ; mais quand un paquet utilise TarFilesRename, Fink utilise BSD tar en invoquant directement <filename>/usr/bin/tar</filename>.
-</p>
 </itemd></item>
 
 <item><itemt>Tar<em>N</em>FilesRename</itemt>

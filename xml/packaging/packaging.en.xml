@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.41 2004/07/21 06:50:21 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.42 2004/07/21 18:40:51 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1813,13 +1813,6 @@ Example:
 </p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
-<p>
-<em>Note:</em> This field is implemented by means of a special feature of
-BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
-(since there are tarballs which can only be expanded by GNU tar), but whenever
-a package uses TarFilesRename, Fink will use BSD tar by directly invoking
-<filename>/usr/bin/tar</filename>.
-</p>
 </itemd></item>
 
 <item><itemt>Tar<em>N</em>FilesRename</itemt>
