@@ -72,6 +72,7 @@ $phpLang_languages = array(
 );
 
 // finds current file name, extension and uri
+if ($SCRIPT_NAME == '') $SCRIPT_NAME = getenv('SCRIPT_NAME');
 if(ereg("([^/?]+)(\?.*)?$", $SCRIPT_NAME, $regs)) {
 	define('phpLang_currentFile', $regs[1]);
 	if(ereg("(.*)(\.[^.]+)$", phpLang_currentFile, $regs2)) {
@@ -202,6 +203,7 @@ function AddFlags($between = "", $showCurrent = false)
 			$temp = $between;
 		}
 	}
+	echo('Avaiable Languages: | ');
 }
 
 if(phpLang_current != '') {
