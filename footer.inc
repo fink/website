@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.11 2002/04/19 13:07:41 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.12 2002/05/28 18:56:17 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -40,7 +40,7 @@ if ($dyndate == 1) {
 }
 if ($date)
   print strftime("%a, %b %d %Y", $date);
-?></dvi>
+?></div>
 </td></tr>
 <tr><td height="7" class="layout">
  <img src="<? print $root ?>img/shim.gif" width="1" height="7" border="0" alt="">
