@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rss091="http://purl.org/rss/1.0/modules/rss091#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/">
+  <channel rdf:about="http://fink.sourceforge.net/news/">
+    <title>Fink Project News</title>
+    <link>http://fink.sourceforge.net/news/</link>
+    <description>Fink Project News</description>
+    <lastBuildDate>&#26085;, 07 11 2004 21:28:59 JST</lastBuildDate>
+    <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
+  </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.">
+    <title>Resolución de problemas con gcc.</title>
+    <link>http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.</link>
+    <dc:date>2004-10-15</dc:date>
+    <description>
+      
+Se sabe que la versión de gcc incluída en XCode 1.5 produce 
+salidas incorrectas desde código c++ bajo determinadas circunstancias.
+Fink tiene ahora un mecanismo para avisar al usuario de esto. Además, 
+Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
+de los cuales se sepa que tienen este problema.
+      
+Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
+ aquí .
+
+       Si no te has actualizado aún, nuestro consejo es que 
+consideres no hacerlo y quedarte con  XCode versión 1.2 
+hasta que el problema sea resuelto.
+
+    </description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20liberado.">
+    <title>Fink 0.7.1 liberado.</title>
+    <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20liberado.</link>
+    <dc:date>2004-09-20</dc:date>
+    <description>
+
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+
+
+
+Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+
+
+
+Para realizar una primera instalación de Fink, hay que seguir los consejos de esta página. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En esta página encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+
+
+
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras aquí.
+
+
+
+Asegúrate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* 
+
+	
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
+También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+
+
+</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Problemas%20con%20XCode%201.5">
+    <title>Problemas con XCode 1.5</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-23%20Problemas%20con%20XCode%201.5</link>
+    <dc:date>2004-08-23</dc:date>
+    <description>
+	
+	Recientemente han habido reportes de varios paquetes del Fink que no
+	 compilan correctamente usando Xcode 1.5. Si aún no han actualizado a
+	  XCode 1.5, se sugiere que se espere a la solución de este problema 
+	  antes de hacerlo.
+	
+	Si has tenido problemas con algún paquete que compilaba correctamente
+	 con XCode 1.2 pero que compila incorrectamente con XCode 1.5, favor 
+	 de reportarlo a la lista de correo fink-devel. (El síntoma usual es:
+	 some symbols are  missing after compiling with g++.)  
+	Algunos paquetes que se sabe tiene este problema son octave, 
+	singular-factory, singular-libfac, y posbilemente sdl.	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20en%20fink-0.22.0">
+    <title>Error en fink-0.22.0</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-21%20Error%20en%20fink-0.22.0</link>
+    <dc:date>2004-08-21</dc:date>
+    <description>
+	
+	El manejador de paquetes del fink-0.22.0, el cual estuvo brevemente
+	disponible en el árbol inestable la semana pasada, tiene un bug el 
+	cual previene cualquier actualización via rsync. Si instalaste esta
+	versión de fink, te puedes recuperar ejecutando el comando 
+	fink install fink-0.21.2-1 el cual ejecutará el downgrade
+	de fink a la versión del árbol estable, subsecuentemente debes 
+	ejecutar:
+		fink selfupdate
+	
+	Si por alguna razón estos comandos no funcionan, vaya a
+		 la página de la liberación del archivo fink en el 
+		sourceforge y descarge el archivo
+		fink-0.22.1.tar.gz . Desempaque este archivo con	tar xfz fink-0.22.1.tar.gz , y desde dentro del directorio
+	fink-0.22.1 directory, ejecute el comando ./inject.pl
+	
+	
+	El equipo de Fink se disculpa por el error y agradece a la comunidad 
+	de usuarios por llamar nuestra atención rápidamente.
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Mejorando%20nuestros%20espejos.%20%BFPuedes%20ayudarnos%3F">
+    <title>Mejorando nuestros espejos. ¿Puedes ayudarnos?</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-01%20Mejorando%20nuestros%20espejos.%20%BFPuedes%20ayudarnos%3F</link>
+    <dc:date>2004-08-01</dc:date>
+    <description>
+	
+	La desición de Fink de incrementar gradualmente nuestra red de espejos
+	a pagado con creces. Para asegurarnos de seguir ofreciendo un
+	servicio de alta calidad, necesitamod mejorar nuestra red de espejos.
+	Ya ha pasado bastante tiempo desde la última vez que solicitamos más
+	espejos. Así que, es momento de hacerlo de nuevo.  Fink esta muy
+	agradecido por los recursos concedidos por nuestra comunidad. Para
+	mejorar nuestro servicio a la comunidad requerimos un aún mejor
+	sistema de espejos. En particular, carecemos de espejos en Europa
+	Central, Rusia y el Lejano Oriente. Sí sientes que tienes 2 Mbit para
+	compartir con un espejo de rsync, o aún más para ofrecer un espejo de
+	distfiles, por favor  contactanos.
+	
+	
+	 Para obtener un mejor conocimiento de los diferentes tipos de espejos
+	 que Fink ofrece, por favor revisa este sitio: 
+	 finkmirrors.net. 
+	 Este es el sitio oficial de todos los asuntos relacionados con los
+	 espejos. Si crees que puedes ofrecer otro tipo de recursos, por ejemplo, un espacio web para pruebas, no dudes en contactarnos .
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20y%200.7.0%20liberados.">
+    <title>Fink 0.6.3 y 0.7.0 liberados.</title>
+    <link>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20y%200.7.0%20liberados.</link>
+    <dc:date>2004-04-06</dc:date>
+    <description>
+	
+Las versiones más recientes de Fink, versión 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
+ya esta disponible como código fuente y como binario. El versión 0.6.3 esta construida para 10.2, mientras que la 0.7.0 ha sido creada para 10.3. Esta estrategia facilitará el soporte de diferentes plataformas.
+	
+	
+Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problemáticos para los usuarios del 10.3 han sido reconstruidos.
+	
+	
+Para completar una nueva instalación de Fink se deben seguir las instrucciones que están  
+aquí.
+También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  aquí.
+
+Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra aquí.
+		
+		
+Asegurense de escoger el instalador adecuado para su plataforma.
+Fink 0.6.3 solo se instalará en Mac OS X 10.2.* mientras que Fink 0.7.0 sólo se instalará en Mac OS X 10.3.* 
+		
+	
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
+También agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+
+
+
+</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-19%20Ondea%20tu%20bandera.">
+    <title>Ondea tu bandera.</title>
+    <link>http://fink.sourceforge.net/news/#2004-02-19%20Ondea%20tu%20bandera.</link>
+    <dc:date>2004-02-19</dc:date>
+    <description>
+	
+Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalización.
+La infraestructura mejorada nos permite desplegar un sitio web multilenguaje a nuestros visitantes de todo el mundo.
+
+Esto también significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elección. Una traducción al japonés esta en proceso al igual que una al francés, lidereada por Michele Garoche.
+¿A qué idioma estas dispuesto a traducir?
+
+
+Si estas dispuesto a convertirte en un miembro de algún equipo de internacionalización o si deseas proporcionar alguna retroalimentación del sitio web, sientete libre de unirte a la nueva lista de correo. 
+Puedes hacerlo visitando la  página de las listas de correo. El anuncio completo de las listas de correo existentes puede leerse aquí.
+
+</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-02%20La%20actualizaci%F3n%20de%20Java%201.4.2%20elimina%20el%20Java%20SDK">
+    <title>La actualización de Java 1.4.2 elimina el Java SDK</title>
+    <link>http://fink.sourceforge.net/news/#2004-02-02%20La%20actualizaci%F3n%20de%20Java%201.4.2%20elimina%20el%20Java%20SDK</link>
+    <dc:date>2004-02-02</dc:date>
+    <description>
+	
+Si tenás instalados Java 1.4.1 y el Java SDK, la actulización 
+Java 1.4.2 de Applw actualizara el  Java runtime a 1.4.2,
+pero removerá el previó Java 1.4.1 runtime y el
+SDK sin actualizar el JDK.  Para construir paquetes de Java en Fink necesitaras ir a  la pagina
+connect.apple.com y descargar el Java 1.4.2 SDK (registro gratuito requerido).
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-18%20Binarios%20para%20el%2010.3%20actualizados">
+    <title>Binarios para el 10.3 actualizados</title>
+    <link>http://fink.sourceforge.net/news/#2004-01-18%20Binarios%20para%20el%2010.3%20actualizados</link>
+    <dc:date>2004-01-18</dc:date>
+    <description>
+	
+Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando los problemas con el qt y kde, entre otros. Para accesar los archivos actualizadosm actualiza tu indice de binarios ejecutando el comando sudo apt-get update .  Despues de esto, puedes usar el apt-get, dselect or el FinkCommander para instalar los binarios como siempre.	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F">
+    <title>Pssst want to install GNOME 2.4?</title>
+    <link>http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F</link>
+    <dc:date>2004-01-10</dc:date>
+    <description>
+	
+	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
+	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
+	finally been released to the 10.3 unstable tree.
+	
+	
+	It is there for the taking; please offer some of your time and test these packages
+	if you are on unstable already.  Because of the massive number of changes, it is
+	expected that there will be issues upgrading or installing the new GNOME.  If you
+	have problems, you can reach the GNOME-savvy people at
+	fink-gnome-core@lists.sourceforge.net.
+	Please do report success stories there as well.  The more good reports we get, the
+	faster GNOME 2.4 can be moved to stable.
+	
+	
+	For those of you who do not read our mailing lists, why aren't you subscribed yet?
+	Here is a link to detailed 
+	instructions 
+	how to install or upgrade GNOME and what new stuff it brings.
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!">
+    <title>Whaaazaaap Dawgs, Two Zero Zero Four is on!</title>
+    <link>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</link>
+    <dc:date>2004-01-02</dc:date>
+    <description>
+	
+	A happy new year to all of you from the whole team. Blame this outburst of an 
+	attempt at slang language on some of us having to watch the MTV Music Awards all
+   day long.
+	
+	
+	Last year has been a good year for Fink. We have had hard times keeping up with 
+	the changes introduces by Apple, but we also learned that we have a great community
+	which is willing to go through great lengths to support us. 
+	For this, we say "Thank You". Much of what happens in the Fink project
+   happens because of the amazing support and encouragement we get from our users.
+	
+	
+	Two Zero Zero Four should not make us slow down, but speed up. There are some 
+	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
+	changes to the package manager itself, and organisational restructuring. 
+	Hopefully we will advance into an even bigger project with developer conferences, 
+	real life meetings, and a CD in your favourite shop.
+	
+	
+	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
+	still we are all counting on your support during this year. Tell us what you think 
+	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
+	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
+	to improve the package manager or add another piece of software by creating an
+	info file. Browse this website and hopefully indulge yourself. We enjoy serving
+	such a nice community; hopefully we shall make it a smooth ride for you and
+	your Macintosh in Two Zero Zero Four.
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year">
+    <title>Merry Christmas and a happy new year</title>
+    <link>http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year</link>
+    <dc:date>2003-12-28</dc:date>
+    <description>
+		
+ The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
+ forward to yet another year where we can help the Macintosh community grow into the 
+ world of UNIX together with Mac OS X.
+		
+		
+ We wish you all, that your hope is not too frail and that you will carry on following 
+ through with your wishes. May the world we live in gradually become a better place and
+ may peace and understanding settle just for a few days. 
+		
+		
+ Enjoy your quiet time and in case we do not get around to saying it soon enough. 
+ A happy new year to all of you, stay with us we count on your support.
+		
+		
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
+    <title>There they are! New mirrors..</title>
+    <link>http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..</link>
+    <dc:date>2003-11-30</dc:date>
+    <description>
+		
+	Thank you, thank you, thank you. What a great community we have.
+	Thank you for providing us with more mirrors. 
+		
+		
+	Matthew Healey, member of the Western 
+	Australian Macintosh User Group, and their 
+	ISP extremedsl
+	are providing Fink with a full mirror in Perth, Australia. This is our first
+	mirror in down under, thus I am pleased to welcome them to the family.
+	Furthermore the UKMIRROR service 
+	has accepted us, making distfile services available for Fink 
+	on 21 load balanced server.
+		
+		
+	We are very happy about this development, but we still need more rsync mirrors.
+	Thus, once more, if you feel like helping, please visit 
+	finkmirrors.net and get in touch.
+		
+		</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F">
+    <title>More mirrors....pretty please?</title>
+    <link>http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</link>
+    <dc:date>2003-11-24</dc:date>
+    <description>
+	While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+	we crave more. To improve our service to all of you, we would like to ask that
+	you evaluate carefully if you maybe do have the resources to become a mirror. 
+	    
+	     
+	All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+	willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
+	here. Especially mirrors in
+	Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+	those regions yet. If you feel generous and wish to donate even more resources, please visit
+	finkmirrors.net to learn about your options.
+	    
+	     
+	The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+	We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+	We are looking forward to many new applications and thank our community in advance. 
+	    
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-17%20Fink%200.6.2%20released">
+    <title>Fink 0.6.2 released</title>
+    <link>http://fink.sourceforge.net/news/#2003-11-17%20Fink%200.6.2%20released</link>
+    <dc:date>2003-11-17</dc:date>
+    <description>
+	The latest Fink release, version 0.6.2, is now available
+for both source and binary users.  This is a bug-fix release, intended
+to address two problems: the dselect/user deletion bug, and a 
+problem with ownership of files.  The dselect bug was addressed by
+updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
+it is safe to once again use dselect.  However, if you ran dselect
+at any time since 0.6.0, you should carefully check the integrity
+of the file at /sw/etc/apt/sources.list.  If you have
+any doubts about this file, you should replace it with
+the default sources.list file.
+
+Users who have installed binary files from the 0.6.1 distribution
+may find that certain files in their Fink installation are owned
+by UID 2011 rather than by root.  To correct this problem,
+run the command:
+sudo find /sw/ -user 2011 -exec chown root:admin {} \;
+This release, like the previous one, was built on OS X 10.2
+using the gcc 3.3 compiler, and runs fine with some exceptions* on OS X 10.3.  Most Fink 
+users who upgrade to 10.3 will continue to
+want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+
+*Exceptions include: emacs, qt.
+
+	</description>
+  </item>
+</rdf:RDF>
