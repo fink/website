@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/11 15:33:21';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/05/31 23:58:39';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -70,8 +70,7 @@ wrong?</a></li>
 <li><a href="usage-fink.php#dselect-access">3.12 Help! I used the
 &quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</a></li>
-<li><a href="usage-fink.php#cvs-busy">3.13 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
-		</a></li>
+<li><a href="usage-fink.php#cvs-busy">3.13 When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#cant-login-anymore">3.15 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
@@ -139,7 +138,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.110 2003/05/11 15:33:21 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.112 2003/05/31 23:58:39 fingolfin Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/11 15:33:21';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/05/31 23:58:39';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -193,8 +193,7 @@ You can fix this manually or through dselect.
 To fix it manually, edit the file
 <code>/sw/etc/apt/sources.list</code> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
-</p><pre>
-deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+</p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>
 (Or if you live in Europe, you can use <code>eu.dl.sourceforge.net</code>
 instead of <code>us.dl.sourceforge.net</code>)
@@ -214,32 +213,26 @@ script as a plug-in for dselect) is making it's way through CVS now.
 </p></div>
 </a>
 <a name="cvs-busy">
-<div class="question"><p><b>Q3.13: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
-		</b></p></div>
+<div class="question"><p><b>Q3.13: When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec &quot;cvs&quot;: No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
-### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>
-(Logging in to anonymous@cvs.sourceforge.net)
+### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.
-		</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer
 ### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p><pre>
-cvs update: in directory 10.2/stable/main:
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p><pre>cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
 cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such file or directory
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
-</pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre> 
-sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
-fink selfupdate-cvs
-		</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
+</pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+fink selfupdate-cvs</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
 </p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 ...
 (other info and patch files)
@@ -261,8 +254,7 @@ software before using Fink.
 </a>
 <a name="cant-login-anymore">
 <div class="question"><p><b>Q3.15: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
-<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>
-fsck -y
+<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>fsck -y
 mount -uw
 chmod 1775 /
 reboot
@@ -305,34 +297,14 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b>Q3.20: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> Typically these errors take the form:</p><p>
-<code>files list file for package <b>packagename</b> contains empty filename</code>
-</p><p>or</p><p>
-<code>files list file for package <b>packagename</b> is missing final newline</code>
-</p><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><p>
-<code>dpkg --contents <b>full-path-to-debfile</b>
-</code>
-</p><p>e.g.</p><p>
-<code>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
-</p><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <b>packagename</b>
-</code>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><p>
-<code># dpkg -c <b>full-path-to-debfile</b>
-</code>
-</p><p>
-<code>| awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
-</p><p>
-<code> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </code>
-</p><p>
-<code>&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</code>
-</p><p>e.g.</p><p>
-<code># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
-</p><p>
-<code>| awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
-</p><p>
-<code>{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</code>
-</p><p>
-<code>&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code>
-</p><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
+<div class="answer"><p><b>A:</b> Typically these errors take the form:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>or</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><pre>dpkg --contents <b>full-path-to-debfile</b></pre><p>e.g.</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <b>packagename</b>
+</code>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><pre>dpkg -c <b>full-path-to-debfile</b>
+  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
+  &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>e.g.</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
+  | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+   {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
+  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <a name="error-nineteen">
 <div class="question"><p><b>Q3.21: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>

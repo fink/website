@@ -29,8 +29,7 @@ and again. Is there a way around this?</a></li><li><a href="#usage-fink.exec-ini
 init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</a></li><li><a href="#usage-fink.dselect-access">3.12 Help! I used the
 &quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
-more!</a></li><li><a href="#usage-fink.cvs-busy">3.13 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;
-		</a></li><li><a href="#usage-fink.kernel-panics">3.14 When I use fink, my whole machine 
+more!</a></li><li><a href="#usage-fink.cvs-busy">3.13 When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;</a></li><li><a href="#usage-fink.kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li><li><a href="#usage-fink.cant-login-anymore">3.15 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li><li><a href="#usage-fink.not-found">3.16 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li><li><a href="#usage-fink.fink-not-found">3.17 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li><li><a href="#usage-fink.invisible-sw">3.18 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li><li><a href="#usage-fink.install-info-bad">3.19 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li><li><a href="#usage-fink.bad-list-file">3.20 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li><li><a href="#usage-fink.error-nineteen">3.21 When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</a></li><li><a href="#usage-fink.dselect-garbage">3.22 I get a bunch of garbage when I select packages in <tt style="white-space: nowrap;">dselect</tt>.  How can I use it?</a></li><li><a href="#usage-fink.perl-undefined-symbol">3.23 Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</a></li></ul></li><li><a href="#comp-general"><b>4 Compile Problems - General</b></a><ul><li><a href="#comp-general.compiler">4.1 A configure script complains
 that it can't find an &quot;acceptable cc&quot;. What's that?</a></li><li><a href="#comp-general.cvs">4.2 When I try a &quot;fink selfupdate-cvs&quot; I get this message: &quot;cvs: Command not found.&quot; </a></li><li><a href="#comp-general.make">4.3 make: illegal option -- C</a></li><li><a href="#comp-general.head">4.4 I'm getting a strange usage message
 from the head command. What's broken?</a></li><li><a href="#comp-general.also_in">4.5 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li><li><a href="#comp-general.weak_lib">4.6 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li><li><a href="#comp-general.mv-failed">4.7 What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</a></li><li><a href="#comp-general.node-exists">4.8 I can't install a package | update because I get a message that a &quot;node&quot; already exists.</a></li></ul></li><li><a href="#comp-packages"><b>5 Compile Problems - Specific Packages</b></a><ul><li><a href="#comp-packages.libgtop">5.1 libgtop fails to build with errors involving sed.</a></li><li><a href="#comp-packages.cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li><li><a href="#comp-packages.change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li><li><a href="#comp-packages.apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li><li><a href="#comp-packages.automake-autoconf">5.5 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li></ul></li><li><a href="#usage-general"><b>6 Package Usage Problems - General</b></a><ul><li><a href="#usage-general.gnome-icons">6.1 Some GNOME applications display
@@ -417,8 +416,7 @@ You can fix this manually or through dselect.
 To fix it manually, edit the file
 <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
-</p><pre>
-deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+</p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>
 (Or if you live in Europe, you can use <tt style="white-space: nowrap;">eu.dl.sourceforge.net</tt>
 instead of <tt style="white-space: nowrap;">us.dl.sourceforge.net</tt>)
@@ -438,32 +436,26 @@ script as a plug-in for dselect) is making it's way through CVS now.
 </p></div>
 </a>
 <a name="usage-fink.cvs-busy">
-<div class="question"><p><b>Q3.13: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;
-		</b></p></div>
+<div class="question"><p><b>Q3.13: When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec &quot;cvs&quot;: No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
-### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>
-(Logging in to anonymous@cvs.sourceforge.net)
+### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.
-		</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer
 ### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p><pre>
-cvs update: in directory 10.2/stable/main:
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p><pre>cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
 cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such file or directory
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
-</pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre> 
-sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
-fink selfupdate-cvs
-		</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
+</pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+fink selfupdate-cvs</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
 </p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 ...
 (other info and patch files)
@@ -485,8 +477,7 @@ software before using Fink.
 </a>
 <a name="usage-fink.cant-login-anymore">
 <div class="question"><p><b>Q3.15: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
-<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>
-fsck -y
+<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>fsck -y
 mount -uw
 chmod 1775 /
 reboot
@@ -529,34 +520,14 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </a>
 <a name="usage-fink.bad-list-file">
 <div class="question"><p><b>Q3.20: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> Typically these errors take the form:</p><p>
-<tt style="white-space: nowrap;">files list file for package <b>packagename</b> contains empty filename</tt>
-</p><p>or</p><p>
-<tt style="white-space: nowrap;">files list file for package <b>packagename</b> is missing final newline</tt>
-</p><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><p>
-<tt style="white-space: nowrap;">dpkg --contents <b>full-path-to-debfile</b>
-</tt>
-</p><p>e.g.</p><p>
-<tt style="white-space: nowrap;">dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</tt>
-</p><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <tt style="white-space: nowrap;">fink rebuild <b>packagename</b>
-</tt>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <tt style="white-space: nowrap;">sudo -s</tt> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><p>
-<tt style="white-space: nowrap;"># dpkg -c <b>full-path-to-debfile</b>
-</tt>
-</p><p>
-<tt style="white-space: nowrap;">| awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</tt>
-</p><p>
-<tt style="white-space: nowrap;"> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </tt>
-</p><p>
-<tt style="white-space: nowrap;">&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</tt>
-</p><p>e.g.</p><p>
-<tt style="white-space: nowrap;"># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</tt>
-</p><p>
-<tt style="white-space: nowrap;">| awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</tt>
-</p><p>
-<tt style="white-space: nowrap;">{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</tt>
-</p><p>
-<tt style="white-space: nowrap;">&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</tt>
-</p><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
+<div class="answer"><p><b>A:</b> Typically these errors take the form:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>or</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><pre>dpkg --contents <b>full-path-to-debfile</b></pre><p>e.g.</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <tt style="white-space: nowrap;">fink rebuild <b>packagename</b>
+</tt>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <tt style="white-space: nowrap;">sudo -s</tt> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><pre>dpkg -c <b>full-path-to-debfile</b>
+  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
+  &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>e.g.</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
+  | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+   {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
+  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <a name="usage-fink.error-nineteen">
 <div class="question"><p><b>Q3.21: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
@@ -978,4 +949,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.110 2003/05/11 15:33:21 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.112 2003/05/31 23:58:39 fingolfin Exp $</i></p></body></html>
