@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.25 2005/03/07 01:11:54 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.26 2005/03/09 03:08:57 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1130,7 +1130,7 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
            operate).  Other plugins can be found in the
-           <filename><![CDATA[]]>/sw/lib/perl5/Fink/Notify</filename> directory.
+           <filename>/sw/lib/perl5/Fink/Notify</filename> directory.
 </p></li>
       </ul>
     </section>
@@ -1197,27 +1197,38 @@ version and revision when they are not specified.  Others have different options
       <title>Global options</title>
       <p>
 There are some options, which apply to all fink commands. If you 
-type <code>fink --help</code> you get the list of options:
+type <code>fink --help</code> you get the list of options: 
       </p>
-      <codeblock>
--h, --help            - display this help text
+      <p>(as of <code>fink-0.24.1</code>)</p>
+      <codeblock>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
 -v, --verbose         - causes fink to be more verbose, opposite of --quiet
--y, --yes             - assume default answer for all interactive questions
+-y, --yes             - assume default answer for all interactive questio
 -b, --use-binary-dist - download pre-compiled packages from the binary 
-                          distribution if available
-      </codeblock>
+                        distribution if available (e.g. to reduce compile
+		       time or disk usage).
+		        Note that this mode instructs Fink to download the
+                        version it wants if that version is available for
+		        download; it does not cause Fink to choose a version
+    		        based on its binary availability.
+--no-use-binary-dist  - Don't use pre-compiled binary packages from the
+                        binary distribution (opposite of --use-binary-dist)
+-K, --keep-root-dir   - Causes Fink not to delete the
+                        /sw/src/root-[name]-[version]-[revision]
+		        directory after building a package.
+-k, --keep-build-dir  - Causes Fink not to delete the
+                        /sw/src/[name]-[version]-[revision]
+                        directory after building a package.
+--build-as-nobody     - Drop to a non-root user when performing the unpack,
+                        patch, compile,and install phases. Note that packages
+                        built with this option may be non-functional. You
+                        should use this mode for package development
+                        and debugging only.ns</codeblock>
       <p>
 Most of these options are self-explanatory. They can also be set in the 
 <xref chapter="conf">Fink configuration file</xref> (fink.conf) if you want 
-to set them permanently and not just for that invocation of <code>fink</code>.
-      </p>
-      <p>
-The <code>--use-binary-dist</code> option causes <code>fink</code> to try to
-download pre-compiled binary packages from the binary distribution if available
-and if the binary package is not already on the system. (Only available as of <code>fink</code> version 0.23.0)
-      </p>
+to set them permanently and not just for that invocation of <code>fink</code>.</p>
     </section>
     <section name="install">
       <title>install</title>
@@ -1232,17 +1243,13 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
-      <p>
-If you add the <xref section="options">--use-binary-dist option</xref>
-<code>fink</code> will try to download binary packages, if available, instead 
-of building them. This can save a lot of installation time.
-      </p>
+      <p>Use of the <xref section="options">--use-binary-dist</xref> option with <code>fink install</code> can speed the build process for complicated packages by quite a lot.</p>
       <p>Aliases for the install command: update, enable, activate, use (most
 of these for historic reasons).</p>
     </section>
     <section name="remove">
       <title>remove</title>
-      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has a flaw: it
+      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current default implementation has a flaw: it
 doesn't check dependencies itself but rather completely leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
       <p>The remove command only removes the actual package files,
@@ -1251,6 +1258,11 @@ the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
 <filename>/sw/fink/dists</filename> tree.</p>
+      <p>These flags can be used with the fink remove command
+</p>
+      <codeblock>-h,--help             - Show the options which are available.
+-r,--recursive        - Also remove packages that depend on the package(s) to
+                        be removed (i.e. overcome the above-mentioned flaw).</codeblock>
       <p>Aliases: disable, deactivate, unuse, delete.</p>
     </section>
     <section name="purge">
@@ -1258,16 +1270,17 @@ again. If you need the disk space, you can remove the .deb from the
       <p>The purge command purges packages from the system. This is
 the same as the remove command except that it removes configuration
 files as well.</p>
+      <p>This command takes the:</p>
+      <codeblock>-h,--help
+-r,--recursive</codeblock>
+      <p>options.</p>
     </section>
     <section name="update-all">
       <title>update-all</title>
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
       <codeblock>fink update-all</codeblock>
-      <p>
-The <xref section="options">--use-binary-dist option</xref> is also
-applicable here.
-      </p>
+      <p><xref section="options">--use-binary-dist</xref> is also useful with this command.</p>
     </section>
     <section name="list">
       <title>list</title>
@@ -1287,7 +1300,7 @@ meanings:
      not installed
  i   latest version is installed
 (i)  installed, but a newer version is available
-</codeblock>
+ p   a virtual package provided by a package that is installed</codeblock>
       <p>
 There are also some flags for the <code>fink list</code> command
 </p>
@@ -1308,6 +1321,12 @@ There are also some flags for the <code>fink list</code> command
 -s=expr,--section=expr
 	  Show only packages in the sections matching the regular
 	  expression expr.
+-m expr,--maintainer=expr
+          Show only packages with the maintainer  matching the
+          regular expression expr.
+-t expr,--tree=expr
+          Show only packages in the trees matching the regular
+          expression expr.
 -w=xyz,--width=xyz
 	  Sets the width of the display you would like the output
 	  formatted for. xyz is either a numeric value or auto.
@@ -1361,13 +1380,21 @@ will download the tarballs even if they were downloaded before.</p>
     </section>
     <section name="fetch-all">
       <title>fetch-all</title>
-      <p>Downloads <em>all</em> package source files. Like fetch, this downloads the
+      <p>Downloads <em>all</em> package source files. Like<code>fetch</code>, this downloads the
 tarballs even when they were downloaded before.</p>
+      <p>These flags can be used with the <code>fink fetch-all</code> command:</p>
+      <codeblock>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</codeblock>
     </section>
     <section name="fetch-missing">
       <title>fetch-missing</title>
       <p>Downloads <em>all</em> missing package source files. This command will only download
 files that are not present on the system.</p>
+      <p>These flags can be used with the <code>fink fetch-missing</code> command:</p>
+      <codeblock>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</codeblock>
     </section>
     <section name="build">
       <title>build</title>
@@ -1387,9 +1414,6 @@ The <xref section="options">--use-binary-dist option</xref> is applicable here.
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via <code>dpkg</code>. Very useful
 during package development.</p>
-      <p>
-The <xref section="options">--use-binary-dist option</xref> is applicable here.
-      </p>
     </section>
     <section name="reinstall">
       <title>reinstall</title>
@@ -1434,8 +1458,14 @@ the list of available packages in the binary distribution is also updated.
       <p>
    This command performs various checks on .info and .deb files. Package
    maintainers should run this on their package descriptions and
-   corresponding built packages before submitting them.
-</p>
+   corresponding built packages before submitting them.</p>
+      <p>The following optional options may be used:</p>
+      <codeblock>-h,--help            - Show the options which are available.
+-p,--prefix          - Simulate an alternate Fink basepath prefix (%p) within
+                      the files being validated.
+--pedantic, --no-pedantic
+                     - Control the display of nitpicky formatting warnings.
+                      --pedantic is the default.</codeblock>
       <p>
    Aliases: check
 </p>
@@ -1454,7 +1484,7 @@ the list of available packages in the binary distribution is also updated.
 </p>
       <p>
 If the <xref section="options">--use-binary-dist option</xref> is enabled
-obsolete downloaded binary packages are also deleted.
+obsolete downloaded binary packages are also deleted and <code>fink scanpackages</code> is run as well.
       </p>
     </section>
     <section name="dumpinfo">
@@ -1477,6 +1507,22 @@ Only available in <code>fink</code> newer than version 0.21.0
 -p key,              - Display the given percent expansion key(s),
    --percent=key       in the order listed.
       </codeblock>
+    </section>
+    <section name="show-deps">
+      <title>show-deps</title>
+      <p>Only available in fink-0.23-6 and later.</p>
+      <p>Shows how Fink parses parts of a package's .info file. Various fields and percent expansions will be displayed according to options as follows:</p>
+      <codeblock>-h,--help            - Show the options which are available.
+-a,--all             - Display all fields from the package description.  This
+                       is the default mode when no --field or --percent flags
+                       are given.
+-f fieldname, --field=fieldname
+                     - Display the given fieldname(s), in the order listed.
+-p key, --percent=key
+                     - Display the given percent expansion key(s), in the
+                      order listed.
+</codeblock>
+      <p></p>
     </section>
     <!-- 'fink snapshot' will not be included in 0.24
     <section name="snapshot">
