@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/03/20 23:25:05 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2003/11/03 01:52:39 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -36,16 +36,23 @@ if (!$rs) {
   }
   $row = $firstrow;
 
-  it_start();
-
+  it_start2();
+  it_item2("Tree", "Stable", "Unstable");
   for ($i = 0; $i < sizeof($releases); $i++) {
     $cr = $releases[$i];
+    $i++;
+    $cr2 = $releases[$i];
+    preg_match("/(.*)-(stable|unstable)/i", $cr, $tree);
     if(ereg("^0.4.1",$cr))
-      it_item("<div style=\"white-space:nowrap\">In $cr:</div>", $rmap[$cr] ? "Version ".$rmap[$cr]." (10.1 only)" : "not present");
+      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.1 only)");
     else
-      it_item("<div style=\"white-space:nowrap\">In $cr:</div>", $rmap[$cr] ? "Version ".$rmap[$cr] : "not present");
+      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>"
+      			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ? " ".$rmap[$cr] : "not present"
+       			, !strcmp($cr2, " ") ? $cr2 : $rmap[$cr2] ? " ".$rmap[$cr2] : "not present");
   }
-
+  it_end();
+  print "<br>";
+  it_start();
   it_item("Description:", $row[desclong]);
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
 
