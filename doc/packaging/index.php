@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/06 23:11:37';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2002/01/20 00:02:59';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -55,7 +55,7 @@ mailing list.
 <li><a href="reference.php#scripts">5.3 Scripts</a></li>
 <li><a href="reference.php#patches">5.4 Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.15 2002/01/06 23:11:37 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.18 2002/01/20 00:02:59 finlayd Exp $</i></p>
 
 
 <?

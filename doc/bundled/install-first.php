@@ -1,9 +1,9 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/04 12:15:12';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/01/24 21:04:29';
 
-$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include "header.inc";
 ?>
@@ -79,16 +79,16 @@ have been warned.
 
 <a name="install"><h2>2.3 Installation</h2></a>
 <p>
-First, you need to unpack the fink-0.2.6-full.tar.gz tarball.
+First, you need to unpack the fink-0.3.2a-full.tar.gz tarball.
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.2.6-full.tar.gz</pre>
+<pre>tar xzf fink-0.3.2a-full.tar.gz</pre>
 <p>
-You now have a directory named fink-0.2.6-full.
-Change to it with <tt><nobr>cd fink-0.2.6-full</nobr></tt>.
+You now have a directory named fink-0.3.2a-full.
+Change to it with <tt><nobr>cd fink-0.3.2a-full</nobr></tt>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -96,7 +96,7 @@ bootstrap.pl.
 It is accompanied by a small shell script, bootstrap.sh, which checks
 some basic requirements and then hands over control to the perl
 script.
-So, to start installation, go to the fink-0.2.6-full directory and run
+So, to start installation, go to the fink-0.3.2a-full directory and run
 this command:
 </p>
 <pre>./bootstrap.sh</pre>
@@ -184,7 +184,7 @@ and Mac OS X document</a>.
 
 
 <p align="right">
-Next: <a href="install-up02.php">3 Upgrading From Fink 0.2.x</a></p>
+Next: <a href="install-up03.php">3 Upgrading From Fink 0.3.x</a></p>
 
 
 <?
