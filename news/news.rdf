@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 23 Oct 2003 20:36:58 CEST</lastBuildDate>
+    <lastBuildDate>Thu, 23 Oct 2003 21:04:23 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -12,7 +12,7 @@
     <link>http://fink.sf.net/news/#2003-10-23%20Say%20hello%20to%20mirror%20numero%20uno</link>
     <dc:date>2003-10-23</dc:date>
     <description>
-	You are too late. Russ Foster from JVDS
+	You are too late. Rus Foster from JVDS
 	beat you all to it. He is the first one to provide us with ressources 
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.

@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/10/22 23:01:54';
+$cvs_author = 'Author: uid104432';
+$cvs_date = 'Date: 2003/10/23 18:37:45';
 
 $metatags = '';
 
@@ -9,7 +9,7 @@ include "header.inc";
 ?>
 
 <a name="2003-10-23 Say hello to mirror numero uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say hello to mirror numero uno</span></a><?php gray_line(); ?>
-	<p>You are too late. Russ Foster from <a href="<?php print $root; ?>http://www.jvds.com">JVDS</a>
+	<p>You are too late. Rus Foster from <a href="<?php print $root; ?>http://www.jvds.com">JVDS</a>
 	beat you all to it. He is the first one to provide us with ressources 
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
