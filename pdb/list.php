@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/20 17:42:30 $';
+$cvs_date = '$Date: 2001/07/25 15:14:36 $';
 
 include "header.inc";
 
@@ -20,7 +20,7 @@ database.</p>
 <?
 
 $q = "SELECT name,descshort FROM package ".
-     "WHERE flag=1 ORDER BY name ASC";
+     "WHERE latest=1 ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if ($rs) {
   while ($row = mysql_fetch_array($rs)) {

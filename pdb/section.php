@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Section ";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/20 17:42:30 $';
+$cvs_date = '$Date: 2001/07/25 15:14:36 $';
 
 $uses_pathinfo = 1;
 
@@ -31,7 +31,7 @@ if ($section == "-") {
 <?
 
 $q = "SELECT name,descshort FROM package ".
-     "WHERE section='$section' AND flag=1 ORDER BY name ASC";
+     "WHERE section='$section' AND latest=1 ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if ($rs) {
   while ($row = mysql_fetch_array($rs)) {
