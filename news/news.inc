@@ -1,7 +1,7 @@
 <a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
 	<p>
 	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt as slang language on some of us having to watch the MTV Music Awards all
+	attempt at slang language on some of us having to watch the MTV Music Awards all
    day long.
 	</p>
 	<p>

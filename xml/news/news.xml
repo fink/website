@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.111 2004/01/03 16:52:53 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.112 2004/01/03 16:54:43 rangerrick Exp $</cvsid>
 
 <newsitem>
 	<date>2004-01-02</date>
@@ -9,7 +9,7 @@
 	<body>
 	<p>
 	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt as slang language on some of us having to watch the MTV Music Awards all
+	attempt at slang language on some of us having to watch the MTV Music Awards all
    day long.
 	</p>
 	<p>
