@@ -7,7 +7,7 @@ $navbox = array(
   "doc/packaging/index.php?phpLang=fr", "Contents",
   "doc/packaging/intro.php?phpLang=fr", "Intro",
   "doc/packaging/format.php?phpLang=fr", "Descriptions de paquets",
-  "doc/packaging/policy.php?phpLang=fr", "Policy",
+  "doc/packaging/policy.php?phpLang=fr", "Règles",
   "doc/packaging/fslayout.php?phpLang=fr", "FS Layout",
   "doc/packaging/reference.php?phpLang=fr", "Reference",
 );

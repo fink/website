@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/25 02:05:01';
+$cvs_date = 'Date: 2004/03/25 09:29:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -138,6 +138,12 @@ the <b>n</b>ame of the current package
 the <b>N</b>ame of the parent package (the same as %n unless within a
 <code>SplitOff</code>)
 </p>
+<p>
+Note: If a parent <code>Package</code> field contains %type_*[], those
+percent expansion values <b>will</b> be included in %N in
+a <code>SplitOff</code> block (since they are included in %n in the
+parent).
+</p>
 </td></tr><tr valign="top"><td>%e</td><td>
 <p>
 the package <b>e</b>poch
@@ -215,6 +221,21 @@ the percent character (one that will not be expanded according
 according to whatever follows it).  Expansion occurs strictly
 left-to-right, so %%n is not anything related to the package name, but
 rather is the string %n.  (Introduced in fink-0.18.0)
+</p>
+</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
+<p>
+pseudo-hashes returning the subtype for the given <b>type</b>. See
+documentation for the <code>Type</code> field later in this document.
+The _raw form is the exact subtype string, while the _pkg form has all
+periods removed (as per Fink's language-version package naming
+convention and for other clever uses). (Introduced in a post-0.19.2
+CVS version of fink)
+</p>
+</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+<p>
+the package <b>n</b>ame <b>i</b>nvariant portion. These are like
+%n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
+(Introduced in a post-0.19.2 CVS version of fink)
 </p>
 </td></tr></table>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/25 02:05:01';
+$cvs_date = 'Date: 2004/03/25 09:29:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -62,9 +62,21 @@ May contain lowercase letters, numbers and the special characters '.',
 No underscores ('_'), no capital letters.
 Required field.
 </p>
-<p>Effective with fink 0.9.9, percent expansion is applied to this field,
-as well as the fields Depends, BuildDepends, Provides, Conflicts,
-Replaces, Recommends, Suggests, and Enhances.</p>
+<p>Percent expansion is applied to this field for %N, %Ni, %type_raw[],
+and %type_pkg[] only.</p>
+<p>
+As per Fink packaging policy, a given package must always
+compile with the same options enabled. If you have multiple variants
+for a package (see documentation for the <code>Type</code> field), you
+must encode the specific variant info into the <code>Package</code>
+field (see documentation for the %type_pkg[] percent expansion). That
+way each variant has a unique name the package name indicates which
+variant option(s) are included. Note that use of the %type_pkg[] and
+%type_raw[] percent expansions in the <code>Package</code> field is
+new and severely incompatible with older versions of fink, so such
+package descriptions must be embedded in a <code>InfoN</code> field
+with N&gt;=2.
+</p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
 The upstream version number.
@@ -115,13 +127,73 @@ Since fink 0.18.0, you can get the same behavior by setting
 purposes (<code>Type: perl</code>, etc.)
 </p>
 <p>
-Finally since fink 0.9.5 there is type <code>perl</code> which causes
+Since fink 0.9.5 there is type <code>perl</code> which causes
 alternate default values for the compile and install scripts to be used. 
 Beginning in fink 0.13.0, there is a new variant of this type,
 <code>perl $version</code>, where $version is a specific version of perl 
 consisting of three numbers separated by periods, e.g., 
 <code>perl 5.6.0</code>.
 </p>
+<p>
+Beginning after fink-0.19.2, the language/language-version use has
+been generalized to allow any Maintainer-defined types and associated
+subtypes and more than a single type for a given package. The type and
+subtype are each arbitrary strings of non-whitespace characters (but
+parentheses, commas, and percent signs should not be used); no
+percent-expansion is performed. Multiple type values (each with an
+optional whitespace-separated subtype) are specified in a
+comma-separated list.
+</p>
+<p>
+In addition, the concept of "variants" exists, where a
+single .info file describes a family of related packages with various
+options enabled. The key to this whole process is the use of a list of
+subtypes. Instead of a single string, one uses a space-separated list
+of strings in parentheses. Fink clones the package description file
+for each subtype in the list and replaces this list with that single
+subtype. For example:
+</p>
+<pre>Type: perl (5.6.0 5.8.1)</pre>
+<p>
+yields two package descriptions, one that behaves as if <code>Type:
+perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. Subtype
+list expansion/package cloning is recursive; if there are multiple
+types with subtype lists, you will get all combinations. The special
+subtype list "(boolean)" stands for a list containing the
+type itself and a period, so the following two forms are identical:
+</p>
+<pre>
+Type: -x11 (boolean)
+Type: -x11 (-x11 .)
+</pre>
+<p>
+One can access the specific variant subtype in other fields using the
+%type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
+fragments:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo-pm%type_pkg[perl]
+Type: perl (5.6.0 5.8.1)
+Depends: perl-core%type_pkg[perl]
+ &lt;&lt;
+</pre>
+<pre>
+Info2: &lt;&lt;
+Package: bar%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_raw[-x11] = -x11) x11
+CompileScript:  &lt;&lt;
+  #!/bin/bash -ev
+  if ["%type_raw[-x11]" eq "-x11"]; then
+    ./configure %c --with-x11
+  else
+    ./configure %c --without-x11
+  fi
+  make
+&lt;&lt;
+&lt;&lt;
+</pre>
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
 This field gives the nature of the license under which the package is
@@ -157,7 +229,9 @@ the syntax for multiline fields.
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 A list of packages which must be installed before this package can be
-built.
+built. Percent expansion is performed on this field (as well as the
+other package list fields in this section: BuildDepends, Provides,
+Conflicts, Replaces, Recommends, Suggests, and Enhances.
 Usually, this is just a comma-separated list for plain package names,
 but Fink now supports alternatives and version clauses with the same
 syntax as dpkg.

@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.5 2004/03/25 05:00:57 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.6 2004/03/26 01:13:46 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -294,104 +294,72 @@ signe pourcent (%) (ce signe n'est pas interprété en fonction de ce qui le sui
 
 
 <chapter filename="policy">
-<title>Packaging Policy</title>
-<shorttitle>Policy</shorttitle>
+<title>Règles de distribution des paquets</title>
+<shorttitle>Règles</shorttitle>
 
-<section name="licenses"><title>Package Licenses</title>
+<section name="licenses"><title>Licences de paquets</title>
 <p>
-The packages included in Fink come with a wide variety of licenses.
-Most of them place restrictions on redistributing the full source and
-especially on distributing binaries.
-Some packages can not be included in the binary distribution of Fink
-because of these license restrictions.
-Thus it is very important that package maintainers check the license
-of their package carefully.
+Les paquets inclus dans Fink ont différents types de licences.
+La plupart d'entre elles stipulent une restriction sur la redistribution des sources complètes et particulièrement sur la distribution des binaires.
+Certains paquets ne peuvent être inclus dans la distribution binaire de Fink à cause de ces licences restrictives.
+C'est pourquoi il est essentiel que les mainteneurs de paquets vérifient,  scrupuleusement, les licences de leurs paquets.
 </p>
 <p>
-Every package that is to be distributed as a binary package must
-contain a copy of the license.
-It must be installed in the doc directory,
-i.e. in <filename>%p/share/doc/%n</filename>.
-(In the InstallScript, %i must be used instead of %p, of course.
-The DocFiles field takes care of the details automatically.)
-If there is no explicit license in the original source, include a
-small text file with a note about the status of the package.
-Most licenses require that the license accompanies any distribution.
-Fink's policy is to always do this, even if it is not explicitly
-required.
+Chaque paquet distribué en tant que binaire doit contenir une copie de la licence.
+Elle doit être installée dans le répertoire de documentation,
+c'est à dire dans <filename>%p/share/doc/%n</filename>.
+(Dans InstallScript, il faut, évidemment, utiliser %i au lieu de %p.
+Le champ DocFiles gère les détails automatiquement.)
+S'il n'y a pas de licence explicite dans le source original, placez un fichier texte contenant une note à propos du statut du paquet.
+La plupart des licences requièrent que celle-ci accompagne toute distribution.
+La règle de Fink est de toujours faire ainsi, même si ce n'est pas explicitement requis.
 </p>
 <p>
-To make an automated maintenance of the binary distribution possible,
-any package that is to be distributed must have a <code>License</code>
-field.
-This field denotes the nature of the license and is used to decide
-which packages make it into the binary distribution and which must be
-held back.
-The field may only be present if the actual license terms are included
-in the binary package, as explained above.
+Pour automatiser le plus possible la maintenance de la distribution binaire, tout paquet distribué doit avoir un champ <code>License</code>.
+Ce champ indique la nature de la licence et est utilisé pour décider
+quels paquets font partie de la distribution et quels paquets doivent en être exclus.
+Le champ ne peut exister que si les termes réels de la licence sont inclus dans le paquet binaire, comme expliqué ci-dessus.
 </p>
 <p>
-To make the <code>License</code> field useful, only one of the
-following pre-defined values may be used.
-If you're packaging something that doesn't fit into these categories,
-ask for help on the developer mailing list.
+Pour que le champ <code>License</code> ait une utilité, n'utilisez qu'une seule des valeurs prédéfinies suivantes.
+Si vous construisez un paquet qui ne rentre pas dans ces catégories, demandez de l'aide sur la liste des développeurs.
 </p>
 <ul>
 
-<li><code>GPL</code> - the GNU General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><code>LGPL</code> - the GNU Lesser General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><code>GPL/LGPL</code> - this if a special case for packages where
-one part is licensed under the GPL (e.g. the executables) and another
-part is licensed under the LGPL (e.g. the libraries).</li>
+<li><code>GPL</code> - la licence générale publique GNU.
+Cette licence requiert que le source soit accessible au même endroit que le binaire.</li>
 
-<li><code>BSD</code> - for BSD-style licenses.
-This includes the so-called "original" BSD license, the "modified" BSD
-license and the MIT license. The Apache license also counts as
-BSD. With these licenses the distribution of source code is
-optional.</li>
+<li><code>LGPL</code> - la licence publique GNU moins générale.
+Cette licence requiert que le source soit accessible au même endroit que le binaire.</li>
 
-<li><code>Artistic</code> - for the Artistic license and
-derivatives.</li>
+<li><code>GPL/LGPL</code> - c'est un cas spécial pour les paquets dans lesquels une partie est sous licence GPL (par exemple les exécutables) et une autre partie est sous licence LGPL (par exemple les librairies).</li>
 
-<li><code>Artistic/GPL</code> - dual-licensed under the Artistic and GPL
-licenses.</li> 
-
-<li><code>GNU Free Documentation License</code> and <code>Linux
-Documentation Project</code> - if the documentation included in a package
-is explicitly included under one of the licenses, then this is indicated by
-appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
-allowed combinations: "GFDL",
-"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
+<li><code>BSD</code> - pour les licences style BSD.
+Ceci inclue la licence BSD dite "original", la licence BSD "modified" et la licence MIT. La licence Apache compte aussi parmi les licences BSD. Avec ces licences, la distribution du code source est optionnelle.
 </li>
 
-<li><code>OSI-Approved</code> - for other Open Source licenses
-approved by the <link url="http://www.opensource.org/">Open Source
-Initiative</link>. One of OSI's requirements is that free distribution
-of binaries and sources is allowed. This value can also be used as an
-umbrella for dual-licensed packages.</li>
+<li><code>Artistic</code> - pour la licence "Artistic" et ses dérivées.</li>
 
-<li><code>Restrictive</code> - for restrictive licenses.
-Use this for packages that are available from the author in source
-form for free use, but don't allow free redistribution.</li>
+<li><code>Artistic/GPL</code> - licence duale, combinée Artistic/GPL.</li> 
 
-<li><code>Restrictive/Distributable</code> - for restrictive licenses which
-permit distribution of source and binaries.
-Use this for packages that are available from the author in source
-form, permit distribution of source and binaries, but have restrictions which
-make them non-open source licenses.</li>
+<li><code>GNU Free Documentation License</code> et <code>Linux
+Documentation Project</code> - si la documentation incluse dans un paquet l'est explicitement sous une de ces licences, alors ce sera indiqué par l'ajout de <code>/GFDL</code> ou <code>/LDP</code> au code de la licence, ce qui donne l'une des combinaisons autorisées suivantes : "GFDL",
+"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", ou "GPL/LGPL/LDP".
+</li>
 
-<li><code>Commercial</code> - for restrictive, commercial licenses.
-Use this for commercial packages (e.g. Freeware, Shareware) that do
-not allow free redistribution of source or binaries.</li>
+<li><code>OSI-Approved</code> - pour les autres licences Open Source approuvées par l'Initiative Open Source (OSI) <link url="http://www.opensource.org/"></link>. L'une des règles de l'OSI est que la libre distribution de binaires et de sources est autorisée. Ce code peut aussi servir de cadre aux paquets à licence duale.</li>
 
-<li><code>Public Domain</code> - for packages that are in the Public
-Domain, i.e. the author has given up his copyright on the code. These
-packages don't have licenses at all and anyone can do anything with
-them.</li>
+<li><code>Restrictive</code> - pour les licences restrictives.
+Utilisez ceci pour les paquets qui sont accessibles en tant que sources à usage libre auprès de l'auteur, mais dont la libre redistribution n'est pas autorisée. </li>
+
+<li><code>Restrictive/Distributable</code> - pour des licences restrictives qui admettent une distribution des binaires et du source.
+Utilisez ceci pour les paquets qui sont accessibles en tant que sources
+auprès de l'auteur, autorisent la distribution du source et des binaires, mais ont des restrictions qui en font des licences non open-sources.</li>
+
+<li><code>Commercial</code> - pour des licences restrictives de type commercial.
+Utilisez ceci pour des paquets  de type commercial ( par exemple graticiels, partagiciels qui n'autorisent pas la libre redistribution du source ou des binaires.</li>
+
+<li><code>Public Domain</code> - pour des paquets qui sont dans le domaine public, c'est-à-dire que l'auteur a abandonné ses droits sur le code. Ces paquets n'ont aucune licence d'aucune sorte et tout un chacun peut en faire ce que bon lui semble.</li>
 
 </ul>
 
