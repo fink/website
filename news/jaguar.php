@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 00:35:14 $';
+$cvs_date = '$Date: 2002/09/09 00:38:05 $';
 
 include "header.inc";
 ?>
@@ -45,7 +45,7 @@ choice.  Now issue the commands
 a password: no password is needed.)
 All subsequent commands will assume that you are in the <b>finkcvs/fink</b>
 directory.
-<p>
+<br><br>
 <li><b>Step 3: Verify the integrity of your Fink installation, and update
 any external software which is related to Fink.</b>  If you have installed
 XFree86 using the distribution from the XonX project, you need to get
@@ -69,7 +69,7 @@ or the command
   fink remove foo
 </pre>
 You can run dpkg-checkall.sh multiple times if needed.
-<p>
+<br><br>
 <li><b>Step 4: Edit your fink.conf file.</b>
 You will find this file at /sw/etc/fink.conf (or another location if you
 installed Fink in a non-standard place).  You may need to change to file
@@ -82,7 +82,7 @@ Even if you have not used the unstable Trees in the past, at the present
 time virtually all of the 10.2 Fink packages are still being tested in
 the unstable tree and have not yet been moved to the stable tree, so
 this step is highly recommended.
-<p>
+<br><br>
 <li><b>Step 5: Run the update script.</b>
 From within the finkcvs/fink directory, issue the command
 <pre>
@@ -90,7 +90,7 @@ From within the finkcvs/fink directory, issue the command
 </pre>
 You will need an internet connection, and a bit of patience, as the update
 takes a while to complete.
-<p>
+<br><br>
 <li><b>Step 6: Update your XFree86 packages.</b>
 This is done with the command 
 <pre>
@@ -98,7 +98,7 @@ This is done with the command
 </pre>
 If you are not running XFree86, or if you installed it externally from the
 XonX project, you may skip this step.
-<p>
+<br><br>
 <li><b>Step 7: Update your other fink packages.</b>
 The easy way to do this is with the command 
 <pre>
@@ -107,7 +107,7 @@ The easy way to do this is with the command
 but
 if you prefer to customize things you may issue individual <b>fink update</b>
 commands.
-<p>
+<br><br>
 <li> Finally, when all of this has been completed, you may remove the
 finkcvs directory and its contents if you wish.
 </ul>
