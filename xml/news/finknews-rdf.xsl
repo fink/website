@@ -23,7 +23,7 @@
    <lastBuildDate><xsl:value-of select="$currdate" /></lastBuildDate>
    <rss091:language rdf:parseType="Literal" xmlns="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">en</rss091:language>
   </channel>
- <xsl:apply-templates select="newsitem[position()&lt;=25]" />
+ <xsl:apply-templates select="newsitem[position()&lt;=15]" />
 </rdf:RDF>
 </xsl:template>
 
