@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/11 10:23:27';
+$cvs_date = 'Date: 2004/09/07 15:35:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -47,7 +47,9 @@ Le numéro de version en amont. Même limitations que pour le champ Package. Cha
 <p>
 Le numéro de révision du paquet. Incrémentez ce numéro quand vous faites une nouvelle description pour la même version en amont. Les numéros de révision commencent à 1. Champ obligatoire.
 </p>
-</td></tr><tr valign="top"><td>Epoch</td><td>
+<p>
+ Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le  fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, à l'exception du champ <code>BuildDepends</code>, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.
+</p></td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>Introduit à partir de fink 0.12.0.</b>
 Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>.
@@ -148,7 +150,31 @@ Vous pouvez utiliser ce format pour simplifier la maintenance de paquets similai
 <pre>Depends: expat-shlibs</pre>
 <p>et elinks-ssl avait :</p>
 <pre>Depends: openssl097-shlibs, expat-shlibs</pre>
-</td></tr><tr valign="top"><td>BuildDepends</td><td>
+<p>
+Vous pouvez aussi utiliser un autre type de syntaxe : <code>(chaîne de caractères)</code>, qui est "vrai" si la <code>chaîne de caractères</code> est non nulle. Par exemple :
+</p>
+<pre>
+Package: nethack%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_pkg[-x11]) x11
+</pre>
+<p>
+indiquera une dépendance du paquet x11 pour la variante nethack-x11, mais pas pour la variante nethack.
+</p>
+<p>
+Notez que quand on utilise les champs Depends/BuildDepends pour les paquets de librairies partagées, alors qu'il existe plus d'une version majeure disponible, il <b>ne faut pas</b> utiliser la syntaxe suivante :
+</p>
+<pre>
+  Package: foo
+  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+  BuildDepends: id3lib3.7-dev | id3lib4-dev
+</pre>
+<p>
+même si le paquet peut fonctionner avec l'une ou l'autre librairie. Il faut en choisir une (de préférence, la version la plus élevée possible) et s'y tenir dans l'ensemble du paquet.
+</p>
+<p>
+Comme cela a été expliqué dans la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a>, un seul des paquets -dev peut être installé à un instant donné, et chacun possède des liens de même nom qui peuvent se référer à des noms de fichiers différents dans le paquet associé -shlibs. Lors de la compilation du paquet foo, le nom réél du fichier (dans le paquet -shlibs) est codé en dur dans le binaire foo. Cela signifie que le paquet résultant nécessite le paquet -shlibs associé au -dev qui était installé au moment de la compilation. En conséquence, on ne peut indiquer dans le champ <code>Depends</code> que l'un quelconque des paquets est requis.
+</p></td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation.
 Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends.
@@ -186,9 +212,9 @@ Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lo
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p>
 <b>Introduit dans fink 0.9.9.</b>
-Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé.
+Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé. Contrairement aux autres champs booléens, <code>BuildDependsOnly</code> a trois valeurs: undéfini (non spécifié) n'a pas le même sens que faux. Voir la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a> pour de plus amples informations.
 </p>
-<p>À partir de la version 0.20.3 de fink, la valeur de ce champ est sauvegardée dans le fichier .deb à la construction du paquet. Par conséquent, <b>si vous changez la valeur de BuildDependsOnly, vous devez incrémenter le numéro de révision</b> du paquet.
+<p>À partir de la version 0.20.5 de fink, la présence ou l'absence de ce champ, et sa valeur s'il est présent, sont sauvegardées dans le fichier .deb à la construction du paquet. Par conséquent, <b>si vous changez la valeur de BuildDependsOnly, ou si vous l'ajoutez ou le supprimez, vous devez incrémenter le numéro de révision</b> du paquet.
 </p>
 </td></tr></table>
 
@@ -335,6 +361,16 @@ Quand la valeur de ce champ est true (vraie), les valeurs par défaut de CPPFLAG
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 Paramètres supplémentaires à passer au script configure. (Voir CompileScript pour de plus amples informations). À partir des versions de fink &gt; 0.13.7, ce champ fonctionne aussi avec les modules perl <code>Type: Perl</code> ; il ajoute les paramètres à la chaîne perl par défaut Makefile.PL.
+</p>
+<p>
+À partir de la version 0.22.0 de fink, ce champ gère les expressions conditionnelles. La syntaxe est la même que celle utilisée dans le champ <code>Depends</code> et les autres champs basés sur des listes de paquets. L'expression conditionnelle s'applique au "mot" délimité par des espaces suivant immédiatement l'expression. Par exemple : 
+</p>
+<pre>
+Type: -x11 (boolean)
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
+</pre>
+<p>
+passera les drapeaux <code>--mandir</code> et <code>--disable-shared</code>  dans tous les cas de figure, mais ne passera le drapeau <code>--with-x11</code> quà la seule variante -x11.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>

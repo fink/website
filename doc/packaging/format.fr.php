@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/11 10:23:27';
+$cvs_date = 'Date: 2004/09/07 15:35:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -103,6 +103,8 @@ le <b>n</b>om du paquet actif
 <p>
 <b>N</b>om du paquet parent (le même que %n à moins d'être dans un
 <code>SplitOff</code>)
+</p>
+<p>Note : si le champ <code>Package</code> d'un paquet parent contient %type_*[], la valeur de ces raccourcis <b>sera</b> incluse dans %N dans un bloc <code>SplitOff</code> (étant donné qu'elle est incluse dans %n dans le paquet parent).
 </p>
 </td></tr><tr valign="top"><td>%e</td><td>
 <p>
