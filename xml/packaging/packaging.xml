@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.43 2003/05/08 17:43:19 bbraun Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.44 2003/05/09 01:50:58 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -318,7 +318,7 @@ specified with ConfigureParams
 <p>
 the <em>m</em>achine architecture string.  This is the same as 
 <code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
-and 'i386' for x86 machines.
+and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
 </p>
 </itemd></item>
 </itemtable>
