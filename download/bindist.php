@@ -1,22 +1,10 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/22 18:51:55 $';
+$cvs_date = '$Date: 2003/12/08 15:08:34 $';
 
 include "header.inc";
 ?>
-<!-- IndexTools Customization Code -->
-<!-- Added Temprorarily by dmalloc -->
-<!-- Remove leading // to activate custom variables -->
-<script language="Javascript">
-var DOCUMENTGROUP='downloads';
-var DOCUMENTNAME='bindist';
-//var ACTION='';
-</script>
-<!-- End of Customization Code --><!-- IndexTools Code v3.01 - All rights reserved -->
-<script language="javascript1.1" src="../indextools.js"></script><noscript>
-<img src="http://stats.indextools.com/p.pl?a=100048449005&js=no" width="1" height="1"></noscript><!--//-->
-<!-- End of IndexTools Code -->
 
 <h1>Download Fink Binary Release</h1>
 

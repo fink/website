@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/22 18:58:01 $';
+$cvs_date = '$Date: 2003/12/08 15:09:07 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -11,19 +11,6 @@ $metatags = '<meta name="description" content="Fink, a distribution of Unix soft
 include "header.inc";
 ?>
 
-<!-- IndexTools Customization Code -->
-<!-- Added Temprorarily by dmalloc -->
-<!-- Remove leading // to activate custom variables -->
-<script language="Javascript">
-var DOCUMENTGROUP='Main';
-var DOCUMENTNAME='index_main';
-//var ACTION='';
-</script>
-<!-- End of Customization Code -->
-<!-- IndexTools Code v3.01 - All rights reserved -->
-<script language="javascript1.1" src="indextools.js"></script><noscript>
-<img src="http://stats.indextools.com/p.pl?a=100048449005&js=no" width="1" height="1"></noscript><!--//-->
-<!-- End of IndexTools Code -->
 
 <p>
 The Fink project wants to bring the full world of Unix
