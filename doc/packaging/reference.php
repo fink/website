@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/16 09:09:51';
+$cvs_date = 'Date: 2004/02/19 07:48:09';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -159,7 +159,27 @@ either make sure that the other package is not used even when it is
 present or add it to the Depends field.
 If you want to offer the user both options, make two separate
 packages, e.g. wget and wget-ssl.
+</p><p>
+Starting with a post-0.18.2 CVS version of fink, you can have
+conditional dependencies. These are specified by placing
+<code>(string1 op string2)</code> before a package name. Percent
+expansion is performed as usual and then the two strings are compared
+according to the <code>op</code> operator: &lt;&lt;, &lt;=, =, !=,
+&gt;&gt;, &gt;=. The immediately-following package is only considered
+as a dependency if the comparison is true.
+</p><p>
+You can use this format to simplify maintaining several similar
+packages. For example, both elinks and elinks-ssl could list:
 </p>
+<pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
+<p>
+would have the same effect as having elinks list:
+</p>
+<pre>Depends: expat-shlibs</pre>
+<p>
+and elinks-ssl list:
+</p>
+<pre>Depends: openssl097-shlibs, expat-shlibs</pre>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>Introduced in fink 0.9.0.</b>
