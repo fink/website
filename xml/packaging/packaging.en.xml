@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.37 2004/07/18 07:50:02 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.38 2004/07/18 07:54:29 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -312,7 +312,7 @@ as %i unless within a <code>SplitOff</code>)
 <itemd>
 <p>
 the path where the p<em>a</em>tches can be found.
-This expansion should be used only in the PatchScript field.
+This expansion should be used only in the <code>PatchScript</code> field.
 </p>
 </itemd></item>
 
