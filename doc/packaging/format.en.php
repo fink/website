@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/27 12:31:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/28 23:59:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -234,7 +234,8 @@ CVS version of fink)
 <p>
 the package <b>n</b>ame <b>i</b>nvariant portion. These are like
 %n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
-(Introduced in a post-0.19.2 CVS version of fink)
+(Introduced in a post-0.19.2 CVS version of fink) You should use %{ni}
+and %{Ni} to avoid confusion with the %n and %N expansions.
 </p>
 </td></tr></table>
 

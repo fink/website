@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/27 12:31:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/28 23:59:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -379,7 +379,9 @@ the actual URL. The known <b>mirror-name</b>s are listed in
 package. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
-Before the URL is used, percent expansion takes place.
+Before the URL is used, percent expansion takes place. Remember that
+%n includes all %type_ variant data, so you may want to use %ni here
+(perhaps with some specific %type_ expansions).
 </p>
 <p>
 Since fink 0.18.0, <code>Source: none</code> has the special meaning
@@ -588,6 +590,13 @@ appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
 before the PatchScript is run (if any).
+</p>
+<p>
+Remember that %n includes all %type_ variant data, so you may want to
+use %ni here (perhaps with some specific %type_ expansions). It's
+easier to maintain a single patchfile and then make variant-specific
+changes in <code>PatchScript</code> than to have a separate patchfile
+for each variant.
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>

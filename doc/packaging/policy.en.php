@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/27 12:31:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/28 23:59:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 include_once "header.inc";
@@ -162,7 +162,7 @@ For some packages, everything can be accomplished with a main package and a
 -shlibs package; in other cases you also need a third package.  The new
 <code>SplitOff</code> field actually makes this quite easy.
 </p><p>
-When three packages are needed, there are two different ways they could be named, depending on whether the libraries (option1) or the binaries (option 2) are the most important feature of the package.  For option 1, 
+When three packages are needed, there are two different ways they could be named, depending on whether the libraries (option 1) or the binaries (option 2) are the most important feature of the package.  For option 1, 
 use the layout:
 </p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>Binaries, etc.</p></td></tr></table>
