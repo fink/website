@@ -1,13 +1,13 @@
 <?
 $title = "ネチケット - 投稿前";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:38:58';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/05/30 14:27:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="first-post.php?phpLang=ja" title="最初の投稿"><link rel="prev" href="index.php?phpLang=ja" title="ネチケット Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>ネチケット - 1 投稿の前に</h1>
+include_once "header.ja.inc";
+?>
+<h1>ネチケット - 1. 投稿の前に</h1>
     
     
     <h2><a name="research">1.1 自分の問題を調査します．</a></h2>
@@ -20,7 +20,9 @@ include_once "header.inc";
         <li>Google</li>
       </ul>
     
-  <p align="right">
-Next: <a href="first-post.php?phpLang=ja">2 最初の投稿</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="first-post.php?phpLang=ja">2. 最初の投稿</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

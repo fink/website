@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/18 13:29:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="next" href="unsubscribe.php?phpLang=zh" title="如何取消订阅？"><link rel="prev" href="first-post.php?phpLang=zh" title="初始张贴">';
 
-include_once "header.inc";
-?>
 
-<h1>网络礼仪 - 3 回应一个帖子</h1>
+include_once "header.zh.inc";
+?>
+<h1>网络礼仪 - 3. 回应一个帖子</h1>
     
     
     
@@ -29,7 +29,9 @@ include_once "header.inc";
       </ul>
       <p>不过，如果你这样做，你应该删除其它额外的收件人(比如说由于同时发布到多个列表，或者其它已经回复这个主题的其它人)。</p>
     
-  <p align="right">
-Next: <a href="unsubscribe.php?phpLang=zh">4 如何取消订阅？</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="unsubscribe.php?phpLang=zh">4. 如何取消订阅？</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

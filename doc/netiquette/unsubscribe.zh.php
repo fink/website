@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/18 13:29:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="prev" href="reply.php?phpLang=zh" title="回应一个帖子">';
 
-include_once "header.inc";
-?>
 
-<h1>网络礼仪 - 4 如何取消订阅？</h1>
+include_once "header.zh.inc";
+?>
+<h1>网络礼仪 - 4. 如何取消订阅？</h1>
     
     
     <h2><a name="unsubscribing">4.1 我怎么取消订阅？</a></h2>
@@ -23,5 +23,7 @@ include_once "header.inc";
       </ol>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -1,13 +1,13 @@
 <?
 $title = "netiquette - Unsubscribing";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/30 22:10:49';
+$cvs_date = 'Date: 2004/03/31 00:38:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="prev" href="reply.php?phpLang=en" title="Replying to Posts">';
 
-include_once "header.inc";
-?>
 
-<h1>netiquette - 4 How to Unsubscribe from the Lists</h1>
+include_once "header.en.inc";
+?>
+<h1>netiquette - 4. How to Unsubscribe from the Lists</h1>
     
     
     <h2><a name="unsubscribing">4.1 How do I unsubscribe?</a></h2>
@@ -21,5 +21,7 @@ include_once "header.inc";
       </ol>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -1,13 +1,13 @@
 <?
 $title = "netiquette - Before posting";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/30 22:10:49';
+$cvs_date = 'Date: 2004/03/31 00:38:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="first-post.php?phpLang=en" title="Initial Post"><link rel="prev" href="index.php?phpLang=en" title="netiquette Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>netiquette - 1 What to do Before You Post</h1>
+include_once "header.en.inc";
+?>
+<h1>netiquette - 1. What to do Before You Post</h1>
     
     
     <h2><a name="research">1.1 Research your question.</a></h2>
@@ -19,7 +19,9 @@ include_once "header.inc";
         <li>Google</li>
       </ul>
     
-  <p align="right">
-Next: <a href="first-post.php?phpLang=en">2 Initial Post</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="first-post.php?phpLang=en">2. Initial Post</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

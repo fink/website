@@ -1,13 +1,13 @@
 <?
 $title = "netiquette - Initial";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/30 22:10:49';
+$cvs_date = 'Date: 2004/03/31 00:38:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="reply.php?phpLang=en" title="Replying to Posts"><link rel="prev" href="before-post.php?phpLang=en" title="What to do Before You Post">';
 
-include_once "header.inc";
-?>
 
-<h1>netiquette - 2 Initial Post</h1>
+include_once "header.en.inc";
+?>
+<h1>netiquette - 2. Initial Post</h1>
     
     
     <h2><a name="system">2.1 What do you have installed?</a></h2>
@@ -63,7 +63,9 @@ gcc &lt;flags, files etc.&gt;
         <li>Asking about the suitability of a course of action.</li>
       </ul>
     
-  <p align="right">
-Next: <a href="reply.php?phpLang=en">3 Replying to Posts</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reply.php?phpLang=en">3. Replying to Posts</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

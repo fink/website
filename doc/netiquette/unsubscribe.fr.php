@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/03/31 00:31:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="prev" href="reply.php?phpLang=fr" title="Réponses aux messages">';
 
-include_once "header.inc";
-?>
 
-<h1>Etiquette net - 4 Résiliation d'abonnemnent aux listes de diffusion</h1>
+include_once "header.fr.inc";
+?>
+<h1>Etiquette net - 4. Résiliation d'abonnemnent aux listes de diffusion</h1>
     
     
     <h2><a name="unsubscribing">4.1 Résiliation d'abonnement</a></h2>
@@ -21,5 +21,7 @@ include_once "header.inc";
       </ol>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

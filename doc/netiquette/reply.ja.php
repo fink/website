@@ -1,13 +1,13 @@
 <?
 $title = "ネチケット - 返信";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:38:58';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/05/30 14:27:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="unsubscribe.php?phpLang=ja" title="定期購読の解除"><link rel="prev" href="first-post.php?phpLang=ja" title="最初の投稿">';
 
-include_once "header.inc";
-?>
 
-<h1>ネチケット - 3 投稿への返信</h1>
+include_once "header.ja.inc";
+?>
+<h1>ネチケット - 3. 投稿への返信</h1>
     
     
     
@@ -34,7 +34,9 @@ include_once "header.inc";
       </ul>
       <p>しかし，この場合は他の総新作 (クロスポストやスレッド中で返信した他の人など) は取り除く必要があるかもしれません．</p>
     
-  <p align="right">
-Next: <a href="unsubscribe.php?phpLang=ja">4 定期購読の解除</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="unsubscribe.php?phpLang=ja">4. 定期購読の解除</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

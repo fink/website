@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/03/31 00:31:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="reply.php?phpLang=fr" title="Réponses aux messages"><link rel="prev" href="before-post.php?phpLang=fr" title="Phase de préparation">';
 
-include_once "header.inc";
-?>
 
-<h1>Etiquette net - 2 Premier message</h1>
+include_once "header.fr.inc";
+?>
+<h1>Etiquette net - 2. Premier message</h1>
     
     
     <h2><a name="system">2.1 Description de votre installation</a></h2>
@@ -64,7 +64,9 @@ gcc &lt;drapeaux, fichiers, etc...&gt;
         <li>Demander si telle ou telle procédure paraît convenir.</li>
       </ul>
     
-  <p align="right">
-Next: <a href="reply.php?phpLang=fr">3 Réponses aux messages</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reply.php?phpLang=fr">3. Réponses aux messages</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

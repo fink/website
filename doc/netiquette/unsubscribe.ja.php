@@ -1,13 +1,13 @@
 <?
 $title = "ネチケット - 購読解除";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:38:58';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/05/30 14:27:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="prev" href="reply.php?phpLang=ja" title="投稿への返信">';
 
-include_once "header.inc";
-?>
 
-<h1>ネチケット - 4 定期購読の解除</h1>
+include_once "header.ja.inc";
+?>
+<h1>ネチケット - 4. 定期購読の解除</h1>
     
     
     <h2><a name="unsubscribing">4.1 定期購読の解除はどうしたらいいですか?</a></h2>
@@ -26,5 +26,7 @@ include_once "header.inc";
       </ol>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

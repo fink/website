@@ -1,13 +1,13 @@
 <?
 $title = "ネチケット - 最初";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:38:58';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/05/30 14:27:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="reply.php?phpLang=ja" title="投稿への返信"><link rel="prev" href="before-post.php?phpLang=ja" title="投稿の前に">';
 
-include_once "header.inc";
-?>
 
-<h1>ネチケット - 2 最初の投稿</h1>
+include_once "header.ja.inc";
+?>
+<h1>ネチケット - 2. 最初の投稿</h1>
     
     
     <h2><a name="system">2.1 何がインストールされているか?</a></h2>
@@ -88,7 +88,9 @@ gcc &lt;flags, files etc.&gt;
         <li>行動が妥当かどうかを問う</li>
       </ul>
     
-  <p align="right">
-Next: <a href="reply.php?phpLang=ja">3 投稿への返信</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reply.php?phpLang=ja">3. 投稿への返信</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/18 13:29:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="next" href="reply.php?phpLang=zh" title="回应一个帖子"><link rel="prev" href="before-post.php?phpLang=zh" title="在张贴前需要做些什么">';
 
-include_once "header.inc";
-?>
 
-<h1>网络礼仪 - 2 初始张贴</h1>
+include_once "header.zh.inc";
+?>
+<h1>网络礼仪 - 2. 初始张贴</h1>
     
     
     <h2><a name="system">2.1 你已经安装了什么？</a></h2>
@@ -82,7 +82,9 @@ gcc &lt;编译标志，文件，等等&gt;
         <li>询问一系列操作是否合适。</li>
       </ul>
     
-  <p align="right">
-Next: <a href="reply.php?phpLang=zh">3 回应一个帖子</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reply.php?phpLang=zh">3. 回应一个帖子</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

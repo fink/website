@@ -1,13 +1,13 @@
 <?
 $title = "netiquette - Replying";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/30 22:10:49';
+$cvs_date = 'Date: 2004/03/31 00:38:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="unsubscribe.php?phpLang=en" title="How to Unsubscribe from the Lists"><link rel="prev" href="first-post.php?phpLang=en" title="Initial Post">';
 
-include_once "header.inc";
-?>
 
-<h1>netiquette - 3 Replying to Posts</h1>
+include_once "header.en.inc";
+?>
+<h1>netiquette - 3. Replying to Posts</h1>
     
     
     
@@ -28,7 +28,9 @@ include_once "header.inc";
       </ul>
       <p>However, if you do this, you may want to trim out any extra recipients (from crossposts, or other people who have replied on this thread).</p>
     
-  <p align="right">
-Next: <a href="unsubscribe.php?phpLang=en">4 How to Unsubscribe from the Lists</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="unsubscribe.php?phpLang=en">4. How to Unsubscribe from the Lists</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
