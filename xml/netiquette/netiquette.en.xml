@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="en">
+  <title>How to Post to a Fink Mailing List</title>
+  <shorttitle>netiquette</shorttitle>
+  <cvsid>$Id: netiquette.en.xml,v 1.1 2004/03/29 01:06:40 alexkhansen Exp $</cvsid>
+  <preface>
+    <p><em>This document is under construction.</em></p>
+    <p>This document is intended to be a guideline for new posters to a Fink mailing list.  The idea is to educate users of the lists on how to post effictively, in ordeitr to promote efficient solutions to problems.  </p>
+    <p>You may have been referred to a page on this list in a reply to a post.  Don't take offense!  What has most likely happened is that you need to provide more information to clarify the cause of your problem, and what you need to provide is listed here.</p>
+  </preface>
+  <chapter filename="before-post">
+    <title>What to do Before You Post</title>
+    <shorttitle>Before posting</shorttitle>
+    <section name="research">
+      <title>Research your question.</title>
+      <p>You should do a little research before you post, in case your question has been answered before.  Examples of places to check are:</p>
+      <ul>
+        <li>the online documentation</li>
+        <li>the mailing list archives</li>
+        <li>Google</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="first-post">
+    <title>Intial Post</title>
+    <shorttitle>Initial</shorttitle>
+    <section name="system">
+      <title>What do you have installed?</title>
+      <p>If you are having a problem installing a package, you should provide the following information about your system:</p>
+      <ul>
+        <li>Your OS version.</li>
+        <li>The version of Fink you are running.  A useful technique here is to post the output that you get from running<codeblock>fink --version</codeblock>in a terminal window.</li>
+        <li>You should specify whether you are installing from binaries, e.g. using <code>apt-get</code>, or from source, e.g. using <code>fink install</code>.<p>If the latter, you should also indicate what version of the Developer Tools you are using.</p></li>
+        <li><p>If you are installing a package that requires X11, you should specify what you are using:  Apple's X11 or XFree86.  If the latter, specify its version.  </p><p>If in doubt, go ahead and provide this information.</p></li>
+      </ul>
+    </section>
+    <section name="problem-description">
+      <title>What's Going Wrong?</title>
+      <ul>
+        <li><em>Specify the name and version of the package that is causing the problem.</em>  <p>This should be in the subject line of your message.</p><p>This means that if you are having problems with <code>foo-3.141-6</code>, don't just report a problem with <code>foo</code>.</p><p>In particular, if you are installing a package (e.g. <code>baz-2.18-1</code>) that depends on other packages, (<code>foo-3.141-6</code>, <code>bar-16.0-9</code>, ...) , and you are having problems with <code>foo</code>, you should report a problem with <code>foo-3.141-6</code>, not with <code>baz-2.18-1</code>.</p></li>
+        <li><em>Describe the problem.</em>  <p>This means that you should post a sample of an error message.</p><ol>
+            <li>For binary installation problems, start with where the troublesome package is being unpacked:<codeblock>...
+Selecting previously deselected package foo
+error unpacking foo
+...</codeblock>and go on until the end.<p></p></li>
+            <li>There are a few possible issues with installation from source:<ol>
+                <li>If the failure is during the initial configuration, this is usually immediate.  Post from the last couple of tests that were run before the error message on to the end:<codeblock>....
+Checking for bar-config...no
+Error:  bar-config not found
+....</codeblock><p>If you think it might help, then you can post the relevant section of the configuration log file, e.g. <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>.  <em>Please don't post the whole file, since they can be large.</em></p></li>
+                <li>Or, the error can show up immediately when you've actually started building the package.  In this case, post from the last line the compiler tried to run to the end:<codeblock>...
+gcc &lt;flags, files etc.&gt;
+&lt;error messages&gt;
+...</codeblock></li>
+                <li>If you get the dreaded <code>execution of mv failed</code> error, you'll be told to search your build output for an earlier error, so you may want to try hunting for it before you post.</li>
+              </ol></li>
+          </ol>    </li>
+      </ul>
+    </section>
+    <section name="remedies">
+      <title>What have you tried?</title>
+      <p>It's a good idea to mention what you've tried, e.g.</p>
+      <ul>
+        <li>Instructions in the FAQ or other documentation</li>
+        <li>Removing packages that appeared to cause a conflict</li>
+        <li>Rebuilding/reinstalling</li>
+        <li>Updating package descriptions again</li>
+        <li>etc.</li>
+      </ul>
+      <p>That way, people won't start by suggesting things that you've already done.</p>
+    </section>
+    <section name="future-plans">
+      <title>What will you try next?</title>
+      <p>A couple of items come under this category:</p>
+      <ul>
+        <li>Posting what you plan to do if you don't get an immediate response.</li>
+        <li>Asking about the suitability of a course of action.</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="reply">
+    <title>Replying to Posts</title>
+    <shorttitle>Replying</shorttitle>
+    <preface>
+      <p>This chapter covers what to do when replying to posts.</p>
+    </preface>
+    <section name="reply-to-list">
+      <title>Make Sure to Reply to the List</title>
+      <p>Unlike some other mailing lists to which you may be subscribed, the Fink lists are set up such that if you simply reply to a message, you will reply to the person who posted it, but <em>not</em> to the list.  Please make sure that you reply to the list:  </p>
+      <ul>
+        <li>You get more people looking at your problem.</li>
+        <li>You don't monopolize one person's time.  Remember:  people who reply on the lists are volunteers.</li>
+        <li>Others can benefit, as well.  Having the full set of email exchanges in the public view means that they go into the mailing list archives, and may ultimately wind up in the documentation.</li>
+      </ul>
+      <p>Frequently people will use <quote>Reply to All</quote> to accomplish this:</p>
+      <ul>
+        <li>It's typically just as easy as hitting "Reply".</li>
+        <li>Even though this sends both to the list and to the author of the prior message, this can be desirable, since sometimes the list mail gets delayed, e.g. for virus filtering during major outbreaks, and the message will get to the prior poster more quickly.</li>
+      </ul>
+      <p>However, if you do this, you may want to trim out any extra recipients (from crossposts, or other people who have replied on this thread).</p>
+    </section>
+  </chapter>
+  <chapter filename="unsubscribe">
+    <title>How to Unsubscribe from the Lists</title>
+    <shorttitle>Unsubscribing</shorttitle>
+    <section name="unsubscribing">
+      <title>How do I unsubscribe?</title>
+      <p>To unsubscribe, <em>don't</em> send a message to the list.</p>
+      <ol>
+        <li>Go to the <link url="http://fink.sourceforge.net/lists/index.php">Mailing Lists</link> page.  <p>Note:  don't use the MacOSX version  Internet Explorer.</p></li>
+        <li>Select the link for the list from which you wish to unsubscribe.</li>
+        <li>Go to the bottom of the page where it says:  <quote>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</quote>, and enter the email address where you are receiving the Fink mail, then click the <quote>Edit Options</quote> button.   </li>
+        <li>On the page that opens up next, there's a field in the upper left where you can unsubscribe.</li>
+      </ol>
+    </section>
+  </chapter>
+</document>
