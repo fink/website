@@ -3,7 +3,7 @@ $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2003/09/19 00:00:27';
 
-$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
+$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="general.php" title="General Questions">';
 
 include "header.inc";
 ?>
@@ -101,7 +101,7 @@ statement</a> for details.
 		</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
+Next: <a href="upgrade-fink.php">3 Upgrading Fink (version-specific troubleshooting)</a></p>
 
 
 <?
