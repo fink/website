@@ -1,9 +1,9 @@
 <?
 $title = "Package Database - Upload Form";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/14 02:29:45 $';
+$cvs_date = '$Date: 2004/04/18 19:26:41 $';
 
-/* $Id: submit.php,v 1.2 2004/04/14 02:29:45 benh57 Exp $ */
+/* $Id: submit.php,v 1.3 2004/04/18 19:26:41 benh57 Exp $ */
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
@@ -28,7 +28,6 @@ if ($uses_pathinfo) {
 
 /* generate page header and navigation */
 $section = "packages";
-
 $fsroot = "../";
 if (substr($root,0,1) == "-") {
   $root = substr($root.$fsroot,1);
@@ -232,22 +231,6 @@ elseif(param(pkghash1))
 		}
 	
 	######  	
-	###### 'contentssubmitters' is a table of each submitter and the pkghash / file_ids they have submitted.
-	###### The PRIMARY KEY is (submitter, pkghash, file_id) 
-	######
-	
-	#	$q = "INSERT INTO contentssubmitters (submitter, release, package, version, pkghash, file_id, timestamp) 
-	#								VALUES ('$username', '$release', '$package', '$version', '$pkghash', '$file_id', '$timestamp')";
-	#	print $q . "\n";  
-	#	$rs = mysql_query($q, $dbh);
-	#	$err = mysql_errno();
-	#	if ((!$rs) && (mysql_errno() != 1062)) {
-	#		#Die, unless the error is 1062 (ER_DUP_ENTRY), eg we already have that submitter/pkghash/file_id in the db
-	#		print '<p><b>errno $err error during query:</b> '.mysql_error().'</p>';
-	#		die;
-	#	}
-	
-	######  	
 	###### 'contentspackages' is a table of each release-package-version-pkghash and the file ids it contains.
 	###### Some release-package-versions may differ!
 	###### Additionally, it is possible some packages may have the same hash, and same files.
@@ -255,7 +238,7 @@ elseif(param(pkghash1))
 	###### Thus, the PRIMARY KEY is (release, package, version, pkghash, file_id) 
 	######
 		$q = "INSERT INTO contentspackages (submitter, release, package, version, pkghash, file_id, votes, timestamp) VALUES ('$username', '$release', '$package', '$version', '$pkghash', '$file_id', 0, '$timestamp')";
-		print $q . "\n";  
+	#	print $q . "\n";  
 		$rs = mysql_query($q, $dbh);
 		if ((!$rs) && (mysql_errno() != 1062)) {
 			#Die, unless the error is 1062 (ER_DUP_ENTRY), eg we already have that file hash in the db
