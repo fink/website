@@ -1,7 +1,9 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/08/19 13:09:30 $';
+
+$have_key = isset($maintainer);
 
 include "header.inc";
 ?>
@@ -17,8 +19,13 @@ href="../doc/cvsaccess/index.php">packages from CVS</a>.
 </p>
 
 <?
-$q = "SELECT name,version,revision,descshort FROM package ".
-     "WHERE needtest=1 ORDER BY name ASC";
+if ($have_key && !ereg("[^ a-zA-Z0-9_.+-]", $maintainer)) {
+  $q = "SELECT name,version,revision,descshort FROM package ".
+	   "WHERE needtest=1 AND (maintainer LIKE '%$maintainer%') ORDER BY name ASC";
+} else {
+  $q = "SELECT name,version,revision,descshort FROM package ".
+	   "WHERE needtest=1 ORDER BY name ASC";
+}
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
