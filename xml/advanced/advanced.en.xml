@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="en">
+  <title>Advanced Fink Topics</title>
+  <shorttitle>Advanced</shorttitle>
+  <cvsid>$Id: advanced.en.xml,v 1.1 2005/01/20 01:33:08 alexkhansen Exp $</cvsid>
+  <preface>
+    <p>
+This document gives describes some advanced topics not found in the
+<link url="http://fink.sourceforge.net/users-guide/">User's Guide</link>.
+    </p>
+  </preface>
+  <chapter filename="bindist">
+    <title>Running your own Binary Distribution Server</title>
+    <shorttitle>Binary Distro Server</shorttitle>
+    <section name="intro">
+      <title>Introduction</title>
+      <p>
+This section describes a method for workgroups of more than one Fink
+installation to use a central build server ("master") that distributes binary
+packages to all clients in the group.
+      </p>
+      <p>
+(<em>Note:</em>: These instructions assume that you have a fink version &gt;= 0.24.0
+on your client machines. Read at the 
+<xref section="remarks">remarks below</xref> if you are using older fink
+versions.)
+      </p>
+      <p>
+The method involves the following steps on the 
+<xref section="master">"master" server</xref> and on the
+<xref section="client">client machines</xref>:
+      </p>
+    </section>
+    <section name="master">
+      <title>On the "master" (build) server</title>
+      <ol>
+        <li>
+Install Fink at the <filename>/sw</filename> (default) prefix (use a symlink if necessary).
+        </li>
+        <li>
+Build packages as usual -- they don't necessarily have to be installed, just
+built.
+        </li>
+        <li>
+Run <code>fink scanpackages</code> whenever your set of built
+packages has changed. This will make fink generate apt indexes for all of your
+enabled trees.
+        </li>
+        <li>
+Start a web server:  E.g. enable "Personal Web Sharing" in the Sharing section
+of System Preferences. Then set up httpd to serve your <filename>/sw/fink</filename>
+directory by adding the following lines to your
+<filename>/etc/httpd/httpd.conf</filename> file. 
+        </li>
+        <li>
+          <codeblock>
+Alias /fink /sw/fink
+&lt;Directory /sw/fink&gt;
+  Options Indexes FollowSymLinks
+&lt;/Directory&gt;
+          </codeblock>
+        </li>
+        <li>
+Run <code>sudo /usr/sbin/apachectl graceful</code> to (re)start your
+web server.
+        </li>
+      </ol>
+      <p>
+Remember to re-run <code>fink scanpackages</code> whenever you
+build/update packages on the "master" server to make them available to your
+remote machines.
+      </p>
+      <p>
+Notes:
+      </p>
+      <p>
+You could also create a user 'fink' and add the above lines to 
+<filename>/etc/httpd/users/fink.conf</filename>.
+      </p>
+      <p>
+If you use the apache2 package from Fink adjust the paths above accordingly.
+      </p>
+    </section>
+    <section name="client">
+      <title>On the client machines</title>
+      <ol>
+        <li>
+Install Fink at the <filename>/sw</filename> (default) prefix.
+        </li>
+        <li>
+Run <code>fink configure</code> and enable the option to download
+packages from the binary distribution. ("UseBinaryDist: true" in the
+<filename>/sw/etc/fink.conf</filename> file.)
+        </li>
+        <li>
+Edit <filename>/sw/etc/apt/sources.list</filename>, and add the lines
+representing your Fink trees. For example, if the IP address of your build box
+is 192.168.42.7, you need to add:
+          <codeblock>
+deb http://192.168.42.7/fink stable main crypto
+deb http://192.168.42.7/fink unstable main crypto
+deb http://192.168.42.7/fink local main
+          </codeblock>
+        </li>
+        <li>
+Run <code>fink selfupdate</code>. You should see something like:
+          <codeblock>
+...
+Hit http://192.168.42.7 stable/main Packages
+Hit http://192.168.42.7 stable/main Release
+Hit http://192.168.42.7 stable/crypto Packages
+...
+          </codeblock>
+towards the end of the update process (if the verbose level is &gt;= 1).
+        </li>
+      </ol>
+      <p>
+Running <code>fink update-all</code> or <code>fink install
+&lt;package&gt;</code> will now download the necessary packages as
+binaries from the "master" server if available.
+      </p>
+    </section>
+    <section name="remarks">
+      <title>Remarks</title>
+      <p>
+Your "master" server needs to use the lowest version of X11 that you're using
+on all of the clients, i.e. if any of the client machines uses Apple's X11, the
+"master" server must use it too.
+      </p>
+      <p>
+If you are using a fink version &lt; 0.24.0 on a client machine you need to run
+<code>sudo apt-get update</code> instead of <code>fink selfupdate</code>. You
+then need to install binary packages with <code>sudo apt-get install
+&lt;package&gt;</code>.  
+      </p>
+      <p>
+This documentation is adapted in part from
+<link url="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the Fink"</link>
+by RangerRick. Thanks!
+      </p>
+    </section>
+  </chapter>
+</document>
