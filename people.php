@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/12/17 23:22:07 $';
+$cvs_date = '$Date: 2002/12/17 23:23:56 $';
 
 include "header.inc";
 ?>
@@ -41,13 +41,10 @@ this list.</p>
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
-<li>Hisashi Todd Fujinaka <!-- doc writer -->
 <li>Justin F. Hallett (<i>TheSin</i>)</li>
-<li>Alexander Hansen</li> <!-- support work on mailing lists! -->
 <li>Jeremy Higgs</li>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Carsten Klapp</li>
-<li>Darian Lanx (<i>dmalloc</i>)</li> <!-- doc writer -->
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Christian Schaffner</li>
@@ -58,6 +55,13 @@ this list.</p>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
+</ul>
+
+<h2>Support and Documentation Team</h2>
+<ul>
+<li>Hisashi Todd Fujinaka <!-- doc writer -->
+<li>Alexander Hansen</li> <!-- support work on mailing lists! -->
+<li>Darian Lanx (<i>dmalloc</i>)</li> <!-- doc writer -->
 </ul>
 
 <h2>Occasional Contributors</h2>
