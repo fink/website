@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2004/10/19 12:59:42 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2005/02/25 04:45:50 $';
 
 include "header.inc";
 ?>
@@ -57,7 +57,7 @@ The database was last updated
 </p>
 
 <form action="search.php" method="GET">
-<p>Search for package: <input type="text" name="s" size="15" value="">
+<p>Search for package: <input type="text" name="summary" size="15" value="">
 <input type="submit" value="Search">
 </p>
 </form>
