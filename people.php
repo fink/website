@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/08 10:07:56 $';
+$cvs_date = '$Date: 2001/09/08 16:15:52 $';
 
 include "header.inc";
 ?>
@@ -31,6 +31,7 @@ Fink (in alphabetical order):</p>
 <h2>Occasional Contributors</h2>
 
 <ul>
+<li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
 <li>Peter O'Gorman</li>
