@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/11/02 13:01:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2002/11/06 15:31:04';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -112,7 +112,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.47 2002/11/02 13:01:12 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.48 2002/11/06 15:31:04 alexkhansen Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/11/02 13:01:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2002/11/06 15:31:04';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
