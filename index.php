@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/09 20:04:03 $';
+$cvs_date = '$Date: 2001/07/13 20:38:32 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,15 +30,13 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-07-13: A prototype of the <a href="pdb/index.php">package
+database</a> is now online.</p>
 <p>2001-07-09: Version 0.2.3 is released. Get it from the <a
 href="download.php">download page</a>. This version fixes the dpkg
 download problems many of you were having.</p>
 <p>2001-07-03: The <a href="doc/packaging/index.php">Packaging
 Manual</a> was updated to include all recently added fields.</p>
-<p>2001-06-30: A major restructuring of the web site has started. The
-non-Fink-specific documents were removed because I don't have the time
-to maintain them. All documentation will be consolidated in the new <a
-href="doc/index.php">Documentation section</a>.</p>
 
 <h2>Status</h2>
 
