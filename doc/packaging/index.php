@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:28:30';
+$cvs_date = 'Date: 2003/05/20 19:51:27';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -46,6 +46,7 @@ currently has no maintainer.</a>
 <li><a href="policy.php#licenses">3.1 Package Licenses</a></li>
 <li><a href="policy.php#prefix">3.2 Base System Interference</a></li>
 <li><a href="policy.php#sharedlibs">3.3 Shared Libraries</a></li>
+<li><a href="policy.php#perlmods">3.4 Perl Modules</a></li>
 </ul>
 <li><a href="fslayout.php"><b>4 Filesystem Layout</b></a></li>
 <ul>
@@ -62,7 +63,7 @@ currently has no maintainer.</a>
 <li><a href="reference.php#patches">5.5 Patches</a></li>
 <li><a href="reference.php#profile.d">5.6 Profile.d scripts</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.45 2003/05/20 19:28:30 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.46 2003/05/20 19:51:27 dmrrsn Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:28:30';
+$cvs_date = 'Date: 2003/05/20 19:51:27';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -470,6 +470,48 @@ This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <code>foo</code>.
 </p>
+
+
+
+<h2><a name="perlmods">3.4 Perl Modules</a></h2>
+<p>Fink has a new policy about perl modules, effective in May, 2003.
+</p><p>
+Traditionally, the Fink packages for perl modules have the suffix 
+<code>-pm</code>, and have been build using the <code>Type: perl</code> 
+directive, which stores the perl module's files in /sw/lib/perl5 and/or
+/sw/lib/perl5/darwin.  Under the new policy, this storage location is only 
+permitted for perl modules which are independent of the version of perl 
+being used to compile them.
+</p><p>
+The perl modules which are version-dependent are the so-called XS modules,
+which frequently contain compiled C code as well as pure perl routines.
+There are a number of ways of recognizing these, including the presence
+of a file with a suffix <code>.bundle</code>.
+</p><p>
+A version-dependent perl module must be built using a versioned binary
+of perl, such as <code>perl5.6.0</code>, and must store its files in
+versioned subdirectories of the standard perl directories, such as
+/sw/lib/perl5/5.6.0 and /sw/lib/perl5/5.6.0/darwin.  A new convention
+is being introducted of using the suffix <code>-pm560</code> for
+a perl module of version 5.6.0.  Similar storage and naming conventions
+are in force for other versions of perl, which will soon include 
+perl 5.6.1 and perl 5.8.0.  
+</p><p>
+The new directive <code>Type: perl 5.6.0</code> automatically uses the
+versioned perl binary and stores the files in the correct subdirectories. 
+(This directive is available starting with version 0.13.0 of fink.)
+</p><p>
+It is permitted to create a <code>-pm</code> package which is essentially
+a &quot;bundle&quot; package that loads the <code>-pm560</code> variant or any
+others which may be exist.  This strategy is encouraged for existing
+Fink packages for XS modules, in order to provide a smooth upgrade path.
+</p><p>
+Effective with version 0.13.0 of fink, the <code>fink validate</code>
+command when applied to a <code>.deb</code> file will check to see if
+the fink package is an XS module which has been installed in a non-versioned 
+directory, and will issue a warning if so.
+</p>
+
 
 
 <p align="right">

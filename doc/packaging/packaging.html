@@ -20,7 +20,7 @@ in this area, you might consider adopting a
 <a href="http://fink.sourceforge.net/pdb/nomaintainer.php">package which
 currently has no maintainer.</a>
 </p>
-<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.def1">1.1 What is a Package?</a></li><li><a href="#intro.ident">1.2 Identifying a Package</a></li></ul></li><li><a href="#format"><b>2 Package Descriptions</b></a><ul><li><a href="#format.trees">2.1 Tree Layout</a></li><li><a href="#format.format">2.2 File Format</a></li><li><a href="#format.percent">2.3 Percent Expansion</a></li></ul></li><li><a href="#policy"><b>3 Packaging Policy</b></a><ul><li><a href="#policy.licenses">3.1 Package Licenses</a></li><li><a href="#policy.prefix">3.2 Base System Interference</a></li><li><a href="#policy.sharedlibs">3.3 Shared Libraries</a></li></ul></li><li><a href="#fslayout"><b>4 Filesystem Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></li><li><a href="#fslayout.dirs">4.2 The Directories</a></li><li><a href="#fslayout.avoid">4.3 Things to Avoid</a></li></ul></li><li><a href="#reference"><b>5 Reference</b></a><ul><li><a href="#reference.build">5.1 The Build Process</a></li><li><a href="#reference.fields">5.2 Fields</a></li><li><a href="#reference.splitoffs">5.3 SplitOffs</a></li><li><a href="#reference.scripts">5.4 Scripts</a></li><li><a href="#reference.patches">5.5 Patches</a></li><li><a href="#reference.profile.d">5.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.def1">1.1 What is a Package?</a></li><li><a href="#intro.ident">1.2 Identifying a Package</a></li></ul></li><li><a href="#format"><b>2 Package Descriptions</b></a><ul><li><a href="#format.trees">2.1 Tree Layout</a></li><li><a href="#format.format">2.2 File Format</a></li><li><a href="#format.percent">2.3 Percent Expansion</a></li></ul></li><li><a href="#policy"><b>3 Packaging Policy</b></a><ul><li><a href="#policy.licenses">3.1 Package Licenses</a></li><li><a href="#policy.prefix">3.2 Base System Interference</a></li><li><a href="#policy.sharedlibs">3.3 Shared Libraries</a></li><li><a href="#policy.perlmods">3.4 Perl Modules</a></li></ul></li><li><a href="#fslayout"><b>4 Filesystem Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></li><li><a href="#fslayout.dirs">4.2 The Directories</a></li><li><a href="#fslayout.avoid">4.3 Things to Avoid</a></li></ul></li><li><a href="#reference"><b>5 Reference</b></a><ul><li><a href="#reference.build">5.1 The Build Process</a></li><li><a href="#reference.fields">5.2 Fields</a></li><li><a href="#reference.splitoffs">5.3 SplitOffs</a></li><li><a href="#reference.scripts">5.4 Scripts</a></li><li><a href="#reference.patches">5.5 Patches</a></li><li><a href="#reference.profile.d">5.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
 
 
 
@@ -732,6 +732,48 @@ This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <tt style="white-space: nowrap;">foo</tt>.
 </p>
+
+
+
+<h3><a name="policy.perlmods">3.4 Perl Modules</a></h3>
+<p>Fink has a new policy about perl modules, effective in May, 2003.
+</p><p>
+Traditionally, the Fink packages for perl modules have the suffix 
+<tt style="white-space: nowrap;">-pm</tt>, and have been build using the <tt style="white-space: nowrap;">Type: perl</tt> 
+directive, which stores the perl module's files in /sw/lib/perl5 and/or
+/sw/lib/perl5/darwin.  Under the new policy, this storage location is only 
+permitted for perl modules which are independent of the version of perl 
+being used to compile them.
+</p><p>
+The perl modules which are version-dependent are the so-called XS modules,
+which frequently contain compiled C code as well as pure perl routines.
+There are a number of ways of recognizing these, including the presence
+of a file with a suffix <tt style="white-space: nowrap;">.bundle</tt>.
+</p><p>
+A version-dependent perl module must be built using a versioned binary
+of perl, such as <tt style="white-space: nowrap;">perl5.6.0</tt>, and must store its files in
+versioned subdirectories of the standard perl directories, such as
+/sw/lib/perl5/5.6.0 and /sw/lib/perl5/5.6.0/darwin.  A new convention
+is being introducted of using the suffix <tt style="white-space: nowrap;">-pm560</tt> for
+a perl module of version 5.6.0.  Similar storage and naming conventions
+are in force for other versions of perl, which will soon include 
+perl 5.6.1 and perl 5.8.0.  
+</p><p>
+The new directive <tt style="white-space: nowrap;">Type: perl 5.6.0</tt> automatically uses the
+versioned perl binary and stores the files in the correct subdirectories. 
+(This directive is available starting with version 0.13.0 of fink.)
+</p><p>
+It is permitted to create a <tt style="white-space: nowrap;">-pm</tt> package which is essentially
+a &quot;bundle&quot; package that loads the <tt style="white-space: nowrap;">-pm560</tt> variant or any
+others which may be exist.  This strategy is encouraged for existing
+Fink packages for XS modules, in order to provide a smooth upgrade path.
+</p><p>
+Effective with version 0.13.0 of fink, the <tt style="white-space: nowrap;">fink validate</tt>
+command when applied to a <tt style="white-space: nowrap;">.deb</tt> file will check to see if
+the fink package is an XS module which has been installed in a non-versioned 
+directory, and will issue a warning if so.
+</p>
+
 
 
 <h2><a name="fslayout">4 Filesystem Layout</a></h2>
@@ -1782,4 +1824,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.45 2003/05/20 19:28:30 dmrrsn Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.46 2003/05/20 19:51:27 dmrrsn Exp $</i></p></body></html>
