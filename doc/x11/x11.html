@@ -385,7 +385,9 @@ can follow the <a href="#inst-xfree86.switching-x11">instructions on
 replacing one X11 package with another</a>.  Make sure that you remove your existing
 packages, and then install <tt style="white-space: nowrap;">system-xfree86</tt>.  Be sure you first remove
 your old X11 packages, then install Apple's X11 and X11 SDK, and then run
-'<tt style="white-space: nowrap;">fink selfupdate-cvs; fink install system-xfree86</tt>' (in that order).
+either '<tt style="white-space: nowrap;">sudo apt-get update; sudo apt-get install system-xfree86</tt>' (for
+binaries) or '<tt style="white-space: nowrap;">fink selfupdate-cvs; fink install system-xfree86</tt>' (to
+get the latest system-xfree86 package from CVS).
 </p>
 <p>
 Some notes on using Apple's X11:
@@ -546,7 +548,7 @@ There are two different ways to do this:
    To manually, remove them, you use the <tt style="white-space: nowrap;">dpkg</tt> with the --force-depends
    option, like so:
   </p>
-  <pre>dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
+  <pre>sudo dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
   <p>
    Note that if you have apps that require threaded XFree86, you may have trouble with your
    dpkg database if you force remove it and install a different XFree86 package or placeholder
@@ -1268,4 +1270,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: x11.xml,v 1.20 2003/01/08 00:25:41 rangerrick Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: x11.xml,v 1.21 2003/01/08 13:29:05 rangerrick Exp $</i></p></body></html>

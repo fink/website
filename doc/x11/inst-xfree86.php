@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/01/08 00:25:41';
+$cvs_date = 'Date: 2003/01/08 13:29:05';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -59,7 +59,9 @@ can follow the <a href="inst-xfree86.php#switching-x11">instructions on
 replacing one X11 package with another</a>.  Make sure that you remove your existing
 packages, and then install <tt><nobr>system-xfree86</nobr></tt>.  Be sure you first remove
 your old X11 packages, then install Apple's X11 and X11 SDK, and then run
-'<tt><nobr>fink selfupdate-cvs; fink install system-xfree86</nobr></tt>' (in that order).
+either '<tt><nobr>sudo apt-get update; sudo apt-get install system-xfree86</nobr></tt>' (for
+binaries) or '<tt><nobr>fink selfupdate-cvs; fink install system-xfree86</nobr></tt>' (to
+get the latest system-xfree86 package from CVS).
 </p>
 <p>
 Some notes on using Apple's X11:
@@ -220,7 +222,7 @@ There are two different ways to do this:
    To manually, remove them, you use the <tt><nobr>dpkg</nobr></tt> with the --force-depends
    option, like so:
   </p>
-  <pre>dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
+  <pre>sudo dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
   <p>
    Note that if you have apps that require threaded XFree86, you may have trouble with your
    dpkg database if you force remove it and install a different XFree86 package or placeholder
