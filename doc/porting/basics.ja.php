@@ -1,7 +1,7 @@
 <?
 $title = "ポーティング - 基本";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/12 15:06:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="shared.php?phpLang=ja" title="共有コード"><link rel="prev" href="index.php?phpLang=ja" title="ポーティング Contents">';
 
 

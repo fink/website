@@ -1,8 +1,8 @@
 <?
 $title = "ポーティング - libtool";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/12 15:06:20';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="preparing.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:45';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
 
 
 include_once "header.ja.inc";
@@ -246,7 +246,7 @@ Apple の提供する GNU libtool は <code>glibtool</code> としてインス�
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="preparing.php?phpLang=ja">4. 10.2 に向けて</a></p>
+<a href="preparing-10.2.php?phpLang=ja">4. 10.2 に向けて</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
