@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.8 2004/04/27 13:42:00 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.9 2004/06/28 14:54:22 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -911,6 +911,34 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 </li>
 </ul>
 </section>
+<section name="advanced" >
+	<title>高度な設定</title>
+		<p>この他にも有益なオプションがありますが、正しく使うには知識が必要です。</p>
+		<ul>
+			<li>
+				<p><em>MatchPackageRegEx:</em> </p>
+				<p>
+					perl 正規表現的に適合するパッケージが一つしかない場合、 fink が尋ねてこないようになります。
+					例:
+				</p>
+				<codeblock>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</codeblock>
+				<p>'-ssl' で終わるパッケージ、 'xfree86'、および 'xfree86-shlibs' に正確に適合する。
+				</p>
+			</li>
+			<li>
+				<p><em>CCacheDir:</em> パス</p>
+				<p>
+					<em>0.20.5 CVS バージョン以降の fink で導入</em>
+					Fink パッケージ ccache-default がインストールされている場合、
+					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
+					規定値は <filename>/sw/var/ccache</filename> 。
+					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
+					ccache は <filename>$HOME/.ccache</filename> を使用する。
+					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
+				</p>
+			</li>
+		</ul>
+	</section>
 </chapter>
 <chapter filename="usage" >
 <title>コマンドライン fink ツールの使用方法</title>

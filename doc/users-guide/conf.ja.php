@@ -279,6 +279,34 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 </li>
 </ul>
 
+<h2><a name="advanced">5.8 高度な設定</a></h2>
+	
+		<p>この他にも有益なオプションがありますが、正しく使うには知識が必要です。</p>
+		<ul>
+			<li>
+				<p><b>MatchPackageRegEx:</b> </p>
+				<p>
+					perl 正規表現的に適合するパッケージが一つしかない場合、 fink が尋ねてこないようになります。
+					例:
+				</p>
+				<pre>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</pre>
+				<p>'-ssl' で終わるパッケージ、 'xfree86'、および 'xfree86-shlibs' に正確に適合する。
+				</p>
+			</li>
+			<li>
+				<p><b>CCacheDir:</b> パス</p>
+				<p>
+					<b>0.20.5 CVS バージョン以降の fink で導入</b>
+					Fink パッケージ ccache-default がインストールされている場合、
+					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
+					規定値は <code>/sw/var/ccache</code> 。
+					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
+					ccache は <code>$HOME/.ccache</code> を使用する。
+					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
+				</p>
+			</li>
+		</ul>
+	
 <p align="right">
 Next: <a href="usage.php?phpLang=ja">6 コマンドライン fink ツールの使用方法</a></p>
 
