@@ -1,7 +1,7 @@
 <a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
 	<p>
 	Fink works just fine with the <a href="<?php print $root; ?>http://www.apple.com/macosx/x11/">public beta X11 release</a>
-	with some caveats.  Please read <a href="<?php print $root; ?>http://fink.sourceforge.net/doc/x11/inst-xfree86.php#inst-xfree86.apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>
+	with some caveats.  Please read <a href="<?php print $root; ?>http://fink.sourceforge.net/doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>
 	<a name="2003-01-07 RSS Feeds available"><span class="news_date">2003-01-07: </span><span class="news_headline">RSS Feeds available</span></a><?php gray_line(); ?>
 	<p>
 	Thanks to one of our most valuable developers, Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that cotain a lot of valuable information
