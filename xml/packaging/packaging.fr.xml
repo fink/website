@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.4 2004/03/25 04:54:39 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.5 2004/03/25 05:00:57 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -1938,8 +1938,7 @@ For details about how this works, see the separate
 <em>Introduced in fink 0.9.9.</em>
 This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run. Starting with a
-CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N >= 2integer values
-of N, rather than numbering upwards from N = 2. However, you still
+CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N >= 2. However, you still
 may not have duplicates.
 </p>
 </itemd></item>

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 04:54:39';
+$cvs_date = 'Date: 2004/03/25 05:00:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -756,8 +756,7 @@ For details about how this works, see the separate
 <b>Introduced in fink 0.9.9.</b>
 This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run. Starting with a
-CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N &gt;= 2integer values
-of N, rather than numbering upwards from N = 2. However, you still
+CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N &gt;= 2. However, you still
 may not have duplicates.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
