@@ -3,7 +3,7 @@
 <document filename="install">
 <title>Fink 0.3.2a Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.10 2002/01/24 21:04:29 fingolfin Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.11 2002/03/09 13:58:02 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -184,10 +184,10 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.0 or later.
-(There may still be some stray linker-related problems with 10.1.)
-Darwin 1.3.1 should also work, but this has not been tested.
-Earlier versions of both will <em>not</em> work.
+An installed Mac OS X system, version 10.1 or later.
+Darwin 5.0 and later should also work, but this has not been tested.
+Earlier versions of both are not supported and probably will
+<em>not</em> work.
 </p></li>
 <li><p>
 Development tools.

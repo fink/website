@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/24 21:04:29';
+$cvs_date = 'Date: 2002/03/09 13:58:02';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
@@ -18,10 +18,10 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.0 or later.
-(There may still be some stray linker-related problems with 10.1.)
-Darwin 1.3.1 should also work, but this has not been tested.
-Earlier versions of both will <b>not</b> work.
+An installed Mac OS X system, version 10.1 or later.
+Darwin 5.0 and later should also work, but this has not been tested.
+Earlier versions of both are not supported and probably will
+<b>not</b> work.
 </p></li>
 <li><p>
 Development tools.

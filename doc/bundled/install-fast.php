@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/24 21:04:29';
+$cvs_date = 'Date: 2002/03/09 13:58:02';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
