@@ -12,7 +12,7 @@
 	<p>
 	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
 	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
-	 Some packages need special changes to build on 10.2. Adding &quot;main/unstable&quot; to your
+	 Some packages need special changes to build on 10.2. Adding &quot;unstable/main&quot; to your
 	 list of trees in /sw/etc/fink.conf (see also the <a href="<?php print $root; ?>faq/usage-fink.php#unstable">FAQ</a>)
 	 will give you access to the latest versions of packages, many of which include important
 	 fixes for 10.2.
