@@ -1,7 +1,7 @@
 <?
 $title = "Installation";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/13 22:27:04';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
@@ -47,9 +47,9 @@ Track</a></li>
 </ul>
 <li><a href="install-up01.php"><b>5 Upgrading From Fink 0.1.x</b></a></li>
 <ul>
-<li><a href="install-up01.php#upgrade-01">5.1 </a></li>
+<li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.12 2002/04/13 21:14:21 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.13 2002/04/13 22:27:04 fingolfin Exp $</i></p>
 
 
 <?

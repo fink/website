@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/13 22:27:04';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
 
@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="upgrade-01"><h2>5.1 </h2></a>
+<a name="upgrade-01"><h2>5.1 Clean cut</h2></a>
 <p>
 There is no direct upgrade path from Fink 0.1.x to Fink 0.2.x, because
 they use different methods for underlying package management (stow
