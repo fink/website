@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.43 2004/07/29 21:37:07 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.44 2004/07/30 08:46:50 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -269,7 +269,7 @@ the <em>f</em>ull package name, i.e. %n-%v-%r
 <item><itemt>%p, %P</itemt>
 <itemd>
 <p>
-the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You must not use <filename>/sw</filename>, as the user may have changed the location of Fink's installation. Use <code>%p</code> instead.
+the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You must not assume all users have Fink installed in <filename>/sw</filename>; use <code>%p</code> to ge the correct path.
 </p>
 </itemd></item>
 
