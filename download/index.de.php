@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/11 12:33:20 $';
+$cvs_date = '$Date: 2004/04/13 18:54:16 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,8 @@ include "../fink_version.inc";
 Laden Sie sich das Installations-Disc-Image herunter:<br>
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
 <? print $fink_version; ?> Binary Installer</a> - <? print $dmg_size; ?><br>
+(10.2 Nutzer - nehmen stattdessen  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-Installer.dmg?download">Fink
+0.6.3</a>)<br>
 (10.1 Nutzer - nehmen stattdessen <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
 0.4.1</a>)
 </p>
