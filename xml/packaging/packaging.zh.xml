@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.11 2004/05/17 22:43:19 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.12 2004/05/19 15:04:47 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -943,7 +943,7 @@ Type: -x11 (-x11 .)
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.6.0 5.8.1)
-Depends: perl-core%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </codeblock>
 <codeblock>

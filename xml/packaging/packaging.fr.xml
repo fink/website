@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.28 2004/05/19 11:39:53 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.29 2004/05/19 15:04:47 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -851,7 +851,7 @@ Dans les autres champs, on accède à un sous-type donné de variante en utilisa
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.6.0 5.8.1)
-Depends: perl-core%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </codeblock>
 <codeblock>
