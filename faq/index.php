@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/20 15:20:52';
+$cvs_date = 'Date: 2004/01/27 01:27:44';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -82,6 +82,8 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#cant-upgrade">4.22 I can't seem to update Fink's version.</a></li>
 <li><a href="usage-fink.php#spaces-in-directory">4.23 Can I put Fink in a volume or directory with a space in its name?</a></li>
 <li><a href="usage-fink.php#packages-gz">4.24 When I try to do a binary update, there are many messages with "File not found"</a></li>
+<li><a href="usage-fink.php#wrong-tree">4.25 I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</a></li>
+<li><a href="usage-fink.php#seg-fault">4.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code> when I try to install anything! Help!</a></li>
 </ul>
 <li><a href="comp-general.php"><b>5 Compile Problems - General</b></a></li>
 <ul>
@@ -141,7 +143,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.162 2004/01/20 15:20:52 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.163 2004/01/27 01:27:44 alexkhansen Exp $</i></p>
 
 
 <?

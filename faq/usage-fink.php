@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/20 15:20:52';
+$cvs_date = 'Date: 2004/01/27 01:27:44';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -348,6 +348,21 @@ ones used instead.
 update available list script returned error exit status 1.
 </pre><p>then all you need to do is run <code>fink scanpackages</code>. This generates the files that aren't being found.</p></div>
 </a>
+<a name="wrong-tree">
+<div class="question"><p><b>Q4.25: I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</b></p></div>
+<div class="answer"><p><b>A:</b> When changing the Fink distribution (of which the source and binary distros are subsets), Fink needs to be told that this has happened.  To do this, you can run a script that normally gets run when you first install Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Doing this will point Fink to the correct place.</p></div>
+</a>
+<a name="seg-fault">
+<div class="question"><p><b>Q4.26: I get errors with <code>gzip</code> | <code>dpkg-deb</code> when I try to install anything! Help!</b></p></div>
+<div class="answer"><p><b>A:</b> Errors of the form:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
+### execution of gzip failed, exit code 139</pre><p>or</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+gzip: stdout: Broken pipe
+### execution of gzip failed, exit code 138</pre><p>or</p><pre>dpkg-deb -b root-base-files-1.9.0-1
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+### execution of dpkg-deb failed, exit code 10
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>are likely to be due to a prebinding error in a library, and can be fixed by running</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
+</a>
+
 <p align="right">
 Next: <a href="comp-general.php">5 Compile Problems - General</a></p>
 

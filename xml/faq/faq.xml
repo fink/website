@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.162 2004/01/20 15:20:52 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.163 2004/01/27 01:27:44 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -803,6 +803,38 @@ update available list script returned error exit status 1.
 <p>then all you need to do is run <code>fink scanpackages</code>. This generates the files that aren't being found.</p>
 </answer>
 </faqentry>
+<faqentry name="wrong-tree">
+<question>
+<p>I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</p>
+</question>
+<answer>
+<p>When changing the Fink distribution (of which the source and binary distros are subsets), Fink needs to be told that this has happened.  To do this, you can run a script that normally gets run when you first install Fink:</p>
+<codeblock>/sw/lib/fink/postinstall.pl</codeblock>
+<p>Doing this will point Fink to the correct place.</p>
+</answer>
+</faqentry>
+<faqentry name="seg-fault">
+<question>
+<p>I get errors with <code>gzip</code> | <code>dpkg-deb</code> when I try to install anything! Help!</p>
+</question>
+<answer>
+<p>Errors of the form:</p>
+<codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
+### execution of gzip failed, exit code 139</codeblock>
+<p>or</p>
+<codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+gzip: stdout: Broken pipe
+### execution of gzip failed, exit code 138</codeblock>
+<p>or</p>
+<codeblock>dpkg-deb -b root-base-files-1.9.0-1
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+### execution of dpkg-deb failed, exit code 10
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
+<p>are likely to be due to a prebinding error in a library, and can be fixed by running</p>
+<codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
+</answer>
+</faqentry>
+
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
