@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/04/17 19:44:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 include_once "header.inc";
@@ -180,6 +180,12 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    删除所有已经有新版本的失效的软件包文件（.info, .patch, .deb）。
    这会释放出大量的磁盘空间。
 </p>
+    
+    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+      
+      <p>
+	显示 Fink 如何解析软件包的 .info 文件的各个部分。
+      </p>
     
   
 

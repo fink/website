@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.5 2004/04/12 02:48:49 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.6 2004/04/17 19:44:12 jeff_yecn Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
@@ -207,6 +207,9 @@ fink-0.x.x-full.tar.gz 压缩档的目录。
 多数情况下，你可以在命令行这样做：
 </p>
       <codeblock>open /sw/bin/pathsetup.command</codeblock>
+      <p>或对于 <code>fink-0.18.3</code> 或 <code>fink-0.19.2</code>，通过运行(就象下面一样)：
+</p>
+      <codeblock>/sw/bin/pathsetup.sh</codeblock>
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
 你可以通过打开终端窗口并运行下面指令来查看你 shell 类型：
@@ -773,12 +776,14 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
           <p>
             <em>KeepRootDir:</em> 布尔值</p>
           <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-[name]-[version]-[revision] 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
+          传递 <em>-K</em> 标志给 <em>fink</em> 可以起到相同的效果，但只对单次的 <em>fink</em> 调用起作用。
           </p>
         </li>
         <li>
           <p>
             <em>KeepBuildDir:</em> boolean</p>
           <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/[name]-[version]-[revision] 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
+          传递 <em>-K</em> 标志给 <em>fink</em> 可以起到相同的效果，但只对单次的 <em>fink</em> 调用起作用。
           </p>
         </li>
       </ul>
@@ -957,6 +962,12 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    删除所有已经有新版本的失效的软件包文件（.info, .patch, .deb）。
    这会释放出大量的磁盘空间。
 </p>
+    </section>
+    <section name="dumpinfo">
+      <title>dumpinfo</title>
+      <p>
+	显示 Fink 如何解析软件包的 .info 文件的各个部分。
+      </p>
     </section>
   </chapter>
 </document>

@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 安装";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/04/17 19:44:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 include_once "header.inc";
@@ -93,6 +93,9 @@ fink-0.x.x-full.tar.gz 压缩档的目录。
 多数情况下，你可以在命令行这样做：
 </p>
       <pre>open /sw/bin/pathsetup.command</pre>
+      <p>或对于 <code>fink-0.18.3</code> 或 <code>fink-0.19.2</code>，通过运行(就象下面一样)：
+</p>
+      <pre>/sw/bin/pathsetup.sh</pre>
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
 你可以通过打开终端窗口并运行下面指令来查看你 shell 类型：
