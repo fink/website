@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/14 11:50:44 $';
+$cvs_date = '$Date: 2001/04/15 07:54:19 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,10 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-04-15: Released version 0.1.8a, fixing install problems. You
+only need this if you downloaded 0.1.8 and had install problems ("stow
+not found"). Get it from the <a href="download.php">download
+page</a>.</p>
 <p>2001-04-14: Version 0.1.8 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-03-30: The <a href="darwin/porting.php">porting notes</a> have
@@ -36,7 +40,7 @@ href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.8 was released on 14 April 2001. This is the last
+<p>Version 0.1.8a was released on 15 April 2001. This is the last
 release to use stow. A new version using dpkg for low-level package
 management is nearing usable state and will be released Real Soon
 Now(tm).</p>
