@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/28 20:06:10';
+$cvs_date = 'Date: 2001/08/10 17:26:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -22,6 +22,8 @@ Be sure to get the <tt><nobr>Xprog.tgz</nobr></tt> and <tt><nobr>Xquartz.tgz</no
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <tt><nobr>Xinstall.sh</nobr></tt> script to install the stuff.
+(You might want to read the <a href="http://www.xfree86.org/4.1.0/Install.html">official
+instructions</a> before installing.)
 You've now got XFree86 with a server that can do fullscreen, but not
 rootless under Mac OS X.
 </p>
@@ -66,6 +68,8 @@ This is the version that will eventually become XFree86 4.2.
 It contains improvements made after 4.1.0 was released,
 most notably OpenGL support (just software rendering, but useful
 anyway) and a reimplementation of rootless mode.
+Note that the code is under constant development; what you get today
+is usually not the same as what you got yesterday.
 </p>
 <p>
 To install, follow the <a href="http://www.xfree86.org/cvs/">XFree86
@@ -88,8 +92,12 @@ the XonX team has once again started to put out binary test releases,
 this time under the name XDarwin.
 These releases are available from the <a href="http://sourceforge.net/project/showfiles.php?group_id=18034&amp;release_id=43842">SourceForge
 download page</a>.
-To install them, you must first install XFree86 4.1.0, e.g. the
-official binary release.
+You should also check the <a href="http://www.mrcla.com/XonX/">XonX
+web page</a> for additional notes.
+</p>
+<p>
+To install one of these releases, you must first install XFree86
+4.1.0, e.g. the official binary release.
 Then, extract the XDarwin tarball as root like this:
 </p>
 <pre>cd /
@@ -110,9 +118,10 @@ XFree86 4.1.0, but without the XDarwin servers.
 There are several ways to add the servers to the mix.
 The <tt><nobr>xfree86-server</nobr></tt> package installs the standard XFree86
 4.1.0 servers, i.e. you'll only get fullscreen mode.
-The <tt><nobr>xfree86-rootless</nobr></tt> package uses a patch from the time
-before 4.1.0 to build a rootless server. This package is experimental
-and therefore in the "unstable" section.
+The <tt><nobr>xfree86-rootless</nobr></tt> package downloads a (more or less)
+recent CVS snapshot from the Fink server and uses that. It builds a
+server with rootless mode plus the OpenGL libraries. This package is
+experimental and therefore in the "unstable" section.
 Finally, you have the option to install the server yourself; see
 below.
 </p>
@@ -123,6 +132,7 @@ below.
 <p>
 The downloadable installer currently offered by the MacGimp people
 does not contain XFree86.
+(It will overwrite some XFree86 configuration files, though.)
 </p>
 <p>
 The CD that <a href="http://www.macgimp.com">MacGimp, Inc.</a>
@@ -179,10 +189,8 @@ mode.
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.1.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built from source</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + XDarwin 1.0a#</td><td><p><tt><nobr>system-xfree86</nobr></tt>, optionally
-<tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + binary rootless server from other sources</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>Latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt>, optionally
-<tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt>, <tt><nobr>xfree86-server</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 + old rootless server, both built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt>, <tt><nobr>xfree86-rootless</nobr></tt> (in
-unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt></p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.1.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.1.0 built from source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.1.0 binaries + XDarwin 1.0a#</td><td><p><tt><nobr>system-xfree86</nobr></tt> and <tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + binary rootless server from other sources</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>Latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> and <tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-server</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 + new rootless server, both built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> (in
+unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr></table>
 
 
 

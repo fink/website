@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/28 20:06:10';
+$cvs_date = 'Date: 2001/08/10 17:26:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -98,10 +98,11 @@ in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
 <a name="macosx-42"><h2>Mac OS X + XFree86 CVS</h2></a>
 <p>
 Recent development versions of XFree86 (this includes the XDarwin test
-releases from the XonX project) come with rootless mode built
-in and let you choose between fullscreen and rootless mode in a dialog
-at startup.
-Just double-click the XDarwin.app application.
+releases from the XonX project and the <tt><nobr>xfree86-rootless</nobr></tt>
+package from Fink 0.2.4 and later) come with rootless mode built
+in.
+They let you choose between fullscreen and rootless mode in a dialog
+at startup, just double-click the XDarwin.app application.
 You can disable the dialog and set XDarwin to always use the mode of
 your choice in the preferences dialog.
 </p>
@@ -121,12 +122,20 @@ The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
 If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home directory,
 it will be used to start some initial X clients, e.g. the window
 manager and some xterms or a desktop environment like GNOME.
-The <tt><nobr>.xinitrc</nobr></tt> is a shell script that contains the commands
-to do this.
+The <tt><nobr>.xinitrc</nobr></tt> file is a shell script that contains the
+commands to do this.
 It is <b>not</b> necessary to put the usual <tt><nobr>#!/bin/sh</nobr></tt>
 in the first line and to set the executable bit on the file;
 xinit will still know how to run it through a shell.
 </p>
+<p>
+When there is no <tt><nobr>.xinitrc</nobr></tt> file in your home directory,
+XFree86 will use its default file,
+<tt><nobr>/usr/X11R6/lib/X11/xinit/xinitrc</nobr></tt>.
+You can use the default file as a starting point for your own
+.xinitrc:
+</p>
+<pre>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
 If you're using Fink, you should source <tt><nobr>init.sh</nobr></tt> right at
 the beginning to make sure the environment is set up correctly.
@@ -137,7 +146,7 @@ there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them "in the background" by appending a <tt><nobr>&amp;</nobr></tt> at
+shell to put them "in the background" by adding a <tt><nobr>&amp;</nobr></tt> at
 the end of the line.
 </p>
 <p>

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/28 20:06:10';
+$cvs_date = 'Date: 2001/08/10 17:26:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name=""><h2>When I launch XDarwin, it quits almost immediately</h2></a>
+<a name="immedate-quit"><h2>When I launch XDarwin, it quits almost immediately</h2></a>
 <p>
 This usually happens when your <tt><nobr>.xinitrc</nobr></tt> isn't set up
 correctly.
@@ -94,8 +94,12 @@ To turn the extension off in the clients, you can pass the
 application.
 In the case of the GNOME panel, you must edit your GNOME session file
 (<tt><nobr>~/.gnome/session</nobr></tt>).
-Be sure to pick the right section and add the <tt><nobr>--no-xshm</nobr></tt>
-to the <tt><nobr>RestartCommand</nobr></tt> line, like in this example:
+That file has several sections; you need to edit the one marked with
+<tt><nobr>[Default]</nobr></tt>.
+If there is no such section, start GNOME once and save your session to
+create it.
+Add the <tt><nobr>--no-xshm</nobr></tt> to the <tt><nobr>RestartCommand</nobr></tt>
+line, like in this example:
 </p>
 <pre>7,id=11c0a80208000099479218400000018970007
 7,RestartStyleHint=2
@@ -135,6 +139,23 @@ with X11 tunneling.
 
 
 
+<a name="open"><h2>Launching Aqua apps from an xterm</h2></a>
+<p>
+One way to launch Aqua applications from an xterm (or any other shell,
+actually) is the <tt><nobr>open</nobr></tt> command.
+Some examples:
+</p>
+<pre>open /Applications/TextEdit.app
+open SomeDocument.rtf
+open -a /Applications/TextEdit.app index.html</pre>
+<p>
+The second example opens the document in the application that is
+associated with it, the third example explicitly gives an application
+to use.
+</p>
+
+
+
 <a name="keyboard"><h2>The keyboard doesn't work in XFree86</h2></a>
 <p>
 This is a known problem that so far seems to affect only portables
@@ -153,6 +174,11 @@ If you're starting XFree86 from the command line, you can pass the
 name of the keymapping file to load as an option, as in:
 </p>
 <pre>startx -- -keymap USA.keymapping</pre>
+<p>
+Side note:
+It appears that Mac OS X 10.1 will break the read-from-kernel method
+completely, and you must always use "Load from file".
+</p>
 
 
 
@@ -175,8 +201,14 @@ These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
 through the standard C library, the program will use the default
 messages, usually in English.
-You can get rid of the messages by unsetting the environment variable
-LANG.
+There are several ways to deal with this:
+</p>
+<ul>
+<li><p>
+Just ignore the messages.
+</p></li>
+<li><p>
+Get rid of the messages by unsetting the environment variable LANG.
 Note that this will also turn internationalization off in programs
 that actually support it (via gettext/libintl).
 Example for .xinitrc:
@@ -186,7 +218,39 @@ Example for .xinitrc:
 Example for .cshrc:
 </p>
 <pre>unsetenv LANG</pre>
+</li>
+<li><p>
+Use the <tt><nobr>libxpg4</nobr></tt> Fink package (currently only in CVS).
+It builds a small library that contains working locale functions and
+arranges that it is loaded before the system libraries (using the
+DYLD_INSERT_LIBRARIES environment variable).
+</p></li>
+<li><p>
+Ask Apple to include proper locale support in a future version of Mac
+OS X.
+</p></li>
+</ul>
 
+
+
+<a name="copy-n-paste"><h2>Copy and Paste</h2></a>
+<p>
+Copy and Paste generally works between the Aqua and X11 environments.
+There are still some bugs.
+Emacs is reported to be picky about the current selection.
+Copy and paste from Classic to X11 doesn't work.
+</p>
+<p>
+Anyway, the trick is to use the respective methods of the environment
+you're in.
+To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
+destination window to the front and use the middle mouse button to
+paste.
+To transfer text from X11 to Aqua, simply select the text with the
+mouse in X11, then use Cmd-V in Aqua to paste it.
+As usual, some X11 applications may behave differently since there are
+no real standards in the X11 world...
+</p>
 
 
 

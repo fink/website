@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/28 20:06:10';
+$cvs_date = 'Date: 2001/08/10 17:26:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="history.php" title="History"><link rel="prev" href="index.php" title="Running X11 Contents">';
 
@@ -15,8 +15,9 @@ include "header.inc";
 
 <a name="def-x11"><h2>What is X11?</h2></a>
 <p>
-The X Window System Version 11, or X11 for short, is a graphics
-display system with a network-transparent client-server architecture.
+The <a href="http://www.x.org/">X Window System</a> Version 11,
+or X11 for short, is a graphics display system with a
+network-transparent client-server architecture.
 It allows applications to draw pixels, lines, text, images, etc. on
 your screen.
 X11 also comes with additional libraries that let applications easily
@@ -31,7 +32,9 @@ Desktop environments like CDE, KDE and GNOME are based on it.
 
 <a name="def-macosx"><h2>What is Mac OS X?</h2></a>
 <p>
-Mac OS X is an operating system produced by Apple Computer.
+<a href="http://www.apple.com/macosx/">Mac OS X</a> is an
+operating system produced by <a href="http://www.apple.com/">Apple
+Computer</a>.
 Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
 thus a member of the Unix OS family.
 However, it comes with a proprietary graphics display system.
@@ -42,8 +45,9 @@ Aqua, although the two names are often used interchangably.
 
 <a name="def-darwin"><h2>What is Darwin?</h2></a>
 <p>
-Darwin is basically a stripped-down version of Mac OS X that is
-available free of charge and with full source code.
+<a href="http://www.opensource.apple.com/">Darwin</a> is
+basically a stripped-down version of Mac OS X that is available free
+of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.
 By default, it only offers a text console.
 </p>
@@ -138,8 +142,10 @@ through the same channels.
 </p>
 <p>
 There is a large number of different window managers to choose from.
-The more popular ones allow the user to customize the appearance via
-so-called <a href="http://www.themes.org">themes</a>.
+<a href="http://www.xwinman.org/">xwinman.org</a> has a
+comprehensive list.
+Most popular ones allow the user to customize the appearance via
+so-called <a href="http://www.themes.org/">themes</a>.
 Many window managers also provide additional functionality, like pop
 up menus in the root window, docks or launch buttons.
 </p>

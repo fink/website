@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.6 2001/07/28 20:06:10 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.7 2001/08/10 17:26:27 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -23,8 +23,9 @@ X11 with or without Fink.
 
 <section name="def-x11"><title>What is X11?</title>
 <p>
-The X Window System Version 11, or X11 for short, is a graphics
-display system with a network-transparent client-server architecture.
+The <link url="http://www.x.org/">X Window System</link> Version 11,
+or X11 for short, is a graphics display system with a
+network-transparent client-server architecture.
 It allows applications to draw pixels, lines, text, images, etc. on
 your screen.
 X11 also comes with additional libraries that let applications easily
@@ -39,7 +40,9 @@ Desktop environments like CDE, KDE and GNOME are based on it.
 
 <section name="def-macosx"><title>What is Mac OS X?</title>
 <p>
-Mac OS X is an operating system produced by Apple Computer.
+<link url="http://www.apple.com/macosx/">Mac OS X</link> is an
+operating system produced by <link url="http://www.apple.com/">Apple
+Computer</link>.
 Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
 thus a member of the Unix OS family.
 However, it comes with a proprietary graphics display system.
@@ -50,8 +53,9 @@ Aqua, although the two names are often used interchangably.
 
 <section name="def-darwin"><title>What is Darwin?</title>
 <p>
-Darwin is basically a stripped-down version of Mac OS X that is
-available free of charge and with full source code.
+<link url="http://www.opensource.apple.com/">Darwin</link> is
+basically a stripped-down version of Mac OS X that is available free
+of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.
 By default, it only offers a text console.
 </p>
@@ -146,8 +150,10 @@ through the same channels.
 </p>
 <p>
 There is a large number of different window managers to choose from.
-The more popular ones allow the user to customize the appearance via
-so-called <link url="http://www.themes.org">themes</link>.
+<link url="http://www.xwinman.org/">xwinman.org</link> has a
+comprehensive list.
+Most popular ones allow the user to customize the appearance via
+so-called <link url="http://www.themes.org/">themes</link>.
 Many window managers also provide additional functionality, like pop
 up menus in the root window, docks or launch buttons.
 </p>
@@ -250,6 +256,9 @@ Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <code>Xinstall.sh</code> script to install the stuff.
+(You might want to read the <link
+url="http://www.xfree86.org/4.1.0/Install.html">official
+instructions</link> before installing.)
 You've now got XFree86 with a server that can do fullscreen, but not
 rootless under Mac OS X.
 </p>
@@ -303,6 +312,8 @@ This is the version that will eventually become XFree86 4.2.
 It contains improvements made after 4.1.0 was released,
 most notably OpenGL support (just software rendering, but useful
 anyway) and a reimplementation of rootless mode.
+Note that the code is under constant development; what you get today
+is usually not the same as what you got yesterday.
 </p>
 <p>
 To install, follow the <link url="http://www.xfree86.org/cvs/">XFree86
@@ -325,8 +336,12 @@ the XonX team has once again started to put out binary test releases,
 this time under the name XDarwin.
 These releases are available from the <link url="http://sourceforge.net/project/showfiles.php?group_id=18034&amp;release_id=43842">SourceForge
 download page</link>.
-To install them, you must first install XFree86 4.1.0, e.g. the
-official binary release.
+You should also check the <link url="http://www.mrcla.com/XonX/">XonX
+web page</link> for additional notes.
+</p>
+<p>
+To install one of these releases, you must first install XFree86
+4.1.0, e.g. the official binary release.
 Then, extract the XDarwin tarball as root like this:
 </p>
 <codeblock>cd /
@@ -347,9 +362,10 @@ XFree86 4.1.0, but without the XDarwin servers.
 There are several ways to add the servers to the mix.
 The <code>xfree86-server</code> package installs the standard XFree86
 4.1.0 servers, i.e. you'll only get fullscreen mode.
-The <code>xfree86-rootless</code> package uses a patch from the time
-before 4.1.0 to build a rootless server. This package is experimental
-and therefore in the "unstable" section.
+The <code>xfree86-rootless</code> package downloads a (more or less)
+recent CVS snapshot from the Fink server and uses that. It builds a
+server with rootless mode plus the OpenGL libraries. This package is
+experimental and therefore in the "unstable" section.
 Finally, you have the option to install the server yourself; see
 below.
 </p>
@@ -360,6 +376,7 @@ below.
 <p>
 The downloadable installer currently offered by the MacGimp people
 does not contain XFree86.
+(It will overwrite some XFree86 configuration files, though.)
 </p>
 <p>
 The CD that <link url="http://www.macgimp.com">MacGimp, Inc.</link>
@@ -419,31 +436,29 @@ should install:
 <pairtable labelt="Install Type" labeld="Fink packages">
 
 <item><itemt>4.1.0 official binaries</itemt>
-<itemd><p><code>system-xfree86</code></p></itemd></item>
+<itemd><p><code>system-xfree86</code> only</p></itemd></item>
 
 <item><itemt>4.1.0 built from source</itemt>
-<itemd><p><code>system-xfree86</code></p></itemd></item>
+<itemd><p><code>system-xfree86</code> only</p></itemd></item>
 
 <item><itemt>4.1.0 binaries + XDarwin 1.0a#</itemt>
-<itemd><p><code>system-xfree86</code>, optionally
-<code>system-opengl</code></p></itemd></item>
+<itemd><p><code>system-xfree86</code> and <code>system-opengl</code></p></itemd></item>
 
 <item><itemt>4.1.0 binaries + binary rootless server from other sources</itemt>
-<itemd><p><code>system-xfree86</code></p></itemd></item>
+<itemd><p><code>system-xfree86</code> only</p></itemd></item>
 
 <item><itemt>Latest CVS source</itemt>
-<itemd><p><code>system-xfree86</code>, optionally
-<code>system-opengl</code></p></itemd></item>
+<itemd><p><code>system-xfree86</code> and <code>system-opengl</code></p></itemd></item>
 
 <item><itemt>4.1.0 built via Fink</itemt>
-<itemd><p><code>xfree86-base</code>, <code>xfree86-server</code></p></itemd></item>
+<itemd><p><code>xfree86-base</code> and <code>xfree86-server</code></p></itemd></item>
 
-<item><itemt>4.1.0 + old rootless server, both built via Fink</itemt>
-<itemd><p><code>xfree86-base</code>, <code>xfree86-rootless</code> (in
+<item><itemt>4.1.0 + new rootless server, both built via Fink</itemt>
+<itemd><p><code>xfree86-base</code> and <code>xfree86-rootless</code> (in
 unstable)</p></itemd></item>
 
 <item><itemt>4.1.0 base system built via Fink + binary rootless server</itemt>
-<itemd><p><code>xfree86-base</code></p></itemd></item>
+<itemd><p><code>xfree86-base</code> only</p></itemd></item>
 
 </pairtable>
 </section>
@@ -493,7 +508,7 @@ Finally, there is the option to set up <code>xdm</code>; read its
 manual page for details.
 </p>
 <p>
-Note: If you're running Mac OS X, you can type <code>>console</code>
+Note: If you're running Mac OS X, you can type <code>&gt;console</code>
 at the login window and you'll get a text console that is
 equivalent to pure Darwin.
 You can use all of the start methods outlined above, with the
@@ -542,10 +557,11 @@ in rootless mode with the <code>-rootless</code> option:
 <section name="macosx-42"><title>Mac OS X + XFree86 CVS</title>
 <p>
 Recent development versions of XFree86 (this includes the XDarwin test
-releases from the XonX project) come with rootless mode built
-in and let you choose between fullscreen and rootless mode in a dialog
-at startup.
-Just double-click the XDarwin.app application.
+releases from the XonX project and the <code>xfree86-rootless</code>
+package from Fink 0.2.4 and later) come with rootless mode built
+in.
+They let you choose between fullscreen and rootless mode in a dialog
+at startup, just double-click the XDarwin.app application.
 You can disable the dialog and set XDarwin to always use the mode of
 your choice in the preferences dialog.
 </p>
@@ -565,12 +581,20 @@ The <code>-fullscreen</code> option forces fullscreen mode, while
 If a file named <code>.xinitrc</code> exists in your home directory,
 it will be used to start some initial X clients, e.g. the window
 manager and some xterms or a desktop environment like GNOME.
-The <code>.xinitrc</code> is a shell script that contains the commands
-to do this.
+The <code>.xinitrc</code> file is a shell script that contains the
+commands to do this.
 It is <em>not</em> necessary to put the usual <code>#!/bin/sh</code>
 in the first line and to set the executable bit on the file;
 xinit will still know how to run it through a shell.
 </p>
+<p>
+When there is no <code>.xinitrc</code> file in your home directory,
+XFree86 will use its default file,
+<code>/usr/X11R6/lib/X11/xinit/xinitrc</code>.
+You can use the default file as a starting point for your own
+.xinitrc:
+</p>
+<codeblock>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</codeblock>
 <p>
 If you're using Fink, you should source <code>init.sh</code> right at
 the beginning to make sure the environment is set up correctly.
@@ -581,7 +605,7 @@ there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them "in the background" by appending a <code>&amp;</code> at
+shell to put them "in the background" by adding a <code>&amp;</code> at
 the end of the line.
 </p>
 <p>
@@ -701,7 +725,7 @@ If someone can provide more information, just throw it my way.
 <title>Troubleshooting and Tips</title>
 <shorttitle>Troubleshooting</shorttitle>
 
-<section name=""><title>When I launch XDarwin, it quits almost immediately</title>
+<section name="immedate-quit"><title>When I launch XDarwin, it quits almost immediately</title>
 <p>
 This usually happens when your <code>.xinitrc</code> isn't set up
 correctly.
@@ -784,8 +808,12 @@ To turn the extension off in the clients, you can pass the
 application.
 In the case of the GNOME panel, you must edit your GNOME session file
 (<code>~/.gnome/session</code>).
-Be sure to pick the right section and add the <code>--no-xshm</code>
-to the <code>RestartCommand</code> line, like in this example:
+That file has several sections; you need to edit the one marked with
+<code>[Default]</code>.
+If there is no such section, start GNOME once and save your session to
+create it.
+Add the <code>--no-xshm</code> to the <code>RestartCommand</code>
+line, like in this example:
 </p>
 <codeblock>7,id=11c0a80208000099479218400000018970007
 7,RestartStyleHint=2
@@ -825,6 +853,23 @@ with X11 tunneling.
 </section>
 
 
+<section name="open"><title>Launching Aqua apps from an xterm</title>
+<p>
+One way to launch Aqua applications from an xterm (or any other shell,
+actually) is the <code>open</code> command.
+Some examples:
+</p>
+<codeblock>open /Applications/TextEdit.app
+open SomeDocument.rtf
+open -a /Applications/TextEdit.app index.html</codeblock>
+<p>
+The second example opens the document in the application that is
+associated with it, the third example explicitly gives an application
+to use.
+</p>
+</section>
+
+
 <section name="keyboard"><title>The keyboard doesn't work in XFree86</title>
 <p>
 This is a known problem that so far seems to affect only portables
@@ -843,6 +888,11 @@ If you're starting XFree86 from the command line, you can pass the
 name of the keymapping file to load as an option, as in:
 </p>
 <codeblock>startx -- -keymap USA.keymapping</codeblock>
+<p>
+Side note:
+It appears that Mac OS X 10.1 will break the read-from-kernel method
+completely, and you must always use "Load from file".
+</p>
 </section>
 
 
@@ -865,8 +915,14 @@ These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
 through the standard C library, the program will use the default
 messages, usually in English.
-You can get rid of the messages by unsetting the environment variable
-LANG.
+There are several ways to deal with this:
+</p>
+<ul>
+<li><p>
+Just ignore the messages.
+</p></li>
+<li><p>
+Get rid of the messages by unsetting the environment variable LANG.
 Note that this will also turn internationalization off in programs
 that actually support it (via gettext/libintl).
 Example for .xinitrc:
@@ -876,8 +932,40 @@ Example for .xinitrc:
 Example for .cshrc:
 </p>
 <codeblock>unsetenv LANG</codeblock>
+</li>
+<li><p>
+Use the <code>libxpg4</code> Fink package (currently only in CVS).
+It builds a small library that contains working locale functions and
+arranges that it is loaded before the system libraries (using the
+DYLD_INSERT_LIBRARIES environment variable).
+</p></li>
+<li><p>
+Ask Apple to include proper locale support in a future version of Mac
+OS X.
+</p></li>
+</ul>
 </section>
 
+
+<section name="copy-n-paste"><title>Copy and Paste</title>
+<p>
+Copy and Paste generally works between the Aqua and X11 environments.
+There are still some bugs.
+Emacs is reported to be picky about the current selection.
+Copy and paste from Classic to X11 doesn't work.
+</p>
+<p>
+Anyway, the trick is to use the respective methods of the environment
+you're in.
+To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
+destination window to the front and use the middle mouse button to
+paste.
+To transfer text from X11 to Aqua, simply select the text with the
+mouse in X11, then use Cmd-V in Aqua to paste it.
+As usual, some X11 applications may behave differently since there are
+no real standards in the X11 world...
+</p>
+</section>
 
 </chapter>
 
