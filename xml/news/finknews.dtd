@@ -1,0 +1,40 @@
+<!ENTITY % block "ol | p | ul" >
+<!ENTITY % inline "#PCDATA | code | em | extlink | filename | link | tt" >
+
+
+<!-- Root element -->
+<!ELEMENT news ( cvsid, newsitem+ ) >
+<!ELEMENT cvsid ( #PCDATA ) >
+
+<!-- Structure -->
+<!ELEMENT newsitem ( date, headline?, body ) >
+
+<!ELEMENT date ( #PCDATA ) >
+<!ELEMENT headline ( #PCDATA ) >
+<!ELEMENT body ( %block; )* >
+
+
+<!-- Block elements -->
+<!ELEMENT p ( %inline; )* >
+
+
+<!-- Links -->
+<!ELEMENT link ( #PCDATA ) >
+<!ATTLIST link url CDATA #REQUIRED >
+
+<!ELEMENT extlink ( #PCDATA ) >
+<!ATTLIST extlink url CDATA #REQUIRED >
+
+
+<!-- Inline -->
+<!ELEMENT code ( #PCDATA | em )* >
+<!ELEMENT em ( #PCDATA ) >
+<!ELEMENT filename ( #PCDATA ) >
+<!ELEMENT tt ( #PCDATA ) >
+
+
+<!-- Lists -->
+<!ELEMENT ol ( li+ ) >
+<!ELEMENT ul ( li+ ) >
+
+<!ELEMENT li ( %inline; | codeblock | p )* >

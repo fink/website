@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE news SYSTEM "finknews.dtd">
+<news>
+<cvsid>$Id: news.xml,v 1.1 2002/05/30 21:21:02 fingolfin Exp $</cvsid>
+
+<newsitem>
+  <date>2002-05-30</date>
+  <headline>New news system active!</headline>
+  <body>
+    <p>
+      The new news system is now active! Enjoy. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-05-29</date>
+  <headline>KDE support</headline>
+  <body>
+    <p>
+      Fink <link url="news/kde.php">announces support</link> for <extlink url="http://www.kde.org">KDE</extlink>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <link url="news/kde.php">KDE Support In Fink</link> announcement. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-05-03</date>
+  <headline>Bug in passwd package</headline>
+  <body>
+    <p>
+      All Fink users are urged to update their <em> passwd </em> package to version 20020329 or newer. Older versions of the <em> passwd </em> package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering <em> dpkg -s passwd</em>. If your version is oudated, you can update to the current one in two ways: 
+    </p>
+    <ul>
+      <li>
+        Via the binary distribution. First make sure you have the latest list of packages available: <em> sudo apt-get update</em>. Then you can perform the actual update: <em> sudo apt-get install passwd</em>. 
+      </li>
+      <li>
+        Via the source distribution. First make sure you have the latest set of package descriptions: <em> fink selfupdate-cvs</em>. Then, update the passwd package: <em> fink update passwd</em> 
+      </li>
+    </ul>
+    <p>
+      See <link url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</link> for more information about the passwd package. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-04-18</date>
+  <headline>Fink 0.4.0 released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-16</date>
+  <headline>Fink 0.3.2a is released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-09</date>
+  <headline>Fink 0.3.2 is released</headline>
+  <body>
+    <p>
+      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-08</date>
+  <body>
+    <p>
+      Due to a faulty script, the whole fink website, including our binary distro, has been wiped! This means you can't use the binary distro right now. I am working as quick as I can on uploading the new Fink 0.3.2 binary distro. In addition, the package database is not working for now. Please bear with us. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-12-16</date>
+  <headline>Yes, we are alive!</headline>
+  <body>
+    <p>
+      Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
+    </p>
+    <p>
+      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <link url="doc/cvsaccess/index.php">CVS</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-11-04</date>
+  <headline>Fink 0.3.1 is released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the recently updated <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-11-02</date>
+  <body>
+    <p>
+      The <link url="doc/x11/index.php">Running X11</link> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-31</date>
+  <body>
+    <p>
+      <extlink url="http://www.macosxhints.com/">MacOSXHints</extlink> has posted an <extlink url="http://homepage.mac.com/rgriff/xdarwin.html">installation guide</extlink> for XFree86, Fink, Window Maker and The GIMP. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-23</date>
+  <body>
+    <p>
+      In addition to ripping off Fink packages and breaking the GPL, the ports collection at <extlink url="http://macosx.forked.net/">forked.net</extlink> has just gone commercial. More details soon. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-03</date>
+  <body>
+    <p>
+      The binary distribution update is now complete. The <link url="news/puma.php">10.1 compatibility report</link> has been updated to reflect the fixes in Fink 0.3.0. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-30</date>
+  <headline>Fink 0.3.0 is released</headline>
+  <body>
+    <p>
+      The source release, the binary installer and a binary upgrade kit for broken-by-10.1 installations are available in the new <link url="download/index.php">download section</link>. The bulk of the binary distribution will be updated gradually over the next few days, as usual. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-26</date>
+  <body>
+    <p>
+      This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-20</date>
+  <headline>Version 0.2.0 is released</headline>
+  <body>
+    <p>
+      It now uses dpkg for binary package management. You can get it from the download page, but be aware that this version is not yet as stable as the 0.1.x series. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-15</date>
+  <headline>Released version 0.1.8a</headline>
+  <body>
+    <p>
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-14</date>
+  <headline>Version 0.1.8 is out</headline>
+  <body>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-30</date>
+  <headline>Porting notes updated; Version 0.1.7 is out!</headline>
+  <body>
+    <p>
+      The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
+    </p>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-24</date>
+  <headline>Mac OS X is released!</headline>
+  <body>
+    <p>
+      Expect Fink packages to be adapted to the final release within the next one or two weeks. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-15</date>
+  <headline>Libtool page updated</headline>
+  <body>
+    <p>
+      Updated the <link url="darwin/libtool.php">libtool page</link> with a revised patch that does full shared library versioning. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-08</date>
+  <headline>Version 0.1.6 is out</headline>
+  <body>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+</news>
