@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.34 2003/05/25 14:15:10 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.35 2003/06/19 12:11:07 dmrrsn Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -362,7 +362,7 @@ initial &quot;<filename>#!/bin/sh</filename>&quot;, but before you run any progr
 <p>Applications that require calling other programs under /sw for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
 <codeblock>/sw/bin/emacs</codeblock>
 <p>you'll want to use something like the following:</p>
-<codeblock>./sw/bin/init.sh ; emacs</codeblock>
+<codeblock>. /sw/bin/init.sh ; emacs</codeblock>
 <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
 </li>
 </ul>

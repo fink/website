@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/25 14:15:10';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/06/19 12:11:07';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -95,7 +95,7 @@ initial &quot;<code>#!/bin/sh</code>&quot;, but before you run any programs):</p
 <p>Applications that require calling other programs under /sw for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
 <pre>/sw/bin/emacs</pre>
 <p>you'll want to use something like the following:</p>
-<pre>./sw/bin/init.sh ; emacs</pre>
+<pre>. /sw/bin/init.sh ; emacs</pre>
 <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
 </li>
 </ul>
