@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 02:24:00 $';
+$cvs_date = '$Date: 2002/05/28 02:39:54 $';
 
 include "header.inc";
 ?>
@@ -10,14 +10,13 @@ include "header.inc";
 <h1>KDE Support In Fink</h1>
 
 <p>
- The Fink team is happy to announce preliminary support for KDE on
- MacOS X.
+ The Fink team is happy to announce preliminary support for KDE on MacOS X.
 </p>
 
 <p>
  Work has been progressing steadily on getting KDE 3.0.x ported to
  run in XFree86 on MacOS X.  Packages and pre-built binaries are now
- available for users interested in running KDE on MacOS X with Fink.
+ available for users interested in running KDE on MacOS X via Fink.
 </p>
 <p>
  There are a large number of issues remaining before the port is truly
@@ -104,7 +103,7 @@ include "header.inc";
    </p>
    <p>
     If export laws in the US allow exporting strong cryptography to your country,
-    you can also add "crypto" to the end of that line.
+    you can also add "<b>crypto</b>" to the end of that line.
    </p>
    <p>
     Next, update your package cache by running "<b><tt>apt-get update</tt></b>".
@@ -125,9 +124,10 @@ include "header.inc";
  ...please check the
  <a href="http://fink.sourceforge.net/lists/index.php">list archives</a> and
  <a href="http://sourceforge.net/tracker/?atid=117203&group_id=17203">bug tracker</a>
- before posting questions.  You can also try the <b>#fink</b> channel on
- <b>irc.openprojects.org</b> -- a number of the people involved in the KDE
- port usually hang out there.
+ before posting questions.  You can also try the
+ <b><a href="http://www.aquaflux.org/~fink/">#fink</a></b> channel on
+ The OpenProjects IRC network (<b>irc.openprojects.net</b>).  A number of the
+ people involved in the KDE port usually hang out there.
 </p>
 
 <?
