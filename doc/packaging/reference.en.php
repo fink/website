@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/06 11:55:57';
+$cvs_date = 'Date: 2004/09/07 09:57:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -392,6 +392,10 @@ special flags are used to override this.
 <b>Introduced in fink 0.9.9.</b>
 A boolean value which indicates that no other packages should Depend on
 this one, they should only BuildDepend.
+Unlike usual boolean fields, <code>BuildDependsOnly</code> is
+tri-state: leaving it undefined (not specifying it at all) is
+different than defining it as logically false. See the <a href="policy.php?phpLang=en#sharedlibs">Shared Library Policy</a> for
+more information.
 </p>
 <p>As of fink 0.20.5, the presence or absence of this field, and its value
 if present, are recorded into the .deb
