@@ -205,7 +205,7 @@
         <li>Constants files: (e.g. <filename>xml/web/constants.*.inc</filename>) (see
         below)</li>
        <li>Static PHP files (e.g. <filename>xml/web/*.en.php</filename>)</li>
-       <li>Documentation navigation files (i.e. <filename>xml/web/doc/nav.*.inc</filename>) (same handling as constants.*.inc)</li>
+       <li>Documentation navigation files (e.g. <filename>xml/web/doc/nav.*.inc</filename>) (same handling as constants.*.inc)</li>
        <li>User's Guide (<filename>xml/uguide.en.xml</filename>)</li>
        <li>FAQ (<filename>xml/faq.en.xml</filename>)</li>
         <li>Running X11 (<filename>xml/x11/x11.en.xml</filename>)</li>
@@ -218,7 +218,9 @@
         <li>Porting (<filename>xml/porting/porting.en.xml</filename>)</li>
         <li>News (<filename>xml/news/news.xml</filename>)</li>
       </ol>
-      <p>The <filename>constants.*.inc</filename> files are intended to deal
+      <p>Be sure to check also the subdirectories in <filename>xml/web</filename> for php, constants or navigation files to translate.</p>
+      <p>Do not translate or modify any php file in <filename>xml/web</filename> and its subdirectories which contains "Generated from" near the beginning of the file. You will find the corresponding xml file to translate or modify in the <filename>xml</filename> tree.</p>
+      <p>The <filename>constants.*.inc</filename> files, as well as the <filename>nav.*.inc</filename> files, are intended to deal
       with hard coded items in the PHP include files. They are mostly menu
       items and such, located on top and left of the pages. You should
       separate them from the scripts and create a constants.xx.inc file for your language. To do this, just issue the following command in a terminal window:</p>
@@ -282,7 +284,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         <li>Edit the line to declare it is French and its encoding is UTF-8
 <codeblock>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="fr" &gt; ...</codeblock></li>
-        <li>Save as UTF-8 Be aware that the encoding must be utf-8 and take
+        <li>Save as UTF-8. Be aware that the encoding must be utf-8 and take
         care not to change anything but true text.</li>
         <li>Once you are done, or just to test it, edit the
         <code>Makefile</code> to include your language as:
@@ -528,6 +530,7 @@ For other
       translation teams then update their versions, <xref chapter="files" section="committing">commit</xref><em> all</em> of the files (XML and
       PHP), then <xref chapter="files" section="activate">activate</xref> the
       changes.</p>
+      <p><em>Never</em> change a  dynamically generated php file; change the xml file instead.</p>
       <p><em>Notes:</em></p>
       <ol>
         <li>Changes to the Internationalization HOWTO (this document) will

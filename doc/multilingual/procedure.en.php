@@ -57,6 +57,7 @@ include_once "header.en.inc";
       translation teams then update their versions, <a href="files.php?phpLang=en#committing">commit</a><b> all</b> of the files (XML and
       PHP), then <a href="files.php?phpLang=en#activate">activate</a> the
       changes.</p>
+      <p><b>Never</b> change a  dynamically generated php file; change the xml file instead.</p>
       <p><b>Notes:</b></p>
       <ol>
         <li>Changes to the Internationalization HOWTO (this document) will
