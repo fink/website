@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.31 2002/08/03 13:14:48 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.32 2002/08/04 21:05:58 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1537,6 +1537,27 @@ expansion takes place (see previous section).
 </p>
 </itemd></item>
 
+<item><itemt>JarFiles</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field is somewhat similar to DocFiles. It installs the specified jar
+files into <filename>%p/share/java/%n</filename>.
+Example:
+</p>
+<codeblock>JarFiles: lib/*.jar foo.jar:fooBar.jar</codeblock>
+<p>
+This will install all the jars that were in the lib directory and will install
+foo.jar as fooBar.jar.
+</p>
+<p>
+It also ensures that these jar files (specifically: all files in
+<filename>%p/share/java/%n</filename> that end in .jar)
+are added to the CLASSPATH environment variable. This allows tools like
+configure or ant to properly detect the installed jar files.
+</p>
+</itemd></item>
+
 <item><itemt>DocFiles</itemt>
 <itemd>
 <p>
@@ -1888,8 +1909,7 @@ Your package must provide each script in two variants: one for sh compatible she
 Also, their executable bit has to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to /sw), you can use the <link url="#reference.fields">RuntimeVars field</link> which is
-provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to /sw), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
 </section>
 
