@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE document SYSTEM "../finkdoc.dtd"><document lang="en" filename="index"><title>Sao's Fink and X11 Pages</title><shorttitle>Sao's Pages</shorttitle><cvsid>$Id: saos-pages.en.xml,v 1.2 2004/07/16 02:29:02 sao_x Exp $</cvsid><preface><p>Welcome to Sao's Fink and X11 pages. These have been adapted from<link url="http://homepage.mac.com/sao1/fink/">Sao's place</link>with his permission, as a service to the Fink community</p><p>These pages are intended to supplement the other Fink documentation, and are written with the novice user in mind.</p></preface><chapter filename="essential"><title>      /
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE document SYSTEM "../finkdoc.dtd"><document lang="en" filename="index"><title>Sao's Fink and X11 Pages</title><shorttitle>Sao's Pages</shorttitle><cvsid>$Id: saos-pages.en.xml,v 1.3 2004/07/17 05:44:43 sao_x Exp $</cvsid><preface><p>Welcome to Sao's Fink and X11 pages. These have been adapted from<link url="http://homepage.mac.com/sao1/fink/">Sao's place</link>with his permission, as a service to the Fink community</p><p>These pages are intended to supplement the other Fink documentation, and are written with the novice user in mind.</p></preface><chapter filename="essential"><title>      /
           Essential Reading /</title><shorttitle>      /
           Essential Reading /</shorttitle><preface><p>
                   You heard about Open Source, XFree86, Fink, XDarwin, Apple's X11 and
@@ -3513,7 +3513,7 @@ If you open up port 6000, you should be fine.</p><p>
             Copy this to something else for safekeeping</p><p>
             (e.g. 'launch_matlab.sh.oroborosx')</p><p>
             Then replace the original launch_matlab.sh with the following:</p><codeblock>#!/bin/sh
-# $Revision: 1.2 $
+# $Revision: 1.3 $
 # Copyright 1997-2002 The MathWorks, Inc.
 #modification to work with Apple's X11
 # 1/7/03 John Iversen (iversen@nsi.edu)
@@ -4835,4 +4835,42 @@ Hit http://192.168.42.7 stable/crypto Packages
             of an installed package with what is really on the disk.</p><p>
             If you run it as:</p><codeblock>sh bomcheck X11SDK</codeblock><p>
             it tells you whether the installation of that package is complete.</p><p>
-            You can download the script from here:</p><ul><li><link url="http://cvs.sourceforge.net/viewcvs.py/*checkout*/fink/experimental/costabel/bomcheck?rev=1.1">bomcheck</link></li></ul></section><section><title>End of the chapter</title></section></chapter></document>
+            You can download the script from here:</p><ul><li><link url="http://cvs.sourceforge.net/viewcvs.py/*checkout*/fink/experimental/costabel/bomcheck?rev=1.1">bomcheck</link></li></ul></section><section><title>End of the chapter</title></section></chapter><chapter filename="help"><title>      /
+          Help /</title><shorttitle>      /
+          Help /</shorttitle><preface><p>
+                  Do your homework and study all the information available on the Web.</p><p/></preface><section><title>Available
+            Sites</title><ul><li><link url="http://fink.sourceforge.net">Fink
+            Web site</link></li></ul><ul><li><link url="http://fink.sourceforge.net/faq/index.php">The
+            Fink FAQ's</link></li></ul><ul><li><link url="http://fink.sourceforge.net/doc/users-guide/index.php">Fink
+            User's Guide</link></li></ul><ul><li><link url="http://fink.sourceforge.net/doc/bundled/usage.php">Fink
+            Usage</link></li></ul><ul><li><link url="http://developer.apple.com/qa/qa2001/qa1232.html">Official
+            Apple's X11 FAQ</link></li></ul><ul><li><link url="http://forums.macosxhints.com/showthread.php?s=&amp;threadid=8704">forums.macosxhints.com
+            X11 FAQ</link></li></ul></section><section><title>Fink
+            archives</title><p>  
+            Read or search the Mailing Lists archives to check</p><p>
+            if someone is having the same problem as you:</p><codeblock>1- At the 
+Mail-archive.com:</codeblock><ul><li><link url="http://www.mail-archive.com/fink-beginners@lists.sourceforge.net/">Fink-beginners
+            mailing list archive</link></li></ul><ul><li><link url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">Fink-users
+            mailing list archive</link></li></ul><p>
+            (Search works, but the archives are a week behind)</p><codeblock>2- At 
+sourceforge:</codeblock><ul><li><link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-beginners">Fink-beginners
+            mailing list archive</link></li></ul><ul><li><link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">Fink-users
+            mailing list archive</link></li></ul><p>
+            (Small search field (poor) on the left hand side of the page)</p><codeblock>3- The 
+archives at GMANE.org
+            work best for me:</codeblock><ul><li><link url="http://news.gmane.org/thread.php?group=gmane.os.apple.fink.beginners">Fink-beginners
+            mailing list archive</link></li></ul><ul><li><link url="http://news.gmane.org/thread.php?group=gmane.os.apple.fink.general">Fink-general
+            mailing list archive</link></li></ul><ul><li><link url="http://news.gmane.org/thread.php?group=gmane.os.apple.fink.devel">Fink-devel
+            mailing list archive</link></li></ul></section><section><title>Apple's
+            X11 archives</title><ul><li><link url="http://lists.apple.com/mhonarc/x11-users/">Apple
+            Mailing lists: X11 users</link></li></ul><p>
+            After you have studied all the material available, if you still don't
+            understand a subject, or you're facing some installation problems with
+            a particular package, 
+            you are always welcome to subscribe and ask for help at the following
+            mailing lists:</p><ul><li><link url="http://fink.sourceforge.net/lists/fink-beginners.php">Fink-beginners</link></li></ul><ul><li><link url="http://fink.sourceforge.net/lists/fink-users.php">Fink-users</link></li></ul><ul><li><link url="http://www.lists.apple.com/mailman/listinfo/x11-users">x11-users:
+            X11 for Mac OS X discussion list </link></li></ul><p>
+            Also, check for information about Fink and Apple's X11 at the MacOS X
+            Hints web site or post your questions at the MacOS X Hints forums:</p><ul><li><link url="http://www.macosxhints.com/">MacOS
+            X Hints</link></li></ul><ul><li><link url="http://forums.macosxhints.com/">Macosxhints-forums</link></li></ul><ul><li><link url="http://forums.macosxhints.com/showthread.php?s=&amp;threadid=8704">forums.macosxhints.com
+            X11 FAQ</link></li></ul></section><section><title>End of the chapter</title></section></chapter></document>
