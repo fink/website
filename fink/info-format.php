@@ -1,7 +1,7 @@
 <?
 $title = "Making Fink Packages";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/18 16:43:57 $';
+$cvs_date = '$Date: 2001/03/15 22:33:07 $';
 
 include "header.inc";
 ?>
@@ -13,7 +13,7 @@ include "header.inc";
 description files. This is difficult because the format is still
 evolving. Watch the "Last changed" info in the footer of the
 page. What you're reading right now is a description of the format
-used in Fink 0.1.5.</p>
+used in Fink 0.1.6.</p>
 <p>If you create packages for Fink, I'd like to know about it, so I
 can include them in future releases. Also, if you have questions or
 problems, just mail me at <a
@@ -105,7 +105,7 @@ supports a special URL scheme for mirrors:
 look up the mirror setting for <i>mirror-name</i> in Fink's
 configuration, append the <i>relative-path</i> part and use that as
 the actual URL.
-<br>Before the URL is used, persent expansion takes place (see
+<br>Before the URL is used, percent expansion takes place (see
 previous section). The value "gnu" is a shorthand for
 <nobr>"mirror:gnu:%n/%n-%v.tar.gz"</nobr>; "gnome" is a shorthand for
 <nobr>"mirror:gnome:stable/sources/%n/%n-%v.tar.gz"</nobr>. The
@@ -124,6 +124,22 @@ specify it with this parameter.</td></tr>
 expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
 will produce a directory named "foo-1.0". If it just unpacks the files
 to the current directory, use this parameter.</td></tr>
+
+<tr valign="top"><td>Source<i>N</i></td>
+<td>If a package consists of several tarballs, name them with these
+additional fields, starting with N = 2. So, the first tarball (which
+should be some kind of "main" tarball) goes into <tt>Source</tt>, the
+second tarball in <tt>Source2</tt> and so on. The rules are the same
+as for Source, only that the "gnu" and "gnome" shortcuts are not
+expanded - that would be useless.</td></tr>
+
+<tr valign="top"><td>Source<i>N</i>ExtractDir</td>
+<td>Normally, an auxilary tarball will be extracted in the same
+directory as the main tarball. If you need to extract it in a
+specific subdirectory instead, use this field to specify
+it. Source2ExtractDir corresponds to the Source2 tarball, as one would
+expect. Do a <tt>grep Source2 /sw/fink/info/*</tt> for examples of
+usage.</td></tr>
 
 <tr valign="top"><td>Depends</td>
 <td>A comma-separated list of packages which must be installed before
@@ -209,6 +225,11 @@ The variables CPPFLAGS and LDFLAGS are special. They default to
 <nobr>"-I%p/include"</nobr> and <nobr>"-L%p/lib"</nobr>,
 respecively. If you specify a value for one of these, it will be
 appended to the default value.</td></tr>
+
+<tr valign="top"><td>NoSet<i>ENVVAR</i></td>
+<td>When set to a true value, deactivates the default values for
+CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
+remain unset, specify <nobr><tt>NoSetLDFLAGS: true</tt></nobr> .</td></tr>
 
 <tr valign="top"><td>Comment</td>
 <td>General comments on the package.</td></tr>
