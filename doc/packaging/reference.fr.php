@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/16 09:37:18';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -86,7 +86,7 @@ Dans les autres champs, on accède à un sous-type donné de variante en utilisa
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.6.0 5.8.1)
-Depends: perl-core%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </pre>
 <pre>

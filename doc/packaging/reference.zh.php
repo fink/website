@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/05/17 22:43:19';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -122,7 +122,7 @@ Type: -x11 (-x11 .)
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.6.0 5.8.1)
-Depends: perl-core%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </pre>
 <pre>

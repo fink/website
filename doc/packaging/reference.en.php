@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/30 08:23:47';
+$cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -179,7 +179,7 @@ fragments:
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.6.0 5.8.1)
-Depends: perl-core%type_pkg[perl]
+Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </pre>
 <pre>
