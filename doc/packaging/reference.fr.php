@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/07 15:35:17';
+$cvs_date = 'Date: 2004/09/11 22:27:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -48,7 +48,7 @@ Le numéro de version en amont. Même limitations que pour le champ Package. Cha
 Le numéro de révision du paquet. Incrémentez ce numéro quand vous faites une nouvelle description pour la même version en amont. Les numéros de révision commencent à 1. Champ obligatoire.
 </p>
 <p>
- Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le  fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, à l'exception du champ <code>BuildDepends</code>, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.
+ Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le  fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.
 </p></td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>Introduit à partir de fink 0.12.0.</b>
