@@ -484,7 +484,7 @@ define (FINK_CONTENTS, 'Contents');</codeblock>
             <codeblock>cvs ci -m "message" download.ru.php</codeblock>
             where once again
             <em>message </em>should indicate what you've done. Give your
-            SourceForge passphrase at the prompt. Don't forget to also commit the Makefile if you've changed it (i.e. you've added your langague in it)
+            SourceForge passphrase at the prompt. 
             <p>Note: you can commit multiple files at once.</p></li>
             </ol></li>
 
@@ -514,7 +514,8 @@ define (FINK_CONTENTS, 'Contents');</codeblock>
             <codeblock>cvs ci -m "message" faq.ru.xml</codeblock>
             <p> where <em>message</em> is a descriptive
             message about what you've done. Enter your SourceForge passphrase at
-            the prompt.</p></li>
+            the prompt. 
+            Don't forget to also commit the Makefile if you've changed it (i.e. you've added your langague in it)</p></li>
 
             <li>Now run
             <codeblock>make &amp;&amp; make install</codeblock></li>
