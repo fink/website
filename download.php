@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/25 11:03:01 $';
+$cvs_date = '$Date: 2001/08/25 15:51:40 $';
 
 include "header.inc";
 ?>
@@ -55,23 +55,20 @@ download pre-compiled binary packages from this site with the dselect
 and apt-get tools.
 </p>
 <p>
-<b>WARNING: This is highly experimental right now.</b>
-Only a very small number of packages are actually available as binary
-packages; the others can only be built from source as with the source
-release.
-The following is based on the 0.2.4 release, but updated packages are
-added as they become available.
+Only a part of the packages are actually available as binary packages;
+the others can only be built from source as with the source release.
+The following is based on the 0.2.5 release.
 </p>
 <ul>
-<li><a href="bindist/install/fink-installer.dmg">Fink Binary
-Installer</a> - 6.3 MB, .dmg disk image</li>
+<li><a href="bindist/install/fink-0.2.5-installer.dmg">Fink 0.2.5 Binary
+Installer</a> - 6.4 MB, .dmg disk image</li>
 <li><a href="bindist/">Browse the Distribution Directory</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
 <p>
 Documentation is sparse at the moment.
-The installer image contains some hints (ReadMe.rtf), plus the
-documentation from the source release in HTML (in the Other Docs
+The installer disk image contains some hints (Fink ReadMe.rtf), plus
+the documentation from the source release in HTML (in the Other Docs
 folder).
 </p>
 
