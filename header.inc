@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.67 2004/03/01 10:24:01 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.68 2004/03/01 10:35:01 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -183,10 +183,10 @@ function insert_sub ($navbox, $active_page) {
 			} else {
 				$_link = $navbox[$i ];
 			}
-			if (substr($link, -2) == ".*") $link = substr($link, 0, -2);
-			echo "\t\t<dd class=\"menu_subitem\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
+			if (substr($_link, -2) == '.*') $_link = substr($_link, 0, -2);
+			echo "\t\t\t<dd class=\"menu_subitem\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
 		} else {
-			echo "\t\t<dd class=\"menu_subitem\"><div class=\"file\">" . $navbox[$i + 1] . "</div></dd>\n";
+			echo "\t\t\t<dd class=\"menu_subitem\"><div class=\"file\">" . $navbox[$i + 1] . "</div></dd>\n";
 		}
 	}
 }
