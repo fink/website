@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.23 2004/06/10 13:28:04 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.24 2004/06/10 18:22:34 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -851,6 +851,27 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
         <p>If you have other preferences that you want to keep, you can edit
         the file with a text editor and remove the reference to
         <code>/sw/bin/pathsetup.command</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="ext-drive">
+      <question>
+        <p>I have Fink installed way from the main partition and I can't update the fink package from source.  There are errors involving <quote>chowname</quote>.</p>
+      </question>
+      <answer>
+        <p>If your error looks like:</p>
+        <codeblock>This first test is designed to die, so please ignore the error
+message on the next line.
+# Looks like your test died before it could output anything.
+./00compile............................ok
+./Base/initialize......................ok
+./Base/param...........................ok
+./Base/param_boolean...................ok
+./Command/cat..........................ok
+./Command/chowname.....................#     
+Failed test (./Command/chowname.t at line 27)
+#          got: 'root'
+#     expected: 'nobody'</codeblock>
+        <p>then you need to run <em>Get Info</em> on the drive/partition where Fink is installed and unselect the "Ignore ownership" button.</p>
       </answer>
     </faqentry>
     <faqentry name="mirror-gnu">
