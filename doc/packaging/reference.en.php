@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/09/11 20:56:29';
+$cvs_date = 'Date: 2004/09/12 14:39:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -486,6 +486,8 @@ The value <code>gnu</code> is a shorthand for
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
 default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
+This implicitly-defined <code>Source</code> form is deprecated
+(explicitly-stated simple filename/manual download is still okay).
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
