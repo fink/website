@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/08 16:54:54';
+$cvs_date = 'Date: 2001/09/16 15:34:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -65,8 +65,10 @@ mention ANSI C++.</a></li>
 like "locale not supported by C library". Is that bad?</a></li>
 <li><a href="packages.php#xmms-quiet">I get no sound from
 XMMS</a></li>
+<li><a href="packages.php#gnome-terminal">Why won't gnome-terminal
+start up?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.10 2001/09/08 16:54:54 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.12 2001/09/16 15:34:49 chrisp Exp $</i></p>
 
 
 <?

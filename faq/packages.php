@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/08 16:54:54';
+$cvs_date = 'Date: 2001/09/16 15:34:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -92,6 +92,18 @@ It usually communicates via the file system socket
 <tt><nobr>/tmp/.esd/socket</nobr></tt>.
 You only need the <tt><nobr>-tcp</nobr></tt> and <tt><nobr>-port</nobr></tt> switches if
 you want to run esd clients on another machine over the network.
+</p></div></a>
+
+<a name="gnome-terminal"><div class="question"><p><b>Q: Why won't gnome-terminal
+start up?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
+working.
+The actual bug (file descriptior passing doesn't work) is masked by
+another issue (ununual stack size limit), which was left as is to
+produce an error message when gnome-terminal is started (thus
+preventing even more confusion).
+It is expected that this will be fixed in Mac OS X 10.1.
 </p></div></a>
 
 
