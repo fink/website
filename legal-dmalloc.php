@@ -1,12 +1,12 @@
 <?
 $title = "Legal Stuff";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/01/01 18:57:59 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/02/12 16:22:29 $';
 
 include "header.inc";
-?>
+? >
 
-
+ around the corner to peek at the noise from outside of the 
 <h1>Legal Stuff</h1>
 
 <p>
@@ -17,7 +17,7 @@ Some legal rumblings to keep lawyers happy:
 The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
 Copyright &copy; 2001-2004 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
-<a href="mailto:fink-develATlistsDOTsourceforgeDOTnet">talk to us</a> first.
+<a href="mailto:fink-core@lists.sourceforge.net">talk to us</a> first.
 </p>
 <p>
 <h2><b>Indemnification</b></h2>
