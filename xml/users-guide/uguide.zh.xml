@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'utf-8'?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
-<document filename="index" lang="cn" >
+<document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.cn.xml,v 1.1 2004/02/29 11:41:20 dmalloc Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.1 2004/02/29 13:02:38 fingolfin Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
