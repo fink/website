@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.4 2004/02/18 15:00:20 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.5 2004/02/18 15:52:17 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -59,8 +59,8 @@ force: clean all
 	xmllint --noout --valid $(SOURCE);
 	$(foreach  XMLFILE, $(SOURCE), xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE); )
 	$(foreach XMLFILE, $(SOURCE), sed -e 's,$$Id,$$Fink,g' $(patsubst %.xml,%.html.tmp,$(XMLFILE)) > $(patsubst %.xml,%.html,$(XMLFILE)); ) 
+	-mv $(subst .xml,.html,$(BASE_SOURCE)) $(subst .xml,.en.html,$(BASE_SOURCE))
 	rm -f *.html.tmp
-	$(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.html,$(BASE_SOURCE)) ),, $(shell mv $(patsubst %.xml,%.html,$(BASE_SOURCE)) $(patsubst %.xml,%.en.html,$(BASE_SOURCE))) )
 
 install: $(INSTALL_FILES)
 
