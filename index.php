@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/09 20:18:06 $';
+$cvs_date = '$Date: 2001/05/13 15:46:15 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -13,18 +13,17 @@ include "header.inc";
 ?>
 
 
-<p>Fink is an attempt to bring the full world of <a
-href="http://www.gnu.org/">GNU</a> and other Open Source software to
-<a href="http://www.opensource.apple.com/">Darwin</a> and <a
-href="http://www.apple.com/macosx/">Mac OS X</a>. Think of it as an
+<p>Fink is an attempt to bring the full world of Unix Open Source
+software to <a href="http://www.opensource.apple.com/">Darwin</a> and
+<a href="http://www.apple.com/macosx/">Mac OS X</a>. Think of it as an
 add-on distribution (in the Linux sense) for these systems. Once it is
-more mature, I want Fink to evolve into a general package manager
-suitable for all Unix variants.</p>
+more mature, Fink might evolve into a general package manager and
+add-on distribution suitable for all Unix variants.</p>
 
-<p>Fink wants to be simple, functional and fully automated. GNU stow
-is used to manage a separate directory tree. The fink package manager
+<p>Fink wants to be simple, functional and fully automated. It manages
+a separate directory tree using dpkg. The fink package manager
 downloads, configures, compiles and installs software from the
-internet.</p>
+Internet.</p>
 
 <p><table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
