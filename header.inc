@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.71 2004/03/11 22:36:57 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.72 2004/03/12 02:20:35 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -265,6 +265,7 @@ function insert_sub ($navbox, $active_page) {
 <? /* sections */ ?>
 	<p style="
 			background-image: url(<? echo $root; ?>img/stripes.gif) ; 
+			font-weight: bold ;
 			display: block ; 
 			border-style: solid ; 
 			border-width: 0px 0px 4px 0px ; 
