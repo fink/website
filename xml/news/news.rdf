@@ -4,9 +4,37 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 01 Mar 2003 02:24:38 CET</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2003 15:57:50 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>KDE 3.1 Final In Stable</title>
+    <link>http://fink.sf.net/news/#2003-03-18%20KDE%203.1%20Final%20In%20Stable</link>
+    <dc:date>2003-03-18</dc:date>
+    <description>
+	KDE 3.1 is now in Fink stable.  The full announcement can be
+read here.
+	Improvements over 3.1 beta1 include an updated audio driver, 
+	faster startup times, cleaned up fink package info, support
+	for Apple X11's window manager, and many bugfixes.  Binary
+	packages will be available in the next binary distribution
+	release.
+</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Apple X11 Beta 3 Released</title>
+    <link>http://fink.sf.net/news/#2003-03-17%20Apple%20X11%20Beta%203%20Released</link>
+    <dc:date>2003-03-17</dc:date>
+    <description>
+	A new
+version of Apple's X11 for Mac OS X is available.  It fixes a number
+of bugs including a few that can cause problems with building Fink packages.
+It is recommended that all Fink users who are using Apple X11 upgrade.
+A new version of the system-xfree86 package has been released to unstable
+that takes the new Apple X11 into account.  It should be appearing in stable
+shortly.
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New version of FinkCommander</title>
     <link>http://fink.sf.net/news/#2003-02-14%20New%20version%20of%20FinkCommander</link>
@@ -368,29 +396,6 @@ software before using Fink.
     <description>
     
       The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Binary distribution lost</title>
-    <link>http://fink.sf.net/news/#2002-01-08%20Binary%20distribution%20lost</link>
-    <dc:date>2002-01-08</dc:date>
-    <description>
-    
-      Due to a faulty script, the whole fink website, including our binary distro, has been wiped! This means you can't use the binary distro right now. I am working as quick as I can on uploading the new Fink 0.3.2 binary distro. In addition, the package database is not working for now. Please bear with us. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Yes, we are alive!</title>
-    <link>http://fink.sf.net/news/#2001-12-16%20Yes%2C%20we%20are%20alive!</link>
-    <dc:date>2001-12-16</dc:date>
-    <description>
-    
-      Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
-    
-    
-      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our CVS. 
     
   </description>
   </item>

@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.44 2003/02/14 13:54:34 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.45 2003/03/18 21:05:33 rangerrick Exp $</cvsid>
+<newsitem>
+	<date>2003-03-18</date>
+	<headline>KDE 3.1 Final In Stable</headline>
+	<body>
+	<p>KDE 3.1 is now in Fink stable.  The full announcement can be
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</extlink>.
+	Improvements over 3.1 beta1 include an updated audio driver, 
+	faster startup times, cleaned up fink package info, support
+	for Apple X11's window manager, and many bugfixes.  Binary
+	packages will be available in the next binary distribution
+	release.
+</p></body></newsitem>
+<newsitem>
+	<date>2003-03-17</date>
+	<headline>Apple X11 Beta 3 Released</headline>
+	<body>
+	<p><extlink url="http://www.apple.com/macosx/x11/download/">A new
+version of Apple's X11 for Mac OS X is available</extlink>.  It fixes a number
+of bugs including a few that can cause problems with building Fink packages.
+It is recommended that all Fink users who are using Apple X11 upgrade.
+A new version of the system-xfree86 package has been released to unstable
+that takes the new Apple X11 into account.  It should be appearing in stable
+shortly.
+</p></body></newsitem>
 <newsitem>
         <date>2003-02-14</date>
         <headline>New version of FinkCommander</headline>
