@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/26 07:01:59 $';
+$cvs_date = '$Date: 2001/09/27 08:06:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -38,7 +38,9 @@ packages or build everything from source.
 
 <p>2001-09-26: Mac OS X 10.1 has been officially released yesterday.
 Before you use Fink on 10.1, check out the <a
-href="news/puma.php">compatibility report</a>.</p>
+href="news/puma.php">compatibility report</a>.
+<b>Update:</b> The apt-get issue has been solved, expect a new release
+this weekend.</p>
 <p>2001-09-07: The binary distribution is now fully updated to
 Fink 0.2.6. Enjoy.</p>
 <p>2001-09-04: Fink 0.2.6 is released, fixing several bootstrap

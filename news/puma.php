@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/26 07:03:30 $';
+$cvs_date = '$Date: 2001/09/27 08:06:04 $';
 
 include "header.inc";
 ?>
@@ -18,8 +18,8 @@ The top issue is the new linker, which now uses a different symbol
 resolution strategy by default (to increase launch performance) and as
 a result has become much more pedantic.
 In other news, 10.1 finally has /dev/random and /dev/urandom.
-Unfortunately there are also new bugs, old issues like broken SysV
-shared memory and locale support appear to be still there.
+Unfortunately there are also new bugs, and old issues like broken SysV
+shared memory and locale functions are still there.
 </p>
 
 <p>
@@ -64,6 +64,12 @@ Expect a new Fink release once the apt-get issue has been fixed.
 <p>
 Oh, one more thing: Many thanks to Apple for providing the project
 with a pre-release copy of Mac OS X 10.1!
+</p>
+
+<p>
+<b>Update Sep 27:</b> The apt-get issue has been solved. New versions
+of the Fink distribution and the binary installer will be released
+this weekend.
 </p>
 
 
