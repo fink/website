@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.39 2003/03/01 01:03:59 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.40 2003/05/02 17:37:59 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -373,6 +373,9 @@ as the binary.</li>
 <li><code>GPL/LGPL</code> - this if a special case for packages where
 one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
+<li><code>Artistic/GPL </code>, <code>GPL/GFDL</code>, <code>LGPL/GFDL</code>
+ - these are similar to <code>GPL/LGPL</code> above, and should require no
+further explanation.</li>
 
 <li><code>BSD</code> - for BSD-style licenses.
 This includes the so-called "original" BSD license, the "modified" BSD
