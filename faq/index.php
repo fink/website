@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/09 18:58:56 $';
+$cvs_date = '$Date: 2001/05/17 06:51:21 $';
 
 $metatags = '<link rel="start" href="index.php" title="FAQ Contents">
 <link rel="next" href="general.php" title="General questions">
@@ -44,6 +44,9 @@ error in the login script?</a></li>
 <ul>
 <li><a href="usage.php#what-packages">How can I find out what packages
 Fink supports?</a></li>
+<li><a href="usage.php#unstable">There's this package in unstable that
+I want to install, but Fink just says 'no package found'. How can I
+install it?</a></li>
 </ul>
 <li><a href="packages.php"><b>Problems with certain packages</b></a></li>
 <ul>
