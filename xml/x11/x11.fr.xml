@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.18 2004/05/27 14:22:42 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.19 2005/01/24 10:11:55 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -270,6 +270,7 @@ defined in indirectly referenced dynamic library
           <p>Si vous utilisez le paquet <code>xfree86</code> et que vous changiez plus tard pour X11 d'Apple (sur 10.2.x ou 10.3.x), vous devez recompiler tout paquet compilé antérieurement avec <code>xfree86</code>, car les binaires sont incompatibles.</p>
         </li>
       </ul>
+<p>Pour de plus amples informations sur l'utilisation de X11 d'Apple, voir cet <link url="http://developer.apple.com/darwin/runningx11.html">article</link> sur Apple Developer Connection.</p>
     </section>
     <section name="official-binary" >
       <title>Binaires officiels</title>

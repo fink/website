@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Installation de XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/27 14:22:42';
+$cvs_date = 'Date: 2005/01/24 10:11:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 
@@ -85,6 +85,7 @@ defined in indirectly referenced dynamic library
           <p>Si vous utilisez le paquet <code>xfree86</code> et que vous changiez plus tard pour X11 d'Apple (sur 10.2.x ou 10.3.x), vous devez recompiler tout paquet compilé antérieurement avec <code>xfree86</code>, car les binaires sont incompatibles.</p>
         </li>
       </ul>
+<p>Pour de plus amples informations sur l'utilisation de X11 d'Apple, voir cet <a href="http://developer.apple.com/darwin/runningx11.html">article</a> sur Apple Developer Connection.</p>
     
     <h2><a name="official-binary">3.3 Binaires officiels</a></h2>
       
