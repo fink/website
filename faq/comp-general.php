@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/06 21:20:22';
+$cvs_date = 'Date: 2003/09/07 00:35:07';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -108,6 +108,10 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <a name="basic-headers">
 <div class="question"><p><b>Q4.12: I get messages saying that I'm missing stddef.h.  Where do I find it?</b></p></div>
 <div class="answer"><p><b>A:</b> This header, and many others, are provided by the DevSDK package of the Developer Tools.  Check whether <code>/Library/Receipts/DevSDK.pkg</code> exists on your system.  If not, then run the Dev Tools Installer again, and install the DevSDK package using a Custom Install.</p></div>
+</a>
+<a name="multiple-dependencies">
+<div class="question"><p><b>Q4.13: I can't update, because Fink is &quot;unable to resolve version conflict on multiple dependencies&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> To get around this, try updating a single package, then try to use &quot;fink update-all&quot; again.  If you still get the message, repeat the process.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/06 21:20:22';
+$cvs_date = 'Date: 2003/09/07 00:35:07';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -100,6 +100,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#toc-out-of-date">4.10 When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</a></li>
 <li><a href="comp-general.php#fc-atlaas">4.11 Fink Commander hangs when I try to install atlas.</a></li>
 <li><a href="comp-general.php#basic-headers">4.12 I get messages saying that I'm missing stddef.h.  Where do I find it?</a></li>
+<li><a href="comp-general.php#multiple-dependencies">4.13 I can't update, because Fink is &quot;unable to resolve version conflict on multiple dependencies&quot;.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -140,7 +141,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 <li><a href="usage-packages.php#gnome-two">7.10 I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.129 2003/09/06 21:20:22 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.130 2003/09/07 00:35:07 alexkhansen Exp $</i></p>
 
 
 <?
