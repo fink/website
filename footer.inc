@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.25 2004/02/28 20:40:30 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.26 2004/02/29 06:06:50 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
@@ -29,7 +29,14 @@
 <tr><td>&nbsp;</td></tr>
 <tr><td>
 <div class="footer" align="center">
-<? if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;"; ?>
+<? 
+if (function_exists(AddLanguageNames)) {
+	echo 'Available Languages';
+	AddLanguageNames(' | ', true); 
+} else {
+	echo "&nbsp;";
+}
+?>
 </div>
 </td></tr>
 <tr><td width="100%">
