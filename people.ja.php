@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/04/16 21:26:02 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/07/02 22:01:49 $';
 
 include "header.inc";
 ?>
@@ -146,6 +146,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Tim Seufert</li>
 <Li>Paul Swenson</li> 
 <li>Patrick Tescher</li> 
+<li>Chris Turkel (<i>zizban</i>)</li>
 <li>Andrei Verovski</li> 
 <li>Aaron Voisine</li> 
 <li>Dominik Westner</li> 

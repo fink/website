@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/07 18:34:49 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/07/02 22:01:49 $';
 
 include "header.inc";
 ?>
@@ -133,6 +133,7 @@ include "header.inc";
 <li>Tim Seufert</li>
 <Li>Paul Swenson</li> 
 <li>Patrick Tescher</li> 
+<li>Chris Turkel (<i>zizban</i>)</li>
 <li>Andrei Verovski</li> 
 <li>Aaron Voisine</li> 
 <li>Dominik Westner</li> 

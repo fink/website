@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/02 17:22:48 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/07/02 22:01:49 $';
 
 include "header.inc";
 ?>
@@ -134,6 +134,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Tim Seufert</li>
 <Li>Paul Swenson</li> 
 <li>Patrick Tescher</li> 
+<li>Chris Turkel (<i>zizban</i>)</li>
 <li>Andrei Verovski</li> 
 <li>Aaron Voisine</li> 
 <li>Dominik Westner</li> 
