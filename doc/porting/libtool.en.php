@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/11 23:30:29';
+$cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
 include_once "header.inc";
@@ -115,7 +115,7 @@ There are at least three different versions of libtool 1.4.x now in wide use
 (1.4.1, 1.4.2, and later development snapshots). They all have some issues on
 Darwin, though the exact changes required to fix them differ. The libtool14
 package shipped via Fink has all required patches already applied to it.
-However, you still have to manually fix the ltmain.hs/configure files of
+However, you still have to manually fix the ltmain.sh/configure files of
 affected packages in order to get them working.
 </p>
 

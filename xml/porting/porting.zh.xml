@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 	<title>移植 Unix 软件到 Darwin 和 Mac OS X 上</title>
 	<shorttitle>移植</shorttitle>
-	<cvsid>$Id: porting.zh.xml,v 1.1 2004/03/11 23:30:29 jeff_yecn Exp $</cvsid> 
+	<cvsid>$Id: porting.zh.xml,v 1.2 2004/03/12 15:06:20 jeff_yecn Exp $</cvsid> 
 
 	<preface>
 		<p>本文档包含如何移植 Unix 软件到 Darwin 和 Mac OS X 平台上的提示。
@@ -296,7 +296,7 @@ url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">这个补丁<
 <section name="fixing-14x"><title>修正 1.4.x</title>
 <p>
 现在广泛使用的 libtool 1.4.x 至少有三个不同版本(1.4.1，1.4.2，和更新的开发版本)，它们在 Darwin 上都有一些问题。不过在它们上面如何修正的方法却是不同的。Fink 所提供的 libtool14 软件包已经包括了所有需要的修正。
-不过，你仍然需要手工修正受影响的文件包的 ltmain.hs/configure 文件来使它可以正常工作。
+不过，你仍然需要手工修正受影响的文件包的 ltmain.sh/configure 文件来使它可以正常工作。
 </p>
 
 <ol>

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 23:28:43';
+$cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 include_once "header.inc";
@@ -110,7 +110,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     </a>
     <a name="exec-init-csh">
       <div class="question"><p><b>Q5.10: 当我尝试运行 init.csh 或 init.sh 时，我碰到一个 "Permission denied" 错误。我做错了什么？</b></p></div>
-      <div class="answer"><p><b>A:</b> init.csh 和 init.sh 并不能象普通命令一样运行。这些文件会设置象 PATH 和 MANPATH 这样的环境变量到你的 shell 程序中。要对 shell 一直起作用，它需要由一个 <code>source</code> 命令来运行，象这样：</p><p>对 csh/tcsh：</p><pre>source /sw/bin/init.csh</pre><p>或对 bash：</p><pre>source /sw/bin/init.sh</pre></div>
+      <div class="answer"><p><b>A:</b> init.csh 和 init.sh 并不能象普通命令一样运行。这些文件会设置象 PATH 和 MANPATH 这样的环境变量到你的 shell 程序中。要对 shell 一直起作用的话，对于 csh/tcsh，它需要由一个 <code>source</code> 命令来运行；或对于 bash/zsh，使用"<code> . </code>"命令，象这样：</p><p>对 csh/tcsh：</p><pre>source /sw/bin/init.csh</pre><p>或对 bash/zsh：</p><pre>. /sw/bin/init.sh</pre></div>
     </a>
     <a name="dselect-access">
       <div class="question"><p><b>Q5.11: 救命！我选择了 dselect 的

@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.4 2004/03/07 23:28:43 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.5 2004/03/12 15:06:20 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -262,7 +262,7 @@ gcc 3.3 compiler is out of date.&quot; 我应该怎么办？</p>
         <p>在 Panther 发布后，Fink 也升级以认识新的 gcc 3.3 编译器。为了同时支持 10.2 (Jaguar) 和 10.3 (Panther) 的用户，我们要求所有用户都安装最新的 gcc 3.3 更新 （August 2003 更新，或者相应的 Panther XCode 工具）。如果你在 Mac OS X 10.2 的 December 2002 developer tools 上安装 XCode beta 更新你就会获得这个警告信息。如果你使用 10.2，命令：
 </p>
         <codeblock>gcc --version</codeblock>
-        <p>...会告诉你正在使用的版本。对于 October 24th,2003，我们要求 build 1493 或更高。</p>
+        <p>会告诉你正在使用的版本。对于 October 24th,2003，我们要求 build 1493 或更高。</p>
         <p>10.2 用户可以从 <link url="http://developer.apple.com/" >Apple Developer Connection</link> 下载（需要先免费注册） August 2003 升级。</p>
         <p>10.3 用户应该升级到 Panther 兼容的开发工具（也就是说  XCode）。你应该能够在你的 Panther 软件包中找到 XCode 的 CD。</p>
       </answer>
@@ -428,11 +428,11 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
         <p>当我尝试运行 init.csh 或 init.sh 时，我碰到一个 &quot;Permission denied&quot; 错误。我做错了什么？</p>
       </question>
       <answer>
-        <p>init.csh 和 init.sh 并不能象普通命令一样运行。这些文件会设置象 PATH 和 MANPATH 这样的环境变量到你的 shell 程序中。要对 shell 一直起作用，它需要由一个 <code>source</code> 命令来运行，象这样：</p>
+        <p>init.csh 和 init.sh 并不能象普通命令一样运行。这些文件会设置象 PATH 和 MANPATH 这样的环境变量到你的 shell 程序中。要对 shell 一直起作用的话，对于 csh/tcsh，它需要由一个 <code>source</code> 命令来运行；或对于 bash/zsh，使用&quot;<code> . </code>&quot;命令，象这样：</p>
         <p>对 csh/tcsh：</p>
         <codeblock>source /sw/bin/init.csh</codeblock>
-        <p>或对 bash：</p>
-        <codeblock>source /sw/bin/init.sh</codeblock>
+        <p>或对 bash/zsh：</p>
+        <codeblock>. /sw/bin/init.sh</codeblock>
       </answer>
     </faqentry>
     <faqentry name="dselect-access" >

@@ -1,7 +1,7 @@
 <?
 $title = "移植 - libtool";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/11 23:30:29';
+$cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing.php?phpLang=zh" title="为 10.2 做准备"><link rel="prev" href="shared.php?phpLang=zh" title="共享代码">';
 
 include_once "header.inc";
@@ -87,7 +87,7 @@ Fink 团队的成员仍然不对 libtool 进行改进，并把他们的结果反
 <h2><a name="fixing-14x">3.3 修正 1.4.x</a></h2>
 <p>
 现在广泛使用的 libtool 1.4.x 至少有三个不同版本(1.4.1，1.4.2，和更新的开发版本)，它们在 Darwin 上都有一些问题。不过在它们上面如何修正的方法却是不同的。Fink 所提供的 libtool14 软件包已经包括了所有需要的修正。
-不过，你仍然需要手工修正受影响的文件包的 ltmain.hs/configure 文件来使它可以正常工作。
+不过，你仍然需要手工修正受影响的文件包的 ltmain.sh/configure 文件来使它可以正常工作。
 </p>
 
 <ol>
