@@ -375,6 +375,29 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 <code>/sw/bin/pathsetup.command</code>
 と書かれている部分を削除します。</p></div> 
 </a>
+<a name="ext-drive">
+<div class="question"><p><b>Q5.28: 
+	メインパーティション以外に Fink をインストールしていますが、
+	ソースからの更新ができません。
+	<q>chowname</q> を含んだエラーが出ます。
+	</b></p></div>
+<div class="answer"><p><b>A:</b> このようなエラーであれば:</p><pre>This first test is designed to die, so please ignore the error
+ message on the next line.
+ # Looks like your test died before it could output anything.
+ ./00compile............................ok
+ ./Base/initialize......................ok
+ ./Base/param...........................ok
+ ./Base/param_boolean...................ok
+ ./Command/cat..........................ok
+ ./Command/chowname.....................#
+ Failed test (./Command/chowname.t at line 27)
+ #          got: 'root'
+ #     expected: 'nobody'</pre><p>
+、Fink がインストールされているドライブ/パーティションを
+「<b>情報を見る</b>」し、 "所有権を無視する" を外します。
+</p></div>
+</a>
+
 <p align="right">
 Next: <a href="comp-general.php?phpLang=ja">6 コンパイルの問題 - 一般</a></p>
 
