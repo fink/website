@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/03 13:28:12 $';
+$cvs_date = '$Date: 2004/03/06 01:47:40 $';
 
 include "header.inc";
 ?>
@@ -31,8 +31,8 @@ Fink パッケージをネットワーククライアントに NFS で配布す�
 
 <p>オープンソースソフトウェア</p>
 <ul>
-<li><a href="http://www.gnu.org/" target="_blank">GNU Software</a> -
-FSF と GNU ライセンスの情報もあります。</li>
+<li><a href="http://www.gnu.org/home.ja.html" target="_blank">GNU Software</a> -
+FSF と GNU ライセンスの情報もあります。日本語ページへのリンクです。</li>
 <li><a href="http://www.opensource.org/" target="_blank">Open Source Initiative</a> - 
 オープンソースに関する一般的な情報 (特にライセンス)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
