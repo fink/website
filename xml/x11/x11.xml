@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.29 2003/04/12 22:14:08 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.30 2003/05/21 15:36:55 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -705,7 +705,7 @@ right at the beginning to make sure the environment is set up correctly.
 </p>
 <p>
 You can put fairly arbitrary commands in an <filename>.xinitrc</filename>,
-but there are some cheavats.
+but there are some caveats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/12 22:14:08';
+$cvs_date = 'Date: 2003/05/21 15:36:55';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -122,7 +122,7 @@ right at the beginning to make sure the environment is set up correctly.
 </p>
 <p>
 You can put fairly arbitrary commands in an <code>.xinitrc</code>,
-but there are some cheavats.
+but there are some caveats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
