@@ -1,7 +1,7 @@
 <?
 $title = "X11 Choices";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/01 12:00:57 $';
+$cvs_date = '$Date: 2001/04/26 20:41:42 $';
 
 include "header.inc";
 ?>
@@ -21,14 +21,15 @@ Unix variants. The Darwin port uses IOKit calls to access the display
 hardware, the keyboard and the mouse. This also works on Mac OS X, but you
 must log out of the Aqua GUI and switch to the console. (Enter
 <tt>&gt;console</tt> as the user name at the login prompt.) Note that
-you'll get a US keyboard layout be default; you can use xmodmap or XKB
+you'll get a US keyboard layout by default; you can use xmodmap or XKB
 to modify the mappings. It's also quite slow because it is a
-framebuffer implementation without hardware acceleration.</p>
+framebuffer implementation without hardware accelleration.</p>
 <p>Since version 4.0.2, Darwin support is in the regular XFree86
 distribution. You can get binaries and source at the <a
-href="http://www.xfree86.org/">XFree86 site</a>. Building the source
-on Mac OS X Public Beta is a little involved - see the instructions at
-<a href="http://www.mrcla.com/XonX/">XonX</a> for that.</p>
+href="http://www.xfree86.org/">XFree86 site</a>. Building the 4.0.x
+source on Mac OS X Final requires some patches. I am told the
+xf-4_0_2-branch CVS tag includes these. The HEAD revision will also
+work, of cource.</p>
 
 <h2>XFree86 running under Aqua</h2>
 
@@ -48,7 +49,7 @@ page</a>.</p>
 
 <h2>Tenon Xtools</h2>
 
-<p>Tenon Intersystems develops an X server that runs in a rootless
+<p>Tenon Intersystems produces an X server that runs in a rootless
 window mode under Mac OS X. This means that you can use Mac OS X and
 X11 applications side-by-side. Their server also has accelerated
 OpenGL support. Xtools is a commercial product, but you can get a
