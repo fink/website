@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.9 2005/03/16 18:01:32 dmacks Exp $
+# $Id: Makefile,v 1.10 2005/03/16 19:03:16 dmacks Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -9,7 +9,7 @@ TARGET = index.php basics.php shared.php libtool.php preparing-10.2.php preparin
 WANT_HTML = 1
 DESTDIR = doc/porting
 
-LANGUAGES_AVAILABLE = en fr zh
+LANGUAGES_AVAILABLE = en fr ja zh
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
