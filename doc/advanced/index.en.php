@@ -1,7 +1,7 @@
 <?
 $title = "Advanced";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/20 16:26:09';
+$cvs_date = 'Date: 2005/01/21 00:49:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="next" href="bindist.php?phpLang=en" title="Running your own Binary Distribution Server">';
 
 
@@ -14,7 +14,7 @@ This document describes advanced topics not found in the
     </p>
   <h2><? echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="bindist.php?phpLang=en"><b>1 Running your own Binary Distribution Server</b></a><ul><li><a href="bindist.php?phpLang=en#intro">1.1 Introduction</a></li><li><a href="bindist.php?phpLang=en#master">1.2 Steps on "master" (build) server</a></li><li><a href="bindist.php?phpLang=en#client">1.3 Steps on client machines</a></li><li><a href="bindist.php?phpLang=en#remarks">1.4 Remarks</a></li></ul></li></ul>
-<!--Generated from $Fink: advanced.en.xml,v 1.2 2005/01/20 16:26:09 alexkhansen Exp $-->
+<!--Generated from $Fink: advanced.en.xml,v 1.3 2005/01/21 00:49:17 alexkhansen Exp $-->
 <? include_once "../../footer.inc"; ?>
 
 

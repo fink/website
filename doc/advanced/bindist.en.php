@@ -1,7 +1,7 @@
 <?
 $title = "Advanced - Binary Distro Server";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/20 16:26:09';
+$cvs_date = 'Date: 2005/01/21 00:49:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=en" title="Advanced Contents">';
 
 
@@ -126,17 +126,18 @@ binaries from the "master" server if available.
     
     <h2><a name="remarks">1.4 Remarks</a></h2>
       
-      <p>
+      <ul>
+        <li>
 Your "master" server needs to use the lowest version of X11 that you're using
 on all of the clients, i.e. if any of the client machines uses Apple's X11, the
-"master" server must use it too.
-      </p>
-      <p>
+"master" server must use it too.      </li>
+        <li>In order to save space on your build machine, you can remove packages that are only build-dependencies (i.e. not needed to run anything).  The <code>debfoster</code> package provides a nice way to do this. Be careful not to remove essential packages, such as <code>apt</code>. </li>
+        <li>
 If you are using a fink version &lt; 0.24.0 on a client machine you need to run
-<code>sudo apt-get update</code> instead of <code>fink selfupdate</code>. You
-then need to install binary packages with <code>sudo apt-get install
+<code>sudo apt-get update</code> instead of <code>fink selfupdate</code>. You then need to install binary packages with <code>sudo apt-get install
 &lt;package&gt;</code>.  
-      </p>
+      </li>
+      </ul>
       <p>
 This documentation is adapted in part from
 <a href="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the Fink"</a>
