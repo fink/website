@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.1 2001/01/07 23:14:15 chrisp Exp $ */
+/* $Id: footer.inc,v 1.2 2001/01/08 10:57:10 chrisp Exp $ */
 ?>
 
 </td></tr>
@@ -10,7 +10,7 @@
 <tr valign="bottom"><td>&nbsp;&nbsp;&nbsp;</td>
 <td align="right">
 
-<p><font size="-1">Last changed <?
+<p><font size="-1">Last changed by <? print $author ?> on <?
 print strftime("%a, %b %d %Y", $date);
 ?></font></p>
 

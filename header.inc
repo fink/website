@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.1 2001/01/07 23:14:15 chrisp Exp $ */
+/* $Id: header.inc,v 1.2 2001/01/08 10:57:10 chrisp Exp $ */
 
 // available pages
 $pages = array(
@@ -9,7 +9,21 @@ $pages = array(
   "links.php", "Links"
 );
 
-$date = filemtime($PATH_TRANSLATED);
+// get author and change date from CVS vars
+//  kill dollar-envelope
+$cvs_author = rtrim(substr($cvs_author, 1, -1));
+$cvs_date = rtrim(substr($cvs_date, 1, -1));
+//  get data
+if (ereg("^Author: (.*)$", $cvs_author, $r)) {
+  $author = $r[1];
+} else {
+  $author = "-unknown-";
+}
+if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $cvs_date, $r)) {
+  $date = gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]);
+} else {
+  $date = filemtime($PATH_TRANSLATED);
+}
 
 
 // determine active page
