@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/21 09:21:05 $';
+$cvs_date = '$Date: 2001/02/22 10:58:03 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -31,13 +31,6 @@ internet.</p>
 newest updates without waiting for the next release. Check out the <a
 href="fink/cvs.php">instructions</a>.</p>
 <p>2001-02-18: Version 0.1.5 is out. Get it from the <a
-href="download.php">download page</a>.</p>
-<p>2001-02-04: There was a small (but fatal) bug in the
-install.sh script. Thanks to Roland Quast for pointing it out. It's
-fixed in release 0.1.4a, available on the <a
-href="download.php">download page</a>. Nothing else has changed, you
-only need this if you had install problems.</p>
-<p>2001-02-04: Version 0.1.4 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
