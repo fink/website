@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/12 20:17:31';
+$cvs_date = 'Date: 2004/11/02 02:38:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -472,6 +472,10 @@ Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (i
 <p>
 Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .
 </p>
+</td></tr><tr valign="top"><td>AppBundles</td><td>
+<p><b>Introduit dans une version postérieure à la version 0.23.1.</b> Ce champ installe le(s) lot(s) dans le répertoire <code>%p/Applications</code>. Il crée également un lien symbolique vers le répertoire <code>/Applications/Fink</code>. Exemple:
+</p>
+<pre>AppBundles: build/*.app Foo.app</pre>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
 <b>Introduit dans la version 0.10.0 de fink.</b>

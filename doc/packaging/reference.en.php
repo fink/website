@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/09/12 14:39:21';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/11/02 02:38:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -887,6 +887,15 @@ If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
+</td></tr><tr valign="top"><td>AppBundles</td><td>
+<p>
+<b>Introduced in a post-0.23.1 version.</b>
+This field installs the specified application bundle(s) into
+<code>%p/Applications</code>.  It will also create a
+symlink to the <code>/Applications/Fink</code> directory.
+Example:
+</p>
+<pre>AppBundles: build/*.app Foo.app</pre>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
