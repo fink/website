@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/22 01:45:58';
+$cvs_date = 'Date: 2003/08/24 22:35:00';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -63,6 +63,16 @@ version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you nee
 <a name="cctools">
 <div class="question"><p><b>Q5.5: &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</b></p></div>
 <div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <code>gcc 3.3</code> update).</p></div>
+</a>
+<a name="system-xfree86-upgrade">
+<div class="question"><p><b>Q5.6: I can't update system-xfree86, because of a conflict with x11.</b></p></div>
+<div class="answer"><p><b>A:</b> This problem has come about because of changes needed to allow for externally installed XFree86-4.3 .  Originally,  <code>system-xfree86</code> provided the <code>x11</code> virtual package when an externally installed XFree86 was present.  Because it only worked for XFree86-4.2, it was decided to have two separate packages:</p><ul>
+<li><code>system-xfree86-42</code>, for XFree86 4.2.x and Apple X11 beta 3</li>
+<li><code>system-xfree86-43</code>, for XFree86 4.3.x and Apple X11 1.0</li>
+</ul><p>Either of these will provide <code>x11</code>.  <code>System-xfree86</code> is now a bundle that installs the appropriate one of the above packages, depending on the version of XFree86 / Apple X11 that is installed.  Unfortunately, switching the provider of a virtual package is sufficiently complicated that the automatic upgrade procedure can't deal with it (currently).  In order to upgrade, perform the following procedure:</p><pre>
+dpkg --remove --force-depends system-xfree86
+fink install system-xfree86
+</pre><p>If you're using Fink Commander, you can select <code>system-xfree86</code>, use Source-&gt;Force Remove, then reselect it and use Source-&gt;Install.</p></div>
 </a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/22 01:45:58';
+$cvs_date = 'Date: 2003/08/24 22:35:00';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -108,6 +108,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
 <li><a href="comp-packages.php#cctools">5.5 &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</a></li>
+<li><a href="comp-packages.php#system-xfree86-upgrade">5.6 I can't update system-xfree86, because of a conflict with x11.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -138,7 +139,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.124 2003/08/22 01:45:58 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.125 2003/08/24 22:35:00 alexkhansen Exp $</i></p>
 
 
 <?
