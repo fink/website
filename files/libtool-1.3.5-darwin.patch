@@ -1,7 +1,11 @@
 diff -ru libtool-1.3.5/ChangeLog libtool-1.3.5-patched/ChangeLog
---- libtool-1.3.5/ChangeLog	Sat May 27 13:12:27 2000
-+++ libtool-1.3.5-patched/ChangeLog	Thu Aug 30 14:06:35 2001
-@@ -1,3 +1,20 @@
+--- libtool-1.3.5/ChangeLog	Sat May 27 07:12:27 2000
++++ libtool-1.3.5-patched/ChangeLog	Sun Jun  9 15:34:34 2002
+@@ -1,3 +1,24 @@
++2002-06-09 Dave Morrison <dmrrsn@users.sourceforge.net>
++	
++	* ltconfig.in: Modified Darwin library versioning to work with gcc3.
++
 +2001-03-12  Christoph Pfisterer  <cp@chrisp.de>
 +
 +	* ltconfig.in: Added proper library versioning on Darwin.
@@ -23,8 +27,8 @@ diff -ru libtool-1.3.5/ChangeLog libtool-1.3.5-patched/ChangeLog
  
  	GNU libtool 1.3.5 was released.
 diff -ru libtool-1.3.5/README libtool-1.3.5-patched/README
---- libtool-1.3.5/README	Wed Jun 23 17:13:15 1999
-+++ libtool-1.3.5-patched/README	Thu Aug 30 14:06:35 2001
+--- libtool-1.3.5/README	Wed Jun 23 11:13:15 1999
++++ libtool-1.3.5-patched/README	Sun Jun  9 15:28:07 2002
 @@ -12,6 +12,7 @@
    AIX 3.x, 4.x (*-*-aix3*, *-*-aix4*)
    BeOS (*-*-beos*)
@@ -34,8 +38,8 @@ diff -ru libtool-1.3.5/README libtool-1.3.5-patched/README
    DG/UX R4.11, R4.12, R4.20 (*-*-dguxR411*, *-*-dguxR412*, *-*-dguxR420*)
    FreeBSD 2.x, 3.x, 4.x (*-*-freebsd2*, *-*-freebsd3*, *-*-freebsd4*)
 diff -ru libtool-1.3.5/ltconfig.in libtool-1.3.5-patched/ltconfig.in
---- libtool-1.3.5/ltconfig.in	Sat May 27 03:58:57 2000
-+++ libtool-1.3.5-patched/ltconfig.in	Thu Aug 30 16:09:43 2001
+--- libtool-1.3.5/ltconfig.in	Fri May 26 21:58:57 2000
++++ libtool-1.3.5-patched/ltconfig.in	Sun Jun  9 15:33:36 2002
 @@ -678,6 +678,11 @@
    cygwin* | mingw* | os2*)
      # We can build DLLs from non-PIC.
@@ -61,7 +65,7 @@ diff -ru libtool-1.3.5/ltconfig.in libtool-1.3.5-patched/ltconfig.in
 +      allow_undefined_flag='-flat_namespace -undefined suppress'
 +      ;;
 +    esac
-+    archive_cmds='$nonopt $(test .$module = .yes && echo -bundle || echo -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs $linkopts -install_name $rpath/$soname $verstring'
++    archive_cmds='$nonopt $(test .$module = .yes && echo -bundle || echo -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs $linkopts $(test .$module != .yes && echo -install_name $rpath/$soname $verstring)'
 +    # We need to add '_' to the symbols in $export_symbols first
 +    #archive_expsym_cmds="$archive_cmds"' && strip -s $export_symbols $lib'
 +    hardcode_direct=yes
@@ -129,8 +133,8 @@ diff -ru libtool-1.3.5/ltconfig.in libtool-1.3.5-patched/ltconfig.in
  
  sco3.2v5*)
 diff -ru libtool-1.3.5/ltmain.in libtool-1.3.5-patched/ltmain.in
---- libtool-1.3.5/ltmain.in	Sat May 27 03:53:15 2000
-+++ libtool-1.3.5-patched/ltmain.in	Thu Aug 30 14:13:08 2001
+--- libtool-1.3.5/ltmain.in	Fri May 26 21:53:15 2000
++++ libtool-1.3.5-patched/ltmain.in	Sun Jun  9 15:28:08 2002
 @@ -1079,6 +1079,11 @@
  	    # These systems don't actually have c library (as such)
  	    continue
