@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.2 2004/03/03 05:20:03 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.3 2004/03/07 01:55:45 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -57,7 +57,7 @@ Fink 希望把越来越多的 Unix 软件带到 Mac OS X，因此它的两个主
           </li>
           <li>
             <p>
-dpkg 提供完善的二进制包管理机制——平滑升级，对配置文件的特别处理，虚拟软件包，以及其它高级依赖关系设置。
+dpkg 提供完善的二进制包管理机制－平滑升级，对配置文件的特别处理，虚拟软件包，以及其它高级依赖关系设置。
 </p>
           </li>
           <li>

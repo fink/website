@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.2 2004/03/05 03:26:57 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.3 2004/03/07 01:55:46 jeff_yecn Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -15,7 +15,7 @@
     <section name="def-x11" >
       <title>什么是 X11？</title>
       <p>
-<link url="http://www.x.org/" >X Window 系统</link>版本 11，简称 X11，是一个具有对网络透明特性的客户／服务器架构的图形显示系统。
+<link url="http://www.x.org/" >X Window 系统</link>版本 11，简称 X11，是一个对网络透明的客户／服务器架构的图形显示系统。
 它支持应用程序在你的屏幕上绘制象素，线条，文字，图象等等。
 X11 还包括一些其它的辅助的函数库，使得它可以容易地绘制用户界面，例如：按钮，文本输入区等等。</p>
       <p>
