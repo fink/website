@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Xtools</h1>
+<h1>Running X11 - 5 Xtools</h1>
 
 
 
 
-<a name="install"><h2>Installing Xtools</h2></a>
+<a name="install"><h2>5.1 Installing Xtools</h2></a>
 <p>
 Now that's easy for a change.
 Get the installer, double-click it, and follow the instructions.
@@ -29,7 +29,7 @@ system.
 
 
 
-<a name="run"><h2>Running Xtools</h2></a>
+<a name="run"><h2>5.2 Running Xtools</h2></a>
 <p>
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
@@ -39,7 +39,7 @@ Xtools additionally allows you to start clients via the menu.
 
 
 
-<a name="opengl"><h2>OpenGL Notes</h2></a>
+<a name="opengl"><h2>5.3 OpenGL Notes</h2></a>
 <p>
 Xtools does hardware-accelerated OpenGL in rootless mode and comes
 with the libraries to support it.
@@ -54,7 +54,7 @@ Hopefully this will be fixed in Xtools 1.1 once it is released.
 
 
 <p align="right">
-Next: <a href="other.php">Other X11 Possibilities</a></p>
+Next: <a href="other.php">6 Other X11 Possibilities</a></p>
 
 
 <?

@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><l
 include "header.inc";
 ?>
 
-<h1>Packaging - Introduction</h1>
+<h1>Packaging - 1 Introduction</h1>
 
 
 
 
-<a name="def1"><h2>What is a Package?</h2></a>
+<a name="def1"><h2>1.1 What is a Package?</h2></a>
 <p>
 A package is a piece of software that forms an atomic unit.
 A typical package contains an executable program, the data files it
@@ -44,7 +44,7 @@ files are in the dpkg format and have the extension .deb.
 
 
 
-<a name="ident"><h2>Identifying a Package</h2></a>
+<a name="ident"><h2>1.2 Identifying a Package</h2></a>
 <p>
 A package is identified by three strings: the package name, the
 version and the revision.
@@ -70,7 +70,7 @@ dashes in between, e.g. openssh-2.9p1-2.
 
 
 <p align="right">
-Next: <a href="format.php">Package Descriptions</a></p>
+Next: <a href="format.php">2 Package Descriptions</a></p>
 
 
 <?

@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Usage Tips</h1>
+<h1>Running X11 - 8 Usage Tips</h1>
 
 
 
 
-<a name="terminal-app"><h2>Launching X11 apps from Terminal.app</h2></a>
+<a name="terminal-app"><h2>8.1 Launching X11 apps from Terminal.app</h2></a>
 <p>
 To launch X11 applications from a Terminal.app window, you must set
 the environment variable "DISPLAY".
@@ -41,7 +41,7 @@ with X11 tunneling.
 
 
 
-<a name="open"><h2>Launching Aqua apps from an xterm</h2></a>
+<a name="open"><h2>8.2 Launching Aqua apps from an xterm</h2></a>
 <p>
 One way to launch Aqua applications from an xterm (or any other shell,
 actually) is the <tt><nobr>open</nobr></tt> command.
@@ -58,7 +58,7 @@ to use.
 
 
 
-<a name="copy-n-paste"><h2>Copy and Paste</h2></a>
+<a name="copy-n-paste"><h2>8.3 Copy and Paste</h2></a>
 <p>
 Copy and Paste generally works between the Aqua and X11 environments.
 There are still some bugs.

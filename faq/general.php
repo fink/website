@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - General Questions</h1>
+<h1>F.A.Q. - 1 General Questions</h1>
 
 
 
-<a name="what"><div class="question"><p><b>Q: What is Fink?</b></p></div>
+<a name="what"><div class="question"><p><b>Q1.1: What is Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Fink wants to bring more Unix software to Mac OS X, which results in
 two main goals:
@@ -34,14 +34,14 @@ For building packages from source, we have our own tool, named
 files.
 </p></div></a>
 
-<a name="naming"><div class="question"><p><b>Q: What does the name Fink stand for?</b></p></div>
+<a name="naming"><div class="question"><p><b>Q1.2: What does the name Fink stand for?</b></p></div>
 <div class="answer"><p><b>A:</b> Nothing, it's just a name. It's not even an acronym.</p><p>Well, actually Fink is the German name for Finch, a kind of
 bird. I was looking for a name for the project, and the name of the
 OS, Darwin, led me to think about Charles Darwin, the Galapagos
 Islands and evolution. I remembered a piece about the so-called Darwin
 Finches and their beaks from school, and well, that's it...</p></div></a>
 
-<a name="bsd-ports"><div class="question"><p><b>Q: How is Fink different
+<a name="bsd-ports"><div class="question"><p><b>Q1.3: How is Fink different
 from the BSD port mechanism (this includes OpenPackages and
 GNU-Darwin)?</b></p></div>
 <div class="answer"><p><b>A:</b> Some main advantages:</p><ul>
@@ -64,7 +64,7 @@ third-party packages to a minimum.
 </p></li>
 </ul></div></a>
 
-<a name="usr-local"><div class="question"><p><b>Q: Why doesn't Fink install into
+<a name="usr-local"><div class="question"><p><b>Q1.4: Why doesn't Fink install into
 /usr/local?</b></p></div>
 <div class="answer"><p><b>A:</b> There are several reasons, but the common line is "because
 breakage will occur".</p><p>Reason One: Third-party software. /usr/local is the
@@ -88,7 +88,7 @@ garbage file called <tt><nobr>stdio.h</nobr></tt> into /usr/local/include.</p><p
 installation script will warn you explicitly, but proceed once you
 acknowledge that you're doing this at your own risk.</p></div></a>
 
-<a name="why-sw"><div class="question"><p><b>Q: Then why did you choose
+<a name="why-sw"><div class="question"><p><b>Q1.5: Then why did you choose
 /sw?</b></p></div>
 <div class="answer"><p><b>A:</b> That choice is quite arbitrary. If you have a better
 suggestion, post it to the fink-devel mailing list. But you should be
@@ -97,7 +97,7 @@ aware of the arguments about /usr/local in the previous question.</p></div></a>
 
 
 <p align="right">
-Next: <a href="relations.php">Relations with Other Projects</a></p>
+Next: <a href="relations.php">2 Relations with Other Projects</a></p>
 
 
 <?

@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><l
 include "header.inc";
 ?>
 
-<h1>Packaging - Packaging Policy</h1>
+<h1>Packaging - 3 Packaging Policy</h1>
 
 
 
-<a name="licenses"><h2>Package Licenses</h2></a>
+<a name="licenses"><h2>3.1 Package Licenses</h2></a>
 <p>
 The packages included in Fink come with a wide variety of licenses.
 Most of them place restrictions on redistributing the full source and
@@ -100,7 +100,7 @@ the License field, e.g. <tt><nobr>GPL/GFDL</nobr></tt>.
 
 
 
-<a name="prefix"><h2>Base System Interference</h2></a>
+<a name="prefix"><h2>3.2 Base System Interference</h2></a>
 <p>
 Fink is an add-on distribution that is installed in a directory
 separate from the base system.
@@ -122,7 +122,7 @@ for existence before calling them and the like).
 
 
 <p align="right">
-Next: <a href="fslayout.php">Filesystem Layout</a></p>
+Next: <a href="fslayout.php">4 Filesystem Layout</a></p>
 
 
 <?

@@ -3,16 +3,16 @@ $title = "Installation - First Time";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/09/04 12:15:12';
 
-$metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include "header.inc";
 ?>
 
-<h1>Installation - First Time Installation</h1>
+<h1>Installation - 2 First Time Installation</h1>
 
 
 
-<a name="req"><h2>Requirements</h2></a>
+<a name="req"><h2>2.1 Requirements</h2></a>
 <p>
 You need:
 </p>
@@ -45,7 +45,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="directory"><h2>Choosing A Directory</h2></a>
+<a name="directory"><h2>2.2 Choosing A Directory</h2></a>
 <p>
 Before you install, you must decide where Fink's directory hierarchy
 will live. The recommended place is /sw, and all examples in this
@@ -77,7 +77,7 @@ have been warned.
 </p>
 
 
-<a name="install"><h2>Installation</h2></a>
+<a name="install"><h2>2.3 Installation</h2></a>
 <p>
 First, you need to unpack the fink-0.2.6-full.tar.gz tarball.
 It is recommended that you do this from the command line -
@@ -134,7 +134,7 @@ manager, you first must have the package manager available.
 </p>
 
 
-<a name="x11"><h2>Getting X11 Sorted Out</h2></a>
+<a name="x11"><h2>2.4 Getting X11 Sorted Out</h2></a>
 <p>
 Fink uses virtual packages to declare dependencies on X11.
 As there are several X11 implementations available for Mac OS X
@@ -184,7 +184,7 @@ and Mac OS X document</a>.
 
 
 <p align="right">
-Next: <a href="install-up02.php">Upgrading From Fink 0.2.x</a></p>
+Next: <a href="install-up02.php">3 Upgrading From Fink 0.2.x</a></p>
 
 
 <?

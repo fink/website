@@ -8,7 +8,7 @@ $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents
 include "header.inc";
 ?>
 
-<h1>User's Guide - Upgrading Fink</h1>
+<h1>User's Guide - 4 Upgrading Fink</h1>
 
 
 
@@ -17,7 +17,7 @@ This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
 
 
-<a name="bin"><h2>Upgrading using Binary Packages</h2></a>
+<a name="bin"><h2>4.1 Upgrading using Binary Packages</h2></a>
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -41,7 +41,7 @@ older than 0.3.0, see the
 </p>
 
 
-<a name="src"><h2>Upgrading the Source Distribution</h2></a>
+<a name="src"><h2>4.2 Upgrading the Source Distribution</h2></a>
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -81,7 +81,7 @@ update-all</nobr></tt>.
 </p>
 
 
-<a name="mix"><h2>Mixing Binaries and Source</h2></a>
+<a name="mix"><h2>4.3 Mixing Binaries and Source</h2></a>
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions

@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><l
 include "header.inc";
 ?>
 
-<h1>Packaging - Reference</h1>
+<h1>Packaging - 5 Reference</h1>
 
 
 
 
-<a name="build"><h2>The Build Process</h2></a>
+<a name="build"><h2>5.1 The Build Process</h2></a>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -45,15 +45,15 @@ but various information from the package description is used to
 generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 
 
-<a name="fields"><h2>Fields</h2></a>
+<a name="fields"><h2>5.2 Fields</h2></a>
 
 <p>This list is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
 The package name.
-May contain lowercase letters, numbers and the special characters '.', '+'
-and '-'.
+May contain lowercase letters, numbers and the special characters '.',
+'+' and '-'.
 No underscores ('_'), no capital letters.
 Required field.
 </p>
@@ -87,8 +87,10 @@ However, the patch, compile and install phases are executed normally.
 This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
 </p>
-Finally there is <tt><nobr>perl</nobr></tt> in which case alternate default
-values for CompileScript and InstallScript are used. 
+<p>
+Finally there is <tt><nobr>perl</nobr></tt> which causes alternate default
+values for CompileScript and InstallScript to be used. 
+</p>
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
 The name and e-mail address of the person responsible for the package.
@@ -235,8 +237,26 @@ Normally, an auxillary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
-expect. See ghostscript, vim and tetex for examples of
-usage.
+expect. See ghostscript, vim and tetex for examples of usage.
+</p>
+</td></tr><tr valign="top"><td>SourceRename</td><td>
+<p>
+This field can renames a source tar ball on the fly. This is useful
+if for example the version of the source is encoded in the directory name on
+the server, but the tar ball itself has the same name for all versions, e.g.
+http://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+caused by this, you would then use something like
+</p>
+<pre>SourceRename: %n-%v.tar.gz</pre>
+<p>
+In the above example this would result in the tarball being stored under
+/sw/src/coolapp-1.2.3.tar.gz as one would expect.
+</p>
+</td></tr><tr valign="top"><td>Source<i>N</i>Rename</td><td>
+<p>
+This is just the same as the <tt><nobr>SourceRename</nobr></tt> field, except that it
+is used to rename the Nth tarball as specified by the <tt><nobr>Source<i>N</i></nobr></tt>
+field. See context or hyperref for examples of usage.
 </p>
 </td></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
@@ -298,6 +318,14 @@ You can run <tt><nobr>diff</nobr></tt> to find the differences between the
 packages's version and Fink's version (in
 <tt><nobr>/sw/lib/fink/update</nobr></tt>).
 </p>
+</td></tr><tr valign="top"><td>UpdatePOD</td><td>
+<p>
+A boolean value, specific for perl module packages.
+If true, this will add code to the install, postrm and postinst
+scripts that maintains the .pod files provided by perl packages.
+This includes adding and removing the .pod date from the central
+<tt><nobr>/sw/lib/perl5/darwin/perllocal.pod</nobr></tt> file
+</p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
 The filename of a patch to be applied with <tt><nobr>patch -p1
@@ -324,25 +352,44 @@ CompileScript for details.)
 <p>
 A list of commands that are run in the compile phase. See the note
 on scripts below. This is the place to put commands that configure and
-compile the package. The default is:
+compile the package. Normally the default is:
 </p>
 <pre>./configure %c
 make</pre>
 <p>
-This is appropriate for packages that use GNU autoconf. Before the
-commands are executed, percent expansion takes place (see previous
-section).
+This is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<pre>perl Makefile.PL PREFIX=\%p INSTALLPRIVLIB=\%p/lib/perl5 \
+ INSTALLARCHLIB=\%p/lib/perl5/darwin INSTALLSITELIB=\%p/lib/perl5 \
+ INSTALLSITEARCH=\%p/lib/perl5/darwin INSTALLMAN1DIR=\%p/share/man/man1 \
+ INSTALLMAN3DIR=\%p/share/man/man3
+make
+make test</pre>
+<p>
+Before the commands are executed, percent expansion takes place
+(see previous section).
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
 A list of commands that are run in the install phase. See the note
 on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. The default is:
+necessary files to the stow directory for the package. Normally the
+default is:
 </p>
 <pre>make install prefix=%i</pre>
 <p>
-The default is appropriate for packages that use GNU autoconf. If the
-package supports it, it is preferably to use <tt><nobr>make install
+The default is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<pre>make install INSTALLPRIVLIB=\%i/lib/perl5 \
+ INSTALLARCHLIB=\%i/lib/perl5/darwin INSTALLSITELIB=\%i/lib/perl5 \
+ INSTALLSITEARCH=\%i/lib/perl5/darwin INSTALLMAN1DIR=\%i/share/man/man1 \
+ INSTALLMAN3DIR=\%i/share/man/man3</pre>
+<p>
+If the package supports it, it is preferably to use <tt><nobr>make install
 DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
@@ -530,7 +577,7 @@ always available.
 </td></tr></table>
 
 
-<a name="scripts"><h2>Scripts</h2></a>
+<a name="scripts"><h2>5.3 Scripts</h2></a>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
@@ -540,7 +587,7 @@ the <tt><nobr>cd</nobr></tt> commands only affect commands that are on the same
 line. This may be fixed one day in the future.</p>
 
 
-<a name="patches"><h2>Patches</h2></a>
+<a name="patches"><h2>5.4 Patches</h2></a>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension

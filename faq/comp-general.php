@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Compile Problems - General</h1>
+<h1>F.A.Q. - 4 Compile Problems - General</h1>
 
 
 
-<a name="compiler"><div class="question"><p><b>Q: A configure script complains
+<a name="compiler"><div class="question"><p><b>Q4.1: A configure script complains
 that it can't find an "acceptable cc". What's that?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Read the docs next time.
@@ -20,7 +20,7 @@ To compile packages from source, you must install the Developer Tools,
 which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
 </p></div></a>
 
-<a name="make"><div class="question"><p><b>Q: make: illegal option -- C</b></p></div>
+<a name="make"><div class="question"><p><b>Q4.2: make: illegal option -- C</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
 installed as part of the Developer Tools with a BSD version of make.
@@ -29,7 +29,7 @@ Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
 <tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>.
 </p></div></a>
 
-<a name="head"><div class="question"><p><b>Q: I'm getting a strange usage message
+<a name="head"><div class="question"><p><b>Q4.3: I'm getting a strange usage message
 from the head command. What's broken?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1
 Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of option descriptions, you have a broken
@@ -50,7 +50,7 @@ installation or install libwww after you installed Fink.
 </p></div></a>
 
 <p align="right">
-Next: <a href="comp-packages.php">Compile Problems - Specific Packages</a></p>
+Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>
 
 
 <?

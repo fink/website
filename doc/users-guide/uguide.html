@@ -20,39 +20,39 @@ both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
 <h2>Contents</h2><ul>
-<li><a href="#intro"><b>Introduction</b></a></li>
+<li><a href="#intro"><b>1 Introduction</b></a></li>
 <ul>
-<li><a href="#intro.what">What is Fink?</a></li>
-<li><a href="#intro.req">Requirements</a></li>
-<li><a href="#intro.supported-os">Supported Systems</a></li>
-<li><a href="#intro.src-vs-bin">Source vs. Binary</a></li>
+<li><a href="#intro.what">1.1 What is Fink?</a></li>
+<li><a href="#intro.req">1.2 Requirements</a></li>
+<li><a href="#intro.supported-os">1.3 Supported Systems</a></li>
+<li><a href="#intro.src-vs-bin">1.4 Source vs. Binary</a></li>
 </ul>
-<li><a href="#install"><b>First Time Installation</b></a></li>
+<li><a href="#install"><b>2 First Time Installation</b></a></li>
 <ul>
-<li><a href="#install.bin">Installing the Binary Distribution</a></li>
-<li><a href="#install.src">Installing the Source Distribution</a></li>
-<li><a href="#install.setup">Setting Up Your Environment</a></li>
+<li><a href="#install.bin">2.1 Installing the Binary Distribution</a></li>
+<li><a href="#install.src">2.2 Installing the Source Distribution</a></li>
+<li><a href="#install.setup">2.3 Setting Up Your Environment</a></li>
 </ul>
-<li><a href="#packages"><b>Installing Packages</b></a></li>
+<li><a href="#packages"><b>3 Installing Packages</b></a></li>
 <ul>
-<li><a href="#packages.x11">Getting X11 Sorted Out</a></li>
-<li><a href="#packages.bin-dselect">Installing Binary Packages with
+<li><a href="#packages.x11">3.1 Getting X11 Sorted Out</a></li>
+<li><a href="#packages.bin-dselect">3.2 Installing Binary Packages with
 dselect</a></li>
-<li><a href="#packages.bin-apt">Installing Binary Packages with
+<li><a href="#packages.bin-apt">3.3 Installing Binary Packages with
 apt-get</a></li>
-<li><a href="#packages.src">Installing Packages from Source</a></li>
+<li><a href="#packages.src">3.4 Installing Packages from Source</a></li>
 </ul>
-<li><a href="#upgrade"><b>Upgrading Fink</b></a></li>
+<li><a href="#upgrade"><b>4 Upgrading Fink</b></a></li>
 <ul>
-<li><a href="#upgrade.bin">Upgrading using Binary Packages</a></li>
-<li><a href="#upgrade.src">Upgrading the Source Distribution</a></li>
-<li><a href="#upgrade.mix">Mixing Binaries and Source</a></li>
+<li><a href="#upgrade.bin">4.1 Upgrading using Binary Packages</a></li>
+<li><a href="#upgrade.src">4.2 Upgrading the Source Distribution</a></li>
+<li><a href="#upgrade.mix">4.3 Mixing Binaries and Source</a></li>
 </ul>
-</ul><a name="intro"><h2>Introduction</h2></a>
+</ul><a name="intro"><h2>1 Introduction</h2></a>
 
 
 
-<a name="intro.what"><h3>What is Fink?</h3></a>
+<a name="intro.what"><h3>1.1 What is Fink?</h3></a>
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -61,7 +61,7 @@ developed for Linux and similar operating systems to your Mac.
 </p>
 
 
-<a name="intro.req"><h3>Requirements</h3></a>
+<a name="intro.req"><h3>1.2 Requirements</h3></a>
 <p>
 In any case you will need:
 </p>
@@ -105,7 +105,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="intro.supported-os"><h3>Supported Systems</h3></a>
+<a name="intro.supported-os"><h3>1.3 Supported Systems</h3></a>
 <p>
 <b>Mac OS X 10.1</b> is the operating system of choice for running
 Fink.
@@ -143,7 +143,7 @@ this case.
 </p>
 
 
-<a name="intro.src-vs-bin"><h3>Source vs. Binary</h3></a>
+<a name="intro.src-vs-bin"><h3>1.4 Source vs. Binary</h3></a>
 <p>
 Software is written ("developed") in human-readable programming
 languages; this form is called the "source code".
@@ -183,7 +183,7 @@ The rest of this manual will show you how.
 </p>
 
 
-<a name="install"><h2>First Time Installation</h2></a>
+<a name="install"><h2>2 First Time Installation</h2></a>
 
 
 
@@ -206,7 +206,7 @@ chapter</a>.
 </p>
 
 
-<a name="install.bin"><h3>Installing the Binary Distribution</h3></a>
+<a name="install.bin"><h3>2.1 Installing the Binary Distribution</h3></a>
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -232,7 +232,7 @@ When the installer is finished, proceed with the
 </p>
 
 
-<a name="install.src"><h3>Installing the Source Distribution</h3></a>
+<a name="install.src"><h3>2.2 Installing the Source Distribution</h3></a>
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <tt><nobr>fink</nobr></tt> package manager and its package
@@ -294,7 +294,7 @@ When the bootstrap is finished, proceed with the
 </p>
 
 
-<a name="install.setup"><h3>Setting Up Your Environment</h3></a>
+<a name="install.setup"><h3>2.3 Setting Up Your Environment</h3></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
@@ -344,7 +344,7 @@ package management tools included in Fink.
 </p>
 
 
-<a name="packages"><h2>Installing Packages</h2></a>
+<a name="packages"><h2>3 Installing Packages</h2></a>
 
 
 
@@ -356,7 +356,7 @@ Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
 
 
-<a name="packages.x11"><h3>Getting X11 Sorted Out</h3></a>
+<a name="packages.x11"><h3>3.1 Getting X11 Sorted Out</h3></a>
 <p>
 Since there are several X11 implementations available for Mac OS X
 (XFree86, Tenon Xtools, eXodus) and several ways to install them
@@ -405,7 +405,7 @@ and Mac OS X document</a>.
 </p>
 
 
-<a name="packages.bin-dselect"><h3>Installing Binary Packages with
+<a name="packages.bin-dselect"><h3>3.2 Installing Binary Packages with
 dselect</h3></a>
 <p>
 <tt><nobr>dselect</nobr></tt> is a program that lets you browse the list of
@@ -482,7 +482,7 @@ the "[I]nstall" menu item to actually install the packages.
 </p>
 
 
-<a name="packages.bin-apt"><h3>Installing Binary Packages with
+<a name="packages.bin-apt"><h3>3.3 Installing Binary Packages with
 apt-get</h3></a>
 <p>
 <tt><nobr>dselect</nobr></tt> doesn't actually download the packages itself.
@@ -513,7 +513,7 @@ Removing packages is just as easy:
 </p>
 
 
-<a name="packages.src"><h3>Installing Packages from Source</h3></a>
+<a name="packages.src"><h3>3.4 Installing Packages from Source</h3></a>
 <p>
 To get a list of packages that are available for installation from
 source, ask the <tt><nobr>fink</nobr></tt> tool:
@@ -545,7 +545,7 @@ If you run into errors during that process, please first check the
 </p>
 
 
-<a name="upgrade"><h2>Upgrading Fink</h2></a>
+<a name="upgrade"><h2>4 Upgrading Fink</h2></a>
 
 
 
@@ -554,7 +554,7 @@ This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
 
 
-<a name="upgrade.bin"><h3>Upgrading using Binary Packages</h3></a>
+<a name="upgrade.bin"><h3>4.1 Upgrading using Binary Packages</h3></a>
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -578,7 +578,7 @@ older than 0.3.0, see the
 </p>
 
 
-<a name="upgrade.src"><h3>Upgrading the Source Distribution</h3></a>
+<a name="upgrade.src"><h3>4.2 Upgrading the Source Distribution</h3></a>
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -618,7 +618,7 @@ update-all</nobr></tt>.
 </p>
 
 
-<a name="upgrade.mix"><h3>Mixing Binaries and Source</h3></a>
+<a name="upgrade.mix"><h3>4.3 Mixing Binaries and Source</h3></a>
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions

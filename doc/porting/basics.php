@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><lin
 include "header.inc";
 ?>
 
-<h1>Porting - Basics</h1>
+<h1>Porting - 1 Basics</h1>
 
 
 
 
-<a name="heritage"><h2>Where Darwin came from</h2></a>
+<a name="heritage"><h2>1.1 Where Darwin came from</h2></a>
 <p>
 Darwin is a Unix-like operating system that evolved from NeXTStep /
 OpenStep.
@@ -40,7 +40,7 @@ installed as the default.
 
 
 
-<a name="compiler"><h2>The Compiler and Tools</h2></a>
+<a name="compiler"><h2>1.2 The Compiler and Tools</h2></a>
 <p>
 Short story:
 The compiler is a gcc derivate, but installed as <tt><nobr>cc</nobr></tt>;
@@ -80,7 +80,7 @@ linker.
 
 
 
-<a name="host-type"><h2>Host type</h2></a>
+<a name="host-type"><h2>1.3 Host type</h2></a>
 <p>
 Short story:
 If configure fails with 'Can't determine host type', copy config.guess
@@ -127,7 +127,7 @@ copy them from there.
 
 
 
-<a name="libraries"><h2>Libraries</h2></a>
+<a name="libraries"><h2>1.4 Libraries</h2></a>
 <p>
 Short story:
 You can safely remove <tt><nobr>-lm</nobr></tt> from Makefiles, but you don't
@@ -150,7 +150,7 @@ libutil.dylib.
 
 
 <p align="right">
-Next: <a href="shared.php">Shared Code</a></p>
+Next: <a href="shared.php">2 Shared Code</a></p>
 
 
 <?

@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><lin
 include "header.inc";
 ?>
 
-<h1>Porting - Shared Code</h1>
+<h1>Porting - 2 Shared Code</h1>
 
 
 
-<a name="lib-and-mod"><h2>Shared Libraries vs. Loadable Modules</h2></a>
+<a name="lib-and-mod"><h2>2.1 Shared Libraries vs. Loadable Modules</h2></a>
 <p>
 One Mach-O feature that hits many people by surprise is the strict
 distinction between shared libraries and dynamically loadable
@@ -50,7 +50,7 @@ loaded.
 
 
 
-<a name="version"><h2>Version Numbering</h2></a>
+<a name="version"><h2>2.2 Version Numbering</h2></a>
 <p>
 On an ELF system, version numbers are usually appended to the file
 name of the shared library, e.g. <tt><nobr>libqt.so.2.3.0</nobr></tt>.
@@ -99,7 +99,7 @@ linking.
 
 
 
-<a name="cflags"><h2>Compiler Flags</h2></a>
+<a name="cflags"><h2>2.3 Compiler Flags</h2></a>
 <p>
 The generation of position-independent code (PIC) is the default is
 the default on Darwin.
@@ -114,7 +114,7 @@ option.
 
 
 
-<a name="build-lib"><h2>Building a Shared Library</h2></a>
+<a name="build-lib"><h2>2.4 Building a Shared Library</h2></a>
 <p>
 To build a shared library, you invoke the compiler driver with the
 <tt><nobr>-dynamiclib</nobr></tt> option.
@@ -147,7 +147,7 @@ the library.
 
 
 
-<a name="build-mod"><h2>Building a Module</h2></a>
+<a name="build-mod"><h2>2.5 Building a Module</h2></a>
 <p>
 To build a loadable module, you invoke the compiler driver with the
 <tt><nobr>-bundle</nobr></tt> option.
@@ -172,7 +172,7 @@ systems require it; this is harmless.
 
 
 <p align="right">
-Next: <a href="libtool.php">GNU libtool</a></p>
+Next: <a href="libtool.php">3 GNU libtool</a></p>
 
 
 <?

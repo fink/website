@@ -9,76 +9,76 @@ describe the current situation and the many options you have to use
 X11 with or without Fink.
 </p>
 <h2>Contents</h2><ul>
-<li><a href="#intro"><b>Introduction</b></a></li>
+<li><a href="#intro"><b>1 Introduction</b></a></li>
 <ul>
-<li><a href="#intro.def-x11">What is X11?</a></li>
-<li><a href="#intro.def-macosx">What is Mac OS X?</a></li>
-<li><a href="#intro.def-darwin">What is Darwin?</a></li>
-<li><a href="#intro.def-xfree86">What is XFree86?</a></li>
-<li><a href="#intro.def-xtools">What is Xtools?</a></li>
-<li><a href="#intro.client-server">Client and Server</a></li>
-<li><a href="#intro.rootless">What does rootless mean?</a></li>
-<li><a href="#intro.wm">What is a window manager?</a></li>
+<li><a href="#intro.def-x11">1.1 What is X11?</a></li>
+<li><a href="#intro.def-macosx">1.2 What is Mac OS X?</a></li>
+<li><a href="#intro.def-darwin">1.3 What is Darwin?</a></li>
+<li><a href="#intro.def-xfree86">1.4 What is XFree86?</a></li>
+<li><a href="#intro.def-xtools">1.5 What is Xtools?</a></li>
+<li><a href="#intro.client-server">1.6 Client and Server</a></li>
+<li><a href="#intro.rootless">1.7 What does rootless mean?</a></li>
+<li><a href="#intro.wm">1.8 What is a window manager?</a></li>
 </ul>
-<li><a href="#history"><b>History</b></a></li>
+<li><a href="#history"><b>2 History</b></a></li>
 <ul>
-<li><a href="#history.early">The early days</a></li>
-<li><a href="#history.xonx-forms">XonX forms</a></li>
-<li><a href="#history.root-or-not">To root or not to root</a></li>
+<li><a href="#history.early">2.1 The early days</a></li>
+<li><a href="#history.xonx-forms">2.2 XonX forms</a></li>
+<li><a href="#history.root-or-not">2.3 To root or not to root</a></li>
 </ul>
-<li><a href="#inst-xfree86"><b>Getting and Installing XFree86</b></a></li>
+<li><a href="#inst-xfree86"><b>3 Getting and Installing XFree86</b></a></li>
 <ul>
-<li><a href="#inst-xfree86.official-binary">The Official Binaries</a></li>
-<li><a href="#inst-xfree86.official-source">The Official Source</a></li>
-<li><a href="#inst-xfree86.latest-cvs">The Latest Development Source</a></li>
-<li><a href="#inst-xfree86.xonx-bin">The XonX binary test releases (XAqua,
+<li><a href="#inst-xfree86.official-binary">3.1 The Official Binaries</a></li>
+<li><a href="#inst-xfree86.official-source">3.2 The Official Source</a></li>
+<li><a href="#inst-xfree86.latest-cvs">3.3 The Latest Development Source</a></li>
+<li><a href="#inst-xfree86.xonx-bin">3.4 The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="#inst-xfree86.fink">Installing through Fink</a></li>
-<li><a href="#inst-xfree86.macgimp">MacGimp</a></li>
-<li><a href="#inst-xfree86.rootless">Roaming Rootless Servers</a></li>
-<li><a href="#inst-xfree86.fink-summary">Fink package summary</a></li>
+<li><a href="#inst-xfree86.fink">3.5 Installing through Fink</a></li>
+<li><a href="#inst-xfree86.macgimp">3.6 MacGimp</a></li>
+<li><a href="#inst-xfree86.rootless">3.7 Roaming Rootless Servers</a></li>
+<li><a href="#inst-xfree86.fink-summary">3.8 Fink package summary</a></li>
 </ul>
-<li><a href="#run-xfree86"><b>Starting XFree86</b></a></li>
+<li><a href="#run-xfree86"><b>4 Starting XFree86</b></a></li>
 <ul>
-<li><a href="#run-xfree86.darwin">Darwin</a></li>
-<li><a href="#run-xfree86.macosx-41">Mac OS X + XFree86 4.1.0</a></li>
-<li><a href="#run-xfree86.macosx-42">Mac OS X + XFree86 CVS</a></li>
-<li><a href="#run-xfree86.xinitrc">The .xinitrc File</a></li>
+<li><a href="#run-xfree86.darwin">4.1 Darwin</a></li>
+<li><a href="#run-xfree86.macosx-41">4.2 Mac OS X + XFree86 4.1.0</a></li>
+<li><a href="#run-xfree86.macosx-42">4.3 Mac OS X + XFree86 CVS</a></li>
+<li><a href="#run-xfree86.xinitrc">4.4 The .xinitrc File</a></li>
 </ul>
-<li><a href="#xtools"><b>Xtools</b></a></li>
+<li><a href="#xtools"><b>5 Xtools</b></a></li>
 <ul>
-<li><a href="#xtools.install">Installing Xtools</a></li>
-<li><a href="#xtools.run">Running Xtools</a></li>
-<li><a href="#xtools.opengl">OpenGL Notes</a></li>
+<li><a href="#xtools.install">5.1 Installing Xtools</a></li>
+<li><a href="#xtools.run">5.2 Running Xtools</a></li>
+<li><a href="#xtools.opengl">5.3 OpenGL Notes</a></li>
 </ul>
-<li><a href="#other"><b>Other X11 Possibilities</b></a></li>
+<li><a href="#other"><b>6 Other X11 Possibilities</b></a></li>
 <ul>
-<li><a href="#other.vnc">VNC</a></li>
-<li><a href="#other.wiredx">WiredX</a></li>
-<li><a href="#other.exodus">eXodus</a></li>
+<li><a href="#other.vnc">6.1 VNC</a></li>
+<li><a href="#other.wiredx">6.2 WiredX</a></li>
+<li><a href="#other.exodus">6.3 eXodus</a></li>
 </ul>
-<li><a href="#trouble"><b>Troubleshooting XFree86</b></a></li>
+<li><a href="#trouble"><b>7 Troubleshooting XFree86</b></a></li>
 <ul>
-<li><a href="#trouble.immedate-quit">When I launch XDarwin, it quits
+<li><a href="#trouble.immedate-quit">7.1 When I launch XDarwin, it quits
 or crashes almost immediately</a></li>
-<li><a href="#trouble.black">Black icons in the GNOME panel or in the
+<li><a href="#trouble.black">7.2 Black icons in the GNOME panel or in the
 menu of a GNOME application</a></li>
-<li><a href="#trouble.keyboard">The keyboard doesn't work in XFree86</a></li>
-<li><a href="#trouble.delete-key">The Backspace key doesn't work</a></li>
-<li><a href="#trouble.locale">"Warning: locale not supported by C library"</a></li>
+<li><a href="#trouble.keyboard">7.3 The keyboard doesn't work in XFree86</a></li>
+<li><a href="#trouble.delete-key">7.4 The Backspace key doesn't work</a></li>
+<li><a href="#trouble.locale">7.5 "Warning: locale not supported by C library"</a></li>
 </ul>
-<li><a href="#tips"><b>Usage Tips</b></a></li>
+<li><a href="#tips"><b>8 Usage Tips</b></a></li>
 <ul>
-<li><a href="#tips.terminal-app">Launching X11 apps from Terminal.app</a></li>
-<li><a href="#tips.open">Launching Aqua apps from an xterm</a></li>
-<li><a href="#tips.copy-n-paste">Copy and Paste</a></li>
+<li><a href="#tips.terminal-app">8.1 Launching X11 apps from Terminal.app</a></li>
+<li><a href="#tips.open">8.2 Launching Aqua apps from an xterm</a></li>
+<li><a href="#tips.copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><a name="intro"><h2>Introduction</h2></a>
+</ul><a name="intro"><h2>1 Introduction</h2></a>
 
 
 
 
-<a name="intro.def-x11"><h3>What is X11?</h3></a>
+<a name="intro.def-x11"><h3>1.1 What is X11?</h3></a>
 <p>
 The <a href="http://www.x.org/">X Window System</a> Version 11,
 or X11 for short, is a graphics display system with a
@@ -95,7 +95,7 @@ Desktop environments like CDE, KDE and GNOME are based on it.
 </p>
 
 
-<a name="intro.def-macosx"><h3>What is Mac OS X?</h3></a>
+<a name="intro.def-macosx"><h3>1.2 What is Mac OS X?</h3></a>
 <p>
 <a href="http://www.apple.com/macosx/">Mac OS X</a> is an
 operating system produced by <a href="http://www.apple.com/">Apple
@@ -108,7 +108,7 @@ Aqua, although the two names are often used interchangably.
 </p>
 
 
-<a name="intro.def-darwin"><h3>What is Darwin?</h3></a>
+<a name="intro.def-darwin"><h3>1.3 What is Darwin?</h3></a>
 <p>
 <a href="http://www.opensource.apple.com/">Darwin</a> is
 basically a stripped-down version of Mac OS X that is available free
@@ -118,7 +118,7 @@ By default, it only offers a text console.
 </p>
 
 
-<a name="intro.def-xfree86"><h3>What is XFree86?</h3></a>
+<a name="intro.def-xfree86"><h3>1.4 What is XFree86?</h3></a>
 <p>
 <a href="http://www.xfree86.org/">XFree86</a> is an open source
 implementation of X11.
@@ -128,7 +128,7 @@ including OS/2, Darwin, Mac OS X and Windows.
 </p>
 
 
-<a name="intro.def-xtools"><h3>What is Xtools?</h3></a>
+<a name="intro.def-xtools"><h3>1.5 What is Xtools?</h3></a>
 <p>
 Xtools is a product of <a href="http://www.tenon.com/">Tenon
 Intersystems</a>.
@@ -136,7 +136,7 @@ It is a version of X11 for Mac OS X, based on XFree86.
 </p>
 
 
-<a name="intro.client-server"><h3>Client and Server</h3></a>
+<a name="intro.client-server"><h3>1.6 Client and Server</h3></a>
 <p>
 X11 has a client-server architecture.
 There is one central program that does the actual drawing and
@@ -156,7 +156,7 @@ program, not the machine hidden in your wardrobe.
 </p>
 
 
-<a name="intro.rootless"><h3>What does rootless mean?</h3></a>
+<a name="intro.rootless"><h3>1.7 What does rootless mean?</h3></a>
 <p>
 A little background:
 X11 models the screen as a hierarchy of windows contained in each
@@ -194,7 +194,7 @@ trying to get it. <tt><nobr>:-)</nobr></tt>
 
 
 
-<a name="intro.wm"><h3>What is a window manager?</h3></a>
+<a name="intro.wm"><h3>1.8 What is a window manager?</h3></a>
 <p>
 In most graphical environments the look of window frames (title bar,
 close button, etc.) is defined by the system.
@@ -217,13 +217,13 @@ up menus in the root window, docks or launch buttons.
 
 
 
-<a name="history"><h2>History</h2></a>
+<a name="history"><h2>2 History</h2></a>
 
 
 
 <p>[Sorry for the epic language, I couldn't resist...]</p>
 
-<a name="history.early"><h3>The early days</h3></a>
+<a name="history.early"><h3>2.1 The early days</h3></a>
 <p>
 In the beginning, there was void.
 Darwin was in its infancy, Mac OS X was still in development and there
@@ -239,7 +239,7 @@ there, waiting for things to come.
 </p>
 
 
-<a name="history.xonx-forms"><h3>XonX forms</h3></a>
+<a name="history.xonx-forms"><h3>2.2 XonX forms</h3></a>
 <p>
 One fine day Torrey T. Lyons came along and gave the Darwin patches
 the attention they had been waiting for.
@@ -257,7 +257,7 @@ At about the same time Tenon started to build Xtools, using XFree86
 </p>
 
 
-<a name="history.root-or-not"><h3>To root or not to root</h3></a>
+<a name="history.root-or-not"><h3>2.3 To root or not to root</h3></a>
 <p>
 Soon the XonX team had XFree86 running in a fullscreen mode in
 parallel to Quartz and was putting out test releases for adventurous
@@ -290,11 +290,11 @@ and Tenon released Xtools 1.0 some weeks after that.
 </p>
 
 
-<a name="inst-xfree86"><h2>Getting and Installing XFree86</h2></a>
+<a name="inst-xfree86"><h2>3 Getting and Installing XFree86</h2></a>
 
 
 
-<a name="inst-xfree86.official-binary"><h3>The Official Binaries</h3></a>
+<a name="inst-xfree86.official-binary"><h3>3.1 The Official Binaries</h3></a>
 <p>
 The XFree86 project has an official binary distribution of XFree86
 4.1.0.
@@ -312,7 +312,7 @@ rootless under Mac OS X.
 
 
 
-<a name="inst-xfree86.official-source"><h3>The Official Source</h3></a>
+<a name="inst-xfree86.official-source"><h3>3.2 The Official Source</h3></a>
 <p>
 If you've got the time to spare, you can build XFree86 4.1.0 from
 source.
@@ -348,7 +348,7 @@ it</a>, change into the <tt><nobr>xc</nobr></tt> directory and apply it with
 
 
 
-<a name="inst-xfree86.latest-cvs"><h3>The Latest Development Source</h3></a>
+<a name="inst-xfree86.latest-cvs"><h3>3.3 The Latest Development Source</h3></a>
 <p>
 If you have not only time, but also some nerves to spare you can get
 the latest development version of XFree86 from the public CVS
@@ -368,7 +368,7 @@ Then, follow the source build instructions above.
 
 
 
-<a name="inst-xfree86.xonx-bin"><h3>The XonX binary test releases (XAqua,
+<a name="inst-xfree86.xonx-bin"><h3>3.4 The XonX binary test releases (XAqua,
 XDarwin)</h3></a>
 <p>
 In the time before 4.1.0 was released, the XonX team put out a series
@@ -400,7 +400,7 @@ It is installed the same way as the main tarball.
 
 
 
-<a name="inst-xfree86.fink"><h3>Installing through Fink</h3></a>
+<a name="inst-xfree86.fink"><h3>3.5 Installing through Fink</h3></a>
 <p>
 Fink will let you install X11 in any way you like, but it
 also provides XFree86 packages of its own.
@@ -427,7 +427,7 @@ you'll risk that Fink overwrites your manually installed server.
 
 
 
-<a name="inst-xfree86.macgimp"><h3>MacGimp</h3></a>
+<a name="inst-xfree86.macgimp"><h3>3.6 MacGimp</h3></a>
 <p>
 The downloadable installer currently offered by the MacGimp people
 does not contain XFree86.
@@ -444,7 +444,7 @@ The server does rootless mode, using a patch from the time before
 
 
 
-<a name="inst-xfree86.rootless"><h3>Roaming Rootless Servers</h3></a>
+<a name="inst-xfree86.rootless"><h3>3.7 Roaming Rootless Servers</h3></a>
 <p>
 There are various rootless server binaries roaming around the net.
 These are not self-sufficient; they must be installed on top of
@@ -483,7 +483,7 @@ mode.
 
 
 
-<a name="inst-xfree86.fink-summary"><h3>Fink package summary</h3></a>
+<a name="inst-xfree86.fink-summary"><h3>3.8 Fink package summary</h3></a>
 <p>
 A quick summary of the install options and the Fink packages you
 should install:
@@ -493,12 +493,12 @@ unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + b
 
 
 
-<a name="run-xfree86"><h2>Starting XFree86</h2></a>
+<a name="run-xfree86"><h2>4 Starting XFree86</h2></a>
 
 
 
 
-<a name="run-xfree86.darwin"><h3>Darwin</h3></a>
+<a name="run-xfree86.darwin"><h3>4.1 Darwin</h3></a>
 <p>
 On pure Darwin, XFree86 behaves like on any other Unix.
 The usual way to start it is via <tt><nobr>startx</nobr></tt> from the console;
@@ -543,7 +543,7 @@ exception of <tt><nobr>xdm</nobr></tt>.
 
 
 
-<a name="run-xfree86.macosx-41"><h3>Mac OS X + XFree86 4.1.0</h3></a>
+<a name="run-xfree86.macosx-41"><h3>4.2 Mac OS X + XFree86 4.1.0</h3></a>
 <p>
 This section describes starting the server from XFree86 4.1.0.
 That also covers the old-style rootless servers still circulating;
@@ -580,7 +580,7 @@ in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
 
 
 
-<a name="run-xfree86.macosx-42"><h3>Mac OS X + XFree86 CVS</h3></a>
+<a name="run-xfree86.macosx-42"><h3>4.3 Mac OS X + XFree86 CVS</h3></a>
 <p>
 Recent development versions of XFree86 (this includes the XDarwin
 1.0a# test releases from the XonX project and the
@@ -602,7 +602,7 @@ The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
 
 
 
-<a name="run-xfree86.xinitrc"><h3>The .xinitrc File</h3></a>
+<a name="run-xfree86.xinitrc"><h3>4.4 The .xinitrc File</h3></a>
 <p>
 If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home directory,
 it will be used to start some initial X clients, e.g. the window
@@ -668,12 +668,12 @@ exec enlightenment</pre>
 
 
 
-<a name="xtools"><h2>Xtools</h2></a>
+<a name="xtools"><h2>5 Xtools</h2></a>
 
 
 
 
-<a name="xtools.install"><h3>Installing Xtools</h3></a>
+<a name="xtools.install"><h3>5.1 Installing Xtools</h3></a>
 <p>
 Now that's easy for a change.
 Get the installer, double-click it, and follow the instructions.
@@ -689,7 +689,7 @@ system.
 
 
 
-<a name="xtools.run"><h3>Running Xtools</h3></a>
+<a name="xtools.run"><h3>5.2 Running Xtools</h3></a>
 <p>
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
@@ -699,7 +699,7 @@ Xtools additionally allows you to start clients via the menu.
 
 
 
-<a name="xtools.opengl"><h3>OpenGL Notes</h3></a>
+<a name="xtools.opengl"><h3>5.3 OpenGL Notes</h3></a>
 <p>
 Xtools does hardware-accelerated OpenGL in rootless mode and comes
 with the libraries to support it.
@@ -713,12 +713,12 @@ Hopefully this will be fixed in Xtools 1.1 once it is released.
 
 
 
-<a name="other"><h2>Other X11 Possibilities</h2></a>
+<a name="other"><h2>6 Other X11 Possibilities</h2></a>
 
 
 
 
-<a name="other.vnc"><h3>VNC</h3></a>
+<a name="other.vnc"><h3>6.1 VNC</h3></a>
 <p>
 VNC is a network-capable graphics display system similar in design to
 X11.
@@ -731,7 +731,7 @@ more information on that.
 
 
 
-<a name="other.wiredx"><h3>WiredX</h3></a>
+<a name="other.wiredx"><h3>6.2 WiredX</h3></a>
 <p>
 <a href="http://www.jcraft.com/wiredx/">WiredX</a> is an X11
 server written in Java.
@@ -741,7 +741,7 @@ An Installer.app package is available at the web site.
 
 
 
-<a name="other.exodus"><h3>eXodus</h3></a>
+<a name="other.exodus"><h3>6.3 eXodus</h3></a>
 <p>
 According to the website, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> by Powerlan
 USA runs natively on Mac OS X.
@@ -753,11 +753,11 @@ If you have more info, please throw it my way.
 
 
 
-<a name="trouble"><h2>Troubleshooting XFree86</h2></a>
+<a name="trouble"><h2>7 Troubleshooting XFree86</h2></a>
 
 
 
-<a name="trouble.immedate-quit"><h3>When I launch XDarwin, it quits
+<a name="trouble.immedate-quit"><h3>7.1 When I launch XDarwin, it quits
 or crashes almost immediately</h3></a>
 <p>
 First of all: Don't Panic!
@@ -1013,7 +1013,7 @@ your window manager or similar can't be found.
 
 
 
-<a name="trouble.black"><h3>Black icons in the GNOME panel or in the
+<a name="trouble.black"><h3>7.2 Black icons in the GNOME panel or in the
 menu of a GNOME application</h3></a>
 <p>
 A common problem is that icons or other images are displayed as black
@@ -1038,7 +1038,7 @@ application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
 
 
 
-<a name="trouble.keyboard"><h3>The keyboard doesn't work in XFree86</h3></a>
+<a name="trouble.keyboard"><h3>7.3 The keyboard doesn't work in XFree86</h3></a>
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
@@ -1061,7 +1061,7 @@ name of the keymapping file to load as an option, as in:
 
 
 
-<a name="trouble.delete-key"><h3>The Backspace key doesn't work</h3></a>
+<a name="trouble.delete-key"><h3>7.4 The Backspace key doesn't work</h3></a>
 <p>
 This can happen when you use the "Load keymapping from file" option
 described above.
@@ -1078,7 +1078,7 @@ correctly maps the Backspace key automatically.
 
 
 
-<a name="trouble.locale"><h3>"Warning: locale not supported by C library"</h3></a>
+<a name="trouble.locale"><h3>7.5 "Warning: locale not supported by C library"</h3></a>
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -1119,12 +1119,12 @@ OS X.
 
 
 
-<a name="tips"><h2>Usage Tips</h2></a>
+<a name="tips"><h2>8 Usage Tips</h2></a>
 
 
 
 
-<a name="tips.terminal-app"><h3>Launching X11 apps from Terminal.app</h3></a>
+<a name="tips.terminal-app"><h3>8.1 Launching X11 apps from Terminal.app</h3></a>
 <p>
 To launch X11 applications from a Terminal.app window, you must set
 the environment variable "DISPLAY".
@@ -1152,7 +1152,7 @@ with X11 tunneling.
 
 
 
-<a name="tips.open"><h3>Launching Aqua apps from an xterm</h3></a>
+<a name="tips.open"><h3>8.2 Launching Aqua apps from an xterm</h3></a>
 <p>
 One way to launch Aqua applications from an xterm (or any other shell,
 actually) is the <tt><nobr>open</nobr></tt> command.
@@ -1169,7 +1169,7 @@ to use.
 
 
 
-<a name="tips.copy-n-paste"><h3>Copy and Paste</h3></a>
+<a name="tips.copy-n-paste"><h3>8.3 Copy and Paste</h3></a>
 <p>
 Copy and Paste generally works between the Aqua and X11 environments.
 There are still some bugs.

@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Getting and Installing XFree86</h1>
+<h1>Running X11 - 3 Getting and Installing XFree86</h1>
 
 
 
-<a name="official-binary"><h2>The Official Binaries</h2></a>
+<a name="official-binary"><h2>3.1 The Official Binaries</h2></a>
 <p>
 The XFree86 project has an official binary distribution of XFree86
 4.1.0.
@@ -30,7 +30,7 @@ rootless under Mac OS X.
 
 
 
-<a name="official-source"><h2>The Official Source</h2></a>
+<a name="official-source"><h2>3.2 The Official Source</h2></a>
 <p>
 If you've got the time to spare, you can build XFree86 4.1.0 from
 source.
@@ -66,7 +66,7 @@ it</a>, change into the <tt><nobr>xc</nobr></tt> directory and apply it with
 
 
 
-<a name="latest-cvs"><h2>The Latest Development Source</h2></a>
+<a name="latest-cvs"><h2>3.3 The Latest Development Source</h2></a>
 <p>
 If you have not only time, but also some nerves to spare you can get
 the latest development version of XFree86 from the public CVS
@@ -86,7 +86,7 @@ Then, follow the source build instructions above.
 
 
 
-<a name="xonx-bin"><h2>The XonX binary test releases (XAqua,
+<a name="xonx-bin"><h2>3.4 The XonX binary test releases (XAqua,
 XDarwin)</h2></a>
 <p>
 In the time before 4.1.0 was released, the XonX team put out a series
@@ -118,7 +118,7 @@ It is installed the same way as the main tarball.
 
 
 
-<a name="fink"><h2>Installing through Fink</h2></a>
+<a name="fink"><h2>3.5 Installing through Fink</h2></a>
 <p>
 Fink will let you install X11 in any way you like, but it
 also provides XFree86 packages of its own.
@@ -145,7 +145,7 @@ you'll risk that Fink overwrites your manually installed server.
 
 
 
-<a name="macgimp"><h2>MacGimp</h2></a>
+<a name="macgimp"><h2>3.6 MacGimp</h2></a>
 <p>
 The downloadable installer currently offered by the MacGimp people
 does not contain XFree86.
@@ -162,7 +162,7 @@ The server does rootless mode, using a patch from the time before
 
 
 
-<a name="rootless"><h2>Roaming Rootless Servers</h2></a>
+<a name="rootless"><h2>3.7 Roaming Rootless Servers</h2></a>
 <p>
 There are various rootless server binaries roaming around the net.
 These are not self-sufficient; they must be installed on top of
@@ -201,7 +201,7 @@ mode.
 
 
 
-<a name="fink-summary"><h2>Fink package summary</h2></a>
+<a name="fink-summary"><h2>3.8 Fink package summary</h2></a>
 <p>
 A quick summary of the install options and the Fink packages you
 should install:
@@ -212,7 +212,7 @@ unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + b
 
 
 <p align="right">
-Next: <a href="run-xfree86.php">Starting XFree86</a></p>
+Next: <a href="run-xfree86.php">4 Starting XFree86</a></p>
 
 
 <?

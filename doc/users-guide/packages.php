@@ -8,7 +8,7 @@ $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents
 include "header.inc";
 ?>
 
-<h1>User's Guide - Installing Packages</h1>
+<h1>User's Guide - 3 Installing Packages</h1>
 
 
 
@@ -20,7 +20,7 @@ Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
 
 
-<a name="x11"><h2>Getting X11 Sorted Out</h2></a>
+<a name="x11"><h2>3.1 Getting X11 Sorted Out</h2></a>
 <p>
 Since there are several X11 implementations available for Mac OS X
 (XFree86, Tenon Xtools, eXodus) and several ways to install them
@@ -69,7 +69,7 @@ and Mac OS X document</a>.
 </p>
 
 
-<a name="bin-dselect"><h2>Installing Binary Packages with
+<a name="bin-dselect"><h2>3.2 Installing Binary Packages with
 dselect</h2></a>
 <p>
 <tt><nobr>dselect</nobr></tt> is a program that lets you browse the list of
@@ -146,7 +146,7 @@ the "[I]nstall" menu item to actually install the packages.
 </p>
 
 
-<a name="bin-apt"><h2>Installing Binary Packages with
+<a name="bin-apt"><h2>3.3 Installing Binary Packages with
 apt-get</h2></a>
 <p>
 <tt><nobr>dselect</nobr></tt> doesn't actually download the packages itself.
@@ -177,7 +177,7 @@ Removing packages is just as easy:
 </p>
 
 
-<a name="src"><h2>Installing Packages from Source</h2></a>
+<a name="src"><h2>3.4 Installing Packages from Source</h2></a>
 <p>
 To get a list of packages that are available for installation from
 source, ask the <tt><nobr>fink</nobr></tt> tool:
@@ -210,7 +210,7 @@ If you run into errors during that process, please first check the
 
 
 <p align="right">
-Next: <a href="upgrade.php">Upgrading Fink</a></p>
+Next: <a href="upgrade.php">4 Upgrading Fink</a></p>
 
 
 <?

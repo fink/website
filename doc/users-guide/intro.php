@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents
 include "header.inc";
 ?>
 
-<h1>User's Guide - Introduction</h1>
+<h1>User's Guide - 1 Introduction</h1>
 
 
 
-<a name="what"><h2>What is Fink?</h2></a>
+<a name="what"><h2>1.1 What is Fink?</h2></a>
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -21,7 +21,7 @@ developed for Linux and similar operating systems to your Mac.
 </p>
 
 
-<a name="req"><h2>Requirements</h2></a>
+<a name="req"><h2>1.2 Requirements</h2></a>
 <p>
 In any case you will need:
 </p>
@@ -65,7 +65,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="supported-os"><h2>Supported Systems</h2></a>
+<a name="supported-os"><h2>1.3 Supported Systems</h2></a>
 <p>
 <b>Mac OS X 10.1</b> is the operating system of choice for running
 Fink.
@@ -103,7 +103,7 @@ this case.
 </p>
 
 
-<a name="src-vs-bin"><h2>Source vs. Binary</h2></a>
+<a name="src-vs-bin"><h2>1.4 Source vs. Binary</h2></a>
 <p>
 Software is written ("developed") in human-readable programming
 languages; this form is called the "source code".
@@ -144,7 +144,7 @@ The rest of this manual will show you how.
 
 
 <p align="right">
-Next: <a href="install.php">First Time Installation</a></p>
+Next: <a href="install.php">2 First Time Installation</a></p>
 
 
 <?

@@ -26,34 +26,34 @@ If you create packages for Fink, you may want to subscribe to the
 mailing list.
 </p>
 <h2>Contents</h2><ul>
-<li><a href="intro.php"><b>Introduction</b></a></li>
+<li><a href="intro.php"><b>1 Introduction</b></a></li>
 <ul>
-<li><a href="intro.php#def1">What is a Package?</a></li>
-<li><a href="intro.php#ident">Identifying a Package</a></li>
+<li><a href="intro.php#def1">1.1 What is a Package?</a></li>
+<li><a href="intro.php#ident">1.2 Identifying a Package</a></li>
 </ul>
-<li><a href="format.php"><b>Package Descriptions</b></a></li>
+<li><a href="format.php"><b>2 Package Descriptions</b></a></li>
 <ul>
-<li><a href="format.php#trees">Tree Layout</a></li>
-<li><a href="format.php#format">File Format</a></li>
-<li><a href="format.php#percent">Percent Expansion</a></li>
+<li><a href="format.php#trees">2.1 Tree Layout</a></li>
+<li><a href="format.php#format">2.2 File Format</a></li>
+<li><a href="format.php#percent">2.3 Percent Expansion</a></li>
 </ul>
-<li><a href="policy.php"><b>Packaging Policy</b></a></li>
+<li><a href="policy.php"><b>3 Packaging Policy</b></a></li>
 <ul>
-<li><a href="policy.php#licenses">Package Licenses</a></li>
-<li><a href="policy.php#prefix">Base System Interference</a></li>
+<li><a href="policy.php#licenses">3.1 Package Licenses</a></li>
+<li><a href="policy.php#prefix">3.2 Base System Interference</a></li>
 </ul>
-<li><a href="fslayout.php"><b>Filesystem Layout</b></a></li>
+<li><a href="fslayout.php"><b>4 Filesystem Layout</b></a></li>
 <ul>
-<li><a href="fslayout.php#fhs">The Filesystem Hierarchy Standard</a></li>
-<li><a href="fslayout.php#dirs">The Directories</a></li>
-<li><a href="fslayout.php#avoid">Things to Avoid</a></li>
+<li><a href="fslayout.php#fhs">4.1 The Filesystem Hierarchy Standard</a></li>
+<li><a href="fslayout.php#dirs">4.2 The Directories</a></li>
+<li><a href="fslayout.php#avoid">4.3 Things to Avoid</a></li>
 </ul>
-<li><a href="reference.php"><b>Reference</b></a></li>
+<li><a href="reference.php"><b>5 Reference</b></a></li>
 <ul>
-<li><a href="reference.php#build">The Build Process</a></li>
-<li><a href="reference.php#fields">Fields</a></li>
-<li><a href="reference.php#scripts">Scripts</a></li>
-<li><a href="reference.php#patches">Patches</a></li>
+<li><a href="reference.php#build">5.1 The Build Process</a></li>
+<li><a href="reference.php#fields">5.2 Fields</a></li>
+<li><a href="reference.php#scripts">5.3 Scripts</a></li>
+<li><a href="reference.php#patches">5.4 Patches</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: packaging.xml,v 1.12 2001/11/04 15:21:13 chrisp Exp $</i></p>
 

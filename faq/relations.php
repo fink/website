@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Relations with Other Projects</h1>
+<h1>F.A.Q. - 2 Relations with Other Projects</h1>
 
 
 
-<a name="upstream"><div class="question"><p><b>Q: Do you contribute your patches
+<a name="upstream"><div class="question"><p><b>Q2.1: Do you contribute your patches
 back to the upstream maintainers?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 We're trying to.
@@ -35,7 +35,7 @@ will be no new releases into which the patch could be merged.</li>
 </ul></div></a>
 
 
-<a name="debian"><div class="question"><p><b>Q: What is your relation with the
+<a name="debian"><div class="question"><p><b>Q2.2: What is your relation with the
 Debian project? Are you porting Debian Linux to Mac OS X?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 There is no formal relation between Fink and
@@ -49,7 +49,7 @@ use the Debian source package format.
 </p></div></a>
 
 
-<a name="apple"><div class="question"><p><b>Q: What is your relation with
+<a name="apple"><div class="question"><p><b>Q2.3: What is your relation with
 Apple?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 <a href="http://www.apple.com/">Apple</a> is aware of Fink and
@@ -66,7 +66,7 @@ Thanks Apple!
 </p></div></a>
 
 
-<a name="openosx"><div class="question"><p><b>Q: What is your relation with
+<a name="openosx"><div class="question"><p><b>Q2.4: What is your relation with
 OpenOSX.com?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 They used Fink to build the first release of their GIMP CD and refuse
@@ -76,7 +76,7 @@ statement</a> for details.
 </p></div></a>
 
 
-<a name="forked"><div class="question"><p><b>Q: What is your relation with
+<a name="forked"><div class="question"><p><b>Q2.5: What is your relation with
 macosx.forked.net?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 That site redistributes some Fink packages as Installer.app packages,
@@ -87,7 +87,7 @@ statement</a> for details.
 
 
 <p align="right">
-Next: <a href="usage-fink.php">Installing, Using and Maintaining Fink</a></p>
+Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
 
 
 <?

@@ -3,12 +3,12 @@ $title = "Installation - Fast Track";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/09/04 12:15:12';
 
-$metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include "header.inc";
 ?>
 
-<h1>Installation - The Fast Track</h1>
+<h1>Installation - 1 The Fast Track</h1>
 
 
 
@@ -25,7 +25,7 @@ If you're looking for the real instructions, skip to the <a href="install-first.
 
 
 
-<a name="install"><h2>First Time Installation Fast
+<a name="install"><h2>1.1 First Time Installation Fast
 Track</h2></a>
 <p>
 Start out by copying the <tt><nobr>fink-0.2.6-full.tar.gz</nobr></tt> file to
@@ -121,7 +121,7 @@ documentation when your problem actually is well-documented.
 
 
 
-<a name="update"><h2>Update Fast Track</h2></a>
+<a name="update"><h2>1.2 Update Fast Track</h2></a>
 <p>
 Start out by copying the <tt><nobr>fink-0.2.6-full.tar.gz</nobr></tt> file to
 your home folder.
@@ -160,7 +160,7 @@ update-all'.
 
 
 <p align="right">
-Next: <a href="install-first.php">First Time Installation</a></p>
+Next: <a href="install-first.php">2 First Time Installation</a></p>
 
 
 <?

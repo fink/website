@@ -8,7 +8,7 @@ $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><l
 include "header.inc";
 ?>
 
-<h1>Packaging - Filesystem Layout</h1>
+<h1>Packaging - 4 Filesystem Layout</h1>
 
 
 
@@ -21,7 +21,7 @@ packaging policy.
 
 
 
-<a name="fhs"><h2>The Filesystem Hierarchy Standard</h2></a>
+<a name="fhs"><h2>4.1 The Filesystem Hierarchy Standard</h2></a>
 <p>
 Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy
 Standard</a>, or FHS for short.
@@ -34,7 +34,7 @@ The examples use the default prefix of <tt><nobr>/sw</nobr></tt>.
 </p>
 
 
-<a name="dirs"><h2>The Directories</h2></a>
+<a name="dirs"><h2>4.2 The Directories</h2></a>
 <p>
 Files should go into the following subdirectories of the hierarchy:
 </p>
@@ -145,7 +145,7 @@ Nothing should be installed here by a package.
 
 
 
-<a name="avoid"><h2>Things to Avoid</h2></a>
+<a name="avoid"><h2>4.3 Things to Avoid</h2></a>
 <p>
 No other directories than the ones mentioned above should exist
 in /sw.
@@ -156,7 +156,7 @@ In particular, the following should not be used: /sw/man, /sw/info,
 
 
 <p align="right">
-Next: <a href="reference.php">Reference</a></p>
+Next: <a href="reference.php">5 Reference</a></p>
 
 
 <?

@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Troubleshooting XFree86</h1>
+<h1>Running X11 - 7 Troubleshooting XFree86</h1>
 
 
 
-<a name="immedate-quit"><h2>When I launch XDarwin, it quits
+<a name="immedate-quit"><h2>7.1 When I launch XDarwin, it quits
 or crashes almost immediately</h2></a>
 <p>
 First of all: Don't Panic!
@@ -268,7 +268,7 @@ your window manager or similar can't be found.
 
 
 
-<a name="black"><h2>Black icons in the GNOME panel or in the
+<a name="black"><h2>7.2 Black icons in the GNOME panel or in the
 menu of a GNOME application</h2></a>
 <p>
 A common problem is that icons or other images are displayed as black
@@ -293,7 +293,7 @@ application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
 
 
 
-<a name="keyboard"><h2>The keyboard doesn't work in XFree86</h2></a>
+<a name="keyboard"><h2>7.3 The keyboard doesn't work in XFree86</h2></a>
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
@@ -316,7 +316,7 @@ name of the keymapping file to load as an option, as in:
 
 
 
-<a name="delete-key"><h2>The Backspace key doesn't work</h2></a>
+<a name="delete-key"><h2>7.4 The Backspace key doesn't work</h2></a>
 <p>
 This can happen when you use the "Load keymapping from file" option
 described above.
@@ -333,7 +333,7 @@ correctly maps the Backspace key automatically.
 
 
 
-<a name="locale"><h2>"Warning: locale not supported by C library"</h2></a>
+<a name="locale"><h2>7.5 "Warning: locale not supported by C library"</h2></a>
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -375,7 +375,7 @@ OS X.
 
 
 <p align="right">
-Next: <a href="tips.php">Usage Tips</a></p>
+Next: <a href="tips.php">8 Usage Tips</a></p>
 
 
 <?

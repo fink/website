@@ -28,33 +28,33 @@ both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
 <h2>Contents</h2><ul>
-<li><a href="intro.php"><b>Introduction</b></a></li>
+<li><a href="intro.php"><b>1 Introduction</b></a></li>
 <ul>
-<li><a href="intro.php#what">What is Fink?</a></li>
-<li><a href="intro.php#req">Requirements</a></li>
-<li><a href="intro.php#supported-os">Supported Systems</a></li>
-<li><a href="intro.php#src-vs-bin">Source vs. Binary</a></li>
+<li><a href="intro.php#what">1.1 What is Fink?</a></li>
+<li><a href="intro.php#req">1.2 Requirements</a></li>
+<li><a href="intro.php#supported-os">1.3 Supported Systems</a></li>
+<li><a href="intro.php#src-vs-bin">1.4 Source vs. Binary</a></li>
 </ul>
-<li><a href="install.php"><b>First Time Installation</b></a></li>
+<li><a href="install.php"><b>2 First Time Installation</b></a></li>
 <ul>
-<li><a href="install.php#bin">Installing the Binary Distribution</a></li>
-<li><a href="install.php#src">Installing the Source Distribution</a></li>
-<li><a href="install.php#setup">Setting Up Your Environment</a></li>
+<li><a href="install.php#bin">2.1 Installing the Binary Distribution</a></li>
+<li><a href="install.php#src">2.2 Installing the Source Distribution</a></li>
+<li><a href="install.php#setup">2.3 Setting Up Your Environment</a></li>
 </ul>
-<li><a href="packages.php"><b>Installing Packages</b></a></li>
+<li><a href="packages.php"><b>3 Installing Packages</b></a></li>
 <ul>
-<li><a href="packages.php#x11">Getting X11 Sorted Out</a></li>
-<li><a href="packages.php#bin-dselect">Installing Binary Packages with
+<li><a href="packages.php#x11">3.1 Getting X11 Sorted Out</a></li>
+<li><a href="packages.php#bin-dselect">3.2 Installing Binary Packages with
 dselect</a></li>
-<li><a href="packages.php#bin-apt">Installing Binary Packages with
+<li><a href="packages.php#bin-apt">3.3 Installing Binary Packages with
 apt-get</a></li>
-<li><a href="packages.php#src">Installing Packages from Source</a></li>
+<li><a href="packages.php#src">3.4 Installing Packages from Source</a></li>
 </ul>
-<li><a href="upgrade.php"><b>Upgrading Fink</b></a></li>
+<li><a href="upgrade.php"><b>4 Upgrading Fink</b></a></li>
 <ul>
-<li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
-<li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
-<li><a href="upgrade.php#mix">Mixing Binaries and Source</a></li>
+<li><a href="upgrade.php#bin">4.1 Upgrading using Binary Packages</a></li>
+<li><a href="upgrade.php#src">4.2 Upgrading the Source Distribution</a></li>
+<li><a href="upgrade.php#mix">4.3 Mixing Binaries and Source</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: uguide.xml,v 1.9 2001/11/04 18:55:08 chrisp Exp $</i></p>
 

@@ -8,18 +8,18 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Compile Problems - Specific Packages</h1>
+<h1>F.A.Q. - 5 Compile Problems - Specific Packages</h1>
 
 
 
-<a name="nedit"><div class="question"><p><b>Q: nedit is broken.</b></p></div>
+<a name="nedit"><div class="question"><p><b>Q5.1: nedit is broken.</b></p></div>
 <div class="answer"><p><b>A:</b> If you're seeing <tt><nobr>Xm/BulletinB.h: No such file or
 directory</nobr></tt> in the error messages, that's because you have Xtools
 installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
 to include some required header files. There is no workaround yet, and
 it is unknown whether this is fixed in recent releases on Xtools.</p></div></a>
 
-<a name="gnome-libs-db"><div class="question"><p><b>Q: gnome-libs complains about
+<a name="gnome-libs-db"><div class="question"><p><b>Q5.2: gnome-libs complains about
 dbopen and lots of other stuff.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This can happen when you manually installed Berkeley DB 3 without
@@ -29,7 +29,7 @@ Remove the DB 3 installation from /usr/local or replace it with one
 that has DB 1.86 compatibility.
 </p></div></a>
 
-<a name="libiconv"><div class="question"><p><b>Q: libiconv fails with errors that
+<a name="libiconv"><div class="question"><p><b>Q5.3: libiconv fails with errors that
 mention ANSI C++.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This happens when you make a symlink from <tt><nobr>gcc</nobr></tt> to
@@ -41,7 +41,7 @@ You should remove the symlink you created, or at least point it at
 <tt><nobr>cc</nobr></tt> instead.
 </p></div></a>
 
-<a name="xaw3d"><div class="question"><p><b>Q: Xaw3D fails to compile with a
+<a name="xaw3d"><div class="question"><p><b>Q5.4: Xaw3D fails to compile with a
 two-level namespace error.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This can happen on Mac OS X 10.1 if you have installed XFree86
@@ -56,7 +56,7 @@ updated with these new packages.
 </p></div></a>
 
 <p align="right">
-Next: <a href="usage-general.php">Package Usage Problems - General</a></p>
+Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
 
 
 <?

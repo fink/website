@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Introduction</h1>
+<h1>Running X11 - 1 Introduction</h1>
 
 
 
 
-<a name="def-x11"><h2>What is X11?</h2></a>
+<a name="def-x11"><h2>1.1 What is X11?</h2></a>
 <p>
 The <a href="http://www.x.org/">X Window System</a> Version 11,
 or X11 for short, is a graphics display system with a
@@ -30,7 +30,7 @@ Desktop environments like CDE, KDE and GNOME are based on it.
 </p>
 
 
-<a name="def-macosx"><h2>What is Mac OS X?</h2></a>
+<a name="def-macosx"><h2>1.2 What is Mac OS X?</h2></a>
 <p>
 <a href="http://www.apple.com/macosx/">Mac OS X</a> is an
 operating system produced by <a href="http://www.apple.com/">Apple
@@ -43,7 +43,7 @@ Aqua, although the two names are often used interchangably.
 </p>
 
 
-<a name="def-darwin"><h2>What is Darwin?</h2></a>
+<a name="def-darwin"><h2>1.3 What is Darwin?</h2></a>
 <p>
 <a href="http://www.opensource.apple.com/">Darwin</a> is
 basically a stripped-down version of Mac OS X that is available free
@@ -53,7 +53,7 @@ By default, it only offers a text console.
 </p>
 
 
-<a name="def-xfree86"><h2>What is XFree86?</h2></a>
+<a name="def-xfree86"><h2>1.4 What is XFree86?</h2></a>
 <p>
 <a href="http://www.xfree86.org/">XFree86</a> is an open source
 implementation of X11.
@@ -63,7 +63,7 @@ including OS/2, Darwin, Mac OS X and Windows.
 </p>
 
 
-<a name="def-xtools"><h2>What is Xtools?</h2></a>
+<a name="def-xtools"><h2>1.5 What is Xtools?</h2></a>
 <p>
 Xtools is a product of <a href="http://www.tenon.com/">Tenon
 Intersystems</a>.
@@ -71,7 +71,7 @@ It is a version of X11 for Mac OS X, based on XFree86.
 </p>
 
 
-<a name="client-server"><h2>Client and Server</h2></a>
+<a name="client-server"><h2>1.6 Client and Server</h2></a>
 <p>
 X11 has a client-server architecture.
 There is one central program that does the actual drawing and
@@ -91,7 +91,7 @@ program, not the machine hidden in your wardrobe.
 </p>
 
 
-<a name="rootless"><h2>What does rootless mean?</h2></a>
+<a name="rootless"><h2>1.7 What does rootless mean?</h2></a>
 <p>
 A little background:
 X11 models the screen as a hierarchy of windows contained in each
@@ -129,7 +129,7 @@ trying to get it. <tt><nobr>:-)</nobr></tt>
 
 
 
-<a name="wm"><h2>What is a window manager?</h2></a>
+<a name="wm"><h2>1.8 What is a window manager?</h2></a>
 <p>
 In most graphical environments the look of window frames (title bar,
 close button, etc.) is defined by the system.
@@ -153,7 +153,7 @@ up menus in the root window, docks or launch buttons.
 
 
 <p align="right">
-Next: <a href="history.php">History</a></p>
+Next: <a href="history.php">2 History</a></p>
 
 
 <?

@@ -3,12 +3,12 @@ $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/09/04 12:15:12';
 
-$metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
 
 include "header.inc";
 ?>
 
-<h1>Installation - Upgrading From Fink 0.1.x</h1>
+<h1>Installation - 4 Upgrading From Fink 0.1.x</h1>
 
 
 

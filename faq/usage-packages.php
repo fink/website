@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Package Usage Problems - Specific Packages</h1>
+<h1>F.A.Q. - 7 Package Usage Problems - Specific Packages</h1>
 
 
 
-<a name="gnome-panel"><div class="question"><p><b>Q: The GNOME panel displays
+<a name="gnome-panel"><div class="question"><p><b>Q7.1: The GNOME panel displays
 black icons only. What's wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is caused by limitations in the operating system kernel.
@@ -20,7 +20,7 @@ The only solution so far is to turn off shared memory.
 The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
 </p></div></a>
 
-<a name="xmms-quiet"><div class="question"><p><b>Q: I get no sound from
+<a name="xmms-quiet"><div class="question"><p><b>Q7.2: I get no sound from
 XMMS</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Make sure you have the "eSound Output Plugin" selected in the XMMS
@@ -59,7 +59,7 @@ There have also been reports of XMMS crashing or freezing on 10.1.
 We don't have an analysis or a fix yet.
 </p></div></a>
 
-<a name="gnome-terminal"><div class="question"><p><b>Q: Why won't gnome-terminal
+<a name="gnome-terminal"><div class="question"><p><b>Q7.3: Why won't gnome-terminal
 start up?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
@@ -71,7 +71,7 @@ preventing even more confusion).
 It is expected that this will be fixed in Mac OS X 10.1.
 </p></div></a>
 
-<a name="xdarwin-start"><div class="question"><p><b>Q: Help! When I start
+<a name="xdarwin-start"><div class="question"><p><b>Q7.4: Help! When I start
 XDarwin, it immediately quits!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Don't Panic.
@@ -79,7 +79,7 @@ The Running X11 document now has an extensive <a href="http://fink.sourceforge.n
 section</a> for this common problem.
 </p></div></a>
 
-<a name="xfree-keymapping"><div class="question"><p><b>Q: I just upgraded to Mac
+<a name="xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</b></p></div> 

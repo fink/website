@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Installing, Using and Maintaining Fink</h1>
+<h1>F.A.Q. - 3 Installing, Using and Maintaining Fink</h1>
 
 
 
-<a name="what-packages"><div class="question"><p><b>Q: How can I find out what packages Fink supports?</b></p></div>
+<a name="what-packages"><div class="question"><p><b>Q3.1: How can I find out what packages Fink supports?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
 It produces a list of all packages known to your Fink installation.
@@ -27,7 +27,7 @@ There's also the <a href="http://fink.sourceforge.net/pdb/">package
 database</a> at the website.
 </p></div></a>
 
-<a name="proxy"><div class="question"><p><b>Q: I'm behind a firewall. How do I
+<a name="proxy"><div class="question"><p><b>Q3.2: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
@@ -41,7 +41,7 @@ These settings do not apply to <tt><nobr>apt-get</nobr></tt> and
 Investigations continue...
 </p></div></a>
 
-<a name="moving"><div class="question"><p><b>Q: Can I move Fink to another
+<a name="moving"><div class="question"><p><b>Q3.3: Can I move Fink to another
 location after installation?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 No.
@@ -51,7 +51,7 @@ That's because basically all Unix software depends on hardcoded paths
 to find data files, libraries and other stuff.
 </p></div></a>
 
-<a name="moving-symlink"><div class="question"><p><b>Q: If I move Fink after
+<a name="moving-symlink"><div class="question"><p><b>Q3.4: If I move Fink after
 installation and provide a symlink from the old location, will it
 work?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -62,7 +62,7 @@ hidden traps somewhere.
 
 
 
-<a name="kde"><div class="question"><p><b>Q: Why are there no packages for
+<a name="kde"><div class="question"><p><b>Q3.5: Why are there no packages for
 KDE?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Because there simply are none.
@@ -77,7 +77,7 @@ Note that Qt is a different story, we have a package for it and it
 works fine.
 </p></div></a>
 
-<a name="bindist"><div class="question"><p><b>Q: The package database at the
+<a name="bindist"><div class="question"><p><b>Q3.6: The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -101,7 +101,7 @@ Make sure you have the Developer Tools installed before you try this.
 See also the question about unstable below.
 </p></div></a>
 
-<a name="unstable"><div class="question"><p><b>Q: There's this package in
+<a name="unstable"><div class="question"><p><b>Q3.7: There's this package in
 unstable that I want to install, but the fink command just says 'no
 package found'. How can I install it?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -120,7 +120,7 @@ If you want Fink to use all of unstable, edit
 line.
 </p></div></a>
 
-<a name="sudo"><div class="question"><p><b>Q: I'm tired of typing my password into sudo again
+<a name="sudo"><div class="question"><p><b>Q3.8: I'm tired of typing my password into sudo again
 and again. Is there a way around this?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
 password. To do this, edit <tt><nobr>/etc/sudoers</nobr></tt> as root
@@ -128,7 +128,7 @@ and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace 
 line allows you to run any command via sudo without typing your
 password.</p></div></a>
 
-<a name="exec-init-csh"><div class="question"><p><b>Q: When I try to run
+<a name="exec-init-csh"><div class="question"><p><b>Q3.9: When I try to run
 init.csh, I get a "Permission denied" error. What am I doing
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
@@ -136,7 +136,7 @@ sets environment variables like PATH and MANPATH in your shell. To
 have a lasting effect on the shell, it must be processed with the
 <tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
 
-<a name="dselect-access"><div class="question"><p><b>Q: Help! I used the
+<a name="dselect-access"><div class="question"><p><b>Q3.10: Help! I used the
 "[A]ccess" menu entry in dselect and now I can't download packages any
 more!</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -163,7 +163,7 @@ script as a plug-in for dselect) is making it's way through CVS now.
 </p></div></a>
 
 <p align="right">
-Next: <a href="comp-general.php">Compile Problems - General</a></p>
+Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 
 
 <?

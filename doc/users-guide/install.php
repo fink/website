@@ -8,7 +8,7 @@ $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents
 include "header.inc";
 ?>
 
-<h1>User's Guide - First Time Installation</h1>
+<h1>User's Guide - 2 First Time Installation</h1>
 
 
 
@@ -31,7 +31,7 @@ chapter</a>.
 </p>
 
 
-<a name="bin"><h2>Installing the Binary Distribution</h2></a>
+<a name="bin"><h2>2.1 Installing the Binary Distribution</h2></a>
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -57,7 +57,7 @@ When the installer is finished, proceed with the
 </p>
 
 
-<a name="src"><h2>Installing the Source Distribution</h2></a>
+<a name="src"><h2>2.2 Installing the Source Distribution</h2></a>
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <tt><nobr>fink</nobr></tt> package manager and its package
@@ -119,7 +119,7 @@ When the bootstrap is finished, proceed with the
 </p>
 
 
-<a name="setup"><h2>Setting Up Your Environment</h2></a>
+<a name="setup"><h2>2.3 Setting Up Your Environment</h2></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
@@ -170,7 +170,7 @@ package management tools included in Fink.
 
 
 <p align="right">
-Next: <a href="packages.php">Installing Packages</a></p>
+Next: <a href="packages.php">3 Installing Packages</a></p>
 
 
 <?

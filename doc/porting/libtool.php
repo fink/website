@@ -8,7 +8,7 @@ $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><lin
 include "header.inc";
 ?>
 
-<h1>Porting - GNU libtool</h1>
+<h1>Porting - 3 GNU libtool</h1>
 
 
 
@@ -19,7 +19,7 @@ platform-dependent procedures for library building and installation.
 </p>
 
 
-<a name="situation"><h2>The Situation</h2></a>
+<a name="situation"><h2>3.1 The Situation</h2></a>
 <p>
 In the wild, one can find four strands of libtool:
 </p>
@@ -89,7 +89,7 @@ on Darwin when dlcompat is installed.
 
 
 
-<a name="patch-135"><h2>The 1.3.5 Patch</h2></a>
+<a name="patch-135"><h2>3.2 The 1.3.5 Patch</h2></a>
 <p>
 After applying <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
 patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source, you
@@ -108,7 +108,7 @@ For your convenience, you can get the two files right here:
 
 
 
-<a name="notes"><h2>Further Notes</h2></a>
+<a name="notes"><h2>3.3 Further Notes</h2></a>
 <p>
 For more information on libtool itself and what it does, see the <a href="http://www.gnu.org/software/libtool/libtool.html">libtool
 homepage</a>.

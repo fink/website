@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><l
 include "header.inc";
 ?>
 
-<h1>Packaging - Package Descriptions</h1>
+<h1>Packaging - 2 Package Descriptions</h1>
 
 
 
-<a name="trees"><h2>Tree Layout</h2></a>
+<a name="trees"><h2>2.1 Tree Layout</h2></a>
 <p>
 Package descriptions are read from the <tt><nobr>finkinfo</nobr></tt>
 directories below the <tt><nobr>/sw/fink/dists</nobr></tt> directory.
@@ -49,7 +49,7 @@ divided into sections at the moment.</li>
 </ul>
 
 
-<a name="format"><h2>File Format</h2></a>
+<a name="format"><h2>2.2 File Format</h2></a>
 <p>
 The description files are simple lists of key-value pairs, also called
 'fields'.
@@ -104,7 +104,7 @@ as false.
 </p>
 
 
-<a name="percent"><h2>Percent Expansion</h2></a>
+<a name="percent"><h2>2.3 Percent Expansion</h2></a>
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
@@ -134,7 +134,7 @@ ConfigureParams</dd>
 
 
 <p align="right">
-Next: <a href="policy.php">Packaging Policy</a></p>
+Next: <a href="policy.php">3 Packaging Policy</a></p>
 
 
 <?

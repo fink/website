@@ -8,11 +8,11 @@ $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - Package Usage Problems - General</h1>
+<h1>F.A.Q. - 6 Package Usage Problems - General</h1>
 
 
 
-<a name="gnome-icons"><div class="question"><p><b>Q: Some GNOME applications display
+<a name="gnome-icons"><div class="question"><p><b>Q6.1: Some GNOME applications display
 black icons only. What's wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is caused by limitations in the operating system kernel.
@@ -20,7 +20,7 @@ The only solution so far is to turn off shared memory.
 The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
 </p></div></a>
 
-<a name="xlocale"><div class="question"><p><b>Q: I'm getting lots of messages
+<a name="xlocale"><div class="question"><p><b>Q6.2: I'm getting lots of messages
 like "locale not supported by C library". Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
@@ -30,7 +30,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div></a>
 
 <p align="right">
-Next: <a href="usage-packages.php">Package Usage Problems - Specific Packages</a></p>
+Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages</a></p>
 
 
 <?

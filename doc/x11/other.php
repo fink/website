@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Other X11 Possibilities</h1>
+<h1>Running X11 - 6 Other X11 Possibilities</h1>
 
 
 
 
-<a name="vnc"><h2>VNC</h2></a>
+<a name="vnc"><h2>6.1 VNC</h2></a>
 <p>
 VNC is a network-capable graphics display system similar in design to
 X11.
@@ -26,7 +26,7 @@ more information on that.
 
 
 
-<a name="wiredx"><h2>WiredX</h2></a>
+<a name="wiredx"><h2>6.2 WiredX</h2></a>
 <p>
 <a href="http://www.jcraft.com/wiredx/">WiredX</a> is an X11
 server written in Java.
@@ -36,7 +36,7 @@ An Installer.app package is available at the web site.
 
 
 
-<a name="exodus"><h2>eXodus</h2></a>
+<a name="exodus"><h2>6.3 eXodus</h2></a>
 <p>
 According to the website, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> by Powerlan
 USA runs natively on Mac OS X.
@@ -49,7 +49,7 @@ If you have more info, please throw it my way.
 
 
 <p align="right">
-Next: <a href="trouble.php">Troubleshooting XFree86</a></p>
+Next: <a href="trouble.php">7 Troubleshooting XFree86</a></p>
 
 
 <?

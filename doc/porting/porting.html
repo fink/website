@@ -10,33 +10,33 @@ Both systems will be referred to as Darwin, since Mac OS X is actually
 a superset of Darwin.
 </p>
 <h2>Contents</h2><ul>
-<li><a href="#basics"><b>Basics</b></a></li>
+<li><a href="#basics"><b>1 Basics</b></a></li>
 <ul>
-<li><a href="#basics.heritage">Where Darwin came from</a></li>
-<li><a href="#basics.compiler">The Compiler and Tools</a></li>
-<li><a href="#basics.host-type">Host type</a></li>
-<li><a href="#basics.libraries">Libraries</a></li>
+<li><a href="#basics.heritage">1.1 Where Darwin came from</a></li>
+<li><a href="#basics.compiler">1.2 The Compiler and Tools</a></li>
+<li><a href="#basics.host-type">1.3 Host type</a></li>
+<li><a href="#basics.libraries">1.4 Libraries</a></li>
 </ul>
-<li><a href="#shared"><b>Shared Code</b></a></li>
+<li><a href="#shared"><b>2 Shared Code</b></a></li>
 <ul>
-<li><a href="#shared.lib-and-mod">Shared Libraries vs. Loadable Modules</a></li>
-<li><a href="#shared.version">Version Numbering</a></li>
-<li><a href="#shared.cflags">Compiler Flags</a></li>
-<li><a href="#shared.build-lib">Building a Shared Library</a></li>
-<li><a href="#shared.build-mod">Building a Module</a></li>
+<li><a href="#shared.lib-and-mod">2.1 Shared Libraries vs. Loadable Modules</a></li>
+<li><a href="#shared.version">2.2 Version Numbering</a></li>
+<li><a href="#shared.cflags">2.3 Compiler Flags</a></li>
+<li><a href="#shared.build-lib">2.4 Building a Shared Library</a></li>
+<li><a href="#shared.build-mod">2.5 Building a Module</a></li>
 </ul>
-<li><a href="#libtool"><b>GNU libtool</b></a></li>
+<li><a href="#libtool"><b>3 GNU libtool</b></a></li>
 <ul>
-<li><a href="#libtool.situation">The Situation</a></li>
-<li><a href="#libtool.patch-135">The 1.3.5 Patch</a></li>
-<li><a href="#libtool.notes">Further Notes</a></li>
+<li><a href="#libtool.situation">3.1 The Situation</a></li>
+<li><a href="#libtool.patch-135">3.2 The 1.3.5 Patch</a></li>
+<li><a href="#libtool.notes">3.3 Further Notes</a></li>
 </ul>
-</ul><a name="basics"><h2>Basics</h2></a>
+</ul><a name="basics"><h2>1 Basics</h2></a>
 
 
 
 
-<a name="basics.heritage"><h3>Where Darwin came from</h3></a>
+<a name="basics.heritage"><h3>1.1 Where Darwin came from</h3></a>
 <p>
 Darwin is a Unix-like operating system that evolved from NeXTStep /
 OpenStep.
@@ -63,7 +63,7 @@ installed as the default.
 
 
 
-<a name="basics.compiler"><h3>The Compiler and Tools</h3></a>
+<a name="basics.compiler"><h3>1.2 The Compiler and Tools</h3></a>
 <p>
 Short story:
 The compiler is a gcc derivate, but installed as <tt><nobr>cc</nobr></tt>;
@@ -103,7 +103,7 @@ linker.
 
 
 
-<a name="basics.host-type"><h3>Host type</h3></a>
+<a name="basics.host-type"><h3>1.3 Host type</h3></a>
 <p>
 Short story:
 If configure fails with 'Can't determine host type', copy config.guess
@@ -150,7 +150,7 @@ copy them from there.
 
 
 
-<a name="basics.libraries"><h3>Libraries</h3></a>
+<a name="basics.libraries"><h3>1.4 Libraries</h3></a>
 <p>
 Short story:
 You can safely remove <tt><nobr>-lm</nobr></tt> from Makefiles, but you don't
@@ -172,11 +172,11 @@ libutil.dylib.
 </p>
 
 
-<a name="shared"><h2>Shared Code</h2></a>
+<a name="shared"><h2>2 Shared Code</h2></a>
 
 
 
-<a name="shared.lib-and-mod"><h3>Shared Libraries vs. Loadable Modules</h3></a>
+<a name="shared.lib-and-mod"><h3>2.1 Shared Libraries vs. Loadable Modules</h3></a>
 <p>
 One Mach-O feature that hits many people by surprise is the strict
 distinction between shared libraries and dynamically loadable
@@ -214,7 +214,7 @@ loaded.
 
 
 
-<a name="shared.version"><h3>Version Numbering</h3></a>
+<a name="shared.version"><h3>2.2 Version Numbering</h3></a>
 <p>
 On an ELF system, version numbers are usually appended to the file
 name of the shared library, e.g. <tt><nobr>libqt.so.2.3.0</nobr></tt>.
@@ -263,7 +263,7 @@ linking.
 
 
 
-<a name="shared.cflags"><h3>Compiler Flags</h3></a>
+<a name="shared.cflags"><h3>2.3 Compiler Flags</h3></a>
 <p>
 The generation of position-independent code (PIC) is the default is
 the default on Darwin.
@@ -278,7 +278,7 @@ option.
 
 
 
-<a name="shared.build-lib"><h3>Building a Shared Library</h3></a>
+<a name="shared.build-lib"><h3>2.4 Building a Shared Library</h3></a>
 <p>
 To build a shared library, you invoke the compiler driver with the
 <tt><nobr>-dynamiclib</nobr></tt> option.
@@ -311,7 +311,7 @@ the library.
 
 
 
-<a name="shared.build-mod"><h3>Building a Module</h3></a>
+<a name="shared.build-mod"><h3>2.5 Building a Module</h3></a>
 <p>
 To build a loadable module, you invoke the compiler driver with the
 <tt><nobr>-bundle</nobr></tt> option.
@@ -335,7 +335,7 @@ systems require it; this is harmless.
 
 
 
-<a name="libtool"><h2>GNU libtool</h2></a>
+<a name="libtool"><h2>3 GNU libtool</h2></a>
 
 
 
@@ -346,7 +346,7 @@ platform-dependent procedures for library building and installation.
 </p>
 
 
-<a name="libtool.situation"><h3>The Situation</h3></a>
+<a name="libtool.situation"><h3>3.1 The Situation</h3></a>
 <p>
 In the wild, one can find four strands of libtool:
 </p>
@@ -416,7 +416,7 @@ on Darwin when dlcompat is installed.
 
 
 
-<a name="libtool.patch-135"><h3>The 1.3.5 Patch</h3></a>
+<a name="libtool.patch-135"><h3>3.2 The 1.3.5 Patch</h3></a>
 <p>
 After applying <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
 patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source, you
@@ -435,7 +435,7 @@ For your convenience, you can get the two files right here:
 
 
 
-<a name="libtool.notes"><h3>Further Notes</h3></a>
+<a name="libtool.notes"><h3>3.3 Further Notes</h3></a>
 <p>
 For more information on libtool itself and what it does, see the <a href="http://www.gnu.org/software/libtool/libtool.html">libtool
 homepage</a>.

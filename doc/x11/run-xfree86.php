@@ -8,12 +8,12 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - Starting XFree86</h1>
+<h1>Running X11 - 4 Starting XFree86</h1>
 
 
 
 
-<a name="darwin"><h2>Darwin</h2></a>
+<a name="darwin"><h2>4.1 Darwin</h2></a>
 <p>
 On pure Darwin, XFree86 behaves like on any other Unix.
 The usual way to start it is via <tt><nobr>startx</nobr></tt> from the console;
@@ -58,7 +58,7 @@ exception of <tt><nobr>xdm</nobr></tt>.
 
 
 
-<a name="macosx-41"><h2>Mac OS X + XFree86 4.1.0</h2></a>
+<a name="macosx-41"><h2>4.2 Mac OS X + XFree86 4.1.0</h2></a>
 <p>
 This section describes starting the server from XFree86 4.1.0.
 That also covers the old-style rootless servers still circulating;
@@ -95,7 +95,7 @@ in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
 
 
 
-<a name="macosx-42"><h2>Mac OS X + XFree86 CVS</h2></a>
+<a name="macosx-42"><h2>4.3 Mac OS X + XFree86 CVS</h2></a>
 <p>
 Recent development versions of XFree86 (this includes the XDarwin
 1.0a# test releases from the XonX project and the
@@ -117,7 +117,7 @@ The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
 
 
 
-<a name="xinitrc"><h2>The .xinitrc File</h2></a>
+<a name="xinitrc"><h2>4.4 The .xinitrc File</h2></a>
 <p>
 If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home directory,
 it will be used to start some initial X clients, e.g. the window
@@ -184,7 +184,7 @@ exec enlightenment</pre>
 
 
 <p align="right">
-Next: <a href="xtools.php">Xtools</a></p>
+Next: <a href="xtools.php">5 Xtools</a></p>
 
 
 <?

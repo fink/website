@@ -8,13 +8,13 @@ $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents">
 include "header.inc";
 ?>
 
-<h1>Running X11 - History</h1>
+<h1>Running X11 - 2 History</h1>
 
 
 
 <p>[Sorry for the epic language, I couldn't resist...]</p>
 
-<a name="early"><h2>The early days</h2></a>
+<a name="early"><h2>2.1 The early days</h2></a>
 <p>
 In the beginning, there was void.
 Darwin was in its infancy, Mac OS X was still in development and there
@@ -30,7 +30,7 @@ there, waiting for things to come.
 </p>
 
 
-<a name="xonx-forms"><h2>XonX forms</h2></a>
+<a name="xonx-forms"><h2>2.2 XonX forms</h2></a>
 <p>
 One fine day Torrey T. Lyons came along and gave the Darwin patches
 the attention they had been waiting for.
@@ -48,7 +48,7 @@ At about the same time Tenon started to build Xtools, using XFree86
 </p>
 
 
-<a name="root-or-not"><h2>To root or not to root</h2></a>
+<a name="root-or-not"><h2>2.3 To root or not to root</h2></a>
 <p>
 Soon the XonX team had XFree86 running in a fullscreen mode in
 parallel to Quartz and was putting out test releases for adventurous
@@ -82,7 +82,7 @@ and Tenon released Xtools 1.0 some weeks after that.
 
 
 <p align="right">
-Next: <a href="inst-xfree86.php">Getting and Installing XFree86</a></p>
+Next: <a href="inst-xfree86.php">3 Getting and Installing XFree86</a></p>
 
 
 <?
