@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.3 2004/03/17 00:15:15 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.4 2004/03/17 00:35:31 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -249,7 +249,7 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
         <p>À partir de Panther, Fink a été mis à jour pour fonctionner avec le nouveau compilateur gcc 3.3. Pour pouvoir gérer à la fois 10.2 (Jaguar) et 10.3 (Panther), il faut que tous les utilisateurs installent la dernière mise à jour de gcc 3.3 (mise à jour d'août 2003 pour les utilisateurs de Jaguar, outils XCode de Panther pour les utilisateurs de Panther). Ce message d'alerte apparaîtra si vous avez installé la béta précédente de XCode correspondant aux Developer Tools de décembre 2002 pour Max OS X 10.2. Si vous utilisez 10.2, la commande :</p>
         <codeblock>gcc --version</codeblock>
         <p>vous dira quelle version est installée sur votre système. À partir du 24 octobre 2003, il faut avoir le build 1493 ou supérieur.</p>
-        <p>Les utilisateurs de 10.2 peuvent télécharger la mise à jour d'août 2003 sur<link url="http://developer.apple.com/">Apple Developer Connection</link>
+        <p>Les utilisateurs de 10.2 peuvent télécharger la mise à jour d'août 2003 sur <link url="http://developer.apple.com/">Apple Developer Connection</link>
 (enregistrement gratuit obligatoire).</p>
         <p>Les utilisateurs de 10.3 doivent installer les outils de développement compatibles avec Panther (c'est-à-dire XCode). Vous devez trouver un CD contenant XCode parmi ceux reçus avec Panther.</p>
       </answer>
