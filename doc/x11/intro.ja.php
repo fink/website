@@ -10,7 +10,7 @@ include_once "header.ja.inc";
 <h1>Running X11 - 1. イントロダクション</h1>
 
 
-<h2><a name="def-x11">1.1 What is X11?</a></h2>
+<h2><a name="def-x11">1.1 X11 とは何ですか?</a></h2>
 
 <p>
 <a href="http://www.x.org/">X Window System</a> Version 11,
@@ -44,7 +44,7 @@ Mac OS X から余計な部分を落とした無料版で、完全なソース�
 デフォルトではテキストコンソールのみです。
 </p>
 
-<h2><a name="def-xfree86">1.4 What is XFree86?</a></h2>
+<h2><a name="def-xfree86">1.4 XFree86 とは何ですか?</a></h2>
 
 <p>
 <a href="http://www.xfree86.org/">XFree86</a> はオープンソースで実装した X11 です。

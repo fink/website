@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.6 2004/05/29 15:43:25 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.7 2004/10/13 23:56:37 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -15,7 +15,7 @@
 <title>イントロダクション</title>
 <shorttitle>イントロ</shorttitle>
 <section name="def-x11" >
-<title>What is X11?</title>
+<title>X11 とは何ですか?</title>
 <p>
 <link url="http://www.x.org/" >X Window System</link> Version 11,
 あるいは短く X11 とは、ネットワーク透過型、クライアント＝サーバ形式の画像表示システムです。
@@ -49,7 +49,7 @@ Mac OS X から余計な部分を落とした無料版で、完全なソース�
 </p>
 </section>
 <section name="def-xfree86" >
-<title>What is XFree86?</title>
+<title>XFree86 とは何ですか?</title>
 <p>
 <link url="http://www.xfree86.org/" >XFree86</link> はオープンソースで実装した X11 です。
 これは名前が示すように、当初 Intel x86 PC 上で動くように開発されましたが、現在では OS/2 、 Darwin 、 Mac OS X 、 Windows など多くのアーキテクチャーやオペレーティングシステムで動かすことができます。
