@@ -4,9 +4,25 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 18 Jan 2004 15:14:18 EST</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2004 22:01:19 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK">
+    <title>Java 1.4.2 Update Removes Java SDK</title>
+    <link>http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK</link>
+    <dc:date>2004-02-02</dc:date>
+    <description>
+	
+If you previously had Java 1.4.1 and the Java SDK installed, the new
+Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
+but will remove the previous 1.4.1 Java runtime and
+SDK without upgrading the JDK.  To build Java packages in Fink
+you will need to go to
+connect.apple.com and download the Java 1.4.2 SDK (free
+registration required).
+	
+	</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-18%2010.3%20binaries%20updated">
     <title>10.3 binaries updated</title>
     <link>http://fink.sourceforge.net/news/#2004-01-18%2010.3%20binaries%20updated</link>
@@ -388,24 +404,5 @@ but many many packages already work.
 UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect please try again later. I am very sorry for this inconvenience. Thank you for your understanding.
 
 </description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-10-12%20New%20update%20method%20available">
-    <title>New update method available</title>
-    <link>http://fink.sourceforge.net/news/#2003-10-12%20New%20update%20method%20available</link>
-    <dc:date>2003-10-12</dc:date>
-    <description>
-The latest version of the fink package manager offers a new update
-method, fink selfupdate-rsync, as an alternative to the
-CVS updates which have been so problematic in the past few months.
-If you have difficulty updating to the new version, please follow
-these 
-special update instructions.
-
-In addition, this version of the fink package manager is compatible
-with last summer's Developer Tools updates.  After installing both the new
-package manager and the Developer Tools update, 
-fink will ask you to reset your gcc version whenever
-that is necessary.
-	</description>
   </item>
 </rdf:RDF>

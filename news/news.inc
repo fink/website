@@ -1,4 +1,14 @@
-<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
+<a name="2004-02-02 Java 1.4.2 Update Removes Java SDK"><span class="news-date">2004-02-02: </span><span class="news-headline">Java 1.4.2 Update Removes Java SDK</span></a><?php gray_line(); ?>
+	<p>
+If you previously had Java 1.4.1 and the Java SDK installed, the new
+Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
+but will <b>remove</b> the previous 1.4.1 Java runtime and
+SDK <b>without</b> upgrading the JDK.  To build Java packages in Fink
+you will need to <a href="http://connect.apple.com/">go to
+connect.apple.com and download the Java 1.4.2 SDK</a> (free
+registration required).
+	</p>
+	<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
 	<p>
 Many of the binary files for 10.3 have been updated, eliminating problems
 with qt and kde, among others.  To access the updated files, bring your
@@ -26,35 +36,5 @@ apt-get, dselect or FinkCommander to install binary files as usual.
 	Here is a link to detailed 
 	<a href="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</a> 
 	how to install or upgrade GNOME and what new stuff it brings.
-	</p>
-	<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
-	<p>
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
-   day long.
-	</p>
-	<p>
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
-   happens because of the amazing support and encouragement we get from our users.
-	</p>
-	<p>
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	</p>
-	<p>
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
 	</p>
 	

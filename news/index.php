@@ -1,14 +1,24 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/01/18 20:11:56';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2004/02/03 02:59:13';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
+<a name="2004-02-02 Java 1.4.2 Update Removes Java SDK"><span class="news-date">2004-02-02: </span><span class="news-headline">Java 1.4.2 Update Removes Java SDK</span></a><?php gray_line(); ?>
+	<p>
+If you previously had Java 1.4.1 and the Java SDK installed, the new
+Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
+but will <b>remove</b> the previous 1.4.1 Java runtime and
+SDK <b>without</b> upgrading the JDK.  To build Java packages in Fink
+you will need to <a href="http://connect.apple.com/">go to
+connect.apple.com and download the Java 1.4.2 SDK</a> (free
+registration required).
+	</p>
+	<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
 	<p>
 Many of the binary files for 10.3 have been updated, eliminating problems
 with qt and kde, among others.  To access the updated files, bring your
