@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.58 2004/01/02 14:38:47 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.59 2004/01/04 21:27:42 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2114,12 +2114,12 @@ certain fields missing.  Here is what belongs in the sub-description
 </p>
 <ul>
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
-everything else is inherited from the parent package (except for
-<code>Type</code>, which is internally set to the value 
-<code>splitoff</code>).  Percent expansion can be used, and it is often
-convenient to refer to the name %N of the parent package.</li>
-<li>Dependencies: All of these are allowed except <code>Essential</code>,
-which cannot be used for a sub-package.</li>
+everything else is inherited from the parent package.  You may modify
+<code>Type</code> and <code>License</code> by declaring the field
+within the <code>SplitOff</code>.  Percent expansion can be used, and
+it is often convenient to refer to the name %N of the parent
+package.</li>
+<li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
 and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
