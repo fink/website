@@ -16,7 +16,7 @@ in order to decide which of these version numbers to fetch.
 To maintain compatibility with earlier versions of this system, the
 directory also contains two legacy files:
   LATEST-FINK (with the value "0.4.1a", used by 10.1)
-  CURRENT-FINK (with the value "0.5.3", used by 10.2 in upgrading to
+  CURRENT-FINK (with the value "0.5.4", used by 10.2 in upgrading to
                 the tree-specific system described above.)
 
 
