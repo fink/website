@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/24 01:00:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
@@ -119,6 +119,7 @@ defined in indirectly referenced dynamic library
 packages you have built against <code>xfree86</code> will need to be rebuilt, as the binaries are incompatible.</p>
         </li>
       </ul>
+      <p>For more information on using Apple's X11, check out this <a href="http://developer.apple.com/darwin/runningx11.html">article</a> at the Apple Developer Connection.</p>
     
     <h2><a name="official-binary">3.3 The Official Binaries</a></h2>
       
@@ -197,6 +198,7 @@ CVS</a> instructions to download the <code>xc</code> module.
 Then, follow the source build instructions above.
 </p>
     
+    
     <h2><a name="macgimp">3.6 MacGimp</a></h2>
       
       <p>
@@ -213,6 +215,7 @@ It's not quite clear what version it is; it may be a mix of
 The server does rootless mode, using a patch from the time before
 4.1.0.
 </p>
+    
     
     <h2><a name="switching-x11">3.7 Replacing X11</a></h2>
       

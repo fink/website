@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/24 01:00:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86">';
 
 
@@ -54,10 +54,10 @@ In case you don't see a field to enter a user's name in the login window, just t
 You can use all of the start methods outlined above, with the
 exception of <code>xdm</code>.
 </p>
-<p>
+      <p>
 Note: If you are running Mac OS X Panther, you cannot start XFree86 from the console window.
 </p>
-
+    
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
       
       <p>
@@ -149,7 +149,7 @@ A simple example that starts up GNOME:
 </p>
       <pre>. /sw/bin/init.sh
 exec gnome-session</pre>
-<p>A more complex example for bash users that turns the X11 bell off, starts some clients and finally executes the Enlightenment window manager:</p>
+      <p>A more complex example for bash users that turns the X11 bell off, starts some clients and finally executes the Enlightenment window manager:</p>
       <pre>. /sw/bin/init.sh
 
 xset b off
@@ -159,28 +159,28 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
- <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>    
- <pre>. /sw/bin/init.sh
+      <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>
+      <pre>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
-</pre> 
-<p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>    
- <pre>. /sw/bin/init.sh
+</pre>
+      <p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>
+      <pre>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
-</pre> 
-<p>To start KDE 3.2 (version &lt; 3.2.2-21) under Apple's X11</p>
-<pre>. /sw/bin/init.sh
+</pre>
+      <p>To start KDE 3.2 (version &lt; 3.2.2-21) under Apple's X11</p>
+      <pre>. /sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
-<p>And finally to start the latest unstable version of KDE under Apple's X11:</p>
-<pre>. /sw/bin/init.sh
+      <p>And finally to start the latest unstable version of KDE under Apple's X11:</p>
+      <pre>. /sw/bin/init.sh
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
-   
+    
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=en">5. Xtools</a></p>
 <? include_once "../../footer.inc"; ?>

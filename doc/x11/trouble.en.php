@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/24 01:00:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
 
@@ -233,6 +233,7 @@ file:
       <pre>cd
 rm .Xauthority
 touch .Xauthority</pre>
+      
       <p>
 Another common cause for XFree86 startup failures is an incorrect
 <code>.xinitrc</code> file.
@@ -247,6 +248,7 @@ not started in the background.
 It is a good idea to add <code>exec xterm</code> as a fallback when
 your window manager or similar can't be found.
 </p>
+      
     
     <h2><a name="black">7.2 Black icons in the GNOME panel or in the
 menu of a GNOME application</a></h2>

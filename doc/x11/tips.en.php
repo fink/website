@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/24 01:00:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
 
@@ -19,26 +19,28 @@ This variable tells the applications where to find the X11 window
 server.
 In the default setup - XDarwin runs on the same machine -, you can set the variable as follows:
 </p>
-<ul>
-<li><p>For tcsh users:</p>
+      <ul>
+        <li><p>For tcsh users:</p>
       <pre>setenv DISPLAY :0.0</pre>
 </li>
-<li><p>For bash users:</p>
+        <li><p>For bash users:</p>
 <pre>export DISPLAY=":0.0"</pre>
 </li>
-</ul>
+      </ul>
       <p>
 A nice setup is to have XDarwin.app started when you log in (settable
 in the Login panel of the System Preferences on Mac OS 10.2, in the Accounts panel, Startup items on Mac OS 10.3):
 </p>
-<ul><li><p>For tcsh users, add the following to your .cshrc file:</p>
+      <ul>
+        <li><p>For tcsh users, add the following to your .cshrc file:</p>
       <pre>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</pre>
 </li>
-<li><p>For bash users, add the following to your .bashrc file:</p>
+        <li><p>For bash users, add the following to your .bashrc file:</p>
 <pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
-</li></ul>
+</li>
+      </ul>
       <p>
 This sets DISPLAY automatically in every shell.
 It doesn't override the current value when DISPLAY is already set,
@@ -99,7 +101,7 @@ manager and never returns! Don't just add it at the end, it won't
 be executed.) And remember that it is no more necessary for Apple's X11 (see <a href="inst-xfree86.php?phpLang=en#apple-binary">Some notes on using Apple's X11</a>).
 </p>
       <p>If you are using Apple's X11, then you can use Command-C or Edit-&gt;Copy, as usual for Mac apps, to copy text to the clipboard, and the middle-mouse button or Command-V to paste from the clipboard to Apple X11.</p>
-<p>In any case, if you encounter problems copying or pasting from Aqua to X11 and vice-versa, you may first try to do the pasting part twice (it may happen that the copy does not occur at once), then use intermediate applications, e.g. TextEdit or Terminal.app on the Aqua side, nedit or an xterm on the X11 side. In my experience, there is always a solution.</p>
+      <p>In any case, if you encounter problems copying or pasting from Aqua to X11 and vice-versa, you may first try to do the pasting part twice (it may happen that the copy does not occur at once), then use intermediate applications, e.g. TextEdit or Terminal.app on the Aqua side, nedit or an xterm on the X11 side. In my experience, there is always a solution.</p>
     
   
 <? include_once "../../footer.inc"; ?>
