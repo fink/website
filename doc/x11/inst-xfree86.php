@@ -39,7 +39,7 @@ overwrites your manually installed server.  Note that the current stable version
 </p>
 <p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <code>xine</code>.</p>
 <p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
-<p><b>10.3 users:</b>  As of this writing, the version of the <code>xfree86</code> package in the 0.6.2 binary distribution (4.3.0-14) doesn't work on 10.3.  You will need to install version 4.3.99.16-2 or later from source (e.g. <code>fink install xfree86</code>).  These are prereleases for XFree86-4.4.</p>
+<p><b>10.3 users:</b>  You will need to install version 4.3.99.16-2 or later, which are prereleases for XFree86-4.4.  If you are working from the binary distribution, make sure to update your package descriptions (e.g. via <code>sudo apt-get update</code>).</p>
 
 <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
 
