@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 21:29:57';
+$cvs_date = 'Date: 2004/04/19 21:34:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -64,7 +64,7 @@ Since fink 0.9.5 there is type <code>perl</code> which causes alternate default 
 <code>perl 5.6.0</code>.
 </p>
 <p>
-Beginning in a CVS version of fink after fink-0.19.2, the language/language-version use has been generalized to allow any Maintainer-defined types and associated subtypes and more than a single type for a given package. The type and subtype are each arbitrary strings of non-whitespace characters (but parentheses, commas, and percent signs should not be used); no percent-expansion is performed. Multiple type values (each with an optional whitespace-separated subtype) are specified in a comma-separated list.
+Beginning in a CVS version of fink after fink-0.19.2, the language/language-version use has been generalized to allow any Maintainer-defined types and associated subtypes and more than a single type for a given package. The type and subtype are each arbitrary strings of non-whitespace characters (but parentheses, commas, braces, and percent signs should not be used); no percent-expansion is performed, and the type (not subtype) values are converted to all-lowercase.  Multiple type values (each with an optional whitespace-separated subtype) are specified in a comma-separated list.
 </p>
 <p>
 In addition, the concept of "variants" exists, where a single .info file describes a family of related packages with various options enabled. The key to this whole process is the use of a list of subtypes. Instead of a single string, one uses a space-separated list of strings in parentheses. Fink clones the package description file for each subtype in the list and replaces this list with that single subtype. For example:
