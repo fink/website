@@ -3,13 +3,14 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.4 2004/02/21 23:30:43 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.5 2004/02/22 02:47:07 babayoshihiko Exp $</cvsid>
 <preface>
-<p>このページは Fink の よくある質問 (FAQ) です。
-他の FAQ と同様に、質問は実際に発生したものとあらかじめ作られたものがあります。
-実態は、一時的な質疑応答の形をとった文書といえるでしょう。</p>
+<p>このページは Fink の FAQ です。
+他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
+質疑応答の形をとった仮ドキュメントといえるでしょう。</p>
 <p>FAQは節毎にページがわかれています。
-すべての質問は下の目次にあり、それぞれリンクされています。</p>
+下記の目次にすべての質問があります。
+それぞれリンクされていますので、辿っていってください。</p>
 </preface>
 <chapter filename="general" >
 <title>一般的な質問</title>
@@ -23,11 +24,11 @@
 このために、次の二つのゴールを設定しています。</p>
 <p>一つ目のゴールは、ソフトウェアを Mac OS X に移植することです。
 これは、 役に立つ Open Source の Unix ソフトウェアを、 Mac OS X でコンパイルと実行できるよう、必要な修正を行ないます。
-これは簡単なこともありますが、非常に困難な場合や、パッケージによっては不可能な場合もあります。
+この作業は簡単なこともありますが、非常に困難な場合や、パッケージによっては不可能な場合もあります。
 我々は、この作業を簡単にするためにツールやドキュメントを提供するよう努めています。</p>
 <p>二つ目のゴールは、成果を普通のユーザーが使える形にすることです。
 このために我々は、 Linux で使われている <code>dpkg</code> と、 <code>fink</code> という パッケージ管理ツールを使ったディストリビューションを構築しました。
-これは、  <link url="http://www.debian.org/" >Debian GNU/Linux</link> プロジェクトが自身のために書いたものです。
+後者は、  <link url="http://www.debian.org/" >Debian GNU/Linux</link> プロジェクトが独自で作成したものです。
 バイナリディストリビューションは <code>.deb</code> パッケージ形式を使います。
 ソースからパッケージをビルドするには、我々の独自のツールである <code>fink</code> を使い、 <code>.deb</code>  パッケージのファイルを作成します。</p>
 </answer>
@@ -404,7 +405,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 </faqentry>
 <faqentry name="unstable" >
 <question>
-<p>unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' という。どうしたらインストールできるのですか?</p>
+<p>unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</p>
 </question>
 <answer>
 <p>まず、 'unstable' の意味を理解して下さい。
@@ -430,7 +431,7 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 
 <faqentry name="sudo" >
 <question>
-<p>sudo でパスワードを何度も何度も入力するのは疲れる。何か良い方法はありませんか?</p>
+<p>sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</p>
 </question>
 <answer>
 <p>sudo がパスワードを聞いてこないように設定することができます。
@@ -448,16 +449,16 @@ root 権限で <filename>/etc/sudoers</filename> を開き、次の行を追加�
 <p>init.csh と init.sh は通常のコマンドのように実行するものではありません。
 これらのファイルは環境変数の PATH や MANPATH を設定するものです。
 これをシェルがずっと保持するには、 <code>source</code> コマンドを使い:</p>
-<p> csh/tcsh の場合</p>
+<p> csh/tcsh の場合:</p>
 <codeblock>source /sw/bin/init.csh</codeblock>
-<p> bash の場合</p>
+<p> bash の場合:</p>
 <codeblock>source /sw/bin/init.sh</codeblock>
 <p>と入力します。</p>
 </answer>
 </faqentry>
 <faqentry name="dselect-access" >
 <question>
-<p>まいった! dselect で &quot;[A]ccess&quot; メニューを使ったら、パッケージをダウンロードできなくなった!</p>
+<p>うぎゃ! dselect で &quot;[A]ccess&quot; メニューを使ったら、パッケージをダウンロードできなくなった!</p>
 </question>
 <answer>
 <p>
@@ -1128,8 +1129,8 @@ unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</codeblock> 
 <p>おそらくヘッダファイル <code>/usr/local/include/dlfcn.h</code> が Panther と非互換だと思われます。
 迷うことなく削除して下さい。</p> 
-<p>これは Open Office によってインストールされます。
-また、次のヘッダファイルとライブラリ
+<p>このファイルは通常、 Open Office によってインストールされるようです。
+この後、次のヘッダファイルとライブラリ
 <code>/usr/local/lib/libdl.dylib</code> を Panther に付随するファイルへのシンボリックリンクに変更します。</p> 
 <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h 
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock> 
@@ -1223,7 +1224,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 ソース画面で、パッケージを選択し、次に <code>Source Menu</code> で &quot;<code>Force Remove</code>.&quot; を選択します。
 </p>
 <p>system-xfree86 を使っている場合、 前の質問を参照して削除してください。</p>
-<p>希望する xfree86 のインストール: </p>
+<p>希望するバージョンの xfree86 をインストールします: </p>
 <p>
 <code>xfree86-base</code> と <code>xfree86-rootless</code>
 </p>
@@ -1233,28 +1234,6 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <p>普通は、ソースインストールは: &quot;<code>fink install</code>&quot; で、バイナリインストールは: &quot;<code>apt-get install</code>&quot; または <code>dselect</code> です。</p>
 </answer>
 </faqentry>
-<!--obsolete><faqentry name="apple-x11" >
-<question>
-<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p>
-</question>
-<answer>
-<p>If you get error messages like the following:</p>
-<codeblock>- missing /usr/X11R6/lib/libX11.dylib
-- missing /usr/X11R6/lib/libXpm.dylib
-- missing /usr/X11R6/lib/libXaw.dylib
-- missing /usr/X11R6/include/X11/Xlib.h
-
-Your XFree86 installation is missing or incomplete. Please make sure you have
-an XFree86 release installed and retry the installation of the system-xfree86
-package.
-</codeblock>
-<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the XCode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
-<p>If, on the other hand, you get the following message:</p>
-<codeblock>An error occurred trying to find your XFree86 installation's
-version. This really shouldn't happen, so I'm bailing. :(</codeblock>
-<p>then you need to update your package descriptions and install a newer version of system-xfree86. If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
-</answer>
-</faqentry><-->
 <faqentry name="cctools" >
 <question>
 <p>KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
@@ -1263,18 +1242,9 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 <p>このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p>
 </answer>
 </faqentry>
-<!--obsolete><faqentry name="system-xfree86-upgrade" >
-<question>
-<p>I can't update system-xfree86, because of a conflict with x11.</p>
-</question>
-<answer>
-	<p>This problem has come about because of changes needed to allow for externally installed XFree86-4.3. Originally, <code>system-xfree86</code> provided the <code>x11</code> virtual package when an externally installed XFree86 was present. Because it only worked for XFree86-4.2, it was decided to have two separate packages for XFree86 4.2.x and Apple X11 beta 3, and one for XFree86 4.3.x and Apple X11 1.0</p>
-<p>Either of these will provide <code>x11</code>. <code>system-xfree86</code> is now a bundle that installs the appropriate one of the above packages, depending on the version of XFree86 / Apple X11 that is installed. Unfortunately, switching the provider of a virtual package is sufficiently complicated that the automatic upgrade procedure can't deal with it (currently). Do an additional <code>selfupdate</code> to get the latest version of the package, then try to update again.</p>
-</answer>
-</faqentry><-->
 </chapter>
 <chapter filename="usage-general" >
-<title>パッケージ使用法の問題 - 一般</title>
+<title>パッケージ使用上の問題 - 一般</title>
 <shorttitle>使用法 (1)</shorttitle>
 <faqentry name="xlocale" >
 <question>
@@ -1410,10 +1380,10 @@ XFree86-4.3 は標準の XFree86-4.2.1.1 より速いのですが、後者の方
 <p>このエラーは、システムが X ディスプレイと通信できていないことを意味します。
 以下を確認してください:</p>
 <p>1. X (Apple's X11, XFree86, ...) を起動。</p>
-<p>2. DISPLAY 環境変数が設定されていることを確認する。デフォルトに設定された X では、 tcsh では
+<p>2. DISPLAY 環境変数が設定されていることを確認する。デフォルトに設定された X では、 tcsh では:
 </p>
 <codeblock>setenv DISPLAY :0</codeblock>
-<p>、 bash の場合、</p>
+<p>bash の場合:</p>
 <codeblock>export DISPLAY=:0</codeblock>
 <p>と入力します。</p>
 </answer>
@@ -1431,7 +1401,7 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 </faqentry>
 </chapter>
 <chapter filename="usage-packages" >
-<title>パッケージ使用法 の問題 - 特定のパッケージ</title>
+<title>パッケージ使用上の問題 - 特定のパッケージ</title>
 <shorttitle>使用法 (2)</shorttitle>
 <faqentry name="xmms-quiet" >
 <question>
@@ -1496,23 +1466,6 @@ Running X11 ドキュメントには、この問題の <link url="http://fink.so
 これがうまくいかない場合、 <code>/usr/bin/X11R6</code> が PATH に含まれているか確認してください。</p>
 </answer>
 </faqentry>
-<!--
-<faqentry name="xfree-keymapping" >
-#<question>
-<p>I just upgraded to MacOS X 10.1 and now XFree86 always quits immediately. In the messages it says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's wrong?</p>
-</question>
-<answer>
-	<p>This is a known problem on 10.1. You must use the &quot;Load from file&quot; keymapping option since the default option (loading it from the kernel) doesn't work anymore. The setting is in the XDarwin Preferences dialog. Be sure that a file is selected (e.g. USA.keymapping) - simply activating the check box may not be sufficient with some versions. If you can't get to the Preferences dialog because you disabled all splash screens, you can delete <code>~/Library/Preferences/org.xfree86.XDarwin.plist</code> to get it back, then start XDarwin and go to the Preferences dialog while the splash screen is displayed. Alternatively, you can edit that file manually in a text editor to enable the keymapping option (the UseKeymappingFile and KeymappingFile bits). </p>
-<p>As a last resort, you can run <code>startx -x- -quartz -keymap
-USA.keymapping</code> from Terminal.app.
-If this still doesn't work, you have another problem in addition to
-the keymapping problem that prevents XDarwin from starting.
-You'll get a bunch of diagnostic messages in Terminal.app to help you
-sort this out.
-</p>
-</answer>
-</faqentry>
--->
 <faqentry name="xterm-error" >
 <question>
 <p>xterm が &quot;dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot; といって終了します。</p>
