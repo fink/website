@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.2 2004/02/23 11:47:34 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.3 2004/02/24 03:03:42 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -276,8 +276,8 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   後者は、あなたの設定した PATH を上書きする行を含んでいます。
   <code>~/Library/init/tcsh/path</code> を作成するのがよいでしょう:</p>
   <codeblock>mkdir ~/Library/init
-  mkdir ~/Library/init/tcsh
-  pico ~/library/init/tcsh/path</codeblock>
+mkdir ~/Library/init/tcsh
+pico ~/library/init/tcsh/path</codeblock>
   <p>としてから:</p>
   <codeblock>source ~/.cshrc</codeblock>
   <p>を加えて下さい。
@@ -300,7 +300,7 @@ Fink のパッケージはそれぞれ設定を追加することができます
 例えば、 qt パッケージは QTDIR 環境変数を設定します。
 </p>
 <p>
-環境を整えたら、次の<xref chapter="packages" >パッケージのインストール</xref>の章に進み、 Fink のパッケージ管理ツールゐお使った、便利なパッケージのインストール方法をお読み下さい。
+環境を整えたら、次の<xref chapter="packages" >パッケージのインストール</xref>の章に進み、 Fink のパッケージ管理ツールを使ったパッケージのインストール方法をお読み下さい。
 </p>
 </section>
 </chapter>
@@ -318,7 +318,7 @@ Fink のパッケージはそれぞれ設定を追加することができます
 <title>dselect によるバイナリパッケージのインストール</title>
 <p>
 <code>dselect</code> は、入手可能なパッケージの一覧を表示し、インストールするものを選択できるプログラムです。
-これは Terminal.app 内で動作しますが、 &quot;スクリーン&quot;全体を簡単なキーボードナビゲーションで使います。
+これはターミナル.app 内で動作しますが、 &quot;スクリーン&quot; 全体を簡単なキーボードナビゲーションで使います。
 他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、あらかじめ root になるか、 sudo を使い:
 </p>
 <codeblock>sudo dselect</codeblock>
@@ -520,7 +520,7 @@ xfree86-base:
 このパッケージはリアルです。
 XFree86 4.2.1.1 の全てを Fink パッケージとしてインストールします。
 柔軟性に対応できるよう、このパッケージに XDarwin サーバーは含まれていません。
-これを追加するには、 xfree860rootless パッケージをインストールして下さい
+これを追加するには、 xfree86-rootless パッケージをインストールして下さい
 </p>
 </li>
 <li>
@@ -780,7 +780,7 @@ Mac OS X 10.0 以前はサポートされていません。
 </ul>
 </section>
 <section name="downloding" >
-<title>Download 設定</title>
+<title>ダウンロード設定</title>
 <p>Fink がダウンロードする手段を変える設定はいくつかあります。</p>
 <ul>
 <li>
@@ -845,7 +845,7 @@ FTP サーバーやネットワークによっては、このオプションが 
 <p>
 <em>MirrorCountry:</em> 6 字のコード</p>
 <p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
-3 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+6 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
 例えば、日本の場合:</p>
 <codeblock>MirrorCountry: asi-JP</codeblock>
 </li>
