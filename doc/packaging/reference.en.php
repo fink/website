@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/13 06:56:48';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/17 09:20:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -625,7 +625,7 @@ before the PatchScript is run (if any).
 </p>
 <p>
 Remember that %n includes all %type_ variant data, so you may want to
-use %{ni{ here (perhaps with some specific %type_ expansions). It's
+use %{ni} here (perhaps with some specific %type_ expansions). It's
 easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
