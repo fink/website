@@ -1,13 +1,13 @@
 <?
 $title = "About";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/02 23:05:28 $';
+$cvs_date = '$Date: 2004/09/22 21:05:10 $';
 
 include "header.inc";
 ?>
 
 
-<h1>Más acerca de FInk</h1>
+<h1>Más acerca de Fink</h1>
 
 <h2>¿Qué es Fink?</h2>
 
@@ -17,7 +17,7 @@ Fink es un proyecto que desea traer todo el mundo del software Unix de
 <a href="http://www.opensource.apple.com/">Darwin</a> y a
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
 Por ello, tenemos dos objetivos.
-Primero, modificar el software existente de Códifo Abierto (Open Source)
+Primero, modificar el software existente de Código Abierto (Open Source)
 de tal manera que pueda compilarse y ejecutarse en Mac OS X.
 (Proceso al que se conoce como "porting" o generación de puertos.)
 Segundo, hacer el resultado del primer objetivo disponible al usuario
@@ -93,7 +93,7 @@ Y hay más. la mayoría de lo cual trabaja tras bambalinas para ti.
 Usted solo descarga e instala los programas que necesita.
 Fink le da la libertad de instalar XFree86 u otras soluciones X11 
 que usted prefiera.
-Si usted no desea X11, tambien es aceptable.
+Si usted no desea X11, también es aceptable.
 </p>
 
 
