@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Basics";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:33:31';
+$cvs_date = 'Date: 2005/03/16 18:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="shared.php?phpLang=en" title="Shared Code"><link rel="prev" href="index.php?phpLang=en" title="Porting Contents">';
 
 
@@ -37,7 +37,7 @@ include_once "header.en.inc";
 			
 			<p>Short story: If configure fails with 'Can't determine host type', copy config.guess and config.sub from /usr/share/libtool (/usr/libexec for OS versions prior to 10.2) into the current directory.</p>
 
-			<p>Long story: The GNU world uses a canonical format to specify system types. It has three parts: cpu type, manufacturer and operating system. Sometimes a fourth part is added - then the third part denotes the kernel, while the fourth denotes the operating system. All parts are lower case and concatenated using dashes. Some examples: <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. The host type for Mac OS X 10.0 is <code>powerpc-apple-darwin1.3</code>. Versions of Mac OS X 10.2 bring various <code>powerpc-apple-darwin6.x.0</code>, where "x" depends on the exact OS revision.</p>
+			<p>Long story: The GNU world uses a canonical format to specify system types. It has three parts: cpu type, manufacturer and operating system. Sometimes a fourth part is added - then the third part denotes the kernel, while the fourth denotes the operating system. All parts are lower case and concatenated using dashes. Some examples: <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. The host type for Mac OS X 10.0 is <code>powerpc-apple-darwin1.3</code>. Versions of Mac OS X 10.2 bring various <code>powerpc-apple-darwin6.x.0</code> and 10.3 gives <code>powerpc-apple-darwin7.x.0</code>, where "x" depends on the exact OS version.</p>
 
 			<p>Many packages that use autoconf want to know the host type of the system they are compiled on. (Side note: to support cross-compiling and porting, there are actually three types - the host type, the build type and the target type. Usually, they're all the same.) You can either pass the host type to the configure script as a parameter or you can let it guess.</p>
 

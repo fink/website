@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:33:31';
+$cvs_date = 'Date: 2005/03/16 18:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
 
@@ -85,6 +85,8 @@ The versioning scheme is compatible across all libtool versions.
 Side note:
 The libltdl library included with all libtool versions will only work
 on Darwin when dlcompat is installed.
+This is included with OS X starting with 10.3. For previous versions,
+one can install the fink "dlcompat" family of packages.
 </p>
 
 
