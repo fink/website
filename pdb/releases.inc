@@ -1,7 +1,7 @@
 <?
 $releases = array(
 	"10.3" => array(
-			array("0.7.0"),
+			array("0.7.1"),
 			"current-10.3-stable",
 			"current-10.3-unstable"
 			),
