@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.56 2003/11/14 03:26:30 htodd Exp $ */
+/* $Id: header.inc,v 1.57 2004/02/10 21:40:34 dmalloc Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -45,31 +45,10 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = filemtime($PATH_TRANSLATED);
 }
 
+?>
 
-// Log the access
-//session_start();
-//if(!isset($fsroot))
-//{
-// $fsroot = "./";
-//}
-//include($fsroot."db.inc.php");
-//include($fsroot."pws/stats.php");
-//include($fsroot."pws/bro.php");
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-//$conn = db_connect();
-// set the page id
-// we could set this variable to "Gallery" for photogallery, etc.
-//$page_id = $REQUEST_URI;
-// set the visitor id
-// I'll set this variable to session id, which is the simpliest way
-// This way I won't be able to get information if the user has been on my
-// page before - the better way is the usage of cookies.
-//$visitor_id = session_id();
-// and finaly log the access to the database
-//log_access($conn,$page_id,$visitor_id);
-
-
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>
