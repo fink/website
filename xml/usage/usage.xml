@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
 
-<article filename="usage">
+<article filename="usage" lang="en">
 <title>Fink Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.13 2002/10/07 13:33:22 fingolfin Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.14 2004/03/05 15:40:26 fingolfin Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
