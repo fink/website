@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/02/19 07:46:03 $';
+$cvs_date = '$Date: 2004/02/19 07:50:34 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ is fitting.
 <li><p><a href="fink-announce.php">fink-announce</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.announce">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.announce">NNTP</a>)<br>
 Announcement list for new Fink releases. (low traffic)</p></li>
-<li><p>a href="fink-i18n.php">fink-i18n</a> <a href="nntp://news.gmane.org/gmane.os.apple.fink.i18n">NNTP</a>)<br>
+<li><p><a href="fink-i18n.php">fink-i18n</a> (<a href="http://news.gmane.org/gmane.os.apple.fink.i18n">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.i18n">NNTP</a>)<br>
 Discussion and support on translation and Fink web-site issues.</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.beginners">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.beginners">NNTP</a>)<br>
