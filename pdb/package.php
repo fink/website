@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/08/17 06:34:03 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/08/28 17:54:44 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -34,9 +34,14 @@ if (!$rs) {
   $rmap = array();
   while ($row) {
     $lastrow = $row;
-    $rmap[$row[release]] = $row[version]."-".$row[revision];
+    if($row[epoch] > 0)
+		$epoch = "$row[epoch]:";
+	
+	$rmap[$row[release]] = $epoch.$row[version]."-".$row[revision];
+    
     $row = mysql_fetch_array($rs);
   }
+
   $row = $lastrow;
 
 $maintainer = mysql_fetch_row($qs);
@@ -58,13 +63,18 @@ $maintainer = mysql_fetch_row($qs);
       it_item2("<div style=\"white-space:nowrap\">$tree[1] (OS X 10.3):</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","");
     else
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>"
-      			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ? " ".$rmap[$cr] : "not present"
-       			, !strcmp($cr2, " ") ? $cr2 : $rmap[$cr2] ? " ".$rmap[$cr2] : "not present");
+      			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ?
+      			" <!-- a href=\"../packagedetails.php?tree=$cr&pkg=$package&version=$rmap[$cr]\" -->".$rmap[$cr]#."</a>" 
+      			: "not present"
+       			, !strcmp($cr2, " ") ? $cr2 : $rmap[$cr2] ? 
+      			" <!-- a href=\"../packagedetails.php?tree=$cr2&pkg=$package&version=$rmap[$cr2]\" -->".$rmap[$cr2]#."</a>" 
+       			: "not present");
   }
   it_end();
   print "<br>";
   it_start();
-  it_item("<p>Description:</p>", $row[desclong]);
+  $desc = $row[desclong];
+  it_item("<p>Description:</p>", $desc);
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
 
   // Get the maintainer field, and try to parse out the email address
@@ -103,9 +113,9 @@ $maintainer = mysql_fetch_row($qs);
 	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
 	} else {
 	  if($row = mysql_fetch_array($rs))
-	    it_item("SplitOffs:", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.$row[descshort]);
+	    it_item("SplitOffs:", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
 	  while ($row = mysql_fetch_array($rs)) {
-		it_item(" ", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.$row[descshort]);
+		it_item(" ", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
 	  }
 	}
   it_end();
