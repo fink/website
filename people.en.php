@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/12 11:58:23 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2004/04/13 01:25:42 $';
 
 include "header.inc";
 ?>
@@ -75,7 +75,8 @@ this list.</p>
 <ul>
 <li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
-<li>Alexander Hansen</li> <!-- support work on mailing lists! -->
+<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
+<li>The <a href="./doc/multilingual/intro.php?phpLang=en#organization"> translators</a></li>
 </ul>
 
 <h2>Occasional Contributors</h2>
