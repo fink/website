@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
-<article filename="readme" >
+<article filename="readme lang=fr" >
   <title>Fink Lisez-moi</title>
   <shorttitle>Lisez-moi</shorttitle>
-  <cvsid>$Id: readme.fr.xml,v 1.1 2004/03/06 18:37:59 michga Exp $</cvsid>
+  <cvsid>$Id: readme.fr.xml,v 1.2 2004/03/06 20:39:57 michga Exp $</cvsid>
   <preface>
     <p>
 Voici Fink, un système de gestion de paquets qui a pour but d'ouvrir toutes grandes les portes du monde des logiciels Open Source à  Darwin et Mac OS X.
