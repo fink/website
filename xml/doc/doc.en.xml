@@ -3,7 +3,7 @@
 <article filename="index" lang="en">
   <title>Fink - Documentation</title>
   <shorttitle>Documentation</shorttitle>
-  <cvsid>$Id: doc.en.xml,v 1.10 2004/07/11 15:44:55 michga Exp $</cvsid>
+  <cvsid>$Id: doc.en.xml,v 1.11 2004/07/15 16:27:46 michga Exp $</cvsid>
   <preface>
     <p>
 This is a collection of various documents written for Fink.
@@ -52,6 +52,7 @@ file) - slides from a presentation at the <link url="http://conferences.oreillyn
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</link>) </li>
       <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Porting Tips</varlink> - notes for porting
 Unix applications to Darwin</li>
+      <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">Packaging Tutorial</varlink> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
       <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">Packaging Manual</varlink> - how to create and
 maintain Fink packages</li>
     </ul>
