@@ -115,6 +115,8 @@ include_once "header.fr.inc";
        <li>Portage (<code>xml/porting/porting.en.xml</code>)</li>
        <li>Dernières nouvelles (<code>xml/news/news.xml</code>)</li>
       </ol>
+      <p>Vérifiez qu'il n'y a pas d'autres fichiers php, constantes ou navigation à traduire dans les sous-répertoires du répertoire <code>xml/web</code></p>
+      <p>Ne traduisez et ne modifiez aucun fichier php situé dans le répertoire <code>xml/web</code> ou ses sous-répertoires, s'il existe au début de ce fichier une ligne contenant "Generated from". Vous trouverez le fichier xml correspondant à traduire ou à modifier dans l'arborescence <code>xml</code>.</p>
       <p>Les fichiers <code>constants.*.inc</code> servent à traduire des mots inclus tels quels dans les fichiers PHP. La plupart correspondent à des articles de menu, situés en haut et à gauche des pages. Il vous faut les isoler des scripts  et créer un fichier constants.xx.inc pour votre langue. Pour ce faire, exécutez la commande suivante dans une fenêtre de terminal :</p>
       <pre>cp constants.fr.inc constants.xx.inc</pre>
       <p>où xx est votre code langue (par exemple de pour l'allemand).
@@ -176,6 +178,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         <li>Modifiez les premières lignes pour indiquer que le texte du fichier est écrit en français et que l'encodage est UTF-8 :
         <pre>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="fr" &gt; ...</pre></li>
+<li><b>Note très importante</b> : Vérifiez que la ligne cvsid en début de fichier n'est pas coupée en deux.</li>
         <li>Sauvegardez le fichier avec encodage UTF-8. Assurez-vous que l'encodage du texte est bien utf-8 et  ne modifiez que la partie texte dans le fichier.</li>
         <li>Quand vous aurez fini la traduction, ou quand vous voulez la tester, modifiez le fichier 
         <code>Makefile</code> pour ajouter votre langue :

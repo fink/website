@@ -156,6 +156,8 @@
        <li>Portage (<filename>xml/porting/porting.en.xml</filename>)</li>
        <li>Dernières nouvelles (<filename>xml/news/news.xml</filename>)</li>
       </ol>
+      <p>Vérifiez qu'il n'y a pas d'autres fichiers php, constantes ou navigation à traduire dans les sous-répertoires du répertoire <filename>xml/web</filename></p>
+      <p>Ne traduisez et ne modifiez aucun fichier php situé dans le répertoire <filename>xml/web</filename> ou ses sous-répertoires, s'il existe au début de ce fichier une ligne contenant "Generated from". Vous trouverez le fichier xml correspondant à traduire ou à modifier dans l'arborescence <filename>xml</filename>.</p>
       <p>Les fichiers <filename>constants.*.inc</filename> servent à traduire des mots inclus tels quels dans les fichiers PHP. La plupart correspondent à des articles de menu, situés en haut et à gauche des pages. Il vous faut les isoler des scripts  et créer un fichier constants.xx.inc pour votre langue. Pour ce faire, exécutez la commande suivante dans une fenêtre de terminal :</p>
       <codeblock>cp constants.fr.inc constants.xx.inc</codeblock>
       <p>où xx est votre code langue (par exemple de pour l'allemand).
@@ -215,6 +217,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         <li>Modifiez les premières lignes pour indiquer que le texte du fichier est écrit en français et que l'encodage est UTF-8 :
         <codeblock>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="fr" &gt; ...</codeblock></li>
+<li><em>Note très importante</em> : Vérifiez que la ligne cvsid en début de fichier n'est pas coupée en deux.</li>
         <li>Sauvegardez le fichier avec encodage UTF-8. Assurez-vous que l'encodage du texte est bien utf-8 et  ne modifiez que la partie texte dans le fichier.</li>
         <li>Quand vous aurez fini la traduction, ou quand vous voulez la tester, modifiez le fichier 
         <code>Makefile</code> pour ajouter votre langue :
@@ -395,6 +398,8 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
     <section name="prompt-update">
       <title>Mise à jour rapide de la documentation existante</title>
       <p>On fait un <xref chapter="files" section="committing">commit</xref> et l'on <xref chapter="files" section="website">active</xref> immédiatement la documentation maître anglaise, - quelque soit la personne qui change le fichier XML, elle doit aussi faire le commit des fichiers PHP et HTML et activer les changements. Ensuite les équipes de traduction mettent à jour leurs versions, font un <xref chapter="files" section="committing">commit</xref> de <em>tous</em> les fichiers (XML et PHP), puis <xref chapter="files" section="activate">activent</xref> les changements.</p>
+      <p><em>Ne</em> changez <em>jamais</em> un fichier php généré dynamiquement ; changez le fichier xml correspondant.</p>
+      <p><em>Vérifiez</em> que la ligne cvsid en début de fichier n'est pas coupée en deux.</p>
       <p><em>Notes :</em></p>
       <ol>
         <li>Les modifications du guide d'internationalisation (ce document) sont <em>toujours</em> faites suivant ce schéma, car les changements affectent l'ensemble des équipes de traduction.</li>

@@ -43,6 +43,8 @@ include_once "header.fr.inc";
     <h2><a name="prompt-update">3.4 Mise à jour rapide de la documentation existante</a></h2>
       
       <p>On fait un <a href="files.php?phpLang=fr#committing">commit</a> et l'on <a href="files.php?phpLang=fr#website">active</a> immédiatement la documentation maître anglaise, - quelque soit la personne qui change le fichier XML, elle doit aussi faire le commit des fichiers PHP et HTML et activer les changements. Ensuite les équipes de traduction mettent à jour leurs versions, font un <a href="files.php?phpLang=fr#committing">commit</a> de <b>tous</b> les fichiers (XML et PHP), puis <a href="files.php?phpLang=fr#activate">activent</a> les changements.</p>
+      <p><b>Ne</b> changez <b>jamais</b> un fichier php généré dynamiquement ; changez le fichier xml correspondant.</p>
+      <p><b>Vérifiez</b> que la ligne cvsid en début de fichier n'est pas coupée en deux.</p>
       <p><b>Notes :</b></p>
       <ol>
         <li>Les modifications du guide d'internationalisation (ce document) sont <b>toujours</b> faites suivant ce schéma, car les changements affectent l'ensemble des équipes de traduction.</li>
