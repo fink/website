@@ -1,5 +1,5 @@
 ﻿<?
-/* $Id: constants.fr.inc,v 1.4 2004/03/25 01:34:51 michga Exp $ */
+/* $Id: constants.fr.inc,v 1.5 2004/06/24 07:00:25 michga Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -14,6 +14,9 @@
 // | usage:    1. read the comments                                           |
 // |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
+
+/* The Sections.  Used in Menu Navigation Bar */
+define (FINK_LC_ALL, 'fr_FR');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'Accueil');
@@ -47,6 +50,6 @@ define (META_DESCRIPTION, "Le projet Fink a pour but d'ouvrir toutes grandes les
 define (HEADER_HOSTED_BY, 'Hébergé par {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Langues disponibles ');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Généré dynamiquement par ');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Dernière mise à jour : %x %X');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Dernière mise à jour le %d %B %Y à %R %Z');
 define (FOOTER_LAST_CHANGED, 'Dernière mise à jour le %d %b %Y à %R %Z par {author}');
 ?>

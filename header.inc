@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.75 2004/04/20 05:59:26 benh57 Exp $ */
+/* $Id: header.inc,v 1.76 2004/06/24 07:00:25 michga Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -180,6 +180,15 @@ function it_item2($title, $item1, $item2) {
 
 function it_end() {
 echo '</table>';
+}
+
+// Used in index
+function convert_date_to_locale ($initialstringdate) {
+	$date_exploded = @explode(' ', $initialstringdate, 3);
+	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+	$search_month = array_search($date_exploded[1], $array_month)+1;
+	$date_converted=gmstrftime('%d %B %Y', mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
+	return $date_converted;
 }
 
 // Used in News
