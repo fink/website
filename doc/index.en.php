@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/21 15:41:10';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/29 01:07:30';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.6 2004/03/21 15:41:10 dmrrsn Exp $-->
-<p>
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.8 2004/03/29 01:07:30 alexkhansen Exp $-->
+    <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
 or Darwin without Fink and want to learn about porting Unix software.
@@ -57,10 +57,11 @@ maintain Fink packages</li>
   <h2><a name="otherdoc">Other Documents</a></h2>
     
     <ul>
-      <li><a href="multilingual/index.php">Internationalization Guide</a>- material concerning
+      <li><a href="multilingual/index.php">Internationalization Guide</a> - material concerning
 the ongoing website
 internationalization 
 effort</li>
+      <li><a href="netiquette/index.php">Mailing List Netiquette</a> - how best to employ the Fink mailing lists.</li>
     </ul>
   
 

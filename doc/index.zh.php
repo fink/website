@@ -1,13 +1,13 @@
 <?
 $title = "文档";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/21 15:41:10';
+$cvs_date = 'Date: 2004/03/24 18:14:58';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.5 2004/03/21 15:41:10 dmrrsn Exp $-->
+<h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.6 2004/03/24 18:14:58 dmrrsn Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。

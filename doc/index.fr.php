@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/21 15:41:10';
+$cvs_date = 'Date: 2004/03/24 18:14:58';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.5 2004/03/21 15:41:10 dmrrsn Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.6 2004/03/24 18:14:58 dmrrsn Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
