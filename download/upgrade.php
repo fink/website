@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/03/01 01:25:08 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2003/04/16 01:42:33 $';
 
 include "header.inc";
 ?>
@@ -39,6 +39,8 @@ complicated.  Please be sure to follow the upgrade instructions very
 carefully to ensure a successful upgrade.  There are separate instructions
 for binary installations and for source installations.
 </p>
+<p>If you are having trouble upgrading a source installation, consult
+<link url="fix-upgrade.php">these special instructions.</link></p>
 <?
 it_start();
 it_item('<b>Current installation (binary release)</b>', '<b>Upgrade method</b>');
