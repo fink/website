@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.43 2004/02/12 15:44:11 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.44 2004/02/13 14:29:08 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -983,7 +983,7 @@ permanent choice in the Preferences dialog.
 </p>
 <codeblock>Fatal server error:
 Could not find keymapping file .</codeblock>
-<p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, from source (e.g. <code>fink install xfree86</code>), since these versions don't need the keymapping files.</p>
+<p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, since these versions don't need the keymapping files.</p>
 <codeblock>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</codeblock>
 <p>

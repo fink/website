@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.169 2004/02/12 16:12:27 dmalloc Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.170 2004/02/13 14:29:08 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -801,8 +801,11 @@ the Virex folks having made errors in the way they set things up).</p>
 </question>
 <answer>
 <p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>. A workaround is to enter the following command</p>
+<p>tcsh users:</p>
 <codeblock>setenv TERM xterm-color</codeblock>
-<p>before you run <filename>dselect</filename>.</p>
+<p>bash users:</p>
+<codeblock>export TERM=xterm-color</codeblock>
+<p>before you run <filename>dselect</filename>.  You may want to put this in your startup file (e.g. <code>.cshrc</code> | <code>.profile</code>) so that it gets run all of the time.</p>
 </answer>
 </faqentry>
 <faqentry name="perl-undefined-symbol" >
