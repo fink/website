@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.45 2002/05/30 21:19:38 fingolfin Exp $ */
+/* $Id: header.inc,v 1.46 2002/06/11 00:01:33 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -111,9 +111,7 @@ for ($i = 0; $i < sizeof($sections); $i += 3) {
   print '</a></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
-?>img/sect-bottom.gif" width="120" height="3" border="0"
-alt=""></td></tr>
+<tr align="left"><td height="3" colspan="2" bgcolor="#999999" class="layout"></td></tr>
 
 <? /* intra-section navigation */
 if (!$nonav) {
@@ -156,24 +154,22 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
   }
 
   if ($link) {
-    print '<tr align="left" valign="middle"><td class="layout">';
+    print '<tr class="layout" align="left" valign="middle"><td class="layout">';
     print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "/></a>';
     print '</td><td class="layout">';
     print '<span class="nav">'.$link.$navbox[$i+1].'</a></span>';
   } else {
-    print '<tr align="left" valign="middle" bgcolor="#87b9e7"><td class="layout">';
+    print '<tr class="layout" align="left" valign="middle" bgcolor="#87b9e7"><td class="layout">';
     print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- "/>';
     print '</td><td bgcolor="#87b9e7" class="layout">';
     print '<span class="nav">'.$navbox[$i+1].'</span>';
   }
   print '</td></tr>'."\n";
 
-  print '<tr bgcolor="#ffffff"><td class="layout"><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td class="layout"><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+  print '<tr class="layout" bgcolor="#ffffff"><td class="layout" height="1"></td><td class="layout" height="1"></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
-?>img/sect-bottom.gif" width="120" height="3" border="0"
-alt=""></td></tr>
+<tr align="left"><td height="3" colspan="2" bgcolor="#999999" class="layout"></td></tr>
 
 <?
 } /* end !$nonav */
