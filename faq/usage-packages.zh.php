@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/17 13:39:48';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/30 04:57:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 include_once "header.inc";

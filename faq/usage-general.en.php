@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/04/15 13:28:38';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/30 04:57:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -155,7 +155,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	  certain locations, and if they are found, considers that
 	  virtual package "installed".
 	</p><p>
-	  You can run the program <code>fink-virtual-packages</code>
+	  You can run the program <code>fink-virtual-pkgs</code>
 	  (part of the fink package) to get a listing of exactly what
 	  fink thinks is installed. Adding the <code>--debug</code>
 	  flag will give lots of diagnostic information about exactly

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（１）";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/17 13:39:48';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/30 04:57:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
 include_once "header.inc";
@@ -90,7 +90,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
 	  相反，它们是“虚拟软件包”，软件包数据由 fink 程序自身根据一个手工安装的程序的预配置清单来产生。
 	  对每个虚拟软件包，fink 会检查特定位置的一些特定文件，如果找到这些文件，就会认为这个虚拟软件包“已经安装”。
 	</p><p>
-	  你可以运行 <code>fink-virtual-packages</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
+	  你可以运行 <code>fink-virtual-pkgs</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
 	  使用 <code>--debug</code> 标志可以获取有关 fink 检查了哪些文件诊断信息。
 	</p><p>
 	  不幸的是，没有办法让你自己安装任意的软件(在 fink 之外)并让 fink 识别到它，而不是 fink 自己的版本。

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 21:23:54';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/30 04:57:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 include_once "header.inc";
@@ -127,7 +127,7 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 	  見つかった場合はバーチャルパッケージがインストール済みと判断します。
 	</p><p>
 	  fink が認識しているインストール済みの一覧は、
-	  <code>fink-virtual-packages</code> を実行することで見ることができます。
+	  <code>fink-virtual-pkgs</code> を実行することで見ることができます。
 	  <code>--debug</code> フラグを追加すると、具体的にどのファイルを見ているのかという診断情報も確認できます。
 	</p><p>
 	  任意のプログラムを (fink 外で) インストールし、 fink にこれを認識させる仕組みは残念ながらありません。
