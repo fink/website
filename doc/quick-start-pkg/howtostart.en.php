@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/17 22:36:19';
+$cvs_date = 'Date: 2004/07/18 15:45:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -14,7 +14,7 @@ include_once "header.en.inc";
 <h2><a name="Learn">1.1 Learn the Basics</a></h2>
 <p>
 <b>Please note:</b> In this document we assume that fink is installed into
-/sw - the default location. If you see a codeblock similar to
+<code>/sw</code> - the default location. If you see a codeblock similar to
 </p>
 <pre>
 finkdev% somecommand

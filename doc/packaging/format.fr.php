@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/15 04:50:17';
+$cvs_date = 'Date: 2004/07/18 15:52:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -144,7 +144,7 @@ préfixe d'<b>I</b>nstallation du paquet parent, équivalent à %D%P (identique
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-chemin des rustines
+chemin des rustines. Ce raccourci ne doit être utilisé que dans le champ <code>PatchScript</code>.
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>

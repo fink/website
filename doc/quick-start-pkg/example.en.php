@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - Example";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/17 22:36:19';
+$cvs_date = 'Date: 2004/07/18 15:45:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=en" title="How to Start">';
 
 
@@ -121,7 +121,7 @@ change to the next mirror set. More information about this problem is in the
 <a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">FAQ</a>.
 </p>
 <p>
-So we can now get the md5 by running <code>md5 /sw/src/maxwell-0.5.1.tar.gz</code>,
+So we can now get the md5 by running <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code>,
 and add it to the .info file:
 </p>
 <pre>
