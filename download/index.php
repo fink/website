@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/02/17 13:26:51 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2004/02/20 15:00:56 $';
 
 include "header.inc";
 ?>
@@ -57,21 +57,42 @@ particularly
 2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
 </li>
 <li><p>
-Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>" 
+Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Tools->index</em>.
 </p>
 </p></li>
-<li><p>Once those two commands are finished you can install packages. There are several ways to install packages in fink:
+<li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release  After you do this you can install other packages.  There are several ways to do this:
+<ul>
+<li>
+<p>Use the included Fink Commander to select and install packages. Fink Commander provides an easy to use GUI for Fink. This is the recommended method for new users, or users who are not comfortable with the command line.  Fink Commander has Binary and Source menus.  You should install from binaries if you don't have the Developer Tools installed, or don't want to build packages yourself.</p>
+<ul><li><p>The Fink Commander sequence to update <code>fink</code> from binaries is as follows:</p>
 <ol>
-<li>
-Use the included Fink Commander to select and install packages. Fink Commander provides an easy to use GUI for fink. This is the recommended method for new users, or users who are not comfortable with the command line.
+<li>Binary->Update descriptions</li>
+<li>Select the <code>fink</code> package.</li>
+<li>Binary->Install</li>
+</ol></li>
+<li><p>The recommended Fink Commander sequence sequence to update <code>fink</code>is as follows:</p>
+<ol>
+<li>Source->Selfupdate</li> 
+<li>Tools->Interact with Fink...
+<li>Make sure "Accept default response" is selected, and click "Submit".</li>
+<li><code>fink</code> and other base packages will be built and run automatically</li>
+</ol></li></ul>
+<p>Now that you've updated <code>fink</code>, you can install other packages.</p>  
+<ul>
+<li>To install from binaries, select the package, and use Binary->Install.</p></li>
+<li>To install from source, select the package, and use Source->Install</li>
 </ul>
+</li>
 <li>
-Use apt-get. Apt-get will fetch and install binary packages for you, saving compiling time. Note, however, not all fink packages are in binary form. To use apt-get open a Terminal.app window and type, for example, "<code>sudo apt-get install gimp</code>".
-</ul>
+<p>Use apt-get. Apt-get will fetch and install binary packages for you, saving compiling time, You should either use this method or the Fink Commander binary method (above) if you don't have the Developer Tools installed.</p>
+<p>To update <code>fink</code> open a Terminal.app window and type <code> sudo apt-get update ; sudo apt-get install fink</code></p>
+<p>Once you've updated <code>fink</code>, you can install other packages, using the same syntax, e.g <code>sudo apt-get install gimp</code> to install the Gimp.  Note, however, that not all fink packages are in binary form.</p>
+</li>
 <li>
-Install from source. Use "<code>fink install</code>" to fetch and compile from source code.  For example, to install the Gimp, run "<code>fink install gimp</code>". 
+<p>Install from source. To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), "rsync".  This will automatically update the <code>fink</code> package.</p>
+<p>Once <code>fink</code> is updated, you can use "<code>fink install</code>" to fetch and compile from source code.  For example, to install the Gimp, run <code>fink install gimp</code>.</p> 
 </li> 
-</ol>
+</ul>
 
 </li> 
 </ol>
