@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.129 2003/09/06 21:20:22 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.130 2003/09/07 00:35:07 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -929,6 +929,14 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </question>
 <answer>
 <p>This header, and many others, are provided by the DevSDK package of the Developer Tools.  Check whether <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your system.  If not, then run the Dev Tools Installer again, and install the DevSDK package using a Custom Install.</p>
+</answer>
+</faqentry>
+<faqentry name="multiple-dependencies" >
+<question>
+<p>I can't update, because Fink is &quot;unable to resolve version conflict on multiple dependencies&quot;.</p>
+</question>
+<answer>
+<p>To get around this, try updating a single package, then try to use &quot;fink update-all&quot; again.  If you still get the message, repeat the process.</p>
 </answer>
 </faqentry>
 </chapter>
