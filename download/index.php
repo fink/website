@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/11 02:14:28 $';
+$cvs_date = '$Date: 2002/12/18 00:09:23 $';
 
 include "header.inc";
 ?>
@@ -26,9 +26,9 @@ the binary release.
 <ol>
 <li><p>
 Download the installer disk image:<br>
-<a href="http://telia.dl.sourceforge.net/sourceforge/fink/Fink-0.5.0a-Installer.dmg">Fink
+<a href="http://prdownloads.sourceforge.net/sourceforge/fink/Fink-0.5.0a-Installer.dmg?download">Fink
 0.5.0a Binary Installer</a> - 11 MB<br>
-(10.1 users - use <a href="http://telia.dl.sourceforge.net/sourceforge/fink/Fink-0.4.1-installer.dmg">Fink
+(10.1 users - use <a href="http://prdownloads.sourceforge.net/sourceforge/fink/Fink-0.4.1-installer.dmg?download">Fink
 0.4.1</a>)
 </p>
 </li>
