@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:35:26 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/11 13:59:06 $';
 
 include "header.inc";
 ?>
@@ -33,7 +33,7 @@ anche informazioni riguardanti FSF e le licenze GNU</li>
 Initiative</a> - Informazioni generali riguardo Open Source
 (esp. licenze)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
-la pi?grande directory di software Open Source sul web</li>
+la più grande directory di software Open Source sul web</li>
 <li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
 un progetto Open Source di Apple</li>
 <li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
@@ -47,9 +47,8 @@ Un WindowManager molto carino che tenta di includere X11 in Mac OS X.
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">La distribuzione GNU-Darwin
 </a></li>
-<li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin
+<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
 Ports</a> - porting della collezione FreeBSD</li>
-<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - unisce e incrementa le collezioni di port *BSD</li>
 </ul>
 
 <p>Collezione mista di pacchetti</p>
@@ -72,7 +71,7 @@ target="_blank">HEP on X</a> - Collezione di pacchetti RPM</li>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 portale di informazioni e novittｪ contenente anche un archivio software</li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
+<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 usare XFree86 su Darwin e Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 novittｪ articoli e archivio software</li>

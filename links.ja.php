@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/06 02:23:41 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/11 13:59:06 $';
 
 include "header.inc";
 ?>
@@ -49,10 +49,8 @@ X11 と Mac OS X を統合しようとしている X11 ウィンドウマネー�
 <p>似ているプロジェクト</p>
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin Distribution</a></li>
-<li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin Ports</a> - 
+<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin Ports</a> - 
 FreeBSD の ports collection をポートしている。</li>
-<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - 
-*BSD の port collections を統合、改善している。</li>
 </ul>
 
 <p>ポートされたパッケージ集</p>
@@ -71,7 +69,7 @@ RPM パッケージのコレクション。</li>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 ポートに関する情報やニュース。ソフトウェアアーカイブもある。</li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
+<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 XFree86 を Darwin や Mac OS X で使う。</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 ニュース、記事、ソフトウェアアーカイブ。</li>

@@ -1,7 +1,7 @@
 <?
 $title = "Liens";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/26 02:02:12 $';
+$cvs_date = '$Date: 2004/11/11 13:59:06 $';
 
 include "header.inc";
 ?>
@@ -46,9 +46,8 @@ développement Darwin</li>
 <p>Projets similaires</p>
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin Distribution</a></li>
-<li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin
+<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
 Ports</a> - portage de la collection des ports FreeBSD</li>
-<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - unification et amélioration des collections de port *BSD</li>
 </ul>
 
 <p>Collections diverses de paquets portés sur Mac OS X</p>
@@ -71,7 +70,7 @@ target="_blank">HEP on X</a> - collection de paquets RPM</li>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 information et nouvelles sur le portage, plus une archive de logiciels</li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
+<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 ou comment faire tourner XFree86 sur Darwin et Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 nouvelles, articles et archive de logiciels</li>

@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/03 12:06:02 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/11 13:59:06 $';
 
 include "header.inc";
 ?>
@@ -46,9 +46,8 @@ ein empfehlenswerte Fenster Manager für X11. Er biete eine Symbiose zwischen Ma
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin
 Distribution</a></li>
-<li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin
+<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
 Ports</a> - port der FreeBSD ports Kollektion</li>
-<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - Verbesserung und Verschmelzung der verschiedenen *BSD port Kollektion</li>
 </ul>
 
 <p>Buntes allerlei an portierten Paketen</p>
@@ -71,7 +70,7 @@ target="_blank">HEP on X</a> - Eine Sammlung von RPM Paketen</li>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 porting Informationen und Neuigkeiten, sowie ein Software Archiv</li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
+<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 wie läuft XFree86 UF Darwin und Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 Neuigkeiten, Artikel und ein Software Archiv</li>

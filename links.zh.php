@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/11 13:59:06 $';
 
 include "header.inc";
 ?>
@@ -38,9 +38,8 @@ Darwin 开发。
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin
 Distribution</a></li>
-<li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin
+<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
 Ports</a> － 对 FreeBSD ports 系列软件进行移植。</li>
-<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> － 整合和改进 *BSD port 系列软件</li>
 </ul>
 
 <p>其它已移植软件的混合</p>
@@ -62,7 +61,7 @@ target="_blank">HEP on X</a> － 一些 RPM 包的集合。</li>
 <p>具有相关信息的站点</p>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> － 移植信息和新闻，以及一个软件归档库。</li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> － 在 Darwin 和 Mac OS X 上运行 XFree86。</li>
+<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> － 在 Darwin 和 Mac OS X 上运行 XFree86。</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> － 新闻，文章和软件归档库。</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> － 帮助在 Mac 上运行 GIMP，GTK 以及 X。</li>
 </ul>
