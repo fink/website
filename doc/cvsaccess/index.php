@@ -1,24 +1,24 @@
 <?
 $title = "Fink CVS Access";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/20 17:04:34';
+$cvs_date = 'Date: 2001/10/09 12:23:09';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.5 2001/09/20 17:04:34 chrisp Exp $</i></p>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.6 2001/10/09 12:23:09 chrisp Exp $</i></p>
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
 get the newest stuff.
 This page tells you how to set up an existing Fink installation for
 updating via CVS.
-The information on this page applies to Fink 0.2.x.
+The information on this page applies to Fink 0.2.x and later.
 </p>
 <a name=""><h2>Fink CVS Structure</h2></a>
-<p>Fink 0.2 has two CVS modules. The module <tt><nobr>fink</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/fink/">ViewCVS</a>)
+<p>Fink has two CVS modules. The module <tt><nobr>fink</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/fink/">ViewCVS</a>)
 contains the package manager plus the stuff needed for bootstrap. The
 module <tt><nobr>packages</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
 contains the package descriptions and patches. In theory, these two
