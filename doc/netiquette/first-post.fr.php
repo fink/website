@@ -69,4 +69,3 @@ gcc &lt;drapeaux, fichiers, etc...&gt;
 <? include_once "../../footer.inc"; ?>
 
 
-

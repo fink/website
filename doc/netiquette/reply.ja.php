@@ -39,4 +39,3 @@ include_once "header.ja.inc";
 <? include_once "../../footer.inc"; ?>
 
 
-

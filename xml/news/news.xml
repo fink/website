@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.139 2004/09/20 15:56:45 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.140 2004/09/22 22:40:26 michga Exp $</cvsid>
 
 
 <newsitem>
@@ -38,7 +38,7 @@ If you have questions or problems, please try the Fink mailing lists.  You can l
 
 <p>
 Please make sure you pick the <em>appropriate installer</em> for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Fink 0.6.3 will only install on Mac OS X 10.2.*, while Fink 0.7.1 will only install on Mac OS X 10.3.*
 </p>
 
         <p>
