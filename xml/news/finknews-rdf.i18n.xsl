@@ -25,7 +25,7 @@
    <description>Fink Project News</description>
    <dc:language><xsl:value-of select="$lang-ext" /></dc:language>
    <!-- <dc:creator>blog@racoonfink.com</dc:creator> -->
-   <!-- <dc:rights>Copyright 2004</dc:rights> -->
+   <!-- <dc:rights>Copyright 2005</dc:rights> -->
    <dc:date><xsl:value-of select="$currdate" /></dc:date>
    <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
    <xsl:apply-templates select="newsitem[position()&lt;=15]" />
