@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.72 2004/03/12 02:20:35 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.73 2004/03/12 04:37:55 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -183,7 +183,7 @@ function insert_sub ($navbox, $active_page) {
 	
 	for ($i = 0; $i <= sizeof($navbox) - 2 ; $i += 2) {
 		$filename = explode('?', $navbox[$i]);
-		if ($relativepath . '/' . $filename[0] == $_SERVER['SCRIPT_NAME']) {
+		if ($relativepath . '/' . $filename[0] == $_SERVER['SCRIPT_NAME'] || '/' . $filename[0] == $_SERVER['SCRIPT_NAME']) {
 			$active_page = $i;
 			break;
 		}
