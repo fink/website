@@ -92,7 +92,7 @@ options.
 <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the Fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your Fink applications. The solution is to preface the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
 </a>
 <a name="x-options">
-<div class="question"><p><b>Q7.5: I'm bewildered by the Xwindows options: Apple X11, XFree86, etc. What should I install?</b></p></div>
+<div class="question"><p><b>Q7.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</b></p></div>
 <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them. Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable. There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the only choice. Don't forget to install the X11 SDK (on the XCode disk) if you want to compile programs.</p><p> Under Jaguar, the most popular choices, and the Fink packages to make them work are:</p><ul>
 		<li>
 			<p>4.2.x built via Fink: install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
@@ -107,7 +107,7 @@ options.
 </a>
 <a name="no-display">
 <div class="question"><p><b>Q7.6: When I try to run an application, I get a message that says "cannot open display:". What do I need to do?</b></p></div>
-<div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your Xwindows display. Make sure you do the following:</p><p>1. Start Xwindows (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for Xwindows, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
+<div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your X display. Make sure you do the following:</p><p>1. Start X (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for X, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
 
 </a>
 <a name="suggest-package">

@@ -61,9 +61,7 @@ work?</a></li>
 <li><a href="usage-fink.php#bindist">4.7 The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</a></li>
-<li><a href="usage-fink.php#unstable">4.8 There's this package in
-unstable that I want to install, but the fink command just says 'no
-package found'. How can I install it?</a></li>
+<li><a href="usage-fink.php#unstable">4.8 There's this package in unstable that I want to install, but the fink command just says 'no package found'. How can I install it?</a></li>
 <li><a href="usage-fink.php#sudo">4.9 I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
 <li><a href="usage-fink.php#exec-init-csh">4.10 When I try to run init.csh or init.sh, I get a "Permission denied" error. What am I doing wrong?</a></li>
@@ -121,7 +119,7 @@ Where did they come from?</a></li>
 <li><a href="usage-general.php#compile-myself">7.3 How do I compile something
 myself using Fink-installed software?</a></li>
 <li><a href="usage-general.php#apple-x11-applications-menu">7.4 I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</a></li>
-<li><a href="usage-general.php#x-options">7.5 I'm bewildered by the Xwindows options: Apple X11, XFree86, etc. What should I install?</a></li>
+<li><a href="usage-general.php#x-options">7.5 I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</a></li>
 <li><a href="usage-general.php#no-display">7.6 When I try to run an application, I get a message that says "cannot open display:". What do I need to do?</a></li>
 <li><a href="usage-general.php#suggest-package">7.7 I don't see my favorite program in Fink. How do I suggest a new package for inclusion in Fink?</a></li>
 </ul>

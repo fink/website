@@ -89,13 +89,13 @@ statement</a> for details.
 <div class="answer"><p><b>A:</b> 
 			Darwinports and Fink are complementary projects. There is some
 			overlap between the two projects, and several people contribute to
-			both the Fink and Opendarwin projects. For example, Benjamin Reed
-			is doing the KDE packages for both. Darwinports/Opendarwin makes
+			both the Fink and OpenDarwin projects. For example, Benjamin Reed
+			is doing the KDE packages for both. Darwinports/OpenDarwin makes
 			use of patches from Fink, and we have discussed collaboration
 			on a new dependency engine.
 		</p><p>
-			Opendarwin started from scratch to try a different approach to a
-			packaging system. Read the statement on <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">Opendarwin.org</a>
+			OpenDarwin started from scratch to try a different approach to a
+			packaging system. Read the statement on <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a>
 			for details.
 		</p></div>
 </a>

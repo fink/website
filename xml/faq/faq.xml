@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.155 2003/12/06 01:41:36 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.156 2003/12/08 04:13:26 htodd Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -242,14 +242,14 @@ statement</link> for details.
 <p>
 			Darwinports and Fink are complementary projects. There is some
 			overlap between the two projects, and several people contribute to
-			both the Fink and Opendarwin projects. For example, Benjamin Reed
-			is doing the KDE packages for both. Darwinports/Opendarwin makes
+			both the Fink and OpenDarwin projects. For example, Benjamin Reed
+			is doing the KDE packages for both. Darwinports/OpenDarwin makes
 			use of patches from Fink, and we have discussed collaboration
 			on a new dependency engine.
 		</p>
 <p>
-			Opendarwin started from scratch to try a different approach to a
-			packaging system. Read the statement on <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >Opendarwin.org</link>
+			OpenDarwin started from scratch to try a different approach to a
+			packaging system. Read the statement on <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link>
 			for details.
 		</p>
 </answer>
@@ -446,37 +446,23 @@ from source using <code>fink install <em>packagename</em>
 </code>.
 Make sure you have the Developer Tools installed before you try this.
 (If there is no installer for the Developer Tools in your
-<code>/Applications</code> folder, you can get them from the <link url="http://connect.apple.com/" >Apple Developer Connection</link> after
-free registration.)
+<code>/Applications</code> folder, you can get them from the <link url="http://connect.apple.com/" >Apple Developer Connection</link> after free registration.)
 See also the question about unstable below.
 </p>
 </answer>
 </faqentry>
 <faqentry name="unstable" >
-<question>
-<p>There's this package in
-unstable that I want to install, but the fink command just says 'no
-package found'. How can I install it?</p>
-</question>
-<answer>
-<p>
-First make sure you understand what 'unstable' means.
-Packages in there usually have not been tested at all, many have
-problems or just won't compile.
-That is why Fink doesn't search the unstable tree by default.
-</p>
-<p>
-If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <filename>fink.conf</filename>. Edit <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code> to the <code>Trees:</code> line, if not present.  Then you'll need to run <code>fink selfupdate</code> to download the package description files. Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are
-any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
-to <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note that your package may depend on other packages (or particular versions) which are also only in unstable. You will have to move their .info and .patch files as well. After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p>
-<p>If you want Fink to use all of unstable, edit
-<filename>/sw/etc/fink.conf</filename>, add
-<code>unstable/main</code> and <code>unstable/crypto</code> 
-to the <code>Trees:</code>
-line, and then run <code>fink selfupdate; fink index</code>.
-</p>
-</answer>
+	<question>
+		<p>There's this package in unstable that I want to install, but the fink command just says 'no package found'. How can I install it?</p>
+	</question>
+	<answer>
+		<p>First make sure you understand what 'unstable' means. Packages in the unstable tree usually have not been tested by more than one person. For that reason, Fink doesn't search the unstable tree by default.</p>
+		<p>Packages often have dependencies, and packages in unstable often depend on other packages in unstable. For that reason, it is best to activate all of unstable.</p>
+		<p>If you want Fink to use all of unstable, edit <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code> and <code>unstable/crypto</code> to the <code>Trees:</code> line, and then run <code>fink selfupdate; fink index</code>.</p>
+		<p>If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <filename>fink.conf</filename>. Edit <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code> to the <code>Trees:</code> line, if not present. Then you'll need to run <code>fink selfupdate</code> to download the package description files. Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename> to <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note that your package may depend on other packages (or particular versions) which are also only in unstable. You will have to move their .info and .patch files as well. After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p>
+	</answer>
 </faqentry>
+
 <faqentry name="sudo" >
 <question>
 <p>I'm tired of typing my password into sudo again
@@ -1090,7 +1076,7 @@ Your XFree86 installation is missing or incomplete. Please make sure you have
 an XFree86 release installed and retry the installation of the system-xfree86
 package.
 </codeblock>
-<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
+<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the XCode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
 <p>If, on the other hand, you get the following message:</p>
 <codeblock>An error occurred trying to find your XFree86 installation's
 version. This really shouldn't happen, so I'm bailing. :(</codeblock>
@@ -1230,7 +1216,7 @@ options.
 </faqentry>
 <faqentry name="x-options" >
 <question>
-<p>I'm bewildered by the Xwindows options: Apple X11, XFree86, etc. What should I install?</p>
+	<p>I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</p>
 </question>
 <answer>
 	<p>All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them. Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable. There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p>
@@ -1254,9 +1240,9 @@ options.
 <question>
 <p>When I try to run an application, I get a message that says &quot;cannot open display:&quot;. What do I need to do?</p></question>
 <answer>
-<p>This error means that the system isn't connecting with your Xwindows display. Make sure you do the following:</p>
-<p>1. Start Xwindows (Apple's X11, XFree86, ...).</p>
-<p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for Xwindows, you can do this with</p>
+<p>This error means that the system isn't connecting with your X display. Make sure you do the following:</p>
+<p>1. Start X (Apple's X11, XFree86, ...).</p>
+<p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for X, you can do this with</p>
 <codeblock>setenv DISPLAY :0</codeblock>
 <p>if you are running <code>tcsh</code>, or</p>
 <codeblock>export DISPLAY=:0</codeblock>

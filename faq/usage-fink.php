@@ -131,30 +131,15 @@ from source using <code>fink install <b>packagename</b>
 </code>.
 Make sure you have the Developer Tools installed before you try this.
 (If there is no installer for the Developer Tools in your
-<code>/Applications</code> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
-free registration.)
+<code>/Applications</code> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after free registration.)
 See also the question about unstable below.
 </p></div>
 </a>
 <a name="unstable">
-<div class="question"><p><b>Q4.8: There's this package in
-unstable that I want to install, but the fink command just says 'no
-package found'. How can I install it?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-First make sure you understand what 'unstable' means.
-Packages in there usually have not been tested at all, many have
-problems or just won't compile.
-That is why Fink doesn't search the unstable tree by default.
-</p><p>
-If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <code>fink.conf</code>. Edit <code>/sw/etc/fink.conf</code> and add <code>local/main</code> to the <code>Trees:</code> line, if not present.  Then you'll need to run <code>fink selfupdate</code> to download the package description files. Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are
-any) from <code>/sw/fink/dists/unstable/main/finkinfo</code>
-to <code>/sw/fink/dists/local/main/finkinfo</code>. However, note that your package may depend on other packages (or particular versions) which are also only in unstable. You will have to move their .info and .patch files as well. After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p><p>If you want Fink to use all of unstable, edit
-<code>/sw/etc/fink.conf</code>, add
-<code>unstable/main</code> and <code>unstable/crypto</code> 
-to the <code>Trees:</code>
-line, and then run <code>fink selfupdate; fink index</code>.
-</p></div>
+	<div class="question"><p><b>Q4.8: There's this package in unstable that I want to install, but the fink command just says 'no package found'. How can I install it?</b></p></div>
+	<div class="answer"><p><b>A:</b> First make sure you understand what 'unstable' means. Packages in the unstable tree usually have not been tested by more than one person. For that reason, Fink doesn't search the unstable tree by default.</p><p>Packages often have dependencies, and packages in unstable often depend on other packages in unstable. For that reason, it is best to activate all of unstable.</p><p>If you want Fink to use all of unstable, edit <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code> and <code>unstable/crypto</code> to the <code>Trees:</code> line, and then run <code>fink selfupdate; fink index</code>.</p><p>If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <code>fink.conf</code>. Edit <code>/sw/etc/fink.conf</code> and add <code>local/main</code> to the <code>Trees:</code> line, if not present. Then you'll need to run <code>fink selfupdate</code> to download the package description files. Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are any) from <code>/sw/fink/dists/unstable/main/finkinfo</code> to <code>/sw/fink/dists/local/main/finkinfo</code>. However, note that your package may depend on other packages (or particular versions) which are also only in unstable. You will have to move their .info and .patch files as well. After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p></div>
 </a>
+
 <a name="sudo">
 <div class="question"><p><b>Q4.9: I'm tired of typing my password into sudo again
 and again. Is there a way around this?</b></p></div>
