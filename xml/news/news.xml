@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.136 2004/09/20 14:40:49 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.137 2004/09/20 14:43:13 rangerrick Exp $</cvsid>
 
 
 <newsitem>
@@ -9,20 +9,20 @@
 <headline>Fink 0.7.1 released.</headline>
 <body>
 <p>
-The latest Fink releases, version 0.7.1 (for 10.3),
+The latest Fink release, version 0.7.1 (for 10.3),
 is now available for both source and binary users. This release is meant for Panther (10.3)  based
 Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
 </p>
 
 <p>
-This new releases incorporate various fixes to the package manager, many previously
+This new release incorporate various fixes to the package manager, many previously
 unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
 binaries for KDE 3.1.4 and GNOME 2.4.
 </p>
 
 <p>
 To complete a new Fink installation you should follow the instructions posted
-<link url="download/index.php?phpLang=en">here</link>.
+<link url="download/index.php">here</link>.
 You may upgrade your existing Fink to the latest Fink using your current installation.
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
@@ -31,8 +31,8 @@ A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting
 </p>
 
 <p>
-If you have questions or problems, please try the Fink mailing lists you can learn more about them
-<link url="lists/index.php?phpLang=en">here</link>.
+If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
+<link url="lists/index.php">here</link>.
 </p>
 
 <p>
@@ -43,8 +43,8 @@ Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.1 will only insta
         <p>
 The Fink Team would like to thank its many contributors, frequent helpers
 and developers for making this release happen.
-We also thank our community for downloading the prior release 0.7.0 more than 130'000 times. 
-Without their constant support and valuable pointers Fink would not be where we are now..
+We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
+Without their constant support and valuable pointers Fink would not be where we are now.
 </p>
 
 </body>

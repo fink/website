@@ -4,9 +4,55 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 19 Sep 2004 08:30:00 EDT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2004 10:40:15 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.">
+    <title>Fink 0.7.1 released.</title>
+    <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.</link>
+    <dc:date>2004-09-20</dc:date>
+    <description>
+
+The latest Fink release, version 0.7.1 (for 10.3),
+is now available for both source and binary users. This release is meant for Panther (10.3)  based
+Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
+
+
+
+This new release incorporate various fixes to the package manager, many previously
+unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
+binaries for KDE 3.1.4 and GNOME 2.4.
+
+
+
+To complete a new Fink installation you should follow the instructions posted
+here.
+You may upgrade your existing Fink to the latest Fink using your current installation.
+
+A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
+
+page.
+
+
+
+If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
+here.
+
+
+
+Please make sure you pick the appropriate installer for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+
+
+        
+The Fink Team would like to thank its many contributors, frequent helpers
+and developers for making this release happen.
+We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
+Without their constant support and valuable pointers Fink would not be where we are now.
+
+
+</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5">
     <title>Problems with XCode 1.5</title>
     <link>http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5</link>
@@ -372,37 +418,5 @@ sources.list file is likely to be corrupted and you should
 repair it as above.
 
 	</description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-01%20Fink%200.6.1%20released">
-    <title>Fink 0.6.1 released</title>
-    <link>http://fink.sourceforge.net/news/#2003-11-01%20Fink%200.6.1%20released</link>
-    <dc:date>2003-11-01</dc:date>
-    <description>
-        The latest Fink release, version 0.6.1, is now available
-for both source and binary users.  This release was built on OS X 10.2
-using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
-users who upgrade to 10.3 will want to only use the binaries from this
-new distribution for now, while the Fink team continues to modify
-Fink packages for 10.3.
-
-If you wish to access the 
-new binaries, use apt-get, dselect, or the binary mode of
-FinkCommander.  Unless you are interested in helping the Fink team
-to test packages which are compiled on 10.3, 
-do not use the command-line fink program to do your
-installations for the
-next few weeks.
-
-The simplest way to upgrade a binary installation is to run
-"sudo apt-get update".  Further details and
-other issues related to upgrading Fink to 10.3 are addressed on the
-Special 10.3 upgrade page.
-
-Before using the latest version of
-the command-line fink program 
-under OS X 10.2, be sure to install the August2003gccUpdater, available
-after free registration from connect.apple.com.
-
-                </description>
   </item>
 </rdf:RDF>
