@@ -5,7 +5,7 @@ $cvs_date = 'Date: 2004/03/05 15:34:59';
 include_once 'nav.inc';
 $fsroot = $root = '../';
 include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1><p>Generated from <i>$Id: index.en.php,v 1.4 2004/03/07 02:16:07 jeff_yecn Exp $</i></p>
+?><h1>Fink - Documentation</h1>
 <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
