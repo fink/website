@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.en.inc,v 1.7 2004/07/10 14:23:34 dmalloc Exp $ */
+/* $Id: nav.en.inc,v 1.8 2004/07/15 16:19:18 michga Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -12,6 +12,7 @@ $navbox = array(
   "doc/cvsaccess/index.php?phpLang=en", "CVS Access",
   "doc/security/index.php?phpLang=en", "Security",
   "doc/porting/index.php?phpLang=en", "Porting",
+  "doc/quick-start-pkg/index.php?phpLang=en", "Packaging Tutorial",
   "doc/packaging/index.php?phpLang=en", "Packaging",
   "doc/multilingual/index.php?phpLang=en", "Internationalization",
   "doc/netiquette/index.php?phpLang=en", "Netiquette"
