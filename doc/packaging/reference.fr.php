@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/11/05 01:15:31';
+$cvs_date = 'Date: 2004/12/14 01:16:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -374,13 +374,11 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 passera les drapeaux <code>--mandir</code> et <code>--disable-shared</code>  dans tous les cas de figure, mais ne passera le drapeau <code>--with-x11</code> quà la seule variante -x11.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
-<p>
-Version requise du compilateur gcc à utiliser. Les valeurs autorisées sont : <code>2.95.2</code> ou <code>2.95</code> (pour l'arborescence des paquets 10.1 uniquement), <code>3.1</code> (pour l'arborescence des paquets 10.2 uniquement) et <code>3.3</code> (pour l'arborescence des paquets 10.2-gcc3.3 et 10.3 uniquement).
-</p>
-<p>À partir de la version 0.13.8 de fink, quand ce champ est utilisé, la version de gcc est testée via <code>gcc_select</code>, et fink se termine avec un message d'erreur si la version requise n'est pas présente.
-</p>
-<p>
-Ce champ a été ajouté pour faciliter la transition entre les compilateurs gcc, qui ont introduit une incompatibilité binaire entre librairies ; cette incompatibilité concerne des parties de code C++ non reproduites dans les différentes versions.
+<p>Ce champ spécifie l'ABI-GCC utilisé par le code C++ du paquet (cela est indispensable, car l'ABI a changé deux fois au cours du temps; toute librairie liée à du code C++ doit être compilée avec l'ABI résidant sur le système au moment de son utilisation).</p>
+<p>Les valeurs autorisées sont les suivantes : <code>2.95.2</code> (ou <code>2.95</code>), <code>3.1</code> et <code>3.3</code>.  Cette dernière valeur est censée correspondre à l'ABI-GCC de gcc 3.3 et de toutes les futures versions de gcc. Les valeurs par défaut utilisées dans les différentes arborescences de paquets sont les suivantes : <code>2.95</code> pour l'arborescence 10.1, <code>3.1</code> pour l'arborescence 10.2 et <code>3.3</code> pour l'arborescence 10.2-gcc3.3, 10.3 et toute arborescence ultérieure.</p>
+<p>Notez que lorsque la valeur GCC est différente de la valeur par défaut, le compilateur doit être indiqué dans le paquet (en général, en utilisant les drapeaux CC ou CXX), et qu'une dépendance sur un des paquets (virtuels) gcc doit être spécifiée.</p>
+<p>À partir de la version 0.13.8 de fink, quand ce champ est utilisé, la version de gcc est testée via <code>gcc_select</code>, et fink se termine avec un message d'erreur si la version requise n'est pas présente.</p>
+<p>Ce champ a été ajouté pour faciliter la transition entre les compilateurs gcc, qui ont introduit une incompatibilité binaire entre librairies ; cette incompatibilité concerne des parties de code C++ non reproduites dans les différentes versions.
 </p>
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>

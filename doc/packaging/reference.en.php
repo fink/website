@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/11/02 10:14:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/12/13 23:24:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -749,18 +749,33 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>
-The required version of the gcc compiler to use.  Allowed values are: 
-<code>2.95.2</code> or <code>2.95</code>
-(for use in the 10.1 package tree only), <code>3.1</code>
-(for use in the 10.2 package tree only), and <code>3.3</code>
-(for use in the 10.2-gcc3.3 and 10.3 package trees only).
+This field specifies the GCC-ABI used by C++ code in this package.
+(It is needed because that ABI has changed twice, and any libraries
+which you link to containing C++ code must be compiled with the same ABI
+you are currently using.)
+</p><p>
+The allowed values are:
+<code>2.95.2</code> (or <code>2.95</code>),
+ <code>3.1</code>,
+and <code>3.3</code>.
+This last is expected to be the GCC-ABI for gcc 3.3 and all subsequent
+versions of gcc.
+The default values for the various package trees are:
+<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
+and <code>3.3</code> in the 10.2-gcc3.3, 10.3, and all subsequent trees.
+</p><p>
+Note that when the GCC value is different from the default, the compiler
+must be specified within the package (typically by setting the CC or CXX
+flags), and a dependency on one of the (virtual) gcc packages should be
+specified.
 </p>
 <p>As of fink 0.13.8, when this flag is present, the version of gcc
 is tested using <code>gcc_select</code>, and fink exits with an error
 if the wrong version is present.
 </p>
 <p>
-This field was added to fink to aid in the transition between the gcc
+This field was added to fink to aid maintainers
+in tracking the transition between the gcc
 compilers, which introduced a binary incompatibility between libraries
 that involve C++ code which is not reflected in the versioning
 scheme.
