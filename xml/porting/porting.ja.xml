@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="ja">
+  <title>Unix ソフトウェの Darwin と Mac OS X へのポーティング</title>
+  <shorttitle>ポーティング</shorttitle>
+  <cvsid>$Id: porting.ja.xml,v 1.1 2005/01/31 01:22:00 babayoshihiko Exp $</cvsid>
+  <preface>
+    <p>
+		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
+		ここでの情報は， Mac OS X バージョン 10.0.0 と Darwin 1.3.x に適用されます．
+		どちらも Mac OS X は Darwin のスーパーセットなので，両者を Darwin という言葉で示します．
+		</p>
+  </preface>
+  <chapter filename="basics">
+    <title>基本</title>
+    <shorttitle>基本</shorttitle>
+    <section name="heritage">
+      <title>Darwin はどこから来たのか</title>
+      <p>
+			Darwin は Unix ライクなオペレーティングシステムとして， NeXTStep / OpenStep から派生してきました．
+			これはまた， 4.4BSD Lite から分岐してきたとも言われています．
+			BSD の遺産もあり，実際 Darwin は近年 FreeBSD と NetBSD のコードによって近代化されてきました．
+			</p>
+      <p>
+			Darwin のカーネルは，Mach 3.0 ，BSD，オブジェクト指向ドライバレイヤ IOKit などの商用機能などの混合です．
+			Mac は元々マイクロカーネルとして設計されていましたが，この上にある BSD カーネルはモノリシックであり，両者は今では相互に依存し，一つのカーネルとして見ることができます．
+			</p>
+      <p>
+			Darwin にあるユーザー空間のツールやライブラリはほとんど BSD 由来のもので，Linux のような GNU ツールではありません．
+			Apple は他の BSD のように厳密ではなく，有益な妥協もしています．
+			たとえば， Apple は BSD make と GNU make の両方を付けて， GNU make をデフォルトとしています．
+			</p>
+    </section>
+    <section name="compiler">
+      <title>コンパイラとツール</title>
+      <p>
+			短い説明: コンパイラは gcc の葉生物ですが， <code>cc</code> としてインストールされます．
+			Makefile にパッチを当てる必要があるでしょう．
+			ほとんどのパッケージは 共有ライブラリ をビルドしません．
+			マクロに関係するエラーが出た時は，<code>-no-cpp-precomp</code> オプションを使用してください．
+			</p>
+      <p>
+			長い説明: Mac OS X Developer Tools にあるコンパイラツールチェーンは不思議な生き物です．
+			コンパイラは gcc 2.95.2 スイートをもとに， Objective C 言語やいくつかの Darwin 特有なことをサポートする変更がなされています．
+			プリプロセサー  (<code>cpp</code>) は二つのバージョンがあります．
+			ひとつは通常の(gcc 2.95.2 からの) プリコンパイラで，もう一つは Apple による，コンパイル済みヘッダをサポートする特別なプリコンパイラです．
+			こちらの方が高速で，デフォルトになっています．
+			しかし，コードによっては Apple のプリコンパイラではコンパイルできません．
+			この場合，<code>-no-cpp-precomp</code> オプションを使い，通常のプリコンパイラでコンパイルします．
+			(注記: 以前は <code>-traditional-cpp</code> オプションを勧めていました．
+			このオプションの意味が GCC 3 で少し変わったため，これを使うパッケージのほとんどを破壊してしまいました．
+			<code>-no-cpp-precomp</code> は現在の Developer Tools と 将来の GCC 3 ベースのコンパイラの双方に要求通りのことをしてくれます．)
+			</p>
+      <p>
+			アッセンブラは gas 1.38 ベースだと言いますが，リンカは GNU ツールではありません．
+			これは 共有ライブラリ をビルドする際に問題となります．
+			GNU libtool とこれが生成する configure スクリプトは Apple のリンカの扱い方を知らないためです．
+			</p>
+    </section>
+    <section name="host-type">
+      <title>ホスト種別</title>
+      <p>
+			短い説明: configure が 'Can't determine host type' と言って異常終了した場合，config.guess と config.sub を /usr/share/libtool (OS バージョン 10.2 以前では /usr/libexec) を現在のディレクトリにコピーしてください．
+			</p>
+      <p>長い説明: GNU の世界では，システムの種類を特定するために基準形式を採用しています．
+これには３つのパートがあります: CPU 種別，メーカー，オペレーティングシステム．
+４つ目のパートがつくこともあります．
+全て小文字で表記され，ダッシュでつながれます．
+例: <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>．
+Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です．
+</p>
+      <p>
+			autoconf を使うパッケージは多くの場合，コンパイル環境のシステム種別を知りたがります．
+			(注記: クロスコンパイルと移植のサポートのため，３つの種別 - ホスト種別，ビルド種別，ターゲット種別があります．
+			通常は全て同一です．)
+			ホスト種別は configure スクリプトに渡すことも，自動推測してもらうこともできます．
+			</p>
+      <p>
+			configure スクリプトは二つの付属スクリプトでホスト種別を決定します．
+			<filename>config.guess</filename> がホスト種別の推測を試み，<filename>config.sub</filename> で検証・正規化をします．
+			両スクリプトは別々にメンテナンスされていますが，全てのパッケージに含まれます．
+			最近までこのスクリプトは Darwin も Mac OS X も知りませんでした．
+			もし Darwin を認識しないパッケージがあった場合， configu.guess と config.sub を置き換える必要があります．
+			功にも， Apple が動作するバージョンのものを /usr/share/libtool (10.2 以前の OS では /usr/libexec) に置いていますので，そこからコピーしてください．
+			</p>
+    </section>
+    <section name="libraries">
+      <title>ライブラリ</title>
+      <p>
+			短い説明: <code>-lm</code> を削除しても問題ありませんが，する必要もありません．
+			</p>
+      <p>
+			長い説明: Mac OS X は libc, libm, libcurses, libpthread などのライブラリを分割して持っていません．
+			代わりに，これらは全てシステムライブラリ libSystem の一部となっています．
+			(以前のバージョンではこれは System のフレームワークでした．)
+			しかし， Apple は適切にシンボリックリンクを /usr/lib に置いていますので，<code>-lm</code> でリンクすれば動作します．
+			唯一の例外は <code>-lutil</code> です．
+			他のシステムでは，libutil は疑似ターミナルや，ログイン監査などの関数を含んでいます．
+			これらの関数は libSystem にはなく， libutil.dylib へのシンボリックリンクもありません．
+			</p>
+    </section>
+    <section name="other-sources">
+      <title>他の情報源</title>
+      <p>ポーティングに関する他の情報源としては，<link url="http://www.metapkg.org/wiki">MetaPkg Wiki</link> があります．</p>
+      <p>Apple Technical Note <link url="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</link>: "Porting Command Line Unix Tools to Mac OS X" も読むとよいでしょう．</p>
+    </section>
+  </chapter>
+  <chapter filename="shared">
+    <title>Shared Code</title>
+    <shorttitle>Shared Code</shorttitle>
+    <section name="lib-and-mod">
+      <title>共有ライブラリ vs ローダブル・モジュール</title>
+      <p>
+			Mach-0 の仕様の一つであ，多くの人を驚かせるものとして， 共有ライブラリ と 動的ローダブル・モジュールを厳密に区別します．
+			ELF システムでは両者は同質で，共有コードのどの部分でも，ライブラリとしても動的ローディングにも使うことができます．
+			</p>
+      <p>
+			Mach-O 共有ライブラリ のファイルタイプは MH_DYLIB で，拡張子は <code>.dylib</code> となります．
+			これは通常の静的リンカフラグ，例えば libfoo.dylib の場合は <code>-lfoo</code>，でリンクすることができます．
+			しかし，モジュールとしてロードすることはできません．
+			(注記: 共有ライブラリ は API を通して動的にロードすることができます．
+			しかし API はバンドルの場合と異なり，dlopen() エミュレーションの意味を無くします．
+			特筆すべきこととして， 共有ライブラリ はアンロードできません．)
+			</p>
+      <p>
+			ローダブル・モジュールは Mach-O の用語では"バンドル"と言われ，ファイルタイプは MH_BUNDLE です．
+			これを用いるコンポーネントは拡張子を気にしないので，拡張子は何でも構いません．
+			<code>.bundle</code> という拡張子が Apple の推奨ですが，移植されたソフトウェアのほとんどは，互換性のため <code>.so</code> を使っています．
+			バンドルは dyld API を用いて動的にロード／アンロードされることができますし，この API の上に <code>dlopen()</code> をエミュレートするラッパもあります．
+			バンドルを 共有ライブラリ のようにリンクすることはできませんが，バンドルを 共有ライブラリ にリンクさせることは可能です．
+			この場合，バンドルがロードされた際に両者ともロードされます．
+			</p>
+    </section>
+    <section name="version">
+      <title>バージョン番号</title>
+      <p>
+			ELF システムでは通常， <filename>libqt.so.2.3.0</filename> のようにバージョン番号はファイル名に後置されます．
+			Darwin では，<filename>libqt.2.3.0.dylib</filename> にようにバージョン番号はライブラリ名と拡張子の間に置かれます．
+			これにより， <code>-lqt.2.3.0</code> のように，特定バージョンのライブラリをリンク時に指定することができます．
+			</p>
+      <p>
+			共有ライブラリを作成する場合，実行時に検索するライブラリの名前を指定することができます．
+			これはよく行われることで，これによって，ライブラリのいくつかのメジャーバージョンをインストールすることが可能になります．
+			ELF システムでは，これは <code>soname</code> と言われています．
+			Darwin の場合，ファイル名の他にフルパスを指定することができ（またする必要があり）ます．
+			これにより，&quot;rpath&quot; オプションと ldconfig/ld.so.cache システムが不要になります．
+			まだインストールされていないライブラリを使うには， DYLD_LIBRARY_PATH 環境変数を設定することもできます．
+			詳細は dyld の man ページをご覧ください．
+			</p>
+      <p>
+			Mach-O 形式は ELF システムでは未知のマイナーバージョン確認を提供します．
+			Mach-o ライブラリは全て，二つのバージョン番号: &quot;current&quot; バージョンと &quot;compatibility&quot; バージョンを有します．
+			両方のバージョンとも，ドットで分かれた３つの番号で， 1.4.2 のように表記されます．
+			最初の番号は 0 以外でなければなりません．
+			２つめと３つめは省略可能で， 0 として扱われます．
+			バージョンが指定されない場合は 0.0.0 として扱われ，ある種のワイルドカード値となります．
+	  </p>
+      <p>
+			&quot;current&quot; バージョンは情報提供の目的のためにあります．
+			&quot;compatibility&quot; バージョンは以下の確認のためにあります．
+			実行可能ファイルがリンクされたときにライブラリからのバージョン情報が実行可能ファイルにコピーされます．
+			実行可能ファイルが実行されるとき，使用されるライブラリに対してバージョン情報を確認します．
+			使用されるライブラリのバージョンがリンクしたものと同一か新しいものでなければ，dyld は実行時エラーを生成しプログラムを終了させます．
+	  </p>
+    </section>
+    <section name="cflags">
+      <title>コンパイラフラグ</title>
+      <p>
+			position-independent code (PIC) の生成は Darwin ではデフォルトです．
+			実際， PowerPC コードは設計上 position-independent となり，パフォーマンスや空間上の損失はありません．
+			このため，共有ライブラリやモジュールへコードをコンパイルする際も，PIC を指定する必要はありません．
+			しかし，リンカは"共通"のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
+			</p>
+    </section>
+    <section name="build-lib">
+      <title>共有ライブラリ をビルド</title>
+      <p>
+			共有ライブラリをビルドするには， <code>-dynamiclib</code> 付きでコンパイラドライバを呼び出します．
+			以下の一連の例を見るとわかりやすいでしょう．
+			ここでは source.c と code.c というソースからなる libfoo というライブラリビルドするとします．
+			バージョン番号は 2.4.5 ，2 が主リビジョン (非互換の API 変更)， 4 が副リビジョン (後方互換な API の変更)，5 がバグ修正リビジョンかうんと (人によっては"teeny" リビジョンといい，完全に互換性のある変更です)です．
+			このライブラリは他の共有ライブラリには依存せず， /usr/local/lib にインストールされます．
+			</p>
+      <codeblock>cc -fno-common -c source.c
+cc -fno-common -c code.c
+cc -dynamiclib -install_name /usr/local/lib/libfoo.2.dylib \
+ -compatibility_version 2.4 -current_version 2.4.5 \
+ -o libfoo.2.4.5.dylib source.o code.o
+rm -f libfoo.2.dylib libfoo.dylib
+ln -s libfoo.2.4.5.dylib libfoo.2.dylib
+ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
+      <p>
+バージョンのどの部分がどこで使われたかわかりましたか．
+また，静的リンカが libfoo.dylib シンボリックリンクを使い，動的リンカは libfoo.2.dylib シンボリックリンクを使うことに注意してください．
+それぞれのシンボリックリンクをライブラリの異なるリビジョンへつなげることも可能です．
+
+</p>
+    </section>
+    <section name="build-mod">
+      <title>モジュールをビルド</title>
+      <p>
+ローダブル・モジュールをビルドするためには，<code>-bundle</code> オプション付きでコンパイラドライバを呼び出します．
+モジュールがホストプログラムのシンボルを使う場合， <code>-undefined suppress</code> を指定して未定義のシンボルを使い， <code>-flat_namespace</code> を指定して新しいリンカが Mac OS X 10.1 でも使えるようにします．
+一連の例:
+</p>
+      <codeblock>cc -fno-common -c source.c
+cc -fno-common -c code.c
+cc -bundle -flat_namespace -undefined suppress \
+ -o mymodule.so source.o code.o</codeblock>
+      <p>
+バージョン番号は使用していません．
+理論的には使うことも可能ですが，実際あまり意味がありません．
+また，バンドルには名称上の制限が無いことに注意してください．
+パッケージによっては，他のシステムが要求するため "lib" を前置しますが，これも無害です．
+</p>
+    </section>
+  </chapter>
+  <chapter filename="libtool">
+    <title>GNU libtool</title>
+    <shorttitle>libtool</shorttitle>
+    <preface>
+      <p>
+ライブラリをビルドする GNU パッケージは，ライブラリをビルド・インストールする際のプラットフォーム依存の手続きを隠すため GNU libtool を使います．
+</p>
+    </preface>
+    <section name="situation">
+      <title>状況</title>
+      <p>
+粗く言って，４つの libtool の流派があります:
+</p>
+      <ul>
+        <li>
+          <p><em>libtool 1.3</em>:
+最も一般的な流派．
+この流派の最新のリリースは 1.3.5．
+Darwin には非対応で，静的ライブラリのみをビルドする．
+ソースツリーに<filename>ltconfig</filename> と <filename>ltmain.sh</filename> があることで判定できる．
+</p>
+        </li>
+        <li>
+          <p><em>libtool 1.4</em>:
+長らく開発途中で，最近新しい安定版がリリースされた．
+このブランチは改良された autoconf との統合がされている．
+残念ながら， 1.3 からのパッケージの統合を難しくしている．
+Darwin 1.3 / Mac OS X 10.0 に対応し，小さいパッチを当てることで Mac OS X 10.1 にも対応する．
+<filename>ltconfig</filename> がないことで判定できる．
+1.3b や 1.3d などのバージョンがついたものも， 1.4 の開発スナップショットであり，扱いには注意が必要である．
+</p>
+        </li>
+        <li>
+          <p><em>多言語版</em>:
+MLB (multi-language-branch) ともいい，このバージョンは C++ や (gcj を通して) Java へのサポートを追加した平行開発ブランチである．
+現在は主開発ブランチに統合されている．
+最新版は Darwin 1.3 と Mac OS X 10.0 に対応している．
+MLB は <filename>ltcf-c.sh</filename>, <filename>ltcf-cxx.sh</filename>, <filename>ltcf-gcj.sh</filename> などのファイルで判定できる．
+</p>
+        </li>
+        <li>
+          <p><em>現在の開発ブランチ</em>:
+いずれ libtool 1.5 としてリリースされる開発バージョン．
+1.4 と MLB を統合してできた．
+C, C++, (gcj を通して) Java に対応．
+残念ながら， 1.4 との違いは簡単にはわからない．
+<filename>ltmain.sh</filename> の中のバージョン番号を確認する必要がある．
+</p>
+        </li>
+      </ul>
+      <p>
+結論として，libtool 1.3.x とこれを使うパッケージ (libtool を使うパッケージの主流) は， Darwin で共有ライブラリをビルドするにはパッチが必要になります．
+Apple は libtool 1.3.5 のパッチが当たったバージョンを Mac OS X に組み込んでいますが，ほとんどの場合うまく行きません．
+Christoph Pfisterer がこのパッチを改良し，正しいパスのハードコーディングと完全なバージョニングを行うようになりました．
+この変更は上流の libtool リリースと 1.4 で始まる開発バージョンに統合されました．
+Fink チームのメンバーはこれからも改良を続け， libtool メンテナに送っていきます．
+バージョン番号の貴族は全ての libtool バージョンで一致しています．
+</p>
+      <p>
+注記:
+全てのバージョンの libtool に関して，付属の libltdl ライブラリは dlcompat がインストールされている場合に限り Darwin 上で動作します．
+</p>
+    </section>
+    <section name="patch-135">
+      <title>1.3.5 パッチ</title>
+      <p>
+libtool 1.3.5 を自分でビルドする場合，
+<link url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">このパッチ</link> <em>[updated 2002-06-09]</em> 
+をソースにあて，ltconfig と ltmain.sh というファイルを削除します．
+(これらのファイルは，configure と make をすることで .in ファイルにより再生成されます．)
+Fink パッケージの libtool 1.3.5 では自動的に行われます．
+</p>
+      <p>
+ここまででやっと半分です - libtool を使うパッケージはそれぞれ独自の ltconfig と ltmain.sh を持っています．
+共有ライブラリとしてビルドする全てのパッケージについて，これらのファイルを置き換える必要があります．
+これは configure スクリプトを実行する前に行う必要があります．
+両ファイルは以下から取得することができます:
+<link url="http://fink.sourceforge.net/files/ltconfig">ltconfig</link> (98K) と
+<link url="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</link> (110K)
+<em>[both updated 2002-06-09]</em>.</p>
+    </section>
+    <section name="fixing-14x">
+      <title>1.4.x を修正</title>
+      <p>
+現在，よく使われている libtool 1.4.x には３つのバージョンがあります (1.4.1, 1.4.2, 最新開発スナップショット)．
+いずれも Darwin ではいくつかの問題があり，修正方法も異なります．
+Fink で提供している libtool14 は全てのパッチを含んでいます．
+しかし，これによって影響されるパッケージの ltmain.sh/configure ファイルを修正する必要があります．
+</p>
+      <ol>
+        <li><em>flat_namespace バグ</em>:
+この問題は， Mac OS X 10.1 上で libtool を使用する際に発生します．
+何が起こるかというと，libtool は未定義シンボルを許可するために <code>-undefined suppress</code> を使おうとするが，これに伴う <code>-flat_namespace</code> を指定しません．
+10.1 からは，これでは動作しません．
+パッチは以下のようになります:
+<codeblock>
+diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
+--- gdk-pixbuf-0.16.0.old/configure	Wed Jan 23 10:11:48 2002
++++ gdk-pixbuf-0.16.0.new/configure	Thu Jan 31 03:19:54 2002
+@@ -3334,7 +3334,7 @@
+     ;;
+ 
+   darwin* | rhapsody*)
+-    allow_undefined_flag='-undefined suppress'
++    allow_undefined_flag='-flat_namespace -undefined suppress'
+     # FIXME: Relying on posixy $() will cause problems for
+     #        cross-compilation, but unfortunately the echo tests do not
+     #        yet detect zsh echo's removal of \ escapes.
+</codeblock></li>
+        <li><em>ローダブル・モジュールのバグ</em>:
+このバグは，zsh (10.0 と 10.1 のデフォルトシェル; 10.2 では bash に変更される見込み) の非標準的な挙動によります．
+zsh の非標準的なクォートの挙動により，ローダブル・モジュールが正しくビルドされず，(Linux と異なり，Darwin では本質的に別ものな) 共有ライブラリになります．
+修正方法の例 (の一部なので，そのままでは使えません):
+<codeblock>
+diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
+--- gnome-core-1.4.0.6.old/configure	Sun Jan 27 08:19:48 2002
++++ gnome-core-1.4.0.6.new/configure	Fri Feb  8 01:10:21 2002
+@@ -4020,7 +4020,7 @@
+     # FIXME: Relying on posixy $() will cause problems for
+     #        cross-compilation, but unfortunately the echo tests do not
+     #        yet detect zsh echo's removal of \ escapes.
+-    archive_cmds='$nonopt $(test "x$module" = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
++    archive_cmds='$nonopt $(test x$module = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
+     # We need to add '_' to the symbols in $export_symbols first
+     #archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
+     hardcode_direct=yes
+</codeblock><p>
+この問題は 1.4.2 以降のバージョンでは修正されました．
+</p></li>
+        <li><em>convenience ライブラリのバグ</em>:
+条件によっては，libtool は convinience ライブラリをリンクすることができず， "multiple definitions" エラーを出します．
+これは libtool の本質的な問題によるようです．
+現在のところ回避策として (原因ではなく症状を治すだけでですが，成功します)，この修正を行います (Dave Vasilevsky に感謝):
+<codeblock>
+--- ltmain.sh.old       2002-04-27 00:01:23.000000000 -0400
++++ ltmain.sh   2002-04-27 00:01:45.000000000 -0400
+@@ -2894,7 +2894,18 @@
+        if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds"; then
+          eval cmds=\"$archive_expsym_cmds\"
+        else
++         save_deplibs="$deplibs"
++         for conv in $convenience; do
++       tmp_deplibs=
++       for test_deplib in $deplibs; do
++         if test "$test_deplib" != "$conv"; then
++           tmp_deplibs="$tmp_deplibs $test_deplib"
++         fi
++       done
++       deplibs="$tmp_deplibs"
++         done
+          eval cmds=\"$archive_cmds\"
++         deplibs="$save_deplibs"
+        fi
+        save_ifs="$IFS"; IFS='~'
+        for cmd in $cmds; do
+</codeblock></li>
+        <li><em>DESTDIR バグ</em>:
+DESTDIR を設定し， libtool 1.4.2 を使用するパッケージのなかで，再リンクに問題がある場合があります．
+この問題は，以下のメールで議論されました:
+<p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,</p><p>and a patch for the problem is discussed in:</p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.</p></li>
+      </ol>
+    </section>
+    <section name="dylibversionfix">
+      <title>libtool により生成された dylibs のバージョン番号を修正</title>
+      <p>libtool により生成されたライブラリは，バージョン番号が間違っている場合があります．
+これは，パッケージの Makefile のフラグが間違っているためです．
+Makefile 中で libtool がこのように呼び出されている場合:
+<code>
+-release "version"
+</code>
+make 後の結果のバイナリは:
+</p>
+      <ol>
+        <li> libname.dylib</li>
+        <li> libname-"version".dylib</li>
+      </ol>
+      <p>
+となります．
+<code>-release</code> が Makefile で使用されているかどうかは直ぐにわかります．
+ライブラリ名の直後に <em>-</em> があることに気づくことがあります．
+これは， libtool が <code>-release</code> 付きでバイナリ生成するために呼ばれたことを示します．
+また，ライブラリはこのようになる場合もあります:
+</p>
+      <ol>
+        <li>libname.dylib</li>
+        <li>libname-"version".x.x.x.dylib</li>
+      </ol>
+      <p>
+これは，<code>-release</code> と <code>-version-info</code> の両フラグを使用したことを示しています．
+</p>
+      <p><code>-version-info</code> を正しく設定するのは複雑です．
+Apple の提供する Developer Tools の文書には素晴らしい情報があります．
+Fink を使用している以上，あなたも Developer Tools をインストールをしているでしょう．
+Mac OS X システムでの libtool のリンクに関する<link url="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34"> 文書</link>はここです．
+この文書は完全版で，下記に簡易版を記します．
+</p>
+      <p>
+developer 文書より引用（訳は Fink Support, Translation and Documentation Team チーム）:
+<tt>libtool ライブラリバージョンは ３つの整数値で記述されている:</tt>
+</p>
+      <ul>
+        <li>
+          <em>current</em>
+          <p>
+当該ライブラリが実現している最新のインターフェイス番号
+</p>
+        </li>
+        <li>
+          <em>revision</em>
+          <p>
+ 現在のインターフェイスの実現番号
+</p>
+        </li>
+        <li>
+          <em>age</em>
+          <p>
+当該ライブラリの実現した最も新しいインターフェイスと最も古いものの期間．
+あるいは，当該ライブラリが current - age から current までの期間のインターフェイス番号を実現していることを示す．
+二つのライブラリが，同一の current と age 番号を持つ場合，リンカは revision 番号が大きい方を選びます．
+</p>
+        </li>
+      </ul>
+      <p>
+libtool によるライブラリのバージョン番号の設定・更新の情報は，上記リンクに詳細があります．
+<code>-version-info</code> を通して，新しい番号をつくったり，現在のバージョン番号を更新する方法は詳しく書かれています．
+</p>
+    </section>
+    <section name="notes">
+      <title>さらなる注記</title>
+      <p>libtool 自体と，libtool が何をするかについての詳細は <link url="http://www.gnu.org/software/libtool/libtool.html">libtool ホームページ</link>を参照．</p>
+      <p>
+注記:
+Apple の Developer Tools には libtool というプログラムがはいっていて，コンパイラドライバが共有ライブラリをビルドする際に使われます．
+しかし，これは GNU の libtool とは全く関係がありません．
+Apple の提供する GNU libtool は <code>glibtool</code> としてインストールされています．
+これは， GNU libtool を<code>--program-transform-name=s/libtool/glibtool/</code> と configure することで得られます．
+</p>
+    </section>
+  </chapter>
+  <chapter filename="preparing">
+    <title>10.2 に向けて</title>
+    <shorttitle>10.2 に向けて</shorttitle>
+    <section name="bash">
+      <title>bash シェル</title>
+      <p>
+OS X 10.2 は <code>/bin/sh</code> 機能を提供するため zsh ではなく bash を使用すると理解しています．
+これにより fink にとっては３つのことが実現されます．
+</p>
+      <ul>
+        <li>
+過去において，セミコロンを追加するだけでは何もしない CompileScript (や PatchScript や
+InstallScript) を作成した fink パッケージがあります．
+これは bash では動作せず，以下のように置き換える必要があります
+<codeblock>
+  CompileScript: echo "nothing to do"
+</codeblock>
+</li>
+        <li>
+過去の fink パッケージでは二つのライブラリを参照するために  <code>lib(foo|bar).dylib</code> という記述を用いたことがあります．
+これは bash では動作しません (bash の同様の <code>lib{foo,bar}.dylib</code> は zsh で動作しない)．
+解決: 両方の名前をちゃんと記述し直す．
+</li>
+        <li>
+多くの場合，bash 下でバージョン無しでビルドされないように libtool パッチが必要です．
+<em>注記: UpdateLibtool: True を使用している場合， libtoool-1.3.5 にはこのパッチは必要ありません．
+ </em>
+症状: bash 下でビルド時に
+<codeblock>
+../libtool: test: too many arguments
+</codeblock>
+とあり， <code>configure</code> 内に以下が含まれている場合:
+<codeblock>
+archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring != 
+x0.0 &amp;&amp; echo $verstring)'
+</codeblock>
+ここにパッチがあります (が，注意して使用してください．他の libtool 問題の可能性もあるので，その場合は自分でパッチを当ててください):
+<codeblock>
+diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
+--- gdk-pixbuf-0.16.0/configure 2002-01-22 20:11:48.000000000 -0500
++++ gp-new/configure    2002-05-10 03:02:44.000000000 -0400
+@@ -3338,7 +3338,7 @@
+      # FIXME: Relying on posixy $() will cause problems for
+      #        cross-compilation, but unfortunately the echo tests do not
+      #        yet detect zsh echo's removal of \ escapes.
+-    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring != 
+x0.0 &amp;&amp; echo $verstring)'
++    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
+-install_name $rpath/$soname $tmp_verstring'
+      # We need to add '_' to the symbols in $export_symbols first
+      #archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
+      hardcode_direct=yes
+diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
+--- gdk-pixbuf-0.16.0/ltmain.sh 2002-01-22 20:11:43.000000000 -0500
++++ gp-new/ltmain.sh    2002-05-10 03:04:49.000000000 -0400
+@@ -2862,6 +2862,11 @@
+        if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds";
+	then
+          eval cmds=\"$archive_expsym_cmds\"
+        else
++         if test "x$verstring" = "x0.0"; then
++           tmp_verstring=
++         else
++           tmp_verstring="$verstring"
++         fi
+          eval cmds=\"$archive_cmds\"
+        fi
+        IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
+</codeblock>
+</li>
+      </ul>
+    </section>
+    <section name="gcc3">
+      <title>gcc3 コンパイラ</title>
+      <p>gcc3 コンパイラを使用する Mac OS X 10.2</p>
+      <p>ローダブル・モジュールを含み， libtool を使用するパッケージで， install_name エラーで失敗するものは， libtool が -install_name フラグと(特に必要なり) -bundle フラグを送るためです ．
+gcc2 コンパイラは受け付けていましたが， gcc3 コンパイラでは受け付けません．
+修正は<link url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">ここ</link>にあります．
+libtool-1.3.5 を使うパッケージ (<code>UpdateLibtool: True</code> を使用している場合を含む) はこのパッチは必要ないことに注意してください．
+既に fink の ltconfig ファイル (fink のプレリリース版にある) に統合されているためです．
+</p>
+      <p>他の gcc3 コンパイラの問題は， gcc2 と gcc3 での C++ ABI の非互換性によります．
+gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされた C++ プログラムからリンクできないことを意味します．
+</p>
+    </section>
+  </chapter>
+</document>
