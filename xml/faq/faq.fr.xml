@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.45 2005/02/23 08:22:31 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.46 2005/03/02 05:03:32 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -441,10 +441,11 @@ fink selfupdate-cvs</codeblock>
 <p>Le message "command not found" apparaît au lancement de Fink ou de tout autre paquet installé via Fink.</p>
 </question>
 <answer>
-<p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.command</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre configuration de démarrage. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note :</em> sous <code>fink-0.18.3</code> et <code>fink-0.19.2</code>, le script s'appelle <filename>/sw/bin/pathsetup.sh</filename> et doit être lancé dans une fenêtre de terminal.</p>
+<p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.sh</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre shell par défaut et y ajoutera une commande de chargement du script d'initialisation du shell de Fink dans votre configuration shell. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note</em> : dans certaines versions anciennes de fink, ce script s'appelle <filename>pathsetup.command</filename> au lieu de <filename>pathsetup.sh</filename>. Vous pouvez également lancer l'application <filename>pathsetup.app</filename>, qui se trouve dans l'image disque de la distribution binaire de Fink, pour modifier le script de démarrage.</p>
 <p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, cela signifie probablement que vous devez créer un fichier <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link> et y ajouter la ligne :</p>
 <codeblock>. /sw/bin/init.sh</codeblock>
 <p>au tout début (c'est-à-dire avant tout lancement de programme). Relancez ensuite X11 (si celui-ci était actif).</p>
+<p>Les scripts <filename>/sw/bin/init.*</filename> font beaucoup plus qu'ajouter <filename>/sw/bin</filename> à votre PATH. La plupart des paquets ne fonctionnent pas correctement si ces scripts n'ont pas été lancés au démarrage.</p>
 </answer>
 </faqentry>
 <faqentry name="invisible-sw">
