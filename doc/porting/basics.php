@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Basics";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/12/14 07:16:16';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/01/27 07:34:44';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
@@ -59,6 +59,9 @@ include "header.inc";
 			
 
 			<p>Another source of information for porting is the Wiki at <a href="http://www.metapkg.org/wiki">MetaPkg Wiki</a>.</p>
+
+			<p>You can also read Apple Technical Note <a href="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</a>: "Porting Command Line Unix Tools to Mac OS X".</p>
+
 		
 
 	<p align="right">
