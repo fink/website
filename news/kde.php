@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/06/09 17:16:58 $';
+$cvs_date = '$Date: 2002/07/03 01:06:12 $';
 
 include "header.inc";
 ?>
@@ -45,27 +45,14 @@ Screenshots:
 
 <h1>What's New?</h1>
 <p>
- This is the second release of the KDE packages for Fink.  The two
- largest changes are a big speed boost, and smaller packages.  A bug
- in QT 3.0.4 on PowerPC caused a large part of the speed issues with KDE
- on OSX.  While it's still not a speed demon (much of that being due to
- XDarwin being unaccelerated), it's <strong>much</strong> faster than the
- last release, most noticeably in application startup times.  Also, all
- packages have been built with --enable-final now, and so the KDE packages
- are nearly a quarter of the size of the first release.  CUPS support has
-been added to the KDE printing system as well, now that a proper up-to-date
-CUPS package exists in unstable.
+ <font color="#ff0000" size="+1">
+  The current Fink binary dist of KDE is 3.0.1. <br>
+  The current Fink source dist of KDE is 3.0.2.
+ </font>
 </p>
 <p>
- The fixes to QT have also resolved a number of other small issues in
- various bits of KDE.  Notable things still missing are some of the KDE
- packages (kdemultimedia, kdepim, etc.) and KDM.
-</p>
-<p>
- Also, a couple of small eye-candy packages that were a quick rebuild
- have been added (keramik and conectiva-crystal).  See the
- <a href="http://fink.sourceforge.net/pdb/index.php">package database</a>
- for the full list of packages available to you.
+ New in the 3.0.2 release of the KDE fink packages is a number of
+ cleanups in package dependencies, and the kio-kmd package.
 </p>
 
 <h1>Upgrading Fink KDE</h1>
@@ -75,8 +62,8 @@ CUPS package exists in unstable.
  release of the Fink KDE packages, read this carefully.</font>
 </p>
 <p>
- The KDE packages exposed a bug in the xfree86-base package that was in
- Fink unstable that required users of the KDE binaries to upgrade to the
+ The initial KDE packages exposed a bug in the xfree86-base package that was
+ in Fink unstable that required users of the KDE binaries to upgrade to the
  xfree86-base package from Fink (rather than using XDarwin or an older
  XFree86 4.2 release).  This has been fixed in the latest packages.  If
  you have already installed KDE from the fink binary release,
@@ -88,22 +75,6 @@ CUPS package exists in unstable.
 <p>
 Note that you will need to do a "dist-upgrade", and not just an "upgrade",
 because there are new dependencies (CUPS, among other things).
-</p>
-
-<h1>Big Fat Warning!</h1>
-
-<p>
- While a number of us on the Fink team have been running KDE on
- MacOS X for a couple of weeks now, this is still very definitely
- a work-in-progress.  There are no guarantees that it won't
- delete your hard drive, kill your dog, put water in your gas
- tank, or make parts of your body randomly explode.  While we've
- tried to make sure things are at least in a usable state, your
- mileage may vary, doubly so if you're using the pre-built
- binaries.  If you are not comfortable with working with beta
- software, or working in the unstable distribution of Fink,
- you are better off waiting for KDE to move into the stable tree.
- In other words, don't say we didn't warn you!  =)
 </p>
 
 <h1>Installing KDE On Fink</h1>
@@ -209,7 +180,7 @@ because there are new dependencies (CUPS, among other things).
  .xinitrc file is a bourne-shell script.)
 </p>
 <p>
- Then just start XFree86 (Applications -> XDarwin) and KDE should come up.  Dynamic
+ Then just start XFree86 (Applications -&gt; XDarwin) and KDE should come up.  Dynamic
  loading in KDE is still pretty slow at the moment, so there are usually noticeable
  pauses in the amount of time KDE apps can take to start up if a library they use
  has not been loaded before.
