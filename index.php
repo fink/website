@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/30 10:18:22 $';
+$cvs_date = '$Date: 2001/04/14 11:50:44 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,24 +27,19 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-04-14: Version 0.1.8 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-03-30: The <a href="darwin/porting.php">porting notes</a> have
 been updated with information on Mac OS X Final.</p>
 <p>2001-03-30: Version 0.1.7 is out. Get it from the <a
 href="download.php">download page</a>.</p>
-<p>2001-03-24: Mac OS X is released. Expect Fink packages to be
-adapted to the final release within the next one or two weeks.</p>
-<p>2001-03-15: Updated the <a href="darwin/libtool.php">libtool
-page</a> with a revised patch that does full shared library
-versioning.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.7 was released on 30 March 2001. Most packages have
-been verified with Mac OS X Final and fixed as neccessary.
-Most likely this will be the last release before the transition from
-stow to dpkg. That transition will eliminate many of the current
-problems caused by stow and will allow a binary distribution to be set
-up. Stay tuned.</p>
+<p>Version 0.1.8 was released on 14 April 2001. This is the last
+release to use stow. A new version using dpkg for low-level package
+management is nearing usable state and will be released Real Soon
+Now(tm).</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
