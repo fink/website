@@ -1,14 +1,14 @@
 <?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/04/13 23:12:12 $';
+$cvs_date = '$Date: 2004/05/08 20:04:35 $';
 
 include "header.inc";
 ?>
 
 <h1>Contributeurs</h1>
 
-<p>La maintenance du projet Fink est assurée par un groupe de volontaires. Chaque paquet de Fink a un mainteneur qui travaille d'arrache-pied pour que le paquet fonctionne comme prévu. De plus, il y a des personnes qui travaillent sur le programme fink.
+<p>La maintenance du projet Fink est assurée par un groupe de volontaires. Chaque paquet de Fink a un mainteneur qui travaille d'arrache-pied pour que le paquet fonctionne comme prévu. De plus, il y a <a href="organization.php#core">l'équipe fink core</a> qui travaille sur le programme fink.
 Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin d'aide, ceci se fait au travers de nos listes de diffusion et de notre canal IRC. Ces tâches et de nombreuses autres demandent beaucoup de travail, c'est pourquoi nous souhaitons dire "Merci" à toutes ces personnes qui sacrifient leur temps libre pour aider la communauté. Cette page donne une liste des personnes qui ont apporté leur contribution à Fink d'une manière ou d'une autre.
 </p>
 
@@ -21,9 +21,10 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
-<h2>Chefs de projet actuels</h2>
+<h2>Équipe fink core</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
+<li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
