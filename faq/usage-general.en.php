@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/11 21:43:35';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/04/15 13:28:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -136,7 +136,6 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
       <div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
         Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
-
     <a name="virtpackage">
       <div class="question"><p><b>Q8.8: What are all these <code>system-*</code> "virtual
 	  packages" that are sometimes present, but that I can't
@@ -172,7 +171,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	  Here are the most important virtual packages that fink
 	  defines (as of fink-0.19.2):
 	</p><ul>
-	  <li>system-perl: [virtual package representing perl]
+          <li>system-perl: [virtual package representing perl]
 	    <p>
 	      Represents <code>/usr/bin/perl</code>, which is
 	      part of the default OS X installation. This package also
@@ -181,7 +180,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      of that perl interpreter.
 	    </p>
 	  </li>
-	  <li>system-javaXXX: [virtual package representing Java X.X.X]
+          <li>system-javaXXX: [virtual package representing Java X.X.X]
 	    <p>
 	      Represents the Java Runtime Environment, which is part of OS
 	      X (and Apple's Software Update). See
@@ -189,7 +188,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      page</a> for more information.
 	    </p>
 	  </li>
-	  <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+          <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
 	    <p>
 	      Represents the Java SDK, which must be manually
 	      downloaded from <a href="http://connect.apple.com">connect.apple.com</a>
@@ -202,8 +201,8 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      entry</a>.
 	    </p>
 	  </li>
-	  <li>system-java3d: [virtual package representing Java3D]</li>
-	  <li>system-javaai: [virtual package representing Java Advanced Imaging]
+          <li>system-java3d: [virtual package representing Java3D]</li>
+          <li>system-javaai: [virtual package representing Java Advanced Imaging]
 	    <p>
 	      Represent Java extensions for 3D graphics and image
 	      processing, which must be manually downloaded from Apple
@@ -211,8 +210,8 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      webpage</a> for more information.
 	    </p>
 	  </li>
-	  <li>system-xfree86: [placeholder for user installed x11]</li>
-	  <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
+          <li>system-xfree86: [placeholder for user installed x11]</li>
+          <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
 	    <p>
 	      Represent Apple's X11/XDarwin, an optional part of OS X
 	      (X11User.pkg). These packages provide <code>x11</code>
@@ -220,16 +219,15 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      also <a href="comp-packages.php?phpLang=en#cant-install-xfree">this FAQ entry</a>.
 	    </p>
 	  </li>
-	  <li>system-xfree86-dev [placeholder for user installed x11 development tools]
+          <li>system-xfree86-dev [placeholder for user installed x11 development tools]
 	    <p>
 	      Represents Apple's X11/XDarwin SDK, an optional part of
 	      OS X (X11SDK.pkg). This package provides
 	      <code>x11-dev</code>. See also <a href="comp-packages.php?phpLang=en#cant-install-xfree">this FAQ entry</a>.
 	    </p>
 	  </li>
-	</ul></div>
+        </ul></div>
     </a>
-
   <p align="right">
 Next: <a href="usage-packages.php?phpLang=en">9 Package Usage Problems - Specific Packages</a></p>
 
