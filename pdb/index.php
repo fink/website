@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/09 20:44:32 $';
+$cvs_date = '$Date: 2001/10/18 05:37:57 $';
 
 include "header.inc";
 ?>
@@ -14,6 +14,22 @@ This database lists all available Fink packages.
 It knows about the "stable" tree of the latest release and
 about all packages in CVS ("current-stable" and "current-unstable").
 Note that some packages are only available in the "unstable" tree.
+</p>
+
+<p>
+<b>Read this:</b>
+The above means that a default install of Fink will not recognize some
+packages listed here.
+That is because those packages are in a section of the archive called
+"unstable" because they are not well-tested.
+You can help improve the situation by testing those packages and
+reporting both success and failure to the package maintainer.
+The <a href="testing.php">Packages in Testing</a> page lists all
+packages that still have to pass testing.
+In order to test the packages, you have to get the latest
+descriptions from <a href="../doc/cvsaccess/index.php">CVS</a> and
+configure Fink to <a href="../faq/usage.php#unstable">use
+unstable</a>.
 </p>
 
 <?
