@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:29';
+$cvs_date = 'Date: 2003/04/12 19:02:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -213,36 +213,8 @@ A fixed version of the apt package (which provides the configuration
 script as a plug-in for dselect) is making it's way through CVS now.
 </p></div>
 </a>
-<a name="selfupdate-tar-fails">
-<div class="question"><p><b>Q3.13: Why doesn't 'fink selfupdate'
-work?</b></p></div>
-<div class="answer"><p><b>A:</b> When using fink selfupdate to update from 0.3.2 (not 0.3.2a), selfupdate may
-freeze during the &quot;untar&quot; phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
-update the core packages. After that, you should update the other
-packages using commands like 'fink update-all'.
-
-curl -L -s -S -O http://prdownloads.sourceforge.net/fink/packages-0.3.2.tar.gz
-tar -xzf -</pre><p>This is a known bug in 0.3.2 that was fixed in 0.3.2a. If you encounter this 
-problem, there are two easy workarounds:</p><ul>
-<li>
-<p>Downgrade to a previous version of fink, then run</p>
-<pre>fink selfupdate</pre>
-</li>
-<li>
-<p>Manually install the latest version of the package manager. Go to the
-    <a href="http://fink.sourceforge.net/download/srcdist.php">source release
-    download page</a> and get the latest version, then update like this:</p>
-<pre>tar -xzf fink--full.tar.gz
-cd fink--full/
-./inject.pl /sw
-cd pkginfo
-./inject.pl /sw</pre>
-</li>
-</ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
-edit line 479 of <code>/sw/lib/perl5/Fink/SelfUpdate.pm</code> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div>
-</a>
 <a name="cvs-busy">
-<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
+<div class="question"><p><b>Q3.13: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
 		</b></p></div>
 <div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec &quot;cvs&quot;: No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
@@ -277,7 +249,7 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>The &
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="kernel-panics">
-<div class="question"><p><b>Q3.15: When I use fink, my whole machine 
+<div class="question"><p><b>Q3.14: When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</b></p></div>
 <div class="answer"><p><b>A:</b>  A number of recent reports on the 
 <a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
@@ -288,7 +260,7 @@ software before using Fink.
 </p></div>
 </a>
 <a name="cant-login-anymore">
-<div class="question"><p><b>Q3.16: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
+<div class="question"><p><b>Q3.15: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
 <div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>
 fsck -y
 mount -uw
@@ -297,7 +269,7 @@ reboot
 </pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<code>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</code>&quot; to prevent this from happening again.</p></div>
 </a>
 <a name="not-found">
-<div class="question"><p><b>Q3.17: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
+<div class="question"><p><b>Q3.16: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
 versions are released.</p><p>The first thing you should do is run <code>fink selfupdate-cvs</code>.
 It may be that the package maintainer has already fixed this, and you will
@@ -319,20 +291,20 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
+<div class="question"><p><b>Q3.17: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <code>tcsh</code>).  When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read.  A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
-<div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
+<div class="question"><p><b>Q3.18: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
 <a name="install-info-bad">
-<div class="question"><p><b>Q3.20: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
+<div class="question"><p><b>Q3.19: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use fink.</p></div>
 </a>
 <a name="bad-list-file">
-<div class="question"><p><b>Q3.21: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
+<div class="question"><p><b>Q3.20: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> Typically these errors take the form:</p><p>
 <code>files list file for package <b>packagename</b> contains empty filename</code>
 </p><p>or</p><p>
@@ -363,7 +335,7 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <a name="error-nineteen">
-<div class="question"><p><b>Q3.22: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
+<div class="question"><p><b>Q3.21: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
 <div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
 other than English.  (This is a bug in Apple's Installer, that it doesn't
 just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used fink before, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
@@ -371,6 +343,12 @@ is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p></div>
 </a>
+
+<a name="dselect-garbage">
+<div class="question"><p><b>Q3.22: I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</b></p></div>
+<div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to entter the following command</p><pre>setenv TERM xterm-xfree86</pre><p>before you run <code>dselect</code>.</p></div>
+</a>
+
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 

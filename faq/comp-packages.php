@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:29';
+$cvs_date = 'Date: 2003/04/12 19:02:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -47,12 +47,8 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code>
 </p><p>by the usual means: &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p></div>
 </a>
-<a name="pil-wont-build">
-<div class="question"><p><b>Q5.4: PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> Check and see if you have <code>freetype2-2.1.3-1</code> installed.  This was made available for a short time, but wasn't backwards compatible with <code>pil</code>, among other packages, and was removed.  Find and delete <code>freetype2_2.1.3-1_darwin-powerpc.deb</code>, and then you can downgrade it with <code>fink install freetype2-2.0.9-1</code>.</p></div>
-</a>
 <a name="apple-x11">
-<div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.</b></p></div>
+<div class="question"><p><b>Q5.4: I've installed the Apple X11 package, but system-xfree86 won't install.</b></p></div>
 <div class="answer"><p><b>A:</b> If you get error messages like the following:</p><pre>- missing /usr/X11R6/lib/libX11.dylib
 - missing /usr/X11R6/lib/libXpm.dylib
 - missing /usr/X11R6/lib/libXaw.dylib
@@ -65,7 +61,7 @@ package.
 version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <code>system-xfree86-4.2-11</code> or later.</p></div>
 </a>
 <a name="automake-autoconf">
-<div class="question"><p><b>Q5.6: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
+<div class="question"><p><b>Q5.5: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
 <div class="answer"><p><b>A:</b> Update whichever package is giving the dependency error, e.g. if you get a message like:</p><pre>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
 dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
 automake depends on autoconf25 (&gt;= 2.52-1)

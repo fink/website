@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:29';
+$cvs_date = 'Date: 2003/04/12 19:02:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -106,14 +106,20 @@ libpng error: Incompatible libpng version in application and library</pre><p>whe
 <div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
 <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p></div>
 </a>
-<a name="x-options"><div class="question"><p><b>Q6.7: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
+<a name="x-options">
+<div class="question"><p><b>Q6.7: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
 <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>The most popular choices, and the fink packages to make them work are:</p><ul>
-<li><p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p></li>
-<li><p>4.3.x built via Fink:  install the <code>xfree86</code> and <code>xfree86-shlibs</code> packages</p></li>
-<li><p>4.2.x from Apple (User+SDK packages installed):  install the <code>system-xfree86</code> package</p></li>
+<li>
+<p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
+</li>
+<li>
+<p>4.3.x built via Fink:  install the <code>xfree86</code> and <code>xfree86-shlibs</code> packages</p>
+</li>
+<li>
+<p>4.2.x from Apple (User+SDK packages installed):  install the <code>system-xfree86</code> package</p>
+</li>
 </ul><p>There are other options, as well.  There is a more extensive treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a>.</p></div>
 </a>
-
 <p align="right">
 Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages</a></p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:29';
+$cvs_date = 'Date: 2003/04/12 19:02:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -70,19 +70,18 @@ wrong?</a></li>
 <li><a href="usage-fink.php#dselect-access">3.12 Help! I used the
 &quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</a></li>
-<li><a href="usage-fink.php#selfupdate-tar-fails">3.13 Why doesn't 'fink selfupdate'
-work?</a></li>
-<li><a href="usage-fink.php#cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
+<li><a href="usage-fink.php#cvs-busy">3.13 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
 		</a></li>
-<li><a href="usage-fink.php#kernel-panics">3.15 When I use fink, my whole machine 
+<li><a href="usage-fink.php#kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
-<li><a href="usage-fink.php#cant-login-anymore">3.16 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
-<li><a href="usage-fink.php#not-found">3.17 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
-<li><a href="usage-fink.php#fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li>
-<li><a href="usage-fink.php#invisible-sw">3.19 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
-<li><a href="usage-fink.php#install-info-bad">3.20 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li>
-<li><a href="usage-fink.php#bad-list-file">3.21 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li>
-<li><a href="usage-fink.php#error-nineteen">3.22 When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</a></li>
+<li><a href="usage-fink.php#cant-login-anymore">3.15 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
+<li><a href="usage-fink.php#not-found">3.16 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
+<li><a href="usage-fink.php#fink-not-found">3.17 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li>
+<li><a href="usage-fink.php#invisible-sw">3.18 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
+<li><a href="usage-fink.php#install-info-bad">3.19 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li>
+<li><a href="usage-fink.php#bad-list-file">3.20 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li>
+<li><a href="usage-fink.php#error-nineteen">3.21 When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</a></li>
+<li><a href="usage-fink.php#dselect-garbage">3.22 I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -100,9 +99,8 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
-<li><a href="comp-packages.php#pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
-<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
-<li><a href="comp-packages.php#automake-autoconf">5.6 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
+<li><a href="comp-packages.php#apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
+<li><a href="comp-packages.php#automake-autoconf">5.5 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -138,7 +136,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.103 2003/03/31 16:57:29 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.104 2003/04/12 19:02:29 alexkhansen Exp $</i></p>
 
 
 <?
