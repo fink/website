@@ -18,7 +18,7 @@ Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community, ohne deren konstante Unterstützung und wertvollen Tipps Fink nicht da wäre, wo es jetzt ist... 
 </p>
 
-<a name="19.02.2004 "><span class="news-date">19.02.2004: </span><span class="news-headline">Die Fahnen hoch!</span></a><?php gray_line(); ?>
+<a name="19.02.2004 "><span class="news-date">19.02.2004: </span><span class="news-headline">Hisst Eure Flagge!</span></a><?php gray_line(); ?>
 	<p>
 Dank Baba Yoshihiko konnte Fink die notwendigen Schritte unternehmen, um Internationalisierungsbemühungen zu ermöglichen. Die verbesserte Infrastruktur erlaubt uns, unseren Besuchern von der ganzen Welt, eine mehrsprachige Website zu präsentieren. 
 </p>
