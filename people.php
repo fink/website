@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/14 23:09:10 $';
+$cvs_date = '$Date: 2002/03/24 19:57:47 $';
 
 include "header.inc";
 ?>
@@ -17,15 +17,15 @@ Fink (in alphabetical order):</p>
 <h2>Regular Contributors</h2>
 
 <ul>
-<li>Bill Bumgarner</li>
 <li>Sylvain Cuaz</li>
+<li>Martin Costabel</li>
 <li>Finlay Dobbie</li>
 <li>Justin F. Hallett</li>
 <li>Jeremy Higgs</li>
 <li>Max Horn</li>
 <li>David R. Morrison</li>
 <li>Matthias Neeracher</li>
-<li>Andrew Rohl</li>
+<li>Peter O'Gorman</li>
 <li>Masanori Sekino</li>
 <li>Matt Stephenson</li>
 <li>Christian Swinehart</li>
@@ -35,10 +35,10 @@ Fink (in alphabetical order):</p>
 <h2>Occasional Contributors</h2>
 
 <ul>
-<li>Martin Costabel</li>
+<li>Bill Bumgarner</li>
 <li>Jake Goulding</li>
-<li>Peter O'Gorman</li>
 <li>Chris Pepper</li>
+<li>Andrew Rohl</li>
 <li>David Ross</li>
 <li>Paul Swenson</li>
 <li>Aaron Voisine</li>
