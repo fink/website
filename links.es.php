@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/02 23:22:39 $';
+$cvs_date = '$Date: 2004/09/28 03:10:15 $';
 
 include "header.inc";
 ?>
@@ -19,6 +19,8 @@ nueva ventana de su navegador.</p>
 mensajes de estado acerca de los espejos actuales.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 una GUI para Fink</li>
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - otra interface gráfica para Fink (aún alfa).</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Plugin de busqueda para la base de Paquetes. Para navegadores basados en Mozilla exclusivamente (busqueda para Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Califica Fink @ O'Reilly's OSDir.com</a> - Calificanos y ayudanos apromover Fink.
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 estadísticas y logs del canal de IRC #fink</li>
