@@ -1,7 +1,7 @@
 <?
 $title = "Making Fink Packages";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/12 18:22:57 $';
+$cvs_date = '$Date: 2001/06/21 20:30:52 $';
 
 include "header.inc";
 ?>
@@ -13,8 +13,8 @@ include "header.inc";
 description files. This is difficult because the format is still
 evolving. Watch the "Last changed" info in the footer of the
 page. What you're reading right now is a description of the format
-used in Fink 0.2.1. The document for Fink 0.1.x has been <a
-href="info-format-01.php">archived.</a></p>
+used in post-0.2.1 development versions. The document for Fink 0.1.x
+has been <a href="info-format-01.php">archived.</a></p>
 <p>If you create packages for Fink, you may want to subscribe to the
 <a
 href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a>
@@ -41,15 +41,15 @@ must be the full package name plus the extension ".info".</p>
 <p>The description files are simple lists of key-value pairs. The
 format is based on the popular RFC 822 header format. Each line starts
 with a key, terminated by a colon (:) and followed by the
-value. Values may be broken accross several lines by starting the next
+value. Values may be broken across several lines by starting the next
 line with whitespace. In Fink, empty lines and lines starting with a
 hash (#) are ignored. If that description confused you, just look at
 the files.</p>
 <p>Keys (field names) are case-insensitive in Fink. Some fields take
 a boolean value - any of "true", "yes", "on", "1" (case-insensitive)
 are treated as true, all other strings are treated as false. For all
-fields except Package, it is not an error to obmit them; they all have
-default values. In fact, the policy is to include only neccessary
+fields except Package, it is not an error to omit them; they all have
+default values. In fact, the policy is to include only necessary
 fields.</p>
 
 <h2>The Build Process</h2>
@@ -136,7 +136,7 @@ download).</td></tr>
 
 <tr valign="top"><td>SourceDirectory</td>
 <td>Must be used when the tarball expands to a single directory, but
-the direcory's name is different from the basename of the tarball.
+the directory's name is different from the basename of the tarball.
 Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
 named "foo-1.0". If it produces a directory with a different name,
 specify it with this parameter.</td></tr>
@@ -157,7 +157,7 @@ as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway.</td></tr>
 
 <tr valign="top"><td>Source<i>N</i>ExtractDir</td>
-<td>Normally, an auxilary tarball will be extracted in the same
+<td>Normally, an auxillary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
@@ -221,7 +221,7 @@ section).</td></tr>
 <tr valign="top"><td>InstallScript</td>
 <td>A list of commands that are run in the install phase. See the note
 on scripts below. This is the place to put commands that copy all
-neccessary files to the stow directory for the package. The default is:
+necessary files to the stow directory for the package. The default is:
 <pre>make install prefix=%i</pre>
 The default is appropriate for packages that use GNU autoconf. If the
 package supports it, it is preferably to use <tt>make install
@@ -238,7 +238,7 @@ percent expansion described in the last section. A common example:
 <pre>SetCPPFLAGS: -traditional-cpp</pre>
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <nobr>"-I%p/include"</nobr> and <nobr>"-L%p/lib"</nobr>,
-respecively. If you specify a value for one of these, it will be
+respectively. If you specify a value for one of these, it will be
 appended to the default value.</td></tr>
 
 <tr valign="top"><td>NoSet<i>ENVVAR</i></td>
@@ -246,22 +246,50 @@ appended to the default value.</td></tr>
 CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
 remain unset, specify <nobr><tt>NoSetLDFLAGS: true</tt></nobr> .</td></tr>
 
+<tr valign="top"><th>Obsolete Comment Fields</th>
+<th><em>Do not use</em></th></tr>
+
 <tr valign="top"><td>Comment</td>
-<td><i>This field will soon be obsolete; new text fields will be
-introduced. Stay tuned.</i><br>
-General comments on the package.</td></tr>
+<td><i>Obsolete:</i> General comments on the package.</td></tr>
 
 <tr valign="top"><td>CommentPort</td>
-<td><i>This field will soon be obsolete; new text fields will be
-introduced. Stay tuned.</i><br>
-Comments on the package that are specific to the Darwin
-port. Describe what special parameters or patches are neccessary, what
-doesn't work (yet), etc.</td></tr>
+<td><i>Obsolete:</i> Comments on the package that are specific to the
+Darwin port. Describe what special parameters or patches are
+necessary, what doesn't work (yet), etc.</td></tr>
 
 <tr valign="top"><td>CommentStow</td>
-<td><i>This field is obsolete with Fink 0.2.</i><br>
-Comments on the package that apply to using it with stow. Describe
-special treatment neccessary and potential problems.</td></tr>
+<td><i>Obsolete:</i> Comments on the package that apply to using it
+with stow. Describe special treatment necessary and potential
+problems.</td></tr>
+
+<tr valign="top"><th>New Description Fields</th>
+<th>Visible with <tt>fink describe <i>package</i></tt></th></tr>
+
+<tr valign="top"><td>Description</td>
+<td>A short description of the package (what is it?). Keep this short,
+around 30 to 50 chars. It will be displayed in lists, so it's not
+necessary to include the package name.</td></tr>
+
+<tr valign="top"><td>DescDetail</td>
+<td>A more detailed description (what is it, what is it for?).
+Multiple lines allowed.</td></tr>
+
+<tr valign="top"><td>DescUsage</td>
+<td>This is for information that is needed to use the package (how do
+I use it?). As in "run wmaker.inst once before using WindowMaker".
+Multiple lines allowed.</td></tr>
+
+<tr valign="top"><td>DescPackaging</td>
+<td>Notes about the packaging. Stuff like "patches the Makefile to put
+everything in place" goes here. Multiple lines allowed.</td></tr>
+
+<tr valign="top"><td>DescPort</td>
+<td>Notes that are specific to porting the package to Darwin. Stuff
+like "config.guess and libtool scripts are updated, -traditional-cpp
+is necessary" goes here. Multiple lines allowed.</td></tr>
+
+<tr valign="top"><td>Homepage</td>
+<td>The URL of the upstream home page of the package.</td></tr>
 
 <!--
 
@@ -283,7 +311,7 @@ line. This may be fixed one day in the future.</p>
 <h2>Patches</h2>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
-stow), name the patch with the full package name plus the extension
+fink), name the patch with the full package name plus the extension
 ".patch" and put it in the same directory as the .info file. Specify
 either one of these (they are equivalent):
 <pre>Patch: %f.patch</pre>
