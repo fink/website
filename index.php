@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/07 23:14:15 $';
+$cvs_date = '$Date: 2001/01/08 22:17:49 $';
 
 include "header.inc";
 ?>
@@ -20,16 +20,17 @@ internet.</p>
 
 <h2>Download</h2>
 
-<p>Version 0.1 was released on 28 December 2000. You can grab it from
+<p>Version 0.1.1 was released on 8 January 2001. You can grab it from
 the <a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
-area</a> at SourceForge. This in a very early release, so be
+area</a> at SourceForge. This is a very early release, so be
 careful.</p>
 
 <h2>Porting</h2>
 
 <p>I've compiled some <a href="porting.php">hints on porting</a> GNU
-software to Darwin. I hope to add some more in the future.</p>
+software to Darwin, including how to build GNU libraries as shared
+libraries. I hope to add more stuff in the future.</p>
 
 <h2>Resources</h2>
 
