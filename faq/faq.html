@@ -389,9 +389,10 @@ those .info files (and their associated .patch files, if there are
 any) from <tt><nobr>/sw/fink/dists/unstable/main/finkinfo</nobr></tt>
 to <tt><nobr>/sw/fink/dists/local/main/finkinfo</nobr></tt>.
 If you want Fink to use all of unstable, edit
-<tt><nobr>/sw/etc/fink.conf</nobr></tt> and add
-<tt><nobr>unstable/main</nobr></tt> to the <tt><nobr>Trees:</nobr></tt>
-line.
+<tt><nobr>/sw/etc/fink.conf</nobr></tt>, add
+<tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> 
+to the beginning of the <tt><nobr>Trees:</nobr></tt>
+line, and then run the command <tt><nobr>fink index</nobr></tt>
 </p></div></a>
 
 <a name="usage-fink.sudo"><div class="question"><p><b>Q3.9: I'm tired of typing my password into sudo again
@@ -727,4 +728,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.39 2002/06/08 00:57:26 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.40 2002/06/14 01:03:26 dmrrsn Exp $</i></p></body></html>

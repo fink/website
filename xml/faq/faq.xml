@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.39 2002/06/08 00:57:26 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.40 2002/06/14 01:03:26 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -360,9 +360,10 @@ those .info files (and their associated .patch files, if there are
 any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
 to <filename>/sw/fink/dists/local/main/finkinfo</filename>.
 If you want Fink to use all of unstable, edit
-<filename>/sw/etc/fink.conf</filename> and add
-<code>unstable/main</code> to the <code>Trees:</code>
-line.
+<filename>/sw/etc/fink.conf</filename>, add
+<code>unstable/main</code> and <code>unstable/crypto</code> 
+to the beginning of the <code>Trees:</code>
+line, and then run the command <code>fink index</code>
 </p>
 </answer></faqentry>
 

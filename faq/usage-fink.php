@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/06/08 00:57:26';
+$cvs_date = 'Date: 2002/06/14 01:03:26';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -123,9 +123,10 @@ those .info files (and their associated .patch files, if there are
 any) from <tt><nobr>/sw/fink/dists/unstable/main/finkinfo</nobr></tt>
 to <tt><nobr>/sw/fink/dists/local/main/finkinfo</nobr></tt>.
 If you want Fink to use all of unstable, edit
-<tt><nobr>/sw/etc/fink.conf</nobr></tt> and add
-<tt><nobr>unstable/main</nobr></tt> to the <tt><nobr>Trees:</nobr></tt>
-line.
+<tt><nobr>/sw/etc/fink.conf</nobr></tt>, add
+<tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> 
+to the beginning of the <tt><nobr>Trees:</nobr></tt>
+line, and then run the command <tt><nobr>fink index</nobr></tt>
 </p></div></a>
 
 <a name="sudo"><div class="question"><p><b>Q3.9: I'm tired of typing my password into sudo again
