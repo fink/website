@@ -60,6 +60,36 @@
 
 </body></html>
 </xsl:document>
+
+<!-- Generate header.inc -->
+<xsl:document href="{@xml:base}header.inc" method="text" indent="no" encoding="iso-8859-1">
+<xsl:text>&lt;?
+/* This file is generated, do not edit manually! */
+
+$section = "documentation";
+$parents = array("doc/index.php", "Document List");
+$navbox = array(
+  "</xsl:text>
+<xsl:value-of select="$DESTDIR"/>
+<xsl:text>index.php", "Contents",
+</xsl:text>
+<xsl:for-each select="chapter">
+<xsl:text>  "</xsl:text><xsl:value-of select="$DESTDIR"/><xsl:value-of select="@filename"/><xsl:text>.php", "</xsl:text>
+<xsl:value-of select="shorttitle"/>
+<xsl:text>",
+</xsl:text>
+</xsl:for-each>
+<xsl:text>);
+$printlink = "</xsl:text>
+<xsl:value-of select="$DESTDIR"/><xsl:value-of select="$PRINTFILE"/>
+<xsl:text>";
+
+$fsroot = $root = "../../";
+include $fsroot."header.inc";
+?&gt;
+</xsl:text>
+</xsl:document>
+
 </xsl:template>
 
 <!-- ***** chapter (renders to a separate file) ***** -->

@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.9 2002/04/15 19:53:09 fingolfin Exp $
+# $Id: Makefile.common,v 1.10 2002/05/29 14:08:27 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -15,7 +15,8 @@ PROCESS_TEXT = $(basedir)/textify.pl
 # selectors
 
 all_targets = $(TARGET)
-install_files = $(filter %.php,$(TARGET))
+install_files = $(TARGET)
+#install_files = $(filter %.php,$(TARGET))
 
 ifdef WANT_HTML
 all_targets += $(patsubst %.xml,%.html,$(SOURCE))
@@ -31,7 +32,7 @@ endif
 all: $(all_targets)
 
 clean:
-	rm -rf *.php *.html *.txt *.tmp
+	rm -rf *.php *.html *.txt *.tmp *.inc
 
 force: clean all
 
@@ -43,7 +44,7 @@ force: clean all
 
 %.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
 	xmllint --noout --valid $(SOURCE)
-	xsltproc $(STYLESHEET_WEBSITE) $(SOURCE)
+	xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(SOURCE)
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
