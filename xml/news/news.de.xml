@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-<cvsid>$Id: news.de.xml,v 1.10 2004/11/21 14:26:54 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.11 2004/11/26 09:14:28 benh57 Exp $</cvsid>
 
 <newsitem>
 <date>2004-11-20</date>
@@ -55,7 +55,7 @@ Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für So
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
 <p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</link> nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</link> nachgeschaut werden.
 </p>
 <p>
 Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <varlink url="lists/index.php?phpLang=de">Hier</varlink> können Sie mehr über sie erfahren.

@@ -5,79 +5,57 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2004-11-22T13:17:18+01:00</dc:date>
+    <dc:date>2004-11-26T01:10:59-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.">
-      <title>Solution to gcc problems.</title>
-      <link>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F">
+      <title>gcc &#32534;&#35793;&#22120;&#38382;&#39064;&#30340;&#35299;&#20915;&#26041;&#26696;&#12290;</title>
+      <link>http://fink.sourceforge.net/news/#2004-11-20%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2004-11-20%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</guid>
       <description>
 
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
+&#33529;&#26524;&#21457;&#24067;&#20102; 2004 &#24180;&#21313;&#19968;&#26376;&#30340; gcc3 &#26356;&#26032;&#65292;&#23427;&#21487;&#20197;&#22312; connect.apple.com &#19979;&#36733;(&#38656;&#35201;&#20808;&#20813;&#36153;&#27880;&#20876;)&#12290;&#36825;&#20010;&#26356;&#26032;&#20462;&#27491;&#20102; XCode 1.5 &#20013;&#30340; gcc3 &#32534;&#35793;&#22120;&#30340;&#38382;&#39064;&#12290;&#22914;&#26524;&#20320;&#27491;&#22312;&#20351;&#29992; XCode 1.5&#65292;&#20320;&#24212;&#35813;&#23433;&#35013;&#36825;&#20010;&#26356;&#26032;&#12290;(&#36825;&#20010;&#26356;&#26032;&#21487;&#20197;&#27491;&#30830;&#22320;&#26356;&#26032;&#26410;&#32463;&#20462;&#25913;&#30340; XCode 1.5&#65292;&#20063;&#21487;&#20197;&#26356;&#26032;&#37027;&#20123;&#23454;&#26045;&#20102;&#20197;&#21069; fink &#25152;&#25512;&#33616;&#30340;&#20020;&#26102;&#21150;&#27861;&#30340;&#29992;&#25143;&#12290;)
 
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
+&#25105;&#20204;&#21521;&#33529;&#26524;&#33021;&#22815;&#21709;&#24212;&#25105;&#20204;&#25552;&#20132;&#30340;&#20851;&#20110;&#36825;&#20010;&#38382;&#39064;&#30340;&#25253;&#21578;&#65292;&#24182;&#23613;&#24555;&#32473;&#20104;&#35299;&#20915;&#34920;&#31034;&#24863;&#35874;&#12290;
 
 
 
 </description>
       <content:encoded>
 
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
+&#33529;&#26524;&#21457;&#24067;&#20102; 2004 &#24180;&#21313;&#19968;&#26376;&#30340; gcc3 &#26356;&#26032;&#65292;&#23427;&#21487;&#20197;&#22312; connect.apple.com &#19979;&#36733;(&#38656;&#35201;&#20808;&#20813;&#36153;&#27880;&#20876;)&#12290;&#36825;&#20010;&#26356;&#26032;&#20462;&#27491;&#20102; XCode 1.5 &#20013;&#30340; gcc3 &#32534;&#35793;&#22120;&#30340;&#38382;&#39064;&#12290;&#22914;&#26524;&#20320;&#27491;&#22312;&#20351;&#29992; XCode 1.5&#65292;&#20320;&#24212;&#35813;&#23433;&#35013;&#36825;&#20010;&#26356;&#26032;&#12290;(&#36825;&#20010;&#26356;&#26032;&#21487;&#20197;&#27491;&#30830;&#22320;&#26356;&#26032;&#26410;&#32463;&#20462;&#25913;&#30340; XCode 1.5&#65292;&#20063;&#21487;&#20197;&#26356;&#26032;&#37027;&#20123;&#23454;&#26045;&#20102;&#20197;&#21069; fink &#25152;&#25512;&#33616;&#30340;&#20020;&#26102;&#21150;&#27861;&#30340;&#29992;&#25143;&#12290;)
 
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
+&#25105;&#20204;&#21521;&#33529;&#26524;&#33021;&#22815;&#21709;&#24212;&#25105;&#20204;&#25552;&#20132;&#30340;&#20851;&#20110;&#36825;&#20010;&#38382;&#39064;&#30340;&#25253;&#21578;&#65292;&#24182;&#23613;&#24555;&#32473;&#20104;&#35299;&#20915;&#34920;&#31034;&#24863;&#35874;&#12290;
 
 
 
 </content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.">
-      <title>Workaround for gcc problems.</title>
-      <link>http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F">
+      <title>gcc &#38382;&#39064;&#30340;&#20020;&#26102;&#35299;&#20915;&#21150;&#27861;&#12290;</title>
+      <link>http://fink.sourceforge.net/news/#2004-10-15%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2004-10-15%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</guid>
       <description>
 
-The version of gcc included with XCode 1.5 is known to produce 
-incorrect output from c++ code under certain circumstances.
-Fink now has a mechanism to warn users about this, and Fink will soon
-refuse
-to use the "broken" gcc to compile packages which are known to
-have this problem.
+&#22312; XCode 1.5 &#20013;&#21253;&#25324;&#30340; gcc &#29256;&#26412;&#24050;&#32463;&#34987;&#21457;&#29616;&#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#20250;&#23545; c++ &#20195;&#30721;&#20135;&#29983;&#38169;&#35823;&#30340;&#36755;&#20986;&#12290;
+Fink &#29616;&#22312;&#20250;&#23545;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#29992;&#25143;&#25552;&#20986;&#21578;&#35686;&#20449;&#24687;&#65292;Fink &#20063;&#23558;&#20250;&#25298;&#32477;&#20351;&#29992;&#26377;&#38382;&#39064;&#30340; gcc &#26469;&#32534;&#35793;&#19968;&#30452;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#36719;&#20214;&#21253;&#12290;
 
-If you have already upgraded XCode to version 1.5, there is a workaround,
-described  here 
-and  here .
- If you have not yet upgraded, you should consider remaining with
-XCode version 1.2 until the problem has been resolved.
+&#22914;&#26524;&#20320;&#24050;&#32463;&#21319;&#32423; XCode &#21040;&#29256;&#26412; 1.5&#65292;&#19979;&#38754;&#26159;&#19968;&#20010;&#20020;&#26102;&#35299;&#20915;&#21150;&#27861;&#65292;
+&#22312; &#36825;&#37324;
+&#21644;&#36825;&#37324;&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
+&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
 
 
 
 </description>
       <content:encoded>
 
-The version of gcc included with XCode 1.5 is known to produce 
-incorrect output from c++ code under certain circumstances.
-Fink now has a mechanism to warn users about this, and Fink will soon
-refuse
-to use the "broken" gcc to compile packages which are known to
-have this problem.
+&#22312; XCode 1.5 &#20013;&#21253;&#25324;&#30340; gcc &#29256;&#26412;&#24050;&#32463;&#34987;&#21457;&#29616;&#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#20250;&#23545; c++ &#20195;&#30721;&#20135;&#29983;&#38169;&#35823;&#30340;&#36755;&#20986;&#12290;
+Fink &#29616;&#22312;&#20250;&#23545;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#29992;&#25143;&#25552;&#20986;&#21578;&#35686;&#20449;&#24687;&#65292;Fink &#20063;&#23558;&#20250;&#25298;&#32477;&#20351;&#29992;&#26377;&#38382;&#39064;&#30340; gcc &#26469;&#32534;&#35793;&#19968;&#30452;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#36719;&#20214;&#21253;&#12290;
 
-If you have already upgraded XCode to version 1.5, there is a workaround,
-described  here 
-and  here .
- If you have not yet upgraded, you should consider remaining with
-XCode version 1.2 until the problem has been resolved.
+&#22914;&#26524;&#20320;&#24050;&#32463;&#21319;&#32423; XCode &#21040;&#29256;&#26412; 1.5&#65292;&#19979;&#38754;&#26159;&#19968;&#20010;&#20020;&#26102;&#35299;&#20915;&#21150;&#27861;&#65292;
+&#22312; &#36825;&#37324;
+&#21644;&#36825;&#37324;&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
+&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
 
 
 

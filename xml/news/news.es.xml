@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.15 2004/11/22 12:16:54 zifra Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.16 2004/11/26 09:14:28 benh57 Exp $</cvsid>
 
 <newsitem>
 <date>2004-11-20</date>
@@ -60,7 +60,7 @@ dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para
 
 <p>
 Para realizar una primera instalación de Fink, hay que seguir los consejos 
-de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</link> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</link> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
@@ -1549,4 +1549,5 @@ software before using Fink.
 </newsitem>
 
 </news>
+
 

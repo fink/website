@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-  <cvsid>$Id: news.ja.xml,v 1.1 2004/11/24 05:37:49 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: news.ja.xml,v 1.2 2004/11/26 09:14:28 benh57 Exp $</cvsid>
   <newsitem>
     <date>2004-11-20</date>
     <headline>gcc 問題の解決</headline>
@@ -30,7 +30,7 @@ XCode 1.5 の利用者はこのアップデータをインストールしてく�
     <body>
       <p>最新版の Fink、バージョン0.7.1 (10.3用) がソースとバイナリユーザーを対象にリリースされました。このリリースは Panther (10.3) 系の Mac OS X 用です。 Jaguar (10.2) 系の Mac OS X バージョンには、今まで通り0.6.3 リリースをお使いください。</p>
       <p>パッケージマネージャの修正と、多くのバイナリパッケージの追加によって1650のバイナリパッケージ化がこのリリースの内容です。KDE 3.1.4 と GNOME 2.4 のバイナリを含んでいます。</p>
-      <p>Fink を完全にインストールするには、<varlink url="download/index.php">ここ</varlink>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">このページ</link>にあります。
+      <p>Fink を完全にインストールするには、<varlink url="download/index.php">ここ</varlink>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</link>にあります。
 </p>
       <p>疑問や問題がある場合、 Fink メーリングリストをご利用ください。リストについては<varlink url="lists/index.php">ここ</varlink>を参照してください。</p>
       <p>自分のプラットフォーム用のインストーラを使用してください。
