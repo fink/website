@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.13 2001/09/16 18:48:37 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.14 2001/09/16 18:51:18 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -175,28 +175,6 @@ statement</link>.
 <chapter filename="install">
 <title>Installation Questions</title>
 <shorttitle>Installation</shorttitle>
-
-<!--
-<faqentry name="stow-not-found"><question><p>Installing Fink fails
-with a "stow not found" message.</p></question>
-<answer><p>This is a known bug in Fink 0.1.8. It is caused by missing
-dependencies in the gzip and tar packages. The bug is fixed in Fink
-0.1.8a. To install it, either wipe out /sw (or whatever you used) and
-use install.sh again or just use upgrade.sh and install any
-package. Note that you do not need the update unless you did a
-first-time installation with 0.1.8.</p>
-</answer></faqentry>
-
-<faqentry name="bzip2"><question><p>I tried to install Fink 0.2.0, but it failed to
-login to cygnus (?) to get bzip. (login denied). Is there an error in
-the login script?</p></question>
-<answer><p>There is no "login script" in Fink. What you're seeing is not a bug
-in Fink (or wget, which is used for downloading files), but an
-overloaded FTP server. Later releases of Fink use a different server
-to get bzip2. As a workaround, you can download bzip2-1.0.1.tar.gz
-manually and place it in /sw/src, then retry installing.</p>
-</answer></faqentry>
--->
 
 <faqentry name="proxy"><question><p>I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</p></question>
