@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.27 2004/03/11 22:36:57 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.28 2005/01/02 16:04:50 dmrrsn Exp $ */
 ?>
 
 </td></tr>
@@ -12,7 +12,7 @@
 <td class="footer_left" width="120">
 	<p style="border-style: solid ; border-width: 3px 0px 0px 0px ; border-color: #999999 ; padding: 6px ; margin: 0px ; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)">
 		<a href="<? echo $root; ?>legal.php" style="text-decoration:none ; color:black ; font-size:8pt;">
-			Copyright &copy 2001-04<br>The&nbsp;Fink&nbsp;Project
+			Copyright &copy 2001-05<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 	</p>
 </td><td class="footer">
