@@ -1,7 +1,7 @@
 <?
 $title = "Fink bug trqacking system";
 $cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 23:37:59 $';
+$cvs_date = '$Date: 2005/01/22 23:48:38 $';
 
 include "header.inc";
 ?>
@@ -12,19 +12,19 @@ include "header.inc";
 <h2>Bug tracking system documentation</h2> 
 <ul>
 	<li>
-		<a href="Reporting">How to report a bug in Fink</a> 
+		<a href="Reporting.php">How to report a bug in Fink</a> 
 	<li>
-		<a href="Access">Ways of accessing the bug report logs</a> 
+		<a href="Access.php">Ways of accessing the bug report logs</a> 
 	<li>
-		<a href="server-request">Requesting bug reports by email</a> 
+		<a href="server-request.php">Requesting bug reports by email</a> 
 </ul>
 <ul>
 	<li>
-		<a href="Developer">Developers' information on how to use the system</a> 
+		<a href="Developer.php">Developers' information on how to use the system</a> 
 	<li>
-		<a href="server-control">Developers' information on manipulating bugs by email</a> 
+		<a href="server-control.php">Developers' information on manipulating bugs by email</a> 
 	<li>
-		<a href="server-refcard">Mailservers' reference card</a> 
+		<a href="server-refcard.php">Mailservers' reference card</a> 
 </ul>
 <h2>Viewing bug reports on the WWW</h2> 
 <p>
