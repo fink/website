@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.8 2004/04/26 02:05:51 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.9 2004/04/26 05:14:54 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1263,6 +1263,9 @@ others.
     </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
+      <p>
+	Note: not available until a CVS version of fink after 0.20.0.
+      </p>
       <p>
 	Shows how Fink parses parts of a package's .info file. Various
 	fields and percent expansions will be displayed according
