@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/14 09:14:22';
+$cvs_date = 'Date: 2003/07/17 12:23:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -95,6 +95,9 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <a name="usr-local-libs">
 <div class="question"><p><b>Q4.9: I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</b></p></div>
 <div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package configuration script finds libraries under <code>/usr/local/lib</code> before searching in the Fink path.  If you are having problems with a build that aren't covered by another FAQ entry, you should check whether you have libraries in <code>/usr/local/lib</code>.  If so, then try renaming <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <code>/usr/local</code> back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+</a>
+<a name="toc-out-of-date"><div class="question"><p><b>Q4.10: When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</b></p></div>
+<div class="answer"><p><b>A:</b> The output hints at what to do.  The message is usually something like:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (as root) on whatever library is causing the problem.  As an example, for the case above, you would run:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>

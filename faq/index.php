@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/14 09:14:22';
+$cvs_date = 'Date: 2003/07/17 12:23:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -97,12 +97,13 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#mv-failed">4.7 What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</a></li>
 <li><a href="comp-general.php#node-exists">4.8 I can't install a package | update because I get a message that a &quot;node&quot; already exists.</a></li>
 <li><a href="comp-general.php#usr-local-libs">4.9 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</a></li>
+<li><a href="comp-general.php#toc-out-of-date">4.10 When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
 <li><a href="comp-packages.php#libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
-<li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
+<li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
 <li><a href="comp-packages.php#automake-autoconf">5.5 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
 <li><a href="comp-packages.php#cctools">5.6 &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</a></li>
@@ -141,7 +142,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.118 2003/07/14 09:14:22 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.119 2003/07/17 12:23:19 alexkhansen Exp $</i></p>
 
 
 <?

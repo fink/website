@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/14 09:14:22';
+$cvs_date = 'Date: 2003/07/17 12:23:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -30,7 +30,7 @@ endif
 </p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>4. Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p><p>5. If you had <code>xaw3d</code> and <code>xaw3d-shlibs</code> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p></div>
 </a>
 <a name="change-thread-nothread">
-<div class="question"><p><b>Q5.3: How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</b></p></div>
+<div class="question"><p><b>Q5.3: How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</b></p></div>
 <div class="answer"><p><b>A:</b> If you are running the fink version of XFree86 and you want to switch between the threaded and non-threaded versions of fink, you need to manually remove the old version. This is done at the command-line with the commands:</p><pre>
 sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
