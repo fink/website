@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.16 2004/12/10 01:52:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.17 2005/03/08 14:32:53 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -209,11 +209,14 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 <title>環境の設定</title>
 <p>
 Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
-これはコマンドを使って
+これはターミナル上で、
+</p>
+<codeblock>/sw/bin/pathsetup.sh</codeblock>
+<p>
+と入力します。
+古いバージョンの fink の場合、ファイル名が <filename>pathsetup.command</filename> ですので、次のように入力します。
 </p>
 <codeblock>open /sw/bin/pathsetup.command</codeblock>
-<p><code>fink-0.18.3</code> あるいは <code>fink-0.19.2</code> の場合は (下記の通り正確に)</p>
-<codeblock>/sw/bin/pathsetup.sh</codeblock>
 <p>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。

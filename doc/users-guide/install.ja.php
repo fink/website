@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/12/10 01:52:57';
+$cvs_date = 'Date: 2005/03/08 14:32:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 
@@ -91,11 +91,14 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 
 <p>
 Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
-これはコマンドを使って
+これはターミナル上で、
+</p>
+<pre>/sw/bin/pathsetup.sh</pre>
+<p>
+と入力します。
+古いバージョンの fink の場合、ファイル名が <code>pathsetup.command</code> ですので、次のように入力します。
 </p>
 <pre>open /sw/bin/pathsetup.command</pre>
-<p><code>fink-0.18.3</code> あるいは <code>fink-0.19.2</code> の場合は (下記の通り正確に)</p>
-<pre>/sw/bin/pathsetup.sh</pre>
 <p>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
