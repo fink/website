@@ -22,31 +22,27 @@
 
 <h2><xsl:text>Contents</xsl:text></h2>
 
-<ul><xsl:text>
-</xsl:text>
+<ul>
 <xsl:for-each select="chapter">
-<li><a><xsl:attribute name="href">
-<xsl:text>#</xsl:text><xsl:value-of select="@filename"/>
-</xsl:attribute>
-<b><xsl:number format="1 " /><xsl:value-of select="title" /></b></a></li><xsl:text>
-</xsl:text>
+<li>
+  <a><xsl:attribute name="href"><xsl:text>#</xsl:text><xsl:value-of select="@filename"/></xsl:attribute>
+    <b><xsl:number format="1 " /><xsl:value-of select="title" /></b>
+  </a>
 
-<ul><xsl:text>
-</xsl:text>
-<xsl:for-each select="faqentry|section">
-<li><a><xsl:attribute name="href">
-<xsl:text>#</xsl:text><xsl:value-of select="../@filename" /><xsl:text>.</xsl:text><xsl:value-of select="@name" />
-</xsl:attribute>
-<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
-<xsl:for-each select="question/p">
-<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
-</xsl:for-each>
-<xsl:value-of select="title" />
-</a></li><xsl:text>
-</xsl:text>
-</xsl:for-each>
-</ul><xsl:text>
-</xsl:text>
+  <ul>
+	<xsl:for-each select="faqentry|section">
+	<li><a><xsl:attribute name="href">
+	<xsl:text>#</xsl:text><xsl:value-of select="../@filename" /><xsl:text>.</xsl:text><xsl:value-of select="@name" />
+	</xsl:attribute>
+	<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
+	<xsl:for-each select="question/p">
+	<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
+	</xsl:for-each>
+	<xsl:value-of select="title" />
+	</a></li>
+	</xsl:for-each>
+  </ul>
+</li>
 
 </xsl:for-each>
 </ul>
@@ -94,11 +90,11 @@
 </xsl:template>
 
 <xsl:template match="section">
-<a name="{../@filename}.{@name}"><h3>
+<h3><a name="{../@filename}.{@name}">
 <xsl:if test="boolean(//document)">
 <xsl:number count="chapter" format="1." /><xsl:number format="1 " />
 </xsl:if>
-<xsl:value-of select="title"/></h3></a>
+<xsl:value-of select="title"/></a></h3>
 <xsl:apply-templates/>
 </xsl:template>
 
@@ -171,9 +167,7 @@
 </xsl:template>
 
 <xsl:template match="cvsid">
-<xsl:text>
-</xsl:text>
-<p><hr/><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
+<hr/><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
 
 
@@ -212,11 +206,9 @@
 
 
 <xsl:template name="copyright">
-<xsl:text>
-</xsl:text>
 <hr/>
-<h2>Copyright Notice</h2><xsl:text>
-</xsl:text><p><xsl:text>Copyright (c) 2001 Christoph Pfisterer,
+<h2>Copyright Notice</h2>
+<p><xsl:text>Copyright (c) 2001 Christoph Pfisterer,
 Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and

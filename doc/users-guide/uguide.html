@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Fink User's Guide</title></head><body><h1 style="text-align: center;">Fink User's Guide</h1>
 <p>
 <b>This document is a work in progress.</b>
@@ -17,51 +18,13 @@ This guide covers first time installation and upgrade procedures for
 both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
-<h2>Contents</h2><ul>
-<li><a href="#intro"><b>1 Introduction</b></a></li>
-<ul>
-<li><a href="#intro.what">1.1 What is Fink?</a></li>
-<li><a href="#intro.req">1.2 Requirements</a></li>
-<li><a href="#intro.supported-os">1.3 Supported Systems</a></li>
-<li><a href="#intro.src-vs-bin">1.4 Source vs. Binary</a></li>
-</ul>
-<li><a href="#install"><b>2 First Time Installation</b></a></li>
-<ul>
-<li><a href="#install.bin">2.1 Installing the Binary Distribution</a></li>
-<li><a href="#install.src">2.2 Installing the Source Distribution</a></li>
-<li><a href="#install.setup">2.3 Setting Up Your Environment</a></li>
-</ul>
-<li><a href="#packages"><b>3 Installing Packages</b></a></li>
-<ul>
-<li><a href="#packages.x11">3.1 Getting X11 Sorted Out</a></li>
-<li><a href="#packages.bin-dselect">3.2 Installing Binary Packages with
-dselect</a></li>
-<li><a href="#packages.bin-apt">3.3 Installing Binary Packages with
-apt-get</a></li>
-<li><a href="#packages.bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li>
-<li><a href="#packages.src">3.5 Installing Packages from Source</a></li>
-</ul>
-<li><a href="#upgrade"><b>4 Upgrading Fink</b></a></li>
-<ul>
-<li><a href="#upgrade.bin">4.1 Upgrading using Binary Packages</a></li>
-<li><a href="#upgrade.src">4.2 Upgrading the Source Distribution</a></li>
-<li><a href="#upgrade.mix">4.3 Mixing Binaries and Source</a></li>
-</ul>
-<li><a href="#conf"><b>5 The Fink Configuration File</b></a></li>
-<ul>
-<li><a href="#conf.about">5.1 About fink.conf</a></li>
-<li><a href="#conf.syntax">5.2 fink.conf syntax</a></li>
-<li><a href="#conf.required">5.3 Required Settings</a></li>
-<li><a href="#conf.optional">5.4 Optional User Settings</a></li>
-<li><a href="#conf.downloding">5.5 Download Settings</a></li>
-<li><a href="#conf.mirrors">5.6 Mirror Settings</a></li>
-<li><a href="#conf.developer">5.7 Developer Settings</a></li>
-</ul>
-</ul><h2><a name="intro">1 Introduction</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.what">1.1 What is Fink?</a></li><li><a href="#intro.req">1.2 Requirements</a></li><li><a href="#intro.supported-os">1.3 Supported Systems</a></li><li><a href="#intro.src-vs-bin">1.4 Source vs. Binary</a></li></ul></li><li><a href="#install"><b>2 First Time Installation</b></a><ul><li><a href="#install.bin">2.1 Installing the Binary Distribution</a></li><li><a href="#install.src">2.2 Installing the Source Distribution</a></li><li><a href="#install.setup">2.3 Setting Up Your Environment</a></li></ul></li><li><a href="#packages"><b>3 Installing Packages</b></a><ul><li><a href="#packages.x11">3.1 Getting X11 Sorted Out</a></li><li><a href="#packages.bin-dselect">3.2 Installing Binary Packages with
+dselect</a></li><li><a href="#packages.bin-apt">3.3 Installing Binary Packages with
+apt-get</a></li><li><a href="#packages.bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li><li><a href="#packages.src">3.5 Installing Packages from Source</a></li></ul></li><li><a href="#upgrade"><b>4 Upgrading Fink</b></a><ul><li><a href="#upgrade.bin">4.1 Upgrading using Binary Packages</a></li><li><a href="#upgrade.src">4.2 Upgrading the Source Distribution</a></li><li><a href="#upgrade.mix">4.3 Mixing Binaries and Source</a></li></ul></li><li><a href="#conf"><b>5 The Fink Configuration File</b></a><ul><li><a href="#conf.about">5.1 About fink.conf</a></li><li><a href="#conf.syntax">5.2 fink.conf syntax</a></li><li><a href="#conf.required">5.3 Required Settings</a></li><li><a href="#conf.optional">5.4 Optional User Settings</a></li><li><a href="#conf.downloding">5.5 Download Settings</a></li><li><a href="#conf.mirrors">5.6 Mirror Settings</a></li><li><a href="#conf.developer">5.7 Developer Settings</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
 
 
 
-<a name="intro.what"><h3>1.1 What is Fink?</h3></a>
+<h3><a name="intro.what">1.1 What is Fink?</a></h3>
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -70,7 +33,7 @@ developed for Linux and similar operating systems to your Mac.
 </p>
 
 
-<a name="intro.req"><h3>1.2 Requirements</h3></a>
+<h3><a name="intro.req">1.2 Requirements</a></h3>
 <p>
 In any case you will need:
 </p>
@@ -114,7 +77,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="intro.supported-os"><h3>1.3 Supported Systems</h3></a>
+<h3><a name="intro.supported-os">1.3 Supported Systems</a></h3>
 <p>
 <b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
@@ -136,7 +99,7 @@ Mac OS X - affected packages include XFree86 and possibly esound.
 </p>
 
 
-<a name="intro.src-vs-bin"><h3>1.4 Source vs. Binary</h3></a>
+<h3><a name="intro.src-vs-bin">1.4 Source vs. Binary</a></h3>
 <p>
 Software is written (&quot;developed&quot;) in human-readable programming
 languages; this form is called the &quot;source code&quot;.
@@ -199,7 +162,7 @@ chapter</a>.
 </p>
 
 
-<a name="install.bin"><h3>2.1 Installing the Binary Distribution</h3></a>
+<h3><a name="install.bin">2.1 Installing the Binary Distribution</a></h3>
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -225,7 +188,7 @@ When the installer is finished, proceed with the
 </p>
 
 
-<a name="install.src"><h3>2.2 Installing the Source Distribution</h3></a>
+<h3><a name="install.src">2.2 Installing the Source Distribution</a></h3>
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <tt style="white-space: nowrap;">fink</tt> package manager and its package
@@ -287,7 +250,7 @@ When the bootstrap is finished, proceed with the
 </p>
 
 
-<a name="install.setup"><h3>2.3 Setting Up Your Environment</h3></a>
+<h3><a name="install.setup">2.3 Setting Up Your Environment</a></h3>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
@@ -352,7 +315,7 @@ the binary distribution, some important notes that apply to both.
 </p>
 
 
-<a name="packages.x11"><h3>3.1 Getting X11 Sorted Out</h3></a>
+<h3><a name="packages.x11">3.1 Getting X11 Sorted Out</a></h3>
 <p>
 Since there are several X11 implementations available for Mac OS X
 (XFree86, Tenon Xtools, eXodus) and several ways to install them
@@ -401,8 +364,8 @@ and Mac OS X document</a>.
 </p>
 
 
-<a name="packages.bin-dselect"><h3>3.2 Installing Binary Packages with
-dselect</h3></a>
+<h3><a name="packages.bin-dselect">3.2 Installing Binary Packages with
+dselect</a></h3>
 <p>
 <tt style="white-space: nowrap;">dselect</tt> is a program that lets you browse the list of
 available packages and select which ones you want installed.
@@ -478,8 +441,8 @@ the &quot;[I]nstall&quot; menu item to actually install the packages.
 </p>
 
 
-<a name="packages.bin-apt"><h3>3.3 Installing Binary Packages with
-apt-get</h3></a>
+<h3><a name="packages.bin-apt">3.3 Installing Binary Packages with
+apt-get</a></h3>
 <p>
 <tt style="white-space: nowrap;">dselect</tt> doesn't actually download the packages itself.
 Instead, it runs apt to do the dirty work.
@@ -509,7 +472,7 @@ Removing packages is just as easy:
 </p>
 
 
-<a name="packages.bin-exceptions"><h3>3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</h3></a>
+<h3><a name="packages.bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></h3>
 <p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
 <pre>Sorry, but the following packages have unmet
 dependencies:
@@ -520,7 +483,7 @@ E: Sorry, broken packages</pre>
 
 
 
-<a name="packages.src"><h3>3.5 Installing Packages from Source</h3></a>
+<h3><a name="packages.src">3.5 Installing Packages from Source</a></h3>
 <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
 <p>
 To get a list of packages that are available for installation from
@@ -564,7 +527,7 @@ installation with the latest and greatest stuff.
 </p>
 
 
-<a name="upgrade.bin"><h3>4.1 Upgrading using Binary Packages</h3></a>
+<h3><a name="upgrade.bin">4.1 Upgrading using Binary Packages</a></h3>
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -588,7 +551,7 @@ older than 0.3.0, see the
 </p>
 
 
-<a name="upgrade.src"><h3>4.2 Upgrading the Source Distribution</h3></a>
+<h3><a name="upgrade.src">4.2 Upgrading the Source Distribution</a></h3>
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -628,7 +591,7 @@ update-all</tt>.
 </p>
 
 
-<a name="upgrade.mix"><h3>4.3 Mixing Binaries and Source</h3></a>
+<h3><a name="upgrade.mix">4.3 Mixing Binaries and Source</a></h3>
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions
@@ -651,7 +614,7 @@ file (fink.conf) and how they influence the behaviour of Fink.
 </p>
 
 
-<a name="conf.about"><h3>5.1 About fink.conf</h3></a>
+<h3><a name="conf.about">5.1 About fink.conf</a></h3>
 <p>
 When Fink is initially installed it prompts you for the answers to some
 questions to set up your configuration file, such as which <a href="#conf.mirrors">mirrors</a> you want to use for downloading files
@@ -667,7 +630,7 @@ text editor. You will need super-user rights to edit it.
 </p>
 
 
-<a name="conf.syntax"><h3>5.2 fink.conf syntax</h3></a>
+<h3><a name="conf.syntax">5.2 fink.conf syntax</a></h3>
 <p>
 Your fink.conf file consists of multiple lines, in the format:</p>
 <pre>OptionName: Value</pre>
@@ -684,7 +647,7 @@ ListOption: Option1 Option2 Option3
 </pre>
 
 
-<a name="conf.required"><h3>5.3 Required Settings</h3></a>
+<h3><a name="conf.required">5.3 Required Settings</a></h3>
 <p>
 Some of the settings in the <b>fink.conf</b> are mandatory. Without
 them Fink cannot to function properly. The following settings belong to
@@ -701,7 +664,7 @@ changed it during the initial installation of Fink. You should
 </ul>
 
 
-<a name="conf.optional"><h3>5.4 Optional User Settings</h3></a>
+<h3><a name="conf.optional">5.4 Optional User Settings</a></h3>
 <p>
 There are various optional settings which users can customize to change
 the behaviour of Fink.
@@ -776,7 +739,7 @@ manually.</p>
 </li>
 </ul>
 
-<a name="conf.downloding"><h3>5.5 Download Settings</h3></a>
+<h3><a name="conf.downloding">5.5 Download Settings</a></h3>
 <p>There are various settings which influence the way Fink downloads
 package data.</p>
 <ul>
@@ -810,7 +773,7 @@ time. The default value is <b>curl</b>.
 </li>
 </ul>
 
-<a name="conf.mirrors"><h3>5.6 Mirror Settings</h3></a>
+<h3><a name="conf.mirrors">5.6 Mirror Settings</a></h3>
 <p>Getting software from the Internet can be tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
@@ -842,7 +805,7 @@ For example, if you live in Austria:</p>
 </li>
 </ul>
 
-<a name="conf.developer"><h3>5.7 Developer Settings</h3></a>
+<h3><a name="conf.developer">5.7 Developer Settings</a></h3>
 <p>Some options in the <b>fink.conf</b> are only useful to
 developers. We do not recommend that conventional Fink users modify
 them. The following options fall into this category.</p>
@@ -862,12 +825,9 @@ fill your hard-disk quickly!</b>
 
 
 
-
-<hr><h2>Copyright Notice</h2>
-<p>Copyright (c) 2001 Christoph Pfisterer,
+<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
 Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</i></p></body></html>

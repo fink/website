@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Creating Fink Packages</title></head><body><h1 style="text-align: center;">Creating Fink Packages</h1>
 <p>
 This manual documents how to create package descriptions for the Fink
@@ -19,45 +20,12 @@ in this area, you might consider adopting a
 <a href="http://fink.sourceforge.net/pdb/nomaintainer.php">package which
 currently has no maintainer.</a>
 </p>
-<h2>Contents</h2><ul>
-<li><a href="#intro"><b>1 Introduction</b></a></li>
-<ul>
-<li><a href="#intro.def1">1.1 What is a Package?</a></li>
-<li><a href="#intro.ident">1.2 Identifying a Package</a></li>
-</ul>
-<li><a href="#format"><b>2 Package Descriptions</b></a></li>
-<ul>
-<li><a href="#format.trees">2.1 Tree Layout</a></li>
-<li><a href="#format.format">2.2 File Format</a></li>
-<li><a href="#format.percent">2.3 Percent Expansion</a></li>
-</ul>
-<li><a href="#policy"><b>3 Packaging Policy</b></a></li>
-<ul>
-<li><a href="#policy.licenses">3.1 Package Licenses</a></li>
-<li><a href="#policy.prefix">3.2 Base System Interference</a></li>
-<li><a href="#policy.sharedlibs">3.3 Shared Libraries</a></li>
-</ul>
-<li><a href="#fslayout"><b>4 Filesystem Layout</b></a></li>
-<ul>
-<li><a href="#fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></li>
-<li><a href="#fslayout.dirs">4.2 The Directories</a></li>
-<li><a href="#fslayout.avoid">4.3 Things to Avoid</a></li>
-</ul>
-<li><a href="#reference"><b>5 Reference</b></a></li>
-<ul>
-<li><a href="#reference.build">5.1 The Build Process</a></li>
-<li><a href="#reference.fields">5.2 Fields</a></li>
-<li><a href="#reference.splitoffs">5.3 SplitOffs</a></li>
-<li><a href="#reference.scripts">5.4 Scripts</a></li>
-<li><a href="#reference.patches">5.5 Patches</a></li>
-<li><a href="#reference.profile.d">5.6 Profile.d scripts</a></li>
-</ul>
-</ul><h2><a name="intro">1 Introduction</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.def1">1.1 What is a Package?</a></li><li><a href="#intro.ident">1.2 Identifying a Package</a></li></ul></li><li><a href="#format"><b>2 Package Descriptions</b></a><ul><li><a href="#format.trees">2.1 Tree Layout</a></li><li><a href="#format.format">2.2 File Format</a></li><li><a href="#format.percent">2.3 Percent Expansion</a></li></ul></li><li><a href="#policy"><b>3 Packaging Policy</b></a><ul><li><a href="#policy.licenses">3.1 Package Licenses</a></li><li><a href="#policy.prefix">3.2 Base System Interference</a></li><li><a href="#policy.sharedlibs">3.3 Shared Libraries</a></li></ul></li><li><a href="#fslayout"><b>4 Filesystem Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></li><li><a href="#fslayout.dirs">4.2 The Directories</a></li><li><a href="#fslayout.avoid">4.3 Things to Avoid</a></li></ul></li><li><a href="#reference"><b>5 Reference</b></a><ul><li><a href="#reference.build">5.1 The Build Process</a></li><li><a href="#reference.fields">5.2 Fields</a></li><li><a href="#reference.splitoffs">5.3 SplitOffs</a></li><li><a href="#reference.scripts">5.4 Scripts</a></li><li><a href="#reference.patches">5.5 Patches</a></li><li><a href="#reference.profile.d">5.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
 
 
 
 
-<a name="intro.def1"><h3>1.1 What is a Package?</h3></a>
+<h3><a name="intro.def1">1.1 What is a Package?</a></h3>
 <p>
 A package is a piece of software that forms an atomic unit.
 A typical package contains an executable program, the data files it
@@ -88,7 +56,7 @@ files are in the dpkg format and have the extension .deb.
 
 
 
-<a name="intro.ident"><h3>1.2 Identifying a Package</h3></a>
+<h3><a name="intro.ident">1.2 Identifying a Package</a></h3>
 <p>
 A package is identified by three strings: the package name, the
 version and the revision.
@@ -117,7 +85,7 @@ dashes in between, e.g. openssh-2.9p1-2.
 
 
 
-<a name="format.trees"><h3>2.1 Tree Layout</h3></a>
+<h3><a name="format.trees">2.1 Tree Layout</a></h3>
 <p>
 Package descriptions are read from the <tt style="white-space: nowrap;">finkinfo</tt>
 directories below the <tt style="white-space: nowrap;">/sw/fink/dists</tt> directory.
@@ -154,7 +122,7 @@ divided into sections at the moment.</li>
 </ul>
 
 
-<a name="format.format"><h3>2.2 File Format</h3></a>
+<h3><a name="format.format">2.2 File Format</a></h3>
 <p>
 The description files are simple lists of key-value pairs, also called
 'fields'.
@@ -224,7 +192,7 @@ as false.
 </p>
 
 
-<a name="format.percent"><h3>2.3 Percent Expansion</h3></a>
+<h3><a name="format.percent">2.3 Percent Expansion</a></h3>
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
@@ -300,7 +268,7 @@ specified with ConfigureParams
 
 
 
-<a name="policy.licenses"><h3>3.1 Package Licenses</h3></a>
+<h3><a name="policy.licenses">3.1 Package Licenses</a></h3>
 <p>
 The packages included in Fink come with a wide variety of licenses.
 Most of them place restrictions on redistributing the full source and
@@ -396,7 +364,7 @@ Project license, the same applies, e.g. <tt style="white-space: nowrap;">GPL/LDP
 
 
 
-<a name="policy.prefix"><h3>3.2 Base System Interference</h3></a>
+<h3><a name="policy.prefix">3.2 Base System Interference</a></h3>
 <p>
 Fink is an add-on distribution that is installed in a directory
 separate from the base system.
@@ -416,7 +384,7 @@ for existence before calling them and the like).
 </p>
 
 
-<a name="policy.sharedlibs"><h3>3.3 Shared Libraries</h3></a>
+<h3><a name="policy.sharedlibs">3.3 Shared Libraries</a></h3>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 4
@@ -768,7 +736,7 @@ packaging policy.
 
 
 
-<a name="fslayout.fhs"><h3>4.1 The Filesystem Hierarchy Standard</h3></a>
+<h3><a name="fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></h3>
 <p>
 Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy
 Standard</a>, or FHS for short.
@@ -781,7 +749,7 @@ The examples use the default prefix of <tt style="white-space: nowrap;">/sw</tt>
 </p>
 
 
-<a name="fslayout.dirs"><h3>4.2 The Directories</h3></a>
+<h3><a name="fslayout.dirs">4.2 The Directories</a></h3>
 <p>
 Files should go into the following subdirectories of the hierarchy:
 </p>
@@ -892,7 +860,7 @@ Nothing should be installed here by a package.
 
 
 
-<a name="fslayout.avoid"><h3>4.3 Things to Avoid</h3></a>
+<h3><a name="fslayout.avoid">4.3 Things to Avoid</a></h3>
 <p>
 No other directories than the ones mentioned above should exist in
 <tt style="white-space: nowrap;">/sw</tt>.
@@ -909,7 +877,7 @@ In particular, the following should not be used:
 
 
 
-<a name="reference.build"><h3>5.1 The Build Process</h3></a>
+<h3><a name="reference.build">5.1 The Build Process</a></h3>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -946,7 +914,7 @@ but various information from the package description is used to
 generate a <tt style="white-space: nowrap;">control</tt> file for dpkg.</p>
 
 
-<a name="reference.fields"><h3>5.2 Fields</h3></a>
+<h3><a name="reference.fields">5.2 Fields</a></h3>
 
 <p>We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <tt style="white-space: nowrap;">:-)</tt></p>
@@ -1663,7 +1631,7 @@ is necessary&quot; goes here. Multiple lines allowed.
 </td></tr></table>
 
 
-<a name="reference.splitoffs"><h3>5.3 SplitOffs</h3></a>
+<h3><a name="reference.splitoffs">5.3 SplitOffs</a></h3>
 <p>Beginning with fink 0.9.9, a single .info file can be used to build
 multiple packages.  
 The install phase begins as usual, with the execution of the 
@@ -1727,7 +1695,7 @@ of the packages by using <tt style="white-space: nowrap;">DocFiles</tt> several 
 
 
 
-<a name="reference.scripts"><h3>5.4 Scripts</h3></a>
+<h3><a name="reference.scripts">5.4 Scripts</a></h3>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
@@ -1737,7 +1705,7 @@ the <tt style="white-space: nowrap;">cd</tt> commands only affect commands that 
 line. This may be fixed one day in the future.</p>
 
 
-<a name="reference.patches"><h3>5.5 Patches</h3></a>
+<h3><a name="reference.patches">5.5 Patches</a></h3>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension
@@ -1750,7 +1718,7 @@ they will both be executed. In that case the PatchScript is executed
 last.</p>
 
 
-<a name="reference.profile.d"><h3>5.6 Profile.d scripts</h3></a>
+<h3><a name="reference.profile.d">5.6 Profile.d scripts</a></h3>
 
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
@@ -1764,12 +1732,9 @@ If you just need to set some environment variables (for example, QTDIR to /sw), 
 
 
 
-
-<hr><h2>Copyright Notice</h2>
-<p>Copyright (c) 2001 Christoph Pfisterer,
+<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
 Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: packaging.xml,v 1.39 2003/03/01 01:03:59 fingolfin Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.39 2003/03/01 01:03:59 fingolfin Exp $</i></p></body></html>

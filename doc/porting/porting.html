@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Porting Unix software to Darwin and Mac OS X</title></head><body><h1 style="text-align: center;">Porting Unix software to Darwin and Mac OS X</h1>
 <p>
 This document contains hints for porting Unix applications to Darwin
@@ -7,41 +8,12 @@ The information here applies to Mac OS X version 10.0.x and Darwin
 Both systems will be referred to as Darwin, since Mac OS X is actually
 a superset of Darwin.
 </p>
-<h2>Contents</h2><ul>
-<li><a href="#basics"><b>1 Basics</b></a></li>
-<ul>
-<li><a href="#basics.heritage">1.1 Where Darwin came from</a></li>
-<li><a href="#basics.compiler">1.2 The Compiler and Tools</a></li>
-<li><a href="#basics.host-type">1.3 Host type</a></li>
-<li><a href="#basics.libraries">1.4 Libraries</a></li>
-</ul>
-<li><a href="#shared"><b>2 Shared Code</b></a></li>
-<ul>
-<li><a href="#shared.lib-and-mod">2.1 Shared Libraries vs. Loadable Modules</a></li>
-<li><a href="#shared.version">2.2 Version Numbering</a></li>
-<li><a href="#shared.cflags">2.3 Compiler Flags</a></li>
-<li><a href="#shared.build-lib">2.4 Building a Shared Library</a></li>
-<li><a href="#shared.build-mod">2.5 Building a Module</a></li>
-</ul>
-<li><a href="#libtool"><b>3 GNU libtool</b></a></li>
-<ul>
-<li><a href="#libtool.situation">3.1 The Situation</a></li>
-<li><a href="#libtool.patch-135">3.2 The 1.3.5 Patch</a></li>
-<li><a href="#libtool.fixing-14x">3.3 Fixing 1.4.x</a></li>
-<li><a href="#libtool.dylibversionfix">3.4 Fixing version strings for libtool generated dylibs</a></li>
-<li><a href="#libtool.notes">3.5 Further Notes</a></li>
-</ul>
-<li><a href="#preparing"><b>4 Preparing for 10.2</b></a></li>
-<ul>
-<li><a href="#preparing.bash">4.1 The bash shell</a></li>
-<li><a href="#preparing.gcc3">4.2 The gcc3 compiler</a></li>
-</ul>
-</ul><h2><a name="basics">1 Basics</a></h2>
+<h2>Contents</h2><ul><li><a href="#basics"><b>1 Basics</b></a><ul><li><a href="#basics.heritage">1.1 Where Darwin came from</a></li><li><a href="#basics.compiler">1.2 The Compiler and Tools</a></li><li><a href="#basics.host-type">1.3 Host type</a></li><li><a href="#basics.libraries">1.4 Libraries</a></li></ul></li><li><a href="#shared"><b>2 Shared Code</b></a><ul><li><a href="#shared.lib-and-mod">2.1 Shared Libraries vs. Loadable Modules</a></li><li><a href="#shared.version">2.2 Version Numbering</a></li><li><a href="#shared.cflags">2.3 Compiler Flags</a></li><li><a href="#shared.build-lib">2.4 Building a Shared Library</a></li><li><a href="#shared.build-mod">2.5 Building a Module</a></li></ul></li><li><a href="#libtool"><b>3 GNU libtool</b></a><ul><li><a href="#libtool.situation">3.1 The Situation</a></li><li><a href="#libtool.patch-135">3.2 The 1.3.5 Patch</a></li><li><a href="#libtool.fixing-14x">3.3 Fixing 1.4.x</a></li><li><a href="#libtool.dylibversionfix">3.4 Fixing version strings for libtool generated dylibs</a></li><li><a href="#libtool.notes">3.5 Further Notes</a></li></ul></li><li><a href="#preparing"><b>4 Preparing for 10.2</b></a><ul><li><a href="#preparing.bash">4.1 The bash shell</a></li><li><a href="#preparing.gcc3">4.2 The gcc3 compiler</a></li></ul></li></ul><h2><a name="basics">1 Basics</a></h2>
 
 
 
 
-<a name="basics.heritage"><h3>1.1 Where Darwin came from</h3></a>
+<h3><a name="basics.heritage">1.1 Where Darwin came from</a></h3>
 <p>
 Darwin is a Unix-like operating system that evolved from NeXTStep /
 OpenStep.
@@ -68,7 +40,7 @@ installed as the default.
 
 
 
-<a name="basics.compiler"><h3>1.2 The Compiler and Tools</h3></a>
+<h3><a name="basics.compiler">1.2 The Compiler and Tools</a></h3>
 <p>
 Short story:
 The compiler is a gcc derivate, but installed as <tt style="white-space: nowrap;">cc</tt>;
@@ -108,7 +80,7 @@ linker.
 
 
 
-<a name="basics.host-type"><h3>1.3 Host type</h3></a>
+<h3><a name="basics.host-type">1.3 Host type</a></h3>
 <p>
 Short story:
 If configure fails with 'Can't determine host type', copy config.guess
@@ -155,7 +127,7 @@ copy them from there.
 
 
 
-<a name="basics.libraries"><h3>1.4 Libraries</h3></a>
+<h3><a name="basics.libraries">1.4 Libraries</a></h3>
 <p>
 Short story:
 You can safely remove <tt style="white-space: nowrap;">-lm</tt> from Makefiles, but you don't
@@ -181,7 +153,7 @@ libutil.dylib.
 
 
 
-<a name="shared.lib-and-mod"><h3>2.1 Shared Libraries vs. Loadable Modules</h3></a>
+<h3><a name="shared.lib-and-mod">2.1 Shared Libraries vs. Loadable Modules</a></h3>
 <p>
 One Mach-O feature that hits many people by surprise is the strict
 distinction between shared libraries and dynamically loadable
@@ -219,7 +191,7 @@ loaded.
 
 
 
-<a name="shared.version"><h3>2.2 Version Numbering</h3></a>
+<h3><a name="shared.version">2.2 Version Numbering</a></h3>
 <p>
 On an ELF system, version numbers are usually appended to the file
 name of the shared library, e.g. <tt style="white-space: nowrap;">libqt.so.2.3.0</tt>.
@@ -268,7 +240,7 @@ linking.
 
 
 
-<a name="shared.cflags"><h3>2.3 Compiler Flags</h3></a>
+<h3><a name="shared.cflags">2.3 Compiler Flags</a></h3>
 <p>
 The generation of position-independent code (PIC) is the default is
 the default on Darwin.
@@ -283,7 +255,7 @@ option.
 
 
 
-<a name="shared.build-lib"><h3>2.4 Building a Shared Library</h3></a>
+<h3><a name="shared.build-lib">2.4 Building a Shared Library</a></h3>
 <p>
 To build a shared library, you invoke the compiler driver with the
 <tt style="white-space: nowrap;">-dynamiclib</tt> option.
@@ -316,7 +288,7 @@ the library.
 
 
 
-<a name="shared.build-mod"><h3>2.5 Building a Module</h3></a>
+<h3><a name="shared.build-mod">2.5 Building a Module</a></h3>
 <p>
 To build a loadable module, you invoke the compiler driver with the
 <tt style="white-space: nowrap;">-bundle</tt> option.
@@ -351,7 +323,7 @@ platform-dependent procedures for library building and installation.
 </p>
 
 
-<a name="libtool.situation"><h3>3.1 The Situation</h3></a>
+<h3><a name="libtool.situation">3.1 The Situation</a></h3>
 <p>
 In the wild, one can find four strands of libtool:
 </p>
@@ -422,7 +394,7 @@ on Darwin when dlcompat is installed.
 
 
 
-<a name="libtool.patch-135"><h3>3.2 The 1.3.5 Patch</h3></a>
+<h3><a name="libtool.patch-135">3.2 The 1.3.5 Patch</a></h3>
 <p>
 After applying <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
 patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source, you
@@ -440,7 +412,7 @@ For your convenience, you can get the two files right here:
 <b>[both updated 2001-08-30]</b>.</p>
 
 
-<a name="libtool.fixing-14x"><h3>3.3 Fixing 1.4.x</h3></a>
+<h3><a name="libtool.fixing-14x">3.3 Fixing 1.4.x</a></h3>
 <p>
 There are at least three different versions of libtool 1.4.x now in wide use
 (1.4.1, 1.4.2, and later development snapshots). They all have some issues on
@@ -545,7 +517,7 @@ The problems are discussed in these email messages: </li><li>
 </ol>
 
 
-<a name="libtool.dylibversionfix"><h3>3.4 Fixing version strings for libtool generated dylibs</h3></a>
+<h3><a name="libtool.dylibversionfix">3.4 Fixing version strings for libtool generated dylibs</a></h3>
 
 <p>Libraries generated by libtool might have the wrong version numbers. This is caused by a wrongly used flag in the packages Makefile.
 When libtool is called in a Makefile like this:
@@ -610,7 +582,7 @@ More Information on setting and updating library version numbers using libtool c
 
 
 
-<a name="libtool.notes"><h3>3.5 Further Notes</h3></a>
+<h3><a name="libtool.notes">3.5 Further Notes</a></h3>
 <p>
 For more information on libtool itself and what it does, see the <a href="http://www.gnu.org/software/libtool/libtool.html">libtool
 homepage</a>.
@@ -633,7 +605,7 @@ This can be achieved by configuring GNU libtool with
 
 
 
-<a name="preparing.bash"><h3>4.1 The bash shell</h3></a>
+<h3><a name="preparing.bash">4.1 The bash shell</a></h3>
 <p>
 Fink made the transition from OS X 10.0 to OS X 10.1 fairly easily, thanks
 in part to planning ahead for the changes that were coming.  We will try
@@ -716,7 +688,7 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </li>
 </ul>
 
-<a name="preparing.gcc3"><h3>4.2 The gcc3 compiler</h3></a>
+<h3><a name="preparing.gcc3">4.2 The gcc3 compiler</a></h3>
 <p>Mac OS X 10.2 uses the gcc3 compiler.
 </p><p>Some packages which have loadable modules and use
 libtool fail with an install_name error, because libtool passes
@@ -736,12 +708,9 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 
 
-
-<hr><h2>Copyright Notice</h2>
-<p>Copyright (c) 2001 Christoph Pfisterer,
+<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
 Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: porting.xml,v 1.25 2003/01/02 15:29:21 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: porting.xml,v 1.25 2003/01/02 15:29:21 alexkhansen Exp $</i></p></body></html>
