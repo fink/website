@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/01/08 18:39:40';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/02/06 20:28:18';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -80,6 +80,11 @@ Some notes on using Apple's X11:
   <p><tt><nobr>quartz-wm</nobr></tt> doesn't fully support Gnome/KDE window manager hints, so
   you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
  </li>
+<li><p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications that you have installed with fink (e.g. window managers, gnome-session, other apps under <tt><nobr>/sw/bin</nobr></tt>) make the following line the third one in your <tt><nobr>~/.xinitrc</nobr></tt>:</p>
+<pre>
+. /sw/bin/init.sh
+</pre>
+<p>so that the Fink environment is initialized.  Note:  <tt><nobr>init.sh</nobr></tt> is used rather than <tt><nobr>init.csh</nobr></tt> because <tt><nobr>.xinitrc</nobr></tt> is run by <tt><nobr>sh</nobr></tt> rather than <tt><nobr>tcsh</nobr></tt>.</p></li>
 </ul>
 
 

@@ -406,6 +406,11 @@ Some notes on using Apple's X11:
   <p><tt style="white-space: nowrap;">quartz-wm</tt> doesn't fully support Gnome/KDE window manager hints, so
   you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
  </li>
+<li><p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications that you have installed with fink (e.g. window managers, gnome-session, other apps under <tt style="white-space: nowrap;">/sw/bin</tt>) make the following line the third one in your <tt style="white-space: nowrap;">~/.xinitrc</tt>:</p>
+<pre>
+. /sw/bin/init.sh
+</pre>
+<p>so that the Fink environment is initialized.  Note:  <tt style="white-space: nowrap;">init.sh</tt> is used rather than <tt style="white-space: nowrap;">init.csh</tt> because <tt style="white-space: nowrap;">.xinitrc</tt> is run by <tt style="white-space: nowrap;">sh</tt> rather than <tt style="white-space: nowrap;">tcsh</tt>.</p></li>
 </ul>
 
 
@@ -1270,4 +1275,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: x11.xml,v 1.22 2003/01/08 18:39:40 rangerrick Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: x11.xml,v 1.23 2003/02/06 20:28:18 alexkhansen Exp $</i></p></body></html>
