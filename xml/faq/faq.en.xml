@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.7 2004/03/23 02:01:41 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.8 2004/03/24 01:55:05 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -576,12 +576,11 @@ fink selfupdate-cvs</codeblock>
         installed with Fink.</p>
       </question>
       <answer>
-        <p>If this always happens, then you may have inadvertently modified
-        your startup scripts. Run the
+        <p>If this always happens, then you may have inadvertently modified (or failed to modify) your startup scripts. Run the
         <filename>/sw/bin/pathsetup.command</filename> script (either by
         double-clicking in the Finder or in a terminal), which will attempt to
         detect your startup configuration. You'll then need to open a new
-        terminal session so that your environment settings are loaded.</p>
+        terminal session so that your environment settings are loaded.  <em>Note:</em>  for <code>fink-0.18.3</code> and <code>fink-0.19.2</code>, the script has been changed to <filename>/sw/bin/pathsetup.sh</filename>, and must be run in a terminal.</p>
         <p>On the other hand, if you only have problems in the Apple X11
         terminal, this probably means that you need to create a <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link>
         file and add the line</p>
@@ -829,7 +828,9 @@ update available list script returned error exit status 1.</codeblock>
 gzip: stdout: Broken pipe 
 ### execution of gzip failed, exit code 138</codeblock>
         <p>or</p>
-        <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base ### executionof dpkg-deb failed, exit code 10 
+        <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+
+### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
         <p>or segmentation faults when running utilities from<code>
         fileutils</code>, e.g. <code>ls</code> or <code>mv</code>, are likely
