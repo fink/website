@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 18:22:34';
+$cvs_date = 'Date: 2004/06/10 23:17:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 include_once "header.inc";
@@ -82,7 +82,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>You may regar
         pane in the System Preferences tool, and disable "ArchiveViaRealName"
         if it's enabled. It contains a buggy reimplementation of a few
         important system calls that will cause a number of strange and
-        transient errors such as this.</p><p>Otherwise, am <code>mv</code> error typically means that
+        transient errors such as this.</p><p>Otherwise, an  <code>mv</code> error typically means that
         another error happened earlier in the build, but the build process
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 18:22:34';
+$cvs_date = 'Date: 2004/06/10 23:17:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -145,7 +145,7 @@ exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for
           updating <code>fink</code> may solve your problem immediately, e.g.
           via</p><pre>sudo apt-get update
 sudo apt-get install fink</pre><p>If this fails, or if you have a later version of Fink, then typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.</p>Running
-<pre>fink list -i system-xfree86</pre>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> pacakges are installed.<p>If reinstalling the X11User package doesn't work, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p>
+<pre>fink list -i system-xfree86</pre>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are installed.<p>If reinstalling the X11User package doesn't work, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p>
           </li>
           <li>
             <b>You are installing from source: </b><p>If you are running a version of <code>fink</code> prior to 0.17 then you should update

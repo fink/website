@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 18:22:34';
+$cvs_date = 'Date: 2004/06/10 23:17:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -30,8 +30,8 @@ include_once "header.inc";
         daemons to root (imagine what would happen if Apache were to be
         compromised and suddenly had write permission to all files on the
         system). Thus, the passwd package takes the work out of setting up
-        these extra users for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane, but suppress the urge
+        these extra users for Fink packages that require this.</p><p>It can be alarming to discover suddenly a number of unexpected
+        users in your "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x), but suppress the urge 
         to delete them:</p><ul>
           <li>First of all, you have obviously chosen to install a package
           which requires their use, so deleting the user doesn't make much
@@ -45,8 +45,7 @@ include_once "header.inc";
           running <code>niutil -list . /users</code>
           </li>
           <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane will
-          assign all of their files to a random administrator account, and
+          you go about it. Using the "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will assign all of their files to a random administrator account, and
           there have been reports of havoc played with the administrator
           account's permissions. This is a bug with System Preferences, and
           has been submitted to Apple. A safer way to remove these users from
@@ -157,7 +156,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	  certain locations, and if they are found, considers that
 	  virtual package "installed".
 	</p><p>
-	  You can run the program <code>fink-virtual-packages</code>
+	  You can run the program <code>fink-virtual-pkgs</code>
 	  (part of the fink package) to get a listing of exactly what
 	  fink thinks is installed. Adding the <code>--debug</code>
 	  flag will give lots of diagnostic information about exactly
