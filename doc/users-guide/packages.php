@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/06 00:04:23';
+$cvs_date = 'Date: 2003/07/06 00:12:01';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -54,7 +54,7 @@ This version is faster than 4.2.1.1, but hasn't been tested quite as much.
 <p>
 system-xfree86:
 This package expects that you installed XFree86 manually, either from
-source or from the official (or unofficial) binary distribution; or that you have installed Apple's X111.
+source or from the official (or unofficial) binary distribution; or that you have installed Apple's X11.
 It will just check that the installation is useful and then act as a
 dependency placeholder.
 </p>

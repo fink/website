@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/06 00:04:23';
+$cvs_date = 'Date: 2003/07/06 00:12:01';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -90,7 +90,7 @@ apt-get</a></li>
 <li><a href="usage.php#checksums">6.19 checksums</a></li>
 <li><a href="usage.php#cleanup">6.20 cleanup</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.26 2003/07/06 00:04:23 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.27 2003/07/06 00:12:01 alexkhansen Exp $</i></p>
 
 
 <?
