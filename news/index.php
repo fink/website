@@ -1,13 +1,13 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2004/08/02 21:51:23';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/08/03 00:12:24';
 $metatags = '';
 
-<a name="2004-08-01 All your Server are belong to us."><span class="news-date">2004-08-01: </span><span class="news-headline">All your Server are belong to us.</span></a><?php gray_line(); ?>
+<a name="2004-08-01 Bandwidth to spare?"><span class="news-date">2004-08-01: </span><span class="news-headline">Bandwidth to spare?</span></a><?php gray_line(); ?>
 	<p>
 	It has been some time since we last asked for more mirrors. 
-	It is time to do so again. Fink is very grateful for the ressources 
+	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
@@ -17,8 +17,8 @@ $metatags = '';
 	<p>
 	 To get a better understanding of the different types of mirrors 
 	 Fink offers, please go and review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
-	 If you feel that you can offer other types of ressources, 
-	 web-space for testing as an example, please do not hestitate <a href="mailto:mirrors@finkmirrors.net">contacting</a> us as well.
+	 If you feel that you can offer other types of resources, 
+	 web-space for testing as an example, please do not hestitate in <a href="mailto:mirrors@finkmirrors.net">contacting</a> us as well.
 	</p>
 	<a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
 	<p>

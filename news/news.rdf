@@ -4,17 +4,17 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 02 Aug 2004 23:51:32 CEST</lastBuildDate>
+    <lastBuildDate>Mon, 02 Aug 2004 20:13:00 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20All%20your%20Server%20are%20belong%20to%20us.">
-    <title>All your Server are belong to us.</title>
-    <link>http://fink.sourceforge.net/news/#2004-08-01%20All%20your%20Server%20are%20belong%20to%20us.</link>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Bandwidth%20to%20spare%3F">
+    <title>Bandwidth to spare?</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-01%20Bandwidth%20to%20spare%3F</link>
     <dc:date>2004-08-01</dc:date>
     <description>
 	
 	It has been some time since we last asked for more mirrors. 
-	It is time to do so again. Fink is very grateful for the ressources 
+	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
@@ -24,8 +24,8 @@
 	
 	 To get a better understanding of the different types of mirrors 
 	 Fink offers, please go and review finkmirrors.net. This is the official homepage for all mirror related issues.
-	 If you feel that you can offer other types of ressources, 
-	 web-space for testing as an example, please do not hestitate contacting us as well.
+	 If you feel that you can offer other types of resources, 
+	 web-space for testing as an example, please do not hestitate in contacting us as well.
 	
 	</description>
   </item>
