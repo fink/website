@@ -69,14 +69,14 @@ include_once "header.inc";
     <h2><a name="delayed-update">3.5 Delayed Update to Existing Documentation (XML-generated files only)</a></h2>
       
       <p>In this case, the English version of the XML file is <a href="files.php?phpLang=en#committing">committed</a>, but <b>not</b> the
-        PHP and HTML files, i.e. stop at step 5 under of Dynamic under <a href="files.php?phpLang=en#committing">2.9</a>. All translators do
+        PHP and HTML files, i.e. stop after step 5 under of Dynamic under <a href="files.php?phpLang=en#committing">2.9</a>. All translators do
         their work and <a href="files.php?phpLang=en#committing">commit</a> <b>only </b>their XML file (i.e. the same as
         for English) within an agreed-upon timeframe. All of the PHP and HTML
         files will be generated, committed, and <a href="files.php?phpLang=en#website">activated</a> simultaneously at an
         agreed-upon time by one person, e.g. someone from the i18n core
         team.</p>
     
-    <h2><a name="summary">3.6 For Developers and English Language Documenters:</a></h2>
+    <h2><a name="summary">3.6 For Developers and English Language Documenters</a></h2>
       
       <p>The current policy is that all documents should be updated according to the <a href="#prompt-update">prompt update</a> schedule, unless you have a specific reason to do otherwise.</p>
     
