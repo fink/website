@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 04:48:26';
+$cvs_date = 'Date: 2004/03/25 04:54:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -325,7 +325,7 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.2, you may use arbitrary integer values of N, (not necessarily consecutive) integer values of N &gt;= 2. However, you still may not have
+of fink after 0.19.2, you may use arbitrary  (not necessarily consecutive) integer values of N &gt;= 2. However, you still may not have
 duplicates.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
