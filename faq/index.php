@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/26 16:15:10 $';
+$cvs_date = '$Date: 2001/04/26 16:22:18 $';
 
 include "header.inc";
 ?>
@@ -16,9 +16,6 @@ question and answer style.</p>
 
 <p>The FAQ consists of several pages, one for each section. All
 questions are listed and linked in the table of contents below.</p>
-
-<p>This is currently incomplete - some questions are listed in the
-table of contents but there are no answers.</p>
 
 <h2>Contents</h2>
 
