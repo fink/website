@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Installation de XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 09:26:01';
+$cvs_date = 'Date: 2004/04/19 22:52:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 include_once "header.inc";
@@ -100,7 +100,7 @@ defined in indirectly referenced dynamic library
     
     <h2><a name="official-source">3.4 Source Officiel</a></h2>
       
-      <p>
+      <p>NdT : sera traduit lorsque le texte anglais sera mis à jour.
 If you've got the time to spare, you can build XFree86 4.2.0 from source.
 You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in the directory <code>4.2.0/source</code>.
 Grab all three <code>X420src-#.tgz</code> tarballs and extract them in the same directory.
@@ -122,36 +122,24 @@ As with the official binaries, you've now got XFree86 with a server
 that can do fullscreen, or rootless under Mac OS X.
 </p>
     
-    <h2><a name="latest-cvs">3.5 The Latest Development Source</a></h2>
+    <h2><a name="latest-cvs">3.5 Source le plus récent</a></h2>
       
       <p>
-If you have not only time, but also some nerves to spare you can get
-the latest development version of XFree86 from the public CVS
-repository.
-Note that the code is under constant development; what you get today
-is usually not the same as what you got yesterday.
+Si vous avez le temps et des nerfs à toute épreuve, vous pouvez utiliser la dernière version de développement de XFree86 via le référentiel public CVS.
+Notez que le code est mis à jour constamment ; d'un jour à l'autre il est modifié.
 </p>
       <p>
-To install, follow the <a href="http://www.xfree86.org/cvs/">XFree86
-CVS</a> instructions to download the <code>xc</code> module.
-Then, follow the source build instructions above.
+Afin de l'installer, suivez les instructions sur <a href="http://www.xfree86.org/cvs/">XFree86 CVS</a> pour télécharger le module<code>xc</code>.
+Puis suivez les instructions de compilation du source ci-dessus.
 </p>
     
     <h2><a name="macgimp">3.6 MacGimp</a></h2>
       
       <p>
-The downloadable installer which was offered by the MacGimp people 
-during 2001
-did not contain XFree86.
-(It would overwrite some XFree86 configuration files, though.)
+L'installeur téléchargeable qui fut proposé par l'équipe MacGimp en 2001 ne contenait pas XFree86. (Il écrasait, malgré tout, certains fichiers de configuration de XFree86.)
 </p>
       <p>
-The CD that <a href="http://www.macgimp.com/">MacGimp, Inc.</a>
-offers for sale reportedly contains XFree86.
-It's not quite clear what version it is; it may be a mix of
-4.0.3, 4.1.0 and a development snapshot.
-The server does rootless mode, using a patch from the time before
-4.1.0.
+Le CD vendu par <a href="http://www.macgimp.com/">MacGimp, Inc.</a> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.
 </p>
     
     <h2><a name="switching-x11">3.7 Replacing X11</a></h2>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.7 2004/04/17 09:26:01 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.8 2004/04/19 22:52:52 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -285,7 +285,7 @@ defined in indirectly referenced dynamic library
     </section>
     <section name="official-source" >
       <title>Source Officiel</title>
-      <p>
+      <p>NdT : sera traduit lorsque le texte anglais sera mis à jour.
 If you've got the time to spare, you can build XFree86 4.2.0 from source.
 You can find the source on your local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in the directory <code>4.2.0/source</code>.
 Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in the same directory.
@@ -316,18 +316,14 @@ that can do fullscreen, or rootless under Mac OS X.
 </p>
     </section>
     <section name="latest-cvs" >
-      <title>The Latest Development Source</title>
+      <title>Source le plus récent</title>
       <p>
-If you have not only time, but also some nerves to spare you can get
-the latest development version of XFree86 from the public CVS
-repository.
-Note that the code is under constant development; what you get today
-is usually not the same as what you got yesterday.
+Si vous avez le temps et des nerfs à toute épreuve, vous pouvez utiliser la dernière version de développement de XFree86 via le référentiel public CVS.
+Notez que le code est mis à jour constamment ; d'un jour à l'autre il est modifié.
 </p>
       <p>
-To install, follow the <link url="http://www.xfree86.org/cvs/" >XFree86
-CVS</link> instructions to download the <filename>xc</filename> module.
-Then, follow the source build instructions above.
+Afin de l'installer, suivez les instructions sur <link url="http://www.xfree86.org/cvs/" >XFree86 CVS</link> pour télécharger le module<filename>xc</filename>.
+Puis suivez les instructions de compilation du source ci-dessus.
 </p>
     </section>
 <!--><section name="xonx-bin" >
@@ -352,18 +348,10 @@ installed on top of XFree86 4.2.0 (or later).
 </section><-->    <section name="macgimp" >
       <title>MacGimp</title>
       <p>
-The downloadable installer which was offered by the MacGimp people 
-during 2001
-did not contain XFree86.
-(It would overwrite some XFree86 configuration files, though.)
+L'installeur téléchargeable qui fut proposé par l'équipe MacGimp en 2001 ne contenait pas XFree86. (Il écrasait, malgré tout, certains fichiers de configuration de XFree86.)
 </p>
       <p>
-The CD that <link url="http://www.macgimp.com/" >MacGimp, Inc.</link>
-offers for sale reportedly contains XFree86.
-It's not quite clear what version it is; it may be a mix of
-4.0.3, 4.1.0 and a development snapshot.
-The server does rootless mode, using a patch from the time before
-4.1.0.
+Le CD vendu par <link url="http://www.macgimp.com/" >MacGimp, Inc.</link> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.
 </p>
     </section>
 <!--><section name="rootless" >
