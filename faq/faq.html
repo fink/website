@@ -665,8 +665,8 @@ endif
 </p><p>1. Uninstall <tt style="white-space: nowrap;">xaw3d</tt> and <tt style="white-space: nowrap;">xaw3d-shlibs</tt> if you installed them with fink, and their version is 1.5-4 or earlier, because they also install in /usr/X11R6 (this is no longer the case for 1.5-5 and later versions).</p><p>2. Remove <tt style="white-space: nowrap;">system-xfree86</tt>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p><p>
 <tt style="white-space: nowrap;">sudo dpkg --remove --force-depends system-xfree86</tt>
 </p><p>to remove it, leaving everything in place.  If you don't have <tt style="white-space: nowrap;">system-xfree86</tt> installed then proceed to step 3.</p><p>3. Manually remove all of XFree86.  This can be done with</p><p>
-<tt style="white-space: nowrap;">sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</tt>
-</p><p>4. Install fink's <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt> by the usual means:  &quot;<tt style="white-space: nowrap;">fink install</tt>&quot; for source users, &quot;<tt style="white-space: nowrap;">apt-get install</tt>&quot; or <tt style="white-space: nowrap;">dselect</tt> for binaries.</p><p>5. If you had <tt style="white-space: nowrap;">xaw3d</tt> and <tt style="white-space: nowrap;">xaw3d-shlibs</tt> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p></div>
+<tt style="white-space: nowrap;">sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</tt>
+</p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>4. Install fink's <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt> by the usual means:  &quot;<tt style="white-space: nowrap;">fink install</tt>&quot; for source users, &quot;<tt style="white-space: nowrap;">apt-get install</tt>&quot; or <tt style="white-space: nowrap;">dselect</tt> for binaries.</p><p>5. If you had <tt style="white-space: nowrap;">xaw3d</tt> and <tt style="white-space: nowrap;">xaw3d-shlibs</tt> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p></div>
 </a>
 <a name="comp-packages.change-thread-nothread">
 <div class="question"><p><b>Q5.3: How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</b></p></div>
@@ -956,4 +956,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.107 2003/04/15 19:13:32 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.108 2003/05/07 01:57:29 alexkhansen Exp $</i></p></body></html>
