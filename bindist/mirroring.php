@@ -29,7 +29,8 @@ them.</li>
 described below.</li>
 </ul>
 <p>
-If you want your mirror listed publicly, contact &lt;fink@chrisp.de&gt;.
+If you want your mirror listed publicly, contact 
+&lt;fink-devel@lists.sourceforge.net&gt;.
 </p>
 
 <h2>Setting up rsync</h2>
