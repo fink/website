@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.119 2004/02/19 10:14:54 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.120 2004/02/19 15:01:49 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2004-02-19</date>
 	<headline>Raise your Flag.</headline>
 	<body>
 	<p>
-Thanks to Baba Yoshihiko Fink has now taken the necessary steps to allow for internalisation efforts. 
+Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for internalisation efforts. 
 The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
 </p>
 <p>
@@ -17,7 +17,7 @@ A translation into Japanese is being worked on and the translation into French h
 Which language are you willing to translate?
 </p>
 <p>
-If you are willing to become a member of the internationalisation team or wish to provide acknowledgement on 
+If you are willing to become a member of the internationalisation team or wish to provide feedback on 
 the web-site feel free to join the new mailing-list.
 You can do so by going to our <link url="lists/index.php">mailing-lists page</link>. The full announcement on the existing 
 mailing lists can be read <extlink url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">here</extlink>.
