@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/10/27 02:08:42';
+$cvs_date = 'Date: 2003/10/27 11:25:26';
 
 $metatags = '';
 
@@ -59,7 +59,7 @@ following commands:
 <p><code>
 sudo dpkg -r --force-all system-xfree86\
 </code>
-<code>system-xfree86-42 system-xfree86-43</code>
+<code>system-xfree86-42 system-xfree86-43;</code>
 <code>
 fink selfupdate; fink index</code>
 </p>

@@ -49,7 +49,7 @@ following commands:
 <p><code>
 sudo dpkg -r --force-all system-xfree86\
 </code>
-<code>system-xfree86-42 system-xfree86-43</code>
+<code>system-xfree86-42 system-xfree86-43;</code>
 <code>
 fink selfupdate; fink index</code>
 </p>
