@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.14 2004/08/12 15:01:32 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.15 2004/09/02 14:49:05 alexkhansen Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -559,7 +559,7 @@ If you run into errors during that process, please first check the
       <p>Fink Commander is an Aqua interface to both <code>apt-get</code> and the <code>fink</code> tool.  The Binary menu lets you do operations on the binary distribution, and the Source menu does the same thing for the source distribution.</p>
       <p>Fink Commander is included with the Fink binary installer.  To download it separately (e.g. if you've bootstrapped Fink from source), or for additional information, visit the <link url="http://finkcommander.sourceforge.net">Fink Commander website</link>.</p>
     </section>
-    <section>
+    <section name="available-versions">
       <title>Available versions</title>
       <p>When you want to install a package, you should first check the <link url="http://fink.sourceforge.net/pdb/index.php">package database</link> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
@@ -567,25 +567,26 @@ If you run into errors during that process, please first check the
           <p>
             <em>0.4.1:</em>  this is the version that can be installed from binaries for OS 10.1.</p>
         </li>
+        <li><em>0.6.3:</em>  this is the version that can be installed from binaries for OS 10.2.</li>
         <li>
           <p>
-<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.2 or OS 10.3, under the current Fink release.  If you <xref chapter="upgrade">upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <xref chapter="upgrade">upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
         </li>
         <li>
           <p>
-            <em>10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
-          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
+            <em>current-10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-        <li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
+        <li><p><em>current-10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
 </li>
         <li>
           <p>
-            <em>10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
+            <em>current-10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-        <li><em>10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+        <li><em>current-10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
       </ul>
     </section>
     <section name="x11">
@@ -1033,7 +1034,7 @@ only operates on that single <em>fink</em> invocation.
         </li>
       </ul>
     </section>
-    <section name="advanced" >
+    <section name="advanced">
       <title>Advanced Settings</title>
       <p>There are some other options which may be useful, but require some knowledge to get right.</p>
       <ul>
@@ -1053,14 +1054,14 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
         </li>
       </ul>
     </section>
-    <section name="sourceslist" >
+    <section name="sourceslist">
       <title>Managing apt's sources.list file</title>
       <p>Starting with fink 0.21.0, fink actively manages the file
 <code>/sw/etc/apt/sources.list</code> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
-<codeblock># Local modifications should either go above this line, or at the end.
+      <codeblock># Local modifications should either go above this line, or at the end.
 #
 # Default APT sources configuration for Fink, written by the fink program
 
@@ -1081,18 +1082,19 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 
 # Put local modifications to this file below this line, or at the top.
 </codeblock>
-<p>With this default file, apt-get first looks in your local installation
+      <p>With this default file, apt-get first looks in your local installation
 for already-compiled binaries, and then looks in the official binary
 distribution.  You can alter this by making entries at the beginning of
 the file (which will be searched first) or at the end of the file (which
 will be searched last).</p>
-<p>If you change your Trees line or the Distribution you are using,
+      <p>If you change your Trees line or the Distribution you are using,
 fink will automatically modify the "default" portion of the file to
 correspond to the new values.  Fink will, however, preserve any local
 modifications you have made to the file, provided that you confine your
 modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
-</p><p>
+</p>
+      <p>
 Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
 to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
 </p>
