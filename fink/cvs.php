@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/20 15:18:11 $';
+$cvs_date = '$Date: 2001/04/20 15:20:29 $';
 
 include "header.inc";
 ?>
@@ -12,9 +12,9 @@ include "header.inc";
 <p>Since version 0.1.5, Fink is developed via CVS. This means that you
 can stay up to date between releases and always get the newest
 stuff. This page tells you how to set up an existing Fink installation
-for updating via CVS.</p>
-<p><b>The information on this pacge applies to Fink 0.1.x only.</b>
-Instructions for the 0.2.x series are not available yet.</p>
+for updating via CVS. <b>The information on this page applies to Fink
+0.1.x only.</b> Instructions for the 0.2.x series are not available
+yet.</p>
 
 <h2>Initial Setup</h2>
 
