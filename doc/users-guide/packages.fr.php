@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:32';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/09/03 02:58:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -158,34 +158,31 @@ Si des erreurs se produisent durant le processus, consultez tout d'abord les
       <p>Fink Commander est une interface Aqua aux outils <code>apt-get</code> et <code>fink</code>.  Le menu Binary (binaire) vous permet d'effectuer des opérations sur la distribution binaire, et le menu Source vous offre les mêmes possibilités pour la distribution source.</p>
       <p>Fink Commander est inclus dans l'installeur binaire de Fink. Pour le télécharger séparément (dans le cas où vous avez effectué un bootstrap de Fink à partir du source), ou pour de plus amples informations, allez sur le <a href="http://finkcommander.sourceforge.net">site web de Fink Commander</a>.</p>
     
-    <h2><a name="">3.6 Versions disponibles</a></h2>
+    <h2><a name="available-versions">3.6 Versions disponibles</a></h2>
       
       <p>Lorsque vous voulez installer un paquet, vous devez d'abord rechercher dans la <a href="http://fink.sourceforge.net/pdb/index.php">base de données des paquets</a> s'il est disponible via Fink. Les éventuelles versions disponibles apparaissent dans plusieurs lignes d'un tableau. Voici à quoi elles correspondent :</p>
-      <ul>
-      <li>
-          <p>
-            <b>0.4.1 :</b>  C'est la version qui peut être installée à partir des binaires pour OS 10.1.</p>
-        </li>
-         <li>
-          <p>
-<b>fink_version :</b>  C'est la version qui peut être installée à partir des binaires pour OS 10.2 et OS 10.3, et qui correspond à la version actuelle de Fink. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour un OS spécifique qui ne soit pas encore mentionnée dans le tableau.</p> 
-        </li>
-         <li>
-          <p>
-            <b>10.2-gcc3.3 stable :</b>  C'est la version stable la plus récente qui puisse être installée à partir du source pour OS 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
-          <p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.
+<ul>
+<li>
+<p><b>0.4.1 :</b>  C'est la version qui peut être installée à partir des binaires pour OS 10.1.</p>
+</li>
+<li><b>0.6.3 :</b> C'est la version qui peut être installée à partir des binaires pour OS 10.2.</li>
+<li>
+<p><b>0.7.0 :</b>  C'est la version de base qui peut être installée à partir des binaires pour OS 10.2 et OS 10.3, et qui correspond à la version actuelle de Fink. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour un OS spécifique qui ne soit pas encore mentionnée dans le tableau.</p> 
+</li>
+<li>
+<p><b>current-10.2-gcc3.3 stable :</b>  C'est la version stable la plus récente qui puisse être installée à partir du source pour OS 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
+<p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.
 </p>
 </li>
-  <li><p><b>10.3 stable :</b>  C'est la version la plus récente qui puisse être installée à partir du source sur OS 10.3.  Encore une fois, il vous faudra peut-être activer l'accès à CVS ou rsync pour y avoir accès.</p>
+<li><p><b>current-10.3 stable :</b>  C'est la version la plus récente qui puisse être installée à partir du source sur OS 10.3.  Encore une fois, il vous faudra peut-être activer l'accès à CVS ou rsync pour y avoir accès.</p>
 </li> 
-        <li>
-          <p>
-            <b>10.2-gcc3.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
-          <p>Note :  instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.
+<li>
+<p><b>current-10.2-gcc3.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
+<p>Note :  instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.
 </p>
-        </li>
-  <li><b>10.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.3.  Activez l'arborescence instable comme indiqué ci-dessus.</li>
-   </ul>
+</li>
+<li><b>current-10.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.3.  Activez l'arborescence instable comme indiqué ci-dessus.</li>
+</ul>
     
     <h2><a name="x11">3.7 Implémentation de X11</a></h2>
       
