@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.50 2004/09/07 19:13:29 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.51 2004/09/11 20:56:29 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1308,7 +1308,7 @@ Required field.
   binary (compiled) form of a package (the <filename>.deb</filename>
   file), you <em>must</em> increase <code>Revision</code>. This
   includes changing the <code>Depends</code> or other package lists,
-  with the exception of<code>BuildDepends</code>, and adding,
+  and adding,
   removing, or renaming splitoff packages or shifting files among
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
