@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 02 Feb 2004 22:01:19 EST</lastBuildDate>
+    <lastBuildDate>Sun, 15 Feb 2004 20:31:14 JST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK">
@@ -78,7 +78,7 @@ apt-get, dselect or FinkCommander to install binary files as usual.
 	Last year has been a good year for Fink. We have had hard times keeping up with 
 	the changes introduces by Apple, but we also learned that we have a great community
 	which is willing to go through great lengths to support us. 
-	For this, we say &quot;Thank You&quot;. Much of what happens in the Fink project
+	For this, we say "Thank You". Much of what happens in the Fink project
    happens because of the amazing support and encouragement we get from our users.
 	
 	
@@ -219,7 +219,7 @@ We believe that this problem can only occur if you've used dselect.
 		latest Fink version to avoid the issue.  To make sure you don't have
 		upgrade problems, check your /sw/etc/apt/sources.list
 		file.  You will need to modify it if it contains deb
-		lines that point to &quot;release&quot; or &quot;current&quot; without a version number.
+		lines that point to "release" or "current" without a version number.
 		In other words, if your sources.list file contains
 		these lines:
 		deb http://us.dl.sourceforge.net/fink/direct_download release main
@@ -232,7 +232,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main
 repair dselect, but in the meantime,
 		make sure your sources.list file has the correct entries.
 Other users have experienced problems with dselect itself, particularly
-complaints about a missing &quot;darwin&quot; package.  If you are running dselect
+complaints about a missing "darwin" package.  If you are running dselect
 under 10.3 and you don't get this warning, then your 
 sources.list file is likely to be corrupted and you should
 repair it as above.
@@ -260,7 +260,7 @@ installations for the
 next few weeks.
 
 The simplest way to upgrade a binary installation is to run
-&quot;sudo apt-get update&quot;.  Further details and
+"sudo apt-get update".  Further details and
 other issues related to upgrading Fink to 10.3 are addressed on the
 Special 10.3 upgrade page.
 
@@ -347,7 +347,7 @@ the August 2003 Developer Tools update BEFORE you upgrade Fink.  Under
 10.3, be sure to install XCode from the XCode disk before upgrading
 Fink.
 
-Running &quot;fink selfupdate&quot; should perform the upgrade for you.  The latest
+Running "fink selfupdate" should perform the upgrade for you.  The latest
 version of the fink package manager will automatically detect which
 version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
