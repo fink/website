@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.17 2001/10/13 09:09:23 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.18 2001/10/23 17:51:49 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -42,12 +42,23 @@ from the BSD port mechanism (this includes OpenPackages and
 GNU-Darwin)?</p></question>
 <answer><p>Some main advantages:</p>
 <ul>
-<li><p>It's written in Perl, not make/shell. Thus it doesn't rely on
-special features only found in BSD make. There is no need to flag
-packages that need GNU make to build.</p></li>
-<li><p>dpkg provides sophisticated management for binary packages -
-smooth updating, special handling for configuration files, virtual
-packages and other advanced dependencies.</p></li>
+<li><p>
+It's written in Perl, not make/shell.
+Thus it doesn't rely on special features only found in BSD make.
+There is no need to flag packages that need GNU make to build.
+</p></li>
+<li><p>
+dpkg provides sophisticated management for binary packages - smooth
+updating, special handling for configuration files, virtual packages
+and other advanced dependencies.
+</p></li>
+<li><p>
+Fink doesn't install into /usr/local unless explicitly requested and
+doesn't require fiddling with /usr/bin/make or other system-provided
+commands.
+That makes it safer to use and reduces interference with Mac OS X and
+third-party packages to a minimum.
+</p></li>
 </ul>
 </answer></faqentry>
 
@@ -162,9 +173,24 @@ Thanks Apple!
 OpenOSX.com?</p></question>
 <answer>
 <p>
-Read this <link
+They used Fink to build the first release of their GIMP CD and refuse
+go acknowledge that properly.
+Read the <link
 url="http://fink.sourceforge.net/pr/openosx.php">public
-statement</link>.
+statement</link> for details.
+</p>
+</answer></faqentry>
+
+
+<faqentry name="forked"><question><p>What is your relation with
+macosx.forked.net?</p></question>
+<answer>
+<p>
+That site redistributes some Fink packages as Installer.app packages,
+unchanged but with their own boilerplate that doesn't mention Fink.
+Read the <link
+url="http://fink.sourceforge.net/pr/forked.php">public
+statement</link> for details.
 </p>
 </answer></faqentry>
 
@@ -180,10 +206,15 @@ statement</link>.
 configure Fink to use an HTTP proxy?</p></question>
 <answer>
 <p>
-Fink 0.2.3 and later ask you for proxy and firewall settings on
-installation.
-If you're upgrading from an older version, run <code>fink
-configure</code> to be asked these questions.
+The <code>fink</code> command supports explicit proxy settings that
+are passed on to <code>wget</code> resp. <code>curl</code>.
+If you were not asked for proxies on first time installation, you can
+run <code>fink configure</code> to set it up.
+You can also run that command at any time to reconfigure the
+<code>fink</code> command.
+These settings do not apply to <code>apt-get</code> and
+<code>dselect</code>, though.
+Investigations continue...
 </p>
 </answer></faqentry>
 
@@ -204,10 +235,12 @@ Makefiles.
 You need to get the original <code>head</code> executable back if you
 want to use Fink.
 </p>
+<!--
 <p>
 Future releases of Fink will check the system before the bootstrap
 starts to catch this error.
 </p>
+-->
 </answer></faqentry>
 
 <faqentry name="moving"><question><p>Can I move Fink to another
@@ -253,7 +286,7 @@ Example:
 If you're using the binary distribution, <code>dselect</code> gives
 you a nice browsable listing of available packages.
 Note that you must run it as root if you want to select and install
-packages from withing dselect.
+packages from within dselect.
 </p>
 <p>
 There's also the <link url="http://fink.sourceforge.net/pdb/">package
