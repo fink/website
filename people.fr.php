@@ -1,7 +1,7 @@
 <?
 $title = "Contributeurs";
-$cvs_author = '$Author: chrisdolan $';
-$cvs_date = '$Date: 2005/01/25 21:47:47 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2005/02/01 10:01:55 $';
 
 include "header.inc";
 ?>
@@ -32,7 +32,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 
 <h2>Administration et revue de presse</h2>
 <ul>
-<li>David H&#246;hn dit Darian Lanx (<i>dmalloc</i>)</li>
+<li>David Höhn dit Darian Lanx (<i>dmalloc</i>)</li>
 </ul>
 
 <h2>Contributeurs réguliers</h2>
@@ -57,7 +57,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Jeremy Higgs</li>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li>
-<li>David H&#246;hn aka. Darian Lanx (<i>dmalloc</i>)</li>
+<li>David Höhn aka. Darian Lanx (<i>dmalloc</i>)</li>
 <li>Daniel Johnson</li>
 <li>Carsten Klapp</li>
 <li>Killian Koepsell</li> 
@@ -102,6 +102,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Claudio Garguilo</li>
 <li>Michèle Garoche</li>
 <li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
+<li>Jeff Horsager</li>
 <li>Felix Kühne</li>
 <li>Apostolos Karakoussis</li>
 <li>Marc Sierbren Kxadijk</li>

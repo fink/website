@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: chrisdolan $';
-$cvs_date = '$Date: 2005/01/25 21:47:45 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2005/02/01 10:01:55 $';
 
 include "header.inc";
 ?>
@@ -103,6 +103,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Claudio Garguilo</li>
 <li>Michèle Garoche</li>
 <li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
+<li>Jeff Horsager</li>
 <li>Felix Kühne</li>
 <li>Apostolos Karakoussis</li>
 <li>Marc Sierbren Kxadijk</li>
