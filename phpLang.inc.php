@@ -50,26 +50,53 @@ if(!defined('phpLang_fileNameType'))
 // list of available languages, order it as you need
 $phpLang_languages = array(
 	"en([-_][[:alpha:]]{2})?|english"		=>	array('en', 'english', 'English'),
+	
 	"fr([-_][[:alpha:]]{2})?|french"		=>	array('fr', 'french', 'Fran&ccedil;ais'),
-	"cs|czech"								=>	array('cs', 'czech', ''),
-	"da|danish"								=>	array('da', 'danish', 'Dansk'),
+	
+	"cs|czech"					=>	array('cs', 'czech', ''),
+	
+	"da|danish"					=>	array('da', 'danish', 'Dansk'),
+	
 	"nl([-_][[:alpha:]]{2})?|dutch"			=>	array('nl', 'dutch', 'Nederlands'),
+	
 	"de([-_][[:alpha:]]{2})?|german"		=>	array('de', 'german', 'Deutsch'),
+	
 	"fi|finnish"					=>	array('fi', 'finnish', ''),
+	
 	"is|icelandic"					=>	array('is', 'icelandic', ''),
+	
 	"it|italian"					=>	array('it', 'italian', 'Italiano'),
+	
 	"ja|japanese"					=>	array('ja', 'japanese', '&#26085;&#26412;&#35486; (Nihongo)'),
+	
 	"no|norwegian"					=>	array('no', 'norwegian', ''),
+	
 	"sv([-_][[:alpha:]]{2})?|swedish"		=>	array('sv', 'swedish', 'svensk'),
-	"pl|polish"								=>	array('pl', 'polish', 'Polski'),
-	"ru|russian"							=>	array('ru', 'russian', '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russkiy)'),
-	"sk|slovak"								=>	array('sk', 'slovak', ''),
+	
+	"pl|polish"					=>	array('pl', 'polish', 'Polski'),
+	
+	"ru|russian"					=>	array('ru', 'russian', '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russkiy)'),
+	
+	"sk|slovak"					=>	array('sk', 'slovak', ''),
+	
 	"es([-_][[:alpha:]]{2})?|spanish"		=>	array('es', 'spanish', 'Espa&ntilde;ol'),
-	"th|thai"								=>	array('th', 'thai', ''),
-	"pt[-_]br"								=>	array('pt-br', 'brazilian portuguese'),
-	"pt([-_][[:alpha:]]{2})?|portuguese"	=>	array('pt', 'portuguese', 'Portugu&ecirc;s'),
+	
+	"th|thai"					=>	array('th', 'thai', ''),
+	
+	"pt[-_]br"					=>	array('pt-br', 'brazilian portuguese'),
+	
+	"pt([-_][[:alpha:]]{2})?|portuguese"		=>	array('pt', 'portuguese', 'Portugu&ecirc;s'),
+	
 	"uk([-_][[:alpha:]]{2})?|ukrainian"		=>	array('ua', 'ukrainian', ''),
-	"zh[-_]tw"								=>	array('zh-tw', 'chinese_traditional', ''),
+	
+	"ko([-_][[:alpha:]]{2})?|korean"		=>	array('ko', 'korean', ''),
+	
+	"he|hebrew"					=>	array('he', 'hebrew', ''),
+	
+	"ar([-_][[:alpha:]]{2})?|arabic"		=>	array('ar', 'arabic', ''),
+	
+	"zh[-_]tw"					=>	array('zh-tw', 'chinese_traditional', ''),
+	
 	"zh([-_][[:alpha:]]{2})?|chinese"		=>	array('zh', 'chinese_simplified', '&#20013;&#25991; (&#31616;) (Simplified Chinese)')
 );
 
