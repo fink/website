@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/11/02 02:38:51';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/11/02 10:14:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -460,6 +460,11 @@ asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
+<p>
+  The standard continent and country codes are listed in
+  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+  fink or fink-mirrors package.
+</p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
 An URL to the source tarball. It should be a HTTP or FTP URL, but

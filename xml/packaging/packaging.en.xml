@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.54 2004/11/02 02:38:51 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.55 2004/11/02 10:14:27 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1709,6 +1709,11 @@ asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</codeblock>
+<p>
+  The standard continent and country codes are listed in
+  <filename>/sw/lib/fink/mirror/_keys</filename>, which is part of the
+  fink or fink-mirrors package.
+</p>
 </itemd></item>
 
 <item><itemt>Source</itemt>
