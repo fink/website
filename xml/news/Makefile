@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.2 2003/01/05 19:37:05 rangerrick Exp $
+# $Id: Makefile,v 1.3 2003/01/05 22:37:04 rangerrick Exp $
 
 # process XML files with stylesheet to produce HTML
 
-CURRDATE := `date '+%Y-%m-%dT%H:%M:%S-05:00'`
+CURRDATE := `date '+%a, %d %b %Y %H:%M:%S %Z'`
 
 basedir = ..
 
