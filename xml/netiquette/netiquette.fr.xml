@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="fr">
+  <title>Comment poster sur une liste de diffusion de Fink</title>
+  <shorttitle>Etiquette net</shorttitle>
+  <cvsid>$Id: netiquette.fr.xml,v 1.1 2004/03/31 00:31:55 michga Exp $</cvsid>
+  <preface>
+    <p><em>Ce document est en cours de rédaction.</em></p>
+    <p>Ce document est un guide pour les nouveaux abonnés aux listes de diffusion de Fink. L'idée est de leur apprendre comment écrire des messages adéquats, de façon à susciter des réponses appropriées. </p>
+    <p>On peut vous renvoyer à une page en réponse à votre message. Ne le prenez pas mal ! Il est plus que probable que vous deviez fournir de plus amples informations pour que l'on puisse trouver la cause de votre problème. Ce sont ces informations qui sont détaillées ci-dessous.</p>
+  </preface>
+  <chapter filename="before-post">
+    <title>Phase de préparation</title>
+    <shorttitle>Préparation</shorttitle>
+    <section name="research">
+      <title>Recherche préalable.</title>
+      <p>Vous devez d'abord rechercher si votre problème n'a pas déjà été résolu. Par exemple dans :</p>
+      <ul>
+        <li>la documentation en ligne</li>
+        <li>les archives de la liste de diffusion</li>
+        <li>Google</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="first-post">
+    <title>Premier message</title>
+    <shorttitle>Premier message</shorttitle>
+    <section name="system">
+      <title>Description de votre installation</title>
+      <p>Si vous avez un problème lors de l'installation d'un paquet, vous devez fournir les informations suivantes sur votre système :</p>
+      <ul>
+        <li>La version de votre système d'exploitation.</li>
+        <li>La version de Fink installée. Le plus simple est de poster le résultat de la commande <codeblock>fink --version</codeblock> lancée dans une fenêtre de terminal.</li>
+        <li>Vous devez indiquez si l'installation se fait à partir de paquets binaires, c'est-à-dire si vous utilisez <code>apt-get</code>, ou à partir de sources, c'est-à-dire si vous utilisez  <code>fink install</code>.<p>Dans ce dernier cas, vous devez aussi mentionner la version des Developer Tools que vous utilisez.</p></li>
+        <li><p>Si vous installez un paquet qui nécessite X11, vous devez indiquer lequel vous utilisez : X11 d'Apple ou XFree86.  Dans ce dernier cas, indiquez la version.</p><p>En cas de doute, fournissez ces informations.</p></li>
+      </ul>
+    </section>
+    <section name="problem-description">
+      <title>Description du problème</title>
+      <ul>
+        <li><em>Indiquez le nom et la version du paquet à l'origine de votre problème.</em>  <p>Cette information doit se trouver dans l'objet du message.</p><p>Si vous avez un problème avec <code>foo-3.141-6</code>, n'indiquez pas juste <code>foo</code>.</p><p>Si vous installez un paquet (par exemple, <code>baz-2.18-1</code>) qui dépend d'autres paquets (<code>foo-3.141-6</code>, <code>bar-16.0-9</code>, ...), et que vous avez un problème avec <code>foo</code>, vous devez mentionner <code>foo-3.141-6</code>, et non <code>baz-2.18-1</code>.</p></li>
+        <li><em>Décrivez le problème.</em>  <p>Cela signifie que vous devez poster un extrait des messages d'erreurs.</p><ol>
+            <li>Pour les problèmes issus d'installation de binaires, commencez à partir du dépaquetage du paquet :
+<codeblock>...
+Selecting previously deselected package foo
+error unpacking foo
+...</codeblock>et allez jusqu'à la fin.<p></p></li>
+            <li>Il peut y avoir quelques problèmes avec les installations à partir du source :<ol>
+                <li>si la compilation échoue pendant la phase initiale de configuration, c'est en général assez rapide. Postez des derniers tests juste avant le message d'erreur jusqu'à la fin :<codeblock>....
+Checking for bar-config...no
+Error:  bar-config not found
+....</codeblock><p>Si vous pensez que cela peut aider, vous pouvez poster la partie correspondante du fichier log de configuration, par exemple <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>. <em>Ne postez pas le fichier dans son entier, car il peut être très gros.</em></p></li>
+                <li>Ou l'erreur peut apparaître immédiatement après le début de la construction du paquet. Dans ce cas, postez de la dernière ligne de compilation jusqu'à la fin :<codeblock>...
+gcc &lt;drapeaux, fichiers, etc...&gt;
+&lt;messages d'erreur&gt;
+...</codeblock></li>
+                <li>Si vous avez une erreur du genre <code>execution of mv failed</code>, on vous dira de chercher dans le résultat de compilation une erreur antérieure à ce message. Vous avez donc intérêt à la chercher avant de poster.</li>
+              </ol></li>
+          </ol>    </li>
+      </ul>
+    </section>
+    <section name="remedies">
+      <title>Essais préalables</title>
+      <p>Mentionnez ce que vous avez essayé de faire pour résoudre le problème, par exemple :</p>
+      <ul>
+        <li>Appliquer les instructions trouvées dans les QFP ou d'autre partie de la documentation</li>
+        <li>Supprimer les paquets qui semblent entrer en conflit avec celui que vous vouliez installer</li>
+        <li>Reconstruire / réinstaller le paquet</li>
+        <li>Mettre à jour les descriptions de paquets</li>
+        <li>etc...</li>
+      </ul>
+      <p>De cette façon, on ne vous suggérera pas de faire ce que vous avez déjà fait.</p>
+    </section>
+    <section name="future-plans">
+      <title>Tentatives futures</title>
+      <p>Dans cette catégorie tombent :</p>
+      <ul>
+        <li>Poster ce que vous envisagez de faire si vous n'obtenez une réponse immédiate.</li>
+        <li>Demander si telle ou telle procédure paraît convenir.</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="reply">
+    <title>Réponses aux messages</title>
+    <shorttitle>Réponses</shorttitle>
+    <preface>
+      <p>Ce chapitre décrit ce que vous devez faire quand vous répondez à des messages.</p>
+    </preface>
+    <section name="reply-to-list">
+      <title>Vérifiez que vous répondez bien à la liste de diffusion</title>
+      <p>Contrairement à certaines listes de diffusion auxquelles vous vous êtes peut-être abonné, les listes de diffusion de Fink sont paramétrées de telle sorte que si vous répondez à un message, vous ne répondez qu'à la personne qui a émis le message, mais <em>non</em> à la liste de diffusion. Assurez que vous répondez à la liste :</p>
+      <ul>
+        <li>Il y aura ainsi plus de gens qui essaieront de résoudre votre problème.</li>
+        <li>Vous ne monopoliserez pas le temps d'une personne. Rappelez-vous que les gens qui répondent sur les listes de diffusion sont tous bénévoles.</li>
+        <li>D'autres personnes pourront bénéficier des solutions. Le fait d'avoir l'ensemble d'un échange de courriers accessible publiquement permet de le mettre dans les archives de la liste de diffusion et éventuellement dans la documentation.</li>
+      </ul>
+      <p>Pour ce faire, vous pouvez utiliser <quote>Répondre à tous...</quote> :</p>
+      <ul>
+        <li>C'est tout aussi simple que de cliquer sur "Répondre".</li>
+        <li>Même si cela expédie la réponse à la fois à la liste et à l'auteur du message précédent, cela peut être utile, car l'envoi des messages via la liste de diffusion peut être retardé, par exemple lors du filtrage des messages à l'issue d'une grave infection par virus. La réponse arrivera ainsi à l'expéditeur précédent plus rapidement.</li>
+      </ul>
+      <p>Néanmoins, si vous le faites, pensez à supprimer tout autre destinataire (postes croisés ou autres personnes ayant répondu au fil de discussion).</p>
+    </section>
+  </chapter>
+  <chapter filename="unsubscribe">
+    <title>Résiliation d'abonnemnent aux listes de diffusion</title>
+    <shorttitle>Résiliation</shorttitle>
+    <section name="unsubscribing">
+      <title>Résiliation d'abonnement</title>
+      <p><em>N</em>'envoyez pas de message sur la liste pour résilier votre abonnement.</p>
+      <ol>
+        <li>Allez sur la page des <link url="http://fink.sourceforge.net/lists/index.php">Listes de diffusion</link>.  <p>Note :  n'utilisez pas la version MacOSX d'Internet Explorer.</p></li>
+        <li>Sélectionnez le lien de la liste dont vous voulez résilier l'abonnement.</li>
+        <li>Allez au bas la page, où il est indiqué :  <quote>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</quote>, et saisissez l'adresse email sur laquelle vous recevez le courrier Fink, puis cliquez sur le bouton <quote>Edit Options</quote>.</li>
+        <li>En haut à gauche de la page qui s'ouvrira, vous trouverez un champ dans lequel vous pourrez résilier votre abonnement.</li>
+      </ol>
+    </section>
+  </chapter>
+</document>
