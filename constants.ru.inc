@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ru.inc,v 1.4 2005/01/18 22:47:55 babayoshihiko Exp $ */
+/* $Id: constants.ru.inc,v 1.5 2005/01/18 23:04:17 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -55,6 +55,6 @@ define (HEADER_HOSTED_BY, 'Хостинг обеспечен');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Языки');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Воспроизведено динамически ');
 define (FOOTER_DATABASE_LAST_UPDATED, 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');
-define (FOOTER_LAST_CHANGED, 'Последнее изменение: {author} {date} ‚ %R %Z ');
+define (FOOTER_LAST_CHANGED, 'Последнее изменение: {author} ‚ {date} , {time}');
 ?>
 
