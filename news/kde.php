@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/06/08 20:48:36 $';
+$cvs_date = '$Date: 2002/06/09 17:16:58 $';
 
 include "header.inc";
 ?>
@@ -52,7 +52,9 @@ Screenshots:
  XDarwin being unaccelerated), it's <strong>much</strong> faster than the
  last release, most noticeably in application startup times.  Also, all
  packages have been built with --enable-final now, and so the KDE packages
- are nearly a quarter of the size of the first release.
+ are nearly a quarter of the size of the first release.  CUPS support has
+been added to the KDE printing system as well, now that a proper up-to-date
+CUPS package exists in unstable.
 </p>
 <p>
  The fixes to QT have also resolved a number of other small issues in
@@ -81,7 +83,11 @@ Screenshots:
  <strong>please</strong> run the following set of commands to upgrade:
 </p>
 <p>
-	 <nobr><b><tt>sudo apt-get update; sudo apt-get upgrade</tt></b></nobr>
+	 <nobr><b><tt>sudo apt-get update; sudo apt-get dist-upgrade</tt></b></nobr>
+</p>
+<p>
+Note that you will need to do a "dist-upgrade", and not just an "upgrade",
+because there are new dependencies (CUPS, among other things).
 </p>
 
 <h1>Big Fat Warning!</h1>
