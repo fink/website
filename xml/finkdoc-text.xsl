@@ -130,6 +130,11 @@
 <xsl:text> [</xsl:text><xsl:value-of select="@url"/><xsl:text>]</xsl:text>
 </xsl:template>
 
+<xsl:template match="varlink">
+<xsl:apply-templates/>
+<xsl:text> [</xsl:text><xsl:value-of select="@varurl"/><xsl:text>]</xsl:text>
+</xsl:template>
+
 <!-- xref -->
 
 

@@ -266,6 +266,10 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <a href="{@url}"><xsl:apply-templates/></a>
 </xsl:template>
 
+<xsl:template match="varlink">
+<a href="{@url}"><xsl:apply-templates/></a>
+</xsl:template>
+
 <xsl:template match="xref">
 <a><xsl:attribute name="href">
 <xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.php</xsl:if>

@@ -1,7 +1,7 @@
 <!ENTITY % block "codeblock | ol | p | ul" >
-<!ENTITY % inline "#PCDATA | code | em | filename | link | tt | quote | xref" >
+<!ENTITY % inline "#PCDATA | code | em | filename | link | varlink | tt | quote | xref" >
 
-<!ENTITY fink_version "0.5.3" >
+<!ENTITY fink_version "0.5.2" >
 
 
 <!-- Root elements -->
@@ -41,6 +41,12 @@
 <!-- Links -->
 <!ELEMENT link ( #PCDATA ) >
 <!ATTLIST link url CDATA #REQUIRED >
+
+<!-- VarLinks -->
+<!ELEMENT varlink ( #PCDATA ) >
+<!ATTLIST varlink url CDATA #REQUIRED >
+<!ATTLIST varlink varurl CDATA #REQUIRED >
+
 
 <!ELEMENT xref ( #PCDATA ) >
 <!ATTLIST xref chapter IDREF #IMPLIED >

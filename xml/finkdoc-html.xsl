@@ -193,6 +193,10 @@
 <a href="{@url}"><xsl:apply-templates/></a>
 </xsl:template>
 
+<xsl:template match="varlink">
+<a href="{@varurl}"><xsl:apply-templates/></a>
+</xsl:template>
+
 <xsl:template match="xref">
 <a><xsl:attribute name="href">#<xsl:choose><xsl:when test="boolean(@chapter)"><xsl:value-of select="@chapter" /></xsl:when><xsl:otherwise><xsl:for-each select="ancestor::chapter | ancestor::article"><xsl:value-of select="@filename"/></xsl:for-each></xsl:otherwise></xsl:choose><xsl:if test="boolean(@section)">.<xsl:value-of select="@section" /></xsl:if></xsl:attribute>
 <xsl:apply-templates/></a>
