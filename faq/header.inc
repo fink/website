@@ -16,6 +16,6 @@ $navbox = array(
 );
 $printlink = "faq/faq.html";
 
-$fsroot = $root = "../../";
+$fsroot = $root = "../";
 include $fsroot."header.inc";
 ?>
