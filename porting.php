@@ -1,7 +1,7 @@
 <?
 $title = "Porting";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/07 23:14:16 $';
+$cvs_date = '$Date: 2001/01/08 11:35:16 $';
 
 include "header.inc";
 ?>
@@ -75,6 +75,23 @@ library when you specify <tt>-lm</tt> and fails because there is
 none. You must remove the flag from the Makefiles in that case; it is
 perfectly safe to do so. The same applies to the curses library -
 there is no libcurses or libncurses.</p>
+
+<h3>Shared Libraries / libtool</h3>
+
+<p>Short story: Many packages only build static libraries right
+now.</p>
+<p>Long story: GNU packages that build libraries use GNU libtool to
+hide platform-dependent procedures for library building and
+installation. Unfortunately, GNU libtool doesn't know about Darwin
+(its linker, that is) and only builds static libraries. Also, dynamic
+loading (used e.g. for plugins) isn't available. There are several
+patches floating around the 'net, but I haven't found the time to try
+them out yet.</p>
+<p>Side note: Apple's Developer Tools contain a program also called
+libtool, which can be used to build shared libraries. However, this is
+either based on a <u>very</u> old version of GNU libtool or completely
+unrelated. Anyway, it won't help GNU packages, because the libtool
+code is included in the packages themselves.</p>
 
 
 <?
