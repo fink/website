@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2003/10/11 21:34:49 $';
+$cvs_date = '$Date: 2004/01/11 18:51:45 $';
 
 include "header.inc";
 ?>
@@ -36,9 +36,18 @@ Discussion and support list for advanced Fink users.</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.devel">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.devel">NNTP</a>)<br>
 Discussion list for Fink package maintainers and developers.</p></li>
+<li><p><a href="fink-core.php">fink-core</a>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.core">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.core">NNTP</a>)<br>
+Discussion list for Fink base packages.</p></li>
+<li><p><a href="fink-gnome-core.php">fink-gnome-core</a>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.gnome">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.gnome">NNTP</a>)<br>
+Discussion list for Fink GNOME packages.</p></li>
 <li><p><a href="fink-commits.php">fink-commits</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.cvs">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.cvs">NNTP</a>)<br>
 Distribution list for automated CVS commit reports.</p></li>
+<li><p><a href="fink-tracker.php">fink-tracker</a>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.tracker">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.tracker">NNTP</a>)<br>
+Distribution list for bug reports and package submissions.</p></li>
 </ul>
 
 
