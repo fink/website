@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.7 2004/04/16 21:24:54 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.8 2004/04/27 13:42:00 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -163,7 +163,7 @@ Disk Copy がファイルを点検した後にデスクトップに出てくる�
 <title>ソースディストリビューションのインストール</title>
 <p>
 ソースディストリビューションは標準的な Unix tarball (.tar.bz) で提供されます。
-これは <code>fink</code> パッケージマネージャとパッケージ詳細だけが含まれていて、パッケージ用のソースをダウンロードするものです。
+これは <code>fink</code> パッケージマネージャとパッケージ記述だけが含まれていて、パッケージ用のソースをダウンロードするものです。
 <link url="http://fink.sourceforge.net/download/srcdist.php" >ダウンロードページ</link>から入手することができます。
 tar アーカイブを解凍する際に、 StuffIt Expander を使わないように注意してください。
 StuffIt はまだ長いファイル名を扱うことができないようです。
@@ -596,22 +596,22 @@ Binary->Dist-Upgrade
 <p>
 ソースディストリビューションを使用している場合、アップグレードは多少複雑になります。
 アップグレードは２ステップあります。
-1. パッケージ詳細をダウンロードします。
-2. このパッケージ詳細を使って新しいパッケージをコンパイルします。
+1. パッケージ記述をダウンロードします。
+2. このパッケージ記述を使って新しいパッケージをコンパイルします。
 必要に応じてソースコードもダウンロードします。
 </p>
 <p>
 Fink 0.2.5 以降であれば、最初のステップは <code>fink selfupdate</code> を実行します。
-このコマンドは Fink ウェブサイトを新しいリリースが用意されているか確認し、自動的にパッケージ詳細をダウンロード、インストールします。
-最近のバージョンの <code>fink</code> コマンドでは、 CVS または rsync から直接パッケージ詳細を取得する選択肢もあります。
-CVS はバージョン管理レポジトリで、パッケージ詳細が保存・管理されています。
+このコマンドは Fink ウェブサイトを新しいリリースが用意されているか確認し、自動的にパッケージ記述をダウンロード、インストールします。
+最近のバージョンの <code>fink</code> コマンドでは、 CVS または rsync から直接パッケージ記述を取得する選択肢もあります。
+CVS はバージョン管理レポジトリで、パッケージ記述が保存・管理されています。
 CVS には連続して更新できる利点がありますが、CVS サーバーが一つしかなく、トラフィック量に依って不安定になりやすい欠点があります。
 このため、一般ユーザーは rsync を使うことをおすすめします。
-rsync にはミラーが複数あり、欠点は CVS からのパッケージ詳細の更新に１時間かかることです。
+rsync にはミラーが複数あり、欠点は CVS からのパッケージ記述の更新に１時間かかることです。
 </p>
 <p>(ソースインストールで問題がある場合、<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >特殊な方法</link>を参照して下さい)</p>
 <p>
-0.2.5 より古いバージョンの Fink の場合、手動でパッケージ詳細をダウンロードして下さい。
+0.2.5 より古いバージョンの Fink の場合、手動でパッケージ記述をダウンロードして下さい。
 <link url="http://sourceforge.net/project/showfiles.php?group_id=17203" >ダウンロードエリア</link>で最新の packages-0.x.x.tar.gz tarball を &quot;distribution&quot; モジュール内で探します。
 ダウンロード後、以下のようにインストールします:
 </p>
@@ -619,7 +619,7 @@ rsync にはミラーが複数あり、欠点は CVS からのパッケージ詳
 cd packages-0.x.x
 ./inject.pl</codeblock>
 <p>
-パッケージ詳細をダウンロード後 (どのような方法であれ)、全てのパッケージを <code>fink
+パッケージ記述をダウンロード後 (どのような方法であれ)、全てのパッケージを <code>fink
 update-all</code> で一括更新します。
 </p>
 <p>
@@ -634,7 +634,7 @@ Source-&gt;Updata-all
 <title>バイナリとソースの混在</title>
 <p>
 もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法に従わなくてはなりません。
-つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ詳細を取得し、残りのパッケージを更新します。
+つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
 Fink Commander を使用している場合、まず <xref section="bin">バイナリの更新</xref> を実行してから <xref section="src">ソースの更新</xref> を実行します。 
 </p>
 </section>
@@ -769,7 +769,7 @@ stable/main&quot; です。
 <li>
 <p>
 <em>NoAutoIndex:</em> ブール値</p>
-<p>Fink は、パッケージ詳細ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+<p>Fink は、パッケージ記述ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
 この値が &quot;True&quot; でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
 デフォルト値は &quot;False&quot; で、変更することは勧めません。
 変更した場合、 <code>fink index</code> コマンドを手動で実行してインデックスを更新する必要があります。
@@ -1020,7 +1020,7 @@ fink list &quot;gnome*&quot;         - 'gnome' から始まるパッケージの
 <title>apropos</title>
 <p>
 このコマンドはほとんど <code>fink list</code> と同じです。
-一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ詳細を使うことです。
+一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ記述を使うことです。
 次に顕著なのは、検索文字列が必須で、オプションではないことです。
 </p>
 <codeblock>
@@ -1107,7 +1107,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <title>validate</title>
 <p>
 このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
-パッケージメンテナーは、 submit する前にパッケージ詳細と対応するパッケージに対して実行して下さい。
+パッケージメンテナーは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
 </p>
 <p>
 エイリアス: check
@@ -1135,9 +1135,23 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
     <section name="dumpinfo">
       <title>dumpinfo</title>
       <p>
+	  注記: 0.20.0 以降の CVS 版より前は未対応
+	  </p>
+	  <p>
 	Shows how Fink parses parts of a package's .info file.
 	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
+	以下の<em>オプション引数</em>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>
+      <codeblock>
+-h, --help           - Show the options which are available.
+-a, --all            - Display all fields from the package description.
+                       This is the default mode when no --field or
+                       --percent flags are given.
+-f fieldname,        - Display the given fieldname(s),
+  --field=fieldname    in the order listed.
+-p key,              - Display the given percent expansion key(s),
+   --percent=key       in the order listed.
+      </codeblock>
     </section>
 </chapter>
 </document>
