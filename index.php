@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2003/03/09 13:25:29 $';
+$cvs_date = '$Date: 2003/03/09 13:47:28 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -74,7 +74,7 @@ href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a 
 <li><a
 href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a finished package</a></li>
+href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a new Fink package (non-core developers)</a></li>
 <li><a
 href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submit a patch for fink (the program)</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
