@@ -4,7 +4,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.8 2002/04/17 17:52:43 fingolfin Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.9 2002/04/17 17:54:09 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -52,7 +52,7 @@ do so by with the following command:
 <em>Note:</em> As of September 20 it is no longer necessary to update
 the package manager separately; it is treated like any other package.
 It's still possible to update it directly from CVS, though this is
-usually only interesting for people creating packages, not the avarage
+usually only interesting for people creating packages, not the average
 user.
 </p>
 
