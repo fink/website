@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: kconger $';
-$cvs_date = '$Date: 2004/02/15 14:10:11 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/02/17 13:36:30 $';
 
 include "header.inc";
 ?>
@@ -40,7 +40,7 @@ this list.</p>
 
 <h2>Administrativa and PR.</h2>
 <ul>
-<li>David H&#246;hn (<i>dmalloc</i>)</li>
+<li>David H&#246;hn aka. Darian Lanx (<i>dmalloc</i>)</li>
 </ul>
 
 <h2>Regular Contributors</h2>
