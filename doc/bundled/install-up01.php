@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/25 18:53:30';
+$cvs_date = 'Date: 2001/08/01 05:38:04';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
 
@@ -24,15 +24,15 @@ Save any changes you have made to configuration files etc.
 </p></li>
 <li><p>
 Save a list of packages you had installed. Hint: Try
-'ls /sw/var/fink-stamp'.
+<tt><nobr>ls /sw/var/fink-stamp</nobr></tt>.
 </p></li>
 <li><p>
 If you have the source tarballs still lying around in /sw/src and
 don't want to download them again, move them to another directory.
 </p></li>
 <li><p>
-Wipe out the /sw directory, i.e. 'cd / ; rm -rf /sw'. Do this as
-root if neccessary.
+Wipe out the /sw directory, i.e. <tt><nobr>cd / ; rm -rf /sw</nobr></tt>.
+Do this as root if neccessary.
 </p></li>
 <li><p>
 Follow the procedures for a first time installation above.

@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/25 18:55:23';
+$cvs_date = 'Date: 2001/07/31 16:32:49';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.3 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.1 2001/07/25 18:55:23 chrisp Exp $</i></p>
+<h1>Fink 0.2.4 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.3 2001/07/31 16:32:49 chrisp Exp $</i></p>
 <p>
 This is Fink, a package management system that aims to bring the full
 world of GNU and other common Open Source software to Darwin and
@@ -23,7 +23,7 @@ are included with this distribution, everything else is downloaded off
 the Internet.
 </p>
 <p>
-This is version 0.2.3, a development release.
+This is version 0.2.4, a development release.
 It has rough edges everywhere, and lacks lots of useful features.
 The package list is also quite short. You're walking on thin ground.
 It could easily break your system (although it hasn't broken mine to
@@ -92,14 +92,14 @@ fink-users mailing list (see below).
 <a name="uptodate"><h2>Staying Informed</h2></a>
 <p>
 To be informed of new releases, go to
-<a href="http://lists.sourceforge.net/lists/listinfo/fink-announce">http://lists.sourceforge.net/lists/listinfo/fink-announce</a>
+<a href="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</a>
 and subscribe yourself to the fink-announce mailing list.
 The list is moderated and low-traffic.
 </p>
 <p>
 To get help or just chat with other Fink users, subscribe to the
 fink-users mailing list at
-<a href="http://lists.sourceforge.net/lists/listinfo/fink-users">http://lists.sourceforge.net/lists/listinfo/fink-users</a>.
+<a href="http://fink.sourceforge.net/lists/fink-users.php">http://fink.sourceforge.net/lists/fink-users.php</a>.
 </p>
 <p>
 The project's website is at 

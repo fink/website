@@ -1,24 +1,33 @@
 <?
 $title = "Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/08 12:31:09';
+$cvs_date = 'Date: 2001/07/31 16:32:50';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.3 Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.4 2001/07/08 12:31:09 chrisp Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
-<p>To use the software installed in Fink's directory hierarchy, including
+<h1>Fink 0.2.4 Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.6 2001/07/31 16:32:50 chrisp Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
+<p>
+To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
-(and some others) accordingly. Shell scripts are provided to do this
-for you. If you use tcsh, add the following to your .cshrc:</p>
+(and some others) accordingly.
+Shell scripts are provided to do this for you.
+If you use tcsh, add the following to your .cshrc:
+</p>
 <pre>source /sw/bin/init.csh</pre>
-<p>Editing .cshrc will only affect new shells (i.e. new Terminal
+<p>
+Editing .cshrc will only affect new shells (i.e. new Terminal
 windows), so you should also run this command in all Terminal windows
-that you opened before you edited the file.</p>
-<p>If you use a Bourne type shell (e.g. sh, bash, zsh), use
-/sw/bin/init.sh instead.</p>
+that you opened before you edited the file.
+You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
+list of available commands internally.
+</p>
+<p>
+If you use a Bourne type shell (e.g. sh, bash, zsh), use
+/sw/bin/init.sh instead.
+</p>
 <p>
 Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
 your path so you can use X11 when it is installed.
@@ -40,7 +49,6 @@ install required dependencies automatically, but will ask you for
 confirmation before it does so. Example:</p>
 <pre>fink install nedit
 
-Reading configuration...
 Reading package info...
 Information about 131 packages read.
 The following additional package will be installed:
@@ -92,9 +100,15 @@ The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
 </p>
 <a name=""><h2>describe</h2></a>
-<p>This command displays a description of the package you name on the
-command line. Note that only a small part of the packages currently
-have a description.</p>
+<p>
+This command displays a description of the package you name on the
+command line.
+Note that only a small part of the packages currently have a
+description.
+</p>
+<p>
+Aliases: desc, description, info
+</p>
 <a name=""><h2>fetch</h2></a>
 <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
@@ -122,14 +136,20 @@ already installed. You can use this when you accidentally deleted
 package files or changed configuration files and want to get the
 default settings back.</p>
 <a name=""><h2>configure</h2></a>
-<p>Reruns the Fink configuration process. This will let you change your mirror
-sites settings, among others.</p>
+<p>
+Reruns the Fink configuration process.
+This will let you change your mirror sites and proxy settings, among
+others.
+</p>
 <a name=""><h2>Further Questions</h2></a>
-<p>If your questions are not answered by this document, read the FAQ at
-the Fink website: <a href="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</a>. If that still
-doesn't answer your questions, subscribe to the fink-users mailing
-list via <a href="http://lists.sourceforge.net/lists/listinfo/fink-users">http://lists.sourceforge.net/lists/listinfo/fink-users</a> and
-ask there.</p>
+<p>
+If your questions are not answered by this document, read the FAQ at
+the Fink website:
+<a href="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</a>.
+If that still doesn't answer your questions, subscribe to the
+fink-users mailing list via <a href="http://fink.sourceforge.net/lists/fink-users.php">http://fink.sourceforge.net/lists/fink-users.php</a>
+and ask there.
+</p>
 
 
 

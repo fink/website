@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.2";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/25 18:53:30';
+$cvs_date = 'Date: 2001/08/01 05:38:04';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up01.php" title="Upgrading From Fink 0.1.x"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
@@ -12,9 +12,10 @@ include "header.inc";
 
 
 
+
 <p>
 If you already have Fink 0.2.x installed, you can update your
-installation to 0.2.3 with this package.
+installation to 0.2.4 with this package.
 </p>
 <p>
 Actually, there are two pieces that are updated independently: the
@@ -22,10 +23,11 @@ package manager and the package descriptions. It is recommended to
 update the package manager first.
 </p>
 
+
 <a name="packman"><h2>Updating The Package Manager</h2></a>
 <p>
-To update the package manager, run the inject.pl script in this
-directory, like this:
+To update the package manager, run the inject.pl script in the
+fink-0.2.4-full directory, like this:
 </p>
 <pre>./inject.pl</pre>
 <p>
@@ -37,12 +39,13 @@ can't find it, you can pass the path as a parameter, like this:
 The script copies the package descriptions into the appropriate
 directory, creates tarballs in /sw/src and then runs fink to install
 the new versions of the fink and base-files packages.
+(Yes, that means that fink updates itself. <tt><nobr>:-)</nobr></tt> )
 </p>
 
 
 <a name="descriptions"><h2>Updating The Package Descriptions</h2></a>
 <p>
-If you downloaded the fink-0.2.3-full tarball, the package
+If you downloaded the fink-0.2.4-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
 inject.pl script in that directory:
 </p>
@@ -54,7 +57,7 @@ manager.
 </p>
 <p>
 You can also grab the package descriptions as a separate tarball,
-packages-0.2.3. If you did that, just unpack it and run the inject.pl
+packages-0.2.4. If you did that, just unpack it and run the inject.pl
 script inside.
 </p>
 
@@ -62,20 +65,11 @@ script inside.
 <a name="x11"><h2>Getting X11 Sorted Out</h2></a>
 <p>
 The first thing you should do after updating the package descriptions
-is getting the X11 dependencies settled. Refer to the "Getting X11
-Sorted Out" section under "First Time Installation" above.
+is getting the X11 dependencies settled (unless you already did that
+after upgrading to 0.2.3).
+Refer to the "Getting X11 Sorted Out" section under "First Time
+Installation" above.
 </p>
-<p>
-Note that if you used the xfree86-base package before Fink 0.2.2, you
-may have to rebuild it to get correct dependency information. If you
-have xfree86-base-4.1.0-1 (and exactly that version) installed, run:
-</p>
-<pre>fink rebuild xfree86-base</pre>
-<p>
-If you have an older version of the xfree86-base package, simply
-update it to 4.1.0-1:
-</p>
-<pre>fink update xfree86-base</pre>
 
 
 <a name="update-all"><h2>Updating Packages</h2></a>
@@ -86,11 +80,12 @@ new packages is to use the 'update-all' command:
 </p>
 <pre>fink update-all</pre>
 <p>
-This will bring all installed packages to the latest version. If you
-don't want to do this (it may take some time), you can update
-individual packages with the 'update' command. But note that some
-package require specific versions of the packages they depend
-upon. Fink currently has no way to enforce this, so you may run into
+This will bring all installed packages to the latest version.
+If you don't want to do this (it may take some time), you can update
+individual packages with the 'update' command.
+But note that some package require specific versions of the packages
+they depend upon.
+Fink currently has no way to enforce this, so you may run into
 problems.
 </p>
 
