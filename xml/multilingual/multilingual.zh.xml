@@ -5,7 +5,7 @@
 
   <shorttitle>i18n</shorttitle>
 
-  <cvsid>$Id: multilingual.xml,v 1.13 2004/03/10 02:23:16 alexkhansen Exp
+  <cvsid>$Id: multilingual.zh.xml,v 1.1 2004/03/10 02:23:16 alexkhansen Exp
   $</cvsid>
 
   <preface>
@@ -395,7 +395,7 @@ include $(basedir)/Makefile.i18n.common</codeblock>
 
       <p>现在你需要把你的修改发送到主服务器。
       要这样做，你需要有提交修改的权限。
-      你还需要确保你使用的未稳定树里面的最新的 XSLT 版本，写本文档时用的是 Fink 的 <filename>xslt-1.1.2-2</filename>。</p>
+      你还需要确保你使用的未稳定树里面的最新的 XSLT 版本，写本文档时用的是 Fink 的 <filename>libxslt-1.1.4-1</filename>。</p>
 
       <p>对于静态和动态的文档，根据它们的性质不同，提交方法也有不同：</p>
 
@@ -438,10 +438,10 @@ include $(basedir)/Makefile.i18n.common</codeblock>
 				<p>如果是一个现有的文件，你可以跳过这一步而进入下一步。</p></li>
 
             <li>提交文件。例如：
-<codeblock>cvs ci -m "message" faq.ru.xml</codeblock><p> 
+<codeblock>cvs ci -m "message" faq.ru.xml Makefile</codeblock><p> 
 				<em>message</em> 是一个关于你的操作的描述性信息。
 				在提示的时候输入你的 SourceForge 密码。
-				如果你修改过 Makefile 文件（例如，你在里面添加了你的语言），不要忘记也要提交它。</p></li>
+				我们这里假设你还修改过 Makefile 文件（例如，你在里面添加了你的语言），如果你没有对它修改过，你只需要提交 xml 文件就可以了。</p></li>
 
             <li>现在运行
 <codeblock>make &amp;&amp; make install</codeblock></li>
@@ -489,7 +489,8 @@ scripts/installer/dmg/faq.ru.html</codeblock>
 <codeblock>cd /home/groups/f/fi/fink/htdocs</codeblock></li>
 
         <li>根据 CVS 的内容更新网页：
-        <codeblock>./update.sh</codeblock></li>
+        <codeblock>./update.sh</codeblock>
+        <em>重要提示：</em>当你这样做的时候，你会更新<code>web/xml</code>下的<em>所有</em>内容到网站上。</li>
 
         <li>从服务器上注销：
         <codeblock>exit</codeblock></li>
@@ -506,8 +507,27 @@ scripts/installer/dmg/faq.ru.html</codeblock>
     <shorttitle>更新</shorttitle>
 
     <preface>
+    <p>因为英文文档是基准，所以它必需被首先更新。
+      这个更新可能来自于 i18n 团队（比如英文文档作者）或核心开发人员。</p>
       <p>为了使得整个更新过程顺畅进行，应该遵循下面的流程。</p>
     </preface>
+    
+    <section name="call-to-translate">
+      <title>通知进行翻译</title>
+
+      <p>当一份新文档发表，或英文文档发生修改以后，应该要有一个消息发到 fink-18n 邮件列表通知所有翻译者。
+      这个通知包括下面的内容：</p>
+
+      <ul>
+        <li>邮件主题中一个注解指明这是一个要求翻译的通知，例如：“[translation]”，或对于会推迟一些上线的英文文档是：“[translation-delayed]”。</li>
+
+        <li>除此以外，在消息中应该包含基准文档的文件名。</li>
+
+        <li>一个完整的 diff （例如：<code>diff -Nru3 -r<em>last_revision</em> r<em>head</em></code>）来表明所做的修改。</li>
+      </ul>
+
+      <p>附注：由于提交对 XML 文件的修改后会自动在 fink-commits 邮件列表中产生满足这个条件的邮件，所以一个方便的办法是修改这个邮件的主题然后把它重新发送作为通知。不过，当连续发生了很多更新的时候，可能就无法这样做了。</p>
+    </section>
 
     <section name="new-translation">
       <title>新翻译作品</title>
@@ -515,56 +535,35 @@ scripts/installer/dmg/faq.ru.html</codeblock>
       <p>在一种新的语言的翻译过程中，我们会冻结对英文和其它语言文档的修改，这样新语言的翻译团队就不用担心它们在翻译过程中文档又发生了变化。这种情况下，每种文档会在准备好的情况上线，并激活。</p>
     </section>
 
-    <section name="doc-updates">
-      <title>内容更新</title>
-
-      <p>因为英文文档是基准，所以它必需被首先更新。
-      这个更新可能来自于 i18n 团队（比如英文文档作者）或核心开发人员。</p>
-
-      <p>对于文档更新有些分类：</p>
-
-      <ol>
-        <li><em>紧急（安全性，错误修复，等）：</em>基准的英文文档会立刻获得更新，翻译者应该尽快更新它们自己的文档并放上线。</li>
-
-        <li><em>非紧急：</em>这种情况下，基准英文文档会被更新，但不会立刻被放上线。
-        所有的翻译者各自进行翻译，并在一两天内上传他们的版本，然后所有文档会同时被放上线。</li>
-      </ol>
+<section name="doc-updates">
+      <title>新文档：</title>
+      <p>文档的英文版本会被<xref chapter="files" section="committing">提交</xref>并<xref chapter="files" section="website">激活</xref>，然后按下面的办法<xref section="new-translations">进行翻译</xref>。</p>
     </section>
-
-    <section name="call-to-translate">
-      <title>通知进行翻译</title>
-
-      <p>在英文文档准备好以后，会有一个消息发到 fink-18n 邮件列表通知所有翻译者。
-      这个通知包括下面的内容：</p>
-
+    <section name="new-translation">
+      <title>新翻译作品：</title>
+      <p>该语言团队的领导（或其它具有 CVS 访问权限的人）负责在翻译完成以后<xref chapter="files" section="committing">提交</xref>以及<xref chapter="files" section="website">激活</xref>翻译的作品。</p>
+      <p>分类包括：</p>
       <ul>
-        <li>邮件主题中一个注解指明这是一个要求翻译的通知，例如：“[translation]”，或对于那些要立即上线的英文文档是：“[translation-urgent]”。</li>
-
-        <li>除此以外，在消息中应该包含基准文档的文件名。</li>
-
-        <li>一个完整的 diff （例如：<code>diff -Nru3 -r<em>last_revision</em> r<em>head</em></code>）来表明所做的修改。</li>
+        <li>对文档的首次翻译。</li>
+        <li>对文档的部分翻译。</li>
+        <li>翻译一个新的英文文档</li>
       </ul>
-
-      <p>附注：由于提交对 XML 文件的修改后会自动在 fink-commits 邮件列表中产生满足这个条件的邮件，所以一个方便的办法是修改这个邮件的主题然后把它重新发送作为通知。</p>
     </section>
-
-    <section name="translate">
-      <title>翻译</title>
-
-      <p>现在是实际进行的翻译工作。在翻译完成后，把它提交到 CVS。</p>
-    </section>
-
-    <section name="activation">
-      <title>激活修改</title>
-
-      <p>有两种激活修改的可能：</p>
-
+    <section name="prompt-update">
+      <title>提示更新一个已经翻译的文档：</title>
+      <p>基准英文文档被<xref chapter="files" section="committing">提交</xref>并立即<xref chapter="files" section="website">激活</xref>。
+      翻译团队需要更新它们的版本，<xref chapter="files" section="committing">提交</xref><em>所有的</em>文件（XML 和 PHP），然后<xref chapter="files" section="activate">激活</xref>更新。</p>
+      <p><em>注意：</em></p>
       <ol>
-        <li>对于紧急的修改，在完成文档以后，立即激活修改。</li>
-
-        <li>对非紧急的修改，会在全部语言的文档完成以后激活修改。</li>
+        <li>对国际化指南（本文档），<em>总是</em>按这个模式处理，因为它的改变影响所有翻译团队。</li>
+        <li>对静态文档（那些不是由 XML 产生的 PHP 文件）也<em>总是</em>按照这个模式处理，因为它们很难<xref section="delayed-update">延迟</xref>激活。</li>
       </ol>
     </section>
+    <section name="delayed-update">
+      <title>延迟更新现有文档（仅限由 XML 产生的文档）：</title>
+      <p>这种情况下，XML 文件的英文版本会被<xref chapter="files" section="committing">提交</xref>，但<em>不会</em>提交相应的 PHP 和 HTML 文件，也就是说，在 <xref chapter="files" section="committing">2.9节</xref>的关于动态文件部分的第 5 步完成后就结束。所有的翻译者在一个大家确定的时间段内进行翻译并<em>仅仅</em><xref chapter="files" section="committing">提交</xref>相应的 XML 文件（也就是说，和英文版一样）。在这个时间段以后，由一个人，例如 i18n 核心团队的一员负责生成，提交和<xref chapter="files" section="website">激活</xref>所有的 PHP 和 HTML 文件。</p>
+    </section>
+
   </chapter>
 
   <chapter filename="resources">

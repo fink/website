@@ -320,7 +320,7 @@ include $(basedir)/Makefile.i18n.common</pre>
 
       <p>现在你需要把你的修改发送到主服务器。
       要这样做，你需要有提交修改的权限。
-      你还需要确保你使用的未稳定树里面的最新的 XSLT 版本，写本文档时用的是 Fink 的 <code>xslt-1.1.2-2</code>。</p>
+      你还需要确保你使用的未稳定树里面的最新的 XSLT 版本，写本文档时用的是 Fink 的 <code>libxslt-1.1.4-1</code>。</p>
 
       <p>对于静态和动态的文档，根据它们的性质不同，提交方法也有不同：</p>
 
@@ -363,10 +363,10 @@ include $(basedir)/Makefile.i18n.common</pre>
 				<p>如果是一个现有的文件，你可以跳过这一步而进入下一步。</p></li>
 
             <li>提交文件。例如：
-<pre>cvs ci -m "message" faq.ru.xml</pre><p> 
+<pre>cvs ci -m "message" faq.ru.xml Makefile</pre><p> 
 				<b>message</b> 是一个关于你的操作的描述性信息。
 				在提示的时候输入你的 SourceForge 密码。
-				如果你修改过 Makefile 文件（例如，你在里面添加了你的语言），不要忘记也要提交它。</p></li>
+				我们这里假设你还修改过 Makefile 文件（例如，你在里面添加了你的语言），如果你没有对它修改过，你只需要提交 xml 文件就可以了。</p></li>
 
             <li>现在运行
 <pre>make &amp;&amp; make install</pre></li>
@@ -414,7 +414,8 @@ scripts/installer/dmg/faq.ru.html</pre>
 <pre>cd /home/groups/f/fi/fink/htdocs</pre></li>
 
         <li>根据 CVS 的内容更新网页：
-        <pre>./update.sh</pre></li>
+        <pre>./update.sh</pre>
+        <b>重要提示：</b>当你这样做的时候，你会更新<code>web/xml</code>下的<b>所有</b>内容到网站上。</li>
 
         <li>从服务器上注销：
         <pre>exit</pre></li>
