@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/10 08:16:17';
+$cvs_date = 'Date: 2004/07/24 14:11:19';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.10 2004/07/10 08:16:17 babayoshihiko Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.11 2004/07/24 14:11:19 babayoshihiko Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -53,7 +53,6 @@ file) - <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS 
 <li><a href="porting/index.php">Porting Tips</a> - 
 Unix アプリケーションを Darwin へポートする際に有用な情報。</li>
 <li><a href="quick-start-pkg/index.php">パッケージ化チュートリアル</a> - 
-a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.
 パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書。</li>
 <li><a href="packaging/index.php">パッケージ化マニュアル</a> - 
 Fink パッケージの作り方、メンテナンス方法。</li>
