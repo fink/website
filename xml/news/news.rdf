@@ -4,9 +4,43 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 04 Sep 2003 14:01:25 EDT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Oct 2003 01:00:46 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Mirror, mirror on the wall...</title>
+    <link>http://fink.sf.net/news/#2003-10-22%20Mirror%2C%20mirror%20on%20the%20wall...</link>
+    <dc:date>2003-10-22</dc:date>
+    <description>
+	..who will mirror Fink above all? There is a new player on the turf
+	and it belongs to the Fink team.  Finkmirrors.net tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	
+	To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on  Finkmirrors.net. 
+
+
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
+
+</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New update method available</title>
+    <link>http://fink.sf.net/news/#2003-10-12%20New%20update%20method%20available</link>
+    <dc:date>2003-10-12</dc:date>
+    <description>
+The latest version of the fink package manager offers a new update
+method, fink selfupdate-rsync, as an alternative to the
+CVS updates which have been so problematic in the past few months.
+If you have difficulty updating to the new version, please follow
+these 
+special update instructions.
+
+In addition, this version of the fink package manager is compatible
+with last summer's Developer Tools updates.  After installing both the new
+package manager and the Developer Tools update, 
+fink will ask you to reset your gcc version whenever
+that is necessary.
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Logo contest ends</title>
     <link>http://fink.sf.net/news/#2003-09-02%20Logo%20contest%20ends</link>
@@ -415,44 +449,6 @@ xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
 the 10.2/unstable tree; to gain access to them, you may need to run 
 &quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
   
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Don't reuse binary installer</title>
-    <link>http://fink.sf.net/news/#2002-10-30%20Don't%20reuse%20binary%20installer</link>
-    <dc:date>2002-10-30</dc:date>
-    <description>
-  
-  Users are cautioned to use the binary installer for Fink 0.4.1 only
-once on a given machine.  Due to an apparent bug in Apple's
-Installer.app program, attempting a second installation on the same
-machine can result in permissions being altered in the machine's root
-directory, in some cases leaving the machine in a non-bootable state.
- If Installer.app presents you with an &quot;Upgrade&quot; button rather
-than an &quot;Install&quot; button when installing Fink 0.4.1, do not proceed
-any further! 
-A new version of the binary installer for Fink 0.4.1 became available
-on November 5.  The new version avoids
-the problem of the machine not booting, but even with the new version,
-users are advised to only &quot;Install&quot;,
-not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
-12582912 bytes, while the old version had a filesize of 10541112 bytes.)
-</description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.4.1 released</title>
-    <link>http://fink.sf.net/news/#2002-09-28%20Fink%200.4.1%20released</link>
-    <dc:date>2002-09-28</dc:date>
-    <description>
-    
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the Upgrade Matrix. 
-    
-    
-    This is the last release for Mac OS X 10.1. Future versions of Fink will not officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
-    
-    
-    At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
-    
   </description>
   </item>
 </rdf:RDF>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.71 2003/10/22 11:08:28 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.72 2003/10/22 23:01:54 dmalloc Exp $</cvsid>
 
 
 <newsitem>
@@ -12,6 +12,9 @@
 	and it belongs to the Fink team. <link url="http://finkmirrors.net"> Finkmirrors.net</link> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	</p>
 	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <link url="http://finkmirrors.net"> Finkmirrors.net</link>. 
+</p>
+<p>
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
 </p>
 </body>
 </newsitem>

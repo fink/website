@@ -14,6 +14,9 @@ include "header.inc";
 	</p>
 	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <a href="<?php print $root; ?>http://finkmirrors.net"> Finkmirrors.net</a>. 
 </p>
+<p>
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
+</p>
 <a name="2003-10-12 New update method available"><span class="news-date">2003-10-12: </span><span class="news-headline">New update method available</span></a><?php gray_line(); ?>
 <p>The latest version of the fink package manager offers a new update
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
