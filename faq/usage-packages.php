@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/10/25 01:08:06';
+$cvs_date = 'Date: 2003/10/25 22:29:39';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -140,6 +140,10 @@ exec gnome-session</pre></div>
 <a name="apple-x11-no-windowbar">
 	<div class="question"><p><b>Q8.11: I upgraded to Apple's X11 in Panther and now my window title bars are missing.</b></p></div>
 	<div class="answer"><p><b>A:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0" included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
+</a>
+<a name="apple-x11-wants-xfree86">
+	<div class="question"><p><b>Q8.12: I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</b></p></div>
+	<div class="answer"><p><b>A:</b> You need to install the X11 SDK, which is on the Xcode CD, and is <b>not</b> installed by default.</p></div>
 </a>
 
 

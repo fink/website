@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/25 03:26:39';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2003/10/25 14:06:59';
 
 $metatags = '';
 

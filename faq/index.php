@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/10/25 01:08:06';
+$cvs_date = 'Date: 2003/10/25 22:29:39';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -146,8 +146,9 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-delete">8.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 <li><a href="usage-packages.php#gnome-two">8.10 I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</a></li>
 <li><a href="usage-packages.php#apple-x11-no-windowbar">8.11 I upgraded to Apple's X11 in Panther and now my window title bars are missing.</a></li>
+<li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.133 2003/10/25 01:08:06 htodd Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.134 2003/10/25 22:29:39 htodd Exp $</i></p>
 
 
 <?
