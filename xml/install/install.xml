@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.18 2004/03/12 09:25:17 michga Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.19 2004/03/17 00:34:29 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -94,7 +94,7 @@ home directory. Enjoy.
 
 [frodo:~/fink-&fink_version;-full] testuser% <em>cd</em>
 [frodo:~] testuser% <em>rm -r fink-&fink_version;-full</em>
-[frodo:~] testuser% <em>open /sw/bin/pathsetup.command</em></codeblock>
+[frodo:~] testuser% <em>/sw/bin/pathsetup.sh</em></codeblock>
 <p>
 The last command runs a little script to help set up your Unix paths
 (and other things) for use with Fink.  In most cases, it will run
