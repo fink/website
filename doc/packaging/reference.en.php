@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/21 06:50:21';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/21 18:40:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -536,13 +536,6 @@ Example:
 </p>
 <pre>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
-<p>
-<b>Note:</b> This field is implemented by means of a special feature of
-BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
-(since there are tarballs which can only be expanded by GNU tar), but whenever
-a package uses TarFilesRename, Fink will use BSD tar by directly invoking
-<code>/usr/bin/tar</code>.
-</p>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>

@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.16 2004/07/21 06:30:41 dmacks Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.17 2004/07/21 18:45:14 dmacks Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1784,14 +1784,6 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
-						<p>
-							<em>注記:</em>
-							このフィールドは BSD tar の特殊機能を使って実装されている．
-							GNU tar はその機能に対応していない．
-							(GNU tar でしか展開できない tar ボールがあるので) デフォルトでは Fink は GNU tar を使うが，
-							パッケージに TarFilesRename が使われているときは，
-							Fink は常に (<filename>/usr/bin/tar</filename> という直接指定により) BSD tar を使う．
-						</p>
 					</itemd>
 				</item>
 

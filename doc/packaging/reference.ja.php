@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 06:30:41';
+$cvs_date = 'Date: 2004/07/21 18:45:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -496,14 +496,6 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 <pre>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
-						<p>
-							<b>注記:</b>
-							このフィールドは BSD tar の特殊機能を使って実装されている．
-							GNU tar はその機能に対応していない．
-							(GNU tar でしか展開できない tar ボールがあるので) デフォルトでは Fink は GNU tar を使うが，
-							パッケージに TarFilesRename が使われているときは，
-							Fink は常に (<code>/usr/bin/tar</code> という直接指定により) BSD tar を使う．
-						</p>
 					</td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 						<p>
 							<b>Fink 0.10.0 で導入:</b>

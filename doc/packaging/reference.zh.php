@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 06:30:43';
+$cvs_date = 'Date: 2004/07/21 18:45:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 
@@ -352,11 +352,6 @@ Primary: ftp://ftp.barbarorg/pub/
 </p>
 <pre>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
-<p>
-<b>注意：</b>这个字段的程序实现利用了 BSD tar 程序的特别特性。GNU tar 不支持这个特性。默认时，Fink 使用 GNU tar
-(因为有些压缩档只能用 GNU tar 解开)，但当一个软件包使用了 TarFilesRename 字段，Fink 会通过直接调用
-<code>/usr/bin/tar</code> 的方法来使用 BSD tar。
-</p>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>

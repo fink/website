@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.13 2004/07/21 06:30:43 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.14 2004/07/21 18:45:15 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1247,11 +1247,6 @@ Primary: ftp://ftp.barbarorg/pub/
 </p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
-<p>
-<em>注意：</em>这个字段的程序实现利用了 BSD tar 程序的特别特性。GNU tar 不支持这个特性。默认时，Fink 使用 GNU tar
-(因为有些压缩档只能用 GNU tar 解开)，但当一个软件包使用了 TarFilesRename 字段，Fink 会通过直接调用
-<filename>/usr/bin/tar</filename> 的方法来使用 BSD tar。
-</p>
 </itemd></item>
 
 <item><itemt>Tar<em>N</em>FilesRename</itemt>

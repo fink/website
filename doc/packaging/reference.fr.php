@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 06:30:41';
+$cvs_date = 'Date: 2004/07/21 18:40:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -267,9 +267,6 @@ Indiquez juste la liste des fichiers à renommer dans ce champ. Vous pouvez util
 </p>
 <pre>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
-<p>
-<b>Note :</b> ce champ est implémenté via une fonctionnalité spéciale de l'outil BSD tar. L'outil GNU tar ne gère pas cette fonctionnalité. Fink utilise GNU tar par défaut (car certaines archives tar ne peuvent être décompressées que par GNU tar) ; mais quand un paquet utilise TarFilesRename, Fink utilise BSD tar en invoquant directement <code>/usr/bin/tar</code>.
-</p>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
 <b>Introduit dans fink 0.10.0.</b>
