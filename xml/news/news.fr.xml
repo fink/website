@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr" fsroot="../..">
-<cvsid>$Id: news.fr.xml,v 1.15 2004/11/10 00:27:17 dmacks Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.16 2004/11/10 04:35:41 michga Exp $</cvsid>
 
 <newsitem>
 <date>15/10/2004</date>
 <headline>Résolution de problèmes concernant gcc</headline>
 <body>
 <p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version &quot;vérolée&quot; pour compiler les paquets qui présentent ce problème.</p>
-<p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">ici</link>
-and <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </link>.</p>
+<p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">ici</link> ou <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">là</link>.</p>
 <p>Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.</p>
 </body>
 </newsitem>
@@ -1004,14 +1003,14 @@ software before using Fink.
 </newsitem>
 
 <newsitem>
-  <date>2001-12-16</date>
-  <headline>Yes, we are alive!</headline>
+  <date>16/12/2001</date>
+  <headline>Non, nous ne sommes pas morts !</headline>
   <body>
     <p>
-      Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
+     Malgré le fait qu'aucune nouvelle n'a été publiée le mois dernier, l'équipe du projet Fink a été fort occupée ces derniers temps. Malheureusement, notre chef, Christoph, nous a quittés le mois dernier. Le développement n'en continue pas moins.
     </p>
     <p>
-      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <link url="doc/cvsaccess/index.php">CVS</link>. 
+      La version 0.9.5 du gestionnaire de paquet fink a récemment été publiée. De nombreux paquets ont été mis à jour et quantité d'autres ont été ajoutés. Vous les trouverez sur <link url="doc/cvsaccess/index.php">CVS</link>. 
     </p>
   </body>
 </newsitem>
@@ -1172,7 +1171,7 @@ software before using Fink.
 </newsitem>
 
 <newsitem>
-  <date>2001-08-01</date>
+  <date>01/08/2001</date>
   <headline>Version 0.2.4a is released</headline>
   <body>
     <p>There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
@@ -1183,178 +1182,139 @@ software before using Fink.
 </newsitem>
 
 <newsitem>
-  <date>2001-08-01</date>
-  <headline>Version 0.2.4 is released</headline>
+  <date>01/08/2001</date>
+  <headline>La version 0.2.4 a été publiée</headline>
   <body>
-    <p>Version 0.2.4 is released. Get it from the <link
-    url="download.php">download page</link>. Some highlights: The GIMP
-    1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
-    and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
+    <p>La version 0.2.4 est disponible. Vous la trouverez sur la <link url="download.php">page de téléchargement</link>. Quelques paquets interessants : The GIMP 1.2.2, playback et enregistrement via esound (merci à Shawn Hsiao et Masanori Sekino pour la rustine CoreAudio), xmms 1.2.5.
     </p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-07-19</date>
-  <headline>New document: X11 on Darwin and Mac OS X</headline>
+  <date>19/07/2001</date>
+  <headline>Nouveau document : X11 sur Darwin et Mac OS X</headline>
   <body>
-    <p>A comprehensive document about <link url="doc/x11/index.php">X11 on
-    Darwin and Mac OS X</link> is now available. It was written to be useful
-    for anyone, not just Fink users.
-    </p>
+    <p>Un document détaillé <link url="doc/x11/index.php">X11 sur Darwin et Mac OS X</link> est disponible maintenant. Il a été écrit dans le but d'être utile à tout le monde, non pas seulement aux utilisateurs de Fink.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-07-13</date>
-  <headline>Package database now online</headline>
+  <date>13/07/2001</date>
+  <headline>La base de données des paquets est maintenant en ligne</headline>
   <body>
-    <p>A prototype of the <link url="pdb/index.php">package database</link>
-    is now online.
-    </p>
+    <p>Un prototype de la <link url="pdb/index.php">base de données des paquets</link> est maintenant en ligne.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-07-09</date>
-  <headline>Version 0.2.3 is released</headline>
+  <date>09/07/2001</date>
+  <headline>La version 0.2.3 a été publiée</headline>
   <body>
-    <p>Get it from the <link url="download.php">download page</link>. This
-    version fixes the dpkg download problems many of you were having.
-    </p>
+    <p>Vous la trouverez sur la <link url="download.php">page de téléchargement</link>. Cette version corrige les problèmes de téléchargement dpkg que nombre d'entre vous ont rencontrés.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-07-03</date>
-  <headline>Packaging Manual updated</headline>
+  <date>03/07/2001</date>
+  <headline>Mise à jour du manuel d'empaquetage</headline>
   <body>
-    <p>The <link url="doc/packaging/index.php">Packaging Manual</link> was
-    updated to include all recently added fields.
-    </p>
+    <p>Le <link url="doc/packaging/index.php">Manuel d'empaquetage</link> a été mis à jour pour tenir compte de tous les champs ajoutés récemment.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-06-30</date>
-  <headline>Web site restructuring</headline>
+  <date>30/06/2001</date>
+  <headline>Restructuration du site web site</headline>
   <body>
-    <p>A major restructuring of the web site has started. The non-Fink-specific
-    documents were removed because I don't have the time to maintain them. All
-    documentation will be consolidated in the new <link url="doc/index.php">
-    Documentation section</link>.
-    </p>
+    <p>Une restructuration majeure du site web vient de commencer. Les documents non spécifiques à Fink ont été supprimés, car je n'ai pas le temps de les maintenir. L'ensemble de la documentation sera rassemblée dans une nouvelle <link url="doc/index.php">section Documentation</link>.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-06-24</date>
-  <headline>Version 0.2.2 is released</headline>
+  <date>24/06/2001</date>
+  <headline>La version 0.2.2 a été publiée</headline>
   <body>
-    <p>Version 0.2.2 is finally released. Get it from the <link
-    url="download.php">download page</link>. Be sure to read the notes
-    about X11 in the INSTALL file.
-    </p>
+    <p>La version 0.2.2 a été publiée. Vous la trouverez sur la <link url="download.php">page de téléchargement</link>. Veuillez lire les notes à propos de X11 dans le fichier INSTALL.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-05-19</date>
-  <headline>CVS instructions updated</headline>
+  <date>19/05/2001</date>
+  <headline>Mise à jour des instructions CVS</headline>
   <body>
-    <p>The <link url="fink/cvs.php">CVS instructions</link> have
-    been updated for Fink 0.2.x.
-    </p>
+    <p>Les <link url="fink/cvs.php">instructions CVS</link> ont été mises à jour pour la version 0.2.x de Fink.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-04-26</date>
-  <headline>FAQ online</headline>
+  <date>26/04/2001</date>
+  <headline>Les QFP sont en ligne</headline>
   <body>
-    <p>
-      This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
-    </p>
+    <p>Le site a maintenant une <link url="faq/index.php">section QFP</link>. Le contenu est encore un peu maigre, mais elle est faite pour durer.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-04-20</date>
-  <headline>Version 0.2.0 is released</headline>
+  <date>20/04/2001</date>
+  <headline>La version 0.2.0 est sortie</headline>
   <body>
-    <p>
-      It now uses dpkg for binary package management. You can get it from the download page, but be aware that this version is not yet as stable as the 0.1.x series. 
-    </p>
+    <p>Elle utilise maintenant dpkg pour gérer les paquets binaires. Vous la trouverez sur la page de téléchargement. Néanmoins, vous devez savoir que cette version n'est pas encore aussi stable que la série des versions 0.1.x.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-04-15</date>
-  <headline>Released version 0.1.8a</headline>
+  <date>15/04/2001</date>
+  <headline>La version 0.1.8a a été publiée</headline>
   <body>
-    <p>
-      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <link url="download.php">download page</link>. 
-    </p>
+    <p>La version 0.1.8a, qui vient d'être publiée, corrige des problèmes d'installation. Vous n'en avez besoin que si vous aviez téléchargé la version 0.1.8 et que vous aviez rencontré des problèmes d'installation ("stow non trouvé"). Vous la trouverez sur <link url="download.php">la page de téléchargement</link>.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-04-14</date>
-  <headline>Version 0.1.8 is out</headline>
+  <date>14/04/2001</date>
+  <headline>La version 0.1.8 est sortie</headline>
   <body>
-    <p>
-      Get it from the <link url="download.php">download page</link>. 
-    </p>
+    <p>Vous la trouverez sur la <link url="download.php">page de téléchargement</link>.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-03-30</date>
-  <headline>Porting notes updated</headline>
+  <date>30/03/2001</date>
+  <headline>Mise à jour des notes de portage</headline>
   <body>
-    <p>
-      The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
-    </p>
+    <p>Les <link url="darwin/porting.php">notes de portage</link> ont été enrichies d'informations concernant la version finale de Mac OS X.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-03-30</date>
-  <headline>Version 0.1.7 is out!</headline>
+  <date>30/03/2001</date>
+  <headline>La version 0.1.7 est là !</headline>
   <body>
-    <p>
-      Get it from the <link url="download.php">download page</link>. 
-    </p>
+    <p>Vous la trouverez sur la <link url="download.php">page de téléchargement</link>. </p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-03-24</date>
-  <headline>Mac OS X is released!</headline>
+  <date>24/03/2001</date>
+  <headline>Mac OS X est enfin là !</headline>
   <body>
-    <p>
-      Expect Fink packages to be adapted to the final release within the next one or two weeks. 
-    </p>
+    <p>Attendez-vous à l'adaptation des paquets de Fink à cette version finale dans les deux prochaines semaines.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-03-15</date>
-  <headline>Libtool page updated</headline>
+  <date>15/03/2001</date>
+  <headline>Mise à jour de la page de libtool</headline>
   <body>
-    <p>
-      Updated the <link url="darwin/libtool.php">libtool page</link> with a revised patch that does full shared library versioning. 
-    </p>
+    <p>La <link url="darwin/libtool.php">page de libtool</link> a été mise à jour. Elle contient désormais une rustine modifiée qui utilise le numérotage de version des librairies partagées.</p>
   </body>
 </newsitem>
 
 <newsitem>
-  <date>2001-03-08</date>
-  <headline>Version 0.1.6 is out</headline>
+  <date>08/03/2001</date>
+  <headline>Mise à disposition de la version 0.1.6</headline>
   <body>
-    <p>
-      Get it from the <link url="download.php">download page</link>. 
-    </p>
+    <p>Vous la trouverez sur la <link url="download.php">page de téléchargement</link>. </p>
   </body>
 </newsitem>
 

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 09 Nov 2004 19:27:27 EST</lastBuildDate>
+    <lastBuildDate>Mer, 10 nov 2004 05:35:49 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.">
