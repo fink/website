@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/09 14:16:27';
+$cvs_date = 'Date: 2005/04/01 16:08:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -152,7 +152,7 @@ There are also some flags for the <code>fink list</code> command
 -m expr,--maintainer=expr
           Show only packages with the maintainer  matching the
           regular expression expr.
--t expr,--tree=expr
+-r expr,--tree=expr
           Show only packages in the trees matching the regular
           expression expr.
 -w=xyz,--width=xyz

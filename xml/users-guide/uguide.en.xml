@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.28 2005/03/09 14:16:27 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.29 2005/04/01 16:08:57 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1325,7 +1325,7 @@ There are also some flags for the <code>fink list</code> command
 -m expr,--maintainer=expr
           Show only packages with the maintainer  matching the
           regular expression expr.
--t expr,--tree=expr
+-r expr,--tree=expr
           Show only packages in the trees matching the regular
           expression expr.
 -w=xyz,--width=xyz
