@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/06 20:57:10 $';
+$cvs_date = '$Date: 2002/12/09 06:04:41 $';
 
 include "header.inc";
 ?>
@@ -56,20 +56,7 @@ or the command
 </pre>
 You can run dpkg-checkall.sh multiple times if needed.
 <br><br>
-<li><b>Step 4: Edit your fink.conf file.</b>
-You will find this file at /sw/etc/fink.conf (or another location if you
-installed Fink in a non-standard place).  You may need to change to file
-permissions or use sudo to edit the file.  You want to add the "unstable"
-trees to the Trees line in this file, so that the line reads
-<pre>
-Trees: local/main stable/main stable/crypto local/bootstrap unstable/main unstable/crypto
-</pre>
-Even if you have not used the unstable Trees in the past, at the present
-time virtually all of the 10.2 Fink packages are still being tested in
-the unstable tree and have not yet been moved to the stable tree, so
-this step is highly recommended.
-<br><br>
-<li><b>Step 5: Run the update script.</b>
+<li><b>Step 4: Run the update script.</b>
 From within the fink-0.11.1 directory, issue the command
 <pre>
   sudo ./update-fink.sh
@@ -77,13 +64,13 @@ From within the fink-0.11.1 directory, issue the command
 You will need an internet connection, and a bit of patience, as the update
 takes a while to complete.
 <br><br>
-<li><b>Step 5a (added November 13, 2002): Finish the update</b>
+<li><b>Step 4a (added November 13, 2002): Finish the update</b>
 by running the command
 <pre>
   sudo /sw/lib/fink/postinstall.pl
 </pre>
 <br><br>
-<li><b>Step 6: Update your XFree86 packages.</b>
+<li><b>Step 5: Update your XFree86 packages.</b>
 This is done with the command 
 <pre>
   fink update xfree86-base xfree86-rootless
@@ -91,7 +78,7 @@ This is done with the command
 If you are not running XFree86, or if you installed it externally from the
 XonX project, you may skip this step.
 <br><br>
-<li><b>Step 7: Update your other fink packages.</b>
+<li><b>Step 6: Update your other fink packages.</b>
 The easy way to do this is with the command 
 <pre>
   fink update-all
