@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2004/03/05 15:28:38 $';
+$cvs_author = '$Author: costabel $';
+$cvs_date = '$Date: 2004/04/09 18:02:06 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -12,7 +12,7 @@ include "header.inc";
 ?>
 
 <p>
-Fink hat es sich zur Aufgabe gemacht, ein System zur Verfügung zu stellen, daß es einfach macht
+Fink hat es sich zur Aufgabe gemacht, ein System zur Verfügung zu stellen, das es einfach macht,
 <a href="http://www.opensource.org/">Open Source</a> Software auf
 <a href="http://www.opensource.apple.com/">Darwin</a> und
 <a href="http://www.apple.com/macosx/">Mac OS X</a> zu verwalten und zu installieren. 
@@ -43,15 +43,14 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink <? print $fink_version ?> wurde am <? print $release_date ?> veröffentlicht.  
-Diese Version beinhaltet Source- und vorkompilierte Pakete, sowie ein Installationsprogramm. 
-Diese Version wurde auf OS X 10.2 mit dem gcc 3.3 kompiliert, und sollte auf OS X 10.3 funktionsfähig sein.
+Fink 0.6.3 (für OS X 10.2) und Fink <? print $fink_version ?> wurden am <? print $release_date ?> veröffentlicht.  
+Diese Versionen beinhalten Source- und vorkompilierte Pakete, sowie ein Installationsprogramm.
 </p>
 
 <h1>Ressourcen</h1>
 
 <p>
-Wie Sie Hilfe bekommen aber auch helfen können, erfahren Sie auf unserer <a
+Wie Sie Hilfe bekommen, aber auch selbst helfen können, erfahren Sie auf unserer <a
 href="help/index.php">Hilfe-Seite</a>.
 </p>
 
