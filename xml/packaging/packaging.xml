@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.29 2002/04/29 18:30:24 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.30 2002/06/10 13:35:37 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -22,6 +22,10 @@ package manager.
 If you create packages for Fink, you may want to subscribe to the
 <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
 mailing list.
+If you are looking for a way to help out with Fink, and you have skills
+in this area, you might consider adopting a
+<link url="http://fink.sourceforge.net/pdb/nomaintainer.php">package which
+currently has no maintainer.</link>
 </p>
 </preface>
 

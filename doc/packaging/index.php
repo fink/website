@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/04/29 18:30:24';
+$cvs_date = 'Date: 2002/06/10 13:35:37';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -24,6 +24,10 @@ package manager.
 If you create packages for Fink, you may want to subscribe to the
 <a href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a>
 mailing list.
+If you are looking for a way to help out with Fink, and you have skills
+in this area, you might consider adopting a
+<a href="http://fink.sourceforge.net/pdb/nomaintainer.php">package which
+currently has no maintainer.</a>
 </p>
 <h2>Contents</h2><ul>
 <li><a href="intro.php"><b>1 Introduction</b></a></li>
@@ -57,7 +61,7 @@ mailing list.
 <li><a href="reference.php#scripts">5.4 Scripts</a></li>
 <li><a href="reference.php#patches">5.5 Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.29 2002/04/29 18:30:24 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.30 2002/06/10 13:35:37 dmrrsn Exp $</i></p>
 
 
 <?
