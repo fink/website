@@ -20,6 +20,8 @@ The "Trees" setting in <code>/sw/etc/fink.conf</code> controls
 which directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
+Starting with fink 0.13.0, the use of the simple package name plus
+".info" is also supported in order to simplify package updates.
 </p>
 <p>
 The package description tree is organized with several levels of
