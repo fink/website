@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/08 21:26:14';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2004/02/09 18:56:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -147,7 +147,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.166 2004/02/08 21:26:14 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.167 2004/02/09 18:56:48 rangerrick Exp $</i></p>
 
 
 <?
