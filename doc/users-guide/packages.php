@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/22 15:35:13';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/07/06 00:04:23';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -37,27 +37,26 @@ Here is a list of the available packages and X11 installation methods:
 <p>
 xfree86-base:
 This package is the real thing.
-It installs the whole load of XFree86 as a Fink package.
+It installs the whole load of XFree86 4.2.1.1 as a Fink package.
 For maximum flexibility, this package does not contain the actual
 XDarwin server.
-To get that, you can install the xfree86-server or the
-xfree86-rootless package.
-Or you can install it manually, for example using an &quot;XDarwin&quot; test
-release from the XonX project or one of the &quot;rootless&quot; servers
-circulating the net.
+To get that, you should install the xfree86-rootless package.
+</p>
+</li>
+<li>
+<p>
+xfree86:
+This is a single package (display server is included) that installs XFree86 4.3.0.
+This version is faster than 4.2.1.1, but hasn't been tested quite as much.
 </p>
 </li>
 <li>
 <p>
 system-xfree86:
 This package expects that you installed XFree86 manually, either from
-source or from the official binary distribution.
+source or from the official (or unofficial) binary distribution; or that you have installed Apple's X111.
 It will just check that the installation is useful and then act as a
 dependency placeholder.
-Note that XFree86 4.0.2 or 4.0.3 will not pass the test.
-You need a version that builds shared libraries.
-Usually that will be 4.1.0 or later, but CVS versions of XFree86 starting
-around spring 2001 will also work.
 </p>
 </li>
 <li>
@@ -246,7 +245,7 @@ If you run into errors during that process, please first check the
 </li>
 <li>
 <p>
-<b>In 0.5.3-stable:</b>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">upgrade</a> Fink.</p>
+<b>In 0.5.2-stable:</b>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">upgrade</a> Fink.</p>
 </li>
 <li>
 <p>
