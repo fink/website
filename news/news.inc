@@ -1,7 +1,10 @@
-<a name="2003-11-04 User Deletion Bug"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug</span></a><?php gray_line(); ?>
+<a name="2003-11-04 User Deletion Bug/ Dselect Troubles"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug/ Dselect Troubles</span></a><?php gray_line(); ?>
+<p><b>Quick Summary: DO NOT USE DSELECT,</b> and if you've used it,
+check your /sw/etc/apt/sources.list file carefully.</p>
 		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
 		on Mac OS X 10.3 could exhibit a problem where all users get deleted
-		from the netinfo database, and you become unable to log in.</p>
+		from the netinfo database, and you become unable to log in.
+We believe that this problem can only occur if you've used dselect.</p>
 		<p>If you are using Mac OS X 10.3, please be sure you're using the
 		latest Fink version to avoid the issue.  To make sure you don't have
 		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
@@ -15,8 +18,15 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main</pre>
 		<pre>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
 deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</pre>
 		<p>We are working on updating the repository to make sure that even
-		if you update you don't get the broken code, but in the meantime,
+		if you update you don't get the broken code, and to
+repair dselect, but in the meantime,
 		make sure your <code>sources.list</code> file has the correct entries.</p>
+<p>Other users have experienced problems with dselect itself, particularly
+complaints about a missing "darwin" package.  If you are running dselect
+under 10.3 and you <b>don't</b> get this warning, then your 
+<code>sources.list</code> file is likely to be corrupted and you should
+repair it as above.
+</p>
 	<a name="2003-11-01 Fink 0.6.1 released"><span class="news-date">2003-11-01: </span><span class="news-headline">Fink 0.6.1 released</span></a><?php gray_line(); ?>
         <p>The latest Fink release, version 0.6.1, is now available
 for both source and binary users.  This release was built on OS X 10.2
