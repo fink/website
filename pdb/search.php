@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package Search";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/05/31 23:54:45 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/11/23 16:44:58 $';
 
 $have_key = isset($s);
 $key = $s;
@@ -17,6 +17,22 @@ if (ereg("[^a-zA-Z0-9_.+-]", $key)) {
 ?>
 
 <h1>Package Search</h1>
+
+<!-- IndexTools Customization Code -->
+<!-- Added Temprorarily by dmalloc -->
+<!-- Remove leading // to activate custom variables -->
+<script language="Javascript">
+var DOCUMENTGROUP='PDB';
+var DOCUMENTNAME='pdb_search';
+//var ACTION='';
+</script>
+<!-- End of Customization Code --><!-- IndexTools Code v3.01 - All rights reserved -->
+<script language="javascript1.1" src="../indextools.js"></script><noscript>
+<img src="http://stats.indextools.com/p.pl?a=100048449005&js=no" width="1" height="1"></noscript><!--//-->
+<!-- End of IndexTools Code -->
+
+
+
 
 <form action="search.php" method="GET">
 <p>Search for package: <input type="text" name="s" size="15" value="">
