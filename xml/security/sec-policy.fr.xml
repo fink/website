@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
     <title>Charte générale de sécurité de Fink pour les paquets acceptés</title>
     <shorttitle>Charte de sécurité</shorttitle>
-    <cvsid>$Id: sec-policy.fr.xml,v 1.2 2004/07/02 17:12:03 michga Exp $</cvsid>
+    <cvsid>$Id: sec-policy.fr.xml,v 1.3 2004/07/10 18:09:57 michga Exp $</cvsid>
     <preface>
         <p>Ce document explique comment gérer les failles de sécurité pour les paquets qui ont été acceptés dans Fink. Bien que tout mainteneur de paquet accepté dans Fink en reste le principal responsable, Fink reconnaît la nécessité de mettre en place une charte uniforme de réaction aux failles de sécurité qui pourraient être décelées dans les programmes que Fink propose sous forme de paquets. Les mainteneurs doivent s'y conformer.</p>
     </preface>
@@ -41,7 +41,7 @@
                 <item>
                     <itemt>Exploit à distance sur root</itemt>
                     <itemd>
-                        <p>minimum : <em>immediat</em>; maximum : <em>12</em> heures.</p>
+                        <p>minimum : <em>immédiat</em>; maximum : <em>12</em> heures.</p>
                     </itemd>
                 </item>
                 <item>
@@ -290,7 +290,7 @@
                 References:       MISC
                    Ref-URL:       http://security.e-matters.de/advisories/092004.html
             </codeblock>
-            <p>Notez que les mots clés <em>Affected</em> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetés pour Fink. L'exemple ci-dessus le montre clairement.</p>
+            <p>Notez que les mots clés <em>Affected</em> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetées pour Fink. L'exemple ci-dessus le montre clairement.</p>
         </section>
     </chapter>
 </document>
