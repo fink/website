@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/08/05 12:54:48';
+$cvs_date = 'Date: 2002/08/11 12:26:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -401,7 +401,7 @@ catalogs end up in <tt><nobr>/sw/share/locale</nobr></tt>, not
 Before using this field, make sure that you won't break the package
 and that it's really required.
 You can run <tt><nobr>diff</nobr></tt> to find the differences between the
-packages's version and Fink's version (in
+package's version and Fink's version (in
 <tt><nobr>/sw/lib/fink/update</nobr></tt>).
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>

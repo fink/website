@@ -1,14 +1,14 @@
 <?
 $title = "Usage";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:22';
+$cvs_date = 'Date: 2002/08/11 12:30:12';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.11 2002/04/13 21:14:22 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
+<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.12 2002/08/11 12:30:12 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -58,11 +58,10 @@ Do you want to continue? [Y/n]</pre>
 of these for historic reasons.)</p>
 <a name=""><h2>remove</h2></a>
 <p>The remove command removes packages from the system by calling 'dpkg
---remove'. The current implementation has several fundamental
-flaws. It only works on packages Fink knows about (i.e. .info file is
-present). It doesn't check dependencies. It makes one dpkg invocation
-per packages, thus not allowing dpkg to reorder according to
-dependencies.</p>
+--remove'. The current implementation has some flaws: It only works on
+packages Fink knows about (i.e. where an .info file is present); and it
+doesn't check dependencies itself but rather completly leaves that to
+the dpkg tool (usually this poses no problem, though).</p>
 <p>The remove command only removes the actual package files, but leaves
 the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
