@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/24 09:28:50 $';
+$cvs_date = '$Date: 2001/03/24 09:38:03 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -34,9 +34,6 @@ page</a> with a revised patch that does full shared library
 versioning.</p>
 <p>2001-03-08: Version 0.1.6 is out. Get it from the <a
 href="download.php">download page</a>.</p>
-<p>2001-02-21: Fink is now available via CVS, so you can get the
-newest updates without waiting for the next release. Check out the <a
-href="fink/cvs.php">instructions</a>.</p>
 
 <h2>Status</h2>
 
