@@ -1,4 +1,14 @@
-<a name="2003-04-16 Virex problem resolved"><span class="news-date">2003-04-16: </span><span class="news-headline">Virex problem resolved</span></a><?php gray_line(); ?>
+<a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
+	       <p>KDE 3.1.1 binaries are now available.  Since they
+have been released after 0.5.2 came out, you will need to update
+your package descriptions by running <code>sudo apt-get update</code>
+(or equivalent) before they will be available for installation.
+For pointers to the changes and security fixes in this release,
+see <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
+announcement</a>.
+</p>
+
+		<a name="2003-04-16 Virex problem resolved"><span class="news-date">2003-04-16: </span><span class="news-headline">Virex problem resolved</span></a><?php gray_line(); ?>
 	       <p>McAfee has released Virex 7.2.1, which no longer
 overwrites the main Fink directory <code>/sw</code>.  Fink users should
 continue to avoid Virex 7.2.
@@ -23,9 +33,4 @@ to restore files which the Virex upgrade may have deleted.
 <a href="http://fink.sourceforge.net/download/fix-upgrade.php">these
 special instructions</a>.)</p>
 
-		<a name="2003-04-09 Interview on OSNews.com"><span class="news-date">2003-04-09: </span><span class="news-headline">Interview on OSNews.com</span></a><?php gray_line(); ?>
-	<p><a href="http://osnews.com/">OSNews.com</a> today is featuring a
-	<a href="http://osnews.com/story.php?news_id=3236">mini-interview</a> with
-	one of our project leaders, Max Horn. It contains some rather unusual questions,
-	so even if you know Fink fairly well, you might find it informative.
-</p>
+		

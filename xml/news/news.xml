@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.58 2003/04/17 14:35:43 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.59 2003/05/06 01:56:26 rangerrick Exp $</cvsid>
 
+<newsitem>
+	<date>2003-05-05</date>
+	<headline>KDE 3.1.1 Binaries Available</headline>
+	       <body>
+	       <p>KDE 3.1.1 binaries are now available.  Since they
+have been released after 0.5.2 came out, you will need to update
+your package descriptions by running <code>sudo apt-get update</code>
+(or equivalent) before they will be available for installation.
+For pointers to the changes and security fixes in this release,
+see <extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
+announcement</extlink>.
+</p>
+
+		</body>
+</newsitem>
 <newsitem>
 	<date>2003-04-16</date>
 	<headline>Virex problem resolved</headline>
