@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/09/28 12:37:10 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/12/17 18:55:00 $';
 
 include "header.inc";
 ?>
@@ -43,11 +43,14 @@ The procedure has three main steps:
 <li><p>Getting a decent apt package.
 Download the
 <a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt_0.5.4-4_darwin-powerpc.deb">apt-0.5.4-4</a>
-package.
-In a Terminal.app window, go to the folder where you downloaded the
-file and run this command:
+and
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt-shlibs_0.5.4-4_darwin-powerpc.deb">apt-shlibs-0.5.4-4</a>
+packages.
+In a Terminal.app window, go to the folder where you downloaded these
+files and run these commands:
 </p>
-<pre>sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb</pre>
+<pre>sudo dpkg -i apt-shlibs_0.5.4-4_darwin-powerpc.deb 
+sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb</pre>
 <p>
 Once apt is installed, use these commands to update the package
 listings:
@@ -86,6 +89,7 @@ The procedure has four main steps:
 <li><p>Getting decent apt and fink packages.
 Download the
 <a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt_0.5.4-4_darwin-powerpc.deb">apt-0.5.4-4</a>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt-shlibs_0.5.4-4_darwin-powerpc.deb">apt-shlibs-0.5.4-4</a>
 and the
 <a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/fink_0.10.0-1_darwin-powerpc.deb">fink-0.10.0-1</a>
 packages.
@@ -95,7 +99,8 @@ version numbering from the Fink distribution.)
 In a Terminal.app window, go to the folder where you downloaded the
 file and run these commands to install the packages:
 </p>
-<pre>sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb
+<pre>sudo dpkg -i apt-shlibs_0.5.4-4_darwin-powerpc.deb 
+sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb
 sudo dpkg -i fink_0.10.0-1_darwin-powerpc.deb</pre>
 <p>
 Once they are installed, use these commands to update the package

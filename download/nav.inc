@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.inc,v 1.2 2001/09/30 14:57:24 chrisp Exp $ */
+/* $Id: nav.inc,v 1.3 2002/12/17 18:55:00 dmrrsn Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -8,7 +8,8 @@ $navbox = array(
   "download/bindist.php", "Binary Release",
   "download/srcdist.php", "Source Release",
   "download/upgrade.php", "Upgrade Matrix",
-  "download/puma-kit.php", "10.1 Upgrade Kit",
+  "download/10.1-upgrade.php", "10.1 Upgrades",
+  "download/10.2-upgrade.php", "10.2 Upgrades",
   "bindist/.*", "Archive Browser"
 );
 
