@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/06/19 15:03:58';
+$cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -173,7 +173,7 @@ signe pourcentage (%) (ce signe n'est pas interprété en fonction de ce qui le 
 fonction de pseudo-hachage retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas.
 La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2).
 </p>
-</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+</td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
 la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
 (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.

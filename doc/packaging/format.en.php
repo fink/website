@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/06/23 22:22:52';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -234,7 +234,7 @@ period characters removed (as per Fink's language-version package naming
 convention and for other clever uses). (Introduced in a post-0.19.2
 CVS version of fink)
 </p>
-</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+</td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
 the package <b>n</b>ame <b>i</b>nvariant portion. These are like
 %n and %N, except all %type_pkg[] and %type_raw[] are blanked out.

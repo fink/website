@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/06/19 15:03:58';
+$cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -30,7 +30,7 @@ include_once "header.inc";
 <p>
 Nom du paquet. Peut contenir des minuscules, des nombres ou les caractères spéciaux suivants : '.', '+' et '-'. Pas de trait de soulignement ('_'), ni de majuscules. Champ obligatoire.
 </p>
-<p>Seuls les raccourcis %N, %Ni, %type_raw[] et %type_pkg[] sont applicables à ce champ.</p>
+<p>Seuls les raccourcis %N, %{Ni}, %type_raw[] et %type_pkg[] sont applicables à ce champ.</p>
 <p>
 Selon les règles de Fink, un paquet donné doit toujours être compilé avec les mêmes options activées. Si un paquet peut avoir plusieurs variantes (voir la documentation sur le champ <code>Type</code>), vous devez encoder les informations concernant la variante dans le champ <code>Package</code> (voir la documentation sur le raccourci  %type_pkg[]). De cette façon, chaque variante possédera un nom unique. Le nom du paquet indique quelles variantes sont incluses. Notez que l'usage des raccourcis %type_pkg[] et %type_raw[] dans le nom du paquet est récent et grandement incompatible avec les anciennes versions de fink ; les descriptions de ces paquets doivent être insérés dans un champ <code>InfoN</code> avec N&gt;=2.
 </p>
@@ -199,7 +199,7 @@ Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
-URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification  - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et  c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du packet fink-mirrors. Par ailleurs, l'utilisation de  <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ  %type_, il est donc conseillé d'utiliser ici %ni (avec, éventuellement, des spécifications de %type_).
+URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification  - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et  c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du packet fink-mirrors. Par ailleurs, l'utilisation de  <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ  %type_, il est donc conseillé d'utiliser ici %{ni} (avec, éventuellement, des spécifications de %type_).
 </p>
 <p>
 À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire).
@@ -309,7 +309,7 @@ La version modifiée prend en compte DESTDIR et garantit que les catalogues de m
 Le nom d'une rustine à appliquer avec <code>patch -p1 &lt;<b>nom-rustine</b></code>. Ne donnez que le nom du fichier ; le chemin est ajouté automatiquement devant le nom du fichier. L'interprétation des raccourcis y est effectuée, si bien qu'on trouve, en général : <code>%f.patch</code> ou <code>%n.patch</code>. La rustine est appliquée avant que le script PatchScript soit exécuté (s'il existe).
 </p>
 <p>
-N'oubliez pas que %n inclut implicitement toutes les variantes %type_. Le cas échéant, utilisez %ni (éventuellement avec des variantes spécifiques %type_). Il est plus facile de gérer une seule rustine et de faire des changements spécifiques à certaines variantes dans le script <code>PatchScript</code> que de gérer une rustine par variante.
+N'oubliez pas que %n inclut implicitement toutes les variantes %type_. Le cas échéant, utilisez %{ni} (éventuellement avec des variantes spécifiques %type_). Il est plus facile de gérer une seule rustine et de faire des changements spécifiques à certaines variantes dans le script <code>PatchScript</code> que de gérer une rustine par variante.
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>

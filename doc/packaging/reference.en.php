@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/06/23 22:22:52';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -62,7 +62,7 @@ May contain lowercase letters, numbers and the special characters '.',
 No underscores ('_'), no capital letters.
 Required field.
 </p>
-<p>Percent expansion is applied to this field for %N, %Ni, %type_raw[],
+<p>Percent expansion is applied to this field for %N, %{Ni}, %type_raw[],
 and %type_pkg[] only.</p>
 <p>
 As per Fink packaging policy, a given package must always
@@ -412,7 +412,7 @@ package. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
 Before the URL is used, percent expansion takes place. Remember that
-%n includes all %type_ variant data, so you may want to use %ni here
+%n includes all %type_ variant data, so you may want to use %{ni} here
 (perhaps with some specific %type_ expansions).
 </p>
 <p>
@@ -625,7 +625,7 @@ before the PatchScript is run (if any).
 </p>
 <p>
 Remember that %n includes all %type_ variant data, so you may want to
-use %ni here (perhaps with some specific %type_ expansions). It's
+use %{ni{ here (perhaps with some specific %type_ expansions). It's
 easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
