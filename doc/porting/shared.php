@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Shared Code";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/04/30 23:43:39';
+$cvs_date = 'Date: 2002/05/15 19:10:48';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="libtool.php" title="GNU libtool"><link rel="prev" href="basics.php" title="Basics">';
 
