@@ -127,6 +127,7 @@ myself using fink-installed software?</a></li>
 <li><a href="usage-general.php#apple-x11-applications-menu">7.4 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li>
 <li><a href="usage-general.php#x-options">7.5 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li>
 <li><a href="usage-general.php#no-display">7.6 When I try to run an application, I get a message that says "cannot open display:".  What do I need to do?</a></li>
+<li><a href="usage-general.php#suggest-package">7.7 I don't see my favorite program in Fink.  How do I suggest a new package for inclusion in Fink?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>8 Package Usage Problems - Specific Packages</b></a></li>
 <ul>

@@ -109,6 +109,10 @@ options.
 <div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your Xwindows display.  Make sure you do the following:</p><p>1. Start Xwindows (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY enviroment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
 
 </a>
+<a name="suggest-package">
+<div class="question"><p><b>Q7.7: I don't see my favorite program in Fink.  How do I suggest a new package for inclusion in Fink?</b></p></div>
+<div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
+</a>
 <p align="right">
 Next: <a href="usage-packages.php">8 Package Usage Problems - Specific Packages</a></p>
 

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.137 2003/10/26 12:31:10 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.138 2003/10/30 17:56:22 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1214,6 +1214,14 @@ options.
 <p>if you're running <code>bash</code>.</p>
 </answer>
 
+</faqentry>
+<faqentry name="suggest-package" >
+<question>
+<p>I don't see my favorite program in Fink.  How do I suggest a new package for inclusion in Fink?</p></question>
+<answer>
+<p>Make the request on the <link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</link> on the Fink project page.</p>
+<p>Note that you must have a SourceForge id to do so.</p>
+</answer>
 </faqentry>
 </chapter>
 <chapter filename="usage-packages" >
