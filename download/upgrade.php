@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/15 23:44:21 $';
+$cvs_date = '$Date: 2002/01/17 00:22:58 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,13 @@ release, i.e. don't upgrade using <tt>dselect</tt> or
 The precompiled packages downloaded by these tools are now built on a
 10.1 system and we can't guarantee that they will work on 10.0.
 </p>
-
+<p>
+If you are upgrading from a Fink release prior to 0.3.1, and you have
+tetex installed, you should run the command "fink remove tetex"
+before upgrading.  (It may also be necessary to remove the packages
+which depend on tetex, such as lyx, before tetex can be removed.)
+Afterwards you can again install tetex and the other packages you removed.
+</p>
 <?
 it_start();
 it_item('<b>Current installation</b>', '<b>Upgrade method</b>');
