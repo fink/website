@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/18 15:46:24';
+$cvs_date = 'Date: 2002/12/18 20:04:53';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -249,12 +249,22 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></div></a>
 
-<a name="not-found"><div class="question"><p><b>Q3.16: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
+<a name="cant-login-anymore">
+<div class="question"><p><b>Q3.16: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
+<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>
+fsck -y
+mount -uw
+chmod 1775 /
+reboot
+</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<tt><nobr>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</nobr></tt>&quot; to prevent this from happening again.</p></div>
+</a>
+
+<a name="not-found"><div class="question"><p><b>Q3.17: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
 <a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div></a>
 
-<a name="fink-not-found"><div class="question"><p><b>Q3.17: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
+<a name="fink-not-found"><div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your home directory, this will be read instead of <tt><nobr>.cshrc</nobr></tt> .  You can go ahead and put <tt><nobr>source /sw/bin/init.csh</nobr></tt> in <tt><nobr>.tcshrc</nobr></tt> 
 .</p></div>

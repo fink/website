@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/18 15:46:24';
+$cvs_date = 'Date: 2002/12/18 20:04:53';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -76,8 +76,9 @@ work?</a></li>
 		</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.15 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
-<li><a href="usage-fink.php#not-found">3.16 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
-<li><a href="usage-fink.php#fink-not-found">3.17 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
+<li><a href="usage-fink.php#cant-login-anymore">3.16 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
+<li><a href="usage-fink.php#not-found">3.17 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
+<li><a href="usage-fink.php#fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -122,7 +123,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#xterm-error">7.5 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
 <li><a href="usage-packages.php#libXmuu">7.6 When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.68 2002/12/18 15:46:24 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.69 2002/12/18 20:04:53 alexkhansen Exp $</i></p>
 
 
 <?
