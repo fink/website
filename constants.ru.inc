@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ru.inc,v 1.1 2005/01/01 05:09:43 horsager Exp $ */
+/* $Id: constants.ru.inc,v 1.2 2005/01/16 09:31:18 horsager Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -45,15 +45,15 @@ define (FINK_A, 'О');
 
 /* Printer */
 define (FINK_PRINTER, 'Принтер');
-define (FINK_PRINT_VERSION, 'Распечатанная версия');
+define (FINK_PRINT_VERSION, 'Печатная версия');
 
 /* Footer */
-define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, скачивание, бесплатное программное обеспечение, порт, разработка, управлением пакетами');
-define (META_DESCRIPTION, 'Проект Fink нацелен на привнесение всего многообразия ПО Unix с открытым источником кода в Darwin и Mac OS X. Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться и использоваться на Mac OS X ("переносим" его), и обеспечиваем возможность его скачивания в виде согласованного распространения. ');
-define (HEADER_HOSTED_BY, 'Хостинг обеспечивается');
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, скачивание, свободное программное обеспечение, порт, разработка, управлением пакетами');
+define (META_DESCRIPTION, 'Проект Fink нацелен на перенос всего мира ПО Unix с открытым исходным кодом в Darwin и Mac OS X. Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться и использоваться в Mac OS X (переносим его), и обеспечиваем возможность его скачивания в виде связной дистрибуции. ');
+define (HEADER_HOSTED_BY, 'Хостинг обеспечен');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Языки');
-define (FOOTER_GENERATED_DYNAMICALLY, 'Воспроизводство динамическим образом ');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Последнее обновление %a, %d %B %Y ‚ %R %Z');
-define (FOOTER_LAST_CHANGED, 'Последнее изменение внесено {author} %a, %d %B %Y ‚ %R %Z ');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Воспроизведено динамически ');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');
+define (FOOTER_LAST_CHANGED, 'Последнее изменение: {author} %a, %d %B %Y ‚ %R %Z ');
 ?>
 
