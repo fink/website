@@ -9,8 +9,9 @@
 	<a href="http://www.extremedsl.com.au">ISP extremedsl</a>
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
-	making distfile services available for Fink on 21 load balanced server.
+	Furthermore the <a href="www.mirror.ac.uk">UKMIRROR</a> service 
+	has accepted us, making distfile services available for Fink 
+	on 21 load balanced server.
 		</p>
 		<p>
 	We are very happy about this development, but we still need more rsync mirrors.

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 30 Nov 2003 22:36:48 CET</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2003 22:43:26 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
@@ -22,8 +22,9 @@
 	ISP extremedsl
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
-	making distfile services available for Fink on 21 load balanced server.
+	Furthermore the UKMIRROR service 
+	has accepted us, making distfile services available for Fink 
+	on 21 load balanced server.
 		
 		
 	We are very happy about this development, but we still need more rsync mirrors.

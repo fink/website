@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.106 2003/11/30 21:37:35 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.107 2003/11/30 21:43:49 dmalloc Exp $</cvsid>
 
 
 <newsitem>
@@ -18,8 +18,9 @@
 	<extlink url="http://www.extremedsl.com.au">ISP extremedsl</extlink>
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
-	making distfile services available for Fink on 21 load balanced server.
+	Furthermore the <extlink url="www.mirror.ac.uk">UKMIRROR</extlink> service 
+	has accepted us, making distfile services available for Fink 
+	on 21 load balanced server.
 		</p>
 		<p>
 	We are very happy about this development, but we still need more rsync mirrors.
