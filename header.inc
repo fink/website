@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.65 2004/02/29 23:32:25 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.66 2004/03/01 03:52:02 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -81,6 +81,8 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 } else {
   $date = filemtime($PATH_TRANSLATED);
 }
+// converts xml style tag to html 4.01 transitional (ad hoc)
+$metatags = ereg_replace('<([^/]*)/>', '<\1>', $metatags);
 
 // Functions Used in PDB
 function it_start() {
@@ -228,9 +230,9 @@ function insert_sub ($navbox, $active_page) {
 </table>
 <? /* main table with navigation column and content column */ ?>
 <table width="100%" cellspacing="0" >
-	<tr valign="top">
-		<td align="left" width="120" class="layout"  bgcolor="#eeeeee" >
-
+<tr valign="top">
+<td align="left" width="120" class="layout"  bgcolor="#eeeeee" >
+	<dl>
 <? /* navigation column table */ ?>
 
 <? /* sections */ ?>
@@ -256,7 +258,7 @@ function insert_sub ($navbox, $active_page) {
 		</dd>
 <? } ?>
 <? /* end navigation column */ ?>
-
+	</dl>
 </td>
 <td align="left" width="100%">
 
