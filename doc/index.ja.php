@@ -23,6 +23,8 @@ include_once "header.inc";
 Fink 本体のインストール、パッケージのインストール、新しい Fink リリースへのアップグレードなどが書かれています。
 ソースとバイナリリリースの両方の説明が書かれています
 </li>
+<li><a href="advanced/index.en.php">Fink 上級者向けトピックガイド</a> -
+ユーザーガイドよりも上級者向けのトピックをカバーしています</li>
 <li><a href="x11/index.php">Darwin と Mac OS X での X11</a> -
 コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) </li>
 </ul>

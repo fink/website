@@ -22,6 +22,9 @@ include_once "header.inc";
                 обновление до новых версий Fink. Содержит инструкции
                 относительно исходного кода и бинарной версии.</li>
             <li>
+                <a href="advanced/index.en.php">Fink Advanced Topics Guide</a>  - 
+				covers more advanced concepts than those covered in the User's Guide.</li>
+            <li>
                 <a href="x11/index.php">Выполнение
                     X11 в Darwin и Mac OS X</a> - концепции, инсталляция и запуск
                 (также предназначается  для пользователей Darwin и Mac OS
