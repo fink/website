@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Notions complexes dans Fink</title>
 <shorttitle>Notions complexes</shorttitle>
-<cvsid>$Id: advanced.fr.xml,v 1.1 2005/03/02 05:20:19 michga Exp $</cvsid>
+<cvsid>$Id: advanced.fr.xml,v 1.2 2005/03/02 05:22:33 michga Exp $</cvsid>
 <preface>
 <p>Ce document évoque quelques complexes qui ne se trouvent pas dans le <link url="http://fink.sourceforge.net/doc/users-guide/">Guide de l'utilisateur</link>.</p>
 </preface>
@@ -23,7 +23,7 @@
 <li>Construisez les paquets comme d'habitude. Il n'est pas nécessaire de les installer.</li>
 <li><p>Exécutez <code>fink scanpackages</code> chaque fois que le jeu de paquets construits change. Fink génèrera alors des indexs apt pour tous les arbres activés.</p>
 <p>Au lieu de la commande précédente, vous pouvez exécuter <code>fink cleanup</code>. Les paquets sources et binaires obsolètes seront alors supprimés. La commande <code>scanpackages</code> est appelée automatiquement à la fin du processus de nettoyage.</p></li>
-<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <command>httpd</command> de telle sorte qu'il serve le répertoire <filename>/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename>. 
+<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <filename>/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename>. 
 <codeblock>
 Alias /fink /sw/fink
 &lt;Directory /sw/fink&gt;
