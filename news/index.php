@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmalloc';
 $cvs_date = 'Date: 2004/04/06 19:19:57';
 $metatags = '';
 
+include_once "header.inc";
+?>
+
 <a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
 	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
@@ -913,4 +916,4 @@ software before using Fink.
     </p>
   
 
-
+<? include_once "footer.inc"; ?>
