@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.86 2003/02/11 14:04:32 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.87 2003/02/19 14:21:56 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -602,8 +602,10 @@ you. </p>
 
 <faqentry name="fink-not-found"><question><p>I've edited my .cshrc and started a new terminal, but I still get "fink: command not found".</p></question>
 <answer><p>
-If you use tcsh and happen to have a <code>.tcshrc</code> file in your home directory, this will be read instead of <code>.cshrc</code> .  You can go ahead and put <code>source /sw/bin/init.csh</code> in <code>.tcshrc</code> 
-.</p></answer>
+(This assumes you are using <filename>tcsh</filename>).  When <filename>tcsh</filename> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <filename>~/.tcshrc</filename>, and if that isn't found, <filename>~/.cshrc</filename>; note that if you have both, only <filename>~/.tcshrc</filename> gets run.</p>  
+<p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <filename>~/.tcshrc</filename>, and therefore <filename>~/.cshrc</filename> isn't being read.  A good fix is to add the following line to <filename>~/.tcshrc</filename>:</p>
+<codeblock>source ~/.cshrc</codeblock>
+</answer>
 </faqentry>
 <faqentry name="invisible-sw"><question><p>I want to hide /sw in the Finder to keep users from damaging the fink setup.</p></question>
 <answer><p>You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p>
@@ -614,7 +616,23 @@ If you use tcsh and happen to have a <code>.tcshrc</code> file in your home dire
 <faqentry name="install-info-bad"><question><p>I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</p></question>
 <answer><p>This usually is due to a problem in your PATH.  In a terminal window type:</p>
 <codeblock>printenv PATH</codeblock>
-<p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> in the Users Guide.  If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other install-info when you use fink.</p></answer></faqentry>
+<p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> in the Users Guide.  If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other <filename>install-info</filename> when you use fink.</p></answer></faqentry>
+
+<faqentry name="bad-list-file"><question><p>I can't install or remove anything, because of a problem with a "files list file".</p></question>
+<answer><p>Typically these errors take the form:</p>
+<p><code>files list file for package <em>packagename</em> contains empty filename</code></p>
+<p>or</p>
+<p><code>files list file for package <em>packagename</em> is missing final newline</code></p>
+<p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p> 
+<p><code>dpkg --contents <em>full-path-to-debfile</em></code></p>
+<p>e.g.</p> 
+<codeblock>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+<p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <em>packagename</em></code>, to build the .deb--it won't install yet, though.</p>
+<p>Once you have a valid .deb file, then you can reconstitute the file using the following command:</p>
+<p><code>dpkg -c <em>full-path-to-debfile</em> | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/") {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' > /sw/var/lib/dpkg/info/packagename.list</code></p>
+<p>e.g.</p>
+<codeblock>dpkg-deb -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/") {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' > /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+<p>What this does is to print out the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></answer></faqentry>
 </chapter>
 
 
