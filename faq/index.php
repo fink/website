@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/18 09:53:39 $';
+$cvs_date = '$Date: 2001/05/19 16:17:58 $';
 
 $metatags = '<link rel="start" href="index.php" title="FAQ Contents">
 <link rel="next" href="general.php" title="General questions">
@@ -58,6 +58,7 @@ compile. It complains about multiple definitions of _login_tty. What's
 wrong?</a></li>
 <li><a href="packages.php#qt">Qt won't compile.</a></li>
 <li><a href="packages.php#nedit">nedit is broken.</a></li>
+<li><a href="packages.php#sawfish">Sawfish can't find rep-gtk.</a></li>
 </ul>
 </ul>
 

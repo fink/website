@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Package Specific";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/18 09:53:39 $';
+$cvs_date = '$Date: 2001/05/19 16:17:58 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -67,6 +67,13 @@ in the error messages, that's because you have Xtools
 installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
 to include some required header files. There is no workaround yet, and
 it is unknown whether this is fixed in recent releases on Xtools.</p>
+
+<p><a name="sawfish"><b>Sawfish can't find rep-gtk.</b></a></p>
+
+<p>You need shared X11 libraries for rep-gtk to build correctly. It
+doesn't build dynamically loadable modules when only static X11
+libraries are available. The problem doesn't actually show until the
+sawfish configure script tries to use rep-gtk.</p>
 
 
 <?
