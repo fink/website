@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/07 23:14:16 $';
+$cvs_date = '$Date: 2001/01/09 10:26:39 $';
 
 include "header.inc";
 ?>
@@ -14,12 +14,13 @@ include "header.inc";
 <ul>
 <li>Package revisions</li>
 <li>Dependencies, both build-time and run-time</li>
-<li>Shared Libraries (libtool)</li>
 <li>Better Installation</li>
 <li>Let the user choose whether to build locale support, and which
 catalogs should be installed</li>
 <li>Some support for upgrading packages</li>
 <li>Mirror selection</li>
+<li>Optimization: make sure all binaries are stripped and at least
+basic optimization flags are used (e.g. <tt>-O2</tt>)</li>
 </ul>
 
 
