@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/27 17:35:29 $';
+$cvs_date = '$Date: 2001/05/06 19:54:38 $';
 
 include "header.inc";
 ?>
@@ -29,6 +29,9 @@ questions are listed and linked in the table of contents below.</p>
 <ul>
 <li><a href="install.php#stow-not-found">Installing Fink fails with a "stow not
 found" message.</a></li>
+<li><a href="install.php#bzip2">I tried to install Fink 0.2.0, but it
+failed to login to cygnus (?) to get bzip. (login denied). Is there an
+error in the login script?</a></li>
 </ul>
 <li><a href="usage.php"><b>Usage</b></a></li>
 <ul>
