@@ -1,14 +1,14 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/10/30 21:09:03';
+$cvs_date = 'Date: 2002/11/05 19:15:25';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-10=30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
+<span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
   <p>
   Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
 once</b> on a given machine.  Due to an apparent bug in Apple's
@@ -18,10 +18,12 @@ directory, in some cases leaving the machine in a non-bootable state.
 </p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
 than an &quot;Install&quot; button when installing Fink 0.4.1, <b>do not proceed
 any further!</b> </p>
-<p>A new version of the binary installer for Fink 0.4.1 is being tested
-which will avoid the problem of the machine not booting, but even
-once the new version is available users are advised to only &quot;Install&quot;,
-not &quot;Upgrade.&quot;
+<p>A new version of the binary installer for Fink 0.4.1 became available
+on November 5.  The new version avoids
+the problem of the machine not booting, but even with the new version,
+users are advised to only &quot;Install&quot;,
+not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
+12582912 bytes, while the old version had a filesize of 10541112 bytes.)
 </p><span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
     <p>
       The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
