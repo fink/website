@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 规则";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/11 15:43:25';
+$cvs_date = 'Date: 2004/03/14 00:06:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 include_once "header.inc";
@@ -308,6 +308,18 @@ perl 5.6.1 和 perl 5.8.0。
 可以允许创建一个 <code>-pm</code> 软件包，它实际是去加载 <code>-pm560</code> 或其它存在的相应版本的"束"软件包。我们通过提供一个平滑升级的方法，来鼓励对现存的 XS 模块使用这个策略，。
 </p><p>
 从 fink 0.13.0 版本开始，对 <code>.deb</code> 文件使用 <code>fink validate</code> 命令的时候，将会检查这个 fink 软件包是否一个安装在没有标定版本的目录中的 XS 模块，如果是的话，将给出一个警告信息。
+</p>
+
+
+
+<h2><a name="emacs">3.5 Emacs 规则</a></h2>
+<p>Fink 项目选择遵循 Debian 项目针对 emacs 的规则，但稍微有些差别。
+（Debian 规则文档可以在
+<a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
+http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
+在 Fink 的规则中有两点区别。
+首先，在 fink 中这个规则目前仅应用于 emacs20 和 emacs21 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
+第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
 </p>
 
 
