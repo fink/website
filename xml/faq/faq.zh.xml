@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.10 2004/04/17 13:39:48 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.11 2004/04/30 04:57:48 dmacks Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -1308,7 +1308,7 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
 	  对每个虚拟软件包，fink 会检查特定位置的一些特定文件，如果找到这些文件，就会认为这个虚拟软件包“已经安装”。
 	</p>
         <p>
-	  你可以运行 <code>fink-virtual-packages</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
+	  你可以运行 <code>fink-virtual-pkgs</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
 	  使用 <code>--debug</code> 标志可以获取有关 fink 检查了哪些文件诊断信息。
 	</p>
         <p>
