@@ -111,7 +111,7 @@ xinit will still know how to run it through a shell.
 <p>
 When there is no <code>.xinitrc</code> file in your home
 directory, XFree86 will use its default file,
-<code>/usr/X11R6/lib/X11/xinit/xinitrc</code>.
+<code>/usr/X11R6/etc/X11/xinit/xinitrc</code>.
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
