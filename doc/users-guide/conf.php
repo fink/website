@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/06 00:12:01';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2003/11/01 19:10:06';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="usage.php" title="Controlling Fink from the command line"><link rel="prev" href="upgrade.php" title="Upgrading Fink">';
 

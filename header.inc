@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.53 2003/10/25 13:42:46 dmalloc Exp $ */
+/* $Id: header.inc,v 1.54 2003/11/01 19:28:45 htodd Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -69,7 +69,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 //log_access($conn,$page_id,$visitor_id);
 
 
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/06 00:12:01';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2003/11/01 19:10:06';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="conf.php" title="The Fink Configuration File"><link rel="prev" href="packages.php" title="Installing Packages">';
 
