@@ -1,4 +1,26 @@
-<a name="2003-01-17 Anonymous CVS issues resolved"><span class="news_date">2003-01-17: </span><span class="news_headline">Anonymous CVS issues resolved</span></a><?php gray_line(); ?>
+<a name="2003-01-21 Gnome, libpng, and the unstable tree"><span class="news_date">2003-01-21: </span><span class="news_headline">Gnome, libpng, and the unstable tree</span></a><?php gray_line(); ?>
+	<p>
+        A problem was uncovered today concerning the versions of imlib,
+ libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
+ work addressing this problem
+</p><p>
+   Many Fink users may be using Fink's unstable tree without being
+fully aware of what this entails.  For a few months in the fall,
+enabling the unstable tree was the only was to gain access to
+ 10.2-compatible versions of Fink packages.  
+<b>That is no longer the case.</b>
+Fink users who do not wish to help the Fink team with testing should
+disable their unstable tree.  To do this, edit the file
+<tt><nobr>/sw/etc/fink.conf</nobr></tt> and remove the items
+ <tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> from the
+ <tt><nobr>Trees</nobr></tt> line.
+	</p>
+<p>The Fink team appreciates those users who are willing to stick with
+the unstable tree, even when there are problems like today's, and provide
+the team with prompt feedback.  This is a community effort and we
+appreciate your participation.
+</p>
+	<a name="2003-01-17 Anonymous CVS issues resolved"><span class="news_date">2003-01-17: </span><span class="news_headline">Anonymous CVS issues resolved</span></a><?php gray_line(); ?>
 	<p>
 	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</a> page.
 	</p>
@@ -6,15 +28,4 @@
 	<p>
 	Fink works just fine with the <a href="http://www.apple.com/macosx/x11/">public beta X11 release</a>
 	with some caveats.  Please read <a href="<?php print $root; ?>doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>
-	<a name="2003-01-07 RSS Feeds available"><span class="news_date">2003-01-07: </span><span class="news_headline">RSS Feeds available</span></a><?php gray_line(); ?>
-	<p>
-	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
-
-<a href="<?php print $root; ?>news/fink-stable.rdf">fink-stable.rdf</a> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
-</p>
-<p><a href="<?php print $root; ?>news/fink-unstable.rdf">fink-unstable.rdf</a> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
-The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
-</p>
-<p><a href="<?php print $root; ?>news/news.rdf">news.rdf</a> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
-</p>
-
+	

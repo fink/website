@@ -4,9 +4,37 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 18 Jan 2003 21:11:40 EST</lastBuildDate>
-    <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
+    <lastBuildDate>Tue, 21 Jan 2003 13:16:09 EST</lastBuildDate>
+    <rss091:language xmlns="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Gnome, libpng, and the unstable tree</title>
+    <link>http://fink.sf.net/news/#2003-01-21%20Gnome%2C%20libpng%2C%20and%20the%20unstable%20tree</link>
+    <dc:date>2003-01-21</dc:date>
+    <description>
+	
+        A problem was uncovered today concerning the versions of imlib,
+ libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
+ work addressing this problem
+
+   Many Fink users may be using Fink's unstable tree without being
+fully aware of what this entails.  For a few months in the fall,
+enabling the unstable tree was the only was to gain access to
+ 10.2-compatible versions of Fink packages.  
+That is no longer the case.
+Fink users who do not wish to help the Fink team with testing should
+disable their unstable tree.  To do this, edit the file
+/sw/etc/fink.conf and remove the items
+ unstable/main and unstable/crypto from the
+ Trees line.
+	
+The Fink team appreciates those users who are willing to stick with
+the unstable tree, even when there are problems like today's, and provide
+the team with prompt feedback.  This is a community effort and we
+appreciate your participation.
+
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Anonymous CVS issues resolved</title>
     <link>http://fink.sf.net/news/#2003-01-17%20Anonymous%20CVS%20issues%20resolved</link>
@@ -340,18 +368,6 @@ software before using Fink.
       MacOSXHints has
       posted an 
       installation guide for XFree86, Fink, Window Maker and The GIMP.
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>forked.net</title>
-    <link>http://fink.sf.net/news/#2001-10-23%20forked.net</link>
-    <dc:date>2001-10-23</dc:date>
-    <description>
-    
-      In addition to ripping off Fink packages and breaking the GPL, the ports
-      collection at forked.net
-       has just gone commercial. More details soon. 
     
   </description>
   </item>
