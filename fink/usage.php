@@ -1,7 +1,7 @@
 <?
 $title = "Usage";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/05 18:48:49 $';
+$cvs_date = '$Date: 2001/06/12 18:22:57 $';
 
 include "header.inc";
 ?>
@@ -15,7 +15,7 @@ include "header.inc";
 the fink command itself, you must set your PATH environment variable
 (and some others) accordingly. Shell scripts are provided to do this
 for you. If you use tcsh, add the following to your .cshrc:
-<pre>  source /sw/bin/init.csh</pre>
+<pre>source /sw/bin/init.csh</pre>
 Editing .cshrc will only affect new shells (i.e. new Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.</p>
@@ -38,14 +38,14 @@ version and revision when they are not specified.</p>
 configure, builds and installs the packages you name. It will also
 install required dependencies automatically, but will ask you for
 confirmation before it does so. Example:</p>
-<pre>  fink install nedit
+<pre>fink install nedit
 
-  Reading configuration...
-  Reading package info...
-  Information about 131 packages read.
-  The following additional package will be installed:
-   lesstif
-  Do you want to continue? [Y/n]</pre>
+Reading configuration...
+Reading package info...
+Information about 131 packages read.
+The following additional package will be installed:
+ lesstif
+Do you want to continue? [Y/n]</pre>
 Aliases for the install command: update, enable, activate, use. (Most
 of these for historic reasons.)</p>
 
@@ -66,7 +66,7 @@ again. If you need the disk space, you can remove the .deb from the
 <h2>update-all</h2>
 <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:
-<pre>  fink update-all</pre></p>
+<pre>fink update-all</pre></p>
 
 <h2>fetch</h2>
 <p>Downloads the named packages, but does not install it. This command

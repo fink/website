@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS Access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/19 16:21:18 $';
+$cvs_date = '$Date: 2001/06/12 18:22:57 $';
 
 include "header.inc";
 ?>
@@ -39,18 +39,18 @@ Fink tree and builds them.</p>
 (called <tt>tempdir</tt> in the example) which is empty (or at least
 doesn't contain a subdirectory named 'fink'). The procedure goes like
 this:</p>
-<pre>  cd tempdir
-  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-  cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
-  cd fink
-  ./inject.pl</pre>
+<pre>cd tempdir
+cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
+cd fink
+./inject.pl</pre>
 <p>The login command will ask for a password - just press return. You
 could delete the temporary directory after the procedure, but if you
 leave it around, updating is easier the next time. The procedure is
 then:</p>
-<pre>  cd tempdir/fink
-  cvs -z3 update -d
-  ./inject.pl</pre>
+<pre>cd tempdir/fink
+cvs -z3 update -d
+./inject.pl</pre>
 
 <h2>Updating the Package Descriptions</h2>
 
@@ -60,15 +60,15 @@ descriptions into your Fink installation. To build the new packages,
 you must use regular fink commands, like <tt>fink update-all</tt> or
 <tt>fink update <i>&lt;package&gt;</i></tt>.</p>
 <p>The first time procedure:</p>
-<pre>  cd tempdir
-  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-  cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co packages
-  cd packages
-  ./inject.pl</pre>
+<pre>cd tempdir
+cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co packages
+cd packages
+./inject.pl</pre>
 <p>After doing the above once, you can use this:</p>
-<pre>  cd tempdir/packages
-  cvs -z3 update -d
-  ./inject.pl</pre>
+<pre>cd tempdir/packages
+cvs -z3 update -d
+./inject.pl</pre>
 
 
 <p><br>more to be written...</p>

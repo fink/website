@@ -1,7 +1,7 @@
 <?
 $title = "Making Fink Packages";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/12 09:11:33 $';
+$cvs_date = '$Date: 2001/06/12 18:22:57 $';
 
 include "header.inc";
 ?>
@@ -212,8 +212,8 @@ CompileScript for details.)</td></tr>
 <td>A list of commands that are run in the compile phase. See the note
 on scripts below. This is the place to put commands that configure and
 compile the package. The default is:
-<pre>  ./configure %c
-  make</pre>
+<pre>./configure %c
+make</pre>
 This is appropriate for packages that use GNU autoconf. Before the
 commands are executed, percent expansion takes place (see previous
 section).</td></tr>
@@ -222,7 +222,7 @@ section).</td></tr>
 <td>A list of commands that are run in the install phase. See the note
 on scripts below. This is the place to put commands that copy all
 neccessary files to the stow directory for the package. The default is:
-<pre>  make install prefix=%i</pre>
+<pre>make install prefix=%i</pre>
 The default is appropriate for packages that use GNU autoconf. If the
 package supports it, it is preferably to use <tt>make install
 DESTDIR=%d</tt> instead. Before the commands are executed, percent
@@ -235,7 +235,7 @@ etc. to configure scripts and Makefiles. Currently supported variables
 are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
 MAKE, MFLAGS. The value you specify is subject to the
 percent expansion described in the last section. A common example:
-<pre>  SetCPPFLAGS: -traditional-cpp</pre>
+<pre>SetCPPFLAGS: -traditional-cpp</pre>
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <nobr>"-I%p/include"</nobr> and <nobr>"-L%p/lib"</nobr>,
 respecively. If you specify a value for one of these, it will be
@@ -286,8 +286,8 @@ line. This may be fixed one day in the future.</p>
 stow), name the patch with the full package name plus the extension
 ".patch" and put it in the same directory as the .info file. Specify
 either one of these (they are equivalent):
-<pre>  Patch: %f.patch</pre>
-<pre>  PatchScript: patch -p1 &lt;%a/%f.patch</pre>
+<pre>Patch: %f.patch</pre>
+<pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
 These two fields are not mutually-exclusive - you can use both, and
 they will both be executed. In that case the PatchScript is executed
 last.</p>

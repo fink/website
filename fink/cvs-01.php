@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/19 16:21:18 $';
+$cvs_date = '$Date: 2001/06/12 18:22:57 $';
 
 include "header.inc";
 ?>
@@ -25,25 +25,25 @@ for updating via CVS.</p>
 from CVS. Start by changing into the /sw (or equivalent)
 directory. Move the existing fink directory out of the way (but don't
 delete it yet):
-<pre>  mv fink fink-old</pre>
+<pre>mv fink fink-old</pre>
 Then, check out the current tree from CVS:
-<pre>  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-  cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink</pre>
+<pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink</pre>
 The login command will ask for a password - just press return. The
 second command creates a new fink directory containing the latest code
 and packages. Now, copy back your Fink configuration file:
-<pre>  cp fink-old/config fink</pre>
+<pre>cp fink-old/config fink</pre>
 You're now ready to use Fink again. There will be some more files in
 the fink directory, but they won't interfere with normal
 operation. You can now run commands like
-<pre>  fink update-all</pre>
+<pre>fink update-all</pre>
 to bring all packages up to the newest revision.</p>
 
 <h2>Updating</h2>
 
 <p>To update such an installation with the newest stuff, go to the
 /sw/fink directory (or equivalent) and execute
-<pre>  cvs -z3 update -d</pre>
+<pre>cvs -z3 update -d</pre>
 Then, proceed as usual (e.g. fink update-all).</p>
 
 <h2>Public Beta / Darwin 1.2 Branch</h2>
@@ -51,7 +51,7 @@ Then, proceed as usual (e.g. fink update-all).</p>
 <p>The current release no longer works on Mac OS X Public Beta and
 Darwin 1.2. The last version that worked has been tagged in CVS with
 the tag &quot;pb_compat&quot;. To retrieve it, run
-<pre>  cvs update -d -P -r pb_compat</pre>
+<pre>cvs update -d -P -r pb_compat</pre>
 Note that the tag is sticky, that is CVS will automatically use the
 tag in future cvs update runs until you run &quot;cvs update
 -A&quot;.</p>

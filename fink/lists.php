@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/25 20:10:28 $';
+$cvs_date = '$Date: 2001/06/12 18:22:57 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 <p>The project has three mailing lists, hosted by SourceForge:</p>
 <ul>
 <li><a href="http://lists.sourceforge.net/lists/listinfo/fink-announce">fink-announce</a>
-(no archive yet<!-- <a href="http://www.geocrawler.com/redir-sf.php3?list=fink-announce">Archives</a>-->)<br>
+(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-announce">Archives</a>)<br>
 This is a moderated, low-traffic list for release announcements.</li>
 <li><a href="http://lists.sourceforge.net/lists/listinfo/fink-users">fink-users</a>
 (<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-users">Archives</a>)<br>This

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/11 08:09:10 $';
+$cvs_date = '$Date: 2001/06/12 18:22:52 $';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">
 ';
@@ -24,10 +24,10 @@ compile X11 applications.</p></li>
 <li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
 static libraries. Now configure scripts are failing in the
 <tt><nobr>checking for XOpenDisplay in -lX11</nobr></tt> test. To fix this, use the
-<tt><nobr>-c</nobr></tt> option for ranlib, i.e.:
+<tt><nobr>-c</nobr></tt> option for ranlib, i.e.:</p>
 <pre>cd /usr/X11R6/lib
 sudo ranlib -c *.a</pre>
-Note that this can't happen with more recent versions of XFree86, as
+<p>Note that this can't happen with more recent versions of XFree86, as
 they compile the libraries (both static and shared) without common
 symbols.</p></li>
 </ul><p>Hopefully, this will soon be solved with proper X11 packages and
