@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 02:45:14 $';
+$cvs_date = '$Date: 2004/09/22 08:43:11 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -51,7 +51,6 @@ Fink 0.6.3 (for OS X 10.2) and 0.4.1 (for OS X 10.1) also remain available.
 </p>
 
 <h1>Ressourcen</h1>
-
 <p>
 Wie Sie Hilfe bekommen, aber auch selbst helfen können, erfahren Sie auf unserer <a
 href="help/index.php">Hilfe-Seite</a>.

@@ -6,10 +6,10 @@ Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für So
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
 <p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</link> nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="<?php print $root; ?>download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="<?php print $root; ?>download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</a> nachgeschaut werden.
 </p>
 <p>
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <link url="lists/index.php?phpLang=de">Hier</link> können Sie mehr über sie erfahren.
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="<?php print $root; ?>lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
 </p>
 <p>
 Bitte stellen Sie sicher, dass Sie den <em>passenden Installer</em> für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
