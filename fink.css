@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.15 2004/02/28 15:52:08 babayoshihiko Exp $ */
+/* $Id: fink.css,v 1.16 2004/02/28 17:26:55 fingolfin Exp $ */
 body { color:black; background-color:white;  font-family:"Trebuchet MS",sans-serif;}
 
 a:link { color:rgb(204,141,4); }
@@ -130,14 +130,24 @@ pre { color:black;  background-color:rgb(230,230,255);  padding:4px;  padding-le
 
 img { border:0; }
 
-.legalhead { font: oblique lighter 1.5em/1.3em "Times New Roman", Times, serif; }
+.legalheadBig
+{
+	font-size: 2.0em;
+	line-height: 1.0em;
+	font-weight: bold;
+}
 
-.legalheadBig {	font: oblique lighter 2.0em/1.0em "Times New Roman", Times, serif; }
+.legalhead
+{
+	font-size: 1.5em;
+	line-height: 1.3em;
+	font-weight: bold;
+}
 
-.legal { 
-	font: normal 1.0em/1.3em "Times New Roman", Times, serif;
-	text-align: justify;
+.legal
+{
 	word-spacing: 0.3em;
 	margin: 5px;
-	width: 440px;
+	font-size: 1.0em;
+	line-height: 1.3em;
 }
