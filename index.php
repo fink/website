@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/04 22:50:37 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2001/12/16 14:10:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -28,7 +28,7 @@ packages or build everything from source.
 </p>
 
 
-<p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
 <h2>News</h2>
@@ -94,7 +94,7 @@ href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">Package submis
 online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
 </ul>
 
-</td></tr></table></p>
+</td></tr></table>
 
 
 <?

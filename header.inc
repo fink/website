@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.38 2001/11/04 15:19:25 chrisp Exp $ */
+/* $Id: header.inc,v 1.39 2001/12/16 14:10:02 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -48,6 +48,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 <html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="<? print $root ?>fink.css">
 <?
 if ($metatags)

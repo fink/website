@@ -1,13 +1,13 @@
 <?
 $title = "Help";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/26 21:04:11 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2001/12/16 14:10:02 $';
 
 include "header.inc";
 ?>
 
 
-<p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
 <h1>Getting Help</h1>
@@ -154,7 +154,7 @@ priority unless it is compliant with the packaging policy.
 </p>
 
 
-</td></tr></table></p>
+</td></tr></table>
 
 
 <?
