@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-devel";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2003/01/29 08:12:40 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/04/14 12:50:42 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ The list has a strict size limit of 40K.
 </p>
 <p>
 The <a
-href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net">list
+href="http://sourceforge.net/mailarchive/forum.php?forum_id=2056">list
 archives</a> are a valuable resource for package maintainers.
 </p>
 
