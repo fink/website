@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.47 2002/11/02 13:01:12 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.48 2002/11/06 15:31:04 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -482,6 +482,16 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></answer></faqentry>
 
+<faqentry name="not-found"><question><p>I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</p></question>
+<answer>
+<p>The package sources get moved around by the upstream sites when new versions are released.</p> 
+<p>The first thing you should do is let the package maintainer (available from "<code>fink describe <em>packagename</em></code>") know that the URL is broken; not all maintainers read the mailing lists all of the time.</p>
+<p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an "old" directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
+<link
+url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</link> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, "<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>".  Then use '<code>fink install <em>packagename</em></code>' as normal.</p>
+<p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
+</p></answer></faqentry>
+
 </chapter>
 
 
@@ -538,20 +548,25 @@ installation or install libwww after you installed Fink.
 
 </chapter>
 
-<!--
+
 <chapter filename="comp-packages">
 <title>Compile Problems - Specific Packages</title>
 <shorttitle>Compiling (2)</shorttitle>
 
-<faqentry name="foo-bar"><question><p>Foo?</p></question>
+<faqentry name="libgtop"><question><p>libgtop fails to build with errors involving sed.</p></question>
 <answer>
-<p>
-Dummy
-</p>
+<p>This can happen if your login script (e.g. <code>~/.cshrc</code>) does something that writes to the terminal, e.g "<code>echo Hello</code>" or <code>xttitle</code>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p>
+<p>If you want to keep the echo, then you can do something like the following:</p>
+<codeblock>
+if ( $?prompt) then
+echo Hello
+endif
+</codeblock>
 </answer></faqentry>
 
 </chapter>
--->
+
+
 
 <chapter filename="usage-general">
 <title>Package Usage Problems - General</title>

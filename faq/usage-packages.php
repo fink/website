@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/10/20 20:23:19';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/11/02 13:01:12';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -59,19 +59,7 @@ There have also been reports of XMMS crashing or freezing on 10.1.
 We don't have an analysis or a fix yet.
 </p></div></a>
 
-<a name="gnome-terminal"><div class="question"><p><b>Q7.3: Why won't gnome-terminal
-start up?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
-working.
-The actual bug (file descriptor passing doesn't work) is masked by
-another issue (unusual stack size limit), which was left as is to
-produce an error message when gnome-terminal is started (thus
-preventing even more confusion).
-It is expected that this will be fixed in Mac OS X 10.1.
-</p></div></a>
-
-<a name="xdarwin-start"><div class="question"><p><b>Q7.4: Help! When I start
+<a name="xdarwin-start"><div class="question"><p><b>Q7.3: Help! When I start
 XDarwin, it immediately quits!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Don't Panic.
@@ -79,7 +67,7 @@ The Running X11 document now has an extensive <a href="http://fink.sourceforge.n
 section</a> for this common problem.
 </p></div></a>
 
-<a name="xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
+<a name="xfree-keymapping"><div class="question"><p><b>Q7.4: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/10/20 20:23:19';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/11/02 13:01:12';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -73,6 +73,7 @@ more!</a></li>
 work?</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.13 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
+<li><a href="usage-fink.php#not-found">3.14 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -84,15 +85,7 @@ from the head command. What's broken?</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
-<li><a href="comp-packages.php#nedit">5.1 nedit is broken.</a></li>
-<li><a href="comp-packages.php#gnome-libs-db">5.2 gnome-libs complains about
-dbopen and lots of other stuff.</a></li>
-<li><a href="comp-packages.php#libiconv">5.3 libiconv fails with errors that
-mention ANSI C++.</a></li>
-<li><a href="comp-packages.php#xaw3d">5.4 Xaw3D fails to compile with a
-two-level namespace error.</a></li>
-<li><a href="comp-packages.php#gettext">5.5 gettext compiles fine but then
-installing it fails.</a></li>
+<li><a href="comp-packages.php#libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -112,16 +105,14 @@ myself using fink-installed software?</a></li>
 black icons only. What's wrong?</a></li>
 <li><a href="usage-packages.php#xmms-quiet">7.2 I get no sound from
 XMMS</a></li>
-<li><a href="usage-packages.php#gnome-terminal">7.3 Why won't gnome-terminal
-start up?</a></li>
-<li><a href="usage-packages.php#xdarwin-start">7.4 Help! When I start
+<li><a href="usage-packages.php#xdarwin-start">7.3 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="usage-packages.php#xfree-keymapping">7.5 I just upgraded to Mac
+<li><a href="usage-packages.php#xfree-keymapping">7.4 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.46 2002/10/20 20:23:19 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.47 2002/11/02 13:01:12 fingolfin Exp $</i></p>
 
 
 <?

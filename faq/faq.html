@@ -63,6 +63,7 @@ more!</a></li>
 work?</a></li>
 <li><a href="#usage-fink.kernel-panics">3.13 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
+<li><a href="#usage-fink.not-found">3.14 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
 </ul>
 <li><a href="#comp-general"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -74,15 +75,7 @@ from the head command. What's broken?</a></li>
 </ul>
 <li><a href="#comp-packages"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
-<li><a href="#comp-packages.nedit">5.1 nedit is broken.</a></li>
-<li><a href="#comp-packages.gnome-libs-db">5.2 gnome-libs complains about
-dbopen and lots of other stuff.</a></li>
-<li><a href="#comp-packages.libiconv">5.3 libiconv fails with errors that
-mention ANSI C++.</a></li>
-<li><a href="#comp-packages.xaw3d">5.4 Xaw3D fails to compile with a
-two-level namespace error.</a></li>
-<li><a href="#comp-packages.gettext">5.5 gettext compiles fine but then
-installing it fails.</a></li>
+<li><a href="#comp-packages.libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 </ul>
 <li><a href="#usage-general"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -102,11 +95,9 @@ myself using fink-installed software?</a></li>
 black icons only. What's wrong?</a></li>
 <li><a href="#usage-packages.xmms-quiet">7.2 I get no sound from
 XMMS</a></li>
-<li><a href="#usage-packages.gnome-terminal">7.3 Why won't gnome-terminal
-start up?</a></li>
-<li><a href="#usage-packages.xdarwin-start">7.4 Help! When I start
+<li><a href="#usage-packages.xdarwin-start">7.3 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="#usage-packages.xfree-keymapping">7.5 I just upgraded to Mac
+<li><a href="#usage-packages.xfree-keymapping">7.4 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
@@ -487,6 +478,11 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></div></a>
 
+<a name="usage-fink.not-found"><div class="question"><p><b>Q3.14: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
+<div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
+</p></div></a>
+
 <a name="comp-general"><h2>4 Compile Problems - General</h2></a>
 
 
@@ -534,56 +530,12 @@ installation or install libwww after you installed Fink.
 
 
 
-<a name="comp-packages.nedit"><div class="question"><p><b>Q5.1: nedit is broken.</b></p></div>
-<div class="answer"><p><b>A:</b> If you're seeing <tt><nobr>Xm/BulletinB.h: No such file or
-directory</nobr></tt> in the error messages, that's because you have Xtools
-installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
-to include some required header files. There is no workaround yet, and
-it is unknown whether this is fixed in recent releases on Xtools.</p></div></a>
-
-<a name="comp-packages.gnome-libs-db"><div class="question"><p><b>Q5.2: gnome-libs complains about
-dbopen and lots of other stuff.</b></p></div>
-<div class="answer"><p><b>A:</b> 
-This can happen when you manually installed Berkeley DB 3 without
-backward compatibility.
-gnome-libs expects to find a DB 1.86 compatible interface.
-Remove the DB 3 installation from /usr/local or replace it with one
-that has DB 1.86 compatibility.
-</p></div></a>
-
-<a name="comp-packages.libiconv"><div class="question"><p><b>Q5.3: libiconv fails with errors that
-mention ANSI C++.</b></p></div>
-<div class="answer"><p><b>A:</b> 
-This happens when you make a symlink from <tt><nobr>gcc</nobr></tt> to
-<tt><nobr>c++</nobr></tt>.
-That causes all C code to be compiled as C++ code.
-Unfortunately, C allows some things that C++ doesn't allow, resulting
-in these errors.
-You should remove the symlink you created, or at least point it at
-<tt><nobr>cc</nobr></tt> instead.
-</p></div></a>
-
-<a name="comp-packages.xaw3d"><div class="question"><p><b>Q5.4: Xaw3D fails to compile with a
-two-level namespace error.</b></p></div>
-<div class="answer"><p><b>A:</b> 
-This can happen on Mac OS X 10.1 if you have installed XFree86
-manually (i.e. you have system-xfree86) or if you have Xtools.
-Xaw3D uses the configuration files installed by XFree86 and fails if
-those have not been patched for Mac OS X 10.1.
-xfree86-base already has those patches in Fink 0.3.0.
-system-xfree86 and system-xtools have been fixed to patch the
-configuration files on the fly if necessary.
-They are available in CVS; the binary distribution has also been
-updated with these new packages.
-</p></div></a>
-
-<a name="comp-packages.gettext"><div class="question"><p><b>Q5.5: gettext compiles fine but then
-installing it fails.</b></p></div>
-<div class="answer"><p><b>A:</b> 
-This is a known problem which hopefully should be fixed in an upcoming
-Fink release. For now the workaround  is to enter the following commands:
-</p><pre>fink rebuild gettext
-fink update gettext</pre></div></a>
+<a name="comp-packages.libgtop"><div class="question"><p><b>Q5.1: libgtop fails to build with errors involving sed.</b></p></div>
+<div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <tt><nobr>~/.cshrc</nobr></tt>) does something that writes to the terminal, e.g &quot;<tt><nobr>echo Hello</nobr></tt>&quot; or <tt><nobr>xttitle</nobr></tt>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the following:</p><pre>
+if ( $?prompt) then
+echo Hello
+endif
+</pre></div></a>
 
 <a name="usage-general"><h2>6 Package Usage Problems - General</h2></a>
 
@@ -718,19 +670,7 @@ There have also been reports of XMMS crashing or freezing on 10.1.
 We don't have an analysis or a fix yet.
 </p></div></a>
 
-<a name="usage-packages.gnome-terminal"><div class="question"><p><b>Q7.3: Why won't gnome-terminal
-start up?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
-working.
-The actual bug (file descriptor passing doesn't work) is masked by
-another issue (unusual stack size limit), which was left as is to
-produce an error message when gnome-terminal is started (thus
-preventing even more confusion).
-It is expected that this will be fixed in Mac OS X 10.1.
-</p></div></a>
-
-<a name="usage-packages.xdarwin-start"><div class="question"><p><b>Q7.4: Help! When I start
+<a name="usage-packages.xdarwin-start"><div class="question"><p><b>Q7.3: Help! When I start
 XDarwin, it immediately quits!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Don't Panic.
@@ -738,7 +678,7 @@ The Running X11 document now has an extensive <a href="http://fink.sourceforge.n
 section</a> for this common problem.
 </p></div></a>
 
-<a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
+<a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q7.4: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 
@@ -774,4 +714,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.46 2002/10/20 20:23:19 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.47 2002/11/02 13:01:12 fingolfin Exp $</i></p></body></html>
