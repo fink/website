@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:30:25';
+$cvs_date = 'Date: 2005/04/06 03:15:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -10,21 +10,16 @@ include_once "header.fr.inc";
 <h1>Paquets - 5. Référence</h1>
 
 
-
 <h2><a name="build">5.1 Construction d'un paquet</a></h2>
-
 <p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <code>/sw</code> du paquet gimp-1.2.1-1.</p>
 <p>Lors de la <b>phase de décompression</b>, le répertoire <code>/sw/src/gimp-1.2.1-1</code> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>). Les champs SourceDirectory, NoSourceDirectory et Source<b>N</b>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
 <p>Lors de la <b>phase d'application des rustines</b>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript sont exécutées dans l'ordre d'énumération de ces champs.</p>
 <p>Lors de la <b>phase de compilation</b>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations.</p>
 <p>Lors de la <b>phase d'installation</b>, le paquet est installé dans un répertoire temporaire, <code>/sw/src/root-gimp-1.2.1-1</code> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <code>/sw</code> sont installés dans <code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
-<p>(<b>À partir de fink 0.9.9.</b>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié.)</p>
+<p>(<b>À partir de fink 0.9.9.</b>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié).</p>
 <p>Lors de la <b>phase de construction</b>, un fichier binaire (.deb) est construit à partir du répertoire temporaire. On ne peut agir directement sur cette étape, néanmoins différentes informations issues de la description du paquet sont utilisées afin de générer un fichier de  <code>contrôle</code> pour dpkg.</p>
 
-
-<h2><a name="fields">5.2 Champs</a></h2>
-
-<p>Nous avons classé les champs en plusieurs catégories. Cette liste n'est pas forcément exhaustive. <code>:-)</code></p>
+<h2><a name="fields">5.2 Champs</a></h2><p>Nous avons classé les champs en plusieurs catégories. Cette liste n'est pas forcément exhaustive. <code>:-)</code></p>
 <p><b>Données initiales :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Package</td><td>
 <p>Nom du paquet. Peut contenir des minuscules, des nombres ou les caractères spéciaux suivants : '.', '+' et '-'. Pas de trait de soulignement ('_'), ni de majuscules. Champ obligatoire.</p>
@@ -34,19 +29,19 @@ include_once "header.fr.inc";
 <p>Le numéro de version en amont. Même limitations que pour le champ Package. Champ obligatoire.</p>
 <p>Notez que certains programmes utilisent une numérotation de version non standard qui peut provoquer des problèmes de tri, ou bien utilisent des caractères non autorisés dans ce champ. Dans ce cas, vous devez convertir la valeur de la version originale en une valeur acceptable qui permette de trier les versions correctement. Si vous ne savez pas comment les versions seront triées, utilisez la commande <code>dpkg</code> à l'invite d'un shell. Par exemple :</p>
 <pre>
-  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
+dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 </pre>
 <p>imprimera "vrai" car le numéro de version "1.2.1" est inférieur au numéro de version "1.3". Voir la page de manuel <code>dpkg</code> pour de plus amples informations.</p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>Le numéro de révision du paquet. Incrémentez ce numéro quand vous faites une nouvelle description pour la même version en amont. Les numéros de révision commencent à 1. Champ obligatoire.</p>
-<p> Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le  fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.</p></td></tr><tr valign="top"><td>Epoch</td><td>
+<p> Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le  fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.</p>
+</td></tr><tr valign="top"><td>Epoch</td><td>
 <p><b>Introduit à partir de fink 0.12.0.</b> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>.</p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>Courte description du paquet (répond à la question qu'est-ce c'est ?). C'est une description d'une ligne qui est affichée sous forme de liste, elle doit donc être courte et bien ciblée. Elle peut avoir moins de 45 caractères, mais ne peut dépasser 60 caractères. Il n'est pas nécessaire d'indiquer le nom du paquet, il sera affiché de toute façon. Champ obligatoire.</p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>Peut être <code>bundle</code>. Les paquets lots sont utilisés pour regrouper plusieurs paquets. Ils n'ont que des dépendances, mais ni code ni fichiers installés. Les champs Source, PatchScript, CompileScript, InstallScript et ceux qui leur sont liés sont ignorés pour ce type de paquets.</p>
-<p><code>nosource</code> est un type très voisin.
-Il sert à indiquer qu'il n'y a pas d'archive tar source. Rien n'est téléchargé et la phase de décompression crée simplement un répertoire vide. Néanmoins, les phases d'application de rustine, de compilation et d'installation sont exécutées normalement. De cette façon, on peut incorporer tout le code avec une rustine, ou créer quelques répertoires avec InstallScript. À partir de la version 0.18.0 de fink, on peut utiliser <code>Source: none</code> pour obtenir le même résultat. Ceci permet d'utiliser "Type" pour d'autres usages (<code>Type: perl</code>, etc...).</p>
+<p><code>nosource</code> est un type très voisin. Il sert à indiquer qu'il n'y a pas d'archive tar source. Rien n'est téléchargé et la phase de décompression crée simplement un répertoire vide. Néanmoins, les phases d'application de rustine, de compilation et d'installation sont exécutées normalement. De cette façon, on peut incorporer tout le code avec une rustine, ou créer quelques répertoires avec InstallScript. À partir de la version 0.18.0 de fink, on peut utiliser <code>Source: none</code> pour obtenir le même résultat. Ceci permet d'utiliser "Type" pour d'autres usages (<code>Type: perl</code>, etc...).</p>
 <p>À partir de fink 0.9.5, il existe un type  <code>perl</code>, qui permet d'offrir un choix de valeurs par défaut pour les scripts de compilation et d'installation. À partir de  fink 0.13.0, il existe une nouvelle variante de ce type, <code>perl $version</code>, où $version est une version spécifique de perl, constituée de trois chiffres séparés par un point, par exemple : <code>perl 5.6.0</code>.</p>
 <p>Dans une version CVS postérieure à fink-0.19.2, l'utilisation de langage/langage-version a été généralisée pour permettre à tout mainteneur de définir des types et sous-types associés et ainsi d'utiliser plus d'un type par paquet. Les types et sous-types sont des chaînes de caractères arbitraires ; toutefois, les blancs sont interdits et les parenthèses, virgules, crochets et signe pourcentage ne doivent pas être utilisés. Les raccourcis ne sont pas interprétés et le type (mais non le sous-type) est converti en minuscules. Les valeurs du type sont définies dans une liste , chaque valeur étant séparée de la suivante par des virgules ; chaque valeur peut elle-même avoir une liste de sous-types associés séparés par des blancs.</p>
 <p>De plus, il existe un concept de "variantes", qui permet de décrire dans un fichier .info unique une famille de paquets étroitement liés, ayant chacun des options différentes activées. La clé de ce processus est l'utilisation d'une liste de sous-types. Au lieu d'une simple chaîne de caractères, on utilise une liste de chaînes de caractères séparés par des blancs et mise entre parenthèses. Fink clone le fichier de description du paquet pour chaque sous-type de la liste et remplace cette liste par un unique sous-type dans le clone. Par exemple :</p>
@@ -95,7 +90,7 @@ CompileScript:  &lt;&lt;
 <p>Liste de paquets à installer pour que le paquet puisse compiler. L'interprétation des raccourcis a lieu dans ce champ (tout comme dans les autres champs de cette catégorie : BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests et Enhances). C'est, en général, une liste de noms de paquets séparés par des virgules, mais Fink gère maintenant les clauses de choix et de version avec la même syntaxe que dpkg. En voici un exemple :</p>
 <pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 <p>Notez qu'on ne peut indiquer de réelles options de dépendances. Si un paquet fonctionne avec ou sans un autre paquet, vous devez soit vous assurer que l'autre paquet n'est pas utilisé, même s'il est présent, soit l'ajouter à la liste des dépendances. Si vous voulez donner à l'utilisateur le choix entre les deux options, faîtes deux paquets distincts, par exemple : wget et wget-ssl.</p>
-<p>Ordre des opérations: le "OU" logique (liste de choix exclusifs) a priorité sur le "ET" logique entre chaque paquet (ou jeu de choix) dans la liste séparée par des virgules. À moins de mettre des parenthèses comme celles utilisées en arithmétique, il n'y a aucun moyen de spécifier des groupes de choix ou de changer l'ordre des opérations dans le champ <code>Depends</code> et les champs similaires.</p>
+<p>Ordre des opérations : le "OU" logique (liste de choix exclusifs) a priorité sur le "ET" logique entre chaque paquet (ou jeu de choix) dans la liste séparée par des virgules. À moins de mettre des parenthèses comme celles utilisées en arithmétique, il n'y a aucun moyen de spécifier des groupes de choix ou de changer l'ordre des opérations dans le champ <code>Depends</code> et les champs similaires.</p>
 <p>À partir d'une version CVS postérieure à la version 0.18.2 de fink, on peut utiliser des dépendances conditionnelles. Celles-ci sont indiquées en plaçant <code>(chaîne1 opérateur chaîne2)</code> avant le nom du paquet. L'interprétation des raccourcis se fait normalement, puis les deux chaînes sont comparées en fonction de l'<code>opérateur</code> utilisé, qui peut être : &lt;&lt;, &lt;=, =, !=, &gt;&gt;, &gt;=. Le paquet qui suit n'est considéré comme une dépendance que si la comparaison est vraie.</p>
 <p>Vous pouvez utiliser ce format pour simplifier la maintenance de paquets similaires. Par exemple, elinks et elinks-ssl peuvent avoir :</p>
 <pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
@@ -112,14 +107,14 @@ Depends: (%type_pkg[-x11]) x11
 <p>indiquera une dépendance du paquet x11 pour la variante nethack-x11, mais pas pour la variante nethack.</p>
 <p>Notez que quand on utilise les champs Depends/BuildDepends pour les paquets de librairies partagées, alors qu'il existe plus d'une version majeure disponible, il <b>ne faut pas</b> utiliser la syntaxe suivante :</p>
 <pre>
-  Package: foo
-  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
-  BuildDepends: id3lib3.7-dev | id3lib4-dev
+Package: foo
+Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+BuildDepends: id3lib3.7-dev | id3lib4-dev
 </pre>
 <p>même si le paquet peut fonctionner avec l'une ou l'autre librairie. Il faut en choisir une (de préférence, la version la plus élevée possible) et s'y tenir dans l'ensemble du paquet.</p>
-<p>Comme cela a été expliqué dans la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a>, un seul des paquets -dev peut être installé à un instant donné, et chacun possède des liens de même nom qui peuvent se référer à des noms de fichiers différents dans le paquet associé -shlibs. Lors de la compilation du paquet foo, le nom réél du fichier (dans le paquet -shlibs) est codé en dur dans le binaire foo. Cela signifie que le paquet résultant nécessite le paquet -shlibs associé au -dev qui était installé au moment de la compilation. En conséquence, on ne peut indiquer dans le champ <code>Depends</code> que l'un quelconque des paquets est requis.</p></td></tr><tr valign="top"><td>BuildDepends</td><td>
-<p><b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation.
-Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends.</p>
+<p>Comme cela a été expliqué dans la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a>, un seul des paquets -dev peut être installé à un instant donné, et chacun possède des liens de même nom qui peuvent se référer à des noms de fichiers différents dans le paquet associé -shlibs. Lors de la compilation du paquet foo, le nom réél du fichier (dans le paquet -shlibs) est codé en dur dans le binaire foo. Cela signifie que le paquet résultant nécessite le paquet -shlibs associé au -dev qui était installé au moment de la compilation. En conséquence, on ne peut indiquer dans le champ <code>Depends</code> que l'un quelconque des paquets est requis.</p>
+</td></tr><tr valign="top"><td>BuildDepends</td><td>
+<p><b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends.</p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>Liste de noms de paquets séparés par des virgules que ce paquet est censé "fournir". Si un paquet nommé "pine" indique <code>Provides: mailer</code>, alors toute dépendance à "mailer" est considérée comme satisfaite si "pine" est installé. En général, on énumère aussi ces paquets dans les champs "Conflicts" et "Replaces".</p>
 <p>Notez qu'aucun numéro de version n'est associé aux éléments Provides. Ils n'héritent pas du paquet parent qui contient la liste Provides, et il n'existe aucune syntaxe permettant d'indiquer un numéro de version dans le champ Provides lui-même. En outre, une dépendance contenant un numéro de version n'est pas satisfaite par un paquet qui a un champ Provides contenant le paquet dépendant. En conséquence, le fait d'avoir plusieurs variantes avec un champ Provides qui inclut un même paquet peut être dangereux, car cela revient à interdire l'utilisation des numéros de versions dans les dépendances. Par exemple, si foo-gnome et foo-nognome ont tous les deux un champ "Provides: foo", tout autre paquet contenant un champ "Depends: foo (&gt; 1.1)" ne fonctionnera pas correctement.</p>
@@ -136,10 +131,9 @@ Il sert à spécifier des outils (par exemple flex) qui doivent être présents 
 </td></tr><tr valign="top"><td>Essential</td><td>
 <p>Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lors du processus de bootstrap. Tous les paquets non essentiels dépendent implicitement des paquets essentiels. dpkg refusera de supprimer les paquets essentiels du système, à moins d'utiliser des options spéciales, qui permettent de lever cette interdiction.</p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
-<p><b>Introduit dans fink 0.9.9.</b> Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé. Contrairement aux autres champs booléens, <code>BuildDependsOnly</code> a trois valeurs: undéfini (non spécifié) n'a pas le même sens que faux. Voir la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a> pour de plus amples informations.</p>
+<p><b>Introduit dans fink 0.9.9.</b> Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé. Contrairement aux autres champs booléens, <code>BuildDependsOnly</code> a trois valeurs : undéfini (non spécifié) n'a pas le même sens que faux. Voir la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a> pour de plus amples informations.</p>
 <p>À partir de la version 0.20.5 de fink, la présence ou l'absence de ce champ, et sa valeur s'il est présent, sont sauvegardées dans le fichier .deb à la construction du paquet. Par conséquent, <b>si vous changez la valeur de BuildDependsOnly, ou si vous l'ajoutez ou le supprimez, vous devez incrémenter le numéro de révision</b> du paquet.</p>
 </td></tr></table>
-
 <p><b>Phase de décompression :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>CustomMirror</td><td>
 <p>Liste de sites miroirs. Chaque ligne correspond à un site miroir, sous le format suivant : <code>&lt;emplacement&gt;: &lt;url&gt;</code>. L'<b>emplacement</b> peut être un code continent (par exemple : <code>nam</code> - Amérique du Nord), un code pays (par exemple : <code>nam-us</code> - Amérique du Nord-États-Unis), ou bien autre chose ; les archives sont recherchées sur les miroirs dans l'ordre d'énumération de ces derniers. Exemple :</p>
@@ -186,8 +180,6 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ est similaire au champ <code>TarFilesRename</code>, mais il est utilisé pour renommer l'archive tar correspondant au champ <code>Source<b>N</b></code>.</p>
 </td></tr></table>
-
-
 <p><b>Phase d'application des rustines :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>Valeur booléenne. Si elle est vraie ("true"), les fichiers config.guess et config.sub présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité, c'est-à-dire lorsque le script configure se termine inopinément par un message "unknown host" (système inconnu).</p>
@@ -208,17 +200,18 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr></table>
 <p><b>Phase de compilation :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
-<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant : </p>
+<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>Les variables CPPFLAGS et LDFLAGS sont spéciales. Elles ont pour valeur par défaut respective : <code>-I%p/include</code> et <code>-L%p/lib</code>. Si vous spécifiez une valeur pour l'une de ces deux variables, elle sera ajoutée avant la valeur par défaut.</p>
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>Quand la valeur de ce champ est true (vraie), les valeurs par défaut de CPPFLAGS et LDFLAGS mentionnées ci-dessus sont désactivées. Autrement dit, si vous ne voulez pas que LDFLAGS ait une valeur par défaut, utilisez <code>NoSetLDFLAGS: true</code>.</p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>Paramètres supplémentaires à passer au script configure. (Voir CompileScript pour de plus amples informations). À partir des versions de fink &gt; 0.13.7, ce champ fonctionne aussi avec les modules perl <code>Type: Perl</code> ; il ajoute les paramètres à la chaîne perl par défaut Makefile.PL.</p>
-<p>À partir de la version 0.22.0 de fink, ce champ gère les expressions conditionnelles. La syntaxe est la même que celle utilisée dans le champ <code>Depends</code> et les autres champs basés sur des listes de paquets. L'expression conditionnelle s'applique au "mot" délimité par des espaces suivant immédiatement l'expression. Par exemple : </p>
+<p>À partir de la version 0.22.0 de fink, ce champ gère les expressions conditionnelles. La syntaxe est la même que celle utilisée dans le champ <code>Depends</code> et les autres champs basés sur des listes de paquets. L'expression conditionnelle s'applique au "mot" délimité par des espaces suivant immédiatement l'expression. Par exemple :</p>
 <pre>
 Type: -x11 (boolean)
-ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) \
+ --with-x11 --disable-shared
 </pre>
 <p>passera les drapeaux <code>--mandir</code> et <code>--disable-shared</code>  dans tous les cas de figure, mais ne passera le drapeau <code>--with-x11</code> quà la seule variante -x11.</p>
 </td></tr><tr valign="top"><td>GCC</td><td>
@@ -269,7 +262,7 @@ make test</pre>
 </td></tr></table>
 <p><b>Phase d'installation :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>UpdatePOD</td><td>
-<p><b>Introduit dans la version 0.9.5 de fink.</b> Valeur booléenne réservée aux paquets de module perl. Si sa valeur est true (vraie), du code est ajouté aux scripts install, postrm et postinst, qui gèrent les fichiers .pod fournis par les paquets perl. En particulier, la date .pod est ajoutée et ôtée du fichier central <code>/sw/lib/perl5/darwin/perllocal.pod</code>. (Si le type est du style <code>perl $version</code>, où $version est, par exemple, 5.6.0, les scripts sont adaptés pour gérer le fichier central .pod <code>/sw/lib/perl5/$version/perllocal.pod</code>.)</p>
+<p><b>Introduit dans la version 0.9.5 de fink.</b> Valeur booléenne réservée aux paquets de module perl. Si sa valeur est true (vraie), du code est ajouté aux scripts install, postrm et postinst, qui gèrent les fichiers .pod fournis par les paquets perl. En particulier, la date .pod est ajoutée et ôtée du fichier central <code>/sw/lib/perl5/darwin/perllocal.pod</code>. (Si le type est du style <code>perl $version</code>, où $version est, par exemple, 5.6.0, les scripts sont adaptés pour gérer le fichier central .pod <code>/sw/lib/perl5/$version/perllocal.pod</code>).</p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>Liste de commandes à exécuter durant la phase d'installation. Voir plus bas la note au sujet des scripts. C'est là où il faut mettre les commandes qui copient tous les fichiers requis dans le répertoire de construction du paquet. Normalement, on utilise :</p>
 <pre>make install prefix=%i</pre>
@@ -300,7 +293,7 @@ make test</pre>
 <p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, et "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
 <p>Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .</p>
 </td></tr><tr valign="top"><td>AppBundles</td><td>
-<p><b>Introduit dans une version postérieure à la version 0.23.1.</b> Ce champ installe le(s) lot(s) dans le répertoire <code>%p/Applications</code>. Il crée également un lien symbolique vers le répertoire <code>/Applications/Fink</code>. Exemple:</p>
+<p><b>Introduit dans une version postérieure à la version 0.23.1.</b> Ce champ installe le(s) lot(s) dans le répertoire <code>%p/Applications</code>. Il crée également un lien symbolique vers le répertoire <code>/Applications/Fink</code>. Exemple :</p>
 <pre>AppBundles: build/*.app Foo.app</pre>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p><b>Introduit dans la version 0.10.0 de fink.</b> Champ similaire au champ DocFiles. Il installe les fichiers jar spécifiés dans <code>%p/share/java/%n</code>. Exemple :</p>
@@ -310,7 +303,8 @@ make test</pre>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>Ce champ fournit un moyen simple d'installer les fichiers README et COPYING dans le répertoire doc du paquet, soit <code>%p/share/doc/%n</code>. Sa valeur consiste en une liste de fichiers séparés par des espaces. Vous pouvez copier les fichiers à partir de sous-répertoires du répertoire de compilation, ils seront placés dans le répertoire lui-même et non pas dans un sous-répertoire. Les caractères joker reconnus par le shell sont autorisés. On peut aussi renommer des fichiers à la volée en faisant suivre le nom du fichier de deux-points (:), puis du nouveau nom. Exemple :<code>libgimp/COPYING:COPYING.libgimp</code>. Ce champ ajoute les commandes <code>install</code> appropriées au script InstallScript.</p>
 </td></tr><tr valign="top"><td>Shlibs</td><td>
-<p><b>Introduit dans la version 0.11.0 de fink.</b> Ce champ déclare les librairies partagées installées dans le paquet. Il y a une ligne par librairie partagée, cette ligne est constituée de trois éléments séparés par des blancs : le nom d'installation de la librairie <code>-install_name</code>, le numéro de version de compatibilité de la librairie <code>-compatibility_version</code> et des informations de dépendance de version qui indiquent quel paquet de Fink fournit la librairie à cette version de compatibilité. Les informations de dépendance doivent être spécifiées sous la forme <code> foo (&gt;= version-revision)</code>, où  <code>version-revision</code> représente la <b>première</b> version d'un paquet Fink qui rend disponible cette librairie (avec cette version de compatibilité). La déclaration Shlibs revient à dire que le mainteneur du paquet garantit qu'une librairie portant ce nom et ayant une version de compatibilité au moins égale à <code>-compatibility_version</code> sera présente dans toutes les versions postérieures de ce paquet Fink.</p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
+<p><b>Introduit dans la version 0.11.0 de fink.</b> Ce champ déclare les librairies partagées installées dans le paquet. Il y a une ligne par librairie partagée, cette ligne est constituée de trois éléments séparés par des blancs : le nom d'installation de la librairie <code>-install_name</code>, le numéro de version de compatibilité de la librairie <code>-compatibility_version</code> et des informations de dépendance de version qui indiquent quel paquet de Fink fournit la librairie à cette version de compatibilité. Les informations de dépendance doivent être spécifiées sous la forme <code> foo (&gt;= version-revision)</code>, où  <code>version-revision</code> représente la <b>première</b> version d'un paquet Fink qui rend disponible cette librairie (avec cette version de compatibilité). La déclaration Shlibs revient à dire que le mainteneur du paquet garantit qu'une librairie portant ce nom et ayant une version de compatibilité au moins égale à <code>-compatibility_version</code> sera présente dans toutes les versions postérieures de ce paquet Fink.</p>
+</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ fournit un moyen pratique de donner une valeur statique à des variables d'environnement pendant l'exécution (si vous voulez avoir plus de latitude dans ce domaine, voir la <a href="#profile.d">section scripts profile.d</a>). À partir du moment où le paquet est installé, ces variables sont définies par les scripts <code>/sw/bin/init.[c]sh</code>.</p>
 <p>La valeur de la variable peut contenir des espaces (seuls les espaces de fin de chaîne sont supprimés) ; l'interprétation des raccourcis a eu lieu sur ce champ. Exemple :</p>
 <pre>RuntimeVars: &lt;&lt;
@@ -359,8 +353,6 @@ make test</pre>
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>Notes spécifiques au portage du paquet sur Darwin. Les éléments du type : "config.guess and libtool scripts are updated, -no-cpp-precomp is necessary" sont placés dans ce champ. Lignes multiples autorisées.</p>
 </td></tr></table>
-
-
 <h2><a name="splitoffs">5.3 Paquets multiples</a></h2>
 <p>À partir de la version 0.9.9 de fink, on peut utiliser un seul fichier .info pour construire plusieurs paquets. La phase d'installation commence, comme pour tout autre type de paquet, par l'exécution des scripts <code>InstallScript</code> et <code>DocFiles</code>. Si un champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> est présent, il y a création d'un répertoire d'installation supplémentaire. À l'intérieur des champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>, le nouveau répertoire d'installation est désigné par %i, tandis que le répertoire d'installation du paquet parent est désigné par %I.</p>
 <p>Chaque champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> doit contenir un certain nombre de champs qui lui sont propres. En fait, cela ressemble à une description de paquet ordinaire, mais certains champs sont omis. Voici les champs qui peuvent y figurer (classés par catégorie) :</p>
@@ -387,16 +379,12 @@ SplitOff2: &lt;&lt;
 <p>Lors de la phase de construction du paquet, les scripts pre/post install/remove de chacun des paquets sont construits à partir des commandes spécifiques de la phase de construction desdits paquets.</p>
 <p>Chaque paquet à construire doit placer les fichiers de licence dans %i/share/doc/%n (avec %n ayant une valeur différente pour chaque paquet). Notez que <code>DocFiles</code> copie les fichiers au lieu de les déplacer ; il est donc possible d'installer une même copie de la documentation dans chacun des paquets en utilisant <code>DocFiles</code> plusieurs fois.</p>
 
-
 <h2><a name="scripts">5.4 Scripts</a></h2>
-
 <p>Les champs PatchScript, CompileScript et InstallScript vous permettent d'indiquer des commandes shell à exécuter. Le répertoire de construction (<code>%b</code>) est le répertoire en cours lors de l'exécution des scripts. Vous devez toujours utiliser des chemins relatifs ou des raccourcis pour les fichiers et répertoires de l'arborescence fink, et jamais des chemins absolus. Deux formats différents sont possibles pour ces champs.</p>
 <p>Le champ peut être constitué d'une simple liste de commandes, un peu comme un script shell. Néanmoins, les commandes sont exécutées ligne après ligne via system(). Il en résulte que l'assignation de variables ou les changements de répertoire n'ont d'effet que pour les commandes résidant sur une même ligne. À partir d'une version CVS de fink postérieure à 0.18.2, vous pouvez ajuster la longueur des lignes de la même manière que dans les scripts shell : une barre oblique inversée (<code>\</code>) à la fin de la ligne indique que la ligne suivante est la suite de la ligne précédente.</p>
 <p>Vous pouvez aussi insérer un script complet, en utilisant l'interpréteur que vous voulez. Comme avec tout autre script Unix, la première ligne doit commencer par <code>#!</code> suivi du chemin complet de l'interpréteur et des options désirées (exemple : <code>#!/bin/csh</code>, <code>#!/bin/bash -ev</code>, etc...). Dans ce cas, la totalité du champ *Script est déversé dans un fichier temporaire, qui est alors exécuté.</p>
 
-
 <h2><a name="patches">5.5 Rustines</a></h2>
-
 <p>Si votre paquet nécessite une rustine pour compiler sous Darwin (ou pour fonctionner avec fink), donnez à la rustine le même nom que celui indiqué dans la description du paquet, en utilisant l'extension ".patch" au lieu de ".info", et placez-la dans le même répertoire que le fichier .info. Si vous utilisez le nom complet du paquet dans le nom du fichier, indiquez-le dans le champ d'une des façons suivantes (elles sont équivalentes) :</p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
@@ -408,9 +396,7 @@ SplitOff2: &lt;&lt;
 <p>Si vous utilisez emacs pour modifier les fichiers, vous devez ajouter <code>-x'*~'</code> à la commande diff ci-dessus, pour exclure les fichiers de sauvegarde générés automatiquement.</p>
 <p>Il faut aussi noter que les très grosses rustines ne doivent pas être mises dans cvs. Elles doivent être placées sur un serveur web/ftp et référencées en utilisant le champ <code>SourceN:</code>. Si vous n'avez pas de site web, les administrateurs du projet fink peuvent mettre le fichier à disposition à partir du site web de fink. Si votre rustine fait plus de 30Kb, vous devez la traiter comme un téléchargement distinct.</p>
 
-
 <h2><a name="profile.d">5.6 Scripts profile.d</a></h2>
-
 <p>Si votre paquet nécessite une initialisation à l'exécution (par exemple, pour définir des variables d'environnement), vous pouvez utiliser des scripts profile.d. Ces scripts sont sourcés par les scripts <code>/sw/bin/init.[c]sh</code>. Normalement, tout utilisateur de fink charge ces scripts dans ses fichiers de démarrage de shell (<code>.cshrc</code> et équivalents). Votre paquet doit fournir deux variantes de scripts : l'une pour les shells compatibles avec sh (sh, zsh, bash, ksh, ...), l'autre pour les shells compatibles avec csh (csh, tcsh). Elles doivent être installées sous la forme <code>/sw/etc/profile.d/%n.[c]sh</code> (où %n représente le nom du paquet). Il faut aussi positionner leurs bits de lecture et d'exécution (c'est-à-dire les installer avec -m 755), autrement elles ne seront pas chargées correctement.</p>
 <p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
 

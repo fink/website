@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:30:25';
+$cvs_date = 'Date: 2005/04/06 03:15:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
@@ -11,17 +11,13 @@ include_once "header.fr.inc";
 
 
 
-
 <p>Les règles d'organisation des fichiers suivantes font partie intégrante des règles de construction des paquets de Fink.</p>
-
 
 <h2><a name="fhs">4.1 Hiérarchie standard des fichiers</a></h2>
 <p>Fink suit l'esprit de <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</a> - Norme de hiérarchie du système de fichiers, ou FHS en raccourci. Il ne peut qu'en suivre l'esprit car FHS a été conçu pour les vendeurs de systèmes qui ont le contrôle des arborescences <code>/</code> et <code>/usr</code>. Fink n'est qu'une distribution supplémentaire qui ne contrôle que son répertoire (ou préfixe) d'installation. Les exemples ci-dessous utilisent le préfixe par défaut, soit <code>/sw</code>.</p>
 
-
 <h2><a name="dirs">4.2 Répertoires</a></h2>
 <p>Les fichiers doivent être placés dans les sous-répertoires suivant de l'arborescence :</p>
-
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Répertoire</th><th align="left">Utilisation</th></tr><tr valign="top"><td><code>/sw/bin</code></td><td>
 <p>Ce répertoire est dédié aux exécutables généraux. Il n'existe pas de sous-répertoire.</p>
 </td></tr><tr valign="top"><td><code>/sw/sbin</code></td><td>
@@ -49,10 +45,8 @@ include_once "header.fr.inc";
 <p>Ce répertoire sert à stocker et compiler le code source. Un paquet ne doit rien installer dans ce répertoire.</p>
 </td></tr></table>
 
-
 <h2><a name="avoid">4.3 À éviter</a></h2>
 <p>Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans <code>/sw</code>. En particulier, les répertoires suivant ne doivent pas être utilisés : <code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>, <code>/sw/libexec</code> et <code>/sw/lib/locale</code>.</p>
-
 
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=fr">5. Référence</a></p>
