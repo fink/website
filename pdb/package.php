@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/01 14:17:08 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/03/31 17:49:15 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -45,7 +45,22 @@ if (!$rs) {
 
   it_item("Description:", $row[desclong]);
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
-  it_item("Maintainer:", $row[maintainer] ? $row[maintainer] : "unknown");
+
+  // Get the maintainer field, and try to parse out the email address
+  if ($row[maintainer]) {
+    $maintainer = $row[maintainer];
+	preg_match("/^(.+?)\s*<(\S+)>/", $maintainer, $matches);
+    $maintainer = $matches[1];
+    $email = $matches[2];
+  } else {
+    $maintainer = "unknown";
+  }
+  // If there was an email specified, make the maintainer field a mailto: link
+  if ($email) {
+    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
+  } else {
+    it_item("Maintainer:", $maintainer);
+  }
   if ($row[homepage]) {
     it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
   }
