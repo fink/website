@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.8 2004/02/28 17:05:56 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.9 2004/03/12 13:44:49 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
@@ -273,7 +273,7 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
 Panther XCode tools) をインストールする必要があります。
 Mac OS X 10.2 の December 2002 developer tools 用 XCode ベータ・アップデータをインストールした場合、この警告が出ます。もし 10.2 であれば、コマンド:</p>
 <codeblock>gcc --version</codeblock>
-<p>...で現在のバージョンがわかります。
+<p>で現在のバージョンがわかります。
 2003年10月24日時点で build 1493 かそれ以上が必要です。</p>
 <p>10.2 ユーザーは、 August 2003 Updater を <link url="http://developer.apple.com/">Apple Developer Connection</link> からダウンロードできます (無料登録が必要)。</p>
 <p>10.3 ユーザーは、 Panther 互換のディベロッパーツール (Xcode など) にアップグレードする必要があります。
@@ -448,11 +448,11 @@ root 権限で <filename>/etc/sudoers</filename> を開き、次の行を追加�
 <answer>
 <p>init.csh と init.sh は通常のコマンドのように実行するものではありません。
 これらのファイルは環境変数の PATH や MANPATH を設定するものです。
-これをシェルがずっと保持するには、 <code>source</code> コマンドを使い:</p>
+これをシェルに保持させるには、csh/tcsh では <code>source</code> コマンド、bash/zsh では <code>.</code> コマンドを使い:</p>
 <p> csh/tcsh の場合:</p>
 <codeblock>source /sw/bin/init.csh</codeblock>
 <p> bash の場合:</p>
-<codeblock>source /sw/bin/init.sh</codeblock>
+<codeblock>. /sw/bin/init.sh</codeblock>
 <p>と入力します。</p>
 </answer>
 </faqentry>
