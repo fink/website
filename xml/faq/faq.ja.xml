@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.11 2004/03/24 22:14:30 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.12 2004/03/27 00:34:25 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1176,6 +1176,22 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 <link url="http://connect.apple.com">Apple</link> から、適切な <filename>Java Developer Tools</filename> パッケージをダウンロードする必要があります。
 この問題の場合は、 <filename>Java 1.4.2 Developer Tools</filename> です。
 </p>
+</answer>
+</faqentry>
+<faqentry name="dpkg-split">
+<question>
+    <p>
+    何をインストールしようとしても、
+     <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>
+     というエラーが出ます。
+     どうしたらいいですか?
+    </p>
+</question>
+<answer>
+    <p>
+    通常、環境変数を正しく設定することで直ります。
+    参照: <xref chapter="usage-fink" section="fink-not-found">この FAQ 項目</xref>
+    </p>
 </answer>
 </faqentry>
 </chapter>
