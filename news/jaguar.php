@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 00:23:15 $';
+$cvs_date = '$Date: 2002/09/09 00:31:53 $';
 
 include "header.inc";
 ?>
@@ -31,6 +31,7 @@ Here are the steps to follow for an upgrade.
 Even if you have been using Fink's binary distribution, you will need to
 install the Developer Tools, because the 10.2 Fink packages are not yet
 available in binary form.
+<br>
 <li> <b>Step 2: Obtain the files for the Fink upgrade.</b>
 To do this, create a directory <b>finkcvs</b> in a location of your
 choice.  Now issue the commands
@@ -44,6 +45,7 @@ choice.  Now issue the commands
 a password: no password is needed.)
 All subsequent commands will assume that you are in the <b>finkcvs/fink</b>
 directory.
+<br>
 <li><b>Step 3: Verify the integrity of your Fink installation, and update
 any external software which is related to Fink.</b>  If you have installed
 XFree86 using the distribution from the XonX project, you need to get
@@ -58,8 +60,16 @@ be damaged.  To help diagnose this, run the command
 from within the finkcvs/fink directory.  You will get a report of any
 missing files from your Fink installation.  In some cases these files
 are harmless, but in case of doubt about the package foo, you should
-either say <b>fink reinstall foo</b/> or <b>fink remove foo</b>.
+either issue the command
+<pre>
+  fink reinstall foo
+</pre>
+or the command
+<pre>
+  fink remove foo
+</pre>
 You can run dpkg-checkall.sh multiple times if needed.
+<br>
 <li><b>Step 4: Edit your fink.conf file.</b>
 You will find this file at /sw/etc/fink.conf (or another location if you
 installed Fink in a non-standard place).  You may need to change to file
@@ -72,21 +82,32 @@ Even if you have not used the unstable Trees in the past, at the present
 time virtually all of the 10.2 Fink packages are still being tested in
 the unstable tree and have not yet been moved to the stable tree, so
 this step is highly recommended.
+<br>
 <li><b>Step 5: Run the update script.</b>
 From within the finkcvs/fink directory, issue the command
 <pre>
-sudo ./update-fink.sh
+  sudo ./update-fink.sh
 </pre>
 You will need an internet connection, and a bit of patience, as the update
 takes a while to complete.
+<br>
 <li><b>Step 6: Update your XFree86 packages.</b>
-This is done with the command <b>fink update xfree86-base xfree86-rootless</b>.
+This is done with the command 
+<pre>
+  fink update xfree86-base xfree86-rootless
+</pre>
 If you are not running XFree86, or if you installed it externally from the
 XonX project, you may skip this step.
-<li><b>Step 7: Update your othe fink packages.</b>
-The easy way to do this is with the command <b>fink update-all</b>, but
+<br>
+<li><b>Step 7: Update your other fink packages.</b>
+The easy way to do this is with the command 
+<pre>
+  fink update-all
+</pre>
+but
 if you prefer to customize things you may issue individual <b>fink update</b>
 commands.
+<br>
 <li> Finally, when all of this has been completed, you may remove the
 finkcvs directory and its contents if you wish.
 </ul>
