@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 2001/06/18 13:51:51 chrisp Exp $
+# $Id: Makefile,v 1.3 2001/07/08 12:30:44 chrisp Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -6,6 +6,7 @@ basedir = ..
 
 SOURCE = usage.xml
 TARGET = usage.php
+DESTDIR = fink
 
 include $(basedir)/Makefile.common
 
