@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/11/29 04:41:55';
+$cvs_date = 'Date: 2004/12/02 16:41:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -142,12 +142,12 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code>, <code>wchar.h</code>, or <code>crt1.o</code>. Where do I find them?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> These headers, and many others, are provided by the DevSDK package of
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code>, <code>wchar.h</code>, or <code>crt1.o</code>, or that my "C compiler cannot create executables".</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
         system. If not, then run the Dev Tools Installer again, and install
-        the DevSDK package using a Custom Install.</p></div>
+        the DevSDK package using a Custom Install.</p><p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
     </a>
     <a name="multiple-dependencies">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: I can't update, because Fink is "unable to resolve version conflict

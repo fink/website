@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Fink Usage";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/15 18:35:34';
+$cvs_author = 'Author: zifra';
+$cvs_date = 'Date: 2004/11/30 17:27:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-general.php?phpLang=es" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -343,8 +343,20 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.22: No puedo actualizar la versión Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special
-        instructions</a> to follow under these circumstances.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si ni ejecutar <code>fink selfupdate</code> ni <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> 
+        te actualiza a una versión más nueva de Fink, entonces puedes descargar manualmente una versión más nueva del
+        paquete <code>fink</code>.  Los comandos a usar son:</p><ul>
+          <li><b>10.3.x:</b> (Distribución 0.7.1)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+          <li><b>10.2.x:</b> (Distribución 0.6.3)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+        </ul></div>
     </a>
     <a name="spaces-in-directory">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.23: ¿Puedo colocar a Fink en un volumen o directorio con un espacio en su nombre?</b></p></div>
