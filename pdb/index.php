@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/06/08 15:41:52 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/06/10 13:07:05 $';
 
 include "header.inc";
 ?>
@@ -31,6 +31,8 @@ descriptions from <a href="../doc/cvsaccess/index.php">CVS</a> and
 configure Fink to <a href="../faq/usage-fink.php#unstable">use
 unstable</a>.
 </p>
+<p>Help is also needed to find new maintainers for the <a
+href="nomaintainers.php">packages without maintainers.</p>
 
 <?
 $q = "SELECT name FROM package WHERE latest=1";
