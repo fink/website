@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/19 22:20:26';
+$cvs_date = 'Date: 2004/04/21 04:16:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -166,11 +166,11 @@ and 'i386' pour les machines x86. (Introduit dans les versions CVS de fink post�
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
-signe pourcent (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet,  mais représente la chaîne %n.  (Introduit dans fink-0.18.0).
+signe pourcentage (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet,  mais représente la chaîne %n.  (Introduit dans fink-0.18.0).
 </p>
 </td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
 <p>
-pseudo-hash retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas.
+fonction de pseudo-hachage retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas.
 La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2).
 </p>
 </td></tr><tr valign="top"><td>%ni, %Ni</td><td>

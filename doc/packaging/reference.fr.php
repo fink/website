@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/19 22:20:26';
+$cvs_date = 'Date: 2004/04/21 04:16:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -15,7 +15,7 @@ include_once "header.inc";
 
 <p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <code>/sw</code> du paquet gimp-1.2.1-1.</p>
 <p>Lors de la <b>phase de décompression</b>, le répertoire <code>/sw/src/gimp-1.2.1-1</code> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>). Les champs SourceDirectory, NoSourceDirectory et Source<b>N</b>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
-<p>Lors de la <b>phase d'application des rustines</b>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript fields sont exécutées dans l'ordre d'énumération de ces champs.</p>
+<p>Lors de la <b>phase d'application des rustines</b>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript sont exécutées dans l'ordre d'énumération de ces champs.</p>
 <p>Lors de la <b>phase de compilation</b>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations.</p>
 <p>Lors de la <b>phase d'installation</b>, le paquet est installé dans un répertoire temporaire, <code>/sw/src/root-gimp-1.2.1-1</code> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <code>/sw</code> sont installés dans <code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
 <p>(<b>À partir de fink 0.9.9.</b>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié.)</p>
@@ -32,7 +32,7 @@ Nom du paquet. Peut contenir des minuscules, des nombres ou les caractères spé
 </p>
 <p>Seuls les raccourcis %N, %Ni, %type_raw[] et %type_pkg[] sont applicables à ce champ.</p>
 <p>
-Selon les règles de Fink, un paquet donné doit toujours être compilé avec les mêmes options activées. Si un paquet peut avoir plusieurs variantes (voir la documentation sur le champ <code>Type</code>), vous devez encoder les informations concernant la variante dans le champ <code>Package</code> (voir la documentation sur le raccourci  %type_pkg[]). De cette façon, chaque variante possèdera un nom unique. Le nom du paquet indique quelles variantes sont incluses. Notez que l'usage des raccourcis %type_pkg[] et %type_raw[] dans le nom du paquet est récent et grandement incompatible avec les anciennes versions de fink ; les descriptions de ces paquets doivent être insérés dans un champ <code>InfoN</code> avec N&gt;=2.
+Selon les règles de Fink, un paquet donné doit toujours être compilé avec les mêmes options activées. Si un paquet peut avoir plusieurs variantes (voir la documentation sur le champ <code>Type</code>), vous devez encoder les informations concernant la variante dans le champ <code>Package</code> (voir la documentation sur le raccourci  %type_pkg[]). De cette façon, chaque variante possédera un nom unique. Le nom du paquet indique quelles variantes sont incluses. Notez que l'usage des raccourcis %type_pkg[] et %type_raw[] dans le nom du paquet est récent et grandement incompatible avec les anciennes versions de fink ; les descriptions de ces paquets doivent être insérés dans un champ <code>InfoN</code> avec N&gt;=2.
 </p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
@@ -59,29 +59,28 @@ Peut être <code>bundle</code>. Les paquets lots sont utilisés pour regrouper p
 Il sert à indiquer qu'il n'y a pas d'archive tar source. Rien n'est téléchargé et la phase de décompression crée simplement un répertoire vide. Néanmoins, les phases d'application de rustine, de compilation et d'installation sont exécutées normalement. De cette façon, on peut incorporer tout le code avec une rustine, ou créer quelques répertoires avec InstallScript. À partir de la version 0.18.0 de fink, on peut utiliser <code>Source: none</code> pour obtenir le même résultat. Ceci permet d'utiliser "Type" pour d'autres usages (<code>Type: perl</code>, etc...).
 </p>
 <p>
-Since fink 0.9.5 there is type <code>perl</code> which causes alternate default values for the compile and install scripts to be used.  Beginning in fink 0.13.0, there is a new variant of this type, <code>perl $version</code>, where $version is a specific version of perl consisting of three numbers separated by periods, e.g., 
-<code>perl 5.6.0</code>.
+À partir de fink 0.9.5, il existe un type  <code>perl</code>, qui permet d'offrir un choix de valeurs par défaut pour les scripts de compilation et d'installation. À partir de  fink 0.13.0, il existe une nouvelle variante de ce type, <code>perl $version</code>, où $version est une version spécifique de perl, constituée de trois chiffres séparés par un point, par exemple : <code>perl 5.6.0</code>.
 </p>
 <p>
-Beginning in a CVS version of fink after fink-0.19.2, the language/language-version use has been generalized to allow any Maintainer-defined types and associated subtypes and more than a single type for a given package. The type and subtype are each arbitrary strings of non-whitespace characters (but parentheses, commas, braces, and percent signs should not be used); no percent-expansion is performed, and the type (not subtype) values are converted to all-lowercase.  Multiple type values (each with an optional whitespace-separated subtype) are specified in a comma-separated list.
+Dans une version CVS postérieure à fink-0.19.2, l'utilisation de langage/langage-version a été généralisée pour permettre à tout mainteneur de définir des types et sous-types associés et ainsi d'utiliser plus d'un type par paquet. Les types et sous-types sont des chaînes de caractères arbitraires ; toutefois, les blancs sont interdits et les parenthèses, virgules, crochets et signe pourcentage ne doivent pas être utilisés. Les raccourcis ne sont pas interprétés et le type (mais non le sous-type) est converti en minuscules. Les valeurs du type sont définies dans une liste , chaque valeur étant séparée de la suivante par des virgules ; chaque valeur peut elle-même avoir une liste de sous-types associés séparés par des blancs.
 </p>
 <p>
-In addition, the concept of "variants" exists, where a single .info file describes a family of related packages with various options enabled. The key to this whole process is the use of a list of subtypes. Instead of a single string, one uses a space-separated list of strings in parentheses. Fink clones the package description file for each subtype in the list and replaces this list with that single subtype. For example:
+De plus, il existe un concept de "variantes", qui permet de décrire dans un fichier .info unique une famille de paquets étroitement liés, ayant chacun des options différentes activées. La clé de ce processus est l'utilisation d'une liste de sous-types. Au lieu d'une simple chaîne de caractères, on utilise une liste de chaînes de caractères séparés par des blancs et mise entre parenthèses. Fink clone le fichier de description du paquet pour chaque sous-type de la liste et remplace cette liste par un unique sous-type dans le clone. Par exemple :
 </p>
 <pre>Type: perl (5.6.0 5.8.1)</pre>
 <p>
-yields two package descriptions, one that behaves as if <code>Type: perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. The special subtype list "(boolean)" stands for a list containing the type itself and a period, so the following two forms are identical:
+provoque la création de deux descriptions de paquet, une qui se comporte comme si on avait <code>Type: perl 5.6.0</code> et l'autre comme si on avait <code>Type: perl 5.8.1</code>. Le sous-type spécial "(boolean)" est un raccourci pour une liste contenant le type lui-même et un point. Ainsi les deux formes suivantes sont identiques :
 </p>
 <pre>
 Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </pre>
 <p>
-Subtype list expansion/package cloning is recursive; if there are multiple types with subtype lists, you will get all combinations:
+L'interprétation de la liste de sous-types / clonage du paquet est récursive. S'il y a plusieurs types avec des listes de sous-types, on obtient toutes les combinaisons possibles :
 </p>
 <pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
 <p>
-One can access the specific variant subtype in other fields using the %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info fragments:
+Dans les autres champs, on accède à un sous-type donné de variante en utilisant les fonctions de pseudo-hachage %type_raw[] et %type_pkg[]. Voici deux exemples de fragments de fichiers .info :
 </p>
 <pre>
 Info2: &lt;&lt;
@@ -108,16 +107,16 @@ CompileScript:  &lt;&lt;
 </pre>
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
-This field gives the nature of the license under which the package is distributed. The value must be one of the values described in <a href="policy.php?phpLang=fr#licenses">Package Licenses</a> earlier in this document. Additionally, this field must only be given if the package actually complies to the packaging policy in these respects, i.e. a copy of the license is installed in the doc directory for the package.
+Ce champ indique la nature de la licence sous laquelle le paquet est distribué. Sa valeur doit être l'une de celles décrites plus haut dans la section <a href="policy.php?phpLang=fr#licenses">Licences de paquet</a>. De plus, ce champ ne doit être renseigné que si le paquet respecte effectivement les règles de construction des paquets, c'est-à-dire installe une copie de la licence dans le répertoire doc.
 </p>
-</td></tr><tr valign="top"><td>Maintainer</td><td>
+</td></tr><tr valign="top"><td>Mainteneur</td><td>
 <p>
-The name and e-mail address of the person responsible for the package. This field is required, and there must be exactly one name and address in the following format:
+Nom et adresse e-mail de la personne responsable du paquet. Ce champ est obligatoire et ne doit mentionner qu'un nom et qu'une adresse e-mail sous le format suivant :
 </p>
-<pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
+<pre>Prénom Nom &lt;utilisateur@hôte.domaine.com&gt;</pre>
 </td></tr><tr valign="top"><td>InfoN</td><td>
 <p>
-This field allows fink to implement backward-incompatible syntax changes in package description files. A given version of fink is configured with the maximum integer "N" that it can handle. Any package in a higher InfoN field will be ignored, so this mechanism should only be used when necessary, lest people with older versions of fink be needlessly alienated. The documentation of other fields will note when a specific InfoN must be used. To use this mechanism, embed the entire package description in the desired InfoN field. See the "File Format" section earlier in this document for a description of the syntax for multiline fields.
+Ce champ permet à fink d'implémenter des changements de syntaxe incompatibles avec les versions précédentes dans les fichiers de description de paquet. Une version donnée de fink est configurée avec un nombre entier maximum "N", qu'il sait gérer. Tout paquet dont le champ InfoN est supérieur à ce nombre sera ignoré. Il ne faut donc utiliser ce mécanisme que dans les cas d'absolue nécessité, faute de quoi on priverait de ces paquets les personnes utilisant des versions plus anciennes de fink.  Quand un autre champ doit utiliser un numéro InfoN spécifique, mention en est faite dans la description du champ. Pour utiliser ce mécanisme, il faut insérer l'ensemble de la description du paquet dans le champ InfoN. Voir plus haut la section "Format de fichier" pour une description de la syntaxe des champs constitués de plusieurs lignes.
 </p>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
