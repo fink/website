@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.133 2003/10/25 01:08:06 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.134 2003/10/25 22:29:39 htodd Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1410,6 +1410,14 @@ exec gnome-session</codeblock>
 	</question>
 	<answer>
 		<p>You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0" included with Panther. You can install X11 from X11.pkg on Disk 3.</p>
+	</answer>
+</faqentry>
+<faqentry name="apple-x11-wants-xfree86" >
+	<question>
+		<p>I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</p>
+	</question>
+	<answer>
+		<p>You need to install the X11 SDK, which is on the Xcode CD, and is <em>not</em> installed by default.</p>
 	</answer>
 </faqentry>
 </chapter>
