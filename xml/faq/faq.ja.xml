@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.18 2004/06/19 15:34:09 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.19 2004/07/24 14:10:18 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -732,6 +732,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 <p>なぜ Fink コマンドを実行すると &quot;dyld: perl undefined symbols&quot; エラーが大量にでるのですか?</p>
 </question>
 <answer>
+<p>古すぎる情報</p>
 <p>このようなエラー:</p>
 <codeblock>dyld: perl Undefined symbols: 
 _Perl_safefree
@@ -1275,13 +1276,31 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </question>
 <answer>
 	<p>
-	自分のシステムの Perl のバージョンに合った xml-parser-pm パッケージがあるか確認する必要があります。
-	例えば、 Panther の場合、
-	<code>xml-parser-pm581</code> であって、
-	<code>xml-parser-pm560</code> ではありません
-	(<code>xml-parser-pm</code> 代替パッケージでも可)。
-	Perl のバージョンが <code>Perl-5.8.1</code> であって <code>Perl-5.6.0</code> ではないからです。
+	自分のシステムにある Perl に合った、正しいバージョンの xml-parser-pm が必要です。
+	例えば、 Panther では <code>xml-parser-pm581</code> が正しく、 <code>xml-parser-pm560</code> 
+	ではありません
+	( <code>xml-parser-pm</code> 代替パッケージでも可)。
+	システムにあるのが、 <code>Perl-5.8.1</code> であり、 <code>Perl-5.6.0</code> ではないためです。
+	Jaguar でデフォルトのシステム Perl バージョンを使っている場合、 <code>pm560</code> で、
+	<code>Perl 5.8.0</code> をインストールしている場合は <code>pm580</code> でも構いません。
 	</p>
+</answer>
+</faqentry>
+<faqentry name="master-problems">
+<question>
+	<p>
+		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <quote>distfiles</quote>
+		と書いてあるだけで、しかもそのファイルはそこに存在しません。
+	</p>
+</question>
+<answer>
+	<p>
+		これは、 Fink が <quote>Master</quote> と呼ばれるものを使おうとしたために発生しています。
+		上流サイトが移動しても Fink パッケージのソースが入手できるための仕組みです。
+		この問題は、新しい上流バージョンのパッケージがリリースされたが、
+		まだ Master ミラーに反映されていない場合によくおこります。
+	</p>
+	<p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p>
 </answer>
 </faqentry>
 </chapter>
@@ -1343,19 +1362,15 @@ X11 に依存するパッケージがない場合、これは単純です。
 <answer>
 <p>Fink 版の xfree86 を使っていて、 threaded と non-threaded を切替えたいのなら、 手動で古いバージョンを削除する必要があります。
 これは、コマンドラインで:</p>
-<codeblock>
-sudo dpkg -r --force-depends xfree86-base
+<codeblock>sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
 sudo dpkg -r --force-depends xfree86-rootless
-sudo dpkg -r --force-depends xfree86-rootless-shlibs
-</codeblock>
+sudo dpkg -r --force-depends xfree86-rootless-shlibs</codeblock>
 <p>threaded 版の場合:</p>
-<codeblock>
-sudo dpkg -r --force-depends xfree86-base-threaded
+<codeblock>sudo dpkg -r --force-depends xfree86-base-threaded
 sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
-sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
-	</codeblock>
+sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
 <p>FinkCommander でもパッケージを削除することができます。
 ソース画面で、パッケージを選択し、次に <code>Source Menu</code> で &quot;<code>Force Remove</code>.&quot; を選択します。
 </p>
@@ -1379,19 +1394,16 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </answer>
 </faqentry>
 
-<faqentry name="xml-parser-pm">
+<faqentry name="libiconv-gettext">
 <question>
-	<p><code>intltool</code> が XML::Parser が必要と言っていますが、
-	xml-parser-pm は既にインストールされています。
-	</p>
+	<p><code>libiconv</code> が更新できません。</p>
 </question>
 <answer>
-	<p>
-	これは更新時によく発生します。
-	<code>xml-parser-pmXXX</code> がインストールされている確認してください。
-	'XXX' は、システム上の Perl のバージョンで、 Jaguar に入っている Perl は 560 、
-	Panther は 581 です。
-	</p>
+	<p>下記の形式のエラーでしたら:</p>
+	<codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+	<p>以下のように実行して直すことが出来ます</p>
+	<codeblock>fink remove gettext-dev
+fink install libiconv</codeblock>
 </answer>
 </faqentry>
 </chapter>
