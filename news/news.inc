@@ -1,4 +1,11 @@
-<span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
+<span class="news_date">2002-09-27: </span><span class="news_headline">Possible conflicts with anti-virus software</span><?php gray_line(); ?>
+<p> A number of recent reports on the 
+<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</a> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p><span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
   <p> A test version of the 10.2 updater for Fink is now available.
 The update process is somewhat complicated at the moment, but is
 explained in  <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions
@@ -31,15 +38,5 @@ the 10.2 section; moreover, binaries for 10.2 packages are not yet available.
     <p>
      As of now, please do not email us asking about 10.2 support. If you can't wait,
      consult the <a href="<?php print $root; ?>lists/index.php">mailing list archives</a> instead.
-    </p>
-  <span class="news_date">2002-08-06: </span><span class="news_headline">Fink package manager 0.10.0 released</span><?php gray_line(); ?>
-    <p>
-      Yesterday version 0.10.0 of the Fink package manager was released to the unstable tree, along with version 1.6 of the base-files package. All Fink users which are using the unstable tree are recommended to update to this version. The easiest way to do so usually is to run 'fink selfupdate-cvs' which will automatically take care of updating these essential packages.
-    </p>
-    <p>
-      Please report any problems you encounter with this version via our bug tracker.
-    </p>
-    <p>
-      An overview of what changed since version 0.9.12 can be found <a href="<?php print $root; ?>http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
     </p>
   

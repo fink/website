@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.11 2002/09/09 01:07:58 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.12 2002/09/27 15:15:50 dmrrsn Exp $</cvsid>
 
+<newsitem>
+<date>2002-09-27</date>
+<headline>Possible conflicts with anti-virus software</headline>
+<body>
+<p> A number of recent reports on the 
+<link
+url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</link> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p></body></newsitem>
 <newsitem>
   <date>2002-09-08</date>
   <headline>Test version of Jaguar updater available</headline>

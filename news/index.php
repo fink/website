@@ -1,14 +1,21 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/09/09 01:07:58';
+$cvs_date = 'Date: 2002/09/27 15:15:50';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
+<span class="news_date">2002-09-27: </span><span class="news_headline">Possible conflicts with anti-virus software</span><?php gray_line(); ?>
+<p> A number of recent reports on the 
+<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</a> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p><span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
   <p> A test version of the 10.2 updater for Fink is now available.
 The update process is somewhat complicated at the moment, but is
 explained in  <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions
