@@ -2,8 +2,8 @@
 	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
-been built on <b>10.2</b> and will only install on a <b>10.2</b> based systems, while release 
-0.7.0 has been built on <b>10.3</b> and will only install on a <b>10.3</b> based systems.
+been built on <b>10.2</b>, while release 
+0.7.0 has been built on <b>10.3</b>. This should facilitate better support for the different platforms. 
 	</p>
 	<p>
 These new releases incorporate various fixes to the package manager, many previously 
