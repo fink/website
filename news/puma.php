@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/03 11:53:33 $';
+$cvs_date = '$Date: 2001/10/07 10:15:47 $';
 
 include "header.inc";
 ?>
@@ -22,7 +22,7 @@ Unfortunately there are also new bugs, and old issues like broken SysV
 shared memory and locale functions are still there.
 </p>
 
-<p><b>(Updated Oct 3.)</b></p>
+<p><b>(Updated Oct 7.)</b></p>
 <p>
 apt-get had an issue that is now fixed in Fink 0.3.0.
 If you use the binary distribution (i.e. you use <tt>dselect</tt> or
@@ -76,6 +76,14 @@ xfree86-base package has been adapted for 10.1.
 Recent CVS versions of XFree86 also work, but only when you compiled
 the whole thing yourself, not with the XDarwin 1.0a# binary test
 releases.
+(A fix for this is in CVS.)
+</p>
+<p>
+There are various problems on dual-processor machines, one of them is
+a bug in the OS kernel.
+GNU Emacs and XEmacs have been reported to cause system lockups and
+kernel panics on DP machines.
+Also, there are problems building the oaf package on DP machines.
 </p>
 <p>
 There are no further known 10.1-related issues beyond those listed
