@@ -227,8 +227,9 @@
 <xsl:template name="copyright">
 <xsl:text>
 </xsl:text>
-<h2>Copyright Notice</h2>
-<p><xsl:text>Copyright (c) 2001 Christoph Pfisterer.
+<hr/>
+<h2>Copyright Notice</h2><xsl:text>
+</xsl:text><p><xsl:text>Copyright (c) 2001 Christoph Pfisterer.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
