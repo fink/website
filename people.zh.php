@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_date = '$Date: 2004/03/07 18:34:49 $';
 
 include "header.inc";
 ?>
@@ -64,7 +64,7 @@ include "header.inc";
 
 <h2>支持，翻译和文档团队</h2>
 <ul>
-<li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
+<li>马场美彦(<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
 </ul>
