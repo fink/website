@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/11/29 06:15:21';
+$cvs_date = 'Date: 2004/12/03 00:38:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -76,8 +76,8 @@ rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tan
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci provient du fait qu'une des étapes de la compilation du paquet <code>atlas</code> envoie une invite à l'utilisateur et que Fink Commander ne l'affiche pas. Vous devez utiliser <code>fink install atlas</code> au lieu de passer par Fink Commander.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: Un message indique qu'il est impossible de trouver <code>stddef.h</code>,  ou <code>wchar.h</code>, ou <code>crt1.o</code></b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ces headers, comme beaucoup d'autres, sont fournis par le paquet DevSDK des Developer Tools. Vérifiez que <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: Un message indique qu'il est impossible de trouver <code>stddef.h</code>,  ou <code>wchar.h</code>, ou <code>crt1.o</code>, ou bien encore que le "compilateur C ne peut créer des fichiers exécutables" (C compiler cannot create executables en anglais).</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ces problèmes sont dus, généralement, à l'absence de headers essentiels fournis par le paquet DevSDK des Outils de Développement (Developer Tools). Vérifiez que le répertoire <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des Outils de Développement et installez le paquet DevSDK en choisissant Custom Install.</p><p>Le message d'erreur "impossible de créer des fichiers exécutables" peut aussi être généré lorsque la version des Outils de Développement installée provient d'une version antérieure du système d'exploitation.</p></div>
     </a>
     <a name="multiple-dependencies">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Impossible de mettre à jour, un message indique que Fink est "unable to resolve version conflict
