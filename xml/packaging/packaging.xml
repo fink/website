@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.20 2002/03/18 03:25:35 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.21 2002/03/19 02:26:14 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -178,13 +178,14 @@ As a special case, when working within a <code>SplitOff</code> or
 can be nested.  The same terminator <code>&lt;&lt;</code> is used
 for the sub-here-document.  Here is an example:
 <codeblock>
-  SplitOff: &lt;&lt;
-    Package: %N-shlibs
-    InstallScript: &lt;&lt;
-      ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
-    &lt;&lt;
+SplitOff: &lt;&lt;
+  Package: %N-shlibs
+  InstallScript: &lt;&lt;
+    ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
   &lt;&lt;
+&lt;&lt;
 </codeblock>
+(The indentation is optional, but it improves readability.)
 </p><p>
 Empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
@@ -365,9 +366,10 @@ Software which has been ported to Darwin should build shared libraries (as
 opposed to static libraries) whenever possible.  When this has been done,
 <em>two</em> closely related fink packages should be made, named foo 
 and foo-shlibs.  These can be made with a single .info file, using
-the SplitOff field, as described below.  (In fact, it is often necessary
+the <code>SplitOff</code> field, as described below.  
+(In fact, it is often necessary
 to make more than two packages from the source, and this can be done
-using SplitOff2, SplitOff3, etc.)
+using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
 </p><p>
 Each software package for which shared libraries can be built must have
 a <em>major version number</em> N.  The major version number is only supposed
@@ -381,6 +383,7 @@ library have major version number 3.  So there are now four fink packages
 to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
 Only one of libpng and libpng3 can be installed at any given time,
 but libpnd-shlibs and libpng3-shlibs can be installed at the same time.
+(Note that only two .info files are required to build these four packages.)
 </p><p>
 The shared library itself and certain related files will be put into 
 the package barN-shlibs; the "include" files and certain other files will
@@ -401,7 +404,12 @@ use the dependencies
 </codeblock>
 Once this system is fully in place, it will not be permitted for 
 another package to depend on barN itself.  (For backward compatibility,
-such dependencies are allowed for pre-existing packages.)
+such dependencies are allowed for pre-existing packages.)  This is
+signaled to other developers by a boolean field
+<codeblock>
+  BuildDependsOnly: True
+</codeblock>
+within the package description for barN.
 </p><p>
 If your package includes both shared libraries and binary files, and
 if the binary files need to be present at runtime (not just at build
@@ -436,42 +444,47 @@ Files are then divided between the two packages as follows
 <ul>
 <li>  in package barN-shlibs:
 <codeblock>
-    %i/lib/bar.N.x.y.dylib
-    %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
-    %i/lib/bar/N/*
-    %i/share/bar/N/*
-    %i/share/doc/barN-shlibs/*
+  %i/lib/bar.N.x.y.dylib
+  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/bar/N/*
+  %i/share/bar/N/*
+  %i/share/doc/barN-shlibs/*
 </codeblock></li>
 <li>  in package barN:
 <codeblock>
-    %i/include/*
-    %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
-    %i/lib/bar.a
-    %i/share/doc/barN/*
-    other files, if needed
+  %i/include/*
+  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/bar.a
+  %i/share/doc/barN/*
+  other files, if needed
 </codeblock></li></ul>
 Notice that both packages are required to have some documentation about
 the license, but that the directories containing the DocFiles will be
 different.
 </p><p>
-Doing this is quite easy in practice, using the SplitOff field.  Here is
+Doing this is quite easy in practice, using the 
+<code>SplitOff</code> field.  Here is
 how the example above would be implemented (in part):
 <codeblock>
 Package: barN
+Version: N.x.y
+Revision: 1
+License: GPL
 Depends: barN-shlibs (= %v-%r)
-DocFiles: COPYING
 BuildDependsOnly: True
+DocFiles: COPYING
 SplitOff: &lt;&lt;
   Package: barN-shlibs
   Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
   DocFiles: COPYING
 &lt;&lt;
 </codeblock>
-During SplitOff, the specified files and directories are moved from the 
+During the execution of the <code>SplitOff</code>
+field, the specified files and directories are moved from the 
 install directory %I of the main package to the install directory %i of the
 splitoff package.  (There is a similar convention for names: %N is the
 name of the main package, and %n is the name of the current package.)
-The DocFiles command then puts a copy of the documentation into 
+The <code>DocFiles</code> command then puts a copy of the documentation into 
 %i/share/doc/barN-shlibs.
 </p><p>
 Notice that we have included the exact current version of barN-shlibs as a 
@@ -479,9 +492,6 @@ dependency of the main package barN (which can be abbreviated
 %N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
 automatically "inherits" all the dependencies of barN-shlibs.
-We have also included "BuildDependsOnly: True" for the main package, 
-which indicates to other fink maintainers that their packages should
-not depend on this one.
 </p><p>
 <em>What to do when the major version number changes:</em>
 </p><p>
@@ -544,8 +554,8 @@ a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
 package should depend on the <code>foo-shlibs</code> package, and
 maintainers of other packages should be encouraged to use
 <codeblock>
-               Depends: foo-bin
-               BuildDepends: foo
+  Depends: foo-bin
+  BuildDepends: foo
 </codeblock>
 which will take care of foo-shlibs implicitly.
 </p><p>
@@ -554,7 +564,7 @@ be prompted to install <code>foo-bin</code>.  To work around this, until
 all other package maintainers have revised their packages as above,
 your <code>foo</code> package can say
 <codeblock>
-              Depends: foo-shlibs (= exact.version), foo-bin
+  Depends: foo-shlibs (= exact.version), foo-bin
 </codeblock>
 This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
@@ -785,6 +795,11 @@ directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
 All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
+<p>(<i>Introduced in fink 0.9.9.</i> It is possible to generate several
+packages from a single package description using the <code>SplitOff</code>
+field.  Towards the end of the install phase, separate install directories
+are created for each package being created, and files are moved to
+the appropriate directory.)</p>
 <p>In the <em>build phase</em> a binary package file (.deb) is built
 from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
@@ -793,8 +808,9 @@ generate a <code>control</code> file for dpkg.</p>
 
 <section name="fields"><title>Fields</title>
 
-<p>This list is not necessarily complete. <code>:-)</code></p>
-
+<p>We have divided the list of fields into several categories.
+The list of fields is not necessarily complete. <code>:-)</code></p>
+<p><em>Initial Data:</em></p>
 <itemtable>
 <item><itemt>Package</itemt>
 <itemd>
@@ -830,6 +846,17 @@ Required field.
 </p>
 </itemd></item>
 
+<item><itemt>Description</itemt>
+<itemd>
+<p>
+A short description of the package (what is it?). This is a
+one-line description that will be displayed in lists, so it must be
+short and informative.  Keep it to around 30 to 50 chars. It is not
+necessary to repeat the package name in this field - it will always
+be displayed in proper context. Required field.
+</p>
+</itemd></item>
+
 <item><itemt>Type</itemt>
 <itemd>
 <p>
@@ -853,6 +880,20 @@ alternate default values for the compile and install scripts to be used.
 </p>
 </itemd></item>
 
+<item><itemt>License</itemt>
+<itemd>
+<p>
+This field gives the nature of the license under which the package is
+distributed.
+The value must be one of the values described in <xref
+chapter="policy" section="license">Package Licenses</xref> earlier in
+this document.
+Additionally, this field must only be given if the package actually
+complies to the packaging policy in these respects, i.e. a copy of the
+license is installed in the doc directory for the package.
+</p>
+</itemd></item>
+
 <item><itemt>Maintainer</itemt>
 <itemd>
 <p>
@@ -862,6 +903,10 @@ in the following format:
 </p>
 <codeblock>Firstname Lastname &lt;user@host.domain.com&gt;</codeblock>
 </itemd></item>
+
+</itemtable>
+<p><em>Dependencies:</em></p>
+<itemtable>
 
 <item><itemt>Depends</itemt>
 <itemd>
@@ -976,6 +1021,18 @@ special flags are used to override this.
 </p>
 </itemd></item>
 
+<item><itemt>BuildDependsOnly</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+A boolean value which indicates that no other packages should Depend on
+this one, they should only BuildDepend.
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Unpack Phase:</em></p>
+<itemtable>
 <item><itemt>Source</itemt>
 <itemd>
 <p>
@@ -1088,6 +1145,10 @@ field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
 
+</itemtable>
+<p><em>Patch Phase:</em></p>
+<itemtable>
+
 <item><itemt>UpdateConfigGuess</itemt>
 <itemd>
 <p>
@@ -1164,18 +1225,6 @@ packages's version and Fink's version (in
 </p>
 </itemd></item>
 
-<item><itemt>UpdatePOD</itemt>
-<itemd>
-<p>
-<i>Introduced in fink 0.9.5.</i>
-A boolean value, specific for perl module packages.
-If true, this will add code to the install, postrm and postinst
-scripts that maintains the .pod files provided by perl packages.
-This includes adding and removing the .pod date from the central
-<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
-</p>
-</itemd></item>
-
 <item><itemt>Patch</itemt>
 <itemd>
 <p>
@@ -1196,6 +1245,38 @@ on scripts below. This is the place to put commands that patch or
 otherwise modify the package. There is no default. Before the
 commands are executed, percent expansion takes place (see last
 section).
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Compile Phase:</em></p>
+<itemtable>
+
+<item><itemt>Set<i>ENVVAR</i></itemt>
+<itemd>
+<p>
+Causes certain environment variables to be set in the
+compile and install phases. This can be used to pass compiler flags
+etc. to configure scripts and Makefiles. Currently supported variables
+are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
+MAKE, MFLAGS. The value you specify is subject to the
+percent expansion described in the last section. A common example:
+</p>
+<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
+<p>
+The variables CPPFLAGS and LDFLAGS are special. They default to
+<code>-I%p/include</code> and <code>-L%p/lib</code>,
+respectively. If you specify a value for one of these, it will be
+prepended to the default value.
+</p>
+</itemd></item>
+
+<item><itemt>NoSet<i>ENVVAR</i></itemt>
+<itemd>
+<p>
+When set to a true value, deactivates the default values for
+CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
+remain unset, specify <code>NoSetLDFLAGS: true</code> .
 </p>
 </itemd></item>
 
@@ -1230,6 +1311,22 @@ make test</codeblock>
 <p>
 Before the commands are executed, percent expansion takes place
 (see previous section).
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Install Phase:</em></p>
+<itemtable>
+
+<item><itemt>UpdatePOD</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.5.</i>
+A boolean value, specific for perl module packages.
+If true, this will add code to the install, postrm and postinst
+scripts that maintains the .pod files provided by perl packages.
+This includes adding and removing the .pod date from the central
+<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
 </p>
 </itemd></item>
 
@@ -1276,22 +1373,13 @@ commands to the InstallScript.
 </p>
 </itemd></item>
 
-<item><itemt>BuildDependsOnly</itemt>
-<itemd>
-<p>
-<i>Introduced in fink 0.9.9.</i>
-A boolean value which indicates that no other packages should Depend on
-this one, they should only BuildDepend.
-</p>
-</itemd></item>
-
 <item><itemt>SplitOff</itemt>
 <itemd>
 <p>
 <i>Introduced in fink 0.9.9.</i>
 Generate a second package from the same compile/install run.
 For details about how this works, see the separate
-splitoff section.
+<link url="#splitoffs">splitoff section</link> below.
 </p>
 </itemd></item>
 
@@ -1317,34 +1405,9 @@ but before the InstallScript and Docfiles of the current package.
 </p>
 </itemd></item>
 
-<item><itemt>Set<i>ENVVAR</i></itemt>
-<itemd>
-<p>
-Causes certain environment variables to be set in the
-compile and install phases. This can be used to pass compiler flags
-etc. to configure scripts and Makefiles. Currently supported variables
-are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
-MAKE, MFLAGS. The value you specify is subject to the
-percent expansion described in the last section. A common example:
-</p>
-<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
-<p>
-The variables CPPFLAGS and LDFLAGS are special. They default to
-<code>-I%p/include</code> and <code>-L%p/lib</code>,
-respectively. If you specify a value for one of these, it will be
-prepended to the default value.
-</p>
-</itemd></item>
-
-<item><itemt>NoSet<i>ENVVAR</i></itemt>
-<itemd>
-<p>
-When set to a true value, deactivates the default values for
-CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
-remain unset, specify <code>NoSetLDFLAGS: true</code> .
-</p>
-</itemd></item>
-
+</itemtable>
+<p><em>Build Phase:</em></p>
+<itemtable>
 
 <item><itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
 <itemd>
@@ -1440,22 +1503,23 @@ See the description of DaemonicFile for details.
 </p>
 </itemd></item>
 
+</itemtable>
+<p><em>Additional Data:</em></p>
+<itemtable>
 
-<item><itemt>Description</itemt>
+<item><itemt>Homepage</itemt>
 <itemd>
 <p>
-A short description of the package (what is it?). This is a
-one-line description that will be displayed in lists, so it must be
-short and informative.  Keep it to around 30 to 50 chars. It is not
-necessary to repeat the package name in this field - it will always
-be displayed in proper context. Required field.
+The URL of the upstream home page of the package.
 </p>
 </itemd></item>
+
 
 <item><itemt>DescDetail</itemt>
 <itemd>
 <p>
-A more detailed description (what is it, what can I use it for?).
+A more detailed description than the one in the <code>Description</code>
+field (what is it, what can I use it for?).
 Multiple lines allowed.
 </p>
 </itemd></item>
@@ -1485,28 +1549,6 @@ like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
 </p>
 </itemd></item>
-
-<item><itemt>License</itemt>
-<itemd>
-<p>
-This field gives the nature of the license under which the package is
-distributed.
-The value must be one of the values described in <xref
-chapter="policy" section="license">Package Licenses</xref> earlier in
-this document.
-Additionally, this field must only be given if the package actually
-complies to the packaging policy in these respects, i.e. a copy of the
-license is installed in the doc directory for the package.
-</p>
-</itemd></item>
-
-<item><itemt>Homepage</itemt>
-<itemd>
-<p>
-The URL of the upstream home page of the package.
-</p>
-</itemd></item>
-
 
 <item><itemt>Comment</itemt>
 <itemd>
@@ -1546,60 +1588,64 @@ always available.
 
 <section name="splitoffs"><title>SplitOffs</title>
 <p>Beginning with fink 0.9.9, a single .info file can be used to build
-multiple packages.  The unpack, patch, compile, and install phases
-(including the <code>DocFiles</code> command)
-are followed as usual, with everything being put into the install 
-directory.  Then a <code>SplitOff</code> field triggers
-the construction of a second install directory.  Within the 
+multiple packages.  
+The install phase begins as usual, with the execution of the 
+<code>InstallScript</code> and <code>DocFiles</code> commands.
+A <code>SplitOff</code> field, if present, then triggers the
+creation of a
+second install directory.  Within the 
 <code>SplitOff</code> field, the new install directory is referred to as %i,
-while the original install field of the parent directory is referred to as %I.
+while the original install directory of the parent 
+package is referred to as %I.
 </p>
 <p>
 The <code>SplitOff</code> field must contain a number of fields of its
-own.  In fact, it resembles a complete package description of its own,
-but without anything related to the unpack, patch or compile phases.
-The values of  <code>Version</code>, <code>Revision</code>, 
-<code>Maintainer</code> and <code>Homepage</code> are
-automatically inherited from the parent package; the values of
-<code>Description</code>, <code>DescDetail</code>, and <code>License</code>
-are inherited as well by default, but may be changed if necessary by
-declaring them.
-
+own.  In fact, it resembles a complete package description, but with
+certain fields missing.  Here is what belongs in the sub-description
+(by category):
+<ul>
+<li>Initial Data: Only the <code>Package</code> needs to be specified,
+everything else is inherited from the parent package (except for
+<code>Type</code>, which is internally set to the value 
+<code>splitoff</code>).  Percent expansion can be used, and it is often
+convenient to refer to the name %N of the parent package.</li>
+<li>Dependencies: All of these are allowed except <code>Essential</code>,
+which cannot be used for a sub-package.</li>
+<li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
+and will be ignored.</li>
+<li>Install Phase, Build Phase: Any of these fields are allowed (except
+that <code>SplitOff</code> should not be used within a <code>SplitOff</code>
+field).</li>
+<li>Additional Data: These are inherited from the parent package but may
+be modified by declaring the field within the <code>SplitOff</code>.</li>
+</ul>
 </p><p>
-It should begin with a <code>Package</code> field that gives the
-name of the new package.  (Percent expansion is perfomed on this field).
-  (The <code>Version</code>, <code>Revision</code>
-and <code>Maintainer</code>
-are inherited from the parent package). It may then
-specify values for <code>Depends</code>, <code>Provides</code>, 
-<code>Conflicts</code>, <code>Replaces</code>, <code>Recommends</code>,
-<code>Suggests</code>, <code>Enhances</code>. 
+During the install phase, the <code>InstallScript</code> and 
+<code>DocFiles</code> of the parent package are executed first.
+Next comes the <code>Files</code> command specified in the
+<code>SplitOff</code> field, which causes the listed files and directories
+to be moved from the parent's installation directory %I to the
+current installation directory %i.  Then the <code>InstallScript</code>
+and <code>DocFiles</code> of the <code>SplitOff</code> package are
+executed.  
 </p><p>
-The unpack, patch and compile phases are not relevant here since they
-have already been carried out.  The first action to be invoked is
-specified by the <code>Files</code> field.  This is a list of files
-and directories which are to be moved from %I to %i.  
-</p><p>After this, any <code>InstallScript</code> contained within the
-<code>SplitOff</code> field is executed.  (It may make more sense to
-directly do part of the installation at this point, rather than install
-things originally in %I and later move them to %i.)
-</p><p>The <code>SplitOff</code> field typically ends with a 
-<code>DocFiles</code> declaration.  Each package being built is required
-to document the licensing arrangement in %i/share/doc/%n.  Note that
+If there are additional sub-packages specified with <code>SplitOff2</code>,
+<code>SplitOff3</code>, etc., this same sequence of commands
+(<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>)
+is executed for each of them in turn.
+</p><p>
+During the build phase, the pre/post install/remove scripts for each of
+the packages is constructed by using the build phase commands which
+were specified for that package.
+</p><p>
+Each package being built is required
+to document the licensing arrangement in %i/share/doc/%n (and of course
+%n takes a different value for each package).  Note that
 <code>DocFiles</code> copies files rather than moving them, so it is
-possible to install documentation into all of the packages by using
-<code>DocFiles</code> several times.
-</p><p>
-If more than two packages are to be built, the additional packages are
-specified with <code>SplitOff2</code>, <code>SplitOff3</code>, etc.
-The commands for each of these are executed in turn.
-</p><p>
-
-
-Type? Pre-Depends? Essential?
-
-
+possible to install identical copies of the documentation into each 
+of the packages by using <code>DocFiles</code> several times.
 </p>
+
 
 </section>
 
