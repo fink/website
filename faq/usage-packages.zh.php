@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/17 17:22:26';
+$cvs_date = 'Date: 2004/03/19 21:29:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 include_once "header.inc";
@@ -141,6 +141,15 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
           <li>把它保存在你喜欢的位置。</li>
           <li>在终端程序窗口通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
         </ul></div>
+    </a>
+    <a name="wants-xfree86-on-upgrade">
+      <div class="question"><p><b>Q9.13: 我从 10.2 的 Fink 版本转到 10.2-gcc3.3 或 10.3 的版本，我已经安装了苹果的 X11，但 Fink 要我安装 XFree86。</b></p></div>
+      <div class="answer"><p><b>A:</b> 你需要删除其中的一个旧的占位虚拟软件包：
+        <code>system-xfree86</code>，
+        <code>system-xfree86-42</code>，或
+        <code>system-xfree86-43</code>。
+        Fink 现在会发现你已经安装了一个 X11，比如苹果的版本，并产生相应的虚拟软件包。
+        因为其它软件包会依赖于 <code>system-xfree86</code>，你需要使用命令：</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p> 来删除那些过时的版本。你可以运行</p><pre>fink-virtual-pkgs</pre><p>来检查你的安装情况。</p><p>另外，再确认 <code>Package: system-xfree86</code> 和 <code>Package: system-xfree86-shlibs</code> 这两部分都有列出，并相应提供：<code>x11</code> 和 <code>x11-shlibs</code> 的功能。如果你安装了 X11SDK，那么你应该还能看到 <code>Package: system-xfree86-dev</code>。</p><p>如果还有问题，请参考前面<a href="#apple-x11-wants-xfree86">《Fink 要求安装 XFree86 到 10.3》</a>或<a href="#apple-x11-beta-wants-xfree86">《Fink 要求安装 Xfree86 到 10.2-gcc3.3》</a>这两部分。</p></div>
     </a>
   
 
