@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/12/16 14:10:02 $';
+$cvs_date = '$Date: 2001/12/16 15:49:16 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,6 +33,15 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-12-16:
+Yes, we are alive! Despite the fact that no news were listed here
+for over a month, the fink project was quite busy in the recent time.
+Sadly, our leader, Christoph, left us last month. But despite this, development
+is going on actively.
+<br>
+Version 0.9.5 of the Fink package manager was recently released, and many
+updated and new packages are in our <a href="doc/cvsaccess/index.php">CVS</a>.
+</p>
 <p>2001-11-04: Fink 0.3.1 is released.
 The source release and the binary installer are available now, the
 bulk of binary packages will be built and made available gradually
@@ -46,12 +55,6 @@ The <a href="doc/x11/index.php">Running X11</a> document has had a
 significant update.
 The troubleshooting section now has a comprehensive list of XDarwin
 error messages with explanations.
-</p>
-<p>2001-10-23:
-In addition to ripping off Fink packages and breaking the GPL, the
-ports collection at <a href="http://macosx.forked.net/">forked.net</a>
-has just gone commercial.
-More <a href="pr/forked.php">details</a> now available.
 </p>
 
 <h2>Status</h2>
