@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/10 15:10:37 $';
+$cvs_date = '$Date: 2004/04/10 15:11:41 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ Das Projekt bietet sowohl vorkompilierte Binär-Pakete als auch ein vollautomati
 </p>
 <p>
 Um diese Ziele zu erreichen, vertraut Fink auf die exzellenten Paket-Management-Tools, die vom
-<a href="http://www.debian.org/">Debian</a> Project entwickelt wurden : <code>dpkg</code>
+<a href="http://www.debian.org/">Debian</a> Projekt entwickelt wurden : <code>dpkg</code>
 <code>dselect</code> and <code>apt-get</code>.
 Darüber hinaus bietet Fink seinen eigenen Paket-Manager, genannt <code>fink</code>(welch Überraschung!), an.
 Man kann <code>fink</code> als eine "build engine" ansehen - es benutzt die Paketbeschreibungen und erstellt daraus binäre .deb Pakete.
