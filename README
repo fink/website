@@ -1,11 +1,27 @@
-The file LATEST-FINK is a legacy from OS X 10.1 and earlier, and should
-be left at "0.4.1a".
+In addition to the php files for the web site, this directory stores
+information about the version number of the latest (complete) Fink 
+distribution, which is consulted by users' copies of Fink when using the 
+"point" update method.
 
-The file CURRENT-FINK should be kept up to date with the most recent
-distribution release.
+These days, each complete Fink distribution is tuned to a particular
+"tree", such as 10.2-gcc3.3.  As of this writing, there are three files
+containing tree-specific version information:
+  CURRENT-FINK-10.2
+  CURRENT-FINK-10.2-gcc3.3
+  CURRENT-FINK-10.3
 
-The current fink version number must also be supplied in three places:
-fink_version.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
+The users' copy of Fink consults the "Distibution:" line in /sw/etc/fink.conf
+in order to decide which of these version numbers to fetch.
+
+To maintain compatibility with earlier versions of this system, the
+directory also contains two legacy files:
+  LATEST-FINK (with the value "0.4.1a", used by 10.1)
+  CURRENT-FINK (with the value "0.5.3", used by 10.2 in upgrading to
+                the tree-specific system described above.)
+
+
+NOTE:  For use on the web site, the current fink version number must also be 
+supplied in three places: fink_version.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
 
 
 IMPORTANT NOTE: As of 29 June 2003, the CVS modules have been somewhat
