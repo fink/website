@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/29 15:04:59 $';
+$cvs_date = '$Date: 2002/05/29 22:42:03 $';
 
 include "header.inc";
 ?>
@@ -147,6 +147,24 @@ Screenshots:
   </ol>
  </li>
 </ul>
+<p>
+ <h1><font color="#ff0000">These packages will only work with the xfree86-base
+ from the Fink distribution, version 4.2.0-5 or higher.</font></h1>
+</p>
+<p>
+ Fink provides a "virtual" package for XFree86 called "system-xfree86", for
+ users that have downloaded XonX or some other binary XFree86 distribution
+ and don't want to build XFree86 from source.  Unfortunately, the non-Fink
+ releases of XFree86 (4.2.0, or even older) do not have Xinerama enabled.
+ The newest version of the XFree86 package in Fink unstable (which these
+ KDE binaries are based on) does.  KDE was linked against the Xinerama
+ library, and will not function if it doesn't exist.
+</p>
+<p>
+ If you want to continue using system-xfree86, you will need to follow the
+ instructions for building from source.  Otherwise, you will need to upgrade
+ to xfree86-base and xfree86-rootless through apt or dselect.
+</p>
 
 <h1>Running KDE</h1>
 <p>
