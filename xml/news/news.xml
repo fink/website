@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.124 2004/04/06 19:13:37 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.125 2004/04/06 19:19:57 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2004-04-06</date>
@@ -10,8 +10,8 @@
 	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
-been built on <em>10.2</em> and will only install on a <em>10.2</em> based systems, while release 
-0.7.0 has been built on <em>10.3</em> and will only install on a <em>10.3</em> based systems.
+been built on <em>10.2</em>, while release 
+0.7.0 has been built on <em>10.3</em>. This should facilitate better support for the different platforms. 
 	</p>
 	<p>
 These new releases incorporate various fixes to the package manager, many previously 
