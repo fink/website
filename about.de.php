@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/10 15:06:25 $';
+$cvs_date = '$Date: 2004/04/10 15:10:37 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,7 @@ Zweitens, die Ergebnisse dem Gelegenheitsnutzern zugänglich zu machen, als eine
 Das Projekt bietet sowohl vorkompilierte Binär-Pakete als auch ein vollautomatisiertes System, das es ermöglicht, direkt von den Quellcodes zu kompilieren.
 </p>
 <p>
-Um diese Ziele zu erreichen, vertraut Fink auf die exzellenten Packet-Management-Tools, die vom
+Um diese Ziele zu erreichen, vertraut Fink auf die exzellenten Paket-Management-Tools, die vom
 <a href="http://www.debian.org/">Debian</a> Project entwickelt wurden : <code>dpkg</code>
 <code>dselect</code> and <code>apt-get</code>.
 Darüber hinaus bietet Fink seinen eigenen Paket-Manager, genannt <code>fink</code>(welch Überraschung!), an.
