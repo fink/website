@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.62 2002/12/16 14:57:48 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.63 2002/12/17 17:29:20 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -849,7 +849,7 @@ sort this out.
 
 <faqentry name="libXmuu"><question><p>When I try to start XFree86 I get the following error:  "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"</p></question>
 <answer><p>
-You are missing a file that is supposed to be in <code>xfree86-rootless-(threaded)-shlibs</code>.  You should rebuild it using <code>fink rebuild xfree86-rootless-shlibs</code> (<code>fink rebuild xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages).</p></answer>
+You are missing a file that is supposed to be in <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink rebuild xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p></answer>
 </faqentry>
 </chapter>
 

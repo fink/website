@@ -761,7 +761,7 @@ sort this out.
 
 <a name="usage-packages.libXmuu"><div class="question"><p><b>Q7.6: When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You are missing a file that is supposed to be in <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should rebuild it using <tt><nobr>fink rebuild xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink rebuild xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages).</p></div>
+You are missing a file that is supposed to be in <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink rebuild xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
 </a>
 
 <hr><h2>Copyright Notice</h2>
@@ -771,4 +771,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.62 2002/12/16 14:57:48 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.63 2002/12/17 17:29:20 alexkhansen Exp $</i></p></body></html>
