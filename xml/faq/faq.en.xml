@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.33 2004/09/23 00:07:36 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.34 2004/10/13 16:25:54 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1254,13 +1254,13 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     </faqentry>
     <faqentry name="gcc2">
       <question>
-        <p>Fink says I'm missing <filename>gcc2</filename> but I can't seem to
+        <p>Fink says I'm missing <filename>gcc2</filename> or gcc3.1 but I can't seem to
         install it.</p>
       </question>
       <answer>
-        <p>This is because <filename>gcc2</filename> is a virtual package to
-        indicate the presence of gcc-2.95 on your system. Install the gcc2.95
-        package from the XCode Tools (earlier OS versions have gcc-2.95 as
+        <p>This is because <filename>gcc2</filename> and <filename>gcc3.3</filename> are  virtual packages to
+        indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
+        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1as
         part of their main Developer Tools installation).</p>
       </answer>
     </faqentry>
