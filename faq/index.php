@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/06 21:04:23';
+$cvs_date = 'Date: 2003/09/06 21:20:22';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -140,7 +140,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 <li><a href="usage-packages.php#gnome-two">7.10 I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.128 2003/09/06 21:04:23 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.129 2003/09/06 21:20:22 alexkhansen Exp $</i></p>
 
 
 <?
