@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 10:16:13';
+$cvs_date = 'Date: 2004/05/08 10:38:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 include_once "header.inc";
@@ -238,7 +238,7 @@ Vous pouvez la corriger avec la commande suivante :</p><pre>sudo /sw/var/lib/fin
     </a>
     <a name="ext-drive">
       <div class="question"><p><b>Q5.28: Quand Fink n'est pas installé sur la partition principale du disque, il est impossible de mettre à jour le paquet fink à partir du source. Des erreurs concernant <q>chowname</q> apparaissent.</b></p></div>
-      <div class="answer"><p><b>A:</b> Si le message d'erreur reseemble à celui-ci :</p><pre>This first test is designed to die, so please ignore the error
+      <div class="answer"><p><b>A:</b> Si le message d'erreur ressemble à celui-ci :</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
 ./00compile............................ok
@@ -249,7 +249,7 @@ message on the next line.
 ./Command/chowname.....................#     
 Failed test (./Command/chowname.t at line 27)
 #          got: 'root'
-#     expected: 'nobody'</pre><p>vous devez exécuter <b>Lire les informations</b> (Cmd-I quand l'icône de la partition ou du disque est selectionné) sur le disque (ou la partition) sur lequel (laquelle) Fink est installé et décocher l'option "Ignorer les autorisations de ce volume".</p></div>
+#     expected: 'nobody'</pre><p>vous devez exécuter <b>Lire les informations</b> (Cmd-I quand l'icône de la partition ou du disque est selectionnée) sur le disque (ou la partition) sur lequel (laquelle) Fink est installé et décocher l'option "Ignorer les autorisations de ce volume".</p></div>
     </a>
   <p align="right">
 Next: <a href="comp-general.php?phpLang=fr">6 Problèmes de compilation généraux</a></p>
