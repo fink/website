@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/08/23 11:51:05';
+$cvs_date = 'Date: 2004/09/19 12:29:45';
 $metatags = '';
 
 include_once "header.inc";
@@ -35,7 +35,8 @@ include_once "header.inc";
 	If for any reason those commands don't work, go to 
 	<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the 
 	fink file release page at sourceforge</a> and download the
-	file <code>fink-0.22.1.tar.gz</code> .  Unpack this file with
+	file <code>fink-0.22.1.tar.gz</code> (or a more recent, i.e.,
+	higher numbered, version).  Unpack this file with
 	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
 	fink-0.22.1 directory, run the command <code>./inject.pl</code>
 	</p>

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 23 Aug 2004 07:51:13 EDT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Sep 2004 08:30:34 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5">
@@ -45,7 +45,8 @@
 	If for any reason those commands don't work, go to 
 	the 
 	fink file release page at sourceforge and download the
-	file fink-0.22.1.tar.gz .  Unpack this file with
+	file fink-0.22.1.tar.gz (or a more recent, i.e.,
+	higher numbered, version).  Unpack this file with
 	tar xfz fink-0.22.1.tar.gz , and then from within the
 	fink-0.22.1 directory, run the command ./inject.pl
 	
