@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/09/06 21:24:31 $';
+$cvs_date = '$Date: 2004/10/28 01:55:27 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -31,7 +31,6 @@ if (!$rs) {
   $row = mysql_fetch_array($rs);
   $rmap = array();
   while ($row) {
-    $lastrow = $row;
     if($row[epoch] > 0)
 		$epoch = "$row[epoch]:";
 	else 
@@ -40,7 +39,6 @@ if (!$rs) {
     
     $row = mysql_fetch_array($rs);
   }
-  $row = $lastrow;
 
  function avail_td($text, $rowspan, $colspan) {
    print '<td align="center" valign="top"';
@@ -157,18 +155,19 @@ if (!$rs) {
 
   print "<br>";
 
-  it_start();
-  $desc = $row[desclong];
-  it_item("<p>Description:</p>", $desc);
-  it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
+  // Get latest version data (use for version-nonspecific pkg metadata)
+  $qlatest = "SELECT * FROM package WHERE name='$package' AND latest=1";
+  $qs = mysql_query($qlatest, $dbh);
+  if (!$qs) {
+    print '<p><b>error during query:</b> '.mysql_error().'</p>';
+  } else {
+    $latest = mysql_fetch_array($qs);
+  }
 
-$qlatest = "SELECT * FROM package WHERE name='$package' AND latest=1";
-$qs = mysql_query($qlatest, $dbh);
-if (!$qs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-} else {
-	$latest = mysql_fetch_array($qs);
-}
+  it_start();
+  $desc = $latest[desclong];
+  it_item("<p>Description:</p>", $desc);
+  it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$latest[section].'">'.$latest[section].'</a>');
 
   // Get the maintainer field, and try to parse out the email address
   if ($latest[maintainer]) {
@@ -187,20 +186,20 @@ if (!$qs) {
   } else {
     it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
   }
-  if ($row[homepage]) {
-    it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
+  if ($latest[homepage]) {
+    it_item("Website:", '<a href="'.$latest[homepage].'">'.$latest[homepage].'</a>');
   }
-  if ($row[license]) {
-    it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$row[license].'</a>');
+  if ($latest[license]) {
+    it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$latest[license].'</a>');
   }
-  if ($row[parentname]) {
-    it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$row[parentname].'">'.$row[parentname].'</a>');
+  if ($latest[parentname]) {
+    it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$latest[parentname].'">'.$latest[parentname].'</a>');
   }
 
 
 	// List the splitoffs of this package
 
-	$q = "SELECT * FROM splitoffs WHERE parentkey='$row[release]$row[name]'";
+	$q = "SELECT * FROM splitoffs WHERE parentkey='$latest[release]$latest[name]'";
 	$rs = mysql_query($q, $dbh);
 	if (!$rs) {
 	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
