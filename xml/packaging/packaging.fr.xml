@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.42 2004/08/04 08:18:21 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.43 2004/08/11 10:13:39 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -819,7 +819,13 @@ Selon les règles de Fink, un paquet donné doit toujours être compilé avec le
 <item><itemt>Version</itemt>
 <itemd>
 <p>
-Le numéro de version en amont. Même limitations que pour champ Package. Champ obligatoire.</p>
+Le numéro de version en amont. Même limitations que pour le champ Package. Champ obligatoire.</p>
+<p>Notez que certains programmes utilisent une numérotation de version non standard qui peut provoquer des problèmes de tri, ou bien utilisent des caractères non autorisés dans ce champ. Dans ce cas, vous devez convertir la valeur de la version originale en une valeur acceptable qui permette de trier les versions correctement. Si vous ne savez pas comment les versions seront triées, utilisez la commande <code>dpjkg</code> à l'invite d'un shell. Par exemple :
+</p>
+<codeblock>
+  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
+</codeblock>
+<p>imprimera &quot;vrai&quot; car le numéro de version &quot;1.2.1&quot; est inférieur au numéro de version &quot;1.3&quot;. Voir le page de manuel <code>dpkg</code> pour de plus amples informations.</p>
 </itemd></item>
 
 <item><itemt>Revision</itemt>
