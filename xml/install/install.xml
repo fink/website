@@ -3,7 +3,7 @@
 <document filename="install">
 <title>Fink 0.2.4 Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.4 2001/07/31 16:32:50 chrisp Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.5 2001/08/01 05:38:04 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -31,6 +31,7 @@ chapter="install-first">next section</xref>.
 (You can still use this section as an example.)
 </p>
 </preface>
+
 
 <section name="install"><title>First Time Installation Fast
 Track</title>
@@ -122,6 +123,44 @@ mailing list</link>, but expect to be pointed back at the
 documentation when your problem actually is well-documented.
 </p>
 </section>
+
+
+<section name="update"><title>Update Fast Track</title>
+<p>
+Start out by copying the <code>fink-0.2.4-full.tar.gz</code> file to
+your home folder.
+Then, open Terminal.app and follow the session below.
+Computer output is in <code>normal face</code>, your input is in
+<code><em>bold face</em></code> (or otherwise highlighted).
+The actual input prompts from the shell may vary, and some chunks of
+the output have been omitted (<code>...</code>).
+</p>
+<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.4-full.tar.gz</em>
+[frodo:~] testuser% <em>cd fink-0.2.4-full</em>
+[frodo:~/fink-0.2.4-full] testuser% <em>./inject.pl /sw</em>
+sudo ./inject.pl /sw
+Password:<em>(your normal password here)</em>
+Copying package descriptions
+...
+Done.
+
+Your Fink installation in '/sw' was updated with new fink packages.
+
+[frodo:~/fink-0.2.4-full] testuser% <em>cd pkginfo</em>
+[frodo:~/fink-0.2.4-full/pkginfo] testuser% <em>./inject.pl /sw</em>
+sudo ./inject.pl /sw
+Copying...
+...
+
+Your Fink installation in '/sw' was updated with new package description
+files. Use appropriate fink commands to update the packages, e.g. 'fink
+update-all'.
+
+[frodo:~/fink-0.2.4-full/pkginfo] testuser% <em>cd</em>
+[frodo:~] testuser% <em>fink update-all</em>
+...</codeblock>
+</section>
+
 
 </chapter>
 
