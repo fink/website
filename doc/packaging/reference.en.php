@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/12/13 23:24:13';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/01/31 16:20:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -367,6 +367,15 @@ then any dependency on "mailer" is considered satisfied when "pine" is
 installed.
 You'll usually also want to name these packages in the "Conflicts" and
 the "Replaces" field.
+</p>
+<p>
+Note that there is no versioning data associated with Provides
+items. They do not inherit from the parent package that contains the
+Provides list nor is there a syntax for specifing an arbitrary version
+in the Provides field itself. Further, a dependency that contains a
+version specification is not satisfied by a package that Provides that
+needed package name. As a result, having many variants all Provides a
+single surrogate package name may not be very useful in many cases.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
