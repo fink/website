@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.12 2004/03/25 09:29:32 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.13 2004/03/27 12:31:08 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -59,7 +59,7 @@ i.e. executables, data files, message catalogs, libraries, include
 files, etc.
 The package file also contains some meta-data for the package.
 Installing a binary package mainly consists of unpacking its contents
-as it is already in an ready-to-use form.
+as it is already in a ready-to-use form.
 Since Fink builds on the dpkg package manager, the binary package
 files are in the dpkg format and have the extension .deb.
 </p>
@@ -351,8 +351,7 @@ and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
 <item><itemt>%%</itemt>
 <itemd>
 <p>
-the percent character (one that will not be expanded according
-according to whatever follows it).  Expansion occurs strictly
+the percent character (one that will not be expanded according to whatever follows it).  Expansion occurs strictly
 left-to-right, so %%n is not anything related to the package name, but
 rather is the string %n.  (Introduced in fink-0.18.0)
 </p>
@@ -540,10 +539,7 @@ For some packages, everything can be accomplished with a main package and a
 -shlibs package; in other cases you also need a third package.  The new
 <code>SplitOff</code> field actually makes this quite easy.
 </p><p>
-When three packages are needed, there are two different ways they could be
-named, depending on whether the libraries or the binaries
-are the most important feature of
-the package, or the binaries are the most important feature.  For option 1, 
+When three packages are needed, there are two different ways they could be named, depending on whether the libraries (option1) or the binaries (option 2) are the most important feature of the package.  For option 1, 
 use the layout:
 </p>
 <itemtable labeld="Contents" labelt="Package">
@@ -756,7 +752,7 @@ a declaration</p>
   &lt;&lt;
 </codeblock>
 <p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
-and <code>-compatibiliary_version</code> 2.1.0 has been installed since
+and <code>-compatibility_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
 amounts to  a promise
 from the maintainer that a library with this name and a compatibility-version

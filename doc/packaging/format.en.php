@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/25 09:29:32';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/27 12:31:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -217,8 +217,7 @@ and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
-the percent character (one that will not be expanded according
-according to whatever follows it).  Expansion occurs strictly
+the percent character (one that will not be expanded according to whatever follows it).  Expansion occurs strictly
 left-to-right, so %%n is not anything related to the package name, but
 rather is the string %n.  (Introduced in fink-0.18.0)
 </p>

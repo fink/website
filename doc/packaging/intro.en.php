@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/25 09:29:32';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/27 12:31:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
 include_once "header.inc";
@@ -36,7 +36,7 @@ i.e. executables, data files, message catalogs, libraries, include
 files, etc.
 The package file also contains some meta-data for the package.
 Installing a binary package mainly consists of unpacking its contents
-as it is already in an ready-to-use form.
+as it is already in a ready-to-use form.
 Since Fink builds on the dpkg package manager, the binary package
 files are in the dpkg format and have the extension .deb.
 </p>
