@@ -28,12 +28,17 @@
 </xsl:template>
 
 <xsl:template match="newsitem">
-<item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+<item channel="http://fink.sf.net/news/">
 
 <xsl:choose>
   <xsl:when test="boolean(headline)">
-    <title><xsl:value-of select="headline" /></title>
     <xsl:variable name="headline-uri"><xsl:value-of select="date" /><xsl:text> </xsl:text><xsl:value-of select="headline" /></xsl:variable>
+    <xsl:attribute name="rdf:about">
+     <xsl:text>http://fink.sf.net/news/#</xsl:text><xsl:call-template name="url-encode">
+      <xsl:with-param name="str" select="$headline-uri" />
+     </xsl:call-template>
+    </xsl:attribute>
+    <title><xsl:value-of select="headline" /></title>
     <link>
      <xsl:text>http://fink.sf.net/news/#</xsl:text><xsl:call-template name="url-encode">
       <xsl:with-param name="str" select="$headline-uri" />
