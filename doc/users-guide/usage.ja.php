@@ -72,16 +72,23 @@ Do you want to continue? [Y/n]</pre>
 
 <p>
 remove コマンドは、 'dpkg --remove' を呼び出してシステムからパッケージを削除します。
-現在はまだ問題が残っていて、 <code>fink</code> ツールが認識している (.info ファイルが存在する) パッケージだけ処理することができ、依存性は dpkg ツールに完全に任せています (たいていこれで問題はありませんが)。
+現在はまだ問題が残っていて、依存性は dpkg ツールに完全に任せています (通常は問題になりませんが)。
 </p>
 <p>
-remove コマンドは実際のパッケージファイルを削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
+remove コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
 ディスク容量が必要であれば、 <code>/sw/fink/dists</code> ツリーから .deb ファイルを取り除いてもかまいません。
 </p>
 <p>エイリアス: disable, deactivate, unuse, delete.</p>
 
-<h2><a name="update-all">6.5 update-all</a></h2>
+<h2><a name="purge">6.5 purge</a></h2>
+
+<p>
+purge コマンドは、システムからパッケージを削除します。
+remove コマンドとの違いは、こちらは設定ファイルも削除します。
+</p>
+
+<h2><a name="update-all">6.6 update-all</a></h2>
 
 <p>
 このコマンドは、全てのインストール済パッケージを最新バージョンに更新します。
@@ -92,7 +99,7 @@ remove コマンドは実際のパッケージファイルを削除するだけ�
 <a href="#options">--use-binary-dist option</a> はここでも使用することができます。
 </p>
 
-<h2><a name="list">6.6 list</a></h2>
+<h2><a name="list">6.7 list</a></h2>
 
 <p>
 このコマンドは、パッケージ一覧を作成し、インストール状況、最新バージョン、短い説明を表示します。
@@ -146,7 +153,7 @@ fink list "gnome*"         - 'gnome' から始まるパッケージのみ表示�
 最後の例のクォーテーションは、シェルが解釈しないように必要です。
 </p>
 
-<h2><a name="apropos">6.7 apropos</a></h2>
+<h2><a name="apropos">6.8 apropos</a></h2>
 
 <p>
 このコマンドはほとんど <code>fink list</code> と同じです。
@@ -158,7 +165,7 @@ fink apropos irc          - 名称か詳細に 'irc' が含まれるパッケー
 fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに限定。
 </pre>
 
-<h2><a name="describe">6.8 describe</a></h2>
+<h2><a name="describe">6.9 describe</a></h2>
 
 <p>
 このコマンドは、指定したパッケージの詳細を表示します。
@@ -168,25 +175,25 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 エイリアス: desc, description, info
 </p>
 
-<h2><a name="fetch">6.9 fetch</a></h2>
+<h2><a name="fetch">6.10 fetch</a></h2>
 
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
 このコマンドは、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。</p>
 
-<h2><a name="fetch-all">6.10 fetch-all</a></h2>
+<h2><a name="fetch-all">6.11 fetch-all</a></h2>
 
 <p>
 <b>全ての</b>パッケージソースファイルをダウンロードします。
 fetch と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
 </p>
 
-<h2><a name="fetch-missing">6.11 fetch-missing</a></h2>
+<h2><a name="fetch-missing">6.12 fetch-missing</a></h2>
 
 <p>
 ローカルに存在しない<b>全ての</b>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
 
-<h2><a name="build">6.12 build</a></h2>
+<h2><a name="build">6.13 build</a></h2>
 
 <p>
 パッケージをビルドしますが、インストールはしません。
@@ -199,7 +206,7 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <a href="#options">--use-binary-dist option</a> はここでも使用することができます。
 </p>
 
-<h2><a name="rebuild">6.13 rebuild</a></h2>
+<h2><a name="rebuild">6.14 rebuild</a></h2>
 
 <p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
 パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
@@ -209,21 +216,21 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <a href="#options">--use-binary-dist option</a> はここでも使用することができます。
 </p>
 
-<h2><a name="reinstall">6.14 reinstall</a></h2>
+<h2><a name="reinstall">6.15 reinstall</a></h2>
 
 <p>
 インストールと同様ですが、インストールされていても <code>dpkg </code>を通してインストールします。
 これは、誤ってパッケージファイルを消したり、設定ファイルを変えてデフォルトに戻したい場合などにも使えます。
 </p>
 
-<h2><a name="configure">6.15 configure</a></h2>
+<h2><a name="configure">6.16 configure</a></h2>
 
 <p>
 Fink を再設定します。
 ミラーサイトの設定やプロキシの設定も行なうことができます。
 </p>
 
-<h2><a name="selfupdate">6.16 selfupdate</a></h2>
+<h2><a name="selfupdate">6.17 selfupdate</a></h2>
 
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
@@ -235,14 +242,14 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <a href="#options">--use-binary-dist option</a> を使用すると、バイナリディストリビューション中の一覧も更新されます。
 </p>
 
-<h2><a name="index">6.17 index</a></h2>
+<h2><a name="index">6.18 index</a></h2>
 
 <p>
 パッケージキャッシュを再構築します。
 通常は <code>fink</code> が更新の必要に応じて自動検出するので、手動で行なう必要はありません。
 </p>
 
-<h2><a name="validate">6.18 validate</a></h2>
+<h2><a name="validate">6.19 validate</a></h2>
 
 <p>
 このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
@@ -252,13 +259,13 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 エイリアス: check
 </p>
 
-<h2><a name="scanpackages">6.19 scanpackages</a></h2>
+<h2><a name="scanpackages">6.20 scanpackages</a></h2>
 
 <p>
 指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
 </p>
 
-<h2><a name="cleanup">6.20 cleanup</a></h2>
+<h2><a name="cleanup">6.21 cleanup</a></h2>
 
 <p>
 新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
@@ -268,7 +275,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <a href="#options">--use-binary-dist option</a> を使用すると，古いバイナリパッケージも削除されます。
 </p>
 
-    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
       
       <p>
 	  注記: 0.21.0 以降の <code>fink</code> で有効。

@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.13 2004/11/05 05:24:42 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.14 2004/11/12 02:37:49 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -1107,14 +1107,21 @@ Do you want to continue? [Y/n]</codeblock>
 <title>remove</title>
 <p>
 remove コマンドは、 'dpkg --remove' を呼び出してシステムからパッケージを削除します。
-現在はまだ問題が残っていて、 <code>fink</code> ツールが認識している (.info ファイルが存在する) パッケージだけ処理することができ、依存性は dpkg ツールに完全に任せています (たいていこれで問題はありませんが)。
+現在はまだ問題が残っていて、依存性は dpkg ツールに完全に任せています (通常は問題になりませんが)。
 </p>
 <p>
-remove コマンドは実際のパッケージファイルを削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
+remove コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
 ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから .deb ファイルを取り除いてもかまいません。
 </p>
 <p>エイリアス: disable, deactivate, unuse, delete.</p>
+</section>
+<section name="purge">
+<title>purge</title>
+<p>
+purge コマンドは、システムからパッケージを削除します。
+remove コマンドとの違いは、こちらは設定ファイルも削除します。
+</p>
 </section>
 <section name="update-all" >
 <title>update-all</title>
