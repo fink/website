@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.40 2004/12/03 00:38:50 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.41 2005/01/24 03:17:59 dmacks Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1481,7 +1481,7 @@ exec metacity &amp; exec gnome-session</codeblock>
         <ul>
           <li>
             <em>Vous faites une installation à partir des binaires :</em>
-<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de :</p>
+<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de:</p>
 <codeblock>fink list -i system-xfree86</codeblock>
 <p>doit faire apparaître l'installation effective des paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>.</p>
 <p>Si la réinstallation du paquet X11User ne suffit pas à résoudre le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
@@ -1490,7 +1490,7 @@ exec metacity &amp; exec gnome-session</codeblock>
 sudo apt-get install fink</codeblock>
 </li>
           <li>
-            <em>Vous faites une installation à partir du source :</em>
+            <em>Vous faites une installation à partir du source:</em>
 <p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <em>obligatoire</em> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode. Il n'est pas installé par défaut. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <filename>Packages</filename> du CD XCode.</p>
 <p>Si le problème persiste, exécutez :</p>
 <codeblock>fink list -i system-xfree86  </codeblock>

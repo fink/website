@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.4 2005/01/18 01:12:22 horsager Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.5 2005/01/24 03:18:00 dmacks Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -2248,11 +2248,12 @@ sort this out.
                             пакет пользователя X11, т.к.
                             приложение инсталлятора иногда не инсталлирует
                             файл. Возможно, вам придется это делать
-                            неоднократно.</p>Выполнение<codeblock>fink list -i
-                        system-xfree86</codeblock>должно показать, что пакеты
+                            неоднократно. Выполнение</p>
+			<codeblock>fink list -i system-xfree86</codeblock>
+			<p>должно показать, что пакеты
                         <code>system-xfree86</code> и
                         <code>system-xfree86-shlibs</code>
-                            инсталлированы.<p>Если реинсталляция пакета пользователя X11
+                            инсталлированы. Если реинсталляция пакета пользователя X11
                             не поможет, см. инструкции по <xref
                                 section="special-x11-debug">устранению особых проблем</xref>
                             ниже.</p>
@@ -2263,7 +2264,8 @@ sort this out.
                         <codeblock>sudo apt-get update sudo apt-get install fink</codeblock>
                     </li>
                     <li>
-                        <em>При инсталляции на основе исходного кода: </em>Если у вас
+                        <em>При инсталляции на основе исходного кода:</em>
+			<p>Если у вас
                         текущая версия<code>fink</code>, то как правило
                         эта ошибка означает, что вам надо (ре)инсталлировать
                         X11SDK, который является <em>обязательным</em>, если вы хотите строить
@@ -2272,8 +2274,8 @@ sort this out.
                         XCode, X11SDK <em>не</em> инсталлируется по умолчанию.
                         Его надо инсталлировать либо при помощи обычного Xcode
                         install, либо щелкнув на X11SDK pkg в папке
-                        <filename>Packages</filename> на XCode
-                            CD.<p>Если проблемы остаются, используйте </p>
+                        <filename>Packages</filename> на XCode CD.</p>
+			<p>Если проблемы остаются, используйте </p>
                         <codeblock>fink list -i system-xfree86 </codeblock>
                         <p>Она должна показать инсталляцию пакетов <code>system-xfree86</code>,
                             <code>system-xfree86-shlibs</code> и
