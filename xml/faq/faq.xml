@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.95 2003/02/28 13:56:38 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.96 2003/03/03 05:42:52 htodd Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -224,8 +224,7 @@ statement</link> for details.
 </faqentry>
 <faqentry name="forked">
 <question>
-<p>What is your relation with
-macosx.forked.net?</p>
+<p>What is your relation with macosx.forked.net?</p>
 </question>
 <answer>
 <p>
@@ -236,6 +235,29 @@ statement</link> for details.
 </p>
 </answer>
 </faqentry>
+<faqentry name="darwinports">
+	<question>
+		<p>What is your relation with Darwinports?</p>
+	</question>
+	<answer>
+		<p>
+			Darwinports and fink are complementary projects. There is some
+			overlap between the two projects, and several people contribute to
+			both the Fink and Opendarwin projects. For example, Benjamin Reed
+			is doing the KDE packages for both. Darwinports/Opendarwin makes
+			use of patches from fink, and we have discussed collaboration
+			on a new depenency engine.
+		</p>
+
+		<p>
+			Opendarwin started from scratch to try a different approach to a
+			packaging system. Read the statement on <link
+				url="http://www.opendarwin.org/projects/darwinports/en/faq.php">Opendarwin.org</link>
+			for details.
+		</p>
+	</answer>
+</faqentry>
+
 </chapter>
 <chapter filename="usage-fink">
 <title>Installing, Using and Maintaining Fink</title>

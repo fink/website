@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/28 13:56:38';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2003/03/03 05:42:52';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -77,8 +77,7 @@ statement</a> for details.
 </p></div>
 </a>
 <a name="forked">
-<div class="question"><p><b>Q2.5: What is your relation with
-macosx.forked.net?</b></p></div>
+<div class="question"><p><b>Q2.5: What is your relation with macosx.forked.net?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 That site redistributes some Fink packages as Installer.app packages,
 unchanged but with their own boilerplate that doesn't mention Fink.
@@ -86,6 +85,22 @@ Read the <a href="http://fink.sourceforge.net/pr/forked.php">public
 statement</a> for details.
 </p></div>
 </a>
+<a name="darwinports">
+	<div class="question"><p><b>Q2.6: What is your relation with Darwinports?</b></p></div>
+	<div class="answer"><p><b>A:</b> 
+			Darwinports and fink are complementary projects. There is some
+			overlap between the two projects, and several people contribute to
+			both the Fink and Opendarwin projects. For example, Benjamin Reed
+			is doing the KDE packages for both. Darwinports/Opendarwin makes
+			use of patches from fink, and we have discussed collaboration
+			on a new depenency engine.
+		</p><p>
+			Opendarwin started from scratch to try a different approach to a
+			packaging system. Read the statement on <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">Opendarwin.org</a>
+			for details.
+		</p></div>
+</a>
+
 <p align="right">
 Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
 

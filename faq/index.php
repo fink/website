@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/28 13:56:38';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2003/03/03 05:42:52';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -38,8 +38,8 @@ Debian project? Are you porting Debian Linux to Mac OS X?</a></li>
 Apple?</a></li>
 <li><a href="relations.php#openosx">2.4 What is your relation with
 OpenOSX.com?</a></li>
-<li><a href="relations.php#forked">2.5 What is your relation with
-macosx.forked.net?</a></li>
+<li><a href="relations.php#forked">2.5 What is your relation with macosx.forked.net?</a></li>
+<li><a href="relations.php#darwinports">2.6 What is your relation with Darwinports?</a></li>
 </ul>
 <li><a href="usage-fink.php"><b>3 Installing, Using and Maintaining Fink</b></a></li>
 <ul>
@@ -134,7 +134,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.95 2003/02/28 13:56:38 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.96 2003/03/03 05:42:52 htodd Exp $</i></p>
 
 
 <?
