@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.57 2003/04/16 22:42:39 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.58 2003/04/17 14:35:43 dmrrsn Exp $</cvsid>
 
 <newsitem>
 	<date>2003-04-16</date>
@@ -19,7 +19,7 @@ Fink already installed, you should immediately run
 <em>
 fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
 </em>
-to restore files which the Virex upgrade has deleted.
+to restore files which the Virex upgrade may have deleted.
 </p>
 
 		</body>

@@ -11,7 +11,7 @@ Fink already installed, you should immediately run
 <b>
 fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
 </b>
-to restore files which the Virex upgrade has deleted.
+to restore files which the Virex upgrade may have deleted.
 </p>
 
 		<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
