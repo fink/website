@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.13 2004/03/07 20:54:08 fingolfin Exp $
+# $Id: Makefile.i18n.common,v 1.14 2004/03/21 22:01:11 dmrrsn Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -39,6 +39,12 @@ INSTALL_HTML = $(patsubst %.xml,%.html,$(BASE_SOURCE))
 endif
 endif
 
+ifdef WANT_TEXT
+ALL_TARGETS += $(patsubst %.xml,%.txt,$(SOURCE))
+endif
+
+
+
 .SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
 .PHONY: all clean force install
 
@@ -69,6 +75,19 @@ force: clean all
 %.html: %.html.tmp
 	$(PROCESS_HTML) <$< >$@
 
+
+# rendering to pure text (monolithic)
+
+#%.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
+#	xmllint --noout --valid $(SOURCE) && \
+#	xsltproc -o $(patsubst %.xml,%.txt.tmp,$(SOURCE)) $(STYLESHEET_TEXT) $(SOURCE)
+#
+%.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
+	xmllint --noout --valid $<
+	xsltproc -o $@ $(STYLESHEET_TEXT) $<
+
+%.txt: %.txt.tmp $(PROCESS_TEXT)
+	$(PROCESS_TEXT) <$< >$@
 
 # install files inside website
 
