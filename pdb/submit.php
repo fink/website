@@ -1,10 +1,48 @@
 <?
 $title = "Package Database - Upload Form";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/14 02:26:48 $';
+$cvs_date = '$Date: 2004/04/14 02:29:45 $';
 
-#include "header.inc";
-include "header.inc.test";
+/* $Id: submit.php,v 1.2 2004/04/14 02:29:45 benh57 Exp $ */
+/* check path info */
+$PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
+if ($uses_pathinfo) {
+  if ($PATH_INFO == "") {
+    $pispec = "-";
+    $title .= "(none)";
+    $pdbroot = "";
+  } elseif (ereg("^/([a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+    $pispec = $r[1];
+    $title .= $pispec;
+    $pdbroot = "../";
+  } elseif (ereg("^/([a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+    $pispec = $r[1];
+    $title .= $pispec;
+    $pdbroot = "../../";
+  } else {
+    print '<p><b>PATH_INFO not in expected format!</b></p>';
+    exit;
+  }
+  $root = "-".$pdbroot;
+}
+
+/* generate page header and navigation */
+$section = "packages";
+
+$fsroot = "../";
+if (substr($root,0,1) == "-") {
+  $root = substr($root.$fsroot,1);
+} else {
+  $root = $fsroot;
+}
+
+/* connect to database */
+include $fsroot."db.inc.php";
+$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
+mysql_select_db($db_name, $dbh) or die (mysql_error());
+
+
+/**** End of header.inc ****/
 
 function param($Name)
          {
