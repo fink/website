@@ -102,7 +102,7 @@ Hester, Jan de Leeuw, Mathias Meyer, and Alexander Strange for providing
 reports. Further reports can
 be sent to fink-devel@lists.sourceforge.net .)
 </p><p><b> Successful packages:</b></p>
-
+<ol>
 <li>gnome-libs-1.4.1.6-1</li>
 <li>sdl-1.2.4-2</li>
 <li>mplayer-0.90pre4-1</li>
@@ -124,9 +124,9 @@ be sent to fink-devel@lists.sourceforge.net .)
 <li>libxslt-1.0.17-2</li>
 <li>automake-1.6.1-1</li>
 <li>lesstif-0.93.18-4</li>
-
+</ol>
 <p><b> Unsuccessful packages:</b></p>
-<li> apt-0.5.4-2 (breaks with undefined symbols such as 
+<ol><li> apt-0.5.4-2 (breaks with undefined symbols such as 
 __ZTI9pkgSystem) </li>
 <li>libxml2-2.4.21-2 (breaks with install_name error)</li>
 <li>bonobo-1.0.20-1(breaks with install_name error)</li>
@@ -138,7 +138,7 @@ __ZTI9pkgSystem) </li>
 <li>gaim-0.57-1 (breaks with install_name error)</li>
 <li>qt3-3.0.4-5</li>
 <li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02051.html">emacs21</a></li>
-
+</ol>
 <p>In general, packages which have loadable modules and use libtool are
 failing with this install_name error at the moment, because libtool passes
 the -install_name flag even along with the -bundle flag (when it is not

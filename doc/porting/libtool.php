@@ -118,7 +118,7 @@ However, you still have to manually fix the ltmain.hs/configure files of
 affected packages in order to get them working.
 </p>
 
-
+<ol>
 <li>
 <b>The flat_namespace bug</b>:
 This problem only occurs if you use libtool on Mac OS X10.1 and later. What happens
@@ -210,7 +210,7 @@ The problems are discussed in these email messages: </li><li>
 <a href="http://mail.gnu.org/pipermail/libtool/2002-April/006268.html">http://mail.gnu.org/pipermail/libtool/2002-April/006268.html</a> </li><li>
 <a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html</a>
 </li>
-
+</ol>
 
 
 <a name="notes"><h2>3.4 Further Notes</h2></a>
