@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.1 2001/01/11 19:13:25 chrisp Exp $ */
+/* $Id: fink.css,v 1.2 2001/06/12 18:21:55 chrisp Exp $ */
 
 body {
   color:black;
@@ -48,8 +48,19 @@ input {
   font-size:10pt;
 }
 
-pre,tt {
+tt {
   color:black;
+  font-family:Courier,"Courier New",monospace;
+  font-size:10pt;
+}
+
+pre {
+  color:black;
+  background-color:rgb(230,230,255);
+  padding:4px;
+  padding-left:8px;
+  margin-left:16px;
+  margin-right:16px;
   font-family:Courier,"Courier New",monospace;
   font-size:10pt;
 }
