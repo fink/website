@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.112 2003/05/31 23:58:39 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.113 2003/06/06 01:04:27 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -853,7 +853,7 @@ startup or not, for applications that use weak references.</p>
 </faqentry>
 <faqentry name="mv-failed" >
 <question>
-<p>What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</p>
+<p>What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</p>
 </question>
 <answer>
 <p>It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
