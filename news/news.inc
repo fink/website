@@ -1,8 +1,10 @@
 <span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
   <p>The Fink team is aware of the shortcomings of the current
-  <b>Upgrade Matrix</b> page.  Please be patient as we construct
+  <b>Upgrade Matrix</b> page, which is inadequate for upgrading
+to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
-  here.
+  here.  In the meantime, some of you may wish to use the <a href="<?php print $root; ?>news/jaguar.php">test version of the Jaguar updater</a> which was
+made available on 2002-09-08.
   </p>
   <span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
   <p>

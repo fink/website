@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.21 2002/12/11 13:55:38 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.22 2002/12/17 20:04:51 dmrrsn Exp $</cvsid>
 
 <newsitem>
   <date>2002-12-11</date>
   <headline>New Upgrade Matrix coming</headline>
   <body>
   <p>The Fink team is aware of the shortcomings of the current
-  <em>Upgrade Matrix</em> page.  Please be patient as we construct
+  <em>Upgrade Matrix</em> page, which is inadequate for upgrading
+to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
-  here.
+  here.  In the meantime, some of you may wish to use the <link
+  url="news/jaguar.php">test version of the Jaguar updater</link> which was
+made available on 2002-09-08.
   </p>
   </body>
 </newsitem>
