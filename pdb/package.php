@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/02/27 09:43:44 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2004/02/28 17:16:31 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -28,13 +28,14 @@ $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
-  $firstrow = $row = mysql_fetch_array($rs);
+  $row = mysql_fetch_array($rs);
   $rmap = array();
   while ($row) {
+    $lastrow = $row;
     $rmap[$row[release]] = $row[version]."-".$row[revision];
     $row = mysql_fetch_array($rs);
   }
-  $row = $firstrow;
+  $row = $lastrow;
 
   it_start2();
   it_item2("Tree", "Stable", "Unstable");
