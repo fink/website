@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.11 2004/10/20 08:13:44 dmacks Exp $-->
+<h1>Fink - Documentation</h1>
+<!--Generated from $Fink: doc.fr.xml,v 1.11 2004/10/20 08:13:44 dmacks Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.

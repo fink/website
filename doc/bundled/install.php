@@ -55,6 +55,7 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.20 2004/07/30 15:53:31 dmrrsn Exp $</i></p>
+</ul>
+<p>Generated from <i>$Fink: install.xml,v 1.20 2004/07/30 15:53:31 dmrrsn Exp $</i></p>
 
 <? include_once "footer.inc"; ?>

@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.9 2004/10/20 08:13:44 dmacks Exp $-->
+<h1>Fink－文档</h1>
+<!--Generated from $Fink: doc.zh.xml,v 1.9 2004/10/20 08:13:44 dmacks Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。

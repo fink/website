@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.14 2004/10/20 08:13:44 dmacks Exp $-->
+<h1>Fink - Documentation</h1>
+<!--Generated from $Fink: doc.ja.xml,v 1.14 2004/10/20 08:13:44 dmacks Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。

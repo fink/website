@@ -7,7 +7,8 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.14 2004/03/05 15:40:26 fingolfin Exp $</i></p><h2><a name="">Setting The Paths</a></h2>
+<h1>Fink Usage</h1>
+<p>Generated from <i>$Fink: usage.xml,v 1.14 2004/03/05 15:40:26 fingolfin Exp $</i></p><h2><a name="">Setting The Paths</a></h2>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable

@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentación</h1><!--Generated from $Fink: doc.es.xml,v 1.8 2004/10/20 08:13:44 dmacks Exp $-->
+<h1>Fink - Documentación</h1>
+<!--Generated from $Fink: doc.es.xml,v 1.8 2004/10/20 08:13:44 dmacks Exp $-->
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
 Algunos de ellos tambien pueden ser útiles para la gente que usa Mac OS X

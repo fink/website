@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Configuration de l'accès à Fink via CVS</h1><!--Generated from $Fink: cvs.fr.xml,v 1.3 2004/03/16 06:43:56 michga Exp $-->
+<h1>Configuration de l'accès à Fink via CVS</h1>
+<!--Generated from $Fink: cvs.fr.xml,v 1.3 2004/03/16 06:43:56 michga Exp $-->
 <p>
 Fink est développé via CVS.
 Cela vous permet de rester à jour entre deux versions et d'avoir toujours les paquets les plus récents.

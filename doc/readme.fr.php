@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink Lisez-moi</h1><!--Generated from $Fink: readme.fr.xml,v 1.4 2004/03/07 07:11:09 michga Exp $-->
+<h1>Fink Lisez-moi</h1>
+<!--Generated from $Fink: readme.fr.xml,v 1.4 2004/03/07 07:11:09 michga Exp $-->
     <p>
 Voici Fink, un système de gestion de paquets qui a pour but d'ouvrir toutes grandes les portes du monde des logiciels Open Source à  Darwin et Mac OS X.
 </p>

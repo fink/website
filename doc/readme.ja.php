@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Fink ReadMe</h1><!--Generated from $Fink: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $-->
+<h1>Fink ReadMe</h1>
+<!--Generated from $Fink: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $-->
 <p>
 Fink は Open Source ソフトウェアを Darwin と Mac OS X　で使えるようにすることを目的としたパッケージ管理システムです。
 </p>

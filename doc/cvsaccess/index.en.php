@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Setting up Fink CVS Access</h1><!--Generated from $Fink: cvs.en.xml,v 1.3 2004/03/12 08:47:57 michga Exp $-->
+<h1>Setting up Fink CVS Access</h1>
+<!--Generated from $Fink: cvs.en.xml,v 1.3 2004/03/12 08:47:57 michga Exp $-->
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always

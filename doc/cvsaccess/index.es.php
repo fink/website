@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>Ajustando el Acceso al CVS de Fink</h1><!--Generated from $Fink: cvs.es.xml,v 1.4 2004/08/30 19:39:26 michga Exp $-->
+<h1>Ajustando el Acceso al CVS de Fink</h1>
+<!--Generated from $Fink: cvs.es.xml,v 1.4 2004/08/30 19:39:26 michga Exp $-->
     <p>
 Fink es desarrollado mediante CVS.
 Esto significa que puedes mantenerte al día entre las liberaciones del Fink y siempre tener lo ultimo.

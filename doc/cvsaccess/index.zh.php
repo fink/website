@@ -7,7 +7,8 @@ $metatags = '';
 
 include_once "header.inc";
 ?>
-<h1>设置 Fink CVS 访问</h1><!--Generated from $Fink: cvs.zh.xml,v 1.1 2004/03/16 04:03:28 jeff_yecn Exp $-->
+<h1>设置 Fink CVS 访问</h1>
+<!--Generated from $Fink: cvs.zh.xml,v 1.1 2004/03/16 04:03:28 jeff_yecn Exp $-->
 <p>
 Fink 被开发为支持 CVS。
 这意味着你可以在两个发布版之间都可以一直保持使用当前最新的版本，总是可以获得最新的功能。
