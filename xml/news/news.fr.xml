@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE news SYSTEM "finknews.dtd">
+<news filename="index" lang="fr">
+<cvsid>$Id: news.fr.xml,v 1.1 2004/03/25 00:55:08 michga Exp $</cvsid>
+
+<newsitem>
+	<date>19/02/2004</date>
+	<headline>Hissez vos couleurs</headline>
+	<body>
+	<p>
+Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. 
+L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
+</p>
+<p>
+Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée.
+Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française.
+En quelle langue êtes-vous prêt à traduire ?
+</p>
+<p>
+Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
+Pour ce faire, allez sur la <link url="lists/index.php">page des listes de diffusion</link>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <extlink url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</extlink>.
+</p>
+</body>
+</newsitem>
+
+
+<newsitem>
+	<date>02/02/2004</date>
+	<headline>La mise à jour de Java 1.4.2 supprime Java SDK</headline> 
+	<body>
+	<p>
+Si vous aviez installé Java 1.4.1 et Java SDK, la mise à jour Java 1.4.2 d'Apple met Java runtime en version 1.4.2, mais <em>supprime</em> Java runtime 1.4.1 et le SDK <em>sans</em> mettre à jour le JDK.  Pour construire des paquets Java dans Fink, vous devez <extlink url="http://connect.apple.com/">aller sur connect.apple.com et télécharger Java 1.4.2 SDK</extlink> (enregistrement gratuit obligatoire).
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>18/01/2004</date>
+	<headline>Mise à jour des binaires 10.3</headline> 
+	<body>
+	<p>
+De nombreux fichiers binaires pour 10.3 ont été mis à jour, ce qui élimine des problèmes avec qt et kde, entre autres. Pour accéder aux nouveaux fichiers, mettez à jour l'index de vos fichiers binaires en exécutant la commande <code>sudo apt-get update</code> .  Ensuite, vous pourrez utiliser apt-get, dselect ou FinkCommander pour installer les fichiers binaires comme d'habitude.
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>10/01/2004</date>
+	<headline>Envie d'installer GNOME 2.4 ?</headline> 
+	<body>
+	<p>
+Grâce à la nouvelle équipe GNOME de Fink et au travail intense de notre nouveau constructeur de paquets Keith Conger et du mainteneur de GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 vient d'être placée dans l'arborescence instable 10.3.
+	</p>
+	<p>
+Vous n'avez qu'à le récupérer ; dédiez, si vous le pouvez, un peu de votre temps libre au test de ces paquets si vous avez déjà configuré Fink pour l'arborescence instable. De nombreux changements ont eu lieu ; il y a donc des chances pour que la mise à jour ou l'installation de la nouvelle version de GNOME posent quelques problèmes. Si c'est le cas, vous pouvez joindre l'équipe GNOME à <extlink url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</extlink>.
+Envoyez-lui aussi un rapport quand tout s'est bien passé. Plus nous recevrons de rapports favorables, plus vite nous pourrons mettre GNOME 2.4 dans l'arborescence stable.
+	</p>
+	<p>
+Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, <extlink
+	url="http://fink.sourceforge.net/lists/index.php">qu'attendez-vous pour vous abonner</extlink> ?
+	Voici un lien vers des 
+	<extlink url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</extlink> détaillées d'installation ou de mise à jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalités.
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>02/01/2004</date>
+	<headline>Les douze coups de minuit ont sonné !</headline>
+	<body>
+	<p>
+	Bonne année à tous de la part de toute l'équipe.
+	</p>
+	<p>
+	L'année passée a été une bonne année pour Fink. Nous avons eu du mal à intégrer les changements introduits par Apple, mais nous avons aussi découvert que nous avions une communauté formidable prête à patienter très longtemps pour nous soutenir.
+	C'est pourquoi nous vous disons &quot;Merci&quot;. Le projet Fink avance principalement grâce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
+	</p>
+	<p>
+	En 2004, la tendance devrait s'accélérer. Il y a quelques petites choses intéressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
+	Nous espérons pouvoir étendre le projet par des conférences développeurs, des rencontres et un CD dans votre magasin préféré.
+	</p>
+	<p>
+	Les grandes ambitions peuvent se révéler catastrophiques, c'est pourquoi nous les réaliserons en douceur, mais nous comptons toujours sur votre soutien cette année. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idées d'amélioration. Prêtez-nous vos ressources et sponsorisez un mirroir ou du matériel. Consacrez un peu de votre temps à améliorer le gestionnaire de paquets ou à ajouter un logiciel en créant un fichier info. Faîtes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communauté aussi agréable. Nous espérons que nous vous ferons franchir, à vous et votre Macintosh, l'année 2004 sans encombres.
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>28/12/2004</date>
+	<headline>Joyeux Noël et bonne année</headline>
+	<body>
+		<p>
+ L'équipe Fink et moi-même vous souhaitons un joyeux Noël et de bonnes vacances. Nous nous réjouissons à l'avance de cette nouvelle année pendant laquelle nous pourrons aider la communauté Macintosh à se développer dans le monde UNIX avec Mac OS X.
+ 		</p>
+		<p>
+ Puissent tous vos voeux se réaliser, que le monde devienne meilleur et que la paix et la compréhension y règnent ne serait-ce que pendant ces quelques jours.
+		</p>
+		<p>
+ Profitez de cette pause et encore meilleurs voeux pour la nouvelle année.
+ Ne nous abandonnez pas, nous comptons sur votre soutien.
+		
+		</p>
+	</body>
+</newsitem>
+
+	<newsitem>
+		<date>30/11/2003</date>
+		<headline>Encore de nouveaux miroirs !</headline>
+	<body>
+		<p>
+			Merci, merci, merci ! Quelle formidable communauté ! Merci de nous offrir toujours plus de sites miroirs. 
+		</p>
+		<p>
+			Matthew Healey, membre du Western <extlink url="http://www.wamug.org.au"> Australian</extlink>
+			Macintosh User Group, et son fournisseur d'accès <extlink url="http://www.extremedsl.com.au">
+				extremedsl</extlink> nous offrent un miroir complet à Perth, en Australie. Il s'agit de notre premier miroir à l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service <extlink url="http://www.mirror.ac.uk">UKMIRROR</extlink> nous a, par ailleurs, accepté, rendant les distributions de Fink disponibles sur 21 serveurs à charge partagée. 
+		</p>
+		<p>
+			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur <extlink url="http://finkmirrors.net">finkmirrors.net</extlink> et entrez contact avec nous. 
+		</p>
+		</body>
+	</newsitem>
+
+	<newsitem>
+		<date>24/11/2003</date>
+		<headline>Un autre miroir.... Mais est-ce bien suffisant ?</headline>
+	<body>
+		<p>
+			Nous souhaitons la bienvenue à notre nouveau miroir situé en Norvège, sponsorisé par Havar Valeur, mais nous faisons encore appel à votre générosité. Pour améliorer le service qui vous est destiné, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
+		</p>
+		<p>
+			Il suffit de posséder un lien à 10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante à partager avec Fink. Les instructions précises pour la mise en place de rsync sont disponibles <extlink url="http://finkmirrors.net/rsync.html">ici</extlink>. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle Zélande, en Europe méridionale et en Europe centrale : nous n'en avons encore aucun dans ces régions. Si vous vous sentez d'humeur particulièrement généreuse et désirez faire davantage, allez sur <extlink url="http://finkmirrors.net">finkmirrors.net</extlink> pour découvrir les options qui s'offrent à vous. 
+		</p>
+		<p>
+			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
+		</p>
+		</body>
+	</newsitem>
+	
+	<newsitem>
+		<date>17/11/2003</date>
+		<headline>Fink 0.6.2 est disponible</headline>
+	<body>
+		<p>
+			Les binaires et sources de la dernière version de Fink, numérotée 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinée à corriger deux bogues de la version précédente : celui de la suppression utilisateur / dselect, ainsi qu'un problème d'autorisations attribuées aux fichiers. Le bogue dselect a été résolu en mettant à jour les paquets fink, dpkg et apt. Après mise à jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problème. Cependant, si vous avez utilisé dselect sous une version  au moins égale à la version 0.6.0, vérifiez l'intégrité du fichier <code>/sw/etc/apt/sources.list</code>. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par <link url="files/sources.list">le fichier sources.list par défaut</link>. 
+		</p>
+		<p>
+			Les utilisateurs qui ont installé des fichiers binaires à partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent à l'utilisateur UID 20011 et non à l'utilisateur root. Pour corriger ce problème, lancez la commande :
+		</p>
+<codeblock>
+sudo find /sw/ -user 2011 -exec chown root:admin {} \;
+</codeblock>
+		<p>
+			Cette version, comme la précédente, a été créée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement, à quelques exceptions* près, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3. 
+		</p>
+		<p>
+			*Quelques exceptions : emacs, qt. 
+		</p>
+		</body>
+	</newsitem>
+	
+	<newsitem>
+		<date>04/11/2003</date>
+		<headline>Risque de suppression d'utilisateur / Problèmes avec Dselect</headline>
+	<body>
+		<p>
+			<em>En bref : N'UTILISEZ PAS DSELECT</em>, et si vous avez eu le malheur de le faire, vérifiez, dès maintenant, le contenu de votre fichier /sw/etc/apt/sources.list.
+		</p>
+		<p>
+			Les utilisateurs qui ont fait un bootstrap ou installé Fink 0.5.3 ou Fink 0.6.0 sous Mac OS X 10.3 pourraient rencontrer un problème majeur : tous les utilisateurs pourraient être effacés de la base netinfo, rendant l'ouverture de session impossible. Nous pensons que ce problème ne survient que lors de l'utilisation de dselect.
+		</p>
+		<p>
+			Si vous utilisez Mac OS X 10.3, procédez à l'installation de la toute dernière version de Fink pour éviter une telle déconvenue. Pour vous assurer que vous n'avez pas de problème de mise à jour rampant, vérifiez le contenu du fichier <code>/sw/etc/apt/sources.list</code>. Vous devrez le modifier s'il contient des lignes commençant par <code>deb</code> et pointant vers "release" ou "current" sans numéro de version spécifié. En d'autres termes, si votre fichier <code>sources.list</code> contient des lignes semblables aux lignes suivantes :
+		</p>
+<codeblock>
+deb http://us.dl.sourceforge.net/fink/direct_download release main 
+deb http://us.dl.sourceforge.net/fink/direct_download current main
+</codeblock>
+		<p>
+			vous devrez les modifier comme suit :
+		</p>
+<codeblock>
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main 
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main
+</codeblock>
+		<p>
+			Nous travaillons à la mise à jour du référentiel pour éviter la diffusion de code incorrect à la suite d'une mise à jour. Nous sommes en train de corriger le bogue de dselect mais, en attendant, vérifiez le contenu du fichier <code>sources.list</code>.
+		</p>
+		<p>
+			D'autres utilisateurs ont eu des problèmes avec dselect ; celui-ci  prévient de l'absence d'un paquet "darwin". Si vous lancez dselect sous Mac OS X 10.3 et si vous <em>NE VOYEZ PAS</em> un tel avertissement, alors votre fichier <code>sources.list</code> est probablement corrompu et doit être réparé comme expliqué plus haut. 
+		</p>
+		</body>
+	</newsitem>
+	
+	<newsitem>
+		<date>01/11/2003</date>
+		<headline>Fink 0.6.1 est disponible</headline>
+	<body>
+		<p>
+			La dernière version de Fink, numérotée 0.6.1, est maintenant disponible sous forme de sources et de binaires. Cette version a été réalisée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3.
+		</p>
+		<p>
+			Pour accéder aux nouveaux binaires, utiliser apt-get, dselect, ou le mode binaire de FinkCommander. A moins de vouloir aider l'équipe de Fink à tester des paquets compilés spécialement pour Mac OS X 10.3, n'utilisez pas l'outil <code>fink</code> pour réaliser des installations pendant les prochaines semaines. 
+		</p>
+		<p>
+			Pour mettre à jour une installation binaire, la méthode la plus simple est de lancer "sudo apt-get update". Vous trouverez de plus amples informations sur la mise à jour de Fink sous Mac OS X 10.3, ainsi que sur les problèmes qu'elle soulève sur la <link url="download/10.3-upgrade.php">page spéciale de mise à jour Mac OS X 10.3.</link>
+		</p>
+		<p>
+			Avant d'utiliser la dernière version de l'outil en ligne de commande <code>fink</code> sous Mac OS X 10.2, vérifiez que vous avez bien installé le paquet August2003gccUpdater, disponible sur connect.apple.com après enregistrement gratuit. 
+		</p>
+		</body>
+	</newsitem>
+
+	<newsitem>
+		<date>31/10/2003</date>
+		<headline>Joyeuses fêtes d'Halloween et bienvenue aux nouveaux miroirs</headline>
+	<body>
+		<p>
+			Nous souhaitons à tous de joyeuses fêtes d'Halloween. 
+		</p>
+		<p>
+			Et bienvenue dans la famille Fink aux nouveaux miroirs. Basé à Rijeka, en Croatie, un nouveau miroir intégral nous a rejoint. Il a été sponsorisé par le groupe utilisateur Apple <extlink url="http://mac.dir.hr/">Jabucnjak</extlink>. Il s'agit de notre premier miroir en Europe, et gageons qu'il ne sera pas le dernier. 
+		</p>
+		<p>
+			Dave Schroeder de l'<extlink url="http://mirror.services.wisc.edu/">Université du Wisconsin</extlink> à Madison sponsorise un serveur maître dédié sur une ligne à 100Mbit. A. J. Wright et <extlink url="http://sunsite.utk.edu/">SunSITE@UTK</extlink> nous aident à mettre en place un autre serveur intégral aux États-Unis. 
+		</p>
+		<p>
+			Ce qui élève le nombre total de miroirs intégraux à 4 et le nombre de miroirs rsync à 5. Nous sommes heureux d'avoir une communauté si fantastique avec nous, mais je sais que nous ne sommes pas au bout du compte. Je ne cesserai de vous harceler jusqu'à ce que Fink possède au moins un miroir dans chaque état des États-Unis. Épaulé par une communauté d'exception, je ne suis pas trop inquiet. Je pense pouvoir atteindre très bientôt cet objectif. 
+		</p>
+		<p>
+			Toc, toc, toc ! Comme les enfants le jour d'Halloween, nous frappons à votre porte et vous réclamons ... des miroirs. À votre bon coeur, administrateurs de réseaux, remplissez notre corbeille. Vous trouverez des informations sur la création d'un miroir sur le <extlink url="http://finkmirrors.net">site officiel des miroirs</extlink>. 
+		</p>
+		</body>
+	</newsitem>
+	
+	<newsitem>
+		<date>25/10/2003</date>
+		<headline>Viens voir, un logo pour Fink</headline>
+	<body>
+		<p>
+			Comme vous l'avez certainement remarqué, Fink possède un logo, choisi à la suite du <link url="logo.php">concours de logo</link> qui s'est tenu au début de cette année. Ce nouveau logo officiel est affiché depuis le 24 octobre. Ceux qui veulent connaître les raisons de son choix et le nom du vainqueur du concours peuvent se reporter à la rubrique <link url="pr/index.php">relation-presse</link>.
+			</p>
+		<p>
+			L'explication est accompagnée d'une reproduction du logo à plus grande échelle, ce qui permet d'en apprécier les détails. Notre nouveau logo nous plaît et nous espérons qu'il vous plaira aussi. 
+		</p>
+		<p>
+			IMPORTANT: Nous ne possédons pas d'accord de licence en bonne et due forme pour le nouveau logo, nous sommes donc dans l'incapacité d'accorder la permission de le distribuer. Pour l'instant, il ne peut figurer que sur les pages du site internet de Fink. Merci de votre compréhension. 
+		</p>
+		</body>
+	</newsitem>
+	
+	<newsitem>
+		<date>24/10/2003</date>
+		<headline>Mise à jour gcc 3.3 et/ou Mac OS X 10.3</headline>
+	<body>
+		<p>
+			Fink peut maintenant être mis à jour pour profiter du compilateur gcc 3.3, ou pour fonctionner sous Mac OS X 10.3, si cette dernière version est installée. Les paquets binaires correspondant à ces mises à jour ne sont, cependant, pas encore disponibles. Si vous faites un usage intensif des paquets binaires, il est peut-être préférable d'attendre quelques jours avant de procéder à la mise à jour. 
+		</p>
+		<p>
+			La mise à jour des Developer Tools d'Apple d'août 2003 devra impérativement être appliquée AVANT de procéder à la mise à jour de Fink, si la dernière mise à jour des Developer Tools installée sur votre machine est datée de juin 2003. Sous Mac OS X 10.3, n'oubliez pas d'installer XCode à partir du CD XCode avant de procéder à la mise à jour de Fink. 
+		</p>
+		<p>
+			Pour mettre à jour Fink, il vous suffit de lancer la commande "fink selfupdate". La dernière version du gestionnaire de paquets fink détecte automatiquement les versions de Mac OS X et de gcc installées et se comporte en conséquence. 
+		</p>
+		<p>
+			Pour faire une installation complète de Fink sous Mac OS X 10.3, nous vous recommandons de <extlink url="http://fink.sourceforge.net/download/srcdist.php">faire un bootstrap à partir des sources</extlink>, en utilisant l'archive fink-full-0.6.0.tar.gz disponible sur <extlink url="http://sourceforge.net/project/showfiles.php?group_id=17203">la page des téléchargements de Fink</extlink> sur sourceforge. XCode doit être installé pour ce faire. 
+		</p>
+		<p>
+			Notez qu'après installation de la version 0.15.0 de Fink, ou d'une version ultérieure, il n'est plus nécessaire  d'installer le paquet system-xfree86. Fink peut déterminer automatiquement la version de system-xfree86 à utiliser, si vous n'avez encore aucun paquet X11 de fink installé. Si vous avez installé antérieurement un paquet system-xfree86, lancez la commande suivante : 
+		</p>
+<codeblock>
+sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \ 
+system-xfree86-43; fink selfupdate; fink index
+</codeblock>
+		<p>
+			L'équipe de Fink travaille sur l'adaptation des paquets à Mac OS X 10.3, mais la plupart d'entre eux fonctionnent déjà sur le nouveau système.
+		</p>
+		</body>
+	</newsitem>
+	
+<newsitem>
+	<date>2003-10-23</date>
+	<headline>Say Hello to Mirror Numero Uno</headline>
+		<body>
+	<p>You are too late. Rus Foster from <extlink url="http://www.jvds.com">JVDS</extlink>
+	beat you all to it. He is the first one to provide us with resources 
+	for a Fink rsync mirror.
+	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
+	</p>
+	<p>For those of you who are still waiting, join in. The more mirrors we have
+	the faster you can rsync your info files. As per usual, updated and current
+	information on the mirror structure can be found on <extlink url="http://finkmirrors.net"> Finkmirrors.net </extlink>
+	</p>
+		</body>
+</newsitem>
+<newsitem>
+	<date>2003-10-22</date>
+	<headline>Mirror, mirror on the wall...</headline>
+		<body>
+	<p>..who will mirror Fink above all? There is a new player on the turf
+	and it belongs to the Fink team. <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	</p>
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink>. 
+</p>
+<p>
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect please try again later. I am very sorry for this inconvenience. Thank you for your understanding.
+</p>
+</body>
+</newsitem>
+
+<newsitem>
+	<date>2003-10-12</date>
+	<headline>New update method available</headline>
+		<body>
+<p>The latest version of the fink package manager offers a new update
+method, <code>fink selfupdate-rsync</code>, as an alternative to the
+CVS updates which have been so problematic in the past few months.
+If you have difficulty updating to the new version, please follow
+<extlink url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</extlink>.
+</p>
+<p>In addition, this version of the fink package manager is compatible
+with last summer's Developer Tools updates.  After installing both the new
+package manager and the Developer Tools update, 
+fink will ask you to reset your gcc version whenever
+that is necessary.</p>
+	</body>
+</newsitem>
+
+<newsitem>
+	<date>2003-09-02</date>
+	<headline>Logo contest ends</headline>
+		<body>
+<p>The Logo contest held by Fink, announced <extlink url="http://fink.sourceforge.net/logo.php">here</extlink>,
+ended yesterday. With over 80 different proposals from countries all over the world we 
+consider the contest a big success.  
+In the next couple of days all the submitted entries will be put on-line in a publicly accessible gallery and more details on the participants shall be published. For those who are 
+curious and cannot wait may have a look at an incomplete <extlink url="http://nour.net/logo/incomplete.html">preview</extlink>.</p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <extlink url="http://www.macwelt.de">MacWelt</extlink> for their continued support.
+</p>
+	</body>
+</newsitem>
+
+<newsitem>
+        <date>2003-08-18</date>
+        <headline>Source files from ftp.gnu.org</headline>
+               <body>
+<p>As announced in <extlink
+url="http://www.cert.org/advisories/CA-2003-21.html">this CERT 
+advisory</extlink>, it has recently been discovered that
+the ftp servers for GNU software were compromised back in March, 
+although it is not believed that any of the source code housed there
+was affected.
+</p><p>
+Fink relies on MD5 checksums when downloading software, and we have had
+no reports of incorrect checksums in Fink packages.  The Free Software
+Foundation is in the process of verifying the integrity of all of the
+source code distributed from that ftp site.  As of this writing, the source
+code for the following Fink packages have not yet been verified:
+<code>autoconf2.54</code>,
+<code>emacs21</code>,
+<code>gprolog</code>,
+<code>groff</code>,
+<code>guile16</code>,
+<code>help2man</code>,
+<code>jwhois</code>,
+<code>libtool14</code>,
+<code>libosip1</code>,
+<code>sed</code>,
+<code>slib</code>.
+It may be difficult to install those packages at present.
+</p>
+                </body>
+</newsitem>
+
+
+<newsitem>
+        <date>2003-06-26</date>
+        <headline>Developer Tools Update.</headline>
+               <body>
+<p><em>Quick Summary: DO NOT INSTALL THIS UPDATE.</em></p>
+               <p>
+Apple has released a patch to the December 2002 
+Developer Tools which includes gcc 3.3,
+their new compiler.
+</p><p>
+Fink does not yet support compiling with gcc 3.3.  In addition, it is important
+not to "mix and match" between compilers:  all C++ code in fink packages
+needs to be compiled
+with the same compiler.
+</p><p>
+For this reason, the Fink team recommends that if you update your
+Developer Tools with the new patch, you should be careful to run
+<code>sudo gcc_select 3</code>
+prior to any "fink build" or "fink install" commands.
+</p>
+<p><em>Update 30 June 2003:</em> A 
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
+has now been detected</extlink> with
+the new assembler program which the update installs, which may prevent
+certain Fink packages from being compiled at all if you install this
+update.  
+</p>
+<p><em>Generally, Fortran programs will break if you install the update;
+the breakage does not stop by simply switching back to gcc 3.1.</em>
+The Fink team is working on a workaround for this problem, but until it
+is ready, if you need Fortran-related programs you should not install
+the update.</p>
+
+                </body>
+</newsitem>
+
+
+<newsitem>
+        <date>2003-06-20</date>
+        <headline>Darwin packaging groups to coordinate efforts.</headline>
+               <body>
+               <p>
+The <extlink url="http://fink.sourceforge.net">Fink</extlink>, 
+<extlink url="http://www.gentoo.org">Gentoo</extlink>, 
+and 
+<extlink url="http://opendarwin.org/projects/darwinports/">DarwinPorts</extlink> 
+projects are pleased to announce the formation of  a cooperative development 
+alliance forged to facilitate delivery of freely available software to 
+Mac OS X.  Under this new alliance, the projects will share information and 
+coordinate efforts for porting software to 
+Apple's <extlink url="http://www.apple.com/macosx">Mac OS X</extlink> 
+and <extlink url="http://www.apple.com/darwin">Darwin</extlink> operating 
+systems.  Members of the alliance will share information using 
+the <extlink url="http://www.metapkg.org">www.metapkg.org</extlink> Web 
+site,  which  will provide a home for this cooperative effort. 
+</p>
+                </body>
+</newsitem>
+
+
+<newsitem>
+        <date>2003-06-16</date>
+        <headline>Fink logo contest begins.</headline>
+               <body>
+               <p>Fink and 
+<extlink url="http://www.macwelt.de/">MacWelt</extlink> have managed to organize a logo contest.
+For the next six weeks everyone is invited to submit their logo creations. 
+Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
+The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
+ <extlink url="http://fink.sourceforge.net/logo.php">here</extlink>. 
+                </p>
+<p>
+Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+</p>
+                </body>
+</newsitem>
+
+
+
+<newsitem>
+	<date>2003-05-05</date>
+	<headline>KDE 3.1.1 Binaries Available</headline>
+	       <body>
+	       <p>KDE 3.1.1 binaries are now available.  Since they
+have been released after 0.5.2 came out, you will need to update
+your package descriptions by running <code>sudo apt-get update</code>
+(or equivalent) before they will be available for installation.
+For pointers to the changes and security fixes in this release,
+see <extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
+announcement</extlink>.
+</p>
+
+		</body>
+</newsitem>
+<newsitem>
+	<date>2003-04-16</date>
+	<headline>Virex problem resolved</headline>
+	       <body>
+	       <p>McAfee has released Virex 7.2.1, which no longer
+overwrites the main Fink directory <code>/sw</code>.  Fink users should
+continue to avoid Virex 7.2.
+</p><p>Early reports indicate that upgrading Virex from 7.2 to 7.2.1
+still leaves some problems however.  If you upgrade Virex with Fink not
+installed, and subsequently
+wish to install Fink, you will need to delete the <code>/sw</code>
+directory by hand before installing.  And if you upgrade Virex with
+Fink already installed, you should immediately run
+<em>
+fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
+</em>
+to restore files which the Virex upgrade may have deleted.
+</p>
+
+		</body>
+</newsitem>
+
+<newsitem>
+	<date>2003-04-14</date>
+	<headline>Fink 0.5.2 released</headline>
+	       <body>
+	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <extlink url="http://fink.sourceforge.net/download.php">download</extlink> page.
+		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
+		The full announcement can be read on the <extlink url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</extlink> mailing list.
+		</p>
+<p>(If you are having trouble upgrading a source installation, consult
+<extlink url="http://fink.sourceforge.net/download/fix-upgrade.php">these
+special instructions</extlink>.)</p>
+
+		</body>
+</newsitem>
+
+<newsitem>
+	<date>2003-04-09</date>
+	<headline>Interview on OSNews.com</headline>
+	<body>
+	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring a
+	<extlink url="http://osnews.com/story.php?news_id=3236">mini-interview</extlink> with
+	one of our project leaders, Max Horn. It contains some rather unusual questions,
+	so even if you know Fink fairly well, you might find it informative.
+</p></body></newsitem>
+<newsitem>
+	<date>2003-03-29</date>
+	<headline>KDE 3.1.1 Final In Unstable</headline>
+	<body>
+	<p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</extlink>.
+	Improvements over 3.1 final include many upstream bugfixes,
+	build improvements, koffice bugfixes, kmail crash fixes,
+	and other miscellaneous updates.  Binary packages will not
+	be available in time for the next binary distribution, but
+	will be released as an update shortly thereafter.
+</p></body></newsitem>
+<newsitem>
+	<date>2003-03-18</date>
+	<headline>KDE 3.1 Final In Stable</headline>
+	<body>
+	<p>KDE 3.1 is now in Fink stable.  The full announcement can be
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</extlink>.
+	Improvements over 3.1 beta1 include an updated audio driver, 
+	faster startup times, cleaned up fink package info, support
+	for Apple X11's window manager, and many bugfixes.  Binary
+	packages will be available in the next binary distribution
+	release.
+</p></body></newsitem>
+<newsitem>
+	<date>2003-03-17</date>
+	<headline>Apple X11 Beta 3 Released</headline>
+	<body>
+	<p><extlink url="http://www.apple.com/macosx/x11/download/">A new
+version of Apple's X11 for Mac OS X is available</extlink>.  It fixes a number
+of bugs including a few that can cause problems with building Fink packages.
+It is recommended that all Fink users who are using Apple X11 upgrade.
+A new version of the system-xfree86 package has been released to unstable
+that takes the new Apple X11 into account.  It should be appearing in stable
+shortly.
+</p></body></newsitem>
+<newsitem>
+        <date>2003-02-14</date>
+        <headline>New version of FinkCommander</headline>
+        <body>
+        <p><extlink
+ url="http://finkcommander.sourceforge.net/">FinkCommander</extlink>,
+ a separate project which provides a GUI for Fink,
+has released version 0.5.0, their first Jaguar-only version.  The new
+version includes a package browser which allows you to view the files 
+that Fink has installed for a particular package, as well as <extlink 
+url="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many 
+other improvements.</extlink>
+</p></body></newsitem>
+<newsitem>
+        <date>2003-02-07</date>
+        <headline>DO NOT INSTALL VIREX 7.2</headline>
+        <body>
+        <p>
+        The Virex 7.2 package, currently being distributed free to all .Mac 
+members, has a serious conflict with Fink.  <em>Fink users should not install 
+Virex 7.2 under any circumstances.</em>
+  Installing it after Fink is installed
+will damage your Fink installation; installing it prior to Fink will make
+it impossible to install Fink without damaging Virex.
+</p><p>
+This bug has been <extlink 
+url="http://forums.mcafeehelp.com/viewtopic.php?t=6318&amp;sid=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
+to Virex's manufacturer.</extlink>  We will keep the
+Fink community informed about the situation as it develops.
+</p></body></newsitem>
+<newsitem>
+	<date>2003-01-26</date>
+	<headline>Apple X11 Library Warning</headline>
+	<body>
+	<p>
+	While Apple's X11 works just fine with existing binaries, it
+has a bug in the install name of the libraries that can cause some
+software to build incorrectly, and will break forward-compatibility
+with future X11 releases.
+</p>
+<p>
+	Ben Hines has created a script (available <extlink url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</extlink>) that you can use
+that will fix the install_name entries in Apple's X11 libraries,
+but it will not repair software you have already built against the
+broken libraries.
+</p>
+<p><em>Update 11 February 2003:</em> This script is not needed with 
+version 0.2 of Apple's X11.app which was released yesterday.
+</p>
+</body>
+</newsitem>
+<newsitem>
+	<date>2003-01-21</date>
+	<headline>Gnome, libpng, and the unstable tree</headline>
+	<body>
+	<p>
+        A problem was uncovered today concerning the versions of imlib,
+ libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
+ work addressing this problem.  As a workaround, users can downgrade
+their imlib package to the stable version, "<code>fink install
+ imlib-1.9.10-9</code>", until the problem is fixed.
+</p><p>
+   Many Fink users may be using Fink's unstable tree without being
+fully aware of what this entails.  For a few months in the fall,
+enabling the unstable tree was the only way to gain access to
+ 10.2-compatible versions of Fink packages.  
+<em>That is no longer the case.</em>
+Fink users who do not wish to help the Fink team with testing should
+disable their unstable tree.  To do this, edit the file
+<code>/sw/etc/fink.conf</code> and remove the items
+ <code>unstable/main</code> and <code>unstable/crypto</code> from the
+ <code>Trees</code> line.
+	</p>
+<p>The Fink team appreciates those users who are willing to stick with
+the unstable tree, even when there are problems like today's, and provide
+the team with prompt feedback.  This is a community effort and we
+appreciate your participation.
+</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>2003-01-17</date>
+	<headline>Anonymous CVS issues resolved</headline>
+	<body>
+	<p>
+	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <extlink url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</extlink> page.
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>2003-01-07</date>
+	<headline>Fink Interaction with Apple's X11 Public Beta</headline>
+	<body>
+	<p>
+	Fink works just fine with the <extlink url="http://www.apple.com/macosx/x11/">public beta X11 release</extlink>
+	with some caveats.  Please read <link url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>2003-01-07</date>
+	<headline>RSS Feeds available</headline>
+	<body>
+	<p>
+	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
+
+<link url="news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+</p>
+<p><link url="news/fink-unstable.rdf">fink-unstable.rdf</link> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
+</p>
+<p><link url="news/news.rdf">news.rdf</link> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
+</p>
+</body>
+</newsitem>
+<newsitem>
+  <date>2002-12-22</date>
+  <headline>New Upgrade Matrix</headline>
+  <body>
+  <p>A new <link url="download/upgrade.php">Upgrade Matrix</link> is
+  now available, for use in upgrading earlier versions of Fink to the
+  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
+  under 10.1 will be brought to Fink version 0.4.1a, while users
+  upgrading under 10.2 will be brought to Fink version 0.5.0a.
+  </p>
+  </body>
+</newsitem>
+<newsitem>  
+  <date>2002-12-11</date>
+  <headline>New Upgrade Matrix coming</headline>
+  <body>
+  <p>The Fink team is aware of the shortcomings of the current
+  <em>Upgrade Matrix</em> page, which is inadequate for upgrading
+to Fink 0.5.0a.  Please be patient as we construct
+  a new version of that page, whose existence will be announced
+  here.  In the meantime, some of you may wish to use the <link
+  url="news/jaguar.php">test version of the Jaguar updater</link> which was
+made available on 2002-09-08.
+  </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-12-09</date>
+  <headline>Fink 0.5.0a Released</headline>
+  <body>
+  <p>
+    Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
+    release, and replaces 0.5.0 which was never officially released.) This
+    release includes over 700 
+    binary packages for OS X 10.2 as well as over 1800 source packages of
+    all kinds. 
+  </p>
+  <p>
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+  </p>
+  <p>
+  This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
+  </p>
+  </body>
+  </newsitem>
+  
+<newsitem>
+  <date>2002-11-11</date>
+  <headline>Update XFree86 for use with OS X 10.2.2</headline>
+  <body>
+  <p>
+Users should update their XFree86 installations to version 4.2.1.1
+for use with OS X 10.2.2.  If you are using system-xfree86, you
+can get the new version from the <link
+url="https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
+project</link>.  If you are using Fink's
+xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
+xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
+the 10.2/unstable tree; to gain access to them, you may need to run 
+"fink selfupdate-cvs" and/or enable the unstable tree
+  </p>
+  </body>
+  </newsitem>
+
+<newsitem>
+  <date>2002-10-30</date>
+  <headline>Don't reuse binary installer</headline>
+  <body>
+  <p>
+  Users are cautioned to use the binary installer for Fink 0.4.1 <em>only
+once</em> on a given machine.  Due to an apparent bug in Apple's
+Installer.app program, attempting a second installation on the same
+machine can result in permissions being altered in the machine's root
+directory, in some cases leaving the machine in a non-bootable state.
+</p><p> If Installer.app presents you with an "Upgrade" button rather
+than an "Install" button when installing Fink 0.4.1, <em>do not proceed
+any further!</em> </p>
+<p>A new version of the binary installer for Fink 0.4.1 became available
+on November 5.  The new version avoids
+the problem of the machine not booting, but even with the new version,
+users are advised to only "Install",
+not "Upgrade."  (You can recognize the new version by its filesize of
+12582912 bytes, while the old version had a filesize of 10541112 bytes.)
+</p></body></newsitem>
+
+<newsitem>
+  <date>2002-09-28</date>
+  <headline>Fink 0.4.1 released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+    </p>
+    <p>
+    This is the <em>last release for Mac OS X 10.1</em>. Future versions of Fink will <em>not</em> officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
+    </p>
+    <p>
+    At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+<date>2002-09-27</date>
+<headline>Possible conflicts with anti-virus software</headline>
+<body>
+<p> A number of recent reports on the 
+<link
+url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</link> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p></body></newsitem>
+
+<newsitem>
+	<date>2002-09-08</date>
+	<headline>Test version of Jaguar updater available</headline>
+	<body>
+		<p>
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <link url="news/jaguar.php">step-by-step instructions for updating</link>. We also have separate <link url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</link>. 
+		</p>
+		<p>
+			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
+		</p>
+	</body>
+</newsitem>
+
+<newsitem>
+  <date>2002-08-20</date>
+  <headline>Mac OS X 10.2 / Jaguar</headline>
+  <body>
+    <p>
+      During the last few weeks, we got a lot of emails asking whether Fink will work Mac OS X 10.2.
+    </p>
+    <p>
+      The answer is: Yes, we will support 10.2. However, due to some
+      major changes in this new OS version, we had to make a lot of adjustments both
+      to the Fink tool itself and to many packages. The current binary distribution,
+      0.4.0a, will only work partially on 10.2. We are working on an upgrade guide,
+      as well as a new Fink release, to support 10.2.
+    </p>
+	<p>
+	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
+	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
+	 Some packages need special changes to build on 10.2. Adding "unstable/main" to your
+	 list of trees in /sw/etc/fink.conf (see also the <link url="faq/usage-fink.php#unstable">FAQ</link>)
+	 will give you access to the latest versions of packages, many of which include important
+	 fixes for 10.2.
+	</p>
+    <p>
+     As of now, please do not email us asking about 10.2 support. If you can't wait,
+     consult the <link url="lists/index.php">mailing list archives</link> instead.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-08-06</date>
+  <headline>Fink package manager 0.10.0 released</headline>
+  <body>
+    <p>
+      Yesterday version 0.10.0 of the Fink package manager was released to the unstable tree, along with version 1.6 of the base-files package. All Fink users which are using the unstable tree are recommended to update to this version. The easiest way to do so usually is to run 'fink selfupdate-cvs' which will automatically take care of updating these essential packages.
+    </p>
+    <p>
+      Please report any problems you encounter with this version via our bug tracker.
+    </p>
+    <p>
+      An overview of what changed since version 0.9.12 can be found <link url="http://sourceforge.net/project/shownotes.php?release_id=103599">here.</link>
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-07-17</date>
+  <headline>Binary distribution moves</headline>
+  <body>
+    <p>
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <link url="news/bindist_move.php">read more here.</link>.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-05-29</date>
+  <headline>KDE support</headline>
+  <body>
+    <p>
+      Fink <link url="news/kde.php">announces support</link> for <extlink url="http://www.kde.org">KDE</extlink>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <link url="news/kde.php">KDE Support In Fink</link> announcement. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-05-03</date>
+  <headline>Bug in passwd package</headline>
+  <body>
+    <p>
+      All Fink users are urged to update their <em> passwd </em> package to version 20020329 or newer. Older versions of the <em> passwd </em> package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering <em> dpkg -s passwd</em>. If your version is outdated, you can update to the current one in two ways: 
+    </p>
+    <ul>
+      <li>
+        Via the binary distribution. First make sure you have the latest list of packages available: <em> sudo apt-get update</em>. Then you can perform the actual update: <em> sudo apt-get install passwd</em>. 
+      </li>
+      <li>
+        Via the source distribution. First make sure you have the latest set of package descriptions: <em> fink selfupdate-cvs</em>. Then, update the passwd package: <em> fink update passwd</em> 
+      </li>
+    </ul>
+    <p>
+      See <link url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</link> for more information about the passwd package. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-04-18</date>
+  <headline>Fink 0.4.0 released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-16</date>
+  <headline>Fink 0.3.2a is released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-09</date>
+  <headline>Fink 0.3.2 is released</headline>
+  <body>
+    <p>
+      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2002-01-08</date>
+  <headline>Binary distribution lost</headline>
+  <body>
+    <p>
+      Due to a faulty script, the whole fink website, including our binary distro, has been wiped! This means you can't use the binary distro right now. I am working as quick as I can on uploading the new Fink 0.3.2 binary distro. In addition, the package database is not working for now. Please bear with us. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-12-16</date>
+  <headline>Yes, we are alive!</headline>
+  <body>
+    <p>
+      Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
+    </p>
+    <p>
+      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <link url="doc/cvsaccess/index.php">CVS</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-11-04</date>
+  <headline>Fink 0.3.1 is released</headline>
+  <body>
+    <p>
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the recently updated <link url="doc/users-guide/index.php">User's Guide</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-11-02</date>
+  <headline>Running X11 document updated</headline>
+  <body>
+    <p>
+      The <link url="doc/x11/index.php">Running X11</link> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-31</date>
+  <body>
+    <p>
+      <extlink url="http://www.macosxhints.com/">MacOSXHints</extlink> has
+      posted an <extlink url="http://homepage.mac.com/rgriff/xdarwin.html">
+      installation guide</extlink> for XFree86, Fink, Window Maker and The GIMP.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-23</date>
+  <headline>forked.net</headline>
+  <body>
+    <p>
+      In addition to ripping off Fink packages and breaking the GPL, the ports
+      collection at <extlink url="http://macosx.forked.net/">forked.net
+      </extlink> has just gone commercial. More details soon. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-10-03</date>
+  <headline>Binary distribution complete</headline>
+  <body>
+    <p>The binary distribution update is now complete.
+    The <link url="news/puma.php">10.1 compatibility report</link> has been
+    updated to reflect the fixes in Fink 0.3.0.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-30</date>
+  <headline>Fink 0.3.0 is released</headline>
+  <body>
+    <p>The source release, the binary installer and a binary upgrade kit for
+    broken-by-10.1 installations are available in the new <link
+    url="download/index.php">download section</link>.
+    The bulk of the binary distribution will be updated gradually over the
+    next few days, as usual.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-26</date>
+  <headline>Mac OS X 10.1 released</headline>
+  <body>
+    <p>Mac OS X 10.1 has been officially released yesterday. Before you use Fink
+    on 10.1, check out the <link url="news/puma.php">compatibility report</link>.
+    <em>Update:</em> The apt-get issue has been solved, expect a new release
+    this weekend.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-07</date>
+  <headline>Binary distribution fully updated</headline>
+  <body>
+    <p>The binary distribution is now fully updated to
+    Fink 0.2.6. Enjoy.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-04</date>
+  <headline>Fink 0.2.6 is released</headline>
+  <body>
+    <p>Fink 0.2.6 is released, fixing several bootstrap problems. The source
+    release is available from the <link url="download.php">download page</link>
+    or via the 'fink selfupdate' command. The binary release will follow soon.
+    </p>
+ </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-09-02</date>
+  <headline>Fink IRC Channel</headline>
+  <body>
+    <p>Chat with the developers and other users! We now have a #fink channel
+    on the <extlink url="http://openprojects.net/">openprojects.net</extlink>
+    IRC network.
+    </p>
+ </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-25</date>
+  <headline>Fink 0.2.5 was released</headline>
+  <body>
+    <p>The source release is
+    available from the <link url="download.php">download page</link>, the
+    binary release will follow soon.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-23</date>
+  <headline>OpenOSX.com</headline>
+  <body>
+    <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
+    CDs. Read Christoph's <link url="pr/openosx.php">public statement</link>
+    on the issue.
+    </p>
+ </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-22</date>
+  <headline>New help page</headline>
+  <body>
+    <p>The new <link url="help/index.php">help page</link> lists various ways
+    to get help using Fink. It also lists some ideas how you can give back to
+    the project.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-13</date>
+  <headline>Porting tips and X11 document updated</headline>
+  <body>
+    <p>The <link url="doc/porting/index.php">porting tips</link> document has
+    a new chapter on shared libraries and modules. The <link
+    url="doc/x11/index.php">X11</link> document was also updated recently.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-01</date>
+  <headline>Version 0.2.4a is released</headline>
+  <body>
+    <p>There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
+    0.2.4a. You only need this if you're doing a first time install, updates
+    are not affected.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-01</date>
+  <headline>Version 0.2.4 is released</headline>
+  <body>
+    <p>Version 0.2.4 is released. Get it from the <link
+    url="download.php">download page</link>. Some highlights: The GIMP
+    1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
+    and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-19</date>
+  <headline>New document: X11 on Darwin and Mac OS X</headline>
+  <body>
+    <p>A comprehensive document about <link url="doc/x11/index.php">X11 on
+    Darwin and Mac OS X</link> is now available. It was written to be useful
+    for anyone, not just Fink users.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-13</date>
+  <headline>Package database now online</headline>
+  <body>
+    <p>A prototype of the <link url="pdb/index.php">package database</link>
+    is now online.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-09</date>
+  <headline>Version 0.2.3 is released</headline>
+  <body>
+    <p>Get it from the <link url="download.php">download page</link>. This
+    version fixes the dpkg download problems many of you were having.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-03</date>
+  <headline>Packaging Manual updated</headline>
+  <body>
+    <p>The <link url="doc/packaging/index.php">Packaging Manual</link> was
+    updated to include all recently added fields.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-06-30</date>
+  <headline>Web site restructuring</headline>
+  <body>
+    <p>A major restructuring of the web site has started. The non-Fink-specific
+    documents were removed because I don't have the time to maintain them. All
+    documentation will be consolidated in the new <link url="doc/index.php">
+    Documentation section</link>.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-06-24</date>
+  <headline>Version 0.2.2 is released</headline>
+  <body>
+    <p>Version 0.2.2 is finally released. Get it from the <link
+    url="download.php">download page</link>. Be sure to read the notes
+    about X11 in the INSTALL file.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-05-19</date>
+  <headline>CVS instructions updated</headline>
+  <body>
+    <p>The <link url="fink/cvs.php">CVS instructions</link> have
+    been updated for Fink 0.2.x.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-26</date>
+  <headline>FAQ online</headline>
+  <body>
+    <p>
+      This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-20</date>
+  <headline>Version 0.2.0 is released</headline>
+  <body>
+    <p>
+      It now uses dpkg for binary package management. You can get it from the download page, but be aware that this version is not yet as stable as the 0.1.x series. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-15</date>
+  <headline>Released version 0.1.8a</headline>
+  <body>
+    <p>
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-04-14</date>
+  <headline>Version 0.1.8 is out</headline>
+  <body>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-30</date>
+  <headline>Porting notes updated</headline>
+  <body>
+    <p>
+      The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-30</date>
+  <headline>Version 0.1.7 is out!</headline>
+  <body>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-24</date>
+  <headline>Mac OS X is released!</headline>
+  <body>
+    <p>
+      Expect Fink packages to be adapted to the final release within the next one or two weeks. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-15</date>
+  <headline>Libtool page updated</headline>
+  <body>
+    <p>
+      Updated the <link url="darwin/libtool.php">libtool page</link> with a revised patch that does full shared library versioning. 
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-08</date>
+  <headline>Version 0.1.6 is out</headline>
+  <body>
+    <p>
+      Get it from the <link url="download.php">download page</link>. 
+    </p>
+  </body>
+</newsitem>
+
+</news>
