@@ -2,7 +2,38 @@
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="es" fsroot="../..">
 <news>
-<cvsid>$Id: news.es.xml,v 1.2 2004/09/03 01:19:38 michga Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.3 2004/09/22 02:43:46 michga Exp $</cvsid>
+
+<newsitem>
+<date>2004-09-20</date>
+<headline>Fink 0.7.1 liberado.</headline>
+<body>
+<p>
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue siendo disponible para la versiones Jaguar (10.2) de Mac OS X.
+</p>
+
+<p>
+Esta nueve versión incorpora varios arreglos al manejador de paquetes e integra numerosos binarios previamiente inasequibles resultando en mas de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+</p>
+
+<p>
+Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+</p>
+
+<p>
+Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="lists/index.php">allí</link>.
+</p>
+
+<p>
+Asegúrate de escoger el <em>instalador adecuado</em> para tu plataforma. Fink 0.6.3 solo se instalará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se instalará en Mac OS X 10.3.* </p>
+
+        <p>
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
+También agradecemos a nuestra comunidad por descarger la versíón 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+</p>
+
+</body>
+</newsitem>
 
 <newsitem>
 	<date>2004-08-23</date>
@@ -37,7 +68,7 @@
 		<code>fink selfupdate</code>
 	</p><p>
 	Si por alguna razón estos comandos no funcionan, vaya a
-		<link url="http://sourceforge.net/project/showfiles.php?group_id=17203"> la página del la liberación del archivo fink en el 
+		<link url="http://sourceforge.net/project/showfiles.php?group_id=17203"> la página de la liberación del archivo fink en el 
 		sourceforge</link> y descarge el archivo
 		<code>fink-0.22.1.tar.gz</code> . Desempaque este archivo con	<code>tar xfz fink-0.22.1.tar.gz</code> , y desde dentro del directorio
 	fink-0.22.1 directory, ejecute el comando <code>./inject.pl</code>

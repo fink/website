@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/08/28 15:15:43 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/09/22 02:45:14 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -43,8 +43,11 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink 0.6.3 (für OS X 10.2) und Fink <? print $fink_version ?> wurden am <? print $release_date ?> veröffentlicht.  
-Diese Versionen beinhalten Source- und vorkompilierte Pakete, sowie ein Installationsprogramm.
+Fink <? print $fink_version ?> was released
+on <? print convert_date_to_locale($release_date) ?>.  
+This release includes source and binary packages 
+as well as a binary installer, all intended for users of OS X version 10.3.
+Fink 0.6.3 (for OS X 10.2) and 0.4.1 (for OS X 10.1) also remain available.
 </p>
 
 <h1>Ressourcen</h1>

@@ -1,3 +1,22 @@
+<a name="2004-09-20 Fink 0.7.1 liberado"><span class="news-date">2004-09-20:</span>span class="news-headline">Fink 0.7.1 liberado.</span></a><?php gray_line(); ?>
+<p>
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue siendo disponible para la versiones Jaguar (10.2) de Mac OS X.
+</p>
+<p>
+Esta nueve versión incorpora varios arreglos al manejador de paquetes e integra numerosos binarios previamiente inasequibles resultando en mas de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+</p>
+<p>
+Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+</p>
+<p>
+Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="lists/index.php">allí</link>.
+</p>
+<p>
+Asegúrate de escoger el <em>instalador adecuado</em> para tu plataforma. Fink 0.6.3 solo se instalará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se instalará en Mac OS X 10.3.* </p>
+        <p>
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
+También agradecemos a nuestra comunidad por descarger la versíón 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+</p>
 <a name="2004-08-23 Problemas con XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problemas con XCode 1.5</span></a><?php gray_line(); ?>
 	<p>
 	Recientemente han habido reportes de varios paquetes del Fink que no
@@ -31,25 +50,4 @@
 	<p>
 	El equipo de Fink se disculpa por el error y agradece a la comunidad 
 	de usuarios por llamar nuestra atención rápidamente.
-	</p>
-<a name="2004-08-01 Mejorando nuestros espejos. ¿Puedes ayudarnos?"><span class="news-date">2004-08-01: </span><span class="news-headline">Mejorando nuestros espejos. ¿Puedes ayudarnos?</span></a><?php gray_line(); ?>
-	<p>
-	La desición de Fink de incrementar gradualmente nuestra red de espejos
-	a pagado con creces. Para asegurarnos de seguir ofreciendo un
-	servicio de alta calidad, necesitamod mejorar nuestra red de espejos.
-	Ya ha pasado bastante tiempo desde la última vez que solicitamos más
-	espejos. Así que, es momento de hacerlo de nuevo.  Fink esta muy
-	agradecido por los recursos concedidos por nuestra comunidad. Para
-	mejorar nuestro servicio a la comunidad requerimos un aún mejor
-	sistema de espejos. En particular, carecemos de espejos en Europa
-	Central, Rusia y el Lejano Oriente. Sí sientes que tienes 2 Mbit para
-	compartir con un espejo de rsync, o aún má´s para ofrecer un espejo de
-	distfiles, por favor  <extlink url="mailto:mirrors@finkmirrors.net">contactanos</extlink>.
-	</p>
-	<p>
-	 Para obtener un mejor conocimiento de los diferentes tipos de espejos
-	 que Fink ofrece, por favor revisa este sitio: 
-	 <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. 
-	 Este es el sitio oficial de todos los asuntos relacionados con los
-	 espejos. Si crees que puedes ofrecer otro tipo de recursos, por ejemplo, un espacio web para pruebas, no dudes en <extlink url="mailto:mirrors@finkmirrors.net">contactarnos</extlink> .
 	</p>
