@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.84 2003/10/26 12:31:11 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.85 2003/10/27 02:08:42 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -61,8 +61,13 @@ don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
 following commands:
 </p>
-<p><code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</code></p>
-<p><code>fink selfupdate; fink index</code></p>
+<p><code>
+sudo dpkg -r --force-all system-xfree86\
+</code>
+<code>system-xfree86-42 system-xfree86-43</code>
+<code>
+fink selfupdate; fink index</code>
+</p>
 <p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.

@@ -46,8 +46,13 @@ don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
 following commands:
 </p>
-<p><code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</code></p>
-<p><code>fink selfupdate; fink index</code></p>
+<p><code>
+sudo dpkg -r --force-all system-xfree86\
+</code>
+<code>system-xfree86-42 system-xfree86-43</code>
+<code>
+fink selfupdate; fink index</code>
+</p>
 <p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
