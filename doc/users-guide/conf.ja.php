@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 21:24:54';
+$cvs_date = 'Date: 2004/04/27 13:42:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 include_once "header.inc";
@@ -137,7 +137,7 @@ High (全て報告する)
 <li>
 <p>
 <b>NoAutoIndex:</b> ブール値</p>
-<p>Fink は、パッケージ詳細ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+<p>Fink は、パッケージ記述ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
 この値が "True" でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
 デフォルト値は "False" で、変更することは勧めません。
 変更した場合、 <code>fink index</code> コマンドを手動で実行してインデックスを更新する必要があります。

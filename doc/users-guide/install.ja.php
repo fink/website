@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 21:24:54';
+$cvs_date = 'Date: 2004/04/27 13:42:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 include_once "header.inc";
@@ -45,7 +45,7 @@ Disk Copy がファイルを点検した後にデスクトップに出てくる�
 
 <p>
 ソースディストリビューションは標準的な Unix tarball (.tar.bz) で提供されます。
-これは <code>fink</code> パッケージマネージャとパッケージ詳細だけが含まれていて、パッケージ用のソースをダウンロードするものです。
+これは <code>fink</code> パッケージマネージャとパッケージ記述だけが含まれていて、パッケージ用のソースをダウンロードするものです。
 <a href="http://fink.sourceforge.net/download/srcdist.php">ダウンロードページ</a>から入手することができます。
 tar アーカイブを解凍する際に、 StuffIt Expander を使わないように注意してください。
 StuffIt はまだ長いファイル名を扱うことができないようです。

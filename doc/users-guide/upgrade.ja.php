@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - アップグレード";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 21:24:54';
+$cvs_date = 'Date: 2004/04/27 13:42:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="conf.php?phpLang=ja" title="Fink 設定ファイル"><link rel="prev" href="packages.php?phpLang=ja" title="パッケージのインストール">';
 
 include_once "header.inc";
@@ -46,22 +46,22 @@ Binary-&gt;Dist-Upgrade
 <p>
 ソースディストリビューションを使用している場合、アップグレードは多少複雑になります。
 アップグレードは２ステップあります。
-1. パッケージ詳細をダウンロードします。
-2. このパッケージ詳細を使って新しいパッケージをコンパイルします。
+1. パッケージ記述をダウンロードします。
+2. このパッケージ記述を使って新しいパッケージをコンパイルします。
 必要に応じてソースコードもダウンロードします。
 </p>
 <p>
 Fink 0.2.5 以降であれば、最初のステップは <code>fink selfupdate</code> を実行します。
-このコマンドは Fink ウェブサイトを新しいリリースが用意されているか確認し、自動的にパッケージ詳細をダウンロード、インストールします。
-最近のバージョンの <code>fink</code> コマンドでは、 CVS または rsync から直接パッケージ詳細を取得する選択肢もあります。
-CVS はバージョン管理レポジトリで、パッケージ詳細が保存・管理されています。
+このコマンドは Fink ウェブサイトを新しいリリースが用意されているか確認し、自動的にパッケージ記述をダウンロード、インストールします。
+最近のバージョンの <code>fink</code> コマンドでは、 CVS または rsync から直接パッケージ記述を取得する選択肢もあります。
+CVS はバージョン管理レポジトリで、パッケージ記述が保存・管理されています。
 CVS には連続して更新できる利点がありますが、CVS サーバーが一つしかなく、トラフィック量に依って不安定になりやすい欠点があります。
 このため、一般ユーザーは rsync を使うことをおすすめします。
-rsync にはミラーが複数あり、欠点は CVS からのパッケージ詳細の更新に１時間かかることです。
+rsync にはミラーが複数あり、欠点は CVS からのパッケージ記述の更新に１時間かかることです。
 </p>
 <p>(ソースインストールで問題がある場合、<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特殊な方法</a>を参照して下さい)</p>
 <p>
-0.2.5 より古いバージョンの Fink の場合、手動でパッケージ詳細をダウンロードして下さい。
+0.2.5 より古いバージョンの Fink の場合、手動でパッケージ記述をダウンロードして下さい。
 <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">ダウンロードエリア</a>で最新の packages-0.x.x.tar.gz tarball を "distribution" モジュール内で探します。
 ダウンロード後、以下のようにインストールします:
 </p>
@@ -69,7 +69,7 @@ rsync にはミラーが複数あり、欠点は CVS からのパッケージ詳
 cd packages-0.x.x
 ./inject.pl</pre>
 <p>
-パッケージ詳細をダウンロード後 (どのような方法であれ)、全てのパッケージを <code>fink
+パッケージ記述をダウンロード後 (どのような方法であれ)、全てのパッケージを <code>fink
 update-all</code> で一括更新します。
 </p>
 <p>
@@ -84,7 +84,7 @@ Source-&gt;Updata-all
 
 <p>
 もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法に従わなくてはなりません。
-つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ詳細を取得し、残りのパッケージを更新します。
+つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
 Fink Commander を使用している場合、まず <a href="#bin">バイナリの更新</a> を実行してから <a href="#src">ソースの更新</a> を実行します。 
 </p>
 

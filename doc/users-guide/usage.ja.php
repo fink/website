@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 21:24:54';
+$cvs_date = 'Date: 2004/04/27 13:42:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 include_once "header.inc";
@@ -115,7 +115,7 @@ fink list "gnome*"         - 'gnome' から始まるパッケージのみ表示�
 
 <p>
 このコマンドはほとんど <code>fink list</code> と同じです。
-一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ詳細を使うことです。
+一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ記述を使うことです。
 次に顕著なのは、検索文字列が必須で、オプションではないことです。
 </p>
 <pre>
@@ -202,7 +202,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 
 <p>
 このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
-パッケージメンテナーは、 submit する前にパッケージ詳細と対応するパッケージに対して実行して下さい。
+パッケージメンテナーは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
 </p>
 <p>
 エイリアス: check
@@ -230,9 +230,23 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
     <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
       
       <p>
+	  注記: 0.20.0 以降の CVS 版より前は未対応
+	  </p>
+	  <p>
 	Shows how Fink parses parts of a package's .info file.
 	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
+	以下の<b>オプション引数</b>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>
+      <pre>
+-h, --help           - Show the options which are available.
+-a, --all            - Display all fields from the package description.
+                       This is the default mode when no --field or
+                       --percent flags are given.
+-f fieldname,        - Display the given fieldname(s),
+  --field=fieldname    in the order listed.
+-p key,              - Display the given percent expansion key(s),
+   --percent=key       in the order listed.
+      </pre>
     
 
 
