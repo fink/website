@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:54:09';
+$cvs_date = 'Date: 2004/04/26 02:05:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 include_once "header.inc";
@@ -238,8 +238,20 @@ others.
     <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
       
       <p>
-	Shows how Fink parses parts of a package's .info file.
+	Shows how Fink parses parts of a package's .info file. Various
+	fields and percent expansions will be displayed according
+	to <b>options</b> as follows:
       </p>
+      <pre>
+-h, --help           - Show the options which are available.
+-a, --all            - Display all fields from the package description.
+                       This is the default mode when no --field or
+                       --percent flags are given.
+-f fieldname,        - Display the given fieldname(s),
+  --field=fieldname    in the order listed.
+-p key,              - Display the given percent expansion key(s),
+   --percent=key       in the order listed.
+      </pre>
     
   
 
