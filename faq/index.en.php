@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 13:20:25';
+$cvs_date = 'Date: 2004/06/10 13:28:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
@@ -75,6 +75,6 @@ include_once "header.inc";
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=en#gnome-two">9.9 I upgraded from GNOME 1.x to GNOME 2.x and now
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
-        xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.22 2004/06/10 13:20:25 alexkhansen Exp $-->
+        xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.23 2004/06/10 13:28:04 alexkhansen Exp $-->
 
 <? include_once "footer.inc"; ?>

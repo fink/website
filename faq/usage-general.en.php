@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 13:20:25';
+$cvs_date = 'Date: 2004/06/10 13:28:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -100,13 +100,13 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         code), but have some slight differences between them. There are
   different options under Panther and under Jaguar.
   Under Panther you have the choice between:</p><ul>
-     <li><p>     Apple's X11 (on the third disk). Don't forget to install the
+          <li><p>     Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
   (on the XCode disk) if you want to compile programs or if you plan to
   install other X11-related Fink packages from source.</p></li>
-<li><p>        4.4.x built via Fink: install the xfree86 and
-  xfree86-shlibs packages </p></li>
-</ul><p>Under Jaguar, the most popular choices, and the Fink packages to
+          <li><p>        4.4.x built via Fink: install the <code>xfree86</code> and
+  <code>xfree86-shlibs</code> packages </p></li>
+        </ul><p>Under Jaguar, the most popular choices, and the Fink packages to
           make them work are:</p><ul>
           <li>
             <p>4.2.x built via Fink: install <code>xfree86-base</code> and
@@ -119,7 +119,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
           <code>xfree86-shlibs</code> packages</p>
           </li>
           <li>
-            <p>4.2.x from Apple (assuming you have the User + SDK packages installed): the system-xfree86 package is automatically generated, do NOT install it. (Note that the public beta of Apple's X11 for Jaguar is no longer available, so this is only an option for you if you already have this installed, from the time in which it was available.)</p>
+            <p>4.2.x from Apple (assuming you have the User + SDK packages installed): the <code>system-xfree86</code> package is automatically generated for current versions of Fink; do NOT install it. (Note that the public beta of Apple's X11 for Jaguar is no longer available, so this is only an option for you if you already have this installed, from the time in which it was available.)</p>
           </li>
         </ul><p>There are other options, as well. There is a more extensive
         treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11
