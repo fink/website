@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/22 12:23:11 $';
+$cvs_date = '$Date: 2001/07/12 09:49:30 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -30,24 +30,31 @@ Ports</a> - porting the FreeBSD ports collection</li>
 <li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - uniting and improving the *BSD port collections</li>
 </ul>
 
-<p>Sites with info about ports</p>
+<p>Mixed collections of ported packages</p>
+<ul>
+<li><a href="http://www.caos.aamu.edu/pub/MacOS_X/"
+target="_blank">http://www.caos.aamu.edu/pub/MacOS_X/</a> - run by Marius Schamschula</li>
+<li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X
+Public Archive</a></li>
+<li><a href="http://www.geeklair.net/downloads/"
+target="_blank">http://www.geeklair.net/downloads/</a> - run by
+<a href="http://www.geeklair.net/~dluke/">Daniel Luke</a></li>
+<li><a href="http://macosx.forked.net/"
+target="_blank">http://macosx.forked.net/</a></li>
+</ul>
+
+<p>Sites with related information</p>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 porting info and news, plus a software archive</li>
-<li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X
-Public Archive</a></li>
 <li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 news, articles and a software archive</li>
-<!--
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 help running The GIMP, GTK and X on a Mac</li>
--->
 <li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a> -
 port news and general help</li>
-<li><a href="http://www.caos.aamu.edu/pub/MacOS_X/" target="_blank">A
-port archive</a></li>
 </ul>
 
 
