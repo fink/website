@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.19 2002/02/24 04:29:19 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.20 2002/03/18 03:25:35 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -172,8 +172,20 @@ install -m 644 COPYING %i/share/doc/%n
 <p>
 Note the lack of indentation and the terminating
 <code>&lt;&lt;</code>.
-</p>
-<p>
+</p><p>
+As a special case, when working within a <code>SplitOff</code> or
+<code>SplitOff<i>N</i></code> field, the here-document syntax
+can be nested.  The same terminator <code>&lt;&lt;</code> is used
+for the sub-here-document.  Here is an example:
+<codeblock>
+  SplitOff: &lt;&lt;
+    Package: %N-shlibs
+    InstallScript: &lt;&lt;
+      ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
+    &lt;&lt;
+  &lt;&lt;
+</codeblock>
+</p><p>
 Empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
 <code>InstallScript</code>, <code>installscript</code> or
@@ -192,14 +204,21 @@ performed on some fields.
 The available expansions are:
 </p>
 <dl>
-<dt>%n</dt><dd>the package <em>n</em>ame</dd>
+<dt>%n</dt><dd>the <em>n</em>ame of the current package</dd>
+<dt>%N</dt><dd>the <em>N</em>ame of the parent package (the same as
+%n unless within a <code>SplitOff</code>)</dd>
 <dt>%v</dt><dd>the package <em>v</em>ersion</dd>
 <dt>%r</dt><dd>the package <em>r</em>evision</dd>
 <dt>%f</dt><dd>the <em>f</em>ull package name, i.e. %n-%v-%r</dd>
-<dt>%p</dt><dd>the <em>p</em>refix where Fink is installed, e.g. /sw</dd>
+<dt>%p, %P</dt><dd>the <em>p</em>refix where Fink is installed, e.g. /sw</dd>
 <dt>%d</dt><dd>the <em>d</em>estination directory where the tree to be
 packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
+<dt>%D</dt><dd>the <em>D</em>estination for the parent package (the same as
+%d unless within a <code>SplitOff</code>)</dd>
 <dt>%i</dt><dd>the full <em>i</em>nstall-phase prefix, equivalent to %d%p</dd>
+<dt>%I</dt><dd>the <em>I</em>nstall prefix of the parent package,
+equivalent to %D%P (the same as
+%i unless within a <code>SplitOff</code>)</dd>
 <dt>%a</dt><dd>the path where the p<em>a</em>tches can be found</dd>
 <dt>%b</dt><dd>the <em>b</em>uild directory,
 e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1
@@ -334,21 +353,21 @@ for existence before calling them and the like).
 <section name="sharedlibs"><title>Shared Libraries</title>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
-(This section of the documentation contains a preliminary discussion
-of the policy, which may evolve slightly as it becomes more fully
-implemented.)
+(This section of the documentation discusses version 2
+of the policy, which coincides with the release of version 0.9.9 of
+the fink package manager.)
 We first discuss the policy as applied to newly ported software, and
-then turn to the question of upgrading existing fink packages.  For an
-example of the policy in action, see the  libpng and 
-libpng-shlibs packages.
+then turn to the question of upgrading existing fink packages.  For 
+examples of the policy in action, see the  libpng, libjpeg  and 
+libtiff packages.
 </p><p>
 Software which has been ported to Darwin should build shared libraries (as 
 opposed to static libraries) whenever possible.  When this has been done,
 <em>two</em> closely related fink packages should be made, named foo 
-and foo-shlibs.  At present, this must be done by hand, but an extension to 
-fink is under development which will allow both fink packages to be generated 
-from a single .info file.  (In fact, more than two packages can be
-generated if necessary.)
+and foo-shlibs.  These can be made with a single .info file, using
+the SplitOff field, as described below.  (In fact, it is often necessary
+to make more than two packages from the source, and this can be done
+using SplitOff2, SplitOff3, etc.)
 </p><p>
 Each software package for which shared libraries can be built must have
 a <em>major version number</em> N.  The major version number is only supposed
@@ -435,21 +454,34 @@ Notice that both packages are required to have some documentation about
 the license, but that the directories containing the DocFiles will be
 different.
 </p><p>
-At the moment, the only way to do this is to let each package run the
-original CompileScript and InstallScript, and then remove some of the files
-prior to installation.  (Notice that, as in the examples libpng, 
-libpng-shlibs, you may be able to use %v in place of N.x.y or x.y in
-the .info file, which is more robust for updating minor versions of the
-same package later on.)  In the extension of fink under development,
-you will be able to just specify which files are to be installed into 
-barN-shlibs rather than into barN.
-</p><p>
-There should be a dependency specifed in package barN:
+Doing this is quite easy in practice, using the SplitOff field.  Here is
+how the example above would be implemented (in part):
 <codeblock>
-  Depends: barN-shlibs (= exact.version.of.barN)
+Package: barN
+Depends: barN-shlibs (= %v-%r)
+DocFiles: COPYING
+BuildDependsOnly: True
+SplitOff: &lt;&lt;
+  Package: barN-shlibs
+  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  DocFiles: COPYING
+&lt;&lt;
 </codeblock>
+During SplitOff, the specified files and directories are moved from the 
+install directory %I of the main package to the install directory %i of the
+splitoff package.  (There is a similar convention for names: %N is the
+name of the main package, and %n is the name of the current package.)
+The DocFiles command then puts a copy of the documentation into 
+%i/share/doc/barN-shlibs.
+</p><p>
+Notice that we have included the exact current version of barN-shlibs as a 
+dependency of the main package barN (which can be abbreviated 
+%N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
 automatically "inherits" all the dependencies of barN-shlibs.
+We have also included "BuildDependsOnly: True" for the main package, 
+which indicates to other fink maintainers that their packages should
+not depend on this one.
 </p><p>
 <em>What to do when the major version number changes:</em>
 </p><p>
@@ -496,6 +528,37 @@ which have not used the correct names or symbolic links for shared libraries
 must be upgraded carefully, on a case-by-case basis.  If you are
 having trouble finding an upgrade strategy to make your packages compliant
 with the new policy, please discuss it on the fink-devel mailing list.
+</p><p>
+<em>Packages containing both binary files and libraries:</em>
+</p><p>
+When an upstream package contains both binary files and libraries, some
+care must be exercised in constructing fink packages.  In some cases,
+the only binary files will be things like <code>foo-config</code> which
+are presumably only used at build time and never at run time.  In these
+cases, the binaries can go with the header files in the <code>foo</code>
+package.
+</p><p>
+In other cases, the binary files will be needed by other packages at
+runtime, and they must be split off into a separate fink package with
+a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
+package should depend on the <code>foo-shlibs</code> package, and
+maintainers of other packages should be encouraged to use
+<codeblock>
+               Depends: foo-bin
+               BuildDepends: foo
+</codeblock>
+which will take care of foo-shlibs implicitly.
+</p><p>
+Upgrading presents a problem in this situation, however, since users won't
+be prompted to install <code>foo-bin</code>.  To work around this, until
+all other package maintainers have revised their packages as above,
+your <code>foo</code> package can say
+<codeblock>
+              Depends: foo-shlibs (= exact.version), foo-bin
+</codeblock>
+This will force the installation of foo-bin on most users' systems, until
+such time as the other package maintainers have upgraded their packages
+which depend on <code>foo</code>.
 </p>
 
 </section>
@@ -742,6 +805,9 @@ May contain lowercase letters, numbers and the special characters '.',
 No underscores ('_'), no capital letters.
 Required field.
 </p>
+<p>Effective with fink 0.9.9, percent expansion is applied to this field,
+as well as the fields Depends, BuildDepends, Provides, Conflicts,
+Replacs, Recommends, Suggests, and Enhances.</p>
 </itemd></item>
 
 <item><itemt>Version</itemt>
@@ -1210,6 +1276,47 @@ commands to the InstallScript.
 </p>
 </itemd></item>
 
+<item><itemt>BuildDependsOnly</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+A boolean value which indicates that no other packages should Depend on
+this one, they should only BuildDepend.
+</p>
+</itemd></item>
+
+<item><itemt>SplitOff</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+Generate a second package from the same compile/install run.
+For details about how this works, see the separate
+splitoff section.
+</p>
+</itemd></item>
+
+<item><itemt>SplitOff<i>N</i></itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+This is the same as <code>SplitOff</code>, used to generate a third,
+fourth, etc. package from the same compile/install run.
+</p>
+</itemd></item>
+
+<item><itemt>Files</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+Used within a <code>SplitOff</code> or <code>SplitOff<i>N</i></code> field,
+this designates which files and directories
+should be moved from the parent package's  installation
+directory %I to the current installation directory %i.  Note that this
+is executed after the InstallScript and the DocFiles of the parent package,
+but before the InstallScript and Docfiles of the current package.
+</p>
+</itemd></item>
+
 <item><itemt>Set<i>ENVVAR</i></itemt>
 <itemd>
 <p>
@@ -1435,6 +1542,65 @@ always available.
 </itemd></item>
 
 </itemtable>
+</section>
+
+<section name="splitoffs"><title>SplitOffs</title>
+<p>Beginning with fink 0.9.9, a single .info file can be used to build
+multiple packages.  The unpack, patch, compile, and install phases
+(including the <code>DocFiles</code> command)
+are followed as usual, with everything being put into the install 
+directory.  Then a <code>SplitOff</code> field triggers
+the construction of a second install directory.  Within the 
+<code>SplitOff</code> field, the new install directory is referred to as %i,
+while the original install field of the parent directory is referred to as %I.
+</p>
+<p>
+The <code>SplitOff</code> field must contain a number of fields of its
+own.  In fact, it resembles a complete package description of its own,
+but without anything related to the unpack, patch or compile phases.
+The values of  <code>Version</code>, <code>Revision</code>, 
+<code>Maintainer</code> and <code>Homepage</code> are
+automatically inherited from the parent package; the values of
+<code>Description</code>, <code>DescDetail</code>, and <code>License</code>
+are inherited as well by default, but may be changed if necessary by
+declaring them.
+
+</p><p>
+It should begin with a <code>Package</code> field that gives the
+name of the new package.  (Percent expansion is perfomed on this field).
+  (The <code>Version</code>, <code>Revision</code>
+and <code>Maintainer</code>
+are inherited from the parent package). It may then
+specify values for <code>Depends</code>, <code>Provides</code>, 
+<code>Conflicts</code>, <code>Replaces</code>, <code>Recommends</code>,
+<code>Suggests</code>, <code>Enhances</code>. 
+</p><p>
+The unpack, patch and compile phases are not relevant here since they
+have already been carried out.  The first action to be invoked is
+specified by the <code>Files</code> field.  This is a list of files
+and directories which are to be moved from %I to %i.  
+</p><p>After this, any <code>InstallScript</code> contained within the
+<code>SplitOff</code> field is executed.  (It may make more sense to
+directly do part of the installation at this point, rather than install
+things originally in %I and later move them to %i.)
+</p><p>The <code>SplitOff</code> field typically ends with a 
+<code>DocFiles</code> declaration.  Each package being built is required
+to document the licensing arrangement in %i/share/doc/%n.  Note that
+<code>DocFiles</code> copies files rather than moving them, so it is
+possible to install documentation into all of the packages by using
+<code>DocFiles</code> several times.
+</p><p>
+If more than two packages are to be built, the additional packages are
+specified with <code>SplitOff2</code>, <code>SplitOff3</code>, etc.
+The commands for each of these are executed in turn.
+</p><p>
+
+
+Type? Pre-Depends? Essential?
+
+
+</p>
+
 </section>
 
 <section name="scripts"><title>Scripts</title>
