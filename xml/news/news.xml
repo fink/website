@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.134 2004/09/19 12:29:45 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.135 2004/09/20 06:40:28 dmalloc Exp $</cvsid>
+
+
+<newsitem>
+<date>2004-09-20</date>
+<headline>Fink 0.7.1 released.</headline>
+<body>
+<p>
+The latest Fink releases, version 0.7.1 (for 10.3),
+is now available for both source and binary users. This release is meant for Panther (10.3)  based
+Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
+</p>
+
+<p>
+This new releases incorporate various fixes to the package manager, many previously
+unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
+binaries for KDE 3.4.1 and GNOME 2.4.
+</p>
+
+<p>
+To complete a new Fink installation you should follow the instructions posted
+<link url="download/index.php?phpLang=en">here</link>.
+You may upgrade your existing Fink to the latest Fink using your current installation.
+
+A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
+
+<link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</link>
+</p>
+
+<p>
+If you have questions or problems, please try the Fink mailing lists you can learn more about them
+<link url="lists/index.php?phpLang=en">here</link>.
+</p>
+
+<p>
+Please make sure you pick the <em>appropriate installer</em> for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+</p>
+
+        <p>
+The Fink Team would like to thank its many contributors, frequent helpers
+and developers for making this release happen.
+We also thank our community for downloading the prior release 0.7.0 more than 130'000 times. 
+Without their constant support and valuable pointers Fink would not be where we are now..
+</p>
+
+</body>
+</newsitem>
+
+
+
 
 <newsitem>
 	<date>2004-08-23</date>
