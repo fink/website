@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/08/17 04:38:21 $';
+$cvs_date = '$Date: 2004/08/17 06:34:03 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -49,13 +49,13 @@ $maintainer = mysql_fetch_row($qs);
     $cr2 = $releases[$i];
     preg_match("/(.*)-(stable|unstable)/i", $cr, $tree);
     if(ereg("^0.4.1",$cr))
-      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.1 only)");
+      it_item2("<div style=\"white-space:nowrap\">$tree[1] (OS X 10.1):</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","");
     else
     if(ereg("^0.6.3",$cr))
-      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.2 only)");
+      it_item2("<div style=\"white-space:nowrap\">$tree[1] (OS X 10.2):</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","");
     else
     if(ereg("^0.7.0",$cr))
-      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.3 only)");
+      it_item2("<div style=\"white-space:nowrap\">$tree[1] (OS X 10.3):</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","");
     else
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>"
       			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ? " ".$rmap[$cr] : "not present"
