@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/17 13:10:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/04/29 18:30:24';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -125,11 +125,59 @@ for existence before calling them and the like).
 <a name="sharedlibs"><h2>3.3 Shared Libraries</h2></a>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
-(This section of the documentation discusses version 2
-of the policy, which coincides with the release of version 0.9.9 of
-the fink package manager.)
-We first discuss the policy as applied to newly ported software, and
-then turn to the question of upgrading existing fink packages.  For 
+This section of the documentation discusses version 3
+of the policy, which coincides with the release of fink's 0.4.0 distribution.
+We begin with a quick summary, and then discuss things in more detail.
+</p><p>
+Any package which builds shared libraries and is either (1) being put into
+  the stable tree, or (2) a new package in fink, should treat its shared
+  libraries according to fink's policy.  This means:</p>
+<ul>
+<li>   verify, using <tt><nobr>otool -L</nobr></tt>, that 
+       the install_name of each library and
+       its compatibility and current version numbers are correct </li>
+<li>   put the shared libraries in a separate package (except for the
+       links from libfoo.dylib to the install_name)</li>
+<li>   put the headers and the final links from libfoo.dylib into a package
+       which is classified as <tt><nobr>BuildDependsOnly: True</nobr></tt>, and plan
+        to have
+       no other package depend on this one.</li>
+</ul>
+<p>
+  A maintainer who has reasons to deviate from this policy and not split the
+  package should explain the reasons in the DescPackaging field.
+</p><p>
+For some packages, everything can be accomplished with a main package and a
+-shlibs package; in other cases you also need a third package.  The new
+<tt><nobr>SplitOff</nobr></tt> field actually makes this quite easy.
+</p><p>
+When three packages are needed, there are two different ways they could be
+named, depending on whether the libraries or the binaries
+are the most important feature of
+the package, or the binaries are the most important feature.  For option 1, 
+use the layout:
+</p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt><nobr>foo-shlibs</nobr></tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt><nobr>foo</nobr></tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt><nobr>foo-bin</nobr></tt></td><td><p>Binaries, etc.</p></td></tr></table>
+
+<p>while for option 2, use the layout:</p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt><nobr>foo-shlibs</nobr></tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt><nobr>foo-dev</nobr></tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt><nobr>foo</nobr></tt></td><td><p>Binaries, etc.</p></td></tr></table>
+
+<p>
+With option 2 it is harder to upgrade an existing package:  at the same
+time as you upgrade, 
+you need to add <tt><nobr>BuildDepends: foo-dev</nobr></tt> to every
+package which says <tt><nobr>Depends: foo</nobr></tt>.
+One other upgrade issue to keep in mind: a package which indirectly depends
+on your package (through another package as an intermediary) may need
+to have <tt><nobr>BuildDepends: foo</nobr></tt> or <tt><nobr>BuildDepends: foo-dev</nobr></tt>
+added to it to ensure a successful upgrade.  It is your responsibility
+to make sure that these <tt><nobr>BuildDepends</nobr></tt> entries are added.
+</p>
+<p><b>The policy in detail</b></p>
+<p>
+We now discuss things in more detail, first discussing the policy as 
+applied to newly ported software, and 
+then turning to the question of upgrading existing fink packages.  For 
 examples of the policy in action, see the  libpng, libjpeg  and 
 libtiff packages.
 </p><p>

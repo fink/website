@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.28 2002/04/17 13:10:27 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.29 2002/04/29 18:30:24 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -432,11 +432,73 @@ for existence before calling them and the like).
 <section name="sharedlibs"><title>Shared Libraries</title>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
-(This section of the documentation discusses version 2
-of the policy, which coincides with the release of version 0.9.9 of
-the fink package manager.)
-We first discuss the policy as applied to newly ported software, and
-then turn to the question of upgrading existing fink packages.  For 
+This section of the documentation discusses version 3
+of the policy, which coincides with the release of fink's 0.4.0 distribution.
+We begin with a quick summary, and then discuss things in more detail.
+</p><p>
+Any package which builds shared libraries and is either (1) being put into
+  the stable tree, or (2) a new package in fink, should treat its shared
+  libraries according to fink's policy.  This means:</p>
+<ul>
+<li>   verify, using <code>otool -L</code>, that 
+       the install_name of each library and
+       its compatibility and current version numbers are correct </li>
+<li>   put the shared libraries in a separate package (except for the
+       links from libfoo.dylib to the install_name)</li>
+<li>   put the headers and the final links from libfoo.dylib into a package
+       which is classified as <code>BuildDependsOnly: True</code>, and plan
+        to have
+       no other package depend on this one.</li>
+</ul>
+<p>
+  A maintainer who has reasons to deviate from this policy and not split the
+  package should explain the reasons in the DescPackaging field.
+</p><p>
+For some packages, everything can be accomplished with a main package and a
+-shlibs package; in other cases you also need a third package.  The new
+<code>SplitOff</code> field actually makes this quite easy.
+</p><p>
+When three packages are needed, there are two different ways they could be
+named, depending on whether the libraries or the binaries
+are the most important feature of
+the package, or the binaries are the most important feature.  For option 1, 
+use the layout:
+</p>
+<itemtable labeld="Contents" labelt="Package">
+<item><itemt><code>foo-shlibs</code></itemt>
+<itemd><p>Shared libraries</p></itemd></item>
+<item><itemt><code>foo</code></itemt>
+<itemd><p>Headers</p></itemd></item>
+<item><itemt><code>foo-bin</code></itemt>
+<itemd><p>Binaries, etc.</p></itemd></item>
+</itemtable>
+
+<p>while for option 2, use the layout:</p>
+<itemtable labeld="Contents" labelt="Package">
+<item><itemt><code>foo-shlibs</code></itemt>
+<itemd><p>Shared libraries</p></itemd></item>
+<item><itemt><code>foo-dev</code></itemt>
+<itemd><p>Headers</p></itemd></item>
+<item><itemt><code>foo</code></itemt>
+<itemd><p>Binaries, etc.</p></itemd></item>
+</itemtable>
+
+<p>
+With option 2 it is harder to upgrade an existing package:  at the same
+time as you upgrade, 
+you need to add <code>BuildDepends: foo-dev</code> to every
+package which says <code>Depends: foo</code>.
+One other upgrade issue to keep in mind: a package which indirectly depends
+on your package (through another package as an intermediary) may need
+to have <code>BuildDepends: foo</code> or <code>BuildDepends: foo-dev</code>
+added to it to ensure a successful upgrade.  It is your responsibility
+to make sure that these <code>BuildDepends</code> entries are added.
+</p>
+<p><em>The policy in detail</em></p>
+<p>
+We now discuss things in more detail, first discussing the policy as 
+applied to newly ported software, and 
+then turning to the question of upgrading existing fink packages.  For 
 examples of the policy in action, see the  libpng, libjpeg  and 
 libtiff packages.
 </p><p>
