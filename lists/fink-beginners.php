@@ -1,5 +1,5 @@
 <?
-$title = "Mailing Lists - fink-users";
+$title = "Mailing Lists - fink-beginners";
 $cvs_author = '$Author: fingolfin $';
 $cvs_date = '$Date: 2001/12/06 17:21:20 $';
 
@@ -7,12 +7,12 @@ include "header.inc";
 ?>
 
 
-<h1>fink-users Mailing List</h1>
+<h1>fink-beginners Mailing List</h1>
 
 <p>
-The fink-users list is the general discussion list for advanced Fink users.
-Here you can ask for help if you have problems, discuss the benefits
-and drawbacks of Fink, exchange tips and tricks, and so on.
+The fink-beginners list is the general discussion list for new Fink users.
+Here you can ask for help if you have problems getting started with Fink,
+if you are a unix newbie and want to learn how the command line works.
 Anyone can subscribe and post to the list.
 </p>
 <p>
@@ -37,14 +37,14 @@ back at these resources.
 <h2>Subscribe</h2>
 
 <p>
-You can subscribe to fink-users by filling out this form.
+You can subscribe to fink-beginners by filling out this form.
 You will be sent email requesting confirmation, to prevent others from
 gratuitously subscribing you.
 Your email address will not be displayed on any public page.
 </p>
 
 <blockquote>
-<form method="POST" action="http://lists.sourceforge.net/lists/subscribe/fink-users">
+<form method="POST" action="http://lists.sourceforge.net/lists/subscribe/fink-beginners">
 <table border="0" cellpadding="2" cellspacing="5">
 
 <tr><td bgcolor="#dddddd">Your email address:</td>

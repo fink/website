@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/22 21:09:28 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2001/12/06 17:21:20 $';
 
 include "header.inc";
 ?>
@@ -21,13 +21,17 @@ Click on a mailing list name below to get more information.
 <li><p><a href="fink-announce.php">fink-announce</a>
 (<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-announce">Archives</a>)<br>
 Announcement list for new Fink releases. (low traffic)</p></li>
+<li><p><a href="fink-beginners.php">fink-beginners</a>
+(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-beginners">Archives</a>)<br>
+Discussion and support list for new Fink users</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
 (<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-users">Archives</a>)<br>
-Discussion and support list for Fink users.</p></li>
+Discussion and support list for advanced Fink users.</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
 (<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-devel">Archives</a>)<br>
 Discussion list for Fink package maintainers and developers.</p></li>
-<li><p><a href="fink-commits.php">fink-commits</a><br>
+<li><p><a href="fink-commits.php">fink-commits</a>
+(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-commits">Archives</a>)<br>
 Distribution list for automated CVS commit reports.</p></li>
 </ul>
 
