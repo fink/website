@@ -4,14 +4,14 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.6 2004/04/16 01:06:34 dmacks Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.7 2004/04/16 22:01:46 babayoshihiko Exp $</cvsid>
 	<!-- cvsidだいなりどるId: packaging.en.xml,v 1.20 2004/03/31 20:08:34 dmacks Exp どるしょうなり/cvsid -->
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ情報の記述方法を解説します．
 			また Fink ディストリビューションのポリシーとガイドラインも解説します．
-			パッケージ情報の書式もディストリビューションのポリシーも共に発展途上なので，
-			"Last changed" (最終更新) 情報とこのページの CVS タグに注意して，更新に気付いて下さい．
+			パッケージ情報の書式もディストリビューションのポリシーも共に発展途上です。
+			&quot;Last changed&quot; (最終更新) 情報とこのページの CVS タグを確認することで，更新されているかがわかります．
 			ここで扱うのはパッケージ管理システム Fink の「0.9.0 開発版」以降で使われる書式とポリシーの説明です．
 		</p>
 		<p>
@@ -305,6 +305,10 @@ SplitOff: &lt;&lt;
 							<filename>%f</filename> が <filename>%p/src</filename> の中にあることを当てにしてはいけない．
 							ユーザが設定ファイル <filename>/sw/etc/fink.conf</filename> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
+							最も内側のディレクトリ名は， <code>Source</code> ファイル名か， (もしあれば) <code>SourceDirectory</code> 
+							フィールドの値となります．
+							ただし， <code>NoSourceDirectory</code> が <code>true</code>
+							であれば使用されません．
 						</p>
 						<p>
 							注記: %b は使わざるを得ないときだけ使用して下さい．
