@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/17 19:59:48 $';
+$cvs_author = '$Author: mrvacbob $';
+$cvs_date = '$Date: 2002/05/28 02:43:55 $';
 
 include "header.inc";
 ?>
@@ -19,15 +19,7 @@ installation.
 </p>
 <p>
 If you're unsure which version of Fink you have, run
-"<tt><nobr>/sw/bin/fink --version</nobr></tt>" in a Terminal window.
-(Unless you explicitly installed Fink elsewhere, of course.)
-</p>
-<p>
-In case you're still running Mac OS X 10.0, please stick to the source
-release, i.e. don't upgrade using <tt>dselect</tt> or
-<tt><nobr>apt-get</nobr></tt>.
-The precompiled packages downloaded by these tools are now built on a
-10.1 system and we can't guarantee that they will work on 10.0.
+"<tt><nobr>fink --version</nobr></tt>" in a Terminal window.
 </p>
 <p>
 If you are upgrading from a Fink release prior to 0.3.1, and you have
