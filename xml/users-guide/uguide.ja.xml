@@ -3,16 +3,16 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.11 2004/08/12 15:01:33 dmacks Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.12 2004/11/04 02:09:30 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
-<em>このドキュメントは未完成です。</em>
-以下のドキュメントはより広範囲なことについて書かれています:
+このドキュメントは、 Fink の全ての機能を概説します。
+(以下のドキュメントはより広範囲なことについて書かれています:
 <link url="http://fink.sourceforge.net/doc/bundled/install.php" >インストール</link>,
 <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >使用方法</link>
-およびバイナリのディスクイメージにある ReadMe.rtf 。
-ウェブサイト中の <link url="http://fink.sourceforge.net/doc/" >Documentation セクション</link> も併せて参照ください。
-ここにあるドキュメントも役に立つでしょう。
+およびバイナリのディスクイメージにある ReadMe.rtf 。)
+ウェブサイト中の <link url="http://fink.sourceforge.net/doc/" >文書 セクション</link> も併せて参照ください。
+ここに書かれていること以上の内容を含んでいます。
 </p>
 <p>
 Fink ユーザーズガイドへようこそ。
@@ -456,19 +456,42 @@ E: Sorry, broken packages</codeblock>
 この作業は時間がかかります。
 この作業中にエラーが発生した場合、まず <link url="http://fink.sourceforge.net/faq/" >FAQ</link> を確認して下さい。
 </p>
+<p>
+<code>fink</code> のバージョン 0.23.0 以降では、コンパイル済みバイナリパッケージを優先的にダウンロードするように指定することができます。
+使い方は、
+<xref chapter="usage" section="options">--use-binary-dist (or -b) option</xref>
+というオプションを<code>fink</code> に指定します。
+これによって時間を大幅に節約することができます。
+例えば、
+</p>
+<codeblock>fink --use-binary-dist install wget-ssl</codeblock>
+<p>あるいは</p>
+<codeblock>fink -b install wget-ssl</codeblock>
+<p>
+とすることで、 wget-ssl が依存しているものをバイナリディストリビューションから最初にダウンロードし、
+能古炉だけをソースからビルドします。
+このオプションは、
+<xref chapter="conf">Fink 設定ファイル</xref> (<filename>fink.conf</filename>)
+あるいは <code>fink configure</code> を実行することで、常に使用するように指定することができます。
+</p>
+<p>
+<code>fink</code> ツールの詳細は、
+<xref chapter="usage">&quot;コマンドライン fink ツールの使用方法&quot;</xref>
+の章を参照してください。
+</p>
 </section>
 <section name="fink-commander"> 
 <title>Fink Commander</title> 
 <p>
 Fink Commander は <code>apt-get</code> と <code>fink</code> の Aqua インターフェイスです。
 Binary メニューはバイナリディストリビューションの、 Source メニューはソースディストリビューションの操作を行います。
-</p> 
+</p>
 <p>
 Fink Commander は Fink バイナリインストーラに付属しています。
 Fink をソースからインストールした場合など、別にダウンロードしたい場合や詳しい情報は、
 <link url=" http://finkcommander.sourceforge.net " >Fink Commander website</link> リンクを辿って下さい。
-</p> 
-</section> 
+</p>
+</section>
 <section>
 <title>用意されているバージョン</title>
 <p>パッケージをインストールする場合、まず<link url="http://fink.sourceforge.net/pdb/index.php" >Package Database</link>を確認して Fink にあるかどうか確認して下さい。
@@ -594,7 +617,6 @@ Binary->Dist-Upgrade
 <section name="src" >
 <title>ソースディストリビューションのアップグレード</title>
 <p>
-ソースディストリビューションを使用している場合、アップグレードは多少複雑になります。
 アップグレードは２ステップあります。
 1. パッケージ記述をダウンロードします。
 2. このパッケージ記述を使って新しいパッケージをコンパイルします。
@@ -633,9 +655,21 @@ Source-&gt;Updata-all
 <section name="mix" >
 <title>バイナリとソースの混在</title>
 <p>
-もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法に従わなくてはなりません。
-つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
-Fink Commander を使用している場合、まず <xref section="bin">バイナリの更新</xref> を実行してから <xref section="src">ソースの更新</xref> を実行します。 
+もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法をする必要があります。
+最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
+</p>
+<p>
+fink 0.23.0 からは、 UseBinaryDist オプション (
+<xref chapter="usage" section="options">--use-binary-dist (or -b) オプション</xref>
+あるいは <xref chapter="conf">Fink 設定ファイル</xref>で設定可能) 
+を使用することで、 <code>fink selfupdate</code> 実行時にソースとバイナリ記述を更新します。
+これにより、 <code>apt-get</code> の実行は必要なくなりました。
+</p>
+<p>
+Fink Commander を使用している場合、 Binary-&gt;Update descriptions を選択してパッケージ一覧を更新し，
+Binary-&gt;Dist-Upgrade packages でパッケージを更新します。
+この後、 Source-&gt;Selfupdate で新しい情報ファイルをダウンロードし、
+Source-&gt;Update-all を行います(詳細は前の節を参照)。
 </p>
 </section>
 </chapter>
@@ -834,6 +868,30 @@ FTP サーバーやネットワークによっては、このオプションが 
 <em>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</em>
 </p>
 </li>
+<li>
+<p>
+<em>SelfUpdateMethod:</em> point, rsync あるいは cvs</p>
+<p>
+Fink は、数種類の手段でパッケージ情報ファイルを更新することができます。
+<em>rsync</em> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
+stable や unstable 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
+これらのファイルを必ず事前にバックアップしてください。
+<em>cvs</em> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
+cvs はミラーを使えないという欠点があるため、 CVS サーバに接続することができない時は更新できません。
+<em>point</em> は最近リリースされたものだけをダウンロードします。
+ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
+</p>
+</li>
+<li>
+<p>
+<em>UseBinaryDist:</em> ブール値</p>
+<p>
+fink に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
+これによりインストール時間を短縮できるので、このオプションを設定することをおすすめします。
+<xref chapter="usage">--use-binary-dist オプション</xref>を使用しても同じですが、これは一度だけ有効です。 
+<em>fink バージョン 0.23.0 から有効</em>.
+</p>
+</li>
 </ul>
 </section>
 <section name="mirrors" >
@@ -929,19 +987,19 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 			<li>
 				<p><em>CCacheDir:</em> パス</p>
 				<p>
-					<em>0.20.5 CVS バージョン以降の fink で導入</em>
 					Fink パッケージ ccache-default がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
 					規定値は <filename>/sw/var/ccache</filename> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
 					ccache は <filename>$HOME/.ccache</filename> を使用する。
 					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
+					<em>0.21.0 以降でのみ有効</em>.
 				</p>
 			</li>
 		</ul>
 	</section>
 	<section name="sourceslist" >
-		<title>Managing apt's sources.list file</title>
+		<title>apt の sources.list ファイルを管理</title>
 		<p>
 			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
 			<code>/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
@@ -997,6 +1055,33 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 </p>
 <p>以下は、 <code>fink</code> ツールのコマンド一覧です:</p>
 </section>
+<section name="options">
+<title>Global オプション</title>
+<p>
+全ての fink コマンドに共通のオプションがあります。
+これは、 <code>fink --help</code> を実行することで一覧が出ます:
+</p>
+<codeblock>
+ -h, --help            - このヘルプテキストを表示
+ -q, --quiet           - fink をやかましくなくさせます --verboseの反対
+ -V, --version         - バージョン情報を表示
+ -v, --verbose         - fink をやかましくなくさせます --quietの反対
+ -y, --yes             - 全ての質問にデフォルト値を自動的に回答
+ -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用
+</codeblock>
+<p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
+<p>
+ほとんどのオプションは名前から内容が推測できると思います。
+一回限りではなく、常に使用したいオプションは
+<xref chapter="conf">Fink 設定ファイル</xref> (fink.conf)
+で設定することができます。
+</p>
+<p>
+<code>--use-binary-dist</code> を使用すると， <code>fink</code> to try to
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします
+(<code>fink</code> バージョン 0.23.0 以降で有効)。
+</p>
+</section>
 <section name="install" >
 <title>install</title>
 <p>install コマンドは、パッケージをインストールするのに使用します。
@@ -1010,6 +1095,11 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
+<p>
+<xref section="options">--use-binary-dist</xref> を使用すると， <code>fink</code> to try to
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします。
+これにより時間を節約することができます。
+</p>
 <p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
 </p>
 </section>
@@ -1033,6 +1123,9 @@ remove コマンドは実際のパッケージファイルを削除するだけ�
 パッケージ一覧は必要ないので、入力するだけです:
 </p>
 <codeblock>fink update-all</codeblock>
+<p>
+<xref section="options">--use-binary-dist option</xref> はここでも使用することができます。
+</p>
 </section>
 <section name="list" >
 <title>list</title>
@@ -1137,12 +1230,18 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 すでに .deb ファイルがある場合は何もしません。
 依存パッケージは、ビルドだけではなく、<em>インストールされます</em>ので注意して下さい。
 </p>
+<p>
+<xref section="options">--use-binary-dist option</xref> はここでも使用することができます。
+</p>
 </section>
 <section name="rebuild" >
 <title>rebuild</title>
 <p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
 パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
 パッケージの開発中にはとても役に立ちます。
+</p>
+<p>
+<xref section="options">--use-binary-dist option</xref> はここでも使用することができます。
 </p>
 </section>
 <section name="reinstall" >
@@ -1166,6 +1265,9 @@ Fink を再設定します。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自身を含めたコアパッケージを更新します。
 通常リリースの他、 <filename>/sw/fink/dists</filename> を設定して直接 CVS アップデートすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
+</p>
+<p>
+<xref section="options">--use-binary-dist option</xref> を使用すると、バイナリディストリビューション中の一覧も更新されます。
 </p>
 </section>
 <section name="index" >
@@ -1197,11 +1299,14 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
 かなりのディスク容量が利用できるようになります。
 </p>
+<p>
+<xref section="options">--use-binary-dist option</xref> を使用すると，古いバイナリパッケージも削除されます。
+</p>
 </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
       <p>
-	  注記: 0.20.0 以降の CVS 版より前は未対応
+	  注記: 0.21.0 以降の <code>fink</code> で有効。
 	  </p>
 	  <p>
 	Shows how Fink parses parts of a package's .info file.

@@ -20,7 +20,34 @@ include_once "header.ja.inc";
 </p>
 <p>以下は、 <code>fink</code> ツールのコマンド一覧です:</p>
 
-<h2><a name="install">6.2 install</a></h2>
+<h2><a name="options">6.2 Global オプション</a></h2>
+
+<p>
+全ての fink コマンドに共通のオプションがあります。
+これは、 <code>fink --help</code> を実行することで一覧が出ます:
+</p>
+<pre>
+ -h, --help            - このヘルプテキストを表示
+ -q, --quiet           - fink をやかましくなくさせます --verboseの反対
+ -V, --version         - バージョン情報を表示
+ -v, --verbose         - fink をやかましくなくさせます --quietの反対
+ -y, --yes             - 全ての質問にデフォルト値を自動的に回答
+ -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用
+</pre>
+<p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
+<p>
+ほとんどのオプションは名前から内容が推測できると思います。
+一回限りではなく、常に使用したいオプションは
+<a href="conf.php?phpLang=ja">Fink 設定ファイル</a> (fink.conf)
+で設定することができます。
+</p>
+<p>
+<code>--use-binary-dist</code> を使用すると， <code>fink</code> to try to
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします
+(<code>fink</code> バージョン 0.23.0 以降で有効)。
+</p>
+
+<h2><a name="install">6.3 install</a></h2>
 
 <p>install コマンドは、パッケージをインストールするのに使用します。
 指定したパッケージをダウンロード、 configure 、ビルド、インストールを行ないます。
@@ -33,10 +60,15 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</pre>
+<p>
+<a href="#options">--use-binary-dist</a> を使用すると， <code>fink</code> to try to
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします。
+これにより時間を節約することができます。
+</p>
 <p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
 </p>
 
-<h2><a name="remove">6.3 remove</a></h2>
+<h2><a name="remove">6.4 remove</a></h2>
 
 <p>
 remove コマンドは、 'dpkg --remove' を呼び出してシステムからパッケージを削除します。
@@ -49,15 +81,18 @@ remove コマンドは実際のパッケージファイルを削除するだけ�
 </p>
 <p>エイリアス: disable, deactivate, unuse, delete.</p>
 
-<h2><a name="update-all">6.4 update-all</a></h2>
+<h2><a name="update-all">6.5 update-all</a></h2>
 
 <p>
 このコマンドは、全てのインストール済パッケージを最新バージョンに更新します。
 パッケージ一覧は必要ないので、入力するだけです:
 </p>
 <pre>fink update-all</pre>
+<p>
+<a href="#options">--use-binary-dist option</a> はここでも使用することができます。
+</p>
 
-<h2><a name="list">6.5 list</a></h2>
+<h2><a name="list">6.6 list</a></h2>
 
 <p>
 このコマンドは、パッケージ一覧を作成し、インストール状況、最新バージョン、短い説明を表示します。
@@ -111,7 +146,7 @@ fink list "gnome*"         - 'gnome' から始まるパッケージのみ表示�
 最後の例のクォーテーションは、シェルが解釈しないように必要です。
 </p>
 
-<h2><a name="apropos">6.6 apropos</a></h2>
+<h2><a name="apropos">6.7 apropos</a></h2>
 
 <p>
 このコマンドはほとんど <code>fink list</code> と同じです。
@@ -123,7 +158,7 @@ fink apropos irc          - 名称か詳細に 'irc' が含まれるパッケー
 fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに限定。
 </pre>
 
-<h2><a name="describe">6.7 describe</a></h2>
+<h2><a name="describe">6.8 describe</a></h2>
 
 <p>
 このコマンドは、指定したパッケージの詳細を表示します。
@@ -133,25 +168,25 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 エイリアス: desc, description, info
 </p>
 
-<h2><a name="fetch">6.8 fetch</a></h2>
+<h2><a name="fetch">6.9 fetch</a></h2>
 
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
 このコマンドは、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。</p>
 
-<h2><a name="fetch-all">6.9 fetch-all</a></h2>
+<h2><a name="fetch-all">6.10 fetch-all</a></h2>
 
 <p>
 <b>全ての</b>パッケージソースファイルをダウンロードします。
 fetch と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
 </p>
 
-<h2><a name="fetch-missing">6.10 fetch-missing</a></h2>
+<h2><a name="fetch-missing">6.11 fetch-missing</a></h2>
 
 <p>
 ローカルに存在しない<b>全ての</b>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
 
-<h2><a name="build">6.11 build</a></h2>
+<h2><a name="build">6.12 build</a></h2>
 
 <p>
 パッケージをビルドしますが、インストールはしません。
@@ -160,29 +195,35 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 すでに .deb ファイルがある場合は何もしません。
 依存パッケージは、ビルドだけではなく、<b>インストールされます</b>ので注意して下さい。
 </p>
+<p>
+<a href="#options">--use-binary-dist option</a> はここでも使用することができます。
+</p>
 
-<h2><a name="rebuild">6.12 rebuild</a></h2>
+<h2><a name="rebuild">6.13 rebuild</a></h2>
 
 <p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
 パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
 パッケージの開発中にはとても役に立ちます。
 </p>
+<p>
+<a href="#options">--use-binary-dist option</a> はここでも使用することができます。
+</p>
 
-<h2><a name="reinstall">6.13 reinstall</a></h2>
+<h2><a name="reinstall">6.14 reinstall</a></h2>
 
 <p>
 インストールと同様ですが、インストールされていても <code>dpkg </code>を通してインストールします。
 これは、誤ってパッケージファイルを消したり、設定ファイルを変えてデフォルトに戻したい場合などにも使えます。
 </p>
 
-<h2><a name="configure">6.14 configure</a></h2>
+<h2><a name="configure">6.15 configure</a></h2>
 
 <p>
 Fink を再設定します。
 ミラーサイトの設定やプロキシの設定も行なうことができます。
 </p>
 
-<h2><a name="selfupdate">6.15 selfupdate</a></h2>
+<h2><a name="selfupdate">6.16 selfupdate</a></h2>
 
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
@@ -190,15 +231,18 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 通常リリースの他、 <code>/sw/fink/dists</code> を設定して直接 CVS アップデートすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
+<p>
+<a href="#options">--use-binary-dist option</a> を使用すると、バイナリディストリビューション中の一覧も更新されます。
+</p>
 
-<h2><a name="index">6.16 index</a></h2>
+<h2><a name="index">6.17 index</a></h2>
 
 <p>
 パッケージキャッシュを再構築します。
 通常は <code>fink</code> が更新の必要に応じて自動検出するので、手動で行なう必要はありません。
 </p>
 
-<h2><a name="validate">6.17 validate</a></h2>
+<h2><a name="validate">6.18 validate</a></h2>
 
 <p>
 このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
@@ -208,23 +252,26 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 エイリアス: check
 </p>
 
-<h2><a name="scanpackages">6.18 scanpackages</a></h2>
+<h2><a name="scanpackages">6.19 scanpackages</a></h2>
 
 <p>
 指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
 </p>
 
-<h2><a name="cleanup">6.19 cleanup</a></h2>
+<h2><a name="cleanup">6.20 cleanup</a></h2>
 
 <p>
 新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
 かなりのディスク容量が利用できるようになります。
 </p>
+<p>
+<a href="#options">--use-binary-dist option</a> を使用すると，古いバイナリパッケージも削除されます。
+</p>
 
-    <h2><a name="dumpinfo">6.20 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
       
       <p>
-	  注記: 0.20.0 以降の CVS 版より前は未対応
+	  注記: 0.21.0 以降の <code>fink</code> で有効。
 	  </p>
 	  <p>
 	Shows how Fink parses parts of a package's .info file.

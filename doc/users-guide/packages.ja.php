@@ -154,19 +154,42 @@ E: Sorry, broken packages</pre>
 この作業は時間がかかります。
 この作業中にエラーが発生した場合、まず <a href="http://fink.sourceforge.net/faq/">FAQ</a> を確認して下さい。
 </p>
+<p>
+<code>fink</code> のバージョン 0.23.0 以降では、コンパイル済みバイナリパッケージを優先的にダウンロードするように指定することができます。
+使い方は、
+<a href="usage.php?phpLang=ja#options">--use-binary-dist (or -b) option</a>
+というオプションを<code>fink</code> に指定します。
+これによって時間を大幅に節約することができます。
+例えば、
+</p>
+<pre>fink --use-binary-dist install wget-ssl</pre>
+<p>あるいは</p>
+<pre>fink -b install wget-ssl</pre>
+<p>
+とすることで、 wget-ssl が依存しているものをバイナリディストリビューションから最初にダウンロードし、
+能古炉だけをソースからビルドします。
+このオプションは、
+<a href="conf.php?phpLang=ja">Fink 設定ファイル</a> (<code>fink.conf</code>)
+あるいは <code>fink configure</code> を実行することで、常に使用するように指定することができます。
+</p>
+<p>
+<code>fink</code> ツールの詳細は、
+<a href="usage.php?phpLang=ja">"コマンドライン fink ツールの使用方法"</a>
+の章を参照してください。
+</p>
 
 <h2><a name="fink-commander">3.5 Fink Commander</a></h2> 
  
 <p>
 Fink Commander は <code>apt-get</code> と <code>fink</code> の Aqua インターフェイスです。
 Binary メニューはバイナリディストリビューションの、 Source メニューはソースディストリビューションの操作を行います。
-</p> 
+</p>
 <p>
 Fink Commander は Fink バイナリインストーラに付属しています。
 Fink をソースからインストールした場合など、別にダウンロードしたい場合や詳しい情報は、
 <a href="http://finkcommander.sourceforge.net%20">Fink Commander website</a> リンクを辿って下さい。
-</p> 
- 
+</p>
+
 <h2><a name="">3.6 用意されているバージョン</a></h2>
 
 <p>パッケージをインストールする場合、まず<a href="http://fink.sourceforge.net/pdb/index.php">Package Database</a>を確認して Fink にあるかどうか確認して下さい。

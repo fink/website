@@ -202,6 +202,30 @@ FTP サーバーやネットワークによっては、このオプションが 
 <b>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</b>
 </p>
 </li>
+<li>
+<p>
+<b>SelfUpdateMethod:</b> point, rsync あるいは cvs</p>
+<p>
+Fink は、数種類の手段でパッケージ情報ファイルを更新することができます。
+<b>rsync</b> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
+stable や unstable 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
+これらのファイルを必ず事前にバックアップしてください。
+<b>cvs</b> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
+cvs はミラーを使えないという欠点があるため、 CVS サーバに接続することができない時は更新できません。
+<b>point</b> は最近リリースされたものだけをダウンロードします。
+ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
+</p>
+</li>
+<li>
+<p>
+<b>UseBinaryDist:</b> ブール値</p>
+<p>
+fink に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
+これによりインストール時間を短縮できるので、このオプションを設定することをおすすめします。
+<a href="usage.php?phpLang=ja">--use-binary-dist オプション</a>を使用しても同じですが、これは一度だけ有効です。 
+<b>fink バージョン 0.23.0 から有効</b>.
+</p>
+</li>
 </ul>
 
 <h2><a name="mirrors">5.6 ミラー設定</a></h2>
@@ -297,18 +321,18 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 			<li>
 				<p><b>CCacheDir:</b> パス</p>
 				<p>
-					<b>0.20.5 CVS バージョン以降の fink で導入</b>
 					Fink パッケージ ccache-default がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
 					規定値は <code>/sw/var/ccache</code> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
 					ccache は <code>$HOME/.ccache</code> を使用する。
 					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
+					<b>0.21.0 以降でのみ有効</b>.
 				</p>
 			</li>
 		</ul>
 	
-	<h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
+	<h2><a name="sourceslist">5.9 apt の sources.list ファイルを管理</a></h2>
 		
 		<p>
 			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う

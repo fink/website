@@ -44,7 +44,6 @@ Binary-&gt;Dist-Upgrade
 <h2><a name="src">4.2 ソースディストリビューションのアップグレード</a></h2>
 
 <p>
-ソースディストリビューションを使用している場合、アップグレードは多少複雑になります。
 アップグレードは２ステップあります。
 1. パッケージ記述をダウンロードします。
 2. このパッケージ記述を使って新しいパッケージをコンパイルします。
@@ -83,9 +82,21 @@ Source-&gt;Updata-all
 <h2><a name="mix">4.3 バイナリとソースの混在</a></h2>
 
 <p>
-もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法に従わなくてはなりません。
-つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
-Fink Commander を使用している場合、まず <a href="#bin">バイナリの更新</a> を実行してから <a href="#src">ソースの更新</a> を実行します。 
+もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法をする必要があります。
+最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ記述を取得し、残りのパッケージを更新します。
+</p>
+<p>
+fink 0.23.0 からは、 UseBinaryDist オプション (
+<a href="usage.php?phpLang=ja#options">--use-binary-dist (or -b) オプション</a>
+あるいは <a href="conf.php?phpLang=ja">Fink 設定ファイル</a>で設定可能) 
+を使用することで、 <code>fink selfupdate</code> 実行時にソースとバイナリ記述を更新します。
+これにより、 <code>apt-get</code> の実行は必要なくなりました。
+</p>
+<p>
+Fink Commander を使用している場合、 Binary-&gt;Update descriptions を選択してパッケージ一覧を更新し，
+Binary-&gt;Dist-Upgrade packages でパッケージを更新します。
+この後、 Source-&gt;Selfupdate で新しい情報ファイルをダウンロードし、
+Source-&gt;Update-all を行います(詳細は前の節を参照)。
 </p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
