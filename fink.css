@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.21 2004/03/11 22:36:57 babayoshihiko Exp $ */
+/* $Id: fink.css,v 1.22 2004/03/12 02:20:09 babayoshihiko Exp $ */
 /* A good way to get colors which fit well together is to use the color wheel
  found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
  were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
@@ -46,7 +46,6 @@ p,ul,ol,li,dl,dt,dd,td,th {
 
 /* Layout and Spacing.  Use px because others don't work with Mac IE */
 td { 
-	font-size: 0px;
 	margin: 4px ;
 	padding: 4px ;
 }
