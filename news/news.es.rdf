@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2004-11-15T21:28:49+01:00</dc:date>
+    <dc:date>2004-11-21T09:30:44-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.">
+      <title>Solution to gcc problems.</title>
+      <link>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</link>
+      <guid>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</guid>
+      <description>
+
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+
+
+
+</description>
+      <content:encoded>
+
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+
+
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.">
       <title>Resolución de problemas con gcc.</title>
       <link>http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.</link>
@@ -613,65 +648,6 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 	We hope to improve this service in the future, yet this depends on your willingness to help us out. 
 	We are looking forward to many new applications and thank our community in advance. 
 	    
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2003-11-17%20Fink%200.6.2%20released">
-      <title>Fink 0.6.2 released</title>
-      <link>http://fink.sourceforge.net/news/#2003-11-17%20Fink%200.6.2%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2003-11-17%20Fink%200.6.2%20released</guid>
-      <description>
-	The latest Fink release, version 0.6.2, is now available
-for both source and binary users.  This is a bug-fix release, intended
-to address two problems: the dselect/user deletion bug, and a 
-problem with ownership of files.  The dselect bug was addressed by
-updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
-it is safe to once again use dselect.  However, if you ran dselect
-at any time since 0.6.0, you should carefully check the integrity
-of the file at /sw/etc/apt/sources.list.  If you have
-any doubts about this file, you should replace it with
-the default sources.list file.
-
-Users who have installed binary files from the 0.6.1 distribution
-may find that certain files in their Fink installation are owned
-by UID 2011 rather than by root.  To correct this problem,
-run the command:
-sudo find /sw/ -user 2011 -exec chown root:admin {} \;
-This release, like the previous one, was built on OS X 10.2
-using the gcc 3.3 compiler, and runs fine with some exceptions* on OS X 10.3.  Most Fink 
-users who upgrade to 10.3 will continue to
-want to only use the binaries from this
-new distribution for now, while the Fink team continues to modify
-Fink packages for 10.3.
-
-*Exceptions include: emacs, qt.
-
-	</description>
-      <content:encoded>
-	The latest Fink release, version 0.6.2, is now available
-for both source and binary users.  This is a bug-fix release, intended
-to address two problems: the dselect/user deletion bug, and a 
-problem with ownership of files.  The dselect bug was addressed by
-updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
-it is safe to once again use dselect.  However, if you ran dselect
-at any time since 0.6.0, you should carefully check the integrity
-of the file at /sw/etc/apt/sources.list.  If you have
-any doubts about this file, you should replace it with
-the default sources.list file.
-
-Users who have installed binary files from the 0.6.1 distribution
-may find that certain files in their Fink installation are owned
-by UID 2011 rather than by root.  To correct this problem,
-run the command:
-sudo find /sw/ -user 2011 -exec chown root:admin {} \;
-This release, like the previous one, was built on OS X 10.2
-using the gcc 3.3 compiler, and runs fine with some exceptions* on OS X 10.3.  Most Fink 
-users who upgrade to 10.3 will continue to
-want to only use the binaries from this
-new distribution for now, while the Fink team continues to modify
-Fink packages for 10.3.
-
-*Exceptions include: emacs, qt.
-
 	</content:encoded>
     </item>
   </channel>

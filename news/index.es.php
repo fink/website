@@ -1,11 +1,25 @@
 <?
 $title = "News";
-$cvs_author = 'Author: zifra';
-$cvs_date = 'Date: 2004/11/15 20:28:30';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/11/21 14:26:55';
 $metatags = '';
 
 include_once "header.inc";
 ?>
+
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<p>
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+</p><p>
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+</p>
+
 
 <a name="2004-10-15 Resolución de problemas con gcc."><span class="news-date">2004-10-15: </span><span class="news-headline">Resolución de problemas con gcc.</span></a><?php gray_line(); ?>
       <p>

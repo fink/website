@@ -1,3 +1,17 @@
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<p>
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+</p><p>
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+</p>
+
+
 <a name="2004-10-15 Resolución de problemas con gcc."><span class="news-date">2004-10-15: </span><span class="news-headline">Resolución de problemas con gcc.</span></a><?php gray_line(); ?>
       <p>
 Se sabe que la versión de gcc incluída en XCode 1.5 produce 
@@ -45,17 +59,4 @@ También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de
 Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 </p>
 
-<a name="2004-08-23 Problemas con XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problemas con XCode 1.5</span></a><?php gray_line(); ?>
-	<p>
-	Recientemente han habido reportes de varios paquetes del Fink que no
-	 compilan correctamente usando Xcode 1.5. Si aún no han actualizado a
-	  XCode 1.5, se sugiere que se espere a la solución de este problema 
-	  antes de hacerlo.
-	</p><p>
-	Si has tenido problemas con algún paquete que compilaba correctamente
-	 con XCode 1.2 pero que compila incorrectamente con XCode 1.5, favor 
-	 de reportarlo a la lista de correo fink-devel. (El síntoma usual es:
-	 some symbols are  missing after compiling with g++.)  
-	Algunos paquetes que se sabe tiene este problema son octave, 
-	singular-factory, singular-libfac, y posbilemente sdl.	</p>
-	
+

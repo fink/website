@@ -1,3 +1,17 @@
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<p>
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+</p><p>
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+</p>
+
+
 <a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
 <p>
 The version of gcc included with XCode 1.5 is known to produce 
@@ -56,19 +70,4 @@ We also thank our community for downloading the prior release 0.7.0 more than 13
 Without their constant support and valuable pointers, Fink would not be where we are now.
 </p>
 
-<a name="2004-08-23 Problems with XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problems with XCode 1.5</span></a><?php gray_line(); ?>
-	<p>
-	In the past few days, there have been reports that some fink packages 
-	do not compile correctly using XCode 1.5.  If you have not already
-	upgraded to XCode 1.5, we suggest that you wait until this issue
-	is resolved before doing so.
-	</p><p>
-	If you are having problems with a package which compiled under
-	XCode 1.2 but does not compile correctly under XCode 1.5, 
-	please report the package to
-	the fink-devel mailing list.  (The usual symptom is: some symbols
-	are  missing after compiling with g++.)  
-	Packages already known to have this problem include
-	octave, singular-factory, singular-libfac, and possibly sdl.
-	</p>
-	
+
