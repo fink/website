@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/14 18:31:21 $';
+$cvs_date = '$Date: 2001/07/13 20:40:22 $';
 
 include "header.inc";
 ?>
@@ -16,7 +16,6 @@ could become future features):</p>
 <li>More distinct dependencies: build-time vs. run-time, specific
 versions</li>
 <li>Better infrastructure for daemons and cron jobs</li>
-<li>Support virtual packages (Provides, Replaces)</li>
 <li>Pseudo-packages for software that is already installed on the host
 system</li>
 <li>Get rid of .../var/fink-stamp</li>
