@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<document filename="index">
+<title>Running X11 on Darwin and Mac OS X</title>
+<shorttitle>Running X11</shorttitle>
+<cvsid>$Id: x11.xml,v 1.1 2001/07/15 20:13:53 chrisp Exp $</cvsid>
+
+<preface>
+<p>
+This document is about running X11 / XFree86 / Xtools on Apple's Mac
+OS X and Darwin systems.
+It gives an introduction and a history of development, followed by a
+description of the current situation.
+It goes on to describe the many options you have to use X11 with
+Fink.
+</p>
+</preface>
+
+
+<chapter filename="intro">
+<title>Introduction</title>
+<shorttitle>Intro</shorttitle>
+
+
+<section name="def-x11"><title>What is X11?</title>
+<p>
+The X Window System Version 11, or X11 for short, is a graphics
+display system with a network-transparent client-server architecture.
+It allows applications to draw pixels, lines, text, images, etc. on
+your screen.
+X11 also comes with additional libraries that let applications easily
+draw user interfaces, i.e. buttons, text fields and so on.
+</p>
+<p>
+X11 is the de facto standard graphics system in the Unix world.
+It comes with Linux, the *BSDs and most commercial Unix flavors.
+Desktop environments like CDE, KDE and GNOME are based on it.
+</p>
+</section>
+
+<section name="def-macosx"><title>What is Mac OS X?</title>
+<p>
+Mac OS X is an operating system produced by Apple Computer.
+Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
+thus a member of the Unix OS family.
+However, it comes with a proprietary graphics display system.
+The graphics engine is called Quartz and the look and feel is called
+Aqua, although the two names are often used interchangably.
+</p>
+</section>
+
+<section name="def-darwin"><title>What is Darwin?</title>
+<p>
+Darwin is basically a stripped-down version of Mac OS X that is
+available free of charge and with full source code.
+It does not contain Quartz, Aqua, or any other related technology.
+By default, it only offers a text console.
+</p>
+</section>
+
+<section name="def-xfree86"><title>What is XFree86?</title>
+<p>
+<link url="http://www.xfree86.org/">XFree86</link> is an open source
+implementation of X11.
+It was initially developed to run on Intel x86 PCs, hence the name.
+Nowadays, it runs on many architectures and operating systems,
+including OS/2, Darwin, Mac OS X and Windows.
+</p>
+</section>
+
+<section name="def-xtools"><title>What is Xtools?</title>
+<p>
+Xtools is a product of <link url="http://www.tenon.com/">Tenon
+Intersystems</link>.
+It is a version of X11 for Mac OS X, based on XFree86.
+</p>
+</section>
+
+<section name="client-server"><title>Client and Server</title>
+<p>
+X11 has a client-server architecture.
+There is one central program that does the actual drawing and
+coordinates access by several applications; that is the server.
+An application that wants to draw using X11 connects to the server and
+tells it what to draw.
+Thus applications are called clients in the X11 world.
+</p>
+<p>
+X11 allows the server and the clients to be on different machines,
+which often results in confusion over the terms.
+In an environment with workstations and servers, you will run the X11
+display server on the workstation machine and the applications (X
+clients) on the server machine.
+So when talking about the "server", that means the X11 display server
+program, not the machine hidden in your wardrobe.
+</p>
+</section>
+
+<section name="rootless"><title>What does rootless mean?</title>
+<p>
+A side track:
+X11 models the screen as a hierarchy of windows contained in each
+other.
+At the top of the hierarchy is a special window which is the size of
+the screen and contains all other windows.
+This window contains the desktop background and is called the "root
+window".
+</p>
+<p>
+Now back on topic:
+Like any graphic environment, X11 was written to be alone and have
+full control over the screen.
+In Mac OS X Quartz already governs the screen, so one must make
+arrangements if both are to get along together.
+</p>
+<p>
+One arrangement is to let the two take turns.
+Each environment gets a complete screen, but only one of them is
+visible at a time and the user can switch between them.
+This is called full-screen or rooted mode.
+It is called rooted because there is a perfectly normal root window on
+the X11 screen that works like on other systems.
+</p>
+<p>
+Another arrangement is to mix the two environments window by window.
+This eliminates the need to switch between two screens.
+It also eliminates the X11 root window, because Quartz already takes
+care of the desktop background.
+Because there is no (visible) root window, this mode is called
+"rootless".
+It is the most comfortable way to use X11 on Mac OS X, so everyone is
+trying to get it. <code>:-)</code>
+</p>
+</section>
+
+
+</chapter>
+
+
+<chapter filename="history">
+<title>History</title>
+<shorttitle>History</shorttitle>
+
+<p>[Sorry for the epic language, I couldn't resist...]</p>
+
+<section name="early"><title>The early days</title>
+<p>
+In the beginning, there was void.
+Darwin was in its infancy, Mac OS X was still in development and there
+was no X11 implementation for both of them.
+</p>
+<p>
+Then there came John Carmack and ported XFree86 to Mac OS X Server,
+which was the only OS in the Darwin family available at that time.
+Later that port was updated for XFree86 4.0 and Darwin 1.0 by Dave
+Zarzycki.
+The patches floated around the net, waiting for things to come.
+</p>
+</section>
+
+<section name="xonx-forms"><title>XonX forms</title>
+<p>
+When the Mac OS X Public Beta and Darwin 1.2 appeared, things became
+complicated.
+Torrey T. Lyons fed the patches for Darwin support back to the XFree86
+Project and they were accepted into XFree86 4.0.2.
+XFree86 4.0.2 worked fine on Darwin, but on Mac OS X it required users
+to log out of Aqua and go to the console to run it.
+So Torrey gathered the <link
+url="http://sourceforge.net/projects/xonx/">XonX team</link> around
+him and set out on a voyage to bring XFree86 to Mac OS X.
+</p>
+<p>
+At about the same time Tenon started to build Xtools, using XFree86
+4.0 as the foundation.
+</p>
+</section>
+
+<section name="root-or-not"><title>To root or not to root</title>
+<p>
+Soon the XonX team had XFree86 running in a fullscreen mode in
+parallel to Quartz and was putting out test releases for adventurous
+users.
+The test releases were called XFree86-Aqua, or XAqua for short.
+Since Torrey had taken the lead, all changes went directly to
+XFree86's CVS repository, which was heading towards the 4.1.0
+release.
+</p>
+<p>
+In the first stages interfacing with Quartz was done via a small
+application called XMaster.app.
+Later that code was integrated into the X server proper, giving birth
+to XDarwin.app.
+Shared library support was also added at this time (and Tenon was
+convinced to use this set of patches instead of their own to ensure
+binary compatibility).
+There was even good progress on a rootless mode (using the Carbon
+API), but alas, it was too late to get it into XFree86 4.1.0.
+And the patch was free, and continued to float around the net.
+After XFree86 4.1.0 shipped with just the fullscreen mode, work on the
+rootless mode continued, now using the Cocoa API.
+An experimental rootless mode is now in XFree86's CVS repository.
+</p>
+<p>
+In the meantime, Apple released Mac OS X 10.0 and Darwin 1.3,
+and Tenon released Xtools 1.0 a while after that.
+</p>
+</section>
+
+</chapter>
+
+
+
+<chapter filename="inst-xfree86">
+<title>Getting and Installing XFree86</title>
+<shorttitle>Installing XFree86</shorttitle>
+
+<section name="official-binary"><title>The Official Binaries</title>
+<p>
+The XFree86 project has an official binary distribution of XFree86
+4.1.0.
+You can find it on you local <link
+url="http://www.xfree86.org/MIRRORS.shtml">Xfree86 mirror</link> in
+the directory <code>4.1.0/binaries/Darwin-ppc</code>.
+Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
+tarballs even though they are marked as optional.
+If you're unsure what you need, just download the whole directory.
+Run the <code>Xinstall.sh</code> script to install the stuff.
+You've now got XFree86 with a server that can do fullscreen, but not
+rootless under Mac OS X.
+</p>
+</section>
+
+
+<section name="official-source"><title>The Official Source</title>
+<p>
+If you've got the time to spare, you can build XFree86 4.1.0 from
+source.
+You can find the source on you local <link
+url="http://www.xfree86.org/MIRRORS.shtml">Xfree86 mirror</link> in
+the directory <code>4.1.0/source</code>.
+Grab all three <code>X410src-#.tgz</code> tarballs and extract them in
+the same directory.
+You can customize the build by putting macro definitions in the file
+<code>config/cf/host.def</code> in the XFree86 source tree.
+<!--
+To build on pure Darwin, create the file
+<code>config/cf/host.def</code> in the XFree86 source tree and put the
+following line in it:
+</p>
+<codeblock>#define DarwinQuartzSupport NO</codeblock>
+<p>
+You can add further defines to that file if you want; see
+-->
+See
+<code>config/cf/darwin.cf</code> for some hints.
+(Note: Only the macros that have an #ifndef check around them can be
+overwritten in host.def.)
+</p>
+<p>
+When you're happy with your configuration, compile and install XFree86
+with the following commands:
+</p>
+<codeblock>make World
+sudo make install install.man</codeblock>
+<p>
+As with the official binaries, you've now got XFree86 with a server
+that can do fullscreen, but not rootless under Mac OS X.
+</p>
+</section>
+
+
+<section name="latest-cvs"><title>The Latest Development Source</title>
+<p>
+If you have not only time, but also some nerves to spare you can get
+the latest development version of XFree86 from the public CVS
+repository.
+This is the version that will eventually become XFree86 4.2.
+It contains improvements made after 4.1.0 was released,
+most notably OpenGL support (just software rendering, but useful
+anyway) and a reimplementation of rootless mode.
+</p>
+<p>
+To install, follow the <link url="http://www.xfree86.org/cvs/">XFree86
+CVS</link> instructions to download the <code>xc</code> module.
+Then, follow the source build instructions above.
+</p>
+</section>
+
+
+<section name="fink"><title>Compiling via Fink</title>
+<p>
+Fink will let you install X11 in any way you like, but it
+also provides XFree86 packages of its own.
+The <code>xfree86-base</code> package downloads, compiles and installs
+XFree86 4.1.0, but without the XDarwin servers.
+There are several ways to add the servers to the mix.
+The <code>xfree86-server</code> package installs the standard XFree86
+4.1.0 servers, i.e. you'll only get fullscreen mode.
+The <code>xfree86-rootless</code> package uses a patch from the time
+before 4.1.0 to build a rootless server. This package is experimental
+and therefore in the "unstable" section.
+Finally, you have the option to install the server yourself; see
+below.
+</p>
+</section>
+
+
+<section name="macgimp"><title>MacGimp</title>
+<p>
+The downloadable installer currently offered by the MacGimp people
+does not contain XFree86.
+</p>
+<p>
+The CD that <link url="http://www.macgimp.com">MacGimp, Inc.</link>
+offers for sale reportedly contains XFree86.
+It's still not quite clear what version it is; it may be a mix of
+4.0.3, 4.1.0 and a development snapshot.
+The server does rootless mode, using a patch from the time before
+4.1.0.
+</p>
+</section>
+
+
+<section name="rootless"><title>Roaming Rootless Servers</title>
+<p>
+There are various rootless server binaries roaming around the net.
+These are not self-sufficient; they must be installed on top of
+another XFree86 installation (e.g. the official 4.1.0 binaries or
+Fink's <code>xfree86-base</code> package).
+</p>
+<p>
+Installing such a server happens in two steps.
+First, place the files you got in the right directories.
+These are:</p>
+<ul>
+<li>XDarwin.app in /Applications</li>
+<li>XDarwin in /usr/X11R6/bin</li>
+<li>XDarwinStartup in /usr/X11R6/bin</li>
+</ul>
+<p>
+Note that you must be the superuser ("root", run "sudo -s" to become
+root) for this procedure.
+If some of these items are already present, overwrite them.
+Make sure that XDarwin and XDarwinStartup have the executable flag
+set, e.g. <code>chmod 755 XDarwin XDarwinStartup</code>.
+</p>
+<p>
+In the second step, you need to set some symbolic links in
+/usr/X11R6/bin.
+You can use these commands:
+</p>
+<codeblock>cd /usr/X11R6/bin
+rm -f X XDarwinQuartz
+ln -s XDarwinStartup X
+ln -s /Applications/XDarwin.app/Contents/MacOS/XDarwin XDarwinQuartz</codeblock>
+<p>
+Now you should have an XFree86 installation that can run in rootless
+mode.
+</p>
+</section>
+
+
+<section name="xaqua0"><title>The XAqua 0.x releases</title>
+<p>
+The XAqua 0.x test releases available from the XonX project have been
+superseded by XFree86 4.1.0.
+They should not be installed; get the official 4.1.0 binary release
+instead.
+A new series of test releases will start in the near future; I'll
+update this document when it happens.
+</p>
+</section>
+
+
+</chapter>
+
+
+<chapter filename="run-xfree86">
+<title>Starting XFree86</title>
+<shorttitle>Starting XFree86</shorttitle>
+
+
+<section name="darwin"><title>Darwin</title>
+<p>
+On pure Darwin, XFree86 behaves like on any other Unix.
+The usual way to start it is via <code>startx</code> from the console;
+that starts both the server and some initial clients like the window
+manager and a terminal emulator with a shell.
+On pure Darwin it is not necessary to specify any parameters, so you
+can just type:
+</p>
+<codeblock>startx</codeblock>
+<p>
+You can customize what is started through several files in your home
+directory.
+<code>.xinitrc</code> controls what clients get started.
+<code>.xserverrc</code> controls server options and may even start a
+different server.
+If you're having trouble (as in, you only get a blank screen or
+XFree86 drops you right back to the console), you can start
+troubleshooting by moving these files out of the way.
+When <code>startx</code> doesn't find these files, it will use safe
+defaults that should always work.
+</p>
+<p>
+Alternatively, you can start the server directly with one of the XDMCP
+options, like this:
+</p>
+<codeblock>X -query remotehost</codeblock>
+<p>
+Details about this can be found in the <code>Xserver</code> manual
+page.
+</p>
+<p>
+Finally, there is the option to set up <code>xdm</code>; read its
+manual page for details.
+</p>
+<p>
+Note: If you're running Mac OS X, you can type <code>>console</code>
+at the login window and you'll get a text console that is
+equivalent to pure Darwin.
+You can use all of the start methods outlined above, with the
+exception of <code>xdm</code>.
+</p>
+</section>
+
+
+<section name="macosx-41"><title>Mac OS X + XFree86 4.1.0</title>
+<p>
+This section describes starting the server from XFree86 4.1.0.
+That also covers the rootless servers currently circulating; they are
+based on a late development version of XFree86 4.1.0 and sufficiently
+similar.
+</p>
+<p>
+There are basically two ways to start XFree86 under Mac OS X.
+One is double-clicking the XDarwin.app application in your
+Applications folder.
+When you start XFree86 this way it already knows you are running under
+Quartz (or Aqua or whatever you choose to call the
+graphical environment of Mac OS X).
+It will fire up fullscreen mode automatically and start your clients
+from the <code>.xinitrc</code> file.
+However, there is no way to get rootless mode by double-clicking the
+application.
+</p>
+<p>
+The other way to start XFree86 under Mac OS X is via
+<code>startx</code> from Terminal.app.
+If you start the server this way, you must tell it that it should run
+in parallel with Quartz.
+You do this by passing the <code>-quartz</code> option, like this:
+</p>
+<codeblock>startx -- -quartz</codeblock>
+<p>
+That will start up the server in fullscreen mode, plus the clients in
+your <code>.xinitrc</code>.
+If the server you have supports rootless operation, you can start it
+in rootless mode with the <code>-rootless</code> option:
+</p>
+<codeblock>startx -- -rootless</codeblock>
+</section>
+
+
+<section name="macosx-42"><title>Mac OS X + XFree86 CVS</title>
+<p>
+Recent development versions of XFree86 come with rootless mode built
+in and let you choose between fullscreen and rootless mode in a dialog
+at startup.
+Just double-click the XDarwin.app application.
+You can disable the dialog and set XDarwin to always use the mode of
+your choice in the preferences.
+</p>
+<p>
+You can still use startx and the command line options if you prefer.
+The options to choose the mode have changed slightly.
+The <code>-quartz</code> option no longer selects fullscreen mode, but
+rather uses the default mode set in the preferences.
+The <code>-fullscreen</code> option forces fullscreen mode, while
+<code>-rootless</code> forces rootless mode.
+</p>
+</section>
+
+<section name="xinitrc"><title>The .xinitrc File</title>
+<p>
+to be written...
+</p>
+</section>
+
+
+</chapter>
+
+
+<chapter filename="xtools">
+<title>Xtools</title>
+<shorttitle>Xtools</shorttitle>
+
+
+<section name="install"><title>Installing Xtools</title>
+<p>
+Now that's easy for a change.
+Get the installer, double-click it, and follow the instructions.
+Be sure to select the startup volume when asked.
+</p>
+<p>
+If you're using Fink, you should install the
+<code>system-xtools</code> package after you've installed Xtools.
+That package will not install any files, it will just check that the
+libraries etc. are there and act as a placeholder in Fink's dependency
+system.
+</p>
+</section>
+
+
+<section name="run"><title>Running Xtools</title>
+<p>
+To run Xtools, double-click Xtools.app in your Applications folder.
+Like XFree86, Xtools will run the clients you specify in your
+<code>.xinitrc</code> file.
+Xtools also allows you to start clients via the menu.
+</p>
+</section>
+
+
+</chapter>
+
+
+<chapter filename="other">
+<title>Other X11 Possibilities</title>
+<shorttitle>Other Stuff</shorttitle>
+
+
+<section name="vnc"><title>VNC</title>
+<p>
+VNC is a network-capable graphics display system similar in design to
+X11.
+However, it works at a lower level, making implementation easier.
+With the Xvnc server and a Mac OS X display client, it is possible to
+run X11 applications with Mac OS X.
+Jeff Whitaker's <link
+url="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc page</link> has
+more information on that.
+</p>
+</section>
+
+
+<section name="wiredx"><title>WiredX</title>
+<p>
+<link url="http://www.jcraft.com/wiredx/">WiredX</link> is a X11
+server written in Java.
+It also supports rootless mode.
+A Installer.app package is available at the web site.
+</p>
+</section>
+
+
+</chapter>
+
+
+</document>
