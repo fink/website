@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/25 08:56:38 $';
+$cvs_date = '$Date: 2001/04/27 17:33:27 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,8 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-04-26: This site now sports a <a href="faq/index.php">FAQ
+section</a>. Not much content yet, but it's here to stay.</p>
 <p>2001-04-20: Version 0.2.0 is released. It now uses dpkg for binary
 package management. You can get it from the download page, but be
 aware that this version is not yet as stable as the 0.1.x series.</p>
@@ -34,8 +36,6 @@ aware that this version is not yet as stable as the 0.1.x series.</p>
 only need this if you downloaded 0.1.8 and had install problems ("stow
 not found"). Get it from the <a href="download.php">download
 page</a>.</p>
-<p>2001-04-14: Version 0.1.8 is out. Get it from the <a
-href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
 
@@ -60,7 +60,8 @@ href="darwin/x11-choices.php">X11 information</a>. Check it out!</p>
 href="http://sourceforge.net">SourceForge</a>. Have a look at the <a
 href="http://sourceforge.net/projects/fink/">project summary</a> there
 for bug tracking and other stuff. Several <a
-href="fink/lists.php">mailing lists</a> are available.</p>
+href="fink/lists.php">mailing lists</a> are available. Common problems
+are addressed in the <a href="faq/index.php">FAQ section</a>.</p>
 
 <h2>Feedback</h2>
 
