@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:18:21';
+$cvs_date = 'Date: 2004/08/11 10:13:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
@@ -90,6 +90,5 @@ Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=fr">5. Référence</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

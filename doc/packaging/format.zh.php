@@ -198,4 +198,3 @@ _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版�
 <? include_once "../../footer.inc"; ?>
 
 
-

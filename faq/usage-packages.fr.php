@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 02:35:14';
+$cvs_date = 'Date: 2004/08/11 10:16:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -70,24 +70,25 @@ exec metacity &amp; exec gnome-session</pre><p>Note : ceci n'est plus vrai pour 
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il faut envisager deux hypothèses :</p><ul>
           <li>
             <b>Vous faites une installation à partir des binaires :</b>
-            <p>Si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via :</p>
-            <pre>sudo apt-get update
+<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de :</p>
+<pre>fink list -i system-xfree86</pre>
+<p>doit faire apparaître l'installation effective des paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>.</p>
+<p>Si la réinstallation du paquet X11User ne suffit pas à résoudre le problème, consultez les instructions <a href="#special-x11-debug">débogage spécial</a> ci-dessous.</p>
+<p>Si vous utilisez une version antérieure du paquet <code>fink</code>, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via :</p>
+<pre>sudo apt-get update
 sudo apt-get install fink</pre>
-<p>Si cela ne suffit pas à résoudre le problème ou si vous utilisez une version postérieure de fink, vous devez réinstaller le paquet X11User, car il arrive parfois que l'installation ne soit pas complète.</p>
-<p>Exécutez ensuite :</p>
-<pre>fink list  -i system-xfree86</pre>
-<p>pour vérifier que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code> sont bien installés.</p>
-<p>Si la réinstallation de X11User ne suffit pas à résoudre le problème, consultez les instructions <a href="#special-x11-debug">débogage spécial</a> ci-dessous.</p>
 </li>
           <li>
             <b>Vous faites une installation à partir du source :</b>
-            <p>Si vous utilisez une version de <code>fink</code> antérieure à la version 0.17, vous devez mettre à jour <code>fink</code>, par exemple :</p>
-            <pre>fink selfupdate</pre> 
-            (en supposant que vous faites la mise à jour via CVS ou via rsync et que vous n'utilisez pas les mises à jour ponctuelles).
-            <p>Quand vous aurez une version à jour de <code>fink</code>, exécutez :</p>
-            <pre>fink list -i system-xfree86</pre> pour vérifier que les paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>sont bien installés. Si l'un des deux premiers est manquant, vous devez réinstaller le paquet X11User. Si le paquet <code>-dev</code> est manquant, vous devez l'installer ou le réinstaller. Il est situé sur le CD Xcode et <b>n'est pas</b> installé par défaut. Même si vous avez installé XCode, le X11SDK <b>n'est pas</b> installé par défaut. Il doit être installé soit en utilisant une installation personnalisée de Xcode, soit en cliquant sur le pkg <code>X11SDK</code> situé dans le répertoire <code>Packages</code>.
-            <p><b>Note pour les utilisateurs de Jaguar (X11 bêta 3)</b> : Vous ne pouvez pas utiliser XCode, vous devez donc avoir déjà téléchargé le paquet X11SDK correspondant à votre système. Comme la date limite d'utilisation de X11 bêta 3 est dépassée, vous ne pouvez plus télécharger le paquet X11SDK ni le paquet X11User correspondant. Vous devez vous en tenir à l'installation de paquets binaires X11, ou bien installer XFree86, ou encore passer à Panther.</p>
-            <p>Si ceci ne résout pas le problème, consultez les instructions <a href="#special-x11-debug">débogage spécial</a> ci-dessous.</p>
+<p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <b>obligatoire</b> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode. Il n'est pas installé par défaut. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <code>Packages</code> du CD XCode.</p>
+<p>Si le problème persiste, exécutez :</p>
+<pre>fink list -i system-xfree86  </pre>
+<p>Cela devrait faire apparaître l'installation effective des paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>. Si le paquet <code>-dev</code> n'apparaît pas, réinstallez X11SDK, car il arrive que l'installeur d'Apple omette des fichiers. Il se peut que vous deviez faire la réinstallation plusieurs fois. Si l'un des deux autres paquets n'apparaît pas, réinstallez le paquet X11User (pour les mêmes raisons).</p>
+<p><b>Note pour les utilisateurs de Jaguar (X11 bêta 3)</b> : Vous ne pouvez pas utiliser XCode, vous devez donc avoir déjà téléchargé le paquet X11SDK correspondant à votre système. Comme la date limite d'utilisation de X11 bêta 3 est dépassée, vous ne pouvez plus télécharger le paquet X11SDK ni le paquet X11User correspondant. Vous devez vous en tenir à l'installation de paquets binaires X11, ou bien installer XFree86, ou encore passer à Panther.</p>
+<p>Si vous utilisez une version de <code>fink</code> antérieure à la version 0.17, vous devez mettre à jour <code>fink</code>, par exemple :</p>
+<pre>fink selfupdate</pre> 
+(en supposant que vous faites la mise à jour via CVS ou via rsync et que vous n'utilisez pas les mises à jour ponctuelles).
+<p>Si ceci ne résout pas le problème, consultez les instructions <a href="#special-x11-debug">débogage spécial</a> ci-dessous.</p>
             </li>
         </ul></div>
         </a>
