@@ -1,9 +1,9 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:07:25 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/10 21:06:55';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="intro.php" title="Introduction">';
+$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="intro.php" title="Introduction">';
 
 include "header.inc";
 ?>
@@ -98,7 +98,6 @@ packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
 <tt><nobr>--prefix=%p</nobr></tt> plus anything specified with
 ConfigureParams</dd>
 </dl>
-
 
 
 

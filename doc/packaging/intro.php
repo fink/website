@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:07:25 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/10 21:06:55';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="format.php" title="Package Descriptions"><link rel="prev" href="index.php" title="Packaging Contents">';
 
@@ -15,8 +15,9 @@ include "header.inc";
 
 <h2>What is a Package?</h2>
 <p>
-Conceptually, a package is an atomic piece of software.
-It consists of a set of files that form one unit.
+A package is a piece of software that forms an atomic unit.
+A typical package contains an executable program, the data files it
+needs, message catalogs for internationalisation and documentation.
 In Fink, packages can exist in two forms: the package description
 and the ready-to-install binary package file.
 </p>

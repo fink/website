@@ -1,9 +1,9 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:07:25 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/10 21:06:55';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="format.php" title="Package Descriptions">';
+$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
 include "header.inc";
 ?>
@@ -57,13 +57,13 @@ letters. Required field.
 </p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
-The upstream version number. Required, but defaults to "0".
+The upstream version number. Required field.
 </p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
 The package revision. Increase this when you make a new
 description for the same upstream version. Revision numbers should
-start at 1. Required, but defaults to "0".
+start at 1. Required field.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
@@ -134,7 +134,7 @@ special flags are used to override this.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
-An URL to the source tarball. It should be a HTTP or FTP url, but
+An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
 supports a special URL scheme for mirrors:
 <tt><nobr>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</nobr></tt>. This will
@@ -143,8 +143,8 @@ configuration, append the <i>relative-path</i> part and use that as
 the actual URL.
 </p>
 <p>
-Before the URL is used, percent expansion takes place (see
-previous section). The value <tt><nobr>gnu</nobr></tt> is a shorthand for
+Before the URL is used, percent expansion takes place.
+The value <tt><nobr>gnu</nobr></tt> is a shorthand for
 <tt><nobr>mirror:gnu:%n/%n-%v.tar.gz</nobr></tt>; <tt><nobr>gnome</nobr></tt> is a shorthand for
 <tt><nobr>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</nobr></tt>. The
 default is <tt><nobr>%n-%v.tar.gz</nobr></tt> (i.e. a manual
@@ -350,7 +350,7 @@ A short description of the package (what is it?). This is a
 one-line description that will be displayed in lists, so it must be
 short and informative.  Keep it to around 30 to 50 chars. It is not
 necessary to repeat the package name in this field - it will always
-be displayed in proper context.
+be displayed in proper context. Required field.
 </p>
 </td></tr><tr valign="top"><td>DescDetail</td><td>
 <p>
