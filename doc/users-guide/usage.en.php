@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:41';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/09 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 include_once "header.inc";
@@ -12,7 +12,7 @@ include_once "header.inc";
     
     <h2><a name="using">6.1 Using the fink tool</a></h2>
       
-      <p>The <code>fink</code> tool uses several suffix comands to work on packages from the source distribution. 
+      <p>The <code>fink</code> tool uses several suffix commands to work on packages from the source distribution. 
 Some of them need at
 least one package name, but can handle several package names at
 once. You can specify just the package name (e.g. gimp), or a fully
@@ -41,7 +41,7 @@ of these for historic reasons).</p>
       
       <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has some flaws: It only works on
 packages the <code>fink</code> tool knows about (i.e. where an .info file is present); and it
-doesn't check dependencies itself but rather completly leaves that to
+doesn't check dependencies itself but rather completely leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
       <p>The remove command only removes the actual package files, but leaves
 the .deb compressed package file intact. This means that you can

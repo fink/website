@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:41';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/09 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 include_once "header.inc";
@@ -103,7 +103,7 @@ Before a computer can actually run a program, it must be transformed
 into low-level machine code instructions (unreadable by most humans).
 That process is called "compiling" and the resulting program is called
 "executable" or "binary".
-(The process is also refered to as "building", because it usually
+(The process is also referred to as "building", because it usually
 involves more steps than just compiling.)
 </p>
       <p>

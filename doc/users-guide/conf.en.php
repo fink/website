@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:41';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/09 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -118,7 +118,7 @@ alter this value.
           <p>
             <b>FetchAltDir:</b> path</p>
           <p>usually fink will store the sources it fetches in
-<code>/sw/src</code>. You can specify an alernate directory to look for
+<code>/sw/src</code>. You can specify an alternate directory to look for
 downloaded source code in using this option. For example:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
@@ -143,9 +143,9 @@ The default value is 3.
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
-          <p>Fink caches its package descripition files in /sw/var/db/fink.db to
+          <p>Fink caches its package description files in /sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
-checks whether or not thepackage index needs to be updated unless this
+checks whether or not the package index needs to be updated unless this
 option is set to "True". It defaults to "False" and it is not
 recommended that you change it. If you do, you may need to manually run
 the <code>fink index</code> command to update the index.</p>
@@ -198,7 +198,7 @@ example:</p>
 Internet - <b>wget</b>, <b>curl</b>, or <b>axel</b>. The value
 <b>axelautomirror</b> uses an experimental mode of the <b>axel</b>
 application which tries to determine the closest server that has a
-certain file. The use of <b>axelmirror</b> is not recommended at this
+certain file. The use of <b>axel</b> and <b>axelautomirror</b> are not recommended at this
 time. The default value is <b>curl</b>.
 <b>The application you chose as DownloadMethod MUST be installed!</b>
           </p>
@@ -228,7 +228,7 @@ would like to use.</p>
           <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
 <code>/sw/lib/fink/mirror/_keys</code>.
-For example, if you live in europe:</p>
+For example, if you live in Europe:</p>
           <pre>MirrorContinent: eur</pre>
         </li>
         <li>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:41';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/09 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 include_once "header.inc";
@@ -83,7 +83,7 @@ Once you have updated your package descriptions (no matter which way),
 you should update all packages at once with the command <code>fink
 update-all</code>.
 </p>
-<p>To update the source distribution using Fink Commander, select Source-&gt;Selfupdate to download new package information files, and then Source-&gt;Updata-all to update your outdated packages.</p>
+<p>To update the source distribution using Fink Commander, select Source-&gt;Selfupdate to download new package information files, and then Source-&gt;Update-all to update your outdated packages.</p>
     
     <h2><a name="mix">4.3 Mixing Binaries and Source</a></h2>
       

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:41';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/09 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 include_once "header.inc";
@@ -144,7 +144,7 @@ Removing packages is just as easy:
       <p>
       </p>
     
-    <h2><a name="bin-exceptions">3.3 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></h2>
+    <h2><a name="bin-exceptions">3.3 Installing Dependent Packages that are Unavailable in the Binary Distribution</a></h2>
       
       <p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
       <pre>Sorry, but the following packages have unmet
@@ -206,7 +206,7 @@ If you run into errors during that process, please first check the
         </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see ths version (or possibly even the package).</p>
+            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
@@ -214,7 +214,7 @@ If you run into errors during that process, please first check the
 </li> 
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstahle packages.</p>
+            <b>10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
