@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.7 2004/03/22 03:29:15 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.8 2004/03/23 23:46:45 vasi Exp $</cvsid>
 
 <preface>
 <p>
@@ -1474,8 +1474,9 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.1, you no longer need to use consecutive values for
-N. However, you still may not have duplicates.
+of fink after 0.19.2, you may use arbitrary integer values of N,
+rather than numbering upwards from N = 2. However, you still may not have
+duplicates.
 </p>
 </itemd></item>
 
@@ -1533,7 +1534,7 @@ In the above example this would result in the tarball being stored under
 <itemd>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the Nth tarball as specified by the <code>Source<em>N</em></code>
+is used to rename the tarball specified by the <code>Source<em>N</em></code>
 field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
@@ -1569,7 +1570,7 @@ As you can see, the value to the left is exactly the value you need.
 <p>
 <em>Introduced in fink 0.10.0.</em>
 This is just the same as the <code>Source-MD5</code> field, except that it
-is used to specify the MD5 checksum of the Nth tarball as specified by the
+is used to specify the MD5 checksum of the tarball specified by the
 corresponding <code>Source<em>N</em></code> field.
 </p>
 </itemd></item>
@@ -1614,7 +1615,7 @@ a package uses TarFilesRename, Fink will use BSD tar by directly invoking
 <p>
 <em>Introduced in fink 0.10.0.</em>
 This is just the same as the <code>TarFilesRename</code> field, except that it
-is used for the Nth tarball as specified by the corresponding
+is used for the tarball specified by the corresponding
 <code>Source<em>N</em></code> field.
 </p>
 </itemd></item>
@@ -2001,9 +2002,10 @@ For details about how this works, see the separate
 <p>
 <em>Introduced in fink 0.9.9.</em>
 This is the same as <code>SplitOff</code>, used to generate a third,
-fourth, etc. package from the same compile/install run. Starting with
-a CVS version of fink after 0.19.1, you no longer need to use
-consecutive values for N. However, you still may not have duplicates.
+fourth, etc. package from the same compile/install run. Starting with a
+CVS version of fink after 0.19.2, you may use arbitrary integer values
+of N, rather than numbering upwards from N = 2. However, you still
+may not have duplicates.
 </p>
 </itemd></item>
 
