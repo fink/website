@@ -220,7 +220,7 @@ Example:
 nam-US: ftp://ftp.fooquux.com/pub/bar
 asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
-Primary: frp://ftp.barbarorg/pub/
+Primary: ftp://ftp.barbarorg/pub/
 &gt;&gt;</pre>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
