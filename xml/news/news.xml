@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.13 2002/09/28 13:02:05 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.14 2002/09/28 13:04:26 fingolfin Exp $</cvsid>
 
-<newsitem>
-<date>2002-09-27</date>
-<headline>Possible conflicts with anti-virus software</headline>
-<body>
-<p> A number of recent reports on the 
-<link
-url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
-mailing list</link> have indicated problems (including kernel panics and
-infinite hangs during patching) when using Fink to compile packages while
-anti-virus software is installed.  You may need to switch off any anti-virus
-software before using Fink.
-</p></body></newsitem>
 <newsitem>
   <date>2002-09-28</date>
   <headline>Fink 0.4.1 released</headline>
@@ -30,6 +18,19 @@ software before using Fink.
     </p>
   </body>
 </newsitem>
+
+<newsitem>
+<date>2002-09-27</date>
+<headline>Possible conflicts with anti-virus software</headline>
+<body>
+<p> A number of recent reports on the 
+<link
+url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</link> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p></body></newsitem>
 
 <newsitem>
 	<date>2002-09-08</date>

@@ -1,21 +1,14 @@
 <?
 $title = "News";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/09/28 13:02:05';
+$cvs_date = 'Date: 2002/09/28 13:04:26';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-09-27: </span><span class="news_headline">Possible conflicts with anti-virus software</span><?php gray_line(); ?>
-<p> A number of recent reports on the 
-<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
-mailing list</a> have indicated problems (including kernel panics and
-infinite hangs during patching) when using Fink to compile packages while
-anti-virus software is installed.  You may need to switch off any anti-virus
-software before using Fink.
-</p><span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
+<span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
     <p>
       The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
     </p>
@@ -25,7 +18,14 @@ software before using Fink.
     <p>
     At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
     </p>
-  <span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
+  <span class="news_date">2002-09-27: </span><span class="news_headline">Possible conflicts with anti-virus software</span><?php gray_line(); ?>
+<p> A number of recent reports on the 
+<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</a> have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</p><span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
 		<p>
 			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions for updating</a>. We also have separate <a href="<?php print $root; ?>news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</a>. 
 		</p>
