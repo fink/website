@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="en">
+    <title>General Fink security policy for accepted packages.</title>
+    <shorttitle>Security Policy</shorttitle>
+    <cvsid>$Id: sec-policy.en.xml,v 1.1 2004/06/15 18:19:01 dmalloc Exp $</cvsid>
+    <preface>
+        <p>This document explains security incident handling for packages that
+            have been accepted by Fink. While main responsibility for every
+            accepted package in Fink remains with the respective maintainer,
+            Fink recognises the necessity to offer a uniform policy how to react
+            to security incidents found in software which are offered as Fink
+            packages. </p>
+    </preface>
+    <chapter filename="respo">
+        <title>Responsibility</title>
+        <shorttitle>Respo</shorttitle>
+        <section name="who">
+            <title>Who is responsible?</title>
+            <p>Every Fink package has a Maintainer. The maintainer of a
+                particular package can be found by typing <code>fink info
+                packagename</code> at the command line prompt. This will return
+                a listing with a field similar to this one: <tt>Maintainer: Fink
+                    Core Group
+                &lt;fink-core@lists.sourceforge.net&gt;</tt>. The
+                maintainer has full responsibility for his/her package(s).</p>
+        </section>
+        <section name="contact">
+            <title>Whom shall I contact?</title>
+            <p>If there are security incidents within a certain piece of
+                packaged software, you should notify the maintainer of that
+                packages as well as the <em>Fink Core Team.</em> The email of
+                the maintainer can be found within the packages info, the email
+                of the <em>Fink Core Team.</em> is
+                fink-core@lists.sourceforge.net </p>
+        </section>
+        <section name="prenotifications">
+            <title>Pre-notifications</title>
+            <p>Serious security incidents in a Fink packaged software might
+                require you to pre-notify the maintainer of that package. Since
+                it is possible that the maintainer cannot be reached timely,
+                pre-notification should always be submitted to the <em>Fink Core
+                Team.</em> at fink-core@lists.sourceforge.net</p>
+        </section>
+        <section name="response">
+            <title>Response</title>
+            <p>Submitted reports about a security incident will be answered by
+                the <em>Fink Core Team.</em>, each Maintainer is required by
+                Fink to acknowledge the reported issue individually. In the
+                unlikely event that the maintainer is not available and the
+                maintainer has not acknowledged the report within 24 hours, a
+                note should be sent to the <em>Fink Core Team</em> informing the
+                team that the maintainer might be unresponsive. </p>
+            <p>In the event, that you attempted to notify the maintainer of the
+                package in question but the mail system returned a delivery
+                error for that email you should notify the <em>Fink Core
+                Team.</em> immediately informing them that the maintainer is
+                unreachable and this package may be updated irrespective of the
+                maintainer. </p>
+        </section>
+    </chapter>
+    <chapter filename="severity">
+        <title>Response times and immediate actions.</title>
+        <shorttitle>responses</shorttitle>
+        <preface>
+            <p>Response time and actions taken greatly depend on the loss
+                severity that is introduced by a particular flaw in the software
+                that has been packaged for Fink. This is a work in progress, it
+                is meant as a pointer for the package maintainers. In any case
+                the <em>Fink Core Team.</em> will take immediate action whenever
+                it feels it is necessary ti protect the Fink using community.</p>
+        </preface>
+        <section name="resptimes">
+            <title>Response times</title>
+            <p>Each package should strive to meet the following response times.
+                For some type of vulnerabilities the <em>Fink Core Team.</em>
+                might choose to take immediate action. If that is the case one
+                of the Core Team members will notify the maintainer of the
+                package in question.</p>
+            <itemtable labeld="Repsonse time" labelt="Vulnerability">
+                <item>
+                    <itemt>remote root exploit</itemt>
+                    <itemd>
+                        <p>minimum: <em>immediate</em>; maximum: <em>12</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local root exploit</itemt>
+                    <itemd>
+                        <p>minimum: <em>12</em> hours; maximum: <em>36</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>remote DOS</itemt>
+                    <itemd>
+                        <p>minimum: <em>6</em> hours; maximum: <em>12</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local DOS</itemt>
+                    <itemd>
+                        <p>minimum: <em>24</em> hours; maximum: <em>72</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>remote data corruption</itemt>
+                    <itemd>
+                        <p>minimum: <em>12</em> hours; maximum: <em>24</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local data corruption</itemt>
+                    <itemd>
+                        <p>minimum: <em>24</em> hours; maximum: <em>72</em> hours.</p>
+                    </itemd>
+                </item>
+            </itemtable>
+        </section>
+        <section name="forced">
+            <title>Forced updates</title>
+            <p>A member of the <em>Fink Core Team.</em> might choose to update a
+                package without waiting for the packages maintainer to take
+                action. This is called a <strong>forced update.</strong>. Not
+                meeting the maximum required response time for a particular
+                vulnerability in a Fink package also results in a <strong>forced
+                update</strong> of that package.</p>
+        </section>
+    </chapter>
+    <chapter filename="sources">
+        <title>Incident Sources</title>
+        <shorttitle>isource</shorttitle>
+        <section name="sources">
+            <title>Acceptable incident Sources.</title>
+            <p>As submitter of a security incident in a fink packaged software
+                you have to ensure that the vulnerability of the software also
+                exists on Mac OS X. It the responsibility of the notifying party
+                to ensure that one of the following sources reinforces the
+                reported issue for the particular software in question.</p>
+            <ol>
+                <li>
+                    <em>AIXAPAR</em>: AIX APAR (Authorised Problem Analysis Report)</li>
+                <li>
+                    <em>APPLE</em>: Apple Security Update</li>
+                <li>
+                    <em>ATSTAKE</em>: @stake security advisory</li>
+                <li>
+                    <em>AUSCERT</em>: AUSCERT advisory</li>
+                <li>
+                    <em>BID</em>: Security Focus Bugtraq ID database entry</li>
+                <li>
+                    <em>BINDVIEW</em>: BindView security advisory</li>
+                <li>
+                    <em>BUGTRAQ</em>: Posting to Bugtraq mailing list</li>
+                <li>
+                    <em>CALDERA</em>: Caldera security advisory</li>
+                <li>
+                    <em>CERT</em>: CERT/CC Advisories</li>
+                <li>
+                    <em>CERT-VN</em>: CERT/CC vulnerability note</li>
+                <li>
+                    <em>CIAC</em>: DOE CIAC (Computer Incident Advisory Center) bulletins</li>
+                <li>
+                    <em>CONECTIVA</em>: Conectiva Linux advisory</li>
+                <li>
+                    <em>CONFIRM:</em> URL to location where vendor confirms that
+                    the problem exists</li>
+                <li>
+                    <em>DEBIAN</em>: Debian Linux Security Information</li>
+                <li>
+                    <em>EEYE</em>: eEye security advisory</li>
+                <li>
+                    <em>EL8</em>: EL8 advisory</li>
+                <li>
+                    <em>ENGARDE</em>: En Garde Linux advisory</li>
+                <li>
+                    <em>FEDORA</em>: Fedora Project security advisory</li>
+                <li>
+                    <em>FULLDISC</em>: Full-Disclosure mailing list</li>
+                <li>
+                    <em>FreeBSD</em>: FreeBSD security advisory</li>
+                <li>
+                    <em>GENTOO</em>: Gentoo Linux security advisory</li>
+                <li>
+                    <em>HERT</em>: HERT security advisory</li>
+                <li>
+                    <em>HP</em>: HP security advisories</li>
+                <li>
+                    <em>IBM</em>: IBM ERS/BRS advisories</li>
+                <li>
+                    <em>IMMUNIX</em>: Immunix Linux advisory</li>
+                <li>
+                    <em>INFOWAR</em>: INFOWAR security advisory</li>
+                <li>
+                    <em>ISS</em>: ISS Security Advisory</li>
+                <li>
+                    <em>KSRT</em>: KSR[T] Security Advisory</li>
+                <li>
+                    <em>L0PHT</em>: L0pht Security Advisory</li>
+                <li>
+                    <em>MANDRAKE</em>: Linux-Mandrake advisory</li>
+                <li>
+                    <em>MLIST</em>: generic reference form for miscellaneous
+                    mailing lists</li>
+                <li>
+                    <em>NAI</em>: NAI Labs security advisory</li>
+                <li>
+                    <em>NETECT</em>: Netect security advisory</li>
+                <li>
+                    <em>NetBSD</em>: NetBSD Security Advisory</li>
+                <li>
+                    <em>OPENBSD</em>: OpenBSD Security Advisory</li>
+                <li>
+                    <em>REDHAT</em>: Security advisories</li>
+                <li>
+                    <em>RSI</em>: Repent Security, Inc. security advisory</li>
+                <li>
+                    <em>SEKURE</em>: Sekure security advisory</li>
+                <li>
+                    <em>SF-INCIDENTS</em>: posting to Security Focus Incidents
+                    mailing list</li>
+                <li>
+                    <em>SGI</em>: SGI Security Advisory</li>
+                <li>
+                    <em>SLACKWARE</em>: Slackware security advisory</li>
+                <li>
+                    <em>SNI</em>: Secure Networks, Inc. security advisory</li>
+                <li>
+                    <em>SUN</em>: Sun security bulletin</li>
+                <li>
+                    <em>SUNALERT</em>: Sun security alert</li>
+                <li>
+                    <em>SUNBUG</em>: Sun bug ID</li>
+                <li>
+                    <em>SUSE</em>: SuSE Linux: Security Announcements</li>
+                <li>
+                    <em>TRUSTIX</em>: Trustix Security Advisory</li>
+                <li>
+                    <em>TURBO</em>: TurboLinux advisory</li>
+                <li>
+                    <em>VULN-DEV</em>: Posting to VULN-DEV mailing list</li>
+                <li>
+                    <em>VULNWATCH</em>: VulnWatch mailing list</li>
+                <li>
+                    <em>XF</em>: X-Force Vulnerability Database</li>
+                <li>
+                    <em>CVE</em>: CVE Candidates </li>
+            </ol>
+            <p>The above keywords are in full compliance with the CVE
+                recommended keyword list found <link
+                url="http://www.cve.mitre.org/cve/refs/refkey.html">here</link>. </p>
+        </section>
+    </chapter>
+    <chapter filename="updating">
+        <title>Security update procedure.</title>
+        <shorttitle>secup</shorttitle>
+        <section name="procedure">
+            <title>Adding security related updates.</title>
+            <p>Security updates may only be applied once they have been verified
+                by the original Author of the software which has been packaged
+                for Fink and found to be vulnerable to a security issue. Before
+                an update one or more of the following conditions <em>have</em>
+                to be met:</p>
+            <ul>
+                <li>The author of the software has contacted the maintainer
+                    and/or the <em>Fink Core Team.</em> directly providing a
+                    patch or work around to a vulnerability.</li>
+                <li>One of the keyword donated sources has issued a security
+                    bulletin with updates sources for the software packaged for
+                    Fink in question.</li>
+                <li>A patch has been issued to one of the following keyword
+                    denoted sources: BUGTRAQ,FULLDISC,SF-INCIDENTS,VULN-DEV.</li>
+                <li>An official security bulletin has been issued and assigned
+                    CVE Candidate status, describing the vulnerability,
+                    supplying a work around, patch or link to updated sources.</li>
+                <li>Pre-notification has been sent to the maintainer and/or the
+                        <em>Fink Core Team</em> directly providing a patch or
+                    work around to a vulnerability asking to take action.</li>
+            </ul>
+        </section>
+        <section name="moving">
+            <title>Unstable to stable moves.</title>
+            <p>Security updates for a specific package will first be applied to
+                the unstable tree. After a waiting period of no less than
+                <em>12</em> hours the packages' info file will be moved into the
+                stable tree as well. The retention period shall be used to
+                carefully observe whether the updated package works and the
+                security update does not introduce any new issues.</p>
+        </section>
+    </chapter>
+</document>
