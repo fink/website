@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/02 14:07:59';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2002/12/02 19:07:17';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -89,6 +89,7 @@ from the head command. What's broken?</a></li>
 <ul>
 <li><a href="comp-packages.php#libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
+<li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -115,7 +116,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.57 2002/12/02 14:07:59 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.58 2002/12/02 19:07:17 htodd Exp $</i></p>
 
 
 <?
