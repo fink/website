@@ -3,12 +3,12 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.2 2004/06/16 18:42:48 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.3 2004/06/17 12:43:23 alexkhansen Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While main responsibility for every
             accepted package in Fink remains with the respective maintainer,
-            Fink recognises the necessity to offer a uniform policy how to react
+            Fink recognizes the necessity to offer a uniform policy how to react
             to security incidents found in software which are offered as Fink
             packages. </p>
     </preface>
@@ -30,28 +30,28 @@
             <p>If there are security incidents within a certain piece of
                 packaged software, you should notify the maintainer of that
                 packages as well as the <em>Fink Core Team.</em> The email of
-                the maintainer can be found within the packages info, the email
+                the maintainer can be found within the packages info, and the email
                 of the <em>Fink Core Team.</em> is
                 fink-core@lists.sourceforge.net </p>
         </section>
         <section name="prenotifications">
             <title>Pre-notifications</title>
-            <p>Serious security incidents in a Fink packaged software might
+            <p>Serious security incidents in software packaged by Fink might
                 require you to pre-notify the maintainer of that package. Since
-                it is possible that the maintainer cannot be reached timely,
+                it is possible that the maintainer cannot be reached in a timely manner,
                 pre-notification should always be submitted to the <em>Fink Core
                 Team.</em> at fink-core@lists.sourceforge.net</p>
         </section>
         <section name="response">
             <title>Response</title>
             <p>Submitted reports about a security incident will be answered by
-                the <em>Fink Core Team.</em>, each Maintainer is required by
+                the <em>Fink Core Team.</em>  Each maintainer is required by
                 Fink to acknowledge the reported issue individually. In the
                 unlikely event that the maintainer is not available and the
                 maintainer has not acknowledged the report within 24 hours, a
                 note should be sent to the <em>Fink Core Team</em> informing the
                 team that the maintainer might be unresponsive. </p>
-            <p>In the event, that you attempted to notify the maintainer of the
+            <p>In the event that you attempted to notify the maintainer of the
                 package in question but the mail system returned a delivery
                 error for that email you should notify the <em>Fink Core
                 Team.</em> immediately informing them that the maintainer is
@@ -63,17 +63,17 @@
         <title>Response times and immediate actions.</title>
         <shorttitle>responses</shorttitle>
         <preface>
-            <p>Response time and actions taken greatly depend on the loss
-                severity that is introduced by a particular flaw in the software
-                that has been packaged for Fink. This is a work in progress, it
+            <p>Response time and actions taken greatly depend on the 
+                severity of the loss introduced by a particular flaw in the software
+                that has been packaged for Fink. This is a work in progress, an it
                 is meant as a pointer for the package maintainers. In any case
                 the <em>Fink Core Team.</em> will take immediate action whenever
-                it feels it is necessary ti protect the Fink using community.</p>
+                it feels it is necessary to protect the Fink user community.</p>
         </preface>
         <section name="resptimes">
             <title>Response times</title>
             <p>Each package should strive to meet the following response times.
-                For some type of vulnerabilities the <em>Fink Core Team.</em>
+                For some type of vulnerabilities the <em>Fink Core Team</em>
                 might choose to take immediate action. If that is the case one
                 of the Core Team members will notify the maintainer of the
                 package in question.</p>
@@ -118,9 +118,9 @@
         </section>
         <section name="forced">
             <title>Forced updates</title>
-            <p>A member of the <em>Fink Core Team.</em> might choose to update a
-                package without waiting for the packages maintainer to take
-                action. This is called a <strong>forced update.</strong>. Not
+            <p>A member of the <em>Fink Core Team</em> might choose to update a
+                package without waiting for the package's maintainer to take
+                action. This is called a <strong>forced update</strong>. Not
                 meeting the maximum required response time for a particular
                 vulnerability in a Fink package also results in a <strong>forced
                 update</strong> of that package.</p>
@@ -130,8 +130,8 @@
         <title>Incident Sources</title>
         <shorttitle>isource</shorttitle>
         <section name="sources">
-            <title>Acceptable incident Sources.</title>
-            <p>As submitter of a security incident in a fink packaged software
+            <title>Acceptable Incident Sources.</title>
+            <p>As submitter of a security incident in Fink-packaged software
                 you have to ensure that the vulnerability of the software also
                 exists on Mac OS X. It the responsibility of the notifying party
                 to ensure that one of the following sources reinforces the
@@ -267,7 +267,7 @@
                 <li>The author of the software has contacted the maintainer
                     and/or the <em>Fink Core Team.</em> directly providing a
                     patch or work around to a vulnerability.</li>
-                <li>One of the keyword donated sources has issued a security
+                <li>One of the keywor denoted sources has issued a security
                     bulletin with updates sources for the software packaged for
                     Fink in question.</li>
                 <li>A patch has been issued to one of the following keyword
@@ -307,7 +307,7 @@
                 fingerprint <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
                 291E</tt>. The public key can be found at
                 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
-                (this is not marked as link intentionally).</p>
+                (this is intentionally not marked as a link).</p>
         </section>
         <section name="how">
             <title>How to submit </title>
