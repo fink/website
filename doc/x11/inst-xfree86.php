@@ -98,6 +98,11 @@ initial &quot;<code>#!/bin/sh</code>&quot;, but before you run any programs):</p
 <pre>. /sw/bin/init.sh ; emacs</pre>
 <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
 </li>
+<li>
+<p>If you are trying to build a package by hand against Apple's X11 and you see a failure like:</p>
+<pre>ld: err.o illegal reference to symbol: _XSetIOErrorHandler defined in indirectly referenced dynamic library /usr/X11R6/lib/libX11.6.dylib</pre>
+<p>then you'll need to make sure to that <code>-lX11</code> is present during linking.  Check your pacakage's configuration options to see how to feed it the extra argument.</p>
+</li>
 </ul>
 
 <h2><a name="official-binary">3.3 The Official Binaries</a></h2>
