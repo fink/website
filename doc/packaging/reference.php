@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/09/28 12:37:11';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/11/29 17:18:36';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -585,7 +585,26 @@ e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
 This field works by appending appropriate <tt><nobr>install</nobr></tt>
 commands to the InstallScript.
 </p>
-</td></tr><tr valign="top"><td>RuntimeVars</td><td>
+</td></tr><tr valign="top"><td>Shlibs</td><td>
+<p>
+<b>Introduced in fink 0.11.0.</b>
+This field declares the shared libraries which are installed in the
+package.  There is one line for each
+shared library, which contains three items separated by whitespace:
+the <tt><nobr>-install_name</nobr></tt> of the
+library, the <tt><nobr>-compatibility_version</nobr></tt>, and versioned 
+dependency information specifying the Fink package which provides
+this library at this compatibility version.  The dependency should
+be stated in the form <tt><nobr> foo (&gt;= version-revision)</nobr></tt> where 
+<tt><nobr>version-revision</nobr></tt> refers to
+the <b>first</b> version of a Fink package which made
+this library (with this compatibility version) available.
+The Shlibs declaration amounts to a promise
+from the maintainer that a libary with this name and a 
+<tt><nobr>-compatibility_version</nobr></tt>
+of at least this number will always be found in later versions of this
+Fink package.
+</p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
 This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts.

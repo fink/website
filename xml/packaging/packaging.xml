@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.36 2002/09/28 12:37:11 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.37 2002/11/29 17:18:36 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -436,8 +436,8 @@ for existence before calling them and the like).
 <section name="sharedlibs"><title>Shared Libraries</title>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
-This section of the documentation discusses version 3
-of the policy, which coincides with the release of Fink's 0.4.0 distribution.
+This section of the documentation discusses version 4
+of the policy, which coincides with the release of Fink's 0.5.0 distribution.
 We begin with a quick summary, and then discuss things in more detail.
 </p><p>
 Any package which builds shared libraries and is either (1) being put into
@@ -448,7 +448,8 @@ Any package which builds shared libraries and is either (1) being put into
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
 <li>   put the shared libraries in a separate package (except for the
-       links from libfoo.dylib to the install_name)</li>
+       links from libfoo.dylib to the install_name), and include
+       the <code>Shlibs</code> field in that package</li>
 <li>   put the headers and the final links from libfoo.dylib into a package
        which is classified as <code>BuildDependsOnly: True</code>, and plan
         to have
@@ -657,6 +658,44 @@ dependency of the main package barN (which can be abbreviated
 %N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
 automatically "inherits" all the dependencies of barN-shlibs.
+</p>
+<p><em>The Shlibs field:</em>
+</p><p>
+In addition to putting the shared libraries in the correct package, as of
+version 4 of this policy, you must also declare all of the shared libraries
+using the <code>Shlibs</code> field.  This field has one line for each
+shared library, which contains the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
+dependency information specifying the Fink package which provides
+this library at this compatibility version.  The dependency should
+be stated in the form <code> foo (>= version-revision)</code> where 
+<code>version-revision</code> refers to
+the <em>first</em> version of a Fink package which made
+this library (with this compatibility version) available.  For example,
+a declaration</p>
+<codeblock>
+  Shlibs: &lt;&lt;
+    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2)
+  &lt;&lt;
+</codeblock>
+<p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
+and <code>-compatibiliary_version</code> 2.1.0 has been installed since
+version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
+amounts to  a promise
+from the maintainer that a libary with this name and a compatibility-version
+of at least 2.1.0 will always be found in later versions of the <em>bar1</em> 
+package.
+</p><p>
+Note the use of %p in the name of the library, which allows the correct
+<code>-install_name</code> to be found by all users of Fink, no matter
+what prefix they have chosen.
+</p><p>
+When a package is updated, usually the <code>Shlibs</code> field can simply
+be copied to the next version/revision of the package.  The exception to
+this is if the <code>-compatibility_version</code> increases: in that
+case, the version number in the dependency information should be changed
+to the current version/revision (which is the first version/revision to
+provide the library with the new compatibility version number).
 </p><p>
 <em>What to do when the major version number changes:</em>
 </p><p>
@@ -1659,6 +1698,28 @@ This field works by appending appropriate <code>install</code>
 commands to the InstallScript.
 </p>
 </itemd></item>
+
+<item><itemt>Shlibs</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.11.0.</em>
+This field declares the shared libraries which are installed in the
+package.  There is one line for each
+shared library, which contains three items separated by whitespace:
+the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
+dependency information specifying the Fink package which provides
+this library at this compatibility version.  The dependency should
+be stated in the form <code> foo (>= version-revision)</code> where 
+<code>version-revision</code> refers to
+the <em>first</em> version of a Fink package which made
+this library (with this compatibility version) available.
+The Shlibs declaration amounts to a promise
+from the maintainer that a libary with this name and a 
+<code>-compatibility_version</code>
+of at least this number will always be found in later versions of this
+Fink package.
+</p></itemd></item>
 
 <item><itemt>RuntimeVars</itemt>
 <itemd>
