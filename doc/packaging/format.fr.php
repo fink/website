@@ -176,6 +176,17 @@ and 'i386' pour les machines x86. (Introduit dans les versions CVS de fink post�
 <p>
 signe pourcent (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet,  mais représente la chaîne %n.  (Introduit dans fink-0.18.0).
 </p>
+</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
+<p>
+pseudo-hash retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas.
+La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2).
+</p>
+</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+<p>
+la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à 
+%n et %N, àl'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
+(Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.
+</p>
 </td></tr></table>
 
 

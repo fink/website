@@ -99,7 +99,7 @@ Nous commencerons par un bref résumé, puis nous passerons à une revue de dét
 </p><p>
 Tout paquet qui construit des librairies partagées et qui, soit (1) est placé  dans la branche stable, soit (2) est un nouveau paquet de Fink, doit gérer ses librairies partagées conformément aux règles de Fink. Ceci signifie :</p>
 <ul>
-<li>vérifier, à l'aide de <code>otool -L</code>, que le nom d'installation de chaque librairie, ses numéros de versions compatible et actuel sont corrects</li>
+<li>vérifier, à l'aide de <code>otool -L</code>, que le nom d'installation de chaque librairie, ses numéros de versions de compatibilité et actuels sont corrects</li>
 <li>mettre les librairies partagées dans un paquet séparé (exception faite pour les liens de libfoo.dylib vers nom d'installation), et inclure le champ <code>Shlibs</code> dans ce paquet</li>
 <li>mettre les headers et les liens finaux venant de libfoo.dylib dans un paquet caractérisé par <code>BuildDependsOnly: True</code>, et prévoir qu'aucun autre paquet ne dépendra de lui.</li>
 </ul>
@@ -109,135 +109,85 @@ scinde pas le paquet, devra expliquer pourquoi dans le champ DescPackaging.
 </p><p>
 Pour certains paquets, tout peut être fait avec un paquet principal et un paquet -shlibs ; dans d'autres cas, vous aurez besoin d'un troisième paquet. Le nouveau champ <code>SplitOff</code> facilite ce processus.
 </p><p>
-When three packages are needed, there are two different ways they could be
-named, depending on whether the libraries or the binaries
-are the most important feature of
-the package, or the binaries are the most important feature.  For option 1, 
-use the layout:
+Quand trois paquets sont nécessaires, il y a deux façons différentes de les nommer, suivant que les librairies (option 1) ou les binaires (option 2) sont les fonctionnalités les plus importantes du paquet. 
+Pour l'option 1, utilisez le schéma suivant :
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>Binaries, etc.</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Paquet</th><th align="left">Contenu</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Librairies partagées</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>Binaires, etc...</p></td></tr></table>
 
-<p>while for option 2, use the layout:</p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binaries, etc.</p></td></tr></table>
+<p>Pour l'option 2, utilisez :</p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Paquet</th><th align="left">Contenu</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Librairies partagées</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binaires, etc...</p></td></tr></table>
 
 <p>
-With option 2 it is harder to upgrade an existing package:  at the same
-time as you upgrade, 
-you need to add <code>BuildDepends: foo-dev</code> to every
-package which says <code>Depends: foo</code>.
-One other upgrade issue to keep in mind: a package which indirectly depends
-on your package (through another package as an intermediary) may need
-to have <code>BuildDepends: foo</code> or <code>BuildDepends: foo-dev</code>
-added to it to ensure a successful upgrade.  It is your responsibility
-to make sure that these <code>BuildDepends</code> entries are added.
+Avec l'option 2, il est plus difficile de mettre à jour un paquet existant : 
+quand vous réalisez la mise à jour, vous devez ajouter <code>BuildDepends: foo-dev</code> à chaque paquet qui a un champ <code>Depends: foo</code>.
+Autre problème de mise à jour à garder à l'esprit : un paquet qui dépend indirectement du vôtre (par l'intermédiaire d'un paquet tiers) peut nécessiter qu'on lui ajoute <code>BuildDepends: foo</code> ou <code>BuildDepends: foo-dev</code> pour assurer une mise à jour correcte. C'est à vous de veiller à ce que que le champ <code>BuildDepends</code> soit renseigné si nécessaire.
 </p>
-<p><b>The policy in detail</b></p>
+<p><b>Règles détaillées</b></p>
 <p>
-We now discuss things in more detail, first discussing the policy as 
-applied to newly ported software, and 
-then turning to the question of upgrading existing fink packages.  For 
-examples of the policy in action, see the  libpng, libjpeg  and 
-libtiff packages.
+Nous allons désormais discuter de tout cela en détails, premièrement nous aborderons les règles applicables aux logiciels nouvellement portés, puis nous nous tournerons vers la question de la mise à  jour de paquets existant dans fink.  Comme exemples des règles en action, voir les paquets libpng, libjpeg et libtiff.
 </p><p>
-Software which has been ported to Darwin should build shared libraries 
-whenever possible.  (Package maintainers
-are also free to build static libraries as well, if appropriate
-for their packages; or they may submit packages containing only static
-libraries if they wish.)
-Whenever shared libraries are being built,
-<b>two</b> closely related fink packages should be made, named foo 
-and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
-files go in foo.  These two packages
-can be made with a single .info file, using
-the <code>SplitOff</code> field, as described below.  
-(In fact, it is often necessary
-to make more than two packages from the source, and this can be done
-using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
+Les logiciels portés sur Darwin doivent, autant que possible, construire des librairies partagées.
+(Les mainteneurs de paquets sont libres de construire des librairies statiques, si cela s'avère plus approprié pour leurs paquets; ils peuvent aussi soumettre des paquets contenant uniquement des librairies statiques, s'ils le souhaitent.)
+Quand on construit des librairies partagées, <b>deux</b> paquets - nommés foo et foo-shlibs -, étroitement liés, doivent être construits. Les librairies partagées vont dans foo-shlibs, et les headers dans foo. 
+Ces deux paquets peuvent être réalisés avec un seul fichier .info, en utilisant le champ <code>SplitOff</code>, comme indiqué ci-dessous.  
+(En fait, il est souvent nécessaire de construire plus de deux paquets à partir du source, et cela peut être fait en utilisant <code>SplitOff2</code>, <code>SplitOff3</code>, etc...)
 </p><p>
-Each software package for which shared libraries can be built must have
-a <b>major version number</b> N.  The major version number is only supposed
-to change when a backwards-incompatible change in the library's API has been
-made.  Fink uses the following naming convention: if the upstream name
-of the package is bar, then the fink packages are called barN and 
-barN-shlibs.  (This is only strictly applied to new packages, or when the 
-major version number changes.)  For example, the major version number for
-the pre-existing libpng package was 2, but recent versions of the
-library have major version number 3.  So there are now four fink packages
-to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
-Only one of libpng and libpng3 can be installed at any given time,
-but libpng-shlibs and libpng3-shlibs can be installed at the same time.
-(Note that only two .info files are required to build these four packages.)
+Chaque paquet logiciel pour lequel des librairies partagées peuvent être construites doit avoir un <b>numéro de version majeure</b> N.  Le numéro de version majeure n'est censé changer que lorsqu'un changement irréversible se produit dans l'API de la librairie.
+Fink utilise la convention de nommage suivante : si le nom en amont du paquet est bar, alors les paquets fink sont appelés barN et barN-shlibs. (Ceci n'est appliqué rigoureusement qu'à de nouveaux paquets ou lorsque le numéro de version majeure change).
+Par exemple, le numéro de version majeure pour le paquet pré-existant libpng était 2, mais les versions récentes de la librairie ont pour numéro de version majeure 3. Il y a donc, maintenant, 4 paquets fink pour gérer ceci : libpng, libpng-shlibs, libpng3, libpng3-shlibs.
+Seul libpng ou libpng3 peut être installé à un moment donné, mais libpng-shlibs et libpng3-shlibs peuvent être installés en même temps.
+(Notez que deux fichiers .info suffisent à construire ces quatre paquets.)
 </p><p>
-The shared library itself and certain related files will be put into 
-the package barN-shlibs; the "include" files and certain other files will
-be put into the package barN.  There can be no overlapping files
-between these two packages, and everything stored in barN-shlibs must have
-a pathname which somehow includes the major version number N.  In many
-instances, your package will need some files at runtime which are
-typically installed into <code>%i/lib/bar/</code> or 
-<code>%i/share/bar/</code> ; you should adjust the installation
-paths to <code>%i/lib/bar/N/</code> or
-<code>%i/share/bar/N/</code>.
+La librairie partagée elle-même et certains fichiers liés seront placés 
+dans le paquet barN-shlibs ; les fichiers "include" et un certain nombre d'autres fichiers seront placés dans le paquet barN. Il ne peut y avoir de recouvrement de fichiers entre ces deux paquets, et tout ce qui est placé dans barN-shlibs doit avoir un nom chemin qui, d'une façon ou d'une autre, contienne le numéro de version majeure N. Dans de nombreux cas, votre paquet aura besoin de certains fichiers à l'exécution, fichiers qui sont généralement installés dans <code>%i/lib/bar/</code> ou <code>%i/share/bar/</code> ; vous devrez adapter les chemins d'installation à <code>%i/lib/bar/N/</code> ou <code>%i/share/bar/N/</code>.
 </p><p>
-All other packages which depend on bar, major version N, will be asked to
-use the dependencies
+Tous les autres paquets dépendant de bar, version majeure N, devront utiliser les dépendances :
 </p>
 <pre>
   Depends: barN-shlibs
   BuildDepends: barN
 </pre>
 <p>
-Once this system is fully in place, it will not be permitted for 
-another package to depend on barN itself.  (For backward compatibility,
-such dependencies are allowed for pre-existing packages.)  This is
-signaled to other developers by a boolean field
+Quand ce système sera complètement opérationnel, il ne sera plus permis à un autre paquet de dépendre de barN lui-même. (Pour des raisons de compatibilité arrière, de telles dépendances sont autorisées pour des paquets pré-existants.) Ceci est signalé aux autres développeurs par un champ de type booléen :
 </p>
 <pre>
   BuildDependsOnly: True
 </pre>
 <p>
-within the package description for barN.
+dans la description du paquet barN.
 </p><p>
-If your package includes both shared libraries and binary files, and
-if the binary files need to be present at runtime (not just at build
-time), then the binaries must be split off into a third package, which
-could be called barN-bin.  Other packages are allowed to depend on
-barN-bin as well as barN-shlibs.
+Si votre paquet inclut à la fois des librairies partagées et des binaires, et si 
+les binaires doivent être présents à l'exécution (et pas seulement à la compilation), alors les binaires doivent être regroupés dans un troisième paquet, qui peut être appelé barN-bin.
+Les autres paquets peuvent dépendre de barN-bin comme de barN-shlibs.
 </p><p>
-When building shared libraries under major version N, it is important that
-the "install_name" of the library be <code>%p/lib/bar.N.dylib</code>.  
-(You can
-find the install_name by running <code>otool -L</code> on your library.)  The
-actual library file should be installed at
+Lors de la construction de librairies partagées de version majeure N, il est important que le "nom d'installation" soit <code>%p/lib/bar.N.dylib</code>.  
+(Vous pouvez trouver le nom d'installation en exécutant <code>otool -L</code> sur votre librairie.)
+Le fichier librairie réel doit être installé sous le nom de :
 </p>
 <pre>
   %i/lib/bar.N.x.y.dylib
 </pre>
 <p>
-and your packages should create symbolic links
+et votre paquet doit créer des liens symboliques :
 </p>
 <pre>
   %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
   %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
 </pre>
-<p>
-If the static library is also built, then it will be installed at
+<p>Si la librairie statique est aussi construite, elle doit être installée sous le nom de :
 </p>
 <pre>
   %i/lib/bar.a
 </pre>
 <p>
-If the package uses libtool, these things are usually handled automatically,
-but in any event you should
-check that they have been done correctly in your case.  You should also
-check that current_version and compatibility_version were defined 
-appropriately for your shared libraries.  (These are also shown with the 
-<code>otool -L</code> query.)
+Si le paquet utilise libtool, ceci est généralement géré automatiquement, mais, dans tous les cas,  vous devez vérifier que tout s'est passé correctement.
+Vous devez aussi vérifier que la version courante et la version de compatibilité sont définies de façon appropriée à vos librairies partagées. (On peut trouver les numéros de version avec la commande 
+<code>otool -L</code>.)
 </p><p>
-Files are then divided between the two packages as follows
+Les fichiers sont scindés entre les deux paquets comme suit :
 </p>
 <ul>
-<li>  in package barN-shlibs:
+<li>  dans le paquet barN-shlibs :
 <pre>
   %i/lib/bar.N.x.y.dylib
   %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
@@ -245,22 +195,18 @@ Files are then divided between the two packages as follows
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*
 </pre></li>
-<li>  in package barN:
+<li>  dans le paquet barN :
 <pre>
   %i/include/*
   %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
   %i/lib/bar.a
   %i/share/doc/barN/*
-  other files, if needed
+  autres fichiers, si nécessaire
 </pre></li></ul>
 <p>
-Notice that both packages are required to have some documentation about
-the license, but that the directories containing the DocFiles will be
-different.
+Notez que les deux paquets doivent contenir des informations sur la licence, mais que les répertoires contenant les fichiers de documentation (DocFiles) sont différents.
 </p><p>
-Doing this is quite easy in practice, using the 
-<code>SplitOff</code> field.  Here is
-how the example above would be implemented (in part):
+Tout ceci est facile à réaliser en utilisant le champ <code>SplitOff</code>. Voici comment l'exemple ci-dessus serait (partiellement) implémenté :
 </p>
 <pre>
 Package: barN
@@ -277,201 +223,117 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 <p>
-During the execution of the <code>SplitOff</code>
-field, the specified files and directories are moved from the 
-install directory %I of the main package to the install directory %i of the
-splitoff package.  (There is a similar convention for names: %N is the
-name of the main package, and %n is the name of the current package.)
-The <code>DocFiles</code> command then puts a copy of the documentation into 
-<code>%i/share/doc/barN-shlibs</code>.
+Durant l'exécution du champ <code>SplitOff</code>, les fichiers et les répertoires spécifiés sont déplacés du répertoire d'installation %I du paquet principal vers le répertoire d'installation %i du paquet splitoff.  (Il y a une convention similaire pour les noms : %N est le nom
+du paquet principal, et %n est le nom du paquet actif.)
+La commande <code>DocFiles</code> place ensuite une copie de la documentation dans <code>%i/share/doc/barN-shlibs</code>.
 </p><p>
-Notice that we have included the exact current version of barN-shlibs as a 
-dependency of the main package barN (which can be abbreviated 
-%N-shlibs (= %v-%r) ).
-This ensures that the versions match, and also guarantees that barN
-automatically "inherits" all the dependencies of barN-shlibs.
+Notez que nous avons inclus la version courante exacte de barN-shlibs comme dépendance du paquet principal barN (qui peut être abrégé en %N-shlibs (= %v-%r) ).
+Ceci assure que les versions correspondent, et garantit aussi que barN "hérite" automatiquement de toutes les dépendances de barN-shlibs.
 </p>
-<p><b>The Shlibs field:</b>
+<p><b>Le champ Shlibs :</b>
 </p><p>
-In addition to putting the shared libraries in the correct package, as of
-version 4 of this policy, you must also declare all of the shared libraries
-using the <code>Shlibs</code> field.  This field has one line for each
-shared library, which contains the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, and versioned 
-dependency information specifying the Fink package which provides
-this library at this compatibility version.  The dependency should
-be stated in the form <code> foo (&gt;= version-revision)</code> where 
-<code>version-revision</code> refers to
-the <b>first</b> version of a Fink package which made
-this library (with this compatibility version) available.  For example,
-a declaration</p>
+En sus de placer les librairies partagées dans le bon paquet, suivant en cela la version 4 de cette règle, vous devez également déclarer toutes les librairies partagées en utilisant le champ <code>Shlibs</code>.
+Ce champ contient une ligne distincte pour chaque librairie partagée ; la ligne comprend le <code>nom d'installation</code> de la librairie, la <code>version de compatibilité</code>, et des informations de dépendance qui indiquent le paquet de Fink qui fournit cette librairie à cette version de compatibilité.
+La dépendance doit être déclarée sous la forme <code> foo (&gt;= version-révision)</code> où <code>version-révision</code> correspond à la <b>première</b> version du paquet de Fink qui fournit cette librairie (avec cette version de compatibilité). Par exemple, une déclaration :</p>
 <pre>
   Shlibs: &lt;&lt;
     %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
   &lt;&lt;
 </pre>
-<p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
-and <code>-compatibiliary_version</code> 2.1.0 has been installed since
-version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
-amounts to  a promise
-from the maintainer that a library with this name and a compatibility-version
-of at least 2.1.0 will always be found in later versions of the <b>bar1</b> 
-package.
+<p>indique qu'une librairie, dont le <code>nom d'installation</code> est %p/lib/bar.1.dylib et <code>la version de compatibilité </code> est 2.1.0, a été installée à partir de la version 1.1-2 du paquet <b>bar1</b>.  De plus, cette déclaration équivaut à la promesse du mainteneur qu'une librairie avec ce nom et une version de compatibilité au moins égale à 2.10 sera toujours présente dans les versions ultérieures du paquet <b>bar1</b>.
 </p><p>
-Note the use of %p in the name of the library, which allows the correct
-<code>-install_name</code> to be found by all users of Fink, no matter
-what prefix they have chosen.
+Notez l'utilisation de %p dans le nom de la librairie, ce qui permet à tous les utilisateurs de Fink de trouver le bon <code>nom d'installation</code>, quel que soit le préfixe qu'ils ont choisi.
 </p><p>
-When a package is updated, usually the <code>Shlibs</code> field can simply
-be copied to the next version/revision of the package.  The exception to
-this is if the <code>-compatibility_version</code> increases: in that
-case, the version number in the dependency information should be changed
-to the current version/revision (which is the first version/revision to
-provide the library with the new compatibility version number).
+Quand un paquet est mis à jour, on copie tout simplement le champ <code>Shlibs</code> dans la nouvelle version/révision du paquet. L'exception à cette règle survient quand la <code>version de compatibilité</code> est incrémentée : dans ce cas, le numéro de version
+dans les informations de dépendance doit être changé pour la version/révision courante (celle  qui est la première à fournir la librairie avec le nouveau numéro de version de compatibilité).
 </p><p>
-<b>What to do when the major version number changes:</b>
+<b>Mesures à prendre quand le numéro de version majeure change :</b>
 </p><p>
-If the major version number changes from N to M, you will create two new
-packages barM and barM-shlibs.  The package barM-shlibs can have no
-overlap with the package barN-shlibs, since many users will have both of
-these installed simultaneously.  In package barM, you should use dependencies
+Si le numéro de version majeure change de N à M, vous devez créer deux nouveaux paquets barM et barM-shlibs. Le paquet barM-shlibs ne peut recouvrir le paquet barN-shlibs, puisque de nombreux utilisateurs installeront les deux simultanément.
+Dans le paquet barM, vous devez utiliser les dépendances :
 </p>
 <pre>
   Conflicts: barN
   Replaces: barN
 </pre>
 <p>
-and similarly, you should revise barN to include dependencies
+et vous devez modifier barN, de façon similaire, pour inclure les dépendances :
 </p>
 <pre>
   Conflicts: barM
   Replaces: barM
 </pre>
 <p>
-Users will then see barN and barM shuffling in and out as various other
-packages are built which depend on one version or another of the shared
-library, while barN-shlibs and barM-shlibs remain permanently installed.
+Les utilisateurs verront alors barN et barM apparaître et disparaître au gré de la construction de divers paquets dépendant de l'une ou l'autre version de la librairie partagée, tandis que barN-shlibs et barM-shlibs resteront installés de façon permanente.
 </p><p>
-<b>How to upgrade an existing fink package:</b>
+<b>Mise à jour d'un paquet de fink existant :</b>
 </p><p>
-For an existing fink package which installs either static or shared 
-libraries, the best way to upgrade is to create a new version foo of
-your package, accompanied by a new package foo-shlibs, which satisfy
-the above policy.  If shared libraries (or any other files now present
-in foo-shlibs) were installed previously, then these new packages should 
-say
+Le meilleur moyen de mettre à jour un paquet fink existant qui installe des librairies, qu'elles soient statiques ou partagées, est de créer une nouvelle version foo du paquet, accompagné d'un nouveau paquet foo-shlibs, qui satisfait aux règles ci-dessus.
+Si des librairies partagées (ou d'autres fichiers présents maintenant dans 
+foo-shlibs) étaient installées auparavant, ces nouveaux paquets doivent stipuler : 
 </p>
 <pre>
   Replaces: foo (&lt;&lt; earliest.compliant.version)
 </pre>
 <p>
-so that upgrading will be transparent to users.  (You should <b>not</b>
-say "Conflicts: foo" because this will prevent the upgrade.)
+de façon que la mise à jour soit transparente pour les utilisateurs.
+(Vous <b>ne</b> devez <b>pas</b> utiliser "Conflicts: foo", car cela empêche la mise à jour.)
 </p><p>
-After your upgrade, packages which say "Depends: foo" will continue to
-function normally.  However, you should contact the fink maintainers
-of all such packages and urge them to modify their packages to say 
-"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
-not be able to create new packages fooM, fooM-shlibs which implement a 
-new major version of the shared library until they have done so.
+Après mise à jour, les paquets qui stipulent "Depends: foo" continueront à fonctionner normalement. Toutefois, vous devez contacter les mainteneurs de tous ces paquets fink et les presser de modifier leurs paquets pour qu'ils stipulent, dès que possible, "Depends: foo-shlibs, BuildDepends: foo".  
+Vous ne pourrez pas créer de nouveaux paquets fooM, fooM-shlibs qui implémentent une version majeure de la librairie partagée tant qu'ils ne l'auront pas fait.
 </p><p>
-Existing fink packages which have not used the correct install_name or
-which have not used the correct names or symbolic links for shared libraries
-must be upgraded carefully, on a case-by-case basis.  If you are
-having trouble finding an upgrade strategy to make your packages compliant
-with the new policy, please discuss it on the fink-devel mailing list.
+Les paquets fink existants qui n'ont pas utilisé le bon nom d'installation ou qui n'ont pas utilisé un nom correct ou des liens symboliques pour les libraires partagées doivent être mis à jour soigneusement, au cas par cas.
+Si vous êtes embarrassé pour choisir une stratégie de mise à jour rendant vos paquets compatibles avec les nouvelles règles, parlez-en sur la liste de diffusion fink-devel.
 </p><p>
-<b>Packages containing both binary files and libraries:</b>
+<b>Paquets contenant des fichiers binaires et des librairies :</b>
 </p><p>
-When an upstream package contains both binary files and libraries, some
-care must be exercised in constructing fink packages.  In some cases,
-the only binary files will be things like <code>foo-config</code> which
-are presumably only used at build time and never at run time.  In these
-cases, the binaries can go with the header files in the <code>foo</code>
-package.
+Quand un paquet en amont contient tout à la fois des fichiers binaires et des librairies, la construction des paquets fink doit être menée avec soin. Dans certains cas, les seuls fichiers binaires seront des fichiers du genre <code>foo-config</code>, qui sont censés n'être utilisés qu'à la compilation, et jamais à l'exécution. Dans ces cas, les binaires peuvent aller avec les headers dans le paquet <code>foo</code>.
 </p><p>
-In other cases, the binary files will be needed by other packages at
-runtime, and they must be split off into a separate fink package with
-a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
-package should depend on the <code>foo-shlibs</code> package, and
-maintainers of other packages should be encouraged to use
+Dans d'autres cas, les fichiers binaires seront nécessaires à d'autres paquets pendant l'exécution, et devront être regroupés dans un paquet fink séparé avec un nom du type <code>foo-bin</code>.
+Le paquet <code>foo-bin</code> doit dépendre du paquet <code>foo-shlibs</code>, et les mainteneurs d'autres paquets doivent être encouragés à utiliser :
 </p>
 <pre>
   Depends: foo-bin
   BuildDepends: foo
 </pre>
 <p>
-which will take care of foo-shlibs implicitly.
+ainsi la gestion de foo-shlibs sera assurée implicitement.
 </p><p>
-Upgrading presents a problem in this situation, however, since users won't
-be prompted to install <code>foo-bin</code>.  To work around this, until
-all other package maintainers have revised their packages as above,
-your <code>foo</code> package can say
+Néanmoins, la mise à jour pose un problème dans ce cas, puisque les utilisateurs ne seront pas invités à installer <code>foo-bin</code>. Pour résoudre ce problème, tant que tous les autres mainteneurs de paquets n'ont pas révisé leur paquets comme indiqué ci-dessus, votre paquet <code>foo</code> peut stipuler :
 </p>
 <pre>
   Depends: foo-shlibs (= exact.version), foo-bin
 </pre>
 <p>
-This will force the installation of foo-bin on most users' systems, until
-such time as the other package maintainers have upgraded their packages
-which depend on <code>foo</code>.
+Ceci forcera l'installation de foo-bin sur la plupart des systèmes, jusqu'au moment où les mainteneurs de paquets auront mis à jour leurs paquets qui dépendent de <code>foo</code>.
 </p>
 
 
-
-<h2><a name="perlmods">3.4 Perl Modules</a></h2>
-<p>Fink has a new policy about perl modules, effective in May, 2003.
+<h2><a name="perlmods">3.4 Modules Perl</a></h2>
+<p>Fink a une nouvelle réglementation pour les modules perl, effective à partir de mai 2003.
 </p><p>
-Traditionally, the Fink packages for perl modules have the suffix 
-<code>-pm</code>, and have been build using the <code>Type: perl</code> 
-directive, which stores the perl module's files in <code>/sw/lib/perl5</code> and/or
-<code>/sw/lib/perl5/darwin</code>.  Under the new policy, this storage location is only 
-permitted for perl modules which are independent of the version of perl 
-being used to compile them.
+Traditionnellement, les paquets Fink pour les modules Perl ont un suffixe <code>-pm</code>, et ont été compilés en utilisant la directive <code>Type: perl</code>, qui place les modules Perl dans <code>/sw/lib/perl5</code> et/ou dans <code>/sw/lib/perl5/darwin</code>.  Avec la nouvelle réglementation, cet emplacement n'est autorisé que pour les modules perl qui sont indépendants de la version de perl utilisée pour les compiler.
 </p><p>
-The perl modules which are version-dependent are the so-called XS modules,
-which frequently contain compiled C code as well as pure perl routines.
-There are a number of ways of recognizing these, including the presence
-of a file with a suffix <code>.bundle</code>.
+Les modules Perl qui sont dépendants des versions sont les modules dits XS, qui contiennent fréquemment du code C compilé ainsi que des routines écrites en langage Perl.
+Il y a de nombreuses façons de les reconnaître, notamment par la présence d'un fichier avec un suffixe <code>.bundle</code>.
 </p><p>
-A version-dependent perl module must be built using a versioned binary
-of perl, such as <code>perl5.6.0</code>, and must store its files in
-versioned subdirectories of the standard perl directories, such as
-<code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  A new convention
-is being introduced of using the suffix <code>-pm560</code> for
-a perl module of version 5.6.0.  Similar storage and naming conventions
-are in force for other versions of perl, which will soon include 
-perl 5.6.1 and perl 5.8.0.  
+Un module perl qui dépend des versions doit être construit en utilisant un binaire versionné de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires versionnés des répertoires standards de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>.
+Une nouvelle convention, en cours d'introduction,  consiste à utiliser le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0.  Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui bientôt incluront perl 5.6.1 et perl 5.8.0.  
 </p><p>
-The new directive <code>Type: perl 5.6.0</code> automatically uses the
-versioned perl binary and stores the files in the correct subdirectories. 
-(This directive is available starting with version 0.13.0 of fink.)
+La nouvelle directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire versionné de perl et stocke les fichiers dans les bons sous-répertoires.
+(Cette directive est disponible à partir de la version 0.13.0 de fink.)
 </p><p>
-It is permitted to create a <code>-pm</code> package which is essentially
-a "bundle" package that loads the <code>-pm560</code> variant or any
-others which may be exist.  This strategy is encouraged for existing
-Fink packages for XS modules, in order to provide a smooth upgrade path.
+Il est permis de créer un paquet <code>-pm</code>, qui est essentiellement un paquet "lot", qui charge la variante <code>-pm560</code> ou une autre variante existante.
+Cette stratégie est encouragée pour les paquets existants de Fink contenant des modules XS, afin d'assurer une mise à jour sans problème.
 </p><p>
-Effective with version 0.13.0 of fink, the <code>fink validate</code>
-command when applied to a <code>.deb</code> file will check to see if
-the fink package is an XS module which has been installed in a non-versioned 
-directory, and will issue a warning if so.
+Effective à partir de la version 0.13.0 de fink, la commande <code>fink validate</code>, quand elle est appliquée à un fichier <code>.deb</code>, teste si le paquet fink est un module XS qui a été installé dans un répertoire non versionné, et, génère, dans ce cas, une alerte.
 </p>
 
 
-
-<h2><a name="emacs">3.5 Emacs Policy</a></h2>
-<p> The Fink project has chosen to follow the Debian project's policy
-regarding emacs, with a few small differences.
-(The Debian policy document can be found at
-<a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
+<h2><a name="emacs">3.5 Règles Emacs</a></h2>
+<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
-There are two differences in the Fink policy.  First, 
-this policy only applies to the emacs20 and
-emacs21 packages in fink at the moment, not to the xemacs package.  (This
-may change some day in the future.)    And second, unlike the Debian policy,
- Fink packages are allowed to install things directly into 
-/sw/share/emacs/site-lisp.
+Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.
 </p>
 
 

@@ -3,10 +3,10 @@
 <document filename="index" lang="en">
   <title>How to Post to a Fink Mailing List</title>
   <shorttitle>netiquette</shorttitle>
-  <cvsid>$Id: netiquette.en.xml,v 1.1 2004/03/29 01:06:40 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: netiquette.en.xml,v 1.2 2004/03/30 22:10:49 michga Exp $</cvsid>
   <preface>
     <p><em>This document is under construction.</em></p>
-    <p>This document is intended to be a guideline for new posters to a Fink mailing list.  The idea is to educate users of the lists on how to post effictively, in ordeitr to promote efficient solutions to problems.  </p>
+    <p>This document is intended to be a guideline for new posters to a Fink mailing list.  The idea is to educate users of the lists on how to post effectively, in order to promote efficient solutions to problems.  </p>
     <p>You may have been referred to a page on this list in a reply to a post.  Don't take offense!  What has most likely happened is that you need to provide more information to clarify the cause of your problem, and what you need to provide is listed here.</p>
   </preface>
   <chapter filename="before-post">
@@ -23,7 +23,7 @@
     </section>
   </chapter>
   <chapter filename="first-post">
-    <title>Intial Post</title>
+    <title>Initial Post</title>
     <shorttitle>Initial</shorttitle>
     <section name="system">
       <title>What do you have installed?</title>
