@@ -1,19 +1,19 @@
 <?
 $title = "Package Database - Package Search";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/12/08 15:09:55 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2004/02/28 20:34:01 $';
 
 $have_key = isset($s);
-$key = $s;
+$search_key = $s;
 
 include "header.inc";
 ?>
 
 
 <?
-$key = ereg_replace(" ", "", $key);
+$key = ereg_replace(" ", "", $search_key);
 
-if (ereg("[^a-zA-Z0-9_.+-]", $key)) {
+if (ereg("[^a-zA-Z0-9_.+-]", $search_key)) {
 ?>
 
 <h1>Package Search</h1>
@@ -27,22 +27,22 @@ if (ereg("[^a-zA-Z0-9_.+-]", $key)) {
 <p>You have entered a search text that contains invalid characters.</p>
 
 <?
-} else {  /* $key valid */
+} else {  /* $search_key valid */
 ?>
 
 <h1>Package Search</h1>
 
 <form action="search.php" method="GET">
 <p>Search for package: <input type="text" name="s" size="15" value="<?
-print $key ?>">
+print $search_key ?>">
 <input type="submit" value="Search">
 </p>
 </form>
 
 <?
-if ($key) {
+if ($search_key) {
   $q = "SELECT name,descshort FROM package ".
-       "WHERE (name LIKE '%$key%' OR descshort LIKE '%$key%') ".
+       "WHERE (name LIKE '%$search_key%' OR descshort LIKE '%$search_key%') ".
        "AND latest=1 ORDER BY name ASC";
   $rs = mysql_query($q, $dbh);
   if (!$rs) {
@@ -52,15 +52,15 @@ if ($key) {
 
     if ($count == 0) {
 ?>
-<p>Found no packages that match "<? print $key ?>".</p>
+<p>Found no packages that match "<? print $search_key ?>".</p>
 <?
     } elseif ($count == 1) {
 ?>
-<p>Found 1 package that matches "<? print $key ?>":</p>
+<p>Found 1 package that matches "<? print $search_key ?>":</p>
 <?
     } else {
 ?>
-<p>Found <? print $count ?> packages that match "<? print $key ?>":</p>
+<p>Found <? print $count ?> packages that match "<? print $search_key ?>":</p>
 <?
     }
     if ($count > 0) {
@@ -87,7 +87,7 @@ if ($key) {
 }
 
 
-}  /* $key valid */
+}  /* $search_key valid */
 ?>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
