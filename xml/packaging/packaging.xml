@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.48 2003/09/04 16:46:22 thesin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.49 2003/10/10 02:08:42 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -1130,7 +1130,7 @@ Required field.
 <em>Introduced in fink 0.12.0.</em>
 This optional field can be used to specify the epoch of the package.
 For more information refer to the <link
-url="http://www.debian.org/doc/debian-policy/ch-versions.html">Debian Policy Manual</link>.
+url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</link>.
 </p>
 </itemd></item>
 
