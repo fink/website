@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/04 12:06:13';
+$cvs_date = 'Date: 2001/10/13 11:35:23';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.6 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.6 2001/09/04 12:06:13 chrisp Exp $</i></p>
+<h1>Fink ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.8 2001/10/13 11:35:23 chrisp Exp $</i></p>
 <p>
 This is Fink, a package management system that aims to bring the full
 world of Open Source software to Darwin and Mac OS X.
@@ -17,17 +17,19 @@ world of Open Source software to Darwin and Mac OS X.
 With the help of dpkg, it maintains a separate directory hierarchy.
 It downloads original source releases, patches them if neccessary,
 configures them for Darwin and compiles and installs them.
-The information about available packages and the neccessary patches
-are included with this distribution, everything else is downloaded off
-the Internet.
+The information about available packages and the necessary patches
+(the "package descriptions") are maintained separately, but are
+usually included with this distribution.
+The actual source code is downloaded from the Internet as necessary.
 </p>
 <p>
-This is version 0.2.6, a development release.
-It has rough edges everywhere, and lacks lots of useful features.
-The package list is also quite short.
-You're walking on thin ground.
-Read the instructions carefully.
-You have been warned.
+Although Fink cannot be considered "mature" and it has some rough
+edges and lacking features, it is successfully used by a large number
+of people.
+Please read the instructions carefully and don't be surprised if
+something doesn't work as expected.
+There are good explanations for most failures; check the website if
+you need help.
 </p>
 <p>
 Fink is released under the terms of the GNU General Public License.
@@ -48,11 +50,8 @@ Earlier versions of both will <b>not</b> work.
 Development tools.
 On Mac OS X, install the Developer.pkg package from the Developer
 Tools CD.
+Make sure that the tools you install match your Mac OS X version.
 On Darwin, the tools should be present in the default install.
-</p></li>
-<li><p>
-Many other things that come with Mac OS X and the Developer Tools.
-This includes perl 5.6 and either wget or curl.
 </p></li>
 <li><p>
 Internet access.
@@ -82,33 +81,26 @@ It also has a complete list of available commands.
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
 <a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>
-and read the FAQ there:
-<a href="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</a>.
+and check out the Help page there:
+<a href="http://fink.sourceforge.net/help/">http://fink.sourceforge.net/help/</a>.
+It will point you at the other documentation that is available and
+sources for support if you need it.
 </p>
 <p>
-If that still doesn't answer your questions, ask for help on the
-fink-users mailing list (see below).
+If you'd like to contribute to Fink, the Help page mentioned above
+also has a list of things you can do, like testing or creating
+packages.
 </p>
 <a name="uptodate"><h2>Staying Informed</h2></a>
-<p>
-To be informed of new releases, go to
-<a href="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</a>
-and subscribe yourself to the fink-announce mailing list.
-The list is moderated and low-traffic.
-</p>
-<p>
-To get help or just chat with other Fink users, subscribe to the
-fink-users mailing list at
-<a href="http://fink.sourceforge.net/lists/fink-users.php">http://fink.sourceforge.net/lists/fink-users.php</a>.
-</p>
 <p>
 The project's website is at 
 <a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>.
 </p>
-<a name="contribute"><h2>Contributing</h2></a>
 <p>
-If you have anything to contribute or want to join me in working on
-this, send an email to &lt;fink@chrisp.de&gt;.
+To be informed of new releases, go to
+<a href="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</a>
+and subscribe to the fink-announce mailing list.
+The list is moderated and low-traffic.
 </p>
 
 
