@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/17 18:17:31 $';
+$cvs_date = '$Date: 2001/01/30 08:38:48 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -14,8 +14,6 @@ include "header.inc";
 could become future features):</p>
 
 <ul>
-<li>Better Installation</li>
-<li>Mirror selection</li>
 <li>More distinct dependencies, build-time vs. run-time</li>
 <li>Let the user choose whether to build locale support, and which
 catalogs should be installed</li>

@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/28 20:03:24 $';
+$cvs_date = '$Date: 2001/01/30 08:38:48 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -26,20 +26,22 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-01-30: Version 0.1.3 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-01-28: Documentation on Fink's <a
 href="info-format.php">package descriptions</a> is available.</p>
 <p>2001-01-24: Instructions and patches for <a
 href="gnome.php">building GNOME</a> on Darwin (without Fink) are now
 available.</p>
-<p>2001-01-17: Version 0.1.2 is out. Get it from the <a
-href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.2 was released on 17 January 2001. It adds package
-revisions, primitive (but working) dependency support and GNOME
-packages. Still, this is an early release, so be careful. You can grab
-it from the <a href="download.php">download page</a>.</p>
+<p>Version 0.1.3 was released on 30 January 2001. It adds mirror
+selection upon installation. Installation should be much smoother
+now. Other changes include improved command handling and of course new
+and updated packages, including the first contributed package: vnc by
+Jeff Whitaker. You can grab the release from the <a
+href="download.php">download page</a>.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td>
 

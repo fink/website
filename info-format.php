@@ -1,7 +1,7 @@
 <?
 $title = "Making Fink Packages";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/28 20:03:24 $';
+$cvs_date = '$Date: 2001/01/30 08:38:48 $';
 /* $section = "fink"; */
 $wantnav = "main";
 
@@ -15,8 +15,7 @@ include "header.inc";
 description files. This is difficult because the format is still
 evolving. Watch the "Last changed" info in the footer of the
 page. What you're reading right now is a description of the format
-used in Fink 0.1.3, to be released Real Soon Now. (It doesn't differ
-much from 0.1.2.)</p>
+used in Fink 0.1.3.</p>
 <p>If you create packages for Fink, I'd like to know about it, so I
 can include them in future releases. Also, if you have questions or
 problems, just mail me at <a
@@ -53,7 +52,10 @@ are ignored. If that description confused you, just look at the
 files.</p>
 <p>Keys (field names) are case-insensitive in Fink. Some fields take
 a boolean value - any of "true", "yes", "on", "1" (case-insensitive)
-are treated as true, all other strings are treated as false.</p>
+are treated as true, all other strings are treated as false. For all
+fields except Package, it is not an error to obmit them; they all have
+default values. In fact, the policy is to include only neccessary
+fields.</p>
 
 <h2>The Build Process</h2>
 
