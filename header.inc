@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.47 2002/06/25 20:05:33 fingolfin Exp $ */
+/* $Id: header.inc,v 1.48 2002/12/03 02:46:02 benh57 Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -44,6 +44,24 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 } else {
   $date = filemtime($PATH_TRANSLATED);
 }
+
+
+// Log the access
+session_start();
+include("pws/stats.php");
+include("pws/bro.php");
+$conn = db_connect();
+// set the page id
+// we could set this variable to "Gallery" for photogallery, etc.
+$page_id = $REQUEST_URI;
+// set the visitor id
+// I'll set this variable to session id, which is the simpliest way
+// This way I won't be able to get information if the user has been on my
+// page before - the better way is the usage of cookies.
+$visitor_id = session_id();
+// and finaly log the access to the database
+log_access($conn,$page_id,$visitor_id);
+
 
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
