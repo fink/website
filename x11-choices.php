@@ -1,7 +1,7 @@
 <?
 $title = "X11 Choices";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/12 13:16:49 $';
+$cvs_date = '$Date: 2001/01/14 16:00:23 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -34,13 +34,12 @@ on Mac OS X Public Beta is a little involved - see the instructions at
 <h2>XFree86 running under Aqua</h2>
 
 <p>Work is underway to let XFree86 work while Aqua is running. This
-mode uses CoreGraphics instead of IOKit. As I understand it, it runs
-full-screen, but you can switch between the X11 desktop and Aqua with
-a keystroke.</p>
+mode uses CoreGraphics instead of IOKit. It runs full-screen, and you
+can switch between the X11 desktop and Aqua with a keystroke.</p>
 <p>The current code is available as a patch against the XFree86
-source. You must build it yourself. See <a
-href="http://www.mrcla.com/XonX/">XonX</a> for the patches and
-further information.</p>
+source. A binary is also available. See <a
+href="http://www.mrcla.com/XonX/">XonX</a> for further
+information.</p>
 
 <h2>Tenon Xtools</h2>
 
