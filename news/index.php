@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/26 12:20:32';
+$cvs_date = 'Date: 2003/10/26 12:24:20';
 
 $metatags = '';
 
@@ -54,12 +54,11 @@ not need to install system-xfree86 anymore.  Fink is
 capable of automatically determining your system-xfree86 version if you
 don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
-following command:
+following commands:
 </p>
+<p><code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</code></p>
+<p><code>fink selfupdate; fink index</code></p>
 <p>
-<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; \
-fink selfupdate; fink index</code>
-</p><p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 </p>

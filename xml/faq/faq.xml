@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.136 2003/10/26 12:24:20 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.137 2003/10/26 12:31:10 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1420,10 +1420,10 @@ exec gnome-session</codeblock>
 		<p>You need to install the X11 SDK, which is on the Xcode CD, and is <em>not</em> installed by default.</p>
 		<p>Also note that you do not need to install system-xfree86 anymore, fink is capable of figuring out
 		your X11 version automatically in cases where you would have installed system-xfree86 previously.</p>
-		<p>If you still have an old system-xfree86 package installed, run
-		<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; \
-fink selfupdate; fink index</code>
+		<p>If you still have an old system-xfree86 package installed, run:
 		</p>
+		<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; \
+fink selfupdate; fink index</codeblock>
 	</answer>
 </faqentry>
 </chapter>
