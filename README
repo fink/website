@@ -1,0 +1,5 @@
+The file LATEST-FINK is a legacy from OS X 10.1 and earlier, and should
+be left at "0.4.1a".
+
+The file CURRENT-FINK should be kept up to date with the most recent
+distribution release.
