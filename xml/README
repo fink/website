@@ -1,16 +1,29 @@
-$Id: README,v 1.1 2001/06/11 11:01:31 chrisp Exp $   -*- text -*-
+$Id: README,v 1.2 2001/07/31 16:02:17 chrisp Exp $   -*- text -*-
 
  README for XML Documents
 ==========================
 
 This directory and its subdirectories contain the XML source of the
-various documents of the Fink project, plus the XSLT stylesheets used
-to render them to HTML. You still need Saxon, an XSLT interpreter
+various documents of the Fink project, plus various XSLT stylesheets
+for rendering:
+
+ * finkdoc-website.xsl renders to HTML for the website. The script
+   postprocess.pl adds the required PHP wrapper. Multiple pages /
+   files are generated for <document> documents.
+
+ * finkdoc-html.xsl renders to pure, monolithic HTML for inclusion
+   with the distribution and for printing.
+
+ * finkdoc-text.xsl renders to ASCII text via an intermediary XML
+   format. The textify.pl script does the actual text rendering. This
+   is also for inclusion with the distribution.
+
+To render the documents, you still need Saxon, an XSLT interpreter
 written in Java. Download Saxon 6.2.2 from
 <http://users.iclway.co.uk/mhkay/saxon/> and put the file 'saxon.jar'
 in this directory. You can then use the provided Makefiles to render
-the documents.
+the documents. There are .cvsignore files to keep CVS from complaining
+about generated files.
 
 
 EOF.
-
