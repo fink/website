@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/19 14:33:47';
+$cvs_date = 'Date: 2001/07/28 06:57:17';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -27,7 +27,8 @@ it?</a></li><li><a href="usage.php#sudo">I'm tired of typing my password into su
 and again. Is there a way around this?</a></li><li><a href="usage.php#exec-init-csh">When I try to run
 init.csh, I get a "Permission denied" error. What am I doing
 wrong?</a></li></ul><li><a href="packages.php"><b>Problems With Certain Packages</b></a></li><ul><li><a href="packages.php#nedit">nedit is broken.</a></li><li><a href="packages.php#gnome-panel">The GNOME panel displays
-black icons only. What's wrong?</a></li></ul></ul><p>Generated from <i>$Fink: faq.xml,v 1.7 2001/07/19 14:33:47 chrisp Exp $</i></p>
+black icons only. What's wrong?</a></li><li><a href="packages.php#gnome-libs-db">gnome-libs complains about
+dbopen and lots of other stuff.</a></li></ul></ul><p>Generated from <i>$Fink: faq.xml,v 1.8 2001/07/28 06:57:17 chrisp Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/19 14:33:47';
+$cvs_date = 'Date: 2001/07/28 06:57:17';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -50,6 +50,16 @@ to the <tt><nobr>RestartCommand</nobr></tt> line, like in this example:
 7,CurrentDirectory=/Users/chrisp
 7,CloneCommand=panel
 7,RestartCommand=panel --sm-client-id 11c0a80208000099479218400000018970007 --no-xshm</pre></div></a>
+
+<a name="gnome-libs-db"><div class="question"><p><b>Q: gnome-libs complains about
+dbopen and lots of other stuff.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This can happen when you manually installed Berkeley DB 3 without
+backward compatibility.
+gnome-libs expects to find a DB 1.86 compatible interface.
+Remove the DB 3 installation from /usr/local or replace it with one
+that has DB 1.86 compatibility.
+</p></div></a>
 
 
 

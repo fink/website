@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/19 14:33:47';
+$cvs_date = 'Date: 2001/07/28 06:57:17';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="packages.php" title="Problems With Certain Packages"><link rel="prev" href="install.php" title="Installation Questions">';
 
@@ -17,7 +17,10 @@ include "header.inc";
 Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
 It produces a list of all packages known to your Fink installation.
 Example:
-</p><pre>fink list</pre></div></a>
+</p><pre>fink list</pre><p>
+There's also the <a href="http://fink.sourceforge.net/pdb/">package
+database</a> at the website.
+</p></div></a>
 
 <a name="unstable"><div class="question"><p><b>Q: There's this package in unstable that I want
 to install, but Fink just says 'no package found'. How can I install
