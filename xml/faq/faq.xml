@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.25 2002/01/10 23:53:45 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.26 2002/01/11 00:04:44 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -220,7 +220,8 @@ statement</link> for details.
 <title>Installing, Using and Maintaining Fink</title>
 <shorttitle>Fink Usage</shorttitle>
 
-<faqentry name="what-packages"><question><p>How can I find out what packages Fink supports?</p></question>
+<faqentry name="what-packages"><question><p>How can I find out what packages
+Fink supports?</p></question>
 <answer>
 <p>
 Since Fink 0.2.3, there is the <code>list</code> command.
@@ -251,8 +252,9 @@ run <code>fink configure</code> to set it up.
 You can also run that command at any time to reconfigure the
 <code>fink</code> command.
 If you followed the instructions in the installation guide, and use
-/sw/bin/init.csh (or /sw/bin/init.sh), then <code>apt-get</code> and
-<code>dselect</code> also will use these proxy settings.
+<filename>/sw/bin/init.csh</filename> (or <filename>/sw/bin/init.sh</filename>),
+then <code>apt-get</code> and <code>dselect</code> also will use these
+proxy settings.
 </p>
 </answer></faqentry>
 
