@@ -1,28 +1,99 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
+<news filename="index" lang="es" fsroot="../..">
 <news>
-<cvsid>$Id: news.es.xml,v 1.1 2004/07/12 13:07:44 alexkhansen Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.2 2004/09/03 01:19:38 michga Exp $</cvsid>
 
+<newsitem>
+	<date>2004-08-23</date>
+	<headline>Problemas con XCode 1.5</headline>
+	<body>
+	<p>
+	Recientemente han habido reportes de varios paquetes del Fink que no
+	 compilan correctamente usando Xcode 1.5. Si aún no han actualizado a
+	  XCode 1.5, se sugiere que se espere a la solución de este problema 
+	  antes de hacerlo.
+	</p><p>
+	Si has tenido problemas con algún paquete que compilaba correctamente
+	 con XCode 1.2 pero que compila incorrectamente con XCode 1.5, favor 
+	 de reportarlo a la lista de correo fink-devel. (El síntoma usual es:
+	 some symbols are  missing after compiling with g++.)  
+	Algunos paquetes que se sabe tiene este problema son octave, 
+	singular-factory, singular-libfac, y posbilemente sdl.	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>2004-08-21</date>
+	<headline>Error en fink-0.22.0</headline>
+	<body>
+	<p>
+	El manejador de paquetes del fink-0.22.0, el cual estuvo brevemente
+	disponible en el árbol inestable la semana pasada, tiene un bug el 
+	cual previene cualquier actualización via rsync. Si instalaste esta
+	versión de fink, te puedes recuperar ejecutando el comando 
+	<code>fink install fink-0.21.2-1</code> el cual ejecutará el downgrade
+	de fink a la versión del árbol estable, subsecuentemente debes 
+	ejecutar:
+		<code>fink selfupdate</code>
+	</p><p>
+	Si por alguna razón estos comandos no funcionan, vaya a
+		<link url="http://sourceforge.net/project/showfiles.php?group_id=17203"> la página del la liberación del archivo fink en el 
+		sourceforge</link> y descarge el archivo
+		<code>fink-0.22.1.tar.gz</code> . Desempaque este archivo con	<code>tar xfz fink-0.22.1.tar.gz</code> , y desde dentro del directorio
+	fink-0.22.1 directory, ejecute el comando <code>./inject.pl</code>
+	</p>
+	<p>
+	El equipo de Fink se disculpa por el error y agradece a la comunidad 
+	de usuarios por llamar nuestra atención rápidamente.
+	</p>
+	</body>
+</newsitem>
+<newsitem>
+	<date>2004-08-01</date>
+	<headline>Mejorando nuestros espejos. ¿Puedes ayudarnos?</headline>
+	<body>
+	<p>
+	La desición de Fink de incrementar gradualmente nuestra red de espejos
+	a pagado con creces. Para asegurarnos de seguir ofreciendo un
+	servicio de alta calidad, necesitamod mejorar nuestra red de espejos.
+	Ya ha pasado bastante tiempo desde la última vez que solicitamos más
+	espejos. Así que, es momento de hacerlo de nuevo.  Fink esta muy
+	agradecido por los recursos concedidos por nuestra comunidad. Para
+	mejorar nuestro servicio a la comunidad requerimos un aún mejor
+	sistema de espejos. En particular, carecemos de espejos en Europa
+	Central, Rusia y el Lejano Oriente. Sí sientes que tienes 2 Mbit para
+	compartir con un espejo de rsync, o aún má´s para ofrecer un espejo de
+	distfiles, por favor  <extlink url="mailto:mirrors@finkmirrors.net">contactanos</extlink>.
+	</p>
+	<p>
+	 Para obtener un mejor conocimiento de los diferentes tipos de espejos
+	 que Fink ofrece, por favor revisa este sitio: 
+	 <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. 
+	 Este es el sitio oficial de todos los asuntos relacionados con los
+	 espejos. Si crees que puedes ofrecer otro tipo de recursos, por ejemplo, un espacio web para pruebas, no dudes en <extlink url="mailto:mirrors@finkmirrors.net">contactarnos</extlink> .
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2004-04-06</date>
 	<headline>Fink 0.6.3 y 0.7.0 liberados.</headline>
 	<body>
 	<p>
 Las versiones más recientes de Fink, versión 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
-ya esta disponible como código fuente y como binario. El versión 0.6.3 esta construida para <em>10.2</em>, mientras que la 0.7.0 ha sido creada para <em>10.3</em>. Esta estrategia facilitara el soporte de diferentes plataformas.
+ya esta disponible como código fuente y como binario. El versión 0.6.3 esta construida para <em>10.2</em>, mientras que la 0.7.0 ha sido creada para <em>10.3</em>. Esta estrategia facilitará el soporte de diferentes plataformas.
 	</p>
 	<p>
-Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problematicos para los usuarios del 10.3 han sido reconstruidos.
+Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problemáticos para los usuarios del 10.3 han sido reconstruidos.
 	</p>
 	<p>
-Para completar una nueva instalación de Fink se deben seguir las instrucciones que estan  
+Para completar una nueva instalación de Fink se deben seguir las instrucciones que están  
 <link url="download/index.php?phpLang=es">aquí</link>.
 También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  <link url="download/upgrade.php?phpLang=es">aquí</link>.
 
 Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra <link url="lists/index.php?phpLang=es">aquí</link>.
 		</p>
 		<p>
-Asegunrense de escoger es <em>instalador adecuado</em> para su Plataforma.
+Asegurense de escoger el <em>instalador adecuado</em> para su plataforma.
 Fink 0.6.3 solo se instalará en Mac OS X 10.2.* mientras que Fink 0.7.0 sólo se instalará en Mac OS X 10.3.* 
 		</p>
 	<p>
