@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/13 16:32:07';
+$cvs_date = 'Date: 2001/08/30 16:08:10';
 
 $metatags = '<link rel="start" href="index.php" title="Porting Contents"><link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -21,7 +21,7 @@ platform-dependent procedures for library building and installation.
 
 <a name="situation"><h2>The Situation</h2></a>
 <p>
-In the wild, one can find three strands of libtool:
+In the wild, one can find four strands of libtool:
 </p>
 <ul>
 
@@ -39,20 +39,31 @@ It can be recognized by the presence of the files
 Long in the works and recently released as the new
 stable version, this branch has better autoconf integration.
 Unfortunately that makes migrating packages from 1.3 non-trivial.
-It supports Darwin out of the box and can be recognized by the absence
-of <tt><nobr>ltconfig</nobr></tt>.
+It supports Darwin 1.3 / Mac OS X 10.0 out of the box and needs a
+small patch to work on Mac OS X 10.1.
+It can be recognized by the absence of <tt><nobr>ltconfig</nobr></tt>.
 Versions that identify themselves as 1.3b or 1.3d are actually
 development snapshots of 1.4 and must be treated with caution.
 </p></li>
 
 <li><p>
 <b>The multi-language-branch</b>:
-Also called MLB, this version of libtool is still under development
-and will some day be released as libtool 1.5.
-It adds support for C++ and Java (via gcj).
-It also supports Darwin out of the box.
-It can be recognized by the files <tt><nobr>ltcf-c.sh</nobr></tt>,
+Also called MLB, this version of libtool was a parallel development
+branch that added support for C++ and Java (via gcj).
+It has now been merged back into the main development line.
+Recent versions support Darwin 1.3 and Mac OS X 10.0 out of the box.
+The MLB can be recognized by the files <tt><nobr>ltcf-c.sh</nobr></tt>,
 <tt><nobr>ltcf-cxx.sh</nobr></tt> and <tt><nobr>ltcf-gcj.sh</nobr></tt>.
+</p></li>
+
+<li><p>
+<b>The current development branch</b>:
+This is the development version that will some day be released as
+libtool 1.5.
+It has resulted from the merge of 1.4 and the MLB.
+It supports C, C++ and Java (via gcj).
+Unfortunately, it can't be easily told apart from 1.4, you'll have to
+check the version number inside <tt><nobr>ltmain.sh</nobr></tt>.
 </p></li>
 
 </ul>
@@ -64,8 +75,10 @@ Apple includes a patched version of libtool 1.3.5 in Mac OS X, but it
 will not work correctly in most cases.
 I have improved that patch to hardcode the correct path and to do full
 versioning.
-This improved patch was later incorporated into libtool 1.4 and the
-multi-language-branch.
+The changes have been incorporated into upstream libtool releases and
+development versions starting with 1.4.
+I continue to make improvements and forward them to the libtool
+maintainers.
 The versioning scheme is compatible across all libtool versions.
 </p>
 <p>
@@ -79,7 +92,7 @@ on Darwin when dlcompat is installed.
 <a name="patch-135"><h2>The 1.3.5 Patch</h2></a>
 <p>
 After applying <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
-patch</a> [updated 2001-06-12] to the libtool 1.3.5 source, you
+patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source, you
 must delete the files ltconfig and ltmain.sh.
 They will be recreated from the appropriate .in files when you run
 configure and make.
@@ -91,7 +104,7 @@ Note that you must do this before running the configure script.
 For your convenience, you can get the two files right here:
 <a href="http://fink.sourceforge.net/files/ltconfig">ltconfig</a> (98K) and
 <a href="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</a> (110K)
-[both updated 2001-06-12].</p>
+<b>[both updated 2001-08-30]</b>.</p>
 
 
 

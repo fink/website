@@ -1,7 +1,7 @@
 <?
 $title = "Porting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/13 16:32:07';
+$cvs_date = 'Date: 2001/08/30 16:08:10';
 
 $metatags = '<link rel="start" href="index.php" title="Porting Contents"><link rel="next" href="basics.php" title="Basics">';
 
@@ -39,7 +39,7 @@ a superset of Darwin.
 <li><a href="libtool.php#patch-135">The 1.3.5 Patch</a></li>
 <li><a href="libtool.php#notes">Further Notes</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: porting.xml,v 1.4 2001/08/13 16:32:07 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: porting.xml,v 1.5 2001/08/30 16:08:10 chrisp Exp $</i></p>
 
 
 <?
