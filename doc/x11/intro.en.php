@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/13 01:48:06';
+$cvs_date = 'Date: 2004/05/13 22:06:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 include_once "header.inc";
@@ -146,7 +146,7 @@ up menus in the root window, docks or launch buttons.
 </p>
       <p>
 Many window managers have been packaged for Fink; here is a
-<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">    
+<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">    
 current list.
 </a>
       </p>
