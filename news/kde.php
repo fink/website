@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/07/03 20:36:36 $';
+$cvs_date = '$Date: 2002/07/05 02:28:22 $';
 
 include "header.inc";
 ?>
@@ -52,7 +52,10 @@ Screenshots:
 </p>
 <p>
  New in the 3.0.2 release of the KDE fink packages is a number of
- cleanups in package dependencies, and the kio-kmd package.
+ cleanups in package dependencies, and the kio-kmd package.  Also note that
+ kdebindings depends on mozilla, which is now only available in crypto, so
+ kdebindings has been moved there as well.  You will need to remove it, or
+ add the crypto tree to your configuration to upgrade.
 </p>
 
 <h1>Upgrading Fink KDE</h1>
