@@ -1,10 +1,11 @@
 <?
-/* $Id: nav.en.inc,v 1.8 2004/07/15 16:19:18 michga Exp $ */
+/* $Id: nav.en.inc,v 1.9 2005/03/01 17:32:11 alexkhansen Exp $ */
 
 $section = "documentation";
 $navbox = array(
   "doc/index.php?phpLang=en", "Document List",
   "doc/users-guide/index.php?phpLang=en", "User's Guide",
+  "doc/advanced/index.php?phpLang=en", "Advanced",
   "doc/x11/index.php?phpLang=en", "Running X11",
   "doc/bundled/install.php?phpLang=en", "Installation",
   "doc/bundled/usage.php?phpLang=en", "Usage",
