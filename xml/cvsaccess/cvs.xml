@@ -4,7 +4,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.7 2002/04/13 21:14:20 fingolfin Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.8 2002/04/17 17:52:43 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -13,30 +13,47 @@ This means that you can stay up to date between releases and always
 get the newest stuff.
 This page tells you how to set up an existing Fink installation for
 updating via CVS.
-The information on this page applies to Fink 0.2.x and later.
+The information on this page applies to Fink 0.3.x and later.
 </p>
 </preface>
 
 
 <section><title>Fink CVS Structure</title>
-<p>Fink has two CVS modules. The module <code>fink</code> (<link
-url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/fink/">ViewCVS</link>)
-contains the package manager plus the stuff needed for bootstrap. The
-module <code>packages</code> (<link
+<p>Fink has several CVS modules. The module <code>packages</code> (<link
 url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</link>)
-contains the package descriptions and patches. In theory, these two
-are separate entities and can be updated independently. In practice,
-however, you should always keep both up to date because sometimes
-packages (in the packages module) use new features in the package
-manager (in the fink module) that have recently been added. They will
-misbehave when those features are not supported...</p>
+contains the package descriptions and patches. There are other modules
+used by Fink developers, which anyone is free to view, but which are
+not interesting for most.</p>
+</section>
+
+<section><title>Updating the Package Descriptions</title>
+<p>In the past this was a bit tedious procedure; but in the current Fink
+versions, this is a very simple procedure. Just issue this command:
+</p>
+<codeblock>fink selfupdate-cvs</codeblock>
+<p>Fink will perform all necessary steps automatically for you. This
+includes retrieving the latest set of Package Descriptions, and updating
+a few essential core packages (among them the Fink package manager).
+</p>
+<p>Note that this command currently doesn't work if you are behind a
+firewall (this is a limitation in CVS, not in Fink). We are working
+on a solution to tunnel through HTTP firewalls (by enhancing
+cvs to support these), but no release date has been set for this.
+</p>
+<p>After you have updated your Package Descriptions this ways, you may
+want to update your packages to the latest available versions. You can
+do so by with the following command:
+</p>
+<codeblock>fink update-all</codeblock>
 </section>
 
 <section><title>Updating the Package Manager</title>
 <p>
 <em>Note:</em> As of September 20 it is no longer necessary to update
 the package manager separately; it is treated like any other package.
-It's still possible to update it directly from CVS, though.
+It's still possible to update it directly from CVS, though this is
+usually only interesting for people creating packages, not the avarage
+user.
 </p>
 
 <p>The package manager must be updated through a separate directory
@@ -59,27 +76,6 @@ then:</p>
 <codeblock>cd tempdir/fink
 cvs -z3 update -d
 ./inject.pl</codeblock>
-</section>
-
-<section><title>Updating the Package Descriptions</title>
-<p>The procedure for the package descriptions is almost identical. The
-main difference is that the <code>inject.pl</code> script just copies the
-descriptions into your Fink installation. To build the new packages,
-you must use regular fink commands, like <code>fink update-all</code> or
-<code>fink update <em>&lt;package&gt;</em></code>.</p>
-<p>The first time procedure:</p>
-<codeblock>cd tempdir
-cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co packages
-cd packages
-./inject.pl</codeblock>
-<p>After doing the above once, you can use this:</p>
-<codeblock>cd tempdir/packages
-cvs -z3 update -d
-./inject.pl</codeblock>
-
-<p> </p>
-<p>more to be written...</p>
 </section>
 
 </article>
