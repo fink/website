@@ -107,7 +107,16 @@ sort this out.
 You are missing a file that is supposed to be installed by <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
 </a>
 
-<a name="apple-x-delete"><div class="question"><p><b>Q7.8: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
+<a name="apple-x-bugs"><div class="question"><p><b>Q7.8: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
+<div class="answer"><p><b>A:</b> 
+  First of all, if you previously had the &quot;threaded&quot; versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing.  Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
+ </p><p>
+  Secondly, you may have just hit an Apple X11 bug.  As of the time of this writing, a number of bugs are known by the Apple team and are being worked on.
+ </p><p>
+  If you have general questions regarding Apple's X11 that are not really related to Fink, you may want to check <a href="http://www.lists.apple.com/x11-users">Apple's official discussion list on X11</a>. They also have also recommended that bugs in X11 be <a href="http://developer.apple.com/bugreporter">submitted to the Apple bug reporter</a>.
+ </p></div>
+</a>
+<a name="apple-x-delete"><div class="question"><p><b>Q7.9: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
 <div class="answer"><p><b>A:</b> Some users have reported that the behavior of the <tt><nobr>delete</nobr></tt> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>
 xterm*.deleteIsDEL: true
 xterm*.backarrowKey: false

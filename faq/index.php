@@ -126,7 +126,8 @@ says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 <li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
 <li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
-<li><a href="usage-packages.php#apple-x-delete">7.8 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
+<li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
+<li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</i></p>
 

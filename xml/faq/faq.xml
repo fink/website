@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.77 2003/01/10 01:13:39 rangerrick Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -112,9 +112,9 @@ acknowledge that you're doing this at your own risk.</p>
 
 <faqentry name="why-sw"><question><p>Then why did you choose
 /sw?</p></question>
-<answer><p>That choice is quite arbitrary. If you have a better
-suggestion, post it to the fink-devel mailing list. But you should be
-aware of the arguments about /usr/local in the previous question.</p>
+<answer><p>That choice is quite arbitrary, but is likely to stay for
+the forseeable future for practical (upgrade) issues as well as the
+fact that it's safe from conflicting with other packaging systems.</p>
 </answer></faqentry>
 
 
@@ -936,6 +936,19 @@ sort this out.
 You are missing a file that is supposed to be installed by <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink reinstall xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p></answer>
 </faqentry>
 
+<faqentry name="apple-x-bugs"><question><p>I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</p></question>
+<answer>
+ <p>
+  First of all, if you previously had the "threaded" versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing.  Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
+ </p>
+ <p>
+  Secondly, you may have just hit an Apple X11 bug.  As of the time of this writing, a number of bugs are known by the Apple team and are being worked on.
+ </p>
+ <p>
+  If you have general questions regarding Apple's X11 that are not really related to Fink, you may want to check <link url="http://www.lists.apple.com/x11-users">Apple's official discussion list on X11</link>. They also have also recommended that bugs in X11 be <link url="http://developer.apple.com/bugreporter">submitted to the Apple bug reporter</link>.
+ </p>
+</answer>
+</faqentry>
 <faqentry name="apple-x-delete"><question><p>I want the delete key in Apple's X11.app to behave like that in XDarwin.</p></question>
 <answer><p>Some users have reported that the behavior of the <code>delete</code> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p>
 <p><em>.Xmodmap:</em></p>
