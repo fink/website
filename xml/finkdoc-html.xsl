@@ -31,7 +31,7 @@
 <b><!--<xsl:number format="1 " />--><xsl:value-of select="title" /></b></a></li>
 
 <ul>
-<xsl:for-each select="faqentry">
+<xsl:for-each select="faqentry|section">
 <li><a><xsl:attribute name="href">
 <xsl:value-of select="../@filename" /><xsl:text>.php#</xsl:text><xsl:value-of select="@name" />
 </xsl:attribute>
@@ -39,6 +39,7 @@
 <xsl:for-each select="question/p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
 </xsl:for-each>
+<xsl:value-of select="title" />
 </a></li>
 </xsl:for-each>
 </ul>
