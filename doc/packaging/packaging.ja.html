@@ -15,8 +15,8 @@ Available Languages:  |
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ情報の記述方法を解説します．
 			また Fink ディストリビューションのポリシーとガイドラインも解説します．
-			パッケージ情報の書式もディストリビューションのポリシーも共に発展途上なので，
-			"Last changed" (最終更新) 情報とこのページの CVS タグに注意して，更新に気付いて下さい．
+			パッケージ情報の書式もディストリビューションのポリシーも共に発展途上です。
+			"Last changed" (最終更新) 情報とこのページの CVS タグを確認することで，更新されているかがわかります．
 			ここで扱うのはパッケージ管理システム Fink の「0.9.0 開発版」以降で使われる書式とポリシーの説明です．
 		</p>
 		<p>
@@ -251,6 +251,10 @@ SplitOff: &lt;&lt;
 							<tt style="white-space: nowrap;">%f</tt> が <tt style="white-space: nowrap;">%p/src</tt> の中にあることを当てにしてはいけない．
 							ユーザが設定ファイル <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> でフィールド <tt style="white-space: nowrap;">Buildpath</tt>
 							を指定すればこの場所は変わってしまう．
+							最も内側のディレクトリ名は， <tt style="white-space: nowrap;">Source</tt> ファイル名か， (もしあれば) <tt style="white-space: nowrap;">SourceDirectory</tt> 
+							フィールドの値となります．
+							ただし， <tt style="white-space: nowrap;">NoSourceDirectory</tt> が <tt style="white-space: nowrap;">true</tt>
+							であれば使用されません．
 						</p>
 						<p>
 							注記: %b は使わざるを得ないときだけ使用して下さい．
@@ -2038,4 +2042,4 @@ Copyright (c) 2001-2004 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.6 2004/04/16 01:06:34 dmacks Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.7 2004/04/16 22:01:46 babayoshihiko Exp $</i></p></body></html>

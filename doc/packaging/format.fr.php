@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:06:34';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/04/17 06:45:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -127,7 +127,7 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 répertoire <b>d</b>ans lequel le paquet est construit, par exemple : 
-<code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
+<code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -148,7 +148,8 @@ chemin des rustines
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
+répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
+Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).
 </p>
 <p>
 Note: ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est

@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.13 2004/04/16 01:06:34 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.14 2004/04/17 06:45:22 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -206,7 +206,7 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 <itemd>
 <p>
 répertoire <em>d</em>ans lequel le paquet est construit, par exemple : 
-<filename>/sw/src/root-gimp-1.2.1-1</filename>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <filename>root-%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
+<filename>/sw/src/root-gimp-1.2.1-1</filename>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <filename>root-%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
 </p>
 </itemd></item>
 
@@ -242,7 +242,8 @@ chemin des rustines
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-répertoire de compilation, exemple : <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.Vous ne devez pas partir du principe que <filename>%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
+répertoire de compilation, exemple : <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.Vous ne devez pas partir du principe que <filename>%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
+Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).
 </p>
 <p>
 Note: ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
