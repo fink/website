@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/30 12:08:19 $';
+$cvs_date = '$Date: 2001/09/20 21:08:50 $';
 
 include "header.inc";
 ?>
@@ -18,26 +18,34 @@ intended audience is noted with each document in the list below.</p>
 
 <ul>
 <li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
-distribution (for Fink users)</li>
+distribution</li>
 <li><a href="bundled/install.php">Installation</a> - how to install
-Fink or upgrade to a new version (for Fink users)</li>
+Fink or upgrade to a new version</li>
 <li><a href="bundled/usage.php">Usage</a> - how to use Fink
-and the installed software (for Fink users)</li>
+and the installed software</li>
 </ul>
 
-<h2>Other Documents</h2>
+<h2>Other User Documentation</h2>
 
 <ul>
 <li><a href="x11/index.php">X11 on Darwin and Mac OS X</a> - covers
-concepts, installation and launching (for Fink users, but also for
-Darwin and Mac OS X users in general)</li>
+concepts, installation and launching (also intended for Darwin and Mac
+OS X users in general)</li>
 <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the Fink CVS
-repository to get the latest code and packages between releases (for
-Fink users)</li>
+repository to get the latest packages between releases</li>
+<li>The new <a href="users-guide/index.php">User's Guide</a> -
+replacing the Installation and Usage documents with a comprehensive
+guide that takes the binary distribution into account.
+<b>Caution: Work in Progress!</b></li>
+</ul>
+
+<h2>Developer Documentation</h2>
+
+<ul>
 <li><a href="porting/index.php">Porting Tips</a> - notes for porting
-Unix applications to Darwin (for Fink developers)</li>
+Unix applications to Darwin</li>
 <li><a href="packaging/index.php">Packaging Manual</a> - how to create and
-maintain Fink packages (for Fink developers)</li>
+maintain Fink packages</li>
 </ul>
 
 
