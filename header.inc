@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.64 2004/02/29 23:12:54 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.65 2004/02/29 23:32:25 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -16,7 +16,7 @@ define (FINK_SECTION_PACKAGE, 'Packages');
 define (FINK_SECTION_HELP, 'Help');
 define (FINK_SECTION_FAQ, 'F.A.Q.');
 define (FINK_SECTION_DOCUMENTATION, 'Documentation');
-define (FINK_SECTION_MAILING_LISTS, 'MAILING_LISTS');
+define (FINK_SECTION_MAILING_LISTS, 'Mailing Lists');
 
 /* The Home Subsections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME_INDEX, 'Index');
