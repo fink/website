@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 21:34:23 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2003/01/18 21:52:57 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -44,7 +44,7 @@ include $fsroot."news/news.inc";
 <h1>Status</h1>
 
 <p>
-Fink 0.5.0a was released on 8 December 2002.
+Fink 0.5.1 was released on 18 January 2003.
 </p>
 
 <h1>Resources</h1>
