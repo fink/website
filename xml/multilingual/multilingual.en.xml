@@ -477,11 +477,11 @@ For other
       fail if many changes were made.</p>
     </section>
     <section name="doc-updates">
-      <title>New Document:</title>
+      <title>New Document</title>
       <p>The English version of the document is <xref chapter="files" section="committing">committed</xref> and <xref chapter="files" section="website">activated</xref>, and it is <xref section="new-translations">translated</xref> as below.</p>
     </section>
     <section name="new-translation">
-      <title>New Translations:</title>
+      <title>New Translations</title>
       <p>The language team leader (or someone else with CVS access) will <xref chapter="files" section="committing">commit</xref> and <xref chapter="files" section="website">activate</xref> each document as it becomes ready.</p>
       <p>This classification includes:</p>
       <ul>
@@ -491,14 +491,14 @@ For other
       </ul>
     </section>
     <section name="prompt-update">
-      <title>Prompt Update to Existing Documentation:</title>
+      <title>Prompt Update to Existing Documentation</title>
       <p>The base English documentation is <xref chapter="files" section="committing">committed</xref> and <xref chapter="files" section="website">activated</xref> immediately. The
       translation teams then update their versions, <xref chapter="files" section="committing">commit</xref><em> all</em> of the files (XML and
       PHP), then <xref chapter="files" section="activate">activate</xref> the
       changes.</p>
       <p><em>Notes:</em></p>
       <ol>
-        <li>Changes to the Internationalzation HOWTO (this document) will
+        <li>Changes to the Internationalization HOWTO (this document) will
         <em>always</em> be made on this schedule, because such changes affect all
         translation teams.</li>
         <li>Changes to the static documents (PHP files not generated from XML)
@@ -506,7 +506,7 @@ For other
       </ol>
     </section>
     <section name="delayed-update">
-      <title>Delayed Update to Existing Documentation (XML-generated files only):</title>
+      <title>Delayed Update to Existing Documentation (XML-generated files only)</title>
       <p>In this case, the English version of the XML file is <xref chapter="files" section="committing">committed</xref>, but <em>not</em> the
         PHP and HTML files, i.e. stop at step 5 under of Dynamic under <xref chapter="files" section="committing">2.9</xref>. All translators do
         their work and <xref chapter="files" section="committing">commit</xref> <em>only </em>their XML file (i.e. the same as
