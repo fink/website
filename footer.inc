@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.28 2005/01/02 16:04:50 dmrrsn Exp $ */
+/* $Id: footer.inc,v 1.29 2005/01/18 22:47:55 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
@@ -16,7 +16,7 @@
 	 	</a>
 	</p>
 </td><td class="footer">
-		<? /* Inserts Links toAvailable Languages */ ?>
+		<? /* Inserts Links to Available Languages */ ?>
 		<div class="footer">
 		<?
 		if (function_exists(AddLanguageNames)) {
@@ -34,15 +34,23 @@
 		if ($dyndate == 1) {
 		 	print FOOTER_GENERATED_DYNAMICALLY;
 		} elseif ($dyndate) {
-			print gmstrftime(FOOTER_DATABASE_LAST_UPDATED, $dyndate);
+			print convert_date_to_locale($dyndate);
 		} else {
-		 	print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
+		 	// print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
+			$print_lastchanged = FOOTER_LAST_CHANGED;
+			$date_converted = gmstrftime(FINK_DATE_FORMAT, $date);
+			$date_encoding = mb_detect_encoding($date_converted);
+			$date_converted = mb_convert_encoding($date_converted, "UTF-8", FINK_SF_ENCODING);
+			
+			$print_lastchanged = str_replace("{author}", $author, $print_lastchanged);
+			$print_lastchanged = str_replace("{date}", $date_converted, $print_lastchanged);
+			$print_lastchanged = str_replace("{time}", gmstrftime(" %R GMT", $date), $print_lastchanged);
+			print $print_lastchanged;
 		}
 		?>
 		</div>
 </td>
 </tr>
 </table>
-
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.es.inc,v 1.2 2004/09/02 23:43:36 michga Exp $ */
+/* $Id: constants.es.inc,v 1.3 2005/01/18 22:47:53 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -59,5 +59,5 @@ define (HEADER_HOSTED_BY, 'Albergado por {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Idiomas disponibles ');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generado dinámicamente por ');
 define (FOOTER_DATABASE_LAST_UPDATED, 'Actualizado por última vez el %d %B %Y a la(s) %R %Z');
-define (FOOTER_LAST_CHANGED, 'Actualizado por última vez el %d %B %Y a la(s) %R %Z por {author}');
+define (FOOTER_LAST_CHANGED, 'Actualizado por última vez el {date} a la(s) {time} por {author}');
 ?>

@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.it.inc,v 1.3 2004/11/11 19:12:47 claudio87 Exp $ */
+/* $Id: constants.it.inc,v 1.4 2005/01/18 22:47:54 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -51,5 +51,5 @@ define (META_DESCRIPTION, 'Il progetto Fink vuole portare il mondo del software 
 define (FOOTER_AVAILABLE_LANGUAGES, 'Lingue disponibili ');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generato dinamicamente da ');
 define (FOOTER_DATABASE_LAST_UPDATED, 'Ultimo aggiornamento: %x %X');
-define (FOOTER_LAST_CHANGED, 'Ultimo cambiamento %d %b %Y su %R %Z da parte di {author}');
+define (FOOTER_LAST_CHANGED, 'Ultimo cambiamento {date} su {time} da parte di {author}');
 ?>

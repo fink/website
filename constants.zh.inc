@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.zh.inc,v 1.7 2005/01/17 01:21:20 babayoshihiko Exp $ */
+/* $Id: constants.zh.inc,v 1.8 2005/01/18 22:47:55 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -54,5 +54,5 @@ define (HEADER_HOSTED_BY, '网页寄存于 {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, '现有语言版本');
 define (FOOTER_GENERATED_DYNAMICALLY, '动态创建自');
 define (FOOTER_DATABASE_LAST_UPDATED, '最后更新：%x %X');
-define (FOOTER_LAST_CHANGED, '最后修改者 {author}，于 %a, %d %b %Y,  %R %Z');
+define (FOOTER_LAST_CHANGED, '最后修改者 {author}，于 {date}, {time}');
 ?>

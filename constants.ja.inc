@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.8 2005/01/16 17:40:45 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.9 2005/01/18 22:47:54 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -55,6 +55,6 @@ define (META_DESCRIPTION, 'Fink プロジェクトは オープンソースソ�
 define (HEADER_HOSTED_BY, '{img} によってホストされています');
 define (FOOTER_AVAILABLE_LANGUAGES, '他の言語');
 define (FOOTER_GENERATED_DYNAMICALLY, '自動作成');
-define (FOOTER_DATABASE_LAST_UPDATED, 'データベースの最終更新日: %X %x');
-define (FOOTER_LAST_CHANGED, '{author} によって%Y年%m月%d日に変更されました');
+define (FOOTER_DATABASE_LAST_UPDATED, 'データベースの最終更新日:  %a, %b %d %Y, %R %Z');
+define (FOOTER_LAST_CHANGED, '{author} によって{date} {time}に更新されました');
 ?>
