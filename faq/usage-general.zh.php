@@ -4,24 +4,24 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/05/31 19:53:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
-include_once "header.inc";
-?>
 
-<h1>常见疑问（F.A.Q.） - 8 一般性软件包使用问题</h1>
+include_once "header.zh.inc";
+?>
+<h1>常见疑问（F.A.Q.） - 8. 一般性软件包使用问题</h1>
     
     
     <a name="xlocale">
-      <div class="question"><p><b>Q8.1: 我碰到很多这样的消息："locale not supported by C library"。有问题吗？</b></p></div>
-      <div class="answer"><p><b>A:</b> 
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.1: 我碰到很多这样的消息："locale not supported by C library"。有问题吗？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 没有什么问题，它只是表示程序会使用默认的英语信息提示，日期格式等。
 程序其它的功能应该是正常的。
 X11 文档有更多的<a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">细节</a>。
 </p></div>
     </a>
     <a name="passwd">
-      <div class="question"><p><b>Q8.2: 我的系统上突然多很很多陌生的用户，名字象 "mysql"，"pgsql"，和 "games"。
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.2: 我的系统上突然多很很多陌生的用户，名字象 "mysql"，"pgsql"，和 "games"。
 它们是哪来的？</b></p></div>
-      <div class="answer"><p><b>A:</b> 
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 你用 Fink 安装了一些软件包，这些软件包依赖于另外一个叫 passwd 的软件包。passwd 出于安全的原因在你的系统上增加了一些额外的用户－Unix 系统上，文件和进程由一些（不同的） "owners" 所有，这可以使得系统管理员可以微调系统的权限和安全性设置。
 象 Apache 和 MySQL 这样的程序需要有 "owner"，把这些守护进程由 root 来运行是不安全的（想像一下如果 Apache 被攻破而它又有对系统所有文件的写权限的情况）。
 因此，passwd 软件按照 Fink 软件包的需要建立了这些额外的用户。</p><p>如果在你的"系统预置：用户"(对 10.2)或"系统预置：帐号"(对 10.3)面板里面突然出现了这些用户，那么要警惕，但不要那么着急去删除它们：
@@ -36,8 +36,8 @@ X11 文档有更多的<a href="http://fink.sourceforge.net/doc/x11/trouble.php#l
 </p></div>
     </a>
     <a name="compile-myself">
-      <div class="question"><p><b>Q8.3: 如何使用 Fink 安装的软件编译一些我自己的东西？</b></p></div>
-      <div class="answer"><p><b>A:</b> 当你编译一些不属于 Fink 的东西的时候，编译器和连接器需要知道去哪里找 Fink 安装的库和头文件。对于那些使用标准 configure/make 过程的软件，你需要设置这些环境变量：
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.3: 如何使用 Fink 安装的软件编译一些我自己的东西？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 当你编译一些不属于 Fink 的东西的时候，编译器和连接器需要知道去哪里找 Fink 安装的库和头文件。对于那些使用标准 configure/make 过程的软件，你需要设置这些环境变量：
 </p><p>对于 tcsh</p><pre>setenv CFLAGS -I/sw/include
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
@@ -56,12 +56,12 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
 </p><p>另外，你也许需要安装那些你使用的软件包的开发版的头文件（例如 <b>foo-1.0-1-dev</b>），如果你还没有安装它们的话）。</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b>Q8.4: 我不能在苹果的 X11 的应用程序菜单里面运行任何 Fink 安装的程序。</b></p></div>
-      <div class="answer"><p><b>A:</b> 苹果的 X11 不使用 Fink 的环境变量设置，这意味着应用程序菜单没有正确的环境变量设置来找到你的 Fink 程序。解决办法是在 Fink 安装的程序前面加上：</p><pre>source /sw/bin/init.sh ; </pre><p>例如，如果你希望运行 Fink 安装的 GIMP，那么填入</p><pre>source /sw/bin/init.sh ; gimp</pre><p>到你 GIMP 项的命令一栏。</p><p>你也可以编辑你的 .xinitrc 文件（在你的用户目录中）并添加：</p><pre>source /sw/bin/init.sh</pre><p>到第一行之后。</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.4: 我不能在苹果的 X11 的应用程序菜单里面运行任何 Fink 安装的程序。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 苹果的 X11 不使用 Fink 的环境变量设置，这意味着应用程序菜单没有正确的环境变量设置来找到你的 Fink 程序。解决办法是在 Fink 安装的程序前面加上：</p><pre>source /sw/bin/init.sh ; </pre><p>例如，如果你希望运行 Fink 安装的 GIMP，那么填入</p><pre>source /sw/bin/init.sh ; gimp</pre><p>到你 GIMP 项的命令一栏。</p><p>你也可以编辑你的 .xinitrc 文件（在你的用户目录中）并添加：</p><pre>source /sw/bin/init.sh</pre><p>到第一行之后。</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b>Q8.5: 我被 X11 的选择弄糊涂了：苹果 X11，XFree86，等等。我应该安装哪一个？</b></p></div>
-      <div class="answer"><p><b>A:</b> 这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但相互之间有一些轻微的差别。对于在 Panther 和 Jaguar 下有不同的可选方式。在 Panther 下你可以选择：</p><ul>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.5: 我被 X11 的选择弄糊涂了：苹果 X11，XFree86，等等。我应该安装哪一个？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但相互之间有一些轻微的差别。对于在 Panther 和 Jaguar 下有不同的可选方式。在 Panther 下你可以选择：</p><ul>
         <li><p>苹果的 X11 （在第三张光盘上）。不要忘记同时安装 X11 SDK （在 XCode 光盘上），如果你希望编译程序，或着你希望用 Fink 从源代码安装和 X 有关的软件包。</p></li>
         <li><p>Fink 的 4.4.x 版本。安装 xfree86 和 xfree86-shlibs 软件包。</p></li>
         </ul><p>在 Jaguar 下，多数的选择是通过 Fink 安装的：</p><ul>
@@ -77,16 +77,16 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
         </ul><p>还有另外一些选择。在 <a href="http://fink.sourceforge.net/doc/x11/index.php">运行 X11 的文档</a>里面有专门的叙述。</p></div>
     </a>
     <a name="no-display">
-      <div class="question"><p><b>Q8.6: 当我试图运行一个程序，我碰到一个错误信息说： "cannot open display:"。我应该怎么办？</b></p></div>
-      <div class="answer"><p><b>A:</b> 这个错误意味着系统不能连接到你的 X 显示。确定你按下面的步骤处理：</p><p>1. 启动 X （苹果的 X11，XFree86，…）。</p><p>2. 确定你正确设置了 DISPLAY 环境变量。如果你使用 X 的默认设置，你应该这么做：</p><p>如果你使用 <code>tcsh</code></p><pre>setenv DISPLAY :0</pre><p>或如果你使用 <code>bash</code></p><pre>export DISPLAY=:0</pre></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.6: 当我试图运行一个程序，我碰到一个错误信息说： "cannot open display:"。我应该怎么办？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个错误意味着系统不能连接到你的 X 显示。确定你按下面的步骤处理：</p><p>1. 启动 X （苹果的 X11，XFree86，…）。</p><p>2. 确定你正确设置了 DISPLAY 环境变量。如果你使用 X 的默认设置，你应该这么做：</p><p>如果你使用 <code>tcsh</code></p><pre>setenv DISPLAY :0</pre><p>或如果你使用 <code>bash</code></p><pre>export DISPLAY=:0</pre></div>
     </a>
     <a name="suggest-package">
-      <div class="question"><p><b>Q8.7: 我在 Fink 里面看不到我喜欢的那个程序。我应该怎么建议增加一个新的软件包到 Fink 里面？</b></p></div>
-      <div class="answer"><p><b>A:</b> 在 Fink 项目的<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">软件包需求追踪器</a>。</p><p>注意你需要一个 SourceForge 帐号才可以添加。</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.7: 我在 Fink 里面看不到我喜欢的那个程序。我应该怎么建议增加一个新的软件包到 Fink 里面？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在 Fink 项目的<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">软件包需求追踪器</a>。</p><p>注意你需要一个 SourceForge 帐号才可以添加。</p></div>
     </a>
     <a name="virtpackage">
-      <div class="question"><p><b>Q8.8: 这些名为 <code>system-*</code> 的“虚拟软件包”有些时候会存在，但我却不能自己安装或删除它们？</b></p></div>
-      <div class="answer"><p><b>A:</b> 
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.8: 这些名为 <code>system-*</code> 的“虚拟软件包”有些时候会存在，但我却不能自己安装或删除它们？</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	  名为类似 <code>system-perl</code> 的软件包是占位软件包。它们不包含实际的文件，而仅仅作为 fink 识别在它之外手工安装的程序一种机制。
 	</p><p>
 	  从 10.3 版本开始，多数软件包什么不是你可以安装或删除的实际软件包。
@@ -139,7 +139,9 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
 	  </li>
         </ul></div>
     </a>
-  <p align="right">
-Next: <a href="usage-packages.php?phpLang=zh">9 特定软件包使用问题</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="usage-packages.php?phpLang=zh">9. 特定软件包使用问题</a></p>
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

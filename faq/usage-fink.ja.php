@@ -1,18 +1,18 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/14 05:48:00';
+$cvs_date = 'Date: 2004/06/19 15:34:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
-include_once "header.inc";
-?>
 
-<h1>F.A.Q. - 5 Fink のインストール、使用、メンテナンス</h1>
+include_once "header.ja.inc";
+?>
+<h1>F.A.Q. - 5. Fink のインストール、使用、メンテナンス</h1>
 
 
 <a name="what-packages">
-<div class="question"><p><b>Q5.1: Fink がサポートしているパッケージはどのように探せますか?</b></p></div>
-<div class="answer"><p><b>A:</b> Fink 0.2.3 以降は、 <code>list</code> コマンドがあります。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.1: Fink がサポートしているパッケージはどのように探せますか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink 0.2.3 以降は、 <code>list</code> コマンドがあります。
 このコマンドは、あなたの Fink 環境の管理している全てのパッケージのリストを作成します。
 例:
 </p><pre>fink list</pre><p>バイナリ・ディストリビューションを使っている場合、 <code>dselect</code> でパッケージリストを閲覧することができます。
@@ -20,16 +20,16 @@ dselect からパッケージを選択してインストールする場合、 ro
 </p></div>
 </a>
 <a name="proxy">
-<div class="question"><p><b>Q5.2: ファイヤーウォールの内側にいます。どう設定したら Fink で HTTP プロキシが使えますか?</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.2: ファイヤーウォールの内側にいます。どう設定したら Fink で HTTP プロキシが使えますか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 <code>fink</code> コマンドは、明示的にプロキシを設定できます。
 この設定は <code>wget</code>/<code>curl</code> に渡されます。
 新規インストール時に聞かれなかった場合、または設定し直したい場合、 <code>fink configure</code> を実行することができます。
 もしインストールガイドを読み、 <code>/sw/bin/init.csh</code> (または <code>/sw/bin/init.sh</code>) を使ったなら、次のようにプロキシの前にプロトコルをつけるようにして下さい。</p><pre>ftp://proxy.yoursite.somewhere</pre><p>もしこれでも問題があるようなら、システム環境設定からネットワークを選択し、プロキシのタブをクリックし、 "Use Passive FTP Mode (PASV)" がチェックされているか確認して下さい。</p></div>
 </a>
 <a name="firewalled-cvs">
-<div class="question"><p><b>Q5.3: ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</b></p></div>
-<div class="answer"><p><b>A:</b> パッケージ <b>cvs-proxy</b> は HTTP プロキシを介して通ります。</p><ul>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.3: ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージ <b>cvs-proxy</b> は HTTP プロキシを介して通ります。</p><ul>
 <li>
 <p>
 まず、 <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> 
@@ -56,31 +56,31 @@ dselect からパッケージを選択してインストールする場合、 ro
 <code>fink configure</code></p></div>
 </a>
 <a name="moving">
-<div class="question"><p><b>Q5.4: インストール後に Fink を他の場所に移動できますか?</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.4: インストール後に Fink を他の場所に移動できますか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 できません。
 もちろん、 mv やファインダからファイルを動かすことはできますが、 99% の確率で動かなくなるプログラムがでてきます。
 これは、全ての Unix ソフトウェアはファイルやライブラリなどを検索するのに、ハードコードのパスに依存しているからである。
 </p></div>
 </a>
 <a name="moving-symlink">
-<div class="question"><p><b>Q5.5: Fink をインストール後、他の場所に移動してシンボリックリンクを張ったら、動きますか?</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.5: Fink をインストール後、他の場所に移動してシンボリックリンクを張ったら、動きますか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 動くかも知れない。
 動くと予想されますが、どこに落し穴があるかわかったものじゃありません。
 </p></div>
 </a>
 <a name="removing">
-<div class="question"><p><b>Q5.6: Fink を全てアンインストールするには?</b></p></div>
-<div class="answer"><p><b>A:</b> Fink でインストールしたファイルはほとんど /sw (あるいはインストール時に選択した場所) にあります。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.6: Fink を全てアンインストールするには?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink でインストールしたファイルはほとんど /sw (あるいはインストール時に選択した場所) にあります。
 なので、 Fink を削除するには、通常このコマンドを入力します:</p><pre>sudo rm -rf /sw</pre><p>唯一の例外は XFree86 です。もし XFree86 を Fink でインストールした (<code>xfree86</code> または
 <code>xfree86-rootless</code> パッケージ) なら、次のコマンドも必要です:
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Fink をインストールし直すことがないのでしたら、テキストエディタを使い、 <code>.cshrc</code> ファイルの中の "<code>source /sw/bin/init.csh</code>" と書かれている行、あるいは <code>.bashrc</code> ファイルの中の "<code>source /sw/bin/init.sh</code>" と書かれている行を削除して下さい。</p></div>
 </a>
 <a name="bindist">
-<div class="question"><p><b>Q5.7: ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
+<div class="question"><p><b><? echo FINK_Q ; ?>5.7: ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
 </b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 どちらも正しいです。
 パッケージデータベースは unstable セクションにあるものも含め、全てのパッケージを管理します。
 <code>dselect</code> と <code>apt-get</code> は、コンパイル済みバイナリパッケージしか関与しません。
@@ -92,8 +92,8 @@ dselect からパッケージを選択してインストールする場合、 ro
 </p></div>
 </a>
 <a name="unstable">
-<div class="question"><p><b>Q5.8: unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> まず、 'unstable' の意味を理解して下さい。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.8: unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> まず、 'unstable' の意味を理解して下さい。
 unstable ツリーにあるパッケージは通常一人以上にはテストされていません。
 このため、 Fink はデフォルトでは unstable ツリーを検索するようにはなっていません。
 unstable を使用する場合、何か上手くいったら（上手くいかなかっても）メンテナにメールを送るのを忘れないで下さい。
@@ -111,20 +111,20 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 </a>
 
 <a name="sudo">
-<div class="question"><p><b>Q5.9: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
-<div class="answer"><p><b>A:</b> sudo がパスワードを聞いてこないように設定することができます。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.9: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> sudo がパスワードを聞いてこないように設定することができます。
 root 権限で <code>visudo</code> を開き、次の行を追加します:</p><pre>username ALL = NOPASSWD: ALL</pre><p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p></div>
 </a>
 <a name="exec-init-csh">
-<div class="question"><p><b>Q5.10: init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.10: init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。
 何がおかしいのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> init.csh と init.sh は通常のコマンドのように実行するものではありません。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> init.csh と init.sh は通常のコマンドのように実行するものではありません。
 これらのファイルは環境変数の PATH や MANPATH を設定するものです。
 これをシェルに保持させるには、csh/tcsh では <code>source</code> コマンド、bash/zsh では <code>.</code> コマンドを使い:</p><p> csh/tcsh の場合:</p><pre>source /sw/bin/init.csh</pre><p> bash の場合:</p><pre>. /sw/bin/init.sh</pre><p>と入力します。</p></div>
 </a>
 <a name="dselect-access">
-<div class="question"><p><b>Q5.11: うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.11: うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 おそらく、 apt を Debian ミラーを指定したのでしょう。
 当然、 Debian ミラーには Fink ファイルはありません。
 これを直す方法には、手動と dselect を通す二通りがあります。
@@ -139,8 +139,8 @@ Components: main crypto
 </p><p>現在、 apt パッケージの修正版 (設定スクリプトが dselect のプラグインとして付随) が CVS から入手できます。</p></div>
 </a>
 <a name="cvs-busy">
-<div class="question"><p><b>Q5.12: <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<code>Updating using CVS failed. Check the error messages above.</code>" エラーが出ました。</b></p></div>
-<div class="answer"><p><b>A:</b> メッセージが、</p><pre>Can't exec "cvs": No such file or directory at
+<div class="question"><p><b><? echo FINK_Q ; ?>5.12: <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<code>Updating using CVS failed. Check the error messages above.</code>" エラーが出ました。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> メッセージが、</p><pre>Can't exec "cvs": No such file or directory at
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>であれば、 Developer Tools をインストールする必要があります。</p><p>もし最後の行が、</p><pre>### execution of su failed, exit code 1</pre><p>であれば、エラーを詳細に見る必要があります。
 もし接続が拒否されたとあれば:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
@@ -171,17 +171,17 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>の�
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="kernel-panics">
-<div class="question"><p><b>Q5.13: Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</b></p></div>
-<div class="answer"><p><b>A:</b> 最近の
+<div class="question"><p><b><? echo FINK_Q ; ?>5.13: Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 最近の
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users mailing list</a>
 の報告によると、こういった問題 (カーネルパニックやパッチ当て中の無限ループを含む) が発生するのはアンチウィルスソフトウェアがインストールされている時です。
 Fink を使う際はアンチウィルスソフトウェアを終了する必要があるかもしれません。</p></div>
 </a>
 <a name="not-found">
-<div class="question"><p><b>Q5.14: パッケージをインストールしようとすると、 Fink がダウンロードできません。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.14: パッケージをインストールしようとすると、 Fink がダウンロードできません。
 ダウンロードサイトとは Fink よりも新しいバージョンを示しています。
 何をしたらいいですか?</b></p></div>
-<div class="answer"><p><b>A:</b> 新しいバージョンのリリースにともない、本家サイトでのパッケージソースが移動しました。</p><p>最初にまず  <code>fink selfupdate</code> を実行して下さい。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 新しいバージョンのリリースにともない、本家サイトでのパッケージソースが移動しました。</p><p>最初にまず  <code>fink selfupdate</code> を実行して下さい。
 メンテナが既に修正している場合、新しいバージョンか別のダウンロード URL のパッケージ詳細を取得できます。</p><p>もしこれでも問題が残るなら、ほとんどのソースは
 <a href="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</a>
 にある (Rob Braun 氏に感謝) ので、 <code>fink configure</code> を実行して "Master" ソースミラー を検索して下さい。
@@ -204,9 +204,9 @@ Fink が自動的にここを探しにいきます。
 古いソースか、新しいバージョン用の .info と .patch ファイルへのリンクが投稿されることでしょう。</p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q5.15: Fink や Fink でインストールしたものを実行しようとすると
+<div class="question"><p><b><? echo FINK_Q ; ?>5.15: Fink や Fink でインストールしたものを実行しようとすると
 "command not found" エラーが出ます。</b></p></div>
-<div class="answer"><p><b>A:</b> 常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまったと思われます。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまったと思われます。
 <code>/sw/bin/pathsetup.command</code> スクリプトを実行
 (ファインダからダブルクリックするか、ターミナルから実行)
 すると、初期の設定を検出しようとします。
@@ -224,16 +224,16 @@ Fink が自動的にここを探しにいきます。
 X11 が立ち上がっている場合、リスタートします。</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
-<div class="question"><p><b>Q5.16: Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
-<div class="answer"><p><b>A:</b> できます。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.16: Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> できます。
 Development Tools がインストールされていれば、次のコマンドを実行してください:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>これで /sw が標準的なシステムのフォルダ (/usr など) のように不可視になります。
 Developer Tools がない場合はサードパーティー製のアプリケーションで /sw が不可視になるよう、属性値を変更してください。</p></div>
 </a>
 <a name="install-info-bad">
-<div class="question"><p><b>Q5.17: 何もインストールできません。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.17: 何もインストールできません。
 "install-info: unrecognized option `--infodir=/sw/share/info'"
 のエラーが出るだけです。</b></p></div>
-<div class="answer"><p><b>A:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <code>/sw/sbin</code> が出てこないなら、環境変数を
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <code>/sw/sbin</code> が出てこないなら、環境変数を
 <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a>
 内の Users Guide を参照してください。
 <code>/sw/sbin</code> があるが、他のディレクトリ (例えば /usr/local/bin) 
@@ -241,8 +241,8 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <code>install-info</code> のディレクトリ名を一時的に変える必要があります。</p></div>
 </a>
 <a name="bad-list-file">
-<div class="question"><p><b>Q5.18: 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</b></p></div>
-<div class="answer"><p><b>A:</b> 通常、このエラーはこういう形で出ます:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>または</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work. If you have the .deb file for the offending package currently available on your system, then check its integrity by running
+<div class="question"><p><b><? echo FINK_Q ; ?>5.18: 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 通常、このエラーはこういう形で出ます:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>または</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work. If you have the .deb file for the offending package currently available on your system, then check its integrity by running
 これは直すことができます。
 エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
 </p><pre>dpkg --contents <b>full-path-to-debfile</b>
@@ -269,8 +269,8 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
         /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
 </a>
 <a name="error-nineteen">
-<div class="question"><p><b>Q5.19: Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</b></p></div>
-<div class="answer"><p><b>A:</b> 19 という数字は、 OS X システムのシステム言語が英語以外になっている時に出ることがあります。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.19: Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 19 という数字は、 OS X システムのシステム言語が英語以外になっている時に出ることがあります。
 (これは Apple のインストーラのバグで、英語でエラーメッセージを出さないだけです。)</p><p>この19番のメッセージは、英語ではこうなっています。</p><p>"A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume."</p><p>このエラーは、以前 Fink を使っていて、 <code>/sw</code> を削除していないと発生します。
 もし Fink をインストールしたことがなければ、 いちばん可能性が高いのは Virex プログラムをインストールしたためです。
 これは .Mac ユーザーには無料で、 Fink のウェブサイトにあるとおり Fink とは互換性がありません。
@@ -278,15 +278,15 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </p></div>
 </a>
 <a name="dselect-garbage">
-<div class="question"><p><b>Q5.20: <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.20: <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
 これはどうやったら使えますか?</b></p></div>
-<div class="answer"><p><b>A:</b> <code>dselect</code> と <code>Terminal.app</code> の関係に問題があります。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>dselect</code> と <code>Terminal.app</code> の関係に問題があります。
 どうにかするには、 <code>dselect</code> を実行する前に次のコマンドを入力してください:
 </p><p>tcsh の場合:</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p><p>bash の場合:</p><pre>export TERM=xterm-color</pre><p>このコマンドをログイン時に自動的に実行するには、起動ファイル (例 <code>.cshrc</code> | <code>.profile</code>) に記述して下さい。</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b>Q5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: 
 _Perl_safefree
 _Perl_safemalloc
 _Perl_saferealloc
@@ -302,16 +302,16 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
-<div class="question"><p><b>Q5.22: Fink のバージョンをアップデートできないようです。</b></p></div>
-<div class="answer"><p><b>A:</b> この状況専用の <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.22: Fink のバージョンをアップデートできないようです。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
 </a>
 <a name="spaces-in-directory">
-<div class="question"><p><b>Q5.23: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
-<div class="answer"><p><b>A:</b> 名前に空白が入っているディレクトリに Fink を入れるないよう薦めます。</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.23: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 名前に空白が入っているディレクトリに Fink を入れるないよう薦めます。</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b>Q5.24: バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</b></p></div>
-<div class="answer"><p><b>A:</b> もし次のようであれば:</p><pre>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし次のようであれば:</p><pre>
 Err file: local/main Packages
 File not found
 Ign file: local/main Release
@@ -348,14 +348,14 @@ update available list script returned error exit status 1.
 これによって見つからなかったファイルを作成します。</p></div>
 </a>
 <a name="wrong-tree"> 
-<div class="question"><p><b>Q5.25: OS | Developer Tools を変えたら、 Fink が認識してくれません。</b></p></div> 
-<div class="answer"><p><b>A:</b> Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.25: OS | Developer Tools を変えたら、 Fink が認識してくれません。</b></p></div> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
 これは Fink の新規インストール時に実行するスクリプトを実行します:
 </p><pre>/sw/lib/fink/postinstall.pl</pre><p>これにより、 Fink は正しく場所を指示されます。</p></div> 
 </a> 
 <a name="seg-fault"> 
-<div class="question"><p><b>Q5.26: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
-<div class="answer"><p><b>A:</b> 以下の形式のエラー:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.26: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 以下の形式のエラー:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>あるいは</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf - 
 gzip: stdout: Broken pipe 
 ### execution of gzip failed, exit code 138</pre><p>あるいは</p><pre>dpkg-deb -b root-base-files-1.9.0-1 
@@ -364,10 +364,10 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>であれば、バイナリにおけるプリバインドのエラーです。修正するには:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre><p>と実行します。</p></div> 
 </a> 
 <a name="pathsetup-keeps-running"> 
-<div class="question"><p><b>Q5.27: ターミナルウィンドウを開くと、
+<div class="question"><p><b><? echo FINK_Q ; ?>5.27: ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
 というメッセージが出てログアウトします。</b></p></div> 
-<div class="answer"><p><b>A:</b> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 これは、何らかの理由で OSX ターミナルがログインする度に
 <code>/sw/bin/pathsetup.command</code>
  を実行するように設定されているからです。
@@ -376,12 +376,12 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 と書かれている部分を削除します。</p></div> 
 </a>
 <a name="ext-drive">
-<div class="question"><p><b>Q5.28: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.28: 
 	メインパーティション以外に Fink をインストールしていますが、
 	ソースからの更新ができません。
 	<q>chowname</q> を含んだエラーが出ます。
 	</b></p></div>
-<div class="answer"><p><b>A:</b> このようなエラーであれば:</p><pre>This first test is designed to die, so please ignore the error
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このようなエラーであれば:</p><pre>This first test is designed to die, so please ignore the error
  message on the next line.
  # Looks like your test died before it could output anything.
  ./00compile............................ok
@@ -399,29 +399,31 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 </a>
 
 <a name="mirror-gnu">
-<div class="question"><p><b>Q5.29: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.29: 
 	Fink がパッケージを更新しません。
 	'gnu' ミラーが見つからないと言っています。
 	</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	エラーの最後が、
 	</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>
 	である場合、 <code>fink-mirrors</code> を以下のように更新します:
 	</p><pre>fink install fink-mirrors</pre></div>
 </a>
 <a name="cant-move-fink">
-<div class="question"><p><b>Q5.30: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.30: 
 	Fink を更新できません。
 	/sw/fink を移動できないからです。
 	</b></p></div>
-<div class="answer"><p><b>A:</b> このエラー:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラー:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>
 	は通常、エラーメッセージと異なり、パーミッションの問題で、
 	<code>selfupdate</code> の作成した仮フォルダのひとつにあります。
 	これを削除するには:
 	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
 </a>
 
-<p align="right">
-Next: <a href="comp-general.php?phpLang=ja">6 コンパイルの問題 - 一般</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

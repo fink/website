@@ -1,29 +1,29 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/14 05:48:00';
+$cvs_date = 'Date: 2004/06/19 15:34:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
-include_once "header.inc";
-?>
 
-<h1>F.A.Q. - 8 パッケージ使用上の問題 - 一般</h1>
+include_once "header.ja.inc";
+?>
+<h1>F.A.Q. - 8. パッケージ使用上の問題 - 一般</h1>
 
 
 <a name="xlocale">
-<div class="question"><p><b>Q8.1: このようなメッセージが大量に出ます。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.1: このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</b></p></div>
-<div class="answer"><p><b>A:</b> まずいことという訳ではありません。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> まずいことという訳ではありません。
 これはデフォルトの英語メッセージや日付フォーマットなどを使うという意味です。
 これ以外はプログラムは普通に動作します。
 X11 のドキュメントに、 <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">詳細</a> があります。</p></div>
 </a>
 <a name="passwd">
-<div class="question"><p><b>Q8.2: いきなり変なユーザーがシステムに現れました。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.2: いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
 こいつらはどこから来たのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> Fink を使って passwd というパッケージをインストールしたのでしょう。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink を使って passwd というパッケージをインストールしたのでしょう。
 passwd は、セキュリティー上の問題からいくつかのユーザーを追加します。
 Unix システムでは、ファイルやプロセスの "所有者" を使ってパーミッションやセキュリティーをチューニングするのです。
 Apache や MySQL のようなプログラムは、"所有者" が必要で、これらの daemon に root を割り当てると安全ではなくなります。
@@ -52,8 +52,8 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 </ul><p>passwd パッケージのインストール中に、Fink がユーザーを追加するか<b>尋ねます</b>ので、実際はいきなりではないはずです。</p></div>
 </a>
 <a name="compile-myself">
-<div class="question"><p><b>Q8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> 外でコンパイルする時は、コンパイラとリンカに Fink がインストールしたライブラリとヘッダの場所を教える必要があります。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 外でコンパイルする時は、コンパイラとリンカに Fink がインストールしたライブラリとヘッダの場所を教える必要があります。
 普通の configure/make を使うパッケージの場合、環境変数を設定する必要があります:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
@@ -72,16 +72,16 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 "./configure --help" で configure オプションの一覧がわかるでしょう。</p><p>さらに、あなたが使うライブラリの開発用ヘッダ (例 <b>foo-1.0-1-dev</b>) もインストールする必要があります。</p></div>
 </a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b>Q8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
-<div class="answer"><p><b>A:</b> Apple X11 は Fink の環境設定を認識しません。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
 </p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
 <a name="x-options">
-<div class="question"><p><b>Q8.5: X11 の種類が多くて迷っています。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.5: X11 の種類が多くて迷っています。
 	Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、細かな違いがあります。
 	Jaguar と Panther では選択肢も変わります。
 	</p><p>Panther では:</p><ul>
@@ -125,28 +125,28 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 </a>
 
 <a name="no-display">
-<div class="question"><p><b>Q8.6: アプリケーションを実行しようとすると、
+<div class="question"><p><b><? echo FINK_Q ; ?>8.6: アプリケーションを実行しようとすると、
 "cannot open display:"
 というメッセージがでます。
 どうしたら良いですか?</b></p></div>
-<div class="answer"><p><b>A:</b> このエラーは、システムが X ディスプレイと通信できていないことを意味します。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラーは、システムが X ディスプレイと通信できていないことを意味します。
 以下を確認してください:</p><p>1. X (Apple's X11, XFree86, ...) を起動。</p><p>2. DISPLAY 環境変数が設定されていることを確認する。デフォルトに設定された X では、 tcsh では:
 </p><pre>setenv DISPLAY :0</pre><p>bash の場合:</p><pre>export DISPLAY=:0</pre><p>と入力します。</p></div>
 </a>
 <a name="suggest-package">
-<div class="question"><p><b>Q8.7: 自分の好きなプログラムが Fink にありません。
+<div class="question"><p><b><? echo FINK_Q ; ?>8.7: 自分の好きなプログラムが Fink にありません。
 Fink に推薦したいのですが、どうしたら良いですか?</b></p></div>
-<div class="answer"><p><b>A:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
 
 <a name="virtpackage">
-<div class="question"><p><b>Q8.8: 
+<div class="question"><p><b><? echo FINK_Q ; ?>8.8: 
 	  <code>system-*</code> "virtual packages" というのを時々見かけますが、
 	  インストールも削除もできません。
 	  これはいったいなんですか?
 	</b></p></div>
-<div class="answer"><p><b>A:</b> 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	  <code>system-perl</code> のような名前のパッケージは代替パッケージです。
 	  これは、実際にはファイル等を含んでいる訳ではなく、
 	  fink 外で手動でインストールされたプログラムを fink に伝えるための仕組みとして存在します。
@@ -217,7 +217,9 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 	</ul></div>
 </a>
 
-<p align="right">
-Next: <a href="usage-packages.php?phpLang=ja">9 パッケージ使用上の問題 - 特定のパッケージ</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="usage-packages.php?phpLang=ja">9. パッケージ使用上の問題 - 特定のパッケージ</a></p>
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

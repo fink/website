@@ -4,15 +4,15 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/06/17 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-general.php?phpLang=es" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=es" title="Compile Problems - General">';
 
-include_once "header.inc";
-?>
 
-<h1>P.M.F. - 7 Compile Problems - Specific Packages</h1>
+include_once "header.es.inc";
+?>
+<h1>P.M.F. - 7. Compile Problems - Specific Packages</h1>
     
     
     <a name="libgtop">
-      <div class="question"><p><b>Q7.1: A Falla la compilación de un paquete con errores involucrando a <code>sed</code>.</b></p></div>
-      <div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.1: A Falla la compilación de un paquete con errores involucrando a <code>sed</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
         does something that writes to the terminal, e.g "<code>echo
         Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
         easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the
@@ -21,8 +21,8 @@ include_once "header.inc";
 endif</pre></div>
     </a>
     <a name="cant-install-xfree">
-      <div class="question"><p><b>Q7.2: Quiero cambiarme a los paquetes XFree86 de Fink, pero no puedo instalar <code>xfree86-base</code> - <code>xfree86</code>, porque existe un conflicto con <code>system-xfree86</code>.</b></p></div>
-      <div class="answer"><p><b>A:</b> All flavors of X11, unfortunately, really needs to be installed in
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Quiero cambiarme a los paquetes XFree86 de Fink, pero no puedo instalar <code>xfree86-base</code> - <code>xfree86</code>, porque existe un conflicto con <code>system-xfree86</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> All flavors of X11, unfortunately, really needs to be installed in
         /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and
         <code>xfree86-rootless</code> packages install there, too. However,
         since Fink won't remove any files that aren't in its database, it
@@ -48,8 +48,8 @@ endif</pre></div>
         distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
     </a>
     <a name="change-thread-nothread">
-      <div class="question"><p><b>Q7.3: ¿Cómo puedo cambiar de la version non-threaded del paquete XFree86 de Fink a la version threaded  (o viceversa)?</b></p></div>
-      <div class="answer"><p><b>A:</b> If you are running the Fink version of XFree86 and you want to
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.3: ¿Cómo puedo cambiar de la version non-threaded del paquete XFree86 de Fink a la version threaded  (o viceversa)?</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you are running the Fink version of XFree86 and you want to
         switch between the threaded and non-threaded versions of Fink, you
         need to manually remove the old version. This is done at the
         command-line with the commands:</p><pre>sudo dpkg -r --force-depends xfree86-base 
@@ -72,12 +72,14 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
     </a>
     
     <a name="cctools">
-      <div class="question"><p><b>Q7.4: ¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
-      <div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: ¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This somewhat cryptic message means you need to install the
         December 2002 Developer Tools.</p></div>
     </a>
     
-  <p align="right">
-Next: <a href="usage-general.php?phpLang=es">8 Package Usage Problems - General</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="usage-general.php?phpLang=es">8. Package Usage Problems - General</a></p>
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

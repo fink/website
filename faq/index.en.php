@@ -1,16 +1,16 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 23:17:35';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/06/15 00:27:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
-include_once "header.inc";
-?>
 
+include_once "header.en.inc";
+?>
 <h1>The Fink F.A.Q.</h1>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
-  <h2>Contents</h2><ul>
+  <h2><? echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=en"><b>1 General Questions</b></a><ul><li><a href="general.php?phpLang=en#what">1.1 What is Fink?</a></li><li><a href="general.php?phpLang=en#naming">1.2 What does the name Fink stand for?</a></li><li><a href="general.php?phpLang=en#bsd-ports">1.3 	How is Fink different from the BSD port mechanism (this includes OpenPackages and GNU-Darwin)?
 		</a></li><li><a href="general.php?phpLang=en#usr-local">1.4 Why doesn't Fink install into /usr/local?</a></li><li><a href="general.php?phpLang=en#why-sw">1.5 Then why did you choose /sw?</a></li></ul></li><li><a href="relations.php?phpLang=en"><b>2 Relations with Other Projects</b></a><ul><li><a href="relations.php?phpLang=en#upstream">2.1 Do you contribute your patches back to the upstream maintainers?</a></li><li><a href="relations.php?phpLang=en#debian">2.2 What is your relation with the Debian project? Are you porting Debian Linux to Mac OS X?</a></li><li><a href="relations.php?phpLang=en#apple">2.3 What is your relation with Apple?</a></li><li><a href="relations.php?phpLang=en#openosx">2.4 What is your relation with OpenOSX.com?</a></li><li><a href="relations.php?phpLang=en#forked">2.5 What is your relation with macosx.forked.net?</a></li><li><a href="relations.php?phpLang=en#darwinports">2.6 What is your relation with Darwinports?</a></li></ul></li><li><a href="mirrors.php?phpLang=en"><b>3 Fink mirrors</b></a><ul><li><a href="mirrors.php?phpLang=en#when-use">3.1 What are Fink Mirrors?</a></li><li><a href="mirrors.php?phpLang=en#why">3.2 Why should I use rsync mirrors?</a></li><li><a href="mirrors.php?phpLang=en#where">3.3 Where can I find more information about Fink mirrors?</a></li><li><a href="mirrors.php?phpLang=en#when-not">3.4 I cannot connect to rsync server, what should I do?</a></li><li><a href="mirrors.php?phpLang=en#otherinfogone">3.5 I have switched to the rsync method now all info files from the unused trees are gone</a></li><li><a href="mirrors.php?phpLang=en#howswitch">3.6 How can I switch back and forth between methods.</a></li><li><a href="mirrors.php?phpLang=en#status">3.7 Can I see what the current status of rsync mirrors is?</a></li><li><a href="mirrors.php?phpLang=en#Master">3.8 What is a Distfiles mirror?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=en"><b>4 Upgrading Fink (version-specific troubleshooting)</b></a><ul><li><a href="upgrade-fink.php?phpLang=en#gcc-0.16.0">4.1 I just upgraded to 0.16.0 and it tells me "Your version of the gcc 3.3 compiler is out of date." What do I do?</a></li></ul></li><li><a href="usage-fink.php?phpLang=en"><b>5 Installing, Using and Maintaining Fink</b></a><ul><li><a href="usage-fink.php?phpLang=en#what-packages">5.1 How can I find out what packages Fink supports?</a></li><li><a href="usage-fink.php?phpLang=en#proxy">5.2 I'm behind a firewall. How do I configure Fink to use an HTTP proxy?</a></li><li><a href="usage-fink.php?phpLang=en#firewalled-cvs">5.3 How do I update available packages from CVS when I am behind a firewall?</a></li><li><a href="usage-fink.php?phpLang=en#moving">5.4 Can I move Fink to another location after installation?</a></li><li><a href="usage-fink.php?phpLang=en#moving-symlink">5.5 If I move Fink after installation and provide a symlink from the
         old location, will it work?</a></li><li><a href="usage-fink.php?phpLang=en#removing">5.6 How can I uninstall all of Fink?</a></li><li><a href="usage-fink.php?phpLang=en#bindist">5.7 The package database at the website lists package xxx, but apt-get
@@ -75,6 +75,7 @@ include_once "header.inc";
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=en#gnome-two">9.9 I upgraded from GNOME 1.x to GNOME 2.x and now
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
-        XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.25 2004/06/10 23:17:35 alexkhansen Exp $-->
+        XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.26 2004/06/15 00:27:55 michga Exp $-->
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+

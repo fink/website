@@ -1,18 +1,18 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/10 23:17:35';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/06/15 00:27:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
-include_once "header.inc";
-?>
 
-<h1>F.A.Q. - 9 Package Usage Problems - Specific Packages</h1>
+include_once "header.en.inc";
+?>
+<h1>F.A.Q. - 9. Package Usage Problems - Specific Packages</h1>
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b>Q9.1: I get no sound from XMMS</b></p></div>
-      <div class="answer"><p><b>A:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.1: I get no sound from XMMS</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
         preferences. For some strange reason, it selects the disk writer
         plugin as the default.</p><p>If you still get no sound output or XMMS complains that it can't
         find your sound card try this:</p><ul>
@@ -36,9 +36,9 @@ include_once "header.inc";
         We don't have an analysis or a fix yet.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b>Q9.2: If I am editing a file in nedit, when I open another file its
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.2: If I am editing a file in nedit, when I open another file its
         window pops up but is unresponsive.</b></p></div>
-      <div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a known problem that occurs with recent versions of
         <code>nedit</code> and <code>lesstif</code> on all
         platforms. The workaround is to open a new window with File--&gt;New,
         then open the next file you want to work on.</p><p>This is now fixed in <code>nedit-5.3-6</code>, which
@@ -46,14 +46,14 @@ include_once "header.inc";
         <code>lesstif</code>.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b>Q9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b>A:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b>Q9.4: When I try to start XDarwin I get the message "xinit: No such file
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.4: When I try to start XDarwin I get the message "xinit: No such file
         or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-      <div class="answer"><p><b>A:</b> First, make sure you are sourcing init.sh in your X startup
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First, make sure you are sourcing init.sh in your X startup
         <code>~/.xinitrc</code>.</p><p>In Jaguar, sometimes all of the <code>xfree86</code> packages get
         built, but only <code>xfree86-base</code> and
         <code>xfree86-base-shlibs</code> are installed. Check whether you have
@@ -65,10 +65,10 @@ include_once "header.inc";
     </a>
     
     <a name="xterm-error">
-      <div class="question"><p><b>Q9.5: xterm fails with "dyld: xterm Undefined symbols: xterm undefined
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.5: xterm fails with "dyld: xterm Undefined symbols: xterm undefined
         reference to _tgetent expected to be defined in
         /usr/lib/libSystem.B.dylib".</b></p></div>
-      <div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2. You must
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by using a 10.1 version of XFree86 on 10.2. You must
         upgrade to a 10.2 version.</p><p>If you are using the Fink <code>xfree86</code> packages, then you
         can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
         fink update-all</code>" for installation from source, <code>fink
@@ -78,10 +78,10 @@ include_once "header.inc";
         web site</a>.</p></div>
     </a>
     <a name="libXmuu">
-      <div class="question"><p><b>Q9.6: When I try to start XFree86 I get one of the following errors:
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.6: When I try to start XFree86 I get one of the following errors:
         "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or
         "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
-      <div class="answer"><p><b>A:</b> You are missing a file that is supposed to be installed by
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You are missing a file that is supposed to be installed by
         <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it
         using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink
         reinstall xfree86-base-threaded-shlibs</code> if you are using the
@@ -89,9 +89,9 @@ include_once "header.inc";
         --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
     </a>
     <a name="apple-x-bugs">
-      <div class="question"><p><b>Q9.7: I had Fink's XFree86 installed, and I've replaced it with Apple's
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.7: I had Fink's XFree86 installed, and I've replaced it with Apple's
         X11, and now everything's crashing!</b></p></div>
-      <div class="answer"><p><b>A:</b> First of all, if you previously had the "threaded" versions of
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First of all, if you previously had the "threaded" versions of
         Fink's XFree86 packages installed, you may need to rebuild the
         application that is crashing. Some programs check for the availability
         of threading at build time, and then from then on believe that
@@ -104,9 +104,9 @@ include_once "header.inc";
         Apple bug reporter</a>.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b>Q9.8: I want the delete key in Apple's X11.app to behave like that in
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.8: I want the delete key in Apple's X11.app to behave like that in
         XDarwin.</b></p></div>
-      <div class="answer"><p><b>A:</b> Some users have reported that the behavior of the
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Some users have reported that the behavior of the
         <code>delete</code> key is different between XDarwin and Apple X11.
         This can be rectified by adding lines to the appropriate X startup
         files:</p><p>
@@ -121,24 +121,24 @@ xterm*.ttyModes: erase ^?</pre><p>
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="gnome-two">
-      <div class="question"><p><b>Q9.9: I upgraded from GNOME 1.x to GNOME 2.x and now
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.9: I upgraded from GNOME 1.x to GNOME 2.x and now
         <code>gnome-session</code> won't open a window manager.</b></p></div>
-      <div class="answer"><p><b>A:</b> While under GNOME 1.x <code>gnome-session</code> invokes the
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> While under GNOME 1.x <code>gnome-session</code> invokes the
         <code>sawfish</code> window manager automatically, under GNOME 2.x,
         you'll have to call a window manager in <code>~/.xinitrc</code> before
         running <code>gnome-session</code>, e.g.:</p><pre>... 
 exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for <b>GNOME 2.4</b>.  Running <code>gnome-session</code> invokes a window manager.</p></div>
     </a>
     <a name="apple-x11-no-windowbar">
-      <div class="question"><p><b>Q9.10: I upgraded to Apple's X11 in Panther and now my window title bars
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.10: I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</b></p></div>
-      <div class="answer"><p><b>A:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0"
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0"
         included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
-      <div class="question"><p><b>Q9.11: I installed Apple's X11 but Fink keeps asking to install
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.11: I installed Apple's X11 but Fink keeps asking to install
         XFree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b>   <p>If you are running a
           version of the <code>fink</code> package that is earlier than 0.17.0, then
@@ -160,14 +160,14 @@ sudo apt-get install fink</pre><p>If this fails, or if you have a later version 
         </ul></div>
     </a>
     <a name="wants-xfree86-on-upgrade">
-      <div class="question"><p><b>Q9.12: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.12: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
 
 You can check your installation by running</p><pre>fink list -i system-xfree86</pre><p>and checking to see that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are present.  If you installed the X11SDK, then you should also see <code>system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86</a> entry, above.</p></div>
     </a>
     <a name="special-x11-debug">
-      <div class="question"><p><b>Q9.13: I'm still having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b>A:</b> If the hints in the  <a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a> or <a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.13: I'm still having problems with X11 and Fink.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the hints in the  <a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a> or <a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
@@ -185,5 +185,7 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
         </ul></div>
     </a>
   
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

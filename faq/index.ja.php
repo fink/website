@@ -1,12 +1,12 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/14 05:48:00';
+$cvs_date = 'Date: 2004/06/19 15:34:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
-include_once "header.inc";
-?>
 
+include_once "header.ja.inc";
+?>
 <h1>The Fink F.A.Q.</h1>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -14,7 +14,7 @@ include_once "header.inc";
 <p>FAQは節毎にページがわかれています。
 下記の目次にすべての質問があります。
 それぞれリンクされていますので、辿っていってください。</p>
-<h2>Contents</h2><ul>
+<h2><? echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=ja"><b>1 一般的な質問</b></a><ul><li><a href="general.php?phpLang=ja#what">1.1 Fink とは何ですか?</a></li><li><a href="general.php?phpLang=ja#naming">1.2 Fink とはどういう意味ですか?</a></li><li><a href="general.php?phpLang=ja#bsd-ports">1.3 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
 </a></li><li><a href="general.php?phpLang=ja#usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li><li><a href="general.php?phpLang=ja#why-sw">1.5 ではなぜ /sw を選んだのですか?</a></li></ul></li><li><a href="relations.php?phpLang=ja"><b>2 他のプロジェクトとの関係</b></a><ul><li><a href="relations.php?phpLang=ja#upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li><li><a href="relations.php?phpLang=ja#debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li><li><a href="relations.php?phpLang=ja#apple">2.3 Apple とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#openosx">2.4 OpenOSX.com とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#forked">2.5 macosx.forked.net とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#darwinports">2.6 Darwinports とは関係がありますか?</a></li></ul></li><li><a href="mirrors.php?phpLang=ja"><b>3 Fink ミラー</b></a><ul><li><a href="mirrors.php?phpLang=ja#when-use">3.1 Fink ミラーとは何ですか?</a></li><li><a href="mirrors.php?phpLang=ja#why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li><li><a href="mirrors.php?phpLang=ja#where">3.3 Fink ミラーの情報はどこにありますか?</a></li><li><a href="mirrors.php?phpLang=ja#when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li><li><a href="mirrors.php?phpLang=ja#otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li><li><a href="mirrors.php?phpLang=ja#howswitch">3.6 どのように方式を切り替えるのですか?</a></li><li><a href="mirrors.php?phpLang=ja#status">3.7 rsync ミラーの現在の状態は見ることが出来ますか?</a></li><li><a href="mirrors.php?phpLang=ja#Master">3.8 Distfiles ミラーとは何ですか?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=ja"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a><ul><li><a href="upgrade-fink.php?phpLang=ja#gcc-0.16.0">4.1 バージョン0.16.0にアップグレードして "Your version of the
@@ -77,6 +77,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
 または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#wants-xfree86-on-upgrade">9.12 
     10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
-    </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.17 2004/06/14 05:48:00 babayoshihiko Exp $-->
+    </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.18 2004/06/19 15:34:09 babayoshihiko Exp $-->
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
