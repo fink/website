@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/28 06:57:17';
+$cvs_date = 'Date: 2001/08/26 21:14:14';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -25,31 +25,9 @@ it is unknown whether this is fixed in recent releases on Xtools.</p></div></a>
 black icons only. What's wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is caused by limitations in the operating system kernel.
-The problem has been reported to Apple, but so far they seem unwilling
-to fix it; see the filed <a href="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
-bug report</a> for details.
-</p><p>
-So, the current situation is that the MIT-SHM extension of the X11
-protocol is practically unusable on Darwin and Mac OS X.
-There are two ways to turn the protocol extension off: in the server
-or in the clients.
-To turn it off in the server, the server must be recompiled with a
-special configuration setting; this is not practical for most users.
-</p><p>
-To turn the extension off in the clients, you can pass the
-<tt><nobr>--no-xshm</nobr></tt> command line option when you start the
-application.
-In the case of the GNOME panel, you must edit your GNOME session file
-(<tt><nobr>~/.gnome/session</nobr></tt>).
-Be sure to pick the right section and add the <tt><nobr>--no-xshm</nobr></tt>
-to the <tt><nobr>RestartCommand</nobr></tt> line, like in this example:
-</p><pre>7,id=11c0a80208000099479218400000018970007
-7,RestartStyleHint=2
-7,Priority=40
-7,Program=panel
-7,CurrentDirectory=/Users/chrisp
-7,CloneCommand=panel
-7,RestartCommand=panel --sm-client-id 11c0a80208000099479218400000018970007 --no-xshm</pre></div></a>
+The only solution so far is to turn off shared memory.
+The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
+</p></div></a>
 
 <a name="gnome-libs-db"><div class="question"><p><b>Q: gnome-libs complains about
 dbopen and lots of other stuff.</b></p></div>
@@ -61,7 +39,24 @@ Remove the DB 3 installation from /usr/local or replace it with one
 that has DB 1.86 compatibility.
 </p></div></a>
 
+<a name="libiconv"><div class="question"><p><b>Q: libiconv fails with errors that
+mention ANSI C++.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This happens when you link <tt><nobr>gcc</nobr></tt> to <tt><nobr>c++</nobr></tt>.
+That causes all C code to be compiled as C++ code.
+Unfortunately, C allows some things that C++ doesn't allow.
+You should remove the symlink you created, or at least link it to
+<tt><nobr>cc</nobr></tt> instead.
+</p></div></a>
 
+<a name="xlocale"><div class="question"><p><b>Q: I'm getting lots of messages
+like "locale not supported by C library". Is that bad?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+It's not bad, it just means that the program will use the default
+English messages, date formats, etc.
+The program will function normally otherwise.
+The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.
+</p></div></a>
 
 
 
