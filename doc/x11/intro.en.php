@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:42';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/12 09:25:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 include_once "header.inc";
@@ -37,7 +37,7 @@ Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
 thus a member of the Unix OS family.
 However, it comes with a proprietary graphics display system.
 The graphics engine is called Quartz and the look and feel is called
-Aqua, although the two names are often used interchangably.
+Aqua, although the two names are often used intercheangably.
 </p>
     
     <h2><a name="def-darwin">1.3 What is Darwin?</a></h2>

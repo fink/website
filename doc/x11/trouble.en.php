@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:42';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/12 09:25:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
 include_once "header.inc";
@@ -98,9 +98,9 @@ Gdk-WARNING **: can not set locale modifiers</pre>
 Class: Bad, but not fatal.
 These messages may appear in addition to the one above.
 This indicates that XFree86's locale data files are not present.
-It appears that this happens unreproducably when building XFree86 from
+It appears that this happens unreproducibly when building Free86 from
 source.
-Most applications will still work, GNU Emacs is a noteable exception.
+Most applications will still work, GNU Emacs is a notable exception.
 </p>
       <pre>Unable to open keymapping file USA.keymapping.
 Reverting to kernel keymapping.</pre>
@@ -268,7 +268,7 @@ There are two ways to turn the protocol extension off: in the server
 or in the clients.
 The XFree86 servers installed by Fink (i.e. the xfree86-server and
 xfree86-rootless packages) have it turned off.
-The GIMP and the GNOME panel have been innoculated as well.
+The GIMP and the GNOME panel have been inoculated as well.
 If you experience black icons in another application, start that
 application with the <code>--no-xshm</code> command line option.
 </p>

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:42';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/12 09:25:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 include_once "header.inc";
@@ -146,7 +146,7 @@ Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <code>Xinstall.sh</code> script as root to install the stuff.
-(You might wnt to read the <a href="http://www.xfree86.org/4.3.0/Install.html">official
+(You might want to read the <a href="http://www.xfree86.org/4.3.0/Install.html">official
 instructions</a> before installing.)</p>
       <p>Whichever version you install, you've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.

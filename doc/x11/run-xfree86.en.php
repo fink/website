@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 22:31:42';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/12 09:25:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86">';
 
 include_once "header.inc";
@@ -80,7 +80,7 @@ You do this by passing the <code>-fullscreen</code> option, like this:
       <pre>startx -- -fullscreen</pre>
       <p>
 That will start up the server in fullscreen mode, 
-plus the clients inyour <code>.xinitrc</code>.  
+plus the clients in your <code>.xinitrc</code>.  
 </p>
       <p>
 NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.

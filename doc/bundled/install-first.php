@@ -78,16 +78,16 @@ have been warned.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.6.2-full.tar.gz tarball.
+First, you need to unpack the fink-0.7.0-full.tar.gz tarball.
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.6.2-full.tar.gz</pre>
+<pre>tar xzf fink-0.7.0-full.tar.gz</pre>
 <p>
-You now have a directory named fink-0.6.2-full.
-Change to it with <code>cd fink-0.6.2-full</code>.
+You now have a directory named fink-0.7.0-full.
+Change to it with <code>cd fink-0.7.0-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -95,7 +95,7 @@ bootstrap.pl.
 It is accompanied by a small shell script, bootstrap.sh, which checks
 some basic requirements and then hands over control to the perl
 script.
-So, to start installation, go to the fink-0.6.2-full directory and run
+So, to start installation, go to the fink-0.7.0-full directory and run
 this command:
 </p>
 <pre>./bootstrap.sh</pre>
