@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.19 2003/01/07 23:05:16 rangerrick Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.20 2003/01/08 00:25:41 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -337,7 +337,7 @@ can follow the <xref chapter="inst-xfree86" section="switching-x11">instructions
 replacing one X11 package with another</xref>.  Make sure that you remove your existing
 packages, and then install <filename>system-xfree86</filename>.  Be sure you first remove
 your old X11 packages, then install Apple's X11 and X11 SDK, and then run
-'<code>fink install system-xfree86</code>' (in that order).
+'<code>fink selfupdate-cvs; fink install system-xfree86</code>' (in that order).
 </p>
 <p>
 Some notes on using Apple's X11:

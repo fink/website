@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/01/07 22:40:47';
+$cvs_date = 'Date: 2003/01/07 23:05:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -59,7 +59,7 @@ can follow the <a href="inst-xfree86.php#switching-x11">instructions on
 replacing one X11 package with another</a>.  Make sure that you remove your existing
 packages, and then install <tt><nobr>system-xfree86</nobr></tt>.  Be sure you first remove
 your old X11 packages, then install Apple's X11 and X11 SDK, and then run
-'<tt><nobr>fink install system-xfree86</nobr></tt>' (in that order).
+'<tt><nobr>fink selfupdate-cvs; fink install system-xfree86</nobr></tt>' (in that order).
 </p>
 <p>
 Some notes on using Apple's X11:
