@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.36 2003/01/21 18:30:23 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.37 2003/01/22 19:05:27 dmrrsn Exp $</cvsid>
 <newsitem>
 	<date>2003-01-21</date>
 	<headline>Gnome, libpng, and the unstable tree</headline>
@@ -15,7 +15,7 @@ their imlib package to the stable version, "<code>fink install
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
-enabling the unstable tree was the only was to gain access to
+enabling the unstable tree was the only way to gain access to
  10.2-compatible versions of Fink packages.  
 <em>That is no longer the case.</em>
 Fink users who do not wish to help the Fink team with testing should

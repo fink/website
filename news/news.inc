@@ -8,7 +8,7 @@ their imlib package to the stable version, &quot;<tt><nobr>fink install
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
-enabling the unstable tree was the only was to gain access to
+enabling the unstable tree was the only way to gain access to
  10.2-compatible versions of Fink packages.  
 <b>That is no longer the case.</b>
 Fink users who do not wish to help the Fink team with testing should

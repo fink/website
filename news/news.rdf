@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 21 Jan 2003 13:30:03 EST</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2003 14:06:15 EST</lastBuildDate>
     <rss091:language xmlns="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -21,7 +21,7 @@ their imlib package to the stable version, &quot;fink install
 
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
-enabling the unstable tree was the only was to gain access to
+enabling the unstable tree was the only way to gain access to
  10.2-compatible versions of Fink packages.  
 That is no longer the case.
 Fink users who do not wish to help the Fink team with testing should
