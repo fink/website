@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <article filename="usage">
-<title>Fink 0.2.6 Usage</title>
+<title>Fink Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.9 2001/09/04 12:06:13 chrisp Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.10 2002/01/24 20:32:57 fingolfin Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
