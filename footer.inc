@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.21 2004/01/01 18:57:59 dmrrsn Exp $ */
+/* $Id: footer.inc,v 1.22 2004/02/18 13:57:54 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
@@ -27,6 +27,11 @@
 <? /* footer table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td>&nbsp;</td></tr>
+<tr><td>
+<div class="footer" align="center">
+<? if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;"; ?>
+</p>
+</td></tr>
 <tr><td width="100%">
 <div class="footer" align="center"><?
 if ($dyndate == 1) {
