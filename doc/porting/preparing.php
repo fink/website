@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/22 14:52:13';
+$cvs_date = 'Date: 2002/05/25 17:50:21';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -110,6 +110,20 @@ be sent to fink-devel@lists.sourceforge.net .)
 <li>pkgconfig-0.12.0-1</li>
 <li>oaf-0.6.8-2</li>
 <li>guile-1.4-4</li>
+<li>openssl_0.9.6c-3</li>
+<li>control-center_1.4.0.5-1</li>
+<li>gal19_0.19.1-3</li>
+<li>gtkhtml_1.0.1-3</li>
+<li>galeon-1.2.1-1</li>
+<li>aalib-1.4rc5-1</li>
+<li>libglade-0.17-3</li>
+<li>db3-3.3.11-7</li>
+<li>python-2.2.1-5</li>
+<li>glib2-2.0.1-3</li>
+<li>pcre-3.9-2</li>
+<li>libxslt-1.0.17-2</li>
+<li>automake-1.6.1-1</li>
+<li>lesstif-0.93.18-4</li>
 
 <p><b> Unsuccessful packages:</b></p>
 <li> apt-0.5.4-2 (breaks with undefined symbols such as 
@@ -117,14 +131,21 @@ __ZTI9pkgSystem) </li>
 <li>libxml2-2.4.21-2 (breaks with install_name error)</li>
 <li>bonobo-1.0.20-1(breaks with install_name error)</li>
 <li>gconf-1.0.9-1(breaks with install_name error)</li>
-<li>
-tads-2.5.5-3 breaks because of weird va_args() calling</li>
+<li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
+<li>gv-3.5.8-4</li>
+<li>gnome-core-1.4.0.8-1 (breaks with install_name error)</li>
+<li>galeon-1.2.1-1</li>
+<li>gaim-0.57-1 (breaks with install_name error)</li>
+<li>qt3-3.0.4-5</li>
 
 <p>In general, packages which have loadable modules and use libtool are
 failing with this install_name error at the moment, because libtool passes
 the -install_name flag even along with the -bundle flag (when it is not
 strictly needed).  This behavior was accepted by the gcc2 compiler but is
-not being accepted by the gcc3 compiler.  A fix is being worked on.</p>
+not being accepted by the gcc3 compiler.  A fix is being worked on by Ben
+Hines; please <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">help
+him test it.</a>
+</p>
 <p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
 between gcc2 and gcc3.  In practice, this means that C++ programs compiled
 with gcc3 cannot link to libraries compiled with gcc2.</p>
