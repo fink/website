@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.zh.inc,v 1.4 2004/03/24 18:29:08 dmrrsn Exp $ */
+/* $Id: nav.zh.inc,v 1.5 2004/04/17 00:43:15 jeff_yecn Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -12,7 +12,8 @@ $navbox = array(
   "doc/cvsaccess/index.php?phpLang=zh", "CVS 访问",
   "doc/porting/index.php?phpLang=zh", "移植",
   "doc/packaging/index.php?phpLang=zh", "打包",
-  "doc/multilingual/index.php?phpLang=zh", "国际化"
+  "doc/multilingual/index.php?phpLang=zh", "国际化",
+  "doc/netiquette/index.php?phpLang=zh", "网络使用规则"
 );
 
 ?>
