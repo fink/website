@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.7 2004/02/27 12:59:03 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.8 2004/02/28 17:05:56 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
@@ -885,6 +885,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 <p>Developer Tools をインストールする必要があります。</p>
 <p>もしメッセージが以下のようであれば</p>
 <codeblock>make: illegal option -- C</codeblock>
+<p>
 Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
 パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 
 <code>/usr/bin/make</code> が <code>gnumake</code> のシンボリックリンクであることを確認してください。
