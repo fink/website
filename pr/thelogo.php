@@ -1,15 +1,15 @@
 <?
 $title = "The logo!";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/10/25 13:48:46 $';
+$cvs_date = '$Date: 2003/10/25 13:51:06 $';
 
 include "header.inc";
 ?>
 
 
-<h1>Fink' logo</h1>
+<h1>Fink's logo</h1>
 
-<p align="right">written October 25th, 2003</p>
+<span align="right">written October 25th, 2003</span>
 <p>
 The past three months of 2003 have been very interesting. <br /> 
 We conducted a logo creation <a href=http://fink.sourceforge.net/logo.php> contest </a>.
