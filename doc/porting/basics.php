@@ -1,9 +1,9 @@
 <?
 $title = "Porting - Basics";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/30 11:48:24';
+$cvs_date = 'Date: 2001/08/13 16:32:07';
 
-$metatags = '<link rel="start" href="index.php" title="Porting Contents"><link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="libtool.php" title="GNU libtool"><link rel="prev" href="index.php" title="Porting Contents">';
+$metatags = '<link rel="start" href="index.php" title="Porting Contents"><link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
 include "header.inc";
 ?>
@@ -149,20 +149,8 @@ libutil.dylib.
 </p>
 
 
-
-<a name="shared-libs"><h2>Shared Libraries</h2></a>
-<p>
-Short story:
-Many packages need patched libtool scripts to build shared libraries.
-</p>
-<p>
-Long story:
-See the <a href="libtool.php">libtool</a> chapter.
-</p>
-
-
 <p align="right">
-Next: <a href="libtool.php">GNU libtool</a></p>
+Next: <a href="shared.php">Shared Code</a></p>
 
 
 <?
