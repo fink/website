@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.10 2004/07/02 15:43:26 michga Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.11 2004/07/08 16:40:15 dmalloc Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -360,7 +360,7 @@
                         Mac OS X version: 10.3, 10.2 
                         Fix: upstream
                         Updated by: forced update (dmalloc@users.sourceforge.net)
-                        Description: Multiple vulnerabilities in CVS found my ematters
+                        Description: Multiple vulnerabilities in CVS found by Ematters
                         Security. References: BID 
                         Ref-URL:    http://www.securityfocus.com/bid/10499 
                         References: CVE 
