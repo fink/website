@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.6 2004/04/12 02:48:49 dmacks Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.7 2004/04/16 21:24:54 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -897,6 +897,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <p>パッケージのビルド後に /sw/src/root-[name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <em>注意、このオプションはハードディスクをいっぱいにします!</em>
+一度だけ使いたい場合、 <em>fink</em> に <em>-K</em> フラグを渡して同じ効果が得られます。
 </p>
 </li>
 <li>
@@ -905,6 +906,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <p>パッケージのビルド後に /sw/src/[name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <em>注意、このオプションはハードディスクをいっぱいにします!</em>
+一度だけ使いたい場合、 <em>fink</em> に <em>-K</em> フラグを渡して同じ効果が得られます。
 </p>
 </li>
 </ul>
@@ -1130,5 +1132,12 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 かなりのディスク容量が利用できるようになります。
 </p>
 </section>
+    <section name="dumpinfo">
+      <title>dumpinfo</title>
+      <p>
+	Shows how Fink parses parts of a package's .info file.
+	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
+      </p>
+    </section>
 </chapter>
 </document>
