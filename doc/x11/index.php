@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/13 14:29:08';
+$cvs_date = 'Date: 2004/02/26 00:14:54';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -9,14 +9,14 @@ include "header.inc";
 ?>
 
 <h1>Running X11 on Darwin and Mac OS X</h1>
-<p>
+    <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
 OS X and Darwin systems.
 It gives an introduction and a history of development, then goes on to
 describe the current situation and the many options you have to use
 X11 with or without Fink.
 </p>
-<h2>Contents</h2><ul>
+  <h2>Contents</h2><ul>
 <li><a href="intro.php"><b>1 Introduction</b></a></li>
 <ul>
 <li><a href="intro.php#def-x11">1.1 What is X11?</a></li>
@@ -80,7 +80,7 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.44 2004/02/13 14:29:08 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.46 2004/02/26 00:14:54 alexkhansen Exp $</i></p>
 
 
 <?

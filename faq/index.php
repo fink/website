@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/16 00:10:38';
+$cvs_date = 'Date: 2004/02/26 00:14:53';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -9,13 +9,13 @@ include "header.inc";
 ?>
 
 <h1>The Fink F.A.Q.</h1>
-<p>This is the list of frequently asked questions about Fink. Like
+    <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
 made up. It's really more like a documentation written in an ad-hoc,
 question and answer style.</p>
-<p>The FAQ consists of several pages, one for each section. All
+    <p>The FAQ consists of several pages, one for each section. All
 questions are listed and linked in the table of contents below.</p>
-<h2>Contents</h2><ul>
+  <h2>Contents</h2><ul>
 <li><a href="general.php"><b>1 General Questions</b></a></li>
 <ul>
 <li><a href="general.php#what">1.1 What is Fink?</a></li>
@@ -95,7 +95,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#spaces-in-directory">5.23 Can I put Fink in a volume or directory with a space in its name?</a></li>
 <li><a href="usage-fink.php#packages-gz">5.24 When I try to do a binary update, there are many messages with "File not found"</a></li>
 <li><a href="usage-fink.php#wrong-tree">5.25 I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</a></li>
-<li><a href="usage-fink.php#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code> when I try to install anything! Help!</a></li>
+<li><a href="usage-fink.php#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I applications from the<code> fileutils </code>package! Help!</a></li>
 <li><a href="usage-fink.php#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your environment seems to be correctly
 set up for Fink already.", and it logs out.</a></li>
 </ul>
@@ -104,23 +104,23 @@ set up for Fink already.", and it logs out.</a></li>
 <li><a href="comp-general.php#compiler">6.1 A configure script complains
 that it can't find an "acceptable cc". What's that?</a></li>
 <li><a href="comp-general.php#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs: Command not found." </a></li>
-<li><a href="comp-general.php#missing-make">6.3 What does "make: command not found" mean?</a></li>
-<li><a href="comp-general.php#make">6.4 make: illegal option -- C</a></li>
-<li><a href="comp-general.php#head">6.5 I'm getting a strange usage message
+<li><a href="comp-general.php#missing-make">6.3 I'm getting an error message involving <code>make</code>
+        </a></li>
+<li><a href="comp-general.php#head">6.4 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
-<li><a href="comp-general.php#also_in">6.6 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
-<li><a href="comp-general.php#weak_lib">6.7 After I installed the December 2002 Development Tools I get messages about "weak libraries".</a></li>
-<li><a href="comp-general.php#mv-failed">6.8 What does "execution of mv failed, exit code 1" mean when I try to build a package?</a></li>
-<li><a href="comp-general.php#node-exists">6.9 I can't install a package | update because I get a message that a "node" already exists.</a></li>
-<li><a href="comp-general.php#usr-local-libs">6.10 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink. Is this true?</a></li>
-<li><a href="comp-general.php#toc-out-of-date">6.11 When I try to build a package, I get a message that a "table of contents" is out of date. What do I need to do?</a></li>
-<li><a href="comp-general.php#fc-atlas">6.12 Fink Commander hangs when I try to install atlas.</a></li>
-<li><a href="comp-general.php#basic-headers">6.13 I get messages saying that I'm missing stddef.h. Where do I find it?</a></li>
-<li><a href="comp-general.php#multiple-dependencies">6.14 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
-<li><a href="comp-general.php#dpkg-parse-error">6.15 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
-<li><a href="comp-general.php#freetype-problems">6.16 I get errors involving freetype.</a></li>
-<li><a href="comp-general.php#dlfcn-from-oo">6.17 I get build errors involving `Dl_info'.</a></li>
-<li><a href="comp-general.php#gcc2">6.18 Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</a></li>
+<li><a href="comp-general.php#also_in">6.5 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
+<li><a href="comp-general.php#weak_lib">6.6 After I installed the December 2002 Development Tools I get messages about "weak libraries".</a></li>
+<li><a href="comp-general.php#mv-failed">6.7 What does "execution of mv failed, exit code 1" mean when I try to build a package?</a></li>
+<li><a href="comp-general.php#node-exists">6.8 I can't install a package | update because I get a message that a "node" already exists.</a></li>
+<li><a href="comp-general.php#usr-local-libs">6.9 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink. Is this true?</a></li>
+<li><a href="comp-general.php#toc-out-of-date">6.10 When I try to build a package, I get a message that a "table of contents" is out of date. What do I need to do?</a></li>
+<li><a href="comp-general.php#fc-atlas">6.11 Fink Commander hangs when I try to install atlas.</a></li>
+<li><a href="comp-general.php#basic-headers">6.12 I get messages saying that I'm missing stddef.h. Where do I find it?</a></li>
+<li><a href="comp-general.php#multiple-dependencies">6.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
+<li><a href="comp-general.php#dpkg-parse-error">6.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
+<li><a href="comp-general.php#freetype-problems">6.15 I get errors involving freetype.</a></li>
+<li><a href="comp-general.php#dlfcn-from-oo">6.16 I get build errors involving `Dl_info'.</a></li>
+<li><a href="comp-general.php#gcc2">6.17 Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>7 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -160,7 +160,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.172 2004/02/16 00:10:38 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.174 2004/02/26 00:14:53 alexkhansen Exp $</i></p>
 
 
 <?
