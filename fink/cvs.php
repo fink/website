@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/21 09:21:05 $';
+$cvs_date = '$Date: 2001/02/21 09:22:47 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ for updating via CVS.</p>
 from CVS. Start by changing into the /sw (or equivalent)
 directory. Move the existing fink directory out of the way (but don't
 delete it yet):
-<pre>  mv fink fink-old</pre
+<pre>  mv fink fink-old</pre>
 Then, check out the current tree from CVS:
 <pre>  cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
   cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink</pre>
