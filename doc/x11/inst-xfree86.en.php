@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/12 09:25:19';
+$cvs_date = 'Date: 2004/04/17 09:26:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 include_once "header.inc";
@@ -157,7 +157,7 @@ rootless under Mac OS X.
       <p>
 If you've got the time to spare, you can build XFree86 4.2.0 from
 source.
-You can find the source on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
+You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
 the directory <code>4.2.0/source</code>.
 Grab all three <code>X420src-#.tgz</code> tarballs and extract them in
 the same directory.

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.6 2004/04/13 23:47:34 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.7 2004/04/17 09:26:01 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -284,16 +284,12 @@ defined in indirectly referenced dynamic library
       <p>Quelle que soit la version que vous avez installée, vous aurez alors XFree86 avec un serveur plein écran ou sans racine sous Mac OS X.</p>
     </section>
     <section name="official-source" >
-      <title>The Official Source</title>
+      <title>Source Officiel</title>
       <p>
-If you've got the time to spare, you can build XFree86 4.2.0 from
-source.
-You can find the source on you local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in
-the directory <code>4.2.0/source</code>.
-Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in
-the same directory.
-You can customize the build by putting macro definitions in the file
-<filename>config/cf/host.def</filename> in the XFree86 source tree.
+If you've got the time to spare, you can build XFree86 4.2.0 from source.
+You can find the source on your local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in the directory <code>4.2.0/source</code>.
+Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in the same directory.
+You can customize the build by putting macro definitions in the file <filename>config/cf/host.def</filename> in the XFree86 source tree.
 <!--
 To build on pure Darwin, create the file
 <code>config/cf/host.def</code> in the XFree86 source tree and put the
@@ -303,10 +299,8 @@ following line in it:
 <p>
 You can add further defines to that file if you want; see
 -->
-See
-<filename>config/cf/darwin.cf</filename> for some hints.
-(Note: Only the macros that have an #ifndef check around them can be
-overwritten in host.def.)
+See <filename>config/cf/darwin.cf</filename> for some hints.
+(Note: Only the macros that have an #ifndef check around them can be overwritten in host.def.)
 </p>
       <p>
 When you're happy with your configuration, compile and install XFree86

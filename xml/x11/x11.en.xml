@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.2 2004/03/12 09:25:19 michga Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.3 2004/04/17 09:26:01 michga Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -425,7 +425,7 @@ rootless under Mac OS X.
       <p>
 If you've got the time to spare, you can build XFree86 4.2.0 from
 source.
-You can find the source on you local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in
+You can find the source on your local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in
 the directory <code>4.2.0/source</code>.
 Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in
 the same directory.

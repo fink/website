@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Installation de XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/13 23:47:34';
+$cvs_date = 'Date: 2004/04/17 09:26:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 include_once "header.inc";
@@ -98,22 +98,16 @@ defined in indirectly referenced dynamic library
       <p>Il existe aussi une distribution binaire officielle de XFree86 4.3.0 sur les <a href="http://www.xfree86.org/MIRRORS.shtml">miroirs XFree86</a> dans le répertoire <code>4.3.0/binaries/Darwin-ppc-6.x</code>. Téléchargez les fichiers archives tar <code>Xprog.tgz</code> et <code>Xquartz.tgz</code> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <code>Xinstall.sh</code> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <a href="http://www.xfree86.org/4.3.0/Install.html">instructions officielles</a> avant l'installation.)</p>
       <p>Quelle que soit la version que vous avez installée, vous aurez alors XFree86 avec un serveur plein écran ou sans racine sous Mac OS X.</p>
     
-    <h2><a name="official-source">3.4 The Official Source</a></h2>
+    <h2><a name="official-source">3.4 Source Officiel</a></h2>
       
       <p>
-If you've got the time to spare, you can build XFree86 4.2.0 from
-source.
-You can find the source on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <code>4.2.0/source</code>.
-Grab all three <code>X420src-#.tgz</code> tarballs and extract them in
-the same directory.
-You can customize the build by putting macro definitions in the file
-<code>config/cf/host.def</code> in the XFree86 source tree.
+If you've got the time to spare, you can build XFree86 4.2.0 from source.
+You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in the directory <code>4.2.0/source</code>.
+Grab all three <code>X420src-#.tgz</code> tarballs and extract them in the same directory.
+You can customize the build by putting macro definitions in the file <code>config/cf/host.def</code> in the XFree86 source tree.
 
-See
-<code>config/cf/darwin.cf</code> for some hints.
-(Note: Only the macros that have an #ifndef check around them can be
-overwritten in host.def.)
+See <code>config/cf/darwin.cf</code> for some hints.
+(Note: Only the macros that have an #ifndef check around them can be overwritten in host.def.)
 </p>
       <p>
 When you're happy with your configuration, compile and install XFree86
