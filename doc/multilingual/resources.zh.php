@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="i18n Contents"><link rel="next" href="appendix.php?phpLang=zh" title="附录"><link rel="prev" href="procedure.php?phpLang=zh" title="更新文档的流程">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 4 附加的资源</h1>
+include_once "header.zh.inc";
+?>
+<h1>i18n - 4. 附加的资源</h1>
     
 
     
@@ -63,7 +63,9 @@ include_once "header.inc";
         <li><a href="http://www.wincvs.org/download.html">MacCvsX 3.3</a>── CVS 的图形化前端工具。（只建议团队领导使用！）</li>
       </ul>
     
-  <p align="right">
-Next: <a href="appendix.php?phpLang=zh">5 附录</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="appendix.php?phpLang=zh">5. 附录</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

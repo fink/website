@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="files.php?phpLang=fr" title="Fichiers de documentation"><link rel="prev" href="index.php?phpLang=fr" title="i18n Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 1 Introduction</h1>
+include_once "header.fr.inc";
+?>
+<h1>i18n - 1. Introduction</h1>
     
 
     
@@ -63,7 +63,9 @@ include_once "header.inc";
         <li>Devenir traducteur vous-même. Si votre langue ne figure pas encore au fronton du site (ou même si elle y figure) et que vous pensez pouvoir faire une bonne traduction, vous pouvez vous porter volontaire pour traduire dans votre propre langue. <p>Prenez en compte, toutefois, que si vous êtes la première personne à traduire dans votre langue, il y a un bon nombre de documents à traduire au départ. Ensuite, il ne devrait y avoir que peu de changements.</p></li>
       </ul>
     
-  <p align="right">
-Next: <a href="files.php?phpLang=fr">2 Fichiers de documentation</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="files.php?phpLang=fr">2. Fichiers de documentation</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

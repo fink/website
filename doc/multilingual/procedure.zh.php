@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="i18n Contents"><link rel="next" href="resources.php?phpLang=zh" title="附加的资源"><link rel="prev" href="files.php?phpLang=zh" title="文档文件">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 3 更新文档的流程</h1>
+include_once "header.zh.inc";
+?>
+<h1>i18n - 3. 更新文档的流程</h1>
     
 
     
@@ -73,7 +73,9 @@ include_once "header.inc";
       
       <p>当前的政策是所有文档应该按照 <a href="#prompt-update">提示更新</a> 流程进行更新，除非你有很特别的理由不这样做。</p>
     
-  <p align="right">
-Next: <a href="resources.php?phpLang=zh">4 附加的资源</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="resources.php?phpLang=zh">4. 附加的资源</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="files.php?phpLang=en" title="The Documentation Files"><link rel="prev" href="index.php?phpLang=en" title="i18n Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 1 Introduction</h1>
+include_once "header.en.inc";
+?>
+<h1>i18n - 1. Introduction</h1>
     
     
     <h2><a name="what">1.1 What is going on with internationalization of the Fink
@@ -58,7 +58,9 @@ include_once "header.inc";
         typically will be small changes made.</p></li>
       </ul>
     
-  <p align="right">
-Next: <a href="files.php?phpLang=en">2 The Documentation Files</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="files.php?phpLang=en">2. The Documentation Files</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

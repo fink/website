@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="appendix.php?phpLang=en" title="Appendix"><link rel="prev" href="procedure.php?phpLang=en" title="Procedure for Updating Documents">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 4 Additional Resources           </h1>
+include_once "header.en.inc";
+?>
+<h1>i18n - 4. Additional Resources           </h1>
     
     
     <h2><a name="resources">4.1 Important Links</a></h2>
@@ -59,7 +59,9 @@ include_once "header.inc";
         only!)</li>
       </ul>
     
-  <p align="right">
-Next: <a href="appendix.php?phpLang=en">5 Appendix</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="appendix.php?phpLang=en">5. Appendix</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

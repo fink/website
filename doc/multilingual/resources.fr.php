@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="appendix.php?phpLang=fr" title="Annexe"><link rel="prev" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 4 Autres ressources</h1>
+include_once "header.fr.inc";
+?>
+<h1>i18n - 4. Autres ressources</h1>
     
 
     
@@ -63,7 +63,9 @@ include_once "header.inc";
         - interface graphique pour CVS (recommandée uniquement aux chefs d'équipe)</li>
       </ul>
     
-  <p align="right">
-Next: <a href="appendix.php?phpLang=fr">5 Annexe</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="appendix.php?phpLang=fr">5. Annexe</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

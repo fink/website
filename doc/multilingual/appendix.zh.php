@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=zh" title="附加的资源">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 5 附录</h1>
+include_once "header.zh.inc";
+?>
+<h1>i18n - 5. 附录</h1>
     
 
     
@@ -38,5 +38,7 @@ include_once "header.inc";
       </ul>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

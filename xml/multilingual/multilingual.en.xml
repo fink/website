@@ -202,14 +202,19 @@
       <p>The files to translate, in order of priority, are:</p>
       <p><strong>Title</strong> (English version file)</p>
       <ol>
-        <li>Constants file (<filename>xml/web/constants.*.inc</filename>)(see
+        <li>Constants files: (e.g. <filename>xml/web/constants.*.inc</filename>) (see
         below)</li>
-        <li>Static PHP files (e.g. <filename>xml/web/*.en.php</filename>)</li>
-        <li>User's Guide (<filename>xml/uguide.en.xml</filename>)</li>
-        <li>FAQ (<filename>xml/faq.en.xml</filename>)</li>
+       <li>Static PHP files (e.g. <filename>xml/web/*.en.php</filename>)</li>
+       <li>Documentation navigation files (i.e. <filename>xml/web/doc/nav.*.inc</filename>) (same handling as constants.*.inc)</li>
+       <li>User's Guide (<filename>xml/uguide.en.xml</filename>)</li>
+       <li>FAQ (<filename>xml/faq.en.xml</filename>)</li>
         <li>Running X11 (<filename>xml/x11/x11.en.xml</filename>)</li>
-        <li>Document Index (<filename>xml/doc/doc.en.xml</filename></li>
-        <li>Packaging (<filename>xml/packaging/packaging.en.xml</filename>)</li>
+        <li>Document Index (<filename>xml/doc/doc.en.xml</filename>)</li>
+        <li>CVS Access (<filename>xml/cvsaccess/cvs.en.xml</filename>)</li>
+        <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
+        <li>Net Etiquette (<filename>xml/netiquette/netiquette.en.xml</filename>)</li>
+        <li>Security (<filename>xml/security/security.en.xml</filename>)</li>
+       <li>Packaging (<filename>xml/packaging/packaging.en.xml</filename>)</li>
         <li>Porting (<filename>xml/porting/porting.en.xml</filename>)</li>
         <li>News (<filename>xml/news/news.xml</filename>)</li>
       </ol>
@@ -244,8 +249,11 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 /* The word 'Sections'. Used in Menu Navigation Bar */ 
 define (FINK_SECTIONS, 'Sections'); 
       
-/* Contents as Table of Contents. Used in FAQ/Documentation Sections */ 
+/* Used in FAQ/Documentation Sections: */
+/* Contents as Table of contents, Next as next page */ 
+/* Q as question, A as anwer */
 define (FINK_CONTENTS, 'Contents');
+define (FINK_NEXT, 'Next');define (FINK_Q, 'Q');define (FINK_A, 'A');
 
 /* Printer */
 define (FINK_PRINTER, 'Printer');
@@ -411,10 +419,11 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             list of files, e,g.: <codeblock>cvs add faq.ru.xml Makefile</codeblock> You'll need to give your SourceForge
             passphrase.<p>If the file already exists, you can skip to the next
             step.</p></li>
-            <li>Commit the files, e.g.: <codeblock>cvs ci -m "message" faq.ru.xml Makefile</codeblock> <p> where <em>message</em> is a
+            <li>Commit the files, e.g.: <codeblock>cvs ci -m "message" faq.ru.xml Makefile</codeblock> where <em>message</em> is a
             descriptive message about what you've done. Enter your SourceForge
-            passphrase at the prompt.</p></li>
+            passphrase at the prompt.</li>
             <li>Now run <codeblock>make &amp;&amp; make install</codeblock></li>
+            <li>If you get an error message telling you that a directory <filename>foo</filename> is missing under <filename>xml/scripts/installer/dmg</filename>, then move to it with: <codeblock>cd ../scripts/installer/dmg</codeblock> and create the directory with: <codeblock>mkdir -p foo</codeblock> Then return to the previous directory and rerun <codeblock>make &amp;&amp; make install</codeblock></li>
             <li>Move into your copy of the Fink xml tree, e.g: <codeblock>cd ~/Documents/Fink-i18n/xml</codeblock> <p>if you created your
             <filename>xml</filename> tree under
             <filename>Documents/Fink-i18n/</filename> in your home

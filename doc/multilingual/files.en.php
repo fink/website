@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 2 The Documentation Files</h1>
+include_once "header.en.inc";
+?>
+<h1>i18n - 2. The Documentation Files</h1>
     
     
     
@@ -146,14 +146,19 @@ include_once "header.inc";
       <p>The files to translate, in order of priority, are:</p>
       <p>Title (English version file)</p>
       <ol>
-        <li>Constants file (<code>xml/web/constants.*.inc</code>)(see
+        <li>Constants files: (e.g. <code>xml/web/constants.*.inc</code>) (see
         below)</li>
-        <li>Static PHP files (e.g. <code>xml/web/*.en.php</code>)</li>
-        <li>User's Guide (<code>xml/uguide.en.xml</code>)</li>
-        <li>FAQ (<code>xml/faq.en.xml</code>)</li>
+       <li>Static PHP files (e.g. <code>xml/web/*.en.php</code>)</li>
+       <li>Documentation navigation files (i.e. <code>xml/web/doc/nav.*.inc</code>) (same handling as constants.*.inc)</li>
+       <li>User's Guide (<code>xml/uguide.en.xml</code>)</li>
+       <li>FAQ (<code>xml/faq.en.xml</code>)</li>
         <li>Running X11 (<code>xml/x11/x11.en.xml</code>)</li>
-        <li>Document Index (<code>xml/doc/doc.en.xml</code></li>
-        <li>Packaging (<code>xml/packaging/packaging.en.xml</code>)</li>
+        <li>Document Index (<code>xml/doc/doc.en.xml</code>)</li>
+        <li>CVS Access (<code>xml/cvsaccess/cvs.en.xml</code>)</li>
+        <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
+        <li>Net Etiquette (<code>xml/netiquette/netiquette.en.xml</code>)</li>
+        <li>Security (<code>xml/security/security.en.xml</code>)</li>
+       <li>Packaging (<code>xml/packaging/packaging.en.xml</code>)</li>
         <li>Porting (<code>xml/porting/porting.en.xml</code>)</li>
         <li>News (<code>xml/news/news.xml</code>)</li>
       </ol>
@@ -188,8 +193,13 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 /* The word 'Sections'. Used in Menu Navigation Bar */ 
 define (FINK_SECTIONS, 'Sections'); 
       
-/* Contents as Table of Contents. Used in FAQ/Documentation Sections */ 
+/* Used in FAQ/Documentation Sections: */
+/* Contents as Table of contents, Next as next page */ 
+/* Q as question, A as anwer */
 define (FINK_CONTENTS, 'Contents');
+define (FINK_NEXT, 'Next');
+define (FINK_Q, 'Q');
+define (FINK_A, 'A');
 
 /* Printer */
 define (FINK_PRINTER, 'Printer');
@@ -205,8 +215,8 @@ define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Uni
 define (HEADER_HOSTED_BY, 'Hosted by {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %b %Y,  %R %Z');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %B %Y,  %R %Z');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z');
 </pre>
 <p><b>Note:</b> the first lines of Footer section have been splitted for display purpose, do not split them in the file.</p>
       <p>When you translate, you normally follow the steps as below (suppose
@@ -355,10 +365,11 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z')
             list of files, e,g.: <pre>cvs add faq.ru.xml Makefile</pre> You'll need to give your SourceForge
             passphrase.<p>If the file already exists, you can skip to the next
             step.</p></li>
-            <li>Commit the files, e.g.: <pre>cvs ci -m "message" faq.ru.xml Makefile</pre> <p> where <b>message</b> is a
+            <li>Commit the files, e.g.: <pre>cvs ci -m "message" faq.ru.xml Makefile</pre> where <b>message</b> is a
             descriptive message about what you've done. Enter your SourceForge
-            passphrase at the prompt.</p></li>
+            passphrase at the prompt.</li>
             <li>Now run <pre>make &amp;&amp; make install</pre></li>
+            <li>If you get an error message telling you that a directory <code>foo</code> is missing under <code>xml/scripts/installer/dmg</code>, then move to it with: <pre>cd ../scripts/installer/dmg</pre> and create the directory with: <pre>mkdir -p foo</pre> Then return to the previous directory and rerun <pre>make &amp;&amp; make install</pre></li>
             <li>Move into your copy of the Fink xml tree, e.g: <pre>cd ~/Documents/Fink-i18n/xml</pre> <p>if you created your
             <code>xml</code> tree under
             <code>Documents/Fink-i18n/</code> in your home
@@ -412,7 +423,9 @@ For other
         <li>See your efforts: <pre>open http://fink.sourceforge.net/</pre></li>
       </ol>
     
-  <p align="right">
-Next: <a href="procedure.php?phpLang=en">3 Procedure for Updating Documents</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="procedure.php?phpLang=en">3. Procedure for Updating Documents</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

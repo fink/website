@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=fr" title="Autres ressources">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 5 Annexe</h1>
+include_once "header.fr.inc";
+?>
+<h1>i18n - 5. Annexe</h1>
     
 
     
@@ -36,5 +36,7 @@ include_once "header.inc";
       </ul>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

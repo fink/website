@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 2 Fichiers de documentation</h1>
+include_once "header.fr.inc";
+?>
+<h1>i18n - 2. Fichiers de documentation</h1>
     
 
     
@@ -206,8 +206,8 @@ define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Uni
 define (HEADER_HOSTED_BY, 'Hosted by {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %b %Y,  %R %Z');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %B %Y,  %R %Z');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z');
 </pre>
 <p><b>Note :</b> les premières lignes de la section Footer ont été coupées pour des raisons d'affichage. Ne les coupez pas dans le fichier.</p>
 
@@ -411,7 +411,9 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
         <pre>open http://fink.sourceforge.net/</pre></li>
       </ol>
     
-  <p align="right">
-Next: <a href="procedure.php?phpLang=fr">3 Procédure de mise à jour des documents</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="procedure.php?phpLang=fr">3. Procédure de mise à jour des documents</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=zh" title="更新文档的流程"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 2 文档文件</h1>
+include_once "header.zh.inc";
+?>
+<h1>i18n - 2. 文档文件</h1>
     
 
     
@@ -443,7 +443,9 @@ scripts/installer/dmg/faq.ru.html</pre>
         <pre>open http://fink.sourceforge.net/</pre></li>
       </ol>
     
-  <p align="right">
-Next: <a href="procedure.php?phpLang=zh">3 更新文档的流程</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="procedure.php?phpLang=zh">3. 更新文档的流程</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="resources.php?phpLang=en" title="Additional Resources           "><link rel="prev" href="files.php?phpLang=en" title="The Documentation Files">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 3 Procedure for Updating Documents</h1>
+include_once "header.en.inc";
+?>
+<h1>i18n - 3. Procedure for Updating Documents</h1>
     
     
     
@@ -80,7 +80,9 @@ include_once "header.inc";
       
       <p>The current policy is that all documents should be updated according to the <a href="#prompt-update">prompt update</a> schedule, unless you have a specific reason to do otherwise.</p>
     
-  <p align="right">
-Next: <a href="resources.php?phpLang=en">4 Additional Resources           </a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="resources.php?phpLang=en">4. Additional Resources           </a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

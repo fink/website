@@ -4,10 +4,10 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="i18n Contents"><link rel="next" href="files.php?phpLang=zh" title="文档文件"><link rel="prev" href="index.php?phpLang=zh" title="i18n Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>i18n - 1 介绍</h1>
+include_once "header.zh.inc";
+?>
+<h1>i18n - 1. 介绍</h1>
     
 
     
@@ -67,7 +67,9 @@ include_once "header.inc";
         做完这些以后，后面的通常就是一些小的修改。</p></li>
       </ul>
     
-  <p align="right">
-Next: <a href="files.php?phpLang=zh">2 文档文件</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="files.php?phpLang=zh">2. 文档文件</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
