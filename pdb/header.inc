@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.5 2001/09/30 14:57:24 chrisp Exp $ */
+/* $Id: header.inc,v 1.6 2001/10/09 20:44:32 chrisp Exp $ */
 
 /* check path info */
 if ($uses_pathinfo) {
@@ -24,6 +24,7 @@ $navbox = array(
   "pdb/index.php", "Introduction",
   "pdb/sections.php", "By Section",
   "pdb/list.php", "By Package",
+  "pdb/search.php", "Search",
   "pdb/testing.php", "Help needed"
 );
 include "timestamp.inc";

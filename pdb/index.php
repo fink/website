@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_date = '$Date: 2001/10/09 20:44:32 $';
 
 include "header.inc";
 ?>
@@ -41,8 +41,14 @@ print strftime("%A, %B %d", $dyndate)
 $seccount ?> sections.
 </p>
 
+<form action="search.php" method="GET">
+<p>Search for package: <input type="text" name="s" size="15" value="">
+<input type="submit" value="Search">
+</p>
+</form>
+
 <p>
-You can browse the <a href="list.php">complete list of packages</a>,
+You can browse a <a href="list.php">complete list of packages</a>,
 or you can browse by archive section:
 </p>
 
