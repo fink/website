@@ -1,0 +1,67 @@
+# Hey Emacs, this is a -*- makefile -*-
+# $Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $
+
+# common rules for processing XML documents
+# post-processing needed to add PHP processing instructions
+
+ifndef STYLESHEET_WEBSITE
+STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
+endif
+STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
+
+PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
+
+all_targets = $(TARGET)
+install_files = $(TARGET)
+
+ifdef WANT_HTML
+all_targets += $(patsubst %.xml,%.html,$(SOURCE))
+install_files += $(patsubst %.xml,%.html,$(SOURCE))
+install_html = $(patsubst %.xml,%.html,$(SOURCE))
+endif
+
+.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
+.PHONY: all clean force install
+
+all: $(all_targets)
+
+clean:
+	rm -f $(all_targets) *.tmp
+
+force: clean all
+
+%.php: $(SOURCE) $(STYLESHEET_WEBSITE)
+	xmllint --noout --valid $(SOURCE) \
+	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(XMLFILE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
+	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: \$$Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
+	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: \$$Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
+	rm -f *.tmp
+	$(foreach  PHPFILE, $(BASE_TARGET), echo "<? require_once '../phpLang.inc.php'; ?>" >$(PHPFILE); )
+
+%.html.tmp: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
+	xmllint --noout --valid $(SOURCE) \
+	$(foreach  XMLFILE, $(SOURCE), && xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE))
+
+%.html: %.html.tmp	
+	$(PROCESS_HTML) <$< >$@
+
+%.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
+	xmllint --noout --valid $(SOURCE) \
+	$(foreach  XMLFILE, $(SOURCE), && xsltproc -o $(patsubst %.xml,%.txt.tmp,$(XMLFILE)) $(STYLESHEET_TEXT) $(XMLFILE))
+
+%.txt: %.txt.tmp $(PROCESS_TEXT)
+	$(PROCESS_TEXT) <$< >$@
+
+install: $(install_files)
+
+ifdef DESTDIR
+	echo "Installing PHP files" \
+	$(foreach  PHPFILE, $(install_files), && cp $(PHPFILE) $(basedir)/web/$(DESTDIR)/)
+else
+	@echo "DESTDIR not defined, can't install"
+endif
+
+ifdef WANT_HTML
+	echo "Installing HTML files" \
+	$(foreach  HTMLFILE, $(install_html), && cp $(HTMLFILE) $(basedir)/scripts/installer/dmg/$(DESTDIR)/)
+endif
