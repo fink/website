@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.6 2004/04/12 02:48:49 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.7 2004/04/12 02:54:09 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1016,6 +1016,8 @@ them. The following options fall into this category.</p>
           <p>Causes Fink not to delete the /sw/src/root-[name]-[version]-[revision] directory
 after building a package. Defaults to false. <em>Be careful, this
 option can fill your hard-disk quickly!</em>
+Passing <em>fink</em> the <em>-K</em> flag has the same effect, but
+only operates on that single <em>fink</em> invocation.
           </p>
         </li>
         <li>
@@ -1024,6 +1026,8 @@ option can fill your hard-disk quickly!</em>
           <p>Causes Fink not to delete the /sw/src/[name]-[version]-[revision] directory after
 building a package. Defaults to false. <em>Be careful, this option can
 fill your hard-disk quickly!</em>
+Passing <em>fink</em> the <em>-k</em> flag has the same effect, but
+only operates on that single <em>fink</em> invocation.
           </p>
         </li>
       </ul>
