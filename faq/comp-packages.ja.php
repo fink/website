@@ -23,18 +23,18 @@ endif</pre></div>
 <div class="answer"><p><b>A:</b> すべての X11 は、残念なことに、 /usr/X11E6 にインストールしなければなりません。
 Fink の <code>xfree86-base</code> と <code>xfree86-rootless</code> もここにインストールします。
 しかし、 Fink はデータベースに無いファイルは削除しないため、 Fink 以外の X11 を自動的に置き換えることはありません。
-</p><p></p><p>という訳で、:</p><p></p><p><b>注記: 10.2.x と 最新版の Fink (&gt;= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (やっても動きませんが)。</b></p><p>1. <code>system-xfree86</code> を削除します。
+</p><p>という訳で、:</p><p><b>注記: 10.2.x と 最新版の Fink (&gt;= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (やっても動きませんが)。</b></p><p>1. <code>system-xfree86</code> を削除します。
 X11 に依存するパッケージがない場合、これは単純です。
 しかし、 X11 に依存するパッケージがインストールされていることの方が多いでしょう。
-これを全てアンインストールする代わりに、次のコマンドをうちます:</p><p>
-<code>sudo dpkg --remove --force-depends system-xfree86</code>
-</p><p>これにより、他は触らずに削除します。
+これを全てアンインストールする代わりに、次のコマンドをうちます:</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>これにより、他は触らずに削除します。
 <code>system-xfree86</code> がなければステップ 3 に進みます。
-</p><p>2. XFree86 を全て手動で削除する。これは:</p><p>
-<code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</code>
-</p><p>Apple X11 から切替える場合、 X11 アプリケーションも削除します。</p><p>3. XFree86-4.2.1 を入れるには、 Fink の <code>xfree86-base</code> と  <code>xfree86-rootless</code> をインストールします。
-これは、ソースからなら "<code>fink install</code>" で、バイナリからなら  "<code>apt-get install</code>" または <code>dselect</code> です。</p><p> -あるいは-</p><p>3a. XFree86-4.3.x を入れるには、 Fink の <code>xfree86</code> パッケージをインストールします。
-これはまだバイナリ版がなく、 unstable ツリーのみなので、 "fink install xfree86" と入力します。
+</p><p>2. XFree86 を全て手動で削除する。これは:</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Apple X11 から切替える場合、 X11 アプリケーションも削除します。</p><p>3. XFree86-4.2.1 を入れるには、 Fink の <code>xfree86-base</code> と 
+<code>xfree86-rootless</code> をインストールします。
+これは、ソースからなら "<code>fink install</code>" で、
+バイナリからなら  "<code>apt-get install</code>" または <code>dselect</code> です。</p><p> -あるいは-</p><p>3a. XFree86-4.3.x 以降を入れるには、 Fink の <code>xfree86</code> パッケージを、
+"fink install xfree86" でインストールします。
+最新版 (2004年5月25日時点で XFree86-4.4.x) はまだバイナリ版がなく、 unstable ツリーのみなので、 
+[<a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable%5C">unstable パッケージのインストール</a> を参照]
 </p></div>
 </a>
 <a name="change-thread-nothread">
@@ -61,6 +61,18 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <a name="cctools">
 <div class="question"><p><b>Q7.4: KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
 <div class="answer"><p><b>A:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
+</a>
+
+<a name="xml-parser-pm">
+<div class="question"><p><b>Q7.5: <code>intltool</code> が XML::Parser が必要と言っていますが、
+	xml-parser-pm は既にインストールされています。
+	</b></p></div>
+<div class="answer"><p><b>A:</b> 
+	これは更新時によく発生します。
+	<code>xml-parser-pmXXX</code> がインストールされている確認してください。
+	'XXX' は、システム上の Perl のバージョンで、 Jaguar に入っている Perl は 560 、
+	Panther は 581 です。
+	</p></div>
 </a>
 <p align="right">
 Next: <a href="usage-general.php?phpLang=ja">8 パッケージ使用上の問題 - 一般</a></p>

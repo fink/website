@@ -28,7 +28,9 @@ passwd は、セキュリティー上の問題からいくつかのユーザー�
 Unix システムでは、ファイルやプロセスの "所有者" を使ってパーミッションやセキュリティーをチューニングするのです。
 Apache や MySQL のようなプログラムは、"所有者" が必要で、これらの daemon に root を割り当てると安全ではなくなります。
 (Apache に、システム上の全てのファイルへいきなり書き込み権限が与えられたと思ってみてください)
-このため、 passwd パッケージはユーザーを必要とするパッケージにユーザーを追加するのです。</p><p>急にユーザーが "システム環境設定: ユーザー" ペインに現れるのは不安ですが、削除したい気持ちを押えてください。</p><ul>
+このため、 passwd パッケージはユーザーを必要とするパッケージにユーザーを追加するのです。</p><p>急にユーザーが "システム環境設定: ユーザー" ペイン (10.2.x) あるいは
+ "システム環境設定: アカウント" ペイン (10.3.x) 
+に現れるのは不安ですが、削除したい気持ちを押えてください。</p><ul>
 <li>第一に、あなたはユーザーを利用するパッケージをインストールする選択をしたのです。
  ユーザーを削除したら意味がありませんよね?</li>
 <li>実際、 Mac OS X には既にユーザーが追加されていますが、気づいていないのです。
@@ -39,7 +41,10 @@ Apple がインストールしたユーザーは、 NetInfo マネージャ.app 
 <code>niutil -list . /users</code>
 </li>
 <li>このユーザーを削除することにした場合、十分気をつけてください。
-"システム環境設定: ユーザー" ペインから追加したユーザーには管理者権限が割り振られ、管理者アカウントのパーミッションには混乱が報告されています。
+"システム環境設定: ユーザー" ペイン (10.2.x) あるいは
+ "システム環境設定: アカウント" ペイン (10.3.x) 
+から追加したユーザーのファイルには、適当な管理者権限が割り振られます。
+管理者アカウントのパーミッションが混乱するという報告があります。
 これはシステム環境設定のバグで、 Apple には報告されています。
 安全にユーザーを削除するには、 NetInfo マネージャ.app を使うか、ターミナルから <code>niutil</code> コマンドを入力します。
 NetInfo の詳細については、 <code>niutil</code> の man ページを読んでください。
@@ -68,30 +73,57 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b>Q8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
-<div class="answer"><p><b>A:</b> Apple X11 は Fink の環境設定を関知しません。
+<div class="answer"><p><b>A:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
 </p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
 <a name="x-options">
 <div class="question"><p><b>Q8.5: X11 の種類が多くて迷っています。
-Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、小さな違いがあります。
-Apple X11 は XFree86-4.2.1 を改良したものです。
-XFree86-4.3 は標準の XFree86-4.2.1.1 より速いのですが、後者の方が安定しています。
-4.2.1.1 を改良したものもあり、 thread サポートが追加されていて、これを必要とするパッケージもあります。</p><p>現在は、 Panther では (三枚目のディスクにある) Apple X11 が唯一の選択です。
-コンパイルすることがあるなら、 (XCode ディスクにある) X11SDK のインストールも忘れないでください。</p><p>Jaguar では、一番使われていて Fink パッケージが使えるのは:</p><ul>
-<li>
-<p>Fink でビルドする 4.2.x: <code>xfree86-base</code> と <code>xfree86-rootless</code> または <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール</p>
-</li>
-<li>
-<p>Fink でビルドする 4.3.x: <code>xfree86</code> と <code>xfree86-shlibs</code> パッケージをインストール</p>
-</li>
-<li>
-<p>Apple の 4.2.x (User+SDK パッケージをインストール): <code>system-xfree86</code> パッケージをインストール</p>
-</li>
-</ul><p>これ以外の選択は、 <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a> を参照してください。</p></div>
+	Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+	いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、細かな違いがあります。
+	Jaguar と Panther では選択肢も変わります。
+	</p><ul>
+		<li>
+		<p>
+		Apple X11 (3枚目のディスク):
+		X11 関連のプログラムをコンパイルや Fink でソースインストールする場合、 
+		X11SDK (XCode ディスク) も忘れずにインストールする。
+		</p>
+		</li>
+		<li>
+		<p>4.4.x built via Fink: 
+		<code>xfree86</code> と
+		<code>xfree86-shlibs</code> のパッケージをインストールする。
+		</p>
+		</li>
+	</ul><p>Jaguar では、一番使われていて Fink パッケージが使えるのは:</p><ul>
+		<li>
+		<p>Fink でビルドする 4.2.x: <code>xfree86-base</code> と 
+		<code>xfree86-rootless</code> または <code>xfree86-base-threaded</code> 
+		と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール。
+		</p>
+		</li>
+		<li>
+		<p>Fink でビルドする 4.3.x: <code>xfree86</code> と <code>xfree86-shlibs</code> 
+		パッケージをインストール。
+		</p>
+		</li>
+		<li>
+		<p>
+		Apple の 4.2.x (User+SDK パッケージがインストールされている場合): 
+		<code>system-xfree86</code> パッケージが自動的にインストールされる。
+		ユーザーはインストールを行わない。
+		(注記: Jaguar 用の Apple X11 Public Beta は既に入手不可能です。
+		この方法は以前入手した人のみに有効です。)
+		</p>
+		</li>
+	</ul><p>
+	これ以外の選択は、 <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a> を参照してください。
+	</p></div>
 </a>
+
 <a name="no-display">
 <div class="question"><p><b>Q8.6: アプリケーションを実行しようとすると、
 "cannot open display:"

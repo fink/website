@@ -91,10 +91,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 </ul></div>
 </a>
 <a name="usr-local-libs">
-<div class="question"><p><b>Q6.9: /usr/local/lib にインストールされているライブラリが Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</b></p></div>
+<div class="question"><p><b>Q6.9: /usr/local にインストールされているライブラリやヘッダが 
+	Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</b></p></div>
 <div class="answer"><p><b>A:</b> そういう場合もよくあります。
-これは、パッケージの configure スクリプトは Fink のパスより先に <code>/usr/local/lib</code> の中を検索するからです。
-もし問題が発生して、他の FAQ で解決ができそうになければ、 <code>/usr/local/lib</code> のライブラリを確認してください。
+これは、パッケージの configure スクリプトは Fink のパスより先に <code>/usr/local</code> 
+の中のライブラリとヘッダを検索するからです。
+もし問題が発生して、他の FAQ で解決ができそうになければ、 
+<code>/usr/local/lib</code> のライブラリと <code>/usr/local/include</code>
+のヘッダを確認してください。
 これが原因そうであれば、 <code>/usr/local</code> の名前を一時的に変えてください。
 例えば:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>ビルド後、 <code>/usr/local</code> を元に戻しください:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
@@ -111,7 +115,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b>Q6.12: stddef.h が見つからないというメッセージが出ます。
+<div class="question"><p><b>Q6.12: stddef.h | whar.h | crt.o が見つからないというメッセージが出ます。
 これはどこにありますか?</b></p></div>
 <div class="answer"><p><b>A:</b> このヘッダは Developer Tools の DevSDK によって提供されるファイルです。
 <code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p></div>

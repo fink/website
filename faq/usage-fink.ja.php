@@ -398,6 +398,29 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 </p></div>
 </a>
 
+<a name="mirror-gnu">
+<div class="question"><p><b>Q5.29: 
+	Fink がパッケージを更新しません。
+	'gnu' ミラーが見つからないと言っています。
+	</b></p></div>
+<div class="answer"><p><b>A:</b> 
+	エラーの最後が、
+	</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>
+	である場合、 <code>fink-mirrors</code> を以下のように更新します:
+	</p><pre>fink install fink-mirrors</pre></div>
+</a>
+<a name="cant-move-fink">
+<div class="question"><p><b>Q5.30: 
+	Fink を更新できません。
+	/sw/fink を移動できないからです。
+	</b></p></div>
+<div class="answer"><p><b>A:</b> このエラー:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>
+	は通常、エラーメッセージと異なり、パーミッションの問題で、
+	<code>selfupdate</code> の作成した仮フォルダのひとつにあります。
+	これを削除するには:
+	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+</a>
+
 <p align="right">
 Next: <a href="comp-general.php?phpLang=ja">6 コンパイルの問題 - 一般</a></p>
 
