@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 06 Apr 2004 21:17:37 CEST</lastBuildDate>
+    <lastBuildDate>Tue, 06 Apr 2004 21:26:35 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.">
@@ -15,8 +15,8 @@
 	
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
-been built on 10.2 and will only install on a 10.2 based system while release 
-0.7.0 has been built on 10.3 and will only install on a 10.3 based system.
+been built on 10.2 and will only install on a 10.2 based systems, while release 
+0.7.0 has been built on 10.3 and will only install on a 10.3 based systems.
 	
 	
 These new releases incorporate various fixes to the package manager, many previously 
@@ -31,6 +31,10 @@ If you have questions or problems, please try the Fink mailing lists you can lea
 here.
 		
 		
+Please make sure you pick the appropriate installer for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
+		
+	
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
 We also thank our community, without their constant support and valuable 

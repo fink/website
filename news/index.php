@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2004/04/06 19:04:41';
+$cvs_date = 'Date: 2004/04/06 19:13:37';
 $metatags = '';
 
 include_once "header.inc";
@@ -11,8 +11,8 @@ include_once "header.inc";
 	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
-been built on 10.2 and will only install on a 10.2 based system while release 
-0.7.0 has been built on 10.3 and will only install on a 10.3 based system.
+been built on <b>10.2</b> and will only install on a <b>10.2</b> based systems, while release 
+0.7.0 has been built on <b>10.3</b> and will only install on a <b>10.3</b> based systems.
 	</p>
 	<p>
 These new releases incorporate various fixes to the package manager, many previously 
@@ -27,6 +27,10 @@ If you have questions or problems, please try the Fink mailing lists you can lea
 <a href="<?php print $root; ?>lists/index.php?phpLang=en">here</a>.
 		</p>
 		<p>
+Please make sure you pick the <b>appropriate installer</b> for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
+		</p>
+	<p>
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
 We also thank our community, without their constant support and valuable 
