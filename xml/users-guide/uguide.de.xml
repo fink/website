@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Fink Benutzerhandbuch</title>
   <shorttitle>Benutzerhandbuch</shorttitle>
-  <cvsid>$Id: uguide.de.xml,v 1.1 2004/09/28 05:39:53 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.de.xml,v 1.2 2004/09/28 05:43:09 michga Exp $</cvsid>
   <preface>
   <p>Achtung: die deutsche Version dieses Dokuments ist nicht mit der Englische Version synchron.</p>
     <p>
@@ -330,7 +330,7 @@ Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("d
         </li>
         <li>
           <p>
-<em>&fink_version;:</em> Das ist die Basisversion, die als Binary-Paket für OS 10.2 und 10.3 unter dem aktuellen Fink-Release installiert werden kann. Wenn Sie Fink <xref chapter="upgrade">aktualisieren</xref> wollen, kann es eine OS-spezifische, neuere Version geben, die hier nicht gezeigt wird.</li>
+<em>&fink_version;:</em> Das ist die Basisversion, die als Binary-Paket für OS 10.2 und 10.3 unter dem aktuellen Fink-Release installiert werden kann. Wenn Sie Fink <xref chapter="upgrade">aktualisieren</xref> wollen, kann es eine OS-spezifische, neuere Version geben, die hier nicht gezeigt wird.</p></li>
         <li>
           <p>
             <em>10.2-gcc3.3 stable:</em> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>
