@@ -17,7 +17,7 @@ next few weeks.
 <p>The simplest way to upgrade a binary installation is to run
 "sudo apt-get update".  Further details and
 other issues related to upgrading Fink to 10.3 are addressed on the
-<a href="<?php print $root; ?>blah">Special 10.3 upgrade page.</a>
+<a href="<?php print $root; ?>download/10.3-upgrade.php">Special 10.3 upgrade page.</a>
 </p><p>
 Before using the latest version of
 the command-line <code>fink</code> program 

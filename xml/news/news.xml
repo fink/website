@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.94 2003/11/02 23:32:05 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.95 2003/11/02 23:37:21 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -26,7 +26,7 @@ next few weeks.
 <p>The simplest way to upgrade a binary installation is to run
 "sudo apt-get update".  Further details and
 other issues related to upgrading Fink to 10.3 are addressed on the
-<link url="blah">Special 10.3 upgrade page.</link>
+<link url="download/10.3-upgrade.php">Special 10.3 upgrade page.</link>
 </p><p>
 Before using the latest version of
 the command-line <code>fink</code> program 
