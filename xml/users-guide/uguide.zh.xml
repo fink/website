@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.6 2004/04/17 19:44:12 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.7 2004/04/26 03:33:24 jeff_yecn Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
@@ -966,8 +966,17 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     <section name="dumpinfo">
       <title>dumpinfo</title>
       <p>
-	显示 Fink 如何解析软件包的 .info 文件的各个部分。
+	显示 Fink 如何解析软件包的 .info 文件的各个部分。各个字段和百分号展开会按照下面<em>选项</em>的设置来显示：
       </p>
+      <codeblock>
+-h, --help           - 显示可用的选项。
+-a, --all            - 显示软件包描述文件的全部字段。
+                       这时没有指定 --field 或 --percent 标志时的默认方式。
+-f 字段名,            - 按列出的顺序显示给定的字段名
+  --field=字段名
+-p 关键字,            - 按列出顺序显示指定的关键字的百分号扩展
+   --percent=关键字
+      </codeblock>
     </section>
   </chapter>
 </document>
