@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.5 2003/11/01 19:28:45 htodd Exp $ */
+/* $Id: theader.inc,v 1.6 2003/11/03 02:04:40 benh57 Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -253,6 +253,18 @@ function it_item($title, $item) {
   print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
         $item.'</td></tr>'."\n";
 }
+
+function it_item2($title, $item1, $item2) {
+  global $it_flag, $root;
+
+  if ($it_flag) {
+    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
+  }
+  $it_flag = 1;
+
+  print '<tr valign="top"><td>'.$title.'</td><td>'.$item.'</td><td>'.$item2.'</td></tr>'."\n";
+}
+
 
 function it_end() {
 ?>

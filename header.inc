@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.54 2003/11/01 19:28:45 htodd Exp $ */
+/* $Id: header.inc,v 1.55 2003/11/03 02:04:40 benh57 Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -259,6 +259,24 @@ function it_item($title, $item) {
         $item.'</td></tr>'."\n";
 }
 
+function it_start2() {
+  global $it_flag;
+
+  $it_flag = 0;
+?>
+<table border="0" cellpadding="1" cellspacing="1">
+<?
+}
+
+function it_item2($title, $item1, $item2) {
+  global $it_flag, $root;
+
+  if ($it_flag) {
+    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td><td></td></tr>'."\n";
+  }
+  $it_flag = 1;
+  print '<tr valign="top"><td width="150">'.$title.'</td><td width="120">'.$item1.'</td><td  width="120">'.$item2.'</td></tr>'."\n";
+}
 function it_end() {
 ?>
 </table>
