@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Relations";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/17 00:35:31';
+$cvs_date = 'Date: 2004/03/17 10:53:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="mirrors.php?phpLang=fr" title="Miroirs de Fink"><link rel="prev" href="general.php?phpLang=fr" title="Questions générales">';
 
 include_once "header.inc";
@@ -19,9 +19,9 @@ Malheureusement, ce n'est pas toujours si simple avec la plupart des paquets.
 Quelques problèmes courants :
 </p><ul>
 <li>Le mainteneur du paquet Fink est très occupé et n'a pas le temps de renvoyer la rustine et des explications détaillées aux mainteneurs situés en amont.</li>
-<li>Les mainteneurs situés en amont rejette la rustine. Il peut y avoir de très bonnes raisons à cela. La plupart des mainteneurs situés en amont ont fortement intérêt à conserver un code source pur, des contrôles de configuration clairs et à maintenir la compatibilité avec les autres plateformes.</li>
-<li>Les mainteneurs situés en amont accceptent la rustine, mais cela peut prendre des semaines ou   des mois avant qu'ils ne produisent une nouvelle version de leur paquet.</li>
-<li>Le paquet a été abondonné par ses auteurs et il n'existe pas de nouvelle version dans laquelle la rustine peut être intégrée.</li>
+<li>Les mainteneurs situés en amont rejette la rustine. Il peut y avoir de très bonnes raisons à cela. La plupart des mainteneurs situés en amont ont fortement intérêt à conserver un code source pur, des contrôles de configuration clairs et à maintenir la compatibilité avec les autres plates-formes.</li>
+<li>Les mainteneurs situés en amont acceptent la rustine, mais cela peut prendre des semaines ou   des mois avant qu'ils ne produisent une nouvelle version de leur paquet.</li>
+<li>Le paquet a été abandonné par ses auteurs et il n'existe pas de nouvelle version dans laquelle la rustine peut être intégrée.</li>
 </ul></div>
 </a>
 <a name="debian">
@@ -34,12 +34,12 @@ Nos paquets sont faits sur mesure pour Mac OS X / Darwin et n'utilise pas le for
 </p></div>
 </a>
 <a name="apple">
-<div class="question"><p><b>Q2.3: Quelles sont vos relations avec Apple</b></p></div>
+<div class="question"><p><b>Q2.3: Quelles sont vos relations avec Apple ?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 <a href="http://www.apple.com/">Apple</a> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source.
 Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions  de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle.
 Citation :
-<b>"Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmons dans les projets open source au fil du temps."</b>
+<b>"Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps."</b>
 Merci Apple !
 </p></div>
 </a>

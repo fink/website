@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Généralités";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/17 00:35:31';
+$cvs_date = 'Date: 2004/03/17 10:53:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets"><link rel="prev" href="index.php?phpLang=fr" title="Q.F.P. Contents">';
 
 include_once "header.inc";
@@ -23,14 +23,14 @@ L'objectif secondaire est de mettre le résultat à disposition d'utilisateurs o
 </a>
 <a name="naming">
 <div class="question"><p><b>Q1.2: Que signifie Fink ?</b></p></div>
-<div class="answer"><p><b>A:</b> Rien en particulier, ce n'est qu'un nom, même pas un acronyme.</p><p>En fait, Fink est le mot allemand désignant un fringillidé, une espèce d'oiseau. Je cherchais un nom pour le projet et le nom du système opératoire, Darwin, m'a fait penser à Charles Darwin, aux îles Galapagos et à l'évolution des espèces. Je me suis souvenu, qu'à l'école, nous avions étudié un passage sur les fringillidés pseudo-darwiniens et leurs becs, d'où le nom...</p></div>
+<div class="answer"><p><b>A:</b> Rien en particulier, ce n'est qu'un nom, même pas un acronyme.</p><p>En fait, Fink est le mot allemand désignant un fringillidé, une espèce d'oiseau. Je cherchais un nom pour le projet et le nom du système opératoire, Darwin, m'a fait penser à Charles Darwin, aux îles Galápagos et à l'évolution des espèces. Je me suis souvenu, qu'à l'école, nous avions étudié un passage sur les fringillidés pseudo-darwiniens et leurs becs, d'où le nom...</p></div>
 </a>
 <a name="bsd-ports">
 <div class="question"><p><b>Q1.3: En quoi Fink se différencie-t-il du mécanisme de portage BSD (qui comprend OpenPackages et GNU-Darwin) ?</b></p></div>
 <div class="answer"><p><b>A:</b> Avantages principaux de Fink :</p><ul>
 <li>
 <p>
-Il est écrit en Perl, pas en make/shell. Il ne repose donc pas sur des fonctionalités inhérentes à BSD make. Il n'y a donc pas besoin de marquer les paquets qui doivent utiliser GNU make à la construction.
+Il est écrit en Perl, pas en make/shell. Il ne repose donc pas sur des fonctionnalités inhérentes à BSD make. Il n'y a donc pas besoin de marquer les paquets qui doivent utiliser GNU make à la construction.
 </p>
 </li>
 <li>
@@ -46,13 +46,12 @@ Fink n'installe rien dans /usr/local à moins d'une requête explicite et ne né
 </ul></div>
 </a>
 <a name="usr-local">
-<div class="question"><p><b>Q1.4: Pourquoi Fink n'installe rien dans /usr/local?</b></p></div>
-<div class="answer"><p><b>A:</b> Il y a plusieurs raisons à cela, mais toutes reposent sur le fait  que "cela occasionnerait des failles dans le système".</p><p>Première raison : les logiciels de tierce partie. /usr/local est réservé à l'installation des logiciels qui ne font pas partie du système fourni par le vendeur initial. C'est donc l'endroit idéal pour installer quelque chose. Mais, c'est aussi là que d'autres vendeurs installeront leurs logiciels. La plupart des routines d'installation viendront écraser ce qui y est déjà - cela est vrai aussi pour dpkg. On peut, bien sûr, choisir de ne pas installer de logiciels de tierce partie dans /usr/local. Malheureusement, la plupart des routines d'installation ne signalent pas à l'avance ce qu'elles installent ni où elles l'installent.</p><p>Deuxième raison : /usr/local/bin est dans le PATH par défaut. Il s'ensuit que votre shell trouve les programmes installés sans que vous ayez à intervenir. A contrario, vous devrez intervenir si vous ne souhaitez pas utiliser ces programmes. Au pire, cela affecte le système lui-même -  de nombreuses parties du système reposent sur des scripts shell.</p><p>Troisième raison : l'ensemble des outils de compilation effectuent leurs recherches dans /usr/local par défaut. Le compilateur cherche les headers dans /usr/local/include et l'éditeur de liens cherche les librairies dans /usr/local/lib. C'est quelquefois très pratique, mais très difficile à désactiver si le besoin s'en fait sentir. On peut facilement désactiver le compilateur en mettant dans /usr/local/include un fichier parasite auquel on donne le nom de <code>stdio.h</code>.</p><p>Ceci dit, il est possible d'installer Fink dans  /usr/local. Le script d'installation vous avertira que, si vous le faites, ce sera à vos risques et périls, mais continuera l'installation après votre acccord.</p></div>
+<div class="question"><p><b>Q1.4: Pourquoi Fink n'installe rien dans /usr/local ?</b></p></div>
+<div class="answer"><p><b>A:</b> Il y a plusieurs raisons à cela, mais toutes reposent sur le fait  que "cela occasionnerait des failles dans le système".</p><p>Première raison : les logiciels de tierce partie. /usr/local est réservé à l'installation des logiciels qui ne font pas partie du système fourni par le vendeur initial. C'est donc l'endroit idéal pour installer quelque chose. Mais, c'est aussi là que d'autres vendeurs installeront leurs logiciels. La plupart des routines d'installation viendront écraser ce qui y est déjà - cela est vrai aussi pour dpkg. On peut, bien sûr, choisir de ne pas installer de logiciels de tierce partie dans /usr/local. Malheureusement, la plupart des routines d'installation ne signalent pas à l'avance ce qu'elles installent ni où elles l'installent.</p><p>Deuxième raison : /usr/local/bin est dans le PATH par défaut. Il s'ensuit que votre shell trouve les programmes installés sans que vous ayez à intervenir. A contrario, vous devrez intervenir si vous ne souhaitez pas utiliser ces programmes. Au pire, cela affecte le système lui-même -  de nombreuses parties du système reposent sur des scripts shell.</p><p>Troisième raison : l'ensemble des outils de compilation effectuent leurs recherches dans /usr/local par défaut. Le compilateur cherche les headers dans /usr/local/include et l'éditeur de liens cherche les librairies dans /usr/local/lib. C'est quelquefois très pratique, mais très difficile à désactiver si le besoin s'en fait sentir. On peut facilement désactiver le compilateur en mettant dans /usr/local/include un fichier parasite auquel on donne le nom de <code>stdio.h</code>.</p><p>Ceci dit, il est possible d'installer Fink dans  /usr/local. Le script d'installation vous avertira que, si vous le faites, ce sera à vos risques et périls, mais continuera l'installation après votre accord.</p></div>
 </a>
 <a name="why-sw">
-<div class="question"><p><b>Q1.5: Pourquoi avoir choisi 
-/sw?</b></p></div>
-<div class="answer"><p><b>A:</b> Ce choix est tout-à-fait arbitraire, mais il est vraisembable qu'il demeure le même, au moins dans un avenir prévisible, tant pour des raisons pratiques (mise à niveau) que par le fait qu'il n'entre en conflit avec aucun autre système de paquets.</p></div>
+<div class="question"><p><b>Q1.5: Pourquoi avoir choisi /sw ?</b></p></div>
+<div class="answer"><p><b>A:</b> Ce choix est tout-à-fait arbitraire, mais il est vraisemblable qu'il demeure le même, au moins dans un avenir prévisible, tant pour des raisons pratiques (mise à niveau) que par le fait qu'il n'entre en conflit avec aucun autre système de paquets.</p></div>
 </a>
 <p align="right">
 Next: <a href="relations.php?phpLang=fr">2 Relations avec d'autres projets</a></p>

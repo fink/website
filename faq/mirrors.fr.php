@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Miroirs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/17 00:35:31';
+$cvs_date = 'Date: 2004/03/17 10:53:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 include_once "header.inc";
@@ -27,7 +27,7 @@ include_once "header.inc";
 </a>
 <a name="when-not">
     <div class="question"><p><b>Q3.4: Impossible de se connecter au serveur rsync. Que faire ?</b></p></div>
-    <div class="answer"><p><b>A:</b> Il arrive que certains murs pare-feu particulièrement efficaces vous empêchent de vous connecter à des services rsunc. Dans ce cas, continuez à utiliser la méthode CVS.
+    <div class="answer"><p><b>A:</b> Il arrive que certains murs pare-feu particulièrement efficaces vous empêchent de vous connecter à des services rsync. Dans ce cas, continuez à utiliser la méthode CVS.
 </p></div>
 </a>
 <a name="otherinfogone">
