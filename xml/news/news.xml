@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.39 2003/02/08 03:09:02 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.40 2003/02/08 03:27:22 dmrrsn Exp $</cvsid>
 <newsitem>
         <date>2003-02-07</date>
         <headline>DO NOT INSTALL VIREX</headline>
@@ -14,7 +14,7 @@ will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 </p><p>
 This bug has been <extlink 
-url="http://forums.mcafeehelp.com/viewtopic.php?t\=6318&amp;sid\=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
+url="http://forums.mcafeehelp.com/viewtopic.php?t=6318&amp;sid=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
 to Virex's manufacturer.</extlink>  We will keep the
 Fink community informed about the situation as it develops.
 </p></body></newsitem>
