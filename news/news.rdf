@@ -4,9 +4,25 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 23 Oct 2003 01:00:46 CEST</lastBuildDate>
+    <lastBuildDate>Thu, 23 Oct 2003 20:36:58 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Say hello to mirror numero uno</title>
+    <link>http://fink.sf.net/news/#2003-10-23%20Say%20hello%20to%20mirror%20numero%20uno</link>
+    <dc:date>2003-10-23</dc:date>
+    <description>
+	You are too late. Russ Foster from JVDS
+	beat you all to it. He is the first one to provide us with ressources 
+	for a Fink rsync mirror.
+	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
+	
+	For those of you who are still wondering, join in. The mirrors we have
+	the faster you can rsync your info files. As per usual, updated and current
+	information on the mirror structure can be found on  Finkmirrors.net 
+	
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Mirror, mirror on the wall...</title>
     <link>http://fink.sf.net/news/#2003-10-22%20Mirror%2C%20mirror%20on%20the%20wall...</link>
@@ -431,23 +447,6 @@ made available on 2002-09-08.
   
   
   This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
-  
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Update XFree86 for use with OS X 10.2.2</title>
-    <link>http://fink.sf.net/news/#2002-11-11%20Update%20XFree86%20for%20use%20with%20OS%20X%2010.2.2</link>
-    <dc:date>2002-11-11</dc:date>
-    <description>
-  
-Users should update their XFree86 installations to version 4.2.1.1
-for use with OS X 10.2.2.  If you are using system-xfree86, you
-can get the new version from the XonX 
-project.  If you are using Fink's
-xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
-xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
-the 10.2/unstable tree; to gain access to them, you may need to run 
-&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
   
   </description>
   </item>
