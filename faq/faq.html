@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - The Fink F.A.Q.</title></head><body><h1 align="center">The Fink F.A.Q.</h1>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - The Fink F.A.Q.</title></head><body><h1 style="text-align: center;">The Fink F.A.Q.</h1>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
 made up. It's really more like a documentation written in an ad-hoc,
@@ -62,7 +62,7 @@ wrong?</a></li>
 more!</a></li>
 <li><a href="#usage-fink.selfupdate-tar-fails">3.13 Why doesn't 'fink selfupdate'
 work?</a></li>
-<li><a href="#usage-fink.cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
+<li><a href="#usage-fink.cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;
 		</a></li>
 <li><a href="#usage-fink.kernel-panics">3.15 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
@@ -78,6 +78,7 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 <li><a href="#comp-general.head">4.3 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
 <li><a href="#comp-general.also_in">4.4 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
+<li><a href="#comp-general.weak_lib">4.5 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li>
 </ul>
 <li><a href="#comp-packages"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -131,11 +132,11 @@ We're trying to provide tools and documentation to make this easier.
 </p><p>
 Goal number two is making the results available to casual users.
 For this, we build a distribution using package management tools
-ported over from Linux, namely <tt><nobr>dpkg</nobr></tt> and
-<tt><nobr>apt-get</nobr></tt>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
-The binary distribution uses the <tt><nobr>.deb</nobr></tt> package format.
+ported over from Linux, namely <tt style="white-space: nowrap;">dpkg</tt> and
+<tt style="white-space: nowrap;">apt-get</tt>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
+The binary distribution uses the <tt style="white-space: nowrap;">.deb</tt> package format.
 For building packages from source, we have our own tool, named
-<tt><nobr>fink</nobr></tt>, which creates those <tt><nobr>.deb</nobr></tt> package
+<tt style="white-space: nowrap;">fink</tt>, which creates those <tt style="white-space: nowrap;">.deb</tt> package
 files.
 </p></div></a>
 
@@ -189,7 +190,7 @@ default. The compiler searches /usr/local/include for header files and
 the linker searches /usr/local/lib for libraries. Again, this is
 sometimes a welcome convenience, but it's very hard to disable should
 the need arise. You can easily disable the compiler by putting a
-garbage file called <tt><nobr>stdio.h</nobr></tt> into /usr/local/include.</p><p>All that said, it is possible to install Fink into /usr/local. The
+garbage file called <tt style="white-space: nowrap;">stdio.h</tt> into /usr/local/include.</p><p>All that said, it is possible to install Fink into /usr/local. The
 installation script will warn you explicitly, but proceed once you
 acknowledge that you're doing this at your own risk.</p></div></a>
 
@@ -287,11 +288,11 @@ statement</a> for details.
 <a name="usage-fink.what-packages"><div class="question"><p><b>Q3.1: How can I find out what packages
 Fink supports?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
+Since Fink 0.2.3, there is the <tt style="white-space: nowrap;">list</tt> command.
 It produces a list of all packages known to your Fink installation.
 Example:
 </p><pre>fink list</pre><p>
-If you're using the binary distribution, <tt><nobr>dselect</nobr></tt> gives
+If you're using the binary distribution, <tt style="white-space: nowrap;">dselect</tt> gives
 you a nice browsable listing of available packages.
 Note that you must run it as root if you want to select and install
 packages from within dselect.
@@ -303,15 +304,15 @@ database</a> at the website.
 <a name="usage-fink.proxy"><div class="question"><p><b>Q3.2: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
-are passed on to <tt><nobr>wget</nobr></tt> resp. <tt><nobr>curl</nobr></tt>.
+The <tt style="white-space: nowrap;">fink</tt> command supports explicit proxy settings that
+are passed on to <tt style="white-space: nowrap;">wget</tt> resp. <tt style="white-space: nowrap;">curl</tt>.
 If you were not asked for proxies on first time installation, you can
-run <tt><nobr>fink configure</nobr></tt> to set it up.
+run <tt style="white-space: nowrap;">fink configure</tt> to set it up.
 You can also run that command at any time to reconfigure the
-<tt><nobr>fink</nobr></tt> command.
+<tt style="white-space: nowrap;">fink</tt> command.
 If you followed the instructions in the installation guide, and use
-<tt><nobr>/sw/bin/init.csh</nobr></tt> (or <tt><nobr>/sw/bin/init.sh</nobr></tt>),
-then <tt><nobr>apt-get</nobr></tt> and <tt><nobr>dselect</nobr></tt> also will use these
+<tt style="white-space: nowrap;">/sw/bin/init.csh</tt> (or <tt style="white-space: nowrap;">/sw/bin/init.sh</tt>),
+then <tt style="white-space: nowrap;">apt-get</tt> and <tt style="white-space: nowrap;">dselect</tt> also will use these
 proxy settings.
 </p></div></a>
 
@@ -322,14 +323,14 @@ proxy settings.
 	</li>
 	<li>
 		<p>Install the <b>cvs-proxy</b> package with the command:</p>
-		<p><tt><nobr>fink install <b>cvs-proxy</b></nobr></tt></p>
+		<p><tt style="white-space: nowrap;">fink install <b>cvs-proxy</b></tt></p>
 	</li>
 	<li>
 		<p>Packages are then updated with the commands:</p>
-		<p><tt><nobr>fink selfupdate-cvs</nobr></tt></p>
-		<p><tt><nobr>fink update-all</nobr></tt></p>
+		<p><tt style="white-space: nowrap;">fink selfupdate-cvs</tt></p>
+		<p><tt style="white-space: nowrap;">fink update-all</tt></p>
 	</li>
-</ul><p>If fink is not configured to use your proxy, change the settings using:</p><p><tt><nobr>fink configure</nobr></tt>.</p></div></a>
+</ul><p>If fink is not configured to use your proxy, change the settings using:</p><p><tt style="white-space: nowrap;">fink configure</tt>.</p></div></a>
 
 <a name="usage-fink.moving"><div class="question"><p><b>Q3.4: Can I move Fink to another
 location after installation?</b></p></div>
@@ -383,7 +384,7 @@ Both are correct.
 The <a href="http://fink.sourceforge.net/pdb/">package database</a>
 knows about every package, including those that are still in the
 unstable section.
-The <tt><nobr>dselect</nobr></tt> and <tt><nobr>apt-get</nobr></tt> tools on the other
+The <tt style="white-space: nowrap;">dselect</tt> and <tt style="white-space: nowrap;">apt-get</tt> tools on the other
 hand only know about the packages available as precompiled binary
 packages.
 Many packages are not available in precompiled form through these
@@ -393,11 +394,11 @@ to be considered, and it must pass additional checks for policy
 compliance as well as licensing and patent restrictions.
 </p><p>
 If you want to install a package that is not available via
-<tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
-from source using <tt><nobr>fink install <b>packagename</b></nobr></tt>.
+<tt style="white-space: nowrap;">dselect</tt> / <tt style="white-space: nowrap;">apt-get</tt>, you have to compile it
+from source using <tt style="white-space: nowrap;">fink install <b>packagename</b></tt>.
 Make sure you have the Developer Tools installed before you try this.
 (If there is no installer for the Developer Tools in your
-<tt><nobr>/Applications</nobr></tt> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
+<tt style="white-space: nowrap;">/Applications</tt> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
 free registration.)
 See also the question about unstable below.
 </p></div></a>
@@ -413,20 +414,20 @@ That is why Fink doesn't search the unstable tree by default.
 </p><p>
 If you only want one or two specific packages, it is safer to copy
 those .info files (and their associated .patch files, if there are
-any) from <tt><nobr>/sw/fink/dists/unstable/main/finkinfo</nobr></tt>
-to <tt><nobr>/sw/fink/dists/local/main/finkinfo</nobr></tt>.
+any) from <tt style="white-space: nowrap;">/sw/fink/dists/unstable/main/finkinfo</tt>
+to <tt style="white-space: nowrap;">/sw/fink/dists/local/main/finkinfo</tt>.
 If you want Fink to use all of unstable, edit
-<tt><nobr>/sw/etc/fink.conf</nobr></tt>, add
-<tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> 
-to the beginning of the <tt><nobr>Trees:</nobr></tt>
-line, and then run the command <tt><nobr>fink index</nobr></tt>
+<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>, add
+<tt style="white-space: nowrap;">unstable/main</tt> and <tt style="white-space: nowrap;">unstable/crypto</tt> 
+to the beginning of the <tt style="white-space: nowrap;">Trees:</tt>
+line, and then run the command <tt style="white-space: nowrap;">fink index</tt>
 </p></div></a>
 
 <a name="usage-fink.sudo"><div class="question"><p><b>Q3.10: I'm tired of typing my password into sudo again
 and again. Is there a way around this?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
-password. To do this, edit <tt><nobr>/etc/sudoers</nobr></tt> as root
-and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace <tt><nobr>username</nobr></tt> with your actual username, of course. This
+password. To do this, edit <tt style="white-space: nowrap;">/etc/sudoers</tt> as root
+and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace <tt style="white-space: nowrap;">username</tt> with your actual username, of course. This
 line allows you to run any command via sudo without typing your
 password.</p></div></a>
 
@@ -436,7 +437,7 @@ wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
 sets environment variables like PATH and MANPATH in your shell. To
 have a lasting effect on the shell, it must be processed with the
-<tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
+<tt style="white-space: nowrap;">source</tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
 
 <a name="usage-fink.dselect-access"><div class="question"><p><b>Q3.12: Help! I used the
 &quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
@@ -446,13 +447,13 @@ You probably pointed apt at a Debian mirror, which of course doesn't
 have the Fink files.
 You can fix this manually or through dselect.
 To fix it manually, edit the file
-<tt><nobr>/sw/etc/apt/sources.list</nobr></tt> in a text editor as root.
+<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
 </p><pre>
 deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>
-(Or if you live in Europe, you can use <tt><nobr>eu.dl.sourceforge.net</nobr></tt>
-instead of <tt><nobr>us.dl.sourceforge.net</nobr></tt>)
+(Or if you live in Europe, you can use <tt style="white-space: nowrap;">eu.dl.sourceforge.net</tt>
+instead of <tt style="white-space: nowrap;">us.dl.sourceforge.net</tt>)
 </p><p>
 To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
@@ -493,10 +494,10 @@ cd pkginfo
 ./inject.pl /sw</pre>
   </li>
 </ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
-edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
+edit line 479 of <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/SelfUpdate.pm</tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
 
 <a name="usage-fink.cvs-busy">
-	<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
+	<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>&quot;
 		</b></p></div>
 	<div class="answer"><p><b>A:</b> An example of the error is as follows:</p><pre>
 (Logging in to anonymous@cvs.sourceforge.net)
@@ -508,7 +509,7 @@ Failed: Logging into the CVS server for anonymous read-only access failed.
 		</pre><p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility, is that you need to reset your cvs directories. Use the command:</p><pre> 
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
-		</pre><p>If, on the other hand you can log in and download package descriptions but there is a message that says &quot;<tt><nobr>### execution of su failed, exit code 1</nobr></tt>&quot;, then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for lines that start with &quot;C&quot; and words to the effect of &quot;move it out of the way&quot; or &quot;is no longer in the repository&quot; applied to some info or patch file(s), and manually remove (&quot;<tt><nobr>sudo rm</nobr></tt>&quot;) the offending file(s).</p></div>
+		</pre><p>If, on the other hand you can log in and download package descriptions but there is a message that says &quot;<tt style="white-space: nowrap;">### execution of su failed, exit code 1</tt>&quot;, then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for lines that start with &quot;C&quot; and words to the effect of &quot;move it out of the way&quot; or &quot;is no longer in the repository&quot; applied to some info or patch file(s), and manually remove (&quot;<tt style="white-space: nowrap;">sudo rm</tt>&quot;) the offending file(s).</p></div>
 </a>
 
 <a name="usage-fink.kernel-panics"><div class="question"><p><b>Q3.15: When I use fink, my whole machine 
@@ -528,17 +529,17 @@ fsck -y
 mount -uw
 chmod 1775 /
 reboot
-</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<tt><nobr>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</nobr></tt>&quot; to prevent this from happening again.</p></div>
+</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<tt style="white-space: nowrap;">sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</tt>&quot; to prevent this from happening again.</p></div>
 </a>
 
 <a name="usage-fink.not-found"><div class="question"><p><b>Q3.17: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
-<div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
-<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
+<div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt style="white-space: nowrap;">fink describe <b>packagename</b></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt style="white-space: nowrap;">sudo mv <b>package-source.tar.gz</b> /sw/src/</tt>&quot;.  Then use '<tt style="white-space: nowrap;">fink install <b>packagename</b></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div></a>
 
 <a name="usage-fink.fink-not-found"><div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> 
-If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your home directory, this will be read instead of <tt><nobr>.cshrc</nobr></tt> .  You can go ahead and put <tt><nobr>source /sw/bin/init.csh</nobr></tt> in <tt><nobr>.tcshrc</nobr></tt> 
+If you use tcsh and happen to have a <tt style="white-space: nowrap;">.tcshrc</tt> file in your home directory, this will be read instead of <tt style="white-space: nowrap;">.cshrc</tt> .  You can go ahead and put <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> in <tt style="white-space: nowrap;">.tcshrc</tt> 
 .</p></div>
 </a>
 
@@ -551,33 +552,33 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Read the docs next time.
 To compile packages from source, you must install the Developer Tools,
-which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
+which among other stuff contains the C compiler, <tt style="white-space: nowrap;">cc</tt>.
 </p></div></a>
 
 <a name="comp-general.make"><div class="question"><p><b>Q4.2: make: illegal option -- C</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
+You've replaced the GNU version of the <tt style="white-space: nowrap;">make</tt> utility
 installed as part of the Developer Tools with a BSD version of make.
 Many packages rely on special features only supported by GNU make.
-Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
-<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>. Furthermore,
-make sure that <tt><nobr>/usr/local/bin/</nobr></tt> does not contain another
-copy of <tt><nobr>make</nobr></tt>.
+Make sure that <tt style="white-space: nowrap;">/usr/bin/make</tt> is a symlink to
+<tt style="white-space: nowrap;">gnumake</tt>, not <tt style="white-space: nowrap;">bsdmake</tt>. Furthermore,
+make sure that <tt style="white-space: nowrap;">/usr/local/bin/</tt> does not contain another
+copy of <tt style="white-space: nowrap;">make</tt>.
 </p></div></a>
 
 <a name="comp-general.head"><div class="question"><p><b>Q4.3: I'm getting a strange usage message
 from the head command. What's broken?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1
 Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of option descriptions, you have a broken
-<tt><nobr>head</nobr></tt> executable.
+<tt style="white-space: nowrap;">head</tt> executable.
 This happens when you install the Perl libwww library on an HFS+
 system volume.
-It tries to create a new command <tt><nobr>/usr/bin/HEAD</nobr></tt>, which
-overwrites the existing <tt><nobr>head</nobr></tt> command because the file
+It tries to create a new command <tt style="white-space: nowrap;">/usr/bin/HEAD</tt>, which
+overwrites the existing <tt style="white-space: nowrap;">head</tt> command because the file
 system is case-insensitive.
-<tt><nobr>head</nobr></tt> is a standard command used in many shell scripts and
+<tt style="white-space: nowrap;">head</tt> is a standard command used in many shell scripts and
 Makefiles.
-You need to get the original <tt><nobr>head</nobr></tt> executable back if you
+You need to get the original <tt style="white-space: nowrap;">head</tt> executable back if you
 want to use Fink.
 </p><p>
 The bootstrap script of the source release now checks for this, but
@@ -585,21 +586,29 @@ you can still run into it if you use the binary release for first-time
 installation or install libwww after you installed Fink.
 </p></div></a>
 <a name="comp-general.also_in"><div class="question"><p><b>Q4.4: When I try to install a package I get an error message about trying to overwrite a file that is in another package.</b></p></div>
-<div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <tt><nobr>foo</nobr></tt> to <tt><nobr>foo-shlibs</nobr></tt>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div></a>
+<div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <tt style="white-space: nowrap;">foo</tt> to <tt style="white-space: nowrap;">foo-shlibs</tt>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div></a>
+
+<a name="comp-general.weak_lib">
+<div class="question"><p><b>Q4.5: After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> This is new with the December 2002 Tools.  You may occasionally see messages like (choosing libgdk-pixbuf as an example):</p><p><tt style="white-space: nowrap;">ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</tt></p><p>You may regard these as harmless.  If you are curious, read through the release notes in the developer documentation directory, 
+especially GCC's and the linker's, for more info.  It essentially has to 
+do with whether missing symbols at runtime is considered a fatal error on 
+startup or not, for applications that use weak references.</p></div>
+</a>
 
 <a name="comp-packages"><h2>5 Compile Problems - Specific Packages</h2></a>
 
 
 
 <a name="comp-packages.libgtop"><div class="question"><p><b>Q5.1: libgtop fails to build with errors involving sed.</b></p></div>
-<div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <tt><nobr>~/.cshrc</nobr></tt>) does something that writes to the terminal, e.g &quot;<tt><nobr>echo Hello</nobr></tt>&quot; or <tt><nobr>xttitle</nobr></tt>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the following:</p><pre>
+<div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <tt style="white-space: nowrap;">~/.cshrc</tt>) does something that writes to the terminal, e.g &quot;<tt style="white-space: nowrap;">echo Hello</tt>&quot; or <tt style="white-space: nowrap;">xttitle</tt>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the following:</p><pre>
 if ( $?prompt) then
 echo Hello
 endif
 </pre></div></a>
 
 <a name="comp-packages.cant-install-xfree"><div class="question"><p><b>Q5.2: I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</b></p></div>
-<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p><p><b>Here's how to proceed:</b></p><p>1. Uninstall <tt><nobr>xaw3d</nobr></tt> and <tt><nobr>xaw3d-shlibs</nobr></tt> if you installed them with fink, and their version is 1.5-4 or earlier, because they also install in /usr/X11R6 (this is no longer the case for 1.5-5 and later versions).</p><p>2. Remove <tt><nobr>system-xfree86</nobr></tt>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p><p><tt><nobr>sudo dpkg --remove --force-depends system-xfree86</nobr></tt></p><p>to remove it, leaving everything in place.  If you don't have <tt><nobr>system-xfree86</nobr></tt> installed then proceed to step 3.</p><p>3. Manually remove all of XFree86.  This can be done with</p><p><tt><nobr>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</nobr></tt></p><p>4. Install fink's <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> by the usual means:  &quot;<tt><nobr>fink install</nobr></tt>&quot; for source users, &quot;<tt><nobr>apt-get install</nobr></tt>&quot; or <tt><nobr>dselect</nobr></tt> for binaries.</p><p>5. If you had <tt><nobr>xaw3d</nobr></tt> and <tt><nobr>xaw3d-shlibs</nobr></tt> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p></div></a>
+<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p><p><b>Here's how to proceed:</b></p><p>1. Uninstall <tt style="white-space: nowrap;">xaw3d</tt> and <tt style="white-space: nowrap;">xaw3d-shlibs</tt> if you installed them with fink, and their version is 1.5-4 or earlier, because they also install in /usr/X11R6 (this is no longer the case for 1.5-5 and later versions).</p><p>2. Remove <tt style="white-space: nowrap;">system-xfree86</tt>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p><p><tt style="white-space: nowrap;">sudo dpkg --remove --force-depends system-xfree86</tt></p><p>to remove it, leaving everything in place.  If you don't have <tt style="white-space: nowrap;">system-xfree86</tt> installed then proceed to step 3.</p><p>3. Manually remove all of XFree86.  This can be done with</p><p><tt style="white-space: nowrap;">sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</tt></p><p>4. Install fink's <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt> by the usual means:  &quot;<tt style="white-space: nowrap;">fink install</tt>&quot; for source users, &quot;<tt style="white-space: nowrap;">apt-get install</tt>&quot; or <tt style="white-space: nowrap;">dselect</tt> for binaries.</p><p>5. If you had <tt style="white-space: nowrap;">xaw3d</tt> and <tt style="white-space: nowrap;">xaw3d-shlibs</tt> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p></div></a>
 
 <a name="comp-packages.change-thread-nothread"><div class="question"><p><b>Q5.3: How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</b></p></div>
 <div class="answer"><p><b>A:</b> If you are running the fink version of XFree86 and you want to switch between the threaded and non-threaded versions of fink, you need to manually remove the old version. This is done at the command-line with the commands:</p><pre>
@@ -612,9 +621,9 @@ sudo dpkg -r --force-depends xfree86-base-threaded
 sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
-	</pre><p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <tt><nobr>Source Menu</nobr></tt> use &quot;<tt><nobr>Force Remove</nobr></tt>.&quot;</p><p>If you are using system-xfree86, see the previous question for removing it.</p><p>Install the version of xfree86 you want: </p><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p><p><tt><nobr>xfree86-base-threaded</nobr></tt> and <tt><nobr>xfree86-rootless-threaded</nobr></tt></p><p>by the usual means: &quot;<tt><nobr>fink install</nobr></tt>&quot; for source users, &quot;<tt><nobr>apt-get install</nobr></tt>&quot; or <tt><nobr>dselect</nobr></tt> for binaries.</p></div></a>
+	</pre><p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <tt style="white-space: nowrap;">Source Menu</tt> use &quot;<tt style="white-space: nowrap;">Force Remove</tt>.&quot;</p><p>If you are using system-xfree86, see the previous question for removing it.</p><p>Install the version of xfree86 you want: </p><p><tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt></p><p><tt style="white-space: nowrap;">xfree86-base-threaded</tt> and <tt style="white-space: nowrap;">xfree86-rootless-threaded</tt></p><p>by the usual means: &quot;<tt style="white-space: nowrap;">fink install</tt>&quot; for source users, &quot;<tt style="white-space: nowrap;">apt-get install</tt>&quot; or <tt style="white-space: nowrap;">dselect</tt> for binaries.</p></div></a>
 <a name="comp-packages.pil-wont-build"><div class="question"><p><b>Q5.4: PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> Check and see if you have <tt><nobr>freetype2-2.1.3-1</nobr></tt> installed.  This was made available for a short time, but wasn't backwards compatible with <tt><nobr>pil</nobr></tt>, among other packages, and was removed.  Find and delete <tt><nobr>freetype2_2.1.3-1_darwin-powerpc.deb</nobr></tt>, and then you can downgrade it with <tt><nobr>fink install freetype2-2.0.9-1</nobr></tt>.</p></div>
+<div class="answer"><p><b>A:</b> Check and see if you have <tt style="white-space: nowrap;">freetype2-2.1.3-1</tt> installed.  This was made available for a short time, but wasn't backwards compatible with <tt style="white-space: nowrap;">pil</tt>, among other packages, and was removed.  Find and delete <tt style="white-space: nowrap;">freetype2_2.1.3-1_darwin-powerpc.deb</tt>, and then you can downgrade it with <tt style="white-space: nowrap;">fink install freetype2-2.0.9-1</tt>.</p></div>
 </a>
 <a name="usage-general"><h2>6 Package Usage Problems - General</h2></a>
 
@@ -662,15 +671,15 @@ The presence of these extra users is a standard Unix convention for running
 certain services; the passwd package simply adds a couple of extra that Apple 
 did not provide.  You can see these Apple-installed users in NetInfo 
 Manager.app, or by running
-<tt><nobr>niutil -list . /users</nobr></tt></li>
+<tt style="white-space: nowrap;">niutil -list . /users</tt></li>
 <li>If you do decide to delete these users, be very careful of how you go about
  it.  Using the &quot;System Preferences: Users&quot; pane will assign all of their files
  to a random administrator account, and there have been reports of havoc played
  with the administrator account's permissions.  This is a bug with System 
 Preferences, and has been submitted to Apple.  A safer way to remove these 
 users from your system is to do so from within NetInfo Manager.app or use the 
-command line tool <tt><nobr>niutil</nobr></tt> in Terminal.  Read the man page
- for <tt><nobr>niutil</nobr></tt> for more information about NetInfo.</li>
+command line tool <tt style="white-space: nowrap;">niutil</tt> in Terminal.  Read the man page
+ for <tt style="white-space: nowrap;">niutil</tt> for more information about NetInfo.</li>
 </ul><p>Fink <b>does</b> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.
@@ -722,27 +731,27 @@ If you still get no sound output or XMMS complains that it can't find
 your sound card try this:
 </p><ul>
 <li>Make sure you haven't muted sound output in Mac OS X.</li>
-<li>Run <tt><nobr>esdcat /usr/libexec/config.guess</nobr></tt> (or any other
+<li>Run <tt style="white-space: nowrap;">esdcat /usr/libexec/config.guess</tt> (or any other
 file of a decent size).
 If you hear a short noise, esound works and XMMS should work too if
 it's configured correctly.
 If you don't hear anything, esd isn't working for some reason.
-You can try to start it up manually with <tt><nobr>esd &amp;</nobr></tt> and watch
+You can try to start it up manually with <tt style="white-space: nowrap;">esd &amp;</tt> and watch
 the messages.
 </li>
 <li>
 If it still doesn't work, check the permissions on
-<tt><nobr>/tmp/.esd</nobr></tt> and <tt><nobr>/tmp/.esd/socket</nobr></tt>.
+<tt style="white-space: nowrap;">/tmp/.esd</tt> and <tt style="white-space: nowrap;">/tmp/.esd/socket</tt>.
 Those should have your normal user account as the owner.
 If they aren't owned by you, kill esd if it's running, remove the
-directory as root (<tt><nobr>sudo rm -rf /tmp/.esd</nobr></tt>), then start esd
+directory as root (<tt style="white-space: nowrap;">sudo rm -rf /tmp/.esd</tt>), then start esd
 again (as a normal user, not as root).
 </li>
 </ul><p>
 Note that esd is designed to be run by a normal user, not by root.
 It usually communicates via the file system socket
-<tt><nobr>/tmp/.esd/socket</nobr></tt>.
-You only need the <tt><nobr>-tcp</nobr></tt> and <tt><nobr>-port</nobr></tt> switches if
+<tt style="white-space: nowrap;">/tmp/.esd/socket</tt>.
+You only need the <tt style="white-space: nowrap;">-tcp</tt> and <tt style="white-space: nowrap;">-port</tt> switches if
 you want to run esd clients on another machine over the network.
 </p><p>
 There have also been reports of XMMS crashing or freezing on 10.1.
@@ -770,15 +779,15 @@ Be sure that a file is selected (e.g. USA.keymapping) - simply
 activating the check box may not be sufficient with some versions.
 If you can't get to the Preferences dialog because you disabled all
 splash screens, you can delete
-<tt><nobr>~/Library/Preferences/org.xfree86.XDarwin.plist</nobr></tt> to get it
+<tt style="white-space: nowrap;">~/Library/Preferences/org.xfree86.XDarwin.plist</tt> to get it
 back, then start XDarwin and go to the Preferences dialog while the
 splash screen is displayed.
 Alternatively, you can edit that file manually in a text editor to
 enable the keymapping option (the UseKeymappingFile and KeymappingFile
 bits).
 </p><p>
-As a last resort, you can run <tt><nobr>startx -- -quartz -keymap
-USA.keymapping</nobr></tt> from Terminal.app.
+As a last resort, you can run <tt style="white-space: nowrap;">startx -- -quartz -keymap
+USA.keymapping</tt> from Terminal.app.
 If this still doesn't work, you have another problem in addition to
 the keymapping problem that prevents XDarwin from starting.
 You'll get a bunch of diagnostic messages in Terminal.app to help you
@@ -786,11 +795,11 @@ sort this out.
 </p></div></a>
 
 <a name="usage-packages.xterm-error"><div class="question"><p><b>Q7.5: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt><nobr>xfree86</nobr></tt> packages, then you can get an upgrade by the usual means (&quot;<tt><nobr>fink selfupdate-cvs ; fink update-all</nobr></tt>&quot; for installation from source, <tt><nobr>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</nobr></tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div></a>
+<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt style="white-space: nowrap;">xfree86</tt> packages, then you can get an upgrade by the usual means (&quot;<tt style="white-space: nowrap;">fink selfupdate-cvs ; fink update-all</tt>&quot; for installation from source, <tt style="white-space: nowrap;">fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div></a>
 
 <a name="usage-packages.libXmuu"><div class="question"><p><b>Q7.6: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You are missing a file that is supposed to be installed by <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
+You are missing a file that is supposed to be installed by <tt style="white-space: nowrap;">xfree86-rootless-(threaded)-shlibs</tt>.  You should reinstall it using <tt style="white-space: nowrap;">fink reinstall xfree86-rootless-shlibs</tt> (<tt style="white-space: nowrap;">fink reinstall xfree86-rootless-threaded-shlibs</tt> if you are using the threaded XFree86 packages) for source, or <tt style="white-space: nowrap;">sudo apt-get install --reinstall xfree86-rootless-shlibs</tt> for binaries.</p></div>
 </a>
 
 <hr><h2>Copyright Notice</h2>
@@ -800,4 +809,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.70 2002/12/20 19:55:31 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.71 2003/01/02 14:15:35 alexkhansen Exp $</i></p></body></html>

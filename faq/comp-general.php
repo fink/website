@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/20 19:55:31';
+$cvs_date = 'Date: 2003/01/02 14:15:35';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -52,6 +52,14 @@ installation or install libwww after you installed Fink.
 </p></div></a>
 <a name="also_in"><div class="question"><p><b>Q4.4: When I try to install a package I get an error message about trying to overwrite a file that is in another package.</b></p></div>
 <div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <tt><nobr>foo</nobr></tt> to <tt><nobr>foo-shlibs</nobr></tt>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div></a>
+
+<a name="weak_lib">
+<div class="question"><p><b>Q4.5: After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> This is new with the December 2002 Tools.  You may occasionally see messages like (choosing libgdk-pixbuf as an example):</p><p><tt><nobr>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</nobr></tt></p><p>You may regard these as harmless.  If you are curious, read through the release notes in the developer documentation directory, 
+especially GCC's and the linker's, for more info.  It essentially has to 
+do with whether missing symbols at runtime is considered a fatal error on 
+startup or not, for applications that use weak references.</p></div>
+</a>
 
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>
