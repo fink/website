@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/20 22:52:51';
+$cvs_date = 'Date: 2001/11/04 18:55:08';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -179,11 +179,33 @@ Removing packages is just as easy:
 
 <a name="src"><h2>Installing Packages from Source</h2></a>
 <p>
-[FIXME: 'fink list', 'fink install']
+To get a list of packages that are available for installation from
+source, ask the <tt><nobr>fink</nobr></tt> tool:
 </p>
+<pre>fink list</pre>
 <p>
-For the meantime, see the
-<a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage Document</a>.
+The first column lists the installation state (blank for not
+installed, <tt><nobr>i</nobr></tt> for installed, <tt><nobr>(i)</nobr></tt> for
+installed but not the latest version), followed by the package name,
+the latest version, and a short description.
+You can ask for more information about a specific package using the
+"describe" command ("info" is an alias for this):
+</p>
+<pre>fink describe xmms</pre>
+<p>
+When you have found a package that you want to install, use the
+"install" command:
+</p>
+<pre>fink install wget-ssl</pre>
+<p>
+The <tt><nobr>fink</nobr></tt> command will first check if all necessary
+prerequisites ("dependencies") are present, and will ask you if it's
+okay to install them if some are missing.
+Then it goes ahead and downloads source code, unpacks it, patches it,
+compiles it, and installs the results on your system.
+This can take a long time.
+If you run into errors during that process, please first check the
+<a href="http://fink.sourceforge.net/faq/">FAQ</a>.
 </p>
 
 

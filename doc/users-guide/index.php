@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/20 22:52:51';
+$cvs_date = 'Date: 2001/11/04 18:55:08';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -11,13 +11,12 @@ include "header.inc";
 <h1>Fink User's Guide</h1>
 <p>
 <b>This document is a work in progress.</b>
-At this time the various other documents are more useful:
-<a href="http://fink.sourceforge.net/doc/bundled/readme.php">ReadMe</a>,
+The following older documents may offer a broader view:
 <a href="http://fink.sourceforge.net/doc/bundled/install.php">Installation</a>,
 <a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</a>
-and the ReadMe.rtf included in the binary distribution.
+and the ReadMe.rtf included in the binary distribution disk image.
 Also check out the
-<a href="http://fink.sourceforge.net/doc/index.php">documentation
+<a href="http://fink.sourceforge.net/doc/">documentation
 section</a> of the web site, it has some other useful documents
 beyond that.
 </p>
@@ -55,8 +54,9 @@ apt-get</a></li>
 <ul>
 <li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
 <li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
+<li><a href="upgrade.php#mix">Mixing Binaries and Source</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.8 2001/10/20 22:52:51 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.9 2001/11/04 18:55:08 chrisp Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/20 22:52:51';
+$cvs_date = 'Date: 2001/11/04 18:55:08';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
