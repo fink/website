@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.8 2001/08/02 14:52:29 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.9 2001/08/24 17:29:42 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -14,7 +14,7 @@ Both the description format and the distribution policy are still
 evolving, so watch the "Last changed" info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
-policy used in post-0.2.3 development versions of Fink.
+policy used in post-0.2.4 development versions of Fink.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -199,6 +199,12 @@ The available expansions are:
 packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
 <dt>%i</dt><dd>the full <em>i</em>nstall-phase prefix, equivalent to %d%p</dd>
 <dt>%a</dt><dd>the path where the p<em>a</em>tches can be found</dd>
+<dt>%b</dt><dd>the <em>b</em>uild directory,
+e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1
+<p>Note: Use this only when there is no other way. The build
+directory is the current directory when scripts are executed; you
+should use relative path names in commands.</p>
+</dd>
 <dt>%c</dt><dd>the parameters for <em>c</em>onfigure:
 <code>--prefix=%p</code> plus anything specified with
 ConfigureParams</dd>
@@ -228,11 +234,12 @@ Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
 i.e. in <code>%p/share/doc/%n</code>.
+(In the InstallScript, %i must be used instead of %p, of course.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
 Note that most licenses require that the license accompanies any
-distribution, but Fink's policy is to do this even if it is not
-explicitly required.
+distribution.
+Fink's policy is to do this even if it is not explicitly required.
 </p>
 <p>
 To make an automated maintenance of the binary distribution possible,
@@ -424,9 +431,14 @@ have an associated manual page here.
 <item><itemt><code>/sw/share/info</code></itemt>
 <itemd>
 <p>
-This directory contains documentation in the info format (produced
+This directory contains documentation in the Info format (produced
 from Texinfo sources).
-Maintenance of the <code>dir</code> file is still to be determined.
+Maintenance of the <code>dir</code> file is automated through Debian's
+version of <code>install-info</code> (part of the <code>dpkg</code>
+package).
+Use the <code>InfoDocs</code> description field to automatically
+generate appropriate code for the <code>postinst</code> and
+<code>prerm</code> package scripts.
 Fink makes sure that no package installs a <code>dir</code> file of
 its own.
 There are no subdirectories.
@@ -437,12 +449,13 @@ There are no subdirectories.
 <itemd>
 <p>
 This directory contains documentation that is neither a man page nor
-an info document.
+an Info document.
 README, LICENSE and COPYING files go here.
 Every package must create a subdirectory here, named after the
 package.
 The subdirectory name must not contain any version numbers (unless
 they are a part of the package name proper).
+Hint: Just use <code>%n</code>.
 </p>
 </itemd></item>
 
@@ -763,6 +776,27 @@ page</link> for further information.
 </p>
 </itemd></item>
 
+<item><itemt>UpdatePoMakefile</itemt>
+<itemd>
+<p>
+<i>Introduced in a post-0.2.4 CVS version.</i>
+A boolean value.
+If true, the file <code>Makefile.in.in</code> in the subdirectory
+<code>po</code> is replaced with a patched version.
+This happens in the patch phase and before the PatchScript is run.
+</p>
+<p>
+The patched version respects DESTDIR and makes sure that message
+catalogs end up in <code>/sw/share/locale</code>, not
+<code>/sw/lib/locale</code>.
+Before using this field, make sure that you won't break the package
+and that it's really required.
+You can run <code>diff</code> to find the differences between the
+packages's version and Fink's version (in
+<code>/sw/lib/fink/update</code>).
+</p>
+</itemd></item>
+
 <item><itemt>Patch</itemt>
 <itemd>
 <p>
@@ -841,7 +875,7 @@ percent expansion described in the last section. A common example:
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <code>-I%p/include</code> and <code>-L%p/lib</code>,
 respectively. If you specify a value for one of these, it will be
-appended to the default value.
+prepended to the default value.
 </p>
 </itemd></item>
 
@@ -869,6 +903,8 @@ The first parameter (<code>$1</code>) is set to a value indicating
 what action is being performed.
 Some possible values are <code>install</code>, <code>upgrade</code>,
 <code>remove</code> and <code>purge</code>.
+Note that there are more values, used during error rollback or when
+removing a package in favor of another one.
 </p>
 <p>
 The scripts are called at the following times:
@@ -914,7 +950,6 @@ Only a "purge" also removes the configuration files.
 <item><itemt>InfoDocs</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
@@ -927,7 +962,6 @@ added in the future.
 <item><itemt>DaemonicFile</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 Gives a service description for <code>daemonic</code>.
 <code>daemonic</code> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
@@ -944,7 +978,6 @@ your package uses it.
 <item><itemt>DaemonicName</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 A name for the <code>daemonic</code> service description file.
 See the description of DaemonicFile for details.
 </p>
@@ -1033,8 +1066,7 @@ problems.
 <itemd>
 <p>
 <em>Obsolete.</em> gettext is now an essential package and
-always available. If the package makes more than casual use of
-gettext, you may want to declare a dependency nonetheless.
+always available.
 </p>
 </itemd></item>
 
