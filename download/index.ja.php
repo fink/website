@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/04/04 01:45:17 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2004/04/08 22:00:19 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,7 @@ include "../fink_version.inc";
 インストーラディスクイメージをダウンロード:<br>
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
 <? print $fink_version; ?> バイナリインストーラ</a> - <? print $dmg_size; ?><br>
-(10.2 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-installer.dmg?download">Fink
+(10.2 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-Installer.dmg?download">Fink
 0.6.3</a> をダウンロードして下さい)<br>
 (10.1 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
 0.4.1</a> をダウンロードして下さい)
