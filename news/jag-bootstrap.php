@@ -1,7 +1,7 @@
 <?
 $title = "Bootstapping Fink under Mac OS X 10.2";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 00:38:05 $';
+$cvs_date = '$Date: 2002/09/09 01:25:23 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,11 @@ A binary option is not yet available for the 10.2 version of Fink.
 <br><br>
 <li> <b>Step 2: Obtain the files for the Fink installation.</b>
 To do this, create a directory <b>finkcvs</b> in a location of your
-choice.  Now issue the commands
+choice with the command
+<pre>
+  mkdir finkcvs
+</pre>
+Next, issue the commands
 <pre>
   cd finkcvs
   cvs -d:pserver:anonymous@cvs.fink.sourceforge.net:/cvsroot/fink login
