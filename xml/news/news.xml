@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.96 2003/11/04 20:08:02 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.97 2003/11/05 01:23:59 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
 	<date>2003-11-04</date>
-	<headline>User Deletion Bug</headline>
+	<headline>User Deletion Bug/ Dselect Troubles</headline>
 	<body>
+<p><em>Quick Summary: DO NOT USE DSELECT,</em> and if you've used it,
+check your /sw/etc/apt/sources.list file carefully.</p>
 		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
 		on Mac OS X 10.3 could exhibit a problem where all users get deleted
-		from the netinfo database, and you become unable to log in.</p>
+		from the netinfo database, and you become unable to log in.
+We believe that this problem can only occur if you've used dselect.</p>
 		<p>If you are using Mac OS X 10.3, please be sure you're using the
 		latest Fink version to avoid the issue.  To make sure you don't have
 		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
@@ -24,8 +27,15 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main</codeblock>
 		<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
 deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</codeblock>
 		<p>We are working on updating the repository to make sure that even
-		if you update you don't get the broken code, but in the meantime,
+		if you update you don't get the broken code, and to
+repair dselect, but in the meantime,
 		make sure your <code>sources.list</code> file has the correct entries.</p>
+<p>Other users have experienced problems with dselect itself, particularly
+complaints about a missing "darwin" package.  If you are running dselect
+under 10.3 and you <em>don't</em> get this warning, then your 
+<code>sources.list</code> file is likely to be corrupted and you should
+repair it as above.
+</p>
 	</body>
 </newsitem>
 <newsitem>
