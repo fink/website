@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.en.xml,v 1.14 2004/07/11 18:06:44 michga Exp $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.15 2004/07/11 18:24:34 michga Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
@@ -218,7 +218,7 @@
         <li>News (<filename>xml/news/news.xml</filename>)</li>
       </ol>
       <p>Be sure to check also the subdirectories in <filename>xml/web</filename> for php, constants or navigation files to translate.</p>
-      <p>Do not translate or modify any php file in <filename>xml/web</filename> and its subdirectories which contains "Generated from" near the beginning of the file. You will find the corresponding xml file to translate or modify in the <filename>xml</filename> tree.</p>
+      <p>Do <em>not</em> translate or modify any php file in <filename>xml/web</filename> and its subdirectories which contains "Generated from" near the beginning of the file. You will find the corresponding xml file to translate or modify in the <filename>xml</filename> tree.</p>
       <p>The <filename>constants.*.inc</filename> files, as well as the <filename>nav.*.inc</filename> files, are intended to deal
       with hard coded items in the PHP include files. They are mostly menu
       items and such, located on top and left of the pages. You should
@@ -283,6 +283,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         <li>Edit the line to declare it is French and its encoding is UTF-8
 <codeblock>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="fr" &gt; ...</codeblock></li>
+<li><em>Very important notice:</em> Check that the cvsid line near the beginning of the file is not splitted.</li>
         <li>Save as UTF-8. Be aware that the encoding must be utf-8 and take
         care not to change anything but true text.</li>
         <li>Once you are done, or just to test it, edit the
@@ -530,6 +531,7 @@ For other
       PHP), then <xref chapter="files" section="activate">activate</xref> the
       changes.</p>
       <p><em>Never</em> change a  dynamically generated php file; change the xml file instead.</p>
+      <p><em>Check</em> that the cvsid line near the beginning of an xml file is not splitted.</p>
       <p><em>Notes:</em></p>
       <ol>
         <li>Changes to the Internationalization HOWTO (this document) will

@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/11 18:06:44';
+$cvs_date = 'Date: 2004/07/11 18:24:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -163,7 +163,7 @@ include_once "header.en.inc";
         <li>News (<code>xml/news/news.xml</code>)</li>
       </ol>
       <p>Be sure to check also the subdirectories in <code>xml/web</code> for php, constants or navigation files to translate.</p>
-      <p>Do not translate or modify any php file in <code>xml/web</code> and its subdirectories which contains "Generated from" near the beginning of the file. You will find the corresponding xml file to translate or modify in the <code>xml</code> tree.</p>
+      <p>Do <b>not</b> translate or modify any php file in <code>xml/web</code> and its subdirectories which contains "Generated from" near the beginning of the file. You will find the corresponding xml file to translate or modify in the <code>xml</code> tree.</p>
       <p>The <code>constants.*.inc</code> files, as well as the <code>nav.*.inc</code> files, are intended to deal
       with hard coded items in the PHP include files. They are mostly menu
       items and such, located on top and left of the pages. You should
@@ -230,6 +230,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         <li>Edit the line to declare it is French and its encoding is UTF-8
 <pre>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="fr" &gt; ...</pre></li>
+<li><b>Very important notice:</b> Check that the cvsid line near the beginning of the file is not splitted.</li>
         <li>Save as UTF-8. Be aware that the encoding must be utf-8 and take
         care not to change anything but true text.</li>
         <li>Once you are done, or just to test it, edit the
