@@ -9,28 +9,21 @@ include_once "header.fr.inc";
 ?>
 <h1>i18n - 3. Procédure de mise à jour des documents</h1>
     
-
     
-
     
  <p>Comme la documentation anglaise est la documentation maître, elle doit être mise à jour en premier. Une telle mise à jour peut être effectuée par un membre de l'équipe i18n (par exemple par les rédacteurs anglais) ou directement par les développeurs.</p>
       <p>Pour que tout se passe bien, vous devez suivre les procédures suivantes.</p>
     
     <h2><a name="call-to-translate">3.1 Demande de traduction</a></h2>
       
-
       <p>Quand un nouveau document est mis en ligne ou que des changements ont lieu dans la documentation anglaise, les traducteurs sont prévenus par un message envoyé sur la liste de diffusion fink-18n. Le message doit contenir les informations suivantes :</p>
-
       <ul>
         <li>Une note dans l'objet du message indiquant qu'il s'agit d'une demande de traduction, par exemple : "[translation]", ou "[translation-delayed]" pour les documents anglais qui ne sont pas mis en ligne immédiatement.</li>
-
         <li>De plus, le nom du fichier concerné doit être inclus dans le corps du message.</li>
-
         <li>Un diff doit être inclus pour indiquer les modifications faites, par exemple :
         <pre>diff -Nru3 -r<b>last_revision</b> r<b>head</b> </pre>
 </li>
       </ul>
-
       <p>Note : comme la simple exécution du commit d'un fichier XML génère un message sur la liste de diffusion fink-commits qui remplit tous les critères mentionnés ci-dessus, le plus simple est de faire suivre le message en changeant son objet. Néanmoins, cela ne fonctionne pas bien, si le nombre de changements est important.</p>
     
    <h2><a name="doc-updates">3.2 Nouveau document</a></h2>
@@ -64,7 +57,6 @@ include_once "header.fr.inc";
       
       <p>La règle actuelle est que tous les documents doivent être mis à jour suivant le schéma <a href="#prompt-update">mise à jour rapide</a>, sauf si vous avez une bonne raison de faire autrement.</p>
     
-
  <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="resources.php?phpLang=fr">4. Autres ressources</a></p>
 <? include_once "../../footer.inc"; ?>
