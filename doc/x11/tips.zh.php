@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 提示";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:46';
+$cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="prev" href="trouble.php?phpLang=zh" title="XFree86 故障排除">';
 
 include_once "header.inc";
@@ -15,15 +15,26 @@ include_once "header.inc";
       <p>
 要从终端程序窗口启动 X11 程序，你需要设置 "DISPLAY" 环境变量。
 这个变量告诉程序在哪里找到 X11 窗口服务器。
-默认设置－XDarwin 运行在相同的机器上，你的 shell 是 tcsh－的情况下，你可以这样设置环境变量：
+默认设置 XDarwin 运行在相同的机器上的情况下，你可以这样设置环境变量：
 </p>
-      <pre>setenv DISPLAY :0.0</pre>
+<ul>
+<li><p>对于 tcsh 用户：</p>
+      <pre>setenv DISPLAY :0.0</pre></li>
+<li><p>对于 bash 用户：</p>
+<pre>export DISPLAY=":0.0"</pre>
+</li>
+</ul>
       <p>
-一个不错的设置办法是在你登录的时候让 XDarwin.app 程序自动启动（可以在系统设置的登录面板中设置），并在你的 .cshrc 中加进：
+一个不错的设置办法是在你登录的时候让 XDarwin.app 程序自动启动（对于 ;OS X 10.2，可以在系统设置的登录面板中设置；对于 OS X 10.3,在用户帐号面板，启动项里面设置）。
 </p>
+<ul><li><p>对于 tcsh 用户，把下面的内容添加到你的 .cshrc 文件中：</p>
       <pre>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
-endif</pre>
+endif</pre> 
+</li>
+<li><p>对 bash 用户，添加下述内容到你的 .bashrc 文件：</p>
+<pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
+</li></ul>
       <p>
 这会在每个 shell 中自动设置 DISPLAY 变量。但它不会覆盖已经设置的 DISPLAY 值。这样你仍然可以远程地运行 X11 程序或通过 ssh X11 隧道来使用它。
 </p>
@@ -61,9 +72,10 @@ X11 系统实际上有几个单独的剪贴板（X11 中称为 "剪切缓冲区�
 </p>
       <pre>autocutsel &amp;</pre>
       <p>
-（要把它放在运行窗口管理器<b>之前</b>，否则它不会被运行！不要把它添加在末尾，那样它不会被运行）。
+（要把它放在运行窗口管理器<b>之前</b>，否则它不会被运行！不要把它添加在末尾，那样它不会被运行）。请注意现在对于苹果的 X11 已经不需要这样做(参考 <a href="inst-xfree86.php?phpLang=zh#apple-binary">关于使用苹果的 X11 的一些注意事项</a>).
 </p>
-      <p>如果你使用苹果的 X11，你可以使用 Command-C 或 编辑-&gt;拷贝，就象一般的 mac 程序一样，来拷贝文本到剪贴板。不过，暂时你还不能用 Command-V 粘贴剪贴板里面的内容。</p>
+      <p>如果你使用苹果的 X11，你可以使用 Command-C 或 编辑-&gt;拷贝，就象一般的 mac 程序一样，来拷贝文本到剪贴板。并可以使用鼠标中键或 Command-V 来从剪贴板粘贴内容到苹果的 X11.</p>
+<p>任何情况下，如果你碰到从 Aqua 拷贝粘贴到 X11 或相反的问题，首先你可以尝试粘贴两次(有些时候拷贝操作不是立刻进行)，其次你可以使用中间终须，也就是说，在 Aqua 的一边使用TextEdit 或 Terminal.app，在 X11 一边则使用 nedit 或 xterm。在我的经验中，总是可以找到解决的办法。</p>
     
   
 

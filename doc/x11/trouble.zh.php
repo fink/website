@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 故障排除";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:46';
+$cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="tips.php?phpLang=zh" title="使用提示"><link rel="prev" href="other.php?phpLang=zh" title="其它 X11 可能">';
 
 include_once "header.inc";
@@ -130,7 +130,7 @@ failed to connect as window server!</pre>
 以及 <code>XDarwinStartup</code>，一个很小的可执行文件。
 如果任意的一个不存在或指向另外的文件，你需要修正它。
 应该如何做取决于你安装 XFree86 的方式。
-参考 <a href="inst-xfree86.php?phpLang=zh#rootless">《无根模式服务器介绍》</a>部分获取更多的提示。
+如果你通过 Fink 安装 XFree86，那么你需要重新安装 <code>xfree86</code> 软件包(或对于 OS X 10.2 及更早版本，安装 <code>xfree86-rootless</code>)。如果你自己安装 Xfree86，那么从 Xquartz.tgz 中解压出这些文件。
 </p>
       <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
 &gt; Error:            Can't find file "unknown" for geometry include

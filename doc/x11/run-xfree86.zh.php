@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 启动 XFree86";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:46';
+$cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="xtools.php?phpLang=zh" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=zh" title="获取和安装 XFree86">';
 
 include_once "header.inc";
@@ -37,9 +37,10 @@ include_once "header.inc";
 最后，可以有些选项设置 <code>xdm</code>；请阅读它的手册页面获取详细信息。
 </p>
       <p>
-注意：如果你使用 Mac OS X，你可以在登录窗口输入 <code>&gt;console</code>　来获得一个和纯 Darwin 环境等效的纯文本控制台。
+注意：如果你使用 Mac OS X Panther 之前的版本，你可以在登录窗口输入 <code>&gt;console</code>　来获得一个和纯 Darwin 环境等效的纯文本控制台。如果你在登录窗口看不到输入用户的地方，你可以按下随便一个用户名的第一个字母，然后按 Option+Return 组合键。
 然后，你可以使用上面描述的启动方法，除了 <code>xdm</code> 作为一个例外。
 </p>
+<p>如果你运行的是 Panther，你不能从控制台窗口启动 XFree86。</p>
     
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
       
@@ -104,12 +105,12 @@ include_once "header.inc";
       <p>
 关于启动 GNOME 的一个简单例子：
 </p>
-      <pre>source /sw/bin/init.sh
+      <pre>. /sw/bin/init.sh
 exec gnome-session</pre>
       <p>
-一个稍微复杂一点的例子会关闭 X11 响铃，启动一些客户程序，最后运行 Enlightenment 窗口管理器：
+一个稍微复杂一点的针对 bash 用户的例子会关闭 X11 响铃，启动一些客户程序，最后运行 Enlightenment 窗口管理器：
 </p>
-      <pre>source /sw/bin/init.sh
+      <pre>. /sw/bin/init.sh
 
 xset b off
 
@@ -118,6 +119,31 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
+
+<p>要在苹果的 X11 下启动 GNOME 2.2，使用下面的命令：</p>    
+ <pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</pre> 
+
+<p>要在苹果的 X11 下启动 GNOME 2.4，metacity 会自动被启动，所以命令应该修改为：</p>    
+ <pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</pre>
+ 
+<p>在苹果的 X11 下启动 KDE 3.2 (版本大于 3.2.2-21)：</p>
+<pre>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+</pre>
+
+<p>最后，在苹果的 X11 下启动最新的非稳定版 KDE：</p>
+<pre>. /sw/bin/init.sh
+/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+</pre>
     
   <p align="right">
 Next: <a href="xtools.php?phpLang=zh">5 Xtools</a></p>
