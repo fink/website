@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.3 2004/03/12 09:25:18 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.4 2004/03/13 22:48:43 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -866,6 +866,23 @@ directory, and will issue a warning if so.
 
 
 </section>
+<section name="emacs"><title>Emacs Policy</title>
+<p> The Fink project has chosen to follow the Debian project's policy
+regarding emacs, with a few small differences.
+(The Debian policy document can be found at
+<link 
+url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
+http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>.)
+There are two differences in the Fink policy.  First, 
+this policy only applies to the emacs20 and
+emacs21 packages in fink at the moment, not to the xemacs package.  (This
+may change some day in the future.)    And second, unlike the Debian policy,
+ Fink packages are allowed to install things directly into 
+/sw/share/emacs/site-lisp.
+</p>
+
+</section>
+
 </chapter>
 
 
