@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.15 2001/04/26 20:28:43 chrisp Exp $ */
+/* $Id: header.inc,v 1.16 2001/04/27 17:34:01 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -32,6 +32,8 @@ $pages_darwin = array(
 $pages_faq = array(
   "faq/index.php", "FAQ Contents", 0,
   "faq/general.php", "General", 0,
+  "faq/install.php", "Installation", 0,
+  "faq/usage.php", "Usage", 0,
   "faq/packages.php", "Packages", 0
 );
 
