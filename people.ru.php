@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: horsager $';
-$cvs_date = '$Date: 2005/01/16 09:32:59 $';
+$cvs_author = '$Author: chrisdolan $';
+$cvs_date = '$Date: 2005/01/25 21:47:48 $';
 
 include "header.inc";
 ?>
@@ -48,6 +48,7 @@ include "header.inc";
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
+<li>Chris Dolan</li>
 <li>Koen van der Drift</li>
 <li>rayg</li>
 <li>Michèle Garoche (<i>miga</i>)</li>

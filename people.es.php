@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/14 22:55:21 $';
+$cvs_author = '$Author: chrisdolan $';
+$cvs_date = '$Date: 2005/01/25 21:47:47 $';
 
 include "header.inc";
 ?>
@@ -57,6 +57,7 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
+<li>Chris Dolan</li>
 <li>Koen van der Drift</li>
 <li>rayg</li>
 <li>Michèle Garoche (<i>miga</i>)</li>
