@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.14 2001/04/26 16:24:10 chrisp Exp $ */
+/* $Id: header.inc,v 1.15 2001/04/26 20:28:43 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -100,6 +100,8 @@ href="<? print $root ?>index.php"><img src="<? print $root
 alt="Download" /></a><a href="<? print $root ?>fink/index.php"><img
 src="<? print $root ?>img/menu-fink.gif" width="40" height="22"
 border="0" alt="Fink" /></a><a href="<? print $root
+?>faq/index.php"><img src="<? print $root ?>img/menu-faq.gif"
+width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root
 ?>darwin/index.php"><img src="<? print $root ?>img/menu-darwin.gif"
 width="58" height="22" border="0" alt="Darwin" /></a></td>
 
