@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/23 15:33:19 $';
+$cvs_date = '$Date: 2001/10/31 10:31:47 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,6 +33,11 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-10-31:
+<a href="http://www.macosxhints.com/">MacOSXHints</a> has posted an
+<a href="http://homepage.mac.com/rgriff/xdarwin.html">installation
+guide</a> for XFree86, Fink, Window Maker and The GIMP.
+</p>
 <p>2001-10-23:
 In addition to ripping off Fink packages and breaking the GPL, the
 ports collection at <a href="http://macosx.forked.net/">forked.net</a>
@@ -42,13 +47,6 @@ More <a href="pr/forked.php">details</a> now available.
 <p>2001-10-03: The binary distribution update is now complete.
 The <a href="news/puma.php">10.1 compatibility report</a> has been
 updated to reflect the fixes in Fink 0.3.0.
-</p>
-<p>2001-09-30: Fink 0.3.0 is released.
-The source release, the binary installer and a binary upgrade kit for
-broken-by-10.1 installations are available in the new <a
-href="download/index.php">download section</a>.
-The bulk of the binary distribution will be updated gradually over the
-next few days, as usual.
 </p>
 
 <h2>Status</h2>
