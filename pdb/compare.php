@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 03:14:04 $';
+$cvs_date = '$Date: 2004/04/21 04:26:29 $';
 
 include "header.inc";
 include "releases.inc";
@@ -55,7 +55,7 @@ if($op) {
 			$name = $matches[1];
 			$vers = $matches[2];
 			$rev = $matches[3];
-			$q = "UPDATE package SET needtest = ".($op - 1)." WHERE (release = '".$tree1.
+			$q = "UPDATE package SET moveflag = ".($op - 1)." WHERE (release = '".$tree1.
 			"' AND name='".$name."' AND version = '".$vers."' AND revision = '".$rev."')";	
 			$rs2 = mysql_query($q, $dbh);
 			if (mysql_errno()) {
@@ -99,7 +99,7 @@ if (!$rs) {
 <form action="compare.php" method="POST">
 <?PHP
 }
-$q = "SELECT name,maintainer,version,revision,needtest FROM package ".
+$q = "SELECT name,maintainer,version,revision,moveflag,needtest FROM package ".
   	 "WHERE release LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
   	 "ORDER BY \"$sort\" ASC";
@@ -141,14 +141,14 @@ if (!$rs) {
   		{
 #			 $desc = " - ".$row[descshort];
 #			if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
-			  $desc = "";
-			  
+			  $desc = "";  
+
 			$pkglist = $pkglist."<li>";			
-			if($row[needtest] == 1) {
+			if($row[moveflag] == 1) {
 				$pkglist = $pkglist."<div class=\"bgreen\">";
 				$green = 1;
 				$red = 0;
-			}	elseif($row[needtest] == 2) {
+			}	elseif($row[moveflag] == 2) {
 				$pkglist = $pkglist."<div class=\"bred\">";
 				$red = 1;
 				$green = 0;
@@ -174,7 +174,7 @@ if (!$rs) {
 				$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
 				 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
 
-			if($row[needtest] > 0)
+			if($row[moveflag] > 0)
 				$pkglist = $pkglist."</div>";
 	
 			$pkglist = $pkglist."</li>\n";
