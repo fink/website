@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/21 15:39:49 $';
+$cvs_date = '$Date: 2001/04/25 20:10:28 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ This is a moderated, low-traffic list for release announcements.</li>
 is the general talk mailing list for Fink users. If you have problems,
 this is the place to ask.</li>
 <li><a href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a>
-(no archive yet<!-- <a href="http://www.geocrawler.com/redir-sf.php3?list=fink-devel">Archives</a> -->)<br>This
+(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-devel">Archives</a>)<br>This
 is the mailing list for package maintainers and developers. If you
 want to package your favourite software for Fink, this is the place to
 go.</li>
