@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.22 2005/02/16 02:25:05 chrisdolan Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.23 2005/02/21 02:44:10 dmacks Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1464,10 +1464,11 @@ Only available in <code>fink</code> newer than version 0.21.0
    --percent=key       in the order listed.
       </codeblock>
     </section>
+<!-- 'fink snapshot' will not be included in 0.24
     <section name="snapshot">
       <title>snapshot</title>
       <p>
-	Only available in <code>fink</code> newer than version 0.23.5
+	Only available in <code>fink</code> newer than version 0.24
       </p>
       <p>
 	Creates a new .info file for you in /tmp which describes all
@@ -1478,5 +1479,6 @@ Only available in <code>fink</code> newer than version 0.21.0
 	created .info file itself.
       </p>
     </section>
+-->
   </chapter>
 </document>
