@@ -1,7 +1,7 @@
 <?
 $title = "Contributeurs";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 20:41:41 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/11/14 22:55:21 $';
 
 include "header.inc";
 ?>
@@ -40,7 +40,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <ul>
 <li>Jorge Acereda</li> 
 <li>Aida Shinra</li>
-<li>Asari Takashi</li>
+<li>Asari Takashi (<i>asari</i>)</li>
 <li>Spundun Bhatt (<i>Spundun</i>)</li>
 <li>Rob Braun (<i>bbraun</i>)</li>
 <li>Keith Conger (<i>kconger</i>)</li>
@@ -60,7 +60,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Daniel Johnson</li>
 <li>Carsten Klapp</li>
 <li>Killian Koepsell</li> 
-<li>Mamoru Komashi</li>
+<li>Mamoru Komachi (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
 <li>Jean-François Mertens</li>
@@ -88,7 +88,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 
 <h2>Support, traduction et équipe de documentation </h2>
 <ul>
-<li>Asari Takashi</li>
+<li>Asari Takashi (<i>asari</i>)</li>
 <li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Léonard Bouchet</li>
 <li>Philippe Boulnois</li>

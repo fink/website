@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 20:53:11 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/11/14 22:55:21 $';
 
 include "header.inc";
 ?>
@@ -39,7 +39,7 @@ include "header.inc";
 <ul>
 <li>Jorge Acereda</li> 
 <li>Aida Shinra</li>
-<li>Asari Takashi</li>
+<li>Asari Takashi (<i>asari</i>)</li>
 <li>Spundun Bhatt (<i>Spundun</i>)</li>
 <li>Rob Braun (<i>bbraun</i>)</li>
 <li>Keith Conger (<i>kconger</i>)</li>
@@ -59,7 +59,7 @@ include "header.inc";
 <li>Daniel Johnson</li>
 <li>Carsten Klapp</li>
 <li>Killian Koepsell</li> 
-<li>Mamoru Komashi</li>
+<li>Mamoru Komachi (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
 <li>Jean-François Mertens</li>
@@ -86,7 +86,7 @@ include "header.inc";
 
 <h2>支持，翻译和文档团队</h2>
 <ul>
-<li>Asari Takashi</li>
+<li>Asari Takashi (<i>asari</i>)</li>
 <li>马场美彦(<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Léonard Bouchet</li>
 <li>Philippe Boulnois</li>

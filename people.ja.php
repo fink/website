@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 20:41:41 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/11/14 22:55:21 $';
 
 include "header.inc";
 ?>
@@ -50,8 +50,8 @@ Fink プロジェクトはボランティアによって成り立っています
 
 <ul>
 <li>Jorge Acereda</li> 
-<li>Aida Shinra</li>
-<li>Asari Takashi</li>
+<li>相田 森羅</li>
+<li>浅利 尚志 (<i>asari</i>)</li>
 <li>Spundun Bhatt (<i>Spundun</i>)</li>
 <li>Rob Braun (<i>bbraun</i>)</li>
 <li>Keith Conger (<i>kconger</i>)</li>
@@ -71,7 +71,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Daniel Johnson</li>
 <li>Carsten Klapp</li>
 <li>Killian Koepsell</li> 
-<li>Mamoru Komashi</li>
+<li>小町 守 (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
 <li>Jean-François Mertens</li>
@@ -99,7 +99,7 @@ Fink プロジェクトはボランティアによって成り立っています
 
 <h2>サポート、翻訳、ドキュメンテーションチーム</h2>
 <ul>
-<li>Asari Takashi</li>
+<li>浅利 尚志 (<i>asari</i>)</li>
 <li>馬場 美彦 (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Léonard Bouchet</li>
 <li>Philippe Boulnois</li>
@@ -117,7 +117,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Marc Sierbren Kxadijk</li>
 <li>Mathieu Legrand</li>
 <li>Zoran Nesic</li>
-<li>Noda Kai</li>
+<li>野田 開</li>
 <li>Julien Palmas</li>
 <li>GianMichele Pileri</li>
 <li>José Ramón Portillo</li>
