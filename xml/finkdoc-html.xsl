@@ -63,7 +63,7 @@
 
 <xsl:template match="chapter">
 
-<a name="{@filename}"><h2><xsl:number format="1 " /><xsl:value-of select="title"/></h2></a>
+<h2><a name="{@filename}"><xsl:number format="1 " /><xsl:value-of select="title"/></a></h2>
 
 <xsl:apply-templates/>
 

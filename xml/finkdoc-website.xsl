@@ -163,11 +163,11 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 </xsl:template>
 
 <xsl:template match="section">
-<a name="{@name}"><h2>
+<h2><a name="{@name}">
 <xsl:if test="boolean(//document)">
 <xsl:number count="chapter" format="1." /><xsl:number format="1 " />
 </xsl:if>
-<xsl:value-of select="title"/></h2></a>
+<xsl:value-of select="title"/></a></h2>
 <xsl:apply-templates/>
 </xsl:template>
 
