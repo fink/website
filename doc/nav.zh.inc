@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.zh.inc,v 1.1 2004/03/04 05:05:23 jeff_yecn Exp $ */
+/* $Id: nav.zh.inc,v 1.2 2004/03/13 03:09:34 jeff_yecn Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -11,7 +11,8 @@ $navbox = array(
   "doc/bundled/readme.php", "自述",
   "doc/cvsaccess/index.php", "CVS 访问",
   "doc/porting/index.php", "移植",
-  "doc/packaging/index.php", "打包"
+  "doc/packaging/index.php", "打包",
+  "doc/multilingual/index.php", "国际化"
 );
 
 ?>
