@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.5 2002/05/30 21:58:47 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.6 2002/07/17 00:13:54 fingolfin Exp $</cvsid>
+
+<newsitem>
+  <date>2002-07-17</date>
+  <headline>Binary distribution moves</headline>
+  <body>
+    <p>
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <link url="news/bindist_move.php">read more here.</link>.
+    </p>
+  </body>
+</newsitem>
 
 <newsitem>
   <date>2002-05-29</date>
