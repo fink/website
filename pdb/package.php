@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/07/10 14:59:06 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2004/08/17 04:38:21 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -53,6 +53,9 @@ $maintainer = mysql_fetch_row($qs);
     else
     if(ereg("^0.6.3",$cr))
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.2 only)");
+    else
+    if(ereg("^0.7.0",$cr))
+      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.3 only)");
     else
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>"
       			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ? " ".$rmap[$cr] : "not present"
