@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/08 07:59:43';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/11 21:43:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
@@ -63,7 +63,9 @@ include_once "header.inc";
         Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=en#x-options">8.5 I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
         should I install?</a></li><li><a href="usage-general.php?phpLang=en#no-display">8.6 When I try to run an application, I get a message that says "cannot
         open display:". What do I need to do?</a></li><li><a href="usage-general.php?phpLang=en#suggest-package">8.7 I don't see my favorite program in Fink. How do I suggest a new
-        package for inclusion in Fink?</a></li></ul></li><li><a href="usage-packages.php?phpLang=en"><b>9 Package Usage Problems - Specific Packages</b></a><ul><li><a href="usage-packages.php?phpLang=en#xmms-quiet">9.1 I get no sound from XMMS</a></li><li><a href="usage-packages.php?phpLang=en#nedit-window-locks">9.2 If I am editing a file in nedit, when I open another file its
+        package for inclusion in Fink?</a></li><li><a href="usage-general.php?phpLang=en#virtpackage">8.8 What are all these <code>system-*</code> "virtual
+	  packages" that are sometimes present, but that I can't
+	  seem to install or remove myself?</a></li></ul></li><li><a href="usage-packages.php?phpLang=en"><b>9 Package Usage Problems - Specific Packages</b></a><ul><li><a href="usage-packages.php?phpLang=en#xmms-quiet">9.1 I get no sound from XMMS</a></li><li><a href="usage-packages.php?phpLang=en#nedit-window-locks">9.2 If I am editing a file in nedit, when I open another file its
         window pops up but is unresponsive.</a></li><li><a href="usage-packages.php?phpLang=en#xdarwin-start">9.3 Help! When I start XDarwin, it immediately quits!</a></li><li><a href="usage-packages.php?phpLang=en#no-server">9.4 When I try to start XDarwin I get the message "xinit: No such file
         or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=en#xterm-error">9.5 xterm fails with "dyld: xterm Undefined symbols: xterm undefined
         reference to _tgetent expected to be defined in
@@ -75,6 +77,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.11 2004/04/08 07:59:43 michga Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.12 2004/04/11 21:43:35 dmacks Exp $-->
 
 <? include_once "footer.inc"; ?>
