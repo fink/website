@@ -1,9 +1,9 @@
 <?
 $title = "Running X11 - Other Stuff";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/18 20:55:27';
+$cvs_date = 'Date: 2001/07/23 11:36:26';
 
-$metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="prev" href="xtools.php" title="Xtools">';
+$metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="trouble.php" title="Troubleshooting and Tips"><link rel="prev" href="xtools.php" title="Xtools">';
 
 include "header.inc";
 ?>
@@ -28,15 +28,25 @@ more information on that.
 
 <a name="wiredx"><h2>WiredX</h2></a>
 <p>
-<a href="http://www.jcraft.com/wiredx/">WiredX</a> is a X11
+<a href="http://www.jcraft.com/wiredx/">WiredX</a> is an X11
 server written in Java.
 It also supports rootless mode.
-A Installer.app package is available at the web site.
+An Installer.app package is available at the web site.
 </p>
 
 
 
+<a name="exodus"><h2>eXodus</h2></a>
+<p>
+Reportedly, a Mac OS X native version of <a href="http://www.powerlan-usa.com/exodus/">eXodus</a> is now in beta
+testing.
+If someone can provide more information, just throw it my way.
+</p>
 
+
+
+<p align="right">
+Next: <a href="trouble.php">Troubleshooting and Tips</a></p>
 
 
 <?
