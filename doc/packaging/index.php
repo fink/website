@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/02/24 04:29:19';
+$cvs_date = 'Date: 2002/03/19 22:54:53';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -53,10 +53,11 @@ mailing list.
 <ul>
 <li><a href="reference.php#build">5.1 The Build Process</a></li>
 <li><a href="reference.php#fields">5.2 Fields</a></li>
-<li><a href="reference.php#scripts">5.3 Scripts</a></li>
-<li><a href="reference.php#patches">5.4 Patches</a></li>
+<li><a href="reference.php#splitoffs">5.3 SplitOffs</a></li>
+<li><a href="reference.php#scripts">5.4 Scripts</a></li>
+<li><a href="reference.php#patches">5.5 Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.19 2002/02/24 04:29:19 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.23 2002/03/19 22:54:53 dmrrsn Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/02/24 04:29:19';
+$cvs_date = 'Date: 2002/03/19 22:54:53';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -125,21 +125,22 @@ for existence before calling them and the like).
 <a name="sharedlibs"><h2>3.3 Shared Libraries</h2></a>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
-(This section of the documentation contains a preliminary discussion
-of the policy, which may evolve slightly as it becomes more fully
-implemented.)
+(This section of the documentation discusses version 2
+of the policy, which coincides with the release of version 0.9.9 of
+the fink package manager.)
 We first discuss the policy as applied to newly ported software, and
-then turn to the question of upgrading existing fink packages.  For an
-example of the policy in action, see the  libpng and 
-libpng-shlibs packages.
+then turn to the question of upgrading existing fink packages.  For 
+examples of the policy in action, see the  libpng, libjpeg  and 
+libtiff packages.
 </p><p>
 Software which has been ported to Darwin should build shared libraries (as 
 opposed to static libraries) whenever possible.  When this has been done,
 <b>two</b> closely related fink packages should be made, named foo 
-and foo-shlibs.  At present, this must be done by hand, but an extension to 
-fink is under development which will allow both fink packages to be generated 
-from a single .info file.  (In fact, more than two packages can be
-generated if necessary.)
+and foo-shlibs.  These can be made with a single .info file, using
+the <tt><nobr>SplitOff</nobr></tt> field, as described below.  
+(In fact, it is often necessary
+to make more than two packages from the source, and this can be done
+using <tt><nobr>SplitOff2</nobr></tt>, <tt><nobr>SplitOff3</nobr></tt>, etc.)
 </p><p>
 Each software package for which shared libraries can be built must have
 a <b>major version number</b> N.  The major version number is only supposed
@@ -152,7 +153,8 @@ the pre-existing libpng package was 2, but recent versions of the
 library have major version number 3.  So there are now four fink packages
 to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
 Only one of libpng and libpng3 can be installed at any given time,
-but libpnd-shlibs and libpng3-shlibs can be installed at the same time.
+but libpng-shlibs and libpng3-shlibs can be installed at the same time.
+(Note that only two .info files are required to build these four packages.)
 </p><p>
 The shared library itself and certain related files will be put into 
 the package barN-shlibs; the "include" files and certain other files will
@@ -173,7 +175,12 @@ use the dependencies
 </pre>
 Once this system is fully in place, it will not be permitted for 
 another package to depend on barN itself.  (For backward compatibility,
-such dependencies are allowed for pre-existing packages.)
+such dependencies are allowed for pre-existing packages.)  This is
+signaled to other developers by a boolean field
+<pre>
+  BuildDependsOnly: True
+</pre>
+within the package description for barN.
 </p><p>
 If your package includes both shared libraries and binary files, and
 if the binary files need to be present at runtime (not just at build
@@ -198,7 +205,8 @@ If the static library is also built, then it will be installed at
 <pre>
   %i/lib/bar.a
 </pre>
-These things are usually handled automatically by libtool, but you should
+If the package uses libtool, these things are usually handled automatically,
+but in any event you should
 check that they have been done correctly in your case.  You should also
 check that current_version and compatibility_version were defined 
 appropriately for your shared libraries.  (These are also shown with the 
@@ -208,37 +216,52 @@ Files are then divided between the two packages as follows
 <ul>
 <li>  in package barN-shlibs:
 <pre>
-    %i/lib/bar.N.x.y.dylib
-    %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
-    %i/lib/bar/N/*
-    %i/share/bar/N/*
-    %i/share/doc/barN-shlibs/*
+  %i/lib/bar.N.x.y.dylib
+  %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
+  %i/lib/bar/N/*
+  %i/share/bar/N/*
+  %i/share/doc/barN-shlibs/*
 </pre></li>
 <li>  in package barN:
 <pre>
-    %i/include/*
-    %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
-    %i/lib/bar.a
-    %i/share/doc/barN/*
-    other files, if needed
+  %i/include/*
+  %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
+  %i/lib/bar.a
+  %i/share/doc/barN/*
+  other files, if needed
 </pre></li></ul>
 Notice that both packages are required to have some documentation about
 the license, but that the directories containing the DocFiles will be
 different.
 </p><p>
-At the moment, the only way to do this is to let each package run the
-original CompileScript and InstallScript, and then remove some of the files
-prior to installation.  (Notice that, as in the examples libpng, 
-libpng-shlibs, you may be able to use %v in place of N.x.y or x.y in
-the .info file, which is more robust for updating minor versions of the
-same package later on.)  In the extension of fink under development,
-you will be able to just specify which files are to be installed into 
-barN-shlibs rather than into barN.
-</p><p>
-There should be a dependency specifed in package barN:
+Doing this is quite easy in practice, using the 
+<tt><nobr>SplitOff</nobr></tt> field.  Here is
+how the example above would be implemented (in part):
 <pre>
-  Depends: barN-shlibs (= exact.version.of.barN)
+Package: barN
+Version: N.x.y
+Revision: 1
+License: GPL
+Depends: barN-shlibs (= %v-%r)
+BuildDependsOnly: True
+DocFiles: COPYING
+SplitOff: &lt;&lt;
+  Package: barN-shlibs
+  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  DocFiles: COPYING
+&lt;&lt;
 </pre>
+During the execution of the <tt><nobr>SplitOff</nobr></tt>
+field, the specified files and directories are moved from the 
+install directory %I of the main package to the install directory %i of the
+splitoff package.  (There is a similar convention for names: %N is the
+name of the main package, and %n is the name of the current package.)
+The <tt><nobr>DocFiles</nobr></tt> command then puts a copy of the documentation into 
+%i/share/doc/barN-shlibs.
+</p><p>
+Notice that we have included the exact current version of barN-shlibs as a 
+dependency of the main package barN (which can be abbreviated 
+%N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
 automatically "inherits" all the dependencies of barN-shlibs.
 </p><p>
@@ -287,6 +310,37 @@ which have not used the correct names or symbolic links for shared libraries
 must be upgraded carefully, on a case-by-case basis.  If you are
 having trouble finding an upgrade strategy to make your packages compliant
 with the new policy, please discuss it on the fink-devel mailing list.
+</p><p>
+<b>Packages containing both binary files and libraries:</b>
+</p><p>
+When an upstream package contains both binary files and libraries, some
+care must be exercised in constructing fink packages.  In some cases,
+the only binary files will be things like <tt><nobr>foo-config</nobr></tt> which
+are presumably only used at build time and never at run time.  In these
+cases, the binaries can go with the header files in the <tt><nobr>foo</nobr></tt>
+package.
+</p><p>
+In other cases, the binary files will be needed by other packages at
+runtime, and they must be split off into a separate fink package with
+a name something like <tt><nobr>foo-bin</nobr></tt>.  The <tt><nobr>foo-bin</nobr></tt>
+package should depend on the <tt><nobr>foo-shlibs</nobr></tt> package, and
+maintainers of other packages should be encouraged to use
+<pre>
+  Depends: foo-bin
+  BuildDepends: foo
+</pre>
+which will take care of foo-shlibs implicitly.
+</p><p>
+Upgrading presents a problem in this situation, however, since users won't
+be prompted to install <tt><nobr>foo-bin</nobr></tt>.  To work around this, until
+all other package maintainers have revised their packages as above,
+your <tt><nobr>foo</nobr></tt> package can say
+<pre>
+  Depends: foo-shlibs (= exact.version), foo-bin
+</pre>
+This will force the installation of foo-bin on most users' systems, until
+such time as the other package maintainers have upgraded their packages
+which depend on <tt><nobr>foo</nobr></tt>.
 </p>
 
 

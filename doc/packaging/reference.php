@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/02/24 04:29:19';
+$cvs_date = 'Date: 2002/03/19 22:54:53';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -39,6 +39,11 @@ directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
 All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
+<p>(<i>Introduced in fink 0.9.9.</i> It is possible to generate several
+packages from a single package description using the <tt><nobr>SplitOff</nobr></tt>
+field.  Towards the end of the install phase, separate install directories
+are created for each package being created, and files are moved to
+the appropriate directory.)</p>
 <p>In the <b>build phase</b> a binary package file (.deb) is built
 from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
@@ -47,8 +52,9 @@ generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 
 <a name="fields"><h2>5.2 Fields</h2></a>
 
-<p>This list is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
-
+<p>We have divided the list of fields into several categories.
+The list of fields is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
+<p><b>Initial Data:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
 The package name.
@@ -57,6 +63,9 @@ May contain lowercase letters, numbers and the special characters '.',
 No underscores ('_'), no capital letters.
 Required field.
 </p>
+<p>Effective with fink 0.9.9, percent expansion is applied to this field,
+as well as the fields Depends, BuildDepends, Provides, Conflicts,
+Replaces, Recommends, Suggests, and Enhances.</p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
 The upstream version number.
@@ -70,6 +79,14 @@ Increase this when you make a new description for the same upstream
 version.
 Revision numbers start at 1.
 Required field.
+</p>
+</td></tr><tr valign="top"><td>Description</td><td>
+<p>
+A short description of the package (what is it?). This is a
+one-line description that will be displayed in lists, so it must be
+short and informative.  Keep it to around 30 to 50 chars. It is not
+necessary to repeat the package name in this field - it will always
+be displayed in proper context. Required field.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
@@ -91,6 +108,16 @@ some directories in the InstallScript.
 Finally since fink 0.9.5 there is type <tt><nobr>perl</nobr></tt> which causes
 alternate default values for the compile and install scripts to be used. 
 </p>
+</td></tr><tr valign="top"><td>License</td><td>
+<p>
+This field gives the nature of the license under which the package is
+distributed.
+The value must be one of the values described in <a href="policy.php#license">Package Licenses</a> earlier in
+this document.
+Additionally, this field must only be given if the package actually
+complies to the packaging policy in these respects, i.e. a copy of the
+license is installed in the doc directory for the package.
+</p>
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
 The name and e-mail address of the person responsible for the package.
@@ -98,7 +125,9 @@ This field is required, and there must be exactly one name and address
 in the following format:
 </p>
 <pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
-</td></tr><tr valign="top"><td>Depends</td><td>
+</td></tr></table>
+<p><b>Dependencies:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 A list of packages which must be installed before this package can be
 built.
@@ -187,7 +216,15 @@ non-essential packages implicitly depend on the essential ones. dpkg
 will refuse to remove essential packages from the system unless
 special flags are used to override this.
 </p>
-</td></tr><tr valign="top"><td>Source</td><td>
+</td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+A boolean value which indicates that no other packages should Depend on
+this one, they should only BuildDepend.
+</p>
+</td></tr></table>
+<p><b>Unpack Phase:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Source</td><td>
 <p>
 An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
@@ -250,7 +287,7 @@ expanded - that would be useless anyway.
 </p>
 </td></tr><tr valign="top"><td>Source<i>N</i>ExtractDir</td><td>
 <p>
-Normally, an auxillary tarball will be extracted in the same
+Normally, an auxiliary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
@@ -275,7 +312,9 @@ This is just the same as the <tt><nobr>SourceRename</nobr></tt> field, except th
 is used to rename the Nth tarball as specified by the <tt><nobr>Source<i>N</i></nobr></tt>
 field. See context or hyperref for examples of usage.
 </p>
-</td></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
+</td></tr></table>
+<p><b>Patch Phase:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
 A boolean value. If true, the files config.guess and config.sub
 in the build directory will be replaced with versions that know about
@@ -335,15 +374,6 @@ You can run <tt><nobr>diff</nobr></tt> to find the differences between the
 packages's version and Fink's version (in
 <tt><nobr>/sw/lib/fink/update</nobr></tt>).
 </p>
-</td></tr><tr valign="top"><td>UpdatePOD</td><td>
-<p>
-<i>Introduced in fink 0.9.5.</i>
-A boolean value, specific for perl module packages.
-If true, this will add code to the install, postrm and postinst
-scripts that maintains the .pod files provided by perl packages.
-This includes adding and removing the .pod date from the central
-<tt><nobr>/sw/lib/perl5/darwin/perllocal.pod</nobr></tt> file
-</p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
 The filename of a patch to be applied with <tt><nobr>patch -p1
@@ -361,72 +391,9 @@ otherwise modify the package. There is no default. Before the
 commands are executed, percent expansion takes place (see last
 section).
 </p>
-</td></tr><tr valign="top"><td>ConfigureParams</td><td>
-<p>
-Additional parameters to pass to the configure script. (See
-CompileScript for details.)
-</p>
-</td></tr><tr valign="top"><td>CompileScript</td><td>
-<p>
-A list of commands that are run in the compile phase. See the note
-on scripts below. This is the place to put commands that configure and
-compile the package. Normally the default is:
-</p>
-<pre>./configure %c
-make</pre>
-<p>
-This is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field),
-the default instead is:
-</p>
-<pre>perl Makefile.PL PREFIX=\%p INSTALLPRIVLIB=\%p/lib/perl5 \
- INSTALLARCHLIB=\%p/lib/perl5/darwin INSTALLSITELIB=\%p/lib/perl5 \
- INSTALLSITEARCH=\%p/lib/perl5/darwin INSTALLMAN1DIR=\%p/share/man/man1 \
- INSTALLMAN3DIR=\%p/share/man/man3
-make
-make test</pre>
-<p>
-Before the commands are executed, percent expansion takes place
-(see previous section).
-</p>
-</td></tr><tr valign="top"><td>InstallScript</td><td>
-<p>
-A list of commands that are run in the install phase. See the note
-on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. Normally the
-default is:
-</p>
-<pre>make install prefix=%i</pre>
-<p>
-The default is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field),
-the default instead is:
-</p>
-<pre>make install INSTALLPRIVLIB=\%i/lib/perl5 \
- INSTALLARCHLIB=\%i/lib/perl5/darwin INSTALLSITELIB=\%i/lib/perl5 \
- INSTALLSITEARCH=\%i/lib/perl5/darwin INSTALLMAN1DIR=\%i/share/man/man1 \
- INSTALLMAN3DIR=\%i/share/man/man3</pre>
-<p>
-If the package supports it, it is preferably to use <tt><nobr>make install
-DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
-expansion takes place (see previous section).
-</p>
-</td></tr><tr valign="top"><td>DocFiles</td><td>
-<p>
-This field provides a convenient way to install README or COPYING
-files in the doc directory for the package,
-<tt><nobr>%p/share/doc/%n</nobr></tt>.
-The value is a space-separated list of files.
-You can copy files from subdirectories of the build directory, but
-they will end up in the doc directory itself, not in a subdirectory.
-Shell wildcards are allowed.
-It is also possible to rename single files on the fly by appending the
-new name separated by a colon (:),
-e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
-This field works by appending appropriate <tt><nobr>install</nobr></tt>
-commands to the InstallScript.
-</p>
-</td></tr><tr valign="top"><td>Set<i>ENVVAR</i></td><td>
+</td></tr></table>
+<p><b>Compile Phase:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Set<i>ENVVAR</i></td><td>
 <p>
 Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
@@ -448,7 +415,114 @@ When set to a true value, deactivates the default values for
 CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
 remain unset, specify <tt><nobr>NoSetLDFLAGS: true</nobr></tt> .
 </p>
-</td></tr><tr valign="top"><td>PreInstScript, PostInstScript, PreRmScript, PostRmScript</td><td>
+</td></tr><tr valign="top"><td>ConfigureParams</td><td>
+<p>
+Additional parameters to pass to the configure script. (See
+CompileScript for details.)
+</p>
+</td></tr><tr valign="top"><td>CompileScript</td><td>
+<p>
+A list of commands that are run in the compile phase. See the note
+on scripts below. This is the place to put commands that configure and
+compile the package. Normally the default is:
+</p>
+<pre>./configure %c
+make</pre>
+<p>
+This is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<pre>perl Makefile.PL PREFIX=\%p \
+ INSTALLPRIVLIB=\%p/lib/perl5 \
+ INSTALLARCHLIB=\%p/lib/perl5/darwin \
+ INSTALLSITELIB=\%p/lib/perl5 \
+ INSTALLSITEARCH=\%p/lib/perl5/darwin \
+ INSTALLMAN1DIR=\%p/share/man/man1 \
+ INSTALLMAN3DIR=\%p/share/man/man3
+make
+make test</pre>
+<p>
+Before the commands are executed, percent expansion takes place
+(see previous section).
+</p>
+</td></tr></table>
+<p><b>Install Phase:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
+<p>
+<i>Introduced in fink 0.9.5.</i>
+A boolean value, specific for perl module packages.
+If true, this will add code to the install, postrm and postinst
+scripts that maintains the .pod files provided by perl packages.
+This includes adding and removing the .pod date from the central
+<tt><nobr>/sw/lib/perl5/darwin/perllocal.pod</nobr></tt> file
+</p>
+</td></tr><tr valign="top"><td>InstallScript</td><td>
+<p>
+A list of commands that are run in the install phase. See the note
+on scripts below. This is the place to put commands that copy all
+necessary files to the stow directory for the package. Normally the
+default is:
+</p>
+<pre>make install prefix=%i</pre>
+<p>
+The default is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<pre>make install INSTALLPRIVLIB=\%i/lib/perl5 \
+ INSTALLARCHLIB=\%i/lib/perl5/darwin \
+ INSTALLSITELIB=\%i/lib/perl5 \
+ INSTALLSITEARCH=\%i/lib/perl5/darwin \
+ INSTALLMAN1DIR=\%i/share/man/man1 \
+ INSTALLMAN3DIR=\%i/share/man/man3</pre>
+<p>
+If the package supports it, it is preferably to use <tt><nobr>make install
+DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
+expansion takes place (see previous section).
+</p>
+</td></tr><tr valign="top"><td>DocFiles</td><td>
+<p>
+This field provides a convenient way to install README or COPYING
+files in the doc directory for the package,
+<tt><nobr>%p/share/doc/%n</nobr></tt>.
+The value is a space-separated list of files.
+You can copy files from subdirectories of the build directory, but
+they will end up in the doc directory itself, not in a subdirectory.
+Shell wildcards are allowed.
+It is also possible to rename single files on the fly by appending the
+new name separated by a colon (:),
+e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
+This field works by appending appropriate <tt><nobr>install</nobr></tt>
+commands to the InstallScript.
+</p>
+</td></tr><tr valign="top"><td>SplitOff</td><td>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+Generate a second package from the same compile/install run.
+For details about how this works, see the separate
+<a href="#splitoffs">splitoff section</a> below.
+</p>
+</td></tr><tr valign="top"><td>SplitOff<i>N</i></td><td>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+This is the same as <tt><nobr>SplitOff</nobr></tt>, used to generate a third,
+fourth, etc. package from the same compile/install run.
+</p>
+</td></tr><tr valign="top"><td>Files</td><td>
+<p>
+<i>Introduced in fink 0.9.9.</i>
+Used <b>only</b>
+within a <tt><nobr>SplitOff</nobr></tt> or <tt><nobr>SplitOff<i>N</i></nobr></tt> field,
+this designates which files and directories
+should be moved from the parent package's  installation
+directory %I to the current installation directory %i.  Note that this
+is executed after the InstallScript and the DocFiles of the parent package,
+but before the InstallScript and Docfiles of the current package.
+</p>
+</td></tr></table>
+<p><b>Build Phase:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>PreInstScript, PostInstScript, PreRmScript, PostRmScript</td><td>
 <p>
 These fields specify pieces of shell scripts that will be called when
 the package is installed, upgraded or removed.
@@ -527,17 +601,16 @@ your package uses it.
 A name for the <tt><nobr>daemonic</nobr></tt> service description file.
 See the description of DaemonicFile for details.
 </p>
-</td></tr><tr valign="top"><td>Description</td><td>
+</td></tr></table>
+<p><b>Additional Data:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Homepage</td><td>
 <p>
-A short description of the package (what is it?). This is a
-one-line description that will be displayed in lists, so it must be
-short and informative.  Keep it to around 30 to 50 chars. It is not
-necessary to repeat the package name in this field - it will always
-be displayed in proper context. Required field.
+The URL of the upstream home page of the package.
 </p>
 </td></tr><tr valign="top"><td>DescDetail</td><td>
 <p>
-A more detailed description (what is it, what can I use it for?).
+A more detailed description than the one in the <tt><nobr>Description</nobr></tt>
+field (what is it, what can I use it for?).
 Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>DescUsage</td><td>
@@ -556,20 +629,6 @@ everything in place" goes here. Multiple lines allowed.
 Notes that are specific to porting the package to Darwin. Stuff
 like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
-</p>
-</td></tr><tr valign="top"><td>License</td><td>
-<p>
-This field gives the nature of the license under which the package is
-distributed.
-The value must be one of the values described in <a href="policy.php#license">Package Licenses</a> earlier in
-this document.
-Additionally, this field must only be given if the package actually
-complies to the packaging policy in these respects, i.e. a copy of the
-license is installed in the doc directory for the package.
-</p>
-</td></tr><tr valign="top"><td>Homepage</td><td>
-<p>
-The URL of the upstream home page of the package.
 </p>
 </td></tr><tr valign="top"><td>Comment</td><td>
 <p>
@@ -595,7 +654,70 @@ always available.
 </td></tr></table>
 
 
-<a name="scripts"><h2>5.3 Scripts</h2></a>
+<a name="splitoffs"><h2>5.3 SplitOffs</h2></a>
+<p>Beginning with fink 0.9.9, a single .info file can be used to build
+multiple packages.  
+The install phase begins as usual, with the execution of the 
+<tt><nobr>InstallScript</nobr></tt> and <tt><nobr>DocFiles</nobr></tt> commands.
+A <tt><nobr>SplitOff</nobr></tt> field, if present, then triggers the
+creation of a
+second install directory.  Within the 
+<tt><nobr>SplitOff</nobr></tt> field, the new install directory is referred to as %i,
+while the original install directory of the parent 
+package is referred to as %I.
+</p>
+<p>
+The <tt><nobr>SplitOff</nobr></tt> field must contain a number of fields of its
+own.  In fact, it resembles a complete package description, but with
+certain fields missing.  Here is what belongs in the sub-description
+(by category):
+<ul>
+<li>Initial Data: Only the <tt><nobr>Package</nobr></tt> needs to be specified,
+everything else is inherited from the parent package (except for
+<tt><nobr>Type</nobr></tt>, which is internally set to the value 
+<tt><nobr>splitoff</nobr></tt>).  Percent expansion can be used, and it is often
+convenient to refer to the name %N of the parent package.</li>
+<li>Dependencies: All of these are allowed except <tt><nobr>Essential</nobr></tt>,
+which cannot be used for a sub-package.</li>
+<li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
+and will be ignored.</li>
+<li>Install Phase, Build Phase: Any of these fields are allowed (except
+that <tt><nobr>SplitOff</nobr></tt> should not be used within a <tt><nobr>SplitOff</nobr></tt>
+field).</li>
+<li>Additional Data: These are inherited from the parent package but may
+be modified by declaring the field within the <tt><nobr>SplitOff</nobr></tt>.</li>
+</ul>
+</p><p>
+During the install phase, the <tt><nobr>InstallScript</nobr></tt> and 
+<tt><nobr>DocFiles</nobr></tt> of the parent package are executed first.
+Next comes the <tt><nobr>Files</nobr></tt> command specified in the
+<tt><nobr>SplitOff</nobr></tt> field, which causes the listed files and directories
+to be moved from the parent's installation directory %I to the
+current installation directory %i.  Then the <tt><nobr>InstallScript</nobr></tt>
+and <tt><nobr>DocFiles</nobr></tt> of the <tt><nobr>SplitOff</nobr></tt> package are
+executed.  
+</p><p>
+If there are additional sub-packages specified with <tt><nobr>SplitOff2</nobr></tt>,
+<tt><nobr>SplitOff3</nobr></tt>, etc., this same sequence of commands
+(<tt><nobr>Files</nobr></tt>, <tt><nobr>InstallScript</nobr></tt>, <tt><nobr>DocFiles</nobr></tt>)
+is executed for each of them in turn.
+</p><p>
+During the build phase, the pre/post install/remove scripts for each of
+the packages is constructed by using the build phase commands which
+were specified for that package.
+</p><p>
+Each package being built is required
+to document the licensing arrangement in %i/share/doc/%n (and of course
+%n takes a different value for each package).  Note that
+<tt><nobr>DocFiles</nobr></tt> copies files rather than moving them, so it is
+possible to install identical copies of the documentation into each 
+of the packages by using <tt><nobr>DocFiles</nobr></tt> several times.
+</p>
+
+
+
+
+<a name="scripts"><h2>5.4 Scripts</h2></a>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
@@ -605,7 +727,7 @@ the <tt><nobr>cd</nobr></tt> commands only affect commands that are on the same
 line. This may be fixed one day in the future.</p>
 
 
-<a name="patches"><h2>5.4 Patches</h2></a>
+<a name="patches"><h2>5.5 Patches</h2></a>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/02/24 04:29:19';
+$cvs_date = 'Date: 2002/03/19 22:54:53';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -32,7 +32,7 @@ directory is necessary for the Debian tools.</li>
 <li>The distribution. There is <tt><nobr>stable</nobr></tt>,
 <tt><nobr>unstable</nobr></tt> and <tt><nobr>local</nobr></tt>. The <tt><nobr>local</nobr></tt>
 directory is under the control of the local administrator/user. The
-<tt><nobr>stable</nobr></tt> and <tt><nobr>unstable</nobr></tt> directores are part of
+<tt><nobr>stable</nobr></tt> and <tt><nobr>unstable</nobr></tt> directories are part of
 Fink.</li>
 <li>The tree. The <tt><nobr>main</nobr></tt> tree contains the bulk of the
 packages. Cryptographic software is kept in a separate tree,
@@ -91,8 +91,21 @@ install -m 644 COPYING %i/share/doc/%n
 <p>
 Note the lack of indentation and the terminating
 <tt><nobr>&lt;&lt;</nobr></tt>.
-</p>
-<p>
+</p><p>
+As a special case, when working within a <tt><nobr>SplitOff</nobr></tt> or
+<tt><nobr>SplitOff<i>N</i></nobr></tt> field, the here-document syntax
+can be nested.  The same terminator <tt><nobr>&lt;&lt;</nobr></tt> is used
+for the sub-here-document.  Here is an example:
+<pre>
+SplitOff: &lt;&lt;
+  Package: %N-shlibs
+  InstallScript: &lt;&lt;
+    ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
+  &lt;&lt;
+&lt;&lt;
+</pre>
+(The indentation is optional, but it improves readability.)
+</p><p>
 Empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
 <tt><nobr>InstallScript</nobr></tt>, <tt><nobr>installscript</nobr></tt> or
@@ -111,14 +124,21 @@ performed on some fields.
 The available expansions are:
 </p>
 <dl>
-<dt>%n</dt><dd>the package <b>n</b>ame</dd>
+<dt>%n</dt><dd>the <b>n</b>ame of the current package</dd>
+<dt>%N</dt><dd>the <b>N</b>ame of the parent package (the same as
+%n unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
 <dt>%v</dt><dd>the package <b>v</b>ersion</dd>
 <dt>%r</dt><dd>the package <b>r</b>evision</dd>
 <dt>%f</dt><dd>the <b>f</b>ull package name, i.e. %n-%v-%r</dd>
-<dt>%p</dt><dd>the <b>p</b>refix where Fink is installed, e.g. /sw</dd>
+<dt>%p, %P</dt><dd>the <b>p</b>refix where Fink is installed, e.g. /sw</dd>
 <dt>%d</dt><dd>the <b>d</b>estination directory where the tree to be
 packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
+<dt>%D</dt><dd>the <b>D</b>estination for the parent package (the same as
+%d unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
 <dt>%i</dt><dd>the full <b>i</b>nstall-phase prefix, equivalent to %d%p</dd>
+<dt>%I</dt><dd>the <b>I</b>nstall prefix of the parent package,
+equivalent to %D%P (the same as
+%i unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
 <dt>%a</dt><dd>the path where the p<b>a</b>tches can be found</dd>
 <dt>%b</dt><dd>the <b>b</b>uild directory,
 e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/02/24 04:29:19';
+$cvs_date = 'Date: 2002/03/19 22:54:53';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
@@ -60,7 +60,7 @@ C headers, those headers <b>must</b> go to a subdirectory.
 </p>
 </td></tr><tr valign="top"><td><tt><nobr>/sw/lib</nobr></tt></td><td>
 <p>
-This directory is for architecture-dependend data files and
+This directory is for architecture-dependent data files and
 libraries.
 Static and shared libraries should be placed directly in
 <tt><nobr>/sw/lib</nobr></tt> unless there is a good reason not to.
@@ -134,7 +134,7 @@ This directory holds configuration files.
 For packages that have more than one or two files here a subdirectory
 should be made.
 The subdirectory must have the name of the package or program in it so
-that it is identifyable.
+that it is identifiable.
 </p>
 </td></tr><tr valign="top"><td><tt><nobr>/sw/src</nobr></tt></td><td>
 <p>
