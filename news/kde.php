@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 02:51:36 $';
+$cvs_date = '$Date: 2002/05/28 12:56:01 $';
 
 include "header.inc";
 ?>
@@ -15,10 +15,10 @@ include "header.inc";
 
 <p>
 screenshots:
-[<a href="kde3-thesin-gimp.png">#1</a>]
-[<a href="kde3-vasi-oroborosx_and_konq.png">#2</a>]
-[<a href="kde3-rangerrick-ie_and_konq.png">#3</a>]
-[<a href="kde3-rangerrick-koffice.png">#4</a>]
+[<a href="kde3-thesin-gimp.html">#1</a>]
+[<a href="kde3-vasi-oroborosx_and_konq.html">#2</a>]
+[<a href="kde3-rangerrick-ie_and_konq.html">#3</a>]
+[<a href="kde3-rangerrick-koffice.html">#4</a>]
 </p>
 
 <p>
