@@ -1,31 +1,20 @@
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20 gcc 编译器问题的解决方案。"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
 <p>
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
+苹果发布了 2004 年十一月的 gcc3 更新，它可以在 connect.apple.com 下载(需要先免费注册)。这个更新修正了 XCode 1.5 中的 gcc3 编译器的问题。如果你正在使用 XCode 1.5，你应该安装这个更新。(这个更新可以正确地更新未经修改的 XCode 1.5，也可以更新那些实施了以前 fink 所推荐的临时办法的用户。)
 </p><p>
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
+我们向苹果能够响应我们提交的关于这个问题的报告，并尽快给予解决表示感谢。
 </p>
 
 
-<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-10-15 gcc 问题的临时解决办法。"><span class="news-date">2004-10-15: </span><span class="news-headline">gcc 问题的临时解决办法。</span></a><?php gray_line(); ?>
 <p>
-The version of gcc included with XCode 1.5 is known to produce 
-incorrect output from c++ code under certain circumstances.
-Fink now has a mechanism to warn users about this, and Fink will soon
-refuse
-to use the "broken" gcc to compile packages which are known to
-have this problem.
+在 XCode 1.5 中包括的 gcc 版本已经被发现在某些情况下会对 c++ 代码产生错误的输出。
+Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会拒绝使用有问题的 gcc 来编译一直存在这个问题的软件包。
 </p><p>
-If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
-and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
-</p><p> If you have not yet upgraded, you should consider remaining with
-XCode version 1.2 until the problem has been resolved.
+如果你已经升级 XCode 到版本 1.5，下面是一个临时解决办法，
+在 <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">这里</a>
+和<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">这里</a>有详细的描述。
+</p><p>如果你还没有升级，你应该考虑继续使用版本 1.2，直到这个问题获得解决。
 </p>
 
 
