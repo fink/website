@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-beginners";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/12/06 17:21:20 $';
+$cvs_date = '$Date: 2002/04/01 17:41:25 $';
 
 include "header.inc";
 ?>
@@ -26,9 +26,9 @@ Before posting a call for help on the list, please make an attempt to
 resolve your problem using the
 <a href="../doc/index.php">documentation</a>, the
 <a href="../faq/index.php">FAQ</a>, the
-<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-beginners">fink-beginners
+<a href="http://www.mail-archive.com/fink-beginners@lists.sourceforge.net">fink-beginners
 archives</a> and the
-<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-users">fink-users
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net">fink-users
 archives</a> first.
 If you ask for help for a well-known problem, expect to be pointed
 back at these resources.
