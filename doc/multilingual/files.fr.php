@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/11 19:09:04';
+$cvs_date = 'Date: 2004/07/16 08:43:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -111,6 +111,7 @@ include_once "header.fr.inc";
        <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
        <li>Étiquette net (<code>xml/netiquette/netiquette.en.xml</code>)</li>
        <li>Sécurité (<code>xml/security/security.en.xml</code>)</li>
+       <li>Tutoriel d'empaquetage (<code>xml/quick-start-pkg/quick-start-pkg.en.xml</code>)</li>
        <li>Construction de paquets (<code>xml/packaging/packaging.en.xml</code>)</li>
        <li>Portage (<code>xml/porting/porting.en.xml</code>)</li>
        <li>Dernières nouvelles (<code>xml/news/news.xml</code>)</li>

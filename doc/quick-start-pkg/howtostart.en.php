@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/15 16:16:12';
+$cvs_date = 'Date: 2004/07/16 09:02:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -42,7 +42,7 @@ Using Fink: A Developer's How To</a>
 
 
 Read and try to understand the 
-<a href="example.php">example provided here</a>.
+<a href="example.php?phpLang=en#basics"></a>.
 </li>
 <li>
 Look at other, similar packages in your 
@@ -60,7 +60,7 @@ if there is a matching request. You might find valuable information there.
 </li>
 <li>
 Maybe browse the 
-<a href="http://fink.sourceforge.net/doc/packaging/">Packaging Manual</a>
+<a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>
 if you think you need more detailed information.
 </li>
 </ul>
@@ -96,11 +96,11 @@ finkdev% fink index
 </pre>
 <p>
 If you need more information read the 
-<a href="http://fink.sourceforge.net/doc/packaging/">Packaging Manual</a>
+<a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>
 or use one or more of different 
-<a href="http://fink.sourceforge.net/help/">help sources</a>.
+<a href="http://fink.sourceforge.net/help/index.php">help sources</a>.
 You should also subscribe to the 
-<a href="http://fink.sourceforge.net/lists/">fink-devel</a>
+<a href="http://fink.sourceforge.net/lists/index.php">fink-devel</a>
 mailing list.
 </p>
 
@@ -127,7 +127,7 @@ finkdev% fink build packagename
 </pre>
 <p>
 Watch the output of the build process carefully for errors or warnings.
-Especially make sure that everything is installed into the build directory
+Especially make sure that everything is installed into the destination directory
 (which is located at /sw/src/root-packagename-%v-%r/sw) from where
 fink builds the binary package. Nothing should be installed directly into
 /sw.
@@ -137,6 +137,9 @@ If you use the --keep-build-dir or -k option to fink, it will
 keep the build directory. This is where fink expands the downloaded source and 
 where the package gets built. This might help if you need to debug the build
 process. Type man fink for details.
+</p>
+<p>
+You may also want to use the --keep-root-dir or -K option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
 </p>
 <p>
 If the build succeeds check the content of the binary package with:

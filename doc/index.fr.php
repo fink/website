@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/10 18:22:31';
+$cvs_date = 'Date: 2004/07/16 08:45:21';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.9 2004/07/10 18:22:31 michga Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.10 2004/07/16 08:45:21 michga Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
@@ -38,6 +38,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 <li><a href="security/index.php">Charte de sécurité</a> - Lecture obligatoire pour tous ceux qui sont mainteneurs de paquets dans Fink ou qui veulent le devenir.</li>
 <li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a> (disponible aussi sous <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</a>) </li>
 <li><a href="porting/index.php">Trucs et astuces pour le portage</a> - notes sur le portage d'applications Unix sur Darwin</li>
+      <li><a href="quick-start-pkg/index.php">Tutoriel d'empaquetage</a> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><a href="packaging/index.php">Guide de construction des paquets</a> - comment créer et maintenir des paquets Fink</li>
 </ul>
 <h2><a name="otherdoc">Autres Documents</a></h2>
