@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/22 19:18:30';
+$cvs_date = 'Date: 2004/04/17 13:39:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 include_once "header.inc";
@@ -158,6 +158,14 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <div class="answer"><p><b>A:</b> 这是因为它是一个虚拟软件包。
     这类错误在 Java 通过软件更新升级后造成的：
     有关的头问题被删除了，引起不能生成 -dev 软件包。</p><p>你需要自己从<a href="http://connect.apple.com">苹果网站</a>下载相应的<code>Java 开发工具</code>软件包。在本例的情况中，你需要<code>Java 1.4.2 Developer Tools</code>。</p></div>
+    </a>
+    <a name="dpkg-split">
+      <div class="question"><p><b>Q6.19: 当我尝试安装东西的时候，我碰到 <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q> 这样的错误。我怎么修复它？</b></p></div>
+      <div class="answer"><p><b>A:</b> 通常来说，这可以通过正确设置你的环境变量来修复。参考 <a href="usage-fink.php?phpLang=zh#fink-not-found">这个 FAQ 条目</a>。</p></div>
+    </a>
+    <a name="xml-parser">
+      <div class="question"><p><b>Q6.20: 我碰到这个 <q>configure: error: XML::Parser perl module is required for intltool</q> 错误信息。我应该怎么办？</b></p></div>
+      <div class="answer"><p><b>A:</b> 你需要确定你安装了对应你系统中的 Perl 版本的 xml-parser-pm 软件包。例如，如果你使用 Panther，你应该安装 <code>xml-parser-pm581</code>，而不是 <code>xml-parser-pm560</code>(你可以会有 <code>xml-parser-pm</code> 占位软件包)，因为你使用 <code>Perl-5.8.1</code>，而不是 <code>Perl-5.6.0</code>。</p></div>
     </a>
   <p align="right">
 Next: <a href="comp-packages.php?phpLang=zh">7 编译问题－特定软件包</a></p>

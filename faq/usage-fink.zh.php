@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/22 19:18:30';
+$cvs_date = 'Date: 2004/04/17 13:39:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 include_once "header.inc";
@@ -106,7 +106,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     </a>
     <a name="sudo">
       <div class="question"><p><b>Q5.9: 每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</b></p></div>
-      <div class="answer"><p><b>A:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限编辑 <code>/etc/sudoers</code> 文件，并添加一行：</p><pre>username ALL = NOPASSWD: ALL</pre><p>把 <code>username</code> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
+      <div class="answer"><p><b>A:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限运行 <code>visudo</code> 命令，并添加一行：</p><pre>username ALL = NOPASSWD: ALL</pre><p>把 <code>username</code> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
     </a>
     <a name="exec-init-csh">
       <div class="question"><p><b>Q5.10: 当我尝试运行 init.csh 或 init.sh 时，我碰到一个 "Permission denied" 错误。我做错了什么？</b></p></div>
@@ -184,7 +184,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="fink-not-found">
       <div class="question"><p><b>Q5.15: 当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 "command not found" 错误。</b></p></div>
-      <div class="answer"><p><b>A:</b> 如果这总是发生，那么也许你已经不小心修改了你的启动脚本。运行 <code>/sw/bin/pathsetup.command</code> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。</p><p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p><pre>. /sw/bin/init.sh</pre><p>在做完以后，重新运行 X11。</p></div>
+      <div class="answer"><p><b>A:</b> 如果这总是发生，那么也许你已经不小心修改了(或没有成功修改)你的启动脚本。运行 <code>/sw/bin/pathsetup.command</code> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。<b>注意：</b>对 <code>fink-0.18.3</code> 和 <code>fink-0.19.2</code>，这个脚本已经改为 <code>/sw/bin/pathsetup.sh</code>，而且必须在终端窗口中运行。</p><p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p><pre>. /sw/bin/init.sh</pre><p>在做完以后，重新运行 X11。</p></div>
     </a>
     <a name="invisible-sw">
       <div class="question"><p><b>Q5.16: 我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</b></p></div>
@@ -192,7 +192,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="install-info-bad">
       <div class="question"><p><b>Q5.17: 我不能安装任何软件，因为我碰到下面的错误信息："install-info: unrecognized option `--infodir=/sw/share/info'"。</b></p></div>
-      <div class="answer"><p><b>A:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面，要么如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，这时也许你需要在使用 Fink 的时候临时重命名其它 <code>install-info</code>。</p></div>
+      <div class="answer"><p><b>A:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面。或者如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <code>install-info</code> 子目录。</p></div>
     </a>
     <a name="bad-list-file">
       <div class="question"><p><b>Q5.18: 我不能安装或删除任何东西，因为一个 "files list file" 问题。</b></p></div>
@@ -288,7 +288,7 @@ update available list script returned error exit status 1.
 gzip: stdout: Broken pipe
 ### execution of gzip failed, exit code 138</pre><p>或</p><pre>dpkg-deb -b root-base-files-1.9.0-1
 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
-### execution of dpkg-deb failed, exit code 10
+### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">

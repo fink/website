@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.9 2004/03/22 19:18:30 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.10 2004/04/17 13:39:48 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -418,7 +418,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
         <p>每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</p>
       </question>
       <answer>
-        <p>你可以配制 sudo 不需要询问你密码。用 root 权限编辑 <filename>/etc/sudoers</filename> 文件，并添加一行：</p>
+        <p>你可以配制 sudo 不需要询问你密码。用 root 权限运行 <code>visudo</code> 命令，并添加一行：</p>
         <codeblock>username ALL = NOPASSWD: ALL</codeblock>
         <p>把 <code>username</code> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p>
       </answer>
@@ -560,7 +560,7 @@ fink selfupdate-cvs</codeblock>
         <p>当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 &quot;command not found&quot; 错误。</p>
       </question>
       <answer>
-        <p>如果这总是发生，那么也许你已经不小心修改了你的启动脚本。运行 <filename>/sw/bin/pathsetup.command</filename> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。</p>
+        <p>如果这总是发生，那么也许你已经不小心修改了(或没有成功修改)你的启动脚本。运行 <filename>/sw/bin/pathsetup.command</filename> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。<em>注意：</em>对 <code>fink-0.18.3</code> 和 <code>fink-0.19.2</code>，这个脚本已经改为 <filename>/sw/bin/pathsetup.sh</filename>，而且必须在终端窗口中运行。</p>
         <p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc" >.xinitrc</link> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p>
         <codeblock>. /sw/bin/init.sh</codeblock>
         <p>在做完以后，重新运行 X11。</p>
@@ -583,7 +583,7 @@ fink selfupdate-cvs</codeblock>
       <answer>
         <p>这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p>
         <codeblock>printenv PATH</codeblock>
-        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面，要么如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，这时也许你需要在使用 Fink 的时候临时重命名其它 <filename>install-info</filename>。</p>
+        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file" >
@@ -750,7 +750,7 @@ gzip: stdout: Broken pipe
         <p>或</p>
         <codeblock>dpkg-deb -b root-base-files-1.9.0-1
 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
-### execution of dpkg-deb failed, exit code 10
+### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
         <p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p>
         <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
@@ -1037,6 +1037,22 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     <p>你需要自己从<link url="http://connect.apple.com">苹果网站</link>下载相应的<filename>Java 开发工具</filename>软件包。在本例的情况中，你需要<filename>Java 1.4.2 Developer Tools</filename>。</p>
     </answer>
     </faqentry>
+    <faqentry name="dpkg-split">
+      <question>
+        <p>当我尝试安装东西的时候，我碰到 <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote> 这样的错误。我怎么修复它？</p>
+      </question>
+      <answer>
+        <p>通常来说，这可以通过正确设置你的环境变量来修复。参考 <xref chapter="usage-fink" section="fink-not-found">这个 FAQ 条目</xref>。</p>
+      </answer>
+    </faqentry>
+    <faqentry name="xml-parser">
+      <question>
+        <p>我碰到这个 <quote>configure: error: XML::Parser perl module is required for intltool</quote> 错误信息。我应该怎么办？</p>
+      </question>
+      <answer>
+        <p>你需要确定你安装了对应你系统中的 Perl 版本的 xml-parser-pm 软件包。例如，如果你使用 Panther，你应该安装 <code>xml-parser-pm581</code>，而不是 <code>xml-parser-pm560</code>(你可以会有 <code>xml-parser-pm</code> 占位软件包)，因为你使用 <code>Perl-5.8.1</code>，而不是 <code>Perl-5.6.0</code>。</p>
+      </answer>
+    </faqentry>
   </chapter>
   <chapter filename="comp-packages" >
     <title>编译问题－特定软件包</title>
@@ -1276,6 +1292,70 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
       <answer>
         <p>在 Fink 项目的<link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203" >软件包需求追踪器</link>。</p>
         <p>注意你需要一个 SourceForge 帐号才可以添加。</p>
+      </answer>
+    </faqentry>
+    <faqentry name="virtpackage">
+      <question>
+        <p>这些名为 <code>system-*</code> 的“虚拟软件包”有些时候会存在，但我却不能自己安装或删除它们？</p>
+      </question>
+      <answer>
+        <p>
+	  名为类似 <code>system-perl</code> 的软件包是占位软件包。它们不包含实际的文件，而仅仅作为 fink 识别在它之外手工安装的程序一种机制。
+	</p>
+        <p>
+	  从 10.3 版本开始，多数软件包什么不是你可以安装或删除的实际软件包。
+	  相反，它们是“虚拟软件包”，软件包数据由 fink 程序自身根据一个手工安装的程序的预配置清单来产生。
+	  对每个虚拟软件包，fink 会检查特定位置的一些特定文件，如果找到这些文件，就会认为这个虚拟软件包“已经安装”。
+	</p>
+        <p>
+	  你可以运行 <code>fink-virtual-packages</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
+	  使用 <code>--debug</code> 标志可以获取有关 fink 检查了哪些文件诊断信息。
+	</p>
+        <p>
+	  不幸的是，没有办法让你自己安装任意的软件(在 fink 之外)并让 fink 识别到它，而不是 fink 自己的版本。
+	  要通用地检查配置和编译标志，路径名等等参数太困难了。
+	</p>
+        <p>
+	  下面是 fink 定义的最重要的一些虚拟软件包(对 fink-0.19.2)：
+	</p>
+        <ul>
+          <li>system-perl: [virtual package representing perl]
+	    <p>
+	      代表 <filename>/usr/bin/perl</filename>，它是默认 OS X 安装的一部分。这个软件包同时提供 <code>system-perlXXX</code> 和 <code>perlXXX-core</code>，根据 perl 解析器的版本号 X.X.X。
+	    </p>
+	  </li>
+          <li>system-javaXXX: [virtual package representing Java X.X.X]
+	    <p>
+	      代表 Java 运行时环境，它是 OS X(和苹果的软件更新)的一部分。参考<link url="http://www.apple.com/java">苹果的 Java 网页</link>来获取更多信息。
+	    </p>
+	  </li>
+          <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+	    <p>
+	      代表 Java SDK，它需要从 <link url="http://connect.apple.com">connect.apple.com</link> 手工下载(需要免费注册)并安装。
+	      如果你更新了你的 Java 运行时环境，你的 SDK 并不会自动相应更新(甚至可能被删除！)。
+	      记得在安装或升级的运行时环境以后检查(如果需要的话重新下载和安装)这个 SDK。
+	      参考 <xref chapter="comp-general" section="system-java">这个 FAQ 条目</xref>。
+	    </p>
+	  </li>
+          <li>system-java3d: [virtual package representing Java3D]</li>
+          <li>system-javaai: [virtual package representing Java Advanced Imaging]
+	    <p>
+	      代表 Java 的三维图形和图象处理的扩展，它需要从苹果手工下载和安装。
+	      查看<link url="http://docs.info.apple.com/article.html?artnum=120289">苹果网站</link>来获取详细信息。
+	    </p>
+	  </li>
+          <li>system-xfree86: [placeholder for user installed x11]</li>
+          <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
+	    <p>
+	      代表苹果的 X11/XDarwin，OS X 的一个可选部分(X11User.pkg)。这些软件包提供 <code>x11</code> 和 <code>x11-shlibs</code>。参阅<xref chapter="comp-packages" section="cant-install-xfree">这个 FAQ 条目</xref>。
+	    </p>
+	  </li>
+          <li>system-xfree86-dev [placeholder for user installed x11 development tools]
+	    <p>
+	      代表苹果的 X11/XDarwin SDK，OS X 的一个可选安装(X11SDK.pkg)。这个软件包提供 <code>x11-dev</code>。参阅<xref chapter="comp-packages" section="cant-install-xfree">这个 FAQ 条目</xref>。
+	    </p>
+	  </li>
+        </ul>
       </answer>
     </faqentry>
   </chapter>

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（１）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/22 19:18:30';
+$cvs_date = 'Date: 2004/04/17 13:39:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
 include_once "header.inc";
@@ -80,6 +80,61 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
     <a name="suggest-package">
       <div class="question"><p><b>Q8.7: 我在 Fink 里面看不到我喜欢的那个程序。我应该怎么建议增加一个新的软件包到 Fink 里面？</b></p></div>
       <div class="answer"><p><b>A:</b> 在 Fink 项目的<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">软件包需求追踪器</a>。</p><p>注意你需要一个 SourceForge 帐号才可以添加。</p></div>
+    </a>
+    <a name="virtpackage">
+      <div class="question"><p><b>Q8.8: 这些名为 <code>system-*</code> 的“虚拟软件包”有些时候会存在，但我却不能自己安装或删除它们？</b></p></div>
+      <div class="answer"><p><b>A:</b> 
+	  名为类似 <code>system-perl</code> 的软件包是占位软件包。它们不包含实际的文件，而仅仅作为 fink 识别在它之外手工安装的程序一种机制。
+	</p><p>
+	  从 10.3 版本开始，多数软件包什么不是你可以安装或删除的实际软件包。
+	  相反，它们是“虚拟软件包”，软件包数据由 fink 程序自身根据一个手工安装的程序的预配置清单来产生。
+	  对每个虚拟软件包，fink 会检查特定位置的一些特定文件，如果找到这些文件，就会认为这个虚拟软件包“已经安装”。
+	</p><p>
+	  你可以运行 <code>fink-virtual-packages</code> 程序(fink 软件包的一部分)来获取被检测到已经安装的虚拟软件包的清单。
+	  使用 <code>--debug</code> 标志可以获取有关 fink 检查了哪些文件诊断信息。
+	</p><p>
+	  不幸的是，没有办法让你自己安装任意的软件(在 fink 之外)并让 fink 识别到它，而不是 fink 自己的版本。
+	  要通用地检查配置和编译标志，路径名等等参数太困难了。
+	</p><p>
+	  下面是 fink 定义的最重要的一些虚拟软件包(对 fink-0.19.2)：
+	</p><ul>
+          <li>system-perl: [virtual package representing perl]
+	    <p>
+	      代表 <code>/usr/bin/perl</code>，它是默认 OS X 安装的一部分。这个软件包同时提供 <code>system-perlXXX</code> 和 <code>perlXXX-core</code>，根据 perl 解析器的版本号 X.X.X。
+	    </p>
+	  </li>
+          <li>system-javaXXX: [virtual package representing Java X.X.X]
+	    <p>
+	      代表 Java 运行时环境，它是 OS X(和苹果的软件更新)的一部分。参考<a href="http://www.apple.com/java">苹果的 Java 网页</a>来获取更多信息。
+	    </p>
+	  </li>
+          <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+	    <p>
+	      代表 Java SDK，它需要从 <a href="http://connect.apple.com">connect.apple.com</a> 手工下载(需要免费注册)并安装。
+	      如果你更新了你的 Java 运行时环境，你的 SDK 并不会自动相应更新(甚至可能被删除！)。
+	      记得在安装或升级的运行时环境以后检查(如果需要的话重新下载和安装)这个 SDK。
+	      参考 <a href="comp-general.php?phpLang=zh#system-java">这个 FAQ 条目</a>。
+	    </p>
+	  </li>
+          <li>system-java3d: [virtual package representing Java3D]</li>
+          <li>system-javaai: [virtual package representing Java Advanced Imaging]
+	    <p>
+	      代表 Java 的三维图形和图象处理的扩展，它需要从苹果手工下载和安装。
+	      查看<a href="http://docs.info.apple.com/article.html?artnum=120289">苹果网站</a>来获取详细信息。
+	    </p>
+	  </li>
+          <li>system-xfree86: [placeholder for user installed x11]</li>
+          <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
+	    <p>
+	      代表苹果的 X11/XDarwin，OS X 的一个可选部分(X11User.pkg)。这些软件包提供 <code>x11</code> 和 <code>x11-shlibs</code>。参阅<a href="comp-packages.php?phpLang=zh#cant-install-xfree">这个 FAQ 条目</a>。
+	    </p>
+	  </li>
+          <li>system-xfree86-dev [placeholder for user installed x11 development tools]
+	    <p>
+	      代表苹果的 X11/XDarwin SDK，OS X 的一个可选安装(X11SDK.pkg)。这个软件包提供 <code>x11-dev</code>。参阅<a href="comp-packages.php?phpLang=zh#cant-install-xfree">这个 FAQ 条目</a>。
+	    </p>
+	  </li>
+        </ul></div>
     </a>
   <p align="right">
 Next: <a href="usage-packages.php?phpLang=zh">9 特定软件包使用问题</a></p>
