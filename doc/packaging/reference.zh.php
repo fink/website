@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/14 00:06:18';
+$cvs_date = 'Date: 2004/03/15 16:15:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -209,7 +209,7 @@ Primary: ftp://ftp.barbarorg/pub/
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
-如果一个软件包包含几个压缩档，在这些额外的字段中说明它们呢，从 N = 2 开始。所以，第一个压缩档(它应该是所谓的"主"压缩档)会被放在 <code>Source</code>，第二个压缩档则作为 <code>Source2</code>，依此类推。这里的规则和 Source 是一样的，区别只是 "gnu" 和 "gnome" 捷径不会被展开-那样做并没有意义。
+如果一个软件包包含几个压缩档，在这些额外的字段中说明它们呢，从 N = 2 开始。所以，第一个压缩档(它应该是所谓的"主"压缩档)会被放在 <code>Source</code>，第二个压缩档则作为 <code>Source2</code>，依此类推。这里的规则和 Source 是一样的，区别只是 "gnu" 和 "gnome" 捷径不会被展开-那样做并没有意义。从 fink 的 0.19.1 后的一个 CVS 版本开始，你不在需要对 N 使用一个连续的值。不过，你仍然要保证它们是不重复的。
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
@@ -542,6 +542,7 @@ Shlibs 声明表明维护者承诺这个名字和至少
 <p>
 <b>Introduced in fink 0.9.9.</b>
 这和 <code>SplitOff</code> 一样，用于从同一个编译/安装过程产生第三、第四个等等软件包。
+从 fink 0.19.1 后的一个 CVS 版本开始，你不再需要使用连续编号的 N。不过，你仍然要保证它们是互不重复的。
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
