@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/04/09 18:01:07';
+$cvs_date = 'Date: 2003/04/09 18:03:18';
 
 $metatags = '';
 
@@ -9,7 +9,7 @@ include "header.inc";
 ?>
 
 <a name="2003-04-09 Interview on OSNews.com"><span class="news-date">2003-04-09: </span><span class="news-headline">Interview on OSNews.com</span></a><?php gray_line(); ?>
-	<p><a href="http://osnews.com/">OSNews.com</a> today is featuring an
+	<p><a href="http://osnews.com/">OSNews.com</a> today is featuring a
 	<a href="http://osnews.com/story.php?news_id=3236">mini-interview</a> with
 	one of our project leaders, Max Horn. It contains some rather unusual questions,
 	so even if you know Fink fairly well, you might find it informative.

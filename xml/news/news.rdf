@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Wed, 09 Apr 2003 20:01:23 CEST</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2003 20:03:37 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -12,7 +12,7 @@
     <link>http://fink.sf.net/news/#2003-04-09%20Interview%20on%20OSNews.com</link>
     <dc:date>2003-04-09</dc:date>
     <description>
-	OSNews.com today is featuring an
+	OSNews.com today is featuring a
 	mini-interview with
 	one of our project leaders, Max Horn. It contains some rather unusual questions,
 	so even if you know Fink fairly well, you might find it informative.
