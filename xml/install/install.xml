@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink 0.3.2a Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.12 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.13 2002/04/13 22:27:04 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -508,7 +508,7 @@ re-install the .deb package files.
 <title>Upgrading From Fink 0.1.x</title>
 <shorttitle>Upgrade from 0.1</shorttitle>
 
-<section name="upgrade-01">
+<section name="upgrade-01"><title>Clean cut</title>
 <p>
 There is no direct upgrade path from Fink 0.1.x to Fink 0.2.x, because
 they use different methods for underlying package management (stow
