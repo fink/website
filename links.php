@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/01 13:37:23 $';
+$cvs_date = '$Date: 2001/08/03 07:15:47 $';
 
 include "header.inc";
 ?>
@@ -33,7 +33,7 @@ Ports</a> - porting the FreeBSD ports collection</li>
 <li><a href="http://www.caos.aamu.edu/pub/MacOS_X/"
 target="_blank">http://www.caos.aamu.edu/pub/MacOS_X/</a> - run by Marius Schamschula</li>
 <li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X
-Public Archive</a></li>
+Public Archive</a> (seems to be down at the moment)</li>
 <li><a href="http://www.geeklair.net/downloads/"
 target="_blank">http://www.geeklair.net/downloads/</a> - run by
 <a href="http://www.geeklair.net/~dluke/">Daniel Luke</a></li>
