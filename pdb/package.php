@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2004/02/28 17:16:31 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/03/31 07:01:54 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -46,6 +46,9 @@ if (!$rs) {
     preg_match("/(.*)-(stable|unstable)/i", $cr, $tree);
     if(ereg("^0.4.1",$cr))
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.1 only)");
+    else
+    if(ereg("^0.6.3",$cr))
+      it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>", $rmap[$cr] ? " ".$rmap[$cr]."" : "not present","(10.2 only)");
     else
       it_item2("<div style=\"white-space:nowrap\">$tree[1]:</div>"
       			, !strcmp($cr, " ") ? $cr : $rmap[$cr] ? " ".$rmap[$cr] : "not present"
