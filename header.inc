@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.21 2001/07/08 19:17:31 chrisp Exp $ */
+/* $Id: header.inc,v 1.22 2001/07/13 20:50:01 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -44,11 +44,6 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = filemtime($PATH_TRANSLATED);
 }
 
-// determine section
-if (!$section) {
-  $section = "general";
-}
-
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html lang="en">
 <head>
@@ -86,7 +81,7 @@ height="8" border="0" alt=""></td>
 </tr>
 </table>
 
-<? /* top menu and section marker */ ?>
+<? /* top menu */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top">
 <td align="left" background="<? print $root ?>img/menu-back.gif"><a
@@ -94,20 +89,13 @@ href="<? print $root ?>index.php"><img src="<? print $root
 ?>img/menu-home.gif" width="54" height="22" border="0" alt="Home"
 /></a><a href="<? print $root ?>download.php"><img src="<? print $root
 ?>img/menu-download.gif" width="76" height="22" border="0"
-alt="Download" /></a><!-- <a href="<? print $root ?>fink/index.php"><img
-src="<? print $root ?>img/menu-fink.gif" width="40" height="22"
-border="0" alt="Fink" /></a> --><a href="<? print $root
+alt="Download" /></a><a href="<? print $root
 ?>faq/index.php"><img src="<? print $root ?>img/menu-faq.gif"
 width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root ?>doc/index.php"><img
 src="<? print $root ?>img/menu-docs.gif" width="44" height="22"
-border="0" alt="Docs" /></a><!-- <a href="<? print $root
-?>darwin/index.php"><img src="<? print $root ?>img/menu-darwin.gif"
-width="58" height="22" border="0" alt="Darwin" /></a> --></td>
+border="0" alt="Docs" /></a></td>
 
-<td align="right" background="<? print $root ?>img/menu-back.gif"><!-- <a
-href="<? print $root ?>content.php"><img src="<? print $root ?>img/marker-<? print $section ?>.gif"
-width="160" height="22" border="0" alt="<? print "Section: $section"
-?>" /></a> --><img src="<? print $root ?>img/menu-back.gif"
+<td align="right" background="<? print $root ?>img/menu-back.gif"><img src="<? print $root ?>img/menu-back.gif"
 width="160" height="22" border="0" alt="" /></td>
 </tr>
 <tr><td colspan="2" background="<? print $root ?>img/top-line2.gif"><img src="<? print $root ?>img/top-line2.gif"
