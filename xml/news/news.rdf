@@ -4,9 +4,20 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 29 Mar 2003 15:50:38 EST</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2003 20:01:23 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Interview on OSNews.com</title>
+    <link>http://fink.sf.net/news/#2003-04-09%20Interview%20on%20OSNews.com</link>
+    <dc:date>2003-04-09</dc:date>
+    <description>
+	OSNews.com today is featuring an
+	mini-interview with
+	one of our project leaders, Max Horn. It contains some rather unusual questions,
+	so even if you know Fink fairly well, you might find it informative.
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>KDE 3.1.1 Final In Unstable</title>
     <link>http://fink.sf.net/news/#2003-03-29%20KDE%203.1.1%20Final%20In%20Unstable</link>
@@ -390,16 +401,6 @@ software before using Fink.
     <description>
     
       The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the Upgrade Matrix. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.3.2a is released</title>
-    <link>http://fink.sf.net/news/#2002-01-16%20Fink%200.3.2a%20is%20released</link>
-    <dc:date>2002-01-16</dc:date>
-    <description>
-    
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
     
   </description>
   </item>

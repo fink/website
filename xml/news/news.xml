@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.47 2003/03/29 20:51:10 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.48 2003/04/09 17:58:20 fingolfin Exp $</cvsid>
+<newsitem>
+	<date>2003-04-09</date>
+	<headline>Interview with on OSNews.com</headline>
+	<body>
+	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring an
+	<extlink url="http://osnews.com/story.php?news_id=3236">mini-interview</extlink> with
+	one of our project leaders, Max Horn. It contains some rather unusual questions,
+	so even if you know Fink fairly well, you might find it informative.
+</p></body></newsitem>
 <newsitem>
 	<date>2003-03-29</date>
 	<headline>KDE 3.1.1 Final In Unstable</headline>
