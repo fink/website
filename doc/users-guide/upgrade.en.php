@@ -1,12 +1,13 @@
 <?
-
 $title = "User's Guide - Upgrade";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"next\" href=\"conf.php?phpLang=en\" title=\"The Fink Configuration File\">\n\t<link rel=\"prev\" href=\"packages.php?phpLang=en\" title=\"Installing Packages\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
-include_once "header.en.inc"; 
-?><h1>User's Guide - 4 Upgrading Fink</h1>
+include_once "header.inc";
+?>
+
+<h1>User's Guide - 4 Upgrading Fink</h1>
     
     
     
@@ -99,4 +100,6 @@ packages.  If you are using Fink commander, then follow the <a href="#bin">binar
 
     
   <p align="right">
-Next: <a href="conf.php?phpLang=en">5 The Fink Configuration File</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="conf.php?phpLang=en">5 The Fink Configuration File</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "Packaging - Policy";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/05 03:26:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\">\n\t<link rel=\"next\" href=\"fslayout.php?phpLang=en\" title=\"Filesystem Layout\">\n\t<link rel=\"prev\" href=\"format.php?phpLang=en\" title=\"Package Descriptions\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
-include_once "header.en.inc"; 
-?><h1>Packaging - 3 Packaging Policy</h1>
+include_once "header.inc";
+?>
+
+<h1>Packaging - 3 Packaging Policy</h1>
 
 
 
@@ -513,4 +514,6 @@ directory, and will issue a warning if so.
 
 
 <p align="right">
-Next: <a href="fslayout.php?phpLang=en">4 Filesystem Layout</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="fslayout.php?phpLang=en">4 Filesystem Layout</a></p>
+
+<? include_once "footer.inc"; ?>

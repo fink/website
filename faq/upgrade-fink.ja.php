@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Fink のアップグレード";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-fink.php?phpLang=ja\" title=\"Fink のインストール、使用、メンテナンス\">\n\t<link rel=\"prev\" href=\"mirrors.php?phpLang=ja\" title=\"Fink ミラー\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス"><link rel="prev" href="mirrors.php?phpLang=ja" title="Fink ミラー">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 4 Fink のアップグレード (バージョン固有の問題対処法)</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 4 Fink のアップグレード (バージョン固有の問題対処法)</h1>
 
 
 <a name="gcc-0.16.0">
@@ -20,4 +21,6 @@ Mac OS X 10.2 の December 2002 developer tools 用 XCode ベータ・アップ�
 XCode の入った CD が Panther に同梱されているはずです。</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-fink.php?phpLang=ja">5 Fink のインストール、使用、メンテナンス</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-fink.php?phpLang=ja">5 Fink のインストール、使用、メンテナンス</a></p>
+
+<? include_once "footer.inc"; ?>

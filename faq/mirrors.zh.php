@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - Mirrors";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"upgrade-fink.php?phpLang=zh\" title=\"升级 Fink （解决特定版本的问题）\">\n\t<link rel=\"prev\" href=\"relations.php?phpLang=zh\" title=\"与其它项目的关系\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）"><link rel="prev" href="relations.php?phpLang=zh" title="与其它项目的关系">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 3 Fink 镜像</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 3 Fink 镜像</h1>
     
     
     <a name="when-use">
@@ -48,4 +49,6 @@ include_once "header.zh.inc";
       <div class="answer"><p><b>A:</b> 有些时候从互联网上获取某个版本的源代码会比较困难。Distfile 镜像会保存这些 Fink 需要使用的源代码软件包。</p></div>
     </a>
   <p align="right">
-Next: <a href="upgrade-fink.php?phpLang=zh">4 升级 Fink （解决特定版本的问题）</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="upgrade-fink.php?phpLang=zh">4 升级 Fink （解决特定版本的问题）</a></p>
+
+<? include_once "footer.inc"; ?>

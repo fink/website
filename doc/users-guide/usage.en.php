@@ -1,12 +1,13 @@
 <?
-
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"prev\" href=\"conf.php?phpLang=en\" title=\"The Fink Configuration File\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
-include_once "header.en.inc"; 
-?><h1>User's Guide - 6 Using the fink Tool from the Command Line</h1>
+include_once "header.inc";
+?>
+
+<h1>User's Guide - 6 Using the fink Tool from the Command Line</h1>
     
     
     <h2><a name="using">6.1 Using the fink tool</a></h2>
@@ -235,4 +236,6 @@ others.
    This can reclaim large amounts of disk space.
 </p>
     
-  <? include_once "../../footer.inc"; ?>
+  
+
+<? include_once "footer.inc"; ?>

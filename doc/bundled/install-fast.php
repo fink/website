@@ -2,10 +2,9 @@
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2003/06/22 15:35:13';
-
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Installation - 1 The Fast Track</h1>
@@ -168,8 +167,4 @@ update-all'.
 <p align="right">
 Next: <a href="install-first.php">2 First Time Installation</a></p>
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 编译（２）";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"usage-general.php?phpLang=zh\" title=\"一般性软件包使用问题\">\n\t<link rel=\"prev\" href=\"comp-general.php?phpLang=zh\" title=\"一般性编译问题\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题"><link rel="prev" href="comp-general.php?phpLang=zh" title="一般性编译问题">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 7 编译问题－特定软件包</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 7 编译问题－特定软件包</h1>
     
     
     <a name="libgtop">
@@ -48,4 +49,6 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
       <div class="answer"><p><b>A:</b> 这个晦涩的消息表明你需要安装 December 2002 开发工具。</p></div>
     </a>
   <p align="right">
-Next: <a href="usage-general.php?phpLang=zh">8 一般性软件包使用问题</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-general.php?phpLang=zh">8 一般性软件包使用问题</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,11 +1,13 @@
 <?
-$title = "";
+$title = "Documentation";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/03/05 15:34:59';
-include_once 'nav.inc';
-$fsroot = $root = '../';
-include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1>
+$cvs_date = 'Date: 2004/03/07 20:16:29';
+$metatags = '';
+
+include_once "header.inc";
+?>
+
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.3 2004/03/07 20:16:29 fingolfin Exp $-->
 <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
@@ -55,4 +57,6 @@ Unix applications to Darwin</li>
 maintain Fink packages</li>
 </ul>
 
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

@@ -1,11 +1,13 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/07 09:54:37';
-include_once 'nav.inc';
-$fsroot = $root = '../';
-include_once '../header.inc'; 
-?><h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Id: index.en.php,v 1.1 2004/03/07 10:24:15 michga Exp $</i></p>
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/03/07 20:54:08';
+$metatags = '';
+
+include_once "header.inc";
+?>
+
+<h1>Setting up Fink CVS Access</h1><!--Generated from $Fink: cvs.en.xml,v 1.2 2004/03/07 20:54:08 fingolfin Exp $-->
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -64,4 +66,6 @@ then:</p>
 <pre>cd tempdir/fink
 cvs -z3 update -d
 ./inject.pl</pre>
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

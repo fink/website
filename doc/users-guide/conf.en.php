@@ -1,12 +1,13 @@
 <?
-
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"next\" href=\"usage.php?phpLang=en\" title=\"Using the fink Tool from the Command Line\">\n\t<link rel=\"prev\" href=\"upgrade.php?phpLang=en\" title=\"Upgrading Fink\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
-include_once "header.en.inc"; 
-?><h1>User's Guide - 5 The Fink Configuration File</h1>
+include_once "header.inc";
+?>
+
+<h1>User's Guide - 5 The Fink Configuration File</h1>
     
     
     
@@ -286,4 +287,6 @@ fill your hard-disk quickly!</b>
       </ul>
     
   <p align="right">
-Next: <a href="usage.php?phpLang=en">6 Using the fink Tool from the Command Line</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="usage.php?phpLang=en">6 Using the fink Tool from the Command Line</a></p>
+
+<? include_once "footer.inc"; ?>

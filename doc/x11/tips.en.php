@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"prev\" href=\"trouble.php?phpLang=en\" title=\"Troubleshooting XFree86\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 8 Usage Tips</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 8 Usage Tips</h1>
     
     
     <h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
@@ -91,4 +92,6 @@ be executed.)
 usual for Mac apps, to copy text to the clipboard.  However, pasting 
 from the clipboard to Apple X11 via Command-V doesn't work yet.</p>
     
-  <? include_once "../../footer.inc"; ?>
+  
+
+<? include_once "footer.inc"; ?>

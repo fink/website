@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"comp-packages.php?phpLang=zh\" title=\"编译问题－特定软件包\">\n\t<link rel=\"prev\" href=\"usage-fink.php?phpLang=zh\" title=\"安装，使用和维护 Fink\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 6 一般性编译问题</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 6 一般性编译问题</h1>
     
     
     <a name="compiler">
@@ -153,4 +154,6 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> 这是因为 <code>gcc2</code> 是一个代表你系统上 gcc-2.95 的虚拟软件包。在 XCode 工具中安装 gcc2.95 软件包（早期操作系统的开发工具安装把 gcc-2.95 作为主要的编译工具安装）。</p></div>
     </a>
   <p align="right">
-Next: <a href="comp-packages.php?phpLang=zh">7 编译问题－特定软件包</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="comp-packages.php?phpLang=zh">7 编译问题－特定软件包</a></p>
+
+<? include_once "footer.inc"; ?>

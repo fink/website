@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - History";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"inst-xfree86.php?phpLang=en\" title=\"Getting and Installing XFree86\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=en\" title=\"Introduction\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 2 History</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 2 History</h1>
     
     
     
@@ -84,4 +85,6 @@ version had been completely integrated into the main XFree86 distribution.
 </p>
     
   <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=en">3 Getting and Installing XFree86</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="inst-xfree86.php?phpLang=en">3 Getting and Installing XFree86</a></p>
+
+<? include_once "footer.inc"; ?>

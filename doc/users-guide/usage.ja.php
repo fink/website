@@ -1,12 +1,13 @@
 <?
-
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"prev\" href=\"conf.php?phpLang=ja\" title=\"Fink 設定ファイル\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
-include_once "header.ja.inc"; 
-?><h1>ユーザーガイド - 6 コマンドライン fink ツールの使用方法</h1>
+include_once "header.inc";
+?>
+
+<h1>ユーザーガイド - 6 コマンドライン fink ツールの使用方法</h1>
 
 
 <h2><a name="using">6.1 fink ツールの使用</a></h2>
@@ -226,4 +227,6 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 かなりのディスク容量が利用できるようになります。
 </p>
 
-<? include_once "../../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

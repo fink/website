@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"xtools.php?phpLang=en\" title=\"Xtools\">\n\t<link rel=\"prev\" href=\"inst-xfree86.php?phpLang=en\" title=\"Getting and Installing XFree86\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 4 Starting XFree86</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 4 Starting XFree86</h1>
     
     
     <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -161,4 +162,6 @@ xterm &amp;
 exec enlightenment</pre>
     
   <p align="right">
-Next: <a href="xtools.php?phpLang=en">5 Xtools</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="xtools.php?phpLang=en">5 Xtools</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"packages.php?phpLang=ja\" title=\"パッケージのインストール\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=ja\" title=\"はじめに\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
-include_once "header.ja.inc"; 
-?><h1>ユーザーガイド - 2 初めてのインストール</h1>
+include_once "header.inc";
+?>
+
+<h1>ユーザーガイド - 2 初めてのインストール</h1>
 
 
 
@@ -185,4 +186,6 @@ Fink のパッケージはそれぞれ設定を追加することができます
 </p>
 
 <p align="right">
-Next: <a href="packages.php?phpLang=ja">3 パッケージのインストール</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="packages.php?phpLang=ja">3 パッケージのインストール</a></p>
+
+<? include_once "footer.inc"; ?>

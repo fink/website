@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - Other Stuff";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"trouble.php?phpLang=en\" title=\"Troubleshooting XFree86\">\n\t<link rel=\"prev\" href=\"xtools.php?phpLang=en\" title=\"Xtools\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="trouble.php?phpLang=en" title="Troubleshooting XFree86"><link rel="prev" href="xtools.php?phpLang=en" title="Xtools">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 6 Other X11 Possibilities</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 6 Other X11 Possibilities</h1>
     
     
     <h2><a name="vnc">6.1 VNC</a></h2>
@@ -42,4 +43,6 @@ If you have more info, please throw it our way.
 </p>
     
   <p align="right">
-Next: <a href="trouble.php?phpLang=en">7 Troubleshooting XFree86</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="trouble.php?phpLang=en">7 Troubleshooting XFree86</a></p>
+
+<? include_once "footer.inc"; ?>

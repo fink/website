@@ -1,12 +1,13 @@
 <?
-
 $title = "运行 X11 - Xtools";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:46';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"other.php?phpLang=zh\" title=\"其它 X11 可能\">\n\t<link rel=\"prev\" href=\"run-xfree86.php?phpLang=zh\" title=\"启动 XFree86\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="other.php?phpLang=zh" title="其它 X11 可能"><link rel="prev" href="run-xfree86.php?phpLang=zh" title="启动 XFree86">';
 
-include_once "header.zh.inc"; 
-?><h1>运行 X11 - 5 Xtools</h1>
+include_once "header.inc";
+?>
+
+<h1>运行 X11 - 5 Xtools</h1>
     
     
     <h2><a name="install">5.1 安装 Xtools</a></h2>
@@ -41,4 +42,6 @@ Fink 暂时还没有解决的办法。
 </p>
     
   <p align="right">
-Next: <a href="other.php?phpLang=zh">6 其它 X11 可能</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="other.php?phpLang=zh">6 其它 X11 可能</a></p>
+
+<? include_once "footer.inc"; ?>

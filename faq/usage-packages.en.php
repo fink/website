@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"prev\" href=\"usage-general.php?phpLang=en\" title=\"Package Usage Problems - General\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 9 Package Usage Problems - Specific Packages</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 9 Package Usage Problems - Specific Packages</h1>
     
     
     <a name="xmms-quiet">
@@ -118,4 +119,6 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 and the X11SDK.</p><p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for binary installs if you have <code>fink-0.17.0</code> or later.</p></div>
     </a>
-  <? include_once "../footer.inc"; ?>
+  
+
+<? include_once "footer.inc"; ?>

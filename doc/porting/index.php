@@ -2,10 +2,9 @@
 $title = "Porting";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/01/27 07:34:44';
-
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="basics.php" title="Basics">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Porting Unix software to Darwin and Mac OS X</h1>
@@ -42,8 +41,4 @@ include "header.inc";
 </ul>
 </ul><p>Generated from <i>$Fink: porting.xml,v 1.30 2004/01/27 07:34:44 dmacks Exp $</i></p>
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

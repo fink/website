@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"prev\" href=\"usage-general.php?phpLang=ja\" title=\"パッケージ使用上の問題 - 一般\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 9 パッケージ使用上の問題 - 特定のパッケージ</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 9 パッケージ使用上の問題 - 特定のパッケージ</h1>
 
 
 <a name="xmms-quiet">
@@ -123,4 +124,6 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>この後、 X11 と X11SDK を再インストールします。</p><p>注記:  <code>system-xfree86</code> のバイナリインストールは <code>fink-0.17.0</code> およびそれ以降では X11SDK を必要としません。</p></div>
 </a>
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

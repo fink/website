@@ -2,10 +2,9 @@
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/01/27 07:34:44';
-
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Porting - 4 Preparing for 10.2</h1>
@@ -120,8 +119,4 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

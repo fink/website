@@ -2,10 +2,9 @@
 $title = "Installation";
 $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2003/06/22 15:35:13';
-
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Fink 0.6.2 Installation</h1>
@@ -51,8 +50,4 @@ Track</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: install.xml,v 1.17 2003/06/22 15:35:13 dmrrsn Exp $</i></p>
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

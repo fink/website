@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 一般性问题";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"relations.php?phpLang=zh\" title=\"与其它项目的关系\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="relations.php?phpLang=zh" title="与其它项目的关系"><link rel="prev" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 1 一般性问题</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 1 一般性问题</h1>
     
     
     <a name="what">
@@ -60,4 +61,6 @@ dpkg 提供完善的二进制包管理机制－平滑升级，对配置文件的
       <div class="answer"><p><b>A:</b> 这个选择基本上是很随意的，但是基于实践（升级）的理由以及它在避免于其它软件包系统冲突方面是足够安全的，在可以遇见的将来仍然会保持这样。</p></div>
     </a>
   <p align="right">
-Next: <a href="relations.php?phpLang=zh">2 与其它项目的关系</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="relations.php?phpLang=zh">2 与其它项目的关系</a></p>
+
+<? include_once "footer.inc"; ?>

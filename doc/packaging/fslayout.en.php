@@ -1,12 +1,13 @@
 <?
-
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/05 03:26:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\">\n\t<link rel=\"next\" href=\"reference.php?phpLang=en\" title=\"Reference\">\n\t<link rel=\"prev\" href=\"policy.php?phpLang=en\" title=\"Packaging Policy\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
-include_once "header.en.inc"; 
-?><h1>Packaging - 4 Filesystem Layout</h1>
+include_once "header.inc";
+?>
+
+<h1>Packaging - 4 Filesystem Layout</h1>
 
 
 
@@ -156,4 +157,6 @@ In particular, the following should not be used:
 
 
 <p align="right">
-Next: <a href="reference.php?phpLang=en">5 Reference</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="reference.php?phpLang=en">5 Reference</a></p>
+
+<? include_once "footer.inc"; ?>

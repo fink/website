@@ -1,12 +1,13 @@
 <?
-
 $title = "Packaging - Intro";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/05 03:26:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\">\n\t<link rel=\"next\" href=\"format.php?phpLang=en\" title=\"Package Descriptions\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
-include_once "header.en.inc"; 
-?><h1>Packaging - 1 Introduction</h1>
+include_once "header.inc";
+?>
+
+<h1>Packaging - 1 Introduction</h1>
 
 
 
@@ -68,4 +69,6 @@ dashes in between, e.g. openssh-2.9p1-2.
 
 
 <p align="right">
-Next: <a href="format.php?phpLang=en">2 Package Descriptions</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="format.php?phpLang=en">2 Package Descriptions</a></p>
+
+<? include_once "footer.inc"; ?>

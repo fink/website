@@ -1,11 +1,13 @@
 <?
-$title = "";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/07 16:55:26';
-include_once 'nav.inc';
-$fsroot = $root = '../';
-include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1>
+$title = "Documentation";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/03/07 20:16:29';
+$metatags = '';
+
+include_once "header.inc";
+?>
+
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.3 2004/03/07 20:16:29 fingolfin Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
@@ -41,4 +43,6 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 <li><a href="packaging/index.php">Guide de construction des paquets</a> - comment créer et maintenir des paquets Fink</li>
 </ul>
 
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "运行 X11 - 安装 XFree86";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:46';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"run-xfree86.php?phpLang=zh\" title=\"启动 XFree86\">\n\t<link rel=\"prev\" href=\"history.php?phpLang=zh\" title=\"历史\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 XFree86"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
 
-include_once "header.zh.inc"; 
-?><h1>运行 X11 - 3 获取和安装 XFree86</h1>
+include_once "header.inc";
+?>
+
+<h1>运行 X11 - 3 获取和安装 XFree86</h1>
     
     
     <h2><a name="fink">3.1 通过 Fink 安装</a></h2>
@@ -226,4 +227,6 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
           </td></tr></table>
     
   <p align="right">
-Next: <a href="run-xfree86.php?phpLang=zh">4 启动 XFree86</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="run-xfree86.php?phpLang=zh">4 启动 XFree86</a></p>
+
+<? include_once "footer.inc"; ?>

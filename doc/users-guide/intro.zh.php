@@ -1,12 +1,13 @@
 <?
-
 $title = "用户指南 - 介绍";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"install.php?phpLang=zh\" title=\"首次安装\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="install.php?phpLang=zh" title="首次安装"><link rel="prev" href="index.php?phpLang=zh" title="用户指南 Contents">';
 
-include_once "header.zh.inc"; 
-?><h1>用户指南 - 1 介绍</h1>
+include_once "header.inc";
+?>
+
+<h1>用户指南 - 1 介绍</h1>
     
     
     <h2><a name="what">1.1 Fink 是什么？</a></h2>
@@ -107,4 +108,6 @@ Fink 可以让你自己在两种方式中间选择。
 </p>
     
   <p align="right">
-Next: <a href="install.php?phpLang=zh">2 首次安装</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="install.php?phpLang=zh">2 首次安装</a></p>
+
+<? include_once "footer.inc"; ?>

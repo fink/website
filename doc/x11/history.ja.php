@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - 歴史";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:21:14';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"inst-xfree86.php?phpLang=ja\" title=\"XFree86 の入手とインストール\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=ja\" title=\"イントロダクション\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=ja" title="XFree86 の入手とインストール"><link rel="prev" href="intro.php?phpLang=ja" title="イントロダクション">';
 
-include_once "header.ja.inc"; 
-?><h1>Running X11 - 2 歴史</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 2 歴史</h1>
 
 
 
@@ -66,4 +67,6 @@ XFree86 4.1.0 がフルスクリーンモードで登場した後、ルートレ
 </p>
 
 <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=ja">3 XFree86 の入手とインストール</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="inst-xfree86.php?phpLang=ja">3 XFree86 の入手とインストール</a></p>
+
+<? include_once "footer.inc"; ?>

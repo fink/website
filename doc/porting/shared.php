@@ -2,10 +2,9 @@
 $title = "Porting - Shared Code";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/01/27 07:34:44';
-
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="libtool.php" title="GNU libtool"><link rel="prev" href="basics.php" title="Basics">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Porting - 2 Shared Code</h1>
@@ -94,8 +93,4 @@ systems require it; this is harmless.
 <p align="right">
 Next: <a href="libtool.php">3 GNU libtool</a></p>
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"comp-packages.php?phpLang=en\" title=\"Compile Problems - Specific Packages\">\n\t<link rel=\"prev\" href=\"usage-fink.php?phpLang=en\" title=\"Installing, Using and Maintaining Fink\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 6 Compile Problems - General</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 6 Compile Problems - General</h1>
     
     
     <a name="compiler">
@@ -173,4 +174,6 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to indicate the presence of gcc-2.95 on your system.  Install the gcc2.95 package from the XCode Tools (earlier OS versions have gcc-2.95 as part of their main Developer Tools installation.</p></div>
     </a>
   <p align="right">
-Next: <a href="comp-packages.php?phpLang=en">7 Compile Problems - Specific Packages</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="comp-packages.php?phpLang=en">7 Compile Problems - Specific Packages</a></p>
+
+<? include_once "footer.inc"; ?>

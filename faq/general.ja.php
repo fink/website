@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - 一般";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"relations.php?phpLang=ja\" title=\"他のプロジェクトとの関係\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係"><link rel="prev" href="index.php?phpLang=ja" title="F.A.Q. Contents">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 1 一般的な質問</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 1 一般的な質問</h1>
 
 
 <a name="what">
@@ -73,4 +74,6 @@ dpkg のバイナリパッケージ管理は洗練されています。
 この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p></div>
 </a>
 <p align="right">
-Next: <a href="relations.php?phpLang=ja">2 他のプロジェクトとの関係</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="relations.php?phpLang=ja">2 他のプロジェクトとの関係</a></p>
+
+<? include_once "footer.inc"; ?>

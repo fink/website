@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - イントロ";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:21:14';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"history.php?phpLang=ja\" title=\"歴史\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
-include_once "header.ja.inc"; 
-?><h1>Running X11 - 1 イントロダクション</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 1 イントロダクション</h1>
 
 
 <h2><a name="def-x11">1.1 What is X11?</a></h2>
@@ -144,4 +145,6 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 </p>
 
 <p align="right">
-Next: <a href="history.php?phpLang=ja">2 歴史</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="history.php?phpLang=ja">2 歴史</a></p>
+
+<? include_once "footer.inc"; ?>

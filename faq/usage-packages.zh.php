@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"prev\" href=\"usage-general.php?phpLang=zh\" title=\"一般性软件包使用问题\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 9 特定软件包使用问题</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 9 特定软件包使用问题</h1>
     
     
     <a name="xmms-quiet">
@@ -106,4 +107,6 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>然后，重新安装 X11 和 X11SDK。</p><p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p></div>
     </a>
-  <? include_once "../footer.inc"; ?>
+  
+
+<? include_once "footer.inc"; ?>

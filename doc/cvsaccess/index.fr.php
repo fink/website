@@ -1,11 +1,13 @@
 <?
 $title = "Accès CVS à Fink";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/07 09:54:37';
-include_once 'nav.inc';
-$fsroot = $root = '../';
-include_once '../header.inc'; 
-?><h1>Configuration de l'accès à Fink via CVS</h1><p>Generated from <i>$Id: index.fr.php,v 1.1 2004/03/07 10:24:15 michga Exp $</i></p>
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/03/07 20:54:08';
+$metatags = '';
+
+include_once "header.inc";
+?>
+
+<h1>Configuration de l'accès à Fink via CVS</h1><!--Generated from $Fink: cvs.fr.xml,v 1.2 2004/03/07 20:54:08 fingolfin Exp $-->
 <p>
 Fink est développé via CVS.
 Cela vous permet de rester à jour entre deux versions et d'avoir toujours les paquets les plus récents.
@@ -44,4 +46,6 @@ cd fink
 <pre>cd tempdir/fink
 cvs -z3 update -d
 ./inject.pl</pre>
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-packages.php?phpLang=en\" title=\"Package Usage Problems - Specific Packages\">\n\t<link rel=\"prev\" href=\"comp-packages.php?phpLang=en\" title=\"Compile Problems - Specific Packages\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 8 Package Usage Problems - General</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 8 Package Usage Problems - General</h1>
     
     
     <a name="xlocale">
@@ -115,4 +116,6 @@ options.
       <div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
   <p align="right">
-Next: <a href="usage-packages.php?phpLang=en">9 Package Usage Problems - Specific Packages</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-packages.php?phpLang=en">9 Package Usage Problems - Specific Packages</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"history.php?phpLang=en\" title=\"History\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 1 Introduction</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 1 Introduction</h1>
     
     
     <h2><a name="def-x11">1.1 What is X11?</a></h2>
@@ -190,4 +191,6 @@ with <a href="http://www.kde.org/">KDE applications.</a>
       </p>
     
   <p align="right">
-Next: <a href="history.php?phpLang=en">2 History</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="history.php?phpLang=en">2 History</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"comp-general.php?phpLang=ja\" title=\"コンパイルの問題 - 一般\">\n\t<link rel=\"prev\" href=\"upgrade-fink.php?phpLang=ja\" title=\"Fink のアップグレード (バージョン固有の問題対処法)\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 5 Fink のインストール、使用、メンテナンス</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 5 Fink のインストール、使用、メンテナンス</h1>
 
 
 <a name="what-packages">
@@ -361,4 +362,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 と書かれている部分を削除します。</p></div> 
 </a>
 <p align="right">
-Next: <a href="comp-general.php?phpLang=ja">6 コンパイルの問題 - 一般</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="comp-general.php?phpLang=ja">6 コンパイルの問題 - 一般</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"comp-general.php?phpLang=en\" title=\"Compile Problems - General\">\n\t<link rel=\"prev\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 5 Installing, Using and Maintaining Fink</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 5 Installing, Using and Maintaining Fink</h1>
     
     
     <a name="what-packages">
@@ -365,4 +366,6 @@ set up for Fink already.", and it logs out.</b></p></div>
       <div class="answer"><p><b>A:</b> What happened is that somehow the OSX Terminal program has been told to run <code>/sw/bin/pathsetup.command</code> every time you log in.  You can fix this by removing the Preferences file, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>If you have other preferences that you want to keep, you can edit the file with a text editor and remove the reference to <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
   <p align="right">
-Next: <a href="comp-general.php?phpLang=en">6 Compile Problems - General</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="comp-general.php?phpLang=en">6 Compile Problems - General</a></p>
+
+<? include_once "footer.inc"; ?>

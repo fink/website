@@ -1,12 +1,13 @@
 <?
-
 $title = "运行 X11 - 提示";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:46';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"prev\" href=\"trouble.php?phpLang=zh\" title=\"XFree86 故障排除\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="prev" href="trouble.php?phpLang=zh" title="XFree86 故障排除">';
 
-include_once "header.zh.inc"; 
-?><h1>运行 X11 - 8 使用提示</h1>
+include_once "header.inc";
+?>
+
+<h1>运行 X11 - 8 使用提示</h1>
     
     
     <h2><a name="terminal-app">8.1 在终端程序窗口启动 X11</a></h2>
@@ -64,4 +65,6 @@ X11 系统实际上有几个单独的剪贴板（X11 中称为 "剪切缓冲区�
 </p>
       <p>如果你使用苹果的 X11，你可以使用 Command-C 或 编辑-&gt;拷贝，就象一般的 mac 程序一样，来拷贝文本到剪贴板。不过，暂时你还不能用 Command-V 粘贴剪贴板里面的内容。</p>
     
-  <? include_once "../../footer.inc"; ?>
+  
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-packages.php?phpLang=ja\" title=\"パッケージ使用上の問題 - 特定のパッケージ\">\n\t<link rel=\"prev\" href=\"comp-packages.php?phpLang=ja\" title=\"コンパイルの問題 - 特定のバージョン\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 8 パッケージ使用上の問題 - 一般</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 8 パッケージ使用上の問題 - 一般</h1>
 
 
 <a name="xlocale">
@@ -107,4 +108,6 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-packages.php?phpLang=ja">9 パッケージ使用上の問題 - 特定のパッケージ</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-packages.php?phpLang=ja">9 パッケージ使用上の問題 - 特定のパッケージ</a></p>
+
+<? include_once "footer.inc"; ?>

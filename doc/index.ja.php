@@ -1,11 +1,13 @@
 <?
-$title = "";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/28 07:39:55';
-include_once 'nav.inc';
-$fsroot = $root = '../';
-include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1>
+$title = "Documentation";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/03/07 20:16:29';
+$metatags = '';
+
+include_once "header.inc";
+?>
+
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.4 2004/03/07 20:16:29 fingolfin Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -52,4 +54,6 @@ Unix アプリケーションを Darwin へポートする際に有用な情報�
 Fink パッケージの作り方、メンテナンス方法。</li>
 </ul>
 
-<? include_once "../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

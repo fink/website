@@ -1,12 +1,13 @@
 <?
-
 $title = "用户指南 - 安装";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"packages.php?phpLang=zh\" title=\"安装软件包\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=zh\" title=\"介绍\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
-include_once "header.zh.inc"; 
-?><h1>用户指南 - 2 首次安装</h1>
+include_once "header.inc";
+?>
+
+<h1>用户指南 - 2 首次安装</h1>
     
     
     
@@ -171,4 +172,6 @@ Fink 软件包可以添加它们自己的设置，例如，qt 软件会设置 QT
 </p>
     
   <p align="right">
-Next: <a href="packages.php?phpLang=zh">3 安装软件包</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="packages.php?phpLang=zh">3 安装软件包</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"comp-general.php?phpLang=zh\" title=\"一般性编译问题\">\n\t<link rel=\"prev\" href=\"upgrade-fink.php?phpLang=zh\" title=\"升级 Fink （解决特定版本的问题）\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 5 安装，使用和维护 Fink</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 5 安装，使用和维护 Fink</h1>
     
     
     <a name="what-packages">
@@ -296,4 +297,6 @@ set up for Fink already."，然后它就退出登录了。</b></p></div>
       <div class="answer"><p><b>A:</b> 发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p><p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p></div>
     </a>
   <p align="right">
-Next: <a href="comp-general.php?phpLang=zh">6 一般性编译问题</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="comp-general.php?phpLang=zh">6 一般性编译问题</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -2,10 +2,9 @@
 $title = "News";
 $cvs_author = 'Author: dmalloc';
 $cvs_date = 'Date: 2004/02/29 19:18:19';
-
 $metatags = '';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <a name="2004-02-19 Raise your Flag."><span class="news-date">2004-02-19: </span><span class="news-headline">Raise your Flag.</span></a><?php gray_line(); ?>
@@ -886,8 +885,4 @@ software before using Fink.
     </p>
   
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

@@ -2,10 +2,9 @@
 $title = "Porting - Basics";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/01/27 07:34:44';
-
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Porting - 1 Basics</h1>
@@ -67,8 +66,4 @@ include "header.inc";
 	<p align="right">
 Next: <a href="shared.php">2 Shared Code</a></p>
 
-
-<?
-include "footer.inc";
-?>
-
+<? include_once "footer.inc"; ?>

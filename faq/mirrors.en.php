@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Mirrors";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\">\n\t<link rel=\"prev\" href=\"relations.php?phpLang=en\" title=\"Relations with Other Projects\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=en" title="Relations with Other Projects">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 3 Fink mirrors</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 3 Fink mirrors</h1>
     
     
     <a name="when-use">
@@ -59,4 +60,6 @@ from the Internet. Distfile mirrors hold and mirror the source packages
 needed by fink to build its source packages.</p></div>
     </a>
   <p align="right">
-Next: <a href="upgrade-fink.php?phpLang=en">4 Upgrading Fink (version-specific troubleshooting)</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="upgrade-fink.php?phpLang=en">4 Upgrading Fink (version-specific troubleshooting)</a></p>
+
+<? include_once "footer.inc"; ?>

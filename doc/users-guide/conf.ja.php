@@ -1,12 +1,13 @@
 <?
-
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"usage.php?phpLang=ja\" title=\"コマンドライン fink ツールの使用方法\">\n\t<link rel=\"prev\" href=\"upgrade.php?phpLang=ja\" title=\"Fink のアップグレード\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
-include_once "header.ja.inc"; 
-?><h1>ユーザーガイド - 5 Fink 設定ファイル</h1>
+include_once "header.inc";
+?>
+
+<h1>ユーザーガイド - 5 Fink 設定ファイル</h1>
 
 
 
@@ -267,4 +268,6 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 </ul>
 
 <p align="right">
-Next: <a href="usage.php?phpLang=ja">6 コマンドライン fink ツールの使用方法</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="usage.php?phpLang=ja">6 コマンドライン fink ツールの使用方法</a></p>
+
+<? include_once "footer.inc"; ?>

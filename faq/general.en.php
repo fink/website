@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"relations.php?phpLang=en\" title=\"Relations with Other Projects\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=en" title="Relations with Other Projects"><link rel="prev" href="index.php?phpLang=en" title="F.A.Q. Contents">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 1 General Questions</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 1 General Questions</h1>
     
     
     <a name="what">
@@ -103,4 +104,6 @@ the foreseeable future for practical (upgrade) issues as well as the
 fact that it's safe from conflicting with other packaging systems.</p></div>
     </a>
   <p align="right">
-Next: <a href="relations.php?phpLang=en">2 Relations with Other Projects</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="relations.php?phpLang=en">2 Relations with Other Projects</a></p>
+
+<? include_once "footer.inc"; ?>

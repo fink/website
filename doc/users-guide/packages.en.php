@@ -1,12 +1,13 @@
 <?
-
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"next\" href=\"upgrade.php?phpLang=en\" title=\"Upgrading Fink\">\n\t<link rel=\"prev\" href=\"install.php?phpLang=en\" title=\"First Time Installation\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
-include_once "header.en.inc"; 
-?><h1>User's Guide - 3 Installing Packages</h1>
+include_once "header.inc";
+?>
+
+<h1>User's Guide - 3 Installing Packages</h1>
     
     
     
@@ -276,4 +277,6 @@ and Mac OS X document</a>.
 </p>
     
   <p align="right">
-Next: <a href="upgrade.php?phpLang=en">4 Upgrading Fink</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="upgrade.php?phpLang=en">4 Upgrading Fink</a></p>
+
+<? include_once "footer.inc"; ?>

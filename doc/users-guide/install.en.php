@@ -1,12 +1,13 @@
 <?
-
 $title = "User's Guide - Install";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"next\" href=\"packages.php?phpLang=en\" title=\"Installing Packages\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=en\" title=\"Introduction\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.en.inc"; 
-?><h1>User's Guide - 2 First Time Installation</h1>
+include_once "header.inc";
+?>
+
+<h1>User's Guide - 2 First Time Installation</h1>
     
     
     
@@ -230,4 +231,6 @@ package management tools included in Fink.
 </p>
     
   <p align="right">
-Next: <a href="packages.php?phpLang=en">3 Installing Packages</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="packages.php?phpLang=en">3 Installing Packages</a></p>
+
+<? include_once "footer.inc"; ?>

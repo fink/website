@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 关系";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"mirrors.php?phpLang=zh\" title=\"Fink 镜像\">\n\t<link rel=\"prev\" href=\"general.php?phpLang=zh\" title=\"一般性问题\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="mirrors.php?phpLang=zh" title="Fink 镜像"><link rel="prev" href="general.php?phpLang=zh" title="一般性问题">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 2 与其它项目的关系</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 2 与其它项目的关系</h1>
     
     
     <a name="upstream">
@@ -66,4 +67,6 @@ Fink <b>不是</b> Debian GNU/Linux 发布版的一个移植。
 		</p></div>
     </a>
   <p align="right">
-Next: <a href="mirrors.php?phpLang=zh">3 Fink 镜像</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="mirrors.php?phpLang=zh">3 Fink 镜像</a></p>
+
+<? include_once "footer.inc"; ?>

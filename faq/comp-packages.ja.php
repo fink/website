@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-general.php?phpLang=ja\" title=\"パッケージ使用上の問題 - 一般\">\n\t<link rel=\"prev\" href=\"comp-general.php?phpLang=ja\" title=\"コンパイルの問題 - 一般\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
-include_once "header.ja.inc"; 
-?><h1>F.A.Q. - 7 コンパイルの問題 - 特定のバージョン</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 7 コンパイルの問題 - 特定のバージョン</h1>
 
 
 <a name="libgtop">
@@ -62,4 +63,6 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <div class="answer"><p><b>A:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-general.php?phpLang=ja">8 パッケージ使用上の問題 - 一般</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-general.php?phpLang=ja">8 パッケージ使用上の問題 - 一般</a></p>
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/05 03:26:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\">\n\t<link rel=\"next\" href=\"policy.php?phpLang=en\" title=\"Packaging Policy\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=en\" title=\"Introduction\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.en.inc"; 
-?><h1>Packaging - 2 Package Descriptions</h1>
+include_once "header.inc";
+?>
+
+<h1>Packaging - 2 Package Descriptions</h1>
 
 
 
@@ -208,4 +209,6 @@ rather is the string %n.  (Introduced in fink-0.18.0)
 
 
 <p align="right">
-Next: <a href="policy.php?phpLang=en">3 Packaging Policy</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="policy.php?phpLang=en">3 Packaging Policy</a></p>
+
+<? include_once "footer.inc"; ?>

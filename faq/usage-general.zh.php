@@ -1,12 +1,13 @@
 <?
-
 $title = "常见疑问（F.A.Q.） - 使用（１）";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"usage-packages.php?phpLang=zh\" title=\"特定软件包使用问题\">\n\t<link rel=\"prev\" href=\"comp-packages.php?phpLang=zh\" title=\"编译问题－特定软件包\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
-include_once "header.zh.inc"; 
-?><h1>常见疑问（F.A.Q.） - 8 一般性软件包使用问题</h1>
+include_once "header.inc";
+?>
+
+<h1>常见疑问（F.A.Q.） - 8 一般性软件包使用问题</h1>
     
     
     <a name="xlocale">
@@ -81,4 +82,6 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
       <div class="answer"><p><b>A:</b> 在 Fink 项目的<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">软件包需求追踪器</a>。</p><p>注意你需要一个 SourceForge 帐号才可以添加。</p></div>
     </a>
   <p align="right">
-Next: <a href="usage-packages.php?phpLang=zh">9 特定软件包使用问题</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-packages.php?phpLang=zh">9 特定软件包使用问题</a></p>
+
+<? include_once "footer.inc"; ?>

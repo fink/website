@@ -1,12 +1,13 @@
 <?
-
 $title = "ユーザーガイド - パッケージ";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"upgrade.php?phpLang=ja\" title=\"Fink のアップグレード\">\n\t<link rel=\"prev\" href=\"install.php?phpLang=ja\" title=\"初めてのインストール\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
-include_once "header.ja.inc"; 
-?><h1>ユーザーガイド - 3 パッケージのインストール</h1>
+include_once "header.inc";
+?>
+
+<h1>ユーザーガイド - 3 パッケージのインストール</h1>
 
 
 
@@ -254,4 +255,6 @@ X11 のインストールと使用の詳細は、
 </p>
 
 <p align="right">
-Next: <a href="upgrade.php?phpLang=ja">4 Fink のアップグレード</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="upgrade.php?phpLang=ja">4 Fink のアップグレード</a></p>
+
+<? include_once "footer.inc"; ?>

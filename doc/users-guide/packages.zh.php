@@ -1,12 +1,13 @@
 <?
-
 $title = "用户指南 - 软件包";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"upgrade.php?phpLang=zh\" title=\"升级 Fink\">\n\t<link rel=\"prev\" href=\"install.php?phpLang=zh\" title=\"首次安装\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
-include_once "header.zh.inc"; 
-?><h1>用户指南 - 3 安装软件包</h1>
+include_once "header.inc";
+?>
+
+<h1>用户指南 - 3 安装软件包</h1>
     
     
     
@@ -228,4 +229,6 @@ system-xtools:
 </p>
     
   <p align="right">
-Next: <a href="upgrade.php?phpLang=zh">4 升级 Fink</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="upgrade.php?phpLang=zh">4 升级 Fink</a></p>
+
+<? include_once "footer.inc"; ?>

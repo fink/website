@@ -1,12 +1,13 @@
 <?
-
 $title = "F.A.Q. - Upgrading Fink";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:41';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-fink.php?phpLang=en\" title=\"Installing, Using and Maintaining Fink\">\n\t<link rel=\"prev\" href=\"mirrors.php?phpLang=en\" title=\"Fink mirrors\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=en" title="Fink mirrors">';
 
-include_once "header.en.inc"; 
-?><h1>F.A.Q. - 4 Upgrading Fink (version-specific troubleshooting)</h1>
+include_once "header.inc";
+?>
+
+<h1>F.A.Q. - 4 Upgrading Fink (version-specific troubleshooting)</h1>
     
     
     <a name="gcc-0.16.0">
@@ -26,4 +27,6 @@ release (i.e. XCode). A CD with XCode should have been provided
 with your Panther media.</p></div>
     </a>
   <p align="right">
-Next: <a href="usage-fink.php?phpLang=en">5 Installing, Using and Maintaining Fink</a></p><? include_once "../footer.inc"; ?>
+Next: <a href="usage-fink.php?phpLang=en">5 Installing, Using and Maintaining Fink</a></p>
+
+<? include_once "footer.inc"; ?>

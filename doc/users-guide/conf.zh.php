@@ -1,12 +1,13 @@
 <?
-
 $title = "用户指南 - fink.conf";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:45';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"usage.php?phpLang=zh\" title=\"在命令行使用 Fink 工具\">\n\t<link rel=\"prev\" href=\"upgrade.php?phpLang=zh\" title=\"升级 Fink\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
-include_once "header.zh.inc"; 
-?><h1>用户指南 - 5 Fink 配置文件</h1>
+include_once "header.inc";
+?>
+
+<h1>用户指南 - 5 Fink 配置文件</h1>
     
     
     
@@ -214,4 +215,6 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
       </ul>
     
   <p align="right">
-Next: <a href="usage.php?phpLang=zh">6 在命令行使用 Fink 工具</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="usage.php?phpLang=zh">6 在命令行使用 Fink 工具</a></p>
+
+<? include_once "footer.inc"; ?>

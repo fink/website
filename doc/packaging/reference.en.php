@@ -1,12 +1,13 @@
 <?
-
 $title = "Packaging - Reference";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/05 03:26:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Packaging Contents\">\n\t<link rel=\"prev\" href=\"fslayout.php?phpLang=en\" title=\"Filesystem Layout\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
-include_once "header.en.inc"; 
-?><h1>Packaging - 5 Reference</h1>
+include_once "header.inc";
+?>
+
+<h1>Packaging - 5 Reference</h1>
 
 
 
@@ -998,4 +999,6 @@ If you just need to set some environment variables (for example, QTDIR to '/sw')
 
 
 
-<? include_once "../../footer.inc"; ?>
+
+
+<? include_once "footer.inc"; ?>

@@ -1,12 +1,13 @@
 <?
-
 $title = "运行 X11 - 介绍";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/07 01:55:46';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"history.php?phpLang=zh\" title=\"历史\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="history.php?phpLang=zh" title="历史"><link rel="prev" href="index.php?phpLang=zh" title="运行 X11 Contents">';
 
-include_once "header.zh.inc"; 
-?><h1>运行 X11 - 1 介绍</h1>
+include_once "header.inc";
+?>
+
+<h1>运行 X11 - 1 介绍</h1>
     
     
     <h2><a name="def-x11">1.1 什么是 X11？</a></h2>
@@ -146,4 +147,6 @@ GNOME 程序精选
       </p>
     
   <p align="right">
-Next: <a href="history.php?phpLang=zh">2 历史</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="history.php?phpLang=zh">2 历史</a></p>
+
+<? include_once "footer.inc"; ?>

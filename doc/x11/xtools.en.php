@@ -1,12 +1,13 @@
 <?
-
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 22:31:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"other.php?phpLang=en\" title=\"Other X11 Possibilities\">\n\t<link rel=\"prev\" href=\"run-xfree86.php?phpLang=en\" title=\"Starting XFree86\" />";
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=en" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php?phpLang=en" title="Starting XFree86">';
 
-include_once "header.en.inc"; 
-?><h1>Running X11 - 5 Xtools</h1>
+include_once "header.inc";
+?>
+
+<h1>Running X11 - 5 Xtools</h1>
     
     
     <h2><a name="install">5.1 Installing Xtools</a></h2>
@@ -47,4 +48,6 @@ Hopefully this will be fixed in Xtools 1.1 once it is released.
 </p>
     
   <p align="right">
-Next: <a href="other.php?phpLang=en">6 Other X11 Possibilities</a></p><? include_once "../../footer.inc"; ?>
+Next: <a href="other.php?phpLang=en">6 Other X11 Possibilities</a></p>
+
+<? include_once "footer.inc"; ?>
