@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/21 21:34:34';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/11/08 02:03:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -69,18 +69,24 @@ of these for historic reasons).</p>
     
     <h2><a name="remove">6.4 remove</a></h2>
       
-      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has some flaws: It only works on
-packages the <code>fink</code> tool knows about (i.e. where an .info file is present); and it
+      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has a flaw: it
 doesn't check dependencies itself but rather completely leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
-      <p>The remove command only removes the actual package files, but leaves
+      <p>The remove command only removes the actual package files,
+(excluding configuration files), but leaves
 the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
 <code>/sw/fink/dists</code> tree.</p>
       <p>Aliases: disable, deactivate, unuse, delete.</p>
     
-    <h2><a name="update-all">6.5 update-all</a></h2>
+    <h2><a name="purge">6.5 purge</a></h2>
+      
+      <p>The purge command purges packages from the system. This is
+the same as the remove command except that it removes configuration
+files as well.</p>
+    
+    <h2><a name="update-all">6.6 update-all</a></h2>
       
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
@@ -90,7 +96,7 @@ The <a href="#options">--use-binary-dist option</a> is also
 applicable here.
       </p>
     
-    <h2><a name="list">6.6 list</a></h2>
+    <h2><a name="list">6.7 list</a></h2>
       
       <p>
 This command produces a list of available packages, listing
@@ -150,7 +156,7 @@ The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
 </p>
     
-    <h2><a name="apropos">6.7 apropos</a></h2>
+    <h2><a name="apropos">6.8 apropos</a></h2>
       
       <p>
 This command behaves almost identical to <code>fink list</code>. The most
@@ -163,7 +169,7 @@ fink apropos irc          - list all packages for which 'irc' occurs in the name
 fink apropos -s=kde irc   - the same as above, but restricted to packages from the kde section
 </pre>
     
-    <h2><a name="describe">6.8 describe</a></h2>
+    <h2><a name="describe">6.9 describe</a></h2>
       
       <p>
 This command displays a description of the package you name on the
@@ -175,22 +181,22 @@ description.
 Aliases: desc, description, info
 </p>
     
-    <h2><a name="fetch">6.9 fetch</a></h2>
+    <h2><a name="fetch">6.10 fetch</a></h2>
       
       <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
     
-    <h2><a name="fetch-all">6.10 fetch-all</a></h2>
+    <h2><a name="fetch-all">6.11 fetch-all</a></h2>
       
       <p>Downloads <b>all</b> package source files. Like fetch, this downloads the
 tarballs even when they were downloaded before.</p>
     
-    <h2><a name="fetch-missing">6.11 fetch-missing</a></h2>
+    <h2><a name="fetch-missing">6.12 fetch-missing</a></h2>
       
       <p>Downloads <b>all</b> missing package source files. This command will only download
 files that are not present on the system.</p>
     
-    <h2><a name="build">6.12 build</a></h2>
+    <h2><a name="build">6.13 build</a></h2>
       
       <p>Builds a package, but does not install it. As usual, the source
 tarballs are downloaded if they can not be found. The result of this
@@ -202,7 +208,7 @@ if the .deb already exists. Note that dependencies are still
 The <a href="#options">--use-binary-dist option</a> is applicable here.
       </p>
     
-    <h2><a name="rebuild">6.13 rebuild</a></h2>
+    <h2><a name="rebuild">6.14 rebuild</a></h2>
       
       <p>Builds a package (like the build command), but ignores and overwrites
 the existing .deb file. If the package is installed, the newly created
@@ -212,14 +218,14 @@ during package development.</p>
 The <a href="#options">--use-binary-dist option</a> is applicable here.
       </p>
     
-    <h2><a name="reinstall">6.14 reinstall</a></h2>
+    <h2><a name="reinstall">6.15 reinstall</a></h2>
       
       <p>Same as install, but will install the package via <code>dpkg</code> even when it is
 already installed. You can use this when you accidentally deleted
 package files or changed configuration files and want to get the
 default settings back.</p>
     
-    <h2><a name="configure">6.15 configure</a></h2>
+    <h2><a name="configure">6.16 configure</a></h2>
       
       <p>
 Reruns the Fink configuration process.
@@ -227,7 +233,7 @@ This will let you change your mirror sites and proxy settings, among
 others.
 </p>
     
-    <h2><a name="selfupdate">6.16 selfupdate</a></h2>
+    <h2><a name="selfupdate">6.17 selfupdate</a></h2>
       
       <p>
 	This command automates the process of upgrading to a new Fink
@@ -243,14 +249,14 @@ If the <a href="#options">--use-binary-dist option</a> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     
-    <h2><a name="index">6.17 index</a></h2>
+    <h2><a name="index">6.18 index</a></h2>
       
       <p>
    Rebuilds the package cache. You should not normally need to execute
    this manually, as <code>fink</code> should auto-detect when it needs to be updated.
 </p>
     
-    <h2><a name="validate">6.18 validate</a></h2>
+    <h2><a name="validate">6.19 validate</a></h2>
       
       <p>
    This command performs various checks on .info and .deb files. Package
@@ -261,13 +267,13 @@ the list of available packages in the binary distribution is also updated.
    Aliases: check
 </p>
     
-    <h2><a name="scanpackages">6.19 scanpackages</a></h2>
+    <h2><a name="scanpackages">6.20 scanpackages</a></h2>
       
       <p>
    Calls dpkg-scanpackages(8) with the specified trees.
 </p>
     
-    <h2><a name="cleanup">6.20 cleanup</a></h2>
+    <h2><a name="cleanup">6.21 cleanup</a></h2>
       
       <p>
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
@@ -278,7 +284,7 @@ If the <a href="#options">--use-binary-dist option</a> is enabled
 obsolete downloaded binary packages are also deleted.
       </p>
     
-    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
       
       <p>
 Only available in <code>fink</code> newer than version 0.21.0

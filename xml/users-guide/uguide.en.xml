@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.19 2004/10/21 21:34:34 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.20 2004/11/08 02:03:27 dmacks Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1228,16 +1228,22 @@ of these for historic reasons).</p>
     </section>
     <section name="remove">
       <title>remove</title>
-      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has some flaws: It only works on
-packages the <code>fink</code> tool knows about (i.e. where an .info file is present); and it
+      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has a flaw: it
 doesn't check dependencies itself but rather completely leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
-      <p>The remove command only removes the actual package files, but leaves
+      <p>The remove command only removes the actual package files,
+(excluding configuration files), but leaves
 the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
 <filename>/sw/fink/dists</filename> tree.</p>
       <p>Aliases: disable, deactivate, unuse, delete.</p>
+    </section>
+    <section name="purge">
+      <title>purge</title>
+      <p>The purge command purges packages from the system. This is
+the same as the remove command except that it removes configuration
+files as well.</p>
     </section>
     <section name="update-all">
       <title>update-all</title>
