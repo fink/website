@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/30 11:14:58 $';
+$cvs_date = '$Date: 2001/07/03 16:11:10 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,6 +30,8 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-07-03: The <a href="doc/packaging/index.php">Packaging
+Manual</a> was updated to include all recently added fields.</p>
 <p>2001-06-30: A major restructuring of the web site has started. The
 non-Fink-specific documents were removed because I don't have the time
 to maintain them. All documentation will be consolidated in the new <a
@@ -37,8 +39,6 @@ href="doc/index.php">Documentation section</a>.</p>
 <p>2001-06-24: Version 0.2.2 is finally released. Get it from the <a
 href="download.php">download page</a>. Be sure to read the notes
 about X11 in the INSTALL file.</p>
-<p>2001-05-19: The <a href="fink/cvs.php">CVS instructions</a> have
-been updated for Fink 0.2.x.</p>
 
 <h2>Status</h2>
 
