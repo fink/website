@@ -2,16 +2,20 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">
 
-<xsl:output method="html" indent="no" encoding="iso-8859-1" />
+<!-- just a dummy, everything is written with xsl:document -->
+<xsl:output method="text"/>
 
-<!-- ***** whole document ***** -->
+<!-- ***** whole document (renders contents page) ***** -->
 
 <xsl:template match="document">
+<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="iso-8859-1">
 <html><head>
-<title>Fink Documentation - <xsl:value-of select="title"/></title>
+<title><xsl:value-of select="shorttitle"/></title>
+<link rel="start" href="{@filename}.php" title="{shorttitle} Contents" />
+<link rel="next" href="{chapter/@filename}.php" title="{chapter/title}" />
 </head><body>
 
-<h1 align="center"><xsl:value-of select="title"/></h1>
+<h1><xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates select="preface" />
 
@@ -22,15 +26,16 @@
 <ul>
 <xsl:for-each select="chapter">
 <li><a><xsl:attribute name="href">
-<xsl:text>#</xsl:text><xsl:value-of select="@filename"/>
+<xsl:value-of select="@filename"/><xsl:text>.php</xsl:text>
 </xsl:attribute>
-<b><xsl:value-of select="title" /></b></a></li>
+<b><!--<xsl:number format="1 " />--><xsl:value-of select="title" /></b></a></li>
 
 <ul>
 <xsl:for-each select="faqentry|section">
 <li><a><xsl:attribute name="href">
-<xsl:text>#</xsl:text><xsl:value-of select="../@filename" /><xsl:text>.</xsl:text><xsl:value-of select="@name" />
+<xsl:value-of select="../@filename" /><xsl:text>.php#</xsl:text><xsl:value-of select="@name" />
 </xsl:attribute>
+<!--<xsl:number count="chapter" format="1." /><xsl:number format="1 " />-->
 <xsl:for-each select="question/p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
 </xsl:for-each>
@@ -44,39 +49,76 @@
 
 <!-- end TOC -->
 
-<xsl:apply-templates select="chapter" />
-
 <xsl:apply-templates select="cvsid" />
 
+<xsl:apply-templates select="chapter" />
+
 </body></html>
+</xsl:document>
 </xsl:template>
 
-<!-- ***** chapter ***** -->
+<!-- ***** chapter (renders to a separate file) ***** -->
 
 <xsl:template match="chapter">
+<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="iso-8859-1">
+<html><head>
+<!-- this will be seen and then removed by postprocess.pl -->
+<xsl:value-of select="../cvsid" />
+<title><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="shorttitle"/></title>
+<link rel="start" href="{../@filename}.php" title="{../shorttitle} Contents" />
+<link rel="contents" href="{../@filename}.php" title="{../shorttitle} Contents" />
 
-<a name="{@filename}"><h2><xsl:value-of select="title"/></h2></a>
+<xsl:for-each select="following-sibling::chapter">
+<xsl:if test="position()=1">
+<link rel="next" href="{@filename}.php" title="{title}" />
+</xsl:if>
+</xsl:for-each>
+
+<xsl:for-each select="preceding-sibling::chapter">
+<xsl:if test="position()=last()">
+<link rel="prev" href="{@filename}.php" title="{title}" />
+</xsl:if>
+</xsl:for-each>
+<xsl:if test="position()=1">
+<link rel="prev" href="{../@filename}.php" title="{../shorttitle} Contents" />
+</xsl:if>
+
+</head><body>
+
+<h1><!--<xsl:number format="1 " />--><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates/>
 
+<xsl:for-each select="following-sibling::chapter">
+<xsl:if test="position()=1">
+<p align="right">
+Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
+</p>
+</xsl:if>
+</xsl:for-each>
+
+</body></html>
+</xsl:document>
 </xsl:template>
 
-<!-- ***** article ***** -->
+<!-- ***** article (renders all on one page) ***** -->
 
 <xsl:template match="article">
+<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="iso-8859-1">
 <html><head>
-<title>Fink Documentation - <xsl:value-of select="title" /></title>
+<title><xsl:value-of select="shorttitle" /></title>
 </head><body>
 
-<h1 align="center"><xsl:value-of select="title"/></h1>
+<h1><xsl:value-of select="title"/></h1>
+
+<xsl:apply-templates select="cvsid" />
 
 <xsl:apply-templates select="preface" />
 
 <xsl:apply-templates select="section" />
 
-<xsl:apply-templates select="cvsid" />
-
 </body></html>
+</xsl:document>
 </xsl:template>
 
 
@@ -87,17 +129,17 @@
 </xsl:template>
 
 <xsl:template match="section">
-<a name="{../@filename}.{@name}"><h3><xsl:value-of select="title"/></h3></a>
+<a name="{@name}"><h2><xsl:value-of select="title"/></h2></a>
 <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="faqentry">
-<a name="{../@filename}.{@name}"><xsl:apply-templates/></a>
+<a name="{@name}"><xsl:apply-templates/></a>
 </xsl:template>
 
 <xsl:template match="question">
 <div class="question">
-<p><b><xsl:text>Q: </xsl:text>
+<p><b>Q<!--<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1:" /></b>--><xsl:text>: </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
@@ -110,7 +152,7 @@
 
 <xsl:template match="answer">
 <div class="answer">
-<p><b><xsl:text>A:</xsl:text></b><xsl:text> </xsl:text>
+<p><b>A:</b><xsl:text> </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
@@ -175,7 +217,7 @@
 </xsl:template>
 
 <xsl:template match="cvsid">
-<p><hr/><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
+<p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
 
 
@@ -198,7 +240,13 @@
 </xsl:template>
 
 <xsl:template match="xref">
-<a><xsl:attribute name="href">#<xsl:choose><xsl:when test="boolean(@chapter)"><xsl:value-of select="@chapter" /></xsl:when><xsl:otherwise><xsl:for-each select="ancestor::chapter | ancestor::article"><xsl:value-of select="@filename"/></xsl:for-each></xsl:otherwise></xsl:choose><xsl:if test="boolean(@section)">.<xsl:value-of select="@section" /></xsl:if></xsl:attribute>
+<a><xsl:attribute name="href">
+<xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.php</xsl:if>
+<!--
+<xsl:if test="boolean(@chapter)"><xsl:value-of select="/document/chapter[@name = {@chapter}]/@filename" />.php</xsl:if>
+-->
+<xsl:if test="boolean(@section)">#<xsl:value-of select="@section" /></xsl:if>
+</xsl:attribute>
 <xsl:apply-templates/></a>
 </xsl:template>
 

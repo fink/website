@@ -102,6 +102,8 @@
 <li><xsl:apply-templates/></li>
 </xsl:template>
 
+<!-- dl, dt, dd, itemtable, pairtable, item, itemt, itemd -->
+
 <xsl:template match="cvsid">
 <p><xsl:text>Generated from </xsl:text><xsl:apply-templates/></p>
 </xsl:template>
@@ -113,6 +115,8 @@
 <u><xsl:apply-templates/></u>
 </xsl:template>
 
+<!-- i -->
+
 <xsl:template match="code|filename|literal">
 <xsl:apply-templates/>
 </xsl:template>
@@ -121,6 +125,8 @@
 <xsl:apply-templates/>
 <xsl:text> [</xsl:text><xsl:value-of select="@url"/><xsl:text>]</xsl:text>
 </xsl:template>
+
+<!-- xref -->
 
 
 <!-- *** special stuff *** -->

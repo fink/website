@@ -1,38 +1,57 @@
-# $Id: Makefile.common,v 1.4 2001/07/01 06:57:43 chrisp Exp $
+# Hey Emacs, this is a -*- makefile -*-
+# $Id: Makefile.common,v 1.5 2001/07/31 15:56:02 chrisp Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
 
+STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
-PROCESS_HTML = $(basedir)/postprocess.pl
+PROCESS_WEBSITE = $(basedir)/postprocess.pl
+PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 PROCESS_TEXT = $(basedir)/textify.pl
 
-all: $(TARGET) $(patsubst %.xml,%.txt,$(SOURCE))
+# basics
+
+all: $(TARGET) \
+     $(patsubst %.xml,%.html,$(SOURCE)) \
+     $(patsubst %.xml,%.txt,$(SOURCE))
+
+clean:
+	rm -rf *.php *.html *.txt *.tmp
 
 force: clean all
 
-%.html: $(SOURCE) $(STYLESHEET_HTML)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_HTML)
+.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt
 
-%.php: %.html $(PROCESS_HTML)
-	$(PROCESS_HTML) <$< >$@
+.PHONY: all clean force install
 
-%.txml: %.xml $(STYLESHEET_TEXT)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_TEXT) >$@
+# rendering to php-framed HTML for the website (multi-page)
 
-%.txt: %.txml $(PROCESS_TEXT)
-	$(PROCESS_TEXT) <$< >$@
+%.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_WEBSITE)
+
+%.php: %.php.tmp $(PROCESS_WEBSITE)
+	$(PROCESS_WEBSITE) <$< >$@
 
 install: $(filter %.php,$(TARGET))
 	cp $(filter %.php,$(TARGET)) $(basedir)/../$(DESTDIR)/
 
-clean:
-	rm -rf *.php *.html *.txt *.txml
+# rendering to pure HTML (monolithic)
 
-.SUFFIXES: .xml .php .html .txt .txml
+%.html.tmp: %.xml $(STYLESHEET_HTML)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_HTML) >$@
 
-.PHONY: all clean force install
+%.html: %.html.tmp
+	$(PROCESS_HTML) <$< >$@
+
+# rendering to pure text (monolithic)
+
+%.txt.tmp: %.xml $(STYLESHEET_TEXT)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_TEXT) >$@
+
+%.txt: %.txt.tmp $(PROCESS_TEXT)
+	$(PROCESS_TEXT) <$< >$@
 
 # eof
