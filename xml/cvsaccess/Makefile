@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 2004/03/16 04:03:28 jeff_yecn Exp $
+# $Id: Makefile,v 1.8 2004/06/17 01:18:57 alexkhansen Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -9,7 +9,7 @@ TARGET = index.php
 WANT_HTML = 1
 DESTDIR = doc/cvsaccess
 
-LANGUAGES = fr en zh
+LANGUAGES = fr en zh es
 include $(basedir)/Makefile.i18n.common
 
 # eof
