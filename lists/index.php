@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/04/14 12:56:03 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2003/10/11 21:34:49 $';
 
 include "header.inc";
 ?>
@@ -25,18 +25,19 @@ is fitting.
 </p>
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">Archives</a>)<br>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.announce">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.announce">NNTP</a>)<br>
 Announcement list for new Fink releases. (low traffic)</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-beginners">Archives</a>)<br>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.beginners">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.beginners">NNTP</a>)<br>
 Discussion and support list for new Fink users</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">Archives</a>)<br>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.general">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.general">NNTP</a>)<br>
 Discussion and support list for advanced Fink users.</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-devel">Archives</a>)<br>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.devel">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.devel">NNTP</a>)<br>
 Discussion list for Fink package maintainers and developers.</p></li>
-<li><p><a href="fink-commits.php">fink-commits</a><br>
+<li><p><a href="fink-commits.php">fink-commits</a>
+(<a href="http://news.gmane.org/gmane.os.apple.fink.cvs">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.cvs">NNTP</a>)<br>
 Distribution list for automated CVS commit reports.</p></li>
 </ul>
 
