@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.159 2003/12/11 01:13:20 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.160 2004/01/04 19:12:25 dmalloc Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -611,7 +611,7 @@ versions are released.</p>
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
 revised download URL.</p>
-<p>If this doesn't work, most sources are available on <link url="http://distfiles.opendarwin.org">http://distfiles.opendarwin.org</link> (thanks to Rob Braun) , and you can run <code>fink configure</code> to choose to search &quot;Master&quot; source mirrors so that Fink will automatically look there.</p>
+<p>If this doesn't work, most sources are available on <link url="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</link> (thanks to Rob Braun) , and you can run <code>fink configure</code> to choose to search &quot;Master&quot; source mirrors so that Fink will automatically look there.</p>
 <p>If this doesn't work, please let the package maintainer (available from &quot;<code>fink describe <em>packagename</em>
 </code>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p>
 <p>To get a usable source, first try hunting around the remote site in
