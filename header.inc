@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.86 2004/11/13 15:29:36 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.87 2004/11/26 08:11:22 benh57 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -273,14 +273,14 @@ function insert_sub ($navbox, $active_page) {
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
 
-<!-- Tracking Code v3.01 - All rights reserved -->
-<!-- More tracking, arranged for the bindist -->
-<script language="javascript1.1" src="http://fink.sourceforge.net/tracking.js"></script><noscript>
-<img src="http://statistics.dynamicsitestats.com/p.pl?a=10001728464933&js=no" width="1" height="1"></noscript><!--//-->
-<!-- End of Tracking Code -->
 
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
+<!-- Tracking Code v3.01 - All rights reserved -->
+<!-- More tracking, arranged for the bindist -->
+<script language="javascript1.1" src="http://fink.sourceforge.net/tracking.js" type="text/javascript"></script><noscript>
+<img src="http://statistics.dynamicsitestats.com/p.pl?a=10001728464933&amp;js=no" width="1" height="1" alt=""></noscript><!--//-->
+<!-- End of Tracking Code -->
 
 <? /* header and sourceforge logo */ ?>
 <table width="100%" cellspacing="0" class="header">
