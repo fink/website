@@ -107,6 +107,9 @@ sub starttag {
   } elsif ($tag eq "li") {
     $prefix .= " * ";
     $newprefix .= "   ";
+  } elsif ($tag eq "dd") {
+    $prefix .= "   ";
+    $newprefix .= "   ";
   } elsif ($tag eq "u") {
     $s .= "_";
     $uscore++;
@@ -133,6 +136,9 @@ sub endtag {
     $newprefix = substr($newprefix,0,-3);
     $ptype = 0;
   } elsif ($tag eq "li") {
+    $prefix = substr($prefix,0,-3);
+    $newprefix = substr($newprefix,0,-3);
+  } elsif ($tag eq "dd") {
     $prefix = substr($prefix,0,-3);
     $newprefix = substr($newprefix,0,-3);
   } elsif ($tag eq "u") {
