@@ -1,39 +1,16 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/19 12:52:44 $';
+$cvs_date = '$Date: 2001/07/30 12:03:59 $';
 
 include "header.inc";
 ?>
 
 
-<h1>Darwin Information</h1>
+<h1>Pages Moved</h1>
 
-<p>In this section of the Fink website I want to collect useful
-information on Darwin and Mac OS X that I learned during my
-experiments. It is meant not just for Fink users, but for Darwin users
-in general. Current installments:</p>
-
-<ul>
-<li><a href="porting.php">Porting Hints</a> for porting Unix software
-to Darwin</li>
-<!--
-<li><a href="gnome.php">GNOME on Darwin</a> - instructions and patches
-needed to get the core GNOME packages up and running</li>
-<li><a href="patches.php">Patches</a> for various packages - mostly
-shared library support right now</li>
--->
-<li><a href="libtool.php">GNU libtool</a> and Darwin - how to get
-shared libraries</li>
-<li><a href="../doc/x11/index.php">X11 on Darwin and Mac OS X</a> -
-covers concepts, installation and launching</li>
-</ul>
-
-<p>Unfortunately, I don't have time to keep all of these pages
-current. Check the 'Last changed' note on each page.</p>
-
-<p>For more helpful stuff, check out the <a href="../links.php">link
-list</a>.</p>
+<p>All useful documentation has been concentrated in the new <a
+href="../doc/index.php">documentation section</a>.</p>
 
 
 <?

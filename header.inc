@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.24 2001/07/20 17:42:30 chrisp Exp $ */
+/* $Id: header.inc,v 1.25 2001/07/30 12:03:59 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -17,12 +17,6 @@ $pages_fink = array(
   "fink/usage.php", "Usage", 0,
   "fink/lists.php", "Mailing Lists", 0,
   "fink/todo.php", "ToDo", 0,
-  "links.php", "Links", 1
-);
-$pages_darwin = array(
-  "darwin/index.php", "Darwin", 0,
-  "darwin/porting.php", "Porting", 0,
-  "darwin/libtool.php", "libtool", 0,
   "links.php", "Links", 1
 );
 
@@ -123,9 +117,6 @@ if (is_array($customnav)) {
   $donav = 1;
 } elseif ($wantnav == "fink") {
   $pages = $pages_fink;
-  $donav = 1;
-} elseif ($wantnav == "darwin") {
-  $pages = $pages_darwin;
   $donav = 1;
 }
 
