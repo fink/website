@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.11 2004/04/30 04:57:48 dmacks Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.12 2004/05/10 02:20:50 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -764,6 +764,27 @@ set up for Fink already.&quot;，然后它就退出登录了。</p>
       <answer>
         <p>发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p>
         <p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p>
+      </answer>
+    </faqentry>
+    <faqentry name="ext-drive">
+    <question>
+        <p>我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <quote>chowname</quote> 的错误。</p>
+      </question>
+      <answer>
+        <p>如果你的错误信息是象这样的：</p>
+        <codeblock>This first test is designed to die, so please ignore the error
+message on the next line.
+# Looks like your test died before it could output anything.
+./00compile............................ok
+./Base/initialize......................ok
+./Base/param...........................ok
+./Base/param_boolean...................ok
+./Command/cat..........................ok
+./Command/chowname.....................#     
+Failed test (./Command/chowname.t at line 27)
+#          got: 'root'
+#     expected: 'nobody'</codeblock>
+        <p>那么你需要在 Fink 安装的驱动器/分区上运行 <em>Get Info</em>，并取消选择 "Ignore ownership" 的按钮。</p>
       </answer>
     </faqentry>
   </chapter>
