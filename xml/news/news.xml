@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.128 2004/08/03 15:15:43 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.129 2004/08/03 19:01:14 dmacks Exp $</cvsid>
 
 <newsitem>
 	<date>2004-08-01</date>
 	<headline>Improving our mirrors. Can you help?</headline>
 	<body>
 	<p>
-	Finks decision to gradually build its own network of mirrors
-	has payed off. To make sure that we can continue to offer
+	Fink's decision to gradually build its own network of mirrors
+	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
 	It has been some time since we last asked for more mirrors. 
 	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror or more to offer 
-	a distfiles mirror please <extlink url="mailto:mirrors@finkmirrors.net">contact</extlink> us.
+	you have at least two Mbit to spare for a rsync mirror, or more to offer 
+	a distfiles mirror, please <extlink url="mailto:mirrors@finkmirrors.net">contact us</extlink>.
 	</p>
 	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please go and review <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hestitate in <extlink url="mailto:mirrors@finkmirrors.net">contacting</extlink> us as well.
+	 web-space for testing as an example, please do not hestitate in <extlink url="mailto:mirrors@finkmirrors.net">contacting us</extlink> as well.
 	</p>
 	</body>
 </newsitem>
