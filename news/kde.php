@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2003/01/26 05:20:09 $';
+$cvs_date = '$Date: 2003/01/26 05:22:20 $';
 
 include "header.inc";
 ?>
@@ -40,8 +40,8 @@ include "header.inc";
  <a href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">bug tracker</a>
  before posting questions.  You can also try the
  <b><a href="http://www.aquaflux.org/~fink/">#fink</a></b> channel on
- The <a href="http://www.openprojects.net/">OpenProjects IRC network</a>
- (<b>irc.openprojects.net</b>).  A number of the people involved in the
+ The <a href="http://www.freenode.net/">Freenode IRC network</a>
+ (<b>irc.freenode.net</b>).  A number of the people involved in the
  KDE port usually hang out there.
 </p>
 
