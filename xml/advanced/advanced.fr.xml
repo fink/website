@@ -3,18 +3,18 @@
 <document filename="index" lang="fr">
 <title>Notions complexes dans Fink</title>
 <shorttitle>Notions complexes</shorttitle>
-<cvsid>$Id: advanced.fr.xml,v 1.2 2005/03/02 05:22:33 michga Exp $</cvsid>
+<cvsid>$Id: advanced.fr.xml,v 1.3 2005/03/02 06:32:51 michga Exp $</cvsid>
 <preface>
-<p>Ce document évoque quelques complexes qui ne se trouvent pas dans le <link url="http://fink.sourceforge.net/doc/users-guide/">Guide de l'utilisateur</link>.</p>
+<p>Ce document aborde quelques notions complexes qui ne se trouvent pas dans le <link url="http://fink.sourceforge.net/doc/users-guide/">Guide de l'utilisateur</link>.</p>
 </preface>
 <chapter filename="bindist">
 <title>Mise en place d'un serveur de distribution binaire</title>
 <shorttitle>Serveur de distribution binaire</shorttitle>
 <section name="intro">
 <title>Introduction</title>
-<p>Cette section décrit une méthode d'utilisation d'un serveur central de compilation ( serveur "maître") pour distribuer des paquets binaires à tous les clients des stations de travail. Elle s'applique aux stations de travail utilisant plusieurs installation de Fink.</p>
-<p><em>Note :</em> dans les instructions suivantes, on a supposé que toutes les machines clients ont une version de fink &gt;= 0.24.0. Voir plus loin la section <xref section="remarks">remarques</xref> si les machines ont une version de fink antérieure.</p>
-<p>La méthode se compose des étapes suivantes sur le <xref section="master">serveur "maître"</xref> et sur les <xref section="client">machines clients</xref>:</p>
+<p>Cette section décrit une méthode d'utilisation d'un serveur central de compilation ( serveur "maître") pour distribuer des paquets binaires à tous les clients des stations de travail. Elle s'applique aux stations de travail utilisant plusieurs installations de Fink.</p>
+<p><em>Note :</em> dans les instructions suivantes, on a supposé que toutes les machines clientes ont une version de fink supérieure ou égale à la version 0.24.0. Voir plus loin la section <xref section="remarks">remarques</xref> si les machines ont une version de fink antérieure.</p>
+<p>La méthode se compose des étapes suivantes sur le <xref section="master">serveur "maître"</xref> et sur les <xref section="client">machines clientes</xref> :</p>
 </section>
 <section name="master">
 <title>Étapes sur le serveur "maître" (serveur de compilation) </title>
@@ -23,7 +23,7 @@
 <li>Construisez les paquets comme d'habitude. Il n'est pas nécessaire de les installer.</li>
 <li><p>Exécutez <code>fink scanpackages</code> chaque fois que le jeu de paquets construits change. Fink génèrera alors des indexs apt pour tous les arbres activés.</p>
 <p>Au lieu de la commande précédente, vous pouvez exécuter <code>fink cleanup</code>. Les paquets sources et binaires obsolètes seront alors supprimés. La commande <code>scanpackages</code> est appelée automatiquement à la fin du processus de nettoyage.</p></li>
-<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <filename>/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename>. 
+<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <filename>/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename> :
 <codeblock>
 Alias /fink /sw/fink
 &lt;Directory /sw/fink&gt;
@@ -35,10 +35,10 @@ Alias /fink /sw/fink
 <p>N'oubliez pas de réexécuter <code>fink scanpackages</code> (ou <code>fink cleanup</code>) chaque fois que vous construisez ou mettez à jour des paquets sur le serveur "maître", de façon à ce qu'ils soient disponibles sur les machines éloignées.</p>
 <p><em>Notes</em> :</p>
 <p>Vous pouvez aussi créer un utilisateur "fink" et ajouter les lignes ci-dessus au fichier <filename>/etc/httpd/users/fink.conf</filename>.</p>
-<p>Si vous utiliser le paquet apache2 de Fink, vous devrez modifier les chemins ci-dessus.</p>
+<p>Si vous utilisez le paquet apache2 de Fink, vous devrez modifier les chemins ci-dessus.</p>
 </section>
 <section name="client">
-<title>Étapes sur les machines clients</title>
+<title>Étapes sur les machines clientes</title>
 <ol>
 <li>Installez Fink sur <filename>/sw</filename> (chemin de base par défaut).</li>
 <li>Exécutez <code>fink configure</code> et activez l'option de téléchargement des paquets à partir de la distribution binaire : "UseBinaryDist: true" dans le fichier <filename>/sw/etc/fink.conf</filename>.</li>
@@ -56,16 +56,16 @@ Hit http://192.168.42.7 stable/main Release
 Hit http://192.168.42.7 stable/crypto Packages
 ...
 </codeblock>
-à la fin du processus de mise à jour, si le niveau de verbosité est &gt;= 1.</li>
+à la fin du processus de mise à jour, si le niveau de verbosité est supérieur ou égal à 1.</li>
 </ol>
 <p>L'exécution de <code>fink update-all</code> ou de <code>fink install &lt;paquet&gt;</code> téléchargera alors les paquets en tant que paquets binaires s'ils sont disponibles sur le serveur "maître".</p>
 </section>
 <section name="remarks">
 <title>Remarques</title>
 <ul>
-<li>Le serveur "maître" doit utiliser une version de X11 identique à la plus ancienne version installée sur l'ensemble des clients. Par exemple, si toutes les machines clientes utilisent X11 d'Apple, le serveur "mâitre" doit l'utiliser lui aussi.</li>
-<li>Vous pouvez supprimer les paquets qui ne sont que des dépendances de compilation (c'est-à-dire qui ne sont pas nécessaire à l'exécution d'autres paquets). Le paquet <code>debfoster</code> permet de le faire facilement. Faîtes toutefois attention à ne pas supprimer de paquets essentiels, tel <code>apt</code>.</li>
-<li>Si vous utilisez une version de fink inférieure à la version 0.24.0 sur une machine client, vous devez exécuter <code>sudo apt-get update</code> au lieu de <code>fink selfupdate</code>. Vous devez alors installer les paquets binaires via <code>sudo apt-get install &lt;package&gt;</code>. </li>
+<li>Le serveur "maître" doit utiliser une version de X11 identique à la plus ancienne version installée sur l'ensemble des clients. Par exemple, si l'une des machines clientes utilise X11 d'Apple, le serveur "maître" doit l'utiliser lui aussi.</li>
+<li>Vous pouvez supprimer les paquets qui ne sont que des dépendances de compilation (c'est-à-dire qui ne sont pas nécessaires à l'exécution d'autres paquets). Le paquet <code>debfoster</code> permet de le faire facilement. Faîtes toutefois attention à ne pas supprimer de paquets essentiels, tel <code>apt</code>.</li>
+<li>Si vous utilisez une version de fink inférieure à la version 0.24.0 sur une machine client, vous devez exécuter <code>sudo apt-get update</code> au lieu de <code>fink selfupdate</code>. Vous devez alors installer les paquets binaires via <code>sudo apt-get install &lt;paquet&gt;</code>. </li>
 </ul>
 <p>Ce document est adapté pour part de <link url="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the Fink"</link> par RangerRick. Merci !</p>
 </section>
