@@ -1372,11 +1372,11 @@ else
     ;;
 
   darwin* | rhapsody*)
-    allow_undefined_flag='-undefined warning'
-    archive_cmds='$CC $(if test x$module = xyes; then echo -bundle; else echo -dynamiclib; fi) $allow_undefined_flag -o $lib $libobjs $deplibs $linkopts'
+    allow_undefined_flag='-undefined suppress'
+    archive_cmds='$CC $(if test x$module = xyes; then echo -bundle; else echo -dynamiclib; fi) $allow_undefined_flag -o $lib $libobjs $deplibs $linkopts -install_name $rpath/$(basename $lib)'
     #archive_expsym_cmds="$archive_cmds"' && strip -s $export_symbols $lib'
     hardcode_direct=yes
-    hardcode_libdir_flag_spec='-install_name $libdir/$(basename $lib)'
+    hardcode_libdir_flag_spec=''
     hardcode_shlibpath_var=no
     whole_archive_flag_spec='-all_load $convenience'
     ;;

@@ -1,7 +1,7 @@
 <?
 $title = "libtool patch";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$cvs_date = '$Date: 2001/01/13 21:50:52 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -18,16 +18,23 @@ Darwin (its linker, that is) and only builds static libraries. Also,
 dynamic loading (used e.g. for plugins) isn't available. I have found
 a patch for libtool that enables shared library building on Darwin
 (after some more tweaking, that is).</p>
+
 <p>After applying <a href="files/libtool-1.3.5.patch">this patch</a>
-to the libtool 1.3.5 source, you must delete the files ltconfig and
-ltmain.sh. They will be recreated from the appropriate .in files when
-you run configure. But that's only half the work - every package using
-libtool comes with a version of ltconfig and ltmain.sh. So you must
-replace these in every package that you want to build as a shared
-library. Note that you must do this before running the configure
-script. For your convenience, you can get the two files right here:
-<a href="files/ltconfig">ltconfig</a> (98K) and <a
+<b>[updated 2001-01-13]</b>to the libtool 1.3.5 source, you must
+delete the files ltconfig and ltmain.sh. They will be recreated from
+the appropriate .in files when you run configure. But that's only half
+the work - every package using libtool comes with its own copies of
+ltconfig and ltmain.sh. So you must replace these in every package
+that you want to build as a shared library. Note that you must do this
+before running the configure script. For your convenience, you can get
+the two files right here: <a href="files/ltconfig">ltconfig</a> (98K)
+<b>[updated 2001-01-13]</b> and <a
 href="files/ltmain.sh">ltmain.sh</a> (110K).</p>
+
+<p>For more information on libtool itself and what it does, see the <a
+href="http://www.gnu.org/software/libtool/libtool.html">libtool
+homepage</a>.</p>
+
 <p>Side note: Apple's Developer Tools contain a program also called
 libtool, which can be used to build shared libraries. However, this is
 completely unrelated.</p>
