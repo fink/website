@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェの Darwin と Mac OS X へのポーティング</title>
   <shorttitle>ポーティング</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.1 2005/01/31 01:22:00 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.2 2005/01/31 01:46:14 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -106,8 +106,8 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
     </section>
   </chapter>
   <chapter filename="shared">
-    <title>Shared Code</title>
-    <shorttitle>Shared Code</shorttitle>
+    <title>共有コード</title>
+    <shorttitle>共有コード</shorttitle>
     <section name="lib-and-mod">
       <title>共有ライブラリ vs ローダブル・モジュール</title>
       <p>
@@ -116,14 +116,14 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
 			</p>
       <p>
 			Mach-O 共有ライブラリ のファイルタイプは MH_DYLIB で，拡張子は <code>.dylib</code> となります．
-			これは通常の静的リンカフラグ，例えば libfoo.dylib の場合は <code>-lfoo</code>，でリンクすることができます．
+			これは通常の静的リンカフラグ，例えば libfoo.dylib の場合は <code>-lfoo</code> でリンクすることができます．
 			しかし，モジュールとしてロードすることはできません．
 			(注記: 共有ライブラリ は API を通して動的にロードすることができます．
 			しかし API はバンドルの場合と異なり，dlopen() エミュレーションの意味を無くします．
 			特筆すべきこととして， 共有ライブラリ はアンロードできません．)
 			</p>
       <p>
-			ローダブル・モジュールは Mach-O の用語では"バンドル"と言われ，ファイルタイプは MH_BUNDLE です．
+			ローダブル・モジュールは Mach-O の用語では&quot;バンドル&quot;と言われ，ファイルタイプは MH_BUNDLE です．
 			これを用いるコンポーネントは拡張子を気にしないので，拡張子は何でも構いません．
 			<code>.bundle</code> という拡張子が Apple の推奨ですが，移植されたソフトウェアのほとんどは，互換性のため <code>.so</code> を使っています．
 			バンドルは dyld API を用いて動的にロード／アンロードされることができますし，この API の上に <code>dlopen()</code> をエミュレートするラッパもあります．
@@ -143,30 +143,30 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
 			これはよく行われることで，これによって，ライブラリのいくつかのメジャーバージョンをインストールすることが可能になります．
 			ELF システムでは，これは <code>soname</code> と言われています．
 			Darwin の場合，ファイル名の他にフルパスを指定することができ（またする必要があり）ます．
-			これにより，&quot;rpath&quot; オプションと ldconfig/ld.so.cache システムが不要になります．
+			これにより，"rpath" オプションと ldconfig/ld.so.cache システムが不要になります．
 			まだインストールされていないライブラリを使うには， DYLD_LIBRARY_PATH 環境変数を設定することもできます．
 			詳細は dyld の man ページをご覧ください．
 			</p>
       <p>
-			Mach-O 形式は ELF システムでは未知のマイナーバージョン確認を提供します．
-			Mach-o ライブラリは全て，二つのバージョン番号: &quot;current&quot; バージョンと &quot;compatibility&quot; バージョンを有します．
-			両方のバージョンとも，ドットで分かれた３つの番号で， 1.4.2 のように表記されます．
-			最初の番号は 0 以外でなければなりません．
-			２つめと３つめは省略可能で， 0 として扱われます．
-			バージョンが指定されない場合は 0.0.0 として扱われ，ある種のワイルドカード値となります．
-	  </p>
+			Mach-O 形式は，ELF システムの関知しないマイナーバージョンの確認を行います．
+			Mach-O ライブラリは二つのバージョン番号: &quot;current&quot; バージョンと &quot;compatibility&quot; バージョンがあります．
+			両方のバージョン番号は３つの番号を 1.4.2 のようにドットでつなげます．
+			最初の番号は 0 ではいけません．
+			２つ目と３つ目の番号は省略可能で，この場合 0 と扱われます．
+			バージョン番号を指定しなかった場合， 0.0.0 と扱われ，ある種のワイルドカード値となります．
+			</p>
       <p>
-			&quot;current&quot; バージョンは情報提供の目的のためにあります．
-			&quot;compatibility&quot; バージョンは以下の確認のためにあります．
-			実行可能ファイルがリンクされたときにライブラリからのバージョン情報が実行可能ファイルにコピーされます．
-			実行可能ファイルが実行されるとき，使用されるライブラリに対してバージョン情報を確認します．
-			使用されるライブラリのバージョンがリンクしたものと同一か新しいものでなければ，dyld は実行時エラーを生成しプログラムを終了させます．
-	  </p>
+			&quot;current&quot; バージョンは情報提供のためのみ存在します．
+			&quot;compatibility&quot; バージョンは以下のように確認目的に使用されます．
+			実行可能ファイルをリンクする際，ライブラリからの情報がファイルにコピーされます．
+			ファイルが実行される際に使用するライブラリに対して情報を確認します．
+			使用するライブラリのバージョンが，リンク時のものと同一か新しいものでない限り，実行時エラーを生成してプログラムを終了させます．
+			</p>
     </section>
     <section name="cflags">
       <title>コンパイラフラグ</title>
       <p>
-			position-independent code (PIC) の生成は Darwin ではデフォルトです．
+			位置独立コード (PIC: Position Independent Code) の生成は Darwin ではデフォルトです．
 			実際， PowerPC コードは設計上 position-independent となり，パフォーマンスや空間上の損失はありません．
 			このため，共有ライブラリやモジュールへコードをコンパイルする際も，PIC を指定する必要はありません．
 			しかし，リンカは"共通"のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
@@ -374,7 +374,7 @@ diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
         <li><em>DESTDIR バグ</em>:
 DESTDIR を設定し， libtool 1.4.2 を使用するパッケージのなかで，再リンクに問題がある場合があります．
 この問題は，以下のメールで議論されました:
-<p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,</p><p>and a patch for the problem is discussed in:</p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.</p></li>
+<p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,</p><p>パッチに関する議論は:</p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.</p></li>
       </ol>
     </section>
     <section name="dylibversionfix">
@@ -408,8 +408,8 @@ make 後の結果のバイナリは:
       <p><code>-version-info</code> を正しく設定するのは複雑です．
 Apple の提供する Developer Tools の文書には素晴らしい情報があります．
 Fink を使用している以上，あなたも Developer Tools をインストールをしているでしょう．
-Mac OS X システムでの libtool のリンクに関する<link url="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34"> 文書</link>はここです．
-この文書は完全版で，下記に簡易版を記します．
+Mac OS X システムでの libtool のリンクに関する<link url="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34">文書</link>はここです．
+この文書は完全版ですが，下記に簡略に記します．
 </p>
       <p>
 developer 文書より引用（訳は Fink Support, Translation and Documentation Team チーム）:
