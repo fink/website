@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.5 2001/07/13 20:27:33 chrisp Exp $ */
+/* $Id: footer.inc,v 1.6 2001/08/28 18:46:25 chrisp Exp $ */
 ?>
 
 </td></tr>
@@ -16,13 +16,17 @@ alt="-----"></td></tr>
 <td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
 <td align="left" background="<? print $root ?>img/footer-back.gif" width="50%">
 <p class="footer"><?
-if ($dyndate) {
+if ($dyndate == 1) {
+  print "Generated dynamically";
+  $date = 0;
+} elseif ($dyndate) {
   print "Database last updated on ";
   $date = $dyndate;
 } else {
   print "Last changed by $author on ";
 }
-print strftime("%a, %b %d %Y", $date);
+if ($date)
+  print strftime("%a, %b %d %Y", $date);
 ?></p>
 </td>
 <td align="right" background="<? print $root ?>img/footer-back.gif" width="50%">
