@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/22 02:20:58';
+$cvs_date = 'Date: 2002/05/22 14:08:56';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -91,6 +91,36 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </pre>
 </li>
 </ul>
+
+<a name="gcc3"><h2>4.2 gcc3</h2></a>
+<p>Mac OS X 10.2 will use the gcc3 compiler, and at the moment, the Fink team
+is experimenting with this on Fink packages, using the version of gcc3
+which Apple provided with the April 2002 Developer Tools.  As of May 22,
+we have had reports of success and failure with just a handful of Fink
+packages when one attempts to compile them with gcc3.  (Thanks to Jeff
+Hester, Mathias Meyer, and Alexander Strange for providing reports.
+Further reports can
+be sent to fink-devel@lists.sourceforge.net .)
+</p><p><b> Successful packages:</b></p>
+
+<li>gnome-libs-1.4.1.6-1</li>
+<li>sdl-1.2.4-2</li>
+<li>mplayer-0.90pre4-1</li>
+<li>windowmaker-0.80.0-7</li>
+<li>pkgconfig-0.12.0-1</li>
+<li>oaf-0.6.8-2</li>
+<li>guile-1.4-4</li>
+
+<p><b> Unsuccessful packages:</b></p>
+<li> apt-0.5.4-2 (breaks with undefined symbols such as 
+__ZTI9pkgSystem) </li>
+<li>libxml2-2.4.21-2 (breaks with install_name error)</li>
+<li>bonobo-1.0.20-1(breaks with install_name error)</li>
+<li>gconf-1.0.9-1(breaks with install_name error)</li>
+<li>
+tads-2.5.5-3 breaks because of weird va_args() calling</li>
+
+
 
 
 
