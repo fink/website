@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.52 2002/11/09 06:15:43 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.53 2002/11/09 06:37:47 htodd Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -260,20 +260,21 @@ proxy settings.
 </p>
 </answer></faqentry>
 
-<faqentry name="firewalled"><question><p>How do I update available packages from CVS when I am behind a firewall?</p></question>
+<faqentry name="firewalled-cvs"><question><p>How do I update available packages from CVS when I am behind a firewall?</p></question>
 <answer>
-<p>The package, cvs-proxy, can tunnel thru HTTP proxies.</p>
+<p>The package <em>cvs-proxy</em> can tunnel through HTTP proxies.</p>
 <ul>
 	<li>
-		<p>First download <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link> files (an .info file and a .patch file) and place them into your local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
+		<p>First download the <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link> files (an .info file and a .patch file) and place them into your local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
 	</li>
 	<li>
-		<p>Install the package with the command:</p>
+		<p>Install the <em>cvs-proxy</em> package with the command:</p>
 		<p><code>fink install <em>cvs-proxy</em></code></p>
 	</li>
 	<li>
-		<p>If that worked, you the packages are updated with the regular commands:</p>
+		<p>Packages are then updated with the commands:</p>
 		<p><code>fink selfupdate-cvs</code></p>
+		<p><code>fink update-all</code></p>
 	</li>
 </ul>
 <p>If fink is not configured to use your proxy, change the settings using:</p>
