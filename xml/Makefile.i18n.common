@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.3 2004/02/17 14:08:30 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.4 2004/02/18 15:00:20 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -9,8 +9,8 @@ BASE_TARGET := $(TARGET)
 
 ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
-SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.,.,$(SOURCE)))
-TARGET = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.xml,.xml,$(SOURCE)))
+TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
 TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
@@ -27,7 +27,7 @@ INSTALL_FILES = $(TARGET)
 ifdef WANT_HTML
 ifdef LANGUAGES
 ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
-ALL_TARGETS := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(ALL_TARGETS),$(subst .en.,.,$(ALL_TARGETS)))
+ALL_TARGETS := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(ALL_TARGETS),$(subst .en.html,.html,$(ALL_TARGETS)))
 INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 else
@@ -52,7 +52,7 @@ force: clean all
 	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(XMLFILE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
-	rm -f *.php.tmp
+	rm -f *.tmp
 	$(foreach  PHPFILE, $(BASE_TARGET), echo "<? require_once '../phpLang.inc.php'; ?>" >$(PHPFILE); )
 
 %.html: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
