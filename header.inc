@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.42 2002/03/24 21:50:46 fingolfin Exp $ */
+/* $Id: header.inc,v 1.43 2002/04/13 21:57:22 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -44,7 +44,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = filemtime($PATH_TRANSLATED);
 }
 
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>
