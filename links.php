@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/08/28 20:37:31 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/11/20 16:49:07 $';
 
 include "header.inc";
 ?>
@@ -16,7 +16,7 @@ browser window.</p>
 <ul>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 a GUI for Fink</li>
-<li><a href="http://aquaflux.org/~fink/" target="_blank">FinkBot</a> -
+<li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 the #fink IRC channel logs & stats</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 Un-official Fink CD distribution and book of Fink tips</li>
