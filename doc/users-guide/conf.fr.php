@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/28 07:08:36';
+$cvs_date = 'Date: 2004/07/29 06:31:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -239,7 +239,7 @@ La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <
     
      <h2><a name="sourceslist">5.9 Gestion du fichier sources.list d'apt</a></h2>
       
-      <p>À partir de la version 0.21.0, fink gère activement le fichier <code>/sw/etc/apt/sources.list</code>, qui est utilisé par apt pour trouver l'emplacement des fichiers binaires à installer. Le fichier sources.list par défaut possède un contenu similaire à celui indiqué ci-dessous. Son contenu prend en compte la distribution et les branches dont vous vous servez. 
+      <p>À partir de la version 0.21.0, fink gère activement le fichier <code>/sw/etc/apt/sources.list</code>, qui est utilisé par apt pour trouver l'emplacement des fichiers binaires à installer. Le fichier sources.list par "défaut" possède un contenu similaire à celui indiqué ci-dessous. Son contenu prend en compte la distribution et les branches dont vous vous servez. 
 </p>
 <pre># Local modifications should either go above this line, or at the end.
 #
@@ -262,8 +262,33 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 
 # Put local modifications to this file below this line, or at the top.
 </pre>
+<p>Pour la bonne compréhension de fonctionnement de ce fichier, voici la traduction en français</p>
+<pre>
+# Les modifications locales doivent se faire soit au-dessus de cette ligne,
+# soit tout-à-fait à la fin du fichier.
+#
+# Configuration par défaut des sources APT pour Fink, générée par le programme fink 
+
+# Arborescence locale des paquets - paquets construits localement à partir des sources
+# NOTE : automatiquement synchronisée avec la ligne Trees du fichier
+# /sw/etc/fink.conf
+# NOTE : exécutez 'fink scanpackages' pour mettre à jour les fichiers Packages.gz correspondants
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Distribution binaire officielle : adresse de téléchargement des paquets
+# à partir de la dernière version
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Distribution binaire officielle : adresse de téléchargement des paquets
+# mis à jour entre deux versions
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Faites vos modifications en-dessous de cette ligne ou tout-à-fait au début du fichier.
+</pre>
 <p>Avec ce fichier par défaut, apt-get cherche d'abord dans votre installation locale les binaires déjà compilés, puis recherche les autres dans la distribution binaire officielle. Vous pouvez modifier l'ordre de recherche en ajoutant des lignes en début de fichier (ce seront elles qui seront les plus prioritaires) ou à la fin du fichier (elles seront les moins prioritaires).</p>
-<p>Fink préserve vos modifications, même si elles touchent les parties par "défaut" du fichier, à condition que les changements soient situés au début ou à la fin du fichier. Si vous avez modifié <code>/sw/etc/apt/sources.list</code> avant de passer à la version 0.21.0 de fink, votre ancien fichier sources.list sera sauvegardé sous <code>/sw/etc/apt/sources.list.finkbak</code> .
+<p>Si vous changez la ligne Trees ou la distribution que vous utilisez, fink modifie automatiquement la partie "par défaut" (similaire à celle ci-dessus) du fichier pour qu'elle corresponde aux nouvelles valeurs. Néanmoins Fink préserve toutes les modifications locales apportées au fichier, à condition que les changements soient situés au début (au-dessus de la première ligne par "défaut" ou à la fin du fichier (en dessous de la dernière ligne par défaut). </p>
+<p>Note : si vous avez modifié <code>/sw/etc/apt/sources.list</code> avant de passer à la version 0.21.0 de fink, votre ancien fichier sources.list sera sauvegardé sous <code>/sw/etc/apt/sources.list.finkbak</code> .
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
