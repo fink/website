@@ -1,9 +1,9 @@
 <?
 $title = "Package Database - Upload Form";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/18 19:26:41 $';
+$cvs_date = '$Date: 2004/04/19 05:43:55 $';
 
-/* $Id: submit.php,v 1.3 2004/04/18 19:26:41 benh57 Exp $ */
+/* $Id: submit.php,v 1.4 2004/04/19 05:43:55 benh57 Exp $ */
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
@@ -37,7 +37,7 @@ if (substr($root,0,1) == "-") {
 
 /* connect to database */
 include $fsroot."db.inc.php";
-$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
+$dbh = mysql_connect($db_host, $db_user, $db_passwd);
 mysql_select_db($db_name, $dbh) or die (mysql_error());
 
 
@@ -171,15 +171,12 @@ elseif(param(pkghash1))
 	}
 	$name = $fileref["name"];
 	
-	print "Moving Uploaded file to tmp/$name\n";
 	if(!move_uploaded_file($fileref["tmp_name"],  "/tmp/$name")) {
 			die("Error! Moving the uploaded file failed.");
 	}
 	#print "User is " . param(User) . " pass " . param(Password) . "\n";
-	
-	
+		
 	$timestamp = date('YmdHis', time());
-	print $timestamp . "\n";
 	
 	######## Parse the package info
 	if(!preg_match("/^finkupload-(.+)-([^-]+-[^-]+)-[^-]+$/", $name, $matches)){
