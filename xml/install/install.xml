@@ -4,13 +4,20 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.19 2004/03/17 00:34:29 dmrrsn Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.20 2004/07/30 15:53:31 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
-of Fink &fink_version;.
+of Fink &fink_version;, intended for use with OS X v.10.3 and later.  
+The instructions
+can also be used for installation on OS X v.10.2 (replacing
+&fink_version; by 0.6.3 throughout the document) 
+and for installation on OS X v.10.1
+(replacing &fink_version; by 0.4.1a).
+</p><p>
 This document does not apply to the "<link url="http://fink.sourceforge.net/download/index.php">binary</link>" distribution.
+</p><p>
 There are instructions for both first time installation and upgrading
 from a previous version.
 Fast track instructions for the impatient are at the top.

@@ -1,17 +1,21 @@
 <?
 $title = "Installation";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/17 00:34:29';
+$cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
-
-include_once "header.inc";
-?>
 
 <h1>Fink 0.7.0 Installation</h1>
 <p>
 These are the installation instructions for the "source" distribution
-of Fink 0.7.0.
+of Fink 0.7.0, intended for use with OS X v.10.3 and later.  
+The instructions
+can also be used for installation on OS X v.10.2 (replacing
+0.7.0 by 0.6.3 throughout the document) 
+and for installation on OS X v.10.1
+(replacing 0.7.0 by 0.4.1a).
+</p><p>
 This document does not apply to the "<a href="http://fink.sourceforge.net/download/index.php">binary</a>" distribution.
+</p><p>
 There are instructions for both first time installation and upgrading
 from a previous version.
 Fast track instructions for the impatient are at the top.
@@ -48,6 +52,6 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.19 2004/03/17 00:34:29 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.20 2004/07/30 15:53:31 dmrrsn Exp $</i></p>
 
-<? include_once "footer.inc"; ?>
+

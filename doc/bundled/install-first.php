@@ -1,11 +1,8 @@
 <?
 $title = "Installation - First Time";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/17 00:34:29';
+$cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
-
-include_once "header.inc";
-?>
 
 <h1>Installation - 2 First Time Installation</h1>
 
@@ -185,4 +182,4 @@ and Mac OS X document</a>.
 <p align="right">
 Next: <a href="install-up03.php">3 Upgrading From Fink 0.3.x</a></p>
 
-<? include_once "footer.inc"; ?>
+

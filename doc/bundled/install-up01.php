@@ -1,11 +1,8 @@
 <?
 $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/17 00:34:29';
+$cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
-
-include_once "header.inc";
-?>
 
 <h1>Installation - 5 Upgrading From Fink 0.1.x</h1>
 
@@ -49,4 +46,4 @@ Reinstall the packages you need.
 
 
 
-<? include_once "footer.inc"; ?>
+
