@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/16 11:33:16 $';
+$cvs_date = '$Date: 2001/07/17 20:23:21 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -30,13 +30,13 @@ Fink (in alphabetical order):</p>
 <h2>Occasional Contributors</h2>
 
 <ul>
+<li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
 <li>Peter O'Gorman</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
 <li>Christian Swinehart</li>
 <li>Aaron Voisine</li>
-<li>"Zauc"</li>
 <li>Tom Zerucha</li>
 </ul>
 
