@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/15 05:05:33';
+$cvs_date = 'Date: 2004/03/22 02:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -157,7 +157,10 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 the <b>d</b>estination directory where the tree to be packaged is built, e.g.
-<code>/sw/src/root-gimp-1.2.1-1</code>
+<code>/sw/src/root-gimp-1.2.1-1</code>. You must not assume that
+<code>root-%f</code> will be in <code>%p/src</code> since
+a user can change that directory using the <code>Buildpath</code> field
+in <code>/sw/etc/fink.conf</code>.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -179,7 +182,11 @@ the path where the p<b>a</b>tches can be found
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-the <b>b</b>uild directory, e.g. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>
+the <b>b</b>uild directory, e.g. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.
+You must not assume that
+<code>root-%f</code> will be in <code>%p/src</code> since
+a user can change that directory using the <code>Buildpath</code> field
+in <code>/sw/etc/fink.conf</code>.
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the

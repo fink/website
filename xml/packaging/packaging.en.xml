@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.5 2004/03/15 05:05:33 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.6 2004/03/22 02:55:00 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -267,7 +267,10 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>
 <itemd>
 <p>
 the <em>d</em>estination directory where the tree to be packaged is built, e.g.
-<filename>/sw/src/root-gimp-1.2.1-1</filename>
+<filename>/sw/src/root-gimp-1.2.1-1</filename>. You must not assume that
+<filename>root-%f</filename> will be in <filename>%p/src</filename> since
+a user can change that directory using the <code>Buildpath</code> field
+in <filename>/sw/etc/fink.conf</filename>.
 </p>
 </itemd></item>
 
@@ -304,7 +307,11 @@ the path where the p<em>a</em>tches can be found
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
+the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.
+You must not assume that
+<filename>root-%f</filename> will be in <filename>%p/src</filename> since
+a user can change that directory using the <code>Buildpath</code> field
+in <filename>/sw/etc/fink.conf</filename>.
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the
@@ -2229,7 +2236,11 @@ of the packages by using <code>DocFiles</code> several times.
 <section name="scripts"><title>Scripts</title>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. Two forms are supported.
+to specify shell commands to be executed. The build directory
+(<filename>%b</filename> is the current directory when scripts are
+executed. You should always use relative pathnames or
+percent-expansions for files and directories in the fink hierarchy,
+not complete absolute pathnames. Two forms are supported.
 </p><p>
 This field can be a simple list of commands. This is sort of like a
 shell script. However, the commands are executed via system(), one

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/15 05:05:33';
+$cvs_date = 'Date: 2004/03/22 02:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -954,7 +954,11 @@ of the packages by using <code>DocFiles</code> several times.
 <h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. Two forms are supported.
+to specify shell commands to be executed. The build directory
+(<code>%b</code> is the current directory when scripts are
+executed. You should always use relative pathnames or
+percent-expansions for files and directories in the fink hierarchy,
+not complete absolute pathnames. Two forms are supported.
 </p><p>
 This field can be a simple list of commands. This is sort of like a
 shell script. However, the commands are executed via system(), one
