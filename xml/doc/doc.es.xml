@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+<article filename="index">
+  <title>Fink - Documentacion</title>
+  <shorttitle></shorttitle>
+  <cvsid>$Id: doc.es.xml,v 1.1 2004/03/04 07:44:18 dmalloc Exp $</cvsid>
+  <preface>
+    <p>
+Este es una coleccion de varios documentos escritos para el Fink. Algunos de ellos tambien pueden ser utiles para la gente que usa Mac OS X o Darwin sin Fink y que deseen aprender a hacer "puertos" de software de Unix. </p>
+  </preface>
+  <section name="userdoc">
+    <title>Documentecion del Usuario</title>
+    <p>
+La documenteacion actual del Fink incluye:
+</p>
+    <ul>
+      <li><varlink url="users-guide/index.php" varurl="users-guide/uguide.html">Guia del Usuario del Fink</varlink> -
+esto cubre la instalacion del propio Fink, la instalacion de pauqtes, y actualizaciones del Fink. Contiene instrucciones tanto para la version fuente como para la binaria.
+<em>Trabajo en Proceso!</em></li>
+      <li><varlink url="x11/index.php" varurl="x11/x11.html">Ejecutando X11 en Mac OS X y Darwin</varlink> -
+cubre conceptos como la instalacion y ejecucion (tambien dedicado a los usuarios de Darwin y Mac OS X)</li>
+    </ul>
+    <p>
+Un grupo de documentos que son mas completos, pero ligeramente desactualizados y no frecuentemente actualizados son los que siguen:
+</p>
+    <ul>
+      <li><varlink url="bundled/install.php" varurl="bundled/install.html">Instalacion y Actualizacion</varlink> - cubre la instalacion de Fink asi como las actualizaciones</li>
+      <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Uso</varlink> - como usar Fink e instalar programas</li>
+      <li><varlink url="bundled/readme.php" varurl="bundled/readme.html">Fink ReadMe</varlink> - El archivo Leeme de la distribucion fuente</li>
+      <li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.html">Acceso a CVS</varlink> - Como acccesar aldeposito CVS de Fink para obtener las ultimas version de codigo fuente de los paquetes, aun entre liberaciones del Fink</li>
+    </ul>
+  </section>
+  <section name="developerdoc">
+    <title>Documentecion de Desarrolladores</title>
+    <ul>
+      <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">UUsando Fink: Un "Como hacer" para los desarrolladores</link> (un pdf de 2 Mbs) - transparencias e la presentacion de la Conferencias<link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X </link> (Disponible tambien como 
+<link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">archivo de PowerPoint </link>) </li>
+      <li><varlink url="porting/index.php" varurl="porting/porting.html">Tips para hacer "puerto"</varlink> - notas para hacer "puertos" de aplicaciones de Unix a Darwin</li>
+      <li><varlink url="packaging/index.php" varurl="packaging/packaging.html">Manual de Paquetes</varlink> - como crear y mantener paquetes de Fink</li>
+    </ul>
+  </section>
+</article>
