@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/17 16:46:56';
+$cvs_date = 'Date: 2004/04/19 13:04:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -91,7 +91,7 @@ include_once "header.inc";
 </p>
 <p>
 在 fink-0.19.2 后的一个 CVS 版本开始，language/language-version use 被通用化，以允许使用任意维护者定义的类型以及相应的子类型，并对一个给定的软件包可以使用多于一种类型。
-类型和子类型均为不包含空白字符的任意字符串(但不应该使括号、逗号和百分号)；不会进行百分号展开。
+类型和子类型均为不包含空白字符的任意字符串(但不应该使括号、逗号、花括号和百分号)；不会进行百分号展开，类型(并非子类型)数值会被转换成小写。
 多种类型值(每个类型可以有一个用空白字符分开的可选的子类型)可以用逗号分隔的列表指定。
 </p>
 <p>
