@@ -1,6 +1,6 @@
 <a name="2004-02-19 Raise your Flag."><span class="news-date">2004-02-19: </span><span class="news-headline">Raise your Flag.</span></a><?php gray_line(); ?>
 	<p>
-Thanks to Baba Yoshihiko Fink has now taken the necessary steps to allow for internalisation efforts. 
+Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for internalisation efforts. 
 The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
 </p>
 <p>
@@ -9,7 +9,7 @@ A translation into Japanese is being worked on and the translation into French h
 Which language are you willing to translate?
 </p>
 <p>
-If you are willing to become a member of the internationalisation team or wish to provide acknowledgement on 
+If you are willing to become a member of the internationalisation team or wish to provide feedback on 
 the web-site feel free to join the new mailing-list.
 You can do so by going to our <a href="<?php print $root; ?>lists/index.php">mailing-lists page</a>. The full announcement on the existing 
 mailing lists can be read <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">here</a>.
