@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/30 08:38:48 $';
+$cvs_date = '$Date: 2001/01/30 09:01:41 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -22,7 +22,7 @@ downloads, configures, compiles and installs software from the
 internet.</p>
 
 <p><table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr valign="top"><td>
+<tr valign="top"><td width="50%">
 
 <h2>News</h2>
 
@@ -43,7 +43,7 @@ and updated packages, including the first contributed package: vnc by
 Jeff Whitaker. You can grab the release from the <a
 href="download.php">download page</a>.</p>
 
-</td><td>&nbsp;&nbsp;&nbsp;</td><td>
+</td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
 <h2>Darwin Resources</h2>
 
