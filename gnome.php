@@ -1,7 +1,7 @@
 <?
 $title = "GNOME on Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/26 08:55:48 $';
+$cvs_date = '$Date: 2001/02/04 21:31:44 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -67,9 +67,9 @@ that provides dynamic loading.<br>
 Download: <a href="http://download.sourceforge.net/fink/dlcompat-20010123.tar.gz">http://download.sourceforge.net/fink/dlcompat-20010123.tar.gz</a></p>
 
 <p><b>bzip2 1.0.1:</b> A new compression program and library.<br>
-Fixes: <a href="files/bzip2-1.0.1-darwin.patch">This patch</a> changes
-the Makefile to use cc instead of gcc (which for some obscure reason
-doesn't exist on Mac OS X, although the cc is based on gcc).<br>
+Fixes: <a href="files/bzip2-1.0.1-darwin.patch">This patch</a>
+<b>[updated 2001-02-04]</b> changes the Makefile to build a shared
+library on Darwin.<br>
 Download: <a href="ftp://sourceware.cygnus.com/pub/bzip2/v100/bzip2-1.0.1.tar.gz">ftp://sourceware.cygnus.com/pub/bzip2/v100/bzip2-1.0.1.tar.gz</a></p>
 
 <p><b>glib 1.2.8:</b> Some basic routines like linked lists. Also
@@ -109,10 +109,10 @@ Downloads:<br>
 <a href="ftp://prtr-13.ucsc.edu/pub/libungif/giflib-4.1.0.tar.gz">ftp://prtr-13.ucsc.edu/pub/libungif/giflib-4.1.0.tar.gz</a><br>
 <a href="ftp://prtr-13.ucsc.edu/pub/libungif/libungif-4.1.0.tar.gz">ftp://prtr-13.ucsc.edu/pub/libungif/libungif-4.1.0.tar.gz</a></p>
 
-<p><b>libpng 1.0.8:</b> Reads and writes PNG images.<br>
-Fixes: <a href="files/libpng-1.0.8-darwin.patch">This patch</a> adds a
+<p><b>libpng 1.0.9:</b> Reads and writes PNG images.<br>
+Fixes: <a href="files/libpng-1.0.9-darwin.patch">This patch</a> adds a
 Makefile for Darwin to the scripts directory.<br>
-Downloads: <a href="http://download.sourceforge.net/libpng/libpng-1.0.8.tar.gz">http://download.sourceforge.net/libpng/libpng-1.0.8.tar.gz</a></p>
+Downloads: <a href="http://download.sourceforge.net/libpng/libpng-1.0.9.tar.gz">http://download.sourceforge.net/libpng/libpng-1.0.9.tar.gz</a></p>
 
 <p><b>imlib 1.9.8.1:</b> An image handling library that reads several
 formats.<br>
@@ -125,24 +125,27 @@ libtool in the appropriate places. After applying the patch, run
 <tt>--disable-shm</tt> to configure could prevent some problems.<br>
 Download: Available on GNOME mirrors.</p>
 
-<p><b>libxml 1.8.10:</b> Used to read XML files.<br>
+<p><b>libxml 1.8.11:</b> Used to read XML files.<br>
 Fixes: host type, libtool.<br>
 Download: Available on GNOME mirrors.</p>
 
-<p><b>libghttp 1.0.8:</b> Provides a HTTP implementation.<br>
+<p><b>libghttp 1.0.9:</b> Provides a HTTP implementation.<br>
 Fixes: libtool.<br>
 Download: Available on GNOME mirrors.</p>
 
 <h2>GNOME packages</h2>
 
-<p><b>orbit 0.5.5:</b> The CORBA request broker used in GNOME.<br>
+<p><b>orbit 0.5.6:</b> The CORBA request broker used in GNOME.<br>
+Note: orbit 0.5.7 is available, but seems to be broken.<br>
 Fixes: libtool, -traditional-cpp. The libtool scripts (ltconfig and
-ltmain.sh) must also be copied to the libIDL and popt directories.<br>
+ltmain.sh) must also be copied to the libIDL and popt directories. <a
+href="files/orbit-0.5.6-darwin.patch">This patch</a> removes a
+-lm from the orbit-config.<br>
 Download: Available on GNOME mirrors.</p>
 
-<p><b>gnome-libs 1.2.8:</b> The core GNOME libraries.<br>
+<p><b>gnome-libs 1.2.11:</b> The core GNOME libraries.<br>
 Fixes: host type, libtool, -traditional-cpp. <a
-href="files/gnome-libs-1.2.8-darwin.patch">This patch</a> fixes
+href="files/gnome-libs-1.2.11-darwin.patch">This patch</a> fixes
 several issues: -lm flags in the configure script, code that includes
 malloc.h without checking HAVE_MALLOC_H first and missing library
 flags in gnome-config. Run <tt>autoconf</tt> after applying.<br>
@@ -186,8 +189,8 @@ Download: <a href="http://download.sourceforge.net/icewm/icewm-1.0.6-4.tar.gz">h
 
 <ul>
 <li>Icons in the panel and its menus sometimes display as "black
-holes". This happens with both Xtools and and XFree86. My guess is
-that it's a shared memory problem. Running the panel with --no-xshm
+holes". This happens with both Xtools and and XFree86. It seems to be
+a shared memory problem. Running the panel with --no-xshm
 helps. Unfortunately, you must hand-edit ~/.gnome/session to add the
 parameter (find the panel's RestartCommand).</li>
 <li>libgtop is missing, some applets depend on it. Other applets
