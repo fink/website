@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.13 2002/06/08 15:10:32 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.14 2002/06/08 15:42:32 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -39,7 +39,7 @@ if ($dyndate == 1) {
   print "Last changed by $author on ";
 }
 if ($date)
-  print strftime("%a, %b %d %Y, %R", $date);
+  print gmstrftime("%a, %b %d %Y, %R GMT", $date);
 ?></div>
 </td></tr>
 <tr><td height="7" class="layout">

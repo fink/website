@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/06/08 15:29:51 $';
+$cvs_date = '$Date: 2002/06/08 15:41:52 $';
 
 include "header.inc";
 ?>
@@ -52,7 +52,7 @@ if (!$rs) {
 
 <p>
 The database was last updated
-<? print strftime("at %R on %A, %B %d", $dyndate) ?> and currently lists
+<? print gmstrftime("at %R GMT on %A, %B %d", $dyndate) ?> and currently lists
 <? print $pkgcount ?> packages in <? print $seccount ?> sections.
 </p>
 
