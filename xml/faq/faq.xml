@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.164 2004/01/28 14:12:29 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.165 2004/01/29 14:24:16 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1106,7 +1106,7 @@ make[1]: *** [unix_dl.lo] Error 1</codeblock>
 <p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p>
 <p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p>
 <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
-sudo ln -s /usr/lib/dlfcn.h /usr/local/lib/libdl.dylib</codeblock>
+sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 </answer>
 </faqentry>
 </chapter>
