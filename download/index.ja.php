@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/04/03 16:14:35 $';
+$cvs_date = '$Date: 2004/04/04 01:45:17 $';
 
 include "header.inc";
 ?>
@@ -30,7 +30,7 @@ include "../fink_version.inc";
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
 <? print $fink_version; ?> バイナリインストーラ</a> - <? print $dmg_size; ?><br>
 (10.2 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-installer.dmg?download">Fink
-0.4.1</a> をダウンロードして下さい)<br>
+0.6.3</a> をダウンロードして下さい)<br>
 (10.1 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
 0.4.1</a> をダウンロードして下さい)
 </p>
@@ -41,24 +41,24 @@ include "../fink_version.inc";
 後は画面に従って下さい。
 </p></li>
 <li><p>
-インストールの最後に ターミナル.app が開き、 <code>pathsetup.command</code> 
-スクリプトが自動的に実行されます。
-途中、シェルの設定ファイルを書き換えるかどうか聞かれます。
-スクリプトが終了すると、ウィンドウが閉じて準備完了!
+インストールの最後に ターミナル.app が開き、 pathsetup
+ユーティリティが自動的に実行されます。
+シェルの設定ファイルを書き換えるかどうか聞かれます。
+ユーティリティが終了すると、ウィンドウが閉じて準備完了!
 </p></li>
 <li>
 <p>
 途中で何らかの問題が発生した場合、インストーラディスク内の 
-pathsetup.command を再実行することができます。
+pathsetup アプリケーションを再実行することができます。
 あるいは、以下のコマンドでも (ターミナル.app からコマンドラインで) 実行されます。
 </p>
 <pre>open /sw/bin/pathsetup.command &lt;RETURN&gt;</pre>
 <p>
-(これはシステムの他のユーザーでも実行することができます。
-各ユーザーは自分のアカウントで pathsetup.command しなければなりません。)
+(このステップはシステム上のほかのユーザーも実行する必要があります。
+各ユーザーは自分のアカウントで pathsetup を実行しなければなりません。)
 </p>
 <p>
-pathsetup.command がエラーメッセージを出力する場合、
+pathsetup がエラーメッセージを出力する場合、
 User's Guide の <a href="../doc/users-guide/install.php#setup">2.3 &quot;環境の設定&quot;</a>
 などのドキュメントを参照して下さい。</p>
 </li>
