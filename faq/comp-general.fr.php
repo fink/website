@@ -1,38 +1,27 @@
 <?
-$title = "Q.F.P. - Compiling (1)";
+$title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/09 19:32:21';
+$cvs_date = 'Date: 2004/04/13 22:31:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 include_once "header.inc";
 ?>
 
-<h1>Q.F.P. - 6 Compile Problems - General</h1>
+<h1>Q.F.P. - 6 Problèmes de compilation généraux</h1>
     
     
     <a name="compiler">
-      <div class="question"><p><b>Q6.1: A configure script complains that it can't find an "acceptable cc".
-        What's that?</b></p></div>
-      <div class="answer"><p><b>A:</b> Read the docs next time. To compile packages from source, you must
-        install the Developer Tools, which among other stuff contains the C
-        compiler, <code>cc</code>.</p></div>
+      <div class="question"><p><b>Q6.1: Un script configure signale qu'il ne peut trouver un "acceptable cc". De quoi s'agit-il ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Lisez la documentation avant de poser des questions. Pour compiler des paquets à partir du source, vous devez installer les Developer Tools, qui, entre autres, contiennent le compilateur C nommé <code>cc</code>.</p></div>
     </a>
     <a name="cvs">
-      <div class="question"><p><b>Q6.2: When I try a "fink selfupdate-cvs" I get this message: "cvs:
-        Command not found."</b></p></div>
-      <div class="answer"><p><b>A:</b> You need to install the Developer Tools.</p></div>
+      <div class="question"><p><b>Q6.2: Lors de l'exécution de "fink selfupdate-cvs", le message : "cvs: Command not found." apparaît.</b></p></div>
+      <div class="answer"><p><b>A:</b> Vous devez installer les Developer Tools.</p></div>
     </a>
     <a name="missing-make">
-      <div class="question"><p><b>Q6.3: I'm getting an error message involving <code>make</code>
-        </b></p></div>
-      <div class="answer"><p><b>A:</b> if your message is of the form</p><pre>make: command not found</pre><p>or</p><pre>Can't exec "make": 
-No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>It means you need to install the Developer Tools.</p><p>On the other hand, if your error message looks like</p><pre>make: illegal option -- C</pre><p>then you've replaced the GNU version of the <code>make</code>
-        utility installed as part of the Developer Tools with a BSD version of
-        make. Many packages rely on special features only supported by GNU
-        make. Make sure that <code>/usr/bin/make</code> is a symlink to
-        <code>gnumake</code>, not <code>bsdmake</code>. Furthermore, make sure
-        that <code>/usr/local/bin/</code> does not contain another copy of
-        <code>make</code>.</p></div>
+      <div class="question"><p><b>Q6.3: Un message d'erreur relatif à <code>make</code> apparaît.</b></p></div>
+      <div class="answer"><p><b>A:</b> Si ce message est du type :</p><pre>make: command not found</pre><p>ou :</p><pre>Can't exec "make": 
+No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>cela signifie que vous devez installer les Developer Tools.</p><p>Si, par contre, le message est du type :</p><pre>make: illegal option -- C</pre><p>cela signifie que vous avez remplacé la version GNU de l'utilitaire <code>make</code> installée par les Developer Tools par une version BSD de make. De nombreux paquets utilisent des fonctionnalités spéciales implémentées seulement dans GNU make. Vérifiez que <code>/usr/bin/make</code> est un lien symbolique vers <code>gnumake</code>, et non vers <code>bsdmake</code>. De plus, assurez-vous que <code>/usr/local/bin/</code> ne contient aucune autre copie de <code>make</code>.</p></div>
     </a>
     <a name="head">
       <div class="question"><p><b>Q6.4: I'm getting a strange usage message from the head command. What's
@@ -253,9 +242,9 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> That's because it's a virtual package.  This type of error occurs when Java gets updated by Software Update:  the header files get removed, which causes the -dev package not to be generated.</p><p>You need to download the appropriate <code>Java Developer Tools</code> package from <a href="http://connect.apple.com">Apple</a>.  In this specific case that's the <code>Java 1.4.2 Developer Tools</code>.</p></div>
     </a>
     <a name="dpkg-split">
-   <div class="question"><p><b>Q6.19: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
-<div class="answer"><p><b>A:</b> Generally, this can be fixed by setting your environment up correctly, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">this FAQ entry</a>.</p></div>
-</a>
+      <div class="question"><p><b>Q6.19: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
+      <div class="answer"><p><b>A:</b> Generally, this can be fixed by setting your environment up correctly, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">this FAQ entry</a>.</p></div>
+    </a>
   <p align="right">
 Next: <a href="comp-packages.php?phpLang=fr">7 Compile Problems - Specific Packages</a></p>
 
