@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.5 2001/07/01 06:34:44 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.6 2001/07/15 20:08:29 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -43,12 +43,12 @@ from the BSD port mechanism (this includes OpenPackages and
 GNU-Darwin)?</p></question>
 <answer><p>Some main advantages:</p>
 <ul>
-<li>It's written in Perl, not make/shell. Thus it doesn't rely on
+<li><p>It's written in Perl, not make/shell. Thus it doesn't rely on
 special features only found in BSD make. There is no need to flag
-packages that need GNU make to build.</li>
-<li>dpkg provides sophisticated management for binary packages -
+packages that need GNU make to build.</p></li>
+<li><p>dpkg provides sophisticated management for binary packages -
 smooth updating, special handling for configuration files, virtual
-packages and other advanced dependencies.</li>
+packages and other advanced dependencies.</p></li>
 </ul>
 </answer></faqentry>
 
@@ -98,6 +98,7 @@ aware of the arguments about /usr/local in the previous question.</p>
 <title>Installation Questions</title>
 <shorttitle>Installation</shorttitle>
 
+<!--
 <faqentry name="stow-not-found"><question><p>Installing Fink fails
 with a "stow not found" message.</p></question>
 <answer><p>This is a known bug in Fink 0.1.8. It is caused by missing
@@ -117,15 +118,17 @@ overloaded FTP server. Later releases of Fink use a different server
 to get bzip2. As a workaround, you can download bzip2-1.0.1.tar.gz
 manually and place it in /sw/src, then retry installing.</p>
 </answer></faqentry>
+-->
 
-<faqentry name="proxy"><question><p>I'm behind a firewall. How do I configure Fink
-to use an HTTP proxy?</p></question>
-<answer><p>Fink does not have a proxy setting because it lets <link
-url="http://www.gnu.org/software/wget/wget.html">wget</link> do all the
-downloading. To use a proxy, you must tell wget to use it. You can do
-that by setting the environment variable http_proxy. See the
-<link url="http://www.gnu.org/manual/wget/html_chapter/wget_8.html#SEC36">wget
-manual</link> for details.</p>
+<faqentry name="proxy"><question><p>I'm behind a firewall. How do I
+configure Fink to use an HTTP proxy?</p></question>
+<answer>
+<p>
+Fink 0.2.3 and later ask you for proxy and firewall settings on
+installation.
+If you're upgrading from an older version, run <code>fink
+configure</code> to be asked these questions.
+</p>
 </answer></faqentry>
 
 <faqentry name="head"><question><p>I'm getting a strange usage message
@@ -145,6 +148,10 @@ Makefiles.
 You need to get the original <code>head</code> executable back if you
 want to use Fink.
 </p>
+<p>
+Future releases of Fink will check the system before the bootstrap
+starts to catch this error.
+</p>
 </answer></faqentry>
 
 </chapter>
@@ -156,10 +163,13 @@ want to use Fink.
 <shorttitle>Usage</shorttitle>
 
 <faqentry name="what-packages"><question><p>How can I find out what packages Fink supports?</p></question>
-<answer><p>For Fink 0.1.x, look in the fink/info directory, e.g.:</p>
-<codeblock>ls /sw/fink/info</codeblock>
-<p>For Fink 0.2.x, you may want to try this:</p>
-<codeblock>find /sw/fink -name '*.info'</codeblock>
+<answer>
+<p>
+Since Fink 0.2.3, there is the <code>list</code> command.
+It produces a list of all packages known to your Fink installation.
+Example:
+</p>
+<codeblock>fink list</codeblock>
 </answer></faqentry>
 
 <faqentry name="unstable"><question><p>There's this package in unstable that I want
@@ -188,7 +198,7 @@ line allows you to run any command via sudo without typing your
 password.</p>
 </answer></faqentry>
 
-<faqentry name="exec-init-csh"><question><p>When I'm trying to run
+<faqentry name="exec-init-csh"><question><p>When I try to run
 init.csh, I get a "Permission denied" error. What am I doing
 wrong?</p></question>
 <answer><p>init.csh is not supposed to be run like normal commands. It
@@ -207,6 +217,7 @@ have a lasting effect on the shell, it must be processed with the
 <title>Problems With Certain Packages</title>
 <shorttitle>Packages</shorttitle>
 
+<!--
 <faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>
 <answer><p>There are several things that can cause this:</p>
 <ul>
@@ -261,6 +272,7 @@ sudo ln -s libSystem.dylib libutil.dylib</codeblock>
 shared X11 libraries are present. Unfortunately, it spits some quite
 confusing error messages when it encounters static libraries.</p>
 </answer></faqentry>
+-->
 
 <faqentry name="nedit"><question><p>nedit is broken.</p></question>
 <answer><p>If you're seeing <code>Xm/BulletinB.h: No such file or
@@ -270,12 +282,14 @@ to include some required header files. There is no workaround yet, and
 it is unknown whether this is fixed in recent releases on Xtools.</p>
 </answer></faqentry>
 
+<!--
 <faqentry name="sawfish"><question><p>Sawfish can't find rep-gtk.</p></question>
 <answer><p>You need shared X11 libraries for rep-gtk to build correctly. It
 doesn't build dynamically loadable modules when only static X11
 libraries are available. The problem doesn't actually show until the
 sawfish configure script tries to use rep-gtk.</p>
 </answer></faqentry>
+-->
 
 </chapter>
 

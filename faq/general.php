@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/01 06:34:44';
+$cvs_date = 'Date: 2001/07/15 20:08:29';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="install.php" title="Installation Questions"><link rel="prev" href="index.php" title="F.A.Q. Contents">';
 
@@ -30,12 +30,12 @@ Finches and their beaks from school, and well, that's it...</p></div></a>
 from the BSD port mechanism (this includes OpenPackages and
 GNU-Darwin)?</b></p></div>
 <div class="answer"><p><b>A:</b> Some main advantages:</p><ul>
-<li>It's written in Perl, not make/shell. Thus it doesn't rely on
+<li><p>It's written in Perl, not make/shell. Thus it doesn't rely on
 special features only found in BSD make. There is no need to flag
-packages that need GNU make to build.</li>
-<li>dpkg provides sophisticated management for binary packages -
+packages that need GNU make to build.</p></li>
+<li><p>dpkg provides sophisticated management for binary packages -
 smooth updating, special handling for configuration files, virtual
-packages and other advanced dependencies.</li>
+packages and other advanced dependencies.</p></li>
 </ul></div></a>
 
 <a name="usr-local"><div class="question"><p><b>Q: Why doesn't Fink install into
@@ -70,7 +70,8 @@ aware of the arguments about /usr/local in the previous question.</p></div></a>
 
 
 
-
+<p align="right">
+Next: <a href="install.php">Installation Questions</a></p>
 
 
 <?
