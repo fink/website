@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 08:49:17';
+$cvs_date = 'Date: 2004/07/16 10:52:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -74,7 +74,7 @@ finkdev% fink validate /sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaqu
 finkdev% fink install nomdupaquet
 </pre>
 <p>et testez les fonctionnalités de votre paquet.</p>
-<p>Si le processus échoue lors d'une des étapes ci-dessus, essayez de corriger les erreurs et recommencez le processus à partir de l'étape fink validate step.</p>
+<p>Si le processus échoue lors d'une des étapes ci-dessus, essayez de corriger les erreurs et recommencez le processus à partir de l'étape fink validate.</p>
 
 <h2><a name="Submitt">1.4 Soumission de votre paquet</a></h2>
 <p>Si toutes les étapes de vérification de votre paquet énoncées ci-dessus ont réussi, vous pouvez soumettre le fichier info (et le fichier patch s'il existe) au <a href="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Traqueur de soumissions de paquets</a>.</p>
@@ -83,8 +83,8 @@ finkdev% fink install nomdupaquet
 <ul>
 <li>Si possible, ajoutez plusieurs éléments à la fois à la même soumission (c'est-à-dire les fichiers info et patch).</li>
 <li>Ajoutez un commentaire mentionnant que votre paquet est prévu pour l'arborescence 10.2-gcc3.3, 10.3  ou pour les deux</li>
-<li>dans quelle section (graphics, sci, etc...) vous pensez qu'il doit être mis</li>
-<li>que vous avez exécuté fink validate sur les fichiers info et .deb.</li>
+<li>Indiquez dans quelle section (graphics, sci, etc...) vous pensez qu'il doit être mis</li>
+<li>Notez que vous avez exécuté fink validate sur les fichiers info et .deb.</li>
 <li>Positionnez le champ Group de l'élément sur Undergoing Validation à la création de l'élément. Repositionnez-le sur Undergoing Validation quand vous modifiez les fichiers après qu'un examinateur de soumissions de paquets vous ait demandé de corriger des problèmes dans votre paquet.</li>
 </ul>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Exemple";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 08:49:17';
+$cvs_date = 'Date: 2004/07/16 10:52:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="prev" href="howtostart.php?phpLang=fr" title="Préliminaires">';
 
 
@@ -14,7 +14,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="Basics">2.1 Préparation</a></h2>
-<p>Tout d'abord Maxwell. Ouvrez votre éditeur de text et commençons. Nous connaissons le nom du paquet, sa version et l'endroit où est situé l'archive tar source. Entrons donc ces informations dans la fenêtre de l'éditeur de texte :</p>
+<p>Tout d'abord Maxwell. Ouvrez votre éditeur de texte et commençons. Nous connaissons le nom du paquet, sa version et l'endroit où est située l'archive tar source. Entrons donc ces informations dans la fenêtre de l'éditeur de texte :</p>
 <pre>
 Package: maxwell
 Version: 0.5.1
@@ -56,7 +56,7 @@ Reading package info...
 Updating package index... done.
 Information about 3377 packages read in 30 seconds.
 WARNING: No MD5 specified for Source of package maxwell-0.5.1-1 \
-Maintainer: John Doe &lt;jdoe@example.com&gt;
+Maintainer: Paul Dupont &lt;pdupont@exemple.com&gt;
 curl -f -L -O http://distfiles.opendarwin.org/maxwell-0.5.1.tar.gz
   % Total    % Received % Xferd  Average Speed          Time             Curr.
                                  Dload  Upload Total    Current  Left    Speed
@@ -77,7 +77,7 @@ curl -f -L -O http://west.dl.sourceforge.net/sourceforge/maxwell/maxwell-0.5.1.t
                                  Dload  Upload Total    Current  Left    Speed
 100  7856  100  7856    0     0  19838      0  0:00:00  0:00:00  0:00:00 6511k
 </pre>
-<p>L'archive tar ne peut être téléchargée à partir des miroirs de Fink, car le paquet n'a pas encore été ajoutée à la distribution. C'est pourquoi il faut changer de miroir et sélectionner l'option 5. Voir les <a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">Q.F.P.</a> pour de plus amples informations à ce sujet.</p>
+<p>L'archive tar ne peut être téléchargée à partir des miroirs de Fink, car le paquet n'a pas encore été ajouté à la distribution. C'est pourquoi il faut changer de miroir et sélectionner l'option 5. Voir les <a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">Q.F.P.</a> pour de plus amples informations à ce sujet.</p>
 <p>Maintenant nous pouvons calculer la somme de contrôle md5 en exécutant md5 /sw/src/maxwell-0.5.1.tar.gz, et l'ajouter à notre fichier .info</p>
 <pre>
 Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
@@ -171,8 +171,8 @@ dpkg-deb -b root-maxwell-0.5.1-1 /sw/fink/dists/local/main/binary-darwin-powerpc
 dpkg-deb: building package `maxwell' in \
 `/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
 </pre>
-<p>Fink semble avoir tout installé au bon endroit : /sw/src/root-maxwell-0.5.1-1 à partir de l'emplacement où le paquet binairemaxwell_0.5.1-1_darwin-powerpc.deb a été construit.</p>
-<p>Notez aussi que fink inclue automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets fink (par exemple -I/sw/include).</p>
+<p>Fink semble avoir tout installé au bon endroit : /sw/src/root-maxwell-0.5.1-1 à partir de l'emplacement où le paquet binaire maxwell_0.5.1-1_darwin-powerpc.deb a été construit.</p>
+<p>Notez aussi que fink inclut automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets fink (par exemple -I/sw/include).</p>
 <p>Regardons ce qu'il y a à l'intérieur du paquet binaire :</p>
 <pre>
 finkdev% dpkg -c \
@@ -216,7 +216,7 @@ Warning: File installed into deprecated directory /sw/man/
 Warning: File installed into deprecated directory /sw/man/
                                         Offender is /sw/man/man8/maxwell.8
 </pre>
-<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="http://fink.sourceforge.net/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans /sw/share/man et les fichiersREADME dans /sw/share/doc/%n. Si nous ouvrons le Makefile de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
+<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="http://fink.sourceforge.net/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans /sw/share/man et les fichiers README dans /sw/share/doc/%n. Si nous ouvrons le Makefile de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
 <pre>
 prefix = /usr/local
 mandir = ${prefix}/man
@@ -233,7 +233,7 @@ make install prefix=%i mandir=%i/share/man datadir=%i/share/doc/%n
 finkdev% fink rebuild maxwell
 </pre>
 <p>(On utilise fink rebuild car fink build ne ferait rien du tout, puisque le paquet a déjà été construit.)</p>
-<p>Revérifiez le contenu du fichier .deb (avec dpkg -c) pour voir où les fichiers sont installés maintenant. Puis validez de nouveau le fichier .deb fink validate. Si tout se passe bien, vous pouvez installer le nouveau paquet avec :</p>
+<p>Revérifiez le contenu du fichier .deb (avec dpkg -c) pour voir où les fichiers sont installés maintenant. Puis validez de nouveau le fichier .deb avec fink validate. Si tout se passe bien, vous pouvez installer le nouveau paquet avec :</p>
 <pre>
 finkdev% fink install maxwell
 /usr/bin/sudo /sw/bin/fink  install maxwell
