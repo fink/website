@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.4 2004/07/17 22:36:19 michga Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.5 2004/07/18 15:45:45 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -35,7 +35,7 @@ package for <link url="http://maxwell.sourceforge.net">maxwell</link>.
 <section name="Learn"><title>Learn the Basics</title>
 <p>
 <em>Please note:</em> In this document we assume that fink is installed into
-<tt>/sw</tt> - the default location. If you see a codeblock similar to
+<filename>/sw</filename> - the default location. If you see a codeblock similar to
 </p>
 <codeblock>
 finkdev% somecommand
@@ -354,7 +354,7 @@ change to the next mirror set. More information about this problem is in the
 <link url="http://fink.sourceforge.net/faq/comp-general.php#master-problems">FAQ</link>.
 </p>
 <p>
-So we can now get the md5 by running <code>md5 /sw/src/maxwell-0.5.1.tar.gz</code>,
+So we can now get the md5 by running <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code>,
 and add it to the .info file:
 </p>
 <codeblock>
