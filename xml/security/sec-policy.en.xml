@@ -3,14 +3,14 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.4 2004/06/23 02:45:48 rangerrick Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.5 2004/06/24 10:23:06 dmalloc Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
             accepted package in Fink remains with the respective maintainer,
-            Fink recognizes the necessity to offer a uniform policy on how to react
-            to security incidents found in software which are offered as Fink
-            packages. </p>
+            Fink recognizes the necessity to offer a uniform policy on how to
+            react to security incidents found in software which are offered as
+            Fink packages. </p>
     </preface>
     <chapter filename="respo">
         <title>Responsibility</title>
@@ -29,8 +29,8 @@
             <title>Whom shall I contact?</title>
             <p>If there are security incidents within a certain piece of
                 packaged software, you should notify the maintainer of that
-                package as well as the <em>Fink Core Team.</em> The email of
-                the maintainer can be found within the packages info, and the email
+                package as well as the <em>Fink Core Team.</em> The email of the
+                maintainer can be found within the packages info, and the email
                 of the <em>Fink Core Team.</em> is
                 fink-core@lists.sourceforge.net </p>
         </section>
@@ -38,44 +38,48 @@
             <title>Pre-notifications</title>
             <p>Serious security incidents in software packaged by Fink might
                 require you to pre-notify the maintainer of that package. Since
-                it is possible that the maintainer cannot be reached in a timely manner,
-                pre-notification should always also be submitted to the <em>Fink Core
-                Team.</em> at fink-core@lists.sourceforge.net</p>
+                it is possible that the maintainer cannot be reached in a timely
+                manner, pre-notification should always also be submitted to the
+                    <em>Fink Security Team.</em> Each team members e-mail is
+                listed individually later on in this document. Please note that
+                fink-core@lists.sourceforge.net is a publically archived mailing
+                list, private pre-notifications should <em>never</em> be sent to
+                that list.</p>
         </section>
         <section name="response">
             <title>Response</title>
             <p>Submitted reports about a security incident will be answered by
-                the <em>Fink Core Team.</em>  Each maintainer is required by
-                Fink to acknowledge the reported issue individually. In the
-                unlikely event that the maintainer is not available and the
-                maintainer has not acknowledged the report within 24 hours, a
-                note should be sent to the <em>Fink Core Team</em> informing the
-                team that the maintainer might be unresponsive. </p>
+                the <em>Fink Core Team.</em> Each maintainer is required by Fink
+                to acknowledge the reported issue individually. In the unlikely
+                event that the maintainer is not available and the maintainer
+                has not acknowledged the report within 24 hours, a note should
+                be sent to the <em>Fink Core Team</em> informing the team that
+                the maintainer might be unresponsive. </p>
             <p>In the event that you attempted to notify the maintainer of the
                 package in question but the mail system returned a delivery
                 error for that email you should notify the <em>Fink Core
                 Team</em> immediately to inform them that the maintainer is
-                unreachable and that the package may be updated irrespective of the
-                maintainer. </p>
+                unreachable and that the package may be updated irrespective of
+                the maintainer. </p>
         </section>
     </chapter>
     <chapter filename="severity">
         <title>Response times and immediate actions.</title>
         <shorttitle>responses</shorttitle>
         <preface>
-            <p>Response time and actions taken greatly depend on the 
-                severity of the loss introduced by a particular flaw in the software
-                that has been packaged for Fink.  In any case
-                the <em>Fink Core Team</em> will take immediate action whenever
-                it feels it is necessary to protect the Fink user community.</p>
+            <p>Response time and actions taken greatly depend on the severity of
+                the loss introduced by a particular flaw in the software that
+                has been packaged for Fink. In any case the <em>Fink Core
+                Team</em> will take immediate action whenever it feels it is
+                necessary to protect the Fink user community.</p>
         </preface>
         <section name="resptimes">
             <title>Response times</title>
             <p>Each package should strive to meet the following response times.
                 For some types of vulnerabilities the <em>Fink Core Team</em>
-                might choose to take immediate action.  If that is the case one
+                might choose to take immediate action. If that is the case one
                 of the Core Team members will notify the maintainer of the
-                package in question.  Also, keep in mind that while we strive to
+                package in question. Also, keep in mind that while we strive to
                 meet these response times, Fink is a volunteer effort, and they
                 cannot be guaranteed.</p>
             <itemtable labeld="Repsonse time" labelt="Vulnerability">
@@ -132,8 +136,8 @@
         <shorttitle>isource</shorttitle>
         <section name="sources">
             <title>Acceptable Incident Sources.</title>
-            <p>As submitter of a security incident in Fink-packaged software
-                you have to ensure that the vulnerability of the software also
+            <p>As submitter of a security incident in Fink-packaged software you
+                have to ensure that the vulnerability of the software also
                 exists on Mac OS X. It the responsibility of the notifying party
                 to ensure that one of the following sources reinforces the
                 reported issue for the particular software in question.</p>
@@ -200,8 +204,7 @@
                 <li>
                     <em>MANDRAKE</em>: Linux-Mandrake advisory</li>
                 <li>
-                    <em>MISC</em>: generic reference from an URL
-                </li>
+                    <em>MISC</em>: generic reference from an URL </li>
                 <li>
                     <em>MLIST</em>: generic reference form for miscellaneous
                     mailing lists</li>
@@ -303,60 +306,48 @@
         </preface>
         <section name="who">
             <title>Who may send them?</title>
-            <p>These announcements may only be sent by
+            <p>These announcements may only be sent by the <em>Fink Security
+                Team</em>. Most announcement will be sent from
                 dmalloc@users.sourceforge.net signed by the PGP key with the
                 fingerprint <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
                 291E</tt>. The public key can be found at
                 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
                 (this is intentionally not marked as a link).</p>
+            <p> Other authorised Team members are: (here you add your email +
+                public key like I did above)</p>
         </section>
         <section name="how">
             <title>How to submit </title>
             <p> To ensure that a common look for security notifications is met,
                 all security notices <em>must</em> follow the following common
                 template. </p>
-            <codeblock> 
-                ID:               FINK-YYYY-MMDD-NN
-                Reported:         YYYY-MM-DD
-                Updated:          YYYY-MM-DD
-                Package:          package-name 
-                Maintainer:       maintainer-name
-                Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
-                Mac OS X version: 10.3, 10.2
-                Fix:              patch|upstream
-                Updated by:       maintainer|forced update (Email)
-                Description:      A short description describing the issue.
-                References:       KEYWORD (see above)
-                   Ref-URL:       URL 
-            
-            </codeblock>
+            <codeblock> ID: FINK-YYYY-MMDD-NN Reported: YYYY-MM-DD Updated:
+                YYYY-MM-DD Package: package-name Maintainer: maintainer-name
+                Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,
+                10.2-gcc3.3/unstable Mac OS X version: 10.3, 10.2 Fix:
+                patch|upstream Updated by: maintainer|forced update (Email)
+                Description: A short description describing the issue.
+                References: KEYWORD (see above) Ref-URL: URL </codeblock>
             <p>A sample report could look somewhat like this:</p>
-            <codeblock>
-                ID:               FINK-2004-06-01
-                Reported:         2004-06-09
-                Updated:          2004-06-09
-                Package:          cvs 
-                Maintainer:       Sylvain Cuaz
-                Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
-                Mac OS X version: 10.3, 10.2
-                Fix:              upstream
-                Updated by:       forced update (dmalloc@users.sourceforge.net)
-                Description:      Multiple vulnerabilities in CVS found my ematters Security.
-                References:       BID
-                   Ref-URL:       http://www.securityfocus.com/bid/10499
-                References:       CVE
-                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
-                References:       CVE
-                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
-                References:       CVE
-                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
-                References:       CVE
-                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
-                References:       FULLDISCURL
-                   Ref-URL:       http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
-                References:       MISC
-                   Ref-URL:       http://security.e-matters.de/advisories/092004.html
-            </codeblock>
+            <codeblock> ID: FINK-2004-06-01 Reported: 2004-06-09 Updated:
+                2004-06-09 Package: cvs Maintainer: Sylvain Cuaz Tree(s):
+                10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,
+                10.2-gcc3.3/unstable Mac OS X version: 10.3, 10.2 Fix: upstream
+                Updated by: forced update (dmalloc@users.sourceforge.net)
+                Description: Multiple vulnerabilities in CVS found my ematters
+                Security. References: BID Ref-URL:
+                http://www.securityfocus.com/bid/10499 References: CVE Ref-URL:
+                http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+                References: CVE Ref-URL:
+                http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+                References: CVE Ref-URL:
+                http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+                References: CVE Ref-URL:
+                http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+                References: FULLDISCURL Ref-URL:
+                http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+                References: MISC Ref-URL:
+                http://security.e-matters.de/advisories/092004.html </codeblock>
         </section>
     </chapter>
 </document>
