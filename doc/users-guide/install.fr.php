@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/23 03:43:43';
+$cvs_date = 'Date: 2005/03/02 05:06:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -20,8 +20,7 @@ include_once "header.fr.inc";
 <a href="http://fink.sourceforge.net/download/bindist.php">page de téléchargement</a>
 (vous devrez peut-être utiliser les fonctions "Téléchargez le fichier lié sous..." ou "Téléchargez sur le disque"), double-cliquez dessus pour la monter. 
 Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou dans le répertoire de téléchargement que vous avez choisi) après vérification du fichier par Utilitaire de disque (ou Images disques pour les versions antérieures à 10.3). Vous trouverez, à l'intérieur, des documents et un paquet d'installation. Double-cliquez sur le paquet d'installation et suivez les instructions qui apparaîtront à l'écran.</p>
-<p>Un mot de passe administrateur vous sera demandé et un texte s'affichera. Lisez-le - il se peut qu'il soit plus récent que ce guide utilisateur. Quand l'installeur vous demandera de choisir un disque d'installation, assurez-vous que vous cliquez sur le volume système (celui sur lequel vous avez installé Mac OS X). Si vous choisissez un autre volume, l'installation s'effectuera, mais Fink ne fonctionnera pas. Quand le processus d'installation sera terminé, suivez les instructions de la section
-<a href="#setup">Définition de votre environnement</a>.</p>
+<p>Un mot de passe administrateur vous sera demandé et un texte s'affichera. Lisez-le - il se peut qu'il soit plus récent que ce guide utilisateur. Quand l'installeur vous demandera de choisir un disque d'installation, assurez-vous que vous cliquez sur le volume système (celui sur lequel vous avez installé Mac OS X). Si vous choisissez un autre volume, l'installation s'effectuera, mais Fink ne fonctionnera pas. Quand le processus d'installation sera terminé, suivez les instructions de la section <a href="#setup">Définition de votre environnement</a>.</p>
 
 <h2><a name="src">2.2 Installation de la distribution source</a></h2>
 
@@ -38,11 +37,10 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 
 <h2><a name="setup">2.3 Définition de votre environnement</a></h2>
 
-<p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH
-(et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
+<p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH (et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
+<pre>open /sw/bin/pathsetup.sh</pre>
+<p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de fink, cette commande s'appelle <code>pathsetup.command</code>. Il suffit alors de la lancer de la façon suivante :</p>
 <pre>open /sw/bin/pathsetup.command</pre>
-<p>ou pour <code>fink-0.18.3</code> ou <code>fink-0.19.2</code>, en lançant (exactement comme indiqué ci-dessous) :</p>
-<pre>/sw/bin/pathsetup.sh</pre>
 <p>Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez. Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :</p>
 <pre>echo $SHELL</pre>
 <p> Si le résultat est "csh" ou "tcsh", c'est que vous utilisez le shell C. Si le résultat est bash, zsh, sh, ou quelque chose de similaire, vous utilisez vraisemblablement une variante du shell Bourne.</p>
