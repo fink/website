@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.64 2002/12/17 18:57:35 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.65 2002/12/18 07:34:41 htodd Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -491,12 +491,35 @@ edit line 479 of <filename>/sw/lib/perl5/Fink/SelfUpdate.pm</filename> and chang
 <p>It is always a good idea to make a backup of any file before modifying it.</p>
 </answer></faqentry>
 
+<faqentry name="cvs-busy">
+	<question>
+		<p>When I try to run "fink selfupdate", I get the error "<code>Updating using CVS failed. Check the error messages above.</code>"
+		</p>
+	</question>
+	<answer>
+		<p>An example of the error is as follows:</p>
+		<codeblock>
+(Logging in to anonymous@cvs.sourceforge.net)
+CVS password:
+cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
+Connection refused
+### execution of su failed, exit code 1
+Failed: Logging into the CVS server for anonymous read-only access failed.
+		</codeblock>
+		<p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p>
+		<p>Another possibility, is that you need to reset your cvs directories. Use the command:</p>
+		<p><codeblock> 
+sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+fink selfupdate-cvs
+		</codeblock></p>
+	</answer>
+</faqentry>
+
 <faqentry name="kernel-panics"><question><p>When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</p></question>
 <answer>
 <p> A number of recent reports on the 
-<link
-url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+<link url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
 mailing list</link> have indicated problems (including kernel panics and
 infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
