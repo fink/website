@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.27 2004/06/15 00:27:55 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.28 2004/07/15 11:05:05 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -575,6 +575,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
         <p>Pourquoi des erreurs "dyld: perl undefined symbols" apparaissent à l'utilisation de commandes de Fink ?</p>
       </question>
       <answer>
+      <p>Obsolète</p>
         <p>Si vous voyez une erreur analogue à la suivante :</p>
         <codeblock>dyld: perl Undefined symbols:
 _Perl_safefree
@@ -1015,6 +1016,15 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Cette erreur se produit le plus souvent lors de mises à jour. Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et sous Jaguar <code>xml-parser-pm560</code>.</p>
       </answer>
     </faqentry>
+        <faqentry name="master-problems">
+      <question>
+        <p>Lors du téléchargement d'un paquet, Fink tente de le faire à partir d'un site dont le nom contient <quote>distfiles</quote> et ne trouve pas le fichier.</p>
+      </question>
+      <answer>
+        <p>Fink tente d'utiliser l'un de ses sites <quote>Maîtres</quote>. Ils servent à garantir que les sources des paquets de Fink sont disponibles même lorsque le site original a changé d'adresse. Cette erreur apparaît lorsqu'une nouvelle version d'un paquet est publiée, mais que les miroirs maîtres n'ont pas encore eu le temps de la prendre en compte.</p>
+        <p>Pour pallier cela, exécutez <code>fink configure</code> et changez l'ordre de recherche de telle sorte que les miroirs maîtres soient utilisés en dernier.</p>
+      </answer>
+    </faqentry>
  </chapter>
   <chapter filename="comp-packages">
     <title>Problèmes de compilation de certains paquets</title>
@@ -1047,8 +1057,7 @@ endif</codeblock>
           <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
         <p>pour supprimer system-xfree86, ce qui laisse tout le reste en place. Si <code>system-xfree86</code> n'est pas installé, passez à l'étape 3.</p>
         <p>2. Supprimez XFree86 avec :</p>
-          <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
-        /etc/X11</codeblock>
+          <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</codeblock>
         <p>Si vous aviez installé Apple X11 auparavant, supprimez également l'application X11.</p>
         <p>3. Pour installer XFree86-4.2.1, installez les paquets Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> comme vous le faites d'habitude : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p>
         <p>- ou -</p>
@@ -1122,7 +1131,19 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 <p>Either of these will provide <code>x11</code>. <code>system-xfree86</code> is now a bundle that installs the appropriate one of the above packages, depending on the version of XFree86 / Apple X11 that is installed. Unfortunately, switching the provider of a virtual package is sufficiently complicated that the automatic upgrade procedure can't deal with it (currently). Do an additional <code>selfupdate</code> to get the latest version of the package, then try to update again.</p>
 </answer>
 </faqentry><-->
-  </chapter>
+     <faqentry name="libiconv-gettext">
+      <question>
+        <p>Impossible de mettre à jour libiconv <code>libiconv</code>.</p>
+      </question>
+      <answer>
+        <p>Si vous voyez apparaître des messages d'erreur semblables au suivant :</p>
+        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+        <p>vous pouvez résoudre le problème en exécutant :</p>
+        <codeblock>fink remove gettext-dev
+fink install libiconv</codeblock>
+      </answer>
+    </faqentry>
+     </chapter>
   <chapter filename="usage-general">
     <title>Problème généraux d'utilisation de paquets</title>
     <shorttitle>Utilisation (1)</shorttitle>

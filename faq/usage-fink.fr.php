@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/06/15 00:27:55';
+$cvs_date = 'Date: 2004/07/15 11:05:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -164,7 +164,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
     </a>
     <a name="perl-undefined-symbol">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Pourquoi des erreurs "dyld: perl undefined symbols" apparaissent à l'utilisation de commandes de Fink ?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez une erreur analogue à la suivante :</p><pre>dyld: perl Undefined symbols:
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolète</p><p>Si vous voyez une erreur analogue à la suivante :</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
 _Perl_saferealloc

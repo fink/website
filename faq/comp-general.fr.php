@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/06/15 00:27:55';
+$cvs_date = 'Date: 2004/07/15 11:05:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -164,6 +164,10 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
      <a name="xml-parser-pm">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.20: <code>intltool</code> semble ne pas trouver XML::Parser. Pourtant xml-parser-pm est installé.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cette erreur se produit le plus souvent lors de mises à jour. Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et sous Jaguar <code>xml-parser-pm560</code>.</p></div>
+    </a>
+        <a name="master-problems">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.21: Lors du téléchargement d'un paquet, Fink tente de le faire à partir d'un site dont le nom contient <q>distfiles</q> et ne trouve pas le fichier.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink tente d'utiliser l'un de ses sites <q>Maîtres</q>. Ils servent à garantir que les sources des paquets de Fink sont disponibles même lorsque le site original a changé d'adresse. Cette erreur apparaît lorsqu'une nouvelle version d'un paquet est publiée, mais que les miroirs maîtres n'ont pas encore eu le temps de la prendre en compte.</p><p>Pour pallier cela, exécutez <code>fink configure</code> et changez l'ordre de recherche de telle sorte que les miroirs maîtres soient utilisés en dernier.</p></div>
     </a>
  <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=fr">7. Problèmes de compilation de certains paquets</a></p>
