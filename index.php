@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/02 15:43:51 $';
+$cvs_date = '$Date: 2001/09/04 13:00:37 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -36,12 +36,13 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-09-04: Fink 0.2.6 is released, fixing several bootstrap
+problems. The source release is available from the <a
+href="download.php">download page</a> or via the 'fink selfupdate'
+command. The binary release will follow soon.</p>
 <p>2001-09-02: Chat with the developers and other users! We now have
 a #fink channel on the <a href="http://openprojects.net/">openprojects.net</a>
 IRC network.</p>
-<p>2001-08-25: Fink 0.2.5 was released. The source release is
-available from the <a href="download.php">download page</a>, the
-binary release will follow soon.</p>
 <p>2001-08-23: OpenOSX.com refuses to give fair credit after using
 Fink to create GIMP CDs. Read Christoph's <a
 href="pr/openosx.php">public statement</a> on the issue.</p>
@@ -49,7 +50,7 @@ href="pr/openosx.php">public statement</a> on the issue.</p>
 <h2>Status</h2>
 
 <p>
-Fink 0.2.5 was released on 25 August 2001.
+Fink 0.2.6 was released on 4 September 2001.
 Now that a base feature set is implemented, focus is shifting to
 provide more packages, keep them current and improve quality.
 Work continues to make more packages available as binaries.

@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/25 15:51:40 $';
+$cvs_date = '$Date: 2001/09/04 13:00:37 $';
 
 include "header.inc";
 ?>
@@ -21,12 +21,12 @@ derived from it.
 </p>
 
 <p>
-Fink 0.2.5 was released on 25 August 2001.
+Fink 0.2.6 was released on 4 September 2001.
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-0.2.5-full.tar.gz">Fink
-0.2.5</a> - 559K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-0.2.6-full.tar.gz">Fink
+0.2.6</a> - 566K, .tar.gz format</li>
 </ul>
 
 <p>
@@ -57,7 +57,8 @@ and apt-get tools.
 <p>
 Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
-The following is based on the 0.2.5 release.
+The following is based on the 0.2.5 release, but will be updated to
+0.2.6 soon.
 </p>
 <ul>
 <li><a href="bindist/install/fink-0.2.5-installer.dmg">Fink 0.2.5 Binary
