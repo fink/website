@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/12 18:51:10';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/02/24 02:41:30';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -97,6 +97,9 @@ installing it fails.</a></li>
 black icons only. What's wrong?</a></li>
 <li><a href="usage-general.php#xlocale">6.2 I'm getting lots of messages
 like "locale not supported by C library". Is that bad?</a></li>
+<li><a href="usage-general.php#passwd">6.3 There are suddenly a number of 
+strange users on my system, with names like "mysql", "pgsql", and "games".  
+Where did they come from?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
 <ul>
@@ -113,7 +116,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.28 2002/01/12 18:51:10 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.30 2002/02/24 02:41:30 dmrrsn Exp $</i></p>
 
 
 <?
