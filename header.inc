@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.66 2004/03/01 03:52:02 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.67 2004/03/01 10:24:01 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -184,9 +184,9 @@ function insert_sub ($navbox, $active_page) {
 				$_link = $navbox[$i ];
 			}
 			if (substr($link, -2) == ".*") $link = substr($link, 0, -2);
-			echo "\t\t<dd class=\"toc_subsections\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
+			echo "\t\t<dd class=\"menu_subitem\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
 		} else {
-			echo "\t\t<dd class=\"toc_subsections_selected\">" . $navbox[$i + 1] . "</dd>\n";
+			echo "\t\t<dd class=\"menu_subitem\"><div class=\"file\">" . $navbox[$i + 1] . "</div></dd>\n";
 		}
 	}
 }
@@ -210,21 +210,24 @@ function insert_sub ($navbox, $active_page) {
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 
 <? /* header and sourceforge logo */ ?>
-<table width="100%" cellspacing="0" >
+<table width="100%" cellspacing="0" class="yellowboarder">
 <tr valign="bottom">
-	<td align="left" class="toc_top">
+	<td align="left" rowspan="2">
 	<? if (!$is_home) echo '<a href="' . $root . 'index.php">'; ?>
 	<img src="<? echo $root ?>img/mlogo.png"  border="0" alt="Fink">
 	<? if (!$is_home) echo '</a>'; ?>
 	</td>
-	<td align="right" class="toc_top">
-		<span class="default">
+	<td align="right" >
+	<? if (function_exists(AddFlags)) AddFlags(' ', true, $root); ?>
+	</td>
+</tr>
+<tr valign="bottom">
+	<td align="right" >
 		Hosted by
 		<a href="http://sourceforge.net/">
 		<img src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
 			height="31" border="0" alt="SourceForge" style="vertical-align:text-bottom">
 		</a>
-		</span>
 	</td>
 </tr>
 </table>
@@ -236,26 +239,39 @@ function insert_sub ($navbox, $active_page) {
 <? /* navigation column table */ ?>
 
 <? /* sections */ ?>
-	<dd class="toc_top" style="text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dd>
+	<dt class="yellowboarder" style="padding: 4px 0px; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dd>
 	
 <? foreach ($section_files as $key => $filename) {
-	$toc_sections_class = 'toc_sections';
-	if ($section == $key && $nonav == 1) $toc_sections_class = 'toc_sections_selected';
+		$toc_sections_class = 'toc_sections';
+		if ($section == $key) {
+			if ($nonav == 1) {
 ?>
-		<dd class="<? echo  $toc_sections_class ?>"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
+		<dd class="menu_item"><div class="file" ><? echo $section_names[$key] ?></div></dd>
 <?
-	if ($section == $key && $nonav != 1) insert_sub ($navbox, $active_page);
+			} else {
+?>
+		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a>
+<?
+				if ($section == $key && $nonav != 1) insert_sub ($navbox, $active_page);
+?>
+		</dd>
+<?
+			}
+		} else {
+?>
+		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
+<?
+		}
 	} 
 ?>
 
 <? /* link to print version */ ?>
 <? if ($printlink) { ?>
-		<dd class="toc_top">&nbsp;</dd>
-		<dd class="toc_top">
+		<dt>
 			<a href="<? echo $root . $printlink ?>">
 			<img src="<? echo $root ?>img/printlink.gif" width="120" height="22" border="0" alt="Print Version">
 			</a>
-		</dd>
+		</dt>
 <? } ?>
 <? /* end navigation column */ ?>
 	</dl>
@@ -273,5 +289,4 @@ function insert_sub ($navbox, $active_page) {
 
 <? /* Call phpLang function */ ?>
 <div style="text-align: right ;">
-<? if (function_exists(AddFlags)) AddFlags(' ', true, $root); ?>
 </div>

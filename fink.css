@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.19 2004/03/01 03:52:02 babayoshihiko Exp $ */
+/* $Id: fink.css,v 1.20 2004/03/01 10:24:01 babayoshihiko Exp $ */
 /* A good way to get colors which fit well together is to use the color wheel
  found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
  were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
@@ -22,11 +22,6 @@ table {
 	padding: 0px ;
 }
 
-dl {
-	margin: 0px ;
-	padding: 0px ;
-}
-
 p,ul,ol,li,dl,dt,dd,td,th { color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
 
 td.layout { 
@@ -45,105 +40,67 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 
 .attention { color:red; }
 
-dd a {
-  text-decoration: none;
-  display: block;
-}
-
-.toc_top {
-	font-family: Verdana,Helvetica,Arial,sans-serif ;  
-	font-size: 9pt ;
-	font-weight: bold ;
-	border-style: solid ;
+.yellowboarder {
+	border-style: solid ; 
 	border-width: 0px 0px 4px 0px ;
 	border-color: #ffcc66 ;
-	margin: 0px;
-	padding: 4px 0px ;
+	margin: 0px ;
+	padding: 4px ;
 }
 
-.toc_sections {
+dl {
+	background-color: transparent ;
+	margin: 0px ;
+	padding: 0px ;
+}
+
+dd {
 	background-color: #eeeeee ;
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 8pt ;
 	font-weight: bold ;
 	text-align: left ;
-	padding: 2px 4px 2px 2px ;
 	border-style: solid ;
-	border-width: 0px 0px 1px 0px ;
+	border-width: 1px 0px 0px 0px ;
 	border-color: #ffffff ;
-	margin: 0px;
+	padding: 0px ;
+}
+
+dd.menu_item {
+	margin: 0px 0px 0px 0px ;
+}
+
+dd.menu_subitem {
+	margin: 0px 0px 0px 8px ;
+	font-weight: normal ;
+}
+
+dd div {
+	border-style: solid ;
+	border-width: 0px 0px 0px 8px ;
+	border-color: #666666 ;
+	margin: 0px ;
 	padding: 2px 4px ;
+	display: block ;
 }
 
-.toc_sections a
-{
-	color: #4D3D66;
-	text-decoration: none;
+dd div.file {
+	background-color: #ffcc66 ;
 }
 
-.toc_sections:hover {
-	background-color: #FFE6B3 ;
-}
-
-.toc_sections_selected {
-	background-color: #FFCC66 ;
-	font-family: Verdana,Helvetica,Arial,sans-serif ;  
-	font-size: 8pt ;
-	font-weight: bold ;
-	text-align: left ;
+dd a {
+	text-decoration: none ;
 	border-style: solid ;
-	border-width: 0px 0px 1px 0px ;
-	border-color: #ffffff ;
-	margin: 0px;
-	padding: 2px 4px 2px 2px ;
+	border-width: 0px 0px 0px 8px ;
+	border-color: #cccccc ;
+	margin: 0px ;
+	padding: 2px 4px ;
+	display: block ;
 }
 
-.toc_sections_selected a
-{
-	color: #4D3D66;
-	text-decoration: none;
-}
-
-.toc_subsections {
-	background-color: #eeeeee ;
-	font-family: Verdana,Helvetica,Arial,sans-serif ;  
-	font-size: 8pt ;
-	font-weight: normal ;
-	text-align: left ;
-	border-style: solid ;
-	border-width: 0px 0px 1px 0px ;
-	border-color: #ffffff ;
-	margin: 0px;
-	padding: 2px 2px 2px 14px ;
-}
-
-.toc_subsections a
-{
-	color: #4D3D66;
-	text-decoration: none;
-}
-
-.toc_subsections:hover {
-	background-color: #FFE6B3 ;
-}
-
-.toc_subsections_selected {
-	background-color: #FFCC66 ;
-	font-family: Verdana,Helvetica,Arial,sans-serif ;  
-	font-size: 8pt ;
-	font-weight: normal ;
-	text-align: left ;
-	border-style: solid ;
-	border-width: 0px 0px 1px 0px ;
-	border-color: #ffffff ;
-	margin: 0px;
-	padding: 2px 2px 2px 14px ;
-}
-
-.toc_subsections_selected a
-{
-	color: #4D3D66;
-	text-decoration: none;
+dd a:hover {
+	background-color: #ffe6b3 ;
+	border-color: #999999 ;
 }
 
 .nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
