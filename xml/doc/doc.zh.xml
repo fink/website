@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.4 2004/03/13 03:07:45 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.5 2004/03/21 15:41:10 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -19,9 +19,9 @@
 当前 Fink 的用户文档：
 </p>
 <ul>
-<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.html">Fink 用户指南</varlink> － 它涉及如何安装 Fink 自身，安装软件包，和升级到新的 Fink 版本。它包括对使用源代码版本和二进制版本的使用说明。
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.zh.html">Fink 用户指南</varlink> － 它涉及如何安装 Fink 自身，安装软件包，和升级到新的 Fink 版本。它包括对使用源代码版本和二进制版本的使用说明。
 <em>正在编写中！</em></li>
-<li><varlink url="x11/index.php" varurl="x11/x11.html">在 Darwin 和 Mac OS X 上运行 X11</varlink> － 涉及有关概念，安装和启动（同时面向 Darwin 和 Mac OS X 用户）</li>
+<li><varlink url="x11/index.php" varurl="x11/x11.zh.html">在 Darwin 和 Mac OS X 上运行 X11</varlink> － 涉及有关概念，安装和启动（同时面向 Darwin 和 Mac OS X 用户）</li>
 </ul>
 
 <p>
@@ -30,8 +30,8 @@
 <ul>
 <li><varlink url="bundled/install.php" varurl="bundled/install.html">安装和升级</varlink> －　如何安装 Fink 或升级到新的版本</li>
 <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">使用</varlink>  － 如何使用 Fink 及其安装的软件</li>
-<li><varlink url="bundled/readme.php" varurl="bundled/readme.html">Fink 自述</varlink> － 源代码发布版本的自述文件</li>
-<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.html">CVS 访问</varlink> － 如何访问 Fink CVS 库来在新版本发布前获取最新源代码包。</li>
+<li><varlink url="bundled/readme.php" varurl="bundled/readme.zh.html">Fink 自述</varlink> － 源代码发布版本的自述文件</li>
+<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.zh.html">CVS 访问</varlink> － 如何访问 Fink CVS 库来在新版本发布前获取最新源代码包。</li>
 </ul>
 
 </section>
@@ -40,8 +40,8 @@
 
 <ul>
 <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">使用 Fink：开发者使用指南</link>  (2MB pdf 文件，英文版) － 一组用于 <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</link>上演示的幻灯片（同时也有 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</link>版本）</li>
-<li><varlink url="porting/index.php" varurl="porting/porting.html">移植技巧提示</varlink> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
-<li><varlink url="packaging/index.php" varurl="packaging/packaging.html">软件打包手册</varlink> － 如何创建和维护 Fink 软件包</li>
+<li><varlink url="porting/index.php" varurl="porting/porting.zh.html">移植技巧提示</varlink> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
+<li><varlink url="packaging/index.php" varurl="packaging/packaging.zh.html">软件打包手册</varlink> － 如何创建和维护 Fink 软件包</li>
 </ul>
 
 </section>
@@ -49,7 +49,7 @@
 <section name="otherdoc">
     <title>其它文档</title>
     <ul>
-      <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.html">国际化指南</varlink> ─ 有关目前网站所在进行的国际化工作的文档</li>
+      <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.zh.html">国际化指南</varlink> ─ 有关目前网站所在进行的国际化工作的文档</li>
     </ul>
   </section>
 </article>
