@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.40 2002/06/14 01:03:26 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.41 2002/07/24 17:35:55 benh57 Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -296,6 +296,12 @@ The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
 </p>
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
+<p>
+You also will want to remove the "source /sw/bin/init.csh" line you
+added to your .cshrc file. To do this, type "pico ~/.cshrc". Navigate to
+the "source /sw/bin/init.csh" line and type control-K to remove it. Then
+type control-O, return, control-X to exit.
+</p>
 </answer></faqentry>
 
 <faqentry name="kde"><question><p>What is the status of KDE in Fink?</p></question>
