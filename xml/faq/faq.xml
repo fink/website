@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.18 2001/10/23 17:51:49 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.19 2001/10/25 10:10:37 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -20,12 +20,30 @@ questions are listed and linked in the table of contents below.</p>
 <shorttitle>General</shorttitle>
 
 <faqentry name="what"><question><p>What is Fink?</p></question>
-<answer><p>Fink is actually two things in one (doesn't that sound great?
-;-) ) - a compile-from-source package manager and a distribution of
-Unix software for Mac OS X. The package manager is built on top of
-dpkg, the binary package manager written by the <link
-url="http://www.debian.org/">Debian GNU/Linux</link> project. (Older
-versions of Fink used GNU stow.)</p>
+<answer>
+<p>
+Fink wants to bring more Unix software to Mac OS X, which results in
+two main goals:
+</p>
+<p>
+Goal number one is porting software to Mac OS X.
+That means we take commodity Open Source Unix software and fix
+whatever is necessary so that it will compile and run on Mac OS X.
+Sometimes that's easy, but it can also be very hard or even impossible
+for some packages.
+We're trying to provide tools and documentation to make this easier.
+</p>
+<p>
+Goal number two is making the results available to casual users.
+For this, we build a distribution using package management tools
+ported over from Linux, namely <code>dpkg</code> and
+<code>apt-get</code>, written by and for the <link
+url="http://www.debian.org/">Debian GNU/Linux</link> project.
+The binary distribution uses the <code>.deb</code> package format.
+For building packages from source, we have our own tool, named
+<code>fink</code>, which creates those <code>.deb</code> package
+files.
+</p>
 </answer></faqentry>
 
 <faqentry name="naming"><question><p>What does the name Fink stand for?</p></question>
@@ -198,9 +216,29 @@ statement</link> for details.
 </chapter>
 
 
-<chapter filename="install">
-<title>Installation Questions</title>
-<shorttitle>Installation</shorttitle>
+<chapter filename="usage-fink">
+<title>Installing, Using and Maintaining Fink</title>
+<shorttitle>Fink Usage</shorttitle>
+
+<faqentry name="what-packages"><question><p>How can I find out what packages Fink supports?</p></question>
+<answer>
+<p>
+Since Fink 0.2.3, there is the <code>list</code> command.
+It produces a list of all packages known to your Fink installation.
+Example:
+</p>
+<codeblock>fink list</codeblock>
+<p>
+If you're using the binary distribution, <code>dselect</code> gives
+you a nice browsable listing of available packages.
+Note that you must run it as root if you want to select and install
+packages from within dselect.
+</p>
+<p>
+There's also the <link url="http://fink.sourceforge.net/pdb/">package
+database</link> at the website.
+</p>
+</answer></faqentry>
 
 <faqentry name="proxy"><question><p>I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</p></question>
@@ -216,31 +254,6 @@ These settings do not apply to <code>apt-get</code> and
 <code>dselect</code>, though.
 Investigations continue...
 </p>
-</answer></faqentry>
-
-<faqentry name="head"><question><p>I'm getting a strange usage message
-from the head command. What's broken?</p></question>
-<answer><p>If you're seeing this:</p>
-<codeblock>Unknown option: 1
-Usage: head [-options] &lt;url&gt;...</codeblock>
-<p>followed by a list of options, you have a broken <code>head</code>
-executable.
-This happens when you install the Perl libwww library on an HFS+
-system volume.
-It tries to create a new command <code>/usr/bin/HEAD</code>, which
-overwrites the existing <code>head</code> command because the file
-system is case-insensitive.
-<code>head</code> is a standard command used in many shell scripts and
-Makefiles.
-You need to get the original <code>head</code> executable back if you
-want to use Fink.
-</p>
-<!--
-<p>
-Future releases of Fink will check the system before the bootstrap
-starts to catch this error.
-</p>
--->
 </answer></faqentry>
 
 <faqentry name="moving"><question><p>Can I move Fink to another
@@ -266,31 +279,23 @@ hidden traps somewhere.
 </p>
 </answer></faqentry>
 
-</chapter>
 
 
-
-<chapter filename="usage">
-<title>Usage Questions</title>
-<shorttitle>Usage</shorttitle>
-
-<faqentry name="what-packages"><question><p>How can I find out what packages Fink supports?</p></question>
+<faqentry name="kde"><question><p>Why are there no packages for
+KDE?</p></question>
 <answer>
 <p>
-Since Fink 0.2.3, there is the <code>list</code> command.
-It produces a list of all packages known to your Fink installation.
-Example:
-</p>
-<codeblock>fink list</codeblock>
-<p>
-If you're using the binary distribution, <code>dselect</code> gives
-you a nice browsable listing of available packages.
-Note that you must run it as root if you want to select and install
-packages from within dselect.
+Because there simply are none.
 </p>
 <p>
-There's also the <link url="http://fink.sourceforge.net/pdb/">package
-database</link> at the website.
+Seriously, KDE has (or at least had) serious problems that prevent a
+port to Mac OS X.
+It assumes it can do things with shared libraries that are only
+possible on ELF systems like Linux, *BSD and Solaris.
+It could very well be that some people are trying to port it
+nevertheless, but we haven't heard of any breakthroughs yet.
+Note that Qt is a different story, we have a package for it and it
+works fine.
 </p>
 </answer></faqentry>
 
@@ -338,57 +343,76 @@ have a lasting effect on the shell, it must be processed with the
 <p>The same goes for Bourne-type shells and init.sh.</p>
 </answer></faqentry>
 
+<faqentry name="dselect-access"><question><p>Help! I used the
+"[A]ccess" menu entry in dselect and now I can't download packages any
+more!</p></question>
+<answer>
+<p>
+You probably pointed apt at a Debian mirror, which of course doesn't
+have the Fink files.
+You can fix this manually or through dselect.
+To fix it manually, edit the file
+<code>/sw/etc/apt/sources.list</code> in a text editor as root.
+Remove lines that mention debian.org and replace them with these:
+</p>
+<codeblock>deb http://fink.sourceforge.net/bindist relase main crypto
+deb http://fink.sourceforge.net/bindist relase main crypto</codeblock>
+<p>
+To fix it through dselect, run "[A]ccess" again, choose the "apt"
+method and enter the following info:
+</p>
+<p>
+URL: http://fink.sourceforge.net/bindist -
+Distribution: release -
+Components: main crypto
+</p>
+<p>
+Then, say you want to add another source and repeat the process with
+"current" instead of "release".
+</p>
+<p>
+A fixed version of the apt package (which provides the configuration
+script as a plug-in for dselect) is making it's way through CVS now.
+</p>
+</answer></faqentry>
+
 </chapter>
 
 
+<chapter filename="comp-general">
+<title>Compile Problems - General</title>
+<shorttitle>Compiling (1)</shorttitle>
 
-<chapter filename="packages">
-<title>Problems With Certain Packages</title>
-<shorttitle>Packages</shorttitle>
-
-<faqentry name="kde"><question><p>Why are there no packages for
-KDE?</p></question>
-<answer>
-<p>
-Because there simply are none.
+<faqentry name="head"><question><p>I'm getting a strange usage message
+from the head command. What's broken?</p></question>
+<answer><p>If you're seeing this:</p>
+<codeblock>Unknown option: 1
+Usage: head [-options] &lt;url&gt;...</codeblock>
+<p>followed by a list of option descriptions, you have a broken
+<code>head</code> executable.
+This happens when you install the Perl libwww library on an HFS+
+system volume.
+It tries to create a new command <code>/usr/bin/HEAD</code>, which
+overwrites the existing <code>head</code> command because the file
+system is case-insensitive.
+<code>head</code> is a standard command used in many shell scripts and
+Makefiles.
+You need to get the original <code>head</code> executable back if you
+want to use Fink.
 </p>
 <p>
-Seriously, KDE has (or at least had) serious problems that prevent a
-port to Mac OS X.
-It assumes it can do things with shared libraries that are only
-possible on ELF systems like Linux, *BSD and Solaris.
-It could very well be that some people are trying to port it
-nevertheless, but we haven't heard of any breakthroughs yet.
-Note that Qt is a different story, we have a package for it and it
-works fine.
+The bootstrap script of the source release now checks for this, but
+you can still run into it if you use the binary release for first-time
+installation or install libwww after you installed Fink.
 </p>
 </answer></faqentry>
 
-<!--
-<faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>
-<answer><p>There are several things that can cause this:</p>
-<ul>
-<li><p>You don't have X11 installed. You must install X11 manually,
-either <link url="http://www.xfree86.org/">XFree86</link> or <link
-url="http://www.tenon.com/">Xtools</link>. XFree86 packages for Fink are
-under development, but not yet ready for prime time.</p></li>
-<li><p>You installed the XFree86 binary distribution, but left out the
-Xprog.tgz tarball. It is an optional tarball, but must be installed to
-compile X11 applications.</p></li>
-<li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
-static libraries. Now configure scripts are failing in the
-<code>checking for XOpenDisplay in -lX11</code> test. To fix this, use the
-<code>-c</code> option for ranlib, i.e.:</p>
-<codeblock>cd /usr/X11R6/lib
-sudo ranlib -c *.a</codeblock>
-<p>Note that this can't happen with more recent versions of XFree86, as
-they compile the libraries (both static and shared) without common
-symbols.</p></li>
-</ul>
-<p>Hopefully, this will soon be solved with proper X11 packages and
-dependencies. But don't hold your breath yet.</p>
-</answer></faqentry>
--->
+</chapter>
+
+
+<chapter filename="comp-packages">
+<title>Compile Problems - Specific Packages</title>
+<shorttitle>Compiling (2)</shorttitle>
 
 <faqentry name="nedit"><question><p>nedit is broken.</p></question>
 <answer><p>If you're seeing <code>Xm/BulletinB.h: No such file or
@@ -396,16 +420,6 @@ directory</code> in the error messages, that's because you have Xtools
 installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
 to include some required header files. There is no workaround yet, and
 it is unknown whether this is fixed in recent releases on Xtools.</p>
-</answer></faqentry>
-
-<faqentry name="gnome-panel"><question><p>The GNOME panel displays
-black icons only. What's wrong?</p></question>
-<answer>
-<p>
-This is caused by limitations in the operating system kernel.
-The only solution so far is to turn off shared memory.
-The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</link>.
-</p>
 </answer></faqentry>
 
 <faqentry name="gnome-libs-db"><question><p>gnome-libs complains about
@@ -424,11 +438,46 @@ that has DB 1.86 compatibility.
 mention ANSI C++.</p></question>
 <answer>
 <p>
-This happens when you link <code>gcc</code> to <code>c++</code>.
+This happens when you make a symlink from <code>gcc</code> to
+<code>c++</code>.
 That causes all C code to be compiled as C++ code.
-Unfortunately, C allows some things that C++ doesn't allow.
-You should remove the symlink you created, or at least link it to
+Unfortunately, C allows some things that C++ doesn't allow, resulting
+in these errors.
+You should remove the symlink you created, or at least point it at
 <code>cc</code> instead.
+</p>
+</answer></faqentry>
+
+<faqentry name="xaw3d"><question><p>Xaw3D fails to compile with a
+two-level namespace error.</p></question>
+<answer>
+<p>
+This can happen on Mac OS X 10.1. if you have installed XFree86
+manually (i.e. you have system-xfree86) or if you have Xtools.
+Xaw3D uses the configuration files installed by XFree86 and fails if
+those have not been patched for Mac OS X 10.1.
+xfree86-base already has those patches in Fink 0.3.0.
+system-xfree86 and system-xtools have been fixed to patch the
+configuration files on the fly if necessary.
+They are available in CVS; the binary distribution has also been
+updated with these new packages.
+</p>
+</answer></faqentry>
+
+</chapter>
+
+
+<chapter filename="usage-general">
+<title>Package Usage Problems - General</title>
+<shorttitle>Usage (1)</shorttitle>
+
+<faqentry name="gnome-icons"><question><p>Some GNOME applications display
+black icons only. What's wrong?</p></question>
+<answer>
+<p>
+This is caused by limitations in the operating system kernel.
+The only solution so far is to turn off shared memory.
+The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</link>.
 </p>
 </answer></faqentry>
 
@@ -440,6 +489,23 @@ It's not bad, it just means that the program will use the default
 English messages, date formats, etc.
 The program will function normally otherwise.
 The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</link>.
+</p>
+</answer></faqentry>
+
+</chapter>
+
+
+<chapter filename="usage-packages">
+<title>Package Usage Problems - Specific Packages</title>
+<shorttitle>Usage (2)</shorttitle>
+
+<faqentry name="gnome-panel"><question><p>The GNOME panel displays
+black icons only. What's wrong?</p></question>
+<answer>
+<p>
+This is caused by limitations in the operating system kernel.
+The only solution so far is to turn off shared memory.
+The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</link>.
 </p>
 </answer></faqentry>
 
@@ -481,6 +547,10 @@ It usually communicates via the file system socket
 <code>/tmp/.esd/socket</code>.
 You only need the <code>-tcp</code> and <code>-port</code> switches if
 you want to run esd clients on another machine over the network.
+</p>
+<p>
+There have also been reports of XMMS crashing or freezing on 10.1.
+We don't have an analysis or a fix yet.
 </p>
 </answer></faqentry>
 
@@ -529,8 +599,42 @@ sort this out.
 </p>
 </answer></faqentry>
 
+</chapter>
+
+
+<!--
+<chapter filename="packages">
+<title>Problems With Certain Packages</title>
+<shorttitle>Packages</shorttitle>
+
+
+<faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>
+<answer><p>There are several things that can cause this:</p>
+<ul>
+<li><p>You don't have X11 installed. You must install X11 manually,
+either <link url="http://www.xfree86.org/">XFree86</link> or <link
+url="http://www.tenon.com/">Xtools</link>. XFree86 packages for Fink are
+under development, but not yet ready for prime time.</p></li>
+<li><p>You installed the XFree86 binary distribution, but left out the
+Xprog.tgz tarball. It is an optional tarball, but must be installed to
+compile X11 applications.</p></li>
+<li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
+static libraries. Now configure scripts are failing in the
+<code>checking for XOpenDisplay in -lX11</code> test. To fix this, use the
+<code>-c</code> option for ranlib, i.e.:</p>
+<codeblock>cd /usr/X11R6/lib
+sudo ranlib -c *.a</codeblock>
+<p>Note that this can't happen with more recent versions of XFree86, as
+they compile the libraries (both static and shared) without common
+symbols.</p></li>
+</ul>
+<p>Hopefully, this will soon be solved with proper X11 packages and
+dependencies. But don't hold your breath yet.</p>
+</answer></faqentry>
+
 
 </chapter>
+-->
 
 
 </document>

@@ -1,9 +1,9 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/23 17:51:49';
+$cvs_date = 'Date: 2001/10/25 10:10:37';
 
-$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="install.php" title="Installation Questions"><link rel="prev" href="general.php" title="General Questions">';
+$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
 include "header.inc";
 ?>
@@ -87,7 +87,7 @@ statement</a> for details.
 
 
 <p align="right">
-Next: <a href="install.php">Installation Questions</a></p>
+Next: <a href="usage-fink.php">Installing, Using and Maintaining Fink</a></p>
 
 
 <?

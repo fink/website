@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/23 17:51:49';
+$cvs_date = 'Date: 2001/10/25 10:10:37';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="relations.php" title="Relations with Other Projects"><link rel="prev" href="index.php" title="F.A.Q. Contents">';
 
@@ -13,11 +13,26 @@ include "header.inc";
 
 
 <a name="what"><div class="question"><p><b>Q: What is Fink?</b></p></div>
-<div class="answer"><p><b>A:</b> Fink is actually two things in one (doesn't that sound great?
-;-) ) - a compile-from-source package manager and a distribution of
-Unix software for Mac OS X. The package manager is built on top of
-dpkg, the binary package manager written by the <a href="http://www.debian.org/">Debian GNU/Linux</a> project. (Older
-versions of Fink used GNU stow.)</p></div></a>
+<div class="answer"><p><b>A:</b> 
+Fink wants to bring more Unix software to Mac OS X, which results in
+two main goals:
+</p><p>
+Goal number one is porting software to Mac OS X.
+That means we take commodity Open Source Unix software and fix
+whatever is necessary so that it will compile and run on Mac OS X.
+Sometimes that's easy, but it can also be very hard or even impossible
+for some packages.
+We're trying to provide tools and documentation to make this easier.
+</p><p>
+Goal number two is making the results available to casual users.
+For this, we build a distribution using package management tools
+ported over from Linux, namely <tt><nobr>dpkg</nobr></tt> and
+<tt><nobr>apt-get</nobr></tt>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
+The binary distribution uses the <tt><nobr>.deb</nobr></tt> package format.
+For building packages from source, we have our own tool, named
+<tt><nobr>fink</nobr></tt>, which creates those <tt><nobr>.deb</nobr></tt> package
+files.
+</p></div></a>
 
 <a name="naming"><div class="question"><p><b>Q: What does the name Fink stand for?</b></p></div>
 <div class="answer"><p><b>A:</b> Nothing, it's just a name. It's not even an acronym.</p><p>Well, actually Fink is the German name for Finch, a kind of
