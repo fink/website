@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/15 22:35:46 $';
+$cvs_date = '$Date: 2001/03/19 09:43:03 $';
 
 include "header.inc";
 ?>
@@ -15,7 +15,8 @@ could become future features):</p>
 <ul>
 <li>More distinct dependencies: build-time vs. run-time, specific
 versions</li>
-<li>Binary packages</li>
+<li>Move from stow to dpkg for binary package handling; also allows
+for a binary distribution</li>
 <li>Infrastructure for daemons and cron jobs</li>
 <li>Pseudo-packages for software that is already installed on the host
 system</li>
