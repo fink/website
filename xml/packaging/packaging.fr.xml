@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.31 2004/06/02 01:56:41 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.32 2004/06/19 15:03:58 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -981,6 +981,8 @@ Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lo
 <p>
 <em>Introduit dans fink 0.9.9.</em>
 Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé.
+</p>
+<p>À partir de la version 0.20.3 de fink, la valeur de ce champ est sauvegardée dans le fichier .deb à la construction du paquet. Par conséquent, <em>si vous changez la valeur de BuildDependsOnly, vous devez incrémenter le numéro de révision</em> du paquet.
 </p>
 </itemd></item>
 </itemtable>
