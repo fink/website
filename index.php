@@ -1,7 +1,8 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/08 22:17:49 $';
+$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$wantnav = "main";
 
 include "header.inc";
 ?>

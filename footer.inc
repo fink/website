@@ -1,36 +1,38 @@
 <?
-/* $Id: footer.inc,v 1.2 2001/01/08 10:57:10 chrisp Exp $ */
+/* $Id: footer.inc,v 1.3 2001/01/11 19:13:25 chrisp Exp $ */
 ?>
 
 </td></tr>
 <tr><td>&nbsp;</td></tr>
 </table>
 
+<? /* footer */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr valign="bottom"><td>&nbsp;&nbsp;&nbsp;</td>
-<td align="right">
-
-<p><font size="-1">Last changed by <? print $author ?> on <?
-print strftime("%a, %b %d %Y", $date);
-?></font></p>
-
-</td>
-<td>&nbsp;&nbsp;&nbsp;</td></tr>
-
-<tr><td colspan="3" background="img/bottom-line.gif"><img
-src="img/bottom-line.gif" width="32" height="8" border="0"
+<tr><td colspan="4" background="img/footer-top.gif"><img
+src="img/footer-top.gif" width="32" height="8" border="0"
 alt="-----"></td></tr>
 
-<tr valign="top"><td></td><td>
-
-<p><font size="-1">Copyright (c) 2000,2001
-Christoph Pfisterer. This site in neither approved nor endorsed by
-Apple Inc. All trademarks are the property of their respective
-holders.</font></p>
-
+<tr valign="middle">
+<td background="img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
+<td align="left" background="img/footer-back.gif" width="50%">
+<p class="footer">Last changed by <? print $author ?> on <?
+print strftime("%a, %b %d %Y", $date);
+?></p>
 </td>
-<td>&nbsp;&nbsp;&nbsp;</td></tr>
+<td align="right" background="img/footer-back.gif" width="50%">
+<p class="footer"><a href="legal.php">Copyright</a> &copy; 2001
+Christoph Pfisterer</p>
+</td>
+<td background="img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
+</tr>
+
+<tr><td colspan="4" background="img/footer-bottom.gif"><img
+src="img/footer-bottom.gif" width="32" height="8" border="0"
+alt="-----"></td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
 </table>
+
 
 </body>
 </html>

@@ -1,13 +1,14 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/10 15:49:53 $';
+$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$wantnav = "main";
 
 include "header.inc";
 ?>
 
 
-<h2>The ToDo List</h2>
+<h1>The ToDo List</h1>
 
 <p>Some quick thoughts of what needs improvement in Fink (or what
 could become future features):</p>

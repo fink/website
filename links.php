@@ -1,13 +1,14 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/08 10:57:10 $';
+$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$wantnav = "main";
 
 include "header.inc";
 ?>
 
 
-<h2>Links</h2>
+<h1>Links</h1>
 
 <p>Here's the obvious link collection... All links will open in a new
 browser window.</p>

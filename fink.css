@@ -1,0 +1,59 @@
+/* $Id: fink.css,v 1.1 2001/01/11 19:13:25 chrisp Exp $ */
+
+body {
+  color:black;
+  background-color:white;
+  font-family:"Trebuchet MS",sans-serif;
+}
+
+a:link { color:rgb(0,0,240); }
+a:visited { color:rgb(128,0,128); }
+a:active { color:rgb(255,51,51); }
+
+p,ul,ol,li,dl,dt,dd {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:11pt;
+}
+
+h1 {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:18pt;
+  font-weight:bold;
+}
+
+h2 {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:12pt;
+  font-weight:bold;
+}
+
+p.nav {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:10pt;
+}
+
+p.footer {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:10pt;
+}
+
+input {
+  color:black;
+  font-family:Courier,"Courier New",monospace;
+  font-size:10pt;
+}
+
+pre,tt {
+  color:black;
+  font-family:Courier,"Courier New",monospace;
+  font-size:10pt;
+}
+
+img {
+  border:0;
+}

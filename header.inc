@@ -1,11 +1,17 @@
 <?
-/* $Id: header.inc,v 1.2 2001/01/08 10:57:10 chrisp Exp $ */
+/* $Id: header.inc,v 1.3 2001/01/11 19:13:25 chrisp Exp $ */
 
 // available pages
-$pages = array(
+$pages_main = array(
   "index.php", "Home",
-  "porting.php", "Porting",
+  "darwin.php", "Darwin",
   "todo.php", "ToDo",
+  "links.php", "Links"
+);
+$pages_darwin = array(
+  "darwin.php", "Darwin",
+  "porting.php", "Porting",
+  "libtool.php", "libtool",
   "links.php", "Links"
 );
 
@@ -25,23 +31,20 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = filemtime($PATH_TRANSLATED);
 }
 
-
-// determine active page
-$active_page = -1;
-
-for ($i = 0; $i < sizeof($pages); $i += 2) {
-  if (ereg($pages[$i]."$", $PHP_SELF)) {
-    $active_page = $i;
-  }
+// determine section
+if (!$section) {
+  $section = "general";
 }
 
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html>
 <head>
-<title>Fink - Bringing the world of GNU to Darwin</title>
+<title>Fink - <? print $title ?></title>
+<link rel="stylesheet" href="fink.css">
 </head>
-<body bgcolor="#ffffff" text="#000000" link="#339900" vlink="#336600" alink="#ff3333">
+<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 
+<? /* header and sourceforge logo */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="bottom">
 <td align="left"><?
@@ -66,6 +69,28 @@ height="8" border="0" alt=""></td>
 </tr>
 </table>
 
+<? /* top menu and section marker */ ?>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td align="left" background="img/menu-back.gif"><a
+href="index.php"><img src="img/menu-home.gif" width="54" height="22"
+border="0" alt="Home" /></a><a href="download.php"><img
+src="img/menu-download.gif" width="76" height="22" border="0"
+alt="Download" /></a><!-- <a href="index.php"><img src="img/menu-intro.gif"
+width="94" height="22" border="0" alt="Introduction" /></a> --><a
+href="darwin.php"><img src="img/menu-darwin.gif" width="56"
+height="22" border="0" alt="Darwin" /></a></td>
+
+<td align="right" background="img/menu-back.gif"><a
+href="content.php"><img src="img/marker-<? print $section ?>.gif"
+width="160" height="22" border="0" alt="<? print "Section: $section"
+?>" /></a></td>
+</tr>
+<tr><td colspan="2" background="img/top-line2.gif"><img src="img/top-line2.gif"
+width="32" height="3" border="0" alt="" /></td></tr>
+</table>
+
+<? /* main content table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td>&nbsp;&nbsp;&nbsp;</td>
 <td></td>
@@ -73,6 +98,27 @@ height="8" border="0" alt=""></td>
 <tr valign="top"><td></td><td width="100%">
 
 
+<? /* navigation box */
+
+$donav = 0;
+if ($wantnav == "main") {
+  $pages = $pages_main;
+  $donav = 1;
+} elseif ($wantnav == "darwin") {
+  $pages = $pages_darwin;
+  $donav = 1;
+}
+
+if ($donav) {
+  // determine active page
+  $active_page = -1;
+  for ($i = 0; $i < sizeof($pages); $i += 2) {
+    if (ereg($pages[$i]."$", $PHP_SELF)) {
+      $active_page = $i;
+    }
+  }
+
+?>
 <table align="right" border="0" cellpadding="0" cellspacing="0"
 width="120">
 <tr><td colspan="3" width="120"><img src="img/nav-top.gif" width="120"
@@ -81,10 +127,8 @@ height="30" border="0" alt="Navigation:"></td></tr>
 src="img/nav-left.gif" width="20" height="16" border="0" alt=""></td>
 <td width="92" background="img/nav-center.gif">
 
-<p><?
+<p class="nav"><?
 for ($i = 0; $i < sizeof($pages); $i += 2) {
-  if ($i > 0)
-    print "<br>\n";
   $showlink = ($i != $active_page);
   if ($showlink)
     print '<a href="'.$pages[$i].'">';
@@ -95,8 +139,9 @@ for ($i = 0; $i < sizeof($pages); $i += 2) {
     print '</a>';
   else
     print '</b>';
+  print "<br>\n";
 }
-?></p>
+?><img src="img/shim.gif" width="92" height="1" border="0" alt="" /></p>
 
 </td>
 <td width="8" background="img/nav-right.gif"><img
@@ -105,3 +150,7 @@ alt=""></td></tr>
 <tr><td colspan="3" width="120"><img src="img/nav-bottom.gif" width="120"
 height="24" border="0" alt=""></td></tr>
 </table>
+
+<? /* end navigation box */
+}
+?>
