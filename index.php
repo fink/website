@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/08 14:17:54 $';
+$cvs_date = '$Date: 2001/03/15 22:39:10 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,9 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-03-15: Updated the <a href="darwin/libtool.php">libtool
+page</a> with a revised patch that does full shared library
+versioning.</p>
 <p>2001-03-08: Version 0.1.6 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-02-21: Fink is now available via CVS, so you can get the
