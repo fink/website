@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.1";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:09:53 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/25 18:53:30';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up02.php" title="Upgrading From Fink 0.2.x">';
 

@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.2";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:09:53 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/25 18:53:30';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up01.php" title="Upgrading From Fink 0.1.x"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
@@ -22,7 +22,7 @@ package manager and the package descriptions. It is recommended to
 update the package manager first.
 </p>
 
-<h2>Updating The Package Manager</h2>
+<a name="packman"><h2>Updating The Package Manager</h2></a>
 <p>
 To update the package manager, run the inject.pl script in this
 directory, like this:
@@ -40,7 +40,7 @@ the new versions of the fink and base-files packages.
 </p>
 
 
-<h2>Updating The Package Descriptions</h2>
+<a name="descriptions"><h2>Updating The Package Descriptions</h2></a>
 <p>
 If you downloaded the fink-0.2.3-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
@@ -59,7 +59,7 @@ script inside.
 </p>
 
 
-<h2>Getting X11 Sorted Out</h2>
+<a name="x11"><h2>Getting X11 Sorted Out</h2></a>
 <p>
 The first thing you should do after updating the package descriptions
 is getting the X11 dependencies settled. Refer to the "Getting X11
@@ -78,7 +78,7 @@ update it to 4.1.0-1:
 <pre>fink update xfree86-base</pre>
 
 
-<h2>Updating Packages</h2>
+<a name="update-all"><h2>Updating Packages</h2></a>
 <p>
 The above updating steps will not update the actual packages, they
 only provide you with the means to do so. The easiest way to get the
@@ -95,7 +95,7 @@ problems.
 </p>
 
 
-<h2>Other Notes</h2>
+<a name="other"><h2>Other Notes</h2></a>
 <p>
 IMPORTANT! When you update from Fink 0.2.0 or a CVS version before
 0.2.1, the first thing you should do after running the inject.pl
@@ -110,7 +110,8 @@ re-install the .deb package files.
 </p>
 
 
-
+<p align="right">
+Next: <a href="install-up01.php">Upgrading From Fink 0.1.x</a></p>
 
 
 <?

@@ -1,9 +1,9 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:09:53 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/25 18:53:30';
 
-$metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install.php" title="Installation Contents">';
+$metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<h2>Requirements</h2>
+<a name="req"><h2>Requirements</h2></a>
 <p>
 You need:
 </p>
@@ -44,7 +44,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<h2>Choosing A Directory</h2>
+<a name="directory"><h2>Choosing A Directory</h2></a>
 <p>
 Before you install, you must decide where Fink's directory hierarchy
 will live. The recommended place is /sw, and all examples in this
@@ -65,7 +65,7 @@ have been warned.
 </p>
 
 
-<h2>Installation</h2>
+<a name="install"><h2>Installation</h2></a>
 <p>
 The actual installation is performed by the perl script
 bootstrap.pl. It is accompanied by a small shell script, bootstrap.sh,
@@ -100,7 +100,7 @@ the package manager, you must have the package manager available.
 </p>
 
 
-<h2>Getting X11 Sorted Out</h2>
+<a name="x11"><h2>Getting X11 Sorted Out</h2></a>
 <p>
 Fink uses a virtual package to declare dependencies on X11. As there
 are several X11 packages available for Mac OS X (Xfree86, Tenon
@@ -138,7 +138,8 @@ and leave the actual files alone.
 </ul>
 
 
-
+<p align="right">
+Next: <a href="install-up02.php">Upgrading From Fink 0.2.x</a></p>
 
 
 <?

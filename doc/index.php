@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/20 19:25:20 $';
+$cvs_date = '$Date: 2001/07/25 19:04:34 $';
 
 include "header.inc";
 ?>
@@ -17,6 +17,8 @@ intended audience is noted with each document in the list below.</p>
 <h2>Available Documents</h2>
 
 <ul>
+<li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
+distribution (for Fink users, also included in the distribution)</li>
 <li><a href="bundled/install.php">Installation</a> - how to install
 Fink or upgrade to a new version (for Fink users, also included in the
 distribution)</li>
