@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.11 2004/04/03 16:17:09 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.12 2004/04/16 00:59:22 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1511,7 +1511,7 @@ Each package being built is required to document the licensing arrangement in %i
 <section name="scripts"><title>Scripts</title>
 
 <p>
-The PatchScript, CompileScript and InstallScript fields allow you to specify shell commands to be executed. The build directory (<filename>%b</filename> is the current directory when scripts are executed. You should always use relative pathnames or percent-expansions for files and directories in the fink hierarchy, not complete absolute pathnames. Two forms are supported.
+The PatchScript, CompileScript and InstallScript fields allow you to specify shell commands to be executed. The build directory (<filename>%b</filename>) is the current directory when scripts are executed. You should always use relative pathnames or percent-expansions for files and directories in the fink hierarchy, not complete absolute pathnames. Two forms are supported.
 </p>
 <p>
 This field can be a simple list of commands. This is sort of like a shell script. However, the commands are executed via system(), one line at a time, so setting variables or changing the directory only affects commands on that same line. Starting in a CVS version of fink after 0.18.2, you can wrap long lines similar to normal shell scripts: a backslash (<code>\</code>) at the end of a line indicates that the next line is a continuation.

@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.20 2004/03/31 20:08:34 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.21 2004/04/16 00:59:22 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2367,7 +2367,7 @@ of the packages by using <code>DocFiles</code> several times.
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
-(<filename>%b</filename> is the current directory when scripts are
+(<filename>%b</filename>) is the current directory when scripts are
 executed. You should always use relative pathnames or
 percent-expansions for files and directories in the fink hierarchy,
 not complete absolute pathnames. Two forms are supported.
