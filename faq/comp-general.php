@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/26 02:42:12';
+$cvs_date = 'Date: 2003/07/30 13:30:20';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -98,6 +98,10 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 </a>
 <a name="toc-out-of-date"><div class="question"><p><b>Q4.10: When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</b></p></div>
 <div class="answer"><p><b>A:</b> The output hints at what to do.  The message is usually something like:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (as root) on whatever library is causing the problem.  As an example, for the case above, you would run:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+</a>
+<a name="fc-atlaas">
+<div class="question"><p><b>Q4.11: Fink Commander hangs when I try to install atlas.</b></p></div>
+<div class="answer"><p><b>A:</b> This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>

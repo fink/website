@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.121 2003/07/26 02:42:12 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.122 2003/07/30 13:30:20 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -902,6 +902,11 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
 </answer>
 </faqentry>
+<faqentry name="fc-atlaas">
+<question><p>Fink Commander hangs when I try to install atlas.</p></question>
+<answer><p>This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>Compile Problems - Specific Packages</title>
@@ -929,19 +934,19 @@ endif
 <p>
 <em>Here's how to proceed:</em>
 </p>
-<p>1. Uninstall <code>xaw3d</code> and <code>xaw3d-shlibs</code> if you installed them with fink, and their version is 1.5-4 or earlier, because they also install in /usr/X11R6 (this is no longer the case for 1.5-5 and later versions).</p>
-<p>2. Remove <code>system-xfree86</code>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p>
+<p>1. Remove <code>system-xfree86</code>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p>
 <p>
 <code>sudo dpkg --remove --force-depends system-xfree86</code>
 </p>
 <p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to step 3.</p>
-<p>3. Manually remove all of XFree86.  This can be done with</p>
+<p>2. Manually remove all of XFree86.  This can be done with</p>
 <p>
 <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</code>
 </p>
 <p>(the last file will only be present if you had Apple's X11 installed).</p>
-<p>4. Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
-<p>5. If you had <code>xaw3d</code> and <code>xaw3d-shlibs</code> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p>
+<p>3. To get XFree86-4.2.1, Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
+<p> -or-</p>
+<p>3a. To get XFree86-4.3.0, install fink's <code>xfree86</code> package, with &quot;fink install xfree86&quot;--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
 </answer>
 </faqentry>
 <faqentry name="change-thread-nothread" >
