@@ -1,8 +1,8 @@
 <?
 $title = "Portage - Préparation pour 10.2";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/11 04:52:46';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:44';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.3.php?phpLang=fr" title="Préparation pour la version 10.3"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
 
 include_once "header.fr.inc";
@@ -75,7 +75,8 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 (accessible dans des préversions de fink).</p>
 <p>Un autre problème avec le compilateur gcc3 est l'incompatibilité pour les ABI C++ entre gcc2 et gcc3. En pratique, ceci signifie que les programmes C++ compilés avec gcc3 ne peuvent être liés à des librairies compilées avec gcc2.</p>
 
-
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing-10.3.php?phpLang=fr">5. Préparation pour la version 10.3</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

@@ -1,8 +1,8 @@
 <?
 $title = "Portage - libtool";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/11 04:52:46';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:44';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
 
 
 include_once "header.fr.inc";
@@ -108,7 +108,7 @@ for cmd in $cmds; do
 Cependant, cet outil n'a rien à voir avec GNU libtool. L'outil GNU libtool qu'Apple fournit est installé sous le nom de <code>glibtool</code>. Ceci peut être réalisé en configurant GNU libtool avec <code>--program-transform-name=s/libtool/glibtool/</code>.</p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="preparing.php?phpLang=fr">4. Préparation pour la version 10.2</a></p>
+<a href="preparing-10.2.php?phpLang=fr">4. Préparation pour la version 10.2</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

@@ -1,8 +1,8 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/10 20:01:09';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
+$cvs_date = 'Date: 2005/03/16 18:01:32';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
 
 include_once "header.en.inc";
@@ -230,7 +230,7 @@ This can be achieved by configuring GNU libtool with
 
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="preparing.php?phpLang=en">4. Preparing for 10.2</a></p>
+<a href="preparing-10.2.php?phpLang=en">4. Preparing for 10.2</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

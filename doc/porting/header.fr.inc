@@ -8,7 +8,8 @@ $navbox = array(
   "doc/porting/basics.php?phpLang=fr", "Notions de base",
   "doc/porting/shared.php?phpLang=fr", "Code partagé",
   "doc/porting/libtool.php?phpLang=fr", "libtool",
-  "doc/porting/preparing.php?phpLang=fr", "Préparation pour 10.2",
+  "doc/porting/preparing-10.2.php?phpLang=fr", "Préparation pour 10.2",
+  "doc/porting/preparing-10.3.php?phpLang=fr", "Préparation pour 10.3",
 );
 $printlink = "doc/porting/porting.fr.html";
 

@@ -1,8 +1,8 @@
 <?
 $title = "移植 - 为 10.2 做准备";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/12 15:06:20';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="prev" href="libtool.php?phpLang=zh" title="GNU libtool">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:45';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.3.php?phpLang=zh" title="为 10.3 做准备"><link rel="prev" href="libtool.php?phpLang=zh" title="GNU libtool">';
 
 
 include_once "header.zh.inc";
@@ -103,7 +103,8 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 
 
 
-
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing-10.3.php?phpLang=zh">5. 为 10.3 做准备</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

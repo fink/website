@@ -1,8 +1,8 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/10 20:01:09';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="prev" href="libtool.php?phpLang=en" title="GNU libtool">';
+$cvs_date = 'Date: 2005/03/16 18:01:32';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.3.php?phpLang=en" title="Preparing for 10.3"><link rel="prev" href="libtool.php?phpLang=en" title="GNU libtool">';
 
 
 include_once "header.en.inc";
@@ -117,7 +117,8 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 
 
-
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing-10.3.php?phpLang=en">5. Preparing for 10.3</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

@@ -1,8 +1,8 @@
 <?
 $title = "移植 - libtool";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/12 15:06:20';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing.php?phpLang=zh" title="为 10.2 做准备"><link rel="prev" href="shared.php?phpLang=zh" title="共享代码">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/16 18:01:45';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=zh" title="为 10.2 做准备"><link rel="prev" href="shared.php?phpLang=zh" title="共享代码">';
 
 
 include_once "header.zh.inc";
@@ -259,7 +259,7 @@ libtool 库版本由三个整数来描述：
 
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="preparing.php?phpLang=zh">4. 为 10.2 做准备</a></p>
+<a href="preparing-10.2.php?phpLang=zh">4. 为 10.2 做准备</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
