@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/28 14:12:29';
+$cvs_date = 'Date: 2004/01/29 14:24:16';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -168,7 +168,7 @@ unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info"
 unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p><p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
-sudo ln -s /usr/lib/dlfcn.h /usr/local/lib/libdl.dylib</pre></div>
+sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">6 Compile Problems - Specific Packages</a></p>
