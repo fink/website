@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/01 17:41:25 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/05/30 00:50:29 $';
 
 include "header.inc";
 ?>
@@ -37,7 +37,7 @@ Discussion and support list for advanced Fink users.</p></li>
 (<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net">Archives</a>)<br>
 Discussion list for Fink package maintainers and developers.</p></li>
 <li><p><a href="fink-commits.php">fink-commits</a>
-(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-commits">Archives</a>)<br>
+(<a href="http://www.mail-archive.com/fink-commits@lists.sourceforge.net">Archives</a>)<br>
 Distribution list for automated CVS commit reports.</p></li>
 </ul>
 
