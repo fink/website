@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В.";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/01/18 01:12:22';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/01/24 03:18:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
@@ -97,7 +97,7 @@ include_once "header.ru.inc";
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.11 Я инсталлировал Apple X11, но Fink продолжает спрашивать об
                     инсталяции XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#wants-xfree86-on-upgrade">9.12 Я переключился с версии 10.2 Fink на 10.2-gcc3.3 или 10.3,
                     у меня Apple X11, а Fink просит инсталлировать XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.13 Я меня остались проблемы с X11и Fink.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ru.xml,v 1.4 2005/01/18 01:12:22 horsager Exp $-->
+<!--Generated from $Fink: faq.ru.xml,v 1.5 2005/01/24 03:18:00 dmacks Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/12/03 00:38:50';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/01/24 03:17:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -70,7 +70,7 @@ exec metacity &amp; exec gnome-session</pre><p>Note : ceci n'est plus vrai pour 
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il faut envisager deux hypothèses :</p><ul>
           <li>
             <b>Vous faites une installation à partir des binaires :</b>
-<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de :</p>
+<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de:</p>
 <pre>fink list -i system-xfree86</pre>
 <p>doit faire apparaître l'installation effective des paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>.</p>
 <p>Si la réinstallation du paquet X11User ne suffit pas à résoudre le problème, consultez les instructions <a href="#special-x11-debug">débogage spécial</a> ci-dessous.</p>
@@ -79,7 +79,7 @@ exec metacity &amp; exec gnome-session</pre><p>Note : ceci n'est plus vrai pour 
 sudo apt-get install fink</pre>
 </li>
           <li>
-            <b>Vous faites une installation à partir du source :</b>
+            <b>Vous faites une installation à partir du source:</b>
 <p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <b>obligatoire</b> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode. Il n'est pas installé par défaut. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <code>Packages</code> du CD XCode.</p>
 <p>Si le problème persiste, exécutez :</p>
 <pre>fink list -i system-xfree86  </pre>

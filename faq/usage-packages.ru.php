@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (2)";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/01/18 01:12:22';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/01/24 03:18:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="prev" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы">';
 
 
@@ -150,11 +150,12 @@ include_once "header.ru.inc";
                             пакет пользователя X11, т.к.
                             приложение инсталлятора иногда не инсталлирует
                             файл. Возможно, вам придется это делать
-                            неоднократно.</p>Выполнение<pre>fink list -i
-                        system-xfree86</pre>должно показать, что пакеты
+                            неоднократно. Выполнение</p>
+			<pre>fink list -i system-xfree86</pre>
+			<p>должно показать, что пакеты
                         <code>system-xfree86</code> и
                         <code>system-xfree86-shlibs</code>
-                            инсталлированы.<p>Если реинсталляция пакета пользователя X11
+                            инсталлированы. Если реинсталляция пакета пользователя X11
                             не поможет, см. инструкции по <a href="#special-x11-debug">устранению особых проблем</a>
                             ниже.</p>
                         <p>Если вы выполняете более раннюю версию пакета
@@ -164,7 +165,8 @@ include_once "header.ru.inc";
                         <pre>sudo apt-get update sudo apt-get install fink</pre>
                     </li>
                     <li>
-                        <b>При инсталляции на основе исходного кода: </b>Если у вас
+                        <b>При инсталляции на основе исходного кода:</b>
+			<p>Если у вас
                         текущая версия<code>fink</code>, то как правило
                         эта ошибка означает, что вам надо (ре)инсталлировать
                         X11SDK, который является <b>обязательным</b>, если вы хотите строить
@@ -173,8 +175,8 @@ include_once "header.ru.inc";
                         XCode, X11SDK <b>не</b> инсталлируется по умолчанию.
                         Его надо инсталлировать либо при помощи обычного Xcode
                         install, либо щелкнув на X11SDK pkg в папке
-                        <code>Packages</code> на XCode
-                            CD.<p>Если проблемы остаются, используйте </p>
+                        <code>Packages</code> на XCode CD.</p>
+			<p>Если проблемы остаются, используйте </p>
                         <pre>fink list -i system-xfree86 </pre>
                         <p>Она должна показать инсталляцию пакетов <code>system-xfree86</code>,
                             <code>system-xfree86-shlibs</code> и

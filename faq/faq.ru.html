@@ -1604,11 +1604,12 @@ Available Languages:  |
                             пакет пользователя X11, т.к.
                             приложение инсталлятора иногда не инсталлирует
                             файл. Возможно, вам придется это делать
-                            неоднократно.</p>Выполнение<pre>fink list -i
-                        system-xfree86</pre>должно показать, что пакеты
+                            неоднократно. Выполнение</p>
+			<pre>fink list -i system-xfree86</pre>
+			<p>должно показать, что пакеты
                         <tt style="white-space: nowrap;">system-xfree86</tt> и
                         <tt style="white-space: nowrap;">system-xfree86-shlibs</tt>
-                            инсталлированы.<p>Если реинсталляция пакета пользователя X11
+                            инсталлированы. Если реинсталляция пакета пользователя X11
                             не поможет, см. инструкции по <a href="#usage-packages.special-x11-debug">устранению особых проблем</a>
                             ниже.</p>
                         <p>Если вы выполняете более раннюю версию пакета
@@ -1618,7 +1619,8 @@ Available Languages:  |
                         <pre>sudo apt-get update sudo apt-get install fink</pre>
                     </li>
                     <li>
-                        <b>При инсталляции на основе исходного кода: </b>Если у вас
+                        <b>При инсталляции на основе исходного кода:</b>
+			<p>Если у вас
                         текущая версия<tt style="white-space: nowrap;">fink</tt>, то как правило
                         эта ошибка означает, что вам надо (ре)инсталлировать
                         X11SDK, который является <b>обязательным</b>, если вы хотите строить
@@ -1627,8 +1629,8 @@ Available Languages:  |
                         XCode, X11SDK <b>не</b> инсталлируется по умолчанию.
                         Его надо инсталлировать либо при помощи обычного Xcode
                         install, либо щелкнув на X11SDK pkg в папке
-                        <tt style="white-space: nowrap;">Packages</tt> на XCode
-                            CD.<p>Если проблемы остаются, используйте </p>
+                        <tt style="white-space: nowrap;">Packages</tt> на XCode CD.</p>
+			<p>Если проблемы остаются, используйте </p>
                         <pre>fink list -i system-xfree86 </pre>
                         <p>Она должна показать инсталляцию пакетов <tt style="white-space: nowrap;">system-xfree86</tt>,
                             <tt style="white-space: nowrap;">system-xfree86-shlibs</tt> и
@@ -1711,4 +1713,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.ru.xml,v 1.4 2005/01/18 01:12:22 horsager Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.ru.xml,v 1.5 2005/01/24 03:18:00 dmacks Exp $</i></p></body></html>
