@@ -22,13 +22,13 @@
 $title = "<xsl:value-of select="shorttitle"/>";
 $cvs_author = 'Author: <xsl:value-of select="cvsid"/>';
 $cvs_date = 'Date: <xsl:value-of select="cvsid"/>';
-<xsl:text disable-output-escaping="yes">$metatags = &quot;&lt;link rel=&quot;contents&quot; href=&quot;</xsl:text><xsl:value-of select="@filename"/>
+<xsl:text disable-output-escaping="yes">$metatags = &quot;&lt;link rel=\&quot;contents\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents&quot; /&gt;
-&lt;link rel=&quot;next&quot; href=&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="shorttitle"/>
+<xsl:text disable-output-escaping="yes"> Contents\&quot; /&gt;&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="chapter/title"/><xsl:text disable-output-escaping="yes">&quot; /&gt;&quot;</xsl:text>;
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="chapter/title"/>
+<xsl:text disable-output-escaping="yes">\&quot; /&gt;&quot;</xsl:text>;
 
 include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
@@ -122,31 +122,31 @@ include $fsroot."header.inc";
 $title = "<xsl:value-of select="../shorttitle"/> - <xsl:value-of select="shorttitle"/>";
 $cvs_author = 'Author: <xsl:value-of select="../cvsid" />';
 $cvs_date = 'Date: <xsl:value-of select="../cvsid" />';
-<xsl:text disable-output-escaping="yes">$metatags = &quot;$lt;link rel=&quot;contents&quot; href=&quot;</xsl:text><xsl:value-of select="../@filename"/>
+<xsl:text disable-output-escaping="yes">$metatags = &quot;$lt;link rel=\&quot;contents\&quot; href=\&quot;</xsl:text><xsl:value-of select="../@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="../shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="../shorttitle"/>
+<xsl:text disable-output-escaping="yes"> Contents\&quot; /&gt;</xsl:text>
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
-<xsl:text disable-output-escaping="yes">&lt;link rel=&quot;next&quot; href=&quot;</xsl:text><xsl:value-of select="@filename"/>
+<xsl:text disable-output-escaping="yes">&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="title"/>
-<xsl:text disable-output-escaping="yes">&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="title"/>
+<xsl:text disable-output-escaping="yes">\&quot; /&gt;</xsl:text>
 </xsl:if>
 </xsl:for-each>
 <xsl:for-each select="preceding-sibling::chapter">
 <xsl:if test="position()=last()">
-<xsl:text disable-output-escaping="yes">&lt;link rel=&quot;prev&quot; href=&quot;</xsl:text><xsl:value-of select="@filename"/>
+<xsl:text disable-output-escaping="yes">&lt;link rel=\&quot;prev\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="title"/>
-<xsl:text disable-output-escaping="yes">&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="title"/>
+<xsl:text disable-output-escaping="yes">\&quot; /&gt;</xsl:text>
 </xsl:if>
 </xsl:for-each>
 <xsl:if test="position()=1">
-<xsl:text disable-output-escaping="yes">&lt;link rel=&quot;prev&quot; href=&quot;</xsl:text><xsl:value-of select="../@filename"/>
+<xsl:text disable-output-escaping="yes">&lt;link rel=\&quot;prev\&quot; href=\&quot;</xsl:text><xsl:value-of select="../@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
-<xsl:text disable-output-escaping="yes">&quot; title=&quot;</xsl:text><xsl:value-of select="../shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="../shorttitle"/>
+<xsl:text disable-output-escaping="yes"> Contents\&quot; /&gt;</xsl:text>
 </xsl:if>
 <xsl:text disable-output-escaping="yes">&quot;</xsl:text>;
 
@@ -175,8 +175,8 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 <xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 $title = "<xsl:value-of select="shorttitle" />";
-$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.8 2004/02/22 13:30:40 babayoshihiko Exp $';
-$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.8 2004/02/22 13:30:40 babayoshihiko Exp $';
+$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.9 2004/02/22 13:38:12 babayoshihiko Exp $';
+$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.9 2004/02/22 13:38:12 babayoshihiko Exp $';
 include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
