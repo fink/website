@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/17 19:47:54';
+$cvs_date = 'Date: 2004/11/29 06:15:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -178,7 +178,18 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Impossible de mettre à jour Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p><ul>
+          <li><b>10.3.x:</b> (distribution 0.7.1)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+          <li><b>10.2.x:</b> (distribution 0.6.3)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+        </ul></div>
     </a>
     <a name="spaces-in-directory">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Est-il possible d'installer Fink sur un volume ou dans un répertoire contenant un espace dans le nom?</b></p></div>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.38 2004/10/17 19:47:54 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.39 2004/11/29 06:15:21 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -612,6 +612,19 @@ fink selfupdate-cvs</codeblock>
       </question>
       <answer>
         <p>Suivez les <link url="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</link> dans ce cas.</p>
+       <p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p>
+        <ul>
+          <li><em>10.3.x:</em> (distribution 0.7.1)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+          <li><em>10.2.x:</em> (distribution 0.6.3)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+        </ul>
       </answer>
     </faqentry>
     <faqentry name="spaces-in-directory">
