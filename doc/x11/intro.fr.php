@@ -1,8 +1,8 @@
 <?
 $title = "Utilisation de X11 - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/04 20:43:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="History"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
+$cvs_date = 'Date: 2004/04/05 19:41:12';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="Historique"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
 
 include_once "header.inc";
 ?>
@@ -126,7 +126,6 @@ Ce sont des environnements de bureau, et il y en a bien d'autres. Leur but est d
       </p>
       <p>
 La frontière entre moteur d'affichage graphique, gestionnaire de fenêtres et bureau est floue, car une même fonctionnalité (ou une fonctionnalité similaire) peut être implémentée par l'un de ces environnements ou plusieurs d'entre eux. C'est une des raisons pour laquelle un gestionnaire de fenêtres particulier peut ne pas fonctionner avec un environnement de bureau donné.
-
 </p>
       <p>
 De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. 
@@ -136,6 +135,6 @@ Malheureusement, <a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">ce
       </p>
     
   <p align="right">
-Next: <a href="history.php?phpLang=fr">2 History</a></p>
+Next: <a href="history.php?phpLang=fr">2 Historique</a></p>
 
 <? include_once "footer.inc"; ?>

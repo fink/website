@@ -1,50 +1,41 @@
 <?
-$title = "Utilisation de X11 - History";
+$title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/04 20:43:03';
+$cvs_date = 'Date: 2004/04/05 19:41:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
 ?>
 
-<h1>Utilisation de X11 - 2 History</h1>
+<h1>Utilisation de X11 - 2 Historique</h1>
     
     
     
-      <p>[Sorry for the epic language, I couldn't resist...]</p>
+      <p>[Désolée pour le langage épique, c'était trop tentant...]</p>
     
-    <h2><a name="early">2.1 The early days</a></h2>
+    <h2><a name="early">2.1 Genèse</a></h2>
       
       <p>
-In the beginning, there was void.
-Darwin was in its infancy, Mac OS X was still in development and there
-was no X11 implementation for both of them.
+Au commencement était le néant.
+Darwin balbutiait à peine, Mac OS X en était encore au stade embryonnaire et il n'existait aucune implémentation de X11 pour l'un et l'autre.
 </p>
       <p>
-Then there came John Carmack and ported XFree86 to Mac OS X Server,
-which was the only OS in the Darwin family available at that time.
-Later that port was updated for XFree86 4.0 and Darwin 1.0 by Dave
-Zarzycki.
-The patches found their way into the Darwin CVS repository and slept
-there, waiting for things to come.
+Il y eut John Carmack qui porta XFree86 sur Mac OS X Server, le seul système opératoire disponible en ce temps-là dans la famille Darwin.
+Puis vint Dave Zarzycki qui modifia ce port pour XFree86 4.0 et Darwin 1.0.
+Les rustines trouvèrent un nid douillet dans le référentiel CVS de Darwin et s'y reposèrent en attendant les évènements.
 </p>
     
-    <h2><a name="xonx-forms">2.2 XonX forms</a></h2>
+    <h2><a name="xonx-forms">2.2 Création de XonX</a></h2>
       
       <p>
-One fine day Torrey T. Lyons came along and gave the Darwin patches
-the attention they had been waiting for.
-Finally, he brought them to a new home, the official XFree86 CVS
-repository.
-This was the time of the Mac OS X Public Beta and Darwin 1.2.
-XFree86 4.0.2 worked fine on Darwin, but on Mac OS X it required users
-to log out of Aqua and go to the console to run it.
-So Torrey gathered the <a href="http://mrcla.com/XonX/">XonX team</a> around
-him and set out on a voyage to bring XFree86 to Mac OS X.
+Un beau jour apparut Torrey T. Lyons et il donna aux rustines Darwin tous les soins qu'elles réclamaient.
+Enfin, il les plaça dans un nouveau foyer, le référentiel CVS officiel de XFree86.
+Ce fut l'ère de Mac OS X Public Beta et de Darwin 1.2.
+XFree86 4.0.2 tournait bien sur Darwin, mais les utilisateurs de Mac OS X devait se déconnecter d'Aqua et ouvrir la console pour le faire tourner.
+Alors Torrey prit avec lui l'<a href="http://mrcla.com/XonX/">équipe XonX</a> et commença un long voyage vers le port de XFree86 sur Mac OS X.
 </p>
       <p>
-At about the same time Tenon started to build Xtools, using XFree86
-4.0 as the foundation.
+À peu près à la même époque, Tenon commença à construire XTools, en se fondant sur XFree86 4.0.
 </p>
     
     <h2><a name="root-or-not">2.3 To root or not to root</a></h2>

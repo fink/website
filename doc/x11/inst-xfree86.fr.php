@@ -1,8 +1,8 @@
 <?
 $title = "Utilisation de X11 - Installing XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/04 20:43:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=fr" title="History">';
+$cvs_date = 'Date: 2004/04/05 19:41:12';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 include_once "header.inc";
 ?>
