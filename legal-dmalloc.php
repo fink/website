@@ -1,40 +1,35 @@
 <?
 $title = "Legal Stuff";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/02/12 16:22:29 $';
+$cvs_date = '$Date: 2004/02/12 22:31:50 $';
 
 include "header.inc";
-? >
+?>
 
- around the corner to peek at the noise from outside of the 
-<h1>Legal Stuff</h1>
 
-<p>
-Some legal rumblings to keep lawyers happy:
-</p>
+<p class="legalheadBig">Legal Stuff</p>
 
-<p>
+<p class="legal">
 The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
 Copyright &copy; 2001-2004 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
 <a href="mailto:fink-core@lists.sourceforge.net">talk to us</a> first.
 </p>
-<p>
-<h2><b>Indemnification</b></h2>
-The <b>Fink Project</b>  assumes no responsibility for any consequence relating
-directly or indirectly to any action or inaction you take based on the
-information or other material on this site. The <b>Fink Project</b> cannot
-guarantee, and will not be responsible for any damage or loss related
-to the accuracy, completeness or timeliness of any of the information
-listed above. You agree to indemnify, defend and hold harmless anyone
-associated with the <b>Fink Project</b>, its contributers and occasional
-helpers from any liability, loss, claim and expense (including
-attorneys reasonable fees) related to your use of this site or
-violation of this agreement.
-</p>
-<p>
-<h2><b>Proprietary Rights</b></h2>
-You should assume that all materials, information, data, text, or
+<h2 class="legalhead">Indemnification</h2>
+
+<p class="legal">The <b>Fink Project</b> assumes no responsibility for any 
+consequence relating directly or indirectly to any action or inaction you take 
+based on the information or other material on this site. The <b>Fink Project</b> 
+cannot guarantee, and will not be responsible for any damage or loss related to 
+the accuracy, completeness or timeliness of any of the information listed above. 
+You agree to indemnify, defend and hold harmless anyone associated with the <b>Fink 
+Project</b>, its contributers and occasional helpers from any liability, loss, 
+claim and expense (including attorneys reasonable fees) related to your use of 
+this site or violation of this agreement.</p>
+
+<h2 class="legalhead">Proprietary Rights</h2>
+
+<p class="legal">You should assume that all materials, information, data, text, or
 images, (collectively the Materials) available on this site are
 either the property of or used with permission by the <b>Fink Project</b>. As
 such, unless you are notified otherwise, these Materials are subject to
@@ -52,20 +47,19 @@ trademark laws and may not be used without the prior express permission
 of the <b>Fink Project</b>. Any unauthorised use of the Trademarks may violate such laws. The <b>Fink Project</b> and/or any third party that owns the Trademarks shall be entitled to enforce their ownership rights in such Trademarks to the fullest extent of the law. All trademarks not held by the <b>Fink Project</b> are property of the respective owner. Furthermore, the <b>Fink Project</b> shall not be responsible for, and you hereby agree to indemnify the <b>Fink Project</b> for, any liability associated with the infringement of the trademark laws related to your use of Trademarks displayed on this site.
 </p>
 
-<p>
-<h2><b>Changes to the Site</b></h2>
-The <b>Fink Project</b> may make improvements or changes in the information,services, products, and other materials on this site, or terminate this site, at any time without notice. The <b>Fink Project</b> may modify this agreement at any time, and such modifications shall be effective
+
+<h2 class="legalhead">Changes to the Site</h2>
+<p class="legal">The <b>Fink Project</b> may make improvements or changes in the information,services, products, and other materials on this site, or terminate this site, at any time without notice. The <b>Fink Project</b> may modify this agreement at any time, and such modifications shall be effective
 immediately upon posting of the modified agreement. Accordingly, you
 agree to review the agreement periodically, and your continued access
 or use of this site shall be deemed your acceptance of the modified
 agreement.
 </p>
-<p>
-<h2><b>Intellectual Property</b></h2>
-All contents remains the intellectual property of the <b>Fink Project</b> and cannot be duplicated or copied in its raw form to any other party,<br>
-</p>
 
-<p>This site is neither approved nor endorsed by Apple Computer, Inc.
+<h2 class="legalhead">Intellectual Property</h2>
+<p class="legal">All contents remains the intellectual property of the <b>Fink Project</b> and cannot be duplicated or copied in its raw form to any other party,<br>
+<br /><br />
+This site is neither approved nor endorsed by Apple Computer, Inc.
 </p> 
 
 <?
