@@ -4,9 +4,9 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/03/12 08:47:57';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Setting up Fink CVS Access</h1><!--Generated from $Fink: cvs.en.xml,v 1.3 2004/03/12 08:47:57 michga Exp $-->
 <p>
 Fink is developed via CVS.
@@ -67,5 +67,6 @@ then:</p>
 cvs -z3 update -d
 ./inject.pl</pre>
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+

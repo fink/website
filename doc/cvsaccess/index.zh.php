@@ -4,9 +4,9 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/16 04:03:28';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>设置 Fink CVS 访问</h1><!--Generated from $Fink: cvs.zh.xml,v 1.1 2004/03/16 04:03:28 jeff_yecn Exp $-->
 <p>
 Fink 被开发为支持 CVS。
@@ -51,5 +51,6 @@ cd fink
 cvs -z3 update -d
 ./inject.pl</pre>
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
