@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/05 19:41:12';
+$cvs_date = 'Date: 2004/04/08 08:01:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -38,41 +38,26 @@ Alors Torrey prit avec lui l'<a href="http://mrcla.com/XonX/">équipe XonX</a> e
 À peu près à la même époque, Tenon commença à construire XTools, en se fondant sur XFree86 4.0.
 </p>
     
-    <h2><a name="root-or-not">2.3 To root or not to root</a></h2>
+    <h2><a name="root-or-not">2.3 Être ou ne pas être racine</a></h2>
       
       <p>
-Soon the XonX team had XFree86 running in a fullscreen mode in
-parallel to Quartz and was putting out test releases for adventurous
-users.
-The test releases were called XFree86-Aqua, or XAqua for short.
-Since Torrey had taken the lead, changes went directly to
-XFree86's CVS repository, which was heading towards the 4.1.0
-release.
+Bientôt l'équipe XonX réussit à faire tourner XFree86 en mode plein écran parallèlement à Quartz et mit à disposition d'utilisateurs intrépides des versions de test.
+Celles-ci furent appelées XFree86-Aqua, ou XAqua en raccourci.
+Comme Torrey avait pris l'initiative de tout cela, les modifications allèrent directement dans le référentiel CVS de XFree86, ce qui aboutit à la version 4.1.0.
 </p>
       <p>
-In the first stages interfacing with Quartz was done via a small
-application called Xmaster.app (written with Carbon, then rewritten
-with Cocoa).
-Later that code was integrated into the X server proper, giving birth
-to XDarwin.app.
-Shared library support was also added at this time (and Tenon was
-convinced to use this set of patches instead of their own to ensure
-binary compatibility).
-There was even good progress on a rootless mode (using the Carbon
-API), but alas, it was too late to get it into XFree86 4.1.0.
-And the rootless patch was free, and continued to float around the
-net.
-After XFree86 4.1.0 shipped with just the fullscreen mode, work on the
-rootless mode continued, now using the Cocoa API.
-An experimental rootless mode was put into XFree86's CVS repository.
-</p>
+Dans les premiers temps, l'interface avec Quartz se faisait via une petite application appelée Xmaster.app (écrite avec Carbon, puis réécrite en Cocoa).
+Plus tard, ce code fut intégré dans le serveur X, donnant naissance à XDarwin.app.
+La gestion des librairies partagées fut ajoutée à cette époque (et l'on réussit à convaincre Tenon d'utiliser ce jeu de rustines au lieu du leur, afin de garantir la compatibilité binaire).
+Il y eut même une certaine avancée sur un mode sans racine (avec l'API Carbon), mais hélas, il était trop tard pour l'intégrer dans XFree86 4.10.
+Et la rustine sans racine vogua, sans attaches, sur le réseau.
+Après la mise à disposition de XFree86 4.10 en mode en plein écran, les travaux sur le mode sans racine continuèrent, en utilisant l'API Cocoa cette fois-ci.
+Un mode sans racine expérimental fut mis dans le référentiel CVS de XFree86.
+ </p>
       <p>
-In the meantime, Apple released Mac OS X 10.0 and Darwin 1.3,
-and Tenon released Xtools 1.0 some weeks after that.
+Pendant ce temps, Apple sortait Mac OS X 10.0 et Darwin 1.3 ; quelques semaines plus tard, Tenon sortait Xtools 1.0.
 </p>
-      <p>Development continued on integrating the rootless mode into XFree86,
-so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X 
-version had been completely integrated into the main XFree86 distribution.
+      <p>Les travaux d'intégration du mode sans racine dans XFree86 continuèrent, si bien que, lorsque XFree86 4.2.0 sortit en janvier 2002, la version Darwin/Mac OS X avait été complètement intégrée dans la distribution principale de XFree86.
 </p>
     
   <p align="right">

@@ -136,8 +136,7 @@ include_once "header.inc";
       <div class="question"><p><b>Q5.9: I'm tired of typing my password into sudo again and again. Is there
         a way around this?</b></p></div>
       <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
-        password. To do this, edit <code>/etc/sudoers</code> as root
-        and add a line like this:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Replace <code>username</code> with your actual username, of course.
+        password. To do this, run <code>visudo</code> as root and add a line like this:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Replace <code>username</code> with your actual username, of course.
         This line allows you to run any command via sudo without typing your
         password.</p></div>
     </a>
@@ -245,7 +244,7 @@ fink selfupdate-cvs</pre></div>
         default Fink install, "<code>sudo mv <b>package-source.tar.gz</b>
         /sw/src/</code>". Then use '<code>fink install <b>packagename</b>
           </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the
-        maintainer to deal with the problem. He may either post a link to
+        maintainer to deal with the problem. They may either post a link to
         the old source, or update the .info and .patch files to use the newer
         version.</p></div>
     </a>
@@ -280,9 +279,8 @@ fink selfupdate-cvs</pre></div>
         there are other directories ahead of it (e.g.
         <code>/usr/local/bin</code>), then you will either want to
         reorder your PATH so that <code>/sw/sbin</code> is near the
-        beginning, or if you really need the other directory to be before
-        <code>/sw/sbin</code>, then you'll want to temporarily rename
-        the other <code>install-info</code> when you use Fink.</p></div>
+        beginning. Or if you really need the other directory to be before
+        <code>/sw/sbin</code>,  and this former directory includes another install-info directory, then you'll want to temporarily rename this <code>install-info</code> subdirectory when you use Fink.</p></div>
     </a>
     <a name="bad-list-file">
       <div class="question"><p><b>Q5.18: I can't install or remove anything, because of a problem with a

@@ -4,9 +4,46 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Jeu, 25 mar 2004 02:06:30 CET</lastBuildDate>
+    <lastBuildDate>Jeu, 08 avr 2004 08:08:10 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.">
+    <title>Fink 0.6.3 and 0.7.0 released.</title>
+    <link>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</link>
+    <dc:date>2004-04-06</dc:date>
+    <description>
+	
+The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
+are now available for both source and binary users.  The 0.6.3 release has 
+been built on 10.2, while release 
+0.7.0 has been built on 10.3. This should facilitate better support for the different platforms. 
+	
+	
+These new releases incorporate various fixes to the package manager, many previously 
+unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
+	
+	
+To complete a new Fink installation you should follow the instructions posted 
+here.
+You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted here.
+
+If you have questions or problems, please try the Fink mailing lists you can learn more about them 
+here.
+		
+		
+Please make sure you pick the appropriate installer for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
+		
+	
+The Fink Team would like to thank its many contributors, frequent helpers 
+and developers for making this release happen. 
+We also thank our community, without their constant support and valuable 
+pointers Fink would not be where we are now.. 
+
+
+
+</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.">
     <title>Raise your Flag.</title>
     <link>http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.</link>
@@ -395,22 +432,6 @@ system-xfree86-43; fink selfupdate; fink index
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 
-		</description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-10-23%20Say%20Hello%20to%20Mirror%20Numero%20Uno">
-    <title>Say Hello to Mirror Numero Uno</title>
-    <link>http://fink.sourceforge.net/news/#2003-10-23%20Say%20Hello%20to%20Mirror%20Numero%20Uno</link>
-    <dc:date>2003-10-23</dc:date>
-    <description>
-	You are too late. Rus Foster from JVDS
-	beat you all to it. He is the first one to provide us with resources 
-	for a Fink rsync mirror.
-	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
-	
-	For those of you who are still waiting, join in. The more mirrors we have
-	the faster you can rsync your info files. As per usual, updated and current
-	information on the mirror structure can be found on  Finkmirrors.net 
-	
 		</description>
   </item>
 </rdf:RDF>
