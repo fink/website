@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.41 2003/12/02 02:38:25 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.42 2004/02/12 15:25:16 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -280,7 +280,6 @@ version had been completely integrated into the main XFree86 distribution.
 <shorttitle>Installing XFree86</shorttitle>
 <section name="fink" >
 <title>Installing through Fink</title>
-<p><em>Please bear with us while this section is being updated.</em></p>
 <p>
 Fink will let you install X11 in any way you like,
 but it also provides XFree86 packages of its own. If you
@@ -307,7 +306,7 @@ overwrites your manually installed server.  Note that the current stable version
 </p>
 <p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <filename>xine</filename>.</p>
 <p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
-<p><em>Note for 10.3 users:</em>  you will need to install <code>xfree86-4.3.99.15-1</code> or later (currently in <code>10.3/unstable</code>).  This is a prerelease for XFree86-4.4 .</p>
+<p><em>10.3 users:</em>  As of this writing, the version of the <code>xfree86</code> package in the &fink_version; binary distribution (4.3.0-14) doesn't work on 10.3.  You will need to install version 4.3.99.16-2 or later from source (e.g. <code>fink install xfree86</code>).  These are prereleases for XFree86-4.4.</p>
 </section>
 <section name="apple-binary" >
 <title>Apple's Binaries</title>
@@ -322,7 +321,7 @@ To use the Apple binaries, you need to make sure the <em>X11 User</em> package i
 <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</link> Fink.</p>  
 <p>Under <code>fink-0.16.2</code>, you will need to install the <em>X11 SDK</em> package, as well.  After you do this, Fink will
 create a <code>system-xfree86</code> virtual package.</p>
-<p>Under <code>fink-0.17.0</code> and later (currently in unstable), installing the X11 SDK is only necessary if 
+<p>Under <code>fink-0.17.0</code> and later installing the X11 SDK is only necessary if 
 you want to build packages from source.  In this case, even if you don't have the SDK, there will be a <code>system-xfree86</code>
 virtual package.  If you do install the SDK, there will also be a <code>system-xfree86-shlibs</code> package and a 
 <code>system-xfree86-dev</code> package, representing the libraries and headers, respectively.
@@ -670,7 +669,7 @@ exception of <code>xdm</code>.
 </p>
 </section>
 <section name="macosx-41" >
-<title>Mac OS X + XFree86 4.x.0</title>
+<title>Mac OS X + XFree86 4.x.y</title>
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
@@ -698,7 +697,7 @@ That will start up the server in fullscreen mode,
 plus the clients inyour <filename>.xinitrc</filename>.  
 </p>
 <p>
-NOTE: prior to 4.2, -quartz was used for fullscreen mode.
+NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.
 </p>
 <p>
 If the server you have supports rootless operation, 
@@ -709,6 +708,7 @@ you can start it in rootless mode with the
 The <code>-quartz</code> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
+<p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
 </section>
 <section name="xinitrc" >
 <title>The .xinitrc File</title>
@@ -981,6 +981,9 @@ before you get a chance, run it from Terminal with the command
 This usually allows XDarwin to start up, and you can then make the
 permanent choice in the Preferences dialog.
 </p>
+<codeblock>Fatal server error:
+Could not find keymapping file .</codeblock>
+<p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, from source (e.g. <code>fink install xfree86</code>), since these versions don't need the keymapping files.</p>
 <codeblock>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</codeblock>
 <p>

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.167 2004/02/09 18:56:48 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.168 2004/02/12 15:25:16 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -868,6 +868,10 @@ which among other stuff contains the C compiler, <code>cc</code>.
 <answer>
 <p>You need to install the Developer Tools.</p>
 </answer>
+</faqentry>
+<faqentry name="missing-make">
+<question><p>What does &quot;make: command not found&quot; mean?</p></question>
+<answer><p>It means you need to install the Developer Tools.</p></answer>
 </faqentry>
 <faqentry name="make" >
 <question>
