@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.23 2004/02/18 14:06:48 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.24 2004/02/18 14:09:39 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
@@ -30,7 +30,7 @@
 <tr><td>
 <div class="footer" align="center">
 <? if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;"; ?>
-</divS>
+</div>
 </td></tr>
 <tr><td width="100%">
 <div class="footer" align="center"><?
