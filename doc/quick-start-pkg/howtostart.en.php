@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 09:02:58';
+$cvs_date = 'Date: 2004/07/16 15:07:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -42,7 +42,7 @@ Using Fink: A Developer's How To</a>
 
 
 Read and try to understand the 
-<a href="example.php?phpLang=en#basics"></a>.
+<a href="example.php?phpLang=en#basics">example here</a>.
 </li>
 <li>
 Look at other, similar packages in your 
