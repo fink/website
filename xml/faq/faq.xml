@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.152 2003/12/02 02:38:24 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.153 2003/12/02 20:34:17 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -403,8 +403,9 @@ to install it). Thus in order to get rid of Fink, enter this command:
 </p>
 <codeblock>sudo rm -rf /sw</codeblock>
 <p>
-The only exception to this rule is XFree86. If you also need to remove
-XFree86, additionally enter this:
+The only exception to this rule is XFree86. If you installed XFree86 through
+Fink (i.e., you installed the "xfree86" or "xfree86-rootless" packages,
+instead of using system-xfree86), you will need to additionally enter this:
 </p>
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 <p>You also will want to remove the &quot;source /sw/bin/init.csh&quot; or line you added to your .cshrc file or the &quot;source /sw/bin/init.sh&quot; you added to your .bashrc file using a text editor.</p>
