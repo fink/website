@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/03/24 19:57:47 $';
+$cvs_date = '$Date: 2002/04/03 15:38:51 $';
 
 include "header.inc";
 ?>
@@ -26,6 +26,7 @@ Fink (in alphabetical order):</p>
 <li>David R. Morrison</li>
 <li>Matthias Neeracher</li>
 <li>Peter O'Gorman</li>
+<li>Benjamin Reed</li>
 <li>Masanori Sekino</li>
 <li>Matt Stephenson</li>
 <li>Christian Swinehart</li>
