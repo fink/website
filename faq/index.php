@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/02/09 18:56:48';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/02/12 15:25:16';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -92,22 +92,23 @@ set up for Fink already.", and it logs out.</a></li>
 <li><a href="comp-general.php#compiler">5.1 A configure script complains
 that it can't find an "acceptable cc". What's that?</a></li>
 <li><a href="comp-general.php#cvs">5.2 When I try a "fink selfupdate-cvs" I get this message: "cvs: Command not found." </a></li>
-<li><a href="comp-general.php#make">5.3 make: illegal option -- C</a></li>
-<li><a href="comp-general.php#head">5.4 I'm getting a strange usage message
+<li><a href="comp-general.php#missing-make">5.3 What does "make: command not found" mean?</a></li>
+<li><a href="comp-general.php#make">5.4 make: illegal option -- C</a></li>
+<li><a href="comp-general.php#head">5.5 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
-<li><a href="comp-general.php#also_in">5.5 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
-<li><a href="comp-general.php#weak_lib">5.6 After I installed the December 2002 Development Tools I get messages about "weak libraries".</a></li>
-<li><a href="comp-general.php#mv-failed">5.7 What does "execution of mv failed, exit code 1" mean when I try to build a package?</a></li>
-<li><a href="comp-general.php#node-exists">5.8 I can't install a package | update because I get a message that a "node" already exists.</a></li>
-<li><a href="comp-general.php#usr-local-libs">5.9 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink. Is this true?</a></li>
-<li><a href="comp-general.php#toc-out-of-date">5.10 When I try to build a package, I get a message that a "table of contents" is out of date. What do I need to do?</a></li>
-<li><a href="comp-general.php#fc-atlas">5.11 Fink Commander hangs when I try to install atlas.</a></li>
-<li><a href="comp-general.php#basic-headers">5.12 I get messages saying that I'm missing stddef.h. Where do I find it?</a></li>
-<li><a href="comp-general.php#multiple-dependencies">5.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
-<li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
-<li><a href="comp-general.php#freetype-problems">5.15 I get errors involving freetype.</a></li>
-<li><a href="comp-general.php#dlfcn-from-oo">5.16 I get build errors involving `Dl_info'.</a></li>
-<li><a href="comp-general.php#gcc2">5.17 Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</a></li>
+<li><a href="comp-general.php#also_in">5.6 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
+<li><a href="comp-general.php#weak_lib">5.7 After I installed the December 2002 Development Tools I get messages about "weak libraries".</a></li>
+<li><a href="comp-general.php#mv-failed">5.8 What does "execution of mv failed, exit code 1" mean when I try to build a package?</a></li>
+<li><a href="comp-general.php#node-exists">5.9 I can't install a package | update because I get a message that a "node" already exists.</a></li>
+<li><a href="comp-general.php#usr-local-libs">5.10 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink. Is this true?</a></li>
+<li><a href="comp-general.php#toc-out-of-date">5.11 When I try to build a package, I get a message that a "table of contents" is out of date. What do I need to do?</a></li>
+<li><a href="comp-general.php#fc-atlas">5.12 Fink Commander hangs when I try to install atlas.</a></li>
+<li><a href="comp-general.php#basic-headers">5.13 I get messages saying that I'm missing stddef.h. Where do I find it?</a></li>
+<li><a href="comp-general.php#multiple-dependencies">5.14 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
+<li><a href="comp-general.php#dpkg-parse-error">5.15 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
+<li><a href="comp-general.php#freetype-problems">5.16 I get errors involving freetype.</a></li>
+<li><a href="comp-general.php#dlfcn-from-oo">5.17 I get build errors involving `Dl_info'.</a></li>
+<li><a href="comp-general.php#gcc2">5.18 Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -147,7 +148,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.167 2004/02/09 18:56:48 rangerrick Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.168 2004/02/12 15:25:16 alexkhansen Exp $</i></p>
 
 
 <?

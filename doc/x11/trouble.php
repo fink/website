@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:25';
+$cvs_date = 'Date: 2004/02/12 15:25:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -136,6 +136,9 @@ before you get a chance, run it from Terminal with the command
 This usually allows XDarwin to start up, and you can then make the
 permanent choice in the Preferences dialog.
 </p>
+<pre>Fatal server error:
+Could not find keymapping file .</pre>
+<p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, from source (e.g. <code>fink install xfree86</code>), since these versions don't need the keymapping files.</p>
 <pre>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</pre>
 <p>

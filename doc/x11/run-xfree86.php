@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:25';
+$cvs_date = 'Date: 2004/02/12 15:25:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -55,7 +55,7 @@ You can use all of the start methods outlined above, with the
 exception of <code>xdm</code>.
 </p>
 
-<h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.0</a></h2>
+<h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
 
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
@@ -84,7 +84,7 @@ That will start up the server in fullscreen mode,
 plus the clients inyour <code>.xinitrc</code>.  
 </p>
 <p>
-NOTE: prior to 4.2, -quartz was used for fullscreen mode.
+NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.
 </p>
 <p>
 If the server you have supports rootless operation, 
@@ -95,6 +95,7 @@ you can start it in rootless mode with the
 The <code>-quartz</code> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
+<p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
 
 <h2><a name="xinitrc">4.3 The .xinitrc File</a></h2>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:25';
+$cvs_date = 'Date: 2004/02/12 15:25:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -13,7 +13,6 @@ include "header.inc";
 
 <h2><a name="fink">3.1 Installing through Fink</a></h2>
 
-<p><b>Please bear with us while this section is being updated.</b></p>
 <p>
 Fink will let you install X11 in any way you like,
 but it also provides XFree86 packages of its own. If you
@@ -40,7 +39,7 @@ overwrites your manually installed server.  Note that the current stable version
 </p>
 <p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <code>xine</code>.</p>
 <p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
-<p><b>Note for 10.3 users:</b>  you will need to install <code>xfree86-4.3.99.15-1</code> or later (currently in <code>10.3/unstable</code>).  This is a prerelease for XFree86-4.4 .</p>
+<p><b>10.3 users:</b>  As of this writing, the version of the <code>xfree86</code> package in the 0.6.2 binary distribution (4.3.0-14) doesn't work on 10.3.  You will need to install version 4.3.99.16-2 or later from source (e.g. <code>fink install xfree86</code>).  These are prereleases for XFree86-4.4.</p>
 
 <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
 
@@ -55,7 +54,7 @@ To use the Apple binaries, you need to make sure the <b>X11 User</b> package is 
 <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</a> Fink.</p>  
 <p>Under <code>fink-0.16.2</code>, you will need to install the <b>X11 SDK</b> package, as well.  After you do this, Fink will
 create a <code>system-xfree86</code> virtual package.</p>
-<p>Under <code>fink-0.17.0</code> and later (currently in unstable), installing the X11 SDK is only necessary if 
+<p>Under <code>fink-0.17.0</code> and later installing the X11 SDK is only necessary if 
 you want to build packages from source.  In this case, even if you don't have the SDK, there will be a <code>system-xfree86</code>
 virtual package.  If you do install the SDK, there will also be a <code>system-xfree86-shlibs</code> package and a 
 <code>system-xfree86-dev</code> package, representing the libraries and headers, respectively.

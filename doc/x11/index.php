@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:25';
+$cvs_date = 'Date: 2004/02/12 15:25:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -49,7 +49,7 @@ X11 with or without Fink.
 <li><a href="run-xfree86.php"><b>4 Starting XFree86</b></a></li>
 <ul>
 <li><a href="run-xfree86.php#darwin">4.1 Darwin</a></li>
-<li><a href="run-xfree86.php#macosx-41">4.2 Mac OS X + XFree86 4.x.0</a></li>
+<li><a href="run-xfree86.php#macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></li>
 <li><a href="run-xfree86.php#xinitrc">4.3 The .xinitrc File</a></li>
 </ul>
 <li><a href="xtools.php"><b>5 Xtools</b></a></li>
@@ -80,7 +80,7 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.41 2003/12/02 02:38:25 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.42 2004/02/12 15:25:16 alexkhansen Exp $</i></p>
 
 
 <?
