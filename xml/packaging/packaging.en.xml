@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.13 2004/03/27 12:31:08 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.14 2004/03/28 23:58:03 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -374,7 +374,8 @@ CVS version of fink)
 <p>
 the package <em>n</em>ame <em>i</em>nvariant portion. These are like
 %n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
-(Introduced in a post-0.19.2 CVS version of fink)
+(Introduced in a post-0.19.2 CVS version of fink) You should use %{ni}
+and %{Ni} to avoid confusion with the %n and %N expansions.
 </p>
 </itemd></item>
 </itemtable>
@@ -1549,7 +1550,9 @@ the actual URL. The known <em>mirror-name</em>s are listed in
 package. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
-Before the URL is used, percent expansion takes place.
+Before the URL is used, percent expansion takes place. Remember that
+%n includes all %type_ variant data, so you may want to use %ni here
+(perhaps with some specific %type_ expansions).
 </p>
 <p>
 Since fink 0.18.0, <code>Source: none</code> has the special meaning
@@ -1809,6 +1812,13 @@ appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
 before the PatchScript is run (if any).
+</p>
+<p>
+Remember that %n includes all %type_ variant data, so you may want to
+use %ni here (perhaps with some specific %type_ expansions). It's
+easier to maintain a single patchfile and then make variant-specific
+changes in <code>PatchScript</code> than to have a separate patchfile
+for each variant.
 </p>
 </itemd></item>
 
