@@ -72,21 +72,13 @@ The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre></div></a>
 
-<a name="kde"><div class="question"><p><b>Q3.6: Why are there no packages for
-KDE?</b></p></div>
+<a name="kde"><div class="question"><p><b>Q3.6: What is the status of KDE in Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Because there simply are none (yet).
+It works, but there's still plenty to do.
 </p><p>
-Seriously, KDE had serious problems which has made a
-port to Mac OS X very difficult.
-It assumes it can do things with shared libraries that are only
-possible on ELF systems like Linux, *BSD and Solaris, and providing
-this functionality for Mac OS X has taken a long time.
-There is a group working on porting it; for a report on the current
-status, see their
-<a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/~checkout~/proj/KDE-Darwin/README.Darwin?rev=HEAD">README file.</a>
-</p><p>Note that Qt is a different story, we have a package for it and it
-works fine.
+KDE is perfectly usable, but there are parts that still need porting
+or tweaking.  There is a group working on finishing and maintaining the
+port; for a report on the current status, see their <a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/~checkout~/proj/KDE-Darwin/README.Darwin?rev=HEAD">README file.</a>
 </p></div></a>
 
 

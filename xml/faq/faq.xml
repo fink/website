@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.37 2002/05/21 02:02:49 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.38 2002/06/01 17:58:44 rangerrick Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -298,25 +298,17 @@ XFree86, additionally enter this:
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 </answer></faqentry>
 
-<faqentry name="kde"><question><p>Why are there no packages for
-KDE?</p></question>
+<faqentry name="kde"><question><p>What is the status of KDE in Fink?</p></question>
 <answer>
 <p>
-Because there simply are none (yet).
+It works, but there's still plenty to do.
 </p>
 <p>
-Seriously, KDE had serious problems which has made a
-port to Mac OS X very difficult.
-It assumes it can do things with shared libraries that are only
-possible on ELF systems like Linux, *BSD and Solaris, and providing
-this functionality for Mac OS X has taken a long time.
-There is a group working on porting it; for a report on the current
-status, see their
-<link url="
-http://www.opendarwin.org/cgi-bin/cvsweb.cgi/~checkout~/proj/KDE-Darwin/README.Darwin?rev=HEAD"
+KDE is perfectly usable, but there are parts that still need porting
+or tweaking.  There is a group working on finishing and maintaining the
+port; for a report on the current status, see their <link
+url="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/~checkout~/proj/KDE-Darwin/README.Darwin?rev=HEAD"
 >README file.</link>
-</p><p>Note that Qt is a different story, we have a package for it and it
-works fine.
 </p>
 </answer></faqentry>
 

@@ -54,8 +54,7 @@ installation and provide a symlink from the old location, will it
 work?</a></li>
 <li><a href="usage-fink.php#removing">3.5 How can I remove all
 of Fink?</a></li>
-<li><a href="usage-fink.php#kde">3.6 Why are there no packages for
-KDE?</a></li>
+<li><a href="usage-fink.php#kde">3.6 What is the status of KDE in Fink?</a></li>
 <li><a href="usage-fink.php#bindist">3.7 The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</a></li>
