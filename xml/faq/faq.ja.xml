@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.10 2004/03/15 23:58:46 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.11 2004/03/24 22:14:30 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -322,7 +322,10 @@ dselect からパッケージを選択してインストールする場合、 ro
 <p>パッケージ <em>cvs-proxy</em> は HTTP プロキシを介して通ります。</p>
 <ul>
 <li>
-<p>まず、  <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。</p>
+<p>
+まず、 <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 
+ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
+</p>
 </li>
 <li>
 <p><em>cvs-proxy</em> パッケージを、次のコマンドでインストールする:</p>
@@ -598,7 +601,13 @@ Fink が自動的にここを探しにいきます。
 <filename>/sw/bin/pathsetup.command</filename> スクリプトを実行
 (ファインダからダブルクリックするか、ターミナルから実行)
 すると、初期の設定を検出しようとします。
-この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。</p> 
+この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。
+<em>注記:</em>
+<code>fink-0.18.3</code> と <code>fink-0.19.2</code> では、スクリプトは
+<filename>/sw/bin/pathsetup.sh</filename>
+になりました。
+必ずターミナル上で実行して下さい。
+</p> 
 <p>このエラーが Apple X11 ターミナルでのみ出る場合，
 <link url=" http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc ">.xinitrc</link> 
 というファイルを作成し、</p>
@@ -722,9 +731,14 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </question>
 <answer>
 <p>このようなエラー:</p>
-        <codeblock>dyld: perl Undefined symbols: _Perl_safefree
-        _Perl_safemalloc _Perl_saferealloc _Perl_sv_2pv _perl_call_sv
-        _perl_eval_sv _perl_get_sv</codeblock>
+<codeblock>dyld: perl Undefined symbols: 
+_Perl_safefree
+_Perl_safemalloc
+_Perl_saferealloc
+_Perl_sv_2pv
+_perl_call_sv
+_perl_eval_sv
+_perl_get_sv</codeblock>
 <p>がでる場合、 Perl を アップデートしていて、 <filename>storable-pm</filename> をアップグレードする必要があります。
 Fink をアップグレードしてください。
 インストール時に、 <filename>perl-core</filename> と <filename>system-perl</filename> のどちらをインストールするか聞かれるので、後者を選択してください。
@@ -759,13 +773,13 @@ fink selfupdate-cvs</codeblock>
 <answer><p>もし次のようであれば:</p>
 <codeblock>
 Err file: local/main Packages
-  File not found
+File not found
 Ign file: local/main Release
 Err file: stable/main Packages
-  File not found
+File not found
 Ign file: stable/main Release
 Err file: stable/crypto Packages
-  File not found
+File not found
 Ign file: stable/crypto Release
 Hit http://us.dl.sourceforge.net 10.3/release/main Packages
 Hit http://us.dl.sourceforge.net 10.3/release/main Release
@@ -1144,6 +1158,24 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 <p>
 <filename>gcc2</filename> は gcc-2.95 のバーチャルパッケージです。
 gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p>
+</answer>
+</faqentry>
+<faqentry name="system-java">
+<question>
+<p>Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
+と言っていますが、そのようなパッケージはありません。
+</p>
+</question>
+<answer>
+<p>
+バーチャルパッケージだからです。
+このエラーは、 Java が Software Update によって更新された場合に発生します。
+更新時にヘッダファイルが削除され、 -dev パッケージが作成されなくなるためです。
+</p>
+<p>
+<link url="http://connect.apple.com">Apple</link> から、適切な <filename>Java Developer Tools</filename> パッケージをダウンロードする必要があります。
+この問題の場合は、 <filename>Java 1.4.2 Developer Tools</filename> です。
+</p>
 </answer>
 </faqentry>
 </chapter>
@@ -1545,6 +1577,10 @@ xmodmap $HOME/.Xmodmap</codeblock>
 <codeblock>...
 exec metacity &amp;
 exec gnome-session</codeblock>
+<p>
+注記: この問題は <em>GNOME 2.4</em> では発生しません。
+<filename>gnome-session</filename> を実行することでウィンドウマネージャーを呼び出すようになりました。
+</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-no-windowbar" >
@@ -1656,6 +1692,39 @@ sudo apt-get install fink</codeblock></li>
 		<li>好きな場所に保存</li>
 		<li>実行: <codeblock>perl fink-x11-debug</codeblock></li>
 		</ul>
+</answer>
+</faqentry>
+<faqentry name="wants-xfree86-on-upgrade">
+<question>
+    <p>
+    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
+    </p>
+</question>
+<answer>
+    <p>
+    以下の古い代替パッケージのうちいずれかを削除する必要があります:
+    <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, 
+    <filename>system-xfree86-43</filename> 。
+    自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
+    他のパッケージが <filename>system-xfree86</filename> に依存しているため、以下のコマンドを使い
+    </p>
+    <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
+    <p>
+    古いバージョンを削除します。
+    インストールの確認は、
+    </p>
+    <codeblock>fink-virtual-pkgs</codeblock>
+    <p>
+    とし、 <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code>
+    の項があり、 provides: の行に <code>x11</code> と <code>x11-shlibs</code> がそれぞれあるか確認します。
+    X11SDK もインストールされている場合、 <code>Package: system-xfree86-dev</code> も確認します。
+    </p>
+    <p>
+    これでも問題が解決されない場合、上の
+    <xref section="apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</xref> と
+    <xref section="apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</xref>
+    を参照してください。
+    </p>
 </answer>
 </faqentry>
 </chapter>
