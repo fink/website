@@ -27,6 +27,8 @@ sub render {
   print "\n"x$leading;
   $leading = 1;
 
+  $s =~ s/&quot;/\"/g;   # xsltproc quirk - converts all " to &quot;
+
   if ($ptype == 3) {
     # preformatted
     foreach $line (split(/\n/, $s)) {
@@ -45,7 +47,6 @@ sub render {
     $s =~ s/&lt;/</g;      # HTML entities
     $s =~ s/&gt;/>/g;      #  "
     $s =~ s/&amp;/&/g;     #  "
-    $s =~ s/&quot;/\"/g;   #  "
 
     my $space = $linelength - length($prefix);
     while (length($s) > $space) {
