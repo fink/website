@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.9 2004/07/10 18:22:31 michga Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.10 2004/07/16 08:45:21 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -20,7 +20,7 @@ Documentation actuelle de l'utilisateur de Fink :
 <li><varlink url="users-guide/index.php" varurl="users-guide/uguide.fr.html">Guide de l'utilisateur de Fink</varlink> -
 ce guide couvre l'installation de Fink, celle des paquets et la mise à jour de Fink lors d'une nouvelle version. Il contient les instructions pour les versions source et binaire.
 <em>En cours de rédaction !</em></li>
-<li><varlink url="x11/index.php" varurl="x11/x11.en.html">X11 sur Darwin et Mac OS X</varlink> -
+<li><varlink url="x11/index.php" varurl="x11/x11.fr.html">X11 sur Darwin et Mac OS X</varlink> -
 couvre les concepts généraux, l'installation et le lancement (les utilisateurs de Darwin et de Mac OS X y trouveront aussi des conseils utiles)</li>
 </ul>
 <p>
@@ -40,6 +40,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 url="http://conferences.oreillynet.com/macosx2002/"
 >Conférence O'Reilly Mac OS X</link> (disponible aussi sous <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</link>) </li>
 <li><varlink url="porting/index.php" varurl="porting/porting.fr.html">Trucs et astuces pour le portage</varlink> - notes sur le portage d'applications Unix sur Darwin</li>
+      <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.fr.html">Tutoriel d'empaquetage</varlink> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.fr.html">Guide de construction des paquets</varlink> - comment créer et maintenir des paquets Fink</li>
 </ul>
 </section>
