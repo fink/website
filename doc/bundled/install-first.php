@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/23 10:12:39';
+$cvs_date = 'Date: 2001/09/04 12:15:12';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
@@ -19,7 +19,7 @@ You need:
 <ul>
 <li><p>
 An installed Mac OS X system, version 10.0 or later.
-(There may be some stray linker-related problems with 10.1.)
+(There may still be some stray linker-related problems with 10.1.)
 Darwin 1.3.1 should also work, but this has not been tested.
 Earlier versions of both will <b>not</b> work.
 </p></li>
@@ -31,7 +31,7 @@ On Darwin, the tools should be present in the default install.
 </p></li>
 <li><p>
 Many other things that come with Mac OS X and the Developer Tools.
-This includes perl 5.6, wget and autoconf.
+This includes perl 5.6 and either wget or curl.
 </p></li>
 <li><p>
 Internet access.
@@ -79,16 +79,16 @@ have been warned.
 
 <a name="install"><h2>Installation</h2></a>
 <p>
-First, you need to unpack the fink-0.2.5-full.tar.gz tarball.
+First, you need to unpack the fink-0.2.6-full.tar.gz tarball.
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.2.5-full.tar.gz</pre>
+<pre>tar xzf fink-0.2.6-full.tar.gz</pre>
 <p>
-You now have a directory named fink-0.2.5-full.
-Change to it with <tt><nobr>cd fink-0.2.5-full</nobr></tt>.
+You now have a directory named fink-0.2.6-full.
+Change to it with <tt><nobr>cd fink-0.2.6-full</nobr></tt>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -96,7 +96,7 @@ bootstrap.pl.
 It is accompanied by a small shell script, bootstrap.sh, which checks
 some basic requirements and then hands over control to the perl
 script.
-So, to start installation, go to the fink-0.2.5-full directory and run
+So, to start installation, go to the fink-0.2.6-full directory and run
 this command:
 </p>
 <pre>./bootstrap.sh</pre>
