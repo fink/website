@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/01/29 23:28:59 $';
+$cvs_author = '$Author: kconger $';
+$cvs_date = '$Date: 2004/02/15 14:10:11 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ desired. Futhermore there are people that work on the fink program itself.
 The web site has to be kept current. Users need support, provided via our mailing lists
 and our IRC channel. These and many more tasks require a lot of work, thus we would
 like to say "Thank you" to all these people who sacrifice their spare time to help
-the community. As such, this page contains a list of people that have to contributed
+the community. As such, this page contains a list of people that have contributed
 to Fink in some way.
 </p>
 
