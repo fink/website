@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.30 2004/08/20 11:52:32 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.31 2004/08/21 21:01:44 dmacks Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1105,7 +1105,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing stddef.h | wchar.h | crt1.o. Where do I find them?</p>
+        <p>I get messages saying that I'm missing <filename>stddef.h</filename>, <filename>wchar.h</filename>, or <filename>crt1.o</filename>. Where do I find them?</p>
       </question>
       <answer>
         <p>These headers, and many others, are provided by the DevSDK package of
