@@ -4,7 +4,7 @@ $releases = array(
 			array("0.7.0"),
 			"current-10.3"
 			),
-	"10.2" => array(
+	"10.2<br>(gcc3.3 only)" => array(
 			array("0.6.3"),
 			"current-10.2-gcc3.3"
 			),

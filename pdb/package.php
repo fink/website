@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/09/05 14:51:36 $';
+$cvs_date = '$Date: 2004/09/06 16:55:59 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -50,6 +50,8 @@ if (!$rs) {
    print '<div style="white-space:nowrap">' . $text . '</div>';
    print '</td>';
  }
+
+ $shim = '<img src="../../img/shim.gif" width="1" height="1" border="0" alt="">';
 
  print '<table cellspacing="0" border="0">'."\n";
 
@@ -100,7 +102,7 @@ if (!$rs) {
 
    // System
    print "<tr $row_color>";
-   avail_td($os . (ereg("10.2",$os) ? '<br>(gcc-3.3 only)' : ''), $rowspan,1);
+   avail_td($os,$rowspan,1);
 
    print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
 
