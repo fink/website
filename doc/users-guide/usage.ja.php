@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/24 03:03:42';
+$cvs_date = 'Date: 2004/03/11 23:56:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 include_once "header.inc";
@@ -148,7 +148,7 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <h2><a name="fetch-missing">6.10 fetch-missing</a></h2>
 
 <p>
-<b>全ての</b>パッケージソースファイルをダウンロードします。
+ローカルに存在しない<b>全ての</b>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
 
 <h2><a name="build">6.11 build</a></h2>

@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/24 03:03:42';
+$cvs_date = 'Date: 2004/03/11 23:56:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 include_once "header.inc";
@@ -22,13 +22,13 @@ include_once "header.inc";
 <p>
 <code>dselect</code> は、入手可能なパッケージの一覧を表示し、インストールするものを選択できるプログラムです。
 これはターミナル.app 内で動作しますが、 "スクリーン" 全体を簡単なキーボードナビゲーションで使います。
-他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、あらかじめ root になるか、 sudo を使い:
+他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、sudo を使い:
 </p>
 <pre>sudo dselect</pre>
 <p>
 とします。
 <b>注記：</b>
-<code>dselect</code> は OSX ターミナル上では問題があります。
+<code>dselect</code> は Mac OS X ターミナル上では問題があります。
 これを避けるには以下のコマンドを先に実行するか、起動ファイル (例 <code>.cshrc</code> | <code>.profile</code>) に書いておく必要があります。
 </p>
 <p>tcsh の場合:</p>

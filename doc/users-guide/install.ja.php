@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/24 03:03:42';
+$cvs_date = 'Date: 2004/03/11 23:56:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 include_once "header.inc";
@@ -111,34 +111,38 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <code>.profile</code> ファイルに追加して下さい (あるいは、 <code>.bash_profile</code> がある場合、こちらを使って下さい):
   </p>
-  <pre>source /sw/bin/init.sh</pre>
+  <pre>. /sw/bin/init.sh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
   <pre>cd pico .profile</pre>
-  <p>
-   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.sh</code> 行をタイプできるようになります。
-   "New file" という文字が出ていても大丈夫です。
-   行を追加したら、最低一回はリターンキーを押して下さい。
-   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
-  </p>
+<p>
+フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
+<code>. /sw/bin/init.sh</code> 行をタイプできるようになります。
+"New file" という文字が出ていても大丈夫です。
+行を追加したら、最低一回はリターンキーを押して下さい。
+その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+</p>
  </li>
  <li>
   <p>C シェル (Mac OS X 10.2 までのデフォルト) </p>
   <p>
-   tcsh を使っている場合、以下の行をホームディレクトリ内の <code>.cshrc</code> ファイルに追加して下さい:
+   tcsh を使っている場合、以下の行をホームディレクトリ内の 
+   <code>.cshrc</code> ファイルに追加して下さい:
   </p>
   <pre>source /sw/bin/init.csh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
-  <pre>cd pico .cshrc</pre>
-  <p>
-   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
-   "New file" という文字が出ていても大丈夫です。
-   行を追加したら、最低一回はリターンキーを押して下さい。
-   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
-  </p>
+<pre>cd
+pico .profile</pre>
+<p>
+フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
+<code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
+"New file" という文字が出ていても大丈夫です。
+行を追加したら、最低一回はリターンキーを押して下さい。
+その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+</p>
   <p>状況によっては、さらに数行編集する必要がある場合もあります:</p>
   <ol>
   <li>
@@ -157,8 +161,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   ここで問題は、 <code>~/.login</code> が <code>~/.tcshrc</code> の後で実行され、 <code>/usr/share/tcsh/examples/login</code> を source することです。
   後者は、あなたの設定した PATH を上書きする行を含んでいます。
   <code>~/Library/init/tcsh/path</code> を作成するのがよいでしょう:</p>
-  <pre>mkdir ~/Library/init
-mkdir ~/Library/init/tcsh
+<pre>mkdir -p ~/Library/init/tcsh
 pico ~/library/init/tcsh/path</pre>
   <p>としてから:</p>
   <pre>source ~/.cshrc</pre>

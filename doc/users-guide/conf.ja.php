@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/24 03:03:42';
+$cvs_date = 'Date: 2004/03/11 23:56:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 include_once "header.inc";
@@ -152,7 +152,7 @@ High (全て報告する)
 </li>
 </ul>
 
-<h2><a name="downloding">5.5 ダウンロード設定</a></h2>
+<h2><a name="downloading">5.5 ダウンロード設定</a></h2>
 
 <p>Fink がダウンロードする手段を変える設定はいくつかあります。</p>
 <ul>

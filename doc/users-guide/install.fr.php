@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:49:26';
+$cvs_date = 'Date: 2004/03/17 11:18:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -154,7 +154,7 @@ pico .cshrc</pre>
             <li>
               <p>Vous avez suivi les instructions figurant dans le fichier <code>/usr/share/tcsh/examples/README</code>.</p>
               <p>Vous avez donc créé deux fichiers <code>~/.tcshrc</code> et <code> ~/.login</code> .  Dans ce cas,  <code>~/.login</code>, qui est lu après <code>~/.tcshrc</code>, source le fichier  <code>/usr/share/tcsh/examples/login</code>.  Ce dernier contient une ligne qui écrase la définition précédente de votre variable d'environnement PATH.  Vous devez alors créer un répertoire <code>~/Library/init/tcsh/path</code>:</p>
-              <pre>                            mkdir -p ~/Library/init/tcsh
+              <pre>mkdir -p ~/Library/init/tcsh
   pico ~/library/init/tcsh/path</pre>
               <p>et y intégrez la ligne suivante :</p>
               <pre>source ~/.cshrc</pre>

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:49:26';
+$cvs_date = 'Date: 2004/03/17 11:18:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 include_once "header.inc";
@@ -70,7 +70,7 @@ D'autres éléments sont optionnels et permettent aux utilisateurs de changer le
           <p>La liste des arborescences disponibles est la suivante :</p>
           <pre>
 local/main      - tout paquet local que vous désirez installer
-local/bootstrap - paquets utillisés pendant l'installation de Fink
+local/bootstrap - paquets utilisés pendant l'installation de Fink
 stable/crypto   - paquets cryptographiques stables
 stable/main     - autres paquets stables
 unstable/crypto - paquets cryptographiques instables
