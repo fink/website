@@ -1,7 +1,7 @@
 <?
 $title = "Download Überblick";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/11 17:27:55 $';
+$cvs_date = '$Date: 2004/04/13 15:59:22 $';
 
 include "header.inc";
 ?>
@@ -9,7 +9,7 @@ include "header.inc";
 <h1>Download Überblick</h1>
 
 <p>
-Es gibt mehrere Möglichkeiten, um an Fink Pakete zu kommen.
+Es gibt mehrere Möglichkeiten, um an Fink zu kommen.
 Auf dieser Seite werden die verschiedenen Möglichkeiten und ihre - teilweise verwirrenden - Unterschiede erklärt.
 Folgende zwei Dinge gilt es jedoch vorab zu beachten:
 </p>
