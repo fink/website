@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/26 03:33:01';
+$cvs_date = 'Date: 2004/04/26 09:13:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 include_once "header.inc";
@@ -189,6 +189,9 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
     
         <h2><a name="dumpinfo">6.21 dumpinfo - analyse des fichiers info</a></h2>
       
+     <p>
+	Note : disponible dans une version CVS de fink postérieure à la version 0.20.0.
+      </p>
       <p>
 	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet. Les <b>options</b> suivantes permettent de moduler l'affichage des champs et l'interprétation des raccourcis :
       </p>
