@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/12/17 23:19:24 $';
+$cvs_date = '$Date: 2002/12/17 23:22:07 $';
 
 include "header.inc";
 ?>
@@ -47,7 +47,7 @@ this list.</p>
 <li>Jeremy Higgs</li>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Carsten Klapp</li>
-<li>Darian Lanx (<i>dmalloc</li>)</li> <!-- doc writer -->
+<li>Darian Lanx (<i>dmalloc</i>)</li> <!-- doc writer -->
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Christian Schaffner</li>
