@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmalloc';
 $cvs_date = 'Date: 2004/08/03 15:15:43';
 $metatags = '';
 
+include_once "header.inc";
+?>
+
 <a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
 	<p>
 	Finks decision to gradually build its own network of mirrors
@@ -931,5 +934,7 @@ software before using Fink.
       Get it from the <a href="<?php print $root; ?>download.php">download page</a>. 
     </p>
   
+
+<? include_once "footer.inc"; ?>
 
 
