@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/15 01:23:43';
+$cvs_date = 'Date: 2003/04/15 19:13:32';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -360,7 +360,7 @@ _perl_eval_sv
 _perl_get_sv</pre><p>then what has probably happened is that you updated Perl to a new version and now <code>storable-pm</code> needs to be rebuilt.  You will have to have the Developer Tools for this.  Perform the following commands:</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
-fink index</pre></div></a>
+fink selfupdate-cvs</pre></div></a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 
