@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.168 2004/02/12 15:25:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.169 2004/02/12 16:12:27 dmalloc Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -255,6 +255,87 @@ statement</link> for details.
 </answer>
 </faqentry>
 </chapter>
+
+<chapter filename="mirrors">
+    <title>Fink mirrors</title>
+    <shorttitle>Mirrors</shorttitle>
+    <faqentry name="when-use">
+        <question>
+            <p>What are Fink Mirrors?</p>
+        </question>
+        <answer>
+        <p>
+	Fink mirrors are rsync servers mirroring the current and stable
+description files that Fink uses to build packages from source.
+       </p>
+	 </answer>
+    </faqentry>
+<faqentry name="why">
+    <question>
+        <p>Why should I use rsync mirrors?</p>
+    </question>
+    <answer><p>Rsync is a very fast protocol.  It will update the description files
+faster than the old CVS update method. Furthermore, CVS updates are
+    always done from sourceforge.net while rsync updates can be done
+from a mirror close to you.</p></answer>
+</faqentry>
+<faqentry name="where">
+    <question>
+        <p>Where can I find more information about Fink mirrors?</p>
+    </question>
+    <answer><p>All Fink mirrors are consolidated under the finkmirrors.net
+domain. The Web-Site at http://finkmirrors.net/ has more information.
+</p>
+</answer>
+</faqentry>
+<faqentry name="when-not">
+    <question>
+        <p>I cannot connect to rsync server, what should I do?</p>
+    </question>
+    <answer>
+<p>Sometimes very strict firewalls forbid you to connect to
+rsync services. If that is the case simply continue using the CVS
+method
+</p>
+</answer>
+</faqentry>
+<faqentry name="otherinfogone">
+    <question>
+        <p>I have switched to the rsync method now all info files from
+the unused trees are gone</p>
+    </question>
+    <answer>
+<p>This is normal. The rsync update method will only update
+your active tree, e.g. 10.3, and it will also delete the CVS
+subdirectories.
+</p></answer>
+</faqentry>
+<faqentry name="howswitch">
+    <question>
+        <p>How can I switch back and forth between methods.</p>
+    </question>
+    <answer>
+<p>By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p></answer>
+</faqentry>
+<faqentry name="status">
+    <question>
+        <p>Can I see what the current status of rsync mirrors is?</p>
+    </question>
+    <answer><p>Yes, go to http://finkmirrors.net/status.html</p></answer>
+</faqentry>
+<faqentry name="Master">
+    <question>
+        <p>What is a Distfiles mirror?</p>
+    </question>
+    <answer><p>Sometimes it is hard to fetch a certain version of sources
+from the Internet. Distfile mirrors hold and mirror the source packages
+needed by fink to build its source packages.</p></answer>
+</faqentry>
+
+</chapter>
+
+
+
 <chapter filename="upgrade-fink" >
 <title>Upgrading Fink (version-specific troubleshooting)</title>
 <shorttitle>Upgrading Fink</shorttitle>
