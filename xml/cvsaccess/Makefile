@@ -1,20 +1,12 @@
+# $Id: Makefile,v 1.2 2001/06/18 13:51:51 chrisp Exp $
+
 # process XML files with stylesheet to produce HTML
-# post-processing needed to get PHP processing instructions right
+
+basedir = ..
 
 SOURCE = cvs.xml
-STYLESHEET = ../finkdoc.xsl
 TARGET = cvs.php
 
-
-all: $(TARGET)
-
-%.pphp: $(SOURCE) $(STYLESHEET)
-	CLASSPATH=../saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET)
-
-%.php: %.pphp
-	sed 's/--phpstart--/<?/g ; s/--phpend--/?>/g' <$< >$@
-
-clean:
-	rm -rf *.php *.pphp
+include $(basedir)/Makefile.common
 
 # eof

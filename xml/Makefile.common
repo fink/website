@@ -1,0 +1,26 @@
+# $Id: Makefile.common,v 1.1 2001/06/18 13:51:50 chrisp Exp $
+
+# common rules for processing XML documents
+# post-processing needed to add PHP processing instructions
+
+STYLESHEET = $(basedir)/finkdoc-html.xsl
+POSTPROCESSOR = $(basedir)/postprocess.pl
+
+all: $(TARGET)
+
+force: clean all
+
+%.html: $(SOURCE) $(STYLESHEET)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET)
+
+%.php: %.html $(POSTPROCESSOR)
+	$(POSTPROCESSOR) <$< >$@
+
+clean:
+	rm -rf *.php *.html
+
+.SUFFIXES: .xml .php .html
+
+.PHONY: all clean force
+
+# eof
