@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.146 2003/11/14 17:32:53 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.147 2003/11/14 18:06:49 htodd Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -132,7 +132,7 @@ acknowledge that you're doing this at your own risk.</p>
 </question>
 <answer>
 <p>That choice is quite arbitrary, but is likely to stay for
-the forseeable future for practical (upgrade) issues as well as the
+the foreseeable future for practical (upgrade) issues as well as the
 fact that it's safe from conflicting with other packaging systems.</p>
 </answer>
 </faqentry>
@@ -154,7 +154,7 @@ Unfortunately with most packages it's not that easy.
 Some common problems:
 </p>
 <ul>
-<li>The Fink package maintaner is very busy and doesn't have the time
+<li>The Fink package maintainer is very busy and doesn't have the time
 to send the patch and accompanying explanations to the upstream
 maintainers.</li>
 <li>The upstream maintainers reject the patch. There are lots of valid
@@ -163,7 +163,7 @@ clean code, clean configure checks, and compatibility with other
 platforms.</li>
 <li>The upstream maintainers accept the patch, but it takes some weeks
 or months until they release a new version of their package.</li>
-<li>The package has been abhandoned by the original authors and there
+<li>The package has been abandoned by the original authors and there
 will be no new releases into which the patch could be merged.</li>
 </ul>
 </answer>
@@ -210,8 +210,7 @@ Thanks Apple!
 </faqentry>
 <faqentry name="openosx" >
 <question>
-<p>What is your relation with
-OpenOSX.com?</p>
+<p>What is your relation with OpenOSX.com?</p>
 </question>
 <answer>
 <p>
@@ -241,12 +240,12 @@ statement</link> for details.
 </question>
 <answer>
 <p>
-			Darwinports and fink are complementary projects. There is some
+			Darwinports and Fink are complementary projects. There is some
 			overlap between the two projects, and several people contribute to
 			both the Fink and Opendarwin projects. For example, Benjamin Reed
 			is doing the KDE packages for both. Darwinports/Opendarwin makes
-			use of patches from fink, and we have discussed collaboration
-			on a new depenency engine.
+			use of patches from Fink, and we have discussed collaboration
+			on a new dependency engine.
 		</p>
 <p>
 			Opendarwin started from scratch to try a different approach to a
@@ -329,7 +328,7 @@ If you followed the instructions in the installation guide, and use
 then <code>apt-get</code> and <code>dselect</code> also will use these
 proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p>
 <codeblock>ftp://proxy.yoursite.somewhere</codeblock>
-<p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p>
+<p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labeled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p>
 </answer>
 </faqentry>
 <faqentry name="firewalled-cvs" >
@@ -395,8 +394,7 @@ hidden traps somewhere.
 </faqentry>
 <faqentry name="removing" >
 <question>
-<p>How can I remove all
-of Fink?</p>
+<p>How can I remove all of Fink?</p>
 </question>
 <answer>
 <p>
@@ -604,7 +602,7 @@ fink selfupdate-cvs</codeblock>
 </faqentry>
 <faqentry name="kernel-panics" >
 <question>
-<p>When I use fink, my whole machine 
+<p>When I use Fink, my whole machine 
 freezes up/kernel panics/dies. Help!</p>
 </question>
 <answer>
@@ -619,7 +617,7 @@ software before using Fink.
 </faqentry>
 <faqentry name="not-found" >
 <question>
-<p>I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</p>
+<p>I'm trying to install a package, but Fink can't download it. The download site shows a later version number of the package than what Fink has. What do I do?</p>
 </question>
 <answer>
 <p>The package sources get moved around by the upstream sites when new
@@ -631,7 +629,7 @@ revised download URL.</p>
 <p>If this doesn't work, please let the package maintainer (available from &quot;<code>fink describe <em>packagename</em>
 </code>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p>
 <p>To get a usable source, first try hunting around the remote site in
-other directories for the same version of the source that fink wants 
+other directories for the same version of the source that Fink wants 
 (e.g. in an &quot;old&quot;
 directory).  Keep in mind, though, that some remote sites like to trash the
 old versions of their packages.  If the official site doesn't have it, then
@@ -642,7 +640,7 @@ released in binary form.  If all of the above fail, then you might consider post
 <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users" >fink-users
 mailing list</link> to ask if anybody has the old source available to give
 you. </p>
-<p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>&quot;.  Then use '<code>fink install <em>packagename</em>
+<p>Once you locate the proper source tarball, download it manually, and then move the file into your Fink source location (i.e. for a default Fink install, &quot;<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>&quot;.  Then use '<code>fink install <em>packagename</em>
 </code>' as normal.</p>
 <p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p>
@@ -650,7 +648,7 @@ you. </p>
 </faqentry>
 <faqentry name="fink-not-found" >
 <question>
-<p>I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</p>
+<p>I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run Fink or anything that I installed with Fink.</p>
 </question>
 <answer>
 <p>
@@ -661,7 +659,7 @@ you. </p>
 </faqentry>
 <faqentry name="invisible-sw" >
 <question>
-<p>I want to hide /sw in the Finder to keep users from damaging the fink setup.</p>
+<p>I want to hide /sw in the Finder to keep users from damaging the Fink setup.</p>
 </question>
 <answer>
 <p>You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p>
@@ -676,7 +674,7 @@ you. </p>
 <answer>
 <p>This usually is due to a problem in your PATH.  In a terminal window type:</p>
 <codeblock>printenv PATH</codeblock>
-<p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >instructions</link> in the Users Guide.  If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other <filename>install-info</filename> when you use fink.</p>
+<p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >instructions</link> in the Users Guide.  If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other <filename>install-info</filename> when you use Fink.</p>
 </answer>
 </faqentry>
 <faqentry name="bad-list-file" >
@@ -720,7 +718,7 @@ other than English. (This is a bug in Apple's Installer, that it doesn't
 just show you the English-language error message.)</p>
 <p>The English language error message corresponding to number 19 is</p>
 <p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
-<p>You may be getting this error if you've used finkbefore, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
+<p>You may be getting this error if you've used Fink before, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p>
@@ -765,7 +763,7 @@ fink selfupdate-cvs</codeblock>
 <p>I can't seem to update Fink's version.</p>
 </question>
 <answer>
-<p>THere are <link url="http://fink.sourceforge.net/download/fix-upgrade.php" >special instructions</link> to follow under these circumstances.</p>
+<p>There are <link url="http://fink.sourceforge.net/download/fix-upgrade.php" >special instructions</link> to follow under these circumstances.</p>
 </answer>
 </faqentry>
 <faqentry name="spaces-in-directory" >
@@ -929,7 +927,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
 </answer>
 </faqentry>
-<faqentry name="fc-atlaas" >
+<faqentry name="fc-atlas" >
 <question>
 <p>Fink Commander hangs when I try to install atlas.</p>
 </question>
@@ -986,10 +984,10 @@ endif
 </faqentry>
 <faqentry name="cant-install-xfree" >
 <question>
-<p>I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</p>
+<p>I want to switch to Fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</p>
 </question>
 <answer>
-<p>XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <code>xfree86-base</code> and <code>xfree86-rootless</code> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p>
+<p>XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the Fink <code>xfree86-base</code> and <code>xfree86-rootless</code> packages install there, too.  However, since Fink won't remove any files that aren't in its database, it won't automatically replace a non-Fink installation of XFree86.</p>
 <p>
 <em>Here's how to proceed:</em>
 </p>
@@ -1003,17 +1001,17 @@ endif
 <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</code>
 </p>
 <p>(the last file will only be present if you had Apple's X11 installed).</p>
-<p>3. To get XFree86-4.2.1, Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
+<p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
 <p> -or-</p>
-<p>3a. To get XFree86-4.3.0, install fink's <code>xfree86</code> package, with &quot;fink install xfree86&quot;--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
+<p>3a. To get XFree86-4.3.0, install Fink's <code>xfree86</code> package, with &quot;fink install xfree86&quot;--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
 </answer>
 </faqentry>
 <faqentry name="change-thread-nothread" >
 <question>
-<p>How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</p>
+<p>How do I change from the non-threaded version of Fink's XFree86 packages to the threaded version (or vice-versa)?</p>
 </question>
 <answer>
-<p>If you are running the fink version of XFree86 and you want to switch between the threaded and non-threaded versions of fink, you need to manually remove the old version. This is done at the command-line with the commands:</p>
+<p>If you are running the Fink version of XFree86 and you want to switch between the threaded and non-threaded versions of Fink, you need to manually remove the old version. This is done at the command-line with the commands:</p>
 <codeblock>
 sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
@@ -1054,7 +1052,7 @@ Your XFree86 installation is missing or incomplete. Please make sure you have
 an XFree86 release installed and retry the installation of the system-xfree86
 package.
 </codeblock>
-<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use fink's xfree86.</p>
+<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
 <p>If, on the other hand, you get the following message:</p>
 <codeblock>An error occurred trying to find your XFree86 installation's
 version.  This really shouldn't happen, so I'm bailing.  :(</codeblock>
@@ -1153,11 +1151,11 @@ have come as a surprise.
 <faqentry name="compile-myself" >
 <question>
 <p>How do I compile something
-myself using fink-installed software?</p>
+myself using Fink-installed software?</p>
 </question>
 <answer>
-<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? --><p>When compiling something yourself outside of fink, the compiler and
-linker need to be told where to find the fink-installed libraries and
+<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? --><p>When compiling something yourself outside of Fink, the compiler and
+linker need to be told where to find the Fink-installed libraries and
 headers. For a package that uses standard configure/make process, you
 need to set some environment variables:
 </p>
@@ -1184,12 +1182,12 @@ options.
 </faqentry>
 <faqentry name="apple-x11-applications-menu" >
 <question>
-<p>I can't run any of my fink-installed applications using the Applications menu in Apple X11.</p>
+<p>I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</p>
 </question>
 <answer>
-<p>Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p>
+<p>Apple X11 doesn't keep track of the Fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your Fink applications.  The solution is to preface the name of a Fink-installed application with</p>
 <codeblock>source /sw/bin/init.sh ; </codeblock>
-<p>For example, if you want to run a fink-installed GIMP, then put</p>
+<p>For example, if you want to run a Fink-installed GIMP, then put</p>
 <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
 <p>in the Command field of your GIMP entry.</p>
 </answer>
@@ -1200,7 +1198,7 @@ options.
 </question>
 <answer>
 <p>All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p>
-<p>The most popular choices, and the fink packages to make them work are:</p>
+<p>The most popular choices, and the Fink packages to make them work are:</p>
 <ul>
 <li>
 <p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
@@ -1221,7 +1219,7 @@ options.
 <answer>
 <p>This error means that the system isn't connecting with your Xwindows display.  Make sure you do the following:</p>
 <p>1. Start Xwindows (Apple's X11, XFree86, ...).</p>
-<p>2. Make sure your DISPLAY enviroment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p>
+<p>2. Make sure your DISPLAY environment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p>
 <codeblock>setenv DISPLAY :0</codeblock>
 <p>if you are running <code>tcsh</code>, or</p>
 <codeblock>export DISPLAY=:0</codeblock>
@@ -1261,7 +1259,7 @@ your sound card try this:
 <li>Make sure you haven't muted sound output in Mac OS X.</li>
 <li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
 file of a decent size).
-If you hear a short noise, esound works and XMMS should work too if
+If you hear a short noise, eSound works and XMMS should work too if
 it's configured correctly.
 If you don't hear anything, esd isn't working for some reason.
 You can try to start it up manually with <code>esd &amp;</code> and watch
@@ -1306,7 +1304,7 @@ XDarwin, it immediately quits!</p>
 <answer>
 <p>
 Don't Panic.
-The Running X11 document now has an extensive <link url="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit" >troubleshooting
+The Running X11 document now has an extensive <link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit" >troubleshooting
 section</link> for this common problem.
 </p>
 </answer>
@@ -1360,7 +1358,7 @@ sort this out.
 </question>
 <answer>
 <p>This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p>
-<p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means (&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot; for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot; for installation from binaries.</p>
+<p>If you are using the Fink <code>xfree86</code> packages, then you can get an upgrade by the usual means (&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot; for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot; for installation from binaries.</p>
 <p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <link url="http://mrcla.com/XonX" >XonX web site</link>.</p>
 </answer>
 </faqentry>
@@ -1436,15 +1434,29 @@ exec gnome-session</codeblock>
 </faqentry>
 <faqentry name="apple-x11-wants-xfree86" >
 	<question>
-		<p>I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</p>
+		<p>I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</p>
 	</question>
 	<answer>
-		<p>You need to install the X11 SDK, which is on the Xcode CD, and is <em>not</em> installed by default.</p>
-		<p>Even if you install XCode, the X11 SDK is <em>not</em> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK</code> pkg in the <code>Packages</code> folder.</p>
-		<p>The safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11 SDK. You may see warnings from the first line, which you can ignore:</p>
+		<p>You need to (re)install the X11SDK, which is on the Xcode CD, and is <em>not</em> installed by default.</p>
+		<p>Even if you install XCode, the X11SDK is <em>not</em> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK</code> pkg in the <code>Packages</code> folder.</p>
+		<p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code></p>
+		<p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p>
 		<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 			xfree86-base xfree86-base-shlibs; fink selfupdate; fink index</codeblock>
-		<p>Then, install X11SDK from the Xcode CD.</p>
+		<p>Then, reinstall X11 from the third Panther CD and X11SDK from the Xcode CD.</p>
+	</answer>
+</faqentry>
+<faqentry name="apple-x11-beta-wants-xfree86" >
+	<question>
+		<p>I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</p>
+	</question>
+	<answer>
+		<p>You need to (re)install the X11SDK, which you should have downloaded when you downloaded your beta copy of Apple's X11.</p>
+		<p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code></p>
+		<p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p>
+		<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+			xfree86-base xfree86-base-shlibs; fink selfupdate; fink index</codeblock>
+		<p>Then, reinstall X11 and the X11SDK.</p>
 	</answer>
 </faqentry>
 </chapter>

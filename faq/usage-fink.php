@@ -40,7 +40,7 @@ You can also run that command at any time to reconfigure the
 If you followed the instructions in the installation guide, and use
 <code>/sw/bin/init.csh</code> (or <code>/sw/bin/init.sh</code>),
 then <code>apt-get</code> and <code>dselect</code> also will use these
-proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled "Use Passive FTP Mode (PASV)" is checked.</p></div>
+proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labeled "Use Passive FTP Mode (PASV)" is checked.</p></div>
 </a>
 <a name="firewalled-cvs">
 <div class="question"><p><b>Q4.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
@@ -89,8 +89,7 @@ hidden traps somewhere.
 </p></div>
 </a>
 <a name="removing">
-<div class="question"><p><b>Q4.6: How can I remove all
-of Fink?</b></p></div>
+<div class="question"><p><b>Q4.6: How can I remove all of Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it).  Thus in order to get rid of Fink, enter this command:
@@ -231,7 +230,7 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>The "
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="kernel-panics">
-<div class="question"><p><b>Q4.13: When I use fink, my whole machine 
+<div class="question"><p><b>Q4.13: When I use Fink, my whole machine 
 freezes up/kernel panics/dies. Help!</b></p></div>
 <div class="answer"><p><b>A:</b>  A number of recent reports on the 
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
@@ -242,14 +241,14 @@ software before using Fink.
 </p></div>
 </a>
 <a name="not-found">
-<div class="question"><p><b>Q4.14: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
+<div class="question"><p><b>Q4.14: I'm trying to install a package, but Fink can't download it. The download site shows a later version number of the package than what Fink has. What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
 versions are released.</p><p>The first thing you should do is run <code>fink selfupdate-cvs</code>.
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
 revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from "<code>fink describe <b>packagename</b>
 </code>") know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
-other directories for the same version of the source that fink wants 
+other directories for the same version of the source that Fink wants 
 (e.g. in an "old"
 directory).  Keep in mind, though, that some remote sites like to trash the
 old versions of their packages.  If the official site doesn't have it, then
@@ -259,22 +258,22 @@ which is where Fink stores sourcefiles from packages that have been
 released in binary form.  If all of the above fail, then you might consider posting on the
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
 mailing list</a> to ask if anybody has the old source available to give
-you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>".  Then use '<code>fink install <b>packagename</b>
+you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your Fink source location (i.e. for a default Fink install, "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>".  Then use '<code>fink install <b>packagename</b>
 </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q4.15: I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run fink or anything that I installed with fink.</b></p></div>
+<div class="question"><p><b>Q4.15: I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run Fink or anything that I installed with Fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <code>tcsh</code>).  When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read.  A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
-<div class="question"><p><b>Q4.16: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
+<div class="question"><p><b>Q4.16: I want to hide /sw in the Finder to keep users from damaging the Fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
 <a name="install-info-bad">
 <div class="question"><p><b>Q4.17: I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
-<div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use fink.</p></div>
+<div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use Fink.</p></div>
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b>Q4.18: I can't install or remove anything, because of a problem with a "files list file".</b></p></div>
@@ -293,7 +292,7 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 <div class="question"><p><b>Q4.19: When I use the Fink binary installer package, I get a big "19" in the window and can't install anything.</b></p></div>
 <div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
 other than English. (This is a bug in Apple's Installer, that it doesn't
-just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>"A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume."</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
+just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>"A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume."</p><p>You may be getting this error if you've used Fink before, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p></div>
@@ -320,7 +319,7 @@ fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
 <div class="question"><p><b>Q4.22: I can't seem to update Fink's version.</b></p></div>
-<div class="answer"><p><b>A:</b> THere are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> to follow under these circumstances.</p></div>
+<div class="answer"><p><b>A:</b> There are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> to follow under these circumstances.</p></div>
 </a>
 <a name="spaces-in-directory">
 <div class="question"><p><b>Q4.23: Can I put Fink in a volume or directory with a space in its name?</b></p></div>

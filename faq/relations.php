@@ -21,7 +21,7 @@ next release of the package is out.
 Unfortunately with most packages it's not that easy.
 Some common problems:
 </p><ul>
-<li>The Fink package maintaner is very busy and doesn't have the time
+<li>The Fink package maintainer is very busy and doesn't have the time
 to send the patch and accompanying explanations to the upstream
 maintainers.</li>
 <li>The upstream maintainers reject the patch. There are lots of valid
@@ -30,7 +30,7 @@ clean code, clean configure checks, and compatibility with other
 platforms.</li>
 <li>The upstream maintainers accept the patch, but it takes some weeks
 or months until they release a new version of their package.</li>
-<li>The package has been abhandoned by the original authors and there
+<li>The package has been abandoned by the original authors and there
 will be no new releases into which the patch could be merged.</li>
 </ul></div>
 </a>
@@ -67,8 +67,7 @@ Thanks Apple!
 </p></div>
 </a>
 <a name="openosx">
-<div class="question"><p><b>Q2.4: What is your relation with
-OpenOSX.com?</b></p></div>
+<div class="question"><p><b>Q2.4: What is your relation with OpenOSX.com?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 They used Fink to build the first release of their GIMP CD and refuse
 to acknowledge that properly.
@@ -88,12 +87,12 @@ statement</a> for details.
 <a name="darwinports">
 <div class="question"><p><b>Q2.6: What is your relation with Darwinports?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-			Darwinports and fink are complementary projects. There is some
+			Darwinports and Fink are complementary projects. There is some
 			overlap between the two projects, and several people contribute to
 			both the Fink and Opendarwin projects. For example, Benjamin Reed
 			is doing the KDE packages for both. Darwinports/Opendarwin makes
-			use of patches from fink, and we have discussed collaboration
-			on a new depenency engine.
+			use of patches from Fink, and we have discussed collaboration
+			on a new dependency engine.
 		</p><p>
 			Opendarwin started from scratch to try a different approach to a
 			packaging system. Read the statement on <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">Opendarwin.org</a>

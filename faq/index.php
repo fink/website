@@ -36,8 +36,7 @@ back to the upstream maintainers?</a></li>
 Debian project? Are you porting Debian Linux to Mac OS X?</a></li>
 <li><a href="relations.php#apple">2.3 What is your relation with
 Apple?</a></li>
-<li><a href="relations.php#openosx">2.4 What is your relation with
-OpenOSX.com?</a></li>
+<li><a href="relations.php#openosx">2.4 What is your relation with OpenOSX.com?</a></li>
 <li><a href="relations.php#forked">2.5 What is your relation with macosx.forked.net?</a></li>
 <li><a href="relations.php#darwinports">2.6 What is your relation with Darwinports?</a></li>
 </ul>
@@ -58,8 +57,7 @@ location after installation?</a></li>
 <li><a href="usage-fink.php#moving-symlink">4.5 If I move Fink after
 installation and provide a symlink from the old location, will it
 work?</a></li>
-<li><a href="usage-fink.php#removing">4.6 How can I remove all
-of Fink?</a></li>
+<li><a href="usage-fink.php#removing">4.6 How can I remove all of Fink?</a></li>
 <li><a href="usage-fink.php#bindist">4.7 The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</a></li>
@@ -75,11 +73,11 @@ wrong?</a></li>
 "[A]ccess" menu entry in dselect and now I can't download packages any
 more!</a></li>
 <li><a href="usage-fink.php#cvs-busy">4.12 When I try to run <q>fink selfupdate</q> or "fink selfupdate-cvs", I get the error "<code>Updating using CVS failed. Check the error messages above.</code>"</a></li>
-<li><a href="usage-fink.php#kernel-panics">4.13 When I use fink, my whole machine 
+<li><a href="usage-fink.php#kernel-panics">4.13 When I use Fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
-<li><a href="usage-fink.php#not-found">4.14 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
-<li><a href="usage-fink.php#fink-not-found">4.15 I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run fink or anything that I installed with fink.</a></li>
-<li><a href="usage-fink.php#invisible-sw">4.16 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
+<li><a href="usage-fink.php#not-found">4.14 I'm trying to install a package, but Fink can't download it. The download site shows a later version number of the package than what Fink has. What do I do?</a></li>
+<li><a href="usage-fink.php#fink-not-found">4.15 I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run Fink or anything that I installed with Fink.</a></li>
+<li><a href="usage-fink.php#invisible-sw">4.16 I want to hide /sw in the Finder to keep users from damaging the Fink setup.</a></li>
 <li><a href="usage-fink.php#install-info-bad">4.17 I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li>
 <li><a href="usage-fink.php#bad-list-file">4.18 I can't install or remove anything, because of a problem with a "files list file".</a></li>
 <li><a href="usage-fink.php#error-nineteen">4.19 When I use the Fink binary installer package, I get a big "19" in the window and can't install anything.</a></li>
@@ -102,7 +100,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#node-exists">5.8 I can't install a package | update because I get a message that a "node" already exists.</a></li>
 <li><a href="comp-general.php#usr-local-libs">5.9 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</a></li>
 <li><a href="comp-general.php#toc-out-of-date">5.10 When I try to build a package, I get a message that a "table of contents" is out of date.  What do I need to do?</a></li>
-<li><a href="comp-general.php#fc-atlaas">5.11 Fink Commander hangs when I try to install atlas.</a></li>
+<li><a href="comp-general.php#fc-atlas">5.11 Fink Commander hangs when I try to install atlas.</a></li>
 <li><a href="comp-general.php#basic-headers">5.12 I get messages saying that I'm missing stddef.h.  Where do I find it?</a></li>
 <li><a href="comp-general.php#multiple-dependencies">5.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
 <li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
@@ -110,8 +108,8 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
 <li><a href="comp-packages.php#libgtop">6.1 libgtop fails to build with errors involving sed.</a></li>
-<li><a href="comp-packages.php#cant-install-xfree">6.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
-<li><a href="comp-packages.php#change-thread-nothread">6.3 How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
+<li><a href="comp-packages.php#cant-install-xfree">6.2 I want to switch to Fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
+<li><a href="comp-packages.php#change-thread-nothread">6.3 How do I change from the non-threaded version of Fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#apple-x11">6.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
 <li><a href="comp-packages.php#cctools">6.5 "When I try to install KDE, I get the following message:  'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li>
 <li><a href="comp-packages.php#system-xfree86-upgrade">6.6 I can't update system-xfree86, because of a conflict with x11.</a></li>
@@ -124,8 +122,8 @@ like "locale not supported by C library". Is that bad?</a></li>
 strange users on my system, with names like "mysql", "pgsql", and "games".  
 Where did they come from?</a></li>
 <li><a href="usage-general.php#compile-myself">7.3 How do I compile something
-myself using fink-installed software?</a></li>
-<li><a href="usage-general.php#apple-x11-applications-menu">7.4 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li>
+myself using Fink-installed software?</a></li>
+<li><a href="usage-general.php#apple-x11-applications-menu">7.4 I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</a></li>
 <li><a href="usage-general.php#x-options">7.5 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li>
 <li><a href="usage-general.php#no-display">7.6 When I try to run an application, I get a message that says "cannot open display:".  What do I need to do?</a></li>
 <li><a href="usage-general.php#suggest-package">7.7 I don't see my favorite program in Fink.  How do I suggest a new package for inclusion in Fink?</a></li>
@@ -148,7 +146,8 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-delete">8.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 <li><a href="usage-packages.php#gnome-two">8.10 I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</a></li>
 <li><a href="usage-packages.php#apple-x11-no-windowbar">8.11 I upgraded to Apple's X11 in Panther and now my window title bars are missing.</a></li>
-<li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</a></li>
+<li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
+<li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.13 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: faq.xml,v 1.146 2003/11/14 17:32:53 alexkhansen Exp $</i></p>
 

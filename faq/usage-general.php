@@ -64,9 +64,9 @@ have come as a surprise.
 </a>
 <a name="compile-myself">
 <div class="question"><p><b>Q7.3: How do I compile something
-myself using fink-installed software?</b></p></div>
-<div class="answer"><p><b>A:</b> When compiling something yourself outside of fink, the compiler and
-linker need to be told where to find the fink-installed libraries and
+myself using Fink-installed software?</b></p></div>
+<div class="answer"><p><b>A:</b> When compiling something yourself outside of Fink, the compiler and
+linker need to be told where to find the Fink-installed libraries and
 headers. For a package that uses standard configure/make process, you
 need to set some environment variables:
 </p><pre>
@@ -88,12 +88,12 @@ options.
 </p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b>Q7.4: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
-<div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p></div>
+<div class="question"><p><b>Q7.4: I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</b></p></div>
+<div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the Fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your Fink applications.  The solution is to preface the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p></div>
 </a>
 <a name="x-options">
 <div class="question"><p><b>Q7.5: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
-<div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>The most popular choices, and the fink packages to make them work are:</p><ul>
+<div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>The most popular choices, and the Fink packages to make them work are:</p><ul>
 <li>
 <p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
 </li>
@@ -107,7 +107,7 @@ options.
 </a>
 <a name="no-display">
 <div class="question"><p><b>Q7.6: When I try to run an application, I get a message that says "cannot open display:".  What do I need to do?</b></p></div>
-<div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your Xwindows display.  Make sure you do the following:</p><p>1. Start Xwindows (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY enviroment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
+<div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your Xwindows display.  Make sure you do the following:</p><p>1. Start Xwindows (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
 
 </a>
 <a name="suggest-package">

@@ -26,7 +26,7 @@ your sound card try this:
 <li>Make sure you haven't muted sound output in Mac OS X.</li>
 <li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
 file of a decent size).
-If you hear a short noise, esound works and XMMS should work too if
+If you hear a short noise, eSound works and XMMS should work too if
 it's configured correctly.
 If you don't hear anything, esd isn't working for some reason.
 You can try to start it up manually with <code>esd &amp;</code> and watch
@@ -60,7 +60,7 @@ We don't have an analysis or a fix yet.
 XDarwin, it immediately quits!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Don't Panic.
-The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit">troubleshooting
+The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
 section</a> for this common problem.
 </p></div>
 </a>
@@ -99,7 +99,7 @@ sort this out.
 </a>
 <a name="xterm-error">
 <div class="question"><p><b>Q8.6: xterm fails with "dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
-<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means ("<code>fink selfupdate-cvs ; fink update-all</code>" for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
+<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the Fink <code>xfree86</code> packages, then you can get an upgrade by the usual means ("<code>fink selfupdate-cvs ; fink update-all</code>" for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
 </a>
 <a name="libXmuu">
 <div class="question"><p><b>Q8.7: When I try to start XFree86 I get one of the following errors:  "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
@@ -142,9 +142,14 @@ exec gnome-session</pre></div>
 	<div class="answer"><p><b>A:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0" included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
-	<div class="question"><p><b>Q8.12: I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</b></p></div>
-	<div class="answer"><p><b>A:</b> You need to install the X11 SDK, which is on the Xcode CD, and is <b>not</b> installed by default.</p><p>Even if you install XCode, the X11 SDK is <b>not</b> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK</code> pkg in the <code>Packages</code> folder.</p><p>The safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11 SDK. You may see warnings from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-			xfree86-base xfree86-base-shlibs; fink selfupdate; fink index</pre><p>Then, install X11SDK from the Xcode CD.</p></div>
+	<div class="question"><p><b>Q8.12: I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</b></p></div>
+	<div class="answer"><p><b>A:</b> You need to (re)install the X11SDK, which is on the Xcode CD, and is <b>not</b> installed by default.</p><p>Even if you install XCode, the X11SDK is <b>not</b> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK</code> pkg in the <code>Packages</code> folder.</p><p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code></p><p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+			xfree86-base xfree86-base-shlibs; fink selfupdate; fink index</pre><p>Then, reinstall X11 from the third Panther CD and X11SDK from the Xcode CD.</p></div>
+</a>
+<a name="apple-x11-beta-wants-xfree86">
+	<div class="question"><p><b>Q8.13: I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</b></p></div>
+	<div class="answer"><p><b>A:</b> You need to (re)install the X11SDK, which you should have downloaded when you downloaded your beta copy of Apple's X11.</p><p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code></p><p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+			xfree86-base xfree86-base-shlibs; fink selfupdate; fink index</pre><p>Then, reinstall X11 and the X11SDK.</p></div>
 </a>
 
 

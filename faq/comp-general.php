@@ -101,7 +101,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <div class="question"><p><b>Q5.10: When I try to build a package, I get a message that a "table of contents" is out of date.  What do I need to do?</b></p></div>
 <div class="answer"><p><b>A:</b> The output hints at what to do.  The message is usually something like:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (as root) on whatever library is causing the problem.  As an example, for the case above, you would run:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
-<a name="fc-atlaas">
+<a name="fc-atlas">
 <div class="question"><p><b>Q5.11: Fink Commander hangs when I try to install atlas.</b></p></div>
 <div class="answer"><p><b>A:</b> This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p></div>
 </a>

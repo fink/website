@@ -20,18 +20,18 @@ endif
 </pre></div>
 </a>
 <a name="cant-install-xfree">
-<div class="question"><p><b>Q6.2: I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</b></p></div>
-<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <code>xfree86-base</code> and <code>xfree86-rootless</code> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p><p>
+<div class="question"><p><b>Q6.2: I want to switch to Fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</b></p></div>
+<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the Fink <code>xfree86-base</code> and <code>xfree86-rootless</code> packages install there, too.  However, since Fink won't remove any files that aren't in its database, it won't automatically replace a non-Fink installation of XFree86.</p><p>
 <b>Here's how to proceed:</b>
 </p><p>1. Remove <code>system-xfree86</code>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p><p>
 <code>sudo dpkg --remove --force-depends system-xfree86</code>
 </p><p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to step 3.</p><p>2. Manually remove all of XFree86.  This can be done with</p><p>
 <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</code>
-</p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>3. To get XFree86-4.2.1, Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p><p> -or-</p><p>3a. To get XFree86-4.3.0, install fink's <code>xfree86</code> package, with "fink install xfree86"--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
+</p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p><p> -or-</p><p>3a. To get XFree86-4.3.0, install Fink's <code>xfree86</code> package, with "fink install xfree86"--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
 </a>
 <a name="change-thread-nothread">
-<div class="question"><p><b>Q6.3: How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</b></p></div>
-<div class="answer"><p><b>A:</b> If you are running the fink version of XFree86 and you want to switch between the threaded and non-threaded versions of fink, you need to manually remove the old version. This is done at the command-line with the commands:</p><pre>
+<div class="question"><p><b>Q6.3: How do I change from the non-threaded version of Fink's XFree86 packages to the threaded version (or vice-versa)?</b></p></div>
+<div class="answer"><p><b>A:</b> If you are running the Fink version of XFree86 and you want to switch between the threaded and non-threaded versions of Fink, you need to manually remove the old version. This is done at the command-line with the commands:</p><pre>
 sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
 sudo dpkg -r --force-depends xfree86-rootless
@@ -57,7 +57,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 Your XFree86 installation is missing or incomplete. Please make sure you have
 an XFree86 release installed and retry the installation of the system-xfree86
 package.
-</pre><p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <b>NOT</b> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use fink's xfree86.</p><p>If, on the other hand, you get the following message:</p><pre>An error occurred trying to find your XFree86 installation's
+</pre><p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <b>NOT</b> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p><p>If, on the other hand, you get the following message:</p><pre>An error occurred trying to find your XFree86 installation's
 version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <code>system-xfree86-4.2-11</code> or later.</p></div>
 </a>
 <a name="cctools">

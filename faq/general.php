@@ -101,7 +101,7 @@ acknowledge that you're doing this at your own risk.</p></div>
 <div class="question"><p><b>Q1.5: Then why did you choose
 /sw?</b></p></div>
 <div class="answer"><p><b>A:</b> That choice is quite arbitrary, but is likely to stay for
-the forseeable future for practical (upgrade) issues as well as the
+the foreseeable future for practical (upgrade) issues as well as the
 fact that it's safe from conflicting with other packaging systems.</p></div>
 </a>
 <p align="right">
