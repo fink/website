@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.23 2003/05/18 02:21:06 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.24 2003/05/18 03:20:07 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -574,7 +574,7 @@ If you run into errors during that process, please first check the
 </li>
 <li>
 <p>
-<em>In 0.5.2-stable:</em>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php" >upgrade</link> Fink.</p>
+<em>In &fink_version;-stable:</em>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php" >upgrade</link> Fink.</p>
 </li>
 <li>
 <p>
