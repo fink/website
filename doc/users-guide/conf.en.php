@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/01 19:16:47';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/03/07 01:11:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -236,20 +236,25 @@ packages. It is not recommended as your packages may be quite out of date.
           <p>
             <b>UseBinaryDist:</b> boolean</p>
           <p>
-Causes fink to try to download pre-compiled binary packages from the binary
+Causes <code>fink</code> to try to download pre-compiled binary packages from the binary
 distribution if available and if the binary package is not already on the
 system. This can save a lot of installation time and it is therefore 
 recommended to set this option. Passing fink the 
-<a href="usage.php?phpLang=en">--use-binary-dist option</a> has the same effect, 
-but only operates on that single fink invocation.
+<a href="usage.php?phpLang=en">--use-binary-dist</a> option (or the <code>-b</code> flag) has the same effect,  
+but only operates on that single fink invocation.  Passing <code>fink</code> the
+           <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
+           for that single <code>fink</code> invocation.
 <b>Only available as of  fink version 0.23.0</b>.
-          </p>
+          </p><p>Note that this mode instructs <code>fink</code> to download the version it wants
+           if that version is available for download; it does not cause <code>fink</code>
+           to choose a version based on its binary availability.
+</p>
         </li>
       </ul>
     
     <h2><a name="mirrors">5.6 Mirror Settings</a></h2>
       
-      <p>Getting software from the Internet can be tedious thing and often
+      <p>Getting software from the Internet can be a tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
 connection to the Internet or be geographically closer to you, thus
@@ -351,6 +356,12 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
+        <li><p><b>NotifyPlugin:</b> plugin</p><p>
+           Specify a notification plugin to tell you when packages have been
+           installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
+           operate).  Other plugins can be found in the
+           <code>/sw/lib/perl5/Fink/Notify</code> directory.
+</p></li>
       </ul>
     
     <h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
