@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.20 2004/03/01 10:24:01 babayoshihiko Exp $ */
+/* $Id: fink.css,v 1.21 2004/03/11 22:36:57 babayoshihiko Exp $ */
 /* A good way to get colors which fit well together is to use the color wheel
  found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
  were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
@@ -14,22 +14,81 @@ a:active { color:#FFCC66; }
 
 table {
 	background-color: transparent ;
-	border-style: none ;
+	border-style: solid ;
 	border-width: 0px ;
-	border-collapse: separate;
-	border-spacing: 0px;
+	border-color:  #ffffff;
+	border-collapse: separate ;
+	border-spacing: 0px ;
 	margin: 0px ;
 	padding: 0px ;
 }
 
-p,ul,ol,li,dl,dt,dd,td,th { color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
+table.header {
+}
+
+table.main {
+	border-style: solid ;
+	border-width: 4px 0px 0px 0px ;
+	border-color: #ffcc66 #ffffff #ffffff #ffffff;
+}
+
+table.footer {
+	border-style: solid ;
+	border-width: 0px 0px 3px 0px ;
+	border-color: #ffffff #ffffff #999999 #ffffff;
+}
+
+p,ul,ol,li,dl,dt,dd,td,th { 
+	color: black ;  
+	font-family: "Trebuchet MS",sans-serif ;
+	font-size: 11pt ;
+}
+
+/* Layout and Spacing.  Use px because others don't work with Mac IE */
+td { 
+	font-size: 0px;
+	margin: 4px ;
+	padding: 4px ;
+}
 
 td.layout { 
 	font-size: 0px;
 	border-style: none ;
 	border-width: 0px ;
-	margin: 0px;
-	padding: 0px 0px ;
+	margin: 0px ;
+	padding: 0px ;
+}
+
+td.header {
+	margin: 4px ;
+	padding: 4px ;
+}
+
+td.main_left {
+	background-color: #eee ;
+	width: 120px ;
+	margin: 0px ;
+	padding: 0px ;
+}
+
+td.main {
+	text-align: left ;
+	margin: 10px ;
+	padding: 10px ;
+}
+
+td.footer_left {
+	text-align: center ;
+	background-color: #eee ;
+	width: 120px ;
+	margin: 0px ;
+	padding: 0px ;
+}
+
+td.footer {
+	text-align: center ;
+	margin: 0px 10px ;
+	padding: 0px 10px ;
 }
 
 h1 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:18pt;  font-weight:bold; }
@@ -40,73 +99,78 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 
 .attention { color:red; }
 
-.yellowboarder {
-	border-style: solid ; 
-	border-width: 0px 0px 4px 0px ;
-	border-color: #ffcc66 ;
-	margin: 0px ;
-	padding: 4px ;
-}
-
-dl {
-	background-color: transparent ;
-	margin: 0px ;
+/* Used mainly in the Navigation bar on the left */
+ul.menu {
+	background-color: #eee ;
+	font-family: Verdana, Helvetica, Arial, sans-serif ; 
+	border-collapse: collapse ;
+	border-style: solid ;
+	border-width: 0px 0px 1px 0px ;
+	border-color: #fff ;
 	padding: 0px ;
+	margin: 0px ;
 }
 
-dd {
-	background-color: #eeeeee ;
-	font-family: Verdana,Helvetica,Arial,sans-serif ;  
-	font-size: 8pt ;
-	font-weight: bold ;
-	text-align: left ;
+ul.menu li {
 	border-style: solid ;
 	border-width: 1px 0px 0px 0px ;
-	border-color: #ffffff ;
+	border-color: #fff ;
+	list-style-type: none ;
 	padding: 0px ;
 }
 
-dd.menu_item {
-	margin: 0px 0px 0px 0px ;
+ul.menu li.menu_item {
+	font-weight: bold ;
+	margin: 0px ;
 }
 
-dd.menu_subitem {
-	margin: 0px 0px 0px 8px ;
+ul.menu li.menu_subitem {
 	font-weight: normal ;
+	margin: 0px 0px 0px 8px ;
 }
 
-dd div {
+ul.menu li div {
+	font-size: 9pt ;
 	border-style: solid ;
 	border-width: 0px 0px 0px 8px ;
-	border-color: #666666 ;
+	border-color: #666 ;
 	margin: 0px ;
-	padding: 2px 4px ;
+	padding: 3px ;
 	display: block ;
 }
 
-dd div.file {
-	background-color: #ffcc66 ;
+ul.menu li div.selected {
+	background-color: #fc6 ;
 }
 
-dd a {
+ul.menu li a {
+	background-color: #eee ;
+	font-size: 9pt ;
 	text-decoration: none ;
 	border-style: solid ;
 	border-width: 0px 0px 0px 8px ;
-	border-color: #cccccc ;
+	border-color: #ccc ;
 	margin: 0px ;
-	padding: 2px 4px ;
+	padding: 3px ;
 	display: block ;
 }
 
-dd a:hover {
+ul.menu li a:hover {
 	background-color: #ffe6b3 ;
-	border-color: #999999 ;
+	border-color: #999 ;
 }
 
 .nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
 
-.footer { color:black;  font-family:"Trebuchet MS",sans-serif; font-size:10pt; }
+/* Footer */
+div.footer {
+	color:black ;
+	font-family:"Trebuchet MS",sans-serif ;
+	font-size:10pt ;
+	text-align: center ;
+}
 
+/* Used for News */
 .news-date { color:rgb(96,96,96); font-size:10pt; font-weight:bold; }
 
 .news-headline { font-size:10pt; font-weight:bold; }
@@ -121,6 +185,7 @@ pre { color:black;  background-color:#FFF2D9;  padding:4px;  padding-left:8px;  
 
 img { border:0; }
 
+/* For Legal Statement */
 .legalheadBig
 {
 	font-size: 2.0em;

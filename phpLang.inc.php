@@ -202,6 +202,11 @@ function AddFlags($between = "", $showCurrent = false, $root = '')
 			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\" />\n");
 			echo("\t</a>\n");
 			$temp = $between;
+		} elseif (file_exists(phpLang_localizedFileName($name[0]))) {
+			// Shows selected language
+			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\"  \n");
+			echo("\t\t\tstyle=\"padding: 0px 0px 16px 0px;\" />\n");
+			$temp = $between;
 		}
 	}
 }
@@ -216,6 +221,9 @@ function AddLanguageNames($between = " | ", $showCurrent = false)
 			echo('<a href="'.phpLang_currentURI.phpLang_urlParam.'='.$name[0].'">');
 			echo($name[2]);
 			echo('</a>' . $between);
+			$count ++;
+		} elseif ($name[0] == phpLang_current) {
+			echo($name[2] . $between);
 			$count ++;
 		}
 	}

@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.70 2004/03/02 10:34:48 fingolfin Exp $ */
+/* $Id: header.inc,v 1.71 2004/03/11 22:36:57 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -27,6 +27,9 @@ if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
 	include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc";
 
 /* The Sections.  Used in Menu Navigation Bar */
+define (FINK_LC_ALL, 'en_US');
+
+/* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'Home');
 define (FINK_SECTION_DOWNLOAD, 'Download');
 define (FINK_SECTION_PACKAGE, 'Packages');
@@ -48,6 +51,20 @@ define (FINK_SECTIONS, 'Sections');
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, 'Contents');
 
+/* Printer */
+define (FINK_PRINTER, 'Printer');
+define (FINK_PRINT_VERSION, 'Print Version');
+
+/* Header and Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management');
+define (META_DESCRIPTION, 'The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution');
+define (HEADER_HOSTED_BY, 'Hosted By {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Database last updated on  %a, %b %d %Y, %R GMT');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %b %d %Y, %R GMT');
+
+setlocale(LC_TIME, FINK_LC_ALL);
 $section_names = array(
 	'home' => FINK_SECTION_HOME,
 	'download' => FINK_SECTION_DOWNLOAD,
@@ -157,41 +174,22 @@ function gray_line ()
 function insert_sub ($navbox, $active_page) {
 	global $root;
 	
-	// Determine the active page - still testing
+	// Determine the active page
 	$active_page = -1;
-	$dirname1 = split('/', $_SERVER['PHP_SELF']);
-	$filename1 = $dirname1[sizeof($dirname1) - 1];
-	$dirname1 = $dirname1[sizeof($dirname1) - 2];
+	$dirnames = explode ('/', dirname($_SERVER['PHP_SELF']));
+	for ($i = 1; $i < sizeof($dirnames) - substr_count($root, '../'); $i++) {
+		$relativepath .= '/' . $dirnames[$i];
+	}
 	
 	for ($i = 0; $i <= sizeof($navbox) - 2 ; $i += 2) {
-		
-		$dirname2 = split('/', $navbox[$i]);
-		$filename2 = $dirname2[sizeof($dirname2) - 1];
-		$filename2 = split('\?', $filename2);
-		$filename2 = $filename2[0];
-		$dirname2 = $dirname2[sizeof($dirname2) - 2];
-		
-		if ($filename1 == $filename2) {
-		//if ( ereg($filename, $navbox[$i]) ) {
-			if ($filename1 != 'index.php') {
-				$active_page = $i;
-				break;
-			} else {
-				if ($dirname1 == $dirname2 || $dirname1 == 'fink' && $dirname2 == '') {
-					$active_page = $i;
-					break;
-				}
-			}
+		$filename = explode('?', $navbox[$i]);
+		if ($relativepath . '/' . $filename[0] == $_SERVER['SCRIPT_NAME']) {
+			$active_page = $i;
+			break;
 		}
 	}
-	if ('bindist' == $dirname1) $active_page = $i - 2;	// bindist (ad hoc)
-	if (-1 == $active_page) $active_page = 0;
 	
-	if ('htdocs/index.php' == $filename && $active_page == -1) $active_page = 0; 
-	// testing
-	if ('fink/index.php' == $filename && $active_page == -1) $active_page = 0; 
-	if ('test/index.php' == $filename && $active_page == -1) $active_page = 0; 
-	
+	// Starts Outputting
 	for ($i = 0; $i < sizeof($navbox); $i += 2) {
 		if ('Contents' == $navbox[$i + 1]) $navbox[$i + 1] = FINK_CONTENTS;
 		if ($i != $active_page) {
@@ -202,9 +200,9 @@ function insert_sub ($navbox, $active_page) {
 				$_link = $navbox[$i ];
 			}
 			if (substr($_link, -2) == '.*') $_link = substr($_link, 0, -2);
-			echo "\t\t\t<dd class=\"menu_subitem\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
+			echo "\t\t<li class=\"menu_subitem\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></li>\n";
 		} else {
-			echo "\t\t\t<dd class=\"menu_subitem\"><div class=\"file\">" . $navbox[$i + 1] . "</div></dd>\n";
+			echo "\t\t<li class=\"menu_subitem\"><div class=\"selected\">" . $navbox[$i + 1] . "</div></li>\n";
 		}
 	}
 }
@@ -212,12 +210,12 @@ function insert_sub ($navbox, $active_page) {
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html >
+<html>
 <head>
 	<title>Fink - <? echo $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="keywords" content="Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management">
-	<meta name="description" content="The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution" 
+	<meta name="keywords" content="<? echo META_KEYWORDS; ?>">
+	<meta name="description" content="<? echo META_DESCRIPTION; ?>" 
 	<meta name="robots" content="all">
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
 	<link rel="stylesheet" href="<? print $root ?>fink.css">
@@ -228,80 +226,83 @@ function insert_sub ($navbox, $active_page) {
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 
 <? /* header and sourceforge logo */ ?>
-<table width="100%" cellspacing="0" class="yellowboarder">
+<table width="100%" cellspacing="0" class="header">
 <tr valign="bottom">
-	<td align="left" rowspan="2">
+	<td align="left" rowspan="2" class="header">
 	<? if (!$is_home) echo '<a href="' . $root . 'index.php">'; ?>
 	<img src="<? echo $root ?>img/mlogo.png"  border="0" alt="Fink">
 	<? if (!$is_home) echo '</a>'; ?>
 	</td>
-	<td align="right" >
-	<? if (function_exists(AddFlags)) AddFlags(' ', true, $root); ?>
+	<td align="right" class="header">
+	
+	<? /* Call phpLang function */ ?>
+	<? if (function_exists(AddFlags)) AddFlags('', false, $root); ?>
 	</td>
 </tr>
 <tr valign="bottom">
-	<td align="right" >
-		Hosted by
-		<a href="http://sourceforge.net/">
-		<img src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
-			height="31" border="0" alt="SourceForge" style="vertical-align:text-bottom">
-		</a>
+	<td align="right" class="header">
+<?
+	$img = '<a href="http://sourceforge.net/">
+			<img 
+				src="http://sourceforge.net/sflogo.php?group_id=17203" 
+				width="88"
+				height="31" 
+				border="0" 
+				alt="SourceForge" 
+				style="vertical-align:text-bottom">
+		</a>';
+		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
+?>
 	</td>
 </tr>
 </table>
 <? /* main table with navigation column and content column */ ?>
-<table width="100%" cellspacing="0" >
+<table width="100%" cellspacing="0" class="main">
 <tr valign="top">
-<td align="left" width="120" class="layout"  bgcolor="#eeeeee" >
-	<dl>
+<td class="main_left" width="120">
 <? /* navigation column table */ ?>
 
 <? /* sections */ ?>
-	<dt class="yellowboarder" style="padding: 4px 0px; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dt>
-	
-<? foreach ($section_files as $key => $filename) {
-		$toc_sections_class = 'toc_sections';
-		if ($section == $key) {
-			if ($nonav == 1) {
-?>
-		<dd class="menu_item"><div class="file" ><? echo $section_names[$key] ?></div></dd>
-<?
-			} else {
-?>
-		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
-<?
-				if ($section == $key && $nonav != 1) insert_sub ($navbox, $active_page);
-			}
+	<p style="
+			background-image: url(<? echo $root; ?>img/stripes.gif) ; 
+			display: block ; 
+			border-style: solid ; 
+			border-width: 0px 0px 4px 0px ; 
+			border-color: #fc6 ; 
+			text-align: center ; 
+			margin: 0px ;
+			padding: 6px 3px">
+		<? echo FINK_SECTIONS; ?>
+	</p>
+	<ul class="menu">
+<? 
+	foreach ($section_files as $key => $filename) {
+		echo "\t\t<li class=\"menu_item\">";
+		if ($section == $key && 1 == $nonav) {
+			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
+		} elseif ($section == $key) {
+			echo '<a href="' . $root . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
+			insert_sub ($navbox, $active_page);
+			echo "\t\t";
 		} else {
-?>
-		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
-<?
+			echo '<a href="' . $root . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
 		}
 	} 
 ?>
-
 <? /* link to print version */ ?>
 <? if ($printlink) { ?>
-		<dt>
-			<a href="<? echo $root . $printlink ?>">
-			<img src="<? echo $root ?>img/printlink.gif" width="120" height="22" border="0" alt="Print Version">
+		<li class="menu_item">
+			<a href="<? echo $root . $printlink ?>" style="border-width: 0px ; ">
+				<img src="<? echo $root; ?>img/printer.png" 
+					alt="<? echo FINK_PRINTER; ?>" 
+					width="18" height="16" 
+					align="bottom" 
+					style="vertical-align:text-bottom">
+				<? echo FINK_PRINT_VERSION; ?>
 			</a>
-		</dt>
+		</li>
 <? } ?>
-<? /* end navigation column */ ?>
-	</dl>
+	</ul>
 </td>
-<td align="left" width="100%">
-
-<? /* content column table */ ?>
-	<table width="100%" cellspacing="0" >
-	<tr><td>&nbsp;&nbsp;&nbsp;</td>
-	<td></td>
-	<td>&nbsp;&nbsp;&nbsp;</td></tr>
-	
-	<tr><td></td>
-	<td width="100%">
-
-<? /* Call phpLang function */ ?>
-<div style="text-align: right ;">
-</div>
+<? /* end navigation column */ ?>
+<td class="main">

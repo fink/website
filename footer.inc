@@ -1,76 +1,48 @@
 <?
-/* $Id: footer.inc,v 1.26 2004/02/29 06:06:50 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.27 2004/03/11 22:36:57 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
-
 <? /* end content table */ ?>
 </table>
-</td></tr>
 
 
-
-<? /* horizontal stripe */ ?>
-<tr><td class="layout" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
-</td></tr>
-
-<? /* copyright-and-footer row of top-level table */ ?>
-<tr valign="middle" align="left">
-<td bgcolor="#eeeeee" align="center" width="120"
-    style="background-image:url(<? print $root ?>img/stripes.gif)">
-  <a href="<? print $root ?>legal.php" style="text-decoration:none;color:black;font-size:8pt;">
-    Copyright &copy 2001-04<br>The&nbsp;Fink&nbsp;Project
-  </a>
-</td>
-<td class="layout">
-
-<? /* footer table */ ?>
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td>&nbsp;</td></tr>
-<tr><td>
-<div class="footer" align="center">
-<? 
-if (function_exists(AddLanguageNames)) {
-	echo 'Available Languages';
-	AddLanguageNames(' | ', true); 
-} else {
-	echo "&nbsp;";
-}
-?>
-</div>
-</td></tr>
-<tr><td width="100%">
-<div class="footer" align="center"><?
-if ($dyndate == 1) {
-  print "Generated dynamically";
-  $date = 0;
-} elseif ($dyndate) {
-  print "Database last updated on ";
-  $date = $dyndate;
-} else {
-  print "Last changed by $author on ";
-#  print 'Last changed by <a href="mailto:'.$author.'ATusersDOTsourceforgeDOTnet">'.$author.'</a> on ';
-}
-if ($date)
-  print gmstrftime("%a, %b %d %Y, %R GMT", $date);
-?></div>
-</td></tr>
-
-
-<tr><td height="7" class="layout">
- <img src="<? print $root ?>img/shim.gif" width="1" height="7" border="0" alt="">
-</td></tr>
-</table>
-
+<table width="100%" cellspacing="0" class="footer">
+<tr valign="bottom">
+<td class="footer_left" width="120">
+	<p style="border-style: solid ; border-width: 3px 0px 0px 0px ; border-color: #999999 ; padding: 6px ; margin: 0px ; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)">
+		<a href="<? echo $root; ?>legal.php" style="text-decoration:none ; color:black ; font-size:8pt;">
+			Copyright &copy 2001-04<br>The&nbsp;Fink&nbsp;Project
+	 	</a>
+	</p>
+</td><td class="footer">
+		<? /* Inserts Links toAvailable Languages */ ?>
+		<div class="footer">
+		<?
+		if (function_exists(AddLanguageNames)) {
+			echo FOOTER_AVAILABLE_LANGUAGES . ': ';
+			AddLanguageNames(' | ', false); 
+		} else {
+			echo "&nbsp;";
+		}
+		?>
+		</div>
+		
+		<? /* The Real Footer */ ?>
+		<div class="footer">
+		<?
+		if ($dyndate == 1) {
+		 	print FOOTER_GENERATED_DYNAMICALLY;
+		} elseif ($dyndate) {
+			print gmstrftime(FOOTER_DATABASE_LAST_UPDATED, $dyndate);
+		} else {
+		 	print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
+		}
+		?>
+		</div>
 </td>
 </tr>
-
-<? /* horizontal stripe */ ?>
-<tr><td class="layout" colspan="2" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
-</td></tr>
-
 </table>
-
 
 </body>
 </html>
