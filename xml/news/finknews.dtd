@@ -1,4 +1,4 @@
-<!ENTITY % block "ol | p | ul" >
+<!ENTITY % block "codeblock | ol | p | ul" >
 <!ENTITY % inline "#PCDATA | code | em | extlink | filename | link | tt" >
 
 
@@ -15,8 +15,8 @@
 
 
 <!-- Block elements -->
+<!ELEMENT codeblock ( #PCDATA | em )* >
 <!ELEMENT p ( %inline; )* >
-
 
 <!-- Links -->
 <!ELEMENT link ( #PCDATA ) >
