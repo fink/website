@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.73 2004/03/12 04:37:55 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.74 2004/04/03 15:34:29 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -76,13 +76,13 @@ $section_names = array(
 );
 
 $section_files = array(
-	'home' => 'index.php',
-	'download' => 'download/index.php',
-	'packages' => 'pdb/index.php',
-	'help' => 'help/index.php',
-	'faq' => 'faq/index.php',
-	'documentation' => 'doc/index.php', 
-	'mailing-lists' => 'lists/index.php'
+	'home' => 'index.php?phpLang='. $lang_code,
+	'download' => 'download/index.php?phpLang='. $lang_code,
+	'packages' => 'pdb/index.php?phpLang='. $lang_code,
+	'help' => 'help/index.php?phpLang='. $lang_code,
+	'faq' => 'faq/index.php?phpLang='. $lang_code,
+	'documentation' => 'doc/index.php?phpLang='. $lang_code, 
+	'mailing-lists' => 'lists/index.php?phpLang='. $lang_code
 );
 
 if (!$section) $section = "home";
@@ -90,11 +90,11 @@ if (!$section) $section = "home";
 // main navigation box
 if (!is_array($navbox) && $nonav != 1) {
 	$navbox = array(
-		'index.php', FINK_SECTION_HOME_INDEX,
-		'news/index.php', FINK_SECTION_HOME_NEWS,
-		'about.php', FINK_SECTION_HOME_ABOUT,
-		'people.php', FINK_SECTION_HOME_CONTRIBUTORS,
-		'links.php', FINK_SECTION_HOME_LINKS
+		'index.php?phpLang='. $lang_code, FINK_SECTION_HOME_INDEX,
+		'news/index.php?phpLang='. $lang_code, FINK_SECTION_HOME_NEWS,
+		'about.php?phpLang='. $lang_code, FINK_SECTION_HOME_ABOUT,
+		'people.php?phpLang='. $lang_code, FINK_SECTION_HOME_CONTRIBUTORS,
+		'links.php?phpLang='. $lang_code, FINK_SECTION_HOME_LINKS
 );
 }
 
