@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.6 2004/03/21 15:41:10 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.7 2004/03/24 12:24:45 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -28,7 +28,7 @@ Fink 本体のインストール、パッケージのインストール、新し
 </ul>
 
 <p>
-以下のドキュメントはより詳細ですが、内容が多少古くメンテナンスされません。
+以下のドキュメントはより詳細ですが、内容が多少古くなっている上、今後メンテナンスされません。
 （訳注 日本語版はありません）:
 </p>
 <ul>
