@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/11/17 03:27:49';
+$cvs_date = 'Date: 2003/11/18 14:05:07';
 
 $metatags = '';
 
@@ -26,11 +26,13 @@ by UID 2011 rather than by root.  To correct this problem,
 run the command:</p>
 <pre>sudo find /sw/ -user 2011 -exec chown root:admin {} \;</pre>
 <p>This release, like the previous one, was built on OS X 10.2
-using the gcc 3.3 compiler, and runs fine with some exceptions on OS X 10.3.  Most Fink 
+using the gcc 3.3 compiler, and runs fine with some exceptions* on OS X 10.3.  Most Fink 
 users who upgrade to 10.3 will continue to
 want to only use the binaries from this
 new distribution for now, while the Fink team continues to modify
 Fink packages for 10.3.
+</p>
+<p>*Exceptions include: emacs, qt.
 </p>
 	<a name="2003-11-04 User Deletion Bug/ Dselect Troubles"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug/ Dselect Troubles</span></a><?php gray_line(); ?>
 <p><b>Quick Summary: DO NOT USE DSELECT,</b> and if you've used it,
