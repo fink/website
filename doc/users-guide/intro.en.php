@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 1 Introduction</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 1. Introduction</h1>
     
     
     <h2><a name="what">1.1 What is Fink?</a></h2>
@@ -134,7 +134,9 @@ It is actually possible to mix the two models at will.
 The rest of this manual will show you how.
 </p>
     
-  <p align="right">
-Next: <a href="install.php?phpLang=en">2 First Time Installation</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="install.php?phpLang=en">2. First Time Installation</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

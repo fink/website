@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink"><link rel="prev" href="packages.php?phpLang=fr" title="Installation de paquets">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 4 Mise à niveau de Fink</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 4. Mise à niveau de Fink</h1>
     
     
     
@@ -74,7 +74,9 @@ pour récupérer les descriptions de paquets et mettre à jour les autres paquet
 </p>
 
     
-  <p align="right">
-Next: <a href="conf.php?phpLang=fr">5 Fichier de Configuration de Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="conf.php?phpLang=fr">5. Fichier de Configuration de Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 2 Première installation</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 2. Première installation</h1>
     
     
     
@@ -181,7 +181,9 @@ Quand vous aurez fini de définir votre environnement, allez au chapitre
 <a href="packages.php?phpLang=fr">Installation de paquets</a> pour savoir comment installer des paquets réellement utiles avec les outils de gestion de paquets inclus dans Fink.
 </p>
     
-  <p align="right">
-Next: <a href="packages.php?phpLang=fr">3 Installation de paquets</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="packages.php?phpLang=fr">3. Installation de paquets</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/26 16:54:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="conf.php?phpLang=zh" title="Fink 配置文件"><link rel="prev" href="packages.php?phpLang=zh" title="安装软件包">';
 
-include_once "header.inc";
-?>
 
-<h1>用户指南 - 4 升级 Fink</h1>
+include_once "header.zh.inc";
+?>
+<h1>用户指南 - 4. 升级 Fink</h1>
     
     
     
@@ -73,7 +73,9 @@ cd packages-0.x.x
 </p>
 
     
-  <p align="right">
-Next: <a href="conf.php?phpLang=zh">5 Fink 配置文件</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="conf.php?phpLang=zh">5. Fink 配置文件</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

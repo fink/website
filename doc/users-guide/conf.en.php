@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 5 The Fink Configuration File</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 5. The Fink Configuration File</h1>
     
     
     
@@ -323,7 +323,9 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
         </li>
       </ul>
     
-  <p align="right">
-Next: <a href="usage.php?phpLang=en">6 Using the fink Tool from the Command Line</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="usage.php?phpLang=en">6. Using the fink Tool from the Command Line</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

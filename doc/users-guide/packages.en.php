@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 3 Installing Packages</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 3. Installing Packages</h1>
     
     
     
@@ -275,7 +275,9 @@ For more information on installing and running X11, refer to the
 and Mac OS X document</a>.
 </p>
     
-  <p align="right">
-Next: <a href="upgrade.php?phpLang=en">4 Upgrading Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="upgrade.php?phpLang=en">4. Upgrading Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

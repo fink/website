@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 2 First Time Installation</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 2. First Time Installation</h1>
     
     
     
@@ -230,7 +230,9 @@ you can install some actually useful packages using the various
 package management tools included in Fink.
 </p>
     
-  <p align="right">
-Next: <a href="packages.php?phpLang=en">3 Installing Packages</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="packages.php?phpLang=en">3. Installing Packages</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

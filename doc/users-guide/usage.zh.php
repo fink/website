@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/26 16:54:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
-include_once "header.inc";
-?>
 
-<h1>用户指南 - 6 在命令行使用 Fink 工具</h1>
+include_once "header.zh.inc";
+?>
+<h1>用户指南 - 6. 在命令行使用 Fink 工具</h1>
     
     
     <h2><a name="using">6.1 使用 Fink 工具</a></h2>
@@ -198,5 +198,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       </pre>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/06/28 14:54:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
-include_once "header.inc";
-?>
 
-<h1>ユーザーガイド - 6 コマンドライン fink ツールの使用方法</h1>
+include_once "header.ja.inc";
+?>
+<h1>ユーザーガイド - 6. コマンドライン fink ツールの使用方法</h1>
 
 
 <h2><a name="using">6.1 fink ツールの使用</a></h2>
@@ -249,5 +249,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
       </pre>
     
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/26 16:54:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
-include_once "header.inc";
-?>
 
-<h1>用户指南 - 3 安装软件包</h1>
+include_once "header.zh.inc";
+?>
+<h1>用户指南 - 3. 安装软件包</h1>
     
     
     
@@ -228,7 +228,9 @@ system-xtools:
 及 Mac OS X 上 X11 的文档</a>.
 </p>
     
-  <p align="right">
-Next: <a href="upgrade.php?phpLang=zh">4 升级 Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="upgrade.php?phpLang=zh">4. 升级 Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 4 Upgrading Fink</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 4. Upgrading Fink</h1>
     
     
     
@@ -98,7 +98,9 @@ to get the current package descriptions and to update the remaining
 packages.  If you are using Fink commander, then follow the <a href="#bin">binary</a> instructions, followed by those for <a href="#src">source</a>.
 </p>
     
-  <p align="right">
-Next: <a href="conf.php?phpLang=en">5 The Fink Configuration File</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="conf.php?phpLang=en">5. The Fink Configuration File</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

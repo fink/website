@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/06/28 14:54:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
-include_once "header.inc";
-?>
 
-<h1>ユーザーガイド - 2 初めてのインストール</h1>
+include_once "header.ja.inc";
+?>
+<h1>ユーザーガイド - 2. 初めてのインストール</h1>
 
 
 
@@ -190,7 +190,9 @@ Fink のパッケージはそれぞれ設定を追加することができます
 環境を整えたら、次の<a href="packages.php?phpLang=ja">パッケージのインストール</a>の章に進み、 Fink のパッケージ管理ツールを使ったパッケージのインストール方法をお読み下さい。
 </p>
 
-<p align="right">
-Next: <a href="packages.php?phpLang=ja">3 パッケージのインストール</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="packages.php?phpLang=ja">3. パッケージのインストール</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

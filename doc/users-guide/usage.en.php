@@ -4,10 +4,10 @@ $cvs_author = 'Author: vasi';
 $cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
-include_once "header.inc";
-?>
 
-<h1>User's Guide - 6 Using the fink Tool from the Command Line</h1>
+include_once "header.en.inc";
+?>
+<h1>User's Guide - 6. Using the fink Tool from the Command Line</h1>
     
     
     <h2><a name="using">6.1 Using the fink tool</a></h2>
@@ -257,5 +257,7 @@ others.
       </pre>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 5 Fichier de Configuration de Fink</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 5. Fichier de Configuration de Fink</h1>
     
     
     
@@ -237,7 +237,9 @@ La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <
         </li>
       </ul>
     
-  <p align="right">
-Next: <a href="usage.php?phpLang=fr">6 Utilisation de l'outil fink en ligne de commande</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="usage.php?phpLang=fr">6. Utilisation de l'outil fink en ligne de commande</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 6 Utilisation de l'outil fink en ligne de commande</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 6. Utilisation de l'outil fink en ligne de commande</h1>
     
     
     <h2><a name="using">6.1 Utilisation de l'outil fink</a></h2>
@@ -208,5 +208,7 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
     
 
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

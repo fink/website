@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="install.php?phpLang=fr" title="Première installation"><link rel="prev" href="index.php?phpLang=fr" title="Guide utilisateur Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 1 Introduction</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 1. Introduction</h1>
     
     
     <h2><a name="what">1.1 Qu'est-ce que Fink ?</a></h2>
@@ -108,7 +108,9 @@ En fait, il est possible de marier les deux formes à volonté.
 Ce guide vous indique comment le faire.
 </p>
     
-  <p align="right">
-Next: <a href="install.php?phpLang=fr">2 Première installation</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="install.php?phpLang=fr">2. Première installation</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

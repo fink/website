@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/06/28 14:54:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="install.php?phpLang=ja" title="初めてのインストール"><link rel="prev" href="index.php?phpLang=ja" title="ユーザーガイド Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>ユーザーガイド - 1 はじめに</h1>
+include_once "header.ja.inc";
+?>
+<h1>ユーザーガイド - 1. はじめに</h1>
 
 
 <h2><a name="what">1.1 Fink とは何ですか?</a></h2>
@@ -111,7 +111,9 @@ Fink では、二つの選択肢があります。
 このマニュアルでは、両方の使用方法について説明します。
 </p>
 
-<p align="right">
-Next: <a href="install.php?phpLang=ja">2 初めてのインストール</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="install.php?phpLang=ja">2. 初めてのインストール</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
-include_once "header.inc";
-?>
 
-<h1>Guide utilisateur - 3 Installation de paquets</h1>
+include_once "header.fr.inc";
+?>
+<h1>Guide utilisateur - 3. Installation de paquets</h1>
     
     
     
@@ -232,7 +232,9 @@ Pour de plus amples informations sur l'installation et l'utilisation de X11, voi
 <a href="http://fink.sourceforge.net/doc/x11/">X11 sur Darwin et Mac OS X</a>.
 </p>
     
-  <p align="right">
-Next: <a href="upgrade.php?phpLang=fr">4 Mise à niveau de Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="upgrade.php?phpLang=fr">4. Mise à niveau de Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
