@@ -2,8 +2,8 @@
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
 <article filename="index" lang="es">
   <title>Fink - Documentacion</title>
-  <shorttitle></shorttitle>
-  <cvsid>$Id: doc.es.xml,v 1.2 2004/03/05 15:35:00 fingolfin Exp $</cvsid>
+  <shorttitle>Documentacion</shorttitle>
+  <cvsid>$Id: doc.es.xml,v 1.3 2004/03/07 20:16:29 fingolfin Exp $</cvsid>
   <preface>
     <p>
 Este es una coleccion de varios documentos escritos para el Fink. Algunos de ellos tambien pueden ser utiles para la gente que usa Mac OS X o Darwin sin Fink y que deseen aprender a hacer "puertos" de software de Unix. </p>
