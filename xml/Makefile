@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.14 2005/01/03 03:27:42 dmrrsn Exp $
+# $Id: Makefile,v 1.15 2005/03/02 05:47:20 michga Exp $
 
 # generate all documents
 
 SUBDIRS = \
+	advanced \
 	cvsaccess \
 	doc \
 	faq \
