@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/01 15:41:16 $';
+$cvs_date = '$Date: 2001/10/31 10:27:04 $';
 
 include "header.inc";
 ?>
@@ -34,11 +34,12 @@ and the installed software</li>
 <h2>Other User Documentation</h2>
 
 <ul>
-<li><a href="x11/index.php">X11 on Darwin and Mac OS X</a> - covers
-concepts, installation and launching (also intended for Darwin and Mac
-OS X users in general)</li>
-<li><a href="cvsaccess/index.php">CVS Access</a> - how to access the Fink CVS
-repository to get the latest source packages between releases</li>
+<li><a href="x11/index.php">Running X11 on Darwin and Mac OS X</a> -
+covers concepts, installation and launching (also intended for Darwin
+and Mac OS X users in general)</li>
+<li><a href="cvsaccess/index.php">CVS Access</a> - how to access the
+Fink CVS repository to get the latest source packages between
+releases</li>
 <li>The new <a href="users-guide/index.php">User's Guide</a> -
 replacing the Installation and Usage documents with a comprehensive
 guide that takes the binary distribution into account.
