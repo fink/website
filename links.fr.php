@@ -1,7 +1,7 @@
 <?
 $title = "Liens";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/05/19 02:25:57 $';
+$cvs_date = '$Date: 2004/09/26 02:02:12 $';
 
 include "header.inc";
 ?>
@@ -16,6 +16,8 @@ include "header.inc";
 <li><a href="http://finkmirrors.net/" target="_blank">Miroirs de Fink</a> - comment installer un miroir de Fink et statut des miroirs existants.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 interface graphique pour Fink</li>
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - une autre interface utilisateur pour Fink (encore au stade alpha).</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">Plugin de recherche PDB</a> - Un plugin de recherche pour la base de données des paquets. Ne fonctionne qu'avec les navigateurs dérivés de Mozilla (entrez Fink dans le champ de recherche pour le trouver).</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Donnez une note à Fink et aidez-nous à le promouvoir.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 logs & stats du canal IRC #fink</li>
