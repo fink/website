@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.24 2004/02/18 14:09:39 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.25 2004/02/28 20:40:30 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -18,8 +18,8 @@
 <tr valign="middle" align="left">
 <td bgcolor="#eeeeee" align="center" width="120"
     style="background-image:url(<? print $root ?>img/stripes.gif)">
-  <a href="<? print $root ?>legal.php" style="text-decoration:none;color:black;font-size:10pt;">
-    Copyright&nbsp;&copy;&nbsp;2001-04 The&nbsp;Fink&nbsp;Project
+  <a href="<? print $root ?>legal.php" style="text-decoration:none;color:black;font-size:8pt;">
+    Copyright &copy 2001-04<br>The&nbsp;Fink&nbsp;Project
   </a>
 </td>
 <td class="layout">
