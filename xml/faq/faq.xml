@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.92 2003/02/25 14:21:26 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.93 2003/02/25 14:25:13 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -279,8 +279,9 @@ You can also run that command at any time to reconfigure the
 If you followed the instructions in the installation guide, and use
 <filename>/sw/bin/init.csh</filename> (or <filename>/sw/bin/init.sh</filename>),
 then <code>apt-get</code> and <code>dselect</code> also will use these
-proxy settings.  Make sure that you put the protocol in front of the proxy, e.g. 
-<codeblock>ftp://proxy.yoursite.somewhere</codeblock>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p>
+proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p> 
+<codeblock>ftp://proxy.yoursite.somewhere</codeblock>
+<p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p>
 </answer>
 </faqentry>
 <faqentry name="firewalled-cvs">
