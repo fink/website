@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Guide d'internationalisation de Fink (i18n)</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.fr.xml,v 1.10 2004/07/11 19:09:04 michga Exp $</cvsid>
+  <cvsid>$Id: multilingual.fr.xml,v 1.11 2004/07/16 08:43:11 michga Exp $</cvsid>
   <preface>
     <p><em>Ce document est en cours de rédaction.</em></p>
     <p>Voici le guide d'internationalisation du site web de Fink. Ce document a été conçu pour servir de vade mecum aux personnes qui désirent contribuer à l'internationalisation du site.</p>
@@ -151,6 +151,7 @@
        <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
        <li>Étiquette net (<filename>xml/netiquette/netiquette.en.xml</filename>)</li>
        <li>Sécurité (<filename>xml/security/security.en.xml</filename>)</li>
+       <li>Tutoriel d'empaquetage (<filename>xml/quick-start-pkg/quick-start-pkg.en.xml</filename>)</li>
        <li>Construction de paquets (<filename>xml/packaging/packaging.en.xml</filename>)</li>
        <li>Portage (<filename>xml/porting/porting.en.xml</filename>)</li>
        <li>Dernières nouvelles (<filename>xml/news/news.xml</filename>)</li>
