@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.4 2004/03/11 23:56:35 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.5 2004/03/24 13:09:17 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -212,6 +212,8 @@ Fink ディレクトリ階層にインストールされたソフトウェア、
 これはコマンドを使って
 </p>
 <codeblock>open /sw/bin/pathsetup.command</codeblock>
+<p><code>fink-0.18.3</code> あるいは <code>fink-0.19.2</code> の場合は (下記の通り正確に)</p>
+<codeblock>/sw/bin/pathsetup.sh</codeblock>
 <p>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
@@ -421,7 +423,7 @@ dselect の &quot;[U]pdate&quot; メニュー項目と同じく、コンピュ�
 <p>バイナリインストールをしている時、依存しているパッケージがインストールできないというメッセージがでることがあります。例えば:</p>
 <codeblock>Sorry, but the following packages have unmet
 dependencies:
-foo: Depends: bar (>= version) but it is
+foo: Depends: bar (&gt;= version) but it is
 not installable
 E: Sorry, broken packages</codeblock>
 <p>何が起こったかというと、インストールしようとしているパッケージが、ライセンス上バイナリとして配布されない他のパッケージに依存しているのです。
@@ -622,9 +624,9 @@ update-all</code> で一括更新します。
 </p>
 <p>
 Fink Commander を使ってソースディストリビューションを更新する場合、
-Source->Selfupdate 
+Source-&gt;Selfupdate 
 を選択して新しいパッケージ情報ファイルをダウンロードし、
-Source->Updata-all
+Source-&gt;Updata-all
 を選択して古いパッケージを更新します。
 </p> 
 </section>
@@ -729,12 +731,13 @@ stable/main&quot; です。
 </li>
 <li>
 <p>
-<em>Distribution:</em> 10.1 または 10.2</p>
+<em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, 10.3</p>
 <p>Fink はどのバージョンの Mac OS X を使っているか知る必要があります。
-10.1 ディストリビューションは Mac OS X 10.1 を指します。
-10.2 ディストリビューションは Mac OS X 10.2 &quot;Jaguar&quot; を指します。
-Mac OS X 10.0 以前はサポートされていません。
-この値は変える必要はありません。
+10.0 以前はサポートされていません。
+10.1 は現バージョンからサポート対象外となりました。
+10.2 は August 2003 Developer Tools に更新している場合のみサポートされています。
+このフィールドは <code>/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
+ユーザーがこの値を変えてはいけません。
 </p>
 </li>
 <li>
@@ -778,6 +781,15 @@ Mac OS X 10.0 以前はサポートされていません。
 <p><code>fink selfupdate</code> コマンドは、 Fink パッケージマネージャーを最新版にアップグレードします。
 このオプションは <tt>True</tt> の時、 Concurrent Version System (CVS) を使わないことを保証します。
 これは <code>fink selfupdate-cvs</code> コマンドが自動的に設定するので、手動では変更しないで下さい。
+</p>
+</li>
+<li>
+<p>
+<em>Buildpath:</em> パス</p>
+<p>
+Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
+デフォルトでは <filename>/sw/src</filename> 内に作成しますが、別の場所を使いたい場合はここでパスを指定します。
+仮ディレクトリについては、後述の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
 </p>
 </li>
 </ul>
