@@ -1,7 +1,7 @@
 <?
 $title = "Fink";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/19 09:43:03 $';
+$cvs_date = '$Date: 2001/04/21 15:39:49 $';
 
 include "header.inc";
 ?>
@@ -27,9 +27,7 @@ href="http://sourceforge.net">SourceForge</a>.  Have a look at the <a
 href="http://sourceforge.net/projects/fink/">project summary</a> there
 for project resources. Here are some quick links:</p>
 <ul>
-<li><a
-href="http://lists.sourceforge.net/lists/listinfo/fink-users">Mailing
-list for users</a></li>
+<li><a href="lists.php">Mailing lists</a></li>
 <li><a
 href="http://sourceforge.net/tracker/?group_id=17203&atid=117203">Bug Tracker</a></li>
 <li><a
@@ -40,8 +38,8 @@ href="http://sourceforge.net/tracker/?atid=371315&group_id=17203&func=browse">Pa
 Request Tracker</a> (use this for packages that you want ported /
 included in the Fink distribution)</li>
 <li><a
-href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi?cvsroot=fink">CVS
-Repository</a> (via CVSweb)</li>
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/">CVS
+Repository</a> (via ViewCVS)</li>
 <li><a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">Download
 Area</a></li>

@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/21 15:33:23 $';
+$cvs_date = '$Date: 2001/04/21 15:39:44 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -59,9 +59,8 @@ href="darwin/x11-choices.php">X11 information</a>. Check it out!</p>
 <p>This project is hosted by <a
 href="http://sourceforge.net">SourceForge</a>. Have a look at the <a
 href="http://sourceforge.net/projects/fink/">project summary</a> there
-for bug tracking and other stuff. A <a
-href="http://lists.sourceforge.net/lists/listinfo/fink-users">mailing
-list</a> for users is also available.</p>
+for bug tracking and other stuff. Several <a
+href="fink/lists.php">mailing lists</a> are available.</p>
 <p>If you have any questions, suggestions, rants etc. please mail <a
 href="mailto:fink@chrisp.de">fink@chrisp.de</a>.</p>
 
