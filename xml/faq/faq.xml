@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.70 2002/12/20 19:55:31 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.71 2003/01/02 14:15:35 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -621,6 +621,16 @@ installation or install libwww after you installed Fink.
 <codeblock>sudo dpkg -i --force-overwite packagename</codeblock>
 <p>where <em>packagename</em> is the package that you are trying to install.</p>
 </answer></faqentry>
+
+<faqentry name="weak_lib">
+<question><p>After I installed the December 2002 Development Tools I get messages about "weak libraries".</p></question>
+<answer><p>This is new with the December 2002 Tools.  You may occasionally see messages like (choosing libgdk-pixbuf as an example):</p>
+<p><code>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</code></p>
+<p>You may regard these as harmless.  If you are curious, read through the release notes in the developer documentation directory, 
+especially GCC's and the linker's, for more info.  It essentially has to 
+do with whether missing symbols at runtime is considered a fatal error on 
+startup or not, for applications that use weak references.</p></answer>
+</faqentry>
 
 </chapter>
 
