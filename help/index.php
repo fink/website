@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/31 21:13:47 $';
+$cvs_date = '$Date: 2001/09/17 19:53:15 $';
 
 include "header.inc";
 ?>
@@ -137,7 +137,9 @@ can help by making new packages.
 Grab the <a href="../doc/packaging/index.php">Packaging Manual</a>,
 read it carefully and thoroughly, subscribe to <a
 href="../lists/fink-devel.php">fink-devel</a> and post your packages
-there.
+to the <a
+href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">package
+submission tracker</a>.
 Note that your submission will likely be rejected or treated with low
 priority unless it is compliant with the packaging policy.
 </p>
