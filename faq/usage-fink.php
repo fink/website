@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/12 19:02:29';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/04/14 13:16:25';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -252,7 +252,7 @@ fink selfupdate-cvs</pre></div>
 <div class="question"><p><b>Q3.14: When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</b></p></div>
 <div class="answer"><p><b>A:</b>  A number of recent reports on the 
-<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
 mailing list</a> have indicated problems (including kernel panics and
 infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
@@ -284,7 +284,7 @@ try a web search--sometimes there are unofficial sites that have the
 tarball you want.  Another place to look is <a href="http://us.dl.sf.net/fink/direct_download/source/">http://us.dl.sf.net/fink/direct_download/source/</a>, 
 which is where Fink stores sourcefiles from packages that have been 
 released in binary form.  If all of the above fail, then you might consider posting on the
-<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
 mailing list</a> to ask if anybody has the old source available to give
 you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>&quot;.  Then use '<code>fink install <b>packagename</b>
 </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
