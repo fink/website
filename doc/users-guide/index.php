@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/19 21:05:22';
+$cvs_date = 'Date: 2001/10/20 22:52:51';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -45,7 +45,10 @@ Package installation and maintenance is covered as well.
 <li><a href="packages.php"><b>Installing Packages</b></a></li>
 <ul>
 <li><a href="packages.php#x11">Getting X11 Sorted Out</a></li>
-<li><a href="packages.php#bin">Installing Binary Packages</a></li>
+<li><a href="packages.php#bin-dselect">Installing Binary Packages with
+dselect</a></li>
+<li><a href="packages.php#bin-apt">Installing Binary Packages with
+apt-get</a></li>
 <li><a href="packages.php#src">Installing Packages from Source</a></li>
 </ul>
 <li><a href="upgrade.php"><b>Upgrading Fink</b></a></li>
@@ -53,7 +56,7 @@ Package installation and maintenance is covered as well.
 <li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
 <li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.7 2001/10/19 21:05:22 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.8 2001/10/20 22:52:51 chrisp Exp $</i></p>
 
 
 <?
