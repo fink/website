@@ -508,7 +508,7 @@ For other
     <section name="delayed-update">
       <title>Delayed Update to Existing Documentation (XML-generated files only)</title>
       <p>In this case, the English version of the XML file is <xref chapter="files" section="committing">committed</xref>, but <em>not</em> the
-        PHP and HTML files, i.e. stop at step 5 under of Dynamic under <xref chapter="files" section="committing">2.9</xref>. All translators do
+        PHP and HTML files, i.e. stop after step 5 under of Dynamic under <xref chapter="files" section="committing">2.9</xref>. All translators do
         their work and <xref chapter="files" section="committing">commit</xref> <em>only </em>their XML file (i.e. the same as
         for English) within an agreed-upon timeframe. All of the PHP and HTML
         files will be generated, committed, and <xref chapter="files" section="website">activated</xref> simultaneously at an
@@ -516,7 +516,7 @@ For other
         team.</p>
     </section>
     <section name="summary">
-      <title>For Developers and English Language Documenters:</title>
+      <title>For Developers and English Language Documenters</title>
       <p>The current policy is that all documents should be updated according to the <xref section="prompt-update">prompt update</xref> schedule, unless you have a specific reason to do otherwise.</p>
     </section>
   </chapter>
