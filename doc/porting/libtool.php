@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/04/30 23:43:39';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -168,26 +168,34 @@ This problem is fixed in some post-1.4.2 versions of libtool.
 </li>
 <li>
 <b>The convenience library bug</b>:
-Under some conditions, libtool will fail to link convenience libraries, giving &quot;multiple definitions&quot; errors.
-This is caused by a more fundamental problem in libtool it seems. For now as a workaround (curing the symptoms
-not the actual problem, but with great success anyway), you can use this fix:
+Under some conditions, libtool will fail to link convenience libraries, 
+giving &quot;multiple definitions&quot; errors.
+This is caused by a more fundamental problem in libtool it seems. For now 
+as a workaround (curing the symptoms
+not the actual problem, but with great success anyway), you can use this fix
+(thanks to Dave Vasilevsky):
 <pre>
-diff -Naur gdk-pixbuf-0.16.0.old/ltmain.sh gdk-pixbuf-0.16.0.new/ltmain.sh
---- gdk-pixbuf-0.16.0.old/ltmain.sh	Wed Jan 23 10:11:43 2002
-+++ gdk-pixbuf-0.16.0.new/ltmain.sh	Thu Jan 31 03:19:54 2002
-@@ -2862,7 +2862,12 @@
- 	if test -n &quot;$export_symbols&quot; &amp;&amp; test -n &quot;$archive_expsym_cmds&quot;; then
- 	  eval cmds=\&quot;$archive_expsym_cmds\&quot;
- 	else
-+	  save_deplibs=&quot;$deplibs&quot;
-+	  for conv in $convenience; do
-+	    deplibs=&quot;${deplibs%$conv*} ${deplibs#*$conv}&quot;
-+	  done
- 	  eval cmds=\&quot;$archive_cmds\&quot;
-+	  deplibs=&quot;$save_deplibs&quot;
- 	fi
- 	IFS=&quot;${IFS= 	}&quot;; save_ifs=&quot;$IFS&quot;; IFS='~'
- 	for cmd in $cmds; do
+--- ltmain.sh.old       2002-04-27 00:01:23.000000000 -0400
++++ ltmain.sh   2002-04-27 00:01:45.000000000 -0400
+@@ -2894,7 +2894,18 @@
+        if test -n &quot;$export_symbols&quot; &amp;&amp; test -n &quot;$archive_expsym_cmds&quot;; then
+          eval cmds=\&quot;$archive_expsym_cmds\&quot;
+        else
++         save_deplibs=&quot;$deplibs&quot;
++         for conv in $convenience; do
++       tmp_deplibs=
++       for test_deplib in $deplibs; do
++         if test &quot;$test_deplib&quot; != &quot;$conv&quot;; then
++           tmp_deplibs=&quot;$tmp_deplibs $test_deplib&quot;
++         fi
++       done
++       deplibs=&quot;$tmp_deplibs&quot;
++         done
+          eval cmds=\&quot;$archive_cmds\&quot;
++         deplibs=&quot;$save_deplibs&quot;
+        fi
+        save_ifs=&quot;$IFS&quot;; IFS='~'
+        for cmd in $cmds; do
 </pre>
 </li>
 
