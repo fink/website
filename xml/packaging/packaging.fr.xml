@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.2 2004/03/25 01:19:43 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.3 2004/03/25 04:48:26 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -1410,8 +1410,7 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.2, you may use arbitrary integer values of N,
-rather than numbering upwards from N = 2. However, you still may not have
+of fink after 0.19.2, you may use arbitrary integer values of N, (not necessarily consecutive) integer values of N >= 2. However, you still may not have
 duplicates.
 </p>
 </itemd></item>
@@ -1470,7 +1469,7 @@ In the above example this would result in the tarball being stored under
 <itemd>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the tarball specified by the <code>Source<em>N</em></code>
+is used to rename the tarball specified by the corresponding <code>Source<em>N</em></code>
 field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
@@ -1939,7 +1938,7 @@ For details about how this works, see the separate
 <em>Introduced in fink 0.9.9.</em>
 This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run. Starting with a
-CVS version of fink after 0.19.2, you may use arbitrary integer values
+CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N >= 2integer values
 of N, rather than numbering upwards from N = 2. However, you still
 may not have duplicates.
 </p>

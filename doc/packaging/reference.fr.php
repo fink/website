@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 01:19:43';
+$cvs_date = 'Date: 2004/03/25 04:48:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -325,8 +325,7 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.2, you may use arbitrary integer values of N,
-rather than numbering upwards from N = 2. However, you still may not have
+of fink after 0.19.2, you may use arbitrary integer values of N, (not necessarily consecutive) integer values of N &gt;= 2. However, you still may not have
 duplicates.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
@@ -370,7 +369,7 @@ In the above example this would result in the tarball being stored under
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the tarball specified by the <code>Source<b>N</b></code>
+is used to rename the tarball specified by the corresponding <code>Source<b>N</b></code>
 field. See context or hyperref for examples of usage.
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
@@ -757,7 +756,7 @@ For details about how this works, see the separate
 <b>Introduced in fink 0.9.9.</b>
 This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run. Starting with a
-CVS version of fink after 0.19.2, you may use arbitrary integer values
+CVS version of fink after 0.19.2, you may use arbitrary (not necessarily consecutive) integer values of N &gt;= 2integer values
 of N, rather than numbering upwards from N = 2. However, you still
 may not have duplicates.
 </p>
