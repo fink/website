@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/03 02:58:14';
+$cvs_date = 'Date: 2004/10/21 21:34:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -79,7 +79,7 @@ unstable/main   - autres paquets cryptographiques
           <p>
 Vous pouvez aussi ajouter vos propres arborescences dans le répertoire <code>/sw/fink/dists</code> pour faire ce que vous voulez, mais ce n'est pas nécessaire dans la plupart des cas. Les arborescences par défaut sont "local/main local/bootstrap
 stable/main". Cette liste doit toujours être identique à celle figurant dans le fichier 
-<code>/sw/etc/apt/sources.list</code>.
+<code>/sw/etc/apt/sources.list</code>. À partir de la version 0.21.0, fink le fait automatiquement pour vous.
 </p>
         </li>
         <li>
@@ -160,6 +160,21 @@ La valeur par défaut est 3.
 <b>L'application que vous choisissez comme méthode de téléchargement DOIT être installée !</b>
           </p>
         </li>
+        <li>
+          <p>
+            <b>SelfUpdateMethod:</b> point, rsync ou cvs</p>
+          <p>
+Fink peut utiliser différentes méthodes pour mettre à jour les fichiers info des paquets. <b>rsync</b> est la méthode recommandée. Cette méthode utilise rsync pour télécharger les fichiers qui ont été modifiés dans les arborescences activées. Notez qui si vous modifiez ou ajoutez des fichiers aux arborescences stable ou instable, le fait d'utiliser rsync les supprimera. Faites d'abord une sauvegarde. <b>cvs</b> effectue le téléchargement à partir d'un accès anonyme ou d'un accès :ext: au serveur cvs de fink. Ceci présente l'inconvénient que cvs ne sait pas changer de miroirs, aussi, si le serveur n'est pas disponible, vous ne pouvez pas mettre à jour. <b>point</b> ne télécharge que la dernière version officielle des paquets. Cette méthode n'est pas recommandée car vos paquets risquent, alors, d'être obsolètes.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>UseBinaryDist:</b> booléen</p>
+          <p>
+Force fink à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'<a href="usage.php?phpLang=fr">option --use-binary-dist</a> avec fink a le même effet, mais est restreint à cette invocation de fink.
+<b>Disponible à partir de la versin 0.23.0 de fink</b>.
+          </p>
+        </li>
       </ul>
     
     <h2><a name="mirrors">5.6 Configuration des miroirs</a></h2>
@@ -232,7 +247,7 @@ La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <
         <li>
           <p>
             <b>CCacheDir:</b> path</p>
-          <p><b>Introduit dans une version CVS postérieure à la version 0.20.5 de fink</b>. Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <code>/sw/var/ccache</code>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <code>$HOME/.ccache</code>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur.
+          <p>Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <code>/sw/var/ccache</code>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <code>$HOME/.ccache</code>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur. <b>Introduit dans une version de fink postérieure à la version 0.21.0</b>. 
           </p>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/21 10:20:09';
+$cvs_date = 'Date: 2004/10/21 21:34:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -23,7 +23,7 @@ version and revision when they are not specified.  Others have different options
     <h2><a name="options">6.2 Global options</a></h2>
       
       <p>
-There are some options, which apply to all fink fink commands. If you 
+There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options:
       </p>
       <pre>
@@ -43,8 +43,7 @@ to set them permanently and not just for that invocation of <code>fink</code>.
       <p>
 The <code>--use-binary-dist</code> option causes <code>fink</code> to try to
 download pre-compiled binary packages from the binary distribution if available
-and if the binary package is not already on the system. (Only available in
-<code>fink</code> newer than version 0.23.0)
+and if the binary package is not already on the system. (Only available as of <code>fink</code> version 0.23.0)
       </p>
     
     <h2><a name="install">6.3 install</a></h2>
@@ -240,7 +239,7 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
-I the <a href="#options">--use-binary-dist option</a> is enabled
+If the <a href="#options">--use-binary-dist option</a> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     

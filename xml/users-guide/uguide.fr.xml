@@ -3,11 +3,10 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.16 2004/09/03 02:58:14 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.17 2004/10/21 21:34:34 michga Exp $</cvsid>
   <preface>
 <p>
-<em>Ce document est en cours d'élaboration.</em>
-Les documents suivants, bien que plus anciens, sont plus complets :
+Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets :
 <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>,
 <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link>
 et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire.
@@ -417,7 +416,10 @@ E: Sorry, broken packages</codeblock>
       <p>Dans ce cas, cela veut dire que le paquet que vous tentez d'installer dépend d'un autre paquet qui ne peut être distribué sous forme binaire à cause d'une restriction de licence. Vous devez alors installer la dépendance sous sa forme source (voir la section suivante).</p>
     </section>
     <section name="src" >
-      <title>Installation de paquets à partir du source</title>
+      <title>Installation de paquets binaires et de source avec fink</title>
+      <p>
+L'outil <code>fink</code> vous permet d'installer des paquets non encore disponibles dans la <xref chapter="intro" section="src-vs-bin">distribution binaire</xref>.
+      </p>
       <p>Tout d'abord, vous devez installer une version adéquate des Developer Tools (outils de développement) sur votre système. Ceux-ci sont disponibles gratuitement après enregistrement sur <link url="http://connect.apple.com" >http://connect.apple.com</link>.</p>
       <p>
 Pour obtenir la liste des paquets disponibles à partir des sources, utilisez l'outil <code>fink</code> :
@@ -441,7 +443,19 @@ Tout ceci peut prendre un certain temps.
 Si des erreurs se produisent durant le processus, consultez tout d'abord les 
 <link url="http://fink.sourceforge.net/faq/" >QFP</link>.
 </p>
-    </section>
+      <p>
+À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'<xref chapter="usage" section="options">option --use-binary-dist (ou -b)</xref> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :
+      </p>
+      <codeblock>fink --use-binary-dist install wget-ssl</codeblock>
+      <p>or</p>
+      <codeblock>fink -b install wget-ssl</codeblock>
+      <p>
+charge d'abord toutes les dépendances de wget-ssl disponibles dans la distribution binaire et ne compile que celles qui ne le sont pas à partir du source. Vous pouvez activer de façon permanente cette option dans le <xref chapter="conf">fichier de configuration de Fink</xref> (fink.conf) ou en exécutant la commande <code>fink configure</code>.
+      </p>
+      <p>
+Vous trouverez de plus amples informations sur l'outil <code>fink</code> dans le chapitre <xref chapter="usage">"Utilisation de l'outil fink en ligne de commande"</xref>.
+      </p>
+   </section>
     <section name="fink-commander">
       <title>Fink Commander</title>
       <p>Fink Commander est une interface Aqua aux outils <code>apt-get</code> et <code>fink</code>.  Le menu Binary (binaire) vous permet d'effectuer des opérations sur la distribution binaire, et le menu Source vous offre les mêmes possibilités pour la distribution source.</p>
@@ -549,8 +563,7 @@ Pour de plus amples informations, en particulier sur la mise à niveau des versi
     <section name="src" >
       <title>Mise à niveau de la distribution source</title>
       <p>
-La mise à niveau est un peu plus compliquée si vous utilisez la distribution source.
-La procédure se déroule en deux temps.
+La procédure de mise à niveau se déroule en deux temps si vous utilisez la distribution source.
 Dans un premier temps, vous téléchargez les descriptions de paquets sur votre ordinateur.
 Dans un deuxième temps, ces descriptions de paquets sont utilisées pour recompiler les paquets ; le code source est téléchargé, si besoin est.
 </p>
@@ -582,9 +595,14 @@ update-all</code>.
       <p>
 Si vous utilisez des paquets binaires précompilés pour certains logiciels et que vous en construisez d'autres à partir du source, vous devrez exécuter les séquences d'instructions des deux méthodes pour mettre à jour votre installation Fink.
 Tout d'abord, utilisez <code>dselect</code> ou <code>apt-get</code> pour récupérer les versions binaires les plus récentes des paquets, puis utilisez <code>fink selfupdate</code> et <code>fink update-all</code>
-pour récupérer les descriptions de paquets et mettre à jour les autres paquets. Si vous utilisez Fink Commander, suivez les instructions pour les <xref section="bin">binaires</xref>, puis celles pour les <xref section="src">sources</xref>.
+pour récupérer les descriptions de paquets et mettre à jour les autres paquets.
 </p>
-
+      <p>
+À partir de la version 0.23.0 de fink, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'<xref chapter="usage" section="options">option --use-binary-dist (ou -b)</xref> ou bien dans le <xref chapter="conf">fichier de configuration de Fink</xref>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.
+     </p>
+      <p>
+Si vous utilisez Fink Commander, sélectionnez Binary-&gt;Update descriptions (Binaire-&gt;Mise à jour des descriptions) pour mettre à jour la liste des paquets, puis Binary-&gt;Dist-Upgrade packages (Binaire-&gt;Mise à jour des paquets de la distribution) pour obtenir les nouvelles versions. Exécutez ensuite Source-&gt;Selfupdate (Source-&gt;Mise à jour automatique) pour télécharger les nouveaux fichiers info des paquets, puis Source-&gt;Update-all (Source-&gt;Tout mettre à jour). Voir les sections précédentes pour de plus amples informations.
+      </p>
     </section>
   </chapter>
   <chapter filename="conf" >
@@ -659,7 +677,7 @@ unstable/main   - autres paquets cryptographiques
           <p>
 Vous pouvez aussi ajouter vos propres arborescences dans le répertoire <code>/sw/fink/dists</code> pour faire ce que vous voulez, mais ce n'est pas nécessaire dans la plupart des cas. Les arborescences par défaut sont &quot;local/main local/bootstrap
 stable/main&quot;. Cette liste doit toujours être identique à celle figurant dans le fichier 
-<code>/sw/etc/apt/sources.list</code>.
+<code>/sw/etc/apt/sources.list</code>. À partir de la version 0.21.0, fink le fait automatiquement pour vous.
 </p>
         </li>
         <li>
@@ -740,6 +758,21 @@ La valeur par défaut est 3.
 <em>L'application que vous choisissez comme méthode de téléchargement DOIT être installée !</em>
           </p>
         </li>
+        <li>
+          <p>
+            <em>SelfUpdateMethod:</em> point, rsync ou cvs</p>
+          <p>
+Fink peut utiliser différentes méthodes pour mettre à jour les fichiers info des paquets. <em>rsync</em> est la méthode recommandée. Cette méthode utilise rsync pour télécharger les fichiers qui ont été modifiés dans les arborescences activées. Notez qui si vous modifiez ou ajoutez des fichiers aux arborescences stable ou instable, le fait d'utiliser rsync les supprimera. Faites d'abord une sauvegarde. <em>cvs</em> effectue le téléchargement à partir d'un accès anonyme ou d'un accès :ext: au serveur cvs de fink. Ceci présente l'inconvénient que cvs ne sait pas changer de miroirs, aussi, si le serveur n'est pas disponible, vous ne pouvez pas mettre à jour. <em>point</em> ne télécharge que la dernière version officielle des paquets. Cette méthode n'est pas recommandée car vos paquets risquent, alors, d'être obsolètes.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>UseBinaryDist:</em> booléen</p>
+          <p>
+Force fink à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'<xref chapter="usage">option --use-binary-dist</xref> avec fink a le même effet, mais est restreint à cette invocation de fink.
+<em>Disponible à partir de la versin 0.23.0 de fink</em>.
+          </p>
+        </li>
       </ul>
     </section>
     <section name="mirrors" >
@@ -812,7 +845,7 @@ La commande <em>fink -k</em> a le même effet, restreint à  cette invocation de
         <li>
           <p>
             <em>CCacheDir:</em> path</p>
-          <p><em>Introduit dans une version CVS postérieure à la version 0.20.5 de fink</em>. Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <filename>/sw/var/ccache</filename>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <filename>$HOME/.ccache</filename>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur.
+          <p>Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <filename>/sw/var/ccache</filename>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <filename>$HOME/.ccache</filename>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur. <em>Introduit dans une version de fink postérieure à la version 0.21.0</em>. 
           </p>
         </li>
       </ul>
@@ -881,6 +914,26 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
       Certaines nécessitent au moins un nom de paquet, mais peuvent gérer plusieurs noms à la fois. Vous pouvez n'indiquer que le nom du paquet (par exemple gimp), le nom et la version (par exemple gimp-1.2.1), ou le nom, la version et la révision (par exemple gimp-1.2.1-3). Fink choisira automatiquement la version et la révision la plus récente si elles ne sont pas spécifiées.  D'autres commandes possèdent des options.</p>
       <p>Voici la liste des commandes de l'outil <code>fink</code> :</p>
     </section>
+    <section name="options">
+      <title>Options globales</title>
+      <p>
+Ce sont des options qui s'appliquent à toutes les commandes fink. Pour obtenir la liste des options, exécutez <code>fink --help</code> :
+      </p>
+      <codeblock>
+-h, --help            - affiche ce message d'aide
+-q, --quiet           - diminue le niveau de verbosité de fink, effet contraire à celui de --verbose
+-V, --version         - affiche les informations de version
+-v, --verbose         - augmente le niveau de verbosité de fink, effet contraire à celui de --quiet
+-y, --yes             - applique la réponse par défaut à toutes les questions interactives
+-b, --use-binary-dist - télécharge les paquets pré-compilés de la distribution binaire s'ils sont disponibles
+      </codeblock>
+      <p>
+La plupart de ces options ne nécessite pas d'explication supplémentaire. Elles peuvent être configurées dans le <xref chapter="conf">fichier de configuration de Fink</xref> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.
+      </p>
+      <p>
+L'option <code>--use-binary-dist</code> force <code>fink</code> à télécharger les paquets binaires à partir de la distribution binaire, s'ils sont disponibles et qu'ils ne sont pas déjà sur votre système. Disponible à partir de la version 0.23.0 de <code>fink</code>.
+      </p>
+    </section>
     <section name="install" >
       <title>install - installation</title>
       <p>La commande install est utilisée pour installer des paquets. Elle télécharge, configure, compile et installe les paquets désirés. Elle installe aussi automatiquement les dépendances requises, mais vous demande confirmation avant de le faire. Exemple :</p>
@@ -892,6 +945,9 @@ The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
 <p>Ici fink lit les fichiers d'information des paquets, donne le nombre de fichiers lus, signale que le paquet lesstif sera téléchargé si vous donnez votre accord.</p>      
+      <p>
+Si vous ajoutez l'<xref section="options">option --use-binary-dist</xref>, <code>fink</code> télécharge les paquets binaires, s'ils sont disponibles, au lieu de les compiler. Cela permet de gagner du temps.
+      </p>
 <p>Les alias de la commande install sont : update, enable, activate, use (la plupart du temps pour des raisons historiques).</p>
     </section>
     <section name="remove" >
@@ -904,6 +960,9 @@ Do you want to continue? [Y/n]</codeblock>
       <title>update-all - tout mettre à jour</title>
       <p>Cette commande met à jour tous les paquets installés. Elle n'utilise pas de liste de paquets, il suffit de lancer :</p>
       <codeblock>fink update-all</codeblock>
+      <p>
+L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.
+      </p>
     </section>
     <section name="list" >
       <title>list - liste</title>
@@ -996,10 +1055,16 @@ Alias : desc, description, info
     <section name="build" >
       <title>build - compiler</title>
       <p>Construit un paquet, mais ne l'installe pas. Les archives tar source sont téléchargées si elles ne sont pas présentes sur le système. La commande construit un paquet .deb que vous pourrez installer ultérieurement avec la commande install. Cette commande n'a aucun effet si le fichier .deb existe déjà. Notez que, contrairement au paquet, les dépendances sont, elles,  <em>installées</em>.</p>
+      <p>
+L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.
+      </p>
     </section>
     <section name="rebuild" >
       <title>rebuild - recompiler</title>
       <p>Construit un paquet (tout comme la commande build), mais ignore et écrase le fichier .deb existant. Si le paquet est installé, le nouveau fichier .deb sera lui aussi installé dans le système via <code>dpkg</code>. Très utile pendant la phase de développement du paquet.</p>
+      <p>
+L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.
+      </p>
     </section>
     <section name="reinstall" >
       <title>reinstall - réinstaller</title>
@@ -1017,6 +1082,9 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
 <p>
 	Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <filename>/sw/fink/dists</filename> de telle sorte qu'elle soit mise à jour directement via CVS. Vous avez alors accès aux toutes dernières versions des paquets.
 </p>
+      <p>
+Si l'<xref section="options">option --use-binary-dist option</xref> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.
+      </p>
     </section>
     <section name="index" >
       <title>index - indexer</title>
@@ -1045,11 +1113,14 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
    Supprime les fichiers correspondants aux paquets obsolètes (.info, .patch, .deb) quand des versions plus récentes sont disponibles.
    Cela peut libérer une grande portion d'espace disque.
 </p>
-    </section>
+       <p>
+Si l'<xref section="options">option --use-binary-dist</xref> est activée, les paquets binaires téléchargés obsolètes sont supprimés.
+      </p>
+   </section>
         <section name="dumpinfo">
       <title>dumpinfo - analyse des fichiers info</title>
      <p>
-	Note : disponible dans une version CVS de fink postérieure à la version 0.20.0.
+	Note : disponible dans une version de fink postérieure à la version 0.21.0.
       </p>
       <p>
 	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet. Les <em>options</em> suivantes permettent de moduler l'affichage des champs et l'interprétation des raccourcis :

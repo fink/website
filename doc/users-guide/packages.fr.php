@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/03 02:58:14';
+$cvs_date = 'Date: 2004/10/21 21:34:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -127,8 +127,11 @@ not installable
 E: Sorry, broken packages</pre>
       <p>Dans ce cas, cela veut dire que le paquet que vous tentez d'installer dépend d'un autre paquet qui ne peut être distribué sous forme binaire à cause d'une restriction de licence. Vous devez alors installer la dépendance sous sa forme source (voir la section suivante).</p>
     
-    <h2><a name="src">3.4 Installation de paquets à partir du source</a></h2>
+    <h2><a name="src">3.4 Installation de paquets binaires et de source avec fink</a></h2>
       
+      <p>
+L'outil <code>fink</code> vous permet d'installer des paquets non encore disponibles dans la <a href="intro.php?phpLang=fr#src-vs-bin">distribution binaire</a>.
+      </p>
       <p>Tout d'abord, vous devez installer une version adéquate des Developer Tools (outils de développement) sur votre système. Ceux-ci sont disponibles gratuitement après enregistrement sur <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
       <p>
 Pour obtenir la liste des paquets disponibles à partir des sources, utilisez l'outil <code>fink</code> :
@@ -152,7 +155,19 @@ Tout ceci peut prendre un certain temps.
 Si des erreurs se produisent durant le processus, consultez tout d'abord les 
 <a href="http://fink.sourceforge.net/faq/">QFP</a>.
 </p>
-    
+      <p>
+À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'<a href="usage.php?phpLang=fr#options">option --use-binary-dist (ou -b)</a> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :
+      </p>
+      <pre>fink --use-binary-dist install wget-ssl</pre>
+      <p>or</p>
+      <pre>fink -b install wget-ssl</pre>
+      <p>
+charge d'abord toutes les dépendances de wget-ssl disponibles dans la distribution binaire et ne compile que celles qui ne le sont pas à partir du source. Vous pouvez activer de façon permanente cette option dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a> (fink.conf) ou en exécutant la commande <code>fink configure</code>.
+      </p>
+      <p>
+Vous trouverez de plus amples informations sur l'outil <code>fink</code> dans le chapitre <a href="usage.php?phpLang=fr">"Utilisation de l'outil fink en ligne de commande"</a>.
+      </p>
+   
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
       
       <p>Fink Commander est une interface Aqua aux outils <code>apt-get</code> et <code>fink</code>.  Le menu Binary (binaire) vous permet d'effectuer des opérations sur la distribution binaire, et le menu Source vous offre les mêmes possibilités pour la distribution source.</p>

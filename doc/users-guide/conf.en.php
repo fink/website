@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/21 10:20:09';
+$cvs_date = 'Date: 2004/10/21 21:34:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -242,7 +242,7 @@ system. This can save a lot of installation time and it is therefore
 recommended to set this option. Passing fink the 
 <a href="usage.php?phpLang=en">--use-binary-dist option</a> has the same effect, 
 but only operates on that single fink invocation.
-<b>Only available in fink newer than version 0.23.0</b>.
+<b>Only available as of  fink version 0.23.0</b>.
           </p>
         </li>
       </ul>

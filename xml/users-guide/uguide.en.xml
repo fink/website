@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.18 2004/10/21 10:20:09 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.19 2004/10/21 21:34:34 michga Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1009,7 +1009,7 @@ system. This can save a lot of installation time and it is therefore
 recommended to set this option. Passing fink the 
 <xref chapter="usage">--use-binary-dist option</xref> has the same effect, 
 but only operates on that single fink invocation.
-<em>Only available in fink newer than version 0.23.0</em>.
+<em>Only available as of  fink version 0.23.0</em>.
           </p>
         </li>
       </ul>
@@ -1182,7 +1182,7 @@ version and revision when they are not specified.  Others have different options
     <section name="options">
       <title>Global options</title>
       <p>
-There are some options, which apply to all fink fink commands. If you 
+There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options:
       </p>
       <codeblock>
@@ -1202,8 +1202,7 @@ to set them permanently and not just for that invocation of <code>fink</code>.
       <p>
 The <code>--use-binary-dist</code> option causes <code>fink</code> to try to
 download pre-compiled binary packages from the binary distribution if available
-and if the binary package is not already on the system. (Only available in
-<code>fink</code> newer than version 0.23.0)
+and if the binary package is not already on the system. (Only available as of <code>fink</code> version 0.23.0)
       </p>
     </section>
     <section name="install">
@@ -1399,7 +1398,7 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
-I the <xref section="options">--use-binary-dist option</xref> is enabled
+If the <xref section="options">--use-binary-dist option</xref> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     </section>
