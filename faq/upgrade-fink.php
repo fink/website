@@ -1,18 +1,18 @@
 <?
 $title = "F.A.Q. - Upgrading Fink";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/12 15:25:16';
+$cvs_date = 'Date: 2004/02/13 14:29:08';
 
-$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
+$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php" title="Fink mirrors">';
 
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - 3 Upgrading Fink (version-specific troubleshooting)</h1>
+<h1>F.A.Q. - 4 Upgrading Fink (version-specific troubleshooting)</h1>
 
 
 <a name="gcc-0.16.0">
-<div class="question"><p><b>Q3.1: I just upgraded to 0.16.0 and it tells me "Your version of the
+<div class="question"><p><b>Q4.1: I just upgraded to 0.16.0 and it tells me "Your version of the
 gcc 3.3 compiler is out of date." What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> As of the release of Panther, Fink has been updated to understand
 the newer gcc 3.3 compiler. In order to be able to support users
@@ -28,7 +28,7 @@ release (i.e. XCode). A CD with XCode should have been provided
 with your Panther media.</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-fink.php">4 Installing, Using and Maintaining Fink</a></p>
+Next: <a href="usage-fink.php">5 Installing, Using and Maintaining Fink</a></p>
 
 
 <?

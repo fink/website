@@ -10,7 +10,7 @@ $navbox = array(
   "doc/users-guide/packages.php", "Packages",
   "doc/users-guide/upgrade.php", "Upgrade",
   "doc/users-guide/conf.php", "fink.conf",
-  "doc/users-guide/usage.php", "Command line",
+  "doc/users-guide/usage.php", "fink Tool",
 );
 $printlink = "doc/users-guide/uguide.html";
 

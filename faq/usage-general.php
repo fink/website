@@ -1,18 +1,18 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/12 15:25:16';
+$cvs_date = 'Date: 2004/02/13 14:29:08';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
 include "header.inc";
 ?>
 
-<h1>F.A.Q. - 7 Package Usage Problems - General</h1>
+<h1>F.A.Q. - 8 Package Usage Problems - General</h1>
 
 
 <a name="xlocale">
-<div class="question"><p><b>Q7.1: I'm getting lots of messages
+<div class="question"><p><b>Q8.1: I'm getting lots of messages
 like "locale not supported by C library". Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
@@ -22,7 +22,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div>
 </a>
 <a name="passwd">
-<div class="question"><p><b>Q7.2: There are suddenly a number of 
+<div class="question"><p><b>Q8.2: There are suddenly a number of 
 strange users on my system, with names like "mysql", "pgsql", and "games".
 Where did they come from?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -63,7 +63,7 @@ have come as a surprise.
 </p></div>
 </a>
 <a name="compile-myself">
-<div class="question"><p><b>Q7.3: How do I compile something
+<div class="question"><p><b>Q8.3: How do I compile something
 myself using Fink-installed software?</b></p></div>
 <div class="answer"><p><b>A:</b> When compiling something yourself outside of Fink, the compiler and
 linker need to be told where to find the Fink-installed libraries and
@@ -91,11 +91,11 @@ options.
 </p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b>Q7.4: I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</b></p></div>
+<div class="question"><p><b>Q8.4: I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</b></p></div>
 <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the Fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your Fink applications. The solution is to preface the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
 </a>
 <a name="x-options">
-<div class="question"><p><b>Q7.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</b></p></div>
+<div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</b></p></div>
 <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them. Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable. There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the only choice. Don't forget to install the X11 SDK (on the XCode disk) if you want to compile programs.</p><p> Under Jaguar, the most popular choices, and the Fink packages to make them work are:</p><ul>
 		<li>
 			<p>4.2.x built via Fink: install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
@@ -109,16 +109,16 @@ options.
 	</ul><p>There are other options, as well. There is a more extensive treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a>.</p></div>
 </a>
 <a name="no-display">
-<div class="question"><p><b>Q7.6: When I try to run an application, I get a message that says "cannot open display:". What do I need to do?</b></p></div>
+<div class="question"><p><b>Q8.6: When I try to run an application, I get a message that says "cannot open display:". What do I need to do?</b></p></div>
 <div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your X display. Make sure you do the following:</p><p>1. Start X (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for X, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
 
 </a>
 <a name="suggest-package">
-<div class="question"><p><b>Q7.7: I don't see my favorite program in Fink. How do I suggest a new package for inclusion in Fink?</b></p></div>
+<div class="question"><p><b>Q8.7: I don't see my favorite program in Fink. How do I suggest a new package for inclusion in Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
 </a>
 <p align="right">
-Next: <a href="usage-packages.php">8 Package Usage Problems - Specific Packages</a></p>
+Next: <a href="usage-packages.php">9 Package Usage Problems - Specific Packages</a></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/11/13 15:54:41';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/02/13 14:29:08';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -9,8 +9,8 @@ include "header.inc";
 ?>
 
 <h1>Fink User's Guide</h1>
-<p>
-<b>This document is a work in progress.</b>
+    <p>
+      <b>This document is a work in progress.</b>
 The following older documents may offer a broader view:
 <a href="http://fink.sourceforge.net/doc/bundled/install.php">Installation</a>,
 <a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</a>
@@ -20,13 +20,13 @@ Also check out the
 section</a> of the web site, it has some other useful documents
 beyond that.
 </p>
-<p>
+    <p>
 Welcome to the Fink User's Guide.
 This guide covers first time installation and upgrade procedures for
 both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
-<h2>Contents</h2><ul>
+  <h2>Contents</h2><ul>
 <li><a href="intro.php"><b>1 Introduction</b></a></li>
 <ul>
 <li><a href="intro.php#what">1.1 What is Fink?</a></li>
@@ -42,14 +42,15 @@ Package installation and maintenance is covered as well.
 </ul>
 <li><a href="packages.php"><b>3 Installing Packages</b></a></li>
 <ul>
-<li><a href="packages.php#x11">3.1 Getting X11 Sorted Out</a></li>
-<li><a href="packages.php#bin-dselect">3.2 Installing Binary Packages with
+<li><a href="packages.php#bin-dselect">3.1 Installing Binary Packages with
 dselect</a></li>
-<li><a href="packages.php#bin-apt">3.3 Installing Binary Packages with
+<li><a href="packages.php#bin-apt">3.2 Installing Binary Packages with
 apt-get</a></li>
-<li><a href="packages.php#bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li>
-<li><a href="packages.php#src">3.5 Installing Packages from Source</a></li>
+<li><a href="packages.php#bin-exceptions">3.3 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li>
+<li><a href="packages.php#src">3.4 Installing Packages from Source</a></li>
+<li><a href="packages.php#fink-commander">3.5 Fink Commander</a></li>
 <li><a href="packages.php#">3.6 Available versions</a></li>
+<li><a href="packages.php#x11">3.7 Getting X11 Sorted Out</a></li>
 </ul>
 <li><a href="upgrade.php"><b>4 Upgrading Fink</b></a></li>
 <ul>
@@ -67,9 +68,9 @@ apt-get</a></li>
 <li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
 <li><a href="conf.php#developer">5.7 Developer Settings</a></li>
 </ul>
-<li><a href="usage.php"><b>6 Controlling Fink from the command line</b></a></li>
+<li><a href="usage.php"><b>6 Using the fink Tool from the Command Line</b></a></li>
 <ul>
-<li><a href="usage.php#using">6.1 Using Fink</a></li>
+<li><a href="usage.php#using">6.1 Using the fink tool</a></li>
 <li><a href="usage.php#install">6.2 install</a></li>
 <li><a href="usage.php#remove">6.3 remove</a></li>
 <li><a href="usage.php#update-all">6.4 update-all</a></li>
@@ -90,7 +91,7 @@ apt-get</a></li>
 <li><a href="usage.php#checksums">6.19 checksums</a></li>
 <li><a href="usage.php#cleanup">6.20 cleanup</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.29 2003/11/13 15:54:41 rangerrick Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.30 2004/02/13 14:29:08 alexkhansen Exp $</i></p>
 
 
 <?
