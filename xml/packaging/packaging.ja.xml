@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.10 2004/05/19 15:04:47 dmacks Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.11 2004/05/29 15:46:11 babayoshihiko Exp $</cvsid>
 	<!-- cvsidだいなりどるId: packaging.en.xml,v 1.20 2004/03/31 20:08:34 dmacks Exp どるしょうなり/cvsid -->
 	<preface>
 		<p>
@@ -901,15 +901,17 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				(bootstrap に必要な <code>storable-pm</code> は例外です)．
 			</p>
 			<p>
-				fink 0.20.1 の時点で， system-perl バーチャルパッケージは，
+				fink 0.20.2 の時点で， system-perl バーチャルパッケージは，
 				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
 				system-perl-5.8.1-1 の場合，
-				<em>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm,
-			 file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm,
-			 i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm,
-			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm,
-			 time-hires-pm581</em>
+				<em>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581,
+			 file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581,
+			 i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581,
+			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
+			 test-simple-pm581, time-hires-pm581.</em>
 				です．
+				(この一覧は 0.20.1 から若干変更されています。
+				パッケージメンテナは正しい一覧を使用しているかかならず確認してください。)
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
@@ -1945,7 +1947,7 @@ make</codeblock>
 						<p>
 							これは GNU autoconf を利用するパッケージには適切だ．
 							Perl タイプ (フィールド Type で指定される) のパッケージのうち perl のバージョン指定がないものでは，
-							デフォルト値は次のようになる．
+							デフォルト値は次のようになる (0.13.4) ．
 						</p>
 <codeblock>perl Makefile.PL PREFIX=%p \
 INSTALLPRIVLIB=%p/lib/perl5 \
@@ -1953,23 +1955,38 @@ INSTALLARCHLIB=%p/lib/perl5/darwin \
 INSTALLSITELIB=%p/lib/perl5 \
 INSTALLSITEARCH=%p/lib/perl5/darwin \
 INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3
+INSTALLMAN3DIR=%p/share/man/man3 \
+INSTALLSITEMAN1DIR=%p/share/man/man1 \
+INSTALLSITEMAN3DIR=%p/share/man/man3 \
+INSTALLBIN=%p/bin \
+INSTALLSITEBIN=%p/bin \
+INSTALLSCRIPT=%p/bin
 make
 make test</codeblock>
 						<p>
-							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは
+							(例えば <code>$version</code> は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <codeblock>perl$version Makefile.PL \
 PERL=perl$version PREFIX=%p \
 INSTALLPRIVLIB=%p/lib/perl5/$version \
-INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
 INSTALLSITELIB=%p/lib/perl5/$version \
-INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
 INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3
+INSTALLMAN3DIR=%p/share/man/man3 \
+INSTALLSITEMAN1DIR=%p/share/man/man1 \
+INSTALLSITEMAN3DIR=%p/share/man/man3 \
+INSTALLBIN=%p/bin \
+INSTALLSITEBIN=%p/bin \
+INSTALLSCRIPT=%p/bin
 make
 make test</codeblock>
+<p>
+ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり、
+バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である。
+</p>
 						<p>
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
 						</p>
@@ -2028,17 +2045,34 @@ INSTALLARCHLIB=%i/lib/perl5/darwin \
 INSTALLSITELIB=%i/lib/perl5 \
 INSTALLSITEARCH=%i/lib/perl5/darwin \
 INSTALLMAN1DIR=%i/share/man/man1 \
-INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+INSTALLMAN3DIR=%i/share/man/man3 \
+INSTALLSITEMAN1DIR=%i/share/man/man1 \
+INSTALLSITEMAN3DIR=%i/share/man/man3 \
+INSTALLBIN=%i/bin \
+INSTALLSITEBIN=%i/bin \
+INSTALLSCRIPT=%i/bin
+</codeblock>
 						<p>
-							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは 
+							(例えば <code>$version</code> は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <codeblock>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
-INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
 INSTALLSITELIB=%i/lib/perl5/$version \
-INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
 INSTALLMAN1DIR=%i/share/man/man1 \
-INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+INSTALLMAN3DIR=%i/share/man/man3 \
+INSTALLSITEMAN1DIR=%i/share/man/man1 \
+INSTALLSITEMAN3DIR=%i/share/man/man3 \
+INSTALLBIN=%i/bin \
+INSTALLSITEBIN=%i/bin \
+INSTALLSCRIPT=%i/bin
+</codeblock>
+<p>
+ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり、
+バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である。
+</p>
 						<p>
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．

@@ -509,15 +509,17 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				(bootstrap に必要な <code>storable-pm</code> は例外です)．
 			</p>
 			<p>
-				fink 0.20.1 の時点で， system-perl バーチャルパッケージは，
+				fink 0.20.2 の時点で， system-perl バーチャルパッケージは，
 				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
 				system-perl-5.8.1-1 の場合，
-				<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm,
-			 file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm,
-			 i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm,
-			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm,
-			 time-hires-pm581</b>
+				<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581,
+			 file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581,
+			 i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581,
+			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
+			 test-simple-pm581, time-hires-pm581.</b>
 				です．
+				(この一覧は 0.20.1 から若干変更されています。
+				パッケージメンテナは正しい一覧を使用しているかかならず確認してください。)
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，

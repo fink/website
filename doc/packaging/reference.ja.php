@@ -647,7 +647,7 @@ make</pre>
 						<p>
 							これは GNU autoconf を利用するパッケージには適切だ．
 							Perl タイプ (フィールド Type で指定される) のパッケージのうち perl のバージョン指定がないものでは，
-							デフォルト値は次のようになる．
+							デフォルト値は次のようになる (0.13.4) ．
 						</p>
 <pre>perl Makefile.PL PREFIX=%p \
 INSTALLPRIVLIB=%p/lib/perl5 \
@@ -655,23 +655,38 @@ INSTALLARCHLIB=%p/lib/perl5/darwin \
 INSTALLSITELIB=%p/lib/perl5 \
 INSTALLSITEARCH=%p/lib/perl5/darwin \
 INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3
+INSTALLMAN3DIR=%p/share/man/man3 \
+INSTALLSITEMAN1DIR=%p/share/man/man1 \
+INSTALLSITEMAN3DIR=%p/share/man/man3 \
+INSTALLBIN=%p/bin \
+INSTALLSITEBIN=%p/bin \
+INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 						<p>
-							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは
+							(例えば <code>$version</code> は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <pre>perl$version Makefile.PL \
 PERL=perl$version PREFIX=%p \
 INSTALLPRIVLIB=%p/lib/perl5/$version \
-INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
 INSTALLSITELIB=%p/lib/perl5/$version \
-INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
 INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3
+INSTALLMAN3DIR=%p/share/man/man3 \
+INSTALLSITEMAN1DIR=%p/share/man/man1 \
+INSTALLSITEMAN3DIR=%p/share/man/man3 \
+INSTALLBIN=%p/bin \
+INSTALLSITEBIN=%p/bin \
+INSTALLSCRIPT=%p/bin
 make
 make test</pre>
+<p>
+ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり、
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+</p>
 						<p>
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
 						</p>
@@ -717,17 +732,34 @@ INSTALLARCHLIB=%i/lib/perl5/darwin \
 INSTALLSITELIB=%i/lib/perl5 \
 INSTALLSITEARCH=%i/lib/perl5/darwin \
 INSTALLMAN1DIR=%i/share/man/man1 \
-INSTALLMAN3DIR=%i/share/man/man3</pre>
+INSTALLMAN3DIR=%i/share/man/man3 \
+INSTALLSITEMAN1DIR=%i/share/man/man1 \
+INSTALLSITEMAN3DIR=%i/share/man/man3 \
+INSTALLBIN=%i/bin \
+INSTALLSITEBIN=%i/bin \
+INSTALLSCRIPT=%i/bin
+</pre>
 						<p>
-							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは 
+							(例えば <code>$version</code> は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
-INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
 INSTALLSITELIB=%i/lib/perl5/$version \
-INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
 INSTALLMAN1DIR=%i/share/man/man1 \
-INSTALLMAN3DIR=%i/share/man/man3</pre>
+INSTALLMAN3DIR=%i/share/man/man3 \
+INSTALLSITEMAN1DIR=%i/share/man/man1 \
+INSTALLSITEMAN3DIR=%i/share/man/man3 \
+INSTALLBIN=%i/bin \
+INSTALLSITEBIN=%i/bin \
+INSTALLSCRIPT=%i/bin
+</pre>
+<p>
+ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり、
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+</p>
 						<p>
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
