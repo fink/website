@@ -1,13 +1,13 @@
 <?
-$title = "ポーティング - 共有コード";
+$title = "移植 - 共有コード";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2005/03/16 18:01:45';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="libtool.php?phpLang=ja" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=ja" title="基本">';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="libtool.php?phpLang=ja" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=ja" title="基本">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>ポーティング - 2. 共有コード</h1>
+<h1>移植 - 2. 共有コード</h1>
     
     
     <h2><a name="lib-and-mod">2.1 共有ライブラリ vs ローダブル・モジュール</a></h2>

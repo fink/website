@@ -1,13 +1,13 @@
 <?
-$title = "ポーティング - libtool";
+$title = "移植 - libtool";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2005/03/16 18:01:45';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>ポーティング - 3. GNU libtool</h1>
+<h1>移植 - 3. GNU libtool</h1>
     
     
     
@@ -68,6 +68,8 @@ Fink チームのメンバーはこれからも改良を続け， libtool メン
       <p>
 注記:
 全てのバージョンの libtool に関して，付属の libltdl ライブラリは dlcompat がインストールされている場合に限り Darwin 上で動作します．
+10.3以降の OSX には付属されています．
+これ以前のバージョンでは，"dlcompat" 関連のパッケージをインストールします．
 </p>
     
     <h2><a name="patch-135">3.2 1.3.5 パッチ</a></h2>
@@ -169,72 +171,7 @@ DESTDIR を設定し， libtool 1.4.2 を使用するパッケージのなかで
 <p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</a></p><p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</a></p><p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</a>,</p><p>パッチに関する議論は:</p><p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</a>.</p></li>
       </ol>
     
-    <h2><a name="dylibversionfix">3.4 libtool により生成された dylibs のバージョン番号を修正</a></h2>
-      
-      <p>libtool により生成されたライブラリは，バージョン番号が間違っている場合があります．
-これは，パッケージの Makefile のフラグが間違っているためです．
-Makefile 中で libtool がこのように呼び出されている場合:
-<code>
--release "version"
-</code>
-make 後の結果のバイナリは:
-</p>
-      <ol>
-        <li> libname.dylib</li>
-        <li> libname-"version".dylib</li>
-      </ol>
-      <p>
-となります．
-<code>-release</code> が Makefile で使用されているかどうかは直ぐにわかります．
-ライブラリ名の直後に <b>-</b> があることに気づくことがあります．
-これは， libtool が <code>-release</code> 付きでバイナリ生成するために呼ばれたことを示します．
-また，ライブラリはこのようになる場合もあります:
-</p>
-      <ol>
-        <li>libname.dylib</li>
-        <li>libname-"version".x.x.x.dylib</li>
-      </ol>
-      <p>
-これは，<code>-release</code> と <code>-version-info</code> の両フラグを使用したことを示しています．
-</p>
-      <p><code>-version-info</code> を正しく設定するのは複雑です．
-Apple の提供する Developer Tools の文書には素晴らしい情報があります．
-Fink を使用している以上，あなたも Developer Tools をインストールをしているでしょう．
-Mac OS X システムでの libtool のリンクに関する<a href="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34">文書</a>はここです．
-この文書は完全版ですが，下記に簡略に記します．
-</p>
-      <p>
-developer 文書より引用（訳は Fink Support, Translation and Documentation Team チーム）:
-libtool ライブラリバージョンは ３つの整数値で記述されている:
-</p>
-      <ul>
-        <li>
-          <b>current</b>
-          <p>
-当該ライブラリが実現している最新のインターフェイス番号
-</p>
-        </li>
-        <li>
-          <b>revision</b>
-          <p>
- 現在のインターフェイスの実現番号
-</p>
-        </li>
-        <li>
-          <b>age</b>
-          <p>
-当該ライブラリの実現した最も新しいインターフェイスと最も古いものの期間．
-あるいは，当該ライブラリが current - age から current までの期間のインターフェイス番号を実現していることを示す．
-二つのライブラリが，同一の current と age 番号を持つ場合，リンカは revision 番号が大きい方を選びます．
-</p>
-        </li>
-      </ul>
-      <p>
-libtool によるライブラリのバージョン番号の設定・更新の情報は，上記リンクに詳細があります．
-<code>-version-info</code> を通して，新しい番号をつくったり，現在のバージョン番号を更新する方法は詳しく書かれています．
-</p>
-    
-    <h2><a name="notes">3.5 さらなる注記</a></h2>
+    <h2><a name="notes">3.4 さらなる注記</a></h2>
       
       <p>libtool 自体と，libtool が何をするかについての詳細は <a href="http://www.gnu.org/software/libtool/libtool.html">libtool ホームページ</a>を参照．</p>
       <p>

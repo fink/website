@@ -1,13 +1,13 @@
 <?
-$title = "ポーティング - 基本";
+$title = "移植 - 基本";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2005/03/16 18:01:45';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="shared.php?phpLang=ja" title="共有コード"><link rel="prev" href="index.php?phpLang=ja" title="ポーティング Contents">';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="shared.php?phpLang=ja" title="共有コード"><link rel="prev" href="index.php?phpLang=ja" title="移植 Contents">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>ポーティング - 1. 基本</h1>
+<h1>移植 - 1. 基本</h1>
     
     
     <h2><a name="heritage">1.1 Darwin はどこから来たのか</a></h2>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 <document filename="index" lang="ja">
-  <title>Unix ソフトウェの Darwin と Mac OS X へのポーティング</title>
-  <shorttitle>ポーティング</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.3 2005/03/16 18:01:45 dmacks Exp $</cvsid>
+  <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
+  <shorttitle>移植</shorttitle>
+  <cvsid>$Id: porting.ja.xml,v 1.4 2005/03/25 22:25:29 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
-		ここでの情報は， Mac OS X バージョン 10.0.0 と Darwin 1.3.x に適用されます．
+		ここでの情報の多くは， Mac OS X バージョン 10.0.0 と Darwin 1.3.x に適用されます．
 		どちらも Mac OS X は Darwin のスーパーセットなので，両者を Darwin という言葉で示します．
 		</p>
   </preface>
@@ -276,6 +276,8 @@ Fink チームのメンバーはこれからも改良を続け， libtool メン
       <p>
 注記:
 全てのバージョンの libtool に関して，付属の libltdl ライブラリは dlcompat がインストールされている場合に限り Darwin 上で動作します．
+10.3以降の OSX には付属されています．
+これ以前のバージョンでは，&quot;dlcompat&quot; 関連のパッケージをインストールします．
 </p>
     </section>
     <section name="patch-135">
@@ -376,71 +378,6 @@ DESTDIR を設定し， libtool 1.4.2 を使用するパッケージのなかで
 この問題は，以下のメールで議論されました:
 <p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link></p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,</p><p>パッチに関する議論は:</p><p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.</p></li>
       </ol>
-    </section>
-    <section name="dylibversionfix">
-      <title>libtool により生成された dylibs のバージョン番号を修正</title>
-      <p>libtool により生成されたライブラリは，バージョン番号が間違っている場合があります．
-これは，パッケージの Makefile のフラグが間違っているためです．
-Makefile 中で libtool がこのように呼び出されている場合:
-<code>
--release "version"
-</code>
-make 後の結果のバイナリは:
-</p>
-      <ol>
-        <li> libname.dylib</li>
-        <li> libname-"version".dylib</li>
-      </ol>
-      <p>
-となります．
-<code>-release</code> が Makefile で使用されているかどうかは直ぐにわかります．
-ライブラリ名の直後に <em>-</em> があることに気づくことがあります．
-これは， libtool が <code>-release</code> 付きでバイナリ生成するために呼ばれたことを示します．
-また，ライブラリはこのようになる場合もあります:
-</p>
-      <ol>
-        <li>libname.dylib</li>
-        <li>libname-"version".x.x.x.dylib</li>
-      </ol>
-      <p>
-これは，<code>-release</code> と <code>-version-info</code> の両フラグを使用したことを示しています．
-</p>
-      <p><code>-version-info</code> を正しく設定するのは複雑です．
-Apple の提供する Developer Tools の文書には素晴らしい情報があります．
-Fink を使用している以上，あなたも Developer Tools をインストールをしているでしょう．
-Mac OS X システムでの libtool のリンクに関する<link url="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34">文書</link>はここです．
-この文書は完全版ですが，下記に簡略に記します．
-</p>
-      <p>
-developer 文書より引用（訳は Fink Support, Translation and Documentation Team チーム）:
-<tt>libtool ライブラリバージョンは ３つの整数値で記述されている:</tt>
-</p>
-      <ul>
-        <li>
-          <em>current</em>
-          <p>
-当該ライブラリが実現している最新のインターフェイス番号
-</p>
-        </li>
-        <li>
-          <em>revision</em>
-          <p>
- 現在のインターフェイスの実現番号
-</p>
-        </li>
-        <li>
-          <em>age</em>
-          <p>
-当該ライブラリの実現した最も新しいインターフェイスと最も古いものの期間．
-あるいは，当該ライブラリが current - age から current までの期間のインターフェイス番号を実現していることを示す．
-二つのライブラリが，同一の current と age 番号を持つ場合，リンカは revision 番号が大きい方を選びます．
-</p>
-        </li>
-      </ul>
-      <p>
-libtool によるライブラリのバージョン番号の設定・更新の情報は，上記リンクに詳細があります．
-<code>-version-info</code> を通して，新しい番号をつくったり，現在のバージョン番号を更新する方法は詳しく書かれています．
-</p>
     </section>
     <section name="notes">
       <title>さらなる注記</title>
@@ -545,11 +482,99 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
 </p>
     </section>
   </chapter>
-  <chapter filename="preparing-10.3">
-    <title>10.3 に向けて</title>
-    <shorttitle>10.3 に向けて</shorttitle>
-    <section name="perl">
-      <title>Perl</title>
-    </section>
-  </chapter>
+<chapter filename="preparing-10.3">
+<title>10.3 に向けて</title>
+<shorttitle>10.3 に向けて</shorttitle>
+
+<section name="perl"><title>Perl</title>
+
+  <p>
+    OS X 10.2 では， <filename>/usr/bin/perl</filename> は perl 5.6.0 であり， architecture 文字列は &quot;darwin&quot; でした．
+  	OS X 10.3 では， <filename>/usr/bin/perl</filename> は perl 5.8.1 にアップグレードされ， architecture 文字列が &quot;darwin-thread-multi-2level&quot; に変更されました．
+  	この変更は， それぞれの perl 実行ファイルはモジュールを探す場所を知っているので，パッケージ作成時に perl 実行ファイルを使用する分には<em>おそらく</em>影響がないでしょう．
+  	perl モジュール (&quot;-pm&quot;) パッケージのメンテナは，<link
+    url="http://fink.sourceforge.net/packaging/policy.php#perlmods">Perl
+    モジュールのパッケージ化ポリシー</link>に従い，<code>CompileScript</code> と <code>InstallScript</code>
+    が適切に作成されるようにしてください。
+  </p>
+
+</section>
+
+<section name="typedef"><title>新しいシンボル定義</title>
+
+  <p>
+    Mac OS X 10.3 より，常に <code>socklen_t</code> タイプの完全な定義があります．
+    この typpedef 定義を知るには，プログラムに以下を追加する必要があるかもしれません:
+  </p>
+  <codeblock>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+  </codeblock>
+
+</section>
+
+<section name="system-libs"><title>新しいシステムのライブラリ</title>
+
+  <p>
+    Mac OS X 10.3 には，これまでのシステムでは提供していないために fink パッケージとして提供していたものがあります:
+  </p>
+
+  <itemtable>
+    <item>
+      <itemt>libpoll</itemt>
+      <itemd>
+	<p>
+	  <filename>/usr/lib/libpoll.dylib</filename> と <filename>/usr/include/poll.h</filename> 
+	  というファイルが含まれています．しかし，OS X によるライブラリは不完全です．
+	  もしこれで十分であれば， Fink &quot;libpoll&quot; への依存性を削除することもできます．
+	  ライブラリのコードは，実際は libSystem に統合されているため，自動的にリンクされます．
+	  つまり， OS X のものを使用する際には <code>-lpoll</code> も不要となります．
+	  OS X は <filename>libpoll.dylib</filename> も提供しているため， <code>-lpoll</code> をすると
+	  Fink &quot;libpoll&quot; パッケージがインストールされているかいないかで結果が変わることには注意をしてください．
+	</p>
+      </itemd>
+    </item>
+    <item>
+      <itemt>libdl</itemt>
+      <itemd>
+	<p>
+	  <filename>/usr/lib/libdl.dylib</filename> と <filename>/usr/include/dlfcn.h</filename>
+	  というファイルが含まれています．このため，Fink の &quot;dlcompat&quot;,
+	  &quot;dlcompat-dev&quot;, &quot;dlcompat-shlibs&quot; パッケージは不要となります．
+	  ライブラリのコードは，実際は libSystem に統合されているため，自動的にリンクされます．
+	  つまり， OS X のものを使用する際には <code>-ldl</code> も不要となります (あっても影響はありません)．
+	</p>
+      </itemd>
+    </item>
+    <item>
+      <itemt>GNU getopt</itemt>
+      <itemd>
+	<p>
+	  このライブラリは， <code>getopt_long()</code> 関数を含めて， libSystem と
+	  <filename>/usr/include/getopt.h</filename> に統合されました．
+	  このため， Fink の&quot;libgnugetopt&quot; と &quot;libgnugetopt-shlibs&quot; 
+	  を使用する必要はありません．
+	  libSystem は自動的にリンクされ， <filename>/usr/include</filename> 
+	  も自動的に検索されるため， Fink の &quot;libgnugetopt&quot; へアクセスするために手動で追加していた
+	  <code>-lgnugetopt</code> と <code>-I/sw/include/gnugetopt</code> を削除することができます．
+	</p>
+      </itemd>
+    </item>
+  </itemtable>
+
+  <p>
+    OS X 10.3 へパッケージを投入する際には，これらのパッケージは将来的に削除されるので，上述の不要となった依存性を削除してください．
+    このため，それぞれのツリー用に別々のパッケージ記述ファイルを用意する必要があります．
+    <code>Revision</code> は通常通りあげる必要があります．
+    この方法で，OS X 10.2 から 10.3 へアップグレードするユーザーは，10.2 用のパッケージより 10.3 用のパッケージの方が&quot;より新しい&quot;と認識することができます．
+    低い方のツリーでの変更があるかもしれないので，その時にリビジョンをあげられるよう <code>Revision</code> は 10 あげてください．
+  </p>
+
+  <p>
+    10.3 へ統合されるパッケージをテストする際は， <code>BuildDepends</code> から削除したパッケージをアンインストールしてください．
+    そうでないと Fink が提供するライブラリにリンクする可能性があります．
+  </p>
+
+</section>
+</chapter>
 </document>

@@ -1,13 +1,13 @@
 <?
-$title = "ポーティング - 10.2 に向けて";
+$title = "移植 - 10.2 に向けて";
 $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2005/03/16 18:01:45';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ポーティング Contents"><link rel="next" href="preparing-10.3.php?phpLang=ja" title="10.3 に向けて"><link rel="prev" href="libtool.php?phpLang=ja" title="GNU libtool">';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.3.php?phpLang=ja" title="10.3 に向けて"><link rel="prev" href="libtool.php?phpLang=ja" title="GNU libtool">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>ポーティング - 4. 10.2 に向けて</h1>
+<h1>移植 - 4. 10.2 に向けて</h1>
     
     
     <h2><a name="bash">4.1 bash シェル</a></h2>
