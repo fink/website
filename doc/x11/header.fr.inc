@@ -10,8 +10,8 @@ $navbox = array(
   "doc/x11/inst-xfree86.php?phpLang=fr", "Installation de XFree86",
   "doc/x11/run-xfree86.php?phpLang=fr", "Lancement de XFree86",
   "doc/x11/xtools.php?phpLang=fr", "Xtools",
-  "doc/x11/other.php?phpLang=fr", "Other Stuff",
-  "doc/x11/trouble.php?phpLang=fr", "Troubleshooting",
+  "doc/x11/other.php?phpLang=fr", "Autres X11",
+  "doc/x11/trouble.php?phpLang=fr", "Résolution de problèmes",
   "doc/x11/tips.php?phpLang=fr", "Tips",
 );
 $printlink = "doc/x11/x11.fr.html";

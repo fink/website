@@ -1,154 +1,84 @@
 <?
-$title = "Utilisation de X11 - Troubleshooting";
+$title = "Utilisation de X11 - Résolution de problèmes";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 22:05:21';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Usage Tips"><link rel="prev" href="other.php?phpLang=fr" title="Other X11 Possibilities">';
+$cvs_date = 'Date: 2004/05/09 11:05:39';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Usage Tips"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
 
 include_once "header.inc";
 ?>
 
-<h1>Utilisation de X11 - 7 Troubleshooting XFree86</h1>
+<h1>Utilisation de X11 - 7 Résolution de problèmes engendrés par XFree86</h1>
     
     
-    <h2><a name="immedate-quit">7.1 When I launch XDarwin, it quits
-or crashes almost immediately</a></h2>
+    <h2><a name="immedate-quit">7.1 Après lancement, XDarwin se termine ou se plante quasi immédiatement</a></h2>
       
       <p>
-First of all: Don't Panic!
-There are lots of things than can go wrong with XFree86, and a good
-number of them can cause startup failures.
-Further, it is not unusual that XDarwin crashes when it experiences
-startup problems.
-This section tries to provide a comprehensive list of problems you may
-come across.
-But first, you need to gather two important pieces of information:
+Tout d'abord : pas de panique ! Il existe un grand nombre de choses qui peuvent ne pas fonctionner correctement avec XFree86 ; et un bon nombre d'entre elles peuvent causer des problèmes de démarrage. De plus, quand XDarwin rencontre des problèmes au démarrage, il est fréquent qu'il se plante. Cette section tente de fournir une liste exhaustive des problèmes que vous pouvez rencontrer. Mais, tout d'abord, vous devez collecter deux informations importantes.
 </p>
       <p>
-        <b>XDarwin version.</b>
-You can find the XDarwin version in the Finder by clicking
-<b>once</b> on the XDarwin icon and then selecting "Show Info"
-from the menu.
-The version is only incremented when a new binary test release is made
-by the XonX project, so "1.0a1" may actually be any version between
-1.0a1 and 1.0a2.
+        <b>Version de X.</b>
+Vous obtiendrez la version de XDarwin en cliquant <b>une seule fois</b> sur l'icône de XDarwin dans le Finder, puis en choisissant "Lire les informations" à partir du menu (raccourci Cmd-I). Le numéro de version n'est incrémenté que lorsqu'une nouvelle version de test binaire est produite par le projet XonX ; autrement dit, "1.0a1" correspond à n'importe quelle version entre 1.0a1 et 1.0a2.
 </p>
       <p>
-        <b>Error messages.</b>
-These are essential in pinpointing the particular problem you
-experience.
-How you get the error messages depends on how you started XDarwin.
-If you ran <code>startx</code> from a Terminal window, you'll have the
-messages right there in that window.
-Remember that you can scroll up.
-If you started XDarwin by double-clicking the icon, the messages end
-up in the system log, which you can access through the Console
-application in the Utilities folder.
-Be sure to pick the right set of messages, i.e. the last one.
+        <b>Messages d'erreur.</b>
+Ils sont essentiels à la compréhension du problème auquel vous êtes confronté. Leur emplacement dépend de la façon dont vous avez lancé XDarwin. Si vous avez lancé <code>startx</code> dans une fenêtre de Terminal, les messages apparaissent directement dans cette fenêtre. Vous pouvez utiliser les barres de défilement. Si vous avez lancé XDarwin en double-cliquant sur son icône, les messages apparaissent dans les logs système, auxquels vous avez accès via l'application Console, située dans le répertoire Utilities (situé dans le répertoire Applications). Assurez-vous que vous récupérez les bons messages, c'est-à-dire les derniers.
 </p>
       <p>
-We'll start with a list of the messages you may see:
+Commençons par une liste des messages possibles :
 </p>
       <pre>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</pre>
       <pre>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</pre>
       <p>
-Class: Harmless.
-X11 creates hidden directories in /tmp to store the socket "files" for
-local connections.
-For security reasons, X11 prefers if these directories are owned by
-root, but since they are world-writable anyway it will still run
-without any problems.
-(Note: It's quite hard to have these dirs owned by root, as Mac OS X
-wipes out /tmp on reboots and XDarwin doesn't run with root privileges
-and doesn't need to.)
+Sévérité : inoffensif.
+X11 crée des répertoires cachés dans /tmp pour stocker les "fichiers"  socket utilisés pour les connexions locales. Pour des raisons de sécurité, X11 s'attend à ce que le possesseur de ces répertoires soit le super-utilisateur ; mais, comme ils sont accessibles en écriture par tout utilisateur, X11 fonctionne sans problèmes. (Note : il est très difficile de définir le super-utilisateur comme possesseur de ces répertoires, car Mac OS X vide /tmp lors du redémarrage et XDarwin ne fonctionne pas, en temps normal, - et n'a pas besoin de fonctionner - avec les privilèges de super-utilisateur.)
 </p>
       <pre>QuartzAudioInit: AddIOProc returned 1852797029</pre>
       <pre>-[NSCFArray objectAtIndex:]: index (2) beyond bounds (2)</pre>
       <pre>kCGErrorIllegalArgument : CGSGetDisplayBounds (display 35434400)</pre>
       <pre>No core keyboard</pre>
       <p>
-Class: Bogus.
-These are follow-up errors that result when the server tries to reset
-itself after a previous error.
-During that, another copy of the startup banner is printed, followed
-by one or more of the above messages because resetting the server
-doesn't really work in the affected versions of XDarwin.
-So when you see messages like these, scroll up in the Terminal
-resp. Console window and look for another set of banner and messages.
-This affects all versions up to and including XDarwin 1.0a3; it was
-fixed after 1.0a3 was released.
+Sévérité : bogue.
+Ce sont des erreurs qui apparaissent quand le serveur tente de se rétablir après une erreur précédente. Durant ce processus, une nouvelle copie de la bannière de démarrage est imprimée, suivie d'un ou plusieurs messages semblables à ceux indiqués ci-dessus, car la procédure de rétablissement du serveur ne fonctionne pas correctement dans certaines versions de XDarwin. Quand vous voyez apparaître ce type de messages, utilisez les barres de défilement dans la fenêtre de Terminal ou dans la fenêtre de Console pour rechercher plus haut une autre bannière de démarrage suivie d'autres messages. Ce bogue affecte toutes les versions de XDarwin jusqu'à la version 1.0a3 ; il a été résolu après la publication de la version 1.0a3.
 </p>
       <pre>cat: /Users/chrisp/.Xauthority: No such file or directory</pre>
       <p>
-Class: Mostly harmless.
-It is unknown where these messages come from and they seem to have no
-impact on operations.
-You can get rid of them by running <code>touch .Xauthority</code> in
-your home directory.
+Sévérité : quasi inoffensif.
+On ne sait pas d'où viennent ces messages et ils semblent n'avoir aucune incidence sur le déroulement des opérations. Vous pouvez les éliminer en exécutant <code>touch .Xauthority</code> dans votre répertoire utilisateur.
 </p>
       <pre>Gdk-WARNING **: locale not supported by C library</pre>
       <p>
-Class: Harmless.
-This just means what it says and won't keep the application from
-working.
-For more information, <a href="#locale">see below</a>.
+Sévérité : inoffensif.
+Cela signifie que la librairie C ne gère pas votre locale, mais cela n'empêche pas l'application de fonctionner. Pour de plus amples informations, <a href="#locale">voir ci-dessous</a>.
 </p>
       <pre>Gdk-WARNING **: locale not supported by Xlib, locale set to C
 Gdk-WARNING **: can not set locale modifiers</pre>
       <p>
-Class: Bad, but not fatal.
-These messages may appear in addition to the one above.
-This indicates that XFree86's locale data files are not present.
-It appears that this happens unreproducibly when building Free86 from
-source.
-Most applications will still work, GNU Emacs is a notable exception.
+Sévérité : pas bon, mais non fatal.
+Ces messages peuvent apparaître à la suite du précédent. Ceci signifie que les fichiers de données locale de XFree86 n'existent pas sur votre système. Il semble que le message apparaisse de façon erratique quand on compile XFree86 à partir du source. La plupart des applications fonctionnent, mais GNU Emacs fait partie des exceptions.
 </p>
       <pre>Unable to open keymapping file USA.keymapping.
 Reverting to kernel keymapping.</pre>
       <p>
-Class: Often fatal.
-This can happen with XDarwin 1.0a1, with the "Load from file"
-keymapping option enabled.
-That version needs a full path when the file to load is set via the
-Preferences dialog, but searches automatically when it is passed on
-the command line.
-The message will usually be followed by the "assert" message shown
-below.
-To fix this, follow the directions below.
+Sévérité : souvent fatal.
+Ceci peut se produire avec XDarwin 1.0a1, quand l'option "Load from file" est activée. Cette version requiert un chemin complet quand le fichier de mappage clavier est chargé via le dialogue de Préférences, mais exécute une recherche automatique quand l'option "-keymap" est utilisée en ligne de commande. Ce message est généralement suivi du message "assert" suivant. Pour résoudre le problème, suivez les instructions ci-dessous.
 </p>
       <pre>Fatal server error:
 assert failed on line 454 of darwinKeyboard.c!</pre>
       <pre>Fatal server error:
 Could not get kernel keymapping! Load keymapping from file instead.</pre>
       <p>
-Class: Fatal.
-Changes Apple made in Mac OS X 10.1 broke the code in XFree86 that
-reads the keyboard layout from the operating system kernel;
-the message above is the result of that.
-You must use the "Load from file" keymapping option on Mac OS X 10.1.
-The setting is in the XDarwin Preferences dialog.
-Be sure that a file is selected (i.e. use the "Pick file" button) -
-simply activating the check box may not be sufficient with some
-versions of XDarwin.
-If you can't get to the Preferences dialog because XDarwin closes
-before you get a chance, run it from Terminal with the command
-<code>startx -- -quartz -keymap USA.keymapping</code>.
-This usually allows XDarwin to start up, and you can then make the
-permanent choice in the Preferences dialog.
+Sévérité : fatal.
+Les modifications qu'Apple a fait dans Mac OS X 10.1 ont entraîné des répercutions sur le fonctionnement de XFree86. En effet, celui-ci lit normalement les symboles clavier à partir du noyau du système opératoire. Le message ci-dessus en est la conséquence. Vous devez utiliser l'option de mappage de clavier "Load from file" sur Mac OS X 10.1. Cette option est accessible à partir du dialogue de Préférences de XDarwin. N'oubliez pas de choisir un fichier (c'est-à-dire utilisez le bouton "Pick file"). Cocher la case peut s'avérer insuffisant avec certaines versions de XDarwin. Si vous ne pouvez pas accéder au dialogue de Préférences, parce que XDarwin quitte avant que vous puissiez y accéder, exécutez 
+<code>startx -- -quartz -keymap USA.keymapping</code> dans une fenêtre de Terminal. Ceci permet, en général, de lancer XDarwin ; il vous suffit ensuite d'aller dans le dialogue de Préférences et d'y activer le mappage du clavier pour que ce choix devienne permanent.
 </p>
       <pre>Fatal server error:
 Could not find keymapping file .</pre>
-      <p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, since these versions don't need the keymapping files.</p>
+      <p>Sévérité : fatal (comme indiqué). Cette erreur est due à l'absence de fichiers de mappage clavier sous Panther. Vous devez installer <code>xfree86-4.3.99-16</code> ou une version postérieure, car ces versions ne nécessitent pas de fichiers de mappage clavier.</p>
       <pre>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</pre>
       <p>
-Class: Mostly harmless.
-XDarwin 1.0a2 and later launch an interactive shell behind the scenes
-to run your client startup file (.xinitrc).
-This was done so that you don't have to add statements to set up PATH
-in that file.
-Some shells complain that they're not connected to a real terminal,
-but that can be ignored since that shell instance is not used for
-anything that requires job control or the like.
+Sévérité : quasi inoffensif.
+XDarwin 1.0a2 et les versions suivantes lancent un shell interactif en arrière-plan pour exécuter le fichier de démarrage client (.xinitrc). Ceci afin que vous n'ayez pas besoin d'ajouter des commandes de définition de votre PATH dans ce fichier. Certains shells signalent qu'ils ne sont pas connectés à un vrai terminal ; ce message peut être ignoré, car cette instance de shell n'est pas utilisée pour exécuter quoi que ce soit qui requière un contrôle de tâches ou quelque chose de similaire.
 </p>
       <pre>Fatal server error:
 failed to connect as window server!</pre>

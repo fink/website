@@ -1,8 +1,8 @@
 <?
 $title = "Utilisation de X11 - Xtools";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 22:05:21';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="other.php?phpLang=fr" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86">';
+$cvs_date = 'Date: 2004/05/09 11:05:39';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="other.php?phpLang=fr" title="Autres possibilités pour X11"><link rel="prev" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86">';
 
 include_once "header.inc";
 ?>
@@ -32,6 +32,6 @@ Xtools utilise l'accelération matériel OpenGL en mode sans racine et fournit l
 </p>
     
   <p align="right">
-Next: <a href="other.php?phpLang=fr">6 Other X11 Possibilities</a></p>
+Next: <a href="other.php?phpLang=fr">6 Autres possibilités pour X11</a></p>
 
 <? include_once "footer.inc"; ?>

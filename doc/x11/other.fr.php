@@ -1,48 +1,34 @@
 <?
-$title = "Utilisation de X11 - Other Stuff";
+$title = "Utilisation de X11 - Autres X11";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 22:05:21';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="trouble.php?phpLang=fr" title="Troubleshooting XFree86"><link rel="prev" href="xtools.php?phpLang=fr" title="Xtools">';
+$cvs_date = 'Date: 2004/05/09 11:05:39';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="trouble.php?phpLang=fr" title="Résolution de problèmes engendrés par XFree86"><link rel="prev" href="xtools.php?phpLang=fr" title="Xtools">';
 
 include_once "header.inc";
 ?>
 
-<h1>Utilisation de X11 - 6 Other X11 Possibilities</h1>
+<h1>Utilisation de X11 - 6 Autres possibilités pour X11</h1>
     
     
     <h2><a name="vnc">6.1 VNC</a></h2>
       
       <p>
-VNC is a network-capable graphics display system similar in design to
-X11.
-However, it works at a lower level, making implementation easier.
-With the Xvnc server and a Mac OS X display client, it is possible to
-run X11 applications with Mac OS X.
-Jeff Whitaker's <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc page</a> has
-more information on that.
+VNC est un système d'affichage graphique en réseau d'architecture semblable à celle de X11. Néanmoins, il fonctionne à un niveau plus bas, rendant son implémentation plus facile. Avec le serveur Xvnc et un client d'affichage Mac OS X, on peut exécuter des applications X11 sous Mac OS X. La <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">page Xvnc</a> de Jeff Whitaker vous fournira de plus amples informations à ce sujet.
 </p>
     
     <h2><a name="wiredx">6.2 WiredX</a></h2>
       
       <p>
-        <a href="http://www.jcraft.com/wiredx/">WiredX</a> is an X11
-server written in Java.
-It also supports rootless mode.
-An Installer.app package is available at the web site.
+        <a href="http://www.jcraft.com/wiredx/">WiredX</a> est un serveur X11 écrit en Java. Il gère aussi le mode sans racine. Un paquet d'installation Installer.app est disponible sur son site web.
 </p>
     
     <h2><a name="exodus">6.3 eXodus</a></h2>
       
       <p>
-According to the website, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> by Powerlan
-USA runs natively on Mac OS X.
-It is unknown what codebase it uses and whether/how it supports local
-clients.
-Because of this, there is no special support for eXodus in Fink.
-If you have more info, please throw it our way.
+D'après son site web, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> de Powerlan USA fonctionne en natif sur Mac OS X. On ne sait pas sur quel code il se base, ni s'il gère les clients locaux, ni comment il les gère. En conséquence, Fink ne peut fournir un support adapté à eXodus. Si vous avez de plus amples informations à ce sujet, n'hésitez pas à nous le faire savoir.
 </p>
     
   <p align="right">
-Next: <a href="trouble.php?phpLang=fr">7 Troubleshooting XFree86</a></p>
+Next: <a href="trouble.php?phpLang=fr">7 Résolution de problèmes engendrés par XFree86</a></p>
 
 <? include_once "footer.inc"; ?>
