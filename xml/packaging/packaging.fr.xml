@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.35 2004/07/15 04:50:17 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.36 2004/07/18 15:52:28 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -235,7 +235,7 @@ préfixe d'<em>I</em>nstallation du paquet parent, équivalent à %D%P (identiqu
 <item><itemt>%a</itemt>
 <itemd>
 <p>
-chemin des rustines
+chemin des rustines. Ce raccourci ne doit être utilisé que dans le champ <code>PatchScript</code>.
 </p>
 </itemd></item>
 
