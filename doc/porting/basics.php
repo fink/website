@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Porting - Basics";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/03/31 18:59:54';
+$cvs_date = 'Date: 2002/04/13 21:14:21';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 

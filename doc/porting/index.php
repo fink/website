@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Porting";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/03/31 18:59:54';
+$cvs_date = 'Date: 2002/04/13 21:14:21';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="basics.php" title="Basics">';
 
@@ -41,7 +40,7 @@ a superset of Darwin.
 <li><a href="libtool.php#fixing-14x">3.3 Fixing 1.4.x</a></li>
 <li><a href="libtool.php#notes">3.4 Further Notes</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: porting.xml,v 1.6 2002/03/31 18:59:54 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: porting.xml,v 1.7 2002/04/13 21:14:21 fingolfin Exp $</i></p>
 
 
 <?

@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/04/03 15:05:21';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 22:10:56';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -58,7 +57,7 @@ mailing list.
 <li><a href="reference.php#scripts">5.4 Scripts</a></li>
 <li><a href="reference.php#patches">5.5 Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.24 2002/04/03 15:05:21 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.26 2002/04/13 22:10:56 fingolfin Exp $</i></p>
 
 
 <?

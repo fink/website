@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/11/04 18:55:08';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 21:14:22';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 

@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging - Intro";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/04/03 15:05:21';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 22:10:56';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="format.php" title="Package Descriptions"><link rel="prev" href="index.php" title="Packaging Contents">';
 

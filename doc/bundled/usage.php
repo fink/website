@@ -1,15 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Usage";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/24 20:32:57';
+$cvs_date = 'Date: 2002/04/13 21:14:22';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.10 2002/01/24 20:32:57 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
+<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.11 2002/04/13 21:14:22 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable

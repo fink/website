@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/11/04 18:55:08';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 21:14:22';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -57,7 +56,7 @@ apt-get</a></li>
 <li><a href="upgrade.php#src">4.2 Upgrading the Source Distribution</a></li>
 <li><a href="upgrade.php#mix">4.3 Mixing Binaries and Source</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.9 2001/11/04 18:55:08 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.10 2002/04/13 21:14:22 fingolfin Exp $</i></p>
 
 
 <?

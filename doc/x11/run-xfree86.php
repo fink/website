@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Starting XFree86";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/31 16:05:18';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 22:10:56';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 

@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: finlayd';
-$cvs_date = 'Date: 2002/03/19 21:08:01';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 21:14:21';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 

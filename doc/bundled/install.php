@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/03/09 13:58:02';
+$cvs_date = 'Date: 2002/04/13 21:14:21';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
@@ -50,7 +49,7 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 </a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.11 2002/03/09 13:58:02 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.12 2002/04/13 21:14:21 fingolfin Exp $</i></p>
 
 
 <?

@@ -1,15 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/09 12:23:09';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/04/13 21:14:20';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.6 2001/10/09 12:23:09 chrisp Exp $</i></p>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.7 2002/04/13 21:14:20 fingolfin Exp $</i></p>
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always

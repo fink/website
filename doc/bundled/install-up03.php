@@ -1,8 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - Upgrade from 0.3";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/03/09 13:58:02';
+$cvs_date = 'Date: 2002/04/13 21:14:21';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
