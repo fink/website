@@ -1,4 +1,4 @@
-$Id: README,v 1.3 2002/04/13 18:39:52 fingolfin Exp $   -*- text -*-
+$Id: README,v 1.4 2002/12/10 16:11:00 dmrrsn Exp $   -*- text -*-
 
  README for XML Documents
 ==========================
@@ -20,6 +20,7 @@ for rendering:
 
 To render the documents, you need xsltproc, available in the "libxslt"
 package in Fink (we used to use Saxon, but xsltproc is much much faster).
+You also need xmllint from the "libxml2" package in Fink.
 You can then use the provided Makefiles to render the documents. There
 are .cvsignore files to keep CVS from complaining about generated files.
 
