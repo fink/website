@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.118 2003/07/14 09:14:22 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.119 2003/07/17 12:23:19 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -905,6 +905,14 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
 </answer>
 </faqentry>
+<faqentry name="toc-out-of-date"><question><p>When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</p></question>
+<answer>
+<p>The output hints at what to do.  The message is usually something like:</p>
+<codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
+<p>What you need to do is run ranlib (as root) on whatever library is causing the problem.  As an example, for the case above, you would run:</p>
+<codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>Compile Problems - Specific Packages</title>
@@ -949,7 +957,7 @@ endif
 </faqentry>
 <faqentry name="change-thread-nothread" >
 <question>
-<p>How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</p>
+<p>How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</p>
 </question>
 <answer>
 <p>If you are running the fink version of XFree86 and you want to switch between the threaded and non-threaded versions of fink, you need to manually remove the old version. This is done at the command-line with the commands:</p>
