@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.12 2004/03/27 09:39:14 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.13 2004/03/31 02:13:19 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -403,40 +403,40 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeb
     </faqentry>
     <faqentry name="cvs-busy">
       <question>
-        <p>When I try to run <quote>fink selfupdate</quote> or "fink
-        selfupdate-cvs", I get the error "<code>Updating using CVS failed.
-        Check the error messages above.</code>"</p>
+        <p>Lors de l'exécution de <quote>fink selfupdate</quote> ou "fink
+        selfupdate-cvs", le message "<code>Updating using CVS failed.
+        Check the error messages above.</code>" apparaît.</p>
       </question>
       <answer>
-        <p>If the message is</p>
+        <p>Si le message est le suivant :</p>
         <codeblock>Can't exec "cvs": No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</codeblock>
-        <p>then you need to install the Developer Tools.</p>
-        <p>If, on the other hand, the last line is</p>
+        <p>alors vous devez installer les Developer Tools.</p>
+        <p>Si, par contre, la dernière ligne est la suivante :</p>
         <codeblock>### execution of su failed, exit code 1</codeblock>
-        <p>you'll need to look further back in the output to see the error. If
-        you see a message that your connection was refused:</p>
+        <p>vous devrez regarder plus haut pour voir l'erreur. Si vous voyez un
+	message précisant que votre connection à été refusée :</p>
         <codeblock>(Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
-        <p>or a message like the following:</p>
+        <p>ou bien un message comme le suivant :</p>
         <codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-        <p>or</p>
+        <p>ou :</p>
         <codeblock>cvs [update aborted]: End of file received from server</codeblock>
-        <p>or</p>
+        <p>ou encore :</p>
         <codeblock>cvs [update aborted]: received broken pipe signal</codeblock>
-        <p>then it's likely that the cvs servers are overloaded and you have
-        to try the update later.</p>
-        <p>Another possibility is that you have some bad permissions in your
-        CVS directories, in which case you get "Permission denied"
-        messages:</p>
+        <p>alors il est possible que le serveur CVS soit surchargé. Il vous
+	faudra réessayer plus tard.</p>
+        <p>Il se peut que les permissions soient mal définies dans
+	votre dossier CVS et que vous n'y ayez pas accès, ce qui génère des
+	messages "Permission denied" :</p>
         <codeblock>cvs update: in directory 10.2/stable/main: 
 cvs update: cannot open CVS/Entries for reading: No such file or directory
 cvs server: Updating 10.2/stable/main 
@@ -445,21 +445,20 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:
 No such file or directory 
 ### execution of su failed, exit code 1 Failed: 
 Updating using CVS failed. Check the error messages above.</codeblock>
-        <p>In this case you need to reset your cvs directories. Use the
-        command:</p>
+        <p>Dans ce cas-là, vous devez remettre à zéro votre répertoire CVS.
+	Utilisez la commande:</p>
         <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
 ; fink selfupdate-cvs</codeblock>
-        <p>If, you don't see either of the above messages, then this almost
-        always means you've modified a file in your /sw/fink/dists tree and
-        now the maintainer has changed it. Look further back in the
-        selfupdate-cvs output for lines that start with "C", like so:</p>
+        <p>Si vous ne voyez aucun des messages ci-dessus, il est très probable
+	que vous ayez modifié un fichier dans l'arborescence /sw/fink/dists et
+	que le mainteneur ait modifié ce fichier. Regardez de nouveau dans le message
+	apparu après selfupdate-cvs les lignes commençant par "C", comme :</p>
         <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info 
 ... (other info and patch files) ... 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-        <p>The "C" means CVS had a conflict in trying to update the latest
-        version.  The fix is to delete any files that show up as starting with "C" in
-        the output of selfupdate-cvs, and try again:</p>
+        <p>La lettre "C" signifie que CVS a rencontré un problème en essayant de
+	mettre à jour la dernière version. La solution consiste à retirer toutes les lignes commençant par "C" dans le message de sortie de selfupdate-cvs, et à essayer de nouveau.</p>
         <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
       </answer>
