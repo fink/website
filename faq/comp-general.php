@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/11 11:23:42';
+$cvs_date = 'Date: 2002/01/12 18:51:10';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -26,7 +26,9 @@ You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
 installed as part of the Developer Tools with a BSD version of make.
 Many packages rely on special features only supported by GNU make.
 Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
-<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>.
+<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>. Furthermore,
+make sure that <tt><nobr>/usr/local/bin/</nobr></tt> does not contain another
+copy of <tt><nobr>make</nobr></tt>.
 </p></div></a>
 
 <a name="head"><div class="question"><p><b>Q4.3: I'm getting a strange usage message

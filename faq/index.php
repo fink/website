@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/11 11:23:42';
+$cvs_date = 'Date: 2002/01/12 18:51:10';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -88,6 +88,8 @@ dbopen and lots of other stuff.</a></li>
 mention ANSI C++.</a></li>
 <li><a href="comp-packages.php#xaw3d">5.4 Xaw3D fails to compile with a
 two-level namespace error.</a></li>
+<li><a href="comp-packages.php#gettext">5.5 gettext compiles fine but then
+installing it fails.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -111,7 +113,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.27 2002/01/11 11:23:42 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.28 2002/01/12 18:51:10 fingolfin Exp $</i></p>
 
 
 <?

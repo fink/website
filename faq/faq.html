@@ -80,6 +80,8 @@ dbopen and lots of other stuff.</a></li>
 mention ANSI C++.</a></li>
 <li><a href="#comp-packages.xaw3d">5.4 Xaw3D fails to compile with a
 two-level namespace error.</a></li>
+<li><a href="#comp-packages.gettext">5.5 gettext compiles fine but then
+installing it fails.</a></li>
 </ul>
 <li><a href="#usage-general"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -452,7 +454,9 @@ You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
 installed as part of the Developer Tools with a BSD version of make.
 Many packages rely on special features only supported by GNU make.
 Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
-<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>.
+<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>. Furthermore,
+make sure that <tt><nobr>/usr/local/bin/</nobr></tt> does not contain another
+copy of <tt><nobr>make</nobr></tt>.
 </p></div></a>
 
 <a name="comp-general.head"><div class="question"><p><b>Q4.3: I'm getting a strange usage message
@@ -520,6 +524,15 @@ system-xfree86 and system-xtools have been fixed to patch the
 configuration files on the fly if necessary.
 They are available in CVS; the binary distribution has also been
 updated with these new packages.
+</p></div></a>
+
+<a name="comp-packages.gettext"><div class="question"><p><b>Q5.5: gettext compiles fine but then
+installing it fails.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This is a known problem which hopefully should be fixed in an upcoming
+Fink release. For now the workaround  is to enter the following commands:
+<pre>fink rebuild gettext
+fink update gettext</pre>
 </p></div></a>
 
 <a name="usage-general"><h2>6 Package Usage Problems - General</h2></a>
@@ -649,4 +662,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.27 2002/01/11 11:23:42 fingolfin Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.28 2002/01/12 18:51:10 fingolfin Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/11 11:23:42';
+$cvs_date = 'Date: 2002/01/12 18:51:10';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -53,6 +53,15 @@ system-xfree86 and system-xtools have been fixed to patch the
 configuration files on the fly if necessary.
 They are available in CVS; the binary distribution has also been
 updated with these new packages.
+</p></div></a>
+
+<a name="gettext"><div class="question"><p><b>Q5.5: gettext compiles fine but then
+installing it fails.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This is a known problem which hopefully should be fixed in an upcoming
+Fink release. For now the workaround  is to enter the following commands:
+<pre>fink rebuild gettext
+fink update gettext</pre>
 </p></div></a>
 
 <p align="right">
