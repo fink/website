@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.6 2001/10/12 20:04:33 chrisp Exp $
+# $Id: Makefile.common,v 1.7 2001/10/28 08:18:26 chrisp Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -12,11 +12,23 @@ PROCESS_WEBSITE = $(basedir)/postprocess.pl
 PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 PROCESS_TEXT = $(basedir)/textify.pl
 
+# selectors
+
+all_targets = $(TARGET)
+install_files = $(filter %.php,$(TARGET))
+
+ifdef WANT_HTML
+all_targets += $(patsubst %.xml,%.html,$(SOURCE))
+install_files += $(patsubst %.xml,%.html,$(SOURCE))
+endif
+
+ifdef WANT_TEXT
+all_targets += $(patsubst %.xml,%.txt,$(SOURCE))
+endif
+
 # basics
 
-all: $(TARGET) \
-     $(patsubst %.xml,%.html,$(SOURCE)) \
-     $(patsubst %.xml,%.txt,$(SOURCE))
+all: $(all_targets)
 
 clean:
 	rm -rf *.php *.html *.txt *.tmp
@@ -53,7 +65,11 @@ force: clean all
 
 # install files inside website
 
-install: $(filter %.php,$(TARGET)) $(patsubst %.xml,%.html,$(SOURCE))
-	cp $(filter %.php,$(TARGET)) $(patsubst %.xml,%.html,$(SOURCE)) $(basedir)/../$(DESTDIR)/
+install: $(install_files)
+ifdef DESTDIR
+	cp $(install_files) $(basedir)/../$(DESTDIR)/
+else
+	@echo "DESTDIR not defined, can't install"
+endif
 
 # eof
