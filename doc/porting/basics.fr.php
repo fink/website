@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Notions de base";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:44';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/03/17 17:09:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="shared.php?phpLang=fr" title="Code partagé"><link rel="prev" href="index.php?phpLang=fr" title="Portage Contents">';
 
 
@@ -11,7 +11,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="heritage">1.1 D'où vient Darwin ?</a></h2>
-<p>Darwin est un système d'exploitation de type Unix qui est issu de NeXTStep/OpenStep. La tradition veut qu'il fut initialement créé à partir de la version 4.4BSD Lite. L'héritage du système BSD est encore apparent, en fait, récemment, Darwin a été modernisé avec du code FreeBSD et NetBSD.</p>
+<p>Darwin est un système d'exploitation de type Unix qui est issu de NeXTStep/OpenStep. La tradition veut qu'il fut initialement créé à partir de la version 4.4BSD Lite. L'héritage du système BSD est encore apparent ; en fait Darwin a été modernisé, récemment, avec du code FreeBSD et NetBSD.</p>
 <p>Le noyau Darwin est construit sur une combinaison de Mach 3.0 et de BSD, ainsi que sur des fonctionnalités propriétaires comme la couche de pilote orientée objet IOKit. Bien que Mach ait, au départ, une structure de micro-noyau, le noyau BSD qui est installé au-dessus est monolithique, et les deux sont si imbriqués maintenant que l'on peut considérer l'ensemble comme un seul noyau monolithique.</p>
 <p>Les outils utilisateur et les librairies fournies avec Darwin sont, pour la plupart, issues de BSD par opposition à ceux de Linux qui sont des outils GNU. Toutefois, Apple n'est pas aussi strict que d'autres systèmes BSD et a fait des compromis utiles. Par exemple, Apple fournit aussi bien make BSD que make GNU, la commande make de GNU étant celle installée par défaut.</p>
 
@@ -24,9 +24,10 @@ include_once "header.fr.inc";
 <h2><a name="host-type">1.3 Le type de la machine hôte</a></h2>
 
 <p>En bref : si configure échoue avec un message d'erreur 'Can't determine host type' - Impossible de déterminer le type d'hôte, copiez config.guess et config.sub, situés dans /usr/share/libtool (/usr/libexec pour des versions antérieures au 10.2), dans le répertoire courant.</p>
-<p>En détail : le monde GNU utilise un format canonique pour spécifier les types de systèmes. Ce format comporte trois parties : le type de la cpu, le fabricant et le système d'exploitation. Parfois, une quatrième partie est ajoutée - dans ce cas la troisième partie indique le noyau, tandis que la quatrième indique l'OS. Toutes les parties sont en minuscules et sont concaténées en utilisant des tirets. Quelques exemples : <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. Le type d'hôte pour Mac OS X 10.0 est <code>powerpc-apple-darwin1.3</code>.</p>
+<p>En détail : le monde GNU utilise un format canonique pour spécifier les types de systèmes. Ce format comporte trois parties : le type de la cpu, le fabricant et le système d'exploitation. Parfois, une quatrième partie est ajoutée - dans ce cas la troisième partie indique le noyau, tandis que la quatrième indique l'OS. Toutes les parties sont en minuscules et sont concaténées en utilisant des tirets. Quelques exemples : <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. Le type d'hôte pour Mac OS X 10.0 est <code>powerpc-apple-darwin1.3</code>. Pour Mac OS X 10.2, le type d'hôte a la forme <code>powerpc-apple-darwin6.x.0</code>, et pour Mac OS X 10.3 la forme <code>powerpc-apple-darwin7.x.0</code>, où "x" dépend de la version exacte du système opératoire.</p>
 <p>De nombreux paquets utilisant autoconf doivent connaître le type d'hôte du système sur lesquels ils sont compilés. (Note subsidiaire : il existe, en fait, trois types - hôte, build et cible - pour pouvoir gérer la compilation croisée et le portage. En général, ils sont tous les trois identiques). Vous pouvez soit passer le type d'hôte en paramètre au script configure, soit laisser le script déterminer le type d'hôte.</p>
 <p>Le script configure utilise deux autres scripts pour déterminer les types d'hôtes. <code>config.guess</code> essaie de deviner le type d'hôte, <code>config.sub</code> est utilisé pour valider et donner une forme canonique au type d'hôte. Ces scripts sont maintenus en tant qu'entités séparées, mais sont inclus dans tout paquet qui les utilise. Naguère encore, ces scripts ignoraient totalement Darwin ou Mac OS X. Si vous êtes en présence d'un paquet qui ne reconnaît pas Darwin, vous devez remplacer les config.guess et config.sub inclus dans le paquet. Heureusement, Apple a placé des versions fonctionnelles de ces scripts dans /usr/share/libtool (/usr/libexec pour pre-10.2 OS), il vous suffit donc de les recopier à partir de là.</p>
+<p>Si vous construisez un paquet Fink, vous pouvez utiliser les champs <code>UpdateConfigGuess</code> et / ou <code>UpdateConfigGuessInDirs</code> dans le fichier <code>.info</code> de description du paquet, de façon à ce que la mise à jour soit automatique.</p>
 
 <h2><a name="librairies">1.4 Librairies</a></h2>
 

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.8 2005/03/17 17:06:50 michga Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.9 2005/03/17 17:09:06 michga Exp $</cvsid> 
 <preface>
 <p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
@@ -267,7 +267,6 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 </section>
 <section name="system-libs"><title>Nouvelles librairies systèmes incorporées</title>
 <p>Mac OS X 10.3 comprend plusieurs librairies qui n'existaient pas dans les versions précédentes du système, et étaient donc fournies en tant que paquets Fink. Il s'agit de :</p>
-<itemtable>
 <itemtable labeld="Notes" labelt="Librairies">
 <item>
 <itemt>libpoll</itemt>

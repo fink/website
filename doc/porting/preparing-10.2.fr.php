@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Préparation pour 10.2";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:44';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/03/17 17:09:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.3.php?phpLang=fr" title="Préparation pour la version 10.3"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
 
@@ -19,7 +19,7 @@ CompileScript: echo "nothing to do"
 </pre>
 </li>
 <li>Dans le passé, certains paquets de Fink utilisaient la construction <code>lib(foo|bar).dylib</code> pour faire référence à deux librairies simultanément ; ceci ne fonctionne pas avec bash (et l'alternative <code>lib{foo,bar}.dylib</code> ne fonctionne pas avec zsh). La solution : écrire les noms intégralement.</li>
-<li>Avec bash, une rustine de libtool est nécessaire dans de nombreux cas, pour éviter que les librairies ne soient construites sans numéro de version. <b> Note : vous n'avez pas besoin de cette rustine avec libtool-1.3.5, par exemple, si vous utilisez UpdateLibtool: True </b>. Le symptome : quand vous construisez sous bash, vous voyez
+<li>Avec bash, une rustine de libtool est nécessaire dans de nombreux cas, pour éviter que les librairies ne soient construites sans numéro de version. <b> Note : vous n'avez pas besoin de cette rustine avec libtool-1.3.5, par exemple, si vous utilisez UpdateLibtool: True </b>. Le symptome : quand vous construisez sous bash, vous voyez :
 <pre>
 ../libtool: test: too many arguments
 </pre>

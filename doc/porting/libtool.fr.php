@@ -1,7 +1,7 @@
 <?
 $title = "Portage - libtool";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:44';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/03/17 17:09:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
 
 
@@ -22,14 +22,14 @@ include_once "header.fr.inc";
 <li><p><b>La branche de développement actuelle</b> : c'est la version de développement qui sera un jour publiée en tant que libtool 1.5. Elle résulte de la fusion de la version 1.4 et de la MLB. Elle gére C, C++ et Java (via gcj). Malheureusement, il est difficile de la distinguer de la version 1.4, vous devez tester le numéro de version dans <code>ltmain.sh</code>.</p></li>
 </ul>
 <p>En conclusion, libtool 1.3.x et les paquets qui l'utilisent (c'est le cas de la majorité des paquets utilisant libtool) nécessitent une rustine pour construire des librairies partagées sur Darwin. Apple inclut une version modifiée de libtool 1.3.5 dans Mac OS X, mais, dans la plupart des cas, elle ne fonctionne pas correctement. Christoph Pfisterer a amélioré cette version modifiée pour coder en dur le chemin correct et utiliser le numéro de version complet. Les changements ont été incorporés en amont dans les versions définitives et les versions de développement à partir de la version 1.4. Les membres de l'équipe Fink continuent à réaliser des améliorations et à les faire parvenir aux mainteneurs de libtool. Le modèle de numérotation des versions est compatible pour toutes les versions de libtool.</p>
-<p>Note subsidiaire : la librairie libltdl, incluse dans toutes les versions de libtool, ne fonctionne sur Darwin que si dlcompat est installé.</p>
+<p>Note subsidiaire : la librairie libltdl, incluse dans toutes les versions de libtool, ne fonctionne sur Darwin que si dlcompat est installé. Elle est incluse dans Mac OS X à partir de la version 10.3. Pour les versions antérieures, on peut installer la famille de paquets "dlcompat"</p>
 
 <h2><a name="patch-135">3.2 Rustine 1.3.5</a></h2>
-<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">rustine</a> <b>[mise à jour du 09/06/2002]</b> au source de libtool 1.3.5, puis supprimer les fichiers ltconfig et ltmain.sh. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
-<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de ltconfig et ltmain.sh. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <a href="http://fink.sourceforge.net/files/ltconfig">ltconfig</a> (98ko) et <a href="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</a> (110ko) <b>[tous deux mis à jour au 09/06/2002]</b>.</p>
+<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">rustine</a> <b>[mise à jour du 09/06/2002]</b> au source de libtool 1.3.5, puis supprimer les fichiers <code>ltconfig</code> et <code>ltmain.sh</code>. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
+<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de <code>ltconfig</code> et <code>ltmain.sh</code>. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <a href="http://fink.sourceforge.net/files/ltconfig">ltconfig</a> (98ko) et <a href="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</a> (110ko) <b>[tous deux mis à jour au 09/06/2002]</b>.</p>
 
 <h2><a name="fixing-14x">3.3 Adaptation de la version 1.4.x</a></h2>
-<p>Il y a au moins trois versions différentes de libtool 1.4.x en usage à l'heure actuelle (1.4.1, 1.4.2, ainsi que des versions de développement plus récentes). Elles posent toutes problème avec Darwin, cependant les modifications à effectuer diffèrent selon la version. Le paquet libtool 1.4 fourni via Fink possèdent déjà toutes les rustines nécessaires. Cependant, il vous faudra encore modifier vous-même les fichiers ltmain.sh et configure des paquets concernés pour qu'ils fonctionnent correctement.</p>
+<p>Il y a au moins trois versions différentes de libtool 1.4.x en usage à l'heure actuelle (1.4.1, 1.4.2, ainsi que des versions de développement plus récentes). Elles posent toutes problème avec Darwin, cependant les modifications à effectuer diffèrent selon la version. Le paquet "libtool 1.4" fourni via Fink possèdent déjà toutes les rustines nécessaires. Cependant, il vous faudra encore modifier vous-même les fichiers <code>ltmain.sh</code> et <code>configure</code> des paquets concernés pour qu'ils fonctionnent correctement.</p>
 <ol>
 <li>
 <b>Le bogue du flat_namespace</b> : ce problème ne survient que si vous utilisez libtool sur Mac OS X10.1 ou une version plus récente. Dans ce cas, libtool tente d'utiliser l'option <code>-undefined suppress</code> pour autoriser les symboles non définis, mais ne spécifie pas, en même temps, l'option <code>-flat_namespace</code>. À partir de la version 10.1, cela ne fonctionne plus. La rustine à appliquer est de la forme :
@@ -49,7 +49,7 @@ diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
 </pre>
 </li>
 <li>
-<b>Le bogue du module chargeable</b> : ce bogue est provoqué par le comportement non-standard de zsh (qui est le shell par défaut dans les versions 10.0 et 10.1 ; dans la version 10.2, il est supposé être remplacé par bash). Le comportement non standard de zsh en matière d'utilisation des guillemets empêche de construire correctement des modules chargeables ; ce sont des librairies qui sont construites à la place (et, à la différence de ce qui se passe sur Linux, ce sont des choses réellement différentes sur Darwin). La rustine à appliquer pour résoudre ce problème ( tronquée, donc inutilisable sans modification) est de la forme :
+<b>Le bogue du module chargeable</b> : ce bogue est provoqué par le comportement non-standard de zsh (qui est le shell par défaut dans les versions 10.0 et 10.1 ; à partir de la version 10.2, il est remplacé par bash). Le comportement non standard de zsh en matière d'utilisation des guillemets empêche de construire correctement des modules chargeables ; ce sont des librairies qui sont construites à la place (et, à la différence de ce qui se passe sur Linux, ce sont des choses réellement différentes sur Darwin). La rustine à appliquer pour résoudre ce problème ( tronquée, donc inutilisable sans modification) est de la forme :
 <pre>
 diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
 --- gnome-core-1.4.0.6.old/configure	Sun Jan 27 08:19:48 2002
