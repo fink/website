@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.15 2001/09/25 22:08:01 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.16 2001/10/01 23:30:42 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -464,6 +464,23 @@ preventing even more confusion).
 It is expected that this will be fixed in Mac OS X 10.1.
 </p>
 </answer></faqentry>
+
+<faqentry name="xfree-keymapping"><question><p>I just upgraded to Mac
+OS X 10.1 and now XFree86 always quits immediately. In the messages it
+says "assert failed on line 454 of darwinKeyboard.c!". What's
+wrong?</p></question> 
+<answer>
+<p>
+This is a known problem on 10.1.
+You must use the "Load from file" keymapping option since the default
+option (get it from the kernel) doesn't work anymore.
+The setting is in the Preferences dialog.
+If you can't get to the Preferences dialog because you disabled all
+splash screens, you can delete
+<tt>~/Library/Preferences/org.xfree86.XDarwin.plist</tt> to get it back.
+</p>
+</answer></faqentry>
+
 
 </chapter>
 
