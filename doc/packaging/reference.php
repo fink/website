@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/02 20:36:34';
+$cvs_date = 'Date: 2003/05/03 03:01:58';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -33,7 +33,7 @@ order.</p>
 <p>In the <b>compile phase</b> the source is configured and
 compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
-ConfigureScript field description for details.</p>
+CompileScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
 directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the &quot;root-&quot; part.)
 All files that would normally be installed to /sw are installed in

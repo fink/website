@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.41 2003/05/02 20:36:34 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.42 2003/05/03 03:01:58 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1016,7 +1016,7 @@ order.</p>
 <p>In the <em>compile phase</em> the source is configured and
 compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
-ConfigureScript field description for details.</p>
+CompileScript field description for details.</p>
 <p>In the <em>install phase</em> the package is installed to a temporary
 directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
 All files that would normally be installed to /sw are installed in
