@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.15 2004/05/04 01:23:53 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.16 2004/05/24 09:25:52 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -993,7 +993,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
         if it's enabled. It contains a buggy reimplementation of a few
         important system calls that will cause a number of strange and
         transient errors such as this.</p>
-        <p>Otherwise, am <filename>mv</filename> error typically means that
+        <p>Otherwise, an <filename>mv</filename> error typically means that
         another error happened earlier in the build, but the build process
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something
@@ -1226,7 +1226,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>This is because <filename>gcc2</filename> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation.</p>
+        part of their main Developer Tools installation).</p>
       </answer>
     </faqentry>
     <faqentry name="system-java">

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.22 2004/05/08 10:38:19 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.23 2004/05/24 09:25:51 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -748,208 +748,141 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
     </faqentry>
     <faqentry name="head">
       <question>
-        <p>I'm getting a strange usage message from the head command. What's
-        broken?</p>
+        <p>Un étrange message d'erreur concernant la commande head apparaît. Que se passe-t-il ?</p>
       </question>
       <answer>
-        <p>If you're seeing this:</p>
+        <p>Si vous voyez apparaître ce message :</p>
         <codeblock>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</codeblock>
-        <p>followed by a list of option descriptions, you have a broken
-        <code>head</code> executable. This happens when you install the Perl
-        libwww library on an HFS+ system volume. It tries to create a new
-        command <code>/usr/bin/HEAD</code>, which overwrites the existing
-        <code>head</code> command because the file system is case-insensitive.
-        <code>head</code> is a standard command used in many shell scripts and
-        Makefiles. You need to get the original <code>head</code> executable
-        back if you want to use Fink.</p>
-        <p>The bootstrap script of the source release now checks for this, but
-        you can still run into it if you use the binary release for first-time
-        installation or install libwww after you installed Fink.</p>
-        <p>This problem has also been reported due to the installation of
-        <filename>/sw/bin/HEAD</filename> (not by any Fink package). This is
-        easier to solve: rename <filename>/sw/bin/HEAD</filename>.</p>
+        <p>suivi d'une liste d'options, cela signifie que la commande <code>head</code> est défectueuse. Cela se produit lorsqu'on installe la librairie Perl libwww sur un volume système HFS+. Elle tente de créer une nouvelle commande <code>/usr/bin/HEAD</code>, qui écrase la commande <code>head</code> existante, car le système de fichiers ne respecte pas la casse. <code>head</code> est une commande standard utilisée dans de nombreux scripts shell et dans les Makefiles. Vous devez récupérer la commande <code>head</code> originale si vous voulez utiliser Fink.</p>
+        <p>Le script bootstrap de la version source de fink fait, maintenant, cette vérification ; mais vous pouvez vous retrouver devant ce problème si vous utilisez la version binaire lors de la première installation de fink ou si vous installez libwww après avoir installé Fink.</p>
+        <p>Ce problème peut aussi venir de l'installation de <filename>/sw/bin/HEAD</filename> (mais pas par un paquet de Fink). La solution est plus simple : renommez <filename>/sw/bin/HEAD</filename>.</p>
       </answer>
     </faqentry>
     <faqentry name="also_in">
       <question>
-        <p>When I try to install a package I get an error message about trying
-        to overwrite a file that is in another package.</p>
+        <p>À l'installation d'un paquet, un message d'erreur signale qu'il y a tentative d'écrasement d'un fichier situé dans un autre paquet.</p>
       </question>
       <answer>
-        <p>This occasionally happens with splitoff packages (i.e. the ones
-        with -dev, -shlibs, etc.) when a file gets moved from one part of the
-        splitoff to another (e.g. from <code>foo</code> to
-        <code>foo-shlibs</code>. What you can do is overwrite the file with
-        that from the package you are trying to install (since they are
-        nominally the same):</p>
+        <p>Cela arrive parfois avec les paquets multiples (c'est-à-dire ceux qui sont scindés en -dev, -shlibs, etc...) quand un fichier est déplacé d'un paquet à l'autre (par exemple de <code>foo</code> à <code>foo-shlibs</code>. Vous pouvez tenter d'écraser le fichier par celui présent dans le paquet (puisqu'ils sont identiques) :</p>
         <codeblock>sudo dpkg -i --force-overwrite <em>filename</em>
         </codeblock>
-        <p>where <em>filename</em> is the .deb file corresponding to the
-        package that you are trying to install.</p>
+        <p>où <em>filename</em> est le fichier .deb correspondant au paquet que vous êtes en train d'installer.</p>
       </answer>
     </faqentry>
     <faqentry name="weak_lib">
       <question>
-        <p>After I installed the December 2002 Development Tools I get
-        messages about "weak libraries".</p>
+        <p>Après installation des outils de développement de décembre 2002, des messages concernant des "weak libraries" apparaissent.</p>
       </question>
       <answer>
-        <p>This is new with the December 2002 Tools. You may occasionally see
-        messages like (choosing libgdk-pixbuf as an example):</p>
+        <p>C'est un problème qui est apparu avec les outils de développement de décembre 2002. Parfois, des messages semblables au suivant apparaissent (on a choisi ici libgdk-pixbuf à titre d'exemple) :</p>
         <codeblock>ld: warning dynamic shared library:
 /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
 MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
-        <p>You may regard these as harmless. If you are curious, read through
-        the release notes in the developer documentation directory, especially
-        GCC's and the linker's, for more info. It essentially has to do with
-        whether missing symbols at runtime is considered a fatal error on
-        startup or not, for applications that use weak references.</p>
+        <p>Vous pouvez considérer ces messages comme inoffensifs. Si vous êtes du genre curieux, lisez les notes de mise à jour (release notes) qui se trouvent dans le répertoire de documentation du développeur, en particulier celles concernant GCC  et l'éditeur de liens, pour de plus amples informations. Cela se rapporte essentiellement à la façon dont sont considérés les symboles manquants lors de l'exécution d'applications qui utilisent des références faibles : erreur fatale ou non au lancement.</p>
       </answer>
     </faqentry>
     <faqentry name="mv-failed">
       <question>
-        <p>What does "execution of mv failed, exit code 1" mean when I try to
-        build a package?</p>
+        <p>Lors de la construction d'un paquet, le message suivant apparaît : "execution of mv failed, exit code 1"</p>
       </question>
       <answer>
-        <p>If you have StuffIt Pro installed, it could be that you have
-        "Archive Via Real Name" mode enabled. Check for a StuffIt preference
-        pane in the System Preferences tool, and disable "ArchiveViaRealName"
-        if it's enabled. It contains a buggy reimplementation of a few
-        important system calls that will cause a number of strange and
-        transient errors such as this.</p>
-        <p>Otherwise, am <filename>mv</filename> error typically means that
-        another error happened earlier in the build, but the build process
-        didn't stop. To track down the offending file(s), search in the output
-        of the build for the nonexistent file, e.g. if you have something
-        like:</p>
+        <p>Si vous avez installé StuffIt Pro, il se peut que vous ayez activé le mode "Archive Via Real Name". Recherchez un panneau de préférences Stuffit dans les préférences système et désactivez "ArchiveViaRealName" si cette option est activée. Elle contient une implémentation boguée de certains appels système importants qui entraîne un grand nombre d'erreurs étranges et passagères comme celle-ci.</p>
+        <p>Dans le cas contraire, une erreur sur <filename>mv</filename> signifie, en général, qu'une autre erreur s'est produite précédemment dans le processus de construction sans l'arrêter. Pour trouver le ou les fichiers concernés, recherchez dans les messages de sortie le fichier manquant. Par exemple, si vous obtenez ce message : </p>
         <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
 /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
 mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
 No such file or directory 
 ### execution of mv failed, exit code 1 
 Failed: installing foo-0.1.2-3 failed</codeblock>
-        <p>then you should look for <filename>libbar</filename> somewhere
-        further back in the output of your build attempt.</p>
+        <p>vous devez rechercher <filename>libbar</filename> parmi les messages de sortie précédents du processus de construction.</p>
       </answer>
     </faqentry>
     <faqentry name="node-exists">
       <question>
-        <p>I can't install a package | update because I get a message that a
-        "node" already exists.</p>
+        <p>Impossible d'installer ou de mettre à jour un paquet, un message indique qu'un "node" existe déjà.</p>
       </question>
       <answer>
-        <p>These errors look something like this:</p>
+        <p>Ces messages d'erreurs sont similaires au message suivant :</p>
         <codeblock>Failed: Internal error: node for system-xfree86 already exists</codeblock>
-        <p>This problem is that the dependency engine is confused, due to
-        changes in some of the package info files. To fix it:</p>
+        <p>Le moteur de dépendances ne sait plus où il en est, car il y a eu des changements dans certains fichiers info des paquets. Pour résoudre ce problème :</p>
         <ul>
           <li>
-            <p>Remove the offending package by force, e. g.</p>
+            <p>Supprimez de force le paquet en cause, par exemple :</p>
             <codeblock>sudo dpkg -r --force-all system-xfree86</codeblock>
-            <p>for the example given above.</p>
+            <p>pour l'exemple donné ci-dessus.</p>
           </li>
           <li>
-            <p>Try again to install | upgrade. At some point a "virtual
-          dependency" prompt will come up that includes the package you just
-          removed. Select it, and it will be reinstalled during your
-          build.</p>
+            <p>Essayez de réinstaller ou de remettre à jour. À un moment, vous verrez apparaître un message concernant une "virtual dependency" sur le paquet que vous venez de supprimer. Sélectionnez-le et le paquet sera réinstallé pendant le processus de construction.</p>
           </li>
         </ul>
       </answer>
     </faqentry>
     <faqentry name="usr-local-libs">
       <question>
-        <p>I've heard that libraries installed in /usr/local/lib sometimes
-        cause build problems for Fink. Is this true?</p>
+        <p>Problèmes de compilation de paquet Fink quand des librairies sont installées dans /usr/local/lib</p>
       </question>
       <answer>
-        <p>This is a frequent source of problems, because the package
-        configuration script finds libraries under
-        <filename>/usr/local/lib</filename> before searching in the Fink path.
-        If you are having problems with a build that aren't covered by another
-        FAQ entry, you should check whether you have libraries in
-        <filename>/usr/local/lib</filename>. If so, then try renaming
-        <filename>/usr/local</filename> to something else, e.g.:</p>
+        <p>C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies installées dans <filename>/usr/local/lib</filename> avant celles installées dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <filename>/usr/local/lib</filename>. Si c'est le cas, renommez-les autrement, par exemple :</p>
         <codeblock>sudo mv /usr/local /usr/local.moved</codeblock>
-        <p>do your build, and then put <filename>/usr/local</filename>
-        back:</p>
+        <p>construisez le paquet, puis redéplacez <filename>/usr/local</filename> :</p>
         <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
       </answer>
     </faqentry>
     <faqentry name="toc-out-of-date">
       <question>
-        <p>When I try to build a package, I get a message that a "table of
-        contents" is out of date. What do I need to do?</p>
+        <p>Lors de la construction d'un paquet, un message indique que "table of
+        contents" n'est pas à jour (out of date).</p>
       </question>
       <answer>
-        <p>The output hints at what to do. The message is usually something
-        like:</p>
+        <p>Le message de sortie vous indique ce qu'il faut faire. En général, il est de la forme suivante :</p>
         <codeblock>ld: table of contents for archive: 
 /sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</codeblock>
-        <p>What you need to do is run ranlib (as root) on whatever library is
-        causing the problem. As an example, for the case above, you would
-        run:</p>
+        <p>Vous devez exécuter ranlib (en tant que super-utilisateur) sur la librairie qui est la cause du problème. Par exemple, dans le cas ci-dessus, vous devez exécuter :</p>
         <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
       </answer>
     </faqentry>
     <faqentry name="fc-atlas">
       <question>
-        <p>Fink Commander hangs when I try to install atlas.</p>
+        <p>Fink Commander se bloque quand on tente d'installer atlas.</p>
       </question>
       <answer>
-        <p>This happens because one of the steps in the build of
-        <code>atlas</code> sends a prompt to the user that Fink Commander
-        doesn't display. You'll have to use <code>fink install atlas</code>
-        instead.</p>
+        <p>Ceci provient du fait qu'une des étapes de la compilation du paquet <code>atlas</code> envoie une invite à l'utilisateur et que Fink Commander ne l'affiche pas. Vous devez utiliser <code>fink install atlas</code> au lieu de passer par Fink Commander.</p>
       </answer>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing stddef.h. Where do I find
-        it?</p>
+        <p>Un message indique qu'il est impossible de trouver  stddef.h.</p>
       </question>
       <answer>
-        <p>This header, and many others, are provided by the DevSDK package of
-        the Developer Tools. Check whether
-        <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your
-        system. If not, then run the Dev Tools Installer again, and install
-        the DevSDK package using a Custom Install.</p>
+        <p>Ce header, comme beaucoup d'autres, est fourni par le paquet DevSDK des Developer Tools. Vérifiez que <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies">
       <question>
-        <p>I can't update, because Fink is "unable to resolve version conflict
+        <p>Impossible de mettre à jour, un message indique que Fink est "unable to resolve version conflict
         on multiple dependencies".</p>
       </question>
       <answer>
-        <p>To get around this, try updating a single package, then try to use
-        "fink update-all" again. If you still get the message, repeat the
-        process.</p>
+        <p>Pour résoudre ce problème, essayez de ne mettre à jour qu'un seul paquet, puis lancez de nouveau "fink update-all". Si le message réapparaît, répétez le processus.</p>
       </answer>
     </faqentry>
     <faqentry name="dpkg-parse-error">
       <question>
-        <p>I can't install anything because I get "dpkg: parse error, in file
-        `/sw/var/lib/dpkg/status'"!</p>
+        <p>Impossible d'installer quoi que ce soit, le message suivant apparaît : "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"</p>
       </question>
       <answer>
-        <p>This means that somehow your dpkg database got corrupted, usually
-        from a crash or some other unrecoverable error. You can fix it by
-        copying the previous version of the database, like so:</p>
+        <p>Cela signifie que votre base de données dpkg a été corrompue, en général à la suite d'un plantage ou d'une autre erreur irrécupérable. Vous pouvez résoudre le problème en copiant la version précédente de la base de données :</p>
         <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
-        <p>You may need to re-install the last couple of packages you
-        installed before the problem started occurring.</p>
+        <p>Il se peut que vous deviez réinstaller les derniers paquets installés juste avant que le problème n'apparaisse.</p>
       </answer>
     </faqentry>
     <faqentry name="freetype-problems">
       <question>
-        <p>I get errors involving freetype.</p>
+        <p>Messages d'erreurs concernant freetype.</p>
       </question>
       <answer>
-        <p>There are several varieties of such errors. If your error looks
-        like:</p>
+        <p>Il y a plusieurs types d'erreurs concernant freetype. Si le message d'erreur ressemble au suivant : </p>
         <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57:
@@ -965,7 +898,7 @@ make[1]: *** [all-recursive] Error 1
 make: *** [all-recursive-am] Error 2 
 ### execution of make failed, exit code 2 
 Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
-        <p>or</p>
+        <p>ou à celui-ci :</p>
         <codeblock>In file included from vteft2.c:32: 
 vteglyph.h:64: error:
 parse error before "FT_Library" 
@@ -990,7 +923,7 @@ make[1]: *** [all-recursive] Error 1
 make: *** [all] Error 2 
 ### execution of make failed, exit code 2
 Failed: compiling vte-0.11.10-3 failed</codeblock>
-        <p>or</p>
+        <p>ou encore à celui-là :</p>
         <codeblock>checking for freetype-config.../usr/X11R6/bin/freetype-config 
 checking For sufficiently new FreeType (at least 2.0.1)... no 
 configure: error: pangoxft 
@@ -998,30 +931,22 @@ Pango backend found but did not find freetype libraries
 make: *** No targets specified and no makefile found. Stop. 
 ### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
 Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
-        <p>the problem is due to confusion between headers from the
-        <code>freetype</code> | <code>freetype-hinting</code> package and the
-        <code>freetype2</code> headers that are included with X11 |
-        XFree86.</p>
+        <p>le problème est dû à une confusion entre les headers des paquets <code>freetype</code> ou de <code>freetype-hinting</code> et les headers <code>freetype2</code> qui sont inclus dans X11 ou dans XFree86.</p>
         <codeblock>fink remove freetype freetype-hinting</codeblock>
-        <p>will remove whichever variant you have installed. On the other
-        hand, if your error looks like:</p>
+        <p>supprime la variante que vous avez installée. À contrario, si le message d'erreur est similaire à celui-ci :</p>
         <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
-        <p>this is typically due to a residual file from a prior installation
-        of X11. Reinstall the X11 SDK. Finally, if you get an error like</p>
+        <p>cela est dû à la présence d'un fichier résultant d'une installation précédente de X11. Réinstallez X11 SDK. Enfin, si le message d'erreur, ressemble à celui-là :</p>
         <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
 undefined reference to _FT_Access_Frame</codeblock>
-        <p>then you probably have a binary version that built fine with
-        <code>gcc3.3</code> on Jaguar but doesn't work on Panther. This has
-        now been updated, so you you just need to update your packages, e.g.
-        via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
+        <p>vous êtes probablement en présence d'une version binaire qui compile correctement avec <code>gcc3.3</code> sous Jaguar, mais pas sous Panther. Ce problème a été résolu, il suffit que vous mettiez à jour vos paquets, par exemple via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
       </answer>
     </faqentry>
     <faqentry name="dlfcn-from-oo">
       <question>
-        <p>I get build errors involving `Dl_info'.</p>
+        <p>Messages d'erreur concernant `Dl_info'.</p>
       </question>
       <answer>
-        <p>If you have an error that looks like this</p>
+        <p>Si vous avez des messages d'erreur similaire à celui-ci :</p>
         <codeblock>unix_dl.c: In function `rep_open_dl_library':
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
@@ -1031,52 +956,43 @@ unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info" 
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
 make[1]: *** [unix_dl.lo] Error 1</codeblock>
-        <p>then most likely you have a header file,
-        <code>/usr/local/include/dlfcn.h</code>, that is incompatible with
-        Panther. Move it out of the way.</p>
-        <p>This usually is installed by Open Office, and you should replace
-        this header file, as well as the library
-        <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to
-        Panther's builtin files</p>
+        <p>vous avez certainement un header <code>/usr/local/include/dlfcn.h</code>, incompatible avec Panther. Déplacez-le.</p>
+        <p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la librairie <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p>
         <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       </answer>
     </faqentry>
     <faqentry name="gcc2">
       <question>
-        <p>Fink says I'm missing <filename>gcc2</filename> but I can't seem to
-        install it.</p>
+        <p>Fink signale que <filename>gcc2</filename> n'existe pas, mais il ne semble pas possible de l'installer.</p>
       </question>
       <answer>
-        <p>This is because <filename>gcc2</filename> is a virtual package to
-        indicate the presence of gcc-2.95 on your system. Install the gcc2.95
-        package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation.</p>
+        <p><filename>gcc2</filename> est un paquet virtuel qui indique la présence de gcc-2.95 dans votre système. Installez le paquet gcc2.95 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p>
       </answer>
     </faqentry>
     <faqentry name="system-java">
       <question>
-        <p>Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</p>
+        <p>Fink signale <code>Failed: Can't resolve dependency "system-java14-dev"</code>, mais il n'existe pas de paquet system-java14-dev.</p>
       </question>
       <answer>
-        <p>That's because it's a virtual package.  This type of error occurs when Java gets updated by Software Update:  the header files get removed, which causes the -dev package not to be generated.</p>
-        <p>You need to download the appropriate <filename>Java Developer Tools</filename> package from <link url="http://connect.apple.com">Apple</link>.  In this specific case that's the <filename>Java 1.4.2 Developer Tools</filename>.</p>
+        <p>Ce paquet est un paquet virtuel. Ce type d'erreur apparaît quand Java est mis à jour via Mise à jour de Logiciels : les headers sont supprimés, ce que empêche la création du paquet -dev.</p>
+        <p>Vous devez télécharger le paquet approprié des <filename>Java Developer Tools</filename> à partir du site <link url="http://connect.apple.com">Apple</link>. Dans le cas ci-dessus, il s'agit du paquet <filename>Java 1.4.2 Developer Tools</filename>.</p>
       </answer>
     </faqentry>
     <faqentry name="dpkg-split">
       <question>
-        <p>When I try to install anything, I get <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>.  How do I fix this?</p>
+        <p>Lors de l'installation d'un paquet, le message d'erreur suivant apparaît : <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>.</p>
       </question>
       <answer>
-        <p>Generally, this can be fixed by setting your environment up correctly, cf. <xref chapter="usage-fink" section="fink-not-found">this FAQ entry</xref>.</p>
+        <p>Ce problème se résout, en général, par la définition correcte de votre environnement, cf. <xref chapter="usage-fink" section="fink-not-found">cette partie des QFP</xref>.</p>
       </answer>
     </faqentry>
      <faqentry name="xml-parser">
       <question>
-        <p>I get the following message: <quote>configure: error: XML::Parser perl module is required for intltool</quote>.  What do I do about it?</p>
+        <p>Le message d'erreur suivant apparaît : <quote>configure: error: XML::Parser perl module is required for intltool</quote>.</p>
       </question>
       <answer>
-        <p>You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p>
+        <p>Vous devez vérifier que vous avez la variante du paquet xml-parser-pm qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (vous pouvez aussi avoir le paquet fantôme <code>xml-parser-pm</code>), car vous avez <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>.</p>
       </answer>
     </faqentry>
  </chapter>

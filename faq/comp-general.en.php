@@ -82,7 +82,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>You may regar
         pane in the System Preferences tool, and disable "ArchiveViaRealName"
         if it's enabled. It contains a buggy reimplementation of a few
         important system calls that will cause a number of strange and
-        transient errors such as this.</p><p>Otherwise, am <code>mv</code> error typically means that
+        transient errors such as this.</p><p>Otherwise, an <code>mv</code> error typically means that
         another error happened earlier in the build, but the build process
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something
@@ -246,7 +246,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation.</p></div>
+        part of their main Developer Tools installation).</p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>

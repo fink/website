@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Generales";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/05/13 01:16:25';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/05/19 12:14:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos"><link rel="prev" href="index.php?phpLang=es" title="P.M.F. Contents">';
 
 include_once "header.inc";
