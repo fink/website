@@ -34,7 +34,7 @@ Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会�
 你可以在你当前的版本的基础上直接升级到最新的版本。
 
 关于 0.7.0 和 0.7.1 的区别的完整清单可以在
-<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">这个页面</a>查看得到。
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">这个页面</a>查看得到。
 </p>
 
 <p>

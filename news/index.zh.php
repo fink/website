@@ -1,13 +1,13 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/11/21 14:26:55';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/11/24 03:20:41';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
+<a name="2004-11-20 gcc 编译器问题的解决方案。"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
 <p>
 苹果发布了 2004 年十一月的 gcc3 更新，它可以在 connect.apple.com 下载(需要先免费注册)。这个更新修正了 XCode 1.5 中的 gcc3 编译器的问题。如果你正在使用 XCode 1.5，你应该安装这个更新。(这个更新可以正确地更新未经修改的 XCode 1.5，也可以更新那些实施了以前 fink 所推荐的临时办法的用户。)
 </p><p>
@@ -15,7 +15,7 @@ include_once "header.inc";
 </p>
 
 
-<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">gcc 问题的临时解决办法。</span></a><?php gray_line(); ?>
+<a name="2004-10-15 gcc 问题的临时解决办法。"><span class="news-date">2004-10-15: </span><span class="news-headline">gcc 问题的临时解决办法。</span></a><?php gray_line(); ?>
 <p>
 在 XCode 1.5 中包括的 gcc 版本已经被发现在某些情况下会对 c++ 代码产生错误的输出。
 Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会拒绝使用有问题的 gcc 来编译一直存在这个问题的软件包。
@@ -23,7 +23,8 @@ Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会�
 如果你已经升级 XCode 到版本 1.5，下面是一个临时解决办法，
 在 <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">这里</a>
 和<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">这里</a>有详细的描述。
-</p><p>如果你还没有升级，你应该考虑继续使用版本 1.2，直到这个问题获得解决。</p>
+</p><p>如果你还没有升级，你应该考虑继续使用版本 1.2，直到这个问题获得解决。
+</p>
 
 
 <a name="2004-09-20 Fink 0.7.1 released."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 released.</span></a><?php gray_line(); ?>
@@ -42,7 +43,7 @@ Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会�
 你可以在你当前的版本的基础上直接升级到最新的版本。
 
 关于 0.7.0 和 0.7.1 的区别的完整清单可以在
-<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">这个页面</a>查看得到。
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">这个页面</a>查看得到。
 </p>
 
 <p>
