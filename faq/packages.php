@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Package Specific";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/07 19:44:19 $';
+$cvs_date = '$Date: 2001/05/08 17:50:10 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -40,11 +40,9 @@ Then rebuild the gnome-libs and gnome-core packages.</p>
 
 <p><a name="qt"><b>Qt won't compile.</b></a></p>
 
-<p>I take it you're seeing a <tt>can't locate file for:
--lqutil</tt>. Congratulations - you've been hit by a bug in Qt's build
-system that deletes the lib directory halfway through the build. Noone
-was able to track this down yet, as it is not always
-reproducible. There is no workaround.</p>
+<p>Qt is one of the packages that will only compile when shared X11
+libraries are present. Unfortunately, it spits some quite confusing
+error messages when it encounters static libraries.</p>
 
 <p><a name="nedit"><b>nedit is broken.</b></a></p>
 
