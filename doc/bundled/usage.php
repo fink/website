@@ -162,8 +162,7 @@ fink-users mailing list via <a href="http://fink.sourceforge.net/lists/fink-user
 and ask there.
 </p>
 
-<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
-<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
+
 
 <?
 include "footer.inc";
