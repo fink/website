@@ -1,29 +1,29 @@
 <?
-/* $Id: header.inc,v 1.8 2001/02/11 12:17:38 chrisp Exp $ */
+/* $Id: header.inc,v 1.9 2001/02/13 18:27:33 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
-  "index.php", "Home",
-  "download.php", "Download",
-  "fink/index.php", "Fink",
-  "darwin/index.php", "Darwin",
-  "links.php", "Links"
+  "index.php", "Home", 0,
+  "download.php", "Download", 0,
+  "fink/index.php", "Fink", 0,
+  "darwin/index.php", "Darwin", 0,
+  "links.php", "Links", 0
 );
 $pages_fink = array(
-  "fink/index.php", "Fink",
-  "download.php", "Download",
-  "fink/todo.php", "ToDo",
-  "fink/info-format.php", "Packaging",
-  "links.php", "Links"
+  "fink/index.php", "Fink", 0,
+  "download.php", "Download", 1,
+  "fink/todo.php", "ToDo", 0,
+  "fink/info-format.php", "Packaging", 0,
+  "links.php", "Links", 1
 );
 $pages_darwin = array(
-  "darwin/index.php", "Darwin",
-  "darwin/porting.php", "Porting",
-  "darwin/gnome.php", "GNOME",
-  "darwin/patches.php", "Patches",
-  "darwin/libtool.php", "libtool",
-  "darwin/x11-choices.php", "X11 Choices",
-  "links.php", "Links"
+  "darwin/index.php", "Darwin", 0,
+  "darwin/porting.php", "Porting", 0,
+  "darwin/gnome.php", "GNOME", 0,
+  "darwin/patches.php", "Patches", 0,
+  "darwin/libtool.php", "libtool", 0,
+  "darwin/x11-choices.php", "X11 Choices", 0,
+  "links.php", "Links", 1
 );
 
 // get author and change date from CVS vars
@@ -128,9 +128,10 @@ if ($wantnav == "main") {
 if ($donav) {
   // determine active page
   $active_page = -1;
-  for ($i = 0; $i < sizeof($pages); $i += 2) {
+  for ($i = 0; $i < sizeof($pages); $i += 3) {
     if (ereg($pages[$i]."$", $PHP_SELF)) {
       $active_page = $i;
+      break;
     }
   }
 
@@ -144,10 +145,10 @@ src="<? print $root ?>img/nav-left.gif" width="20" height="16" border="0" alt=""
 <td width="92" background="<? print $root ?>img/nav-center.gif">
 
 <p class="nav"><?
-for ($i = 0; $i < sizeof($pages); $i += 2) {
+for ($i = 0; $i < sizeof($pages); $i += 3) {
   $showlink = ($i != $active_page);
   if ($showlink)
-    print '<a href="'.$root.$pages[$i].'">';
+    print '<a href="'.$root.$pages[$i].($pages[$i+2] ? '?wantnav='.$wantnav : '').'">';
   else
     print '<b>';
   print $pages[$i+1];
