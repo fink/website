@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.35 2003/01/21 18:16:37 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.36 2003/01/21 18:30:23 dmrrsn Exp $</cvsid>
 <newsitem>
 	<date>2003-01-21</date>
 	<headline>Gnome, libpng, and the unstable tree</headline>
@@ -9,7 +9,9 @@
 	<p>
         A problem was uncovered today concerning the versions of imlib,
  libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
- work addressing this problem
+ work addressing this problem.  As a workaround, users can downgrade
+their imlib package to the stable version, "<code>fink install
+ imlib-1.9.10-9</code>", until the problem is fixed.
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,

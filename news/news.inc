@@ -2,7 +2,9 @@
 	<p>
         A problem was uncovered today concerning the versions of imlib,
  libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
- work addressing this problem
+ work addressing this problem.  As a workaround, users can downgrade
+their imlib package to the stable version, &quot;<tt><nobr>fink install
+ imlib-1.9.10-9</nobr></tt>&quot;, until the problem is fixed.
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
