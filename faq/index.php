@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/27 17:34:06 $';
+$cvs_date = '$Date: 2001/04/27 17:35:29 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ questions are listed and linked in the table of contents below.</p>
 </ul>
 <li><a href="install.php"><b>Installation</b></a></li>
 <ul>
-<li><a name="stow-not-found">Installing Fink fails with a "stow not
+<li><a href="install.php#stow-not-found">Installing Fink fails with a "stow not
 found" message.</a></li>
 </ul>
 <li><a href="usage.php"><b>Usage</b></a></li>
