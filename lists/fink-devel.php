@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-devel";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/12/02 10:25:13 $';
+$cvs_date = '$Date: 2004/12/02 10:26:05 $';
 
 include "header.inc";
 ?>
@@ -12,17 +12,25 @@ include "header.inc";
 <p>
 The main purpose of the fink-devel list is to coordinate the package
 maintainers efforts.
-Still, anyone is welcome to subscribe to the list and listen to what
+Some discussion of development of the fink program itself also takes place here.
+Anyone is welcome to subscribe to the list and listen to what
 goes on behind the scenes.
 If you want to package your favourite piece of software for Fink, this
-is the place to go.
-People without CVS commit access can post their package descriptions
-on the list to have them reviewed and added to Fink.
+is the place to go for help.
+This list also serves as a contact point for packages in Fink that
+have no maintainer.
+</p>
+<p>
+If you just want to request that someone port a package to Fink, or if
+you have written a package description that you would like to be
+reviewed for possible inclusion in Fink, please use the Sourceforge
+trackers listed in the &quot;Resources&quot; section of the <a
+href="../../index.php">Fink homepage</a>.
 </p>
 <p>
 Please don't use HTML or rich text mails.
-Attachments are okay for package descriptions, but please don't use
-them for compile logs and the like.
+Attachments are okay for package descriptions and error reports, but
+please don't submit complete compile logs and the like here.
 The list has a strict size limit of 40K.
 </p>
 <p>
