@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/04/09 23:52:04';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/04/16 01:50:17';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -89,7 +89,7 @@ apt-get</a></li>
 <li><a href="usage.php#checksums">6.19 checksums</a></li>
 <li><a href="usage.php#cleanup">6.20 cleanup</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.19 2003/04/09 23:52:04 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.20 2003/04/16 01:50:17 dmrrsn Exp $</i></p>
 
 
 <?

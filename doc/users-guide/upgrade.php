@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/04/09 23:52:04';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/04/16 01:50:17';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="conf.php" title="The Fink Configuration File"><link rel="prev" href="packages.php" title="Installing Packages">';
 
@@ -64,6 +64,9 @@ CVS is a version-controlled repository where the package descriptions
 are stored and managed.
 Using CVS has the advantage that it is updated continuously.
 </p>
+<p>(If you are having trouble upgrading a source installation, consult
+<a href="http://fink.sourceforge.net/download/fix-upgrade.php">these
+special instructions.</a></p>
 <p>
 If you have a version of Fink older than 0.2.5, you must download the
 package descriptions manually.
