@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/27 01:27:44';
+$cvs_date = 'Date: 2004/01/28 14:12:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -84,6 +84,8 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#packages-gz">4.24 When I try to do a binary update, there are many messages with "File not found"</a></li>
 <li><a href="usage-fink.php#wrong-tree">4.25 I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</a></li>
 <li><a href="usage-fink.php#seg-fault">4.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code> when I try to install anything! Help!</a></li>
+<li><a href="usage-fink.php#pathsetup-keeps-running">4.27 When I open a Terminal window, I get a message that "Your environment seems to be correctly
+set up for Fink already.", and it logs out.</a></li>
 </ul>
 <li><a href="comp-general.php"><b>5 Compile Problems - General</b></a></li>
 <ul>
@@ -104,6 +106,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#multiple-dependencies">5.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
 <li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
 <li><a href="comp-general.php#freetype-problems">5.15 I get errors involving freetype.</a></li>
+<li><a href="comp-general.php#dlfcn-from-oo">5.16 I get build errors involving `Dl_info'.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -143,7 +146,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.163 2004/01/27 01:27:44 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.164 2004/01/28 14:12:29 alexkhansen Exp $</i></p>
 
 
 <?

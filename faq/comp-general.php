@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/27 01:27:44';
+$cvs_date = 'Date: 2004/01/28 14:12:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -156,6 +156,19 @@ Failed: compiling gtk+2-2.2.4-2 failed</pre><p>the problem is due to confusion b
 _FT_Access_Frame </pre><p>this is typically due to a residual file from a prior installation of X11.  Reinstall the X11 SDK.  Finally, if you get an error like </p><pre>dyld: klines Undefined symbols:
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
 </pre><p>then you probably have a binary version that built fine with <code>gcc3.3</code> on Jaguar but doesn't work on Panther.  This has now been updated, so you you just need to update your packages, e.g. via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p></div>
+</a>
+<a name="dlfcn-from-oo">
+<div class="question"><p><b>Q5.16: I get build errors involving `Dl_info'.</b></p></div>
+<div class="answer"><p><b>A:</b> If you have an error that looks like this</p><pre>unix_dl.c: In function `rep_open_dl_library':
+unix_dl.c:328: warning: assignment discards qualifiers from pointer target type
+unix_dl.c: In function `rep_find_c_symbol':
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only once
+unix_dl.c:466: error: for each function it appears in.)
+unix_dl.c:466: error: parse error before "info"
+unix_dl.c:467: error: `info' undeclared (first use in this function)
+make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p><p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+sudo ln -s /usr/lib/dlfcn.h /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">6 Compile Problems - Specific Packages</a></p>

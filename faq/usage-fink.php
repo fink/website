@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/27 01:27:44';
+$cvs_date = 'Date: 2004/01/28 14:12:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -362,7 +362,11 @@ gzip: stdout: Broken pipe
 ### execution of dpkg-deb failed, exit code 10
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>are likely to be due to a prebinding error in a library, and can be fixed by running</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
 </a>
-
+<a name="pathsetup-keeps-running">
+<div class="question"><p><b>Q4.27: When I open a Terminal window, I get a message that "Your environment seems to be correctly
+set up for Fink already.", and it logs out.</b></p></div>
+<div class="answer"><p><b>A:</b> What happened is that somehow the OSX Terminal program has been told to run <code>/sw/bin/pathsetup.command</code> every time you log in.  You can fix this by removing the Preferences file, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>If you have other preferences that you want to keep, you can edit the file with a text editor and remove the reference to <code>/sw/bin/pathsetup.command</code>.</p></div>
+</a>
 <p align="right">
 Next: <a href="comp-general.php">5 Compile Problems - General</a></p>
 
