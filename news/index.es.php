@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/25 06:56:14';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/11/10 00:14:21';
 $metatags = '';
 
 include_once "header.inc";
@@ -16,7 +16,7 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.</p>
       <p>
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
-<a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> aquí </a>.
+<a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 

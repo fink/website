@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.en.xml,v 1.1 2004/11/08 05:12:13 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.2 2004/11/10 00:14:21 dmacks Exp $</cvsid>
 
 
 <newsitem>
@@ -17,7 +17,7 @@ to use the "broken" gcc to compile packages which are known to
 have this problem.
 </p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> here </link>.
+described <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </link>.
 </p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
 </p>

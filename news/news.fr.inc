@@ -1,6 +1,6 @@
 <a name="15/10/2004 Résolution de problèmes concernant gcc"><span class="news-date">15/10/2004: </span><span class="news-headline">Résolution de problèmes concernant gcc</span></a><?php gray_line(); ?>
 <p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version "vérolée" pour compiler les paquets qui présentent ce problème.</p>
-<p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">ici</a>.</p>
+<p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580">ici</a>.</p>
 <p>Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.</p>
 <a name="20/09/2004 Fink 0.7.1 est disponible"><span class="news-date">20/09/2004: </span><span class="news-headline">Fink 0.7.1 est disponible</span></a><?php gray_line(); ?>
 <p>La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.</p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es" fsroot="../..">
-<cvsid>$Id: news.es.xml,v 1.7 2004/11/10 00:01:51 dmacks Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.8 2004/11/10 00:14:21 dmacks Exp $</cvsid>
  <newsitem>
     <date>2004-10-15</date>
     <headline>Resolución de problemas con gcc.</headline>
@@ -14,7 +14,7 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.</p>
       <p>
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
-<link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> aquí </link>.
+<link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </link>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 

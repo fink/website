@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/11/07 11:42:26';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/11/10 00:14:21';
 $metatags = '';
 
 include_once "header.inc";
@@ -17,7 +17,7 @@ to use the "broken" gcc to compile packages which are known to
 have this problem.
 </p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> here </a>.
+described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>.
 </p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
 </p>
