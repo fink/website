@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1 2005/01/20 01:35:01 alexkhansen Exp $
+# $Id: Makefile,v 1.2 2005/03/02 05:18:58 michga Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -9,7 +9,7 @@ TARGET = index.php bindist.php
 WANT_HTML = 1
 DESTDIR = doc/advanced
 
-LANGUAGES_AVAILABLE = en
+LANGUAGES_AVAILABLE = en fr
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
