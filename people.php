@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/20 15:09:19 $';
+$cvs_date = '$Date: 2001/10/13 10:33:36 $';
 
 include "header.inc";
 ?>
@@ -21,6 +21,7 @@ Fink (in alphabetical order):</p>
 <li>Jeremy Higgs</li>
 <li>Max Horn</li>
 <li>David R. Morrison</li>
+<li>Matthias Neeracher</li>
 <li>Andrew Rohl</li>
 <li>Masanori Sekino</li>
 <li>Christian Swinehart</li>
