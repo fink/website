@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Section ";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/05/31 23:54:45 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/11/23 16:55:16 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -67,8 +67,6 @@ if (!$rs) {
 
 <p><a href="<? print $pdbroot ?>sections.php">Back to section list</a></p>
 
-<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
-<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
 include "footer.inc";
