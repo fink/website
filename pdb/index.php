@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/25 10:15:14 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/06/08 15:29:51 $';
 
 include "header.inc";
 ?>
@@ -51,10 +51,9 @@ if (!$rs) {
 ?>
 
 <p>
-The database was last updated on <?
-print strftime("%A, %B %d", $dyndate)
-?> and currently lists <? print $pkgcount ?> packages in <? print
-$seccount ?> sections.
+The database was last updated
+<? print strftime("at %R on %A, %B %d", $dyndate) ?> and currently lists
+<? print $pkgcount ?> packages in <? print $seccount ?> sections.
 </p>
 
 <form action="search.php" method="GET">
