@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.9 2004/06/28 14:54:22 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.10 2004/07/29 22:31:20 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -727,6 +727,7 @@ unstable/main   - 他の非安定版パッケージ
 デフォルトのツリーは &quot;local/main local/bootstrap
 stable/main&quot; です。
 この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
+(fink 0.21.0 より、 fink が自動的に行うようになりました)
 </p>
 </li>
 <li>
@@ -938,6 +939,49 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 				</p>
 			</li>
 		</ul>
+	</section>
+	<section name="sourceslist" >
+		<title>Managing apt's sources.list file</title>
+		<p>
+			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
+			<code>/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
+			デフォルトの sources.list ファイルは、以下の形式で、 Distribution と Trees が調整されています
+		</p>
+<codeblock># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.</codeblock>
+
+		<p>
+			このデフォルトファイルにより、 apt-get はまずローカルインストール状況を見て
+			コンパイル済みバイナリを探します。次に、公式のバイナリディストリビューションを見ます。
+			これをファイルの最初に持ってきたり (最初に検索される) 、
+			ファイルの最後に持ってきる (最後に検索される) などの変更が可能です。
+		</p>
+		<p>
+			Trees の行や Distribution を変えると、 fink はファイル中の &quot;default&quot; を新しい値に書き換えます。
+			変更がファイルの先頭か末尾であれば、 Fink は、ファイルの変更をそのままにします。
+		</p>
+		<p>
+			注記: fink 0.21.0 にアップグレードする前に <code>/sw/etc/apt/sources.list</code> を変更した場合、
+			<code>/sw/etc/apt/sources.list.finkbak</code> として保存されます。
+		</p>
 	</section>
 </chapter>
 <chapter filename="usage" >

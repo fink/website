@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/28 14:54:22';
+$cvs_date = 'Date: 2004/07/29 22:31:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -95,6 +95,7 @@ unstable/main   - 他の非安定版パッケージ
 デフォルトのツリーは "local/main local/bootstrap
 stable/main" です。
 この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
+(fink 0.21.0 より、 fink が自動的に行うようになりました)
 </p>
 </li>
 <li>
@@ -306,6 +307,49 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 				</p>
 			</li>
 		</ul>
+	
+	<h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
+		
+		<p>
+			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
+			<code>/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
+			デフォルトの sources.list ファイルは、以下の形式で、 Distribution と Trees が調整されています
+		</p>
+<pre># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.</pre>
+
+		<p>
+			このデフォルトファイルにより、 apt-get はまずローカルインストール状況を見て
+			コンパイル済みバイナリを探します。次に、公式のバイナリディストリビューションを見ます。
+			これをファイルの最初に持ってきたり (最初に検索される) 、
+			ファイルの最後に持ってきる (最後に検索される) などの変更が可能です。
+		</p>
+		<p>
+			Trees の行や Distribution を変えると、 fink はファイル中の "default" を新しい値に書き換えます。
+			変更がファイルの先頭か末尾であれば、 Fink は、ファイルの変更をそのままにします。
+		</p>
+		<p>
+			注記: fink 0.21.0 にアップグレードする前に <code>/sw/etc/apt/sources.list</code> を変更した場合、
+			<code>/sw/etc/apt/sources.list.finkbak</code> として保存されます。
+		</p>
 	
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=ja">6. コマンドライン fink ツールの使用方法</a></p>
