@@ -21,7 +21,7 @@ while ($text =~ s|(</title>.*[^\\])'(.*</head>)|$1\\'$2|s) {
 }
 $text =~ s|</title>|";\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';\n\$metatags = '|s;
 $text =~ s|</head>.*<body>|';\n\ninclude_once "header.inc";\n?>\n\n|s;
-$text =~ s|</body>.*</html>|\n\n<?\ include_once "footer.inc"; ?>\n|s;
+$text =~ s|</body>.*</html>|\n\n<?\ include_once "footer.inc"; ?>|s;
 $text =~ s|\$Id|\$Fink|g;
 
 $text =~ s|\@ROOT\@|<?php print \$root; ?>|g;
