@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
@@ -16,10 +17,10 @@ include "header.inc";
 <p>
 Package descriptions are read from the <tt><nobr>finkinfo</nobr></tt>
 directories below the <tt><nobr>/sw/fink/dists</nobr></tt> directory.
-The "Trees" setting in <tt><nobr>/sw/etc/fink.conf</nobr></tt> controls which
+The &quot;Trees&quot; setting in <tt><nobr>/sw/etc/fink.conf</nobr></tt> controls which
 directories are read.
 The name of package description files must be the full package name
-plus the extension ".info".
+plus the extension &quot;.info&quot;.
 </p>
 <p>
 The package description tree is organized with several levels of
@@ -93,7 +94,7 @@ Note the lack of indentation and the terminating
 <tt><nobr>&lt;&lt;</nobr></tt>.
 </p><p>
 As a special case, when working within a <tt><nobr>SplitOff</nobr></tt> or
-<tt><nobr>SplitOff<i>N</i></nobr></tt> field, the here-document syntax
+<tt><nobr>SplitOff<b>N</b></nobr></tt> field, the here-document syntax
 can be nested.  The same terminator <tt><nobr>&lt;&lt;</nobr></tt> is used
 for the sub-here-document.  Here is an example:
 <pre>
@@ -111,7 +112,7 @@ Keys (field names) are case-insensitive in Fink, so you can write
 <tt><nobr>InstallScript</nobr></tt>, <tt><nobr>installscript</nobr></tt> or
 <tt><nobr>INSTALLSCRIPT</nobr></tt> as you please.
 The first form is preferred for readability, though.
-Some fields take a boolean value - any of "true", "yes", "on", "1"
+Some fields take a boolean value - any of &quot;true&quot;, &quot;yes&quot;, &quot;on&quot;, &quot;1&quot;
 (case-insensitive) are treated as true, all other values are treated
 as false.
 </p>
@@ -123,33 +124,69 @@ To make life easier, Fink supports a set of expansions that are
 performed on some fields.
 The available expansions are:
 </p>
-<dl>
-<dt>%n</dt><dd>the <b>n</b>ame of the current package</dd>
-<dt>%N</dt><dd>the <b>N</b>ame of the parent package (the same as
-%n unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
-<dt>%v</dt><dd>the package <b>v</b>ersion</dd>
-<dt>%r</dt><dd>the package <b>r</b>evision</dd>
-<dt>%f</dt><dd>the <b>f</b>ull package name, i.e. %n-%v-%r</dd>
-<dt>%p, %P</dt><dd>the <b>p</b>refix where Fink is installed, e.g. /sw</dd>
-<dt>%d</dt><dd>the <b>d</b>estination directory where the tree to be
-packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
-<dt>%D</dt><dd>the <b>D</b>estination for the parent package (the same as
-%d unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
-<dt>%i</dt><dd>the full <b>i</b>nstall-phase prefix, equivalent to %d%p</dd>
-<dt>%I</dt><dd>the <b>I</b>nstall prefix of the parent package,
-equivalent to %D%P (the same as
-%i unless within a <tt><nobr>SplitOff</nobr></tt>)</dd>
-<dt>%a</dt><dd>the path where the p<b>a</b>tches can be found</dd>
-<dt>%b</dt><dd>the <b>b</b>uild directory,
-e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1
-<p>Note: Use this only when there is no other way. The build
-directory is the current directory when scripts are executed; you
-should use relative path names in commands.</p>
-</dd>
-<dt>%c</dt><dd>the parameters for <b>c</b>onfigure:
-<tt><nobr>--prefix=%p</nobr></tt> plus anything specified with
-ConfigureParams</dd>
-</dl>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
+<p>
+the <b>n</b>ame of the current package
+</p>
+</td></tr><tr valign="top"><td>%N</td><td>
+<p>
+the <b>N</b>ame of the parent package (the same as %n unless within a
+<tt><nobr>SplitOff</nobr></tt>)
+</p>
+</td></tr><tr valign="top"><td>%v</td><td>
+<p>
+the package <b>v</b>ersion
+</p>
+</td></tr><tr valign="top"><td>%r</td><td>
+<p>
+the package <b>r</b>evision
+</p>
+</td></tr><tr valign="top"><td>%f</td><td>
+<p>
+the <b>f</b>ull package name, i.e. %n-%v-%r
+</p>
+</td></tr><tr valign="top"><td>%p, %P</td><td>
+<p>
+the <b>p</b>refix where Fink is installed, e.g. /sw
+</p>
+</td></tr><tr valign="top"><td>%d</td><td>
+<p>
+the <b>d</b>estination directory where the tree to be packaged is built, e.g.
+/sw/src/root-gimp-1.2.1-1
+</p>
+</td></tr><tr valign="top"><td>%D</td><td>
+<p>
+the <b>D</b>estination for the parent package (the same as %d unless within a
+<tt><nobr>SplitOff</nobr></tt>)
+</p>
+</td></tr><tr valign="top"><td>%i</td><td>
+<p>
+the full <b>i</b>nstall-phase prefix, equivalent to %d%p
+</p>
+</td></tr><tr valign="top"><td>%I</td><td>
+<p>
+the <b>I</b>nstall prefix of the parent package, equivalent to %D%P (the same
+as %i unless within a <tt><nobr>SplitOff</nobr></tt>)
+</p>
+</td></tr><tr valign="top"><td>%a</td><td>
+<p>
+the path where the p<b>a</b>tches can be found
+</p>
+</td></tr><tr valign="top"><td>%b</td><td>
+<p>
+the <b>b</b>uild directory, e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1 
+</p>
+<p>
+Note: Use this only when there is no other way. The build directory is the
+current directory when scripts are executed; you should use relative path names
+in commands.
+</p>
+</td></tr><tr valign="top"><td>%c</td><td>
+<p>
+the parameters for <b>c</b>onfigure: <tt><nobr>--prefix=%p</nobr></tt> plus anything
+specified with ConfigureParams
+</p>
+</td></tr></table>
 
 
 
@@ -160,3 +197,4 @@ Next: <a href="policy.php">3 Packaging Policy</a></p>
 <?
 include "footer.inc";
 ?>
+

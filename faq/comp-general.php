@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: finlayd';
@@ -13,7 +14,7 @@ include "header.inc";
 
 
 <a name="compiler"><div class="question"><p><b>Q4.1: A configure script complains
-that it can't find an "acceptable cc". What's that?</b></p></div>
+that it can't find an &quot;acceptable cc&quot;. What's that?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Read the docs next time.
 To compile packages from source, you must install the Developer Tools,
@@ -58,3 +59,4 @@ Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>
 <?
 include "footer.inc";
 ?>
+

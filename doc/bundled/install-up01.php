@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: fingolfin';
@@ -12,6 +13,7 @@ include "header.inc";
 
 
 
+<a name="upgrade-01"><h2>5.1 </h2></a>
 <p>
 There is no direct upgrade path from Fink 0.1.x to Fink 0.2.x, because
 they use different methods for underlying package management (stow
@@ -49,6 +51,8 @@ Reinstall the packages you need.
 
 
 
+
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: finlayd';
@@ -71,3 +72,4 @@ Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
 <?
 include "footer.inc";
 ?>
+

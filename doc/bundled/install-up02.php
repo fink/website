@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - Upgrade from 0.2";
 $cvs_author = 'Author: fingolfin';
@@ -72,8 +73,8 @@ the latest set of package descriptions by issuing the following command:
 The first thing you should do after updating the package descriptions
 is getting the X11 dependencies settled (unless you already did that
 after upgrading to 0.2.3).
-Refer to the "Getting X11 Sorted Out" section under "First Time
-Installation" above.
+Refer to the &quot;Getting X11 Sorted Out&quot; section under &quot;First Time
+Installation&quot; above.
 </p>
 
 
@@ -113,3 +114,4 @@ Next: <a href="install-up01.php">5 Upgrading From Fink 0.1.x</a></p>
 <?
 include "footer.inc";
 ?>
+

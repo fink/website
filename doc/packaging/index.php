@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging";
 $cvs_author = 'Author: dmrrsn';
@@ -14,7 +15,7 @@ This manual documents how to create package descriptions for the Fink
 package manager.
 It also provides a policy and guidelines for the Fink distribution.
 Both the description format and the distribution policy are still
-evolving, so watch the "Last changed" info and the CVS tag on this
+evolving, so watch the &quot;Last changed&quot; info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
 policy used in post-0.9.0 development versions of the fink
@@ -63,3 +64,4 @@ mailing list.
 <?
 include "footer.inc";
 ?>
+

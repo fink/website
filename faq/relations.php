@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: finlayd';
@@ -59,9 +60,9 @@ So far they are providing us with pre-release seeds of new Mac OS X
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
-<i>"Hopefully it underscores the commitment that many suspect we're
+<b>&quot;Hopefully it underscores the commitment that many suspect we're
 not willing to provide.  We'll get better at the open source game over
-time."</i>
+time.&quot;</b>
 Thanks Apple!
 </p></div></a>
 
@@ -93,3 +94,4 @@ Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
 <?
 include "footer.inc";
 ?>
+

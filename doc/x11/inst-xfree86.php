@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: chrisp';
@@ -179,7 +180,7 @@ These are:</p>
 <li>XDarwinStartup in /usr/X11R6/bin</li>
 </ul>
 <p>
-Note that you must be the superuser ("root", run "sudo -s" to become
+Note that you must be the superuser (&quot;root&quot;, run &quot;sudo -s&quot; to become
 root) for this procedure.
 If some of these items are already present, overwrite them.
 Make sure that XDarwin and XDarwinStartup have the executable flag
@@ -218,3 +219,4 @@ Next: <a href="run-xfree86.php">4 Starting XFree86</a></p>
 <?
 include "footer.inc";
 ?>
+

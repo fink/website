@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
@@ -24,7 +25,7 @@ and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
 (i.e. /sw/src/gimp-1.2.1-1/gimp-1.2.1). Details can be controlled with
-the SourceDirectory, NoSourceDirectory and Source<i>N</i>ExtractDir
+the SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
 fields.</p>
 <p>In the <b>patch phase</b> the source is patched so that it will
 build on Darwin. The actions specified by the UpdateConfigGuess,
@@ -35,11 +36,11 @@ compiled. Usually this means calling the <tt><nobr>configure</nobr></tt> script
 with some parameters and then issuing a <tt><nobr>make</nobr></tt> command. See the
 ConfigureScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
-directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
+directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the &quot;root-&quot; part.)
 All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
-<p>(<i>Introduced in fink 0.9.9.</i> It is possible to generate several
+<p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
 packages from a single package description using the <tt><nobr>SplitOff</nobr></tt>
 field.  Towards the end of the install phase, separate install directories
 are created for each package being created, and files are moved to
@@ -55,7 +56,7 @@ generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 <p>We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
 <p><b>Initial Data:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Package</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
 The package name.
 May contain lowercase letters, numbers and the special characters '.',
@@ -127,7 +128,7 @@ in the following format:
 <pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Depends</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 A list of packages which must be installed before this package can be
 built.
@@ -147,7 +148,7 @@ packages, e.g. wget and wget-ssl.
 </p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
-<i>Introduced in fink 0.9.0.</i>
+<b>Introduced in fink 0.9.0.</b>
 A list of dependencies that is applied at build time only.
 This can be used to list tools (e.g. flex) that must be present to
 build the packages, but which are not used at run time.
@@ -156,12 +157,12 @@ Supports the same syntax as Depends.
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
 A comma-separated list of package names that this package is
-considered to "provide".
-If a package named "pine" specifies <tt><nobr>Provides: mailer</nobr></tt>,
-then any dependency on "mailer" is considered satisfied when "pine" is
+considered to &quot;provide&quot;.
+If a package named &quot;pine&quot; specifies <tt><nobr>Provides: mailer</nobr></tt>,
+then any dependency on &quot;mailer&quot; is considered satisfied when &quot;pine&quot; is
 installed.
-You'll usually also want to name these packages in the "Conflicts" and
-the "Replaces" field.
+You'll usually also want to name these packages in the &quot;Conflicts&quot; and
+the &quot;Replaces&quot; field.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
@@ -179,7 +180,7 @@ In summary, it only effects run-time, not build-time.
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
-This is used together with "Conflicts", when this package not only
+This is used together with &quot;Conflicts&quot;, when this package not only
 takes over the function of the conflicting package, but also has some
 common files.
 Without this field, dpkg may generate errors when installing the
@@ -218,22 +219,22 @@ special flags are used to override this.
 </p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<b>Introduced in fink 0.9.9.</b>
 A boolean value which indicates that no other packages should Depend on
 this one, they should only BuildDepend.
 </p>
 </td></tr></table>
 <p><b>Unpack Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Source</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Source</td><td>
 <p>
 An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
 supports a special URL scheme for mirrors:
 <tt><nobr>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</nobr></tt>. This will
-look up the mirror setting for <i>mirror-name</i> in Fink's
-configuration, append the <i>relative-path</i> part and use that as
+look up the mirror setting for <b>mirror-name</b> in Fink's
+configuration, append the <b>relative-path</b> part and use that as
 the actual URL. Alternatively, using <tt><nobr>custom</nobr></tt> as the
-<i>mirror-name</i> will cause Fink to use the <tt><nobr>CustomMirror</nobr></tt>
+<b>mirror-name</b> will cause Fink to use the <tt><nobr>CustomMirror</nobr></tt>
 field.
 </p>
 <p>
@@ -248,7 +249,7 @@ download).
 <p>
 A list of mirror sites. Each mirror site appears on a separate line,
 in the following format: <tt><nobr>&lt;location&gt;: &lt;url&gt;</nobr></tt>.
-<i>location</i> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
+<b>location</b> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
 country code (e.g. <tt><nobr>nam-us</nobr></tt>), or anything else;
 mirrors are tried in that order.
 Example:
@@ -263,29 +264,29 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>
 Must be used when the tarball expands to a single directory, but
 the directory's name is different from the basename of the tarball.
-Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
-named "foo-1.0". If it produces a directory with a different name,
+Usually, a tarball named &quot;foo-1.0.tar.gz&quot; will produce a directory
+named &quot;foo-1.0&quot;. If it produces a directory with a different name,
 specify it with this parameter. Percent expansion is performed on this
 field.
 </p>
 </td></tr><tr valign="top"><td>NoSourceDirectory</td><td>
 <p>
 Set this boolean parameter to a true value if the tarball does not
-expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
-will produce a directory named "foo-1.0". If it just unpacks the files
+expand to a single directory. Usually, a tarball named &quot;foo-1.0.tar.gz&quot;
+will produce a directory named &quot;foo-1.0&quot;. If it just unpacks the files
 to the current directory, use this parameter and set it to a boolean
 true value.
 </p>
-</td></tr><tr valign="top"><td>Source<i>N</i></td><td>
+</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
 If a package consists of several tarballs, name them with these
 additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of "main" tarball) goes into <tt><nobr>Source</nobr></tt>, the
+should be some kind of &quot;main&quot; tarball) goes into <tt><nobr>Source</nobr></tt>, the
 second tarball in <tt><nobr>Source2</nobr></tt> and so on. The rules are the same
-as for Source, only that the "gnu" and "gnome" shortcuts are not
+as for Source, only that the &quot;gnu&quot; and &quot;gnome&quot; shortcuts are not
 expanded - that would be useless anyway.
 </p>
-</td></tr><tr valign="top"><td>Source<i>N</i>ExtractDir</td><td>
+</td></tr><tr valign="top"><td>Source<b>N</b>ExtractDir</td><td>
 <p>
 Normally, an auxiliary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
@@ -306,26 +307,26 @@ caused by this, you would then use something like
 In the above example this would result in the tarball being stored under
 /sw/src/coolapp-1.2.3.tar.gz as one would expect.
 </p>
-</td></tr><tr valign="top"><td>Source<i>N</i>Rename</td><td>
+</td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
 This is just the same as the <tt><nobr>SourceRename</nobr></tt> field, except that it
-is used to rename the Nth tarball as specified by the <tt><nobr>Source<i>N</i></nobr></tt>
+is used to rename the Nth tarball as specified by the <tt><nobr>Source<b>N</b></nobr></tt>
 field. See context or hyperref for examples of usage.
 </p>
 </td></tr></table>
 <p><b>Patch Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
 A boolean value. If true, the files config.guess and config.sub
 in the build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <b>Only</b> use this when you know it is necessary,
-i.e. when the configure script fails with a "unknown host"
+i.e. when the configure script fails with a &quot;unknown host&quot;
 message.
 </p>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
 <p>
-<i>Introduced in a post-0.9.0 CVS version.</i>
+<b>Introduced in a post-0.9.0 CVS version.</b>
 A list of subdirectories.
 This does the same as UpdateConfigGuess, but is useful for packages
 that have outdated config.guess files in several directories
@@ -347,7 +348,7 @@ page</a> for further information.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p>
-<i>Introduced in a post-0.9.0 CVS version.</i>
+<b>Introduced in a post-0.9.0 CVS version.</b>
 A list of subdirectories.
 This does the same as UpdateLibtool, but is useful for packages
 that have outdated libtool 1.3.x scripts in several directories
@@ -377,7 +378,7 @@ packages's version and Fink's version (in
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
 The filename of a patch to be applied with <tt><nobr>patch -p1
-&lt;<i>patch-file</i></nobr></tt>. This should be just a filename; the
+&lt;<b>patch-file</b></nobr></tt>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <tt><nobr>%f.patch</nobr></tt>. The patch is applied before the PatchScript
@@ -393,7 +394,7 @@ section).
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Set<i>ENVVAR</i></td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
 <p>
 Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
@@ -409,7 +410,7 @@ The variables CPPFLAGS and LDFLAGS are special. They default to
 respectively. If you specify a value for one of these, it will be
 prepended to the default value.
 </p>
-</td></tr><tr valign="top"><td>NoSet<i>ENVVAR</i></td><td>
+</td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>
 When set to a true value, deactivates the default values for
 CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
@@ -448,9 +449,9 @@ Before the commands are executed, percent expansion takes place
 </p>
 </td></tr></table>
 <p><b>Install Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
 <p>
-<i>Introduced in fink 0.9.5.</i>
+<b>Introduced in fink 0.9.5.</b>
 A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
@@ -498,22 +499,22 @@ commands to the InstallScript.
 </p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<b>Introduced in fink 0.9.9.</b>
 Generate a second package from the same compile/install run.
 For details about how this works, see the separate
 <a href="#splitoffs">splitoff section</a> below.
 </p>
-</td></tr><tr valign="top"><td>SplitOff<i>N</i></td><td>
+</td></tr><tr valign="top"><td>SplitOff<b>N</b></td><td>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<b>Introduced in fink 0.9.9.</b>
 This is the same as <tt><nobr>SplitOff</nobr></tt>, used to generate a third,
 fourth, etc. package from the same compile/install run.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<b>Introduced in fink 0.9.9.</b>
 Used <b>only</b>
-within a <tt><nobr>SplitOff</nobr></tt> or <tt><nobr>SplitOff<i>N</i></nobr></tt> field,
+within a <tt><nobr>SplitOff</nobr></tt> or <tt><nobr>SplitOff<b>N</b></nobr></tt> field,
 this designates which files and directories
 should be moved from the parent package's  installation
 directory %I to the current installation directory %i.  Note that this
@@ -522,7 +523,7 @@ but before the InstallScript and Docfiles of the current package.
 </p>
 </td></tr></table>
 <p><b>Build Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>PreInstScript, PostInstScript, PreRmScript, PostRmScript</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>PreInstScript, PostInstScript, PreRmScript, PostRmScript</td><td>
 <p>
 These fields specify pieces of shell scripts that will be called when
 the package is installed, upgraded or removed.
@@ -570,9 +571,9 @@ The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups
 of the file will be made.
-When a package is "remove"d, the configuration files will remain on
+When a package is &quot;remove&quot;d, the configuration files will remain on
 disk.
-Only a "purge" also removes the configuration files.
+Only a &quot;purge&quot; also removes the configuration files.
 </p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
 <p>
@@ -589,7 +590,7 @@ Gives a service description for <tt><nobr>daemonic</nobr></tt>.
 <tt><nobr>daemonic</nobr></tt> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
 The description will added to the package as a file named
-<tt><nobr>%p/etc/daemons/<i>name</i>.xml</nobr></tt>, where <i>name</i> is
+<tt><nobr>%p/etc/daemons/<b>name</b>.xml</nobr></tt>, where <b>name</b> is
 specified by the DaemonicName field and defaults to the package
 name.
 Percent expansion is performed on the contents of this field.
@@ -603,7 +604,7 @@ See the description of DaemonicFile for details.
 </p>
 </td></tr></table>
 <p><b>Additional Data:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Homepage</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Homepage</td><td>
 <p>
 The URL of the upstream home page of the package.
 </p>
@@ -616,19 +617,19 @@ Multiple lines allowed.
 </td></tr><tr valign="top"><td>DescUsage</td><td>
 <p>
 This is for information that is needed to use the package (how do
-I use it?). As in "run wmaker.inst once before using WindowMaker".
+I use it?). As in &quot;run wmaker.inst once before using WindowMaker&quot;.
 Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>DescPackaging</td><td>
 <p>
-Notes about the packaging. Stuff like "patches the Makefile to put
-everything in place" goes here. Multiple lines allowed.
+Notes about the packaging. Stuff like &quot;patches the Makefile to put
+everything in place&quot; goes here. Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>
 Notes that are specific to porting the package to Darwin. Stuff
-like "config.guess and libtool scripts are updated, -no-cpp-precomp
-is necessary" goes here. Multiple lines allowed.
+like &quot;config.guess and libtool scripts are updated, -no-cpp-precomp
+is necessary&quot; goes here. Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>Comment</td><td>
 <p>
@@ -671,6 +672,7 @@ The <tt><nobr>SplitOff</nobr></tt> field must contain a number of fields of its
 own.  In fact, it resembles a complete package description, but with
 certain fields missing.  Here is what belongs in the sub-description
 (by category):
+</p>
 <ul>
 <li>Initial Data: Only the <tt><nobr>Package</nobr></tt> needs to be specified,
 everything else is inherited from the parent package (except for
@@ -687,7 +689,7 @@ field).</li>
 <li>Additional Data: These are inherited from the parent package but may
 be modified by declaring the field within the <tt><nobr>SplitOff</nobr></tt>.</li>
 </ul>
-</p><p>
+<p>
 During the install phase, the <tt><nobr>InstallScript</nobr></tt> and 
 <tt><nobr>DocFiles</nobr></tt> of the parent package are executed first.
 Next comes the <tt><nobr>Files</nobr></tt> command specified in the
@@ -731,7 +733,7 @@ line. This may be fixed one day in the future.</p>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension
-".patch" and put it in the same directory as the .info file. Specify
+&quot;.patch&quot; and put it in the same directory as the .info file. Specify
 either one of these (they are equivalent):</p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
@@ -747,3 +749,4 @@ last.</p>
 <?
 include "footer.inc";
 ?>
+

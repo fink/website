@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Fink CVS Access";
 $cvs_author = 'Author: chrisp';
@@ -59,7 +60,7 @@ cvs -z3 update -d
 main difference is that the <tt><nobr>inject.pl</nobr></tt> script just copies the
 descriptions into your Fink installation. To build the new packages,
 you must use regular fink commands, like <tt><nobr>fink update-all</nobr></tt> or
-<tt><nobr>fink update <i>&lt;package&gt;</i></nobr></tt>.</p>
+<tt><nobr>fink update <b>&lt;package&gt;</b></nobr></tt>.</p>
 <p>The first time procedure:</p>
 <pre>cd tempdir
 cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
@@ -79,3 +80,4 @@ cvs -z3 update -d
 <?
 include "footer.inc";
 ?>
+

@@ -1,6 +1,4 @@
-<html><head>
-      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-   <title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body><h1 align="center">Running X11 on Darwin and Mac OS X</h1>
+<html><head><meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"><title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body><h1 align="center">Running X11 on Darwin and Mac OS X</h1>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
 OS X and Darwin systems.
@@ -65,7 +63,7 @@ or crashes almost immediately</a></li>
 menu of a GNOME application</a></li>
 <li><a href="#trouble.keyboard">7.3 The keyboard doesn't work in XFree86</a></li>
 <li><a href="#trouble.delete-key">7.4 The Backspace key doesn't work</a></li>
-<li><a href="#trouble.locale">7.5 "Warning: locale not supported by C library"</a></li>
+<li><a href="#trouble.locale">7.5 &quot;Warning: locale not supported by C library&quot;</a></li>
 </ul>
 <li><a href="#tips"><b>8 Usage Tips</b></a></li>
 <ul>
@@ -151,7 +149,7 @@ which often results in confusion over the terms.
 In an environment with workstations and servers, you will run the X11
 display server on the workstation machine and the applications (the X
 clients) on the server machine.
-So when talking about the "server", that means the X11 display server
+So when talking about the &quot;server&quot;, that means the X11 display server
 program, not the machine hidden in your wardrobe.
 </p>
 
@@ -163,8 +161,8 @@ X11 models the screen as a hierarchy of windows contained in each
 other.
 At the top of the hierarchy is a special window which is the size of
 the screen and contains all other windows.
-This window contains the desktop background and is called the "root
-window".
+This window contains the desktop background and is called the &quot;root
+window&quot;.
 </p>
 <p>
 Now back on topic:
@@ -187,7 +185,7 @@ This eliminates the need to switch between two screens.
 It also eliminates the X11 root window, because Quartz already takes
 care of the desktop background.
 Because there is no (visible) root window, this mode is called
-"rootless".
+&quot;rootless&quot;.
 It is the most comfortable way to use X11 on Mac OS X, so everyone is
 trying to get it. <tt><nobr>:-)</nobr></tt>
 </p>
@@ -199,7 +197,7 @@ trying to get it. <tt><nobr>:-)</nobr></tt>
 In most graphical environments the look of window frames (title bar,
 close button, etc.) is defined by the system.
 X11 is different.
-With X11, the window frames (also called "decoration") are provided by
+With X11, the window frames (also called &quot;decoration&quot;) are provided by
 a separate program, called the window manager.
 In most respects, the window manager is just another client
 application; it is started the same way and talks to the X server
@@ -461,7 +459,7 @@ These are:</p>
 <li>XDarwinStartup in /usr/X11R6/bin</li>
 </ul>
 <p>
-Note that you must be the superuser ("root", run "sudo -s" to become
+Note that you must be the superuser (&quot;root&quot;, run &quot;sudo -s&quot; to become
 root) for this procedure.
 If some of these items are already present, overwrite them.
 Make sure that XDarwin and XDarwinStartup have the executable flag
@@ -631,18 +629,18 @@ there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them "in the background" by adding a <tt><nobr>&amp;</nobr></tt> at
+shell to put them &quot;in the background&quot; by adding a <tt><nobr>&amp;</nobr></tt> at
 the end of the line.
 </p>
 <p>
 Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt> script
-to finish and interprets that as "the session has ended, I should kill
-the X server now, too".
+to finish and interprets that as &quot;the session has ended, I should kill
+the X server now, too&quot;.
 This means that the last command of your <tt><nobr>.xinitrc</nobr></tt> must
 not be run in the background and it should be a long-living program.
 Customarily, the window manager is used for this purpose.
 In fact, most window managers assume that <tt><nobr>xinit</nobr></tt> is
-waiting for them to finish and use this to make the "Log out" entry in
+waiting for them to finish and use this to make the &quot;Log out&quot; entry in
 their menus work.
 (Note: To save some memory and CPU cycles, you can put an
 <tt><nobr>exec</nobr></tt> before the last line like in the examples below.)
@@ -772,10 +770,10 @@ But first, you need to gather two important pieces of information:
 <p>
 <b>XDarwin version.</b>
 You can find the XDarwin version in the Finder by clicking
-<b>once</b> on the XDarwin icon and then selecting "Show Info"
+<b>once</b> on the XDarwin icon and then selecting &quot;Show Info&quot;
 from the menu.
 The version is only incremented when a new binary test release is made
-by the XonX project, so "1.0a1" may actually be any version between
+by the XonX project, so &quot;1.0a1&quot; may actually be any version between
 1.0a1 and 1.0a2.
 </p>
 <p>
@@ -799,7 +797,7 @@ We'll start with a list of the messages you may see:
 <pre>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</pre>
 <p>
 Class: Harmless.
-X11 creates hidden directories in /tmp to store the socket "files" for
+X11 creates hidden directories in /tmp to store the socket &quot;files&quot; for
 local connections.
 For security reasons, X11 prefers if these directories are owned by
 root, but since they are world-writable anyway it will still run
@@ -858,12 +856,12 @@ Most applications will still work, GNU Emacs is a noteable exception.
 Reverting to kernel keymapping.</pre>
 <p>
 Class: Often fatal.
-This can happen with XDarwin 1.0a1, with the "Load from file"
+This can happen with XDarwin 1.0a1, with the &quot;Load from file&quot;
 keymapping option enabled.
 That version needs a full path when the file to load is set via the
 Preferences dialog, but searches automatically when it is passed on
 the command line.
-The message will usually be followed by the "assert" message shown
+The message will usually be followed by the &quot;assert&quot; message shown
 below.
 To fix this, follow the directions below.
 </p>
@@ -877,9 +875,9 @@ Class: Fatal.
 Changes Apple made in Mac OS X 10.1 broke the code in XFree86 that
 reads the keyboard layout from the operating system kernel;
 the message above is the result of that.
-You must use the "Load from file" keymapping option on Mac OS X 10.1.
+You must use the &quot;Load from file&quot; keymapping option on Mac OS X 10.1.
 The setting is in the XDarwin Preferences dialog.
-Be sure that a file is selected (i.e. use the "Pick file" button) -
+Be sure that a file is selected (i.e. use the &quot;Pick file&quot; button) -
 simply activating the check box may not be sufficient with some
 versions of XDarwin.
 If you can't get to the Preferences dialog because XDarwin closes
@@ -933,9 +931,9 @@ Rootless Servers</a> section for more hints.
 </p>
 
 <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
-&gt; Error:            Can't find file "unknown" for geometry include
+&gt; Error:            Can't find file &quot;unknown&quot; for geometry include
 &gt;                   Exiting
-&gt;                   Abandoning geometry file "(null)"
+&gt;                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</pre>
 <p>
 Class: Mostly harmless.
@@ -974,7 +972,7 @@ automatically cleans up /tmp when it boots, and the network stack is
 reset).
 </p>
 
-<pre>Xlib: connection to ":0.0" refused by server
+<pre>Xlib: connection to &quot;:0.0&quot; refused by server
 Xlib: Client is not authorized to connect to Server</pre>
 <p>
 Class: Fatal.
@@ -998,7 +996,7 @@ Another common cause for XFree86 startup failures is an incorrect
 <tt><nobr>.xinitrc</nobr></tt> file.
 What happens is that the <tt><nobr>.xinitrc</nobr></tt> is run and for some
 reason terminates almost immediately.
-<tt><nobr>xinit</nobr></tt> interprets this as "the user's session has ended"
+<tt><nobr>xinit</nobr></tt> interprets this as &quot;the user's session has ended&quot;
 and kills XDarwin.
 See the <a href="#run-xfree86.xinitrc">.xinitrc
 section</a> for more details.
@@ -1042,13 +1040,13 @@ application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
-To work around this, the "Load from file" keymapping option was
+To work around this, the &quot;Load from file&quot; keymapping option was
 implemented.
 Nowadays it has become the default because the old method (reading the
 mapping from the kernel) stopped working with Mac OS X 10.1.
 If you haven't enabled the option already, you can do so in the
 XDarwin preferences dialog.
-Check the "Load from file" checkbox and select the keymapping file to
+Check the &quot;Load from file&quot; checkbox and select the keymapping file to
 load.
 After restarting XDarwin, your keyboard should mostly work (see
 below).
@@ -1063,14 +1061,14 @@ name of the keymapping file to load as an option, as in:
 
 <a name="trouble.delete-key"><h3>7.4 The Backspace key doesn't work</h3></a>
 <p>
-This can happen when you use the "Load keymapping from file" option
+This can happen when you use the &quot;Load keymapping from file&quot; option
 described above.
-The mapping files describe the backspace key as "Delete", not as
-"Backspace".
+The mapping files describe the backspace key as &quot;Delete&quot;, not as
+&quot;Backspace&quot;.
 You can correct that by putting the following line in your .xinitrc
 file:
 </p>
-<pre>xmodmap -e "keycode 59 = BackSpace"</pre>
+<pre>xmodmap -e &quot;keycode 59 = BackSpace&quot;</pre>
 <p>
 If I remember correctly, XDarwin 1.0a2 and later have code that
 correctly maps the Backspace key automatically.
@@ -1078,7 +1076,7 @@ correctly maps the Backspace key automatically.
 
 
 
-<a name="trouble.locale"><h3>7.5 "Warning: locale not supported by C library"</h3></a>
+<a name="trouble.locale"><h3>7.5 &quot;Warning: locale not supported by C library&quot;</h3></a>
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -1127,7 +1125,7 @@ OS X.
 <a name="tips.terminal-app"><h3>8.1 Launching X11 apps from Terminal.app</h3></a>
 <p>
 To launch X11 applications from a Terminal.app window, you must set
-the environment variable "DISPLAY".
+the environment variable &quot;DISPLAY&quot;.
 This variable tells the applications where to find the X11 window
 server.
 In the default setup - XDarwin runs on the same machine, your shell is
@@ -1186,8 +1184,8 @@ To transfer text from X11 to Aqua, simply select the text with the
 mouse in X11, then use Cmd-V in Aqua to paste it.
 </p>
 <p>
-The X11 system actually has several separate clipboards (called "cut
-buffers" in X11 speak), and some applications have weird views which
+The X11 system actually has several separate clipboards (called &quot;cut
+buffers&quot; in X11 speak), and some applications have weird views which
 one should be used.
 In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
 because of this.

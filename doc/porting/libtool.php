@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: fingolfin';
@@ -155,10 +156,10 @@ diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
      # FIXME: Relying on posixy $() will cause problems for
      #        cross-compilation, but unfortunately the echo tests do not
      #        yet detect zsh echo's removal of \ escapes.
--    archive_cmds='$nonopt $(test "x$module" = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
+-    archive_cmds='$nonopt $(test &quot;x$module&quot; = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
 +    archive_cmds='$nonopt $(test x$module = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
      # We need to add '_' to the symbols in $export_symbols first
-     #archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
+     #archive_expsym_cmds=&quot;$archive_cmds&quot;' &amp;&amp; strip -s $export_symbols'
      hardcode_direct=yes
 </pre>
 <p>
@@ -167,7 +168,7 @@ This problem is fixed in some post-1.4.2 versions of libtool.
 </li>
 <li>
 <b>The convenience library bug</b>:
-Under some conditions, libtool will fail to link convenience libraries, giving "multiple definitions" errors.
+Under some conditions, libtool will fail to link convenience libraries, giving &quot;multiple definitions&quot; errors.
 This is caused by a more fundamental problem in libtool it seems. For now as a workaround (curing the symptoms
 not the actual problem, but with great success anyway), you can use this fix:
 <pre>
@@ -175,17 +176,17 @@ diff -Naur gdk-pixbuf-0.16.0.old/ltmain.sh gdk-pixbuf-0.16.0.new/ltmain.sh
 --- gdk-pixbuf-0.16.0.old/ltmain.sh	Wed Jan 23 10:11:43 2002
 +++ gdk-pixbuf-0.16.0.new/ltmain.sh	Thu Jan 31 03:19:54 2002
 @@ -2862,7 +2862,12 @@
- 	if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds"; then
- 	  eval cmds=\"$archive_expsym_cmds\"
+ 	if test -n &quot;$export_symbols&quot; &amp;&amp; test -n &quot;$archive_expsym_cmds&quot;; then
+ 	  eval cmds=\&quot;$archive_expsym_cmds\&quot;
  	else
-+	  save_deplibs="$deplibs"
++	  save_deplibs=&quot;$deplibs&quot;
 +	  for conv in $convenience; do
-+	    deplibs="${deplibs%$conv*} ${deplibs#*$conv}"
++	    deplibs=&quot;${deplibs%$conv*} ${deplibs#*$conv}&quot;
 +	  done
- 	  eval cmds=\"$archive_cmds\"
-+	  deplibs="$save_deplibs"
+ 	  eval cmds=\&quot;$archive_cmds\&quot;
++	  deplibs=&quot;$save_deplibs&quot;
  	fi
- 	IFS="${IFS= 	}"; save_ifs="$IFS"; IFS='~'
+ 	IFS=&quot;${IFS= 	}&quot;; save_ifs=&quot;$IFS&quot;; IFS='~'
  	for cmd in $cmds; do
 </pre>
 </li>
@@ -216,3 +217,4 @@ This can be achieved by configuring GNU libtool with
 <?
 include "footer.inc";
 ?>
+

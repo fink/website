@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: chrisp';
@@ -16,7 +17,7 @@ include "header.inc";
 <a name="terminal-app"><h2>8.1 Launching X11 apps from Terminal.app</h2></a>
 <p>
 To launch X11 applications from a Terminal.app window, you must set
-the environment variable "DISPLAY".
+the environment variable &quot;DISPLAY&quot;.
 This variable tells the applications where to find the X11 window
 server.
 In the default setup - XDarwin runs on the same machine, your shell is
@@ -75,8 +76,8 @@ To transfer text from X11 to Aqua, simply select the text with the
 mouse in X11, then use Cmd-V in Aqua to paste it.
 </p>
 <p>
-The X11 system actually has several separate clipboards (called "cut
-buffers" in X11 speak), and some applications have weird views which
+The X11 system actually has several separate clipboards (called &quot;cut
+buffers&quot; in X11 speak), and some applications have weird views which
 one should be used.
 In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
 because of this.
@@ -100,3 +101,4 @@ be executed.)
 <?
 include "footer.inc";
 ?>
+

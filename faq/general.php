@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: finlayd';
@@ -66,8 +67,8 @@ third-party packages to a minimum.
 
 <a name="usr-local"><div class="question"><p><b>Q1.4: Why doesn't Fink install into
 /usr/local?</b></p></div>
-<div class="answer"><p><b>A:</b> There are several reasons, but the common line is "because
-breakage will occur".</p><p>Reason One: Third-party software. /usr/local is the
+<div class="answer"><p><b>A:</b> There are several reasons, but the common line is &quot;because
+breakage will occur&quot;.</p><p>Reason One: Third-party software. /usr/local is the
 well-established place to put software that is not part of the system
 shipped by the original vendor. This means that it is a good place to
 put stuff. However, it also means that other people will put stuff
@@ -103,3 +104,4 @@ Next: <a href="relations.php">2 Relations with Other Projects</a></p>
 <?
 include "footer.inc";
 ?>
+

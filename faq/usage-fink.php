@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: finlayd';
@@ -101,13 +102,13 @@ hand only know about the packages available as precompiled binary
 packages.
 Many packages are not available in precompiled form through these
 tools for a variety of reasons.
-A package must be in the "stable" section of the latest point release
+A package must be in the &quot;stable&quot; section of the latest point release
 to be considered, and it must pass additional checks for policy
 compliance as well as licensing and patent restrictions.
 </p><p>
 If you want to install a package that is not available via
 <tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
-from source using <tt><nobr>fink install <i>packagename</i></nobr></tt>.
+from source using <tt><nobr>fink install <b>packagename</b></nobr></tt>.
 Make sure you have the Developer Tools installed before you try this.
 See also the question about unstable below.
 </p></div></a>
@@ -140,7 +141,7 @@ line allows you to run any command via sudo without typing your
 password.</p></div></a>
 
 <a name="exec-init-csh"><div class="question"><p><b>Q3.10: When I try to run
-init.csh, I get a "Permission denied" error. What am I doing
+init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
 sets environment variables like PATH and MANPATH in your shell. To
@@ -148,7 +149,7 @@ have a lasting effect on the shell, it must be processed with the
 <tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
 
 <a name="dselect-access"><div class="question"><p><b>Q3.11: Help! I used the
-"[A]ccess" menu entry in dselect and now I can't download packages any
+&quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You probably pointed apt at a Debian mirror, which of course doesn't
@@ -159,7 +160,7 @@ To fix it manually, edit the file
 Remove lines that mention debian.org and replace them with these:
 </p><pre>deb http://fink.sourceforge.net/bindist relase main crypto
 deb http://fink.sourceforge.net/bindist current main crypto</pre><p>
-To fix it through dselect, run "[A]ccess" again, choose the "apt"
+To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
 </p><p>
 URL: http://fink.sourceforge.net/bindist -
@@ -167,7 +168,7 @@ Distribution: release -
 Components: main crypto
 </p><p>
 Then, say you want to add another source and repeat the process with
-"current" instead of "release".
+&quot;current&quot; instead of &quot;release&quot;.
 </p><p>
 A fixed version of the apt package (which provides the configuration
 script as a plug-in for dselect) is making it's way through CVS now.
@@ -176,7 +177,7 @@ script as a plug-in for dselect) is making it's way through CVS now.
 <a name="selfupdate-tar-fails"><div class="question"><p><b>Q3.12: Why doesn't 'fink selfupdate'
 work?</b></p></div>
 <div class="answer"><p><b>A:</b> When using fink selfupdate to update from 0.3.2 (not 0.3.2a), selfupdate may
-freeze during the "untar" phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
+freeze during the &quot;untar&quot; phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
 update the core packages. After that, you should update the other
 packages using commands like 'fink update-all'.
 
@@ -198,7 +199,7 @@ cd pkginfo
 ./inject.pl /sw</pre>
   </li>
 </ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
-edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = "tar -xz${verbosity}f -";</pre><p>to</p><pre>$unpack_cmd = "tar -xz${verbosity}f $pkgtarball";</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
+edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 
@@ -206,3 +207,4 @@ Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 <?
 include "footer.inc";
 ?>
+

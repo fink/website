@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - Upgrade from 0.3";
 $cvs_author = 'Author: fingolfin';
@@ -34,7 +35,7 @@ packages. However, it will not update any other packages.
 <a name="tetex"><h2>3.2 Getting tetex Sorted Out</h2></a>
 <p>
 If you are upgrading from a Fink release prior to 0.3.1, and you have
-tetex installed, you should run the command "fink remove tetex" before
+tetex installed, you should run the command &quot;fink remove tetex&quot; before
 upgrading. (It may also be necessary to remove the packages which
 depend on tetex, such as lyx, before tetex can be removed.) Afterwards
 you can again install tetex and the other packages you removed. 
@@ -62,3 +63,4 @@ Next: <a href="install-up02.php">4 Upgrading From Fink 0.2.x</a></p>
 <?
 include "footer.inc";
 ?>
+

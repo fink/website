@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: finlayd';
@@ -23,7 +24,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 <a name="xmms-quiet"><div class="question"><p><b>Q7.2: I get no sound from
 XMMS</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Make sure you have the "eSound Output Plugin" selected in the XMMS
+Make sure you have the &quot;eSound Output Plugin&quot; selected in the XMMS
 preferences.
 For some strange reason, it selects the disk writer plugin as the
 default.
@@ -81,11 +82,11 @@ section</a> for this common problem.
 
 <a name="xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
-says "assert failed on line 454 of darwinKeyboard.c!". What's
+says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 
 <div class="answer"><p><b>A:</b> 
 This is a known problem on 10.1.
-You must use the "Load from file" keymapping option since the default
+You must use the &quot;Load from file&quot; keymapping option since the default
 option (loading it from the kernel) doesn't work anymore.
 The setting is in the XDarwin Preferences dialog.
 Be sure that a file is selected (e.g. USA.keymapping) - simply
@@ -113,3 +114,4 @@ sort this out.
 <?
 include "footer.inc";
 ?>
+

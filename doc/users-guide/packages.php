@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: chrisp';
@@ -13,11 +14,13 @@ include "header.inc";
 
 
 
+<p>
 Now that you have something that can be called a Fink installation,
 this chapter shows you how to install the actual software packages you
 came for.
 Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
+</p>
 
 
 <a name="x11"><h2>3.1 Getting X11 Sorted Out</h2></a>
@@ -40,8 +43,8 @@ For maximum flexibility, this package does not contain the actual
 XDarwin server.
 To get that, you can install the xfree86-server or the
 xfree86-rootless package.
-Or you can install it manually, for example using an "XDarwin" test
-release from the XonX project or one of the "rootless" servers
+Or you can install it manually, for example using an &quot;XDarwin&quot; test
+release from the XonX project or one of the &quot;rootless&quot; servers
 circulating the net.
 </p></li>
 <li><p>
@@ -74,7 +77,7 @@ dselect</h2></a>
 <p>
 <tt><nobr>dselect</nobr></tt> is a program that lets you browse the list of
 available packages and select which ones you want installed.
-It runs inside Terminal.app, but takes over the whole "screen" and
+It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
 uses simple keyboard navigation.
 Like the other package management tools, <tt><nobr>dselect</nobr></tt> requires
 root privileges, so you must either become root before you start it or
@@ -124,7 +127,7 @@ You do not need them, although they won't do harm.
 
 <p>
 You'll spend most of your time with dselect in the package browser,
-reachable through the "[S]elect" menu item.
+reachable through the &quot;[S]elect&quot; menu item.
 Before dselect shows you the package list, it presents you with an
 introductory help screen.
 You can press 'k' to get a full listing of keyboard commands, or just
@@ -142,7 +145,7 @@ alternative for a virtual package dependency), or press 'R'
 Both the sublists and the main package list are left by pressing
 Return.
 When you're happy with your selections, leave the main list and use
-the "[I]nstall" menu item to actually install the packages.
+the &quot;[I]nstall&quot; menu item to actually install the packages.
 </p>
 
 
@@ -160,7 +163,7 @@ available packages with this command:
 </p>
 <pre>sudo apt-get update</pre>
 <p>
-Like the "[U]pdate" menu item in dselect, this doesn't update the
+Like the &quot;[U]pdate&quot; menu item in dselect, this doesn't update the
 actual files on your computer, just apt's list of available packages.
 To install a package, you just give apt-get the name, like this:
 </p>
@@ -189,17 +192,17 @@ installed, <tt><nobr>i</nobr></tt> for installed, <tt><nobr>(i)</nobr></tt> for
 installed but not the latest version), followed by the package name,
 the latest version, and a short description.
 You can ask for more information about a specific package using the
-"describe" command ("info" is an alias for this):
+&quot;describe&quot; command (&quot;info&quot; is an alias for this):
 </p>
 <pre>fink describe xmms</pre>
 <p>
 When you have found a package that you want to install, use the
-"install" command:
+&quot;install&quot; command:
 </p>
 <pre>fink install wget-ssl</pre>
 <p>
 The <tt><nobr>fink</nobr></tt> command will first check if all necessary
-prerequisites ("dependencies") are present, and will ask you if it's
+prerequisites (&quot;dependencies&quot;) are present, and will ask you if it's
 okay to install them if some are missing.
 Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.
@@ -216,3 +219,4 @@ Next: <a href="upgrade.php">4 Upgrading Fink</a></p>
 <?
 include "footer.inc";
 ?>
+

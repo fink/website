@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: chrisp';
@@ -60,3 +61,4 @@ Next: <a href="other.php">6 Other X11 Possibilities</a></p>
 <?
 include "footer.inc";
 ?>
+

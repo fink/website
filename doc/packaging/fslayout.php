@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: dmrrsn';
@@ -39,7 +40,7 @@ The examples use the default prefix of <tt><nobr>/sw</nobr></tt>.
 Files should go into the following subdirectories of the hierarchy:
 </p>
 
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td><tt><nobr>/sw/bin</nobr></tt></td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt><nobr>/sw/bin</nobr></tt></td><td>
 <p>
 This directory is for general executable programs.
 There are no subdirectories.
@@ -162,3 +163,4 @@ Next: <a href="reference.php">5 Reference</a></p>
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
@@ -27,10 +28,10 @@ But first, you need to gather two important pieces of information:
 <p>
 <b>XDarwin version.</b>
 You can find the XDarwin version in the Finder by clicking
-<b>once</b> on the XDarwin icon and then selecting "Show Info"
+<b>once</b> on the XDarwin icon and then selecting &quot;Show Info&quot;
 from the menu.
 The version is only incremented when a new binary test release is made
-by the XonX project, so "1.0a1" may actually be any version between
+by the XonX project, so &quot;1.0a1&quot; may actually be any version between
 1.0a1 and 1.0a2.
 </p>
 <p>
@@ -54,7 +55,7 @@ We'll start with a list of the messages you may see:
 <pre>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</pre>
 <p>
 Class: Harmless.
-X11 creates hidden directories in /tmp to store the socket "files" for
+X11 creates hidden directories in /tmp to store the socket &quot;files&quot; for
 local connections.
 For security reasons, X11 prefers if these directories are owned by
 root, but since they are world-writable anyway it will still run
@@ -113,12 +114,12 @@ Most applications will still work, GNU Emacs is a noteable exception.
 Reverting to kernel keymapping.</pre>
 <p>
 Class: Often fatal.
-This can happen with XDarwin 1.0a1, with the "Load from file"
+This can happen with XDarwin 1.0a1, with the &quot;Load from file&quot;
 keymapping option enabled.
 That version needs a full path when the file to load is set via the
 Preferences dialog, but searches automatically when it is passed on
 the command line.
-The message will usually be followed by the "assert" message shown
+The message will usually be followed by the &quot;assert&quot; message shown
 below.
 To fix this, follow the directions below.
 </p>
@@ -132,9 +133,9 @@ Class: Fatal.
 Changes Apple made in Mac OS X 10.1 broke the code in XFree86 that
 reads the keyboard layout from the operating system kernel;
 the message above is the result of that.
-You must use the "Load from file" keymapping option on Mac OS X 10.1.
+You must use the &quot;Load from file&quot; keymapping option on Mac OS X 10.1.
 The setting is in the XDarwin Preferences dialog.
-Be sure that a file is selected (i.e. use the "Pick file" button) -
+Be sure that a file is selected (i.e. use the &quot;Pick file&quot; button) -
 simply activating the check box may not be sufficient with some
 versions of XDarwin.
 If you can't get to the Preferences dialog because XDarwin closes
@@ -188,9 +189,9 @@ Rootless Servers</a> section for more hints.
 </p>
 
 <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
-&gt; Error:            Can't find file "unknown" for geometry include
+&gt; Error:            Can't find file &quot;unknown&quot; for geometry include
 &gt;                   Exiting
-&gt;                   Abandoning geometry file "(null)"
+&gt;                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</pre>
 <p>
 Class: Mostly harmless.
@@ -229,7 +230,7 @@ automatically cleans up /tmp when it boots, and the network stack is
 reset).
 </p>
 
-<pre>Xlib: connection to ":0.0" refused by server
+<pre>Xlib: connection to &quot;:0.0&quot; refused by server
 Xlib: Client is not authorized to connect to Server</pre>
 <p>
 Class: Fatal.
@@ -253,7 +254,7 @@ Another common cause for XFree86 startup failures is an incorrect
 <tt><nobr>.xinitrc</nobr></tt> file.
 What happens is that the <tt><nobr>.xinitrc</nobr></tt> is run and for some
 reason terminates almost immediately.
-<tt><nobr>xinit</nobr></tt> interprets this as "the user's session has ended"
+<tt><nobr>xinit</nobr></tt> interprets this as &quot;the user's session has ended&quot;
 and kills XDarwin.
 See the <a href="run-xfree86.php#xinitrc">.xinitrc
 section</a> for more details.
@@ -297,13 +298,13 @@ application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
-To work around this, the "Load from file" keymapping option was
+To work around this, the &quot;Load from file&quot; keymapping option was
 implemented.
 Nowadays it has become the default because the old method (reading the
 mapping from the kernel) stopped working with Mac OS X 10.1.
 If you haven't enabled the option already, you can do so in the
 XDarwin preferences dialog.
-Check the "Load from file" checkbox and select the keymapping file to
+Check the &quot;Load from file&quot; checkbox and select the keymapping file to
 load.
 After restarting XDarwin, your keyboard should mostly work (see
 below).
@@ -318,14 +319,14 @@ name of the keymapping file to load as an option, as in:
 
 <a name="delete-key"><h2>7.4 The Backspace key doesn't work</h2></a>
 <p>
-This can happen when you use the "Load keymapping from file" option
+This can happen when you use the &quot;Load keymapping from file&quot; option
 described above.
-The mapping files describe the backspace key as "Delete", not as
-"Backspace".
+The mapping files describe the backspace key as &quot;Delete&quot;, not as
+&quot;Backspace&quot;.
 You can correct that by putting the following line in your .xinitrc
 file:
 </p>
-<pre>xmodmap -e "keycode 59 = BackSpace"</pre>
+<pre>xmodmap -e &quot;keycode 59 = BackSpace&quot;</pre>
 <p>
 If I remember correctly, XDarwin 1.0a2 and later have code that
 correctly maps the Backspace key automatically.
@@ -333,7 +334,7 @@ correctly maps the Backspace key automatically.
 
 
 
-<a name="locale"><h2>7.5 "Warning: locale not supported by C library"</h2></a>
+<a name="locale"><h2>7.5 &quot;Warning: locale not supported by C library&quot;</h2></a>
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -381,3 +382,4 @@ Next: <a href="tips.php">8 Usage Tips</a></p>
 <?
 include "footer.inc";
 ?>
+

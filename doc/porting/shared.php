@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Porting - Shared Code";
 $cvs_author = 'Author: fingolfin';
@@ -32,7 +33,7 @@ semantics make it useless for an dlopen() emulation. Most notably,
 shared libraries can not be unloaded.)
 </p>
 <p>
-Loadable modules are called "bundles" in Mach-O speak.
+Loadable modules are called &quot;bundles&quot; in Mach-O speak.
 They have the file type MH_BUNDLE.
 Since no component involved cares about it, they can carry any
 extension.
@@ -67,7 +68,7 @@ to be installed at the same time.
 On ELF systems this is called the <tt><nobr>soname</nobr></tt>.
 What's different on Darwin is that you can (and should) specify a full
 path along with the file name.
-This eliminates the need for "rpath" options and the
+This eliminates the need for &quot;rpath&quot; options and the
 ldconfig/ld.so.cache system.
 To use a library that is not yet installed, you can set the
 DYLD_LIBRARY_PATH environment variable; see the dyld man page for
@@ -76,8 +77,8 @@ details.
 <p>
 The Mach-O format also offers real minor version checking, unknown on
 ELF systems.
-Every Mach-O library carries two version numbers: a "current" version
-and a "compatibility" version.
+Every Mach-O library carries two version numbers: a &quot;current&quot; version
+and a &quot;compatibility&quot; version.
 Both version numbers are written as three numbers separated by dots,
 e.g. 1.4.2.
 The first number must be non-zero.
@@ -86,8 +87,8 @@ When no version is specified, it will default to 0.0.0, which is some
 kind of wildcard value.
 </p>
 <p>
-The "current" version is for informational purposes only.
-The "compatibility" version is used for checking as follows.
+The &quot;current&quot; version is for informational purposes only.
+The &quot;compatibility&quot; version is used for checking as follows.
 When an executable is linked, the version information from the library
 is copied into the executable.
 When the executable is run, that version information is checked
@@ -107,7 +108,7 @@ Actually, PowerPC code is position-independent by design, so there is
 no performance or space penalty involved.
 So, you don't need to specify a PIC option when compiling code for a
 shared library or module.
-However, the linker doesn't allow "common" symbols in shared
+However, the linker doesn't allow &quot;common&quot; symbols in shared
 libraries, so you must use the <tt><nobr>-fno-common</nobr></tt> compiler
 option.
 </p>
@@ -124,7 +125,7 @@ source.c and code.c.
 The version number is 2.4.5, where 2 is the major revision
 (incompatible API change), 4 is the minor revision
 (backwards-compatible API change) and 5 is the bugfix revision count
-(some people call this the "teeny" revision, it denotes fully
+(some people call this the &quot;teeny&quot; revision, it denotes fully
 compatible changes).
 The library depends on no other shared libraries and will be installed
 in /usr/local/lib.
@@ -165,7 +166,7 @@ cc -bundle -flat_namespace -undefined suppress \
 Note that no version numbering is used.
 It is possible to use it in theory, but in practice it's pointless.
 Also note that there are no naming restrictions for bundles.
-Some packages prefer to prepend a "lib" anyway because some other
+Some packages prefer to prepend a &quot;lib&quot; anyway because some other
 systems require it; this is harmless.
 </p>
 
@@ -178,3 +179,4 @@ Next: <a href="libtool.php">3 GNU libtool</a></p>
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: chrisp';
@@ -146,18 +147,18 @@ there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them "in the background" by adding a <tt><nobr>&amp;</nobr></tt> at
+shell to put them &quot;in the background&quot; by adding a <tt><nobr>&amp;</nobr></tt> at
 the end of the line.
 </p>
 <p>
 Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt> script
-to finish and interprets that as "the session has ended, I should kill
-the X server now, too".
+to finish and interprets that as &quot;the session has ended, I should kill
+the X server now, too&quot;.
 This means that the last command of your <tt><nobr>.xinitrc</nobr></tt> must
 not be run in the background and it should be a long-living program.
 Customarily, the window manager is used for this purpose.
 In fact, most window managers assume that <tt><nobr>xinit</nobr></tt> is
-waiting for them to finish and use this to make the "Log out" entry in
+waiting for them to finish and use this to make the &quot;Log out&quot; entry in
 their menus work.
 (Note: To save some memory and CPU cycles, you can put an
 <tt><nobr>exec</nobr></tt> before the last line like in the examples below.)
@@ -190,3 +191,4 @@ Next: <a href="xtools.php">5 Xtools</a></p>
 <?
 include "footer.inc";
 ?>
+

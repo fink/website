@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "ReadMe";
 $cvs_author = 'Author: chrisp';
@@ -18,12 +19,12 @@ With the help of dpkg, it maintains a separate directory hierarchy.
 It downloads original source releases, patches them if neccessary,
 configures them for Darwin and compiles and installs them.
 The information about available packages and the necessary patches
-(the "package descriptions") are maintained separately, but are
+(the &quot;package descriptions&quot;) are maintained separately, but are
 usually included with this distribution.
 The actual source code is downloaded from the Internet as necessary.
 </p>
 <p>
-Although Fink cannot be considered "mature" and it has some rough
+Although Fink cannot be considered &quot;mature&quot; and it has some rough
 edges and lacking features, it is successfully used by a large number
 of people.
 Please read the instructions carefully and don't be surprised if
@@ -108,3 +109,4 @@ The list is moderated and low-traffic.
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: finlayd';
@@ -65,10 +66,10 @@ package found'. How can I install it?</a></li>
 <li><a href="usage-fink.php#sudo">3.9 I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
 <li><a href="usage-fink.php#exec-init-csh">3.10 When I try to run
-init.csh, I get a "Permission denied" error. What am I doing
+init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</a></li>
 <li><a href="usage-fink.php#dselect-access">3.11 Help! I used the
-"[A]ccess" menu entry in dselect and now I can't download packages any
+&quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</a></li>
 <li><a href="usage-fink.php#selfupdate-tar-fails">3.12 Why doesn't 'fink selfupdate'
 work?</a></li>
@@ -76,7 +77,7 @@ work?</a></li>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
 <li><a href="comp-general.php#compiler">4.1 A configure script complains
-that it can't find an "acceptable cc". What's that?</a></li>
+that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 <li><a href="comp-general.php#make">4.2 make: illegal option -- C</a></li>
 <li><a href="comp-general.php#head">4.3 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
@@ -98,9 +99,9 @@ installing it fails.</a></li>
 <li><a href="usage-general.php#gnome-icons">6.1 Some GNOME applications display
 black icons only. What's wrong?</a></li>
 <li><a href="usage-general.php#xlocale">6.2 I'm getting lots of messages
-like "locale not supported by C library". Is that bad?</a></li>
+like &quot;locale not supported by C library&quot;. Is that bad?</a></li>
 <li><a href="usage-general.php#passwd">6.3 There are suddenly a number of 
-strange users on my system, with names like "mysql", "pgsql", and "games".  
+strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
@@ -115,7 +116,7 @@ start up?</a></li>
 XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#xfree-keymapping">7.5 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
-says "assert failed on line 454 of darwinKeyboard.c!". What's
+says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: faq.xml,v 1.31 2002/03/19 21:08:01 finlayd Exp $</i></p>
@@ -124,3 +125,4 @@ wrong?</a></li>
 <?
 include "footer.inc";
 ?>
+

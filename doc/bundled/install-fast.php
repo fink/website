@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: fingolfin';
@@ -166,3 +167,4 @@ Next: <a href="install-first.php">2 First Time Installation</a></p>
 <?
 include "footer.inc";
 ?>
+

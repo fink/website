@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation - First Time";
 $cvs_author = 'Author: fingolfin';
@@ -154,8 +155,8 @@ It will fetch the XFree86 source, compile it and install it into
 For maximum flexibility, this package does not contain the actual
 XDarwin server.
 To get it, you can install the xfree86-server package.
-Or you can install it manually, for example using an "XDarwin" test
-release from the XonX project or one of the "rootless" servers
+Or you can install it manually, for example using an &quot;XDarwin&quot; test
+release from the XonX project or one of the &quot;rootless&quot; servers
 circulating the net.
 </p></li>
 <li><p>
@@ -190,3 +191,4 @@ Next: <a href="install-up03.php">3 Upgrading From Fink 0.3.x</a></p>
 <?
 include "footer.inc";
 ?>
+

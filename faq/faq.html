@@ -1,6 +1,4 @@
-<html><head>
-      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-   <title>Fink Documentation - The Fink F.A.Q.</title></head><body><h1 align="center">The Fink F.A.Q.</h1>
+<html><head><meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"><title>Fink Documentation - The Fink F.A.Q.</title></head><body><h1 align="center">The Fink F.A.Q.</h1>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
 made up. It's really more like a documentation written in an ad-hoc,
@@ -57,10 +55,10 @@ package found'. How can I install it?</a></li>
 <li><a href="#usage-fink.sudo">3.9 I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
 <li><a href="#usage-fink.exec-init-csh">3.10 When I try to run
-init.csh, I get a "Permission denied" error. What am I doing
+init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</a></li>
 <li><a href="#usage-fink.dselect-access">3.11 Help! I used the
-"[A]ccess" menu entry in dselect and now I can't download packages any
+&quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</a></li>
 <li><a href="#usage-fink.selfupdate-tar-fails">3.12 Why doesn't 'fink selfupdate'
 work?</a></li>
@@ -68,7 +66,7 @@ work?</a></li>
 <li><a href="#comp-general"><b>4 Compile Problems - General</b></a></li>
 <ul>
 <li><a href="#comp-general.compiler">4.1 A configure script complains
-that it can't find an "acceptable cc". What's that?</a></li>
+that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 <li><a href="#comp-general.make">4.2 make: illegal option -- C</a></li>
 <li><a href="#comp-general.head">4.3 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
@@ -90,9 +88,9 @@ installing it fails.</a></li>
 <li><a href="#usage-general.gnome-icons">6.1 Some GNOME applications display
 black icons only. What's wrong?</a></li>
 <li><a href="#usage-general.xlocale">6.2 I'm getting lots of messages
-like "locale not supported by C library". Is that bad?</a></li>
+like &quot;locale not supported by C library&quot;. Is that bad?</a></li>
 <li><a href="#usage-general.passwd">6.3 There are suddenly a number of 
-strange users on my system, with names like "mysql", "pgsql", and "games".  
+strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</a></li>
 </ul>
 <li><a href="#usage-packages"><b>7 Package Usage Problems - Specific Packages</b></a></li>
@@ -107,7 +105,7 @@ start up?</a></li>
 XDarwin, it immediately quits!</a></li>
 <li><a href="#usage-packages.xfree-keymapping">7.5 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
-says "assert failed on line 454 of darwinKeyboard.c!". What's
+says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
 </ul><a name="general"><h2>1 General Questions</h2></a>
@@ -168,8 +166,8 @@ third-party packages to a minimum.
 
 <a name="general.usr-local"><div class="question"><p><b>Q1.4: Why doesn't Fink install into
 /usr/local?</b></p></div>
-<div class="answer"><p><b>A:</b> There are several reasons, but the common line is "because
-breakage will occur".</p><p>Reason One: Third-party software. /usr/local is the
+<div class="answer"><p><b>A:</b> There are several reasons, but the common line is &quot;because
+breakage will occur&quot;.</p><p>Reason One: Third-party software. /usr/local is the
 well-established place to put software that is not part of the system
 shipped by the original vendor. This means that it is a good place to
 put stuff. However, it also means that other people will put stuff
@@ -249,9 +247,9 @@ So far they are providing us with pre-release seeds of new Mac OS X
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
-<i>"Hopefully it underscores the commitment that many suspect we're
+<b>&quot;Hopefully it underscores the commitment that many suspect we're
 not willing to provide.  We'll get better at the open source game over
-time."</i>
+time.&quot;</b>
 Thanks Apple!
 </p></div></a>
 
@@ -369,13 +367,13 @@ hand only know about the packages available as precompiled binary
 packages.
 Many packages are not available in precompiled form through these
 tools for a variety of reasons.
-A package must be in the "stable" section of the latest point release
+A package must be in the &quot;stable&quot; section of the latest point release
 to be considered, and it must pass additional checks for policy
 compliance as well as licensing and patent restrictions.
 </p><p>
 If you want to install a package that is not available via
 <tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
-from source using <tt><nobr>fink install <i>packagename</i></nobr></tt>.
+from source using <tt><nobr>fink install <b>packagename</b></nobr></tt>.
 Make sure you have the Developer Tools installed before you try this.
 See also the question about unstable below.
 </p></div></a>
@@ -408,7 +406,7 @@ line allows you to run any command via sudo without typing your
 password.</p></div></a>
 
 <a name="usage-fink.exec-init-csh"><div class="question"><p><b>Q3.10: When I try to run
-init.csh, I get a "Permission denied" error. What am I doing
+init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
 sets environment variables like PATH and MANPATH in your shell. To
@@ -416,7 +414,7 @@ have a lasting effect on the shell, it must be processed with the
 <tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
 
 <a name="usage-fink.dselect-access"><div class="question"><p><b>Q3.11: Help! I used the
-"[A]ccess" menu entry in dselect and now I can't download packages any
+&quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You probably pointed apt at a Debian mirror, which of course doesn't
@@ -427,7 +425,7 @@ To fix it manually, edit the file
 Remove lines that mention debian.org and replace them with these:
 </p><pre>deb http://fink.sourceforge.net/bindist relase main crypto
 deb http://fink.sourceforge.net/bindist current main crypto</pre><p>
-To fix it through dselect, run "[A]ccess" again, choose the "apt"
+To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
 </p><p>
 URL: http://fink.sourceforge.net/bindist -
@@ -435,7 +433,7 @@ Distribution: release -
 Components: main crypto
 </p><p>
 Then, say you want to add another source and repeat the process with
-"current" instead of "release".
+&quot;current&quot; instead of &quot;release&quot;.
 </p><p>
 A fixed version of the apt package (which provides the configuration
 script as a plug-in for dselect) is making it's way through CVS now.
@@ -444,7 +442,7 @@ script as a plug-in for dselect) is making it's way through CVS now.
 <a name="usage-fink.selfupdate-tar-fails"><div class="question"><p><b>Q3.12: Why doesn't 'fink selfupdate'
 work?</b></p></div>
 <div class="answer"><p><b>A:</b> When using fink selfupdate to update from 0.3.2 (not 0.3.2a), selfupdate may
-freeze during the "untar" phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
+freeze during the &quot;untar&quot; phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
 update the core packages. After that, you should update the other
 packages using commands like 'fink update-all'.
 
@@ -466,13 +464,13 @@ cd pkginfo
 ./inject.pl /sw</pre>
   </li>
 </ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
-edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = "tar -xz${verbosity}f -";</pre><p>to</p><pre>$unpack_cmd = "tar -xz${verbosity}f $pkgtarball";</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
+edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
 <a name="comp-general"><h2>4 Compile Problems - General</h2></a>
 
 
 
 <a name="comp-general.compiler"><div class="question"><p><b>Q4.1: A configure script complains
-that it can't find an "acceptable cc". What's that?</b></p></div>
+that it can't find an &quot;acceptable cc&quot;. What's that?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Read the docs next time.
 To compile packages from source, you must install the Developer Tools,
@@ -579,7 +577,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div></a>
 
 <a name="usage-general.xlocale"><div class="question"><p><b>Q6.2: I'm getting lots of messages
-like "locale not supported by C library". Is that bad?</b></p></div>
+like &quot;locale not supported by C library&quot;. Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
 English messages, date formats, etc.
@@ -588,20 +586,20 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div></a>
 
 <a name="usage-general.passwd"><div class="question"><p><b>Q6.3: There are suddenly a number of 
-strange users on my system, with names like "mysql", "pgsql", and "games".  
+strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You have used Fink to install a package which is dependent on another package,
 passwd.  passwd installs a number of extra users on your system for security 
-reasons -- on Unix systems, files and processes belong to "owners", which 
+reasons -- on Unix systems, files and processes belong to &quot;owners&quot;, which 
 allows
 system administrators to fine-tune the permissions and security of the system. 
- Programs such as Apache and MySQL need an "owner", and it is insecure to 
+ Programs such as Apache and MySQL need an &quot;owner&quot;, and it is insecure to 
 assign these daemons to root (imagine what would happen if Apache were to be 
 compromised and suddenly had write permission to all files on the system).  
 Thus, the passwd package takes the work out of setting up these extra users 
 for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected users in your
- "System Preferences: Users" pane, but suppress the urge to delete them:
+ &quot;System Preferences: Users&quot; pane, but suppress the urge to delete them:
 </p><ul>
 <li>First of all, you have obviously chosen to install a package which requires
  their use, so deleting the user doesn't make much sense, does it?</li>
@@ -614,14 +612,14 @@ did not provide.  You can see these Apple-installed users in NetInfo
 Manager.app, or by running
 <tt><nobr>niutil -list . /users</nobr></tt></li>
 <li>If you do decide to delete these users, be very careful of how you go about
- it.  Using the "System Preferences: Users" pane will assign all of their files
+ it.  Using the &quot;System Preferences: Users&quot; pane will assign all of their files
  to a random administrator account, and there have been reports of havoc played
  with the administrator account's permissions.  This is a bug with System 
 Preferences, and has been submitted to Apple.  A safer way to remove these 
 users from your system is to do so from within NetInfo Manager.app or use the 
 command line tool <tt><nobr>niutil</nobr></tt> in Terminal.  Read the man page
  for <tt><nobr>niutil</nobr></tt> for more information about NetInfo.</li>
-</ul><p>Fink <i>does</i> request permission to install these additional users on 
+</ul><p>Fink <b>does</b> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.
 </p></div></a>
@@ -641,7 +639,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 <a name="usage-packages.xmms-quiet"><div class="question"><p><b>Q7.2: I get no sound from
 XMMS</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Make sure you have the "eSound Output Plugin" selected in the XMMS
+Make sure you have the &quot;eSound Output Plugin&quot; selected in the XMMS
 preferences.
 For some strange reason, it selects the disk writer plugin as the
 default.
@@ -699,11 +697,11 @@ section</a> for this common problem.
 
 <a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
-says "assert failed on line 454 of darwinKeyboard.c!". What's
+says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 
 <div class="answer"><p><b>A:</b> 
 This is a known problem on 10.1.
-You must use the "Load from file" keymapping option since the default
+You must use the &quot;Load from file&quot; keymapping option since the default
 option (loading it from the kernel) doesn't work anymore.
 The setting is in the XDarwin Preferences dialog.
 Be sure that a file is selected (e.g. USA.keymapping) - simply

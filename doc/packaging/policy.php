@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
@@ -64,7 +65,7 @@ one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
 
 <li><tt><nobr>BSD</nobr></tt> - for BSD-style licenses.
-This includes the so-called "original" BSD license, the "modified" BSD
+This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
 license and the MIT license. The Apache license also counts as
 BSD. With these licenses the distribution of source code is
 optional.</li>
@@ -163,7 +164,7 @@ but libpng-shlibs and libpng3-shlibs can be installed at the same time.
 (Note that only two .info files are required to build these four packages.)
 </p><p>
 The shared library itself and certain related files will be put into 
-the package barN-shlibs; the "include" files and certain other files will
+the package barN-shlibs; the &quot;include&quot; files and certain other files will
 be put into the package barN.  There can be no overlapping files
 between these two packages, and everything stored in barN-shlibs must have
 a pathname which somehow includes the major version number N.  In many
@@ -195,7 +196,7 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the "install_name" of the library be <tt><nobr>%p/lib/bar.N.dylib</nobr></tt>.  
+the &quot;install_name&quot; of the library be <tt><nobr>%p/lib/bar.N.dylib</nobr></tt>.  
 (You can
 find the install_name by running <tt><nobr>otool -L</nobr></tt> on your library.)  The
 actual library file should be installed at
@@ -219,6 +220,7 @@ appropriately for your shared libraries.  (These are also shown with the
 <tt><nobr>otool -L</nobr></tt> query.)
 </p><p>
 Files are then divided between the two packages as follows
+</p>
 <ul>
 <li>  in package barN-shlibs:
 <pre>
@@ -236,6 +238,7 @@ Files are then divided between the two packages as follows
   %i/share/doc/barN/*
   other files, if needed
 </pre></li></ul>
+<p>
 Notice that both packages are required to have some documentation about
 the license, but that the directories containing the DocFiles will be
 different.
@@ -269,7 +272,7 @@ Notice that we have included the exact current version of barN-shlibs as a
 dependency of the main package barN (which can be abbreviated 
 %N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
-automatically "inherits" all the dependencies of barN-shlibs.
+automatically &quot;inherits&quot; all the dependencies of barN-shlibs.
 </p><p>
 <b>What to do when the major version number changes:</b>
 </p><p>
@@ -302,12 +305,12 @@ say
   Replaces: foo (&lt;&lt; earliest.compliant.version)
 </pre>
 so that upgrading will be transparent to users.  (You should <b>not</b>
-say "Conflicts: foo" because this will prevent the upgrade.)
+say &quot;Conflicts: foo&quot; because this will prevent the upgrade.)
 </p><p>
-After your upgrade, packages which say "Depends: foo" will continue to
+After your upgrade, packages which say &quot;Depends: foo&quot; will continue to
 function normally.  However, you should contact the fink maintainers
 of all such packages and urge them to modify their packages to say 
-"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
+&quot;Depends: foo-shlibs, BuildDepends: foo&quot; as soon as possible.  You will 
 not be able to create new packages fooM, fooM-shlibs which implement a 
 new major version of the shared library until they have done so.
 </p><p>
@@ -357,3 +360,4 @@ Next: <a href="fslayout.php">4 Filesystem Layout</a></p>
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Installation";
 $cvs_author = 'Author: fingolfin';
@@ -10,9 +11,9 @@ include "header.inc";
 
 <h1>Fink 0.3.2a Installation</h1>
 <p>
-These are the installation instructions for the "source" distribution
+These are the installation instructions for the &quot;source&quot; distribution
 of Fink 0.3.2a.
-This document does not apply to the "binary" distribution.
+This document does not apply to the &quot;binary&quot; distribution.
 There are instructions for both first time installation and upgrading
 from a previous version.
 Fast track instructions for the impatient are at the top.
@@ -47,6 +48,7 @@ Track</a></li>
 </ul>
 <li><a href="install-up01.php"><b>5 Upgrading From Fink 0.1.x</b></a></li>
 <ul>
+<li><a href="install-up01.php#upgrade-01">5.1 </a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: install.xml,v 1.11 2002/03/09 13:58:02 fingolfin Exp $</i></p>
 
@@ -54,3 +56,4 @@ Track</a></li>
 <?
 include "footer.inc";
 ?>
+

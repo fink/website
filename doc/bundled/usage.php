@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "Usage";
 $cvs_author = 'Author: fingolfin';
@@ -94,7 +95,7 @@ Some usage examples:
 </p>
 <pre>fink list            - list all packages
 fink list bash       - check if bash is available and what version
-fink list "gnome*"   - list all packages that start with 'gnome'</pre>
+fink list &quot;gnome*&quot;   - list all packages that start with 'gnome'</pre>
 <p>
 The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
@@ -168,3 +169,4 @@ and ask there.
 <?
 include "footer.inc";
 ?>
+

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: finlayd';
@@ -21,7 +22,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div></a>
 
 <a name="xlocale"><div class="question"><p><b>Q6.2: I'm getting lots of messages
-like "locale not supported by C library". Is that bad?</b></p></div>
+like &quot;locale not supported by C library&quot;. Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
 English messages, date formats, etc.
@@ -30,20 +31,20 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div></a>
 
 <a name="passwd"><div class="question"><p><b>Q6.3: There are suddenly a number of 
-strange users on my system, with names like "mysql", "pgsql", and "games".  
+strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You have used Fink to install a package which is dependent on another package,
 passwd.  passwd installs a number of extra users on your system for security 
-reasons -- on Unix systems, files and processes belong to "owners", which 
+reasons -- on Unix systems, files and processes belong to &quot;owners&quot;, which 
 allows
 system administrators to fine-tune the permissions and security of the system. 
- Programs such as Apache and MySQL need an "owner", and it is insecure to 
+ Programs such as Apache and MySQL need an &quot;owner&quot;, and it is insecure to 
 assign these daemons to root (imagine what would happen if Apache were to be 
 compromised and suddenly had write permission to all files on the system).  
 Thus, the passwd package takes the work out of setting up these extra users 
 for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected users in your
- "System Preferences: Users" pane, but suppress the urge to delete them:
+ &quot;System Preferences: Users&quot; pane, but suppress the urge to delete them:
 </p><ul>
 <li>First of all, you have obviously chosen to install a package which requires
  their use, so deleting the user doesn't make much sense, does it?</li>
@@ -56,14 +57,14 @@ did not provide.  You can see these Apple-installed users in NetInfo
 Manager.app, or by running
 <tt><nobr>niutil -list . /users</nobr></tt></li>
 <li>If you do decide to delete these users, be very careful of how you go about
- it.  Using the "System Preferences: Users" pane will assign all of their files
+ it.  Using the &quot;System Preferences: Users&quot; pane will assign all of their files
  to a random administrator account, and there have been reports of havoc played
  with the administrator account's permissions.  This is a bug with System 
 Preferences, and has been submitted to Apple.  A safer way to remove these 
 users from your system is to do so from within NetInfo Manager.app or use the 
 command line tool <tt><nobr>niutil</nobr></tt> in Terminal.  Read the man page
  for <tt><nobr>niutil</nobr></tt> for more information about NetInfo.</li>
-</ul><p>Fink <i>does</i> request permission to install these additional users on 
+</ul><p>Fink <b>does</b> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.
 </p></div></a>
@@ -75,3 +76,4 @@ Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages<
 <?
 include "footer.inc";
 ?>
+
