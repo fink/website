@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/17 19:58:40';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/20 12:56:54';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -53,9 +53,10 @@ use the Debian source package format.
 Apple?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 <a href="http://www.apple.com/">Apple</a> is aware of Fink and
-has started to support us as part of their Open Source relations
+has given us some support as part of their Open Source relations
 efforts.
-So far they are providing us with pre-release seeds of new Mac OS X
+In the summer and fall of 2001, they provided us with pre-release seeds of
+new Mac OS X 
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.34 2002/04/17 19:58:40 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.35 2002/05/20 12:56:54 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -174,9 +174,10 @@ Apple?</p></question>
 <answer>
 <p>
 <link url="http://www.apple.com/">Apple</link> is aware of Fink and
-has started to support us as part of their Open Source relations
+has given us some support as part of their Open Source relations
 efforts.
-So far they are providing us with pre-release seeds of new Mac OS X
+In the summer and fall of 2001, they provided us with pre-release seeds of
+new Mac OS X 
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
