@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 20:55:38';
+$cvs_date = 'Date: 2003/08/30 23:07:43';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -130,6 +130,12 @@ xterm*.ttyModes: erase ^?
 <b>.xinitrc</b>
 </p><pre>xrdb -load $HOME/.Xresources
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
+</a>
+<a name="gnome-two">
+<div class="question"><p><b>Q7.10: I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</b></p></div>
+<div class="answer"><p><b>A:</b> While under GNOME 1.x <code>gnome-session</code> invokes the <code>sawfish</code> window manager automatically, under GNOME 2.x, you'll have to call a window manager in <code>~/.xinitrc</code> before running <code>gnome-session</code>, e.g.:</p><pre>...
+exec metacity &amp;
+exec gnome-session</pre></div>
 </a>
 
 

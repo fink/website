@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.126 2003/08/30 20:55:38 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.127 2003/08/30 23:07:43 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1354,6 +1354,17 @@ xterm*.ttyModes: erase ^?
 <codeblock>xrdb -load $HOME/.Xresources
 xmodmap $HOME/.Xmodmap</codeblock>
 <p/>
+</answer>
+</faqentry>
+<faqentry name="gnome-two" >
+<question>
+<p>I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</p>
+</question>
+<answer>
+<p>While under GNOME 1.x <code>gnome-session</code> invokes the <code>sawfish</code> window manager automatically, under GNOME 2.x, you'll have to call a window manager in <code>~/.xinitrc</code> before running <code>gnome-session</code>, e.g.:</p>
+<codeblock>...
+exec metacity &amp;
+exec gnome-session</codeblock>
 </answer>
 </faqentry>
 </chapter>

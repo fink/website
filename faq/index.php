@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 20:55:38';
+$cvs_date = 'Date: 2003/08/30 23:07:43';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -138,8 +138,9 @@ wrong?</a></li>
 <li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib"</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
+<li><a href="usage-packages.php#gnome-two">7.10 I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.126 2003/08/30 20:55:38 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.127 2003/08/30 23:07:43 alexkhansen Exp $</i></p>
 
 
 <?
