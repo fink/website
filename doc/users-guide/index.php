@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/20 07:41:14';
+$cvs_date = 'Date: 2001/09/20 20:46:51';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -10,11 +10,20 @@ include "header.inc";
 
 <h1>Fink User's Guide</h1>
 <p>
-This will one day become a comprehensive user's guide to Fink.
-Most sections are targeted at users with previous Unix command line
-experience.
+<b>This document is a work in progress.</b>
+At this time the various other documents are more useful:
+<a href="http://fink.sourceforge.net/doc/bundled/readme.php">ReadMe</a>,
+<a href="http://fink.sourceforge.net/doc/bundled/install.php">Installation</a>,
+<a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</a>
+and the ReadMe.rtf included in the binary distribution.
+Also check out the
+<a href="http://fink.sourceforge.net/doc/index.php">documentation
+section</a> of the web site, it has some other useful documents
+beyond that.
 </p>
+
 <p>
+Welcome to the Fink User's Guide.
 This guide covers first time installation and upgrade procedures for
 both the source and the binary distribution.
 Package installation and maintenance is covered as well.
@@ -33,13 +42,17 @@ Package installation and maintenance is covered as well.
 <li><a href="install.php#src">Installing the Source Distribution</a></li>
 <li><a href="install.php#setup">Setting Up Your Environment</a></li>
 </ul>
-<li><a href="upgrade.php"><b>Upgrading Fink</b></a></li>
-<ul>
-</ul>
 <li><a href="packages.php"><b>Installing Packages</b></a></li>
 <ul>
+<li><a href="packages.php#bin">Installing Binary Packages</a></li>
+<li><a href="packages.php#src">Installing Packages from Source</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.3 2001/09/20 07:41:14 chrisp Exp $</i></p>
+<li><a href="upgrade.php"><b>Upgrading Fink</b></a></li>
+<ul>
+<li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
+<li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
+</ul>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.4 2001/09/20 20:46:51 chrisp Exp $</i></p>
 
 
 <?

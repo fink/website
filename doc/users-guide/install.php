@@ -1,9 +1,9 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/20 07:41:14';
+$cvs_date = 'Date: 2001/09/20 20:46:51';
 
-$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="intro.php" title="Introduction">';
+$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
 include "header.inc";
 ?>
@@ -55,7 +55,7 @@ descriptions and will download the source for packages on the fly.
 
 
 <p align="right">
-Next: <a href="upgrade.php">Upgrading Fink</a></p>
+Next: <a href="packages.php">Installing Packages</a></p>
 
 
 <?
