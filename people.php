@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: mrvacbob $';
-$cvs_date = '$Date: 2002/05/19 15:21:01 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/05/20 13:01:47 $';
 
 include "header.inc";
 ?>
@@ -22,6 +22,7 @@ Fink (in alphabetical order):</p>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
 <li>Justin F. Hallett (<i>TheSin</i>)</li>
 <li>Jeremy Higgs</li>
+<li>Ben Hines (<i>Clef</i>)</li>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
@@ -31,7 +32,7 @@ Fink (in alphabetical order):</p>
 <li>Matt Stephenson</li>
 <li>Alexander Strange (<i>Feanor</i>)</li>
 <li>Christian Swinehart</li>
-<li>Dave Vasilevsky(<i>vasi</i>)</li>
+<li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 </ul>
 
@@ -40,7 +41,6 @@ Fink (in alphabetical order):</p>
 <ul>
 <li>Bill Bumgarner</li>
 <li>Jake Goulding</li>
-<li>Ben Hines(<i>Clef</i>)</li>
 <li>Chris Pepper</li>
 <li>Andrew Rohl</li>
 <li>David Ross</li>
