@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.25 2005/03/07 09:15:38 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.26 2005/03/09 06:26:48 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -213,7 +213,7 @@ E: Sorry, broken packages</codeblock>
 <codeblock>fink install wget-ssl</codeblock>
 <p>La commande <code>fink</code> vérifie tout d'abord que toutes les &quot;dépendances&quot; requises sont présentes sur votre système. Si ce n'est pas le cas, elle vous demandera de confirmer l'installation de celles qui sont manquantes. Ensuite, elle télécharge le code source, le décompresse, lui applique des rustines, le compile et installe le paquet résultant sur votre système. Tout ceci peut prendre un certain temps. Si des erreurs se produisent durant le processus, consultez tout d'abord les 
 <link url="http://fink.sourceforge.net/faq/" >QFP</link>.</p>
-<p>À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'<xref chapter="usage" section="options">option --use-binary-dist (ou -b)</xref> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :</p>
+<p>À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'option <xref chapter="usage" section="options">--use-binary-dist (ou -b)</xref> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :</p>
 <codeblock>fink --use-binary-dist install wget-ssl</codeblock>
 <p>ou</p>
 <codeblock>fink -b install wget-ssl</codeblock>
@@ -300,7 +300,7 @@ cd packages-0.x.x
 <section name="mix" >
 <title>Mélange de binaires et de source</title>
 <p>Si vous utilisez des paquets binaires précompilés pour certains logiciels et que vous en construisez d'autres à partir du source, vous devrez exécuter les séquences d'instructions des deux méthodes pour mettre à jour votre installation Fink. Tout d'abord, utilisez <code>dselect</code> ou <code>apt-get</code> pour récupérer les versions binaires les plus récentes des paquets, puis utilisez <code>fink selfupdate</code> et <code>fink update-all</code> pour récupérer les descriptions de paquets et mettre à jour les autres paquets.</p>
-<p>À partir de la version 0.23.0 de fink, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'<xref chapter="usage" section="options">option --use-binary-dist (ou -b)</xref> ou bien dans le <xref chapter="conf">fichier de configuration de Fink</xref>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.</p>
+<p>À partir de la version 0.23.0 de fink, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'option <xref chapter="usage" section="options">--use-binary-dist (ou -b)</xref> ou bien dans le <xref chapter="conf">fichier de configuration de Fink</xref>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.</p>
 <p>Si vous utilisez Fink Commander, sélectionnez Binary-&gt;Update descriptions (Binaire-&gt;Mise à jour des descriptions) pour mettre à jour la liste des paquets, puis Binary-&gt;Dist-Upgrade packages (Binaire-&gt;Mise à jour des paquets de la distribution) pour obtenir les nouvelles versions. Exécutez ensuite Source-&gt;Selfupdate (Source-&gt;Mise à jour automatique) pour télécharger les nouveaux fichiers info des paquets, puis Source-&gt;Update-all (Source-&gt;Tout mettre à jour). Voir les sections précédentes pour de plus amples informations.</p>
 </section>
 </chapter>
@@ -420,7 +420,7 @@ La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><em>UseBinaryDist:</em> booléen</p>
-<p>Force <code>fink</code> à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'option <xref chapter="usage">--use-binary-dist</xref> avec <code>fink</code> (ou le drapeau <code>-b</code>) a le même effet, mais est restreint à cette invocation de <code>fink</code>. L'utilisation du drapeau <code>--no-use-binary-dist</code> avec <code>fink</code> a l'effet inverse et est, de même, restreint à cette invocation de <code>fink</code>. <em>Disponible à partir de la version 0.23.0 de fink</em>.</p>
+<p>Force <code>fink</code> à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'option <xref chapter="usage">--use-binary-dist</xref> avec <code>fink</code> (ou l'option <code>-b</code>) a le même effet, mais est restreint à cette invocation de <code>fink</code>. L'utilisation de l'option <code>--no-use-binary-dist</code> avec <code>fink</code> a l'effet inverse et est, de même, restreint à cette invocation de <code>fink</code>. <em>Disponible à partir de la version 0.23.0 de fink</em>.</p>
 <p>Notez que, dans ce mode, <code>fink</code> télécharge la version requise d'un paquet, si elle est disponible, mais ne force pas <code>fink</code> à choisir la version en fonction de sa disponibilité binaire.</p>
 </li>
 </ul>
@@ -561,27 +561,55 @@ main crypto
 </section>
 <section name="options">
 <title>Options globales</title>
-<p>Ce sont des options qui s'appliquent à toutes les commandes fink. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
+<p>Ce sont des options qui s'appliquent à toutes les commandes fink à partir de la <code>version 0.24.1</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
 <codeblock>
 -h, --help
-    affiche ce message d'aide
+    Affiche ce message d'aide.
 -q, --quiet
-    diminue le niveau de verbosité de fink, 
-    effet contraire à celui de --verbose
+    Diminue le niveau de verbosité de fink, 
+    effet contraire à celui de --verbose.
 -V, --version
-    affiche les informations de version
+    Affiche les informations de version.
 -v, --verbose
-    augmente le niveau de verbosité de fink, 
-    effet contraire à celui de --quiet
+    Augmente le niveau de verbosité de fink, 
+    effet contraire à celui de --quiet.
 -y, --yes
-    applique la réponse par défaut à toutes 
-    les questions interactives
+    Applique la réponse par défaut à toutes 
+    les questions interactives.
 -b, --use-binary-dist 
-    télécharge les paquets pré-compilés de la 
+    Télécharge les paquets pré-compilés de la 
     distribution binaire s'ils sont disponibles
+    (pour réduire le temps de compilation ou
+    l'encombrement du disque par exemple).
+    Notez que, dans ce mode, fink télécharge 
+    la version requise d'un paquet, si elle est
+    disponible, mais ne force pas fink à choisir
+    la version en fonction de sa disponibilité 
+    binaire.
+--no-use-binary-dist
+    N'utilise pas les paquets pré-compilés de
+    la distribution binaire (inverse de l'option
+    --use-binary-dist).
+-K, --keep-root-dir
+    Force fink à ne pas supprimer le répertoire
+    /sw/src/root-[nom]-[version]-[révision]
+    à la fin du processus de compilation d'un
+    paquet.
+-k, --keep-build-dir
+    Force fink à ne pas supprimer le répertoire
+    /sw/src/[nom]-[version]-[révision] à la fin
+    du processus de compilation d'un paquet.
+--build-as-nobody
+    Utilise un utilisateur n'ayant pas de super
+    privilèges pendant les phases de 
+    décompression, rustine, compilation et 
+    installation. Notez que les paquets avec
+    cette option peuvent ne pas fonctionner.
+    Vous ne devez utiliser ce mode que pour
+    le développement ou le débogage des 
+    paquets.
 </codeblock>
 <p>La plupart de ces options ne nécessite pas d'explication supplémentaire. Elles peuvent être configurées dans le <xref chapter="conf">fichier de configuration de Fink</xref> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
-<p>L'option <code>--use-binary-dist</code> force <code>fink</code> à télécharger les paquets binaires à partir de la distribution binaire, s'ils sont disponibles et qu'ils ne sont pas déjà sur votre système. Disponible à partir de la version 0.23.0 de <code>fink</code>.</p>
 </section>
 <section name="install" >
 <title>install - installation</title>
@@ -593,54 +621,77 @@ The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
 <p>Ici fink lit les fichiers d'information des paquets, donne le nombre de fichiers lus, signale que le paquet lesstif sera téléchargé si vous donnez votre accord.</p>      
-<p>Si vous ajoutez l'<xref section="options">option --use-binary-dist</xref>, <code>fink</code> télécharge les paquets binaires, s'ils sont disponibles, au lieu de les compiler. Cela permet de gagner du temps.</p>
+<p>L'utilisation de l'option <xref section="options">--use-binary-dist</xref> avec la commande <code>fink install</code> permet de gagner un temps considérable lors de la construction de paquets complexes.</p>
 <p>Les alias de la commande install sont : update, enable, activate, use (la plupart du temps pour des raisons historiques).</p>
 </section>
 <section name="remove" >
 <title>remove - suppression</title>
-<p>La commande remove supprime les paquets du système en appelant la commande  '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas les dépendances elle-même, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
+<p>La commande remove supprime les paquets du système en appelant la commande  '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
 <p>La commande remove ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé .deb reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers .deb de l'arborescence <filename>/sw/fink/dists</filename>.</p>
+<p>Les options suivantes peuvent être utilisées avec la command <code>fink remove</code> :</p>
+<codeblock>
+-h, --help
+    Affiche les options disponibles.
+-r, --recursive
+    Supprime aussi les paquets qui
+    dépendent du paquet à supprimer
+    (c'est-à-dire résout le défaut
+    signalé ci-dessus).
+</codeblock>
+
 <p>Alias : disable, deactivate, unuse, delete.</p>
 </section>
 <section name="purge">
 <title>purge</title>
 <p>La commande purge supprime les paquets du système. Elle agit de la même façon que la commande remove, mais elle supprime en plus les fichiers de configuration.</p>
+<p>Cette commande accepte les options suivantes :</p>
+<codeblock>
+-h, --help
+-r, --recursive
+</codeblock>
 </section>
 <section name="update-all" >
 <title>update-all - tout mettre à jour</title>
 <p>Cette commande met à jour tous les paquets installés. Elle n'utilise pas de liste de paquets, il suffit de lancer :</p>
 <codeblock>fink update-all</codeblock>
-<p>L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.</p>
+<p>L'option <xref section="options">--use-binary-dist</xref> peut s'avérer utile avec cette commande.</p>
 </section>
 <section name="list" >
 <title>list - liste</title>
 <p>Cette commande donne la liste des paquets disponibles, leur statut d'installation, la dernière version disponible et une courte description. Appelée sans paramètres, elle affiche tous les paquets disponibles. Vous pouvez aussi l'utiliser avec un nom ou une expression régulière acceptée par le shell, Fink donnera alors la liste de tous les paquets correspondants.</p>
 <p>La première colonne affiche le statut d'installation qui s'interprète de la façon suivante :</p>
 <codeblock>
-  non installé
- i   dernière version installée
-(i)  installé, mais une version plus récente est disponible
+      non installé
+ i    dernière version installée
+(i)   installé, mais une version plus récente est disponible
+ p    paquet virtuel fourni par un paquet installé
 </codeblock>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <codeblock>
--h,--help
+-h, --help
     Affiche les options disponibles. 
--t,--tab
+-t, --tab
     Affiche la liste en séparant les divers éléments 
     d'une ligne par une tabulation,
     utile en cas d'utilisation à l'intérieur d'un script. 
--i,--installed
+-i, --installed
     N'affiche que les paquets installés. 
--o,--outdated
+-o, --outdated
     N'affiche que les paquets obsolètes. 
--u,--uptodate
+-u, --uptodate
     N'affiche que les paquets à jour. 
--n,--notinstalled
+-n, --notinstalled
     Affiche les paquets qui ne sont pas installés. 
--s=expr,--section=expr
+-s=expr, --section=expr
     Affiche les paquets dans les sections correspondant 
     à l'expression régulière fournie. 
--w=xyz,--width=xyz
+-m expr, --maintainer=expr
+    Affiche les paquets dont le mainteneur correspond
+    à l'expression régulière fournie.
+-t expr, --tree=expr
+    Affiche les paquets des arborescences correspondant
+    à l'expression régulière fournie.
+-w=xyz, --width=xyz
     Fixe la largeur de l'affichage. xyz est soit une 
     valeur numérique, soit auto. 
     auto correspond à la largeur du terminal. 
@@ -648,17 +699,17 @@ Do you want to continue? [Y/n]</codeblock>
 <p>Quelques exemples d'utilisation :</p>
 <codeblock>
 fink list
-    affiche tous les paquets
+    Affiche tous les paquets.
 fink list bash
-    vérifie si bash est installé et affiche la 
-    version installée
+    Vérifie si bash est installé et affiche la 
+    version installée.
 fink list --outdated
-    affiche les paquets obsolètes
+    Affiche les paquets obsolètes.
 fink list --section=kde 
-    affiche les paquets de la section kde
+    Affiche les paquets de la section kde.
 fink list &quot;gnome*&quot;
-    affiche tous les paquets dont le nom 
-    commence par 'gnome'
+    Affiche tous les paquets dont le nom 
+    commence par 'gnome'.
 </codeblock>
 <p>Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shell d'interpréter le modèle lui-même.</p>
 </section>
@@ -667,11 +718,11 @@ fink list &quot;gnome*&quot;
 <p>Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.</p>
 <codeblock>
 fink apropos irc
-    affiche tous les paquets où 'irc' apparaît 
-    soit dans le nom, soit dans la description
+    Affiche tous les paquets où 'irc' apparaît 
+    soit dans le nom, soit dans la description.
 fink apropos -s=kde irc
-    identique au précèdent, mais restreint aux 
-    paquets de la section kde
+    Identique au précèdent, mais restreint aux 
+    paquets de la section kde.
 </codeblock>
 </section>
 <section name="describe" >
@@ -685,21 +736,32 @@ fink apropos -s=kde irc
 </section>
 <section name="fetch-all" >
 <title>fetch-all - tout télécharger</title>
-<p>Télécharge <em>tous</em> les paquets sous forme source. Comme fetch, cette commande télécharge les archives tar, même si elle ont déjà été téléchargées.</p>
+<p>Télécharge <em>tous</em> les paquets sous forme source. Comme <code>fetch</code>, cette commande télécharge les archives tar, même si elle ont déjà été téléchargées.</p>
+<p>Les options suivantes peuvent être utilisées avec la commande <code>fink fetch-all</code> :</p>
+<codeblock>
+-h, --help
+-i, --ignore-restrictive
+-d, --dry-run
+</codeblock>
 </section>
 <section name="fetch-missing" >
 <title>fetch-missing - télécharger paquets manquants</title>
 <p>Télécharge <em>tous</em> les paquets manquants sous forme source. Cette commande ne télécharge que les paquets qui ne sont pas présents sur le système.</p>
+<p>Les options suivantes peuvent être utilisées avec la commande <code>fink fetch-missing</code> :</p>
+<codeblock>
+-h, --help
+-i, --ignore-restrictive
+-d, --dry-run
+</codeblock>
 </section>
 <section name="build" >
 <title>build - compiler</title>
 <p>Construit un paquet, mais ne l'installe pas. Les archives tar source sont téléchargées si elles ne sont pas présentes sur le système. La commande construit un paquet .deb que vous pourrez installer ultérieurement avec la commande install. Cette commande n'a aucun effet si le fichier .deb existe déjà. Notez que, contrairement au paquet, les dépendances sont, elles, <em>installées</em>.</p>
-<p>L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.</p>
+<p>L'option <xref section="options">--use-binary-dist</xref> peut être utilisée ici.</p>
 </section>
 <section name="rebuild" >
 <title>rebuild - recompiler</title>
 <p>Construit un paquet (tout comme la commande build), mais ignore et écrase le fichier .deb existant. Si le paquet est installé, le nouveau fichier .deb sera lui aussi installé dans le système via <code>dpkg</code>. Très utile pendant la phase de développement du paquet.</p>
-<p>L'<xref section="options">option --use-binary-dist</xref> peut être utilisée ici.</p>
 </section>
 <section name="reinstall" >
 <title>reinstall - réinstaller</title>
@@ -712,7 +774,7 @@ fink apropos -s=kde irc
 <section name="selfupdate" >
 <title>selfupdate - mise à jour automatique</title>
 <p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <filename>/sw/fink/dists</filename> de telle sorte qu'elle soit mise à jour directement via CVS. Vous avez alors accès aux toutes dernières versions des paquets.</p>
-<p>Si l'<xref section="options">option --use-binary-dist option</xref> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
+<p>Si l'option <xref section="options">--use-binary-dist option</xref> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
 </section>
 <section name="index" >
 <title>index - indexer</title>
@@ -721,6 +783,17 @@ fink apropos -s=kde irc
 <section name="validate" >
 <title>validate - valider</title>
 <p>Cette commande exécute différents contrôles sur les fichiers .info et .deb. Les mainteneurs de paquets doivent l'exécuter sur leurs descriptions de paquets et sur les paquets construits avant de les soumettre.</p>
+<p>Les options suivantes peuvent être utilisées :</p>
+<codeblock>
+-h, --help
+    Affiche les options disponibles.
+-p, --prefix
+    Simule un autre préfixe de chemin de base 
+    de Fink (%p) pour les fichiers à valider.
+--pedantic, --no-pedantic
+    Contrôle l'affichage des messages d'attention.
+    --pedantic est l'option par défaut.
+</codeblock>
 <p>Alias : check</p>
 </section>
 <section name="scanpackages" >
@@ -730,7 +803,7 @@ fink apropos -s=kde irc
 <section name="cleanup" >
 <title>cleanup - épuration</title>
 <p>Supprime les fichiers correspondants aux paquets obsolètes (.info, .patch, .deb) quand des versions plus récentes sont disponibles. Cela peut libérer une grande portion d'espace disque.</p>
-<p>Si l'<xref section="options">option --use-binary-dist</xref> est activée, les paquets binaires téléchargés obsolètes sont supprimés.</p>
+<p>Si l'option <xref section="options">--use-binary-dist</xref> est activée, les paquets binaires téléchargés obsolètes sont supprimés et la commande <code>fink scanpackages</code> est exécutée.</p>
 </section>
 <section name="dumpinfo">
 <title>dumpinfo - analyse des fichiers info</title>
@@ -749,6 +822,11 @@ fink apropos -s=kde irc
 -p clé, --percent=clé
     Affiche l'interprétation des clés fournies
     dans leur ordre d'apparition après l'option -p.</codeblock>
+</section>
+<section name="show-deps">
+<title>show-deps - affiche les dépendances</title>
+<p>Disponible uniquement à partir de la version 0.23.6 de fink.</p>
+<p>Affiche l'analyse syntaxique des dépendances d'un paquet à partir de son fichier .info.</p>
 </section>
 <!-- 'fink snapshot' will not be included in 0.24
 <section name="snapshot">

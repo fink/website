@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/07 09:15:38';
+$cvs_date = 'Date: 2005/03/09 06:26:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -123,7 +123,7 @@ La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><b>UseBinaryDist:</b> booléen</p>
-<p>Force <code>fink</code> à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'option <a href="usage.php?phpLang=fr">--use-binary-dist</a> avec <code>fink</code> (ou le drapeau <code>-b</code>) a le même effet, mais est restreint à cette invocation de <code>fink</code>. L'utilisation du drapeau <code>--no-use-binary-dist</code> avec <code>fink</code> a l'effet inverse et est, de même, restreint à cette invocation de <code>fink</code>. <b>Disponible à partir de la version 0.23.0 de fink</b>.</p>
+<p>Force <code>fink</code> à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'option <a href="usage.php?phpLang=fr">--use-binary-dist</a> avec <code>fink</code> (ou l'option <code>-b</code>) a le même effet, mais est restreint à cette invocation de <code>fink</code>. L'utilisation de l'option <code>--no-use-binary-dist</code> avec <code>fink</code> a l'effet inverse et est, de même, restreint à cette invocation de <code>fink</code>. <b>Disponible à partir de la version 0.23.0 de fink</b>.</p>
 <p>Notez que, dans ce mode, <code>fink</code> télécharge la version requise d'un paquet, si elle est disponible, mais ne force pas <code>fink</code> à choisir la version en fonction de sa disponibilité binaire.</p>
 </li>
 </ul>

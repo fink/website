@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/07 09:15:38';
+$cvs_date = 'Date: 2005/03/09 06:26:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -82,7 +82,7 @@ E: Sorry, broken packages</pre>
 <pre>fink install wget-ssl</pre>
 <p>La commande <code>fink</code> vérifie tout d'abord que toutes les "dépendances" requises sont présentes sur votre système. Si ce n'est pas le cas, elle vous demandera de confirmer l'installation de celles qui sont manquantes. Ensuite, elle télécharge le code source, le décompresse, lui applique des rustines, le compile et installe le paquet résultant sur votre système. Tout ceci peut prendre un certain temps. Si des erreurs se produisent durant le processus, consultez tout d'abord les 
 <a href="http://fink.sourceforge.net/faq/">QFP</a>.</p>
-<p>À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'<a href="usage.php?phpLang=fr#options">option --use-binary-dist (ou -b)</a> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :</p>
+<p>À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'option <a href="usage.php?phpLang=fr#options">--use-binary-dist (ou -b)</a> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :</p>
 <pre>fink --use-binary-dist install wget-ssl</pre>
 <p>ou</p>
 <pre>fink -b install wget-ssl</pre>

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Mise à niveau";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/07 09:15:38';
+$cvs_date = 'Date: 2005/03/09 06:26:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink"><link rel="prev" href="packages.php?phpLang=fr" title="Installation de paquets">';
 
 
@@ -37,7 +37,7 @@ cd packages-0.x.x
 <h2><a name="mix">4.3 Mélange de binaires et de source</a></h2>
 
 <p>Si vous utilisez des paquets binaires précompilés pour certains logiciels et que vous en construisez d'autres à partir du source, vous devrez exécuter les séquences d'instructions des deux méthodes pour mettre à jour votre installation Fink. Tout d'abord, utilisez <code>dselect</code> ou <code>apt-get</code> pour récupérer les versions binaires les plus récentes des paquets, puis utilisez <code>fink selfupdate</code> et <code>fink update-all</code> pour récupérer les descriptions de paquets et mettre à jour les autres paquets.</p>
-<p>À partir de la version 0.23.0 de fink, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'<a href="usage.php?phpLang=fr#options">option --use-binary-dist (ou -b)</a> ou bien dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.</p>
+<p>À partir de la version 0.23.0 de fink, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'option <a href="usage.php?phpLang=fr#options">--use-binary-dist (ou -b)</a> ou bien dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.</p>
 <p>Si vous utilisez Fink Commander, sélectionnez Binary-&gt;Update descriptions (Binaire-&gt;Mise à jour des descriptions) pour mettre à jour la liste des paquets, puis Binary-&gt;Dist-Upgrade packages (Binaire-&gt;Mise à jour des paquets de la distribution) pour obtenir les nouvelles versions. Exécutez ensuite Source-&gt;Selfupdate (Source-&gt;Mise à jour automatique) pour télécharger les nouveaux fichiers info des paquets, puis Source-&gt;Update-all (Source-&gt;Tout mettre à jour). Voir les sections précédentes pour de plus amples informations.</p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
