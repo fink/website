@@ -1,7 +1,7 @@
 <?
 $title = "Anleitung zur Aktualisierung unter  Mac OS X 10.3";
-$cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/13 15:52:55 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:27:54 $';
 
 include "header.inc";
 ?>
@@ -18,9 +18,10 @@ Sorgen Sie unter 10.3 dafür, dass Sie XCode von der XCode-disc installieren, be
 Der Befehl "fink selfupdate" sollte die Aktualisierung für Sie leisten. Die aktuelle Version des Fink Paket-Managers erkennt automatisch welche Mac OS X- und welche gcc-Version bei Ihnen installiert ist und stellt sich darauf selbstständig ein.
 </p><p>
 Wenn Sie eine Fink-Neu-Installation auf einem  10.3-System durchführen wollen, empfehlen wir Ihnen eine
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">Installation auf Basis der Quelltextversion,</extlink> mit Hilfe der Datei fink-full-0.6.1.tar.gz, die sie auf der  <extlink
-url="http://sourceforge.net/project/showfiles.php?group_id=17203">Sourceforge 
-Download Seite von Fink finden.</extlink> Hierfür benötigen Sie außerdem XCode.
+<a href="http://fink.sourceforge.net/download/srcdist.php">Installation auf Basis der Quelltextversion,</a>
+mit Hilfe der Datei fink-full-0.6.1.tar.gz, die sie auf der  
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">Sourceforge 
+Download Seite von Fink finden.</a> Hierfür benötigen Sie außerdem XCode.
 </p><p>
 Beachten Sie außerdem die Tatsache, dass Sie bei einer Fink Version 0.15.0 oder höher system-xfree86 nicht mehr installieren müssen. Fink kann Ihr system-xfree86 automatisch ermitteln, wenn Sie noch keine fink x11 Pakete installiert haben. sollten Sie ein altes system-xfree86-Paket jeglicher Art installiert haben, führen Sie folgenden Befehl aus:
 </p>

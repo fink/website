@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.3";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:02 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:27:54 $';
 
 include "header.inc";
 ?>
@@ -28,11 +28,10 @@ version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
-source,</extlink> starting from fink-full-0.6.1.tar.gz available
-on fink's <extlink
-url="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
-download page.</extlink>  You'll need XCode for this as
+<a href="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
+source,</a> starting from fink-full-0.6.1.tar.gz available
+on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
+download page.</a>  You'll need XCode for this as
 well.
 </p><p>
 Also note that once you have Fink version 0.15.0 or higher, you do

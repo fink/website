@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.3 でのアップグレード";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/02 16:21:21 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:27:54 $';
 
 include "header.inc";
 ?>
@@ -20,9 +20,9 @@ Fink は gcc 3.3 コンパイラと OS X 10.3 を生かし、ソースとバイ�
 最新の fink パッケージマネージャは自動的にインストールされている OS X と gcc のバージョンを検知し、これに従って設定します。
 </p><p>
 10.3 システム上で新規に Fink をインストールする場合、
-<extlink url="http://sourceforge.net/project/showfiles.php?group_id=17203">SourceForge ダウンロード</extlink>ページから
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">SourceForge ダウンロード</a>ページから
 fink-full-0.6.1.tar.gz をダウンロードし、
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">ソースからブートストラップ</extlink>
+<a href="http://fink.sourceforge.net/download/srcdist.php">ソースからブートストラップ</a>
 することをお勧めします。
 これには XCode が必要です。
 </p><p>

@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.3";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:27:54 $';
 
 include "header.inc";
 ?>
@@ -16,9 +16,9 @@ include "header.inc";
 运行 "fink selfupdate" 应该可以执行升级的操作。最新版本的 fink 软件包管理器应该可以自动检测到你的 OS X 和 gcc 版本，并自动进行相应调整。
 </p><p>
 如果你希望在 10.3 系统上进行全新的安装，我们推荐
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">从源代码开始建立最初环境</extlink>，并从 fink 站点的<extlink
-url="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
-下载页</extlink>中的 fink-full-0.6.1.tar.gz 开始安装。你需要 XCode 来进行安装。
+<a href="http://fink.sourceforge.net/download/srcdist.php">从源代码开始建立最初环境</a>，并从 fink 站点的
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
+下载页</a>中的 fink-full-0.6.1.tar.gz 开始安装。你需要 XCode 来进行安装。
 </p><p>
 注意如果你已经有 Fink 版本 0.15.0 或更高，你不再需要安装 system-xfree86。Fink 可以自动检测你的 system-xfree86 版本，如果你还没有安装任何 fink x11 软件包。如果你现在安装有任何类型旧的 system-xfree86 软件包，请运行下面的命令：
 </p>

@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Instructions de mise à niveau pour Mac OS X 10.3";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/17 11:07:50 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:27:54 $';
 
 include "header.inc";
 ?>
@@ -25,9 +25,9 @@ conséquence.
 </p><p>
 Si vous désirez faire une nouvelle installation de Fink sur un système 10.3,
 nous vous recommandons d'exécuter un
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">bootstrap à partir du source<extlink> en commençant par fink-full-0.6.1.tar.gz, disponible sur la
-<extlink url="http://sourceforge.net/project/showfiles.php?group_id=17203">
-page de téléchargement sourceforge</extlink> de fink. Il vous faudra également
+<a href="http://fink.sourceforge.net/download/srcdist.php">bootstrap à partir du source</a> en commençant par fink-full-0.6.1.tar.gz, disponible sur la
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">
+page de téléchargement sourceforge</a> de fink. Il vous faudra également
 Xcode pour ce faire.
 </p><p>
 Notez aussi, qu'à partir du moment où vous aurez installé Fink version 0.15.0 ou ultérieure, vous
