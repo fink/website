@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/10 06:04:54';
+$cvs_date = 'Date: 2005/04/02 17:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -144,7 +144,7 @@ Do you want to continue? [Y/n]</pre>
 -m expr, --maintainer=expr
     Affiche les paquets dont le mainteneur correspond
     à l'expression régulière fournie.
--t expr, --tree=expr
+-r expr, --tree=expr
     Affiche les paquets des arborescences correspondant
     à l'expression régulière fournie.
 -w=xyz, --width=xyz
