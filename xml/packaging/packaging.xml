@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.61 2004/02/13 07:25:14 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.62 2004/02/13 07:38:27 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1383,15 +1383,17 @@ supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <em>mirror-name</em> in Fink's
 configuration, append the <em>relative-path</em> part and use that as
-the actual URL. Alternatively, using <code>custom</code> as the
+the actual URL. The known <em>mirror-name<em>s are listed in
+/sw/lib/fink/mirror/_list, which is part of the fink or fink-mirrors
+package. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
+Before the URL is used, percent expansion takes place.
+</p>
+<p>
 Since fink 0.18.0, <code>Source: none</code> has the special meaning
 that there is no source to fetch. See the description of the
 <code>Type</code> field for more information.
-</p>
-<p>
-Before the URL is used, percent expansion takes place.
 The value <code>gnu</code> is a shorthand for
 <code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
