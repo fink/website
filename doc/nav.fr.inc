@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.fr.inc,v 1.7 2004/07/10 18:02:47 michga Exp $ */
+/* $Id: nav.fr.inc,v 1.8 2004/07/16 08:50:45 michga Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -12,6 +12,7 @@ $navbox = array(
   "doc/cvsaccess/index.php?phpLang=fr", "Accès CVS",
   "doc/security/index.php?phpLang=fr", "Sécurité",
   "doc/porting/index.php?phpLang=fr", "Portage",
+  "doc/quick-start-pkg/index.php?phpLang=fr", "Tutoriel d'empaquetage",
   "doc/packaging/index.php?phpLang=fr", "Construction de paquets",
   "doc/multilingual/index.php?phpLang=fr", "Internationalisation",
   "doc/netiquette/index.php?phpLang=fr", "Étiquette net"
