@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.110 2004/01/03 14:22:30 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.111 2004/01/03 16:52:53 rangerrick Exp $</cvsid>
 
 <newsitem>
 	<date>2004-01-02</date>
@@ -9,30 +9,31 @@
 	<body>
 	<p>
 	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt as slang language on my having to watch the MTV Music Awards all day long.
+	attempt as slang language on some of us having to watch the MTV Music Awards all
+   day long.
 	</p>
 	<p>
 	Last year has been a good year for Fink. We have had hard times keeping up with 
 	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go trough great lengths to support us. 
-	It is for us to say Thank You. I am sure many of us keep doing what they are 
-	doing because they feel needed and that includes me.
+	which is willing to go through great lengths to support us. 
+	For this, we say &quot;Thank You&quot;. Much of what happens in the Fink project
+   happens because of the amazing support and encouragement we get from our users.
 	</p>
 	<p>
 	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipe, like GNOME 2.4 a new release of KDE, major 
-	changes to the package manager itself and organisational restructuring. 
-	Hopefully we will advance into yet a bigger Project, with developer conferences, 
-	real life meetings and a CD in your favourite shop.
+	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
+	changes to the package manager itself, and organisational restructuring. 
+	Hopefully we will advance into an even bigger project with developer conferences, 
+	real life meetings, and a CD in your favourite shop.
 	</p>
 	<p>
-	High ambitions can make one fall very deeply, thus we shall take it slow, but 
-	still we are all counting on your support in this year. Tell us what you think 
-	about Fink, tell us what you like or dislike, show us ways to improve ourselves.
+	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
+	still we are all counting on your support during this year. Tell us what you think 
+	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
 	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
 	to improve the package manager or add another piece of software by creating an
 	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community, hopefully we shall make it a smooth ride for you and
+	such a nice community; hopefully we shall make it a smooth ride for you and
 	your Macintosh in Two Zero Zero Four.
 	</p>
 	</body>
