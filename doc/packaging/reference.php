@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2001/12/25 15:41:48';
+$cvs_date = 'Date: 2001/12/27 13:35:56';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -88,8 +88,8 @@ This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
 </p>
 <p>
-Finally there is <tt><nobr>perl</nobr></tt> which causes alternate default
-values for CompileScript and InstallScript to be used. 
+Finally since fink 0.9.5 there is type <tt><nobr>perl</nobr></tt> which causes
+alternate default values for the compile and install scripts to be used. 
 </p>
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
@@ -320,6 +320,7 @@ packages's version and Fink's version (in
 </p>
 </td></tr><tr valign="top"><td>UpdatePOD</td><td>
 <p>
+<i>Introduced in fink 0.9.5.</i>
 A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
