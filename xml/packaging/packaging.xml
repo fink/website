@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.46 2003/05/20 19:51:27 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.47 2003/08/30 03:41:24 thesin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1705,6 +1705,17 @@ make test</codeblock>
 <p>
 Before the commands are executed, percent expansion takes place
 (see previous section).
+</p>
+</itemd></item>
+
+<item><itemt>NoPerlTests</itemt>
+<itemd> 
+<p>
+<em>Introduced in fink > 0.13.7.</em>
+A boolean value, specific for perl module packages.
+If true, the <code>make test</code> portion
+of the <code>CompileScript</code> will be ignored
+for that specific perl module package.
 </p>
 </itemd></item>
 
