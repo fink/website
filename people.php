@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/13 10:33:36 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2001/11/18 13:35:41 $';
 
 include "header.inc";
 ?>
@@ -18,6 +18,7 @@ Fink (in alphabetical order):</p>
 
 <ul>
 <li>Finlay Dobbie</li>
+<li>Justin F. Hallett</li>
 <li>Jeremy Higgs</li>
 <li>Max Horn</li>
 <li>David R. Morrison</li>
@@ -36,7 +37,6 @@ Fink (in alphabetical order):</p>
 <li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
 <li>Peter O'Gorman</li>
-<li>Justin F. Hallett</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
 <li>Matt Stephenson</li>
