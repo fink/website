@@ -1,7 +1,7 @@
 <?
 $title = "GNU libtool and Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/25 15:40:22 $';
+$cvs_date = '$Date: 2001/06/12 07:30:22 $';
 
 include "header.inc";
 ?>
@@ -49,7 +49,7 @@ will only work on Darwin when dlcompat is installed.</p>
 <h2>The 1.3.5 Patch</h2>
 
 <p>After applying <a href="../files/libtool-1.3.5-darwin.patch">this patch</a>
-[updated 2001-03-15] to the libtool 1.3.5 source, you must
+[updated 2001-06-12] to the libtool 1.3.5 source, you must
 delete the files ltconfig and ltmain.sh. They will be recreated from
 the appropriate .in files when you run configure and make. But that's
 only half the work - every package using libtool comes with its own
@@ -59,7 +59,7 @@ do this before running the configure script. For your convenience, you
 can get the two files right here:
 <a href="../files/ltconfig">ltconfig</a> (98K) and
 <a href="../files/ltmain.sh">ltmain.sh</a> (110K)
-[both updated 2001-03-15].</p>
+[both updated 2001-06-12].</p>
 
 <h2>Further Notes</h2>
 
