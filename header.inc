@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.49 2002/12/03 04:05:31 benh57 Exp $ */
+/* $Id: header.inc,v 1.50 2002/12/03 04:39:37 benh57 Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -48,9 +48,14 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 
 // Log the access
 session_start();
-include("db.inc.php");
-include("pws/stats.php");
-include("pws/bro.php");
+if(!isset($fsroot))
+{
+ $fsroot = "./";
+}
+include($fsroot."db.inc.php");
+include($fsroot."pws/stats.php");
+include($fsroot."pws/bro.php");
+
 $conn = db_connect();
 // set the page id
 // we could set this variable to "Gallery" for photogallery, etc.
