@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/04 22:44:47 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/01/09 02:09:16 $';
 
 include "header.inc";
 ?>
@@ -23,7 +23,14 @@ not in any other directory.
 See <a href="#oldversion">below</a>.
 </p>
 
-<h2>Fink 0.2.4 and newer</h2>
+<h2>Fink 0.3.0 and newer</h2>
+
+<p>
+Starting with version 0.3.0, Fink is fully compatible with Mac OS X 10.1.
+Thus you don't have to do anything special.
+</p>
+
+<h2>Fink 0.2.4 till 0.2.6</h2>
 
 <p>
 This procedure assumes you have installed Fink with the official
@@ -78,9 +85,9 @@ The procedure has four main steps:
 
 <li><p>Getting decent apt and fink packages.
 Download the
-<a href="../bindist/dists/fink-0.3.1/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
+<a href="../bindist/dists/fink-0.3.2/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
 and the
-<a href="../bindist/dists/fink-0.3.1/main/binary-darwin-powerpc/base/fink_0.9.4-1_darwin-powerpc.deb">fink-0.9.4-1</a>
+<a href="../bindist/dists/fink-0.3.2/main/binary-darwin-powerpc/base/fink_0.9.6a-1_darwin-powerpc.deb">fink-0.9.6a-1</a>
 packages.
 (Yes, that version number is for real.
 The <tt>fink</tt> command in the fink package now has separate

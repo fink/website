@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/04 22:44:47 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/01/09 02:09:16 $';
 
 include "header.inc";
 ?>
@@ -33,7 +33,7 @@ The precompiled packages downloaded by these tools are now built on a
 <?
 it_start();
 it_item('<b>Current installation</b>', '<b>Upgrade method</b>');
-it_item("Fink official binary distribution, version 0.3.0",
+it_item("Fink official binary distribution, version 0.3.x",
   '<p>Update normally through <tt>dselect</tt>: Choose "[U]pdate",
   then "[I]nstall".</p>');
 it_item("Fink official binary distribution, version 0.2.x",
@@ -46,9 +46,9 @@ it_item("Fink source release 0.2.5 or newer",
   '<p>Run "<tt>fink selfupdate</tt>".</p>');
 it_item("Fink source release 0.2.4 or older (down to 0.2.0)",
   '<p>Download the <a
-  href="http://prdownloads.sourceforge.net/fink/packages-0.3.1.tar.gz">packages
+  href="http://prdownloads.sourceforge.net/fink/packages-0.3.2.tar.gz">packages
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.1
+  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.2
   directory.</p>');
 it_end();
 ?>
