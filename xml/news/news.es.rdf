@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2004-11-10T11:30:13-05:00</dc:date>
+    <dc:date>2004-11-15T21:28:49+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.">
       <title>Resolución de problemas con gcc.</title>
@@ -20,8 +20,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.
       
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
- aquí 
-and  here .
+ aquí  y 
+también  aquí .
 
        Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 
@@ -37,8 +37,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.
       
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
- aquí 
-and  here .
+ aquí  y 
+también  aquí .
 
        Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 
@@ -52,53 +52,65 @@ hasta que el problema sea resuelto.
       <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20liberado.</guid>
       <description>
 
-La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. 
+Ésta ha sido creada para la versión Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para la versión Jaguar (10.2) de Mac OS X.
 
 
 
-Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 
 
 
-Para realizar una primera instalación de Fink, hay que seguir los consejos de esta página. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En esta página encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalación de Fink, hay que seguir los consejos 
+de esta página. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En esta página encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 
 
 
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras aquí.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas 
+listas la encontraras aquí.
+
 
 
 
 Asegúrate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* 
 
-	
+
 El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
-También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 
 
 </description>
       <content:encoded>
 
-La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. 
+Ésta ha sido creada para la versión Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para la versión Jaguar (10.2) de Mac OS X.
 
 
 
-Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 
 
 
-Para realizar una primera instalación de Fink, hay que seguir los consejos de esta página. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En esta página encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalación de Fink, hay que seguir los consejos 
+de esta página. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En esta página encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 
 
 
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras aquí.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas 
+listas la encontraras aquí.
+
 
 
 
 Asegúrate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* 
 
-	
+
 El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
-También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 
 
 </content:encoded>

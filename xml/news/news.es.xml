@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.10 2004/11/12 01:36:58 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.11 2004/11/15 20:28:30 zifra Exp $</cvsid>
  <newsitem>
     <date>2004-10-15</date>
     <headline>Resolución de problemas con gcc.</headline>
@@ -14,8 +14,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.</p>
       <p>
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
-<link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </link>
-and <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </link>.
+<link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </link> y 
+también <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> aquí </link>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 
@@ -28,27 +28,33 @@ hasta que el problema sea resuelto.
 <headline>Fink 0.7.1 liberado.</headline>
 <body>
 <p>
-La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. 
+Ésta ha sido creada para la versión Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para la versión Jaguar (10.2) de Mac OS X.
 </p>
 
 <p>
-Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 </p>
 
 <p>
-Para realizar una primera instalación de Fink, hay que seguir los consejos de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</link> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalación de Fink, hay que seguir los consejos 
+de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</link> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras <link url="http://fink.sourceforge.net/lists/index.php">aquí</link>.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas 
+listas la encontraras <link url="http://fink.sourceforge.net/lists/index.php">aquí</link>.
+
 </p>
 
 <p>
 Asegúrate de seleccionar el <em>instalador adecuado</em> para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* </p>
 
-	<p>
+<p>
 El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
-También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
+También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 </p>
 
 </body>
@@ -136,10 +142,10 @@ Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, vario
 	</p>
 	<p>
 Para completar una nueva instalación de Fink se deben seguir las instrucciones que están  
-<varlink url="download/index.php?phpLang=es">aquí</varlink>.
-También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  <varlink url="download/upgrade.php?phpLang=es">aquí</varlink>.
+<link url="download/index.php?phpLang=es">aquí</link>.
+También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  <link url="download/upgrade.php?phpLang=es">aquí</link>.
 
-Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra <varlink url="lists/index.php?phpLang=es">aquí</varlink>.
+Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra <link url="lists/index.php?phpLang=es">aquí</link>.
 		</p>
 		<p>
 Asegurense de escoger el <em>instalador adecuado</em> para su plataforma.
@@ -169,7 +175,7 @@ Esto también significa que se necesitan voluntarios. El sitio web de Fink neces
 </p>
 <p>
 Si estas dispuesto a convertirte en un miembro de algún equipo de internacionalización o si deseas proporcionar alguna retroalimentación del sitio web, sientete libre de unirte a la nueva lista de correo. 
-Puedes hacerlo visitando la  <varlink url="lists/index.php">página de las listas de correo</varlink>. El anuncio completo de las listas de correo existentes puede leerse <link url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">aquí</link>.
+Puedes hacerlo visitando la  <link url="lists/index.php">página de las listas de correo</link>. El anuncio completo de las listas de correo existentes puede leerse <link url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">aquí</link>.
 </p>
 </body>
 </newsitem>
@@ -341,7 +347,7 @@ it is safe to once again use dselect.  However, if you ran dselect
 at any time since 0.6.0, you should carefully check the integrity
 of the file at <code>/sw/etc/apt/sources.list</code>.  If you have
 any doubts about this file, you should replace it with
-<varlink url="files/sources.list">the default sources.list file</varlink>.
+<link url="files/sources.list">the default sources.list file</link>.
 </p>
 <p>Users who have installed binary files from the 0.6.1 distribution
 may find that certain files in their Fink installation are owned
@@ -415,7 +421,7 @@ next few weeks.
 <p>The simplest way to upgrade a binary installation is to run
 "sudo apt-get update".  Further details and
 other issues related to upgrading Fink to 10.3 are addressed on the
-<varlink url="download/10.3-upgrade.php">Special 10.3 upgrade page.</varlink>
+<link url="download/10.3-upgrade.php">Special 10.3 upgrade page.</link>
 </p><p>
 Before using the latest version of
 the command-line <code>fink</code> program 
@@ -466,7 +472,7 @@ after free registration from connect.apple.com.
 	<headline>Look Ma, a logo for Fink</headline>
 		<body>
 	<p>As you surely noticed, Fink has a logo. This is the result of our
-	Logo <varlink url="logo.php">contest</varlink> held earlier this year.
+	Logo <link url="logo.php">contest</link> held earlier this year.
 	This new, official, logo has been displayed since the 24th of October and
 	those of you who wondered how it has been picked and what the name of the
 	winner is should read up in the PR <link url="pr/index.php">section</link>.
@@ -893,7 +899,7 @@ appreciate your participation.
 	<body>
 	<p>
 	Fink works just fine with the <link url="http://www.apple.com/macosx/x11/">public beta X11 release</link>
-	with some caveats.  Please read <varlink url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</varlink> section of the Fink X11 Documentation for details.</p>
+	with some caveats.  Please read <link url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
 	</body>
 </newsitem>
 <newsitem>
@@ -903,12 +909,12 @@ appreciate your participation.
 	<p>
 	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
 
-<varlink url="news/fink-stable.rdf">fink-stable.rdf</varlink> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+<link url="news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
-<p><varlink url="news/fink-unstable.rdf">fink-unstable.rdf</varlink> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+<p><link url="news/fink-unstable.rdf">fink-unstable.rdf</link> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
 The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
 </p>
-<p><varlink url="news/news.rdf">news.rdf</varlink> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
+<p><link url="news/news.rdf">news.rdf</link> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
 </p>
 </body>
 </newsitem>
@@ -916,7 +922,7 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
   <date>2002-12-22</date>
   <headline>New Upgrade Matrix</headline>
   <body>
-  <p>A new <varlink url="download/upgrade.php">Upgrade Matrix</varlink> is
+  <p>A new <link url="download/upgrade.php">Upgrade Matrix</link> is
   now available, for use in upgrading earlier versions of Fink to the
   current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
   under 10.1 will be brought to Fink version 0.4.1a, while users
@@ -951,7 +957,7 @@ made available on 2002-09-08.
     all kinds. 
   </p>
   <p>
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
   </p>
   <p>
   This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
@@ -1003,7 +1009,7 @@ not "Upgrade."  (You can recognize the new version by its filesize of
   <headline>Fink 0.4.1 released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
     </p>
     <p>
     This is the <em>last release for Mac OS X 10.1</em>. Future versions of Fink will <em>not</em> officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
@@ -1032,7 +1038,7 @@ software before using Fink.
 	<headline>Test version of Jaguar updater available</headline>
 	<body>
 		<p>
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <varlink url="news/jaguar.php">step-by-step instructions for updating</varlink>. We also have separate <varlink url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</varlink>. 
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <link url="news/jaguar.php">step-by-step instructions for updating</link>. We also have separate <link url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</link>. 
 		</p>
 		<p>
 			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
@@ -1058,13 +1064,13 @@ software before using Fink.
 	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
 	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
 	 Some packages need special changes to build on 10.2. Adding "unstable/main" to your
-	 list of trees in /sw/etc/fink.conf (see also the <varlink url="faq/usage-fink.php#unstable">FAQ</varlink>)
+	 list of trees in /sw/etc/fink.conf (see also the <link url="faq/usage-fink.php#unstable">FAQ</link>)
 	 will give you access to the latest versions of packages, many of which include important
 	 fixes for 10.2.
 	</p>
     <p>
      As of now, please do not email us asking about 10.2 support. If you can't wait,
-     consult the <varlink url="lists/index.php">mailing list archives</varlink> instead.
+     consult the <link url="lists/index.php">mailing list archives</link> instead.
     </p>
   </body>
 </newsitem>
@@ -1090,7 +1096,7 @@ software before using Fink.
   <headline>Binary distribution moves</headline>
   <body>
     <p>
-      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <varlink url="news/bindist_move.php">read more here.</varlink>.
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <link url="news/bindist_move.php">read more here.</link>.
     </p>
   </body>
 </newsitem>
@@ -1100,7 +1106,7 @@ software before using Fink.
   <headline>KDE support</headline>
   <body>
     <p>
-      Fink <varlink url="news/kde.php">announces support</varlink> for <link url="http://www.kde.org">KDE</link>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <varlink url="news/kde.php">KDE Support In Fink</varlink> announcement. 
+      Fink <link url="news/kde.php">announces support</link> for <link url="http://www.kde.org">KDE</link>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <link url="news/kde.php">KDE Support In Fink</link> announcement. 
     </p>
   </body>
 </newsitem>
@@ -1121,7 +1127,7 @@ software before using Fink.
       </li>
     </ul>
     <p>
-      See <varlink url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</varlink> for more information about the passwd package. 
+      See <link url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</link> for more information about the passwd package. 
     </p>
   </body>
 </newsitem>
@@ -1131,7 +1137,7 @@ software before using Fink.
   <headline>Fink 0.4.0 released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
+      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
     </p>
   </body>
 </newsitem>
@@ -1141,7 +1147,7 @@ software before using Fink.
   <headline>Fink 0.3.2a is released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
     </p>
   </body>
 </newsitem>
@@ -1151,7 +1157,7 @@ software before using Fink.
   <headline>Fink 0.3.2 is released</headline>
   <body>
     <p>
-      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
+      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
     </p>
   </body>
 </newsitem>
@@ -1174,7 +1180,7 @@ software before using Fink.
       Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
     </p>
     <p>
-      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <varlink url="doc/cvsaccess/index.php">CVS</varlink>. 
+      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <link url="doc/cvsaccess/index.php">CVS</link>. 
     </p>
   </body>
 </newsitem>
@@ -1184,7 +1190,7 @@ software before using Fink.
   <headline>Fink 0.3.1 is released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the recently updated <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the recently updated <link url="doc/users-guide/index.php">User's Guide</link>. 
     </p>
   </body>
 </newsitem>
@@ -1194,7 +1200,7 @@ software before using Fink.
   <headline>Running X11 document updated</headline>
   <body>
     <p>
-      The <varlink url="doc/x11/index.php">Running X11</varlink> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
+      The <link url="doc/x11/index.php">Running X11</link> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
     </p>
   </body>
 </newsitem>
@@ -1227,7 +1233,7 @@ software before using Fink.
   <headline>Binary distribution complete</headline>
   <body>
     <p>The binary distribution update is now complete.
-    The <varlink url="news/puma.php">10.1 compatibility report</varlink> has been
+    The <link url="news/puma.php">10.1 compatibility report</link> has been
     updated to reflect the fixes in Fink 0.3.0.
     </p>
   </body>
@@ -1251,7 +1257,7 @@ software before using Fink.
   <headline>Mac OS X 10.1 released</headline>
   <body>
     <p>Mac OS X 10.1 has been officially released yesterday. Before you use Fink
-    on 10.1, check out the <varlink url="news/puma.php">compatibility report</varlink>.
+    on 10.1, check out the <link url="news/puma.php">compatibility report</link>.
     <em>Update:</em> The apt-get issue has been solved, expect a new release
     this weekend.
     </p>
@@ -1273,7 +1279,7 @@ software before using Fink.
   <headline>Fink 0.2.6 is released</headline>
   <body>
     <p>Fink 0.2.6 is released, fixing several bootstrap problems. The source
-    release is available from the <varlink url="download.php">download page</varlink>
+    release is available from the <link url="download.php">download page</link>
     or via the 'fink selfupdate' command. The binary release will follow soon.
     </p>
  </body>
@@ -1295,7 +1301,7 @@ software before using Fink.
   <headline>Fink 0.2.5 was released</headline>
   <body>
     <p>The source release is
-    available from the <varlink url="download.php">download page</varlink>, the
+    available from the <link url="download.php">download page</link>, the
     binary release will follow soon.
     </p>
   </body>
@@ -1327,7 +1333,7 @@ software before using Fink.
   <date>2001-08-13</date>
   <headline>Porting tips and X11 document updated</headline>
   <body>
-    <p>The <varlink url="doc/porting/index.php">porting tips</varlink> document has
+    <p>The <link url="doc/porting/index.php">porting tips</link> document has
     a new chapter on shared libraries and modules. The <link
     url="doc/x11/index.php">X11</link> document was also updated recently.
     </p>
@@ -1382,7 +1388,7 @@ software before using Fink.
   <date>2001-07-09</date>
   <headline>Version 0.2.3 is released</headline>
   <body>
-    <p>Get it from the <varlink url="download.php">download page</varlink>. This
+    <p>Get it from the <link url="download.php">download page</link>. This
     version fixes the dpkg download problems many of you were having.
     </p>
   </body>
@@ -1392,7 +1398,7 @@ software before using Fink.
   <date>2001-07-03</date>
   <headline>Packaging Manual updated</headline>
   <body>
-    <p>The <varlink url="doc/packaging/index.php">Packaging Manual</varlink> was
+    <p>The <link url="doc/packaging/index.php">Packaging Manual</link> was
     updated to include all recently added fields.
     </p>
   </body>
@@ -1425,7 +1431,7 @@ software before using Fink.
   <date>2001-05-19</date>
   <headline>CVS instructions updated</headline>
   <body>
-    <p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
+    <p>The <link url="fink/cvs.php">CVS instructions</link> have
     been updated for Fink 0.2.x.
     </p>
   </body>
@@ -1436,7 +1442,7 @@ software before using Fink.
   <headline>FAQ online</headline>
   <body>
     <p>
-      This site now sports a <varlink url="faq/index.php">FAQ section</varlink>. Not much content yet, but it's here to stay. 
+      This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
     </p>
   </body>
 </newsitem>
@@ -1456,7 +1462,7 @@ software before using Fink.
   <headline>Released version 0.1.8a</headline>
   <body>
     <p>
-      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <varlink url="download.php">download page</varlink>. 
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <link url="download.php">download page</link>. 
     </p>
   </body>
 </newsitem>
@@ -1466,7 +1472,7 @@ software before using Fink.
   <headline>Version 0.1.8 is out</headline>
   <body>
     <p>
-      Get it from the <varlink url="download.php">download page</varlink>. 
+      Get it from the <link url="download.php">download page</link>. 
     </p>
   </body>
 </newsitem>
@@ -1476,7 +1482,7 @@ software before using Fink.
   <headline>Porting notes updated</headline>
   <body>
     <p>
-      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
+      The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
     </p>
   </body>
 </newsitem>
@@ -1486,7 +1492,7 @@ software before using Fink.
   <headline>Version 0.1.7 is out!</headline>
   <body>
     <p>
-      Get it from the <varlink url="download.php">download page</varlink>. 
+      Get it from the <link url="download.php">download page</link>. 
     </p>
   </body>
 </newsitem>
@@ -1506,7 +1512,7 @@ software before using Fink.
   <headline>Libtool page updated</headline>
   <body>
     <p>
-      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
+      Updated the <link url="darwin/libtool.php">libtool page</link> with a revised patch that does full shared library versioning. 
     </p>
   </body>
 </newsitem>
@@ -1516,9 +1522,10 @@ software before using Fink.
   <headline>Version 0.1.6 is out</headline>
   <body>
     <p>
-      Get it from the <varlink url="download.php">download page</varlink>. 
+      Get it from the <link url="download.php">download page</link>. 
     </p>
   </body>
 </newsitem>
 
 </news>
+

@@ -1,47 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2004-11-12T10:24:26+09:00</dc:date>
+    <dc:date>2004-11-15T21:28:49+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.">
-      <title>Resoluci√≥n de problemas con gcc.</title>
+      <title>ResoluciÛn de problemas con gcc.</title>
       <link>http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.</link>
       <guid>http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.</guid>
       <description>
       
-Se sabe que la versi√≥n de gcc inclu√≠da en XCode 1.5 produce 
-salidas incorrectas desde c√≥digo c++ bajo determinadas circunstancias.
-Fink tiene ahora un mecanismo para avisar al usuario de esto. Adem√°s, 
-Fink pronto rechazar√° el uso de esta versi√≥n "rota" para compilar paquetes
+Se sabe que la versiÛn de gcc incluÌda en XCode 1.5 produce 
+salidas incorrectas desde cÛdigo c++ bajo determinadas circunstancias.
+Fink tiene ahora un mecanismo para avisar al usuario de esto. Adem·s, 
+Fink pronto rechazar· el uso de esta versiÛn "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.
       
-Si te has pasado ya a la versi√≥n 1.5 de XCode una soluci√≥n se halla descrita 
- aqu√≠ 
-and  here .
+Si te has pasado ya a la versiÛn 1.5 de XCode una soluciÛn se halla descrita 
+ aquÌ  y 
+tambiÈn  aquÌ .
 
-       Si no te has actualizado a√∫n, nuestro consejo es que 
-consideres no hacerlo y quedarte con  XCode versi√≥n 1.2 
+       Si no te has actualizado a˙n, nuestro consejo es que 
+consideres no hacerlo y quedarte con  XCode versiÛn 1.2 
 hasta que el problema sea resuelto.
 
     </description>
       <content:encoded>
       
-Se sabe que la versi√≥n de gcc inclu√≠da en XCode 1.5 produce 
-salidas incorrectas desde c√≥digo c++ bajo determinadas circunstancias.
-Fink tiene ahora un mecanismo para avisar al usuario de esto. Adem√°s, 
-Fink pronto rechazar√° el uso de esta versi√≥n "rota" para compilar paquetes
+Se sabe que la versiÛn de gcc incluÌda en XCode 1.5 produce 
+salidas incorrectas desde cÛdigo c++ bajo determinadas circunstancias.
+Fink tiene ahora un mecanismo para avisar al usuario de esto. Adem·s, 
+Fink pronto rechazar· el uso de esta versiÛn "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.
       
-Si te has pasado ya a la versi√≥n 1.5 de XCode una soluci√≥n se halla descrita 
- aqu√≠ 
-and  here .
+Si te has pasado ya a la versiÛn 1.5 de XCode una soluciÛn se halla descrita 
+ aquÌ  y 
+tambiÈn  aquÌ .
 
-       Si no te has actualizado a√∫n, nuestro consejo es que 
-consideres no hacerlo y quedarte con  XCode versi√≥n 1.2 
+       Si no te has actualizado a˙n, nuestro consejo es que 
+consideres no hacerlo y quedarte con  XCode versiÛn 1.2 
 hasta que el problema sea resuelto.
 
     </content:encoded>
@@ -52,53 +52,65 @@ hasta que el problema sea resuelto.
       <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20liberado.</guid>
       <description>
 
-La versi√≥n m√°s reciente de Fink, versi√≥n 0.7.1 (para 10.3), ya est√° disponible como c√≥digo fuente y como binario. √âsta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versi√≥n 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+La versiÛn m·s reciente de Fink, versiÛn 0.7.1 (para 10.3), ya est· disponible como cÛdigo fuente y como binario. 
+…sta ha sido creada para la versiÛn Panther (10.3) de Mac OS X. La versiÛn 0.6.3 sigue estando disponible para la versiÛn Jaguar (10.2) de Mac OS X.
 
 
 
-Esta nueva versi√≥n incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. √âsto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+Esta nueva versiÛn incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. …sto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 
 
 
-Para realizar una primera instalaci√≥n de Fink, hay que seguir los consejos de esta p√°gina. Es posible actualizar una instalaci√≥n de Fink previa, utilizando la instalaci√≥n previa de Fink. En esta p√°gina encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalaciÛn de Fink, hay que seguir los consejos 
+de esta p·gina. Es posible actualizar una instalaciÛn de Fink previa, utilizando la instalaciÛn previa de Fink. En esta p·gina encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 
 
 
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. M√°s informaci√≥n acerca de estas listas la encontraras aqu√≠.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. M·s informaciÛn acerca de estas 
+listas la encontraras aquÌ.
 
 
 
-Aseg√∫rate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionar√° en Mac OS X 10.2.* mientras que Fink 0.7.1 s√≥lo se funcionar√° en Mac OS X 10.3.* 
 
-	
-El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaci√≥n ocurriera. 
-Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estar√≠a donde est√° ahora...
+Aseg˙rate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionar· en Mac OS X 10.2.* mientras que Fink 0.7.1 sÛlo se funcionar· en Mac OS X 10.3.* 
+
+
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaciÛn ocurriera. 
+TambiÈn agradecemos a nuestra comunidad por descarger la versiÛn 0.7.0 m·s de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estarÌa donde est· ahora...
 
 
 </description>
       <content:encoded>
 
-La versi√≥n m√°s reciente de Fink, versi√≥n 0.7.1 (para 10.3), ya est√° disponible como c√≥digo fuente y como binario. √âsta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versi√≥n 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
+La versiÛn m·s reciente de Fink, versiÛn 0.7.1 (para 10.3), ya est· disponible como cÛdigo fuente y como binario. 
+…sta ha sido creada para la versiÛn Panther (10.3) de Mac OS X. La versiÛn 0.6.3 sigue estando disponible para la versiÛn Jaguar (10.2) de Mac OS X.
 
 
 
-Esta nueva versi√≥n incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles dando como resultado un gran total de 1650 binarios. √âsto incluye binarios para KDE 3.1.4 y GNOME 2.4.
+Esta nueva versiÛn incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. …sto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 
 
 
-Para realizar una primera instalaci√≥n de Fink, hay que seguir los consejos de esta p√°gina. Es posible actualizar una instalaci√≥n de Fink previa, utilizando la instalaci√≥n previa de Fink. En esta p√°gina encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalaciÛn de Fink, hay que seguir los consejos 
+de esta p·gina. Es posible actualizar una instalaciÛn de Fink previa, utilizando la instalaciÛn previa de Fink. En esta p·gina encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 
 
 
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. M√°s informaci√≥n acerca de estas listas la encontraras aqu√≠.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. M·s informaciÛn acerca de estas 
+listas la encontraras aquÌ.
 
 
 
-Aseg√∫rate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionar√° en Mac OS X 10.2.* mientras que Fink 0.7.1 s√≥lo se funcionar√° en Mac OS X 10.3.* 
 
-	
-El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaci√≥n ocurriera. 
-Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estar√≠a donde est√° ahora...
+Aseg˙rate de seleccionar el instalador adecuado para tu plataforma. Fink 0.6.3 solo se funcionar· en Mac OS X 10.2.* mientras que Fink 0.7.1 sÛlo se funcionar· en Mac OS X 10.3.* 
+
+
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaciÛn ocurriera. 
+TambiÈn agradecemos a nuestra comunidad por descarger la versiÛn 0.7.0 m·s de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estarÌa donde est· ahora...
 
 
 </content:encoded>
@@ -110,13 +122,13 @@ Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de
       <description>
 	
 	Recientemente han habido reportes de varios paquetes del Fink que no
-	 compilan correctamente usando Xcode 1.5. Si a√∫n no han actualizado a
-	  XCode 1.5, se sugiere que se espere a la soluci√≥n de este problema 
+	 compilan correctamente usando Xcode 1.5. Si a˙n no han actualizado a
+	  XCode 1.5, se sugiere que se espere a la soluciÛn de este problema 
 	  antes de hacerlo.
 	
-	Si has tenido problemas con alg√∫n paquete que compilaba correctamente
+	Si has tenido problemas con alg˙n paquete que compilaba correctamente
 	 con XCode 1.2 pero que compila incorrectamente con XCode 1.5, favor 
-	 de reportarlo a la lista de correo fink-devel. (El s√≠ntoma usual es:
+	 de reportarlo a la lista de correo fink-devel. (El sÌntoma usual es:
 	 some symbols are  missing after compiling with g++.)  
 	Algunos paquetes que se sabe tiene este problema son octave, 
 	singular-factory, singular-libfac, y posbilemente sdl.	
@@ -124,13 +136,13 @@ Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de
       <content:encoded>
 	
 	Recientemente han habido reportes de varios paquetes del Fink que no
-	 compilan correctamente usando Xcode 1.5. Si a√∫n no han actualizado a
-	  XCode 1.5, se sugiere que se espere a la soluci√≥n de este problema 
+	 compilan correctamente usando Xcode 1.5. Si a˙n no han actualizado a
+	  XCode 1.5, se sugiere que se espere a la soluciÛn de este problema 
 	  antes de hacerlo.
 	
-	Si has tenido problemas con alg√∫n paquete que compilaba correctamente
+	Si has tenido problemas con alg˙n paquete que compilaba correctamente
 	 con XCode 1.2 pero que compila incorrectamente con XCode 1.5, favor 
-	 de reportarlo a la lista de correo fink-devel. (El s√≠ntoma usual es:
+	 de reportarlo a la lista de correo fink-devel. (El sÌntoma usual es:
 	 some symbols are  missing after compiling with g++.)  
 	Algunos paquetes que se sabe tiene este problema son octave, 
 	singular-factory, singular-libfac, y posbilemente sdl.	
@@ -143,64 +155,64 @@ Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de
       <description>
 	
 	El manejador de paquetes del fink-0.22.0, el cual estuvo brevemente
-	disponible en el √°rbol inestable la semana pasada, tiene un bug el 
-	cual previene cualquier actualizaci√≥n via rsync. Si instalaste esta
-	versi√≥n de fink, te puedes recuperar ejecutando el comando 
-	fink install fink-0.21.2-1 el cual ejecutar√° el downgrade
-	de fink a la versi√≥n del √°rbol estable, subsecuentemente debes 
+	disponible en el ·rbol inestable la semana pasada, tiene un bug el 
+	cual previene cualquier actualizaciÛn via rsync. Si instalaste esta
+	versiÛn de fink, te puedes recuperar ejecutando el comando 
+	fink install fink-0.21.2-1 el cual ejecutar· el downgrade
+	de fink a la versiÛn del ·rbol estable, subsecuentemente debes 
 	ejecutar:
 		fink selfupdate
 	
-	Si por alguna raz√≥n estos comandos no funcionan, vaya a
-		 la p√°gina de la liberaci√≥n del archivo fink en el 
+	Si por alguna razÛn estos comandos no funcionan, vaya a
+		 la p·gina de la liberaciÛn del archivo fink en el 
 		sourceforge y descarge el archivo
 		fink-0.22.1.tar.gz . Desempaque este archivo con	tar xfz fink-0.22.1.tar.gz , y desde dentro del directorio
 	fink-0.22.1 directory, ejecute el comando ./inject.pl
 	
 	
 	El equipo de Fink se disculpa por el error y agradece a la comunidad 
-	de usuarios por llamar nuestra atenci√≥n r√°pidamente.
+	de usuarios por llamar nuestra atenciÛn r·pidamente.
 	
 	</description>
       <content:encoded>
 	
 	El manejador de paquetes del fink-0.22.0, el cual estuvo brevemente
-	disponible en el √°rbol inestable la semana pasada, tiene un bug el 
-	cual previene cualquier actualizaci√≥n via rsync. Si instalaste esta
-	versi√≥n de fink, te puedes recuperar ejecutando el comando 
-	fink install fink-0.21.2-1 el cual ejecutar√° el downgrade
-	de fink a la versi√≥n del √°rbol estable, subsecuentemente debes 
+	disponible en el ·rbol inestable la semana pasada, tiene un bug el 
+	cual previene cualquier actualizaciÛn via rsync. Si instalaste esta
+	versiÛn de fink, te puedes recuperar ejecutando el comando 
+	fink install fink-0.21.2-1 el cual ejecutar· el downgrade
+	de fink a la versiÛn del ·rbol estable, subsecuentemente debes 
 	ejecutar:
 		fink selfupdate
 	
-	Si por alguna raz√≥n estos comandos no funcionan, vaya a
-		 la p√°gina de la liberaci√≥n del archivo fink en el 
+	Si por alguna razÛn estos comandos no funcionan, vaya a
+		 la p·gina de la liberaciÛn del archivo fink en el 
 		sourceforge y descarge el archivo
 		fink-0.22.1.tar.gz . Desempaque este archivo con	tar xfz fink-0.22.1.tar.gz , y desde dentro del directorio
 	fink-0.22.1 directory, ejecute el comando ./inject.pl
 	
 	
 	El equipo de Fink se disculpa por el error y agradece a la comunidad 
-	de usuarios por llamar nuestra atenci√≥n r√°pidamente.
+	de usuarios por llamar nuestra atenciÛn r·pidamente.
 	
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Mejorando%20nuestros%20espejos.%20%BFPuedes%20ayudarnos%3F">
-      <title>Mejorando nuestros espejos. ¬øPuedes ayudarnos?</title>
+      <title>Mejorando nuestros espejos. øPuedes ayudarnos?</title>
       <link>http://fink.sourceforge.net/news/#2004-08-01%20Mejorando%20nuestros%20espejos.%20%BFPuedes%20ayudarnos%3F</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-01%20Mejorando%20nuestros%20espejos.%20%BFPuedes%20ayudarnos%3F</guid>
       <description>
 	
-	La desici√≥n de Fink de incrementar gradualmente nuestra red de espejos
+	La desiciÛn de Fink de incrementar gradualmente nuestra red de espejos
 	a pagado con creces. Para asegurarnos de seguir ofreciendo un
 	servicio de alta calidad, necesitamod mejorar nuestra red de espejos.
-	Ya ha pasado bastante tiempo desde la √∫ltima vez que solicitamos m√°s
-	espejos. As√≠ que, es momento de hacerlo de nuevo.  Fink esta muy
+	Ya ha pasado bastante tiempo desde la ˙ltima vez que solicitamos m·s
+	espejos. AsÌ que, es momento de hacerlo de nuevo.  Fink esta muy
 	agradecido por los recursos concedidos por nuestra comunidad. Para
-	mejorar nuestro servicio a la comunidad requerimos un a√∫n mejor
+	mejorar nuestro servicio a la comunidad requerimos un a˙n mejor
 	sistema de espejos. En particular, carecemos de espejos en Europa
-	Central, Rusia y el Lejano Oriente. S√≠ sientes que tienes 2 Mbit para
-	compartir con un espejo de rsync, o a√∫n m√°s para ofrecer un espejo de
+	Central, Rusia y el Lejano Oriente. SÌ sientes que tienes 2 Mbit para
+	compartir con un espejo de rsync, o a˙n m·s para ofrecer un espejo de
 	distfiles, por favor  contactanos.
 	
 	
@@ -213,16 +225,16 @@ Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de
 	</description>
       <content:encoded>
 	
-	La desici√≥n de Fink de incrementar gradualmente nuestra red de espejos
+	La desiciÛn de Fink de incrementar gradualmente nuestra red de espejos
 	a pagado con creces. Para asegurarnos de seguir ofreciendo un
 	servicio de alta calidad, necesitamod mejorar nuestra red de espejos.
-	Ya ha pasado bastante tiempo desde la √∫ltima vez que solicitamos m√°s
-	espejos. As√≠ que, es momento de hacerlo de nuevo.  Fink esta muy
+	Ya ha pasado bastante tiempo desde la ˙ltima vez que solicitamos m·s
+	espejos. AsÌ que, es momento de hacerlo de nuevo.  Fink esta muy
 	agradecido por los recursos concedidos por nuestra comunidad. Para
-	mejorar nuestro servicio a la comunidad requerimos un a√∫n mejor
+	mejorar nuestro servicio a la comunidad requerimos un a˙n mejor
 	sistema de espejos. En particular, carecemos de espejos en Europa
-	Central, Rusia y el Lejano Oriente. S√≠ sientes que tienes 2 Mbit para
-	compartir con un espejo de rsync, o a√∫n m√°s para ofrecer un espejo de
+	Central, Rusia y el Lejano Oriente. SÌ sientes que tienes 2 Mbit para
+	compartir con un espejo de rsync, o a˙n m·s para ofrecer un espejo de
 	distfiles, por favor  contactanos.
 	
 	
@@ -240,52 +252,52 @@ Tambi√©n agradecemos a nuestra comunidad por descarger la versi√≥n 0.7.0 m√°s de
       <guid>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20y%200.7.0%20liberados.</guid>
       <description>
 	
-Las versiones m√°s recientes de Fink, versi√≥n 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
-ya esta disponible como c√≥digo fuente y como binario. El versi√≥n 0.6.3 esta construida para 10.2, mientras que la 0.7.0 ha sido creada para 10.3. Esta estrategia facilitar√° el soporte de diferentes plataformas.
+Las versiones m·s recientes de Fink, versiÛn 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
+ya esta disponible como cÛdigo fuente y como binario. El versiÛn 0.6.3 esta construida para 10.2, mientras que la 0.7.0 ha sido creada para 10.3. Esta estrategia facilitar· el soporte de diferentes plataformas.
 	
 	
-Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problem√°ticos para los usuarios del 10.3 han sido reconstruidos.
+Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problem·ticos para los usuarios del 10.3 han sido reconstruidos.
 	
 	
-Para completar una nueva instalaci√≥n de Fink se deben seguir las instrucciones que est√°n  
-aqu√≠.
-Tambi√©n es posible actulizar tu instalaci√≥n previa de Fink siguiendo las instrucciones que se encuentran  aqu√≠.
+Para completar una nueva instalaciÛn de Fink se deben seguir las instrucciones que est·n  
+aquÌ.
+TambiÈn es posible actulizar tu instalaciÛn previa de Fink siguiendo las instrucciones que se encuentran  aquÌ.
 
-Si tienen dudas o alg√∫n problema, por favor usen la lista de correo que se encuentra aqu√≠.
+Si tienen dudas o alg˙n problema, por favor usen la lista de correo que se encuentra aquÌ.
 		
 		
 Asegurense de escoger el instalador adecuado para su plataforma.
-Fink 0.6.3 solo se instalar√° en Mac OS X 10.2.* mientras que Fink 0.7.0 s√≥lo se instalar√° en Mac OS X 10.3.* 
+Fink 0.6.3 solo se instalar· en Mac OS X 10.2.* mientras que Fink 0.7.0 sÛlo se instalar· en Mac OS X 10.3.* 
 		
 	
-El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaci√≥n ocurriera. 
-Tambi√©n agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indicaciones Fink no estar√≠a donde est√° ahora...
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaciÛn ocurriera. 
+TambiÈn agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indicaciones Fink no estarÌa donde est· ahora...
 
 
 
 </description>
       <content:encoded>
 	
-Las versiones m√°s recientes de Fink, versi√≥n 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
-ya esta disponible como c√≥digo fuente y como binario. El versi√≥n 0.6.3 esta construida para 10.2, mientras que la 0.7.0 ha sido creada para 10.3. Esta estrategia facilitar√° el soporte de diferentes plataformas.
+Las versiones m·s recientes de Fink, versiÛn 0.6.3 (para 10.2) y 0.7.0 (para 10.3), 
+ya esta disponible como cÛdigo fuente y como binario. El versiÛn 0.6.3 esta construida para 10.2, mientras que la 0.7.0 ha sido creada para 10.3. Esta estrategia facilitar· el soporte de diferentes plataformas.
 	
 	
-Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problem√°ticos para los usuarios del 10.3 han sido reconstruidos.
+Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, varios paquetes binarios que previamente no estaban disponibles han sido agregados y varios paquetes problem·ticos para los usuarios del 10.3 han sido reconstruidos.
 	
 	
-Para completar una nueva instalaci√≥n de Fink se deben seguir las instrucciones que est√°n  
-aqu√≠.
-Tambi√©n es posible actulizar tu instalaci√≥n previa de Fink siguiendo las instrucciones que se encuentran  aqu√≠.
+Para completar una nueva instalaciÛn de Fink se deben seguir las instrucciones que est·n  
+aquÌ.
+TambiÈn es posible actulizar tu instalaciÛn previa de Fink siguiendo las instrucciones que se encuentran  aquÌ.
 
-Si tienen dudas o alg√∫n problema, por favor usen la lista de correo que se encuentra aqu√≠.
+Si tienen dudas o alg˙n problema, por favor usen la lista de correo que se encuentra aquÌ.
 		
 		
 Asegurense de escoger el instalador adecuado para su plataforma.
-Fink 0.6.3 solo se instalar√° en Mac OS X 10.2.* mientras que Fink 0.7.0 s√≥lo se instalar√° en Mac OS X 10.3.* 
+Fink 0.6.3 solo se instalar· en Mac OS X 10.2.* mientras que Fink 0.7.0 sÛlo se instalar· en Mac OS X 10.3.* 
 		
 	
-El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaci√≥n ocurriera. 
-Tambi√©n agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indicaciones Fink no estar√≠a donde est√° ahora...
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberaciÛn ocurriera. 
+TambiÈn agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indicaciones Fink no estarÌa donde est· ahora...
 
 
 
@@ -297,49 +309,49 @@ Tambi√©n agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indi
       <guid>http://fink.sourceforge.net/news/#2004-02-19%20Ondea%20tu%20bandera.</guid>
       <description>
 	
-Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalizaci√≥n.
+Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalizaciÛn.
 La infraestructura mejorada nos permite desplegar un sitio web multilenguaje a nuestros visitantes de todo el mundo.
 
-Esto tambi√©n significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elecci√≥n. Una traducci√≥n al japon√©s esta en proceso al igual que una al franc√©s, lidereada por Michele Garoche.
-¬øA qu√© idioma estas dispuesto a traducir?
+Esto tambiÈn significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elecciÛn. Una traducciÛn al japonÈs esta en proceso al igual que una al francÈs, lidereada por Michele Garoche.
+øA quÈ idioma estas dispuesto a traducir?
 
 
-Si estas dispuesto a convertirte en un miembro de alg√∫n equipo de internacionalizaci√≥n o si deseas proporcionar alguna retroalimentaci√≥n del sitio web, sientete libre de unirte a la nueva lista de correo. 
-Puedes hacerlo visitando la  p√°gina de las listas de correo. El anuncio completo de las listas de correo existentes puede leerse aqu√≠.
+Si estas dispuesto a convertirte en un miembro de alg˙n equipo de internacionalizaciÛn o si deseas proporcionar alguna retroalimentaciÛn del sitio web, sientete libre de unirte a la nueva lista de correo. 
+Puedes hacerlo visitando la  p·gina de las listas de correo. El anuncio completo de las listas de correo existentes puede leerse aquÌ.
 
 </description>
       <content:encoded>
 	
-Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalizaci√≥n.
+Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalizaciÛn.
 La infraestructura mejorada nos permite desplegar un sitio web multilenguaje a nuestros visitantes de todo el mundo.
 
-Esto tambi√©n significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elecci√≥n. Una traducci√≥n al japon√©s esta en proceso al igual que una al franc√©s, lidereada por Michele Garoche.
-¬øA qu√© idioma estas dispuesto a traducir?
+Esto tambiÈn significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elecciÛn. Una traducciÛn al japonÈs esta en proceso al igual que una al francÈs, lidereada por Michele Garoche.
+øA quÈ idioma estas dispuesto a traducir?
 
 
-Si estas dispuesto a convertirte en un miembro de alg√∫n equipo de internacionalizaci√≥n o si deseas proporcionar alguna retroalimentaci√≥n del sitio web, sientete libre de unirte a la nueva lista de correo. 
-Puedes hacerlo visitando la  p√°gina de las listas de correo. El anuncio completo de las listas de correo existentes puede leerse aqu√≠.
+Si estas dispuesto a convertirte en un miembro de alg˙n equipo de internacionalizaciÛn o si deseas proporcionar alguna retroalimentaciÛn del sitio web, sientete libre de unirte a la nueva lista de correo. 
+Puedes hacerlo visitando la  p·gina de las listas de correo. El anuncio completo de las listas de correo existentes puede leerse aquÌ.
 
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-02-02%20La%20actualizaci%F3n%20de%20Java%201.4.2%20elimina%20el%20Java%20SDK">
-      <title>La actualizaci√≥n de Java 1.4.2 elimina el Java SDK</title>
+      <title>La actualizaciÛn de Java 1.4.2 elimina el Java SDK</title>
       <link>http://fink.sourceforge.net/news/#2004-02-02%20La%20actualizaci%F3n%20de%20Java%201.4.2%20elimina%20el%20Java%20SDK</link>
       <guid>http://fink.sourceforge.net/news/#2004-02-02%20La%20actualizaci%F3n%20de%20Java%201.4.2%20elimina%20el%20Java%20SDK</guid>
       <description>
 	
-Si ten√°s instalados Java 1.4.1 y el Java SDK, la actulizaci√≥n 
+Si ten·s instalados Java 1.4.1 y el Java SDK, la actulizaciÛn 
 Java 1.4.2 de Applw actualizara el  Java runtime a 1.4.2,
-pero remover√° el previ√≥ Java 1.4.1 runtime y el
+pero remover· el previÛ Java 1.4.1 runtime y el
 SDK sin actualizar el JDK.  Para construir paquetes de Java en Fink necesitaras ir a  la pagina
 connect.apple.com y descargar el Java 1.4.2 SDK (registro gratuito requerido).
 	
 	</description>
       <content:encoded>
 	
-Si ten√°s instalados Java 1.4.1 y el Java SDK, la actulizaci√≥n 
+Si ten·s instalados Java 1.4.1 y el Java SDK, la actulizaciÛn 
 Java 1.4.2 de Applw actualizara el  Java runtime a 1.4.2,
-pero remover√° el previ√≥ Java 1.4.1 runtime y el
+pero remover· el previÛ Java 1.4.1 runtime y el
 SDK sin actualizar el JDK.  Para construir paquetes de Java en Fink necesitaras ir a  la pagina
 connect.apple.com y descargar el Java 1.4.2 SDK (registro gratuito requerido).
 	

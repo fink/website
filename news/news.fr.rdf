@@ -1,25 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2004-11-12T10:24:27+09:00</dc:date>
+    <dc:date>2004-11-15T21:28:50+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#15%2F10%2F2004%20R%E9solution%20de%20probl%E8mes%20concernant%20gcc">
-      <title>RÃ©solution de problÃ¨mes concernant gcc</title>
+      <title>Résolution de problèmes concernant gcc</title>
       <link>http://fink.sourceforge.net/news/#15%2F10%2F2004%20R%E9solution%20de%20probl%E8mes%20concernant%20gcc</link>
       <guid>http://fink.sourceforge.net/news/#15%2F10%2F2004%20R%E9solution%20de%20probl%E8mes%20concernant%20gcc</guid>
       <description>
-Il s'avÃ¨re que la version de gcc incluse dans XCode 1.5 produit des rÃ©sultats incorrects avec du code C++ dans certains cas. Fink possÃ¨de maintenant un mÃ©canisme pour en avertir l'utilisateur et refusera bientÃ´t d'utiliser cette version "vÃ©rolÃ©e" pour compiler les paquets qui prÃ©sentent ce problÃ¨me.
-Si vous Ãªtes dÃ©jÃ  passÃ© Ã  la version 1.5 de XCode, vous trouverez une solution dÃ©crite ici ou lÃ .
-Si vous n'avez pas encore mis Ã  jour XCode, il vous est conseillÃ© de ne pas le faire tant que ce problÃ¨me ne sera pas rÃ©solu.
+Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version "vérolée" pour compiler les paquets qui présentent ce problème.
+Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite ici ou là.
+Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.
 </description>
       <content:encoded>
-Il s'avÃ¨re que la version de gcc incluse dans XCode 1.5 produit des rÃ©sultats incorrects avec du code C++ dans certains cas. Fink possÃ¨de maintenant un mÃ©canisme pour en avertir l'utilisateur et refusera bientÃ´t d'utiliser cette version "vÃ©rolÃ©e" pour compiler les paquets qui prÃ©sentent ce problÃ¨me.
-Si vous Ãªtes dÃ©jÃ  passÃ© Ã  la version 1.5 de XCode, vous trouverez une solution dÃ©crite ici ou lÃ .
-Si vous n'avez pas encore mis Ã  jour XCode, il vous est conseillÃ© de ne pas le faire tant que ce problÃ¨me ne sera pas rÃ©solu.
+Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version "vérolée" pour compiler les paquets qui présentent ce problème.
+Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite ici ou là.
+Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#20%2F09%2F2004%20Fink%200.7.1%20est%20disponible">
@@ -27,40 +27,40 @@ Si vous n'avez pas encore mis Ã  jour XCode, il vous est conseillÃ© de ne pas le
       <link>http://fink.sourceforge.net/news/#20%2F09%2F2004%20Fink%200.7.1%20est%20disponible</link>
       <guid>http://fink.sourceforge.net/news/#20%2F09%2F2004%20Fink%200.7.1%20est%20disponible</guid>
       <description>
-La derniÃ¨re version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.
-Elle intÃ©gre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont Ã©tÃ© ajoutÃ©s, ce qui porte le total des binaires disponibles Ã  1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.
-Pour installer Fink pour la premiÃ¨re fois, veuillez suivre les instructions donnÃ©es ici. Pour mettre Ã  jour Fink, servez-vous de la version installÃ©e sur votre systÃ¨me. Vous trouverez la liste des diffÃ©rences entre les versions 0.7.0 et 0.7.1 sur cette page.
-Si vous vous posez des questions ou rencontrez des difficultÃ©s, n'hÃ©sitez pas Ã  vous servir des listes de diffusion de Fink. Vous en trouverez le dÃ©tail ici.
-VÃ©rifiez que vous avez choisi le bon installeur pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.
-L'Ã©quipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide rÃ©guliÃ¨rement ainsi que les dÃ©veloppeurs. Nous remercions aussi notre communautÃ© d'avoir tÃ©lÃ©chargÃ© la version 0.7.0 prÃ©cÃ©dente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas lÃ  aujourd'hui.
+La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.
+Elle intégre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont été ajoutés, ce qui porte le total des binaires disponibles à 1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.
+Pour installer Fink pour la première fois, veuillez suivre les instructions données ici. Pour mettre à jour Fink, servez-vous de la version installée sur votre système. Vous trouverez la liste des différences entre les versions 0.7.0 et 0.7.1 sur cette page.
+Si vous vous posez des questions ou rencontrez des difficultés, n'hésitez pas à vous servir des listes de diffusion de Fink. Vous en trouverez le détail ici.
+Vérifiez que vous avez choisi le bon installeur pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.
+L'équipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs. Nous remercions aussi notre communauté d'avoir téléchargé la version 0.7.0 précédente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui.
 </description>
       <content:encoded>
-La derniÃ¨re version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.
-Elle intÃ©gre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont Ã©tÃ© ajoutÃ©s, ce qui porte le total des binaires disponibles Ã  1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.
-Pour installer Fink pour la premiÃ¨re fois, veuillez suivre les instructions donnÃ©es ici. Pour mettre Ã  jour Fink, servez-vous de la version installÃ©e sur votre systÃ¨me. Vous trouverez la liste des diffÃ©rences entre les versions 0.7.0 et 0.7.1 sur cette page.
-Si vous vous posez des questions ou rencontrez des difficultÃ©s, n'hÃ©sitez pas Ã  vous servir des listes de diffusion de Fink. Vous en trouverez le dÃ©tail ici.
-VÃ©rifiez que vous avez choisi le bon installeur pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.
-L'Ã©quipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide rÃ©guliÃ¨rement ainsi que les dÃ©veloppeurs. Nous remercions aussi notre communautÃ© d'avoir tÃ©lÃ©chargÃ© la version 0.7.0 prÃ©cÃ©dente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas lÃ  aujourd'hui.
+La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.
+Elle intégre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont été ajoutés, ce qui porte le total des binaires disponibles à 1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.
+Pour installer Fink pour la première fois, veuillez suivre les instructions données ici. Pour mettre à jour Fink, servez-vous de la version installée sur votre système. Vous trouverez la liste des différences entre les versions 0.7.0 et 0.7.1 sur cette page.
+Si vous vous posez des questions ou rencontrez des difficultés, n'hésitez pas à vous servir des listes de diffusion de Fink. Vous en trouverez le détail ici.
+Vérifiez que vous avez choisi le bon installeur pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.
+L'équipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs. Nous remercions aussi notre communauté d'avoir téléchargé la version 0.7.0 précédente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui.
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5">
-      <title>ProblÃ¨mes avec XCode 1.5</title>
+      <title>Problèmes avec XCode 1.5</title>
       <link>http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5</link>
       <guid>http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5</guid>
       <description>
 	
-Ces derniers jours, on nous a signalÃ© que certains paquets de fink ne peuvent Ãªtre compilÃ©s correctement avec XCode 1.5. Si vous n'avez pas encore effectuÃ© la mise Ã  jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problÃ¨me soit rÃ©solu.
+Ces derniers jours, on nous a signalé que certains paquets de fink ne peuvent être compilés correctement avec XCode 1.5. Si vous n'avez pas encore effectué la mise à jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problème soit résolu.
 
 
-Si vous rencontrez des problÃ¨mes lors de la compilation d'un paquet sous XCode 1.5, alors que ce mÃªme paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En gÃ©nÃ©ral, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problÃ¨me sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-Ãªtre sdl.
+Si vous rencontrez des problèmes lors de la compilation d'un paquet sous XCode 1.5, alors que ce même paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En général, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problème sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-être sdl.
 
 	</description>
       <content:encoded>
 	
-Ces derniers jours, on nous a signalÃ© que certains paquets de fink ne peuvent Ãªtre compilÃ©s correctement avec XCode 1.5. Si vous n'avez pas encore effectuÃ© la mise Ã  jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problÃ¨me soit rÃ©solu.
+Ces derniers jours, on nous a signalé que certains paquets de fink ne peuvent être compilés correctement avec XCode 1.5. Si vous n'avez pas encore effectué la mise à jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problème soit résolu.
 
 
-Si vous rencontrez des problÃ¨mes lors de la compilation d'un paquet sous XCode 1.5, alors que ce mÃªme paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En gÃ©nÃ©ral, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problÃ¨me sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-Ãªtre sdl.
+Si vous rencontrez des problèmes lors de la compilation d'un paquet sous XCode 1.5, alors que ce même paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En général, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problème sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-être sdl.
 
 	</content:encoded>
     </item>
@@ -70,43 +70,43 @@ Si vous rencontrez des problÃ¨mes lors de la compilation d'un paquet sous XCode 
       <guid>http://fink.sourceforge.net/news/#21%2F08%2F2004%20Erreur%20dans%20fink%20version%200.22.0</guid>
       <description>
 	
-La version 0.22.0 du gestionnaire de paquets fink, qui a Ã©tÃ© disponible la semaine derniÃ¨re pendant un court laps de temps  dans la branche instable, a un bogue qui empÃªche la mise Ã  jour via rsync. Si vous avez installÃ© cette version de fink, vous pouvez rÃ©tablir la situation en exÃ©cutant d'abord la commande fink install fink-0.21.2-1, qui installera la version infÃ©rieure disponible dans la branche stable, puis en lanÃ§ant la commande fink selfupdate.
+La version 0.22.0 du gestionnaire de paquets fink, qui a été disponible la semaine dernière pendant un court laps de temps  dans la branche instable, a un bogue qui empêche la mise à jour via rsync. Si vous avez installé cette version de fink, vous pouvez rétablir la situation en exécutant d'abord la commande fink install fink-0.21.2-1, qui installera la version inférieure disponible dans la branche stable, puis en lançant la commande fink selfupdate.
 
 
-Si, pour une raison ou une autre, ces commandes ne fonctionnent pas, allez sur la page de distribution du fichier fink sur sourceforge et tÃ©lÃ©chargez le fichier fink-0.22.1.tar.gz. DÃ©compressez-le en exÃ©cutant tar xfz fink-0.22.1.tar.gz, puis lancez la commande ./inject.pl aprÃ¨s vous Ãªtre dÃ©placÃ© dans le rÃ©pertoire fink-0.22.1.
+Si, pour une raison ou une autre, ces commandes ne fonctionnent pas, allez sur la page de distribution du fichier fink sur sourceforge et téléchargez le fichier fink-0.22.1.tar.gz. Décompressez-le en exécutant tar xfz fink-0.22.1.tar.gz, puis lancez la commande ./inject.pl après vous être déplacé dans le répertoire fink-0.22.1.
 
 
-L'Ã©quipe de fink vous prie d'accepter ses excuses pour cette erreur et remercie la communautÃ© de ses utilisateurs de lui avoir rapidement signalÃ© ce problÃ¨me.
+L'équipe de fink vous prie d'accepter ses excuses pour cette erreur et remercie la communauté de ses utilisateurs de lui avoir rapidement signalé ce problème.
 	</description>
       <content:encoded>
 	
-La version 0.22.0 du gestionnaire de paquets fink, qui a Ã©tÃ© disponible la semaine derniÃ¨re pendant un court laps de temps  dans la branche instable, a un bogue qui empÃªche la mise Ã  jour via rsync. Si vous avez installÃ© cette version de fink, vous pouvez rÃ©tablir la situation en exÃ©cutant d'abord la commande fink install fink-0.21.2-1, qui installera la version infÃ©rieure disponible dans la branche stable, puis en lanÃ§ant la commande fink selfupdate.
+La version 0.22.0 du gestionnaire de paquets fink, qui a été disponible la semaine dernière pendant un court laps de temps  dans la branche instable, a un bogue qui empêche la mise à jour via rsync. Si vous avez installé cette version de fink, vous pouvez rétablir la situation en exécutant d'abord la commande fink install fink-0.21.2-1, qui installera la version inférieure disponible dans la branche stable, puis en lançant la commande fink selfupdate.
 
 
-Si, pour une raison ou une autre, ces commandes ne fonctionnent pas, allez sur la page de distribution du fichier fink sur sourceforge et tÃ©lÃ©chargez le fichier fink-0.22.1.tar.gz. DÃ©compressez-le en exÃ©cutant tar xfz fink-0.22.1.tar.gz, puis lancez la commande ./inject.pl aprÃ¨s vous Ãªtre dÃ©placÃ© dans le rÃ©pertoire fink-0.22.1.
+Si, pour une raison ou une autre, ces commandes ne fonctionnent pas, allez sur la page de distribution du fichier fink sur sourceforge et téléchargez le fichier fink-0.22.1.tar.gz. Décompressez-le en exécutant tar xfz fink-0.22.1.tar.gz, puis lancez la commande ./inject.pl après vous être déplacé dans le répertoire fink-0.22.1.
 
 
-L'Ã©quipe de fink vous prie d'accepter ses excuses pour cette erreur et remercie la communautÃ© de ses utilisateurs de lui avoir rapidement signalÃ© ce problÃ¨me.
+L'équipe de fink vous prie d'accepter ses excuses pour cette erreur et remercie la communauté de ses utilisateurs de lui avoir rapidement signalé ce problème.
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#01%2F08%2F2004%20Aidez-nous%20%E0%20am%E9liorer%20la%20qualit%E9%20de%20nos%20miroirs">
-      <title>Aidez-nous Ã  amÃ©liorer la qualitÃ© de nos miroirs</title>
+      <title>Aidez-nous à améliorer la qualité de nos miroirs</title>
       <link>http://fink.sourceforge.net/news/#01%2F08%2F2004%20Aidez-nous%20%E0%20am%E9liorer%20la%20qualit%E9%20de%20nos%20miroirs</link>
       <guid>http://fink.sourceforge.net/news/#01%2F08%2F2004%20Aidez-nous%20%E0%20am%E9liorer%20la%20qualit%E9%20de%20nos%20miroirs</guid>
       <description>
 	
-La dÃ©cision de Fink de construire petit Ã  petit son propre rÃ©seau de miroirs a Ã©tÃ© payante. Pour continuer Ã  offrir un service de haute qualitÃ©, nous devons faire croÃ®tre notre rÃ©seau de miroirs. Cela fait un moment que nous ne vous avons pas sollicitÃ© dans ce sens, il est temps de le faire maintenant. Fink remercie tous ceux qui nous offert leurs ressources. Nous manquons, en particulier, de miroirs en Europe Centrale, en Russie et en ExtrÃªme-Orient. Si vous avez au moins deux Mb Ã  consacrer Ã  un miroir rsync, ou plus pour un miroir de fichiers de distribution, veuillez nous contacter.
+La décision de Fink de construire petit à petit son propre réseau de miroirs a été payante. Pour continuer à offrir un service de haute qualité, nous devons faire croître notre réseau de miroirs. Cela fait un moment que nous ne vous avons pas sollicité dans ce sens, il est temps de le faire maintenant. Fink remercie tous ceux qui nous offert leurs ressources. Nous manquons, en particulier, de miroirs en Europe Centrale, en Russie et en Extrême-Orient. Si vous avez au moins deux Mb à consacrer à un miroir rsync, ou plus pour un miroir de fichiers de distribution, veuillez nous contacter.
 
 	
-Pour avoir une vue d'ensemble des diffÃ©rents types de miroirs que Fink propose, allez sur finkmirrors.net. C'est la page officielle de tout ce qui se rapporte aux miroirs. Si vous pensez pouvoir offrir d'autres types de ressources, tel de l'espace web pour faire des tests, n'hÃ©sitez pas Ã  nous contacter.
+Pour avoir une vue d'ensemble des différents types de miroirs que Fink propose, allez sur finkmirrors.net. C'est la page officielle de tout ce qui se rapporte aux miroirs. Si vous pensez pouvoir offrir d'autres types de ressources, tel de l'espace web pour faire des tests, n'hésitez pas à nous contacter.
 	
 	</description>
       <content:encoded>
 	
-La dÃ©cision de Fink de construire petit Ã  petit son propre rÃ©seau de miroirs a Ã©tÃ© payante. Pour continuer Ã  offrir un service de haute qualitÃ©, nous devons faire croÃ®tre notre rÃ©seau de miroirs. Cela fait un moment que nous ne vous avons pas sollicitÃ© dans ce sens, il est temps de le faire maintenant. Fink remercie tous ceux qui nous offert leurs ressources. Nous manquons, en particulier, de miroirs en Europe Centrale, en Russie et en ExtrÃªme-Orient. Si vous avez au moins deux Mb Ã  consacrer Ã  un miroir rsync, ou plus pour un miroir de fichiers de distribution, veuillez nous contacter.
+La décision de Fink de construire petit à petit son propre réseau de miroirs a été payante. Pour continuer à offrir un service de haute qualité, nous devons faire croître notre réseau de miroirs. Cela fait un moment que nous ne vous avons pas sollicité dans ce sens, il est temps de le faire maintenant. Fink remercie tous ceux qui nous offert leurs ressources. Nous manquons, en particulier, de miroirs en Europe Centrale, en Russie et en Extrême-Orient. Si vous avez au moins deux Mb à consacrer à un miroir rsync, ou plus pour un miroir de fichiers de distribution, veuillez nous contacter.
 
 	
-Pour avoir une vue d'ensemble des diffÃ©rents types de miroirs que Fink propose, allez sur finkmirrors.net. C'est la page officielle de tout ce qui se rapporte aux miroirs. Si vous pensez pouvoir offrir d'autres types de ressources, tel de l'espace web pour faire des tests, n'hÃ©sitez pas Ã  nous contacter.
+Pour avoir une vue d'ensemble des différents types de miroirs que Fink propose, allez sur finkmirrors.net. C'est la page officielle de tout ce qui se rapporte aux miroirs. Si vous pensez pouvoir offrir d'autres types de ressources, tel de l'espace web pour faire des tests, n'hésitez pas à nous contacter.
 	
 	</content:encoded>
     </item>
@@ -116,44 +116,44 @@ Pour avoir une vue d'ensemble des diffÃ©rents types de miroirs que Fink propose,
       <guid>http://fink.sourceforge.net/news/#06%2F04%2F2004%20Fink%200.6.3%20et%200.7.0%20sont%20disponibles</guid>
       <description>
 	
-Les derniÃ¨res versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dÃ¨s Ã  prÃ©sent, disponibles sous forme de sources ou de binaires.  La version 0.6.3 a Ã©tÃ© compilÃ©e sur 10.2, tandis que la version 0.7.0 l'a Ã©tÃ© sur 10.3. Cela devrait rendre la gestion des diffÃ©rentes plate-formes plus facile.
+Les dernières versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dès à présent, disponibles sous forme de sources ou de binaires.  La version 0.6.3 a été compilée sur 10.2, tandis que la version 0.7.0 l'a été sur 10.3. Cela devrait rendre la gestion des différentes plate-formes plus facile.
 	
 	
-Dans ces nouvelles versions on a apportÃ© diffÃ©rentes corrections au gestionnaire de paquets, ajoutÃ© de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilÃ© certains paquets qui posaient des problÃ¨mes sur 10.3.
+Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire de paquets, ajouté de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilé certains paquets qui posaient des problèmes sur 10.3.
 	
 	
-Pour faire une premiÃ¨re installation de Fink, vous devez suivre les instructions donnÃ©es ici.
-Pour mettre Ã  jour une installation de Fink existante, vous devez suivre les instructions donnÃ©es lÃ .
+Pour faire une première installation de Fink, vous devez suivre les instructions données ici.
+Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données là.
 
-Si vous vous posez des questions ou rencontrez des problÃ¨mes Ã  cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus ici.
+Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus ici.
 		
 		
-VÃ©rifiez que vous avez tÃ©lÃ©chargÃ© le bon installeur pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
+Vérifiez que vous avez téléchargé le bon installeur pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
 		
 	
-L'Ã©quipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide rÃ©guliÃ¨rement ainsi que les dÃ©veloppeurs.
-Nous remercions aussi notre communautÃ©. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas lÃ  aujourd'hui. 
+L'équipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs.
+Nous remercions aussi notre communauté. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui. 
 
 </description>
       <content:encoded>
 	
-Les derniÃ¨res versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dÃ¨s Ã  prÃ©sent, disponibles sous forme de sources ou de binaires.  La version 0.6.3 a Ã©tÃ© compilÃ©e sur 10.2, tandis que la version 0.7.0 l'a Ã©tÃ© sur 10.3. Cela devrait rendre la gestion des diffÃ©rentes plate-formes plus facile.
+Les dernières versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dès à présent, disponibles sous forme de sources ou de binaires.  La version 0.6.3 a été compilée sur 10.2, tandis que la version 0.7.0 l'a été sur 10.3. Cela devrait rendre la gestion des différentes plate-formes plus facile.
 	
 	
-Dans ces nouvelles versions on a apportÃ© diffÃ©rentes corrections au gestionnaire de paquets, ajoutÃ© de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilÃ© certains paquets qui posaient des problÃ¨mes sur 10.3.
+Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire de paquets, ajouté de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilé certains paquets qui posaient des problèmes sur 10.3.
 	
 	
-Pour faire une premiÃ¨re installation de Fink, vous devez suivre les instructions donnÃ©es ici.
-Pour mettre Ã  jour une installation de Fink existante, vous devez suivre les instructions donnÃ©es lÃ .
+Pour faire une première installation de Fink, vous devez suivre les instructions données ici.
+Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données là.
 
-Si vous vous posez des questions ou rencontrez des problÃ¨mes Ã  cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus ici.
+Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus ici.
 		
 		
-VÃ©rifiez que vous avez tÃ©lÃ©chargÃ© le bon installeur pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
+Vérifiez que vous avez téléchargé le bon installeur pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
 		
 	
-L'Ã©quipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide rÃ©guliÃ¨rement ainsi que les dÃ©veloppeurs.
-Nous remercions aussi notre communautÃ©. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas lÃ  aujourd'hui. 
+L'équipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs.
+Nous remercions aussi notre communauté. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui. 
 
 </content:encoded>
     </item>
@@ -163,62 +163,62 @@ Nous remercions aussi notre communautÃ©. Sans son soutien constant et ses consei
       <guid>http://fink.sourceforge.net/news/#19%2F02%2F2004%20Hissez%20vos%20couleurs</guid>
       <description>
 	
-GrÃ¢ce Ã  Baba Yoshihiko, Fink a pris les mesures nÃ©cessaires pour autoriser son internationalisation. 
-L'amÃ©lioration de l'infrastructure nous permet d'offrir un site web multilingue Ã  nos visiteurs du monde entier. 
+Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. 
+L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
 
 
-Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit Ãªtre traduit dans la langue dÃ©sirÃ©e.
-Une traduction en japonais est en cours et MichÃ¨le Garoche est responsable de la traduction franÃ§aise.
-En quelle langue Ãªtes-vous prÃªt Ã  traduire ?
+Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée.
+Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française.
+En quelle langue êtes-vous prêt à traduire ?
 
 
-Si vous voulez devenir membre de l'Ã©quipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hÃ©sitez pas Ã  vous abonner Ã  la nouvelle liste de diffusion.
-Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce Ã©mise sur les listes de diffusion de Fink se trouve ici.
+Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
+Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve ici.
 
 </description>
       <content:encoded>
 	
-GrÃ¢ce Ã  Baba Yoshihiko, Fink a pris les mesures nÃ©cessaires pour autoriser son internationalisation. 
-L'amÃ©lioration de l'infrastructure nous permet d'offrir un site web multilingue Ã  nos visiteurs du monde entier. 
+Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. 
+L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
 
 
-Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit Ãªtre traduit dans la langue dÃ©sirÃ©e.
-Une traduction en japonais est en cours et MichÃ¨le Garoche est responsable de la traduction franÃ§aise.
-En quelle langue Ãªtes-vous prÃªt Ã  traduire ?
+Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée.
+Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française.
+En quelle langue êtes-vous prêt à traduire ?
 
 
-Si vous voulez devenir membre de l'Ã©quipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hÃ©sitez pas Ã  vous abonner Ã  la nouvelle liste de diffusion.
-Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce Ã©mise sur les listes de diffusion de Fink se trouve ici.
+Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
+Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve ici.
 
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#02%2F02%2F2004%20La%20mise%20%E0%20jour%20de%20Java%201.4.2%20supprime%20Java%20SDK">
-      <title>La mise Ã  jour de Java 1.4.2 supprime Java SDK</title>
+      <title>La mise à jour de Java 1.4.2 supprime Java SDK</title>
       <link>http://fink.sourceforge.net/news/#02%2F02%2F2004%20La%20mise%20%E0%20jour%20de%20Java%201.4.2%20supprime%20Java%20SDK</link>
       <guid>http://fink.sourceforge.net/news/#02%2F02%2F2004%20La%20mise%20%E0%20jour%20de%20Java%201.4.2%20supprime%20Java%20SDK</guid>
       <description>
 	
-Si vous aviez installÃ© Java 1.4.1 et Java SDK, la mise Ã  jour Java 1.4.2 d'Apple met Java runtime en version 1.4.2, mais supprime Java runtime 1.4.1 et le SDK sans mettre Ã  jour le JDK.  Pour construire des paquets Java dans Fink, vous devez aller sur connect.apple.com et tÃ©lÃ©charger Java 1.4.2 SDK (enregistrement gratuit obligatoire).
+Si vous aviez installé Java 1.4.1 et Java SDK, la mise à jour Java 1.4.2 d'Apple met Java runtime en version 1.4.2, mais supprime Java runtime 1.4.1 et le SDK sans mettre à jour le JDK.  Pour construire des paquets Java dans Fink, vous devez aller sur connect.apple.com et télécharger Java 1.4.2 SDK (enregistrement gratuit obligatoire).
 	
 	</description>
       <content:encoded>
 	
-Si vous aviez installÃ© Java 1.4.1 et Java SDK, la mise Ã  jour Java 1.4.2 d'Apple met Java runtime en version 1.4.2, mais supprime Java runtime 1.4.1 et le SDK sans mettre Ã  jour le JDK.  Pour construire des paquets Java dans Fink, vous devez aller sur connect.apple.com et tÃ©lÃ©charger Java 1.4.2 SDK (enregistrement gratuit obligatoire).
+Si vous aviez installé Java 1.4.1 et Java SDK, la mise à jour Java 1.4.2 d'Apple met Java runtime en version 1.4.2, mais supprime Java runtime 1.4.1 et le SDK sans mettre à jour le JDK.  Pour construire des paquets Java dans Fink, vous devez aller sur connect.apple.com et télécharger Java 1.4.2 SDK (enregistrement gratuit obligatoire).
 	
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#18%2F01%2F2004%20Mise%20%E0%20jour%20des%20binaires%2010.3">
-      <title>Mise Ã  jour des binaires 10.3</title>
+      <title>Mise à jour des binaires 10.3</title>
       <link>http://fink.sourceforge.net/news/#18%2F01%2F2004%20Mise%20%E0%20jour%20des%20binaires%2010.3</link>
       <guid>http://fink.sourceforge.net/news/#18%2F01%2F2004%20Mise%20%E0%20jour%20des%20binaires%2010.3</guid>
       <description>
 	
-De nombreux fichiers binaires pour 10.3 ont Ã©tÃ© mis Ã  jour, ce qui Ã©limine des problÃ¨mes avec qt et kde, entre autres. Pour accÃ©der aux nouveaux fichiers, mettez Ã  jour l'index de vos fichiers binaires en exÃ©cutant la commande sudo apt-get update .  Ensuite, vous pourrez utiliser apt-get, dselect ou FinkCommander pour installer les fichiers binaires comme d'habitude.
+De nombreux fichiers binaires pour 10.3 ont été mis à jour, ce qui élimine des problèmes avec qt et kde, entre autres. Pour accéder aux nouveaux fichiers, mettez à jour l'index de vos fichiers binaires en exécutant la commande sudo apt-get update .  Ensuite, vous pourrez utiliser apt-get, dselect ou FinkCommander pour installer les fichiers binaires comme d'habitude.
 	
 	</description>
       <content:encoded>
 	
-De nombreux fichiers binaires pour 10.3 ont Ã©tÃ© mis Ã  jour, ce qui Ã©limine des problÃ¨mes avec qt et kde, entre autres. Pour accÃ©der aux nouveaux fichiers, mettez Ã  jour l'index de vos fichiers binaires en exÃ©cutant la commande sudo apt-get update .  Ensuite, vous pourrez utiliser apt-get, dselect ou FinkCommander pour installer les fichiers binaires comme d'habitude.
+De nombreux fichiers binaires pour 10.3 ont été mis à jour, ce qui élimine des problèmes avec qt et kde, entre autres. Pour accéder aux nouveaux fichiers, mettez à jour l'index de vos fichiers binaires en exécutant la commande sudo apt-get update .  Ensuite, vous pourrez utiliser apt-get, dselect ou FinkCommander pour installer les fichiers binaires comme d'habitude.
 	
 	</content:encoded>
     </item>
@@ -228,96 +228,96 @@ De nombreux fichiers binaires pour 10.3 ont Ã©tÃ© mis Ã  jour, ce qui Ã©limine d
       <guid>http://fink.sourceforge.net/news/#10%2F01%2F2004%20Envie%20d'installer%20GNOME%202.4%20%3F</guid>
       <description>
 	
-GrÃ¢ce Ã  la nouvelle Ã©quipe GNOME de Fink et au travail intense de notre nouveau constructeur de paquets Keith Conger et du mainteneur de GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 vient d'Ãªtre placÃ©e dans l'arborescence instable 10.3.
+Grâce à la nouvelle équipe GNOME de Fink et au travail intense de notre nouveau constructeur de paquets Keith Conger et du mainteneur de GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 vient d'être placée dans l'arborescence instable 10.3.
 	
 	
-Vous n'avez qu'Ã  le rÃ©cupÃ©rer ; dÃ©diez, si vous le pouvez, un peu de votre temps libre au test de ces paquets si vous avez dÃ©jÃ  configurÃ© Fink pour l'arborescence instable. De nombreux changements ont eu lieu ; il y a donc des chances pour que la mise Ã  jour ou l'installation de la nouvelle version de GNOME posent quelques problÃ¨mes. Si c'est le cas, vous pouvez joindre l'Ã©quipe GNOME Ã  fink-gnome-core@lists.sourceforge.net.
-Envoyez-lui aussi un rapport quand tout s'est bien passÃ©. Plus nous recevrons de rapports favorables, plus vite nous pourrons mettre GNOME 2.4 dans l'arborescence stable.
+Vous n'avez qu'à le récupérer ; dédiez, si vous le pouvez, un peu de votre temps libre au test de ces paquets si vous avez déjà configuré Fink pour l'arborescence instable. De nombreux changements ont eu lieu ; il y a donc des chances pour que la mise à jour ou l'installation de la nouvelle version de GNOME posent quelques problèmes. Si c'est le cas, vous pouvez joindre l'équipe GNOME à fink-gnome-core@lists.sourceforge.net.
+Envoyez-lui aussi un rapport quand tout s'est bien passé. Plus nous recevrons de rapports favorables, plus vite nous pourrons mettre GNOME 2.4 dans l'arborescence stable.
 	
 	
 Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vous pour vous abonner ?
 	Voici un lien vers des 
-	instructions dÃ©taillÃ©es d'installation ou de mise Ã  jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalitÃ©s.
+	instructions détaillées d'installation ou de mise à jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalités.
 	
 	</description>
       <content:encoded>
 	
-GrÃ¢ce Ã  la nouvelle Ã©quipe GNOME de Fink et au travail intense de notre nouveau constructeur de paquets Keith Conger et du mainteneur de GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 vient d'Ãªtre placÃ©e dans l'arborescence instable 10.3.
+Grâce à la nouvelle équipe GNOME de Fink et au travail intense de notre nouveau constructeur de paquets Keith Conger et du mainteneur de GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 vient d'être placée dans l'arborescence instable 10.3.
 	
 	
-Vous n'avez qu'Ã  le rÃ©cupÃ©rer ; dÃ©diez, si vous le pouvez, un peu de votre temps libre au test de ces paquets si vous avez dÃ©jÃ  configurÃ© Fink pour l'arborescence instable. De nombreux changements ont eu lieu ; il y a donc des chances pour que la mise Ã  jour ou l'installation de la nouvelle version de GNOME posent quelques problÃ¨mes. Si c'est le cas, vous pouvez joindre l'Ã©quipe GNOME Ã  fink-gnome-core@lists.sourceforge.net.
-Envoyez-lui aussi un rapport quand tout s'est bien passÃ©. Plus nous recevrons de rapports favorables, plus vite nous pourrons mettre GNOME 2.4 dans l'arborescence stable.
+Vous n'avez qu'à le récupérer ; dédiez, si vous le pouvez, un peu de votre temps libre au test de ces paquets si vous avez déjà configuré Fink pour l'arborescence instable. De nombreux changements ont eu lieu ; il y a donc des chances pour que la mise à jour ou l'installation de la nouvelle version de GNOME posent quelques problèmes. Si c'est le cas, vous pouvez joindre l'équipe GNOME à fink-gnome-core@lists.sourceforge.net.
+Envoyez-lui aussi un rapport quand tout s'est bien passé. Plus nous recevrons de rapports favorables, plus vite nous pourrons mettre GNOME 2.4 dans l'arborescence stable.
 	
 	
 Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vous pour vous abonner ?
 	Voici un lien vers des 
-	instructions dÃ©taillÃ©es d'installation ou de mise Ã  jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalitÃ©s.
+	instructions détaillées d'installation ou de mise à jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalités.
 	
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!">
-      <title>Les douze coups de minuit ont sonnÃ© !</title>
+      <title>Les douze coups de minuit ont sonné !</title>
       <link>http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!</link>
       <guid>http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!</guid>
       <description>
 	
-	Bonne annÃ©e Ã  tous de la part de toute l'Ã©quipe.
+	Bonne année à tous de la part de toute l'équipe.
 	
 	
-	L'annÃ©e passÃ©e a Ã©tÃ© une bonne annÃ©e pour Fink. Nous avons eu du mal Ã  intÃ©grer les changements introduits par Apple, mais nous avons aussi dÃ©couvert que nous avions une communautÃ© formidable prÃªte Ã  patienter trÃ¨s longtemps pour nous soutenir.
-	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grÃ¢ce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
+	L'année passée a été une bonne année pour Fink. Nous avons eu du mal à intégrer les changements introduits par Apple, mais nous avons aussi découvert que nous avions une communauté formidable prête à patienter très longtemps pour nous soutenir.
+	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grâce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
 	
 	
-	En 2004, la tendance devrait s'accÃ©lÃ©rer. Il y a quelques petites choses intÃ©ressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
-	Nous espÃ©rons pouvoir Ã©tendre le projet par des confÃ©rences dÃ©veloppeurs, des rencontres et un CD dans votre magasin prÃ©fÃ©rÃ©.
+	En 2004, la tendance devrait s'accélérer. Il y a quelques petites choses intéressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
+	Nous espérons pouvoir étendre le projet par des conférences développeurs, des rencontres et un CD dans votre magasin préféré.
 	
 	
-	Les grandes ambitions peuvent se rÃ©vÃ©ler catastrophiques, c'est pourquoi nous les rÃ©aliserons en douceur, mais nous comptons toujours sur votre soutien cette annÃ©e. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idÃ©es d'amÃ©lioration. PrÃªtez-nous vos ressources et sponsorisez un mirroir ou du matÃ©riel. Consacrez un peu de votre temps Ã  amÃ©liorer le gestionnaire de paquets ou Ã  ajouter un logiciel en crÃ©ant un fichier info. FaÃ®tes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communautÃ© aussi agrÃ©able. Nous espÃ©rons que nous vous ferons franchir, Ã  vous et votre Macintosh, l'annÃ©e 2004 sans encombres.
+	Les grandes ambitions peuvent se révéler catastrophiques, c'est pourquoi nous les réaliserons en douceur, mais nous comptons toujours sur votre soutien cette année. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idées d'amélioration. Prêtez-nous vos ressources et sponsorisez un mirroir ou du matériel. Consacrez un peu de votre temps à améliorer le gestionnaire de paquets ou à ajouter un logiciel en créant un fichier info. Faîtes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communauté aussi agréable. Nous espérons que nous vous ferons franchir, à vous et votre Macintosh, l'année 2004 sans encombres.
 	
 	</description>
       <content:encoded>
 	
-	Bonne annÃ©e Ã  tous de la part de toute l'Ã©quipe.
+	Bonne année à tous de la part de toute l'équipe.
 	
 	
-	L'annÃ©e passÃ©e a Ã©tÃ© une bonne annÃ©e pour Fink. Nous avons eu du mal Ã  intÃ©grer les changements introduits par Apple, mais nous avons aussi dÃ©couvert que nous avions une communautÃ© formidable prÃªte Ã  patienter trÃ¨s longtemps pour nous soutenir.
-	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grÃ¢ce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
+	L'année passée a été une bonne année pour Fink. Nous avons eu du mal à intégrer les changements introduits par Apple, mais nous avons aussi découvert que nous avions une communauté formidable prête à patienter très longtemps pour nous soutenir.
+	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grâce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
 	
 	
-	En 2004, la tendance devrait s'accÃ©lÃ©rer. Il y a quelques petites choses intÃ©ressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
-	Nous espÃ©rons pouvoir Ã©tendre le projet par des confÃ©rences dÃ©veloppeurs, des rencontres et un CD dans votre magasin prÃ©fÃ©rÃ©.
+	En 2004, la tendance devrait s'accélérer. Il y a quelques petites choses intéressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
+	Nous espérons pouvoir étendre le projet par des conférences développeurs, des rencontres et un CD dans votre magasin préféré.
 	
 	
-	Les grandes ambitions peuvent se rÃ©vÃ©ler catastrophiques, c'est pourquoi nous les rÃ©aliserons en douceur, mais nous comptons toujours sur votre soutien cette annÃ©e. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idÃ©es d'amÃ©lioration. PrÃªtez-nous vos ressources et sponsorisez un mirroir ou du matÃ©riel. Consacrez un peu de votre temps Ã  amÃ©liorer le gestionnaire de paquets ou Ã  ajouter un logiciel en crÃ©ant un fichier info. FaÃ®tes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communautÃ© aussi agrÃ©able. Nous espÃ©rons que nous vous ferons franchir, Ã  vous et votre Macintosh, l'annÃ©e 2004 sans encombres.
+	Les grandes ambitions peuvent se révéler catastrophiques, c'est pourquoi nous les réaliserons en douceur, mais nous comptons toujours sur votre soutien cette année. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idées d'amélioration. Prêtez-nous vos ressources et sponsorisez un mirroir ou du matériel. Consacrez un peu de votre temps à améliorer le gestionnaire de paquets ou à ajouter un logiciel en créant un fichier info. Faîtes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communauté aussi agréable. Nous espérons que nous vous ferons franchir, à vous et votre Macintosh, l'année 2004 sans encombres.
 	
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#28%2F12%2F2004%20Joyeux%20No%EBl%20et%20bonne%20ann%E9e">
-      <title>Joyeux NoÃ«l et bonne annÃ©e</title>
+      <title>Joyeux Noël et bonne année</title>
       <link>http://fink.sourceforge.net/news/#28%2F12%2F2004%20Joyeux%20No%EBl%20et%20bonne%20ann%E9e</link>
       <guid>http://fink.sourceforge.net/news/#28%2F12%2F2004%20Joyeux%20No%EBl%20et%20bonne%20ann%E9e</guid>
       <description>
 		
- L'Ã©quipe Fink et moi-mÃªme vous souhaitons un joyeux NoÃ«l et de bonnes vacances. Nous nous rÃ©jouissons Ã  l'avance de cette nouvelle annÃ©e pendant laquelle nous pourrons aider la communautÃ© Macintosh Ã  se dÃ©velopper dans le monde UNIX avec Mac OS X.
+ L'équipe Fink et moi-même vous souhaitons un joyeux Noël et de bonnes vacances. Nous nous réjouissons à l'avance de cette nouvelle année pendant laquelle nous pourrons aider la communauté Macintosh à se développer dans le monde UNIX avec Mac OS X.
  		
 		
- Puissent tous vos voeux se rÃ©aliser, que le monde devienne meilleur et que la paix et la comprÃ©hension y rÃ¨gnent ne serait-ce que pendant ces quelques jours.
+ Puissent tous vos voeux se réaliser, que le monde devienne meilleur et que la paix et la compréhension y règnent ne serait-ce que pendant ces quelques jours.
 		
 		
- Profitez de cette pause et encore meilleurs voeux pour la nouvelle annÃ©e.
+ Profitez de cette pause et encore meilleurs voeux pour la nouvelle année.
  Ne nous abandonnez pas, nous comptons sur votre soutien.
 		
 		
 	</description>
       <content:encoded>
 		
- L'Ã©quipe Fink et moi-mÃªme vous souhaitons un joyeux NoÃ«l et de bonnes vacances. Nous nous rÃ©jouissons Ã  l'avance de cette nouvelle annÃ©e pendant laquelle nous pourrons aider la communautÃ© Macintosh Ã  se dÃ©velopper dans le monde UNIX avec Mac OS X.
+ L'équipe Fink et moi-même vous souhaitons un joyeux Noël et de bonnes vacances. Nous nous réjouissons à l'avance de cette nouvelle année pendant laquelle nous pourrons aider la communauté Macintosh à se développer dans le monde UNIX avec Mac OS X.
  		
 		
- Puissent tous vos voeux se rÃ©aliser, que le monde devienne meilleur et que la paix et la comprÃ©hension y rÃ¨gnent ne serait-ce que pendant ces quelques jours.
+ Puissent tous vos voeux se réaliser, que le monde devienne meilleur et que la paix et la compréhension y règnent ne serait-ce que pendant ces quelques jours.
 		
 		
- Profitez de cette pause et encore meilleurs voeux pour la nouvelle annÃ©e.
+ Profitez de cette pause et encore meilleurs voeux pour la nouvelle année.
  Ne nous abandonnez pas, nous comptons sur votre soutien.
 		
 		
@@ -329,28 +329,28 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
       <guid>http://fink.sourceforge.net/news/#30%2F11%2F2003%20Encore%20de%20nouveaux%20miroirs%20!</guid>
       <description>
 		
-			Merci, merci, merci ! Quelle formidable communautÃ© ! Merci de nous offrir toujours plus de sites miroirs. 
+			Merci, merci, merci ! Quelle formidable communauté ! Merci de nous offrir toujours plus de sites miroirs. 
 		
 		
 			Matthew Healey, membre du Western  Australian
-			Macintosh User Group, et son fournisseur d'accÃ¨s 
-				extremedsl nous offrent un miroir complet Ã  Perth, en Australie. Il s'agit de notre premier miroir Ã  l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, acceptÃ©, rendant les distributions de Fink disponibles sur 21 serveurs Ã  charge partagÃ©e. 
+			Macintosh User Group, et son fournisseur d'accès 
+				extremedsl nous offrent un miroir complet à Perth, en Australie. Il s'agit de notre premier miroir à l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, accepté, rendant les distributions de Fink disponibles sur 21 serveurs à charge partagée. 
 		
 		
-			Nous en sommes trÃ¨s heureux, mais nous sommes toujours Ã  la recherche de nouveaux miroirs basÃ©s sur rsync. Si vous dÃ©sirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
+			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
 		
 		</description>
       <content:encoded>
 		
-			Merci, merci, merci ! Quelle formidable communautÃ© ! Merci de nous offrir toujours plus de sites miroirs. 
+			Merci, merci, merci ! Quelle formidable communauté ! Merci de nous offrir toujours plus de sites miroirs. 
 		
 		
 			Matthew Healey, membre du Western  Australian
-			Macintosh User Group, et son fournisseur d'accÃ¨s 
-				extremedsl nous offrent un miroir complet Ã  Perth, en Australie. Il s'agit de notre premier miroir Ã  l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, acceptÃ©, rendant les distributions de Fink disponibles sur 21 serveurs Ã  charge partagÃ©e. 
+			Macintosh User Group, et son fournisseur d'accès 
+				extremedsl nous offrent un miroir complet à Perth, en Australie. Il s'agit de notre premier miroir à l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, accepté, rendant les distributions de Fink disponibles sur 21 serveurs à charge partagée. 
 		
 		
-			Nous en sommes trÃ¨s heureux, mais nous sommes toujours Ã  la recherche de nouveaux miroirs basÃ©s sur rsync. Si vous dÃ©sirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
+			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
 		
 		</content:encoded>
     </item>
@@ -360,24 +360,24 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
       <guid>http://fink.sourceforge.net/news/#24%2F11%2F2003%20Un%20autre%20miroir....%20Mais%20est-ce%20bien%20suffisant%20%3F</guid>
       <description>
 		
-			Nous souhaitons la bienvenue Ã  notre nouveau miroir situÃ© en NorvÃ¨ge, sponsorisÃ© par Havar Valeur, mais nous faisons encore appel Ã  votre gÃ©nÃ©rositÃ©. Pour amÃ©liorer le service qui vous est destinÃ©, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
+			Nous souhaitons la bienvenue à notre nouveau miroir situé en Norvège, sponsorisé par Havar Valeur, mais nous faisons encore appel à votre générosité. Pour améliorer le service qui vous est destiné, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
 		
 		
-			Il suffit de possÃ©der un lien Ã  10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante Ã  partager avec Fink. Les instructions prÃ©cises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle ZÃ©lande, en Europe mÃ©ridionale et en Europe centrale : nous n'en avons encore aucun dans ces rÃ©gions. Si vous vous sentez d'humeur particuliÃ¨rement gÃ©nÃ©reuse et dÃ©sirez faire davantage, allez sur finkmirrors.net pour dÃ©couvrir les options qui s'offrent Ã  vous. 
+			Il suffit de posséder un lien à 10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante à partager avec Fink. Les instructions précises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle Zélande, en Europe méridionale et en Europe centrale : nous n'en avons encore aucun dans ces régions. Si vous vous sentez d'humeur particulièrement généreuse et désirez faire davantage, allez sur finkmirrors.net pour découvrir les options qui s'offrent à vous. 
 		
 		
-			Vous pouvez connaÃ®tre, Ã  tout instant, l'Ã©tat de nos miroirs rsync sur finkmirrors.net. Nous comptons amÃ©liorer ce service par la suite, ce qui ne pourra Ãªtre fait que grÃ¢ce Ã  la bonne volontÃ© de chacun. Nous pensons Ã  de nombreuses autres applications et remercions d'avance l'ensemble de notre communautÃ©. 
+			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
 		
 		</description>
       <content:encoded>
 		
-			Nous souhaitons la bienvenue Ã  notre nouveau miroir situÃ© en NorvÃ¨ge, sponsorisÃ© par Havar Valeur, mais nous faisons encore appel Ã  votre gÃ©nÃ©rositÃ©. Pour amÃ©liorer le service qui vous est destinÃ©, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
+			Nous souhaitons la bienvenue à notre nouveau miroir situé en Norvège, sponsorisé par Havar Valeur, mais nous faisons encore appel à votre générosité. Pour améliorer le service qui vous est destiné, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
 		
 		
-			Il suffit de possÃ©der un lien Ã  10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante Ã  partager avec Fink. Les instructions prÃ©cises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle ZÃ©lande, en Europe mÃ©ridionale et en Europe centrale : nous n'en avons encore aucun dans ces rÃ©gions. Si vous vous sentez d'humeur particuliÃ¨rement gÃ©nÃ©reuse et dÃ©sirez faire davantage, allez sur finkmirrors.net pour dÃ©couvrir les options qui s'offrent Ã  vous. 
+			Il suffit de posséder un lien à 10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante à partager avec Fink. Les instructions précises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle Zélande, en Europe méridionale et en Europe centrale : nous n'en avons encore aucun dans ces régions. Si vous vous sentez d'humeur particulièrement généreuse et désirez faire davantage, allez sur finkmirrors.net pour découvrir les options qui s'offrent à vous. 
 		
 		
-			Vous pouvez connaÃ®tre, Ã  tout instant, l'Ã©tat de nos miroirs rsync sur finkmirrors.net. Nous comptons amÃ©liorer ce service par la suite, ce qui ne pourra Ãªtre fait que grÃ¢ce Ã  la bonne volontÃ© de chacun. Nous pensons Ã  de nombreuses autres applications et remercions d'avance l'ensemble de notre communautÃ©. 
+			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
 		
 		</content:encoded>
     </item>
@@ -387,16 +387,16 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
       <guid>http://fink.sourceforge.net/news/#17%2F11%2F2003%20Fink%200.6.2%20est%20disponible</guid>
       <description>
 		
-			Les binaires et sources de la derniÃ¨re version de Fink, numÃ©rotÃ©e 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinÃ©e Ã  corriger deux bogues de la version prÃ©cÃ©dente : celui de la suppression utilisateur / dselect, ainsi qu'un problÃ¨me d'autorisations attribuÃ©es aux fichiers. Le bogue dselect a Ã©tÃ© rÃ©solu en mettant Ã  jour les paquets fink, dpkg et apt. AprÃ¨s mise Ã  jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problÃ¨me. Cependant, si vous avez utilisÃ© dselect sous une version  au moins Ã©gale Ã  la version 0.6.0, vÃ©rifiez l'intÃ©gritÃ© du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par dÃ©faut. 
+			Les binaires et sources de la dernière version de Fink, numérotée 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinée à corriger deux bogues de la version précédente : celui de la suppression utilisateur / dselect, ainsi qu'un problème d'autorisations attribuées aux fichiers. Le bogue dselect a été résolu en mettant à jour les paquets fink, dpkg et apt. Après mise à jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problème. Cependant, si vous avez utilisé dselect sous une version  au moins égale à la version 0.6.0, vérifiez l'intégrité du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par défaut. 
 		
 		
-			Les utilisateurs qui ont installÃ© des fichiers binaires Ã  partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent Ã  l'utilisateur UID 20011 et non Ã  l'utilisateur root. Pour corriger ce problÃ¨me, lancez la commande :
+			Les utilisateurs qui ont installé des fichiers binaires à partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent à l'utilisateur UID 20011 et non à l'utilisateur root. Pour corriger ce problème, lancez la commande :
 		
 
 sudo find /sw/ -user 2011 -exec chown root:admin {} \;
 
 		
-			Cette version, comme la prÃ©cÃ©dente, a Ã©tÃ© crÃ©Ã©e sous Mac OS X 10.2 et compilÃ©e avec gcc 3.3. Elle fonctionne correctement, Ã  quelques exceptions* prÃ¨s, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'Ã©quipe de Fink continue d'adapter les paquets Fink Ã  Mac OS X 10.3. 
+			Cette version, comme la précédente, a été créée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement, à quelques exceptions* près, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3. 
 		
 		
 			*Quelques exceptions : emacs, qt. 
@@ -404,16 +404,16 @@ sudo find /sw/ -user 2011 -exec chown root:admin {} \;
 		</description>
       <content:encoded>
 		
-			Les binaires et sources de la derniÃ¨re version de Fink, numÃ©rotÃ©e 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinÃ©e Ã  corriger deux bogues de la version prÃ©cÃ©dente : celui de la suppression utilisateur / dselect, ainsi qu'un problÃ¨me d'autorisations attribuÃ©es aux fichiers. Le bogue dselect a Ã©tÃ© rÃ©solu en mettant Ã  jour les paquets fink, dpkg et apt. AprÃ¨s mise Ã  jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problÃ¨me. Cependant, si vous avez utilisÃ© dselect sous une version  au moins Ã©gale Ã  la version 0.6.0, vÃ©rifiez l'intÃ©gritÃ© du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par dÃ©faut. 
+			Les binaires et sources de la dernière version de Fink, numérotée 0.6.2, sont maintenant disponibles. Il s'agit d'une version destinée à corriger deux bogues de la version précédente : celui de la suppression utilisateur / dselect, ainsi qu'un problème d'autorisations attribuées aux fichiers. Le bogue dselect a été résolu en mettant à jour les paquets fink, dpkg et apt. Après mise à jour en version 0.6.2, vous pourrez utiliser de nouveau dselect sans problème. Cependant, si vous avez utilisé dselect sous une version  au moins égale à la version 0.6.0, vérifiez l'intégrité du fichier /sw/etc/apt/sources.list. Si vous avez le moindre doute concernant ce fichier, nous vous recommandons de le remplacer par le fichier sources.list par défaut. 
 		
 		
-			Les utilisateurs qui ont installÃ© des fichiers binaires Ã  partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent Ã  l'utilisateur UID 20011 et non Ã  l'utilisateur root. Pour corriger ce problÃ¨me, lancez la commande :
+			Les utilisateurs qui ont installé des fichiers binaires à partir de la distribution 0.6.1 pourraient constater que certains fichiers Fink appartiennent à l'utilisateur UID 20011 et non à l'utilisateur root. Pour corriger ce problème, lancez la commande :
 		
 
 sudo find /sw/ -user 2011 -exec chown root:admin {} \;
 
 		
-			Cette version, comme la prÃ©cÃ©dente, a Ã©tÃ© crÃ©Ã©e sous Mac OS X 10.2 et compilÃ©e avec gcc 3.3. Elle fonctionne correctement, Ã  quelques exceptions* prÃ¨s, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'Ã©quipe de Fink continue d'adapter les paquets Fink Ã  Mac OS X 10.3. 
+			Cette version, comme la précédente, a été créée sous Mac OS X 10.2 et compilée avec gcc 3.3. Elle fonctionne correctement, à quelques exceptions* près, sous Mac OS X 10.3. La plupart des utilisateurs passant sous Mac OS X 10.3 devront utiliser les binaires de cette nouvelle distribution pour l'instant, tandis que l'équipe de Fink continue d'adapter les paquets Fink à Mac OS X 10.3. 
 		
 		
 			*Quelques exceptions : emacs, qt. 
