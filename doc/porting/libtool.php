@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/04/26 17:21:23';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/09/10 13:24:02';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="preparing.php" title="Preparing for 10.2"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -204,13 +204,13 @@ not the actual problem, but with great success anyway), you can use this fix
 <b>The DESTDIR bug</b>:
 Certain packages which set DESTDIR and use libtool 1.4.2 have problems
 with relinking.
-The problems are discussed in these email messages: </li><li>
-<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html</a> </li><li>
-<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006244.html">http://mail.gnu.org/pipermail/libtool/2002-April/006244.html</a> </li><li>
-<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006250.html">http://mail.gnu.org/pipermail/libtool/2002-April/006250.html</a>,
-</li><li>and a patch for the problem is discussed in these messages:</li><li>
-<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006268.html">http://mail.gnu.org/pipermail/libtool/2002-April/006268.html</a> </li><li>
-<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html</a>
+The problems are discussed in these email messages: 
+<p>
+<a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</a></p>
+<p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</a></p>
+<p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</a>,</p>
+<p>and a patch for the problem is discussed in:</p>
+<p><a href="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</a>.</p>
 </li>
 </ol>
 
