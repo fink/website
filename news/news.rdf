@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rss091="http://purl.org/rss/modules/#rss091/" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/">
+  <channel rdf:about="http://fink.sf.net/news/">
+    <title>Fink Project News</title>
+    <link>http://fink.sf.net/news/</link>
+    <description>Fink Project News</description>
+    <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
+  </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New Upgrade Matrix</title>
+    <link>http://fink.sf.net/news/#New%20Upgrade%20Matrix%202002-12-22</link>
+    <dc:date>2002-12-22</dc:date>
+    <description>
+  A new Upgrade Matrix is
+  now available, for use in upgrading earlier versions of Fink to the
+  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
+  under 10.1 will be brought to Fink version 0.4.1a, while users
+  upgrading under 10.2 will be brought to Fink version 0.5.0a.
+  
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New Upgrade Matrix coming</title>
+    <link>http://fink.sf.net/news/#New%20Upgrade%20Matrix%20coming%202002-12-11</link>
+    <dc:date>2002-12-11</dc:date>
+    <description>
+  The Fink team is aware of the shortcomings of the current
+  Upgrade Matrix page, which is inadequate for upgrading
+to Fink 0.5.0a.  Please be patient as we construct
+  a new version of that page, whose existence will be announced
+  here.  In the meantime, some of you may wish to use the test version of the Jaguar updater which was
+made available on 2002-09-08.
+  
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.5.0a Released</title>
+    <link>http://fink.sf.net/news/#Fink%200.5.0a%20Released%202002-12-09</link>
+    <dc:date>2002-12-09</dc:date>
+    <description>
+  
+    Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
+    release, and replaces 0.5.0 which was never officially released.) This
+    release includes over 700 
+    binary packages for OS X 10.2 as well as over 1800 source packages of
+    all kinds. 
+  
+  
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the Upgrade Matrix. 
+  
+  
+  This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
+  
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Update XFree86 for use with OS X 10.2.2</title>
+    <link>http://fink.sf.net/news/#Update%20XFree86%20for%20use%20with%20OS%20X%2010.2.2%202002-11-11</link>
+    <dc:date>2002-11-11</dc:date>
+    <description>
+  
+Users should update their XFree86 installations to version 4.2.1.1
+for use with OS X 10.2.2.  If you are using system-xfree86, you
+can get the new version from the XonX 
+project.  If you are using Fink's
+xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
+xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
+the 10.2/unstable tree; to gain access to them, you may need to run 
+&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
+  
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Don't reuse binary installer</title>
+    <link>http://fink.sf.net/news/#Don't%20reuse%20binary%20installer%202002-10-30</link>
+    <dc:date>2002-10-30</dc:date>
+    <description>
+  
+  Users are cautioned to use the binary installer for Fink 0.4.1 only
+once on a given machine.  Due to an apparent bug in Apple's
+Installer.app program, attempting a second installation on the same
+machine can result in permissions being altered in the machine's root
+directory, in some cases leaving the machine in a non-bootable state.
+ If Installer.app presents you with an &quot;Upgrade&quot; button rather
+than an &quot;Install&quot; button when installing Fink 0.4.1, do not proceed
+any further! 
+A new version of the binary installer for Fink 0.4.1 became available
+on November 5.  The new version avoids
+the problem of the machine not booting, but even with the new version,
+users are advised to only &quot;Install&quot;,
+not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
+12582912 bytes, while the old version had a filesize of 10541112 bytes.)
+</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.4.1 released</title>
+    <link>http://fink.sf.net/news/#Fink%200.4.1%20released%202002-09-28</link>
+    <dc:date>2002-09-28</dc:date>
+    <description>
+    
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the Upgrade Matrix. 
+    
+    
+    This is the last release for Mac OS X 10.1. Future versions of Fink will not officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
+    
+    
+    At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Possible conflicts with anti-virus software</title>
+    <link>http://fink.sf.net/news/#Possible%20conflicts%20with%20anti-virus%20software%202002-09-27</link>
+    <dc:date>2002-09-27</dc:date>
+    <description>
+ A number of recent reports on the 
+fink-users
+mailing list have indicated problems (including kernel panics and
+infinite hangs during patching) when using Fink to compile packages while
+anti-virus software is installed.  You may need to switch off any anti-virus
+software before using Fink.
+</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Test version of Jaguar updater available</title>
+    <link>http://fink.sf.net/news/#Test%20version%20of%20Jaguar%20updater%20available%202002-09-08</link>
+    <dc:date>2002-09-08</dc:date>
+    <description>
+		
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in step-by-step instructions for updating. We also have separate instructions to install Fink from scratch on 10.2. 
+		
+		
+			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the &quot;stable&quot; tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
+		
+	</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Mac OS X 10.2 / Jaguar</title>
+    <link>http://fink.sf.net/news/#Mac%20OS%20X%2010.2%20%2F%20Jaguar%202002-08-20</link>
+    <dc:date>2002-08-20</dc:date>
+    <description>
+    
+      During the last few weeks, we got a lot of emails asking whether Fink will work Mac OS X 10.2.
+    
+    
+      The answer is: Yes, we will support 10.2. However, due to some
+      major changes in this new OS version, we had to make a lot of adjustments both
+      to the Fink tool itself and to many packages. The current binary distribution,
+      0.4.0a, will only work partially on 10.2. We are working on an upgrade guide,
+      as well as a new Fink release, to support 10.2.
+    
+	
+	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
+	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
+	 Some packages need special changes to build on 10.2. Adding &quot;unstable/main&quot; to your
+	 list of trees in /sw/etc/fink.conf (see also the FAQ)
+	 will give you access to the latest versions of packages, many of which include important
+	 fixes for 10.2.
+	
+    
+     As of now, please do not email us asking about 10.2 support. If you can't wait,
+     consult the mailing list archives instead.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink package manager 0.10.0 released</title>
+    <link>http://fink.sf.net/news/#Fink%20package%20manager%200.10.0%20released%202002-08-06</link>
+    <dc:date>2002-08-06</dc:date>
+    <description>
+    
+      Yesterday version 0.10.0 of the Fink package manager was released to the unstable tree, along with version 1.6 of the base-files package. All Fink users which are using the unstable tree are recommended to update to this version. The easiest way to do so usually is to run 'fink selfupdate-cvs' which will automatically take care of updating these essential packages.
+    
+    
+      Please report any problems you encounter with this version via our bug tracker.
+    
+    
+      An overview of what changed since version 0.9.12 can be found here.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Binary distribution moves</title>
+    <link>http://fink.sf.net/news/#Binary%20distribution%20moves%202002-07-17</link>
+    <dc:date>2002-07-17</dc:date>
+    <description>
+    
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, read more here..
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>KDE support</title>
+    <link>http://fink.sf.net/news/#KDE%20support%202002-05-29</link>
+    <dc:date>2002-05-29</dc:date>
+    <description>
+    
+      Fink announces support for KDE. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full KDE Support In Fink announcement. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Bug in passwd package</title>
+    <link>http://fink.sf.net/news/#Bug%20in%20passwd%20package%202002-05-03</link>
+    <dc:date>2002-05-03</dc:date>
+    <description>
+    
+      All Fink users are urged to update their  passwd  package to version 20020329 or newer. Older versions of the  passwd  package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering  dpkg -s passwd. If your version is oudated, you can update to the current one in two ways: 
+    
+    
+      
+        Via the binary distribution. First make sure you have the latest list of packages available:  sudo apt-get update. Then you can perform the actual update:  sudo apt-get install passwd. 
+      
+      
+        Via the source distribution. First make sure you have the latest set of package descriptions:  fink selfupdate-cvs. Then, update the passwd package:  fink update passwd 
+      
+    
+    
+      See Fink's FAQ, question 6.3, for more information about the passwd package. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.4.0 released</title>
+    <link>http://fink.sf.net/news/#Fink%200.4.0%20released%202002-04-18</link>
+    <dc:date>2002-04-18</dc:date>
+    <description>
+    
+      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the Upgrade Matrix. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.3.2a is released</title>
+    <link>http://fink.sf.net/news/#Fink%200.3.2a%20is%20released%202002-01-16</link>
+    <dc:date>2002-01-16</dc:date>
+    <description>
+    
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.3.2 is released</title>
+    <link>http://fink.sf.net/news/#Fink%200.3.2%20is%20released%202002-01-09</link>
+    <dc:date>2002-01-09</dc:date>
+    <description>
+    
+      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Binary distribution lost</title>
+    <link>http://fink.sf.net/news/#Binary%20distribution%20lost%202002-01-08</link>
+    <dc:date>2002-01-08</dc:date>
+    <description>
+    
+      Due to a faulty script, the whole fink website, including our binary distro, has been wiped! This means you can't use the binary distro right now. I am working as quick as I can on uploading the new Fink 0.3.2 binary distro. In addition, the package database is not working for now. Please bear with us. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Yes, we are alive!</title>
+    <link>http://fink.sf.net/news/#Yes%2C%20we%20are%20alive!%202001-12-16</link>
+    <dc:date>2001-12-16</dc:date>
+    <description>
+    
+      Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
+    
+    
+      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our CVS. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.3.1 is released</title>
+    <link>http://fink.sf.net/news/#Fink%200.3.1%20is%20released%202001-11-04</link>
+    <dc:date>2001-11-04</dc:date>
+    <description>
+    
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the recently updated User's Guide. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Running X11 document updated</title>
+    <link>http://fink.sf.net/news/#Running%20X11%20document%20updated%202001-11-02</link>
+    <dc:date>2001-11-02</dc:date>
+    <description>
+    
+      The Running X11 document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>News Item: 2001-10-31</title>
+    <link>http://fink.sf.net/news/#2001-10-31</link>
+    <dc:date>2001-10-31</dc:date>
+    <description>
+    
+      MacOSXHints has
+      posted an 
+      installation guide for XFree86, Fink, Window Maker and The GIMP.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>forked.net</title>
+    <link>http://fink.sf.net/news/#forked.net%202001-10-23</link>
+    <dc:date>2001-10-23</dc:date>
+    <description>
+    
+      In addition to ripping off Fink packages and breaking the GPL, the ports
+      collection at forked.net
+       has just gone commercial. More details soon. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Binary distribution complete</title>
+    <link>http://fink.sf.net/news/#Binary%20distribution%20complete%202001-10-03</link>
+    <dc:date>2001-10-03</dc:date>
+    <description>
+    The binary distribution update is now complete.
+    The 10.1 compatibility report has been
+    updated to reflect the fixes in Fink 0.3.0.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.3.0 is released</title>
+    <link>http://fink.sf.net/news/#Fink%200.3.0%20is%20released%202001-09-30</link>
+    <dc:date>2001-09-30</dc:date>
+    <description>
+    The source release, the binary installer and a binary upgrade kit for
+    broken-by-10.1 installations are available in the new download section.
+    The bulk of the binary distribution will be updated gradually over the
+    next few days, as usual.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Mac OS X 10.1 released</title>
+    <link>http://fink.sf.net/news/#Mac%20OS%20X%2010.1%20released%202001-09-26</link>
+    <dc:date>2001-09-26</dc:date>
+    <description>
+    Mac OS X 10.1 has been officially released yesterday. Before you use Fink
+    on 10.1, check out the compatibility report.
+    Update: The apt-get issue has been solved, expect a new release
+    this weekend.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Binary distribution fully updated</title>
+    <link>http://fink.sf.net/news/#Binary%20distribution%20fully%20updated%202001-09-07</link>
+    <dc:date>2001-09-07</dc:date>
+    <description>
+    The binary distribution is now fully updated to
+    Fink 0.2.6. Enjoy.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.2.6 is released</title>
+    <link>http://fink.sf.net/news/#Fink%200.2.6%20is%20released%202001-09-04</link>
+    <dc:date>2001-09-04</dc:date>
+    <description>
+    Fink 0.2.6 is released, fixing several bootstrap problems. The source
+    release is available from the download page
+    or via the 'fink selfupdate' command. The binary release will follow soon.
+    
+ </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink IRC Channel</title>
+    <link>http://fink.sf.net/news/#Fink%20IRC%20Channel%202001-09-02</link>
+    <dc:date>2001-09-02</dc:date>
+    <description>
+    Chat with the developers and other users! We now have a #fink channel
+    on the openprojects.net
+    IRC network.
+    
+ </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.2.5 was released</title>
+    <link>http://fink.sf.net/news/#Fink%200.2.5%20was%20released%202001-08-25</link>
+    <dc:date>2001-08-25</dc:date>
+    <description>
+    The source release is
+    available from the download page, the
+    binary release will follow soon.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>OpenOSX.com</title>
+    <link>http://fink.sf.net/news/#OpenOSX.com%202001-08-23</link>
+    <dc:date>2001-08-23</dc:date>
+    <description>
+    OpenOSX.com refuses to give fair credit after using Fink to create GIMP
+    CDs. Read Christoph's public statement
+    on the issue.
+    
+ </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New help page</title>
+    <link>http://fink.sf.net/news/#New%20help%20page%202001-08-22</link>
+    <dc:date>2001-08-22</dc:date>
+    <description>
+    The new help page lists various ways
+    to get help using Fink. It also lists some ideas how you can give back to
+    the project.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Porting tips and X11 document updated</title>
+    <link>http://fink.sf.net/news/#Porting%20tips%20and%20X11%20document%20updated%202001-08-13</link>
+    <dc:date>2001-08-13</dc:date>
+    <description>
+    The porting tips document has
+    a new chapter on shared libraries and modules. The X11 document was also updated recently.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.2.4a is released</title>
+    <link>http://fink.sf.net/news/#Version%200.2.4a%20is%20released%202001-08-01</link>
+    <dc:date>2001-08-01</dc:date>
+    <description>
+    There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
+    0.2.4a. You only need this if you're doing a first time install, updates
+    are not affected.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.2.4 is released</title>
+    <link>http://fink.sf.net/news/#Version%200.2.4%20is%20released%202001-08-01</link>
+    <dc:date>2001-08-01</dc:date>
+    <description>
+    Version 0.2.4 is released. Get it from the download page. Some highlights: The GIMP
+    1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
+    and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New document: X11 on Darwin and Mac OS X</title>
+    <link>http://fink.sf.net/news/#New%20document%3A%20X11%20on%20Darwin%20and%20Mac%20OS%20X%202001-07-19</link>
+    <dc:date>2001-07-19</dc:date>
+    <description>
+    A comprehensive document about X11 on
+    Darwin and Mac OS X is now available. It was written to be useful
+    for anyone, not just Fink users.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Package database now online</title>
+    <link>http://fink.sf.net/news/#Package%20database%20now%20online%202001-07-13</link>
+    <dc:date>2001-07-13</dc:date>
+    <description>
+    A prototype of the package database
+    is now online.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.2.3 is released</title>
+    <link>http://fink.sf.net/news/#Version%200.2.3%20is%20released%202001-07-09</link>
+    <dc:date>2001-07-09</dc:date>
+    <description>
+    Get it from the download page. This
+    version fixes the dpkg download problems many of you were having.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Packaging Manual updated</title>
+    <link>http://fink.sf.net/news/#Packaging%20Manual%20updated%202001-07-03</link>
+    <dc:date>2001-07-03</dc:date>
+    <description>
+    The Packaging Manual was
+    updated to include all recently added fields.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Web site restructuring</title>
+    <link>http://fink.sf.net/news/#Web%20site%20restructuring%202001-06-30</link>
+    <dc:date>2001-06-30</dc:date>
+    <description>
+    A major restructuring of the web site has started. The non-Fink-specific
+    documents were removed because I don't have the time to maintain them. All
+    documentation will be consolidated in the new 
+    Documentation section.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.2.2 is released</title>
+    <link>http://fink.sf.net/news/#Version%200.2.2%20is%20released%202001-06-24</link>
+    <dc:date>2001-06-24</dc:date>
+    <description>
+    Version 0.2.2 is finally released. Get it from the download page. Be sure to read the notes
+    about X11 in the INSTALL file.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>CVS instructions updated</title>
+    <link>http://fink.sf.net/news/#CVS%20instructions%20updated%202001-05-19</link>
+    <dc:date>2001-05-19</dc:date>
+    <description>
+    The CVS instructions have
+    been updated for Fink 0.2.x.
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>FAQ online</title>
+    <link>http://fink.sf.net/news/#FAQ%20online%202001-04-26</link>
+    <dc:date>2001-04-26</dc:date>
+    <description>
+    
+      This site now sports a FAQ section. Not much content yet, but it's here to stay. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.2.0 is released</title>
+    <link>http://fink.sf.net/news/#Version%200.2.0%20is%20released%202001-04-20</link>
+    <dc:date>2001-04-20</dc:date>
+    <description>
+    
+      It now uses dpkg for binary package management. You can get it from the download page, but be aware that this version is not yet as stable as the 0.1.x series. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Released version 0.1.8a</title>
+    <link>http://fink.sf.net/news/#Released%20version%200.1.8a%202001-04-15</link>
+    <dc:date>2001-04-15</dc:date>
+    <description>
+    
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems (&quot;stow not found&quot;). Get it from the download page. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.1.8 is out</title>
+    <link>http://fink.sf.net/news/#Version%200.1.8%20is%20out%202001-04-14</link>
+    <dc:date>2001-04-14</dc:date>
+    <description>
+    
+      Get it from the download page. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Porting notes updated</title>
+    <link>http://fink.sf.net/news/#Porting%20notes%20updated%202001-03-30</link>
+    <dc:date>2001-03-30</dc:date>
+    <description>
+    
+      The porting notes have been updated with information on Mac OS X Final. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.1.7 is out!</title>
+    <link>http://fink.sf.net/news/#Version%200.1.7%20is%20out!%202001-03-30</link>
+    <dc:date>2001-03-30</dc:date>
+    <description>
+    
+      Get it from the download page. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Mac OS X is released!</title>
+    <link>http://fink.sf.net/news/#Mac%20OS%20X%20is%20released!%202001-03-24</link>
+    <dc:date>2001-03-24</dc:date>
+    <description>
+    
+      Expect Fink packages to be adapted to the final release within the next one or two weeks. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Libtool page updated</title>
+    <link>http://fink.sf.net/news/#Libtool%20page%20updated%202001-03-15</link>
+    <dc:date>2001-03-15</dc:date>
+    <description>
+    
+      Updated the libtool page with a revised patch that does full shared library versioning. 
+    
+  </description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Version 0.1.6 is out</title>
+    <link>http://fink.sf.net/news/#Version%200.1.6%20is%20out%202001-03-08</link>
+    <dc:date>2001-03-08</dc:date>
+    <description>
+    
+      Get it from the download page. 
+    
+  </description>
+  </item>
+</rdf:RDF>
