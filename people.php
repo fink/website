@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/11/18 14:00:19 $';
+$cvs_date = '$Date: 2002/01/14 23:09:10 $';
 
 include "header.inc";
 ?>
@@ -17,6 +17,8 @@ Fink (in alphabetical order):</p>
 <h2>Regular Contributors</h2>
 
 <ul>
+<li>Bill Bumgarner</li>
+<li>Sylvain Cuaz</li>
 <li>Finlay Dobbie</li>
 <li>Justin F. Hallett</li>
 <li>Jeremy Higgs</li>
@@ -25,27 +27,30 @@ Fink (in alphabetical order):</p>
 <li>Matthias Neeracher</li>
 <li>Andrew Rohl</li>
 <li>Masanori Sekino</li>
+<li>Matt Stephenson</li>
 <li>Christian Swinehart</li>
 <li>Jeffrey S. Whitaker</li>
-<li>Ashley Yakeley</li>
 </ul>
 
 <h2>Occasional Contributors</h2>
 
 <ul>
-<li>Bill Bumgarner</li>
 <li>Martin Costabel</li>
-<li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
 <li>Peter O'Gorman</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
-<li>Matt Stephenson</li>
 <li>Paul Swenson</li>
 <li>Aaron Voisine</li>
+<li>Ashley Yakeley</li>
 <li>Tom Zerucha</li>
 <li>Sasha Zucker</li>
 </ul>
+
+<p><b>Former project lead</b><br>
+<blockquote>Christoph Pfisterer</blockquote></p>
+<p><b>Current fink project lead</b><br>
+<blockquote>Max Horn</blockquote></p>
 
 <p>If I forgot to list someone, please forgive me and let me know you
 should be listed.</p>
