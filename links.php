@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/16 15:20:01 $';
+$cvs_date = '$Date: 2001/06/22 12:23:11 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -34,6 +34,8 @@ Ports</a> - porting the FreeBSD ports collection</li>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
 porting info and news, plus a software archive</li>
+<li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X
+Public Archive</a></li>
 <li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
