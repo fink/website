@@ -8,7 +8,26 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
+<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
+		<p>
+	Thank you, thank you, thank you. What a great community we have.
+	Thank you for providing us with more mirrors. 
+		</p>
+		<p>
+	Matthew Healey member of the Western <a href="http://www.wamug.org.au">
+	Australian Macintosh User Group</a> and their 
+	<a href="http://www.extremedsl.com.au">ISP extremedsl</a>
+	are providing Fink with a full mirror in Perth, Australia. This is our first
+	mirror in down under, thus I am pleased to welcome them to the family.
+	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
+	making distfile services available for Fink on 21 load balanced server.
+		</p>
+		<p>
+	We are very happy about this development, but we still need more rsync mirrors.
+	Thus, once more, if you feel like helping, please visit 
+	<a href="http://finkmirrors.net">finkmirrors.net</a> and get in touch.
+		</p>
+		<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
 	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
         we crave more. To improve our service to all of you, we would like to ask that
         you evaluate carefully if you maybe do have the resources to become a mirror. 

@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.105 2003/11/28 12:53:51 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.106 2003/11/30 21:37:35 dmalloc Exp $</cvsid>
 
+
+<newsitem>
+	<date>2003-11-30</date>
+	<headline>There they are! New mirrors..</headline>
+		<body>
+		<p>
+	Thank you, thank you, thank you. What a great community we have.
+	Thank you for providing us with more mirrors. 
+		</p>
+		<p>
+	Matthew Healey member of the Western <extlink url="http://www.wamug.org.au">
+	Australian Macintosh User Group</extlink> and their 
+	<extlink url="http://www.extremedsl.com.au">ISP extremedsl</extlink>
+	are providing Fink with a full mirror in Perth, Australia. This is our first
+	mirror in down under, thus I am pleased to welcome them to the family.
+	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
+	making distfile services available for Fink on 21 load balanced server.
+		</p>
+		<p>
+	We are very happy about this development, but we still need more rsync mirrors.
+	Thus, once more, if you feel like helping, please visit 
+	<extlink url="http://finkmirrors.net">finkmirrors.net</extlink> and get in touch.
+		</p>
+		</body>
+</newsitem>
 <newsitem>
 	<date>2003-11-24</date>
 	<headline>More mirrors....pretty please?</headline>

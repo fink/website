@@ -1,4 +1,23 @@
-<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
+<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
+		<p>
+	Thank you, thank you, thank you. What a great community we have.
+	Thank you for providing us with more mirrors. 
+		</p>
+		<p>
+	Matthew Healey member of the Western <a href="http://www.wamug.org.au">
+	Australian Macintosh User Group</a> and their 
+	<a href="http://www.extremedsl.com.au">ISP extremedsl</a>
+	are providing Fink with a full mirror in Perth, Australia. This is our first
+	mirror in down under, thus I am pleased to welcome them to the family.
+	Furthermore the mirrors services at www.mirror.ac.uk have accepted us and are
+	making distfile services available for Fink on 21 load balanced server.
+		</p>
+		<p>
+	We are very happy about this development, but we still need more rsync mirrors.
+	Thus, once more, if you feel like helping, please visit 
+	<a href="http://finkmirrors.net">finkmirrors.net</a> and get in touch.
+		</p>
+		<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
 	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
         we crave more. To improve our service to all of you, we would like to ask that
         you evaluate carefully if you maybe do have the resources to become a mirror. 
@@ -41,34 +60,5 @@ new distribution for now, while the Fink team continues to modify
 Fink packages for 10.3.
 </p>
 <p>*Exceptions include: emacs, qt.
-</p>
-	<a name="2003-11-04 User Deletion Bug/ Dselect Troubles"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug/ Dselect Troubles</span></a><?php gray_line(); ?>
-<p><b>Quick Summary: DO NOT USE DSELECT,</b> and if you've used it,
-check your /sw/etc/apt/sources.list file carefully.</p>
-		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
-		on Mac OS X 10.3 could exhibit a problem where all users get deleted
-		from the netinfo database, and you become unable to log in.
-We believe that this problem can only occur if you've used dselect.</p>
-		<p>If you are using Mac OS X 10.3, please be sure you're using the
-		latest Fink version to avoid the issue.  To make sure you don't have
-		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
-		file.  You will need to modify it if it contains <code>deb</code>
-		lines that point to "release" or "current" without a version number.
-		In other words, if your <code>sources.list</code> file contains
-		these lines:</p>
-		<pre>deb http://us.dl.sourceforge.net/fink/direct_download release main
-deb http://us.dl.sourceforge.net/fink/direct_download current main</pre>
-		<p>...you should change them to this:</p>
-		<pre>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
-deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</pre>
-		<p>We are working on updating the repository to make sure that even
-		if you update you don't get the broken code, and to
-repair dselect, but in the meantime,
-		make sure your <code>sources.list</code> file has the correct entries.</p>
-<p>Other users have experienced problems with dselect itself, particularly
-complaints about a missing "darwin" package.  If you are running dselect
-under 10.3 and you <b>don't</b> get this warning, then your 
-<code>sources.list</code> file is likely to be corrupted and you should
-repair it as above.
 </p>
 	
