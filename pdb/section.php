@@ -1,13 +1,12 @@
 <?
 $title = "Package Database - Section ";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/12/09 04:24:58 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
 $section = $pispec;
 ?>
-
 
 <?
 if ($section == "-") {
@@ -20,13 +19,31 @@ if ($section == "-") {
 <h1>Archive Section <? print $section ?></h1>
 
 <?
-$q = "SELECT name,descshort FROM package ".
-     "WHERE section='$section' AND latest=1 ORDER BY name ASC";
+/* Add some special case bundle splitoffs */	
+if($section == "games")
+{
+  $sectionquery = " (section='$section' OR parentname REGEXP 'kdegames3|kdetoys3') ";
+} else if($section == "graphics")
+{	
+  $sectionquery = " (section='$section' OR parentname='kdegraphics3') ";
+} else if($section == "sound")
+{	
+  $sectionquery = " (section='$section' OR parentname='kdemultimedia3') ";
+} else if($section == "utils")
+{	
+  $sectionquery = " (section='$section' OR parentname='kdeutils3') ";
+} else
+$sectionquery = " section='$section' ";
+
+$q = "SELECT name,descshort FROM package WHERE ". $sectionquery .
+	 " AND !(name REGEXP '.*-(dev|shlibs|bin|common|doc)$') ".
+     "AND latest=1 ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
   $count = mysql_num_rows($rs);
+
 ?>
 
 <p>Found <? print $count ?> packages in section <? print $section ?>:</p>

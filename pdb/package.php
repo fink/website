@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/08 21:41:05 $';
+$cvs_date = '$Date: 2002/12/09 04:24:57 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -69,7 +69,24 @@ if (!$rs) {
   if ($row[homepage]) {
     it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
   }
+  if ($row[parentname]) {
+    it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$row[parentname].'">'.$row[parentname].'</a>');
+  }
 
+
+	// List the splitoffs of this package
+
+	$q = "SELECT * FROM splitoffs WHERE parentkey='$row[release]$row[name]'";
+	$rs = mysql_query($q, $dbh);
+	if (!$rs) {
+	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+	} else {
+	  if($row = mysql_fetch_array($rs))
+	    it_item("SplitOffs:", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.$row[descshort]);
+	  while ($row = mysql_fetch_array($rs)) {
+		it_item(" ", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.$row[descshort]);
+	  }
+	}
   it_end();
 ?>
 
