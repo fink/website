@@ -1,13 +1,13 @@
 <?
 $title = "Accès CVS à Fink";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/03/07 20:54:08';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/16 06:43:56';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Configuration de l'accès à Fink via CVS</h1><!--Generated from $Fink: cvs.fr.xml,v 1.2 2004/03/07 20:54:08 fingolfin Exp $-->
+<h1>Configuration de l'accès à Fink via CVS</h1><!--Generated from $Fink: cvs.fr.xml,v 1.3 2004/03/16 06:43:56 michga Exp $-->
 <p>
 Fink est développé via CVS.
 Cela vous permet de rester à jour entre deux versions et d'avoir toujours les paquets les plus récents.
@@ -21,7 +21,7 @@ contient les descriptions de paquets et les rustines pour OS X 10.2 et supérieu
 <p>Auparavant, la procédure était compliquée ; mais, avec la version actuelle de Fink, elle s'est grandement simplifiée. Il faut suffit de lancer cette commande :
 </p>
 <pre>fink selfupdate-cvs</pre>
-<p>Fink exécute alors automatiquement toutes les étapes nécessaires. Il récupère les descriptions de paquets les plus récentes et met à jour un certain nombre de paquets fondamentaux (dont le gestionnaire de paquet Fink).
+<p>Fink exécute alors automatiquement toutes les étapes nécessaires. Il récupère les descriptions de paquets les plus récentes et met à jour un certain nombre de paquets fondamentaux (dont le gestionnaire de paquets Fink).
 </p>
 <p>Si vous êtes derrière un mur pare-feu, consultez <a href="http://fink.sourceforge.net/faq/usage-fink.php#proxy">QFP 3.2</a>.
 </p>
@@ -34,7 +34,7 @@ contient les descriptions de paquets et les rustines pour OS X 10.2 et supérieu
 Il est, cependant, toujours possible de le mettre à jour directement via CVS, bien que cela ne soit vraiment utile qu'aux personnes qui créent des paquets.
 </p>
 
-<p>Le gestionnaire de paquet doit être mis à jour dans un répertoire distinct à l'aide du script <code>inject.pl</code>. Ce script met dans votre arborescence Fink les descriptions de paquets et les archives tar de fink et des paquets fondamentaux, puis les compile.</p>
+<p>Le gestionnaire de paquets doit être mis à jour dans un répertoire distinct à l'aide du script <code>inject.pl</code>. Ce script met dans votre arborescence Fink les descriptions de paquets et les archives tar de fink et des paquets fondamentaux, puis les compile.</p>
 <p>La première, vous devez utiliser un répertoire temporaire
 (nommé <code>tempdir</code> par exemple) vide (ou qui ne contient pas lui-même un sous-répertoire 'fink'). Voici la procédure à employer :</p>
 <pre>cd tempdir
