@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.107 2003/11/30 21:43:49 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.108 2003/12/14 13:22:12 dmalloc Exp $</cvsid>
 
 
 <newsitem>
@@ -13,12 +13,12 @@
 	Thank you for providing us with more mirrors. 
 		</p>
 		<p>
-	Matthew Healey member of the Western <extlink url="http://www.wamug.org.au">
-	Australian Macintosh User Group</extlink> and their 
-	<extlink url="http://www.extremedsl.com.au">ISP extremedsl</extlink>
+	Matthew Healey, member of the Western <extlink url="http://www.wamug.org.au">
+	Australian</extlink> Macintosh User Group, and their 
+	ISP <extlink url="http://www.extremedsl.com.au">extremedsl</extlink>
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the <extlink url="www.mirror.ac.uk">UKMIRROR</extlink> service 
+	Furthermore the <extlink url="http://www.mirror.ac.uk">UKMIRROR</extlink> service 
 	has accepted us, making distfile services available for Fink 
 	on 21 load balanced server.
 		</p>

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 07 Dec 2003 20:40:52 PST</lastBuildDate>
+    <lastBuildDate>Sun, 14 Dec 2003 14:21:35 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
@@ -17,8 +17,8 @@
 	Thank you for providing us with more mirrors. 
 		
 		
-	Matthew Healey member of the Western 
-	Australian Macintosh User Group and their 
+	Matthew Healey, member of the Western 
+	Australian Macintosh User Group, and their 
 	ISP extremedsl
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.

@@ -14,12 +14,12 @@ include "header.inc";
 	Thank you for providing us with more mirrors. 
 		</p>
 		<p>
-	Matthew Healey member of the Western <a href="http://www.wamug.org.au">
-	Australian Macintosh User Group</a> and their 
-	<a href="http://www.extremedsl.com.au">ISP extremedsl</a>
+	Matthew Healey, member of the Western <a href="http://www.wamug.org.au">
+	Australian</a> Macintosh User Group, and their 
+	ISP <a href="http://www.extremedsl.com.au">extremedsl</a>
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the <a href="www.mirror.ac.uk">UKMIRROR</a> service 
+	Furthermore the <a href="http://www.mirror.ac.uk">UKMIRROR</a> service 
 	has accepted us, making distfile services available for Fink 
 	on 21 load balanced server.
 		</p>
