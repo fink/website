@@ -4,9 +4,22 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 11 Feb 2003 07:50:37 EST</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2003 08:53:17 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>New version of FinkCommander</title>
+    <link>http://fink.sf.net/news/#2003-02-14%20New%20version%20of%20FinkCommander</link>
+    <dc:date>2003-02-14</dc:date>
+    <description>
+        FinkCommander,
+ a separate project which provides a GUI for Fink,
+has released version 0.5.0, their first Jaguar-only version.  The new
+version includes a package browser which allows you to view the files 
+that Fink has installed for a particular package, as well as many 
+other improvements.
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>DO NOT INSTALL VIREX 7.2</title>
     <link>http://fink.sf.net/news/#2003-02-07%20DO%20NOT%20INSTALL%20VIREX%207.2</link>
@@ -378,16 +391,6 @@ software before using Fink.
     
     
       Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our CVS. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.3.1 is released</title>
-    <link>http://fink.sf.net/news/#2001-11-04%20Fink%200.3.1%20is%20released</link>
-    <dc:date>2001-11-04</dc:date>
-    <description>
-    
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the recently updated User's Guide. 
     
   </description>
   </item>

@@ -1,14 +1,21 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/02/11 12:52:31';
+$cvs_date = 'Date: 2003/02/14 13:54:34';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-02-07 DO NOT INSTALL VIREX 7.2"><span class="news_date">2003-02-07: </span><span class="news_headline">DO NOT INSTALL VIREX 7.2</span></a><?php gray_line(); ?>
+<a name="2003-02-14 New version of FinkCommander"><span class="news_date">2003-02-14: </span><span class="news_headline">New version of FinkCommander</span></a><?php gray_line(); ?>
+        <p><a href="http://finkcommander.sourceforge.net/">FinkCommander</a>,
+ a separate project which provides a GUI for Fink,
+has released version 0.5.0, their first Jaguar-only version.  The new
+version includes a package browser which allows you to view the files 
+that Fink has installed for a particular package, as well as <a href="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many 
+other improvements.</a>
+</p><a name="2003-02-07 DO NOT INSTALL VIREX 7.2"><span class="news_date">2003-02-07: </span><span class="news_headline">DO NOT INSTALL VIREX 7.2</span></a><?php gray_line(); ?>
         <p>
         The Virex 7.2 package, currently being distributed free to all .Mac 
 members, has a serious conflict with Fink.  <b>Fink users should not install 

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.43 2003/02/11 12:52:31 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.44 2003/02/14 13:54:34 dmrrsn Exp $</cvsid>
+<newsitem>
+        <date>2003-02-14</date>
+        <headline>New version of FinkCommander</headline>
+        <body>
+        <p><extlink
+ url="http://finkcommander.sourceforge.net/">FinkCommander</extlink>,
+ a separate project which provides a GUI for Fink,
+has released version 0.5.0, their first Jaguar-only version.  The new
+version includes a package browser which allows you to view the files 
+that Fink has installed for a particular package, as well as <extlink 
+url="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many 
+other improvements.</extlink>
+</p></body></newsitem>
 <newsitem>
         <date>2003-02-07</date>
         <headline>DO NOT INSTALL VIREX 7.2</headline>
