@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.6 2004/03/24 18:14:58 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.7 2004/04/17 01:15:30 jeff_yecn Exp $</cvsid>
 
 <preface>
 <p>
@@ -50,6 +50,7 @@
     <title>其它文档</title>
     <ul>
       <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.zh.html">国际化指南</varlink> ─ 有关目前网站所在进行的国际化工作的文档</li>
+      <li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.zh.html">邮件列表使用规则</varlink>-如何更好地使用 Fink 邮件列表。</li>
     </ul>
   </section>
 </article>
