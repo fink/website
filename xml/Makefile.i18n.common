@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.16 2004/03/23 12:46:29 dmrrsn Exp $
+# $Id: Makefile.i18n.common,v 1.17 2004/10/20 11:00:50 dmacks Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -73,7 +73,7 @@ force: clean all
 	xmllint --noout --valid $<
 	xsltproc -o $@ $(STYLESHEET_HTML) $<
 
-%.html: %.html.tmp
+%.html: %.html.tmp $(PROCESS_HTML)
 #	$(PROCESS_HTML) <$< >$@
 	$(PROCESS_HTML) $< $(LANGUAGES) >$@
 
