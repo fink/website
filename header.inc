@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.40 2002/01/21 22:32:48 fingolfin Exp $ */
+/* $Id: header.inc,v 1.41 2002/01/22 00:44:58 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -220,7 +220,7 @@ function it_start() {
 }
 
 function it_item($title, $item) {
-  global $it_flag;
+  global $it_flag, $root;
 
   if ($it_flag) {
     print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt="" /></td></tr>'."\n";
