@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.9 2002/07/16 23:23:07 fingolfin Exp $
+# $Id: Makefile,v 1.10 2004/02/11 16:42:48 chris01 Exp $
 
 # generate all documents
 
@@ -15,7 +15,7 @@ all clean force install:
 # validate the XML files
 
 check:
-	find -name "*.xml" | xargs xmllint --noout --valid
+	/usr/bin/find . -name "*.xml" | xargs xmllint --noout --valid
 
 .PHONY: all clean force install
 
