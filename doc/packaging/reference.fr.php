@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/11 10:13:39';
+$cvs_date = 'Date: 2004/08/11 10:23:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -37,12 +37,12 @@ Selon les règles de Fink, un paquet donné doit toujours être compilé avec le
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
 Le numéro de version en amont. Même limitations que pour le champ Package. Champ obligatoire.</p>
-<p>Notez que certains programmes utilisent une numérotation de version non standard qui peut provoquer des problèmes de tri, ou bien utilisent des caractères non autorisés dans ce champ. Dans ce cas, vous devez convertir la valeur de la version originale en une valeur acceptable qui permette de trier les versions correctement. Si vous ne savez pas comment les versions seront triées, utilisez la commande <code>dpjkg</code> à l'invite d'un shell. Par exemple :
+<p>Notez que certains programmes utilisent une numérotation de version non standard qui peut provoquer des problèmes de tri, ou bien utilisent des caractères non autorisés dans ce champ. Dans ce cas, vous devez convertir la valeur de la version originale en une valeur acceptable qui permette de trier les versions correctement. Si vous ne savez pas comment les versions seront triées, utilisez la commande <code>dpkg</code> à l'invite d'un shell. Par exemple :
 </p>
 <pre>
   dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 </pre>
-<p>imprimera "vrai" car le numéro de version "1.2.1" est inférieur au numéro de version "1.3". Voir le page de manuel <code>dpkg</code> pour de plus amples informations.</p>
+<p>imprimera "vrai" car le numéro de version "1.2.1" est inférieur au numéro de version "1.3". Voir la page de manuel <code>dpkg</code> pour de plus amples informations.</p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
 Le numéro de révision du paquet. Incrémentez ce numéro quand vous faites une nouvelle description pour la même version en amont. Les numéros de révision commencent à 1. Champ obligatoire.
