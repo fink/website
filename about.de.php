@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/10 09:34:14 $';
+$cvs_date = '$Date: 2004/04/10 09:52:43 $';
 
 include "header.inc";
 ?>
@@ -21,20 +21,20 @@ Erstens, bereits existierende Open Source Software so zu modifizieren, dass Sie 
 (Diesen Prozess nennt man "Portieren".)
 Zweitens, die Ergebnisse dem Gelegenheitsnutzern zugänglich zu machen, als eine zusammenhängende, komfortable Distribution, die den Gewohnheiten der Linux Nutzer entspricht.
 (Dieser Prozess wird "Packaging" genannt.)
-Das Project bietet sowohl vorkompilierte Binär-Packete als auch ein vollautomatisiertes System, das es ermöglicht direkt von den Quellcodes zu kompilieren.
+Das Projekt bietet sowohl vorkompilierte Binär-Packete als auch ein vollautomatisiertes System, das es ermöglicht direkt von den Quellcodes zu kompilieren.
 </p>
 <p>
 Um diese Ziele zu erreichen, vertraut Fink auf die exzellenten Packet-Management-Tools, die vom
 <a href="http://www.debian.org/">Debian</a> Project entwickelt wurden : <code>dpkg</code>
 <code>dselect</code> and <code>apt-get</code>.
-Darüber hinaus bietet Fink seinen eigenen Paket-Manager, genannt <code>fink</code> an (welch Überraschung!).
+Darüber hinaus bietet Fink seinen eigenen Paket-Manager, genannt <code>fink</code>(welch Überraschung!), an.
 Man kann <code>fink</code> als eine "build engine" ansehen - es benutzt die Paketbeschreibungen und erstellt daraus binäre .deb Pakete.
-Während dieses Prozesse, lädt es den originalen Quellcode aus dem Internet, führt wenn nötig Patches aus, und geht dann durch den gesamten Konfigurations- und Build-Prozess des Pakets.
-Zuletzt, packt es die Ergbenisse in ein Archiv, welches dann von <code>dpkg</code> installiert werden kann.
+Während dieses Prozesses lädt es den originalen Quellcode aus dem Internet, führt wenn nötig Patches aus, und geht dann durch den gesamten Konfigurations- und Build-Prozess des Pakets.
+Zuletzt packt es die Ergebnisse in ein Archiv, welches dann von <code>dpkg</code> installiert werden kann.
 </p>
 <p>
 Da Fink auf Mac OS X aufbaut, gilt die strikte Regel, zu verhindern, dass es dem Basissystem irgendwie in die Quere kommt.
-Daraus folgt, dass Fink in einer eigenständigen Ordner Struktur residiert und die Infrastruktur anbietet, um es einfach zu benutzen.</p>
+Daraus folgt, dass Fink in einer eigenständigen Ordnerstruktur residiert, und die Infrastruktur anbietet, um es einfach zu benutzen.</p>
 
 
 <h2>Warum sollte ich Fink benutzen?</h2>
@@ -46,11 +46,11 @@ Fünf Gründe, warum Sie Fink benutzen sollten, um Unix Software auf Ihrem Mac z
 <p>
 <b>Power.</b>
 Mac OS X beinhaltet nur eine ein paar grundlegende Kommandozeilen-Tools.
-Fink bietet Ihnen Verbesserungen für diese Tools als auch eine Auswahl an grafischen Anwendungen, entwickelt für Linux und andere Unix Varianten.</p>
+Fink bietet Ihnen Verbesserungen für diese Tools und zudem eine Auswahl an grafischen Anwendungen, entwickelt für Linux und andere Unix Varianten.</p>
 
 <p>
 <b>Bedienerfreundlichkeit.</b>
-Da der Prozess des Kompilierens mit Fink komplett automatisiert wird, müssen sie sich nie wieder um Makefiles oder Konfigurations-Skripte und ihre Parameter kümmern.
+Da der Prozess des Kompilierens mit Fink komplett automatisiert wird, müssen Sie sich nie wieder um Makefiles oder Konfigurations-Skripte und ihre Parameter kümmern.
 Alle Paket-Abhängigkeiten werden automatisch aufgelöst und es wird dafür gesorgt, dass alle Bibliotheken vorhanden sind.
 Unsere Pakete sind normalerweise so eingerichtet, dass sie die maximalen Features unterstützen.
 </p>
@@ -68,7 +68,7 @@ Fink ist nicht einfach eine zufällige Ansammlung von Paketen, es ist eine gesch
 Installierte Dateien werden an vorhersagebare Orte abgelegt.
 Dokumentationen werden aktuell gehalten.
 Es existiert eine einheitliche Oberfläche, um Server Prozesse zu kontrollieren.
-Da ist noch mehr, das meiste davon arbeitet verborgen und der Oberfläche.
+Und noch vieles mehr, das meiste davon arbeitet verborgen und der Oberfläche.
 </p>
 
 <p>
