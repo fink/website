@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.4 2004/03/19 20:59:04 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.5 2004/04/12 02:48:49 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
@@ -772,13 +772,13 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         <li>
           <p>
             <em>KeepRootDir:</em> 布尔值</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-name-version 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-[name]-[version]-[revision] 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
           </p>
         </li>
         <li>
           <p>
             <em>KeepBuildDir:</em> boolean</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/name-version 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/[name]-[version]-[revision] 目录。默认值是 False。<em>注意，使用这个选项可以很快塞满你的硬盘！</em>
           </p>
         </li>
       </ul>

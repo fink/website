@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.1 2004/03/04 07:45:00 dmalloc Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.2 2004/04/12 02:48:49 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>Este documento es un trabajo en proceso.</em>
@@ -794,13 +794,13 @@ ClosestFirst - Buca la lista de espejos más cercanos (combina todos los espejos
         <li>
           <p>
             <em>KeepRootDir:</em> boolean</p>
-          <p>Ocasiona que el Fink no borre el directorio /sw/src/root-name-version despues de haber construido el paquete. Es por omisión false. <em>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</em>
+          <p>Ocasiona que el Fink no borre el directorio /sw/src/root-[name]-[version]-[revision] despues de haber construido el paquete. Es por omisión false. <em>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</em>
           </p>
         </li>
         <li>
           <p>
             <em>KeepBuildDir:</em> boolean</p>
-          <p>Ocasiona que el Fink no borre el directorio /sw/src/root-name-version despues de haber construido el paquete. Es por omisión false. <em>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</em>
+          <p>Ocasiona que el Fink no borre el directorio /sw/src/[name]-[version]-[revision] despues de haber construido el paquete. Es por omisión false. <em>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</em>
           </p>
         </li>
       </ul>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.5 2004/03/27 09:40:10 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.6 2004/04/12 02:48:49 dmacks Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -788,13 +788,13 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
         <li>
           <p>
             <em>KeepRootDir:</em> booléen</p>
-          <p>Empêche Fink de supprimer le répertoire /sw/src/root-nom-version après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+          <p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
           </p>
         </li>
         <li>
           <p>
             <em>KeepBuildDir:</em> booléen</p>
-          <p>Empêche Fink de supprimer le répertoire /sw/src/nom-version après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+          <p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
           </p>
         </li>
       </ul>
