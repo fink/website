@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/03/19 22:54:53';
+$cvs_date = 'Date: 2002/04/03 15:05:21';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -133,10 +133,16 @@ then turn to the question of upgrading existing fink packages.  For
 examples of the policy in action, see the  libpng, libjpeg  and 
 libtiff packages.
 </p><p>
-Software which has been ported to Darwin should build shared libraries (as 
-opposed to static libraries) whenever possible.  When this has been done,
+Software which has been ported to Darwin should build shared libraries 
+whenever possible.  (Package maintainers
+are also free to build static libraries as well, if appropriate
+for their packages; or they may submit packages containing only static
+libraries if they wish.)
+Whenever shared libraries are being built,
 <b>two</b> closely related fink packages should be made, named foo 
-and foo-shlibs.  These can be made with a single .info file, using
+and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
+files go in foo.  These two packages
+can be made with a single .info file, using
 the <tt><nobr>SplitOff</nobr></tt> field, as described below.  
 (In fact, it is often necessary
 to make more than two packages from the source, and this can be done
