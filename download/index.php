@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: htodd $';
-$cvs_date = '$Date: 2003/11/02 05:44:05 $';
+$cvs_date = '$Date: 2003/11/02 05:48:35 $';
 
 include "header.inc";
 ?>
@@ -16,11 +16,7 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 </p>
 
 <p>
-Keep in mind that these instructions are <b>NOT for Panther</b>. Currently there is no binary installer for Panther, and there are no binaries for Panther.
-</p>
-
-<p>
-If you wish to do a fresh install of Fink on a 10.3 system, we recommend <a href="http://fink.sf.net/download/srcdist.php">bootstrapping from source,</a> starting from fink-full-0.6.0.tar.gz available on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203"> sourceforge download page.</a> You'll need XCode for this as well.
+Keep in mind that these instructions are <b>NOT for Panther</b>. Currently there is no binary installer for Panther, and there are no binaries for Panther. If you wish to do a fresh install of Fink on a 10.3 system, we recommend <a href="http://fink.sf.net/download/srcdist.php">bootstrapping from source,</a> starting from fink-full-0.6.0.tar.gz available on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203"> sourceforge download page.</a> You'll need XCode for this as well.
 </p>
 
 <h2>Quick Start</h2>
