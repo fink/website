@@ -6,10 +6,9 @@ Les dernières versions de Fink 0.6.3 (pour Mac OS 10.2) et 0.7.0 (pour Mac OS 1
 Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire de paquets, ajouté de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilé certains paquets qui posaient des problèmes sur 10.3.
 	</p>
 	<p>
-Pour faire une première installation de Fink, vous devez suivre les instructions données <a href="@ROOT@download/index.php?phpLang=en">ici</a>.
-Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données <a href="@ROOT@download/upgrade.php?phpLang=en">là</a>.
-
-Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus <a href="@ROOT@lists/index.php?phpLang=en">ici</a>.
+Pour faire une première installation de Fink, vous devez suivre les instructions données <a href="download/index.php?phpLang=fr">ici</a>.
+Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données <a href="download/upgrade.php?phpLang=fr">là</a>.
+Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus <a href="lists/index.php?phpLang=fr">ici</a>.
 		</p>
 		<p>
 Vérifiez que vous avez téléchargé le <b>bon installeur</b> pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
@@ -30,7 +29,7 @@ En quelle langue êtes-vous prêt à traduire ?
 </p>
 <p>
 Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
-Pour ce faire, allez sur la <a href="@ROOT@lists/index.php">page des listes de diffusion</a>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</a>.
+Pour ce faire, allez sur la <a href="lists/index.php?phpLang=fr">page des listes de diffusion</a>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</a>.
 </p>
 <a name="02/02/2004 "><span class="news-date">02/02/2004: </span><span class="news-headline">La mise à jour de Java 1.4.2 supprime Java SDK</span></a><?php gray_line(); ?>
 	<p>
