@@ -71,7 +71,7 @@ do with whether missing symbols at runtime is considered a fatal error on
 startup or not, for applications that use weak references.</p></div>
 </a>
 <a name="mv-failed">
-<div class="question"><p><b>Q4.7: What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</b></p></div>
+<div class="question"><p><b>Q4.7: What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</b></p></div>
 <div class="answer"><p><b>A:</b> It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
