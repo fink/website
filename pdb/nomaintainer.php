@@ -1,14 +1,30 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/17 23:42:15 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2005/03/03 10:00:01 $';
 
 include "header.inc";
 ?>
 
+if (!param(distro)) {
+  $distro_sql = "AND (release LIKE 'current-10.2-gcc3.3%' OR release LIKE 'current-10.3%')";
+  $distro_txt = ' in the 10.2-gcc3.3 and 10.3 releases';
+} else if (!strcmp(param(distro),"all")) {
+  $distro_sql = '';
+  $distro_txt = '';
+} else if (ereg("[^a-zA-Z0-9_.+-]",param(distro))) {
+  print '<p><b>error during query:</b> invalid distro</p>';
+  $distro_sql = '';
+  $distro_txt = '';
+} else {
+  $distro_sql = "AND release LIKE 'current-".param(distro)."%'";
+  $distro_txt = ' in the '.param(distro). ' release';
+}
+
 <?
 $q = "SELECT name,descshort FROM package ".
-     "WHERE maintainer LIKE '%None%' AND latest=1 AND parentname IS NULL ORDER BY name ASC";
+     "WHERE maintainer LIKE '%None%' AND latest=1 AND parentname IS NULL ".
+     " $distro_sql ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
@@ -29,7 +45,7 @@ developers</a> and volunteer!</p>
 <p>Core Fink developers are welcome to adopt a package by changing the
 maintainer name in the package's .info file to their own.</p>
 
-<p>Found <? print $count ?> packages without maintainers:</p>
+<p>Found <? print $count ?> packages without maintainers<? print $distro_txt ?>:</p>
 
 <ul>
 <?
