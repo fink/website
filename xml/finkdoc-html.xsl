@@ -111,9 +111,9 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 
 <h1><xsl:value-of select="title"/></h1>
 
-<xsl:apply-templates select="preface" />
-
 <xsl:apply-templates select="cvsid" />
+
+<xsl:apply-templates select="preface" />
 
 <xsl:apply-templates select="section" />
 
