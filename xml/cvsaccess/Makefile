@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.3 2001/06/30 11:27:48 chrisp Exp $
+# $Id: Makefile,v 1.4 2001/07/01 06:57:16 chrisp Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -6,6 +6,7 @@ basedir = ..
 
 SOURCE = cvs.xml
 TARGET = index.php
+DESTDIR = doc/cvsaccess
 
 include $(basedir)/Makefile.common
 
