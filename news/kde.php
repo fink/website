@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/30 20:04:03 $';
+$cvs_date = '$Date: 2002/06/08 20:48:36 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 <h1>KDE Support In Fink</h1>
 
 <p>
- The Fink team is happy to announce preliminary support for
+ The Fink team is happy to announce support for
  <a href="http://www.kde.org/">KDE</a> on 
  <a href="http://www.apple.com/macosx/">MacOS X</a>.
 </p>
@@ -43,6 +43,47 @@ Screenshots:
  file available at the top of the KDE-Darwin tree.
 </p>
 
+<h1>What's New?</h1>
+<p>
+ This is the second release of the KDE packages for Fink.  The two
+ largest changes are a big speed boost, and smaller packages.  A bug
+ in QT 3.0.4 on PowerPC caused a large part of the speed issues with KDE
+ on OSX.  While it's still not a speed demon (much of that being due to
+ XDarwin being unaccelerated), it's <strong>much</strong> faster than the
+ last release, most noticeably in application startup times.  Also, all
+ packages have been built with --enable-final now, and so the KDE packages
+ are nearly a quarter of the size of the first release.
+</p>
+<p>
+ The fixes to QT have also resolved a number of other small issues in
+ various bits of KDE.  Notable things still missing are some of the KDE
+ packages (kdemultimedia, kdepim, etc.) and KDM.
+</p>
+<p>
+ Also, a couple of small eye-candy packages that were a quick rebuild
+ have been added (keramik and conectiva-crystal).  See the
+ <a href="http://fink.sourceforge.net/pdb/index.php">package database</a>
+ for the full list of packages available to you.
+</p>
+
+<h1>Upgrading Fink KDE</h1>
+
+<p>
+ <font color="#ff0000" size="+1">If you are upgrading from the previous
+ release of the Fink KDE packages, read this carefully.</font>
+</p>
+<p>
+ The KDE packages exposed a bug in the xfree86-base package that was in
+ Fink unstable that required users of the KDE binaries to upgrade to the
+ xfree86-base package from Fink (rather than using XDarwin or an older
+ XFree86 4.2 release).  This has been fixed in the latest packages.  If
+ you have already installed KDE from the fink binary release,
+ <strong>please</strong> run the following set of commands to upgrade:
+</p>
+<p>
+	 <nobr><b><tt>sudo apt-get update; sudo apt-get upgrade</tt></b></nobr>
+</p>
+
 <h1>Big Fat Warning!</h1>
 
 <p>
@@ -59,24 +100,6 @@ Screenshots:
  In other words, don't say we didn't warn you!  =)
 </p>
 
-<p>
- <font color="#ff0000" size="+1">These packages will only work with the
- xfree86-base from the Fink distribution, version 4.2.0-5 or higher.</font>
-</p>
-<p>
- Fink provides a "virtual" package for XFree86 called "system-xfree86", for
- users that have downloaded XonX or some other binary XFree86 distribution
- and don't want to build XFree86 from source.  Unfortunately, the non-Fink
- releases of XFree86 (4.2.0, or even older) do not have Xinerama enabled.
- The newest version of the XFree86 package in Fink unstable (which these
- KDE binaries are based on) does.  KDE was linked against the Xinerama
- library, and will not function if it doesn't exist.
-</p>
-<p>
- If you want to continue using system-xfree86, you will need to follow the
- instructions for building from source.  Otherwise, you will need to upgrade
- to xfree86-base and xfree86-rootless through apt or dselect.
-</p>
 <h1>Installing KDE On Fink</h1>
 
 <p>
@@ -151,16 +174,6 @@ Screenshots:
    <p>Next, update your package cache by running <b><tt>sudo apt-get update</tt></b>. This
    will update the local list of all available binary packages.</p>
   </li>
-  <li> <p> Then, if you have system-xfree86 or a version of xfree86-base older than
-   4.2.0-5, you will need to upgrade to the newest XFree86 packages.  To determine the
-   version that you are currently running, do:
-   </p>
-   <p>
-    <nobr><b><tt>dpkg -l xfree86-base</tt></b></nobr>
-   </p>
-   <p>
-   To upgrade, just run "<b><tt>sudo apt-get install xfree86-base; sudo apt-get
-   install xfree86-rootless</tt></b>" to make your X installation current. </p> </li>
   <li>
    If all went well, you should now be able to install any of the KDE packages. To
    install everything up to the the base set of packages required to run KDE
