@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/06/06 01:04:27';
+$cvs_date = 'Date: 2003/06/24 13:48:00';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -91,6 +91,10 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <p>Try again to install | upgrade.  At some point a &quot;virtual dependency&quot; prompt will come up that includes the package you just removed.  Select it, and it will be reinstalled during your build.</p>
 </li>
 </ul></div>
+</a>
+<a name="usr-local-libs">
+<div class="question"><p><b>Q4.9: I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</b></p></div>
+<div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package configuration script finds libraries under <code>/usr/local/lib</code> before searching in the Fink path.  If you are having problems with a build that aren't covered by another FAQ entry, you should check whether you have libraries in <code>/usr/local/lib</code>.  If so, then try renaming <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <code>/usr/local</code> back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>

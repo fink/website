@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/06/06 01:04:27';
+$cvs_date = 'Date: 2003/06/24 13:48:00';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -95,6 +95,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#weak_lib">4.6 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li>
 <li><a href="comp-general.php#mv-failed">4.7 What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</a></li>
 <li><a href="comp-general.php#node-exists">4.8 I can't install a package | update because I get a message that a &quot;node&quot; already exists.</a></li>
+<li><a href="comp-general.php#usr-local-libs">4.9 I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -138,7 +139,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.113 2003/06/06 01:04:27 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.114 2003/06/24 13:48:00 alexkhansen Exp $</i></p>
 
 
 <?
