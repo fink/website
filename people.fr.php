@@ -1,7 +1,7 @@
 <?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 17:51:58 $';
+$cvs_date = '$Date: 2004/03/05 14:02:13 $';
 
 include "header.inc";
 ?>
@@ -64,13 +64,9 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 
 <h2>Support, traduction et équipe de documentation </h2>
 <ul>
-<li>Lenin Dominguez</li> <!-- Spanish Team Leader -->
+<li>Yoshihiko Baba (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
-<li>Michèle Garoche (<i>miga</i>)</li> <!-- French Team Leader -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists -->
-<li>Christian Putze</li> <!-- German Team Leader -->
-<li>Jeff Ye</li> <!-- Chinese Team Leader -->
-<li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 </ul>
 
 <h2>Contributeurs occasionnels</h2>
