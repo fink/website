@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/26 12:57:01 $';
+$cvs_date = '$Date: 2001/04/26 16:15:10 $';
 
 include "header.inc";
 ?>
@@ -28,14 +28,20 @@ table of contents but there are no answers.</p>
 <li><a href="general.php#what">What is Fink?</a></li>
 <li><a href="general.php#naming">What does the name Fink stand for?</a></li>
 </ul>
-<li><b>Installation troubleshooting</b></li>
+<li><b>Installation</b></li>
 <ul>
 </ul>
-<li><b>Usage troubleshooting</b></li>
+<li><b>Usage</b></li>
 <ul>
 </ul>
-<li><b>Problems with certain packages</b></li>
+<li><a href="packages.php"><b>Problems with certain packages</b></a></li>
 <ul>
+<li><a href="packages.php#icewm">IceWM won't compile.</a></li>
+<li><a href="packages.php#gnomecore">The gnome-core package won't
+compile. It complains about multiple definitions of _login_tty. What's
+wrong?</a></li>
+<li><a href="packages.php#qt">Qt won't compile.</a></li>
+<li><a href="packages.php#nedit">nedit is broken.</a></li>
 </ul>
 </ul>
 
