@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/03 19:01:14';
+$cvs_date = 'Date: 2004/08/03 20:09:48';
 $metatags = '';
 
 include_once "header.inc";
@@ -24,7 +24,7 @@ include_once "header.inc";
 	 To get a better understanding of the different types of mirrors 
 	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hestitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
+	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
 	</p>
 	<a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
 	<p>

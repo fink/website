@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 03 Aug 2004 15:01:56 EDT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2004 16:09:47 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
@@ -28,7 +28,7 @@
 	 To get a better understanding of the different types of mirrors 
 	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hestitate in contacting us as well.
+	 web-space for testing as an example, please do not hesitate in contacting us as well.
 	
 	</description>
   </item>
