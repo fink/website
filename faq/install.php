@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Installation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/24 12:18:51 $';
+$cvs_date = '$Date: 2001/07/01 06:40:49 $';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage.php" title="Usage Questions"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -37,6 +37,22 @@ downloading. To use a proxy, you must tell wget to use it. You can do
 that by setting the environment variable http_proxy. See the
 <a href="http://www.gnu.org/manual/wget/html_chapter/wget_8.html#SEC36">wget
 manual</a> for details.</p></div></a>
+
+<a name="head"><div class="question"><p><b>Q: I'm getting a strange usage message
+from the head command. What's broken?</b></p></div>
+<div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1
+Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of options, you have a broken <tt><nobr>head</nobr></tt>
+executable.
+This happens when you install the Perl libwww library on an HFS+
+system volume.
+It tries to create a new command <tt><nobr>/usr/bin/HEAD</nobr></tt>, which
+overwrites the existing <tt><nobr>head</nobr></tt> command because the file
+system is case-insensitive.
+<tt><nobr>head</nobr></tt> is a standard command used in many shell scripts and
+Makefiles.
+You need to get the original <tt><nobr>head</nobr></tt> executable back if you
+want to use Fink.
+</p></div></a>
 
 
 
