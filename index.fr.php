@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/08/23 20:45:41 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/08/27 18:14:36 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -10,6 +10,17 @@ $metatags = '<meta name="description" content="Fink, une distribution de logicie
 
 include "header.inc";
 ?>
+
+<!-- Remove leading // to activate custom variables -->
+<script language="Javascript">
+//var DOCUMENTGROUP='';
+var DOCUMENTNAME='fr_Front';
+//var ACTION='';
+</script>
+<!-- End of Customization Code -->
+<!-- Tracking Code v3.01 - All rights reserved --><script language="javascript1.1" src="http://fink.sourceforge.net/tracking.js"></script>
+<noscript><img src="http://statistics.dynamicsitestats.com/p.pl?a=1000998514042&js=no" width="1" height="1"></noscript><!--//-->
+<!-- End of Tracking Code -->
 
 <p>
 Le projet Fink a pour but d'ouvrir toutes grandes les portes du monde des logiciels 
