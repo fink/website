@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/02/17 18:23:46 $';
+$cvs_date = '$Date: 2003/03/16 16:38:24 $';
 
 include "header.inc";
 ?>
@@ -47,6 +47,7 @@ this list.</p>
 <li>Jeremy Higgs</li>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Carsten Klapp</li>
+<li>Thomas Kotzian</li> 
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Christian Schaffner</li>
@@ -83,8 +84,10 @@ this list.</p>
 <li>Benjamin Esham</li> 
 <li>Matthew Flanagan</li> 
 <li>Chris Frank</li> 
+<li>Landon Fuller (<i>landonf</i>)</li>
 <li>Paul Gaborit</li> 
 <li>Stanton Gallegos (<i>stantron</i>)</li> 
+<li>James Gibbs</li>
 <li>Joe Gorse (<i>inca34</i>)</li>
 <li>Jake Goulding</li> 
 <li>Richard Graul</li>
@@ -93,7 +96,6 @@ this list.</p>
 <li>Richard Kiss</li> 
 <li>Eric Knauel</li> 
 <li>Killian Koepsell</li> 
-<li>Thomas Kotzian</li> 
 <li>Eric Knauel</li>
 <li>Bernd Kuemmerlen</li> 
 <li>Christopher League</li> 
@@ -119,6 +121,7 @@ this list.</p>
 <li>Michel Salim (<i>Hayashi-M</i>)</li>
 <li>Michel Schinz</li> 
 <li>Chris Shabsin</li> 
+<li>Dustin Sias (<i>dsias</i>)</li>
 <li>Leigh Smith</li> 
 <li>Daniel Sohl</li> 
 <li>Lindsey Spratt</li>
