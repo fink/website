@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:33';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/11/04 02:09:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -20,7 +20,7 @@ include_once "header.ja.inc";
 </p>
 <p>以下は、 <code>fink</code> ツールのコマンド一覧です:</p>
 
-<h2><a name="options">6.2 Global オプション</a></h2>
+<h2><a name="options">6.2 グローバルオプション</a></h2>
 
 <p>
 全ての fink コマンドに共通のオプションがあります。
@@ -42,8 +42,8 @@ include_once "header.ja.inc";
 で設定することができます。
 </p>
 <p>
-<code>--use-binary-dist</code> を使用すると， <code>fink</code> to try to
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします
+<code>--use-binary-dist</code> を使用すると， <code>fink</code> は
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードしようとします
 (<code>fink</code> バージョン 0.23.0 以降で有効)。
 </p>
 
@@ -274,7 +274,6 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 	  注記: 0.21.0 以降の <code>fink</code> で有効。
 	  </p>
 	  <p>
-	Shows how Fink parses parts of a package's .info file.
 	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
 	以下の<b>オプション引数</b>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>

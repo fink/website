@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.12 2004/11/04 02:09:30 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.13 2004/11/05 05:24:42 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -870,14 +870,14 @@ FTP サーバーやネットワークによっては、このオプションが 
 </li>
 <li>
 <p>
-<em>SelfUpdateMethod:</em> point, rsync あるいは cvs</p>
+<em>SelfUpdateMethod:</em> point, rsync または cvs</p>
 <p>
 Fink は、数種類の手段でパッケージ情報ファイルを更新することができます。
 <em>rsync</em> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
 stable や unstable 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
 これらのファイルを必ず事前にバックアップしてください。
 <em>cvs</em> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
-cvs はミラーを使えないという欠点があるため、 CVS サーバに接続することができない時は更新できません。
+cvs はミラーを使えないという欠点があるため、 CVS サーバーに接続することができない時は更新できません。
 <em>point</em> は最近リリースされたものだけをダウンロードします。
 ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
 </p>
@@ -1056,7 +1056,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 <p>以下は、 <code>fink</code> ツールのコマンド一覧です:</p>
 </section>
 <section name="options">
-<title>Global オプション</title>
+<title>グローバルオプション</title>
 <p>
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
@@ -1077,8 +1077,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 で設定することができます。
 </p>
 <p>
-<code>--use-binary-dist</code> を使用すると， <code>fink</code> to try to
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします
+<code>--use-binary-dist</code> を使用すると， <code>fink</code> は
+コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードしようとします
 (<code>fink</code> バージョン 0.23.0 以降で有効)。
 </p>
 </section>
@@ -1309,7 +1309,6 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 	  注記: 0.21.0 以降の <code>fink</code> で有効。
 	  </p>
 	  <p>
-	Shows how Fink parses parts of a package's .info file.
 	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
 	以下の<em>オプション引数</em>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>
