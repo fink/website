@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.5 2004/07/18 15:45:45 michga Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.6 2004/07/26 03:53:57 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -195,7 +195,7 @@ top with the <code>fink validate</code> step.
 </section>
 
 
-<section name="Submitt"><title>Submit your Package</title>
+<section name="Submit"><title>Submit your Package</title>
 <p>
 If your package passes all the checks above you now can submit the info 
 (and patch if necessary) file to the 

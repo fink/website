@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/18 15:45:45';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/26 03:53:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -174,7 +174,7 @@ top with the <code>fink validate</code> step.
 
 
 
-<h2><a name="Submitt">1.4 Submit your Package</a></h2>
+<h2><a name="Submit">1.4 Submit your Package</a></h2>
 <p>
 If your package passes all the checks above you now can submit the info 
 (and patch if necessary) file to the 

@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/18 15:46:48';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/26 03:53:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -76,7 +76,7 @@ finkdev% fink install nomdupaquet
 <p>et testez les fonctionnalités de votre paquet.</p>
 <p>Si le processus échoue lors d'une des étapes ci-dessus, essayez de corriger les erreurs et recommencez le processus à partir de l'étape <code>fink validate</code>.</p>
 
-<h2><a name="Submitt">1.4 Soumission de votre paquet</a></h2>
+<h2><a name="Submit">1.4 Soumission de votre paquet</a></h2>
 <p>Si toutes les étapes de vérification de votre paquet énoncées ci-dessus ont réussi, vous pouvez soumettre le fichier info (et le fichier patch s'il existe) au <a href="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Traqueur de soumissions de paquets</a>.</p>
 <p>Une personne se chargera d'examiner votre soumission et d'ajouter le paquet à la branche instable de Fink, si le paquet semble correct. Sinon, on vous demandera de mettre le paquet en accord avec les règles de Fink.</p>
 <p><b>Note :</b></p>
