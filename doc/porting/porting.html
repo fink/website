@@ -671,10 +671,66 @@ ltconfig file (available in pre-release versions of fink).
 As of May 22,
 we have had reports of success and failure with just a handful of Fink
 packages when one attempts to compile them with gcc3.  (Thanks to Jeff
-Hester, Jan de Leeuw, Mathias Meyer, and Alexander Strange for providing
+Hester, Jan de Leeuw, J-F Mertens, Mathias Meyer, Alexander Strange,
+and Chris Zubrzycki for providing
 reports. Further reports can
 be sent to fink-devel@lists.sourceforge.net .)
-</p><p><b> Successful packages:</b></p>
+</p><p><b> Unsuccessful packages:</b></p>
+<ol><li> apt-0.5.4-3 (breaks with undefined symbols such as 
+__ZTI9pkgSystem) </li>
+<li>bonobo-1.0.20-1(breaks with install_name error) <b>fixed June 12</b></li>
+<li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02051.html">emacs21</a></li>
+<li>gaim-0.57-1 (breaks with install_name error) <b>fixed June 13</b></li>
+<li>galeon-1.2.1-1</li>
+<li>gconf-1.0.9-1(breaks with install_name error) <b>fixed June 12</b></li>
+<li>gnome-core-1.4.0.8-1 (breaks with install_name error) <b>fixed June 12</b></li>
+<li>gnome-vfs-1.0.5-4 (breaks with install_name error) <b>fixed June 12</b></li>
+<li>gv-3.5.8-4</li>
+<li>
+<pre>
+lftp-ssl_2.5.2-2 failed with :
+g++ -DHAVE_CONFIG_H -I. -I. -I../include -I../include   -no-cpp-precomp 
+-I/sw/include  -O2 -Wall -Wwrite-strings -Woverloaded-virtual 
+-fno-exceptions -fno-rtti -fno-implement-inlines -Winline -c -o 
+FileCopyFtp.o `test -f FileCopyFtp.cc || echo './'`FileCopyFtp.cc
+In file included from FileAccess.h:27,
+                 from FileCopy.h:38,
+                 from FileCopyFtp.h:26,
+                 from FileCopyFtp.cc:27:
+../include/trio.h:172:1: warning: &quot;vfscanf&quot; redefined
+In file included from ../include/trio.h:25,
+                 from FileAccess.h:27,
+                 from FileCopy.h:38,
+                 from FileCopyFtp.h:26,
+                 from FileCopyFtp.cc:27:
+/usr/include/stdio.h:330:1: warning: this is the location of the 
+previous definition
+In file included from log.h:26,
+                 from FileCopyFtp.cc:28:
+/usr/include/unistd.h:135: declaration of C function `int getopt(int, 
+char*
+   const*, const char*)' conflicts with
+../include/getopt.h:104: previous declaration `int getopt()' here
+make[1]: *** [FileCopyFtp.o] Error 1
+</pre></li>
+<li>libghttp-1.0.9-3 (internal link edit command failed)</li>
+<li>librep-0.14-6 (breaks with install_name error) <b>install_name error
+was fixed but there are other problems now</b></li>
+<li>libxml2-2.4.22-1 (breaks with install_name error) <b>fixed June 11</b></li>
+<li>libxslt-1.0.18-1 failed with install_name error <b>seems OK as of June 13</b></li>
+<li>mc-4.5.55-1 (see log)</li>
+<li>mozilla-1.0rc3-1 (iid_NS_ISUPPORTS_IID causes a section type conflict, 
+see log)</li>
+<li>nautilus-1.0.6-2 (breaks with install_name error)</li>
+<li>qt3-3.0.4-5</li>
+<li>
+readline-4.2a-5 has undefined symbol errors and others.
+</li>
+<li>
+stlport-4.5-1 fails since the start...</li>
+<li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
+</ol>
+<p><b> Successful packages:</b></p>
 <ol>
 <li>gnome-libs-1.4.1.6-1</li>
 <li>sdl-1.2.4-2</li>
@@ -720,60 +776,6 @@ base-files-1.5-1
 gzip-1.2.4a-6
 </li>
 </ol>
-<p><b> Unsuccessful packages:</b></p>
-<ol><li> apt-0.5.4-3 (breaks with undefined symbols such as 
-__ZTI9pkgSystem) </li>
-<li>bonobo-1.0.20-1(breaks with install_name error)</li>
-<li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02051.html">emacs21</a></li>
-<li>gaim-0.57-1 (breaks with install_name error)</li>
-<li>galeon-1.2.1-1</li>
-<li>gconf-1.0.9-1(breaks with install_name error)</li>
-<li>gnome-core-1.4.0.8-1 (breaks with install_name error)</li>
-<li>gnome-vfs-1.0.5-4 (breaks with install_name error)</li>
-<li>gv-3.5.8-4</li>
-<li>
-<pre>
-lftp-ssl_2.5.2-2 failed with :
-g++ -DHAVE_CONFIG_H -I. -I. -I../include -I../include   -no-cpp-precomp 
--I/sw/include  -O2 -Wall -Wwrite-strings -Woverloaded-virtual 
--fno-exceptions -fno-rtti -fno-implement-inlines -Winline -c -o 
-FileCopyFtp.o `test -f FileCopyFtp.cc || echo './'`FileCopyFtp.cc
-In file included from FileAccess.h:27,
-                 from FileCopy.h:38,
-                 from FileCopyFtp.h:26,
-                 from FileCopyFtp.cc:27:
-../include/trio.h:172:1: warning: &quot;vfscanf&quot; redefined
-In file included from ../include/trio.h:25,
-                 from FileAccess.h:27,
-                 from FileCopy.h:38,
-                 from FileCopyFtp.h:26,
-                 from FileCopyFtp.cc:27:
-/usr/include/stdio.h:330:1: warning: this is the location of the 
-previous definition
-In file included from log.h:26,
-                 from FileCopyFtp.cc:28:
-/usr/include/unistd.h:135: declaration of C function `int getopt(int, 
-char*
-   const*, const char*)' conflicts with
-../include/getopt.h:104: previous declaration `int getopt()' here
-make[1]: *** [FileCopyFtp.o] Error 1
-</pre></li>
-<li>libghttp-1.0.9-3 (internal link edit command failed)</li>
-<li>librep-0.14-6 (breaks with install_name error)</li>
-<li>libxml2-2.4.22-1 (breaks with install_name error)</li>
-<li>libxslt-1.0.18-1 failed with install_name error</li>
-<li>mc-4.5.55-1 (see log)</li>
-<li>mozilla-1.0rc3-1 (iid_NS_ISUPPORTS_IID causes a section type conflict, 
-see log)</li>
-<li>nautilus-1.0.6-2 (breaks with install_name error)</li>
-<li>qt3-3.0.4-5</li>
-<li>
-readline-4.2a-5 has undefined symbol errors and others.
-</li>
-<li>
-stlport-4.5-1 fails since the start...</li>
-<li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
-</ol>
 <p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
 between gcc2 and gcc3.  In practice, this means that C++ programs compiled
 with gcc3 cannot link to libraries compiled with gcc2.</p>
@@ -806,4 +808,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: porting.xml,v 1.18 2002/06/11 23:30:14 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: porting.xml,v 1.20 2002/06/13 14:33:05 dmrrsn Exp $</i></p></body></html>
