@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 18:40:51';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/29 21:37:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -122,7 +122,7 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-<b>p</b>réfixe d'installation de Fink, par exemple : <code>/sw</code>
+<b>p</b>réfixe d'installation de Fink, par exemple : <code>/sw</code>. Vous ne devez jamais utiliser <code>/sw</code>, car l'utilisateur peut avoir changer le répertoire d'installation de Fink. Utilisez <code>%p</code> à la place.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>

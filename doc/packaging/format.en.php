@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 18:40:51';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/29 21:37:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -162,7 +162,7 @@ the <b>f</b>ull package name, i.e. %n-%v-%r
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>
+the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not use <code>/sw</code>, as the user may have changed the location of Fink's installation. Use <code>%p</code> instead.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
