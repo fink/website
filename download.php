@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/18 16:43:52 $';
+$cvs_date = '$Date: 2001/03/08 14:17:54 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -11,11 +11,11 @@ include "header.inc";
 
 <h1>Download Fink</h1>
 
-<p>Fink 0.1.5 was released on 18 February 2001.</p>
+<p>Fink 0.1.6 was released on 8 March 2001.</p>
 <ul>
 <li><a
-href="http://download.sourceforge.net/fink/fink-0.1.5.tar.gz">Fink
-0.1.5</a> - 132K, .tar.gz format</li>
+href="http://ftp1.sourceforge.net/fink/fink-0.1.6.tar.gz">Fink
+0.1.6</a> - 191K, .tar.gz format</li>
 </ul>
 
 <p>For older releases, please visit the Fink <a
