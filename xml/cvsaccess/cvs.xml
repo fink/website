@@ -3,6 +3,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
+<cvsid>$Id: cvs.xml,v 1.4 2001/07/29 15:36:41 chrisp Exp $</cvsid>
 
 <preface>
 <p>
