@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/11/12 02:40:15 $';
 
 include "header.inc";
 ?>
@@ -21,6 +21,9 @@ include "header.inc";
 Fink ミラーの登録方法と現在のミラーのステータスの情報がある。</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 Fink の GUI 。</li>
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - 別の GUI for Fink (まだ alpha)。</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - パッケージデータベースの検索プラグイン Mozilla based ブラウザのみ (Fink のための検索)!</li>
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Fink の宣伝のために評価してください。
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 #fink IRC チャンネルの過去ログと統計。</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
