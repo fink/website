@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/13 14:29:08';
+$cvs_date = 'Date: 2004/02/16 00:10:38';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -78,7 +78,7 @@ setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=
 export LDFLAGS=-L/sw/lib
 export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS
-export ACLOCAL_FLAGS="-I/sw/share/aclocal"
+export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
 It is often easiest just to add these to your startup files (e.g. <code>.cshrc</code> | <code>.profile</code>) so they
 are set automatically.
@@ -88,7 +88,7 @@ compile lines yourself. Some packages may use similar non-standard
 variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 "./configure --help" will usually give you a list of the extra configure
 options.
-</p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div>
+</p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b>) for the library packages that you are using, if they aren't already installed.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b>Q8.4: I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</b></p></div>

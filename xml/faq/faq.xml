@@ -3,7 +3,7 @@
 <document filename="index" lang="en" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.171 2004/02/15 23:09:28 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.172 2004/02/16 00:10:38 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1400,7 +1400,7 @@ setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
 export LDFLAGS=-L/sw/lib
 export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS
-export ACLOCAL_FLAGS="-I/sw/share/aclocal"
+export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
 <p>
 It is often easiest just to add these to your startup files (e.g. <filename>.cshrc</filename> | <filename>.profile</filename>) so they
