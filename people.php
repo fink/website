@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/08 16:15:52 $';
+$cvs_date = '$Date: 2001/09/20 15:09:19 $';
 
 include "header.inc";
 ?>
@@ -35,6 +35,7 @@ Fink (in alphabetical order):</p>
 <li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
 <li>Peter O'Gorman</li>
+<li>Justin F. Hallett</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
 <li>Matt Stephenson</li>
