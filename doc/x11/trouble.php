@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/05 15:29:30';
+$cvs_date = 'Date: 2003/04/12 22:14:08';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -339,7 +339,7 @@ Example for .cshrc:
 </li>
 <li>
 <p>
-Use the <code>libxpg4</code> Fink package.
+(10.1 only) Use the <code>libxpg4</code> Fink package.
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).

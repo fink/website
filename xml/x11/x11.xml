@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.28 2003/04/05 15:29:30 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.29 2003/04/12 22:14:08 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -1201,7 +1201,7 @@ Example for .cshrc:
 </li>
 <li>
 <p>
-Use the <code>libxpg4</code> Fink package.
+(10.1 only) Use the <code>libxpg4</code> Fink package.
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).
