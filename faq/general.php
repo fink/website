@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/09 18:58:56 $';
+$cvs_date = '$Date: 2001/05/13 15:52:39 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -22,7 +22,7 @@ include "header.inc";
 distribution of Unix software for Mac OS X. The package manager is
 built on top of dpkg, the binary package manager written by the <a
 href="http://www.debian.org/">Debian GNU/Linux</a> project. (Older
-versions used GNU stow.)</p>
+versions of Fink used GNU stow.)</p>
 
 <p><a name="naming"><b>What does the name Fink stand for?</b></a></p>
 
