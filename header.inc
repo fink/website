@@ -1,23 +1,16 @@
 <?
-/* $Id: header.inc,v 1.25 2001/07/30 12:03:59 chrisp Exp $ */
+/* $Id: header.inc,v 1.26 2001/07/30 17:30:10 chrisp Exp $ */
 
-// available pages
+// main navigation box
 $pages_main = array(
   "index.php", "Home", 0,
   "download.php", "Download", 0,
   "faq/index.php", "F.A.Q.", 0,
   "doc/index.php", "Documentation", 0,
   "pdb/index.php", "Packages", 0,
+  "lists/index.php", "Mailing Lists", 0,
   "people.php", "Contributors", 0,
   "links.php", "Links", 0
-);
-$pages_fink = array(
-  "fink/index.php", "Fink", 0,
-  "download.php", "Download", 1,
-  "fink/usage.php", "Usage", 0,
-  "fink/lists.php", "Mailing Lists", 0,
-  "fink/todo.php", "ToDo", 0,
-  "links.php", "Links", 1
 );
 
 // get author and change date from CVS vars
@@ -112,11 +105,8 @@ $donav = 0;
 if (is_array($customnav)) {
   $pages = $customnav;
   $donav = 1;
-} elseif ($wantnav == "main") {
+} elseif ($wantnav) {
   $pages = $pages_main;
-  $donav = 1;
-} elseif ($wantnav == "fink") {
-  $pages = $pages_fink;
   $donav = 1;
 }
 
@@ -143,7 +133,7 @@ src="<? print $root ?>img/nav-left.gif" width="20" height="16" border="0" alt=""
 for ($i = 0; $i < sizeof($pages); $i += 3) {
   $showlink = ($i != $active_page);
   if ($showlink)
-    print '<a href="'.$root.$pages[$i].($pages[$i+2] ? '?wantnav='.$wantnav : '').'">';
+    print '<a href="'.$root.$pages[$i].'">';
   else
     print '<b>';
   print $pages[$i+1];

@@ -1,7 +1,7 @@
 <?
 $title = "Fink";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/30 11:11:49 $';
+$cvs_date = '$Date: 2001/07/30 17:30:10 $';
 
 include "header.inc";
 ?>
@@ -30,7 +30,7 @@ href="http://sourceforge.net">SourceForge</a>.  Have a look at the <a
 href="http://sourceforge.net/projects/fink/">project summary</a> there
 for project resources. Here are some quick links:</p>
 <ul>
-<li><a href="lists.php">Mailing lists</a></li>
+<li><a href="../lists/index.php">Mailing lists</a></li>
 <li><a href="http://sourceforge.net/tracker/?group_id=17203&atid=117203">Bug
 Tracker</a></li>
 <li><a href="http://sourceforge.net/tracker/?atid=367203&group_id=17203&func=browse">Feature
@@ -51,7 +51,7 @@ helps me improve Fink. You can send it my way at <a
 href="mailto:fink@chrisp.de">fink@chrisp.de</a>. Keep in mind that,
 like most people on this planet, I'm usually quite busy. If you need
 help with using or troubleshooting Fink, a better place to ask is the
-<a href="lists.php">users mailing list</a>.</p>
+<a href="../lists/fink-users.php">fink-users mailing list</a>.</p>
 
 
 <?
