@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.81 2003/10/26 12:11:48 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.82 2003/10/26 12:20:32 rangerrick Exp $</cvsid>
 
 
 <newsitem>
@@ -19,7 +19,9 @@
 	so that you may have a closer look at its details. We like our new logo,
 	we hope that you will like it too.
 	</p>
-	<p>IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	<p>IMPORTANT: We do not yet have a formal licensing agreement for the new
+   logo and so are unable to give permission to distribute it.  Currently, it
+   can only be displayed on the Fink web page.  Thank you for your understanding.
 	</p>
 		</body>
 </newsitem>

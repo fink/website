@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 26 Oct 2003 07:10:49 EST</lastBuildDate>
+    <lastBuildDate>Sun, 26 Oct 2003 07:19:06 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -23,7 +23,9 @@
 	so that you may have a closer look at its details. We like our new logo,
 	we hope that you will like it too.
 	
-	IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	IMPORTANT: We do not yet have a formal licensing agreement for the new
+   logo and so are unable to give permission to distribute it.  Currently, it
+   can only be displayed on the Fink web page.  Thank you for your understanding.
 	
 		</description>
   </item>

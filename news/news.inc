@@ -10,7 +10,9 @@
 	so that you may have a closer look at its details. We like our new logo,
 	we hope that you will like it too.
 	</p>
-	<p>IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	<p>IMPORTANT: We do not yet have a formal licensing agreement for the new
+   logo and so are unable to give permission to distribute it.  Currently, it
+   can only be displayed on the Fink web page.  Thank you for your understanding.
 	</p>
 		<a name="2003-10-24 Upgrade to gcc 3.3 and/or 10.3"><span class="news-date">2003-10-24: </span><span class="news-headline">Upgrade to gcc 3.3 and/or 10.3</span></a><?php gray_line(); ?>
 	<p>It is now possible to upgrade Fink to take full advantage of the gcc 3.3
