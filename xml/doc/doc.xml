@@ -4,7 +4,7 @@
 <article filename="index">
 <title>Fink - Documentation</title>
 <shorttitle></shorttitle>
-<cvsid>$Id: doc.xml,v 1.1 2003/04/14 00:13:18 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.xml,v 1.2 2003/06/29 18:03:07 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -20,12 +20,12 @@ or Darwin without Fink and want to learn about porting Unix software.
 The current user documentation for Fink:
 </p>
 <ul>
-<li><link url="users-guide/index.php">Fink User's Guide</link> -
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.html">Fink User's Guide</varlink> -
 this covers installing Fink itself, installing packages, and upgrading
 to a new Fink release. It contains instructions for both the source
 and the binary release.
 <em>Work in Progress!</em></li>
-<li><link url="x11/index.php">Running X11 on Darwin and Mac OS X</link> -
+<li><varlink url="x11/index.php" varurl="x11/x11.html">Running X11 on Darwin and Mac OS X</varlink> -
 covers concepts, installation and launching (also intended for Darwin
 and Mac OS X users in general)</li>
 </ul>
@@ -35,13 +35,13 @@ A bunch of documents that are more complete, but slightly outdated and
 no longer maintained:
 </p>
 <ul>
-<li><link url="bundled/install.php">Installation and Upgrading</link> - how
+<li><varlink url="bundled/install.php" varurl="bundled/install.html">Installation and Upgrading</varlink> - how
 to install Fink or upgrade to a new version</li>
-<li><link url="bundled/usage.php">Usage</link> - how to use Fink
+<li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Usage</varlink> - how to use Fink
 and the installed software</li>
-<li><link url="bundled/readme.php">Fink ReadMe</link> - the ReadMe for the
+<li><varlink url="bundled/readme.php" varurl="bundled/readme.html">Fink ReadMe</varlink> - the ReadMe for the
 source distribution</li>
-<li><link url="cvsaccess/index.php">CVS Access</link> - how to access the
+<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.html">CVS Access</varlink> - how to access the
 Fink CVS repository to get the latest source packages between
 releases</li>
 </ul>
@@ -56,9 +56,9 @@ file) - slides from a presentation at the <link
 url="http://conferences.oreillynet.com/macosx2002/"
 >O'Reilly Mac OS X Conference</link> (also available as a
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</link>) </li>
-<li><link url="porting/index.php">Porting Tips</link> - notes for porting
+<li><varlink url="porting/index.php" varurl="porting/porting.html">Porting Tips</varlink> - notes for porting
 Unix applications to Darwin</li>
-<li><link url="packaging/index.php">Packaging Manual</link> - how to create and
+<li><varlink url="packaging/index.php" varurl="packaging/packaging.html">Packaging Manual</varlink> - how to create and
 maintain Fink packages</li>
 </ul>
 
