@@ -1,9 +1,10 @@
 <?
-/* $Id: header.inc,v 1.29 2001/09/02 13:08:35 chrisp Exp $ */
+/* $Id: header.inc,v 1.30 2001/09/02 15:43:51 chrisp Exp $ */
 
 // main navigation box
 $default_navbox = array(
   "index.php", "Home",
+  "about.php", "About",
   "download.php", "Download",
   "help/index.php", "Getting Help",
   "lists/index.php", "Mailing Lists",

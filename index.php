@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/02 12:53:44 $';
+$cvs_date = '$Date: 2001/09/02 15:43:51 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -12,17 +12,24 @@ include "header.inc";
 ?>
 
 
-<p>Fink is an attempt to bring the full world of Unix Open Source
+<p>
+Fink is an attempt to bring the full world of Unix Open Source
 software to <a href="http://www.opensource.apple.com/">Darwin</a> and
-<a href="http://www.apple.com/macosx/">Mac OS X</a>. Think of it as an
-add-on distribution (in the Linux sense) for these systems. Once it is
-more mature, Fink might evolve into a general package manager and
-add-on distribution suitable for all Unix variants.</p>
+<a href="http://www.apple.com/macosx/">Mac OS X</a>.
+Think of it as an add-on distribution (in the Linux sense) for these
+systems.
+</p>
+<p>
+Fink wants to be as painless as possible.
+It keeps the hands off your base system and manages a separate
+directory tree instead.
+Fink uses <a href="http://www.debian.org/">Debian</a> tools like dpkg
+and apt-get to provide powerful binary package management.
+You can choose whether you want to download precompiled binary
+packages or build everything from source.
+<a href="about.php">Read more...</a>
+</p>
 
-<p>Fink wants to be simple, functional and fully automated. It manages
-a separate directory tree using dpkg. The fink package manager
-downloads, configures, compiles and installs software from the
-Internet.</p>
 
 <p><table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
