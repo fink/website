@@ -1,7 +1,7 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$cvs_date = '$Date: 2001/01/12 13:19:17 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -21,6 +21,8 @@ in general. Current installments:</p>
 to Darwin</li>
 <li><a href="libtool.php">A libtool Patch</a> to build shared
 libraries on Darwin</li>
+<li><a href="x11-choices.php">X11 Choices</a> - the various ways to
+run X11 applications on Mac OS X</li>
 </ul>
 
 <p>For more helpful stuff, check out the <a href="links.php">link
