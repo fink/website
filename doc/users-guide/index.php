@@ -1,9 +1,9 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/18 16:52:28';
+$cvs_date = 'Date: 2001/09/18 22:39:37';
 
-$metatags = '<link rel="start" href="index.php" title="User's Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
+$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
 include "header.inc";
 ?>
@@ -24,8 +24,10 @@ Package installation and maintenance is covered as well.
 <ul>
 <li><a href="intro.php#what">What is Fink?</a></li>
 <li><a href="intro.php#req">Requirements</a></li>
+<li><a href="intro.php#supported-os">Supported Systems</a></li>
+<li><a href="intro.php#src-vs-bin">Source vs. Binary</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.1 2001/09/18 16:52:28 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.2 2001/09/18 22:39:37 chrisp Exp $</i></p>
 
 
 <?
