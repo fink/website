@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/03/24 19:50:35 $';
+$cvs_date = '$Date: 2002/03/24 19:59:18 $';
 
 include "header.inc";
 ?>
@@ -14,8 +14,8 @@ Some legal rumblings to keep lawyers happy:
 </p>
 
 <p>
-The material on this website is Copyright &copy; 2001, 2002
-The Fink Project, unless noted otherwise.
+The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
+Copyright &copy; 2002 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
 <a href="mailto:fink-devel@lists.sourceforge.net">talk to us</a> first.
 </p>
