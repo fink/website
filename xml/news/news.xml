@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.92 2003/10/31 20:19:14 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.93 2003/11/02 23:31:09 dmrrsn Exp $</cvsid>
 
+
+<newsitem>
+        <date>2003-11-1</date>
+        <headline>Fink 0.6.1 released</headline>
+                <body>
+        <p>The latest Fink release, version 0.6.1, is now available
+for both source and binary users.  This release was built on OS X 10.2
+using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+users who upgrade to 10.3 will want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+</p><p>
+If you wish to access the 
+new binaries, use apt-get, dselect, or the binary mode of
+FinkCommander.  Unless you are interested in helping the Fink team
+to test packages which are compiled on 10.3, 
+do not use the command-line <code>fink</code> program to do your
+installations for the
+next few weeks.
+</p>
+<p>The simplest way to upgrade a binary installation is to run
+"sudo apt-get update".  Further details and
+other issues related to upgrading Fink to 10.3 are addressed on the
+<link url="blah">Special 10.3 upgrade page.</link>
+<p>
+Before using the latest version of
+the command-line <code>fink</code> program 
+under OS X 10.2, be sure to install the August2003gccUpdater, available
+after free registration from connect.apple.com.
+</p>
+                </body>
+</newsitem>
 
 <newsitem>
 	<date>2003-10-31</date>

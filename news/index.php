@@ -1,14 +1,40 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/10/31 20:19:14';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/11/02 23:32:05';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-10-31 Happy Halloween and welcome new mirrors"><span class="news-date">2003-10-31: </span><span class="news-headline">Happy Halloween and welcome new mirrors</span></a><?php gray_line(); ?>
+<a name="2003-11-1 Fink 0.6.1 released"><span class="news-date">2003-11-1: </span><span class="news-headline">Fink 0.6.1 released</span></a><?php gray_line(); ?>
+        <p>The latest Fink release, version 0.6.1, is now available
+for both source and binary users.  This release was built on OS X 10.2
+using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+users who upgrade to 10.3 will want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+</p><p>
+If you wish to access the 
+new binaries, use apt-get, dselect, or the binary mode of
+FinkCommander.  Unless you are interested in helping the Fink team
+to test packages which are compiled on 10.3, 
+do not use the command-line <code>fink</code> program to do your
+installations for the
+next few weeks.
+</p>
+<p>The simplest way to upgrade a binary installation is to run
+"sudo apt-get update".  Further details and
+other issues related to upgrading Fink to 10.3 are addressed on the
+<a href="<?php print $root; ?>blah">Special 10.3 upgrade page.</a>
+</p><p>
+Before using the latest version of
+the command-line <code>fink</code> program 
+under OS X 10.2, be sure to install the August2003gccUpdater, available
+after free registration from connect.apple.com.
+</p>
+                <a name="2003-10-31 Happy Halloween and welcome new mirrors"><span class="news-date">2003-10-31: </span><span class="news-headline">Happy Halloween and welcome new mirrors</span></a><?php gray_line(); ?>
 		<p>
 		We wish all of you a happy Halloween.
 		</p>
