@@ -3,15 +3,24 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.3 2001/09/20 07:41:14 chrisp Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.4 2001/09/20 20:46:51 chrisp Exp $</cvsid>
 
 <preface>
 <p>
-This will one day become a comprehensive user's guide to Fink.
-Most sections are targeted at users with previous Unix command line
-experience.
+<em>This document is a work in progress.</em>
+At this time the various other documents are more useful:
+<link url="http://fink.sourceforge.net/doc/bundled/readme.php">ReadMe</link>,
+<link url="http://fink.sourceforge.net/doc/bundled/install.php">Installation</link>,
+<link url="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</link>
+and the ReadMe.rtf included in the binary distribution.
+Also check out the
+<link url="http://fink.sourceforge.net/doc/index.php">documentation
+section</link> of the web site, it has some other useful documents
+beyond that.
 </p>
+
 <p>
+Welcome to the Fink User's Guide.
 This guide covers first time installation and upgrade procedures for
 both the source and the binary distribution.
 Package installation and maintenance is covered as well.
@@ -184,22 +193,54 @@ descriptions and will download the source for packages on the fly.
 </chapter>
 
 
-<chapter filename="upgrade">
-<title>Upgrading Fink</title>
-<shorttitle>Upgrade</shorttitle>
-
-<preface>
-</preface>
-
-</chapter>
-
-
 <chapter filename="packages">
 <title>Installing Packages</title>
 <shorttitle>Packages</shorttitle>
 
 <preface>
+Now that you have something that can be called a Fink installation,
+this chapter shows you how to install the actual software packages you
+came for.
 </preface>
+
+<section name="bin"><title>Installing Binary Packages</title>
+<p>
+[FIXME: dselect, apt-get, and their relationship]
+</p>
+</section>
+
+<section name="src"><title>Installing Packages from Source</title>
+<p>
+[FIXME: 'fink list', 'fink install']
+</p>
+</section>
+
+</chapter>
+
+
+<chapter filename="upgrade">
+<title>Upgrading Fink</title>
+<shorttitle>Upgrade</shorttitle>
+
+<preface>
+This chapter covers the procedures used to update your Fink
+installation with the latest and greatest stuff.
+</preface>
+
+<section name="bin"><title>Upgrading using Binary Packages</title>
+<p>
+[FIXME: no special procedure, just hit update in dselect or run
+'apt-get update' and install as normal (apt-0.5.3-5 or later
+required)]
+</p>
+</section>
+
+<section name="src"><title>Upgrading the Source Distribution</title>
+<p>
+[FIXME: selfupdate (available in 0.2.5 and later) or download
+packages-### tarball and run inject.pl, then 'fink update-all']
+</p>
+</section>
 
 </chapter>
 
