@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/10/13 16:25:54';
+$cvs_date = 'Date: 2004/10/14 01:01:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -242,7 +242,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <a name="gcc2">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says I'm missing <code>gcc2</code> or gcc3.1 but I can't seem to
         install it.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.3</code> are  virtual packages to
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.1</code> are  virtual packages to
         indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
         package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1as
         part of their main Developer Tools installation).</p></div>
@@ -265,7 +265,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="compile-options">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.22: I want Fink to use different options in building a package.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p><b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p>
+          <b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/10/13 16:25:54';
+$cvs_date = 'Date: 2004/10/14 01:01:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 
@@ -98,14 +98,20 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. There are
   different options under Panther and under Jaguar.</p><p>Under Panther you have the choice between:</p><ul>
-          <li><p>     Apple's X11 (on the third disk). Don't forget to install the
+          <li>
+            <p>     Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
   (on the XCode disk) if you want to compile programs or if you plan to
-  install other X11-related Fink packages from source.</p></li>
-          <li><p>        4.4.x built via Fink: install the <code>xfree86</code> and
-  <code>xfree86-shlibs</code> packages </p></li>
-          <li><p>       X.org built via Fink: install the <code>xorg</code> and
-  <code>xorg-shlibs</code> packages </p></li>
+  install other X11-related Fink packages from source.</p>
+          </li>
+          <li>
+            <p>        4.4.x built via Fink: install the <code>xfree86</code> and
+  <code>xfree86-shlibs</code> packages </p>
+          </li>
+          <li>
+            <p>       X.org built via Fink: install the <code>xorg</code> and
+  <code>xorg-shlibs</code> packages </p>
+          </li>
         </ul><p>Under Jaguar, the most popular choices, and the Fink packages to
           make them work are:</p><ul>
           <li>
@@ -181,7 +187,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      <code>perlXXX-core</code> according to the version X.X.X
 	      of that perl interpreter.
 	    </p>
-	  </li>
+          </li>
           <li>system-javaXXX: [virtual package representing Java X.X.X]
 	    <p>
 	      Represents the Java Runtime Environment, which is part of OS
@@ -189,7 +195,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      <a href="http://www.apple.com/java">Apple's Java
 	      page</a> for more information.
 	    </p>
-	  </li>
+          </li>
           <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
 	    <p>
 	      Represents the Java SDK, which must be manually
@@ -202,7 +208,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      Runtime Environment. See also <a href="comp-general.php?phpLang=en#system-java">this FAQ
 	      entry</a>.
 	    </p>
-	  </li>
+          </li>
           <li>system-java3d: [virtual package representing Java3D]</li>
           <li>system-javaai: [virtual package representing Java Advanced Imaging]
 	    <p>
@@ -211,7 +217,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      and installed. See <a href="http://docs.info.apple.com/article.html?artnum=120289">Apple'
 	      webpage</a> for more information.
 	    </p>
-	  </li>
+          </li>
           <li>system-xfree86: [placeholder for user installed x11]</li>
           <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
 	    <p>
@@ -220,14 +226,14 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
 	      and <code>x11-shlibs</code>, respectively. See
 	      also <a href="comp-packages.php?phpLang=en#cant-install-xfree">this FAQ entry</a>.
 	    </p>
-	  </li>
+          </li>
           <li>system-xfree86-dev [placeholder for user installed x11 development tools]
 	    <p>
 	      Represents Apple's X11/XDarwin SDK, an optional part of
 	      OS X (X11SDK.pkg). This package provides
 	      <code>x11-dev</code>. See also <a href="comp-packages.php?phpLang=en#cant-install-xfree">this FAQ entry</a>.
 	    </p>
-	  </li>
+          </li>
         </ul></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

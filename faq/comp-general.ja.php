@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/10/04 05:01:42';
+$cvs_date = 'Date: 2004/10/13 23:54:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
