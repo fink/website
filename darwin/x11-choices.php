@@ -1,7 +1,7 @@
 <?
 $title = "X11 Choices";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/26 20:41:42 $';
+$cvs_date = '$Date: 2001/05/25 16:06:05 $';
 
 include "header.inc";
 ?>
@@ -27,9 +27,8 @@ framebuffer implementation without hardware accelleration.</p>
 <p>Since version 4.0.2, Darwin support is in the regular XFree86
 distribution. You can get binaries and source at the <a
 href="http://www.xfree86.org/">XFree86 site</a>. Building the 4.0.x
-source on Mac OS X Final requires some patches. I am told the
-xf-4_0_2-branch CVS tag includes these. The HEAD revision will also
-work, of cource.</p>
+source on Mac OS X Final requires a small patch which is in CVS in the
+xf-4_0_2-branch. The HEAD revision will also work.</p>
 
 <h2>XFree86 running under Aqua</h2>
 
@@ -37,8 +36,8 @@ work, of cource.</p>
 running. This mode uses CoreGraphics / Quartz instead of IOKit. It
 runs full-screen, and you can switch between the X11 desktop and Aqua
 with a keystroke.</p>
-<p>A rootless mode is under development, but will not be ready in time
-for the upcoming XFree86 4.1 release.</p>
+<p>A rootless mode is under development, but will not be included in
+the upcoming XFree86 4.1 release.</p>
 <p>The current code is available from <a
 href="http://www.xfree86.org/cvs/">XFree86's anonymous
 CVS</a>. Additional patches can be found at the <a
