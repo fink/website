@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.18 2004/03/29 06:31:32 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.19 2004/03/30 09:46:19 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1312,7 +1312,7 @@ Type: -x11 (boolean)
 Depends: (%type_raw[-x11] = -x11) x11
 CompileScript:  &lt;&lt;
   #!/bin/bash -ev
-  if [&quot;%type_raw[-x11]&quot; eq &quot;-x11&quot;]; then
+  if [ &quot;%type_raw[-x11]&quot; == &quot;-x11&quot; ]; then
     ./configure %c --with-x11
   else
     ./configure %c --without-x11
