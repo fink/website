@@ -13,36 +13,16 @@ include_once "header.inc";
     
 
     
+ <p>Comme la documentation anglaise est la documentation maître, elle doit être mise à jour en premier. Une telle mise à jour peut être effectuée par un membre de l'équipe i18n (par exemple par les rédacteurs anglais) ou directement par les développeurs.</p>
       <p>Pour que tout se passe bien, vous devez suivre les procédures suivantes.</p>
     
-
-    <h2><a name="new-translation">3.1 Nouvelles traductions</a></h2>
+    <h2><a name="call-to-translate">3.1 Demande de traduction</a></h2>
       
 
-      <p>Quand une nouvelle langue est ajoutée, un gel de la mise à jour de tous les fichiers de documentation (anglais ou autres) est déclaré, de façon à ce que la nouvelle équipe de traduction ne soit pas perturbée par un changement sur les fichiers qu'elle est en train de traduire. Dans ce cas, les documents sont mis en ligne et activés dès qu'ils sont prêts.</p>
-    
-
-    <h2><a name="doc-updates">3.2 Mises à jour du contenu des fichiers</a></h2>
-      
-
-      <p>Comme la documentation anglaise est la documentation maître, elle doit être mise à jour en premier. Une telle mise à jour peut être effectuée par un membre de l'équipe i18n (par exemple par les rédacteurs anglais) ou directement par les développeurs.</p>
-
-      <p>Voici les catégories de mises à jour utilisées pour la documentation :</p>
-
-      <ol>
-        <li><b>Urgent (sécurité, bogues résolus, etc...) :</b> La documentation anglaise est mise à jour immédiatement, les traducteurs mettent à jour les fichiers correspondants dans leur langue et les mettent en ligne le plus vite possible.</li>
-
-        <li><b>Non urgent :</b> Dans ce cas, la documentation anglaise est mise à jour, mais n'est pas mise en ligne immédiatement. Les traducteurs ont un à deux jours pour mettre à jour leur traduction, puis toutes les versions sont mises en ligne au même moment.</li>
-      </ol>
-    
-
-    <h2><a name="call-to-translate">3.3 Demande de traduction</a></h2>
-      
-
-      <p>Quand les fichiers anglais sont prêts, les traducteurs sont prévenus par un message envoyé sur la liste de diffusion fink-18n. Le message doit contenir les informations suivantes :</p>
+      <p>Quand un nouveau document est mis en ligne ou que des changements ont lieu dans la documentation anglaise, les traducteurs sont prévenus par un message envoyé sur la liste de diffusion fink-18n. Le message doit contenir les informations suivantes :</p>
 
       <ul>
-        <li>Une note dans l'objet du message indiquant qu'il s'agit d'une demande de traduction, par exemple : "[translation]", ou "[translation-urgent]" pour les documents anglais qui sont mis immédiatement en ligne.</li>
+        <li>Une note dans l'objet du message indiquant qu'il s'agit d'une demande de traduction, par exemple : "[translation]", ou "[translation-delayed]" pour les documents anglais qui ne sont pas mis en ligne immédiatement.</li>
 
         <li>De plus, le nom du fichier concerné doit être inclus dans le corps du message.</li>
 
@@ -51,27 +31,36 @@ include_once "header.inc";
 </li>
       </ul>
 
-      <p>Note : comme la simple exécution du commit d'un fichier XML génère un message sur la liste de diffusion fink-commits qui remplit tous les critères mentionnés ci-dessus, le plus simple est de rediriger le message en changeant son objet.</p>
+      <p>Note : comme la simple exécution du commit d'un fichier XML génère un message sur la liste de diffusion fink-commits qui remplit tous les critères mentionnés ci-dessus, le plus simple est de faire suivre le message en changeant son objet. Néanmoins, cela ne fonctionne pas bien, si le nombre de changements est important.</p>
     
-
-    <h2><a name="translate">3.4 Traduction</a></h2>
-      
-
-      <p>Une fois cela fait, le travail de traduction peut commencer. On effectue un commit sur chaque fichier dès qu'il est traduit.</p>
+   <h2><a name="doc-updates">3.2 Nouveau document :</a></h2>
+       
+      <p>On fait un <a href="files.php?phpLang=fr#committing">commit</a> sur la version anglaise du document et on l'<a href="files.php?phpLang=fr#website">active</a>, il est ensuite <a href="#new-translations">traduit</a> comme expliqué ci-dessous.</p>
     
-
-    <h2><a name="activation">3.5 Activation des changements</a></h2>
+  <h2><a name="new-translation">3.3 Nouvelles traductions</a></h2>
       
-
-      <p>Il y a deux façon d'activer les changements selon l'urgence des modifications :</p>
-
+      <p>Le chef d'équipe de la langue concernée (ou une autre personne ayant un accès CVS) fait un <a href="files.php?phpLang=fr#committing">commit</a> et <a href="files.php?phpLang=fr#website">active</a> les documents dès qu'ils sont prêts.</p>
+      <p>On entend par nouvelle traduction :</p>
+      <ul>
+        <li>la première traduction d'un document existant,</li>
+        <li>toute traduction partielle d'un document existant,</li>
+        <li>la traduction d'un nouveau document anglais.</li>
+      </ul>
+    
+    <h2><a name="prompt-update">3.4 Mise à jour rapide de la documentation existante :</a></h2>
+      
+      <p>On fait un <a href="files.php?phpLang=fr#committing">commit</a> et l'on <a href="files.php?phpLang=fr#website">active</a> immédiatement la documentation maître anglaise, ensuite les équipes de traduction mettent à jour leurs versions, font un <a href="files.php?phpLang=fr#committing">commit</a> de <b>tous</b> les fichiers (XML et PHP), puis <a href="files.php?phpLang=fr#activate">activent</a> les changements.</p>
+      <p><b>Notes :</b></p>
       <ol>
-        <li>Pour les modifications urgentes, les changements sont activés dès que le fichier a été modifié.</li>
-
-        <li>Pour les modifications non urgentes, les changements sont activés après que toutes les versions du fichier ont été modifiées.</li>
+        <li>Les modifications du guide d'internationalisation (ce document) sont <b>toujours</b> faites suivant ce schéma, car les changements affectent l'ensemble des équipes de traduction.</li>
+        <li>Les modifications des documents statiques (fichiers PHP non générés via XML) sont <b>toujours</b> faites suivant ce schéma, car il est difficile de <a href="#delayed-update">retarder</a> leur activation.</li>
       </ol>
     
-  <p align="right">
+    <h2><a name="delayed-update">3.5 Mise à jour retardée de la documentation existante (fichiers générés via XML uniquement)</a></h2>
+      
+      <p>Dans ce case, on fait le <a href="files.php?phpLang=fr#committing">commit</a> de la version anglaise du fichier XML, mais <b>pas</b> des fichiers PHP et HTML, c'est-à-dire que l'on s'arrête à l'étape 5 de la section Fichiers dynamiques en <a href="files.php?phpLang=fr#committing">2.9</a>. Tous les traducteurs traduisent dans leurs langues respectives et font le <a href="files.php?phpLang=fr#committing">commit</a> du <b>seul</b> fichier XML (c'est-à-dire le même fichier que pour l'anglais) dans un laps de temps prévu d'avance. La génération, le commit et <a href="files.php?phpLang=fr#website">l'activation</a> de tous les fichiers PHP et HTML sont faits en même temps par un des chefs du projet i18n quand le délai est écoulé.</p>
+    
+ <p align="right">
 Next: <a href="resources.php?phpLang=fr">4 Autres ressources</a></p>
 
 <? include_once "footer.inc"; ?>
