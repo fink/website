@@ -3,7 +3,7 @@
                 version="1.1">
 
 <!-- set the variables used throughout the document -->
-<xsl:variable name="lang-ext" ><xsl:text>.</xsl:text><xsl:value-of select="document/@lang" /></xsl:variable>
+<xsl:variable name="lang-ext" ><xsl:value-of select="document/@lang" /></xsl:variable>
 
 <!-- just a dummy, everything is written with xsl:document -->
 <xsl:output method="text"/>
@@ -12,16 +12,16 @@
 
 <xsl:template match="document">
 
-<xsl:document href="{@filename}{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 
 $title = "<xsl:value-of select="shorttitle"/>";
 $cvs_author = 'Author: <xsl:value-of select="cvsid"/>';
 $cvs_date = 'Date: <xsl:value-of select="cvsid"/>';
-$metatags = '<link rel="contents" href="{@filename}{$lang-ext}.php" title="{shorttitle} Contents" />
-<link rel="next" href="{chapter/@filename}{$lang-ext}.php" title="{chapter/title}" />';
+$metatags = '<link rel="contents" href="{@filename}.php?phpLang={$lang-ext}" title="{shorttitle} Contents" />
+<link rel="next" href="{chapter/@filename}.php?phpLang={$lang-ext}" title="{chapter/title}" />';
 
-include_once "header<xsl:value-of select="$lang-ext" />.inc"; 
+include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
 <h1><xsl:value-of select="title"/></h1>
@@ -36,7 +36,7 @@ include_once "header<xsl:value-of select="$lang-ext" />.inc";
 </xsl:text>
 <xsl:for-each select="chapter">
 <li><a><xsl:attribute name="href">
-<xsl:value-of select="@filename"/><xsl:value-of select="$lang-ext"/><xsl:text>.php</xsl:text>
+<xsl:value-of select="@filename"/><xsl:text>.php</xsl:text>
 </xsl:attribute>
 <b><xsl:number format="1 " /><xsl:value-of select="title" /></b></a></li><xsl:text>
 </xsl:text>
@@ -45,7 +45,7 @@ include_once "header<xsl:value-of select="$lang-ext" />.inc";
 </xsl:text>
 <xsl:for-each select="faqentry|section">
 <li><a><xsl:attribute name="href">
-<xsl:value-of select="../@filename" /><xsl:value-of select="$lang-ext"/><xsl:text>.php</xsl:text><xsl:text>#</xsl:text><xsl:value-of select="@name" />
+<xsl:value-of select="../@filename" /><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext" /><xsl:text>#</xsl:text><xsl:value-of select="@name" />
 </xsl:attribute>
 <xsl:number count="chapter" format="1." /><xsl:number format="1 " />
 <xsl:for-each select="question/p">
@@ -71,7 +71,7 @@ include_once "header<xsl:value-of select="$lang-ext" />.inc";
 </xsl:document>
 
 <!-- Generate header.inc -->
-<xsl:document href="{@xml:base}header{$lang-ext}.inc" method="text" indent="no" encoding="utf-8">
+<xsl:document href="{@xml:base}header.{$lang-ext}.inc" method="text" indent="no" encoding="utf-8">
 <xsl:text>&lt;?
 /* This file is generated, do not edit manually! */
 
@@ -104,28 +104,28 @@ include $fsroot."header.inc";
 <!-- ***** chapter (renders to a separate file) ***** -->
 
 <xsl:template match="chapter">
-<xsl:document href="{@filename}{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 
 $title = "<xsl:value-of select="../shorttitle"/> - <xsl:value-of select="shorttitle"/>";
 $cvs_author = 'Author: <xsl:value-of select="../cvsid" />';
 $cvs_date = 'Date: <xsl:value-of select="../cvsid" />';
-$metatags = '<link rel="contents" href="{../@filename}.php" title="{../shorttitle} Contents" />
+$metatags = '<link rel="contents" href="{../@filename}.php?phpLang={$lang-ext}" title="{../shorttitle} Contents" />
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
-<link rel="next" href="{@filename}.php" title="{title}" />
+<link rel="next" href="{@filename}.php?phpLang={$lang-ext}" title="{title}" />
 </xsl:if>
 </xsl:for-each>
 <xsl:for-each select="preceding-sibling::chapter">
 <xsl:if test="position()=last()">
-<link rel="prev" href="{@filename}.php" title="{title}" />
+<link rel="prev" href="{@filename}.php?phpLang={$lang-ext}" title="{title}" />
 </xsl:if>
 </xsl:for-each>
 <xsl:if test="position()=1">
-<link rel="prev" href="{../@filename}{$lang-ext}.php" title="{../shorttitle} Contents" />
+<link rel="prev" href="{../@filename}.php?phpLang={$lang-ext}" title="{../shorttitle} Contents" />
 </xsl:if>';
 
-include_once "header<xsl:value-of select="$lang-ext" />.inc"; 
+include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
 <h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1 " /><xsl:value-of select="title"/></h1>
@@ -135,7 +135,7 @@ include_once "header<xsl:value-of select="$lang-ext" />.inc";
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
 <p align="right">
-Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
+Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
 </p>
 </xsl:if>
 </xsl:for-each>
@@ -147,12 +147,12 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <!-- ***** article (renders all on one page) ***** -->
 
 <xsl:template match="article">
-<xsl:document href="{@filename}{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 $title = "<xsl:value-of select="shorttitle" />";
-$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.2 2004/02/21 13:50:37 babayoshihiko Exp $';
-$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.2 2004/02/21 13:50:37 babayoshihiko Exp $';
-include_once "header<xsl:value-of select="$lang-ext" />.inc"; 
+$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.3 2004/02/21 23:07:34 babayoshihiko Exp $';
+$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.3 2004/02/21 23:07:34 babayoshihiko Exp $';
+include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
 <h1><xsl:value-of select="title"/></h1>
@@ -285,7 +285,7 @@ include_once "header<xsl:value-of select="$lang-ext" />.inc";
 
 <xsl:template match="xref">
 <a><xsl:attribute name="href">
-<xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.<xsl:value-of select="../@lang" />.php</xsl:if>
+<xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.php?phpLang=<xsl:value-of select="$lang-ext" /></xsl:if>
 <xsl:if test="boolean(@section)">#<xsl:value-of select="@section" /></xsl:if>
 </xsl:attribute>
 <xsl:apply-templates/></a>
