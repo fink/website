@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/03/16 16:38:24 $';
+$cvs_date = '$Date: 2003/04/27 18:58:05 $';
 
 include "header.inc";
 ?>
@@ -92,6 +92,7 @@ this list.</p>
 <li>Jake Goulding</li> 
 <li>Richard Graul</li>
 <li>Matthew Harris</li> 
+<li>Shawn Hsiao (<i>shawnh</i>)</li>
 <li>Sam Johnston</li> 
 <li>Richard Kiss</li> 
 <li>Eric Knauel</li> 
