@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: claudio87 $';
+$cvs_date = '$Date: 2004/11/12 12:01:38 $';
 
 include "header.inc";
 ?>
@@ -31,7 +31,7 @@ Set di script che aiuta la distribuzione di pacchetti fink a network clients att
 anche informazioni riguardanti FSF e le licenze GNU</li>
 <li><a href="http://www.opensource.org/" target="_blank">Iniziative Open Source
 Initiative</a> - Informazioni generali riguardo Open Source
-(esp. licenze)</li>
+(es. licenze)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
 la più grande directory di software Open Source sul web</li>
 <li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
@@ -70,11 +70,11 @@ target="_blank">HEP on X</a> - Collezione di pacchetti RPM</li>
 <p>Siti con informazioni correlate</p>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-portale di informazioni e novittｪ contenente anche un archivio software</li>
+portale di informazioni e novità contenente anche un archivio software</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 usare XFree86 su Darwin e Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
-novittｪ articoli e archivio software</li>
+novità articoli e archivio software</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 aiuti all'uso di GIMP, GTK e X su un Mac</li>
 </ul>
