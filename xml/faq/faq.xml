@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- <!DOCTYPE document PUBLIC "finkdoc.dtd"> -->
+
+<document filename="index">
+<title>The Fink F.A.Q.</title>
+<shorttitle>F.A.Q.</shorttitle>
+
+<!-- introduction -->
+
+<p>This is the list of frequently asked questions about Fink. Like
+in most FAQs, some questions are taken from real life and some are
+made up. It's really more like a documentation written in an ad-hoc,
+question and answer style.</p>
+<p>The FAQ consists of several pages, one for each section. All
+questions are listed and linked in the table of contents below.</p>
+
+
+<chapter filename="general">
+<title>General Questions</title>
+<shorttitle>General</shorttitle>
+
+<faqentry name="what"><question><p>What is Fink?</p></question>
+<answer><p>Fink is actually two things in one (doesn't that sound great?
+;-) ) - a compile-from-source package manager and a distribution of
+Unix software for Mac OS X. The package manager is built on top of
+dpkg, the binary package manager written by the <link
+url="http://www.debian.org/">Debian GNU/Linux</link> project. (Older
+versions of Fink used GNU stow.)</p>
+</answer></faqentry>
+
+<faqentry name="naming"><question><p>What does the name Fink stand for?</p></question>
+<answer><p>Nothing, it's just a name. It's not even an acronym.</p>
+<p>Well, actually Fink is the German name for Finch, a kind of
+bird. I was looking for a name for the project, and the name of the
+OS, Darwin, led me to think about Charles Darwin, the Galapagos
+Islands and evolution. I remembered a piece about the so-called Darwin
+Finches and their beaks from school, and well, that's it...</p>
+</answer></faqentry>
+
+<faqentry name="proxy"><question><p>I'm behind a firewall. How do I configure Fink
+to use an HTTP proxy?</p></question>
+<answer><p>Fink does not have a proxy setting because it lets <link
+url="http://www.gnu.org/software/wget/wget.html">wget</link> do all the
+downloading. To use a proxy, you must tell wget to use it. You can do
+that by setting the environment variable http_proxy. See the
+<link url="http://www.gnu.org/manual/wget/html_chapter/wget_8.html#SEC36">wget
+manual</link> for details.</p>
+</answer></faqentry>
+
+</chapter>
+
+
+
+<chapter filename="install">
+<title>Installation Questions</title>
+<shorttitle>Installation</shorttitle>
+
+<faqentry name="stow-not-found"><question><p>Installing Fink fails
+with a "stow not found" message.</p></question>
+<answer><p>This is a known bug in Fink 0.1.8. It is caused by missing
+dependencies in the gzip and tar packages. The bug is fixed in Fink
+0.1.8a. To install it, either wipe out /sw (or whatever you used) and
+use install.sh again or just use upgrade.sh and install any
+package. Note that you do not need the update unless you did a
+first-time installation with 0.1.8.</p>
+</answer></faqentry>
+
+<faqentry name="bzip2"><question><p>I tried to install Fink 0.2.0, but it failed to
+login to cygnus (?) to get bzip. (login denied). Is there an error in
+the login script?</p></question>
+<answer><p>There is no "login script" in Fink. What you're seeing is not a bug
+in Fink (or wget, which is used for downloading files), but an
+overloaded FTP server. Later releases of Fink use a different server
+to get bzip2. As a workaround, you can download bzip2-1.0.1.tar.gz
+manually and place it in /sw/src, then retry installing.</p>
+</answer></faqentry>
+
+</chapter>
+
+
+
+<chapter filename="usage">
+<title>Usage Questions</title>
+<shorttitle>Usage</shorttitle>
+
+<faqentry name="what-packages"><question><p>How can I find out what packages Fink supports?</p></question>
+<answer><p>For Fink 0.1.x, look in the fink/info directory, e.g.:</p>
+<codeblock>ls /sw/fink/info</codeblock>
+<p>For Fink 0.2.x, you may want to try this:</p>
+<codeblock>find /sw/fink -name '*.info'</codeblock>
+</answer></faqentry>
+
+<faqentry name="unstable"><question><p>There's this package in unstable that I want
+to install, but Fink just says 'no package found'. How can I install
+it?</p></question>
+<answer><p>First make sure you understand what 'unstable' means. Packages
+in there usually have not been tested at all, many have problems or
+just won't compile. That is why Fink doesn't search the unstable
+tree by default.</p>
+<p>If you only want one or two specific packages, it is safer
+to copy those .info files (and their associated .patch files, if there
+are any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename> to
+<filename>/sw/fink/dists/local/main/finkinfo</filename>. If you want Fink to use all of
+unstable, edit <filename>/sw/etc/fink.conf</filename> and add <literal>unstable/main</literal> to the
+<literal>Trees:</literal> line.</p>
+</answer></faqentry>
+
+<faqentry name="sudo"><question><p>I'm tired of typing my password into sudo again
+and again. Is there a way around this?</p></question>
+<answer><p>If you're not paranoid, you can configure sudo to not ask you for a
+password. To do this, edit <filename>/etc/sudoers</filename> as root
+and add a line like this:</p>
+<codeblock>username  ALL = NOPASSWD: ALL</codeblock>
+<p>Replace <literal>username</literal> with your actual username, of course. This
+line allows you to run any command via sudo without typing your
+password.</p>
+</answer></faqentry>
+
+</chapter>
+
+
+
+<chapter filename="packages">
+<title>Problems With Certain Packages</title>
+<shorttitle>Packages</shorttitle>
+
+<faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>
+<answer><p>There are several things that can cause this:</p>
+<ul>
+<li><p>You don't have X11 installed. You must install X11 manually,
+either <link url="http://www.xfree86.org/">XFree86</link> or <link
+url="http://www.tenon.com/">Xtools</link>. XFree86 packages for Fink are
+under development, but not yet ready for prime time.</p></li>
+<li><p>You installed the XFree86 binary distribution, but left out the
+Xprog.tgz tarball. It is an optional tarball, but must be installed to
+compile X11 applications.</p></li>
+<li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
+static libraries. Now configure scripts are failing in the
+<code>checking for XOpenDisplay in -lX11</code> test. To fix this, use the
+<code>-c</code> option for ranlib, i.e.:
+<codeblock>cd /usr/X11R6/lib
+sudo ranlib -c *.a</codeblock>
+Note that this can't happen with more recent versions of XFree86, as
+they compile the libraries (both static and shared) without common
+symbols.</p></li>
+</ul>
+<p>Hopefully, this will soon be solved with proper X11 packages and
+dependencies. But don't hold your breath yet.</p>
+</answer></faqentry>
+
+<faqentry name="icewm"><question><p>IceWM won't compile.</p></question>
+<answer><p>If you get messages about undefined symbols, you have only static
+X11 libraries on your system. Unfortunately, the linker is sensitive
+to the order in which the libraries are listed on the command line,
+and IceWM's Makefiles use the wrong order. The problem disappears when
+you have shared X11 libraries. To get them, use either <link
+url="http://www.tenon.com/">Tenon Xtools</link> or a CVS version of
+XFree86 (which will soon be released as XFree86 4.1).</p>
+</answer></faqentry>
+
+<faqentry name="gnomecore"><question><p>The gnome-core package won't compile. It
+complains about multiple definitions of _login_tty. What's
+wrong?</p></question>
+<answer><p>The problem with this is actually the configure script in
+gnome-libs. It fails to detect that Darwin has the login_tty() and
+openpty() functions because they are in the system library, not in
+libutil. It goes ahead and compiles replacements, which causes these
+duplicate symbol errors. This has been fixed in Fink 0.2.0 and
+later. A workaround is to create a symlink in
+<filename>/usr/lib</filename>, like this:</p>
+<codeblock>cd /usr/lib
+sudo ln -s libSystem.dylib libutil.dylib</codeblock>
+<p>Then rebuild the gnome-libs and gnome-core packages.</p>
+</answer></faqentry>
+
+<faqentry name="qt"><question><p>Qt won't compile.</p></question>
+<answer><p>Qt is one of the packages that will only compile when
+shared X11 libraries are present. Unfortunately, it spits some quite
+confusing error messages when it encounters static libraries.</p>
+</answer></faqentry>
+
+<faqentry name="nedit"><question><p>nedit is broken.</p></question>
+<answer><p>If you're seeing <code>Xm/BulletinB.h: No such file or
+directory</code> in the error messages, that's because you have Xtools
+installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
+to include some required header files. There is no workaround yet, and
+it is unknown whether this is fixed in recent releases on Xtools.</p>
+</answer></faqentry>
+
+<faqentry name="sawfish"><question><p>Sawfish can't find rep-gtk.</p></question>
+<answer><p>You need shared X11 libraries for rep-gtk to build correctly. It
+doesn't build dynamically loadable modules when only static X11
+libraries are available. The problem doesn't actually show until the
+sawfish configure script tries to use rep-gtk.</p>
+</answer></faqentry>
+
+</chapter>
+
+
+</document>

@@ -1,0 +1,16 @@
+$Id: README,v 1.1 2001/06/11 11:01:31 chrisp Exp $   -*- text -*-
+
+ README for XML Documents
+==========================
+
+This directory and its subdirectories contain the XML source of the
+various documents of the Fink project, plus the XSLT stylesheets used
+to render them to HTML. You still need Saxon, an XSLT interpreter
+written in Java. Download Saxon 6.2.2 from
+<http://users.iclway.co.uk/mhkay/saxon/> and put the file 'saxon.jar'
+in this directory. You can then use the provided Makefiles to render
+the documents.
+
+
+EOF.
+
