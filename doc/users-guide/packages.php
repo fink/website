@@ -236,6 +236,31 @@ If you run into errors during that process, please first check the
 <a href="http://fink.sourceforge.net/faq/">FAQ</a>.
 </p>
 
+<h2><a name="">3.6 Available versions</a></h2>
+
+<p>When you want to install a package, you should first check the <a href="http://fink.sourceforge.net/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in the following fields:</p>
+<ul>
+<li>
+<p>
+<b>In 0.4.1-stable:</b>  this is the latest version that can be installed from binaries for OS 10.1 only.</p>
+</li>
+<li>
+<p>
+<b>In 0.5.2-stable:</b>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">upgrade</a> Fink.</p>
+</li>
+<li>
+<p>
+<b>In current-stable:</b>  this is the most recent stable version that can be installed from source (for OS 10.2).  To be able to install this version, you'll need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS access</a>.</p>
+<p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see below).  Enabling CVS gives you access to new stable versions of packages before the binary distribution is updated. 
+</p>
+</li>
+<li>
+<p>
+<b>In latest-unstable:</b>  This is the latest unstable version that can be installed from source.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstahle packages.</p>
+<p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
+</p></li>
+</ul>
+
 <p align="right">
 Next: <a href="upgrade.php">4 Upgrading Fink</a></p>
 

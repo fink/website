@@ -49,6 +49,7 @@ dselect</a></li>
 apt-get</a></li>
 <li><a href="packages.php#bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li>
 <li><a href="packages.php#src">3.5 Installing Packages from Source</a></li>
+<li><a href="packages.php#">3.6 Available versions</a></li>
 </ul>
 <li><a href="upgrade.php"><b>4 Upgrading Fink</b></a></li>
 <ul>
