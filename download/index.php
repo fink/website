@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/08 22:08:49 $';
+$cvs_date = '$Date: 2002/06/12 19:10:57 $';
 
 include "header.inc";
 ?>
@@ -43,10 +43,13 @@ To get out of the editor, press control-O, return, control-X.
 Close the Terminal.app window.
 </p></li>
 <li><p>
-Open a new Terminal.app window and type "sudo dselect".
-That launches you into a package selection app.
-(When asked for a password, enter the password of your normal user
+Open a new Terminal.app window and type "fink scanpackages".
+(This does one final bit of necessary setup.  
+When asked for a password, enter the password of your normal user
 account.)
+Then type
+"sudo dselect", which will 
+launch you into a package selection app.
 In the menu, hit "[U]pdate" once, then go to "[S]elect" to choose the
 packages you want installed.
 When you're done, hit "[I]nstall" to actually install the packages.
