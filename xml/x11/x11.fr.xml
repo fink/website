@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.5 2004/04/09 16:44:02 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.6 2004/04/13 23:47:34 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -272,36 +272,16 @@ defined in indirectly referenced dynamic library
       </ul>
     </section>
     <section name="official-binary" >
-      <title>The Official Binaries</title>
-      <p>
-The XFree86 project has an official binary distribution of XFree86
-4.2.0, which can be upgraded to 4.2.1.1 with patches.
-You can find it on your local <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirror</link> in
-the directory <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
-Be sure to get the <filename>Xprog.tgz</filename> and <filename>Xquartz.tgz</filename>
-tarballs even though they are marked as optional.
-If you're unsure what you need, just download the whole directory.
-Run the <filename>Xinstall.sh</filename> script as root to install the stuff.
-(You might want to read the <link url="http://www.xfree86.org/4.2.0/Install.html" >official
-instructions</link> before installing.)   If you prefer, you can use the <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download" >binary</link> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
+      <title>Binaires officiels</title>
+      <p>Le projet XFree86 comprend une distribution binaire officielle de XFree86 4.2.0, qui peut être mise au niveau 4.2.1.1 à l'aide de rustines. Vous la trouverez sur votre <link url="http://www.xfree86.org/MIRRORS.shtml" >miroir XFree86</link> local dans le répertoire <code>4.2.0/binaries/Darwin-ppc-5.x</code>. Téléchargez les fichiers archives tar <filename>Xprog.tgz</filename> et <filename>Xquartz.tgz</filename> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <filename>Xinstall.sh</filename> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <link url="http://www.xfree86.org/4.2.0/Install.html" >instructions officielles</link> avant l'installation). Vous pouvez aussi, si vous le souhaitez, utiliser le <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download" >binaire</link> de XonX, qui a un source identique mais est plus facile à utiliser. Dans les deux cas, téléchargez, décompressez et lancez les mises à niveau suivantes :</p>
       <ol>
-        <li>10.1 users: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download" >4.2.0 -> 4.2.0.1 upgrade</link>.  10.2 users:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download" >4.2.0 -> 4.2.0.1 upgrade</link>
+        <li>Utilisateurs 10.1 : <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download" >mise à niveau 4.2.0 -> 4.2.0.1</link>.  Utilisateurs 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download" >mise à niveau 4.2.0 -> 4.2.0.1</link>
         </li>
-        <li>10.1 and 10.2 users:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download" >4.2.0.1 -> 4.2.1.1 upgrade</link>
+        <li>Utilisateurs 10.1 et 10.2 :  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download" >mise à niveau 4.2.0.1 -> 4.2.1.1</link>
         </li>
       </ol>
-      <p>There is an official binary distribution of XFree86
-4.3.0, as well, on the<link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 mirrors</link> in
-the directory <code>4.3.0/binaries/Darwin-ppc-6.x</code>.
-Be sure to get the <filename>Xprog.tgz</filename> and <filename>Xquartz.tgz</filename>
-tarballs even though they are marked as optional.
-If you're unsure what you need, just download the whole directory.
-Run the <filename>Xinstall.sh</filename> script as root to install the stuff.
-(You might want to read the <link url="http://www.xfree86.org/4.3.0/Install.html" >official
-instructions</link> before installing.)</p>
-      <p>Whichever version you install, you've now got XFree86 with a server that can do fullscreen, or 
-rootless under Mac OS X.
-</p>
+      <p>Il existe aussi une distribution binaire officielle de XFree86 4.3.0 sur les <link url="http://www.xfree86.org/MIRRORS.shtml" >miroirs XFree86</link> dans le répertoire <code>4.3.0/binaries/Darwin-ppc-6.x</code>. Téléchargez les fichiers archives tar <filename>Xprog.tgz</filename> et <filename>Xquartz.tgz</filename> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <filename>Xinstall.sh</filename> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <link url="http://www.xfree86.org/4.3.0/Install.html" >instructions officielles</link> avant l'installation.)</p>
+      <p>Quelle que soit la version que vous avez installée, vous aurez alors XFree86 avec un serveur plein écran ou sans racine sous Mac OS X.</p>
     </section>
     <section name="official-source" >
       <title>The Official Source</title>
