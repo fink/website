@@ -189,21 +189,9 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <li><xsl:apply-templates/></li>
 </xsl:template>
 
-<xsl:template match="dl">
-<dl><xsl:apply-templates/></dl>
-</xsl:template>
-
-<xsl:template match="dt">
-<dt><xsl:apply-templates/></dt>
-</xsl:template>
-
-<xsl:template match="dd">
-<dd><xsl:apply-templates/></dd>
-</xsl:template>
-
 <xsl:template match="itemtable">
 <table border="0" cellpadding="0" cellspacing="10">
-<tr valign="bottom"><th>Field</th><th>Value</th></tr>
+<tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr>
 <xsl:apply-templates select="item" />
 </table>
 </xsl:template>

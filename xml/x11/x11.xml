@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.12 2001/10/31 16:05:18 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.13 2002/04/13 21:14:22 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -167,7 +168,7 @@ up menus in the root window, docks or launch buttons.
 <title>History</title>
 <shorttitle>History</shorttitle>
 
-<p>[Sorry for the epic language, I couldn't resist...]</p>
+<preface><p>[Sorry for the epic language, I couldn't resist...]</p></preface>
 
 <section name="early"><title>The early days</title>
 <p>

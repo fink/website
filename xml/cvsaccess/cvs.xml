@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
 
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.6 2001/10/09 12:23:09 chrisp Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.7 2002/04/13 21:14:20 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -65,7 +66,7 @@ cvs -z3 update -d
 main difference is that the <code>inject.pl</code> script just copies the
 descriptions into your Fink installation. To build the new packages,
 you must use regular fink commands, like <code>fink update-all</code> or
-<code>fink update <i>&lt;package&gt;</i></code>.</p>
+<code>fink update <em>&lt;package&gt;</em></code>.</p>
 <p>The first time procedure:</p>
 <codeblock>cd tempdir
 cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login

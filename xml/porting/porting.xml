@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index">
 <title>Porting Unix software to Darwin and Mac OS X</title>
 <shorttitle>Porting</shorttitle>
-<cvsid>$Id: porting.xml,v 1.6 2002/03/31 18:59:54 fingolfin Exp $</cvsid>
+<cvsid>$Id: porting.xml,v 1.7 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
 
 <preface>
 <p>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.24 2002/04/03 15:05:21 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.25 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -174,7 +175,7 @@ Note the lack of indentation and the terminating
 <code>&lt;&lt;</code>.
 </p><p>
 As a special case, when working within a <code>SplitOff</code> or
-<code>SplitOff<i>N</i></code> field, the here-document syntax
+<code>SplitOff<em>N</em></code> field, the here-document syntax
 can be nested.  The same terminator <code>&lt;&lt;</code> is used
 for the sub-here-document.  Here is an example:
 <codeblock>
@@ -204,33 +205,108 @@ To make life easier, Fink supports a set of expansions that are
 performed on some fields.
 The available expansions are:
 </p>
-<dl>
-<dt>%n</dt><dd>the <em>n</em>ame of the current package</dd>
-<dt>%N</dt><dd>the <em>N</em>ame of the parent package (the same as
-%n unless within a <code>SplitOff</code>)</dd>
-<dt>%v</dt><dd>the package <em>v</em>ersion</dd>
-<dt>%r</dt><dd>the package <em>r</em>evision</dd>
-<dt>%f</dt><dd>the <em>f</em>ull package name, i.e. %n-%v-%r</dd>
-<dt>%p, %P</dt><dd>the <em>p</em>refix where Fink is installed, e.g. /sw</dd>
-<dt>%d</dt><dd>the <em>d</em>estination directory where the tree to be
-packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
-<dt>%D</dt><dd>the <em>D</em>estination for the parent package (the same as
-%d unless within a <code>SplitOff</code>)</dd>
-<dt>%i</dt><dd>the full <em>i</em>nstall-phase prefix, equivalent to %d%p</dd>
-<dt>%I</dt><dd>the <em>I</em>nstall prefix of the parent package,
-equivalent to %D%P (the same as
-%i unless within a <code>SplitOff</code>)</dd>
-<dt>%a</dt><dd>the path where the p<em>a</em>tches can be found</dd>
-<dt>%b</dt><dd>the <em>b</em>uild directory,
-e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1
-<p>Note: Use this only when there is no other way. The build
-directory is the current directory when scripts are executed; you
-should use relative path names in commands.</p>
-</dd>
-<dt>%c</dt><dd>the parameters for <em>c</em>onfigure:
-<code>--prefix=%p</code> plus anything specified with
-ConfigureParams</dd>
-</dl>
+<pairtable labeld="" labelt="">
+<item><itemt>%n</itemt>
+<itemd>
+<p>
+the <em>n</em>ame of the current package
+</p>
+</itemd></item>
+
+<item><itemt>%N</itemt>
+<itemd>
+<p>
+the <em>N</em>ame of the parent package (the same as %n unless within a
+<code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%v</itemt>
+<itemd>
+<p>
+the package <em>v</em>ersion
+</p>
+</itemd></item>
+
+<item><itemt>%r</itemt>
+<itemd>
+<p>
+the package <em>r</em>evision
+</p>
+</itemd></item>
+
+<item><itemt>%f</itemt>
+<itemd>
+<p>
+the <em>f</em>ull package name, i.e. %n-%v-%r
+</p>
+</itemd></item>
+
+<item><itemt>%p, %P</itemt>
+<itemd>
+<p>
+the <em>p</em>refix where Fink is installed, e.g. /sw
+</p>
+</itemd></item>
+
+<item><itemt>%d</itemt>
+<itemd>
+<p>
+the <em>d</em>estination directory where the tree to be packaged is built, e.g.
+/sw/src/root-gimp-1.2.1-1
+</p>
+</itemd></item>
+
+<item><itemt>%D</itemt>
+<itemd>
+<p>
+the <em>D</em>estination for the parent package (the same as %d unless within a
+<code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%i</itemt>
+<itemd>
+<p>
+the full <em>i</em>nstall-phase prefix, equivalent to %d%p
+</p>
+</itemd></item>
+
+<item><itemt>%I</itemt>
+<itemd>
+<p>
+the <em>I</em>nstall prefix of the parent package, equivalent to %D%P (the same
+as %i unless within a <code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%a</itemt>
+<itemd>
+<p>
+the path where the p<em>a</em>tches can be found
+</p>
+</itemd></item>
+
+<item><itemt>%b</itemt>
+<itemd>
+<p>
+the <em>b</em>uild directory, e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1 
+</p>
+<p>
+Note: Use this only when there is no other way. The build directory is the
+current directory when scripts are executed; you should use relative path names
+in commands.
+</p>
+</itemd></item>
+
+<item><itemt>%c</itemt>
+<itemd>
+<p>
+the parameters for <em>c</em>onfigure: <code>--prefix=%p</code> plus anything
+specified with ConfigureParams
+</p>
+</itemd></item>
+</pairtable>
 
 </section>
 
@@ -448,6 +524,7 @@ appropriately for your shared libraries.  (These are also shown with the
 <code>otool -L</code> query.)
 </p><p>
 Files are then divided between the two packages as follows
+</p>
 <ul>
 <li>  in package barN-shlibs:
 <codeblock>
@@ -465,6 +542,7 @@ Files are then divided between the two packages as follows
   %i/share/doc/barN/*
   other files, if needed
 </codeblock></li></ul>
+<p>
 Notice that both packages are required to have some documentation about
 the license, but that the directories containing the DocFiles will be
 different.
@@ -787,7 +865,7 @@ and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
 (i.e. /sw/src/gimp-1.2.1-1/gimp-1.2.1). Details can be controlled with
-the SourceDirectory, NoSourceDirectory and Source<i>N</i>ExtractDir
+the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
 fields.</p>
 <p>In the <em>patch phase</em> the source is patched so that it will
 build on Darwin. The actions specified by the UpdateConfigGuess,
@@ -802,7 +880,7 @@ directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
 All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
-<p>(<i>Introduced in fink 0.9.9.</i> It is possible to generate several
+<p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
 field.  Towards the end of the install phase, separate install directories
 are created for each package being created, and files are moved to
@@ -939,7 +1017,7 @@ packages, e.g. wget and wget-ssl.
 <item><itemt>BuildDepends</itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.0.</i>
+<em>Introduced in fink 0.9.0.</em>
 A list of dependencies that is applied at build time only.
 This can be used to list tools (e.g. flex) that must be present to
 build the packages, but which are not used at run time.
@@ -1031,7 +1109,7 @@ special flags are used to override this.
 <item><itemt>BuildDependsOnly</itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<em>Introduced in fink 0.9.9.</em>
 A boolean value which indicates that no other packages should Depend on
 this one, they should only BuildDepend.
 </p>
@@ -1047,10 +1125,10 @@ An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
 supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
-look up the mirror setting for <i>mirror-name</i> in Fink's
-configuration, append the <i>relative-path</i> part and use that as
+look up the mirror setting for <em>mirror-name</em> in Fink's
+configuration, append the <em>relative-path</em> part and use that as
 the actual URL. Alternatively, using <code>custom</code> as the
-<i>mirror-name</i> will cause Fink to use the <code>CustomMirror</code>
+<em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
 </p>
 <p>
@@ -1068,7 +1146,7 @@ download).
 <p>
 A list of mirror sites. Each mirror site appears on a separate line,
 in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>.
-<i>location</i> can be a continent code (e.g. <code>nam</code>), a
+<em>location</em> can be a continent code (e.g. <code>nam</code>), a
 country code (e.g. <code>nam-us</code>), or anything else;
 mirrors are tried in that order.
 Example:
@@ -1104,7 +1182,7 @@ true value.
 </p>
 </itemd></item>
 
-<item><itemt>Source<i>N</i></itemt>
+<item><itemt>Source<em>N</em></itemt>
 <itemd>
 <p>
 If a package consists of several tarballs, name them with these
@@ -1116,7 +1194,7 @@ expanded - that would be useless anyway.
 </p>
 </itemd></item>
 
-<item><itemt>Source<i>N</i>ExtractDir</itemt>
+<item><itemt>Source<em>N</em>ExtractDir</itemt>
 <itemd>
 <p>
 Normally, an auxiliary tarball will be extracted in the same
@@ -1143,11 +1221,11 @@ In the above example this would result in the tarball being stored under
 </p>
 </itemd></item>
 
-<item><itemt>Source<i>N</i>Rename</itemt>
+<item><itemt>Source<em>N</em>Rename</itemt>
 <itemd>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the Nth tarball as specified by the <code>Source<i>N</i></code>
+is used to rename the Nth tarball as specified by the <code>Source<em>N</em></code>
 field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
@@ -1171,7 +1249,7 @@ message.
 <item><itemt>UpdateConfigGuessInDirs</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.9.0 CVS version.</i>
+<em>Introduced in a post-0.9.0 CVS version.</em>
 A list of subdirectories.
 This does the same as UpdateConfigGuess, but is useful for packages
 that have outdated config.guess files in several directories
@@ -1200,7 +1278,7 @@ page</link> for further information.
 <item><itemt>UpdateLibtoolInDirs</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.9.0 CVS version.</i>
+<em>Introduced in a post-0.9.0 CVS version.</em>
 A list of subdirectories.
 This does the same as UpdateLibtool, but is useful for packages
 that have outdated libtool 1.3.x scripts in several directories
@@ -1236,7 +1314,7 @@ packages's version and Fink's version (in
 <itemd>
 <p>
 The filename of a patch to be applied with <code>patch -p1
-&lt;<i>patch-file</i></code>. This should be just a filename; the
+&lt;<em>patch-file</em></code>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <code>%f.patch</code>. The patch is applied before the PatchScript
@@ -1259,7 +1337,7 @@ section).
 <p><em>Compile Phase:</em></p>
 <itemtable>
 
-<item><itemt>Set<i>ENVVAR</i></itemt>
+<item><itemt>Set<em>ENVVAR</em></itemt>
 <itemd>
 <p>
 Causes certain environment variables to be set in the
@@ -1278,7 +1356,7 @@ prepended to the default value.
 </p>
 </itemd></item>
 
-<item><itemt>NoSet<i>ENVVAR</i></itemt>
+<item><itemt>NoSet<em>ENVVAR</em></itemt>
 <itemd>
 <p>
 When set to a true value, deactivates the default values for
@@ -1331,7 +1409,7 @@ Before the commands are executed, percent expansion takes place
 <item><itemt>UpdatePOD</itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.5.</i>
+<em>Introduced in fink 0.9.5.</em>
 A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
@@ -1388,17 +1466,17 @@ commands to the InstallScript.
 <item><itemt>SplitOff</itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<em>Introduced in fink 0.9.9.</em>
 Generate a second package from the same compile/install run.
 For details about how this works, see the separate
 <link url="#splitoffs">splitoff section</link> below.
 </p>
 </itemd></item>
 
-<item><itemt>SplitOff<i>N</i></itemt>
+<item><itemt>SplitOff<em>N</em></itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<em>Introduced in fink 0.9.9.</em>
 This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run.
 </p>
@@ -1407,9 +1485,9 @@ fourth, etc. package from the same compile/install run.
 <item><itemt>Files</itemt>
 <itemd>
 <p>
-<i>Introduced in fink 0.9.9.</i>
+<em>Introduced in fink 0.9.9.</em>
 Used <em>only</em>
-within a <code>SplitOff</code> or <code>SplitOff<i>N</i></code> field,
+within a <code>SplitOff</code> or <code>SplitOff<em>N</em></code> field,
 this designates which files and directories
 should be moved from the parent package's  installation
 directory %I to the current installation directory %i.  Note that this
@@ -1499,7 +1577,7 @@ Gives a service description for <code>daemonic</code>.
 <code>daemonic</code> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
 The description will added to the package as a file named
-<code>%p/etc/daemons/<i>name</i>.xml</code>, where <i>name</i> is
+<code>%p/etc/daemons/<em>name</em>.xml</code>, where <em>name</em> is
 specified by the DaemonicName field and defaults to the package
 name.
 Percent expansion is performed on the contents of this field.
@@ -1616,6 +1694,7 @@ The <code>SplitOff</code> field must contain a number of fields of its
 own.  In fact, it resembles a complete package description, but with
 certain fields missing.  Here is what belongs in the sub-description
 (by category):
+</p>
 <ul>
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
 everything else is inherited from the parent package (except for
@@ -1632,7 +1711,7 @@ field).</li>
 <li>Additional Data: These are inherited from the parent package but may
 be modified by declaring the field within the <code>SplitOff</code>.</li>
 </ul>
-</p><p>
+<p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
 Next comes the <code>Files</code> command specified in the

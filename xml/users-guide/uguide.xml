@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.9 2001/11/04 18:55:08 chrisp Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.10 2002/04/13 21:14:22 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -334,11 +335,13 @@ package management tools included in Fink.
 <shorttitle>Packages</shorttitle>
 
 <preface>
+<p>
 Now that you have something that can be called a Fink installation,
 this chapter shows you how to install the actual software packages you
 came for.
 Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
+</p>
 </preface>
 
 <section name="x11"><title>Getting X11 Sorted Out</title>
@@ -538,8 +541,10 @@ If you run into errors during that process, please first check the
 <shorttitle>Upgrade</shorttitle>
 
 <preface>
+<p>
 This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
+</p>
 </preface>
 
 <section name="bin"><title>Upgrading using Binary Packages</title>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkfaq.dtd">
 
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.31 2002/03/19 21:08:01 finlayd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.32 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -179,9 +180,9 @@ So far they are providing us with pre-release seeds of new Mac OS X
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
-<i>"Hopefully it underscores the commitment that many suspect we're
+<em>"Hopefully it underscores the commitment that many suspect we're
 not willing to provide.  We'll get better at the open source game over
-time."</i>
+time."</em>
 Thanks Apple!
 </p>
 </answer></faqentry>
@@ -333,7 +334,7 @@ compliance as well as licensing and patent restrictions.
 <p>
 If you want to install a package that is not available via
 <code>dselect</code> / <code>apt-get</code>, you have to compile it
-from source using <code>fink install <i>packagename</i></code>.
+from source using <code>fink install <em>packagename</em></code>.
 Make sure you have the Developer Tools installed before you try this.
 See also the question about unstable below.
 </p>
@@ -640,7 +641,7 @@ users from your system is to do so from within NetInfo Manager.app or use the
 command line tool <code>niutil</code> in Terminal.  Read the man page
  for <code>niutil</code> for more information about NetInfo.</li>
 </ul>
-<p>Fink <i>does</i> request permission to install these additional users on 
+<p>Fink <em>does</em> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.
 </p>

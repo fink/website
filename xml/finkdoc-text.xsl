@@ -102,7 +102,7 @@
 <li><xsl:apply-templates/></li>
 </xsl:template>
 
-<!-- dl, dt, dd, itemtable, pairtable, item, itemt, itemd -->
+<!-- itemtable, pairtable, item, itemt, itemd -->
 
 <xsl:template match="cvsid">
 <p><xsl:text>Generated from </xsl:text><xsl:apply-templates/></p>

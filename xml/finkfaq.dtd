@@ -1,0 +1,40 @@
+<!ELEMENT answer ( codeblock | p | ul )* >
+
+<!ELEMENT chapter ( title, shorttitle, faqentry+ ) >
+<!ATTLIST chapter filename NMTOKEN #REQUIRED >
+
+<!ELEMENT code ( #PCDATA | em )* >
+
+<!ELEMENT codeblock ( #PCDATA ) >
+
+<!ELEMENT cvsid ( #PCDATA ) >
+
+<!ELEMENT document ( title, shorttitle, cvsid, preface, chapter+ ) >
+<!ATTLIST document filename NMTOKEN #REQUIRED >
+
+<!ELEMENT em ( #PCDATA ) >
+
+<!ELEMENT faqentry ( question, answer ) >
+<!ATTLIST faqentry name ID #REQUIRED >
+
+<!ELEMENT filename ( #PCDATA ) >
+
+<!ELEMENT li ( #PCDATA | code | codeblock | p )* >
+
+<!ELEMENT link ( #PCDATA ) >
+<!ATTLIST link url CDATA #REQUIRED >
+
+<!ELEMENT literal ( #PCDATA ) >
+
+<!ELEMENT p ( #PCDATA | code | codeblock | em | filename | link | literal )* >
+
+<!ELEMENT preface ( p+ ) >
+
+<!ELEMENT question ( p ) >
+
+<!ELEMENT shorttitle ( #PCDATA ) >
+
+<!ELEMENT title ( #PCDATA ) >
+
+<!ELEMENT ul ( li+ ) >
+

@@ -1,0 +1,55 @@
+<!-- Root elements -->
+<!ELEMENT article ( title, shorttitle, cvsid, preface?, section+ ) >
+<!ATTLIST article filename NMTOKEN #REQUIRED >
+
+<!ELEMENT document ( title, shorttitle, cvsid, preface?, chapter+ ) >
+<!ATTLIST document filename NMTOKEN #REQUIRED >
+
+
+<!-- Structure -->
+<!ELEMENT chapter ( title, shorttitle, preface?, section+ )* >
+<!ATTLIST chapter filename NMTOKEN #REQUIRED >
+
+<!ELEMENT title ( #PCDATA ) >
+<!ELEMENT shorttitle ( #PCDATA ) >
+<!ELEMENT cvsid ( #PCDATA ) >
+<!ELEMENT preface ( p+ ) >
+
+<!ELEMENT section (title?, ( codeblock | itemtable | ol | p | pairtable | ul )*) >
+<!ATTLIST section name NMTOKEN #IMPLIED >
+
+
+<!-- Block elements -->
+<!ELEMENT codeblock ( #PCDATA | em )* >
+<!ELEMENT p ( #PCDATA | code | codeblock | em | link | tt | xref )* >
+
+
+<!-- Inline -->
+<!ELEMENT code ( #PCDATA | em )* >
+<!ELEMENT em ( #PCDATA ) >
+<!ELEMENT tt ( #PCDATA ) >
+
+
+<!-- Links -->
+<!ELEMENT link ( #PCDATA ) >
+<!ATTLIST link url CDATA #REQUIRED >
+
+<!ELEMENT xref ( #PCDATA ) >
+<!ATTLIST xref chapter NMTOKEN #IMPLIED >
+<!ATTLIST xref section NMTOKEN #IMPLIED >
+
+
+<!-- Lists -->
+<!ELEMENT ol ( li+ ) >
+<!ELEMENT ul ( li+ ) >
+<!ELEMENT li ( #PCDATA | code | codeblock | em | link | p )* >
+
+<!ELEMENT itemtable ( item+ ) >
+
+<!ELEMENT pairtable ( item+ ) >
+<!ATTLIST pairtable labeld CDATA #REQUIRED >
+<!ATTLIST pairtable labelt CDATA #REQUIRED >
+
+<!ELEMENT item ( itemt, itemd ) >
+<!ELEMENT itemt ( #PCDATA | code | em )* >
+<!ELEMENT itemd ( codeblock | p | ul )* >
