@@ -1,7 +1,7 @@
 <!ENTITY % block "codeblock | ol | p | ul" >
 <!ENTITY % inline "#PCDATA | code | strong | em | filename | link | varlink | tt | quote | xref" >
 
-<!ENTITY fink_version "0.6.1" >
+<!ENTITY fink_version "0.6.2" >
 
 
 <!-- Root elements -->
