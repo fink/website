@@ -1,5 +1,5 @@
 <a name="15/10/2004 Résolution de problèmes concernant gcc"><span class="news-date">15/10/2004 : </span><span class="news-headline">Résolution de problèmes concernant gcc</span></a><?php gray_line(); ?>
-<p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version &quote;vérolée&quote; pour compiler les paquets qui présentent ce problème.</p>
+<p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version &quot;vérolée&quot; pour compiler les paquets qui présentent ce problème.</p>
 <p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">ici</a>.</p>
 <p>Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.</p>
 
