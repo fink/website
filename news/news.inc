@@ -1,4 +1,12 @@
-<a name="2003-03-18 KDE 3.1 Final In Stable"><span class="news-date">2003-03-18: </span><span class="news-headline">KDE 3.1 Final In Stable</span></a><?php gray_line(); ?>
+<a name="2003-03-29 KDE 3.1.1 Final In Unstable"><span class="news-date">2003-03-29: </span><span class="news-headline">KDE 3.1.1 Final In Unstable</span></a><?php gray_line(); ?>
+	<p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
+<a href="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</a>.
+	Improvements over 3.1 final include many upstream bugfixes,
+	build improvements, koffice bugfixes, kmail crash fixes,
+	and other miscellaneous updates.  Binary packages will not
+	be available in time for the binary distribution, but will
+	be released as an update shortly thereafter.
+</p><a name="2003-03-18 KDE 3.1 Final In Stable"><span class="news-date">2003-03-18: </span><span class="news-headline">KDE 3.1 Final In Stable</span></a><?php gray_line(); ?>
 	<p>KDE 3.1 is now in Fink stable.  The full announcement can be
 <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</a>.
 	Improvements over 3.1 beta1 include an updated audio driver, 
@@ -14,11 +22,4 @@ It is recommended that all Fink users who are using Apple X11 upgrade.
 A new version of the system-xfree86 package has been released to unstable
 that takes the new Apple X11 into account.  It should be appearing in stable
 shortly.
-</p><a name="2003-02-14 New version of FinkCommander"><span class="news-date">2003-02-14: </span><span class="news-headline">New version of FinkCommander</span></a><?php gray_line(); ?>
-        <p><a href="http://finkcommander.sourceforge.net/">FinkCommander</a>,
- a separate project which provides a GUI for Fink,
-has released version 0.5.0, their first Jaguar-only version.  The new
-version includes a package browser which allows you to view the files 
-that Fink has installed for a particular package, as well as <a href="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many 
-other improvements.</a>
 </p>

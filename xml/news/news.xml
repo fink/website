@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.45 2003/03/18 21:05:33 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.46 2003/03/29 20:49:27 rangerrick Exp $</cvsid>
+<newsitem>
+	<date>2003-03-29</date>
+	<headline>KDE 3.1.1 Final In Unstable</headline>
+	<body>
+	<p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</extlink>.
+	Improvements over 3.1 final include many upstream bugfixes,
+	build improvements, koffice bugfixes, kmail crash fixes,
+	and other miscellaneous updates.  Binary packages will not
+	be available in time for the binary distribution, but will
+	be released as an update shortly thereafter.
+</p></body></newsitem>
 <newsitem>
 	<date>2003-03-18</date>
 	<headline>KDE 3.1 Final In Stable</headline>

@@ -4,9 +4,23 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 18 Mar 2003 15:57:50 EST</lastBuildDate>
+    <lastBuildDate>Sat, 29 Mar 2003 15:47:37 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>KDE 3.1.1 Final In Unstable</title>
+    <link>http://fink.sf.net/news/#2003-03-29%20KDE%203.1.1%20Final%20In%20Unstable</link>
+    <dc:date>2003-03-29</dc:date>
+    <description>
+	KDE 3.1.1 is now in Fink unstable.  The full announcement can be
+read here.
+	Improvements over 3.1 final include many upstream bugfixes,
+	build improvements, koffice bugfixes, kmail crash fixes,
+	and other miscellaneous updates.  Binary packages will not
+	be available in time for the binary distribution, but will
+	be released as an update shortly thereafter.
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>KDE 3.1 Final In Stable</title>
     <link>http://fink.sf.net/news/#2003-03-18%20KDE%203.1%20Final%20In%20Stable</link>
@@ -386,16 +400,6 @@ software before using Fink.
     <description>
     
       The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.3.2 is released</title>
-    <link>http://fink.sf.net/news/#2002-01-09%20Fink%200.3.2%20is%20released</link>
-    <dc:date>2002-01-09</dc:date>
-    <description>
-    
-      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the Upgrade Matrix and the User's Guide. 
     
   </description>
   </item>
