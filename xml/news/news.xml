@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.141 2004/10/15 15:20:44 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.142 2004/11/21 14:18:34 dmrrsn Exp $</cvsid>
 
+
+<newsitem>
+<date>2004-11-20</date>
+<headline>Solution to gcc problems.</headline>
+<body>
+<p>
+Apple has released the November 2004 gcc3 updater, available (upon free 
+registration) at connect.apple.com.  This updater fixes the problems with
+the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
+install this updater.  (The updater will update correctly for users with
+an untouched XCode 1.5, and also for users who installed the workaround which
+the fink project had previously recommended.)
+</p><p>
+We would like to thank Apple for responding to our reports about this
+matter, and working to resolve it as quickly as possible.
+</p>
+
+
+</body>
+</newsitem>
 
 <newsitem>
 <date>2004-10-15</date>
