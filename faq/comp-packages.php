@@ -39,7 +39,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </a>
 
 <a name="apple-x11"><div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</b></p></div>
-<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package.</p></div>
+	<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <tt><nobr>http://www.apple.com/macosx/X11/</nobr></tt> and the actual X11 is from a form a level deeper.</p></div>
 </a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
