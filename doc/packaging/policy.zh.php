@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 规则";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/19 13:04:44';
+$cvs_date = 'Date: 2004/05/17 22:43:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 include_once "header.inc";
@@ -289,25 +289,24 @@ SplitOff: &lt;&lt;
 
 
 <h2><a name="perlmods">3.4 Perl 模块</a></h2>
-<p>Fink 对 perl 模块有一个新的规则，它从 2003 年 5 月开始生效。
+<p>Fink 从 2003 年 5 月开始实施的对 perl 模块的规则，在 2004 年 4 月进行了修改。
 </p><p>
 传统上，关于 perl 模块的 Fink 软件包具有
 <code>-pm</code> 后缀，并使用 <code>Type: perl</code> 
 指令来构建，它把 perl 模块的文件保存在 <code>/sw/lib/perl5</code> 和/或
-<code>/sw/lib/perl5/darwin</code>中。而在新的规则下，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块。
+<code>/sw/lib/perl5/darwin</code>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
 </p><p>
 那些版本相关的 perl 模块称为 XS 模块，
 通常除了纯粹的 perl 子程序外，还包括编译好的 C 代码。有很多办法可以识别这个情况，包括存在带有 <code>.bundle</code> 后缀的文件等。
 </p><p>
 版本相关的 perl 模块必须使用标明版本号的 perl 程序来编译，比方说 <code>perl5.6.0</code>，而且必须把它的文件标准 perl 目录下面的一个标明版本号的子目录中，例如
-<code>/sw/lib/perl5/5.6.0</code> 和 <code>/sw/lib/perl5/5.6.0/darwin</code>。一个使用后缀 <code>-pm560</code> 的新命名约定被引入来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，如果说很快会包括的 
-perl 5.6.1 和 perl 5.8.0。  
+<code>/sw/lib/perl5/5.6.0</code> 和 <code>/sw/lib/perl5/5.6.0/darwin</code>。习惯上，使用后缀 <code>-pm560</code> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树)和 perl 5.8.0，perl 5.8.1 和 perl 5.8.4(即将使用)。  
 </p><p>
-新的 <code>Type: perl 5.6.0</code> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
-(这个指令从 fink 0.13.0 版本开始提供)。</p><p>
-可以允许创建一个 <code>-pm</code> 软件包，它实际是去加载 <code>-pm560</code> 或其它存在的相应版本的"束"软件包。我们通过提供一个平滑升级的方法，来鼓励对现存的 XS 模块使用这个策略，。
-</p><p>
-从 fink 0.13.0 版本开始，对 <code>.deb</code> 文件使用 <code>fink validate</code> 命令的时候，将会检查这个 fink 软件包是否一个安装在没有标定版本的目录中的 XS 模块，如果是的话，将给出一个警告信息。
+<code>Type: perl 5.6.0</code> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
+(这个指令从 fink 0.13.0 版本开始提供)。</p>
+<p>按照 2003 年 5 月的规则，可以允创建一个 <code>-pm</code> 软件包，它实际是去加载 <code>-pm560</code> 或其它存在的相应版本的"束"软件包。按照 2004 年 4 月的规则，不再鼓励这样做，而且经过一个过渡期后，将会完全放弃这种做法。(唯一的例外是 <code>storable-pm</code> 软件包因为自举的需要仍然需要保持这种形式)。</p>
+<p>对于 fink 0.20.1，如果当前 perl 版本号至少是 5.8.0 的时候，system-perl 虚拟软件包会自动”提供”一些 perl 模块。对于 system-perl-5.8.1-1，它们是：<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm, file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm, i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm, mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm, time-hires-pm581。</b></p>
+<p>从 fink 0.13.0 版本开始，对 <code>.deb</code> 文件使用 <code>fink validate</code> 命令的时候，将会检查这个 fink 软件包是否一个安装在没有标定版本的目录中的 XS 模块，如果是的话，将给出一个警告信息。
 </p>
 
 

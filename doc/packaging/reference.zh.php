@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/19 13:04:44';
+$cvs_date = 'Date: 2004/05/17 22:43:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -174,11 +174,13 @@ CompileScript:  &lt;&lt;
 注意，其实没有办法去表达真正的可选依赖关系。
 如果一个软件包在有和没有另外一个软件包的情况下都可以工作，你必需要么确定即使有那个软件包存在的情况下都不会去使用它，或者把它添加到依赖关系字段中。
 如果你想提供给用户两种选择，你应该使用两个软件包，例如：wget 和 wget-ssl。
-</p><p>
+</p>
+<p>操作顺序：在逗号分隔的列表中的每个软件包(或替代关系的集合)中，逻辑"OR"(可替代项的列表)具有比逻辑"AND"更优先的操作次序。不象算术中可以使用括号，没有办法特别在 <code>Depends</code> 或类似的字段中指明某个软件包组具有优先的次序。</p>
+<p>
 从 fink 的 0.18.2 后 CVS 版本开始，你可以使用条件依赖关系。它通过在软件包名字前面放置
-<code>(string1 op string2)</code> 来指定。首先会对这两个字符串进行通常的百分号展开，然后这两个字符串会按照 <code>op</code> 运算符进行比较：&lt;&lt;， &lt;=，=，!=，&gt;&gt;，&gt;=。只有在比较的结果为真的时候，后面的软件包才会被认为是一个依赖关系。
+<code>(string1 op string2)</code> 来指定。首先会对这两个字符串进行通常的百分号展开，然后这两个字符串(都不能为空)会按照 <code>op</code> 运算符进行比较：&lt;&lt;， &lt;=，=，!=，&gt;&gt;，&gt;=。只有在比较的结果为真的时候，后面的软件包才会被认为是一个依赖关系。
 </p><p>
-你可以使用这个格式来简化维护几个类似的软件包的工作。例如，elinks 和 elinks-ssl 里面都可以这样写：
+你可以使用这个格式来简化维护几个类似的软件包的工作。例如，elinks 和 elinks-ssl 包里面都可以这样写：
 </p>
 <pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
 <p>
@@ -189,7 +191,15 @@ CompileScript:  &lt;&lt;
 elinks-ssl 中写：
 </p>
 <pre>Depends: openssl097-shlibs, expat-shlibs</pre>
-<p>是等价的。</p></td></tr><tr valign="top"><td>BuildDepends</td><td>
+<p>是等价的。</p>
+<p>作为替代的语法格式，如果 <code>string</code> 不为空的话，你也可以指定 <code>(string)</code> 为"true"。例如：</p>
+<pre>
+package: nethack%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_pkg[-x11]) x11
+</pre>
+<p>会把软件包 X11 设为 nethack-x11 变量的一个依赖关系，而不是 nethack。</p>
+</td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>从 fink 0.9.0 开始。</b>
 只在编译时需要的依赖关系的清单。
