@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.15 2004/09/02 14:49:05 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.16 2004/10/16 10:22:40 michga Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -925,7 +925,7 @@ times since active FTP is deprecated.</p>
           <p>If you use a FTP proxy then you should enter its address here, for
 example:</p>
           <codeblock>ProxyFTP: ftp://yourhost.com:2121/</codeblock>
-          <p>Leave if blank if you do not use a FTP proxy.</p>
+          <p>Leave it blank if you do not use a FTP proxy.</p>
         </li>
         <li>
           <p>

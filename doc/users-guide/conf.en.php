@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/09/02 14:49:05';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/10/16 10:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -195,7 +195,7 @@ times since active FTP is deprecated.</p>
           <p>If you use a FTP proxy then you should enter its address here, for
 example:</p>
           <pre>ProxyFTP: ftp://yourhost.com:2121/</pre>
-          <p>Leave if blank if you do not use a FTP proxy.</p>
+          <p>Leave it blank if you do not use a FTP proxy.</p>
         </li>
         <li>
           <p>
