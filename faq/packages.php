@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/01 23:30:42';
+$cvs_date = 'Date: 2001/10/13 09:09:23';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -128,11 +128,25 @@ wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is a known problem on 10.1.
 You must use the "Load from file" keymapping option since the default
-option (get it from the kernel) doesn't work anymore.
-The setting is in the Preferences dialog.
+option (loading it from the kernel) doesn't work anymore.
+The setting is in the XDarwin Preferences dialog.
+Be sure that a file is selected (e.g. USA.keymapping) - simply
+activating the check box may not be sufficient with some versions.
 If you can't get to the Preferences dialog because you disabled all
 splash screens, you can delete
-~/Library/Preferences/org.xfree86.XDarwin.plist to get it back.
+<tt><nobr>~/Library/Preferences/org.xfree86.XDarwin.plist</nobr></tt> to get it
+back, then start XDarwin and go to the Preferences dialog while the
+splash screen is displayed.
+Alternatively, you can edit that file manually in a text editor to
+enable the keymapping option (the UseKeymappingFile and KeymappingFile
+bits).
+</p><p>
+As a last resort, you can run <tt><nobr>startx -- -quartz -keymap
+USA.keymapping</nobr></tt> from Terminal.app.
+If this still doesn't work, you have another problem in addition to
+the keymapping problem that prevents XDarwin from starting.
+You'll get a bunch of diagnostic messages in Terminal.app to help you
+sort this out.
 </p></div></a>
 
 
