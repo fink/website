@@ -1,7 +1,7 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/11 12:17:44 $';
+$cvs_date = '$Date: 2001/04/26 20:43:22 $';
 
 include "header.inc";
 ?>
@@ -26,6 +26,9 @@ libraries on Darwin</li>
 <li><a href="x11-choices.php">X11 Choices</a> - the various ways to
 run X11 applications on Mac OS X</li>
 </ul>
+
+<p>Unfortunately, I don't have time to keep all of these pages
+current. Check the 'Last changed' note on each page.</p>
 
 <p>For more helpful stuff, check out the <a href="../links.php">link
 list</a>.</p>
