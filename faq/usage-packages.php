@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/07 01:57:29';
+$cvs_date = 'Date: 2003/05/08 01:37:40';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -113,7 +113,7 @@ sort this out.
 <a name="libXmuu">
 <div class="question"><p><b>Q7.8: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You are missing a file that is supposed to be installed by <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink reinstall xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p></div>
+You are missing a file that is supposed to be installed by <code>xfree86-base-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
 </a>
 <a name="apple-x-bugs">
 <div class="question"><p><b>Q7.9: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
