@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.en.xml,v 1.15 2004/07/11 18:24:34 michga Exp $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.16 2004/07/16 02:15:04 michga Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
@@ -213,6 +213,7 @@
         <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
         <li>Net Etiquette (<filename>xml/netiquette/netiquette.en.xml</filename>)</li>
         <li>Security (<filename>xml/security/security.en.xml</filename>)</li>
+       <li>Packaging Tutorial (<filename>xml/quick-start-pkg/quick-start-pkg.en.xml</filename>)</li>
        <li>Packaging (<filename>xml/packaging/packaging.en.xml</filename>)</li>
         <li>Porting (<filename>xml/porting/porting.en.xml</filename>)</li>
         <li>News (<filename>xml/news/news.xml</filename>)</li>
