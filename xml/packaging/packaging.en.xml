@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.49 2004/09/07 12:28:47 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.50 2004/09/07 19:13:29 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1313,7 +1313,7 @@ Required field.
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
   increase <code>Revision</code> by 10 in the newer tree in order to
-  leave space space for future updates to the package in the older
+  leave space for future updates to the package in the older
   tree.
 </p>
 </itemd></item>
