@@ -1,59 +1,57 @@
 <?
-$title = "パッケージ化 - 参照";
+$title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/09 15:29:17';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ化 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
+$cvs_date = 'Date: 2004/03/30 03:03:07';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 include_once "header.inc";
 ?>
 
-<h1>パッケージ化 - 5 参照</h1>
+<h1>パッケージ作成 - 5 リファレンスマニュアル</h1>
 		
 		
-
 
 		<h2><a name="build">5.1 ビルドプロセス</a></h2>
 			
 
 			<p>
-				各フィールドの意味を理解するには、 Fink のビルドプロセスに関する知識が必要となります。
-				このプロセスは５段階になっていて、それぞれ解梱 (unpack)、パッチ (patch)、コンパイル (compile)、インストール (install)、ビルド (build) と呼ばれています。
-				下記の例では <code>/sw</code> に gimp-1.2.1-1 パッケージをインストールしています。
+				各フィールドの意味を理解するには， Fink のビルドプロセスに関する知識が必要となります．
+				このプロセスは５段階になっていて，それぞれ解凍段階，パッチ段階，コンパイル段階，インストール段階，ビルド段階 と呼ばれます．
+				下記の例では <code>/sw</code> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<b>解梱段階</b>では、 <code>/sw/src/gimp-1.2.1-1</code> ディレクトリが作成されてソース tarball が解梱されます。
-				大抵ここで gimp-1.2.1 ディレクトリが作られ、ソースが中にあります。
-				これ以降のステップはすべてこの中 (例 <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます。
-				細かな点については SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
-				フィールドによって変更することができます。
+				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/gimp-1.2.1-1</code> が作成されてソースの tar ボールがそこに解凍されます．
+				大抵，解凍によりソースを含むディレクトリ <code>gimp-1.2.1</code> が作られます．
+				これ以降のステップはすべてこの中 (<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code> など) で行われます．
+				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<b>N</b>ExtractDir (Nは数字) で変更できます．
 			</p>
 			<p>
-				<b>パッチ段階</b>では、ソースに Darwin ビルド用のパッチが当てられます。
-				UpdateConfigGuess, UpdateLibtool, Patch and PatchScript 各フィールドに指定されているアクションを、この順で実行します。
+				<b>パッチ段階</b>では，Darwin でビルドするためのパッチがソースに当てられます．
+				フィールド UpdateConfigGuess, UpdateLibtool, Patch や PatchScript で指定されたアクションを，この順で実行します．
 			</p>
 			<p>
-				<b>コンパイル段階</b>では、ソースは設定後にコンパイルされます。
-				通常、これは <code>configure</code> スクリプトをパラメータ付きで呼び出して、 
-				<code>make</code> コマンドを発行します。
-				詳細は CompileScript フィールドを参照して下さい。
+				<b>コンパイル段階</b>では，ソースの configure とコンパイルが行われます．
+				普通，ここではスクリプト <code>configure</code> を適切な引数で起動し，コマンド <code>make</code> を実行することになります．
+				詳細はフィールド CompileScript を参照して下さい．
 			</p>
 			<p>
-				<b>インストール段階</b>では、パッケージは仮ディレクトリ 
-				<code>/sw/src/root-gimp-1.2.1-1</code> (= %d) にインストールされます。
-				("root-" に注意。)
-				<code>/sw</code> ディレクトリにインストールされる予定のファイルは全て、
-				<code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) にインストールされます。
-				詳細は InstallScript フィールドを参照して下さい。
+				<b>インストール段階</b>では，パッケージは仮ディレクトリ
+				<code>/sw/src/root-gimp-1.2.1-1</code> (%d と同じ) にインストールされます．
+				("root-" が付いていることに注意．)
+				ディレクトリ <code>/sw</code> にインストールされる予定のファイルは全て，
+				<code>/sw/src/root-gimp-1.2.1-1/sw</code> (%i すなわち %d%p に同じ) にインストールされます．
+				詳細はフィールド InstallScript を参照して下さい．
 			</p>
 			<p>
-				(<b>Fink 0.9.9 で導入。</b>
-				<code>SplitOff</code> フィールドを用いると、一つのパッケージ詳細から複数のパッケージを作成することができます。
-				インストール段階の最後のあたりでパッケージごとにインストールディレクトリを分け、ファイルを適当なディレクトリに振り分けていきます。)
+				(<b>Fink 0.9.9 で導入された機能:</b>
+				フィールド <code>SplitOff</code> を用いると，単一の finkinfo ファイルから複数のパッケージを生成できます．
+				インストール段階の最後のあたりでパッケージそれぞれに対して個別のインストールディレクトリが作られ，
+				ファイルを適当なディレクトリに振り分けていきます．)
 			</p>
 			<p>
-				<b>ビルド段階</b>では、バイナリパッケージファイル (.deb) を仮ディレクトリからビルドします。
-				この段階を直接制御することはできません。
-				代わりに、パッケージ詳細からの様々な情報を使って dpkg 用の <code>control</code> ファイルを作成します。
+				<b>ビルド段階</b>では，仮ディレクトリからバイナリパッケージ (.deb ファイル) が作られます．
+				この段階を直接制御することはできません．
+				代わりに， finkinfo ファイルからの様々な情報を使って dpkg 用の <code>control</code> ファイルが作成できます．
 			</p>
 		
 
@@ -61,91 +59,98 @@ include_once "header.inc";
 			
 
 			<p>
-				ここではフィールドを分類して解説しています。
-				以下のフィールド一覧は完全なものではありません。
+				フィールドを分類して解説します．
+				以下の一覧は完全ではありません．
 				<code>:-)</code>
 			</p>
 			<p>
-				<b>初期データ (Initial Data):</b>
+				<b>初期データ:</b>
 			</p>
+
 			<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Package</td><td>
 						<p>
-							パッケージ名称。
-							英小文字、数字、記号 '.', '+', '-' 。
-							アンダースコア ('_') と英大文字は不可。
-							必須フィールド。
+							「パッケージ名」．
+							値には英小文字，数字及び ドット '.', プラス '+', ハイフン '-' が使える．
+							下線 ('_') と英大文字は使えない．
+							必須フィールド．
 						</p>
 						<p>
-							Fink 0.9.9 で導入。
-							パーセント拡張を適用することもできる。
-							この他にも、
-							Depends, BuildDepends, Provides, Conflicts,
-							Replaces, Recommends, Suggests, Enhances
-							のフィールドで適用することができる。
+							Fink 0.9.9 以降では，パーセント記法の展開が有効です．
+							パーセント記法は他にフィールド
+							Depends, BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests, Enhances で使えます．
 						</p>
 					</td></tr><tr valign="top"><td>Version</td><td>
 						<p>
-							上流のバージョン番号。
-							Package フィールドと同じ制限。
-							必須フィールド。
+							upstream のバージョン．
+							値にはフィールド Package と同じ制限があります．
+							必須フィールド．
 						</p>
 					</td></tr><tr valign="top"><td>Revision</td><td>
 						<p>
-							パッケージリビジョン。
-							同じ上流バージョンに対して新しい詳細を作成する場合にリビジョン番号が増加する。
-							リビジョン番号は１から始まる。
-							必須フィールド。
+							Finkパッケージとしての「版」．
+							upstream のバージョンが同じパッケージの finkinfo を書き換えたら，ここを1ずつ増やすこと．
+							最初は1で始まる．
+							必須フィールド．
 						</p>
 					</td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
 							<b>Fink 0.12.0 で導入</b>
-							パッケージの時代を特定する (指定されていない場合、デフォルト値は0) 。
-							詳細は <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a> を参照。
-							任意のフィールド。
+							パッケージの「エポック」を指定する (指定されていない場合，デフォルト値は0) ．
+							詳細は <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>
+							を参照．
+							省略可能フィールド．
 						</p>
 					</td></tr><tr valign="top"><td>Description</td><td>
 						<p>
-							パッケージの短い説明。
-							一覧で表示される一行の記述なので、簡潔かつわかりやすく。
-							60 chars 以下で、45 chars 以下が好ましい。
-							パッケージの名称をこの中に入れる必要はない。
-							常に適切な文脈で表示されるようにすること。
-							必須フィールド。
+							パッケージの短い説明．(それが何であるか)
+							一覧表示に使われる1行紹介文なので，簡潔かつわかりやすく．
+							(半角) 45文字以下が望ましい．
+							60文字を超えないこと．
+							ここで「パッケージ名」を繰りかえす必要はない．
+							必ず一緒に表示されるからだ．
+							必須フィールド．
 						</p>
 					</td></tr><tr valign="top"><td>Type</td><td>
 						<p>
-							<code>bundle</code> の場合。
-							バンドルパッケージは関連するパッケージをひとまとめにするために使われる。
-							これは依存性だけの問題で、コードやインストールファイルはない。
-							Source, PatchScript, CompileScript, InstallScript などのフィールドは、バンドルパッケージでは無視される。
+							値が <code>bundle</code> の場合:
+							バンドルパッケージは関連するパッケージをひとまとめにするために使われる．
+							それらには依存関係こそありますが，ソースコードにも，インストールされるファイルにも関連はありません．
+							フィールド Source, PatchScript, CompileScript, InstallScript とその関連フィールドは，
+							バンドル・パッケージでは無視される．
 						</p>
 						<p>
-							<code>nosource</code> は非常に良く似た型である。
-							これは、ソース tarball がないため、何も取りにいかず、解梱段階では空ディレクトリを作成する。
-							パッチ、コンパイル、インストール段階は通常通り実行される。
-							このようにして全てのコードをパッチで作成したり、 InstallScript でディレクトリを作成することができる。
-							Fink 0.18.0 以降では <code>Source: none</code> を設定しても同じ挙動をする。
-							こちらを使用すると、 "Type" を他の目的 (<code>Type: perl</code> など) に使うことができる。
+							値が <code>nosource</code> の場合:
+							これは bundle と非常に似ている．
+							これは，ソースの tar ボールがないことを示す．
+							よって何のソースも取り寄せられず，解凍段階では空ディレクトリが作られるだけになる．
+							しかしパッチ，コンパイル，インストールの各段階は通常通り実行される．
+							このようにして全てのソースコードをパッチと共に配布したり，
+							または InstallScript を使ってディレクトリを作るだけのことができる．
+							Fink 0.18.0 以降では <code>Source: none</code> と設定しても同じ挙動が実現できる．
+							こちらを使用すると，フィールド <code>Type</code> を他の目的に使える (<code>Type: perl</code> など)．
 						</p>
 						<p>
-							Fink 0.9.5 以降では、<code>perl</code> という型を設定してコンパイルとインストールのスクリプトを指定できる。
-							Fink 0.13.0 からは、さらにバージョンを <code>perl $version</code> として指定することができる。
-							$version は３つの数字からなる Perl のバージョンで、 <code>perl 5.6.0</code> の形式。
+							値が <code>perl</code> の場合 (Fink 0.9.5 以降):
+							こうするとコンパイル及びインストールのスクリプトのデフォルト値が違うものになります．
+							Fink 0.13.0 からは，この値の変種として <code>perl $version</code> が使えます．
+							ここで "$version" はperlの特定のバージョンで，3つの数をピリオドで区切ったものです．
+							(<code>perl 5.6.0</code> など)
 						</p>
 					</td></tr><tr valign="top"><td>License</td><td>
 						<p>
-							パッケージ配布の際のライセンスの性質を表す。
-							値は、前出の <a href="policy.php?phpLang=ja#licenses">パッケージのライセンス</a> の節の中から選択する。
-							さらに、このフィールドはパッケージがパッケージングポリシーに適合する場合の指定する。
-							例えば、当該パッケージ用の doc ディレクトリにライセンスのコピーをインストールする。
+							パッケージ配布の際にパッケージの従うライセンスの性質を表す．
+							値は <a href="policy.php?phpLang=ja#licenses">パッケージのライセンス</a> で示した選択肢から選ばなければいけない．
+							それに加え，パッケージが実際にパッケージング・ポリシーに従うとき，
+							すなわちライセンスのコピーがパッケージの doc ディレクトリにインストールされるときでなければ
+							このフィールドを指定してはいけない．
 						</p>
 					</td></tr><tr valign="top"><td>Maintainer</td><td>
 						<p>
-							パッケージに責任を負っている人物の名前とメールアドレス。
-							必須フィールド。
-							以下の形式で、名前とメールアドレスはそれぞれ一つだけとする。
+							パッケージに責任を負っている人物の名前とメールアドレス．
+							必須フィールド．
+							値は以下の形式で，名前とメールアドレスはそれぞれ一つだけとする．
 						</p>
-<pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
+<pre>名前 名字 &lt;アカウント@ドメイン.example.com&gt;</pre>
 					</td></tr></table>
 			<p>
 				<b>依存性関連</b>
@@ -154,19 +159,19 @@ include_once "header.inc";
 						<p>
 							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
 							普通，これは「パッケージ名」の単なるカンマ区切りのリストだが，
-							現在のFinkは代替パッケージとヴァージョンを（dpkgと同じ形式で）指定する形式に対応している．
+							現在のFinkは代替パッケージとバージョンを (dpkgと同じ形式で) 指定する形式に対応している．
 							それらを全て盛りこんだ例:
 						</p>
 <pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 						<p>
 							本当の意味で省略可能な依存性を表現する方法がないことに注意．
 							あるパッケージが別のパッケージがあってもなくても動作するとき，
-							もう片方のパッケージが（存在するときであっても）確かに使われていないか確かめるか，
+							もう片方のパッケージが (存在するときであっても) 確かに使われていないか確かめるか，
 							またはフィールド Depends に加えるかのどちらかを行うこと．
-							ユーザにどちらの使い方をも提供したいときは，2つの別々のパッケージ（例えば wget と wget-ttl）を作る．
+							ユーザにどちらの使い方をも提供したいときは，2つの別々のパッケージ (例えば wget と wget-ttl) を作る．
 						</p>
 						<p>
-							Finkのヴァージョン post-0.18.2 CVS 以降では，条件付き依存性を記述できる．
+							Finkのバージョン post-0.18.2 CVS 以降では，条件付き依存性を記述できる．
 							それを指定するには「パッケージ名」の前に <code>(string1 op string2)</code> を付ける．
 							パーセント記法が普通に展開され，オペレータ <code>op</code> によって2つの文字列が比較される．
 							<code>op</code> には以下のものが使える: &lt;&lt;, &lt;=, =, !=, &gt;&gt;, &gt;=．
@@ -192,7 +197,7 @@ include_once "header.inc";
 						<p>
 							<b>Fink 0.9.0 で導入</b>
 							ビルド時のみに適用される依存性のリスト．
-							ビルド時には必要だが，実行時には使われないツール（flexなど）を列挙するのに使う．
+							ビルド時には必要だが，実行時には使われないツール (flexなど) を列挙するのに使う．
 							書式は Depends と同じ．
 						</p>
 					</td></tr><tr valign="top"><td>Provides</td><td>
@@ -205,12 +210,12 @@ include_once "header.inc";
 					</td></tr><tr valign="top"><td>Conflicts</td><td>
 						<p>
 							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りのリスト．
-							ヴァーチャル・パッケージでは，そのパッケージが提供する「パッケージ名」をここに指定してもよい．
+							バーチャル・パッケージでは，そのパッケージが提供する「パッケージ名」をここに指定してもよい．
 							それらは適切に扱われる．
-							このフィールドはフィールド Depends のようにヴァージョン付きの依存性情報にも対応しているが，
-							代替パッケージには対応していない（意味をなさない）．
-							あるパッケージがそれ自身のフィールド Conflicts に入っていると，（暗黙のうちに）そこから取り除かれる．
-							（Fink のヴァージョン post-0.18.2 CVS で導入された．）
+							このフィールドはフィールド Depends のようにバージョン付きの依存性情報にも対応しているが，
+							代替パッケージには対応していない (意味をなさない)．
+							あるパッケージがそれ自身のフィールド Conflicts に入っていると， (暗黙のうちに) そこから取り除かれる．
+							 (Fink のバージョン post-0.18.2 CVS で導入された．)
 						</p>
 						<p>
 							<b>注意:</b> Fink自身はこのフィールドを無視する．
@@ -224,8 +229,8 @@ include_once "header.inc";
 							このフィールドがないと，dpkgはパッケージのインストール時にエラーを出すかも知れない．
 							それはファイルが依然として元あった方のパッケージに属しているからだ．
 							それら2つのパッケージが純粋な意味で互いに代替物であり，どちらかがあればもう片方は要らないようなときはこれを使うとよい．
-							あるパッケージのフィールド Replaces 内にそのパッケージそのものが含まれていたら，（暗黙のうちに）取り除かれる．
-							（Finkのヴァージョン post-0.18.2 CVS で導入された．）
+							あるパッケージのフィールド Replaces 内にそのパッケージそのものが含まれていたら， (暗黙のうちに) 取り除かれる．
+							 (Finkのバージョン post-0.18.2 CVS で導入された．)
 						</p>
 						<p>
 							<b>注意:</b> Fink自身はこのフィールドを無視する．
@@ -255,7 +260,7 @@ include_once "header.inc";
 						<p>
 							<b>Fink 0.9.9 で導入された．</b>
 							真偽値フィールド．
-							他のパッケージはそのパッケージを（フィールド BuildDepends に入れてもよいが） Depends に入れてはいけないことを示す．
+							他のパッケージはそのパッケージを (フィールド BuildDepends に入れてもよいが) Depends に入れてはいけないことを示す．
 						</p>
 					</td></tr></table>
 			<p>
@@ -265,7 +270,7 @@ include_once "header.inc";
 						<p>
 							ミラーサイトのリスト．
 							各ミラーサイトは <code>&lt;場所&gt;: &lt;url&gt;</code> という書式に従って1行に1つずつ記述する．
-							<b>場所</b> には大陸コード（例えば nam）や国コード（例えば nam-us）など（何でもよい）を使う．
+							<b>場所</b> には大陸コード (例えば nam) や国コード (例えば nam-us) など (何でもよい) を使う．
 							ミラーサイトはここに記述した順に試される．
 							例:
 						</p>
@@ -282,7 +287,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							このフィールドは，ミラーサイトのための特殊なURL記法に対応している．
 							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
 							こうするとFinkに &lt;ミラー名称&gt; として設定されたURLを探し，その後ろに &lt;相対パス&gt; を付け加え，それを実際のURLとして使う．
-							Finkの認識する &lt;ミラー名称&gt; の一覧は /sw/lib/fink/mirror/_list （パッケージ fink または fink-mirrors の一部）の中にある．
+							Finkの認識する &lt;ミラー名称&gt; の一覧は /sw/lib/fink/mirror/_list  (パッケージ fink または fink-mirrors の一部) の中にある．
 							または， &lt;ミラー名称&gt; に custom と書くことで，フィールド CustomMirror をFinkに使わせることもできる．
 							URLが wget に渡される前に，パーセント記法の展開が行われる．
 						</p>
@@ -291,14 +296,14 @@ Primary: ftp://ftp.barbarorg/pub/
 							詳細についてはフィールド Type の説明を参照．
 							<code>gnu</code> という値は <code>mirror:gnu:%n/%n-%v.tar.gz</code> の，
 							<code>gnome</code> という値は <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code> の省略形．
-							デフォルトでは <code>%n-%v.tar.gz</code> （すなわちマニュアル・ダウンロード）になっている．
+							デフォルトでは <code>%n-%v.tar.gz</code>  (すなわちマニュアル・ダウンロード) になっている．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b>
 					</td><td>
 						<p>
-							パッケージが複数のtarボールから形成されているときは，これらの（省略可能な）フィールドで指定を行う．
+							パッケージが複数のtarボールから形成されているときは，これらの (省略可能な) フィールドで指定を行う．
 							Nは数で，2から始まる．
-							つまり最初のtarボール（ある意味「メイン」になるもの）をフィールド <code>Source</code> に，
+							つまり最初のtarボール (ある意味「メイン」になるもの) をフィールド <code>Source</code> に，
 							2番目のtarボールをフィールド <code>Source2</code> に，という風になる．
 							値の書式は <code>Source</code> と共通だが， <code>gnu</code> や <code>gnome</code> という省略形は展開されない (結局，意味をなさない)．
 						</p>
@@ -328,9 +333,9 @@ Primary: ftp://ftp.barbarorg/pub/
 					</td></tr><tr valign="top"><td>SourceRename</td><td>
 						<p>
 							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
-							これが便利なのは，例えば，ソースのヴァージョンがサーバのディレクトリ名には示されているが，
-							tar ボールそのものはどのヴァージョンでも同じ名前のときだ．
-							（例えば ://www.foobar.org/coolapp/1.2.3/source.tar.gz というとき）
+							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
+							tar ボールそのものはどのバージョンでも同じ名前のときだ．
+							(例えば ://www.foobar.org/coolapp/1.2.3/source.tar.gz というとき)
 							このことで起きる問題を回避するためには次のようにすればよい．
 						</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
@@ -351,7 +356,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							Fink はこの情報によりおかしなソースファイル，
 							すなわち fink パッケージの作成者が指定したものではない tar ボールを見分けられる．
 							この問題の原因は，大抵次のようなものだ:
-							tar ボールのダウンロードに失敗した，上流のメインテナが知らないうちに tar ボールを更新した，トロイの木馬のような攻撃，等々．
+							tar ボールのダウンロードに失敗した，upstreamのメインテナが知らないうちに tar ボールを更新した，トロイの木馬のような攻撃，等々．
 						</p>
 						<p>
 							このフィールドの典型的な用例は次のようなものだ．
@@ -360,9 +365,9 @@ Primary: ftp://ftp.barbarorg/pub/
 						<p>
 							チェックサムの算出にはツール <code>md5sum</code> が使われる．
 							tar ボール <code>/sw/src/apache_1.3.23.tar.gz</code> のチェックサムが知りたいときには，
-							次のコマンドを実行する（出力も一緒に示した）．
+							次のコマンドを実行する (出力も一緒に示した)．
 						</p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
+<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
 4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
 						<p>
 							ご覧のように，左に表示された値がここで必要なものだ．
@@ -381,9 +386,10 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 						<p>
 							このフィールドを使うと，任意のソース tar ボールの中のファイルを， tar ボールの展開中にリネームできる．
-							ファイルシステム HFS+ がケースインセンシティブだ（大文字と小文字を区別しない）という事実を回避するのためには，これは非常に便利だ．
+							ファイルシステム HFS+ がケースインセンシティブだ (大文字と小文字を区別しない) という事実を回避するのためには，これは非常に便利だ．
 							普通の Mac OS X システムでは，ファイル <code>install</code> と <code>INSTALL</code> は衝突してしまう．
-							このフィールドを使うと， tar ボールをわざわざ再パッケージしなくとも（以前，そういう場合には行われていた），そういった問題を回避できる．
+							このフィールドを使うと， tar ボールをわざわざ再パッケージしなくとも (以前，そういう場合には行われていた)，
+							そういった問題を回避できる．
 						</p>
 						<p>
 							このフィールドでは，リネームされるファイルのリストを単に指定する．
@@ -399,9 +405,9 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							<b>注意:</b>
 							このフィールドは， BSD tar の特殊機能を使って実装されている．
 							GNU tar はこの機能に対応していない．
-							デフォルトでは Fink は GNU tar を使うが（GNU tar でしか展開できない tar ボールがあるため），
+							デフォルトでは Fink は GNU tar を使うが (GNU tar でしか展開できない tar ボールがあるため)，
 							パッケージに TarFilesRename が使われているときは，
-							Fink は常に（<code>/usr/bin/tar</code> という直接指定により） BSD tar を使う．
+							Fink は常に (<code>/usr/bin/tar</code> という直接指定により) BSD tar を使う．
 						</p>
 					</td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 						<p>
@@ -419,7 +425,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 			<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 						<p>
 							真偽値フィールド．
-							真にすると，ビルド用ディレクトリ内のファイル config.guess と config.sub が Darwin に対応したヴァージョンに取り換えられる．
+							真にすると，ビルド用ディレクトリ内のファイル config.guess と config.sub が Darwin に対応したバージョンに取り換えられる．
 							その動作は，パッチ段階で，PatchScript が実行される前に行われる．
 							これが必要だと分かっているとき<b>のみ</b>使うこと．
 							すなわち，スクリプト configure が "unknown host" というメッセージで失敗するとき．
@@ -435,10 +441,10 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 					</td></tr><tr valign="top"><td>UpdateLibtool</td><td>
 						<p>
 							真偽値フィールド．
-							真にすると，ビルド用ディレクトリ内のファイル ltconfig と ltmain.sh が Darwin に対応したヴァージョンに取り換えられる．
+							真にすると，ビルド用ディレクトリ内のファイル ltconfig と ltmain.sh が Darwin に対応したバージョンに取り換えられる．
 							その動作は，パッチ段階で，PatchScript が実行される前に行われる．
 							これが必要だと分かっているとき<b>のみ</b>使うこと．
-							libtool 関連のスクリプトをヴァージョンの合わないものに取り換えると壊れるパッケージもある．
+							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもある．
 							詳細については<a href="http://fink.sourceforge.net/doc/porting/libtool.php">libtool のページ</a>を参照．
 						</p>
 					</td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
@@ -476,7 +482,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							以下のスクリプトの注意書きを参照．
 							ここには，パッチを当てるか，またはパッケージに変更を加えるコマンドを指定する．
 							デフォルト値はない．
-							コマンドが実行される前に，パーセント記法が展開される（前節を参照）．
+							コマンドが実行される前に，パーセント記法が展開される (前節を参照)．
 						</p>
 					</td></tr></table>
 			<p>
@@ -494,7 +500,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 						<p>
 							変数 CPPFLAGS および LDFLAGS は特別で，それぞれ <code>-I%p/include</code> および <code>-L%p/lib</code> というデフォルト値を持つ．
-							これらの環境変数に値を指定すると，指定した値はデフォルト値の前に加えられる（デフォルト値は常に含まれる）．
+							これらの環境変数に値を指定すると，指定した値はデフォルト値の前に加えられる (デフォルト値は常に含まれる)．
 						</p>
 					</td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b>
 					</td><td>
@@ -506,27 +512,27 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 					</td></tr><tr valign="top"><td>ConfigureParams</td><td>
 						<p>
 							configure スクリプトに渡す付加的なパラメータ．
-							（詳細は CompileScript を参照．）
+							(詳細は CompileScript を参照．)
 
-							0.13.7 より上のヴァージョンの Fink では，
+							0.13.7 より上のバージョンの Fink では，
 							このパラメータは <code>Type: Perl</code> となっている perl モジュールにも使える．
 							その場合，デフォルトの perl Makefile.PL 文字列に後置される．
 						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
-							コンパイルに使う gcc に要求されるヴァージョン．
+							コンパイルに使う gcc に要求されるバージョン．
 							指定できる値は以下の通り:
-							<code>2.95.2</code> または <code>2.95</code> （パッケージ・ツリー 10.1 でのみ利用可能），
-							<code>3.1</code> （パッケージ・ツリー 10.1 でのみ利用可能），
-							<code>3.3</code> （パッケージ・ツリー 10.2-gcc3.3 および 10.3 でのみ利用可能）．
+							<code>2.95.2</code> または <code>2.95</code> (パッケージ・ツリー 10.1 でのみ利用可能)，
+							<code>3.1</code> (パッケージ・ツリー 10.1 でのみ利用可能)，
+							<code>3.3</code> (パッケージ・ツリー 10.2-gcc3.3 および 10.3 でのみ利用可能)．
 						</p>
 						<p>
-							Fink 0.13.8 以降，このフラグが指定されると， gcc のヴァージョンは <code>gcc_select</code> によって調べられ，
-							誤ったヴァージョンのものが存在すると Fink はエラー終了する．
+							Fink 0.13.8 以降，このフラグが指定されると， gcc のバージョンは <code>gcc_select</code> によって調べられ，
+							誤ったバージョンのものが存在すると Fink はエラー終了する．
 						</p>
 						<p>
 							このフィールドは gcc コンパイラ間の移行を助けるために Fink に加えられた．
-							gcc では， C++ コードの関わるライブラリ間で，バイナリ・ファイル同士の（ヴァージョン名に反映されない）非互換が生じることがある．
+							gcc では， C++ コードの関わるライブラリ間で，実行可能・ファイル同士の (バージョン名に反映されない) 非互換が生じることがある．
 						</p>
 					</td></tr><tr valign="top"><td>CompileScript</td><td>
 						<p>
@@ -539,7 +545,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 make</pre>
 						<p>
 							これは GNU autoconf を利用するパッケージには適切だ．
-							Perl タイプ（フィールド Type で指定される）のパッケージのうち perl のヴァージョン指定がないものでは，
+							Perl タイプ (フィールド Type で指定される) のパッケージのうち perl のバージョン指定がないものでは，
 							デフォルト値は次のようになる．
 						</p>
 <pre>perl Makefile.PL PREFIX=%p \
@@ -552,7 +558,7 @@ INSTALLMAN3DIR=%p/share/man/man3
 make
 make test</pre>
 						<p>
-							タイプが <code>perl $version</code> となっていて，ヴァージョンが指定されているものでは（例えば $version は 5.6.0 とする），
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <pre>perl$version Makefile.PL \
@@ -566,7 +572,7 @@ INSTALLMAN3DIR=%p/share/man/man3
 make
 make test</pre>
 						<p>
-							コマンドの実行前に，パーセント記法が展開される（前節を参照）．
+							コマンドの実行前に，パーセント記法が展開される (前節を参照)．
 						</p>
 					</td></tr><tr valign="top"><td>NoPerlTests</td><td>
 						<p>
@@ -586,7 +592,7 @@ make test</pre>
 							Perl モジュールのパッケージでのみ指定する．
 							真にすると，スクリプト install, postrm および postinst に， perl パッケージの提供する .pod ファイルを管理するためのコードを追加する．
 							このとき，中央のファイル <code>/sw/lib/perl5/darwin/perllocal.pod</code> に .pod ファイルのデータを追加したり，そこから削除も行う．
-							(タイプが， <code>perl $version</code> のように，perl の特定のヴァージョン (例えば 5.6.0) と共に指定された場合は，
+							(タイプが， <code>perl $version</code> のように，perl の特定のバージョン (例えば 5.6.0) と共に指定された場合は，
 							それらのスクリプトが扱う中央 .pod ファイルは <code>/sw/lib/perl5/$version/perllocal.pod</code> になる．)
 						</p>
 					</td></tr><tr valign="top"><td>InstallScript</td><td>
@@ -599,7 +605,7 @@ make test</pre>
 <pre>make install prefix=%i</pre>
 						<p>
 							これは GNU autoconf を利用するパッケージには適切だ．
-							Perl タイプ（フィールド Type で指定される）のパッケージのうち perl のヴァージョン指定がないものでは，
+							Perl タイプ (フィールド Type で指定される) のパッケージのうち perl のバージョン指定がないものでは，
 							デフォルト値は次のようになる．
 						</p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
@@ -609,7 +615,7 @@ INSTALLSITEARCH=%i/lib/perl5/darwin \
 INSTALLMAN1DIR=%i/share/man/man1 \
 INSTALLMAN3DIR=%i/share/man/man3</pre>
 						<p>
-							タイプが <code>perl $version</code> となっていて，ヴァージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							タイプが <code>perl $version</code> となっていて，バージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
 							デフォルト値は次のようになる．
 						</p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
@@ -659,23 +665,23 @@ INSTALLMAN3DIR=%i/share/man/man3</pre>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定する．
 							各共有ライブラリ毎に1行ずつ，空白文字で区切った以下の3項目を記述する．
 							1) ライブラリの <code>-install_name</code> 2) ライブラリの<code>-compatibility_version</code>
-							3) ヴァージョン付き依存性情報で，その -compatibility_version を持つこのライブラリを提供するFinkパッケージを指定するもの
-							依存情報は <code>foo (&gt;= ヴァージョン-版)</code> という型式で指定しなければいけない．
-							ここで <code>ヴァージョン-版</code> は，（互換性ヴァージョンの同じ）そのライブラリを利用可能にしてくれる Fink パッケージの
-							<b>一番古い</b>ヴァージョンを指す．
+							3) バージョン付き依存性情報で，その -compatibility_version を持つこのライブラリを提供するFinkパッケージを指定するもの
+							依存情報は <code>foo (&gt;= バージョン-版)</code> という型式で指定しなければいけない．
+							ここで <code>バージョン-版</code> は， (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる Fink パッケージの
+							<b>一番古い</b>バージョンを指す．
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
-							その Fink パッケージの今後のヴァージョンでも必ず含まれている」というメインテナからの保証に相当する．
+							その Fink パッケージの今後のバージョンでも必ず含まれている」というメインテナからの保証に相当する．
 						</p>
 					</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 						<p>
 							<b>Fink-0.10.0 バージョンで導入</b>
 							このフィールドは，実行時に環境変数を何らかの固定された値に設定する簡便な方法を提供する．
-							（柔軟性が必要なら <a href="#profile.d">profile.d スクリプト section</a> を参照．）
+							(柔軟性が必要なら <a href="#profile.d">profile.d スクリプト section</a> を参照．)
 							そのパッケージがインストールされる限り，
 							ここに指定した環境変数はスクリプト <code>/sw/bin/init.[c]sh</code> によって設定される．
 						</p>
 						<p>
-							環境変数の値には空白文字が使える（値の末尾に来ると取り除かれるが）．
+							環境変数の値には空白文字が使える (値の末尾に来ると取り除かれるが)．
 							またパーセント記法は展開される．
 							例:
 						</p>
@@ -734,13 +740,13 @@ AnotherVar: foo bar
 							このスクリプトは以下のタイミングで実行される．
 						</p>
 						<ul>
-							<li>PreInstScript: パッケージが初めてインストールされたときと，パッケージをそのヴァージョンにアップグレードする前．</li>
+							<li>PreInstScript: パッケージが初めてインストールされたときと，パッケージをそのバージョンにアップグレードする前．</li>
 							<li>PostInstScript: パッケージの解凍後で，パッケージを設定する前．</li>
-							<li>PreRmScript: パッケージが削除される前，または新しいヴァージョンにアップグレードされる前．</li>
-							<li>PostRmScript: パッケージが削除された後，または新しいヴァージョンにアップグレードされた後．</li>
+							<li>PreRmScript: パッケージが削除される前，または新しいバージョンにアップグレードされる前．</li>
+							<li>PostRmScript: パッケージが削除された後，または新しいバージョンにアップグレードされた後．</li>
 						</ul>
 						<p>
-							補足説明: アップグレードは新ヴァージョンの ...Inst スクリプトと，旧ヴァージョンの ...Rm スクリプトを実行する．
+							補足説明: アップグレードは新バージョンの ...Inst スクリプトと，旧バージョンの ...Rm スクリプトを実行する．
 							詳細については the Debian Policy Manual,
 							<a href="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">第6章</a> を参照．
 						</p>
@@ -755,7 +761,7 @@ AnotherVar: foo bar
 							<code>%p/etc/foo.conf</code>.
 							dpkg はここで指定されたファイルを特別扱いする．
 							パッケージがアップグレードされたとき，新設定ファイルが提供され，しかもユーザが旧パッケージの設定ファイルが修正していた場合は，
-							ユーザはどちらのヴァージョンを使うか尋ねられ，設定ファイルのバックアップが作られる．
+							ユーザはどちらのバージョンを使うか尋ねられ，設定ファイルのバックアップが作られる．
 							パッケージを "remove" しても，設定ファイルは削除されずにディスク上に残る．
 							設定ファイルも削除されるのは "purge" を命じたときのみ．
 						</p>
@@ -785,14 +791,14 @@ AnotherVar: foo bar
 			</p>
 			<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Homepage</td><td>
 						<p>
-							上流パッケージのホームページの URL．
+							upstreamパッケージのホームページの URL．
 						</p>
 					</td></tr><tr valign="top"><td>DescDetail</td><td>
 						<p>
 							フィールド <code>Description</code> よりも詳しい説明．
-							（それが何であるか，何のために使うものか？）
+							(それが何であるか，何のために使うものか？)
 							複数行に渡ってよい．
-							このフィールドはワードラップの恩恵に預らずに表示されるので， (可能ならば）手動で改行を挿入して1行を79文字以内に収めること．
+							このフィールドはワードラップの恩恵に預らずに表示されるので， (可能ならば) 手動で改行を挿入して1行を79文字以内に収めること．
 						</p>
 					</td></tr><tr valign="top"><td>DescUsage</td><td>
 						<p>
@@ -800,7 +806,7 @@ AnotherVar: foo bar
 							(そのパッケージはどのように使うものなのか？)
 							例えば「 WindowMaker を使う前に wmaker.inst を起動．」等を (英語で) ここに記述する．
 							複数行に渡ってよい．
-							このフィールドはワードラップの恩恵に預らずに表示されるので，（可能ならば) 手動で改行を挿入して1行を79文字以内に収めること．
+							このフィールドはワードラップの恩恵に預らずに表示されるので， (可能ならば) 手動で改行を挿入して1行を79文字以内に収めること．
 						</p>
 					</td></tr><tr valign="top"><td>DescPackaging</td><td>
 						<p>
@@ -820,56 +826,56 @@ AnotherVar: foo bar
 		<h2><a name="splitoffs">5.3 スプリットオフ (SplitOff)</a></h2>
 			
 			<p>
-				Fink 0.9.9 に導入。
-				ひとつの .info ファイルで複数のパッケージを作成できる。
-				インストール段階は普通に始まり、 <code>InstallScript</code> と <code>DocFiles</code> コマンドを実行する。
-				<code>SplitOff</code> フィールドが存在すれば、２つ目のインストールディレクトリを作成する。
-				<code>SplitOff</code> フィールドでは、新規インストールディレクトリは %I で参照され、元のインストールディレクトリは %i で参照される。
+				Fink 0.9.9 に導入．
+				ひとつの .info ファイルで複数のパッケージを作成できる．
+				インストール段階は普通に始まり， <code>InstallScript</code> と <code>DocFiles</code> コマンドを実行する．
+				<code>SplitOff</code> フィールドが存在すれば，２つ目のインストールディレクトリを作成する．
+				<code>SplitOff</code> フィールドでは，新規インストールディレクトリは %I で参照され，元のインストールディレクトリは %i で参照される．
 			</p>
 			<p>
-				<code>SplitOff</code> フィールドには多くのフィールドを含み、実質上，完全なパッケージ記述情報とよく似ている．
-				しかし <code>SplitOff</code> フィールドにはないフィールドもある。
-				以下は <code>SplitOff</code> に含まれる副詳細 (分野別)。
+				<code>SplitOff</code> フィールドには多くのフィールドを含み，実質上，完全なパッケージ記述情報とよく似ている．
+				しかし <code>SplitOff</code> フィールドにはないフィールドもある．
+				以下は <code>SplitOff</code> に含まれる副詳細 (分野別)．
 			</p>
 			<ul>
 				<li>
 					初期データ (Initial Data):
-					<code>Package</code> のみ特定する必要があります。
-					その他は全て親パッケージから引き継がれます。
-					<code>Type</code> と <code>License</code> は <code>SplitOff</code> 内で宣言することで変更することができます。
-					パーセント拡張も使うことができます。
-					特に、親パッケージの名称を参照する %N は便利です。
+					<code>Package</code> のみ特定する必要があります．
+					その他は全て親パッケージから引き継がれます．
+					<code>Type</code> と <code>License</code> は <code>SplitOff</code> 内で宣言することで変更することができます．
+					パーセント拡張も使うことができます．
+					特に，親パッケージの名称を参照する %N は便利です．
 				</li>
-				<li>依存性 (Dependency): 全てのフィールドが対象です。</li>
+				<li>依存性 (Dependency): 全てのフィールドが対象です．</li>
 				<li>
-					解梱段階 (Unpack Phase), パッチ段階 (Patch Phase), コンパイル段階 (Compile Phase): このフィールドは関連がないため無視されます。
+					解梱段階 (Unpack Phase), パッチ段階 (Patch Phase), コンパイル段階 (Compile Phase): このフィールドは関連がないため無視されます．
 				</li>
 				<li>
 					インストール段階 (Install Phase), ビルド段階 (Build Phase): いずれも全てのフィールドを修正可能
-					(<code>SplitOff</code> は <code>SplitOff</code> 内では使用できない)。
+					(<code>SplitOff</code> は <code>SplitOff</code> 内では使用できない)．
 				</li>
 				<li>
-					追加データ: 親パッケージから引き継がれるが、 <code>SplitOff</code> 内で宣言して修正できる。
+					追加データ: 親パッケージから引き継がれるが， <code>SplitOff</code> 内で宣言して修正できる．
 				</li>
 			</ul>
 			<p>
-				インストール段階では、まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行されます。
-				次に、 <code>SplitOff</code> フィールド内の <code>Files</code> が実行され、
-				親インストールディレクトリ %I から 現在のインストールディレクトリ %i にファイルを移し、
-				<code>SplitOff</code> パッケージ内の <code>InstallScript</code> や <code>DocFiles</code> などが実行されます。
+				インストール段階では，まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行されます．
+				次に， <code>SplitOff</code> フィールド内の <code>Files</code> が実行され，
+				親インストールディレクトリ %I から 現在のインストールディレクトリ %i にファイルを移し，
+				<code>SplitOff</code> パッケージ内の <code>InstallScript</code> や <code>DocFiles</code> などが実行されます．
 			</p>
 			<p>
-				<code>SplitOff2</code>, <code>SplitOff3</code> など、さらに副パッケージが存在する場合、
-				同じ順序 (<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>) で順々に実行されていきます。
+				<code>SplitOff2</code>, <code>SplitOff3</code> など，さらに副パッケージが存在する場合，
+				同じ順序 (<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>) で順々に実行されていきます．
 			</p>
 			<p>
-				ビルド段階中、各パッケージの pre/post install/remove スクリプトをビルド段階コマンドを使って作成します。
+				ビルド段階中，各パッケージの pre/post install/remove スクリプトをビルド段階コマンドを使って作成します．
 			</p>
 			<p>
-				それぞれのパッケージは、ビルド時に %i/share/doc/%n 内にあるライセンスの同意を得る必要があります
-				(%n の値は当然パッケージごとに異なります)。
-				<code>DocFiles</code> はファイルを移動ではなくコピーします。
-				これにより、 <code>DocFiles</code> を使ってそれぞれのパッケージに同一のドキュメントをインストールします。
+				それぞれのパッケージは，ビルド時に %i/share/doc/%n 内にあるライセンスの同意を得る必要があります
+				(%n の値は当然パッケージごとに異なります)．
+				<code>DocFiles</code> はファイルを移動ではなくコピーします．
+				これにより， <code>DocFiles</code> を使ってそれぞれのパッケージに同一のドキュメントをインストールします．
 			</p>
 
 		
@@ -878,14 +884,14 @@ AnotherVar: foo bar
 			
 
 			<p>
-				フィールド PatchScript, CompileScript, InstallScript には、実行させたいシェルコマンドを記述します。
-				形式は2種類あります。
+				フィールド PatchScript, CompileScript, InstallScript には，実行させたいシェルコマンドを記述します．
+				形式は2種類あります．
 			</p>
 			<p>
-				このフィールドはコマンド一覧です。
-				これは一見シェルスクリプトのようですが、 system() を通して実行されます。
-				一行ごとに実行し、変数の設定やディレクトリの移動はその行内でのみ有効です。
-				0.18.2 以降の CVS 版では通常のシェルスクリプトと同様に長い行をバックスラッシュ (<code>\</code>) で改行できるようになりました。
+				このフィールドはコマンド一覧です．
+				これは一見シェルスクリプトのようですが， system() を通して実行されます．
+				一行ごとに実行し，変数の設定やディレクトリの移動はその行内でのみ有効です．
+				0.18.2 以降の CVS 版では通常のシェルスクリプトと同様に長い行をバックスラッシュ (<code>\</code>) で改行できるようになりました．
 			</p>
 			<p>
 				または，ここには，任意のスクリプト処理系の完全なスクリプトを記述することもできる．

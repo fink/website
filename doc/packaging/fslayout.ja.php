@@ -1,20 +1,20 @@
 <?
-$title = "パッケージ化 - FS レイアウト";
+$title = "パッケージ作成 - FS レイアウト";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/09 15:29:17';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ化 Contents"><link rel="next" href="reference.php?phpLang=ja" title="参照"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
+$cvs_date = 'Date: 2004/03/30 03:03:07';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 include_once "header.inc";
 ?>
 
-<h1>パッケージ化 - 4 ファイルシステムのレイアウト</h1>
+<h1>パッケージ作成 - 4 ファイルシステムのレイアウト</h1>
 		
 		
 
 
 		
 			<p>
-				以下はファイルシステムレイアウトのガイドラインで、 Fink のパッケージ化ポリシーに含まれています。
+				以下はファイルシステムレイアウトのガイドラインで， Fink のパッケージ化ポリシーに含まれています．
 			</p>
 		
 
@@ -22,12 +22,12 @@ include_once "header.inc";
 		<h2><a name="fhs">4.1 ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a></h2>
 			
 			<p>
-				Fink は<a href="http://www.pathname.com/fhs/">ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a>
-				あるいは FHS の精神に従っています。
-				精神に、と限定しているのは、 FHS は <code>/</code> と <code>/usr</code> ハイエラルキー
-				への管理権限を有するシステムベンダー向けに作成されているものだからです。
-				Fink は追加型のディストリビューションに過ぎず、その権限はインストールディレクトリまでです。
-				例ではデフォルトの接頭部である <code>/sw</code> を使用します。
+				Fink は<a href="http://www.pathname.com/fhs/">ファイルシステム構造標準 (Filesystem Hierarchy Standard ，略して FHS )</a>
+				の精神に従います．
+				しかし従えるのは飽くまでも精神のみです．
+				それはFHSが <code>/</code> と <code>/</code> 以下の階層を管理できるシステムベンダ向けに作られたからです．
+				Fink はインストールディレクトリ (別名「プリフィクス」) 以下のみを管理するアドオン・ディストリビューションです．
+				以降の例ではデフォルトの「プリフィクス」 <code>/sw</code> を使います．
 			</p>
 		
 
@@ -41,129 +41,124 @@ include_once "header.inc";
 						<code>/sw/bin</code>
 					</td><td>
 						<p>
-							一般的な実行可能プログラム。
-							サブディレクトリはなし。
+							一般的な実行可能プログラム用．
+							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/sbin</code>
 					</td><td>
 						<p>
-							管理者が使う実行可能プログラム用のディレクトリ。
-							バックグラウンドデーモンもここに保存する。
-							サブディレクトリはなし。
+							管理者のみが使うことを意図した実行可能プログラム用．
+							バックグラウンドで動くデーモンもここに入る．
+							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/include</code>
 					</td><td>
 						<p>
-							このディレクトリは C と C++ ヘッダファイル用。
-							必要に応じてサブディレクトリを作成することができる。
-							標準 C ヘッダと混同しそうなヘッダファイルをインストールする場合は<b>必ず</b>サブディレクトリに入れること。
+							C と C++ のヘッダファイル用．
+							必要に応じてサブディレクトリを作成してよい．
+							標準の C ヘッダファイルと混同しそうなヘッダファイルをインストールする場合は<b>必ず</b>サブディレクトリに入れること．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/lib</code>
 					</td><td>
 						<p>
-							アーキテクチャ依存のデータファイルやライブラリを保存するディレクトリ。
-							静的ライブラリと共有ライブラリは特に理由がない限りは <code>/sw/lib</code> に置く。
-							また、ユーザによって直接実行されない実行可能ファイルもここに置く
-							(層でない場合は libexec に置く)。
+							アーキテクチャ依存のデータファイルやライブラリ用．
+							静的および共有ライブラリは，避ける理由が特にない限り， <code>/sw/lib</code> 直下に置く．
+							ユーザが直接起動することのない実行可能プログラム (普通なら libexec 下に置かれるはずのもの) もここに置く．
 						</p>
 						<p>
-							パッケージはデータやローダブルモジュールを保存するサブディレクトリを自由に作成することができます。
-							サブディレクトリの名称は、互換性のためにも意味のある、特にメジャーバージョン番号を用いて
-							<code>/sw/lib/perl5</code> や <code>/sw/lib/apache/1.3</code>
-							などのように付けて下さい。
-							ホストタイプを付ける場合、 <code>powerpc-apple-darwin1.3.3</code> 
-							などは、互換性を考えるとあまり宜しくありません。
-							<code>powerpc-apple-darwin1.3</code> あるいは <code>powerpc-apple-darwin</code> 
-							の方が適しています。
+							パッケージは固有のデータやロード可能モジュールを保存するサブディレクトリを自由に作成できます．
+							互換性を考慮したディレクトリ名を使うよう心がけて下さい．
+							特にディレクトリ名や付加的な階層にパッケージの「メジャーバージョン」を使い，
+							<code>/sw/lib/perl5</code> や <code>/sw/lib/apache/1.3</code> などとするのが賢明です．
+							ディレクトリにホストの種類を使うときには注意して下さい．
+							<code>powerpc-apple-darwin1.3.3</code> は互換性の観点から問題があります．
+							<code>powerpc-apple-darwin1.3</code> または単に <code>powerpc-apple-darwin</code> とすべきです．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share</code>
 					</td><td>
 						<p>
-							このディレクトリはアーキテクチャ比依存のデータファイル用で、
-							<code>/sw/lib</code> も同様。
-							両者に共通のサブディレクトリについては下記を参照。
+							アーキテクチャに依存しないデータファイル用で， <code>/sw/lib</code> と同じルールが当てはまります．
+							よく使われるサブディレクトリについては後述します．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share/man</code>
 					</td><td>
 						<p>
-							マニュアルページ用ディレクトリ。
-							通常のセクションツリーに構造化されている。
-							<code>/sw/bin</code> と <code>/sw/sbin</code> にあるプログラムには全てマニュアルページを添付する。
+							マニュアルページ用．
+							この中はmanのセクションに従って整理されます．
+							ここには <code>/sw/bin</code> と
+							<code>/sw/sbin</code> の中の全てのプログラムに対応したマニュアルページがなければいけません．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share/info</code>
 					</td><td>
 						<p>
-							Info 形式のドキュメント用ディレクトリ。
-							Texinfo ソースから作成される。 
-							<code>dir</code> ファイルのメンテナンスは Debian 版の <code>install-info</code> (<code>dpkg</code> の一部)
-							で自動化されている。
-							<code>InfoDocs</code> 詳細フィールドを使って自動的に <code>postinst</code> と
-							<code>prerm</code> パッケージスクリプトのコードを作成する。
-							Fink は、それぞれのパッケージが勝手に <code>dir</code> ファイルを作成しないように確認をする。 
-							サブディレクトリはなし。
+							Texinfo ソースから生成される Info 形式のドキュメント用．
+							索引ファイル <code>dir</code> のメンテナンスは
+							Debian 版の <code>install-info</code> (パッケージ <code>dpkg</code> の一部) で自動化される．
+							フィールド <code>InfoDocs</code> を使ってパッケージスクリプト <code>PostInst</code> 及び
+							<code>PreRm</code> のための適切なコードを自動生成すること．
+							Fink は，それぞれのパッケージが勝手に <code>dir</code> ファイルを作成しないように確認をする．
+							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share/doc</code>
 					</td><td>
 						<p>
-							man でも Info でもないドキュメント用のディレクトリ。
-							README, LICENSE, COPYING はここに保存する。
-							全てのパッケージはサブディレクトリを作成し、名称はパッケージ名とする。
-							名称には (パッケージ名に付いている番号以外の) バージョン番号はつけない。
-							<code>%n</code> を使うのがベスト。
+							man でも Info でもないドキュメント用．
+							README, LICENSE, COPYING はここに保存する．
+							全てのパッケージは，ここにパッケージの名前に対応したサブディレクトリを作らなければいけない．
+							名前には (「パッケージ名」そのものの一部でない限り) 「バージョン」を含めてはいけません．
+							ヒント: <code>%n</code> を使うとよい．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share/locale</code>
 					</td><td>
 						<p>
-							国際化用のメッセージカタログディレクトリ。
+							国際化で使うメッセージカタログ用．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/var</code>
 					</td><td>
 						<p>
-							<code>var</code> ディレクトリにはデータを保存する。
-							データとは、スプールディレクトリ、ロックファイル、状態のデータベース、ゲームのハイスコアやログファイルがある。
+							ディレクトリ <code>var</code> には変化し得るデータを保存する．
+							(スプールディレクトリ，ロックファイル，状態のデータベース，ゲームのハイスコアやログファイルなど)
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/etc</code>
 					</td><td>
 						<p>
-							設定ファイル用ディレクトリ。
-							複数のファイルを使用するパッケージはサブディレクトリを作る方が好ましい。
-							サブディレクトリの名称はパッケージ名称かプログラム名とする。
+							設定ファイル用．
+							複数のファイルを使用するパッケージはサブディレクトリを作らなければいけない．
+							区別のため，そのサブディレクトリにはパッケージまたはその中のプログラムの名前を付けなければいけない．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/src</code>
 					</td><td>
 						<p>
-							ソースコードを保存、ビルドするディレクトリ。
-							パッケージが何かをインストールする場所ではない。
+							ソースコードを保存，ビルドするディレクトリ．
+							パッケージはここに何もインストールしてはいけない．
 						</p>
 					</td></tr></table>
 		
 
 
-		<h2><a name="avoid">4.3 回避すること</a></h2>
+		<h2><a name="avoid">4.3 避けるべきこと</a></h2>
 			
 			<p>
-				上述のディレクトリ以外は /sw に作成をしない。
-				特に、
+				<code>/sw</code> 下には，上述のもの以外ディレクトリを作ってはいけない．
+				特に以下のディレクトリを作らないこと:
 				<code>/sw/man</code>, <code>/sw/info</code>,
 				<code>/sw/doc</code>, <code>/sw/libexec</code>,
 				<code>/sw/lib/locale</code>
-				は作成しない。
 			</p>
 		
 
-
 	<p align="right">
-Next: <a href="reference.php?phpLang=ja">5 参照</a></p>
+Next: <a href="reference.php?phpLang=ja">5 リファレンスマニュアル</a></p>
 
 <? include_once "footer.inc"; ?>
