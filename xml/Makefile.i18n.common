@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.5 2004/02/18 15:52:17 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.6 2004/02/21 13:48:47 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -23,6 +23,7 @@ PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 
 ALL_TARGETS = $(TARGET)
 INSTALL_FILES = $(TARGET)
+INSTALL_FILES += $(BASE_TARGET)
 
 ifdef WANT_HTML
 ifdef LANGUAGES
