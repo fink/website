@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.10 2003/02/28 02:46:52 fingolfin Exp $ */
+/* $Id: fink.css,v 1.11 2003/03/01 01:21:44 fingolfin Exp $ */
 
 body {
   color:black;
@@ -83,6 +83,13 @@ tt {
   color:black;
   font-family:Courier,"Courier New",monospace;
   font-size:10pt;
+}
+
+code {
+  color:black;
+  font-family:Courier,"Courier New",monospace;
+  font-size:10pt;
+  white-space:nowrap;
 }
 
 pre {
