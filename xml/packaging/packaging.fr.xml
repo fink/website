@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.47 2004/09/12 20:17:31 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.48 2004/11/02 02:28:47 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -1394,6 +1394,14 @@ Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (i
 <p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, et "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
 <p>
 Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .
+</p>
+</itemd></item>
+
+<item><itemt>AppBundles</itemt>
+<itemd>
+<p><em>Introduit dans une version postérieure à la version 0.23.1.</em> Ce champ installe le(s) lot(s) dans le répertoire <filename>%p/Applications</filename>. Il crée également un lien symbolique vers le répertoire <filename>/Applications/Fink</filename>. Exemple:
+</p>
+<codeblock>AppBundles: build/*.app Foo.app</codeblock>
 </p>
 </itemd></item>
 
