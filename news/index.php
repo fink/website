@@ -1,14 +1,18 @@
 <?
 $title = "News";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2003/01/10 15:32:17';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2003/01/15 19:17:43';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
+<a name="2003-01-15 Anonymous CVS issues"><span class="news_date">2003-01-15: </span><span class="news_headline">Anonymous CVS issues</span></a><?php gray_line(); ?>
+	<p>
+	Due to technical issues at SourceForge, anonymous CVS access is currently unavailable. The selfupdate-cvs command will not work until this issue has been resolved. More info can be found on the SourceForge.net <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status page</a>.
+	</p>
+	<a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
 	<p>
 	Fink works just fine with the <a href="http://www.apple.com/macosx/x11/">public beta X11 release</a>
 	with some caveats.  Please read <a href="<?php print $root; ?>doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>

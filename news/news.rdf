@@ -4,9 +4,19 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 12 Jan 2003 12:46:02 EST</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2003 19:17:52 GMT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Anonymous CVS issues</title>
+    <link>http://fink.sf.net/news/#2003-01-15%20Anonymous%20CVS%20issues</link>
+    <dc:date>2003-01-15</dc:date>
+    <description>
+	
+	Due to technical issues at SourceForge, anonymous CVS access is currently unavailable. The selfupdate-cvs command will not work until this issue has been resolved. More info can be found on the SourceForge.net site status page.
+	
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink Interaction with Apple's X11 Public Beta</title>
     <link>http://fink.sf.net/news/#2003-01-07%20Fink%20Interaction%20with%20Apple's%20X11%20Public%20Beta</link>
@@ -342,17 +352,6 @@ software before using Fink.
       In addition to ripping off Fink packages and breaking the GPL, the ports
       collection at forked.net
        has just gone commercial. More details soon. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Binary distribution complete</title>
-    <link>http://fink.sf.net/news/#2001-10-03%20Binary%20distribution%20complete</link>
-    <dc:date>2001-10-03</dc:date>
-    <description>
-    The binary distribution update is now complete.
-    The 10.1 compatibility report has been
-    updated to reflect the fixes in Fink 0.3.0.
     
   </description>
   </item>

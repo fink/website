@@ -1,4 +1,8 @@
-<a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
+<a name="2003-01-15 Anonymous CVS issues"><span class="news_date">2003-01-15: </span><span class="news_headline">Anonymous CVS issues</span></a><?php gray_line(); ?>
+	<p>
+	Due to technical issues at SourceForge, anonymous CVS access is currently unavailable. The selfupdate-cvs command will not work until this issue has been resolved. More info can be found on the SourceForge.net <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status page</a>.
+	</p>
+	<a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
 	<p>
 	Fink works just fine with the <a href="http://www.apple.com/macosx/x11/">public beta X11 release</a>
 	with some caveats.  Please read <a href="<?php print $root; ?>doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>
@@ -13,11 +17,4 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
 </p>
 <p><a href="<?php print $root; ?>news/news.rdf">news.rdf</a> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
 </p>
-<a name="2002-12-22 New Upgrade Matrix"><span class="news_date">2002-12-22: </span><span class="news_headline">New Upgrade Matrix</span></a><?php gray_line(); ?>
-  <p>A new <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a> is
-  now available, for use in upgrading earlier versions of Fink to the
-  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
-  under 10.1 will be brought to Fink version 0.4.1a, while users
-  upgrading under 10.2 will be brought to Fink version 0.5.0a.
-  </p>
-  
+
