@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.19 2004/11/07 11:52:36 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.20 2004/11/24 07:16:24 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -15,11 +15,15 @@ endif
 
 ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
-TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+#TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+TARGET :=
 ifdef STYLESHEET_RDF
-TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(BASE_TARGET)))
-TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(BASE_TARGET)))
+#TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(BASE_TARGET)))
+#TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(BASE_TARGET)))
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .inc,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(FILE)))))
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .rdf,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(FILE)))))
 endif
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .php,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(FILE)))))
 #TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
