@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/22 17:31:50';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -58,66 +58,49 @@ exception of <tt><nobr>xdm</nobr></tt>.
 
 
 
-<a name="macosx-41"><h2>4.2 Mac OS X + XFree86 4.1.0</h2></a>
-<p>
-This section describes starting the server from XFree86 4.1.0.
-That also covers the old-style rootless servers still circulating;
-they are based on a late development version of XFree86 4.1.0 and
-sufficiently similar.
-</p>
+<a name="macosx-41"><h2>4.2 Mac OS X + XFree86 4.x.0</h2></a>
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
-Applications folder.
-When you start XFree86 this way it already knows you are running under
-Quartz (or Aqua or whatever you choose to call the
-graphical environment of Mac OS X).
-It will fire up fullscreen mode automatically and start your clients
-from the <tt><nobr>.xinitrc</nobr></tt> file.
-However, there is no way to get rootless mode by double-clicking the
-application.
+Applications folder.  This will let you choose between full 
+screen and rootless mode in a dialog at startup, just 
+double-click the XDarwin.app application. You can disable 
+the dialog and set XDarwin to always use the mode of your 
+choice in the Preferences dialog.  
+</p> 
+<p>
+Prior to 4.2.0 it would fire up fullscreen mode automatically, 
+and there was no way to get rootless mode by double-clicking 
+the application.
 </p>
 <p>
 The other way to start XFree86 under Mac OS X is via
 <tt><nobr>startx</nobr></tt> from Terminal.app.
 If you start the server this way, you must tell it that it should run
 in parallel with Quartz.
-You do this by passing the <tt><nobr>-quartz</nobr></tt> option, like this:
+You do this by passing the <tt><nobr>-fullscreen</nobr></tt> option, like this:
 </p>
-<pre>startx -- -quartz</pre>
+<pre>startx -- -fullscreen</pre>
 <p>
-That will start up the server in fullscreen mode, plus the clients in
-your <tt><nobr>.xinitrc</nobr></tt>.
-If the server you have supports rootless operation, you can start it
-in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
+That will start up the server in fullscreen mode, 
+plus the clients inyour <tt><nobr>.xinitrc</nobr></tt>.  
 </p>
+<p>
+NOTE: prior to 4.2, -quartz was used for fullscreen mode.
+</p>
+<p>
+If the server you have supports rootless operation, 
+you can start it in rootless mode with the 
+<tt><nobr>-rootless</nobr></tt> option:</p>
 <pre>startx -- -rootless</pre>
-
-
-
-<a name="macosx-42"><h2>4.3 Mac OS X + XFree86 CVS</h2></a>
 <p>
-Recent development versions of XFree86 (this includes the XDarwin
-1.0a# test releases from the XonX project and the
-<tt><nobr>xfree86-rootless</nobr></tt> package from Fink 0.2.4 and later) come
-with rootless mode built in.
-They let you choose between fullscreen and rootless mode in a dialog
-at startup, just double-click the XDarwin.app application.
-You can disable the dialog and set XDarwin to always use the mode of
-your choice in the Preferences dialog.
-</p>
-<p>
-You can still use startx and the command line options if you prefer.
-The options to choose the mode have changed slightly.
-The <tt><nobr>-quartz</nobr></tt> option no longer selects fullscreen mode, but
-rather uses the default mode set in the preferences.
-The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
-<tt><nobr>-rootless</nobr></tt> forces rootless mode.
+The <tt><nobr>-quartz</nobr></tt> option no longer selects fullscreen mode,
+but rather uses the default mode set in the preferences.
 </p>
 
 
 
-<a name="xinitrc"><h2>4.4 The .xinitrc File</h2></a>
+<a name="xinitrc"><h2>4.3 The .xinitrc File</h2></a>
 <p>
 If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home
 directory, it will be used to start some initial X clients, e.g. the

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Other Stuff";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/22 17:31:50';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="trouble.php" title="Troubleshooting XFree86"><link rel="prev" href="xtools.php" title="Xtools">';
 
@@ -43,7 +43,7 @@ USA runs natively on Mac OS X.
 It is unknown what codebase it uses and whether/how it supports local
 clients.
 Because of this, there is no special support for eXodus in Fink.
-If you have more info, please throw it my way.
+If you have more info, please throw it our way.
 </p>
 
 

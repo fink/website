@@ -17,6 +17,7 @@ X11 with or without Fink.
 <li><a href="#intro.client-server">1.6 Client and Server</a></li>
 <li><a href="#intro.rootless">1.7 What does rootless mean?</a></li>
 <li><a href="#intro.wm">1.8 What is a window manager?</a></li>
+<li><a href="#intro.desktop">1.9 What are Quartz/Aqua, Gnome, and KDE?</a></li>
 </ul>
 <li><a href="#history"><b>2 History</b></a></li>
 <ul>
@@ -26,12 +27,12 @@ X11 with or without Fink.
 </ul>
 <li><a href="#inst-xfree86"><b>3 Getting and Installing XFree86</b></a></li>
 <ul>
-<li><a href="#inst-xfree86.official-binary">3.1 The Official Binaries</a></li>
-<li><a href="#inst-xfree86.official-source">3.2 The Official Source</a></li>
-<li><a href="#inst-xfree86.latest-cvs">3.3 The Latest Development Source</a></li>
-<li><a href="#inst-xfree86.xonx-bin">3.4 The XonX binary test releases (XAqua,
+<li><a href="#inst-xfree86.fink">3.1 Installing through Fink</a></li>
+<li><a href="#inst-xfree86.official-binary">3.2 The Official Binaries</a></li>
+<li><a href="#inst-xfree86.official-source">3.3 The Official Source</a></li>
+<li><a href="#inst-xfree86.latest-cvs">3.4 The Latest Development Source</a></li>
+<li><a href="#inst-xfree86.xonx-bin">3.5 The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="#inst-xfree86.fink">3.5 Installing through Fink</a></li>
 <li><a href="#inst-xfree86.macgimp">3.6 MacGimp</a></li>
 <li><a href="#inst-xfree86.rootless">3.7 Roaming Rootless Servers</a></li>
 <li><a href="#inst-xfree86.fink-summary">3.8 Fink package summary</a></li>
@@ -39,9 +40,8 @@ XDarwin)</a></li>
 <li><a href="#run-xfree86"><b>4 Starting XFree86</b></a></li>
 <ul>
 <li><a href="#run-xfree86.darwin">4.1 Darwin</a></li>
-<li><a href="#run-xfree86.macosx-41">4.2 Mac OS X + XFree86 4.1.0</a></li>
-<li><a href="#run-xfree86.macosx-42">4.3 Mac OS X + XFree86 CVS</a></li>
-<li><a href="#run-xfree86.xinitrc">4.4 The .xinitrc File</a></li>
+<li><a href="#run-xfree86.macosx-41">4.2 Mac OS X + XFree86 4.x.0</a></li>
+<li><a href="#run-xfree86.xinitrc">4.3 The .xinitrc File</a></li>
 </ul>
 <li><a href="#xtools"><b>5 Xtools</b></a></li>
 <ul>
@@ -89,7 +89,7 @@ draw user interfaces, i.e. buttons, text fields, and so on.
 <p>
 X11 is the de facto standard graphics system in the Unix world.
 It comes with Linux, the *BSDs and most commercial Unix flavors.
-Desktop environments like CDE, KDE and GNOME are based on it.
+Desktop environments like CDE, KDE and GNOME run on top of it.
 </p>
 
 
@@ -108,7 +108,7 @@ Aqua, although the two names are often used interchangably.
 
 <a name="intro.def-darwin"><h3>1.3 What is Darwin?</h3></a>
 <p>
-<a href="http://www.opensource.apple.com/">Darwin</a> is
+<a href="http://OpenDarwin.org/">Darwin</a> is
 basically a stripped-down version of Mac OS X that is available free
 of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.
@@ -185,9 +185,7 @@ This eliminates the need to switch between two screens.
 It also eliminates the X11 root window, because Quartz already takes
 care of the desktop background.
 Because there is no (visible) root window, this mode is called
-&quot;rootless&quot;.
-It is the most comfortable way to use X11 on Mac OS X, so everyone is
-trying to get it. <tt><nobr>:-)</nobr></tt>
+&quot;rootless&quot;.  It is the most comfortable way to use X11 on Mac OS X.
 </p>
 
 
@@ -211,6 +209,48 @@ Most popular ones allow the user to customize the appearance via
 so-called <a href="http://www.themes.org/">themes</a>.
 Many window managers also provide additional functionality, like pop
 up menus in the root window, docks or launch buttons.
+</p>
+
+<p>
+Many window managers have been packaged for Fink; here is a
+<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">    
+current list.
+</a>
+</p>
+
+
+
+<a name="intro.desktop"><h3>1.9 What are Quartz/Aqua, Gnome, and KDE?</h3></a>
+<p>
+They are desktop environments, and there are many others.  Their purpose 
+is to provide additional framework to applications, so that their look, 
+feel, and behaviour can be visually consistent.  Example: 
+</p><p> graphics engine : X11
+</p><p> window manager:
+<a href="http://sawmill.sourceforge.net/">sawfish</a>
+</p><p> desktop: <a href="http://www.gnome.org/">Gnome</a>
+</p><p>
+The lines between graphics display engine, window manager,
+and desktop are blurred because similar, or the same functionality, 
+may be implemented by one or more of them. This is one reason why a
+particular window manager may not be able to be used with a
+particular desktop environment.
+
+</p><p>
+Many applications are developed to integrate with a particular desktop.  
+Most often by installing the libraries for the desktop environment 
+(and the other underlying libraries) that an application was developed 
+for, the application will work with limited or no function loss.  
+Examples are the increasing 
+<a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+selection of GNOME applications 
+</a>
+available to be installed and run without running GNOME.  
+Unfortunately, the same 
+<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+progress is not quite yet able to be made
+</a>
+with <a href="http://www.kde.org/">KDE applications.</a>
 </p>
 
 
@@ -246,7 +286,7 @@ repository.
 This was the time of the Mac OS X Public Beta and Darwin 1.2.
 XFree86 4.0.2 worked fine on Darwin, but on Mac OS X it required users
 to log out of Aqua and go to the console to run it.
-So Torrey gathered the <a href="http://sourceforge.net/projects/xonx/">XonX team</a> around
+So Torrey gathered the <a href="http://mrcla.com/XonX/">XonX team</a> around
 him and set out on a voyage to bring XFree86 to Mac OS X.
 </p>
 <p>
@@ -280,11 +320,15 @@ And the rootless patch was free, and continued to float around the
 net.
 After XFree86 4.1.0 shipped with just the fullscreen mode, work on the
 rootless mode continued, now using the Cocoa API.
-An experimental rootless mode is now in XFree86's CVS repository.
+An experimental rootless mode was put into XFree86's CVS repository.
 </p>
 <p>
 In the meantime, Apple released Mac OS X 10.0 and Darwin 1.3,
 and Tenon released Xtools 1.0 some weeks after that.
+</p>
+<p>Development continued on integrating the rootless mode into XFree86,
+so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X 
+version had been completely integrated into the main XFree86 distribution.
 </p>
 
 
@@ -292,31 +336,59 @@ and Tenon released Xtools 1.0 some weeks after that.
 
 
 
-<a name="inst-xfree86.official-binary"><h3>3.1 The Official Binaries</h3></a>
+<a name="inst-xfree86.fink"><h3>3.1 Installing through Fink</h3></a>
+
+<p>
+Fink will let you install X11 in any way you like,
+but it also provides XFree86 packages of its own. If you
+use <tt><nobr>fink install ...</nobr></tt>, it will download
+the source code and compile it on your computer. If
+you use <tt><nobr>apt-get install ...</nobr></tt> or the
+<tt><nobr>dselect</nobr></tt> frontend, it will download
+precompiled binary packages, similar to the official
+XFree86 distribution.
+</p>
+<p>
+The <tt><nobr>xfree86-base</nobr></tt> package contains all
+of XFree86 4.2.0 except the XDarwin server.  
+The <tt><nobr>xfree86-rootless</nobr></tt> is the server from the standard,
+stable XFree86 4.2.0 release. It supports both full-screen and rootless
+operation, and has OpenGL support.  
+(In the early days, Fink also had an <tt><nobr>xfree86-server</nobr></tt> package
+which only provided fullscreen mode, but this is no longer a relevant
+option.)
+You also have the option to
+install the server yourself; see below.  In this case, you should
+only install <tt><nobr>xfree86-base</nobr></tt>, or you'll risk that Fink
+overwrites your manually installed server.
+</p>
+
+
+<a name="inst-xfree86.official-binary"><h3>3.2 The Official Binaries</h3></a>
 <p>
 The XFree86 project has an official binary distribution of XFree86
-4.1.0.
+4.2.0.
 You can find it on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <tt><nobr>4.1.0/binaries/Darwin-ppc</nobr></tt>.
+the directory <tt><nobr>4.2.0/binaries/Darwin-ppc</nobr></tt>.
 Be sure to get the <tt><nobr>Xprog.tgz</nobr></tt> and <tt><nobr>Xquartz.tgz</nobr></tt>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <tt><nobr>Xinstall.sh</nobr></tt> script as root to install the stuff.
-(You might want to read the <a href="http://www.xfree86.org/4.1.0/Install.html">official
+(You might want to read the <a href="http://www.xfree86.org/4.2.0/Install.html">official
 instructions</a> before installing.)
-You've now got XFree86 with a server that can do fullscreen, but not
+You've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
 
 
 
-<a name="inst-xfree86.official-source"><h3>3.2 The Official Source</h3></a>
+<a name="inst-xfree86.official-source"><h3>3.3 The Official Source</h3></a>
 <p>
-If you've got the time to spare, you can build XFree86 4.1.0 from
+If you've got the time to spare, you can build XFree86 4.2.0 from
 source.
 You can find the source on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <tt><nobr>4.1.0/source</nobr></tt>.
-Grab all three <tt><nobr>X410src-#.tgz</nobr></tt> tarballs and extract them in
+the directory <tt><nobr>4.2.0/source</nobr></tt>.
+Grab all three <tt><nobr>X420src-#.tgz</nobr></tt> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
 <tt><nobr>config/cf/host.def</nobr></tt> in the XFree86 source tree.
@@ -334,27 +406,16 @@ with the following commands:
 sudo make install install.man</pre>
 <p>
 As with the official binaries, you've now got XFree86 with a server
-that can do fullscreen, but not rootless under Mac OS X.
-</p>
-<p>
-Note: The 4.1.0 source needs a small patch to compile on Mac OS X
-10.1.
-<a href="http://fink.sourceforge.net/files/xfree86-4.1.0-10.1.patch">Download
-it</a>, change into the <tt><nobr>xc</nobr></tt> directory and apply it with
-<tt><nobr>patch -p1 &lt;/path/to/xfree86-4.1.0-10.1.patch</nobr></tt>.
+that can do fullscreen, or rootless under Mac OS X.
 </p>
 
 
 
-<a name="inst-xfree86.latest-cvs"><h3>3.3 The Latest Development Source</h3></a>
+<a name="inst-xfree86.latest-cvs"><h3>3.4 The Latest Development Source</h3></a>
 <p>
 If you have not only time, but also some nerves to spare you can get
 the latest development version of XFree86 from the public CVS
 repository.
-This is the version that will eventually become XFree86 4.2.
-It contains improvements made after 4.1.0 was released,
-most notably OpenGL support (just software rendering, but useful
-anyway) and a reimplementation of rootless mode.
 Note that the code is under constant development; what you get today
 is usually not the same as what you got yesterday.
 </p>
@@ -366,7 +427,7 @@ Then, follow the source build instructions above.
 
 
 
-<a name="inst-xfree86.xonx-bin"><h3>3.4 The XonX binary test releases (XAqua,
+<a name="inst-xfree86.xonx-bin"><h3>3.5 The XonX binary test releases (XAqua,
 XDarwin)</h3></a>
 <p>
 In the time before 4.1.0 was released, the XonX team put out a series
@@ -375,110 +436,42 @@ These releses are obsolete and should not be used.
 </p>
 <p>
 With the introduction of rootless mode into XFree86's mainline CVS
-(after 4.1.0 was released), the XonX team has once again started to
+(after 4.1.0 was released), the XonX team once again started to
 put out binary test releases, this time under the name XDarwin.
-These releases are available from the <a href="http://sourceforge.net/project/showfiles.php?group_id=18034&amp;release_id=43842">SourceForge
-download page</a>.
-You should also check the <a href="http://www.mrcla.com/XonX/">XonX
-web page</a> for additional notes.
+This eventually resulted in the XDarwin released with 4.2.0.
 </p>
-<p>
-To install one of these releases, you must first install XFree86
-4.1.0, e.g. the official binary release.
-Then, extract the XDarwin tarball as root like this:
-</p>
-<pre>cd /
-sudo gnutar xzvf /path/to/XDarwin1.0a3.tgz</pre>
-<p>
-That will update the X servers in /Applications and /usr/X11R6/bin.
-For OpenGL support you need an additional tarball.
-In the case of XDarwin 1.0a3 it's called <tt><nobr>GLXSupport.tgz</nobr></tt>.
-It is installed the same way as the main tarball.
-</p>
-
-
-
-<a name="inst-xfree86.fink"><h3>3.5 Installing through Fink</h3></a>
-<p>
-Fink will let you install X11 in any way you like, but it
-also provides XFree86 packages of its own.
-If you use <tt><nobr>fink install ...</nobr></tt>, it will download the source
-code and compile it on your computer.
-If you use <tt><nobr>apt-get install ...</nobr></tt> or the
-<tt><nobr>dselect</nobr></tt> frontend, it will download precompiled binary
-packages, similar to the official XFree86 distribution.
-</p>
-<p>
-The <tt><nobr>xfree86-base</nobr></tt> package contains all of XFree86 4.1.0
-except the XDarwin servers.
-There are several ways to add the servers to the mix.
-The <tt><nobr>xfree86-server</nobr></tt> package installs the standard XFree86
-4.1.0 servers, i.e. you'll only get fullscreen mode.
-The <tt><nobr>xfree86-rootless</nobr></tt> package uses a (more or less) recent
-CVS snapshot taken for Fink and uses that.
-It contains a server with rootless mode plus the OpenGL libraries.
-Finally, you have the option to install the server yourself; see
-below.
-In this case, you should only install <tt><nobr>xfree86-base</nobr></tt>, or
-you'll risk that Fink overwrites your manually installed server.
+<p>The <a href="http://www.mrcla.com/XonX/">XonX
+web page</a> indicates that post-4.2.0 testing versions of XDarwin may
+someday be released, but none have been as yet.  They would presumably be 
+installed on top of XFree86 4.2.0.
 </p>
 
 
 
 <a name="inst-xfree86.macgimp"><h3>3.6 MacGimp</h3></a>
 <p>
-The downloadable installer currently offered by the MacGimp people
-does not contain XFree86.
-(It will overwrite some XFree86 configuration files, though.)
+The downloadable installer which was offered by the MacGimp people 
+during 2001
+did not contain XFree86.
+(It would overwrite some XFree86 configuration files, though.)
 </p>
 <p>
 The CD that <a href="http://www.macgimp.com/">MacGimp, Inc.</a>
 offers for sale reportedly contains XFree86.
-It's still not quite clear what version it is; it may be a mix of
+It's not quite clear what version it is; it may be a mix of
 4.0.3, 4.1.0 and a development snapshot.
 The server does rootless mode, using a patch from the time before
 4.1.0.
 </p>
 
 
-
 <a name="inst-xfree86.rootless"><h3>3.7 Roaming Rootless Servers</h3></a>
-<p>
-There are various rootless server binaries roaming around the net.
-These are not self-sufficient; they must be installed on top of
-another XFree86 installation (e.g. the official 4.1.0 binaries or
-Fink's <tt><nobr>xfree86-base</nobr></tt> package).
-</p>
-<p>
-Installing such a server happens in two steps.
-First, place the files you got in the right directories.
-These are:</p>
-<ul>
-<li>XDarwin.app in /Applications</li>
-<li>XDarwin in /usr/X11R6/bin</li>
-<li>XDarwinStartup in /usr/X11R6/bin</li>
-</ul>
-<p>
-Note that you must be the superuser (&quot;root&quot;, run &quot;sudo -s&quot; to become
-root) for this procedure.
-If some of these items are already present, overwrite them.
-Make sure that XDarwin and XDarwinStartup have the executable flag
-set, e.g. <tt><nobr>chmod 755 XDarwin XDarwinStartup</nobr></tt>.
-</p>
-<p>
-In the second step, you need to set some symbolic links in
-/usr/X11R6/bin.
-You can use these commands:
-</p>
-<pre>cd /usr/X11R6/bin
-rm -f X XDarwinQuartz
-ln -s XDarwinStartup X
-ln -s /Applications/XDarwin.app/Contents/MacOS/XDarwin XDarwinQuartz</pre>
-<p>
-Now you should have an XFree86 installation that can run in rootless
-mode.
-</p>
 
+<p>
+There are various rootless server binaries roaming around
+the net.  With the release of the official 4.2.0 binaries
+this should not be a desirable way to install XFree86.
+</p>
 
 
 <a name="inst-xfree86.fink-summary"><h3>3.8 Fink package summary</h3></a>
@@ -486,8 +479,7 @@ mode.
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.1.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.1.0 built from source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.1.0 binaries + XDarwin 1.0a#</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.1.0 binaries + XDarwin 1.0a# + OpenGL tarball</td><td><p><tt><nobr>system-xfree86</nobr></tt> and <tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + binary rootless server from other sources</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>Latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> and <tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-server</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 + new rootless server, both built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> (in
-unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr></table>
 
 
 
@@ -541,66 +533,49 @@ exception of <tt><nobr>xdm</nobr></tt>.
 
 
 
-<a name="run-xfree86.macosx-41"><h3>4.2 Mac OS X + XFree86 4.1.0</h3></a>
-<p>
-This section describes starting the server from XFree86 4.1.0.
-That also covers the old-style rootless servers still circulating;
-they are based on a late development version of XFree86 4.1.0 and
-sufficiently similar.
-</p>
+<a name="run-xfree86.macosx-41"><h3>4.2 Mac OS X + XFree86 4.x.0</h3></a>
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
-Applications folder.
-When you start XFree86 this way it already knows you are running under
-Quartz (or Aqua or whatever you choose to call the
-graphical environment of Mac OS X).
-It will fire up fullscreen mode automatically and start your clients
-from the <tt><nobr>.xinitrc</nobr></tt> file.
-However, there is no way to get rootless mode by double-clicking the
-application.
+Applications folder.  This will let you choose between full 
+screen and rootless mode in a dialog at startup, just 
+double-click the XDarwin.app application. You can disable 
+the dialog and set XDarwin to always use the mode of your 
+choice in the Preferences dialog.  
+</p> 
+<p>
+Prior to 4.2.0 it would fire up fullscreen mode automatically, 
+and there was no way to get rootless mode by double-clicking 
+the application.
 </p>
 <p>
 The other way to start XFree86 under Mac OS X is via
 <tt><nobr>startx</nobr></tt> from Terminal.app.
 If you start the server this way, you must tell it that it should run
 in parallel with Quartz.
-You do this by passing the <tt><nobr>-quartz</nobr></tt> option, like this:
+You do this by passing the <tt><nobr>-fullscreen</nobr></tt> option, like this:
 </p>
-<pre>startx -- -quartz</pre>
+<pre>startx -- -fullscreen</pre>
 <p>
-That will start up the server in fullscreen mode, plus the clients in
-your <tt><nobr>.xinitrc</nobr></tt>.
-If the server you have supports rootless operation, you can start it
-in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
+That will start up the server in fullscreen mode, 
+plus the clients inyour <tt><nobr>.xinitrc</nobr></tt>.  
 </p>
+<p>
+NOTE: prior to 4.2, -quartz was used for fullscreen mode.
+</p>
+<p>
+If the server you have supports rootless operation, 
+you can start it in rootless mode with the 
+<tt><nobr>-rootless</nobr></tt> option:</p>
 <pre>startx -- -rootless</pre>
-
-
-
-<a name="run-xfree86.macosx-42"><h3>4.3 Mac OS X + XFree86 CVS</h3></a>
 <p>
-Recent development versions of XFree86 (this includes the XDarwin
-1.0a# test releases from the XonX project and the
-<tt><nobr>xfree86-rootless</nobr></tt> package from Fink 0.2.4 and later) come
-with rootless mode built in.
-They let you choose between fullscreen and rootless mode in a dialog
-at startup, just double-click the XDarwin.app application.
-You can disable the dialog and set XDarwin to always use the mode of
-your choice in the Preferences dialog.
-</p>
-<p>
-You can still use startx and the command line options if you prefer.
-The options to choose the mode have changed slightly.
-The <tt><nobr>-quartz</nobr></tt> option no longer selects fullscreen mode, but
-rather uses the default mode set in the preferences.
-The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
-<tt><nobr>-rootless</nobr></tt> forces rootless mode.
+The <tt><nobr>-quartz</nobr></tt> option no longer selects fullscreen mode,
+but rather uses the default mode set in the preferences.
 </p>
 
 
 
-<a name="run-xfree86.xinitrc"><h3>4.4 The .xinitrc File</h3></a>
+<a name="run-xfree86.xinitrc"><h3>4.3 The .xinitrc File</h3></a>
 <p>
 If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home
 directory, it will be used to start some initial X clients, e.g. the
@@ -746,7 +721,7 @@ USA runs natively on Mac OS X.
 It is unknown what codebase it uses and whether/how it supports local
 clients.
 Because of this, there is no special support for eXodus in Fink.
-If you have more info, please throw it my way.
+If you have more info, please throw it our way.
 </p>
 
 
@@ -1211,4 +1186,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: x11.xml,v 1.15 2002/04/14 23:10:35 fingolfin Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: x11.xml,v 1.16 2002/05/22 17:31:50 dmrrsn Exp $</i></p></body></html>

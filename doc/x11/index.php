@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/22 17:31:50';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -27,6 +27,7 @@ X11 with or without Fink.
 <li><a href="intro.php#client-server">1.6 Client and Server</a></li>
 <li><a href="intro.php#rootless">1.7 What does rootless mean?</a></li>
 <li><a href="intro.php#wm">1.8 What is a window manager?</a></li>
+<li><a href="intro.php#desktop">1.9 What are Quartz/Aqua, Gnome, and KDE?</a></li>
 </ul>
 <li><a href="history.php"><b>2 History</b></a></li>
 <ul>
@@ -36,12 +37,12 @@ X11 with or without Fink.
 </ul>
 <li><a href="inst-xfree86.php"><b>3 Getting and Installing XFree86</b></a></li>
 <ul>
-<li><a href="inst-xfree86.php#official-binary">3.1 The Official Binaries</a></li>
-<li><a href="inst-xfree86.php#official-source">3.2 The Official Source</a></li>
-<li><a href="inst-xfree86.php#latest-cvs">3.3 The Latest Development Source</a></li>
-<li><a href="inst-xfree86.php#xonx-bin">3.4 The XonX binary test releases (XAqua,
+<li><a href="inst-xfree86.php#fink">3.1 Installing through Fink</a></li>
+<li><a href="inst-xfree86.php#official-binary">3.2 The Official Binaries</a></li>
+<li><a href="inst-xfree86.php#official-source">3.3 The Official Source</a></li>
+<li><a href="inst-xfree86.php#latest-cvs">3.4 The Latest Development Source</a></li>
+<li><a href="inst-xfree86.php#xonx-bin">3.5 The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="inst-xfree86.php#fink">3.5 Installing through Fink</a></li>
 <li><a href="inst-xfree86.php#macgimp">3.6 MacGimp</a></li>
 <li><a href="inst-xfree86.php#rootless">3.7 Roaming Rootless Servers</a></li>
 <li><a href="inst-xfree86.php#fink-summary">3.8 Fink package summary</a></li>
@@ -49,9 +50,8 @@ XDarwin)</a></li>
 <li><a href="run-xfree86.php"><b>4 Starting XFree86</b></a></li>
 <ul>
 <li><a href="run-xfree86.php#darwin">4.1 Darwin</a></li>
-<li><a href="run-xfree86.php#macosx-41">4.2 Mac OS X + XFree86 4.1.0</a></li>
-<li><a href="run-xfree86.php#macosx-42">4.3 Mac OS X + XFree86 CVS</a></li>
-<li><a href="run-xfree86.php#xinitrc">4.4 The .xinitrc File</a></li>
+<li><a href="run-xfree86.php#macosx-41">4.2 Mac OS X + XFree86 4.x.0</a></li>
+<li><a href="run-xfree86.php#xinitrc">4.3 The .xinitrc File</a></li>
 </ul>
 <li><a href="xtools.php"><b>5 Xtools</b></a></li>
 <ul>
@@ -81,7 +81,7 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.15 2002/04/14 23:10:35 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.16 2002/05/22 17:31:50 dmrrsn Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/22 17:31:50';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="history.php" title="History"><link rel="prev" href="index.php" title="Running X11 Contents">';
 
@@ -26,7 +26,7 @@ draw user interfaces, i.e. buttons, text fields, and so on.
 <p>
 X11 is the de facto standard graphics system in the Unix world.
 It comes with Linux, the *BSDs and most commercial Unix flavors.
-Desktop environments like CDE, KDE and GNOME are based on it.
+Desktop environments like CDE, KDE and GNOME run on top of it.
 </p>
 
 
@@ -45,7 +45,7 @@ Aqua, although the two names are often used interchangably.
 
 <a name="def-darwin"><h2>1.3 What is Darwin?</h2></a>
 <p>
-<a href="http://www.opensource.apple.com/">Darwin</a> is
+<a href="http://OpenDarwin.org/">Darwin</a> is
 basically a stripped-down version of Mac OS X that is available free
 of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.
@@ -122,9 +122,7 @@ This eliminates the need to switch between two screens.
 It also eliminates the X11 root window, because Quartz already takes
 care of the desktop background.
 Because there is no (visible) root window, this mode is called
-&quot;rootless&quot;.
-It is the most comfortable way to use X11 on Mac OS X, so everyone is
-trying to get it. <tt><nobr>:-)</nobr></tt>
+&quot;rootless&quot;.  It is the most comfortable way to use X11 on Mac OS X.
 </p>
 
 
@@ -148,6 +146,48 @@ Most popular ones allow the user to customize the appearance via
 so-called <a href="http://www.themes.org/">themes</a>.
 Many window managers also provide additional functionality, like pop
 up menus in the root window, docks or launch buttons.
+</p>
+
+<p>
+Many window managers have been packaged for Fink; here is a
+<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">    
+current list.
+</a>
+</p>
+
+
+
+<a name="desktop"><h2>1.9 What are Quartz/Aqua, Gnome, and KDE?</h2></a>
+<p>
+They are desktop environments, and there are many others.  Their purpose 
+is to provide additional framework to applications, so that their look, 
+feel, and behaviour can be visually consistent.  Example: 
+</p><p> graphics engine : X11
+</p><p> window manager:
+<a href="http://sawmill.sourceforge.net/">sawfish</a>
+</p><p> desktop: <a href="http://www.gnome.org/">Gnome</a>
+</p><p>
+The lines between graphics display engine, window manager,
+and desktop are blurred because similar, or the same functionality, 
+may be implemented by one or more of them. This is one reason why a
+particular window manager may not be able to be used with a
+particular desktop environment.
+
+</p><p>
+Many applications are developed to integrate with a particular desktop.  
+Most often by installing the libraries for the desktop environment 
+(and the other underlying libraries) that an application was developed 
+for, the application will work with limited or no function loss.  
+Examples are the increasing 
+<a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+selection of GNOME applications 
+</a>
+available to be installed and run without running GNOME.  
+Unfortunately, the same 
+<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+progress is not quite yet able to be made
+</a>
+with <a href="http://www.kde.org/">KDE applications.</a>
 </p>
 
 

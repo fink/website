@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - History";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/05/22 17:31:50';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php" title="Getting and Installing XFree86"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -39,7 +39,7 @@ repository.
 This was the time of the Mac OS X Public Beta and Darwin 1.2.
 XFree86 4.0.2 worked fine on Darwin, but on Mac OS X it required users
 to log out of Aqua and go to the console to run it.
-So Torrey gathered the <a href="http://sourceforge.net/projects/xonx/">XonX team</a> around
+So Torrey gathered the <a href="http://mrcla.com/XonX/">XonX team</a> around
 him and set out on a voyage to bring XFree86 to Mac OS X.
 </p>
 <p>
@@ -73,11 +73,15 @@ And the rootless patch was free, and continued to float around the
 net.
 After XFree86 4.1.0 shipped with just the fullscreen mode, work on the
 rootless mode continued, now using the Cocoa API.
-An experimental rootless mode is now in XFree86's CVS repository.
+An experimental rootless mode was put into XFree86's CVS repository.
 </p>
 <p>
 In the meantime, Apple released Mac OS X 10.0 and Darwin 1.3,
 and Tenon released Xtools 1.0 some weeks after that.
+</p>
+<p>Development continued on integrating the rootless mode into XFree86,
+so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X 
+version had been completely integrated into the main XFree86 distribution.
 </p>
 
 
