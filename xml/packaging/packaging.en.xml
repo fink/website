@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.14 2004/03/28 23:58:03 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.15 2004/03/28 23:59:44 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -540,7 +540,7 @@ For some packages, everything can be accomplished with a main package and a
 -shlibs package; in other cases you also need a third package.  The new
 <code>SplitOff</code> field actually makes this quite easy.
 </p><p>
-When three packages are needed, there are two different ways they could be named, depending on whether the libraries (option1) or the binaries (option 2) are the most important feature of the package.  For option 1, 
+When three packages are needed, there are two different ways they could be named, depending on whether the libraries (option 1) or the binaries (option 2) are the most important feature of the package.  For option 1, 
 use the layout:
 </p>
 <itemtable labeld="Contents" labelt="Package">
