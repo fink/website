@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2003/11/03 01:52:39 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/12/29 20:45:16 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -68,10 +68,10 @@ if (!$rs) {
   // If there was an email specified, make the maintainer field a mailto: link
   if ($email) {
     $email = str_replace(array("@","."), array("AT","DOT"), $email);
-    it_item("Maintainer:", $maintainer.' &lt;'.$email.'&gt;');
+    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.' &lt;'.$email.'&gt;'.'</a>');
 #    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
   } else {
-    it_item("Maintainer:", $maintainer);
+    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
   }
   if ($row[homepage]) {
     it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
