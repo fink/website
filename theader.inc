@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.1 2003/10/23 19:01:14 uid104432 Exp $ */
+/* $Id: theader.inc,v 1.2 2003/10/23 20:52:58 dmalloc Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -104,9 +104,9 @@ height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"
 </td>
 </tr>
 <tr valign="top">
-<td align="left" style="background-image:url(<? print $root ?>img/top-line.gif)" class="layout"><img
-src="<? print $root ?>img/title2-2.gif" width="400" height="8" border="0" alt=""></td>
-<td style="background-image:url(<? print $root ?>img/top-line.gif)" class="layout"><img src="<? print $root ?>img/shim.gif" width="1"
+<td align="left" style="background-image:url(<? print $root ?>img/top-line.png)" class="layout"><img
+src="<? print $root ?>img/title2-2.png" width="400" height="8" border="0" alt=""></td>
+<td style="background-image:url(<? print $root ?>img/top-line.png)" class="layout"><img src="<? print $root ?>img/shim.gif" width="1"
 height="8" border="0" alt=""></td>
 </tr>
 </table>
@@ -119,7 +119,7 @@ height="8" border="0" alt=""></td>
 <table border="0" cellpadding="0" cellspacing="0" width="120">
 
 <? /* sections */ ?>
-<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/sect-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/sect-head.png"
 width="120" height="26" border="0" alt="Sections:"></td></tr>
 <?
 for ($i = 0; $i < sizeof($sections); $i += 3) {
@@ -150,7 +150,7 @@ if (!$nonav) {
   }
 
 ?>
-<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/nav-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/nav-head.png"
 width="120" height="26" border="0" alt="Navigation:"></td></tr>
 <?
 if (is_array($parents)) {
@@ -204,7 +204,7 @@ if ($printlink) {
 src="<? print $root ?>img/printlink.gif" width="120" height="22"
 border="0" alt="Print Version"></a></td></tr>
 <tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
-?>img/sect-bottom.gif" width="120" height="3" border="0"
+?>img/sect-bottom.png" width="120" height="3" border="0"
 alt=""></td></tr>
 <?
 }
