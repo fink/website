@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/05/05 17:47:00 $';
+$cvs_date = '$Date: 2002/05/31 12:29:35 $';
 
 include "header.inc";
 ?>
@@ -12,6 +12,14 @@ include "header.inc";
 <p>Here's the obvious link collection... All links will open in a new
 browser window.</p>
 
+<p>Fink related links</p>
+<ul>
+<li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
+a GUI for Fink</li>
+<li><a href="http://aquaflux.org/~fink/" target="_blank">FinkBot</a> -
+the #fink IRC channel logs & stats</li>
+</ul>
+
 <p>Open Source Software</p>
 <ul>
 <li><a href="http://www.gnu.org/" target="_blank">GNU Software</a> -
@@ -21,8 +29,11 @@ Initiative</a> - general information about Open Source
 (esp. licenses)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
 the biggest directory of Open Source software on the web</li>
-<li><a href="http://www.opensource.apple.com/" target="_blank">Darwin</a>
+<li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
 and Apple's other Open Source projects</li>
+<li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
+Darwin development
+</li>
 </ul>
 
 <p>Similar Projects</p>
@@ -61,12 +72,8 @@ porting info and news, plus a software archive</li>
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 news, articles and a software archive</li>
-<li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
-a GUI for Fink</li>
-<!-- currently broken
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 help running The GIMP, GTK and X on a Mac</li>
--->
 </ul>
 
 
