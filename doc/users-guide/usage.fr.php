@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 01:29:13';
+$cvs_date = 'Date: 2004/03/27 09:40:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 include_once "header.inc";
@@ -91,7 +91,7 @@ fink list "gnome*"         - affiche tous les paquets dont le nom commence par '
 Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shell d'interpréter le modèle lui-même.
 </p>
     
-    <h2><a name="apropos">6.6 apropos- à propos</a></h2>
+    <h2><a name="apropos">6.6 apropos - à propos</a></h2>
       
       <p>
 Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.
@@ -131,11 +131,11 @@ Alias : desc, description, info
       
       <p>Construit un paquet (tout comme la commande build), mais ignore et écrase le fichier .deb existant. Si le paquet est installé, le nouveau fichier .deb sera lui aussi installé dans le système via <code>dpkg</code>. Très utile pendant la phase de développement du paquet.</p>
     
-    <h2><a name="reinstall">6.13 reinstall- réinstaller</a></h2>
+    <h2><a name="reinstall">6.13 reinstall - réinstaller</a></h2>
       
       <p>Identique à install, mais installe le paquet via <code>dpkg</code>, même s'il est déjà installé. Vous pouvez utiliser cette commande si vous supprimez involontairement des paquets, ou bien si vous changez les fichiers de configuration et que vous voulez retrouver la configuration par défaut.</p>
     
-    <h2><a name="configure">6.14 configure- configurer</a></h2>
+    <h2><a name="configure">6.14 configure - configurer</a></h2>
       
       <p>
 Réexécute le processus de configuration de Fink.
