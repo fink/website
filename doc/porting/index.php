@@ -1,7 +1,7 @@
 <?
 $title = "Porting";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/10 13:24:02';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2003/12/14 07:16:16';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="basics.php" title="Basics">';
 
@@ -40,7 +40,7 @@ include "header.inc";
 <li><a href="preparing.php#bash">4.1 The bash shell</a></li>
 <li><a href="preparing.php#gcc3">4.2 The gcc3 compiler</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: porting.xml,v 1.28 2003/09/10 13:24:02 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: porting.xml,v 1.29 2003/12/14 07:16:16 htodd Exp $</i></p>
 
 
 <?

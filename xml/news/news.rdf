@@ -4,9 +4,31 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 07 Dec 2003 20:40:52 PST</lastBuildDate>
+    <lastBuildDate>Tue, 30 Dec 2003 00:53:54 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year">
+    <title>Merry Christmas and a happy new year</title>
+    <link>http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year</link>
+    <dc:date>2003-12-28</dc:date>
+    <description>
+		
+ The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
+ forward to yet another year where we can help the Macintosh community grow into the 
+ world of UNIX together with Mac OS X.
+ 		
+		
+ We wish you all, that your hope is not too frail and that you will carry on following 
+ through with your wishes. May the world we live in gradually become a better place and
+ may peace and understanding settle just for a few days. 
+		
+		
+ Enjoy your quiet time and in case we do not get around to saying it soon enough. 
+ A happy new year to all of you, stay with us we count on your support.
+		
+		
+	</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
     <title>There they are! New mirrors..</title>
     <link>http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..</link>
@@ -17,8 +39,8 @@
 	Thank you for providing us with more mirrors. 
 		
 		
-	Matthew Healey member of the Western 
-	Australian Macintosh User Group and their 
+	Matthew Healey, member of the Western 
+	Australian Macintosh User Group, and their 
 	ISP extremedsl
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
@@ -387,28 +409,6 @@ the breakage does not stop by simply switching back to gcc 3.1.
 The Fink team is working on a workaround for this problem, but until it
 is ready, if you need Fortran-related programs you should not install
 the update.
-
-                </description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.">
-    <title>Darwin packaging groups to coordinate efforts.</title>
-    <link>http://fink.sourceforge.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.</link>
-    <dc:date>2003-06-20</dc:date>
-    <description>
-               
-The Fink, 
-Gentoo, 
-and 
-DarwinPorts 
-projects are pleased to announce the formation of  a cooperative development 
-alliance forged to facilitate delivery of freely available software to 
-Mac OS X.  Under this new alliance, the projects will share information and 
-coordinate efforts for porting software to 
-Apple's Mac OS X 
-and Darwin operating 
-systems.  Members of the alliance will share information using 
-the www.metapkg.org Web 
-site,  which  will provide a home for this cooperative effort. 
 
                 </description>
   </item>
