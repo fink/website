@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.161 2004/01/09 14:43:05 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.162 2004/01/20 15:20:52 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -905,7 +905,7 @@ startup or not, for applications that use weak references.</p>
 </question>
 <answer>
 <p>If you have StuffIt Pro installed, it could be that you have "Archive Via Real Name" mode enabled.  Check for a StuffIt preference pane in the System Preferences tool, and disable "ArchiveViaRealName" if it's enabled.  It contains a buggy reimplementation of a few important system calls that will cause a number of strange and transient errors such as this.</p>
-<p>Otherwise, a mv error typically means that another error happened earlier in the build, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
+<p>Otherwise, am <filename>mv</filename> error typically means that another error happened earlier in the build, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
 <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
@@ -992,6 +992,59 @@ version of the database, like so:</p>
 sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
 </codeblock>
 <p>You may need to re-install the last couple of packages you installed before the problem started occurring.</p>
+</answer>
+</faqentry>
+<faqentry name="freetype-problems">
+<question>
+<p>I get errors involving freetype.</p>
+</question>
+<answer>
+<p>There are several varieties of such errors.  If your error looks like:</p>
+<codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
+/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class
+make[2]: *** [rsvg-gz.lo] Error 1
+make[1]: *** [all-recursive] Error 1
+make: *** [all-recursive-am] Error 2
+### execution of make failed, exit code 2
+Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
+<p>or</p>
+<codeblock>In file included from vteft2.c:32:
+vteglyph.h:64: error: parse error before "FT_Library"
+vteglyph.h:64: warning: no semicolon at end of struct or union
+vteft2.c: In function `_vte_ft2_get_text_width':
+vteft2.c:236: error: dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_get_text_height':
+vteft2.c:244: error: dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_get_text_ascent':
+vteft2.c:252: error: dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_draw_text':
+vteft2.c:294: error: dereferencing pointer to incomplete type
+vteft2.c:295: error: dereferencing pointer to incomplete type
+make[2]: *** [vteft2.lo] Error 1
+make[1]: *** [all-recursive] Error 1
+make: *** [all] Error 2
+### execution of make failed, exit code 2
+Failed: compiling vte-0.11.10-3 failed</codeblock>
+<p>or</p>
+<codeblock>checking for freetype-config... /usr/X11R6/bin/freetype-config
+checking For sufficiently new FreeType (at least 2.0.1)... no
+configure: error: pangoxft Pango backend found but did not find freetype libraries
+make: *** No targets specified and no makefile found.  Stop.
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2
+Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
+<p>the problem is due to confusion between headers from the <code>freetype</code> | <code>freetype-hinting</code> package and the <code>freetype2</code> headers that are included with X11 | XFree86.</p>
+<codeblock>fink remove freetype freetype-hinting</codeblock>
+<p>will remove whichever variant you have installed.  On the other hand, if your error looks like:</p>
+<codeblock>ld: Undefined symbols:
+_FT_Access_Frame </codeblock>
+<p>this is typically due to a residual file from a prior installation of X11.  Reinstall the X11 SDK.  Finally, if you get an error like </p>
+<codeblock>dyld: klines Undefined symbols:
+/sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
+</codeblock>
+<p>then you probably have a binary version that built fine with <code>gcc3.3</code> on Jaguar but doesn't work on Panther.  This has now been updated, so you you just need to update your packages, e.g. via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
 </answer>
 </faqentry>
 </chapter>

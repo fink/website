@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/09 14:43:05';
+$cvs_date = 'Date: 2004/01/20 15:20:52';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -101,6 +101,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#basic-headers">5.12 I get messages saying that I'm missing stddef.h. Where do I find it?</a></li>
 <li><a href="comp-general.php#multiple-dependencies">5.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
 <li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
+<li><a href="comp-general.php#freetype-problems">5.15 I get errors involving freetype.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -140,7 +141,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.161 2004/01/09 14:43:05 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.162 2004/01/20 15:20:52 alexkhansen Exp $</i></p>
 
 
 <?
