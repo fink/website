@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.6 2004/02/21 13:48:47 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.7 2004/02/22 10:55:43 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -54,7 +54,6 @@ force: clean all
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
 	rm -f *.tmp
-	$(foreach  PHPFILE, $(BASE_TARGET), echo "<? require_once '../phpLang.inc.php'; ?>" >$(PHPFILE); )
 
 %.html: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $(SOURCE);

@@ -12,6 +12,10 @@
 
 <xsl:template match="document">
 
+<xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
+<xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
+</xsl:document>
+
 <xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 
@@ -70,9 +74,9 @@ include_once "header.<xsl:value-of select="$lang-ext" />.inc";
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text> include_once "<xsl:value-of select="@fsroot"/>footer.inc"; <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 </xsl:document>
 
-<!-- Generate header.inc -->
+<!-- Generate language specific header include file -->
 <xsl:document href="{@xml:base}header.{$lang-ext}.inc" method="text" indent="no" encoding="utf-8">
-<xsl:text>&lt;?
+<xsl:text disable-output-escaping="yes">&lt;?</xsl:text><xsl:text> 
 /* This file is generated, do not edit manually! */
 
 $section = "</xsl:text><xsl:value-of select="@section"/><xsl:text>";
@@ -95,8 +99,7 @@ $printlink = "</xsl:text>
 
 $fsroot = $root = "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text>";
 include $fsroot."header.inc";
-?&gt;
-</xsl:text>
+</xsl:text><xsl:text disable-output-escaping="yes"> ?&gt;</xsl:text>
 </xsl:document>
 
 </xsl:template>
@@ -104,6 +107,10 @@ include $fsroot."header.inc";
 <!-- ***** chapter (renders to a separate file) ***** -->
 
 <xsl:template match="chapter">
+<xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
+<xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
+</xsl:document>
+
 <xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 
@@ -140,7 +147,7 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 </xsl:if>
 </xsl:for-each>
 
-<xsl:text disable-output-escaping="yes">&lt;?</xsl:text> include_once "<xsl:value-of select="@fsroot"/>footer.inc"; <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
+<xsl:text disable-output-escaping="yes">&lt;?</xsl:text> include_once "<xsl:value-of select="../@fsroot"/>footer.inc"; <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 </xsl:document>
 </xsl:template>
 
@@ -150,8 +157,8 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 <xsl:document href="{@filename}.{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 $title = "<xsl:value-of select="shorttitle" />";
-$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.6 2004/02/22 10:16:53 babayoshihiko Exp $';
-$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.6 2004/02/22 10:16:53 babayoshihiko Exp $';
+$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.7 2004/02/22 10:55:48 babayoshihiko Exp $';
+$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.7 2004/02/22 10:55:48 babayoshihiko Exp $';
 include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
@@ -163,7 +170,7 @@ include_once "header.<xsl:value-of select="$lang-ext" />.inc";
 
 <xsl:apply-templates select="section" />
 
-<xsl:text disable-output-escaping="yes">&lt;?</xsl:text> include_once "<xsl:value-of select="@fsroot"/>footer.inc"; <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
+<xsl:text disable-output-escaping="yes">&lt;?</xsl:text> include_once "<xsl:value-of select="../@fsroot"/>footer.inc"; <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
 </xsl:document>
 </xsl:template>
