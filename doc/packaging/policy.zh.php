@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 规则";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:06:34';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/04/17 16:46:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 include_once "header.inc";
@@ -100,7 +100,7 @@ Fink 对于共享库有了新的规则，它从 2002 年 2 月开始生效。
 对于一些软件，可以通过一个主软件包和一个 -shlibs 软件包来组成；另外的一些情况下，你还需要第三个软件包。新的
 <code>SplitOff</code> 字段正是为了简化这种情况。
 </p><p>
-当需要第三个软件包的时候，有两种不同的命名办法，取决于共享库是软件包的主要功能，还是可执行程序是主要功能。对于第一种情况，使用下面的命名模式：
+当需要第三个软件包的时候，有两种不同的命名办法，取决于共享库是软件包的主要功能(情况一)，还是可执行程序是主要功能(情况二)。对于第一种情况，使用下面的命名模式：
 </p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>共享库</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>头文件</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>二进制执行文件，等等</p></td></tr></table>
 

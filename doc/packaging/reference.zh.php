@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:06:34';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/04/17 16:46:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -40,7 +40,13 @@ include_once "header.inc";
 不可以使用下划线("_"),不可以使用大写字母。
 这是一个必需字段。
 </p>
-<p>从 fink 0.9.9 开始，这个字段以及 Depends，BuildDepends，Provides，Conflicts，Replaces，Recommends，Suggests 和 Enhances 字段可以使用百分号展开。</p>
+<p>对这个字段，只可应用 %N、%Ni、%type_raw[] 和 %type_pkg[] 这几种百分号扩展。</p>
+<p>
+作为 Fink 的打包规则，给定的软件包应该总是使用相同的选项进行编译。
+如果对一个软件包由多个变种(查阅关于 <code>Type</code> 字段的文档)，你必须在 <code>Package</code> 字段中加入特定变种的信息(查阅关于 %type_pkg[] 百分号展开的文档)。
+这样每个变种会由一个唯一的名称，软件包名字会指明包含了哪些变种的选项。
+注意在 <code>Package</code> 字段使用 %type_pkg[] 和 %type_raw[] 百分号展开是新的功能，并与旧的 fink 版本严重不兼容，所以这些软件包的描述应该嵌入在 <code>InfoN</code> (N&gt;=2)字段中。
+</p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
 上游版本号。与 Package 字段具有同样的限制。
@@ -78,11 +84,63 @@ include_once "header.inc";
 从 fink 0.18.0 开始，你可以通过设置 <code>Source: none</code> 来获得同样的效果。这样你可以把 "Type" 字段用于其它目的(比如：<code>Type: perl</code>，等等)。
 </p>
 <p>
-最后，从 fink 0.9.5 开始，开始有 <code>perl</code> 类型，它会对编译和安装脚本使用另外一套默认值。
+从 fink 0.9.5 开始，开始有 <code>perl</code> 类型，它会对编译和安装脚本使用另外一套默认值。
 从 fink 0.13.0 开始，有个这种类型的变种，
 <code>perl $version</code>，其中 $version 是 perl 的一个版本号，它由句点分开的三个数字组成，例如： 
 <code>perl 5.6.0</code>。
 </p>
+<p>
+在 fink-0.19.2 后的一个 CVS 版本开始，language/language-version use 被通用化，以允许使用任意维护者定义的类型以及相应的子类型，并对一个给定的软件包可以使用多于一种类型。
+类型和子类型均为不包含空白字符的任意字符串(但不应该使括号、逗号和百分号)；不会进行百分号展开。
+多种类型值(每个类型可以有一个用空白字符分开的可选的子类型)可以用逗号分隔的列表指定。
+</p>
+<p>
+另外，存在“变种”的概念，即一个 .info 文件描述一族相关的使用不同编译选项的软件包。
+这个过程的关键是使用一系列子类型。
+我们不使用单个字符串，而是使用括号中的一列用空格分开的字符串。
+Fink 会对每种子类型克隆软件包描述文件，并在其中使用其中一个子类型。
+例如：
+</p>
+<pre>Type: perl (5.6.0 5.8.1)</pre>
+<p>
+提供两个软件包描述，其中一个作为 <code>Type: perl 5.6.0</code>，另外一个作为 <code>Type: perl 5.8.1</code>。
+特殊的子类型清单 "(boolean)" 代表一个包含它自己和一个句点的清单，因此下面的两种形式是相同的：
+</p>
+<pre>
+Type: -x11 (boolean)
+Type: -x11 (-x11 .)
+</pre>
+<p>
+子类型清单展开/软件包克隆是递归的；如果在子类型清单中有多个类型，你会活得所有可能的组合：
+</p>
+<pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
+<p>
+可以使用 %type_raw[] 和 %type_pkg[] 伪哈希值来在其它字段中访问特定的变种子类型。
+这里是两个示范的 .info 片段：
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo-pm%type_pkg[perl]
+Type: perl (5.6.0 5.8.1)
+Depends: perl-core%type_pkg[perl]
+ &lt;&lt;
+</pre>
+<pre>
+Info2: &lt;&lt;
+Package: bar%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_raw[-x11] = -x11) x11
+CompileScript:  &lt;&lt;
+  #!/bin/bash -ev
+  if [ "%type_raw[-x11]" == "-x11" ]; then
+    ./configure %c --with-x11
+  else
+    ./configure %c --without-x11
+  fi
+  make
+&lt;&lt;
+&lt;&lt;
+</pre>
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
 本字段给出软件包发布所依据的授权协议的性质。它必须是本文档前面<a href="policy.php?phpLang=zh#licenses">软件包授权协议</a>中所描述的值之一。 另外，只有软件包确实满足打包规则在这方面的要求时，比如已经在软件包的 doc 目录安装了一份授权协议，才能够设置这个字段。
@@ -107,6 +165,7 @@ include_once "header.inc";
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 在本软件包构建前必需安装的软件包的列表。
+在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
 通常，它只是以逗号分割软件包名清单，但 Fink 现在也和 dpkg 一样支持替代软件包和版本子句。
 一个体现全部特性的例子是：
 </p>
@@ -199,6 +258,7 @@ Primary: ftp://ftp.barbarorg/pub/
 这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <code>/sw/lib/fink/mirror/_list</code> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <b>mirror-name</b> 会使 Fink 使用 <code>CustomMirror</code>
 字段。
 在 URL 使用前，会进行百分号展开。
+记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %ni(也许还包括一些特定的 %type_ 展开)。
 </p>
 <p>
 从 0.18.0 开始，<code>Source: none</code> 具有特别的含义。它标识不需要下载源文件。参考
@@ -209,7 +269,7 @@ Primary: ftp://ftp.barbarorg/pub/
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
-如果一个软件包包含几个压缩档，在这些额外的字段中说明它们呢，从 N = 2 开始。所以，第一个压缩档(它应该是所谓的"主"压缩档)会被放在 <code>Source</code>，第二个压缩档则作为 <code>Source2</code>，依此类推。这里的规则和 Source 是一样的，区别只是 "gnu" 和 "gnome" 捷径不会被展开-那样做并没有意义。从 fink 的 0.19.1 后的一个 CVS 版本开始，你不在需要对 N 使用一个连续的值。不过，你仍然要保证它们是不重复的。
+如果一个软件包包含几个压缩档，在这些额外的字段中说明它们呢，从 N = 2 开始。所以，第一个压缩档(它应该是所谓的"主"压缩档)会被放在 <code>Source</code>，第二个压缩档则作为 <code>Source2</code>，依此类推。这里的规则和 Source 是一样的，区别只是 "gnu" 和 "gnome" 捷径不会被展开-那样做并没有意义。从 fink 的 0.19.2 后的一个 CVS 版本开始，你可以使用任意(不需要连续)的 N &gt;= 2 的整数值。不过，你仍然要保证它们是不重复的。
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
@@ -239,7 +299,7 @@ Primary: ftp://ftp.barbarorg/pub/
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
-这和 <code>SourceRename</code> 字段是一模一样的，除了它是用来重命名 <code>Source<b>N</b></code> 字段指定的第 N 个压缩档外。参考其它有关的部分来了解使用的例子。
+这和 <code>SourceRename</code> 字段是一模一样的，除了它是用来重命名与 <code>Source<b>N</b></code> 字段对应的压缩档外。参考其它有关的部分来了解使用的例子。
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
 <p>
@@ -264,7 +324,7 @@ Primary: ftp://ftp.barbarorg/pub/
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
-这个字段和 <code>Source-MD5</code> 字段完全一样，除了它是指定与 <code>Source<b>N</b></code> 字段对应的第 N 个压缩档的 MD5 校验值。
+这个字段和 <code>Source-MD5</code> 字段完全一样，除了它是指定与 <code>Source<b>N</b></code> 字段对应的压缩档的 MD5 校验值。
 </p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
@@ -290,7 +350,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
-这和 <code>TarFilesRename</code> 字段一致，除了它作用于与 <code>Source<b>N</b></code> 字段对应的第 N 个压缩档以外。
+这和 <code>TarFilesRename</code> 字段一致，除了它作用于与 <code>Source<b>N</b></code> 字段对应的压缩档以外。
 </p>
 </td></tr></table>
 
@@ -346,6 +406,10 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 应用于 <code>patch -p1
 &lt;<b>patch-file</b></code> 命令的补丁文件的名字。这应该只是一个文件名；正确的路径会被自动添加。在本字段中会应用百分号展开。所以典型的设置值只是
 <code>%f.patch</code> 或 <code>%n.patch</code>。补丁会在 PatchScript 脚本运行之前应用(如果有的话)。
+</p>
+<p>
+记住 %n 包括所有 %type_ 变种数据，所以你可能需要在这里使用 %ni (也许需要包括一些特定的 %type_ 展开)。
+维护一个单独的补丁文件，然后在 <code>PatchScript</code> 字段中列出与变种有关的修改会比对每个变种使用单独的补丁文件容易些。
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
@@ -542,7 +606,7 @@ Shlibs 声明表明维护者承诺这个名字和至少
 <p>
 <b>Introduced in fink 0.9.9.</b>
 这和 <code>SplitOff</code> 一样，用于从同一个编译/安装过程产生第三、第四个等等软件包。
-从 fink 0.19.1 后的一个 CVS 版本开始，你不再需要使用连续编号的 N。不过，你仍然要保证它们是互不重复的。
+从 fink 0.19.2 后的一个 CVS 版本开始，你可以使用 N &gt;=2 的任意整数值。不过，你仍然要保证它们是互不重复的。
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
@@ -644,32 +708,46 @@ StartupItems (例如 web 服务器)。
 <p>从 fink 0.9.9 开始，可以用一个单独的 .info 文件来构建多个软件包。
 安装阶段和正常的类似，执行
 <code>InstallScript</code> 和 <code>DocFiles</code> 命令。
-如果存在 <code>SplitOff</code> 字段，会触发第二个安装目录的创建。
-在 <code>SplitOff</code> 字段里面，新的安装目录以 %i 代表，
+如果存在 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 字段，会触发额外一个安装目录的创建。
+在 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 字段里面，新的安装目录以 %i 代表，
 而父文件包的原始安装目录则用 %I 代表。
 </p>
 <p>
-<code>SplitOff</code> 字段必须包含它自己的一系列字段。
+每个 <code>SplitOff</code> 和 <code>SplitOff<b>N</b></code> 字段必须包含它自己的一系列字段。
 事实上，它由一个备有包含字段的一个完整的软件包描述组成。下面是在子描述里面可以包含的内容(分类说明)：
 </p>
 <ul>
-<li>初始化数据：只需要指明 <code>Package</code> 字段，其它的内容都可以从父软件包进行继承。你可能需要通过声明 <code>SplitOff</code> 内的字段修改 <code>Type</code> 和 <code>License</code> 字段。可以使用百分号扩展，而且通常使用 %N 来引用父软件包的名字会很方便。</li>
+<li>初始化数据：只需要指明 <code>Package</code> 字段，其它的内容都可以从父软件包进行继承。你可能需要通过声明 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 内的字段修改 <code>Type</code> 和 <code>License</code> 字段。可以使用百分号扩展，而且通常使用 %N 来引用父软件包的名字会很方便。</li>
 <li>依赖关系：所有的依赖关系有关的字段都可以使用。</li>
 <li>解压阶段，补丁阶段，编译阶段：这些字段是无关的，会被忽略。</li>
-<li>安装阶段，构建阶段：全部的字段都可以使用(除了 <code>SplitOff</code> 字段不能在 <code>SplitOff</code>
-字段里面使用以外)。</li>
-<li>额外数据：这会从父软件包继承，但可以通过在 <code>SplitOff</code> 中声明这些字段而进行修改。</li>
+<li>安装阶段，构建阶段：全部的字段都可以使用(除了 SplitOff 不能包括新的 SplitOff 以外)。</li>
+<li>额外数据：这会从父软件包继承，但可以通过在 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 中声明这些字段而进行修改。</li>
 </ul>
 <p>
 在安装阶段，父文件包的 <code>InstallScript</code> 和 
 <code>DocFiles</code> 会被首先执行。
-然后是 <code>SplitOff</code> 字段里面的 <code>Files</code> 命令，它会导致命令中所列的文件和目录会从父文件包的安装目录 %I 移到当前的安装目录 %i。然后<code>SplitOff</code> 软件包的 <code>InstallScript</code>
+然后处理 <code>SplitOff</code> 和 <code>SplitOff<b>N</b></code> 字段。对每个这种字段，<code>Files</code> 命令会导致命令中所列的文件和目录会从父文件包的安装目录 %I 移到当前的安装目录 %i。然后给定 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 软件包的 <code>InstallScript</code>
 和 <code>DocFiles</code> 会被执行。
-</p><p>
-如果还有通过 <code>SplitOff2</code>，<code>SplitOff3</code>等等指明的更多子软件包，命令
-(<code>Files</code>，<code>InstallScript</code>，<code>DocFiles</code>)
-会以同样的顺序依此对它们进行执行。
-</p><p>
+</p>
+<p>
+目前，<code>SplitOff</code> 会被首先执行(如果存在的话)，然后是按照 N 的顺序执行每个 <code>SplitOff<b>N</b></code>。
+不过，在将来这可能会被改变。因此，例如：
+</p>
+<pre>
+SplitOff: &lt;&lt;
+  Description: Some header files
+  Files: include/foo.h include/bar.h
+&lt;&lt;
+SplitOff2: &lt;&lt;
+  Description: All other header files
+  Files: include/*
+&lt;&lt;
+</pre>
+<p>
+只有 <code>SplitOff</code> 在 <code>SplitOff2</code> 之前处理才是正确的。
+比较安全的作法是在每个块中都显式列出每个文件(或使用更明确的文件名描述)。
+</p>
+<p>
 在构建阶段，每个软件包的安装/删除的前/后脚本会通过相应软件包构建阶段的命令来生成。
 </p><p>
 每个被构建的软件包都要求把授权协议文件存放到 %i/share/doc/%n (当然对于每个软件包 %n 有不同的取值)目录中。

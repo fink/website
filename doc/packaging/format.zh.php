@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:06:34';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/04/17 16:46:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 include_once "header.inc";
@@ -107,6 +107,9 @@ SplitOff: &lt;&lt;
 <p>
 父软件包的名字（<b>N</b>ame），除非在 <code>SplitOff</code> 中，否则应该和 %n 相同
 </p>
+<p>
+注意：如果父 <code>Package</code> 字段包含 %type_*[]，那些百分号扩展的值<b>将</b>被包括在 <code>SplitOff</code> 块的 %N 中(因为它们被包括在父字段的 %n 中)。
+</p>
 </td></tr><tr valign="top"><td>%e</td><td>
 <p>
 软件包的额外版本标识（<b>e</b>poch）。它主要用于强行替代版本号的顺序，比方说你现在已经有一个 2.0Beta1 版，然后现在 2.0 版出来了，显然 2.0 版应该是一个更新的版本。但是 字符串比较的结果却是 2.0Beta1 &lt; 2.0。所以，要么你只能把 2.0 命名为 2.0Final，要么你使用 epoch 来强行制定版本的先后顺序。比方说：epcho 1, version 1.0 是一个比 epcho 0, version 2.0 更新的版本。
@@ -131,6 +134,7 @@ SplitOff: &lt;&lt;
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
 <code>/sw/src/root-gimp-1.2.1-1</code>。
+这个临时目录在编译过程的安装阶段将作为根目录位置。
 你不应该假设 <code>root-%f</code> 会在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
@@ -152,7 +156,9 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
 构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>。
-你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
+你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。
+最内部的目录根据 <code>Source</code> 文件名来命名，或是 <code>SourceDirectory</code> 字段(如果存在的话)的值，或在 <code>NoSourceDirectory</code> 为 <code>true</code> 的时候不使用它。
+</p>
 <p>
 注意：仅在没有其它选择的情况下才使用它。构建目录是脚本运行的当前目录；在命令中你应该使用相对路径。
 </p>
@@ -168,6 +174,20 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
 百分号字符（它部分展开后面跟着它的东西）。展开严格按照从左到右的顺序进行，所以 %%n 和软件包名没有关系，而只是字符串 %n。（从 fink-0.18.0 开始引入）
+</p>
+</td></tr><tr valign="top"><td>%type_raw[<b>类型</b>], %type_pkg[<b>类型</b>]</td><td>
+<p>
+对给定<b>类型</b>返回的代表子类型的伪哈希值。
+查阅本文档后面关于 <code>Type</code> 字段的内容。
+_raw 形式表明使用子类型字符串的精确形式，
+_pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版本软件包的命名约定一样)。(在 fink 的 CVS 0.19.2 后版本中引入)。
+</p>
+</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+<p>
+软件包的固定名称(<b>n</b>ame <b>i</b>nvariant)部分。
+它们和 %n 和 %N 类似，除了所有 %type_pkg[] 和 %type_raw[] 被去掉。
+(在 fink 的 CVS 0.19.2 后版本中引入)。
+你应该使用 %{ni} 和 %{Ni} 以避免与 %n 和 %N 扩展相混淆。
 </p>
 </td></tr></table>
 
