@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compiling (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 02:33:35';
+$cvs_date = 'Date: 2004/03/27 09:39:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 include_once "header.inc";
@@ -252,6 +252,10 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>
       <div class="answer"><p><b>A:</b> That's because it's a virtual package.  This type of error occurs when Java gets updated by Software Update:  the header files get removed, which causes the -dev package not to be generated.</p><p>You need to download the appropriate <code>Java Developer Tools</code> package from <a href="http://connect.apple.com">Apple</a>.  In this specific case that's the <code>Java 1.4.2 Developer Tools</code>.</p></div>
     </a>
+    <a name="dpkg-split">
+   <div class="question"><p><b>Q6.19: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
+<div class="answer"><p><b>A:</b> Generally, this can be fixed by setting your environment up correctly, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">this FAQ entry</a>.</p></div>
+</a>
   <p align="right">
 Next: <a href="comp-packages.php?phpLang=fr">7 Compile Problems - Specific Packages</a></p>
 

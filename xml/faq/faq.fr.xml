@@ -3,12 +3,13 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.11 2004/03/25 02:33:35 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.12 2004/03/27 09:39:14 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
 </preface>
+
 <chapter filename="general" >
 <title>Questions générales</title>
 <shorttitle>Généralités</shorttitle>
@@ -93,10 +94,7 @@ Fink n'installe rien dans /usr/local à moins d'une requête explicite et ne né
 </question>
 <answer>
 <p>
-Nous essayons.
-Parfois, c'est facile et tout le monde en profite à la prochaine version du paquet.
-Malheureusement, ce n'est pas toujours si simple avec la plupart des paquets.
-Quelques problèmes courants :
+Nous essayons. Parfois, c'est facile et tout le monde en profite à la prochaine version du paquet. Malheureusement, ce n'est pas toujours si simple avec la plupart des paquets. Quelques problèmes courants :
 </p>
 <ul>
 <li>Le mainteneur du paquet Fink est très occupé et n'a pas le temps de renvoyer la rustine et des explications détaillées aux mainteneurs situés en amont.</li>
@@ -114,8 +112,7 @@ Quelques problèmes courants :
 <p>
 Il n'y a pas de relation officielle entre Fink et <link url="http://www.debian.org" >Debian</link>.
 Fink <em>n'est pas</em> un port de la distribution Debian GNU/Linux .
-Mais, nous avons porté les outils de gestion de paquet de Debian (dpkg, dselect, apt-get) et nous les utilisons ainsi que le format de paquet binaire .deb.
-Nos paquets sont faits sur mesure pour Mac OS X / Darwin et n'utilise pas le format de paquet source Debian.
+Mais, nous avons porté les outils de gestion de paquet de Debian (dpkg, dselect, apt-get) et nous les utilisons ainsi que le format de paquet binaire .deb. Nos paquets sont faits sur mesure pour Mac OS X / Darwin et n'utilise pas le format de paquet source Debian.
 </p>
 </answer>
 </faqentry>
@@ -125,10 +122,7 @@ Nos paquets sont faits sur mesure pour Mac OS X / Darwin et n'utilise pas le for
 </question>
 <answer>
 <p>
-<link url="http://www.apple.com/" >Apple</link> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source.
-Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions  de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle.
-Citation :
-<em>&quot;Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps.&quot;</em>
+<link url="http://www.apple.com/" >Apple</link> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source. Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions  de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle. Citation : <em>&quot;Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps.&quot;</em>
 Merci Apple !
 </p>
 </answer>
@@ -139,8 +133,7 @@ Merci Apple !
 </question>
 <answer>
 <p>
-Ils ont utilisé Fink pour compiler la première version de leur CD GIMP et refusent de le reconnaître.
-Lire le <link url="http://fink.sourceforge.net/pr/openosx.php" >communiqué officiel</link> pour de plus amples informations.
+Ils ont utilisé Fink pour compiler la première version de leur CD GIMP et refusent de le reconnaître. Lire le <link url="http://fink.sourceforge.net/pr/openosx.php" >communiqué officiel</link> pour de plus amples informations.
 </p>
 </answer>
 </faqentry>
@@ -150,8 +143,7 @@ Lire le <link url="http://fink.sourceforge.net/pr/openosx.php" >communiqué offi
 </question>
 <answer>
 <p>
-Ce site redistribue certains paquets Fink en tant que paquets avec installeur, identiques à ceux de Fink, mais avec leur propres textes, dans lesquels Fink n'est pas mentionné.
-Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué officiel</link> pour de plus amples informations.
+Ce site redistribue certains paquets Fink en tant que paquets avec installeur, identiques à ceux de Fink, mais avec leur propres textes, dans lesquels Fink n'est pas mentionné. Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué officiel</link> pour de plus amples informations.
 </p>
 </answer>
 </faqentry>
@@ -161,11 +153,11 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
 </question>
 <answer>
 <p>
-			Darwinports et Fink sont des projets complémentaires. Certaines parties se recouvrent et plusieurs personnes contribuent à la fois au projet Fink et au projet OpenDarwin. Benjamin Reed, par exemple, fait les paquets KDE pour les deux. Darwinports/OpenDarwin utilise des rustines de Fink, et nous envisageons une collaboration sur un nouveau moteur de dépendances.
-		</p>
+Darwinports et Fink sont des projets complémentaires. Certaines parties se recouvrent et plusieurs personnes contribuent à la fois au projet Fink et au projet OpenDarwin. Benjamin Reed, par exemple, fait les paquets KDE pour les deux. Darwinports/OpenDarwin utilise des rustines de Fink, et nous envisageons une collaboration sur un nouveau moteur de dépendances.
+</p>
 <p>
-			OpenDarwin est parti de rien pour tenter une nouvelle approche d'un système de construction de paquets. Lire le communiqué sur <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link> pour de plus amples informations.
-		</p>
+OpenDarwin est parti de rien pour tenter une nouvelle approche d'un système de construction de paquets. Lire le communiqué sur <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link> pour de plus amples informations.
+</p>
 </answer>
 </faqentry>
 </chapter>
@@ -179,7 +171,7 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
         </question>
         <answer>
         <p>
-	Un miroir Fink est un serveur rsync qui reflète les fichiers de description actuels et stables que Fink utilisent pour construire les paquets à partir du source.
+Un miroir Fink est un serveur rsync qui reflète les fichiers de description actuels et stables que Fink utilisent pour construire les paquets à partir du source.
        </p>
 	 </answer>
     </faqentry>
@@ -187,13 +179,16 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
     <question>
         <p>Pourquoi utiliser des miroirs rsync ?</p>
     </question>
-    <answer><p>Rsync est un protocole très rapide. Il met à jour les fichiers de description plus vite que l'ancienne méthode de mise à jour via CVS. De plus, les mises à jour via CVS sont toujours faites à partir de sourceforge.net, tandis que les mises à jour via rsync peuvent être faites à partir d'un miroir proche de votre lieu de téléchargement.</p></answer>
+    <answer>
+    <p>Rsync est un protocole très rapide. Il met à jour les fichiers de description plus vite que l'ancienne méthode de mise à jour via CVS. De plus, les mises à jour via CVS sont toujours faites à partir de sourceforge.net, tandis que les mises à jour via rsync peuvent être faites à partir d'un miroir proche de votre lieu de téléchargement.</p>
+    </answer>
 </faqentry>
 <faqentry name="where">
     <question>
         <p>Où trouver de plus amples informations sur les miroirs Fink ?</p>
     </question>
-    <answer><p>Tous les miroirs Fink sont fusionnés sous le nom de domaine finkmirrors.net. Vous trouverez de plus amples informations sur le site web http://finkmirrors.net/.
+    <answer>
+    <p>Tous les miroirs Fink sont fusionnés sous le nom de domaine finkmirrors.net. Vous trouverez de plus amples informations sur le site web http://finkmirrors.net/.
 </p>
 </answer>
 </faqentry>
@@ -225,24 +220,25 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
     <question>
         <p>Comment connaître l'état actuel des miroirs rsync ?</p>
     </question>
-    <answer><p>Allez sur http://finkmirrors.net/status.html</p></answer>
+    <answer><p>Allez sur http://finkmirrors.net/status.html</p>
+    </answer>
 </faqentry>
 <faqentry name="Master">
     <question>
         <p>Qu'est-ce qu'un miroir Distfiles ?</p>
     </question>
-    <answer><p>Il est parfois difficile de trouver une version précise d'un source sur Internet. Les miroirs Distfiles stockent les paquets source nécessaires à fink pour construire ses paquets source. Ils font aussi office de miroir.</p></answer>
+    <answer>
+    <p>Il est parfois difficile de trouver une version précise d'un source sur Internet. Les miroirs Distfiles stockent les paquets source nécessaires à fink pour construire ses paquets source. Ils font aussi office de miroir.</p>
+    </answer>
 </faqentry>
-
 </chapter>
-
 
   <chapter filename="upgrade-fink">
     <title>Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)</title>
     <shorttitle>Mise à jour de Fink</shorttitle>
     <faqentry name="gcc-0.16.0">
       <question>
-        <p>Je viens de passer à la version 0.16.0 et fink me dit que ma version du compilateur gcc 3.3 est obsolète. Que faire ?</p>
+        <p>Après passage à la version 0.16.0, fink considère la version du compilateur gcc 3.3 installée sur le système comme obsolète. Que faire ?</p>
       </question>
       <answer>
         <p>À partir de Panther, Fink a été mis à jour pour fonctionner avec le nouveau compilateur gcc 3.3. Pour pouvoir gérer à la fois 10.2 (Jaguar) et 10.3 (Panther), il faut que tous les utilisateurs installent la dernière mise à jour de gcc 3.3 (mise à jour d'août 2003 pour les utilisateurs de Jaguar, outils XCode de Panther pour les utilisateurs de Panther). Ce message d'alerte apparaîtra si vous avez installé la béta précédente de XCode correspondant aux Developer Tools de décembre 2002 pour Max OS X 10.2. Si vous utilisez 10.2, la commande :</p>
@@ -267,52 +263,29 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
 	de tous les paquets connus de votre installation de Fink.
 	Exemple:</p>
         <codeblock>fink list</codeblock>
-        <p>Si vous utilisez la distribution binaire, <code>dselect</code> vous
-	donne une liste des paquets disponibles dans laquelle vous pouvez naviguer.
-	Remarque : vous devez utiliser la commande sudo si vous voulez
-	sélectionner
-	et installer des paquets depuis dselect.</p>
-        <p>Il y a aussi la <link url="http://fink.sourceforge.net/pdb/">base de
-	donnée de paquets</link> sur le site web. </p>
+        <p>Si vous utilisez la distribution binaire, <code>dselect</code> vous donne une liste des paquets disponibles dans laquelle vous pouvez naviguer. Remarque : vous devez utiliser la commande sudo si vous voulez sélectionner et installer des paquets avec dselect.</p>
+        <p>Il y a aussi la <link url="http://fink.sourceforge.net/pdb/">base de données de paquets</link> sur le site web. </p>
       </answer>
     </faqentry>
     <faqentry name="proxy">
       <question>
-        <p>J'utilise un firewall. Comment configurer fink pour utiliser
-	un proxy HTTP ?</p>
+        <p>Comment configurer fink pour utiliser un proxy HTTP quand on est derrière un mur pare-feu ?</p>
       </question>
       <answer>
-        <p>La commande <code>fink</code> permet de prendre en compte des réglages
-	de proxy qui seront utilisés par  <code>wget</code>/<code>curl</code>.
-	Si on ne vous a pas posé de question sur vos réglages de proxies lors de
-	la première installation, vous pouvez taper <code>fink configure</code>
-	pour les régle. Vous pouvez aussi utiliser cette commande à
-	n'importe quel moment pour reconfigurer la commande <code>fink</code>.
-	Si vous avez suivi les instructions du guide d'installation et utilisé
-	<filename>/sw/bin/init.csh</filename> (ou <filename>/sw/bin/init.sh
-	</filename>), alors <code>apt-get</code> et <code>dselect</code> utiliseront
-	aussi ces réglages de proxies. Assurez-vous d'avoir bien indiqué le
-	protocole utilisé, par exemple :</p>
-        <codeblock>ftp://proxy.yoursite.somewhere</codeblock>
-        <p>Si vous avez toujours des problèmes, allez dans Préférences système,
-	cliquez sur Réseaux, sélectionnez l'onglet proxies et assurez-vous que
-	la case "Utiliser le mode FTP passif (PASV)" est cochée.</p>
+        <p>La commande <code>fink</code> permet de prendre en compte des réglages de proxy qui seront utilisés par  <code>wget</code>/<code>curl</code>. Si on ne vous a pas posé de question sur vos réglages de proxies lors de la première installation, vous pouvez taper <code>fink configure</code> pour les régler. Vous pouvez aussi utiliser cette commande à n'importe quel moment pour reconfigurer la commande <code>fink</code>. Si vous avez suivi les instructions du guide d'installation et utilisé <filename>/sw/bin/init.csh</filename> (ou <filename>/sw/bin/init.sh </filename>), alors <code>apt-get</code> et <code>dselect</code> utiliseront aussi ces réglages de proxies. Assurez-vous d'avoir bien indiqué le protocole utilisé, par exemple :</p>
+<codeblock>ftp://proxy.yoursite.somewhere</codeblock>
+        <p>Si vous avez toujours des problèmes, allez dans Préférences système, cliquez sur Réseaux, sélectionnez l'onglet proxies et vérifiez que la case "Utiliser le mode FTP passif (PASV)" est cochée.</p>
       </answer>
     </faqentry>
     <faqentry name="firewalled-cvs">
       <question>
-        <p>Comment mettre à jour les paquets disponibles sur CVS lorsqu'on utilise
-	un firewall ?</p>
+        <p>Comment mettre à jour les paquets disponibles sur CVS lorsqu'on utilise un firewall ?</p>
       </question>
       <answer>
-        <p>Le paquet<em> cvs-proxy</em> peut créer un tunnel à travers les proxies
-	HTTP.</p>
+        <p>Le paquet<em> cvs-proxy</em> peut créer un tunnel à travers les proxies HTTP.</p>
         <ul>
-          <li><p>Tout d'abord, téléchargez les fichiers <link url="http://cvs.
-	  sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/
-	  finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch)
-	  et placez-les dans votre arborescence locale.
-	  (i.e. /sw/fink/dists/local/main/finkinfo/).</p></li>
+          <li><p>Tout d'abord, téléchargez les fichiers <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/
+finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch) et placez-les dans votre arborescence locale. (c'est-à-dire /sw/fink/dists/local/main/finkinfo/).</p></li>
           <li><p>Installez le paquet <em>cvs-proxy</em> avec la commande :</p>
 	  <p><code>fink install <em>cvs-proxy</em></code></p></li>
           <li><p>Les paquets sont alors mis à jour avec les commandes :</p>
@@ -330,21 +303,16 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
 	l'installation ?</p>
       </question>
       <answer>
-        <p>Non. Enfin, vous pouvez bien sûr déplacer les fichiers en utilisant
-	mv ou le Finder, mais 99% des programmes ne fonctionnerons plus si vous
-	faites cela. En effet, la majorité des programmes Unix utilisent des
-	chemins d'accès directement inclus dans le fichier binaire pour accéder
-	entre autres à des données et des librairies.</p>
+        <p>Non. Vous pouvez bien sûr déplacer les fichiers en utilisant
+	mv ou le Finder, mais 99% des programmes ne fonctionneront plus si vous faites cela. En effet, la majorité des programmes Unix utilisent des chemins d'accès directement inclus dans le fichier binaire pour accéder,entre autres, à des données et des librairies.</p>
       </answer>
     </faqentry>
     <faqentry name="moving-symlink">
       <question>
-        <p>Est-ce que cela fonctionne si Fink est déplacé après l'installation
-	et qu'un lien symbolique est crée vers l'ancien emplacement ?</p>
+        <p>Est-ce que Fink fonctionnera correctement si on le déplace après installation et que l'on crée un lien symbolique vers l'ancien emplacement ?</p>
       </question>
       <answer>
-        <p>Peut-être. On peut supposer un fonctionnement correct dans l'ensemble,
-	mais il y aura certainement des problèmes ici et là.</p>
+        <p>Peut-être. On peut supposer que le fonctionnement sera correct dans l'ensemble, mais il y aura certainement des problèmes ici ou là.</p>
       </answer>
     </faqentry>
     <faqentry name="removing">
@@ -352,150 +320,85 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
         <p>Comment désinstaller la totalité de Fink ?</p>
       </question>
       <answer>
-        <p>Presque tous les fichiers installés par fink se trouvent dans le
-	répertoire /sw (ou bien l'endroit où vous avez choisi de faire
-	l'installation). Donc, pour supprimez Fink, entrez cette
-	commande :</p>
+        <p>Presque tous les fichiers installés par fink se trouvent dans le répertoire /sw (ou bien l'endroit où vous avez choisi de faire l'installation). Donc, pour supprimer Fink, entrez cette commande :</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>La seule exception concerne XFRee86. Si vous avez installé XFree86
-	via Fink (par exemple., vous avez installé le paquet <code>xfree86</code> ou 
-	<code>xfree86-rootless</code>, au lieu d'utiliser
-	<code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p>
-        <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app
-	</codeblock>
+        <p>La seule exception concerne XFRee86. Si vous avez installé XFree86 via Fink (vous avez, par exemple,  installé le paquet <code>xfree86</code> ou <code>xfree86-rootless</code>, au lieu d'utiliser <code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p>
+        <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
         <p>Si vous ne pensez pas réinstaller Fink, vous pourrez aussi
 	supprimer la ligne "<code>source /sw/bin/init.csh</code>" que
-	vous aviez ajoutée dans le fichier <filename>.cshrc</filename> ou la ligne
-	"<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier
-	<filename>.bashrc</filename> , suivant vos réglages, en utilisant un
-	éditeur de texte.</p>
+	vous aviez ajoutée dans le fichier <filename>.cshrc</filename> ou la ligne "<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier <filename>.bashrc</filename>, suivant vos réglages, en utilisant un éditeur de texte.</p>
       </answer>
     </faqentry>
     <faqentry name="bindist">
       <question>
-        <p>La base de donnée des paquets sur le site web indique le paquet xxx,
-	mais apt-get ou dselect eux ne l'indiquent pas. Qui a raison ?</p>
+        <p>La base de données des paquets sur le site web mentionne le paquet xxx, mais apt-get ou dselect eux ne le mentionnent pas. Qui a raison ?</p>
       </question>
       <answer>
-        <p>Ils ont tous raison. La <link url="http://fink.sourceforge.net/pdb/">base
-	de donnée des paquets</link> donne la liste tous les paquets, même ceux
-	qui sont encore dans la section instable.  Les outils <code>dselect</code>
-	et <code>apt-get</code> de leur côté donnent la liste des paquets disponibles en
-	tant que binaires précompilés. De nombreux paquets ne sont pas
-	disponibles sous forme précompilée via ces outils pour plusieurs raisons.
-	Un paquet doit être dans la section "stable" de la dernière mise à jour
-	de Fink pour être pris en compte, et il doit, de plus, passer avec succès un certain nombre de tests relatifs aux règles de fink et aux restrictions de licences et brevets.</p>
-        <p>Si vous voulez installer un paquet qui n'est pas disponible via
-	<code>dselect</code> / <code>apt-get</code>, vous devez le compiler
-	à partir du code source en utilisant<code> fink install <em>nom_du_paquet</em>
-	</code>.
-	Vérifiez que vous avez installé les Developer Tools installés avant d'essayer
-	ceci. (S'il n'y a pas d'installeur pour les Developer Tools dans votre
-	répertoire <code>/Applications</code> , vous pouvez les télécharger sur
-	<link url="http://connect.apple.com/">Apple Developer Connection</link>
-	après enregistrement gratuit). Voir aussi la question à propos des
-	instables ci-dessous.</p>
+        <p>Ils ont tous raison. La <link url="http://fink.sourceforge.net/pdb/">base de données des paquets</link> donne la liste de tous les paquets, même ceux qui sont encore dans la section instable.  Les outils <code>dselect</code> et <code>apt-get</code>, de leur côté, donnent la liste des paquets disponibles en tant que binaires précompilés. De nombreux paquets ne sont pas disponibles sous forme précompilée via ces outils pour diverses raisons. Un paquet doit être dans la section "stable" de la dernière mise à jour de Fink pour être pris en compte, et il doit, de plus, passer avec succès un certain nombre de tests relatifs aux règles de fink et aux restrictions de licences et brevets.</p>
+        <p>Si vous voulez installer un paquet qui n'est pas disponible via <code>dselect</code> / <code>apt-get</code>, vous devez le compiler à partir du code source en utilisant <code>fink install <em>nom_du_paquet</em></code>. Vérifiez que vous avez installé les Developer Tools avant d'essayer ceci. (S'il n'y a pas d'installeur pour les Developer Tools dans votre répertoire <code>/Applications</code> , vous pouvez les télécharger gratuitement sur <link url="http://connect.apple.com/">Apple Developer Connection</link> après enregistrement). Voir aussi la question à propos des instables ci-dessous.</p>
 	</answer>
 	</faqentry>
     <faqentry name="unstable">
       <question>
-        <p>There's this package in unstable that I want to install, but the
-        fink command just says 'no package found'. How can I install it?</p>
+        <p>Comment installer un paquet instable quand la commande fink ne le trouve pas ('no package found') ?</p>
       </question>
       <answer>
-        <p>First make sure you understand what 'unstable' means. Packages in
-        the unstable tree usually have not been tested by more than a few
-        people. For that reason, Fink doesn't search the unstable tree by
-        default. If you do enable unstable, please remember to e-mail the
-        maintainer if something works (or even if it doesn't). Feedback from
-        users like you is what we use to determine if something is ready for
-        stable! To find out the maintainer of a package, run <code>fink info
-        &lt;packagename&gt;</code>.</p>
-        <p>Packages often have dependencies, and packages in unstable often
-        depend on other packages in unstable. For that reason, it is best to
-        activate all of unstable.</p>
-        <p>If you want Fink to use all of unstable, edit
-        <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
-        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index</code>.</p>
-        <p>If you only want one or two specific packages, and nothing else
-        from unstable, then you need to switch over to CVS updating (i.e. use
-        <code>fink selfupdate-cvs</code>), because rsync only updates the
-        trees that are active in your <filename>fink.conf</filename>. Edit
-        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
-        to the <code>Trees:</code> line, if not present. Then you'll need to
-        run <code>fink selfupdate</code> to download the package description
-        files. Now copy the relevant <code>.info</code> files (and their
-        associated <code>.patch</code> files, if there are any) from
-        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
-        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
-        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
-        that your package may depend on other packages (or particular
-        versions) which are also only in unstable. You will have to move their
-        <code>.info</code> and <code>.patch</code> files as well. After you
-        move all of the files, make sure to run <code>fink index</code>, so
-        that Fink's record of available packages is updated. Once you're done
-        you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
-        you want.</p>
+        <p>Assurez-vous d'abord de savoir ce que signifie 'instable'. Peu de
+	personnes ont testés les paquets instables. C'est pourquoi Fink
+	ne recherche pas dans cette arborescence par défaut. Si vous décidez
+	d'activer l'arborescence instable, pensez à envoyer un courriel au responsable du paquet si quelque chose fonctionne (ou ne fonctionne pas). Ce sont vos réactions qui nous permettent de décider si un paquet peut entrer dans l'arborescence stable ! Pour connaître le mainteneur du paquet, lancez la commande <code>fink info &lt;nom_du_paquet&gt;</code>.</p>
+        <p>Les paquets ont souvent des dépendances, et les paquets dans l'arborescence instable dépendent souvent d'autres paquets de cette même arborescence. Il est donc conseillé d'activer la totalité de l'arborescence instable.</p>
+        <p>Si vous voulez que Fink utilise toute l'arborescence instable, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez <code>fink selfupdate; fink index</code>.</p>
+        <p>Si vous ne voulez qu'un ou deux paquets instables spécifiques, vous devez changer vos réglages pour utiliser la mise à jour CVS (c'est-à-dire utiliser <code>fink selfupdate-cvs</code>), car rsync met seulement à jour les arborescences activées dans le fichier <filename>fink.conf</filename>. Éditez <filename>/sw/etc/fink.conf</filename> et ajoutez <code>local/main</code> à la ligne <code>Trees:</code>, si elle n'y figure pas déjà. Vous devrez alors exécuter <code>fink selfupdate</code> pour télécharger les fichiers de description des paquets. Copiez ensuite les fichiers <code>.info</code> qui vous intéressent (et leurs fichiers <code>.patch</code> associés, s'ils existent) à partir de  <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou  <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) dans <filename>/sw/fink/dists/local/main/finkinfo</filename>. Notez cependant que votre paquet peut dépendre d'autres paquets (ou de versions particulières) qui sont uniquement présents dans l'arborescence instable. Vous devrez alors déplacer aussi leurs fichiers <code>.info</code> et <code>.patch</code> associés. Après avoir déplacé tous les fichiers, lancez la commande <code>fink index</code> pour que l'index des paquets disponibles de Fink soit mis à jour. Vous pourrez ensuite utiliser rsync à nouveau (<code>fink selfupdate-rsync</code>) si vous le désirez.</p>
       </answer>
     </faqentry>
-    <faqentry name="sudo">
+   <faqentry name="sudo">
       <question>
-        <p>I'm tired of typing my password into sudo again and again. Is there
-        a way around this?</p>
+        <p>Comment ne plus avoir à saisir mon mot de passe après la
+	commande sudo ?</p>
       </question>
       <answer>
-        <p>If you're not paranoid, you can configure sudo to not ask you for a
-        password. To do this, edit <filename>/etc/sudoers</filename> as root
-        and add a line like this:</p>
+        <p>Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, modifiez
+	<filename>/etc/sudoers</filename> en tant que super-utilisateur et ajoutez la ligne suivante :</p>
         <codeblock>username ALL = NOPASSWD: ALL</codeblock>
-        <p>Replace <code>username</code> with your actual username, of course.
-        This line allows you to run any command via sudo without typing your
-        password.</p>
-      </answer>
-    </faqentry>
+        <p>Remplacez bien sûr <code>username</code> par votre nom
+	d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle
+	commande avec sudo sans saisir votre mot de passe.</p>
+</answer>
+</faqentry>
     <faqentry name="exec-init-csh">
       <question>
-        <p>When I try to run init.csh or init.sh, I get a "Permission denied"
-        error. What am I doing wrong?</p>
+        <p>À l'exécution de init.csh ou init.sh, un message d'erreur "Permission denied" apparaît. Que se passe-t-il ?</p>
       </question>
       <answer>
-        <p>init.csh and init.sh are not supposed to be run like normal
-        commands. These files set environment variables like PATH and MANPATH
-        in your shell. To have a lasting effect on the shell, it must be
-        processed with the <code>source</code> command for csh/tcsh, or with
-        the <code>.</code> command for bash/zsh, like this:</p>
-        <p>for csh/tcsh:</p>
-        <codeblock>source /sw/bin/init.csh</codeblock>
-        <p>for bash/zsh:</p>
-        <codeblock>. /sw/bin/init.sh</codeblock>
+        <p>init.csh et init.sh ne doivent pas être exécutés comme les commandes habituelles. Ces fichiers définissent des variables d'environnement, tels PATH ou MANPATH, dans votre shell. Pour avoir un effet durable sur votre shell, il faut utiliser la commande <code>source</code> pour csh/tcsh ou la commande <code>.</code> pour bash/zsh, comme ceci :</p>
+       <p>pour csh/tcsh :</p>
+<codeblock>source /sw/bin/init.csh</codeblock>
+        <p>pour bash/zsh :</p>
+ <codeblock>. /sw/bin/init.sh</codeblock>
       </answer>
     </faqentry>
     <faqentry name="dselect-access">
       <question>
-        <p>Help! I used the "[A]ccess" menu entry in dselect and now I can't
-        download packages any more!</p>
+        <p>Pourquoi est-il impossible de télécharger des paquets après avoir utilisé le menu "[A]ccess" dans dselect ?</p>
       </question>
       <answer>
-        <p>You probably pointed apt at a Debian mirror, which of course
-        doesn't have the Fink files. You can fix this manually or through
-        dselect. To fix it manually, edit the file
-        <code>/sw/etc/apt/sources.list</code> in a text editor as root. Remove
-        lines that mention debian.org and replace them with these:</p>
-        <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+        <p>Vous avez certainement fait pointer apt sur un miroir Debian, qui
+	ne contient, bien sûr, aucun des fichiers de Fink. Vous pouvez corriger
+	cela manuellement ou via dselect. Pour le faire manuellement, modifiez
+	en tant que super-utilisateur le fichier <code>/sw/etc/apt/sources.list </code>dans un éditeur de texte. Supprimez les lignes qui mentionnent debian.org et remplacez-les par celles-ci :</p>
+<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
-        <p>(Or if you live in Europe, you can use
-        <code>eu.dl.sourceforge.net</code> instead of
-        <code>us.dl.sourceforge.net</code>)</p>
-        <p>To fix it through dselect, run "[A]ccess" again, choose the "apt"
-        method and enter the following info:</p>
-        <p>URL: http://us.dl.sourceforge.net/fink/direct_download -
-        Distribution: release - Components: main crypto</p>
-        <p>Then, say you want to add another source and repeat the process
-        with "current" instead of "release".</p>
-        <p>A fixed version of the apt package (which provides the
-        configuration script as a plug-in for dselect) is making it's way
-        through CVS now.</p>
+<p>
+	(Si vous vivez en Europe, remplacez <code>us.dl.sourceforge.net</code>
+	par <code>eu.dl.sourceforge.net</code>)</p>
+        <p>Pour modifier avec dselect, relancez "[A]ccess", choisissez la méthode "apt" et entrez les informations suivantes :</p>
+        <p>URL: http://us.dl.sourceforge.net/fink/direct_download - Distribution: release - Components: main crypto</p>
+        <p>Ensuite, spécifiez que vous voulez ajouter une autre source et
+	répétez la procédure avec "current" à la place de "release".</p>
+        <p>Une version modifiée du paquet apt (contenant le script de
+	configuration en tant que plug-in de dselect) est en cours de
+	développement dans CVS.</p>
       </answer>
     </faqentry>
     <faqentry name="cvs-busy">
@@ -1268,6 +1171,14 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>You need to download the appropriate <filename>Java Developer Tools</filename> package from <link url="http://connect.apple.com">Apple</link>.  In this specific case that's the <filename>Java 1.4.2 Developer Tools</filename>.</p>
       </answer>
     </faqentry>
+    <faqentry name="dpkg-split">
+   <question>
+<p>When I try to install anything, I get <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>.  How do I fix this?</p>
+</question>
+<answer>
+<p>Generally, this can be fixed by setting your environment up correctly, cf. <xref chapter="usage-fink" section="fink-not-found">this FAQ entry</xref>.</p>
+</answer>
+</faqentry>
   </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>

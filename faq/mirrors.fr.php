@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Miroirs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 02:33:35';
+$cvs_date = 'Date: 2004/03/27 09:39:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 include_once "header.inc";
@@ -13,7 +13,7 @@ include_once "header.inc";
     <a name="when-use">
         <div class="question"><p><b>Q3.1: Qu'est-ce qu'un miroir Fink ?</b></p></div>
         <div class="answer"><p><b>A:</b> 
-	Un miroir Fink est un serveur rsync qui reflète les fichiers de description actuels et stables que Fink utilisent pour construire les paquets à partir du source.
+Un miroir Fink est un serveur rsync qui reflète les fichiers de description actuels et stables que Fink utilisent pour construire les paquets à partir du source.
        </p></div>
     </a>
 <a name="why">
@@ -47,7 +47,6 @@ include_once "header.inc";
     <div class="question"><p><b>Q3.8: Qu'est-ce qu'un miroir Distfiles ?</b></p></div>
     <div class="answer"><p><b>A:</b> Il est parfois difficile de trouver une version précise d'un source sur Internet. Les miroirs Distfiles stockent les paquets source nécessaires à fink pour construire ses paquets source. Ils font aussi office de miroir.</p></div>
 </a>
-
 <p align="right">
 Next: <a href="upgrade-fink.php?phpLang=fr">4 Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)</a></p>
 

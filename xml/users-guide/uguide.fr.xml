@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.4 2004/03/25 01:29:13 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.5 2004/03/27 09:40:10 michga Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -885,7 +885,7 @@ Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shel
 </p>
     </section>
     <section name="apropos" >
-      <title>apropos- à propos</title>
+      <title>apropos - à propos</title>
       <p>
 Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.
 </p>
@@ -925,11 +925,11 @@ Alias : desc, description, info
       <p>Construit un paquet (tout comme la commande build), mais ignore et écrase le fichier .deb existant. Si le paquet est installé, le nouveau fichier .deb sera lui aussi installé dans le système via <code>dpkg</code>. Très utile pendant la phase de développement du paquet.</p>
     </section>
     <section name="reinstall" >
-      <title>reinstall- réinstaller</title>
+      <title>reinstall - réinstaller</title>
       <p>Identique à install, mais installe le paquet via <code>dpkg</code>, même s'il est déjà installé. Vous pouvez utiliser cette commande si vous supprimez involontairement des paquets, ou bien si vous changez les fichiers de configuration et que vous voulez retrouver la configuration par défaut.</p>
     </section>
     <section name="configure" >
-      <title>configure- configurer</title>
+      <title>configure - configurer</title>
       <p>
 Réexécute le processus de configuration de Fink.
 Cela vous permet de changer les sites miroirs et les configurations proxy, entre autres.
