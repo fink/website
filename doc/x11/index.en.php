@@ -78,4 +78,4 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php?phpLang=en#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php?phpLang=en#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.en.php,v 1.3 2004/02/29 13:11:22 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.en.php,v 1.4 2004/02/29 13:21:18 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>

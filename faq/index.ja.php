@@ -161,4 +161,4 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li>
 <li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
 <li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.ja.php,v 1.2 2004/02/28 20:47:24 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.ja.php,v 1.3 2004/02/29 13:21:18 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>

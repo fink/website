@@ -158,4 +158,4 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.en.php,v 1.2 2004/02/28 20:47:24 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.en.php,v 1.3 2004/02/29 13:21:18 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>
