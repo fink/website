@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/29 13:44:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/10 13:20:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
@@ -36,7 +36,7 @@ include_once "header.inc";
         the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
         applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
-        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.28 I have Fink installed way from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
+        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#mirror-gnu">5.28 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="usage-fink.php?phpLang=en#cant-move-fink">5.29 I can't update Fink, because it can't move /sw/fink out of the way.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
         What's that?</a></li><li><a href="comp-general.php?phpLang=en#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs:
         Command not found."</a></li><li><a href="comp-general.php?phpLang=en#missing-make">6.3 I'm getting an error message involving <code>make</code>
         </a></li><li><a href="comp-general.php?phpLang=en#head">6.4 I'm getting a strange usage message from the head command. What's
@@ -44,10 +44,9 @@ include_once "header.inc";
         to overwrite a file that is in another package.</a></li><li><a href="comp-general.php?phpLang=en#weak_lib">6.6 After I installed the December 2002 Development Tools I get
         messages about "weak libraries".</a></li><li><a href="comp-general.php?phpLang=en#mv-failed">6.7 What does "execution of mv failed, exit code 1" mean when I try to
         build a package?</a></li><li><a href="comp-general.php?phpLang=en#node-exists">6.8 I can't install a package | update because I get a message that a
-        "node" already exists.</a></li><li><a href="comp-general.php?phpLang=en#usr-local-libs">6.9 I've heard that libraries installed in /usr/local/lib sometimes
+        "node" already exists.</a></li><li><a href="comp-general.php?phpLang=en#usr-local-libs">6.9 I've heard that libraries and headers installed under /usr/local sometimes
         cause build problems for Fink. Is this true?</a></li><li><a href="comp-general.php?phpLang=en#toc-out-of-date">6.10 When I try to build a package, I get a message that a "table of
-        contents" is out of date. What do I need to do?</a></li><li><a href="comp-general.php?phpLang=en#fc-atlas">6.11 Fink Commander hangs when I try to install atlas.</a></li><li><a href="comp-general.php?phpLang=en#basic-headers">6.12 I get messages saying that I'm missing stddef.h. Where do I find
-        it?</a></li><li><a href="comp-general.php?phpLang=en#multiple-dependencies">6.13 I can't update, because Fink is "unable to resolve version conflict
+        contents" is out of date. What do I need to do?</a></li><li><a href="comp-general.php?phpLang=en#fc-atlas">6.11 Fink Commander hangs when I try to install atlas.</a></li><li><a href="comp-general.php?phpLang=en#basic-headers">6.12 I get messages saying that I'm missing stddef.h | whar.h | crt.o. Where do I find them?</a></li><li><a href="comp-general.php?phpLang=en#multiple-dependencies">6.13 I can't update, because Fink is "unable to resolve version conflict
         on multiple dependencies".</a></li><li><a href="comp-general.php?phpLang=en#dpkg-parse-error">6.14 I can't install anything because I get "dpkg: parse error, in file
         `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=en#freetype-problems">6.15 I get errors involving freetype.</a></li><li><a href="comp-general.php?phpLang=en#dlfcn-from-oo">6.16 I get build errors involving `Dl_info'.</a></li><li><a href="comp-general.php?phpLang=en#gcc2">6.17 Fink says I'm missing <code>gcc2</code> but I can't seem to
         install it.</a></li><li><a href="comp-general.php?phpLang=en#system-java">6.18 Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</a></li><li><a href="comp-general.php?phpLang=en#dpkg-split">6.19 When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</a></li><li><a href="comp-general.php?phpLang=en#xml-parser">6.20 I get the following message: <q>configure: error: XML::Parser perl module is required for intltool</q>.  What do I do about it?</a></li></ul></li><li><a href="comp-packages.php?phpLang=en"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=en#libgtop">7.1 A package fails to build with errors involving
@@ -55,12 +54,12 @@ include_once "header.inc";
         <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
         with <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=en#change-thread-nothread">7.3 How do I change from the non-threaded version of Fink's XFree86
         packages to the threaded version (or vice-versa)?</a></li><li><a href="comp-packages.php?phpLang=en#cctools">7.4 "When I try to install KDE, I get the following message: 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
+        resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=en#xml-parser-pm">7.5 <code>intltool</code> says that I need XML::Parser.  I have xml-parser-pm installed.</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
         library". Is that bad?</a></li><li><a href="usage-general.php?phpLang=en#passwd">8.2 There are suddenly a number of strange users on my system, with
         names like "mysql", "pgsql", and "games". Where did they come
         from?</a></li><li><a href="usage-general.php?phpLang=en#compile-myself">8.3 How do I compile something myself using Fink-installed
         software?</a></li><li><a href="usage-general.php?phpLang=en#apple-x11-applications-menu">8.4 I can't run any of my Fink-installed applications using the
-        Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=en#x-options">8.5 I'm bewildered by the X11 options: Apple's X11, XFree86, etc. What
+        Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=en#x-options">8.5 I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
         should I install?</a></li><li><a href="usage-general.php?phpLang=en#no-display">8.6 When I try to run an application, I get a message that says "cannot
         open display:". What do I need to do?</a></li><li><a href="usage-general.php?phpLang=en#suggest-package">8.7 I don't see my favorite program in Fink. How do I suggest a new
         package for inclusion in Fink?</a></li><li><a href="usage-general.php?phpLang=en#virtpackage">8.8 What are all these <code>system-*</code> "virtual
@@ -75,8 +74,7 @@ include_once "header.inc";
         X11, and now everything's crashing!</a></li><li><a href="usage-packages.php?phpLang=en#apple-x-delete">9.8 I want the delete key in Apple's X11.app to behave like that in
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=en#gnome-two">9.9 I upgraded from GNOME 1.x to GNOME 2.x and now
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
-        are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
-        xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.19 2004/05/29 13:44:24 dmrrsn Exp $-->
+        are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
+        xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.22 2004/06/10 13:20:25 alexkhansen Exp $-->
 
 <? include_once "footer.inc"; ?>

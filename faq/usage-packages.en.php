@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/29 13:44:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/10 13:20:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -136,79 +136,44 @@ exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for
         included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
-      <div class="question"><p><b>Q9.11: I installed Apple's X11 in Panther but Fink keeps asking to install
+      <div class="question"><p><b>Q9.11: I installed Apple's X11 but Fink keeps asking to install
         xfree86.</b></p></div>
       <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
           <li>
-            <b>You are installing from binaries:</b> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<pre>sudo apt-get update
-sudo apt-get install fink</pre>
+            <b>You are installing from binaries:</b>   <p>If you are running a
+          version of the <code>fink</code> package that is earlier than 0.17.0, then
+          updating <code>fink</code> may solve your problem immediately, e.g.
+          via</p><pre>sudo apt-get update
+sudo apt-get install fink</pre><p>If this fails, or if you have a later version of Fink, then typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.</p>Running
+<pre>fink list -i system-xfree86</pre>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> pacakges are installed.<p>If reinstalling the X11User package doesn't work, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p>
           </li>
           <li>
-            <b>You are installing from source: </b>You should first update
-          <code>fink</code>, e.g. via a <pre>fink selfupdate</pre>Then you need to (re)install the X11SDK, which
+            <b>You are installing from source: </b><p>If you are running a version of <code>fink</code> prior to 0.17 then you should update
+          <code>fink</code>, e.g. via a </p><pre>fink selfupdate</pre>(assuming that you have either CVS or rsync updating turned on and aren't just using point releases).  
+<p>Once you have a current version of <code>fink</code>, running </p><pre>fink list -i system-xfree86</pre>should show the <code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code> packages as installed.  If either of the first two are missing, then you need to reinstall the X11User package.  If the <code>-dev</code> package is missing, then you need to (re)install the X11SDK, which
           is on the Xcode CD, and is <b>not</b> installed by default. Even
           if you install XCode, the X11SDK is <b>not</b> installed by
           default. It has to be installed either with a custom Xcode install,
           or by clicking on the <code>X11SDK</code> pkg in the
-          <code>Packages</code> folder.</li>
-        </ul><p>For either case, you can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the
-        <code>Package: system-xfree86 </code>and <code>Package: system-xfree86-shlibs</code> (as well as the <code>Package: system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and that the <code>Provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p><p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \ 
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 from the third Panther CD (and the X11SDK from the
-        Xcode CD).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing. </p><p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p><ul>
-          <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
-          </li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre>
-          </li>
+          <code>Packages</code> folder of the XCode CD.  
+<p><b>Note for Jaguar (X11 beta 3) users</b>:  As you aren't using XCode, you need to have already download a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86, or update to Panther.</p><p>If you're still having problems, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p></li>
         </ul></div>
     </a>
-    <a name="apple-x11-beta-wants-xfree86">
-      <div class="question"><p><b>Q9.12: I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
-          <li>
-            <b>You are installing from binaries:</b> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<pre>sudo apt-get update 
-sudo apt-get install fink</pre>
-          </li>
-          <li>
-            <b>You are installing from source: </b>You should first update
-          <code>fink</code>, e.g. via a <pre>fink selfupdate</pre>Then you need to (re)install the X11SDK, which
-          you should have downloaded when you downloaded your beta copy of
-          Apple's X11.</li>
-        </ul><p>For either case, you can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the
-        <code>Package: system-xfree86</code>and <code>Package:
-        system-xfree86-shlibs</code> (as well as the <code>Package:
-        system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and the <code>provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p><p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 (and the X11SDK, if needed).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
+    <a name="wants-xfree86-on-upgrade">
+      <div class="question"><p><b>Q9.12: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
+      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
+
+You can check your installation by running</p><pre>fink list -i system-xfree86</pre><p>and checking to see that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are present.  If you installed the X11SDK, then you should also see <code>system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86</a> entry, above.</p></div>
+    </a>
+    <a name="special-x11-debug">
+      <div class="question"><p><b>Q9.13: I'm still having problems with X11 and Fink.</b></p></div>
+      <div class="answer"><p><b>A:</b> If the hints in the  <a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a> or <a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+xfree86 xfree86-shilbs \
+xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
+xfree86-base-threaded xfree86-base-threaded-shlibs \
+xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
+rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
+fink selfupdate; fink index</pre><p>(the first line may give you warnings about trying to remove nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if needed), or XFree86.</p><p>If you are still having problems and you are running
         <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing.</p><p>If you are running an earlier version of <code>fink</code>, then
         there is a Perl script (courtesy of Martin Costabel) that you can
         download and run to get the same information.</p><ul>
@@ -218,12 +183,6 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
           <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre>
           </li>
         </ul></div>
-    </a>
-    <a name="wants-xfree86-on-upgrade">
-      <div class="question"><p><b>Q9.13: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
-
-You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> or <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a> entries, above.</p></div>
     </a>
   
 

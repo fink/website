@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/29 13:44:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/10 13:20:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 include_once "header.inc";
@@ -82,7 +82,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>You may regar
         pane in the System Preferences tool, and disable "ArchiveViaRealName"
         if it's enabled. It contains a buggy reimplementation of a few
         important system calls that will cause a number of strange and
-        transient errors such as this.</p><p>Otherwise, an <code>mv</code> error typically means that
+        transient errors such as this.</p><p>Otherwise, am <code>mv</code> error typically means that
         another error happened earlier in the build, but the build process
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something
@@ -113,14 +113,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         </ul></div>
     </a>
     <a name="usr-local-libs">
-      <div class="question"><p><b>Q6.9: I've heard that libraries installed in /usr/local/lib sometimes
+      <div class="question"><p><b>Q6.9: I've heard that libraries and headers installed under /usr/local sometimes
         cause build problems for Fink. Is this true?</b></p></div>
       <div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package
-        configuration script finds libraries under
-        <code>/usr/local/lib</code> before searching in the Fink path.
+        configuration script finds headers and libraries in 
+        <code>/usr/local</code> and decides to use them rather than using those in the Fink path.
         If you are having problems with a build that aren't covered by another
         FAQ entry, you should check whether you have libraries in
-        <code>/usr/local/lib</code>. If so, then try renaming
+        <code>/usr/local/lib</code> or headers in /usr/local/include. If so, then try renaming
         <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <code>/usr/local</code>
         back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
@@ -142,9 +142,8 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b>Q6.12: I get messages saying that I'm missing stddef.h. Where do I find
-        it?</b></p></div>
-      <div class="answer"><p><b>A:</b> This header, and many others, are provided by the DevSDK package of
+      <div class="question"><p><b>Q6.12: I get messages saying that I'm missing stddef.h | whar.h | crt.o. Where do I find them?</b></p></div>
+      <div class="answer"><p><b>A:</b> These headers, and many others, are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
         system. If not, then run the Dev Tools Installer again, and install
@@ -246,7 +245,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation).</p></div>
+        part of their main Developer Tools installation.</p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Miroirs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/29 01:24:15';
+$cvs_date = 'Date: 2004/05/29 14:34:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 include_once "header.inc";

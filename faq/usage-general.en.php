@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/29 13:44:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/10 13:20:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -31,7 +31,7 @@ include_once "header.inc";
         compromised and suddenly had write permission to all files on the
         system). Thus, the passwd package takes the work out of setting up
         these extra users for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x), but suppress the urge
+        users in your "System Preferences: Users" pane, but suppress the urge
         to delete them:</p><ul>
           <li>First of all, you have obviously chosen to install a package
           which requires their use, so deleting the user doesn't make much
@@ -45,7 +45,7 @@ include_once "header.inc";
           running <code>niutil -list . /users</code>
           </li>
           <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will
+          you go about it. Using the "System Preferences: Users" pane will
           assign all of their files to a random administrator account, and
           there have been reports of havoc played with the administrator
           account's permissions. This is a bug with System Preferences, and
@@ -94,20 +94,20 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple's X11, XFree86, etc. What
+      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
         should I install?</b></p></div>
       <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86
-        code), but they have some slight differences between them. There are
-different options under Panther and under Jaguar.
-Under Panther you have the choice between:</p><ul>
-    <li><p>     Apple's X11 (on the third disk). Don't forget to install the
-X11 SDK
-(on the XCode disk) if you want to compile programs or if you plan to
-install other X11-related Fink packages from source.</p></li>
+        code), but have some slight differences between them. There are
+  different options under Panther and under Jaguar.
+  Under Panther you have the choice between:</p><ul>
+     <li><p>     Apple's X11 (on the third disk). Don't forget to install the
+  X11 SDK
+  (on the XCode disk) if you want to compile programs or if you plan to
+  install other X11-related Fink packages from source.</p></li>
 <li><p>        4.4.x built via Fink: install the xfree86 and
-xfree86-shlibs packages </p></li>
+  xfree86-shlibs packages </p></li>
 </ul><p>Under Jaguar, the most popular choices, and the Fink packages to
-        make them work are:</p><ul>
+          make them work are:</p><ul>
           <li>
             <p>4.2.x built via Fink: install <code>xfree86-base</code> and
           <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code>
@@ -119,14 +119,7 @@ xfree86-shlibs packages </p></li>
           <code>xfree86-shlibs</code> packages</p>
           </li>
           <li>
-            <p>4.2.x from Apple (assuming you have the User + SDK packages installed): 
-the
-system-xfree86
-package is automatically generated, do NOT install it.
-(Note that the public beta of Apple's X11 for Jaguar is no longer
-available, so this is only an option for you if you already have this 
-installed, from the time in which it
-was available.)</p>
+            <p>4.2.x from Apple (assuming you have the User + SDK packages installed): the system-xfree86 package is automatically generated, do NOT install it. (Note that the public beta of Apple's X11 for Jaguar is no longer available, so this is only an option for you if you already have this installed, from the time in which it was available.)</p>
           </li>
         </ul><p>There are other options, as well. There is a more extensive
         treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11
@@ -164,7 +157,7 @@ was available.)</p>
 	  certain locations, and if they are found, considers that
 	  virtual package "installed".
 	</p><p>
-	  You can run the program <code>fink-virtual-pkgs</code>
+	  You can run the program <code>fink-virtual-packages</code>
 	  (part of the fink package) to get a listing of exactly what
 	  fink thinks is installed. Adding the <code>--debug</code>
 	  flag will give lots of diagnostic information about exactly

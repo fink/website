@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/29 13:44:24';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/10 13:20:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 include_once "header.inc";
@@ -435,20 +435,13 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or se
         the file with a text editor and remove the reference to
         <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
-    <a name="ext-drive">
-      <div class="question"><p><b>Q5.28: I have Fink installed way from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</b></p></div>
-      <div class="answer"><p><b>A:</b> If your error looks like:</p><pre>This first test is designed to die, so please ignore the error
-message on the next line.
-# Looks like your test died before it could output anything.
-./00compile............................ok
-./Base/initialize......................ok
-./Base/param...........................ok
-./Base/param_boolean...................ok
-./Command/cat..........................ok
-./Command/chowname.....................#     
-Failed test (./Command/chowname.t at line 27)
-#          got: 'root'
-#     expected: 'nobody'</pre><p>then you need to run <b>Get Info</b> on the drive/partition where Fink is installed and unselect the "Ignore ownership" button.</p></div>
+    <a name="mirror-gnu">
+      <div class="question"><p><b>Q5.28: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
+      <div class="answer"><p><b>A:</b> If you get an error that ends with</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
+    </a>
+    <a name="cant-move-fink">
+      <div class="question"><p><b>Q5.29: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
+      <div class="answer"><p><b>A:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
   <p align="right">
 Next: <a href="comp-general.php?phpLang=en">6 Compile Problems - General</a></p>
