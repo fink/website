@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.5 2004/03/12 15:06:20 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.6 2004/03/15 23:03:29 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -478,7 +478,7 @@ Components: main crypto
       <answer>
         <p>如果错误信息是：</p>
         <codeblock>Can't exec &quot;cvs&quot;: No such file or directory at 
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN> line 3.
+/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</codeblock>
         <p>那么你需要安装开发工具包。</p>
         <p>如果最后一行是：</p>
@@ -608,12 +608,12 @@ fink selfupdate-cvs</codeblock>
         <codeblock>dpkg -c <em>deb文件的完整路径</em>
   | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
-  > /sw/var/lib/dpkg/info/<em>软件包名</em>.list</codeblock>
+  &gt; /sw/var/lib/dpkg/info/<em>软件包名</em>.list</codeblock>
         <p>例如：</p>
         <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
   | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  > /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>这里做的事情是抽取 .deb 文件的内容，删掉除文件名以外的所有信息，并把文件名信息写回到 .list 文件中。</p>
       </answer>
     </faqentry>
@@ -815,7 +815,7 @@ set up for Fink already.&quot;，然后它就退出登录了。</p>
       <answer>
         <p>如果你看到的是：</p>
         <codeblock>Unknown option: 1
-Usage: head [-options] &lt;url>...</codeblock>
+Usage: head [-options] &lt;url&gt;...</codeblock>
         <p>后面是一列选项描述，你的 <code>head</code> 程序被损坏了。
 这会在你安装 Perl 的 libwww 库到一个 HFS+ 系统宗卷时发生。
 原因是它会建立一个新的命令 <code>/usr/bin/HEAD</code>，它会覆盖现存的 <code>head</code> 命令，因为 HFS+ 是不区分大小写的。
@@ -1123,7 +1123,7 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </answer>
 </faqentry><-->    <faqentry name="cctools" >
       <question>
-        <p>&quot;当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
+        <p>&quot;当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</p>
       </question>
       <answer>
         <p>这个晦涩的消息表明你需要安装 December 2002 开发工具。</p>
@@ -1312,7 +1312,7 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
         <p>在我用 nedit 编辑一个文件时，想要打开另外一个文件，但窗口出现了，却没有响应。</p>
       </question>
       <answer>
-        <p>这是 <filename>nedit</filename> 和 <filename>lesstif</filename> 的当前版本在所有平台上的已知问题。暂时的办法时用 File-->New 先打开一个窗口，然后打开你需要打开的另一个文件。</p>
+        <p>这是 <filename>nedit</filename> 和 <filename>lesstif</filename> 的当前版本在所有平台上的已知问题。暂时的办法时用 File--&gt;New 先打开一个窗口，然后打开你需要打开的另一个文件。</p>
         <p>在 <filename>nedit-5.3-6</filename> 中这个问题得到修正，这个版本依赖于 <filename>openmotif3</filename> 而不是 <filename>lesstif</filename>。</p>
       </answer>
     </faqentry>
@@ -1434,16 +1434,39 @@ exec gnome-session</codeblock>
         <p>我在 Panther 中安装了苹果的 X11，但 Fink 还要我安装 xfree86。</p>
       </question>
       <answer>
-        <p>你需要（重）安装 X11SDK，它在 Xcode CD 上，它<em>不会</em>默认安装。</p>
-        <p>即使你安装了 XCode，X11SDK 也<em>不会</em>默认安装。它只能作为 Xcode 的一个定制安装，或者双击 <code>Packages</code> 文件夹里面的 <code>X11SDK</code> pkg 文件进行安装。</p>
-        <p>你可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 部分存在和 <code>provides:</code> 一行包括 <code>x11</code>。
+      <p>需要考虑两种可能性。</p>
+      <ul>
+      	<li><em>如果你从二进制包安装：</em>
+      	如果你运行的是一个早于 0.17.0 的 fink 软件包（就好象那些和 Fink-0.6.2 安装程序一起提供的），那么升级 fink 可以马上解决你的问题。例如：
+      	通过
+<codeblock>sudo apt-get update
+sudo apt-get install fink</codeblock>
+			命令。</li>
+			<li><em>如果你是通过源码安装：</em>
+			你首先应该更新 fink，例如：
+			通过
+			<codeblock>fink selfupdate</codeblock>
+        然后你需要（重）安装 X11SDK，它在 Xcode CD 上，它<em>不会</em>默认安装。
+        即使你安装了 XCode，X11SDK 也<em>不会</em>默认安装。它只能作为 Xcode 的一个定制安装，或者双击 <code>Packages</code> 文件夹里面的 <code>X11SDK</code> pkg 文件进行安装。</li>
+      </ul>
+        <p>对于这两种情况，你都可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 和 <code>Package: system-xfree86-shlibs</code> 部分存在(如果你安装了 SDK，还应该包括 <code>Package: system-xfree86-dev</code>）和 <code>provides:</code> 行中相应包括 <code>x11</code> 和 <code>x11-shlibs</code>（<code>x11-dev</code>）。
         </p>
-        <p>如果你看不到这些东西都正确安装，最安全的办法是删除所有旧的 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会在第一行看到警告信息，你可以忽略它：</p>
+        <p>如果你看不到这些东西都正确安装，最安全的办法是删除所有旧的 xfree86 或 system-xfree86，并重新安装苹果的 X11 （以及 X11SDK，如果你是计划从源码安装的话）。你也许会在第一行看到警告信息，你可以忽略它：</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
         <p>然后，从 Panther 的第三张 CD 安装 X11，以及从 Xcode CD 中安装 X11SDK 。</p>
         <p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p>
+        <p>如果还有问题，而你又是运行
+        <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p>
+        <codeblock>fink-virtual-pkgs --debug</codeblock>
+        <p>来获取还缺少什么东西的信息。</p>
+        <p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p>
+        <ul>
+          <li>你可以在：<link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>下载。</li>
+          <li>把它保存在你喜欢的位置。</li>
+          <li>通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
+        </ul>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-beta-wants-xfree86" >
@@ -1451,15 +1474,38 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         <p>我安装了苹果的 X11 以及 10.2-gcc3.3 版本的 Fink，但 Fink 仍然要求我安装 xfree86。</p>
       </question>
       <answer>
-        <p>你需要（重）安装 X11SDK，你应该在下载 Beta 版苹果的 X11 的同时下载得到。</p>
-        <p>你可以用 <code>fink-virtual-pkgs</code> 来检查你的安装，你应该查看 <code>Package: system-xfree86</code> 部分在不在，以及 <code>provides:</code> 一行有没有包括 <code>x11</code>。
+      <p>需要考虑两种可能性。</p>
+      <ul>
+      	<li><em>如果你从二进制包安装：</em>
+      	如果你运行的是一个早于 0.17.0 的 fink 软件包（就好象那些和 Fink-0.6.2 安装程序一起提供的），那么升级 fink 可以马上解决你的问题。例如：
+      	通过
+<codeblock>sudo apt-get update
+sudo apt-get install fink</codeblock>
+			命令。</li>
+			<li><em>如果你是通过源码安装：</em>
+			你首先应该更新 fink，例如：
+			通过
+			<codeblock>fink selfupdate</codeblock>
+        然后你需要（重）安装 X11SDK，你应该在下载 Beta 版苹果的 X11 的同时下载得到。</li>
+        </ul>
+        <p>对于这两种情况，你都可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 和 <code>Package: system-xfree86-shlibs</code> 部分存在(如果你安装了 SDK，还应该包括 <code>Package: system-xfree86-dev</code>）和 <code>provides:</code> 行中相应包括 <code>x11</code> 和 <code>x11-shlibs</code>（<code>x11-dev</code>）。
         </p>
-        <p>如果你没有看到全部东西都正确安装，最安全的修复这个错误的办法是删除全部 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会看到第一行产生警告信息，你可以忽略它：</p>
+        <p>如果你没有看到全部东西都正确安装，最安全的修复这个错误的办法是删除全部 xfree86 或 system-xfree86，并重新安装苹果的 X11 （和 X11SDK，如果你是从源码安装的话）。你也许会看到第一行产生警告信息，你可以忽略它：</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>然后，重新安装 X11 和 X11SDK。</p>
+        <p>然后，重新安装 X11 （和 X11SDK，如果有需要的话）。</p>
         <p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p>
+        <p>如果还有问题，而你又是运行
+        <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p>
+        <codeblock>fink-virtual-pkgs --debug</codeblock>
+        <p>来获取还缺少什么东西的信息。</p>
+        <p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p>
+        <ul>
+          <li>你可以在：<link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>下载。</li>
+          <li>把它保存在你喜欢的位置。</li>
+          <li>通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
+        </ul>
       </answer>
     </faqentry>
   </chapter>
