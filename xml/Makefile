@@ -1,11 +1,19 @@
-# $Id: Makefile,v 1.10 2004/02/11 16:42:48 chris01 Exp $
+# $Id: Makefile,v 1.11 2004/02/29 23:07:21 fingolfin Exp $
 
 # generate all documents
 
-SUBDIRS = fink-readme usage install \
-	  faq users-guide \
-	  cvsaccess porting packaging x11 \
-	  news
+SUBDIRS = \
+	cvsaccess \
+	doc \
+	faq \
+	fink-readme \
+	install \
+	news \
+	packaging \
+	porting \
+	usage \
+	users-guide \
+	x11
 
 all clean force install:
 	@for i in $(SUBDIRS) ; do \
