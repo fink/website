@@ -1,4 +1,15 @@
-<a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
+<a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
+               <p>Fink and 
+<a href="http://www.macwelt.de/">Macwelt</a> have managed to organise a logo contest.
+For the next six weeks everyone is invited to submit their logo creations. 
+Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
+The initial <a href="http://www.macwelt.de/news/spezial/21619/">announcement</a> by Macnews is in German, for those of you not capable of reading German a translated version can be found
+ <a href="http://fink.sf.net/logo.php">here</a>. 
+                </p>
+<p>
+Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+</p>
+                <a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
 	       <p>KDE 3.1.1 binaries are now available.  Since they
 have been released after 0.5.2 came out, you will need to update
 your package descriptions by running <code>sudo apt-get update</code>
@@ -23,14 +34,5 @@ fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
 </b>
 to restore files which the Virex upgrade may have deleted.
 </p>
-
-		<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
-	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <a href="http://fink.sourceforge.net/download.php">download</a> page.
-		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
-		The full announcement can be read on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</a> mailing list.
-		</p>
-<p>(If you are having trouble upgrading a source installation, consult
-<a href="http://fink.sourceforge.net/download/fix-upgrade.php">these
-special instructions</a>.)</p>
 
 		

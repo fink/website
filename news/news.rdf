@@ -4,9 +4,26 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 05 May 2003 21:54:47 EDT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Jun 2003 16:05:38 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink logo contest begins.</title>
+    <link>http://fink.sf.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.</link>
+    <dc:date>2003-06-16</dc:date>
+    <description>
+               Fink and 
+Macwelt have managed to organise a logo contest.
+For the next six weeks everyone is invited to submit their logo creations. 
+Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
+The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
+ here. 
+                
+
+Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+
+                </description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>KDE 3.1.1 Binaries Available</title>
     <link>http://fink.sf.net/news/#2003-05-05%20KDE%203.1.1%20Binaries%20Available</link>
@@ -403,16 +420,6 @@ software before using Fink.
     
     
       An overview of what changed since version 0.9.12 can be found here.
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Binary distribution moves</title>
-    <link>http://fink.sf.net/news/#2002-07-17%20Binary%20distribution%20moves</link>
-    <dc:date>2002-07-17</dc:date>
-    <description>
-    
-      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, read more here..
     
   </description>
   </item>

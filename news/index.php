@@ -1,14 +1,25 @@
 <?
 $title = "News";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/05/06 01:56:26';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2003/06/16 10:59:58';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
+<a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
+               <p>Fink and 
+<a href="http://www.macwelt.de/">Macwelt</a> have managed to organise a logo contest.
+For the next six weeks everyone is invited to submit their logo creations. 
+Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
+The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
+ <a href="http://fink.sf.net/logo.php">here</a>. 
+                </p>
+<p>
+Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+</p>
+                <a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
 	       <p>KDE 3.1.1 binaries are now available.  Since they
 have been released after 0.5.2 came out, you will need to update
 your package descriptions by running <code>sudo apt-get update</code>
