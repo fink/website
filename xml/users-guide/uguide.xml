@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.5 2001/10/12 19:02:10 chrisp Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.6 2001/10/19 19:43:45 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -92,7 +92,7 @@ in time.
 It is strongly recommended that you upgrade to the latest update in
 that series, 10.0.4, through the Software Update panel in the System
 Preferences.
-Note that support for 10.0.x will be dropped in the future when 10.1
+Note that support for 10.0.x will be dropped in the future once 10.1
 is in widespread use.
 </p>
 <p>
