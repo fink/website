@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/18 03:20:07';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/06/22 15:35:13';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -123,7 +123,11 @@ When the bootstrap is finished, proceed with the
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
-Shell scripts are provided to make this easy.
+In most cases, you can do this via the command
+</p>
+<pre>open /sw/bin/pathsetup.command</pre>
+<p>
+However, if that doesn't work for some reason, try the following.
 If you use tcsh (the default on Mac OS X), add the following line to
 the file <code>.cshrc</code> in your home directory:
 </p>

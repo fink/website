@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/26 14:51:52';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/06/22 15:35:13';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
@@ -79,16 +79,16 @@ have been warned.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.5.2-full.tar.gz tarball.
+First, you need to unpack the fink-0.5.3-full.tar.gz tarball.
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.5.2-full.tar.gz</pre>
+<pre>tar xzf fink-0.5.3-full.tar.gz</pre>
 <p>
-You now have a directory named fink-0.5.2-full.
-Change to it with <code>cd fink-0.5.2-full</code>.
+You now have a directory named fink-0.5.3-full.
+Change to it with <code>cd fink-0.5.3-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -96,7 +96,7 @@ bootstrap.pl.
 It is accompanied by a small shell script, bootstrap.sh, which checks
 some basic requirements and then hands over control to the perl
 script.
-So, to start installation, go to the fink-0.5.2-full directory and run
+So, to start installation, go to the fink-0.5.3-full directory and run
 this command:
 </p>
 <pre>./bootstrap.sh</pre>

@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.16 2003/02/26 14:51:52 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.17 2003/06/22 15:35:13 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -94,18 +94,24 @@ home directory. Enjoy.
 
 [frodo:~/fink-&fink_version;-full] testuser% <em>cd</em>
 [frodo:~] testuser% <em>rm -r fink-&fink_version;-full</em>
-[frodo:~] testuser% <em>pico .cshrc</em></codeblock>
+[frodo:~] testuser% <em>open /sw/bin/pathsetup.command</em></codeblock>
 <p>
-The last command launches you into a text file editor.
-Type <code>source /sw/bin/init.csh</code>, press return, press
-control-O, press return, press control-X.
-You're now back at the prompt:
+The last command runs a little script to help set up your Unix paths
+(and other things) for use with Fink.  In most cases, it will run
+automatically, and prompt you for permission to make changes.  If
+the script fails, you'll have to do things by hand.
+</p><p>
+(If you need to do things by hand, and you are using csh or tcsh,
+you need to make sure that the command 
+<code>source /sw/bin/init.csh</code> is executed during startup of
+your shell, either by .login, .cshrc, .tcshrc, or something else
+appropriate.  If you are using bash or similar shells, the command
+you need is <code>. /sw/bin/init.sh</code>, and places where it
+might get executed include .bashrc and .profile.)
 </p>
-<codeblock>[frodo:~] testuser% <em>source .cshrc</em>
-[frodo:~] testuser% <em>rehash</em>
-[frodo:~] testuser% </codeblock>
 <p>
-If you have several Terminal.app windows open, close the other ones.
+Once you have set up the paths, open a new Terminal.app window, and close
+all other ones.
 That's it, you now have a base system installed.
 </p>
 <p>

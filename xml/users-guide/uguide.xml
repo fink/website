@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.24 2003/05/18 03:20:07 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.25 2003/06/22 15:35:13 dmrrsn Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -265,7 +265,11 @@ When the bootstrap is finished, proceed with the
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
-Shell scripts are provided to make this easy.
+In most cases, you can do this via the command
+</p>
+<codeblock>open /sw/bin/pathsetup.command</codeblock>
+<p>
+However, if that doesn't work for some reason, try the following.
 If you use tcsh (the default on Mac OS X), add the following line to
 the file <filename>.cshrc</filename> in your home directory:
 </p>

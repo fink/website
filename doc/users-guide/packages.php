@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/18 03:20:07';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/06/22 15:35:13';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -246,7 +246,7 @@ If you run into errors during that process, please first check the
 </li>
 <li>
 <p>
-<b>In 0.5.2-stable:</b>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">upgrade</a> Fink.</p>
+<b>In 0.5.3-stable:</b>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">upgrade</a> Fink.</p>
 </li>
 <li>
 <p>
