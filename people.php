@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/12/17 23:23:56 $';
+$cvs_author = '$Author: mrvacbob $';
+$cvs_date = '$Date: 2003/01/19 01:20:28 $';
 
 include "header.inc";
 ?>
@@ -22,6 +22,8 @@ to Fink in some way.
 for us to list all of you. If you think you should be on this list but aren't,
 drop us a mail and we will consider including you in the next revision of
 this list.</p>
+
+<p>Italicized items denote nicknames used on the IRC channel.</p>
 
 <h2>Former project lead</h2>
 <ul>
@@ -59,7 +61,7 @@ this list.</p>
 
 <h2>Support and Documentation Team</h2>
 <ul>
-<li>Hisashi Todd Fujinaka <!-- doc writer -->
+<li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
 <li>Darian Lanx (<i>dmalloc</i>)</li> <!-- doc writer -->
 </ul>
@@ -110,7 +112,7 @@ this list.</p>
 <li>Sebastien Pierre</li> 
 <li>Damien Pollet</li> 
 <li>Brian Redman</li> 
-<li>Rudy Richter</li> 
+<li>Rudy Richter (<i>rudy</i>)</li> 
 <li>Stefano Rodriguez</li> 
 <li>Andrew Rohl</li> 
 <li>David Ross</li> 
