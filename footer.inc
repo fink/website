@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.8 2002/03/24 21:50:46 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.9 2002/04/07 18:37:09 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -9,13 +9,21 @@
 </td></tr>
 
 
-<? /* copyright-and-footer row of top-level table */ ?>
 
-<tr valign="bottom" align="left">
-<td bgcolor="#eeeeee"><a href="<?
-print $root ?>legal.php"><img src="<? print $root ?>img/copyright.gif"
-width="120" height="44" border="0"
-alt="Copyright (c) 2001 The Fink Project"></a></td>
+<? /* horizontal stripe */ ?>
+<tr><td height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
+</td></tr>
+
+<? /* copyright-and-footer row of top-level table */ ?>
+<tr valign="middle" align="left">
+<td bgcolor="#eeeeee" align="center" width="120"
+    style="background-image:url(<? print $root ?>img/stripes.gif)">
+  <a href="<? print $root ?>legal.php">
+    <span style="text-decoration:none;color:black;font-size:10pt;">
+    Copyright&nbsp;&copy;&nbsp;2002 The&nbsp;Fink&nbsp;Project
+    </span>
+  </a>
+</td>
 <td>
 
 <? /* footer table */ ?>
@@ -36,15 +44,17 @@ if ($date)
   print strftime("%a, %b %d %Y", $date);
 ?></p>
 </td></tr>
-<tr><td style="background-image:url(<? print $root ?>img/bottom-line2.gif)">
-<img src="<? print $root ?>img/bottom-line2.gif" width="32" height="10" border="0" alt="">
+<tr><td height="7">
+ <img src="<? print $root ?>img/shim.gif" width="1" height="7" border="0" alt="">
 </td></tr>
 </table>
 
 </td>
 </tr>
 
-<tr><td>&nbsp;</td></tr>
+<? /* horizontal stripe */ ?>
+<tr><td colspan="2" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
+</td></tr>
 
 </table>
 
