@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/11/17 03:08:26';
+$cvs_date = 'Date: 2003/11/17 03:27:49';
 
 $metatags = '';
 
@@ -26,7 +26,7 @@ by UID 2011 rather than by root.  To correct this problem,
 run the command:</p>
 <pre>sudo find /sw/ -user 2011 -exec chown root:admin {} \;</pre>
 <p>This release, like the previous one, was built on OS X 10.2
-using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+using the gcc 3.3 compiler, and runs fine with some exceptions on OS X 10.3.  Most Fink 
 users who upgrade to 10.3 will continue to
 want to only use the binaries from this
 new distribution for now, while the Fink team continues to modify
