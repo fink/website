@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 09 Nov 2004 19:14:28 EST</lastBuildDate>
+    <lastBuildDate>Tue, 09 Nov 2004 19:27:27 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">es</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Resoluci%F3n%20de%20problemas%20con%20gcc.">
@@ -20,7 +20,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.
       
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
- aquí .
+ aquí 
+and  here .
 
        Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 09 Nov 2004 19:14:28 EST</lastBuildDate>
+    <lastBuildDate>Tue, 09 Nov 2004 19:27:27 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">zh</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.">
@@ -21,7 +21,8 @@ to use the "broken" gcc to compile packages which are known to
 have this problem.
 
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described  here .
+described  here 
+and  here .
  If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
 
