@@ -75,17 +75,11 @@
 <html><head>
 <title>Fink Documentation - <xsl:value-of select="title" /></title>
 </head><body>
-
 <h1 align="center"><xsl:value-of select="title"/></h1>
-
 <xsl:apply-templates select="preface" />
-
 <xsl:apply-templates select="section" />
-
 <xsl:call-template name="copyright" />
-
 <xsl:apply-templates select="cvsid" />
-
 </body></html>
 </xsl:template>
 
