@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/10 13:03:20 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/10/19 13:05:56 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,7 @@ This is a list of packages that need a new maintainer, because the original
 maintainer who brought the package to Fink is no longer able to maintain
 it.  If you are interested in taking on one of these packages, and you are
 not already a core Fink developer, please <a
-href="mailto:fink-devel@lists.sourceforge.net">contact the Fink
+href="mailto:fink-develATlistsDOTsourceforgeDOTnet">contact the Fink
 developers</a> and volunteer!</p>
 <p>Core Fink developers are welcome to adopt a package by changing the
 maintainer name in the package's .info file to their own.</p>

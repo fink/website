@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.14 2002/06/08 15:42:32 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.15 2002/10/19 13:05:56 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -36,7 +36,7 @@ if ($dyndate == 1) {
   print "Database last updated on ";
   $date = $dyndate;
 } else {
-  print "Last changed by $author on ";
+  print 'Last changed by <a href="mailto:'.$author.'ATusersDOTsourceforgeDOTnet">'.$author.'</a> on ';
 }
 if ($date)
   print gmstrftime("%a, %b %d %Y, %R GMT", $date);
