@@ -2,7 +2,7 @@
       <p>
 Se sabe que la versión de gcc incluída en XCode 1.5 produce salidas incorrectas desde código c++ bajo determinadas circunstancias. Fink tiene ahora un mecanismo para avisar al usuario de esto. Además, Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes de los cuales se sepa que tienen este problema.</p>
       <p>
-Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">aquí</a>.
+Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">aquí</link>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que consideres no hacerlo y quedarte con  XCode versión 1.2 hasta que el problema sea resuelto.
 </p>
