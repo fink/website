@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.99 2003/03/14 04:29:03 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.100 2003/03/15 02:20:38 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1101,7 +1101,7 @@ libpng warning: Application  is running with png.c from libpng-1.0.12
 libpng error: Incompatible libpng version in application and library</codeblock>
 <p>when running certain X applications.  The problem is due to an upstream incompatiblity between <filename>libpng</filename> and <filename>libpng3</filename>.  Start by running &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<code>fink update <em>packagename</em>
 </code>&quot; or &quot;<code>fink update-all</code>&quot;.</p>
-<p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <filename>libpng</filename> or <filename>libpng3</filename>.</p>
+<p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <filename>libpng</filename> or <filename>libpng3</filename>.  There is a new version of the <filename>fix-fink</filename> package in unstable that checks for this.  NOTE:  if you have KDE 3.0.7 installed, running <filename>fix-fink</filename> will report that your KDE packages are linked to libpng-1.0.12, but rebuilding won't change them.</p>
 <p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p>
 </answer>
 </faqentry>

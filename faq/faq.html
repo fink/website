@@ -796,7 +796,7 @@ options.
 <div class="answer"><p><b>A:</b> This is relevant to you if you see messages such as:</p><pre>libpng warning: Application was compiled with png.h from libpng-1.2.5
 libpng warning: Application  is running with png.c from libpng-1.0.12
 libpng error: Incompatible libpng version in application and library</pre><p>when running certain X applications.  The problem is due to an upstream incompatiblity between <tt style="white-space: nowrap;">libpng</tt> and <tt style="white-space: nowrap;">libpng3</tt>.  Start by running &quot;<tt style="white-space: nowrap;">fink selfupdate-cvs</tt>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<tt style="white-space: nowrap;">fink update <b>packagename</b>
-</tt>&quot; or &quot;<tt style="white-space: nowrap;">fink update-all</tt>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <tt style="white-space: nowrap;">libpng</tt> or <tt style="white-space: nowrap;">libpng3</tt>.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
+</tt>&quot; or &quot;<tt style="white-space: nowrap;">fink update-all</tt>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <tt style="white-space: nowrap;">libpng</tt> or <tt style="white-space: nowrap;">libpng3</tt>.  There is a new version of the <tt style="white-space: nowrap;">fix-fink</tt> package in unstable that checks for this.  NOTE:  if you have KDE 3.0.7 installed, running <tt style="white-space: nowrap;">fix-fink</tt> will report that your KDE packages are linked to libpng-1.0.12, but rebuilding won't change them.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
 </a>
 <a name="usage-general.apple-x11-applications-menu">
 <div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
@@ -939,4 +939,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.99 2003/03/14 04:29:03 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.100 2003/03/15 02:20:38 alexkhansen Exp $</i></p></body></html>

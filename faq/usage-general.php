@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/14 04:29:03';
+$cvs_date = 'Date: 2003/03/15 02:20:38';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -100,7 +100,7 @@ options.
 <div class="answer"><p><b>A:</b> This is relevant to you if you see messages such as:</p><pre>libpng warning: Application was compiled with png.h from libpng-1.2.5
 libpng warning: Application  is running with png.c from libpng-1.0.12
 libpng error: Incompatible libpng version in application and library</pre><p>when running certain X applications.  The problem is due to an upstream incompatiblity between <code>libpng</code> and <code>libpng3</code>.  Start by running &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<code>fink update <b>packagename</b>
-</code>&quot; or &quot;<code>fink update-all</code>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <code>libpng</code> or <code>libpng3</code>.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
+</code>&quot; or &quot;<code>fink update-all</code>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <code>libpng</code> or <code>libpng3</code>.  There is a new version of the <code>fix-fink</code> package in unstable that checks for this.  NOTE:  if you have KDE 3.0.7 installed, running <code>fix-fink</code> will report that your KDE packages are linked to libpng-1.0.12, but rebuilding won't change them.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
