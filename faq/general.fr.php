@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Généralités";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/01/24 22:48:55';
+$cvs_date = 'Date: 2005/02/01 08:26:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets"><link rel="prev" href="index.php?phpLang=fr" title="Q.F.P. Contents">';
 
 
@@ -12,14 +12,7 @@ include_once "header.fr.inc";
 
 <a name="what">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.1: Qu'est-ce que Fink ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-La raison d'être de Fink est d'offrir un maximum de logiciels UNIX sur Mac OS X, ce qui  se traduit par deux objectifs principaux :  
-</p><p>
-L'objectif principal est de porter des logiciels sur Mac OS X. Cela signifie que nous prenons des logiciels Open Source Unix et corrigeons ce qui est nécessaire pour qu'ils compilent et tournent sur Mac OS X. Parfois la tâche est simple, mais elle peut être très difficile, voire impossible, pour certains paquets. Nous essayons de fournir des outils et des documents pour la simplifier.
-</p><p>
-L'objectif secondaire est de mettre le résultat à disposition d'utilisateurs occasionnels.  Pour ce faire, nous créons une distribution en utilisant des outils de gestion de paquets portés depuis Linux, à savoir <code>dpkg</code> et
-<code>apt-get</code>, écrit par et pour le projet <a href="http://www.debian.org/">Debian GNU/Linux</a>. La distribution binaire utilise le format de paquet <code>.deb</code>. Pour construire les paquets à partir du source, nous utilisons notre propre outil, nommé <code>fink</code>, qui construit ces fichiers de paquet <code>.deb</code>.
-</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> La raison d'être de Fink est d'offrir un maximum de logiciels UNIX sur Mac OS X, ce qui  se traduit par deux objectifs principaux :</p><p>L'objectif principal est de porter des logiciels sur Mac OS X. Cela signifie que nous prenons des logiciels Open Source Unix et corrigeons ce qui est nécessaire pour qu'ils compilent et tournent sur Mac OS X. Parfois la tâche est simple, mais elle peut être très difficile, voire impossible, pour certains paquets. Nous essayons de fournir des outils et des documents pour la simplifier.</p><p>L'objectif secondaire est de mettre le résultat à disposition d'utilisateurs occasionnels.  Pour ce faire, nous créons une distribution en utilisant des outils de gestion de paquets portés depuis Linux, à savoir <code>dpkg</code> et <code>apt-get</code>, écrit par et pour le projet <a href="http://www.debian.org/">Debian GNU/Linux</a>. La distribution binaire utilise le format de paquet <code>.deb</code>. Pour construire les paquets à partir du source, nous utilisons notre propre outil, nommé <code>fink</code>, qui construit ces fichiers de paquet <code>.deb</code>.</p></div>
 </a>
 <a name="naming">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.2: Que signifie Fink ?</b></p></div>
@@ -29,19 +22,13 @@ L'objectif secondaire est de mettre le résultat à disposition d'utilisateurs o
 <div class="question"><p><b><? echo FINK_Q ; ?>1.3: En quoi Fink se différencie-t-il du mécanisme de portage BSD (qui comprend OpenPackages et GNU-Darwin) ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Avantages principaux de Fink :</p><ul>
 <li>
-<p>
-Il est écrit en Perl, pas en make/shell. Il ne repose donc pas sur des fonctionnalités inhérentes à BSD make. Il n'y a donc pas besoin de marquer les paquets qui doivent utiliser GNU make à la construction.
-</p>
+<p>Il est écrit en Perl, pas en make/shell. Il ne repose donc pas sur des fonctionnalités inhérentes à BSD make. Il n'y a donc pas besoin de marquer les paquets qui doivent utiliser GNU make à la construction.</p>
 </li>
 <li>
-<p>
-dpkg fournit une gestion sophistiquée des paquets binaires : mise à jour facile, gestion spéciale des fichiers de configuration, paquets virtuels et autres fonctions avancées.
-</p>
+<p>dpkg fournit une gestion sophistiquée des paquets binaires : mise à jour facile, gestion spéciale des fichiers de configuration, paquets virtuels et autres fonctions avancées.</p>
 </li>
 <li>
-<p>
-Fink n'installe rien dans /usr/local à moins d'une requête explicite et ne nécessite pas de jongler avec /usr/bin/make ou d'autres commandes fournis par le système. Cela rend son utilisation plus sûre et réduit au minimum les interférences avec Mac OS X et les paquets de tierce partie.
-</p>
+<p>Fink n'installe rien dans /usr/local à moins d'une requête explicite et ne nécessite pas de jongler avec /usr/bin/make ou d'autres commandes fournis par le système. Cela rend son utilisation plus sûre et réduit au minimum les interférences avec Mac OS X et les paquets de tierce partie.</p>
 </li>
 </ul></div>
 </a>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/31 16:20:27';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/02/01 08:29:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -374,8 +374,7 @@ items. They do not inherit from the parent package that contains the
 Provides list nor is there a syntax for specifing an arbitrary version
 in the Provides field itself. Further, a dependency that contains a
 version specification is not satisfied by a package that Provides that
-needed package name. As a result, having many variants all Provides a
-single surrogate package name may not be very useful in many cases.
+needed package name. As a result, having many variants provide a common surrogate package may be harmful, because it precludes the use of versioned dependencies. For example, if foo-gnome and foo-nognome both have "Provides: foo", another package with "Depends: foo (&gt; 1.1)" will not work.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
