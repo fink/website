@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/11/24 05:44:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -32,7 +32,7 @@ Fink では dpkg や apt-get などの <a href="http://www.debian.org/">Debian</
 
 <?
 // Include news items
-include $fsroot."news/news.inc";
+include $fsroot."news/news.ja.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=ja">Older News...</a></div>
 
