@@ -99,8 +99,8 @@ $navbox = array(
 </xsl:for-each>
 <xsl:text>);
 $printlink = "</xsl:text>
-<xsl:value-of select="$DESTDIR"/><xsl:value-of select="$PRINTFILE"/>
-<xsl:text>";
+<xsl:value-of select="$DESTDIR"/><xsl:value-of select="$PRINTFILE"/><xsl:text>.</xsl:text><xsl:value-of select="$lang-ext"/>
+<xsl:text>.html";
 
 $fsroot = $root = "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text>";
 include $fsroot."header.inc";

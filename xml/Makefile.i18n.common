@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.8 2004/02/26 01:48:07 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.9 2004/02/28 15:32:53 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -50,7 +50,7 @@ force: clean all
 
 %.php: $(SOURCE) $(STYLESHEET_WEBSITE)
 	xmllint --noout --valid $(SOURCE) \
-	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(XMLFILE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
+	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
 	rm -f *.tmp
