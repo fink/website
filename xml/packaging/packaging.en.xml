@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.52 2004/09/12 14:39:21 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.53 2004/11/01 23:02:15 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -2220,6 +2220,19 @@ earlier, and is
 If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
+</p>
+</itemd></item>
+
+<item><itemt>AppBundles</itemt>
+<itemd>
+<p>
+<em>Introduced in a post-0.23.1 version.</em>
+This field installs the specified application bundle(s) into
+<filename>%p/Applications</filename>.  It will also create a
+symlink to the <filename>/Applications/Fink</filename> directory.
+Example:
+</p>
+<codeblock>AppBundles: build/*.app Foo.app</codeblock>
 </p>
 </itemd></item>
 
