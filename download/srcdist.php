@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/15 23:44:21 $';
+$cvs_date = '$Date: 2002/04/17 19:59:48 $';
 
 include "header.inc";
 ?>
@@ -17,12 +17,12 @@ and build them on your local machine.
 </p>
 
 <p>
-Fink 0.3.2a was released on 16 January 2002.
+Fink 0.4.0 was released on 18 April 2002.
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-0.3.2a-full.tar.gz">Fink
-0.3.2a</a> - 1585K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-0.4.0-full.tar.gz">Fink
+0.4.0</a> - 1585K, .tar.gz format</li>
 </ul>
 
 <p>

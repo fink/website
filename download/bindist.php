@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/15 23:44:21 $';
+$cvs_date = '$Date: 2002/04/17 19:59:48 $';
 
 include "header.inc";
 ?>
@@ -20,14 +20,14 @@ the others can only be built from source as with the source release.
 </p>
 <p>
 <b>Status:</b>
-A binary installer for Fink 0.3.2a has been posted.
+A binary installer for Fink 0.4.0 has been posted.
 The bulk of packages will be updated gradually over the next few
 days.
 <!-- 145 of 227 packages are available as binaries. -->
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/fink-0.3.2a-installer.dmg.gz">Fink
-0.3.2a Binary Installer</a> - 7.7 MB, compressed .dmg disk image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/fink-0.4.0-installer.dmg.gz">Fink
+0.4.0 Binary Installer</a> - 7.7 MB, compressed .dmg disk image</li>
 <li><a href="../bindist/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
