@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'iso-8859-1'?>
 <!DOCTYPE document SYSTEM "../finkfaq.dtd">
-<document filename="index" >
+<document filename="index" lang="en" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.170 2004/02/13 14:29:08 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.171 2004/02/15 23:09:28 babayoshihiko Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1412,7 +1412,7 @@ variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 &quot;./configure --help&quot; will usually give you a list of the extra configure
 options.
 </p>
-<p>In addition, you may need to install the development headers (e.g. <em>foo-1.0-1-dev</em> for the library packages that you are using, if they aren't already installed.</p>
+<p>In addition, you may need to install the development headers (e.g. <em>foo-1.0-1-dev</em>) for the library packages that you are using, if they aren't already installed.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-applications-menu" >
