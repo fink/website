@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.3 2003/11/13 15:48:00 rangerrick Exp $ */
+/* $Id: header.inc,v 1.4 2004/10/11 16:47:29 rangerrick Exp $ */
 
 $fsroot = $root = "../";
 include $fsroot."header.inc";
@@ -8,7 +8,6 @@ include $fsroot."header.inc";
 <p>
 Fink RSS News Feeds:
 [<a href="news.rdf">These Headlines</a>]
-[<a href="fink-stable.rdf">New Packages in Stable</a>]
-[<a href="fink-unstable.rdf">New Packages in Unstable</a>]
+[<a href="rdf">Package Updates</a>]
 </p>
 
