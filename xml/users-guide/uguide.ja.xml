@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.15 2004/12/09 18:17:04 dmacks Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.16 2004/12/10 01:52:57 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -786,7 +786,7 @@ stable/main&quot; です。
 </li>
 <li>
 <p>
-<em>Verbose:</em> a number from 0 to 3</p>
+<em>Verbose:</em> 0 から 3 の数値</p>
 <p>
 このオプションは、現在何をしているかをどの程度報告するかを設定します。
 例えば:
