@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/01/18 22:03:50';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/01/21 14:19:56';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -40,6 +40,13 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 
 <a name="apple-x11"><div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</b></p></div>
 	<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <tt><nobr>http://www.apple.com/macosx/X11/</nobr></tt> and the actual X11 is from a form a level deeper.</p></div>
+</a>
+
+<a name="automake-autoconf"><div class="question"><p><b>Q5.6: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
+<div class="answer"><p><b>A:</b> Update whichever package is giving the dependency error, e.g. if you get a message like:</p><pre>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
+dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
+automake depends on autoconf25 (&gt;= 2.52-1)
+autoconf25 is to be removed.</pre><p>then use <tt><nobr>fink update <b>automake</b></nobr></tt>.  You should then be able to update autoconf.</p></div>
 </a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>

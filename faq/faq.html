@@ -89,6 +89,7 @@ from the head command. What's broken?</a></li>
 <li><a href="#comp-packages.change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="#comp-packages.pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
 <li><a href="#comp-packages.apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</a></li>
+<li><a href="#comp-packages.automake-autoconf">5.6 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
 </ul>
 <li><a href="#usage-general"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -654,6 +655,13 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <a name="comp-packages.apple-x11"><div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</b></p></div>
 	<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <tt style="white-space: nowrap;">http://www.apple.com/macosx/X11/</tt> and the actual X11 is from a form a level deeper.</p></div>
 </a>
+
+<a name="comp-packages.automake-autoconf"><div class="question"><p><b>Q5.6: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
+<div class="answer"><p><b>A:</b> Update whichever package is giving the dependency error, e.g. if you get a message like:</p><pre>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
+dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
+automake depends on autoconf25 (&gt;= 2.52-1)
+autoconf25 is to be removed.</pre><p>then use <tt style="white-space: nowrap;">fink update <b>automake</b></tt>.  You should then be able to update autoconf.</p></div>
+</a>
 <a name="usage-general"><h2>6 Package Usage Problems - General</h2></a>
 
 
@@ -736,6 +744,7 @@ variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 &quot;./configure --help&quot; will usually give you a list of the extra configure
 options.
 </p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div></a>
+
 <a name="usage-packages"><h2>7 Package Usage Problems - Specific Packages</h2></a>
 
 
@@ -859,4 +868,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.79 2003/01/18 22:03:50 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.80 2003/01/21 14:19:56 alexkhansen Exp $</i></p></body></html>

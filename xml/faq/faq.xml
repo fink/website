@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.79 2003/01/18 22:03:50 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.80 2003/01/21 14:19:56 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -720,6 +720,15 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <faqentry name="apple-x11"><question><p>I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</p></question>
 	<answer><p>You need to install the SDK package as well as the User package. The SDK is available from <code>http://www.apple.com/macosx/X11/</code> and the actual X11 is from a form a level deeper.</p></answer>
 </faqentry>
+
+<faqentry name="automake-autoconf"><question><p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p></question>
+<answer><p>Update whichever package is giving the dependency error, e.g. if you get a message like:</p>
+<codeblock>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
+dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
+automake depends on autoconf25 (>= 2.52-1)
+autoconf25 is to be removed.</codeblock>
+<p>then use <code>fink update <em>automake</em></code>.  You should then be able to update autoconf.</p></answer>
+</faqentry>
 </chapter>
 
 
@@ -821,6 +830,7 @@ options.
 </p>
 <p>In addition, you may need to install the development headers (e.g. <em>foo-1.0-1-dev</em> for the library packages that you are using, if they aren't already installed.</p>
 </answer></faqentry>
+
 </chapter>
 
 <chapter filename="usage-packages">
