@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.62 2004/02/29 13:10:56 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.63 2004/02/29 16:11:07 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -277,11 +277,6 @@ function insert_sub ($navbox, $active_page) {
 	<td width="100%">
 
 <? /* Call phpLang function */ ?>
-<? 
-if (function_exists(AddLanguageNames)) {
-	echo 'Available Languages';
-	AddLanguageNames(' | ', true); 
-} else {
-	echo "&nbsp;";
-}
-?>
+<div style="text-align: right ;">
+<? if (function_exists(AddFlags)) AddFlags(' ', true, $root); ?>
+</div>

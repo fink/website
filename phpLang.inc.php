@@ -16,12 +16,12 @@
 // |    http://www.phpheaven.net/projects/phpLang/                            |
 // |                                                                          |
 // | Authors:  Nicolas Hoizey <nhoizey@phpheaven.net>                         |
-// |           Loïc Chapeaux <lolo@phpheaven.net>                             |
+// |           Loïã Chapeaux <lolo@phpheaven.net>                             |
 // +--------------------------------------------------------------------------+
 
 // path to image files
 if(!defined('phpLang_images'))
-	define('phpLang_images', '/flags/');
+	define('phpLang_images', 'flags/');
 
 // path to translated files
 if(!defined('phpLang_localDir'))
@@ -199,7 +199,7 @@ function AddFlags($between = "", $showCurrent = false, $root = '')
 	while(list($key, $name) = each($GLOBALS["phpLang_languages"])) {
 		if(file_exists(phpLang_localizedFileName($name[0])) && ($showCurrent || $name[0] != phpLang_current)) {
 			echo("\t" . $temp . '<a href="' . phpLang_currentURI . phpLang_urlParam . '=' . $name[0] . "\">\n");
-			echo("\t\t<img src=\"" . $root . phpLang_images.$name[0] . '.gif" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\" />\n");
+			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\" />\n");
 			echo("\t</a>\n");
 			$temp = $between;
 		}
