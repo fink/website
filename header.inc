@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.52 2003/10/24 15:29:41 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.53 2003/10/25 13:42:46 dmalloc Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -73,7 +73,12 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 <html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management">
+<meta name="description" content="The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution" 
+<meta name="robots" content="all">
+<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
 <link rel="stylesheet" href="<? print $root ?>fink.css">
 <?
 if ($metatags)
