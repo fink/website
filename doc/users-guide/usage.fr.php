@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/09 06:26:48';
+$cvs_date = 'Date: 2005/03/10 06:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -282,7 +282,9 @@ fink apropos -s=kde irc
 <h2><a name="show-deps">6.23 show-deps - affiche les dépendances</a></h2>
 
 <p>Disponible uniquement à partir de la version 0.23.6 de fink.</p>
-<p>Affiche l'analyse syntaxique des dépendances d'un paquet à partir de son fichier .info.</p>
+<p>Displays a human-readable list of the compile-time (build) and run-
+           time (installation) dependencies of the listed package(s).</p>
+<p>Affiche, sous une forme compréhensible, la liste des dépendances à la compilation (construction du paquet) et à l'exécution (installation du paquet).</p>
 
 
 
