@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'iso-8859-1'?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
-<document filename="index" >
+<document filename="index" lang="en" >
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.xml,v 1.30 2004/02/13 14:29:08 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.xml,v 1.31 2004/02/19 07:13:51 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1051,7 +1051,7 @@ of these for historic reasons).</p>
     <section name="remove" >
       <title>remove</title>
       <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has some flaws: It only works on
-packages the <code>fink tool</code> knows about (i.e. where an .info file is present); and it
+packages the <code>fink</code> tool knows about (i.e. where an .info file is present); and it
 doesn't check dependencies itself but rather completly leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
       <p>The remove command only removes the actual package files, but leaves

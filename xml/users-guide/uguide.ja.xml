@@ -1,0 +1,1121 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="ja" >
+<title>Fink ユーザーガイド</title>
+<shorttitle>ユーザーガイド</shorttitle>
+<cvsid>$Id: uguide.ja.xml,v 1.1 2004/02/19 07:13:51 babayoshihiko Exp $</cvsid>
+<preface>
+<p>
+<em>このドキュメントは未完成です。</em>
+以下のドキュメントはより広範囲について書かれています:
+<link url="http://fink.sourceforge.net/doc/bundled/install.php" >インストール</link>,
+<link url="http://fink.sourceforge.net/doc/bundled/usage.php" >使用方法</link>
+およびバイナリのディスクイメージにある ReadMe.rtf 。
+ウェブサイト中の <link url="http://fink.sourceforge.net/doc/" >documentation section</link> も併せて参照ください。
+ここには、上記のものにない役立つドキュメントがあります。
+</p>
+<p>
+Fink ユーザーズガイドへようこそ。
+このガイドでは、ソースからとバイナリからの両方について、最初のインストールとアップグレードの仕方について書かれています。
+パッケージインストールとメンテナンスのことも書かれています。
+</p>
+</preface>
+<chapter filename="intro" >
+<title>はじめに</title>
+<shorttitle>はじめに</shorttitle>
+<section name="what" >
+<title>Fink とは何ですか?</title>
+<p>
+Fink は Unix オープンソース・ソフトウェアを Mac OS X と Darwin に提供するものです。
+Linux や同様のオペレーティングシステム向けに開発された広範囲のコマンドラインやグラフィカルなフリーソフトウェアを Mac で使えるようにするものです。
+</p>
+</section>
+<section name="req" >
+<title>必要条件</title>
+<p>
+どのような場合でも必要なもの:
+</p>
+<ul>
+<li>
+<p>
+インストール済みの Mac OS X システム、バージョン 10.3 またはそれ以降、あるいは同等の Darwin リリース。
+これより前のバージョンでは<em>動作しません</em>。
+サポート対象システムの詳細は、以下を御覧ください。
+</p>
+</li>
+<li>
+<p>
+インターネットへの接続。
+ソースコードとバイナリの両方とも、インターネットのダウンロードサイトからダウンロードされます。
+</p>
+</li>
+</ul>
+<p>
+ソースのディストリビューション (下記参照) を使用する場合、以下も必要です:
+</p>
+<ul>
+<li>
+<p>
+Development tools。
+Mac OS X では、 Developer.pkg パッケージを Developer Tools CD からインストールします。
+これは Mac OS X のバージョンと一致していなければならないことに注意してください。
+Darwin では、デフォルトのインストールでツールがあるはずです。
+</p>
+<p>
+ソースからパッケージをビルドする予定がなくても、 Developer Tools をインストールしておくことは良いことです。
+一般的なコマンドラインツールもインストールされますし、パッケージによっては必要なこともあります。
+</p>
+</li>
+<li>
+<p>
+忍耐。
+大きなパッケージをコンパイルするのは時間がかかります。
+ここでいう時間は、文字通り数時間から数日かかることもあります。
+</p>
+</li>
+</ul>
+</section>
+<section name="supported-os" >
+<title>サポートされているシステム</title>
+<p>
+<em>Mac OS X 10.3</em> は Fink を実行するのに最適なシステムです。
+全ての開発者がこれを使っていて、パッケージのテストを行なうシステムです。
+&quot;完全にサポートされていて、テストされている&quot; システムではありますが、稀にコンパイルの問題があるパッケージもあります。
+</p>
+<p>
+<em>Mac OS X 10.2</em> は現在でもサポートされていますが、パッケージによっては 10.2 版がばいものもあります。
+</p>
+<p>
+<em>Mac OS X 10.1</em> は現在でもサポートされていますが、制限があります。
+Fink 0.4.1 が使用できる最新バージョンです。
+</p>
+<p>
+<em>Darwin 7.0.1</em> が Mac OS X 10.3 に、 <em>Darwin 6.0.2</em> が Mac OS X 10.2 相当する Darwin のバージョンです。
+基本的には動作するはずですが、ほとんどの人は Mac OS X を使用しているので、テストされていません。
+Mac OS X 固有の機能を使っているパッケージでは問題が発生するかも知れません。
+影響するパッケージは、 XFree86 と、おそらく esound です。
+</p>
+</section>
+<section name="src-vs-bin" >
+<title>ソース vs. バイナリ</title>
+<p>
+ソフトウェアは、人間が読めるプログラム言語で書かれて (&quot;開発されて&quot;) います。
+この形式は &quot;ソースコード&quot; と呼ばれるもので、低レベルの (大抵の人間は読めない) コンピュータが実行するには、これを機械語に変換する必要があります。
+このプロセスは &quot;コンパイル&quot; といい、できたものを &quot;実行可能ファイル&quot; や &quot;バイナリ&quot;といいます。
+(このプロセスは、コンパイル以外のステップも含むので、ビルドと呼ぶこともあります)
+</p>
+<p>
+商業用ソフトウェアを購入する際はソースコードを見ることはありません。
+企業は秘密として扱っています。
+入手するのは実行可能ファイルだけですので、プログラムを変更することや、実行時に何が起こっているのか知ることはできません。
+</p>
+<p>
+これは <link url="http://www.opensource.org/" >オープンソース</link> の場合は当てはまりません。
+名称が示すように、ソースコードは公開されていて、読むことも変更することも可能です。
+事実、ほとんどのオープンソース・ソフトウェアは、作者からはソースコードの形式で配布されているだけで、実行するには自分のコンピュータ上でコンパイルする必要があります。
+</p>
+<p>
+Fink では、二つの選択肢があります。
+&quot;ソース&quot;ディストリビューションは元のソースをダウンロードし、 Mac OS X と Fink ポリシーに対応させてコンパイルします。
+このプロセスは全て自動的に実行されますが、多少時間がかかります。
+他方、&quot;バイナリ&quot;ディストリビューションは、コンパイル済みのパッケージを Fink サイトからダウンロードし、インストールします。
+コンパイルに要する時間を節約します。
+この二つを組み合わせることも可能です。
+このマニュアルでは、使用方法について説明します。
+</p>
+</section>
+</chapter>
+<chapter filename="install" >
+<title>一回目のインストール</title>
+<shorttitle>インストール</shorttitle>
+<preface>
+<p>
+初めてインストールする間、マシンには基本システムとパッケージ管理ツールがインストールされます。
+これの後には、 Fink からインストールされたソフトウェアを使えるようにするため、シェルの環境変数を設定します。
+この作業は一度だけで十分です。
+Fink のアップグレー度は、再インストールなしで行なうことができます (リリース 0.2.0 以降)。
+<xref chapter="upgrade" >アップグレードの章</xref>を参照してください。
+</p>
+<p>
+パッケージ管理ツールをインストールしたら、これを使ってさらにソフトウェアをインストールすることができます。
+<xref chapter="packages" >パッケージインストールの章</xref>を参照してください。
+</p>
+</preface>
+<section name="bin" >
+<title>バイナリディストリビューションのインストール</title>
+<p>
+バイナリディストリビューションは、ディスクイメージ (.dmg) の中に、 Mac OS X インストーラパッケージ形式 (.pkg) で配布されています。
+ディスクイメージを<link url="http://fink.sourceforge.net/download/bindist.php" >ダウンロードページ</link>からダウンロードし、ダブルクリックしてマウントします。
+&quot;Fink 0.x.x Installer&quot; を開きます。
+Disk Copy がファイルを点検した後にデスクトップに出てくるディスクアイコンのことです。
+この中には、ドキュメンテーションとインストーラパッケージが入っています。
+インストーラパッケージをダブルクリックし、説明に従って下さい。
+</p>
+<p>
+管理者パスワードを聞かれ、文章が表示されます。
+これは読むようにしてください。
+このユーザーガイドよりも新しいこともあります。
+インストーラがインストール先のドライブを聞いてきたら、システムボリューム (Mac OS X をインストールしたボリューム) を選択してください。
+もし間違ったボリュームを選択すると、インストールはできますが、 Fink は動作しません。
+インストールが終了したら、<xref section="setup" >環境の設定</xref>節を参照してください。
+</p>
+</section>
+<section name="src" >
+<title>ソースディストリビューションのインストール</title>
+<p>
+ソースディストリビューションは標準的な Unix tarball (.tar.bz) で提供されます。
+これは <code>fink</code> パッケージマネージャとパッケージ詳細だけが含まれていて、パッケージ用のソースをダウンロードするものです。
+<link url="http://fink.sourceforge.net/download/srcdist.php" >ダウンロードページ</link>から入手することができます。
+tar アーカイブを解凍する際に、 StuffIt Expander を使わないように注意してください。
+StuffIt はまだ長いファイル名を扱うことができないようです。
+StuffIt Expander が解凍してしまっている場合、作成されたフォルダごと捨ててください。
+</p>
+<p>
+ソースリリースはコマンドラインからインストールする必要があります。
+まずターミナル.app を開き、 fink-0.x.x-full.tar.gz アーカイブをインストールしたディレクトリに移動します。
+次のコマンドでアーカイブを解凍します。
+</p>
+<codeblock>tar -xzf fink-0.x.x-full.tar.gz</codeblock>
+<p>
+これによってアーカイブと同名のディレクトリが作成されます。
+以下も <code>fink-0.x.x-full</code> を使います。
+このディレクトリ内に入り、ブートストラップコマンドを入力します:
+</p>
+<codeblock>cd fink-0.x.x-full
+./bootstrap.sh</codeblock>
+<p>
+スクリプトはシステムのチェックをし、 sudo を使い root になります。
+この時、パスワードを聞いてきます。
+次に、インストールパスを聞いてきます。
+特に理由がない限り、デフォルトのパス /sw を使ってください。
+全ての例はこのパスを使いますので、パスを換えた場合は置き換えてください。
+</p>
+<p>
+次にくるのは Fink の設定です。
+プロキシ、ミラーの設定や verbose メッセージにするかどうか聞かれます。
+質問が理解できない場合、リターンキーを押してデフォルト値を選択してください。
+このプロセスは、後でも <code>fink configure</code> コマンドで再実行することができます。
+</p>
+<p>
+ブートストラップスクリプトには、必要な情報が全てあり、ソースコードをダウンロードしてコンパイルを始めます。
+この時点ではこれ以上のインタラクションは必要ありません。
+また、パッケージが二度コンパイルされることがありますが、心配しないでください。
+パッケージマネージャのバイナリパッケージをビルドするのにパッケージマネージャが必要なためです。
+</p>
+<p>
+ブートストラップが終ったら、<xref section="setup" >環境の設定</xref> 節へ進んでください。
+</p>
+</section>
+<section name="setup" >
+<title>環境の設定</title>
+<p>
+Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
+概ね、これはコマンドを使って
+</p>
+<codeblock>open /sw/bin/pathsetup.command</codeblock>
+<p>
+とすることできます。
+しかし、これが効かない場合は、手動で設定することができますが、シェルによってやり方が異なります。
+現在のシェルを知るには、ターミナルを開き:
+</p>
+<codeblock>echo $SHELL</codeblock>
+<p>
+と入力します。
+この中に &quot;csh&quot; か &quot;tcsh&quot; とあったら、 C シェルを使っています。
+bash, zsh, sh または似たようなものであれば、 bourne シェルの派生を使っています。
+</p>
+<ul>
+ <li>
+  <p><strong>Bourne シェル</strong> (Mac OS X 10.3 以降のデフォルト) </p>
+  <p>
+   Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <code>.profile</code> ファイルに追加して下さい (あるいは、 <code>.bash_profile</code> がある場合、こちらを使って下さい):
+  </p>
+  <codeblock>source /sw/bin/init.sh</codeblock>
+  <p>
+   行追加の方法を知らない場合、以下のコマンドを実行して下さい:
+  </p>
+  <codeblock>cd pico .profile</codeblock>
+  <p>
+   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.sh</code> 行をタイプできるようになります。
+   &quot;New file&quot; という文字が出ていても大丈夫です。
+   行を追加したら、最低一回はリターンキーを押して下さい。
+   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+  </p>
+ </li>
+ <li>
+  <p><strong>C シェル</strong> (Mac OS X 10.2 以前のデフォルト) </p>
+  <p>
+   tcsh を使っている場合、以下の行をホームディレクトリ内の <filename>.cshrc</filename> ファイルに追加して下さい:
+  </p>
+  <codeblock>source /sw/bin/init.csh</codeblock>
+  <p>
+   行追加の方法を知らない場合、以下のコマンドを実行して下さい:
+  </p>
+  <codeblock>cd pico .cshrc</codeblock>
+  <p>
+   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
+   "New file" という文字が出ていても大丈夫です。
+   行を追加したら、最低一回はリターンキーを押して下さい。
+   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+  </p>
+  <p>状況によっては、さらに数行編集する必要がある場合もあります:</p>
+  <ol>
+  <li>
+  <p><code>~/.tcshrc</code> があります。</p>
+  <p>このファイルはサードパーティーのソフトウェアによって作られることがあります。
+  あなたが自分で作ったのかも知れません。
+  いずれの場合も、 <code>~/.tcshrc</code> が読まれて、 <code>~/.cshrc</code> は無視されてしまいます。
+  <code>~/.tcshrc</code> を <code>~/.cshrc</code> と同じように編集することをお勧めします:
+  </p>
+  <codeblock>source ~/.cshrc</codeblock>
+  <p>こうすることで、 <code>~/.tcshrc</code> を削除することなく Fink を使うことができます。</p>
+  </li>
+  <li>
+  <p> <code>/usr/share/tcsh/examples/README</code> に書かれていることを実行した。</p>
+  <p>ここに書かれていることは、 <code>~/.tcshrc</code> と <code> ~/.login</code> を作るように指示しています。
+  ここで問題は、 <code>~/.login</code> が <code>~/.tcshrc</code> の後で実行され、 <code>/usr/share/tcsh/examples/login</code> を source することです。
+  後者は、あなたの設定した PATH を上書きする行を含んでいます。
+  <code>~/Library/init/tcsh/path</code> を作成するのがよいでしょう:</p>
+  <codeblock>mkdir ~/Library/init
+  mkdir ~/Library/init/tcsh
+  pico ~/library/init/tcsh/path</codeblock>
+  <p>して:</p>
+  <codeblock>source ~/.cshrc</codeblock>
+  <p>を加えて下さい。
+  また、 .tcshrc も項目１のように編集して下さい。
+  <code>~/.login</code> が読まれない状況で、PATH が正しく設定されたか確認して下さい。</p>
+  </li>
+  </ol>
+  <p>
+  .cshrc (と、他の起動ファイル) の編集は、新規シェル (新しくターミナルウィンドウを開いた時) から有効になります。
+   このため、ファイルを変更する前から開いていたターミナルウィンドウは、それぞれこのコマンドを実行する必要があります。
+  また、 <code>rehash</code> を実行する必要もあります。
+  これで tcsh は使用できるコマンドを内部にキャッシュします。
+  </p>
+ </li>
+</ul>
+<p>
+スクリプトは <filename>/usr/X11R6/bin</filename> と <filename>/usr/X11R6/man</filename> をパスに追加することに注意して下さい。
+これで X11 がインストールされた時に使えるようになります。
+Fink のパッケージはそれぞれ設定を追加することができます。
+例えば、 qt パッケージは QTDIR 環境変数を設定します。
+</p>
+<p>
+環境を整えたら、次の<xref chapter="packages" >パッケージのインストール</xref>の章に進み、 Fink のパッケージ管理ツールゐお使った、便利なパッケージのインストール方法をお読み下さい。
+</p>
+</section>
+</chapter>
+<chapter filename="packages" >
+<title>パッケージのインストール</title>
+<shorttitle>パッケージ</shorttitle>
+<preface>
+<p>
+この時点で、 Fink というものがインストールされました。
+この章では実際に、好きなソフトウェアパッケージをインストールする方法を解説します。
+パッケージのインストールを説明する前に、ソースとバイナリディストリビューションの両方に当てはまる重要事項を説明します。
+</p>
+</preface>
+<section name="bin-dselect" >
+<title>dselect によるバイナリパッケージのインストール</title>
+<p>
+<code>dselect</code> は、入手可能なパッケージの一覧を表示し、インストールするものを選択できるプログラムです。
+これは Terminal.app 内で動作しますが、 &quot;スクリーン&quot;全体を簡単なキーボードナビゲーションで使います。
+他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、あらかじめ root になるか、 sudo を使い:
+</p>
+<codeblock>sudo dselect</codeblock>
+<p>
+とします。
+<em>注記：</em>
+<code>dselect</code> は OSX ターミナル上では問題があります。
+これを避けるには以下のコマンドを先に実行するか、起動ファイル (例 <code>.cshrc</code> | <code>.profile</code>) に書いておく必要があります。
+</p>
+<p>tcsh の場合:</p>
+<codeblock>setenv TERM xterm-color</codeblock>
+<p>bash の場合:</p>
+<codeblock>export TERM=xterm-color</codeblock>
+<p>メインメニューは:</p>
+<ul>
+<li>
+<p>
+<em>[A]ccess</em> - 使用するネットワークのアクセス手段を設定します。
+<em>これを実行する必要はありません</em>。
+Fink があらかじめ全てを設定します。
+これを選択すると、デフォルトの設定を使えない設定に書き換えるおそれがあるので、使用は避けて下さい。
+</p>
+</li>
+<li>
+<p>
+<em>[U]pdate</em> - パッケージ一覧を Fink サイトからダウンロードします、
+パッケージをインストールや更新することはありません。
+パッケージブラウザが使用する一覧を更新するだけです。
+Fink をインストール後、最低一回は実行して下さい。
+</p>
+</li>
+<li>
+<p>
+<em>[S]elect</em> - 選択、非選択可能なパッケージ一覧を表示します。
+詳細は後に書かれています。
+</p>
+</li>
+<li>
+<p>
+<em>[I]nstall</em> - これが実際にインストールします。
+上のメニュー項目は dselect のパッケージ一覧とステータスデータベースを書き換えるだけでしたが、これは実際に選択されたパッケージのダウンロードとインストールをします。
+それだけではなく、非選択したパッケージを取り除くこともします。
+</p>
+</li>
+<li>
+<p>
+<em>[C]onfig</em> と <em>[R]emove</em> - これらは apt 以前からの遺物です。
+使う必要はなく、害もありません。
+</p>
+</li>
+<li>
+<p>
+<em>[Q]uit</em> - 説明の必要はないでしょう。
+</p>
+</li>
+</ul>
+<p>
+実際は、&quot;[S]elect&quot; メニュー項目を選択後、パッケージブラウザ内にいることが多いでしょう。
+パッケージ一覧を表示する前に dselect はヘルプ画面を表示します。
+'k' キーを押すとキーボードコマンドの一覧が表示され、スペースキーでパッケージ一覧が表示されます。
+</p>
+<p>
+一覧の中では、上と下のキーで移動します。
+選択は、 '+' と '-' でします。
+他のパッケージに依存するパッケージを選択した場合、 dselect は影響するパッケージのサブリストを表示します。
+ほとんどの場合、リターンキーを押すだけで dselect に従えば大丈夫ですが、サブリスト内で変更もできます (例、バーチャルパッケージ依存のため他を選択する)。
+あるいは、 'R' (Shift-R) を押して元の状態に戻せば、サブリストとパッケージ一覧はそのままです。
+選択が終了したなら、一覧から出て &quot;[I]nstall&quot; を選択し、実際にパッケージをインストールします。
+</p>
+</section>
+<section name="bin-apt" >
+<title>apt-get を使ったバイナリインストール</title>
+<p>
+<code>dselect</code> は実際にはパッケージをダウンロードせず、 apt を実行します。
+コマンドラインでの作業がしたい場合、 <code>apt-get</code> コマンドを使って apt の機能を直接実行することができます。
+</p>
+<p>
+dselect のと同じく、まずパッケージ一覧をダウンロードします:
+</p>
+<codeblock>sudo apt-get update</codeblock>
+<p>
+dselect の &quot;[U]pdate&quot; メニュー項目と同じく、コンピュータ上のファイルではなく、パッケージ一覧を更新するだけです。
+パッケージをインストールするには、 apt-get に名前を渡します:
+</p>
+<codeblock>sudo apt-get install lynx</codeblock>
+<p>
+パッケージが他のパッケージのインストールを必要としていると判断した場合、リストを表示して確認をとります。
+その後、パッケージをダウンロード、インストールします。
+パッケージを取り除くのも簡単です:
+</p>
+<codeblock>sudo apt-get remove lynx</codeblock>
+<p>
+<!-- [FIXME: using apt-cache to search for packages] --></p>
+</section>
+<section name="bin-exceptions" >
+<title>バイナリディストリビューションにない依存パッケージのインストール</title>
+<p>バイナリインストールをしている時、依存しているパッケージがインストールできないというメッセージがでることがあります。例えば:</p>
+<codeblock>Sorry, but the following packages have unmet
+dependencies:
+foo: Depends: bar (>= version) but it is
+not installable
+E: Sorry, broken packages</codeblock>
+<p>何が起こったかというと、インストールしようとしているパッケージが、ライセンス上バイナリとして配布されない他のパッケージに依存しているのです。
+この場合、ソースからインストールして下さい (次の節を参照)。
+</p>
+</section>
+<section name="src" >
+<title>ソースからのパッケージインストール</title>
+<p>まず、適切なバージョンの Development Tools が必要となります。
+<link url="http://connect.apple.com" >http://connect.apple.com</link>
+から入手して下さい。
+</p>
+<p>
+ソースからインストールできるパッケージの一覧を取得するには、 <code>fink</code> ツールに聞きます:
+</p>
+<codeblock>fink list</codeblock>
+<p>
+最初の列はインストール状態 (空白は未インストール, <code>i</code> はインストール済, <code>(i)</code> はインストール済だが最新ではない) を示します。
+次がパッケージ名、最新バージョン、短い説明です。
+特定パッケージの詳細を見るには、&quot;describe&quot; コマンド (&quot;info&quot; はエイリアスです) を使います:
+</p>
+<codeblock>fink describe xmms</codeblock>
+<p>
+インストールしたいパッケージが見つかったら、 &quot;install&quot; コマンドを使います:
+</p>
+<codeblock>fink install wget-ssl</codeblock>
+<p>
+<code>fink</code> コマンドは最初に必要なもの (&quot;依存性&quot;) があるか確認し、無いものがあればインストールしていいか聞いてきます。
+次に、ソースコードをダウンロード、解凍、パッチ当て、コンパイル、インストールをします。
+この作業は時間がかかります。
+この作業中にエラーが発生した場合、まず <link url="http://fink.sourceforge.net/faq/" >FAQ</link> を確認して下さい。
+</p>
+</section>
+<section name="fink-commander"> 
+<title>Fink Commander</title> 
+<p>
+Fink Commander は <code>apt-get</code> と <code>fink</code> の Aqua インターフェイスです。
+Binary メニューはバイナリディストリビューションの、 Source メニューはソースディストリビューションの操作を行います。
+</p> 
+<p>
+Fink Commander は Fink バイナリインストーラに付属しています。
+Fink をソースからインストールした場合など、別にダウンロードしたい場合や詳しい情報は、
+<link url=" http://finkcommander.sourceforge.net " >Fink Commander website</link> リンクを辿って下さい。
+</p> 
+</section> 
+<section>
+<title>用意されているバージョン</title>
+<p>パッケージをインストールする場合、まず<link url="http://fink.sourceforge.net/pdb/index.php" >パッケージデータベース</link>を確認して Fink にあるかどうか確認して下さい。
+用意されているバージョンは次の行に書かれてあります:</p>
+<ul>
+<li>
+<p>
+<em>0.4.1-stable:</em> OS10.1 でバイナリインストールできる最新バージョン</p>
+</li>
+<li>
+<p>
+<em>&fink_version;:</em> これは OS 10.3 と10.2 向けのバイナリインストールできる基本バージョン。
+Fink を <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php" >アップグレード</link>  した場合、これより新しいバージョンの場合もある。
+</p>
+</li>
+<li>
+<p>
+<em>10.2-gcc3.3 stable:</em> これはソースから <code>gcc 3.3</code> でインストールできる OS 10.2 向け最新バージョン。
+このバージョンをインストールできるようにするには、 <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS </link> または rsync アクセスを有効にする必要がある。
+もし <code>gcc 3.3</code> に更新していない場合、このバージョン (あるいはパッケージ自体) が表示されない可能性がある。
+</p>
+<p>
+注意: 他のプロジェクトの場合とは異なり、 Fink は最新の安定バージョンとテストが必要なバージョン (下記参照) を両方Sともに CVS で配布している。
+CVS | rsync を有効にすることで、バイナリディストリビューションが更新されるより前に最新安定版をてに入れることができる。
+</p>
+</li>
+<li>
+<p>
+<em>10.3 stable:</em> これはソースからインストールできる OS 10.3 向け最新バージョン。
+CVS または rsync アクセスを有効にする必要がある。
+</p> 
+</li> 
+<li>
+<p>
+<em>In latest-unstable:</em> これは最新の非安定バージョンです。
+このバージョンをインストールするには、非安定バージョンのインストール方法の<link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">説明</link> に従って下さい。
+</p>
+<p>注意: 非安定バージョンは使用できないと言うわけではありませんが、自己責任で使用して下さい。
+</p></li>
+</ul>
+</section>
+<section name="x11" >
+<title>X11 を使う</title>
+<p>
+Mac OS X には、 X11 が数種類 (XFree86, Tenon Xtools, eXodus) あり、インストール方法も数種類 (手動、 Fink を使う) あるため、パッケージも数種類あります。
+Fink は、インストールされているのがどれかをうまく判別できません。
+このため、 X11 アプリケーションをインストールする前に正しいものを選ぶことが重要になります。
+以下がパッケージと X11 のインストール方法の一覧です:
+</p>
+<ul>
+<li>
+<p>
+xfree86-base:
+このパッケージはリアルです。
+XFree86 4.2.1.1 の全てを Fink パッケージとしてインストールします。
+柔軟性に対応できるよう、このパッケージに XDarwin サーバーは含まれていません。
+これを追加するには、 xfree860rootless パッケージをインストールして下さい
+</p>
+</li>
+<li>
+<p>
+xfree86:
+これは一つのパッケージ (display サーバーを含む) です。
+このバージョンは 4.2.1.1 より速いですが、十分にはテストされていません。
+</p>
+</li>
+<li>
+<p>
+system-xfree86:
+このパッケージは、ソースまたは公式 (非公式) バイナリからインストールした場合、あるいは Apple X11 をインストールした場合など、手動で XFree86 をインストールした時に使います。
+このパッケージはインストールが有効かどうかを確認するだけで、後は依存性のために存在するだけです。
+</p>
+</li>
+<li>
+<p>
+system-xtools:
+Tenon Xtools をインストールした場合、このパッケージをインストールして下さい。
+system-xfree86 と同様、有効性を確認するだけでファイルはそのままにします。
+</p>
+</li>
+</ul>
+<p>
+X11 のインストールと使用の詳細は、
+<link url="http://fink.sourceforge.net/doc/x11/" >X11 on Darwin and Mac OS X ドキュメント</link>
+を参照して下さい。
+</p>
+</section>
+</chapter>
+<chapter filename="upgrade" >
+<title>Fink のアップグレード</title>
+<shorttitle>アップグレード</shorttitle>
+<preface>
+<p>
+この章は、 Fink を最新かつ最高に更新する方法を解説します。
+</p>
+</preface>
+<section name="bin" >
+<title>バイナリパッケージでのアップグレード</title>
+<p>
+バイナリディストリビューションだけを使っている場合、特にすることはありません。
+最新の一覧に更新し、全てのパッケージを更新するだけです。
+</p>
+<p>
+dselect の場合、&quot;[U]pdate&quot; を押して &quot;[I]nstall&quot; するだけです。
+もちろん、この間に &quot;[S]elect&quot; を実行して選択されたものと新しいパッケージを確認することもできます。
+</p>
+<p>
+apt では、 <code>apt-get update</code> を実行して最新の一覧を取得し、 <code>apt-get upgrade</code> を実行して全てのパッケージを最新に更新します。
+</p>
+<p>
+Fink Commander では、
+Binary->Update descriptions 
+を選択してパッケージリストを更新し、
+Binary->Dist-Upgrade 
+で新しいバージョンに更新します。
+</p>
+<p>
+詳細、特に 0.3.0 より前のバージョンの Fink からアップグレードする場合は、
+<link url="http://fink.sourceforge.net/download/upgrade.php" >アップグレード表</link>
+を御覧下さい。
+</p>
+</section>
+<section name="src" >
+<title>ソースディストリビューションのアップグレード</title>
+<p>
+ソースディストリビューションを使用している場合、アップグレードは多少複雑になります。
+アップグレードは２ステップあります。
+1. パッケージ詳細をダウンロードします。
+2. このパッケージ詳細を使って新しいパッケージをコンパイルします。
+必要に応じてソースコードもダウンロードします。
+</p>
+<p>
+Fink 0.2.5 以降であれば、最初のステップは <code>fink selfupdate</code> を実行します。
+このコマンドは Fink ウェブサイトを新しいリリースが用意されているか確認し、自動的にパッケージ詳細をダウンロード、インストールします。
+最近のバージョンの <code>fink</code> コマンドでは、 CVS または rsync から直接パッケージ詳細を取得する選択肢もあります。
+CVS はバージョン管理レポジトリで、パッケージ詳細が保存・管理されています。
+CVS には連続して更新できる利点がありますが、CVS サーバーが一つしかなく、トラフィック量に依って不安定になりやすい欠点があります。
+このため、一般ユーザーは rsync を使うことをおすすめします。
+rsync にはミラーが複数あり、欠点は CVS からのパッケージ詳細の更新に１時間かかることです。
+</p>
+<p>(ソースインストールで問題がある場合、<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >特殊な方法</link>を参照して下さい)</p>
+<p>
+0.2.5 より古いバージョンの Fink の場合、手動でパッケージ詳細をダウンロードして下さい。
+<link url="http://sourceforge.net/project/showfiles.php?group_id=17203" >ダウンロードエリア</link>で最新の packages-0.x.x.tar.gz tarball を &quot;distribution&quot; モジュール内で探します。
+ダウンロード後、以下のようにインストールします:
+</p>
+<codeblock>tar -xzf packages-0.x.x.tar.gz
+cd packages-0.x.x
+./inject.pl</codeblock>
+<p>
+パッケージ詳細をダウンロード後 (どのような方法であれ)、全てのパッケージを <code>fink
+update-all</code> で一括更新します。
+</p>
+<p>
+Fink Commander を使ってソースディストリビューションを更新する場合、
+Source->Selfupdate 
+を選択して新しいパッケージ情報ファイルをダウンロードし、
+Source->Updata-all
+を選択して古いパッケージを更新します。
+</p> 
+</section>
+<section name="mix" >
+<title>バイナリとソースの混在</title>
+<p>
+もし、コンパイル済みパッケージとソースからビルドしたものを使っている場合、両方のアップグレード方法に従わなくてはなりません。
+つまり、最初に <code>dselect</code> か <code>apt-get</code> を使ってバイナリで提供されているパッケージの最新バージョンを取得し、次に <code>fink selfupdate</code> と <code>fink update-all</code> で現在のパッケージ詳細を取得し、残りのパッケージを更新します。
+Fink Commander を使用している場合、まず <xref section="bin">バイナリの更新</xref> を実行してから <xref section="src">ソースの更新</xref> を実行します。 
+</p>
+</section>
+</chapter>
+<chapter filename="conf" >
+<title>Fink 設定ファイル</title>
+<shorttitle>fink.conf</shorttitle>
+<preface>
+<p>
+この章では、 Fink 設定ファイル (fink.conf) で提供されている設定と、 Fink にどのように影響するか、特に <code>fink</code> コマンドラインツール (とソースディストリビューション) について説明します。
+</p>
+</preface>
+<section name="about" >
+<title>fink.conf について</title>
+<p>
+最初に Fink がインストールされた時、設定ファイルの設定でいくつか質問をします。
+例えば、どの <xref section="mirrors" >ミラー</xref> を使ってダウンロードをするか、どのように super-user 権限を使うかなどです。
+このプロセスは <code>fink configure</code> コマンドでいつでも再実行することができます。
+オプションを設定するには <em>fink.conf</em> ファイルを編集する必要があるものもあります。
+一般的に、こういった設定は上級者専用のオプションです。
+</p>
+<p>
+<em>fink.conf</em> ファイルは <code>/sw/etc/fink.conf</code> にあります。
+自分の好きなテキストエディタで編集することができますが、スーパーユーザー権限が必要です。
+</p>
+</section>
+<section name="syntax" >
+<title>fink.conf 文法</title>
+<p>
+fink.conf にはたくさんの行がありますが、形式は:</p>
+<codeblock>OptionName: Value</codeblock>
+<p>と、行ごとになっています。
+オプション名と値は : と空白ひとつで区切られています。
+値の中身はオプションによりますが、通常はブール値 (&quot;True&quot; または &quot;False&quot;)、文字列、空白で区切られた文字列などです。
+例えば:
+</p>
+<codeblock>
+BooleanOption: True
+StringOption: Something
+ListOption: Option1 Option2 Option3
+</codeblock>
+</section>
+<section name="required" >
+<title>必須設定</title>
+<p>
+<em>fink.conf</em> の設定には、必須項目で、設定されていないと Fink が動作しないものがあります。
+以下の設定はこのカテゴリーに入ります。
+</p>
+<ul>
+<li>
+<p>
+<em>Basepath:</em> path</p>
+<p>
+Fink がインストールされている場所を知らせます。
+Fink の最初のインストール時に変更していない限り、デフォルトでは <em>/sw</em> です。
+この値を変更しては<em>いけません</em>。
+Fink が混乱します。
+</p>
+</li>
+</ul>
+</section>
+<section name="optional" >
+<title>ユーザー設定</title>
+<p>
+ユーザーが Fink の動作をカスタマイズするためのオプション設定があります。
+</p>
+<ul>
+<li>
+<p>
+Fink はスーパーユーザー権限が必要な時があります。
+有効な値は <em>sudo</em> か <em>su</em> です。
+<em>none</em> を設定することもできますが、この場合 Fink を root で実行して下さい。
+デフォルト値は <em>sudo</em> で、ほとんどの場合そのまま使用して下さい。
+</p>
+</li>
+<li>
+<p>
+<em>Trees:</em> list of trees</p>
+<p>使用できるツリーは:</p>
+<codeblock>
+local/main      - インストールしたいローカルパッケージ
+local/bootstrap - Fink のインストール時に必要なパッケージ
+stable/crypto   - 安定版の暗号パッケージ
+stable/main     - 他の安定版パッケージ
+unstable/crypto - 非安定版の暗号パッケージ
+unstable/main   - 他の非安定版パッケージ
+</codeblock>
+<p>
+独自のツリーを <code>/sw/fink/dists</code> ディレクトリに追加することもできますが、通常は必要ありません。
+デフォルトのツリーは &quot;local/main local/bootstrap
+stable/main&quot; です。
+この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
+</p>
+</li>
+<li>
+<p>
+<em>Distribution:</em> 10.1 or 10.2</p>
+<p>Fink はどのバージョンの Mac OS X を使っているか知る必要があります。
+10.1 ディストリビューションは Mac OS X 10.1 を指します。
+10.2 ディストリビューションは Mac OS X 10.2 &quot;Jaguar&quot; を指します。
+Mac OS X 10.0 以前はサポートされていません。
+この値は変える必要はありません。
+</p>
+</li>
+<li>
+<p>
+<em>FetchAltDir:</em> path</p>
+<p>Fink は通常、ソースを <code>/sw/src</code> に保存します。
+この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
+例えば:
+</p>
+<codeblock>FetchAltDir: /usr/src</codeblock>
+</li>
+<li>
+<p>
+<em>Verbose:</em> a number from 0 to 3</p>
+<p>
+このオプションは、現在何をしているかをどの程度報告するかを設定します。
+例えば:
+<em>0</em>
+<tt>Quiet</tt> (ダウンロード状況を報告しない)
+<em>1</em>
+<tt>Low</tt> (tarball の展開を報告しない)
+<em>2</em>
+<tt>Medium</tt> (ほとんど全て報告する)
+<em>3</em>
+<tt>High</tt> (全て報告する)
+デフォルト値は 3 です。
+</p>
+</li>
+<li>
+<p>
+<em>NoAutoIndex:</em> ブール値</p>
+<p>Fink は、パッケージ詳細ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+この値が &quot;True&quot; でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
+デフォルト値は &quot;False&quot; で、変更することは勧めません。
+変更した場合、 <code>fink index</code> コマンドを手動で実行してインデックスを更新する必要があります。
+</p>
+</li>
+<li>
+<p>
+<em>SelfUpdateNoCVS:</em> ブール値</p>
+<p><code>fink selfupdate</code> コマンドは、 Fink パッケージマネージャーを最新版にアップグレードします。
+このオプションは <tt>True</tt> の時、 Concurrent Version System (CVS) を使わないことを保証します。
+これは <code>fink selfupdate-cvs</code> コマンドが自動的に設定するので、手動では変更しないで下さい。
+</p>
+</li>
+</ul>
+</section>
+<section name="downloding" >
+<title>Download 設定</title>
+<p>Fink がダウンロードする手段を変える設定はいくつかあります。</p>
+<ul>
+<li>
+<p>
+<em>ProxyPassiveFTP:</em> ブール値</p>
+<p>このオプションを設定すると、 Fink は FTP ダウンロード時に &quot;passive&quot; モードを使います。
+FTP サーバーやネットワークによっては、このオプションが <tt>True</tt> になっている必要があります。
+アクティブ FTP 自体が廃止予定なので、常に設定しておくことを勧めます。
+</p>
+</li>
+<li>
+<p>
+<em>ProxyFTP:</em> url</p>
+<p>FTP プロキシを使う場合、アドレスを入力します。
+例えば:
+</p>
+<codeblock>ProxyFTP: ftp://yourhost.com:2121/</codeblock>
+<p>FTP プロキシを使わない場合は空欄にしておいて下さい。</p>
+</li>
+<li>
+<p>
+<em>ProxyHTTP:</em> url</p>
+<p>HTTP プロキシを使う場合、アドレスを入力します。
+例えば:</p>
+<codeblock>ProxyHTTP: http://yourhost.com:3128/</codeblock>
+<p>HTTP プロキシを使わない場合は空欄にしておいて下さい。</p>
+</li>
+<li>
+<p>
+<em>DownloadMethod:</em> wget または curl または axel または axelautomirror</p>
+<p>Fink はインターネットからファイルをダウンロードするのに３種類のアプリケーションを使うことができます - <em>wget</em>, <em>curl</em>, または <em>axel</em>。
+<em>axelautomirror</em> は、 <em>axel</em> アプリケーションの実験的モードで、特定のファイルがある最も近いサーバーからダウンロードします。
+<em>axelmirror</em> の使用は現時点では勧められません。
+デフォルト値は <em>curl</em> です。
+<em>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</em>
+</p>
+</li>
+</ul>
+</section>
+<section name="mirrors" >
+<title>Mirror 設定</title>
+<p>インターネットからソフトウェアを取得するのは退屈なことで、イライラすることが多いです。
+ミラーサーバーは他のサーバーにあるファイルをコピーしますが、インターネット回線が速かったり、地理的に近いなど、ダウンロードが速い場合があります。
+また、 <em>ftp.gnu.org</em> などの主サーバーの負荷を減らす役割もあります。
+サーバーが落ちている時に代わりになる場合もあります。
+</p>
+<p>Fink が最適なミラーを選ぶためには、どの大陸のどの国にいるのかを知らせなければなりません。
+サーバーからのダウンロードに失敗した場合、同じミラーを再度試すか、同じ国か大陸の別のミラーを試すか、あるいは世界中から他のミラーを試すかを聞いてきます。
+</p>
+<p><em>fink.conf</em> ファイルにはどのミラーを使いたいかの設定が書かれています。</p>
+<ul>
+<li>
+<p>
+<em>MirrorContinent:</em> 3 字のコード</p>
+<p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
+3 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+例えば、アジアの場合:
+</p>
+<codeblock>MirrorContinent: asi</codeblock>
+</li>
+<li>
+<p>
+<em>MirrorCountry:</em> 6 字のコード</p>
+<p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
+3 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+例えば、日本の場合:</p>
+<codeblock>MirrorCountry: asi-JP</codeblock>
+</li>
+<li>
+<p>
+<em>MirrorOrder:</em> MasterFirst または MasterLast または MasterNever または ClosestFirst</p>
+<p>
+Fink は 'Master' ミラーをサポートしています。
+これは、全ての Fink パッケージのソース tarball のレポジトリミラーです。
+Master ミラーを使うと、ソースダウンロード URL が壊れないことが利点です。
+ユーザーは、 Fink チームによってメンテナンスされているミラーを使うか、オリジナルソース URL と gnome, KDE, Debian などのミラーサイトだけを使うか、を選択できます。
+この他、両者を組み合わせて、上で述べたように近い順に探して使うこともできます。
+MasterFirst か MasterLast を使う場合、ダウンロードに失敗したら Master (あるいは Master 以外) に'スキップする'こともできます。
+オプションは:
+</p>
+<codeblock>
+MasterFirst - &quot;Master&quot; ソースミラーを最初に探す。
+MasterLast - &quot;Master&quot; ソースミラーは最後に探す。
+MasterNever - &quot;Master&quot;  ソースミラーは使用しない。
+ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラーを一緒にする)。
+</codeblock>
+</li>
+</ul>
+</section>
+<section name="developer" >
+<title>開発者用設定</title>
+<p><em>fink.conf</em> のオプションには、開発者にのみ有用なものがあります。
+一般的な Fink ユーザーがこれを変更することは勧めません。
+以下のオプションがこれに該当します。</p>
+<ul>
+<li>
+<p>
+<em>KeepRootDir:</em> ブール値</p>
+<p>パッケージのビルド後に /sw/src/root-name-version ディレクトリを削除しません。
+デフォルトは false です。
+<em>注意、このオプションはハードディスクをいっぱいにします!</em>
+</p>
+</li>
+<li>
+<p>
+<em>KeepBuildDir:</em> ブール値</p>
+<p>パッケージのビルド後に /sw/src/name-version ディレクトリを削除しません。
+デフォルトは false です。
+<em>注意、このオプションはハードディスクをいっぱいにします!</em>
+</p>
+</li>
+</ul>
+</section>
+</chapter>
+<chapter filename="usage" >
+<title>コマンドライン fink ツールの使用方法</title>
+<shorttitle>fink ツール</shorttitle>
+<section name="using" >
+<title>fink ツールの使用</title>
+<p>
+<code>fink</code> ツールはソースディストリビューションを操作する一連のコマンドから成り立っています。
+いずれも、最低限一つのパッケージ名、あるいは複数のパッケージ名を処理します。
+パッケージ名だけを指定 (例 gimp) しても、バージョン番号付の完全な名前 (例 gimp-1.2.1 or gimp-1.2.1-3) でも動作します。
+バージョン番号が指定されていない時は、 Fink は自動的に最新のバージョンとリビジョンを選択します。
+</p>
+<p>以下は、 <code>fink</code> ツールのコマンド一覧です:</p>
+</section>
+<section name="install" >
+<title>install</title>
+<p>install コマンドは、パッケージをインストールするのに使用します。
+指定したパッケージをダウンロード、 configure 、ビルド、インストールを行ないます。
+また、依存しているパッケージを確認をとった後で自動的にインストールします。
+例:</p>
+<codeblock>fink install nedit
+
+Reading package info...
+Information about 131 packages read.
+The following additional package will be installed:
+ lesstif
+Do you want to continue? [Y/n]</codeblock>
+<p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
+</p>
+</section>
+<section name="remove" >
+<title>remove</title>
+<p>
+remove コマンドは、 'dpkg --remove' を呼び出してシステムからパッケージを削除します。
+現在はまだ問題が残っていて、 <code>fink</code> ツールが認識している (.info ファイルが存在する) パッケージだけ処理することができ、依存性は dpkg ツールに完全に任せています (たいていこれで問題はありませんが)。
+</p>
+<p>
+remove コマンドは実際のパッケージファイルを削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
+これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
+ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから .deb ファイルを取り除いてもかまいません。
+</p>
+<p>エイリアス: disable, deactivate, unuse, delete.</p>
+</section>
+<section name="update-all" >
+<title>update-all</title>
+<p>
+このコマンドは、全てのインストール済パッケージを最新バージョンに更新します。
+パッケージ一覧は必要ないので、入力するだけです:
+</p>
+<codeblock>fink update-all</codeblock>
+</section>
+<section name="list" >
+<title>list</title>
+<p>
+このコマンドは、パッケージ一覧を作成し、インストール状況、最新バージョン、短い説明を表示します。
+引数なしでこれを呼んだ場合、全てのパッケージが表示されます。
+パッケージ名やシェルパターンを用いて、マッチするパッケージだけ表示することもできます。
+</p>
+<p>
+最初の列はインストール状況を表し、その意味は以下の通り:
+</p>
+<codeblock>
+     未インストール
+ i   最新バージョンがインストール済
+(i)  インストール済だが最新バージョンではない
+</codeblock>
+<p>
+<code>fink list</code> コマンドにはフラグがあります:
+</p>
+<codeblock>
+-h,--help
+	  利用可能なオプションを表示。
+-t,--tab
+	  一覧をタブ区切り形式で出力。
+	  出力をスクリプトで処理する時に有効。
+-i,--installed
+	  インストール済パッケージのみ表示。
+-o,--outdated
+	  古いパッケージのみ表示。
+-u,--uptodate
+	  最新のパッケージのみ表示。
+-n,--notinstalled
+	  未インストールパッケージのみ表示。
+-s=expr,--section=expr
+	  正規表現 expr にマッチするセクションのパッケージのみ表示。
+-w=xyz,--width=xyz.
+	  出力形式の幅を設定する。
+	  xyz は数値か auto 。
+	  auto はターミナル幅に応じて設定される。
+	  デフォルトは auto 。
+</codeblock>
+<p>
+例:
+</p>
+<codeblock>
+fink list                 - 全てのパッケージを表示。
+fink list bash            - bash があるか、どのバージョンか表示。
+fink list --outdated      - 古いパッケージのみ表示。
+fink list --section=kde   - kde セクションのパッケージのみ表示。
+fink list &quot;gnome*&quot;         - 'gnome' から始まるパッケージのみ表示。
+</codeblock>
+<p>
+最後の例のクォーテーションは、シェルが解釈しないように必要です。
+</p>
+</section>
+<section name="apropos" >
+<title>apropos</title>
+<p>
+このコマンドはほとんど <code>fink list</code> と同じです。
+一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ詳細を使うことです。
+次に顕著なのは、検索文字列が必須で、オプションではないことです。
+</p>
+<codeblock>
+fink apropos irc          - 名称か詳細に 'irc' が含まれるパッケージを表示。
+fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに限定。
+</codeblock>
+</section>
+<section name="describe" >
+<title>describe</title>
+<p>
+このコマンドは、指定したパッケージの詳細を表示します。
+現時点では詳細があるパッケージはまだ少ないので注意して下さい。
+</p>
+<p>
+エイリアス: desc, description, info
+</p>
+</section>
+<section name="fetch" >
+<title>fetch</title>
+<p>指定したパッケージをダウンロードしますが、インストールはしません。
+このコマンドは、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。</p>
+</section>
+<section name="fetch-all" >
+<title>fetch-all</title>
+<p>
+<em>全ての</em>パッケージソースファイルをダウンロードします。
+fetch と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
+</p>
+</section>
+<section name="fetch-missing" >
+<title>fetch-missing</title>
+<p>
+<em>全ての</em>パッケージソースファイルをダウンロードします。
+このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
+</section>
+<section name="build" >
+<title>build</title>
+<p>
+パッケージをビルドしますが、インストールはしません。
+ソース tarball は、なければダウンロードされます。
+この結果、インストールできる .deb パッケージファイルを作成します。
+すでに .deb ファイルがある場合は何もしません。
+依存パッケージは、ビルドだけではなく、<em>インストールされます</em>ので注意して下さい。
+</p>
+</section>
+<section name="rebuild" >
+<title>rebuild</title>
+<p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
+パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
+パッケージの開発中にはとても役に立ちます。
+</p>
+</section>
+<section name="reinstall" >
+<title>reinstall</title>
+<p>
+インストールと同様ですが、インストールされていても <code>dpkg </code>を通してインストールします。
+これは、誤ってパッケージファイルを消したり、設定ファイルを変えてデフォルトに戻したい場合などにも使えます。
+</p>
+</section>
+<section name="configure" >
+<title>configure</title>
+<p>
+Fink を再設定します。
+ミラーサイトの設定やプロキシの設定も行なうことができます。
+</p>
+</section>
+<section name="selfupdate" >
+<title>selfupdate</title>
+<p>
+このコマンドは、自動的に Fink の新リリースにアップグレードします。
+Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自身を含めたコアパッケージを更新します。
+通常リリースの他、 <filename>/sw/fink/dists</filename> を設定して直接 CVS アップデートすることもできます。
+これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
+</p>
+</section>
+<section name="index" >
+<title>index</title>
+<p>
+パッケージキャッシュを再構築します。
+通常は <code>fink</code> が更新の必要に応じて自動検出するので、手動で行なう必要はありません。
+</p>
+</section>
+<section name="validate" >
+<title>validate</title>
+<p>
+このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
+パッケージメンテナーは、 submit する前にパッケージ詳細と対応するパッケージに対して実行して下さい。
+</p>
+<p>
+エイリアス: check
+</p>
+</section>
+<section name="scanpackages" >
+<title>scanpackages</title>
+<p>
+指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
+</p>
+</section>
+<section name="checksums" >
+<title>checksums</title>
+<p>
+   Validates the MD5 digest of all tarballs in <code>/sw/src</code>, where possible.
+可能な限り、 <code>/sw/src</code> 内にある全ての tarball の MD5 を検証します。
+</p>
+</section>
+<section name="cleanup" >
+<title>cleanup</title>
+<p>
+新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
+かなりのディスク容量が利用できるようになります。
+</p>
+</section>
+</chapter>
+</document>
