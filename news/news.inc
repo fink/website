@@ -23,6 +23,9 @@ that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
 </p>
+<p>Update 11 February 2003: This script is not needed with version 0.2 of 
+Apple's X11.app which was released yesterday.
+</p>
 <a name="2003-01-21 Gnome, libpng, and the unstable tree"><span class="news_date">2003-01-21: </span><span class="news_headline">Gnome, libpng, and the unstable tree</span></a><?php gray_line(); ?>
 	<p>
         A problem was uncovered today concerning the versions of imlib,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.41 2003/02/08 04:14:35 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.42 2003/02/11 12:49:42 dmrrsn Exp $</cvsid>
 <newsitem>
         <date>2003-02-07</date>
         <headline>DO NOT INSTALL VIREX 7.2</headline>
@@ -34,6 +34,9 @@ with future X11 releases.
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
+</p>
+<p>Update 11 February 2003: This script is not needed with version 0.2 of 
+Apple's X11.app which was released yesterday.
 </p>
 </body>
 </newsitem>

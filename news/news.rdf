@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 07 Feb 2003 23:09:48 EST</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2003 07:48:19 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -41,6 +41,9 @@ with future X11 releases.
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
+
+Update 11 February 2003: This script is not needed with version 0.2 of 
+Apple's X11.app which was released yesterday.
 
 </description>
   </item>
