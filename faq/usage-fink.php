@@ -68,9 +68,15 @@ of Fink?</b></p></div>
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it).  Thus in order to get rid of Fink, enter this command:
 </p><pre>sudo rm -rf /sw</pre><p>
+
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
-</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre></div></a>
+</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>
+
+You also will want to remove the "source /sw/bin/init.csh" line you added to your 
+.cshrc file. To do this, type "pico ~/.cshrc". Navigate to the "source /sw/bin/init.csh" 
+line and type control-K to remove it. Then type control-O, return, control-X to exit.
+</p></div></a>
 
 <a name="kde"><div class="question"><p><b>Q3.6: What is the status of KDE in Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
