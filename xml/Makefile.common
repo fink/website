@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.5 2001/07/31 15:56:02 chrisp Exp $
+# $Id: Makefile.common,v 1.6 2001/10/12 20:04:33 chrisp Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -35,9 +35,6 @@ force: clean all
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
 
-install: $(filter %.php,$(TARGET))
-	cp $(filter %.php,$(TARGET)) $(basedir)/../$(DESTDIR)/
-
 # rendering to pure HTML (monolithic)
 
 %.html.tmp: %.xml $(STYLESHEET_HTML)
@@ -53,5 +50,10 @@ install: $(filter %.php,$(TARGET))
 
 %.txt: %.txt.tmp $(PROCESS_TEXT)
 	$(PROCESS_TEXT) <$< >$@
+
+# install files inside website
+
+install: $(filter %.php,$(TARGET)) $(patsubst %.xml,%.html,$(SOURCE))
+	cp $(filter %.php,$(TARGET)) $(patsubst %.xml,%.html,$(SOURCE)) $(basedir)/../$(DESTDIR)/
 
 # eof
