@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
-include_once "header.inc";
-?>
 
-<h1>Guía del Usuario - 4 Actualizando Fink</h1>
+include_once "header.es.inc";
+?>
+<h1>Guía del Usuario - 4. Actualizando Fink</h1>
     
     
     
@@ -71,7 +71,9 @@ Esto es, usa primero el  <code>dselect</code> o <code>apt-get</code> para obtene
 para obtener las descripciones actules y actualizar los paquetes restantes. Si usas el Fink Commander, sigue las instrucciones<a href="#bin">binarias</a> y después las del  <a href="#src">código fuente</a>.
 </p>
     
-  <p align="right">
-Next: <a href="conf.php?phpLang=es">5 El archivo de configuración de Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="conf.php?phpLang=es">5. El archivo de configuración de Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

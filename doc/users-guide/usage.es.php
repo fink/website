@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="prev" href="conf.php?phpLang=es" title="El archivo de configuración de Fink">';
 
-include_once "header.inc";
-?>
 
-<h1>Guía del Usuario - 6 Usando el Fink desde la línea de comando</h1>
+include_once "header.es.inc";
+?>
+<h1>Guía del Usuario - 6. Usando el Fink desde la línea de comando</h1>
     
     
     <h2><a name="using">6.1 Usando la herramienta fink</a></h2>
@@ -184,5 +184,7 @@ Re-ejecuta el procesos de configuración de Fink. Este comando te permitira camb
 </p>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

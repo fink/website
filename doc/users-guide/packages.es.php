@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="upgrade.php?phpLang=es" title="Actualizando Fink"><link rel="prev" href="install.php?phpLang=es" title="Primera Instalación">';
 
-include_once "header.inc";
-?>
 
-<h1>Guía del Usuario - 3 Instalando Paquetes</h1>
+include_once "header.es.inc";
+?>
+<h1>Guía del Usuario - 3. Instalando Paquetes</h1>
     
     
     
@@ -224,7 +224,9 @@ Para mayor información sobre como instalar o ejecutar el X11 visita las página
 y el documento de  Mac OS X document</a>.
 </p>
     
-  <p align="right">
-Next: <a href="upgrade.php?phpLang=es">4 Actualizando Fink</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="upgrade.php?phpLang=es">4. Actualizando Fink</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

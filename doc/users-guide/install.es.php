@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="packages.php?phpLang=es" title="Instalando Paquetes"><link rel="prev" href="intro.php?phpLang=es" title="Introducción">';
 
-include_once "header.inc";
-?>
 
-<h1>Guía del Usuario - 2 Primera Instalación</h1>
+include_once "header.es.inc";
+?>
+<h1>Guía del Usuario - 2. Primera Instalación</h1>
     
     
     
@@ -177,7 +177,9 @@ Ua vez que el ambiente esta ajustado, procede al capitulo de
 <a href="packages.php?phpLang=es">Instalando Paquetes</a> para ver como se pueden instalar algunos paquetes muy útiles usando las varias herramientas de manejo de paquetes incluidas en Fink.
 </p>
     
-  <p align="right">
-Next: <a href="packages.php?phpLang=es">3 Instalando Paquetes</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="packages.php?phpLang=es">3. Instalando Paquetes</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

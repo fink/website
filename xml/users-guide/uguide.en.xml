@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.11 2004/06/27 00:46:39 vasi Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.12 2004/07/27 19:57:51 dmrrsn Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1051,6 +1051,45 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
           </p>
         </li>
       </ul>
+    </section>
+    <section name="sourceslist" >
+      <title>Managing apt's sources.list file</title>
+      <p>Starting with fink 0.21.0, fink actively manages the file
+<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+binary files for installation.  The default sources.list file looks 
+something like this, adjusted to match your Distribution and Trees:
+</p>
+<codeblock># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in 
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.
+</codeblock>
+<p>With this default file, apt-get first looks in your local installation
+for already-compiled binaries, and then looks in the official binary
+distribution.  You can alter this by making entries at the beginning of
+the file (which will be searched first) or at the end of the file (which
+will be searched last).</p>
+<p>Fink preserves your modifications even when altering the "default"
+portion of the file, if you confine them to the beginning and to the end.
+If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
+to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
+</p>
     </section>
   </chapter>
   <chapter filename="usage">

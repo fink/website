@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="install.php?phpLang=es" title="Primera Instalación"><link rel="prev" href="index.php?phpLang=es" title="Guía del Usuario Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Guía del Usuario - 1 Introducción</h1>
+include_once "header.es.inc";
+?>
+<h1>Guía del Usuario - 1. Introducción</h1>
     
     
     <h2><a name="what">1.1 Qué es Fink?</a></h2>
@@ -114,7 +114,9 @@ Es incluso posible mezclar ambos modelos al gusto.
 El resto de este manual te mostrara como hacerlo.
 </p>
     
-  <p align="right">
-Next: <a href="install.php?phpLang=es">2 Primera Instalación</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="install.php?phpLang=es">2. Primera Instalación</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
