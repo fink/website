@@ -1,18 +1,18 @@
-<?xml version = '1.0' encoding = 'iso-8859-1'?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
-<document filename="index" lang="en" >
+<document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.4 2004/03/18 10:06:26 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.5 2004/03/24 01:56:46 alexkhansen Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
 The following older documents may offer a broader view:
-<link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>,
-<link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Usage</link>
+<link url="http://fink.sourceforge.net/doc/bundled/install.php">Installation</link>,
+<link url="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</link>
 and the ReadMe.rtf included in the binary distribution disk image.
 Also check out the
-<link url="http://fink.sourceforge.net/doc/" >documentation
+<link url="http://fink.sourceforge.net/doc/">documentation
 section</link> of the web site, it has some other useful documents
 beyond that.
 </p>
@@ -23,10 +23,10 @@ both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
   </preface>
-  <chapter filename="intro" >
+  <chapter filename="intro">
     <title>Introduction</title>
     <shorttitle>Introduction</shorttitle>
-    <section name="what" >
+    <section name="what">
       <title>What is Fink?</title>
       <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
@@ -35,7 +35,7 @@ It brings a wide range of free command-line and graphical software
 developed for Linux and similar operating systems to your Mac.
 </p>
     </section>
-    <section name="req" >
+    <section name="req">
       <title>Requirements</title>
       <p>
 In any case you will need:
@@ -87,16 +87,16 @@ I'm talking hours or even days here.
         </li>
       </ul>
     </section>
-    <section name="supported-os" >
+    <section name="supported-os">
       <title>Supported Systems</title>
       <p>
         <em>Mac OS X 10.3</em> is the operating system of choice for running
 Fink.
 All developers run it, and packages are tested on this system.
-It is considered &quot;fully supported and tested&quot;, although there may
+It is considered "fully supported and tested", although there may
 still be stray compile problems with single packages.
 </p>
-<p><em>Mac OS X 10.2</em> is still supported, though some newer packages may not have 10.2 versions available.</p>
+      <p><em>Mac OS X 10.2</em> is still supported, though some newer packages may not have 10.2 versions available.</p>
       <p>
         <em>Mac OS X 10.1</em> is still supported to some extent.
 You must run Fink 0.4.1 and no later versions.
@@ -110,16 +110,16 @@ You may run into problems with packages that use features specific to
 Mac OS X - affected packages include XFree86 and possibly esound.
 </p>
     </section>
-    <section name="src-vs-bin" >
+    <section name="src-vs-bin">
       <title>Source vs. Binary</title>
       <p>
-Software is written (&quot;developed&quot;) in human-readable programming
-languages; this form is called the &quot;source code&quot;.
+Software is written ("developed") in human-readable programming
+languages; this form is called the "source code".
 Before a computer can actually run a program, it must be transformed
 into low-level machine code instructions (unreadable by most humans).
-That process is called &quot;compiling&quot; and the resulting program is called
-&quot;executable&quot; or &quot;binary&quot;.
-(The process is also referred to as &quot;building&quot;, because it usually
+That process is called "compiling" and the resulting program is called
+"executable" or "binary".
+(The process is also referred to as "building", because it usually
 involves more steps than just compiling.)
 </p>
       <p>
@@ -130,7 +130,7 @@ to modify the program or even find out what it actually does when it's
 run.
 </p>
       <p>
-Not so with <link url="http://www.opensource.org/" >Open Source</link>
+Not so with <link url="http://www.opensource.org/">Open Source</link>
 software.
 As the name implies, the source code is open for anyone to see and
 modify.
@@ -140,10 +140,10 @@ program that can be run.
 </p>
       <p>
 Fink lets you choose between the two models.
-The &quot;source&quot; distribution will download the original source, adapt it
+The "source" distribution will download the original source, adapt it
 to Mac OS X and to Fink's policy, and compile it on your computer.
 That process is fully automated, but takes some time.
-The &quot;binary&quot; distribution on the other hand will download pre-compiled
+The "binary" distribution on the other hand will download pre-compiled
 packages from the Fink site and install those, saving you the time for
 compiling.
 It is actually possible to mix the two models at will.
@@ -151,7 +151,7 @@ The rest of this manual will show you how.
 </p>
     </section>
   </chapter>
-  <chapter filename="install" >
+  <chapter filename="install">
     <title>First Time Installation</title>
     <shorttitle>Install</shorttitle>
     <preface>
@@ -162,26 +162,26 @@ After that you must set up your shell environment to use the software
 installed by Fink.
 You only need to do this once; you can upgrade any Fink installation
 (starting with release 0.2.0) in place, without reinstalling.
-This is covered in the <xref chapter="upgrade" >Upgrading
+This is covered in the <xref chapter="upgrade">Upgrading
 chapter</xref>.
 </p>
       <p>
 Once you have the package management tools installed, you can use them
 to install more software.
-This is covered in the <xref chapter="packages" >Installing Packages
+This is covered in the <xref chapter="packages">Installing Packages
 chapter</xref>.
 </p>
     </preface>
-    <section name="bin" >
+    <section name="bin">
       <title>Installing the Binary Distribution</title>
       <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
 After downloading the disk image from the
-<link url="http://fink.sourceforge.net/download/bindist.php" >download page</link>
-(you may have to use your browser's &quot;Save Target as...&quot; or &quot;Download
-to Disk&quot; function), double-click it to mount it.
-Open the &quot;Fink 0.x.x Installer&quot; disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
+<link url="http://fink.sourceforge.net/download/bindist.php">download page</link>
+(you may have to use your browser's "Save Target as..." or "Download
+to Disk" function), double-click it to mount it.
+Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
 Inside you'll find some documentation and an installer package.
 Double-click the installer package and follow the instructions on
 screen.
@@ -194,17 +194,17 @@ pick your system volume (the one on which you installed Mac OS X).
 If you pick the wrong volume, the install will proceed, but Fink won't
 work afterwards.
 When the installer is finished, proceed with the
-<xref section="setup" >Setting Up Your Environment</xref> section.
+<xref section="setup">Setting Up Your Environment</xref> section.
 </p>
     </section>
-    <section name="src" >
+    <section name="src">
       <title>Installing the Source Distribution</title>
       <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <code>fink</code> package manager and its package
 descriptions and will download the source for packages on the fly.
 You can get it from the
-<link url="http://fink.sourceforge.net/download/srcdist.php" >download page</link>.
+<link url="http://fink.sourceforge.net/download/srcdist.php">download page</link>.
 It is important that you don't use StuffIt Expander to extract the tar
 archive.
 For some reason StuffIt still can't handle long file names.
@@ -256,10 +256,10 @@ manager, you first must have the package manager available.
 </p>
       <p>
 When the bootstrap is finished, proceed with the
-<xref section="setup" >Setting Up Your Environment</xref> section.
+<xref section="setup">Setting Up Your Environment</xref> section.
 </p>
     </section>
-    <section name="setup" >
+    <section name="setup">
       <title>Setting Up Your Environment</title>
       <p>
 To use the software installed in Fink's directory hierarchy, including
@@ -268,15 +268,17 @@ environment variable (and some others) accordingly.
 In most cases, you can do this via the command
 </p>
       <codeblock>open /sw/bin/pathsetup.command</codeblock>
-      <p>
-However, if that doesn't work for some reason, you can configure it
+      <p>, or for <code>fink-0.18.3</code> or <code>fink-0.19.2</code>, by running (exactly as shown below):
+</p>
+      <codeblock>/sw/bin/pathsetup.sh</codeblock>
+      <p>However, if that doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
 running the command:
 </p>
       <codeblock>echo $SHELL</codeblock>
       <p>
- If it says &quot;csh&quot; or &quot;tcsh&quot; in it, you are using the C shell.  If it is
+ If it says "csh" or "tcsh" in it, you are using the C shell.  If it is
  bash, zsh, sh, or something similar, you are likely running a variant
  of the bourne shell.
 </p>
@@ -299,7 +301,7 @@ pico .profile</codeblock>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
    can simply start typing the <code>. /sw/bin/init.sh</code> line.  It's
-   okay if there is a note that says &quot;New file&quot;.  Be sure that you pressed
+   okay if there is a note that says "New file".  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
   </p>
@@ -321,7 +323,7 @@ pico .cshrc</codeblock>
    You are now in a full-screen (well, full terminal window) text editor
    and can simply start typing the <code>source /sw/bin/init.csh</code>
    line.
-   It's okay if there is a note that says &quot;New file&quot;.
+   It's okay if there is a note that says "New file".
    Be sure that you pressed Return at least once after the line, then
    press Control-O, Return, Control-X to get out of the editor.
   </p>
@@ -367,13 +369,13 @@ qt package sets the QTDIR environment variable.
 </p>
       <p>
 Once your environment is set up, proceed to the
-<xref chapter="packages" >Installing Packages</xref> chapter to see how
+<xref chapter="packages">Installing Packages</xref> chapter to see how
 you can install some actually useful packages using the various
 package management tools included in Fink.
 </p>
     </section>
   </chapter>
-  <chapter filename="packages" >
+  <chapter filename="packages">
     <title>Installing Packages</title>
     <shorttitle>Packages</shorttitle>
     <preface>
@@ -385,13 +387,13 @@ Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
 </p>
     </preface>
-    <section name="bin-dselect" >
+    <section name="bin-dselect">
       <title>Installing Binary Packages with
 dselect</title>
       <p>
         <code>dselect</code> is a program that lets you browse the list of
 available packages and select which ones you want installed.
-It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
+It runs inside Terminal.app, but takes over the whole "screen" and
 uses simple keyboard navigation.
 Like the other package management tools, <code>dselect</code> requires
 root privileges, so you should use sudo (from an account with administrator privileges):
@@ -458,7 +460,7 @@ You do not need them, although they won't do harm.
       </ul>
       <p>
 You'll spend most of your time with dselect in the package browser,
-reachable through the &quot;[S]elect&quot; menu item.
+reachable through the "[S]elect" menu item.
 Before dselect shows you the package list, it presents you with an
 introductory help screen.
 You can press 'k' to get a full listing of keyboard commands, or just
@@ -476,10 +478,10 @@ alternative for a virtual package dependency), or press 'R'
 Both the sublists and the main package list are left by pressing
 Return.
 When you're happy with your selections, leave the main list and use
-the &quot;[I]nstall&quot; menu item to actually install the packages.
+the "[I]nstall" menu item to actually install the packages.
 </p>
     </section>
-    <section name="bin-apt" >
+    <section name="bin-apt">
       <title>Installing Binary Packages with
 apt-get</title>
       <p>
@@ -494,7 +496,7 @@ available packages with this command:
 </p>
       <codeblock>sudo apt-get update</codeblock>
       <p>
-Like the &quot;[U]pdate&quot; menu item in dselect, this doesn't update the
+Like the "[U]pdate" menu item in dselect, this doesn't update the
 actual files on your computer, just apt's list of available packages.
 To install a package, you just give apt-get the name, like this:
 </p>
@@ -509,19 +511,19 @@ Removing packages is just as easy:
       <p>
 <!-- [FIXME: using apt-cache to search for packages] -->      </p>
     </section>
-    <section name="bin-exceptions" >
+    <section name="bin-exceptions">
       <title>Installing Dependent Packages that are Unavailable in the Binary Distribution</title>
       <p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
       <codeblock>Sorry, but the following packages have unmet
 dependencies:
-foo: Depends: bar (>= version) but it is
+foo: Depends: bar (&gt;= version) but it is
 not installable
 E: Sorry, broken packages</codeblock>
       <p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
     </section>
-    <section name="src" >
+    <section name="src">
       <title>Installing Packages from Source</title>
-      <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <link url="http://connect.apple.com" >http://connect.apple.com</link>.</p>
+      <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <link url="http://connect.apple.com">http://connect.apple.com</link>.</p>
       <p>
 To get a list of packages that are available for installation from
 source, ask the <code>fink</code> tool:
@@ -533,33 +535,33 @@ installed, <code>i</code> for installed, <code>(i)</code> for
 installed but not the latest version), followed by the package name,
 the latest version, and a short description.
 You can ask for more information about a specific package using the
-&quot;describe&quot; command (&quot;info&quot; is an alias for this):
+"describe" command ("info" is an alias for this):
 </p>
       <codeblock>fink describe xmms</codeblock>
       <p>
 When you have found a package that you want to install, use the
-&quot;install&quot; command:
+"install" command:
 </p>
       <codeblock>fink install wget-ssl</codeblock>
       <p>
 The <code>fink</code> command will first check if all necessary
-prerequisites (&quot;dependencies&quot;) are present, and will ask you if it's
+prerequisites ("dependencies") are present, and will ask you if it's
 okay to install them if some are missing.
 Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
-<link url="http://fink.sourceforge.net/faq/" >FAQ</link>.
+<link url="http://fink.sourceforge.net/faq/">FAQ</link>.
 </p>
     </section>
     <section name="fink-commander">
       <title>Fink Commander</title>
       <p>Fink Commander is an Aqua interface to both <code>apt-get</code> and the <code>fink</code> tool.  The Binary menu lets you do operations on the binary distribution, and the Source menu does the same thing for the source distribution.</p>
-      <p>Fink Commander is included with the Fink binary installer.  To download it separately (e.g. if you've bootstrapped Fink from source), or for additional information, visit the <link url="http://finkcommander.sourceforge.net" >Fink Commander website</link>.</p>
+      <p>Fink Commander is included with the Fink binary installer.  To download it separately (e.g. if you've bootstrapped Fink from source), or for additional information, visit the <link url="http://finkcommander.sourceforge.net">Fink Commander website</link>.</p>
     </section>
     <section>
       <title>Available versions</title>
-      <p>When you want to install a package, you should first check the <link url="http://fink.sourceforge.net/pdb/index.php" >package database</link> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
+      <p>When you want to install a package, you should first check the <link url="http://fink.sourceforge.net/pdb/index.php">package database</link> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
         <li>
           <p>
@@ -567,26 +569,26 @@ If you run into errors during that process, please first check the
         </li>
         <li>
           <p>
-<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.2 or OS 10.3, under the current Fink release.  If you <xref chapter="upgrade" >upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.2 or OS 10.3, under the current Fink release.  If you <xref chapter="upgrade">upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
         </li>
         <li>
           <p>
-            <em>10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php" >CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <em>10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-<li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
-</li> 
+        <li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
+</li>
         <li>
           <p>
-            <em>10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable" >instructions</link> on how to install unstable packages.</p>
+            <em>10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-<li><em>10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+        <li><em>10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
       </ul>
     </section>
-    <section name="x11" >
+    <section name="x11">
       <title>Getting X11 Sorted Out</title>
       <p>Many of the packages that are available via Fink require the installation of some form of X11.  Because of this, one of the first things that is typically done is to choose an X11 implementation.</p>
       <p>
@@ -637,12 +639,12 @@ actual files alone.
       </ul>
       <p>
 For more information on installing and running X11, refer to the
-<link url="http://fink.sourceforge.net/doc/x11/" >X11 on Darwin
+<link url="http://fink.sourceforge.net/doc/x11/">X11 on Darwin
 and Mac OS X document</link>.
 </p>
     </section>
   </chapter>
-  <chapter filename="upgrade" >
+  <chapter filename="upgrade">
     <title>Upgrading Fink</title>
     <shorttitle>Upgrade</shorttitle>
     <preface>
@@ -651,7 +653,7 @@ This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
 </p>
     </preface>
-    <section name="bin" >
+    <section name="bin">
       <title>Upgrading using Binary Packages</title>
       <p>
 If you use the binary distribution exclusively, there is no separate
@@ -660,8 +662,8 @@ Just ask the tool of your choice to get the latest package listing
 from the server and let it update all packages.
 </p>
       <p>
-For dselect, it is sufficient to hit &quot;[U]pdate&quot;, then &quot;[I]nstall&quot;.
-Of course, you may want to run &quot;[S]elect&quot; in between to check the
+For dselect, it is sufficient to hit "[U]pdate", then "[I]nstall".
+Of course, you may want to run "[S]elect" in between to check the
 selections that were made and to find out about new packages.
 </p>
       <p>
@@ -669,14 +671,14 @@ For apt, run <code>apt-get update</code> to get the latest package
 list, then <code>apt-get upgrade</code> to update all packages that
 have new versions available.
 </p>
-<p>For Fink Commander, select Binary->Update descriptions to update the package list, and then Binary->Dist-Upgrade packages to update to new versions.</p>
+      <p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
       <p>
 For more information, especially about upgrading from Fink versions
 older than 0.3.0, see the
-<link url="http://fink.sourceforge.net/download/upgrade.php" >Upgrade Matrix</link>.
+<link url="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</link>.
 </p>
     </section>
-    <section name="src" >
+    <section name="src">
       <title>Upgrading the Source Distribution</title>
       <p>
 Upgrading is a bit more complicated if you use the source
@@ -700,14 +702,14 @@ are stored and managed.
 Using CVS has the advantage that it is updated continuously, but the disadvantage that there is a single CVS server for Fink, and it can be unreliable if there is a lot of traffic.  For this reason, it is recommended that general users go with rsync.  There are multiple mirrors available for rsync, and the only disadvantage is that package descriptions take an hour or so to migrate to the rsync mirrors after they've been added to CVS.
 </p>
       <p>(If you are having trouble upgrading a source installation, consult
-<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >these
+<link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
 special instructions</link>.)</p>
       <p>
 If you have a version of Fink older than 0.2.5, you must download the
 package descriptions manually.
-Visit the <link url="http://sourceforge.net/project/showfiles.php?group_id=17203" >download
+Visit the <link url="http://sourceforge.net/project/showfiles.php?group_id=17203">download
 area</link> and look for the latest packages-0.x.x.tar.gz tarball in
-the &quot;distribution&quot; module.
+the "distribution" module.
 Download it, then install it as follows:
 </p>
       <codeblock>tar -xzf packages-0.x.x.tar.gz
@@ -718,9 +720,9 @@ Once you have updated your package descriptions (no matter which way),
 you should update all packages at once with the command <code>fink
 update-all</code>.
 </p>
-<p>To update the source distribution using Fink Commander, select Source->Selfupdate to download new package information files, and then Source->Update-all to update your outdated packages.</p>
+      <p>To update the source distribution using Fink Commander, select Source-&gt;Selfupdate to download new package information files, and then Source-&gt;Update-all to update your outdated packages.</p>
     </section>
-    <section name="mix" >
+    <section name="mix">
       <title>Mixing Binaries and Source</title>
       <p>
 If you use precompiled binary packages for some packages and build
@@ -732,10 +734,9 @@ then use <code>fink selfupdate</code> and <code>fink update-all</code>
 to get the current package descriptions and to update the remaining
 packages.  If you are using Fink commander, then follow the <xref section="bin">binary</xref> instructions, followed by those for <xref section="src">source</xref>.
 </p>
-
     </section>
   </chapter>
-  <chapter filename="conf" >
+  <chapter filename="conf">
     <title>The Fink Configuration File</title>
     <shorttitle>fink.conf</shorttitle>
     <preface>
@@ -744,11 +745,11 @@ This chapter explains the settings available in the Fink configuration
 file (fink.conf) and how they influence the behaviour of Fink, specifically the <code>fink</code> command-line tool (i.e. working with the source distribution).
 </p>
     </preface>
-    <section name="about" >
+    <section name="about">
       <title>About fink.conf</title>
       <p>
 When Fink is initially installed it prompts you for the answers to some
-questions to set up your configuration file, such as which <xref section="mirrors" >mirrors</xref> you want to use for downloading files
+questions to set up your configuration file, such as which <xref section="mirrors">mirrors</xref> you want to use for downloading files
 and how to acquire super-user rights. You can re-run this process by
 calling the <code>fink configure</code> command. In order to set some
 options, you may need to edit your <em>fink.conf</em> file by hand. In
@@ -760,14 +761,14 @@ The <em>fink.conf</em> file is located at
 text editor. You will need super-user rights to edit it.
 </p>
     </section>
-    <section name="syntax" >
+    <section name="syntax">
       <title>fink.conf syntax</title>
       <p>
 Your fink.conf file consists of multiple lines, in the format:</p>
       <codeblock>OptionName: Value</codeblock>
       <p>Options are one per line, and the option name is separated from its
 value by a : and a single space. The contents of value depends on the
-option, but it is normally either a boolean (&quot;True&quot; or &quot;False&quot;), a
+option, but it is normally either a boolean ("True" or "False"), a
 string, or a list of strings delimited by a space. 
 For example:
 </p>
@@ -777,7 +778,7 @@ StringOption: Something
 ListOption: Option1 Option2 Option3
 </codeblock>
     </section>
-    <section name="required" >
+    <section name="required">
       <title>Required Settings</title>
       <p>
 Some of the settings in the <em>fink.conf</em> are mandatory. Without
@@ -796,7 +797,7 @@ changed it during the initial installation of Fink. You should
         </li>
       </ul>
     </section>
-    <section name="optional" >
+    <section name="optional">
       <title>Optional User Settings</title>
       <p>
 There are various optional settings which users can customize to change
@@ -827,8 +828,8 @@ unstable/main   - other unstable packages
           <p>
 You may also add your own trees in the <code>/sw/fink/dists</code>
 directory for your own purposes, but this is not necessary in most
-circumstances. The default trees are &quot;local/main local/bootstrap
-stable/main&quot;. This list should be kept in sync with the
+circumstances. The default trees are "local/main local/bootstrap
+stable/main". This list should be kept in sync with the
 <code>/sw/etc/apt/sources.list</code> file.
 </p>
         </li>
@@ -875,7 +876,7 @@ The default value is 3.
           <p>Fink caches its package description files in /sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not the package index needs to be updated unless this
-option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is not
+option is set to "True". It defaults to "False" and it is not
 recommended that you change it. If you do, you may need to manually run
 the <code>fink index</code> command to update the index.</p>
         </li>
@@ -889,7 +890,7 @@ Concurrent Version System (CVS) is not used to achieve this when set to
 selfupdate-cvs</code> command, so you should not need to change it
 manually.</p>
         </li>
-	<li>
+        <li>
 	  <p>
 	    <em>Buildpath:</em> path</p>
 	  <p>Fink needs to create several temporary directories for
@@ -903,7 +904,7 @@ directories.
 	</li>
       </ul>
     </section>
-    <section name="downloading" >
+    <section name="downloading">
       <title>Download Settings</title>
       <p>There are various settings which influence the way Fink downloads
 package data.</p>
@@ -911,7 +912,7 @@ package data.</p>
         <li>
           <p>
             <em>ProxyPassiveFTP:</em> boolean</p>
-          <p>This option makes Fink use &quot;passive&quot; mode for FTP downloads. Some
+          <p>This option makes Fink use "passive" mode for FTP downloads. Some
 FTP server or network configurations require this option to be set to
 <tt>True</tt>. It is recommended that you leave this option on at all
 times since active FTP is deprecated.</p>
@@ -946,7 +947,7 @@ time. The default value is <em>curl</em>.
         </li>
       </ul>
     </section>
-    <section name="mirrors" >
+    <section name="mirrors">
       <title>Mirror Settings</title>
       <p>Getting software from the Internet can be tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
@@ -995,15 +996,15 @@ documented above. When using the MasterFirst or MasterLast options, the user can
 to the Master (or non Master) set if a download fails. The options are:
 </p>
           <codeblock>
-MasterFirst - Search &quot;Master&quot; source mirrors first.
-MasterLast - Search &quot;Master&quot; source mirrors last.
-MasterNever - Never use &quot;Master&quot; source mirrors.
+MasterFirst - Search "Master" source mirrors first.
+MasterLast - Search "Master" source mirrors last.
+MasterNever - Never use "Master" source mirrors.
 ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
 </codeblock>
         </li>
       </ul>
     </section>
-    <section name="developer" >
+    <section name="developer">
       <title>Developer Settings</title>
       <p>Some options in the <em>fink.conf</em> are only useful to
 developers. We do not recommend that conventional Fink users modify
@@ -1028,10 +1029,10 @@ fill your hard-disk quickly!</em>
       </ul>
     </section>
   </chapter>
-  <chapter filename="usage" >
+  <chapter filename="usage">
     <title>Using the fink Tool from the Command Line</title>
     <shorttitle>fink Tool</shorttitle>
-    <section name="using" >
+    <section name="using">
       <title>Using the fink tool</title>
       <p>The <code>fink</code> tool uses several suffix commands to work on packages from the source distribution. 
 Some of them need at
@@ -1041,7 +1042,7 @@ qualified name with a version number (e.g. gimp-1.2.1) or with both version and 
 version and revision when they are not specified.  Others have different options.</p>
       <p>What follows is a list of the commands for the <code>fink</code> tool:</p>
     </section>
-    <section name="install" >
+    <section name="install">
       <title>install</title>
       <p>The install command is used to install packages. It downloads,
 configure, builds and installs the packages you name. It will also
@@ -1057,7 +1058,7 @@ Do you want to continue? [Y/n]</codeblock>
       <p>Aliases for the install command: update, enable, activate, use (most
 of these for historic reasons).</p>
     </section>
-    <section name="remove" >
+    <section name="remove">
       <title>remove</title>
       <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has some flaws: It only works on
 packages the <code>fink</code> tool knows about (i.e. where an .info file is present); and it
@@ -1070,13 +1071,13 @@ again. If you need the disk space, you can remove the .deb from the
 <filename>/sw/fink/dists</filename> tree.</p>
       <p>Aliases: disable, deactivate, unuse, delete.</p>
     </section>
-    <section name="update-all" >
+    <section name="update-all">
       <title>update-all</title>
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
       <codeblock>fink update-all</codeblock>
     </section>
-    <section name="list" >
+    <section name="list">
       <title>list</title>
       <p>
 This command produces a list of available packages, listing
@@ -1129,14 +1130,14 @@ fink list                 - list all packages
 fink list bash            - check if bash is available and what version.
 fink list --outdated      - list packages which are out of date
 fink list --section=kde   - list the packages in the kde section
-fink list &quot;gnome*&quot;         - list all packages that start with 'gnome'
+fink list "gnome*"         - list all packages that start with 'gnome'
 </codeblock>
       <p>
 The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
 </p>
     </section>
-    <section name="apropos" >
+    <section name="apropos">
       <title>apropos</title>
       <p>
 This command behaves almost identical to <code>fink list</code>. The most
@@ -1149,7 +1150,7 @@ fink apropos irc          - list all packages for which 'irc' occurs in the name
 fink apropos -s=kde irc   - the same as above, but restricted to packages from the kde section
 </codeblock>
     </section>
-    <section name="describe" >
+    <section name="describe">
       <title>describe</title>
       <p>
 This command displays a description of the package you name on the
@@ -1161,22 +1162,22 @@ description.
 Aliases: desc, description, info
 </p>
     </section>
-    <section name="fetch" >
+    <section name="fetch">
       <title>fetch</title>
       <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
     </section>
-    <section name="fetch-all" >
+    <section name="fetch-all">
       <title>fetch-all</title>
       <p>Downloads <em>all</em> package source files. Like fetch, this downloads the
 tarballs even when they were downloaded before.</p>
     </section>
-    <section name="fetch-missing" >
+    <section name="fetch-missing">
       <title>fetch-missing</title>
       <p>Downloads <em>all</em> missing package source files. This command will only download
 files that are not present on the system.</p>
     </section>
-    <section name="build" >
+    <section name="build">
       <title>build</title>
       <p>Builds a package, but does not install it. As usual, the source
 tarballs are downloaded if they can not be found. The result of this
@@ -1185,21 +1186,21 @@ install later with the install command. This command will do nothing
 if the .deb already exists. Note that dependencies are still
 <em>installed</em>, not just built.</p>
     </section>
-    <section name="rebuild" >
+    <section name="rebuild">
       <title>rebuild</title>
       <p>Builds a package (like the build command), but ignores and overwrites
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via <code>dpkg</code>. Very useful
 during package development.</p>
     </section>
-    <section name="reinstall" >
+    <section name="reinstall">
       <title>reinstall</title>
       <p>Same as install, but will install the package via <code>dpkg</code> even when it is
 already installed. You can use this when you accidentally deleted
 package files or changed configuration files and want to get the
 default settings back.</p>
     </section>
-    <section name="configure" >
+    <section name="configure">
       <title>configure</title>
       <p>
 Reruns the Fink configuration process.
@@ -1207,7 +1208,7 @@ This will let you change your mirror sites and proxy settings, among
 others.
 </p>
     </section>
-    <section name="selfupdate" >
+    <section name="selfupdate">
       <title>selfupdate</title>
       <p>
 	This command automates the process of upgrading to a new Fink
@@ -1219,14 +1220,14 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
     </section>
-    <section name="index" >
+    <section name="index">
       <title>index</title>
       <p>
    Rebuilds the package cache. You should not normally need to execute
    this manually, as <code>fink</code> should auto-detect when it needs to be updated.
 </p>
     </section>
-    <section name="validate" >
+    <section name="validate">
       <title>validate</title>
       <p>
    This command performs various checks on .info and .deb files. Package
@@ -1237,19 +1238,19 @@ others.
    Aliases: check
 </p>
     </section>
-    <section name="scanpackages" >
+    <section name="scanpackages">
       <title>scanpackages</title>
       <p>
    Calls dpkg-scanpackages(8) with the specified trees.
 </p>
     </section>
-    <section name="checksums" >
+    <section name="checksums">
       <title>checksums</title>
       <p>
    Validates the MD5 digest of all tarballs in <code>/sw/src</code>, where possible.
 </p>
     </section>
-    <section name="cleanup" >
+    <section name="cleanup">
       <title>cleanup</title>
       <p>
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
