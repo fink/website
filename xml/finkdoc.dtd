@@ -1,5 +1,5 @@
 <!ENTITY % block "codeblock | ol | p | ul" >
-<!ENTITY % inline "#PCDATA | code | em | filename | link | varlink | tt | quote | xref" >
+<!ENTITY % inline "#PCDATA | code | strong | em | filename | link | varlink | tt | quote | xref" >
 
 <!ENTITY fink_version "0.5.2" >
 
@@ -26,13 +26,14 @@
 
 
 <!-- Block elements -->
-<!ELEMENT codeblock ( #PCDATA | em )* >
+<!ELEMENT codeblock ( #PCDATA | em | strong )* >
 <!ELEMENT p ( %inline; )* >
 
 
 <!-- Inline -->
-<!ELEMENT code ( #PCDATA | em )* >
+<!ELEMENT code ( #PCDATA | em | strong )* >
 <!ELEMENT em ( #PCDATA ) >
+<!ELEMENT strong ( #PCDATA ) >
 <!ELEMENT filename ( #PCDATA ) >
 <!ELEMENT tt ( #PCDATA ) >
 <!ELEMENT quote ( #PCDATA ) >
@@ -57,7 +58,7 @@
 <!ELEMENT ol ( li+ ) >
 <!ELEMENT ul ( li+ ) >
 
-<!ELEMENT li ( %inline; | codeblock | p )* >
+<!ELEMENT li ( %inline; | codeblock | p | ol )* >
 
 <!ELEMENT itemtable ( item+ ) >
 <!ATTLIST itemtable labeld CDATA "Value" >

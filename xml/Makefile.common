@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.16 2003/07/10 11:09:49 dmrrsn Exp $
+# $Id: Makefile.common,v 1.17 2003/11/01 19:10:01 rangerrick Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -49,7 +49,7 @@ force: clean all
 # rendering to php-framed HTML for the website (multi-page)
 
 %.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE)
+	xmllint --noout --valid $(SOURCE) && \
 	xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(SOURCE)
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
@@ -58,7 +58,7 @@ force: clean all
 # rendering to pure HTML (monolithic)
 
 %.html.tmp: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE)
+	xmllint --noout --valid $(SOURCE) && \
 	xsltproc -o $(patsubst %.xml,%.html.tmp,$(SOURCE)) $(STYLESHEET_HTML) $(SOURCE)
 
 %.html: %.html.tmp
@@ -67,7 +67,7 @@ force: clean all
 # rendering to pure text (monolithic)
 
 %.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE)
+	xmllint --noout --valid $(SOURCE) && \
 	xsltproc -o $(patsubst %.xml,%.txt.tmp,$(SOURCE)) $(STYLESHEET_TEXT) $(SOURCE)
 
 %.txt: %.txt.tmp $(PROCESS_TEXT)

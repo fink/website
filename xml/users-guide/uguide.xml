@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.27 2003/07/06 00:12:01 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.28 2003/11/01 19:10:06 rangerrick Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -269,62 +269,94 @@ In most cases, you can do this via the command
 </p>
 <codeblock>open /sw/bin/pathsetup.command</codeblock>
 <p>
-However, if that doesn't work for some reason, try the following.
-If you use tcsh (the default on Mac OS X), add the following line to
-the file <filename>.cshrc</filename> in your home directory:
+However, if that doesn't work for some reason, you can configure it
+manually.  This will depend on the shell you are using, however.
+You can determine the shell you are using by opening a terminal and
+running the command:
 </p>
-<codeblock>source /sw/bin/init.csh</codeblock>
+<codeblock>echo $0</codeblock>
 <p>
-If you don't know how to add the line, run these commands:
+ If it says "csh" or "tcsh" in it, you are using the C shell.  If it is
+ bash, zsh, sh, or something similar, you are likely running a variant
+ of the bourne shell.
 </p>
-<codeblock>cd
+<ul>
+ <li>
+  <p><strong>Bourne Shell</strong> (default on Mac OS X 10.3 and later) </p>
+  <p>
+   If you use a Bourne style shell (e.g. sh, bash, zsh), add the following
+   lines to the file <code>.profile</code> in your home directory (or, if
+   you have an existing <code>.bash_profile</code> file, you should use that
+   instead):
+  </p>
+  <codeblock>source /sw/bin/init.sh</codeblock>
+  <p>
+   If you don't know how to add the line, run these commands:
+  </p>
+  <codeblock>cd
+pico .profile</codeblock>
+  <p>
+   You are now in a full-screen (well, full terminal window) text editor and
+   can simply start typing the <code>source /sw/bin/init.sh</code> line.  It's
+   okay if there is a note that says "New file".  Be sure that you pressed
+   Return at least once after the line, then press Control-O, Return,
+   Control-X to get out of the editor.
+  </p>
+ </li>
+ <li>
+  <p><strong>C Shell</strong> (default on Mac OS X 10.2 and earlier) </p>
+  <p>
+   If you use tcsh (the default on Mac OS X), add the following line to
+   the file <filename>.cshrc</filename> in your home directory:
+  </p>
+  <codeblock>source /sw/bin/init.csh</codeblock>
+  <p>
+   If you don't know how to add the line, run these commands:
+  </p>
+  <codeblock>cd
 pico .cshrc</codeblock>
-<p>
-You are now in a full-screen (well, full terminal window) text editor
-and can simply start typing the <code>source /sw/bin/init.csh</code>
-line.
-It's okay if there is a note that says &quot;New file&quot;.
-Be sure that you pressed Return at least once after the line, then
-press Control-O, Return, Control-X to get out of the editor.
-</p>
-<p>There are a couple of common situations where you may need to edit additional files:</p>
-<ol>
-<li>
-<p>You have a <code>~/.tcshrc</code>.</p>
-<p>Such a file occasionally gets created by third-party applications, or 
-you may have done it yourself.
-In any case what will happen is that <code>~/.tcshrc</code> gets read and 
-<code>~/.cshrc</code> is ignored.
-The recommended procedure is to edit <code>~/.tcshrc</code> in a similar 
-manner to how you edited
-<code>~/.cshrc</code> above, and add the following line at the end:</p>
-<codeblock>source ~/.cshrc</codeblock>
-<p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p>
-</li>
-<li>
-<p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
-<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p>
-<codeblock>mkdir ~/Library/init
-mkdir ~/Library/init/tcsh
-pico ~/library/init/tcsh/path</codeblock>
-<p>and put:</p>
-<codeblock>source ~/.cshrc</codeblock>
-<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p>
-</li>
-</ol>
-<p>
-Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
-windows), so you should also run this command in all Terminal windows
-that you opened before you edited the file.
-You'll also need to run <code>rehash</code> because tcsh caches the
-list of available commands internally.
-</p>
-<p>
-If you use a Bourne style shell (e.g. sh, bash, zsh), use
-<filename>/sw/bin/init.sh</filename> instead.
-The file to edit varies with the shell, although <filename>.profile</filename>
-should work for all Bourne style shells.
-</p>
+  <p>
+   You are now in a full-screen (well, full terminal window) text editor
+   and can simply start typing the <code>source /sw/bin/init.csh</code>
+   line.
+   It's okay if there is a note that says &quot;New file&quot;.
+   Be sure that you pressed Return at least once after the line, then
+   press Control-O, Return, Control-X to get out of the editor.
+  </p>
+  <p>There are a couple of common situations where you may need to edit additional files:</p>
+  <ol>
+  <li>
+  <p>You have a <code>~/.tcshrc</code>.</p>
+  <p>Such a file occasionally gets created by third-party applications, or 
+  you may have done it yourself.
+  In any case what will happen is that <code>~/.tcshrc</code> gets read and 
+  <code>~/.cshrc</code> is ignored.
+  The recommended procedure is to edit <code>~/.tcshrc</code> in a similar 
+  manner to how you edited
+  <code>~/.cshrc</code> above, and add the following line at the end:</p>
+  <codeblock>source ~/.cshrc</codeblock>
+  <p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p>
+  </li>
+  <li>
+  <p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
+  <p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p>
+  <codeblock>mkdir ~/Library/init
+  mkdir ~/Library/init/tcsh
+  pico ~/library/init/tcsh/path</codeblock>
+  <p>and put:</p>
+  <codeblock>source ~/.cshrc</codeblock>
+  <p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p>
+  </li>
+  </ol>
+  <p>
+  Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
+  windows), so you should also run this command in all Terminal windows
+  that you opened before you edited the file.
+  You'll also need to run <code>rehash</code> because tcsh caches the
+  list of available commands internally.
+  </p>
+ </li>
+</ul>
 <p>
 Note that the scripts also add <filename>/usr/X11R6/bin</filename> and
 <filename>/usr/X11R6/man</filename> to your path so you can use X11 when
