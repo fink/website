@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 04:39:28 $';
+$cvs_date = '$Date: 2004/04/21 04:59:49 $';
 
 include "header.inc";
 include "releases.inc";
@@ -41,6 +41,14 @@ if(param("sort"))
 	$sort = param("sort");
 else
 	$sort = 'maintainer';
+if(param("hidewhite"))
+	$hidewhite = param("hidewhite");
+	
+if(param("hidegreen"))
+	$hidegreen = param("hidegreen");
+	
+if(param("hidered"))
+	$hidered = param("hidered");
 	
 if(param("red"))
 	$op = 3;
@@ -90,7 +98,9 @@ if (!$rs) {
   print 'Sort: <SELECT name = sort>'.
   		'<option value=maintainer '. (strcmp($sort, "maintainer") ? '>' : 'selected>'). 'Maintainer'.
   		'<option value=name '. (strcmp($sort, "name") ? '>' : 'selected>'). 'Package Name</SELECT>';
-  
+    print "Hide: <input type=checkbox name=\"hidewhite\" ".($hidewhite ? 'checked>' : '>')."White".
+     	"<input type=checkbox name=\"hidegreen\" ".($hidegreen ? 'checked>' : '>')."Green".
+     	"<input type=checkbox name=\"hidered\" ".($hidered ? 'checked>' : '>')."Red";
 ?>  
 <input type="submit" value="Search">
 </form>
@@ -136,23 +146,26 @@ if (!$rs) {
 			# are - count > 0
 			if($count > 0) $hit = 1;
  		}
- 		
   		if($hit)
   		{
-#			 $desc = " - ".$row[descshort];
-#			if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
-			  $desc = "";  
-
-			$pkglist = $pkglist."<li>";			
 			if($row[moveflag] == 1) {
-				$pkglist = $pkglist."<div class=\"bgreen\">";
+				if($hidegreen)
+					continue;
+				$pkglist = $pkglist."<li><div class=\"bgreen\">";
 				$green = 1;
 				$red = 0;
 			}	elseif($row[moveflag] == 2) {
-				$pkglist = $pkglist."<div class=\"bred\">";
+				if($hidered)
+					continue;
+				$pkglist = $pkglist."<li><div class=\"bred\">";
 				$red = 1;
 				$green = 0;
+			} elseif ($hidewhite) {
+				continue;
+			} else {
+				$pkglist = $pkglist."<li>";	
 			}
+			$desc = "";  	
 			#Special case for 10.2-gcc3.3 to 10.3 move
 			if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
 			{
