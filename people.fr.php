@@ -1,7 +1,7 @@
 <?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/17 11:02:30 $';
+$cvs_date = '$Date: 2004/04/13 23:12:12 $';
 
 include "header.inc";
 ?>
@@ -64,9 +64,10 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 
 <h2>Support, traduction et équipe de documentation </h2>
 <ul>
-<li>Yoshihiko Baba (<i>baba</i>)</li> <!-- i18n and l10n -->
+<li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
-<li>Alexander Hansen</li> <!-- support work on mailing lists -->
+<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
+<li>Les <a href="./doc/multilingual/intro.php?phpLang=fr#organization"> traducteurs</a></li>
 </ul>
 
 <h2>Contributeurs occasionnels</h2>
