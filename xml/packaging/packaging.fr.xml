@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.7 2004/03/27 09:40:10 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.8 2004/03/27 10:08:26 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -371,26 +371,26 @@ Il est essentiel qu'un paquet n'installe aucun fichier en dehors du répertoire 
 <p>
 Il peut y avoir des exceptions quand on ne peut faire autrement, par exemple avec XFree86.
 Dans ce cas, le paquet doit tester l'existence de fichiers avant l'installation
-et refuser de s'installer si cela améne à écraser des fichiers déjà existants.
+et refuser de s'installer si cela amène à écraser des fichiers déjà existants.
 Le paquet doit s'assurer que tous les fichiers qu'il aura installés en dehors 
-du répertoire de Fink seront supprimés lorsque le paquet lui même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés en place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).
+du répertoire de Fink seront supprimés lorsque le paquet lui-même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés sur place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).
 </p>
 </section>
 
 <section name="sharedlibs"><title>Librairies partagées</title>
 <p>
-Fink a de nouvelles règles en ce qui concerne les librairies partagées, règles qui prennent effet à compter de Février 2002.
+Fink a de nouvelles règles en ce qui concerne les librairies partagées, règles qui prennent effet à compter de février 2002.
 Cette partie de la documentation donne des explications sur la version 4 de ces règles, qui coïncide avec la publication de la distribution 0.5.0 de Fink.
 Nous commencerons par un bref résumé, puis nous passerons à une revue de détails.
 </p><p>
 Tout paquet qui construit des librairies partagées et qui, soit (1) est placé  dans la branche stable, soit (2) est un nouveau paquet de Fink, doit gérer ses librairies partagées conformément aux règles de Fink. Ceci signifie :</p>
 <ul>
 <li>vérifier, à l'aide de <code>otool -L</code>, que le nom d'installation de chaque librairie, ses numéros de versions compatible et actuel sont corrects</li>
-<li>mettre les librairies partagées dans un paquet séparé (exception faite pour les liens de libfoo.dylib vers install_name), et inclure le champ <code>Shlibs</code> dans ce paquet</li>
+<li>mettre les librairies partagées dans un paquet séparé (exception faite pour les liens de libfoo.dylib vers nom d'installation), et inclure le champ <code>Shlibs</code> dans ce paquet</li>
 <li>mettre les headers et les liens finaux venant de libfoo.dylib dans un paquet caractérisé par <code>BuildDependsOnly: True</code>, et prévoir qu'aucun autre paquet ne dépendra de lui.</li>
 </ul>
 <p>
-Un mainteneur, qui a de bonnes raisons de dévier de ces règles et ne 
+Un mainteneur, qui a de bonnes raisons de s'écarter de ces règles et ne 
 scinde pas le paquet, devra expliquer pourquoi dans le champ DescPackaging.
 </p><p>
 Pour certains paquets, tout peut être fait avec un paquet principal et un paquet -shlibs ; dans d'autres cas, vous aurez besoin d'un troisième paquet. Le nouveau champ <code>SplitOff</code> facilite ce processus.

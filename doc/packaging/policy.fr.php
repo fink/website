@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Règles";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/26 01:13:46';
+$cvs_date = 'Date: 2004/03/27 10:08:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 include_once "header.inc";
@@ -74,61 +74,40 @@ auprès de l'auteur, autorisent la distribution du source et des binaires, mais 
 Utilisez ceci pour des paquets  de type commercial ( par exemple graticiels, partagiciels qui n'autorisent pas la libre redistribution du source ou des binaires.</li>
 
 <li><code>Public Domain</code> - pour des paquets qui sont dans le domaine public, c'est-à-dire que l'auteur a abandonné ses droits sur le code. Ces paquets n'ont aucune licence d'aucune sorte et tout un chacun peut en faire ce que bon lui semble.</li>
-
 </ul>
 
 
-
-
-<h2><a name="prefix">3.2 Base System Interference</a></h2>
+<h2><a name="prefix">3.2 Interférence avec le système de base</a></h2>
 <p>
-Fink is an add-on distribution that is installed in a directory
-separate from the base system.
-It is crucial that a package does not install files outside of Fink's
-directory.
+Fink est une distribution additionnelle qui est installée dans un répertoire distinct du système de base.
+Il est essentiel qu'un paquet n'installe aucun fichier en dehors du répertoire de Fink.
 </p>
 <p>
-Exceptions can be made when there is no other possibility, e.g. with
-XFree86.
-In this case the package must check for existing files before
-installation and refuse to install if it would overwrite existing
-files.
-The package must make sure that all files it installed outside of the
-Fink directory are deleted when the package is removed, or that they
-cause no harm if they are left there (i.e. they need to check binaries
-for existence before calling them and the like).
+Il peut y avoir des exceptions quand on ne peut faire autrement, par exemple avec XFree86.
+Dans ce cas, le paquet doit tester l'existence de fichiers avant l'installation
+et refuser de s'installer si cela amène à écraser des fichiers déjà existants.
+Le paquet doit s'assurer que tous les fichiers qu'il aura installés en dehors 
+du répertoire de Fink seront supprimés lorsque le paquet lui-même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés sur place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).
 </p>
 
 
-<h2><a name="sharedlibs">3.3 Shared Libraries</a></h2>
+<h2><a name="sharedlibs">3.3 Librairies partagées</a></h2>
 <p>
-Fink has a new policy about shared libraries, effective in February 2002.
-This section of the documentation discusses version 4
-of the policy, which coincides with the release of Fink's 0.5.0 distribution.
-We begin with a quick summary, and then discuss things in more detail.
+Fink a de nouvelles règles en ce qui concerne les librairies partagées, règles qui prennent effet à compter de février 2002.
+Cette partie de la documentation donne des explications sur la version 4 de ces règles, qui coïncide avec la publication de la distribution 0.5.0 de Fink.
+Nous commencerons par un bref résumé, puis nous passerons à une revue de détails.
 </p><p>
-Any package which builds shared libraries and is either (1) being put into
-  the stable tree, or (2) a new package in Fink, should treat its shared
-  libraries according to Fink's policy.  This means:</p>
+Tout paquet qui construit des librairies partagées et qui, soit (1) est placé  dans la branche stable, soit (2) est un nouveau paquet de Fink, doit gérer ses librairies partagées conformément aux règles de Fink. Ceci signifie :</p>
 <ul>
-<li>   verify, using <code>otool -L</code>, that 
-       the install_name of each library and
-       its compatibility and current version numbers are correct </li>
-<li>   put the shared libraries in a separate package (except for the
-       links from libfoo.dylib to the install_name), and include
-       the <code>Shlibs</code> field in that package</li>
-<li>   put the headers and the final links from libfoo.dylib into a package
-       which is classified as <code>BuildDependsOnly: True</code>, and plan
-        to have
-       no other package depend on this one.</li>
+<li>vérifier, à l'aide de <code>otool -L</code>, que le nom d'installation de chaque librairie, ses numéros de versions compatible et actuel sont corrects</li>
+<li>mettre les librairies partagées dans un paquet séparé (exception faite pour les liens de libfoo.dylib vers nom d'installation), et inclure le champ <code>Shlibs</code> dans ce paquet</li>
+<li>mettre les headers et les liens finaux venant de libfoo.dylib dans un paquet caractérisé par <code>BuildDependsOnly: True</code>, et prévoir qu'aucun autre paquet ne dépendra de lui.</li>
 </ul>
 <p>
-  A maintainer who has reasons to deviate from this policy and not split the
-  package should explain the reasons in the DescPackaging field.
+Un mainteneur, qui a de bonnes raisons de s'écarter de ces règles et ne 
+scinde pas le paquet, devra expliquer pourquoi dans le champ DescPackaging.
 </p><p>
-For some packages, everything can be accomplished with a main package and a
--shlibs package; in other cases you also need a third package.  The new
-<code>SplitOff</code> field actually makes this quite easy.
+Pour certains paquets, tout peut être fait avec un paquet principal et un paquet -shlibs ; dans d'autres cas, vous aurez besoin d'un troisième paquet. Le nouveau champ <code>SplitOff</code> facilite ce processus.
 </p><p>
 When three packages are needed, there are two different ways they could be
 named, depending on whether the libraries or the binaries
