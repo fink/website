@@ -264,7 +264,7 @@ build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <b>Only</b> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
-with mismatching versions. See the <a href="http://fink.sourceforge.net/darwin/libtool.php">libtool
+with mismatching versions. See the <a href="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
 page</a> for further information.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
