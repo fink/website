@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.20 2001/10/25 14:32:37 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.21 2001/10/28 07:57:01 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -452,7 +452,7 @@ You should remove the symlink you created, or at least point it at
 two-level namespace error.</p></question>
 <answer>
 <p>
-This can happen on Mac OS X 10.1. if you have installed XFree86
+This can happen on Mac OS X 10.1 if you have installed XFree86
 manually (i.e. you have system-xfree86) or if you have Xtools.
 Xaw3D uses the configuration files installed by XFree86 and fails if
 those have not been patched for Mac OS X 10.1.
@@ -560,11 +560,22 @@ start up?</p></question>
 <p>
 There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
 working.
-The actual bug (file descriptior passing doesn't work) is masked by
-another issue (ununual stack size limit), which was left as is to
+The actual bug (file descriptor passing doesn't work) is masked by
+another issue (unusual stack size limit), which was left as is to
 produce an error message when gnome-terminal is started (thus
 preventing even more confusion).
 It is expected that this will be fixed in Mac OS X 10.1.
+</p>
+</answer></faqentry>
+
+<faqentry name="xdarwin-start"><question><p>Help! When I start
+XDarwin, it immediately quits!</p></question>
+<answer>
+<p>
+Don't Panic.
+The Running X11 document now has an extensive <link
+url="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit">troubleshooting
+section</link> for this common problem.
 </p>
 </answer></faqentry>
 
