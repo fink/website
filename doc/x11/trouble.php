@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/31 10:16:26';
+$cvs_date = 'Date: 2001/10/31 16:05:18';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -125,6 +125,8 @@ To fix this, follow the directions below.
 
 <pre>Fatal server error:
 assert failed on line 454 of darwinKeyboard.c!</pre>
+<pre>Fatal server error:
+Could not get kernel keymapping! Load keymapping from file instead.</pre>
 <p>
 Class: Fatal.
 Changes Apple made in Mac OS X 10.1 broke the code in XFree86 that
@@ -209,6 +211,24 @@ your home directory (as recommended by the Fink instructions) should
 be sufficient.
 </p>
 
+<pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+_XSERVTransMakeAllCOTSServerListeners: server already running</pre>
+<pre>Fatal server error:
+Cannot establish any listening sockets - Make sure an X server isn't already
+running</pre>
+<p>
+Class: Fatal.
+This can happen when you accidentally run several instances of XDarwin
+at once,
+or maybe after an unclean shutdown (i.e. crash) of XDarwin.
+It might also be a file permission problem with the sockets for local
+connections.
+You can try to clean that up with <tt><nobr>rm -rf /tmp/.X11-unix</nobr></tt>.
+Restarting the computer also helps in most cases (Mac OS X
+automatically cleans up /tmp when it boots, and the network stack is
+reset).
+</p>
+
 <pre>Xlib: connection to ":0.0" refused by server
 Xlib: Client is not authorized to connect to Server</pre>
 <p>
@@ -226,7 +246,7 @@ file:
 rm .Xauthority
 touch .Xauthority</pre>
 
-<pre>more error messages still to come...</pre>
+
 
 <p>
 Another common cause for XFree86 startup failures is an incorrect
