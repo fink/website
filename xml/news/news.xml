@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.73 2003/10/23 18:37:45 uid104432 Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.74 2003/10/23 19:04:51 uid104432 Exp $</cvsid>
 
 
 <newsitem>
 	<date>2003-10-23</date>
 	<headline>Say hello to mirror numero uno</headline>
 		<body>
-	<p>You are too late. Russ Foster from <link url="http://www.jvds.com">JVDS</link>
+	<p>You are too late. Rus Foster from <link url="http://www.jvds.com">JVDS</link>
 	beat you all to it. He is the first one to provide us with ressources 
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
