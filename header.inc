@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.44 2002/04/19 13:07:41 fingolfin Exp $ */
+/* $Id: header.inc,v 1.45 2002/05/30 21:19:38 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -17,6 +17,7 @@ if (!$section)
 // main navigation box
 $home_navbox = array(
   "index.php", "Home",
+  "news/index.php", "News",
   "about.php", "About",
   "people.php", "Contributors",
   "links.php", "Links"
@@ -75,7 +76,7 @@ if (!$is_home)
 Hosted by <a href="http://sourceforge.net/"><img
 src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
 height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"></a>
-<span>
+</span>
 </td>
 </tr>
 <tr valign="top">
@@ -119,7 +120,7 @@ if (!$nonav) {
 
   // determine active page
   $active_page = -1;
-  for ($i = 0; $i < sizeof($navbox); $i += 2) {
+  for ($i = sizeof($navbox)-2; $i >= 0 ; $i -= 2) {
     if (ereg($navbox[$i]."$", $PHP_SELF)) {
       $active_page = $i;
       break;
@@ -237,6 +238,13 @@ function it_end() {
 ?>
 </table>
 <?
+}
+
+/* mis functions */
+function gray_line ()
+{
+	global $root;
+	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-" />';
 }
 
 ?>
