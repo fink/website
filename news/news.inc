@@ -47,7 +47,8 @@ have an old system-xfree86 package of any kind installed, please run the
 following command:
 </p>
 <p>
-<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; fink selfupdate; fink index</code>
+<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; \
+fink selfupdate; fink index</code>
 </p><p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.

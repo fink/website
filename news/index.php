@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/26 12:11:48';
+$cvs_date = 'Date: 2003/10/26 12:20:32';
 
 $metatags = '';
 
@@ -57,7 +57,8 @@ have an old system-xfree86 package of any kind installed, please run the
 following command:
 </p>
 <p>
-<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; fink selfupdate; fink index</code>
+<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; \
+fink selfupdate; fink index</code>
 </p><p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
