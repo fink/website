@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.41 2002/07/24 17:35:55 benh57 Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.42 2002/07/25 13:23:10 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -407,14 +407,19 @@ To fix it manually, edit the file
 <code>/sw/etc/apt/sources.list</code> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
 </p>
-<codeblock>deb http://fink.sourceforge.net/bindist relase main crypto
-deb http://fink.sourceforge.net/bindist current main crypto</codeblock>
+<codeblock>
+deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
+<p>
+(Or if you live in Europe, you can use <code>eu.dl.sourceforge.net</code>
+instead of <code>us.dl.sourceforge.net</code>)
+</p>
 <p>
 To fix it through dselect, run "[A]ccess" again, choose the "apt"
 method and enter the following info:
 </p>
 <p>
-URL: http://fink.sourceforge.net/bindist -
+URL: http://us.dl.sourceforge.net/fink/direct_download -
 Distribution: release -
 Components: main crypto
 </p>

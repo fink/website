@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2002/07/24 17:35:55';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/07/25 13:23:10';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -160,12 +160,16 @@ You can fix this manually or through dselect.
 To fix it manually, edit the file
 <tt><nobr>/sw/etc/apt/sources.list</nobr></tt> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
-</p><pre>deb http://fink.sourceforge.net/bindist relase main crypto
-deb http://fink.sourceforge.net/bindist current main crypto</pre><p>
+</p><pre>
+deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>
+(Or if you live in Europe, you can use <tt><nobr>eu.dl.sourceforge.net</nobr></tt>
+instead of <tt><nobr>us.dl.sourceforge.net</nobr></tt>)
+</p><p>
 To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
 </p><p>
-URL: http://fink.sourceforge.net/bindist -
+URL: http://us.dl.sourceforge.net/fink/direct_download -
 Distribution: release -
 Components: main crypto
 </p><p>

@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/17 19:59:48 $';
+$cvs_date = '$Date: 2002/07/25 13:23:10 $';
 
 include "header.inc";
 ?>
@@ -42,7 +42,7 @@ The procedure has three main steps:
 
 <li><p>Getting a decent apt package.
 Download the
-<a href="../bindist/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
+<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
 package.
 In a Terminal.app window, go to the folder where you downloaded the
 file and run this command:
@@ -85,9 +85,9 @@ The procedure has four main steps:
 
 <li><p>Getting decent apt and fink packages.
 Download the
-<a href="../bindist/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
+<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
 and the
-<a href="../bindist/dists/fink-0.4.0/main/binary-darwin-powerpc/base/fink_0.9.11-1_darwin-powerpc.deb">fink-0.9.11-1</a>
+<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/fink_0.9.11-1_darwin-powerpc.deb">fink-0.9.11-1</a>
 packages.
 (Yes, that version number is for real.
 The <tt>fink</tt> command in the fink package now has separate

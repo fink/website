@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/08 22:08:49 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/07/25 13:23:10 $';
 
 include "header.inc";
 ?>
@@ -17,18 +17,17 @@ download pre-compiled binary packages from this site with the dselect
 and apt-get tools.
 Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
+This is mainly due to legal reasons with the affected (missing) packages.
 </p>
 <p>
 <b>Status:</b>
 A binary installer for Fink 0.4.0a has been posted.
-The bulk of packages will be updated gradually over the next few
-days.
-<!-- 145 of 227 packages are available as binaries. -->
+The binary distribution is complete.
 </p>
 <ul>
 <li><a href="http://us.dl.sourceforge.net/fink/fink-0.4.0a-installer.dmg">Fink
 0.4.0a Binary Installer</a> - 8.4 MB, compressed .dmg disk image</li>
-<li><a href="../bindist/">Browse the Distribution Archive</a> - here
+<li><a href="http://us.dl.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
 <p>
