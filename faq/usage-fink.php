@@ -337,19 +337,18 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 <a name="error-nineteen">
 <div class="question"><p><b>Q3.21: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
 <div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
-other than English.  (This is a bug in Apple's Installer, that it doesn't
-just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
+other than English. (This is a bug in Apple's Installer, that it doesn't
+just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p></div>
 </a>
-
 <a name="dselect-garbage">
 <div class="question"><p><b>Q3.22: I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</b></p></div>
 <div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to entter the following command</p><pre>setenv TERM xterm-xfree86</pre><p>before you run <code>dselect</code>.</p></div>
 </a>
-
-<a name="perl-undefined-symbol"><div class="question"><p><b>Q3.23: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
+<a name="perl-undefined-symbol">
+<div class="question"><p><b>Q3.23: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
 <div class="answer"><p><b>A:</b> If you see an error sequence like the following:</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -360,7 +359,8 @@ _perl_eval_sv
 _perl_get_sv</pre><p>then what has probably happened is that you updated Perl to a new version and now <code>storable-pm</code> needs to be rebuilt.  You will have to have the Developer Tools for this.  Perform the following commands:</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
-fink selfupdate-cvs</pre></div></a>
+fink selfupdate-cvs</pre></div>
+</a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 

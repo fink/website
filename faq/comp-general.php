@@ -70,7 +70,6 @@ especially GCC's and the linker's, for more info.  It essentially has to
 do with whether missing symbols at runtime is considered a fatal error on 
 startup or not, for applications that use weak references.</p></div>
 </a>
-
 <a name="mv-failed">
 <div class="question"><p><b>Q4.7: What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</b></p></div>
 <div class="answer"><p><b>A:</b> It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
@@ -78,8 +77,21 @@ startup or not, for applications that use weak references.</p></div>
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
  No such file or directory
 ### execution of mv failed, exit code 1
-Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>libbar</code> somewhere further back in the output of your build attempt.</p></div></a>
-
+Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>libbar</code> somewhere further back in the output of your build attempt.</p></div>
+</a>
+<a name="node-exists">
+<div class="question"><p><b>Q4.8: I can't install a package | update because I get a message that a &quot;node&quot; already exists.</b></p></div>
+<div class="answer"><p><b>A:</b> These errors look something like this:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>This problem is that the dependency engine is confused, due to changes in some of the package info files.  To fix it:</p><ul>
+<li>
+<p>Remove the offending package by force, e. g.</p>
+<pre>sudo dpkg -r --force-all system-xfree86</pre>
+<p>for the example given above.</p>
+</li>
+<li>
+<p>Try again to install | upgrade.  At some point a &quot;virtual dependency&quot; prompt will come up that includes the package you just removed.  Select it, and it will be reinstalled during your build.</p>
+</li>
+</ul></div>
+</a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>
 
