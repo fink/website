@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 12:56:01 $';
+$cvs_date = '$Date: 2002/05/28 17:17:48 $';
 
 include "header.inc";
 ?>
@@ -93,6 +93,11 @@ screenshots:
       distribution that has been ported, there is a convenience package that
       will build everything for you.  Just run "<b><tt>fink install
       bundle-kde</tt></b>". </p> </li>
+     <li> <p><strong> Wait.  A long, long time. </strong></p>
+      <p> Seriously, building all of bundle-kde from scratch took over 24 hours.
+      This is not a small project to build -- if you really want to build from
+      source, be prepared to spend some time doing something other than using
+      your computer.  :) </p> </li>
     </ol>
    </p>
   </li>
