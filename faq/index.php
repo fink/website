@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/11/10 14:23:10';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/11/13 19:34:18';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -87,6 +87,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#perl-undefined-symbol">4.21 Why do I get a bunch of "dyld: perl undefined symbols" errors when I run Fink commands?</a></li>
 <li><a href="usage-fink.php#cant-upgrade">4.22 I can't seem to update Fink's version.</a></li>
 <li><a href="usage-fink.php#spaces-in-directory">4.23 Can I put Fink in a volume or directory with a space in its name?</a></li>
+<li><a href="usage-fink.php#xfree86-forced">4.24 Fink is forcing me to install XFree86, but I already have X11 from Apple installed (OS 10.3+).</a></li>
 </ul>
 <li><a href="comp-general.php"><b>5 Compile Problems - General</b></a></li>
 <ul>
@@ -150,7 +151,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x11-no-windowbar">8.11 I upgraded to Apple's X11 in Panther and now my window title bars are missing.</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.143 2003/11/10 14:23:10 rangerrick Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.144 2003/11/13 19:34:18 alexkhansen Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/11/10 14:23:10';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/11/13 19:34:18';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -325,6 +325,10 @@ fink selfupdate-cvs</pre></div>
 <a name="spaces-in-directory">
 <div class="question"><p><b>Q4.23: Can I put Fink in a volume or directory with a space in its name?</b></p></div>
 <div class="answer"><p><b>A:</b> We recommend against putting your Fink directory tree inside a directory with spaces in its name.  It's just not worth the hassle.</p></div>
+</a>
+<a name="xfree86-forced">
+<div class="question"><p><b>Q4.24: Fink is forcing me to install XFree86, but I already have X11 from Apple installed (OS 10.3+).</b></p></div>
+<div class="answer"><p><b>A:</b> For 10.3, Fink uses a virtual package to indicate the presence of Apple's X11.  This package requires the X11 SDK package to be present (from the Xcode CD).  Install it.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-general.php">5 Compile Problems - General</a></p>
