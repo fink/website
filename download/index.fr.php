@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 20:06:01 $';
+$cvs_date = '$Date: 2004/04/03 16:13:54 $';
 
 include "header.inc";
 ?>
@@ -28,8 +28,8 @@ include "../fink_version.inc";
 Téléchargez l'image disque de l'installeur :<br>
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Installeur binaire Fink
 <? print $fink_version; ?></a> - <? print $dmg_size; ?><br>
-(utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
-0.4.1</a>)
+(utilisateurs de la version 10.2 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-installer.dmg?download">Fink0.6.3</a>)<br>
+(utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a>)
 </p>
 </li>
 <li><p>
