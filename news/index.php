@@ -1,14 +1,20 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/12/10 16:07:43';
+$cvs_date = 'Date: 2002/12/11 13:55:38';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
+<span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
+  <p>The Fink team is aware of the shortcomings of the current
+  <b>Upgrade Matrix</b> page.  Please be patient as we construct
+  a new version of that page, whose existence will be announced
+  here.
+  </p>
+  <span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
   <p>
     Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
     release, and replaces 0.5.0 which was never officially released.) This

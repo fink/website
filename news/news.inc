@@ -1,4 +1,10 @@
-<span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
+<span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
+  <p>The Fink team is aware of the shortcomings of the current
+  <b>Upgrade Matrix</b> page.  Please be patient as we construct
+  a new version of that page, whose existence will be announced
+  here.
+  </p>
+  <span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
   <p>
     Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
     release, and replaces 0.5.0 which was never officially released.) This
@@ -23,20 +29,4 @@ xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
 the 10.2/unstable tree; to gain access to them, you may need to run 
 &quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
   </p>
-  <span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
-  <p>
-  Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
-once</b> on a given machine.  Due to an apparent bug in Apple's
-Installer.app program, attempting a second installation on the same
-machine can result in permissions being altered in the machine's root
-directory, in some cases leaving the machine in a non-bootable state.
-</p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
-than an &quot;Install&quot; button when installing Fink 0.4.1, <b>do not proceed
-any further!</b> </p>
-<p>A new version of the binary installer for Fink 0.4.1 became available
-on November 5.  The new version avoids
-the problem of the machine not booting, but even with the new version,
-users are advised to only &quot;Install&quot;,
-not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
-12582912 bytes, while the old version had a filesize of 10541112 bytes.)
-</p>
+  
