@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/12 13:44:49';
+$cvs_date = 'Date: 2004/03/15 23:58:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 include_once "header.inc";
@@ -106,23 +106,71 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
 <div class="question"><p><b>Q9.11: Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</b></p></div>
-<div class="answer"><p><b>A:</b> X11SDK を(再)インストールする必要があります。
-これはXcode CD に入っていて、デフォルトではインストール<b>されません</b>。</p><p>Xcode をインストールしたとしても、 X11SDK はデフォルトではインストールされません。
-Xcode のカスタムインストールをするか、 <code>Packages</code> フォルダ内の <code>X11SDK</code> pkg をダブルクリックします。</p><p>インストールは、 <code>fink-virtual-pkgs</code> を実行することで確認できます。
-<code>Package: system-xfree86</code> というセクションがあり、 <code>provides:</code> の行に <code>x11</code> がああることを確認できれば大丈夫です。</p><p>もしインストールが適切ではないようでしたら、最も安全な方法は、古い xfree86 や system-xfree86 を削除し、 Apple X11 と X11SDK を再インストールします。
-この時出る最初の行のエラーメッセージは無視できます:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>この後、 Panther の3枚目から X11 を、Xcode CD から X11SDK を再インストールします。</p><p>注記:  <code>fink-0.17.0</code> およびそれ以降では 、<code>system-xfree86</code> のバイナリインストールにX11SDK を必要としなくなりました。</p></div>
+<div class="answer"><p><b>A:</b> 二つの可能性があります。</p><ul>
+		<li><b>バイナリからのインストール:</b> 
+		お使いの <code>fink</code> パッケージのバージョンが 0.17.0 より前のものであれば
+		(Fink-0.6.2 インストーラに含まれていたものも)
+		fink を更新することで直ります。
+		即ち <pre>sudo apt-get update
+sudo apt-get install fink</pre></li>
+		<li><b>ソースからのインストール: </b>
+		まず <code>fink</code> を更新します。
+		<pre>fink selfupdate</pre>
+		次に、 X11SDK を (再) インストールします。
+		これは、 Xcode CD に入っていますが、デフォルトではインストール<b>されません</b>。
+		Xcode をインストールしても、 X11SDK はデフォルトではインストール<b>されません</b>。
+		Xcode のインストール時にカスタムを選択するか、<code>Packages</code> フォルダ内の
+		<code>X11SDK</code> pkg をダブルクリックします。</li>
+		</ul><p>どちらの場合でも、現在のインストールを確認するには、</p><pre>fink-virtual-pkgs</pre><p>とし、以下の行を探します。
+		<code>Package: system-xfree86 </code>と <code>Package: system-xfree86-shlibs</code> 
+		(さらに、 SDK をインストールした場合は <code>Package: system-xfree86-dev</code>) 
+		次に、 <code>Provides:</code> 行に
+		<code>x11 </code>と <code>x11-shlibs</code> (および
+		<code>x11-dev</code>) がそれぞれ存在することを確認します。</p><p>もし存在しないものがある場合、安全な直し方は、一旦全ての xfree86 と system-xfree86
+		を削除して、 Apple の X11 (と、ソースからの場合 X11SDK) を再インストールすることです。
+		この際、一行目に警告が出ることがありますが、無視して下さい:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 
+\ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg 
+\ /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>次に、 Panther CD から X11 (と Xcode CD から X11SDK)
+		を再インストールします。</p><p>注記: <code>system-xfree86</code> は、 <code>fink-0.17.0</code> 以降では
+		バイナリインストールに X11SDK を必要としなくなりました。</p><p>もし問題が解決されず、バージョンが
+		<code>fink-0.19.0</code> 以降であれば、以下を実行します</p><pre>fink-virtual-pkgs --debug</pre><p>これにより何か足りないものが判明します。</p><p>これより古いバージョンの  <code>fink</code> を使っている場合、
+		Perl スクリプト (Martin Costabel 提供) をダウンロードして実行することで同じ情報が得られます。</p><ul>
+		<li>入手先: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a></li>
+		<li>好きな場所に保存</li>
+		<li>実行: <pre>perl fink-x11-debug</pre></li>
+		</ul></div>
 </a>
 <a name="apple-x11-beta-wants-xfree86">
 <div class="question"><p><b>Q9.12: Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</b></p></div>
-<div class="answer"><p><b>A:</b> X11SDK を(再)インストールする必要があります。
-これは、 Apple X11 のベータ版をダウンロードした時に一緒にダウンロードしたはずです。
-</p><p>インストールは、 <code>fink-virtual-pkgs</code> を実行することで確認できます。
-<code>Package: system-xfree86</code> というセクションがあり、 <code>provides:</code> の行に <code>x11</code> がああることを確認できれば大丈夫です。</p><p>もしインストールが適切ではないようでしたら、最も安全な方法は、古い xfree86 や system-xfree86 を削除し、 Apple X11 と X11SDK を再インストールします。
-この時出る最初の行のエラーメッセージは無視できます:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>この後、 X11 と X11SDK を再インストールします。</p><p>注記:  <code>system-xfree86</code> のバイナリインストールは <code>fink-0.17.0</code> およびそれ以降では X11SDK を必要としません。</p></div>
+<div class="answer"><p><b>A:</b> 二つの可能性があります。</p><ul>
+		<li><b>バイナリからのインストール:</b> 
+		お使いの <code>fink</code> パッケージのバージョンが 0.17.0 より前のものであれば
+		(Fink-0.6.2 インストーラに含まれていたものも)
+		fink を更新することで直ります。
+		即ち <pre>sudo apt-get update
+sudo apt-get install fink</pre></li>
+		<li><b>ソースからのインストール: </b>
+		まず <code>fink</code> を更新します。
+		<pre>fink selfupdate</pre>
+		次に、 X11SDK を (再) インストールします。
+		これは、ベータ版の Apple X11 をダウンロードした際に一緒にダウンロードしたものです。</li>
+		</ul><p>どちらの場合でも、現在のインストールを確認するには、</p><pre>fink-virtual-pkgs</pre><p>とし、以下の行を探します。
+		<code>Package: system-xfree86 </code>と <code>Package: system-xfree86-shlibs</code> 
+		(さらに、 SDK をインストールした場合は <code>Package: system-xfree86-dev</code>) 
+		次に、 <code>Provides:</code> 行に
+		<code>x11 </code>と <code>x11-shlibs</code> (および
+		<code>x11-dev</code>) がそれぞれ存在することを確認します。</p><p>もし存在しないものがある場合、安全な直し方は、一旦全ての xfree86 と system-xfree86
+		を削除して、 Apple の X11 (と、ソースからの場合 X11SDK) を再インストールすることです。
+		この際、一行目に警告が出ることがありますが、無視して下さい:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 
+\ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg 
+\ /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>次に、 X11 (必要があれば X11SDK も) を再インストールします。</p><p>注記: <code>system-xfree86</code> は、 <code>fink-0.17.0</code> 以降では
+		バイナリインストールに X11SDK を必要としなくなりました。</p><p>もし問題が解決されず、バージョンが
+		<code>fink-0.19.0</code> 以降であれば、以下を実行します</p><pre>fink-virtual-pkgs --debug</pre><p>これにより何か足りないものが判明します。</p><p>これより古いバージョンの  <code>fink</code> を使っている場合、
+		Perl スクリプト (Martin Costabel 提供) をダウンロードして実行することで同じ情報が得られます。</p><ul>
+		<li>入手先: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a></li>
+		<li>好きな場所に保存</li>
+		<li>実行: <pre>perl fink-x11-debug</pre></li>
+		</ul></div>
 </a>
 
 

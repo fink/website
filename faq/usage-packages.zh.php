@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/12 15:06:20';
+$cvs_date = 'Date: 2004/03/15 23:03:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 include_once "header.inc";
@@ -95,17 +95,52 @@ exec gnome-session</pre></div>
     </a>
     <a name="apple-x11-wants-xfree86">
       <div class="question"><p><b>Q9.11: 我在 Panther 中安装了苹果的 X11，但 Fink 还要我安装 xfree86。</b></p></div>
-      <div class="answer"><p><b>A:</b> 你需要（重）安装 X11SDK，它在 Xcode CD 上，它<b>不会</b>默认安装。</p><p>即使你安装了 XCode，X11SDK 也<b>不会</b>默认安装。它只能作为 Xcode 的一个定制安装，或者双击 <code>Packages</code> 文件夹里面的 <code>X11SDK</code> pkg 文件进行安装。</p><p>你可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 部分存在和 <code>provides:</code> 一行包括 <code>x11</code>。
-        </p><p>如果你看不到这些东西都正确安装，最安全的办法是删除所有旧的 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会在第一行看到警告信息，你可以忽略它：</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+      <div class="answer"><p><b>A:</b> 需要考虑两种可能性。</p><ul>
+      	<li><b>如果你从二进制包安装：</b>
+      	如果你运行的是一个早于 0.17.0 的 fink 软件包（就好象那些和 Fink-0.6.2 安装程序一起提供的），那么升级 fink 可以马上解决你的问题。例如：
+      	通过
+<pre>sudo apt-get update
+sudo apt-get install fink</pre>
+			命令。</li>
+			<li><b>如果你是通过源码安装：</b>
+			你首先应该更新 fink，例如：
+			通过
+			<pre>fink selfupdate</pre>
+        然后你需要（重）安装 X11SDK，它在 Xcode CD 上，它<b>不会</b>默认安装。
+        即使你安装了 XCode，X11SDK 也<b>不会</b>默认安装。它只能作为 Xcode 的一个定制安装，或者双击 <code>Packages</code> 文件夹里面的 <code>X11SDK</code> pkg 文件进行安装。</li>
+      </ul><p>对于这两种情况，你都可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 和 <code>Package: system-xfree86-shlibs</code> 部分存在(如果你安装了 SDK，还应该包括 <code>Package: system-xfree86-dev</code>）和 <code>provides:</code> 行中相应包括 <code>x11</code> 和 <code>x11-shlibs</code>（<code>x11-dev</code>）。
+        </p><p>如果你看不到这些东西都正确安装，最安全的办法是删除所有旧的 xfree86 或 system-xfree86，并重新安装苹果的 X11 （以及 X11SDK，如果你是计划从源码安装的话）。你也许会在第一行看到警告信息，你可以忽略它：</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>然后，从 Panther 的第三张 CD 安装 X11，以及从 Xcode CD 中安装 X11SDK 。</p><p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p></div>
+/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>然后，从 Panther 的第三张 CD 安装 X11，以及从 Xcode CD 中安装 X11SDK 。</p><p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p><p>如果还有问题，而你又是运行
+        <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p><pre>fink-virtual-pkgs --debug</pre><p>来获取还缺少什么东西的信息。</p><p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p><ul>
+          <li>你可以在：<a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>下载。</li>
+          <li>把它保存在你喜欢的位置。</li>
+          <li>通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
+        </ul></div>
     </a>
     <a name="apple-x11-beta-wants-xfree86">
       <div class="question"><p><b>Q9.12: 我安装了苹果的 X11 以及 10.2-gcc3.3 版本的 Fink，但 Fink 仍然要求我安装 xfree86。</b></p></div>
-      <div class="answer"><p><b>A:</b> 你需要（重）安装 X11SDK，你应该在下载 Beta 版苹果的 X11 的同时下载得到。</p><p>你可以用 <code>fink-virtual-pkgs</code> 来检查你的安装，你应该查看 <code>Package: system-xfree86</code> 部分在不在，以及 <code>provides:</code> 一行有没有包括 <code>x11</code>。
-        </p><p>如果你没有看到全部东西都正确安装，最安全的修复这个错误的办法是删除全部 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会看到第一行产生警告信息，你可以忽略它：</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+      <div class="answer"><p><b>A:</b> 需要考虑两种可能性。</p><ul>
+      	<li><b>如果你从二进制包安装：</b>
+      	如果你运行的是一个早于 0.17.0 的 fink 软件包（就好象那些和 Fink-0.6.2 安装程序一起提供的），那么升级 fink 可以马上解决你的问题。例如：
+      	通过
+<pre>sudo apt-get update
+sudo apt-get install fink</pre>
+			命令。</li>
+			<li><b>如果你是通过源码安装：</b>
+			你首先应该更新 fink，例如：
+			通过
+			<pre>fink selfupdate</pre>
+        然后你需要（重）安装 X11SDK，你应该在下载 Beta 版苹果的 X11 的同时下载得到。</li>
+        </ul><p>对于这两种情况，你都可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 和 <code>Package: system-xfree86-shlibs</code> 部分存在(如果你安装了 SDK，还应该包括 <code>Package: system-xfree86-dev</code>）和 <code>provides:</code> 行中相应包括 <code>x11</code> 和 <code>x11-shlibs</code>（<code>x11-dev</code>）。
+        </p><p>如果你没有看到全部东西都正确安装，最安全的修复这个错误的办法是删除全部 xfree86 或 system-xfree86，并重新安装苹果的 X11 （和 X11SDK，如果你是从源码安装的话）。你也许会看到第一行产生警告信息，你可以忽略它：</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>然后，重新安装 X11 和 X11SDK。</p><p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p></div>
+/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>然后，重新安装 X11 （和 X11SDK，如果有需要的话）。</p><p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p><p>如果还有问题，而你又是运行
+        <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p><pre>fink-virtual-pkgs --debug</pre><p>来获取还缺少什么东西的信息。</p><p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p><ul>
+          <li>你可以在：<a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>下载。</li>
+          <li>把它保存在你喜欢的位置。</li>
+          <li>通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
+        </ul></div>
     </a>
   
 

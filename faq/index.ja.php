@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/12 13:44:49';
+$cvs_date = 'Date: 2004/03/15 23:58:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 include_once "header.inc";
@@ -9,8 +9,8 @@ include_once "header.inc";
 
 <h1>The Fink F.A.Q.</h1>
 <p>このページは Fink の FAQ です。
-他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
-質疑応答の形をとった仮ドキュメントといえるでしょう。</p>
+質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
+質問と回答の形をとった仮のドキュメントとなっています。</p>
 <p>FAQは節毎にページがわかれています。
 下記の目次にすべての質問があります。
 それぞれリンクされていますので、辿っていってください。</p>
@@ -48,6 +48,6 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
 "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"。
 </a></li><li><a href="usage-packages.php?phpLang=ja#xterm-error">9.5 xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</a></li><li><a href="usage-packages.php?phpLang=ja#libXmuu">9.6 XFree86 を起動しようとすると、下記のエラーのひとつがでます。
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
-または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.9 2004/03/12 13:44:49 babayoshihiko Exp $-->
+または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.10 2004/03/15 23:58:46 babayoshihiko Exp $-->
 
 <? include_once "footer.inc"; ?>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/12 13:44:49';
+$cvs_date = 'Date: 2004/03/15 23:58:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 include_once "header.inc";
@@ -235,7 +235,8 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 これは直すことができます。
 エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
 </p><pre>dpkg --contents <b>full-path-to-debfile</b>
-</pre><p>例えば</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
+</pre><p>例えば</p><pre>dpkg --contents
+        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p><p>バイナリインストールを試みている場合、あるいはインストールしたバージョンと現在のバイナリバージョンが一致する場合
 (例えば、 <a href="http://fink.sourceforge.net/pdb/index.php">パッケージデータベース</a> で調べたなら)、
@@ -249,10 +250,12 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </p><pre>dpkg -c <b>full-path-to-debfile</b>
   | awk '{if ($6 == "./"){ print "/."; } else if (substr($6, length($6), 1) == "/")
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
-  | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/")
-   {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
+  &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c
+        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk '{if
+        ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) ==
+        "/") {print substr($6, 2, length($6) - 2); } else { print substr($6,
+        2, length($6) - 1);}}' &gt;
+        /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
 </a>
 <a name="error-nineteen">
 <div class="question"><p><b>Q5.19: Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</b></p></div>
@@ -272,14 +275,9 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </a>
 <a name="perl-undefined-symbol">
 <div class="question"><p><b>Q5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols:
-_Perl_safefree
-_Perl_safemalloc
-_Perl_saferealloc
-_Perl_sv_2pv
-_perl_call_sv
-_perl_eval_sv
-_perl_get_sv</pre><p>がでる場合、 Perl を アップデートしていて、 <code>storable-pm</code> をアップグレードする必要があります。
+<div class="answer"><p><b>A:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: _Perl_safefree
+        _Perl_safemalloc _Perl_saferealloc _Perl_sv_2pv _perl_call_sv
+        _perl_eval_sv _perl_get_sv</pre><p>がでる場合、 Perl を アップデートしていて、 <code>storable-pm</code> をアップグレードする必要があります。
 Fink をアップグレードしてください。
 インストール時に、 <code>perl-core</code> と <code>system-perl</code> のどちらをインストールするか聞かれるので、後者を選択してください。
 さらに、 <code>storable-pm</code> もアップデートしてください。</p><p>OS 10.1.x では、次のコマンドを実行します (Developer Tools が必要です):</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp

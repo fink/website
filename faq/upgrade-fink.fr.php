@@ -1,32 +1,21 @@
 <?
-$title = "Q.F.P. - Upgrading Fink";
+$title = "Q.F.P. - Mise à jour de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/14 17:01:37';
+$cvs_date = 'Date: 2004/03/17 00:35:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-fink.php?phpLang=fr" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=fr" title="Miroirs de Fink">';
 
 include_once "header.inc";
 ?>
 
-<h1>Q.F.P. - 4 Upgrading Fink (version-specific troubleshooting)</h1>
-
-
-<a name="gcc-0.16.0">
-<div class="question"><p><b>Q4.1: I just upgraded to 0.16.0 and it tells me "Your version of the
-gcc 3.3 compiler is out of date." What do I do?</b></p></div>
-<div class="answer"><p><b>A:</b> As of the release of Panther, Fink has been updated to understand
-the newer gcc 3.3 compiler. In order to be able to support users
-on both 10.2 (Jaguar) and 10.3 (Panther), we are requiring all users
-to install the latest gcc 3.3 update (August 2003 Updater, and the
-Panther XCode tools, respectively). You will get this warning if
-you installed the earlier XCode beta updater for Mac OS X 10.2's
-December 2002 developer tools. If you're on 10.2, the command:
-</p><pre>gcc --version</pre><p>...should tell you what version you have. As of October 24th,
-2003, we require build 1493 or higher.</p><p>10.2 users can download the August 2003 Updater from <a href="http://developer.apple.com/">Apple Developer Connection</a>
-(free registration required).</p><p>10.3 users should upgrade to a Panther-compatible developer tools
-release (i.e. XCode). A CD with XCode should have been provided
-with your Panther media.</p></div>
-</a>
-<p align="right">
+<h1>Q.F.P. - 4 Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)</h1>
+    
+    
+    <a name="gcc-0.16.0">
+      <div class="question"><p><b>Q4.1: Je viens de passer à la version 0.16.0 et fink me dit que ma version du compilateur gcc 3.3 est obsolète. Que faire ?</b></p></div>
+      <div class="answer"><p><b>A:</b> À partir de Panther, Fink a été mis à jour pour fonctionner avec le nouveau compilateur gcc 3.3. Pour pouvoir gérer à la fois 10.2 (Jaguar) et 10.3 (Panther), il faut que tous les utilisateurs installent la dernière mise à jour de gcc 3.3 (mise à jour d'août 2003 pour les utilisateurs de Jaguar, outils XCode de Panther pour les utilisateurs de Panther). Ce message d'alerte apparaîtra si vous avez installé la béta précédente de XCode correspondant aux Developer Tools de décembre 2002 pour Max OS X 10.2. Si vous utilisez 10.2, la commande :</p><pre>gcc --version</pre><p>vous dira quelle version est installée sur votre système. À partir du 24 octobre 2003, il faut avoir le build 1493 ou supérieur.</p><p>Les utilisateurs de 10.2 peuvent télécharger la mise à jour d'août 2003 sur <a href="http://developer.apple.com/">Apple Developer Connection</a>
+(enregistrement gratuit obligatoire).</p><p>Les utilisateurs de 10.3 doivent installer les outils de développement compatibles avec Panther (c'est-à-dire XCode). Vous devez trouver un CD contenant XCode parmi ceux reçus avec Panther.</p></div>
+    </a>
+  <p align="right">
 Next: <a href="usage-fink.php?phpLang=fr">5 Installing, Using and Maintaining Fink</a></p>
 
 <? include_once "footer.inc"; ?>

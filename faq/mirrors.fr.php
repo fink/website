@@ -1,8 +1,8 @@
 <?
 $title = "Q.F.P. - Miroirs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/14 17:01:37';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
+$cvs_date = 'Date: 2004/03/17 00:35:31';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 include_once "header.inc";
 ?>
@@ -49,6 +49,6 @@ include_once "header.inc";
 </a>
 
 <p align="right">
-Next: <a href="upgrade-fink.php?phpLang=fr">4 Upgrading Fink (version-specific troubleshooting)</a></p>
+Next: <a href="upgrade-fink.php?phpLang=fr">4 Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)</a></p>
 
 <? include_once "footer.inc"; ?>
