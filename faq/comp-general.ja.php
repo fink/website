@@ -195,7 +195,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 <code>gcc2</code> は gcc-2.95 のバーチャルパッケージです。
-gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p></div>
+gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p><p><b>注記:</b> gcc2.95 and/or gcc3.1 は gcc3.3 とコンフリクトしません。両方インストールすることもできます。</p></div>
 </a>
 <a name="system-java">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
