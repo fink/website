@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2004/02/20 15:00:56 $';
+$cvs_date = '$Date: 2004/02/26 00:14:54 $';
 
 include "header.inc";
 ?>
@@ -60,7 +60,7 @@ particularly
 Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Tools->index</em>.
 </p>
 </p></li>
-<li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release  After you do this you can install other packages.  There are several ways to do this:
+<li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release.  After you do this you can install other packages.  There are several ways to do this:
 <ul>
 <li>
 <p>Use the included Fink Commander to select and install packages. Fink Commander provides an easy to use GUI for Fink. This is the recommended method for new users, or users who are not comfortable with the command line.  Fink Commander has Binary and Source menus.  You should install from binaries if you don't have the Developer Tools installed, or don't want to build packages yourself.</p>
@@ -84,7 +84,7 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 </ul>
 </li>
 <li>
-<p>Use apt-get. Apt-get will fetch and install binary packages for you, saving compiling time, You should either use this method or the Fink Commander binary method (above) if you don't have the Developer Tools installed.</p>
+<p>Use apt-get. Apt-get will fetch and install binary packages for you, saving compiling time.  You should either use this method or the Fink Commander binary method (above) if you don't have the Developer Tools installed.</p>
 <p>To update <code>fink</code> open a Terminal.app window and type <code> sudo apt-get update ; sudo apt-get install fink</code></p>
 <p>Once you've updated <code>fink</code>, you can install other packages, using the same syntax, e.g <code>sudo apt-get install gimp</code> to install the Gimp.  Note, however, that not all fink packages are in binary form.</p>
 </li>
