@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/07 00:35:07';
+$cvs_date = 'Date: 2003/09/19 00:00:27';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -13,7 +13,7 @@ include "header.inc";
 
 <a name="libgtop">
 <div class="question"><p><b>Q5.1: libgtop fails to build with errors involving sed.</b></p></div>
-<div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>) does something that writes to the terminal, e.g &quot;<code>echo Hello</code>&quot; or <code>xttitle</code>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the following:</p><pre>
+<div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>) does something that writes to the terminal, e.g "<code>echo Hello</code>" or <code>xttitle</code>.  To get rid of the problem, the easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the following:</p><pre>
 if ( $?prompt) then
 echo Hello
 endif
@@ -27,7 +27,7 @@ endif
 <code>sudo dpkg --remove --force-depends system-xfree86</code>
 </p><p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to step 3.</p><p>2. Manually remove all of XFree86.  This can be done with</p><p>
 <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</code>
-</p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>3. To get XFree86-4.2.1, Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p><p> -or-</p><p>3a. To get XFree86-4.3.0, install fink's <code>xfree86</code> package, with &quot;fink install xfree86&quot;--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
+</p><p>(the last file will only be present if you had Apple's X11 installed).</p><p>3. To get XFree86-4.2.1, Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p><p> -or-</p><p>3a. To get XFree86-4.3.0, install fink's <code>xfree86</code> package, with "fink install xfree86"--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
 </a>
 <a name="change-thread-nothread">
 <div class="question"><p><b>Q5.3: How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</b></p></div>
@@ -41,11 +41,11 @@ sudo dpkg -r --force-depends xfree86-base-threaded
 sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
-	</pre><p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <code>Source Menu</code> use &quot;<code>Force Remove</code>.&quot;</p><p>If you are using system-xfree86, see the previous question for removing it.</p><p>Install the version of xfree86 you want: </p><p>
+	</pre><p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <code>Source Menu</code> use "<code>Force Remove</code>."</p><p>If you are using system-xfree86, see the previous question for removing it.</p><p>Install the version of xfree86 you want: </p><p>
 <code>xfree86-base</code> and <code>xfree86-rootless</code>
 </p><p>
 <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code>
-</p><p>by the usual means: &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p></div>
+</p><p>by the usual means: "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p></div>
 </a>
 <a name="apple-x11">
 <div class="question"><p><b>Q5.4: I've installed the Apple X11 package, but system-xfree86 won't install.</b></p></div>
@@ -61,7 +61,7 @@ package.
 version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <code>system-xfree86-4.2-11</code> or later.</p></div>
 </a>
 <a name="cctools">
-<div class="question"><p><b>Q5.5: &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</b></p></div>
+<div class="question"><p><b>Q5.5: "When I try to install KDE, I get the following message:  'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
 <div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <code>gcc 3.3</code> update).</p></div>
 </a>
 <a name="system-xfree86-upgrade">

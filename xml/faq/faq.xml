@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.130 2003/09/07 00:35:07 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.131 2003/09/19 00:00:27 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1186,6 +1186,20 @@ options.
 </ul>
 <p>There are other options, as well.  There is a more extensive treatment in the <link url="http://fink.sourceforge.net/doc/x11/index.php" >Running X11 document</link>.</p>
 </answer>
+</faqentry>
+<faqentry name="no-display" >
+<question>
+<p>When I try to run an application, I get a message that says &quot;cannot open display:&quot;.  What do I need to do?</p></question>
+<answer>
+<p>This error means that the system isn't connecting with your Xwindows display.  Make sure you do the following:</p>
+<p>1. Start Xwindows (Apple's X11, XFree86, ...).</p>
+<p>2. Make sure your DISPLAY enviroment variable is set correctly.  If you are using the default setup for Xwindows, you can do this with</p>
+<codeblock>setenv DISPLAY :0</codeblock>
+<p>if you are running <code>tcsh</code>, or</p>
+<codeblock>export DISPLAY=:0</codeblock>
+<p>if you're running <code>bash</code>.</p>
+</answer>
+
 </faqentry>
 </chapter>
 <chapter filename="usage-packages" >
