@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.6 2004/06/24 10:29:49 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.7 2004/06/24 14:50:39 ogorman Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -314,7 +314,11 @@
                 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
                 (this is intentionally not marked as a link).</p>
             <p> Other authorised Team members are: (here you add your email +
-                public key like I did above)</p>
+                public key like I did above)</p><p>
+	        peter@pogma.com signed by the PGP key with the fingerprint <tt>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>. The
+	        public key can be found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+</p>
         </section>
         <section name="how">
             <title>How to submit </title>
