@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/09 02:09:16 $';
+$cvs_date = '$Date: 2002/01/15 23:44:21 $';
 
 include "header.inc";
 ?>
@@ -46,9 +46,9 @@ it_item("Fink source release 0.2.5 or newer",
   '<p>Run "<tt>fink selfupdate</tt>".</p>');
 it_item("Fink source release 0.2.4 or older (down to 0.2.0)",
   '<p>Download the <a
-  href="http://prdownloads.sourceforge.net/fink/packages-0.3.2.tar.gz">packages
+  href="http://prdownloads.sourceforge.net/fink/packages-0.3.2a.tar.gz">packages
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.2
+  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.2a
   directory.</p>');
 it_end();
 ?>

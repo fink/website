@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/15 23:44:21 $';
+$cvs_date = '$Date: 2002/01/15 23:45:09 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ the binary release.
 <li><p>
 Download the installer disk image:<br />
 <a href="http://prdownloads.sourceforge.net/fink/fink-0.3.2a-installer.dmg.gz">Fink
-0.3.1 Binary Installer</a> - 7.7 MB
+0.3.2a Binary Installer</a> - 7.7 MB
 </p></li>
 <li><p>
 Double-click "fink-0.3.2a-installer.dmg" to mount the disk image,
