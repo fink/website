@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.14 2004/03/21 22:01:11 dmrrsn Exp $
+# $Id: Makefile.i18n.common,v 1.15 2004/03/23 12:42:23 dmrrsn Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -78,10 +78,6 @@ force: clean all
 
 # rendering to pure text (monolithic)
 
-#%.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
-#	xmllint --noout --valid $(SOURCE) && \
-#	xsltproc -o $(patsubst %.xml,%.txt.tmp,$(SOURCE)) $(STYLESHEET_TEXT) $(SOURCE)
-#
 %.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $<
 	xsltproc -o $@ $(STYLESHEET_TEXT) $<
