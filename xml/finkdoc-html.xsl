@@ -11,7 +11,7 @@
 <title>Fink Documentation - <xsl:value-of select="title"/></title>
 </head><body>
 
-<h1 align="center"><xsl:value-of select="title"/></h1>
+<h1 style="text-align: center;"><xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates select="preface" />
 
@@ -185,7 +185,7 @@
 </xsl:template>
 
 <xsl:template match="code|filename">
-<tt><nobr><xsl:apply-templates/></nobr></tt>
+<tt style="white-space: nowrap;"><xsl:apply-templates/></tt>
 </xsl:template>
 
 <xsl:template match="link">
