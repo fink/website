@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 2004/03/02 03:15:43 jeff_yecn Exp $
+# $Id: Makefile,v 1.11 2004/03/14 16:43:06 michga Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -13,7 +13,7 @@ TARGET = index.php general.php relations.php \
 WANT_HTML = 1
 DESTDIR = faq
 
-LANGUAGES = en ja zh
+LANGUAGES = en fr ja zh
 include $(basedir)/Makefile.i18n.common
 
 # eof
