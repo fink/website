@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/06/26 22:37:26 $';
+$cvs_author = '$Author: htodd $';
+$cvs_date = '$Date: 2003/11/02 05:38:18 $';
 
 include "header.inc";
 ?>
@@ -13,6 +13,10 @@ There are many ways to install or upgrade Fink.
 For new users, the quick start instructions below are recommended.
 Otherwise, check out the <a href="overview.php">overview</a> and the
 <a href="upgrade.php">upgrade matrix</a>.
+</p>
+
+<p>
+Keep in mind that these instructions are <b>NOT for Panther</b>. Currently there is no binary installer for Panther, and there are no binaries for Panther.
 </p>
 
 <h2>Quick Start</h2>
