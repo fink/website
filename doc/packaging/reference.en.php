@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/05 03:26:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/15 05:05:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -139,6 +139,19 @@ This field is required, and there must be exactly one name and address
 in the following format:
 </p>
 <pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
+</td></tr><tr valign="top"><td>InfoN</td><td>
+<p>
+This field allows fink to implement backward-incompatible syntax
+changes in package description files. A given version of fink is
+configured with the maximum integer "N" that it can handle. Any
+package in a higher InfoN field will be ignored, so this mechanism
+should only be used when necessary, lest people with older versions of
+fink be needlessly alienated. The documentation of other fields will
+note when a specific InfoN must be used. To use this mechanism, embed
+the entire package description in the desired InfoN field. See the
+"File Format" section earlier in this document for a description of
+the syntax for multiline fields.
+</p>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
@@ -311,7 +324,9 @@ additional fields, starting with N = 2. So, the first tarball (which
 should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
-expanded - that would be useless anyway.
+expanded - that would be useless anyway. Starting with a CVS version
+of fink after 0.19.1, you no longer need to use consecutive values for
+N. However, you still may not have duplicates.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
@@ -411,7 +426,7 @@ the new filename.
 Example:
 </p>
 <pre>TarFilesRename: foo bar.* qux:quux
-Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
+Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 <p>
 <b>Note:</b> This field is implemented by means of a special feature of
 BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
@@ -740,7 +755,9 @@ For details about how this works, see the separate
 <p>
 <b>Introduced in fink 0.9.9.</b>
 This is the same as <code>SplitOff</code>, used to generate a third,
-fourth, etc. package from the same compile/install run.
+fourth, etc. package from the same compile/install run. Starting with
+a CVS version of fink after 0.19.1, you no longer need to use
+consecutive values for N. However, you still may not have duplicates.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>

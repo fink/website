@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/05 03:26:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/15 05:05:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 include_once "header.inc";
@@ -367,7 +367,7 @@ a declaration</p>
 and <code>-compatibiliary_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
 amounts to  a promise
-from the maintainer that a libary with this name and a compatibility-version
+from the maintainer that a library with this name and a compatibility-version
 of at least 2.1.0 will always be found in later versions of the <b>bar1</b> 
 package.
 </p><p>
@@ -491,7 +491,7 @@ A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.6.0</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
 <code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  A new convention
-is being introducted of using the suffix <code>-pm560</code> for
+is being introduced of using the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which will soon include 
 perl 5.6.1 and perl 5.8.0.  
@@ -509,6 +509,22 @@ Effective with version 0.13.0 of fink, the <code>fink validate</code>
 command when applied to a <code>.deb</code> file will check to see if
 the fink package is an XS module which has been installed in a non-versioned 
 directory, and will issue a warning if so.
+</p>
+
+
+
+<h2><a name="emacs">3.5 Emacs Policy</a></h2>
+<p> The Fink project has chosen to follow the Debian project's policy
+regarding emacs, with a few small differences.
+(The Debian policy document can be found at
+<a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
+http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
+There are two differences in the Fink policy.  First, 
+this policy only applies to the emacs20 and
+emacs21 packages in fink at the moment, not to the xemacs package.  (This
+may change some day in the future.)    And second, unlike the Debian policy,
+ Fink packages are allowed to install things directly into 
+/sw/share/emacs/site-lisp.
 </p>
 
 

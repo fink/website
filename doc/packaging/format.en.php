@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/05 03:26:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/15 05:05:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -28,7 +28,7 @@ directories.
 The directories in top-down order:
 </p>
 <ul>
-<li><code>dists</code> is where is starts. The <code>dists</code>
+<li><code>dists</code> is where it starts. The <code>dists</code>
 directory is necessary for the Debian tools.</li>
 <li>The distribution. There is <code>stable</code>,
 <code>unstable</code> and <code>local</code>. The <code>local</code>
