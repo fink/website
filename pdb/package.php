@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/03/20 22:27:39 $';
+$cvs_date = '$Date: 2003/03/20 23:25:05 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -70,7 +70,7 @@ if (!$rs) {
     it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
   }
   if ($row[license]) {
-    it_item("License:", $row[license]);
+    it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$row[license].'</a>');
   }
   if ($row[parentname]) {
     it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$row[parentname].'">'.$row[parentname].'</a>');
