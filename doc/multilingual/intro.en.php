@@ -19,7 +19,7 @@ include_once "header.inc";
       <p>The Fink project has undertaken an effort to add full
       internationalization support to its website, in order to make the site
       more accessible worldwide. Thanks to Baba Yoshihiko, there is now a
-      framework in which pages in multiple languages can be employed</p>
+      framework in which pages in multiple languages can be employed.</p>
     
 
     <h2><a name="languages">1.2 Languages</a></h2>
@@ -54,7 +54,7 @@ include_once "header.inc";
       <p>A chart of the organization of the i18n team is available <a href="http://micmacfr.homeunix.org/web/organisation/">here</a>.</p>
     
 
-    <h2><a name="helping">1.4 Helping out.</a></h2>
+    <h2><a name="helping">1.4 Helping out</a></h2>
       
 
       <p>If you wish to help out with the internationalization effort, there

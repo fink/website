@@ -2,7 +2,7 @@
 $title = "i18n - Appendix";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=en" title="Additional Resources.">';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=en" title="Additional Resources">';
 
 include_once "header.inc";
 ?>
@@ -12,7 +12,7 @@ include_once "header.inc";
 
     
 
-    <h2><a name="cvs-codes">5.1 CVS codes.</a></h2>
+    <h2><a name="cvs-codes">5.1 CVS codes</a></h2>
       
 
       <p>When you are updating your CVS checkout, you may see some letters
@@ -28,8 +28,9 @@ include_once "header.inc";
 
         <li><b>C:</b> Your version conflicts with that in the remote
         repository. You should resolve this by editing the the file and
-        merging your modifications. <p>You can use </p><pre>rm file;cvs
-        update file</pre><p>where <code>file </code>is the offending
+        merging your modifications. <p>You can use </p>
+        <pre>rm file; cvs update file</pre>
+        <p>where <code>file </code>is the offending
         file, to resolve the conflict, and then apply the changes from the
         backup of your file that exists
         under<code>.#file-version</code></p>, where <b>version

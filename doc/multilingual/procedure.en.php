@@ -2,7 +2,7 @@
 $title = "i18n - Updating";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="resources.php?phpLang=en" title="Additional Resources."><link rel="prev" href="files.php?phpLang=en" title="The Documentation Files">';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="resources.php?phpLang=en" title="Additional Resources"><link rel="prev" href="files.php?phpLang=en" title="The Documentation Files">';
 
 include_once "header.inc";
 ?>
@@ -63,8 +63,9 @@ include_once "header.inc";
         <li>In addition, the filename of the base file should be included
         somewhere in the message.</li>
 
-        <li>A full diff (e.g. <code>diff -Nru3 -r<b>last_revision</b>
-        r<b>head</b> </code>) to show the modifications in context.</li>
+        <li>A full diff, e.g.: 
+        <pre>diff -Nru3 -r<b>last_revision</b> r<b>head</b> </pre>
+        to show the modifications in context.</li>
       </ul>
 
       <p>Note: since committing the XML file automatically produces a message
@@ -93,6 +94,6 @@ include_once "header.inc";
       </ol>
     
   <p align="right">
-Next: <a href="resources.php?phpLang=en">4 Additional Resources.</a></p>
+Next: <a href="resources.php?phpLang=en">4 Additional Resources</a></p>
 
 <? include_once "footer.inc"; ?>

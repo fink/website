@@ -7,7 +7,7 @@ $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Conten
 include_once "header.inc";
 ?>
 
-<h1>i18n - 4 Additional Resources.</h1>
+<h1>i18n - 4 Additional Resources</h1>
     
 
     
