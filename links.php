@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/07/14 10:15:31 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/08/02 19:35:46 $';
 
 include "header.inc";
 ?>
@@ -34,6 +34,8 @@ and Apple's other Open Source projects</li>
 <li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
 Darwin development
 </li>
+<li><a href="http://oroborosx.sourceforge.net/" target="_blank">OroborOSX</a> -
+very nice X11 WindowManager which attempts to integrate X11 into Mac OS X.
 </ul>
 
 <p>Similar Projects</p>
