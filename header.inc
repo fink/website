@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.43 2002/04/13 21:57:22 fingolfin Exp $ */
+/* $Id: header.inc,v 1.44 2002/04/19 13:07:41 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -62,7 +62,7 @@ if ($metatags)
 <? /* header and sourceforge logo */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="bottom">
-<td align="left"><?
+<td align="left" class="layout"><?
 if (!$is_home)
   print '<a href="'.$root.'index.php">';
 ?><img src="<? print $root ?>img/title2-1.gif" width="400" height="43"
@@ -70,46 +70,47 @@ border="0" alt="Fink" /><?
 if (!$is_home)
   print '</a>';
 ?></td>
-<td align="right">
-<p>Hosted by <a href="http://sourceforge.net/"><img
+<td align="right" class="layout">
+<span class="default">
+Hosted by <a href="http://sourceforge.net/"><img
 src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
-height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"></a>&nbsp;
-</p>
+height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"></a>
+<span>
 </td>
 </tr>
 <tr valign="top">
-<td align="left" style="background-image:url(<? print $root ?>img/top-line.gif)"><img
+<td align="left" style="background-image:url(<? print $root ?>img/top-line.gif)" class="layout"><img
 src="<? print $root ?>img/title2-2.gif" width="400" height="8" border="0" alt=""></td>
-<td style="background-image:url(<? print $root ?>img/top-line.gif)"><img src="<? print $root ?>img/shim.gif" width="1"
+<td style="background-image:url(<? print $root ?>img/top-line.gif)" class="layout"><img src="<? print $root ?>img/shim.gif" width="1"
 height="8" border="0" alt=""></td>
 </tr>
 </table>
 
 <? /* main table with navigation column and content column */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr valign="top"><td align="left" width="120" bgcolor="#eeeeee">
+<tr valign="top"><td align="left" width="120" bgcolor="#eeeeee" class="layout">
 
 <? /* navigation column table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="120">
 
 <? /* sections */ ?>
-<tr align="left"><td colspan="2" bgcolor="#dddddd"><img src="<? print $root ?>img/sect-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/sect-head.gif"
 width="120" height="26" border="0" alt="Sections:"></td></tr>
 <?
 for ($i = 0; $i < sizeof($sections); $i += 3) {
   $name = $sections[$i+2];
   print '<tr align="left">';
   if ($section == $sections[$i+2]) {
-    print '<td colspan="2" bgcolor="#87b9e7"><a href="'.$root.$sections[$i].'">';
+    print '<td colspan="2" class="layout" bgcolor="#87b9e7"><a href="'.$root.$sections[$i].'">';
     print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
   } else {
-    print '<td colspan="2"><a href="'.$root.$sections[$i].'">';
+    print '<td colspan="2" class="layout"><a href="'.$root.$sections[$i].'">';
     print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
   }
   print '</a></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 
@@ -126,20 +127,20 @@ if (!$nonav) {
   }
 
 ?>
-<tr align="left"><td colspan="2" bgcolor="#dddddd"><img src="<? print $root ?>img/nav-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd" class="layout"><img src="<? print $root ?>img/nav-head.gif"
 width="120" height="26" border="0" alt="Navigation:"></td></tr>
 <?
 if (is_array($parents)) {
   for ($i = 0; $i < sizeof($parents); $i += 2) {
     $link = '<a href="'.$root.$parents[$i].'">';
 
-    print '<tr align="left" valign="middle"><td>';
+    print '<tr align="left" valign="middle"><td class="layout">';
     print $link.'<img src="'.$root.'img/nav-upicon.gif" width="18" height="15" border="0" alt="^ "/></a>';
-    print '</td><td>';
-    print '<p class="nav">'.$link.$parents[$i+1].'</a></p>';
+    print '</td><td class="layout">';
+    print '<span class="nav">'.$link.$parents[$i+1].'</a></span>';
     print '</td></tr>'."\n";
 
-    print '<tr bgcolor="#ffffff"><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+    print '<tr bgcolor="#ffffff"><td class="layout"><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td class="layout"><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
   }
 }
 
@@ -154,22 +155,22 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
   }
 
   if ($link) {
-    print '<tr align="left" valign="middle"><td>';
+    print '<tr align="left" valign="middle"><td class="layout">';
     print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "/></a>';
-    print '</td><td>';
-    print '<p class="nav">'.$link.$navbox[$i+1].'</a></p>';
+    print '</td><td class="layout">';
+    print '<span class="nav">'.$link.$navbox[$i+1].'</a></span>';
   } else {
-    print '<tr align="left" valign="middle" bgcolor="#87b9e7"><td>';
+    print '<tr align="left" valign="middle" bgcolor="#87b9e7"><td class="layout">';
     print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- "/>';
-    print '</td><td bgcolor="#87b9e7">';
-    print '<p class="nav">'.$navbox[$i+1].'</p>';
+    print '</td><td bgcolor="#87b9e7" class="layout">';
+    print '<span class="nav">'.$navbox[$i+1].'</span>';
   }
   print '</td></tr>'."\n";
 
-  print '<tr bgcolor="#ffffff"><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+  print '<tr bgcolor="#ffffff"><td class="layout"><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td class="layout"><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 
@@ -178,10 +179,10 @@ alt=""></td></tr>
 
 if ($printlink) {
 ?>
-<tr align="left"><td colspan="2"><a href="<? print $root.$printlink ?>"><img
+<tr align="left"><td colspan="2" class="layout"><a href="<? print $root.$printlink ?>"><img
 src="<? print $root ?>img/printlink.gif" width="120" height="22"
 border="0" alt="Print Version"></a></td></tr>
-<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 <?

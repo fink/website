@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.10 2002/04/17 17:20:27 fingolfin Exp $ */
+/* $Id: footer.inc,v 1.11 2002/04/19 13:07:41 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -11,7 +11,7 @@
 
 
 <? /* horizontal stripe */ ?>
-<tr><td height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
+<tr><td class="layout" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
 </td></tr>
 
 <? /* copyright-and-footer row of top-level table */ ?>
@@ -22,13 +22,13 @@
     Copyright&nbsp;&copy;&nbsp;2002 The&nbsp;Fink&nbsp;Project
   </a>
 </td>
-<td>
+<td class="layout">
 
 <? /* footer table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td>&nbsp;</td></tr>
 <tr><td width="100%">
-<p class="footer" align="center"><?
+<div class="footer" align="center"><?
 if ($dyndate == 1) {
   print "Generated dynamically";
   $date = 0;
@@ -40,9 +40,9 @@ if ($dyndate == 1) {
 }
 if ($date)
   print strftime("%a, %b %d %Y", $date);
-?></p>
+?></dvi>
 </td></tr>
-<tr><td height="7">
+<tr><td height="7" class="layout">
  <img src="<? print $root ?>img/shim.gif" width="1" height="7" border="0" alt="">
 </td></tr>
 </table>
@@ -51,7 +51,7 @@ if ($date)
 </tr>
 
 <? /* horizontal stripe */ ?>
-<tr><td colspan="2" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
+<tr><td class="layout" colspan="2" height="3" style="background-image:url(<? print $root ?>img/top-line2.gif)">
 </td></tr>
 
 </table>

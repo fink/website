@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.6 2002/04/17 15:40:26 fingolfin Exp $ */
+/* $Id: fink.css,v 1.7 2002/04/19 13:07:41 fingolfin Exp $ */
 
 body {
   color:black;
@@ -22,6 +22,10 @@ p,ul,ol,li,dl,dt,dd,td,th {
   font-size:11pt;
 }
 
+td.layout {
+  font-size:1px;
+}
+
 h1 {
   color:black;
   font-family:"Trebuchet MS",sans-serif;
@@ -36,13 +40,19 @@ h2 {
   font-weight:bold;
 }
 
-p.nav {
+.default {
+  color:black;
+  font-family:"Trebuchet MS",sans-serif;
+  font-size:11pt;
+}
+
+.nav {
   color:black;
   font-family:Verdana,Helvetica,Arial,sans-serif;
   font-size:8pt;
 }
 
-p.footer {
+.footer {
   color:black;
   font-family:"Trebuchet MS",sans-serif;
   font-size:10pt;
