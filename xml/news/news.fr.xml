@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="fr" fsroot="../..">
-<cvsid>$Id: news.fr.xml,v 1.8 2004/09/20 21:10:14 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.9 2004/09/20 22:18:39 michga Exp $</cvsid>
 
 <newsitem>
 <date>20/09/2004</date>
 <headline>Fink 0.7.1 est disponible</headline>
 <body>
-<p>La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette dernière tourne sur les versions Panther (10.3) de Mac OS X.</p>
+<p>La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.</p>
 <p>Elle intégre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont été ajoutés, ce qui porte le total des binaires disponibles à 1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.</p>
 <p>Pour installer Fink pour la première fois, veuillez suivre les instructions données <link url="download/index.php?phpLang=fr">ici</link>. Pour mettre à jour Fink, servez-vous de la version installée sur votre système. Vous trouverez la liste des différences entre les versions 0.7.0 et 0.7.1 sur cette <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</link></p>
 <p>Si vous vous posez des questions ou rencontrez des difficultés, n'hésitez pas à vous servir des listes de diffusion de Fink. Vous en trouverez le détail <link url="lists/index.php?phpLang=fr">ici</link>.</p>
