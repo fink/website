@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.5 2004/05/19 12:23:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.6 2004/05/29 15:43:25 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -652,8 +652,7 @@ xinit はシェルを通して起動する方法を知っています。
 </p>
 <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
 <p>
-Fink を使っている場合、 source <filename>init.sh</filename> (bash シェルの場合)、または
-<filename>init.csh</filename> (tcsh シェルの場合)
+Fink を使っている場合、 source <filename>init.sh</filename>
 を一番最初に実行します。
 これによって環境が正しく設定されます。
 </p>
@@ -676,10 +675,6 @@ Fink を使っている場合、 source <filename>init.sh</filename> (bash シ�
 <p>
 以下のサンプルでは GNOME を起動しています:
 </p>
-<p>bash の場合:</p>
-<codeblock>. /sw/bin/init.sh
-exec gnome-session</codeblock>
-<p>tcsh の場合:</p>
 <codeblock>source /sw/bin/init.csh
 exec gnome-session</codeblock>
 <p>
@@ -694,28 +689,23 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
-<p>tcsh ユーザーは、最初の行を書き換えます:</p>
-<codeblock>source /sw/bin/init.csh</codeblock>
 <p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
 <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock>
-<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
 <p>GNOME2.4 を Apple X11 下で起動するには、 metacity が自動的に起動するため、以下の通りです:</p>
 <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock>
-<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
 <p>KDE 3.2 (version &lt; 3.2.2-21) を Apple X11 下で起動するには</p>
 <codeblock>. /sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
-<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
 <p>最後に、最新版の unstable な KDE を Apple X11 下で起動するには:</p>
 <codeblock>. /sw/bin/init.sh
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
