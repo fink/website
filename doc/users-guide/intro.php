@@ -3,7 +3,7 @@ $title = "User's Guide - Introduction";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/10/20 22:52:51';
 
-$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
+$metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
 include "header.inc";
 ?>

@@ -3,7 +3,7 @@ $title = "Porting - libtool";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/08/30 16:08:10';
 
-$metatags = '<link rel="start" href="index.php" title="Porting Contents"><link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="shared.php" title="Shared Code">';
+$metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="shared.php" title="Shared Code">';
 
 include "header.inc";
 ?>
