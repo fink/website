@@ -4,13 +4,20 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-<<<<<<< news.rdf
-    <lastBuildDate>Fri, 14 Feb 2003 08:53:49 EST</lastBuildDate>
-=======
-    <lastBuildDate>Wed, 09 Apr 2003 20:03:37 CEST</lastBuildDate>
->>>>>>> 1.31
+    <lastBuildDate>Tue, 15 Apr 2003 02:45:37 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.5.2 released</title>
+    <link>http://fink.sf.net/news/#2003-04-14%20Fink%200.5.2%20released</link>
+    <dc:date>2003-04-14</dc:date>
+    <description>
+	       Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the download page.
+		With over 190 new binary packages, KDE, Koffice and Kdevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
+		The full announcement can be read on the fink-announce mailing list.
+		
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Interview on OSNews.com</title>
     <link>http://fink.sf.net/news/#2003-04-09%20Interview%20on%20OSNews.com</link>
@@ -395,16 +402,6 @@ software before using Fink.
     
     
       See Fink's FAQ, question 6.3, for more information about the passwd package. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.4.0 released</title>
-    <link>http://fink.sf.net/news/#2002-04-18%20Fink%200.4.0%20released</link>
-    <dc:date>2002-04-18</dc:date>
-    <description>
-    
-      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the Upgrade Matrix. 
     
   </description>
   </item>
