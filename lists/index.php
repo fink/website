@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/05/30 00:50:29 $';
+$cvs_date = '$Date: 2003/01/29 06:02:35 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ is fitting.
 </p>
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
-(<a href="http://www.geocrawler.com/redir-sf.php3?list=fink-announce">Archives</a>)<br>
+(<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=2022">Archives</a>)<br>
 Announcement list for new Fink releases. (low traffic)</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
 (<a href="http://www.mail-archive.com/fink-beginners@lists.sourceforge.net">Archives</a>)<br>
