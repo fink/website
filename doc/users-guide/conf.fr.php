@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 17:42:23';
+$cvs_date = 'Date: 2004/07/28 06:59:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -236,6 +236,35 @@ La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <
           </p>
         </li>
       </ul>
+    
+     <h2><a name="sourceslist">5.9 Gestion du fichier sources.list d'apt</a></h2>
+      
+      <p>À partir de la version 0.21.0, fink gère activement le fichier <code>/sw/etc/apt/sources.list</code>, qui est utilisé par apt pour trouver l'emplacement des fichiers binaires à installer. Le fichier sources.list par défaut possède un contenu similaire à celui indiqué ci-dessous. Son contenu prend en compte la distribution et les branches dont vous vous servez. 
+</p>
+<pre># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in 
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.
+</pre>
+<p>Avec ce fichier par défaut, apt-get cherche d'abord dans votre installation local les binaires déjà compilés, puis recherche les autres dans la distribution binaire officielle. Vous pouvez modifier l'ordre de recherche en ajoutant des lignes en début de fichier (ce seront elles qui seront les plus prioritaires) ou à la fin du fichier (elles seront les moins prioritaires).</p>
+<p>Fink préserve vos modifications, même si elles touchent les parties par "défaut" du fichier, à condition que les changements soient situés au début ou à la fin du fichier. Si vous avez modifié <code>/sw/etc/apt/sources.list</code> avant de passer à la version 0.21.0 de fink, votre ancien fichier sources.list sera sauvegardé sous <code>/sw/etc/apt/sources.list.finkbak</code> .
+</p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=fr">6. Utilisation de l'outil fink en ligne de commande</a></p>
