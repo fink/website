@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Basics";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2002/09/28 21:59:06';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/01/02 15:29:21';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
@@ -84,7 +84,7 @@ linker.
 <p>
 Short story:
 If configure fails with 'Can't determine host type', copy config.guess
-and config.sub from /usr/libexec into the current directory.
+and config.sub from /usr/share/libtool (/usr/libexec for OS versions prior to 10.2)  into the current directory.
 </p>
 <p>
 Long story:
@@ -121,7 +121,7 @@ Until very recently, these scripts didn't know about Darwin or Mac OS
 X.
 If you have a package that doesn't recognize Darwin, you must replace
 the config.guess and config.sub included in the package.
-Luckily, Apple put working versions in /usr/libexec, so you can just
+Luckily, Apple put working versions in /usr/share/libtool (/usr/libexec for pre-10.2 OS), so you can just
 copy them from there.
 </p>
 
