@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="zh">
+  <title>如何在 Fink 邮件列表上张贴</title>
+  <shorttitle>网络礼仪</shorttitle>
+  <cvsid>$Id: netiquette.zh.xml,v 1.1 2004/04/18 13:29:06 jeff_yecn Exp $</cvsid>
+  <preface>
+    <p><em>本文档正在编写当中。</em></p>
+    <p>本文档是作为 Fink 邮件列表的新张贴者的一个使用规则。
+    目的是使得该列表的用户了解如何有效地进行发表，介绍问题的有效解决方法。</p>
+    <p>在本列表中某个信息的回应中，可以要你参考某个网页。
+    不要着急！
+    这很可能只是说明你需要提供更多的信息你澄清你问题的原因，你所需要提供的信息被列在这里。</p>
+  </preface>
+  <chapter filename="before-post">
+    <title>在张贴前需要做些什么</title>
+    <shorttitle>张贴之前</shorttitle>
+    <section name="research">
+      <title>研究你的问题。</title>
+      <p>你应该在张贴之前先自己做些研究，也许你的问题已经被回答过了。
+      可以查找的地方举例如下：</p>
+      <ul>
+        <li>在线文档</li>
+        <li>邮件列表归档</li>
+        <li>Google</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="first-post">
+    <title>初始张贴</title>
+    <shorttitle>初始</shorttitle>
+    <section name="system">
+      <title>你已经安装了什么？</title>
+      <p>如果你有关于安装软件包的问题，你应该提供关于你的系统下列信息：</p>
+      <ul>
+        <li>你的操作系统版本。</li>
+        <li>你运行的 Fink 版本。一个有用的方法是张贴你的命令行窗口运行 <codeblock>fink --version</codeblock> 命令的输出。</li>
+        <li>你应该指明你时候从二进制版本进行安装，例如，使用 <code>apt-get</code>；或是从源代码进行安装，例如，使用 <code>fink install</code>。<p>如果是后者，你应该指明你使用的开发工具的版本。</p></li>
+        <li><p>如果你正在安装一个需要 X11 的软件包，你应该指明你使用的软件包：苹果的 X11 还是 XFree86。
+        如果是后者，指明它的版本号。</p>
+        <p>如果存在怀疑的话，请尽管提供这个信息。</p></li>
+      </ul>
+    </section>
+    <section name="problem-description">
+      <title>发生了什么问题？</title>
+      <ul>
+        <li><em>指明出现问题的软件包的名字和版本号。</em>  
+        <p>这应该出现你的信息的主题行中。</p>
+        <p>意思是如果你的问题是关于 <code>foo-3.141-6</code>，不要只是说是一个关于 <code>foo</code> 的问题。</p>
+        <p>尤其是，如果你在安装一个依赖于其它软件包(<code>foo-3.141-6</code>, <code>bar-16.0-9</code>, ...)的软件包(例如：<code>baz-2.18-1</code>)的时候，你在 <code>foo</code> 安装时出现问题，你应该报告一个关于 <code>foo-3.141-6</code> 的问题，而不是 <code>baz-2.18-1</code>。</p></li>
+        <li><em>描述问题。</em>
+        <p>意思是你应该张贴一个错误信息的样本。</p>
+        <ol>
+            <li><p>对于二进制版本的安装问题，从发生问题的软件包开始解包的位置开始摘录：</p>
+            <codeblock>...
+Selecting previously deselected package foo
+error unpacking foo
+...</codeblock>
+<p>然后一直到结束。</p></li>
+            <li><p>对于从源代码安装有几种可能需要考虑的情况：</p>
+            <ol>
+                <li><p>如果在初始配置的时候失败，这通常是立即发生的。
+                从错误信息之前的几项测试开始一直摘录到最后：</p>
+                <codeblock>....
+Checking for bar-config...no
+Error:  bar-config not found
+....</codeblock>
+						<p>如果你认为可能有帮助的话，你可以张贴配置日志文件的相应部分，例如： <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>。<em>请不要张贴整个文件，因为它会非常巨大。</em></p>
+						</li>
+                <li><p>或者，错误在你实际开始构建软件包时立即发生。
+                这种情况下，可以张贴从编译尝试运行到结束的几行：</p>
+                <codeblock>...
+gcc &lt;编译标志，文件，等等&gt;
+&lt;错误信息&gt;
+...</codeblock>
+						</li>
+                <li><p>如果你遇到的是看起来很可怕的 <code>execution of mv failed</code> 错误，你应该在你的编译输出中寻找一个更早发生的错误，所以在张贴之前你需要把它找出来。</p></li>
+              </ol>
+              </li>
+          </ol>
+          </li>
+      </ul>
+    </section>
+    <section name="remedies">
+      <title>你尝试过什么？</title>
+      <p>提及你尝试过什么解决办法是个好主意，例如：</p>
+      <ul>
+        <li>FAQ 的指南或其它文档</li>
+        <li>删除似乎是引起问题的软件包</li>
+        <li>重新构建/重新安装</li>
+        <li>再次升级软件包描述</li>
+        <li>等等。</li>
+      </ul>
+      <p>这样，其它人不会再向你建议你已经做过的事情。</p>
+    </section>
+    <section name="future-plans">
+      <title>下面你打算尝试什么？</title>
+      <p>这个类别下包括一些项目：</p>
+      <ul>
+        <li>如果你没有获得立即的回应，张贴你下一步计划做的事情。</li>
+        <li>询问一系列操作是否合适。</li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="reply">
+    <title>回应一个帖子</title>
+    <shorttitle>回应</shorttitle>
+    <preface>
+      <p>本章涉及如何回应一个帖子。</p>
+    </preface>
+    <section name="reply-to-list">
+      <title>确定是回应到邮件列表</title>
+      <p>和一些其它的你订阅的邮件列表不同，Fink 邮件列表的设计是如果你简单地回复一个消息，你会直接回复到张贴人，而<em>不是</em>回复到邮件列表。请确定你是回复到邮件列表：</p>
+      <ul>
+        <li>这样你可以让更多的人看到你的问题。</li>
+        <li>你不应该总是占用某个人的时间。记住：在邮件列表中回复的人是志愿者。</li>
+        <li>其它人也可以受益。
+        让全部的邮件发布在可公开阅览的区域意味着它会被收集到邮件列表归档中，并可能最终形成文档。</li>
+      </ul>
+      <p>通常人们使用<quote>回复全部</quote>来实现：</p>
+      <ul>
+        <li>它和按“回复”按钮一样的容易。</li>
+        <li>虽然这会同时向邮件列表和原来消息的作者发送邮件，这是可以接受的，因为有些时候邮件列表会有延迟，例如：病毒暴发的时候的过滤。通常直接发送给原来消息作者的邮件会到达得快些。</li>
+      </ul>
+      <p>不过，如果你这样做，你应该删除其它额外的收件人(比如说由于同时发布到多个列表，或者其它已经回复这个主题的其它人)。</p>
+    </section>
+  </chapter>
+  <chapter filename="unsubscribe">
+    <title>如何取消订阅？</title>
+    <shorttitle>取消订阅</shorttitle>
+    <section name="unsubscribing">
+      <title>我怎么取消订阅？</title>
+      <p>要取消订阅，<em>不要</em>向列表发送邮件。</p>
+      <ol>
+        <li>应该访问<link url="http://fink.sourceforge.net/lists/index.php">邮件列表</link>页面。
+        <p>注意：不要使用 Mac OS X 版本的 Internet Explorer。</p></li>
+        <li>选择你要取消订阅的邮件列表的链接。</li>
+        <li>找到页面底部写着：
+        <quote>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</quote>的部分，输入你接受 Fink 邮件的电子邮件地址，然后按 <quote>Edit Options</quote> 按钮。</li>
+        <li>在随后打开的页面中的左上角，有一个让你选择取消订阅的字段。</li>
+      </ol>
+    </section>
+  </chapter>
+</document>
