@@ -6,3 +6,10 @@ distribution release.
 
 The current fink version number must also be supplied in three places:
 fink_version.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
+
+
+IMPORTANT NOTE: As of 29 June 2003, the CVS modules have been somewhat
+rearranged.  It is no longer advisible to check out the "web" module from
+CVS.  If you want the website contents, check out the "website" module.
+If you want to be able to edit the documentation, including the website,
+check out the "xml" module.
