@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2002/12/21 01:53:22';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/01/27 17:18:32';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -175,11 +175,23 @@ Removing packages is just as easy:
 </p>
 <pre>sudo apt-get remove lynx</pre>
 <p>
-[FIXME: using apt-cache to search for packages]
+
 </p>
 
 
-<a name="src"><h2>3.4 Installing Packages from Source</h2></a>
+<a name="bin-exceptions"><h2>3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</h2></a>
+<p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
+<pre>Sorry, but the following packages have unmet
+dependencies:
+foo: Depends: bar (&gt;= version) but it is
+not installable
+E: Sorry, broken packages</pre>
+<p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
+
+
+
+<a name="src"><h2>3.5 Installing Packages from Source</h2></a>
+<p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
 <p>
 To get a list of packages that are available for installation from
 source, ask the <tt><nobr>fink</nobr></tt> tool:

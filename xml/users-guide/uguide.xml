@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.15 2002/12/21 01:53:22 benh57 Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -482,11 +482,23 @@ Removing packages is just as easy:
 </p>
 <codeblock>sudo apt-get remove lynx</codeblock>
 <p>
-[FIXME: using apt-cache to search for packages]
+<!-- [FIXME: using apt-cache to search for packages] -->
 </p>
 </section>
 
+<section name="bin-exceptions"><title>Installing Dependent Packages that are Unvailable in the Binary Distribution</title>
+<p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
+<codeblock>Sorry, but the following packages have unmet
+dependencies:
+foo: Depends: bar (>= version) but it is
+not installable
+E: Sorry, broken packages</codeblock>
+<p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
+</section>
+
+
 <section name="src"><title>Installing Packages from Source</title>
+<p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <link url="http://connect.apple.com">http://connect.apple.com</link>.</p>
 <p>
 To get a list of packages that are available for installation from
 source, ask the <code>fink</code> tool:

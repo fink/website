@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2002/12/21 01:53:22';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/01/27 17:18:32';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -48,7 +48,8 @@ Package installation and maintenance is covered as well.
 dselect</a></li>
 <li><a href="packages.php#bin-apt">3.3 Installing Binary Packages with
 apt-get</a></li>
-<li><a href="packages.php#src">3.4 Installing Packages from Source</a></li>
+<li><a href="packages.php#bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li>
+<li><a href="packages.php#src">3.5 Installing Packages from Source</a></li>
 </ul>
 <li><a href="upgrade.php"><b>4 Upgrading Fink</b></a></li>
 <ul>
@@ -66,7 +67,7 @@ apt-get</a></li>
 <li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
 <li><a href="conf.php#developer">5.7 Developer Settings</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.15 2002/12/21 01:53:22 benh57 Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</i></p>
 
 
 <?
