@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<article filename="info-format">
+<article filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.1 2001/06/28 10:21:46 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.2 2001/06/30 11:25:48 chrisp Exp $</cvsid>
 
 <preface>
-<p>This page tries to document the format of Fink's package
-description files. This is difficult because the format is still
-evolving. Watch the "Last changed" info in the footer of the
-page. What you're reading right now is a description of the format
-used in Fink 0.2.2. The document for Fink 0.1.x
-has been <link url="info-format-01.php">archived.</link></p>
-<p>If you create packages for Fink, you may want to subscribe to the
+<p>
+This page tries to document the format of Fink's package description
+files.
+This is difficult because the format is still evolving.
+Watch the "Last changed" info in the footer of the page.
+What you're reading right now is a description of the format used in
+Fink 0.2.2.
+</p>
+<p>
+If you create packages for Fink, you may want to subscribe to the
 <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
-mailing list.</p>
+mailing list.
+</p>
 </preface>
 
 
