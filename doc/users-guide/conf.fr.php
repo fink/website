@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/26 09:13:00';
+$cvs_date = 'Date: 2004/07/02 17:42:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 include_once "header.inc";
@@ -207,14 +207,32 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
             <b>KeepRootDir:</b> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <b>fink -K</b> a le même effet, restreint à  cette invocation de <b>fink</b>.
-
-          </p>
+         </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <b>fink</b>.
+          </p>
+        </li>
+      </ul>
+    
+    <h2><a name="advanced">5.8 Variables pour les utilisateurs avertis</a></h2>
+      
+      <p>Il existe quelques autres options qui peuvent se révéler utiles, mais exigent un certain doigté à l'usage.</p>
+      <ul>
+        <li>
+          <p>
+            <b>MatchPackageRegEx:</b> </p>
+          <p>Empêche fink de demander quel paquet installer s'il existe une correspondance unique à l'un des choix résultant de l'expression régulière Perl fournie. Exemple :</p>
+          <pre>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</pre>
+          <p>correspond aux paquets dont le nom commencent par xfree86 ou xfree86-shlibs ou se terminent par '-ssl' ;  il n'existe qu'une seule possibilité, fink installera xfree86 et xfree86-shlibs.</p>
+        </li>
+        <li>
+          <p>
+            <b>CCacheDir:</b> path</p>
+          <p><b>Introduit dans une version CVS postérieure à la version 0.20.5 de fink</b>. Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <code>/sw/var/ccache</code>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <code>$HOME/.ccache</code>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur.
           </p>
         </li>
       </ul>
