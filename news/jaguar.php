@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/11/01 19:52:52 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/11/13 14:08:25 $';
 
 include "header.inc";
 ?>
@@ -76,6 +76,12 @@ From within the fink-0.11.0 directory, issue the command
 </pre>
 You will need an internet connection, and a bit of patience, as the update
 takes a while to complete.
+<br><br>
+<li><b>Step 5a (added November 13, 2002): Finish the update</b>
+by running the command
+<pre>
+  sudo /sw/lib/fink/postinstall.pl
+</pre>
 <br><br>
 <li><b>Step 6: Update your XFree86 packages.</b>
 This is done with the command 
