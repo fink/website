@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.87 2004/11/26 08:11:22 benh57 Exp $ */
+/* $Id: header.inc,v 1.88 2005/01/16 16:02:51 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -191,6 +191,8 @@ function convert_date_to_locale ($initialstringdate) {
 	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 	$search_month = array_search($date_exploded[1], $array_month)+1;
 	$date_converted=gmstrftime('%d %B %Y', mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
+	$date_encoding = mb_detect_encoding($date_converted);
+	$date_converted = mb_convert_encoding($date_converted, "UTF-8", $date_encoding);
 	return $date_converted;
 }
 
