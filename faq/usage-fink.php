@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/21 14:19:56';
+$cvs_date = 'Date: 2003/01/29 17:42:13';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -226,17 +226,32 @@ edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and chan
 <a name="cvs-busy">
 	<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
 		</b></p></div>
-	<div class="answer"><p><b>A:</b> An example of the error is as follows:</p><pre>
+	<div class="answer"><p><b>A:</b> You'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>
 (Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.
-		</pre><p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility, is that you need to reset your cvs directories. Use the command:</p><pre> 
+		</pre><p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p><pre>
+cvs update: in directory 10.2/stable/main:
+cvs update: cannot open CVS/Entries for reading: No such file or  directory
+cvs server: Updating 10.2/stable/main
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such file or directory
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.
+</pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre> 
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
-		</pre><p>If, on the other hand you can log in and download package descriptions but there is a message that says &quot;<tt><nobr>### execution of su failed, exit code 1</nobr></tt>&quot;, then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for lines that start with &quot;C&quot; and words to the effect of &quot;move it out of the way&quot; or &quot;is no longer in the repository&quot; applied to some info or patch file(s), and manually remove (&quot;<tt><nobr>sudo rm</nobr></tt>&quot;) the offending file(s).</p></div>
+		</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
+</p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+...
+(other info and patch files)
+...
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>The &quot;C&quot; means CVS had a conflict in trying to update the latest version.</p><p>The fix is to delete any files that show up as starting with &quot;C&quot; in the output of selfupdate-cvs, and try again.</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</pre></div>
 </a>
 
 <a name="kernel-panics"><div class="question"><p><b>Q3.15: When I use fink, my whole machine 
@@ -285,13 +300,7 @@ If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your 
 <a name="invisible-sw"><div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
-<a name="selfupdate-su-failed"><div class="question"><p><b>Q3.20: When I try to do a <tt><nobr>fink selfupdate-cvs</nobr></tt>, I get &quot;<tt><nobr>### execution of su failed, exit code 1</nobr></tt>&quot;.  What does this mean?</b></p></div>
-<div class="answer"><p><b>A:</b> This almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  When you run selfupdate-cvs, you very likely will have lines that start with &quot;C&quot;, like so:
-</p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>The &quot;C&quot; means CVS had a conflict in trying to update the latest version.</p><p>The fix is to delete any files that show up as starting with &quot;C&quot; in the output of selfupdate-cvs, and try again.</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-fink selfupdate-cvs</pre></div>
-</a>
+
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 

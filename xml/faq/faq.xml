@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.81 2003/01/29 16:43:28 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.82 2003/01/29 17:42:13 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -497,7 +497,7 @@ edit line 479 of <filename>/sw/lib/perl5/Fink/SelfUpdate.pm</filename> and chang
 		</p>
 	</question>
 	<answer>
-		<p>An example of the error is as follows:</p>
+		<p>You'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p>
 		<codeblock>
 (Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
@@ -506,14 +506,36 @@ Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.
 		</codeblock>
-		<p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p>
-		<p>Another possibility, is that you need to reset your cvs directories. Use the command:</p>
+		<p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p>
+		<p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get "Permission denied" messages:</p>
+<codeblock>
+cvs update: in directory 10.2/stable/main:
+cvs update: cannot open CVS/Entries for reading: No such file or  directory
+cvs server: Updating 10.2/stable/main
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such file or directory
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.
+</codeblock>
+<p>In this case you need to reset your cvs directories. Use the command:</p>
 		<codeblock> 
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
 		</codeblock>
-<p>If, on the other hand you can log in and download package descriptions but there is a message that says "<code>### execution of su failed, exit code 1</code>", then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for lines that start with "C" and words to the effect of "move it out of the way" or "is no longer in the repository" applied to some info or patch file(s), and manually remove ("<code>sudo rm</code>") the offending file(s).</p>
-	</answer>
+<p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with "C", like so:
+</p>
+<codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+...
+(other info and patch files)
+...
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
+<p>The "C" means CVS had a conflict in trying to update the latest version.</p>
+<p>The fix is to delete any files that show up as starting with "C" in the output of selfupdate-cvs, and try again.</p>
+<codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</codeblock>
+
+</answer>
 </faqentry>
 
 <faqentry name="kernel-panics"><question><p>When I use fink, my whole machine 
@@ -583,19 +605,7 @@ If you use tcsh and happen to have a <code>.tcshrc</code> file in your home dire
 <p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p>
 </answer>
 </faqentry>
-<faqentry name="selfupdate-su-failed"><question><p>When I try to do a <code>fink selfupdate-cvs</code>, I get "<code>### execution of su failed, exit code 1</code>".  What does this mean?</p>
-</question>
-<answer><p>This almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  When you run selfupdate-cvs, you very likely will have lines that start with "C", like so:
-</p>
-<codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-<p>The "C" means CVS had a conflict in trying to update the latest version.</p>
-<p>The fix is to delete any files that show up as starting with "C" in the output of selfupdate-cvs, and try again.</p>
-<codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-fink selfupdate-cvs</codeblock>
-</answer>
-</faqentry>
+
 </chapter>
 
 
