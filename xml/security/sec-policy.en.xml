@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.1 2004/06/15 18:19:01 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.2 2004/06/16 18:42:48 dmalloc Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While main responsibility for every
@@ -199,6 +199,9 @@
                 <li>
                     <em>MANDRAKE</em>: Linux-Mandrake advisory</li>
                 <li>
+                    <em>MISC</em>: generic reference from an URL
+                </li>
+                <li>
                     <em>MLIST</em>: generic reference form for miscellaneous
                     mailing lists</li>
                 <li>
@@ -285,6 +288,74 @@
                 stable tree as well. The retention period shall be used to
                 carefully observe whether the updated package works and the
                 security update does not introduce any new issues.</p>
+        </section>
+    </chapter>
+    <chapter filename="notification">
+        <title>Sending notifications</title>
+        <shorttitle>notify</shorttitle>
+        <preface>
+            <p>Some users might choose not to update their software too
+                frequently. To ensure that those who install their packages from
+                source are using updated packages which have been reported to
+                have security issues as soon as possible, a maintainer may call
+                for a notification to be sent to the Fink announcement list.</p>
+        </preface>
+        <section name="who">
+            <title>Who may send them?</title>
+            <p>These announcements may only be sent by
+                dmalloc@users.sourceforge.net signed by the PGP key with the
+                fingerprint <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
+                291E</tt>. The public key can be found at
+                <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
+                (this is not marked as link intentionally).</p>
+        </section>
+        <section name="how">
+            <title>How to submit </title>
+            <p> To ensure that a common look for security notifications is met,
+                all security notices <em>must</em> follow the following common
+                template. </p>
+            <codeblock> 
+                ID:               FINK-YYYY-MMDD-NN
+                Reported:         YYYY-MM-DD
+                Updated:          YYYY-MM-DD
+                Package:          package-name 
+                Maintainer:       maintainer-name
+                Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
+                Mac OS X version: 10.3, 10.2
+                Fix:              patch|upstream
+                Updated by:       maintainer|forced update (Email)
+                Description:      A short description describing the issue.
+                References:       KEYWORD (see above)
+                   Ref-URL:       URL 
+            
+            </codeblock>
+            <p>A sample report could look somewhat like this:</p>
+            <codeblock>
+                ID:               FINK-2004-06-01
+                Reported:         2004-06-09
+                Updated:          2004-06-09
+                Package:          cvs 
+                Maintainer:       Sylvain Cuaz
+                Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
+                Mac OS X version: 10.3, 10.2
+                Fix:              upstream
+                Updated by:       forced update (dmalloc@users.sourceforge.net)
+                Description:      Multiple vulnerabilities in CVS found my ematters Security.
+                References:       BID
+                   Ref-URL:       http://www.securityfocus.com/bid/10499
+                References:       CVE
+                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+                References:       CVE
+                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+                References:       CVE
+                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+                References:       CVE
+                   Ref-URL:       http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+                References:       FULLDISCURL
+                   Ref-URL:       http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+                References:       MISC
+                   Ref-URL:       http://security.e-matters.de/advisories/092004.html
+            </codeblock>
         </section>
     </chapter>
 </document>
