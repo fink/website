@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: claudio87 $';
-$cvs_date = '$Date: 2004/11/11 12:36:12 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
@@ -34,7 +34,7 @@ Potete usare lo strumento che preferite per scaricare i pacchetti precompilati o
 // Include news items
 include $fsroot."news/news.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php">Vecchie notizie...</a></div>
+<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=it">Vecchie notizie...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">

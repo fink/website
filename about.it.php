@@ -1,7 +1,7 @@
 <?
 $title = "Informazioni";
-$cvs_author = '$Author: claudio87 $';
-$cvs_date = '$Date: 2004/11/11 16:40:14 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -95,8 +95,8 @@ in qualsiasi modo voi vogliate.
 
 
 <p>
-<a href="index.php">Back Home</a> -
-<a href="download/index.php">Download</a>
+<a href="index.php?phpLang=it">Back Home</a> -
+<a href="download/index.php?phpLang=it">Download</a>
 </p>
 
 

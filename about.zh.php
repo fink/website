@@ -1,7 +1,7 @@
 <?
 $title = "About";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/03 05:20:03 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -79,8 +79,8 @@ Fink 可以让你按你喜欢的方式自由地选择安装 XFree86 或其它 X1
 
 
 <p>
-<a href="index.php">回到首页</a> -
-<a href="download/index.php">我要下载</a>
+<a href="index.php?phpLang=zh">回到首页</a> -
+<a href="download/index.php?phpLang=zh">我要下载</a>
 </p>
 
 

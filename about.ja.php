@@ -1,7 +1,7 @@
 <?
 $title = "Fink とは";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/03 13:28:12 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -85,8 +85,8 @@ X11 を使いたくない場合、なくても動作するよう設計されて�
 
 
 <p>
-<a href="index.php">ホームに戻る</a> -
-<a href="download/index.php">ダウンロード</a>
+<a href="index.php?phpLang=ja">ホームに戻る</a> -
+<a href="download/index.php?phpLang=ja">ダウンロード</a>
 </p>
 
 

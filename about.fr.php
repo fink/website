@@ -1,7 +1,7 @@
 <?
 $title = "À propos de Fink";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 15:34:41 $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -78,8 +78,8 @@ Si vous ne voulez pas installer X11, cela ne pose pas de problèmes.
 
 
 <p>
-<a href="index.php">Retour à la page d'accueil</a> -
-<a href="download/index.php">Téléchargement</a>
+<a href="index.php?phpLang=fr">Retour à la page d'accueil</a> -
+<a href="download/index.php?phpLang=fr">Téléchargement</a>
 </p>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "About";
-$cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/10 15:11:41 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -80,8 +80,8 @@ Wenn Sie X11 gar nicht wollen, ist das auch in Ordnung.
 
 
 <p>
-<a href="index.php">Zurück zur Homepage</a> -
-<a href="download/index.php">Download</a>
+<a href="index.php?phpLang=de">Zurück zur Homepage</a> -
+<a href="download/index.php?phpLang=de">Download</a>
 </p>
 
 

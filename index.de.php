@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 14:13:44 $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -32,7 +32,7 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 // Include news items
 include $fsroot."news/news.de.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php">Ältere News...</a></div>
+<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=de">Ältere News...</a></div>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 

@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 21:05:10 $';
+$cvs_date = '$Date: 2004/11/14 01:59:29 $';
 
 include "header.inc";
 ?>
@@ -98,8 +98,8 @@ Si usted no desea X11, también es aceptable.
 
 
 <p>
-<a href="index.php">De regreso al Home</a> -
-<a href="download/index.php">Descargas</a>
+<a href="index.php?phpLang=es">De regreso al Home</a> -
+<a href="download/index.php?phpLang=es">Descargas</a>
 </p>
 
 
