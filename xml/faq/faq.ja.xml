@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.3 2004/02/21 01:44:06 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.4 2004/02/21 23:30:43 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の よくある質問 (FAQ) です。
 他の FAQ と同様に、質問は実際に発生したものとあらかじめ作られたものがあります。
@@ -16,7 +16,7 @@
 <shorttitle>一般</shorttitle>
 <faqentry name="what" >
 <question>
-<p>Fink って何ですか?</p>
+<p>Fink とは何ですか?</p>
 </question>
 <answer>
 <p>Fink は、多くの Unix ソフトウェアを Mac OS X で使えるようにするものです。
@@ -34,7 +34,7 @@
 </faqentry>
 <faqentry name="naming" >
 <question>
-<p>Fink ってどういう意味ですか?</p>
+<p>Fink とはどういう意味ですか?</p>
 </question>
 <answer>
 <p>意味はありません。ただの名称です。なにかの頭文字でもありません。</p>
@@ -60,7 +60,7 @@ Fink と BSD の port メカニズムはどう違うのですか (OpenPackages �
 <li>
 <p>
 dpkg のバイナリパッケージ管理は洗練されています。
-スムーズなアップデート、設定ファイルの扱い、バーチャルパッケージ、高度の依存性など。
+スムーズなアップデート、設定ファイルの扱い、バーチャルパッケージ、高度の依存性などの機能があります。。
 </p>
 </li>
 <li>
@@ -101,7 +101,8 @@ dpkg のバイナリパッケージ管理は洗練されています。
 <p>ではなぜ /sw を選んだのですか?</p>
 </question>
 <answer>
-<p>この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクトから安全なため、近い将来に変更することはないと思われます。</p>
+<p>
+この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p>
 </answer>
 </faqentry>
 </chapter>
@@ -139,12 +140,12 @@ Debian パッケージ管理ツール (dpkg, dselect, apt-get) を移植し、 .
 <p>Apple とは関係がありますか?</p>
 </question>
 <answer>
-<p><link url="http://www.apple.com/" >Apple</link> は Fink を知っていて、オープンソース関連の活動の一環としてサポートしています。
+<p><link url="http://www.apple.com/" >Apple</link> は Fink を認知していて、オープンソース関連の活動の一環としてサポートしています。
 2001年の夏と秋には、 Fink パッケージの修正がリリースに間に合うように、新しい Mac OS X バージョンのプレリリースを提供してくれました。
 引用:
 <em>
-「多くの人が我々は提供したくないのではと疑ってかかっているので、このことで貢献を強調できるでしょうか。
-我々はオープンソース・ゲームに強くなると思います。」
+「多くの人が、我々は提供したくないのではと疑ってかかっているので、このことでオープンソースへの貢献を強調できるでしょうか。
+我々はオープンソースというゲームに強くなると思います。」
 </em>
 Apple ありがとう!</p>
 </answer>
@@ -154,7 +155,7 @@ Apple ありがとう!</p>
 <p>OpenOSX.com とは関係がありますか?</p>
 </question>
 <answer>
-<p>彼らは GIMP CD のリリースをビルドするのに Fink を使ったが、そのことを正しく認めなかった経緯があります。
+<p>彼らは Fink を使って GIMP CD のリリースをビルドしましたが、そのことを正しく認めなかった経緯があります。
 <link url="http://fink.sourceforge.net/pr/openosx.php" >公式声明</link>に詳細があります。</p>
 </answer>
 </faqentry>
@@ -163,7 +164,7 @@ Apple ありがとう!</p>
 <p>macosx.forked.net とは関係がありますか?</p>
 </question>
 <answer>
-<p>当サイトはいくつかの Fink パッケージを変更せずに Installer.app パッケージとして再配布していますが、Fink については何も書かれていません。
+<p>このサイトでは、いくつかの Fink パッケージをそのまま Installer.app パッケージとして再配布していますが、Fink については何も書かれていません。
 <link url="http://fink.sourceforge.net/pr/forked.php" >公式声明</link>に詳細があります。</p>
 </answer>
 </faqentry>
@@ -177,7 +178,7 @@ Apple ありがとう!</p>
 例えば、 Benjamin Reed は双方の KDE パッケージを担当しています。
 Darwinports/OpenDarwin は Fink からのパッチを利用していて、両者は現在新しいディペンダンシー・エンジンの協働を検討しています。</p>
 <p>
-OpenDarwin は別の方法で最初からパッケージ・システムを試しています。
+OpenDarwin は独自のパッケージ・システムを開発しています。
 <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link>  に詳細があります。</p>
 </answer>
 </faqentry>
@@ -837,7 +838,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 </question> 
 <answer> 
 <p>
-What happened is that somehow the OSX Terminal program has been told to run 
 これは、何らかの理由で OSX ターミナルがログインする度に
 <code>/sw/bin/pathsetup.command</code>
  を実行するように設定されているからです。
@@ -941,7 +941,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 </faqentry>
 <faqentry name="mv-failed" >
 <question>
-<p>パッケージをインストールしようとした時の &quot;execution of mv failed, exit code 1&quot; とはどういう意味ですか。?</p>
+<p>パッケージをインストールしようとした時の &quot;execution of mv failed, exit code 1&quot; とはどういう意味ですか?</p>
 </question>
 <answer>
 <p>StuddIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
@@ -1140,7 +1140,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 <p>Fink が <filename>gcc2</filename> がないと言っていますが、インストールも出来ないようです。</p>
 </question> 
 <answer>
-<p>This is because 
+<p>
 <filename>gcc2</filename> は gcc-2.95 のバーチャルパッケージです。
 gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p>
 </answer>
