@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.42 2003/05/03 03:01:58 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.43 2003/05/08 17:43:19 bbraun Exp $</cvsid>
 
 <preface>
 <p>
@@ -310,6 +310,15 @@ in commands.
 <p>
 the parameters for <em>c</em>onfigure: <code>--prefix=%p</code> plus anything
 specified with ConfigureParams
+</p>
+</itemd></item>
+
+<item><itemt>%m</itemt>
+<itemd>
+<p>
+the <em>m</em>achine architecture string.  This is the same as 
+<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
+and 'i386' for x86 machines.
 </p>
 </itemd></item>
 </itemtable>
