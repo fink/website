@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: ogorman $';
-$cvs_date = '$Date: 2004/01/29 13:01:04 $';
+$cvs_date = '$Date: 2004/01/29 13:02:05 $';
 
 include "header.inc";
 ?>
@@ -55,7 +55,7 @@ this list.</p>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Carsten Klapp</li>
 <li>Thomas Kotzian</li> 
-<li>Daniel Macks (<i>dmacks</i)</li>
+<li>Daniel Macks (<i>dmacks</i>)</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Masanori Sekino (<i>msek</i>)</li>
