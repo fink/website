@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/10 09:52:43 $';
+$cvs_date = '$Date: 2004/04/10 15:06:25 $';
 
 include "header.inc";
 ?>
@@ -21,7 +21,7 @@ Erstens, bereits existierende Open Source Software so zu modifizieren, dass Sie 
 (Diesen Prozess nennt man "Portieren".)
 Zweitens, die Ergebnisse dem Gelegenheitsnutzern zugänglich zu machen, als eine zusammenhängende, komfortable Distribution, die den Gewohnheiten der Linux Nutzer entspricht.
 (Dieser Prozess wird "Packaging" genannt.)
-Das Projekt bietet sowohl vorkompilierte Binär-Packete als auch ein vollautomatisiertes System, das es ermöglicht direkt von den Quellcodes zu kompilieren.
+Das Projekt bietet sowohl vorkompilierte Binär-Pakete als auch ein vollautomatisiertes System, das es ermöglicht, direkt von den Quellcodes zu kompilieren.
 </p>
 <p>
 Um diese Ziele zu erreichen, vertraut Fink auf die exzellenten Packet-Management-Tools, die vom
@@ -57,7 +57,7 @@ Unsere Pakete sind normalerweise so eingerichtet, dass sie die maximalen Feature
 
 <p>
 <b>Sicherheit.</b>
-Durch die Politik des strikten Nicht-Veränderns irgenwelcher System Dateien, stellt Fink sicher, dass die gefährdeten Teile Ihres Mac OS X System nicht angefasst werden.
+Durch die Politik des strikten Nicht-Veränderns irgenwelcher System Dateien, stellt Fink sicher, dass die gefährdeten Teile Ihres Mac OS X Systems nicht angefasst werden.
 Sie können Mac OS X aktualisieren, ohne Angst haben zu müssen, dass es Fink in die Quere kommt und umgekehrt.
 Zudem ermöglicht Ihnen das Paket-System, Software, die Sie nicht mehr benötigen, sicher zu entfernen.
 </p>
@@ -68,7 +68,7 @@ Fink ist nicht einfach eine zufällige Ansammlung von Paketen, es ist eine gesch
 Installierte Dateien werden an vorhersagebare Orte abgelegt.
 Dokumentationen werden aktuell gehalten.
 Es existiert eine einheitliche Oberfläche, um Server Prozesse zu kontrollieren.
-Und noch vieles mehr, das meiste davon arbeitet verborgen und der Oberfläche.
+Und noch vieles mehr, das meiste davon arbeitet verborgen unter der Oberfläche.
 </p>
 
 <p>
