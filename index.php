@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/07 09:45:20 $';
+$cvs_date = '$Date: 2001/09/10 14:10:09 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -77,14 +77,16 @@ provides the following resources for the project:
 </p>
 <ul>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&group_id=17203&func=browse">Bug tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=117203&group_id=17203">Bug tracker</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&group_id=17203&func=browse">Package request tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=371315&group_id=17203">Package request tracker</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&group_id=17203&func=browse">Feature request tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=367203&group_id=17203">Feature request tracker</a></li>
+<li><a
+href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">Package submission tracker</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
-<li><a href="doc/cvsaccess/index.php">CVS</a>
-(<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse</a>)</li>
+<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse
+online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
 </ul>
 
 </td></tr></table></p>
