@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/02 14:52:29';
+$cvs_date = 'Date: 2001/08/24 17:29:42';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -27,11 +27,12 @@ Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
 i.e. in <tt><nobr>%p/share/doc/%n</nobr></tt>.
+(In the InstallScript, %i must be used instead of %p, of course.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
 Note that most licenses require that the license accompanies any
-distribution, but Fink's policy is to do this even if it is not
-explicitly required.
+distribution.
+Fink's policy is to do this even if it is not explicitly required.
 </p>
 <p>
 To make an automated maintenance of the binary distribution possible,

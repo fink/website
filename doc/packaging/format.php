@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/02 14:52:29';
+$cvs_date = 'Date: 2001/08/24 17:29:42';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -120,6 +120,12 @@ The available expansions are:
 packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
 <dt>%i</dt><dd>the full <b>i</b>nstall-phase prefix, equivalent to %d%p</dd>
 <dt>%a</dt><dd>the path where the p<b>a</b>tches can be found</dd>
+<dt>%b</dt><dd>the <b>b</b>uild directory,
+e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1
+<p>Note: Use this only when there is no other way. The build
+directory is the current directory when scripts are executed; you
+should use relative path names in commands.</p>
+</dd>
 <dt>%c</dt><dd>the parameters for <b>c</b>onfigure:
 <tt><nobr>--prefix=%p</nobr></tt> plus anything specified with
 ConfigureParams</dd>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/02 14:52:29';
+$cvs_date = 'Date: 2001/08/24 17:29:42';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -220,6 +220,24 @@ it. Some packages can be broken by overwriting the libtool scripts
 with mismatching versions. See the <a href="http://fink.sourceforge.net/darwin/libtool.php">libtool
 page</a> for further information.
 </p>
+</td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
+<p>
+<i>Introduced in a post-0.2.4 CVS version.</i>
+A boolean value.
+If true, the file <tt><nobr>Makefile.in.in</nobr></tt> in the subdirectory
+<tt><nobr>po</nobr></tt> is replaced with a patched version.
+This happens in the patch phase and before the PatchScript is run.
+</p>
+<p>
+The patched version respects DESTDIR and makes sure that message
+catalogs end up in <tt><nobr>/sw/share/locale</nobr></tt>, not
+<tt><nobr>/sw/lib/locale</nobr></tt>.
+Before using this field, make sure that you won't break the package
+and that it's really required.
+You can run <tt><nobr>diff</nobr></tt> to find the differences between the
+packages's version and Fink's version (in
+<tt><nobr>/sw/lib/fink/update</nobr></tt>).
+</p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
 The filename of a patch to be applied with <tt><nobr>patch -p1
@@ -282,7 +300,7 @@ percent expansion described in the last section. A common example:
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <tt><nobr>-I%p/include</nobr></tt> and <tt><nobr>-L%p/lib</nobr></tt>,
 respectively. If you specify a value for one of these, it will be
-appended to the default value.
+prepended to the default value.
 </p>
 </td></tr><tr valign="top"><td>NoSet<i>ENVVAR</i></td><td>
 <p>
@@ -303,6 +321,8 @@ The first parameter (<tt><nobr>$1</nobr></tt>) is set to a value indicating
 what action is being performed.
 Some possible values are <tt><nobr>install</nobr></tt>, <tt><nobr>upgrade</nobr></tt>,
 <tt><nobr>remove</nobr></tt> and <tt><nobr>purge</nobr></tt>.
+Note that there are more values, used during error rollback or when
+removing a package in favor of another one.
 </p>
 <p>
 The scripts are called at the following times:
@@ -342,7 +362,6 @@ Only a "purge" also removes the configuration files.
 </p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
@@ -352,7 +371,6 @@ added in the future.
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 Gives a service description for <tt><nobr>daemonic</nobr></tt>.
 <tt><nobr>daemonic</nobr></tt> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
@@ -366,7 +384,6 @@ your package uses it.
 </p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>
 <p>
-<i>Introduced in a post-0.2.3 CVS version.</i>
 A name for the <tt><nobr>daemonic</nobr></tt> service description file.
 See the description of DaemonicFile for details.
 </p>
@@ -423,8 +440,7 @@ problems.
 </td></tr><tr valign="top"><td>UsesGettext</td><td>
 <p>
 <b>Obsolete.</b> gettext is now an essential package and
-always available. If the package makes more than casual use of
-gettext, you may want to declare a dependency nonetheless.
+always available.
 </p>
 </td></tr></table>
 

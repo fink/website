@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/02 14:52:29';
+$cvs_date = 'Date: 2001/08/24 17:29:42';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
@@ -95,9 +95,14 @@ have an associated manual page here.
 </p>
 </td></tr><tr valign="top"><td><tt><nobr>/sw/share/info</nobr></tt></td><td>
 <p>
-This directory contains documentation in the info format (produced
+This directory contains documentation in the Info format (produced
 from Texinfo sources).
-Maintenance of the <tt><nobr>dir</nobr></tt> file is still to be determined.
+Maintenance of the <tt><nobr>dir</nobr></tt> file is automated through Debian's
+version of <tt><nobr>install-info</nobr></tt> (part of the <tt><nobr>dpkg</nobr></tt>
+package).
+Use the <tt><nobr>InfoDocs</nobr></tt> description field to automatically
+generate appropriate code for the <tt><nobr>postinst</nobr></tt> and
+<tt><nobr>prerm</nobr></tt> package scripts.
 Fink makes sure that no package installs a <tt><nobr>dir</nobr></tt> file of
 its own.
 There are no subdirectories.
@@ -105,12 +110,13 @@ There are no subdirectories.
 </td></tr><tr valign="top"><td><tt><nobr>/sw/share/doc</nobr></tt></td><td>
 <p>
 This directory contains documentation that is neither a man page nor
-an info document.
+an Info document.
 README, LICENSE and COPYING files go here.
 Every package must create a subdirectory here, named after the
 package.
 The subdirectory name must not contain any version numbers (unless
 they are a part of the package name proper).
+Hint: Just use <tt><nobr>%n</nobr></tt>.
 </p>
 </td></tr><tr valign="top"><td><tt><nobr>/sw/share/locale</nobr></tt></td><td>
 <p>
