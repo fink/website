@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.115 2004/01/11 18:29:07 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.116 2004/01/18 20:11:56 dmrrsn Exp $</cvsid>
+
+<newsitem>
+	<date>2004-01-18</date>
+	<headline>10.3 binaries updated</headline> 
+	<body>
+	<p>
+Many of the binary files for 10.3 have been updated, eliminating problems
+with qt and kde, among others.  To access the updated files, bring your
+index of binary files up-to-date by running the
+command <code>sudo apt-get update</code> .  After this, you can use
+apt-get, dselect or FinkCommander to install binary files as usual.
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2004-01-10</date>
 	<headline>Pssst want to install GNOME 2.4?</headline> 

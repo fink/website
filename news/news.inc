@@ -1,4 +1,12 @@
-<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
+<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
+	<p>
+Many of the binary files for 10.3 have been updated, eliminating problems
+with qt and kde, among others.  To access the updated files, bring your
+index of binary files up-to-date by running the
+command <code>sudo apt-get update</code> .  After this, you can use
+apt-get, dselect or FinkCommander to install binary files as usual.
+	</p>
+	<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
 	<p>
 	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
 	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
@@ -49,20 +57,4 @@
 	such a nice community; hopefully we shall make it a smooth ride for you and
 	your Macintosh in Two Zero Zero Four.
 	</p>
-	<a name="2003-12-28 Merry Christmas and a happy new year"><span class="news-date">2003-12-28: </span><span class="news-headline">Merry Christmas and a happy new year</span></a><?php gray_line(); ?>
-		<p>
- The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
- forward to yet another year where we can help the Macintosh community grow into the 
- world of UNIX together with Mac OS X.
- 		</p>
-		<p>
- We wish you all, that your hope is not too frail and that you will carry on following 
- through with your wishes. May the world we live in gradually become a better place and
- may peace and understanding settle just for a few days. 
-		</p>
-		<p>
- Enjoy your quiet time and in case we do not get around to saying it soon enough. 
- A happy new year to all of you, stay with us we count on your support.
-		
-		</p>
 	

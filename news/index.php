@@ -1,14 +1,22 @@
 <?
 $title = "News";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/01/11 18:29:07';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/01/18 20:11:56';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
+<a name="2004-01-18 10.3 binaries updated"><span class="news-date">2004-01-18: </span><span class="news-headline">10.3 binaries updated</span></a><?php gray_line(); ?>
+	<p>
+Many of the binary files for 10.3 have been updated, eliminating problems
+with qt and kde, among others.  To access the updated files, bring your
+index of binary files up-to-date by running the
+command <code>sudo apt-get update</code> .  After this, you can use
+apt-get, dselect or FinkCommander to install binary files as usual.
+	</p>
+	<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
 	<p>
 	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
 	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
