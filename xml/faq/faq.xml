@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.22 2001/11/04 15:18:15 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.23 2001/11/04 15:44:41 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -299,9 +299,36 @@ works fine.
 </p>
 </answer></faqentry>
 
+<faqentry name="bindist"><question><p>The package database at the
+website lists package xxx, but apt-get and dselect know nothing about
+it. Who's lying?</p></question>
+<answer>
+<p>
+Both are correct.
+The <link url="http://fink.sourceforge.net/pdb/">package database</a>
+knows about every package, including those that are still in the
+unstable section.
+The <code>dselect</code> and <code>apt-get</code> tools on the other
+hand only know about the packages available as precompiled binary
+packages.
+Many packages are not available in precompiled form through these
+tools for a variety of reasons.
+A package must be in the "stable" section of the latest point release
+to be considered, and it must pass additional checks for policy
+compliance as well as licensing and patent restrictions.
+</p>
+<p>
+If you want to install a package that is not available via
+<code>dselect</code> / <code>apt-get</code>, you have to compile it
+from source using <code>fink install <i>packagename</i></code>.
+Make sure you have the Developer Tools installed before you try this.
+See also the question about unstable below.
+</p>
+</answer></faqentry>
+
 <faqentry name="unstable"><question><p>There's this package in
-unstable that I want to install, but Fink just says 'no package
-found'. How can I install it?</p></question>
+unstable that I want to install, but the fink command just says 'no
+package found'. How can I install it?</p></question>
 <answer>
 <p>
 First make sure you understand what 'unstable' means.

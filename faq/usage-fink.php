@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/11/04 15:18:15';
+$cvs_date = 'Date: 2001/11/04 15:45:26';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -77,9 +77,33 @@ Note that Qt is a different story, we have a package for it and it
 works fine.
 </p></div></a>
 
+<a name="bindist"><div class="question"><p><b>Q: The package database at the
+website lists package xxx, but apt-get and dselect know nothing about
+it. Who's lying?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Both are correct.
+The <a href="http://fink.sourceforge.net/pdb/">package database</a>
+knows about every package, including those that are still in the
+unstable section.
+The <tt><nobr>dselect</nobr></tt> and <tt><nobr>apt-get</nobr></tt> tools on the other
+hand only know about the packages available as precompiled binary
+packages.
+Many packages are not available in precompiled form through these
+tools for a variety of reasons.
+A package must be in the "stable" section of the latest point release
+to be considered, and it must pass additional checks for policy
+compliance as well as licensing and patent restrictions.
+</p><p>
+If you want to install a package that is not available via
+<tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
+from source using <tt><nobr>fink install <i>packagename</i></nobr></tt>.
+Make sure you have the Developer Tools installed before you try this.
+See also the question about unstable below.
+</p></div></a>
+
 <a name="unstable"><div class="question"><p><b>Q: There's this package in
-unstable that I want to install, but Fink just says 'no package
-found'. How can I install it?</b></p></div>
+unstable that I want to install, but the fink command just says 'no
+package found'. How can I install it?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 First make sure you understand what 'unstable' means.
 Packages in there usually have not been tested at all, many have

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/11/04 15:18:15';
+$cvs_date = 'Date: 2001/11/04 15:45:26';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -53,9 +53,12 @@ installation and provide a symlink from the old location, will it
 work?</a></li>
 <li><a href="usage-fink.php#kde">Why are there no packages for
 KDE?</a></li>
+<li><a href="usage-fink.php#bindist">The package database at the
+website lists package xxx, but apt-get and dselect know nothing about
+it. Who's lying?</a></li>
 <li><a href="usage-fink.php#unstable">There's this package in
-unstable that I want to install, but Fink just says 'no package
-found'. How can I install it?</a></li>
+unstable that I want to install, but the fink command just says 'no
+package found'. How can I install it?</a></li>
 <li><a href="usage-fink.php#sudo">I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
 <li><a href="usage-fink.php#exec-init-csh">When I try to run
@@ -105,7 +108,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.22 2001/11/04 15:18:15 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.24 2001/11/04 15:45:26 chrisp Exp $</i></p>
 
 
 <?
