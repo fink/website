@@ -1,11 +1,16 @@
-/* $Id: fink.css,v 1.16 2004/02/28 17:26:55 fingolfin Exp $ */
+/* $Id: fink.css,v 1.17 2004/02/28 18:25:19 fingolfin Exp $ */
+/* A good way to get colors which fit well together is to use the color wheel
+ found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
+ were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
+ and then using the "soft contrast (split complements)" scheme.
+ */
 body { color:black; background-color:white;  font-family:"Trebuchet MS",sans-serif;}
 
-a:link { color:rgb(204,141,4); }
+a:link { color:#613D99; }
 
-a:visited { color:rgb(51,25,0); }
+a:visited { color:#4D3D66; }
 
-a:active { color:rgb(255,51,51); }
+a:active { color:#FFCC66; }
 
 table {
 	background-color: transparent ;
@@ -36,7 +41,6 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 .attention { color:red; }
 
 .toc_top {
-	color: black ;  
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 9pt ;
 	font-weight: bold ;
@@ -48,7 +52,6 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 }
 
 .toc_sections {
-	color: black ;
 	background-color: #eeeeee ;
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 8pt ;
@@ -62,13 +65,18 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 	padding: 2px 4px ;
 }
 
+.toc_sections a
+{
+	color: #4D3D66;
+	text-decoration: none;
+}
+
 .toc_sections:hover {
-	background-color: #87b9e7 ;
+	background-color: #FFE6B3 ;
 }
 
 .toc_sections_selected {
-	color: black ;
-	background-color: #87b9e7 ;
+	background-color: #FFCC66 ;
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 8pt ;
 	font-weight: bold ;
@@ -80,8 +88,13 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 	padding: 2px 4px 2px 2px ;
 }
 
+.toc_sections_selected a
+{
+	color: #4D3D66;
+	text-decoration: none;
+}
+
 .toc_subsections {
-	color: black ;
 	background-color: #eeeeee ;
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 8pt ;
@@ -94,13 +107,18 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 	padding: 2px 2px 2px 14px ;
 }
 
+.toc_subsections a
+{
+	color: #4D3D66;
+	text-decoration: none;
+}
+
 .toc_subsections:hover {
-	background-color: #87b9e7 ;
+	background-color: #FFE6B3 ;
 }
 
 .toc_subsections_selected {
-	color: black ;
-	background-color: #87b9e7 ;
+	background-color: #FFCC66 ;
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
 	font-size: 8pt ;
 	font-weight: normal ;
@@ -110,6 +128,12 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 	border-color: #ffffff ;
 	margin: 0px;
 	padding: 2px 2px 2px 14px ;
+}
+
+.toc_subsections_selected a
+{
+	color: #4D3D66;
+	text-decoration: none;
 }
 
 .nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
@@ -126,7 +150,7 @@ tt { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;
 
 code { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;  white-space:nowrap; }
 
-pre { color:black;  background-color:rgb(230,230,255);  padding:4px;  padding-left:8px;  margin-left:16px;  margin-right:16px;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+pre { color:black;  background-color:#FFF2D9;  padding:4px;  padding-left:8px;  margin-left:16px;  margin-right:16px;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
 
 img { border:0; }
 
