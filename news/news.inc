@@ -14,10 +14,7 @@ Fink.
 Running "fink selfupdate" should perform the upgrade for you.  The latest
 version of the fink package manager will automatically detect which
 version of OS X and which version of gcc you have installed, and will
-adjust itself accordingly.  If you're upgrading on a 10.3 system, please
-make sure you've got unstable enabled (by putting unstable/main and
-unstable/crypto in your your Trees: line in /sw/etc/fink.conf) to get
-around an upgrade bug in 10.3's stable tree.
+adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
 <a href="<?php print $root; ?>http://fink.sf.net/download/srcdist.php">bootstrapping from
