@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: costabel $';
-$cvs_date = '$Date: 2004/09/19 15:38:24 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2004/10/12 05:05:45 $';
 
 include "header.inc";
 include "releases.inc";
@@ -49,6 +49,12 @@ if(param("hidegreen"))
 	
 if(param("hidered"))
 	$hidered = param("hidered");
+
+$read_only = 0;
+#Special case for 10.2-gcc3.3 to 10.3 move
+# (general public gets read-only list of differences)
+if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable"))
+     $read_only = 1;
 	
 if(param("red"))
 	$op = 3;
@@ -96,6 +102,7 @@ if (!$rs) {
   print 'Sort: <SELECT name = sort>'.
   		'<option value=maintainer '. (strcmp($sort, "maintainer") ? '>' : 'selected>'). 'Maintainer'.
   		'<option value=name '. (strcmp($sort, "name") ? '>' : 'selected>'). 'Package Name</SELECT>';
+  if($cmp == 0 && ! $read_only)
     print "Hide: <input type=checkbox name=\"hidewhite\" ".($hidewhite ? 'checked>' : '>')."White".
      	"<input type=checkbox name=\"hidegreen\" ".($hidegreen ? 'checked>' : '>')."Green".
      	"<input type=checkbox name=\"hidered\" ".($hidered ? 'checked>' : '>')."Red";
@@ -120,8 +127,7 @@ if (!$rs) {
   print '<p>'.$count." Packages Found in $tree1</p>";
   $hitcount = 0;
 
-#Special case for 10.2-gcc3.3 to 10.3 move
-  if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+  if($cmp == 0 && ! $read_only)
   {
   	$line = $greencount = $redcount = $whitecount = 0;
    	print "Key:<br><ul><li><div class=\"bgreen\">Will not be moved, obsolete or changed names</div><li><div class=\"bred\">Does not compile</div></ul>";
@@ -146,8 +152,7 @@ if (!$rs) {
  		}
   		if($hit)
   		{
-			#Special case for 10.2-gcc3.3 to 10.3 move
-			if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+			if($cmp == 0 && ! $read_only)
 			{
 				$qmove = "SELECT moveflag FROM move ".
       				"WHERE release LIKE \"$tree1\" AND name=\"" . $row['name'] . '"';
@@ -232,9 +237,10 @@ if (!$rs) {
   $pkglist = $pkglist . '</ul>';
   print "<br>Found $hitcount Packages in $tree1 that ". ($cmp ? 'are' : 'are not') .
   		" in $tree2.<br>";
-  print "Total: $greencount green, $redcount red, $whitecount white packages.<br>$pkglist";		
-	#Special case for 10.2-gcc3.3 to 10.3 move
-	if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+  if($cmp == 0 && ! $read_only)
+    print "Total: $greencount green, $redcount red, $whitecount white packages.<br>";
+  print "$pkglist";		
+	if($cmp == 0 && ! $read_only)
 	{
 		print '<input type="hidden" name=tree1 value='.$tree1.'>';
 		?>
