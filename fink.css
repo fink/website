@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.11 2003/03/01 01:21:44 fingolfin Exp $ */
+/* $Id: fink.css,v 1.12 2003/10/24 15:07:34 dmrrsn Exp $ */
 
 body {
   color:black;
@@ -7,10 +7,10 @@ body {
 }
 
 a:link {
-  color:rgb(0,0,240);
+  color:rgb(204,141,4);
 }
 a:visited {
-  color:rgb(128,0,128);
+  color:rgb(51,25,0);
 }
 a:active {
   color:rgb(255,51,51);
