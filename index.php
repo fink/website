@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/26 09:32:09 $';
+$cvs_date = '$Date: 2001/09/02 12:53:44 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -29,15 +29,15 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-09-02: Chat with the developers and other users! We now have
+a #fink channel on the <a href="http://openprojects.net/">openprojects.net</a>
+IRC network.</p>
 <p>2001-08-25: Fink 0.2.5 was released. The source release is
 available from the <a href="download.php">download page</a>, the
 binary release will follow soon.</p>
 <p>2001-08-23: OpenOSX.com refuses to give fair credit after using
 Fink to create GIMP CDs. Read Christoph's <a
 href="pr/openosx.php">public statement</a> on the issue.</p>
-<p>2001-08-22: The new <a href="help/index.php">help page</a> lists
-various ways to get help using Fink. It also lists some ideas how you
-can give back to the project.</p>
 
 <h2>Status</h2>
 
