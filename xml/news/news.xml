@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.130 2004/08/03 20:09:48 dmacks Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.131 2004/08/21 16:06:36 dmrrsn Exp $</cvsid>
 
+<newsitem>
+	<date>2004-08-21</date>
+	<headline>Error in fink-0.22.0</headline>
+	<body>
+	<p>
+	The fink-0.22.0 package manager, which was available briefly in the 
+	unstable tree this past week, had a bug which prevents further
+	updating via rsync.  If you installed this version of fink, you
+	can recover by running the command 
+	<code>fink install fink-0.21.2-1</code> which will downgrade fink
+	to the version in the stable tree, and subsequently running
+	<code>fink selfupdate</code>
+	</p><p>
+	If for any reason those commands don't work, go to 
+	<link url="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</link> and download the
+	file <code>fink-0.22.1.tar.gz</code> .  Unpack this file with
+	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
+	fink-0.22.1 directory, run the command <code>./inject.pl</code>
+	</p>
+	<p>
+	The fink team apologizes for the error, and thanks the user 
+	community for bringing it to our attention quickly.
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2004-08-01</date>
 	<headline>Improving our mirrors. Can you help?</headline>

@@ -1,13 +1,34 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/03 20:09:48';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/08/21 16:06:36';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
+<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
+	<p>
+	The fink-0.22.0 package manager, which was available briefly in the 
+	unstable tree this past week, had a bug which prevents further
+	updating via rsync.  If you installed this version of fink, you
+	can recover by running the command 
+	<code>fink install fink-0.21.2-1</code> which will downgrade fink
+	to the version in the stable tree, and subsequently running
+	<code>fink selfupdate</code>
+	</p><p>
+	If for any reason those commands don't work, go to 
+	<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
+	file <code>fink-0.22.1.tar.gz</code> .  Unpack this file with
+	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
+	fink-0.22.1 directory, run the command <code>./inject.pl</code>
+	</p>
+	<p>
+	The fink team apologizes for the error, and thanks the user 
+	community for bringing it to our attention quickly.
+	</p>
+	<a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
 	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
@@ -936,5 +957,3 @@ software before using Fink.
   
 
 <? include_once "footer.inc"; ?>
-
-

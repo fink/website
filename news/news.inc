@@ -1,4 +1,25 @@
-<a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
+<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
+	<p>
+	The fink-0.22.0 package manager, which was available briefly in the 
+	unstable tree this past week, had a bug which prevents further
+	updating via rsync.  If you installed this version of fink, you
+	can recover by running the command 
+	<code>fink install fink-0.21.2-1</code> which will downgrade fink
+	to the version in the stable tree, and subsequently running
+	<code>fink selfupdate</code>
+	</p><p>
+	If for any reason those commands don't work, go to 
+	<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
+	file <code>fink-0.22.1.tar.gz</code> .  Unpack this file with
+	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
+	fink-0.22.1 directory, run the command <code>./inject.pl</code>
+	</p>
+	<p>
+	The fink team apologizes for the error, and thanks the user 
+	community for bringing it to our attention quickly.
+	</p>
+	<a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
 	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
@@ -48,21 +69,4 @@ pointers Fink would not be where we are now..
 
 </p>
 
-<a name="2004-02-19 Raise your Flag."><span class="news-date">2004-02-19: </span><span class="news-headline">Raise your Flag.</span></a><?php gray_line(); ?>
-	<p>
-Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
-internationalisation efforts. 
-The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
-</p>
-<p>
-This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
-A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
-Which language are you willing to translate?
-</p>
-<p>
-If you are willing to become a member of the internationalisation team or wish to provide feedback on 
-the web-site feel free to join the new mailing-list.
-You can do so by going to our <a href="<?php print $root; ?>lists/index.php">mailing-lists page</a>. The full announcement on the existing 
-mailing lists can be read <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">here</a>.
-</p>
 

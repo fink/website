@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 21 Aug 2004 11:54:34 EDT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Aug 2004 12:06:45 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0">
