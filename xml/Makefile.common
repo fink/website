@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.17 2003/11/01 19:10:01 rangerrick Exp $
+# $Id: Makefile.common,v 1.18 2003/11/04 10:05:28 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -75,7 +75,7 @@ force: clean all
 
 # install files inside website
 
-install: $(install_files)
+install: $(install_files) install-hook
 ifdef DESTDIR
 	cp $(install_files) $(basedir)/web/$(DESTDIR)/
 else
@@ -88,5 +88,6 @@ endif
 #	cp $(install_txt) $(basedir)/fink/
 #endif
 
+install-hook:
 
 # eof
