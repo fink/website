@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/05/21 15:36:55';
+$cvs_date = 'Date: 2003/05/24 03:33:15';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -115,7 +115,7 @@ directory, XFree86 will use its default file,
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
-<pre>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
+<pre>cp /usr/X11R6/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
 If you're using Fink, you should source <code>init.sh</code>
 right at the beginning to make sure the environment is set up correctly.
