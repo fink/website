@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.8 2004/03/19 21:29:03 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.9 2004/03/22 19:18:30 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -1025,6 +1025,17 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       <answer>
         <p>这是因为 <filename>gcc2</filename> 是一个代表你系统上 gcc-2.95 的虚拟软件包。在 XCode 工具中安装 gcc2.95 软件包（早期操作系统的开发工具安装把 gcc-2.95 作为主要的编译工具安装）。</p>
       </answer>
+    </faqentry>
+    <faqentry name="system-java">
+    <question>
+    <p>Fink 提示说 <code>Failed: Can't resolve dependency "system-java14-dev"</code>，但我却找不到有这个软件包。</p>
+    </question>
+    <answer>
+    <p>这是因为它是一个虚拟软件包。
+    这类错误在 Java 通过软件更新升级后造成的：
+    有关的头问题被删除了，引起不能生成 -dev 软件包。</p>
+    <p>你需要自己从<link url="http://connect.apple.com">苹果网站</link>下载相应的<filename>Java 开发工具</filename>软件包。在本例的情况中，你需要<filename>Java 1.4.2 Developer Tools</filename>。</p>
+    </answer>
     </faqentry>
   </chapter>
   <chapter filename="comp-packages" >

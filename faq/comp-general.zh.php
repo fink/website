@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/19 21:29:03';
+$cvs_date = 'Date: 2004/03/22 19:18:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 include_once "header.inc";
@@ -152,6 +152,12 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <a name="gcc2">
       <div class="question"><p><b>Q6.17: Fink 说我缺少 <code>gcc2</code>，但我不知道怎么安装它。</b></p></div>
       <div class="answer"><p><b>A:</b> 这是因为 <code>gcc2</code> 是一个代表你系统上 gcc-2.95 的虚拟软件包。在 XCode 工具中安装 gcc2.95 软件包（早期操作系统的开发工具安装把 gcc-2.95 作为主要的编译工具安装）。</p></div>
+    </a>
+    <a name="system-java">
+    <div class="question"><p><b>Q6.18: Fink 提示说 <code>Failed: Can't resolve dependency "system-java14-dev"</code>，但我却找不到有这个软件包。</b></p></div>
+    <div class="answer"><p><b>A:</b> 这是因为它是一个虚拟软件包。
+    这类错误在 Java 通过软件更新升级后造成的：
+    有关的头问题被删除了，引起不能生成 -dev 软件包。</p><p>你需要自己从<a href="http://connect.apple.com">苹果网站</a>下载相应的<code>Java 开发工具</code>软件包。在本例的情况中，你需要<code>Java 1.4.2 Developer Tools</code>。</p></div>
     </a>
   <p align="right">
 Next: <a href="comp-packages.php?phpLang=zh">7 编译问题－特定软件包</a></p>
