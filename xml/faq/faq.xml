@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.46 2002/10/20 20:23:19 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.47 2002/11/02 13:01:12 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -538,74 +538,20 @@ installation or install libwww after you installed Fink.
 
 </chapter>
 
-
+<!--
 <chapter filename="comp-packages">
 <title>Compile Problems - Specific Packages</title>
 <shorttitle>Compiling (2)</shorttitle>
 
-<faqentry name="nedit"><question><p>nedit is broken.</p></question>
-<answer><p>If you're seeing <code>Xm/BulletinB.h: No such file or
-directory</code> in the error messages, that's because you have Xtools
-installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
-to include some required header files. There is no workaround yet, and
-it is unknown whether this is fixed in recent releases on Xtools.</p>
-</answer></faqentry>
-
-<faqentry name="gnome-libs-db"><question><p>gnome-libs complains about
-dbopen and lots of other stuff.</p></question>
+<faqentry name="foo-bar"><question><p>Foo?</p></question>
 <answer>
 <p>
-This can happen when you manually installed Berkeley DB 3 without
-backward compatibility.
-gnome-libs expects to find a DB 1.86 compatible interface.
-Remove the DB 3 installation from /usr/local or replace it with one
-that has DB 1.86 compatibility.
+Dummy
 </p>
-</answer></faqentry>
-
-<faqentry name="libiconv"><question><p>libiconv fails with errors that
-mention ANSI C++.</p></question>
-<answer>
-<p>
-This happens when you make a symlink from <code>gcc</code> to
-<code>c++</code>.
-That causes all C code to be compiled as C++ code.
-Unfortunately, C allows some things that C++ doesn't allow, resulting
-in these errors.
-You should remove the symlink you created, or at least point it at
-<code>cc</code> instead.
-</p>
-</answer></faqentry>
-
-<faqentry name="xaw3d"><question><p>Xaw3D fails to compile with a
-two-level namespace error.</p></question>
-<answer>
-<p>
-This can happen on Mac OS X 10.1 if you have installed XFree86
-manually (i.e. you have system-xfree86) or if you have Xtools.
-Xaw3D uses the configuration files installed by XFree86 and fails if
-those have not been patched for Mac OS X 10.1.
-xfree86-base already has those patches in Fink 0.3.0.
-system-xfree86 and system-xtools have been fixed to patch the
-configuration files on the fly if necessary.
-They are available in CVS; the binary distribution has also been
-updated with these new packages.
-</p>
-</answer></faqentry>
-
-<faqentry name="gettext"><question><p>gettext compiles fine but then
-installing it fails.</p></question>
-<answer>
-<p>
-This is a known problem which hopefully should be fixed in an upcoming
-Fink release. For now the workaround  is to enter the following commands:
-</p>
-<codeblock>fink rebuild gettext
-fink update gettext</codeblock>
 </answer></faqentry>
 
 </chapter>
-
+-->
 
 <chapter filename="usage-general">
 <title>Package Usage Problems - General</title>
@@ -679,6 +625,7 @@ have come as a surprise.
 <faqentry name="compile-myself"><question><p>How do I compile something
 myself using fink-installed software?</p></question>
 <answer>
+<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
 <p>When compiling something yourself outside of fink, the compiler and
 linker need to be told where to find the fink-installed libraries and
 headers. For a package that uses standard configure/make process, you
@@ -763,20 +710,6 @@ We don't have an analysis or a fix yet.
 </p>
 </answer></faqentry>
 
-<faqentry name="gnome-terminal"><question><p>Why won't gnome-terminal
-start up?</p></question>
-<answer>
-<p>
-There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
-working.
-The actual bug (file descriptor passing doesn't work) is masked by
-another issue (unusual stack size limit), which was left as is to
-produce an error message when gnome-terminal is started (thus
-preventing even more confusion).
-It is expected that this will be fixed in Mac OS X 10.1.
-</p>
-</answer></faqentry>
-
 <faqentry name="xdarwin-start"><question><p>Help! When I start
 XDarwin, it immediately quits!</p></question>
 <answer>
@@ -820,41 +753,6 @@ sort this out.
 </answer></faqentry>
 
 </chapter>
-
-
-<!--
-<chapter filename="packages">
-<title>Problems With Certain Packages</title>
-<shorttitle>Packages</shorttitle>
-
-
-<faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>
-<answer><p>There are several things that can cause this:</p>
-<ul>
-<li><p>You don't have X11 installed. You must install X11 manually,
-either <link url="http://www.xfree86.org/">XFree86</link> or <link
-url="http://www.tenon.com/">Xtools</link>. XFree86 packages for Fink are
-under development, but not yet ready for prime time.</p></li>
-<li><p>You installed the XFree86 binary distribution, but left out the
-Xprog.tgz tarball. It is an optional tarball, but must be installed to
-compile X11 applications.</p></li>
-<li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
-static libraries. Now configure scripts are failing in the
-<code>checking for XOpenDisplay in -lX11</code> test. To fix this, use the
-<code>-c</code> option for ranlib, i.e.:</p>
-<codeblock>cd /usr/X11R6/lib
-sudo ranlib -c *.a</codeblock>
-<p>Note that this can't happen with more recent versions of XFree86, as
-they compile the libraries (both static and shared) without common
-symbols.</p></li>
-</ul>
-<p>Hopefully, this will soon be solved with proper X11 packages and
-dependencies. But don't hold your breath yet.</p>
-</answer></faqentry>
-
-
-</chapter>
--->
 
 
 </document>
