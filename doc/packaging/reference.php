@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/29 15:31:39';
+$cvs_date = 'Date: 2001/08/02 14:52:29';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -277,7 +277,7 @@ are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
 MAKE, MFLAGS. The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
-<pre>SetCPPFLAGS: -traditional-cpp</pre>
+<pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <tt><nobr>-I%p/include</nobr></tt> and <tt><nobr>-L%p/lib</nobr></tt>,
@@ -397,7 +397,7 @@ everything in place" goes here. Multiple lines allowed.
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>
 Notes that are specific to porting the package to Darwin. Stuff
-like "config.guess and libtool scripts are updated, -traditional-cpp
+like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>Homepage</td><td>

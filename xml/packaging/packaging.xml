@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.7 2001/07/29 15:31:39 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.8 2001/08/02 14:52:29 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -836,7 +836,7 @@ are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
 MAKE, MFLAGS. The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
-<codeblock>SetCPPFLAGS: -traditional-cpp</codeblock>
+<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
 <p>
 The variables CPPFLAGS and LDFLAGS are special. They default to
 <code>-I%p/include</code> and <code>-L%p/lib</code>,
@@ -991,7 +991,7 @@ everything in place" goes here. Multiple lines allowed.
 <itemd>
 <p>
 Notes that are specific to porting the package to Darwin. Stuff
-like "config.guess and libtool scripts are updated, -traditional-cpp
+like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
 </p>
 </itemd></item>
