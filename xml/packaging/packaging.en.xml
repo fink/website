@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.17 2004/03/29 03:32:11 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.18 2004/03/29 06:31:32 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1280,9 +1280,7 @@ subtype. For example:
 <codeblock>Type: perl (5.6.0 5.8.1)</codeblock>
 <p>
 yields two package descriptions, one that behaves as if <code>Type:
-perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. Subtype
-list expansion/package cloning is recursive; if there are multiple
-types with subtype lists, you will get all combinations. The special
+perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. The special
 subtype list &quot;(boolean)&quot; stands for a list containing the
 type itself and a period, so the following two forms are identical:
 </p>
@@ -1290,6 +1288,11 @@ type itself and a period, so the following two forms are identical:
 Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </codeblock>
+<p>
+Subtype list expansion/package cloning is recursive; if there are
+multiple types with subtype lists, you will get all combinations:
+</p>
+<codeblock>Type: -ssl (boolean), perl (5.6.0 5.8.1)</codeblock>
 <p>
 One can access the specific variant subtype in other fields using the
 %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info

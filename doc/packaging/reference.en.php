@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/29 03:32:11';
+$cvs_date = 'Date: 2004/03/29 06:31:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -156,9 +156,7 @@ subtype. For example:
 <pre>Type: perl (5.6.0 5.8.1)</pre>
 <p>
 yields two package descriptions, one that behaves as if <code>Type:
-perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. Subtype
-list expansion/package cloning is recursive; if there are multiple
-types with subtype lists, you will get all combinations. The special
+perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. The special
 subtype list "(boolean)" stands for a list containing the
 type itself and a period, so the following two forms are identical:
 </p>
@@ -166,6 +164,11 @@ type itself and a period, so the following two forms are identical:
 Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </pre>
+<p>
+Subtype list expansion/package cloning is recursive; if there are
+multiple types with subtype lists, you will get all combinations:
+</p>
+<pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
 <p>
 One can access the specific variant subtype in other fields using the
 %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
