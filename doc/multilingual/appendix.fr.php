@@ -1,47 +1,38 @@
 <?
-$title = "i18n - Appendix";
+$title = "i18n - Annexe";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=fr" title="Additional Resources">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=fr" title="Autres ressources">';
 
 include_once "header.inc";
 ?>
 
-<h1>i18n - 5 Appendix</h1>
+<h1>i18n - 5 Annexe</h1>
     
 
     
 
-    <h2><a name="cvs-codes">5.1 CVS codes</a></h2>
+    <h2><a name="cvs-codes">5.1 Codes CVS</a></h2>
       
 
-      <p>When you are updating your CVS checkout, you may see some letters
-      before the filenames. These represent the following conditions:</p>
+      <p>Quand vous mettrez à jour votre copie locale par CVS, vous verrez parfois des lettres devant les noms de fichiers. Voici ce qu'elles signifient :</p>
 
       <ul>
-        <li><b>P:</b> There is a new version of the file via a patch.</li>
+        <li><b>P :</b> il existe une nouvelle version du fichier créée par une rustine.</li>
 
-        <li><b>U:</b> There is a new version of the file via download.</li>
+        <li><b>U :</b> il existe une nouvelle version du fichier créée par téléchargement.</li>
 
-        <li><b>M:</b> The version in your local repository has been
-        modified.</li>
+        <li><b>M :</b> la version dans votre copie locale a été modifiée.</li>
 
-        <li><b>C:</b> Your version conflicts with that in the remote
-        repository. You should resolve this by editing the the file and
-        merging your modifications. <p>You can use </p>
-        <pre>rm file; cvs update file</pre>
-        <p>where <code>file </code>is the offending
-        file, to resolve the conflict, and then apply the changes from the
-        backup of your file that exists
-        under<code>.#file-version</code></p>, where <b>version
-        </b>is the revision that your file started from.</li>
+        <li><b>C :</b> Votre version est en conflit avec celle du serveur. Vous devez résoudre le conflit en éditant le fichier et en intégrant vos modifications. <p>Pour ce faire, vous pouvez utiliser :</p>
+        <pre>rm fichier; cvs update fichier</pre>
+        <p>où <code>fichier</code> représente le fichier concerné, puis appliquez les modifications à partir de la copie de sauvegarde de votre fichier que CVS a créée sous le nom de <code>.#fichier-version</code></p> où <b>version</b> est le numéro de révision avant la mise à jour.</li>
 
-        <li><b>?:</b> The file is neither in the remote repository nor in
-        the files to be ignored.</li>
+        <li><b>? :</b> le fichier n'est ni sur le serveur, ni dans la liste des fichiers à ignorer.</li>
 
-        <li><b>A:</b> The file has been added but not committed yet.</li>
+        <li><b>A :</b> le fichier a été ajouté, mais le commit n'a pas encore eu lieu.</li>
 
-        <li><b>R:</b> The file has been removed but not committed yet.</li>
+        <li><b>R :</b> le fichier a été supprimé, mais le commit n'a pas encore eu lieu.</li>
       </ul>
     
   

@@ -58,7 +58,7 @@ include_once "header.inc";
       <ul>
         <li>Participer aux discussions sur la <a href="http://fink.sourceforge.net/lists/fink-i18n.php">liste de discussion fink-i18n</a>. C'est là que nous parlons des mécanismes d'internationalisation, que nous annonçons les mises à jour des documents, etc...</li>
 
-        <li>Réviser la traduction dans votre propre langue. Il se peut que vous trouviez des tournures plus élégantes que celles qui existent actuellement, des erreurs de traduction, etc....</li>
+        <li>Réviser la traduction dans votre propre langue. Il se peut que vous trouviez des tournures plus élégantes que celles qui existent actuellement, des erreurs de traduction, etc...</li>
 
         <li>Devenir traducteur vous-même. Si votre langue ne figure pas encore au fronton du site (ou même si elle y figure) et que vous pensez pouvoir faire une bonne traduction, vous pouvez vous porter volontaire pour traduire dans votre propre langue. <p>Prenez en compte, toutefois, que si vous êtes la première personne à traduire dans votre langue, il y a un bon nombre de documents à traduire au départ. Ensuite, il ne devrait y avoir que peu de changements.</p></li>
       </ul>

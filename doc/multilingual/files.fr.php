@@ -2,7 +2,7 @@
 $title = "i18n - Fichiers";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
 ?>
@@ -26,7 +26,7 @@ include_once "header.inc";
 
         <li>Un éditeur de texte qui gère l'encodage UTF-8 ; éventuellement un éditeur XML, car de nombreux fichiers du site web de Fink sont générés à partir de fichiers XML.</li>
 
-        <li>Faire un checkout de l'arbre xml de Fink, comme expliqué dans les <a href="#acquiring">instructions</a> ci-dessous.</li>
+        <li>Faire un check out de l'arbre xml de Fink, comme expliqué dans les <a href="#acquiring">instructions</a> ci-dessous.</li>
 
         <li>Le cas échéant, une bonne connaissance de Fink.</li>
       </ul>
@@ -97,7 +97,7 @@ include_once "header.inc";
             <pre>cvs -d:ext:votrenomutilisateur@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
             où <b>votrenomutilisateur</b> est, bien sûr, votre nom d'utilisateur sur SourceForge. Il se peut que vous ayez un message vous disant que la clé DSA du serveur est inconnue. Répondez "yes" à ce message. </li>
 
-            <li>Dans ce cas, vous devez saisir votre phrase d'identification SourceForge à l'invite.</li>
+            <li>Dans ce cas, vous devez saisir votre phrase d'authentification SourceForge à l'invite.</li>
           </ol></li>
       </ol>
     
@@ -125,7 +125,7 @@ include_once "header.inc";
 
         <li>Mettez-les à jour :
         <pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
-        pour les membres d'équipe sans accès commit, ou 
+        pour les membres d'équipe sans accès commit, ou :
         <pre>cvs update -dP</pre>
         pour les chefs d'équipe.</li>
       </ol>
@@ -163,7 +163,7 @@ include_once "header.inc";
       <p>Les fichiers <code>constants.*.inc</code> servent à traduire des mots inclus tels quels dans les fichiers PHP. La plupart correspondent à des articles de menu, situés en haut et à gauche des pages. Il vous faut les isoler des scripts  et créer un fichier constants.xx.inc pour votre langue. Pour ce faire, exécutez la commande suivante dans une fenêtre de terminal :</p>
       <pre>cp constants.de.inc constants.xx.inc</pre>
       <p>où xx est votre code langue (par exemple fr pour le français).
-      Ensuite, il vous faudra traduire la partie située entre guillemets simple de chaque ligne commençant par define. Si vous ne comprenez l'allemand, voici la traduction en anglais :</p>
+      Ensuite, il vous faudra traduire la partie située entre guillemets simples de chaque ligne commençant par define. Si vous ne comprenez pas l'allemand, voici la traduction en anglais :</p>
 
       <pre>
 /* The Sections. Used in Menu Navigation Bar */ 
@@ -191,7 +191,7 @@ define (FINK_CONTENTS, 'Contents');</pre>
       <p>Quand vous traduisez, vous devez suivre les étapes suivantes (disons que vous traduisez en français le document Running X11) :</p>
 
       <ol>
-        <li>Copier le fichier xml
+        <li>Copiez le fichier xml
         <pre>cp x11.en.xml x11.fr.xml</pre></li>
 
         <li>Modifiez les premières lignes pour indiquer que le texte du fichier est écrit en français et que l'encodage est UTF-8 :
@@ -237,7 +237,7 @@ et insérez un signe # au début de cette ligne.</li>
 
             <li>Démarrez le partage web personnel dans les préférences système. S'il est déjà activé, désactivez-le, puis réactivez-le.</li>
 
-            <li>Le moyen le plus simple de tout voir est déplacer votre copie locale de la branche <code>xml </code> dans le sous-répertoire 
+            <li>Le moyen le plus simple de tout voir est de déplacer votre copie locale de la branche <code>xml </code> dans le sous-répertoire 
             <code>Sites </code> de votre répertoire utilisateur. Vous pourrez alors ouvrir la page d'accueil dans votre navigateur à l'URL suivante :
             <pre>http://127.0.0.1/~<b>NOMUTILISATEUR</b>/xml/web/index.php</pre>
             où <code>NOMUTILISATEUR</code> doit être remplacé par votre nom d'utilisateur.</li>
@@ -245,132 +245,104 @@ et insérez un signe # au début de cette ligne.</li>
       </ul>
     
 
-    <h2><a name="change-checkout">2.8 When You Get Commit Access (Team Leaders)</a></h2>
+    <h2><a name="change-checkout">2.8 Après obtention de l'accès au commit (chefs d'équipe)</a></h2>
       
 
-      <p>Once you have been given commit access, you should</p>
+      <p>Lorsque que vous aurez obtenu l'accès au commit, vous devrez :</p>
 
       <ul>
-        <li>Set up an SSH key for your SourceForge account.<ol>
-            <li>Set the key up on your machine following the <a href="http://sourceforge.net/docman/display_doc.php?docid=761&amp;group_id=1#keygenopenssh">instructions</a>
-            from SourceForge.</li>
+        <li>Créer une paire de clés SSH pour votre compte SourceForge.<ol>
+            <li>Créez-la sur votre machine en suivant les <a href="http://sourceforge.net/docman/display_doc.php?docid=761&amp;group_id=1#keygenopenssh">instructions</a>
+            données sur SourceForge.</li>
 
-            <li>Type in the terminal: 
+            <li>Exécutez dans une fenêtre de terminal la commande suivante : 
             <pre>cat ~/.ssh/id_dsa.pub | pbcopy</pre>
-            This will copy the contents of the file directly
-            to your pasteboard, to avoid spurious linebreaks. Make sure not to
-            copy anything else to the pasteboard until you're done.</li>
+            Cette commande copie directement le contenu du fichier dans le presse-papiers, de façon à éviter de générer des caractères de fin de ligne intempestifs. Ne copiez surtout rien d'autre dans le presse-papiers avant d'avoir terminé la procédure.</li>
 
-            <li>Log in to your account on SourceForge.</li>
+            <li>Connectez-vous à votre compte sur SourceForge.</li>
 
-            <li>Select "Account Options"</li>
+            <li>Cliquez sur "Account Options"</li>
 
-            <li>Go to the "Host Access Information" area, and click on "Edit
+            <li>Allez dans la zone "Host Access Information" et cliquez sur  "Edit
             SSH Keys for Shell/CVS"</li>
 
-            <li>Click on the form and use Cmd-A, Cmd-V</li>
+            <li>Cliquez dans le formulaire et exécutez Cmd-A, Cmd-V</li>
 
-            <li>Click the button.</li>
+            <li>Cliquez sur OK.</li>
           </ol></li>
 
-        <li>Check out the <code>xml </code>tree using your username.<ol>
-            <li>If you checked out the whole <code>xml </code>tree
-            initially, then you should rename your local copy. You can use the
-            Finder for this.</li>
+        <li>Faire un check out de l'arborescence <code>xml</code> en utilisant votre nom d'utilisateur.<ol>
+            <li>Si vous avez déjà fait un check out de l'arborescence <code>xml</code> au départ, vous devez renommer votre copie locale. Vous pouvez utiliser le Finder pour ce faire.</li>
 
-            <li>Move to that directory in a terminal window: 
+            <li>Exécutez la commande suivante dans une fenêtre de terminal de façon à vous déplacer dans le répertoire où réside votre arbre : 
             <pre>cd ~/Documents/Fink-i18n</pre></li>
 
-            <li>Do the checkout of the xml tree:
-            <pre>cvs -d:ext:yourusername@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
-            where <b>yourusername</b> is of course your
-            SourceForge username. Enter your passphrase where prompted.</li>
+            <li>Faites un check out de l'arbre xml :
+            <pre>cvs -d:ext:votrenomutilisateur@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+            où <b>votrenomutilisateur</b> est, bien entendu, votre nom d'utilisateur sur SourceForge. Saisissez la phrase d'authentification à l'invite.</li>
 
-            <li>Copy the files that you were working on from your old tree to
-            the new one. Feel free to use the Finder, making sure that they go
-            in the same subfolder as they were initially.</li>
+            <li>Copiez dans la nouvelle arborescence les fichiers sur lesquels vous aviez travaillé antérieurement, et qui résident dans la copie que vous venez de faire. Vous pouvez utiliser le Finder pour cela, faites cependant très attention de copier les fichiers exactement là où ils se trouvaient dans l'ancienne arborescence.</li>
           </ol></li>
       </ul>
     
 
-    <h2><a name="committing">2.9 Committing the Changes (Team Leaders)</a></h2>
+    <h2><a name="committing">2.9 Commit des modifications (chefs d'équipe)</a></h2>
       
 
-      <p>Now you need to send your changes to the main server. To do this you
-      need to make sure that you have commit access. You also should make sure
-      that you are always using the latest version of XSLT in unstable tree, which is 
-      <code>libxslt-1.1.2-2</code> from Fink as the time of writing this document.</p>
+      <p>Maintenant, vous devez envoyer les modifications au serveur principal. Tout d'abord, vous devez vous assurer que vous avez effectivement accès au commit. Vous devez aussi vérifier que vous utilisez toujours la dernière version de XSLT dans l'arborescence instable de Fink, qui est, à l'heure où ce document est écrit, <code>libxslt-1.1.2-2</code>.</p>
 
-      <p>The procedure is different accourding to the nature - static or dynamic - of the documents:</p>
+      <p>La procédure de commit est différente selon la nature - statique ou dynamique - des documents :</p>
 
       <ul>
-        <li><b>Static: </b>(PHP files only) To commit these documents do the
-        following: <ol>
-            <li>Open a terminal.</li>
+        <li><b>Fichiers statiques : </b>(fichiers PHP seulement). Pour faire un commit de ces documents, exécutez les étapes suivantes :<ol>
+            <li>Ouvrez une fenêtre de terminal.</li>
 
-            <li>Move to the directory that contains the file you want to check
-            in, e.g: 
+            <li>Déplacez-vous dans le répertoire qui contient le fichier sur lequel vous voulez faire un check in, par exemple :
             <pre>cd ~/Documents/Fink-i18n/xml/web</pre>
-            <p>if you created your <code>xml</code> tree under
-            <code>Documents/Fink-i18n/</code> in your home folder, and
-            you want to commit a PHP file from the xml/web directory.</p></li>
+            <p>si vous avez créé votre arborescence <code>xml</code> dans le sous-répertoire 
+            <code>Documents/Fink-i18n/</code> de votre répertoire utilisateur et que vous voulez faire un commit d'un fichier PHP résidant dans le répertoire xml/web.</p></li>
 
-            <li>If the file is a new one that you've created, then you need to
-            add it to the list of files, e,g.:
+            <li>Si le fichier est un fichier que vous venez de créer, vous devez l'ajouter à la liste des fichiers, par exemple :
             <pre>cvs add download.ru.php</pre>
-            Give your SourceForge passphrase at the
-            prompt.<p>If the file already
-            exists, you can skip to the next step.</p></li>
+            Saisissez votre phrase d'authentification à l'invite.<p>Si le fichier existe déjà, sautez cette étape.</p></li>
 
-            <li>Commit the file, e.g. in the prior example:
+            <li>Faites un commit du fichier, par exemple :
             <pre>cvs ci -m "message" download.ru.php</pre>
-            where once again
-            <b>message </b>should indicate what you've done. Give your
-            SourceForge passphrase at the prompt. Don't forget to also commit the Makefile if you've changed it (i.e. you've added your langague in it)
-            <p>Note: you can commit multiple files at once.</p></li>
+            où 
+            <b>message</b> indique ce que vous avez fait. Saisissez votre phrase d'authentification à l'invite.
+            <p>Note : vous pouvez faire un commit de plusieurs fichiers à la fois.</p></li>
             </ol></li>
 
-        <li><b>Dynamic: </b>(XML and PHP) After you've modified the XML
-        file, do the following:<ol>
-            <li>Open a terminal</li>
+        <li><b>Fichiers dynamiques : </b>(XML et PHP). Après avoir modifié le fichier XML, effectuez les opérations suivantes : <ol>
+            <li>Ouvrez une fenêtre de terminal</li>
 
-            <li>Move to the directory that contains the file you've added or
-            modified, e.g.
+            <li>Déplacez-vous dans le répertoire qui contient le fichier que vous avez créé ou modifié, par exemple :
             <pre>cd ~/Documents/Fink-i18n/xml/faq</pre>
-            if you've been working on
-            the FAQ.</li>
+            si vous avez travaillé sur les QFP.</li>
 
-            <li>Now run
+            <li>Lancez :
             <pre>make check</pre>
-            To ensure that the
-            file is valid.</li>
+            pour vérifier que le fichier est valide.</li>
 
-            <li>If the XML file is a new one that you've created, then you
-            need to add it to the list of files, e,g.:
+            <li>Si le fichier XML est un fichier que vous venez de créer, vous devez l'ajouter à la liste des fichiers, par exemple :
             <pre>cvs add faq.ru.xml</pre>
-            You'll need to give your SourceForge
-            passphrase.<p>If the file already exists, you can
-            skip to the next step.</p></li>
+            Saisissez votre phrase d'authentification SourceForge à l'invite.<p>Si le fichier existe déjà, sautez cette étape.</p></li>
 
-            <li>Commit the file, e.g.:
+            <li>Faites un commit du fichier, par exemple :
             <pre>cvs ci -m "message" faq.ru.xml</pre>
-            <p> where <b>message</b> is a descriptive
-            message about what you've done. Enter your SourceForge passphrase at
-            the prompt.</p></li>
+            <p>où <b>message</b> décrit ce que vous avez fait. Saisissez votre phrase d'authentification SourceForge à l'invite. 
+            N'oubliez pas de faire aussi un commit du Makefile si vous l'avez modifié (c'est-à-dire si vous avez ajouté votre langue dans le fichier).</p></li>
 
-            <li>Now run
+            <li>Ensuite, lancez :
             <pre>make &amp;&amp; make install</pre></li>
 
-            <li>Move into your copy of the Fink xml tree, e.g: 
+            <li>Déplacez-vous à la racine de l'arborescence xml de Fink, par exemple :  
             <pre>cd ~/Documents/Fink-i18n/xml</pre>
-            <p>if you created your
-            <code>xml</code> tree under
-            <code>Documents/Fink-i18n/</code> in your home
-            folder.</p></li>
+            <p>si vous avez créé votre arborescence 
+            <code>xml</code> dans le sous-répertoire 
+            <code>Documents/Fink-i18n/</code> de votre répertoire utilisateur.</p></li>
 
-            <li>If the XML file was new, you'll need to do some more CVS
-            adding. For example, if you have been working on the FAQ, then,
-            you'll want to run (e.g.):
+            <li>Si le fichier XML est un fichier que vous venez de créer, il vous faut ajouter d'autres fichiers à la liste des fichiers gérés par CVS. Par exemple, si vous avez travaillé sur les QFP, vous devez exécuter :
 <pre>cvs add web/faq/index.en.php web/faq/general.ru.php \ 
 web/faq/relations.ru.php web/faq/usage-fink.ru.php \ 
 web/comp-general.ru.php web/faq/comp-packages.ru.php \ 
@@ -378,56 +350,45 @@ web/faq/usage-general.ru.php web/faq/usage-packages.ru.php \
 web/faq/upgrade-fink.ru.php web/faq/mirrors.ru.php \ 
 web/faq/faq.ru.html web/faq/header.ru.inc \ 
 scripts/installer/dmg/faq.ru.html</pre>
-For other
-            documents, the files will of course be different--use whatever
-            gets created for your language when you run <code>make
+Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas les mêmes - utilisez les noms des fichiers créés lorsque vous avez exécuté <code>make
             install</code>.</li>
 
-         <li>Don't forget to add and commit any file you've created (be it constants.xx.inc, header.xx.inc, nav.xx.inc, etc.)
-          <p>If the file already exists, you can
-            skip to the next step.</p></li>
+         <li>N'oubliez pas d'ajouter et de faire un commit de tout fichier que vous avez créé (que ce soit constants.xx.inc, header.xx.inc, nav.xx.inc, etc...)
+          <p>Si le fichier existe déjà, sautez cette étape.</p></li>
 
-            <li>Commit the whole tree:
+            <li>Faites un commit de l'ensemble de l'arborescence :
             <pre>cvs ci -m "message"</pre>
-            <p>Where once again <b>message</b> is a
-            descriptive log message (you may want to use the same one as when
-            you committed the XML file). Enter your SourceForge passphrase at
-            the prompt.</p><p>The reason that you have to do two
-            commits in this case is that it's required to ensure that the
-            files show the correct creation time and person who last modified
-            them.</p></li>
+            <p>où <b>message</b> est une description que ce que vous avez fait (vous pouvez utiliser le même que celui que vous avez utilisé pour faire un commit du fichier XML). Saisissez votre phrase d'authentification à l'invite.</p><p>La raison pour laquelle vous devez exécuter deux commits dans ce cas, est que c'est la seule façon de faire pour que la date de création et le nom de la personne qui a modifié les fichiers en dernier ressort soient corrects.</p></li>
           </ol></li>
       </ul>
     
 
-    <h2><a name="website">2.10 Update our website</a></h2>
+    <h2><a name="website">2.10 Mise à jour de notre site web</a></h2>
       
 
-      <p>Want to see your efforts from our website right now? Just do the
-      following:</p>
+      <p>Si vous avez envie de voir tout de suite le fruit de votre travail, exécutez les étape suivantes :</p>
 
       <ol>
-        <li>Open a terminal</li>
+        <li>Ouvrez une fenêtre de terminal</li>
 
-        <li>log in web server via ssh: 
-        <pre>ssh username@shell.sourceforge.net</pre>
-        You'll need to give your
-        SourceForge passphrase.</li>
+        <li>Connectez-vous au serveur web via ssh : 
+        <pre>ssh nomutilisateur@shell.sourceforge.net</pre>
+        Saisissez votre phrase d'authentification SourceForge.</li>
 
-        <li>Move to the directory which contains our web pages: 
+        <li>Déplacez-vous dans le répertoire qui contient nos pages web :
         <pre>cd /home/groups/f/fi/fink/htdocs</pre></li>
 
-        <li>update the website from CVS:
+        <li>Mettez à jour le site web à partir de CVS :
         <pre>./update.sh</pre></li>
 
-        <li>log out from web server: 
+        <li>Déconnectez-vous du serveur web : 
         <pre>exit</pre></li>
 
-        <li>See your efforts: 
+        <li>Admirez votre travail : 
         <pre>open http://fink.sourceforge.net/</pre></li>
       </ol>
     
   <p align="right">
-Next: <a href="procedure.php?phpLang=fr">3 Procedure for Updating Documents</a></p>
+Next: <a href="procedure.php?phpLang=fr">3 Procédure de mise à jour des documents</a></p>
 
 <? include_once "footer.inc"; ?>

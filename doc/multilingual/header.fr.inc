@@ -7,9 +7,9 @@ $navbox = array(
   "doc/multilingual/index.php?phpLang=fr", "Contents",
   "doc/multilingual/intro.php?phpLang=fr", "Intro",
   "doc/multilingual/files.php?phpLang=fr", "Fichiers",
-  "doc/multilingual/procedure.php?phpLang=fr", "Updating",
-  "doc/multilingual/resources.php?phpLang=fr", "Resources",
-  "doc/multilingual/appendix.php?phpLang=fr", "Appendix",
+  "doc/multilingual/procedure.php?phpLang=fr", "Mise à jour",
+  "doc/multilingual/resources.php?phpLang=fr", "Ressources",
+  "doc/multilingual/appendix.php?phpLang=fr", "Annexe",
 );
 $printlink = "doc/multilingual/multilingual.fr.html";
 

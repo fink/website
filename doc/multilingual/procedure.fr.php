@@ -1,99 +1,77 @@
 <?
-$title = "i18n - Updating";
+$title = "i18n - Mise à jour";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="resources.php?phpLang=fr" title="Additional Resources"><link rel="prev" href="files.php?phpLang=fr" title="Fichiers de documentation">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="resources.php?phpLang=fr" title="Autres ressources"><link rel="prev" href="files.php?phpLang=fr" title="Fichiers de documentation">';
 
 include_once "header.inc";
 ?>
 
-<h1>i18n - 3 Procedure for Updating Documents</h1>
+<h1>i18n - 3 Procédure de mise à jour des documents</h1>
     
 
     
 
     
-      <p>In order that things go smoothly, the following procedures should be
-      followed.</p>
+      <p>Pour que tout se passe bien, vous devez suivre les procédures suivantes.</p>
     
 
-    <h2><a name="new-translation">3.1 New Translations</a></h2>
+    <h2><a name="new-translation">3.1 Nouvelles traductions</a></h2>
       
 
-      <p>When a new language is being translated, we will declare a freeze in
-      updating the English and other languages) documentation, so that the
-      translation team for the new language doesn't have to worry about having
-      a document change on them before they finish it. In such a case, each
-      document will be brought online as it is ready, and activated.</p>
+      <p>Quand une nouvelle langue est ajoutée, un gel de la mise à jour de tous les fichiers de documentation (anglais ou autres) est déclaré, de façon à ce que la nouvelle équipe de traduction ne soit pas perturbée par un changement sur les fichiers qu'elle est en train de traduire. Dans ce cas, les documents sont mis en ligne et activés dès qu'ils sont prêts.</p>
     
 
-    <h2><a name="doc-updates">3.2 Content Updates</a></h2>
+    <h2><a name="doc-updates">3.2 Mises à jour du contenu des fichiers</a></h2>
       
 
-      <p>Since the English documentation is the baseline, it must be updated
-      first. Such an update may come from a member of the i18n team (e.g. the
-      English Documentarians) or directly from the core developers.</p>
+      <p>Comme la documentation anglaise est la documentation maître, elle doit être mise à jour en premier. Une telle mise à jour peut être effectuée par un membre de l'équipe i18n (par exemple par les rédacteurs anglais) ou directement par les développeurs.</p>
 
-      <p>There are a couple of classifications for documentation updates:</p>
+      <p>Voici les catégories de mises à jour utilisées pour la documentation :</p>
 
       <ol>
-        <li><b>Urgent (security, bugfixes, etc.):</b> The base English
-        documentation gets updated immediately, and translators update their
-        individual documents and get them online as soon as possible.</li>
+        <li><b>Urgent (sécurité, bogues résolus, etc...) :</b> La documentation anglaise est mise à jour immédiatement, les traducteurs mettent à jour les fichiers correspondants dans leur langue et les mettent en ligne le plus vite possible.</li>
 
-        <li><b>Not urgent:</b> In this case, the basic English documentation
-        is updated, but not put online immediately. All translators do their
-        work and get their version online within a day or two, then all
-        versions get put online at the same time.</li>
+        <li><b>Non urgent :</b> Dans ce cas, la documentation anglaise est mise à jour, mais n'est pas mise en ligne immédiatement. Les traducteurs ont un à deux jours pour mettre à jour leur traduction, puis toutes les versions sont mises en ligne au même moment.</li>
       </ol>
     
 
-    <h2><a name="call-to-translate">3.3 Call to Translate</a></h2>
+    <h2><a name="call-to-translate">3.3 Demande de traduction</a></h2>
       
 
-      <p>Once the English files are done, a message will be posted to the
-      fink-18n list informing all translators of the fact. The message will
-      contain the following:</p>
+      <p>Quand les fichiers anglais sont prêts, les traducteurs sont prévenus par un message envoyé sur la liste de diffusion fink-18n. Le message doit contenir les informations suivantes :</p>
 
       <ul>
-        <li>A note in the subject line indicating that this is a request for
-        translation, e.g. "[translation]", or "[translation-urgent]" for items
-        where the English documentation is going online immediately.</li>
+        <li>Une note dans l'objet du message indiquant qu'il s'agit d'une demande de traduction, par exemple : "[translation]", ou "[translation-urgent]" pour les documents anglais qui sont mis immédiatement en ligne.</li>
 
-        <li>In addition, the filename of the base file should be included
-        somewhere in the message.</li>
+        <li>De plus, le nom du fichier concerné doit être inclus dans le corps du message.</li>
 
-        <li>A full diff, e.g.: 
+        <li>Un diff doit être inclus pour indiquer les modifications faites, par exemple :
         <pre>diff -Nru3 -r<b>last_revision</b> r<b>head</b> </pre>
-        to show the modifications in context.</li>
+</li>
       </ul>
 
-      <p>Note: since committing the XML file automatically produces a message
-      on fink-commits that meets all of these criteria, an easy thing to do is
-      to redirect such a message and re-title the subject.</p>
+      <p>Note : comme la simple exécution du commit d'un fichier XML génère un message sur la liste de diffusion fink-commits qui remplit tous les critères mentionnés ci-dessus, le plus simple est de rediriger le message en changeant son objet.</p>
     
 
-    <h2><a name="translate">3.4 Translation</a></h2>
+    <h2><a name="translate">3.4 Traduction</a></h2>
       
 
-      <p>Now the actual work of translation proceeds. As each document is
-      done, it gets committed to CVS.</p>
+      <p>Une fois cela fait, le travail de traduction peut commencer. On effectue un commit sur chaque fichier dès qu'il est traduit.</p>
     
 
-    <h2><a name="activation">3.5 Activating the Changes</a></h2>
+    <h2><a name="activation">3.5 Activation des changements</a></h2>
       
 
-      <p>There are two options for activating changes:</p>
+      <p>Il y a deux façon d'activer les changements selon l'urgence des modifications :</p>
 
       <ol>
-        <li>For urgent changes, immediately after a document gets done, its
-        changes get activated.</li>
+        <li>Pour les modifications urgentes, les changements sont activés dès que le fichier a été modifié.</li>
 
-        <li>For non-urgent changes, the changes will be activated after all
-        language versions of the document are finished.</li>
+        <li>Pour les modifications non urgentes, les changements sont activés après que toutes les versions du fichier ont été modifiées.</li>
       </ol>
     
   <p align="right">
-Next: <a href="resources.php?phpLang=fr">4 Additional Resources</a></p>
+Next: <a href="resources.php?phpLang=fr">4 Autres ressources</a></p>
 
 <? include_once "footer.inc"; ?>
