@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.1 2004/02/16 12:30:39 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.2 2004/02/20 00:18:18 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の よくある質問 (FAQ) です。
 他の FAQ と同様に、質問は実際に発生したものとあらかじめ作られたものがあります。
@@ -26,7 +26,7 @@
 これは簡単なこともありますが、非常に困難な場合や、パッケージによっては不可能な場合もあります。
 我々は、この作業を簡単にするためにツールやドキュメントを提供するよう努めています。</p>
 <p>二つ目のゴールは、成果を普通のユーザーが使える形にすることです。
-このために我々は、 Linux で使われている <code>dpkg</code> と <code>fink</code> という パッケージ管理ツールを使ったディストリビューションを構築しました。
+このために我々は、 Linux で使われている <code>dpkg</code> と、 <code>fink</code> という パッケージ管理ツールを使ったディストリビューションを構築しました。
 これは、  <link url="http://www.debian.org/" >Debian GNU/Linux</link> プロジェクトが自身のために書いたものです。
 バイナリディストリビューションは <code>.deb</code> パッケージ形式を使います。
 ソースからパッケージをビルドするには、我々の独自のツールである <code>fink</code> を使い、 <code>.deb</code>  パッケージのファイルを作成します。</p>
@@ -320,8 +320,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <p>パッケージ <em>cvs-proxy</em> は HTTP プロキシを介して通ります。</p>
 <ul>
 <li>
-<p>First download the <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> files (an .info file and a .patch file) and place them into your local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
-<p>まず、  <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れます。</p>
+<p>まず、  <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。</p>
 </li>
 <li>
 <p><em>cvs-proxy</em> パッケージを、次のコマンドでインストールする:</p>
@@ -347,7 +346,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 </faqentry>
 <faqentry name="moving" >
 <question>
-<p>Fink をインストール後、他の場所に移動できますか?</p>
+<p>インストール後に Fink を他の場所に移動できますか?</p>
 </question>
 <answer>
 <p>
@@ -1337,7 +1336,7 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
+setenv ACLOCAL_FLAGS "-I/sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
 <p>-bash-</p> 
 <codeblock>export CFLAGS=-I/sw/include 
