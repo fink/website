@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: htodd $';
-$cvs_date = '$Date: 2003/11/02 05:38:18 $';
+$cvs_date = '$Date: 2003/11/02 05:44:05 $';
 
 include "header.inc";
 ?>
@@ -17,6 +17,10 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 
 <p>
 Keep in mind that these instructions are <b>NOT for Panther</b>. Currently there is no binary installer for Panther, and there are no binaries for Panther.
+</p>
+
+<p>
+If you wish to do a fresh install of Fink on a 10.3 system, we recommend <a href="http://fink.sf.net/download/srcdist.php">bootstrapping from source,</a> starting from fink-full-0.6.0.tar.gz available on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203"> sourceforge download page.</a> You'll need XCode for this as well.
 </p>
 
 <h2>Quick Start</h2>
@@ -45,8 +49,8 @@ inside. Follow the instructions on screen.
 </p></li>
 <li><p>
 At the end of the installation, a Terminal.app window will be launched, 
-and the pathsetup.command script will automatically be run.  You will be 
-asked for permission before your shell's configuration files are edited.  
+and the pathsetup.command script will automatically be run. You will be 
+asked for permission before your shell's configuration files are edited. 
 When the script has finished, close the window are you are set to go!
 </p></li>
 <li><p>
@@ -54,7 +58,7 @@ If anything goes wrong during this process, you can try again by launching
 pathsetup.command file which appears on the installer disk, or by 
 running (from the command line in a Terminal.app window) 
 </p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
-(This step should also be repeated by any other users on your system: each user must run  pathsetup.command in his or her own account.)
+(This step should also be repeated by any other users on your system: each user must run pathsetup.command in his or her own account.)
 </p><p>
 If pathsetup.command generates errors messages, consult the documentation, 
 particularly 
