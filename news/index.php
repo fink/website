@@ -8,7 +8,25 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
+<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
+	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+        we crave more. To improve our service to all of you, we would like to ask that
+        you evaluate carefully if you do not have the resources to become a mirror. 
+        </p>    
+        <p>     
+        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        <a href="http://finkmirrors.net/rsync.html">here</a>. Especially mirrors in
+        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+        those regions yet. If you feel generous and wish to donate even more resources, please visit
+        <a href="http://finkmirrors.net">finkmirrors.net</a> to learn about your options.
+        </p>    
+        <p>     
+        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+        We are looking forward to many new applications and thank our community in advance. 
+        </p>    
+	<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
         <p>The latest Fink release, version 0.6.2, is now available
 for both source and binary users.  This is a bug-fix release, intended
 to address two problems: the dselect/user deletion bug, and a 

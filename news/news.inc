@@ -1,4 +1,22 @@
-<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
+<a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
+	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+        we crave more. To improve our service to all of you, we would like to ask that
+        you evaluate carefully if you do not have the resources to become a mirror. 
+        </p>    
+        <p>     
+        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        <a href="http://finkmirrors.net/rsync.html">here</a>. Especially mirrors in
+        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+        those regions yet. If you feel generous and wish to donate even more resources, please visit
+        <a href="http://finkmirrors.net">finkmirrors.net</a> to learn about your options.
+        </p>    
+        <p>     
+        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+        We are looking forward to many new applications and thank our community in advance. 
+        </p>    
+	<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
         <p>The latest Fink release, version 0.6.2, is now available
 for both source and binary users.  This is a bug-fix release, intended
 to address two problems: the dselect/user deletion bug, and a 
@@ -53,30 +71,4 @@ under 10.3 and you <b>don't</b> get this warning, then your
 <code>sources.list</code> file is likely to be corrupted and you should
 repair it as above.
 </p>
-	<a name="2003-11-01 Fink 0.6.1 released"><span class="news-date">2003-11-01: </span><span class="news-headline">Fink 0.6.1 released</span></a><?php gray_line(); ?>
-        <p>The latest Fink release, version 0.6.1, is now available
-for both source and binary users.  This release was built on OS X 10.2
-using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
-users who upgrade to 10.3 will want to only use the binaries from this
-new distribution for now, while the Fink team continues to modify
-Fink packages for 10.3.
-</p><p>
-If you wish to access the 
-new binaries, use apt-get, dselect, or the binary mode of
-FinkCommander.  Unless you are interested in helping the Fink team
-to test packages which are compiled on 10.3, 
-do not use the command-line <code>fink</code> program to do your
-installations for the
-next few weeks.
-</p>
-<p>The simplest way to upgrade a binary installation is to run
-"sudo apt-get update".  Further details and
-other issues related to upgrading Fink to 10.3 are addressed on the
-<a href="<?php print $root; ?>download/10.3-upgrade.php">Special 10.3 upgrade page.</a>
-</p><p>
-Before using the latest version of
-the command-line <code>fink</code> program 
-under OS X 10.2, be sure to install the August2003gccUpdater, available
-after free registration from connect.apple.com.
-</p>
-                
+	

@@ -4,9 +4,33 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 18 Nov 2003 09:04:13 EST</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2003 09:43:59 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>More mirrors....pretty please?</title>
+    <link>http://fink.sf.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</link>
+    <dc:date>2003-11-24</dc:date>
+    <description>
+	While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+        we crave more. To improve our service to all of you, we would like to ask that
+        you evaluate carefully if you do not have the resources to become a mirror. 
+            
+             
+        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        here. Especially mirrors in
+        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+        those regions yet. If you feel generous and wish to donate even more resources, please visit
+        finkmirrors.net to learn about your options.
+            
+             
+        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+        We are looking forward to many new applications and thank our community in advance. 
+            
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.6.2 released</title>
     <link>http://fink.sf.net/news/#2003-11-17%20Fink%200.6.2%20released</link>
@@ -35,7 +59,7 @@ want to only use the binaries from this
 new distribution for now, while the Fink team continues to modify
 Fink packages for 10.3.
 
-*Exceptions include: emacs.
+*Exceptions include: emacs, qt.
 
 	</description>
   </item>
@@ -537,35 +561,5 @@ Update 11 February 2003: This script is not needed with
 version 0.2 of Apple's X11.app which was released yesterday.
 
 </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Gnome, libpng, and the unstable tree</title>
-    <link>http://fink.sf.net/news/#2003-01-21%20Gnome%2C%20libpng%2C%20and%20the%20unstable%20tree</link>
-    <dc:date>2003-01-21</dc:date>
-    <description>
-	
-        A problem was uncovered today concerning the versions of imlib,
- libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
- work addressing this problem.  As a workaround, users can downgrade
-their imlib package to the stable version, &quot;fink install
- imlib-1.9.10-9&quot;, until the problem is fixed.
-
-   Many Fink users may be using Fink's unstable tree without being
-fully aware of what this entails.  For a few months in the fall,
-enabling the unstable tree was the only way to gain access to
- 10.2-compatible versions of Fink packages.  
-That is no longer the case.
-Fink users who do not wish to help the Fink team with testing should
-disable their unstable tree.  To do this, edit the file
-/sw/etc/fink.conf and remove the items
- unstable/main and unstable/crypto from the
- Trees line.
-	
-The Fink team appreciates those users who are willing to stick with
-the unstable tree, even when there are problems like today's, and provide
-the team with prompt feedback.  This is a community effort and we
-appreciate your participation.
-
-	</description>
   </item>
 </rdf:RDF>

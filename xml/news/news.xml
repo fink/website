@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.101 2003/11/18 14:05:07 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.102 2003/11/24 08:45:09 dmalloc Exp $</cvsid>
 
-
+<newsitem>
+	<date>2003-11-24</date>
+	<headline>More mirrors....pretty please?</headline>
+	<body>
+	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+        we crave more. To improve our service to all of you, we would like to ask that
+        you evaluate carefully if you do not have the resources to become a mirror. 
+        </p>    
+        <p>     
+        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        <extlink url="http://finkmirrors.net/rsync.html">here</extlink>. Especially mirrors in
+        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+        those regions yet. If you feel generous and wish to donate even more resources, please visit
+        <extlink url="http://finkmirrors.net">finkmirrors.net</extlink> to learn about your options.
+        </p>    
+        <p>     
+        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+        We are looking forward to many new applications and thank our community in advance. 
+        </p>    
+	</body>
+</newsitem>
 <newsitem>
 	<date>2003-11-17</date>
 	<headline>Fink 0.6.2 released</headline>
