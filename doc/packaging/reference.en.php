@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/29 01:10:05';
+$cvs_date = 'Date: 2004/03/29 03:32:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -135,7 +135,7 @@ consisting of three numbers separated by periods, e.g.,
 <code>perl 5.6.0</code>.
 </p>
 <p>
-Beginning after fink-0.19.2, the language/language-version use has
+Beginning in a CVS version of fink after fink-0.19.2, the language/language-version use has
 been generalized to allow any Maintainer-defined types and associated
 subtypes and more than a single type for a given package. The type and
 subtype are each arbitrary strings of non-whitespace characters (but
