@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Porting Unix software to Darwin and Mac OS X</title>
 <shorttitle>Porting</shorttitle>
-<cvsid>$Id: porting.xml,v 1.26 2003/04/25 12:00:52 dmrrsn Exp $</cvsid>
+<cvsid>$Id: porting.xml,v 1.27 2003/04/26 17:21:23 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -415,7 +415,7 @@ on Darwin when dlcompat is installed.
 If you are building libtool 1.3.5 for yourself, you will need to apply
 <link
 url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
-patch</link> <em>[updated 2001-08-30]</em> to the libtool 1.3.5 source and
+patch</link> <em>[updated 2002-06-09]</em> to the libtool 1.3.5 source and
 then delete the files ltconfig and ltmain.sh.
 (They will be recreated from the appropriate .in files when you run
 configure and make.)  This is done automatically, by the way, in the 
@@ -428,7 +428,7 @@ Note that you must do this before running the configure script.
 For your convenience, you can get the two files right here:
 <link url="http://fink.sourceforge.net/files/ltconfig">ltconfig</link> (98K) and
 <link url="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</link> (110K)
-<em>[both updated 2001-08-30]</em>.</p>
+<em>[both updated 2002-06-09]</em>.</p>
 </section>
 
 <section name="fixing-14x"><title>Fixing 1.4.x</title>

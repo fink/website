@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/04/25 12:00:52';
+$cvs_date = 'Date: 2003/04/26 17:21:23';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="preparing.php" title="Preparing for 10.2"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -94,7 +94,7 @@ on Darwin when dlcompat is installed.
 <p>
 If you are building libtool 1.3.5 for yourself, you will need to apply
 <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
-patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source and
+patch</a> <b>[updated 2002-06-09]</b> to the libtool 1.3.5 source and
 then delete the files ltconfig and ltmain.sh.
 (They will be recreated from the appropriate .in files when you run
 configure and make.)  This is done automatically, by the way, in the 
@@ -107,7 +107,7 @@ Note that you must do this before running the configure script.
 For your convenience, you can get the two files right here:
 <a href="http://fink.sourceforge.net/files/ltconfig">ltconfig</a> (98K) and
 <a href="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</a> (110K)
-<b>[both updated 2001-08-30]</b>.</p>
+<b>[both updated 2002-06-09]</b>.</p>
 
 
 <h2><a name="fixing-14x">3.3 Fixing 1.4.x</a></h2>
