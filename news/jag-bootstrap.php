@@ -1,7 +1,7 @@
 <?
 $title = "Bootstapping Fink under Mac OS X 10.2";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/10/21 03:10:47 $';
+$cvs_date = '$Date: 2002/11/01 19:52:52 $';
 
 include "header.inc";
 ?>
@@ -70,7 +70,10 @@ provide you with package descriptions for the 10.2 packages.
 fink-0.11.0 archive, directory, and its contents.
 </ul>
 <p> You should now have a fully functioning Fink installation, into which
-you can install whichever Fink packages you wish.
+you can install whichever Fink packages you wish. 
+<br>If you encounter problems with these 
+instructions please consult the fink <a href="../help">Help page</A> which lists sources of finding
+assistance.
 </p>
 
 

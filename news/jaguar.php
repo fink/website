@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/10/21 03:10:47 $';
+$cvs_date = '$Date: 2002/11/01 19:52:52 $';
 
 include "header.inc";
 ?>
@@ -97,9 +97,9 @@ commands.
 <li> Finally, when all of this has been completed, you may remove the
 fink-0.11.0 archive, directory, and its contents.
 </ul>
-
-
-
+<br>If you encounter problems with these 
+instructions please consult the fink <a href="../help">Help page</A> which lists sources of finding
+assistance.
 <?
 include "footer.inc";
 ?>
