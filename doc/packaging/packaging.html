@@ -33,6 +33,7 @@ mailing list.
 <ul>
 <li><a href="#policy.licenses">3.1 Package Licenses</a></li>
 <li><a href="#policy.prefix">3.2 Base System Interference</a></li>
+<li><a href="#policy.sharedlibs">3.3 Shared Libraries</a></li>
 </ul>
 <li><a href="#fslayout"><b>4 Filesystem Layout</b></a></li>
 <ul>
@@ -346,6 +347,173 @@ cause no harm if they are left there (i.e. they need to check binaries
 for existence before calling them and the like).
 </p>
 
+
+<a name="policy.sharedlibs"><h3>3.3 Shared Libraries</h3></a>
+<p>
+Fink has a new policy about shared libraries, effective in February 2002.
+(This section of the documentation contains a preliminary discussion
+of the policy, which may evolve slightly as it becomes more fully
+implemented.)
+We first discuss the policy as applied to newly ported software, and
+then turn to the question of upgrading existing fink packages.  For an
+example of the policy in action, see the  libpng and 
+libpng-shlibs packages.
+</p><p>
+Software which has been ported to Darwin should build shared libraries (as 
+opposed to static libraries) whenever possible.  When this has been done,
+<b>two</b> closely related fink packages should be made, named foo 
+and foo-shlibs.  At present, this must be done by hand, but an extension to 
+fink is under development which will allow both fink packages to be generated 
+from a single .info file.  (In fact, more than two packages can be
+generated if necessary.)
+</p><p>
+Each software package for which shared libraries can be built must have
+a <b>major version number</b> N.  The major version number is only supposed
+to change when a backwards-incompatible change in the library's API has been
+made.  Fink uses the following naming convention: if the upstream name
+of the package is bar, then the fink packages are called barN and 
+barN-shlibs.  (This is only strictly applied to new packages, or when the 
+major version number changes.)  For example, the major version number for
+the pre-existing libpng package was 2, but recent versions of the
+library have major version number 3.  So there are now four fink packages
+to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
+Only one of libpng and libpng3 can be installed at any given time,
+but libpnd-shlibs and libpng3-shlibs can be installed at the same time.
+</p><p>
+The shared library itself and certain related files will be put into 
+the package barN-shlibs; the "include" files and certain other files will
+be put into the package barN.  There can be no overlapping files
+between these two packages, and everything stored in barN-shlibs must have
+a pathname which somehow includes the major version number N.  In many
+instances, your package will need some files at runtime which are
+typically installed into <tt><nobr>%i/lib/bar/</nobr></tt> or 
+<tt><nobr>%i/share/bar/</nobr></tt> ; you should
+adjust the installation paths to <tt><nobr>%i/lib/bar/N/</nobr></tt> or 
+<tt><nobr>%i/share/bar/N/</nobr></tt>.
+</p><p>
+All other packages which depend on bar, major version N, will be asked to
+use the dependencies
+<pre>
+  Depends: barN-shlibs
+  BuildDepends: barN
+</pre>
+Once this system is fully in place, it will not be permitted for 
+another package to depend on barN itself.  (For backward compatibility,
+such dependencies are allowed for pre-existing packages.)
+</p><p>
+If your package includes both shared libraries and binary files, and
+if the binary files need to be present at runtime (not just at build
+time), then the binaries must be split off into a third package, which
+could be called barN-bin.  Other packages are allowed to depend on
+barN-bin as well as barN-shlibs.
+</p><p>
+When building shared libraries under major version N, it is important that
+the "install_name" of the library be <tt><nobr>%p/lib/bar.N.dylib</nobr></tt>.  
+(You can
+find the install_name by running <tt><nobr>otool -L</nobr></tt> on your library.)  The
+actual library file should be installed at
+<pre>
+  %i/lib/bar.N.x.y.dylib
+</pre>
+and your packages should create symbolic links
+<pre>
+  %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
+  %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
+</pre>
+If the static library is also built, then it will be installed at
+<pre>
+  %i/lib/bar.a
+</pre>
+These things are usually handled automatically by libtool, but you should
+check that they have been done correctly in your case.  You should also
+check that current_version and compatibility_version were defined 
+appropriately for your shared libraries.  (These are also shown with the 
+<tt><nobr>otool -L</nobr></tt> query.)
+</p><p>
+Files are then divided between the two packages as follows
+<ul>
+<li>  in package barN-shlibs:
+<pre>
+    %i/lib/bar.N.x.y.dylib
+    %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
+    %i/lib/bar/N/*
+    %i/share/bar/N/*
+    %i/share/doc/barN-shlibs/*
+</pre></li>
+<li>  in package barN:
+<pre>
+    %i/include/*
+    %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
+    %i/lib/bar.a
+    %i/share/doc/barN/*
+    other files, if needed
+</pre></li></ul>
+Notice that both packages are required to have some documentation about
+the license, but that the directories containing the DocFiles will be
+different.
+</p><p>
+At the moment, the only way to do this is to let each package run the
+original CompileScript and InstallScript, and then remove some of the files
+prior to installation.  (Notice that, as in the examples libpng, 
+libpng-shlibs, you may be able to use %v in place of N.x.y or x.y in
+the .info file, which is more robust for updating minor versions of the
+same package later on.)  In the extension of fink under development,
+you will be able to just specify which files are to be installed into 
+barN-shlibs rather than into barN.
+</p><p>
+There should be a dependency specifed in package barN:
+<pre>
+  Depends: barN-shlibs (= exact.version.of.barN)
+</pre>
+This ensures that the versions match, and also guarantees that barN
+automatically "inherits" all the dependencies of barN-shlibs.
+</p><p>
+<b>What to do when the major version number changes:</b>
+</p><p>
+If the major version number changes from N to M, you will create two new
+packages barM and barM-shlibs.  The package barM-shlibs can have no
+overlap with the package barN-shlibs, since many users will have both of
+these installed simultaneously.  In package barM, you should use dependencies
+<pre>
+  Conflicts: barN
+  Replaces: barN
+</pre>
+and similarly, you should revise barN to include dependencies
+<pre>
+  Conflicts: barM
+  Replaces: barM
+</pre>
+Users will then see barN and barM shuffling in and out as various other
+packages are built which depend on one version or another of the shared
+library, while barN-shlibs and barM-shlibs remain permanently installed.
+</p><p>
+<b>How to upgrade an existing fink package:</b>
+</p><p>
+For an existing fink package which installs either static or shared 
+libraries, the best way to upgrade is to create a new version foo of
+your package, accompanied by a new package foo-shlibs, which satisfy
+the above policy.  If shared libraries (or any other files now present
+in foo-shlibs) were installed previously, then these new packages should 
+say
+<pre>
+  Replaces: foo (&lt;&lt; earliest.compliant.version)
+</pre>
+so that upgrading will be transparent to users.  (You should <b>not</b>
+say "Conflicts: foo" because this will prevent the upgrade.)
+</p><p>
+After your upgrade, packages which say "Depends: foo" will continue to
+function normally.  However, you should contact the fink maintainers
+of all such packages and urge them to modify their packages to say 
+"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
+not be able to create new packages fooM, fooM-shlibs which implement a 
+new major version of the shared library until they have done so.
+</p><p>
+Existing fink packages which have not used the correct install_name or
+which have not used the correct names or symbolic links for shared libraries
+must be upgraded carefully, on a case-by-case basis.  If you are
+having trouble finding an upgrade strategy to make your packages compliant
+with the new policy, please discuss it on the fink-devel mailing list.
+</p>
 
 
 <a name="fslayout"><h2>4 Filesystem Layout</h2></a>
@@ -1113,4 +1281,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: packaging.xml,v 1.18 2002/01/20 00:02:59 finlayd Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: packaging.xml,v 1.19 2002/02/24 04:29:19 dmrrsn Exp $</i></p></body></html>
