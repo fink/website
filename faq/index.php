@@ -72,7 +72,7 @@ wrong?</a></li>
 more!</a></li>
 <li><a href="usage-fink.php#selfupdate-tar-fails">3.13 Why doesn't 'fink selfupdate'
 work?</a></li>
-<li><a href="usage-fink.php#cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
+<li><a href="usage-fink.php#cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
 		</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.15 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
@@ -100,7 +100,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
-<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <tt><nobr>/usr/X11R6/lib/libX11.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXpm.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXaw.dylib</nobr></tt>, and <tt><nobr>/usr/X11R6/include/X11/Xlib.h</nobr></tt> are missing.</a></li>
+<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <code>/usr/X11R6/lib/libX11.dylib</code>, <code>/usr/X11R6/lib/libXpm.dylib</code>, <code>/usr/X11R6/lib/libXaw.dylib</code>, and <code>/usr/X11R6/include/X11/Xlib.h</code> are missing.</a></li>
 <li><a href="comp-packages.php#automake-autoconf">5.6 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>

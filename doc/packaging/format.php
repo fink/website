@@ -12,11 +12,11 @@ include "header.inc";
 
 
 
-<a name="trees"><h2>2.1 Tree Layout</h2></a>
+<h2><a name="trees">2.1 Tree Layout</a></h2>
 <p>
-Package descriptions are read from the <tt><nobr>finkinfo</nobr></tt>
-directories below the <tt><nobr>/sw/fink/dists</nobr></tt> directory.
-The &quot;Trees&quot; setting in <tt><nobr>/sw/etc/fink.conf</nobr></tt> controls
+Package descriptions are read from the <code>finkinfo</code>
+directories below the <code>/sw/fink/dists</code> directory.
+The &quot;Trees&quot; setting in <code>/sw/etc/fink.conf</code> controls
 which directories are read.
 The name of package description files must be the full package name
 plus the extension &quot;.info&quot;.
@@ -27,29 +27,29 @@ directories.
 The directories in top-down order:
 </p>
 <ul>
-<li><tt><nobr>dists</nobr></tt> is where is starts. The <tt><nobr>dists</nobr></tt>
+<li><code>dists</code> is where is starts. The <code>dists</code>
 directory is necessary for the Debian tools.</li>
-<li>The distribution. There is <tt><nobr>stable</nobr></tt>,
-<tt><nobr>unstable</nobr></tt> and <tt><nobr>local</nobr></tt>. The <tt><nobr>local</nobr></tt>
+<li>The distribution. There is <code>stable</code>,
+<code>unstable</code> and <code>local</code>. The <code>local</code>
 directory is under the control of the local administrator/user. The
-<tt><nobr>stable</nobr></tt> and <tt><nobr>unstable</nobr></tt> directories are part of
+<code>stable</code> and <code>unstable</code> directories are part of
 Fink.</li>
-<li>The tree. The <tt><nobr>main</nobr></tt> tree contains the bulk of the
+<li>The tree. The <code>main</code> tree contains the bulk of the
 packages. Cryptographic software is kept in a separate tree,
-<tt><nobr>crypto</nobr></tt>, to make removal easy should it become
+<code>crypto</code>, to make removal easy should it become
 necessary.</li>
-<li><tt><nobr>finkinfo</nobr></tt>
-vs. <tt><nobr>binary-darwin-powerpc</nobr></tt>. <tt><nobr>finkinfo</nobr></tt> contains
+<li><code>finkinfo</code>
+vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
 the Fink package descriptions and patches, while
-<tt><nobr>binary-darwin-powerpc</nobr></tt> contains the <tt><nobr>.deb</nobr></tt>
+<code>binary-darwin-powerpc</code> contains the <code>.deb</code>
 binary packages.</li>
-<li>Sections. The <tt><nobr>main</nobr></tt> tree is subdivided into thematic
-sections to make it manageable. The <tt><nobr>crypto</nobr></tt> tree is not
+<li>Sections. The <code>main</code> tree is subdivided into thematic
+sections to make it manageable. The <code>crypto</code> tree is not
 divided into sections at the moment.</li>
 </ul>
 
 
-<a name="format"><h2>2.2 File Format</h2></a>
+<h2><a name="format">2.2 File Format</a></h2>
 <p>
 The description files are simple lists of key-value pairs, also called
 'fields'.
@@ -76,10 +76,10 @@ Note the indentation of the lines.
 <p>
 The more recent alternative notation is based on the here-document
 syntax in shell scripts.
-The first line consists of the key, followed by <tt><nobr>&lt;&lt;</nobr></tt>
+The first line consists of the key, followed by <code>&lt;&lt;</code>
 as the value.
 All following lines are treated as the actual value, until a line with
-just <tt><nobr>&lt;&lt;</nobr></tt> on it is encountered.
+just <code>&lt;&lt;</code> on it is encountered.
 The example from above now looks like this:
 </p>
 <pre>InstallScript: &lt;&lt;
@@ -90,11 +90,11 @@ install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</pre>
 <p>
 Note the lack of indentation and the terminating
-<tt><nobr>&lt;&lt;</nobr></tt>.
+<code>&lt;&lt;</code>.
 </p><p>
-As a special case, when working within a <tt><nobr>SplitOff</nobr></tt> or
-<tt><nobr>SplitOff<b>N</b></nobr></tt> field, the here-document syntax
-can be nested.  The same terminator <tt><nobr>&lt;&lt;</nobr></tt> is used
+As a special case, when working within a <code>SplitOff</code> or
+<code>SplitOff<b>N</b></code> field, the here-document syntax
+can be nested.  The same terminator <code>&lt;&lt;</code> is used
 for the sub-here-document.  Here is an example:
 </p>
 <pre>
@@ -110,8 +110,8 @@ SplitOff: &lt;&lt;
 </p><p>
 Empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
-<tt><nobr>InstallScript</nobr></tt>, <tt><nobr>installscript</nobr></tt> or
-<tt><nobr>INSTALLSCRIPT</nobr></tt> as you please.
+<code>InstallScript</code>, <code>installscript</code> or
+<code>INSTALLSCRIPT</code> as you please.
 The first form is preferred for readability, though.
 Some fields take a boolean value - any of &quot;true&quot;, &quot;yes&quot;, &quot;on&quot;, &quot;1&quot;
 (case-insensitive) are treated as true, all other values are treated
@@ -119,7 +119,7 @@ as false.
 </p>
 
 
-<a name="percent"><h2>2.3 Percent Expansion</h2></a>
+<h2><a name="percent">2.3 Percent Expansion</a></h2>
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
@@ -132,7 +132,7 @@ the <b>n</b>ame of the current package
 </td></tr><tr valign="top"><td>%N</td><td>
 <p>
 the <b>N</b>ame of the parent package (the same as %n unless within a
-<tt><nobr>SplitOff</nobr></tt>)
+<code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%v</td><td>
 <p>
@@ -158,7 +158,7 @@ the <b>d</b>estination directory where the tree to be packaged is built, e.g.
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
 the <b>D</b>estination for the parent package (the same as %d unless within a
-<tt><nobr>SplitOff</nobr></tt>)
+<code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%i</td><td>
 <p>
@@ -167,7 +167,7 @@ the full <b>i</b>nstall-phase prefix, equivalent to %d%p
 </td></tr><tr valign="top"><td>%I</td><td>
 <p>
 the <b>I</b>nstall prefix of the parent package, equivalent to %D%P (the same
-as %i unless within a <tt><nobr>SplitOff</nobr></tt>)
+as %i unless within a <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
@@ -184,7 +184,7 @@ in commands.
 </p>
 </td></tr><tr valign="top"><td>%c</td><td>
 <p>
-the parameters for <b>c</b>onfigure: <tt><nobr>--prefix=%p</nobr></tt> plus anything
+the parameters for <b>c</b>onfigure: <code>--prefix=%p</code> plus anything
 specified with ConfigureParams
 </p>
 </td></tr></table>

@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="upgrade-01"><h2>5.1 Clean cut</h2></a>
+<h2><a name="upgrade-01">5.1 Clean cut</a></h2>
 <p>
 There is no direct upgrade path from Fink 0.1.x to Fink 0.2.x, because
 they use different methods for underlying package management (stow
@@ -25,14 +25,14 @@ Save any changes you have made to configuration files etc.
 </p></li>
 <li><p>
 Save a list of packages you had installed. Hint: Try
-<tt><nobr>ls /sw/var/fink-stamp</nobr></tt>.
+<code>ls /sw/var/fink-stamp</code>.
 </p></li>
 <li><p>
 If you have the source tarballs still lying around in /sw/src and
 don't want to download them again, move them to another directory.
 </p></li>
 <li><p>
-Wipe out the /sw directory, i.e. <tt><nobr>cd / ; rm -rf /sw</nobr></tt>.
+Wipe out the /sw directory, i.e. <code>cd / ; rm -rf /sw</code>.
 Do this as root if neccessary.
 </p></li>
 <li><p>

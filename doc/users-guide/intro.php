@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="what"><h2>1.1 What is Fink?</h2></a>
+<h2><a name="what">1.1 What is Fink?</a></h2>
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -21,7 +21,7 @@ developed for Linux and similar operating systems to your Mac.
 </p>
 
 
-<a name="req"><h2>1.2 Requirements</h2></a>
+<h2><a name="req">1.2 Requirements</a></h2>
 <p>
 In any case you will need:
 </p>
@@ -65,7 +65,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="supported-os"><h2>1.3 Supported Systems</h2></a>
+<h2><a name="supported-os">1.3 Supported Systems</a></h2>
 <p>
 <b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
@@ -87,7 +87,7 @@ Mac OS X - affected packages include XFree86 and possibly esound.
 </p>
 
 
-<a name="src-vs-bin"><h2>1.4 Source vs. Binary</h2></a>
+<h2><a name="src-vs-bin">1.4 Source vs. Binary</a></h2>
 <p>
 Software is written (&quot;developed&quot;) in human-readable programming
 languages; this form is called the &quot;source code&quot;.

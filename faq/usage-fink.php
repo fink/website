@@ -15,11 +15,11 @@ include "header.inc";
 <div class="question"><p><b>Q3.1: How can I find out what packages
 Fink supports?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
+Since Fink 0.2.3, there is the <code>list</code> command.
 It produces a list of all packages known to your Fink installation.
 Example:
 </p><pre>fink list</pre><p>
-If you're using the binary distribution, <tt><nobr>dselect</nobr></tt> gives
+If you're using the binary distribution, <code>dselect</code> gives
 you a nice browsable listing of available packages.
 Note that you must run it as root if you want to select and install
 packages from within dselect.
@@ -31,15 +31,15 @@ database</a> at the website.
 <a name="proxy">
 <div class="question"><p><b>Q3.2: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
-<div class="answer"><p><b>A:</b> The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
-are passed on to <tt><nobr>wget</nobr></tt>/<tt><nobr>curl</nobr></tt>.
+<div class="answer"><p><b>A:</b> The <code>fink</code> command supports explicit proxy settings that
+are passed on to <code>wget</code>/<code>curl</code>.
 If you were not asked for proxies on first time installation, you can
-run <tt><nobr>fink configure</nobr></tt> to set it up.
+run <code>fink configure</code> to set it up.
 You can also run that command at any time to reconfigure the
-<tt><nobr>fink</nobr></tt> command.
+<code>fink</code> command.
 If you followed the instructions in the installation guide, and use
-<tt><nobr>/sw/bin/init.csh</nobr></tt> (or <tt><nobr>/sw/bin/init.sh</nobr></tt>),
-then <tt><nobr>apt-get</nobr></tt> and <tt><nobr>dselect</nobr></tt> also will use these
+<code>/sw/bin/init.csh</code> (or <code>/sw/bin/init.sh</code>),
+then <code>apt-get</code> and <code>dselect</code> also will use these
 proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p></div>
 </a>
 <a name="firewalled-cvs">
@@ -51,21 +51,21 @@ proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.
 <li>
 <p>Install the <b>cvs-proxy</b> package with the command:</p>
 <p>
-<tt><nobr>fink install <b>cvs-proxy</b>
-</nobr></tt>
+<code>fink install <b>cvs-proxy</b>
+</code>
 </p>
 </li>
 <li>
 <p>Packages are then updated with the commands:</p>
 <p>
-<tt><nobr>fink selfupdate-cvs</nobr></tt>
+<code>fink selfupdate-cvs</code>
 </p>
 <p>
-<tt><nobr>fink update-all</nobr></tt>
+<code>fink update-all</code>
 </p>
 </li>
 </ul><p>If fink is not configured to use your proxy, change the settings using:</p><p>
-<tt><nobr>fink configure</nobr></tt>.</p></div>
+<code>fink configure</code>.</p></div>
 </a>
 <a name="moving">
 <div class="question"><p><b>Q3.4: Can I move Fink to another
@@ -123,7 +123,7 @@ Both are correct.
 The <a href="http://fink.sourceforge.net/pdb/">package database</a>
 knows about every package, including those that are still in the
 unstable section.
-The <tt><nobr>dselect</nobr></tt> and <tt><nobr>apt-get</nobr></tt> tools on the other
+The <code>dselect</code> and <code>apt-get</code> tools on the other
 hand only know about the packages available as precompiled binary
 packages.
 Many packages are not available in precompiled form through these
@@ -133,12 +133,12 @@ to be considered, and it must pass additional checks for policy
 compliance as well as licensing and patent restrictions.
 </p><p>
 If you want to install a package that is not available via
-<tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
-from source using <tt><nobr>fink install <b>packagename</b>
-</nobr></tt>.
+<code>dselect</code> / <code>apt-get</code>, you have to compile it
+from source using <code>fink install <b>packagename</b>
+</code>.
 Make sure you have the Developer Tools installed before you try this.
 (If there is no installer for the Developer Tools in your
-<tt><nobr>/Applications</nobr></tt> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
+<code>/Applications</code> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
 free registration.)
 See also the question about unstable below.
 </p></div>
@@ -155,21 +155,21 @@ That is why Fink doesn't search the unstable tree by default.
 </p><p>
 If you only want one or two specific packages, it is safer to copy
 those .info files (and their associated .patch files, if there are
-any) from <tt><nobr>/sw/fink/dists/unstable/main/finkinfo</nobr></tt>
-to <tt><nobr>/sw/fink/dists/local/main/finkinfo</nobr></tt>.
+any) from <code>/sw/fink/dists/unstable/main/finkinfo</code>
+to <code>/sw/fink/dists/local/main/finkinfo</code>.
 If you want Fink to use all of unstable, edit
-<tt><nobr>/sw/etc/fink.conf</nobr></tt>, add
-<tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> 
-to the beginning of the <tt><nobr>Trees:</nobr></tt>
-line, and then run the command <tt><nobr>fink index</nobr></tt>
+<code>/sw/etc/fink.conf</code>, add
+<code>unstable/main</code> and <code>unstable/crypto</code> 
+to the beginning of the <code>Trees:</code>
+line, and then run the command <code>fink index</code>
 </p></div>
 </a>
 <a name="sudo">
 <div class="question"><p><b>Q3.10: I'm tired of typing my password into sudo again
 and again. Is there a way around this?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
-password. To do this, edit <tt><nobr>/etc/sudoers</nobr></tt> as root
-and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace <tt><nobr>username</nobr></tt> with your actual username, of course. This
+password. To do this, edit <code>/etc/sudoers</code> as root
+and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace <code>username</code> with your actual username, of course. This
 line allows you to run any command via sudo without typing your
 password.</p></div>
 </a>
@@ -180,7 +180,7 @@ wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
 sets environment variables like PATH and MANPATH in your shell. To
 have a lasting effect on the shell, it must be processed with the
-<tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div>
+<code>source</code> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div>
 </a>
 <a name="dselect-access">
 <div class="question"><p><b>Q3.12: Help! I used the
@@ -191,13 +191,13 @@ You probably pointed apt at a Debian mirror, which of course doesn't
 have the Fink files.
 You can fix this manually or through dselect.
 To fix it manually, edit the file
-<tt><nobr>/sw/etc/apt/sources.list</nobr></tt> in a text editor as root.
+<code>/sw/etc/apt/sources.list</code> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
 </p><pre>
 deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>
-(Or if you live in Europe, you can use <tt><nobr>eu.dl.sourceforge.net</nobr></tt>
-instead of <tt><nobr>us.dl.sourceforge.net</nobr></tt>)
+(Or if you live in Europe, you can use <code>eu.dl.sourceforge.net</code>
+instead of <code>us.dl.sourceforge.net</code>)
 </p><p>
 To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
@@ -239,10 +239,10 @@ cd pkginfo
 ./inject.pl /sw</pre>
 </li>
 </ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
-edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div>
+edit line 479 of <code>/sw/lib/perl5/Fink/SelfUpdate.pm</code> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div>
 </a>
 <a name="cvs-busy">
-<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
+<div class="question"><p><b>Q3.14: When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
 		</b></p></div>
 <div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec &quot;cvs&quot;: No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
@@ -294,16 +294,16 @@ fsck -y
 mount -uw
 chmod 1775 /
 reboot
-</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<tt><nobr>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</nobr></tt>&quot; to prevent this from happening again.</p></div>
+</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<code>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</code>&quot; to prevent this from happening again.</p></div>
 </a>
 <a name="not-found">
 <div class="question"><p><b>Q3.17: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
-versions are released.</p><p>The first thing you should do is run <tt><nobr>fink selfupdate-cvs</nobr></tt>.
+versions are released.</p><p>The first thing you should do is run <code>fink selfupdate-cvs</code>.
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
-revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b>
-</nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
+revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from &quot;<code>fink describe <b>packagename</b>
+</code>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
 other directories for the same version of the source that fink wants 
 (e.g. in an &quot;old&quot;
 directory).  Keep in mind, though, that some remote sites like to trash the
@@ -314,14 +314,14 @@ which is where Fink stores sourcefiles from packages that have been
 released in binary form.  If all of the above fail, then you might consider posting on the
 <a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
 mailing list</a> to ask if anybody has the old source available to give
-you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b>
-</nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
+you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>&quot;.  Then use '<code>fink install <b>packagename</b>
+</code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div>
 </a>
 <a name="fink-not-found">
 <div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
-(This assumes you are using <tt><nobr>tcsh</nobr></tt>).  When <tt><nobr>tcsh</nobr></tt> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <tt><nobr>~/.tcshrc</nobr></tt>, and if that isn't found, <tt><nobr>~/.cshrc</nobr></tt>; note that if you have both, only <tt><nobr>~/.tcshrc</nobr></tt> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <tt><nobr>~/.tcshrc</nobr></tt>, and therefore <tt><nobr>~/.cshrc</nobr></tt> isn't being read.  A good fix is to add the following line to <tt><nobr>~/.tcshrc</nobr></tt>:</p><pre>source ~/.cshrc</pre></div>
+(This assumes you are using <code>tcsh</code>).  When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read.  A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
 <div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
@@ -329,37 +329,37 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </a>
 <a name="install-info-bad">
 <div class="question"><p><b>Q3.20: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
-<div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <tt><nobr>/sw/sbin</nobr></tt> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <tt><nobr>/sw/sbin</nobr></tt> is there, but there are other directories ahead of it (e.g. <tt><nobr>/usr/local/bin</nobr></tt>), then you will either want to reorder your PATH so that <tt><nobr>/sw/sbin</nobr></tt> is near the beginning, or if you really need the other directory to be before <tt><nobr>/sw/sbin</nobr></tt>, then you'll want to temporarily rename the other <tt><nobr>install-info</nobr></tt> when you use fink.</p></div>
+<div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use fink.</p></div>
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b>Q3.21: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> Typically these errors take the form:</p><p>
-<tt><nobr>files list file for package <b>packagename</b> contains empty filename</nobr></tt>
+<code>files list file for package <b>packagename</b> contains empty filename</code>
 </p><p>or</p><p>
-<tt><nobr>files list file for package <b>packagename</b> is missing final newline</nobr></tt>
+<code>files list file for package <b>packagename</b> is missing final newline</code>
 </p><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><p>
-<tt><nobr>dpkg --contents <b>full-path-to-debfile</b>
-</nobr></tt>
+<code>dpkg --contents <b>full-path-to-debfile</b>
+</code>
 </p><p>e.g.</p><p>
-<tt><nobr>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</nobr></tt>
-</p><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <tt><nobr>fink rebuild <b>packagename</b>
-</nobr></tt>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <tt><nobr>sudo -s</nobr></tt> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><p>
-<tt><nobr># dpkg -c <b>full-path-to-debfile</b>
-</nobr></tt>
+<code>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
+</p><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <b>packagename</b>
+</code>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><p>
+<code># dpkg -c <b>full-path-to-debfile</b>
+</code>
 </p><p>
-<tt><nobr>| awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</nobr></tt>
+<code>| awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
 </p><p>
-<tt><nobr> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </nobr></tt>
+<code> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </code>
 </p><p>
-<tt><nobr>&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</nobr></tt>
+<code>&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</code>
 </p><p>e.g.</p><p>
-<tt><nobr># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</nobr></tt>
+<code># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
 </p><p>
-<tt><nobr>| awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</nobr></tt>
+<code>| awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
 </p><p>
-<tt><nobr>{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</nobr></tt>
+<code>{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</code>
 </p><p>
-<tt><nobr>&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</nobr></tt>
+<code>&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code>
 </p><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <p align="right">

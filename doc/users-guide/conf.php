@@ -18,23 +18,23 @@ file (fink.conf) and how they influence the behaviour of Fink.
 </p>
 
 
-<a name="about"><h2>5.1 About fink.conf</h2></a>
+<h2><a name="about">5.1 About fink.conf</a></h2>
 <p>
 When Fink is initially installed it prompts you for the answers to some
 questions to set up your configuration file, such as which <a href="#mirrors">mirrors</a> you want to use for downloading files
 and how to acquire super-user rights. You can re-run this process by
-calling the <tt><nobr>fink configure</nobr></tt> command. In order to set some
+calling the <code>fink configure</code> command. In order to set some
 options, you may need to edit your <b>fink.conf</b> file by hand. In
 general, these options are meant for advanced users only.
 </p>
 <p>
 The <b>fink.conf</b> file is located at
-<tt><nobr>/sw/etc/fink.conf</nobr></tt>, and can be edited in your favourite
+<code>/sw/etc/fink.conf</code>, and can be edited in your favourite
 text editor. You will need super-user rights to edit it.
 </p>
 
 
-<a name="syntax"><h2>5.2 fink.conf syntax</h2></a>
+<h2><a name="syntax">5.2 fink.conf syntax</a></h2>
 <p>
 Your fink.conf file consists of multiple lines, in the format:</p>
 <pre>OptionName: Value</pre>
@@ -51,7 +51,7 @@ ListOption: Option1 Option2 Option3
 </pre>
 
 
-<a name="required"><h2>5.3 Required Settings</h2></a>
+<h2><a name="required">5.3 Required Settings</a></h2>
 <p>
 Some of the settings in the <b>fink.conf</b> are mandatory. Without
 them Fink cannot to function properly. The following settings belong to
@@ -68,7 +68,7 @@ changed it during the initial installation of Fink. You should
 </ul>
 
 
-<a name="optional"><h2>5.4 Optional User Settings</h2></a>
+<h2><a name="optional">5.4 Optional User Settings</a></h2>
 <p>
 There are various optional settings which users can customize to change
 the behaviour of Fink.
@@ -92,11 +92,11 @@ unstable/crypto - unstable cryptographic packages
 unstable/main   - other unstable packages
 </pre>
 <p>
-You may also add your own trees in the <tt><nobr>/sw/fink/dists</nobr></tt>
+You may also add your own trees in the <code>/sw/fink/dists</code>
 directory for your own purposes, but this is not necessary in most
 circumstances. The default trees are &quot;local/main local/bootstrap
 stable/main&quot;. This list should be kept in sync with the
-<tt><nobr>/sw/etc/apt/sources.list</nobr></tt> file.
+<code>/sw/etc/apt/sources.list</code> file.
 </p>
 </li>
 <li><p><b>Distribution:</b> 10.1 or 10.2</p>
@@ -109,7 +109,7 @@ alter this value.
 </li>
 <li><p><b>FetchAltDir:</b> path</p>
 <p>usually fink will store the sources it fetches in
-<tt><nobr>/sw/src</nobr></tt>. You can specify an alernate directory to look for
+<code>/sw/src</code>. You can specify an alernate directory to look for
 downloaded source code in using this option. For example:
 </p>
 <pre>FetchAltDir: /usr/src</pre>
@@ -131,19 +131,19 @@ save it having to read and parse them all every time it runs. Fink
 checks whether or not thepackage index needs to be updated unless this
 option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is not
 recommended that you change it. If you do, you may need to manually run
-the <tt><nobr>fink index</nobr></tt> command to update the index.</p>
+the <code>fink index</code> command to update the index.</p>
 </li>
 <li><p><b>SelfUpdateNoCVS:</b> boolean</p>
-<p>The command <tt><nobr>fink selfupdate</nobr></tt> upgrades Fink package
+<p>The command <code>fink selfupdate</code> upgrades Fink package
 manager to the latest release. This option makes sure that the
 Concurrent Version System (CVS) is not used to achieve this when set to
-True. It is set automatically by the <tt><nobr>fink
-selfupdate-cvs</nobr></tt> command, so you should not need to change it
+True. It is set automatically by the <code>fink
+selfupdate-cvs</code> command, so you should not need to change it
 manually.</p>
 </li>
 </ul>
 
-<a name="downloding"><h2>5.5 Download Settings</h2></a>
+<h2><a name="downloding">5.5 Download Settings</a></h2>
 <p>There are various settings which influence the way Fink downloads
 package data.</p>
 <ul>
@@ -177,7 +177,7 @@ time. The default value is <b>curl</b>.
 </li>
 </ul>
 
-<a name="mirrors"><h2>5.6 Mirror Settings</h2></a>
+<h2><a name="mirrors">5.6 Mirror Settings</a></h2>
 <p>Getting software from the Internet can be tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
@@ -194,22 +194,22 @@ different mirror anywhere in the world.</p>
 would like to use.</p>
 <ul>
 <li><p><b>MirrorContinent:</b> three letter code</p>
-<p>You should change this value using the <tt><nobr>fink configure</nobr></tt>
+<p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<tt><nobr>/sw/lib/fink/mirror/_keys</nobr></tt>.
+<code>/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in europe:</p>
 <pre>MirrorContinent: eur</pre>
 </li>
 <li><p><b>MirrorCountry:</b> six letter code</p>
-<p>You should change this value using the <tt><nobr>fink configure</nobr></tt>
+<p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<tt><nobr>/sw/lib/fink/mirror/_keys</nobr></tt>.
+<code>/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in Austria:</p>
 <pre>MirrorCountry: eur-AT</pre>
 </li>
 </ul>
 
-<a name="developer"><h2>5.7 Developer Settings</h2></a>
+<h2><a name="developer">5.7 Developer Settings</a></h2>
 <p>Some options in the <b>fink.conf</b> are only useful to
 developers. We do not recommend that conventional Fink users modify
 them. The following options fall into this category.</p>

@@ -14,7 +14,7 @@ include "header.inc";
 
 <p>[Sorry for the epic language, I couldn't resist...]</p>
 
-<a name="early"><h2>2.1 The early days</h2></a>
+<h2><a name="early">2.1 The early days</a></h2>
 <p>
 In the beginning, there was void.
 Darwin was in its infancy, Mac OS X was still in development and there
@@ -30,7 +30,7 @@ there, waiting for things to come.
 </p>
 
 
-<a name="xonx-forms"><h2>2.2 XonX forms</h2></a>
+<h2><a name="xonx-forms">2.2 XonX forms</a></h2>
 <p>
 One fine day Torrey T. Lyons came along and gave the Darwin patches
 the attention they had been waiting for.
@@ -48,7 +48,7 @@ At about the same time Tenon started to build Xtools, using XFree86
 </p>
 
 
-<a name="root-or-not"><h2>2.3 To root or not to root</h2></a>
+<h2><a name="root-or-not">2.3 To root or not to root</a></h2>
 <p>
 Soon the XonX team had XFree86 running in a fullscreen mode in
 parallel to Quartz and was putting out test releases for adventurous

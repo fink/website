@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="req"><h2>2.1 Requirements</h2></a>
+<h2><a name="req">2.1 Requirements</a></h2>
 <p>
 You need:
 </p>
@@ -45,7 +45,7 @@ I'm talking hours or even days here.
 </ul>
 
 
-<a name="directory"><h2>2.2 Choosing A Directory</h2></a>
+<h2><a name="directory">2.2 Choosing A Directory</a></h2>
 <p>
 Before you install, you must decide where Fink's directory hierarchy
 will live. The recommended place is /sw, and all examples in this
@@ -77,7 +77,7 @@ have been warned.
 </p>
 
 
-<a name="install"><h2>2.3 Installation</h2></a>
+<h2><a name="install">2.3 Installation</a></h2>
 <p>
 First, you need to unpack the fink-0.5.1-full.tar.gz tarball.
 It is recommended that you do this from the command line -
@@ -88,7 +88,7 @@ command:
 <pre>tar xzf fink-0.5.1-full.tar.gz</pre>
 <p>
 You now have a directory named fink-0.5.1-full.
-Change to it with <tt><nobr>cd fink-0.5.1-full</nobr></tt>.
+Change to it with <code>cd fink-0.5.1-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -134,7 +134,7 @@ manager, you first must have the package manager available.
 </p>
 
 
-<a name="x11"><h2>2.4 Getting X11 Sorted Out</h2></a>
+<h2><a name="x11">2.4 Getting X11 Sorted Out</a></h2>
 <p>
 Fink uses virtual packages to declare dependencies on X11.
 As there are several X11 implementations available for Mac OS X

@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="licenses"><h2>3.1 Package Licenses</h2></a>
+<h2><a name="licenses">3.1 Package Licenses</a></h2>
 <p>
 The packages included in Fink come with a wide variety of licenses.
 Most of them place restrictions on redistributing the full source and
@@ -26,7 +26,7 @@ of their package carefully.
 Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
-i.e. in <tt><nobr>%p/share/doc/%n</nobr></tt>.
+i.e. in <code>%p/share/doc/%n</code>.
 (In the InstallScript, %i must be used instead of %p, of course.
 The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
@@ -37,7 +37,7 @@ required.
 </p>
 <p>
 To make an automated maintenance of the binary distribution possible,
-any package that is to be distributed must have a <tt><nobr>License</nobr></tt>
+any package that is to be distributed must have a <code>License</code>
 field.
 This field denotes the nature of the license and is used to decide
 which packages make it into the binary distribution and which must be
@@ -46,53 +46,53 @@ The field may only be present if the actual license terms are included
 in the binary package, as explained above.
 </p>
 <p>
-To make the <tt><nobr>License</nobr></tt> field useful, only one of the
+To make the <code>License</code> field useful, only one of the
 following pre-defined values may be used.
 If you're packaging something that doesn't fit into these categories,
 ask for help on the developer mailing list.
 </p>
 <ul>
 
-<li><tt><nobr>GPL</nobr></tt> - the GNU General Public License.
+<li><code>GPL</code> - the GNU General Public License.
 This license requires that the source is available from the same place
 as the binary.</li>
-<li><tt><nobr>LGPL</nobr></tt> - the GNU Lesser General Public License.
+<li><code>LGPL</code> - the GNU Lesser General Public License.
 This license requires that the source is available from the same place
 as the binary.</li>
-<li><tt><nobr>GPL/LGPL</nobr></tt> - this if a special case for packages where
+<li><code>GPL/LGPL</code> - this if a special case for packages where
 one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
 
-<li><tt><nobr>BSD</nobr></tt> - for BSD-style licenses.
+<li><code>BSD</code> - for BSD-style licenses.
 This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
 license and the MIT license. The Apache license also counts as
 BSD. With these licenses the distribution of source code is
 optional.</li>
 
-<li><tt><nobr>Artistic</nobr></tt> - for the Artistic license and
+<li><code>Artistic</code> - for the Artistic license and
 derivatives.</li>
 
-<li><tt><nobr>OSI-Approved</nobr></tt> - for other Open Source licenses
+<li><code>OSI-Approved</code> - for other Open Source licenses
 approved by the <a href="http://www.opensource.org/">Open Source
 Initiative</a>. One of OSI's requirements is that free distribution
 of binaries and sources is allowed. This value can also be used as an
 umbrella for dual-licensed packages.</li>
 
-<li><tt><nobr>Restrictive</nobr></tt> - for restrictive licenses.
+<li><code>Restrictive</code> - for restrictive licenses.
 Use this for packages that are available from the author in source
 form for free use, but don't allow free redistribution.</li>
 
-<li><tt><nobr>Restrictive/Distributable</nobr></tt> - for restrictive licenses which
+<li><code>Restrictive/Distributable</code> - for restrictive licenses which
 permit distribution of binaries.
 Use this for packages that are available from the author in source
 form, permit distribution of binaries, but have restrictions which
 make them non-open source licenses.</li>
 
-<li><tt><nobr>Commercial</nobr></tt> - for restrictive, commercial licenses.
+<li><code>Commercial</code> - for restrictive, commercial licenses.
 Use this for commercial packages (e.g. Freeware, Shareware) that do
 not allow free redistribution of source or binaries.</li>
 
-<li><tt><nobr>Public Domain</nobr></tt> - for packages that are in the Public
+<li><code>Public Domain</code> - for packages that are in the Public
 Domain, i.e. the author has given up his copyright on the code. These
 packages don't have licenses at all and anyone can do anything with
 them.</li>
@@ -100,15 +100,15 @@ them.</li>
 </ul>
 <p>
 If the documentation included in a package is explicitly put under the
-GNU Free Documentation License, a <tt><nobr>/GFDL</nobr></tt> may be appended to
-the License field, e.g. <tt><nobr>GPL/GFDL</nobr></tt>. If the documentation
+GNU Free Documentation License, a <code>/GFDL</code> may be appended to
+the License field, e.g. <code>GPL/GFDL</code>. If the documentation
 included in a package is explicitly put under the Linux Documentation
-Project license, the same applies, e.g. <tt><nobr>GPL/LDP</nobr></tt>.
+Project license, the same applies, e.g. <code>GPL/LDP</code>.
 </p>
 
 
 
-<a name="prefix"><h2>3.2 Base System Interference</h2></a>
+<h2><a name="prefix">3.2 Base System Interference</a></h2>
 <p>
 Fink is an add-on distribution that is installed in a directory
 separate from the base system.
@@ -128,7 +128,7 @@ for existence before calling them and the like).
 </p>
 
 
-<a name="sharedlibs"><h2>3.3 Shared Libraries</h2></a>
+<h2><a name="sharedlibs">3.3 Shared Libraries</a></h2>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 4
@@ -139,14 +139,14 @@ Any package which builds shared libraries and is either (1) being put into
   the stable tree, or (2) a new package in Fink, should treat its shared
   libraries according to Fink's policy.  This means:</p>
 <ul>
-<li>   verify, using <tt><nobr>otool -L</nobr></tt>, that 
+<li>   verify, using <code>otool -L</code>, that 
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
 <li>   put the shared libraries in a separate package (except for the
        links from libfoo.dylib to the install_name), and include
-       the <tt><nobr>Shlibs</nobr></tt> field in that package</li>
+       the <code>Shlibs</code> field in that package</li>
 <li>   put the headers and the final links from libfoo.dylib into a package
-       which is classified as <tt><nobr>BuildDependsOnly: True</nobr></tt>, and plan
+       which is classified as <code>BuildDependsOnly: True</code>, and plan
         to have
        no other package depend on this one.</li>
 </ul>
@@ -156,7 +156,7 @@ Any package which builds shared libraries and is either (1) being put into
 </p><p>
 For some packages, everything can be accomplished with a main package and a
 -shlibs package; in other cases you also need a third package.  The new
-<tt><nobr>SplitOff</nobr></tt> field actually makes this quite easy.
+<code>SplitOff</code> field actually makes this quite easy.
 </p><p>
 When three packages are needed, there are two different ways they could be
 named, depending on whether the libraries or the binaries
@@ -164,21 +164,21 @@ are the most important feature of
 the package, or the binaries are the most important feature.  For option 1, 
 use the layout:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt><nobr>foo-shlibs</nobr></tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt><nobr>foo</nobr></tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt><nobr>foo-bin</nobr></tt></td><td><p>Binaries, etc.</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>Binaries, etc.</p></td></tr></table>
 
 <p>while for option 2, use the layout:</p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt><nobr>foo-shlibs</nobr></tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt><nobr>foo-dev</nobr></tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt><nobr>foo</nobr></tt></td><td><p>Binaries, etc.</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binaries, etc.</p></td></tr></table>
 
 <p>
 With option 2 it is harder to upgrade an existing package:  at the same
 time as you upgrade, 
-you need to add <tt><nobr>BuildDepends: foo-dev</nobr></tt> to every
-package which says <tt><nobr>Depends: foo</nobr></tt>.
+you need to add <code>BuildDepends: foo-dev</code> to every
+package which says <code>Depends: foo</code>.
 One other upgrade issue to keep in mind: a package which indirectly depends
 on your package (through another package as an intermediary) may need
-to have <tt><nobr>BuildDepends: foo</nobr></tt> or <tt><nobr>BuildDepends: foo-dev</nobr></tt>
+to have <code>BuildDepends: foo</code> or <code>BuildDepends: foo-dev</code>
 added to it to ensure a successful upgrade.  It is your responsibility
-to make sure that these <tt><nobr>BuildDepends</nobr></tt> entries are added.
+to make sure that these <code>BuildDepends</code> entries are added.
 </p>
 <p><b>The policy in detail</b></p>
 <p>
@@ -198,10 +198,10 @@ Whenever shared libraries are being built,
 and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
 files go in foo.  These two packages
 can be made with a single .info file, using
-the <tt><nobr>SplitOff</nobr></tt> field, as described below.  
+the <code>SplitOff</code> field, as described below.  
 (In fact, it is often necessary
 to make more than two packages from the source, and this can be done
-using <tt><nobr>SplitOff2</nobr></tt>, <tt><nobr>SplitOff3</nobr></tt>, etc.)
+using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
 </p><p>
 Each software package for which shared libraries can be built must have
 a <b>major version number</b> N.  The major version number is only supposed
@@ -223,10 +223,10 @@ be put into the package barN.  There can be no overlapping files
 between these two packages, and everything stored in barN-shlibs must have
 a pathname which somehow includes the major version number N.  In many
 instances, your package will need some files at runtime which are
-typically installed into <tt><nobr>%i/lib/bar/</nobr></tt> or 
-<tt><nobr>%i/share/bar/</nobr></tt> ; you should adjust the installation
-paths to <tt><nobr>%i/lib/bar/N/</nobr></tt> or
-<tt><nobr>%i/share/bar/N/</nobr></tt>.
+typically installed into <code>%i/lib/bar/</code> or 
+<code>%i/share/bar/</code> ; you should adjust the installation
+paths to <code>%i/lib/bar/N/</code> or
+<code>%i/share/bar/N/</code>.
 </p><p>
 All other packages which depend on bar, major version N, will be asked to
 use the dependencies
@@ -254,9 +254,9 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the &quot;install_name&quot; of the library be <tt><nobr>%p/lib/bar.N.dylib</nobr></tt>.  
+the &quot;install_name&quot; of the library be <code>%p/lib/bar.N.dylib</code>.  
 (You can
-find the install_name by running <tt><nobr>otool -L</nobr></tt> on your library.)  The
+find the install_name by running <code>otool -L</code> on your library.)  The
 actual library file should be installed at
 </p>
 <pre>
@@ -281,7 +281,7 @@ but in any event you should
 check that they have been done correctly in your case.  You should also
 check that current_version and compatibility_version were defined 
 appropriately for your shared libraries.  (These are also shown with the 
-<tt><nobr>otool -L</nobr></tt> query.)
+<code>otool -L</code> query.)
 </p><p>
 Files are then divided between the two packages as follows
 </p>
@@ -308,7 +308,7 @@ the license, but that the directories containing the DocFiles will be
 different.
 </p><p>
 Doing this is quite easy in practice, using the 
-<tt><nobr>SplitOff</nobr></tt> field.  Here is
+<code>SplitOff</code> field.  Here is
 how the example above would be implemented (in part):
 </p>
 <pre>
@@ -326,13 +326,13 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 <p>
-During the execution of the <tt><nobr>SplitOff</nobr></tt>
+During the execution of the <code>SplitOff</code>
 field, the specified files and directories are moved from the 
 install directory %I of the main package to the install directory %i of the
 splitoff package.  (There is a similar convention for names: %N is the
 name of the main package, and %n is the name of the current package.)
-The <tt><nobr>DocFiles</nobr></tt> command then puts a copy of the documentation into 
-<tt><nobr>%i/share/doc/barN-shlibs</nobr></tt>.
+The <code>DocFiles</code> command then puts a copy of the documentation into 
+<code>%i/share/doc/barN-shlibs</code>.
 </p><p>
 Notice that we have included the exact current version of barN-shlibs as a 
 dependency of the main package barN (which can be abbreviated 
@@ -344,13 +344,13 @@ automatically &quot;inherits&quot; all the dependencies of barN-shlibs.
 </p><p>
 In addition to putting the shared libraries in the correct package, as of
 version 4 of this policy, you must also declare all of the shared libraries
-using the <tt><nobr>Shlibs</nobr></tt> field.  This field has one line for each
-shared library, which contains the <tt><nobr>-install_name</nobr></tt> of the
-library, the <tt><nobr>-compatibility_version</nobr></tt>, and versioned 
+using the <code>Shlibs</code> field.  This field has one line for each
+shared library, which contains the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
 dependency information specifying the Fink package which provides
 this library at this compatibility version.  The dependency should
-be stated in the form <tt><nobr> foo (&gt;= version-revision)</nobr></tt> where 
-<tt><nobr>version-revision</nobr></tt> refers to
+be stated in the form <code> foo (&gt;= version-revision)</code> where 
+<code>version-revision</code> refers to
 the <b>first</b> version of a Fink package which made
 this library (with this compatibility version) available.  For example,
 a declaration</p>
@@ -359,8 +359,8 @@ a declaration</p>
     %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
   &lt;&lt;
 </pre>
-<p>indicates that a library with <tt><nobr>-install_name</nobr></tt> %p/lib/bar.1.dylib
-and <tt><nobr>-compatibiliary_version</nobr></tt> 2.1.0 has been installed since
+<p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
+and <code>-compatibiliary_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
 amounts to  a promise
 from the maintainer that a libary with this name and a compatibility-version
@@ -368,12 +368,12 @@ of at least 2.1.0 will always be found in later versions of the <b>bar1</b>
 package.
 </p><p>
 Note the use of %p in the name of the library, which allows the correct
-<tt><nobr>-install_name</nobr></tt> to be found by all users of Fink, no matter
+<code>-install_name</code> to be found by all users of Fink, no matter
 what prefix they have chosen.
 </p><p>
-When a package is updated, usually the <tt><nobr>Shlibs</nobr></tt> field can simply
+When a package is updated, usually the <code>Shlibs</code> field can simply
 be copied to the next version/revision of the package.  The exception to
-this is if the <tt><nobr>-compatibility_version</nobr></tt> increases: in that
+this is if the <code>-compatibility_version</code> increases: in that
 case, the version number in the dependency information should be changed
 to the current version/revision (which is the first version/revision to
 provide the library with the new compatibility version number).
@@ -434,15 +434,15 @@ with the new policy, please discuss it on the fink-devel mailing list.
 </p><p>
 When an upstream package contains both binary files and libraries, some
 care must be exercised in constructing fink packages.  In some cases,
-the only binary files will be things like <tt><nobr>foo-config</nobr></tt> which
+the only binary files will be things like <code>foo-config</code> which
 are presumably only used at build time and never at run time.  In these
-cases, the binaries can go with the header files in the <tt><nobr>foo</nobr></tt>
+cases, the binaries can go with the header files in the <code>foo</code>
 package.
 </p><p>
 In other cases, the binary files will be needed by other packages at
 runtime, and they must be split off into a separate fink package with
-a name something like <tt><nobr>foo-bin</nobr></tt>.  The <tt><nobr>foo-bin</nobr></tt>
-package should depend on the <tt><nobr>foo-shlibs</nobr></tt> package, and
+a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
+package should depend on the <code>foo-shlibs</code> package, and
 maintainers of other packages should be encouraged to use
 </p>
 <pre>
@@ -453,9 +453,9 @@ maintainers of other packages should be encouraged to use
 which will take care of foo-shlibs implicitly.
 </p><p>
 Upgrading presents a problem in this situation, however, since users won't
-be prompted to install <tt><nobr>foo-bin</nobr></tt>.  To work around this, until
+be prompted to install <code>foo-bin</code>.  To work around this, until
 all other package maintainers have revised their packages as above,
-your <tt><nobr>foo</nobr></tt> package can say
+your <code>foo</code> package can say
 </p>
 <pre>
   Depends: foo-shlibs (= exact.version), foo-bin
@@ -463,7 +463,7 @@ your <tt><nobr>foo</nobr></tt> package can say
 <p>
 This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
-which depend on <tt><nobr>foo</nobr></tt>.
+which depend on <code>foo</code>.
 </p>
 
 

@@ -25,16 +25,16 @@ If you're looking for the real instructions, skip to the <a href="install-first.
 
 
 
-<a name="install"><h2>1.1 First Time Installation Fast
-Track</h2></a>
+<h2><a name="install">1.1 First Time Installation Fast
+Track</a></h2>
 <p>
-Start out by copying the <tt><nobr>fink-0.5.1-full.tar.gz</nobr></tt>
+Start out by copying the <code>fink-0.5.1-full.tar.gz</code>
 file to your home folder.
 Then, open Terminal.app and follow the session below.
-Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
-<tt><nobr><b>bold face</b></nobr></tt> (or otherwise highlighted).
+Computer output is in <code>normal face</code>, your input is in
+<code><b>bold face</b></code> (or otherwise highlighted).
 The actual input prompts from the shell may vary, and some chunks of
-the output have been omitted (<tt><nobr>...</nobr></tt>).
+the output have been omitted (<code>...</code>).
 </p>
 <pre>[frodo:~] testuser% <b>tar xzf fink-0.5.1-full.tar.gz</b>
 [frodo:~] testuser% <b>cd fink-0.5.1-full</b>
@@ -86,7 +86,7 @@ home directory. Enjoy.
 [frodo:~] testuser% <b>pico .cshrc</b></pre>
 <p>
 The last command launches you into a text file editor.
-Type <tt><nobr>source /sw/bin/init.csh</nobr></tt>, press return, press
+Type <code>source /sw/bin/init.csh</code>, press return, press
 control-O, press return, press control-X.
 You're now back at the prompt:
 </p>
@@ -98,7 +98,7 @@ If you have several Terminal.app windows open, close the other ones.
 That's it, you now have a base system installed.
 </p>
 <p>
-You can now install additional packages with the <tt><nobr>fink</nobr></tt>
+You can now install additional packages with the <code>fink</code>
 command, like this:
 </p>
 <pre>[frodo:~] testuser% <b>fink install xfree86-server gimp</b>
@@ -121,15 +121,15 @@ documentation when your problem actually is well-documented.
 
 
 
-<a name="update"><h2>1.2 Update Fast Track</h2></a>
+<h2><a name="update">1.2 Update Fast Track</a></h2>
 <p>
-Start out by copying the <tt><nobr>fink-0.5.1-full.tar.gz</nobr></tt>
+Start out by copying the <code>fink-0.5.1-full.tar.gz</code>
 file to your home folder.
 Then, open Terminal.app and follow the session below.
-Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
-<tt><nobr><b>bold face</b></nobr></tt> (or otherwise highlighted).
+Computer output is in <code>normal face</code>, your input is in
+<code><b>bold face</b></code> (or otherwise highlighted).
 The actual input prompts from the shell may vary, and some chunks of
-the output have been omitted (<tt><nobr>...</nobr></tt>).
+the output have been omitted (<code>...</code>).
 </p>
 <pre>[frodo:~] testuser% <b>tar xzf fink-0.5.1-full.tar.gz</b>
 [frodo:~] testuser% <b>cd fink-0.5.1-full</b>

@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="terminal-app"><h2>8.1 Launching X11 apps from Terminal.app</h2></a>
+<h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
 <p>
 To launch X11 applications from a Terminal.app window, you must set
 the environment variable &quot;DISPLAY&quot;.
@@ -41,10 +41,10 @@ with X11 tunneling.
 
 
 
-<a name="open"><h2>8.2 Launching Aqua apps from an xterm</h2></a>
+<h2><a name="open">8.2 Launching Aqua apps from an xterm</a></h2>
 <p>
 One way to launch Aqua applications from an xterm (or any other shell,
-actually) is the <tt><nobr>open</nobr></tt> command.
+actually) is the <code>open</code> command.
 Some examples:
 </p>
 <pre>open /Applications/TextEdit.app
@@ -58,7 +58,7 @@ to use.
 
 
 
-<a name="copy-n-paste"><h2>8.3 Copy and Paste</h2></a>
+<h2><a name="copy-n-paste">8.3 Copy and Paste</a></h2>
 <p>
 Copy and Paste generally works between the Aqua and X11 environments.
 There are still some bugs.
@@ -80,7 +80,7 @@ buffers&quot; in X11 speak), and some applications have weird views which
 one should be used.
 In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
 because of this.
-The program <tt><nobr>autocutsel</nobr></tt> can help here; it automatically
+The program <code>autocutsel</code> can help here; it automatically
 synchronizes the two main cut buffers.
 To run it, install the autocutsel Fink package and add the following
 line to your .xinitrc:

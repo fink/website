@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/20 02:43:41 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/03/01 01:25:08 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ installation.
 </p>
 <p>
 If you're unsure which version of Fink you have, run
-"<tt><nobr>fink --version</nobr></tt>" in a Terminal window.
+"<code>fink --version</code>" in a Terminal window.
 </p>
 <p>
 If you are upgrading from a Fink release prior to 0.3.1, and you have
@@ -57,7 +57,7 @@ maintainers are no longer able to test this upgrade path.)</p>');
 it_item("MacGIMP or OpenOSX.com install of Fink 0.2.1",
   '<p>Try the <a href="puma-kit.php">Original 10.1 Upgrade Kit</a>.  (The Fink
 maintainers are no longer able to test this upgrade path.)
-  Make sure you install the <tt><nobr>system-xfree86</nobr></tt>
+  Make sure you install the <code>system-xfree86</code>
   package before updating the bulk of packages.</p>');
 it_item('<b>Current installation (source release)</b>', '<b>Upgrade method</b>');
 it_item("Fink source release 0.2.5 or newer",
@@ -68,12 +68,12 @@ it_item("Fink source release 0.2.4 or older (down to 0.2.0)",
 download the <a
   href=\"http://prdownloads.sourceforge.net/fink/packages-0.4.1.tar.gz\">packages
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  \"<tt><nobr>./inject.pl</nobr></tt>\" inside the packages-0.4.1
+  \"<code>./inject.pl</code>\" inside the packages-0.4.1
   directory.</p><p>
 If upgrading under OS X 10.2, download the <a
   href=\"http://prdownloads.sourceforge.net/fink/dists-$fink_version.tar.gz\">dists
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  \"<tt><nobr>./inject.pl</nobr></tt>\" inside the 
+  \"<code>./inject.pl</code>\" inside the 
   dists-$fink_version directory.</p>");
 it_end();
 ?>

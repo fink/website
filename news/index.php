@@ -48,8 +48,8 @@ version 0.2 of Apple's X11.app which was released yesterday.
         A problem was uncovered today concerning the versions of imlib,
  libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
  work addressing this problem.  As a workaround, users can downgrade
-their imlib package to the stable version, &quot;<tt><nobr>fink install
- imlib-1.9.10-9</nobr></tt>&quot;, until the problem is fixed.
+their imlib package to the stable version, &quot;<code>fink install
+ imlib-1.9.10-9</code>&quot;, until the problem is fixed.
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
@@ -58,9 +58,9 @@ enabling the unstable tree was the only way to gain access to
 <b>That is no longer the case.</b>
 Fink users who do not wish to help the Fink team with testing should
 disable their unstable tree.  To do this, edit the file
-<tt><nobr>/sw/etc/fink.conf</nobr></tt> and remove the items
- <tt><nobr>unstable/main</nobr></tt> and <tt><nobr>unstable/crypto</nobr></tt> from the
- <tt><nobr>Trees</nobr></tt> line.
+<code>/sw/etc/fink.conf</code> and remove the items
+ <code>unstable/main</code> and <code>unstable/crypto</code> from the
+ <code>Trees</code> line.
 	</p>
 <p>The Fink team appreciates those users who are willing to stick with
 the unstable tree, even when there are problems like today's, and provide

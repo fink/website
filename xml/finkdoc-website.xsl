@@ -255,7 +255,7 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 </xsl:template>
 
 <xsl:template match="code|filename">
-<tt><nobr><xsl:apply-templates/></nobr></tt>
+<code><xsl:apply-templates/></code>
 </xsl:template>
 
 <xsl:template match="link">

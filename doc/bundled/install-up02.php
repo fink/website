@@ -24,7 +24,7 @@ update the package manager first.
 </p>
 
 
-<a name="packman"><h2>4.1 Updating The Package Manager</h2></a>
+<h2><a name="packman">4.1 Updating The Package Manager</a></h2>
 <p>
 To update the package manager, run the inject.pl script in the
 fink-0.5.1-full directory, like this:
@@ -39,11 +39,11 @@ can't find it, you can pass the path as a parameter, like this:
 The script copies the package descriptions into the appropriate
 directory, creates tarballs in /sw/src and then runs fink to install
 the new versions of the fink and base-files packages.
-(Yes, that means that fink updates itself. <tt><nobr>:-)</nobr></tt> )
+(Yes, that means that fink updates itself. <code>:-)</code> )
 </p>
 
 
-<a name="descriptions"><h2>4.2 Updating The Package Descriptions</h2></a>
+<h2><a name="descriptions">4.2 Updating The Package Descriptions</a></h2>
 <p>
 If you downloaded the fink-0.5.1-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
@@ -67,7 +67,7 @@ the latest set of package descriptions by issuing the following command:
 <pre>fink selfupdate</pre>
 
 
-<a name="x11"><h2>4.3 Getting X11 Sorted Out</h2></a>
+<h2><a name="x11">4.3 Getting X11 Sorted Out</a></h2>
 <p>
 The first thing you should do after updating the package descriptions
 is getting the X11 dependencies settled (unless you already did that
@@ -77,7 +77,7 @@ Installation&quot; above.
 </p>
 
 
-<a name="update-all"><h2>4.4 Updating Packages</h2></a>
+<h2><a name="update-all">4.4 Updating Packages</a></h2>
 <p>
 The above updating steps will not update the actual packages, they
 only provide you with the means to do so. The easiest way to get the
@@ -91,7 +91,7 @@ individual packages with the 'update' command.
 </p>
 
 
-<a name="other"><h2>4.5 Other Notes</h2></a>
+<h2><a name="other">4.5 Other Notes</a></h2>
 <p>
 IMPORTANT! When you update from Fink 0.2.0 or a CVS version before
 0.2.1, the first thing you should do after running the inject.pl

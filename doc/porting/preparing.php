@@ -13,14 +13,14 @@ include "header.inc";
 
 
 
-<a name="bash"><h2>4.1 The bash shell</h2></a>
+<h2><a name="bash">4.1 The bash shell</a></h2>
 <p>
 Fink made the transition from OS X 10.0 to OS X 10.1 fairly easily, thanks
 in part to planning ahead for the changes that were coming.  We will try
 to do the same for the next transition, but not many details are known
 yet. </p>
 <p> We understand that OS X 10.2 will use bash rather than zsh to provide
-<tt><nobr>/bin/sh</nobr></tt> functionality.  This has at least three implications
+<code>/bin/sh</code> functionality.  This has at least three implications
 for fink. 
 </p>
 <ul><li>
@@ -33,9 +33,9 @@ under bash, and must be replaced by something like
 </pre>
 </li>
 <li>
-In the past, some fink packages used a the <tt><nobr>lib(foo|bar).dylib</nobr></tt>
+In the past, some fink packages used a the <code>lib(foo|bar).dylib</code>
 construction to refer to two libraries at once; this doesn't work under
-bash (and the bash alternative <tt><nobr>lib{foo,bar}.dylib</nobr></tt> doesn't work
+bash (and the bash alternative <code>lib{foo,bar}.dylib</code> doesn't work
 under zsh).  Solution: write out the names in full.
 </li>
 <li>
@@ -49,7 +49,7 @@ you see
 <pre>
 ../libtool: test: too many arguments
 </pre>
-When this happens, <tt><nobr>configure</nobr></tt> contains the following:
+When this happens, <code>configure</code> contains the following:
 <pre>
 archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
 -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
@@ -96,7 +96,7 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </li>
 </ul>
 
-<a name="gcc3"><h2>4.2 The gcc3 compiler</h2></a>
+<h2><a name="gcc3">4.2 The gcc3 compiler</a></h2>
 <p>Mac OS X 10.2 uses the gcc3 compiler.
 </p><p>Some packages which have loadable modules and use
 libtool fail with an install_name error, because libtool passes
@@ -104,7 +104,7 @@ the -install_name flag even along with the -bundle flag (when it is not
 strictly needed).  This behavior was accepted by the gcc2 compiler but is
 not being accepted by the gcc3 compiler.  The fix can be found<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">here.</a>
 Note that you do not need the patch if your package uses libtool-1.3.5
-(for example, if you are using <tt><nobr>UpdateLibtool: True</nobr></tt>)
+(for example, if you are using <code>UpdateLibtool: True</code>)
 since it has already been incorporated into a revised version of fink's
 ltconfig file (available in pre-release versions of fink).
 </p>

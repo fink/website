@@ -26,11 +26,11 @@ We're trying to provide tools and documentation to make this easier.
 </p><p>
 Goal number two is making the results available to casual users.
 For this, we build a distribution using package management tools
-ported over from Linux, namely <tt><nobr>dpkg</nobr></tt> and
-<tt><nobr>apt-get</nobr></tt>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
-The binary distribution uses the <tt><nobr>.deb</nobr></tt> package format.
+ported over from Linux, namely <code>dpkg</code> and
+<code>apt-get</code>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
+The binary distribution uses the <code>.deb</code> package format.
 For building packages from source, we have our own tool, named
-<tt><nobr>fink</nobr></tt>, which creates those <tt><nobr>.deb</nobr></tt> package
+<code>fink</code>, which creates those <code>.deb</code> package
 files.
 </p></div>
 </a>
@@ -93,7 +93,7 @@ default. The compiler searches /usr/local/include for header files and
 the linker searches /usr/local/lib for libraries. Again, this is
 sometimes a welcome convenience, but it's very hard to disable should
 the need arise. You can easily disable the compiler by putting a
-garbage file called <tt><nobr>stdio.h</nobr></tt> into /usr/local/include.</p><p>All that said, it is possible to install Fink into /usr/local. The
+garbage file called <code>stdio.h</code> into /usr/local/include.</p><p>All that said, it is possible to install Fink into /usr/local. The
 installation script will warn you explicitly, but proceed once you
 acknowledge that you're doing this at your own risk.</p></div>
 </a>

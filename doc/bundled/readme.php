@@ -35,7 +35,7 @@ you need help.
 Fink is released under the terms of the GNU General Public License.
 See the file COPYING for details.
 </p>
-<a name="req"><h2>Requirements</h2></a>
+<h2><a name="req">Requirements</a></h2>
 <p>
 You need:
 </p>
@@ -63,20 +63,20 @@ Compiling several big packages takes time.
 I'm talking hours or even days here.
 </p></li>
 </ul>
-<a name="install"><h2>Installation</h2></a>
+<h2><a name="install">Installation</a></h2>
 <p>
 The installation process is described in detail in the file
 INSTALL.
 Please read it first, the process is non-trivial.
 It also describes the upgrade procedure.
 </p>
-<a name="usage"><h2>Using Fink</h2></a>
+<h2><a name="usage">Using Fink</a></h2>
 <p>
 The file USAGE describes how to set your paths and how to install and
 remove packages.
 It also has a complete list of available commands.
 </p>
-<a name="questions"><h2>Further Questions?</h2></a>
+<h2><a name="questions">Further Questions?</a></h2>
 <p>
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
@@ -91,7 +91,7 @@ If you'd like to contribute to Fink, the Help page mentioned above
 also has a list of things you can do, like testing or creating
 packages.
 </p>
-<a name="uptodate"><h2>Staying Informed</h2></a>
+<h2><a name="uptodate">Staying Informed</a></h2>
 <p>
 The project's website is at 
 <a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>.

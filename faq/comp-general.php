@@ -17,7 +17,7 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Read the docs next time.
 To compile packages from source, you must install the Developer Tools,
-which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
+which among other stuff contains the C compiler, <code>cc</code>.
 </p></div>
 </a>
 <a name="cvs">
@@ -27,13 +27,13 @@ which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
 <a name="make">
 <div class="question"><p><b>Q4.3: make: illegal option -- C</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
+You've replaced the GNU version of the <code>make</code> utility
 installed as part of the Developer Tools with a BSD version of make.
 Many packages rely on special features only supported by GNU make.
-Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
-<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>. Furthermore,
-make sure that <tt><nobr>/usr/local/bin/</nobr></tt> does not contain another
-copy of <tt><nobr>make</nobr></tt>.
+Make sure that <code>/usr/bin/make</code> is a symlink to
+<code>gnumake</code>, not <code>bsdmake</code>. Furthermore,
+make sure that <code>/usr/local/bin/</code> does not contain another
+copy of <code>make</code>.
 </p></div>
 </a>
 <a name="head">
@@ -41,15 +41,15 @@ copy of <tt><nobr>make</nobr></tt>.
 from the head command. What's broken?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1
 Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of option descriptions, you have a broken
-<tt><nobr>head</nobr></tt> executable.
+<code>head</code> executable.
 This happens when you install the Perl libwww library on an HFS+
 system volume.
-It tries to create a new command <tt><nobr>/usr/bin/HEAD</nobr></tt>, which
-overwrites the existing <tt><nobr>head</nobr></tt> command because the file
+It tries to create a new command <code>/usr/bin/HEAD</code>, which
+overwrites the existing <code>head</code> command because the file
 system is case-insensitive.
-<tt><nobr>head</nobr></tt> is a standard command used in many shell scripts and
+<code>head</code> is a standard command used in many shell scripts and
 Makefiles.
-You need to get the original <tt><nobr>head</nobr></tt> executable back if you
+You need to get the original <code>head</code> executable back if you
 want to use Fink.
 </p><p>
 The bootstrap script of the source release now checks for this, but
@@ -59,12 +59,12 @@ installation or install libwww after you installed Fink.
 </a>
 <a name="also_in">
 <div class="question"><p><b>Q4.5: When I try to install a package I get an error message about trying to overwrite a file that is in another package.</b></p></div>
-<div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <tt><nobr>foo</nobr></tt> to <tt><nobr>foo-shlibs</nobr></tt>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div>
+<div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <code>foo</code> to <code>foo-shlibs</code>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div>
 </a>
 <a name="weak_lib">
 <div class="question"><p><b>Q4.6: After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> This is new with the December 2002 Tools.  You may occasionally see messages like (choosing libgdk-pixbuf as an example):</p><p>
-<tt><nobr>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</nobr></tt>
+<code>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</code>
 </p><p>You may regard these as harmless.  If you are curious, read through the release notes in the developer documentation directory, 
 especially GCC's and the linker's, for more info.  It essentially has to 
 do with whether missing symbols at runtime is considered a fatal error on 

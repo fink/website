@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="build"><h2>5.1 The Build Process</h2></a>
+<h2><a name="build">5.1 The Build Process</a></h2>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -31,8 +31,8 @@ build on Darwin. The actions specified by the UpdateConfigGuess,
 UpdateLibtool, Patch and PatchScript fields will be executed, in that
 order.</p>
 <p>In the <b>compile phase</b> the source is configured and
-compiled. Usually this means calling the <tt><nobr>configure</nobr></tt> script
-with some parameters and then issuing a <tt><nobr>make</nobr></tt> command. See the
+compiled. Usually this means calling the <code>configure</code> script
+with some parameters and then issuing a <code>make</code> command. See the
 ConfigureScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
 directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the &quot;root-&quot; part.)
@@ -40,20 +40,20 @@ All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
-packages from a single package description using the <tt><nobr>SplitOff</nobr></tt>
+packages from a single package description using the <code>SplitOff</code>
 field.  Towards the end of the install phase, separate install directories
 are created for each package being created, and files are moved to
 the appropriate directory.)</p>
 <p>In the <b>build phase</b> a binary package file (.deb) is built
 from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
-generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
+generate a <code>control</code> file for dpkg.</p>
 
 
-<a name="fields"><h2>5.2 Fields</h2></a>
+<h2><a name="fields">5.2 Fields</a></h2>
 
 <p>We have divided the list of fields into several categories.
-The list of fields is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
+The list of fields is not necessarily complete. <code>:-)</code></p>
 <p><b>Initial Data:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
@@ -96,14 +96,14 @@ be displayed in proper context. Required field.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
-This can be set to <tt><nobr>bundle</nobr></tt>.
+This can be set to <code>bundle</code>.
 Bundle packages are used to group a set of related packages together.
 They only have dependencies, but no code and no installed files.
 The fields Source, PatchScript, CompileScript, InstallScript and
 related ones are ignored for bundle packages.
 </p>
 <p>
-<tt><nobr>nosource</nobr></tt> is a very similar type.
+<code>nosource</code> is a very similar type.
 It indicates that there is no source tarball, so nothing is fetched
 and the unpack phase creates just an empty directory.
 However, the patch, compile and install phases are executed normally.
@@ -111,7 +111,7 @@ This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
 </p>
 <p>
-Finally since fink 0.9.5 there is type <tt><nobr>perl</nobr></tt> which causes
+Finally since fink 0.9.5 there is type <code>perl</code> which causes
 alternate default values for the compile and install scripts to be used. 
 </p>
 </td></tr><tr valign="top"><td>License</td><td>
@@ -163,7 +163,7 @@ Supports the same syntax as Depends.
 <p>
 A comma-separated list of package names that this package is
 considered to &quot;provide&quot;.
-If a package named &quot;pine&quot; specifies <tt><nobr>Provides: mailer</nobr></tt>,
+If a package named &quot;pine&quot; specifies <code>Provides: mailer</code>,
 then any dependency on &quot;mailer&quot; is considered satisfied when &quot;pine&quot; is
 installed.
 You'll usually also want to name these packages in the &quot;Conflicts&quot; and
@@ -203,8 +203,8 @@ In summary, it only effects run-time, not build-time.
 These fields specify additional package relations in the same style as
 the other dependency fields.
 These three relations don't affect actual installation via
-<tt><nobr>dpkg</nobr></tt> or <tt><nobr>apt-get</nobr></tt>.
-However, they are used by <tt><nobr>dselect</nobr></tt> and other frontends to
+<code>dpkg</code> or <code>apt-get</code>.
+However, they are used by <code>dselect</code> and other frontends to
 help the user make sensible choices.
 </p>
 </td></tr><tr valign="top"><td>Pre-Depends</td><td>
@@ -233,9 +233,9 @@ this one, they should only BuildDepend.
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>CustomMirror</td><td>
 <p>
 A list of mirror sites. Each mirror site appears on a separate line,
-in the following format: <tt><nobr>&lt;location&gt;: &lt;url&gt;</nobr></tt>.
-<b>location</b> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
-country code (e.g. <tt><nobr>nam-us</nobr></tt>), or anything else;
+in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>.
+<b>location</b> can be a continent code (e.g. <code>nam</code>), a
+country code (e.g. <code>nam-us</code>), or anything else;
 mirrors are tried in that order.
 Example:
 </p>
@@ -250,27 +250,27 @@ Primary: ftp://ftp.barbarorg/pub/
 An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
 supports a special URL scheme for mirrors:
-<tt><nobr>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</nobr></tt>. This will
+<code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <b>mirror-name</b> in Fink's
 configuration, append the <b>relative-path</b> part and use that as
-the actual URL. Alternatively, using <tt><nobr>custom</nobr></tt> as the
-<b>mirror-name</b> will cause Fink to use the <tt><nobr>CustomMirror</nobr></tt>
+the actual URL. Alternatively, using <code>custom</code> as the
+<b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
 </p>
 <p>
 Before the URL is used, percent expansion takes place.
-The value <tt><nobr>gnu</nobr></tt> is a shorthand for
-<tt><nobr>mirror:gnu:%n/%n-%v.tar.gz</nobr></tt>; <tt><nobr>gnome</nobr></tt> is a shorthand for
-<tt><nobr>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</nobr></tt>. The
-default is <tt><nobr>%n-%v.tar.gz</nobr></tt> (i.e. a manual
+The value <code>gnu</code> is a shorthand for
+<code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
+<code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
+default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
 If a package consists of several tarballs, name them with these
 additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of &quot;main&quot; tarball) goes into <tt><nobr>Source</nobr></tt>, the
-second tarball in <tt><nobr>Source2</nobr></tt> and so on. The rules are the same
+should be some kind of &quot;main&quot; tarball) goes into <code>Source</code>, the
+second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the &quot;gnu&quot; and &quot;gnome&quot; shortcuts are not
 expanded - that would be useless anyway.
 </p>
@@ -314,8 +314,8 @@ In the above example this would result in the tarball being stored under
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
-This is just the same as the <tt><nobr>SourceRename</nobr></tt> field, except that it
-is used to rename the Nth tarball as specified by the <tt><nobr>Source<b>N</b></nobr></tt>
+This is just the same as the <code>SourceRename</code> field, except that it
+is used to rename the Nth tarball as specified by the <code>Source<b>N</b></code>
 field. See context or hyperref for examples of usage.
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
@@ -332,8 +332,8 @@ A typical usage example looks like this:
 </p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
-To compute the checksum, the <tt><nobr>md5sum</nobr></tt> tool is used. If you want to
-determine the checksum of the tarball <tt><nobr>/sw/src/apache_1.3.23.tar.gz</nobr></tt>,
+To compute the checksum, the <code>md5sum</code> tool is used. If you want to
+determine the checksum of the tarball <code>/sw/src/apache_1.3.23.tar.gz</code>,
 you run the following command (displayed with output here):
 </p>
 <pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
@@ -344,9 +344,9 @@ As you can see, the value to the left is exactly the value you need.
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
-This is just the same as the <tt><nobr>Source-MD5</nobr></tt> field, except that it
+This is just the same as the <code>Source-MD5</code> field, except that it
 is used to specify the MD5 checksum of the Nth tarball as specified by the
-corresponding <tt><nobr>Source<b>N</b></nobr></tt> field.
+corresponding <code>Source<b>N</b></code> field.
 </p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
@@ -357,7 +357,7 @@ This field only applies to source files that are using the tar format
 With this field you can rename files in the given source tarball during
 the extraction of the tarball. This is very useful to work around
 the fact that the HFS+ file system is not case sensitive, as files like
-<tt><nobr>install</nobr></tt> and <tt><nobr>INSTALL</nobr></tt> will
+<code>install</code> and <code>INSTALL</code> will
 collide on a standard Mac OS X system. With this field you can avoid
 these issues without having to repackage the tarball (as was done in
 the past in such cases).
@@ -365,8 +365,8 @@ the past in such cases).
 <p>
 In this field you simply specify a list of files that are to be renamed. You
 can make use of wildcards. By default any given file will be renamed to its
-current name with <tt><nobr>_tmp</nobr></tt> appended. You can override this default
-by using the same syntax as in the <tt><nobr>Files</nobr></tt> and <tt><nobr>DocFiles</nobr></tt>
+current name with <code>_tmp</code> appended. You can override this default
+by using the same syntax as in the <code>Files</code> and <code>DocFiles</code>
 fields, namely by writing the old filename followed by a : and then followed by
 the new filename.
 Example:
@@ -378,14 +378,14 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
 (since there are tarballs which can only be expanded by GNU tar), but whenever
 a package uses TarFilesRename, Fink will use BSD tar by directly invoking
-<tt><nobr>/usr/bin/tar</nobr></tt>.
+<code>/usr/bin/tar</code>.
 </p>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
-This is just the same as the <tt><nobr>TarFilesRename</nobr></tt> field, except that it
+This is just the same as the <code>TarFilesRename</code> field, except that it
 is used for the Nth tarball as specified by the corresponding
-<tt><nobr>Source<b>N</b></nobr></tt> field.
+<code>Source<b>N</b></code> field.
 </p>
 </td></tr></table>
 
@@ -410,7 +410,7 @@ throughout the source tree.
 Previously you had to copy/move the files there manually in the
 PatchScript.
 With this new field you can just list the directories.
-Use <tt><nobr>.</nobr></tt> to update files in the build directory itself.
+Use <code>.</code> to update files in the build directory itself.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
 <p>
@@ -432,32 +432,32 @@ throughout the source tree.
 Previously you had to copy/move the files there manually in the
 PatchScript.
 With this new field you can just list the directories.
-Use <tt><nobr>.</nobr></tt> to update files in the build directory itself.
+Use <code>.</code> to update files in the build directory itself.
 </p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>
 A boolean value.
-If true, the file <tt><nobr>Makefile.in.in</nobr></tt> in the
-subdirectory <tt><nobr>po</nobr></tt> is replaced with a patched version.
+If true, the file <code>Makefile.in.in</code> in the
+subdirectory <code>po</code> is replaced with a patched version.
 This happens in the patch phase and before the PatchScript is run.
 </p>
 <p>
 The patched version respects DESTDIR and makes sure that message
-catalogs end up in <tt><nobr>/sw/share/locale</nobr></tt>, not
-<tt><nobr>/sw/lib/locale</nobr></tt>.
+catalogs end up in <code>/sw/share/locale</code>, not
+<code>/sw/lib/locale</code>.
 Before using this field, make sure that you won't break the package
 and that it's really required.
-You can run <tt><nobr>diff</nobr></tt> to find the differences between the
+You can run <code>diff</code> to find the differences between the
 package's version and Fink's version (in
-<tt><nobr>/sw/lib/fink/update</nobr></tt>).
+<code>/sw/lib/fink/update</code>).
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
-The filename of a patch to be applied with <tt><nobr>patch -p1
-&lt;<b>patch-file</b></nobr></tt>. This should be just a filename; the
+The filename of a patch to be applied with <code>patch -p1
+&lt;<b>patch-file</b></code>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
-<tt><nobr>%f.patch</nobr></tt>. The patch is applied before the PatchScript
+<code>%f.patch</code>. The patch is applied before the PatchScript
 is run (if any).
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
@@ -482,7 +482,7 @@ percent expansion described in the last section. A common example:
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>
 The variables CPPFLAGS and LDFLAGS are special. They default to
-<tt><nobr>-I%p/include</nobr></tt> and <tt><nobr>-L%p/lib</nobr></tt>,
+<code>-I%p/include</code> and <code>-L%p/lib</code>,
 respectively. If you specify a value for one of these, it will be
 prepended to the default value.
 </p>
@@ -490,7 +490,7 @@ prepended to the default value.
 <p>
 When set to a true value, deactivates the default values for
 CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
-remain unset, specify <tt><nobr>NoSetLDFLAGS: true</nobr></tt> .
+remain unset, specify <code>NoSetLDFLAGS: true</code> .
 </p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
@@ -532,7 +532,7 @@ A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
 This includes adding and removing the .pod date from the central
-<tt><nobr>/sw/lib/perl5/darwin/perllocal.pod</nobr></tt> file
+<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
@@ -554,15 +554,15 @@ the default instead is:
  INSTALLMAN1DIR=\%i/share/man/man1 \
  INSTALLMAN3DIR=\%i/share/man/man3</pre>
 <p>
-If the package supports it, it is preferably to use <tt><nobr>make install
-DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
+If the package supports it, it is preferably to use <code>make install
+DESTDIR=%d</code> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
 This field is somewhat similar to DocFiles. It installs the specified jar
-files into <tt><nobr>%p/share/java/%n</nobr></tt>.
+files into <code>%p/share/java/%n</code>.
 Example:
 </p>
 <pre>JarFiles: lib/*.jar foo.jar:fooBar.jar</pre>
@@ -572,7 +572,7 @@ foo.jar as fooBar.jar.
 </p>
 <p>
 It also ensures that these jar files (specifically: all files in
-<tt><nobr>%p/share/java/%n</nobr></tt> that end in .jar)
+<code>%p/share/java/%n</code> that end in .jar)
 are added to the CLASSPATH environment variable. This allows tools like
 configure or ant to properly detect the installed jar files.
 </p>
@@ -580,15 +580,15 @@ configure or ant to properly detect the installed jar files.
 <p>
 This field provides a convenient way to install README or COPYING
 files in the doc directory for the package,
-<tt><nobr>%p/share/doc/%n</nobr></tt>.
+<code>%p/share/doc/%n</code>.
 The value is a space-separated list of files.
 You can copy files from subdirectories of the build directory, but
 they will end up in the doc directory itself, not in a subdirectory.
 Shell wildcards are allowed.
 It is also possible to rename single files on the fly by appending the
 new name separated by a colon (:),
-e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
-This field works by appending appropriate <tt><nobr>install</nobr></tt>
+e.g. <code>libgimp/COPYING:COPYING.libgimp</code>.
+This field works by appending appropriate <code>install</code>
 commands to the InstallScript.
 </p>
 </td></tr><tr valign="top"><td>Shlibs</td><td>
@@ -597,23 +597,23 @@ commands to the InstallScript.
 This field declares the shared libraries which are installed in the
 package.  There is one line for each
 shared library, which contains three items separated by whitespace:
-the <tt><nobr>-install_name</nobr></tt> of the
-library, the <tt><nobr>-compatibility_version</nobr></tt>, and versioned 
+the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
 dependency information specifying the Fink package which provides
 this library at this compatibility version.  The dependency should
-be stated in the form <tt><nobr> foo (&gt;= version-revision)</nobr></tt> where 
-<tt><nobr>version-revision</nobr></tt> refers to
+be stated in the form <code> foo (&gt;= version-revision)</code> where 
+<code>version-revision</code> refers to
 the <b>first</b> version of a Fink package which made
 this library (with this compatibility version) available.
 The Shlibs declaration amounts to a promise
 from the maintainer that a libary with this name and a 
-<tt><nobr>-compatibility_version</nobr></tt>
+<code>-compatibility_version</code>
 of at least this number will always be found in later versions of this
 Fink package.
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
-This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts.
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <code>/sw/bin/init.[c]sh</code> scripts.
 </p>
 <p>
 The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
@@ -640,14 +640,14 @@ For details about how this works, see the separate
 </td></tr><tr valign="top"><td>SplitOff<b>N</b></td><td>
 <p>
 <b>Introduced in fink 0.9.9.</b>
-This is the same as <tt><nobr>SplitOff</nobr></tt>, used to generate a third,
+This is the same as <code>SplitOff</code>, used to generate a third,
 fourth, etc. package from the same compile/install run.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
 <b>Introduced in fink 0.9.9.</b>
 Used <b>only</b>
-within a <tt><nobr>SplitOff</nobr></tt> or <tt><nobr>SplitOff<b>N</b></nobr></tt> field,
+within a <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field,
 this designates which files and directories
 should be moved from the parent package's  installation
 directory %I to the current installation directory %i.  Note that this
@@ -663,12 +663,12 @@ the package is installed, upgraded or removed.
 Fink automatically adds a shell script header that calls 'set -e', so
 any command that fails will result in instant termination of the
 script.
-Fink also adds an <tt><nobr>exit 0</nobr></tt> at the end.
+Fink also adds an <code>exit 0</code> at the end.
 To indicate an error, exit from the script with a non-zero exit code.
-The first parameter (<tt><nobr>$1</nobr></tt>) is set to a value indicating
+The first parameter (<code>$1</code>) is set to a value indicating
 what action is being performed.
-Some possible values are <tt><nobr>install</nobr></tt>, <tt><nobr>upgrade</nobr></tt>,
-<tt><nobr>remove</nobr></tt> and <tt><nobr>purge</nobr></tt>.
+Some possible values are <code>install</code>, <code>upgrade</code>,
+<code>remove</code> and <code>purge</code>.
 Note that there are more values, used during error rollback or when
 removing a package in favor of another one.
 </p>
@@ -699,7 +699,7 @@ Commands can generally be called without giving a full path.
 A space-separated list of files that are user-modifiable configuration
 files.
 The files must be specified with an absolute path,
-e.g. <tt><nobr>%p/etc/foo.conf</nobr></tt>.
+e.g. <code>%p/etc/foo.conf</code>.
 The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups
@@ -713,26 +713,26 @@ Only a &quot;purge&quot; also removes the configuration files.
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <tt><nobr>dir</nobr></tt>.
+maintain the Info directory file, <code>dir</code>.
 This feature is still in flux, more fields for finer control may be
 added in the future.
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>
-Gives a service description for <tt><nobr>daemonic</nobr></tt>.
-<tt><nobr>daemonic</nobr></tt> is used by Fink to create and remove
+Gives a service description for <code>daemonic</code>.
+<code>daemonic</code> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
 The description will added to the package as a file named
-<tt><nobr>%p/etc/daemons/<b>name</b>.xml</nobr></tt>, where <b>name</b> is
+<code>%p/etc/daemons/<b>name</b>.xml</code>, where <b>name</b> is
 specified by the DaemonicName field and defaults to the package
 name.
 Percent expansion is performed on the contents of this field.
-Note that you must add <tt><nobr>daemonic</nobr></tt> to the dependency list if
+Note that you must add <code>daemonic</code> to the dependency list if
 your package uses it.
 </p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>
 <p>
-A name for the <tt><nobr>daemonic</nobr></tt> service description file.
+A name for the <code>daemonic</code> service description file.
 See the description of DaemonicFile for details.
 </p>
 </td></tr></table>
@@ -743,7 +743,7 @@ The URL of the upstream home page of the package.
 </p>
 </td></tr><tr valign="top"><td>DescDetail</td><td>
 <p>
-A more detailed description than the one in the <tt><nobr>Description</nobr></tt>
+A more detailed description than the one in the <code>Description</code>
 field (what is it, what can I use it for?).
 Multiple lines allowed.
 </p>
@@ -767,53 +767,53 @@ is necessary&quot; goes here. Multiple lines allowed.
 </td></tr></table>
 
 
-<a name="splitoffs"><h2>5.3 SplitOffs</h2></a>
+<h2><a name="splitoffs">5.3 SplitOffs</a></h2>
 <p>Beginning with fink 0.9.9, a single .info file can be used to build
 multiple packages.  
 The install phase begins as usual, with the execution of the 
-<tt><nobr>InstallScript</nobr></tt> and <tt><nobr>DocFiles</nobr></tt> commands.
-A <tt><nobr>SplitOff</nobr></tt> field, if present, then triggers the
+<code>InstallScript</code> and <code>DocFiles</code> commands.
+A <code>SplitOff</code> field, if present, then triggers the
 creation of a
 second install directory.  Within the 
-<tt><nobr>SplitOff</nobr></tt> field, the new install directory is referred to as %i,
+<code>SplitOff</code> field, the new install directory is referred to as %i,
 while the original install directory of the parent 
 package is referred to as %I.
 </p>
 <p>
-The <tt><nobr>SplitOff</nobr></tt> field must contain a number of fields of its
+The <code>SplitOff</code> field must contain a number of fields of its
 own.  In fact, it resembles a complete package description, but with
 certain fields missing.  Here is what belongs in the sub-description
 (by category):
 </p>
 <ul>
-<li>Initial Data: Only the <tt><nobr>Package</nobr></tt> needs to be specified,
+<li>Initial Data: Only the <code>Package</code> needs to be specified,
 everything else is inherited from the parent package (except for
-<tt><nobr>Type</nobr></tt>, which is internally set to the value 
-<tt><nobr>splitoff</nobr></tt>).  Percent expansion can be used, and it is often
+<code>Type</code>, which is internally set to the value 
+<code>splitoff</code>).  Percent expansion can be used, and it is often
 convenient to refer to the name %N of the parent package.</li>
-<li>Dependencies: All of these are allowed except <tt><nobr>Essential</nobr></tt>,
+<li>Dependencies: All of these are allowed except <code>Essential</code>,
 which cannot be used for a sub-package.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
 and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that <tt><nobr>SplitOff</nobr></tt> should not be used within a <tt><nobr>SplitOff</nobr></tt>
+that <code>SplitOff</code> should not be used within a <code>SplitOff</code>
 field).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <tt><nobr>SplitOff</nobr></tt>.</li>
+be modified by declaring the field within the <code>SplitOff</code>.</li>
 </ul>
 <p>
-During the install phase, the <tt><nobr>InstallScript</nobr></tt> and 
-<tt><nobr>DocFiles</nobr></tt> of the parent package are executed first.
-Next comes the <tt><nobr>Files</nobr></tt> command specified in the
-<tt><nobr>SplitOff</nobr></tt> field, which causes the listed files and directories
+During the install phase, the <code>InstallScript</code> and 
+<code>DocFiles</code> of the parent package are executed first.
+Next comes the <code>Files</code> command specified in the
+<code>SplitOff</code> field, which causes the listed files and directories
 to be moved from the parent's installation directory %I to the
-current installation directory %i.  Then the <tt><nobr>InstallScript</nobr></tt>
-and <tt><nobr>DocFiles</nobr></tt> of the <tt><nobr>SplitOff</nobr></tt> package are
+current installation directory %i.  Then the <code>InstallScript</code>
+and <code>DocFiles</code> of the <code>SplitOff</code> package are
 executed.  
 </p><p>
-If there are additional sub-packages specified with <tt><nobr>SplitOff2</nobr></tt>,
-<tt><nobr>SplitOff3</nobr></tt>, etc., this same sequence of commands
-(<tt><nobr>Files</nobr></tt>, <tt><nobr>InstallScript</nobr></tt>, <tt><nobr>DocFiles</nobr></tt>)
+If there are additional sub-packages specified with <code>SplitOff2</code>,
+<code>SplitOff3</code>, etc., this same sequence of commands
+(<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>)
 is executed for each of them in turn.
 </p><p>
 During the build phase, the pre/post install/remove scripts for each of
@@ -823,25 +823,25 @@ were specified for that package.
 Each package being built is required
 to document the licensing arrangement in %i/share/doc/%n (and of course
 %n takes a different value for each package).  Note that
-<tt><nobr>DocFiles</nobr></tt> copies files rather than moving them, so it is
+<code>DocFiles</code> copies files rather than moving them, so it is
 possible to install identical copies of the documentation into each 
-of the packages by using <tt><nobr>DocFiles</nobr></tt> several times.
+of the packages by using <code>DocFiles</code> several times.
 </p>
 
 
 
 
-<a name="scripts"><h2>5.4 Scripts</h2></a>
+<h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
 script. However, the commands are executed via system(), one by one,
 so you can't use constructs that span multiple lines. It also means
-the <tt><nobr>cd</nobr></tt> commands only affect commands that are on the same
+the <code>cd</code> commands only affect commands that are on the same
 line. This may be fixed one day in the future.</p>
 
 
-<a name="patches"><h2>5.5 Patches</h2></a>
+<h2><a name="patches">5.5 Patches</a></h2>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension
@@ -854,12 +854,12 @@ they will both be executed. In that case the PatchScript is executed
 last.</p>
 
 
-<a name="profile.d"><h2>5.6 Profile.d scripts</h2></a>
+<h2><a name="profile.d">5.6 Profile.d scripts</a></h2>
 
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
-These scripts are sourced by the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts. Normally, all fink users will load these scripts in their shell startup files (<tt><nobr>.cshrc</nobr></tt> and comparable files).
-Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <tt><nobr>/sw/etc/profile.d/%n.[c]sh</nobr></tt> (where %n as usual stands for the package name).
+These scripts are sourced by the <code>/sw/bin/init.[c]sh</code> scripts. Normally, all fink users will load these scripts in their shell startup files (<code>.cshrc</code> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <code>/sw/etc/profile.d/%n.[c]sh</code> (where %n as usual stands for the package name).
 Also, their executable bit has to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>

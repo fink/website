@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="heritage"><h2>1.1 Where Darwin came from</h2></a>
+<h2><a name="heritage">1.1 Where Darwin came from</a></h2>
 <p>
 Darwin is a Unix-like operating system that evolved from NeXTStep /
 OpenStep.
@@ -40,14 +40,14 @@ installed as the default.
 
 
 
-<a name="compiler"><h2>1.2 The Compiler and Tools</h2></a>
+<h2><a name="compiler">1.2 The Compiler and Tools</a></h2>
 <p>
 Short story:
-The compiler is a gcc derivate, but installed as <tt><nobr>cc</nobr></tt>;
+The compiler is a gcc derivate, but installed as <code>cc</code>;
 you may have to patch Makefiles.
 Most packages won't build shared libraries.
 If you get errors related to macros, use the
-<tt><nobr>-no-cpp-precomp</nobr></tt> option.
+<code>-no-cpp-precomp</code> option.
 </p>
 <p>
 Long story:
@@ -55,19 +55,19 @@ The compiler tool chain in the Mac OS X Developer Tools is a strange
 beast.
 The compiler is based on the gcc 2.95.2 suite, with modifications to
 support the Objective C language and some Darwin quirks.
-The preprocessor (<tt><nobr>cpp</nobr></tt>) is available in two versions.
+The preprocessor (<code>cpp</code>) is available in two versions.
 One is the standard precompiler (from gcc 2.95.2), the other one is a
 special precompiler written by Apple, with support for precompiled
 headers.
 The latter one is used by default, because it is faster.
 However, some code doesn't compile with Apple's precompiler, so you
-must use the <tt><nobr>-no-cpp-precomp</nobr></tt> option to get the standard
+must use the <code>-no-cpp-precomp</code> option to get the standard
 precompiler.
-(Note: I previously recommended the <tt><nobr>-traditional-cpp</nobr></tt>
+(Note: I previously recommended the <code>-traditional-cpp</code>
 option.
 The semantics of this option have changed slightly with GCC 3,
 breaking most packages that use it.
-<tt><nobr>-no-cpp-precomp</nobr></tt> has the desired effect on both the
+<code>-no-cpp-precomp</code> has the desired effect on both the
 current Developer Tools and future compilers based on GCC 3.)
 </p>
 <p>
@@ -80,7 +80,7 @@ linker.
 
 
 
-<a name="host-type"><h2>1.3 Host type</h2></a>
+<h2><a name="host-type">1.3 Host type</a></h2>
 <p>
 Short story:
 If configure fails with 'Can't determine host type', copy config.guess
@@ -94,11 +94,11 @@ Sometimes a fourth part is added - then the third part denotes the
 kernel, while the fourth denotes the operating system.
 All parts are lower case and concatenated using dashes.
 Some examples:
-<tt><nobr>i586-pc-linux-gnu</nobr></tt>,
-<tt><nobr>hppa1.1-hp-hpux10.20</nobr></tt>,
-<tt><nobr>sparc-sun-solaris2.6</nobr></tt>.
+<code>i586-pc-linux-gnu</code>,
+<code>hppa1.1-hp-hpux10.20</code>,
+<code>sparc-sun-solaris2.6</code>.
 The host type for Mac OS X 10.0 is
-<tt><nobr>powerpc-apple-darwin1.3</nobr></tt>.
+<code>powerpc-apple-darwin1.3</code>.
 </p>
 <p>
 Many packages that use autoconf want to know the host type of the
@@ -112,8 +112,8 @@ parameter or you can let it guess.
 <p>
 The configure script uses two companion scripts to determine host
 types.
-<tt><nobr>config.guess</nobr></tt> tries to guess the host type,
-<tt><nobr>config.sub</nobr></tt> is used to validate and canonicalize
+<code>config.guess</code> tries to guess the host type,
+<code>config.sub</code> is used to validate and canonicalize
 the host type.
 These scripts are maintained as separate entities, but they are
 included in every package that uses them.
@@ -127,10 +127,10 @@ copy them from there.
 
 
 
-<a name="libraries"><h2>1.4 Libraries</h2></a>
+<h2><a name="libraries">1.4 Libraries</a></h2>
 <p>
 Short story:
-You can safely remove <tt><nobr>-lm</nobr></tt> from Makefiles, but you don't
+You can safely remove <code>-lm</code> from Makefiles, but you don't
 need to.
 </p>
 <p>
@@ -140,8 +140,8 @@ etc. libraries.
 Instead, they're all part of the system library, libSystem.
 (In earlier versions, this actually was the System framework.)
 However, Apple placed appropriate symlinks in /usr/lib, so linking
-with <tt><nobr>-lm</nobr></tt> will work.
-The only exception is <tt><nobr>-lutil</nobr></tt>.
+with <code>-lm</code> will work.
+The only exception is <code>-lutil</code>.
 On other systems, libutil contains functions related to
 pseudo-terminals and login accounting.
 These functions are in libSystem, but there is no symlink to provide a

@@ -56,7 +56,7 @@ The presence of these extra users is a standard Unix convention for running
 certain services; the passwd package simply adds a couple of extra that Apple 
 did not provide.  You can see these Apple-installed users in NetInfo 
 Manager.app, or by running
-<tt><nobr>niutil -list . /users</nobr></tt>
+<code>niutil -list . /users</code>
 </li>
 <li>If you do decide to delete these users, be very careful of how you go about
  it.  Using the &quot;System Preferences: Users&quot; pane will assign all of their files
@@ -64,8 +64,8 @@ Manager.app, or by running
  with the administrator account's permissions.  This is a bug with System 
 Preferences, and has been submitted to Apple.  A safer way to remove these 
 users from your system is to do so from within NetInfo Manager.app or use the 
-command line tool <tt><nobr>niutil</nobr></tt> in Terminal.  Read the man page
- for <tt><nobr>niutil</nobr></tt> for more information about NetInfo.</li>
+command line tool <code>niutil</code> in Terminal.  Read the man page
+ for <code>niutil</code> for more information about NetInfo.</li>
 </ul><p>Fink <b>does</b> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.

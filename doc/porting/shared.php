@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<a name="lib-and-mod"><h2>2.1 Shared Libraries vs. Loadable Modules</h2></a>
+<h2><a name="lib-and-mod">2.1 Shared Libraries vs. Loadable Modules</a></h2>
 <p>
 One Mach-O feature that hits many people by surprise is the strict
 distinction between shared libraries and dynamically loadable
@@ -22,9 +22,9 @@ used as a library and for dynamic loading.
 </p>
 <p>
 Mach-O shared libraries have the file type MH_DYLIB and carry the
-extension <tt><nobr>.dylib</nobr></tt>.
+extension <code>.dylib</code>.
 They can be linked against with the usual static linker flags,
-e.g. <tt><nobr>-lfoo</nobr></tt> for libfoo.dylib.
+e.g. <code>-lfoo</code> for libfoo.dylib.
 However, they can not be loaded as a module.
 (Side note: Shared libraries can be loaded dynamically through an
 API. However, that API is different from the API for bundles and the
@@ -36,10 +36,10 @@ Loadable modules are called &quot;bundles&quot; in Mach-O speak.
 They have the file type MH_BUNDLE.
 Since no component involved cares about it, they can carry any
 extension.
-The extension <tt><nobr>.bundle</nobr></tt> is recommended by Apple, but most
-ported software uses <tt><nobr>.so</nobr></tt> for the sake of compatibility.
+The extension <code>.bundle</code> is recommended by Apple, but most
+ported software uses <code>.so</code> for the sake of compatibility.
 Bundles can be dynamically loaded and unloaded via dyld APIs, and
-there is a wrapper that emulates <tt><nobr>dlopen()</nobr></tt> on top of that
+there is a wrapper that emulates <code>dlopen()</code> on top of that
 API.
 It is not possible to link against bundles as if they were shared
 libraries.
@@ -50,21 +50,21 @@ loaded.
 
 
 
-<a name="version"><h2>2.2 Version Numbering</h2></a>
+<h2><a name="version">2.2 Version Numbering</a></h2>
 <p>
 On an ELF system, version numbers are usually appended to the file
-name of the shared library, e.g. <tt><nobr>libqt.so.2.3.0</nobr></tt>.
+name of the shared library, e.g. <code>libqt.so.2.3.0</code>.
 On Darwin, the version numbers are placed between the library name and
-the extension, e.g. <tt><nobr>libqt.2.3.0.dylib</nobr></tt>.
+the extension, e.g. <code>libqt.2.3.0.dylib</code>.
 Note that this allows you to request a specific version of the library
-when linking, using <tt><nobr>-lqt.2.3.0</nobr></tt> for the example above.
+when linking, using <code>-lqt.2.3.0</code> for the example above.
 </p>
 <p>
 When creating a shared library, you can specify a name to be used when
 searching for the library at run time.
 This is usual practice and allows several major versions of a library
 to be installed at the same time.
-On ELF systems this is called the <tt><nobr>soname</nobr></tt>.
+On ELF systems this is called the <code>soname</code>.
 What's different on Darwin is that you can (and should) specify a full
 path along with the file name.
 This eliminates the need for &quot;rpath&quot; options and the
@@ -99,7 +99,7 @@ linking.
 
 
 
-<a name="cflags"><h2>2.3 Compiler Flags</h2></a>
+<h2><a name="cflags">2.3 Compiler Flags</a></h2>
 <p>
 The generation of position-independent code (PIC) is the default is
 the default on Darwin.
@@ -108,16 +108,16 @@ no performance or space penalty involved.
 So, you don't need to specify a PIC option when compiling code for a
 shared library or module.
 However, the linker doesn't allow &quot;common&quot; symbols in shared
-libraries, so you must use the <tt><nobr>-fno-common</nobr></tt> compiler
+libraries, so you must use the <code>-fno-common</code> compiler
 option.
 </p>
 
 
 
-<a name="build-lib"><h2>2.4 Building a Shared Library</h2></a>
+<h2><a name="build-lib">2.4 Building a Shared Library</a></h2>
 <p>
 To build a shared library, you invoke the compiler driver with the
-<tt><nobr>-dynamiclib</nobr></tt> option.
+<code>-dynamiclib</code> option.
 This is best demonstrated by a comprehensive example.
 We'll build a library called libfoo, composed of the source files
 source.c and code.c.
@@ -147,13 +147,13 @@ the library.
 
 
 
-<a name="build-mod"><h2>2.5 Building a Module</h2></a>
+<h2><a name="build-mod">2.5 Building a Module</a></h2>
 <p>
 To build a loadable module, you invoke the compiler driver with the
-<tt><nobr>-bundle</nobr></tt> option.
+<code>-bundle</code> option.
 If the module uses symbols from the host program, you'll have to
-specify <tt><nobr>-undefined suppress</nobr></tt> to allow undefined symbols,
-and <tt><nobr>-flat_namespace</nobr></tt> along with it to make the new linker
+specify <code>-undefined suppress</code> to allow undefined symbols,
+and <code>-flat_namespace</code> along with it to make the new linker
 in Mac OS X 10.1 happy.
 A comprehensive example:
 </p>

@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="def1"><h2>1.1 What is a Package?</h2></a>
+<h2><a name="def1">1.1 What is a Package?</a></h2>
 <p>
 A package is a piece of software that forms an atomic unit.
 A typical package contains an executable program, the data files it
@@ -44,7 +44,7 @@ files are in the dpkg format and have the extension .deb.
 
 
 
-<a name="ident"><h2>1.2 Identifying a Package</h2></a>
+<h2><a name="ident">1.2 Identifying a Package</a></h2>
 <p>
 A package is identified by three strings: the package name, the
 version and the revision.

@@ -17,12 +17,12 @@ This page tells you how to set up an existing Fink installation for
 updating via CVS.
 The information on this page applies to Fink 0.3.x and later.
 </p>
-<a name=""><h2>Fink CVS Structure</h2></a>
-<p>Fink has several CVS modules. The module <tt><nobr>packages</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
+<h2><a name="">Fink CVS Structure</a></h2>
+<p>Fink has several CVS modules. The module <code>packages</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
 contains the package descriptions and patches. There are other modules
 used by Fink developers, which anyone is free to view, but which are
 not interesting for most.</p>
-<a name=""><h2>Updating the Package Descriptions</h2></a>
+<h2><a name="">Updating the Package Descriptions</a></h2>
 <p>In the past this was a bit tedious procedure; but in the current Fink
 versions, this is a very simple procedure. Just issue this command:
 </p>
@@ -41,7 +41,7 @@ want to update your packages to the latest available versions. You can
 do so by with the following command:
 </p>
 <pre>fink update-all</pre>
-<a name=""><h2>Updating the Package Manager</h2></a>
+<h2><a name="">Updating the Package Manager</a></h2>
 <p>
 <b>Note:</b> As of September 20 it is no longer necessary to update
 the package manager separately; it is treated like any other package.
@@ -51,11 +51,11 @@ user.
 </p>
 
 <p>The package manager must be updated through a separate directory
-and the <tt><nobr>inject.pl</nobr></tt> script. That script puts package
+and the <code>inject.pl</code> script. That script puts package
 descriptions and tarballs for the fink and base-files packages in your
 Fink tree and builds them.</p>
 <p>For the first time procedure, you need a temporary directory
-(called <tt><nobr>tempdir</nobr></tt> in the example) which is empty (or at least
+(called <code>tempdir</code> in the example) which is empty (or at least
 doesn't contain a subdirectory named 'fink'). The procedure goes like
 this:</p>
 <pre>cd tempdir

@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 04:35:54 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/03/01 01:25:09 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -41,9 +41,9 @@ if (!$rs) {
   for ($i = 0; $i < sizeof($releases); $i++) {
     $cr = $releases[$i];
     if(ereg("^0.4.1",$cr))
-      it_item("<nobr>In $cr:</nobr>", $rmap[$cr] ? "Version ".$rmap[$cr]." (10.1 only)" : "not present");
+      it_item("<div style=\"white-space:nowrap\">In $cr:</div>", $rmap[$cr] ? "Version ".$rmap[$cr]." (10.1 only)" : "not present");
     else
-      it_item("<nobr>In $cr:</nobr>", $rmap[$cr] ? "Version ".$rmap[$cr] : "not present");
+      it_item("<div style=\"white-space:nowrap\">In $cr:</div>", $rmap[$cr] ? "Version ".$rmap[$cr] : "not present");
   }
 
   it_item("Description:", $row[desclong]);

@@ -33,27 +33,27 @@ If you still get no sound output or XMMS complains that it can't find
 your sound card try this:
 </p><ul>
 <li>Make sure you haven't muted sound output in Mac OS X.</li>
-<li>Run <tt><nobr>esdcat /usr/libexec/config.guess</nobr></tt> (or any other
+<li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
 file of a decent size).
 If you hear a short noise, esound works and XMMS should work too if
 it's configured correctly.
 If you don't hear anything, esd isn't working for some reason.
-You can try to start it up manually with <tt><nobr>esd &amp;</nobr></tt> and watch
+You can try to start it up manually with <code>esd &amp;</code> and watch
 the messages.
 </li>
 <li>
 If it still doesn't work, check the permissions on
-<tt><nobr>/tmp/.esd</nobr></tt> and <tt><nobr>/tmp/.esd/socket</nobr></tt>.
+<code>/tmp/.esd</code> and <code>/tmp/.esd/socket</code>.
 Those should have your normal user account as the owner.
 If they aren't owned by you, kill esd if it's running, remove the
-directory as root (<tt><nobr>sudo rm -rf /tmp/.esd</nobr></tt>), then start esd
+directory as root (<code>sudo rm -rf /tmp/.esd</code>), then start esd
 again (as a normal user, not as root).
 </li>
 </ul><p>
 Note that esd is designed to be run by a normal user, not by root.
 It usually communicates via the file system socket
-<tt><nobr>/tmp/.esd/socket</nobr></tt>.
-You only need the <tt><nobr>-tcp</nobr></tt> and <tt><nobr>-port</nobr></tt> switches if
+<code>/tmp/.esd/socket</code>.
+You only need the <code>-tcp</code> and <code>-port</code> switches if
 you want to run esd clients on another machine over the network.
 </p><p>
 There have also been reports of XMMS crashing or freezing on 10.1.
@@ -62,7 +62,7 @@ We don't have an analysis or a fix yet.
 </a>
 <a name="nedit-window-locks">
 <div class="question"><p><b>Q7.3: If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</b></p></div>
-<div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of <tt><nobr>nedit</nobr></tt> and <tt><nobr>lesstif</nobr></tt> on all platforms.  The workaround is to open a new window with File--&gt;New, then open the next file you want to work on.</p><p>This is now fixed in <tt><nobr>nedit-5.3-6</nobr></tt>, which depends on <tt><nobr>openmotif3</nobr></tt> rather than <tt><nobr>lesstif</nobr></tt>.</p></div>
+<div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of <code>nedit</code> and <code>lesstif</code> on all platforms.  The workaround is to open a new window with File--&gt;New, then open the next file you want to work on.</p><p>This is now fixed in <code>nedit-5.3-6</code>, which depends on <code>openmotif3</code> rather than <code>lesstif</code>.</p></div>
 </a>
 <a name="xdarwin-start">
 <div class="question"><p><b>Q7.4: Help! When I start
@@ -75,7 +75,7 @@ section</a> for this common problem.
 </a>
 <a name="no-server">
 <div class="question"><p><b>Q7.5: When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> This has come up recently:  all of the <tt><nobr>xfree86</nobr></tt> packages get built, but only <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-base-shlibs</nobr></tt> are installed.  Check whether you have <tt><nobr>xfree86-rootless</nobr></tt> and <tt><nobr>xfree86-rootless-shlibs</nobr></tt> installed.  If not, then <tt><nobr>fink install xfree86-rootless</nobr></tt> should do the trick.</p><p>If you do have it installed, then try <tt><nobr>fink rebuild xfree86-rootless</nobr></tt>.  If that doesn't work, verify that you have <tt><nobr>/usr/bin/X11R6</nobr></tt> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p></div>
+<div class="answer"><p><b>A:</b> This has come up recently:  all of the <code>xfree86</code> packages get built, but only <code>xfree86-base</code> and <code>xfree86-base-shlibs</code> are installed.  Check whether you have <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code> installed.  If not, then <code>fink install xfree86-rootless</code> should do the trick.</p><p>If you do have it installed, then try <code>fink rebuild xfree86-rootless</code>.  If that doesn't work, verify that you have <code>/usr/bin/X11R6</code> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p></div>
 </a>
 <a name="xfree-keymapping">
 <div class="question"><p><b>Q7.6: I just upgraded to Mac
@@ -91,15 +91,15 @@ Be sure that a file is selected (e.g. USA.keymapping) - simply
 activating the check box may not be sufficient with some versions.
 If you can't get to the Preferences dialog because you disabled all
 splash screens, you can delete
-<tt><nobr>~/Library/Preferences/org.xfree86.XDarwin.plist</nobr></tt> to get it
+<code>~/Library/Preferences/org.xfree86.XDarwin.plist</code> to get it
 back, then start XDarwin and go to the Preferences dialog while the
 splash screen is displayed.
 Alternatively, you can edit that file manually in a text editor to
 enable the keymapping option (the UseKeymappingFile and KeymappingFile
 bits).
 </p><p>
-As a last resort, you can run <tt><nobr>startx -- -quartz -keymap
-USA.keymapping</nobr></tt> from Terminal.app.
+As a last resort, you can run <code>startx -- -quartz -keymap
+USA.keymapping</code> from Terminal.app.
 If this still doesn't work, you have another problem in addition to
 the keymapping problem that prevents XDarwin from starting.
 You'll get a bunch of diagnostic messages in Terminal.app to help you
@@ -108,12 +108,12 @@ sort this out.
 </a>
 <a name="xterm-error">
 <div class="question"><p><b>Q7.7: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
-<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt><nobr>xfree86</nobr></tt> packages, then you can get an upgrade by the usual means (&quot;<tt><nobr>fink selfupdate-cvs ; fink update-all</nobr></tt>&quot; for installation from source, <tt><nobr>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</nobr></tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
+<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means (&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot; for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
 </a>
 <a name="libXmuu">
 <div class="question"><p><b>Q7.8: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You are missing a file that is supposed to be installed by <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
+You are missing a file that is supposed to be installed by <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink reinstall xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p></div>
 </a>
 <a name="apple-x-bugs">
 <div class="question"><p><b>Q7.9: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
@@ -127,7 +127,7 @@ You are missing a file that is supposed to be installed by <tt><nobr>xfree86-roo
 </a>
 <a name="apple-x-delete">
 <div class="question"><p><b>Q7.10: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
-<div class="answer"><p><b>A:</b> Some users have reported that the behavior of the <tt><nobr>delete</nobr></tt> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p><p>
+<div class="answer"><p><b>A:</b> Some users have reported that the behavior of the <code>delete</code> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p><p>
 <b>.Xmodmap:</b>
 </p><pre>keycode 59 = Delete</pre><p>
 <b>.Xresources:</b>

@@ -31,7 +31,7 @@ chapter</a>.
 </p>
 
 
-<a name="bin"><h2>2.1 Installing the Binary Distribution</h2></a>
+<h2><a name="bin">2.1 Installing the Binary Distribution</a></h2>
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -57,10 +57,10 @@ When the installer is finished, proceed with the
 </p>
 
 
-<a name="src"><h2>2.2 Installing the Source Distribution</h2></a>
+<h2><a name="src">2.2 Installing the Source Distribution</a></h2>
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
-It contains only the <tt><nobr>fink</nobr></tt> package manager and its package
+It contains only the <code>fink</code> package manager and its package
 descriptions and will download the source for packages on the fly.
 You can get it from the
 <a href="http://fink.sourceforge.net/download/srcdist.php">download page</a>.
@@ -79,7 +79,7 @@ The following command extracts the archive:
 <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
 <p>
 That creates a directory with the same name as the archive.
-We'll just keep on using the placeholder <tt><nobr>fink-0.x.x-full</nobr></tt>
+We'll just keep on using the placeholder <code>fink-0.x.x-full</code>
 here.
 Now, change into that directory and run the bootstrap script:
 </p>
@@ -90,7 +90,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<tt><nobr>/sw</nobr></tt>.
+<code>/sw</code>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -102,8 +102,8 @@ You'll be asked for things like proxy and mirror settings and whether
 you want verbose messages.
 If you don't understand a question, just press return to accept the
 default choice.
-You can re-run this process later using the <tt><nobr>fink
-configure</nobr></tt> command.
+You can re-run this process later using the <code>fink
+configure</code> command.
 </p>
 <p>
 When the bootstrap script has all the information it needs, it will
@@ -119,14 +119,14 @@ When the bootstrap is finished, proceed with the
 </p>
 
 
-<a name="setup"><h2>2.3 Setting Up Your Environment</h2></a>
+<h2><a name="setup">2.3 Setting Up Your Environment</a></h2>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
 Shell scripts are provided to make this easy.
 If you use tcsh (the default on Mac OS X), add the following line to
-the file <tt><nobr>.cshrc</nobr></tt> in your home directory:
+the file <code>.cshrc</code> in your home directory:
 </p>
 <pre>source /sw/bin/init.csh</pre>
 <p>
@@ -136,7 +136,7 @@ If you don't know how to add the line, run these commands:
 pico .cshrc</pre>
 <p>
 You are now in a full-screen (well, full terminal window) text editor
-and can simply start typing the <tt><nobr>source /sw/bin/init.csh</nobr></tt>
+and can simply start typing the <code>source /sw/bin/init.csh</code>
 line.
 It's okay if there is a note that says &quot;New file&quot;.
 Be sure that you pressed Return at least once after the line, then
@@ -146,18 +146,18 @@ press Control-O, Return, Control-X to get out of the editor.
 Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
-You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
+You'll also need to run <code>rehash</code> because tcsh caches the
 list of available commands internally.
 </p>
 <p>
 If you use a Bourne style shell (e.g. sh, bash, zsh), use
-<tt><nobr>/sw/bin/init.sh</nobr></tt> instead.
-The file to edit varies with the shell, although <tt><nobr>.profile</nobr></tt>
+<code>/sw/bin/init.sh</code> instead.
+The file to edit varies with the shell, although <code>.profile</code>
 should work for all Bourne style shells.
 </p>
 <p>
-Note that the scripts also add <tt><nobr>/usr/X11R6/bin</nobr></tt> and
-<tt><nobr>/usr/X11R6/man</nobr></tt> to your path so you can use X11 when
+Note that the scripts also add <code>/usr/X11R6/bin</code> and
+<code>/usr/X11R6/man</code> to your path so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.

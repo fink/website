@@ -1,7 +1,7 @@
 <?
 $title = "About";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/07 20:59:30 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/03/01 01:25:00 $';
 
 include "header.inc";
 ?>
@@ -29,17 +29,17 @@ automated build-from-source system.
 <p>
 To achieve these goals, Fink relies on the excellent package
 management tools produced by the
-<a href="http://www.debian.org/">Debian</a> project - <tt>dpkg</tt>,
-<tt>dselect</tt> and <tt><nobr>apt-get</nobr></tt>.
+<a href="http://www.debian.org/">Debian</a> project - <code>dpkg</code>,
+<code>dselect</code> and <code>apt-get</code>.
 On top of that, Fink adds its own package manager, named (surprise!)
-<tt>fink</tt>.
-You can view <tt>fink</tt> as a build engine - it takes package
+<code>fink</code>.
+You can view <code>fink</code> as a build engine - it takes package
 descriptions and produces binary .deb packages from that.
 In the process, it downloads the original source code from the
 Internet, patches it as necessary, then goes through the whole process
 of configuring and building the package.
 Finally, it wraps the results up in a package archive that is ready to
-be installed by <tt>dpkg</tt>.
+be installed by <code>dpkg</code>.
 </p>
 <p>
 Since Fink sits on top of Mac OS X, it has a strict policy to avoid

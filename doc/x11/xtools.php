@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="install"><h2>5.1 Installing Xtools</h2></a>
+<h2><a name="install">5.1 Installing Xtools</a></h2>
 <p>
 Now that's easy for a change.
 Get the installer, double-click it, and follow the instructions.
@@ -21,7 +21,7 @@ Be sure to select the startup volume when asked.
 </p>
 <p>
 If you're using Fink, you should install the
-<tt><nobr>system-xtools</nobr></tt> package after you've installed Xtools.
+<code>system-xtools</code> package after you've installed Xtools.
 That package will not install any files, it will just check that the
 libraries etc. are there and act as a placeholder in Fink's dependency
 system.
@@ -29,17 +29,17 @@ system.
 
 
 
-<a name="run"><h2>5.2 Running Xtools</h2></a>
+<h2><a name="run">5.2 Running Xtools</a></h2>
 <p>
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
-<tt><nobr>.xinitrc</nobr></tt> file.
+<code>.xinitrc</code> file.
 Xtools additionally allows you to start clients via the menu.
 </p>
 
 
 
-<a name="opengl"><h2>5.3 OpenGL Notes</h2></a>
+<h2><a name="opengl">5.3 OpenGL Notes</a></h2>
 <p>
 Xtools does hardware-accelerated OpenGL in rootless mode and comes
 with the libraries to support it.

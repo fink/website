@@ -12,8 +12,8 @@ include "header.inc";
 
 
 
-<a name="immedate-quit"><h2>7.1 When I launch XDarwin, it quits
-or crashes almost immediately</h2></a>
+<h2><a name="immedate-quit">7.1 When I launch XDarwin, it quits
+or crashes almost immediately</a></h2>
 <p>
 First of all: Don't Panic!
 There are lots of things than can go wrong with XFree86, and a good
@@ -38,7 +38,7 @@ by the XonX project, so &quot;1.0a1&quot; may actually be any version between
 These are essential in pinpointing the particular problem you
 experience.
 How you get the error messages depends on how you started XDarwin.
-If you ran <tt><nobr>startx</nobr></tt> from a Terminal window, you'll have the
+If you ran <code>startx</code> from a Terminal window, you'll have the
 messages right there in that window.
 Remember that you can scroll up.
 If you started XDarwin by double-clicking the icon, the messages end
@@ -86,7 +86,7 @@ fixed after 1.0a3 was released.
 Class: Mostly harmless.
 It is unknown where these messages come from and they seem to have no
 impact on operations.
-You can get rid of them by running <tt><nobr>touch .Xauthority</nobr></tt> in
+You can get rid of them by running <code>touch .Xauthority</code> in
 your home directory.
 </p>
 
@@ -139,7 +139,7 @@ simply activating the check box may not be sufficient with some
 versions of XDarwin.
 If you can't get to the Preferences dialog because XDarwin closes
 before you get a chance, run it from Terminal with the command
-<tt><nobr>startx -- -quartz -keymap USA.keymapping</nobr></tt>.
+<code>startx -- -quartz -keymap USA.keymapping</code>.
 This usually allows XDarwin to start up, and you can then make the
 permanent choice in the Preferences dialog.
 </p>
@@ -166,20 +166,20 @@ while you were logged into Aqua.
 Usually this happens when you installed the official XFree86 binary
 distribution and left out the Xquartz.tgz tarball.
 It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you issue the command <tt><nobr>XDarwin</nobr></tt> in a Terminal
+or when you issue the command <code>XDarwin</code> in a Terminal
 window to start the server (you should use startx instead in that
 case, see <a href="run-xfree86.php">Starting XFree86</a>).
 </p>
 <p>
-In any case, you can run <tt><nobr>ls -l /usr/X11R6/bin/X*</nobr></tt> and
+In any case, you can run <code>ls -l /usr/X11R6/bin/X*</code> and
 check the output.
 You should see four relevant entries:
-<tt><nobr>X</nobr></tt>, a symlink pointing at <tt><nobr>XDarwinStartup</nobr></tt>;
-<tt><nobr>XDarwin</nobr></tt>, an executable file (this is the console
+<code>X</code>, a symlink pointing at <code>XDarwinStartup</code>;
+<code>XDarwin</code>, an executable file (this is the console
 mode server);
-<tt><nobr>XDarwinQuartz</nobr></tt>, a symlink pointing at
-<tt><nobr>/Applications/XDarwin.app/Contents/MacOS/XDarwin</nobr></tt>;
-and <tt><nobr>XDarwinStartup</nobr></tt>, a small executable file.
+<code>XDarwinQuartz</code>, a symlink pointing at
+<code>/Applications/XDarwin.app/Contents/MacOS/XDarwin</code>;
+and <code>XDarwinStartup</code>, a small executable file.
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
@@ -206,7 +206,7 @@ This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
 initialization files are not set up to add /usr/X11R6/bin to the PATH
 variable.
 If you use Fink and haven't changed your default shell, adding the
-line <tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt>
+line <code>source /sw/bin/init.csh</code> to <code>.cshrc</code>
 in your home directory (as recommended by the Fink instructions) should
 be sufficient.
 </p>
@@ -223,7 +223,7 @@ at once,
 or maybe after an unclean shutdown (i.e. crash) of XDarwin.
 It might also be a file permission problem with the sockets for local
 connections.
-You can try to clean that up with <tt><nobr>rm -rf /tmp/.X11-unix</nobr></tt>.
+You can try to clean that up with <code>rm -rf /tmp/.X11-unix</code>.
 Restarting the computer also helps in most cases (Mac OS X
 automatically cleans up /tmp when it boots, and the network stack is
 reset).
@@ -250,16 +250,16 @@ touch .Xauthority</pre>
 
 <p>
 Another common cause for XFree86 startup failures is an incorrect
-<tt><nobr>.xinitrc</nobr></tt> file.
-What happens is that the <tt><nobr>.xinitrc</nobr></tt> is run and for some
+<code>.xinitrc</code> file.
+What happens is that the <code>.xinitrc</code> is run and for some
 reason terminates almost immediately.
-<tt><nobr>xinit</nobr></tt> interprets this as &quot;the user's session has ended&quot;
+<code>xinit</code> interprets this as &quot;the user's session has ended&quot;
 and kills XDarwin.
 See the <a href="run-xfree86.php#xinitrc">.xinitrc
 section</a> for more details.
 Remember to set up the PATH and to have one long-lived program that is
 not started in the background.
-It is a good idea to add <tt><nobr>exec xterm</nobr></tt> as a fallback when
+It is a good idea to add <code>exec xterm</code> as a fallback when
 your window manager or similar can't be found.
 </p>
 
@@ -268,8 +268,8 @@ your window manager or similar can't be found.
 
 
 
-<a name="black"><h2>7.2 Black icons in the GNOME panel or in the
-menu of a GNOME application</h2></a>
+<h2><a name="black">7.2 Black icons in the GNOME panel or in the
+menu of a GNOME application</a></h2>
 <p>
 A common problem is that icons or other images are displayed as black
 rectangles or black outlines.
@@ -288,12 +288,12 @@ The XFree86 servers installed by Fink (i.e. the xfree86-server and
 xfree86-rootless packages) have it turned off.
 The GIMP and the GNOME panel have been innoculated as well.
 If you experience black icons in another application, start that
-application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
+application with the <code>--no-xshm</code> command line option.
 </p>
 
 
 
-<a name="keyboard"><h2>7.3 The keyboard doesn't work in XFree86</h2></a>
+<h2><a name="keyboard">7.3 The keyboard doesn't work in XFree86</a></h2>
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
@@ -316,7 +316,7 @@ name of the keymapping file to load as an option, as in:
 
 
 
-<a name="delete-key"><h2>7.4 The Backspace key doesn't work</h2></a>
+<h2><a name="delete-key">7.4 The Backspace key doesn't work</a></h2>
 <p>
 This can happen when you use the &quot;Load keymapping from file&quot; option
 described above.
@@ -333,7 +333,7 @@ correctly maps the Backspace key automatically.
 
 
 
-<a name="locale"><h2>7.5 &quot;Warning: locale not supported by C library&quot;</h2></a>
+<h2><a name="locale">7.5 &quot;Warning: locale not supported by C library&quot;</a></h2>
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -358,13 +358,13 @@ Example for .cshrc:
 <pre>unsetenv LANG</pre>
 </li>
 <li><p>
-Use the <tt><nobr>libxpg4</nobr></tt> Fink package.
+Use the <code>libxpg4</code> Fink package.
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).
 You may have to set the LANG environment variable to a fully qualified
-value, e.g. <tt><nobr>de_DE.ISO_8859-1</nobr></tt> instead of <tt><nobr>de</nobr></tt>
-or <tt><nobr>de_DE</nobr></tt>.
+value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
+or <code>de_DE</code>.
 </p></li>
 <li><p>
 Ask Apple to include proper locale support in a future version of Mac

@@ -89,7 +89,7 @@
 </xsl:template>
 
 <xsl:template match="code|filename">
-<tt><nobr><xsl:apply-templates/></nobr></tt>
+<code><xsl:apply-templates/></code>
 </xsl:template>
 
 <xsl:template match="link">

@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<a name="vnc"><h2>6.1 VNC</h2></a>
+<h2><a name="vnc">6.1 VNC</a></h2>
 <p>
 VNC is a network-capable graphics display system similar in design to
 X11.
@@ -26,7 +26,7 @@ more information on that.
 
 
 
-<a name="wiredx"><h2>6.2 WiredX</h2></a>
+<h2><a name="wiredx">6.2 WiredX</a></h2>
 <p>
 <a href="http://www.jcraft.com/wiredx/">WiredX</a> is an X11
 server written in Java.
@@ -36,7 +36,7 @@ An Installer.app package is available at the web site.
 
 
 
-<a name="exodus"><h2>6.3 eXodus</h2></a>
+<h2><a name="exodus">6.3 eXodus</a></h2>
 <p>
 According to the website, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> by Powerlan
 USA runs natively on Mac OS X.

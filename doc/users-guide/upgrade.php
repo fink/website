@@ -19,7 +19,7 @@ installation with the latest and greatest stuff.
 </p>
 
 
-<a name="bin"><h2>4.1 Upgrading using Binary Packages</h2></a>
+<h2><a name="bin">4.1 Upgrading using Binary Packages</a></h2>
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -32,8 +32,8 @@ Of course, you may want to run &quot;[S]elect&quot; in between to check the
 selections that were made and to find out about new packages.
 </p>
 <p>
-For apt, run <tt><nobr>apt-get update</nobr></tt> to get the latest package
-list, then <tt><nobr>apt-get upgrade</nobr></tt> to update all packages that
+For apt, run <code>apt-get update</code> to get the latest package
+list, then <code>apt-get upgrade</code> to update all packages that
 have new versions available.
 </p>
 <p>
@@ -43,7 +43,7 @@ older than 0.3.0, see the
 </p>
 
 
-<a name="src"><h2>4.2 Upgrading the Source Distribution</h2></a>
+<h2><a name="src">4.2 Upgrading the Source Distribution</a></h2>
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -55,11 +55,11 @@ packages; the actual source code is downloaded as needed.
 </p>
 <p>
 If you have Fink 0.2.5 or later, the first step can be accomplished by
-running <tt><nobr>fink selfupdate</nobr></tt>.
+running <code>fink selfupdate</code>.
 That command will check with the Fink website to see if a new point
 release is available, and will automatically download and install the
 package descriptions in that case.
-In recent versions of the <tt><nobr>fink</nobr></tt> command, you get the
+In recent versions of the <code>fink</code> command, you get the
 option to pull package descriptions directly from CVS.
 CVS is a version-controlled repository where the package descriptions
 are stored and managed.
@@ -78,19 +78,19 @@ cd packages-0.x.x
 ./inject.pl</pre>
 <p>
 Once you have updated your package descriptions (no matter which way),
-you should update all packages at once with the command <tt><nobr>fink
-update-all</nobr></tt>.
+you should update all packages at once with the command <code>fink
+update-all</code>.
 </p>
 
 
-<a name="mix"><h2>4.3 Mixing Binaries and Source</h2></a>
+<h2><a name="mix">4.3 Mixing Binaries and Source</a></h2>
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions
 above to upgrade your Fink installation.
-That is, first use <tt><nobr>dselect</nobr></tt> or <tt><nobr>apt-get</nobr></tt> to get
+That is, first use <code>dselect</code> or <code>apt-get</code> to get
 the latest versions of the packages that are available as binaries,
-then use <tt><nobr>fink selfupdate</nobr></tt> and <tt><nobr>fink update-all</nobr></tt>
+then use <code>fink selfupdate</code> and <code>fink update-all</code>
 to get the current package descriptions and to update the remaining
 packages.
 </p>

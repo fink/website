@@ -19,7 +19,7 @@ installation to 0.5.1 with the built-in 'selfupdate' command.
 </p>
 
 
-<a name="packman"><h2>3.1 Updating The Package Manager</h2></a>
+<h2><a name="packman">3.1 Updating The Package Manager</a></h2>
 <p>
 To update Fink, run the following command:
 </p>
@@ -31,7 +31,7 @@ packages. However, it will not update any other packages.
 </p>
 
 
-<a name="tetex"><h2>3.2 Getting tetex Sorted Out</h2></a>
+<h2><a name="tetex">3.2 Getting tetex Sorted Out</a></h2>
 <p>
 If you are upgrading from a Fink release prior to 0.3.1, and you have
 tetex installed, you should run the command &quot;fink remove tetex&quot; before
@@ -41,7 +41,7 @@ you can again install tetex and the other packages you removed.
 </p>
 
 
-<a name="update-all"><h2>3.3 Updating Packages</h2></a>
+<h2><a name="update-all">3.3 Updating Packages</a></h2>
 <p>
 The above updating steps will not update the actual packages, they
 only provide you with the means to do so. The easiest way to get the

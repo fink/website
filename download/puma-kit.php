@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2003/01/04 18:02:50 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/03/01 01:25:08 $';
 
 include "header.inc";
 ?>
@@ -127,7 +127,7 @@ current packages.
 Before proceeding you'll have to sort the X11 dependencies out.
 With MacGIMP and OpenOSX's packages, you'll have a "manual" XFree86
 install (from Fink's point of view, that is), so you should install
-the <nobr>system-xfree86</nobr> package:
+the <code>system-xfree86</code> package:
 </p>
 <pre>sudo apt-get install system-xfree86</pre>
 <p>

@@ -22,7 +22,7 @@ the binary distribution, some important notes that apply to both.
 </p>
 
 
-<a name="x11"><h2>3.1 Getting X11 Sorted Out</h2></a>
+<h2><a name="x11">3.1 Getting X11 Sorted Out</a></h2>
 <p>
 Since there are several X11 implementations available for Mac OS X
 (XFree86, Tenon Xtools, eXodus) and several ways to install them
@@ -71,14 +71,14 @@ and Mac OS X document</a>.
 </p>
 
 
-<a name="bin-dselect"><h2>3.2 Installing Binary Packages with
-dselect</h2></a>
+<h2><a name="bin-dselect">3.2 Installing Binary Packages with
+dselect</a></h2>
 <p>
-<tt><nobr>dselect</nobr></tt> is a program that lets you browse the list of
+<code>dselect</code> is a program that lets you browse the list of
 available packages and select which ones you want installed.
 It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
 uses simple keyboard navigation.
-Like the other package management tools, <tt><nobr>dselect</nobr></tt> requires
+Like the other package management tools, <code>dselect</code> requires
 root privileges, so you must either become root before you start it or
 use sudo:
 </p>
@@ -148,13 +148,13 @@ the &quot;[I]nstall&quot; menu item to actually install the packages.
 </p>
 
 
-<a name="bin-apt"><h2>3.3 Installing Binary Packages with
-apt-get</h2></a>
+<h2><a name="bin-apt">3.3 Installing Binary Packages with
+apt-get</a></h2>
 <p>
-<tt><nobr>dselect</nobr></tt> doesn't actually download the packages itself.
+<code>dselect</code> doesn't actually download the packages itself.
 Instead, it runs apt to do the dirty work.
 If you prefer a pure command line interface, you can access the
-functions of apt directly, with the <tt><nobr>apt-get</nobr></tt> command.
+functions of apt directly, with the <code>apt-get</code> command.
 </p>
 <p>
 Like with dselect, you must first download the current listing of
@@ -179,7 +179,7 @@ Removing packages is just as easy:
 </p>
 
 
-<a name="bin-exceptions"><h2>3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</h2></a>
+<h2><a name="bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></h2>
 <p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
 <pre>Sorry, but the following packages have unmet
 dependencies:
@@ -190,16 +190,16 @@ E: Sorry, broken packages</pre>
 
 
 
-<a name="src"><h2>3.5 Installing Packages from Source</h2></a>
+<h2><a name="src">3.5 Installing Packages from Source</a></h2>
 <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
 <p>
 To get a list of packages that are available for installation from
-source, ask the <tt><nobr>fink</nobr></tt> tool:
+source, ask the <code>fink</code> tool:
 </p>
 <pre>fink list</pre>
 <p>
 The first column lists the installation state (blank for not
-installed, <tt><nobr>i</nobr></tt> for installed, <tt><nobr>(i)</nobr></tt> for
+installed, <code>i</code> for installed, <code>(i)</code> for
 installed but not the latest version), followed by the package name,
 the latest version, and a short description.
 You can ask for more information about a specific package using the
@@ -212,7 +212,7 @@ When you have found a package that you want to install, use the
 </p>
 <pre>fink install wget-ssl</pre>
 <p>
-The <tt><nobr>fink</nobr></tt> command will first check if all necessary
+The <code>fink</code> command will first check if all necessary
 prerequisites (&quot;dependencies&quot;) are present, and will ask you if it's
 okay to install them if some are missing.
 Then it goes ahead and downloads source code, unpacks it, patches it,
