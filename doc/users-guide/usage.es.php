@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Herramienta fink ";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:32';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/08/30 22:44:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="prev" href="conf.php?phpLang=es" title="El archivo de configuración de Fink">';
 
 
@@ -170,7 +170,13 @@ Re-ejecuta el procesos de configuración de Fink. Este comando te permitira camb
    Ejecuta dpkg-scanpackages(8) usando los árboles especificados.
 </p>
     
-    <h2><a name="cleanup">6.19 cleanup</a></h2>
+    <h2><a name="checksums">6.19 checksums</a></h2>
+      
+      <p>
+   Verifica la validez de los MD5 de todos los tarballs en el directorio <code>/sw/src</code>, siempre y cuando sea posible.
+</p>
+    
+    <h2><a name="cleanup">6.20 cleanup</a></h2>
       
       <p>
    Remueve los archivos de los paquetes obsoletos (.info, .patch, .deb) en cuanto existan versiones nuevas 

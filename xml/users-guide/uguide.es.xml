@@ -3,8 +3,9 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.3 2004/08/12 15:01:32 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.4 2004/08/30 22:44:42 michga Exp $</cvsid>
   <preface>
+  <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p>
       <em>Este documento es un trabajo en proceso.</em>
 Los siguientes documentos previos pueden ofrecer una prespectiva más amplia:
@@ -42,7 +43,7 @@ En cualquier caso necesitaras:
         <li>
           <p>
 Un sistema Mac OS X instalado, versión 10.2 o posterior, o el equivalente en Darwin.
-Versiones previas de ambos <em>no</em> funcionaran.
+Versiones previas de ambos <em>no</em> funcionarán.
 Ver más abajo información de los sistemas soportados.
 </p>
         </li>
@@ -967,6 +968,12 @@ Re-ejecuta el procesos de configuración de Fink. Este comando te permitira camb
       <title>scanpackages</title>
       <p>
    Ejecuta dpkg-scanpackages(8) usando los árboles especificados.
+</p>
+    </section>
+    <section name="checksums">
+      <title>checksums</title>
+      <p>
+   Verifica la validez de los MD5 de todos los tarballs en el directorio <code>/sw/src</code>, siempre y cuando sea posible.
 </p>
     </section>
     <section name="cleanup">

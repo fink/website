@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Introducción";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:32';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/08/30 22:44:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="install.php?phpLang=es" title="Primera Instalación"><link rel="prev" href="index.php?phpLang=es" title="Guía del Usuario Contents">';
 
 
@@ -27,7 +27,7 @@ En cualquier caso necesitaras:
         <li>
           <p>
 Un sistema Mac OS X instalado, versión 10.2 o posterior, o el equivalente en Darwin.
-Versiones previas de ambos <b>no</b> funcionaran.
+Versiones previas de ambos <b>no</b> funcionarán.
 Ver más abajo información de los sistemas soportados.
 </p>
         </li>
