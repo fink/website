@@ -176,26 +176,26 @@ sudo apt-get install fink</pre>
 </a>
 <a name="wants-xfree86-on-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.12: 
-    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
-    </b></p></div>
+10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
+</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-    以下の古い代替パッケージのうちいずれかを削除する必要があります:
-    <code>system-xfree86</code>, <code>system-xfree86-42</code>, 
-    <code>system-xfree86-43</code> 。
-    自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
-    他のパッケージが <code>system-xfree86</code> に依存しているため、以下のコマンドを使い
-    </p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>
-    古いバージョンを削除します。
-    インストールの確認は、
-    </p><pre>fink list -i system-xfree86</pre><p>
-    とし、 <code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
-    があるか確認します。
-    X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
-    </p><p>
-    これでも問題が解決されない場合、上の
-    <a href="#apple-x11-wants-xfree86">Fink wants XFree86 or X.org</a>
-    を参照してください。
-    </p></div>
+以下の古い代替パッケージのうちいずれかを削除する必要があります:
+<code>system-xfree86</code>, <code>system-xfree86-42</code>, 
+<code>system-xfree86-43</code> 。
+自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
+他のパッケージが <code>system-xfree86</code> に依存しているため、以下のコマンドを使い
+</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>
+古いバージョンを削除します。
+インストールの確認は、
+</p><pre>fink list -i system-xfree86</pre><p>
+とし、 <code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
+があるか確認します。
+X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
+</p><p>
+これでも問題が解決されない場合、上の
+<a href="#apple-x11-wants-xfree86">Fink wants XFree86 or X.org</a>
+を参照してください。
+</p></div>
 </a>
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
@@ -220,12 +220,12 @@ fink selfupdate; fink index</pre><p>
 		古いバージョンの  <code>fink</code> を使っている場合、Perl スクリプト
 		(Martin Costabel 作成)　で同様の情報が得られます。
 		</p><ul>
-          <li>入手先: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
-          </li>
-          <li>好きな場所に保存</li>
-          <li>ターミナルウィンドウから実行: <pre>perl fink-x11-debug</pre>
-          </li>
-        </ul></div>
+<li>入手先: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
+</li>
+<li>好きな場所に保存</li>
+<li>ターミナルウィンドウから実行: <pre>perl fink-x11-debug</pre>
+</li>
+</ul></div>
 </a>
 
 <? include_once "../footer.inc"; ?>

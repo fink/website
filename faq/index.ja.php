@@ -49,11 +49,11 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
 というメッセージが出て、何もインストールできません!</a></li><li><a href="comp-general.php?phpLang=ja#freetype-problems">6.15 freetype に関係したエラーが出ます。</a></li><li><a href="comp-general.php?phpLang=ja#dlfcn-from-oo">6.16 `Dl_info' のエラーが出ます。</a></li><li><a href="comp-general.php?phpLang=ja#gcc2">6.17 Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</a></li><li><a href="comp-general.php?phpLang=ja#system-java">6.18 Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
 と言っていますが、そのようなパッケージはありません。
 </a></li><li><a href="comp-general.php?phpLang=ja#dpkg-split">6.19 
-    何をインストールしようとしても、
-     <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
-     というエラーが出ます。
-     どうしたらいいですか?
-    </a></li><li><a href="comp-general.php?phpLang=ja#xml-parser">6.20 
+何をインストールしようとしても、
+<q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
+というエラーが出ます。
+どうしたらいいですか?
+</a></li><li><a href="comp-general.php?phpLang=ja#xml-parser">6.20 
 	次のメッセージが出ます:<q>configure: error: XML::Parser perl module is required for intltool</q>。
 	どうしたら良いでしょうか?
 	</a></li><li><a href="comp-general.php?phpLang=ja#master-problems">6.21 
@@ -78,8 +78,8 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
 </a></li><li><a href="usage-packages.php?phpLang=ja#xterm-error">9.5 xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</a></li><li><a href="usage-packages.php?phpLang=ja#libXmuu">9.6 XFree86 を起動しようとすると、下記のエラーのひとつがでます。
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
 または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#wants-xfree86-on-upgrade">9.12 
-    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
-    </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul>
+10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
+</a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul>
 <!--Generated from $Fink: faq.ja.xml,v 1.26 2005/01/25 03:05:54 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 

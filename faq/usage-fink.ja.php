@@ -206,22 +206,17 @@ Fink が自動的にここを探しにいきます。
 <a name="fink-not-found">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.15: Fink や Fink でインストールしたものを実行しようとすると
 "command not found" エラーが出ます。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまったと思われます。
-<code>/sw/bin/pathsetup.command</code> スクリプトを実行
-(ファインダからダブルクリックするか、ターミナルから実行)
-すると、初期の設定を検出しようとします。
-この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。
-<b>注記:</b>
-<code>fink-0.18.3</code> と <code>fink-0.19.2</code> では、スクリプトは
-<code>/sw/bin/pathsetup.sh</code>
-になりました。
-必ずターミナル上で実行して下さい。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまった(か、書き換えに失敗した)と思われます。
+<code>/sw/bin/pathsetup.sh</code> スクリプトを実行してください。
+このプログラムは、デフォルトシェルを判定し、シェルの設定に Fink のシェル初期化スクリプトを読み込むコマンドを追加します。
+<b>注記:</b> 古いバージョンの fink では、スクリプト名が <code>/sw/bin/pathsetup.sh</code> ではなく <code>/sw/bin/pathsetup.command</code> となっていることがあります。
+あるいは、 Fink バイナリディストリビューションのディスクイメージ内にある <code>pathsetup.app</code> を実行する方法もあります。
 </p><p>このエラーが Apple X11 ターミナルでのみ出る場合，
 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc%20">.xinitrc</a> 
 というファイルを作成し、</p><pre>. /sw/bin/init.sh</pre><p>の一行を最初の方
 (他のプログラムが実行される前)
 に追加します。
-X11 が立ち上がっている場合、リスタートします。</p><pre>source ~/.cshrc</pre></div>
+X11 が立ち上がっている場合、 X11 を再起動します。</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.16: Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
@@ -247,7 +242,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
 </p><pre>dpkg --contents <b>full-path-to-debfile</b>
 </pre><p>例えば</p><pre>dpkg --contents
-        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
+/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p><p>バイナリインストールを試みている場合、あるいはインストールしたバージョンと現在のバイナリバージョンが一致する場合
 (例えば、 <a href="http://fink.sourceforge.net/pdb/index.php">パッケージデータベース</a> で調べたなら)、
@@ -371,7 +366,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 これは、何らかの理由で OSX ターミナルがログインする度に
 <code>/sw/bin/pathsetup.command</code>
- を実行するように設定されているからです。
+を実行するように設定されているからです。
 修正するには、 初期設定ファイル <code>~/Library/Preferences/com.apple.Terminal.plist</code> を削除します。</p><p>他の設定を失いたくない場合、削除する代わりにテキストエディタでこのファイルを開き、
 <code>/sw/bin/pathsetup.command</code>
 と書かれている部分を削除します。</p></div> 

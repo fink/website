@@ -15,7 +15,7 @@ include_once "header.ja.inc";
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはログインスクリプト (例 <code>~/.cshrc</code>) が "<code>echo Hello</code>" であるとか <code>xttitle</code> といったことをターミナルに書くと発生します。
 いちばん簡単な解決方法は、問題の行をコメントアウトすることです。
 </p><p>もし echo を残しておきたいなら、次のようにすることもできます:</p><pre>if ( $?prompt) then
-       echo Hello
+echo Hello
 endif</pre></div>
 </a>
 <a name="cant-install-xfree">

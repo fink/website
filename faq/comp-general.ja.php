@@ -69,9 +69,9 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 エラーは発生したもののビルドは続行したものです。
 問題のあったファイルを追跡するには、ビルドの出力中の存在しないファイルを探します。
 例えば:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
- /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
- mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
- No such file or directory
+/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
+mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
+No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code> ファイルをビルド出力の前の方で探します。</p></div>
 </a>
@@ -212,15 +212,15 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </a>
 <a name="dpkg-split">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.19: 
-    何をインストールしようとしても、
-     <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
-     というエラーが出ます。
-     どうしたらいいですか?
-    </b></p></div>
+何をインストールしようとしても、
+<q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
+というエラーが出ます。
+どうしたらいいですか?
+</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-    通常、環境変数を正しく設定することで直ります。
-    参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
-    </p></div>
+通常、環境変数を正しく設定することで直ります。
+参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
+</p></div>
 </a>
 <a name="xml-parser">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.20: 

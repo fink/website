@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.26 2005/01/25 03:05:54 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.27 2005/03/25 22:22:47 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -616,17 +616,12 @@ Fink が自動的にここを探しにいきます。
 &quot;command not found&quot; エラーが出ます。</p>
 </question>
 <answer>
-<p>常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまったと思われます。
-<filename>/sw/bin/pathsetup.command</filename> スクリプトを実行
-(ファインダからダブルクリックするか、ターミナルから実行)
-すると、初期の設定を検出しようとします。
-この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。
-<em>注記:</em>
-<code>fink-0.18.3</code> と <code>fink-0.19.2</code> では、スクリプトは
-<filename>/sw/bin/pathsetup.sh</filename>
-になりました。
-必ずターミナル上で実行して下さい。
-</p> 
+<p>常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまった(か、書き換えに失敗した)と思われます。
+<filename>/sw/bin/pathsetup.sh</filename> スクリプトを実行してください。
+このプログラムは、デフォルトシェルを判定し、シェルの設定に Fink のシェル初期化スクリプトを読み込むコマンドを追加します。
+<em>注記:</em> 古いバージョンの fink では、スクリプト名が <filename>/sw/bin/pathsetup.sh</filename> ではなく <filename>/sw/bin/pathsetup.command</filename> となっていることがあります。
+あるいは、 Fink バイナリディストリビューションのディスクイメージ内にある <filename>pathsetup.app</filename> を実行する方法もあります。
+</p>
 <p>このエラーが Apple X11 ターミナルでのみ出る場合，
 <link url=" http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc ">.xinitrc</link> 
 というファイルを作成し、</p>
@@ -634,7 +629,7 @@ Fink が自動的にここを探しにいきます。
 <p>の一行を最初の方
 (他のプログラムが実行される前)
 に追加します。
-X11 が立ち上がっている場合、リスタートします。</p> 
+X11 が立ち上がっている場合、 X11 を再起動します。</p> 
 <codeblock>source ~/.cshrc</codeblock>
 </answer>
 </faqentry>
@@ -683,8 +678,8 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 <codeblock>dpkg --contents <em>full-path-to-debfile</em>
 </codeblock>
 <p>例えば</p>
-        <codeblock>dpkg --contents
-        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+<codeblock>dpkg --contents
+/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
 <p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p>
@@ -876,7 +871,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 <p>
 これは、何らかの理由で OSX ターミナルがログインする度に
 <code>/sw/bin/pathsetup.command</code>
- を実行するように設定されているからです。
+を実行するように設定されているからです。
 修正するには、 初期設定ファイル <code>~/Library/Preferences/com.apple.Terminal.plist</code> を削除します。</p> 
 <p>他の設定を失いたくない場合、削除する代わりにテキストエディタでこのファイルを開き、
 <code>/sw/bin/pathsetup.command</code>
@@ -1054,9 +1049,9 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 問題のあったファイルを追跡するには、ビルドの出力中の存在しないファイルを探します。
 例えば:</p>
 <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
- /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
- mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
- No such file or directory
+/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
+mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
+No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</codeblock>
 <p>この場合、 <filename>libbar</filename> ファイルをビルド出力の前の方で探します。</p>
@@ -1273,18 +1268,18 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </faqentry>
 <faqentry name="dpkg-split">
 <question>
-    <p>
-    何をインストールしようとしても、
-     <quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>
-     というエラーが出ます。
-     どうしたらいいですか?
-    </p>
+<p>
+何をインストールしようとしても、
+<quote>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</quote>
+というエラーが出ます。
+どうしたらいいですか?
+</p>
 </question>
 <answer>
-    <p>
-    通常、環境変数を正しく設定することで直ります。
-    参照: <xref chapter="usage-fink" section="fink-not-found">この FAQ 項目</xref>
-    </p>
+<p>
+通常、環境変数を正しく設定することで直ります。
+参照: <xref chapter="usage-fink" section="fink-not-found">この FAQ 項目</xref>
+</p>
 </answer>
 </faqentry>
 <faqentry name="xml-parser">
@@ -1352,7 +1347,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </p>
 <p>もし echo を残しておきたいなら、次のようにすることもできます:</p>
 <codeblock>if ( $?prompt) then
-       echo Hello
+echo Hello
 endif</codeblock>
 </answer>
 </faqentry>
@@ -1471,11 +1466,11 @@ Apache や MySQL のようなプログラムは、&quot;所有者&quot; が必�
 (Apache に、システム上の全てのファイルへいきなり書き込み権限が与えられたと思ってみてください)
 このため、 passwd パッケージはユーザーを必要とするパッケージにユーザーを追加するのです。</p>
 <p>急にユーザーが &quot;システム環境設定: ユーザー&quot; ペイン (10.2.x) あるいは
- &quot;システム環境設定: アカウント&quot; ペイン (10.3.x) 
+&quot;システム環境設定: アカウント&quot; ペイン (10.3.x) 
 に現れるのは不安ですが、削除したい気持ちを押えてください。</p>
 <ul>
 <li>第一に、あなたはユーザーを利用するパッケージをインストールする選択をしたのです。
- ユーザーを削除したら意味がありませんよね?</li>
+ユーザーを削除したら意味がありませんよね?</li>
 <li>実際、 Mac OS X には既にユーザーが追加されていますが、気づいていないのです。
 www, daemon, nobody などがそうです。
 これらのユーザーは、ある種のサービスを行なう Unix 流のやり方なのです。
@@ -1485,13 +1480,13 @@ Apple がインストールしたユーザーは、 NetInfo マネージャ.app 
 </li>
 <li>このユーザーを削除することにした場合、十分気をつけてください。
 &quot;システム環境設定: ユーザー&quot; ペイン (10.2.x) あるいは
- &quot;システム環境設定: アカウント&quot; ペイン (10.3.x) 
+&quot;システム環境設定: アカウント&quot; ペイン (10.3.x) 
 から追加したユーザーのファイルには、適当な管理者権限が割り振られます。
 管理者アカウントのパーミッションが混乱するという報告があります。
 これはシステム環境設定のバグで、 Apple には報告されています。
 安全にユーザーを削除するには、 NetInfo マネージャ.app を使うか、ターミナルから <code>niutil</code> コマンドを入力します。
 NetInfo の詳細については、 <code>niutil</code> の man ページを読んでください。
- </li>
+</li>
 </ul>
 <p>passwd パッケージのインストール中に、Fink がユーザーを追加するか<em>尋ねます</em>ので、実際はいきなりではないはずです。</p>
 </answer>
@@ -1954,34 +1949,34 @@ sudo apt-get install fink</codeblock>
 </faqentry>
 <faqentry name="wants-xfree86-on-upgrade">
 <question>
-    <p>
-    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
-    </p>
+<p>
+10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
+</p>
 </question>
 <answer>
-    <p>
-    以下の古い代替パッケージのうちいずれかを削除する必要があります:
-    <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, 
-    <filename>system-xfree86-43</filename> 。
-    自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
-    他のパッケージが <filename>system-xfree86</filename> に依存しているため、以下のコマンドを使い
-    </p>
-    <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
-    <p>
-    古いバージョンを削除します。
-    インストールの確認は、
-    </p>
-    <codeblock>fink list -i system-xfree86</codeblock>
-    <p>
-    とし、 <code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
-    があるか確認します。
-    X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
-    </p>
-    <p>
-    これでも問題が解決されない場合、上の
-    <xref section="apple-x11-wants-xfree86">Fink wants XFree86 or X.org</xref>
-    を参照してください。
-    </p>
+<p>
+以下の古い代替パッケージのうちいずれかを削除する必要があります:
+<filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, 
+<filename>system-xfree86-43</filename> 。
+自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
+他のパッケージが <filename>system-xfree86</filename> に依存しているため、以下のコマンドを使い
+</p>
+<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
+<p>
+古いバージョンを削除します。
+インストールの確認は、
+</p>
+<codeblock>fink list -i system-xfree86</codeblock>
+<p>
+とし、 <code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
+があるか確認します。
+X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
+</p>
+<p>
+これでも問題が解決されない場合、上の
+<xref section="apple-x11-wants-xfree86">Fink wants XFree86 or X.org</xref>
+を参照してください。
+</p>
 </answer>
 </faqentry>
 <faqentry name="special-x11-debug">
@@ -1989,40 +1984,40 @@ sudo apt-get install fink</codeblock>
 	<p>まだ X11 と Fink の問題が解決されません。</p>
 </question>
 <answer>
-        <p>
+<p>
 		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> や
 		<xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
 		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86</xref>
 		</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
-        <p>
+<p>
 		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
 		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のようなX互換パッケージを再インストールします。
 		</p>
-        <p>
+<p>
 		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
 		</p>
-        <codeblock>fink-virtual-pkgs --debug</codeblock>
-        <p>で何が不足しているかの情報が得られます。</p>
-        <p>
+<codeblock>fink-virtual-pkgs --debug</codeblock>
+<p>で何が不足しているかの情報が得られます。</p>
+<p>
 		古いバージョンの  <code>fink</code> を使っている場合、Perl スクリプト
 		(Martin Costabel 作成)　で同様の情報が得られます。
 		</p>
-        <ul>
-          <li>入手先: <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
-          </li>
-          <li>好きな場所に保存</li>
-          <li>ターミナルウィンドウから実行: <codeblock>perl fink-x11-debug</codeblock>
-          </li>
-        </ul>
+<ul>
+<li>入手先: <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
+</li>
+<li>好きな場所に保存</li>
+<li>ターミナルウィンドウから実行: <codeblock>perl fink-x11-debug</codeblock>
+</li>
+</ul>
 </answer>
 </faqentry>
 </chapter>
