@@ -1,7 +1,7 @@
 <?
-/* $Id: header.inc,v 1.7 2002/01/21 19:15:17 fingolfin Exp $ */
-
+/* $Id: header.inc,v 1.8 2003/11/02 09:11:57 benh57 Exp $ */
 /* check path info */
+$PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
   if ($PATH_INFO == "") {
     $pispec = "-";
