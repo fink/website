@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.10 2004/07/16 08:45:21 michga Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.11 2004/10/20 08:13:44 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -19,7 +19,7 @@ Documentation actuelle de l'utilisateur de Fink :
 <ul>
 <li><varlink url="users-guide/index.php" varurl="users-guide/uguide.fr.html">Guide de l'utilisateur de Fink</varlink> -
 ce guide couvre l'installation de Fink, celle des paquets et la mise à jour de Fink lors d'une nouvelle version. Il contient les instructions pour les versions source et binaire.
-<em>En cours de rédaction !</em></li>
+</li>
 <li><varlink url="x11/index.php" varurl="x11/x11.fr.html">X11 sur Darwin et Mac OS X</varlink> -
 couvre les concepts généraux, l'installation et le lancement (les utilisateurs de Darwin et de Mac OS X y trouveront aussi des conseils utiles)</li>
 </ul>
