@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.9 2004/04/26 05:14:54 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.10 2004/06/26 04:09:27 vasi Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1028,6 +1028,26 @@ building a package. Defaults to false. <em>Be careful, this option can
 fill your hard-disk quickly!</em>
 Passing <em>fink</em> the <em>-k</em> flag has the same effect, but
 only operates on that single <em>fink</em> invocation.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section name="advanced" >
+      <title>Advanced Settings</title>
+      <p>There are some other options which may be useful, but require some knowledge to get right.</p>
+      <ul>
+        <li>
+          <p>
+            <em>MatchPackageRegEx:</em> </p>
+          <p>Causes fink not to ask which package to install if one (and only one) of the choices matches the perl Regular Expression given here. Example:</p>
+          <codeblock>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</codeblock>
+          <p>will match packages ending in '-ssl', and will match 'xfree86' and 'xfree86-shlibs' exactly.</p>
+        </li>
+        <li>
+          <p>
+            <em>CCacheDir:</em> path</p>
+          <p><em>Introduced in a post-0.19.2 CVS version of fink.</em> If the Fink package ccache-default is installed, the cache files it makes
+while building Fink packages will be placed here. Defaults to <filename>/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
           </p>
         </li>
       </ul>
