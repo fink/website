@@ -3,7 +3,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.5 2001/09/20 17:04:34 chrisp Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.6 2001/10/09 12:23:09 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -12,13 +12,13 @@ This means that you can stay up to date between releases and always
 get the newest stuff.
 This page tells you how to set up an existing Fink installation for
 updating via CVS.
-The information on this page applies to Fink 0.2.x.
+The information on this page applies to Fink 0.2.x and later.
 </p>
 </preface>
 
 
 <section><title>Fink CVS Structure</title>
-<p>Fink 0.2 has two CVS modules. The module <code>fink</code> (<link
+<p>Fink has two CVS modules. The module <code>fink</code> (<link
 url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/fink/">ViewCVS</link>)
 contains the package manager plus the stuff needed for bootstrap. The
 module <code>packages</code> (<link
