@@ -3,31 +3,21 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.11 2004/10/20 08:13:44 dmacks Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.12 2005/02/01 08:25:03 michga Exp $</cvsid>
 
 <preface>
-<p>
-Voici un ensemble de documents écrits pour Fink.
-Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
-</p>
+<p>Voici un ensemble de documents écrits pour Fink. Certains de ces documents peuvent également être utiles aux personnes qui ne se servent pas de Fink sous Mac OS X ou Darwin, mais souhaitent apprendre à porter des logiciels Unix sur ces systèmes.</p>
 </preface>
 <section name="userdoc">
 <title>Documentation utilisateur</title>
-<p>
-Documentation actuelle de l'utilisateur de Fink :
-</p>
+<p>Documentation actuelle de l'utilisateur de Fink :</p>
 <ul>
-<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.fr.html">Guide de l'utilisateur de Fink</varlink> -
-ce guide couvre l'installation de Fink, celle des paquets et la mise à jour de Fink lors d'une nouvelle version. Il contient les instructions pour les versions source et binaire.
-</li>
-<li><varlink url="x11/index.php" varurl="x11/x11.fr.html">X11 sur Darwin et Mac OS X</varlink> -
-couvre les concepts généraux, l'installation et le lancement (les utilisateurs de Darwin et de Mac OS X y trouveront aussi des conseils utiles)</li>
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.fr.html">Guide de l'utilisateur de Fink</varlink> - ce guide couvre l'installation de Fink, celle des paquets et la mise à jour de Fink lors d'une nouvelle version. Il contient les instructions pour les versions source et binaire.</li>
+<li><varlink url="x11/index.php" varurl="x11/x11.fr.html">X11 sur Darwin et Mac OS X</varlink> - couvre les concepts généraux, l'installation et le lancement (les utilisateurs de Darwin et de Mac OS X y trouveront aussi des conseils utiles)</li>
 </ul>
-<p>
-Un grand nombre de documents plus complets, mais obsolètes et non remis à jour : 
-</p>
+<p>Un grand nombre de documents plus complets, mais obsolètes et non remis à jour :</p>
 <ul>
-<li><varlink url="bundled/install.php" varurl="bundled/install.html">Installation et Mise à jour</varlink> - comment installer Fink et le mettre à jour lors d'une nouvelle version </li>
+<li><varlink url="bundled/install.php" varurl="bundled/install.html">Installation et Mise à jour</varlink> - comment installer Fink et le mettre à jour lors d'une nouvelle version</li>
 <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Utilisation</varlink> - comment utiliser Fink et les logiciels installés</li>
 <li><varlink url="readme.php" varurl="readme.fr.html">Fink ReadMe</varlink> - le fichier ReadMe de la distribution source</li>
 <li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.fr.html">Accès CVS</varlink> - comment accéder au serveur CVS de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
@@ -35,20 +25,18 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 </section>
 <section name="developerdoc"><title>Documentation développeur</title>
 <ul>
-<li><varlink url="security/index.php" varurl="security/security.fr.html">Charte de sécurité</varlink> - Lecture obligatoire pour tous ceux qui sont mainteneurs de paquets dans Fink ou qui veulent le devenir.</li>
-<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</link> (fichier pdf 2MB) - diapositives d'une présentation lors de la <link
-url="http://conferences.oreillynet.com/macosx2002/"
->Conférence O'Reilly Mac OS X</link> (disponible aussi sous <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</link>) </li>
+<li><varlink url="security/index.php" varurl="security/security.fr.html">Charte de sécurité</varlink> - lecture obligatoire pour tous ceux qui sont mainteneurs de paquets dans Fink ou qui veulent le devenir.</li>
+<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</link> (fichier pdf 2MB) - diapositives d'une présentation lors de la <link url="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</link> (disponible aussi sous <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</link>) </li>
 <li><varlink url="porting/index.php" varurl="porting/porting.fr.html">Trucs et astuces pour le portage</varlink> - notes sur le portage d'applications Unix sur Darwin</li>
-      <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.fr.html">Tutoriel d'empaquetage</varlink> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
+<li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.fr.html">Tutoriel d'empaquetage</varlink> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.fr.html">Guide de construction des paquets</varlink> - comment créer et maintenir des paquets Fink</li>
 </ul>
 </section>
-  <section name="otherdoc">
-    <title>Autres Documents</title>
-    <ul>
-      <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.fr.html">Guide d'internationalisation</varlink> - document concernant le travail en cours d'internationalisation du site web</li>
-      <li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.fr.html">Étiquette net des listes de diffusion</varlink> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
-    </ul>
-  </section>
+<section name="otherdoc">
+<title>Autres Documents</title>
+<ul>
+<li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.fr.html">Guide d'internationalisation</varlink> - document concernant le travail en cours d'internationalisation du site web</li>
+<li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.fr.html">Étiquette net des listes de diffusion</varlink> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
+</ul>
+</section>
 </article>

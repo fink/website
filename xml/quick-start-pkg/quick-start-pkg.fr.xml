@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création d'un paquet pour Fink - Tutoriel</title>
 <shorttitle>Tutoriel d'empaquetage</shorttitle>
-<cvsid>$Id: quick-start-pkg.fr.xml,v 1.4 2004/07/26 03:53:57 dmacks Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.fr.xml,v 1.5 2005/02/01 08:31:25 michga Exp $</cvsid>
 
 <preface>
 <p>Ce document est fait pour les personnes qui souhaitent créer un paquet pour <code>Fink</code>. Il vient en complément du <link url="http://fink.sourceforge.net/doc/packaging/index.php">Guide de construction de paquets</link>, plus détaillé.</p>
@@ -14,17 +14,14 @@
 <!-- packages. The first one will be <link url="http://maxwell.sourceforge.net"> -->
 <!-- maxwell</link> and the second  -->
 <!-- <link url="http://www.gnu.org/software/stow/stow.html">GNU Stow</link>. -->
-Nous commencerons par les généralités, puis nous verrons en détail la création d'un paquet <link url="http://maxwell.sourceforge.net">maxwell</link> pour Fink.
-</p>
+Nous commencerons par les généralités, puis nous verrons en détail la création d'un paquet <link url="http://maxwell.sourceforge.net">maxwell</link> pour Fink.</p>
 </preface>
 <chapter filename="howtostart">
 <title>Préliminaires</title>
 <shorttitle>Préliminaires</shorttitle>
 
 <section name="Learn"><title>Apprentissage des bases</title>
-<p>
-<em>Note :</em> dans ce document, nous supposons que fink est installé dans <filename>/sw</filename> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :
-</p>
+<p><em>Note :</em> dans ce document, nous supposons que fink est installé dans <filename>/sw</filename> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :</p>
 <codeblock>
 finkdev% unecommandequelconque
 </codeblock>
@@ -87,7 +84,7 @@ finkdev% fink install nomdupaquet
 <p>Si le processus échoue lors d'une des étapes ci-dessus, essayez de corriger les erreurs et recommencez le processus à partir de l'étape <code>fink validate</code>.</p>
 </section>
 <section name="Submit"><title>Soumission de votre paquet</title>
-<p>Si toutes les étapes de vérification de votre paquet énoncées ci-dessus ont réussi, vous pouvez soumettre le fichier info (et le fichier patch s'il existe) au <link url="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Traqueur de soumissions de paquets</link>.</p>
+<p>Si toutes les étapes de vérification de votre paquet énoncées ci-dessus ont été franchies avec succès, vous pouvez soumettre le fichier info (et le fichier patch s'il existe) au <link url="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Traqueur de soumissions de paquets</link>.</p>
 <p>Une personne se chargera d'examiner votre soumission et d'ajouter le paquet à la branche instable de Fink, si le paquet semble correct. Sinon, on vous demandera de mettre le paquet en accord avec les règles de Fink.</p>
 <p><em>Note :</em></p>
 <ul>
