@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.116 2003/07/08 01:08:00 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.117 2003/07/08 18:11:19 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -731,7 +731,7 @@ the Virex folks having made errors in the way they set things up).</p>
 <p>I get a bunch of garbage when I select packages in <filename>dselect</filename>.  How can I use it?</p>
 </question>
 <answer>
-<p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>.  A workaround is to entter the following command</p>
+<p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>.  A workaround is to enter the following command</p>
 <codeblock>setenv TERM xterm-color</codeblock>
 <p>before you run <filename>dselect</filename>.</p>
 </answer>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/08 01:08:00';
+$cvs_date = 'Date: 2003/07/08 18:11:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -316,7 +316,7 @@ the Virex folks having made errors in the way they set things up).</p></div>
 </a>
 <a name="dselect-garbage">
 <div class="question"><p><b>Q3.22: I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</b></p></div>
-<div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to entter the following command</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p></div>
+<div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to enter the following command</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p></div>
 </a>
 <a name="perl-undefined-symbol">
 <div class="question"><p><b>Q3.23: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
