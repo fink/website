@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/11/29 17:18:36';
+$cvs_date = 'Date: 2003/01/19 19:13:52';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -81,6 +81,12 @@ umbrella for dual-licensed packages.</li>
 <li><tt><nobr>Restrictive</nobr></tt> - for restrictive licenses.
 Use this for packages that are available from the author in source
 form for free use, but don't allow free redistribution.</li>
+
+<li><tt><nobr>Restrictive/Distributable</nobr></tt> - for restrictive licenses which
+permit distribution of binaries.
+Use this for packages that are available from the author in source
+form, permit distribution of binaries, but have restrictions which
+make them non-open source licenses.</li>
 
 <li><tt><nobr>Commercial</nobr></tt> - for restrictive, commercial licenses.
 Use this for commercial packages (e.g. Freeware, Shareware) that do

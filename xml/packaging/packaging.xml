@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.37 2002/11/29 17:18:36 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.38 2003/01/19 19:13:52 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -392,6 +392,12 @@ umbrella for dual-licensed packages.</li>
 <li><code>Restrictive</code> - for restrictive licenses.
 Use this for packages that are available from the author in source
 form for free use, but don't allow free redistribution.</li>
+
+<li><code>Restrictive/Distributable</code> - for restrictive licenses which
+permit distribution of binaries.
+Use this for packages that are available from the author in source
+form, permit distribution of binaries, but have restrictions which
+make them non-open source licenses.</li>
 
 <li><code>Commercial</code> - for restrictive, commercial licenses.
 Use this for commercial packages (e.g. Freeware, Shareware) that do
