@@ -3,15 +3,15 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.7 2005/03/16 18:01:44 dmacks Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.8 2005/03/17 17:06:50 michga Exp $</cvsid> 
 <preface>
-<p>Ce document contient des indications pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent à Mac OS X version 10.0.x et Darwin 1.3.x. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est actuellement un sur-ensemble de Darwin.</p>
+<p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
 <chapter filename="basics">
 <title>Notions de base</title>
 <shorttitle>Notions de base</shorttitle>
 <section name="heritage"><title>D'où vient Darwin ?</title>
-<p>Darwin est un système d'exploitation de type Unix qui est issu de NeXTStep/OpenStep. La tradition veut qu'il fut initialement créé à partir de la version 4.4BSD Lite. L'héritage du système BSD est encore apparent, en fait, récemment, Darwin a été modernisé avec du code FreeBSD et NetBSD.</p>
+<p>Darwin est un système d'exploitation de type Unix qui est issu de NeXTStep/OpenStep. La tradition veut qu'il fut initialement créé à partir de la version 4.4BSD Lite. L'héritage du système BSD est encore apparent ; en fait Darwin a été modernisé, récemment, avec du code FreeBSD et NetBSD.</p>
 <p>Le noyau Darwin est construit sur une combinaison de Mach 3.0 et de BSD, ainsi que sur des fonctionnalités propriétaires comme la couche de pilote orientée objet IOKit. Bien que Mach ait, au départ, une structure de micro-noyau, le noyau BSD qui est installé au-dessus est monolithique, et les deux sont si imbriqués maintenant que l'on peut considérer l'ensemble comme un seul noyau monolithique.</p>
 <p>Les outils utilisateur et les librairies fournies avec Darwin sont, pour la plupart, issues de BSD par opposition à ceux de Linux qui sont des outils GNU. Toutefois, Apple n'est pas aussi strict que d'autres systèmes BSD et a fait des compromis utiles. Par exemple, Apple fournit aussi bien make BSD que make GNU, la commande make de GNU étant celle installée par défaut.</p>
 </section>
@@ -24,9 +24,10 @@
 <section name="host-type">
 <title>Le type de la machine hôte</title>
 <p>En bref : si configure échoue avec un message d'erreur 'Can't determine host type' - Impossible de déterminer le type d'hôte, copiez config.guess et config.sub, situés dans /usr/share/libtool (/usr/libexec pour des versions antérieures au 10.2), dans le répertoire courant.</p>
-<p>En détail : le monde GNU utilise un format canonique pour spécifier les types de systèmes. Ce format comporte trois parties : le type de la cpu, le fabricant et le système d'exploitation. Parfois, une quatrième partie est ajoutée - dans ce cas la troisième partie indique le noyau, tandis que la quatrième indique l'OS. Toutes les parties sont en minuscules et sont concaténées en utilisant des tirets. Quelques exemples : <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. Le type d'hôte pour Mac OS X 10.0 est <code>powerpc-apple-darwin1.3</code>.</p>
+<p>En détail : le monde GNU utilise un format canonique pour spécifier les types de systèmes. Ce format comporte trois parties : le type de la cpu, le fabricant et le système d'exploitation. Parfois, une quatrième partie est ajoutée - dans ce cas la troisième partie indique le noyau, tandis que la quatrième indique l'OS. Toutes les parties sont en minuscules et sont concaténées en utilisant des tirets. Quelques exemples : <code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>, <code>sparc-sun-solaris2.6</code>. Le type d'hôte pour Mac OS X 10.0 est <code>powerpc-apple-darwin1.3</code>. Pour Mac OS X 10.2, le type d'hôte a la forme <code>powerpc-apple-darwin6.x.0</code>, et pour Mac OS X 10.3 la forme <code>powerpc-apple-darwin7.x.0</code>, où &quot;x&quot; dépend de la version exacte du système opératoire.</p>
 <p>De nombreux paquets utilisant autoconf doivent connaître le type d'hôte du système sur lesquels ils sont compilés. (Note subsidiaire : il existe, en fait, trois types - hôte, build et cible - pour pouvoir gérer la compilation croisée et le portage. En général, ils sont tous les trois identiques). Vous pouvez soit passer le type d'hôte en paramètre au script configure, soit laisser le script déterminer le type d'hôte.</p>
 <p>Le script configure utilise deux autres scripts pour déterminer les types d'hôtes. <filename>config.guess</filename> essaie de deviner le type d'hôte, <filename>config.sub</filename> est utilisé pour valider et donner une forme canonique au type d'hôte. Ces scripts sont maintenus en tant qu'entités séparées, mais sont inclus dans tout paquet qui les utilise. Naguère encore, ces scripts ignoraient totalement Darwin ou Mac OS X. Si vous êtes en présence d'un paquet qui ne reconnaît pas Darwin, vous devez remplacer les config.guess et config.sub inclus dans le paquet. Heureusement, Apple a placé des versions fonctionnelles de ces scripts dans /usr/share/libtool (/usr/libexec pour pre-10.2 OS), il vous suffit donc de les recopier à partir de là.</p>
+<p>Si vous construisez un paquet Fink, vous pouvez utiliser les champs <code>UpdateConfigGuess</code> et / ou <code>UpdateConfigGuessInDirs</code> dans le fichier <filename>.info</filename> de description du paquet, de façon à ce que la mise à jour soit automatique.</p>
 </section>
 <section name="librairies">
 <title>Librairies</title>
@@ -44,13 +45,13 @@
 <shorttitle>Code partagé</shorttitle>
 <section name="lib-and-mod">
 <title>Librairies partagées ou modules chargeables</title>
-<p>Une caractéristique de Mach-O, qui surprend beaucoup de gens, est la distinction stricte entre les librairies partagées et les modules chargeables dynamiquement. Sur les systèmes ELF, cette distinction n'existe pas ; n'importe quelle partie de code partagé peut être utilisée comme librairie ou chargée dynamiquement.</p>
-<p>Les librairies partagées de Mach-O ont un type de fichier MH_DYLIB et une extension <code>.dylib</code>. Elles peuvent être liées avec les options statiques habituelles de l'éditeur de liens, par exemple <code>-lfoo</code> pour libfoo.dylib. Toutefois, elles ne peuvent pas être chargées en tant que modules. (Note subsidiaire : les librairies partagées peuvent être chargées dynamiquement par le biais d'une API. Néanmoins, cette API est différente de l'API pour les lots et sa sémantique la rend inutilisable pour une émulation dlopen(). En particulier, les librairies partagées ne peuvent être déchargées).</p>
+<p>Une caractéristique de Mach-O, qui surprend beaucoup de gens, est la distinction stricte entre les librairies partagées et les modules chargeables dynamiquement. Sur les systèmes ELF, cette distinction n'existe pas ; n'importe quelle partie de code partagé peut être utilisée comme librairie ou chargée dynamiquement. Utilisez <code>otool -hv <em>un_certain_fichier</em></code> pour connaître le type de fichier de <filename>un_certain_fichier</filename>.</p>
+<p>Les librairies partagées de Mach-O ont un type de fichier MH_DYLIB et une extension <code>.dylib</code>. Elles peuvent être liées avec les options statiques habituelles de l'éditeur de liens, par exemple <code>-lfoo</code> pour libfoo.dylib. Toutefois, elles ne peuvent pas être chargées en tant que modules. (Note subsidiaire : les librairies partagées peuvent être chargées dynamiquement par le biais d'une API. Néanmoins, cette API est différente de l'API pour les lots et sa sémantique la rend inutilisable pour une émulation <code>dlopen()</code>. En particulier, les librairies partagées ne peuvent être déchargées).</p>
 <p>Les modules chargeables sont appelés "lots" dans le jargon Mach-O. Ils ont un type de fichier MH_BUNDLE. Ils peuvent avoir n'importe quelle extension, car aucun des éléments concernés n'en tient compte. Apple recommande l'extension <code>.bundle</code>, mais la plupart des logiciels portés utilisent <code>.so</code> au nom de la compatibilité. Les lots peuvent être chargés dynamiquement et déchargés via les API dyld, et il existe une interface qui émule <code>dlopen()</code> au sommet de l'API. Il est impossible de lier des lots comme s'ils étaient des librairies partagées. Toutefois, il est possible de lier un lot avec des librairies partagées réelles ; celles-ci sont automatiquement chargées lorsque le lot est chargé.</p>
 </section>
 <section name="version">
 <title>Numérotation de version</title>
-<p>Sur un système ELF, les numéros de versions sont, en général, ajoutés au nom de la librairie partagée, par exemple : <filename>libqt.so.2.3.0</filename>. Sur Darwin, les numéros de version sont placés entre le nom de la librairie et l'extension, par exemple : <filename>libqt.2.3.0.dylib</filename>. Notez que cela vous permet de demander une version spécifique de librairie à l'édition de liens, en utilisant <code>-lqt.2.3.0</code> dans l'exemple ci-dessus.</p>
+<p>Sur un système ELF, les numéros de versions sont, en général, ajoutés au nom de la librairie partagée, après l'extension, par exemple : <filename>libqt.so.2.3.0</filename>. Sur Darwin, les numéros de version sont placés entre le nom de la librairie et l'extension, par exemple : <filename>libqt.2.3.0.dylib</filename>. Notez que cela vous permet de demander une version spécifique de librairie à l'édition de liens, en utilisant <code>-lqt.2.3.0</code> dans l'exemple ci-dessus.</p>
 <p>Lorsque vous créez une librairie partagée, vous pouvez indiquer un nom à utiliser lors de la recherche de la librairie à l'exécution. C'est une pratique usuelle et cela permet d'installer plusieurs versions majeures d'une librairie en même temps. C'est ce qu'on appelle le <code>soname</code> sur les systèmes ELF. Sur Darwin, la différence est que vous pouvez (et devez) indiquer le chemin complet en même temps que le nom du fichier. Ceci élimine la nécessité des options "rpath" et du système de cache ldconfig/ld.so.cache. Pour utiliser une librairie qui n'est pas encore installée, vous pouvez définir la valeur de la variable d'environnement DYLD_LIBRARY_PATH ; voir la man page dyld pour de plus amples informations.</p>
 <p>Le format Mach-O permet aussi un vrai contrôle du numéro de version mineure, inconnu sur les systèmes ELF. Chaque librairie Mach-O portent deux numéros de versions : une version "courante" et une version "compatible". Les deux numéros de versions sont constitués de trois chiffres séparés par des points, par exemple 1.4.2. Le premier chiffre ne peut être nul. Les second et troisième peuvent être omis, ils ont alors la valeur zéro. Quand aucune version n'est spécifiée, le numéro par défaut est 0.0.0, ce qui est une sorte de valeur passe-partout.</p>
 <p>La version "courante" n'est donnée qu'à titre d'information. La version "compatible" sert au contrôle décrit ci-après. Quand un exécutable est lié, le numéro de version de la librairie est copié dans l'exécutable. Lorsque l'exécutable est lancé, le numéro de version copié dans l'exécutable est comparé à celui de la librairie utilisée. dyld génère une erreur d'exécution et arrête l'exécution du programme, sauf si le numéro de version de la librairie utilisée est égal ou supérieur à celui utilisé durant l'édition de liens.</p>
@@ -61,7 +62,7 @@
 </section>
 <section name="build-lib">
 <title>Construction d'une librairie partagée</title>
-<p>Pour construire une librairie partagée, vous invoquez le compilateur avec l'option <code>-dynamiclib</code>. Voici un exemple qui permettre de mieux comprendre le processus. Nous allons construire une librairie appelée libfoo, composée des fichiers sources source.c et code.c. Le numéro de version est 2.4.5, où 2 est le numéro de révision majeure (changement d'API incompatible), 4 est le numéro de révision mineure (compatible avec un retour à une API antérieure) et 5 est le compteur de révision des bogues (on l'appelle parfois une mini-révision, elle indique des changements totalement compatibles avec l'API). La librairie ne dépend d'aucune autre librairie partagée et sera installée dans /usr/local/lib.</p>
+<p>Pour construire une librairie partagée, vous invoquez le compilateur avec l'option <code>-dynamiclib</code>. Voici un exemple qui permettra de mieux comprendre le processus. Nous allons construire une librairie appelée libfoo, composée des fichiers sources <filename>source.c</filename> et <filename>code.c</filename>. Le numéro de version est 2.4.5, où 2 est le numéro de révision majeure (changement d'API incompatible), 4 est le numéro de révision mineure (compatible avec un retour à une API antérieure) et 5 est le compteur de révision des bogues (on l'appelle parfois une &quot;mini-révision&quot;, elle indique des changements totalement compatibles avec l'API). La librairie ne dépend d'aucune autre librairie partagée et sera installée dans <filename>/usr/local/lib</filename>.</p>
 <codeblock>cc -fno-common -c source.c
 cc -fno-common -c code.c
 cc -dynamiclib -install_name /usr/local/lib/libfoo.2.dylib \
@@ -70,7 +71,7 @@ cc -dynamiclib -install_name /usr/local/lib/libfoo.2.dylib \
 rm -f libfoo.2.dylib libfoo.dylib
 ln -s libfoo.2.4.5.dylib libfoo.2.dylib
 ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
-<p>Observez quelles sont les parties du numéro de version qui sont utilisées et où elles le sont. Notez aussi que l'éditeur de liens statiques utilisera le lien symbolique libfoo.dylib, tandis que l'éditeur de liens dynamique utilisera le lien symbolique libfoo.2.dylib. Il est possible de faire pointer ces liens symboliques sur différentes révisions mineures de la librairie.</p>
+<p>Observez quelles sont les parties du numéro de version qui sont utilisées et où elles le sont. Lors de l'édition de lien avec cette librairie, on utilise normalement le drapeau <code>-lfoo</code>, qui donne accès au lien symbolique <filename>libfoo.dylib</filename>. Quel que soit le lien symbolique ou le fichier utilisé, c'est le <code>nom_d'installation</code> qui est écrit dans le programme. Cela signifie que l'on peut supprimer le lien symbolique &quot;de plus haut niveau&quot; (celui qui est le moins spécifique d'une version donnée) <filename>libfoo.dylib</filename> après compilation. Lors d'une mise à jour mineure, on change juste la cible du lien symbolique <filename>libfoo.2.dylib</filename> utilisé par l'éditeur de lien dynamique.</p>
 </section>
 <section name="build-mod"><title>Construction d'un module</title>
 <p>Pour construire un module chargeable, vous invoquez le compilateur avec l'option <code>-bundle</code>. Si le module utilise des symboles provenant du programme hôte, vous aurez à spécifier <code>-undefined suppress</code> pour autoriser des symboles non définis, ainsi que <code>-flat_namespace</code>, indispensable avec le nouvel éditeur de liens de Mac OS X 10.1. Petit exemple explicatif :</p>
@@ -78,7 +79,7 @@ ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
 cc -fno-common -c code.c
 cc -bundle -flat_namespace -undefined suppress \
  -o mymodule.so source.o code.o</codeblock>
-<p>Remarquez qu'aucun numéro de version n'est utilisé. Il est possible, en théorie, d'en utiliser un, mais, en pratique, cela ne présente aucun intérêt. Notez aussi qu'il n'y a pas de restriction de nom pour les lots. Quelques paquets placent un "lib" avant le nom, car certains systèmes l'exigent ; cela ne présente aucun risque.</p>
+<p>Remarquez qu'aucun numéro de version n'est utilisé. Il est possible, en théorie, d'en utiliser un, mais, en pratique, cela ne présente aucun intérêt. Notez aussi qu'il n'y a pas de restriction de nom pour les lots. Quelques paquets placent un "lib" avant le nom, parce que certains systèmes l'exigent ; cela ne présente aucun risque, car le programme utilise le nom de fichier complet lors du chargement du module.</p>
 </section>
 </chapter>
 <chapter filename="libtool">
@@ -96,14 +97,14 @@ cc -bundle -flat_namespace -undefined suppress \
 <li><p><em>La branche de développement actuelle</em> : c'est la version de développement qui sera un jour publiée en tant que libtool 1.5. Elle résulte de la fusion de la version 1.4 et de la MLB. Elle gére C, C++ et Java (via gcj). Malheureusement, il est difficile de la distinguer de la version 1.4, vous devez tester le numéro de version dans <filename>ltmain.sh</filename>.</p></li>
 </ul>
 <p>En conclusion, libtool 1.3.x et les paquets qui l'utilisent (c'est le cas de la majorité des paquets utilisant libtool) nécessitent une rustine pour construire des librairies partagées sur Darwin. Apple inclut une version modifiée de libtool 1.3.5 dans Mac OS X, mais, dans la plupart des cas, elle ne fonctionne pas correctement. Christoph Pfisterer a amélioré cette version modifiée pour coder en dur le chemin correct et utiliser le numéro de version complet. Les changements ont été incorporés en amont dans les versions définitives et les versions de développement à partir de la version 1.4. Les membres de l'équipe Fink continuent à réaliser des améliorations et à les faire parvenir aux mainteneurs de libtool. Le modèle de numérotation des versions est compatible pour toutes les versions de libtool.</p>
-<p>Note subsidiaire : la librairie libltdl, incluse dans toutes les versions de libtool, ne fonctionne sur Darwin que si dlcompat est installé.</p>
+<p>Note subsidiaire : la librairie libltdl, incluse dans toutes les versions de libtool, ne fonctionne sur Darwin que si dlcompat est installé. Elle est incluse dans Mac OS X à partir de la version 10.3. Pour les versions antérieures, on peut installer la famille de paquets &quot;dlcompat&quot;</p>
 </section>
 <section name="patch-135"><title>Rustine 1.3.5</title>
-<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <link url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">rustine</link> <em>[mise à jour du 09/06/2002]</em> au source de libtool 1.3.5, puis supprimer les fichiers ltconfig et ltmain.sh. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
-<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de ltconfig et ltmain.sh. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <link url="http://fink.sourceforge.net/files/ltconfig">ltconfig</link> (98ko) et <link url="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</link> (110ko) <em>[tous deux mis à jour au 09/06/2002]</em>.</p>
+<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <link url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">rustine</link> <em>[mise à jour du 09/06/2002]</em> au source de libtool 1.3.5, puis supprimer les fichiers <filename>ltconfig</filename> et <filename>ltmain.sh</filename>. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
+<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de <filename>ltconfig</filename> et <filename>ltmain.sh</filename>. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <link url="http://fink.sourceforge.net/files/ltconfig">ltconfig</link> (98ko) et <link url="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</link> (110ko) <em>[tous deux mis à jour au 09/06/2002]</em>.</p>
 </section>
 <section name="fixing-14x"><title>Adaptation de la version 1.4.x</title>
-<p>Il y a au moins trois versions différentes de libtool 1.4.x en usage à l'heure actuelle (1.4.1, 1.4.2, ainsi que des versions de développement plus récentes). Elles posent toutes problème avec Darwin, cependant les modifications à effectuer diffèrent selon la version. Le paquet libtool 1.4 fourni via Fink possèdent déjà toutes les rustines nécessaires. Cependant, il vous faudra encore modifier vous-même les fichiers ltmain.sh et configure des paquets concernés pour qu'ils fonctionnent correctement.</p>
+<p>Il y a au moins trois versions différentes de libtool 1.4.x en usage à l'heure actuelle (1.4.1, 1.4.2, ainsi que des versions de développement plus récentes). Elles posent toutes problème avec Darwin, cependant les modifications à effectuer diffèrent selon la version. Le paquet &quot;libtool 1.4&quot; fourni via Fink possèdent déjà toutes les rustines nécessaires. Cependant, il vous faudra encore modifier vous-même les fichiers <filename>ltmain.sh</filename> et <filename>configure</filename> des paquets concernés pour qu'ils fonctionnent correctement.</p>
 <ol>
 <li>
 <em>Le bogue du flat_namespace</em> : ce problème ne survient que si vous utilisez libtool sur Mac OS X10.1 ou une version plus récente. Dans ce cas, libtool tente d'utiliser l'option <code>-undefined suppress</code> pour autoriser les symboles non définis, mais ne spécifie pas, en même temps, l'option <code>-flat_namespace</code>. À partir de la version 10.1, cela ne fonctionne plus. La rustine à appliquer est de la forme :
@@ -123,7 +124,7 @@ diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
 </codeblock>
 </li>
 <li>
-<em>Le bogue du module chargeable</em> : ce bogue est provoqué par le comportement non-standard de zsh (qui est le shell par défaut dans les versions 10.0 et 10.1 ; dans la version 10.2, il est supposé être remplacé par bash). Le comportement non standard de zsh en matière d'utilisation des guillemets empêche de construire correctement des modules chargeables ; ce sont des librairies qui sont construites à la place (et, à la différence de ce qui se passe sur Linux, ce sont des choses réellement différentes sur Darwin). La rustine à appliquer pour résoudre ce problème ( tronquée, donc inutilisable sans modification) est de la forme :
+<em>Le bogue du module chargeable</em> : ce bogue est provoqué par le comportement non-standard de zsh (qui est le shell par défaut dans les versions 10.0 et 10.1 ; à partir de la version 10.2, il est remplacé par bash). Le comportement non standard de zsh en matière d'utilisation des guillemets empêche de construire correctement des modules chargeables ; ce sont des librairies qui sont construites à la place (et, à la différence de ce qui se passe sur Linux, ce sont des choses réellement différentes sur Darwin). La rustine à appliquer pour résoudre ce problème ( tronquée, donc inutilisable sans modification) est de la forme :
 <codeblock>
 diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
 --- gnome-core-1.4.0.6.old/configure	Sun Jan 27 08:19:48 2002
@@ -194,7 +195,7 @@ CompileScript: echo "nothing to do"
 </codeblock>
 </li>
 <li>Dans le passé, certains paquets de Fink utilisaient la construction <code>lib(foo|bar).dylib</code> pour faire référence à deux librairies simultanément ; ceci ne fonctionne pas avec bash (et l'alternative <code>lib{foo,bar}.dylib</code> ne fonctionne pas avec zsh). La solution : écrire les noms intégralement.</li>
-<li>Avec bash, une rustine de libtool est nécessaire dans de nombreux cas, pour éviter que les librairies ne soient construites sans numéro de version. <em> Note : vous n'avez pas besoin de cette rustine avec libtool-1.3.5, par exemple, si vous utilisez UpdateLibtool: True </em>. Le symptome : quand vous construisez sous bash, vous voyez
+<li>Avec bash, une rustine de libtool est nécessaire dans de nombreux cas, pour éviter que les librairies ne soient construites sans numéro de version. <em> Note : vous n'avez pas besoin de cette rustine avec libtool-1.3.5, par exemple, si vous utilisez UpdateLibtool: True </em>. Le symptome : quand vous construisez sous bash, vous voyez :
 <codeblock>
 ../libtool: test: too many arguments
 </codeblock>
@@ -255,6 +256,40 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 <title>Préparation pour la version 10.3</title>
 <shorttitle>Préparation pour 10.3</shorttitle>
 <section name="perl"><title>Perl</title>
+<p>Sous Mac OS X 10.2, <filename>/usr/bin/perl</filename> correspondait à la version 5.6.0 de perl et l'architecture était représentée par la chaîne de caractères &quot;darwin&quot;. Sous Mac OS X 10.3, <filename>/usr/bin/perl</filename> correspond à la version 5.8.1 de perl, et l'architecture est représentée par la chaîne de caractères &quot;darwin-thread-multi-2level&quot;. Ces changements n'affectent <em>probablement</em> pas l'utilisation courante de l'exécutable perl lors de la création de paquets, car chaque exécutable perl sait où trouver ses propres modules. Les mainteneurs de paquets de module perl (&quot;-pm&quot;) qui suivent les <link url="http://fink.sourceforge.net/packaging/policy.php#perlmods">règles d'empaquetage des modules perl</link> en vigueur et celles des scripts <code>CompileScript</code> et <code>InstallScript</code> n'ont pas de souci à se faire.</p>
+</section>
+<section name="typedef"><title>Nouvelles définitions de symboles</title>
+<p>À partir de Mac OS X 10.3, il existe une définition complète du type <code>socklen_t</code> type. Pour l'utiliser, il faut ajouter au programme :</p>
+<codeblock>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+</codeblock>
+</section>
+<section name="system-libs"><title>Nouvelles librairies systèmes incorporées</title>
+<p>Mac OS X 10.3 comprend plusieurs librairies qui n'existaient pas dans les versions précédentes du système, et étaient donc fournies en tant que paquets Fink. Il s'agit de :</p>
+<itemtable>
+<itemtable labeld="Notes" labelt="Librairies">
+<item>
+<itemt>libpoll</itemt>
+<itemd>
+<p>Les fichiers <filename>/usr/lib/libpoll.dylib</filename> et <filename>/usr/include/poll.h</filename> sont maintenus inclus, toutefois l'implémentation de cette librairie sous Mac OS X n'est pas complète. Si elle correspond à vos besoins, vous pouvez supprimer les dépendances des paquets Fink &quot;libpoll&quot; et &quot;libpoll-shlibs&quot;. Le code de la librairie est incorporé dans libSystem ; cette librairie est toujours liée automatiquement. Cela signifie que le drapeau <code>-lpoll</code> n'est pas nécessaire si vous désirez utiliser l'implémentation Mac OS X. Sachez que Mac OS X fournit un fichier <filename>libpoll.dylib</filename> ; il se peut donc que <code>-lpoll</code> donne un résultat différent selon que le paquet Fink &quot;libpoll&quot; est installé ou non.</p>
+</itemd>
+</item>
+<item>
+<itemt>libdl</itemt>
+<itemd>
+<p>Les fichiers <filename>/usr/lib/libdl.dylib</filename> et <filename>/usr/include/dlfcn.h</filename> sont inclus maintenant ; il n'y a donc plus besoin de dépendre des paquets Fink &quot;dlcompat&quot;, &quot;dlcompat-dev&quot; et &quot;dlcompat-shlibs&quot;. Le code de la librairie est incorporé dans libSystem ; cette librairie est toujours liée automatiquement. Cela signifie que le drapeau <code>-ldl</code> n'est plus nécessaire (mais son utilisation n'a aucun effet).</p>
+</itemd>
+</item>
+<item>
+<itemt>GNU getopt</itemt>
+<itemd>
+<p>Cette librairie, qui comprend la fonction <code>getopt_long()</code>, a été incorporée dans libSystem et <filename>/usr/include/getopt.h</filename> ; vous n'avez donc pas besoin d'utiliser les paquets Fink &quot;libgnugetopt&quot; et &quot;libgnugetopt-shlibs&quot;. Comme libSystem est automatiquement liée et que le répertoire <filename>/usr/include</filename> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <code>-lgnugetopt</code> et <code>-I/sw/include/gnugetopt</code> qui avaient été ajoutés pour permettre d'accéder au paquet Fink &quot;libgnugetopt&quot;.</p>
+</itemd>
+</item>
+</itemtable>
+<p>Lors de la migration d'un paquet vers Mac OS X 10.3, essayez de supprimer ces dépendances obsolètes, car il se peut que ces paquets soient supprimés des arborescences futures. Cela signifie qu'il faut un fichier de description différent pour chaque arborescence. Comme toujours, le champ <code>Revision</code> doit être incrémenté lors de changement fait sur un paquet. De cette façon, les utilisateurs qui passent de Mac OS X 10.2 à Mac OS X 10.3 voient les paquets spécifiques à la branche 10.3 comme &quot;plus récents&quot; que les paquets de l'arborescence 10.2. Par convention, le champ <code>Revision</code> doit être incrémenté de 10 unités lors d'une migration vers un arbre plus récent de façon à laisser une marge pour pouvoir mettre à jour les paquets des branches moins récentes.</p>
+<p>Lors du test d'un paquet en migration, n'oubliez pas de désinstaller les paquets que vous avez supprimé du champ <code>BuildDepends</code>, pour éviter que le compilateur lie avec les librairies Fink installées.</p>
 </section>
 </chapter>
 </document>
