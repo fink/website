@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/08/18 21:28:30';
+$cvs_date = 'Date: 2003/08/18 23:43:09';
 
 $metatags = '';
 
@@ -19,8 +19,19 @@ Fink relies on MD5 checksums when downloading software, and we have had
 no reports of incorrect checksums in Fink packages.  The Free Software
 Foundation is in the process of verifying the integrity of all of the
 source code distributed from that ftp site.  As of this writing, the source
-code for the Fink package <code>guile16</code> has not yet been verified,
-so it may be difficult to install that package at present.
+code for the following Fink packages have not yet been verified:
+<code>autoconf2.54</code>,
+<code>emacs21</code>,
+<code>gprolog</code>,
+<code>groff</code>,
+<code>guile16</code>,
+<code>help2man</code>,
+<code>jwhois</code>,
+<code>libtool14</code>,
+<code>libosip1</code>,
+<code>sed</code>,
+<code>slib</code>.
+It may be difficult to install those packages at present.
 </p>
                 <a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
 <p><b>Quick Summary: DO NOT INSTALL THIS UPDATE.</b></p>

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 18 Aug 2003 17:28:44 EDT</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2003 19:43:23 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -22,8 +22,19 @@ Fink relies on MD5 checksums when downloading software, and we have had
 no reports of incorrect checksums in Fink packages.  The Free Software
 Foundation is in the process of verifying the integrity of all of the
 source code distributed from that ftp site.  As of this writing, the source
-code for the Fink package guile16 has not yet been verified,
-so it may be difficult to install that package at present.
+code for the following Fink packages have not yet been verified:
+autoconf2.54,
+emacs21,
+gprolog,
+groff,
+guile16,
+help2man,
+jwhois,
+libtool14,
+libosip1,
+sed,
+slib.
+It may be difficult to install those packages at present.
 
                 </description>
   </item>
