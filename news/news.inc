@@ -4,7 +4,7 @@
 		The full announcement can be read on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</a> mailing list.
 		</p>
 <p>(If you are having trouble upgrading a source installation, consult
-<a href="<?php print $root; ?>http://fink.sourceforge.net/download/fix-upgrade.php">these
+<a href="http://fink.sourceforge.net/download/fix-upgrade.php">these
 special instructions</a>.)</p>
 
 		<a name="2003-04-09 Interview on OSNews.com"><span class="news-date">2003-04-09: </span><span class="news-headline">Interview on OSNews.com</span></a><?php gray_line(); ?>
