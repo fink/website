@@ -15,7 +15,7 @@ include_once "header.ja.inc";
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはログインスクリプト (例 <code>~/.cshrc</code>) が "<code>echo Hello</code>" であるとか <code>xttitle</code> といったことをターミナルに書くと発生します。
 いちばん簡単な解決方法は、問題の行をコメントアウトすることです。
 </p><p>もし echo を残しておきたいなら、次のようにすることもできます:</p><pre>if ( $?prompt) then
-echo Hello
+       echo Hello
 endif</pre></div>
 </a>
 <a name="cant-install-xfree">
@@ -58,7 +58,6 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 <div class="question"><p><b><? echo FINK_Q ; ?>7.4: KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
 </a>
-
 <a name="libiconv-gettext">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>libiconv</code> が更新できません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev

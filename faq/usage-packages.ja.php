@@ -174,7 +174,6 @@ sudo apt-get install fink</pre>
 		</li>
 	</ul></div>
 </a>
-
 <a name="wants-xfree86-on-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.12: 
     10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
@@ -198,7 +197,6 @@ sudo apt-get install fink</pre>
     を参照してください。
     </p></div>
 </a>
-
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
@@ -215,7 +213,7 @@ xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</pre><p>
 		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
-		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のような代替物を再インストールします。
+		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のようなX互換パッケージを再インストールします。
 		</p><p>
 		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
 		</p><pre>fink-virtual-pkgs --debug</pre><p>で何が不足しているかの情報が得られます。</p><p>
@@ -229,7 +227,6 @@ fink selfupdate; fink index</pre><p>
           </li>
         </ul></div>
 </a>
-
 
 <? include_once "../footer.inc"; ?>
 

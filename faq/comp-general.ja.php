@@ -53,7 +53,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 </pre><p>ここで <b>filename</b> はインストールしようとしているパッケージ用の .deb ファイルです。</p></div>
 </a>
 <a name="weak_lib">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.6: December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: I get messages about "weak libraries"</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.6: December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: "weak libraries"</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは December 2002 Tools のものです。
 次のようなメッセージが出ることがあります (libgdk-pixbuf を例に選んでいます):</p><p>
 <code>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</code>
@@ -106,7 +106,8 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 <div class="question"><p><b><? echo FINK_Q ; ?>6.10: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このメッセージは重要なヒントです。
-メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
+メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; 
+rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
 例えば、この例では:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
 <a name="fc-atlas">
@@ -115,10 +116,11 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>crt1.o</code> が見つからないというメッセージが出ます。
+<div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>crt1.o</code> が見つからない、
+あるいは、"C compiler cannot create executables" というメッセージが出ます。
 これはどこにありますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このヘッダは Developer Tools の DevSDK によって提供されるファイルです。
-<code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
+<code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p><p>"cannot create executables" エラーは、Developer Tools のバージョンが 以前のバージョンの OS 用である場合にも発生します。</p></div>
 </a>
 <a name="multiple-dependencies">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</b></p></div>
@@ -131,9 +133,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 <div class="question"><p><b><? echo FINK_Q ; ?>6.14: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは dpkg データベースが壊れてしまったか、クラッシュか他のリカバーできないエラーが原因です。
-以前のバージョンのデータベースをコピーして直すことができます:</p><pre>
-sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
-</pre><p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p></div>
+以前のバージョンのデータベースをコピーして直すことができます:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p></div>
 </a>
 <a name="freetype-problems"> 
 <div class="question"><p><b><? echo FINK_Q ; ?>6.15: freetype に関係したエラーが出ます。</b></p></div> 
@@ -243,11 +243,11 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 		と書いてあるだけで、しかもそのファイルはそこに存在しません。
 	</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-		これは、 Fink が <q>Master</q> と呼ばれるものを使おうとしたために発生しています。
+		これは、 Fink が <q>マスター</q> と呼ばれるものを使おうとしたために発生しています。
 		上流サイトが移動しても Fink パッケージのソースが入手できるための仕組みです。
 		この問題は、新しい上流バージョンのパッケージがリリースされたが、
 		まだ Master ミラーに反映されていない場合によくおこります。
-	</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
+	</p><p>これを直すには、 <code>fink configure</code> を実行し、マスターミラーを最後に検索するように設定を変更します。</p></div>
 </a>
 <a name="compile-options">
 	<div class="question"><p><b><? echo FINK_Q ; ?>6.22: パッケージをビルドするときに、 Fink に違うオプションを使わせたい</b></p></div>
@@ -257,7 +257,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
 			<a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> 
 			と <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a> をお読みください。
-		</p><p><b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
+		</p><p><b>注記:</b>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>

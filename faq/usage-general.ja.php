@@ -128,7 +128,6 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 	これ以外の選択は、 <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a> を参照してください。
 	</p></div>
 </a>
-
 <a name="no-display">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.6: アプリケーションを実行しようとすると、
 "cannot open display:"
@@ -144,7 +143,6 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
-
 <a name="virtpackage">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.8: 
 	  <code>system-*</code> "virtual packages" というのを時々見かけますが、
@@ -221,7 +219,6 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 	  </li>
 	</ul></div>
 </a>
-
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-packages.php?phpLang=ja">9. パッケージ使用上の問題 - 特定のパッケージ</a></p>
 <? include_once "../footer.inc"; ?>

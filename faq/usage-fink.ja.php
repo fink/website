@@ -109,7 +109,6 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 これで Fink のパッケージリストがアップデートされます。
 この後、 rsync に戻したい場合、 <code>fink selfupdate-rsync</code> を実行します。</p></div>
 </a>
-
 <a name="sudo">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.9: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> sudo がパスワードを聞いてこないように設定することができます。
@@ -156,7 +155,8 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>あ�
 cvs update: cannot open CVS/Entries for reading: No such file or directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
-cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No such file or directory
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No 
+such file or directory
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
 </pre><p>が出ます。この場合は cvs ディレクトリをリセットする必要があります。コマンド:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
@@ -258,15 +258,16 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 。この時点ではまだインストールはされていません。</p><p>.deb ファイルを作成したら、ファイルを再構築することができます。
 まず、 root になるために <code>sudo -s</code> と入力します (必要があれば管理ユーザーパスワードを入力する) 。
 次に、このコマンドを入力します (一行で - 画面上では複数行になっていますが)
-</p><pre>dpkg -c <b>full-path-to-debfile</b>
-  | awk '{if ($6 == "./"){ print "/."; } else if (substr($6, length($6), 1) == "/")
-    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c
-        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk '{if
-        ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) ==
-        "/") {print substr($6, 2, length($6) - 2); } else { print substr($6,
-        2, length($6) - 1);}}' &gt;
-        /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
+</p><pre>dpkg -c <b>full-path-to-debfile</b>  | awk '{if ($6 == "./"){ print "/."; } \
+else if (substr($6, length($6), 1) == "/") \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \
+&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+'{if ($6 == "./") { print "/."; } \
+else if (substr($6, length($6), 1) == "/") \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
 </a>
 <a name="error-nineteen">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</b></p></div>
@@ -397,7 +398,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 「<b>情報を見る</b>」し、 "所有権を無視する" を外します。
 </p></div>
 </a>
-
 <a name="mirror-gnu">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.29: 
 	Fink がパッケージを更新しません。
@@ -420,7 +420,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 	これを削除するには:
 	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
 </a>
-
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>

@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.24 2004/10/13 23:54:06 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.25 2004/12/10 01:52:20 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -450,7 +450,6 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 この後、 rsync に戻したい場合、 <code>fink selfupdate-rsync</code> を実行します。</p>
 </answer>
 </faqentry>
-
 <faqentry name="sudo" >
 <question>
 <p>sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</p>
@@ -540,7 +539,8 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
 cvs update: cannot open CVS/Entries for reading: No such file or directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
-cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No such file or directory
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No 
+such file or directory
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
 </codeblock>
@@ -699,17 +699,18 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 まず、 root になるために <code>sudo -s</code> と入力します (必要があれば管理ユーザーパスワードを入力する) 。
 次に、このコマンドを入力します (一行で - 画面上では複数行になっていますが)
 </p>
-<codeblock>dpkg -c <em>full-path-to-debfile</em>
-  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
-    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  > /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
+<codeblock>dpkg -c <em>full-path-to-debfile</em>  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } \
+else if (substr($6, length($6), 1) == &quot;/&quot;) \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \
+&gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
 <p>例えば、</p>
-        <codeblock>dpkg -c
-        /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk '{if
-        ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) ==
-        "/") {print substr($6, 2, length($6) - 2); } else { print substr($6,
-        2, length($6) - 1);}}' &gt;
-        /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+<codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+'{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } \
+else if (substr($6, length($6), 1) == &quot;/&quot;) \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
 <p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p>
 </answer>
 </faqentry>
@@ -910,7 +911,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 </p>
 </answer>
 </faqentry>
-
 <faqentry name="mirror-gnu">
 <question>
 	<p>
@@ -947,7 +947,6 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 	<codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
 	</answer>
 </faqentry>
-
 </chapter>
 <chapter filename="comp-general" >
 <title>コンパイルの問題 - 一般</title>
@@ -1029,7 +1028,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 </faqentry>
 <faqentry name="weak_lib" >
 <question>
-<p>December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: I get messages about &quot;weak libraries&quot;</p>
+<p>December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: &quot;weak libraries&quot;</p>
 </question>
 <answer>
 <p>これは December 2002 Tools のものです。
@@ -1112,7 +1111,8 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <answer>
 <p>このメッセージは重要なヒントです。
 メッセージはこのようなものだと思われます:</p>
-<codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
+<codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; 
+rerun ranlib(1) (can't load from it)</codeblock>
 <p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
 例えば、この例では:</p>
 <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
@@ -1129,12 +1129,14 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </faqentry>
 <faqentry name="basic-headers" >
 <question>
-<p><filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>crt1.o</filename> が見つからないというメッセージが出ます。
+<p><filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>crt1.o</filename> が見つからない、
+あるいは、&quot;C compiler cannot create executables&quot; というメッセージが出ます。
 これはどこにありますか?</p>
 </question>
 <answer>
-<p>このヘッダは Developer Tools の DevSDK によって提供されるファイルです。
+<p>これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
 <filename>/Library/Receipts/DevSDK.pkg</filename> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p>
+<p>&quot;cannot create executables&quot; エラーは、Developer Tools のバージョンが 以前のバージョンの OS 用である場合にも発生します。</p>
 </answer>
 </faqentry>
 <faqentry name="multiple-dependencies" >
@@ -1150,15 +1152,13 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </faqentry>
 <faqentry name="dpkg-parse-error" >
 <question>
-<p>"dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+<p>&quot;dpkg: parse error, in file `/sw/var/lib/dpkg/status'&quot;
 というメッセージが出て、何もインストールできません!</p>
 </question>
 <answer>
 <p>これは dpkg データベースが壊れてしまったか、クラッシュか他のリカバーできないエラーが原因です。
 以前のバージョンのデータベースをコピーして直すことができます:</p>
-<codeblock>
-sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
-</codeblock>
+<codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
 <p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p>
 </answer>
 </faqentry>
@@ -1254,7 +1254,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </faqentry>
 <faqentry name="system-java">
 <question>
-<p>Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
+<p>Fink が <code>Failed: Can't resolve dependency &quot;system-java14-dev&quot;</code>
 と言っていますが、そのようなパッケージはありません。
 </p>
 </question>
@@ -1314,12 +1314,12 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </question>
 <answer>
 	<p>
-		これは、 Fink が <quote>Master</quote> と呼ばれるものを使おうとしたために発生しています。
+		これは、 Fink が <quote>マスター</quote> と呼ばれるものを使おうとしたために発生しています。
 		上流サイトが移動しても Fink パッケージのソースが入手できるための仕組みです。
 		この問題は、新しい上流バージョンのパッケージがリリースされたが、
 		まだ Master ミラーに反映されていない場合によくおこります。
 	</p>
-	<p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p>
+	<p>これを直すには、 <code>fink configure</code> を実行し、マスターミラーを最後に検索するように設定を変更します。</p>
 </answer>
 </faqentry>
 <faqentry name="compile-options">
@@ -1334,7 +1334,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			<link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> 
 			と <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link> をお読みください。
 		</p>
-		<p><em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
+		<p><em>注記:</em>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p>
 	</answer>
 </faqentry>
 </chapter>
@@ -1351,7 +1351,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </p>
 <p>もし echo を残しておきたいなら、次のようにすることもできます:</p>
 <codeblock>if ( $?prompt) then
-echo Hello
+       echo Hello
 endif</codeblock>
 </answer>
 </faqentry>
@@ -1427,7 +1427,6 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
 <p>このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p>
 </answer>
 </faqentry>
-
 <faqentry name="libiconv-gettext">
 <question>
 	<p><code>libiconv</code> が更新できません。</p>
@@ -1441,7 +1440,6 @@ fink install libiconv</codeblock>
 </answer>
 </faqentry>
 </chapter>
-
 <chapter filename="usage-general" >
 <title>パッケージ使用上の問題 - 一般</title>
 <shorttitle>使用法 (1)</shorttitle>
@@ -1605,7 +1603,6 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
 	</p>
 </answer>
 </faqentry>
-
 <faqentry name="no-display" >
 <question>
 <p>アプリケーションを実行しようとすると、
@@ -1636,7 +1633,6 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 <p>注記: SourceFourge の ID が必要です。</p>
 </answer>
 </faqentry>
-
 <faqentry name="virtpackage">
 <question>
 	<p>
@@ -1722,7 +1718,6 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 	</ul>
 </answer>
 </faqentry>
-
 </chapter>
 <chapter filename="usage-packages" >
 <title>パッケージ使用上の問題 - 特定のパッケージ</title>
@@ -1956,7 +1951,6 @@ sudo apt-get install fink</codeblock>
 	</ul>
 </answer>
 </faqentry>
-
 <faqentry name="wants-xfree86-on-upgrade">
 <question>
     <p>
@@ -1989,7 +1983,6 @@ sudo apt-get install fink</codeblock>
     </p>
 </answer>
 </faqentry>
-
 <faqentry name="special-x11-debug">
 <question>
 	<p>まだ X11 と Fink の問題が解決されません。</p>
@@ -2011,7 +2004,7 @@ rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
         <p>
 		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
-		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のような代替物を再インストールします。
+		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のようなX互換パッケージを再インストールします。
 		</p>
         <p>
 		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
@@ -2031,6 +2024,5 @@ fink selfupdate; fink index</codeblock>
         </ul>
 </answer>
 </faqentry>
-
 </chapter>
 </document>
