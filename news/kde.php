@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/30 15:06:24 $';
+$cvs_date = '$Date: 2002/05/30 15:17:59 $';
 
 include "header.inc";
 ?>
@@ -175,7 +175,7 @@ Screenshots:
  <b><tt>~/.xinitrc</tt></b> file with the following line in it:
 </p>
 <p>
-  <nobr><b><tt>source /sw/bin/init.sh</tt></b></nobr>
+  <nobr><b><tt>source /sw/bin/init.sh</tt></b></nobr><br />
   <nobr><b><tt>/sw/bin/startkde</tt></b></nobr>
 </p>
 <p>
