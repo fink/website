@@ -4,7 +4,7 @@
 <article filename="usage">
 <title>Fink Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.12 2002/08/11 12:30:12 fingolfin Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.13 2002/10/07 13:33:22 fingolfin Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
@@ -23,9 +23,9 @@ You'll also need to run <code>rehash</code> because tcsh caches the
 list of available commands internally.
 </p>
 <p>
-If you use a Bourne type shell (e.g. sh, bash, zsh), use
-/sw/bin/init.sh instead.
+If you use a Bourne type shell (e.g. sh, bash, zsh), use instead:
 </p>
+<codeblock>source /sw/bin/init.sh</codeblock>
 <p>
 Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
 your path so you can use X11 when it is installed.

@@ -1,14 +1,14 @@
 <?
 $title = "Usage";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/08/11 12:30:12';
+$cvs_date = 'Date: 2002/10/07 13:33:22';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.12 2002/08/11 12:30:12 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
+<h1>Fink Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.13 2002/10/07 13:33:22 fingolfin Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -25,9 +25,9 @@ You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
 list of available commands internally.
 </p>
 <p>
-If you use a Bourne type shell (e.g. sh, bash, zsh), use
-/sw/bin/init.sh instead.
+If you use a Bourne type shell (e.g. sh, bash, zsh), use instead:
 </p>
+<pre>source /sw/bin/init.sh</pre>
 <p>
 Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
 your path so you can use X11 when it is installed.
