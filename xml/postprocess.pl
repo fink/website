@@ -15,6 +15,7 @@ if ($text =~ m|Id: \S+ \S+ (\d{2,4}/\d{1,2}/\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}) (\S
   $tag_date = "Date: $1";
 }
 
+$text =~ s|<\!DOCTYPE[^>]+>\n||g;
 $text =~ s|<html>.*<head>.*<title>|<?\n\$title = "|s;
 while ($text =~ s|(</title>.*[^\\])'(.*</head>)|$1\\'$2|s) {
 }

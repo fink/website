@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.13 2002/04/13 21:14:22 fingolfin Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.14 2002/04/13 22:10:56 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -452,7 +452,7 @@ mode.
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<pairtable labelt="Install Type" labeld="Fink packages">
+<itemtable labelt="Install Type" labeld="Fink packages">
 
 <item><itemt>4.1.0 official binaries</itemt>
 <itemd><p><code>system-xfree86</code> only</p></itemd></item>
@@ -482,7 +482,7 @@ unstable)</p></itemd></item>
 <item><itemt>4.1.0 base system built via Fink + binary rootless server</itemt>
 <itemd><p><code>xfree86-base</code> only</p></itemd></item>
 
-</pairtable>
+</itemtable>
 </section>
 
 

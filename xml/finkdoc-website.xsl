@@ -191,13 +191,6 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 
 <xsl:template match="itemtable">
 <table border="0" cellpadding="0" cellspacing="10">
-<tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr>
-<xsl:apply-templates select="item" />
-</table>
-</xsl:template>
-
-<xsl:template match="pairtable">
-<table border="0" cellpadding="0" cellspacing="10">
 <tr valign="bottom"><th align="left"><xsl:value-of select="@labelt" /></th><th align="left"><xsl:value-of select="@labeld" /></th></tr>
 <xsl:apply-templates select="item" />
 </table>

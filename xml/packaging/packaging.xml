@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.25 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.26 2002/04/13 22:10:56 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -205,7 +205,7 @@ To make life easier, Fink supports a set of expansions that are
 performed on some fields.
 The available expansions are:
 </p>
-<pairtable labeld="" labelt="">
+<itemtable labeld="" labelt="">
 <item><itemt>%n</itemt>
 <itemd>
 <p>
@@ -306,7 +306,7 @@ the parameters for <em>c</em>onfigure: <code>--prefix=%p</code> plus anything
 specified with ConfigureParams
 </p>
 </itemd></item>
-</pairtable>
+</itemtable>
 
 </section>
 

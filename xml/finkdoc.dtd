@@ -15,7 +15,7 @@
 <!ELEMENT cvsid ( #PCDATA ) >
 <!ELEMENT preface ( p+ ) >
 
-<!ELEMENT section (title?, ( codeblock | itemtable | ol | p | pairtable | ul )*) >
+<!ELEMENT section (title?, ( codeblock | itemtable | ol | p | ul )*) >
 <!ATTLIST section name NMTOKEN #IMPLIED >
 
 
@@ -45,10 +45,8 @@
 <!ELEMENT li ( #PCDATA | code | codeblock | em | link | p )* >
 
 <!ELEMENT itemtable ( item+ ) >
-
-<!ELEMENT pairtable ( item+ ) >
-<!ATTLIST pairtable labeld CDATA #REQUIRED >
-<!ATTLIST pairtable labelt CDATA #REQUIRED >
+<!ATTLIST itemtable labeld CDATA "Value" >
+<!ATTLIST itemtable labelt CDATA "Field" >
 
 <!ELEMENT item ( itemt, itemd ) >
 <!ELEMENT itemt ( #PCDATA | code | em )* >
