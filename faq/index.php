@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/13 09:09:23';
+$cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -38,6 +38,8 @@ Debian project? Are you porting Debian Linux to Mac OS X?</a></li>
 Apple?</a></li>
 <li><a href="relations.php#openosx">What is your relation with
 OpenOSX.com?</a></li>
+<li><a href="relations.php#forked">What is your relation with
+macosx.forked.net?</a></li>
 </ul>
 <li><a href="install.php"><b>Installation Questions</b></a></li>
 <ul>
@@ -85,7 +87,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.17 2001/10/13 09:09:23 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.18 2001/10/23 17:51:49 chrisp Exp $</i></p>
 
 
 <?

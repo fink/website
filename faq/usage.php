@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/13 09:09:23';
+$cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="packages.php" title="Problems With Certain Packages"><link rel="prev" href="install.php" title="Installation Questions">';
 
@@ -21,7 +21,7 @@ Example:
 If you're using the binary distribution, <tt><nobr>dselect</nobr></tt> gives
 you a nice browsable listing of available packages.
 Note that you must run it as root if you want to select and install
-packages from withing dselect.
+packages from within dselect.
 </p><p>
 There's also the <a href="http://fink.sourceforge.net/pdb/">package
 database</a> at the website.

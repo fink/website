@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Installation";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/13 09:09:23';
+$cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage.php" title="Usage Questions"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -15,10 +15,15 @@ include "header.inc";
 <a name="proxy"><div class="question"><p><b>Q: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Fink 0.2.3 and later ask you for proxy and firewall settings on
-installation.
-If you're upgrading from an older version, run <tt><nobr>fink
-configure</nobr></tt> to be asked these questions.
+The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
+are passed on to <tt><nobr>wget</nobr></tt> resp. <tt><nobr>curl</nobr></tt>.
+If you were not asked for proxies on first time installation, you can
+run <tt><nobr>fink configure</nobr></tt> to set it up.
+You can also run that command at any time to reconfigure the
+<tt><nobr>fink</nobr></tt> command.
+These settings do not apply to <tt><nobr>apt-get</nobr></tt> and
+<tt><nobr>dselect</nobr></tt>, though.
+Investigations continue...
 </p></div></a>
 
 <a name="head"><div class="question"><p><b>Q: I'm getting a strange usage message
@@ -35,9 +40,6 @@ system is case-insensitive.
 Makefiles.
 You need to get the original <tt><nobr>head</nobr></tt> executable back if you
 want to use Fink.
-</p><p>
-Future releases of Fink will check the system before the bootstrap
-starts to catch this error.
 </p></div></a>
 
 <a name="moving"><div class="question"><p><b>Q: Can I move Fink to another

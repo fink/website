@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/13 09:09:23';
+$cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="install.php" title="Installation Questions"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -69,8 +69,20 @@ Thanks Apple!
 <a name="openosx"><div class="question"><p><b>Q: What is your relation with
 OpenOSX.com?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Read this <a href="http://fink.sourceforge.net/pr/openosx.php">public
-statement</a>.
+They used Fink to build the first release of their GIMP CD and refuse
+go acknowledge that properly.
+Read the <a href="http://fink.sourceforge.net/pr/openosx.php">public
+statement</a> for details.
+</p></div></a>
+
+
+<a name="forked"><div class="question"><p><b>Q: What is your relation with
+macosx.forked.net?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+That site redistributes some Fink packages as Installer.app packages,
+unchanged but with their own boilerplate that doesn't mention Fink.
+Read the <a href="http://fink.sourceforge.net/pr/forked.php">public
+statement</a> for details.
 </p></div></a>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/13 09:09:23';
+$cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="relations.php" title="Relations with Other Projects"><link rel="prev" href="index.php" title="F.A.Q. Contents">';
 
@@ -30,12 +30,23 @@ Finches and their beaks from school, and well, that's it...</p></div></a>
 from the BSD port mechanism (this includes OpenPackages and
 GNU-Darwin)?</b></p></div>
 <div class="answer"><p><b>A:</b> Some main advantages:</p><ul>
-<li><p>It's written in Perl, not make/shell. Thus it doesn't rely on
-special features only found in BSD make. There is no need to flag
-packages that need GNU make to build.</p></li>
-<li><p>dpkg provides sophisticated management for binary packages -
-smooth updating, special handling for configuration files, virtual
-packages and other advanced dependencies.</p></li>
+<li><p>
+It's written in Perl, not make/shell.
+Thus it doesn't rely on special features only found in BSD make.
+There is no need to flag packages that need GNU make to build.
+</p></li>
+<li><p>
+dpkg provides sophisticated management for binary packages - smooth
+updating, special handling for configuration files, virtual packages
+and other advanced dependencies.
+</p></li>
+<li><p>
+Fink doesn't install into /usr/local unless explicitly requested and
+doesn't require fiddling with /usr/bin/make or other system-provided
+commands.
+That makes it safer to use and reduces interference with Mac OS X and
+third-party packages to a minimum.
+</p></li>
 </ul></div></a>
 
 <a name="usr-local"><div class="question"><p><b>Q: Why doesn't Fink install into
