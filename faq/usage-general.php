@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/06 22:01:54';
+$cvs_date = 'Date: 2003/03/14 04:29:03';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -99,8 +99,8 @@ options.
 <div class="question"><p><b>Q6.5: When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</b></p></div>
 <div class="answer"><p><b>A:</b> This is relevant to you if you see messages such as:</p><pre>libpng warning: Application was compiled with png.h from libpng-1.2.5
 libpng warning: Application  is running with png.c from libpng-1.0.12
-libpng error: Incompatible libpng version in application and library</pre><p>when running certain X applications.  The problem is only known to affect packages in the unstable tree, and is due to an incompatiblity between libpng and libpng3.  Most of the offending packages have been tracked down and updated to solve this problem. If you currently have the unstable tree enabled in your  <code>fink.conf</code>, then run &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then you can update your package and its dependencies as usual with &quot;<code>fink update <b>packagename</b>
-</code>&quot; or &quot;<code>fink update-all</code>&quot;.  If you are just using particular packages in unstable, then you may also need to update some of the packages noted in the Depends: and BuildDepends: fields of its .info file, because they may depend on libpng.</p><p>If you do the update and things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
+libpng error: Incompatible libpng version in application and library</pre><p>when running certain X applications.  The problem is due to an upstream incompatiblity between <code>libpng</code> and <code>libpng3</code>.  Start by running &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<code>fink update <b>packagename</b>
+</code>&quot; or &quot;<code>fink update-all</code>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <code>libpng</code> or <code>libpng3</code>.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
