@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - Example";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 15:07:42';
+$cvs_date = 'Date: 2004/07/17 22:36:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=en" title="How to Start">';
 
 
@@ -36,14 +36,14 @@ first time we have attempted to make a maxwell-0.5.1 package, it is revision 1.
 <p>
 The Source field is where fink will grab the source tarball from. Because 
 <a href="http://sourceforge.net">Sourceforge</a> has a system where
-packages are mirrored around the world, and since fink knows about it,
-we use mirror:sourceforge:. %n expands to the package name,
-maxwell, and %v expands to the package version, 0.5.1.
+packages are mirrored around the world, and since <code>fink</code> knows about it,
+we use <code>mirror:sourceforge:</code>. <code>%n</code> expands to the package name,
+maxwell, and <code>%v</code> expands to the package version, 0.5.1.
 </p>
 <p>
-Now we can save this as maxwell.info in 
-/sw/fink/dists/local/main/finkinfo/. That done, we can see how we
-are doing by using fink validate.
+Now we can save this as <code>maxwell.info</code> in 
+<code>/sw/fink/dists/local/main/finkinfo/</code>. That done, we can see how we
+are doing by using <code>fink validate</code>.
 </p>
 <pre>
 finkdev% fink validate maxwell.info 
@@ -121,14 +121,14 @@ change to the next mirror set. More information about this problem is in the
 <a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">FAQ</a>.
 </p>
 <p>
-So we can now get the md5 by running md5 /sw/src/maxwell-0.5.1.tar.gz,
+So we can now get the md5 by running <code>md5 /sw/src/maxwell-0.5.1.tar.gz</code>,
 and add it to the .info file:
 </p>
 <pre>
 Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
 </pre>
 <p>
-And now we find that fink validate passes, yippee!
+And now we find that <code>fink validate</code> passes, yippee!
 </p>
 
 
@@ -159,7 +159,7 @@ Can't exec "./configure": No such file or directory at \
 </pre>
 <p>
 Hmm, well that did not go all that well. Let's read the README 
-(which you can find at /sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README)
+(which you can find at <code>/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</code>)
 and see what it says...
 </p>
 <pre>
@@ -180,18 +180,18 @@ make install prefix=%i
 &lt;&lt;
 </pre>
 <p>
-We need to use prefix=%i since fink builds the binary deb file
-from the files in %i. These files are later installed into 
-%p (which is /sw by default) when you use 
-fink install maxwell. For more details about %p and
-%i please consult the 
+We need to use <code>prefix=%i</code> since fink builds the binary deb file
+from the files in <code>%i</code>. These files are later installed into 
+<code>%p</code> (which is <code>/sw</code> by default) when you use 
+<code>fink install maxwell</code>. For more details about <code>%p</code> and
+<code>%i</code> please consult the 
 <a href="http://fink.sourceforge.net/doc/packaging/format.php#percent">
 Packaging Manual</a>.
 </p>
 <p>
 Normally the lines in the Script fields are passed line by line to the shell.
-But the #! /bin/sh -ev line makes fink run it as a separate script.
-The parameter -e means "die on error" and -v means
+But the <code>#! /bin/sh -ev</code> line makes fink run it as a separate script.
+The parameter <code>-e</code> means "die on error" and <code>-v</code> means
 "verbose".
 </p>
 <p>
@@ -246,12 +246,12 @@ dpkg-deb: building package `maxwell' in \
 </pre>
 <p>
 Fink seems to have installed everything into the correct place: 
-/sw/src/root-maxwell-0.5.1-1 from where the binary package 
-maxwell_0.5.1-1_darwin-powerpc.deb was built.
+<code>/sw/src/root-maxwell-0.5.1-1</code> from where the binary package 
+<code>maxwell_0.5.1-1_darwin-powerpc.deb</code> was built.
 </p>
 <p>
 Also note how fink automatically included some compiler flags to enable it to
-access other fink packages (e.g. -I/sw/include).
+access other fink packages (e.g. <code>-I/sw/include</code>).
 </p>
 <p>
 Let's have a look at what is in the binary package:
@@ -304,9 +304,9 @@ Warning: File installed into deprecated directory /sw/man/
 <p>
 Oops... something is wrong. Let's consult the 
 <a href="http://fink.sourceforge.net/doc/packaging/fslayout.php#fhs">Packaging Manual</a>
-again. It tells us to install man pages into /sw/share/man and files such
-as README into /sw/share/doc/%n. If we look into the 
-Makefile of maxwell we see that the mandir and datadir can be set:
+again. It tells us to install man pages into <code>/sw/share/man</code> and files such
+as <code>README</code> into <code>/sw/share/doc/%n</code>. If we look into the 
+<code>Makefile</code> of maxwell we see that the mandir and datadir can be set:
 </p>
 <pre>
 prefix = /usr/local
@@ -328,13 +328,13 @@ and rebuild the package with
 finkdev% fink rebuild maxwell
 </pre>
 <p>
-(We used fink rebuild because fink build would not do 
+(We used <code>fink rebuild</code> because <code>fink build</code> would not do 
 anything since the package was already built successfully.)
 </p>
 <p>
-Review the contents of your deb file (with dpkg -c) to see where 
+Review the contents of your deb file (with <code>dpkg -c</code>) to see where 
 the files got installed now. Then validate the deb file again with 
-fink validate. If all is well you can install the new package with:
+<code>fink validate</code>. If all is well you can install the new package with:
 </p>
 <pre>
 finkdev% fink install maxwell

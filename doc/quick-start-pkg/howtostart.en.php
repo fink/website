@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 15:07:42';
+$cvs_date = 'Date: 2004/07/17 22:36:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -20,7 +20,7 @@ include_once "header.en.inc";
 finkdev% somecommand
 </pre>
 <p>
-it means that you have to type somecommand into Terminal.app or
+it means that you have to type <code>somecommand</code> into Terminal.app or
 any other terminal on your Mac.
 </p>
 <p>
@@ -46,7 +46,7 @@ Read and try to understand the
 </li>
 <li>
 Look at other, similar packages in your 
-/sw/fink/dists/unstable/main/finkinfo/ directory or 
+<code>/sw/fink/dists/unstable/main/finkinfo/</code> directory or 
 <a href="http://cvs.sourceforge.net/viewcvs.py/fink/dists/10.3/unstable/">
 in the online CVS repository</a> and take one (or several) info file(s) as 
 a starting point.
@@ -71,9 +71,9 @@ if you think you need more detailed information.
 <h2><a name="Make">1.2 Make your Package</a></h2>
 <p>
 Save your new info file (and patch file - if needed) into your 
-/sw/fink/dists/local/main/finkinfo/ directory. The file should be named
-packagename.info (and packagename.patch) where 
-packagename is the name of your package. If this directory doesn't 
+<code>/sw/fink/dists/local/main/finkinfo/</code> directory. The file should be named
+<code>packagename.info</code> (and <code>packagename.patch</code>) where 
+<code>packagename</code> is the name of your package. If this directory doesn't 
 exist you need to create it manually.
 </p>
 
@@ -128,18 +128,18 @@ finkdev% fink build packagename
 <p>
 Watch the output of the build process carefully for errors or warnings.
 Especially make sure that everything is installed into the destination directory
-(which is located at /sw/src/root-packagename-%v-%r/sw) from where
+(which is located at <code>/sw/src/root-packagename-%v-%r/sw</code>) from where
 fink builds the binary package. Nothing should be installed directly into
-/sw.
+<code>/sw</code>.
 </p>
 <p>
-If you use the --keep-build-dir or -k option to fink, it will 
+If you use the <code>--keep-build-dir</code> or <code>-k</code> option to fink, it will 
 keep the build directory. This is where fink expands the downloaded source and 
 where the package gets built. This might help if you need to debug the build
-process. Type man fink for details.
+process. Type <code>man fink</code> for details.
 </p>
 <p>
-You may also want to use the --keep-root-dir or -K option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
+You may also want to use the <code>--keep-root-dir</code> or <code>-K</code> option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
 </p>
 <p>
 If the build succeeds check the content of the binary package with:
@@ -150,7 +150,7 @@ finkdev% dpkg -c /sw/fink/dists/local/main/binary-darwin-powerpc/packagename.deb
 <p>
 Check if all files that you think should be in the package are actually
 in the .deb file. Again: make sure that nothing is installed directly into 
-/sw.
+<code>/sw</code>.
 </p>
 <p>
 Now you can also validate the binary package by doing:
@@ -169,7 +169,7 @@ and test the functionality of your package.
 </p>
 <p>
 If any of the above steps fail try to correct the errors and restart at the 
-top with the fink validate step.
+top with the <code>fink validate</code> step.
 </p>
 
 
@@ -195,19 +195,19 @@ If feasible add multiple items one at a time to the same tracker item
 (e.g. info and patch files).
 </li>
 <li>
-Add a note whether your package is intended for the 10.2-gcc3.3 tree, 
-10.3 tree, or both,
+Add a note whether your package is intended for the <code>10.2-gcc3.3</code> tree, 
+<code>10.3</code> tree, or both,
 </li>
 <li>
-which section (graphics, sci, etc.) you feel it belongs in, and
+which <code>section</code> (graphics, sci, etc.) you feel it belongs in, and
 </li>
 <li>
-that you have run the command fink validate on your info and deb files.
+that you have run the command <code>fink validate</code> on your info and deb files.
 </li>
 <li>
-Set the Group field of the tracker item to 
-Undergoing Validation when you create the new tracker. Also change it 
-back to Undergoing Validation whenever you fixed problems package 
+Set the <code>Group</code> field of the tracker item to 
+<code>Undergoing Validation</code> when you create the new tracker. Also change it 
+back to <code>Undergoing Validation</code> whenever you fixed problems package 
 reviewers found in your submission.
 </li>
 </ul>
