@@ -4,9 +4,28 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Wed, 22 Jan 2003 14:06:15 EST</lastBuildDate>
-    <rss091:language xmlns="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:parseType="Literal">en</rss091:language>
+    <lastBuildDate>Sun, 26 Jan 2003 12:23:57 EST</lastBuildDate>
+    <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Apple X11 Library Warning</title>
+    <link>http://fink.sf.net/news/#2003-01-26%20Apple%20X11%20Library%20Warning</link>
+    <dc:date>2003-01-26</dc:date>
+    <description>
+	
+	While Apple's X11 works just fine with existing binaries, it
+has a bug in the install name of the libraries that can cause some
+software to build incorrectly, and will break forward-compatibility
+with future X11 releases.
+
+
+	Ben Hines has created a script (available here) that you can use
+that will fix the install_name entries in Apple's X11 libraries,
+but it will not repair software you have already built against the
+broken libraries.
+
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Gnome, libpng, and the unstable tree</title>
     <link>http://fink.sf.net/news/#2003-01-21%20Gnome%2C%20libpng%2C%20and%20the%20unstable%20tree</link>
@@ -358,18 +377,6 @@ software before using Fink.
     <description>
     
       The Running X11 document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>News Item: 2001-10-31</title>
-    <link>http://fink.sf.net/news/#2001-10-31</link>
-    <dc:date>2001-10-31</dc:date>
-    <description>
-    
-      MacOSXHints has
-      posted an 
-      installation guide for XFree86, Fink, Window Maker and The GIMP.
     
   </description>
   </item>
