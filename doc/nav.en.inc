@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.en.inc,v 1.1 2004/03/07 21:46:15 fingolfin Exp $ */
+/* $Id: nav.en.inc,v 1.2 2004/03/13 02:44:16 alexkhansen Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -11,7 +11,8 @@ $navbox = array(
   "doc/bundled/readme.php", "ReadMe",
   "doc/cvsaccess/index.php", "CVS Access",
   "doc/porting/index.php", "Porting",
-  "doc/packaging/index.php", "Packaging"
+  "doc/packaging/index.php", "Packaging",
+  "doc/multilingual/index.php", "Internationalization"
 );
 
 ?>
