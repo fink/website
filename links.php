@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/24 16:10:36 $';
+$cvs_date = '$Date: 2001/09/11 16:42:28 $';
 
 include "header.inc";
 ?>
@@ -52,7 +52,7 @@ running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 news, articles and a software archive</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
-help running The GIMP, GTK and X on a Mac</li>
+help running The GIMP, GTK and X on a Mac (currently down)</li>
 <li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a> -
 port news and general help</li>
 </ul>
