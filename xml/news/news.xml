@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.22 2002/12/17 20:04:51 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.23 2002/12/22 21:57:01 dmrrsn Exp $</cvsid>
 
 <newsitem>
+  <date>2002-12-22</date>
+  <headline>New Upgrade Matrix</headline>
+  <body>
+  <p>A new <link url="download/upgrade.php">Upgrade Matrix</link> is
+  now available, for use in upgrading earlier versions of Fink to the
+  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
+  under 10.1 will be brought to Fink version 0.4.1a, while users
+  upgrading under 10.2 will be brought to Fink version 0.5.0a.
+  </p>
+  </body>
+</newsitem>
+<newsitem>  
   <date>2002-12-11</date>
   <headline>New Upgrade Matrix coming</headline>
   <body>

@@ -1,4 +1,11 @@
-<span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
+<span class="news_date">2002-12-22: </span><span class="news_headline">New Upgrade Matrix</span><?php gray_line(); ?>
+  <p>A new <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a> is
+  now available, for use in upgrading earlier versions of Fink to the
+  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
+  under 10.1 will be brought to Fink version 0.4.1a, while users
+  upgrading under 10.2 will be brought to Fink version 0.5.0a.
+  </p>
+  <span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
   <p>The Fink team is aware of the shortcomings of the current
   <b>Upgrade Matrix</b> page, which is inadequate for upgrading
 to Fink 0.5.0a.  Please be patient as we construct
@@ -19,16 +26,5 @@ made available on 2002-09-08.
   </p>
   <p>
   This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
-  </p>
-  <span class="news_date">2002-11-11: </span><span class="news_headline">Update XFree86 for use with OS X 10.2.2</span><?php gray_line(); ?>
-  <p>
-Users should update their XFree86 installations to version 4.2.1.1
-for use with OS X 10.2.2.  If you are using system-xfree86, you
-can get the new version from the <a href="<?php print $root; ?>https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
-project</a>.  If you are using Fink's
-xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
-xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
-the 10.2/unstable tree; to gain access to them, you may need to run 
-&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
   </p>
   

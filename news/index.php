@@ -1,14 +1,21 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/12/17 20:04:51';
+$cvs_date = 'Date: 2002/12/22 21:57:01';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
+<span class="news_date">2002-12-22: </span><span class="news_headline">New Upgrade Matrix</span><?php gray_line(); ?>
+  <p>A new <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a> is
+  now available, for use in upgrading earlier versions of Fink to the
+  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
+  under 10.1 will be brought to Fink version 0.4.1a, while users
+  upgrading under 10.2 will be brought to Fink version 0.5.0a.
+  </p>
+  <span class="news_date">2002-12-11: </span><span class="news_headline">New Upgrade Matrix coming</span><?php gray_line(); ?>
   <p>The Fink team is aware of the shortcomings of the current
   <b>Upgrade Matrix</b> page, which is inadequate for upgrading
 to Fink 0.5.0a.  Please be patient as we construct
