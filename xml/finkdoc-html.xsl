@@ -86,7 +86,16 @@
 </head><body>
 
 <h1><!--<xsl:number format="1 " />--><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="title"/></h1>
+
 <xsl:apply-templates/>
+
+<xsl:for-each select="following-sibling::chapter">
+<xsl:if test="position()=1">
+<p align="right">
+Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
+</p>
+</xsl:if>
+</xsl:for-each>
 
 </body></html>
 </xsl:document>
@@ -97,7 +106,7 @@
 <xsl:template match="article">
 <xsl:document href="{@filename}.html" method="html" indent="no" encoding="iso-8859-1">
 <html><head>
-<title><xsl:value-of select="shorttitle"/></title>
+<title><xsl:value-of select="shorttitle" /></title>
 </head><body>
 
 <h1><xsl:value-of select="title"/></h1>
@@ -120,38 +129,36 @@
 </xsl:template>
 
 <xsl:template match="section">
-<h2><xsl:value-of select="title"/></h2>
+<a name="{@name}"><h2><xsl:value-of select="title"/></h2></a>
 <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="faqentry">
-<a><xsl:attribute name="name"><xsl:value-of select="@name"/></xsl:attribute>
-<xsl:apply-templates/>
-</a>
+<a name="{@name}"><xsl:apply-templates/></a>
 </xsl:template>
 
 <xsl:template match="question">
 <div class="question">
-<p><b><xsl:text>Q</xsl:text><!--<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1:" /></b>--><xsl:text>: </xsl:text>
+<p><b>Q<!--<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1:" /></b>--><xsl:text>: </xsl:text>
 <xsl:for-each select="p">
-<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
+<xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
 </b></p>
 <xsl:for-each select="p">
-<xsl:if test='position() > 1'><xsl:apply-templates select="."/></xsl:if>
+<xsl:if test='position() > 1'><xsl:apply-templates select="." /></xsl:if>
 </xsl:for-each>
 </div>
 </xsl:template>
 
 <xsl:template match="answer">
 <div class="answer">
-<p><b><xsl:text>A:</xsl:text></b><xsl:text> </xsl:text>
+<p><b>A:</b><xsl:text> </xsl:text>
 <xsl:for-each select="p">
-<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
+<xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
 </p>
 <xsl:for-each select="p | codeblock | ul">
-<xsl:if test='position() > 1'><xsl:apply-templates select="."/></xsl:if>
+<xsl:if test='position() > 1'><xsl:apply-templates select="." /></xsl:if>
 </xsl:for-each>
 </div>
 </xsl:template>
@@ -198,7 +205,7 @@
 <td><xsl:apply-templates select="itemd" /></td></tr>
 </xsl:template>
 
-<xsl:template match="itemt | itemd">
+<xsl:template match="itemt|itemd">
 <xsl:apply-templates/>
 </xsl:template>
 
@@ -222,8 +229,7 @@
 </xsl:template>
 
 <xsl:template match="link">
-<a><xsl:attribute name="href"><xsl:value-of select="@url"/>
-</xsl:attribute><xsl:apply-templates/></a>
+<a href="{@url}"><xsl:apply-templates/></a>
 </xsl:template>
 
 
