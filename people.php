@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/10/26 21:49:24 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/10/28 11:15:49 $';
 
 include "header.inc";
 ?>
@@ -44,8 +44,6 @@ this list.</p>
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
 <li>Jeremy Higgs</li>
 <li>Ben Hines (<i>Clef</i>)</li>
-<li>Max Horn (<i>Fingolfin</i>)</li>
-<li>David R. Morrison (<i>drm</i>)</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
