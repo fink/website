@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<article filename="cvs">
+<article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
 
 <preface>
-<p>Fink is developed via CVS. This means that you can stay up to date
-between releases and always get the newest stuff. This page tells you
-how to set up an existing Fink installation for updating via
-CVS. The information on this page applies to Fink 0.2.x. Instructions
-for Fink 0.1.x have been <link url="cvs-01.php">archived.</link></p>
+<p>
+Fink is developed via CVS.
+This means that you can stay up to date between releases and always
+get the newest stuff.
+This page tells you how to set up an existing Fink installation for
+updating via CVS.
+The information on this page applies to Fink 0.2.x.
+</p>
 </preface>
 
 
