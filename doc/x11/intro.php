@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/15 20:33:25';
+$cvs_date = 'Date: 2001/07/18 20:55:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="history.php" title="History"><link rel="prev" href="index.php" title="Running X11 Contents">';
 
@@ -121,6 +121,27 @@ Because there is no (visible) root window, this mode is called
 "rootless".
 It is the most comfortable way to use X11 on Mac OS X, so everyone is
 trying to get it. <tt><nobr>:-)</nobr></tt>
+</p>
+
+
+
+<a name="wm"><h2>What is a window manager?</h2></a>
+<p>
+In most graphical environments the look of window frames (title bar,
+close button, etc.) is defined by the system.
+X11 is different.
+With X11, the window frames (also called "decoration") are provided by
+a separate program, called the window manager.
+In most respects, the window manager is just another client
+application; it is started the same way and connects to the X server
+through the same channels.
+</p>
+<p>
+There is a large number of different window managers to choose from.
+The more popular ones allow the user to customize the appearance via
+so-called <a href="http://www.themes.org">themes</a>.
+Many window managers also provide additional functionality, like pop
+up menus in the root window, docks or launch buttons.
 </p>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/15 20:33:25';
+$cvs_date = 'Date: 2001/07/18 20:55:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -71,6 +71,32 @@ anyway) and a reimplementation of rootless mode.
 To install, follow the <a href="http://www.xfree86.org/cvs/">XFree86
 CVS</a> instructions to download the <tt><nobr>xc</nobr></tt> module.
 Then, follow the source build instructions above.
+</p>
+
+
+
+<a name="xonx-bin"><h2>The XonX binary test releases (XAqua,
+XDarwin)</h2></a>
+<p>
+In the time before 4.1.0 was released, the XonX team put out a series
+of binary test releases with the name XAqua.
+These releses are obsolete and should not be used.
+</p>
+<p>
+With the introduction of rootless mode into XFree86's mainline CVS,
+the XonX team has once again started to put out binary test releases,
+this time under the name XDarwin.
+These releases are available from the <a href="http://sourceforge.net/project/showfiles.php?group_id=18034&amp;release_id=43842">SourceForge
+download page</a>.
+To install them, you must first install XFree86 4.1.0, e.g. the
+official binary release.
+Then, extract the XDarwin tarball as root like this:
+</p>
+<pre>cd /
+sudo gnutar xzvf /path/to/XDarwin1.0a1.tgz</pre>
+<p>
+That will update the X servers in /Applications and /usr/X11R6/bin and
+add some OpenGL stuff, too.
 </p>
 
 
@@ -148,15 +174,15 @@ mode.
 
 
 
-<a name="xaqua0"><h2>The XAqua 0.x releases</h2></a>
+<a name="fink-summary"><h2>Fink package summary</h2></a>
 <p>
-The XAqua 0.x test releases available from the XonX project have been
-superseded by XFree86 4.1.0.
-They should not be installed; get the official 4.1.0 binary release
-instead.
-A new series of test releases will start in the near future; I'll
-update this document when it happens.
+A quick summary of the install options and the Fink packages you
+should install:
 </p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.1.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built from source</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + XDarwin 1.0a#</td><td><p><tt><nobr>system-xfree86</nobr></tt>, optionally
+<tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 binaries + binary rootless server from other sources</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr><tr valign="top"><td>Latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt>, optionally
+<tt><nobr>system-opengl</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt>, <tt><nobr>xfree86-server</nobr></tt></p></td></tr><tr valign="top"><td>4.1.0 + old rootless server, both built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt>, <tt><nobr>xfree86-rootless</nobr></tt> (in
+unstable)</p></td></tr><tr valign="top"><td>4.1.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt></p></td></tr></table>
 
 
 

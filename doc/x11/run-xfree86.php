@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/15 20:33:25';
+$cvs_date = 'Date: 2001/07/18 20:55:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -97,7 +97,8 @@ in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
 
 <a name="macosx-42"><h2>Mac OS X + XFree86 CVS</h2></a>
 <p>
-Recent development versions of XFree86 come with rootless mode built
+Recent development versions of XFree86 (this includes the XDarwin test
+releases from the XonX project) come with rootless mode built
 in and let you choose between fullscreen and rootless mode in a dialog
 at startup.
 Just double-click the XDarwin.app application.
@@ -114,10 +115,62 @@ The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
 </p>
 
 
+
 <a name="xinitrc"><h2>The .xinitrc File</h2></a>
 <p>
-to be written...
+If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home directory,
+it will be used to start some initial X clients, e.g. the window
+manager and some xterms or a desktop environment like GNOME.
+The <tt><nobr>.xinitrc</nobr></tt> is a shell script that contains the commands
+to do this.
+It is <b>not</b> necessary to put the usual <tt><nobr>#!/bin/sh</nobr></tt>
+in the first line and to set the executable bit on the file;
+xinit will still know how to run it through a shell.
 </p>
+<p>
+If you're using Fink, you should source <tt><nobr>init.sh</nobr></tt> right at
+the beginning to make sure the environment is set up correctly.
+</p>
+<p>
+You can put fairly arbitrary commands in an <tt><nobr>.xinitrc</nobr></tt>, but
+there are some cheavats.
+First, the shell that interprets the file will by default wait for
+every program to finish before it starts the next one.
+If you want several programs to run in parallel, you must tell the
+shell to put them "in the background" by appending a <tt><nobr>&amp;</nobr></tt> at
+the end of the line.
+</p>
+<p>
+Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt> script
+to finish and interprets that as "the session has ended, I should kill
+the X server now, too".
+This means that the last command of your <tt><nobr>.xinitrc</nobr></tt> must
+not be run in the background and it should be a long-living program.
+Customarily, the window manager is used for this purpose.
+In fact, most window managers assume that <tt><nobr>xinit</nobr></tt> is
+waiting for them to finish and use this to make the "Log out" entry in
+their menus work.
+(Note: To save some memory and CPU cycles, you can put an
+<tt><nobr>exec</nobr></tt> before the last line like in the examples below.)
+</p>
+<p>
+A simple example that starts up GNOME:
+</p>
+<pre>source /sw/bin/init.sh
+exec gnome-session</pre>
+<p>
+A more complex example that turns the X11 bell off, starts some clients
+and finally executes the Enlightenment window manager:
+</p>
+<pre>source /sw/bin/init.sh
+
+xset b off
+
+xclock -geometry -0+0 &amp;
+xterm &amp;
+xterm &amp;
+
+exec enlightenment</pre>
 
 
 

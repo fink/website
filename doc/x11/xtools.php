@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/15 20:33:25';
+$cvs_date = 'Date: 2001/07/18 20:55:27';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="other.php" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php" title="Starting XFree86">';
 
@@ -34,7 +34,7 @@ system.
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
 <tt><nobr>.xinitrc</nobr></tt> file.
-Xtools also allows you to start clients via the menu.
+Xtools additionally allows you to start clients via the menu.
 </p>
 
 
