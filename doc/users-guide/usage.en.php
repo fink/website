@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/26 05:14:54';
+$cvs_author = 'Author: vasi';
+$cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 include_once "header.inc";

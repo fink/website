@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/26 05:14:54';
+$cvs_author = 'Author: vasi';
+$cvs_date = 'Date: 2004/06/27 00:46:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -299,6 +299,26 @@ building a package. Defaults to false. <b>Be careful, this option can
 fill your hard-disk quickly!</b>
 Passing <b>fink</b> the <b>-k</b> flag has the same effect, but
 only operates on that single <b>fink</b> invocation.
+          </p>
+        </li>
+      </ul>
+    
+    <h2><a name="advanced">5.8 Advanced Settings</a></h2>
+      
+      <p>There are some other options which may be useful, but require some knowledge to get right.</p>
+      <ul>
+        <li>
+          <p>
+            <b>MatchPackageRegEx:</b> </p>
+          <p>Causes fink not to ask which package to install if one (and only one) of the choices matches the perl Regular Expression given here. Example:</p>
+          <pre>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</pre>
+          <p>will match packages ending in '-ssl', and will match 'xfree86' and 'xfree86-shlibs' exactly.</p>
+        </li>
+        <li>
+          <p>
+            <b>CCacheDir:</b> path</p>
+          <p><b>Introduced in a post-0.20.5 CVS version of fink.</b> If the Fink package ccache-default is installed, the cache files it makes
+while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
           </p>
         </li>
       </ul>
