@@ -2,7 +2,7 @@
 use strict;
 
 # configuration
-my $linelength = 70;
+my $linelength = 76;
 
 # input
 my ($text);

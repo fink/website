@@ -118,7 +118,7 @@
 <!-- i -->
 
 <xsl:template match="code|filename|literal">
-<xsl:apply-templates/>
+"<xsl:apply-templates/>"
 </xsl:template>
 
 <xsl:template match="link">
