@@ -186,7 +186,7 @@
 <i><xsl:apply-templates/></i>
 </xsl:template>
 
-<xsl:template match="code|filename|literal">
+<xsl:template match="code|filename">
 <tt><nobr><xsl:apply-templates/></nobr></tt>
 </xsl:template>
 

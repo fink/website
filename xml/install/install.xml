@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink 0.3.2a Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.13 2002/04/13 22:27:04 fingolfin Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.14 2002/04/14 23:10:35 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -39,8 +39,8 @@ chapter="install-first">next section</xref>.
 <section name="install"><title>First Time Installation Fast
 Track</title>
 <p>
-Start out by copying the <code>fink-0.3.2a-full.tar.gz</code> file to
-your home folder.
+Start out by copying the <filename>fink-0.3.2a-full.tar.gz</filename>
+file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><em>bold face</em></code> (or otherwise highlighted).
@@ -136,8 +136,8 @@ documentation when your problem actually is well-documented.
 
 <section name="update"><title>Update Fast Track</title>
 <p>
-Start out by copying the <code>fink-0.3.2a-full.tar.gz</code> file to
-your home folder.
+Start out by copying the <filename>fink-0.3.2a-full.tar.gz</filename>
+file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><em>bold face</em></code> (or otherwise highlighted).

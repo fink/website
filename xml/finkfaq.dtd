@@ -1,40 +1,50 @@
-<!ELEMENT answer ( codeblock | p | ul )* >
+<!ENTITY % block "codeblock | p | ul" >
+<!ENTITY % inline "#PCDATA | code | em | filename | link | tt | xref" >
 
+
+<!-- Root elements -->
+
+<!ELEMENT document ( title, shorttitle, cvsid, preface?, chapter+ ) >
+<!ATTLIST document filename ID #REQUIRED >
+
+
+<!-- Structure -->
 <!ELEMENT chapter ( title, shorttitle, faqentry+ ) >
-<!ATTLIST chapter filename NMTOKEN #REQUIRED >
+<!ATTLIST chapter filename ID #REQUIRED >
 
-<!ELEMENT code ( #PCDATA | em )* >
-
-<!ELEMENT codeblock ( #PCDATA ) >
-
+<!ELEMENT title ( #PCDATA ) >
+<!ELEMENT shorttitle ( #PCDATA ) >
 <!ELEMENT cvsid ( #PCDATA ) >
-
-<!ELEMENT document ( title, shorttitle, cvsid, preface, chapter+ ) >
-<!ATTLIST document filename NMTOKEN #REQUIRED >
-
-<!ELEMENT em ( #PCDATA ) >
+<!ELEMENT preface ( p+ ) >
 
 <!ELEMENT faqentry ( question, answer ) >
 <!ATTLIST faqentry name ID #REQUIRED >
 
+<!ELEMENT question ( p ) >
+<!ELEMENT answer ( %block; )* >
+
+
+<!-- Block elements -->
+<!ELEMENT codeblock ( #PCDATA ) >
+<!ELEMENT p ( %inline; )* >
+
+
+<!-- Inline -->
+<!ELEMENT code ( #PCDATA | em )* >
+<!ELEMENT em ( #PCDATA ) >
 <!ELEMENT filename ( #PCDATA ) >
+<!ELEMENT tt ( #PCDATA ) >
 
-<!ELEMENT li ( #PCDATA | code | codeblock | p )* >
 
+<!-- Links -->
 <!ELEMENT link ( #PCDATA ) >
 <!ATTLIST link url CDATA #REQUIRED >
 
-<!ELEMENT literal ( #PCDATA ) >
+<!ELEMENT xref ( #PCDATA ) >
+<!ATTLIST xref chapter IDREF #IMPLIED >
+<!ATTLIST xref section NMTOKEN #IMPLIED >
 
-<!ELEMENT p ( #PCDATA | code | codeblock | em | filename | link | literal )* >
 
-<!ELEMENT preface ( p+ ) >
-
-<!ELEMENT question ( p ) >
-
-<!ELEMENT shorttitle ( #PCDATA ) >
-
-<!ELEMENT title ( #PCDATA ) >
-
+<!-- Lists -->
 <!ELEMENT ul ( li+ ) >
-
+<!ELEMENT li ( %inline; | codeblock | p )* >

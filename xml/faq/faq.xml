@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.32 2002/04/13 21:14:21 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.33 2002/04/14 23:10:34 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -288,11 +288,13 @@ of Fink?</p></question>
 <p>
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it).  Thus in order to get rid of Fink, enter this command:
+</p>
 <codeblock>sudo rm -rf /sw</codeblock>
+<p>
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
-<codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 </p>
+<codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 </answer></faqentry>
 
 <faqentry name="kde"><question><p>Why are there no packages for
@@ -357,7 +359,7 @@ any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
 to <filename>/sw/fink/dists/local/main/finkinfo</filename>.
 If you want Fink to use all of unstable, edit
 <filename>/sw/etc/fink.conf</filename> and add
-<literal>unstable/main</literal> to the <literal>Trees:</literal>
+<code>unstable/main</code> to the <code>Trees:</code>
 line.
 </p>
 </answer></faqentry>
@@ -368,7 +370,7 @@ and again. Is there a way around this?</p></question>
 password. To do this, edit <filename>/etc/sudoers</filename> as root
 and add a line like this:</p>
 <codeblock>username  ALL = NOPASSWD: ALL</codeblock>
-<p>Replace <literal>username</literal> with your actual username, of course. This
+<p>Replace <code>username</code> with your actual username, of course. This
 line allows you to run any command via sudo without typing your
 password.</p>
 </answer></faqentry>
@@ -570,9 +572,9 @@ installing it fails.</p></question>
 <p>
 This is a known problem which hopefully should be fixed in an upcoming
 Fink release. For now the workaround  is to enter the following commands:
+</p>
 <codeblock>fink rebuild gettext
 fink update gettext</codeblock>
-</p>
 </answer></faqentry>
 
 </chapter>

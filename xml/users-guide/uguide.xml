@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.10 2002/04/13 21:14:22 fingolfin Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.11 2002/04/14 23:10:35 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -248,7 +248,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<code>/sw</code>.
+<filename>/sw</filename>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -284,7 +284,7 @@ the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
 Shell scripts are provided to make this easy.
 If you use tcsh (the default on Mac OS X), add the following line to
-the file <code>.cshrc</code> in your home directory:
+the file <filename>.cshrc</filename> in your home directory:
 </p>
 <codeblock>source /sw/bin/init.csh</codeblock>
 <p>
@@ -309,13 +309,14 @@ list of available commands internally.
 </p>
 <p>
 If you use a Bourne style shell (e.g. sh, bash, zsh), use
-<code>/sw/bin/init.sh</code> instead.
-The file to edit varies with the shell, although <code>.profile</code>
+<filename>/sw/bin/init.sh</filename> instead.
+The file to edit varies with the shell, although <filename>.profile</filename>
 should work for all Bourne style shells.
 </p>
 <p>
-Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
-your path so you can use X11 when it is installed.
+Note that the scripts also add <filename>/usr/X11R6/bin</filename> and
+<filename>/usr/X11R6/man</filename> to your path so you can use X11 when
+it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.
 </p>

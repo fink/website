@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.26 2002/04/13 22:10:56 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.27 2002/04/14 23:10:35 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -97,9 +97,9 @@ dashes in between, e.g. openssh-2.9p1-2.
 <section name="trees"><title>Tree Layout</title>
 <p>
 Package descriptions are read from the <code>finkinfo</code>
-directories below the <code>/sw/fink/dists</code> directory.
-The "Trees" setting in <code>/sw/etc/fink.conf</code> controls which
-directories are read.
+directories below the <filename>/sw/fink/dists</filename> directory.
+The "Trees" setting in <filename>/sw/etc/fink.conf</filename> controls
+which directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
 </p>
@@ -178,6 +178,7 @@ As a special case, when working within a <code>SplitOff</code> or
 <code>SplitOff<em>N</em></code> field, the here-document syntax
 can be nested.  The same terminator <code>&lt;&lt;</code> is used
 for the sub-here-document.  Here is an example:
+</p>
 <codeblock>
 SplitOff: &lt;&lt;
   Package: %N-shlibs
@@ -186,6 +187,7 @@ SplitOff: &lt;&lt;
   &lt;&lt;
 &lt;&lt;
 </codeblock>
+<p>
 (The indentation is optional, but it improves readability.)
 </p><p>
 Empty lines and lines starting with a hash (#) are ignored.
@@ -331,7 +333,7 @@ of their package carefully.
 Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
-i.e. in <code>%p/share/doc/%n</code>.
+i.e. in <filename>%p/share/doc/%n</filename>.
 (In the InstallScript, %i must be used instead of %p, of course.
 The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
@@ -473,24 +475,28 @@ be put into the package barN.  There can be no overlapping files
 between these two packages, and everything stored in barN-shlibs must have
 a pathname which somehow includes the major version number N.  In many
 instances, your package will need some files at runtime which are
-typically installed into <code>%i/lib/bar/</code> or 
-<code>%i/share/bar/</code> ; you should
-adjust the installation paths to <code>%i/lib/bar/N/</code> or 
-<code>%i/share/bar/N/</code>.
+typically installed into <filename>%i/lib/bar/</filename> or 
+<filename>%i/share/bar/</filename> ; you should adjust the installation
+paths to <filename>%i/lib/bar/N/</filename> or
+<filename>%i/share/bar/N/</filename>.
 </p><p>
 All other packages which depend on bar, major version N, will be asked to
 use the dependencies
+</p>
 <codeblock>
   Depends: barN-shlibs
   BuildDepends: barN
 </codeblock>
+<p>
 Once this system is fully in place, it will not be permitted for 
 another package to depend on barN itself.  (For backward compatibility,
 such dependencies are allowed for pre-existing packages.)  This is
 signaled to other developers by a boolean field
+</p>
 <codeblock>
   BuildDependsOnly: True
 </codeblock>
+<p>
 within the package description for barN.
 </p><p>
 If your package includes both shared libraries and binary files, and
@@ -500,22 +506,28 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the "install_name" of the library be <code>%p/lib/bar.N.dylib</code>.  
+the "install_name" of the library be <filename>%p/lib/bar.N.dylib</filename>.  
 (You can
 find the install_name by running <code>otool -L</code> on your library.)  The
 actual library file should be installed at
+</p>
 <codeblock>
   %i/lib/bar.N.x.y.dylib
 </codeblock>
+<p>
 and your packages should create symbolic links
+</p>
 <codeblock>
   %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
   %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
 </codeblock>
+<p>
 If the static library is also built, then it will be installed at
+</p>
 <codeblock>
   %i/lib/bar.a
 </codeblock>
+<p>
 If the package uses libtool, these things are usually handled automatically,
 but in any event you should
 check that they have been done correctly in your case.  You should also
@@ -550,6 +562,7 @@ different.
 Doing this is quite easy in practice, using the 
 <code>SplitOff</code> field.  Here is
 how the example above would be implemented (in part):
+</p>
 <codeblock>
 Package: barN
 Version: N.x.y
@@ -564,13 +577,14 @@ SplitOff: &lt;&lt;
   DocFiles: COPYING
 &lt;&lt;
 </codeblock>
+<p>
 During the execution of the <code>SplitOff</code>
 field, the specified files and directories are moved from the 
 install directory %I of the main package to the install directory %i of the
 splitoff package.  (There is a similar convention for names: %N is the
 name of the main package, and %n is the name of the current package.)
 The <code>DocFiles</code> command then puts a copy of the documentation into 
-%i/share/doc/barN-shlibs.
+<filename>%i/share/doc/barN-shlibs</filename>.
 </p><p>
 Notice that we have included the exact current version of barN-shlibs as a 
 dependency of the main package barN (which can be abbreviated 
@@ -584,15 +598,19 @@ If the major version number changes from N to M, you will create two new
 packages barM and barM-shlibs.  The package barM-shlibs can have no
 overlap with the package barN-shlibs, since many users will have both of
 these installed simultaneously.  In package barM, you should use dependencies
+</p>
 <codeblock>
   Conflicts: barN
   Replaces: barN
 </codeblock>
+<p>
 and similarly, you should revise barN to include dependencies
+</p>
 <codeblock>
   Conflicts: barM
   Replaces: barM
 </codeblock>
+<p>
 Users will then see barN and barM shuffling in and out as various other
 packages are built which depend on one version or another of the shared
 library, while barN-shlibs and barM-shlibs remain permanently installed.
@@ -605,9 +623,11 @@ your package, accompanied by a new package foo-shlibs, which satisfy
 the above policy.  If shared libraries (or any other files now present
 in foo-shlibs) were installed previously, then these new packages should 
 say
+</p>
 <codeblock>
   Replaces: foo (&lt;&lt; earliest.compliant.version)
 </codeblock>
+<p>
 so that upgrading will be transparent to users.  (You should <em>not</em>
 say "Conflicts: foo" because this will prevent the upgrade.)
 </p><p>
@@ -638,19 +658,23 @@ runtime, and they must be split off into a separate fink package with
 a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
 package should depend on the <code>foo-shlibs</code> package, and
 maintainers of other packages should be encouraged to use
+</p>
 <codeblock>
   Depends: foo-bin
   BuildDepends: foo
 </codeblock>
+<p>
 which will take care of foo-shlibs implicitly.
 </p><p>
 Upgrading presents a problem in this situation, however, since users won't
 be prompted to install <code>foo-bin</code>.  To work around this, until
 all other package maintainers have revised their packages as above,
 your <code>foo</code> package can say
+</p>
 <codeblock>
   Depends: foo-shlibs (= exact.version), foo-bin
 </codeblock>
+<p>
 This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <code>foo</code>.
@@ -679,11 +703,11 @@ Fink follows the spirit of the <link
 url="http://www.pathname.com/fhs/">Filesystem Hierarchy
 Standard</link>, or FHS for short.
 It can only follow it in spirit because the FHS was created for system
-vendors that have control over the <code>/</code> and
-<code>/usr</code> hierarchies.
+vendors that have control over the <filename>/</filename> and
+<filename>/usr</filename> hierarchies.
 Fink is an add-on distribution that controls only its install
 directory (or prefix).
-The examples use the default prefix of <code>/sw</code>.
+The examples use the default prefix of <filename>/sw</filename>.
 </p>
 </section>
 
@@ -694,7 +718,7 @@ Files should go into the following subdirectories of the hierarchy:
 
 <itemtable>
 
-<item><itemt><code>/sw/bin</code></itemt>
+<item><itemt><filename>/sw/bin</filename></itemt>
 <itemd>
 <p>
 This directory is for general executable programs.
@@ -702,7 +726,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/sbin</code></itemt>
+<item><itemt><filename>/sw/sbin</filename></itemt>
 <itemd>
 <p>
 This directory is for executable programs that are intended to be used
@@ -712,7 +736,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/include</code></itemt>
+<item><itemt><filename>/sw/include</filename></itemt>
 <itemd>
 <p>
 This directory is for C and C++ header files.
@@ -722,13 +746,13 @@ C headers, those headers <em>must</em> go to a subdirectory.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/lib</code></itemt>
+<item><itemt><filename>/sw/lib</filename></itemt>
 <itemd>
 <p>
 This directory is for architecture-dependent data files and
 libraries.
 Static and shared libraries should be placed directly in
-<code>/sw/lib</code> unless there is a good reason not to.
+<filename>/sw/lib</filename> unless there is a good reason not to.
 This is also the place for executables that should not be executed
 directly by the user (which would otherwise be places in libexec).
 </p>
@@ -737,8 +761,8 @@ A package is free to create a subdirectory to store private data or
 loadable modules.
 Make sure to use directory names that make sense for compatibility.
 It is wise to use the package major version in the directory name or
-as an additional hierarchy level, e.g. <code>/sw/lib/perl5</code> or
-<code>/sw/lib/apache/1.3</code>.
+as an additional hierarchy level, e.g. <filename>/sw/lib/perl5</filename>
+or <filename>/sw/lib/apache/1.3</filename>.
 Care should be taken when the host type is used to create
 directories.
 A <code>powerpc-apple-darwin1.3.3</code> directory is bad for
@@ -747,26 +771,26 @@ compatibility, <code>powerpc-apple-darwin1.3</code> or just
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/share</code></itemt>
+<item><itemt><filename>/sw/share</filename></itemt>
 <itemd>
 <p>
 This directory is for architecture-independent data files.
-The same rules as for <code>/sw/lib</code> apply.
+The same rules as for <filename>/sw/lib</filename> apply.
 Some common subdirectories are described below.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/share/man</code></itemt>
+<item><itemt><filename>/sw/share/man</filename></itemt>
 <itemd>
 <p>
 This directory contains manual pages.
 It is organized into the usual section tree.
-Every program in <code>/sw/bin</code> and <code>/sw/sbin</code> should
-have an associated manual page here.
+Every program in <filename>/sw/bin</filename> and
+<filename>/sw/sbin</filename> should have an associated manual page here.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/share/info</code></itemt>
+<item><itemt><filename>/sw/share/info</filename></itemt>
 <itemd>
 <p>
 This directory contains documentation in the Info format (produced
@@ -783,7 +807,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/share/doc</code></itemt>
+<item><itemt><filename>/sw/share/doc</filename></itemt>
 <itemd>
 <p>
 This directory contains documentation that is neither a man page nor
@@ -797,23 +821,23 @@ Hint: Just use <code>%n</code>.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/share/locale</code></itemt>
+<item><itemt><filename>/sw/share/locale</filename></itemt>
 <itemd>
 <p>
 This directory contains message catalogs for internationalization.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/var</code></itemt>
+<item><itemt><filename>/sw/var</filename></itemt>
 <itemd>
 <p>
-The <code>var</code> directory stores variable data.
+The <filename>var</filename> directory stores variable data.
 This includes spool directories, lock files, state databases, game
 high scores and log files.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/etc</code></itemt>
+<item><itemt><filename>/sw/etc</filename></itemt>
 <itemd>
 <p>
 This directory holds configuration files.
@@ -824,7 +848,7 @@ that it is identifiable.
 </p>
 </itemd></item>
 
-<item><itemt><code>/sw/src</code></itemt>
+<item><itemt><filename>/sw/src</filename></itemt>
 <itemd>
 <p>
 This directory is for storing and building source code.
@@ -838,10 +862,12 @@ Nothing should be installed here by a package.
 
 <section name="avoid"><title>Things to Avoid</title>
 <p>
-No other directories than the ones mentioned above should exist
-in /sw.
-In particular, the following should not be used: /sw/man, /sw/info,
-/sw/doc, /sw/libexec, /sw/lib/locale.
+No other directories than the ones mentioned above should exist in
+<filename>/sw</filename>.
+In particular, the following should not be used:
+<filename>/sw/man</filename>, <filename>/sw/info</filename>,
+<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
+<filename>/sw/lib/locale</filename>.
 </p>
 </section>
 
@@ -888,7 +914,7 @@ the appropriate directory.)</p>
 <p>In the <em>build phase</em> a binary package file (.deb) is built
 from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
-generate a <code>control</code> file for dpkg.</p>
+generate a <filename>control</filename> file for dpkg.</p>
 </section>
 
 <section name="fields"><title>Fields</title>
@@ -1294,19 +1320,19 @@ Use <code>.</code> to update files in the build directory itself.
 <itemd>
 <p>
 A boolean value.
-If true, the file <code>Makefile.in.in</code> in the subdirectory
-<code>po</code> is replaced with a patched version.
+If true, the file <filename>Makefile.in.in</filename> in the
+subdirectory <filename>po</filename> is replaced with a patched version.
 This happens in the patch phase and before the PatchScript is run.
 </p>
 <p>
 The patched version respects DESTDIR and makes sure that message
-catalogs end up in <code>/sw/share/locale</code>, not
-<code>/sw/lib/locale</code>.
+catalogs end up in <filename>/sw/share/locale</filename>, not
+<filename>/sw/lib/locale</filename>.
 Before using this field, make sure that you won't break the package
 and that it's really required.
 You can run <code>diff</code> to find the differences between the
 packages's version and Fink's version (in
-<code>/sw/lib/fink/update</code>).
+<filename>/sw/lib/fink/update</filename>).
 </p>
 </itemd></item>
 
@@ -1414,7 +1440,7 @@ A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
 This includes adding and removing the .pod date from the central
-<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
+<filename>/sw/lib/perl5/darwin/perllocal.pod</filename> file
 </p>
 </itemd></item>
 
@@ -1450,7 +1476,7 @@ expansion takes place (see previous section).
 <p>
 This field provides a convenient way to install README or COPYING
 files in the doc directory for the package,
-<code>%p/share/doc/%n</code>.
+<filename>%p/share/doc/%n</filename>.
 The value is a space-separated list of files.
 You can copy files from subdirectories of the build directory, but
 they will end up in the doc directory itself, not in a subdirectory.
@@ -1547,7 +1573,7 @@ Commands can generally be called without giving a full path.
 A space-separated list of files that are user-modifiable configuration
 files.
 The files must be specified with an absolute path,
-e.g. <code>%p/etc/foo.conf</code>.
+e.g. <filename>%p/etc/foo.conf</filename>.
 The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups

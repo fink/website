@@ -1,32 +1,37 @@
+<!ENTITY % block "codeblock | ol | p | ul" >
+<!ENTITY % inline "#PCDATA | code | em | filename | link | tt | xref" >
+
+
 <!-- Root elements -->
 <!ELEMENT article ( title, shorttitle, cvsid, preface?, section+ ) >
-<!ATTLIST article filename NMTOKEN #REQUIRED >
+<!ATTLIST article filename ID #REQUIRED >
 
 <!ELEMENT document ( title, shorttitle, cvsid, preface?, chapter+ ) >
-<!ATTLIST document filename NMTOKEN #REQUIRED >
+<!ATTLIST document filename ID #REQUIRED >
 
 
 <!-- Structure -->
 <!ELEMENT chapter ( title, shorttitle, preface?, section+ )* >
-<!ATTLIST chapter filename NMTOKEN #REQUIRED >
+<!ATTLIST chapter filename ID #REQUIRED >
 
 <!ELEMENT title ( #PCDATA ) >
 <!ELEMENT shorttitle ( #PCDATA ) >
 <!ELEMENT cvsid ( #PCDATA ) >
 <!ELEMENT preface ( p+ ) >
 
-<!ELEMENT section (title?, ( codeblock | itemtable | ol | p | ul )*) >
+<!ELEMENT section (title?, ( %block; | itemtable )*) >
 <!ATTLIST section name NMTOKEN #IMPLIED >
 
 
 <!-- Block elements -->
 <!ELEMENT codeblock ( #PCDATA | em )* >
-<!ELEMENT p ( #PCDATA | code | codeblock | em | link | tt | xref )* >
+<!ELEMENT p ( %inline; )* >
 
 
 <!-- Inline -->
 <!ELEMENT code ( #PCDATA | em )* >
 <!ELEMENT em ( #PCDATA ) >
+<!ELEMENT filename ( #PCDATA ) >
 <!ELEMENT tt ( #PCDATA ) >
 
 
@@ -35,19 +40,20 @@
 <!ATTLIST link url CDATA #REQUIRED >
 
 <!ELEMENT xref ( #PCDATA ) >
-<!ATTLIST xref chapter NMTOKEN #IMPLIED >
+<!ATTLIST xref chapter IDREF #IMPLIED >
 <!ATTLIST xref section NMTOKEN #IMPLIED >
 
 
 <!-- Lists -->
 <!ELEMENT ol ( li+ ) >
 <!ELEMENT ul ( li+ ) >
-<!ELEMENT li ( #PCDATA | code | codeblock | em | link | p )* >
+
+<!ELEMENT li ( %inline; | codeblock | p )* >
 
 <!ELEMENT itemtable ( item+ ) >
 <!ATTLIST itemtable labeld CDATA "Value" >
 <!ATTLIST itemtable labelt CDATA "Field" >
 
 <!ELEMENT item ( itemt, itemd ) >
-<!ELEMENT itemt ( #PCDATA | code | em )* >
-<!ELEMENT itemd ( codeblock | p | ul )* >
+<!ELEMENT itemt ( %inline; )* >
+<!ELEMENT itemd ( %block; )* >
