@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.68 2002/12/18 15:46:24 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.69 2002/12/18 20:04:53 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -526,6 +526,25 @@ infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></answer></faqentry>
+
+<faqentry name="cant-login-anymore">
+<question>
+<p>I ran the fink-0.4.1 installer and now I can't log in to my machine!</p>
+</question>
+<answer>	  
+<p>This is fixed now, but there was a <link url="http://fink.sourceforge.net/news/index.php">problem</link> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p>  
+<p>Perform the follwing sequence of operations:</p>
+<p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p>
+<p>2.  When the command line appears, do the following commands:</p>
+<codeblock>
+fsck -y
+mount -uw
+chmod 1775 /
+reboot
+</codeblock>
+<p>3.  Your system should reboot.  Once it does, you should perform "<code>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</code>" to prevent this from happening again.</p>
+</answer>
+</faqentry>
 
 <faqentry name="not-found"><question><p>I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</p></question>
 <answer>
