@@ -13,7 +13,7 @@ $title = "</xsl:text>
 <xsl:value-of select="shorttitle"/>
 <xsl:text>";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/11 11:01:31 $';
+$cvs_date = '$Date: 2001/06/14 18:39:32 $';
 
 $metatags = '</xsl:text>
 <link rel="start" href="{@filename}.php" title="{shorttitle} Contents" />
@@ -59,7 +59,7 @@ include "header.inc";
 
 <!-- end TOC -->
 
-<xsl:apply-templates select="./chapter" />
+<xsl:apply-templates select="chapter" />
 
 <xsl:text>
 
@@ -80,7 +80,7 @@ $title = "</xsl:text>
 <xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="shorttitle"/>
 <xsl:text>";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/11 11:01:31 $';
+$cvs_date = '$Date: 2001/06/14 18:39:32 $';
 
 $metatags = '</xsl:text>
 <link rel="start" href="{../@filename}.php" title="{../shorttitle} Contents" />
@@ -122,8 +122,45 @@ include "footer.inc";
 </xsl:document>
 </xsl:template>
 
+<!-- ***** article (renders all on one page) ***** -->
+
+<xsl:template match="article">
+<xsl:document href="{@filename}.pphp" method="html" indent="no" encoding="iso-8859-1">
+<xsl:text>--phpstart--
+$title = "</xsl:text>
+<xsl:value-of select="shorttitle"/>
+<xsl:text>";
+$cvs_author = '$Author: chrisp $';
+$cvs_date = '$Date: 2001/06/14 18:39:32 $';
+
+include "header.inc";
+--phpend--
+
+</xsl:text>
+
+<h1><xsl:value-of select="title"/></h1>
+
+<xsl:apply-templates select="p" />
+
+<xsl:apply-templates select="section" />
+
+<xsl:text>
+
+
+--phpstart--
+include "footer.inc";
+--phpend--
+</xsl:text>
+</xsl:document>
+</xsl:template>
+
 
 <!-- ***** other structure elements ***** -->
+
+<xsl:template match="section">
+<h2><xsl:value-of select="title"/></h2>
+<xsl:apply-templates/>
+</xsl:template>
 
 <xsl:template match="faqentry">
 <a><xsl:attribute name="name"><xsl:value-of select="@name"/></xsl:attribute>
