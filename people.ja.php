@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/08 03:33:13 $';
+$cvs_date = '$Date: 2004/04/16 21:26:02 $';
 
 include "header.inc";
 ?>
@@ -78,7 +78,8 @@ Fink プロジェクトはボランティアによって成り立っています
 <ul>
 <li>馬場 美彦 (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
-<li>Alexander Hansen</li> <!-- support work on mailing lists! -->
+<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
+<li>The <a href="./doc/multilingual/intro.php?phpLang=ja#organization"> 翻訳者一覧</a></li>
 </ul>
 
 <h2>不定期な貢献者</h2>
