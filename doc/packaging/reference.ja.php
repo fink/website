@@ -344,11 +344,12 @@ CompileScript:  &lt;&lt;
 						<p>
 							<b>Fink 0.9.9 で導入:</b>
 							真偽値フィールド．
-							他のパッケージは当該パッケージを (フィールド BuildDepends に入れてもよいが) Depends に入れてはいけないことを示す．
+							他パッケージはこのパッケージを BuildDepend に入れてもよいが， Depend に入れてはいけないことを示す．
 						</p>
 						<p>
-							fink 0.23.3 より、このフィールドの値はパッケージのビルド時に .deb ファイルに保存される。
-							これにより、<b>BuildDependsOnly 値を変更した場合，パッケージのリビジョン番号を上げなければならない</b>．
+							fink 0.20.5 より，このフィールドが設定されているか，設定されている場合その値が，
+							パッケージがビルドされる際に .deb ファイルに記録される．
+							このため， BuildDependsOnly の値を変更したり，追加・削除時にはリビジョン番号をあげなければならない．
 						</p>
 					</td></tr></table>
 			<p>
@@ -688,8 +689,8 @@ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>
-ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり、
-バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+ここで， <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり，
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である．
 </p>
 						<p>
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
@@ -761,8 +762,8 @@ INSTALLSITEBIN=%i/bin \
 INSTALLSCRIPT=%i/bin
 </pre>
 <p>
-ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり、
-バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+ここで， <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり，
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である．
 </p>
 						<p>
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
@@ -1011,7 +1012,7 @@ AnotherVar: foo bar
 			<p>
 				インストール段階では，まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行される．
 				次にフィールド <code>SplitOff</code> や <code>SplitOff<b>N</b></code> の処理が行われる．
-				すなわち、そのそれぞれの中の <code>Files</code> のコマンドが実行され，
+				すなわち，そのそれぞれの中の <code>Files</code> のコマンドが実行され，
 				指定されたファイルやディレクトリが親インストールディレクトリ %I から splitoff パッケージのインストールディレクトリ %i に移される．
 				続いて <code>SplitOff</code> や <code>SplitOff<b>N</b></code> の中の
 				<code>InstallScript</code> や <code>DocFiles</code> などが順に実行される．

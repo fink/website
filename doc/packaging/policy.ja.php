@@ -98,7 +98,7 @@ include_once "header.inc";
 				</li>
 				<li>
 					<code>Public Domain</code> -
-					パブリックドメインの、すなわち作者がコードに対するコピーライトを放棄したパッケージ．
+					パブリックドメインの，すなわち作者がコードに対するコピーライトを放棄したパッケージ．
 					この場合，パッケージにはライセンスが存在せず，だれが何をしても良い．
 				</li>
 			</ul>
@@ -139,7 +139,7 @@ include_once "header.inc";
 					さらに，そうしてできた別パッケージにフィールド <code>Shlibs</code> を設ける．
 				</li>
 				<li>
-					ヘッダと、 libfoo.dylib からの最終的リンクを <code>BuildDependsOnly: True</code> となっているパッケージに入れ，
+					ヘッダと， libfoo.dylib からの最終的リンクを <code>BuildDependsOnly: True</code> となっているパッケージに入れ，
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
@@ -152,7 +152,7 @@ include_once "header.inc";
 				新設されたフィールド <code>SplitOff</code> を使うとこの作業の手間が省けます．
 			</p>
 			<p>
-				3つのパッケージに分ける必要があるとき，それらの命名法は、
+				3つのパッケージに分ける必要があるとき，それらの命名法は，
 				パッケージの実質的な中身がライブラリなのか (選択肢 1) 実行可能プログラムなのか (選択肢 2) によって変わります．
 				選択肢 1 では次の構成を使います．
 			</p>
@@ -343,11 +343,52 @@ DocFiles: COPYING
 				これにより「バージョン」が確かに適合するようになり，
 				さらにパッケージ barN がパッケージ barN-shlibs の依存情報を自動的に「継承する」ことを保証します．
 			</p>
+			<p><b>フィールド BuildDependsOnly:</b></p>
 			<p>
-				<b>フィールド Shlibs:</b>
+				ライブラリが時とともにアップグレードされる場合，
+				移行期に二つのバージョンのヘッダファイルが必要になる時もしばしばある．
+				一つのバージョンはコンパイル時に使われ，もう一つはまた他のコンパイルに使われる．
+				このため，ヘッダファイルを含むパッケージの作成には注意が必要である．
+				foo-dev と bar-dev が重複するヘッダを含む場合， foo-dev で，
+			</p>
+<pre>
+   Conflicts: bar-dev
+   Replaces: bar-dev
+</pre>
+			<p>
+				と宣言し，同様に bar-dev では foo-dev を Conflicts/Replaces として宣言する．
 			</p>
 			<p>
-				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4 版では，
+				さらに，両方のパッケージで
+			</p>
+<pre>
+   BuildDependsOnly: True 
+</pre>
+			<p>
+				を宣言する．
+				これにより，foo-dev または bar-dev に依存してパッケージを記述することを防ぐことができる．
+				このような依存性が Conflicts/Replaces 手段を実行することを防ぐからである．
+			</p>
+			<p>
+				ヘッダファイル付きのパッケージで， BuildDependsOnly を True にするのが適切ではないものもある．
+				この場合，そのパッケージでは
+			</p>
+<pre>
+   BuildDependsOnly: False
+</pre>
+			<p>と宣言し，その理由を DescPackaging に記述しなければならない．</p>
+			<p>
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				パッケージの .info ファイルに記述されていなければならない．
+			</p>
+			<p>
+				fink 0.20.5 の時点で， "fink validate" とすることで，
+				ヘッダファイルと，最低一つの dylib を含み， BuildDependsOnly 値で真偽を宣言していない .deb ファイルに警告を出す．
+				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
+			</p>
+			<p><b>フィールド Shlibs:</b></p>
+			<p>
+				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4版では，
 				共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言しなければいけません．
 				このフィールドでは，各共有ライブラリに対して 1 行ずつ 1) ライブラリの -install_name， 2) ライブラリの -compatibility_version，
 				3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
@@ -447,12 +488,15 @@ Replaces: foo (&lt;&lt; 同等な.旧式パッケージの.バージョン)
 				そうでない場合，実行可能プログラムは実行時に他の Fink パッケージから必要とされることになりますが，
 				それらは <code>foo-bin</code> などの名前の個別の Fink パッケージに split off しなければいけません．
 				パッケージ <code>foo-bin</code> はパッケージ <code>foo-shlibs</code> に依存しなければいけません．
-				他のパッケージのメンテナは次のようにして，暗黙のうちに <code>foo-shlibs</code> を考慮するべきです．
+				他パッケージのメンテナは，次のようにすることで
 			</p>
 <pre>
 Depends: foo-bin
 BuildDepends: foo
 </pre>
+			<p>
+				明示せずに <code>foo-shlibs</code> を処理します．
+			</p>
 			<p>
 				しかしこの場合，アップグレードは問題を起こします．
 				ユーザは <code>foo-bin</code> をインストールするよう指示されないからです．
@@ -464,7 +508,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 </pre>
 			<p>
 				こうすると， <code>foo</code> に依存する他のパッケージのメンテナが改訂を済ませるまで，
-				大半のユーザのシステムで <code>foo-bin</code> のインストールが要求されます．
+				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
 		
 		<h2><a name="perlmods">3.4 Perl モジュール</a></h2>
@@ -518,8 +562,8 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
 			 test-simple-pm581, time-hires-pm581.</b>
 				です．
-				(この一覧は 0.20.1 から若干変更されています。
-				パッケージメンテナは正しい一覧を使用しているかかならず確認してください。)
+				(この一覧は 0.20.1 から若干変更されています．
+				パッケージメンテナは正しい一覧を使用しているかかならず確認してください．)
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，

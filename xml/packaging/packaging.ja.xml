@@ -4,12 +4,12 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.13 2004/06/19 15:35:39 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.14 2004/06/28 14:35:22 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
 			また Fink ディストリビューションのポリシーとガイドラインも解説します．
-			パッケージ記述の書式もディストリビューションのポリシーも共に発展途上です。
+			パッケージ記述の書式もディストリビューションのポリシーも共に発展途上です．
 			&quot;Last changed&quot; (最終更新) 情報とこのページの CVS タグを確認することで，更新されているかがわかります．
 			ここで扱うのはパッケージ管理システム Fink の「0.9.0 以降の開発版」で使われる書式とポリシーの説明です．
 		</p>
@@ -463,7 +463,7 @@ SplitOff: &lt;&lt;
 				</li>
 				<li>
 					<code>Public Domain</code> -
-					パブリックドメインの、すなわち作者がコードに対するコピーライトを放棄したパッケージ．
+					パブリックドメインの，すなわち作者がコードに対するコピーライトを放棄したパッケージ．
 					この場合，パッケージにはライセンスが存在せず，だれが何をしても良い．
 				</li>
 			</ul>
@@ -504,7 +504,7 @@ SplitOff: &lt;&lt;
 					さらに，そうしてできた別パッケージにフィールド <code>Shlibs</code> を設ける．
 				</li>
 				<li>
-					ヘッダと、 libfoo.dylib からの最終的リンクを <code>BuildDependsOnly: True</code> となっているパッケージに入れ，
+					ヘッダと， libfoo.dylib からの最終的リンクを <code>BuildDependsOnly: True</code> となっているパッケージに入れ，
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
@@ -517,7 +517,7 @@ SplitOff: &lt;&lt;
 				新設されたフィールド <code>SplitOff</code> を使うとこの作業の手間が省けます．
 			</p>
 			<p>
-				3つのパッケージに分ける必要があるとき，それらの命名法は、
+				3つのパッケージに分ける必要があるとき，それらの命名法は，
 				パッケージの実質的な中身がライブラリなのか (選択肢 1) 実行可能プログラムなのか (選択肢 2) によって変わります．
 				選択肢 1 では次の構成を使います．
 			</p>
@@ -734,16 +734,57 @@ DocFiles: COPYING
 				これにより「バージョン」が確かに適合するようになり，
 				さらにパッケージ barN がパッケージ barN-shlibs の依存情報を自動的に「継承する」ことを保証します．
 			</p>
+			<p><em>フィールド BuildDependsOnly:</em></p>
 			<p>
-				<em>フィールド Shlibs:</em>
+				ライブラリが時とともにアップグレードされる場合，
+				移行期に二つのバージョンのヘッダファイルが必要になる時もしばしばある．
+				一つのバージョンはコンパイル時に使われ，もう一つはまた他のコンパイルに使われる．
+				このため，ヘッダファイルを含むパッケージの作成には注意が必要である．
+				foo-dev と bar-dev が重複するヘッダを含む場合， foo-dev で，
+			</p>
+<codeblock>
+   Conflicts: bar-dev
+   Replaces: bar-dev
+</codeblock>
+			<p>
+				と宣言し，同様に bar-dev では foo-dev を Conflicts/Replaces として宣言する．
 			</p>
 			<p>
-				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4 版では，
+				さらに，両方のパッケージで
+			</p>
+<codeblock>
+   BuildDependsOnly: True 
+</codeblock>
+			<p>
+				を宣言する．
+				これにより，foo-dev または bar-dev に依存してパッケージを記述することを防ぐことができる．
+				このような依存性が Conflicts/Replaces 手段を実行することを防ぐからである．
+			</p>
+			<p>
+				ヘッダファイル付きのパッケージで， BuildDependsOnly を True にするのが適切ではないものもある．
+				この場合，そのパッケージでは
+			</p>
+<codeblock>
+   BuildDependsOnly: False
+</codeblock>
+			<p>と宣言し，その理由を DescPackaging に記述しなければならない．</p>
+			<p>
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				パッケージの .info ファイルに記述されていなければならない．
+			</p>
+			<p>
+				fink 0.20.5 の時点で， &quot;fink validate&quot; とすることで，
+				ヘッダファイルと，最低一つの dylib を含み， BuildDependsOnly 値で真偽を宣言していない .deb ファイルに警告を出す．
+				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
+			</p>
+			<p><em>フィールド Shlibs:</em></p>
+			<p>
+				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4版では，
 				共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言しなければいけません．
 				このフィールドでは，各共有ライブラリに対して 1 行ずつ 1) ライブラリの -install_name， 2) ライブラリの -compatibility_version，
 				3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
 				(ただし -compatibility_version が同じでなければならない) を記します．
-				依存性情報は <code>foo (>= バージョン-版)</code> という形式で示します．
+				依存性情報は <code>foo (&gt;= バージョン-版)</code> という形式で示します．
 				ここで <code>バージョン-版</code> にはこの (-compatibility_version が同じ) ライブラリを利用可能にしてくれる
 				Fink パッケージの<em>最初</em>の「バージョン」を使います．
 				例えば次の宣言は，
@@ -816,7 +857,7 @@ Replaces: foo (&lt;&lt; 同等な.旧式パッケージの.バージョン)
 			<p>
 				アップグレード後，&quot;Depends: foo&quot; となっているパッケージは普通に機能し続けます．
 				しかし，そのようなFinkパッケージのメンテナ全てに連絡し，
-				できる限り早くそれらのパッケージで "Depends: foo-shlibs, BuildDepends: foo" とするよう要請しなければいけません．
+				できる限り早くそれらのパッケージで &quot;Depends: foo-shlibs, BuildDepends: foo&quot; とするよう要請しなければいけません．
 				そのようなメンテナ全員がその措置を終えるまで，
 				新しい「メジャーバージョン」の共有ライブラリを提供する新パッケージ fooM と fooM-shlibs を作ることはできません．
 			</p>
@@ -838,12 +879,15 @@ Replaces: foo (&lt;&lt; 同等な.旧式パッケージの.バージョン)
 				そうでない場合，実行可能プログラムは実行時に他の Fink パッケージから必要とされることになりますが，
 				それらは <code>foo-bin</code> などの名前の個別の Fink パッケージに split off しなければいけません．
 				パッケージ <code>foo-bin</code> はパッケージ <code>foo-shlibs</code> に依存しなければいけません．
-				他のパッケージのメンテナは次のようにして，暗黙のうちに <code>foo-shlibs</code> を考慮するべきです．
+				他パッケージのメンテナは，次のようにすることで
 			</p>
 <codeblock>
 Depends: foo-bin
 BuildDepends: foo
 </codeblock>
+			<p>
+				明示せずに <code>foo-shlibs</code> を処理します．
+			</p>
 			<p>
 				しかしこの場合，アップグレードは問題を起こします．
 				ユーザは <code>foo-bin</code> をインストールするよう指示されないからです．
@@ -855,7 +899,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 </codeblock>
 			<p>
 				こうすると， <code>foo</code> に依存する他のパッケージのメンテナが改訂を済ませるまで，
-				大半のユーザのシステムで <code>foo-bin</code> のインストールが要求されます．
+				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
 		</section>
 		<section name="perlmods">
@@ -909,8 +953,8 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
 			 test-simple-pm581, time-hires-pm581.</em>
 				です．
-				(この一覧は 0.20.1 から若干変更されています。
-				パッケージメンテナは正しい一覧を使用しているかかならず確認してください。)
+				(この一覧は 0.20.1 から若干変更されています．
+				パッケージメンテナは正しい一覧を使用しているかかならず確認してください．)
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
@@ -1543,11 +1587,12 @@ CompileScript:  &lt;&lt;
 						<p>
 							<em>Fink 0.9.9 で導入:</em>
 							真偽値フィールド．
-							他のパッケージは当該パッケージを (フィールド BuildDepends に入れてもよいが) Depends に入れてはいけないことを示す．
+							他パッケージはこのパッケージを BuildDepend に入れてもよいが， Depend に入れてはいけないことを示す．
 						</p>
 						<p>
-							fink 0.23.3 より、このフィールドの値はパッケージのビルド時に .deb ファイルに保存される。
-							これにより、<em>BuildDependsOnly 値を変更した場合，パッケージのリビジョン番号を上げなければならない</em>．
+							fink 0.20.5 より，このフィールドが設定されているか，設定されている場合その値が，
+							パッケージがビルドされる際に .deb ファイルに記録される．
+							このため， BuildDependsOnly の値を変更したり，追加・削除時にはリビジョン番号をあげなければならない．
 						</p>
 					</itemd>
 				</item>
@@ -1987,8 +2032,8 @@ INSTALLSCRIPT=%p/bin
 make
 make test</codeblock>
 <p>
-ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり、
-バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である。
+ここで， <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり，
+バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である．
 </p>
 						<p>
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
@@ -2073,8 +2118,8 @@ INSTALLSITEBIN=%i/bin \
 INSTALLSCRIPT=%i/bin
 </codeblock>
 <p>
-ここで、 <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり、
-バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である。
+ここで， <code>$perlarchdir</code> はバージョン 5.8.0 以前では &quot;darwin&quot; であり，
+バージョン 5.8.1 以降では &quot;darwin-thread-multi-2level&quot; である．
 </p>
 						<p>
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
@@ -2396,7 +2441,7 @@ AnotherVar: foo bar
 			<p>
 				インストール段階では，まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行される．
 				次にフィールド <code>SplitOff</code> や <code>SplitOff<em>N</em></code> の処理が行われる．
-				すなわち、そのそれぞれの中の <code>Files</code> のコマンドが実行され，
+				すなわち，そのそれぞれの中の <code>Files</code> のコマンドが実行され，
 				指定されたファイルやディレクトリが親インストールディレクトリ %I から splitoff パッケージのインストールディレクトリ %i に移される．
 				続いて <code>SplitOff</code> や <code>SplitOff<em>N</em></code> の中の
 				<code>InstallScript</code> や <code>DocFiles</code> などが順に実行される．

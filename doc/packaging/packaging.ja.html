@@ -15,7 +15,7 @@ Available Languages:  |
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
 			また Fink ディストリビューションのポリシーとガイドラインも解説します．
-			パッケージ記述の書式もディストリビューションのポリシーも共に発展途上です。
+			パッケージ記述の書式もディストリビューションのポリシーも共に発展途上です．
 			"Last changed" (最終更新) 情報とこのページの CVS タグを確認することで，更新されているかがわかります．
 			ここで扱うのはパッケージ管理システム Fink の「0.9.0 以降の開発版」で使われる書式とポリシーの説明です．
 		</p>
@@ -387,7 +387,7 @@ SplitOff: &lt;&lt;
 				</li>
 				<li>
 					<tt style="white-space: nowrap;">Public Domain</tt> -
-					パブリックドメインの、すなわち作者がコードに対するコピーライトを放棄したパッケージ．
+					パブリックドメインの，すなわち作者がコードに対するコピーライトを放棄したパッケージ．
 					この場合，パッケージにはライセンスが存在せず，だれが何をしても良い．
 				</li>
 			</ul>
@@ -428,7 +428,7 @@ SplitOff: &lt;&lt;
 					さらに，そうしてできた別パッケージにフィールド <tt style="white-space: nowrap;">Shlibs</tt> を設ける．
 				</li>
 				<li>
-					ヘッダと、 libfoo.dylib からの最終的リンクを <tt style="white-space: nowrap;">BuildDependsOnly: True</tt> となっているパッケージに入れ，
+					ヘッダと， libfoo.dylib からの最終的リンクを <tt style="white-space: nowrap;">BuildDependsOnly: True</tt> となっているパッケージに入れ，
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
@@ -441,7 +441,7 @@ SplitOff: &lt;&lt;
 				新設されたフィールド <tt style="white-space: nowrap;">SplitOff</tt> を使うとこの作業の手間が省けます．
 			</p>
 			<p>
-				3つのパッケージに分ける必要があるとき，それらの命名法は、
+				3つのパッケージに分ける必要があるとき，それらの命名法は，
 				パッケージの実質的な中身がライブラリなのか (選択肢 1) 実行可能プログラムなのか (選択肢 2) によって変わります．
 				選択肢 1 では次の構成を使います．
 			</p>
@@ -632,11 +632,52 @@ DocFiles: COPYING
 				これにより「バージョン」が確かに適合するようになり，
 				さらにパッケージ barN がパッケージ barN-shlibs の依存情報を自動的に「継承する」ことを保証します．
 			</p>
+			<p><b>フィールド BuildDependsOnly:</b></p>
 			<p>
-				<b>フィールド Shlibs:</b>
+				ライブラリが時とともにアップグレードされる場合，
+				移行期に二つのバージョンのヘッダファイルが必要になる時もしばしばある．
+				一つのバージョンはコンパイル時に使われ，もう一つはまた他のコンパイルに使われる．
+				このため，ヘッダファイルを含むパッケージの作成には注意が必要である．
+				foo-dev と bar-dev が重複するヘッダを含む場合， foo-dev で，
+			</p>
+<pre>
+   Conflicts: bar-dev
+   Replaces: bar-dev
+</pre>
+			<p>
+				と宣言し，同様に bar-dev では foo-dev を Conflicts/Replaces として宣言する．
 			</p>
 			<p>
-				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4 版では，
+				さらに，両方のパッケージで
+			</p>
+<pre>
+   BuildDependsOnly: True 
+</pre>
+			<p>
+				を宣言する．
+				これにより，foo-dev または bar-dev に依存してパッケージを記述することを防ぐことができる．
+				このような依存性が Conflicts/Replaces 手段を実行することを防ぐからである．
+			</p>
+			<p>
+				ヘッダファイル付きのパッケージで， BuildDependsOnly を True にするのが適切ではないものもある．
+				この場合，そのパッケージでは
+			</p>
+<pre>
+   BuildDependsOnly: False
+</pre>
+			<p>と宣言し，その理由を DescPackaging に記述しなければならない．</p>
+			<p>
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				パッケージの .info ファイルに記述されていなければならない．
+			</p>
+			<p>
+				fink 0.20.5 の時点で， "fink validate" とすることで，
+				ヘッダファイルと，最低一つの dylib を含み， BuildDependsOnly 値で真偽を宣言していない .deb ファイルに警告を出す．
+				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
+			</p>
+			<p><b>フィールド Shlibs:</b></p>
+			<p>
+				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4版では，
 				共有ライブラリ全てをフィールド <tt style="white-space: nowrap;">Shlibs</tt> を使って宣言しなければいけません．
 				このフィールドでは，各共有ライブラリに対して 1 行ずつ 1) ライブラリの -install_name， 2) ライブラリの -compatibility_version，
 				3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
@@ -736,12 +777,15 @@ Replaces: foo (&lt;&lt; 同等な.旧式パッケージの.バージョン)
 				そうでない場合，実行可能プログラムは実行時に他の Fink パッケージから必要とされることになりますが，
 				それらは <tt style="white-space: nowrap;">foo-bin</tt> などの名前の個別の Fink パッケージに split off しなければいけません．
 				パッケージ <tt style="white-space: nowrap;">foo-bin</tt> はパッケージ <tt style="white-space: nowrap;">foo-shlibs</tt> に依存しなければいけません．
-				他のパッケージのメンテナは次のようにして，暗黙のうちに <tt style="white-space: nowrap;">foo-shlibs</tt> を考慮するべきです．
+				他パッケージのメンテナは，次のようにすることで
 			</p>
 <pre>
 Depends: foo-bin
 BuildDepends: foo
 </pre>
+			<p>
+				明示せずに <tt style="white-space: nowrap;">foo-shlibs</tt> を処理します．
+			</p>
 			<p>
 				しかしこの場合，アップグレードは問題を起こします．
 				ユーザは <tt style="white-space: nowrap;">foo-bin</tt> をインストールするよう指示されないからです．
@@ -753,7 +797,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 </pre>
 			<p>
 				こうすると， <tt style="white-space: nowrap;">foo</tt> に依存する他のパッケージのメンテナが改訂を済ませるまで，
-				大半のユーザのシステムで <tt style="white-space: nowrap;">foo-bin</tt> のインストールが要求されます．
+				ユーザのシステムでは大抵 <tt style="white-space: nowrap;">foo-bin</tt> のインストールが要求されます．
 			</p>
 		
 		<h3><a name="policy.perlmods">3.4 Perl モジュール</a></h3>
@@ -807,8 +851,8 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
 			 test-simple-pm581, time-hires-pm581.</b>
 				です．
-				(この一覧は 0.20.1 から若干変更されています。
-				パッケージメンテナは正しい一覧を使用しているかかならず確認してください。)
+				(この一覧は 0.20.1 から若干変更されています．
+				パッケージメンテナは正しい一覧を使用しているかかならず確認してください．)
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <tt style="white-space: nowrap;">fink validate</tt> を .deb ファイルに適用すると，
@@ -1314,11 +1358,12 @@ CompileScript:  &lt;&lt;
 						<p>
 							<b>Fink 0.9.9 で導入:</b>
 							真偽値フィールド．
-							他のパッケージは当該パッケージを (フィールド BuildDepends に入れてもよいが) Depends に入れてはいけないことを示す．
+							他パッケージはこのパッケージを BuildDepend に入れてもよいが， Depend に入れてはいけないことを示す．
 						</p>
 						<p>
-							fink 0.23.3 より、このフィールドの値はパッケージのビルド時に .deb ファイルに保存される。
-							これにより、<b>BuildDependsOnly 値を変更した場合，パッケージのリビジョン番号を上げなければならない</b>．
+							fink 0.20.5 より，このフィールドが設定されているか，設定されている場合その値が，
+							パッケージがビルドされる際に .deb ファイルに記録される．
+							このため， BuildDependsOnly の値を変更したり，追加・削除時にはリビジョン番号をあげなければならない．
 						</p>
 					</td></tr></table>
 			<p>
@@ -1658,8 +1703,8 @@ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>
-ここで、 <tt style="white-space: nowrap;">$perlarchdir</tt> はバージョン 5.8.0 以前では "darwin" であり、
-バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+ここで， <tt style="white-space: nowrap;">$perlarchdir</tt> はバージョン 5.8.0 以前では "darwin" であり，
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である．
 </p>
 						<p>
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
@@ -1731,8 +1776,8 @@ INSTALLSITEBIN=%i/bin \
 INSTALLSCRIPT=%i/bin
 </pre>
 <p>
-ここで、 <tt style="white-space: nowrap;">$perlarchdir</tt> はバージョン 5.8.0 以前では "darwin" であり、
-バージョン 5.8.1 以降では "darwin-thread-multi-2level" である。
+ここで， <tt style="white-space: nowrap;">$perlarchdir</tt> はバージョン 5.8.0 以前では "darwin" であり，
+バージョン 5.8.1 以降では "darwin-thread-multi-2level" である．
 </p>
 						<p>
 							パッケージが対応しているなら，代わりに <tt style="white-space: nowrap;">make install DESTDIR=%d</tt> を使うことが望ましい．
@@ -1981,7 +2026,7 @@ AnotherVar: foo bar
 			<p>
 				インストール段階では，まず親パッケージの <tt style="white-space: nowrap;">InstallScript</tt> と <tt style="white-space: nowrap;">DocFiles</tt> が実行される．
 				次にフィールド <tt style="white-space: nowrap;">SplitOff</tt> や <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> の処理が行われる．
-				すなわち、そのそれぞれの中の <tt style="white-space: nowrap;">Files</tt> のコマンドが実行され，
+				すなわち，そのそれぞれの中の <tt style="white-space: nowrap;">Files</tt> のコマンドが実行され，
 				指定されたファイルやディレクトリが親インストールディレクトリ %I から splitoff パッケージのインストールディレクトリ %i に移される．
 				続いて <tt style="white-space: nowrap;">SplitOff</tt> や <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> の中の
 				<tt style="white-space: nowrap;">InstallScript</tt> や <tt style="white-space: nowrap;">DocFiles</tt> などが順に実行される．
