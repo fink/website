@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/22 21:05:58';
+$cvs_date = 'Date: 2003/02/24 19:24:49';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -103,11 +103,14 @@ tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <tt><nobr>Xinstall.sh</nobr></tt> script as root to install the stuff.
 (You might want to read the <a href="http://www.xfree86.org/4.2.0/Install.html">official
-instructions</a> before installing.)
-You've now got XFree86 with a server that can do fullscreen, or 
+instructions</a> before installing.)   If you prefer, you can use the <a href="http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binary</a> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
+<ol>
+<li>10.1 users: <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a>.  10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a></li>
+<li>10.1 and 10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</a></li>
+</ol>  
+<p>You've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
-
 
 
 <a name="official-source"><h2>3.4 The Official Source</h2></a>

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.25 2003/02/22 21:05:58 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.26 2003/02/24 19:24:49 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -383,12 +383,15 @@ If you're unsure what you need, just download the whole directory.
 Run the <filename>Xinstall.sh</filename> script as root to install the stuff.
 (You might want to read the <link
 url="http://www.xfree86.org/4.2.0/Install.html">official
-instructions</link> before installing.)
-You've now got XFree86 with a server that can do fullscreen, or 
+instructions</link> before installing.)   If you prefer, you can use the <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binary</link> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
+<ol>
+<li>10.1 users: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -> 4.2.0.1 upgrade</link>.  10.2 users:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -> 4.2.0.1 upgrade</link></li>
+<li>10.1 and 10.2 users:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download" >4.2.0.1 -> 4.2.1.1 upgrade</link></li>
+</ol>  
+<p>You've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
 </section>
-
 
 <section name="official-source"><title>The Official Source</title>
 <p>
