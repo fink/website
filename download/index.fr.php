@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/04/03 16:13:54 $';
+$cvs_date = '$Date: 2004/04/03 16:43:33 $';
 
 include "header.inc";
 ?>
@@ -36,18 +36,16 @@ Téléchargez l'image disque de l'installeur :<br>
 Double-cliquez sur "Fink-<? print $fink_version; ?>-Installer.dmg" pour monter l'image disque, puis double-cliquez sur le paquet "Fink <? print $fink_version; ?> Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.
 </p></li>
 <li><p>
-À la fin de l'installation, une fenêtre de Terminal.app s'ouvrira et le script pathsetup.command s'exécutera. On vous demandera la permission d'éditer vos fichiers de configuration de shell. Quand le script aura terminé, fermez la fenêtre et voilà, la configuration sera terminée et vous pourrez continuer !
+À la fin de l'installation, le script pathsetup s'exécutera. On vous demandera la permission d'éditer vos fichiers de configuration de shell. Quand le script aura terminé, la configuration sera terminée et vous pourrez continuer !
 </p></li>
 <li><p>
-Si quelque chose ne se passe pas bien durant le processus, vous pouvez réexécuter la commande 
-pathsetup.command à partir de l'image disque de l'installeur, ou exécuter la commande suivante : 
-</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
+Si quelque chose ne se passe pas bien durant le processus, vous pouvez relancer l'application pathsetup à partir de l'image disque de l'installeur, ou exécuter la commande suivante : 
+</p><pre>/sw/bin/pathsetup.sh <RETURN></pre><p>
 dans une fenêtre de Terminal.app.
-(Cette étape doit être répétée pour tout utilisateur de votre système : chaque utilisateur doit exécuter la commande pathsetup.command dans son propre compte.)
+(Cette étape doit être répétée pour tout utilisateur de votre système : chaque utilisateur doit exécuter pathsetup dans son propre compte.)
 </p><p>
-Si pathsetup.command génère des messages d'erreur, consultez la documentation, en particulier la 
-<a href="../doc/users-guide/install.php#setup">section
-2.3 "Définition de votre environnement"</a> du Guide de l'utilisateur.</p>
+Si pathsetup génère des messages d'erreur, consultez la documentation, en particulier la 
+<a href="../doc/users-guide/install.php#setup">section 2.3 "Définition de votre environnement"</a> du Guide de l'utilisateur.</p>
 </li>
 <li><p>
 Ouvrez une nouvelle fenêtre de Terminal.app et exécutez la commande suivante : "<code>fink scanpackages; fink index</code>", ou utilisez l'application graphique Fink Commander incluse (elle doit être placée dans un répertoire réel sur votre système, et non pas lancée à partir de l'image disque) et lancez les commandes suivantes à partir de son menu : <em>Source->scanpackages</em> suivie de <em>Source->Tools->index</em>.
