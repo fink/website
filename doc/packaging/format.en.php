@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 19:13:11';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/13 06:56:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -240,6 +240,16 @@ the package <b>n</b>ame <b>i</b>nvariant portion. These are like
 %n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
 (Introduced in a post-0.19.2 CVS version of fink) You should use %{ni}
 and %{Ni} to avoid confusion with the %n and %N expansions.
+</p>
+</td></tr><tr valign="top"><td>%{default_script}</td><td>
+<p>
+Valid only in <code>*Script</code> fields, the default contents of
+that type of field. The value is often dependent on
+the <code>Type</code> field, and is always defined (though it may be
+blank). When used in a <code>SplitOff: InstallScript</code>, this
+expansion will yield the <b>parent's</b> default, even though the
+default for <code>InstallScript</code> in a <code>SplitOff</code>
+package is blank. (Introduced in fink-0.20.6)
 </p>
 </td></tr></table>
 
