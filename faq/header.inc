@@ -1,6 +1,7 @@
 <?
-/* $Id: header.inc,v 1.5 2001/09/16 18:52:34 chrisp Exp $ */
+/* $Id: header.inc,v 1.6 2001/09/30 14:57:24 chrisp Exp $ */
 
+$section = "faq";
 $navbox = array(
   "faq/index.php", "FAQ Contents",
   "faq/general.php", "General",

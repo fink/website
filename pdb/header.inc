@@ -1,6 +1,7 @@
 <?
-/* $Id: header.inc,v 1.4 2001/08/11 20:18:29 chrisp Exp $ */
+/* $Id: header.inc,v 1.5 2001/09/30 14:57:24 chrisp Exp $ */
 
+/* check path info */
 if ($uses_pathinfo) {
   if ($PATH_INFO == "") {
     $pispec = "-";
@@ -17,12 +18,14 @@ if ($uses_pathinfo) {
   $root = "-".$pdbroot;
 }
 
+/* generate page header and navigation */
+$section = "packages";
 $navbox = array(
-  "pdb/index.php", "Sections",
-  "pdb/list.php", "Flat list",
+  "pdb/index.php", "Introduction",
+  "pdb/sections.php", "By Section",
+  "pdb/list.php", "By Package",
   "pdb/testing.php", "Help needed"
 );
-
 include "timestamp.inc";
 
 $fsroot = "../";
@@ -32,4 +35,9 @@ if (substr($root,0,1) == "-") {
   $root = $fsroot;
 }
 include $fsroot."header.inc";
+
+/* connect to database */
+include $fsroot."db.inc.php";
+$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
+mysql_select_db($db_name, $dbh);
 ?>

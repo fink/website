@@ -1,6 +1,8 @@
 <?
-/* $Id: header.inc,v 1.3 2001/09/20 21:07:06 chrisp Exp $ */
+/* $Id: header.inc,v 1.4 2001/09/30 14:57:24 chrisp Exp $ */
 
+$section = "documentation";
+$parents = array("doc/index.php", "Document List");
 $navbox = array(
   "doc/users-guide/index.php", "Contents",
   "doc/users-guide/intro.php", "Introduction",

@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/27 08:06:04 $';
+$cvs_date = '$Date: 2001/09/30 14:57:23 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -13,16 +13,12 @@ include "header.inc";
 
 
 <p>
-Fink is an attempt to bring the full world of Unix Open Source
+The Fink project wants to bring the full world of Unix Open Source
 software to <a href="http://www.opensource.apple.com/">Darwin</a> and
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
-Think of it as an add-on distribution (in the Linux sense) for these
-systems.
-</p>
-<p>
-Fink wants to be as painless as possible.
-It keeps the hands off your base system and manages a separate
-directory tree instead.
+We modify Unix software so that it compiles and runs on Mac OS X
+("port" it) and make it available for download as a coherent
+distribution.
 Fink uses <a href="http://www.debian.org/">Debian</a> tools like dpkg
 and apt-get to provide powerful binary package management.
 You can choose whether you want to download precompiled binary
@@ -36,33 +32,25 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-09-30: Fink 0.3.0 is released.
+The source release, the binary installer and a binary upgrade kit for
+broken-by-10.1 installations are available in the new <a
+href="download/index.php">download section</a>.
+The bulk of the binary distribution will be updated gradually over the
+next few days, as usual.
+</p>
 <p>2001-09-26: Mac OS X 10.1 has been officially released yesterday.
 Before you use Fink on 10.1, check out the <a
 href="news/puma.php">compatibility report</a>.
 <b>Update:</b> The apt-get issue has been solved, expect a new release
 this weekend.</p>
-<p>2001-09-07: The binary distribution is now fully updated to
-Fink 0.2.6. Enjoy.</p>
-<p>2001-09-04: Fink 0.2.6 is released, fixing several bootstrap
-problems. The source release is available from the <a
-href="download.php">download page</a> or via the 'fink selfupdate'
-command. The binary release will follow soon.</p>
-<!--
-<p>2001-09-02: Chat with the developers and other users! We now have
-a #fink channel on the <a href="http://openprojects.net/">openprojects.net</a>
-IRC network.</p>
--->
-<p>2001-08-23: OpenOSX.com refuses to give fair credit after using
-Fink to create GIMP CDs. Read Christoph's <a
-href="pr/openosx.php">public statement</a> on the issue.</p>
 
 <h2>Status</h2>
 
 <p>
-Fink 0.2.6 was released on 4 September 2001.
-Now that a base feature set is implemented, focus is shifting to
-provide more packages, keep them current and improve quality.
-Work continues to make more packages available as binaries.
+Fink 0.3.0 was released on 30 September 2001.
+Almost all problems with Mac OS X 10.1 have been fixed.
+Work continues normally.
 </p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">

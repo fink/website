@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/27 08:06:04 $';
+$cvs_date = '$Date: 2001/09/30 14:57:24 $';
 
 include "header.inc";
 ?>

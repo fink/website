@@ -1,6 +1,7 @@
 <?
-/* $Id: header.inc,v 1.5 2001/08/01 13:37:23 chrisp Exp $ */
+/* $Id: header.inc,v 1.6 2001/09/30 14:57:23 chrisp Exp $ */
 $nonav = 1;
+$section = "none";
 
 $fsroot = $root = "../";
 include $fsroot."header.inc";

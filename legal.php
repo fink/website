@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/04 06:37:46 $';
+$cvs_date = '$Date: 2001/09/30 14:57:23 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 <h1>Legal Stuff</h1>
 
 <p>
-Some legal rumblings to keep layers happy:
+Some legal rumblings to keep lawyers happy:
 </p>
 
 <p>

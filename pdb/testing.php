@@ -1,13 +1,9 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/11 20:18:29 $';
+$cvs_date = '$Date: 2001/09/30 14:57:24 $';
 
 include "header.inc";
-
-include $fsroot."db.inc.php";
-$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
-mysql_select_db($db_name, $dbh);
 ?>
 
 

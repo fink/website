@@ -1,16 +1,10 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/04 13:07:21 $';
+$cvs_date = '$Date: 2001/09/30 14:57:24 $';
 
 $uses_pathinfo = 1;
-
 include "header.inc";
-
-include $fsroot."db.inc.php";
-$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
-mysql_select_db($db_name, $dbh);
-
 $package = $pispec;
 ?>
 
@@ -65,7 +59,7 @@ if (!$rs) {
 } /* if (no package) */
 ?>
 
-<p><a href="<? print $pdbroot ?>index.php">Section list</a> -
+<p><a href="<? print $pdbroot ?>sections.php">Section list</a> -
 <a href="<? print $pdbroot ?>list.php">Flat package list</a></p>
 
 

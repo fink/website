@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/22 21:17:05 $';
+$cvs_date = '$Date: 2001/09/30 14:57:23 $';
 
 include "header.inc";
 ?>
@@ -101,7 +101,7 @@ If you don't want X11 at all, that's okay too.
 
 <p>
 <a href="index.php">Back Home</a> -
-<a href="download.php">Download</a>
+<a href="download/index.php">Download</a>
 </p>
 
 

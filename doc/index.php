@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/20 21:08:50 $';
+$cvs_date = '$Date: 2001/09/30 14:57:23 $';
 
 include "header.inc";
 ?>
@@ -15,6 +15,12 @@ Darwin without Fink and want to learn about porting Unix software. The
 intended audience is noted with each document in the list below.</p>
 
 <h2>Documents from the distribution package</h2>
+
+<p>
+The version numbers in these documents haven't been updated for the
+0.3.0 release, but what is said still applies to the 0.3.0 source
+release.
+</p>
 
 <ul>
 <li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
@@ -32,7 +38,7 @@ and the installed software</li>
 concepts, installation and launching (also intended for Darwin and Mac
 OS X users in general)</li>
 <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the Fink CVS
-repository to get the latest packages between releases</li>
+repository to get the latest source packages between releases</li>
 <li>The new <a href="users-guide/index.php">User's Guide</a> -
 replacing the Installation and Usage documents with a comprehensive
 guide that takes the binary distribution into account.

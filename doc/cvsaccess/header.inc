@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.1 2001/06/30 11:11:49 chrisp Exp $ */
+/* $Id: header.inc,v 1.2 2001/09/30 14:57:23 chrisp Exp $ */
 
 include "../nav.inc";
 

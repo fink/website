@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/11 18:49:01 $';
+$cvs_date = '$Date: 2001/09/30 14:57:23 $';
 
 include "header.inc";
 ?>
@@ -36,7 +36,8 @@ target="_blank">http://www.caos.aamu.edu/pub/MacOS_X/</a> - run by Marius Schams
 Public Archive</a></li>
 <li><a href="http://www.geeklair.net/downloads/"
 target="_blank">http://www.geeklair.net/downloads/</a> - run by
-<a href="http://www.geeklair.net/~dluke/">Daniel Luke</a></li>
+<a href="http://www.geeklair.net/~dluke/"
+target="_blank">Daniel Luke</a></li>
 <li><a href="http://macosx.forked.net/"
 target="_blank">http://macosx.forked.net/</a></li>
 <li><a href="http://www-jlc.kek.jp/~fujiik/macosx/10.0.X/"

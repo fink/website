@@ -1,16 +1,30 @@
 <?
-/* $Id: header.inc,v 1.30 2001/09/02 15:43:51 chrisp Exp $ */
+/* $Id: header.inc,v 1.31 2001/09/30 14:57:23 chrisp Exp $ */
+
+// section navigation (always visible)
+$sections = array(
+  "index.php", "Home", "home",
+  "download/index.php", "Download", "download",
+  "pdb/index.php", "Packages", "packages",
+  "help/index.php", "Help", "help",
+  "faq/index.php", "F.A.Q.", "faq",
+  "doc/index.php", "Documentation", "documentation",
+  "lists/index.php", "Mailing Lists", "mailing-lists"
+);
+if (!$section)
+  $section = "home";
 
 // main navigation box
-$default_navbox = array(
+$home_navbox = array(
   "index.php", "Home",
   "about.php", "About",
-  "download.php", "Download",
-  "help/index.php", "Getting Help",
-  "lists/index.php", "Mailing Lists",
   "people.php", "Contributors",
   "links.php", "Links"
 );
+if (!is_array($navbox)) {
+  $navbox = $home_navbox;
+}
+
 
 // get author and change date from CVS vars
 //  kill dollar-envelope
@@ -48,7 +62,7 @@ if ($metatags)
 <td align="left"><?
 if (!$is_home)
   print '<a href="'.$root.'index.php">';
-?><img src="<? print $root ?>img/title1.gif" width="248" height="43"
+?><img src="<? print $root ?>img/title2-1.gif" width="400" height="43"
 border="0" alt="Fink" /><?
 if (!$is_home)
   print '</a>';
@@ -61,52 +75,41 @@ height="31" border="0" alt="SourceForge Logo" align="absbottom"></a>&nbsp;</p>
 </tr>
 <tr valign="top">
 <td align="left" background="<? print $root ?>img/top-line.gif"><img
-src="<? print $root ?>img/title2.gif" width="248" height="8" border="0" alt=""></td>
+src="<? print $root ?>img/title2-2.gif" width="400" height="8" border="0" alt=""></td>
 <td background="<? print $root ?>img/top-line.gif"><img src="<? print $root ?>img/shim.gif" width="1"
 height="8" border="0" alt=""></td>
 </tr>
 </table>
 
-<? /* top menu */ ?>
+<? /* main table with navigation column and content column */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr valign="top">
-<td align="left" background="<? print $root ?>img/menu-back.gif"><a
-href="<? print $root ?>index.php"><img src="<? print $root
-?>img/menu-home.gif" width="54" height="22" border="0" alt="Home"
-/></a><a href="<? print $root ?>download.php"><img src="<? print $root
-?>img/menu-download.gif" width="76" height="22" border="0"
-alt="Download" /></a><a href="<? print $root
-?>faq/index.php"><img src="<? print $root ?>img/menu-faq.gif"
-width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root ?>doc/index.php"><img
-src="<? print $root ?>img/menu-docu.gif" width="110" height="22"
-border="0" alt="Documentation" /></a><a href="<? print $root ?>pdb/index.php"><img
-src="<? print $root ?>img/menu-packages.gif" width="70" height="22"
-border="0" alt="Packages" /></a><a href="<? print $root ?>help/index.php"><img
-src="<? print $root ?>img/menu-help.gif" width="42" height="22"
-border="0" alt="Help" /></a></td>
+<tr valign="top"><td align="left" width="120" bgcolor="#eeeeee">
 
-<td align="right" background="<? print $root ?>img/menu-back.gif"><img src="<? print $root ?>img/menu-back.gif"
-width="160" height="22" border="0" alt="" /></td>
-</tr>
-<tr><td colspan="2" background="<? print $root ?>img/top-line2.gif"><img src="<? print $root ?>img/top-line2.gif"
-width="32" height="3" border="0" alt="" /></td></tr>
-</table>
+<? /* navigation column table */ ?>
+<table border="0" cellpadding="0" cellspacing="0" width="120">
 
-<? /* main content table */ ?>
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td>&nbsp;&nbsp;&nbsp;</td>
-<td></td>
-<td>&nbsp;&nbsp;&nbsp;</td></tr>
-<tr valign="top"><td></td><td width="100%">
-
-
-<? /* navigation box */
-
-if (!is_array($navbox)) {
-  $navbox = $default_navbox;
+<? /* sections */ ?>
+<tr align="left"><td colspan="2"><img src="<? print $root ?>img/sect-head.gif"
+width="120" height="26" border="0" alt="Sections:"></td></tr>
+<?
+for ($i = 0; $i < sizeof($sections); $i += 3) {
+  $name = $sections[$i+2];
+  print '<tr align="left"><td colspan="2"><a href="'.$root.$sections[$i].'">';
+  if ($section == $sections[$i+2]) {
+    print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
+  } else {
+    print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
+  }
+  print '</a></td></tr>'."\n";
 }
+?>
+<tr align="left"><td colspan="2"><img src="<? print $root
+?>img/sect-bottom.gif" width="120" height="3" border="0"
+alt=""></td></tr>
 
+<? /* intra-section navigation */
 if (!$nonav) {
+
   // determine active page
   $active_page = -1;
   for ($i = 0; $i < sizeof($navbox); $i += 2) {
@@ -117,40 +120,80 @@ if (!$nonav) {
   }
 
 ?>
-<table align="right" border="0" cellpadding="0" cellspacing="0"
-width="120">
-<tr><td colspan="3" width="120"><img src="<? print $root ?>img/nav-top.gif" width="120"
-height="30" border="0" alt="Navigation:"></td></tr>
-<tr valign="top"><td width="20" background="<? print $root ?>img/nav-left.gif"><img
-src="<? print $root ?>img/nav-left.gif" width="20" height="16" border="0" alt=""></td>
-<td width="92" background="<? print $root ?>img/nav-center.gif">
+<tr align="left"><td colspan="2"><img src="<? print $root ?>img/nav-head.gif"
+width="120" height="26" border="0" alt="Navigation:"></td></tr>
+<?
+if (is_array($parents)) {
+  for ($i = 0; $i < sizeof($parents); $i += 2) {
+    $link = '<a href="'.$root.$parents[$i].'">';
 
-<p class="nav"><?
+    print '<tr align="left" valign="middle">';
+    print '<td background="'.$root.'img/nav-norm.gif">';
+    print $link.'<img src="'.$root.'img/nav-upicon.gif" width="18" height="15" border="0" alt="^ "/></a>';
+    print '</td><td background="'.$root.'img/nav-norm.gif">';
+    print '<p class="nav">'.$link.$parents[$i+1].'</a></p>';
+    print '</td></tr>'."\n";
+
+    print '<tr><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+  }
+}
+
 for ($i = 0; $i < sizeof($navbox); $i += 2) {
-  $showlink = ($i != $active_page);
-  if ($showlink)
-    print '<a href="'.$root.$navbox[$i].'">';
-  else
-    print '<b>';
-  print $navbox[$i+1];
-  if ($showlink)
-    print '</a>';
-  else
-    print '</b>';
-  print "<br>\n";
-}
-?><img src="<? print $root ?>img/shim.gif" width="92" height="1" border="0" alt="" /></p>
+  if ($i != $active_page) {
+    $link = $navbox[$i];
+    if (substr($link,-2) == ".*")
+      $link = substr($link,0,-2);
+    $link = '<a href="'.$root.$link.'">';
+  } else {
+    $link = 0;
+  }
 
-</td>
-<td width="8" background="<? print $root ?>img/nav-right.gif"><img
-src="<? print $root ?>img/nav-right.gif" width="8" height="16" border="0"
+  print '<tr align="left" valign="middle">';
+  if ($link) {
+    print '<td background="'.$root.'img/nav-norm.gif">';
+    print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "/></a>';
+    print '</td><td background="'.$root.'img/nav-norm.gif">';
+    print '<p class="nav">'.$link.$navbox[$i+1].'</a></p>';
+  } else {
+    print '<td background="'.$root.'img/nav-down.gif">';
+    print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- "/>';
+    print '</td><td background="'.$root.'img/nav-down.gif">';
+    print '<p class="nav">'.$navbox[$i+1].'</p>';
+  }
+  print '</td></tr>'."\n";
+
+  print '<tr><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+}
+?>
+<tr align="left"><td colspan="2"><img src="<? print $root
+?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
-<tr><td colspan="3" width="120"><img src="<? print $root ?>img/nav-bottom.gif" width="120"
-height="24" border="0" alt=""></td></tr>
-</table>
 
-<? /* end navigation box */
-}
+<?
+} /* end !$nonav */
+?>
+
+<tr><td>&nbsp;</td></tr>
+
+</table>
+<? /* end navigation column */ ?>
+
+</td><td align="left">
+
+<? /* content column table */ ?>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td>&nbsp;&nbsp;&nbsp;</td>
+<td></td>
+<td>&nbsp;&nbsp;&nbsp;</td></tr>
+
+<tr><td></td>
+<td width="100%">
+<? /* content */
+
+
+/*** end of inline HTML ***/
+
+/* functions to create key-value tables on the fly */
 
 function it_start() {
   global $it_flag;

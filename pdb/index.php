@@ -1,17 +1,13 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/11 20:18:29 $';
+$cvs_date = '$Date: 2001/09/30 14:57:24 $';
 
 include "header.inc";
-
-include $fsroot."db.inc.php";
-$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
-mysql_select_db($db_name, $dbh);
 ?>
 
 
-<h1>Package Database</h1>
+<h1>Package Database Introduction</h1>
 
 <p>
 This database lists all available Fink packages.
@@ -47,7 +43,7 @@ $seccount ?> sections.
 
 <p>
 You can browse the <a href="list.php">complete list of packages</a>,
-or you can browse by section:
+or you can browse by archive section:
 </p>
 
 <ul>

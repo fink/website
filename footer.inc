@@ -1,21 +1,28 @@
 <?
-/* $Id: footer.inc,v 1.6 2001/08/28 18:46:25 chrisp Exp $ */
+/* $Id: footer.inc,v 1.7 2001/09/30 14:57:23 chrisp Exp $ */
 ?>
 
 </td></tr>
-<tr><td>&nbsp;</td></tr>
+
+<? /* end content table */ ?>
 </table>
+</td></tr>
 
-<? /* footer */ ?>
+
+<? /* copyright-and-footer row of top-level table */ ?>
+
+<tr valign="bottom" align="left">
+<td bgcolor="#eeeeee"><a href="<?
+print $root ?>legal.php"><img src="<? print $root ?>img/copyright.gif"
+width="120" height="44" border="0"
+alt="Copyright (c) 2001 The Fink Project"></a></td>
+<td>
+
+<? /* footer table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td colspan="4" background="<? print $root ?>img/footer-top.gif"><img
-src="<? print $root ?>img/footer-top.gif" width="32" height="8" border="0"
-alt="-----"></td></tr>
-
-<tr valign="middle">
-<td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
-<td align="left" background="<? print $root ?>img/footer-back.gif" width="50%">
-<p class="footer"><?
+<tr><td>&nbsp;</td></tr>
+<tr><td width="100%">
+<p class="footer" align="center"><?
 if ($dyndate == 1) {
   print "Generated dynamically";
   $date = 0;
@@ -28,19 +35,17 @@ if ($dyndate == 1) {
 if ($date)
   print strftime("%a, %b %d %Y", $date);
 ?></p>
+</td></tr>
+<tr><td background="<? print $root
+?>img/bottom-line2.gif"><img src="<? print $root
+?>img/bottom-line2.gif" width="32" height="10" border="0"
+alt=""></td></tr>
+</table>
+
 </td>
-<td align="right" background="<? print $root ?>img/footer-back.gif" width="50%">
-<p class="footer"><a href="<? print $root ?>legal.php">Copyright</a> &copy; 2001
-Christoph Pfisterer</p>
-</td>
-<td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
 </tr>
 
-<tr><td colspan="4" background="<? print $root ?>img/footer-bottom.gif"><img
-src="<? print $root ?>img/footer-bottom.gif" width="32" height="8" border="0"
-alt="-----"></td></tr>
-
-<tr valign="top"><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>
 </table>
 
 
