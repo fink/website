@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.5 2004/07/10 13:53:58 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.6 2004/11/05 05:28:39 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -51,5 +51,5 @@ define (HEADER_HOSTED_BY, '{img} によってホストされています');
 define (FOOTER_AVAILABLE_LANGUAGES, '他の言語');
 define (FOOTER_GENERATED_DYNAMICALLY, '自動作成');
 define (FOOTER_DATABASE_LAST_UPDATED, 'データベースの最終更新日: %X %x');
-define (FOOTER_LAST_CHANGED, '{author} によって%Y年%b月%d日に変更されました');
+define (FOOTER_LAST_CHANGED, '{author} によって%Y年%m月%d日に変更されました');
 ?>
