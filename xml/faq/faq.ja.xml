@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.5 2004/02/22 02:47:07 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.6 2004/02/22 04:45:22 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
@@ -931,7 +931,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 </question>
 <answer>
 <p>これは December 2002 Tools のものです。
-次のようなメッセージが出ることがあります (liggdk-pixbuf を例に選んでいます):</p>
+次のようなメッセージが出ることがあります (libgdk-pixbuf を例に選んでいます):</p>
 <p>
 <code>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</code>
 </p>
@@ -945,7 +945,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 <p>パッケージをインストールしようとした時の &quot;execution of mv failed, exit code 1&quot; とはどういう意味ですか?</p>
 </question>
 <answer>
-<p>StuddIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
+<p>StuffIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
 システム環境設定の StuffIt 設定で "ArchiveViaRealName" を無効化してください。
 これはいくつかの重要なシステムコールのバ再実装のバグで、この件のような不思議なエラーをたくさん出します。</p>
 <p>この問題でない場合、 <filename>mv</filename> のエラーは通常、ビルドの前の方で発生した別のエラーを意味しています。
@@ -1573,7 +1573,7 @@ Xcode のカスタムインストールをするか、 <code>Packages</code> フ
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
 <p>この後、 Panther の3枚目から X11 を、Xcode CD から X11SDK を再インストールします。</p>
-<p>注記:  <code>system-xfree86</code> のバイナリインストールは <code>fink-0.17.0</code> およびそれ以降では X11SDK を必要としません。</p>
+<p>注記:  <code>fink-0.17.0</code> およびそれ以降では 、<code>system-xfree86</code> のバイナリインストールにX11SDK を必要としなくなりました。</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-beta-wants-xfree86" >
