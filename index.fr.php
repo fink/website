@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/08/28 15:15:43 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/09/20 22:20:27 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -42,10 +42,7 @@ include $fsroot."news/news.fr.inc";
 include "fink_version.inc";
 ?>
 
-<p>
-Fink 0.6.3 (pour OS X 10.2) et Fink <? print $fink_version ?> ont été publiées le <? print convert_date_to_locale($release_date) ?>.  
-Ces versions comprennent le source et les paquets binaires, ainsi que les installeurs binaires.
-</p>
+<p>Fink 0.6.3 (pour OS X 10.2) et Fink <? print $fink_version ?> sont disponibles depuis le <? print convert_date_to_locale($release_date) ?>. Ces versions comprennent le source et les paquets binaires, ainsi qu'un installeur binaire, l'ensemble est conçu pour tourner sur Mac OS X 10.3. Les versions 0.6.3 (pour Mac OS X 10.2) et 0.4.1 (pour Mac OS X 10.1) restent disponibles pour les utilisateurs de ces systèmes.</p>
 
 <h1>Ressources</h1>
 
