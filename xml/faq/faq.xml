@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.67 2002/12/18 15:13:11 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.68 2002/12/18 15:46:24 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -512,7 +512,7 @@ Failed: Logging into the CVS server for anonymous read-only access failed.
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
 		</codeblock>
-<p>If, on the other hand you can log in and download package descriptions but there is a message that says "<code>### execution of su failed, exit code 1</code>", then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for words to the effect of "move it out of the way" applied to some info or patch file(s), and manually remove ("<code>sudo rm</code>") the offending file(s).</p>
+<p>If, on the other hand you can log in and download package descriptions but there is a message that says "<code>### execution of su failed, exit code 1</code>", then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for lines that start with "C" and words to the effect of "move it out of the way" or "is no longer in the repository" applied to some info or patch file(s), and manually remove ("<code>sudo rm</code>") the offending file(s).</p>
 	</answer>
 </faqentry>
 
