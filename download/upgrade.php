@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/10 02:10:43 $';
+$cvs_date = '$Date: 2002/12/10 10:01:56 $';
 
 include "header.inc";
 ?>
@@ -32,7 +32,7 @@ Afterwards you can again install tetex and the other packages you removed.
 it_start();
 it_item('<b>Current installation</b>', '<b>Upgrade method</b>');
 it_item("Fink official binary distribution, version 0.3.x or later",
-  '<p>Update using "fink selfupdate". If you have an install from 10.1, you may need
+  '<p>Update using "sudo apt-get update". If you have an install from 10.1, you may need
   to do so twice to be fully updated.</p>');
 it_item("Fink official binary distribution, version 0.2.x",
   '<p>Use the <a href="puma-kit.php">10.1 Upgrade Kit</a>.</p>');
