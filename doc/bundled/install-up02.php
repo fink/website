@@ -15,7 +15,7 @@ include "header.inc";
 
 <p>
 If you already have Fink 0.2.x installed, you can update your
-installation to 0.5.2 with this package.
+installation to 0.6.1 with this package.
 </p>
 <p>
 Actually, there are two pieces that are updated independently: the
@@ -27,7 +27,7 @@ update the package manager first.
 <h2><a name="packman">4.1 Updating The Package Manager</a></h2>
 <p>
 To update the package manager, run the inject.pl script in the
-fink-0.5.2-full directory, like this:
+fink-0.6.1-full directory, like this:
 </p>
 <pre>./inject.pl</pre>
 <p>
@@ -45,7 +45,7 @@ the new versions of the fink and base-files packages.
 
 <h2><a name="descriptions">4.2 Updating The Package Descriptions</a></h2>
 <p>
-If you downloaded the fink-0.5.2-full tarball, the package
+If you downloaded the fink-0.6.1-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
 inject.pl script in that directory:
 </p>
@@ -57,7 +57,7 @@ manager.
 </p>
 <p>
 You can also grab the package descriptions as a separate tarball,
-packages-0.5.2. If you did that, just unpack it and run the inject.pl
+packages-0.6.1. If you did that, just unpack it and run the inject.pl
 script inside.
 </p>
 <p>
