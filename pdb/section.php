@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Section ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 05:43:42 $';
+$cvs_date = '$Date: 2003/01/22 00:33:50 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -32,7 +32,7 @@ if($section == "games")
 } else if($section == "utils")
 {	
   $sectionquery = " (section='$section' OR parentname='kdeutils3') ".
-  				  " AND !(parentname LIKE 'webmin') ";
+  				  " AND (parentname IS NULL OR parentname != 'webmin') ";
 } else
 $sectionquery = " section='$section' ";
 
