@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.9 2004/03/29 01:56:23 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.10 2004/07/10 08:16:17 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -48,6 +48,8 @@ releases</li>
 <section name="developerdoc"><title>開発者向けドキュメント</title>
 
 <ul>
+<li><varlink url="security/index.php" varurl="security/sec-policy.en.html">セキュリティーポリシー</varlink> - 
+Fink のパッケージをメンテナンスしている人、したいと思っている人、必見。</li>
 <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
 file) - <link
 url="http://conferences.oreillynet.com/macosx2002/"
