@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.76 2004/06/24 07:00:25 michga Exp $ */
+/* $Id: header.inc,v 1.77 2004/07/10 12:25:49 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -67,7 +67,10 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 define (FINK_SECTIONS, 'Sections');
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
-define (FINK_CONTENTS, 'Contents');
+define (FINK_CONTENTS, 'Contents-test');
+define (FINK_NEXT, 'Next-test');
+define (FINK_Q, 'Q');
+define (FINK_A, 'A');
 
 /* Printer */
 define (FINK_PRINTER, 'Printer');
