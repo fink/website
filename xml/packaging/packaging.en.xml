@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.44 2004/07/30 08:46:50 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.45 2004/08/04 08:16:59 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -2313,8 +2313,9 @@ Commands can generally be called without giving a full path.
 <p>
 A space-separated list of files that are user-modifiable configuration
 files.
+Percent expansion  is performed on this field.
 The files must be specified with an absolute path,
-e.g. <filename>%p/etc/foo.conf</filename>.
+e.g. <filename>%p/etc/%n.conf</filename>. 
 The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/30 08:47:48';
+$cvs_date = 'Date: 2004/08/04 08:18:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -507,7 +507,7 @@ L'interprétation des raccourcis a lieu dans ces scripts. Les commandes peuvent,
 </p>
 </td></tr><tr valign="top"><td>ConfFiles</td><td>
 <p>
-Liste de fichiers séparés par des espaces. Ces fichiers sont des fichiers de configuration modifiables par l'utilisateur. Le chemin complet des fichiers doit être indiqué, comme dans <code>%p/etc/foo.conf</code>. Ces fichiers sont traités de façon spéciale par dpkg. Quand un paquet est mis à jour et que le fichier de configuration a changé à la fois sur le disque et dans le paquet, dpkg demande à l'utilisateur quelle version il veut utiliser et sauvegarde l'ancien fichier. Quand un paquet est supprimé avec "remove", les fichiers de configuration ne sont pas supprimés. Pour les supprimer, il faut utiliser "purge".
+Liste de fichiers séparés par des espaces. Ces fichiers sont des fichiers de configuration modifiables par l'utilisateur. L'interprétation des raccourcis a lieu sur ce champ. Le chemin complet des fichiers doit être indiqué, comme dans <code>%p/etc/%n.conf</code>. Ces fichiers sont traités de façon spéciale par dpkg. Quand un paquet est mis à jour et que le fichier de configuration a changé à la fois sur le disque et dans le paquet, dpkg demande à l'utilisateur quelle version il veut utiliser et sauvegarde l'ancien fichier. Quand un paquet est supprimé avec "remove", les fichiers de configuration ne sont pas supprimés. Pour les supprimer, il faut utiliser "purge".
 </p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
 <p>

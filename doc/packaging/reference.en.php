@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/30 08:46:50';
+$cvs_date = 'Date: 2004/08/04 08:16:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -952,8 +952,9 @@ Commands can generally be called without giving a full path.
 <p>
 A space-separated list of files that are user-modifiable configuration
 files.
+Percent expansion  is performed on this field.
 The files must be specified with an absolute path,
-e.g. <code>%p/etc/foo.conf</code>.
+e.g. <code>%p/etc/%n.conf</code>. 
 The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups
