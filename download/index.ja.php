@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/02 16:21:21 $';
+$cvs_date = '$Date: 2004/03/06 12:42:20 $';
 
 include "header.inc";
 ?>
@@ -44,14 +44,18 @@ include "../fink_version.inc";
 途中、シェルの設定ファイルを書き換えるかどうか聞かれます。
 スクリプトが終了すると、ウィンドウが閉じて準備完了!
 </p></li>
-<li><p>
+<li>
+<p>
 途中で何らかの問題が発生した場合、インストーラディスク内の 
 pathsetup.command を再実行することができます。
 あるいは、以下のコマンドでも (ターミナル.app からコマンドラインで) 実行されます。
-</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
+</p>
+<pre>open /sw/bin/pathsetup.command &lt;RETURN&gt;</pre>
+<p>
 (これはシステムの他のユーザーでも実行することができます。
 各ユーザーは自分のアカウントで pathsetup.command しなければなりません。)
-</p><p>
+</p>
+<p>
 pathsetup.command がエラーメッセージを出力する場合、
 User's Guide の <a href="../doc/users-guide/install.php#setup">2.3 &quot;環境の設定&quot;</a>
 などのドキュメントを参照して下さい。</p>
@@ -61,7 +65,7 @@ User's Guide の <a href="../doc/users-guide/install.php#setup">2.3 &quot;環境
 あるいは、 Fink Commander GUI アプリケーションを (ディクイメージからではなく、システム上のフォルダから) 起動し、メニューの
 <em>Source-&gt;scanpackages</em> を実行し、次に <em>Source-&gt;Tools-&gt;index</em> を実行します。
 </p>
-</p></li>
+</li>
 <li><p>
 リリース以降の変更を反映させるため、
 上記のコマンドを実行後に<code>fink</code> パッケージを更新します。
@@ -94,7 +98,7 @@ Fink Commander での <code>fink</code> のソース更新は:</p>
 <p>
 これで <code>fink</code> が更新されましたので、他のパッケージを更新することができます。</p>  
 <ul>
-<li>バイナリからインストールする場合、パッケージを選択後 Binary-&gt;Install</p></li>
+<li>バイナリからインストールする場合、パッケージを選択後 Binary-&gt;Install</li>
 <li>ソースからインストールする場合、パッケージを選択後 Source-&gt;Install</li>
 </ul>
 </li>
