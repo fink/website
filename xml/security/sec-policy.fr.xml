@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
     <title>Charte générale de sécurité de Fink pour les paquets acceptés</title>
     <shorttitle>Charte de sécurité</shorttitle>
-    <cvsid>$Id: sec-policy.fr.xml,v 1.1 2004/07/02 15:46:42 michga Exp $</cvsid>
+    <cvsid>$Id: sec-policy.fr.xml,v 1.2 2004/07/02 17:12:03 michga Exp $</cvsid>
     <preface>
         <p>Ce document explique comment gérer les failles de sécurité pour les paquets qui ont été acceptés dans Fink. Bien que tout mainteneur de paquet accepté dans Fink en reste le principal responsable, Fink reconnaît la nécessité de mettre en place une charte uniforme de réaction aux failles de sécurité qui pourraient être décelées dans les programmes que Fink propose sous forme de paquets. Les mainteneurs doivent s'y conformer.</p>
     </preface>
@@ -229,37 +229,46 @@
         </preface>
         <section name="who">
             <title>Qui envoie les notifications ?</title>
-            <p>Ces annonces ne peuvent être faites que par dmalloc@users.sourceforge.net et signé avec une clé PGP dont l'empreinte est <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt>. La clé publique se trouve sur <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt> (c'est intentionnellement que le lien n'est pas marqué en tant que tel).</p>
+            <p>Ces annonces ne peuvent être faites que par dmalloc@users.sourceforge.net et signé avec une clé PGP dont l'empreinte est : </p>
+                <ul>
+                    <li>
+                <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt>.
+                </li>
+                <li>située sur 
+                <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt></li></ul>
+                <p>C'est intentionnellement que le lien n'est pas marqué en tant que tel.</p>
             <p> Autres membres autorisés : (ajoutez ici votre adresse email et votre clé publique comme je l'ai fait ci-dessus).</p>
-            <p>peter@pogma.com signé avec une clé PGP dont l'empreinte est <tt>
-		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>. La clé publique se trouve sur <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>.
-</p>
+  	        <p>peter@pogma.com signé avec une clé PGP dont l'empreinte est :</p>
+	        <ul>
+	            <li><tt>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
+		<li> située sur <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+            </ul> 
         </section>
         <section name="how">
             <title>Comment les envoyer</title>
             <p>Pour donner à toutes les notifications de sécurité un aspect semblable, elles <em>devront</em> toutes se conformer au modèle suivant :</p>
             <p>NdT: c'est intentionnellement que le modèle n'est pas traduit, car toute notification de sécurité doit être envoyée en anglais.</p>
-            <codeblock> 
-                ID:               FINK-YYYY-MMDD-NN
-                Reported:         YYYY-MM-DD
-                Updated:          YYYY-MM-DD
-                Package:          package-name 
-                Maintainer:       maintainer-name
-                Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
-                Mac OS X version: 10.3, 10.2
-                Fix:              patch|upstream
-                Updated by:       maintainer|forced update (Email)
-                Description:      A short description describing the issue.
-                References:       KEYWORD (see above)
-                   Ref-URL:       URL 
-            
-            </codeblock>
+             <codeblock> ID: FINK-YYYY-MMDD-NN 
+                        Reported: YYYY-MM-DD 
+                        Updated:  YYYY-MM-DD 
+                        Package:  package-name
+                        Affected: &lt;= versionid
+                        Maintainer: maintainer-name
+                        Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: patch|upstream 
+                        Updated by: maintainer|forced update (Email)
+                        Description: A short description describing the issue.
+                        References: KEYWORD (see above) Ref-URL: URL </codeblock>
             <p>Exemple :</p>
             <codeblock>
                 ID:               FINK-2004-06-01
                 Reported:         2004-06-09
                 Updated:          2004-06-09
                 Package:          cvs 
+                Affected:             &lt;= 1.11.16, &lt;= 1.12.8
                 Maintainer:       Sylvain Cuaz
                 Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable, 10.2-gcc3.3/unstable   
                 Mac OS X version: 10.3, 10.2
@@ -281,6 +290,7 @@
                 References:       MISC
                    Ref-URL:       http://security.e-matters.de/advisories/092004.html
             </codeblock>
+            <p>Notez que les mots clés <em>Affected</em> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetés pour Fink. L'exemple ci-dessus le montre clairement.</p>
         </section>
     </chapter>
 </document>
