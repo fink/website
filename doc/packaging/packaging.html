@@ -1075,7 +1075,22 @@ this one, they should only BuildDepend.
 </p>
 </td></tr></table>
 <p><b>Unpack Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Source</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>CustomMirror</td><td>
+<p>
+A list of mirror sites. Each mirror site appears on a separate line,
+in the following format: <tt><nobr>&lt;location&gt;: &lt;url&gt;</nobr></tt>.
+<b>location</b> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
+country code (e.g. <tt><nobr>nam-us</nobr></tt>), or anything else;
+mirrors are tried in that order.
+Example:
+</p>
+<pre>CustomMirror: &lt;&lt;
+nam-US: ftp://ftp.fooquux.com/pub/bar
+asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
+eur-DE: ftp://ftp.barfoo.de/bar
+Primary: ftp://ftp.barbarorg/pub/
+&gt;&gt;</pre>
+</td></tr><tr valign="top"><td>Source</td><td>
 <p>
 An URL to the source tarball. It should be a HTTP or FTP URL, but
 Fink doesn't really care - it just passes the URL to wget. This field
@@ -1095,21 +1110,15 @@ The value <tt><nobr>gnu</nobr></tt> is a shorthand for
 default is <tt><nobr>%n-%v.tar.gz</nobr></tt> (i.e. a manual
 download).
 </p>
-</td></tr><tr valign="top"><td>CustomMirror</td><td>
+</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
-A list of mirror sites. Each mirror site appears on a separate line,
-in the following format: <tt><nobr>&lt;location&gt;: &lt;url&gt;</nobr></tt>.
-<b>location</b> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
-country code (e.g. <tt><nobr>nam-us</nobr></tt>), or anything else;
-mirrors are tried in that order.
-Example:
+If a package consists of several tarballs, name them with these
+additional fields, starting with N = 2. So, the first tarball (which
+should be some kind of &quot;main&quot; tarball) goes into <tt><nobr>Source</nobr></tt>, the
+second tarball in <tt><nobr>Source2</nobr></tt> and so on. The rules are the same
+as for Source, only that the &quot;gnu&quot; and &quot;gnome&quot; shortcuts are not
+expanded - that would be useless anyway.
 </p>
-<pre>CustomMirror: &lt;&lt;
-nam-US: ftp://ftp.fooquux.com/pub/bar
-asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
-eur-DE: ftp://ftp.barfoo.de/bar
-Primary: ftp://ftp.barbarorg/pub/
-&gt;&gt;</pre>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
 Must be used when the tarball expands to a single directory, but
@@ -1126,15 +1135,6 @@ expand to a single directory. Usually, a tarball named &quot;foo-1.0.tar.gz&quot
 will produce a directory named &quot;foo-1.0&quot;. If it just unpacks the files
 to the current directory, use this parameter and set it to a boolean
 true value.
-</p>
-</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
-<p>
-If a package consists of several tarballs, name them with these
-additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of &quot;main&quot; tarball) goes into <tt><nobr>Source</nobr></tt>, the
-second tarball in <tt><nobr>Source2</nobr></tt> and so on. The rules are the same
-as for Source, only that the &quot;gnu&quot; and &quot;gnome&quot; shortcuts are not
-expanded - that would be useless anyway.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>ExtractDir</td><td>
 <p>
@@ -1162,6 +1162,36 @@ In the above example this would result in the tarball being stored under
 This is just the same as the <tt><nobr>SourceRename</nobr></tt> field, except that it
 is used to rename the Nth tarball as specified by the <tt><nobr>Source<b>N</b></nobr></tt>
 field. See context or hyperref for examples of usage.
+</p>
+</td></tr><tr valign="top"><td>Source-MD5</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+With this field you can specify the MD5 checksum of the source file. This
+information is then used by Fink to detect incorrect source files, that is,
+tarballs not matching the one the package creator used. Common causes for this
+problem include: incompletely downloaded tarballs; upstream maintainers silently
+replaced a tarball; a trojan or similar attacks; and so on.
+</p>
+<p>
+A typical usage example looks like this:
+</p>
+<pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
+<p>
+To compute the checksum, the <tt><nobr>md5sum</nobr></tt> tool is used. If you want to
+determine the checksum of the tarball <tt><nobr>/sw/src/apache_1.3.23.tar.gz</nobr></tt>,
+you run the following command (displayed with output here):
+</p>
+<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<p>
+As you can see, the value to the left is exactly the value you need.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This is just the same as the <tt><nobr>Source-MD5</nobr></tt> field, except that it
+is used to specify the MD5 checksum of the Nth tarball as specified by the
+<tt><nobr>Source<b>N</b></nobr></tt> field.
 </p>
 </td></tr></table>
 <p><b>Patch Phase:</b></p>
@@ -1652,4 +1682,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: packaging.xml,v 1.32 2002/08/04 21:05:58 fingolfin Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: packaging.xml,v 1.33 2002/08/05 12:54:48 fingolfin Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/08/04 21:05:58';
+$cvs_date = 'Date: 2002/08/05 12:54:48';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -62,7 +62,7 @@ currently has no maintainer.</a>
 <li><a href="reference.php#patches">5.5 Patches</a></li>
 <li><a href="reference.php#profile.d">5.6 Profile.d scripts</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.32 2002/08/04 21:05:58 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.33 2002/08/05 12:54:48 fingolfin Exp $</i></p>
 
 
 <?
