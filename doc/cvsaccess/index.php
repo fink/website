@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/09/10 15:23:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2003/11/04 10:08:40';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.10 2003/09/10 15:23:59 alexkhansen Exp $</i></p>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.11 2003/11/04 10:08:40 dmacks Exp $</i></p>
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -18,8 +18,8 @@ updating via CVS.
 The information on this page applies to Fink 0.3.x and later.
 </p>
 <h2><a name="">Fink CVS Structure</a></h2>
-<p>Fink has several CVS modules. The module <code>packages</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
-contains the package descriptions and patches, in the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/dists/">dists</a> subdirectory. There are other modules
+<p>Fink has several CVS modules. The module <code>dists</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">ViewCVS</a>)
+contains the package descriptions and patches for OS X 10.2 and above. There are other modules
 used by Fink developers, which anyone can view, but these are
 not interesting for most users.</p>
 <h2><a name="">Updating the Package Descriptions</a></h2>
