@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Porting Unix software to Darwin and Mac OS X</title>
 <shorttitle>Porting</shorttitle>
-<cvsid>$Id: porting.xml,v 1.27 2003/04/26 17:21:23 dmrrsn Exp $</cvsid>
+<cvsid>$Id: porting.xml,v 1.28 2003/09/10 13:24:02 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -525,17 +525,15 @@ not the actual problem, but with great success anyway), you can use this fix
 <em>The DESTDIR bug</em>:
 Certain packages which set DESTDIR and use libtool 1.4.2 have problems
 with relinking.
-The problems are discussed in these email messages: </li><li>
+The problems are discussed in these email messages: 
+<p>
 <link
-url="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html</link> </li><li>
-<link
-url="http://mail.gnu.org/pipermail/libtool/2002-April/006244.html">http://mail.gnu.org/pipermail/libtool/2002-April/006244.html</link> </li><li>
-<link
-url="http://mail.gnu.org/pipermail/libtool/2002-April/006250.html">http://mail.gnu.org/pipermail/libtool/2002-April/006250.html</link>,
-</li><li>and a patch for the problem is discussed in these messages:</li><li>
-<link
-url="http://mail.gnu.org/pipermail/libtool/2002-April/006268.html">http://mail.gnu.org/pipermail/libtool/2002-April/006268.html</link> </li><li>
-<link url="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html</link>
+url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link></p>
+<p><link
+url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link></p>
+<p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,</p>
+<p>and a patch for the problem is discussed in:</p>
+<p><link url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.</p>
 </li>
 </ol>
 </section>
