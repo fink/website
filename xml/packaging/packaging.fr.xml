@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.34 2004/07/02 19:15:40 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.35 2004/07/15 04:50:17 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -286,6 +286,11 @@ La forme _raw correspond à la chaîne précise du sous-type, tandis que la form
 <p>
 la partie <em>i</em>nvariante du <em>n</em>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
 (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.
+</p>
+</itemd></item>
+<item><itemt>%{default_script}</itemt>
+<itemd>
+<p>Uniquement valide dans les champs <code>*Script</code>, correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans un <code>SplitOff: InstallScript</code>, son interprétation correspond à la valeur par défaut du champ <em>parent</em>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)
 </p>
 </itemd></item>
 </itemtable>

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 19:15:40';
+$cvs_date = 'Date: 2004/07/15 04:50:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -177,6 +177,9 @@ La forme _raw correspond à la chaîne précise du sous-type, tandis que la form
 <p>
 la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés.
 (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.
+</p>
+</td></tr><tr valign="top"><td>%{default_script}</td><td>
+<p>Uniquement valide dans les champs <code>*Script</code>, correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans un <code>SplitOff: InstallScript</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)
 </p>
 </td></tr></table>
 
