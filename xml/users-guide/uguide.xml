@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.26 2003/07/06 00:04:23 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.27 2003/07/06 00:12:01 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -386,7 +386,7 @@ This version is faster than 4.2.1.1, but hasn't been tested quite as much.
 <p>
 system-xfree86:
 This package expects that you installed XFree86 manually, either from
-source or from the official (or unofficial) binary distribution; or that you have installed Apple's X111.
+source or from the official (or unofficial) binary distribution; or that you have installed Apple's X11.
 It will just check that the installation is useful and then act as a
 dependency placeholder.
 </p>
