@@ -193,7 +193,7 @@ function AddFlags($between = "", $showCurrent = false)
 {
 	reset($GLOBALS["phpLang_languages"]);
 	$temp = "";
-	echo('Avaiable Languages: | ');
+	echo('Available Languages: | ');
 	while(list($key, $name) = each($GLOBALS["phpLang_languages"])) {
 		if(file_exists(phpLang_localizedFileName($name[0])) && ($showCurrent || $name[0] != phpLang_current)) {
 			echo($temp.'<a href="'.phpLang_currentURI.phpLang_urlParam.'='.$name[0].'">');
@@ -203,7 +203,6 @@ function AddFlags($between = "", $showCurrent = false)
 			$temp = $between;
 		}
 	}
-	echo('Avaiable Languages: | ');
 }
 
 if(phpLang_current != '') {
