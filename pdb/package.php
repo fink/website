@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/09/06 16:55:59 $';
+$cvs_date = '$Date: 2004/09/06 17:23:02 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -118,20 +118,18 @@ if (!$rs) {
     print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
 
     // CVS/rsync dist
-    if(strlen($dists[1])) {
-      $dist_st = $dists[1] . '-stable';
-      $dist_un = $dists[1] . '-unstable';
-      $vers_st = $rmap[$dist_st];
-      $vers_un = $rmap[$dist_un];
+    if(strlen($dists[1]) || strlen($dists[2])) {
+      $vers_st = $rmap[$dists[1]];
+      $vers_un = $rmap[$dists[2]];
       avail_td(
 	strlen($vers_st)
-	  ? "<!-- a href=\"../packagedetails.php?tree=$dist_st&pkg=$package&version=$vers_st\" -->".$vers_st #."</a>"
+	  ? '<!-- a href="../packagedetails.php?tree='.$dists[1]."&pkg=$package&version=$vers_st\" -->".$vers_st #."</a>"
 	  : '<i>not present</i>'
 	, $rowspan,1);
       print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
       avail_td(
 	strlen($vers_un)
-	  ? "<!-- a href=\"../packagedetails.php?tree=$dist_un&pkg=$package&version=$vers_un\" -->".$vers_un #."</a>"
+	  ? '<!-- a href="../packagedetails.php?tree='.$dists[2]."&pkg=$package&version=$vers_un\" -->".$vers_un #."</a>"
 	  : '<i>not present</i>'
 	, $rowspan,1);
     } else {
