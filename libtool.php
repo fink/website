@@ -1,7 +1,7 @@
 <?
 $title = "libtool patch";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/13 21:50:52 $';
+$cvs_date = '$Date: 2001/01/16 09:23:05 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -20,7 +20,7 @@ a patch for libtool that enables shared library building on Darwin
 (after some more tweaking, that is).</p>
 
 <p>After applying <a href="files/libtool-1.3.5.patch">this patch</a>
-<b>[updated 2001-01-13]</b>to the libtool 1.3.5 source, you must
+<b>[updated 2001-01-13]</b> to the libtool 1.3.5 source, you must
 delete the files ltconfig and ltmain.sh. They will be recreated from
 the appropriate .in files when you run configure. But that's only half
 the work - every package using libtool comes with its own copies of
@@ -38,6 +38,9 @@ homepage</a>.</p>
 <p>Side note: Apple's Developer Tools contain a program also called
 libtool, which can be used to build shared libraries. However, this is
 completely unrelated.</p>
+
+<p>For patches to packages that do not use GNU libtool, see the <a
+href="patches.php">patches page</a>.</p>
 
 
 <?
