@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.116 2004/01/18 20:11:56 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.117 2004/02/03 02:59:13 rangerrick Exp $</cvsid>
 
+<newsitem>
+	<date>2004-02-02</date>
+	<headline>Java 1.4.2 Update Removes Java SDK</headline> 
+	<body>
+	<p>
+If you previously had Java 1.4.1 and the Java SDK installed, the new
+Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
+but will <em>remove</em> the previous 1.4.1 Java runtime and
+SDK <em>without</em> upgrading the JDK.  To build Java packages in Fink
+you will need to <extlink url="http://connect.apple.com/">go to
+connect.apple.com and download the Java 1.4.2 SDK</extlink> (free
+registration required).
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2004-01-18</date>
 	<headline>10.3 binaries updated</headline> 
