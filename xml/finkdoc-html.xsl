@@ -25,7 +25,7 @@
 <li><a><xsl:attribute name="href">
 <xsl:text>#</xsl:text><xsl:value-of select="@filename"/>
 </xsl:attribute>
-<b><xsl:value-of select="title" /></b></a></li><xsl:text>
+<b><xsl:number format="1 " /><xsl:value-of select="title" /></b></a></li><xsl:text>
 </xsl:text>
 
 <ul><xsl:text>
@@ -34,6 +34,7 @@
 <li><a><xsl:attribute name="href">
 <xsl:text>#</xsl:text><xsl:value-of select="../@filename" /><xsl:text>.</xsl:text><xsl:value-of select="@name" />
 </xsl:attribute>
+<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
 <xsl:for-each select="question/p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
 </xsl:for-each>
@@ -62,7 +63,7 @@
 
 <xsl:template match="chapter">
 
-<a name="{@filename}"><h2><xsl:value-of select="title"/></h2></a>
+<a name="{@filename}"><h2><xsl:number format="1 " /><xsl:value-of select="title"/></h2></a>
 
 <xsl:apply-templates/>
 
@@ -96,7 +97,11 @@
 </xsl:template>
 
 <xsl:template match="section">
-<a name="{../@filename}.{@name}"><h3><xsl:value-of select="title"/></h3></a>
+<a name="{../@filename}.{@name}"><h3>
+<xsl:if test="boolean(//document)">
+<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
+</xsl:if>
+<xsl:value-of select="title"/></h3></a>
 <xsl:apply-templates/>
 </xsl:template>
 
@@ -106,7 +111,7 @@
 
 <xsl:template match="question">
 <div class="question">
-<p><b><xsl:text>Q: </xsl:text>
+<p><b>Q<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1" /><xsl:text>: </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>

@@ -29,7 +29,7 @@
 <li><a><xsl:attribute name="href">
 <xsl:value-of select="@filename"/><xsl:text>.php</xsl:text>
 </xsl:attribute>
-<b><!--<xsl:number format="1 " />--><xsl:value-of select="title" /></b></a></li><xsl:text>
+<b><xsl:number format="1 " /><xsl:value-of select="title" /></b></a></li><xsl:text>
 </xsl:text>
 
 <ul><xsl:text>
@@ -38,7 +38,7 @@
 <li><a><xsl:attribute name="href">
 <xsl:value-of select="../@filename" /><xsl:text>.php#</xsl:text><xsl:value-of select="@name" />
 </xsl:attribute>
-<!--<xsl:number count="chapter" format="1." /><xsl:number format="1 " />-->
+<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
 <xsl:for-each select="question/p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
 </xsl:for-each>
@@ -89,14 +89,14 @@
 
 </head><body>
 
-<h1><!--<xsl:number format="1 " />--><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="title"/></h1>
+<h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1 " /><xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates/>
 
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
 <p align="right">
-Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
+Next: <xsl:number format="1 " /><a href="{@filename}.php"><xsl:value-of select="title" /></a>
 </p>
 </xsl:if>
 </xsl:for-each>
@@ -133,7 +133,11 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 </xsl:template>
 
 <xsl:template match="section">
-<a name="{@name}"><h2><xsl:value-of select="title"/></h2></a>
+<a name="{@name}"><h2>
+<xsl:if test="boolean(//document)">
+<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
+</xsl:if>
+<xsl:value-of select="title"/></h2></a>
 <xsl:apply-templates/>
 </xsl:template>
 
@@ -143,7 +147,7 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 
 <xsl:template match="question">
 <div class="question">
-<p><b>Q<!--<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1:" /></b>--><xsl:text>: </xsl:text>
+<p><b>Q<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1" /><xsl:text>: </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
@@ -246,9 +250,6 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 <xsl:template match="xref">
 <a><xsl:attribute name="href">
 <xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.php</xsl:if>
-<!--
-<xsl:if test="boolean(@chapter)"><xsl:value-of select="/document/chapter[@name = {@chapter}]/@filename" />.php</xsl:if>
--->
 <xsl:if test="boolean(@section)">#<xsl:value-of select="@section" /></xsl:if>
 </xsl:attribute>
 <xsl:apply-templates/></a>
