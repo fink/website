@@ -33,7 +33,7 @@ a superset of Darwin.
 <li><a href="#preparing"><b>4 Preparing for 10.2</b></a></li>
 <ul>
 <li><a href="#preparing.bash">4.1 The bash shell</a></li>
-<li><a href="#preparing.gcc3">4.2 gcc3</a></li>
+<li><a href="#preparing.gcc3">4.2 The gcc3 compiler</a></li>
 </ul>
 </ul><a name="basics"><h2>1 Basics</h2></a>
 
@@ -646,7 +646,7 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </li>
 </ul>
 
-<a name="preparing.gcc3"><h3>4.2 gcc3</h3></a>
+<a name="preparing.gcc3"><h3>4.2 The gcc3 compiler</h3></a>
 <p>Mac OS X 10.2 will use the gcc3 compiler, and at the moment, the Fink team
 is experimenting with this on Fink packages, using the version of gcc3
 which Apple provided with the April 2002 Developer Tools.  As of May 22,
@@ -674,6 +674,14 @@ __ZTI9pkgSystem) </li>
 <li>
 tads-2.5.5-3 breaks because of weird va_args() calling</li>
 
+<p>In general, packages which have loadable modules and use libtool are
+failing with this install_name error at the moment, because libtool passes
+the -install_name flag even along with the -bundle flag (when it is not
+strictly needed).  This behavior was accepted by the gcc2 compiler but is
+not being accepted by the gcc3 compiler.  A fix is being worked on.</p>
+<p>Another issue with the gcc3 compiler is an incompatibility for C++ API's
+between gcc2 and gcc3.  In practice, this means that C++ programs compiled
+with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 
 
@@ -685,4 +693,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: porting.xml,v 1.12 2002/05/22 14:08:56 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: porting.xml,v 1.13 2002/05/22 14:46:40 dmrrsn Exp $</i></p></body></html>
