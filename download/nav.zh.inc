@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.zh.inc,v 1.2 2004/03/24 18:29:08 dmrrsn Exp $ */
+/* $Id: nav.zh.inc,v 1.3 2004/10/12 01:50:28 dmrrsn Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -11,7 +11,7 @@ $navbox = array(
   "download/10.1-upgrade.php?phpLang=zh", "10.1 升级",
   "download/10.2-upgrade.php?phpLang=zh", "10.2 升级",
   "download/10.3-upgrade.php?phpLang=zh", "10.3 升级",
-  "bindist/.*", "旧文档"
+  "http://bindist.finkmirrors.net/bindist/dists/", "旧文档"
 );
 
 ?>

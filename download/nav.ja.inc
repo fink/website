@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.ja.inc,v 1.3 2004/03/24 18:29:08 dmrrsn Exp $ */
+/* $Id: nav.ja.inc,v 1.4 2004/10/12 01:50:28 dmrrsn Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -11,6 +11,7 @@ $navbox = array(
   "download/10.1-upgrade.php?phpLang=ja", "10.1 アップグレード",
   "download/10.2-upgrade.php?phpLang=ja", "10.2 アップグレード",
   "download/10.3-upgrade.php?phpLang=ja", "10.3 アップグレード"
+  "http://bindist.finkmirrors.net/bindist/dists/", "Archive Browser"
 );
 
 ?>
