@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.12 2004/03/27 00:34:25 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.13 2004/04/11 00:17:34 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -438,7 +438,7 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 </question>
 <answer>
 <p>sudo がパスワードを聞いてこないように設定することができます。
-root 権限で <filename>/etc/sudoers</filename> を開き、次の行を追加します:</p>
+root 権限で <code>visudo</code> を開き、次の行を追加します:</p>
 <codeblock>username ALL = NOPASSWD: ALL</codeblock>
 <p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p>
 </answer>
@@ -643,7 +643,9 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 <p>と入力し、 <filename>/sw/sbin</filename> が出てこないなら、環境変数を
 <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >instructions</link>
 内の Users Guide を参照してください。
-<filename>/sw/sbin</filename> があるが、他のディレクトリ (例えば /usr/local/bin) がそれより前にある場合、 PATH の順序を変えて先頭近くに移動するか、どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <filename>install-info</filename> のファイル名を一時的に変える必要があります。</p>
+<filename>/sw/sbin</filename> があるが、他のディレクトリ (例えば /usr/local/bin) 
+がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
+どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <filename>install-info</filename> のディレクトリ名を一時的に変える必要があります。</p>
 </answer>
 </faqentry>
 <faqentry name="bad-list-file" >
