@@ -1,14 +1,30 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/11/30 21:43:49';
+$cvs_date = 'Date: 2003/12/14 13:22:12';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
+<a name="2003-12-28 Merry Christmas and a happy new year"><span class="news-date">2003-12-28: </span><span class="news-headline">Merry Christmas and a happy new year</span></a><?php gray_line(); ?>
+		<p>
+ The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
+ forward to yet another year where we can help the Macintosh community grow into the 
+ world of UNIX together with Mac OS X.
+ 		</p>
+		<p>
+ We wish you all, that your hope is not too frail and that you will carry on following 
+ through with your wishes. May the world we live in gradually become a better place and
+ may peace and understanding settle just for a few days. 
+		</p>
+		<p>
+ Enjoy your quiet time and in case we do not get around to saying it soon enough. 
+ A happy new year to all of you, stay with us we count on your support.
+		
+		</p>
+	<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
 		<p>
 	Thank you, thank you, thank you. What a great community we have.
 	Thank you for providing us with more mirrors. 

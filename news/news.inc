@@ -1,4 +1,20 @@
-<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
+<a name="2003-12-28 Merry Christmas and a happy new year"><span class="news-date">2003-12-28: </span><span class="news-headline">Merry Christmas and a happy new year</span></a><?php gray_line(); ?>
+		<p>
+ The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
+ forward to yet another year where we can help the Macintosh community grow into the 
+ world of UNIX together with Mac OS X.
+ 		</p>
+		<p>
+ We wish you all, that your hope is not too frail and that you will carry on following 
+ through with your wishes. May the world we live in gradually become a better place and
+ may peace and understanding settle just for a few days. 
+		</p>
+		<p>
+ Enjoy your quiet time and in case we do not get around to saying it soon enough. 
+ A happy new year to all of you, stay with us we count on your support.
+		
+		</p>
+	<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
 		<p>
 	Thank you, thank you, thank you. What a great community we have.
 	Thank you for providing us with more mirrors. 
@@ -36,30 +52,4 @@
         We hope to improve this service in the future, yet this depends on your willingness to help us out. 
         We are looking forward to many new applications and thank our community in advance. 
         </p>    
-	<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
-        <p>The latest Fink release, version 0.6.2, is now available
-for both source and binary users.  This is a bug-fix release, intended
-to address two problems: the dselect/user deletion bug, and a 
-problem with ownership of files.  The dselect bug was addressed by
-updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
-it is safe to once again use dselect.  However, if you ran dselect
-at any time since 0.6.0, you should carefully check the integrity
-of the file at <code>/sw/etc/apt/sources.list</code>.  If you have
-any doubts about this file, you should replace it with
-<a href="<?php print $root; ?>files/sources.list">the default sources.list file</a>.
-</p>
-<p>Users who have installed binary files from the 0.6.1 distribution
-may find that certain files in their Fink installation are owned
-by UID 2011 rather than by root.  To correct this problem,
-run the command:</p>
-<pre>sudo find /sw/ -user 2011 -exec chown root:admin {} \;</pre>
-<p>This release, like the previous one, was built on OS X 10.2
-using the gcc 3.3 compiler, and runs fine with some exceptions* on OS X 10.3.  Most Fink 
-users who upgrade to 10.3 will continue to
-want to only use the binaries from this
-new distribution for now, while the Fink team continues to modify
-Fink packages for 10.3.
-</p>
-<p>*Exceptions include: emacs, qt.
-</p>
 	
