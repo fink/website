@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/30 11:11:49 $';
+$cvs_date = '$Date: 2001/06/30 11:14:58 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,6 +30,10 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-06-30: A major restructuring of the web site has started. The
+non-Fink-specific documents were removed because I don't have the time
+to maintain them. All documentation will be consolidated in the new <a
+href="doc/index.php">Documentation section</a>.</p>
 <p>2001-06-24: Version 0.2.2 is finally released. Get it from the <a
 href="download.php">download page</a>. Be sure to read the notes
 about X11 in the INSTALL file.</p>
