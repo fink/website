@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.51 2004/09/11 20:56:29 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.52 2004/09/12 14:39:21 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1738,6 +1738,8 @@ The value <code>gnu</code> is a shorthand for
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
 default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
+This implicitly-defined <code>Source</code> form is deprecated
+(explicitly-stated simple filename/manual download is still okay).
 </p>
 </itemd></item>
 
