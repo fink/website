@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/09/07 11:52:24';
+$cvs_date = 'Date: 2004/09/07 12:28:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -725,6 +725,20 @@ CompileScript for details.)
 As of fink &gt; 0.13.7, this parameter will also work with perl modules
 <code>Type: Perl</code>, and will append to the default perl Makefile.PL
 string.
+</p>
+<p>
+  Starting in fink-0.22.0, this field supports conditionals. The
+  syntax is the same as that used in the <code>Depends</code> and
+  other package-list fields. The conditional expression only applies
+  to the whitespace-delimited "word" immediately following
+  it. For example
+</p>
+<pre>
+Type: -x11 (boolean)
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
+</pre>
+<p>
+  will always pass the <code>--mandir</code> and <code>--disable-shared</code> flags, but only pass <code>--with-x11</code> in the -x11 variant.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>
