@@ -12,7 +12,7 @@
 
 <xsl:template match="document">
 
-<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
@@ -99,7 +99,7 @@ include $fsroot."header.inc";
 <!-- ***** chapter (renders to a separate file) ***** -->
 
 <xsl:template match="chapter">
-<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
@@ -146,7 +146,7 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 <!-- ***** article (renders all on one page) ***** -->
 
 <xsl:template match="article">
-<xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="utf-8">
+<xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
