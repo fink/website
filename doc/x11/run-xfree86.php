@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/23 11:36:26';
+$cvs_date = 'Date: 2001/07/28 20:06:10';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -103,7 +103,7 @@ in and let you choose between fullscreen and rootless mode in a dialog
 at startup.
 Just double-click the XDarwin.app application.
 You can disable the dialog and set XDarwin to always use the mode of
-your choice in the preferences.
+your choice in the preferences dialog.
 </p>
 <p>
 You can still use startx and the command line options if you prefer.

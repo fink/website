@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/23 11:36:26';
+$cvs_date = 'Date: 2001/07/28 20:06:10';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -132,6 +132,60 @@ though.
 This way you can still run X11 applications remotely or through ssh
 with X11 tunneling.
 </p>
+
+
+
+<a name="keyboard"><h2>The keyboard doesn't work in XFree86</h2></a>
+<p>
+This is a known problem that so far seems to affect only portables
+(PowerBook, iBook).
+The problem is that the kernel's keymapping (which XFree86 read to
+generate its own keymapping) sometimes is empty.
+As a workaround, you can tell XFree86 to load a keymapping from a file
+instead.
+Under Mac OS X, go to the XDarwin preferences dialog, check the "Load
+from file" checkbox and select the keymapping file to load.
+After restarting XDarwin, your keyboard should mostly work (see
+below).
+</p>
+<p>
+If you're starting XFree86 from the command line, you can pass the
+name of the keymapping file to load as an option, as in:
+</p>
+<pre>startx -- -keymap USA.keymapping</pre>
+
+
+
+<a name="delete-key"><h2>The Backspace key doesn't work</h2></a>
+<p>
+This happens when you use the "Load keymapping from file" option
+described above.
+The mapping files describe the backspace key as "Delete", not as
+"Backspace".
+You can correct that by putting the following line in your .xinitrc
+file:
+</p>
+<pre>xmodmap -e "keycode 59 = BackSpace"</pre>
+
+
+
+<a name="locale"><h2>"Warning: locale not supported by C library"</h2></a>
+<p>
+These messages are quite common, but harmless.
+It just means what it says - internationalization is not supported
+through the standard C library, the program will use the default
+messages, usually in English.
+You can get rid of the messages by unsetting the environment variable
+LANG.
+Note that this will also turn internationalization off in programs
+that actually support it (via gettext/libintl).
+Example for .xinitrc:
+</p>
+<pre>unset LANG</pre>
+<p>
+Example for .cshrc:
+</p>
+<pre>unsetenv LANG</pre>
 
 
 
