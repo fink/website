@@ -1,25 +1,25 @@
 <?
-$title = "Package Database - Package Search";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2004/02/28 20:35:57 $';
-
-$have_key = isset($s);
-$search_key = $s;
+$title = "Package Database - Contents Search";
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2005/02/11 06:02:03 $';
 
 include "header.inc";
-?>
 
+$summary = ereg_replace(" ", "", param(summary));
+$filename = ereg_replace(" ", "", param(filename));
 
-<?
-$search_key = ereg_replace(" ", "", $search_key);
-
-if (ereg("[^a-zA-Z0-9_.+-]", $search_key)) {
+if (ereg("[^a-zA-Z0-9_.+-]", $summary) || ereg("[^a-zA-Z0-9_.+-]", $filename)) {
+print "yes\n";
 ?>
 
 <h1>Package Search</h1>
 
 <form action="search.php" method="GET">
-<p>Search for package: <input type="text" name="s" size="15" value="">
+<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
+print $summary ?>">
+</p>
+<p>Search package contents: <input type="text" name="filename" size="15" value="<?
+print $filename ?>">
 <input type="submit" value="Search">
 </p>
 </form>
@@ -33,57 +33,87 @@ if (ereg("[^a-zA-Z0-9_.+-]", $search_key)) {
 <h1>Package Search</h1>
 
 <form action="search.php" method="GET">
-<p>Search for package: <input type="text" name="s" size="15" value="<?
-print $search_key ?>">
+<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
+print $summary ?>">
+</p>
+<p>Search package contents: <input type="text" name="filename" size="15" value="<?
+print $filename ?>">
+<input type=checkbox name=ignoredirs>Ignore Dirs
 <input type="submit" value="Search">
 </p>
 </form>
 
 <?
-if ($search_key) {
+
+if(param(order)) {
+	$sortorder = param(order);
+	print "order $sortorder ";
+} else {
+	if(param(filename)) 
+		$sortorder = "filename";
+	else if (param(summary))
+		$sortorder = "name";
+}
+
+if (param(filename)) {
+
+  if(param(ignoredirs)){
+	$directories = " AND fileperms REGEXP '^[^d]' ";
+  }
+  $dosearch = 1;
+  $q = "SELECT filename,filepath,fileperms,filesize,pkghash,version,contentspackages.package,contentspackages.release ".
+		"FROM contents,contentspackages ".
+	   "WHERE contents.file_id=contentspackages.file_id ".
+       "AND filename LIKE '%$filename%' ". $directories .
+       "ORDER BY $sortorder";
+	   # ASC LIMIT 0,50";       
+} else if (param(summary)) {
+  $dosearch = 1;
   $q = "SELECT name,descshort FROM package ".
-       "WHERE (name LIKE '%$search_key%' OR descshort LIKE '%$search_key%') ".
-       "AND latest=1 ORDER BY name ASC";
+       "WHERE (name LIKE '%$summary%' OR descshort LIKE '%$summary%') ".
+       "AND latest=1 ORDER BY $sortorder ASC";
+}
+print $q;
+if($dosearch) {
+
   $rs = mysql_query($q, $dbh);
   if (!$rs) {
     print '<p><b>error during query:</b> '.mysql_error().'</p>';
   } else {
     $count = mysql_num_rows($rs);
-
+		param(summary) ? $search_key = param(summary) : $search_key = param(filename);
     if ($count == 0) {
-?>
-<p>Found no packages that match "<? print $search_key ?>".</p>
-<?
+	    print "<p>Found no packages that match $search_key.</p>";
     } elseif ($count == 1) {
-?>
-<p>Found 1 package that matches "<? print $search_key ?>":</p>
-<?
+		print "<p>Found 1 package that matches $search_key:</p>";
     } else {
-?>
-<p>Found <? print $count ?> packages that match "<? print $search_key ?>":</p>
-<?
+		print "<p>Found $count packages that match $search_key:</p>";
     }
     if ($count > 0) {
-?>
-<ul>
-<?
-      while ($row = mysql_fetch_array($rs)) {
-        $desc = " - ".$row[descshort];
-        if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
-          $desc = "";
-        print '<li><a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a>'.$desc."</li>\n";
+		if(param(filename)) {
+			print 'Sort: <a href="'.$pdbroot."search.php?filename=$filename&summary=$summary&order=package\">Package</a> - ";
+			print '<a href="'.$pdbroot."search.php?filename=$filename&summary=$summary&order=filepath,filename\">Filename</a>";
+		} else {
+			print 'Sort: <a href="'.$pdbroot."search.php?filename=$filename&summary=$summary&order=name\">Package</a> - ";
+			print '<a href="'.$pdbroot."search.php?filename=$filename&summary=$summary&order=descshort\">Summary</a>";
+		}
+		
+	  print "<ul>";	  while ($row = mysql_fetch_array($rs)) {
+		$row["name"] ? $name = $row["name"] : $name = $row["package"];
+		$vers = $row["version"];
+		$tree = $row["release"];
+        $row[descshort] ? $desc = " - $row[descshort]" : $desc = " - $vers - $row[filepath]";
+		if(! param(summary)) {
+        	print '<li><a href="'.$pdbroot."packagedetails.php?tree=$tree&pkg=$name&version=$vers\">".$name.'</a>'.$desc."</li>\n";
+        } else {
+	        print '<li><a href="'.$pdbroot."package.php/$name\">".$name.'</a>'.$desc."</li>\n";
+	    }
       }
-?>
-</ul>
-<?
+	print "</ul>\n";
     }
   }
 } elseif ($have_key) {
-?>
-
-<p>No search string entered.</p>
-
-<?
+	print "<p>No search string entered.</p>\n";
 }
 
 
