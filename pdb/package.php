@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/09/06 17:23:02 $';
+$cvs_date = '$Date: 2004/09/06 21:24:31 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -87,7 +87,12 @@ if (!$rs) {
      $row_color='bgcolor=#f6ecff';
    }
 
-   $rowspan=sizeof($dists[0]);
+   // massage if only single dist listed as a simple string
+   if(!is_array($dists[0]))
+     $dists[0]=array($dists[0]);
+
+   // always have first (even if no dist), then need spacer+dist for each other
+   $rowspan=1+2*(sizeof($dists[0])-1);
    if($rowspan==0) $rowspan=1;
 
    print '<tr>';
@@ -107,12 +112,12 @@ if (!$rs) {
    print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
 
    // first bindist
-    if(sizeof($dists[0])) {
+    if(strlen($dists[0][0])) {
       avail_td($dists[0][0],1,1);
       $vers = $rmap[$dists[0][0].'-stable'];
       avail_td(strlen($vers) ? $vers : '<i>not present</i>',1,1);
     } else {
-      avail_td("",$rowspan,1);
+      avail_td('<i>none available</i>',$rowspan,2);
     }
 
     print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
@@ -139,6 +144,7 @@ if (!$rs) {
 
     // other bindists
     for( $bindistrow=1; $bindistrow<sizeof($dists[0]); $bindistrow++ ) {
+      print '<th height="2" colspan="2" bgcolor="#f0f0f0">'.$shim.'</th>';
       print "<tr $row_color>";
       avail_td($dists[0][$bindistrow],1,1);
       avail_td($rmap[$dists[0][$bindistrow].'-stable'],1,1);
