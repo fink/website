@@ -11,6 +11,7 @@ $rowcolor2 = "#eeeeee";
 // Fink website stuff
 $fsroot = $binbase."../";
 $root = $relbase."../";
+include "hostlogo.inc";
 
 $title = "Fink Archive Browser";
 
