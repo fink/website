@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_date = 'Date: 2002/04/17 13:10:27';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -112,7 +112,7 @@ alternate default values for the compile and install scripts to be used.
 <p>
 This field gives the nature of the license under which the package is
 distributed.
-The value must be one of the values described in <a href="policy.php#license">Package Licenses</a> earlier in
+The value must be one of the values described in <a href="policy.php#licenses">Package Licenses</a> earlier in
 this document.
 Additionally, this field must only be given if the package actually
 complies to the packaging policy in these respects, i.e. a copy of the

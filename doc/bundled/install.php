@@ -1,17 +1,17 @@
 <?
 $title = "Installation";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_date = 'Date: 2002/04/15 19:53:09';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.3.2a Installation</h1>
+<h1>Fink 0.4.0 Installation</h1>
 <p>
 These are the installation instructions for the &quot;source&quot; distribution
-of Fink 0.3.2a.
+of Fink 0.4.0.
 This document does not apply to the &quot;binary&quot; distribution.
 There are instructions for both first time installation and upgrading
 from a previous version.
@@ -49,7 +49,7 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.14 2002/04/14 23:10:35 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.15 2002/04/15 19:53:09 fingolfin Exp $</i></p>
 
 
 <?

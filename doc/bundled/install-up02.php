@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.2";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/14 23:10:35';
+$cvs_date = 'Date: 2002/04/15 19:53:09';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up01.php" title="Upgrading From Fink 0.1.x"><link rel="prev" href="install-up03.php" title="Upgrading From Fink 0.3.x">';
 
@@ -15,7 +15,7 @@ include "header.inc";
 
 <p>
 If you already have Fink 0.2.x installed, you can update your
-installation to 0.3.2a with this package.
+installation to 0.4.0 with this package.
 </p>
 <p>
 Actually, there are two pieces that are updated independently: the
@@ -27,7 +27,7 @@ update the package manager first.
 <a name="packman"><h2>4.1 Updating The Package Manager</h2></a>
 <p>
 To update the package manager, run the inject.pl script in the
-fink-0.3.2a-full directory, like this:
+fink-0.4.0-full directory, like this:
 </p>
 <pre>./inject.pl</pre>
 <p>
@@ -45,7 +45,7 @@ the new versions of the fink and base-files packages.
 
 <a name="descriptions"><h2>4.2 Updating The Package Descriptions</h2></a>
 <p>
-If you downloaded the fink-0.3.2a-full tarball, the package
+If you downloaded the fink-0.4.0-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
 inject.pl script in that directory:
 </p>
@@ -57,7 +57,7 @@ manager.
 </p>
 <p>
 You can also grab the package descriptions as a separate tarball,
-packages-0.3.2a. If you did that, just unpack it and run the inject.pl
+packages-0.4.0. If you did that, just unpack it and run the inject.pl
 script inside.
 </p>
 <p>
