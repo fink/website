@@ -22,6 +22,10 @@
 <link rel="contents" href="{@filename}.php?phpLang={$lang-ext}" title="{shorttitle} Contents" />
 <link rel="next" href="{chapter/@filename}.php?phpLang={$lang-ext}" title="{chapter/title}" />
 </head><body>
+<xsl:text disable-output-escaping="yes">&lt;!--?
+include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disable-output-escaping="yes">.inc";
+?--&gt;
+</xsl:text>
 
 <h1><xsl:value-of select="title"/></h1>
 
@@ -29,7 +33,7 @@
 
 <!-- start TOC -->
 
-<h2><xsl:text>Contents</xsl:text></h2>
+<h2><xsl:text>{FINK_CONTENTS}</xsl:text></h2>
 
 <ul><xsl:text>
 	</xsl:text>
@@ -63,6 +67,8 @@
 
 <xsl:apply-templates select="chapter" />
 
+<xsl:text disable-output-escaping="yes">
+&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;</xsl:text>
 </body></html>
 </xsl:document>
 
@@ -126,19 +132,27 @@ include $fsroot."header.inc";
 </xsl:if>
 
 </head><body>
+<xsl:text disable-output-escaping="yes">&lt;!--?
+include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disable-output-escaping="yes">.inc";
+?--&gt;
+</xsl:text>
 
-<h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1 " /><xsl:value-of select="title"/></h1>
+<h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1 " />. <xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates/>
 
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
 <p align="right">
-Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
+<xsl:text>{FINK_NEXT}</xsl:text>:
+<a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
 </p>
 </xsl:if>
 </xsl:for-each>
 
+<xsl:text disable-output-escaping="yes">
+&lt;? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;
+</xsl:text>
 </body></html>
 </xsl:document>
 </xsl:template>
@@ -152,8 +166,13 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 
 <xsl:document href="{@filename}.{@lang}.php.tmp" method="html" indent="no" encoding="utf-8">
 <html><head>
+
 <title><xsl:value-of select="shorttitle" /></title>
 </head><body>
+<xsl:text disable-output-escaping="yes">&lt;!--?
+include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disable-output-escaping="yes">.inc";
+?--&gt;
+</xsl:text>
 
 <h1><xsl:value-of select="title"/></h1>
 
@@ -163,6 +182,9 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 
 <xsl:apply-templates select="section" />
 
+<xsl:text disable-output-escaping="yes">
+&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;
+</xsl:text>
 </body></html>
 </xsl:document>
 </xsl:template>
@@ -189,7 +211,7 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 
 <xsl:template match="question">
 <div class="question">
-<p><b>Q<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1" /><xsl:text>: </xsl:text>
+<p><b>{FINK_Q}<xsl:number count="chapter" format="1." /><xsl:number count="faqentry" format="1" /><xsl:text>: </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
@@ -202,7 +224,7 @@ Next: <a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><x
 
 <xsl:template match="answer">
 <div class="answer">
-<p><b>A:</b><xsl:text> </xsl:text>
+<p><b>{FINK_A}:</b><xsl:text> </xsl:text>
 <xsl:for-each select="p">
 <xsl:if test='position() = 1'><xsl:call-template name="plain" /></xsl:if>
 </xsl:for-each>
