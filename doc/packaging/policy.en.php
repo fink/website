@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/06/15 18:31:38';
+$cvs_date = 'Date: 2004/06/23 22:22:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 include_once "header.inc";
@@ -341,7 +341,49 @@ dependency of the main package barN (which can be abbreviated
 This ensures that the versions match, and also guarantees that barN
 automatically "inherits" all the dependencies of barN-shlibs.
 </p>
-<p><b>The Shlibs field:</b>
+<p><b>The BuildDependsOnly field</b>
+</p><p>
+When libraries are being upgraded over time, it is often necessary to have
+two versions of the header files available during a transition period,
+with one version used for compiling some things and the other version
+used for compiling others.  For this reason, the packages containing
+header files must be constructed with some care.  If both foo-dev and
+bar-dev contain overlapping headers, then foo-dev should declare
+</p>
+<pre>
+  Conflicts: bar-dev
+  Replaces: bar-dev
+</pre>
+<p>and similarly bar-dev declares Conflicts/Replaces on foo-dev.
+</p><p>
+In addition, both packages should declare
+</p>
+<pre>
+  BuildDependsOnly: True
+</pre>
+<p>This inhibits others from writing packages which depend on foo-dev or
+bar-dev, since any such dependency will prevent the smooth operation of the
+Conflicts/Replaces method.
+</p><p>
+There are some packages containing header files for which it's not
+appropriate to declare BuildDependsOnly to be true.  In that case,
+the package should declare
+</p>
+<pre>
+  BuildDependsOnly: False
+</pre>
+<p>and the reason must be given in the DescPackaging field.
+</p><p>
+The BuildDependsOnly field should only be mentioned in the package's .info
+file if the package contains header files, installed into /sw/include.
+</p><p>
+As of fink 0.20.5, "fink validate" will issue a warning for any .deb
+which contains header files and at least one dylib, and does not declare
+BuildDependsOnly to be either true or false.  (It is possible that in
+future versions of fink, this warning will be expanded to cover the case of
+a .deb with header files and a static library as well.)
+</p>
+<p><b>The Shlibs field</b>
 </p><p>
 In addition to putting the shared libraries in the correct package, as of
 version 4 of this policy, you must also declare all of the shared libraries
