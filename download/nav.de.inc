@@ -1,11 +1,11 @@
 <?
-/* $Id: nav.de.inc,v 1.3 2004/10/12 01:57:49 dmrrsn Exp $ */
+/* $Id: nav.de.inc,v 1.4 2004/10/12 02:32:40 michga Exp $ */
 
 $section = "download";
 $navbox = array(
   "download/index.php?phpLang=de", "Quick Start",
-  "download/overview.php?phpLang=de", "Ãbersicht",
-  "download/bindist.php?phpLang=de", "BinÃ¤r Version",
+  "download/overview.php?phpLang=de", "Übersicht",
+  "download/bindist.php?phpLang=de", "Binär Version",
   "download/srcdist.php?phpLang=de", "Quelltext Version",
   "download/upgrade.php?phpLang=de", "Upgrade Matrix",
   "download/10.1-upgrade.php?phpLang=de", "10.1 Upgrades",
