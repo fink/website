@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.1 2001/06/18 13:51:50 chrisp Exp $
+# $Id: Makefile,v 1.2 2001/07/06 20:17:25 chrisp Exp $
 
 # generate all documents
 
-SUBDIRS = faq cvsaccess usage
+SUBDIRS = faq cvsaccess usage packaging install
 
 all clean force:
 	@for i in $(SUBDIRS) ; do \
