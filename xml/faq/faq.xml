@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.8 2001/07/28 06:57:17 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.9 2001/08/26 21:14:14 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -245,37 +245,6 @@ symbols.</p></li>
 <p>Hopefully, this will soon be solved with proper X11 packages and
 dependencies. But don't hold your breath yet.</p>
 </answer></faqentry>
-
-<faqentry name="icewm"><question><p>IceWM won't compile.</p></question>
-<answer><p>If you get messages about undefined symbols, you have only static
-X11 libraries on your system. Unfortunately, the linker is sensitive
-to the order in which the libraries are listed on the command line,
-and IceWM's Makefiles use the wrong order. The problem disappears when
-you have shared X11 libraries. To get them, use either <link
-url="http://www.tenon.com/">Tenon Xtools</link> or a CVS version of
-XFree86 (which will soon be released as XFree86 4.1).</p>
-</answer></faqentry>
-
-<faqentry name="gnomecore"><question><p>The gnome-core package won't compile. It
-complains about multiple definitions of _login_tty. What's
-wrong?</p></question>
-<answer><p>The problem with this is actually the configure script in
-gnome-libs. It fails to detect that Darwin has the login_tty() and
-openpty() functions because they are in the system library, not in
-libutil. It goes ahead and compiles replacements, which causes these
-duplicate symbol errors. This has been fixed in Fink 0.2.0 and
-later. A workaround is to create a symlink in
-<filename>/usr/lib</filename>, like this:</p>
-<codeblock>cd /usr/lib
-sudo ln -s libSystem.dylib libutil.dylib</codeblock>
-<p>Then rebuild the gnome-libs and gnome-core packages.</p>
-</answer></faqentry>
-
-<faqentry name="qt"><question><p>Qt won't compile.</p></question>
-<answer><p>Qt is one of the packages that will only compile when
-shared X11 libraries are present. Unfortunately, it spits some quite
-confusing error messages when it encounters static libraries.</p>
-</answer></faqentry>
 -->
 
 <faqentry name="nedit"><question><p>nedit is broken.</p></question>
@@ -291,35 +260,9 @@ black icons only. What's wrong?</p></question>
 <answer>
 <p>
 This is caused by limitations in the operating system kernel.
-The problem has been reported to Apple, but so far they seem unwilling
-to fix it; see the filed <link
-url="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
-bug report</link> for details.
+The only solution so far is to turn off shared memory.
+The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</link>.
 </p>
-<p>
-So, the current situation is that the MIT-SHM extension of the X11
-protocol is practically unusable on Darwin and Mac OS X.
-There are two ways to turn the protocol extension off: in the server
-or in the clients.
-To turn it off in the server, the server must be recompiled with a
-special configuration setting; this is not practical for most users.
-</p>
-<p>
-To turn the extension off in the clients, you can pass the
-<code>--no-xshm</code> command line option when you start the
-application.
-In the case of the GNOME panel, you must edit your GNOME session file
-(<code>~/.gnome/session</code>).
-Be sure to pick the right section and add the <code>--no-xshm</code>
-to the <code>RestartCommand</code> line, like in this example:
-</p>
-<codeblock>7,id=11c0a80208000099479218400000018970007
-7,RestartStyleHint=2
-7,Priority=40
-7,Program=panel
-7,CurrentDirectory=/Users/chrisp
-7,CloneCommand=panel
-7,RestartCommand=panel --sm-client-id 11c0a80208000099479218400000018970007 --no-xshm</codeblock>
 </answer></faqentry>
 
 <faqentry name="gnome-libs-db"><question><p>gnome-libs complains about
@@ -334,14 +277,28 @@ that has DB 1.86 compatibility.
 </p>
 </answer></faqentry>
 
-<!--
-<faqentry name="sawfish"><question><p>Sawfish can't find rep-gtk.</p></question>
-<answer><p>You need shared X11 libraries for rep-gtk to build correctly. It
-doesn't build dynamically loadable modules when only static X11
-libraries are available. The problem doesn't actually show until the
-sawfish configure script tries to use rep-gtk.</p>
+<faqentry name="libiconv"><question><p>libiconv fails with errors that
+mention ANSI C++.</p></question>
+<answer>
+<p>
+This happens when you link <code>gcc</code> to <code>c++</code>.
+That causes all C code to be compiled as C++ code.
+Unfortunately, C allows some things that C++ doesn't allow.
+You should remove the symlink you created, or at least link it to
+<code>cc</code> instead.
+</p>
 </answer></faqentry>
--->
+
+<faqentry name="xlocale"><question><p>I'm getting lots of messages
+like "locale not supported by C library". Is that bad?</p></question>
+<answer>
+<p>
+It's not bad, it just means that the program will use the default
+English messages, date formats, etc.
+The program will function normally otherwise.
+The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</link>.
+</p>
+</answer></faqentry>
 
 </chapter>
 
