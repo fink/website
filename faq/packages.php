@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Package Specific";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/19 16:17:58 $';
+$cvs_date = '$Date: 2001/05/23 07:30:05 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -25,9 +25,15 @@ under development, but not yet ready for prime time.</li>
 <li>You installed the XFree86 binary distribution, but left out the
 Xprog.tgz tarball. It is an optional tarball, but must be installed to
 compile X11 applications.</li>
-<li>Some people have reported problems beyond that. It seems that
-sometimes the static X11 libraries can become broken, which results in
-the <tt>checking for XOpenDisplay in -lX11</tt> test failing.</li>
+<li>You have installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
+static libraries. Now configure scripts are failing in the
+<tt>checking for XOpenDisplay in -lX11</tt> test. To fix this, use the
+<tt>-c</tt> option for ranlib, i.e.:
+<pre>  cd /usr/X11R6/lib
+  sudo ranlib -c *.a</pre>
+Note that this can't happen with more recent versions of XFree86, as
+they compile the libraries (both static and shared) without common
+symbols.</li>
 </ul>
 
 <p><a name="icewm"><b>IceWM won't compile.</b></a></p>
