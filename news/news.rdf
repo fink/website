@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Wed, 22 Oct 2003 12:56:32 CEST</lastBuildDate>
+    <lastBuildDate>Wed, 22 Oct 2003 13:08:53 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -15,7 +15,7 @@
 	..who will mirror Fink above all? There is a new player on the turf
 	and it belongs to the Fink team.  Finkmirrors.net tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	
-	To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are look for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on  Finkmirrors.net. 
+	To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on  Finkmirrors.net. 
 
 </description>
   </item>
