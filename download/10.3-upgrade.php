@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.3";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/11/02 23:29:24 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2003/11/02 23:59:29 $';
 
 include "header.inc";
 ?>
@@ -42,8 +42,8 @@ don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
 following:
 </p>
-<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
-system-xfree86-43; fink selfupdate; fink index</codeblock>
+<pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
+system-xfree86-43; fink selfupdate; fink index</pre>
 <p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
