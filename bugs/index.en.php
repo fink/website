@@ -1,7 +1,7 @@
 <?
 $title = "Fink bug tracking system";
 $cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 23:52:39 $';
+$cvs_date = '$Date: 2005/01/23 03:18:24 $';
 
 include "header.inc";
 ?>
@@ -110,7 +110,6 @@ include "header.inc";
 		<label><input type="checkbox" name="include" value="10.4">10.4</label> 
 		<label><input type="checkbox" name="include" value="experimental">experimental</label> 
 		<label><input type="checkbox" name="include" value="confirmed">confirmed</label> 
-		<label><input type="checkbox" name="include" value="d-i">d-i</label> 
 		<label><input type="checkbox" name="include" value="fixed">fixed</label> 
 		<label><input type="checkbox" name="include" value="fixed-in-experimental">fixed-in-experimental</label> 
 		<label><input type="checkbox" name="include" value="fixed-upstream">fixed-upstream</label> 
@@ -133,7 +132,6 @@ include "header.inc";
 		<label><input type="checkbox" name="exclude" value="10.4">10.4</label> 
 		<label><input type="checkbox" name="exclude" value="experimental">experimental</label> 
 		<label><input type="checkbox" name="exclude" value="confirmed">confirmed</label> 
-		<label><input type="checkbox" name="exclude" value="d-i">d-i</label> 
 		<label><input type="checkbox" name="exclude" value="fixed">fixed</label> 
 		<label><input type="checkbox" name="exclude" value="fixed-in-experimental">fixed-in-experimental</label> 
 		<label><input type="checkbox" name="exclude" value="fixed-upstream">fixed-upstream</label> 
