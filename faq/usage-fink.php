@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/06/14 01:03:26';
+$cvs_author = 'Author: benh57';
+$cvs_date = 'Date: 2002/07/24 17:35:55';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -68,14 +68,13 @@ of Fink?</b></p></div>
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it).  Thus in order to get rid of Fink, enter this command:
 </p><pre>sudo rm -rf /sw</pre><p>
-
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>
-
-You also will want to remove the "source /sw/bin/init.csh" line you added to your 
-.cshrc file. To do this, type "pico ~/.cshrc". Navigate to the "source /sw/bin/init.csh" 
-line and type control-K to remove it. Then type control-O, return, control-X to exit.
+You also will want to remove the &quot;source /sw/bin/init.csh&quot; line you
+added to your .cshrc file. To do this, type &quot;pico ~/.cshrc&quot;. Navigate to
+the &quot;source /sw/bin/init.csh&quot; line and type control-K to remove it. Then
+type control-O, return, control-X to exit.
 </p></div></a>
 
 <a name="kde"><div class="question"><p><b>Q3.6: What is the status of KDE in Fink?</b></p></div>
