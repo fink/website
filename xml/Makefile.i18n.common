@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.2 2004/02/16 13:50:34 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.3 2004/02/17 14:08:30 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -8,9 +8,9 @@ BASE_SOURCE := $(SOURCE)
 BASE_TARGET := $(TARGET)
 
 ifdef LANGUAGES
-SOURCE := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
+SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
 SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.,.,$(SOURCE)))
-TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+TARGET = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
 TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
@@ -27,6 +27,7 @@ INSTALL_FILES = $(TARGET)
 ifdef WANT_HTML
 ifdef LANGUAGES
 ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+ALL_TARGETS := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(ALL_TARGETS),$(subst .en.,.,$(ALL_TARGETS)))
 INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 else
@@ -42,7 +43,7 @@ endif
 all: $(ALL_TARGETS)
 
 clean:
-	rm -f $(ALL_TARGETS) *.tmp
+	rm -f *.php *.inc *.html *.tmp
 
 force: clean all
 
@@ -51,22 +52,15 @@ force: clean all
 	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(XMLFILE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
 	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
-	rm -f *.tmp
+	rm -f *.php.tmp
 	$(foreach  PHPFILE, $(BASE_TARGET), echo "<? require_once '../phpLang.inc.php'; ?>" >$(PHPFILE); )
 
-%.html.tmp: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE) \
-	$(foreach  XMLFILE, $(SOURCE), && xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE))
-
-%.html: %.html.tmp	
-	$(PROCESS_HTML) <$< >$@
-
-%.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE) \
-	$(foreach  XMLFILE, $(SOURCE), && xsltproc -o $(patsubst %.xml,%.txt.tmp,$(XMLFILE)) $(STYLESHEET_TEXT) $(XMLFILE))
-
-%.txt: %.txt.tmp $(PROCESS_TEXT)
-	$(PROCESS_TEXT) <$< >$@
+%.html: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
+	xmllint --noout --valid $(SOURCE);
+	$(foreach  XMLFILE, $(SOURCE), xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE); )
+	$(foreach XMLFILE, $(SOURCE), sed -e 's,$$Id,$$Fink,g' $(patsubst %.xml,%.html.tmp,$(XMLFILE)) > $(patsubst %.xml,%.html,$(XMLFILE)); ) 
+	rm -f *.html.tmp
+	$(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.html,$(BASE_SOURCE)) ),, $(shell mv $(patsubst %.xml,%.html,$(BASE_SOURCE)) $(patsubst %.xml,%.en.html,$(BASE_SOURCE))) )
 
 install: $(INSTALL_FILES)
 
