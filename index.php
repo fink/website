@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/19 16:51:15 $';
+$cvs_date = '$Date: 2001/06/24 17:45:16 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,19 +30,18 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-06-24: Version 0.2.2 is finally released. Get it from the <a
+href="download.php">download page</a>. Be sure to read the notes
+about X11 in the INSTALL file.</p>
 <p>2001-05-19: The <a href="fink/cvs.php">CVS instructions</a> have
 been updated for Fink 0.2.x.</p>
-<p>2001-05-09: Version 0.2.1 is released. Get it from the <a
-href="download.php">download page</a>.</p>
-<p>2001-04-26: This site now sports a <a href="faq/index.php">FAQ
-section</a>. Not much content yet, but it's here to stay.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.2.1 was released on 9 May 2001. The 0.2.x series is now
-ready for general use. There is a lot of room for improvement,
-though. The next big items on the list are X11 packaging and a binary
-distribution.</p>
+<p>Version 0.2.2 was released on 24 June 2001. Now that a base feature
+set is implemented, focus is shifting to provide more packages, keep
+them current and improve quality. A binary distribution is also in the
+works.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
