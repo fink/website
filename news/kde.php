@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2003/02/03 14:14:16 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/07/22 07:34:00 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ include "header.inc";
  For the latest instructions on configuring or removing the kde packages, the
  instructions in '<em>fink info bundle-kde</em>' should give you everything
  you need to know.  To see a list of available KDE packages, see the
- <a href="http://fink.sf/net/pdb/section.php/kde">KDE section of the
+ <a href="http://fink.sf.net/pdb/section.php/kde">KDE section of the
  package database</a>.
 </p>
 <p>
