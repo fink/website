@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/25 01:06:55';
+$cvs_date = 'Date: 2003/08/30 20:26:12';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -100,7 +100,9 @@ initial &quot;<code>#!/bin/sh</code>&quot;, but before you run any programs):</p
 </li>
 <li>
 <p>If you are trying to build a package by hand against Apple's X11 and you see a failure like:</p>
-<pre>ld: err.o illegal reference to symbol: _XSetIOErrorHandler defined in indirectly referenced dynamic library /usr/X11R6/lib/libX11.6.dylib</pre>
+<pre>ld: err.o illegal reference to symbol: _XSetIOErrorHandler 
+defined in indirectly referenced dynamic library 
+/usr/X11R6/lib/libX11.6.dylib</pre>
 <p>then you'll need to make sure to that <code>-lX11</code> is present during linking.  Check your package's configuration options to see how to feed it the extra argument.</p>
 </li>
 </ul>
@@ -257,7 +259,8 @@ There are two different ways to do this:
    To manually, remove them, you use the <code>dpkg</code> with the --force-depends
    option, like so:
   </p>
-<pre>sudo dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
+<pre>sudo dpkg -r --force-depends xfree86-rootless\ 
+xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 <p>
    Note that if you have apps that require threaded XFree86, you may have trouble with your
    dpkg database if you force remove it and install a different XFree86 package or placeholder

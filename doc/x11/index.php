@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/25 01:06:55';
+$cvs_date = 'Date: 2003/08/30 20:26:12';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -83,7 +83,7 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.37 2003/07/25 01:06:55 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.38 2003/08/30 20:26:12 alexkhansen Exp $</i></p>
 
 
 <?
