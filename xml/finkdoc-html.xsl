@@ -171,6 +171,34 @@
 <li><xsl:apply-templates/></li>
 </xsl:template>
 
+<xsl:template match="dl">
+<dl><xsl:apply-templates/></dl>
+</xsl:template>
+
+<xsl:template match="dt">
+<dt><xsl:apply-templates/></dt>
+</xsl:template>
+
+<xsl:template match="dd">
+<dd><xsl:apply-templates/></dd>
+</xsl:template>
+
+<xsl:template match="itemtable">
+<table border="0" cellpadding="0" cellspacing="10">
+<tr valign="bottom"><th>Field</th><th>Value</th></tr>
+<xsl:apply-templates select="item" />
+</table>
+</xsl:template>
+
+<xsl:template match="item">
+<tr valign="top"><td><xsl:apply-templates select="itemt" /></td>
+<td><xsl:apply-templates select="itemd" /></td></tr>
+</xsl:template>
+
+<xsl:template match="itemt | itemd">
+<xsl:apply-templates/>
+</xsl:template>
+
 <xsl:template match="cvsid">
 <p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
@@ -180,6 +208,10 @@
 
 <xsl:template match="em">
 <b><xsl:apply-templates/></b>
+</xsl:template>
+
+<xsl:template match="i">
+<i><xsl:apply-templates/></i>
 </xsl:template>
 
 <xsl:template match="code|filename|literal">
