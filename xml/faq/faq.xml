@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.14 2001/09/16 18:51:18 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.15 2001/09/25 22:08:01 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -312,6 +312,24 @@ have a lasting effect on the shell, it must be processed with the
 <chapter filename="packages">
 <title>Problems With Certain Packages</title>
 <shorttitle>Packages</shorttitle>
+
+<faqentry name="kde"><question><p>Why are there no packages for
+KDE?</p></question>
+<answer>
+<p>
+Because there simply are none.
+</p>
+<p>
+Seriously, KDE has (or at least had) serious problems that prevent a
+port to Mac OS X.
+It assumes it can do things with shared libraries that are only
+possible on ELF systems like Linux, *BSD and Solaris.
+It could very well be that some people are trying to port it
+nevertheless, but we haven't heard of any breakthroughs yet.
+Note that Qt is a different story, we have a package for it and it
+works fine.
+</p>
+</answer></faqentry>
 
 <!--
 <faqentry name="nox"><question><p>Package foo says there is no X11 on my system!?</p></question>

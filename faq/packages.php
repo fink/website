@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 18:51:18';
+$cvs_date = 'Date: 2001/09/25 22:08:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -11,6 +11,21 @@ include "header.inc";
 <h1>F.A.Q. - Problems With Certain Packages</h1>
 
 
+
+<a name="kde"><div class="question"><p><b>Q: Why are there no packages for
+KDE?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Because there simply are none.
+</p><p>
+Seriously, KDE has (or at least had) serious problems that prevent a
+port to Mac OS X.
+It assumes it can do things with shared libraries that are only
+possible on ELF systems like Linux, *BSD and Solaris.
+It could very well be that some people are trying to port it
+nevertheless, but we haven't heard of any breakthroughs yet.
+Note that Qt is a different story, we have a package for it and it
+works fine.
+</p></div></a>
 
 
 

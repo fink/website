@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 18:51:18';
+$cvs_date = 'Date: 2001/09/25 22:08:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -65,6 +65,8 @@ wrong?</a></li>
 </ul>
 <li><a href="packages.php"><b>Problems With Certain Packages</b></a></li>
 <ul>
+<li><a href="packages.php#kde">Why are there no packages for
+KDE?</a></li>
 <li><a href="packages.php#nedit">nedit is broken.</a></li>
 <li><a href="packages.php#gnome-panel">The GNOME panel displays
 black icons only. What's wrong?</a></li>
@@ -79,7 +81,7 @@ XMMS</a></li>
 <li><a href="packages.php#gnome-terminal">Why won't gnome-terminal
 start up?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.14 2001/09/16 18:51:18 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.15 2001/09/25 22:08:01 chrisp Exp $</i></p>
 
 
 <?

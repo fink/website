@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 18:51:18';
+$cvs_date = 'Date: 2001/09/25 22:08:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="install.php" title="Installation Questions"><link rel="prev" href="general.php" title="General Questions">';
 
