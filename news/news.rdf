@@ -4,9 +4,31 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 16 Jun 2003 16:05:38 CEST</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2003 14:35:46 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Darwin packaging groups to coordinate efforts.</title>
+    <link>http://fink.sf.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.</link>
+    <dc:date>2003-06-20</dc:date>
+    <description>
+               
+The Fink, 
+Gentoo, 
+and 
+DarwinPorts 
+projects are pleased to announce the formation of  a cooperative development 
+alliance forged to facilitate delivery of freely available software to 
+Mac OS X.  Under this new alliance, the projects will share information and 
+coordinate efforts for porting software to 
+Apple's Mac OS X 
+and Darwin operating 
+systems.  Members of the alliance will share information using 
+the www.metapkg.org Web 
+site,  which  will provide a home for this cooperative effort. 
+
+                </description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink logo contest begins.</title>
     <link>http://fink.sf.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.</link>
@@ -404,22 +426,6 @@ software before using Fink.
     
      As of now, please do not email us asking about 10.2 support. If you can't wait,
      consult the mailing list archives instead.
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink package manager 0.10.0 released</title>
-    <link>http://fink.sf.net/news/#2002-08-06%20Fink%20package%20manager%200.10.0%20released</link>
-    <dc:date>2002-08-06</dc:date>
-    <description>
-    
-      Yesterday version 0.10.0 of the Fink package manager was released to the unstable tree, along with version 1.6 of the base-files package. All Fink users which are using the unstable tree are recommended to update to this version. The easiest way to do so usually is to run 'fink selfupdate-cvs' which will automatically take care of updating these essential packages.
-    
-    
-      Please report any problems you encounter with this version via our bug tracker.
-    
-    
-      An overview of what changed since version 0.9.12 can be found here.
     
   </description>
   </item>

@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.60 2003/06/16 10:59:58 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.61 2003/06/20 18:34:48 dmrrsn Exp $</cvsid>
+
+<newsitem>
+        <date>2003-06-20</date>
+        <headline>Darwin packaging groups to coordinate efforts.</headline>
+               <body>
+               <p>
+The <extlink url="http://fink.sourceforge.net">Fink</extlink>, 
+<extlink url="http://www.gentoo.org">Gentoo</extlink>, 
+and 
+<extlink url="http://opendarwin.org/projects/darwinports/">DarwinPorts</extlink> 
+projects are pleased to announce the formation of  a cooperative development 
+alliance forged to facilitate delivery of freely available software to 
+Mac OS X.  Under this new alliance, the projects will share information and 
+coordinate efforts for porting software to 
+Apple's <extlink url="http://www.apple.com/macosx">Mac OS X</extlink> 
+and <extlink url="http://www.apple.com/darwin">Darwin</extlink> operating 
+systems.  Members of the alliance will share information using 
+the <extlink url="http://www.metapkg.org">www.metapkg.org</extlink> Web 
+site,  which  will provide a home for this cooperative effort. 
+</p>
+                </body>
+</newsitem>
 
 
 <newsitem>

@@ -1,14 +1,30 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/06/16 10:59:58';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/06/20 18:34:48';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
+<a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
+               <p>
+The <a href="http://fink.sourceforge.net">Fink</a>, 
+<a href="http://www.gentoo.org">Gentoo</a>, 
+and 
+<a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 
+projects are pleased to announce the formation of  a cooperative development 
+alliance forged to facilitate delivery of freely available software to 
+Mac OS X.  Under this new alliance, the projects will share information and 
+coordinate efforts for porting software to 
+Apple's <a href="http://www.apple.com/macosx">Mac OS X</a> 
+and <a href="http://www.apple.com/darwin">Darwin</a> operating 
+systems.  Members of the alliance will share information using 
+the <a href="http://www.metapkg.org">www.metapkg.org</a> Web 
+site,  which  will provide a home for this cooperative effort. 
+</p>
+                <a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
                <p>Fink and 
 <a href="http://www.macwelt.de/">Macwelt</a> have managed to organise a logo contest.
 For the next six weeks everyone is invited to submit their logo creations. 
