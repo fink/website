@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:16:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/06 11:55:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -591,6 +591,5 @@ may change some day in the future.)    And second, unlike the Debian policy,
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=en">4. Filesystem Layout</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

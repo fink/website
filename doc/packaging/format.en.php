@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:16:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/06 11:55:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -258,6 +258,5 @@ package is blank. (Introduced in fink-0.20.6)
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="policy.php?phpLang=en">3. Packaging Policy</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

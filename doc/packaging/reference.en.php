@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:16:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/06 11:55:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -82,6 +82,24 @@ with N&gt;=2.
 The upstream version number.
 Same limitations as the Package field.
 Required field.
+</p>
+<p>
+  Note that some programs use nonstandard version numbering schemes
+  that may cause sorting confusion or that contain characters that are
+  not allowed in this field. In these situations, when writing the
+  Fink package, you must convert the upstream value to one that is
+  acceptable and that allows the versions to be arranged in the
+  correct order. When in doubt about how version strings will be
+  sorted, you can use the <code>dpkg</code> command at a shell
+  prompt. For example,
+</p>
+<pre>
+  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"
+</pre>
+<p>
+  will print "true" because version string "1.2.1"
+  is less than "1.3". See the <code>dpkg</code> manpage for
+  more details.
 </p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
@@ -1174,6 +1192,5 @@ If you just need to set some environment variables (for example, QTDIR to '/sw')
 
 
 <? include_once "../../footer.inc"; ?>
-
 
 

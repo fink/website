@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:16:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/06 11:55:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
 
@@ -159,6 +159,5 @@ In particular, the following should not be used:
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=en">5. Reference</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/04 08:16:59';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/06 11:55:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
 
@@ -71,6 +71,5 @@ dashes in between, e.g. openssh-2.9p1-2.
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="format.php?phpLang=en">2. Package Descriptions</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 
