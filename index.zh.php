@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/10/03 02:20:39 $';
+$cvs_date = '$Date: 2004/10/03 02:43:51 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -30,7 +30,7 @@ Fink 使用 <a href="http://www.debian.org/">Debian</a> 中的象 dpkg
 
 <?
 // Include news items
-include $fsroot."news/news.inc";
+include $fsroot."news/news.zh.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php">以前的消息…</a></div>
 
