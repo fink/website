@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/21 18:18:53 $';
+$cvs_date = '$Date: 2001/01/22 09:19:39 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -28,11 +28,16 @@ Distribution</a></li>
 
 <p>Sites with info about ports</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a></li>
-<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a></li>
-<li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a></li>
-<li><a href="http://www.stepwise.com/" target="_blank">StepWise</a></li>
-<li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a></li>
+<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
+porting info and news, plus a software archive</li>
+<li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
+running XFree86 on Darwin and Mac OS X</li>
+<li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
+news, articles and a software archive</li>
+<li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
+help running The GIMP, GTK and X on a Mac</li>
+<li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a> -
+port news and general help</li>
 </ul>
 
 
