@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/03 23:07:48';
+$cvs_date = 'Date: 2004/04/04 16:49:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 include_once "header.inc";
@@ -131,25 +131,12 @@ fink selfupdate-cvs</pre></div>
       <div class="answer"><p><b>A:</b> Les sources du paquet sont déplacées par les sites en amont quand de nouvelles versions sont publiées.</p><p>La première chose à faire est d'exécuter <code>fink selfupdate</code>. Il est possible que le responsable du paquet ait déjà pris ce changement en compte. Vous obtiendrez alors une mise à jour de la description du paquet soit avec une version plus récente, soit avec une nouvelle URL de téléchargement.</p><p>Si cela ne marche pas, la plupart des sources sont accessibles sur <a href="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</a> (grâce à Rob Braun), et vous pouvez exécuter <code>fink configure</code> pour choisir les miroirs source "Master", afin que Fink s'y réfère automatiquement.</p><p>Si cela ne marche pas, veuillez informer le mainteneur du paquet (disponible via "<code>fink describe <b>nom_du_paquet</b></code>") que l'URL n'est pas valide. Tous les mainteneurs ne lisent pas la liste de diffusion régulièrement.</p><p>Pour obtenir un source utilisable, recherchez d'abord dans les autres répertoires du site distant la version du source que Fink recherche. (par exemple dans un répertoire "old"). Rappelez-vous, cependant, que certains sites distants ne conservent pas les anciennes versions de leurs paquets. Si le site officiel ne l'a pas, recherchez sur la toile - il arrive parfois que des sites non officiels aient l'archive tar que vous cherchez. Recherchez aussi sur <a href="http://us.dl.sourceforge.net/fink/direct_download/source/">http://us.dl.sourceforge.net/fink/direct_download/source/</a>. C'est là que Fink sauvegarde les fichiers source des paquets qui ont été distribués sous forme binaire. Si rien de ce qui précède ne fonctionne, postez alors un message sur la liste de diffusion <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</a> pour demander si quelqu'un peut mettre à votre disposition l'ancien source.</p><p>Une fois l'archive tar adéquate repérée, téléchargez-la manuellement et placez-la dans le répertoire des sources de Fink (c'est-à-dire pour l'installation par défaut de Fink, "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>". Puis utilisez '<code>fink install <b>nom_du_paquet</b></code>' comme d'habitude.</p><p>Si vous n'arrivez pas à obtenir le fichier source, vous devrez alors attendre que le mainteneur se charge du problème. Il peut soit poster un lien vers une source ancienne, soit mettre à jour les fichiers .info et .patch pour utiliser la nouvelle version.</p></div>
     </a>
     <a name="fink-not-found">
-      <div class="question"><p><b>Q5.15: I get "command not found" errors when I run Fink or anything that I
-        installed with Fink.</b></p></div>
-      <div class="answer"><p><b>A:</b> If this always happens, then you may have inadvertently modified (or failed to modify) your startup scripts. Run the
-        <code>/sw/bin/pathsetup.command</code> script (either by
-        double-clicking in the Finder or in a terminal), which will attempt to
-        detect your startup configuration. You'll then need to open a new
-        terminal session so that your environment settings are loaded.  <b>Note:</b>  for <code>fink-0.18.3</code> and <code>fink-0.19.2</code>, the script has been changed to <code>/sw/bin/pathsetup.sh</code>, and must be run in a terminal.</p><p>On the other hand, if you only have problems in the Apple X11
-        terminal, this probably means that you need to create a <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a>
-        file and add the line</p><pre>. /sw/bin/init.sh</pre><p>near the beginning (i.e. before any programs get run). Restart X11
-        (if running) after you do this.</p></div>
+      <div class="question"><p><b>Q5.15: Le message "command not found" apparaît au lancement de Fink ou de tout autre paquet installé via Fink.</b></p></div>
+      <div class="answer"><p><b>A:</b> Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <code>/sw/bin/pathsetup.command</code> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre configuration de démarrage. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <b>Note:</b> sous <code>fink-0.18.3</code> et <code>fink-0.19.2</code>, le script s'appelle <code>/sw/bin/pathsetup.sh</code> et doit être lancé dans une fenêtre de terminal.</p><p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, cela signifie probablement que vous devez créer un fichier <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> et y ajouter la ligne :</p><pre>. /sw/bin/init.sh</pre><p>au tout début (c'est-à-dire avant tout lancement de programme). Relancez ensuite X11 (si celui-ci était actif).</p></div>
     </a>
     <a name="invisible-sw">
-      <div class="question"><p><b>Q5.16: I want to hide /sw in the Finder to keep users from damaging the
-        Fink setup.</b></p></div>
-      <div class="answer"><p><b>A:</b> You can indeed do this. If you have the Development Tools
-        installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders
-        (/usr, etc.). If you don't have the Developer Tools, there are various
-        third-party applications that let you manipulate file attributes--you
-        need to set /sw to be invisible.</p></div>
+      <div class="question"><p><b>Q5.16: Est-il possible de masquer le répertoire /sw dans le Finder pour éviter que les utilisateurs ne modifient les réglages de Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Oui. Si vous avez installé les Developer Tools, utilisez la commande suivante :</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>Cela a pour effet de rendre invisible le dossier /sw, tout comme le sont les autres dossiers standards utilisés par le système (/usr, etc...). Si vous n'avez pas installé les Developer Tools, il existe plusieurs applications de tierce-partie qui vous permettent de changer les attributs des fichiers - vous devez rendre /sw invisible.</p></div>
     </a>
     <a name="install-info-bad">
       <div class="question"><p><b>Q5.17: I can't install anything, because I get the following error:

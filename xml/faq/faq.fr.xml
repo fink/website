@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.14 2004/04/03 23:07:48 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.15 2004/04/04 16:49:38 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -488,36 +488,23 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="fink-not-found">
       <question>
-        <p>I get "command not found" errors when I run Fink or anything that I
-        installed with Fink.</p>
+        <p>Le message "command not found" apparaît au lancement de Fink ou de tout autre paquet installé via Fink.</p>
       </question>
       <answer>
-        <p>If this always happens, then you may have inadvertently modified (or failed to modify) your startup scripts. Run the
-        <filename>/sw/bin/pathsetup.command</filename> script (either by
-        double-clicking in the Finder or in a terminal), which will attempt to
-        detect your startup configuration. You'll then need to open a new
-        terminal session so that your environment settings are loaded.  <em>Note:</em>  for <code>fink-0.18.3</code> and <code>fink-0.19.2</code>, the script has been changed to <filename>/sw/bin/pathsetup.sh</filename>, and must be run in a terminal.</p>
-        <p>On the other hand, if you only have problems in the Apple X11
-        terminal, this probably means that you need to create a <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link>
-        file and add the line</p>
-        <codeblock>. /sw/bin/init.sh</codeblock>
-        <p>near the beginning (i.e. before any programs get run). Restart X11
-        (if running) after you do this.</p>
+        <p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.command</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre configuration de démarrage. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note:</em> sous <code>fink-0.18.3</code> et <code>fink-0.19.2</code>, le script s'appelle <filename>/sw/bin/pathsetup.sh</filename> et doit être lancé dans une fenêtre de terminal.</p>
+        <p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, cela signifie probablement que vous devez créer un fichier <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link> et y ajouter la ligne :</p>
+<codeblock>. /sw/bin/init.sh</codeblock>
+<p>au tout début (c'est-à-dire avant tout lancement de programme). Relancez ensuite X11 (si celui-ci était actif).</p>
       </answer>
     </faqentry>
     <faqentry name="invisible-sw">
       <question>
-        <p>I want to hide /sw in the Finder to keep users from damaging the
-        Fink setup.</p>
+        <p>Est-il possible de masquer le répertoire /sw dans le Finder pour éviter que les utilisateurs ne modifient les réglages de Fink ?</p>
       </question>
       <answer>
-        <p>You can indeed do this. If you have the Development Tools
-        installed, then you can run the following command:</p>
-        <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
-        <p>This makes /sw invisible, just like the standard system folders
-        (/usr, etc.). If you don't have the Developer Tools, there are various
-        third-party applications that let you manipulate file attributes--you
-        need to set /sw to be invisible.</p>
+        <p>Oui. Si vous avez installé les Developer Tools, utilisez la commande suivante :</p>
+<codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
+        <p>Cela a pour effet de rendre invisible le dossier /sw, tout comme le sont les autres dossiers standards utilisés par le système (/usr, etc...). Si vous n'avez pas installé les Developer Tools, il existe plusieurs applications de tierce-partie qui vous permettent de changer les attributs des fichiers - vous devez rendre /sw invisible.</p>
       </answer>
     </faqentry>
     <faqentry name="install-info-bad">

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P.";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/03 23:07:48';
+$cvs_date = 'Date: 2004/04/04 16:49:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="general.php?phpLang=fr" title="Questions générales">';
 
 include_once "header.inc";
@@ -17,9 +17,7 @@ include_once "header.inc";
 	commande sudo ?</a></li><li><a href="usage-fink.php?phpLang=fr#exec-init-csh">5.10 À l'exécution de init.csh ou init.sh, un message d'erreur "Permission denied" apparaît. Que se passe-t-il ?</a></li><li><a href="usage-fink.php?phpLang=fr#dselect-access">5.11 Pourquoi est-il impossible de télécharger des paquets après avoir utilisé le menu "[A]ccess" dans dselect ?</a></li><li><a href="usage-fink.php?phpLang=fr#cvs-busy">5.12 Lors de l'exécution de <q>fink selfupdate</q> ou "fink
         selfupdate-cvs", le message "<code>Updating using CVS failed.
         Check the error messages above.</code>" apparaît.</a></li><li><a href="usage-fink.php?phpLang=fr#kernel-panics">5.13 Lors de l'utilisation de Fink, ma machine se fige, entre en kernel panic ou bien
-	plante. À l'aide !</a></li><li><a href="usage-fink.php?phpLang=fr#not-found">5.14 Lors de l'installation d'un paquet, Fink ne peut le télécharger. Le site de téléchargement indique une version du paquet plus récente que celle de Fink. Que faire ?</a></li><li><a href="usage-fink.php?phpLang=fr#fink-not-found">5.15 I get "command not found" errors when I run Fink or anything that I
-        installed with Fink.</a></li><li><a href="usage-fink.php?phpLang=fr#invisible-sw">5.16 I want to hide /sw in the Finder to keep users from damaging the
-        Fink setup.</a></li><li><a href="usage-fink.php?phpLang=fr#install-info-bad">5.17 I can't install anything, because I get the following error:
+	plante. À l'aide !</a></li><li><a href="usage-fink.php?phpLang=fr#not-found">5.14 Lors de l'installation d'un paquet, Fink ne peut le télécharger. Le site de téléchargement indique une version du paquet plus récente que celle de Fink. Que faire ?</a></li><li><a href="usage-fink.php?phpLang=fr#fink-not-found">5.15 Le message "command not found" apparaît au lancement de Fink ou de tout autre paquet installé via Fink.</a></li><li><a href="usage-fink.php?phpLang=fr#invisible-sw">5.16 Est-il possible de masquer le répertoire /sw dans le Finder pour éviter que les utilisateurs ne modifient les réglages de Fink ?</a></li><li><a href="usage-fink.php?phpLang=fr#install-info-bad">5.17 I can't install anything, because I get the following error:
         "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li><li><a href="usage-fink.php?phpLang=fr#bad-list-file">5.18 I can't install or remove anything, because of a problem with a
         "files list file".</a></li><li><a href="usage-fink.php?phpLang=fr#error-nineteen">5.19 When I use the Fink binary installer package, I get a big "19" in
         the window and can't install anything.</a></li><li><a href="usage-fink.php?phpLang=fr#dselect-garbage">5.20 I get a bunch of garbage when I select packages in
@@ -69,6 +67,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.fr.xml,v 1.14 2004/04/03 23:07:48 michga Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.fr.xml,v 1.15 2004/04/04 16:49:38 michga Exp $-->
 
 <? include_once "footer.inc"; ?>
