@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Basics";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/30 16:08:10';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/03/31 18:59:54';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
