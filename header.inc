@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.83 2004/10/12 12:45:41 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.84 2004/10/12 13:21:26 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -287,7 +287,10 @@ function insert_sub ($navbox, $active_page) {
 </tr>
 <tr valign="bottom">
 	<td align="right" class="header">
-<? include "hostlogo.inc" ?>
+<? if (!$hostlogo) include "hostlogo.inc" ;
+		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
+?>
+
 	</td>
 </tr>
 </table>
