@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/04 22:44:47 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/01/09 09:06:22 $';
 
 include "header.inc";
 ?>
@@ -68,7 +68,7 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 <p>
 The source code for the packages in the installer disk image can be
 downloaded from this site,
-<a href="../bindist/dists/fink-0.3.1/main/source/base/">here</a>.
+<a href="../bindist/dists/fink-0.3.2/main/source/base/">here</a>.
 </p>
 
 
