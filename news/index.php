@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/11/24 08:48:47';
+$cvs_date = 'Date: 2003/11/24 08:51:39';
 
 $metatags = '';
 
@@ -15,7 +15,7 @@ include "header.inc";
         </p>    
         <p>     
         All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
         <a href="http://finkmirrors.net/rsync.html">here</a>. Especially mirrors in
         Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
         those regions yet. If you feel generous and wish to donate even more resources, please visit

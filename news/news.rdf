@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 24 Nov 2003 09:48:52 CET</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2003 09:51:43 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -18,7 +18,7 @@
             
              
         All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
         here. Especially mirrors in
         Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
         those regions yet. If you feel generous and wish to donate even more resources, please visit

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.103 2003/11/24 08:48:47 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.104 2003/11/24 08:51:39 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2003-11-24</date>
@@ -13,7 +13,7 @@
         </p>    
         <p>     
         All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to for Fink. The exact setup instructions for rsync mirrors can be found 
+        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
         <extlink url="http://finkmirrors.net/rsync.html">here</extlink>. Especially mirrors in
         Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
         those regions yet. If you feel generous and wish to donate even more resources, please visit
