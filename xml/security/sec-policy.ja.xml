@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="ja">
+    <title>認可済みパッケージに関する一般 Fink セキュリティポリシー</title>
+    <shorttitle>セキュリティポリシー</shorttitle>
+    <cvsid>$Id: sec-policy.ja.xml,v 1.1 2004/07/08 15:50:32 babayoshihiko Exp $</cvsid>
+    <preface>
+		<p>
+			この文書は、 Fink に受け入れられたパッケージに関わるセキュリティ案件の取り扱いを解説します。
+			Fink では、パッケージへの主な責任主体はメンテナにありますが、 Fink パッケージとして提供されるソフトウェアのセキュリティ案件にどう対処するかという関する統一的なポリシーの必要性も認識しています。
+		</p>
+    </preface>
+    <chapter filename="respo">
+        <title>責任</title>
+        <shorttitle>責任</shorttitle>
+        <section name="who">
+            <title>誰が責任を負うのか?</title>
+			<p>
+				Fink のパッケージには、一つにつきメンテナが一人つきます。
+				特定のパッケージのメンテナは、コマンドラインプロンプトで <code>fink info packagename</code> でわかります。
+				これにより、このような一覧が返ってきます。
+				<tt>Maintainer: Fink Core Group &lt;fink-core@lists.sourceforge.net&gt;</tt>
+				メンテナはパッケージに対して全ての責任を負います。
+				各メンテナは従う必要があります。
+			</p>
+        </section>
+        <section name="contact">
+            <title>誰にコンタクトしたら良いか?</title>
+            <p>
+					あるパッケージソフトウェアに関するセキュリティ案件が有る場合、メンテナと <em>Fink Core Team.</em> に知らせてください。
+					メンテナのメールアドレスはパッケージ記述にあります。
+					<em>Fink Core Team.</em> のメールアドレスはfink-core@lists.sourceforge.net  です。
+				</p>
+        </section>
+        <section name="prenotifications">
+            <title>事前通告</title>
+            <p>
+				Fink パッケージ化されているソフトウェの深刻なセキュリティ案件は、事前に知らせる必要があるでしょう。
+				メンテナがすぐに対応できるとは限らないため、このような場合 <em>Fink Security Team</em> にも報告してください。
+				チームメンバーのメールは、それぞれこの文書の最後に書かれています。
+				fink-core@lists.sourceforge.net は公開されているメーリングリストです。
+				守秘の必要のある事前報告はこのリストには<em>送らないでください</em>。
+				</p>
+        </section>
+        <section name="response">
+            <title>返答</title>
+				<p>
+					報告されたセキュリティ案件は <em>Fink Core Team</em> によって返答されます。 
+					各メンテナはそれぞれ報告を認識する必要があります。
+					メンテナが不在で24時間以内に報告を認識しない場合、 <em>Fink Core Team</em> にメンテナが返答できないかもしれないという情報が伝わります。
+				</p>
+				<p>
+					パッケージメンテナに知らせようと思ったが、メールシステムにより送信エラーが返ってきた場合、 <em>Fink Core Team</em> に直ちにメンテナが捕まらないと連絡してください。
+					パッケージは、メンテナに関わり無く直ちに更新されます。
+				</p>
+        </section>
+    </chapter>
+    <chapter filename="severity">
+        <title>返答時間と即時行動</title>
+        <shorttitle>返答</shorttitle>
+        <preface>
+				<p>
+					返答時間と行動は Fink パッケージ化されたソフトウェアの欠陥による損失の度合いによって変わります。
+					どのような場合であれ、 <em>Fink Core Team</em> は Fink コミュニティを守るために必要と思われる行動を直ちにとります。
+				</p>
+        </preface>
+        <section name="resptimes">
+            <title>応答時間</title>
+				<p>
+					各パッケージは以下の返答時間を満たすよう最大限の努力を払わなければならない。
+					問題によっては、 <em>Fink Core Team</em> が即時行動をとることもある。
+					このような場合、 Core Team のメンバーがメンテナに告知を行う。
+					返答時間を満たすよう最大限の努力を払うが、 Fink は有志による活動のため、保証はできない。
+				</p>
+            <itemtable labeld="返答時間" labelt="問題">
+                <item>
+                    <itemt>remote root exploit</itemt>
+                    <itemd>
+                        <p>minimum: <em>immediate</em>; maximum: <em>12</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local root exploit</itemt>
+                    <itemd>
+                        <p>minimum: <em>12</em> hours; maximum: <em>36</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>remote DOS</itemt>
+                    <itemd>
+                        <p>minimum: <em>6</em> hours; maximum: <em>12</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local DOS</itemt>
+                    <itemd>
+                        <p>minimum: <em>24</em> hours; maximum: <em>72</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>remote data corruption</itemt>
+                    <itemd>
+                        <p>minimum: <em>12</em> hours; maximum: <em>24</em> hours.</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>local data corruption</itemt>
+                    <itemd>
+                        <p>minimum: <em>24</em> hours; maximum: <em>72</em> hours.</p>
+                    </itemd>
+                </item>
+            </itemtable>
+        </section>
+        <section name="forced">
+            <title>強制更新</title>
+				<p>
+					<em>Fink Core Team</em> は、パッケージメンテナの行動を待たずしてパッケージを更新することがある。
+					これは強制更新 (<strong>forced update</strong>) と呼ばれる。
+					返答の最大時間を満たしていない特にも <strong>forced update</strong> が行使される。
+				</p>
+        </section>
+    </chapter>
+    <chapter filename="sources">
+        <title>事件ソース</title>
+        <shorttitle>ソース</shorttitle>
+        <section name="sources">
+            <title>許可される事件ソース</title>
+				<p>
+					Fink パッケージ化ソフトウェアのセキュリティ案件報告者として、ソフトウェアの問題が Mac OS X でも発生することを確認しなければならない。
+					報告者は、当該ソフトウェアの問題が下記のソースのいずれかで報告されていることを確認する責任を有する。
+				</p>
+            <ol>
+                <li>
+                    <em>AIXAPAR</em>: AIX APAR (Authorised Problem Analysis Report)</li>
+                <li>
+                    <em>APPLE</em>: Apple Security Update</li>
+                <li>
+                    <em>ATSTAKE</em>: @stake security advisory</li>
+                <li>
+                    <em>AUSCERT</em>: AUSCERT advisory</li>
+                <li>
+                    <em>BID</em>: Security Focus Bugtraq ID database entry</li>
+                <li>
+                    <em>BINDVIEW</em>: BindView security advisory</li>
+                <li>
+                    <em>BUGTRAQ</em>: Posting to Bugtraq mailing list</li>
+                <li>
+                    <em>CALDERA</em>: Caldera security advisory</li>
+                <li>
+                    <em>CERT</em>: CERT/CC Advisories</li>
+                <li>
+                    <em>CERT-VN</em>: CERT/CC vulnerability note</li>
+                <li>
+                    <em>CIAC</em>: DOE CIAC (Computer Incident Advisory Center) bulletins</li>
+                <li>
+                    <em>CONECTIVA</em>: Conectiva Linux advisory</li>
+                <li>
+                    <em>CONFIRM:</em> URL to location where vendor confirms that
+                    the problem exists</li>
+                <li>
+                    <em>DEBIAN</em>: Debian Linux Security Information</li>
+                <li>
+                    <em>EEYE</em>: eEye security advisory</li>
+                <li>
+                    <em>EL8</em>: EL8 advisory</li>
+                <li>
+                    <em>ENGARDE</em>: En Garde Linux advisory</li>
+                <li>
+                    <em>FEDORA</em>: Fedora Project security advisory</li>
+                <li>
+                    <em>FULLDISC</em>: Full-Disclosure mailing list</li>
+                <li>
+                    <em>FreeBSD</em>: FreeBSD security advisory</li>
+                <li>
+                    <em>GENTOO</em>: Gentoo Linux security advisory</li>
+                <li>
+                    <em>HERT</em>: HERT security advisory</li>
+                <li>
+                    <em>HP</em>: HP security advisories</li>
+                <li>
+                    <em>IBM</em>: IBM ERS/BRS advisories</li>
+                <li>
+                    <em>IMMUNIX</em>: Immunix Linux advisory</li>
+                <li>
+                    <em>INFOWAR</em>: INFOWAR security advisory</li>
+                <li>
+                    <em>ISS</em>: ISS Security Advisory</li>
+                <li>
+                    <em>KSRT</em>: KSR[T] Security Advisory</li>
+                <li>
+                    <em>L0PHT</em>: L0pht Security Advisory</li>
+                <li>
+                    <em>MANDRAKE</em>: Linux-Mandrake advisory</li>
+                <li>
+                    <em>MISC</em>: generic reference from an URL </li>
+                <li>
+                    <em>MLIST</em>: generic reference form for miscellaneous
+                    mailing lists</li>
+                <li>
+                    <em>NAI</em>: NAI Labs security advisory</li>
+                <li>
+                    <em>NETECT</em>: Netect security advisory</li>
+                <li>
+                    <em>NetBSD</em>: NetBSD Security Advisory</li>
+                <li>
+                    <em>OPENBSD</em>: OpenBSD Security Advisory</li>
+                <li>
+                    <em>REDHAT</em>: Security advisories</li>
+                <li>
+                    <em>RSI</em>: Repent Security, Inc. security advisory</li>
+                <li>
+                    <em>SEKURE</em>: Sekure security advisory</li>
+                <li>
+                    <em>SF-INCIDENTS</em>: posting to Security Focus Incidents
+                    mailing list</li>
+                <li>
+                    <em>SGI</em>: SGI Security Advisory</li>
+                <li>
+                    <em>SLACKWARE</em>: Slackware security advisory</li>
+                <li>
+                    <em>SNI</em>: Secure Networks, Inc. security advisory</li>
+                <li>
+                    <em>SUN</em>: Sun security bulletin</li>
+                <li>
+                    <em>SUNALERT</em>: Sun security alert</li>
+                <li>
+                    <em>SUNBUG</em>: Sun bug ID</li>
+                <li>
+                    <em>SUSE</em>: SuSE Linux: Security Announcements</li>
+                <li>
+                    <em>TRUSTIX</em>: Trustix Security Advisory</li>
+                <li>
+                    <em>TURBO</em>: TurboLinux advisory</li>
+                <li>
+                    <em>VULN-DEV</em>: Posting to VULN-DEV mailing list</li>
+                <li>
+                    <em>VULNWATCH</em>: VulnWatch mailing list</li>
+                <li>
+                    <em>XF</em>: X-Force Vulnerability Database</li>
+                <li>
+                    <em>CVE</em>: CVE Candidates </li>
+            </ol>
+				<p>
+					上記のキーワードは <link url="http://www.cve.mitre.org/cve/refs/refkey.html">CVE 推奨キーワード一覧</link>による。
+				</p>
+        </section>
+    </chapter>
+    <chapter filename="updating">
+        <title>セキュリティ更新手段</title>
+        <shorttitle>更新</shorttitle>
+        <section name="procedure">
+            <title>セキュリティ関連の更新の追加</title>
+				<p>
+					セキュリティ更新は、 Fink パッケージ化されて問題が発見されたときに、ソフトウェアの作者によって確認されたときに一度だけ行う。
+					更新の前に、下記の条件が<em>満たされる必要がある</em>。
+				</p>
+            <ul>
+				<li>
+					ソフトウェアの作者はメンテナと <em>Fink Core Team</em> に直接連絡をし、パッチや回避方法を伝える。
+				</li>
+				<li>
+					問題の Fink パッケージのソースに対し、前述のソースがセキュリティ速報を発行した。
+				</li>
+				<li>
+					下記のソースにパッチが発行された
+					: BUGTRAQ,FULLDISC,SF-INCIDENTS,VULN-DEV.</li>
+				<li>
+					公式セキュリティ報告がなされ、 CVE 候補状況が設定された。
+					また、問題の詳細が記述され、回避方法、パッチ、ソースの更新へのリンクが提供されている。
+				</li>
+				<li>
+					パッチまたは回避方法とともに、行動を起こすようにメンテナと <em>Fink Core Team</em> に直接連絡が来た。
+				</li>
+            </ul>
+        </section>
+        <section name="moving">
+            <title>unstable から stable への移動</title>
+			<p>
+				あるパッケージのセキュリティ更新は、まず unstable ツリーに対して行われます。
+				<em>12</em> 時間以内にパッケージの info (とパッチ) ファイルは stable ツリーに移されます。
+				この間は、更新されたパッケージが動作し、新たな問題を起こさないことを確認します。
+			</p>
+        </section>
+    </chapter>
+    <chapter filename="notification">
+        <title>告知</title>
+        <shorttitle>告知</shorttitle>
+        <preface>
+			<p>
+				ユーザーによっては頻繁にソフトウェアを更新しない人もいます。
+				セキュリティ上の問題があるパッケージを使っている人々に知らせるために、 Fink announce リストに告知を出します。
+			</p>
+        </preface>
+        <section name="who">
+            <title>誰が告知するか?</title>
+			<p>				
+				この場合の告知は <em>Fink Security Team</em> によってのみ送信されます。
+				ほとんどの場合、下記の PGP キーフィンガープリント付きの dmalloc@users.sourceforge.net から送信されます
+				:
+            </p>
+                <ul>
+                    <li>
+                <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
+                291E</tt>.
+                </li>
+                <li>Found at
+                <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt></li></ul>
+                <p>
+                上記は故意にリンクされていません。</p>
+				<p> 
+					他の正式なチームメンバーは (ここに皆の公開鍵を追加):
+				</p>
+				<p>peter@pogma.com signed by the PGP key with the fingerprint:</p>
+	        <ul>
+	            <li><tt>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
+		<li>
+		Found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+            </ul>
+        </section>
+        <section name="how">
+            <title>送信の方法</title>
+			<p>
+				通常のセキュリティ告知のように、全てのセキュリティ告知は<em>下記のテンプレートに沿って書かれます</em>。
+			</p>
+            <codeblock> ID: FINK-YYYY-MMDD-NN 
+                        Reported: YYYY-MM-DD 
+                        Updated:  YYYY-MM-DD 
+                        Package:  package-name
+                        Affected: &lt;= versionid
+                        Maintainer: maintainer-name
+                        Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: patch|upstream 
+                        Updated by: maintainer|forced update (Email)
+                        Description: A short description describing the issue.
+                        References: KEYWORD (see above) Ref-URL: URL </codeblock>
+            
+            <p>以下は例です:</p>
+            <codeblock> ID: FINK-2004-06-01 
+                        Reported:             2004-06-09 
+                        Updated:              2004-06-09 
+                        Package:              cvs
+                        Affected:             &lt;= 1.11.16, &lt;= 1.12.8
+                        Maintainer:           Sylvain Cuaz 
+                        Tree(s):    10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable 
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: upstream
+                        Updated by: forced update (dmalloc@users.sourceforge.net)
+                        Description: Multiple vulnerabilities in CVS found my ematters
+                        Security. References: BID 
+                        Ref-URL:    http://www.securityfocus.com/bid/10499 
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+                        References: FULLDISCURL 
+                        Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+                        References: MISC 
+                        Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
+			<p>
+				<em>Affected</em> キーワードは、 Fink パッケージ化されたものlだけでなく、全てのバージョンを指します。
+				例でわかるでしょう。
+			</p>
+        </section>
+    </chapter>
+</document>
