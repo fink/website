@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+
+<article filename="index" lang="zh" >
+<title>Fink － 文档</title>
+<shorttitle></shorttitle>
+<cvsid>$Id: doc.zh.xml,v 1.1 2004/03/04 05:05:24 jeff_yecn Exp $</cvsid>
+
+<preface>
+<p>
+这里收集了为 Fink 编写的各种文档。
+有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。
+</p>
+</preface>
+
+<section name="userdoc"><title>用户文档</title>
+
+<p>
+当前 Fink 的用户文档：
+</p>
+<ul>
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.html">Fink 用户指南</varlink> － 它涉及如何安装 Fink 自身，安装软件包，和升级到新的 Fink 版本。它包括对使用源代码版本和二进制版本的使用说明。
+<em>正在编写中！</em></li>
+<li><varlink url="x11/index.php" varurl="x11/x11.html">在 Darwin 和 Mac OS X 上运行 X11</varlink> － 涉及有关概念，安装和启动（同时面向 Darwin 和 Mac OS X 用户）</li>
+</ul>
+
+<p>
+很多更完整的文档，但稍微有点过期而且不再被维护：
+</p>
+<ul>
+<li><varlink url="bundled/install.php" varurl="bundled/install.html">安装和升级</varlink> －　如何安装 Fink 或升级到新的版本</li>
+<li><varlink url="bundled/usage.php" varurl="bundled/usage.html">使用</varlink>  － 如何使用 Fink 及其安装的软件</li>
+<li><varlink url="bundled/readme.php" varurl="bundled/readme.html">Fink 自述</varlink> － 源代码发布版本的自述文件</li>
+<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.html">CVS 访问</varlink> － 如何访问 Fink CVS 库来在新版本发布前获取最新源代码包。</li>
+</ul>
+
+</section>
+
+<section name="developerdoc"><title>开发者文档</title>
+
+<ul>
+<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">使用 Fink：开发者使用指南</link>  (2MB pdf 文件，英文版) － 一组用于 <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</link>上演示的幻灯片（同时也有 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</link>版本）</li>
+<li><varlink url="porting/index.php" varurl="porting/porting.html">移植技巧提示</varlink> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
+<li><varlink url="packaging/index.php" varurl="packaging/packaging.html">软件打包手册</varlink> － 如何创建和维护 Fink 软件包</li>
+</ul>
+
+</section>
+</article>

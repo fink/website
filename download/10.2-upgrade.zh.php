@@ -1,7 +1,7 @@
 <?
 $title = "Binary Upgrade Instructions for Mac OS X 10.2";
 $cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_date = '$Date: 2004/03/04 05:05:23 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,7 @@ include "header.inc";
 sudo dpkg -i apt-shlibs_0.5.4-7_darwin-powerpc.deb 
 sudo dpkg -i apt_0.5.4-7_darwin-powerpc.deb</pre>
 <p>
-（如果你使用 bash 作为你的 shell 程序，则应该把第一条命令换成 source /sw/bin/init.sh）
+（如果你使用 bash 作为你的 shell 程序，则应该把第一条命令换成 ". /sw/bin/init.sh"）
 </p>
 </li>
 <li><p>
