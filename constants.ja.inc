@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.2 2004/03/01 23:19:34 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.3 2004/03/11 07:18:36 dmalloc Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -12,7 +12,7 @@
 // |                   (http://fink.sourceforge.net)                          |
 // |                                                                          |
 // | usage:    1. read the comments                                           |
-// |           2. encoding must be UTF-8 or it will now show properly         |
+// |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
 
 /* The Sections.  Used in Menu Navigation Bar */
