@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.101 2003/03/19 13:57:35 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.102 2003/03/26 16:30:29 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -784,6 +784,22 @@ you. </p>
 <p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p>
 </answer>
 </faqentry>
+<faqentry name="error-nineteen" >
+<question>  
+<p>When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</p>
+</question>
+<answer>
+<p>The number 19 appears because your OS X system is localized to a language
+other than English.  (This is a bug in Apple's Installer, that it doesn't
+just show you the English-language error message.)</p>
+<p>The English language error message corresponding to number 19 is</p>
+<p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
+<p>You may be getting this error if you've used fink before, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
+is that you installed the Virex program available for free to .Mac users.
+As explained on Fink's webpage, Virex is incompatible with Fink (due to
+the Virex folks having made errors in the way they set things up).</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
@@ -960,7 +976,8 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </faqentry>
 <faqentry name="apple-x11" >
 <question>
-<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p></question>
+<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p>
+</question>
 <answer>
 <p>If you get error messages like the following:</p>
 <codeblock>- missing /usr/X11R6/lib/libX11.dylib
@@ -979,7 +996,6 @@ version.  This really shouldn't happen, so I'm bailing.  :(</codeblock>
 <p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
 </answer>
 </faqentry>
-
 <faqentry name="automake-autoconf" >
 <question>
 <p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p>
@@ -1127,7 +1143,7 @@ libpng error: Incompatible libpng version in application and library</codeblock>
 <p>Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p>
 <codeblock>source /sw/bin/init.sh ; </codeblock>
 <p>For example, if you want to run a fink-installed GIMP, then put</p>
-<codeblock>source /sw/bin/init.sh ; gimp</codeblock> 
+<codeblock>source /sw/bin/init.sh ; gimp</codeblock>
 <p>in the Command field of your GIMP entry.</p>
 </answer>
 </faqentry>

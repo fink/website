@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/19 13:57:35';
+$cvs_date = 'Date: 2003/03/26 16:30:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -361,6 +361,15 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p><p>
 <code>&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code>
 </p><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
+</a>
+<a name="error-nineteen">
+<div class="question"><p><b>Q3.22: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
+<div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
+other than English.  (This is a bug in Apple's Installer, that it doesn't
+just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used fink before, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
+is that you installed the Virex program available for free to .Mac users.
+As explained on Fink's webpage, Virex is incompatible with Fink (due to
+the Virex folks having made errors in the way they set things up).</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
