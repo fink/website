@@ -3,15 +3,127 @@
 <document filename="install">
 <title>Fink 0.2.3 Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.1 2001/07/06 20:01:53 chrisp Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.2 2001/07/25 18:53:30 chrisp Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for Fink version 0.2.3.
 This document covers both first time installation and upgrading from a
 previous version.
+Fast track instructions for the impatient are at the top.
 </p>
 </preface>
+
+
+<chapter filename="install-fast">
+<title>The Fast Track</title>
+<shorttitle>Fast Track</shorttitle>
+
+<preface>
+<p>
+This section is for the impatient who don't want to take the time to
+learn their way around the command line world and don't care that they
+don't know what they're actually doing.
+</p>
+<p>
+If you're looking for the real instructions, skip to the <xref
+chapter="install-first">next section</xref>.
+</p>
+</preface>
+
+<section name="install"><title>First Time Installation Fast
+Track</title>
+<p>
+Start out by copying the <code>fink-0.2.3-full.tar.gz</code> file to
+your home folder.
+Then, open Terminal.app and follow the session below.
+Computer output is in <code>normal face</code>, your input is in
+<code><em>bold face</em></code> (or otherwise highlighted).
+The actual input prompts from the shell may vary, and some chunks of
+the output have been omitted (<code>...</code>).
+</p>
+<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.3-full.tar.gz</em>
+[frodo:~] testuser% <em>cd fink-0.2.3-full</em>
+[frodo:~/fink-0.2.3-full] testuser% <em>./bootstrap.sh /sw</em>
+
+Welcome to Fink.
+
+...
+Choose a method: [1] <em>1</em>
+
+sudo /Users/testuser/fink-0.2.3-full/bootstrap.pl .sudo '/sw'
+Password:<em>(your normal password here)</em>
+...
+OK, I'll ask you some questions and update the configuration file in
+'/sw/etc/fink.conf'.
+
+In what additional directory should Fink look for downloaded tarballs? [] <em>(press return)</em>
+Always print verbose messages? [y/N] <em>(press return)</em>
+
+Proxy/Firewall settings
+Enter the URL of the HTTP proxy to use, or 'none' for no proxy. The URL
+should start with http:// and may contain username, password or port
+specifications. [none] <em>(press return)</em>
+Enter the URL of the proxy to use for FTP, or 'none' for no proxy. The URL
+should start with http:// and may contain username, password or port
+specifications. [none] <em>(press return)</em>
+Use passive mode FTP transfers (to get through a firewall)? [y/N] <em>y</em>
+
+Mirror selection
+Choose a continent:
+...
+<em>(enter the numbers corresponding to your location)</em>
+...
+Writing updated configuration to '/sw/etc/fink.conf'...
+Bootstrapping a base system via /sw/bootstrap.
+...
+<em>(take a coffee break while Fink downloads and compiles the base packages)</em>
+...
+cp -f wget-ssl-1.7-1.patch /sw/fink/dists/stable/crypto/finkinfo/
+
+You should now have a working Fink installation in '/sw'. Use
+'/sw/bin/init.csh' to set up your environment to use it. Enjoy.
+
+[frodo:~/fink-0.2.3-full] testuser% <em>cd</em>
+[frodo:~] testuser% <em>pico .cshrc</em></codeblock>
+<p>
+The last command launches you into a text file editor.
+Type <code>source /sw/bin/init.csh</code>, press return, press
+control-O, press return, press control-X.
+You're now back at the prompt:
+</p>
+<codeblock>[frodo:~] testuser% <em>source .cshrc</em>
+[frodo:~] testuser% <em>rehash</em>
+[frodo:~] testuser% </codeblock>
+<p>
+If you have several Terminal.app windows open, close the other ones.
+That's it.
+You can now install additional packages with the <code>fink</code>
+command, like this:
+</p>
+<codeblock>[frodo:~] testuser% <em>fink install xfree86-server gimp</em>
+Reading configuration...
+sudo /sw/bin/fink 'install' 'xfree86-server' 'gimp'
+Password:<em>(your normal password here)</em>
+Reading configuration...
+Reading package info...
+Information about 147 packages read.
+The following 14 additional packages will be installed:
+ audiofile dlcompat esound giflib glib gnome-libs gtk+ imlib libjpeg libpng
+ libtiff orbit xfree86-base zlib
+Do you want to continue? [Y/n] <em>y</em>
+...</codeblock>
+<p>
+If these instructions don't work for you, well, you'll have to take
+the time to read through the rest of this document and the <link
+url="http://fink.sourceforge.net/faq/">online FAQ</link>.
+You can also ask on the fink-users mailing list, but expect to be
+pointed back at the documentation when your problem actually is
+well-documented.
+</p>
+</section>
+
+</chapter>
 
 
 <chapter filename="install-first">
