@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.23 2005/02/21 02:44:10 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.24 2005/03/01 19:16:47 dmacks Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -265,12 +265,15 @@ When the bootstrap is finished, proceed with the
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
-In most cases, you can do this via the command
-</p>
-      <codeblock>open /sw/bin/pathsetup.command</codeblock>
-      <p>, or for <code>fink-0.18.3</code> or <code>fink-0.19.2</code>, by running (exactly as shown below):
-</p>
+In most cases, you can do this by entering the command
+      </p>
       <codeblock>/sw/bin/pathsetup.sh</codeblock>
+      <p>
+	in a terminal window. Note that for some older versions of
+	fink called this <filename>pathsetup.command</filename>, and one could
+	run it by entering the command:
+      </p>
+      <codeblock>open /sw/bin/pathsetup.command</codeblock>
       <p>However, if that doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
