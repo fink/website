@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/22 14:46:40';
+$cvs_date = 'Date: 2002/05/22 14:52:13';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -125,7 +125,7 @@ failing with this install_name error at the moment, because libtool passes
 the -install_name flag even along with the -bundle flag (when it is not
 strictly needed).  This behavior was accepted by the gcc2 compiler but is
 not being accepted by the gcc3 compiler.  A fix is being worked on.</p>
-<p>Another issue with the gcc3 compiler is an incompatibility for C++ API's
+<p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
 between gcc2 and gcc3.  In practice, this means that C++ programs compiled
 with gcc3 cannot link to libraries compiled with gcc2.</p>
 
