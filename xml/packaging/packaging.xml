@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.30 2002/06/10 13:35:37 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.31 2002/08/03 13:14:48 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1555,6 +1555,29 @@ commands to the InstallScript.
 </p>
 </itemd></item>
 
+<item><itemt>RuntimeVars</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <xref section="profile.d">profile.d scripts section</xref>). As long as your package is installed, these variables will be set via the <filename>/sw/bin/init.[c]sh</filename> scripts.
+</p>
+<p>
+The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
+</p>
+<codeblock>RuntimeVars: &lt;&lt;
+ SomeVar: %p/Value
+ AnotherVar: foo bar
+&lt;&lt;</codeblock>
+<p>
+will set two environment variables 'SomeVar' and 'AnotherVar' and their values
+will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+</p>
+<p>
+This field works by appending appropriate commands to the InstallScript.
+These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
+</p>
+</itemd></item>
+
 <item><itemt>SplitOff</itemt>
 <itemd>
 <p>
@@ -1854,6 +1877,20 @@ either one of these (they are equivalent):</p>
 <p>These two fields are not mutually-exclusive - you can use both, and
 they will both be executed. In that case the PatchScript is executed
 last.</p>
+</section>
+
+<section name="profile.d"><title>Profile.d scripts</title>
+
+<p>
+If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
+These scripts are sourced by the <filename>/sw/bin/init.[c]sh</filename> scripts. Normally, all fink users will load these scripts in their shell startup files (<filename>.cshrc</filename> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <filename>/sw/etc/profile.d/%n.[c]sh</filename> (where %n as usual stands for the package name).
+Also, their executable bit has to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+</p>
+<p>
+If you just need to set some environment variables (for example, QTDIR to /sw), you can use the <link url="#reference.fields">RuntimeVars field</link> which is
+provided as a convenient way to achieve exactly this.
+</p>
 </section>
 
 
