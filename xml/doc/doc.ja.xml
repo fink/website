@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.10 2004/07/10 08:16:17 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.11 2004/07/24 14:11:19 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -57,7 +57,10 @@ url="http://conferences.oreillynet.com/macosx2002/"
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</link> もあります) 。</li>
 <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Porting Tips</varlink> - 
 Unix アプリケーションを Darwin へポートする際に有用な情報。</li>
-<li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">Packaging Manual</varlink> - 
+<li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">パッケージ化チュートリアル</varlink> - 
+a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.
+パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書。</li>
+<li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">パッケージ化マニュアル</varlink> - 
 Fink パッケージの作り方、メンテナンス方法。</li>
 </ul>
 </section>

@@ -52,7 +52,10 @@ file) - <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS 
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</a> もあります) 。</li>
 <li><a href="porting/index.php">Porting Tips</a> - 
 Unix アプリケーションを Darwin へポートする際に有用な情報。</li>
-<li><a href="packaging/index.php">Packaging Manual</a> - 
+<li><a href="quick-start-pkg/index.php">パッケージ化チュートリアル</a> - 
+a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.
+パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書。</li>
+<li><a href="packaging/index.php">パッケージ化マニュアル</a> - 
 Fink パッケージの作り方、メンテナンス方法。</li>
 </ul>
 <h2><a name="otherdoc">Other Documents</a></h2>
