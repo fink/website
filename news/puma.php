@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/03 11:50:11 $';
+$cvs_date = '$Date: 2001/10/03 11:53:33 $';
 
 include "header.inc";
 ?>
@@ -31,6 +31,15 @@ already upgraded to 10.1, you'll need the
 <a href="../download/puma-kit.php">special upgrade kit</a>.
 Other users are not affected, but it is strongly recommended to
 upgrade Fink to 0.3.0 before upgrading Mac OS X to 10.1.
+</p>
+<p>
+To compile packages on Mac OS X 10.1, you need the 10.1 Developer
+Tools.
+The Developer Tools shipped with 10.0 don't work because of the linker
+changes.
+If you didn't get the new Developer Tools on CD, you can download them
+from Apple's <a href="http://developer.apple.com/">Developer
+Connection site</a> after a free registration.
 </p>
 <p>
 PostgreSQL doesn't work on 10.1 in its current state.
