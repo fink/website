@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.147 2003/11/14 18:06:49 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.148 2003/11/16 18:56:20 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -463,10 +463,9 @@ problems or just won't compile.
 That is why Fink doesn't search the unstable tree by default.
 </p>
 <p>
-If you only want one or two specific packages, it is safer to copy
-those .info files (and their associated .patch files, if there are
+If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <filename>fink.conf</filename>.  Then you'll need to run <code>fink selfupdate</code> to download the package description files.  Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are
 any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
-to <filename>/sw/fink/dists/local/main/finkinfo</filename>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.</p>
+to <filename>/sw/fink/dists/local/main/finkinfo</filename>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.  After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p>
 <p>If you want Fink to use all of unstable, edit
 <filename>/sw/etc/fink.conf</filename>, add
 <code>unstable/main</code> and <code>unstable/crypto</code> 
