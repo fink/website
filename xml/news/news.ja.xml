@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-  <cvsid>$Id: news.ja.xml,v 1.2 2004/11/26 09:14:28 benh57 Exp $</cvsid>
+  <cvsid>$Id: news.ja.xml,v 1.3 2004/11/29 11:59:31 babayoshihiko Exp $</cvsid>
   <newsitem>
     <date>2004-11-20</date>
     <headline>gcc 問題の解決</headline>
@@ -37,7 +37,7 @@ XCode 1.5 の利用者はこのアップデータをインストールしてく�
 Fink 0.6.3 が Mac OS X 10.2.* 用で、 Fink 0.7.1 が Mac OS X 10.3.* 用です。</p>
       <p>Fink Team は、このリリースの貢献者、手伝ってくれた方、開発者の方々に謝意を表します。
 また、 この前の 0.7.0 リリースを 130,000 以上もダウンロードしてくれたコミュニティにも感謝しています。
-彼らの永きにわたる指示と価値あるポインタなくして、現在の Fink はありえませんでした。</p>
+彼らの永きにわたる支持と価値あるポインタなくして、現在の Fink はありえませんでした。</p>
     </body>
   </newsitem>
   <newsitem>

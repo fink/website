@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/11/24 05:37:49';
+$cvs_author = 'Author: benh57';
+$cvs_date = 'Date: 2004/11/26 09:14:28';
 $metatags = '';
 
 include_once "header.inc";
@@ -29,7 +29,7 @@ XCode 1.5 の利用者はこのアップデータをインストールしてく�
 Fink 0.6.3 が Mac OS X 10.2.* 用で、 Fink 0.7.1 が Mac OS X 10.3.* 用です。</p>
       <p>Fink Team は、このリリースの貢献者、手伝ってくれた方、開発者の方々に謝意を表します。
 また、 この前の 0.7.0 リリースを 130,000 以上もダウンロードしてくれたコミュニティにも感謝しています。
-彼らの永きにわたる指示と価値あるポインタなくして、現在の Fink はありえませんでした。</p>
+彼らの永きにわたる支持と価値あるポインタなくして、現在の Fink はありえませんでした。</p>
     <a name="2004-08-23 Problems with XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problems with XCode 1.5</span></a><?php gray_line(); ?>
       <p>
 	In the past few days, there have been reports that some fink packages 
