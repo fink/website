@@ -1,4 +1,15 @@
-<span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
+<span class="news_date">2002-11-11: </span><span class="news_headline">Update XFree86 for use with OS X 10.2.2</span><?php gray_line(); ?>
+  <p>
+Users should update their XFree86 installations to version 4.2.1.1
+for use with OS X 10.2.2.  If you are using system-xfree86, you
+can get the new version from the <a href="<?php print $root; ?>https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
+project</a>.  If you are using Fink's
+xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
+xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
+the 10.2/unstable tree; to gain access to them, you may need to run 
+&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
+  </p>
+  <span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
   <p>
   Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
 once</b> on a given machine.  Due to an apparent bug in Apple's
@@ -24,11 +35,4 @@ not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
     <p>
     At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
     </p>
-  <span class="news_date">2002-09-27: </span><span class="news_headline">Possible conflicts with anti-virus software</span><?php gray_line(); ?>
-<p> A number of recent reports on the 
-<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
-mailing list</a> have indicated problems (including kernel panics and
-infinite hangs during patching) when using Fink to compile packages while
-anti-virus software is installed.  You may need to switch off any anti-virus
-software before using Fink.
-</p>
+  

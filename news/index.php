@@ -1,14 +1,25 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/11/05 19:15:25';
+$cvs_date = 'Date: 2002/11/12 03:24:03';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
+<span class="news_date">2002-11-11: </span><span class="news_headline">Update XFree86 for use with OS X 10.2.2</span><?php gray_line(); ?>
+  <p>
+Users should update their XFree86 installations to version 4.2.1.1
+for use with OS X 10.2.2.  If you are using system-xfree86, you
+can get the new version from the <a href="<?php print $root; ?>https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
+project</a>.  If you are using Fink's
+xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
+xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
+the 10.2/unstable tree; to gain access to them, you may need to run 
+&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
+  </p>
+  <span class="news_date">2002-10-30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
   <p>
   Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
 once</b> on a given machine.  Due to an apparent bug in Apple's
