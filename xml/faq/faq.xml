@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.163 2004/01/27 01:27:44 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.164 2004/01/28 14:12:29 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -834,7 +834,16 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
 </answer>
 </faqentry>
-
+<faqentry name="pathsetup-keeps-running">
+<question>
+<p>When I open a Terminal window, I get a message that &quot;Your environment seems to be correctly
+set up for Fink already.&quot;, and it logs out.</p>
+</question>
+<answer>
+<p>What happened is that somehow the OSX Terminal program has been told to run <code>/sw/bin/pathsetup.command</code> every time you log in.  You can fix this by removing the Preferences file, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p>
+<p>If you have other preferences that you want to keep, you can edit the file with a text editor and remove the reference to <code>/sw/bin/pathsetup.command</code>.</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
@@ -1077,6 +1086,27 @@ _FT_Access_Frame </codeblock>
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
 </codeblock>
 <p>then you probably have a binary version that built fine with <code>gcc3.3</code> on Jaguar but doesn't work on Panther.  This has now been updated, so you you just need to update your packages, e.g. via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
+</answer>
+</faqentry>
+<faqentry name="dlfcn-from-oo">
+<question>
+<p>I get build errors involving `Dl_info'.</p>
+</question>
+<answer>
+<p>If you have an error that looks like this</p>
+<codeblock>unix_dl.c: In function `rep_open_dl_library':
+unix_dl.c:328: warning: assignment discards qualifiers from pointer target type
+unix_dl.c: In function `rep_find_c_symbol':
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only once
+unix_dl.c:466: error: for each function it appears in.)
+unix_dl.c:466: error: parse error before "info"
+unix_dl.c:467: error: `info' undeclared (first use in this function)
+make[1]: *** [unix_dl.lo] Error 1</codeblock>
+<p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p>
+<p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p>
+<codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+sudo ln -s /usr/lib/dlfcn.h /usr/local/lib/libdl.dylib</codeblock>
 </answer>
 </faqentry>
 </chapter>
