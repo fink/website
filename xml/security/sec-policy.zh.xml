@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="zh">
+    <title>Fink 软件包的通用安全政策</title>
+    <shorttitle>Security Policy</shorttitle>
+    <cvsid>$Id: sec-policy.zh.xml,v 1.1 2004/06/25 01:02:37 jeff_yecn Exp $</cvsid>
+    <preface>
+        <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。</p>
+    </preface>
+    <chapter filename="respo">
+        <title>责任</title>
+        <shorttitle>Respo</shorttitle>
+        <section name="who">
+            <title>由谁负责？</title>
+            <p>每个 Fink 软件包都有一个维护人。可以在命令行输入 <code>fink info packagename</code> 命令来查询到这个维护人。这会返回一系列信息，其中一段类似：
+				<tt>Maintainer: Fink
+                    Core Group
+                &lt;fink-core@lists.sourceforge.net&gt;</tt>。维护者对他/她的软件包负有全部责任。</p>
+        </section>
+        <section name="contact">
+            <title>我应该联系谁？</title>
+            <p>如果你发现某个软件包存在安全性问题，你应该通知该软件包的维护者以及 <em>Fink 核心团队</em>。维护者的电子又见可以在软件包信息里面找到，而 <em>Fink 核心团队</em> 的是 fink-core@lists.sourceforge.net </p>
+        </section>
+        <section name="prenotifications">
+            <title>预通知</title>
+            <p>我们要求你对于 Fink 的严重安全性问题需要预先通知软件包的维护者。由于不一定能在固定的事件内联系到维护者，预通知同时也应该提交到 <em>Fink 安全团队</em>。该团队的每个成员的电子邮件地址会在本文档的稍后地方列出。请注意 fink-core@lists.sourceforge.net 是一个公开的邮件列表，内部性的预通知<em>绝对不能</em>发送到这个列表中。</p>
+        </section>
+        <section name="response">
+            <title>回应</title>
+            <p>关于安全性问题所提交的报告会由 <em>Fink 核心团队</em>进行回应。每个维护者都被要求自行回复处理被报告的问题。在不太常见的情况下，如果找不到维护者或维护者不能在 24 小时之内回复，应该向 <em>Fink 核心团队</em> 发送信息通知他们维护者似乎没有回应。</p>
+            <p>如果你尝试通知维护者但是却被邮件系统退信，你应该立即通知 <em>Fink 核心团队</em>联系不到维护者这样软件包可以不经过维护者而得到更新。</p>
+        </section>
+    </chapter>
+    <chapter filename="severity">
+        <title>响应时间和立即行动。</title>
+        <shorttitle>responses</shorttitle>
+        <preface>
+            <p>响应时间和才于的行动主要取决于由于 Fink 中包含的这个软件包安全性漏洞可能导致的损失的严重程度。在任何情况下，如果 <em>Fink 核心团队</em>必须立刻保护 Fink 用户社区，它将会采取立即的行动。</p>
+        </preface>
+        <section name="resptimes">
+            <title>响应时间</title>
+            <p>每个软件包都应该争取达到下面的响应时间。
+                对一些脆弱性的问题 <em>Fink 核心团队</em>可能会采取立即的行动。在这种情况下，一个核心团队的成员会通知可能存在问题的软件包的维护者。另外，请注意虽然我们努力达到这个响应时间标准，但 Fink 是一个志愿者活动，因此我们并不能保证一定可以达到这点。</p>
+            <itemtable labeld="Repsonse time" labelt="Vulnerability">
+                <item>
+                    <itemt>远程 root 权限获取</itemt>
+                    <itemd>
+                        <p>最短时间：<em>立即</em>；最长时间：<em>12</em> 小时。</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>本地 root 权限获取</itemt>
+                    <itemd>
+                        <p>最短时间：<em>12</em> 小时；最长时间：<em>36</em> 小时。</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>远程 DoS(拒绝服务攻击)</itemt>
+                    <itemd>
+                        <p>最短时间：<em>6</em> 小时；最长时间：<em>12</em> 小时。</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>本地 DoS</itemt>
+                    <itemd>
+                        <p>最短时间：<em>24</em> 小时；最长时间：<em>72</em> 小时。</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>远程数据破坏</itemt>
+                    <itemd>
+                        <p>最短时间：<em>12</em> 小时；最长时间：<em>24</em> 小时。</p>
+                    </itemd>
+                </item>
+                <item>
+                    <itemt>本地数据破坏</itemt>
+                    <itemd>
+                        <p>最短时间：<em>24</em> 小时；最长时间：<em>72</em> 小时。</p>
+                    </itemd>
+                </item>
+            </itemtable>
+        </section>
+        <section name="forced">
+            <title>强制更新</title>
+            <p><em>Fink 核心团队</em>中的一个成员有可能会选择更新软件包而不等待软件包的维护者先采取行动。这称为<strong>强制更新</strong>。对导致某些脆弱性问题的软件包未能在最长时间要求内完成更新也会导致一次<strong>强制更新</strong>。</p>
+        </section>
+    </chapter>
+    <chapter filename="sources">
+        <title>安全漏洞信息来源</title>
+        <shorttitle>isource</shorttitle>
+        <section name="sources">
+            <title>可接受的漏洞信息来源</title>
+            <p>作为安全漏洞的提交者，你有责任确定软件的脆弱性的确存在于 Mac OS X 中。作为通知方的责任，他应该使下面的组织之一确认可疑的问题的确存在。</p>
+            <ol>
+                <li>
+                    <em>AIXAPAR</em>: AIX APAR (Authorised Problem Analysis Report)</li>
+                <li>
+                    <em>APPLE</em>: Apple Security Update</li>
+                <li>
+                    <em>ATSTAKE</em>: @stake security advisory</li>
+                <li>
+                    <em>AUSCERT</em>: AUSCERT advisory</li>
+                <li>
+                    <em>BID</em>: Security Focus Bugtraq ID database entry</li>
+                <li>
+                    <em>BINDVIEW</em>: BindView security advisory</li>
+                <li>
+                    <em>BUGTRAQ</em>: Posting to Bugtraq mailing list</li>
+                <li>
+                    <em>CALDERA</em>: Caldera security advisory</li>
+                <li>
+                    <em>CERT</em>: CERT/CC Advisories</li>
+                <li>
+                    <em>CERT-VN</em>: CERT/CC vulnerability note</li>
+                <li>
+                    <em>CIAC</em>: DOE CIAC (Computer Incident Advisory Center) bulletins</li>
+                <li>
+                    <em>CONECTIVA</em>: Conectiva Linux advisory</li>
+                <li>
+                    <em>CONFIRM:</em> URL to location where vendor confirms that
+                    the problem exists</li>
+                <li>
+                    <em>DEBIAN</em>: Debian Linux Security Information</li>
+                <li>
+                    <em>EEYE</em>: eEye security advisory</li>
+                <li>
+                    <em>EL8</em>: EL8 advisory</li>
+                <li>
+                    <em>ENGARDE</em>: En Garde Linux advisory</li>
+                <li>
+                    <em>FEDORA</em>: Fedora Project security advisory</li>
+                <li>
+                    <em>FULLDISC</em>: Full-Disclosure mailing list</li>
+                <li>
+                    <em>FreeBSD</em>: FreeBSD security advisory</li>
+                <li>
+                    <em>GENTOO</em>: Gentoo Linux security advisory</li>
+                <li>
+                    <em>HERT</em>: HERT security advisory</li>
+                <li>
+                    <em>HP</em>: HP security advisories</li>
+                <li>
+                    <em>IBM</em>: IBM ERS/BRS advisories</li>
+                <li>
+                    <em>IMMUNIX</em>: Immunix Linux advisory</li>
+                <li>
+                    <em>INFOWAR</em>: INFOWAR security advisory</li>
+                <li>
+                    <em>ISS</em>: ISS Security Advisory</li>
+                <li>
+                    <em>KSRT</em>: KSR[T] Security Advisory</li>
+                <li>
+                    <em>L0PHT</em>: L0pht Security Advisory</li>
+                <li>
+                    <em>MANDRAKE</em>: Linux-Mandrake advisory</li>
+                <li>
+                    <em>MISC</em>: generic reference from an URL </li>
+                <li>
+                    <em>MLIST</em>: generic reference form for miscellaneous
+                    mailing lists</li>
+                <li>
+                    <em>NAI</em>: NAI Labs security advisory</li>
+                <li>
+                    <em>NETECT</em>: Netect security advisory</li>
+                <li>
+                    <em>NetBSD</em>: NetBSD Security Advisory</li>
+                <li>
+                    <em>OPENBSD</em>: OpenBSD Security Advisory</li>
+                <li>
+                    <em>REDHAT</em>: Security advisories</li>
+                <li>
+                    <em>RSI</em>: Repent Security, Inc. security advisory</li>
+                <li>
+                    <em>SEKURE</em>: Sekure security advisory</li>
+                <li>
+                    <em>SF-INCIDENTS</em>: posting to Security Focus Incidents
+                    mailing list</li>
+                <li>
+                    <em>SGI</em>: SGI Security Advisory</li>
+                <li>
+                    <em>SLACKWARE</em>: Slackware security advisory</li>
+                <li>
+                    <em>SNI</em>: Secure Networks, Inc. security advisory</li>
+                <li>
+                    <em>SUN</em>: Sun security bulletin</li>
+                <li>
+                    <em>SUNALERT</em>: Sun security alert</li>
+                <li>
+                    <em>SUNBUG</em>: Sun bug ID</li>
+                <li>
+                    <em>SUSE</em>: SuSE Linux: Security Announcements</li>
+                <li>
+                    <em>TRUSTIX</em>: Trustix Security Advisory</li>
+                <li>
+                    <em>TURBO</em>: TurboLinux advisory</li>
+                <li>
+                    <em>VULN-DEV</em>: Posting to VULN-DEV mailing list</li>
+                <li>
+                    <em>VULNWATCH</em>: VulnWatch mailing list</li>
+                <li>
+                    <em>XF</em>: X-Force Vulnerability Database</li>
+                <li>
+                    <em>CVE</em>: CVE Candidates </li>
+            </ol>
+            <p>上面的关键字附和<link
+                url="http://www.cve.mitre.org/cve/refs/refkey.html">这里</link>的关键字列表标准 CVE。</p>
+        </section>
+    </chapter>
+    <chapter filename="updating">
+        <title>安全性更新流程</title>
+        <shorttitle>secup</shorttitle>
+        <section name="procedure">
+            <title>添加安全性有关更新。</title>
+            <p>安全性更新只能在软件包的原作者检验并发现是安全性问题以后才可实施。在更新之前，<em>必须</em> 附和下述条件之一或以上：</p>
+            <ul>
+                <li>软件的作者已经和维护及/或 <em>Fink 核心团队</em> 直接联系并提供补丁或临时的解决办法。</li>
+                <li>上述关键字表中的之一发表了安全性警告并对软件提供了更新过的源代码。</li>
+                <li>下面的组织提出了补丁：BUGTRAQ，FULLDISC，SF-INCIDENTS，VULN-DEV。</li>
+                <li>已经发布了官方的警告并进入CVE Candidate 状态，描述了脆弱性，提供了临时措施，补丁或连接到已更新的源代码。</li>
+                <li>预通知已经发送到维护者和/或 <em>Fink 核心团队</em>，并附有一个补丁或临时解决办法，并要求采取行动。</li>
+            </ul>
+        </section>
+        <section name="moving">
+            <title>Unstable 到 stable 的迁移。</title>
+            <p>对某个软件包的安全性更新会首先应用在 unstable 分支。经过不少于 <em>12</em> 小时的间隔以后软件包的信息文件会同样放入 stable 分支。这个间隔时间应该用来密切注视更新软件包的工作情况以及安全更新不会导致新的安全问题。</p>
+        </section>
+    </chapter>
+    <chapter filename="notification">
+        <title>发送通知</title>
+        <shorttitle>notify</shorttitle>
+        <preface>
+            <p>有些用户不会很经常地更新他们的软件。为了确保那些从源代码安装软件包的用户可以尽快更新发生问题的软件包，维护者可以向 Fink 通知邮件列表发送邮件要求发送通知。</p>
+        </preface>
+        <section name="who">
+            <title>谁应该发送它们？</title>
+            <p>这些通知应该只由 <em>Fink 安全团队</em>发布。 多数通知会发自 dmalloc@users.sourceforge.net，邮件会用 PGP 密钥签署，其指纹为：<tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt>。公开密钥可以在<tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>找到(this is intentionally not marked as a link)。</p>
+            <p>其它被授权的团队成员包括：( Other authorised Team members are: (here you add your email +
+                public key like I did above)</p><p>
+	        peter@pogma.com，PGP 密钥指纹为 <tt>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>。公开密钥可以在 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt> 找到。
+</p>
+        </section>
+        <section name="how">
+            <title>如何提交</title>
+            <p>为了确保安全性通知有统一的形式，所有安全性通知<em>必须</em>符合下面的模板。</p>
+            <codeblock> ID: FINK-YYYY-MMDD-NN 
+                        Reported: YYYY-MM-DD 
+                        Updated:  YYYY-MM-DD 
+                        Package:  package-name 
+                        Maintainer: maintainer-name
+                        Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: patch|upstream 
+                        Updated by: maintainer|forced update (Email)
+                        Description: A short description describing the issue.
+                        References: KEYWORD (see above) Ref-URL: URL </codeblock>
+            
+            <p>样板的报告应该大致是这样的：</p>
+            <codeblock> ID: FINK-2004-06-01 
+                        Reported:         2004-06-09 
+                        Updated:          2004-06-09 
+                        Package:          cvs 
+                        Maintainer:       Sylvain Cuaz 
+                        Tree(s):    10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable 
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: upstream
+                        Updated by: forced update (dmalloc@users.sourceforge.net)
+                        Description: Multiple vulnerabilities in CVS found my ematters
+                        Security. References: BID 
+                        Ref-URL:    http://www.securityfocus.com/bid/10499 
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+                        References: FULLDISCURL 
+                        Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+                        References: MISC 
+                        Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
+        </section>
+    </chapter>
+</document>
