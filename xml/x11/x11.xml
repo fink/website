@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.35 2003/06/19 12:11:07 dmrrsn Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.36 2003/07/23 12:58:19 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -364,6 +364,11 @@ initial &quot;<filename>#!/bin/sh</filename>&quot;, but before you run any progr
 <p>you'll want to use something like the following:</p>
 <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
 <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
+</li>
+<li>
+<p>If you are trying to build a package by hand against Apple's X11 and you see a failure like:</p>
+<codeblock>ld: err.o illegal reference to symbol: _XSetIOErrorHandler defined in indirectly referenced dynamic library /usr/X11R6/lib/libX11.6.dylib</codeblock>
+<p>then you'll need to make sure to that <code>-lX11</code> is present during linking.  Check your package's configuration options to see how to feed it the extra argument.</p>
 </li>
 </ul>
 </section>
