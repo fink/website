@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/06 20:39:06';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/01/08 18:21:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -260,8 +260,21 @@ reboot
 </a>
 
 <a name="not-found"><div class="question"><p><b>Q3.17: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
-<div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
-<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
+<div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
+versions are released.</p><p>The first thing you should do is run <tt><nobr>fink selfupdate-cvs</nobr></tt>.
+It may be that the package maintainer has already fixed this, and you will
+get an updated package description with either a more recent version or a
+revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
+other directories for the source that fink wants (e.g. in an &quot;old&quot;
+directory).  Keep in mind, though, that some remote sites like to trash the
+old versions of their packages.  If the official site doesn't have it, then
+try a web search--sometimes there are unofficial sites that have the 
+tarball you want.  Another place to look is <a href="http://us.dl.sf.net/fink/direct_download/source/">http://us.dl.sf.net/fink/direct_download/source/</a>, 
+which is where Fink stores sourcefiles from packages that have been 
+released in binary form.  If all of the above fail, then you might consider posting on the
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+mailing list</a> to ask if anybody has the old source available to give
+you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div></a>
 
 <a name="fink-not-found"><div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
