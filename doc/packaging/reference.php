@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -360,8 +360,8 @@ Use <tt><nobr>.</nobr></tt> to update files in the build directory itself.
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>
 A boolean value.
-If true, the file <tt><nobr>Makefile.in.in</nobr></tt> in the subdirectory
-<tt><nobr>po</nobr></tt> is replaced with a patched version.
+If true, the file <tt><nobr>Makefile.in.in</nobr></tt> in the
+subdirectory <tt><nobr>po</nobr></tt> is replaced with a patched version.
 This happens in the patch phase and before the PatchScript is run.
 </p>
 <p>

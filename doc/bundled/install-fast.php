@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:27:04';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
@@ -28,8 +28,8 @@ If you're looking for the real instructions, skip to the <a href="install-first.
 <a name="install"><h2>1.1 First Time Installation Fast
 Track</h2></a>
 <p>
-Start out by copying the <tt><nobr>fink-0.3.2a-full.tar.gz</nobr></tt> file to
-your home folder.
+Start out by copying the <tt><nobr>fink-0.3.2a-full.tar.gz</nobr></tt>
+file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
 <tt><nobr><b>bold face</b></nobr></tt> (or otherwise highlighted).
@@ -123,8 +123,8 @@ documentation when your problem actually is well-documented.
 
 <a name="update"><h2>1.2 Update Fast Track</h2></a>
 <p>
-Start out by copying the <tt><nobr>fink-0.3.2a-full.tar.gz</nobr></tt> file to
-your home folder.
+Start out by copying the <tt><nobr>fink-0.3.2a-full.tar.gz</nobr></tt>
+file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
 <tt><nobr><b>bold face</b></nobr></tt> (or otherwise highlighted).

@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Basics";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="shared.php" title="Shared Code"><link rel="prev" href="index.php" title="Porting Contents">';
 
@@ -113,8 +113,8 @@ parameter or you can let it guess.
 The configure script uses two companion scripts to determine host
 types.
 <tt><nobr>config.guess</nobr></tt> tries to guess the host type,
-<tt><nobr>config.sub</nobr></tt> is used to validate and canonicalize the host
-type.
+<tt><nobr>config.sub</nobr></tt> is used to validate and canonicalize
+the host type.
 These scripts are maintained as separate entities, but they are
 included in every package that uses them.
 Until very recently, these scripts didn't know about Darwin or Mac OS

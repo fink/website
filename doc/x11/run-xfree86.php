@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -27,8 +27,8 @@ can just type:
 You can customize what is started through several files in your home
 directory.
 <tt><nobr>.xinitrc</nobr></tt> controls what clients get started.
-<tt><nobr>.xserverrc</nobr></tt> controls server options and may even start a
-different server.
+<tt><nobr>.xserverrc</nobr></tt> controls server options and may even
+start a different server.
 If you're having trouble (as in, you only get a blank screen or
 XFree86 drops you right back to the console), you can start
 troubleshooting by moving these files out of the way.
@@ -119,30 +119,30 @@ The <tt><nobr>-fullscreen</nobr></tt> option forces fullscreen mode, while
 
 <a name="xinitrc"><h2>4.4 The .xinitrc File</h2></a>
 <p>
-If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home directory,
-it will be used to start some initial X clients, e.g. the window
-manager and some xterms or a desktop environment like GNOME.
-The <tt><nobr>.xinitrc</nobr></tt> file is a shell script that contains the
-commands to do this.
+If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home
+directory, it will be used to start some initial X clients, e.g. the
+window manager and some xterms or a desktop environment like GNOME.
+The <tt><nobr>.xinitrc</nobr></tt> file is a shell script that contains
+the commands to do this.
 It is <b>not</b> necessary to put the usual <tt><nobr>#!/bin/sh</nobr></tt>
 in the first line and to set the executable bit on the file;
 xinit will still know how to run it through a shell.
 </p>
 <p>
-When there is no <tt><nobr>.xinitrc</nobr></tt> file in your home directory,
-XFree86 will use its default file,
+When there is no <tt><nobr>.xinitrc</nobr></tt> file in your home
+directory, XFree86 will use its default file,
 <tt><nobr>/usr/X11R6/lib/X11/xinit/xinitrc</nobr></tt>.
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
 <pre>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
-If you're using Fink, you should source <tt><nobr>init.sh</nobr></tt> right at
-the beginning to make sure the environment is set up correctly.
+If you're using Fink, you should source <tt><nobr>init.sh</nobr></tt>
+right at the beginning to make sure the environment is set up correctly.
 </p>
 <p>
-You can put fairly arbitrary commands in an <tt><nobr>.xinitrc</nobr></tt>, but
-there are some cheavats.
+You can put fairly arbitrary commands in an <tt><nobr>.xinitrc</nobr></tt>,
+but there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
@@ -150,11 +150,11 @@ shell to put them &quot;in the background&quot; by adding a <tt><nobr>&amp;</nob
 the end of the line.
 </p>
 <p>
-Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt> script
-to finish and interprets that as &quot;the session has ended, I should kill
-the X server now, too&quot;.
-This means that the last command of your <tt><nobr>.xinitrc</nobr></tt> must
-not be run in the background and it should be a long-living program.
+Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt>
+script to finish and interprets that as &quot;the session has ended, I should
+kill the X server now, too&quot;.
+This means that the last command of your <tt><nobr>.xinitrc</nobr></tt>
+must not be run in the background and it should be a long-living program.
 Customarily, the window manager is used for this purpose.
 In fact, most window managers assume that <tt><nobr>xinit</nobr></tt> is
 waiting for them to finish and use this to make the &quot;Log out&quot; entry in

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:22';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -156,8 +156,9 @@ The file to edit varies with the shell, although <tt><nobr>.profile</nobr></tt>
 should work for all Bourne style shells.
 </p>
 <p>
-Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
-your path so you can use X11 when it is installed.
+Note that the scripts also add <tt><nobr>/usr/X11R6/bin</nobr></tt> and
+<tt><nobr>/usr/X11R6/man</nobr></tt> to your path so you can use X11 when
+it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.
 </p>

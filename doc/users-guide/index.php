@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:22';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -56,7 +56,7 @@ apt-get</a></li>
 <li><a href="upgrade.php#src">4.2 Upgrading the Source Distribution</a></li>
 <li><a href="upgrade.php#mix">4.3 Mixing Binaries and Source</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.10 2002/04/13 21:14:22 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.11 2002/04/14 23:10:35 fingolfin Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -16,8 +16,8 @@ include "header.inc";
 <p>
 Package descriptions are read from the <tt><nobr>finkinfo</nobr></tt>
 directories below the <tt><nobr>/sw/fink/dists</nobr></tt> directory.
-The &quot;Trees&quot; setting in <tt><nobr>/sw/etc/fink.conf</nobr></tt> controls which
-directories are read.
+The &quot;Trees&quot; setting in <tt><nobr>/sw/etc/fink.conf</nobr></tt> controls
+which directories are read.
 The name of package description files must be the full package name
 plus the extension &quot;.info&quot;.
 </p>
@@ -96,6 +96,7 @@ As a special case, when working within a <tt><nobr>SplitOff</nobr></tt> or
 <tt><nobr>SplitOff<b>N</b></nobr></tt> field, the here-document syntax
 can be nested.  The same terminator <tt><nobr>&lt;&lt;</nobr></tt> is used
 for the sub-here-document.  Here is an example:
+</p>
 <pre>
 SplitOff: &lt;&lt;
   Package: %N-shlibs
@@ -104,6 +105,7 @@ SplitOff: &lt;&lt;
   &lt;&lt;
 &lt;&lt;
 </pre>
+<p>
 (The indentation is optional, but it improves readability.)
 </p><p>
 Empty lines and lines starting with a hash (#) are ignored.

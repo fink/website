@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/14 23:10:34';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -67,11 +67,10 @@ of Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it).  Thus in order to get rid of Fink, enter this command:
-<pre>sudo rm -rf /sw</pre>
+</p><pre>sudo rm -rf /sw</pre><p>
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
-<pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre>
-</p></div></a>
+</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre></div></a>
 
 <a name="kde"><div class="question"><p><b>Q3.6: Why are there no packages for
 KDE?</b></p></div>

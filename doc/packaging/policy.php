@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -169,23 +169,27 @@ between these two packages, and everything stored in barN-shlibs must have
 a pathname which somehow includes the major version number N.  In many
 instances, your package will need some files at runtime which are
 typically installed into <tt><nobr>%i/lib/bar/</nobr></tt> or 
-<tt><nobr>%i/share/bar/</nobr></tt> ; you should
-adjust the installation paths to <tt><nobr>%i/lib/bar/N/</nobr></tt> or 
+<tt><nobr>%i/share/bar/</nobr></tt> ; you should adjust the installation
+paths to <tt><nobr>%i/lib/bar/N/</nobr></tt> or
 <tt><nobr>%i/share/bar/N/</nobr></tt>.
 </p><p>
 All other packages which depend on bar, major version N, will be asked to
 use the dependencies
+</p>
 <pre>
   Depends: barN-shlibs
   BuildDepends: barN
 </pre>
+<p>
 Once this system is fully in place, it will not be permitted for 
 another package to depend on barN itself.  (For backward compatibility,
 such dependencies are allowed for pre-existing packages.)  This is
 signaled to other developers by a boolean field
+</p>
 <pre>
   BuildDependsOnly: True
 </pre>
+<p>
 within the package description for barN.
 </p><p>
 If your package includes both shared libraries and binary files, and
@@ -199,18 +203,24 @@ the &quot;install_name&quot; of the library be <tt><nobr>%p/lib/bar.N.dylib</nob
 (You can
 find the install_name by running <tt><nobr>otool -L</nobr></tt> on your library.)  The
 actual library file should be installed at
+</p>
 <pre>
   %i/lib/bar.N.x.y.dylib
 </pre>
+<p>
 and your packages should create symbolic links
+</p>
 <pre>
   %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
   %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
 </pre>
+<p>
 If the static library is also built, then it will be installed at
+</p>
 <pre>
   %i/lib/bar.a
 </pre>
+<p>
 If the package uses libtool, these things are usually handled automatically,
 but in any event you should
 check that they have been done correctly in your case.  You should also
@@ -245,6 +255,7 @@ different.
 Doing this is quite easy in practice, using the 
 <tt><nobr>SplitOff</nobr></tt> field.  Here is
 how the example above would be implemented (in part):
+</p>
 <pre>
 Package: barN
 Version: N.x.y
@@ -259,13 +270,14 @@ SplitOff: &lt;&lt;
   DocFiles: COPYING
 &lt;&lt;
 </pre>
+<p>
 During the execution of the <tt><nobr>SplitOff</nobr></tt>
 field, the specified files and directories are moved from the 
 install directory %I of the main package to the install directory %i of the
 splitoff package.  (There is a similar convention for names: %N is the
 name of the main package, and %n is the name of the current package.)
 The <tt><nobr>DocFiles</nobr></tt> command then puts a copy of the documentation into 
-%i/share/doc/barN-shlibs.
+<tt><nobr>%i/share/doc/barN-shlibs</nobr></tt>.
 </p><p>
 Notice that we have included the exact current version of barN-shlibs as a 
 dependency of the main package barN (which can be abbreviated 
@@ -279,15 +291,19 @@ If the major version number changes from N to M, you will create two new
 packages barM and barM-shlibs.  The package barM-shlibs can have no
 overlap with the package barN-shlibs, since many users will have both of
 these installed simultaneously.  In package barM, you should use dependencies
+</p>
 <pre>
   Conflicts: barN
   Replaces: barN
 </pre>
+<p>
 and similarly, you should revise barN to include dependencies
+</p>
 <pre>
   Conflicts: barM
   Replaces: barM
 </pre>
+<p>
 Users will then see barN and barM shuffling in and out as various other
 packages are built which depend on one version or another of the shared
 library, while barN-shlibs and barM-shlibs remain permanently installed.
@@ -300,9 +316,11 @@ your package, accompanied by a new package foo-shlibs, which satisfy
 the above policy.  If shared libraries (or any other files now present
 in foo-shlibs) were installed previously, then these new packages should 
 say
+</p>
 <pre>
   Replaces: foo (&lt;&lt; earliest.compliant.version)
 </pre>
+<p>
 so that upgrading will be transparent to users.  (You should <b>not</b>
 say &quot;Conflicts: foo&quot; because this will prevent the upgrade.)
 </p><p>
@@ -333,19 +351,23 @@ runtime, and they must be split off into a separate fink package with
 a name something like <tt><nobr>foo-bin</nobr></tt>.  The <tt><nobr>foo-bin</nobr></tt>
 package should depend on the <tt><nobr>foo-shlibs</nobr></tt> package, and
 maintainers of other packages should be encouraged to use
+</p>
 <pre>
   Depends: foo-bin
   BuildDepends: foo
 </pre>
+<p>
 which will take care of foo-shlibs implicitly.
 </p><p>
 Upgrading presents a problem in this situation, however, since users won't
 be prompted to install <tt><nobr>foo-bin</nobr></tt>.  To work around this, until
 all other package maintainers have revised their packages as above,
 your <tt><nobr>foo</nobr></tt> package can say
+</p>
 <pre>
   Depends: foo-shlibs (= exact.version), foo-bin
 </pre>
+<p>
 This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <tt><nobr>foo</nobr></tt>.

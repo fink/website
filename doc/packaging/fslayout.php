@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
@@ -72,8 +72,8 @@ A package is free to create a subdirectory to store private data or
 loadable modules.
 Make sure to use directory names that make sense for compatibility.
 It is wise to use the package major version in the directory name or
-as an additional hierarchy level, e.g. <tt><nobr>/sw/lib/perl5</nobr></tt> or
-<tt><nobr>/sw/lib/apache/1.3</nobr></tt>.
+as an additional hierarchy level, e.g. <tt><nobr>/sw/lib/perl5</nobr></tt>
+or <tt><nobr>/sw/lib/apache/1.3</nobr></tt>.
 Care should be taken when the host type is used to create
 directories.
 A <tt><nobr>powerpc-apple-darwin1.3.3</nobr></tt> directory is bad for
@@ -90,8 +90,8 @@ Some common subdirectories are described below.
 <p>
 This directory contains manual pages.
 It is organized into the usual section tree.
-Every program in <tt><nobr>/sw/bin</nobr></tt> and <tt><nobr>/sw/sbin</nobr></tt> should
-have an associated manual page here.
+Every program in <tt><nobr>/sw/bin</nobr></tt> and
+<tt><nobr>/sw/sbin</nobr></tt> should have an associated manual page here.
 </p>
 </td></tr><tr valign="top"><td><tt><nobr>/sw/share/info</nobr></tt></td><td>
 <p>
@@ -147,10 +147,12 @@ Nothing should be installed here by a package.
 
 <a name="avoid"><h2>4.3 Things to Avoid</h2></a>
 <p>
-No other directories than the ones mentioned above should exist
-in /sw.
-In particular, the following should not be used: /sw/man, /sw/info,
-/sw/doc, /sw/libexec, /sw/lib/locale.
+No other directories than the ones mentioned above should exist in
+<tt><nobr>/sw</nobr></tt>.
+In particular, the following should not be used:
+<tt><nobr>/sw/man</nobr></tt>, <tt><nobr>/sw/info</nobr></tt>,
+<tt><nobr>/sw/doc</nobr></tt>, <tt><nobr>/sw/libexec</nobr></tt>,
+<tt><nobr>/sw/lib/locale</nobr></tt>.
 </p>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/14 23:10:34';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -60,9 +60,8 @@ installing it fails.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is a known problem which hopefully should be fixed in an upcoming
 Fink release. For now the workaround  is to enter the following commands:
-<pre>fink rebuild gettext
-fink update gettext</pre>
-</p></div></a>
+</p><pre>fink rebuild gettext
+fink update gettext</pre></div></a>
 
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>

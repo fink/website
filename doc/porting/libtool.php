@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -31,7 +31,8 @@ The most common strand.
 The last release from this branch is 1.3.5.
 It doesn't know about Darwin and only builds static libraries.
 It can be recognized by the presence of the files
-<tt><nobr>ltconfig</nobr></tt> and <tt><nobr>ltmain.sh</nobr></tt> in the source tree.
+<tt><nobr>ltconfig</nobr></tt> and <tt><nobr>ltmain.sh</nobr></tt> in
+the source tree.
 </p></li>
 
 <li><p>

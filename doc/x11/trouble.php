@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 22:10:56';
+$cvs_date = 'Date: 2002/04/14 23:10:35';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -178,8 +178,8 @@ You should see four relevant entries:
 <tt><nobr>XDarwin</nobr></tt>, an executable file (this is the console
 mode server);
 <tt><nobr>XDarwinQuartz</nobr></tt>, a symlink pointing at
-<tt><nobr>/Applications/XDarwin.app/Contents/MacOS/XDarwin</nobr></tt>; and
-<tt><nobr>XDarwinStartup</nobr></tt>, a small executable file.
+<tt><nobr>/Applications/XDarwin.app/Contents/MacOS/XDarwin</nobr></tt>;
+and <tt><nobr>XDarwinStartup</nobr></tt>, a small executable file.
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
@@ -206,8 +206,8 @@ This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
 initialization files are not set up to add /usr/X11R6/bin to the PATH
 variable.
 If you use Fink and haven't changed your default shell, adding the
-line <tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt> in
-your home directory (as recommended by the Fink instructions) should
+line <tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt>
+in your home directory (as recommended by the Fink instructions) should
 be sufficient.
 </p>
 
