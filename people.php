@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: ogorman $';
-$cvs_date = '$Date: 2004/01/29 14:03:30 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/01/29 23:28:59 $';
 
 include "header.inc";
 ?>
@@ -71,7 +71,7 @@ this list.</p>
 
 </ul>
 
-<h2>Support and Documentation Team</h2>
+<h2>Support, Translation and Documentation Team</h2>
 <ul>
 <li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
