@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:06:34';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/04/16 22:01:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 include_once "header.inc";
@@ -184,6 +184,10 @@ SplitOff: &lt;&lt;
 							<code>%f</code> が <code>%p/src</code> の中にあることを当てにしてはいけない．
 							ユーザが設定ファイル <code>/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
+							最も内側のディレクトリ名は， <code>Source</code> ファイル名か， (もしあれば) <code>SourceDirectory</code> 
+							フィールドの値となります．
+							ただし， <code>NoSourceDirectory</code> が <code>true</code>
+							であれば使用されません．
 						</p>
 						<p>
 							注記: %b は使わざるを得ないときだけ使用して下さい．
