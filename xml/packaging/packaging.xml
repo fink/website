@@ -3,7 +3,7 @@
 <article filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.2 2001/06/30 11:25:48 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.3 2001/07/03 16:04:39 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -12,7 +12,8 @@ files.
 This is difficult because the format is still evolving.
 Watch the "Last changed" info in the footer of the page.
 What you're reading right now is a description of the format used in
-Fink 0.2.2.
+post-0.2.2 development versions of Fink.
+Fields that were added since 0.2.2 are marked as such.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -27,7 +28,7 @@ mailing list.
 <p>Packages are identified by a package name; it may consist of
 lowercase letters, numbers, dashes and underscores. (In theory, Fink
 will let you use any ASCII character, but it's strongly discouraged.)
-There may be several versions of a package. Version numbers consists
+There may be several versions of a package. Version numbers consist
 of a upstream version (commonly just called "version") and a packaging
 revision. As for allowed characters, the same rules as for package
 names apply. It is okay to use versions with letters, e.g. 2.9p1. Both
@@ -114,198 +115,473 @@ ConfigureParams</dd>
 
 <itemtable>
 <item><itemt>Package</itemt>
-<itemd>The package name. May contain lowercase letters, numbers and
+<itemd>
+<p>
+The package name. May contain lowercase letters, numbers and
 the special characters '.' and '-'. No underscores ('_'), no capital
-letters. Required.</itemd></item>
+letters. Required field.
+</p>
+</itemd></item>
 
 <item><itemt>Version</itemt>
-<itemd>The upstream version number. Required, but defaults to "0".</itemd></item>
+<itemd>
+<p>
+The upstream version number. Required, but defaults to "0".
+</p>
+</itemd></item>
 
 <item><itemt>Revision</itemt>
-<itemd>The package revision. Increase this when you make a new
+<itemd>
+<p>
+The package revision. Increase this when you make a new
 description for the same upstream version. Revision numbers should
-start at 1. Required, but defaults to "0".</itemd></item>
+start at 1. Required, but defaults to "0".
+</p>
+</itemd></item>
+
+<item><itemt>Type</itemt>
+<itemd>
+<p>
+This can be set to <code>bundle</code>.
+Bundle packages are used to group a set of related packages together.
+They only have dependencies, but no code and no installed files.
+The fields Source, PatchScript, CompileScript, InstallScript and
+related ones are ignored for bundle packages.
+</p>
+</itemd></item>
+
+<item><itemt>Maintainer</itemt>
+<itemd>
+<p>
+The name and e-mail address of the person responsible for the package.
+This field is required, and there must be exactly one name and address
+in the following format:
+</p>
+<codeblock>Firstname Lastname &lt;user@host.domain.com&gt;</codeblock>
+</itemd></item>
+
+<item><itemt>Depends</itemt>
+<itemd>
+<p>
+A comma-separated list of packages which must be installed before
+this package can be built. Currently, only plain package names are
+allowed; there is no mechanism to request a specific version of a
+package yet.
+</p>
+</itemd></item>
+
+<item><itemt>Provides</itemt>
+<itemd>
+<p>
+A comma-separated list of package names that this package is
+considered to "provide".
+If a package named "pine" specifies <code>Provides: mailer</code>,
+then any dependency on "mailer" is considered satisfied when "pine" is
+installed.
+You'll usually also want to name these packages in the "Conflicts" and
+the "Replaces" field.
+</p>
+</itemd></item>
+
+<item><itemt>Conflicts</itemt>
+<itemd>
+<p>
+A comma-separated list of package names that must not be installed at
+the same time as this package.
+For virtual packages it is allowed to list the names of the provided
+packages here; they will be handled appropriately.
+</p>
+<p>
+<em>Note:</em> Fink itself currently ignores this field.
+However, it is passed on to dpkg and will be handled accordingly.
+In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>Replaces</itemt>
+<itemd>
+<p>
+This is used together with "Conflicts", when this package not only
+takes over the function of the conflicting package, but also has some
+common files.
+Without this field, dpkg may generate errors when installing the
+package because files are still owned by the other package.
+It is also a hint that the two packages involved are genuine
+alternatives and one can be removed in favor of the other.
+</p>
+<p>
+<em>Note:</em> Fink itself currently ignores this field.
+However, it is passed on to dpkg and will be handled accordingly.
+In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>Essential</itemt>
+<itemd>
+<p>
+A boolean value that denotes essential packages. Essential
+packages are installed as part of the bootstrap process. All
+non-essential packages implicitly depend on the essential ones. dpkg
+will refuse to remove essential packages from the system unless
+special flags are used to override this.
+</p>
+</itemd></item>
 
 <item><itemt>Source</itemt>
-<itemd><p>An URL to the source tarball. It should be a HTTP or FTP url, but
+<itemd>
+<p>
+An URL to the source tarball. It should be a HTTP or FTP url, but
 Fink doesn't really care - it just passes the URL to wget. This field
 supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <i>mirror-name</i> in Fink's
 configuration, append the <i>relative-path</i> part and use that as
-the actual URL.</p>
-<p>Before the URL is used, percent expansion takes place (see
+the actual URL.
+</p>
+<p>
+Before the URL is used, percent expansion takes place (see
 previous section). The value <code>gnu</code> is a shorthand for
 <code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
 default is <code>%n-%v.tar.gz</code> (i.e. a manual
-download).</p></itemd></item>
+download).
+</p>
+</itemd></item>
 
 <item><itemt>SourceDirectory</itemt>
-<itemd>Must be used when the tarball expands to a single directory, but
+<itemd>
+<p>
+Must be used when the tarball expands to a single directory, but
 the directory's name is different from the basename of the tarball.
 Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
 named "foo-1.0". If it produces a directory with a different name,
 specify it with this parameter. Percent expansion is performed on this
-field.</itemd></item>
+field.
+</p>
+</itemd></item>
 
 <item><itemt>NoSourceDirectory</itemt>
-<itemd>Set this boolean parameter to a true value if the tarball does not
+<itemd>
+<p>
+Set this boolean parameter to a true value if the tarball does not
 expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
 will produce a directory named "foo-1.0". If it just unpacks the files
 to the current directory, use this parameter and set it to a boolean
-true value.</itemd></item>
+true value.
+</p>
+</itemd></item>
 
 <item><itemt>Source<i>N</i></itemt>
-<itemd>If a package consists of several tarballs, name them with these
+<itemd>
+<p>
+If a package consists of several tarballs, name them with these
 additional fields, starting with N = 2. So, the first tarball (which
 should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
-expanded - that would be useless anyway.</itemd></item>
+expanded - that would be useless anyway.
+</p>
+</itemd></item>
 
 <item><itemt>Source<i>N</i>ExtractDir</itemt>
-<itemd>Normally, an auxillary tarball will be extracted in the same
+<itemd>
+<p>
+Normally, an auxillary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
 expect. See ghostscript, vim and tetex for examples of
-usage.</itemd></item>
-
-<item><itemt>Depends</itemt>
-<itemd>A comma-separated list of packages which must be installed before
-this package can be built. Currently, only plain package names are
-allowed; there is no mechanism to request a specific version of a
-package yet.</itemd></item>
-
-<item><itemt>Essential</itemt>
-<itemd>A boolean value that denotes essential packages. Essential
-packages are installed as part of the bootstrap process. All
-non-essential packages implicitly depend on the essential ones. dpkg
-will refuse to remove essential packages from the system unless
-special flags are used to override this.</itemd></item>
+usage.
+</p>
+</itemd></item>
 
 <item><itemt>UpdateConfigGuess</itemt>
-<itemd>A boolean value. If true, the files config.guess and config.sub
+<itemd>
+<p>
+A boolean value. If true, the files config.guess and config.sub
 in the build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <em>Only</em> use this when you know it is necessary,
 i.e. when the configure script fails with a "unknown host"
-message.</itemd></item>
+message.
+</p>
+</itemd></item>
 
 <item><itemt>UpdateLibtool</itemt>
-<itemd>A boolean value. If true, the files ltconfig and ltmain.sh in the
+<itemd>
+<p>
+A boolean value. If true, the files ltconfig and ltmain.sh in the
 build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <em>Only</em> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
 with mismatching versions. See the <link
 url="http://fink.sourceforge.net/darwin/libtool.php">libtool
-page</link> for further information.</itemd></item>
+page</link> for further information.
+</p>
+</itemd></item>
 
 <item><itemt>Patch</itemt>
-<itemd>The filename of a patch to be applied with <code>patch -p1
+<itemd>
+<p>
+The filename of a patch to be applied with <code>patch -p1
 &lt;<i>patch-file</i></code>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <code>%f.patch</code>. The patch is applied before the PatchScript
-is run (if any).</itemd></item>
+is run (if any).
+</p>
+</itemd></item>
 
 <item><itemt>PatchScript</itemt>
-<itemd>A list of commands that are run in the patch phase. See the note
+<itemd>
+<p>
+A list of commands that are run in the patch phase. See the note
 on scripts below. This is the place to put commands that patch or
 otherwise modify the package. There is no default. Before the
 commands are executed, percent expansion takes place (see last
-section).</itemd></item>
+section).
+</p>
+</itemd></item>
 
 <item><itemt>ConfigureParams</itemt>
-<itemd>Additional parameters to pass to the configure script. (See
-CompileScript for details.)</itemd></item>
+<itemd>
+<p>
+Additional parameters to pass to the configure script. (See
+CompileScript for details.)
+</p>
+</itemd></item>
 
 <item><itemt>CompileScript</itemt>
-<itemd><p>A list of commands that are run in the compile phase. See the note
+<itemd>
+<p>
+A list of commands that are run in the compile phase. See the note
 on scripts below. This is the place to put commands that configure and
-compile the package. The default is:</p>
+compile the package. The default is:
+</p>
 <codeblock>./configure %c
 make</codeblock>
-<p>This is appropriate for packages that use GNU autoconf. Before the
+<p>
+This is appropriate for packages that use GNU autoconf. Before the
 commands are executed, percent expansion takes place (see previous
-section).</p></itemd></item>
+section).
+</p>
+</itemd></item>
 
 <item><itemt>InstallScript</itemt>
-<itemd><p>A list of commands that are run in the install phase. See the note
+<itemd>
+<p>
+A list of commands that are run in the install phase. See the note
 on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. The default is:</p>
+necessary files to the stow directory for the package. The default is:
+</p>
 <codeblock>make install prefix=%i</codeblock>
-<p>The default is appropriate for packages that use GNU autoconf. If the
+<p>
+The default is appropriate for packages that use GNU autoconf. If the
 package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
-expansion takes place (see previous section).</p></itemd></item>
+expansion takes place (see previous section).
+</p>
+</itemd></item>
 
 <item><itemt>Set<i>ENVVAR</i></itemt>
-<itemd><p>Causes certain environment variables to be set in the
+<itemd>
+<p>
+Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
 are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
 MAKE, MFLAGS. The value you specify is subject to the
-percent expansion described in the last section. A common example:</p>
+percent expansion described in the last section. A common example:
+</p>
 <codeblock>SetCPPFLAGS: -traditional-cpp</codeblock>
-<p>The variables CPPFLAGS and LDFLAGS are special. They default to
+<p>
+The variables CPPFLAGS and LDFLAGS are special. They default to
 <code>-I%p/include</code> and <code>-L%p/lib</code>,
 respectively. If you specify a value for one of these, it will be
-appended to the default value.</p></itemd></item>
+appended to the default value.
+</p>
+</itemd></item>
 
 <item><itemt>NoSet<i>ENVVAR</i></itemt>
-<itemd>When set to a true value, deactivates the default values for
+<itemd>
+<p>
+When set to a true value, deactivates the default values for
 CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
-remain unset, specify <code>NoSetLDFLAGS: true</code> .</itemd></item>
+remain unset, specify <code>NoSetLDFLAGS: true</code> .
+</p>
+</itemd></item>
+
+
+<item><itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
+<itemd>
+<p>
+These fields specify pieces of shell scripts that will be called when
+the package is installed, upgraded or removed.
+Fink automatically adds a shell script header that calls 'set -e', so
+any command that fails will result in instant termination of the
+script.
+Fink also adds an <code>exit 0</code> at the end.
+To indicate an error, exit from the script with a non-zero exit code.
+The first parameter (<code>$1</code>) is set to a value indicating
+what action is being performed.
+Some possible values are <code>install</code>, <code>upgrade</code>,
+<code>remove</code> and <code>purge</code>.
+</p>
+<p>
+The scripts are called at the following times:
+</p>
+<ul>
+<li>PreInstScript: When the package is installed for the first time
+and before upgrading the package to this version.</li>
+<li>PostInstScript: After unpacking and setting up the package.</li>
+<li>PreRmScript: Before the package is removed or upgraded to a later
+version.</li>
+<li>PostRmScript: After the package was removed or upgraded to a later
+version.</li>
+</ul>
+<p>
+To make it more clear, an upgrade invokes both the ...Inst scripts of
+the new version and the ...Rm scripts of the old version.
+Details can be found in the Debian Policy Manual,
+<link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapter 6</link>.
+</p>
+<p>
+Percent expansion is performed on the scripts.
+Commands can generally be called without giving a full path.
+</p>
+</itemd></item>
+
+<item><itemt>ConfFiles</itemt>
+<itemd>
+<p>
+A space-separated list of files that are user-modifiable configuration
+files.
+The files must be specified with an absolute path,
+e.g. <code>%p/etc/foo.conf</code>.
+The named files will receive special treatment by dpkg.
+When a package is upgraded and the file has changed both on disk and
+in the package, the user is asked which version to use and backups
+of the file will be made.
+When a package is "remove"d, the configuration files will remain on
+disk.
+Only a "purge" also removes the configuration files.
+</p>
+</itemd></item>
+
+<item><itemt>DaemonicFile</itemt>
+<itemd>
+<p>
+<i>Introduced in a post-0.2.2 CVS version.</i>
+Gives a service description for <code>daemonic</code>.
+<code>daemonic</code> is used by Fink to create and remove
+StartupItems for daemon processes (e.g. web servers).
+The description will added to the package as a file named
+<code>%p/etc/daemons/<i>name</i>.xml</code>, where <i>name</i> is
+specified by the DaemonicName field and defaults to the package
+name.
+Percent expansion is performed on the contents of this field.
+Note that you must add <code>daemonic</code> to the dependency list if
+your package uses it.
+</p>
+</itemd></item>
+
+<item><itemt>DaemonicName</itemt>
+<itemd>
+<p>
+<i>Introduced in a post-0.2.2 CVS version.</i>
+A name for the <code>daemonic</code> service description file.
+See the description of DaemonicFile for details.
+</p>
+</itemd></item>
+
 
 <item><itemt>Description</itemt>
-<itemd>A short description of the package (what is it?). This is a
+<itemd>
+<p>
+A short description of the package (what is it?). This is a
 one-line description that will be displayed in lists, so it must be
 short and informative.  Keep it to around 30 to 50 chars. It is not
 necessary to repeat the package name in this field - it will always
-be displayed in proper context.</itemd></item>
+be displayed in proper context.
+</p>
+</itemd></item>
 
 <item><itemt>DescDetail</itemt>
-<itemd>A more detailed description (what is it, what can I use it for?).
-Multiple lines allowed.</itemd></item>
+<itemd>
+<p>
+A more detailed description (what is it, what can I use it for?).
+Multiple lines allowed.
+</p>
+</itemd></item>
 
 <item><itemt>DescUsage</itemt>
-<itemd>This is for information that is needed to use the package (how do
+<itemd>
+<p>
+This is for information that is needed to use the package (how do
 I use it?). As in "run wmaker.inst once before using WindowMaker".
-Multiple lines allowed.</itemd></item>
+Multiple lines allowed.
+</p>
+</itemd></item>
 
 <item><itemt>DescPackaging</itemt>
-<itemd>Notes about the packaging. Stuff like "patches the Makefile to put
-everything in place" goes here. Multiple lines allowed.</itemd></item>
+<itemd>
+<p>
+Notes about the packaging. Stuff like "patches the Makefile to put
+everything in place" goes here. Multiple lines allowed.
+</p>
+</itemd></item>
 
 <item><itemt>DescPort</itemt>
-<itemd>Notes that are specific to porting the package to Darwin. Stuff
+<itemd>
+<p>
+Notes that are specific to porting the package to Darwin. Stuff
 like "config.guess and libtool scripts are updated, -traditional-cpp
-is necessary" goes here. Multiple lines allowed.</itemd></item>
+is necessary" goes here. Multiple lines allowed.
+</p>
+</itemd></item>
 
 <item><itemt>Homepage</itemt>
-<itemd>The URL of the upstream home page of the package.</itemd></item>
+<itemd>
+<p>
+The URL of the upstream home page of the package.
+</p>
+</itemd></item>
 
 
 <item><itemt>Comment</itemt>
-<itemd><em>Obsolete.</em> Was: General comments on the package.</itemd></item>
+<itemd>
+<p>
+<em>Obsolete.</em> Was: General comments on the package.
+</p>
+</itemd></item>
 
 <item><itemt>CommentPort</itemt>
-<itemd><em>Obsolete.</em> Was: Comments on the package that are specific to the
+<itemd>
+<p>
+<em>Obsolete.</em> Was: Comments on the package that are specific to the
 Darwin port. Describe what special parameters or patches are
-necessary, what doesn't work (yet), etc.</itemd></item>
+necessary, what doesn't work (yet), etc.
+</p>
+</itemd></item>
 
 <item><itemt>CommentStow</itemt>
-<itemd><em>Obsolete.</em> Was: Comments on the package that apply to using it
+<itemd>
+<p>
+<em>Obsolete.</em> Was: Comments on the package that apply to using it
 with stow. Describe special treatment necessary and potential
-problems.</itemd></item>
+problems.
+</p>
+</itemd></item>
 
 <item><itemt>UsesGettext</itemt>
-<itemd><em>Obsolete.</em> gettext is now an essential package and
+<itemd>
+<p>
+<em>Obsolete.</em> gettext is now an essential package and
 always available. If the package makes more than casual use of
-gettext, you may want to declare a dependency nonetheless.</itemd></item>
+gettext, you may want to declare a dependency nonetheless.
+</p>
+</itemd></item>
 
 </itemtable>
 </section>
