@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.2 2004/02/27 12:37:29 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.3 2004/02/28 17:21:14 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -151,7 +151,7 @@ X11 では、ウィンドウ枠 (または &quot; 装飾 &quot;) は別のプロ
 </chapter>
 <chapter filename="history" >
 <title>歴史</title>
-<shorttitle>History</shorttitle>
+<shorttitle>歴史</shorttitle>
 <preface>
 <p>[大げさな言葉を使ってしまいました。
 どうしても使いたかったんです...]</p>
@@ -211,7 +211,7 @@ XFree86 4.1.0 がフルスクリーンモードで登場した後、ルートレ
 </chapter>
 <chapter filename="inst-xfree86" >
 <title>XFree86 の入手とインストール</title>
-<shorttitle>Installing XFree86</shorttitle>
+<shorttitle>XFree86 のインストール</shorttitle>
 <section name="fink" >
 <title>Fink を使ったインストール</title>
 <p>
