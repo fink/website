@@ -95,7 +95,7 @@ $handle = opendir('.');
 $files = array();
 while ($fn = readdir($handle)) {
   if (substr($fn,0,1) != "." && substr($fn,-4) != ".php"
-      && substr($fn,-4) != ".inc" && $fn != "icons")
+      && substr($fn,-4) != ".inc" && $fn != "icons" && $fn != "CVS")
     $files[] = $fn;
 }
 closedir($handle);
