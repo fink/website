@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/23 11:26:19 $';
+$cvs_date = '$Date: 2001/10/23 15:33:19 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -37,7 +37,7 @@ packages or build everything from source.
 In addition to ripping off Fink packages and breaking the GPL, the
 ports collection at <a href="http://macosx.forked.net/">forked.net</a>
 has just gone commercial.
-More details soon.
+More <a href="pr/forked.php">details</a> now available.
 </p>
 <p>2001-10-03: The binary distribution update is now complete.
 The <a href="news/puma.php">10.1 compatibility report</a> has been
