@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/25 21:36:46 $';
+$cvs_date = '$Date: 2001/01/28 20:03:24 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -26,16 +26,13 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-01-28: Documentation on Fink's <a
+href="info-format.php">package descriptions</a> is available.</p>
 <p>2001-01-24: Instructions and patches for <a
 href="gnome.php">building GNOME</a> on Darwin (without Fink) are now
 available.</p>
 <p>2001-01-17: Version 0.1.2 is out. Get it from the <a
 href="download.php">download page</a>.</p>
-<p>2001-01-16: GNOME! I've got the core GNOME system running. It has
-lots of rough edges, but looks promising...</p>
-<p>2001-01-16: Several patches that add shared library support to
-basic libraries are now available on the <a href="patches.php">patches
-pages</a>. More patches are to follow.</p>
 
 <h2>Status</h2>
 
