@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/03/24 21:50:46 $';
+$cvs_date = '$Date: 2002/04/01 17:43:33 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -91,6 +91,8 @@ href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package re
 href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Feature request tracker</a></li>
 <li><a
 href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Package submission tracker</a></li>
+<li><a
+href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Patch tracker</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
 <li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse
 online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
