@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.71 2003/01/02 14:15:35 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.72 2003/01/06 20:39:06 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -863,6 +863,12 @@ url="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit">troubleshoot
 section</link> for this common problem.
 </p>
 </answer></faqentry>
+
+<faqentry name="no-server"><question><p>When I try to start XDarwin I get the message "xinit:  No such file or directory (errno 2):  no server "/usr/X11R6/bin/X" in PATH".</p></question>
+<answer><p>This has come up recently:  all of the <code>xfree86</code> packages get built, but only <code>xfree86-base</code> and <code>xfree86-base-shlibs</code> are installed.  Check whether you have <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code> installed.  If not, then <code>fink install xfree86-rootless</code> should do the trick.</p>
+<p>If you do have it installed, then try <code>fink rebuild xfree86-rootless</code>.  If that doesn't work, verify that you have <code>/usr/bin/X11R6</code> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p>
+</answer></faqentry>
+
 
 <faqentry name="xfree-keymapping"><question><p>I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/02 14:15:35';
+$cvs_date = 'Date: 2003/01/06 20:39:06';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -67,7 +67,11 @@ The Running X11 document now has an extensive <a href="http://fink.sourceforge.n
 section</a> for this common problem.
 </p></div></a>
 
-<a name="xfree-keymapping"><div class="question"><p><b>Q7.4: I just upgraded to Mac
+<a name="no-server"><div class="question"><p><b>Q7.4: When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> This has come up recently:  all of the <tt><nobr>xfree86</nobr></tt> packages get built, but only <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-base-shlibs</nobr></tt> are installed.  Check whether you have <tt><nobr>xfree86-rootless</nobr></tt> and <tt><nobr>xfree86-rootless-shlibs</nobr></tt> installed.  If not, then <tt><nobr>fink install xfree86-rootless</nobr></tt> should do the trick.</p><p>If you do have it installed, then try <tt><nobr>fink rebuild xfree86-rootless</nobr></tt>.  If that doesn't work, verify that you have <tt><nobr>/usr/bin/X11R6</nobr></tt> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p></div></a>
+
+
+<a name="xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 
@@ -95,10 +99,10 @@ You'll get a bunch of diagnostic messages in Terminal.app to help you
 sort this out.
 </p></div></a>
 
-<a name="xterm-error"><div class="question"><p><b>Q7.5: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
+<a name="xterm-error"><div class="question"><p><b>Q7.6: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt><nobr>xfree86</nobr></tt> packages, then you can get an upgrade by the usual means (&quot;<tt><nobr>fink selfupdate-cvs ; fink update-all</nobr></tt>&quot; for installation from source, <tt><nobr>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</nobr></tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div></a>
 
-<a name="libXmuu"><div class="question"><p><b>Q7.6: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
+<a name="libXmuu"><div class="question"><p><b>Q7.7: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You are missing a file that is supposed to be installed by <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
 </a>

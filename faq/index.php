@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/02 14:15:35';
+$cvs_date = 'Date: 2003/01/06 20:39:06';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -117,14 +117,15 @@ black icons only. What's wrong?</a></li>
 XMMS</a></li>
 <li><a href="usage-packages.php#xdarwin-start">7.3 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="usage-packages.php#xfree-keymapping">7.4 I just upgraded to Mac
+<li><a href="usage-packages.php#no-server">7.4 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
+<li><a href="usage-packages.php#xfree-keymapping">7.5 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
-<li><a href="usage-packages.php#xterm-error">7.5 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
-<li><a href="usage-packages.php#libXmuu">7.6 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
+<li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
+<li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.71 2003/01/02 14:15:35 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.72 2003/01/06 20:39:06 alexkhansen Exp $</i></p>
 
 
 <?
