@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:57:52 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ nueva ventana de su navegador.</p>
 
 <p>Vínculos relacionados a Fink</p>
 <ul>
-<li><a href="http://finkmirrors.net/" target="_blank">Espejos de Fink/a>
+<li><a href="http://finkmirrors.net/" target="_blank">Espejos de Fink</a>
 - Instrucciones sobre como convertirse en un espejo de Fink así como 
 mensajes de estado acerca de los espejos actuales.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
