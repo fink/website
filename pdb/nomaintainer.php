@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/10 12:59:41 $';
+$cvs_date = '$Date: 2002/06/10 13:01:48 $';
 
 include "header.inc";
 ?>
@@ -44,7 +44,7 @@ this list.</p>
 </ul>
 <?
 }
-
+?>
 
 <?
 include "footer.inc";
