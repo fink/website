@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 21:00:08 $';
+$cvs_date = '$Date: 2002/12/17 23:47:03 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ A binary installer for Fink 0.5.0a has been posted.
 The binary distribution is complete.
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-0.5.0a-Installer.dmg">Fink
+<li><a href="http://telia.dl.sourceforge.net/fink/Fink-0.5.0a-Installer.dmg">Fink
 0.5.0a Binary Installer</a> - 11 MB, compressed .dmg disk image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
