@@ -1,9 +1,9 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/18 22:39:37';
+$cvs_date = 'Date: 2001/09/20 07:41:14';
 
-$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
+$metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
 include "header.inc";
 ?>
@@ -121,7 +121,8 @@ The rest of this manual will show you how.
 </p>
 
 
-
+<p align="right">
+Next: <a href="install.php">First Time Installation</a></p>
 
 
 <?

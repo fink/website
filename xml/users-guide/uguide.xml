@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.2 2001/09/18 22:39:37 chrisp Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.3 2001/09/20 07:41:14 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -131,6 +131,75 @@ It is actually possible to mix the two models at will.
 The rest of this manual will show you how.
 </p>
 </section>
+
+</chapter>
+
+
+<chapter filename="install">
+<title>First Time Installation</title>
+<shorttitle>Install</shorttitle>
+
+<preface>
+<p>
+During first time installation, a base system with the package
+management tools is installed on your machine.
+After that you must set up your shell environment to use the software
+installed by Fink.
+You only need to do this once; you can upgrade any Fink installation
+(starting with release 0.2.0) in place, without reinstalling.
+This is covered in the <xref chapter="upgrade">Upgrading
+chapter</xref>.
+</p>
+<p>
+Once you have the package management tools installed, you can use them
+to install more software.
+This is covered in the <xref chapter="packages">Installing Packages
+chapter</xref>.
+</p>
+</preface>
+
+<section name="bin"><title>Installing the Binary Distribution</title>
+<p>
+The binary distribution comes as a Mac OS X installer package (.pkg),
+wrapped in a disk image (.dmg).
+[FIXME: more]
+</p>
+</section>
+
+<section name="src"><title>Installing the Source Distribution</title>
+<p>
+The source distribution comes as a standard Unix tarball (.tar.gz).
+It contains only the <code>fink</code> package manager and its package
+descriptions and will download the source for packages on the fly.
+[FIXME: more]
+</p>
+</section>
+
+<section name="setup"><title>Setting Up Your Environment</title>
+<p>
+[FIXME: .cshrc and friends]
+</p>
+</section>
+
+</chapter>
+
+
+<chapter filename="upgrade">
+<title>Upgrading Fink</title>
+<shorttitle>Upgrade</shorttitle>
+
+<preface>
+</preface>
+
+</chapter>
+
+
+<chapter filename="packages">
+<title>Installing Packages</title>
+<shorttitle>Packages</shorttitle>
+
+<preface>
+</preface>
 
 </chapter>
 
