@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.59 2004/02/28 15:52:08 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.60 2004/02/28 16:14:29 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -68,6 +68,51 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]);
 } else {
   $date = filemtime($PATH_TRANSLATED);
+}
+
+// Functions Used in PDB
+function it_start() {
+  global $it_flag;
+
+  $it_flag = 0;
+?>
+<table border="0" cellpadding="0" cellspacing="0">
+<?
+}
+
+function it_item($title, $item) {
+  global $it_flag, $root;
+
+  if ($it_flag) {
+    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
+  }
+  $it_flag = 1;
+
+  print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
+        $item.'</td></tr>'."\n";
+}
+
+function it_start2() {
+  global $it_flag;
+
+  $it_flag = 0;
+?>
+<table border="0" cellpadding="1" cellspacing="1">
+<?
+}
+
+function it_item2($title, $item1, $item2) {
+  global $it_flag, $root;
+
+  if ($it_flag) {
+    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td><td></td></tr>'."\n";
+  }
+  $it_flag = 1;
+  print '<tr valign="top"><td width="150">'.$title.'</td><td width="120">'.$item1.'</td><td  width="120">'.$item2.'</td></tr>'."\n";
+}
+
+function it_end() {
+echo '</table>';
 }
 
 // Used in News
