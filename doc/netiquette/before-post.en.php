@@ -1,8 +1,8 @@
 <?
 $title = "netiquette - Before posting";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/29 01:06:40';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="first-post.php?phpLang=en" title="Intial Post"><link rel="prev" href="index.php?phpLang=en" title="netiquette Contents">';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/30 22:10:49';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="first-post.php?phpLang=en" title="Initial Post"><link rel="prev" href="index.php?phpLang=en" title="netiquette Contents">';
 
 include_once "header.inc";
 ?>
@@ -20,6 +20,6 @@ include_once "header.inc";
       </ul>
     
   <p align="right">
-Next: <a href="first-post.php?phpLang=en">2 Intial Post</a></p>
+Next: <a href="first-post.php?phpLang=en">2 Initial Post</a></p>
 
 <? include_once "footer.inc"; ?>

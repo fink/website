@@ -1,8 +1,8 @@
 <?
 $title = "netiquette - Replying";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/29 01:06:40';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="unsubscribe.php?phpLang=en" title="How to Unsubscribe from the Lists"><link rel="prev" href="first-post.php?phpLang=en" title="Intial Post">';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/30 22:10:49';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="unsubscribe.php?phpLang=en" title="How to Unsubscribe from the Lists"><link rel="prev" href="first-post.php?phpLang=en" title="Initial Post">';
 
 include_once "header.inc";
 ?>
