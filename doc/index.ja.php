@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/03/07 20:16:29';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/03/24 12:24:45';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.4 2004/03/07 20:16:29 fingolfin Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.7 2004/03/24 12:24:45 babayoshihiko Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -27,7 +27,7 @@ Fink 本体のインストール、パッケージのインストール、新し
 </ul>
 
 <p>
-以下のドキュメントはより詳細ですが、内容が多少古くメンテナンスされません。
+以下のドキュメントはより詳細ですが、内容が多少古くなっている上、今後メンテナンスされません。
 （訳注 日本語版はありません）:
 </p>
 <ul>
@@ -35,7 +35,7 @@ Fink 本体のインストール、パッケージのインストール、新し
 to install Fink or upgrade to a new version</li>
 <li><a href="bundled/usage.php">Usage</a> - how to use Fink
 and the installed software</li>
-<li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
+<li><a href="readme.php">Fink ReadMe</a> - the ReadMe for the
 source distribution</li>
 <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the
 Fink CVS repository to get the latest source packages between
@@ -53,7 +53,12 @@ Unix アプリケーションを Darwin へポートする際に有用な情報�
 <li><a href="packaging/index.php">Packaging Manual</a> - 
 Fink パッケージの作り方、メンテナンス方法。</li>
 </ul>
+<h2><a name="otherdoc">Other Documents</a></h2>
 
+<ul>
+<li><a href="multilingual/index.php">国際化ガイド</a> - 
+現在進行中のウェブサイト国際化に関するドキュメント</li>
+</ul>
 
 
 <? include_once "footer.inc"; ?>

@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/14 08:49:36';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/03/21 15:41:10';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.4 2004/03/14 08:49:36 michga Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.5 2004/03/21 15:41:10 dmrrsn Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
@@ -30,7 +30,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 <ul>
 <li><a href="bundled/install.php">Installation et Mise à jour</a> - comment installer Fink et le mettre à jour lors d'une nouvelle version </li>
 <li><a href="bundled/usage.php">Utilisation</a> - comment utiliser Fink et les logiciels installés</li>
-<li><a href="bundled/readme.php">Fink ReadMe</a> - le fichier ReadMe de la distribution source</li>
+<li><a href="readme.php">Fink ReadMe</a> - le fichier ReadMe de la distribution source</li>
 <li><a href="cvsaccess/index.php">Accès CVS</a> - comment accéder au serveur CVS de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
 </ul>
 <h2><a name="developerdoc">Documentation développeur</a></h2>

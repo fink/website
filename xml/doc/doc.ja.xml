@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.7 2004/03/24 12:24:45 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.8 2004/03/24 18:14:58 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -36,7 +36,7 @@ Fink 本体のインストール、パッケージのインストール、新し
 to install Fink or upgrade to a new version</li>
 <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Usage</varlink> - how to use Fink
 and the installed software</li>
-<li><varlink url="bundled/readme.php" varurl="bundled/readme.ja.html">Fink ReadMe</varlink> - the ReadMe for the
+<li><varlink url="readme.php" varurl="readme.ja.html">Fink ReadMe</varlink> - the ReadMe for the
 source distribution</li>
 <li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.en.html">CVS Access</varlink> - how to access the
 Fink CVS repository to get the latest source packages between

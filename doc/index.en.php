@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/13 01:55:54';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/03/21 15:41:10';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.5 2004/03/13 01:55:54 alexkhansen Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.6 2004/03/21 15:41:10 dmrrsn Exp $-->
 <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
@@ -37,7 +37,7 @@ no longer maintained:
 to install Fink or upgrade to a new version</li>
       <li><a href="bundled/usage.php">Usage</a> - how to use Fink
 and the installed software</li>
-      <li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
+      <li><a href="readme.php">Fink ReadMe</a> - the ReadMe for the
 source distribution</li>
       <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the
 Fink CVS repository to get the latest source packages between

@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.5 2004/03/21 15:41:10 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.6 2004/03/24 18:14:58 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -29,7 +29,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 <ul>
 <li><varlink url="bundled/install.php" varurl="bundled/install.html">Installation et Mise à jour</varlink> - comment installer Fink et le mettre à jour lors d'une nouvelle version </li>
 <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Utilisation</varlink> - comment utiliser Fink et les logiciels installés</li>
-<li><varlink url="bundled/readme.php" varurl="bundled/readme.fr.html">Fink ReadMe</varlink> - le fichier ReadMe de la distribution source</li>
+<li><varlink url="readme.php" varurl="readme.fr.html">Fink ReadMe</varlink> - le fichier ReadMe de la distribution source</li>
 <li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.fr.html">Accès CVS</varlink> - comment accéder au serveur CVS de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
 </ul>
 </section>
