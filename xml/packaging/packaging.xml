@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.53 2003/11/13 05:33:01 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.54 2003/12/09 23:04:49 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1667,6 +1667,27 @@ CompileScript for details.)
 As of fink > 0.13.7, this parameter will also work with perl modules
 <code>Type: Perl</code>, and will append to the default perl Makefile.PL
 string.
+</p>
+</itemd></item>
+
+<item><itemt>GCC</itemt>
+<itemd>
+<p>
+The required version of the gcc compiler to use.  Allowed values are: 
+<code>2.95.2</code> or <code>2.95</code>
+(for use in the 10.1 package tree only), <code>3.1</code>
+(for use in the 10.2 package tree only), and <code>3.3</code>
+(for use in the 10.2-gcc3.3 and 10.3 package trees only).
+</p>
+<p>As of fink 0.13.8, when this flag is present, the version of gcc
+is tested using <code>gcc_select</code>, and fink exits with an error
+if the wrong version is present.
+</p>
+<p>
+This field was added to fink to aid in the transition between the gcc
+compilers, which introduced a binary incompatibility between libraries
+that involve C++ code which is not reflected in the versioning
+scheme.
 </p>
 </itemd></item>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2003/11/13 05:33:01';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/12/09 23:04:49';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -504,6 +504,24 @@ CompileScript for details.)
 As of fink &gt; 0.13.7, this parameter will also work with perl modules
 <code>Type: Perl</code>, and will append to the default perl Makefile.PL
 string.
+</p>
+</td></tr><tr valign="top"><td>GCC</td><td>
+<p>
+The required version of the gcc compiler to use.  Allowed values are: 
+<code>2.95.2</code> or <code>2.95</code>
+(for use in the 10.1 package tree only), <code>3.1</code>
+(for use in the 10.2 package tree only), and <code>3.3</code>
+(for use in the 10.2-gcc3.3 and 10.3 package trees only).
+</p>
+<p>As of fink 0.13.8, when this flag is present, the version of gcc
+is tested using <code>gcc_select</code>, and fink exits with an error
+if the wrong version is present.
+</p>
+<p>
+This field was added to fink to aid in the transition between the gcc
+compilers, which introduced a binary incompatibility between libraries
+that involve C++ code which is not reflected in the versioning
+scheme.
 </p>
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
