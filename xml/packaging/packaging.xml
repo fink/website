@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.12 2001/11/04 15:21:13 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.13 2001/12/25 15:41:48 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -568,8 +568,8 @@ generate a <code>control</code> file for dpkg.</p>
 <itemd>
 <p>
 The package name.
-May contain lowercase letters, numbers and the special characters '.'
-and '-'.
+May contain lowercase letters, numbers and the special characters '.',
+'+' and '-'.
 No underscores ('_'), no capital letters.
 Required field.
 </p>
@@ -611,6 +611,10 @@ and the unpack phase creates just an empty directory.
 However, the patch, compile and install phases are executed normally.
 This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
+</p>
+<p>
+Finally there is <code>perl</code> which causes alternate default
+values for CompileScript and InstallScript to be used. 
 </p>
 </itemd></item>
 
@@ -800,8 +804,32 @@ Normally, an auxillary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
-expect. See ghostscript, vim and tetex for examples of
-usage.
+expect. See ghostscript, vim and tetex for examples of usage.
+</p>
+</itemd></item>
+
+<item><itemt>SourceRename</itemt>
+<itemd>
+<p>
+This field can renames a source tar ball on the fly. This is useful
+if for example the version of the source is encoded in the directory name on
+the server, but the tar ball itself has the same name for all versions, e.g.
+http://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+caused by this, you would then use something like
+</p>
+<codeblock>SourceRename: %n-%v.tar.gz</codeblock>
+<p>
+In the above example this would result in the tarball being stored under
+/sw/src/coolapp-1.2.3.tar.gz as one would expect.
+</p>
+</itemd></item>
+
+<item><itemt>Source<i>N</i>Rename</itemt>
+<itemd>
+<p>
+This is just the same as the <code>SourceRename</code> field, except that it
+is used to rename the Nth tarball as specified by the <code>Source<i>N</i></code>
+field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
 
@@ -841,7 +869,7 @@ Darwin. This happens in the patch phase and before the PatchScript
 is run. <em>Only</em> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
 with mismatching versions. See the <link
-url="http://fink.sourceforge.net/darwin/libtool.php">libtool
+url="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
 page</link> for further information.
 </p>
 </itemd></item>
@@ -881,6 +909,17 @@ packages's version and Fink's version (in
 </p>
 </itemd></item>
 
+<item><itemt>UpdatePOD</itemt>
+<itemd>
+<p>
+A boolean value, specific for perl module packages.
+If true, this will add code to the install, postrm and postinst
+scripts that maintains the .pod files provided by perl packages.
+This includes adding and removing the .pod date from the central
+<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
+</p>
+</itemd></item>
+
 <item><itemt>Patch</itemt>
 <itemd>
 <p>
@@ -917,14 +956,24 @@ CompileScript for details.)
 <p>
 A list of commands that are run in the compile phase. See the note
 on scripts below. This is the place to put commands that configure and
-compile the package. The default is:
+compile the package. Normally the default is:
 </p>
 <codeblock>./configure %c
 make</codeblock>
 <p>
-This is appropriate for packages that use GNU autoconf. Before the
-commands are executed, percent expansion takes place (see previous
-section).
+This is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<codeblock>perl Makefile.PL PREFIX=\%p INSTALLPRIVLIB=\%p/lib/perl5 \
+ INSTALLARCHLIB=\%p/lib/perl5/darwin INSTALLSITELIB=\%p/lib/perl5 \
+ INSTALLSITEARCH=\%p/lib/perl5/darwin INSTALLMAN1DIR=\%p/share/man/man1 \
+ INSTALLMAN3DIR=\%p/share/man/man3
+make
+make test</codeblock>
+<p>
+Before the commands are executed, percent expansion takes place
+(see previous section).
 </p>
 </itemd></item>
 
@@ -933,12 +982,21 @@ section).
 <p>
 A list of commands that are run in the install phase. See the note
 on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. The default is:
+necessary files to the stow directory for the package. Normally the
+default is:
 </p>
 <codeblock>make install prefix=%i</codeblock>
 <p>
-The default is appropriate for packages that use GNU autoconf. If the
-package supports it, it is preferably to use <code>make install
+The default is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field),
+the default instead is:
+</p>
+<codeblock>make install INSTALLPRIVLIB=\%i/lib/perl5 \
+ INSTALLARCHLIB=\%i/lib/perl5/darwin INSTALLSITELIB=\%i/lib/perl5 \
+ INSTALLSITEARCH=\%i/lib/perl5/darwin INSTALLMAN1DIR=\%i/share/man/man1 \
+ INSTALLMAN3DIR=\%i/share/man/man3</codeblock>
+<p>
+If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
