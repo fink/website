@@ -1,18 +1,18 @@
 <?
 $title = "Fink bug trqacking system";
 $cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 21:42:08 $';
+$cvs_date = '$Date: 2005/01/22 21:50:48 $';
 
 include "header.inc";
 ?>
-<h1 align="center">Debian bug tracking system</h1> 
+<h1 align="center">Fink bug tracking system</h1> 
 <p>
-	Debian has a bug tracking system (BTS) in which we file details of bugs reported by users and developers. Each bug is given a number, and is kept on file until it is marked as having been dealt with.
+	Fink has a bug tracking system (BTS) in which we file details of bugs reported by users and developers. Each bug is given a number, and is kept on file until it is marked as having been dealt with.
 </p>
 <h2>Bug tracking system documentation</h2> 
 <ul>
 	<li>
-		<a href="Reporting">How to report a bug in Debian</a> 
+		<a href="Reporting">How to report a bug in Fink</a> 
 	<li>
 		<a href="Access">Ways of accessing the bug report logs</a> 
 	<li>
@@ -30,10 +30,10 @@ include "header.inc";
 <p>
 	Find a bug by <strong>number</strong>: 
 	<br>
-<form method="get" action="http://bugs.debian.org/cgi-bin/bugreport.cgi">
+<form method="get" action="http://bugs.finkproject.org/cgi-bin/bugreport.cgi">
 	<input type="text" size="9" name="bug" value=""> <input type="submit" value="Find"> <label><input type="checkbox" name="mbox" value="yes"> as mbox</label> 
 </form>
-<form method="get" action="http://bugs.debian.org/cgi-bin/pkgreport.cgi">
+<form method="get" action="http://bugs.finkproject.org/cgi-bin/pkgreport.cgi">
 <p>
 	Find bugs by: <label><input type="radio" name="which" value="pkg" checked><strong>package</strong></label> <label><input type="radio" name="which" value="src"><strong>source&nbsp;package</strong></label> <label><input type="radio" name="which" value="maint"><strong>maintainer&nbsp;email</strong></label> <label><input type="radio" name="which" value="submitter"><strong>submitter&nbsp;email</strong></label> <label><input type="radio" name="which" value="severity"><strong>severity</strong></label> <label><input type="radio" name="which" value="tag"><strong>tag</strong></label> 
 	<br>
@@ -75,48 +75,48 @@ include "header.inc";
 The above queries can also be made by visiting URLs of the following forms, respectively: 
 <ul>
 <li>
-	<tt>http://bugs.debian.org/<var>number</var></tt> 
+	<tt>http://bugs.finkproject.org/<var>number</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/mbox:<var>number</var></tt> 
+	<tt>http://bugs.finkproject.org/mbox:<var>number</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/<var>package</var></tt> 
+	<tt>http://bugs.finkproject.org/<var>package</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/src:<var>sourcepackage</var></tt> 
+	<tt>http://bugs.finkproject.org/src:<var>sourcepackage</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/<var>maintainer@email.address</var></tt> 
+	<tt>http://bugs.finkproject.org/<var>maintainer@email.address</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/from:<var>submitter@email.address</var></tt> 
+	<tt>http://bugs.finkproject.org/from:<var>submitter@email.address</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/severity:<var>severity</var></tt> 
+	<tt>http://bugs.finkproject.org/severity:<var>severity</var></tt> 
 <li>
-	<tt>http://bugs.debian.org/tag:<var>tag</var></tt> 
+	<tt>http://bugs.finkproject.org/tag:<var>tag</var></tt> 
 </ul>
 <h2>Supplementary information</h2> 
 <p>
-The current list of <a href="http://bugs.debian.org/release-critical/"> Release Critical Bugs</a>.
+The current list of <a href="http://bugs.finkproject.org/release-critical/"> Release Critical Bugs</a>.
 </p>
 <p>
-The current list of <a href="pseudo-packages">pseudo-packages</a> recognized by the Debian bug tracking system.
+The current list of <a href="pseudo-packages">pseudo-packages</a> recognized by the Fink bug tracking system.
 </p>
 <p>
 The following bug report indices are available: 
 <ul>
 <li>
-	Packages with <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=pkg">active</a> and <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=pkg&amp;archive=yes">archived</a> bug reports. 
+	Packages with <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=pkg">active</a> and <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=pkg&amp;archive=yes">archived</a> bug reports. 
 <li>
-	Source packages with <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=src">active</a> and <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=src&amp;archive=yes">archived</a> bug reports. 
+	Source packages with <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=src">active</a> and <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=src&amp;archive=yes">archived</a> bug reports. 
 <li>
-	Maintainers of packages with <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=maint">active</a> and <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=maint&amp;archive=yes">archived</a> bug reports. 
+	Maintainers of packages with <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=maint">active</a> and <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=maint&amp;archive=yes">archived</a> bug reports. 
 <li>
-	Submitters of <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=submitter">active</a> and <a href="http://bugs.debian.org/cgi-bin/pkgindex.cgi?indexon=submitter&amp;archive=yes">archived</a> bug reports. 
+	Submitters of <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=submitter">active</a> and <a href="http://bugs.finkproject.org/cgi-bin/pkgindex.cgi?indexon=submitter&amp;archive=yes">archived</a> bug reports. 
 </ul>
 <p>
 <strong>Note:</strong> some of the previously available indices of bug reports aren't available due to internal problems with the program that generated them. We apologize for the inconvenience. 
 <hr noshade width="100%" size="1">
 <address>
-Debian BTS administrators &lt;<a href="mailto:owner@bugs.debian.org">owner@bugs.debian.org</a>&gt; 
+Fink BTS administrators &lt;<a href="mailto:owner@bugs.finkproject.org">owner@bugs.finkproject.org</a>&gt; 
 <p>
-	Debian bug tracking system
+	Fink bug tracking system
 	<br>
 	Copyright &copy; 1999 Darren O. Benham, 1997, 2003 nCipher Corporation Ltd, 1994-1997 Ian Jackson.
 </p>
