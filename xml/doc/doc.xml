@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+
+<article filename="index">
+<title>Fink - Documentation</title>
+<shorttitle></shorttitle>
+<cvsid>$Id: doc.xml,v 1.1 2003/04/14 00:13:18 dmrrsn Exp $</cvsid>
+
+<preface>
+<p>
+This is a collection of various documents written for Fink.
+Some of the documents may also be useful to people who use Mac OS X
+or Darwin without Fink and want to learn about porting Unix software.
+</p>
+</preface>
+
+<section name="userdoc"><title>User Documentation</title>
+
+<p>
+The current user documentation for Fink:
+</p>
+<ul>
+<li><link url="users-guide/index.php">Fink User's Guide</link> -
+this covers installing Fink itself, installing packages, and upgrading
+to a new Fink release. It contains instructions for both the source
+and the binary release.
+<em>Work in Progress!</em></li>
+<li><link url="x11/index.php">Running X11 on Darwin and Mac OS X</link> -
+covers concepts, installation and launching (also intended for Darwin
+and Mac OS X users in general)</li>
+</ul>
+
+<p>
+A bunch of documents that are more complete, but slightly outdated and
+no longer maintained:
+</p>
+<ul>
+<li><link url="bundled/install.php">Installation and Upgrading</link> - how
+to install Fink or upgrade to a new version</li>
+<li><link url="bundled/usage.php">Usage</link> - how to use Fink
+and the installed software</li>
+<li><link url="bundled/readme.php">Fink ReadMe</link> - the ReadMe for the
+source distribution</li>
+<li><link url="cvsaccess/index.php">CVS Access</link> - how to access the
+Fink CVS repository to get the latest source packages between
+releases</li>
+</ul>
+
+</section>
+
+<section name="developerdoc"><title>Developer Documentation</title>
+
+<ul>
+<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
+file) - slides from a presentation at the <link
+url="http://conferences.oreillynet.com/macosx2002/"
+>O'Reilly Mac OS X Conference</link> (also available as a
+<link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</link>) </li>
+<li><link url="porting/index.php">Porting Tips</link> - notes for porting
+Unix applications to Darwin</li>
+<li><link url="packaging/index.php">Packaging Manual</link> - how to create and
+maintain Fink packages</li>
+</ul>
+
+</section>
+</article>
