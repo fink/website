@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 20:26:12';
+$cvs_date = 'Date: 2003/11/24 19:49:02';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -42,12 +42,9 @@ X11 with or without Fink.
 <li><a href="inst-xfree86.php#official-binary">3.3 The Official Binaries</a></li>
 <li><a href="inst-xfree86.php#official-source">3.4 The Official Source</a></li>
 <li><a href="inst-xfree86.php#latest-cvs">3.5 The Latest Development Source</a></li>
-<li><a href="inst-xfree86.php#xonx-bin">3.6 The XonX binary test releases (XAqua,
-XDarwin)</a></li>
-<li><a href="inst-xfree86.php#macgimp">3.7 MacGimp</a></li>
-<li><a href="inst-xfree86.php#rootless">3.8 Roaming Rootless Servers</a></li>
-<li><a href="inst-xfree86.php#switching-x11">3.9 Replacing X11</a></li>
-<li><a href="inst-xfree86.php#fink-summary">3.10 Fink package summary</a></li>
+<li><a href="inst-xfree86.php#macgimp">3.6 MacGimp</a></li>
+<li><a href="inst-xfree86.php#switching-x11">3.7 Replacing X11</a></li>
+<li><a href="inst-xfree86.php#fink-summary">3.8 Fink package summary</a></li>
 </ul>
 <li><a href="run-xfree86.php"><b>4 Starting XFree86</b></a></li>
 <ul>
@@ -83,7 +80,7 @@ menu of a GNOME application</a></li>
 <li><a href="tips.php#open">8.2 Launching Aqua apps from an xterm</a></li>
 <li><a href="tips.php#copy-n-paste">8.3 Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.38 2003/08/30 20:26:12 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.39 2003/11/24 19:49:02 alexkhansen Exp $</i></p>
 
 
 <?
