@@ -1,4 +1,18 @@
-<span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
+<span class="news_date">2002-10=30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
+  <p>
+  Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
+once</b> on a given machine.  Due to an apparent bug in Apple's
+Installer.app program, attempting a second installation on the same
+machine can result in permissions being altered in the machine's root
+directly, in some cases leaving the machine in a non-bootable state.
+</p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
+than an &quot;Install&quot; button when installing Fink 0.4.1, do not proceed
+any further! </p>
+<p>A new version of the binary installer for Fink 0.4.1 is being tested
+which will avoid the problem of the machine not booting, but even
+once the new version is available users are advised to only &quot;Install&quot;,
+not &quot;Upgrade.&quot;
+</p><span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
     <p>
       The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
     </p>
@@ -15,11 +29,4 @@ mailing list</a> have indicated problems (including kernel panics and
 infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
-</p><span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
-		<p>
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions for updating</a>. We also have separate <a href="<?php print $root; ?>news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</a>. 
-		</p>
-		<p>
-			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the &quot;stable&quot; tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
-		</p>
-	
+</p>

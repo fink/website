@@ -1,14 +1,28 @@
 <?
 $title = "News";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/09/28 13:04:26';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/10/30 21:04:44';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
+<span class="news_date">2002-10=30: </span><span class="news_headline">Don't reuse binary installer</span><?php gray_line(); ?>
+  <p>
+  Users are cautioned to use the binary installer for Fink 0.4.1 <b>only
+once</b> on a given machine.  Due to an apparent bug in Apple's
+Installer.app program, attempting a second installation on the same
+machine can result in permissions being altered in the machine's root
+directly, in some cases leaving the machine in a non-bootable state.
+</p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
+than an &quot;Install&quot; button when installing Fink 0.4.1, do not proceed
+any further! </p>
+<p>A new version of the binary installer for Fink 0.4.1 is being tested
+which will avoid the problem of the machine not booting, but even
+once the new version is available users are advised to only &quot;Install&quot;,
+not &quot;Upgrade.&quot;
+</p><span class="news_date">2002-09-28: </span><span class="news_headline">Fink 0.4.1 released</span><?php gray_line(); ?>
     <p>
       The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
     </p>
