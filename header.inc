@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.16 2001/04/27 17:34:01 chrisp Exp $ */
+/* $Id: header.inc,v 1.17 2001/05/07 19:30:55 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -59,10 +59,14 @@ if (!$section) {
 }
 
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html>
+<html lang="en">
 <head>
 <title>Fink - <? print $title ?></title>
 <link rel="stylesheet" href="<? print $root ?>fink.css">
+<?
+if ($metatags)
+  print $metatags;
+?>
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 

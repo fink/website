@@ -1,9 +1,13 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/27 17:33:27 $';
+$cvs_date = '$Date: 2001/05/07 19:30:55 $';
 $wantnav = "main";
 $is_home = 1;
+
+$metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
+<meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, software, distribution, Fink">
+';
 
 include "header.inc";
 ?>
