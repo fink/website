@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.1 2004/03/05 03:26:56 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.2 2004/03/11 07:32:00 dmalloc Exp $</cvsid>
 
 <preface>
 <p>
@@ -1217,6 +1217,22 @@ This field is required, and there must be exactly one name and address
 in the following format:
 </p>
 <codeblock>Firstname Lastname &lt;user@host.domain.com&gt;</codeblock>
+</itemd></item>
+
+<item><itemt>InfoN</itemt>
+<itemd>
+<p>
+This field allows fink to implement backward-incompatible syntax
+changes in package description files. A given version of fink is
+configured with the maximum integer "N" that it can handle. Any
+package in a higher InfoN field will be ignored, so this mechanism
+should only be used when necessary, lest people with older versions of
+fink be needlessly alienated. The documentation of other fields will
+note when a specific InfoN must be used. To use this mechanism, embed
+the entire package description in the desired InfoN field. See the
+"File Format" section earlier in this document for a description of
+the syntax for multiline fields.
+</p>
 </itemd></item>
 
 </itemtable>
