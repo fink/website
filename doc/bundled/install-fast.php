@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
+include_once "header.inc";
+?>
+
 <h1>Installation - 1 The Fast Track</h1>
 
 
@@ -164,4 +167,4 @@ update-all'.
 <p align="right">
 Next: <a href="install-first.php">2 First Time Installation</a></p>
 
-
+<? include_once "footer.inc"; ?>

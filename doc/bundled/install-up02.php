@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up01.php" title="Upgrading From Fink 0.1.x"><link rel="prev" href="install-up03.php" title="Upgrading From Fink 0.3.x">';
 
+include_once "header.inc";
+?>
+
 <h1>Installation - 4 Upgrading From Fink 0.2.x</h1>
 
 
@@ -105,4 +108,4 @@ re-install the .deb package files.
 <p align="right">
 Next: <a href="install-up01.php">5 Upgrading From Fink 0.1.x</a></p>
 
-
+<? include_once "footer.inc"; ?>

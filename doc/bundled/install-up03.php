@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
+include_once "header.inc";
+?>
+
 <h1>Installation - 3 Upgrading From Fink 0.3.x</h1>
 
 
@@ -54,4 +57,4 @@ individual packages with the 'update' command.
 <p align="right">
 Next: <a href="install-up02.php">4 Upgrading From Fink 0.2.x</a></p>
 
-
+<? include_once "footer.inc"; ?>

@@ -4,6 +4,9 @@ $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2004/07/30 15:53:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
+include_once "header.inc";
+?>
+
 <h1>Fink 0.7.0 Installation</h1>
 <p>
 These are the installation instructions for the "source" distribution
@@ -54,4 +57,4 @@ Track</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: install.xml,v 1.20 2004/07/30 15:53:31 dmrrsn Exp $</i></p>
 
-
+<? include_once "footer.inc"; ?>
