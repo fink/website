@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 00:33:58 $';
+$cvs_date = '$Date: 2002/09/09 00:35:14 $';
 
 include "header.inc";
 ?>
@@ -31,7 +31,7 @@ Here are the steps to follow for an upgrade.
 Even if you have been using Fink's binary distribution, you will need to
 install the Developer Tools, because the 10.2 Fink packages are not yet
 available in binary form.
-<p>
+<br><br>
 <li> <b>Step 2: Obtain the files for the Fink upgrade.</b>
 To do this, create a directory <b>finkcvs</b> in a location of your
 choice.  Now issue the commands
