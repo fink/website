@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/06/09 18:27:40';
+$cvs_date = 'Date: 2002/06/11 23:30:14';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -40,7 +40,11 @@ under zsh).  Solution: write out the names in full.
 </li>
 <li>
 A libtool patch is needed in many cases, to prevent libraries from being
-build unversioned under bash.  The symptom: when building under bash,
+build unversioned under bash.  
+<b> Note: you do not need this patch with
+ libtool-1.3.5, for example, if you are using UpdateLibtool:
+ True. </b>
+The symptom: when building under bash,
 you see
 <pre>
 ../libtool: test: too many arguments
@@ -95,7 +99,22 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 <a name="gcc3"><h2>4.2 The gcc3 compiler</h2></a>
 <p>Mac OS X 10.2 will use the gcc3 compiler, and at the moment, the Fink team
 is experimenting with this on Fink packages, using the version of gcc3
-which Apple provided with the April 2002 Developer Tools.  As of May 22,
+which Apple provided with the April 2002 Developer Tools.  
+</p><p>In general, many packages which have loadable modules and use
+libtool are 
+failing with an install_name error at the moment, because libtool passes
+the -install_name flag even along with the -bundle flag (when it is not
+strictly needed).  This behavior was accepted by the gcc2 compiler but is
+not being accepted by the gcc3 compiler.  A fix has been found by Ben
+Hines; please <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">help
+him test it.</a>
+Note that you do not need Ben's patch if your package uses libtool-1.3.5
+(for example, if you are using <tt><nobr>UpdateLibtool: True</nobr></tt>)
+since it has already been incorporated into a revised version of fink's
+ltconfig file (available in pre-release versions of fink).
+</p>
+<p>
+As of May 22,
 we have had reports of success and failure with just a handful of Fink
 packages when one attempts to compile them with gcc3.  (Thanks to Jeff
 Hester, Jan de Leeuw, Mathias Meyer, and Alexander Strange for providing
@@ -201,14 +220,6 @@ readline-4.2a-5 has undefined symbol errors and others.
 stlport-4.5-1 fails since the start...</li>
 <li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
 </ol>
-<p>In general, packages which have loadable modules and use libtool are
-failing with this install_name error at the moment, because libtool passes
-the -install_name flag even along with the -bundle flag (when it is not
-strictly needed).  This behavior was accepted by the gcc2 compiler but is
-not being accepted by the gcc3 compiler.  A fix is being worked on by Ben
-Hines; please <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">help
-him test it.</a>
-</p>
 <p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
 between gcc2 and gcc3.  In practice, this means that C++ programs compiled
 with gcc3 cannot link to libraries compiled with gcc2.</p>
