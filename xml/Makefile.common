@@ -1,10 +1,12 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.10 2002/05/29 14:08:27 fingolfin Exp $
+# $Id: Makefile.common,v 1.11 2002/05/30 21:21:42 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
 
+ifndef STYLESHEET_WEBSITE
 STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
+endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
