@@ -1,9 +1,9 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE document SYSTEM "../finkfaq.dtd">
 <document lang="en" filename="index" >
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.36 2004/10/14 02:57:18 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.37 2004/10/17 19:47:53 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
