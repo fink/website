@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:15:15';
+$cvs_date = 'Date: 2001/10/26 20:57:48';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="history.php" title="History"><link rel="prev" href="index.php" title="Running X11 Contents">';
 
@@ -21,7 +21,7 @@ network-transparent client-server architecture.
 It allows applications to draw pixels, lines, text, images, etc. on
 your screen.
 X11 also comes with additional libraries that let applications easily
-draw user interfaces, i.e. buttons, text fields and so on.
+draw user interfaces, i.e. buttons, text fields, and so on.
 </p>
 <p>
 X11 is the de facto standard graphics system in the Unix world.
@@ -84,7 +84,7 @@ Thus applications are called clients in the X11 world.
 X11 allows the server and the clients to be on different machines,
 which often results in confusion over the terms.
 In an environment with workstations and servers, you will run the X11
-display server on the workstation machine and the applications (X
+display server on the workstation machine and the applications (the X
 clients) on the server machine.
 So when talking about the "server", that means the X11 display server
 program, not the machine hidden in your wardrobe.
@@ -93,7 +93,7 @@ program, not the machine hidden in your wardrobe.
 
 <a name="rootless"><h2>What does rootless mean?</h2></a>
 <p>
-A side track:
+A little background:
 X11 models the screen as a hierarchy of windows contained in each
 other.
 At the top of the hierarchy is a special window which is the size of
@@ -103,9 +103,9 @@ window".
 </p>
 <p>
 Now back on topic:
-Like any graphic environment, X11 was written to be alone and have
-full control over the screen.
-In Mac OS X Quartz already governs the screen, so one must make
+Like any graphical environment, X11 was written to stand alone and
+have full control over the screen.
+In Mac OS X, Quartz already governs the screen, so one must make
 arrangements if both are to get along together.
 </p>
 <p>
@@ -137,7 +137,7 @@ X11 is different.
 With X11, the window frames (also called "decoration") are provided by
 a separate program, called the window manager.
 In most respects, the window manager is just another client
-application; it is started the same way and connects to the X server
+application; it is started the same way and talks to the X server
 through the same channels.
 </p>
 <p>

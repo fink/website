@@ -1,7 +1,7 @@
 <?
 $title = "Running X11";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:15:15';
+$cvs_date = 'Date: 2001/10/26 20:57:48';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -41,7 +41,7 @@ X11 with or without Fink.
 <li><a href="inst-xfree86.php#latest-cvs">The Latest Development Source</a></li>
 <li><a href="inst-xfree86.php#xonx-bin">The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="inst-xfree86.php#fink">Compiling via Fink</a></li>
+<li><a href="inst-xfree86.php#fink">Installing through Fink</a></li>
 <li><a href="inst-xfree86.php#macgimp">MacGimp</a></li>
 <li><a href="inst-xfree86.php#rootless">Roaming Rootless Servers</a></li>
 <li><a href="inst-xfree86.php#fink-summary">Fink package summary</a></li>
@@ -57,6 +57,7 @@ XDarwin)</a></li>
 <ul>
 <li><a href="xtools.php#install">Installing Xtools</a></li>
 <li><a href="xtools.php#run">Running Xtools</a></li>
+<li><a href="xtools.php#opengl">OpenGL Notes</a></li>
 </ul>
 <li><a href="other.php"><b>Other X11 Possibilities</b></a></li>
 <ul>
@@ -64,18 +65,23 @@ XDarwin)</a></li>
 <li><a href="other.php#wiredx">WiredX</a></li>
 <li><a href="other.php#exodus">eXodus</a></li>
 </ul>
-<li><a href="trouble.php"><b>Troubleshooting and Tips</b></a></li>
+<li><a href="trouble.php"><b>Troubleshooting XFree86</b></a></li>
 <ul>
-<li><a href="trouble.php#immedate-quit">When I launch XDarwin, it quits almost immediately</a></li>
-<li><a href="trouble.php#black">Black icons in the GNOME panel</a></li>
-<li><a href="trouble.php#terminal-app">Launching X11 apps from Terminal.app</a></li>
-<li><a href="trouble.php#open">Launching Aqua apps from an xterm</a></li>
+<li><a href="trouble.php#immedate-quit">When I launch XDarwin, it quits
+or crashes almost immediately</a></li>
+<li><a href="trouble.php#black">Black icons in the GNOME panel or in the
+menu of a GNOME application</a></li>
 <li><a href="trouble.php#keyboard">The keyboard doesn't work in XFree86</a></li>
 <li><a href="trouble.php#delete-key">The Backspace key doesn't work</a></li>
 <li><a href="trouble.php#locale">"Warning: locale not supported by C library"</a></li>
-<li><a href="trouble.php#copy-n-paste">Copy and Paste</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: x11.xml,v 1.8 2001/08/26 21:15:15 chrisp Exp $</i></p>
+<li><a href="tips.php"><b>Usage Tips</b></a></li>
+<ul>
+<li><a href="tips.php#terminal-app">Launching X11 apps from Terminal.app</a></li>
+<li><a href="tips.php#open">Launching Aqua apps from an xterm</a></li>
+<li><a href="tips.php#copy-n-paste">Copy and Paste</a></li>
+</ul>
+</ul><p>Generated from <i>$Fink: x11.xml,v 1.10 2001/10/26 20:57:48 chrisp Exp $</i></p>
 
 
 <?

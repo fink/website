@@ -1,9 +1,9 @@
 <?
 $title = "Running X11 - Other Stuff";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:15:15';
+$cvs_date = 'Date: 2001/10/26 20:57:48';
 
-$metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="trouble.php" title="Troubleshooting and Tips"><link rel="prev" href="xtools.php" title="Xtools">';
+$metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="trouble.php" title="Troubleshooting XFree86"><link rel="prev" href="xtools.php" title="Xtools">';
 
 include "header.inc";
 ?>
@@ -38,15 +38,18 @@ An Installer.app package is available at the web site.
 
 <a name="exodus"><h2>eXodus</h2></a>
 <p>
-Reportedly, a Mac OS X native version of <a href="http://www.powerlan-usa.com/exodus/">eXodus</a> is now in beta
-testing.
-If someone can provide more information, just throw it my way.
+According to the website, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> by Powerlan
+USA runs natively on Mac OS X.
+It is unknown what codebase it uses and whether/how it supports local
+clients.
+Because of this, there is no special support for eXodus in Fink.
+If you have more info, please throw it my way.
 </p>
 
 
 
 <p align="right">
-Next: <a href="trouble.php">Troubleshooting and Tips</a></p>
+Next: <a href="trouble.php">Troubleshooting XFree86</a></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:15:15';
+$cvs_date = 'Date: 2001/10/26 20:57:48';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="other.php" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php" title="Starting XFree86">';
 
@@ -35,6 +35,20 @@ To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
 <tt><nobr>.xinitrc</nobr></tt> file.
 Xtools additionally allows you to start clients via the menu.
+</p>
+
+
+
+<a name="opengl"><h2>OpenGL Notes</h2></a>
+<p>
+Xtools does hardware-accelerated OpenGL in rootless mode and comes
+with the libraries to support it.
+While the main libGL library is fine, the libGLU and libglut libraries
+are only present as static libraries, which is not sufficient for
+full binary compatibility with XFree86.
+Also, some headers are missing.
+Fink doesn't offer a workaround at this time.
+Hopefully this will be fixed in Xtools 1.1 once it is released.
 </p>
 
 

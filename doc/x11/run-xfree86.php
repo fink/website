@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:15:15';
+$cvs_date = 'Date: 2001/10/26 20:57:48';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -61,9 +61,9 @@ exception of <tt><nobr>xdm</nobr></tt>.
 <a name="macosx-41"><h2>Mac OS X + XFree86 4.1.0</h2></a>
 <p>
 This section describes starting the server from XFree86 4.1.0.
-That also covers the rootless servers currently circulating; they are
-based on a late development version of XFree86 4.1.0 and sufficiently
-similar.
+That also covers the old-style rootless servers still circulating;
+they are based on a late development version of XFree86 4.1.0 and
+sufficiently similar.
 </p>
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
@@ -97,14 +97,14 @@ in rootless mode with the <tt><nobr>-rootless</nobr></tt> option:
 
 <a name="macosx-42"><h2>Mac OS X + XFree86 CVS</h2></a>
 <p>
-Recent development versions of XFree86 (this includes the XDarwin test
-releases from the XonX project and the <tt><nobr>xfree86-rootless</nobr></tt>
-package from Fink 0.2.4 and later) come with rootless mode built
-in.
+Recent development versions of XFree86 (this includes the XDarwin
+1.0a# test releases from the XonX project and the
+<tt><nobr>xfree86-rootless</nobr></tt> package from Fink 0.2.4 and later) come
+with rootless mode built in.
 They let you choose between fullscreen and rootless mode in a dialog
 at startup, just double-click the XDarwin.app application.
 You can disable the dialog and set XDarwin to always use the mode of
-your choice in the preferences dialog.
+your choice in the Preferences dialog.
 </p>
 <p>
 You can still use startx and the command line options if you prefer.
