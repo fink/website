@@ -1,7 +1,7 @@
 <?
 $title = "libtool patch";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/15 22:34:10 $';
+$cvs_date = '$Date: 2001/03/30 10:18:30 $';
 
 include "header.inc";
 ?>
@@ -12,11 +12,10 @@ include "header.inc";
 <p>GNU packages that build libraries use GNU libtool to hide
 platform-dependent procedures for library building and
 installation. Unfortunately, stock GNU libtool 1.3 doesn't know about
-Darwin and only builds static libraries. Also,
-dynamic loading (used e.g. for plugins) isn't available. I have found
-a patch for libtool that enables shared library building on Darwin and
-improved it to hardcode the correct path and to do full
-versioning.</p>
+Darwin and only builds static libraries. Apple includes a patched
+version of libtool in Mac OS X, but it will not work in most cases,
+too. I have improved that patch to hardcode the correct path and to do
+full versioning.</p>
 
 <p>After applying <a href="../files/libtool-1.3.5-darwin.patch">this patch</a>
 <b>[updated 2001-03-15]</b> to the libtool 1.3.5 source, you must
@@ -42,7 +41,7 @@ href="patches.php">patches page</a>.</p>
 libtool, which can be used to build shared libraries. However, this is
 completely unrelated. I recommend configuring GNU libtool with
 <nobr><tt>--program-transform-name=s/libtool/glibtool/</tt></nobr>
-to avoid conflicts.</p>
+to avoid conflicts. (This is also what Apple does.)</p>
 
 
 <?

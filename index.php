@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/30 09:42:23 $';
+$cvs_date = '$Date: 2001/03/30 10:18:22 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,8 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-03-30: The <a href="darwin/porting.php">porting notes</a> have
+been updated with information on Mac OS X Final.</p>
 <p>2001-03-30: Version 0.1.7 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-03-24: Mac OS X is released. Expect Fink packages to be
