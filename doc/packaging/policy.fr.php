@@ -1,8 +1,8 @@
 <?
 $title = "Paquets - Règles";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 06:45:22';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
+$cvs_date = 'Date: 2004/04/17 20:51:30';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 include_once "header.inc";
 ?>
@@ -326,6 +326,6 @@ Il existe deux différences dans les règles de Fink. Premièrement, ces règles
 
 
 <p align="right">
-Next: <a href="fslayout.php?phpLang=fr">4 Filesystem Layout</a></p>
+Next: <a href="fslayout.php?phpLang=fr">4 Organisation des fichiers</a></p>
 
 <? include_once "footer.inc"; ?>

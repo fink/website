@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.15 2004/04/17 20:51:30 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.16 2004/04/17 21:29:57 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -748,18 +748,18 @@ Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans
 </chapter>
 
 <chapter filename="reference">
-<title>Reference</title>
-<shorttitle>Reference</shorttitle>
+<title>Référence</title>
+<shorttitle>Référence</shorttitle>
 
-<section name="build"><title>The Build Process</title>
+<section name="build"><title>Construction d'un paquet</title>
 
-<p>To understand some of the fields, you need some knowledge of the build process Fink uses. It consists of five phases: unpack, patch, compile, install and build. The example paths below are for an installation in <filename>/sw</filename> and the package gimp-1.2.1-1.</p>
-<p>In the <em>unpack phase</em> the directory <filename>/sw/src/gimp-1.2.1-1</filename> is created and the source tarball(s) are unpacked there. In most cases, this will create a directory gimp-1.2.1 with the source in it; all following steps will be executed in that directory (i.e. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir fields.</p>
-<p>In the <em>patch phase</em> the source is patched so that it will build on Darwin. The actions specified by the UpdateConfigGuess, UpdateLibtool, Patch and PatchScript fields will be executed, in that order.</p>
-<p>In the <em>compile phase</em> the source is configured and compiled. Usually this means calling the <code>configure</code> script with some parameters and then issuing a <code>make</code> command. See the CompileScript field description for details.</p>
-<p>In the <em>install phase</em> the package is installed to a temporary directory, <filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.) All files that would normally be installed to <filename>/sw</filename> are installed in <filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the InstallScript field description for details.</p>
-<p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several packages from a single package description using the <code>SplitOff</code> field.  Towards the end of the install phase, separate install directories are created for each package being created, and files are moved to the appropriate directory.)</p>
-<p>In the <em>build phase</em> a binary package file (.deb) is built from the temporary directory. You can't influence this step directly, but various information from the package description is used to generate a <filename>control</filename> file for dpkg.</p>
+<p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <filename>/sw</filename> du paquet gimp-1.2.1-1.</p>
+<p>Lors de la <em>phase de décompression</em>, le répertoire <filename>/sw/src/gimp-1.2.1-1</filename> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>). Les champs SourceDirectory, NoSourceDirectory et Source<em>N</em>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
+<p>Lors de la <em>phase d'application des rustines</em>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript fields sont exécutées dans l'ordre d'énumération de ces champs.</p>
+<p>Lors de la <em>phase de compilation</em>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations.</p>
+<p>Lors de la <em>phase d'installation</em>, le paquet est installé dans un répertoire temporaire, <filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <filename>/sw</filename> sont installés dans <filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
+<p>(<em>À partir de fink 0.9.9.</em>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié.)</p>
+<p>Lors de la <em>phase de construction</em>, un fichier binaire (.deb) est construit à partir du répertoire temporaire. On ne peut agir directement sur cette étape, néanmoins différentes informations issues de la description du paquet sont utilisées afin de générer un fichier de  <filename>contrôle</filename> pour dpkg.</p>
 </section>
 
 <section name="fields"><title>Fields</title>

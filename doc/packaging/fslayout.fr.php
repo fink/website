@@ -1,90 +1,89 @@
 <?
-$title = "Paquets - FS Layout";
+$title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 06:45:22';
+$cvs_date = 'Date: 2004/04/17 20:51:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Reference"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 include_once "header.inc";
 ?>
 
-<h1>Paquets - 4 Filesystem Layout</h1>
+<h1>Paquets - 4 Organisation des fichiers</h1>
 
 
 
 
 <p>
-The following file system layout guidelines are part of the Fink packaging policy.
+Les règles d'organisation des fichiers suivantes font partie intégrante des règles de construction des paquets de Fink.
 </p>
 
 
-<h2><a name="fhs">4.1 The Filesystem Hierarchy Standard</a></h2>
+<h2><a name="fhs">4.1 Hiérarchie standard des fichiers</a></h2>
 <p>
-Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</a>, or FHS for short. It can only follow it in spirit because the FHS was created for system vendors that have control over the <code>/</code> and <code>/usr</code> hierarchies. Fink is an add-on distribution that controls only its install directory (or prefix). The examples use the default prefix of <code>/sw</code>.
+Fink suit l'esprit de <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</a> - Norme de hiérarchie du système de fichiers, ou FHS en raccourci. Il ne peut qu'en suivre l'esprit car FHS a été conçu pour les vendeurs de systèmes qui ont le contrôle des arborescences <code>/</code> et <code>/usr</code>. Fink n'est qu'une distribution supplémentaire qui ne contrôle que son répertoire (ou préfixe) d'installation. Les exemples ci-dessous utilisent le préfixe par défaut, soit <code>/sw</code>.
 </p>
 
 
-<h2><a name="dirs">4.2 The Directories</a></h2>
+<h2><a name="dirs">4.2 Répertoires</a></h2>
 <p>
-Files should go into the following subdirectories of the hierarchy:
+Les fichiers doivent être placés dans les sous-répertoires suivant de l'arborescence :
 </p>
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><code>/sw/bin</code></td><td>
 <p>
-This directory is for general executable programs. There are no subdirectories.
-</p>
+Ce répertoire est dédié aux exécutables généraux. Il n'existe pas de sous-répertoire.</p>
 </td></tr><tr valign="top"><td><code>/sw/sbin</code></td><td>
 <p>
-This directory is for executable programs that are intended to be used by administrators only. Background daemons go here. There are no subdirectories.
+Ce répertoire correspond aux exécutables pour administrateurs système. Les démons lancés en tâche de fond y sont placés. Il n'y a pas de sous-répertoire.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/include</code></td><td>
 <p>
-This directory is for C and C++ header files. Subdirectories can be created as necessary. If a package installs header files that can be confused with standard C headers, those headers <b>must</b> go to a subdirectory.
+Ce répertoire stocke les headers C et C++. On peut créer autant de sous-répertoires que nécessaire. Si un paquet installe des headers qui peuvent être confondus avec des headers standard C, les headers du paquet <b>doivent</b> être installés dans un sous-répertoire.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/lib</code></td><td>
 <p>
-This directory is for architecture-dependent data files and libraries. Static and shared libraries should be placed directly in <code>/sw/lib</code> unless there is a good reason not to. This is also the place for executables that should not be executed directly by the user (which would otherwise be placed in libexec).
+Ce répertoire est destiné aux fichiers de données et librairies dépendants de l'architecture du système. Les librairies statiques et partagées doivent être placées dans <code>/sw/lib</code>, sauf s'il existe une bonne raison pour ne pas le faire. C'est également là que sont placés les exécutables qui ne  doivent pas être directement lancés par l'utilisateur (dans le cas contraire, ils sont placés dans libexec).
 </p>
 <p>
-A package is free to create a subdirectory to store private data or loadable modules. Make sure to use directory names that make sense for compatibility. It is wise to use the package major version in the directory name or as an additional hierarchy level, e.g. <code>/sw/lib/perl5</code> or <code>/sw/lib/apache/1.3</code>. Care should be taken when the host type is used to create directories. A <code>powerpc-apple-darwin1.3.3</code> directory is bad for compatibility, <code>powerpc-apple-darwin1.3</code> or just <code>powerpc-apple-darwin</code> are better choices.
+On peut créer un sous-répertoire spécifique à un paquet, afin d'y mettre des données privées ou des modules chargeables. Pensez à utiliser des noms de répertoire qui garantissent la compatibilité entre versions. Il est bon d'utiliser le numéro de version majeur du paquet dans le nom du sous-répertoire ou à un niveau inférieur de la hiérarchie ; par exemple, <code>/sw/lib/perl5</code> ou <code>/sw/lib/apache/1.3</code>. Faites attention si vous utilisez le type d'hôte dans le nom des répertoires créés. Un sous-répertoire nommé <code>powerpc-apple-darwin1.3.3</code> ne garantit pas la compatibilité entre versions ; utilisez plutôt <code>powerpc-apple-darwin1.3</code> ou <code>powerpc-apple-darwin</code>.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>
-This directory is for architecture-independent data files. The same rules as for <code>/sw/lib</code> apply. Some common subdirectories are described below.
+Ce répertoire sert aux fichiers de données indépendants de l'architecture. Les mêmes règles que celles en vigueur pour <code>/sw/lib</code> s'appliquent ici. Quelques sous-répertoires courants sont décrits ci-dessous.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/man</code></td><td>
 <p>
-This directory contains manual pages. It is organized into the usual section tree. Every program in <code>/sw/bin</code> and <code>/sw/sbin</code> should have an associated manual page here.
+Ce répertoire contient les pages de manuel. Son arborescence suit celle des sections courantes. Chaque programme installé dans <code>/sw/bin</code> et <code>/sw/sbin</code> doit avoir une page de manuel associée dans ce répertoire.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/info</code></td><td>
 <p>
-This directory contains documentation in the Info format (produced from Texinfo sources). Maintenance of the <code>dir</code> file is automated through Debian's version of <code>install-info</code> (part of the <code>dpkg</code> package). Use the <code>InfoDocs</code> description field to automatically generate appropriate code for the <code>postinst</code> and <code>prerm</code> package scripts. Fink makes sure that no package installs a <code>dir</code> file of its own. There are no subdirectories.
+Ce répertoire contient la documentation en format Info (produit à partir de sources Texinfo). La maintenance du fichier <code>dir</code> est automatisée par la version Debian du programme <code>install-info</code> (qui fait partie du paquet <code>dpkg</code>). Utilisez le champ de description <code>InfoDocs</code> pour générer le code approprié utilisé par les scripts de paquet <code>postinst</code> et <code>prerm</code>. Fink s'assure qu'aucun paquet n'installe un fichier <code>dir</code> de lui-même. Il n'y a pas de sous-répertoire.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/doc</code></td><td>
 <p>
-This directory contains documentation that is neither a man page nor an Info document. README, LICENSE and COPYING files go here. Every package must create a subdirectory here, named after the package. The subdirectory name must not contain any version numbers (unless they are a part of the package name proper). Hint: Just use <code>%n</code>.
+Ce répertoire contient la documentation autre que les pages de manuel ou les documents Info. Les fichiers README, LICENSE et COPYING sont placés dans ce répertoire. Chaque paquet doit y créer un sous-répertoire, dont le nom est basé sur celui du paquet. Le nom du sous-répertoire ne doit pas contenir de numéro de version (sauf s'il fait lui-même partie du nom du paquet). Conseil : utilisez <code>%n</code>.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/locale</code></td><td>
 <p>
-This directory contains message catalogs for internationalization.
+Ce répertoire contient les catalogues de messages de traduction.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/var</code></td><td>
 <p>
-The <code>var</code> directory stores variable data. This includes spool directories, lock files, state databases, game high scores and log files.
+Le répertoire <code>var</code> contient les données variables. Ceci inclut les répertoires spool (fichiers en attente de traitement), les fichiers verrous (lock), les bases de données des variables d'état (db), les données variables des jeux (games) et les fichiers d'historique (log).
 </p>
 </td></tr><tr valign="top"><td><code>/sw/etc</code></td><td>
 <p>
-This directory holds configuration files. For packages that have more than one or two files here a subdirectory should be made. The subdirectory must have the name of the package or program in it so that it is identifiable.
+Ce répertoire contient les fichiers de configuration. Quand un paquet possède plus d'un ou deux fichiers de configuration, un sous-répertoire doit être créé. Le nom du sous-répertoire doit être celui du paquet ou d'un de ses programmes, de façon à l'identifier facilement.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/src</code></td><td>
 <p>
-This directory is for storing and building source code. Nothing should be installed here by a package.
+Ce répertoire sert à stocker et compiler le code source. Un paquet ne doit rien installer dans ce répertoire.
 </p>
 </td></tr></table>
 
 
-<h2><a name="avoid">4.3 Things to Avoid</a></h2>
+<h2><a name="avoid">4.3 À éviter</a></h2>
 <p>
-No other directories than the ones mentioned above should exist in <code>/sw</code>. In particular, the following should not be used: <code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>, <code>/sw/libexec</code>, <code>/sw/lib/locale</code>.
+Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans <code>/sw</code>. En particulier, les répertoires suivant ne doivent pas être utilisés : <code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>, <code>/sw/libexec</code> et <code>/sw/lib/locale</code>.
 </p>
 
 
