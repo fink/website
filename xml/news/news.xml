@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.12 2002/09/27 15:15:50 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.13 2002/09/28 13:02:05 fingolfin Exp $</cvsid>
 
 <newsitem>
 <date>2002-09-27</date>
@@ -16,20 +16,34 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></body></newsitem>
 <newsitem>
-  <date>2002-09-08</date>
-  <headline>Test version of Jaguar updater available</headline>
+  <date>2002-09-28</date>
+  <headline>Fink 0.4.1 released</headline>
   <body>
-  <p> A test version of the 10.2 updater for Fink is now available.
-The update process is somewhat complicated at the moment, but is
-explained in  <link url="news/jaguar.php">step-by-step instructions
-for updating</link>.
-We also have separate <link url="news/jag-bootstrap.php">instructions
-to install Fink from scratch on 10.2</link>.
-</p><p> At the moment, approximately 800 out of 1150 Fink packages have
-been made ready for 10.2.  However, virtually all of these packages are
-still being tested and have not yet been moved to the "stable" tree in
-the 10.2 section; moreover, binaries for 10.2 packages are not yet available.
-</p></body></newsitem>
+    <p>
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+    </p>
+    <p>
+    This is the <em>last release for Mac OS X 10.1</em>. Future versions of Fink will <em>not</em> officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
+    </p>
+    <p>
+    At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+	<date>2002-09-08</date>
+	<headline>Test version of Jaguar updater available</headline>
+	<body>
+		<p>
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <link url="news/jaguar.php">step-by-step instructions for updating</link>. We also have separate <link url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</link>. 
+		</p>
+		<p>
+			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
+		</p>
+	</body>
+</newsitem>
+
 <newsitem>
   <date>2002-08-20</date>
   <headline>Mac OS X 10.2 / Jaguar</headline>
