@@ -4,34 +4,9 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 10 Jan 2004 15:05:29 CET</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2004 11:54:21 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F">
-    <title>Pssst want to install GNOME 2.4?</title>
-    <link>http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F</link>
-    <dc:date>2004-01-10</dc:date>
-    <description>
-	
-	Finally after a lot of work by packaging newcomer Keith Conger and old GNOME 
-	Maintainer Masanori Sekino GNOME 2.4 has finally made it into the unstable 
-	tree of 10.3
-	
-	
-	It is there for the taking please offer some of your time and test these packages
-	if you are on unstable already. We expect now issues with upgrading or freshly 
-	installed GNOME you can reach the all GNOME savvy people at 
-	&quot;fink-gnome-coreATlists.sourceforge.net&quot; none the less. 
-	Please do report success stories there as well. The more good reports we get the
-	faster GNOME 2.4 can be moved to stable.
-	
-	
-	For those of you who do not read our mailing lists, why aren?t you subscribed yet anyways, here is a link to detailed 
-	instructions 
-	how to install or upgrade GNOME and what new stuff it brings.
-	
-	</description>
-  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!">
     <title>Whaaazaaap Dawgs, Two Zero Zero Four is on!</title>
     <link>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</link>
@@ -405,5 +380,36 @@ curious and cannot wait may have a look at an incomplete preview.
 Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and MacWelt for their continued support.
 
 	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org">
+    <title>Source files from ftp.gnu.org</title>
+    <link>http://fink.sourceforge.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org</link>
+    <dc:date>2003-08-18</dc:date>
+    <description>
+As announced in this CERT 
+advisory, it has recently been discovered that
+the ftp servers for GNU software were compromised back in March, 
+although it is not believed that any of the source code housed there
+was affected.
+
+Fink relies on MD5 checksums when downloading software, and we have had
+no reports of incorrect checksums in Fink packages.  The Free Software
+Foundation is in the process of verifying the integrity of all of the
+source code distributed from that ftp site.  As of this writing, the source
+code for the following Fink packages have not yet been verified:
+autoconf2.54,
+emacs21,
+gprolog,
+groff,
+guile16,
+help2man,
+jwhois,
+libtool14,
+libosip1,
+sed,
+slib.
+It may be difficult to install those packages at present.
+
+                </description>
   </item>
 </rdf:RDF>
