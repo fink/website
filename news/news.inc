@@ -1,7 +1,7 @@
 <a name="2004-02-19 Raise your Flag."><span class="news-date">2004-02-19: </span><span class="news-headline">Raise your Flag.</span></a><?php gray_line(); ?>
 	<p>
 Thanks to Baba Yoshihiko Fink has now taken the necessary steps to allow for internalisation efforts. 
-The improved infrastructure allow us to display a multilingual web-site to our visitors from all over the world. 
+The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
 </p>
 <p>
 This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 

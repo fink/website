@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 19 Feb 2004 11:15:46 CET</lastBuildDate>
+    <lastBuildDate>Thu, 19 Feb 2004 11:19:50 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.">
@@ -14,7 +14,7 @@
     <description>
 	
 Thanks to Baba Yoshihiko Fink has now taken the necessary steps to allow for internalisation efforts. 
-The improved infrastructure allow us to display a multilingual web-site to our visitors from all over the world. 
+The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
 
 
 This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
