@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.13 2004/02/12 22:31:50 dmalloc Exp $ */
+/* $Id: fink.css,v 1.14 2004/02/12 22:36:28 dmalloc Exp $ */
 body {  color:black;  background-color:white;  font-family:"Trebuchet MS",sans-serif;}
 
 a:link {  color:rgb(204,141,4);}
@@ -39,7 +39,7 @@ img {  border:0;}
 
 .legalhead {	font: oblique lighter 1.5em/1.3em "Times New Roman", Times, serif;}
 
-.legalheadBig {	font: oblique lighter 2.4em/1.8em "Times New Roman", Times, serif;}
+.legalheadBig {	font: oblique lighter 2.0em/1.0em "Times New Roman", Times, serif;}
 
 .legal {	font: normal 1.0em/1.3em "Times New Roman", Times, serif;
 		text-align: justify;
