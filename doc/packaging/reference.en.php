@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/19 21:34:28';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/30 08:23:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -250,16 +250,25 @@ present or add it to the Depends field.
 If you want to offer the user both options, make two separate
 packages, e.g. wget and wget-ssl.
 </p><p>
+Order of operations: logical "OR" (list of alternatives) has
+a higher precedence (binds more tightly) than the logical
+"AND" between each package (or set of alternatives) in the
+comma-separated list. Unlike the use of parentheses in arithmetic,
+there is no way to specify alternative groups of packages or otherwise
+change the order of operations in <code>Depends</code> and related
+fields.
+</p><p>
 Starting with a post-0.18.2 CVS version of fink, you can have
 conditional dependencies. These are specified by placing
 <code>(string1 op string2)</code> before a package name. Percent
-expansion is performed as usual and then the two strings are compared
+expansion is performed as usual and then the two strings
+(neither of which can be null) are compared
 according to the <code>op</code> operator: &lt;&lt;, &lt;=, =, !=,
 &gt;&gt;, &gt;=. The immediately-following package is only considered
 as a dependency if the comparison is true.
 </p><p>
 You can use this format to simplify maintaining several similar
-packages. For example, both elinks and elinks-ssl could list:
+packages. For example, the packages elinks and elinks-ssl could both list:
 </p>
 <pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
 <p>
@@ -270,6 +279,19 @@ would have the same effect as having elinks list:
 and elinks-ssl list:
 </p>
 <pre>Depends: openssl097-shlibs, expat-shlibs</pre>
+<p>
+As an alternative syntax, you can also specify <code>(string)</code>,
+which is "true" if <code>string</code> is non-null. For example:
+</p>
+<pre>
+Package: nethack%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_pkg[-x11]) x11
+</pre>
+<p>
+would set the package x11 as a dependency for the nethack-x11 variant
+but not for the nethack variant.
+</p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>Introduced in fink 0.9.0.</b>
