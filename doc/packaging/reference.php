@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/09 01:50:58';
+$cvs_date = 'Date: 2003/05/20 19:28:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -113,6 +113,10 @@ some directories in the InstallScript.
 <p>
 Finally since fink 0.9.5 there is type <code>perl</code> which causes
 alternate default values for the compile and install scripts to be used. 
+Beginning in fink 0.13.0, there is a new variant of this type,
+<code>perl $version</code>, where $version is a specific version of perl 
+consisting of three numbers separated by periods, e.g., 
+<code>perl 5.6.0</code>.
 </p>
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
@@ -507,16 +511,31 @@ compile the package. Normally the default is:
 make</pre>
 <p>
 This is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field),
+For packages with of type perl (as specified via the Type field)
+with the perl version not specified,
 the default instead is:
 </p>
-<pre>perl Makefile.PL PREFIX=\%p \
- INSTALLPRIVLIB=\%p/lib/perl5 \
- INSTALLARCHLIB=\%p/lib/perl5/darwin \
- INSTALLSITELIB=\%p/lib/perl5 \
- INSTALLSITEARCH=\%p/lib/perl5/darwin \
- INSTALLMAN1DIR=\%p/share/man/man1 \
- INSTALLMAN3DIR=\%p/share/man/man3
+<pre>perl Makefile.PL PREFIX=%p \
+ INSTALLPRIVLIB=%p/lib/perl5 \
+ INSTALLARCHLIB=%p/lib/perl5/darwin \
+ INSTALLSITELIB=%p/lib/perl5 \
+ INSTALLSITEARCH=%p/lib/perl5/darwin \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3
+make
+make test</pre>
+<p>If the type is <code>perl $version</code> with the version specified
+(e.g., $version might be 5.6.0),
+then the default becomes:
+</p>
+<pre>perl$version Makefile.PL \
+ PERL=perl$version PREFIX=%p \
+ INSTALLPRIVLIB=%p/lib/perl5/$version \
+ INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+ INSTALLSITELIB=%p/lib/perl5/$version \
+ INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3
 make
 make test</pre>
 <p>
@@ -532,7 +551,11 @@ A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
 This includes adding and removing the .pod date from the central
-<code>/sw/lib/perl5/darwin/perllocal.pod</code> file
+<code>/sw/lib/perl5/darwin/perllocal.pod</code> file.
+(If the type has been given as <code>perl $version</code> with a
+specific version of perl such as 5.6.0,
+then these scripts are adapted to deal with the central .pod file
+<code>/sw/lib/perl5/$version/perllocal.pod</code>.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
@@ -544,15 +567,26 @@ default is:
 <pre>make install prefix=%i</pre>
 <p>
 The default is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field),
+For packages with of type perl (as specified via the Type field)
+with the perl version not specified,
 the default instead is:
 </p>
-<pre>make install INSTALLPRIVLIB=\%i/lib/perl5 \
- INSTALLARCHLIB=\%i/lib/perl5/darwin \
- INSTALLSITELIB=\%i/lib/perl5 \
- INSTALLSITEARCH=\%i/lib/perl5/darwin \
- INSTALLMAN1DIR=\%i/share/man/man1 \
- INSTALLMAN3DIR=\%i/share/man/man3</pre>
+<pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
+ INSTALLARCHLIB=%i/lib/perl5/darwin \
+ INSTALLSITELIB=%i/lib/perl5 \
+ INSTALLSITEARCH=%i/lib/perl5/darwin \
+ INSTALLMAN1DIR=%i/share/man/man1 \
+ INSTALLMAN3DIR=%i/share/man/man3</pre>
+<p>If the type is <code>perl $version</code> with the version specified
+(e.g., $version might be 5.6.0),
+then the default becomes:
+</p>
+<pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
+ INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+ INSTALLSITELIB=%i/lib/perl5/$version \
+ INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+ INSTALLMAN1DIR=%i/share/man/man1 \
+ INSTALLMAN3DIR=%i/share/man/man3</pre>
 <p>
 If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
