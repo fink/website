@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/25 19:48:39 $';
+$cvs_date = '$Date: 2001/08/31 21:13:47 $';
 
 include "header.inc";
 ?>
@@ -15,6 +15,7 @@ include "header.inc";
 <p>
 Need help using Fink? Here are your options.
 </p>
+
 <p>
 <b>Documentation.</b>
 The <a href="../doc/index.php">documentation section</a> of this
@@ -22,11 +23,13 @@ website has a bunch of useful documents.
 Naturally, those documents are a work in progress and many are
 incomplete, but they're definitely helpful.
 </p>
+
 <p>
 <b>The FAQ.</b>
 Common problems and their solutions are documented in the <a
 href="../faq/index.php">online FAQ</a>.
 </p>
+
 <p>
 <b>The users mailing list.</b>
 If you can't figure out your problem by yourself, you can ask on the
@@ -45,6 +48,14 @@ that look useful.
 Also say if you have software from other sources installed in
 /usr/local or use a custom compiler (e.g. gcc 3).
 </p>
+
+<p>
+<b>The IRC channel.</b>
+There is a <tt>#fink</tt> channel on the
+<a href="http://openprojects.net">openprojects.net</a> IRC network.
+You can chat with other Fink users and some of the developers there.
+</p>
+
 <p>
 <b>Other Sites.</b>
 Some links to web discussion forums:
@@ -107,6 +118,8 @@ Grab the latest package descriptions from <a
 href="../doc/cvsaccess/index.php">CVS</a>, configure Fink to <a
 href="../faq/usage.php#unstable">use unstable</a> and test the
 packages.
+The package database lists <a href="../pdb/testing.php">packages that
+need testing</a> on a separate page.
 You can send success and failure reports to the package maintainer or
 a mailing list of your choice.
 </p>
