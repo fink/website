@@ -1,11 +1,11 @@
-# $Id: Makefile,v 1.4 2001/07/01 06:57:16 chrisp Exp $
+# $Id: Makefile,v 1.5 2001/07/08 18:00:49 chrisp Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
 SOURCE = packaging.xml
-TARGET = index.php
+TARGET = index.php intro.php format.php reference.php
 DESTDIR = doc/packaging
 
 include $(basedir)/Makefile.common

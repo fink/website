@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<article filename="index">
+<document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.3 2001/07/03 16:04:39 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.4 2001/07/08 18:00:49 chrisp Exp $</cvsid>
 
 <preface>
 <p>
-This page tries to document the format of Fink's package description
-files.
-This is difficult because the format is still evolving.
-Watch the "Last changed" info in the footer of the page.
-What you're reading right now is a description of the format used in
-post-0.2.2 development versions of Fink.
-Fields that were added since 0.2.2 are marked as such.
+This manual documents how to create package descriptions for the Fink
+package manager.
+It also provides a policy and guidelines for the Fink distribution.
+Both the description format and the distribution policy are still
+evolving, so watch the "Last changed" info and the CVS tag on this
+page to detect updates.
+What you're reading right now is a description of the format and
+policy used in post-0.2.2 development versions of Fink.
+Description fields that were added since 0.2.2 are marked as such.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -23,40 +25,171 @@ mailing list.
 </preface>
 
 
-<section><title>General Notes</title>
+<chapter filename="intro">
+<title>Introduction</title>
+<shorttitle>Intro</shorttitle>
 
-<p>Packages are identified by a package name; it may consist of
-lowercase letters, numbers, dashes and underscores. (In theory, Fink
-will let you use any ASCII character, but it's strongly discouraged.)
-There may be several versions of a package. Version numbers consist
-of a upstream version (commonly just called "version") and a packaging
-revision. As for allowed characters, the same rules as for package
-names apply. It is okay to use versions with letters, e.g. 2.9p1. Both
-fink and dpkg will know how to sort these correctly. Only one version
-of a package can be installed at any time. The full name of a package
-is
-<code>&lt;package-name&gt;-&lt;upstream-version&gt;-&lt;revision&gt;</code>,
-e.g. <code>gimp-1.2.1-1</code>.</p>
-<p>Package descriptions are read from the finkinfo directories below
-the /sw/fink/dists directory. The "Trees" setting in /sw/etc/fink.conf
-controls which directories are read. The name of package descriptions
-must be the full package name plus the extension ".info".</p>
-<p>The description files are simple lists of key-value pairs. The
-format is based on the popular RFC 822 header format. Each line starts
-with a key, terminated by a colon (:) and followed by the
-value. Values may be broken across several lines by starting the next
-line with whitespace. In Fink, empty lines and lines starting with a
-hash (#) are ignored. If that description confused you, just look at
-the files.</p>
-<p>Keys (field names) are case-insensitive in Fink. Some fields take
-a boolean value - any of "true", "yes", "on", "1" (case-insensitive)
-are treated as true, all other strings are treated as false. For all
-fields except Package, it is not an error to omit them; they all have
-default values. In fact, the policy is to include only necessary
-fields.</p>
+
+<section name="def1"><title>What is a Package?</title>
+<p>
+Conceptually, a package is an atomic piece of software.
+It consists of a set of files that form one unit.
+In Fink, packages can exist in two forms: the package description
+and the ready-to-install binary package file.
+</p>
+<p>
+The package description is a human readable text file that contains
+everything needed to build a package, i.e. to create the binary
+package file.
+The information includes meta-data (like the package's name and a prose
+description of its purpose), the URL of the source code and the
+instructions necessary to configure, compile and wrap up the package.
+The description may be accompanied by a patch file.
+</p>
+<p>
+A binary package file is a file archive that contains the actual files
+that make up the package,
+i.e. executables, data files, message catalogs, libraries, include
+files, etc.
+The package file also contains some meta-data for the package.
+Installing a binary package mainly consists of unpacking its contents
+as it is already in an ready-to-use form.
+Since Fink builds on the dpkg package manager, the binary package
+files are in the dpkg format and have the extension .deb.
+</p>
 </section>
 
-<section><title>The Build Process</title>
+
+<section name="ident"><title>Identifying a Package</title>
+<p>
+A package is identified by three strings: the package name, the
+version and the revision.
+All of these may contain lower-case letters (a-z), numbers (0-9),
+dashes (-) and dots (.).
+Other characters are not allowed.
+In particular, capital letters and underscores are not allowed.
+</p>
+<p>
+The package name is simply the name of the software, e.g. openssh.
+The version, also called the upstream version, is the version
+identifier of the original software package.
+It is okay to use letters in the version, e.g. 2.9p1.
+Both fink and dpkg know how to sort these correctly.
+The revision is a counter that is increased when the package
+description changes.
+It starts at 1 and should be reset to 1 when the upstream version
+changes.
+The full name of a package is all three items concatenated, with
+dashes in between, e.g. openssh-2.9p1-2.
+</p>
+</section>
+
+</chapter>
+
+
+<chapter filename="format">
+<title>Package Descriptions</title>
+<shorttitle>Package Descriptions</shorttitle>
+
+<section name="trees"><title>Tree Layout</title>
+<p>
+Package descriptions are read from the <code>finkinfo</code>
+directories below the <code>/sw/fink/dists</code> directory.
+The "Trees" setting in <code>/sw/etc/fink.conf</code> controls which
+directories are read.
+The name of package description files must be the full package name
+plus the extension ".info".
+</p>
+</section>
+
+<section name="format"><title>File Format</title>
+<p>
+The description files are simple lists of key-value pairs, also called
+'fields'.
+The format is based on the popular RFC 822 header format.
+Each line starts with a key, terminated by a colon (:) and followed by
+the value, like this:
+</p>
+<codeblock>Key: Value</codeblock>
+<p>
+There are two notations for fields that must span multiple lines.
+The traditional notation is crafted after the RFC 822 header folding
+method.
+A line that starts with whitespace is treated as a continuation of the
+previous line.
+Example:
+</p>
+<codeblock>InstallScript: mkdir -p %i/share/man
+ make install prefix=%i mandir=%i/share/man
+ mkdir -p %i/share/doc/%n
+ install -m 644 COPYING %i/share/doc/%n</codeblock>
+<p>
+Note the indentation of the lines.
+</p>
+<p>
+The more recent alternative notation is based on the here-document
+syntax in shell scripts.
+The first line consists of the key, followed by <code>&lt;&lt;</code>
+as the value.
+All following lines are treated as the actual value, until a line with
+just <code>&lt;&lt;</code> on it is encountered.
+The example from above now looks like this:
+</p>
+<codeblock>InstallScript: &lt;&lt;
+mkdir -p %i/share/man
+make install prefix=%i mandir=%i/share/man
+mkdir -p %i/share/doc/%n
+install -m 644 COPYING %i/share/doc/%n
+&lt;&lt;</codeblock>
+<p>
+Note the lack of indentation and the terminating
+<code>&lt;&lt;</code>.
+</p>
+<p>
+Empty lines and lines starting with a hash (#) are ignored.
+Keys (field names) are case-insensitive in Fink, so you can write
+<code>InstallScript</code>, <code>installscript</code> or
+<code>INSTALLSCRIPT</code> as you please.
+The first form is preferred for readability, though.
+Some fields take a boolean value - any of "true", "yes", "on", "1"
+(case-insensitive) are treated as true, all other values are treated
+as false.
+</p>
+</section>
+
+<section name="percent"><title>Percent Expansion</title>
+<p>
+To make life easier, Fink supports a set of expansions that are
+performed on some fields.
+The available expansions are:
+</p>
+<dl>
+<dt>%n</dt><dd>the package <em>n</em>ame</dd>
+<dt>%v</dt><dd>the package <em>v</em>ersion</dd>
+<dt>%r</dt><dd>the package <em>r</em>evision</dd>
+<dt>%f</dt><dd>the <em>f</em>ull package name, i.e. %n-%v-%r</dd>
+<dt>%p</dt><dd>the <em>p</em>refix where Fink is installed, e.g. /sw</dd>
+<dt>%d</dt><dd>the <em>d</em>estination directory where the tree to be
+packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
+<dt>%i</dt><dd>the full <em>i</em>nstall-phase prefix, equivalent to %d%p</dd>
+<dt>%a</dt><dd>the path where the p<em>a</em>tches can be found</dd>
+<dt>%c</dt><dd>the parameters for <em>c</em>onfigure:
+<code>--prefix=%p</code> plus anything specified with
+ConfigureParams</dd>
+</dl>
+
+</section>
+
+
+</chapter>
+
+
+<chapter filename="reference">
+<title>Reference</title>
+<shorttitle>Reference</shorttitle>
+
+
+<section name="build"><title>The Build Process</title>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -88,28 +221,7 @@ but various information from the package description is used to
 generate a <code>control</code> file for dpkg.</p>
 </section>
 
-<section><title>Percent Expansion</title>
-
-<p>To make life easier, Fink supports a set of expansions that are
-performed on some fields. The available expansions are:</p>
-<dl>
-<dt>%n</dt><dd>the package <em>n</em>ame</dd>
-<dt>%v</dt><dd>the package <em>v</em>ersion</dd>
-<dt>%r</dt><dd>the package <em>r</em>evision</dd>
-<dt>%f</dt><dd>the <em>f</em>ull package name, i.e. %n-%v-%r</dd>
-<dt>%p</dt><dd>the <em>p</em>refix where Fink is installed, e.g. /sw</dd>
-<dt>%d</dt><dd>the <em>d</em>estination directory where the tree to be
-packaged is built, e.g. /sw/src/root-gimp-1.2.1-1</dd>
-<dt>%i</dt><dd>the full <em>i</em>nstall-phase prefix, equivalent to %d%p</dd>
-<dt>%a</dt><dd>the path where the p<em>a</em>tches can be found</dd>
-<dt>%c</dt><dd>the parameters for <em>c</em>onfigure:
-<code>--prefix=%p</code> plus anything specified with
-ConfigureParams</dd>
-</dl>
-
-</section>
-
-<section><title>Fields</title>
+<section name="fields"><title>Fields</title>
 
 <p>This list is not necessarily complete. <code>:-)</code></p>
 
@@ -586,7 +698,7 @@ gettext, you may want to declare a dependency nonetheless.
 </itemtable>
 </section>
 
-<section><title>Scripts</title>
+<section name="scripts"><title>Scripts</title>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
@@ -596,7 +708,7 @@ the <code>cd</code> commands only affect commands that are on the same
 line. This may be fixed one day in the future.</p>
 </section>
 
-<section><title>Patches</title>
+<section name="patches"><title>Patches</title>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension
@@ -610,4 +722,7 @@ last.</p>
 </section>
 
 
-</article>
+</chapter>
+
+
+</document>
