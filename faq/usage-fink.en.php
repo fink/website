@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/30 04:57:48';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/05/04 01:23:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 include_once "header.inc";
@@ -434,6 +434,21 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or se
         <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>If you have other preferences that you want to keep, you can edit
         the file with a text editor and remove the reference to
         <code>/sw/bin/pathsetup.command</code>.</p></div>
+    </a>
+    <a name="ext-drive">
+      <div class="question"><p><b>Q5.28: I have Fink installed way from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</b></p></div>
+      <div class="answer"><p><b>A:</b> If your error looks like:</p><pre>This first test is designed to die, so please ignore the error
+message on the next line.
+# Looks like your test died before it could output anything.
+./00compile............................ok
+./Base/initialize......................ok
+./Base/param...........................ok
+./Base/param_boolean...................ok
+./Command/cat..........................ok
+./Command/chowname.....................#     
+Failed test (./Command/chowname.t at line 27)
+#          got: 'root'
+#     expected: 'nobody'</pre><p>then you need to run <b>Get Info</b> on the drive/partition where Fink is installed and unselect the "Ignore ownership" button.</p></div>
     </a>
   <p align="right">
 Next: <a href="comp-general.php?phpLang=en">6 Compile Problems - General</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/30 04:57:48';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/05/04 01:23:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
@@ -36,7 +36,7 @@ include_once "header.inc";
         the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
         applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
-        logs out.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
+        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.28 I have Fink installed way from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
         What's that?</a></li><li><a href="comp-general.php?phpLang=en#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs:
         Command not found."</a></li><li><a href="comp-general.php?phpLang=en#missing-make">6.3 I'm getting an error message involving <code>make</code>
         </a></li><li><a href="comp-general.php?phpLang=en#head">6.4 I'm getting a strange usage message from the head command. What's
@@ -77,6 +77,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.14 2004/04/30 04:57:48 dmacks Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.15 2004/05/04 01:23:53 alexkhansen Exp $-->
 
 <? include_once "footer.inc"; ?>
