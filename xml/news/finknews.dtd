@@ -1,5 +1,5 @@
 <!ENTITY % block "codeblock | ol | p | ul" >
-<!ENTITY % inline "#PCDATA | code | em | extlink | filename | link | tt" >
+<!ENTITY % inline "#PCDATA | code | em | varlink | filename | link | tt" >
 
 
 <!-- Root element -->
@@ -25,8 +25,8 @@
 <!ELEMENT link ( #PCDATA ) >
 <!ATTLIST link url CDATA #REQUIRED >
 
-<!ELEMENT extlink ( #PCDATA ) >
-<!ATTLIST extlink url CDATA #REQUIRED >
+<!ELEMENT varlink ( #PCDATA ) >
+<!ATTLIST varlink url CDATA #REQUIRED >
 
 
 <!-- Inline -->

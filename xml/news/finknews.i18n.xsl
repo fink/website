@@ -101,7 +101,7 @@
 <code><xsl:apply-templates/></code>
 </xsl:template>
 
-<xsl:template match="link">
+<xsl:template match="varlink">
   <a>
     <xsl:attribute name="href">
       <xsl:text>@ROOT@</xsl:text>
@@ -111,7 +111,7 @@
   </a>
 </xsl:template>
 
-<xsl:template match="extlink">
+<xsl:template match="link">
 <a href="{@url}"><xsl:apply-templates/></a>
 </xsl:template>
 

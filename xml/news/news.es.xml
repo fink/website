@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
-<news lang="es" fsroot="../..">
-<cvsid>$Id: news.es.xml,v 1.9 2004/11/10 00:27:17 dmacks Exp $</cvsid>
+<news lang="es">
+<cvsid>$Id: news.es.xml,v 1.10 2004/11/12 01:36:58 babayoshihiko Exp $</cvsid>
  <newsitem>
     <date>2004-10-15</date>
     <headline>Resolución de problemas con gcc.</headline>
@@ -112,14 +112,14 @@ También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de
 	sistema de espejos. En particular, carecemos de espejos en Europa
 	Central, Rusia y el Lejano Oriente. Sí sientes que tienes 2 Mbit para
 	compartir con un espejo de rsync, o aún más para ofrecer un espejo de
-	distfiles, por favor  <extlink url="mailto:mirrors@finkmirrors.net">contactanos</extlink>.
+	distfiles, por favor  <link url="mailto:mirrors@finkmirrors.net">contactanos</link>.
 	</p>
 	<p>
 	 Para obtener un mejor conocimiento de los diferentes tipos de espejos
 	 que Fink ofrece, por favor revisa este sitio: 
-	 <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. 
+	 <link url="http://finkmirrors.net/">finkmirrors.net</link>. 
 	 Este es el sitio oficial de todos los asuntos relacionados con los
-	 espejos. Si crees que puedes ofrecer otro tipo de recursos, por ejemplo, un espacio web para pruebas, no dudes en <extlink url="mailto:mirrors@finkmirrors.net">contactarnos</extlink> .
+	 espejos. Si crees que puedes ofrecer otro tipo de recursos, por ejemplo, un espacio web para pruebas, no dudes en <link url="mailto:mirrors@finkmirrors.net">contactarnos</link> .
 	</p>
 	</body>
 </newsitem>
@@ -136,10 +136,10 @@ Estos nuevos binarios incorporan varias mejoras del manejador de paquetes, vario
 	</p>
 	<p>
 Para completar una nueva instalación de Fink se deben seguir las instrucciones que están  
-<link url="download/index.php?phpLang=es">aquí</link>.
-También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  <link url="download/upgrade.php?phpLang=es">aquí</link>.
+<varlink url="download/index.php?phpLang=es">aquí</varlink>.
+También es posible actulizar tu instalación previa de Fink siguiendo las instrucciones que se encuentran  <varlink url="download/upgrade.php?phpLang=es">aquí</varlink>.
 
-Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra <link url="lists/index.php?phpLang=es">aquí</link>.
+Si tienen dudas o algún problema, por favor usen la lista de correo que se encuentra <varlink url="lists/index.php?phpLang=es">aquí</varlink>.
 		</p>
 		<p>
 Asegurense de escoger el <em>instalador adecuado</em> para su plataforma.
@@ -169,7 +169,7 @@ Esto también significa que se necesitan voluntarios. El sitio web de Fink neces
 </p>
 <p>
 Si estas dispuesto a convertirte en un miembro de algún equipo de internacionalización o si deseas proporcionar alguna retroalimentación del sitio web, sientete libre de unirte a la nueva lista de correo. 
-Puedes hacerlo visitando la  <link url="lists/index.php">página de las listas de correo</link>. El anuncio completo de las listas de correo existentes puede leerse <extlink url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">aquí</extlink>.
+Puedes hacerlo visitando la  <varlink url="lists/index.php">página de las listas de correo</varlink>. El anuncio completo de las listas de correo existentes puede leerse <link url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">aquí</link>.
 </p>
 </body>
 </newsitem>
@@ -183,8 +183,8 @@ Puedes hacerlo visitando la  <link url="lists/index.php">página de las listas d
 Si tenás instalados Java 1.4.1 y el Java SDK, la actulización 
 Java 1.4.2 de Applw actualizara el  Java runtime a 1.4.2,
 pero <em>removerá</em> el previó Java 1.4.1 runtime y el
-SDK <em>sin</em> actualizar el JDK.  Para construir paquetes de Java en Fink necesitaras ir a  <extlink url="http://connect.apple.com/">la pagina
-connect.apple.com y descargar el Java 1.4.2 SDK</extlink> (registro gratuito requerido).
+SDK <em>sin</em> actualizar el JDK.  Para construir paquetes de Java en Fink necesitaras ir a  <link url="http://connect.apple.com/">la pagina
+connect.apple.com y descargar el Java 1.4.2 SDK</link> (registro gratuito requerido).
 	</p>
 	</body>
 </newsitem>
@@ -210,15 +210,15 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 	if you are on unstable already.  Because of the massive number of changes, it is
 	expected that there will be issues upgrading or installing the new GNOME.  If you
 	have problems, you can reach the GNOME-savvy people at
-	<extlink url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</extlink>.
+	<link url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</link>.
 	Please do report success stories there as well.  The more good reports we get, the
 	faster GNOME 2.4 can be moved to stable.
 	</p>
 	<p>
-	For those of you who do not read our mailing lists, <extlink
-	url="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</extlink>?
+	For those of you who do not read our mailing lists, <link
+	url="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</link>?
 	Here is a link to detailed 
-	<extlink url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</extlink> 
+	<link url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</link> 
 	how to install or upgrade GNOME and what new stuff it brings.
 	</p>
 	</body>
@@ -289,19 +289,19 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 	Thank you for providing us with more mirrors. 
 		</p>
 		<p>
-	Matthew Healey, member of the Western <extlink url="http://www.wamug.org.au">
-	Australian</extlink> Macintosh User Group, and their 
-	ISP <extlink url="http://www.extremedsl.com.au">extremedsl</extlink>
+	Matthew Healey, member of the Western <link url="http://www.wamug.org.au">
+	Australian</link> Macintosh User Group, and their 
+	ISP <link url="http://www.extremedsl.com.au">extremedsl</link>
 	are providing Fink with a full mirror in Perth, Australia. This is our first
 	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the <extlink url="http://www.mirror.ac.uk">UKMIRROR</extlink> service 
+	Furthermore the <link url="http://www.mirror.ac.uk">UKMIRROR</link> service 
 	has accepted us, making distfile services available for Fink 
 	on 21 load balanced server.
 		</p>
 		<p>
 	We are very happy about this development, but we still need more rsync mirrors.
 	Thus, once more, if you feel like helping, please visit 
-	<extlink url="http://finkmirrors.net">finkmirrors.net</extlink> and get in touch.
+	<link url="http://finkmirrors.net">finkmirrors.net</link> and get in touch.
 		</p>
 		</body>
 </newsitem>
@@ -316,10 +316,10 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 	<p>     
 	All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
 	willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
-	<extlink url="http://finkmirrors.net/rsync.html">here</extlink>. Especially mirrors in
+	<link url="http://finkmirrors.net/rsync.html">here</link>. Especially mirrors in
 	Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
 	those regions yet. If you feel generous and wish to donate even more resources, please visit
-	<extlink url="http://finkmirrors.net">finkmirrors.net</extlink> to learn about your options.
+	<link url="http://finkmirrors.net">finkmirrors.net</link> to learn about your options.
 	</p>    
 	<p>     
 	The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
@@ -341,7 +341,7 @@ it is safe to once again use dselect.  However, if you ran dselect
 at any time since 0.6.0, you should carefully check the integrity
 of the file at <code>/sw/etc/apt/sources.list</code>.  If you have
 any doubts about this file, you should replace it with
-<link url="files/sources.list">the default sources.list file</link>.
+<varlink url="files/sources.list">the default sources.list file</varlink>.
 </p>
 <p>Users who have installed binary files from the 0.6.1 distribution
 may find that certain files in their Fink installation are owned
@@ -415,7 +415,7 @@ next few weeks.
 <p>The simplest way to upgrade a binary installation is to run
 "sudo apt-get update".  Further details and
 other issues related to upgrading Fink to 10.3 are addressed on the
-<link url="download/10.3-upgrade.php">Special 10.3 upgrade page.</link>
+<varlink url="download/10.3-upgrade.php">Special 10.3 upgrade page.</varlink>
 </p><p>
 Before using the latest version of
 the command-line <code>fink</code> program 
@@ -435,14 +435,14 @@ after free registration from connect.apple.com.
 		<p>
 		Furthermore I would like to welcome our new mirrors to the Fink family.
 		From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
-		has been sponsored by the <extlink url="http://mac.dir.hr/">Jabucnjak</extlink> Apple user group. 
+		has been sponsored by the <link url="http://mac.dir.hr/">Jabucnjak</link> Apple user group. 
 		This is our first mirror in Europe, so I hope that more will be joining us 
 		soon.
 		</p>
 		<p>
-		Dave Schroeder from the <extlink url="http://mirror.services.wisc.edu/">University of 
-		Wisconsin</extlink> in Madison is sponsoring a 100Mbit dedicated Master server.
-		A. J. Wright and <extlink url="http://sunsite.utk.edu/">SunSITE@UTK</extlink> are helping out with 
+		Dave Schroeder from the <link url="http://mirror.services.wisc.edu/">University of 
+		Wisconsin</link> in Madison is sponsoring a 100Mbit dedicated Master server.
+		A. J. Wright and <link url="http://sunsite.utk.edu/">SunSITE@UTK</link> are helping out with 
 		another full mirror in the United states. 
 		</p>
 		<p>
@@ -456,8 +456,8 @@ after free registration from connect.apple.com.
 		<p>
 		Trick or treat! Our most wanted treat is more mirrors, so come forth 
 		Administrators and fill our bag. Information on how you can be a mirror
-		can be found on the official <extlink url="http://finkmirrors.net">
-		mirroring website</extlink>.
+		can be found on the official <link url="http://finkmirrors.net">
+		mirroring website</link>.
 		</p>
 		</body>
 </newsitem>
@@ -466,7 +466,7 @@ after free registration from connect.apple.com.
 	<headline>Look Ma, a logo for Fink</headline>
 		<body>
 	<p>As you surely noticed, Fink has a logo. This is the result of our
-	Logo <link url="logo.php">contest</link> held earlier this year.
+	Logo <varlink url="logo.php">contest</varlink> held earlier this year.
 	This new, official, logo has been displayed since the 24th of October and
 	those of you who wondered how it has been picked and what the name of the
 	winner is should read up in the PR <link url="pr/index.php">section</link>.
@@ -504,11 +504,11 @@ version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<extlink url="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
-source,</extlink> starting from fink-full-0.6.0.tar.gz available
-on fink's <extlink
+<link url="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
+source,</link> starting from fink-full-0.6.0.tar.gz available
+on fink's <link
 url="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
-download page.</extlink>  You'll need XCode for this as
+download page.</link>  You'll need XCode for this as
 well.
 </p><p>
 Also note that once you have Fink version 0.15.0 or higher, you do
@@ -530,14 +530,14 @@ but many many packages already work.
 	<date>2003-10-23</date>
 	<headline>Say Hello to Mirror Numero Uno</headline>
 		<body>
-	<p>You are too late. Rus Foster from <extlink url="http://www.jvds.com">JVDS</extlink>
+	<p>You are too late. Rus Foster from <link url="http://www.jvds.com">JVDS</link>
 	beat you all to it. He is the first one to provide us with resources 
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
 	</p>
 	<p>For those of you who are still waiting, join in. The more mirrors we have
 	the faster you can rsync your info files. As per usual, updated and current
-	information on the mirror structure can be found on <extlink url="http://finkmirrors.net"> Finkmirrors.net </extlink>
+	information on the mirror structure can be found on <link url="http://finkmirrors.net"> Finkmirrors.net </link>
 	</p>
 		</body>
 </newsitem>
@@ -546,9 +546,9 @@ but many many packages already work.
 	<headline>Mirror, mirror on the wall...</headline>
 		<body>
 	<p>..who will mirror Fink above all? There is a new player on the turf
-	and it belongs to the Fink team. <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	and it belongs to the Fink team. <link url="http://finkmirrors.net"> Finkmirrors.net</link> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	</p>
-	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink>. 
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <link url="http://finkmirrors.net"> Finkmirrors.net</link>. 
 </p>
 <p>
 UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect please try again later. I am very sorry for this inconvenience. Thank you for your understanding.
@@ -564,8 +564,8 @@ UPDATE: Yes, I screwed up when I initially installed the DNS records. If you can
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
 CVS updates which have been so problematic in the past few months.
 If you have difficulty updating to the new version, please follow
-<extlink url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
-special update instructions</extlink>.
+<link url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</link>.
 </p>
 <p>In addition, this version of the fink package manager is compatible
 with last summer's Developer Tools updates.  After installing both the new
@@ -579,12 +579,12 @@ that is necessary.</p>
 	<date>2003-09-02</date>
 	<headline>Logo contest ends</headline>
 		<body>
-<p>The Logo contest held by Fink, announced <extlink url="http://fink.sourceforge.net/logo.php">here</extlink>,
+<p>The Logo contest held by Fink, announced <link url="http://fink.sourceforge.net/logo.php">here</link>,
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
 In the next couple of days all the submitted entries will be put on-line in a publicly accessible gallery and more details on the participants shall be published. For those who are 
-curious and cannot wait may have a look at an incomplete <extlink url="http://nour.net/logo/incomplete.html">preview</extlink>.</p>
-<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <extlink url="http://www.macwelt.de">MacWelt</extlink> for their continued support.
+curious and cannot wait may have a look at an incomplete <link url="http://nour.net/logo/incomplete.html">preview</link>.</p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <link url="http://www.macwelt.de">MacWelt</link> for their continued support.
 </p>
 	</body>
 </newsitem>
@@ -593,9 +593,9 @@ curious and cannot wait may have a look at an incomplete <extlink url="http://no
 	<date>2003-08-18</date>
 	<headline>Source files from ftp.gnu.org</headline>
 	       <body>
-<p>As announced in <extlink
+<p>As announced in <link
 url="http://www.cert.org/advisories/CA-2003-21.html">this CERT 
-advisory</extlink>, it has recently been discovered that
+advisory</link>, it has recently been discovered that
 the ftp servers for GNU software were compromised back in March, 
 although it is not believed that any of the source code housed there
 was affected.
@@ -643,8 +643,8 @@ Developer Tools with the new patch, you should be careful to run
 prior to any "fink build" or "fink install" commands.
 </p>
 <p><em>Update 30 June 2003:</em> A 
-<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
-has now been detected</extlink> with
+<link url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
+has now been detected</link> with
 the new assembler program which the update installs, which may prevent
 certain Fink packages from being compiled at all if you install this
 update.  
@@ -664,18 +664,18 @@ the update.</p>
 	<headline>Darwin packaging groups to coordinate efforts.</headline>
 	       <body>
 	       <p>
-The <extlink url="http://fink.sourceforge.net">Fink</extlink>, 
-<extlink url="http://www.gentoo.org">Gentoo</extlink>, 
+The <link url="http://fink.sourceforge.net">Fink</link>, 
+<link url="http://www.gentoo.org">Gentoo</link>, 
 and 
-<extlink url="http://opendarwin.org/projects/darwinports/">DarwinPorts</extlink> 
+<link url="http://opendarwin.org/projects/darwinports/">DarwinPorts</link> 
 projects are pleased to announce the formation of  a cooperative development 
 alliance forged to facilitate delivery of freely available software to 
 Mac OS X.  Under this new alliance, the projects will share information and 
 coordinate efforts for porting software to 
-Apple's <extlink url="http://www.apple.com/macosx">Mac OS X</extlink> 
-and <extlink url="http://www.apple.com/darwin">Darwin</extlink> operating 
+Apple's <link url="http://www.apple.com/macosx">Mac OS X</link> 
+and <link url="http://www.apple.com/darwin">Darwin</link> operating 
 systems.  Members of the alliance will share information using 
-the <extlink url="http://www.metapkg.org">www.metapkg.org</extlink> Web 
+the <link url="http://www.metapkg.org">www.metapkg.org</link> Web 
 site,  which  will provide a home for this cooperative effort. 
 </p>
 		</body>
@@ -687,11 +687,11 @@ site,  which  will provide a home for this cooperative effort.
 	<headline>Fink logo contest begins.</headline>
 	       <body>
 	       <p>Fink and 
-<extlink url="http://www.macwelt.de/">MacWelt</extlink> have managed to organize a logo contest.
+<link url="http://www.macwelt.de/">MacWelt</link> have managed to organize a logo contest.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
- <extlink url="http://fink.sourceforge.net/logo.php">here</extlink>. 
+ <link url="http://fink.sourceforge.net/logo.php">here</link>. 
 		</p>
 <p>
 Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
@@ -710,8 +710,8 @@ have been released after 0.5.2 came out, you will need to update
 your package descriptions by running <code>sudo apt-get update</code>
 (or equivalent) before they will be available for installation.
 For pointers to the changes and security fixes in this release,
-see <extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
-announcement</extlink>.
+see <link url="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
+announcement</link>.
 </p>
 
 		</body>
@@ -742,13 +742,13 @@ to restore files which the Virex upgrade may have deleted.
 	<date>2003-04-14</date>
 	<headline>Fink 0.5.2 released</headline>
 	       <body>
-	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <extlink url="http://fink.sourceforge.net/download.php">download</extlink> page.
+	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <link url="http://fink.sourceforge.net/download.php">download</link> page.
 		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
-		The full announcement can be read on the <extlink url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</extlink> mailing list.
+		The full announcement can be read on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</link> mailing list.
 		</p>
 <p>(If you are having trouble upgrading a source installation, consult
-<extlink url="http://fink.sourceforge.net/download/fix-upgrade.php">these
-special instructions</extlink>.)</p>
+<link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
+special instructions</link>.)</p>
 
 		</body>
 </newsitem>
@@ -757,8 +757,8 @@ special instructions</extlink>.)</p>
 	<date>2003-04-09</date>
 	<headline>Interview on OSNews.com</headline>
 	<body>
-	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring a
-	<extlink url="http://osnews.com/story.php?news_id=3236">mini-interview</extlink> with
+	<p><link url="http://osnews.com/">OSNews.com</link> today is featuring a
+	<link url="http://osnews.com/story.php?news_id=3236">mini-interview</link> with
 	one of our project leaders, Max Horn. It contains some rather unusual questions,
 	so even if you know Fink fairly well, you might find it informative.
 </p></body></newsitem>
@@ -767,7 +767,7 @@ special instructions</extlink>.)</p>
 	<headline>KDE 3.1.1 Final In Unstable</headline>
 	<body>
 	<p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
-<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</extlink>.
+<link url="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</link>.
 	Improvements over 3.1 final include many upstream bugfixes,
 	build improvements, koffice bugfixes, kmail crash fixes,
 	and other miscellaneous updates.  Binary packages will not
@@ -779,7 +779,7 @@ special instructions</extlink>.)</p>
 	<headline>KDE 3.1 Final In Stable</headline>
 	<body>
 	<p>KDE 3.1 is now in Fink stable.  The full announcement can be
-<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</extlink>.
+<link url="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</link>.
 	Improvements over 3.1 beta1 include an updated audio driver, 
 	faster startup times, cleaned up fink package info, support
 	for Apple X11's window manager, and many bugfixes.  Binary
@@ -790,8 +790,8 @@ special instructions</extlink>.)</p>
 	<date>2003-03-17</date>
 	<headline>Apple X11 Beta 3 Released</headline>
 	<body>
-	<p><extlink url="http://www.apple.com/macosx/x11/download/">A new
-version of Apple's X11 for Mac OS X is available</extlink>.  It fixes a number
+	<p><link url="http://www.apple.com/macosx/x11/download/">A new
+version of Apple's X11 for Mac OS X is available</link>.  It fixes a number
 of bugs including a few that can cause problems with building Fink packages.
 It is recommended that all Fink users who are using Apple X11 upgrade.
 A new version of the system-xfree86 package has been released to unstable
@@ -802,14 +802,14 @@ shortly.
 	<date>2003-02-14</date>
 	<headline>New version of FinkCommander</headline>
 	<body>
-	<p><extlink
- url="http://finkcommander.sourceforge.net/">FinkCommander</extlink>,
+	<p><link
+ url="http://finkcommander.sourceforge.net/">FinkCommander</link>,
  a separate project which provides a GUI for Fink,
 has released version 0.5.0, their first Jaguar-only version.  The new
 version includes a package browser which allows you to view the files 
-that Fink has installed for a particular package, as well as <extlink 
+that Fink has installed for a particular package, as well as <link 
 url="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many 
-other improvements.</extlink>
+other improvements.</link>
 </p></body></newsitem>
 <newsitem>
 	<date>2003-02-07</date>
@@ -823,9 +823,9 @@ Virex 7.2 under any circumstances.</em>
 will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 </p><p>
-This bug has been <extlink 
+This bug has been <link 
 url="http://forums.mcafeehelp.com/viewtopic.php?t=6318&amp;sid=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
-to Virex's manufacturer.</extlink>  We will keep the
+to Virex's manufacturer.</link>  We will keep the
 Fink community informed about the situation as it develops.
 </p></body></newsitem>
 <newsitem>
@@ -839,7 +839,7 @@ software to build incorrectly, and will break forward-compatibility
 with future X11 releases.
 </p>
 <p>
-	Ben Hines has created a script (available <extlink url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</extlink>) that you can use
+	Ben Hines has created a script (available <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</link>) that you can use
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
@@ -883,7 +883,7 @@ appreciate your participation.
 	<headline>Anonymous CVS issues resolved</headline>
 	<body>
 	<p>
-	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <extlink url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</extlink> page.
+	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <link url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</link> page.
 	</p>
 	</body>
 </newsitem>
@@ -892,8 +892,8 @@ appreciate your participation.
 	<headline>Fink Interaction with Apple's X11 Public Beta</headline>
 	<body>
 	<p>
-	Fink works just fine with the <extlink url="http://www.apple.com/macosx/x11/">public beta X11 release</extlink>
-	with some caveats.  Please read <link url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
+	Fink works just fine with the <link url="http://www.apple.com/macosx/x11/">public beta X11 release</link>
+	with some caveats.  Please read <varlink url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</varlink> section of the Fink X11 Documentation for details.</p>
 	</body>
 </newsitem>
 <newsitem>
@@ -903,12 +903,12 @@ appreciate your participation.
 	<p>
 	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
 
-<link url="news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+<varlink url="news/fink-stable.rdf">fink-stable.rdf</varlink> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
-<p><link url="news/fink-unstable.rdf">fink-unstable.rdf</link> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+<p><varlink url="news/fink-unstable.rdf">fink-unstable.rdf</varlink> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
 The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
 </p>
-<p><link url="news/news.rdf">news.rdf</link> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
+<p><varlink url="news/news.rdf">news.rdf</varlink> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
 </p>
 </body>
 </newsitem>
@@ -916,7 +916,7 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
   <date>2002-12-22</date>
   <headline>New Upgrade Matrix</headline>
   <body>
-  <p>A new <link url="download/upgrade.php">Upgrade Matrix</link> is
+  <p>A new <varlink url="download/upgrade.php">Upgrade Matrix</varlink> is
   now available, for use in upgrading earlier versions of Fink to the
   current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
   under 10.1 will be brought to Fink version 0.4.1a, while users
@@ -951,7 +951,7 @@ made available on 2002-09-08.
     all kinds. 
   </p>
   <p>
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
   </p>
   <p>
   This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
@@ -1003,7 +1003,7 @@ not "Upgrade."  (You can recognize the new version by its filesize of
   <headline>Fink 0.4.1 released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
     </p>
     <p>
     This is the <em>last release for Mac OS X 10.1</em>. Future versions of Fink will <em>not</em> officially support Mac OS X 10.1 anymore, we are gearing all our efforts towards 10.2.
@@ -1032,7 +1032,7 @@ software before using Fink.
 	<headline>Test version of Jaguar updater available</headline>
 	<body>
 		<p>
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <link url="news/jaguar.php">step-by-step instructions for updating</link>. We also have separate <link url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</link>. 
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <varlink url="news/jaguar.php">step-by-step instructions for updating</varlink>. We also have separate <varlink url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</varlink>. 
 		</p>
 		<p>
 			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
@@ -1058,13 +1058,13 @@ software before using Fink.
 	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
 	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
 	 Some packages need special changes to build on 10.2. Adding "unstable/main" to your
-	 list of trees in /sw/etc/fink.conf (see also the <link url="faq/usage-fink.php#unstable">FAQ</link>)
+	 list of trees in /sw/etc/fink.conf (see also the <varlink url="faq/usage-fink.php#unstable">FAQ</varlink>)
 	 will give you access to the latest versions of packages, many of which include important
 	 fixes for 10.2.
 	</p>
     <p>
      As of now, please do not email us asking about 10.2 support. If you can't wait,
-     consult the <link url="lists/index.php">mailing list archives</link> instead.
+     consult the <varlink url="lists/index.php">mailing list archives</varlink> instead.
     </p>
   </body>
 </newsitem>
@@ -1090,7 +1090,7 @@ software before using Fink.
   <headline>Binary distribution moves</headline>
   <body>
     <p>
-      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <link url="news/bindist_move.php">read more here.</link>.
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <varlink url="news/bindist_move.php">read more here.</varlink>.
     </p>
   </body>
 </newsitem>
@@ -1100,7 +1100,7 @@ software before using Fink.
   <headline>KDE support</headline>
   <body>
     <p>
-      Fink <link url="news/kde.php">announces support</link> for <extlink url="http://www.kde.org">KDE</extlink>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <link url="news/kde.php">KDE Support In Fink</link> announcement. 
+      Fink <varlink url="news/kde.php">announces support</varlink> for <link url="http://www.kde.org">KDE</link>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <varlink url="news/kde.php">KDE Support In Fink</varlink> announcement. 
     </p>
   </body>
 </newsitem>
@@ -1121,7 +1121,7 @@ software before using Fink.
       </li>
     </ul>
     <p>
-      See <link url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</link> for more information about the passwd package. 
+      See <varlink url="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</varlink> for more information about the passwd package. 
     </p>
   </body>
 </newsitem>
@@ -1131,7 +1131,7 @@ software before using Fink.
   <headline>Fink 0.4.0 released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link>. 
+      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1141,7 +1141,7 @@ software before using Fink.
   <headline>Fink 0.3.2a is released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1151,7 +1151,7 @@ software before using Fink.
   <headline>Fink 0.3.2 is released</headline>
   <body>
     <p>
-      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the <link url="doc/users-guide/index.php">User's Guide</link>. 
+      The source release is available now, the binary installer will follow soon. The bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1174,7 +1174,7 @@ software before using Fink.
       Despite the fact that no news were listed here for over a month, the fink project was quite busy in the recent time. Sadly, our leader, Christoph, left us last month. But despite this, development is going on actively. 
     </p>
     <p>
-      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <link url="doc/cvsaccess/index.php">CVS</link>. 
+      Version 0.9.5 of the Fink package manager was recently released, and many updated and new packages are in our <varlink url="doc/cvsaccess/index.php">CVS</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1184,7 +1184,7 @@ software before using Fink.
   <headline>Fink 0.3.1 is released</headline>
   <body>
     <p>
-      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <link url="download/upgrade.php">Upgrade Matrix</link> and the recently updated <link url="doc/users-guide/index.php">User's Guide</link>. 
+      The source release and the binary installer are available now, the bulk of binary packages will be built and made available gradually over the next few days as usual. For information about upgrading, visit the <varlink url="download/upgrade.php">Upgrade Matrix</varlink> and the recently updated <varlink url="doc/users-guide/index.php">User's Guide</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1194,7 +1194,7 @@ software before using Fink.
   <headline>Running X11 document updated</headline>
   <body>
     <p>
-      The <link url="doc/x11/index.php">Running X11</link> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
+      The <varlink url="doc/x11/index.php">Running X11</varlink> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
     </p>
   </body>
 </newsitem>
@@ -1203,9 +1203,9 @@ software before using Fink.
   <date>2001-10-31</date>
   <body>
     <p>
-      <extlink url="http://www.macosxhints.com/">MacOSXHints</extlink> has
-      posted an <extlink url="http://homepage.mac.com/rgriff/xdarwin.html">
-      installation guide</extlink> for XFree86, Fink, Window Maker and The GIMP.
+      <link url="http://www.macosxhints.com/">MacOSXHints</link> has
+      posted an <link url="http://homepage.mac.com/rgriff/xdarwin.html">
+      installation guide</link> for XFree86, Fink, Window Maker and The GIMP.
     </p>
   </body>
 </newsitem>
@@ -1216,8 +1216,8 @@ software before using Fink.
   <body>
     <p>
       In addition to ripping off Fink packages and breaking the GPL, the ports
-      collection at <extlink url="http://macosx.forked.net/">forked.net
-      </extlink> has just gone commercial. More details soon. 
+      collection at <link url="http://macosx.forked.net/">forked.net
+      </link> has just gone commercial. More details soon. 
     </p>
   </body>
 </newsitem>
@@ -1227,7 +1227,7 @@ software before using Fink.
   <headline>Binary distribution complete</headline>
   <body>
     <p>The binary distribution update is now complete.
-    The <link url="news/puma.php">10.1 compatibility report</link> has been
+    The <varlink url="news/puma.php">10.1 compatibility report</varlink> has been
     updated to reflect the fixes in Fink 0.3.0.
     </p>
   </body>
@@ -1251,7 +1251,7 @@ software before using Fink.
   <headline>Mac OS X 10.1 released</headline>
   <body>
     <p>Mac OS X 10.1 has been officially released yesterday. Before you use Fink
-    on 10.1, check out the <link url="news/puma.php">compatibility report</link>.
+    on 10.1, check out the <varlink url="news/puma.php">compatibility report</varlink>.
     <em>Update:</em> The apt-get issue has been solved, expect a new release
     this weekend.
     </p>
@@ -1273,7 +1273,7 @@ software before using Fink.
   <headline>Fink 0.2.6 is released</headline>
   <body>
     <p>Fink 0.2.6 is released, fixing several bootstrap problems. The source
-    release is available from the <link url="download.php">download page</link>
+    release is available from the <varlink url="download.php">download page</varlink>
     or via the 'fink selfupdate' command. The binary release will follow soon.
     </p>
  </body>
@@ -1284,7 +1284,7 @@ software before using Fink.
   <headline>Fink IRC Channel</headline>
   <body>
     <p>Chat with the developers and other users! We now have a #fink channel
-    on the <extlink url="http://openprojects.net/">openprojects.net</extlink>
+    on the <link url="http://openprojects.net/">openprojects.net</link>
     IRC network.
     </p>
  </body>
@@ -1295,7 +1295,7 @@ software before using Fink.
   <headline>Fink 0.2.5 was released</headline>
   <body>
     <p>The source release is
-    available from the <link url="download.php">download page</link>, the
+    available from the <varlink url="download.php">download page</varlink>, the
     binary release will follow soon.
     </p>
   </body>
@@ -1327,7 +1327,7 @@ software before using Fink.
   <date>2001-08-13</date>
   <headline>Porting tips and X11 document updated</headline>
   <body>
-    <p>The <link url="doc/porting/index.php">porting tips</link> document has
+    <p>The <varlink url="doc/porting/index.php">porting tips</varlink> document has
     a new chapter on shared libraries and modules. The <link
     url="doc/x11/index.php">X11</link> document was also updated recently.
     </p>
@@ -1382,7 +1382,7 @@ software before using Fink.
   <date>2001-07-09</date>
   <headline>Version 0.2.3 is released</headline>
   <body>
-    <p>Get it from the <link url="download.php">download page</link>. This
+    <p>Get it from the <varlink url="download.php">download page</varlink>. This
     version fixes the dpkg download problems many of you were having.
     </p>
   </body>
@@ -1392,7 +1392,7 @@ software before using Fink.
   <date>2001-07-03</date>
   <headline>Packaging Manual updated</headline>
   <body>
-    <p>The <link url="doc/packaging/index.php">Packaging Manual</link> was
+    <p>The <varlink url="doc/packaging/index.php">Packaging Manual</varlink> was
     updated to include all recently added fields.
     </p>
   </body>
@@ -1425,7 +1425,7 @@ software before using Fink.
   <date>2001-05-19</date>
   <headline>CVS instructions updated</headline>
   <body>
-    <p>The <link url="fink/cvs.php">CVS instructions</link> have
+    <p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
     been updated for Fink 0.2.x.
     </p>
   </body>
@@ -1436,7 +1436,7 @@ software before using Fink.
   <headline>FAQ online</headline>
   <body>
     <p>
-      This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
+      This site now sports a <varlink url="faq/index.php">FAQ section</varlink>. Not much content yet, but it's here to stay. 
     </p>
   </body>
 </newsitem>
@@ -1456,7 +1456,7 @@ software before using Fink.
   <headline>Released version 0.1.8a</headline>
   <body>
     <p>
-      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <link url="download.php">download page</link>. 
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <varlink url="download.php">download page</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1466,7 +1466,7 @@ software before using Fink.
   <headline>Version 0.1.8 is out</headline>
   <body>
     <p>
-      Get it from the <link url="download.php">download page</link>. 
+      Get it from the <varlink url="download.php">download page</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1476,7 +1476,7 @@ software before using Fink.
   <headline>Porting notes updated</headline>
   <body>
     <p>
-      The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
+      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
     </p>
   </body>
 </newsitem>
@@ -1486,7 +1486,7 @@ software before using Fink.
   <headline>Version 0.1.7 is out!</headline>
   <body>
     <p>
-      Get it from the <link url="download.php">download page</link>. 
+      Get it from the <varlink url="download.php">download page</varlink>. 
     </p>
   </body>
 </newsitem>
@@ -1506,7 +1506,7 @@ software before using Fink.
   <headline>Libtool page updated</headline>
   <body>
     <p>
-      Updated the <link url="darwin/libtool.php">libtool page</link> with a revised patch that does full shared library versioning. 
+      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
     </p>
   </body>
 </newsitem>
@@ -1516,7 +1516,7 @@ software before using Fink.
   <headline>Version 0.1.6 is out</headline>
   <body>
     <p>
-      Get it from the <link url="download.php">download page</link>. 
+      Get it from the <varlink url="download.php">download page</varlink>. 
     </p>
   </body>
 </newsitem>
