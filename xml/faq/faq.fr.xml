@@ -1,9 +1,9 @@
 <?xml version = '1.0' encoding = 'utf-8'?>
 <!DOCTYPE document SYSTEM "../finkfaq.dtd">
 <document filename="index" lang="fr" >
-<title>The Fink F.A.Q.</title>
-<shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.1 2004/03/14 16:43:06 michga Exp $</cvsid>
+<title>Fink - Q.F.P.</title>
+<shorttitle>Q.F.P.</shorttitle>
+<cvsid>$Id: faq.fr.xml,v 1.2 2004/03/14 17:01:37 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
