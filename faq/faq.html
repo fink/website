@@ -39,7 +39,7 @@ black icons only. What's wrong?</a></li><li><a href="#usage-general.xlocale">6.2
 like &quot;locale not supported by C library&quot;. Is that bad?</a></li><li><a href="#usage-general.passwd">6.3 There are suddenly a number of 
 strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</a></li><li><a href="#usage-general.compile-myself">6.4 How do I compile something
-myself using fink-installed software?</a></li><li><a href="#usage-general.libpng-versions">6.5 When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</a></li><li><a href="#usage-general.apple-x11-applications-menu">6.6 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li></ul></li><li><a href="#usage-packages"><b>7 Package Usage Problems - Specific Packages</b></a><ul><li><a href="#usage-packages.gnome-panel">7.1 The GNOME panel displays
+myself using fink-installed software?</a></li><li><a href="#usage-general.libpng-versions">6.5 When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</a></li><li><a href="#usage-general.apple-x11-applications-menu">6.6 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li><li><a href="#usage-general.x-options">6.7 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li></ul></li><li><a href="#usage-packages"><b>7 Package Usage Problems - Specific Packages</b></a><ul><li><a href="#usage-packages.gnome-panel">7.1 The GNOME panel displays
 black icons only. What's wrong?</a></li><li><a href="#usage-packages.xmms-quiet">7.2 I get no sound from
 XMMS</a></li><li><a href="#usage-packages.nedit-window-locks">7.3 If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</a></li><li><a href="#usage-packages.xdarwin-start">7.4 Help! When I start
 XDarwin, it immediately quits!</a></li><li><a href="#usage-packages.no-server">7.5 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li><li><a href="#usage-packages.xfree-keymapping">7.6 I just upgraded to Mac
@@ -820,6 +820,14 @@ libpng error: Incompatible libpng version in application and library</pre><p>whe
 <div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
 <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p></div>
 </a>
+<a name="usage-general.x-options"><div class="question"><p><b>Q6.7: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
+<div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>The most popular choices, and the fink packages to make them work are:</p><ul>
+<li><p>4.2.x built via Fink:  install <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt> or <tt style="white-space: nowrap;">xfree86-base-threaded</tt> and <tt style="white-space: nowrap;">xfree86-rootless-threaded</tt> (and the respective <tt style="white-space: nowrap;">-shlibs</tt>)</p></li>
+<li><p>4.3.x built via Fink:  install the <tt style="white-space: nowrap;">xfree86</tt> and <tt style="white-space: nowrap;">xfree86-shlibs</tt> packages</p></li>
+<li><p>4.2.x from Apple (User+SDK packages installed):  install the <tt style="white-space: nowrap;">system-xfree86</tt> package</p></li>
+</ul><p>There are other options, as well.  There is a more extensive treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</a>.</p></div>
+</a>
+
 <h2><a name="usage-packages">7 Package Usage Problems - Specific Packages</a></h2>
 
 
@@ -957,4 +965,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.102 2003/03/26 16:30:29 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: faq.xml,v 1.103 2003/03/31 16:57:29 alexkhansen Exp $</i></p></body></html>

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.102 2003/03/26 16:30:29 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.103 2003/03/31 16:57:29 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1147,7 +1147,20 @@ libpng error: Incompatible libpng version in application and library</codeblock>
 <p>in the Command field of your GIMP entry.</p>
 </answer>
 </faqentry>
+<faqentry name="x-options"><question><p>I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</p></question>
+<answer><p>All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p>  
+<p>The most popular choices, and the fink packages to make them work are:</p>
+<ul>
+<li><p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p></li>
+<li><p>4.3.x built via Fink:  install the <code>xfree86</code> and <code>xfree86-shlibs</code> packages</p></li>
+<li><p>4.2.x from Apple (User+SDK packages installed):  install the <code>system-xfree86</code> package</p></li>
+</ul>
+<p>There are other options, as well.  There is a more extensive treatment in the <link url="http://fink.sourceforge.net/doc/x11/index.php">Running X11 document</link>.</p>
+</answer>
+</faqentry>
+
 </chapter>
+
 <chapter filename="usage-packages" >
 <title>Package Usage Problems - Specific Packages</title>
 <shorttitle>Usage (2)</shorttitle>

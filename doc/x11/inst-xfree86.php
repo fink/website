@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/24 19:24:49';
+$cvs_date = 'Date: 2003/03/31 16:57:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -12,7 +12,6 @@ include "header.inc";
 
 
 
-<p>[This section is undergoing renovations...]</p>
 
 <h2><a name="fink">3.1 Installing through Fink</a></h2>
 
@@ -29,7 +28,7 @@ XFree86 distribution.
 <p>
 The <code>xfree86-base</code> package contains all
 of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
-The <code>xfree86-rootless</code> is the server from the standard,
+The <code>xfree86-rootless</code> package is the server from the standard,
 stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
 operation, and has OpenGL support.  
 (In the early days, Fink also had an <code>xfree86-server</code> package
@@ -38,19 +37,21 @@ option.)
 You also have the option to
 install the server yourself; see below.  In this case, you should
 only install <code>xfree86-base</code>, or you'll risk that Fink
-overwrites your manually installed server.
+overwrites your manually installed server.  Note that the current stable version of<code> xfree86-base</code> (4.2.1.1-3) generates the <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code>, and <code>xfree86-rootless-shlibs</code> during its build process.  In this case, all four packages must be installed for you to have a working XFree86 setup.
 </p>
+<p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <code>xine</code>.  One thing to note is that if you switch to Apple's X11 (which doesn't support threading), you won't be able to run binaries that you compiled against the threaded version.</p>
+<p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with fink.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
 
 
 <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
 <p>
 On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
 X11 implementation based on XFree86</a> which includes Quartz rendering and accelerated
-OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.
+OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release was made on March 17, 2003 with further additional features and bugfixes. 
 </p>
 <p>
 As of the time of this writing, to use the Apple binaries you will need to make sure you
-have the Fink <code>system-xfree86</code> package, version 4.2-3 or higher, installed.
+have the Fink <code>system-xfree86</code> package, version 4.2-11 or higher, installed.
 Also, make sure you download BOTH the SDK (linked from the main site), and the public
 beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
 interact poorly with Fink's installation.
@@ -89,15 +90,20 @@ initial &quot;<code>#!/bin/sh</code>&quot;, but before you run any programs):</p
 <pre> . /sw/bin/init.sh
 </pre>
 <p>so that the Fink environment is initialized.  Note:  <code>init.sh</code> is used rather than <code>init.csh</code> because <code>.xinitrc</code> is run by <code>sh</code> rather than <code>tcsh</code>.</p></li>
+<li><p>Applications that require calling other programs under /sw for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
+<pre>/sw/bin/emacs</pre>
+<p>you'll want to use something like the following:</p>  
+<pre>./sw/bin/init.sh ; emacs</pre>
+<p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p></li>
 </ul>
 
 
 <h2><a name="official-binary">3.3 The Official Binaries</a></h2>
 <p>
 The XFree86 project has an official binary distribution of XFree86
-4.2.0.
-You can find it on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <code>4.2.0/binaries/Darwin-ppc</code>.
+4.2.0, which can be upgraded to 4.2.1.1 with patches.
+You can find it on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
+the directory <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
 Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
@@ -107,10 +113,20 @@ instructions</a> before installing.)   If you prefer, you can use the <a href="h
 <ol>
 <li>10.1 users: <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a>.  10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a></li>
 <li>10.1 and 10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</a></li>
-</ol>  
-<p>You've now got XFree86 with a server that can do fullscreen, or 
+</ol>
+<p>There is an official binary distribution of XFree86
+4.3.0, as well, on the<a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirrors</a> in
+the directory <code>4.3.0/binaries/Darwin-ppc-6.x</code>.
+Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
+tarballs even though they are marked as optional.
+If you're unsure what you need, just download the whole directory.
+Run the <code>Xinstall.sh</code> script as root to install the stuff.
+(You might wnt to read the <a href="http://www.xfree86.org/4.3.0/Install.html">official
+instructions</a> before installing.)</p> 
+<p>Whichever version you install, you've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
+
 
 
 <h2><a name="official-source">3.4 The Official Source</a></h2>
@@ -135,6 +151,8 @@ with the following commands:
 </p>
 <pre>make World
 sudo make install install.man</pre>
+<p>To update to 4.2.1.1, follow the instructions in the <a href="#official-binary">Official Binaries</a> section.</p>
+<p>To install 4.3.0, follow the above instructions, replacing &quot;2&quot; with &quot;3&quot;, but don't do the 4.2.1.1 update procedure.</p>
 <p>
 As with the official binaries, you've now got XFree86 with a server
 that can do fullscreen, or rootless under Mac OS X.
@@ -174,7 +192,7 @@ This eventually resulted in the XDarwin released with 4.2.0.
 <p>The <a href="http://www.mrcla.com/XonX/">XonX
 web page</a> indicates that post-4.2.0 testing versions of XDarwin may
 someday be released, but none have been as yet.  They would presumably be 
-installed on top of XFree86 4.2.0.
+installed on top of XFree86 4.2.0 (or later).
 </p>
 
 
@@ -249,7 +267,8 @@ There are two different ways to do this:
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><code>xfree86-base</code> and <code>xfree86-rootless</code></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><code>system-xfree86</code> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><code>system-xfree86</code> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><code>xfree86-base</code> only</p></td></tr><tr valign="top"><td>4.2.x from Apple</td><td><p><code>system-xfree86</code></p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.2.x built via Fink</td><td><p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
+<p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p></td></tr><tr valign="top"><td>4.3.x built via Fink</td><td><p><code>xfree86</code> and <code>xfree86-shlibs</code></p></td></tr><tr valign="top"><td>4.x official binaries</td><td><p><code>system-xfree86</code> only</p></td></tr><tr valign="top"><td>4.x built from source, or from the latest CVS source</td><td><p><code>system-xfree86</code> only</p></td></tr><tr valign="top"><td>4.2.x base system built via Fink + binary rootless server</td><td><p><code>xfree86-base</code> only</p></td></tr><tr valign="top"><td>4.2.x from Apple</td><td><p><code>system-xfree86</code></p></td></tr></table>
 
 
 

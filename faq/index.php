@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/26 16:30:29';
+$cvs_date = 'Date: 2003/03/31 16:57:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -117,6 +117,7 @@ Where did they come from?</a></li>
 myself using fink-installed software?</a></li>
 <li><a href="usage-general.php#libpng-versions">6.5 When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</a></li>
 <li><a href="usage-general.php#apple-x11-applications-menu">6.6 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li>
+<li><a href="usage-general.php#x-options">6.7 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
 <ul>
@@ -137,7 +138,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.102 2003/03/26 16:30:29 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.103 2003/03/31 16:57:29 alexkhansen Exp $</i></p>
 
 
 <?
