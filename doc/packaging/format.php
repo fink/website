@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/14 14:20:49';
+$cvs_date = 'Date: 2001/07/29 15:31:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<h2>Tree Layout</h2>
+<a name="trees"><h2>Tree Layout</h2></a>
 <p>
 Package descriptions are read from the <tt><nobr>finkinfo</nobr></tt>
 directories below the <tt><nobr>/sw/fink/dists</nobr></tt> directory.
@@ -49,7 +49,7 @@ divided into sections at the moment.</li>
 </ul>
 
 
-<h2>File Format</h2>
+<a name="format"><h2>File Format</h2></a>
 <p>
 The description files are simple lists of key-value pairs, also called
 'fields'.
@@ -104,7 +104,7 @@ as false.
 </p>
 
 
-<h2>Percent Expansion</h2>
+<a name="percent"><h2>Percent Expansion</h2></a>
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
@@ -127,7 +127,8 @@ ConfigureParams</dd>
 
 
 
-
+<p align="right">
+Next: <a href="policy.php">Packaging Policy</a></p>
 
 
 <?

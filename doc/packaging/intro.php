@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/14 14:20:49';
+$cvs_date = 'Date: 2001/07/29 15:31:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="format.php" title="Package Descriptions"><link rel="prev" href="index.php" title="Packaging Contents">';
 
@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<h2>What is a Package?</h2>
+<a name="def1"><h2>What is a Package?</h2></a>
 <p>
 A package is a piece of software that forms an atomic unit.
 A typical package contains an executable program, the data files it
@@ -44,7 +44,7 @@ files are in the dpkg format and have the extension .deb.
 
 
 
-<h2>Identifying a Package</h2>
+<a name="ident"><h2>Identifying a Package</h2></a>
 <p>
 A package is identified by three strings: the package name, the
 version and the revision.
@@ -68,7 +68,8 @@ dashes in between, e.g. openssh-2.9p1-2.
 </p>
 
 
-
+<p align="right">
+Next: <a href="format.php">Package Descriptions</a></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/14 14:20:49';
+$cvs_date = 'Date: 2001/07/29 15:31:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
@@ -21,7 +21,7 @@ packaging policy.
 
 
 
-<h2>The Filesystem Hierarchy Standard</h2>
+<a name="fhs"><h2>The Filesystem Hierarchy Standard</h2></a>
 <p>
 Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy
 Standard</a>, or FHS for short.
@@ -34,7 +34,7 @@ The examples use the default prefix of <tt><nobr>/sw</nobr></tt>.
 </p>
 
 
-<h2>The Directories</h2>
+<a name="dirs"><h2>The Directories</h2></a>
 <p>
 Files should go into the following subdirectories of the hierarchy:
 </p>
@@ -65,7 +65,7 @@ libraries.
 Static and shared libraries should be placed directly in
 <tt><nobr>/sw/lib</nobr></tt> unless there is a good reason not to.
 This is also the place for executables that should not be executed
-directly by the user.
+directly by the user (which would otherwise be places in libexec).
 </p>
 <p>
 A package is free to create a subdirectory to store private data or
@@ -139,7 +139,7 @@ Nothing should be installed here by a package.
 
 
 
-<h2>Things to Avoid</h2>
+<a name="avoid"><h2>Things to Avoid</h2></a>
 <p>
 No other directories than the ones mentioned above should exist
 in /sw.
@@ -149,7 +149,8 @@ In particular, the following should not be used: /sw/man, /sw/info,
 
 
 
-
+<p align="right">
+Next: <a href="reference.php">Reference</a></p>
 
 
 <?

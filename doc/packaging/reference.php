@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/14 14:20:49';
+$cvs_date = 'Date: 2001/07/29 15:31:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -13,7 +13,7 @@ include "header.inc";
 
 
 
-<h2>The Build Process</h2>
+<a name="build"><h2>The Build Process</h2></a>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -45,7 +45,7 @@ but various information from the package description is used to
 generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 
 
-<h2>Fields</h2>
+<a name="fields"><h2>Fields</h2></a>
 
 <p>This list is not necessarily complete. <tt><nobr>:-)</nobr></tt></p>
 
@@ -73,6 +73,14 @@ They only have dependencies, but no code and no installed files.
 The fields Source, PatchScript, CompileScript, InstallScript and
 related ones are ignored for bundle packages.
 </p>
+<p>
+<tt><nobr>nosource</nobr></tt> is a very similar type.
+It indicates that there is no source tarball, so nothing is fetched
+and the unpack phase creates just an empty directory.
+However, the patch, compile and install phases are executed normally.
+This way you can bring in all the code with a patch, or just create
+some directories in the InstallScript.
+</p>
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
 The name and e-mail address of the person responsible for the package.
@@ -86,6 +94,14 @@ A comma-separated list of packages which must be installed before
 this package can be built. Currently, only plain package names are
 allowed; there is no mechanism to request a specific version of a
 package yet.
+</p>
+<p>
+Also note that there is no way to express optional dependencies.
+If a package works both with and without another package, you must
+either make sure that the other package is not used even when it is
+present or add it to the Depends field.
+If you want to offer the user both options, make two separate
+packages, e.g. wget and wget-ssl.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
@@ -324,9 +340,19 @@ When a package is "remove"d, the configuration files will remain on
 disk.
 Only a "purge" also removes the configuration files.
 </p>
+</td></tr><tr valign="top"><td>InfoDocs</td><td>
+<p>
+<i>Introduced in a post-0.2.3 CVS version.</i>
+Lists the names of Info documents that the package installs in
+%p/share/info.
+This will add appropriate code to the postinst and prerm scripts to
+maintain the Info directory file, <tt><nobr>dir</nobr></tt>.
+This feature is still in flux, more fields for finer control may be
+added in the future.
+</p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>
-<i>Introduced in a post-0.2.2 CVS version.</i>
+<i>Introduced in a post-0.2.3 CVS version.</i>
 Gives a service description for <tt><nobr>daemonic</nobr></tt>.
 <tt><nobr>daemonic</nobr></tt> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
@@ -340,7 +366,7 @@ your package uses it.
 </p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>
 <p>
-<i>Introduced in a post-0.2.2 CVS version.</i>
+<i>Introduced in a post-0.2.3 CVS version.</i>
 A name for the <tt><nobr>daemonic</nobr></tt> service description file.
 See the description of DaemonicFile for details.
 </p>
@@ -403,7 +429,7 @@ gettext, you may want to declare a dependency nonetheless.
 </td></tr></table>
 
 
-<h2>Scripts</h2>
+<a name="scripts"><h2>Scripts</h2></a>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. This is sort of like a shell
@@ -413,7 +439,7 @@ the <tt><nobr>cd</nobr></tt> commands only affect commands that are on the same
 line. This may be fixed one day in the future.</p>
 
 
-<h2>Patches</h2>
+<a name="patches"><h2>Patches</h2></a>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension

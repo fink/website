@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/14 14:20:49';
+$cvs_date = 'Date: 2001/07/29 15:31:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -12,7 +12,7 @@ include "header.inc";
 
 
 
-<h2>Package Licenses</h2>
+<a name="licenses"><h2>Package Licenses</h2></a>
 <p>
 The packages included in Fink come with a wide variety of licenses.
 Most of them place restrictions on redistributing the full source and
@@ -83,11 +83,16 @@ form for free use, but don't allow free redistribution.</li>
 Use this for commercial packages (e.g. Freeware, Shareware) that do
 not allow free redistribution of source or binaries.</li>
 
+<li><tt><nobr>Public Domain</nobr></tt> - for packages that are in the Public
+Domain, i.e. the author has given up his copyright on the code. These
+packages don't have licenses at all and anyone can do anything with
+them.</li>
+
 </ul>
 
 
 
-<h2>Base System Interference</h2>
+<a name="prefix"><h2>Base System Interference</h2></a>
 <p>
 Fink is an add-on distribution that is installed in a directory
 separate from the base system.
@@ -106,7 +111,8 @@ Fink directory are deleted when the package is removed.
 
 
 
-
+<p align="right">
+Next: <a href="fslayout.php">Filesystem Layout</a></p>
 
 
 <?
