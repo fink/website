@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/20 06:14:35';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/21 06:50:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -464,10 +464,10 @@ expect. See ghostscript, vim and tetex for examples of usage.
 </p>
 </td></tr><tr valign="top"><td>SourceRename</td><td>
 <p>
-This field can renames a source tar ball on the fly. This is useful
+This field can rename a source tarball on the fly. This is useful
 if for example the version of the source is encoded in the directory name on
-the server, but the tar ball itself has the same name for all versions, e.g.
-://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+the server, but the tarball itself has the same name for all versions, e.g.
+<code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>. To circumvent the problems
 caused by this, you would then use something like
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/20 06:14:35';
+$cvs_date = 'Date: 2004/07/21 06:30:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -222,7 +222,7 @@ Normalement, une archive tar auxiliaire est extraite dans le même répertoire q
 </p>
 </td></tr><tr valign="top"><td>SourceRename</td><td>
 <p>
-Ce champ renomme une archive tar à la volée. Ceci est utile, par exemple, lorsque la version du source est encodée dans le nom du répertoire du serveur, mais que l'archive elle-même porte le même nom pour toutes les versions, comme //www.foobar.org/coolapp/1.2.3/source.tar.gz. Pour résoudre les problèmes que cela cause, vous pouvez utiliser quelque chose de similaire à :
+Ce champ renomme une archive tar à la volée. Ceci est utile, par exemple, lorsque la version du source est encodée dans le nom du répertoire du serveur, mais que l'archive elle-même porte le même nom pour toutes les versions, comme <code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>. Pour résoudre les problèmes que cela cause, vous pouvez utiliser quelque chose de similaire à :
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>

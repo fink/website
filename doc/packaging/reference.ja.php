@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/10 08:22:40';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/21 06:30:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -431,7 +431,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
 							tar ボールそのものはどのバージョンでも同じ名前のときだ．
-							(例えば ://www.foobar.org/coolapp/1.2.3/source.tar.gz というとき)
+							(例えば <code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code> というとき)
 							このことで起きる問題を回避するためには次のようにすればよい．
 						</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>

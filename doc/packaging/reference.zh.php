@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_date = 'Date: 2004/07/21 06:30:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 
@@ -300,7 +300,7 @@ Primary: ftp://ftp.barbarorg/pub/
 </td></tr><tr valign="top"><td>SourceRename</td><td>
 <p>
 这个字段可以在下载过程中改变源程序压缩档的名字。它经常用于在服务器上用目录来区别不同的版本，但压缩档的名字却都是相同的场合。例如：
-://www.foobar.org/coolapp/1.2.3/source.tar.gz。要解决这个问题，你可以使用：
+<code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>。要解决这个问题，你可以使用：
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
