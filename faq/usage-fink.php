@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/11/16 18:56:20';
+$cvs_date = 'Date: 2003/11/20 03:44:59';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -323,6 +323,42 @@ fink selfupdate-cvs</pre></div>
 <a name="spaces-in-directory">
 <div class="question"><p><b>Q4.23: Can I put Fink in a volume or directory with a space in its name?</b></p></div>
 <div class="answer"><p><b>A:</b> We recommend against putting your Fink directory tree inside a directory with spaces in its name.  It's just not worth the hassle.</p></div>
+</a>
+<a name="packages-gz"><div class="question"><p><b>Q4.24: When I try to do a binary update, there are many messages with "File not found"</b></p></div>
+<div class="answer"><p><b>A:</b> If you see something like the following:</p><pre>
+Err file: local/main Packages
+  File not found
+Ign file: local/main Release
+Err file: stable/main Packages
+  File not found
+Ign file: stable/main Release
+Err file: stable/crypto Packages
+  File not found
+Ign file: stable/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/release/main Packages
+Hit http://us.dl.sourceforge.net 10.3/release/main Release
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/current/main Packages
+Hit http://us.dl.sourceforge.net 10.3/current/main Release
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+Failed to fetch
+file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages  
+File not found
+Failed to fetch
+file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages  
+File not found
+Failed to fetch
+file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages  
+File not found
+Reading Package Lists... Done
+Building Dependency Tree... Done
+E: Some index files failed to download, they have been ignored, or old
+ones used instead.
+
+update available list script returned error exit status 1.
+</pre><p>then all you need to do is run <code>fink scanpackages</code>.  This generates the files that aren't being found.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-general.php">5 Compile Problems - General</a></p>

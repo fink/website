@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.148 2003/11/16 18:56:20 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.149 2003/11/20 03:44:59 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -771,6 +771,45 @@ fink selfupdate-cvs</codeblock>
 </question>
 <answer>
 <p>We recommend against putting your Fink directory tree inside a directory with spaces in its name.  It's just not worth the hassle.</p>
+</answer>
+</faqentry>
+<faqentry name="packages-gz"><question><p>When I try to do a binary update, there are many messages with &quot;File not found&quot;</p></question>
+<answer><p>If you see something like the following:</p>
+<codeblock>
+Err file: local/main Packages
+  File not found
+Ign file: local/main Release
+Err file: stable/main Packages
+  File not found
+Ign file: stable/main Release
+Err file: stable/crypto Packages
+  File not found
+Ign file: stable/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/release/main Packages
+Hit http://us.dl.sourceforge.net 10.3/release/main Release
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/current/main Packages
+Hit http://us.dl.sourceforge.net 10.3/current/main Release
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+Failed to fetch
+file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages  
+File not found
+Failed to fetch
+file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages  
+File not found
+Failed to fetch
+file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages  
+File not found
+Reading Package Lists... Done
+Building Dependency Tree... Done
+E: Some index files failed to download, they have been ignored, or old
+ones used instead.
+
+update available list script returned error exit status 1.
+</codeblock>
+<p>then all you need to do is run <code>fink scanpackages</code>.  This generates the files that aren't being found.</p>
 </answer>
 </faqentry>
 </chapter>

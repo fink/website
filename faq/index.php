@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/11/16 18:56:20';
+$cvs_date = 'Date: 2003/11/20 03:44:59';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -85,6 +85,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#perl-undefined-symbol">4.21 Why do I get a bunch of "dyld: perl undefined symbols" errors when I run Fink commands?</a></li>
 <li><a href="usage-fink.php#cant-upgrade">4.22 I can't seem to update Fink's version.</a></li>
 <li><a href="usage-fink.php#spaces-in-directory">4.23 Can I put Fink in a volume or directory with a space in its name?</a></li>
+<li><a href="usage-fink.php#packages-gz">4.24 When I try to do a binary update, there are many messages with "File not found"</a></li>
 </ul>
 <li><a href="comp-general.php"><b>5 Compile Problems - General</b></a></li>
 <ul>
@@ -149,7 +150,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.13 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.148 2003/11/16 18:56:20 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.149 2003/11/20 03:44:59 alexkhansen Exp $</i></p>
 
 
 <?
