@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:45';
+$cvs_date = 'Date: 2004/03/10 22:55:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 include_once "header.inc";
@@ -12,7 +12,7 @@ include_once "header.inc";
     
     <h2><a name="using">6.1 使用 Fink 工具</a></h2>
       
-      <p><code>fink</code> 工具使用几个后缀命令来处理源程序发行包。其中的一些需要至少有一个软件包名称，但同时可以处理多个软件包。你可以简单地应用软件包的名称（例如，　gimp），或包括版本号的全名（例如 gimp-1.2.1 或 gimp-1.2.1-3）。在没有指明版本的情况下，Fink 会自动选择最新的版本。其它还具有不同的选项。</p>
+      <p><code>fink</code> 工具使用几个后缀命令来处理源程序发行包。其中的一些需要至少有一个软件包名称，但同时可以处理多个软件包。你可以简单地应用软件包的名称（例如，　gimp），或包括版本号的全名（例如 gimp-1.2.1) 或包含版本号和修订版号的名称 (例如 gimp-1.2.1-3）。在没有指明版本的情况下，Fink 会自动选择最新的版本。其它还具有不同的选项。</p>
       <p>下面是 <code>fink</code> 工具的命令清单：</p>
     
     <h2><a name="install">6.2 install</a></h2>
@@ -120,7 +120,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     
     <h2><a name="fetch-missing">6.10 fetch-missing</a></h2>
       
-      <p>下载 <b>所有</b> 软件包源程序文件。这个命令只下载系统中没有的文件。</p>
+      <p>下载 <b>所有</b> 缺失的软件包源程序文件。这个命令只下载系统中没有的文件。</p>
     
     <h2><a name="build">6.11 build</a></h2>
       

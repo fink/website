@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink.conf";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:45';
+$cvs_date = 'Date: 2004/03/10 22:55:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
 include_once "header.inc";
@@ -126,7 +126,7 @@ Mac OS X 10.0 及更早的版本并不被支持。你不应该改变这个设置
         </li>
       </ul>
     
-    <h2><a name="downloding">5.5 下载设置</a></h2>
+    <h2><a name="downloading">5.5 下载设置</a></h2>
       
       <p>有几个设置会影响 Fink 下载软件包数据的方式。</p>
       <ul>

@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 安装";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:45';
+$cvs_date = 'Date: 2004/03/10 22:55:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 include_once "header.inc";
@@ -108,21 +108,21 @@ fink-0.x.x-full.tar.gz 压缩档的目录。
           <p>
    如果你使用 Bourne 风格的 shell （比如 sh，bash，zsh），把下面的几行添加到你的主目录下的 <code>.profile</code> 文件中（或者，如果你已经有一个 <code>.bash_profile</code> 文件，你也可以添加到那里）：
   </p>
-          <pre>source /sw/bin/init.sh</pre>
+          <pre>. /sw/bin/init.sh</pre>
           <p>
    如果你不知道如何添加，运行下面的命令：
   </p>
           <pre>cd
 pico .profile</pre>
           <p>
-   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>source /sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
+   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>. /sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
   </p>
         </li>
         <li>
           <p>
             C Shell（在 Mac OS X 10.2 或更早的版本是默认 Shell) </p>
           <p>
-   如果你使用 tcsh （Mac OS X　的默认），在文件<code>.cshrc</code>中添加下面一行：
+   如果你使用 tcsh，在你主目录下的<code>.cshrc</code>文件中添加下面一行：
   </p>
           <pre>source /sw/bin/init.csh</pre>
           <p>
@@ -145,10 +145,9 @@ pico .cshrc</pre>
               <p>这样，如果你要删除 <code>~/.tcshrc</code>，你还可以运行 Fink。</p>
             </li>
             <li>
-              <p>你曾经按照 <code>/usr/share/tcsh/examples/README</code>文档里面的要求进行操作。</p>
+              <p>你曾经按照 <code>/usr/share/tcsh/examples/README</code> 文档里面的要求进行操作。</p>
               <p>这些指南告诉你创建一个 <code>~/.tcshrc</code> 文件及一个 <code> ~/.login</code> 文件。这种情况下的问题是 <code>~/.login</code> 文件在 <code>~/.tcshrc</code> 文件之后运行，并用 source 语句引用 <code>/usr/share/tcsh/examples/login</code> 文件的内容。后者包括一条语句重写了你前面设置的 PATH 环境变量。在这种情况下，你需要做的是创建 <code>~/Library/init/tcsh/path</code>文件：</p>
-              <pre>mkdir ~/Library/init
-  mkdir ~/Library/init/tcsh
+              <pre>mkdir -p ~/Library/init/tcsh
   pico ~/library/init/tcsh/path</pre>
               <p>并加入：</p>
               <pre>source ~/.cshrc</pre>
@@ -163,7 +162,7 @@ pico .cshrc</pre>
       </ul>
       <p>
 注意这个脚本还添加了 <code>/usr/X11R6/bin</code> 和
-<code>/usr/X11R6/man</code> 到你的路径中，所以你可以在安装了 X11 以后使用它。
+<code>/usr/X11R6/man</code> 到你 PATH 环境变量中，使得你可以在安装了 X11 以后使用它。
 Fink 软件包可以添加它们自己的设置，例如，qt 软件会设置 QTDIR 环境变量。
 </p>
       <p>

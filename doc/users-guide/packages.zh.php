@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 软件包";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/07 01:55:45';
+$cvs_date = 'Date: 2004/03/10 22:55:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
 include_once "header.inc";
@@ -23,12 +23,12 @@ include_once "header.inc";
         <code>dselect</code> 是一个让你查看可用的软件包清单的程序，同时也可以选择你所需要安装的包。
 它在 Terminal.app 程序中运行，但会占用整个"屏幕" 并使用简单的键盘进行控制浏览。
 和其它软件包管理工具一样 <code>dselect</code> 需要
-root 用户权限，所以你需要在使用它之前转换成 root 或使用 sudo：
+root 用户权限，所以你需要(以具有管理员权限的帐号)使用 sudo：
 </p>
       <pre>sudo dselect</pre>
       <p>
         <b>注意：</b>
-        <code>dselect</code> 已知在 OS X 的终端程序中运行存在问题。你需要套在使用它前运行下面的命令，或把它们放到合适的启动文件中（例如 <code>.cshrc</code> 或 <code>.profile</code>）：</p>
+        <code>dselect</code> 已知在 Mac OS X 的终端程序中运行存在问题。你需要套在使用它前运行下面的命令，或把它们放到合适的启动文件中（例如 <code>.cshrc</code> 或 <code>.profile</code>）：</p>
       <p>对 tcsh 用户：</p>
       <pre>setenv TERM xterm-color</pre>
       <p>对 bash 用户：</p>
