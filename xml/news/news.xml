@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.54 2003/04/16 06:21:05 htodd Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.55 2003/04/16 22:36:13 dmrrsn Exp $</cvsid>
+
+<newsitem>
+	<date>2003-04-16</date>
+	<headline>Virex problem resolved</headline>
+	       <body>
+	       <p>McAfee has released Virex 7.2.1, which no longer
+overwrites the main Fink directory <code>/sw</code>.  Fink users should
+continue to avoid Virex 7.2.
+</p><p>Early reports indicate that upgrading Virex from 7.2 to 7.2.1
+still leaves some problems however.  If you upgrade Virex with Fink not
+installed, and subsequently
+wish to install Fink, you will need to delete the <code>/sw</code>
+directory by hand before installing.  And if you upgrade Virex with
+Fink already installed, you should immediately run
+<code>
+fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
+</code>
+to restore files which the Virex upgrade has deleted.
+</p>
+
+		</body>
+</newsitem>
 
 <newsitem>
 	<date>2003-04-14</date>

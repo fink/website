@@ -4,9 +4,31 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 15 Apr 2003 23:21:23 PDT</lastBuildDate>
+    <lastBuildDate>Wed, 16 Apr 2003 18:36:00 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Virex problem resolved</title>
+    <link>http://fink.sf.net/news/#2003-04-16%20Virex%20problem%20resolved</link>
+    <dc:date>2003-04-16</dc:date>
+    <description>
+	       McAfee has released Virex 7.2.1, which no longer
+overwrites the main Fink directory /sw.  Fink users should
+continue to avoid Virex 7.2.
+Early reports indicate that upgrading Virex from 7.2 to 7.2.1
+still leaves some problems however.  If you upgrade Virex with Fink not
+installed, and subsequently
+wish to install Fink, you will need to delete the /sw
+directory by hand before installing.  And if you upgrade Virex with
+Fink already installed, you should immediately run
+
+fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
+
+to restore files which the Virex upgrade has deleted.
+
+
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.5.2 released</title>
     <link>http://fink.sf.net/news/#2003-04-14%20Fink%200.5.2%20released</link>
@@ -385,27 +407,6 @@ software before using Fink.
     <description>
     
       Fink announces support for KDE. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full KDE Support In Fink announcement. 
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Bug in passwd package</title>
-    <link>http://fink.sf.net/news/#2002-05-03%20Bug%20in%20passwd%20package</link>
-    <dc:date>2002-05-03</dc:date>
-    <description>
-    
-      All Fink users are urged to update their  passwd  package to version 20020329 or newer. Older versions of the  passwd  package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering  dpkg -s passwd. If your version is oudated, you can update to the current one in two ways: 
-    
-    
-      
-        Via the binary distribution. First make sure you have the latest list of packages available:  sudo apt-get update. Then you can perform the actual update:  sudo apt-get install passwd. 
-      
-      
-        Via the source distribution. First make sure you have the latest set of package descriptions:  fink selfupdate-cvs. Then, update the passwd package:  fink update passwd 
-      
-    
-    
-      See Fink's FAQ, question 6.3, for more information about the passwd package. 
     
   </description>
   </item>

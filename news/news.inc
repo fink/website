@@ -1,4 +1,20 @@
-<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
+<a name="2003-04-16 Virex problem resolved"><span class="news-date">2003-04-16: </span><span class="news-headline">Virex problem resolved</span></a><?php gray_line(); ?>
+	       <p>McAfee has released Virex 7.2.1, which no longer
+overwrites the main Fink directory <code>/sw</code>.  Fink users should
+continue to avoid Virex 7.2.
+</p><p>Early reports indicate that upgrading Virex from 7.2 to 7.2.1
+still leaves some problems however.  If you upgrade Virex with Fink not
+installed, and subsequently
+wish to install Fink, you will need to delete the <code>/sw</code>
+directory by hand before installing.  And if you upgrade Virex with
+Fink already installed, you should immediately run
+<code>
+fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
+</code>
+to restore files which the Virex upgrade has deleted.
+</p>
+
+		<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
 	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <a href="http://fink.sourceforge.net/download.php">download</a> page.
 		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
 		The full announcement can be read on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</a> mailing list.
@@ -12,12 +28,4 @@ special instructions</a>.)</p>
 	<a href="http://osnews.com/story.php?news_id=3236">mini-interview</a> with
 	one of our project leaders, Max Horn. It contains some rather unusual questions,
 	so even if you know Fink fairly well, you might find it informative.
-</p><a name="2003-03-29 KDE 3.1.1 Final In Unstable"><span class="news-date">2003-03-29: </span><span class="news-headline">KDE 3.1.1 Final In Unstable</span></a><?php gray_line(); ?>
-	<p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
-<a href="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</a>.
-	Improvements over 3.1 final include many upstream bugfixes,
-	build improvements, koffice bugfixes, kmail crash fixes,
-	and other miscellaneous updates.  Binary packages will not
-	be available in time for the next binary distribution, but
-	will be released as an update shortly thereafter.
 </p>

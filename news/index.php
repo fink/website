@@ -1,14 +1,30 @@
 <?
 $title = "News";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/04/16 06:21:05';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/04/16 22:36:13';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
+<a name="2003-04-16 Virex problem resolved"><span class="news-date">2003-04-16: </span><span class="news-headline">Virex problem resolved</span></a><?php gray_line(); ?>
+	       <p>McAfee has released Virex 7.2.1, which no longer
+overwrites the main Fink directory <code>/sw</code>.  Fink users should
+continue to avoid Virex 7.2.
+</p><p>Early reports indicate that upgrading Virex from 7.2 to 7.2.1
+still leaves some problems however.  If you upgrade Virex with Fink not
+installed, and subsequently
+wish to install Fink, you will need to delete the <code>/sw</code>
+directory by hand before installing.  And if you upgrade Virex with
+Fink already installed, you should immediately run
+<code>
+fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
+</code>
+to restore files which the Virex upgrade has deleted.
+</p>
+
+		<a name="2003-04-14 Fink 0.5.2 released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
 	       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <a href="http://fink.sourceforge.net/download.php">download</a> page.
 		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
 		The full announcement can be read on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</a> mailing list.
