@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/15 23:58:46';
+$cvs_date = 'Date: 2004/03/24 22:14:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 include_once "header.inc";
@@ -192,6 +192,19 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 <div class="answer"><p><b>A:</b> 
 <code>gcc2</code> は gcc-2.95 のバーチャルパッケージです。
 gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p></div>
+</a>
+<a name="system-java">
+<div class="question"><p><b>Q6.18: Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
+と言っていますが、そのようなパッケージはありません。
+</b></p></div>
+<div class="answer"><p><b>A:</b> 
+バーチャルパッケージだからです。
+このエラーは、 Java が Software Update によって更新された場合に発生します。
+更新時にヘッダファイルが削除され、 -dev パッケージが作成されなくなるためです。
+</p><p>
+<a href="http://connect.apple.com">Apple</a> から、適切な <code>Java Developer Tools</code> パッケージをダウンロードする必要があります。
+この問題の場合は、 <code>Java 1.4.2 Developer Tools</code> です。
+</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php?phpLang=ja">7 コンパイルの問題 - 特定のバージョン</a></p>

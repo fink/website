@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/15 23:58:46';
+$cvs_date = 'Date: 2004/03/24 22:14:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 include_once "header.inc";
@@ -97,7 +97,10 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
 <div class="question"><p><b>Q9.9: GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</b></p></div>
 <div class="answer"><p><b>A:</b> GNOME 1.x <code>gnome-session</code> は自動的に <code>sawfish</code> ウィンドウマネージャーを呼出していましたが、 GNOEM 2.x では <code>~/.xinitrc</code>  で <code>gnome-session</code> の前に呼び出さなくてはなりません。</p><pre>...
 exec metacity &amp;
-exec gnome-session</pre></div>
+exec gnome-session</pre><p>
+注記: この問題は <b>GNOME 2.4</b> では発生しません。
+<code>gnome-session</code> を実行することでウィンドウマネージャーを呼び出すようになりました。
+</p></div>
 </a>
 <a name="apple-x11-no-windowbar">
 <div class="question"><p><b>Q9.10: Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</b></p></div>
@@ -171,6 +174,30 @@ sudo apt-get install fink</pre></li>
 		<li>好きな場所に保存</li>
 		<li>実行: <pre>perl fink-x11-debug</pre></li>
 		</ul></div>
+</a>
+<a name="wants-xfree86-on-upgrade">
+<div class="question"><p><b>Q9.13: 
+    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
+    </b></p></div>
+<div class="answer"><p><b>A:</b> 
+    以下の古い代替パッケージのうちいずれかを削除する必要があります:
+    <code>system-xfree86</code>, <code>system-xfree86-42</code>, 
+    <code>system-xfree86-43</code> 。
+    自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
+    他のパッケージが <code>system-xfree86</code> に依存しているため、以下のコマンドを使い
+    </p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>
+    古いバージョンを削除します。
+    インストールの確認は、
+    </p><pre>fink-virtual-pkgs</pre><p>
+    とし、 <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code>
+    の項があり、 provides: の行に <code>x11</code> と <code>x11-shlibs</code> がそれぞれあるか確認します。
+    X11SDK もインストールされている場合、 <code>Package: system-xfree86-dev</code> も確認します。
+    </p><p>
+    これでも問題が解決されない場合、上の
+    <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> と
+    <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a>
+    を参照してください。
+    </p></div>
 </a>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/15 23:58:46';
+$cvs_date = 'Date: 2004/03/24 22:14:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 include_once "header.inc";
@@ -31,7 +31,10 @@ dselect からパッケージを選択してインストールする場合、 ro
 <div class="question"><p><b>Q5.3: ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</b></p></div>
 <div class="answer"><p><b>A:</b> パッケージ <b>cvs-proxy</b> は HTTP プロキシを介して通ります。</p><ul>
 <li>
-<p>まず、  <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。</p>
+<p>
+まず、 <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> 
+ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
+</p>
 </li>
 <li>
 <p><b>cvs-proxy</b> パッケージを、次のコマンドでインストールする:</p>
@@ -207,7 +210,13 @@ Fink が自動的にここを探しにいきます。
 <code>/sw/bin/pathsetup.command</code> スクリプトを実行
 (ファインダからダブルクリックするか、ターミナルから実行)
 すると、初期の設定を検出しようとします。
-この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。</p><p>このエラーが Apple X11 ターミナルでのみ出る場合，
+この後、新規ターミナルを開いて環境変数が読み込まれているか確認して下さい。
+<b>注記:</b>
+<code>fink-0.18.3</code> と <code>fink-0.19.2</code> では、スクリプトは
+<code>/sw/bin/pathsetup.sh</code>
+になりました。
+必ずターミナル上で実行して下さい。
+</p><p>このエラーが Apple X11 ターミナルでのみ出る場合，
 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc%20">.xinitrc</a> 
 というファイルを作成し、</p><pre>. /sw/bin/init.sh</pre><p>の一行を最初の方
 (他のプログラムが実行される前)
@@ -275,9 +284,14 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </a>
 <a name="perl-undefined-symbol">
 <div class="question"><p><b>Q5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
-<div class="answer"><p><b>A:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: _Perl_safefree
-        _Perl_safemalloc _Perl_saferealloc _Perl_sv_2pv _perl_call_sv
-        _perl_eval_sv _perl_get_sv</pre><p>がでる場合、 Perl を アップデートしていて、 <code>storable-pm</code> をアップグレードする必要があります。
+<div class="answer"><p><b>A:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: 
+_Perl_safefree
+_Perl_safemalloc
+_Perl_saferealloc
+_Perl_sv_2pv
+_perl_call_sv
+_perl_eval_sv
+_perl_get_sv</pre><p>がでる場合、 Perl を アップデートしていて、 <code>storable-pm</code> をアップグレードする必要があります。
 Fink をアップグレードしてください。
 インストール時に、 <code>perl-core</code> と <code>system-perl</code> のどちらをインストールするか聞かれるので、後者を選択してください。
 さらに、 <code>storable-pm</code> もアップデートしてください。</p><p>OS 10.1.x では、次のコマンドを実行します (Developer Tools が必要です):</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
@@ -297,13 +311,13 @@ fink selfupdate-cvs</pre></div>
 <div class="question"><p><b>Q5.24: バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</b></p></div>
 <div class="answer"><p><b>A:</b> もし次のようであれば:</p><pre>
 Err file: local/main Packages
-  File not found
+File not found
 Ign file: local/main Release
 Err file: stable/main Packages
-  File not found
+File not found
 Ign file: stable/main Release
 Err file: stable/crypto Packages
-  File not found
+File not found
 Ign file: stable/crypto Release
 Hit http://us.dl.sourceforge.net 10.3/release/main Packages
 Hit http://us.dl.sourceforge.net 10.3/release/main Release
