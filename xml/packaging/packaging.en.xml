@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.30 2004/05/22 20:41:52 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.31 2004/06/02 01:56:41 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -1583,7 +1583,7 @@ nam-US: ftp://ftp.fooquux.com/pub/bar
 asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
-&gt;&gt;</codeblock>
+&lt;&lt;</codeblock>
 </itemd></item>
 
 <item><itemt>Source</itemt>
