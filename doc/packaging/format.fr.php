@@ -95,7 +95,7 @@ Certains champs prennent une valeur booléenne ; sont traitées comme vraies, le
 Pour vous rendre la vie plus facile, Fink gère un jeu de raccourcis sur certains champs.
 Pour lever toute ambiguïté, vous pouvez utiliser des accolades autour des caractères qui doivent être considérés comme des raccourcis. Par exemple, <code>%{n}</code> a la même signification que <code>%n</code>.
 Les raccourcis disponibles sont les suivants :</p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Raccourcis</th><th align="left">Signification</th></tr><tr valign="top"><td>%n</td><td>
 <p>
 le <b>n</b>om du paquet actif
 </p>

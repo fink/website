@@ -100,26 +100,23 @@ defined in indirectly referenced dynamic library
     
     <h2><a name="official-source">3.4 Source Officiel</a></h2>
       
-      <p>NdT : sera traduit lorsque le texte anglais sera mis à jour.
-If you've got the time to spare, you can build XFree86 4.2.0 from source.
-You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in the directory <code>4.2.0/source</code>.
-Grab all three <code>X420src-#.tgz</code> tarballs and extract them in the same directory.
-You can customize the build by putting macro definitions in the file <code>config/cf/host.def</code> in the XFree86 source tree.
+      <p>Si vous avez du temps à perdre, vous pouvez compiler XFree86 4.2.0 à partir du source.
+      Vous trouverez le source sur un des miroirs cités sur <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> dans le répertoire <code>4.2.0/source</code>.
+Téléchargez les trois archives tar <code>X420src-#.tgz</code> et décompressez-les dans un même répertoire.
+Vous pouvez adapter la compilation à vos besoins en plaçant des définitions de macros dans le fichier <code>config/cf/host.def</code> situé dans l'arborescence source de XFree86.
 
-See <code>config/cf/darwin.cf</code> for some hints.
-(Note: Only the macros that have an #ifndef check around them can be overwritten in host.def.)
+Voir le fichier <code>config/cf/darwin.cf</code> pour quelques explications.
+(Note : Seules les macros insérées dans un #ifndef peuvent être modifiées dans host.def.)
 </p>
       <p>
-When you're happy with your configuration, compile and install XFree86
-with the following commands:
+Quand vous aurez fini la configuration, compilez et installez XFree86 à l'aide des commandes suivantes :
 </p>
       <pre>make World
 sudo make install install.man</pre>
-      <p>To update to 4.2.1.1, follow the instructions in the <a href="#official-binary">Official Binaries</a> section.</p>
-      <p>To install 4.3.0, follow the above instructions, replacing "2" with "3", but don't do the 4.2.1.1 update procedure.</p>
+      <p>Pour passer en version 4.2.1.1, suivez les instructions de la section <a href="#official-binary">Binaires officiels</a>.</p>
+      <p>Pour installer la version 4.3.0, suivez les instructions ci-dessus en remplaçant "2" par "3", et n'utilisez surtout pas la procédure de mise à jour 4.2.1.1.</p>
       <p>
-As with the official binaries, you've now got XFree86 with a server
-that can do fullscreen, or rootless under Mac OS X.
+Tout comme avec les binaires officiels, vous obtiendrez XFree86 avec un serveur en mode plein écran ou sans racine sous Mac OS X.
 </p>
     
     <h2><a name="latest-cvs">3.5 Source le plus récent</a></h2>
@@ -129,7 +126,7 @@ Si vous avez le temps et des nerfs à toute épreuve, vous pouvez utiliser la de
 Notez que le code est mis à jour constamment ; d'un jour à l'autre il est modifié.
 </p>
       <p>
-Afin de l'installer, suivez les instructions sur <a href="http://www.xfree86.org/cvs/">XFree86 CVS</a> pour télécharger le module<code>xc</code>.
+Afin de l'installer, suivez les instructions sur <a href="http://www.xfree86.org/cvs/">XFree86 CVS</a> pour télécharger le module <code>xc</code>.
 Puis suivez les instructions de compilation du source ci-dessus.
 </p>
     
@@ -139,81 +136,67 @@ Puis suivez les instructions de compilation du source ci-dessus.
 L'installeur téléchargeable qui fut proposé par l'équipe MacGimp en 2001 ne contenait pas XFree86. (Il écrasait, malgré tout, certains fichiers de configuration de XFree86.)
 </p>
       <p>
-Le CD vendu par <a href="http://www.macgimp.com/">MacGimp, Inc.</a> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.
+Le CD vendu par <a href="http://www.macgimp.com/">MacGimp, Inc.</a> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des versions 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.
 </p>
     
-    <h2><a name="switching-x11">3.7 Replacing X11</a></h2>
+    <h2><a name="switching-x11">3.7 Remplacement de X11</a></h2>
       
       <p>
-If you have already installed one of the Fink X11 packages but for one reason or another
-have decided you need to remove one and replace it with another, the procedure is pretty
-straightforward.  You will have to force a removal of the old packages, and then install the
-new, to keep your dpkg database consistent.
+Si vous avez installé l'un des paquets X11 de Fink, mais que, pour une raison ou une autre, vous décidez de le supprimer pour le remplacer par un autre, la procédure à suivre est simple. Vous devez forcer la suppression des anciens paquets, puis installer les nouveaux de façon à préserver la cohérence de la base de données dpkg.
 </p>
       <p>
-There are two different ways to do this:
+Il y a deux façons de le faire :
 </p>
       <ol>
         <li>
-          <p>Use FinkCommander</p>
+          <p>Via FinkCommander</p>
           <p>
-   If you are using <a href="http://finkcommander.sourceforge.net/">FinkCommander</a>, you
-   can force removal through the menu.  For example, if you have
-   <code>xfree86-rootless</code> installed, but want the threaded version, you
-   can select your <code>xfree86-rootless</code>,
-   <code>xfree86-rootless-shlibs</code>, <code>xfree86-base</code>, and
-   <code>xfree86-base-shlibs</code> packages, and then run:
+Si vous utilisez  <a href="http://finkcommander.sourceforge.net/">FinkCommander</a>, vous pouvez forcer la suppression via le menu. Par exemple, si vous avez installé <code>xfree86-rootless</code> et que vous vouliez installer la version gérant les processus légers, sélectionnez les paquets <code>xfree86-rootless</code>, <code>xfree86-rootless-shlibs</code>, <code>xfree86-base</code> et <code>xfree86-base-shlibs</code>, puis lancez :
   </p>
           <pre>Source -&gt; Force Remove</pre>
         </li>
         <li>
-          <p>Manually Remove from the Command-Line</p>
+          <p>Manuellement via la ligne de commande</p>
           <p>
-   To manually, remove them, you use the <code>dpkg</code> with the --force-depends
-   option, like so:
+Pour faire une suppression manuelle, utilisez <code>dpkg</code> avec l'option --force-depends :
   </p>
           <pre>sudo dpkg -r --force-depends xfree86-rootless\ 
 xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
           <p>
-   Note that if you have apps that require threaded XFree86, you may have trouble with your
-   dpkg database if you force remove it and install a different XFree86 package or placeholder
-   package.
+Notez que si vous utilisez des applications qui nécessitent la version de XFree86 qui gère les processus légers, vous risquez d'avoir quelques problèmes avec la base de données dpkg, si vous supprimez de force cette version et installez un autre paquet XFree86 ou un paquet fantôme le représentant.
   </p>
         </li>
       </ol>
-      <p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it via the command line:</p>
+      <p>Si vous utilisez une version de X11 qui n'a pas été installé via Fink, vous devez la supprimer via la ligne de commande :</p>
       <pre>sudo rm -rf /usr/X11R6 /etc/X11</pre>
-      <p>The above holds true for removing any flavor of X11 that you didn't install through Fink.  You will also need to remove <code>XDarwin.app</code> | 
-<code>X11.app</code>, depending on what you had installed.  Make sure to check your <code>.xinitrc</code> if you are removing Apple's X11 to 
-make sure that you aren't trying to run <code>quartz-wm</code>.  You can now install whatever new X11 variety you want, manually or via Fink.</p>
+      <p>Ceci est vrai pour tout paquet X11 non installé via Fink. Vous devez aussi supprimer <code>XDarwin.app</code> ou <code>X11.app</code>, suivant l'installation effectuée. Examinez le fichier <code>.xinitrc</code> quand vous supprimez X11 d'Apple pour vous assurer qu'il ne lance pas <code>quartz-wm</code>.  Vous pouvez ensuite installer la nouvelle variante X11 désirée, manuellement ou via Fink.</p>
     
-    <h2><a name="fink-summary">3.8 Fink package summary</a></h2>
+    <h2><a name="fink-summary">3.8 Résumé des paquets Fink disponibles</a></h2>
       
       <p>
-A quick summary of the install options and the Fink packages you
-should install:
+Voici un court résumé des options d'installation et des paquets Fink à installer :
 </p>
-      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.2.x built via Fink</td><td>
+      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Type d'installation</th><th align="left">Paquets Fink</th></tr><tr valign="top"><td>4.2.x compilé via Fink</td><td>
             <p>
-              <code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
-            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
-          </td></tr><tr valign="top"><td>4.3.x built via Fink</td><td>
+              <code>xfree86-base</code> et <code>xfree86-rootless</code> (et les paquets <code>-shlibs</code> associés)</p>
+            <p>ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> associés)</p>
+          </td></tr><tr valign="top"><td>4.3.x compilé via Fink</td><td>
             <p>
-              <code>xfree86</code> and <code>xfree86-shlibs</code>
+              <code>xfree86</code> et <code>xfree86-shlibs</code>
             </p>
-          </td></tr><tr valign="top"><td>4.x official binaries</td><td>
+          </td></tr><tr valign="top"><td>Binaires officiels 4.x </td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
-          </td></tr><tr valign="top"><td>4.x built from source, or from the latest CVS source</td><td>
+              <code>system-xfree86</code> seulement (+ paquets associés)</p>
+          </td></tr><tr valign="top"><td>4.x compilé à partir du source ou de la dernière version CVS</td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
-          </td></tr><tr valign="top"><td>4.2.x from Apple</td><td>
+              <code>system-xfree86</code> seulement (+ paquets associés)</p>
+          </td></tr><tr valign="top"><td>4.2.x d'Apple</td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)
+              <code>system-xfree86</code> seulement (+ paquets associés)
 </p>
-          </td></tr><tr valign="top"><td>4.3.x from Apple</td><td>
+          </td></tr><tr valign="top"><td>4.3.x d'Apple</td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)
+              <code>system-xfree86</code> seulement (+ paquets associés)
 </p>
           </td></tr></table>
     

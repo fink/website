@@ -28,7 +28,7 @@ Fink suit l'esprit de <a href="http://www.pathname.com/fhs/">Filesystem Hierarch
 Les fichiers doivent être placés dans les sous-répertoires suivant de l'arborescence :
 </p>
 
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><code>/sw/bin</code></td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Répertoire</th><th align="left">Utilisation</th></tr><tr valign="top"><td><code>/sw/bin</code></td><td>
 <p>
 Ce répertoire est dédié aux exécutables généraux. Il n'existe pas de sous-répertoire.</p>
 </td></tr><tr valign="top"><td><code>/sw/sbin</code></td><td>
