@@ -4,13 +4,13 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.1 2004/07/15 16:16:12 michga Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.2 2004/07/16 09:02:58 michga Exp $</cvsid>
 
 <preface>
 <p>
 This document is for people who want to create a package for <tt>Fink</tt>. It
 complements the 
-<link url="http://fink.sourceforge.net/doc/packaging/">Packaging Manual</link>, 
+<link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>, 
 which is a more detailed and comprehensive document.
 </p>
 <p>
@@ -63,7 +63,7 @@ Using Fink: A Developer's How To</link>
 <!-- (<link url="example.php">Example 1</link>, <link url="example2.php">Example 2</link>) -->
 <!-- provided here. -->
 Read and try to understand the 
-<link url="example.php">example provided here</link>.
+<xref chapter="example" section="basics"></xref>.
 </li>
 <li>
 Look at other, similar packages in your 
@@ -81,7 +81,7 @@ if there is a matching request. You might find valuable information there.
 </li>
 <li>
 Maybe browse the 
-<link url="http://fink.sourceforge.net/doc/packaging/">Packaging Manual</link>
+<link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>
 if you think you need more detailed information.
 </li>
 </ul>
@@ -117,11 +117,11 @@ finkdev% fink index
 </codeblock>
 <p>
 If you need more information read the 
-<link url="http://fink.sourceforge.net/doc/packaging/">Packaging Manual</link>
+<link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>
 or use one or more of different 
-<link url="http://fink.sourceforge.net/help/">help sources</link>.
+<link url="http://fink.sourceforge.net/help/index.php">help sources</link>.
 You should also subscribe to the 
-<link url="http://fink.sourceforge.net/lists/">fink-devel</link>
+<link url="http://fink.sourceforge.net/lists/index.php">fink-devel</link>
 mailing list.
 </p>
 </section>
@@ -148,7 +148,7 @@ finkdev% fink build packagename
 </codeblock>
 <p>
 Watch the output of the build process carefully for errors or warnings.
-Especially make sure that everything is installed into the build directory
+Especially make sure that everything is installed into the destination directory
 (which is located at <tt>/sw/src/root-packagename-%v-%r/sw</tt>) from where
 fink builds the binary package. Nothing should be installed directly into
 <tt>/sw</tt>.
@@ -158,6 +158,9 @@ If you use the <tt>--keep-build-dir</tt> or <tt>-k</tt> option to fink, it will
 keep the build directory. This is where fink expands the downloaded source and 
 where the package gets built. This might help if you need to debug the build
 process. Type <tt>man fink</tt> for details.
+</p>
+<p>
+You may also want to use the <tt>--keep-root-dir</tt> or <tt>-K</tt> option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
 </p>
 <p>
 If the build succeeds check the content of the binary package with:
@@ -587,8 +590,8 @@ finkdev% maxwell
 <p>
 Congratulations, you just finished your first Fink package! Now try to
 package something yourself by following the 
-<link url="http://fink.sourceforge.net/doc/quick-start-pkg/">
-Quick Start Guide</link> from the beginning.
+<link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">
+Packaging tutorial</link> from the beginning.
 </p>
 <p>
 We are looking forward to your contributions to Fink!
