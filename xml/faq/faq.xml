@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.100 2003/03/15 02:20:38 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.101 2003/03/19 13:57:35 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -960,12 +960,26 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </faqentry>
 <faqentry name="apple-x11" >
 <question>
-<p>I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <filename>/usr/X11R6/lib/libX11.dylib</filename>, <filename>/usr/X11R6/lib/libXpm.dylib</filename>, <filename>/usr/X11R6/lib/libXaw.dylib</filename>, and <filename>/usr/X11R6/include/X11/Xlib.h</filename> are missing.</p>
-</question>
+<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p></question>
 <answer>
-<p>You need to install the SDK package as well as the User package. The SDK is available from <link url="http://www.apple.com/macosx/x11/download/" >the Apple X11 downoad page</link> (the link is in a box at the lower right corner labeled <em>X11 for Mac OS X Public Beta SDK</em>).</p>
+<p>If you get error messages like the following:</p>
+<codeblock>- missing /usr/X11R6/lib/libX11.dylib
+- missing /usr/X11R6/lib/libXpm.dylib
+- missing /usr/X11R6/lib/libXaw.dylib
+- missing /usr/X11R6/include/X11/Xlib.h
+
+Your XFree86 installation is missing or incomplete. Please make sure you have
+an XFree86 release installed and retry the installation of the system-xfree86
+package.
+</codeblock>
+<p>then you need to install the SDK package as well as the User package. The SDK is available from <link url="http://www.apple.com/macosx/x11/download/" >the Apple X11 downoad page</link> (the link is in a box at the lower right corner labeled <em>X11 for Mac OS X Public Beta SDK</em>).</p>
+<p>If, on the other hand, you get the following message:</p>
+<codeblock>An error occurred trying to find your XFree86 installation's
+version.  This really shouldn't happen, so I'm bailing.  :(</codeblock>
+<p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
 </answer>
 </faqentry>
+
 <faqentry name="automake-autoconf" >
 <question>
 <p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p>

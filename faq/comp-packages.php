@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/15 02:20:38';
+$cvs_date = 'Date: 2003/03/19 13:57:35';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -52,9 +52,19 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <div class="answer"><p><b>A:</b> Check and see if you have <code>freetype2-2.1.3-1</code> installed.  This was made available for a short time, but wasn't backwards compatible with <code>pil</code>, among other packages, and was removed.  Find and delete <code>freetype2_2.1.3-1_darwin-powerpc.deb</code>, and then you can downgrade it with <code>fink install freetype2-2.0.9-1</code>.</p></div>
 </a>
 <a name="apple-x11">
-<div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <code>/usr/X11R6/lib/libX11.dylib</code>, <code>/usr/X11R6/lib/libXpm.dylib</code>, <code>/usr/X11R6/lib/libXaw.dylib</code>, and <code>/usr/X11R6/include/X11/Xlib.h</code> are missing.</b></p></div>
-<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <a href="http://www.apple.com/macosx/x11/download/">the Apple X11 downoad page</a> (the link is in a box at the lower right corner labeled <b>X11 for Mac OS X Public Beta SDK</b>).</p></div>
+<div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.</b></p></div>
+<div class="answer"><p><b>A:</b> If you get error messages like the following:</p><pre>- missing /usr/X11R6/lib/libX11.dylib
+- missing /usr/X11R6/lib/libXpm.dylib
+- missing /usr/X11R6/lib/libXaw.dylib
+- missing /usr/X11R6/include/X11/Xlib.h
+
+Your XFree86 installation is missing or incomplete. Please make sure you have
+an XFree86 release installed and retry the installation of the system-xfree86
+package.
+</pre><p>then you need to install the SDK package as well as the User package. The SDK is available from <a href="http://www.apple.com/macosx/x11/download/">the Apple X11 downoad page</a> (the link is in a box at the lower right corner labeled <b>X11 for Mac OS X Public Beta SDK</b>).</p><p>If, on the other hand, you get the following message:</p><pre>An error occurred trying to find your XFree86 installation's
+version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <code>system-xfree86-4.2-11</code> or later.</p></div>
 </a>
+
 <a name="automake-autoconf">
 <div class="question"><p><b>Q5.6: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
 <div class="answer"><p><b>A:</b> Update whichever package is giving the dependency error, e.g. if you get a message like:</p><pre>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
