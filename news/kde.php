@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/07/05 02:28:22 $';
+$cvs_date = '$Date: 2002/07/07 19:49:49 $';
 
 include "header.inc";
 ?>
@@ -80,12 +80,37 @@ Note that you will need to do a "dist-upgrade", and not just an "upgrade",
 because there are new dependencies (CUPS, among other things).
 </p>
 
+<h1>Before You Start -- Getting XFree86</h1>
+<p>
+ <strong>Be sure you know which XFree86 server you will be using!</strong>
+</p>
+
+<ul>
+ <li>
+  <p> If you already have XDarwin installed from another source (XonX, hand-built, or
+  any number of other places), install the "<b>system-xfree86</b>" package, so that
+  fink knows you already have a set of XFree86 libraries and an X server.  </p>
+ </li>
+ <li>
+  <p> If you are planning on using OroborOSX, you will still need the XFree86 libraries,
+  and so we suggest you install "<b>xfree86-base</b>" along side your OroborOSX X
+  server. </p>
+ </li>
+ <li>
+  <p> If you have no XFree86 server installed at all, install
+  "<b>xfree86-rootless</b>". </p>
+ </li>
+</ul>
+
 <h1>Installing KDE On Fink</h1>
 
 <p>
  First, make sure you are comfortable with the instructions on 
  building and/or installing packages in the <a
  href="http://fink.sourceforge.net/doc/users-guide/index.php">Fink User's Guide</a>.
+ <font color="#ff0000">This is TFM!  If you get on the discussion list or IRC and ask
+ a question that is already in the documentation, you are likely going to get pointed
+ here.  Please read the documentation before asking questions.</font>
 </p>
 
 <p>
@@ -115,7 +140,10 @@ because there are new dependencies (CUPS, among other things).
 	 running it, it may ask you some questions.  If you don't know what to answer,
 	 the defaults are perfectly safe. </p> </li>
 	<li> <p><strong> Install KDE. </strong></p>
-	 <p> If you want to install the base KDE system, run "<b><tt>fink install
+         <p> First, install the XFree86 server you decided to use in the <b>Before
+         You Start</b> section above, using "<b><tt>fink install
+         &lt;your_choice&gt;</tt></b>". </p>
+	 <p> Then, if you want to install the base KDE system, run "<b><tt>fink install
 	 kdebase3</tt></b>" (or, if you have crypto support, "<b><tt>fink install
 	 kdebase3-ssl</tt></b>").  If you want to build all of the official KDE
 	 distribution that has been ported, there is a convenience package that
@@ -155,13 +183,15 @@ because there are new dependencies (CUPS, among other things).
    will update the local list of all available binary packages.</p>
   </li>
   <li>
-   If all went well, you should now be able to install any of the KDE packages. To
+   If all went well, you should now be able to install any of the KDE packages. First,
+   install the XFree86 server you decided to use in the <b>Before You Start</b> section
+   above, using "<b><tt>sudo apt-get install &lt;your_choice&gt;</tt></b>".  Then, to
    install everything up to the the base set of packages required to run KDE
-   apps, run <b><tt>sudo apt-get install kdebase3</tt></b> (or
-   <b><tt>sudo apt-get install kdebase3-ssl</tt></b> if you enabled crypto support in step 1).
+   apps, run "<b><tt>sudo apt-get install kdebase3</tt></b>" (or
+   "<b><tt>sudo apt-get install kdebase3-ssl</tt></b>" if you enabled crypto support in step 1).
    If you want to install all of the official KDE packages that have been
-   ported so far, run <b><tt>sudo apt-get install bundle-kde</tt></b> (or
-   <b><tt>sudo apt-get install bundle-kde-ssl</tt></b>).  Alternatively
+   ported so far, run "<b><tt>sudo apt-get install bundle-kde</tt></b>" (or
+   "<b><tt>sudo apt-get install bundle-kde-ssl</tt></b>").  Alternatively
    you can also select and install individual packages via the <b><tt>dselect</tt></b>
    command in an interactive fashion.
   </li>
@@ -183,10 +213,10 @@ because there are new dependencies (CUPS, among other things).
  .xinitrc file is a bourne-shell script.)
 </p>
 <p>
- Then just start XFree86 (Applications -&gt; XDarwin) and KDE should come up.  Dynamic
- loading in KDE is still pretty slow at the moment, so there are usually noticeable
- pauses in the amount of time KDE apps can take to start up if a library they use
- has not been loaded before.
+ Then just start XFree86 (by running the <b>XDarwin</b> application in your
+ "Applications" folder) and KDE should come up.  Dynamic loading in KDE is still
+ pretty slow at the moment, so there are usually noticeable pauses in the amount
+ of time KDE apps can take to start up if a library they use has not been loaded before.
 </p>
 <p>
  If you have problems starting, try changing your startkde line to:
@@ -203,7 +233,11 @@ because there are new dependencies (CUPS, among other things).
 </p>
 <h1>If You Have Problems...</h1>
 <p>
- ...please check the
+ Before you do anything else, make sure you've read the documentation at
+ <a href="http://fink.sourceforge.net/doc/">http://fink.sourceforge.net/doc/</a>,
+ notably the parts on how to install and use packages with fink, dselect, and apt-get,
+ and the documentation on installing and using XFree86.  If your questions are not
+ answered there, please check the
  <a href="http://fink.sourceforge.net/lists/index.php">list archives</a> and
  <a href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">bug tracker</a>
  before posting questions.  You can also try the
