@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.42 2005/01/24 20:57:39 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.43 2005/03/01 19:18:38 dmacks Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -588,17 +588,28 @@ fink selfupdate-cvs</codeblock>
         installed with Fink.</p>
       </question>
       <answer>
-        <p>If this always happens, then you may have inadvertently modified (or failed to modify) your startup scripts. Run the
-        <filename>/sw/bin/pathsetup.command</filename> script (either by
-        double-clicking in the Finder or in a terminal), which will attempt to
-        detect your startup configuration. You'll then need to open a new
-        terminal session so that your environment settings are loaded.  <em>Note:</em>  for <code>fink-0.18.3</code> and <code>fink-0.19.2</code>, the script has been changed to <filename>/sw/bin/pathsetup.sh</filename>, and must be run in a terminal.</p>
+        <p>If this always happens, then you may have inadvertently
+        modified (or failed to modify) your startup scripts. Run the
+        <filename>/sw/bin/pathsetup.sh</filename> script in a terminal
+        window. This program will attempt to detect your default shell
+        and add a command to load Fink's shell initialization script
+        into your shell's configuration. You'll then need to open a
+        new terminal session so that your environment settings are
+        loaded. <em>Note:</em> Some older versions fink called this
+        script <filename>pathsetup.command</filename> instead
+        of <filename>pathsetup.sh</filename>. Alternately, you can run
+        the <filename>pathsetup.app</filename> application on the Fink
+        binary distribution disk image.</p>
         <p>On the other hand, if you only have problems in the Apple X11
         terminal, this probably means that you need to create a <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link>
         file and add the line</p>
         <codeblock>. /sw/bin/init.sh</codeblock>
         <p>near the beginning (i.e. before any programs get run). Restart X11
         (if running) after you do this.</p>
+	<p>These <filename>/sw/bin/init.*</filename> scripts do much
+	more than just add <filename>/sw/bin</filename> to your PATH.
+	Many packages will not work correctly without these additional
+	actions.</p>
       </answer>
     </faqentry>
     <faqentry name="invisible-sw">
