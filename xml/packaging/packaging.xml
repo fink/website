@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.13 2001/12/25 15:41:48 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.14 2001/12/27 13:35:56 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -613,8 +613,8 @@ This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
 </p>
 <p>
-Finally there is <code>perl</code> which causes alternate default
-values for CompileScript and InstallScript to be used. 
+Finally since fink 0.9.5 there is type <code>perl</code> which causes
+alternate default values for the compile and install scripts to be used. 
 </p>
 </itemd></item>
 
@@ -912,6 +912,7 @@ packages's version and Fink's version (in
 <item><itemt>UpdatePOD</itemt>
 <itemd>
 <p>
+<i>Introduced in fink 0.9.5.</i>
 A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
