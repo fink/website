@@ -1,9 +1,9 @@
 <?
 $title = "Fink bug trqacking system";
 $cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 18:45:02 $';
+$cvs_date = '$Date: 2005/01/22 21:16:08 $';
 
-include "header.inc";
+include "../header.inc";
 ?>
 <h1 align="center">Debian bug tracking system</h1> 
 <p>
@@ -125,5 +125,5 @@ Debian BTS administrators &lt;<a href="mailto:owner@bugs.debian.org">owner@bugs.
 <a href="../index.php">Back Home</a> - <a href="download/index.php">Download</a> 
 </p>
 <?
-include "footer.inc";
+include "../footer.inc";
 ?>
