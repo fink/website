@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.46 2002/06/11 00:01:33 fingolfin Exp $ */
+/* $Id: header.inc,v 1.47 2002/06/25 20:05:33 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -67,7 +67,7 @@ if ($metatags)
 if (!$is_home)
   print '<a href="'.$root.'index.php">';
 ?><img src="<? print $root ?>img/title2-1.gif" width="400" height="43"
-border="0" alt="Fink" /><?
+border="0" alt="Fink"><?
 if (!$is_home)
   print '</a>';
 ?></td>
@@ -103,10 +103,10 @@ for ($i = 0; $i < sizeof($sections); $i += 3) {
   print '<tr align="left">';
   if ($section == $sections[$i+2]) {
     print '<td colspan="2" class="layout" bgcolor="#87b9e7"><a href="'.$root.$sections[$i].'">';
-    print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
+    print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
   } else {
     print '<td colspan="2" class="layout"><a href="'.$root.$sections[$i].'">';
-    print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
+    print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
   }
   print '</a></td></tr>'."\n";
 }
@@ -134,12 +134,12 @@ if (is_array($parents)) {
     $link = '<a href="'.$root.$parents[$i].'">';
 
     print '<tr align="left" valign="middle"><td class="layout">';
-    print $link.'<img src="'.$root.'img/nav-upicon.gif" width="18" height="15" border="0" alt="^ "/></a>';
+    print $link.'<img src="'.$root.'img/nav-upicon.gif" width="18" height="15" border="0" alt="^ "></a>';
     print '</td><td class="layout">';
     print '<span class="nav">'.$link.$parents[$i+1].'</a></span>';
     print '</td></tr>'."\n";
 
-    print '<tr bgcolor="#ffffff"><td class="layout"><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td class="layout"><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+    print '<tr bgcolor="#ffffff"><td class="layout"><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""></td><td class="layout"><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""></td></tr>'."\n";
   }
 }
 
@@ -155,12 +155,12 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
 
   if ($link) {
     print '<tr class="layout" align="left" valign="middle"><td class="layout">';
-    print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "/></a>';
+    print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "></a>';
     print '</td><td class="layout">';
     print '<span class="nav">'.$link.$navbox[$i+1].'</a></span>';
   } else {
     print '<tr class="layout" align="left" valign="middle" bgcolor="#87b9e7"><td class="layout">';
-    print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- "/>';
+    print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- ">';
     print '</td><td bgcolor="#87b9e7" class="layout">';
     print '<span class="nav">'.$navbox[$i+1].'</span>';
   }
@@ -222,7 +222,7 @@ function it_item($title, $item) {
   global $it_flag, $root;
 
   if ($it_flag) {
-    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt="" /></td></tr>'."\n";
+    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
   }
   $it_flag = 1;
 
@@ -240,7 +240,7 @@ function it_end() {
 function gray_line ()
 {
 	global $root;
-	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-" />';
+	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
 }
 
 ?>
