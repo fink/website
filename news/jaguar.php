@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/11/13 14:08:25 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/12/06 20:57:10 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ Apple introduced major changes in Mac OS X 10.2, and Fink installations
 need to be upgraded with care in order to cope with these changes.
 If you have upgraded to Mac OS X 10.2 on a machine with a pre-existing
 Fink installation, then this document will provide step-by-step instructions
-for upgrading Fink.  The instructions in this document are current as of 20 October 2002.
+for upgrading Fink.  The instructions in this document are current as of 6 December 2002.
 </p>
 <p>If you want to install a fresh copy of Fink on Mac OS X 10.2, then you
 should consult the <a href="jag-bootstrap.php">Jaguar bootstrap guide</a>
@@ -30,7 +30,7 @@ install the Developer Tools, because the 10.2 Fink packages are not yet
 available in binary form.
 <br><br>
 <li> <b>Step 2: Obtain the files for the Fink upgrade.</b>
-Download the <A href="http://prdownloads.sourceforge.net/fink/fink-0.11.0.tar.gz?download">Fink 0.11.0 archive</A>. Double click on the archive to expand it (Stuffit Expander or OpenUp both work), then open a terminal window and "cd" into the <b>fink-0.11.0</b> directory. All subsequent commands will assume that you are in the <b>fink-0.11.0</b> directory.
+Download the <A href="http://prdownloads.sourceforge.net/fink/fink-0.11.1.tar.gz?download">Fink 0.11.1 archive</A>. Double click on the archive to expand it (Stuffit Expander or OpenUp both work), then open a terminal window and "cd" into the <b>fink-0.11.1</b> directory. All subsequent commands will assume that you are in the <b>fink-0.11.1</b> directory.
 <br><br>
 <li><b>Step 3: Verify the integrity of your Fink installation, and update
 any external software which is related to Fink.</b>  If you have installed
@@ -70,7 +70,7 @@ the unstable tree and have not yet been moved to the stable tree, so
 this step is highly recommended.
 <br><br>
 <li><b>Step 5: Run the update script.</b>
-From within the fink-0.11.0 directory, issue the command
+From within the fink-0.11.1 directory, issue the command
 <pre>
   sudo ./update-fink.sh
 </pre>
@@ -101,7 +101,7 @@ if you prefer to customize things you may issue individual <b>fink update</b>
 commands.
 <br><br>
 <li> Finally, when all of this has been completed, you may remove the
-fink-0.11.0 archive, directory, and its contents.
+fink-0.11.1 archive, directory, and its contents.
 </ul>
 <br>If you encounter problems with these 
 instructions please consult the fink <a href="../help">Help page</A> which lists sources of finding
