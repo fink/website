@@ -1,12 +1,21 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/20 05:58:43 $';
+$cvs_date = '$Date: 2004/04/21 02:23:34 $';
 
 include "header.inc";
 include "releases.inc";
 ?>
+  <STYLE TYPE="text/css">
+.bgreen { background: green; display: inline; }
+       
+.bred { background: red; display: inline; }
 
+.tiny {
+  font-size: x-small;
+  font-weight: bold;
+}
+  </STYLE>
   <hr>
 <h3>Compare Trees</h3>
 This search compares package names in two trees. 
@@ -31,6 +40,29 @@ $sort = 'maintainer';
 if(param("sort"))
 	$sort = param("sort");
 
+if(param("red"))
+	$op = 3;
+if(param("green"))
+	$op = 2;
+if(param("white"))
+	$op = 1;
+
+if($op) {
+	foreach ($HTTP_POST_VARS as $argb) {	
+		if (preg_match("/chg=([^!]+)!([^!]+)!([^!]+)/i", $argb, $matches)) {
+			$name = $matches[1];
+			$vers = $matches[2];
+			$rev = $matches[3];
+			$q = "UPDATE package SET needtest = ".($op - 1)." WHERE (release = '".$tree1.
+			"' AND name='".$name."' AND version = '".$vers."' AND revision = '".$rev."')";	
+			$rs2 = mysql_query($q, $dbh);
+			if (mysql_errno()) {
+				print '<p><b>errno $err error during UPDATE:</b> '.mysql_error().'</p>';
+				die;
+			}				
+		}
+	}
+}
 $q = "SELECT * FROM release";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
@@ -60,9 +92,12 @@ if (!$rs) {
 ?>  
 <input type="submit" value="Search">
 </form>
+
+<div tiny>
+<form action="compare.php" method="POST">
 <?PHP
 }
-$q = "SELECT * FROM package ".
+$q = "SELECT name,maintainer,version,revision,needtest FROM package ".
   	 "WHERE release LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
   	 "ORDER BY \"$sort\" ASC";
@@ -75,7 +110,14 @@ if (!$rs) {
   print '<p>'.$count." Packages Found in $tree1</p>";
   $hitcount = 0;
 
-  $pkglist = $pkglist . '<ul>';  
+#Special case for 10.2-gcc3.3 to 10.3 move
+  if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+  {
+  	$line = 0;
+   	print "Key:<br><ul><li><div class=\"bgreen\">Will not be moved, obsolete or changed names</div><li><div class=\"bred\">Does not compile</div></ul>";
+   	print "\"Wow, you know that's a lot of checkboxes\" - Check packages then click the buttons below to change a line's status.<br>";
+  }
+ $pkglist = $pkglist . '<ul>';  
   while ($row = mysql_fetch_array($rs)) {
 	$q2 = "SELECT name FROM package ".
       "WHERE release LIKE \"$tree2\" AND name=\"" . $row['name'] . '"';	
@@ -95,29 +137,65 @@ if (!$rs) {
  		
   		if($hit)
   		{
-			 $desc = " - ".$row[descshort];
-			if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
+#			 $desc = " - ".$row[descshort];
+#			if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
 			  $desc = "";
+			  
+			$pkglist = $pkglist."<li>";			
+			if($row[needtest] == 1) {
+				$pkglist = $pkglist."<div class=\"bgreen\">";
+				$green = 1;
+				$red = 0;
+			}	elseif($row[needtest] == 2) {
+				$pkglist = $pkglist."<div class=\"bred\">";
+				$red = 1;
+				$green = 0;
+			}
+			#Special case for 10.2-gcc3.3 to 10.3 move
+			if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+			{
+				$line++;
+				$pkglist = $pkglist . 
+					"<input type=checkbox name=change-$line value=chg=".$row[name].'!'.$row[version].'!'.$row[revision].'>   '; 	
+		#		$pkglist = $pkglist .  '<SELECT name = Status>'.
+		#			"<option value=green+".$row[name].'+'.$row[version].'+'.$row[revision].'+green'. ($green ? 'selected>' : '>').'G'.
+		#			"<option value=red+".$row[name].'+'.$row[version].'+'.$row[revision].'+red'. ($green ? '>' : 'selected>').'R</SELECT>'; 	
+			}						
 			if(! strcmp($sort, "maintainer"))
-			$pkglist = $pkglist . '<li>'.$row[maintainer].'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			 $row[version].'-'.$row[revision].$desc . "</li>\n";  
+			$pkglist = $pkglist . $row[maintainer].'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+			 $row[version].'-'.$row[revision].$desc . "\n";  
 			else
-			$pkglist = $pkglist . '<li><a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			 $row[version].'-'.$row[revision].$desc .' - '.$row[maintainer]."</li>\n"; 
+			$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+			 $row[version].'-'.$row[revision].$desc .' - '.$row[maintainer]."\n"; 
+
+			if($row[needtest] > 0)
+				$pkglist = $pkglist."</div>";
+	
+			$pkglist = $pkglist."</li>\n";
+#			$pkglist = $pkglist."<br>";
   			$hitcount++;			
   		}
 	} 
   }
   $pkglist = $pkglist . '</ul>';
-  print "Found $hitcount Packages in $tree1 that ". ($cmp ? 'are' : 'are not') .
-  		" in $tree2<p><ul> $pkglist";
-?>
-
-<?
+  print "<br>Found $hitcount Packages in $tree1 that ". ($cmp ? 'are' : 'are not') .
+  		" in $tree2$pkglist";
+  		
+	#Special case for 10.2-gcc3.3 to 10.3 move
+	if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+	{
+		print '<input type="hidden" name=tree1 value='.$tree1.'>';
+		?>
+		<input type="submit" name=green value="Set Green">
+		<input type="submit" name=red value="Set Red">
+		<input type="submit" name=white value="Set White">
+		</form>
+		</div>
+		<?
+	}
 }
 ?>
 
 <?
-include "footer.inc";     
-
+include "footer.inc"; 
 ?>
