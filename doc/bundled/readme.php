@@ -8,7 +8,7 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.3 ReadMe</h1>
+<h1>Fink 0.2.3 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.1 2001/07/25 18:55:23 chrisp Exp $</i></p>
 <p>
 This is Fink, a package management system that aims to bring the full
 world of GNU and other common Open Source software to Darwin and
@@ -34,7 +34,7 @@ You have been warned.
 Fink is released under the terms of the GNU General Public License.
 See the file COPYING for details.
 </p>
-<p>Generated from <i>$Fink: readme.xml,v 1.1 2001/07/25 18:55:23 chrisp Exp $</i></p><a name="req"><h2>Requirements</h2></a>
+<a name="req"><h2>Requirements</h2></a>
 <p>
 You need:
 </p>

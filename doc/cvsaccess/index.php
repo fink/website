@@ -1,15 +1,23 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/30 11:11:49 $';
+$cvs_author = 'Author: chrisp';
+$cvs_date = 'Date: 2001/07/29 15:36:41';
+
+$metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Fink is developed via CVS. This means that you can stay up to date
-between releases and always get the newest stuff. This page tells you
-how to set up an existing Fink installation for updating via
-CVS. The information on this page applies to Fink 0.2.x.</p><h2>Fink CVS Structure</h2>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.4 2001/07/29 15:36:41 chrisp Exp $</i></p>
+<p>
+Fink is developed via CVS.
+This means that you can stay up to date between releases and always
+get the newest stuff.
+This page tells you how to set up an existing Fink installation for
+updating via CVS.
+The information on this page applies to Fink 0.2.x.
+</p>
+<a name=""><h2>Fink CVS Structure</h2></a>
 <p>Fink 0.2 has two CVS modules. The module <tt><nobr>fink</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/fink/">ViewCVS</a>)
 contains the package manager plus the stuff needed for bootstrap. The
 module <tt><nobr>packages</nobr></tt> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
@@ -19,7 +27,7 @@ however, you should always keep both up to date because sometimes
 packages (in the packages module) use new features in the package
 manager (in the fink module) that have recently been added. They will
 misbehave when those features are not supported...</p>
-<h2>Updating the Package Manager</h2>
+<a name=""><h2>Updating the Package Manager</h2></a>
 <p>The package manager must be updated through a separate directory
 and the <tt><nobr>inject.pl</nobr></tt> script. That script puts package
 descriptions and tarballs for the fink and base-files packages in your
@@ -40,12 +48,12 @@ then:</p>
 <pre>cd tempdir/fink
 cvs -z3 update -d
 ./inject.pl</pre>
-<h2>Updating the Package Descriptions</h2>
+<a name=""><h2>Updating the Package Descriptions</h2></a>
 <p>The procedure for the package descriptions is almost identical. The
 main difference is that the <tt><nobr>inject.pl</nobr></tt> script just copies the
 descriptions into your Fink installation. To build the new packages,
 you must use regular fink commands, like <tt><nobr>fink update-all</nobr></tt> or
-<tt><nobr>fink update &lt;package&gt;</nobr></tt>.</p>
+<tt><nobr>fink update <i>&lt;package&gt;</i></nobr></tt>.</p>
 <p>The first time procedure:</p>
 <pre>cd tempdir
 cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
