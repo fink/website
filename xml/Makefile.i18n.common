@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.12 2004/03/01 08:01:10 dmacks Exp $
+# $Id: Makefile.i18n.common,v 1.13 2004/03/07 20:54:08 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -17,8 +17,11 @@ ifndef STYLESHEET_WEBSITE
 STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.i18n.xsl
 endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
+STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
+PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
 PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
+PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
 ALL_TARGETS = $(TARGET)
 INSTALL_FILES = $(TARGET)
@@ -39,6 +42,8 @@ endif
 .SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
 .PHONY: all clean force install
 
+# basics
+
 all: $(ALL_TARGETS)
 
 clean:
@@ -46,18 +51,26 @@ clean:
 
 force: clean all
 
-%.php: $(SOURCE) $(STYLESHEET_WEBSITE)
+# rendering to php-framed HTML for the website (multi-page)
+
+%.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $(SOURCE)
 	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
-	$(foreach PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
-	$(foreach PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
-	rm -f *.tmp
 
-%.html: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
+%.php: %.php.tmp $(PROCESS_WEBSITE)
+	$(PROCESS_WEBSITE) <$< >$@
+
+# rendering to pure HTML (monolithic)
+
+%.html.tmp: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $<
-	xsltproc -o $@.tmp $(STYLESHEET_HTML) $<
-	sed -e 's,$$Id,$$Fink,g' $@.tmp > $@
-	rm -f  $@.tmp
+	xsltproc -o $@ $(STYLESHEET_HTML) $<
+
+%.html: %.html.tmp
+	$(PROCESS_HTML) <$< >$@
+
+
+# install files inside website
 
 install: $(INSTALL_FILES) install-hook
 
