@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/05/03 13:50:31 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2002/05/29 16:00:54 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,6 +33,12 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2002-05-29: Fink <a href="news/kde.php">announces support</a> for
+<a href="http://www.kde.org">KDE</a>.  Packages are available in the
+unstable distribution, as well as pre-built binaries.  For more
+information on installing and running it, see the full
+<a href="news/kde.php">KDE Support In Fink</a> announcement.
+</p>
 <p>2002-05-03: All Fink users are urged to update their <i>passwd</i> 
 package to version 20020329 or newer. Older versions of the 
 <i>passwd</i> package are affected by a bug which could lead to the 
@@ -58,14 +64,6 @@ as well as many of the binary packages. As usual, the rest of the
 binaries will be made available during the next few days.
 For information about upgrading, visit the
 <a href="download/upgrade.php">Upgrade Matrix</a>.
-</p>
-<p>2002-01-16: Fink 0.3.2a is released.
-The source release and the binary installer are available now, the
-bulk of binary packages will be built and made available gradually
-over the next few days as usual.
-For information about upgrading, visit the
-<a href="download/upgrade.php">Upgrade Matrix</a> and the
-<a href="doc/users-guide/index.php">User's Guide</a>.
 </p>
 
 <h2>Status</h2>
