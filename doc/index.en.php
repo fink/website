@@ -46,6 +46,7 @@ releases</li>
   <h2><a name="developerdoc">Developer Documentation</a></h2>
     
     <ul>
+    <li><a href="security/index.php">Fink Security Policy for accepted packages.</a> - This is a mandatory read for all of those who either have packages in Fink or would like to add their own.</li>
       <li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
 file) - slides from a presentation at the <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</a> (also available as a
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</a>) </li>
