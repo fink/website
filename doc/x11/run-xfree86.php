@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/23 12:58:19';
+$cvs_date = 'Date: 2003/07/25 01:06:55';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -111,11 +111,11 @@ xinit will still know how to run it through a shell.
 <p>
 When there is no <code>.xinitrc</code> file in your home
 directory, XFree86 will use its default file,
-<code>/private/etc/xinit/xinitrc</code>.
+<code>/private/etc/X11/xinit/xinitrc</code>.
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
-<pre>cp /private/etc/xinit/xinitrc ~/.xinitrc</pre>
+<pre>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
 If you're using Fink, you should source <code>init.sh</code>
 right at the beginning to make sure the environment is set up correctly.
