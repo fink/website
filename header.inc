@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.60 2004/02/28 16:14:29 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.61 2004/02/29 05:45:35 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -76,7 +76,7 @@ function it_start() {
 
   $it_flag = 0;
 ?>
-<table border="0" cellpadding="0" cellspacing="0">
+<table cellspacing="0">
 <?
 }
 
@@ -97,7 +97,7 @@ function it_start2() {
 
   $it_flag = 0;
 ?>
-<table border="0" cellpadding="1" cellspacing="1">
+<table cellspacing="0">
 <?
 }
 
@@ -203,7 +203,7 @@ function insert_sub ($navbox, $active_page) {
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 
 <? /* header and sourceforge logo */ ?>
-<table width="100%">
+<table width="100%" cellspacing="0" >
 <tr valign="bottom">
 	<td align="left" class="toc_top">
 	<? if (!$is_home) echo '<a href="' . $root . 'index.php">'; ?>
@@ -222,12 +222,12 @@ function insert_sub ($navbox, $active_page) {
 </tr>
 </table>
 <? /* main table with navigation column and content column */ ?>
-<table width="100%" >
+<table width="100%" cellspacing="0" >
 	<tr valign="top">
 		<td align="left" width="120" class="layout"  bgcolor="#eeeeee" >
 
 <? /* navigation column table */ ?>
-	<table width="120" >
+	<table width="120" cellspacing="0" >
 
 <? /* sections */ ?>
 	<tr>
@@ -268,7 +268,7 @@ function insert_sub ($navbox, $active_page) {
 <td align="left" width="100%">
 
 <? /* content column table */ ?>
-	<table width="100%">
+	<table width="100%" cellspacing="0" >
 	<tr><td>&nbsp;&nbsp;&nbsp;</td>
 	<td></td>
 	<td>&nbsp;&nbsp;&nbsp;</td></tr>
@@ -277,4 +277,4 @@ function insert_sub ($navbox, $active_page) {
 	<td width="100%">
 
 <? /* Call phpLang function */ ?>
-<? if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;"; ?>
+<? /* if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;";  */ ?>
