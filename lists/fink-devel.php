@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-devel";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/04/14 12:56:02 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2004/12/02 10:25:13 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ The list has a strict size limit of 40K.
 </p>
 <p>
 The <a
-href="http://sourceforge.net/mailarchive/forum.php?forum=fink-devel">list
+href="http://news.gmane.org/gmane.os.apple.fink.devel">list
 archives</a> are a valuable resource for package maintainers.
 </p>
 
