@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="fr" fsroot="../..">
-<cvsid>$Id: news.fr.xml,v 1.3 2004/04/09 16:47:46 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.4 2004/04/17 07:09:15 michga Exp $</cvsid>
 
 <newsitem>
 	<date>06/04/2004</date>
@@ -14,10 +14,10 @@ Les dernières versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dè
 Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire de paquets, ajouté de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilé certains paquets qui posaient des problèmes sur 10.3.
 	</p>
 	<p>
-Pour faire une première installation de Fink, vous devez suivre les instructions données <link url="download/index.php?phpLang=en">ici</link>.
-Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données <link url="download/upgrade.php?phpLang=en">là</link>.
+Pour faire une première installation de Fink, vous devez suivre les instructions données <link url="download/index.php?phpLang=fr">ici</link>.
+Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données <link url="download/upgrade.php?phpLang=fr">là</link>.
 
-Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus <link url="lists/index.php?phpLang=en">ici</link>.
+Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus <link url="lists/index.php?phpLang=fr">ici</link>.
 		</p>
 		<p>
 Vérifiez que vous avez téléchargé le <em>bon installeur</em> pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
@@ -44,7 +44,7 @@ En quelle langue êtes-vous prêt à traduire ?
 </p>
 <p>
 Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
-Pour ce faire, allez sur la <link url="lists/index.php">page des listes de diffusion</link>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <extlink url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</extlink>.
+Pour ce faire, allez sur la <link url="lists/index.php?phpLang=fr">page des listes de diffusion</link>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <extlink url="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</extlink>.
 </p>
 </body>
 </newsitem>
@@ -81,7 +81,7 @@ Envoyez-lui aussi un rapport quand tout s'est bien passé. Plus nous recevrons d
 	</p>
 	<p>
 Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, <extlink
-	url="http://fink.sourceforge.net/lists/index.php">qu'attendez-vous pour vous abonner</extlink> ?
+	url="http://fink.sourceforge.net/lists/index.php?phpLang=fr">qu'attendez-vous pour vous abonner</extlink> ?
 	Voici un lien vers des 
 	<extlink url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</extlink> détaillées d'installation ou de mise à jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalités.
 	</p>
