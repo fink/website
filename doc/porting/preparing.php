@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/29 13:41:39';
+$cvs_date = 'Date: 2002/06/09 18:27:40';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -124,20 +124,82 @@ be sent to fink-devel@lists.sourceforge.net .)
 <li>libxslt-1.0.17-2</li>
 <li>automake-1.6.1-1</li>
 <li>lesstif-0.93.18-4</li>
+<li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02087.html">long
+list from Chris Zubrzycki on May 29</a></li>
+<li>From J-F Mertens on June 7: 
+debianutils libiconv gettext ncurses bzip2 gzip tar dpkg
+zlib dlcompat readline m4 autoconf25 automake15
+make texinfo libtool libtool14 bison flex ssed gawk
+and gengetopt (latest versions) build correctly with gcc3.
+Also abiword-1.0.2-1, oaf-0.6.10-1 and netpbm-9.25-1
+build correctly with gcc3.
+ Compiled succesfully with gcc3:
+ atlas-3.3.15-1 rrdtool-1.0.37-3 wget-ssl-1.8.2-1
+</li>
+<li>From Mathias Meyer on June 9:
+libxslt-1.0.18-1
+slang-1.4.5-3
+librsvg-1.0.3-2
+eel-1.0.2-3
+libxpg4-20010605-17
+fink-0.9.12-1
+base-files-1.5-1
+gzip-1.2.4a-6
+</li>
 </ol>
 <p><b> Unsuccessful packages:</b></p>
-<ol><li> apt-0.5.4-2 (breaks with undefined symbols such as 
+<ol><li> apt-0.5.4-3 (breaks with undefined symbols such as 
 __ZTI9pkgSystem) </li>
-<li>libxml2-2.4.21-2 (breaks with install_name error)</li>
 <li>bonobo-1.0.20-1(breaks with install_name error)</li>
-<li>gconf-1.0.9-1(breaks with install_name error)</li>
-<li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
-<li>gv-3.5.8-4</li>
-<li>gnome-core-1.4.0.8-1 (breaks with install_name error)</li>
-<li>galeon-1.2.1-1</li>
-<li>gaim-0.57-1 (breaks with install_name error)</li>
-<li>qt3-3.0.4-5</li>
 <li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02051.html">emacs21</a></li>
+<li>gaim-0.57-1 (breaks with install_name error)</li>
+<li>galeon-1.2.1-1</li>
+<li>gconf-1.0.9-1(breaks with install_name error)</li>
+<li>gnome-core-1.4.0.8-1 (breaks with install_name error)</li>
+<li>gnome-vfs-1.0.5-4 (breaks with install_name error)</li>
+<li>gv-3.5.8-4</li>
+<li>
+<pre>
+lftp-ssl_2.5.2-2 failed with :
+g++ -DHAVE_CONFIG_H -I. -I. -I../include -I../include   -no-cpp-precomp 
+-I/sw/include  -O2 -Wall -Wwrite-strings -Woverloaded-virtual 
+-fno-exceptions -fno-rtti -fno-implement-inlines -Winline -c -o 
+FileCopyFtp.o `test -f FileCopyFtp.cc || echo './'`FileCopyFtp.cc
+In file included from FileAccess.h:27,
+                 from FileCopy.h:38,
+                 from FileCopyFtp.h:26,
+                 from FileCopyFtp.cc:27:
+../include/trio.h:172:1: warning: &quot;vfscanf&quot; redefined
+In file included from ../include/trio.h:25,
+                 from FileAccess.h:27,
+                 from FileCopy.h:38,
+                 from FileCopyFtp.h:26,
+                 from FileCopyFtp.cc:27:
+/usr/include/stdio.h:330:1: warning: this is the location of the 
+previous definition
+In file included from log.h:26,
+                 from FileCopyFtp.cc:28:
+/usr/include/unistd.h:135: declaration of C function `int getopt(int, 
+char*
+   const*, const char*)' conflicts with
+../include/getopt.h:104: previous declaration `int getopt()' here
+make[1]: *** [FileCopyFtp.o] Error 1
+</pre></li>
+<li>libghttp-1.0.9-3 (internal link edit command failed)</li>
+<li>librep-0.14-6 (breaks with install_name error)</li>
+<li>libxml2-2.4.22-1 (breaks with install_name error)</li>
+<li>libxslt-1.0.18-1 failed with install_name error</li>
+<li>mc-4.5.55-1 (see log)</li>
+<li>mozilla-1.0rc3-1 (iid_NS_ISUPPORTS_IID causes a section type conflict, 
+see log)</li>
+<li>nautilus-1.0.6-2 (breaks with install_name error)</li>
+<li>qt3-3.0.4-5</li>
+<li>
+readline-4.2a-5 has undefined symbol errors and others.
+</li>
+<li>
+stlport-4.5-1 fails since the start...</li>
+<li>tads-2.5.5-3 breaks because of weird va_args() calling</li>
 </ol>
 <p>In general, packages which have loadable modules and use libtool are
 failing with this install_name error at the moment, because libtool passes
@@ -150,6 +212,24 @@ him test it.</a>
 <p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
 between gcc2 and gcc3.  In practice, this means that C++ programs compiled
 with gcc3 cannot link to libraries compiled with gcc2.</p>
+<p>From J-F Mertens:
+ If I understand correctly, for packages that depend on c++ libs, 
+ those libs
+ have first to be rebuild. I have no idea how to get an exact list of 
+ all packages
+ providing such libs, but going to my /sw/var/logs dir, the command
+<tt><nobr> grep 'c++' * | cut -f 1 -d . | sort | uniq</nobr></tt>
+ gave me the following list, which could be at least a start :
+ aplus-fsf apt aria arts aspell astyle cccc clanlib cups cyclo db3 db4
+ ddd dejagnu dpkg drscheme dx f2c g77 gc gengetopt geomview glib2
+ gnome-apt gnome-games gnome-pim graphviz gtkmm gtop hdf5 icemc
+ intercal-threaded jags kdebase3-ssl kdelibs3-ssl launch lftp-ssl
+ libdivxdecore libsigc++ libxml++ macaulay2 mad mjpegtools mozilla mysql
+ nautilus ncurses netcdf octave-atlas oleo openh323 openjade pango1
+ plotutils prcs pspell pwlib python qcad qt qt3 qtella sagasu sdl sdl-net
+ singular-factory singular-libfac smpeg source-highlight sppc stlport
+ swig tela tmake unixodbc unrar wxgtk wxmac xfree86-rootless zoinks
+</p>
 
 
 
