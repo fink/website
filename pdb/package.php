@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/12/29 20:45:16 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2004/02/27 09:43:44 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -53,7 +53,7 @@ if (!$rs) {
   it_end();
   print "<br>";
   it_start();
-  it_item("Description:", $row[desclong]);
+  it_item("<p>Description:</p>", $row[desclong]);
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
 
   // Get the maintainer field, and try to parse out the email address
