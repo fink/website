@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.21 2002/03/19 02:26:14 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.22 2002/03/19 22:45:58 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -113,7 +113,7 @@ directory is necessary for the Debian tools.</li>
 <li>The distribution. There is <code>stable</code>,
 <code>unstable</code> and <code>local</code>. The <code>local</code>
 directory is under the control of the local administrator/user. The
-<code>stable</code> and <code>unstable</code> directores are part of
+<code>stable</code> and <code>unstable</code> directories are part of
 Fink.</li>
 <li>The tree. The <code>main</code> tree contains the bulk of the
 packages. Cryptographic software is kept in a separate tree,
@@ -382,7 +382,7 @@ the pre-existing libpng package was 2, but recent versions of the
 library have major version number 3.  So there are now four fink packages
 to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
 Only one of libpng and libpng3 can be installed at any given time,
-but libpnd-shlibs and libpng3-shlibs can be installed at the same time.
+but libpng-shlibs and libpng3-shlibs can be installed at the same time.
 (Note that only two .info files are required to build these four packages.)
 </p><p>
 The shared library itself and certain related files will be put into 
@@ -434,7 +434,8 @@ If the static library is also built, then it will be installed at
 <codeblock>
   %i/lib/bar.a
 </codeblock>
-These things are usually handled automatically by libtool, but you should
+If the package uses libtool, these things are usually handled automatically,
+but in any event you should
 check that they have been done correctly in your case.  You should also
 check that current_version and compatibility_version were defined 
 appropriately for your shared libraries.  (These are also shown with the 
@@ -640,7 +641,7 @@ C headers, those headers <em>must</em> go to a subdirectory.
 <item><itemt><code>/sw/lib</code></itemt>
 <itemd>
 <p>
-This directory is for architecture-dependend data files and
+This directory is for architecture-dependent data files and
 libraries.
 Static and shared libraries should be placed directly in
 <code>/sw/lib</code> unless there is a good reason not to.
@@ -735,7 +736,7 @@ This directory holds configuration files.
 For packages that have more than one or two files here a subdirectory
 should be made.
 The subdirectory must have the name of the package or program in it so
-that it is identifyable.
+that it is identifiable.
 </p>
 </itemd></item>
 
@@ -823,7 +824,7 @@ Required field.
 </p>
 <p>Effective with fink 0.9.9, percent expansion is applied to this field,
 as well as the fields Depends, BuildDepends, Provides, Conflicts,
-Replacs, Recommends, Suggests, and Enhances.</p>
+Replaces, Recommends, Suggests, and Enhances.</p>
 </itemd></item>
 
 <item><itemt>Version</itemt>
@@ -1112,7 +1113,7 @@ expanded - that would be useless anyway.
 <item><itemt>Source<i>N</i>ExtractDir</itemt>
 <itemd>
 <p>
-Normally, an auxillary tarball will be extracted in the same
+Normally, an auxiliary tarball will be extracted in the same
 directory as the main tarball. If you need to extract it in a
 specific subdirectory instead, use this field to specify
 it. Source2ExtractDir corresponds to the Source2 tarball, as one would
@@ -1396,7 +1397,8 @@ fourth, etc. package from the same compile/install run.
 <itemd>
 <p>
 <i>Introduced in fink 0.9.9.</i>
-Used within a <code>SplitOff</code> or <code>SplitOff<i>N</i></code> field,
+Used <em>only</em>
+within a <code>SplitOff</code> or <code>SplitOff<i>N</i></code> field,
 this designates which files and directories
 should be moved from the parent package's  installation
 directory %I to the current installation directory %i.  Note that this
