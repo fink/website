@@ -1,7 +1,7 @@
 <?
 $title = "Repairing the Upgrade Path";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2004/11/28 23:52:12 $';
+$cvs_date = '$Date: 2004/11/29 01:29:36 $';
 
 include "header.inc";
 ?>
@@ -43,8 +43,13 @@ Now update as usual, by running <code>fink selfupdate</code>.
 
 </ol>
 
-
-
+<b><p>Older instructions</p></b>
+(specifically for Fink-0.5.0.a -> 0.5.1 update)
+ </p>
+<pre>curl -O http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.5.1/main/binary-darwin-powerpc/base/fink_0.11.1-10_darwin-powerpc.deb
+sudo dpkg -i fink_0.11.1-10_darwin-powerpc.deb
+rm fink_0.11.1-10_darwin-powerpc.deb</pre></p>
+<p>Now run <code>fink selfupdate</code></p>.
 <?
 include "footer.inc";
 ?>
