@@ -1,7 +1,7 @@
 <?
 $title = "Fink";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/13 15:46:16 $';
+$cvs_date = '$Date: 2001/06/30 11:11:49 $';
 
 include "header.inc";
 ?>
@@ -51,7 +51,7 @@ helps me improve Fink. You can send it my way at <a
 href="mailto:fink@chrisp.de">fink@chrisp.de</a>. Keep in mind that,
 like most people on this planet, I'm usually quite busy. If you need
 help with using or troubleshooting Fink, a better place to ask is the
-<a href="fink/lists.php">users mailing list</a>.</p>
+<a href="lists.php">users mailing list</a>.</p>
 
 
 <?

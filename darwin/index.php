@@ -1,7 +1,7 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/25 15:42:18 $';
+$cvs_date = '$Date: 2001/06/30 11:11:49 $';
 
 include "header.inc";
 ?>
@@ -17,10 +17,12 @@ in general. Current installments:</p>
 <ul>
 <li><a href="porting.php">Porting Hints</a> for porting Unix software
 to Darwin</li>
+<!--
 <li><a href="gnome.php">GNOME on Darwin</a> - instructions and patches
 needed to get the core GNOME packages up and running</li>
 <li><a href="patches.php">Patches</a> for various packages - mostly
 shared library support right now</li>
+-->
 <li><a href="libtool.php">GNU libtool</a> and Darwin - how to get
 shared libraries</li>
 <li><a href="x11-choices.php">X11 Choices</a> - the various ways to

@@ -1,41 +1,28 @@
 <?
-/* $Id: header.inc,v 1.18 2001/06/05 18:48:48 chrisp Exp $ */
+/* $Id: header.inc,v 1.19 2001/06/30 11:11:49 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
   "index.php", "Home", 0,
   "download.php", "Download", 0,
-  "fink/index.php", "Fink", 0,
   "faq/index.php", "F.A.Q.", 0,
-  "darwin/index.php", "Darwin", 0,
+  "doc/index.php", "Documentation", 0,
   "links.php", "Links", 0
 );
 $pages_fink = array(
   "fink/index.php", "Fink", 0,
   "download.php", "Download", 1,
   "fink/usage.php", "Usage", 0,
-  "faq/index.php", "F.A.Q.", 0,
   "fink/lists.php", "Mailing Lists", 0,
-  "fink/cvs.php", "CVS Updating", 0,
   "fink/todo.php", "ToDo", 0,
-  "fink/info-format.php", "Packaging", 0,
   "links.php", "Links", 1
 );
 $pages_darwin = array(
   "darwin/index.php", "Darwin", 0,
   "darwin/porting.php", "Porting", 0,
-  "darwin/gnome.php", "GNOME", 0,
-  "darwin/patches.php", "Patches", 0,
   "darwin/libtool.php", "libtool", 0,
   "darwin/x11-choices.php", "X11 Choices", 0,
   "links.php", "Links", 1
-);
-$pages_faq = array(
-  "faq/index.php", "FAQ Contents", 0,
-  "faq/general.php", "General", 0,
-  "faq/install.php", "Installation", 0,
-  "faq/usage.php", "Usage", 0,
-  "faq/packages.php", "Packages", 0
 );
 
 // get author and change date from CVS vars
@@ -104,18 +91,21 @@ href="<? print $root ?>index.php"><img src="<? print $root
 ?>img/menu-home.gif" width="54" height="22" border="0" alt="Home"
 /></a><a href="<? print $root ?>download.php"><img src="<? print $root
 ?>img/menu-download.gif" width="76" height="22" border="0"
-alt="Download" /></a><a href="<? print $root ?>fink/index.php"><img
+alt="Download" /></a><!-- <a href="<? print $root ?>fink/index.php"><img
 src="<? print $root ?>img/menu-fink.gif" width="40" height="22"
-border="0" alt="Fink" /></a><a href="<? print $root
+border="0" alt="Fink" /></a> --><a href="<? print $root
 ?>faq/index.php"><img src="<? print $root ?>img/menu-faq.gif"
-width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root
+width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root ?>doc/index.php"><img
+src="<? print $root ?>img/menu-docs.gif" width="44" height="22"
+border="0" alt="Docs" /></a><!-- <a href="<? print $root
 ?>darwin/index.php"><img src="<? print $root ?>img/menu-darwin.gif"
-width="58" height="22" border="0" alt="Darwin" /></a></td>
+width="58" height="22" border="0" alt="Darwin" /></a> --></td>
 
-<td align="right" background="<? print $root ?>img/menu-back.gif"><a
+<td align="right" background="<? print $root ?>img/menu-back.gif"><!-- <a
 href="<? print $root ?>content.php"><img src="<? print $root ?>img/marker-<? print $section ?>.gif"
 width="160" height="22" border="0" alt="<? print "Section: $section"
-?>" /></a></td>
+?>" /></a> --><img src="<? print $root ?>img/menu-back.gif"
+width="160" height="22" border="0" alt="" /></td>
 </tr>
 <tr><td colspan="2" background="<? print $root ?>img/top-line2.gif"><img src="<? print $root ?>img/top-line2.gif"
 width="32" height="3" border="0" alt="" /></td></tr>
@@ -132,7 +122,10 @@ width="32" height="3" border="0" alt="" /></td></tr>
 <? /* navigation box */
 
 $donav = 0;
-if ($wantnav == "main") {
+if (is_array($customnav)) {
+  $pages = $customnav;
+  $donav = 1;
+} elseif ($wantnav == "main") {
   $pages = $pages_main;
   $donav = 1;
 } elseif ($wantnav == "fink") {
@@ -140,9 +133,6 @@ if ($wantnav == "main") {
   $donav = 1;
 } elseif ($wantnav == "darwin") {
   $pages = $pages_darwin;
-  $donav = 1;
-} elseif ($wantnav == "faq") {
-  $pages = $pages_faq;
   $donav = 1;
 }
 
