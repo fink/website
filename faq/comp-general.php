@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/30 13:30:20';
+$cvs_date = 'Date: 2003/08/03 19:10:54';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -96,12 +96,17 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <div class="question"><p><b>Q4.9: I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</b></p></div>
 <div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package configuration script finds libraries under <code>/usr/local/lib</code> before searching in the Fink path.  If you are having problems with a build that aren't covered by another FAQ entry, you should check whether you have libraries in <code>/usr/local/lib</code>.  If so, then try renaming <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <code>/usr/local</code> back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
-<a name="toc-out-of-date"><div class="question"><p><b>Q4.10: When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</b></p></div>
+<a name="toc-out-of-date">
+<div class="question"><p><b>Q4.10: When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</b></p></div>
 <div class="answer"><p><b>A:</b> The output hints at what to do.  The message is usually something like:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (as root) on whatever library is causing the problem.  As an example, for the case above, you would run:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
 <a name="fc-atlaas">
 <div class="question"><p><b>Q4.11: Fink Commander hangs when I try to install atlas.</b></p></div>
 <div class="answer"><p><b>A:</b> This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p></div>
+</a>
+<a name="basic-headers">
+<div class="question"><p><b>Q4.12: I get messages saying that I'm missing stddef.h.  Where do I find it?</b></p></div>
+<div class="answer"><p><b>A:</b> This header, and many others, are provided by the DevSDK package of the Developer Tools.  Check whether <code>/Library/Receipts/DevSDK.pkg</code> exists on your system.  If not, then run the Dev Tools Installer again, and install the DevSDK package using a Custom Install.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">5 Compile Problems - Specific Packages</a></p>

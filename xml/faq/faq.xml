@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.122 2003/07/30 13:30:20 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.123 2003/08/03 19:10:54 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -675,21 +675,24 @@ you. </p>
 <p>or</p>
 <codeblock>files list file for package <em>packagename</em> is missing final newline</codeblock>
 <p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p>
-<codeblock>dpkg --contents <em>full-path-to-debfile</em></codeblock>
+<codeblock>dpkg --contents <em>full-path-to-debfile</em>
+</codeblock>
 <p>e.g.</p>
 <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
-<p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <em>packagename</em>
-</code>, to build the .deb--it won't install yet, though.</p>
+<p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the .deb file, you can still proceed because the error doesn't interfere with builds.</p>
+<p>If you have been installing from the binary distribution or you know for sure that the version in the binary distribution is the same as what you have installed (e.g. by checking the <link url="http://fink.sourceforge.net/pdb/index.php" >package database</link>), then you can get a .deb file by running <code>sudo apt=get install --reinstall --download-only <em>packagename</em>
+</code>. Otherwise you can build one yourself by running  <code>fink rebuild <em>packagename</em>
+</code>, but it won't install yet.</p>
 <p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p>
 <codeblock>dpkg -c <em>full-path-to-debfile</em>
   | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
-  &gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
+  > /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
 <p>e.g.</p>
 <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
   | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+  > /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
 <p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p>
 </answer>
 </faqentry>
@@ -736,21 +739,19 @@ _perl_get_sv</codeblock>
 <p>then what has probably happened is that you updated Perl to a new version and now <filename>storable-pm</filename> needs to be updated.  
 You should update Fink.  During the process you will be prompted to install either <filename>perl-core</filename> or <filename>system-perl</filename>; choose the latter. 
 In addition, <filename>storable-pm</filename> should also get updated.</p>
-
 <p>For OS 10.1.x, perform the following commands (you'll need the Developer Tools):</p>
 <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
 fink selfupdate-cvs</codeblock>
-
 </answer>
 </faqentry>
-<faqentry name="cant-upgrade">
+<faqentry name="cant-upgrade" >
 <question>
 <p>I can't seem to update Fink's version.</p>
 </question>
 <answer>
-<p>THere are <link url="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</link> to follow under these circumstances.</p>
+<p>THere are <link url="http://fink.sourceforge.net/download/fix-upgrade.php" >special instructions</link> to follow under these circumstances.</p>
 </answer>
 </faqentry>
 </chapter>
@@ -820,7 +821,7 @@ The bootstrap script of the source release now checks for this, but
 you can still run into it if you use the binary release for first-time
 installation or install libwww after you installed Fink.
 </p>
-<p>This problem has also been reported due to the installation of <filename>/sw/bin/HEAD</filename> (not by any Fink package).  This is easier to solve:  rename <filename>/sw/bin/HEAD</filename>.</p>  
+<p>This problem has also been reported due to the installation of <filename>/sw/bin/HEAD</filename> (not by any Fink package).  This is easier to solve:  rename <filename>/sw/bin/HEAD</filename>.</p>
 </answer>
 </faqentry>
 <faqentry name="also_in" >
@@ -883,7 +884,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </ul>
 </answer>
 </faqentry>
-<faqentry name="usr-local-libs">
+<faqentry name="usr-local-libs" >
 <question>
 <p>I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink.  Is this true?</p>
 </question>
@@ -894,7 +895,10 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
 </answer>
 </faqentry>
-<faqentry name="toc-out-of-date"><question><p>When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</p></question>
+<faqentry name="toc-out-of-date" >
+<question>
+<p>When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date.  What do I need to do?</p>
+</question>
 <answer>
 <p>The output hints at what to do.  The message is usually something like:</p>
 <codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
@@ -902,9 +906,20 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
 </answer>
 </faqentry>
-<faqentry name="fc-atlaas">
-<question><p>Fink Commander hangs when I try to install atlas.</p></question>
-<answer><p>This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p>
+<faqentry name="fc-atlaas" >
+<question>
+<p>Fink Commander hangs when I try to install atlas.</p>
+</question>
+<answer>
+<p>This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display.  You'll have to use <code>fink install atlas</code> instead.</p>
+</answer>
+</faqentry>
+<faqentry name="basic-headers" >
+<question>
+<p>I get messages saying that I'm missing stddef.h.  Where do I find it?</p>
+</question>
+<answer>
+<p>This header, and many others, are provided by the DevSDK package of the Developer Tools.  Check whether <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your system.  If not, then run the Dev Tools Installer again, and install the DevSDK package using a Custom Install.</p>
 </answer>
 </faqentry>
 </chapter>
@@ -1002,9 +1017,9 @@ version.  This really shouldn't happen, so I'm bailing.  :(</codeblock>
 <p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
 </answer>
 </faqentry>
-<faqentry name="cctools">
+<faqentry name="cctools" >
 <question>
-<p>"When I try to install KDE, I get the following message:  'Can't resolve dependency "cctools (>= 446-1)"'</p>
+<p>&quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
 </question>
 <answer>
 <p>This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <filename>gcc 3.3</filename> update).</p>
