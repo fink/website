@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/10/04 21:50:16 $';
+$cvs_date = '$Date: 2002/10/19 18:54:59 $';
 
 include "header.inc";
 ?>
@@ -53,7 +53,8 @@ releases</li>
 <li><a href="UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
 file) - slides from a presentation at the <a
 href="http://conferences.oreillynet.com/macosx2002/"
-target="_blank">O'Reilly Mac OS X Conference</a>
+target="_blank">O'Reilly Mac OS X Conference</a> (also available as a
+<a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</a>)
 <li><a href="porting/index.php">Porting Tips</a> - notes for porting
 Unix applications to Darwin</li>
 <li><a href="packaging/index.php">Packaging Manual</a> - how to create and
