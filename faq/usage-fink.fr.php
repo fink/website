@@ -1,102 +1,111 @@
 <?
-$title = "Q.F.P. - Fink Usage";
+$title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 01:26:51';
+$cvs_date = 'Date: 2004/03/25 02:33:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 include_once "header.inc";
 ?>
 
-<h1>Q.F.P. - 5 Installing, Using and Maintaining Fink</h1>
+<h1>Q.F.P. - 5 Installer, Utiliser et Entretenir Fink</h1>
     
     
     <a name="what-packages">
-      <div class="question"><p><b>Q5.1: How can I find out what packages Fink supports?</b></p></div>
-      <div class="answer"><p><b>A:</b> Since Fink 0.2.3, there is the <code>list</code> command. It produces a list of all packages known to your Fink installation. Example:</p><pre>fink list</pre><p>If you're using the binary distribution, <code>dselect</code> gives you a nice browsable listing of available packages. Note that you must run it as root if you want to select and install packages from within dselect.</p><p>There's also the <a href="http://fink.sourceforge.net/pdb/">package database</a> at the
-        website.</p></div>
+      <div class="question"><p><b>Q5.1: Comment savoir quels sont les paquets gérés par Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Depuis Fink 0.2.3, il y a la commande list.  Elle produit une liste
+	de tous les paquets connus de votre installation de Fink.
+	Exemple:</p><pre>fink list</pre><p>Si vous utilisez la distribution binaire, <code>dselect</code> vous
+	donne une liste des paquets disponibles dans laquelle vous pouvez naviguer.
+	Remarque : vous devez utiliser la commande sudo si vous voulez
+	sélectionner
+	et installer des paquets depuis dselect.</p><p>Il y a aussi la <a href="http://fink.sourceforge.net/pdb/">base de
+	donnée de paquets</a> sur le site web. </p></div>
     </a>
     <a name="proxy">
-      <div class="question"><p><b>Q5.2: I'm behind a firewall. How do I configure Fink to use an HTTP proxy?</b></p></div>
-      <div class="answer"><p><b>A:</b> The <code>fink</code> command supports explicit proxy settings that are passed on to <code>wget</code>/<code>curl</code>. If you were not asked for proxies on first time installation, you can run <code>fink configure</code> to set it up. You can also run that command at any time to reconfigure the <code>fink</code> command. If you  followed the instructions in the installation guide, and use  <code>/sw/bin/init.csh</code> (or <code>/sw/bin/init.sh</code>), then <code>apt-get</code> and <code>dselect</code> also will use these proxy settings. Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labeled "Use Passive FTP Mode (PASV)" is checked.</p></div>
+      <div class="question"><p><b>Q5.2: J'utilise un firewall. Comment configurer fink pour utiliser
+	un proxy HTTP ?</b></p></div>
+      <div class="answer"><p><b>A:</b> La commande <code>fink</code> permet de prendre en compte des réglages
+	de proxy qui seront utilisés par  <code>wget</code>/<code>curl</code>.
+	Si on ne vous a pas posé de question sur vos réglages de proxies lors de
+	la première installation, vous pouvez taper <code>fink configure</code>
+	pour les régle. Vous pouvez aussi utiliser cette commande à
+	n'importe quel moment pour reconfigurer la commande <code>fink</code>.
+	Si vous avez suivi les instructions du guide d'installation et utilisé
+	<code>/sw/bin/init.csh</code> (ou <code>/sw/bin/init.sh
+	</code>), alors <code>apt-get</code> et <code>dselect</code> utiliseront
+	aussi ces réglages de proxies. Assurez-vous d'avoir bien indiqué le
+	protocole utilisé, par exemple :</p><pre>ftp://proxy.yoursite.somewhere</pre><p>Si vous avez toujours des problèmes, allez dans Préférences système,
+	cliquez sur Réseaux, sélectionnez l'onglet proxies et assurez-vous que
+	la case "Utiliser le mode FTP passif (PASV)" est cochée.</p></div>
     </a>
     <a name="firewalled-cvs">
-      <div class="question"><p><b>Q5.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
-      <div class="answer"><p><b>A:</b> The package <b>cvs-proxy</b> can tunnel through HTTP proxies.</p><ul>
-          <li>
-            <p>First download the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
-          files (an .info file and a .patch file) and place them into your
-          local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
-          </li>
-          <li>
-            <p>Install the <b>cvs-proxy</b> package with the command:</p>
-            <p>
-              <code>fink install <b>cvs-proxy</b>
-              </code>
-            </p>
-          </li>
-          <li>
-            <p>Packages are then updated with the commands:</p>
-            <p>
-              <code>fink selfupdate-cvs</code>
-            </p>
-            <p>
-              <code>fink
-          update-all</code>
-            </p>
-          </li>
-        </ul><p>If fink is not configured to use your proxy, change the settings
-        using:</p><p>
-          <code>fink configure</code>.</p></div>
+      <div class="question"><p><b>Q5.3: Comment mettre à jour les paquets disponibles sur CVS lorsqu'on utilise
+	un firewall ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Le paquet<b> cvs-proxy</b> peut créer un tunnel à travers les proxies
+	HTTP.</p><ul>
+          <li><p>Tout d'abord, téléchargez les fichiers <a href="http://cvs.%20%20%20%20sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/%20%20%20%20finkinfo/devel/">cvs-proxy</a> (un fichier .info et un fichier .patch)
+	  et placez-les dans votre arborescence locale.
+	  (i.e. /sw/fink/dists/local/main/finkinfo/).</p></li>
+          <li><p>Installez le paquet <b>cvs-proxy</b> avec la commande :</p>
+	  <p><code>fink install <b>cvs-proxy</b></code></p></li>
+          <li><p>Les paquets sont alors mis à jour avec les commandes :</p>
+	  <p><code>fink selfupdate-cvs</code></p>
+	  <p><code>fink update-all</code></p></li>
+        </ul><p>Si Fink n'est pas configuré pour utiliser un proxy, changez les
+	réglages en utilisant :</p><p><code>fink configure</code>.</p></div>
     </a>
     <a name="moving">
-      <div class="question"><p><b>Q5.4: Can I move Fink to another location after installation?</b></p></div>
-      <div class="answer"><p><b>A:</b> No. Well, of course you can move the files using mv or the Finder,
-        but 99% of the programs will stop working when you do. That's because
-        basically all Unix software depends on hardcoded paths to find data
-        files, libraries and other stuff.</p></div>
+      <div class="question"><p><b>Q5.4: Est-il possible de déplacer Fink vers un autre dossier après
+	l'installation ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Non. Enfin, vous pouvez bien sûr déplacer les fichiers en utilisant
+	mv ou le Finder, mais 99% des programmes ne fonctionnerons plus si vous
+	faites cela. En effet, la majorité des programmes Unix utilisent des
+	chemins d'accès directement inclus dans le fichier binaire pour accéder
+	entre autres à des données et des librairies.</p></div>
     </a>
     <a name="moving-symlink">
-      <div class="question"><p><b>Q5.5: If I move Fink after installation and provide a symlink from the
-        old location, will it work?</b></p></div>
-      <div class="answer"><p><b>A:</b> Maybe. The general expectation is that it should work, but there
-        may be hidden traps somewhere.</p></div>
+      <div class="question"><p><b>Q5.5: Est-ce que cela fonctionne si Fink est déplacé après l'installation
+	et qu'un lien symbolique est crée vers l'ancien emplacement ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Peut-être. On peut supposer un fonctionnement correct dans l'ensemble,
+	mais il y aura certainement des problèmes ici et là.</p></div>
     </a>
     <a name="removing">
-      <div class="question"><p><b>Q5.6: How can I uninstall all of Fink?</b></p></div>
-      <div class="answer"><p><b>A:</b> Almost all files installed by Fink are in /sw (or wherever you
-        chose to install it). Thus in order to get rid of Fink, enter this
-        command:</p><pre>sudo rm -rf /sw</pre><p>The only exception to this rule is XFree86. If you installed
-        XFree86 through Fink (i.e., you installed the <code>xfree86</code> or
-        <code>xfree86-rootless</code> packages, instead of using
-        <code>system-xfree86</code>) and want to remove it, you will need
-        additionally to enter this:</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>If you aren't planning to reinstall Fink you also will want to
-        remove the "<code>source /sw/bin/init.csh</code>" line you added to
-        your <code>.cshrc</code> file or the "<code>source
-        /sw/bin/init.sh</code>" line you added to your
-        <code>.bashrc</code> file, whichever is appropriate to your
-        setup, using a text editor.</p></div>
+      <div class="question"><p><b>Q5.6: Comment désinstaller la totalité de Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Presque tous les fichiers installés par fink se trouvent dans le
+	répertoire /sw (ou bien l'endroit où vous avez choisi de faire
+	l'installation). Donc, pour supprimez Fink, entrez cette
+	commande :</p><pre>sudo rm -rf /sw</pre><p>La seule exception concerne XFRee86. Si vous avez installé XFree86
+	via Fink (par exemple., vous avez installé le paquet <code>xfree86</code> ou 
+	<code>xfree86-rootless</code>, au lieu d'utiliser
+	<code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app
+	</pre><p>Si vous ne pensez pas réinstaller Fink, vous pourrez aussi
+	supprimer la ligne "<code>source /sw/bin/init.csh</code>" que
+	vous aviez ajoutée dans le fichier <code>.cshrc</code> ou la ligne
+	"<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier
+	<code>.bashrc</code> , suivant vos réglages, en utilisant un
+	éditeur de texte.</p></div>
     </a>
     <a name="bindist">
-      <div class="question"><p><b>Q5.7: The package database at the website lists package xxx, but apt-get
-        and dselect know nothing about it. Who's lying?</b></p></div>
-      <div class="answer"><p><b>A:</b> Both are correct. The <a href="http://fink.sourceforge.net/pdb/">package database</a> knows
-        about every package, including those that are still in the unstable
-        section. The <code>dselect</code> and <code>apt-get</code> tools on
-        the other hand only know about the packages available as precompiled
-        binary packages. Many packages are not available in precompiled form
-        through these tools for a variety of reasons. A package must be in the
-        "stable" section of the latest point release to be considered, and it
-        must pass additional checks for policy compliance as well as licensing
-        and patent restrictions.</p><p>If you want to install a package that is not available via
-        <code>dselect</code> / <code>apt-get</code>, you have to compile it
-        from source using <code>fink install <b>packagename</b>
-          </code>.
-        Make sure you have the Developer Tools installed before you try this.
-        (If there is no installer for the Developer Tools in your
-        <code>/Applications</code> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a>
-        after free registration.) See also the question about unstable
-        below.</p></div>
-    </a>
+      <div class="question"><p><b>Q5.7: La base de donnée des paquets sur le site web indique le paquet xxx,
+	mais apt-get ou dselect eux ne l'indiquent pas. Qui a raison ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Ils ont tous raison. La <a href="http://fink.sourceforge.net/pdb/">base
+	de donnée des paquets</a> donne la liste tous les paquets, même ceux
+	qui sont encore dans la section instable.  Les outils <code>dselect</code>
+	et <code>apt-get</code> de leur côté donnent la liste des paquets disponibles en
+	tant que binaires précompilés. De nombreux paquets ne sont pas
+	disponibles sous forme précompilée via ces outils pour plusieurs raisons.
+	Un paquet doit être dans la section "stable" de la dernière mise à jour
+	de Fink pour être pris en compte, et il doit, de plus, passer avec succès un certain nombre de tests relatifs aux règles de fink et aux restrictions de licences et brevets.</p><p>Si vous voulez installer un paquet qui n'est pas disponible via
+	<code>dselect</code> / <code>apt-get</code>, vous devez le compiler
+	à partir du code source en utilisant<code> fink install <b>nom_du_paquet</b>
+	</code>.
+	Vérifiez que vous avez installé les Developer Tools installés avant d'essayer
+	ceci. (S'il n'y a pas d'installeur pour les Developer Tools dans votre
+	répertoire <code>/Applications</code> , vous pouvez les télécharger sur
+	<a href="http://connect.apple.com/">Apple Developer Connection</a>
+	après enregistrement gratuit). Voir aussi la question à propos des
+	instables ci-dessous.</p></div>
+	</a>
     <a name="unstable">
       <div class="question"><p><b>Q5.8: There's this package in unstable that I want to install, but the
         fink command just says 'no package found'. How can I install it?</b></p></div>

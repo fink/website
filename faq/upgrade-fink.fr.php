@@ -1,8 +1,8 @@
 <?
 $title = "Q.F.P. - Mise à jour de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 01:26:51';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-fink.php?phpLang=fr" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=fr" title="Miroirs de Fink">';
+$cvs_date = 'Date: 2004/03/25 02:33:35';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink"><link rel="prev" href="mirrors.php?phpLang=fr" title="Miroirs de Fink">';
 
 include_once "header.inc";
 ?>
@@ -16,6 +16,6 @@ include_once "header.inc";
 (enregistrement gratuit obligatoire).</p><p>Les utilisateurs de 10.3 doivent installer les outils de développement compatibles avec Panther (c'est-à-dire XCode). Vous devez trouver un CD contenant XCode parmi ceux reçus avec Panther.</p></div>
     </a>
   <p align="right">
-Next: <a href="usage-fink.php?phpLang=fr">5 Installing, Using and Maintaining Fink</a></p>
+Next: <a href="usage-fink.php?phpLang=fr">5 Installer, Utiliser et Entretenir Fink</a></p>
 
 <? include_once "footer.inc"; ?>
