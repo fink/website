@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/29 13:42:45 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/05/29 14:17:44 $';
 
 include "header.inc";
 ?>
@@ -122,7 +122,7 @@ Screenshots:
    </p>
   </li>
   <li>
-   <p>Next, update your package cache by running <b><tt>apt-get update</tt></b>. This
+   <p>Next, update your package cache by running <b><tt>sudo apt-get update</tt></b>. This
    will update the local list of all available binary packages.</p>
   </li>
   <li>
