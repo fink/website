@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.14 2001/12/27 13:35:56 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.15 2002/01/06 23:11:37 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -750,7 +750,9 @@ supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <i>mirror-name</i> in Fink's
 configuration, append the <i>relative-path</i> part and use that as
-the actual URL.
+the actual URL. Alternatively, using <code>custom</code> as the
+<i>mirror-name</i> will cause Fink to use the <code>CustomMirror</code>
+field.
 </p>
 <p>
 Before the URL is used, percent expansion takes place.
@@ -760,6 +762,24 @@ The value <code>gnu</code> is a shorthand for
 default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
 </p>
+</itemd></item>
+
+<item><itemt>CustomMirror</itemt>
+<itemd>
+<p>
+A list of mirror sites. Each mirror site appears on a separate line,
+in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>.
+<i>location</i> can be a continent code (e.g. <code>nam</code>), a
+country code (e.g. <code>nam-us</code>), or anything else;
+mirrors are tried in that order.
+Example:
+</p>
+<codeblock>CustomMirror: &lt;&lt;
+nam-US: ftp://ftp.fooquux.com/pub/bar
+asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
+eur-DE: ftp://ftp.barfoo.de/bar
+Primary: frp://ftp.barbarorg/pub/
+&gt;&gt;</codeblock>
 </itemd></item>
 
 <item><itemt>SourceDirectory</itemt>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2001/12/27 13:35:56';
+$cvs_date = 'Date: 2002/01/06 23:11:37';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -195,7 +195,9 @@ supports a special URL scheme for mirrors:
 <tt><nobr>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</nobr></tt>. This will
 look up the mirror setting for <i>mirror-name</i> in Fink's
 configuration, append the <i>relative-path</i> part and use that as
-the actual URL.
+the actual URL. Alternatively, using <tt><nobr>custom</nobr></tt> as the
+<i>mirror-name</i> will cause Fink to use the <tt><nobr>CustomMirror</nobr></tt>
+field.
 </p>
 <p>
 Before the URL is used, percent expansion takes place.
@@ -205,6 +207,21 @@ The value <tt><nobr>gnu</nobr></tt> is a shorthand for
 default is <tt><nobr>%n-%v.tar.gz</nobr></tt> (i.e. a manual
 download).
 </p>
+</td></tr><tr valign="top"><td>CustomMirror</td><td>
+<p>
+A list of mirror sites. Each mirror site appears on a separate line,
+in the following format: <tt><nobr>&lt;location&gt;: &lt;url&gt;</nobr></tt>.
+<i>location</i> can be a continent code (e.g. <tt><nobr>nam</nobr></tt>), a
+country code (e.g. <tt><nobr>nam-us</nobr></tt>), or anything else;
+mirrors are tried in that order.
+Example:
+</p>
+<pre>CustomMirror: &lt;&lt;
+nam-US: ftp://ftp.fooquux.com/pub/bar
+asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
+eur-DE: ftp://ftp.barfoo.de/bar
+Primary: frp://ftp.barbarorg/pub/
+&gt;&gt;</pre>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
 Must be used when the tarball expands to a single directory, but
