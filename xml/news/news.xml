@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.95 2003/11/02 23:37:21 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.96 2003/11/04 20:08:02 rangerrick Exp $</cvsid>
 
 
 <newsitem>
-        <date>2003-11-1</date>
+	<date>2003-11-04</date>
+	<headline>User Deletion Bug</headline>
+	<body>
+		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
+		on Mac OS X 10.3 could exhibit a problem where all users get deleted
+		from the netinfo database, and you become unable to log in.</p>
+		<p>If you are using Mac OS X 10.3, please be sure you're using the
+		latest Fink version to avoid the issue.  To make sure you don't have
+		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
+		file.  You will need to modify it if it contains <code>deb</code>
+		lines that point to "release" or "current" without a version number.
+		In other words, if your <code>sources.list</code> file contains
+		these lines:</p>
+		<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main
+deb http://us.dl.sourceforge.net/fink/direct_download current main</codeblock>
+		<p>...you should change them to this:</p>
+		<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</codeblock>
+		<p>We are working on updating the repository to make sure that even
+		if you update you don't get the broken code, but in the meantime,
+		make sure your <code>sources.list</code> file has the correct entries.</p>
+	</body>
+</newsitem>
+<newsitem>
+        <date>2003-11-01</date>
         <headline>Fink 0.6.1 released</headline>
                 <body>
         <p>The latest Fink release, version 0.6.1, is now available

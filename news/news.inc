@@ -1,4 +1,23 @@
-<a name="2003-11-1 Fink 0.6.1 released"><span class="news-date">2003-11-1: </span><span class="news-headline">Fink 0.6.1 released</span></a><?php gray_line(); ?>
+<a name="2003-11-04 User Deletion Bug"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug</span></a><?php gray_line(); ?>
+		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
+		on Mac OS X 10.3 could exhibit a problem where all users get deleted
+		from the netinfo database, and you become unable to log in.</p>
+		<p>If you are using Mac OS X 10.3, please be sure you're using the
+		latest Fink version to avoid the issue.  To make sure you don't have
+		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
+		file.  You will need to modify it if it contains <code>deb</code>
+		lines that point to "release" or "current" without a version number.
+		In other words, if your <code>sources.list</code> file contains
+		these lines:</p>
+		<pre>deb http://us.dl.sourceforge.net/fink/direct_download release main
+deb http://us.dl.sourceforge.net/fink/direct_download current main</pre>
+		<p>...you should change them to this:</p>
+		<pre>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</pre>
+		<p>We are working on updating the repository to make sure that even
+		if you update you don't get the broken code, but in the meantime,
+		make sure your <code>sources.list</code> file has the correct entries.</p>
+	<a name="2003-11-01 Fink 0.6.1 released"><span class="news-date">2003-11-01: </span><span class="news-headline">Fink 0.6.1 released</span></a><?php gray_line(); ?>
         <p>The latest Fink release, version 0.6.1, is now available
 for both source and binary users.  This release was built on OS X 10.2
 using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
@@ -55,20 +74,4 @@ after free registration from connect.apple.com.
 		can be found on the official <a href="http://finkmirrors.net">
 		mirroring website</a>.
 		</p>
-		<a name="2003-10-25 Look Ma, a logo for Fink"><span class="news-date">2003-10-25: </span><span class="news-headline">Look Ma, a logo for Fink</span></a><?php gray_line(); ?>
-	<p>As you surely noticed, Fink has a logo. This is the result of our
-	Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
-	This new, official, logo has been displayed since the 24th of October and
-	those of you who wondered how it has been picked and what the name of the
-	winner is should read up in the PR <a href="<?php print $root; ?>pr/index.php">section</a>.
-	</p>
-	<p>
-	The longer explanation also features a larger version of the logo itself,
-	so that you may have a closer look at its details. We like our new logo,
-	we hope that you will like it too.
-	</p>
-	<p>IMPORTANT: We do not yet have a formal licensing agreement for the new
-   logo and so are unable to give permission to distribute it.  Currently, it
-   can only be displayed on the Fink web page.  Thank you for your understanding.
-	</p>
 		
