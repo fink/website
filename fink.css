@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.4 2001/09/30 14:57:23 chrisp Exp $ */
+/* $Id: fink.css,v 1.5 2002/04/17 15:34:16 fingolfin Exp $ */
 
 body {
   color:black;
@@ -6,18 +6,29 @@ body {
   font-family:"Trebuchet MS",sans-serif;
 }
 
-a:link { color:rgb(0,0,240); }
-a:visited { color:rgb(128,0,128); }
-a:active { color:rgb(255,51,51); }
+a:link {
+  color:rgb(0,0,240);
+  background-color:white;
+}
+a:visited {
+  color:rgb(128,0,128);
+  background-color:white;
+}
+a:active {
+  color:rgb(255,51,51);
+  background-color:white;
+}
 
 p,ul,ol,li,dl,dt,dd,td,th {
   color:black;
+  background-color:white;
   font-family:"Trebuchet MS",sans-serif;
   font-size:11pt;
 }
 
 h1 {
   color:black;
+  background-color:white;
   font-family:"Trebuchet MS",sans-serif;
   font-size:18pt;
   font-weight:bold;
@@ -25,6 +36,7 @@ h1 {
 
 h2 {
   color:black;
+  background-color:white;
   font-family:"Trebuchet MS",sans-serif;
   font-size:12pt;
   font-weight:bold;
@@ -32,24 +44,28 @@ h2 {
 
 p.nav {
   color:black;
+  background-color:white;
   font-family:Verdana,Helvetica,Arial,sans-serif;
   font-size:8pt;
 }
 
 p.footer {
   color:black;
+  background-color:white;
   font-family:"Trebuchet MS",sans-serif;
   font-size:10pt;
 }
 
 input {
   color:black;
+  background-color:white;
   font-family:Courier,"Courier New",monospace;
   font-size:10pt;
 }
 
 tt {
   color:black;
+  background-color:white;
   font-family:Courier,"Courier New",monospace;
   font-size:10pt;
 }
