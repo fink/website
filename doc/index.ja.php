@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/25 13:57:37';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/10/20 08:13:44';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.12 2004/07/25 13:57:37 babayoshihiko Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.14 2004/10/20 08:13:44 dmacks Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -21,7 +21,7 @@ include_once "header.inc";
 <li><a href="users-guide/index.php">Fink ユーザーガイド</a> -
 Fink 本体のインストール、パッケージのインストール、新しい Fink リリースへのアップグレードなどが書かれています。
 ソースとバイナリリリースの両方の説明が書かれています
-<b>現在作業中!</b></li>
+</li>
 <li><a href="x11/index.php">Darwin と Mac OS X での X11</a> -
 コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) </li>
 </ul>

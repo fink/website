@@ -1,13 +1,13 @@
 <?
 $title = "文档";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/07/11 00:49:45';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/10/20 08:13:44';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.8 2004/07/11 00:49:45 jeff_yecn Exp $-->
+<h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.9 2004/10/20 08:13:44 dmacks Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。
@@ -19,7 +19,7 @@ include_once "header.inc";
 </p>
 <ul>
 <li><a href="users-guide/index.php">Fink 用户指南</a> － 它涉及如何安装 Fink 自身，安装软件包，和升级到新的 Fink 版本。它包括对使用源代码版本和二进制版本的使用说明。
-<b>正在编写中！</b></li>
+</li>
 <li><a href="x11/index.php">在 Darwin 和 Mac OS X 上运行 X11</a> － 涉及有关概念，安装和启动（同时面向 Darwin 和 Mac OS X 用户）</li>
 </ul>
 

@@ -1,13 +1,13 @@
 <?
 $title = "Documentación";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/03 00:39:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/10/20 08:13:44';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentación</h1><!--Generated from $Fink: doc.es.xml,v 1.7 2004/09/03 00:39:52 michga Exp $-->
+<h1>Fink - Documentación</h1><!--Generated from $Fink: doc.es.xml,v 1.8 2004/10/20 08:13:44 dmacks Exp $-->
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
 Algunos de ellos tambien pueden ser útiles para la gente que usa Mac OS X
@@ -21,7 +21,7 @@ La documentación actual del Fink incluye:
       <li><a href="users-guide/index.php">Guía del Usuario del Fink</a> -
 esto cubre la instalación del propio Fink, la instalación de paquetes, y actualizaciones del Fink. 
 Contiene instrucciones tanto para la version fuente como para la binaria.
-<b>Trabajo en Proceso!</b></li>
+</li>
       <li><a href="x11/index.php">Ejecutando X11 en Mac OS X y Darwin</a> -
 cubre conceptos como la instalación y ejecución (tambien dedicado a los usuarios de Darwin y Mac OS X)</li>
     </ul>
