@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.4 2001/06/24 12:16:02 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.5 2001/07/01 06:34:44 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -126,6 +126,25 @@ downloading. To use a proxy, you must tell wget to use it. You can do
 that by setting the environment variable http_proxy. See the
 <link url="http://www.gnu.org/manual/wget/html_chapter/wget_8.html#SEC36">wget
 manual</link> for details.</p>
+</answer></faqentry>
+
+<faqentry name="head"><question><p>I'm getting a strange usage message
+from the head command. What's broken?</p></question>
+<answer><p>If you're seeing this:</p>
+<codeblock>Unknown option: 1
+Usage: head [-options] &lt;url&gt;...</codeblock>
+<p>followed by a list of options, you have a broken <code>head</code>
+executable.
+This happens when you install the Perl libwww library on an HFS+
+system volume.
+It tries to create a new command <code>/usr/bin/HEAD</code>, which
+overwrites the existing <code>head</code> command because the file
+system is case-insensitive.
+<code>head</code> is a standard command used in many shell scripts and
+Makefiles.
+You need to get the original <code>head</code> executable back if you
+want to use Fink.
+</p>
 </answer></faqentry>
 
 </chapter>
