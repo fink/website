@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 07:59:44 $';
+$cvs_date = '$Date: 2004/09/22 08:14:48 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -52,7 +52,6 @@ como instaladores binarios. Fink 0.6.3 (para OS X 10.2) y 0.4.1 (para OS X 10.1)
 </p>
 
 <h1>Recursos</h1>
-
 <p>
 Si estas buscando soporte, revisa la<a
 href="help/index.php">página de ayuda</a>.
