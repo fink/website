@@ -115,7 +115,7 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 </p>
 <p>
 多くのウィンドウマネージャが Fink パッケージ化されています。
-<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">一覧</a>をご覧下さい。
+<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">一覧</a>をご覧下さい。
 </p>
 
 <h2><a name="desktop">1.9 Quartz/Aqua や Gnome, KDE とは何ですか?</a></h2>

@@ -139,8 +139,11 @@ Aqua が存在しているのにコンソールモードのサーバ (純粋な 
 <code>XDarwinQuartz</code> <code>/Applications/XDarwin.app/Contents/MacOS/XDarwin</code> へのシンボリックリンク;
 <code>XDarwinStartup</code> 小さい実行可能ファイル。
 もしどれか一つでもないか、違うファイルへリンクされていたら、修正する必要があります。
-修正の方法はどうやって XFree86 をインストールしたかによります。
-<a href="inst-xfree86.php?phpLang=ja#rootless">ネット上のルートレスサーバ</a>を参考にして下さい。
+修正の方法はどうやって XFree86 をインストールしたかによって変わります。
+Fink で XFree86 をインストールした場合、
+<code>xfree86</code> パッケージ (または OS 10.2 以前は<code>xfree86-rootless</code>)
+を再インストールする必要があります。
+手動でインストールした場合、Xquartz.tgz からファイルを取得します。
 </p>
 <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
 &gt; Error:            Can't find file "unknown" for geometry include

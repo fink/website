@@ -17,16 +17,30 @@ include_once "header.inc";
 <p>
 X11 アプリケーションをターミナル.app から起動するには、環境変数 "DISPLAY" が必要です。
 この値はアプリケーションにどこで X11 ウィンドウサーバを探すかを指定します。
-デフォルト設定では、 XDarwin は同じマシン上で動作し、 tcsh では以下のように環境変数を設定します:
+デフォルト設定では、 XDarwin は同じマシン上で動作し、以下のように環境変数を設定します:
 </p>
+<ul>
+<li><p>tcsh の場合:</p>
 <pre>setenv DISPLAY :0.0</pre>
+</li>
+<li><p>bash の場合:</p>
+<pre>export DISPLAY=":0.0"</pre>
+</li>
+</ul>
 <p>
-ログイン時に XDarwin.app を起動するようにし (システム環境設定のログインパネルで) 、以下を 
-<code>.cshrc</code> に追加するとよいでしょう:
+ログイン時に XDarwin.app を起動するようにし (MacOSX 10.2 の場合、システム環境設定のログインパネルで、
+MacOSX 10.3 の場合、アカウントパネルの起動項目で) 、
 </p>
+<ul>
+<li><p>tcsh の場合: 以下を <code>.cshrc</code> に追加:</p>
 <pre>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</pre>
+</li>
+<li><p>bash の場合: 以下を <code>.zshrc</code> に追加:</p>
+<pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
+</li>
+</ul>
 <p>
 全てのシェルで DISPLAY を自動的に設定しますが、既に設定されている場合は上書きをしません。
 これにより、 X11 アプリケーションを遠隔から、 ssh や X11 トンネリングで実行することができます。
@@ -73,11 +87,22 @@ X11 システムは複数のクリップボード (X11 的な言葉では カッ
 <p>
 (注記: ウィンドウマネージャを exec する<b>前に</b>、バックグラウンドで実行して下さい。
 最後に追加するだけでは起動されません。)
+これは Apple X11 では必要ではありません。
+(<a href="inst-xfree86.php?phpLang=ja#apple-binary">Apple X11 を使う際の注意点</a> を参照)。
 </p>
 <p>
 Apple X11 を使う場合、通常の Map アプリのように Command-C か Edit-&gt;Copy 
 を使ってクリップボードにコピーすることができます。
-しかし、 Apple X11 で Command-V を使ったペーストはまだできません。
+ペーストは、マウスの中ボタンをクリックか Command-V を押します。
+</p>
+<p>
+いずれにせよ、 Aqua と X11 の間のコピー・ペーストで問題が合った場合、
+まずはペーストを２回試してください
+(コピーに時間がかかる場合があるようです)。
+これで駄目なら、他のアプリケーションを試してください。
+例: Aqua 側では TextEdit や Terminal.app 、
+X11 側では nedit や xterm 。
+私の経験上、これでうまく行きます。
 </p>
 
 

@@ -39,7 +39,8 @@ include_once "header.inc";
 これについての詳細はマニュアルページをご覧下さい。
 </p>
 <p>
-注記: Mac OS X では、ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
+注記: Panther 以前のMac OS X では、
+ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
 これは
 </p>
 
@@ -95,7 +96,9 @@ xinit はシェルを通して起動する方法を知っています。
 </p>
 <pre>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
-Fink を使っている場合、 source <code>init.sh</code> を一番最初に実行します。
+Fink を使っている場合、 source <code>init.sh</code> (bash シェルの場合)、または
+<code>init.csh</code> (tcsh シェルの場合)
+を一番最初に実行します。
 これによって環境が正しく設定されます。
 </p>
 <p>
@@ -117,7 +120,11 @@ Fink を使っている場合、 source <code>init.sh</code> を一番最初に�
 <p>
 以下のサンプルでは GNOME を起動しています:
 </p>
-<pre>source /sw/bin/init.sh
+<p>bash の場合:</p>
+<pre>. /sw/bin/init.sh
+exec gnome-session</pre>
+<p>tcsh の場合:</p>
+<pre>source /sw/bin/init.csh
 exec gnome-session</pre>
 <p>
 より複雑に、 bell をオフにし、クライアントをいくつか起動してから Enlightenment ウィンドウマネージャを起動するには:
@@ -131,6 +138,32 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
+<p>tcsh ユーザーは、最初の行を書き換えます:</p>
+<pre>source /sw/bin/init.csh</pre>
+<p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</pre>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>GNOME2.4 を Apple X11 下で起動するには、 metacity が自動的に起動するため、以下の通りです:</p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</pre>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>KDE 3.2 (version &lt; 3.2.2-21) を Apple X11 下で起動するには</p>
+<pre>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</pre>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>最後に、最新版の unstable な KDE を Apple X11 下で起動するには:</p>
+<pre>. /sw/bin/init.sh
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</pre>
 
 <p align="right">
 Next: <a href="xtools.php?phpLang=ja">5 Xtools</a></p>
