@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+
+<article filename="index">
+<title>Fink - Documentation</title>
+<shorttitle></shorttitle>
+<cvsid>$Id: doc.ja.xml,v 1.1 2004/02/19 23:40:44 babayoshihiko Exp $</cvsid>
+
+<preface>
+<p>
+このページは、 Fink 用に書かれたドキュメントの一覧です。
+ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
+</p>
+</preface>
+
+<section name="userdoc"><title>ユーザー向けドキュメント</title>
+
+<p>
+現在のユーザー向け Fink ドキュメント:
+</p>
+<ul>
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.html">Fink User's Guide</varlink> -
+Fink 本体のインストール、パッケージのインストール、新しい Fink リリースへのアップグレードなどが書かれています。
+ソースとバイナリリリースの両方の説明が書かれています。
+<em>現在作業中!</em></li>
+<li><varlink url="x11/index.php" varurl="x11/x11.html">Running X11 on Darwin and Mac OS X</varlink> -
+コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) 。</li>
+</ul>
+
+<p>
+以下のドキュメントはより詳細ですが、内容が多少古くメンテナンスされません。
+（訳注 日本語版はありません）:
+</p>
+<ul>
+<li><varlink url="bundled/install.php" varurl="bundled/install.html">Installation and Upgrading</varlink> - how
+to install Fink or upgrade to a new version</li>
+<li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Usage</varlink> - how to use Fink
+and the installed software</li>
+<li><varlink url="bundled/readme.php" varurl="bundled/readme.html">Fink ReadMe</varlink> - the ReadMe for the
+source distribution</li>
+<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.html">CVS Access</varlink> - how to access the
+Fink CVS repository to get the latest source packages between
+releases</li>
+</ul>
+
+</section>
+
+<section name="developerdoc"><title>開発者向けドキュメント</title>
+
+<ul>
+<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
+file) - <link
+url="http://conferences.oreillynet.com/macosx2002/"
+>O'Reilly Mac OS X Conference</link> でのプレゼンテーション用スライド (
+<link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</link> もあります) 。</li>
+<li><varlink url="porting/index.php" varurl="porting/porting.html">Porting Tips</varlink> - 
+Unix アプリケーションを Darwin へポートする際に有用な情報。</li>
+<li><varlink url="packaging/index.php" varurl="packaging/packaging.html">Packaging Manual</varlink> - 
+Fink パッケージの作り方、メンテナンス方法。</li>
+</ul>
+
+</section>
+</article>
