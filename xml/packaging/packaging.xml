@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.57 2003/12/19 12:52:33 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.58 2004/01/02 14:38:47 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -940,7 +940,7 @@ libraries.
 Static and shared libraries should be placed directly in
 <filename>/sw/lib</filename> unless there is a good reason not to.
 This is also the place for executables that should not be executed
-directly by the user (which would otherwise be places in libexec).
+directly by the user (which would otherwise be placed in libexec).
 </p>
 <p>
 A package is free to create a subdirectory to store private data or

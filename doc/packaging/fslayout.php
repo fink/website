@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2003/12/19 12:52:33';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/01/02 14:38:47';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
@@ -65,7 +65,7 @@ libraries.
 Static and shared libraries should be placed directly in
 <code>/sw/lib</code> unless there is a good reason not to.
 This is also the place for executables that should not be executed
-directly by the user (which would otherwise be places in libexec).
+directly by the user (which would otherwise be placed in libexec).
 </p>
 <p>
 A package is free to create a subdirectory to store private data or
