@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:26:56';
+$cvs_date = 'Date: 2005/02/23 07:50:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -59,8 +59,10 @@ include_once "header.fr.inc";
 </a>
 <a name="dselect-access">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.11: Pourquoi est-il impossible de télécharger des paquets après avoir utilisé le menu "[A]ccess" dans dselect ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous avez certainement fait pointer apt sur un miroir Debian, qui ne contient, bien sûr, aucun des fichiers de Fink. Vous pouvez corriger cela manuellement ou via dselect. Pour le faire manuellement, modifiez en tant que super-utilisateur le fichier <code>/sw/etc/apt/sources.list </code>dans un éditeur de texte. Supprimez les lignes qui mentionnent debian.org et remplacez-les par celles-ci :</p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
-deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>(Si vous vivez en Europe, remplacez <code>us.dl.sourceforge.net</code> par <code>eu.dl.sourceforge.net</code>)</p><p>Pour modifier avec dselect, relancez "[A]ccess", choisissez la méthode "apt" et entrez les informations suivantes :</p><p>URL: http://us.dl.sourceforge.net/fink/direct_download - Distribution: release - Components: main crypto</p><p>Ensuite, spécifiez que vous voulez ajouter une autre source et répétez la procédure avec "current" à la place de "release".</p><p>Une version modifiée du paquet apt (contenant le script de configuration en tant que plug-in de dselect) est en cours de développement dans CVS.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous avez certainement fait pointer apt sur un miroir Debian, qui ne contient, bien sûr, aucun des fichiers de Fink. Vous pouvez corriger cela manuellement ou via dselect. Pour le faire manuellement, modifiez en tant que super-utilisateur le fichier <code>/sw/etc/apt/sources.list </code>dans un éditeur de texte. Supprimez les lignes qui mentionnent debian.org et remplacez-les par celles-ci :</p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release \
+main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download current main \
+crypto</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>(Si vous vivez en Europe, remplacez <code>us.dl.sourceforge.net</code> par <code>eu.dl.sourceforge.net</code>)</p><p>Pour modifier avec dselect, relancez "[A]ccess", choisissez la méthode "apt" et entrez les informations suivantes :</p><p>URL: http://us.dl.sourceforge.net/fink/direct_download - Distribution: release - Components: main crypto</p><p>Ensuite, spécifiez que vous voulez ajouter une autre source et répétez la procédure avec "current" à la place de "release".</p><p>Une version modifiée du paquet apt (contenant le script de configuration en tant que plug-in de dselect) est en cours de développement dans CVS.</p></div>
 </a>
 <a name="cvs-busy">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.12: Lors de l'exécution de <q>fink selfupdate</q> ou "fink selfupdate-cvs", le message "<code>Updating using CVS failed. Check the error messages above.</code>" apparaît.</b></p></div>
@@ -71,14 +73,18 @@ CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>ou bien un message comme le suivant :</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Failed: Logging into the CVS server for anonymous read-only access \
+failed.</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>ou bien un message comme le suivant :</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>ou :</p><pre>cvs [update aborted]: End of file received from server</pre><p>ou encore :</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>alors il est possible que le serveur CVS soit surchargé. Il vous faudra réessayer plus tard.</p><p>Il se peut que les permissions soient mal définies dans votre dossier CVS et que vous n'y ayez pas accès, ce qui génère des messages "Permission denied" :</p><pre>cvs update: in directory 10.2/stable/main: 
-cvs update: cannot open CVS/Entries for reading: No such file or directory
+cvs update: cannot open CVS/Entries for reading: No such file or \
+directory
 cvs server: Updating 10.2/stable/main 
-cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
-cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: 
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission \
+denied
+cvs [update aborted]: cannot make directory \
+10.2/stable/main/finkinfo: 
 No such file or directory 
 ### execution of su failed, exit code 1 Failed: 
 Updating using CVS failed. Check the error messages above.</pre><p>Dans ce cas-là, vous devez remettre à zéro votre répertoire CVS. Utilisez la commande :</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
@@ -110,16 +116,19 @@ fink selfupdate-cvs</pre></div>
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.18: Impossible de d'installer ou de supprimer quoi que ce soit à cause d'un problème "files list file".</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> En général, ces erreurs sont de la forme :</p><pre>files list file for package <b>nom_du_paquet</b> contains empty filename</pre><p>ou</p><pre>files list file for package <b>nom_du_paquet</b> is missing final newline</pre><p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p><pre>dpkg --contents <b>chemin_complet_du_fichier_deb</b></pre><p>par exemple :</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p><p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <a href="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</a>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <b>nom_du_paquet</b></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <b>nom_du_paquet</b></code>, mais cela ne l'installera pas.</p><p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p><pre>dpkg -c <b>chemin_complet_du_fichier_deb</b> | awk '{if ($6 == "./"){ print "/."; } \
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> En général, ces erreurs sont de la forme :</p><pre>files list file for package <b>nom_du_paquet</b> contains empty filename</pre><p>ou</p><pre>files list file for package <b>nom_du_paquet</b> is missing final newline</pre><p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p><pre>dpkg --contents <b>chemin_complet_du_fichier_deb</b></pre><p>par exemple :</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin\
+-powerpc.deb</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p><p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <a href="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</a>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <b>nom_du_paquet</b></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <b>nom_du_paquet</b></code>, mais cela ne l'installera pas.</p><p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p><pre>dpkg -c <b>chemin_complet_du_fichier_deb</b> | awk '{if ($6 == "./")\
+{ print "/."; } \
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
-&gt; /sw/var/lib/dpkg/info/<b>nom_du_paquet</b>.list</pre><p>par exemple :</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+&gt; /sw/var/lib/dpkg/info/<b>nom_du_paquet</b>.list</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>par exemple :</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | \
+awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
-&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>Cela a pour effet d'extraire le contenu du fichier .deb, de tout supprimer sauf les noms de fichiers, puis de les écrire dans le fichier .list.</p></div>
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Cela a pour effet d'extraire le contenu du fichier .deb, de tout supprimer sauf les noms de fichiers, puis de les écrire dans le fichier .list.</p></div>
 </a>
 <a name="error-nineteen">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Lors de l'utilisation du paquet d'installation binaire de Fink, un gros "19" apparaît dans la fenêtre et plus il n'est plus possible d'installer quoi que ce soit.</b></p></div>
@@ -147,7 +156,9 @@ fink selfupdate-cvs</pre></div>
 <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Impossible de mettre à jour Fink.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p><ul>
 <li><b>10.3.x :</b> (distribution 0.7.1)
-<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
+fink-0.7.1-updates/main/binary-darwin-powerpc\
+/base/fink_0.22.4-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
 rm fink_0.22.4-1_darwin-powerpc.deb
 fink selfupdate</pre></li>
@@ -156,7 +167,7 @@ fink selfupdate</pre></li>
 sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
 rm fink_0.18.3-1_darwin-powerpc.deb
 fink selfupdate</pre></li>
-</ul></div>
+</ul><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="spaces-in-directory">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Est-il possible d'installer Fink sur un volume ou dans un répertoire contenant un espace dans le nom?</b></p></div>
@@ -182,18 +193,21 @@ Hit http://us.dl.sourceforge.net 10.3/current/main Packages
 Hit http://us.dl.sourceforge.net 10.3/current/main Release
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
-Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-\
+powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-\
+powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin\
+-powerpc/Packages
 File not found
 Reading Package Lists... Done
 Building Dependency Tree... Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
-</pre><p>alors vous devez juste lancer <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p></div>
+</pre><p>alors vous devez juste lancer <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="wrong-tree">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>

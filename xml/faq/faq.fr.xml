@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.43 2005/02/01 08:26:56 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.44 2005/02/23 07:50:12 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -346,8 +346,11 @@
 </question>
 <answer>
 <p>Vous avez certainement fait pointer apt sur un miroir Debian, qui ne contient, bien sûr, aucun des fichiers de Fink. Vous pouvez corriger cela manuellement ou via dselect. Pour le faire manuellement, modifiez en tant que super-utilisateur le fichier <code>/sw/etc/apt/sources.list </code>dans un éditeur de texte. Supprimez les lignes qui mentionnent debian.org et remplacez-les par celles-ci :</p>
-<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
-deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
+<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release \
+main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download current main \
+crypto</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>(Si vous vivez en Europe, remplacez <code>us.dl.sourceforge.net</code> par <code>eu.dl.sourceforge.net</code>)</p>
 <p>Pour modifier avec dselect, relancez "[A]ccess", choisissez la méthode "apt" et entrez les informations suivantes :</p>
 <p>URL: http://us.dl.sourceforge.net/fink/direct_download - Distribution: release - Components: main crypto</p>
@@ -373,7 +376,9 @@ CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
+Failed: Logging into the CVS server for anonymous read-only access \
+failed.</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>ou bien un message comme le suivant :</p>
 <codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer 
@@ -386,10 +391,13 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
 <p>alors il est possible que le serveur CVS soit surchargé. Il vous faudra réessayer plus tard.</p>
 <p>Il se peut que les permissions soient mal définies dans votre dossier CVS et que vous n'y ayez pas accès, ce qui génère des messages "Permission denied" :</p>
 <codeblock>cvs update: in directory 10.2/stable/main: 
-cvs update: cannot open CVS/Entries for reading: No such file or directory
+cvs update: cannot open CVS/Entries for reading: No such file or \
+directory
 cvs server: Updating 10.2/stable/main 
-cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
-cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: 
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission \
+denied
+cvs [update aborted]: cannot make directory \
+10.2/stable/main/finkinfo: 
 No such file or directory 
 ### execution of su failed, exit code 1 Failed: 
 Updating using CVS failed. Check the error messages above.</codeblock>
@@ -471,22 +479,28 @@ fink selfupdate-cvs</codeblock>
 <p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p>
 <codeblock>dpkg --contents <em>chemin_complet_du_fichier_deb</em></codeblock>
 <p>par exemple :</p>
-<codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+<codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin\
+-powerpc.deb</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p>
 <p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
 <p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p>
-<codeblock>dpkg -c <em>chemin_complet_du_fichier_deb</em> | awk '{if ($6 == "./"){ print "/."; } \
+<codeblock>dpkg -c <em>chemin_complet_du_fichier_deb</em> | awk '{if ($6 == "./")\
+{ print "/."; } \
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
 &gt; /sw/var/lib/dpkg/info/<em>nom_du_paquet</em>.list</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>par exemple :</p>
-<codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+<codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | \
+awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Cela a pour effet d'extraire le contenu du fichier .deb, de tout supprimer sauf les noms de fichiers, puis de les écrire dans le fichier .list.</p>
 </answer>
 </faqentry>
@@ -546,7 +560,9 @@ fink selfupdate-cvs</codeblock>
 <p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p>
 <ul>
 <li><em>10.3.x :</em> (distribution 0.7.1)
-<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
+fink-0.7.1-updates/main/binary-darwin-powerpc\
+/base/fink_0.22.4-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
 rm fink_0.22.4-1_darwin-powerpc.deb
 fink selfupdate</codeblock></li>
@@ -556,6 +572,7 @@ sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
 rm fink_0.18.3-1_darwin-powerpc.deb
 fink selfupdate</codeblock></li>
 </ul>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 </answer>
 </faqentry>
 <faqentry name="spaces-in-directory">
@@ -590,11 +607,14 @@ Hit http://us.dl.sourceforge.net 10.3/current/main Packages
 Hit http://us.dl.sourceforge.net 10.3/current/main Release
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
-Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-\
+powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-\
+powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin\
+-powerpc/Packages
 File not found
 Reading Package Lists... Done
 Building Dependency Tree... Done
@@ -603,6 +623,7 @@ they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
 </codeblock>
 <p>alors vous devez juste lancer <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 </answer>
 </faqentry>
 <faqentry name="wrong-tree">
@@ -924,15 +945,19 @@ undefined reference to _FT_Access_Frame</codeblock>
 <answer>
 <p>Si vous avez des messages d'erreur similaire à celui-ci :</p>
 <codeblock>unix_dl.c: In function `rep_open_dl_library':
-unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
+unix_dl.c:328: warning: assignment discards qualifiers from pointer \
+target type 
 unix_dl.c: In function `rep_find_c_symbol': 
-unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
-unix_dl.c:466: error: (Each undeclared identifier is reported only once 
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this \
+function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only \
+once 
 unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info" 
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
 make[1]: *** [unix_dl.lo] Error 1</codeblock>
 <p>vous avez certainement un header <code>/usr/local/include/dlfcn.h</code>, incompatible avec Panther. Déplacez-le.</p>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la librairie <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p>
 <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
@@ -1427,10 +1452,12 @@ sudo apt-get install fink</codeblock>
 </question>
 <answer>
 <p>Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename> ou <filename>system-xfree86-43</filename>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <filename>system-xfree86</filename>, vous devez utiliser la commande :</p>
-<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
+<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
+ system-xfree86-43</codeblock>
 <p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant :</p>
 <codeblock>fink list -i system-xfree86</codeblock>
 <p>et vous assurer que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>sont présents. Si vous avez installé le X11SDK, vous devez aussi avoir le paquet <code>system-xfree86-dev</code>.</p>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Si le problème persiste, voir plus haut <xref section="apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref>.</p>
 </answer>
 </faqentry>
@@ -1442,11 +1469,13 @@ sudo apt-get install fink</codeblock>
 <p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> or <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non  :</p>
 <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
-xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
+xfree86-base xfree86-base-shlibs xfree86-rootless \
+xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
+<p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuite X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p>
 <p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p>
 <codeblock>fink-virtual-pkgs --debug</codeblock>
