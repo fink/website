@@ -11,7 +11,7 @@
 <xsl:document href="{@filename}.php.tmp" method="html" indent="no" encoding="iso-8859-1">
 <html><head>
 <title><xsl:value-of select="shorttitle"/></title>
-<link rel="start" href="{@filename}.php" title="{shorttitle} Contents" />
+<link rel="contents" href="{@filename}.php" title="{shorttitle} Contents" />
 <link rel="next" href="{chapter/@filename}.php" title="{chapter/title}" />
 </head><body>
 
@@ -70,7 +70,6 @@
 <!-- this will be seen and then removed by postprocess.pl -->
 <xsl:value-of select="../cvsid" />
 <title><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="shorttitle"/></title>
-<link rel="start" href="{../@filename}.php" title="{../shorttitle} Contents" />
 <link rel="contents" href="{../@filename}.php" title="{../shorttitle} Contents" />
 
 <xsl:for-each select="following-sibling::chapter">
