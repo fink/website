@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 02:08:01 $';
+$cvs_date = '$Date: 2002/05/28 02:17:50 $';
 
 include "header.inc";
 ?>
@@ -10,21 +10,23 @@ include "header.inc";
 <h1>KDE Support In Fink</h1>
 
 <p>
- The Fink team is happy to announce there is now preliminary support
- for KDE on MacOS X.
+ The Fink team is happy to announce preliminary support for KDE on
+ MacOS X.
 </p>
 
 <p>
  Work has been progressing steadily on getting KDE 3.0.x ported to
- MacOS X.  There are a large number of issues before the port is
- complete, but the vast majority of KDE works just fine.  The
- work-in-progress KDE tree is gracefully being hosted by the folks
- at <a href="http://www.opendarwin.org/">OpenDarwin</a> -- more info
- on our progress and things that need to be done are being
- constantly updated in the <a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/proj/KDE-Darwin/README.Darwin?rev=HEAD&content-type=text/x-cvsweb-markup">README.Darwin</a>
- file available at the top of the KDE-Darwin tree.  Now, packages
- and pre-built binaries are available for users interested in running
- KDE on MacOS X with Fink.
+ MacOS X on XDarwin.  Packages and pre-built binaries are now available
+ for users interested in running KDE on MacOS X with Fink.
+</p>
+<p>
+ There are a large number of issues remaining before the port is truly
+ complete, but the vast majority of KDE builds and runs just fine.
+ The work-in-progress KDE source tree is being graciously hosted by the
+ folks at <a href="http://www.opendarwin.org/">OpenDarwin</a>. More info
+ on our progress and things that need to be done are regularly updated
+ in the <a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/proj/KDE-Darwin/README.Darwin?rev=HEAD&content-type=text/x-cvsweb-markup">README.Darwin</a>
+ file available at the top of the KDE-Darwin tree.
 </p>
 
 <h1>Big Fat Warning!</h1>
