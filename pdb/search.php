@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Contents Search";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2005/02/11 06:02:03 $';
+$cvs_date = '$Date: 2005/02/11 06:11:30 $';
 
 include "header.inc";
 
@@ -11,17 +11,24 @@ $filename = ereg_replace(" ", "", param(filename));
 if (ereg("[^a-zA-Z0-9_.+-]", $summary) || ereg("[^a-zA-Z0-9_.+-]", $filename)) {
 print "yes\n";
 ?>
+	<h1>Package Search</h1>
+	
+	<form action="search.php" method="GET">
+	<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
+	print $summary ?>">
+	</p>
 
-<h1>Package Search</h1>
-
-<form action="search.php" method="GET">
-<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
-print $summary ?>">
-</p>
-<p>Search package contents: <input type="text" name="filename" size="15" value="<?
-print $filename ?>">
-<input type="submit" value="Search">
-</p>
+<?
+if (param(c))
+{
+?>
+	<p>Search package contents: <input type="text" name="filename" size="15" value="<?
+	print $filename ?>">
+	<input type="submit" value="Search">
+	</p>
+<?
+}
+?>
 </form>
 
 <p>You have entered a search text that contains invalid characters.</p>
@@ -30,17 +37,26 @@ print $filename ?>">
 } else {  /* $search_key valid */
 ?>
 
-<h1>Package Search</h1>
+	<h1>Package Search</h1>
+	
+	<form action="search.php" method="GET">
+	<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
+	print $summary ?>">
+	</p>
 
-<form action="search.php" method="GET">
-<p>Search package summaries: <input type="text" name="summary" size="15" value="<?
-print $summary ?>">
-</p>
-<p>Search package contents: <input type="text" name="filename" size="15" value="<?
-print $filename ?>">
-<input type=checkbox name=ignoredirs>Ignore Dirs
-<input type="submit" value="Search">
-</p>
+<?
+if (param(c))
+{
+?>
+	<p>Search package contents: <input type="text" name="filename" size="15" value="<?
+	print $filename ?>">
+	<input type=checkbox name=ignoredirs>Ignore Dirs
+	<input type="submit" value="Search">
+	</p>
+<?
+}
+?>
+
 </form>
 
 <?
@@ -72,8 +88,8 @@ if (param(filename)) {
   $q = "SELECT name,descshort FROM package ".
        "WHERE (name LIKE '%$summary%' OR descshort LIKE '%$summary%') ".
        "AND latest=1 ORDER BY $sortorder ASC";
-}
-print $q;
+} 
+
 if($dosearch) {
 
   $rs = mysql_query($q, $dbh);
