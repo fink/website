@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/20 20:46:51';
+$cvs_date = 'Date: 2001/10/12 19:02:10';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -44,6 +44,7 @@ Package installation and maintenance is covered as well.
 </ul>
 <li><a href="packages.php"><b>Installing Packages</b></a></li>
 <ul>
+<li><a href="packages.php#x11">Getting X11 Sorted Out</a></li>
 <li><a href="packages.php#bin">Installing Binary Packages</a></li>
 <li><a href="packages.php#src">Installing Packages from Source</a></li>
 </ul>
@@ -52,7 +53,7 @@ Package installation and maintenance is covered as well.
 <li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
 <li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.4 2001/09/20 20:46:51 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.5 2001/10/12 19:02:10 chrisp Exp $</i></p>
 
 
 <?

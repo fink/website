@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/20 20:46:51';
+$cvs_date = 'Date: 2001/10/12 19:02:10';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
@@ -47,12 +47,13 @@ also need:
 Development tools.
 On Mac OS X, install the Developer.pkg package from the Developer
 Tools CD.
+Note that the tools must match your Mac OS X version.
 On Darwin, the tools should be present in the default install.
 </p>
 <p>
-Note that it's a good idea to have the Developer Tools installed even
-if you don't intend to build packages from source.
-Some of the tools installed by the package are actually general
+It's a good idea to have the Developer Tools installed even if you
+don't intend to build packages from source.
+Some of the programs installed by the package are actually general
 purpose command line tools.
 Some packages may depend on those to run.
 </p></li>
@@ -71,15 +72,15 @@ in time.
 It is strongly recommended that you upgrade to the latest update in
 that series, 10.0.4, through the Software Update panel in the System
 Preferences.
-Note that support for 10.0.x may be dropped in the future when 10.1 is
-in widespread use.
+Note that support for 10.0.x will be dropped in the future when 10.1
+is in widespread use.
 </p>
 <p>
-<b>Mac OS X 10.1</b> is in late beta-testing now.
+<b>Mac OS X 10.1</b> has been out for some weeks now.
 The BSD subsystem and the development tools have seen significant
-updates and we're still struggling to update all packages.
-Expect to run into linker-related problems from time to time.
-As of Fink 0.2.6, the majority of packages should work.
+updates and there are still some packages that haven't been updated
+to compile on 10.1 yet.
+Those are rare, however; most packages work.
 </p>
 <p>
 <b>Darwin 1.3.1</b> is the Darwin version corresponding to Mac OS X
@@ -88,6 +89,12 @@ However, this has not been tested as most people just run Mac OS X
 proper instead.
 You may run into problems with packages that use features specific to
 Mac OS X - affected packages include XFree86 and possibly esound.
+</p>
+<p>
+<b>Darwin 1.4.1</b> is the Darwin version corresponding to Mac OS X
+10.1.
+Both the notes about Darwin 1.3.1 and about Mac OS X 10.1 apply in
+this case.
 </p>
 
 
