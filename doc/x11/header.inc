@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.3 2001/09/30 14:57:24 chrisp Exp $ */
+/* $Id: header.inc,v 1.4 2001/10/12 20:08:02 chrisp Exp $ */
 
 $section = "documentation";
 $parents = array("doc/index.php", "Document List");
@@ -13,6 +13,7 @@ $navbox = array(
   "doc/x11/other.php", "Other Stuff",
   "doc/x11/trouble.php", "Problems?"
 );
+$printlink = "doc/x11/x11.html";
 
 $fsroot = $root = "../../";
 include $fsroot."header.inc";

@@ -1,0 +1,444 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Fink Documentation - Fink User's Guide</title></head><body><h1 align="center">Fink User's Guide</h1>
+<p>
+<b>This document is a work in progress.</b>
+At this time the various other documents are more useful:
+<a href="http://fink.sourceforge.net/doc/bundled/readme.php">ReadMe</a>,
+<a href="http://fink.sourceforge.net/doc/bundled/install.php">Installation</a>,
+<a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</a>
+and the ReadMe.rtf included in the binary distribution.
+Also check out the
+<a href="http://fink.sourceforge.net/doc/index.php">documentation
+section</a> of the web site, it has some other useful documents
+beyond that.
+</p>
+
+<p>
+Welcome to the Fink User's Guide.
+This guide covers first time installation and upgrade procedures for
+both the source and the binary distribution.
+Package installation and maintenance is covered as well.
+</p>
+<h2>Contents</h2><ul>
+<li><a href="#intro"><b>Introduction</b></a></li>
+<ul>
+<li><a href="#intro.what">What is Fink?</a></li>
+<li><a href="#intro.req">Requirements</a></li>
+<li><a href="#intro.supported-os">Supported Systems</a></li>
+<li><a href="#intro.src-vs-bin">Source vs. Binary</a></li>
+</ul>
+<li><a href="#install"><b>First Time Installation</b></a></li>
+<ul>
+<li><a href="#install.bin">Installing the Binary Distribution</a></li>
+<li><a href="#install.src">Installing the Source Distribution</a></li>
+<li><a href="#install.setup">Setting Up Your Environment</a></li>
+</ul>
+<li><a href="#packages"><b>Installing Packages</b></a></li>
+<ul>
+<li><a href="#packages.x11">Getting X11 Sorted Out</a></li>
+<li><a href="#packages.bin">Installing Binary Packages</a></li>
+<li><a href="#packages.src">Installing Packages from Source</a></li>
+</ul>
+<li><a href="#upgrade"><b>Upgrading Fink</b></a></li>
+<ul>
+<li><a href="#upgrade.bin">Upgrading using Binary Packages</a></li>
+<li><a href="#upgrade.src">Upgrading the Source Distribution</a></li>
+</ul>
+</ul><a name="intro"><h2>Introduction</h2></a>
+
+
+
+<a name="intro.what"><h3>What is Fink?</h3></a>
+<p>
+Fink is a distribution of Unix Open Source software for Mac OS X and
+Darwin.
+It brings free command-line and graphical software developed for Linux
+and similar operating systems to your Mac.
+</p>
+
+
+<a name="intro.req"><h3>Requirements</h3></a>
+<p>
+In any case you will need:
+</p>
+<ul>
+<li><p>
+An installed Mac OS X system, version 10.0 or later, or equivalent
+Darwin releases.
+Earlier versions of both will <b>not</b> work.
+See below for more information about supported systems.
+</p></li>
+<li><p>
+Internet access.
+Both source code and binary packages are downloaded from Internet
+download sites.
+</p></li>
+</ul>
+<p>
+If you intend to use the source distribution (see below), you will
+also need:
+</p>
+<ul>
+<li><p>
+Development tools.
+On Mac OS X, install the Developer.pkg package from the Developer
+Tools CD.
+Note that the tools must match your Mac OS X version.
+On Darwin, the tools should be present in the default install.
+</p>
+<p>
+It's a good idea to have the Developer Tools installed even if you
+don't intend to build packages from source.
+Some of the programs installed by the package are actually general
+purpose command line tools.
+Some packages may depend on those to run.
+</p></li>
+<li><p>
+Patience.
+Compiling several big packages takes time.
+I'm talking hours or even days here.
+</p></li>
+</ul>
+
+
+<a name="intro.supported-os"><h3>Supported Systems</h3></a>
+<p>
+<b>Mac OS X 10.0.x</b> is fully tested and supported at this point
+in time.
+It is strongly recommended that you upgrade to the latest update in
+that series, 10.0.4, through the Software Update panel in the System
+Preferences.
+Note that support for 10.0.x will be dropped in the future when 10.1
+is in widespread use.
+</p>
+<p>
+<b>Mac OS X 10.1</b> has been out for some weeks now.
+The BSD subsystem and the development tools have seen significant
+updates and there are still some packages that haven't been updated
+to compile on 10.1 yet.
+Those are rare, however; most packages work.
+</p>
+<p>
+<b>Darwin 1.3.1</b> is the Darwin version corresponding to Mac OS X
+10.0.x and should work as well.
+However, this has not been tested as most people just run Mac OS X
+proper instead.
+You may run into problems with packages that use features specific to
+Mac OS X - affected packages include XFree86 and possibly esound.
+</p>
+<p>
+<b>Darwin 1.4.1</b> is the Darwin version corresponding to Mac OS X
+10.1.
+Both the notes about Darwin 1.3.1 and about Mac OS X 10.1 apply in
+this case.
+</p>
+
+
+<a name="intro.src-vs-bin"><h3>Source vs. Binary</h3></a>
+<p>
+Software is written in human-readable programming languages, called
+the "source code".
+When you buy commercial software you don't get to see the source code,
+however.
+All you get is the ready-to-run program (also called "executable" or
+"binary").
+</p>
+<p>
+Not so with Open Source software.
+As the name implies, the source code is open for anyone to see and
+modify.
+In fact, most Open Source software is only distributed as source code
+by its authors, and you must "compile" it on your computer to get a
+program that can be run.
+</p>
+<p>
+Fink lets you choose between the two models.
+The "source" distribution will download the original source, adapt it
+to Mac OS X and to Fink's policy, and compile it on your computer.
+That process is fully automated, but takes some time.
+The "binary" distribution on the other hand will download pre-compiled
+packages from the Fink site and install those, saving you the time for
+compiling.
+It is actually possible to mix the two models at will.
+The rest of this manual will show you how.
+</p>
+
+
+<a name="install"><h2>First Time Installation</h2></a>
+
+
+
+
+<p>
+During first time installation, a base system with the package
+management tools is installed on your machine.
+After that you must set up your shell environment to use the software
+installed by Fink.
+You only need to do this once; you can upgrade any Fink installation
+(starting with release 0.2.0) in place, without reinstalling.
+This is covered in the <a href="#upgrade">Upgrading
+chapter</a>.
+</p>
+<p>
+Once you have the package management tools installed, you can use them
+to install more software.
+This is covered in the <a href="#packages">Installing Packages
+chapter</a>.
+</p>
+
+
+<a name="install.bin"><h3>Installing the Binary Distribution</h3></a>
+<p>
+The binary distribution comes as a Mac OS X installer package (.pkg),
+wrapped in a disk image (.dmg).
+After downloading the disk image from the
+<a href="http://fink.sourceforge.net/download/bindist.php">download page</a>
+(you may have to use your browser's "Save Target as..." or "Download
+to Disk" function), double-click it to mount it.
+Open the "Fink 0.x.x Installer" disk icon that appears on your desktop
+after Disk Copy has verified the file.
+Inside you'll find some documentation and a installer package.
+Double-click the installer package and follow the instructions on
+screen.
+</p>
+<p>
+You will be asked for an administrator password and shown some texts.
+Please read them - they may be more up-to-date than this user's guide.
+When the installer prompts you for a drive to install to, be sure to
+pick your system volume (the one on which you installed Mac OS X).
+If you pick the wrong volume, the install will proceed, but Fink won't
+work afterwards.
+When the installer is finished, proceed with the
+<a href="#install.setup">Setting Up Your Environment</a> section.
+</p>
+
+
+<a name="install.src"><h3>Installing the Source Distribution</h3></a>
+<p>
+The source distribution comes as a standard Unix tarball (.tar.gz).
+It contains only the <tt><nobr>fink</nobr></tt> package manager and its package
+descriptions and will download the source for packages on the fly.
+You can get it from the
+<a href="http://fink.sourceforge.net/download/srcdist.php">download page</a>.
+It is important that you don't use StuffIt Expander to extract the tar
+archive.
+For some reason StuffIt still can't handle long file names.
+If StuffIt Expander already extracted the archive, throw away the
+folder it created.
+</p>
+<p>
+The source release must be installed from the command line, so open
+Terminal.app and change to the directory where you put the
+fink-0.x.x-full.tar.gz archive.
+The following command extracts the archive:
+</p>
+<pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
+<p>
+That creates a directory with the same name as the archive.
+We'll just keep on using the placeholder <tt><nobr>fink-0.x.x-full</nobr></tt>
+here.
+Now, change into that directory and run the bootstrap script:
+</p>
+<pre>cd fink-0.x.x-full
+./bootstrap.sh</pre>
+<p>
+The script will run some checks on your system and use sudo to become
+root - that will prompt you for your password.
+Then, the script will ask you for the installation path.
+Unless you have a good reason, you should use the default -
+<tt><nobr>/sw</nobr></tt>.
+Only that will allow you to install downloaded binary packages later
+on.
+Also, all examples use that path; be sure to substitute your actual
+path if you use a different one.
+</p>
+<p>
+Next up is Fink configuration.
+You'll be asked for things like proxy and mirror settings and whether
+you want verbose messages.
+If you don't understand a question, just press return to accept the
+default choice.
+You can re-run this process later using the <tt><nobr>fink
+configure</nobr></tt> command.
+</p>
+<p>
+When the bootstrap script has all the information it needs, it will
+start to download the source code for the base system and compile it.
+No further interaction should be necessary at this point.
+Don't worry if you see some packages being compiled twice.
+This is required because to build a binary package of the package
+manager, you first must have the package manager available.
+</p>
+<p>
+When the bootstrap is finished, proceed with the
+<a href="#install.setup">Setting Up Your Environment</a> section.
+</p>
+
+
+<a name="install.setup"><h3>Setting Up Your Environment</h3></a>
+<p>
+To use the software installed in Fink's directory hierarchy, including
+the package management programs themselves, you must set your PATH
+environment variable (and some others) accordingly.
+Shell scripts are provided to make this easy.
+If you use tcsh (the default on Mac OS X), add the following line to
+the file <tt><nobr>.cshrc</nobr></tt> in your home directory:
+</p>
+<pre>source /sw/bin/init.csh</pre>
+<p>
+If you don't know how to add the line, run these commands:
+</p>
+<pre>cd
+pico .cshrc</pre>
+<p>
+You're not in a full-screen (well, full terminal window) text editor
+and can simply start typing the <tt><nobr>source /sw/bin/init.csh</nobr></tt>
+line.
+It's okay if there is a note that says "New file".
+Be sure that you pressed Return at least once after the line, then
+press Control-O, Return, Control-X to get out of the editor.
+</p>
+<p>
+Editing .cshrc will only affect new shells (i.e. newly opened Terminal
+windows), so you should also run this command in all Terminal windows
+that you opened before you edited the file.
+You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
+list of available commands internally.
+</p>
+<p>
+If you use a Bourne style shell (e.g. sh, bash, zsh), use
+<tt><nobr>/sw/bin/init.sh</nobr></tt> instead.
+The file to edit varies with the shell, although <tt><nobr>.profile</nobr></tt>
+should work for all Bourne style shells.
+</p>
+<p>
+Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
+your path so you can use X11 when it is installed.
+Fink packages have the ability to add settings of their own, e.g. the
+qt package sets the QTDIR environment variable.
+</p>
+<p>
+Once your environment is set up, proceed to the
+<a href="#packages">Installing Packages</a> chapter to see how
+you can install some actually useful packages using the various
+package management tools included in Fink.
+</p>
+
+
+<a name="packages"><h2>Installing Packages</h2></a>
+
+
+
+
+Now that you have something that can be called a Fink installation,
+this chapter shows you how to install the actual software packages you
+came for.
+Before we explain how to install packages using either the source or
+the binary distribution, some important notes that apply to both.
+
+
+<a name="packages.x11"><h3>Getting X11 Sorted Out</h3></a>
+<p>
+Since there are several X11 implementations available for Mac OS X
+(XFree86, Tenon Xtools, eXodus) and several ways to install them
+(manually or via Fink), there are several alternative packages - one
+for each setup.
+Fink is very bad at guessing what you have, so it's important to pick
+the right one and install it before you start installing X11
+applications.
+Here is a list of the available packages and X11 installation methods:
+</p>
+<ul>
+<li><p>
+xfree86-base:
+This package is the real thing.
+It installs the whole load of XFree86 as a Fink package.
+For maximum flexibility, this package does not contain the actual
+XDarwin server.
+To get that, you can install the xfree86-server or the
+xfree86-rootless package.
+Or you can install it manually, for example using an "XDarwin" test
+release from the XonX project or one of the "rootless" servers
+circulating the net.
+</p></li>
+<li><p>
+system-xfree86:
+This package expects that you installed XFree86 manually, either from
+source or from the official binary distribution.
+It will just check that the installation is useful and then act as a
+dependency placeholder.
+Note that XFree86 4.0.2 or 4.0.3 will not pass the test.
+You need a version that builds shared libraries.
+Usually that will be 4.1.0, but CVS versions of XFree86 starting
+around spring 2001 will also work.
+</p></li>
+<li><p>
+system-xtools:
+Install this package if you have Tenon's Xtools product installed.
+Like system-xfree86, this will just do a sanity check and leave the
+actual files alone.
+</p></li>
+</ul>
+<p>
+For more information on installing and running X11, refer to the
+<a href="http://fink.sourceforge.net/doc/x11/">X11 on Darwin
+and Mac OS X document</a>.
+</p>
+
+
+<a name="packages.bin"><h3>Installing Binary Packages</h3></a>
+<p>
+[FIXME: dselect, apt-get, and their relationship]
+</p>
+
+
+<a name="packages.src"><h3>Installing Packages from Source</h3></a>
+<p>
+[FIXME: 'fink list', 'fink install']
+</p>
+<p>
+For the meantime, see the
+<a href="http://fink.sourceforge.net/doc/bundled/usage.php">Usage Document</a>.
+</p>
+
+
+<a name="upgrade"><h2>Upgrading Fink</h2></a>
+
+
+
+
+This chapter covers the procedures used to update your Fink
+installation with the latest and greatest stuff.
+
+
+<a name="upgrade.bin"><h3>Upgrading using Binary Packages</h3></a>
+<p>
+[FIXME: no special procedure, just hit update in dselect or run
+'apt-get update' and install as normal (apt-0.5.3-7 or later
+required)]
+</p>
+<p>
+For the meantime, see the
+<a href="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</a>.
+</p>
+
+
+<a name="upgrade.src"><h3>Upgrading the Source Distribution</h3></a>
+<p>
+[FIXME: selfupdate (available in 0.2.5 and later) or download
+packages-### tarball and run inject.pl, then 'fink update-all']
+</p>
+<p>
+For the meantime, see the
+<a href="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</a>.
+</p>
+
+
+
+<h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p>
+<p><hr>Generated from <i>$Fink: uguide.xml,v 1.5 2001/10/12 19:02:10 chrisp Exp $</i></p></body></html>
