@@ -1,0 +1,7 @@
+*.php
+*.html
+*.txt
+*.txml
+*.tmp
+*.inc
+.DS_Store
