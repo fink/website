@@ -3,7 +3,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.4 2001/07/29 15:36:41 chrisp Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.5 2001/09/20 17:04:34 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -32,6 +32,12 @@ misbehave when those features are not supported...</p>
 </section>
 
 <section><title>Updating the Package Manager</title>
+<p>
+<em>Note:</em> As of September 20 it is no longer necessary to update
+the package manager separately; it is treated like any other package.
+It's still possible to update it directly from CVS, though.
+</p>
+
 <p>The package manager must be updated through a separate directory
 and the <code>inject.pl</code> script. That script puts package
 descriptions and tarballs for the fink and base-files packages in your

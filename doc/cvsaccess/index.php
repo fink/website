@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS Access";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/29 15:36:41';
+$cvs_date = 'Date: 2001/09/20 17:04:34';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.4 2001/07/29 15:36:41 chrisp Exp $</i></p>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.5 2001/09/20 17:04:34 chrisp Exp $</i></p>
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -28,6 +28,12 @@ packages (in the packages module) use new features in the package
 manager (in the fink module) that have recently been added. They will
 misbehave when those features are not supported...</p>
 <a name=""><h2>Updating the Package Manager</h2></a>
+<p>
+<b>Note:</b> As of September 20 it is no longer necessary to update
+the package manager separately; it is treated like any other package.
+It's still possible to update it directly from CVS, though.
+</p>
+
 <p>The package manager must be updated through a separate directory
 and the <tt><nobr>inject.pl</nobr></tt> script. That script puts package
 descriptions and tarballs for the fink and base-files packages in your
