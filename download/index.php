@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/17 19:59:48 $';
+$cvs_date = '$Date: 2002/04/17 23:34:38 $';
 
 include "header.inc";
 ?>
@@ -26,8 +26,8 @@ the binary release.
 <ol>
 <li><p>
 Download the installer disk image:<br />
-<a href="http://prdownloads.sourceforge.net/fink/fink-0.4.0-installer.dmg.gz">Fink
-0.4.0 Binary Installer</a> - 7.7 MB
+<a href="http://prdownloads.sourceforge.net/fink/fink-0.4.0-installer.dmg">Fink
+0.4.0 Binary Installer</a> - 8.4 MB
 </p></li>
 <li><p>
 Double-click "fink-0.4.0-installer.dmg" to mount the disk image,
