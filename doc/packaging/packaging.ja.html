@@ -13,18 +13,18 @@ Available Languages:  |
 </table>
 <h1 style="text-align: center;">Fink パッケージの作成方法</h1>
 		<p>
-			このマニュアルではパッケージ管理システム Fink 用のパッケージ情報の記述方法を解説します．
+			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
 			また Fink ディストリビューションのポリシーとガイドラインも解説します．
-			パッケージ情報の書式もディストリビューションのポリシーも共に発展途上です。
+			パッケージ記述の書式もディストリビューションのポリシーも共に発展途上です。
 			"Last changed" (最終更新) 情報とこのページの CVS タグを確認することで，更新されているかがわかります．
-			ここで扱うのはパッケージ管理システム Fink の「0.9.0 開発版」以降で使われる書式とポリシーの説明です．
+			ここで扱うのはパッケージ管理システム Fink の「0.9.0 以降の開発版」で使われる書式とポリシーの説明です．
 		</p>
 		<p>
 			Fink 用にパッケージを作成した場合，メーリングリスト
 			<a href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a> を購読するとよいでしょう．
-			Fink に貢献する方法をお探しで，この分野のスキルをお持ちなら，
+			Fink に貢献する方法を探していて，関連分野のスキルをお持ちなら，是非とも
 			<a href="http://fink.sourceforge.net/pdb/nomaintainer.php">現在メンテナのいないパッケージ</a>
-			を引き継ぐことをご考慮下さい．
+			のメンテナンスをお願いいたします．
 		</p>
 	<h2>Contents</h2><ul><li><a href="#intro"><b>1 始めに</b></a><ul><li><a href="#intro.def1">1.1 パッケージとは何か?</a></li><li><a href="#intro.ident">1.2 パッケージの区別</a></li></ul></li><li><a href="#format"><b>2 パッケージ記述</b></a><ul><li><a href="#format.trees">2.1 ツリーレイアウト</a></li><li><a href="#format.format">2.2 ファイル形式</a></li><li><a href="#format.percent">2.3 パーセント展開</a></li></ul></li><li><a href="#policy"><b>3 パッケージ化ポリシー</b></a><ul><li><a href="#policy.licenses">3.1 パッケージのライセンス</a></li><li><a href="#policy.prefix">3.2 基盤システムへの干渉問題</a></li><li><a href="#policy.sharedlibs">3.3 共有ライブラリ</a></li><li><a href="#policy.perlmods">3.4 Perl モジュール</a></li><li><a href="#policy.emacs">3.5 Emacs ポリシー</a></li></ul></li><li><a href="#fslayout"><b>4 ファイルシステムのレイアウト</b></a><ul><li><a href="#fslayout.fhs">4.1 ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a></li><li><a href="#fslayout.dirs">4.2 ディレクトリ</a></li><li><a href="#fslayout.avoid">4.3 避けるべきこと</a></li></ul></li><li><a href="#reference"><b>5 リファレンスマニュアル</b></a><ul><li><a href="#reference.build">5.1 ビルドプロセス</a></li><li><a href="#reference.fields">5.2 フィールド</a></li><li><a href="#reference.splitoffs">5.3 スプリットオフ (SplitOff)</a></li><li><a href="#reference.scripts">5.4 スクリプト</a></li><li><a href="#reference.patches">5.5 パッチ</a></li><li><a href="#reference.profile.d">5.6 Profile.d スクリプト</a></li></ul></li></ul><h2><a name="intro">1 始めに</a></h2>
 		
@@ -760,13 +760,16 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			
 			<p>
 				2003 年 5 月以来， Fink には Perl モジュールに対する新しいポリシーがあります．
+				これは 2004 年 4 月に見直しされました．
 			</p>
 			<p>
 				伝統的に，perl モジュールの Fink パッケージには <tt style="white-space: nowrap;">-pm</tt> が後置され，
 				ディレクティブ <tt style="white-space: nowrap;">Type: perl</tt> を使ってビルドされて来ました．
 				このディレクティブは Perl モジュールのファイルを
 				<tt style="white-space: nowrap;">/sw/lib/perl5</tt> 及び/または <tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt> に格納していました．
-				新ポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない Perl モジュールのみを格納します．
+				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 
+				(また，このバージョン非依存性を欠いた Perl モジュールに依存しない)
+				Perl モジュールのみを格納します．
 			</p>
 			<p>
 				バージョンに依存する Perl モジュールはいわゆる XS モジュールであり，
@@ -778,18 +781,32 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				を使ってビルドされなければいけません．
 				またモジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
 				(<tt style="white-space: nowrap;">/sw/lib/perl5/5.6.0</tt> や <tt style="white-space: nowrap;">/sw/lib/perl5/5.6.0/darwin</tt> など) に格納しなければいけません．
-				導入が進んでいる新しい命名規約は，バージョン 5.6.0 に依存する Perl モジュールに <tt style="white-space: nowrap;">-pm560</tt> を後置するというものです．
-				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，間もなく perl 5.6.1 と perl 5.8.0 でもそうなります．
+				命名規約により，バージョン 5.6.0 に依存する Perl モジュールに <tt style="white-space: nowrap;">-pm560</tt> を後置するというものです．
+				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
+				perl 5.6.1 (10.2 ツリー) と perl 5.8.0， perl 5.8.1， perl 5.8.4 (間もなく) でもそうなります．
 			</p>
 			<p>
-				新しいディレクティブ <tt style="white-space: nowrap;">Type: perl 5.6.0</tt> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
+				ディレクティブ <tt style="white-space: nowrap;">Type: perl 5.6.0</tt> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
 				できたファイルを適切なサブディレクトリに格納します．
 				(このディレクティブは Fink 0.13.0 で導入されました．)
 			</p>
 			<p>
 				<tt style="white-space: nowrap;">-pm</tt> の付くパッケージも作成できます．
-				これは本質的には「バンドル」パッケージで， <tt style="white-space: nowrap;">-pm560</tt> などの付く同等なパッケージなどをロードします．
-				アップグレードを簡単にするため， XS モジュールのための既存のFinkパッケージに対してはこの方式が推奨されます．
+				これは本質的には「バンドル」パッケージで， <tt style="white-space: nowrap;">-pm560</tt> 
+				などの付く同等なパッケージなどをロードします．
+				2004 年 4 月より，この方式は順次廃止されていきます
+				(bootstrap に必要な <tt style="white-space: nowrap;">storable-pm</tt> は例外です)．
+			</p>
+			<p>
+				fink 0.20.1 の時点で， system-perl バーチャルパッケージは，
+				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
+				system-perl-5.8.1-1 の場合，
+				<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm,
+			 file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm,
+			 i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm,
+			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm,
+			 time-hires-pm581</b>
+				です．
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <tt style="white-space: nowrap;">fink validate</tt> を .deb ファイルに適用すると，
@@ -2043,4 +2060,4 @@ Copyright (c) 2001-2004 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.8 2004/04/22 02:55:06 babayoshihiko Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.9 2004/04/28 15:12:40 babayoshihiko Exp $</i></p></body></html>

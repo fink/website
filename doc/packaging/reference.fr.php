@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/26 07:24:15';
+$cvs_date = 'Date: 2004/05/08 19:40:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -127,6 +127,9 @@ Liste de paquets à installer pour que le paquet puisse compiler. L'interprétat
 <pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 <p>
 Notez qu'on ne peut indiquer de réelles options de dépendances. Si un paquet fonctionne avec ou sans un autre paquet, vous devez soit vous assurer que l'autre paquet n'est pas utilisé, même s'il est présent, soit l'ajouter à la liste des dépendances. Si vous voulez donner à l'utilisateur le choix entre les deux options, faîtes deux paquets distincts, par exemple : wget et wget-ssl.
+</p>
+<p>
+Ordre des opérations: le "OU" logique (liste de choix exclusifs) a priorité sur le "ET" logique entre chaque paquet (ou jeu de choix) dans la liste séparée par des virgules. À moins de mettre des parenthèses comme celles utilisées en arithmétique, il n'y a aucun moyen de spécifier des groupes de choix ou de changer l'ordre des opérations dans le champ <code>Depends</code> et les champs similaires.
 </p>
 <p>
 À partir d'une version CVS postérieure à la version 0.18.2 de fink, on peut utiliser des dépendances conditionnelles. Celles-ci sont indiquées en plaçant <code>(chaîne1 opérateur chaîne2)</code> avant le nom du paquet. L'interprétation des raccourcis se fait normalement, puis les deux chaînes sont comparées en fonction de l'<code>opérateur</code> utilisé, qui peut être : &lt;&lt;, &lt;=, =, !=, &gt;&gt;, &gt;=. Le paquet qui suit n'est considéré comme une dépendance que si la comparaison est vraie.
@@ -273,43 +276,42 @@ Ce champ est similaire au champ <code>TarFilesRename</code>, mais il est utilis�
 </td></tr></table>
 
 
-<p><b>Patch Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
+<p><b>Phase d'application des rustines :</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
-A boolean value. If true, the files config.guess and config.sub in the build directory will be replaced with versions that know about Darwin. This happens in the patch phase and before the PatchScript is run. <b>Only</b> use this when you know it is necessary, i.e. when the configure script fails with a "unknown host" message.
+Valeur booléenne. Si elle est vraie ("true"), les fichiers config.guess et config.sub présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité, c'est-à-dire lorsque le script configure se termine inopinément par un message "unknown host" (système inconnu).
 </p>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
 <p>
-<b>Introduced in a post-0.9.0 CVS version.</b>
-A list of subdirectories. This does the same as UpdateConfigGuess, but is useful for packages that have outdated config.guess files in several directories throughout the source tree. Previously you had to copy/move the files there manually in the PatchScript. With this new field you can just list the directories. Use <code>.</code> to update files in the build directory itself.
+<b>Introduit dans une version CVS postérieure à la version 0.9.0.</b>
+Liste de sous-répertoires. A le même effet que UpdateConfigGuess, mais dans toute l'arborescence du source ; utile lorsque plusieurs fichiers config.guess existent dans différents répertoires du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
 <p>
-A boolean value. If true, the files ltconfig and ltmain.sh in the build directory will be replaced with versions that know about Darwin. This happens in the patch phase and before the PatchScript is run. <b>Only</b> use this when you know that the package needs it. Some packages can be broken by overwriting the libtool scripts with mismatching versions. See the <a href="http://fink.sourceforge.net/doc/porting/libtool.php">libtool page</a> for further information.
+Valeur booléenne. Si elle est vraie ("true"), les fichiers ltconfig et ltmain.sh présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité. Certains paquets ne fonctionnent plus lorsqu'on modifie la version des scripts libtool. Voir la <a href="http://fink.sourceforge.net/doc/porting/libtool.php">page libtool</a> pour de plus amples informations.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p>
-<b>Introduced in a post-0.9.0 CVS version.</b>
-A list of subdirectories. This does the same as UpdateLibtool, but is useful for packages that have outdated libtool 1.3.x scripts in several directories throughout the source tree. Previously you had to copy/move the files there manually in the PatchScript. With this new field you can just list the directories. Use <code>.</code> to update files in the build directory itself.
+<b>Introduit dans une version CVS postérieure à la version 0.9.0.</b>
+Liste de sous-répertoires. A le même effet que UpdateLibtool ; utile lorsque plusieurs fichiers scripts libtool 1.3.x sont présents dans différents répertoires de l'arborescence du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.
 </p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>
-A boolean value. If true, the file <code>Makefile.in.in</code> in the subdirectory <code>po</code> is replaced with a patched version. This happens in the patch phase and before the PatchScript is run.
+Valeur booléenne. Si elle est vraie ("true"), le fichier <code>Makefile.in.in</code> présent dans le sous-répertoire <code>po</code> est remplacé par une version modifiée. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté.
 </p>
 <p>
-The patched version respects DESTDIR and makes sure that message catalogs end up in <code>/sw/share/locale</code>, not <code>/sw/lib/locale</code>. Before using this field, make sure that you won't break the package and that it's really required. You can run <code>diff</code> to find the differences between the package's version and Fink's version (in <code>/sw/lib/fink/update</code>).
+La version modifiée prend en compte DESTDIR et garantit que les catalogues de messages seront placés dans <code>/sw/share/locale</code>, et non pas dans <code>/sw/lib/locale</code>. Assurez-vous, avant d'utiliser ce champ, qu'il est absolument nécessaire et que le paquet continuera à fonctionner. Vous pouvez exécuter <code>diff</code> pour trouver les différences entre la version du paquet et celle de Fink (située dans <code>/sw/lib/fink/update</code>).
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
-The filename of a patch to be applied with <code>patch -p1 &lt;<b>patch-file</b></code>. This should be just a filename; the appropriate path will be prepended automatically. Percent expansion is performed on this field, so a typical value is simply
-<code>%f.patch</code> or <code>%n.patch</code>. The patch is applied before the PatchScript is run (if any).
+Le nom d'une rustine à appliquer avec <code>patch -p1 &lt;<b>nom-rustine</b></code>. Ne donnez que le nom du fichier ; le chemin est ajouté automatiquement devant le nom du fichier. L'interprétation des raccourcis y est effectuée, si bien qu'on trouve, en général : <code>%f.patch</code> ou <code>%n.patch</code>. La rustine est appliquée avant que le script PatchScript soit exécuté (s'il existe).
 </p>
 <p>
-Remember that %n includes all %type_ variant data, so you may want to use %ni here (perhaps with some specific %type_ expansions). It's easier to maintain a single patchfile and then make variant-specific changes in <code>PatchScript</code> than to have a separate patchfile for each variant.
+N'oubliez pas que %n inclut implicitement toutes les variantes %type_. Le cas échéant, utilisez %ni (éventuellement avec des variantes spécifiques %type_). Il est plus facile de gérer une seule rustine et de faire des changements spécifiques à certaines variantes dans le script <code>PatchScript</code> que de gérer une rustine par variante.
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
-A list of commands that are run in the patch phase. See the note on scripts below. This is the place to put commands that patch or otherwise modify the package. There is no default. Before the commands are executed, percent expansion takes place (see last section).
+Liste de commandes à exécuter lors de la phase d'application des rustines. Voir plus bas la note sur les scripts. C'est là où vous pouvez placer les commandes qui modifient le paquet. Il n'existe pas de script par défaut. L'interprétation des raccourcis (voir la section précédente) a lieu avant que les commandes ne soient exécutées.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
