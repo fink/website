@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Preparing for 10.2";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/18 03:37:37';
+$cvs_date = 'Date: 2004/03/19 21:27:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
 include_once "header.inc";

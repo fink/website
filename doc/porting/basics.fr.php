@@ -1,8 +1,8 @@
 <?
 $title = "Portage - Notions de base";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/18 03:37:37';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="shared.php?phpLang=fr" title="Shared Code"><link rel="prev" href="index.php?phpLang=fr" title="Portage Contents">';
+$cvs_date = 'Date: 2004/03/19 21:27:32';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="shared.php?phpLang=fr" title="Code partagé"><link rel="prev" href="index.php?phpLang=fr" title="Portage Contents">';
 
 include_once "header.inc";
 ?>
@@ -64,6 +64,6 @@ include_once "header.inc";
 		
 
 	<p align="right">
-Next: <a href="shared.php?phpLang=fr">2 Shared Code</a></p>
+Next: <a href="shared.php?phpLang=fr">2 Code partagé</a></p>
 
 <? include_once "footer.inc"; ?>
