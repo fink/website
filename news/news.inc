@@ -1,4 +1,23 @@
-<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
+<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
+	<p>
+	Finally after a lot of work by packaging newcomer Keith Conger and old GNOME 
+	Maintainer Masanori Sekino GNOME 2.4 has finally made it into the unstable 
+	tree of 10.3
+	</p>
+	<p>
+	It is there for the taking please offer some of your time and test these packages
+	if you are on unstable already. We expect now issues with upgrading or freshly 
+	installed GNOME you can reach the all GNOME savvy people at 
+	"fink-gnome-coreATlists.sourceforge.net" none the less. 
+	Please do report success stories there as well. The more good reports we get the
+	faster GNOME 2.4 can be moved to stable.
+	</p>
+	<p>
+	For those of you who do not read our mailing lists, why aren?t you subscribed yet anyways, here is a link to detailed 
+	<a href="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</a> 
+	how to install or upgrade GNOME and what new stuff it brings.
+	</p>
+	<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
 	<p>
 	A happy new year to all of you from the whole team. Blame this outburst of an 
 	attempt at slang language on some of us having to watch the MTV Music Awards all
@@ -44,24 +63,4 @@
  A happy new year to all of you, stay with us we count on your support.
 		
 		</p>
-	<a name="2003-11-30 There they are! New mirrors.."><span class="news-date">2003-11-30: </span><span class="news-headline">There they are! New mirrors..</span></a><?php gray_line(); ?>
-		<p>
-	Thank you, thank you, thank you. What a great community we have.
-	Thank you for providing us with more mirrors. 
-		</p>
-		<p>
-	Matthew Healey, member of the Western <a href="http://www.wamug.org.au">
-	Australian</a> Macintosh User Group, and their 
-	ISP <a href="http://www.extremedsl.com.au">extremedsl</a>
-	are providing Fink with a full mirror in Perth, Australia. This is our first
-	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the <a href="http://www.mirror.ac.uk">UKMIRROR</a> service 
-	has accepted us, making distfile services available for Fink 
-	on 21 load balanced server.
-		</p>
-		<p>
-	We are very happy about this development, but we still need more rsync mirrors.
-	Thus, once more, if you feel like helping, please visit 
-	<a href="http://finkmirrors.net">finkmirrors.net</a> and get in touch.
-		</p>
-		
+	

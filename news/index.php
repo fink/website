@@ -8,7 +8,26 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
+<a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
+	<p>
+	Finally after a lot of work by packaging newcomer Keith Conger and old GNOME 
+	Maintainer Masanori Sekino GNOME 2.4 has finally made it into the unstable 
+	tree of 10.3
+	</p>
+	<p>
+	It is there for the taking please offer some of your time and test these packages
+	if you are on unstable already. We expect now issues with upgrading or freshly 
+	installed GNOME you can reach the all GNOME savvy people at 
+	"fink-gnome-coreATlists.sourceforge.net" none the less. 
+	Please do report success stories there as well. The more good reports we get the
+	faster GNOME 2.4 can be moved to stable.
+	</p>
+	<p>
+	For those of you who do not read our mailing lists, why aren?t you subscribed yet anyways, here is a link to detailed 
+	<a href="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</a> 
+	how to install or upgrade GNOME and what new stuff it brings.
+	</p>
+	<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
 	<p>
 	A happy new year to all of you from the whole team. Blame this outburst of an 
 	attempt at slang language on some of us having to watch the MTV Music Awards all
