@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/23 00:42:32';
+$cvs_date = 'Date: 2004/10/14 02:57:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -150,8 +150,8 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>vous avez certainement un header <code
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink signale que <code>gcc2</code> n'existe pas, mais il ne semble pas possible de l'installer.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>gcc2</code> est un paquet virtuel qui indique la présence de gcc-2.95 dans votre système. Installez le paquet gcc2.95 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink signale que <code>gcc2</code> ou <code>gcc3.1</code> n'existe pas, mais il ne semble pas possible de les installer.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>gcc2</code> et <code>gcc3.1</code> sont des  paquets virtuels qui indiquent la présence de gcc-2.95 ou de gcc3.1 dans votre système. Installez les paquets gcc2.95 ou gcc3.1 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink signale <code>Failed: Can't resolve dependency "system-java14-dev"</code>, mais il n'existe pas de paquet system-java14-dev.</b></p></div>

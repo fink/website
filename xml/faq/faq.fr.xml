@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.36 2004/09/23 00:42:32 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.37 2004/10/14 02:57:26 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -998,10 +998,10 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     </faqentry>
     <faqentry name="gcc2">
       <question>
-        <p>Fink signale que <filename>gcc2</filename> n'existe pas, mais il ne semble pas possible de l'installer.</p>
+        <p>Fink signale que <filename>gcc2</filename> ou <filename>gcc3.1</filename> n'existe pas, mais il ne semble pas possible de les installer.</p>
       </question>
       <answer>
-        <p><filename>gcc2</filename> est un paquet virtuel qui indique la présence de gcc-2.95 dans votre système. Installez le paquet gcc2.95 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p>
+        <p><filename>gcc2</filename> et <filename>gcc3.1</filename> sont des  paquets virtuels qui indiquent la présence de gcc-2.95 ou de gcc3.1 dans votre système. Installez les paquets gcc2.95 ou gcc3.1 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p>
       </answer>
     </faqentry>
     <faqentry name="system-java">
@@ -1516,7 +1516,7 @@ xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
-<p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuie X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p>
+<p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuite X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p>
 <p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p>
         <codeblock>fink-virtual-pkgs --debug</codeblock>
         <p>pour savoir quels sont les paquets manquants.</p>

@@ -3,7 +3,7 @@
 <document lang="en" filename="index" >
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.35 2004/10/14 01:01:47 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.36 2004/10/14 02:57:18 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1254,13 +1254,13 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     </faqentry>
     <faqentry name="gcc2" >
       <question>
-        <p>Fink says I'm missing <filename>gcc2</filename> or gcc3.1 but I can't seem to
+        <p>Fink says I'm missing <filename>gcc2</filename> or <filename>gcc3.1</filename> but I can't seem to
         install it.</p>
       </question>
       <answer>
         <p>This is because <filename>gcc2</filename> and <filename>gcc3.1</filename> are  virtual packages to
         indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
-        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1as
+        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1 as
         part of their main Developer Tools installation).</p>
       </answer>
     </faqentry>
@@ -2007,7 +2007,7 @@ You can check your installation by running</p>
         <p>I'm still having problems with X11 and Fink.</p>
       </question>
       <answer>
-        <p>If the hints in the  <xref section="apples-x11-wants-xfree86" >Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade" >X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
+        <p>If the hints in the  <xref section="apples-x11-wants-xfree86" >Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade" >X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/10/14 01:01:47';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/10/14 02:57:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -240,11 +240,11 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header fil
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says I'm missing <code>gcc2</code> or gcc3.1 but I can't seem to
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says I'm missing <code>gcc2</code> or <code>gcc3.1</code> but I can't seem to
         install it.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.1</code> are  virtual packages to
         indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
-        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1as
+        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1 as
         part of their main Developer Tools installation).</p></div>
     </a>
     <a name="system-java">

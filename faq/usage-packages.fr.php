@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/23 00:42:32';
+$cvs_date = 'Date: 2004/10/14 02:57:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -104,7 +104,7 @@ xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
-fink selfupdate; fink index</pre><p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuie X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p><p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p><pre>fink-virtual-pkgs --debug</pre><p>pour savoir quels sont les paquets manquants.</p><p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p><ul>
+fink selfupdate; fink index</pre><p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuite X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p><p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p><pre>fink-virtual-pkgs --debug</pre><p>pour savoir quels sont les paquets manquants.</p><p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p><ul>
           <li>Vous le trouverez ici : <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
           </li>
           <li>Sauvegardez-le où vous voulez.</li>
