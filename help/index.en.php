@@ -1,7 +1,7 @@
 <?
 $title = "Help";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/07/16 14:21:22 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:37:53 $';
 
 include "header.inc";
 ?>
@@ -91,8 +91,7 @@ Here's how <b>you</b> can help.
 Nothing is more valuable than feedback from users.
 Problem reports, success stories, suggestions and contributions are
 always welcome.
-Even if we can't promise to fix everything immediately
-<nobr><tt>;-)</tt></nobr>,
+Even if we can't promise to fix everything immediately, 
 it helps a lot to know which parts of Fink need the most attention.
 </p>
 <p>
@@ -138,13 +137,13 @@ a mailing list of your choice.
 <p>
 <b>Documentation.</b>
 The project is always short on people willing to write
-documentation. <nobr><tt>;-)</tt></nobr>
+documentation. 
 </p>
 
 <p>
 <b>Make packages.</b>
 If you have some experience installing Unix software from source, you
-can help by making new packages. To get started read the <a href="../doc/quick-start-pkg/index.php">Packaging Tutorial</a>. Then grab the <a href="../doc/packaging/index.php">Packaging Manual</a>, read it carefully and thoroughly, subscribe to <a href="../lists/fink-devel.php">fink-devel</a>, and post your packages to the <a href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">package submission tracker</a>.
+can help by making new packages. To get started read the <a href="../doc/quick-start-pkg/index.php">Packaging Tutorial</a>. Then grab the <a href="../doc/packaging/index.php">Packaging Manual</a>, read it carefully and thoroughly, subscribe to <a href="../lists/fink-devel.php">fink-devel</a>, and post your packages to the <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">package submission tracker</a>.
 Note that your submission will likely be rejected or treated with low
 priority unless it is compliant with the packaging policy.
 </p>

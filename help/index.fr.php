@@ -1,7 +1,7 @@
 <?
 $title = "Aide";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/07/16 14:21:22 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:37:53 $';
 
 include "header.inc";
 ?>
@@ -65,7 +65,7 @@ Fink est basé sur le volontariat. Voici comment <b>vous</b> pouvez nous aider.
 
 <p>
 <b>Retour sur expérience.</b>
-Rien ne vaut les retours sur expérience des utilisateurs. Signaler un problème, rendre compte d'une réussite, faire des suggestions ou apporter une contribution sont toutes choses toujours bienvenues. Même si nous ne pouvons pas promettre de tout résoudre immédiatement <nobr><tt>;-)</tt></nobr>, cela nous aide beaucoup de savoir quelles sont les parties de Fink qui demandent le plus d'attention de notre part.
+Rien ne vaut les retours sur expérience des utilisateurs. Signaler un problème, rendre compte d'une réussite, faire des suggestions ou apporter une contribution sont toutes choses toujours bienvenues. Même si nous ne pouvons pas promettre de tout résoudre immédiatement, cela nous aide beaucoup de savoir quelles sont les parties de Fink qui demandent le plus d'attention de notre part.
 </p>
 <p>
 Vous pouvez faire parvenir vos retours sur expérience via les <a href="../lists/index.php">listes de diffusion</a>, ou les différents traqueurs sur SourceForge (voir la page d'accueil pour les liens directs), ou encore directement aux mainteneurs de paquets.
@@ -92,12 +92,12 @@ href="../faq/usage-fink.php#unstable">l'utilisation de la branche instable</a> e
 
 <p>
 <b>Documentation.</b>
-Le projet est toujours à la recherche de personnes pour écrire la documentation. <nobr><tt>;-)</tt></nobr>
+Le projet est toujours à la recherche de personnes pour écrire la documentation. 
 </p>
 
 <p>
 <b>Création de paquets.</b>
-Si vous avez quelque expérience dans le domaine de l'installation d'application Unix à partir des sources, vous pouvez nous aider en créant de nouveaux paquets. Pour démarrer, lisez le <a href="../doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a>. Puis téléchargez le <a href="../doc/packaging/index.php">Guide de création de paquets</a> (Packaging manual), lisez-le attentivement, abonnez-vous à la liste de diffusion <a href="../lists/fink-devel.php">fink-devel</a> et postez vos paquets sur le <a href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">traqueur de proposition de paquets</a> (package submission tracker).
+Si vous avez quelque expérience dans le domaine de l'installation d'application Unix à partir des sources, vous pouvez nous aider en créant de nouveaux paquets. Pour démarrer, lisez le <a href="../doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a>. Puis téléchargez le <a href="../doc/packaging/index.php">Guide de création de paquets</a> (Packaging manual), lisez-le attentivement, abonnez-vous à la liste de diffusion <a href="../lists/fink-devel.php">fink-devel</a> et postez vos paquets sur le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">traqueur de proposition de paquets</a> (package submission tracker).
 Notez que votre proposition a toutes les chances d'être rejetée ou traitée avec un niveau de priorité très bas, si elle ne respecte pas les normes de construction de paquets.
 </p>
 
