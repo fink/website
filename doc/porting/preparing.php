@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/06/14 01:36:55';
+$cvs_date = 'Date: 2002/06/23 04:09:01';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -113,14 +113,15 @@ Note that you do not need Ben's patch if your package uses libtool-1.3.5
 since it has already been incorporated into a revised version of fink's
 ltconfig file (available in pre-release versions of fink).
 </p>
+<p>JF Mertens has provided an 
+<a href="http://fink.sourceforge.net/doc/porting/gcc3_errs.php">extensive 
+list of packages which fail to compile under gcc3,</a> updated
+on 22 June 2002. </p>
 <p>
-As of May 22,
-we have had reports of success and failure with just a handful of Fink
-packages when one attempts to compile them with gcc3.  (Thanks to Jeff
+Earlier reports, originally compiled on  May 22 and updated several times,
+were provided by Jeff
 Hester, Jan de Leeuw, J-F Mertens, Mathias Meyer, Alexander Strange,
-and Chris Zubrzycki for providing
-reports. Further reports can
-be sent to fink-devel@lists.sourceforge.net .)
+and Chris Zubrzycki.  Those lists, now somewhat out of date, follow:
 </p><p><b> Unsuccessful packages:</b></p>
 <ol><li> apt-0.5.4-3 (breaks with undefined symbols such as 
 __ZTI9pkgSystem) </li>
