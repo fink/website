@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.6 2001/10/09 20:44:32 chrisp Exp $ */
+/* $Id: header.inc,v 1.7 2002/01/21 19:15:17 fingolfin Exp $ */
 
 /* check path info */
 if ($uses_pathinfo) {
@@ -11,6 +11,10 @@ if ($uses_pathinfo) {
     $pispec = $r[1];
     $title .= $pispec;
     $pdbroot = "../";
+  } elseif (ereg("^/([a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+    $pispec = $r[1];
+    $title .= $pispec;
+    $pdbroot = "../../";
   } else {
     print '<p><b>PATH_INFO not in expected format!</b></p>';
     exit;
