@@ -229,8 +229,8 @@
       </ol>
 
       <p>Les fichiers <filename>constants.*.inc</filename> servent à traduire des mots inclus tels quels dans les fichiers PHP. La plupart correspondent à des articles de menu, situés en haut et à gauche des pages. Il vous faut les isoler des scripts  et créer un fichier constants.xx.inc pour votre langue. Pour ce faire, exécutez la commande suivante dans une fenêtre de terminal :</p>
-      <codeblock>cp constants.de.inc constants.xx.inc</codeblock>
-      <p>où xx est votre code langue (par exemple fr pour le français).
+      <codeblock>cp constants.fr.inc constants.xx.inc</codeblock>
+      <p>où xx est votre code langue (par exemple de pour l'allemand).
       Ensuite, il vous faudra traduire la partie située entre guillemets simples de chaque ligne commençant par define. Si vous ne comprenez pas l'allemand, voici la traduction en anglais :</p>
 
       <codeblock>
@@ -254,7 +254,21 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 define (FINK_SECTIONS, 'Sections'); 
       
 /* Contents as Table of Contents. Used in FAQ/Documentation Sections */ 
-define (FINK_CONTENTS, 'Contents');</codeblock>
+define (FINK_CONTENTS, 'Contents');
+
+/* Printer */
+define (FINK_PRINTER, 'Printer');
+define (FINK_PRINT_VERSION, 'Print Version');
+
+/* Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, port, development, package management');
+define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution.');
+define (HEADER_HOSTED_BY, 'Hosted by {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated: %x %X');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+</codeblock>
 
       <p>Quand vous traduisez, vous devez suivre les étapes suivantes (disons que vous traduisez en français le document <strong>Running X11</strong>) :</p>
 
@@ -502,7 +516,7 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
     </section>
     <section name="prompt-update">
       <title>Mise à jour rapide de la documentation existante :</title>
-      <p>On fait un <xref chapter="files" section="committing">commit</xref> et l'on <xref chapter="files" section="website">active</xref> immédiatement la documentation maître anglaise, ensuite les équipes de traduction mettent à jour leurs versions, font un <xref chapter="files" section="committing">commit</xref> de <em>tous</em> les fichiers (XML et PHP), puis <xref chapter="files" section="activate">activent</xref> les changements.</p>
+      <p>On fait un <xref chapter="files" section="committing">commit</xref> et l'on <xref chapter="files" section="website">active</xref> immédiatement la documentation maître anglaise, - quelque soit la personne qui change le fichier XML, elle doit aussi faire le commit des fichiers PHP et HTML et activer les changements. Ensuite les équipes de traduction mettent à jour leurs versions, font un <xref chapter="files" section="committing">commit</xref> de <em>tous</em> les fichiers (XML et PHP), puis <xref chapter="files" section="activate">activent</xref> les changements.</p>
       <p><em>Notes :</em></p>
       <ol>
         <li>Les modifications du guide d'internationalisation (ce document) sont <em>toujours</em> faites suivant ce schéma, car les changements affectent l'ensemble des équipes de traduction.</li>
@@ -513,6 +527,11 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
       <title>Mise à jour retardée de la documentation existante (fichiers générés via XML uniquement)</title>
       <p>Dans ce case, on fait le <xref chapter="files" section="committing">commit</xref> de la version anglaise du fichier XML, mais <em>pas</em> des fichiers PHP et HTML, c'est-à-dire que l'on s'arrête à l'étape 5 de la section Fichiers dynamiques en <xref chapter="files" section="committing">2.9</xref>. Tous les traducteurs traduisent dans leurs langues respectives et font le <xref chapter="files" section="committing">commit</xref> du <em>seul</em> fichier XML (c'est-à-dire le même fichier que pour l'anglais) dans un laps de temps prévu d'avance. La génération, le commit et <xref chapter="files" section="website">l'activation</xref> de tous les fichiers PHP et HTML sont faits en même temps par un des chefs du projet i18n quand le délai est écoulé.</p>
     </section>
+        <section name="summary">
+      <title>Pour les développeurs et les documentalistes anglais</title>
+      <p>La règle actuelle est que tous les documents doivent être mis à jour suivant le schéma <xref section="prompt-update">mise à jour rapide</xref>, sauf si vous avez une bonne raison de faire autrement.</p>
+    </section>
+
  </chapter>
 
   <chapter filename="resources">
