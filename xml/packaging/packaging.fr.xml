@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.1 2004/03/19 17:52:07 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.2 2004/03/25 01:19:43 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -161,6 +161,7 @@ Certains champs prennent une valeur booléenne ; sont traitées comme vraies, le
 <section name="percent"><title>Raccourcis %</title>
 <p>
 Pour vous rendre la vie plus facile, Fink gère un jeu de raccourcis sur certains champs.
+Pour lever toute ambiguïté, vous pouvez utiliser des accolades autour des caractères qui doivent être considérés comme des raccourcis. Par exemple, <code>%{n}</code> a la même signification que <code>%n</code>.
 Les raccourcis disponibles sont les suivants :</p>
 <itemtable labeld="" labelt="">
 <item><itemt>%n</itemt>
@@ -217,7 +218,8 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 <itemd>
 <p>
 répertoire <em>d</em>ans lequel le paquet est construit, par exemple : 
-<filename>/sw/src/root-gimp-1.2.1-1</filename>
+<filename>/sw/src/root-gimp-1.2.1-1</filename>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que 
+<filename>root-%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
 </p>
 </itemd></item>
 
@@ -254,7 +256,7 @@ chemin des rustines
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-répertoire de compilation, exemple : <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
+répertoire de compilation, exemple : <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.Vous ne devez pas partir du principe que <filename>root-%f</filename> est dans <filename>%p/src</filename>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <filename>/sw/etc/fink.conf</filename>.
 </p>
 <p>
 Note: ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
@@ -1408,8 +1410,9 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.1, you no longer need to use consecutive values for
-N. However, you still may not have duplicates.
+of fink after 0.19.2, you may use arbitrary integer values of N,
+rather than numbering upwards from N = 2. However, you still may not have
+duplicates.
 </p>
 </itemd></item>
 
@@ -1467,7 +1470,7 @@ In the above example this would result in the tarball being stored under
 <itemd>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the Nth tarball as specified by the <code>Source<em>N</em></code>
+is used to rename the tarball specified by the <code>Source<em>N</em></code>
 field. See context or hyperref for examples of usage.
 </p>
 </itemd></item>
@@ -1503,7 +1506,7 @@ As you can see, the value to the left is exactly the value you need.
 <p>
 <em>Introduced in fink 0.10.0.</em>
 This is just the same as the <code>Source-MD5</code> field, except that it
-is used to specify the MD5 checksum of the Nth tarball as specified by the
+is used to specify the MD5 checksum of the tarball specified by the
 corresponding <code>Source<em>N</em></code> field.
 </p>
 </itemd></item>
@@ -1548,7 +1551,7 @@ a package uses TarFilesRename, Fink will use BSD tar by directly invoking
 <p>
 <em>Introduced in fink 0.10.0.</em>
 This is just the same as the <code>TarFilesRename</code> field, except that it
-is used for the Nth tarball as specified by the corresponding
+is used for the tarball specified by the corresponding
 <code>Source<em>N</em></code> field.
 </p>
 </itemd></item>
@@ -1935,9 +1938,10 @@ For details about how this works, see the separate
 <p>
 <em>Introduced in fink 0.9.9.</em>
 This is the same as <code>SplitOff</code>, used to generate a third,
-fourth, etc. package from the same compile/install run. Starting with
-a CVS version of fink after 0.19.1, you no longer need to use
-consecutive values for N. However, you still may not have duplicates.
+fourth, etc. package from the same compile/install run. Starting with a
+CVS version of fink after 0.19.2, you may use arbitrary integer values
+of N, rather than numbering upwards from N = 2. However, you still
+may not have duplicates.
 </p>
 </itemd></item>
 
@@ -2174,7 +2178,11 @@ of the packages by using <code>DocFiles</code> several times.
 <section name="scripts"><title>Scripts</title>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. Two forms are supported.
+to specify shell commands to be executed. The build directory
+(<filename>%b</filename> is the current directory when scripts are
+executed. You should always use relative pathnames or
+percent-expansions for files and directories in the fink hierarchy,
+not complete absolute pathnames. Two forms are supported.
 </p><p>
 This field can be a simple list of commands. This is sort of like a
 shell script. However, the commands are executed via system(), one
