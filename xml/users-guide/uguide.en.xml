@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.7 2004/04/12 02:54:09 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.8 2004/04/26 02:05:51 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1264,8 +1264,20 @@ others.
     <section name="dumpinfo">
       <title>dumpinfo</title>
       <p>
-	Shows how Fink parses parts of a package's .info file.
+	Shows how Fink parses parts of a package's .info file. Various
+	fields and percent expansions will be displayed according
+	to <em>options</em> as follows:
       </p>
+      <codeblock>
+-h, --help           - Show the options which are available.
+-a, --all            - Display all fields from the package description.
+                       This is the default mode when no --field or
+                       --percent flags are given.
+-f fieldname,        - Display the given fieldname(s),
+  --field=fieldname    in the order listed.
+-p key,              - Display the given percent expansion key(s),
+   --percent=key       in the order listed.
+      </codeblock>
     </section>
   </chapter>
 </document>
