@@ -96,7 +96,7 @@
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
 <p align="right">
-Next: <xsl:number format="1 " /><a href="{@filename}.php"><xsl:value-of select="title" /></a>
+Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
 </p>
 </xsl:if>
 </xsl:for-each>
