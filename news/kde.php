@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/29 23:13:50 $';
+$cvs_date = '$Date: 2002/05/30 15:06:24 $';
 
 include "header.inc";
 ?>
@@ -175,13 +175,27 @@ Screenshots:
  <b><tt>~/.xinitrc</tt></b> file with the following line in it:
 </p>
 <p>
+  <nobr><b><tt>source /sw/bin/init.sh</tt></b></nobr>
   <nobr><b><tt>/sw/bin/startkde</tt></b></nobr>
+</p>
+<p>
+ (Note that you should always use init.sh, even if tcsh is your login shell.  The
+ .xinitrc file is a bourne-shell script.)
 </p>
 <p>
  Then just start XFree86 (Applications -> XDarwin) and KDE should come up.  Dynamic
  loading in KDE is still pretty slow at the moment, so there are usually noticeable
  pauses in the amount of time KDE apps can take to start up if a library they use
  has not been loaded before.
+</p>
+<p>
+ If you have problems starting, try changing your startkde line to:
+</p>
+<p>
+ <nobr><b><tt>/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</tt></b></nobr>
+</p>
+<p>
+ ...and then check <b>/tmp/kde.log</b> for errors.
 </p>
 <p>
  <b>Tip</b>: to run KDE in rootless mode, disable desktop icons by starting the
