@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.8 2001/08/26 21:15:15 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.9 2001/10/23 13:43:18 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -29,7 +29,7 @@ network-transparent client-server architecture.
 It allows applications to draw pixels, lines, text, images, etc. on
 your screen.
 X11 also comes with additional libraries that let applications easily
-draw user interfaces, i.e. buttons, text fields and so on.
+draw user interfaces, i.e. buttons, text fields, and so on.
 </p>
 <p>
 X11 is the de facto standard graphics system in the Unix world.
@@ -92,7 +92,7 @@ Thus applications are called clients in the X11 world.
 X11 allows the server and the clients to be on different machines,
 which often results in confusion over the terms.
 In an environment with workstations and servers, you will run the X11
-display server on the workstation machine and the applications (X
+display server on the workstation machine and the applications (the X
 clients) on the server machine.
 So when talking about the "server", that means the X11 display server
 program, not the machine hidden in your wardrobe.
@@ -101,7 +101,7 @@ program, not the machine hidden in your wardrobe.
 
 <section name="rootless"><title>What does rootless mean?</title>
 <p>
-A side track:
+A little background:
 X11 models the screen as a hierarchy of windows contained in each
 other.
 At the top of the hierarchy is a special window which is the size of
@@ -111,9 +111,9 @@ window".
 </p>
 <p>
 Now back on topic:
-Like any graphic environment, X11 was written to be alone and have
-full control over the screen.
-In Mac OS X Quartz already governs the screen, so one must make
+Like any graphical environment, X11 was written to stand alone and
+have full control over the screen.
+In Mac OS X, Quartz already governs the screen, so one must make
 arrangements if both are to get along together.
 </p>
 <p>
@@ -145,7 +145,7 @@ X11 is different.
 With X11, the window frames (also called "decoration") are provided by
 a separate program, called the window manager.
 In most respects, the window manager is just another client
-application; it is started the same way and connects to the X server
+application; it is started the same way and talks to the X server
 through the same channels.
 </p>
 <p>
@@ -255,7 +255,7 @@ the directory <code>4.1.0/binaries/Darwin-ppc</code>.
 Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
-Run the <code>Xinstall.sh</code> script to install the stuff.
+Run the <code>Xinstall.sh</code> script as root to install the stuff.
 (You might want to read the <link
 url="http://www.xfree86.org/4.1.0/Install.html">official
 instructions</link> before installing.)
