@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/11 19:22:56 $';
+$cvs_date = '$Date: 2001/06/16 15:20:01 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -27,6 +27,7 @@ browser window.</p>
 Distribution</a></li>
 <li><a href="http://elisa.utopianet.net/~rlucia/devel/darwin_ports/" target="_blank">Darwin
 Ports</a> - porting the FreeBSD ports collection</li>
+<li><a href="http://openpackages.org/" target="_blank">OpenPackages</a> - uniting and improving the *BSD port collections</li>
 </ul>
 
 <p>Sites with info about ports</p>
@@ -37,8 +38,10 @@ porting info and news, plus a software archive</li>
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 news, articles and a software archive</li>
+<!--
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 help running The GIMP, GTK and X on a Mac</li>
+-->
 <li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a> -
 port news and general help</li>
 <li><a href="http://www.caos.aamu.edu/pub/MacOS_X/" target="_blank">A
