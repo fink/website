@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 23:07:43';
+$cvs_date = 'Date: 2003/09/06 21:04:23';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -40,7 +40,7 @@ You can also run that command at any time to reconfigure the
 If you followed the instructions in the installation guide, and use
 <code>/sw/bin/init.csh</code> (or <code>/sw/bin/init.sh</code>),
 then <code>apt-get</code> and <code>dselect</code> also will use these
-proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled "Use Passive FTP Mode (PASV)" is checked.</p></div>
+proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p></div>
 </a>
 <a name="firewalled-cvs">
 <div class="question"><p><b>Q3.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
@@ -98,9 +98,9 @@ to install it).  Thus in order to get rid of Fink, enter this command:
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>
-You also will want to remove the "source /sw/bin/init.csh" line you
-added to your .cshrc file. To do this, type "pico ~/.cshrc". Navigate to
-the "source /sw/bin/init.csh" line and type control-K to remove it. Then
+You also will want to remove the &quot;source /sw/bin/init.csh&quot; line you
+added to your .cshrc file. To do this, type &quot;pico ~/.cshrc&quot;. Navigate to
+the &quot;source /sw/bin/init.csh&quot; line and type control-K to remove it. Then
 type control-O, return, control-X to exit.
 </p></div>
 </a>
@@ -128,7 +128,7 @@ hand only know about the packages available as precompiled binary
 packages.
 Many packages are not available in precompiled form through these
 tools for a variety of reasons.
-A package must be in the "stable" section of the latest point release
+A package must be in the &quot;stable&quot; section of the latest point release
 to be considered, and it must pass additional checks for policy
 compliance as well as licensing and patent restrictions.
 </p><p>
@@ -174,7 +174,7 @@ password.</p></div>
 </a>
 <a name="exec-init-csh">
 <div class="question"><p><b>Q3.11: When I try to run
-init.csh, I get a "Permission denied" error. What am I doing
+init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
 sets environment variables like PATH and MANPATH in your shell. To
@@ -183,7 +183,7 @@ have a lasting effect on the shell, it must be processed with the
 </a>
 <a name="dselect-access">
 <div class="question"><p><b>Q3.12: Help! I used the
-"[A]ccess" menu entry in dselect and now I can't download packages any
+&quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You probably pointed apt at a Debian mirror, which of course doesn't
@@ -197,7 +197,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><
 (Or if you live in Europe, you can use <code>eu.dl.sourceforge.net</code>
 instead of <code>us.dl.sourceforge.net</code>)
 </p><p>
-To fix it through dselect, run "[A]ccess" again, choose the "apt"
+To fix it through dselect, run &quot;[A]ccess&quot; again, choose the &quot;apt&quot;
 method and enter the following info:
 </p><p>
 URL: http://us.dl.sourceforge.net/fink/direct_download -
@@ -205,15 +205,15 @@ Distribution: release -
 Components: main crypto
 </p><p>
 Then, say you want to add another source and repeat the process with
-"current" instead of "release".
+&quot;current&quot; instead of &quot;release&quot;.
 </p><p>
 A fixed version of the apt package (which provides the configuration
 script as a plug-in for dselect) is making it's way through CVS now.
 </p></div>
 </a>
 <a name="cvs-busy">
-<div class="question"><p><b>Q3.13: When I try to run <q>fink selfupdate</q> or "fink selfupdate-cvs", I get the error "<code>Updating using CVS failed. Check the error messages above.</code>"</b></p></div>
-<div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec "cvs": No such file or directory at 
+<div class="question"><p><b>Q3.13: When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;</b></p></div>
+<div class="answer"><p><b>A:</b> If the message is</p><pre>Can't exec &quot;cvs&quot;: No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
@@ -223,7 +223,7 @@ Connection refused
 Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer
 ### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get "Permission denied" messages:</p><pre>cvs update: in directory 10.2/stable/main:
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p><pre>cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
@@ -231,13 +231,13 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such 
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
 </pre><p>In this case you need to reset your cvs directories. Use the command:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
-fink selfupdate-cvs</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with "C", like so:
+fink selfupdate-cvs</pre><p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
 </p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 ...
 (other info and patch files)
 ...
 ### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>The "C" means CVS had a conflict in trying to update the latest version.</p><p>The fix is to delete any files that show up as starting with "C" in the output of selfupdate-cvs, and try again.</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>The &quot;C&quot; means CVS had a conflict in trying to update the latest version.</p><p>The fix is to delete any files that show up as starting with &quot;C&quot; in the output of selfupdate-cvs, and try again.</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="kernel-panics">
@@ -257,10 +257,10 @@ software before using Fink.
 versions are released.</p><p>The first thing you should do is run <code>fink selfupdate-cvs</code>.
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
-revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from "<code>fink describe <b>packagename</b>
-</code>") know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
+revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from &quot;<code>fink describe <b>packagename</b>
+</code>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
 other directories for the same version of the source that fink wants 
-(e.g. in an "old"
+(e.g. in an &quot;old&quot;
 directory).  Keep in mind, though, that some remote sites like to trash the
 old versions of their packages.  If the official site doesn't have it, then
 try a web search--sometimes there are unofficial sites that have the 
@@ -269,12 +269,12 @@ which is where Fink stores sourcefiles from packages that have been
 released in binary form.  If all of the above fail, then you might consider posting on the
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
 mailing list</a> to ask if anybody has the old source available to give
-you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>".  Then use '<code>fink install <b>packagename</b>
+you. </p><p>Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>&quot;.  Then use '<code>fink install <b>packagename</b>
 </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q3.16: I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run fink or anything that I installed with fink.</b></p></div>
+<div class="question"><p><b>Q3.16: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <code>tcsh</code>).  When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read.  A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
 </a>
@@ -283,27 +283,27 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
 <a name="install-info-bad">
-<div class="question"><p><b>Q3.18: I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
+<div class="question"><p><b>Q3.18: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use fink.</p></div>
 </a>
 <a name="bad-list-file">
-<div class="question"><p><b>Q3.19: I can't install or remove anything, because of a problem with a "files list file".</b></p></div>
+<div class="question"><p><b>Q3.19: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> Typically these errors take the form:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>or</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><pre>dpkg --contents <b>full-path-to-debfile</b>
 </pre><p>e.g.</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the .deb file, you can still proceed because the error doesn't interfere with builds.</p><p>If you have been installing from the binary distribution or you know for sure that the version in the binary distribution is the same as what you have installed (e.g. by checking the <a href="http://fink.sourceforge.net/pdb/index.php">package database</a>), then you can get a .deb file by running <code>sudo apt=get install --reinstall --download-only <b>packagename</b>
 </code>. Otherwise you can build one yourself by running  <code>fink rebuild <b>packagename</b>
 </code>, but it won't install yet.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><pre>dpkg -c <b>full-path-to-debfile</b>
-  | awk '{if ($6 == "./"){ print "/."; } else if (substr($6, length($6), 1) == "/")
+  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
   &gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>e.g.</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
-  | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/")
+  | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
   &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <a name="error-nineteen">
-<div class="question"><p><b>Q3.20: When I use the Fink binary installer package, I get a big "19" in the window and can't install anything.</b></p></div>
+<div class="question"><p><b>Q3.20: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
 <div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
 other than English. (This is a bug in Apple's Installer, that it doesn't
-just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>"A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume."</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
+just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p></div>
@@ -313,7 +313,7 @@ the Virex folks having made errors in the way they set things up).</p></div>
 <div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to enter the following command</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b>Q3.22: Why do I get a bunch of "dyld: perl undefined symbols" errors when I run Fink commands?</b></p></div>
+<div class="question"><p><b>Q3.22: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
 <div class="answer"><p><b>A:</b> If you see an error sequence like the following:</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 23:07:43';
+$cvs_date = 'Date: 2003/09/06 21:04:23';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -60,9 +60,9 @@ new Mac OS X
 versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
-<b>"Hopefully it underscores the commitment that many suspect we're
+<b>&quot;Hopefully it underscores the commitment that many suspect we're
 not willing to provide.  We'll get better at the open source game over
-time."</b>
+time.&quot;</b>
 Thanks Apple!
 </p></div>
 </a>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/30 23:07:43';
+$cvs_date = 'Date: 2003/09/06 21:04:23';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -15,7 +15,7 @@ include "header.inc";
 <div class="question"><p><b>Q7.1: I get no sound from
 XMMS</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Make sure you have the "eSound Output Plugin" selected in the XMMS
+Make sure you have the &quot;eSound Output Plugin&quot; selected in the XMMS
 preferences.
 For some strange reason, it selects the disk writer plugin as the
 default.
@@ -65,17 +65,17 @@ section</a> for this common problem.
 </p></div>
 </a>
 <a name="no-server">
-<div class="question"><p><b>Q7.4: When I try to start XDarwin I get the message "xinit:  No such file or directory (errno 2):  no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
+<div class="question"><p><b>Q7.4: When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> This has come up recently:  all of the <code>xfree86</code> packages get built, but only <code>xfree86-base</code> and <code>xfree86-base-shlibs</code> are installed.  Check whether you have <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code> installed.  If not, then <code>fink install xfree86-rootless</code> should do the trick.</p><p>If you do have it installed, then try <code>fink rebuild xfree86-rootless</code>.  If that doesn't work, verify that you have <code>/usr/bin/X11R6</code> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p></div>
 </a>
 <a name="xfree-keymapping">
 <div class="question"><p><b>Q7.5: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
-says "assert failed on line 454 of darwinKeyboard.c!". What's
+says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is a known problem on 10.1.
-You must use the "Load from file" keymapping option since the default
+You must use the &quot;Load from file&quot; keymapping option since the default
 option (loading it from the kernel) doesn't work anymore.
 The setting is in the XDarwin Preferences dialog.
 Be sure that a file is selected (e.g. USA.keymapping) - simply
@@ -98,18 +98,18 @@ sort this out.
 </p></div>
 </a>
 <a name="xterm-error">
-<div class="question"><p><b>Q7.6: xterm fails with "dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
-<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means ("<code>fink selfupdate-cvs ; fink update-all</code>" for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
+<div class="question"><p><b>Q7.6: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means (&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot; for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
 </a>
 <a name="libXmuu">
-<div class="question"><p><b>Q7.7: When I try to start XFree86 I get one of the following errors:  "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
+<div class="question"><p><b>Q7.7: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You are missing a file that is supposed to be installed by <code>xfree86-base-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
 </a>
 <a name="apple-x-bugs">
 <div class="question"><p><b>Q7.8: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
 <div class="answer"><p><b>A:</b> 
-  First of all, if you previously had the "threaded" versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing.  Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
+  First of all, if you previously had the &quot;threaded&quot; versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing.  Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
  </p><p>
   Secondly, you may have just hit an Apple X11 bug.  As of the time of this writing, a number of bugs are known by the Apple team and are being worked on.
  </p><p>
