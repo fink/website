@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/27 19:57:51';
+$cvs_date = 'Date: 2004/07/28 19:44:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -101,7 +101,8 @@ You may also add your own trees in the <code>/sw/fink/dists</code>
 directory for your own purposes, but this is not necessary in most
 circumstances. The default trees are "local/main local/bootstrap
 stable/main". This list should be kept in sync with the
-<code>/sw/etc/apt/sources.list</code> file.
+<code>/sw/etc/apt/sources.list</code> file.  (As of fink 0.21.0, fink
+does this for you automatically.)
 </p>
         </li>
         <li>
@@ -356,9 +357,14 @@ for already-compiled binaries, and then looks in the official binary
 distribution.  You can alter this by making entries at the beginning of
 the file (which will be searched first) or at the end of the file (which
 will be searched last).</p>
-<p>Fink preserves your modifications even when altering the "default"
-portion of the file, if you confine them to the beginning and to the end.
-If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
+<p>If you change your Trees line or the Distribution you are using,
+fink will automatically modify the "default" portion of the file to
+correspond to the new values.  Fink will, however, preserve any local
+modifications you have made to the file, provided that you confine your
+modifications to the top of the file (above the first default line) and
+the bottom of the file (below the last default line).
+</p><p>
+Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
 to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
 </p>
     
