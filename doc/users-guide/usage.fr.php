@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/04/14 02:31:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 include_once "header.inc";
@@ -62,7 +62,8 @@ Voici quelques-unes des options de la commande <code>fink list</code> :
 -h,--help
 	  Affiche les options disponibles.
 -t,--tab
-	  Affiche la liste en séparant les divers éléments d'une ligne par une tabulation, utile en cas d'utilisation à l'intérieur d'un script.
+	  Affiche la liste en séparant les divers éléments d'une ligne par une tabulation,
+	  utile en cas d'utilisation à l'intérieur d'un script.
 -i,--installed
 	  N'affiche que les paquets installés.
 -o,--outdated
@@ -72,9 +73,11 @@ Voici quelques-unes des options de la commande <code>fink list</code> :
 -n,--notinstalled
 	  Affiche les paquets qui ne sont pas installés.
 -s=expr,--section=expr
-	  Affiche les paquets dans les sections correspondant à l'expression régulière fournie.
+	  Affiche les paquets dans les sections correspondant à l'expression régulière
+	  fournie.
 -w=xyz,--width=xyz
-	  Fixe la largeur de l'affichage. xyz est soit une valeur numérique, soit auto. auto correspond à la largeur du terminal. 
+	  Fixe la largeur de l'affichage. xyz est soit une valeur numérique, soit auto. 
+	  auto correspond à la largeur du terminal. 
 	  La valeur par défaut est auto.
 </pre>
       <p>
@@ -97,8 +100,10 @@ Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shel
 Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.
 </p>
       <pre>
-fink apropos irc          - affiche tous les paquets où 'irc' apparaît soit dans le nom, soit dans la description
-fink apropos -s=kde irc   - identique au précèdent, mais restreint aux paquets de la section kde
+fink apropos irc          - affiche tous les paquets où 'irc' apparaît soit dans le nom, 
+                            soit dans la description
+fink apropos -s=kde irc   - identique au précèdent, mais restreint aux paquets de la 
+                            section kde
 </pre>
     
     <h2><a name="describe">6.7 describe - description</a></h2>
@@ -182,6 +187,13 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
    Cela peut libérer une grande portion d'espace disque.
 </p>
     
+        <h2><a name="dumpinfo">6.21 dumpinfo - analyse des fichiers info</a></h2>
+      
+      <p>
+	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet.
+      </p>
+    
+
   
 
 <? include_once "footer.inc"; ?>

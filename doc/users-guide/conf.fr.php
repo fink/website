@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/04/14 02:31:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 include_once "header.inc";
@@ -206,12 +206,15 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
           <p>
             <b>KeepRootDir:</b> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+La commande <b>fink -K</b> a le même effet, restreint à  cette invocation de <b>fink</b>.
+
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <b>fink</b>.
           </p>
         </li>
       </ul>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.6 2004/04/12 02:48:49 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.7 2004/04/14 02:31:00 michga Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -789,12 +789,15 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
           <p>
             <em>KeepRootDir:</em> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+La commande <em>fink -K</em> a le même effet, restreint à  cette invocation de <em>fink</em>.
+
           </p>
         </li>
         <li>
           <p>
             <em>KeepBuildDir:</em> booléen</p>
           <p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+La commande <em>fink -k</em> a le même effet, restreint à  cette invocation de <em>fink</em>.
           </p>
         </li>
       </ul>
@@ -855,7 +858,8 @@ Voici quelques-unes des options de la commande <code>fink list</code> :
 -h,--help
 	  Affiche les options disponibles.
 -t,--tab
-	  Affiche la liste en séparant les divers éléments d'une ligne par une tabulation, utile en cas d'utilisation à l'intérieur d'un script.
+	  Affiche la liste en séparant les divers éléments d'une ligne par une tabulation,
+	  utile en cas d'utilisation à l'intérieur d'un script.
 -i,--installed
 	  N'affiche que les paquets installés.
 -o,--outdated
@@ -865,9 +869,11 @@ Voici quelques-unes des options de la commande <code>fink list</code> :
 -n,--notinstalled
 	  Affiche les paquets qui ne sont pas installés.
 -s=expr,--section=expr
-	  Affiche les paquets dans les sections correspondant à l'expression régulière fournie.
+	  Affiche les paquets dans les sections correspondant à l'expression régulière
+	  fournie.
 -w=xyz,--width=xyz
-	  Fixe la largeur de l'affichage. xyz est soit une valeur numérique, soit auto. auto correspond à la largeur du terminal. 
+	  Fixe la largeur de l'affichage. xyz est soit une valeur numérique, soit auto. 
+	  auto correspond à la largeur du terminal. 
 	  La valeur par défaut est auto.
 </codeblock>
       <p>
@@ -890,8 +896,10 @@ Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shel
 Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.
 </p>
       <codeblock>
-fink apropos irc          - affiche tous les paquets où 'irc' apparaît soit dans le nom, soit dans la description
-fink apropos -s=kde irc   - identique au précèdent, mais restreint aux paquets de la section kde
+fink apropos irc          - affiche tous les paquets où 'irc' apparaît soit dans le nom, 
+                            soit dans la description
+fink apropos -s=kde irc   - identique au précèdent, mais restreint aux paquets de la 
+                            section kde
 </codeblock>
     </section>
     <section name="describe" >
@@ -975,5 +983,12 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
    Cela peut libérer une grande portion d'espace disque.
 </p>
     </section>
+        <section name="dumpinfo">
+      <title>dumpinfo - analyse des fichiers info</title>
+      <p>
+	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet.
+      </p>
+    </section>
+
   </chapter>
 </document>
