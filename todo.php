@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$cvs_date = '$Date: 2001/01/12 21:08:00 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -29,6 +29,7 @@ basic optimization flags are used (e.g. <tt>-O2</tt>)</li>
 information and patches stuff (i.e. the data)</li>
 <li>Support other Unices</li>
 <li>Binary packages</li>
+<li>Manage info and other documentation</li>
 </ul>
 
 
