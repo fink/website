@@ -4,8 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.12 2004/06/03 02:18:58 babayoshihiko Exp $</cvsid>
-	<!-- cvsidだいなりどるId: packaging.en.xml,v 1.20 2004/03/31 20:08:34 dmacks Exp どるしょうなり/cvsid -->
+	<cvsid>$Id: packaging.ja.xml,v 1.13 2004/06/19 15:35:39 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1545,6 +1544,10 @@ CompileScript:  &lt;&lt;
 							<em>Fink 0.9.9 で導入:</em>
 							真偽値フィールド．
 							他のパッケージは当該パッケージを (フィールド BuildDepends に入れてもよいが) Depends に入れてはいけないことを示す．
+						</p>
+						<p>
+							fink 0.23.3 より、このフィールドの値はパッケージのビルド時に .deb ファイルに保存される。
+							これにより、<em>BuildDependsOnly 値を変更した場合，パッケージのリビジョン番号を上げなければならない</em>．
 						</p>
 					</itemd>
 				</item>
