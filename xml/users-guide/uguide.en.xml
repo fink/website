@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.10 2004/06/26 04:09:27 vasi Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.11 2004/06/27 00:46:39 vasi Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1046,7 +1046,7 @@ only operates on that single <em>fink</em> invocation.
         <li>
           <p>
             <em>CCacheDir:</em> path</p>
-          <p><em>Introduced in a post-0.19.2 CVS version of fink.</em> If the Fink package ccache-default is installed, the cache files it makes
+          <p><em>Introduced in a post-0.20.5 CVS version of fink.</em> If the Fink package ccache-default is installed, the cache files it makes
 while building Fink packages will be placed here. Defaults to <filename>/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
           </p>
         </li>
