@@ -1,7 +1,7 @@
 <?
 $title = "Bootstapping Fink under Mac OS X 10.2";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/06 20:57:10 $';
+$cvs_date = '$Date: 2002/12/09 21:34:24 $';
 
 include "header.inc";
 ?>
@@ -34,20 +34,7 @@ Download the <A href="http://prdownloads.sourceforge.net/fink/fink-0.11.1.tar.gz
 </pre>
 from within the fink-0.11.1 directory.
 <br><br>
-<li><b>Step 4: Edit your fink.conf file.</b>
-You will find this file at /sw/etc/fink.conf (or another location if you
-installed Fink in a non-standard place).  You may need to change to file
-permissions or use sudo to edit the file.  You want to add the "unstable"
-trees to the Trees line in this file, so that the line reads
-<pre>
-Trees: local/main stable/main stable/crypto local/bootstrap unstable/main unstable/crypto
-</pre>
-Even if you have not used the unstable Trees in the past, at the present
-time virtually all of the 10.2 Fink packages are still being tested in
-the unstable tree and have not yet been moved to the stable tree, so
-this step is highly recommended.
-<br><br>
-<li><b>Step 5: Add fink to your paths.</b>
+<li><b>Step 4: Add fink to your paths.</b>
 Type:
 <pre>
 pico ~/.cshrc
@@ -58,7 +45,7 @@ source /sw/bin/init.csh
 </pre>
 To get out of the editor, press control-O, return, control-X. 
 Close the Terminal.app window and open a new one.
-<li><b>Step 6: Obtain updated fink packages.</b>
+<li><b>Step 5: Obtain updated fink packages.</b>
 To do this, issue the command
 <pre>
 fink selfupdate-cvs
