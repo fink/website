@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/10/12 05:42:03 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:35:41 $';
 
 include "header.inc";
 include "releases.inc";
@@ -102,10 +102,16 @@ if (!$rs) {
 ?>  
 <input type="submit" value="Search">
 </form>
-
+<?PHP
+	#Special case for 10.2-gcc3.3 to 10.3 move
+	if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
+	{
+?>  
 <div tiny>
 <form action="compare.php" method="POST">
+
 <?PHP
+	}
 }
 $q = "SELECT name,maintainer,version,revision,moveflag,needtest FROM package ".
   	 "WHERE release LIKE \"$tree1\" ".
