@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 20 Sep 2004 08:40:43 CEST</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2004 16:40:56 CEST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.">
@@ -21,7 +21,7 @@ Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based 
 
 This new releases incorporate various fixes to the package manager, many previously
 unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
-binaries for KDE 3.4.1 and GNOME 2.4.
+binaries for KDE 3.1.4 and GNOME 2.4.
 
 
 

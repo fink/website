@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2004/09/20 06:40:28';
+$cvs_date = 'Date: 2004/09/20 14:40:49';
 $metatags = '';
 
 include_once "header.inc";
@@ -17,7 +17,7 @@ Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based 
 <p>
 This new releases incorporate various fixes to the package manager, many previously
 unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
-binaries for KDE 3.4.1 and GNOME 2.4.
+binaries for KDE 3.1.4 and GNOME 2.4.
 </p>
 
 <p>
