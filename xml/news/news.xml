@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.88 2003/10/27 12:57:40 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.89 2003/10/27 12:58:43 rangerrick Exp $</cvsid>
 
 
 <newsitem>
@@ -59,7 +59,7 @@ not need to install system-xfree86 anymore.  Fink is
 capable of automatically determining your system-xfree86 version if you
 don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
-following:
+following (all on one line):
 </p>
 <p>
 <em>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43;

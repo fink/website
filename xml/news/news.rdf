@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 27 Oct 2003 07:55:53 EST</lastBuildDate>
+    <lastBuildDate>Mon, 27 Oct 2003 07:58:05 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -63,7 +63,7 @@ not need to install system-xfree86 anymore.  Fink is
 capable of automatically determining your system-xfree86 version if you
 don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
-following:
+following (all on one line):
 
 
 sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43;
