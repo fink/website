@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.32 2003/01/15 19:17:43 finlayd Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.33 2003/01/17 22:19:52 finlayd Exp $</cvsid>
 <newsitem>
-	<date>2003-01-15</date>
-	<headline>Anonymous CVS issues</headline>
+	<date>2003-01-17</date>
+	<headline>Anonymous CVS issues resolved</headline>
 	<body>
 	<p>
-	Due to technical issues at SourceForge, anonymous CVS access is currently unavailable. The selfupdate-cvs command will not work until this issue has been resolved. More info can be found on the SourceForge.net <extlink url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status page</extlink>.
+	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <extlink url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</extlink> page.
 	</p>
 	</body>
 </newsitem>

@@ -1,16 +1,16 @@
 <?
 $title = "News";
 $cvs_author = 'Author: finlayd';
-$cvs_date = 'Date: 2003/01/15 19:17:43';
+$cvs_date = 'Date: 2003/01/17 22:19:52';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-01-15 Anonymous CVS issues"><span class="news_date">2003-01-15: </span><span class="news_headline">Anonymous CVS issues</span></a><?php gray_line(); ?>
+<a name="2003-01-17 Anonymous CVS issues resolved"><span class="news_date">2003-01-17: </span><span class="news_headline">Anonymous CVS issues resolved</span></a><?php gray_line(); ?>
 	<p>
-	Due to technical issues at SourceForge, anonymous CVS access is currently unavailable. The selfupdate-cvs command will not work until this issue has been resolved. More info can be found on the SourceForge.net <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status page</a>.
+	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</a> page.
 	</p>
 	<a name="2003-01-07 Fink Interaction with Apple's X11 Public Beta"><span class="news_date">2003-01-07: </span><span class="news_headline">Fink Interaction with Apple's X11 Public Beta</span></a><?php gray_line(); ?>
 	<p>
