@@ -156,12 +156,11 @@ That is why Fink doesn't search the unstable tree by default.
 If you only want one or two specific packages, it is safer to copy
 those .info files (and their associated .patch files, if there are
 any) from <code>/sw/fink/dists/unstable/main/finkinfo</code>
-to <code>/sw/fink/dists/local/main/finkinfo</code>.
-If you want Fink to use all of unstable, edit
+to <code>/sw/fink/dists/local/main/finkinfo</code>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.</p><p>If you want Fink to use all of unstable, edit
 <code>/sw/etc/fink.conf</code>, add
 <code>unstable/main</code> and <code>unstable/crypto</code> 
 to the beginning of the <code>Trees:</code>
-line, and then run the command <code>fink index</code>
+line, and then run the command <code>fink index</code>.
 </p></div>
 </a>
 <a name="sudo">

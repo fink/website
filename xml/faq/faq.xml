@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.114 2003/06/24 13:48:00 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.115 2003/07/05 21:22:45 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -454,12 +454,12 @@ That is why Fink doesn't search the unstable tree by default.
 If you only want one or two specific packages, it is safer to copy
 those .info files (and their associated .patch files, if there are
 any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
-to <filename>/sw/fink/dists/local/main/finkinfo</filename>.
-If you want Fink to use all of unstable, edit
+to <filename>/sw/fink/dists/local/main/finkinfo</filename>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.</p>
+<p>If you want Fink to use all of unstable, edit
 <filename>/sw/etc/fink.conf</filename>, add
 <code>unstable/main</code> and <code>unstable/crypto</code> 
 to the beginning of the <code>Trees:</code>
-line, and then run the command <code>fink index</code>
+line, and then run the command <code>fink index</code>.
 </p>
 </answer>
 </faqentry>
@@ -1004,6 +1004,14 @@ automake depends on autoconf25 (>= 2.52-1)
 autoconf25 is to be removed.</codeblock>
 <p>then use <code>fink update <em>automake</em>
 </code>.  You should then be able to update autoconf.</p>
+</answer>
+</faqentry>
+<faqentry name="cctools">
+<question>
+<p>"When I try to install KDE, I get the following message:  'Can't resolve dependency "cctools (>= 446-1)"'</p>
+</question>
+<answer>
+<p>This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <filename>gcc 3.3</filename> update).</p>
 </answer>
 </faqentry>
 </chapter>

@@ -104,6 +104,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
 <li><a href="comp-packages.php#automake-autoconf">5.5 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
+<li><a href="comp-packages.php#cctools">5.6 &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>

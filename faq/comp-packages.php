@@ -68,6 +68,10 @@ automake depends on autoconf25 (&gt;= 2.52-1)
 autoconf25 is to be removed.</pre><p>then use <code>fink update <b>automake</b>
 </code>.  You should then be able to update autoconf.</p></div>
 </a>
+<a name="cctools">
+<div class="question"><p><b>Q5.6: &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</b></p></div>
+<div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <code>gcc 3.3</code> update).</p></div>
+</a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
 
