@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/10/24 15:36:24 $';
+$cvs_date = '$Date: 2003/11/02 23:35:51 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -47,8 +47,10 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink 0.6.0 was released on 24 October 2003.  This is a source-only
-release; binaries will follow in a few days.
+Fink 0.6.1 was released on 1 November 2003.  The release includes source
+and binary packages as well as a binary installer.
+This release was built on OS X 10.2 with the gcc 3.3 compiler, and should
+run on OS X 10.3 as well.
 </p>
 
 <h1>Resources</h1>
