@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.19 2001/06/30 11:11:49 chrisp Exp $ */
+/* $Id: header.inc,v 1.20 2001/07/08 18:04:22 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -27,8 +27,10 @@ $pages_darwin = array(
 
 // get author and change date from CVS vars
 //  kill dollar-envelope
-$cvs_author = rtrim(substr($cvs_author, 1, -1));
-$cvs_date = rtrim(substr($cvs_date, 1, -1));
+if (substr($cvs_author,0,1) == "$")
+  $cvs_author = rtrim(substr($cvs_author, 1, -1));
+if (substr($cvs_date,0,1) == "$")
+  $cvs_date = rtrim(substr($cvs_date, 1, -1));
 //  get data
 if (ereg("^Author: (.*)$", $cvs_author, $r)) {
   $author = $r[1];
