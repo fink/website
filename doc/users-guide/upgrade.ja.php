@@ -3,7 +3,7 @@
 $title = "ユーザーガイド - アップグレード";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\" /><link rel=\"next\" href=\"conf.php?phpLang=ja\" title=\"Fink 設定ファイル\" /><link rel=\"prev\" href=\"packages.php?phpLang=ja\" title=\"パッケージのインストール\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"conf.php?phpLang=ja\" title=\"Fink 設定ファイル\">\n\t<link rel=\"prev\" href=\"packages.php?phpLang=ja\" title=\"パッケージのインストール\" />";
 
 include_once "header.ja.inc"; 
 ?><h1>ユーザーガイド - 4 Fink のアップグレード</h1>

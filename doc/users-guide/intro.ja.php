@@ -3,7 +3,7 @@
 $title = "ユーザーガイド - はじめに";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\" /><link rel=\"next\" href=\"install.php?phpLang=ja\" title=\"初めてのインストール\" /><link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"install.php?phpLang=ja\" title=\"初めてのインストール\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\" />";
 
 include_once "header.ja.inc"; 
 ?><h1>ユーザーガイド - 1 はじめに</h1>

@@ -3,7 +3,7 @@
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/19 07:13:51';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\" /><link rel=\"prev\" href=\"conf.php?phpLang=en\" title=\"The Fink Configuration File\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"prev\" href=\"conf.php?phpLang=en\" title=\"The Fink Configuration File\" />";
 
 include_once "header.en.inc"; 
 ?><h1>User's Guide - 6 Using the fink Tool from the Command Line</h1>

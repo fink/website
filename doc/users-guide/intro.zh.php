@@ -3,7 +3,7 @@
 $title = "用户指南 - 介绍";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 13:02:38';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" /><link rel=\"next\" href=\"install.php?phpLang=zh\" title=\"首次安装\" /><link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"install.php?phpLang=zh\" title=\"首次安装\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" />";
 
 include_once "header.zh.inc"; 
 ?><h1>用户指南 - 1 介绍</h1>

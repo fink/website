@@ -3,7 +3,7 @@
 $title = "User's Guide - Install";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/19 07:13:51';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\" /><link rel=\"next\" href=\"packages.php?phpLang=en\" title=\"Installing Packages\" /><link rel=\"prev\" href=\"intro.php?phpLang=en\" title=\"Introduction\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"User's Guide Contents\">\n\t<link rel=\"next\" href=\"packages.php?phpLang=en\" title=\"Installing Packages\">\n\t<link rel=\"prev\" href=\"intro.php?phpLang=en\" title=\"Introduction\" />";
 
 include_once "header.en.inc"; 
 ?><h1>User's Guide - 2 First Time Installation</h1>

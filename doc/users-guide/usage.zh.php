@@ -3,7 +3,7 @@
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 13:02:38';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" /><link rel=\"prev\" href=\"conf.php?phpLang=zh\" title=\"Fink 配置文件\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"prev\" href=\"conf.php?phpLang=zh\" title=\"Fink 配置文件\" />";
 
 include_once "header.zh.inc"; 
 ?><h1>用户指南 - 6 在命令行使用 Fink 工具</h1>

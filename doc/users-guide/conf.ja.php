@@ -3,7 +3,7 @@
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/24 03:03:42';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\" /><link rel=\"next\" href=\"usage.php?phpLang=ja\" title=\"コマンドライン fink ツールの使用方法\" /><link rel=\"prev\" href=\"upgrade.php?phpLang=ja\" title=\"Fink のアップグレード\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"ユーザーガイド Contents\">\n\t<link rel=\"next\" href=\"usage.php?phpLang=ja\" title=\"コマンドライン fink ツールの使用方法\">\n\t<link rel=\"prev\" href=\"upgrade.php?phpLang=ja\" title=\"Fink のアップグレード\" />";
 
 include_once "header.ja.inc"; 
 ?><h1>ユーザーガイド - 5 Fink 設定ファイル</h1>

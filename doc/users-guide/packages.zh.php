@@ -3,7 +3,7 @@
 $title = "用户指南 - 软件包";
 $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 13:02:38';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" /><link rel=\"next\" href=\"upgrade.php?phpLang=zh\" title=\"升级 Fink\" /><link rel=\"prev\" href=\"install.php?phpLang=zh\" title=\"首次安装\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"upgrade.php?phpLang=zh\" title=\"升级 Fink\">\n\t<link rel=\"prev\" href=\"install.php?phpLang=zh\" title=\"首次安装\" />";
 
 include_once "header.zh.inc"; 
 ?><h1>用户指南 - 3 安装软件包</h1>
