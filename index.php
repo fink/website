@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/19 18:09:15 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2003/03/09 13:25:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -66,21 +66,26 @@ In addition to hosting this site and the downloads, SourceForge
 provides the following resources for the project:
 </p>
 <ul>
-<li><a href="http://sourceforge.net/projects/fink/">Summary page</a></li>
+<li><a href="http://sourceforge.net/projects/fink/">SourceForge project summary page</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Bug tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Report or view bugs</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package request tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a package that's not in Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Feature request tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Package submission tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a finished package</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Patch tracker</a></li>
+href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submit a patch for fink (the program)</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
 <li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse
 online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
 </ul>
+<p>
+Please note that to use some of these resources (ie, to report a bug or request a new Fink package), you
+will need to be logged in to your SourceForge account.  If you do not have one, you can sign up for one
+for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
+</p>
 
 </td></tr></table>
 
