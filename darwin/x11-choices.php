@@ -1,7 +1,7 @@
 <?
 $title = "X11 Choices";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/25 16:06:05 $';
+$cvs_date = '$Date: 2001/06/04 11:45:41 $';
 
 include "header.inc";
 ?>
@@ -32,12 +32,11 @@ xf-4_0_2-branch. The HEAD revision will also work.</p>
 
 <h2>XFree86 running under Aqua</h2>
 
-<p>Current development versions of XFree86 also work while Aqua is
-running. This mode uses CoreGraphics / Quartz instead of IOKit. It
-runs full-screen, and you can switch between the X11 desktop and Aqua
-with a keystroke.</p>
-<p>A rootless mode is under development, but will not be included in
-the upcoming XFree86 4.1 release.</p>
+<p>XFree86 4.1 also works while Aqua is running. This mode uses
+CoreGraphics / Quartz instead of IOKit. It runs full-screen, and you
+can switch between the X11 desktop and Aqua with a keystroke.</p>
+<p>A rootless mode is under development, but did not make it in time
+for the 4.1 feature freeze.</p>
 <p>The current code is available from <a
 href="http://www.xfree86.org/cvs/">XFree86's anonymous
 CVS</a>. Additional patches can be found at the <a
