@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/28 08:28:28';
+$cvs_date = 'Date: 2005/03/02 07:10:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -153,12 +153,14 @@ include_once "header.en.inc";
        <li>Static PHP files (e.g. <code>xml/web/*.en.php</code>)</li>
        <li>Documentation navigation files (e.g. <code>xml/web/doc/nav.*.inc</code>) (same handling as constants.*.inc)</li>
         <li>Document Index (<code>xml/doc/doc.en.xml</code>)</li>
-       <li>User's Guide (<code>xml/uguide.en.xml</code>)</li>
+       <li>User's Guide (<code>xml/users-guide/uguide.en.xml</code>)</li>
+       <li>Advanced (<code>xml/advanced/advanced.en.xml</code>)</li>
        <li>FAQ (<code>xml/faq.en.xml</code>)</li>
         <li>Running X11 (<code>xml/x11/x11.en.xml</code>)</li>
         <li>CVS Access (<code>xml/cvsaccess/cvs.en.xml</code>)</li>
         <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
-        <li>Net Etiquette (<code>xml/netiquette/netiquette.en.xml</code>)</li>
+        <li>Internationalization (<code>xml/multilingual/multilingual.en.xml</code>)</li>
+        <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
         <li>Security (<code>xml/security/security.en.xml</code>)</li>
        <li>Packaging Tutorial (<code>xml/quick-start-pkg/quick-start-pkg.en.xml</code>)</li>
        <li>Packaging (<code>xml/packaging/packaging.en.xml</code>)</li>

@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.en.xml,v 1.17 2004/09/28 08:28:28 michga Exp $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.18 2005/03/02 07:10:19 michga Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
@@ -208,12 +208,14 @@
        <li>Static PHP files (e.g. <filename>xml/web/*.en.php</filename>)</li>
        <li>Documentation navigation files (e.g. <filename>xml/web/doc/nav.*.inc</filename>) (same handling as constants.*.inc)</li>
         <li>Document Index (<filename>xml/doc/doc.en.xml</filename>)</li>
-       <li>User's Guide (<filename>xml/uguide.en.xml</filename>)</li>
+       <li>User's Guide (<filename>xml/users-guide/uguide.en.xml</filename>)</li>
+       <li>Advanced (<filename>xml/advanced/advanced.en.xml</filename>)</li>
        <li>FAQ (<filename>xml/faq.en.xml</filename>)</li>
         <li>Running X11 (<filename>xml/x11/x11.en.xml</filename>)</li>
         <li>CVS Access (<filename>xml/cvsaccess/cvs.en.xml</filename>)</li>
         <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
-        <li>Net Etiquette (<filename>xml/netiquette/netiquette.en.xml</filename>)</li>
+        <li>Internationalization (<filename>xml/multilingual/multilingual.en.xml</filename>)</li>
+        <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
         <li>Security (<filename>xml/security/security.en.xml</filename>)</li>
        <li>Packaging Tutorial (<filename>xml/quick-start-pkg/quick-start-pkg.en.xml</filename>)</li>
        <li>Packaging (<filename>xml/packaging/packaging.en.xml</filename>)</li>
@@ -516,6 +518,7 @@ For other
     <section name="doc-updates">
       <title>New Document</title>
       <p>The English version of the document is <xref chapter="files" section="committing">committed</xref> and <xref chapter="files" section="website">activated</xref>, and it is <xref section="new-translations">translated</xref> as below.</p>
+<p><em>Note</em>: When the new document is inside a new directory, you shoould add that new directory to the Makefile located in the <filename>xml</filename> directory. Otherwise the built process will not complete successfully.</p>
     </section>
     <section name="new-translation">
       <title>New Translations</title>

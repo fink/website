@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Updating";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/28 08:28:28';
+$cvs_date = 'Date: 2005/03/02 07:10:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="resources.php?phpLang=en" title="Additional Resources           "><link rel="prev" href="files.php?phpLang=en" title="The Documentation Files">';
 
 
@@ -40,6 +40,7 @@ include_once "header.en.inc";
     <h2><a name="doc-updates">3.2 New Document</a></h2>
       
       <p>The English version of the document is <a href="files.php?phpLang=en#committing">committed</a> and <a href="files.php?phpLang=en#website">activated</a>, and it is <a href="#new-translations">translated</a> as below.</p>
+<p><b>Note</b>: When the new document is inside a new directory, you shoould add that new directory to the Makefile located in the <code>xml</code> directory. Otherwise the built process will not complete successfully.</p>
     
     <h2><a name="new-translation">3.3 New Translations</a></h2>
       
