@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
 
-<article filename="readme">
+<article filename="readme" lang="ja">
 <title>Fink ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.ja.xml,v 1.1 2004/02/20 00:17:35 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
