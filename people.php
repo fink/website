@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/27 00:34:27 $';
+$cvs_date = '$Date: 2003/11/30 21:39:48 $';
 
 include "header.inc";
 ?>
@@ -63,6 +63,7 @@ this list.</p>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
+<li>Michael G. Schwern</li>
 </ul>
 
 <h2>Support and Documentation Team</h2>
