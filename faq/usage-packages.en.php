@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/17 03:20:24';
+$cvs_date = 'Date: 2004/03/18 01:53:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -200,6 +200,12 @@ sudo apt-get install fink</pre></li>
           <li>Save it wherever you like.</li>
           <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre></li>
         </ul></div>
+    </a>
+    <a name="wants-xfree86-on-upgrade">
+      <div class="question"><p><b>Q9.13: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
+      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
+
+You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> or <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a> entries, above.</p></div>
     </a>
   
 

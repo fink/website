@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.4 2004/03/17 03:20:24 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.5 2004/03/18 01:53:37 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most
     FAQs, some questions are taken from real life and some are made up. It's
@@ -1897,6 +1897,21 @@ sudo apt-get install fink</codeblock></li>
           <li>Save it wherever you like.</li>
           <li>Run it in a terminal window via <codeblock>perl fink-x11-debug</codeblock></li>
         </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="wants-xfree86-on-upgrade">
+      <question>
+        <p>I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</p>
+      </question>
+      <answer>
+        <p>You may need to remove one of the old place-holder packages: <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, or <filename>system-xfree86-43</filename>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <filename>system-xfree86</filename>, you must use the command</p>
+        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
+        <p>to remove the out-of-date versions.
+
+You can check your installation by running</p>
+        <codeblock>fink-virtual-pkgs</codeblock>
+        <p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p>
+        <p>If you are still having problems then refer to the <xref section="apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</xref> or <xref section="apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</xref> entries, above.</p>
       </answer>
     </faqentry>
   </chapter>
