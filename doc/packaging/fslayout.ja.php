@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/16 22:01:46';
+$cvs_date = 'Date: 2004/04/22 02:55:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 include_once "header.inc";
@@ -97,7 +97,7 @@ include_once "header.inc";
 					</td><td>
 						<p>
 							Texinfo ソースから生成される Info 形式のドキュメント用．
-							索引ファイル <code>dir</code> のメインテナンスは
+							索引ファイル <code>dir</code> のメンテナンスは
 							Debian 版 <code>install-info</code> (パッケージ <code>dpkg</code> の一部) が自動的に行う．
 							パッケージ記述のフィールド <code>InfoDocs</code> を使って，
 							パッケージスクリプト <code>PostInst</code> 及び <code>PreRm</code> で使うための適切なコードを自動生成する．

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/21 04:16:11';
+$cvs_date = 'Date: 2004/04/25 00:04:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -180,10 +180,11 @@ Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lo
 Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé.
 </p>
 </td></tr></table>
-<p><b>Unpack Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>CustomMirror</td><td>
+
+<p><b>Phase de décompression :</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>CustomMirror</td><td>
 <p>
-A list of mirror sites. Each mirror site appears on a separate line, in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>. <b>location</b> can be a continent code (e.g. <code>nam</code>), a country code (e.g. <code>nam-us</code>), or anything else; mirrors are tried in that order. Example:
+Liste de sites miroirs. Chaque ligne correspond à un site miroir, sous le format suivant : <code>&lt;emplacement&gt;: &lt;url&gt;</code>. L'<b>emplacement</b> peut être un code continent (par exemple : <code>nam</code> - Amérique du Nord), un code pays (par exemple : <code>nam-us</code> - Amérique du Nord-États-Unis), ou bien autre chose ; les archives sont recherchées sur les miroirs dans l'ordre d'énumération de ces derniers. Exemple :
 </p>
 <pre>CustomMirror: &lt;&lt;
 nam-US: ftp://ftp.fooquux.com/pub/bar
@@ -193,10 +194,10 @@ Primary: ftp://ftp.barbarorg/pub/
 &gt;&gt;</pre>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
-An URL to the source tarball. It should be a HTTP or FTP URL, but Fink doesn't really care - it just passes the URL to wget. This field supports a special URL scheme for mirrors: <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This willlook up the mirror setting for <b>mirror-name</b> in Fink's configuration, append the <b>relative-path</b> part and use that as the actual URL. The known <b>mirror-name</b>s are listed in <code>/sw/lib/fink/mirror/_list</code>, which is part of the fink or fink-mirrors package. Alternatively, using <code>custom</code> as the <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code> field. Before the URL is used, percent expansion takes place. Remember that %n includes all %type_ variant data, so you may want to use %ni here (perhaps with some specific %type_ expansions).
+URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification  - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et  c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du packet fink-mirrors. Par ailleurs, l'utilisation de  <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ  %type_, il est donc conseillé d'utiliser ici %ni (avec, éventuellement, des spécifications de %type_).
 </p>
 <p>
-Since fink 0.18.0, <code>Source: none</code> has the special meaning that there is no source to fetch. See the description of the <code>Type</code> field for more information. The value <code>gnu</code> is a shorthand for <code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The default is <code>%n-%v.tar.gz</code> (i.e. a manual download).
+À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire).
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
