@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/03 17:07:55 $';
+$cvs_date = '$Date: 2004/03/03 17:09:39 $';
 
 include "header.inc";
 ?>
@@ -25,12 +25,12 @@ dann Fragen Sie einfach vorher nach.
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.announce">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.announce">NNTP</a>)<br>
-Offizielle Fink Ank√ndigungen. (wenige Nachrichten)</p></li>
+Offizielle Fink Ank√ºndigungen. (wenige Nachrichten)</p></li>
 <li><p><a href="fink-i18n.php">fink-i18n</a> (<a href="http://news.gmane.org/gmane.os.apple.fink.i18n">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.i18n">NNTP</a>)<br>
 Diskussion rund um das Thema i18n und die Fink Web-Site.</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.beginners">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.beginners">NNTP</a>)<br>
-Hilfe f√r Fink-Anf√nger</p></li>
+Hilfe f√ºr Fink-Anf√§nger</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.general">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.general">NNTP</a>)<br>
 Hilfe f√r fortgeschrittene Fink Nutzer.</p></li>
