@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/10 17:20:00 $';
+$cvs_date = '$Date: 2001/10/25 09:26:39 $';
 
 include "header.inc";
 ?>
@@ -64,7 +64,8 @@ SourceForge</a> -
 <a href="http://www.xdarwin.org/forum/">xdarwin.org forums</a> -
 <a href="http://newforums.macnn.com/cgi-bin/ultimatebb.cgi?ubb=forum&f=1">MacNN
 Unix forum</a> -
-<a href="http://macosx.com/">macosx.com</a> (look for the Unix forums)
+<a href="http://macosx.com/">macosx.com</a> (there are several Unix
+forums there)
 </p>
 <p>
 Some links to sites with more or less useful information:
@@ -87,8 +88,15 @@ Here's how <b>you</b> can help.
 Nothing is more valuable than feedback from users.
 Problem reports, success stories, suggestions and contributions are
 always welcome.
-Even if we can't promise to fix everything immediately <tt>;-)</tt>,
+Even if we can't promise to fix everything immediately
+<nobr><tt>;-)</tt></nobr>,
 it helps a lot to know which parts of Fink need the most attention.
+</p>
+<p>
+You can provide feedback through the
+<a href="../lists/index.php">mailing lists</a>, through the various
+trackers at SourceForge (see the home page for direct links), or
+directly to package maintainers.
 </p>
 
 <p>
@@ -127,7 +135,7 @@ a mailing list of your choice.
 <p>
 <b>Documentation.</b>
 The project is always short on people willing to write
-documentation. <tt>;-)</tt>
+documentation. <nobr><tt>;-)</tt></nobr>
 </p>
 
 <p>
