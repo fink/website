@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/06/15 00:27:55';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/07/15 01:19:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
@@ -168,7 +168,7 @@ You can check your installation by running</p><pre>fink list -i system-xfree86</
     <a name="special-x11-debug">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.13: I'm still having problems with X11 and Fink.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the hints in the  <a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a> or <a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86 xfree86-shilbs \
+xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
