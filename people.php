@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/30 21:39:48 $';
+$cvs_author = '$Author: ogorman $';
+$cvs_date = '$Date: 2004/01/29 12:47:13 $';
 
 include "header.inc";
 ?>
@@ -70,6 +70,7 @@ this list.</p>
 <ul>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
+<li>Baba Yoshihiko</li> <!-- i18n and l10n -->
 </ul>
 
 <h2>Occasional Contributors</h2>
