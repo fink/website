@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/20 13:06:26';
+$cvs_date = 'Date: 2002/05/21 02:02:49';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -75,17 +75,20 @@ XFree86, additionally enter this:
 <a name="kde"><div class="question"><p><b>Q3.6: Why are there no packages for
 KDE?</b></p></div>
 <div class="answer"><p><b>A:</b> 
-Because there simply are none.
+Because there simply are none (yet).
 </p><p>
-Seriously, KDE has (or at least had) serious problems that prevent a
-port to Mac OS X.
+Seriously, KDE had serious problems which has made a
+port to Mac OS X very difficult.
 It assumes it can do things with shared libraries that are only
-possible on ELF systems like Linux, *BSD and Solaris.
-It could very well be that some people are trying to port it
-nevertheless, but we haven't heard of any breakthroughs yet.
-Note that Qt is a different story, we have a package for it and it
+possible on ELF systems like Linux, *BSD and Solaris, and providing
+this functionality for Mac OS X has taken a long time.
+There is a group working on porting it; for a report on the current
+status, see their
+<a href=" http://www.opendarwin.org/cgi-bin/cvsweb.cgi/~checkout~/proj/KDE-Darwin/README.Darwin?rev=HEAD">README file.</a>
+</p><p>Note that Qt is a different story, we have a package for it and it
 works fine.
 </p></div></a>
+
 
 <a name="bindist"><div class="question"><p><b>Q3.7: The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
