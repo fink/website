@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.14 2004/07/10 13:51:48 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.15 2004/09/20 20:14:23 rangerrick Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -321,13 +321,21 @@
                 <p>
                 The above is intentionally not marked as a link.</p>
             <p> Other authorised Team members are: (here you add your email +
-                public key like I did above)</p><p>
-	        peter@pogma.com signed by the PGP key with the fingerprint:</p>
+                public key like I did above)</p>
+	        <p>peter@pogma.com signed by the PGP key with the fingerprint:</p>
 	        <ul>
 	            <li><tt>
 		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
 		<li>
 		Found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+            </ul>
+	        <p>ranger@befunk.com signed by the PGP key with the fingerprint:</p>
+	        <ul>
+	            <li><tt>
+		6401 D02A A35F 55E9 D7DD  71C5 52EF A366 D3F6 65FE</tt>.</li>
+		<li>
+		Found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xD3F665FE</tt>
         </li>
             </ul>
         </section>

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 2004/03/07 17:56:18 fingolfin Exp $
+# $Id: Makefile,v 1.13 2004/09/20 20:14:22 rangerrick Exp $
 
 # generate all documents
 
@@ -11,6 +11,7 @@ SUBDIRS = \
 	news \
 	packaging \
 	porting \
+	security \
 	usage \
 	users-guide \
 	x11
