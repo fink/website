@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/13 18:54:16 $';
+$cvs_date = '$Date: 2004/04/16 22:26:36 $';
 
 include "header.inc";
 ?>
@@ -81,7 +81,7 @@ Sollte das Skript (pathsetup.command) eine Fehlermeldung ausgeben, schauen Sie i
 <p>Nach dem Update von <code>fink</code>, können sie weitere Pakete installieren, indem sie die gleiche Syntax benutzen, z.B. <code>sudo apt-get install gimp</code>, um Gimp zu installieren. Beachten Sie allerdings, dass nicht alle Pakete als Binärdateien zur Verfügung stehen.</p>
 </li>
 <li>
-<p>Installation mit Hilfe der Quelldateien. Für ein <code>fink</code>-Update führen Sie <code>fink selfupdate</code>aus. Falls gefragt, wählen Sie (1), "rsync". Damit führen sie automatisch ein Update des <code>fink</code>-Paketes durch.</p>
+<p>Installation mit Hilfe der Quelldateien. Für ein <code>fink</code>-Update führen Sie <code>fink selfupdate</code> aus. Falls gefragt, wählen Sie (1), "rsync". Damit führen sie automatisch ein Update des <code>fink</code>-Paketes durch.</p>
 <p>Nach dem Update von <code>fink</code>, können Sie <code>fink install</code> nutzen, um Quelldateien zu laden und zu kompillieren. Um zum Beispiel Gimp zu installieren, führen Sie <code>fink install gimp</code> aus.</p> 
 </li> 
 </ul>
@@ -91,13 +91,13 @@ Sollte das Skript (pathsetup.command) eine Fehlermeldung ausgeben, schauen Sie i
 
 <p>
 Weitere Informationen finden Sie unter <a
-href="../faq/index.php">Frequently Asked Questions</a> und unter<a
+href="../faq/index.php">Frequently Asked Questions</a> und unter <a
 href="../doc/index.php">Dokumentation</a>.
-Sollten Ihre Fragen in diesen Dokumenten noch nicht beantwortet werden, schauen Sie sich die<a
+Sollten Ihre Fragen in diesen Dokumenten noch nicht beantwortet werden, schauen Sie sich die <a
 href="../help/index.php">Hilfe Seite</a> an.
 </p>
 <p>
-Um über neue Versionen informiert zu werden, abonnieren Sie die<a
+Um über neue Versionen informiert zu werden, abonnieren Sie die <a
 href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 </p>
 
