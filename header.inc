@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.34 2001/10/11 16:45:26 chrisp Exp $ */
+/* $Id: header.inc,v 1.35 2001/10/12 20:06:22 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -171,6 +171,18 @@ alt=""></td></tr>
 
 <?
 } /* end !$nonav */
+
+if ($printlink) {
+?>
+<tr align="left"><td colspan="2"><a href="<? print $root.$printlink ?>"><img
+src="<? print $root ?>img/printlink.gif" width="120" height="22"
+border="0" alt="Print Version"></a></td></tr>
+<tr align="left"><td colspan="2"><img src="<? print $root
+?>img/sect-bottom.gif" width="120" height="3" border="0"
+alt=""></td></tr>
+<?
+}
+
 ?>
 
 <tr><td>&nbsp;</td></tr>
