@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/23 05:44:54 $';
+$cvs_date = '$Date: 2001/08/25 11:03:01 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -29,25 +29,23 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-08-25: Fink 0.2.5 was released. The source release is
+available from the <a href="download.php">download page</a>, the
+binary release will follow soon.</p>
 <p>2001-08-23: OpenOSX.com refuses to give fair credit after using
 Fink to create GIMP CDs. Read Christoph's <a
 href="pr/openosx.php">public statement</a> on the issue.</p>
 <p>2001-08-22: The new <a href="help/index.php">help page</a> lists
 various ways to get help using Fink. It also lists some ideas how you
 can give back to the project.</p>
-<p>2001-08-13: The <a href="doc/porting/index.php">porting tips</a>
-document has a new chapter on shared libraries and modules. The <a
-href="doc/x11/index.php">X11</a> document was also updated
-recently.</p>
 
 <h2>Status</h2>
 
 <p>
-Fink 0.2.4 was released on 1 August 2001.
+Fink 0.2.5 was released on 25 August 2001.
 Now that a base feature set is implemented, focus is shifting to
 provide more packages, keep them current and improve quality.
-A binary distribution is also in the works, an experimental release is
-available for download now.
+Work continues to make more packages available as binaries.
 </p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
@@ -55,32 +53,29 @@ available for download now.
 <h2>Resources</h2>
 
 <p>
-This project is hosted by SourceForge.
-Have a look at the <a
-href="http://sourceforge.net/projects/fink/">project summary</a> for
-bug tracking and other stuff.
+If you're looking for support, check out the <a
+href="help/index.php">help page</a>.
+That page also lists various options to help the project and submit
+feedback.
 </p>
 
 <p>
-Several <a href="lists/index.php">mailing lists</a> are available.
-Common problems are addressed in the <a href="faq/index.php">FAQ
-section</a>.
-Other documentation can be found in the <a
-href="doc/index.php">Documentation section</a>.
+The <a href="http://sourceforge.net/projects/fink/">Fink project</a>
+is hosted by SourceForge.
+In addition to hosting this site and the downloads, SourceForge
+provides the following resources for the project:
 </p>
-
-<h2>Feedback</h2>
-
-<p>
-Fink is still under development, so I appreciate feedback that
-helps me improve Fink.
-You can send it my way at <a
-href="mailto:fink@chrisp.de">fink@chrisp.de</a>.
-Keep in mind that, like most people on this planet, I'm usually quite
-busy.
-If you need help with using or troubleshooting Fink, a better place to
-ask is the <a href="lists/fink-users.php">fink-users mailing list</a>.
-</p>
+<ul>
+<li><a
+href="http://sourceforge.net/tracker/?atid=117203&group_id=17203&func=browse">Bug tracker</a></li>
+<li><a
+href="http://sourceforge.net/tracker/?atid=371315&group_id=17203&func=browse">Package request tracker</a></li>
+<li><a
+href="http://sourceforge.net/tracker/?atid=367203&group_id=17203&func=browse">feature request tracker</a></li>
+<li><a href="lists/index.php">Mailing lists</a></li>
+<li><a href="doc/cvsaccess/index.php">CVS</a>
+(<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse</a>)</li>
+</ul>
 
 </td></tr></table></p>
 
