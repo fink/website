@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/29 14:24:16';
+$cvs_date = 'Date: 2004/02/08 21:26:14';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -250,9 +250,8 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q4.15: I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run Fink or anything that I installed with Fink.</b></p></div>
-<div class="answer"><p><b>A:</b> 
-(This assumes you are using <code>tcsh</code>). When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account. It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read. A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
+<div class="question"><p><b>Q4.15: I get "command not found" errors when I run Fink or anything that I installed with Fink.</b></p></div>
+<div class="answer"><p><b>A:</b> If this always happens, then you may have inadvertently modified your startup scripts.  Run the <code>/sw/bin/pathsetup.command</code> script (either by double-clicking in the Finder or in a terminal), which will attempt to detect your startup configuration.  You'll then need to open a new terminal session so that your environment settings are loaded.</p><p>On the other hand, if you only have problems in the Apple X11 terminal, this probably means that you need to create a <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> file and add the line</p><pre>. /sw/bin/init.sh</pre><p>near the beginning (i.e. before any programs get run).  Restart X11 (if running) after you do this.</p></div>
 </a>
 <a name="invisible-sw">
 <div class="question"><p><b>Q4.16: I want to hide /sw in the Finder to keep users from damaging the Fink setup.</b></p></div>

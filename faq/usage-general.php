@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/29 14:24:16';
+$cvs_date = 'Date: 2004/02/08 21:26:14';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -69,15 +69,18 @@ myself using Fink-installed software?</b></p></div>
 linker need to be told where to find the Fink-installed libraries and
 headers. For a package that uses standard configure/make process, you
 need to set some environment variables:
-</p><pre>
-setenv CFLAGS -I/sw/include
+</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I/sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-</pre><p>
-It is often easiest just to add these to your .tcshrc or .cshrc so they
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include
+export LDFLAGS=-L/sw/lib
+export CXXFLAGS=$CFLAGS
+export CPPFLAGS=$CXXFLAGS
+export ACLOCAL_FLAGS="-I/sw/share/aclocal"
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
+It is often easiest just to add these to your startup files (e.g. <code>.cshrc</code> | <code>.profile</code>) so they
 are set automatically.
 If a package does not use these variables, you may need to add the
 "-I/sw/include" (for headers) and "-L/sw/lib" (for libraries) to the

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/29 14:24:16';
+$cvs_date = 'Date: 2004/02/08 21:26:14';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -170,6 +170,9 @@ unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p><p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
+<a name="gcc2">
+<div class="question"><p><b>Q5.17: Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</b></p></div>
+<div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to indicate the presence of gcc-2.95 on your system.  Install the gcc2.95 package from the XCode Tools (earlier OS versions have gcc-2.95 as part of their main Developer Tools installation.</p></div></a>
 <p align="right">
 Next: <a href="comp-packages.php">6 Compile Problems - Specific Packages</a></p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/01/29 14:24:16';
+$cvs_date = 'Date: 2004/02/08 21:26:14';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -72,7 +72,7 @@ more!</a></li>
 <li><a href="usage-fink.php#kernel-panics">4.13 When I use Fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#not-found">4.14 I'm trying to install a package, but Fink can't download it. The download site shows a later version number of the package than what Fink has. What do I do?</a></li>
-<li><a href="usage-fink.php#fink-not-found">4.15 I've edited my .cshrc and started a new terminal, but I still get "command not found" errors when I run Fink or anything that I installed with Fink.</a></li>
+<li><a href="usage-fink.php#fink-not-found">4.15 I get "command not found" errors when I run Fink or anything that I installed with Fink.</a></li>
 <li><a href="usage-fink.php#invisible-sw">4.16 I want to hide /sw in the Finder to keep users from damaging the Fink setup.</a></li>
 <li><a href="usage-fink.php#install-info-bad">4.17 I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li>
 <li><a href="usage-fink.php#bad-list-file">4.18 I can't install or remove anything, because of a problem with a "files list file".</a></li>
@@ -107,6 +107,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
 <li><a href="comp-general.php#freetype-problems">5.15 I get errors involving freetype.</a></li>
 <li><a href="comp-general.php#dlfcn-from-oo">5.16 I get build errors involving `Dl_info'.</a></li>
+<li><a href="comp-general.php#gcc2">5.17 Fink says I'm missing <code>gcc2</code> but I can't seem to install it.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -146,7 +147,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.165 2004/01/29 14:24:16 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.166 2004/02/08 21:26:14 alexkhansen Exp $</i></p>
 
 
 <?

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.165 2004/01/29 14:24:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.166 2004/02/08 21:26:14 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -638,13 +638,13 @@ you. </p>
 </faqentry>
 <faqentry name="fink-not-found" >
 <question>
-<p>I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run Fink or anything that I installed with Fink.</p>
+<p>I get &quot;command not found&quot; errors when I run Fink or anything that I installed with Fink.</p>
 </question>
 <answer>
-<p>
-(This assumes you are using <filename>tcsh</filename>). When <filename>tcsh</filename> is started, it first reads system-wide scripts, and then those for your user account. It looks first for <filename>~/.tcshrc</filename>, and if that isn't found, <filename>~/.cshrc</filename>; note that if you have both, only <filename>~/.tcshrc</filename> gets run.</p>
-<p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <filename>~/.tcshrc</filename>, and therefore <filename>~/.cshrc</filename> isn't being read. A good fix is to add the following line to <filename>~/.tcshrc</filename>:</p>
-<codeblock>source ~/.cshrc</codeblock>
+<p>If this always happens, then you may have inadvertently modified your startup scripts.  Run the <filename>/sw/bin/pathsetup.command</filename> script (either by double-clicking in the Finder or in a terminal), which will attempt to detect your startup configuration.  You'll then need to open a new terminal session so that your environment settings are loaded.</p>
+<p>On the other hand, if you only have problems in the Apple X11 terminal, this probably means that you need to create a <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link> file and add the line</p>
+<codeblock>. /sw/bin/init.sh</codeblock>
+<p>near the beginning (i.e. before any programs get run).  Restart X11 (if running) after you do this.</p>
 </answer>
 </faqentry>
 <faqentry name="invisible-sw" >
@@ -1109,6 +1109,9 @@ make[1]: *** [unix_dl.lo] Error 1</codeblock>
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 </answer>
 </faqentry>
+<faqentry name="gcc2">
+<question><p>Fink says I'm missing <filename>gcc2</filename> but I can't seem to install it.</p></question>
+<answer><p>This is because <filename>gcc2</filename> is a virtual package to indicate the presence of gcc-2.95 on your system.  Install the gcc2.95 package from the XCode Tools (earlier OS versions have gcc-2.95 as part of their main Developer Tools installation.</p></answer></faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>Compile Problems - Specific Packages</title>
@@ -1297,16 +1300,22 @@ linker need to be told where to find the Fink-installed libraries and
 headers. For a package that uses standard configure/make process, you
 need to set some environment variables:
 </p>
-<codeblock>
-setenv CFLAGS -I/sw/include
+<p>-tcsh-</p>
+<codeblock>setenv CFLAGS -I/sw/include
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I/sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-</codeblock>
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
+<p>-bash-</p>
+<codeblock>export CFLAGS=-I/sw/include
+export LDFLAGS=-L/sw/lib
+export CXXFLAGS=$CFLAGS
+export CPPFLAGS=$CXXFLAGS
+export ACLOCAL_FLAGS="-I/sw/share/aclocal"
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
 <p>
-It is often easiest just to add these to your .tcshrc or .cshrc so they
+It is often easiest just to add these to your startup files (e.g. <filename>.cshrc</filename> | <filename>.profile</filename>) so they
 are set automatically.
 If a package does not use these variables, you may need to add the
 &quot;-I/sw/include&quot; (for headers) and &quot;-L/sw/lib&quot; (for libraries) to the
