@@ -1,7 +1,7 @@
 <?
 $title = "Darwin patches";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/11 12:17:44 $';
+$cvs_date = '$Date: 2001/03/26 07:27:31 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,9 @@ include "header.inc";
 <h1>Darwin patches</h1>
 
 <p>On this page I collect patches that are needed to get various
-software to work on Darwin.</p>
+software to work on Darwin. The information on this page applies to Mac
+OS X Public Beta and Darwin 1.2. Mac OS X Final differs in some
+points.</p>
 
 <h2>GNU libtool</h2>
 

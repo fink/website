@@ -1,7 +1,7 @@
 <?
 $title = "GNOME on Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/25 14:57:05 $';
+$cvs_date = '$Date: 2001/03/26 07:27:31 $';
 
 include "header.inc";
 ?>
@@ -11,7 +11,8 @@ include "header.inc";
 
 <p>Finally, here are the instructions for building GNOME (well, the
 core parts of it) on Darwin and Mac OS X. This is a work in progress,
-so check back for updates.</p>
+so check back for updates. The information on this page applies to Mac
+OS X Public Beta, the Final differs in some points.</p>
 
 <h2>Prerequisites</h2>
 

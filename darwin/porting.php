@@ -1,7 +1,7 @@
 <?
 $title = "Porting";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/11 12:17:44 $';
+$cvs_date = '$Date: 2001/03/26 07:27:31 $';
 
 include "header.inc";
 ?>
@@ -9,7 +9,9 @@ include "header.inc";
 
 <h1>Porting Unix software to Darwin / Mac OS X</h1>
 
-<p>Here are some hints for porting Unix applications to Darwin.</p>
+<p>Here are some hints for porting Unix applications to Darwin. The
+information on this page applies to Mac OS X Public Beta and Darwin
+1.2. Mac OS X Final differs in some points.</p>
 
 <h2>The Compiler</h2>
 
