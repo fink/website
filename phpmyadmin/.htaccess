@@ -1,0 +1,6 @@
+AuthUserFile /home/groups/f/fi/fink/.htpasswd
+AuthName fink
+AuthType basic
+<Limit GET>
+require valid-user
+</Limit>
