@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/03/31 07:01:54 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2004/07/10 14:59:06 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -24,7 +24,9 @@ if ($package == "-") {
 <?
 
 $q = "SELECT * FROM package WHERE name='$package' ORDER BY latest DESC";
+$qmaintainer = "SELECT * FROM package WHERE name='$package' AND latest=1";
 $rs = mysql_query($q, $dbh);
+$qs = mysql_query($qmaintainer, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
@@ -36,6 +38,8 @@ if (!$rs) {
     $row = mysql_fetch_array($rs);
   }
   $row = $lastrow;
+
+$maintainer = mysql_fetch_row($qs);
 
   it_start2();
   it_item2("Tree", "Stable", "Unstable");
@@ -61,10 +65,10 @@ if (!$rs) {
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
 
   // Get the maintainer field, and try to parse out the email address
-  if ($row[maintainer]) {
-    $maintainer = $row[maintainer];
-	preg_match("/^(.+?)\s*<(\S+)>/", $maintainer, $matches);
-    $maintainer = $matches[1];
+  if ($maintainer[8]) {
+	$maintainers = $maintainer[8];
+	preg_match("/^(.+?)\s*<(\S+)>/", $maintainers, $matches);
+    $maintainers = $matches[1];
     $email = $matches[2];
   } else {
     $maintainer = "unknown";
@@ -72,7 +76,7 @@ if (!$rs) {
   // If there was an email specified, make the maintainer field a mailto: link
   if ($email) {
     $email = str_replace(array("@","."), array("AT","DOT"), $email);
-    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.' &lt;'.$email.'&gt;'.'</a>');
+    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainers.'">'.$maintainers.' &lt;'.$email.'&gt;'.'</a>');
 #    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
   } else {
     it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
