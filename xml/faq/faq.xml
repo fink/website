@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.56 2002/11/22 15:34:02 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.57 2002/12/02 14:07:59 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -598,7 +598,7 @@ endif
 <p>1. Uninstall <code>xaw3d</code> and <code>xaw3d-shlibs</code> if you installed them with fink, and their version is 1.5-4 or earlier, because they also install in /usr/X11R6 (this is no longer the case for 1.5-5 and later versions).</p>
 <p>2. Remove <code>system-xfree86</code>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11 are installed.  Rather than uninstalling all of them, you can use</p>
 <p><code>sudo dpkg --remove --force-depends system-xfree86</code></p>
-<p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to 2.</p>
+<p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to 3.</p>
 <p>3. Manually remove all of XFree86.  This can be done with</p> 
 <p><code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</code></p>   
 <p>4. Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries (binary not available on Jaguar as of this writing).</p>
