@@ -211,6 +211,10 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <pre><xsl:apply-templates/></pre>
 </xsl:template>
 
+<xsl:template match="ol">
+<ol><xsl:apply-templates/></ol>
+</xsl:template>
+
 <xsl:template match="ul">
 <ul><xsl:apply-templates/></ul>
 </xsl:template>

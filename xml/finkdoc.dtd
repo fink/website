@@ -13,7 +13,7 @@
 
 
 <!-- Structure -->
-<!ELEMENT chapter ( title, shorttitle, preface?, section+ )* >
+<!ELEMENT chapter ( title, shorttitle, preface?, section+ ) >
 <!ATTLIST chapter filename ID #REQUIRED >
 
 <!ELEMENT title ( #PCDATA ) >
