@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（１）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/05/10 02:20:50';
+$cvs_date = 'Date: 2004/05/31 19:53:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
 include_once "header.inc";
@@ -24,14 +24,14 @@ X11 文档有更多的<a href="http://fink.sourceforge.net/doc/x11/trouble.php#l
       <div class="answer"><p><b>A:</b> 
 你用 Fink 安装了一些软件包，这些软件包依赖于另外一个叫 passwd 的软件包。passwd 出于安全的原因在你的系统上增加了一些额外的用户－Unix 系统上，文件和进程由一些（不同的） "owners" 所有，这可以使得系统管理员可以微调系统的权限和安全性设置。
 象 Apache 和 MySQL 这样的程序需要有 "owner"，把这些守护进程由 root 来运行是不安全的（想像一下如果 Apache 被攻破而它又有对系统所有文件的写权限的情况）。
-因此，passwd 软件按照 Fink 软件包的需要建立了这些额外的用户。</p><p>如果在你的"系统预置：用户"面板里面突然出现了这些用户，那么要警惕，但不要那么着急去删除它们：
+因此，passwd 软件按照 Fink 软件包的需要建立了这些额外的用户。</p><p>如果在你的"系统预置：用户"(对 10.2)或"系统预置：帐号"(对 10.3)面板里面突然出现了这些用户，那么要警惕，但不要那么着急去删除它们：
 </p><ul>
           <li>首先，很明显你选择安装了那些需要这些用户的软件包，所以删除它们是不合情理的，不是吗？</li>
           <li>事实上，在 Mac OS X 里面已经有很多这些你不是很清楚的额外用户：www，daemon，nobody，只是其中的一部分。
 这些额外用户的存在是标准的 Unix 运行某些服务的方式；passwd 软件包只是添加了一些苹果没有提供的一些额外的用户。你可以在 NetInfo管理器程序或运行
 <code>niutil -list . /users</code> 命令看到这些苹果定义的用户。
           </li>
-          <li>如果你的确决定要删除这些用户，那么你要很小心如何去做。使用 "系统预置：用户" 面板去删除会把它们拥有的文件随机分配给一个管理员帐号，而且的确已经发生过因此而造成的使用管理员帐号的大混乱。这是系统预置的一个软件缺陷，并已经被提交给苹果公司。一个从你的系统中删除这些用户的安全的办法是使用 NetInfo管理器程序或使用命令行工具 <code>niutil</code>。阅读 <code>niutil</code> 的帮助页可以获得关于 NetInfo　的更多信息。</li>
+          <li>如果你的确决定要删除这些用户，那么你要很小心如何去做。使用 "系统预置：用户" (对 10.2)或"系统预置：帐号"(对 10.3)面板去删除会把它们拥有的文件随机分配给一个管理员帐号，而且的确已经发生过因此而造成的使用管理员帐号的大混乱。这是系统预置的一个软件缺陷，并已经被提交给苹果公司。一个从你的系统中删除这些用户的安全的办法是使用 NetInfo管理器程序或使用命令行工具 <code>niutil</code>。阅读 <code>niutil</code> 的帮助页可以获得关于 NetInfo　的更多信息。</li>
         </ul><p>Fink 在你安装 passwd 软件包的时候<b>确实</b>曾经向你要求安装这些额外用户的许可， 所以这些用户的存在本不应该觉得奇怪的。
 </p></div>
     </a>
@@ -61,7 +61,10 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
     </a>
     <a name="x-options">
       <div class="question"><p><b>Q8.5: 我被 X11 的选择弄糊涂了：苹果 X11，XFree86，等等。我应该安装哪一个？</b></p></div>
-      <div class="answer"><p><b>A:</b> 这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但之前有一些轻微的差别。苹果的 X11，从 XFree86-4.2.1 修改而来，而 XFree86-4.3 比标准的 XFree86-4.2.1.1 要快，但后者就更稳定。另外，还有对 4.2.1.1 的修订来添加进线程的支持，这对一些软件包来说是必须的。</p><p>现在，在 Panther 下，苹果的 X11 （在第三张光盘上）是唯一的选择。不要忘记同时安装 X11 SDK （在 XCode 光盘上），如果你希望编译程序。</p><p>在 Jaguar 下，多数的选择是通过 Fink 安装的：</p><ul>
+      <div class="answer"><p><b>A:</b> 这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但相互之间有一些轻微的差别。对于在 Panther 和 Jaguar 下有不同的可选方式。在 Panther 下你可以选择：</p><ul>
+        <li><p>苹果的 X11 （在第三张光盘上）。不要忘记同时安装 X11 SDK （在 XCode 光盘上），如果你希望编译程序，或着你希望用 Fink 从源代码安装和 X 有关的软件包。</p></li>
+        <li><p>Fink 的 4.4.x 版本。安装 xfree86 和 xfree86-shlibs 软件包。</p></li>
+        </ul><p>在 Jaguar 下，多数的选择是通过 Fink 安装的：</p><ul>
           <li>
             <p>Fink 的 4.2.x 版：安装 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 或 <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> （以及相应的 <code>-shlibs</code>）</p>
           </li>
@@ -69,7 +72,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
             <p>Fink 的 4.3.x 版：安装 <code>xfree86</code> 和 <code>xfree86-shlibs</code> 软件包</p>
           </li>
           <li>
-            <p>苹果的 4.2.x 版（安装了用户和 SDK 软件包）： 安装 <code>system-xfree86</code> 软件包</p>
+            <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： system-xfree86 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
           </li>
         </ul><p>还有另外一些选择。在 <a href="http://fink.sourceforge.net/doc/x11/index.php">运行 X11 的文档</a>里面有专门的叙述。</p></div>
     </a>
