@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/29 23:08:29 $';
+$cvs_date = '$Date: 2002/05/29 23:13:50 $';
 
 include "header.inc";
 ?>
@@ -111,11 +111,6 @@ Screenshots:
 	 latest package descriptions from the fink site.  If this is your first time
 	 running it, it may ask you some questions.  If you don't know what to answer,
 	 the defaults are perfectly safe. </p> </li>
-	<li> <p><strong> Upgrade XFree86. </strong></p>
-	 <p> If you have system-xfree86, you will need to upgrade to the newest XFree86
-	 packages.  Just run "<b><tt>sudo apt-get install xfree86-base; sudo apt-get
-	 install xfree86-rootless</tt></b>" to make your X installation current.
-	 </p> </li>
 	<li> <p><strong> Install KDE. </strong></p>
 	 <p> If you want to install the base KDE system, run "<b><tt>fink install
 	 kdebase3</tt></b>" (or, if you have crypto support, "<b><tt>fink install
@@ -156,6 +151,9 @@ Screenshots:
    <p>Next, update your package cache by running <b><tt>sudo apt-get update</tt></b>. This
    will update the local list of all available binary packages.</p>
   </li>
+  <li> <p> Then, if you have system-xfree86, you will need to upgrade to the newest
+   XFree86 packages.  Just run "<b><tt>sudo apt-get install xfree86-base; sudo apt-get
+   install xfree86-rootless</tt></b>" to make your X installation current. </p> </li>
   <li>
    If all went well, you should now be able to install any of the KDE packages. To
    install everything up to the the base set of packages required to run KDE
