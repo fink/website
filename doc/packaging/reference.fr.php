@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/30 22:09:55';
+$cvs_date = 'Date: 2004/03/31 22:50:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -980,15 +980,15 @@ is necessary" goes here. Multiple lines allowed.
 multiple packages.  
 The install phase begins as usual, with the execution of the 
 <code>InstallScript</code> and <code>DocFiles</code> commands.
-A <code>SplitOff</code> field, if present, then triggers the
-creation of a
-second install directory.  Within the 
-<code>SplitOff</code> field, the new install directory is referred to as %i,
+A <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, if present, then triggers the
+creation of an
+additional install directory.  Within the 
+<code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, the new install directory is referred to as %i,
 while the original install directory of the parent 
 package is referred to as %I.
 </p>
 <p>
-The <code>SplitOff</code> field must contain a number of fields of its
+Each <code>SplitOff</code> and <code>SplitOff<b>N</b></code> field must contain a number of fields of its
 own.  In fact, it resembles a complete package description, but with
 certain fields missing.  Here is what belongs in the sub-description
 (by category):
@@ -997,32 +997,45 @@ certain fields missing.  Here is what belongs in the sub-description
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
 everything else is inherited from the parent package.  You may modify
 <code>Type</code> and <code>License</code> by declaring the field
-within the <code>SplitOff</code>.  Percent expansion can be used, and
+within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent expansion can be used, and
 it is often convenient to refer to the name %N of the parent
 package.</li>
 <li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
 and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that <code>SplitOff</code> should not be used within a <code>SplitOff</code>
-field).</li>
+that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <code>SplitOff</code>.</li>
+be modified by declaring the field within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.</li>
 </ul>
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
-Next comes the <code>Files</code> command specified in the
-<code>SplitOff</code> field, which causes the listed files and directories
+Next comes processing of the <code>SplitOff</code> and <code>SplitOff<b>N</b></code> fields. For each such field in turn, the <code>Files</code> command causes the listed files and directories
 to be moved from the parent's installation directory %I to the
 current installation directory %i.  Then the <code>InstallScript</code>
-and <code>DocFiles</code> of the <code>SplitOff</code> package are
+and <code>DocFiles</code> of the given <code>SplitOff</code> or <code>SplitOff<b>N</b></code> package are
 executed.  
 </p><p>
-If there are additional sub-packages specified with <code>SplitOff2</code>,
-<code>SplitOff3</code>, etc., this same sequence of commands
-(<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>)
-is executed for each of them in turn.
+At this time, the <code>SplitOff</code> is processed first (if
+present), followed by each <code>SplitOff<b>N</b></code> in
+numerical order by N. However, this may change in the future, so, for
+example, instead of:
+</p>
+<pre>
+SplitOff: &lt;&lt;
+  Description: Some header files
+  Files: include/foo.h include/bar.h
+&lt;&lt;
+SplitOff2: &lt;&lt;
+  Description: All other header files
+  Files: include/*
+&lt;&lt;
+</pre>
+<p>
+which only works correctly if <code>SplitOff</code> is processed
+before <code>SplitOff2</code> it's safer to list explicitly the files
+for each (or use more specific filename globs).
 </p><p>
 During the build phase, the pre/post install/remove scripts for each of
 the packages is constructed by using the build phase commands which
@@ -1105,8 +1118,6 @@ Also, their executable and read bits have to be set (i.e. install them with -m 7
 <p>
 If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
-
-
 
 
 
