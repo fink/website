@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.23 2003/02/06 20:28:18 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.24 2003/02/11 14:04:33 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -290,6 +290,8 @@ version had been completely integrated into the main XFree86 distribution.
 <title>Getting and Installing XFree86</title>
 <shorttitle>Installing XFree86</shorttitle>
 
+<preface><p>[This section is undergoing renovations...]</p></preface>
+
 <section name="fink">
 <title>Installing through Fink</title>
 <p>
@@ -304,9 +306,9 @@ XFree86 distribution.
 </p>
 <p>
 The <code>xfree86-base</code> package contains all
-of XFree86 4.2.0 except the XDarwin server.  
+of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
 The <code>xfree86-rootless</code> is the server from the standard,
-stable XFree86 4.2.0 release. It supports both full-screen and rootless
+stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
 operation, and has OpenGL support.  
 (In the early days, Fink also had an <code>xfree86-server</code> package
 which only provided fullscreen mode, but this is no longer a relevant
@@ -322,7 +324,7 @@ overwrites your manually installed server.
 <p>
 On January 7, 2003, Apple released <link url="http://www.apple.com/macosx/x11/">a custom
 X11 implementation based on XFree86</link> which includes Quartz rendering and accelerated
-OpenGL.
+OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.
 </p>
 <p>
 As of the time of this writing, to use the Apple binaries you will need to make sure you

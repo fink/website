@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/07 16:34:31';
+$cvs_date = 'Date: 2003/02/11 14:04:32';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -39,7 +39,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </a>
 
 <a name="apple-x11"><div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <tt><nobr>/usr/X11R6/lib/libX11.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXpm.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXaw.dylib</nobr></tt>, and <tt><nobr>/usr/X11R6/include/X11/Xlib.h</nobr></tt> are missing.</b></p></div>
-	<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <a href="http://www.apple.com/macosx/x11/">the Apple X11 page</a> (the link is in a box at the lower right corner labeled <b>Developer's Kit</b>).</p></div>
+	<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package. The SDK is available from <a href="http://www.apple.com/macosx/x11/download/">the Apple X11 downoad page</a> (the link is in a box at the lower right corner labeled <b>X11 for Mac OS X Public Beta SDK</b>).</p></div>
 </a>
 
 <a name="automake-autoconf"><div class="question"><p><b>Q5.6: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.85 2003/02/07 16:34:31 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.86 2003/02/11 14:04:32 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -611,7 +611,10 @@ If you use tcsh and happen to have a <code>.tcshrc</code> file in your home dire
 <p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p>
 </answer>
 </faqentry>
-
+<faqentry name="install-info-bad"><question><p>I can't install anything, because I get the following error: "install-info: unrecognized option `--infodir=/sw/share/info'"</p></question>
+<answer><p>This usually is due to a problem in your PATH.  In a terminal window type:</p>
+<codeblock>printenv PATH</codeblock>
+<p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> in the Users Guide.  If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other install-info when you use fink.</p></answer></faqentry>
 </chapter>
 
 
@@ -747,7 +750,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 </faqentry>
 
 <faqentry name="apple-x11"><question><p>I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <filename>/usr/X11R6/lib/libX11.dylib</filename>, <filename>/usr/X11R6/lib/libXpm.dylib</filename>, <filename>/usr/X11R6/lib/libXaw.dylib</filename>, and <filename>/usr/X11R6/include/X11/Xlib.h</filename> are missing.</p></question>
-	<answer><p>You need to install the SDK package as well as the User package. The SDK is available from <link url="http://www.apple.com/macosx/x11/">the Apple X11 page</link> (the link is in a box at the lower right corner labeled <em>Developer's Kit</em>).</p></answer>
+	<answer><p>You need to install the SDK package as well as the User package. The SDK is available from <link url="http://www.apple.com/macosx/x11/download/">the Apple X11 downoad page</link> (the link is in a box at the lower right corner labeled <em>X11 for Mac OS X Public Beta SDK</em>).</p></answer>
 </faqentry>
 
 <faqentry name="automake-autoconf"><question><p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p></question>

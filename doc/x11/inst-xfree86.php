@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/06 20:28:18';
+$cvs_date = 'Date: 2003/02/11 14:04:33';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -11,6 +11,8 @@ include "header.inc";
 <h1>Running X11 - 3 Getting and Installing XFree86</h1>
 
 
+
+<p>[This section is undergoing renovations...]</p>
 
 <a name="fink"><h2>3.1 Installing through Fink</h2></a>
 
@@ -26,9 +28,9 @@ XFree86 distribution.
 </p>
 <p>
 The <tt><nobr>xfree86-base</nobr></tt> package contains all
-of XFree86 4.2.0 except the XDarwin server.  
+of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
 The <tt><nobr>xfree86-rootless</nobr></tt> is the server from the standard,
-stable XFree86 4.2.0 release. It supports both full-screen and rootless
+stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
 operation, and has OpenGL support.  
 (In the early days, Fink also had an <tt><nobr>xfree86-server</nobr></tt> package
 which only provided fullscreen mode, but this is no longer a relevant
@@ -44,7 +46,7 @@ overwrites your manually installed server.
 <p>
 On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
 X11 implementation based on XFree86</a> which includes Quartz rendering and accelerated
-OpenGL.
+OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.
 </p>
 <p>
 As of the time of this writing, to use the Apple binaries you will need to make sure you

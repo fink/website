@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/07 16:34:31';
+$cvs_date = 'Date: 2003/02/11 14:04:32';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -303,7 +303,8 @@ If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your 
 <a name="invisible-sw"><div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
-
+<a name="install-info-bad"><div class="question"><p><b>Q3.20: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
+<div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <tt><nobr>/sw/sbin</nobr></tt> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <tt><nobr>/sw/sbin</nobr></tt> is there, but there are other directories ahead of it (e.g. <tt><nobr>/usr/local/bin</nobr></tt>), then you will either want to reorder your PATH so that <tt><nobr>/sw/sbin</nobr></tt> is near the beginning, or if you really need the other directory to be before <tt><nobr>/sw/sbin</nobr></tt>, then you'll want to temporarily rename the other install-info when you use fink.</p></div></a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 
