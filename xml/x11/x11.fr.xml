@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.15 2004/05/16 00:11:35 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.16 2004/05/19 02:33:27 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -889,12 +889,12 @@ Pour lancer des applications X11 à partir d'une fenêtre de Terminal.app, vous 
       <p>
 Il est intéressant d'avoir une configuration qui lance XDarwin.app au démarrage (à indiquer dans les Préférences système, panneau Éléments d'ouverture sur Mac OS 10.2, panneau Comptes, Démarrage sur Mac OS 10.3):
 </p>
-<ul><li><p>Pour les utilisateurs de tcsh, ajoutez les ligne suivantes à votre fichier .cshrc :</p>
+<ul><li><p>Pour les utilisateurs de tcsh, ajoutez les lignes suivantes à votre fichier .cshrc :</p>
       <codeblock>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</codeblock>
 </li>
-<li><p>Pour les utilisateurs de bash, ajoutez les lignes suivantes à votre fichier .zshrc :</p>
+<li><p>Pour les utilisateurs de bash, ajoutez les lignes suivantes à votre fichier .bashrc :</p>
 <codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
 </li></ul>
       <p>

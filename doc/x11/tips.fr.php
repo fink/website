@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Conseils";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/15 06:53:12';
+$cvs_date = 'Date: 2004/05/19 02:33:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="prev" href="trouble.php?phpLang=fr" title="Résolution de problèmes engendrés par XFree86">';
 
 include_once "header.inc";
@@ -26,12 +26,12 @@ Pour lancer des applications X11 à partir d'une fenêtre de Terminal.app, vous 
       <p>
 Il est intéressant d'avoir une configuration qui lance XDarwin.app au démarrage (à indiquer dans les Préférences système, panneau Éléments d'ouverture sur Mac OS 10.2, panneau Comptes, Démarrage sur Mac OS 10.3):
 </p>
-<ul><li><p>Pour les utilisateurs de tcsh, ajoutez les ligne suivantes à votre fichier .cshrc :</p>
+<ul><li><p>Pour les utilisateurs de tcsh, ajoutez les lignes suivantes à votre fichier .cshrc :</p>
       <pre>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</pre>
 </li>
-<li><p>Pour les utilisateurs de bash, ajoutez les lignes suivantes à votre fichier .zshrc :</p>
+<li><p>Pour les utilisateurs de bash, ajoutez les lignes suivantes à votre fichier .bashrc :</p>
 <pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
 </li></ul>
       <p>

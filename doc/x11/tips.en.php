@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/13 22:06:26';
+$cvs_date = 'Date: 2004/05/19 02:33:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
 include_once "header.inc";
@@ -36,7 +36,7 @@ in the Login panel of the System Preferences on Mac OS 10.2, in the Accounts pan
   setenv DISPLAY :0.0
 endif</pre>
 </li>
-<li><p>For bash users, add the following to your .zshrc file:</p>
+<li><p>For bash users, add the following to your .bashrc file:</p>
 <pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
 </li></ul>
       <p>
