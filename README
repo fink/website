@@ -5,4 +5,4 @@ The file CURRENT-FINK should be kept up to date with the most recent
 distribution release.
 
 The current fink version number must also be supplied in three places:
-fink_release.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
+fink_version.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
