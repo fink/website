@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/03 19:10:54';
+$cvs_date = 'Date: 2003/08/22 01:45:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -331,6 +331,10 @@ fink selfupdate-cvs</pre></div>
 <a name="cant-upgrade">
 <div class="question"><p><b>Q3.23: I can't seem to update Fink's version.</b></p></div>
 <div class="answer"><p><b>A:</b> THere are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> to follow under these circumstances.</p></div>
+</a>
+<a name="spaces-in-directory">
+<div class="question"><p><b>Q3.24: Can I put Fink in a volume or directory with a space in its name?</b></p></div>
+<div class="answer"><p><b>A:</b> We recommend against putting your Fink directory tree inside a directory with spaces in its name.  It's just not worth the hassle.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>

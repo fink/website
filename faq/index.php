@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/08/03 19:10:54';
+$cvs_date = 'Date: 2003/08/22 01:45:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -82,6 +82,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#dselect-garbage">3.21 I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</a></li>
 <li><a href="usage-fink.php#perl-undefined-symbol">3.22 Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</a></li>
 <li><a href="usage-fink.php#cant-upgrade">3.23 I can't seem to update Fink's version.</a></li>
+<li><a href="usage-fink.php#spaces-in-directory">3.24 Can I put Fink in a volume or directory with a space in its name?</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -137,7 +138,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.123 2003/08/03 19:10:54 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.124 2003/08/22 01:45:58 alexkhansen Exp $</i></p>
 
 
 <?
