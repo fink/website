@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/07 20:59:30 $';
+$cvs_date = '$Date: 2001/10/21 08:38:37 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -65,12 +65,13 @@ feedback.
 </p>
 
 <p>
-The <a href="http://sourceforge.net/projects/fink/">Fink project</a>
-is hosted by SourceForge.
+The Fink project is hosted by
+<a href="http://sourceforge.net/">SourceForge</a>.
 In addition to hosting this site and the downloads, SourceForge
 provides the following resources for the project:
 </p>
 <ul>
+<li><a href="http://sourceforge.net/projects/fink/">Summary page</a></li>
 <li><a
 href="http://sourceforge.net/tracker/?atid=117203&group_id=17203">Bug tracker</a></li>
 <li><a
