@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/05/20 13:01:47 $';
+$cvs_date = '$Date: 2002/05/26 13:17:39 $';
 
 include "header.inc";
 ?>
@@ -17,8 +17,8 @@ Fink (in alphabetical order):</p>
 <h2>Regular Contributors</h2>
 
 <ul>
-<li>Sylvain Cuaz</li>
 <li>Martin Costabel</li>
+<li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
 <li>Justin F. Hallett (<i>TheSin</i>)</li>
 <li>Jeremy Higgs</li>
@@ -41,13 +41,18 @@ Fink (in alphabetical order):</p>
 <ul>
 <li>Bill Bumgarner</li>
 <li>Jake Goulding</li>
+<li>Thomas Kotzian</li>
+<li>Kyle Moffett</li>
 <li>Chris Pepper</li>
 <li>Andrew Rohl</li>
 <li>David Ross</li>
+<li>Christian Schaffner</li>
+<li>Damian Steer</li>
 <li>Paul Swenson</li>
 <li>Aaron Voisine</li>
 <li>Ashley Yakeley</li>
 <li>Tom Zerucha</li>
+<li>Chris Zubrzycki</li>
 <li>Sasha Zucker</li>
 </ul>
 
