@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 02:23:34 $';
+$cvs_date = '$Date: 2004/04/21 03:06:07 $';
 
 include "header.inc";
 include "releases.inc";
@@ -160,13 +160,17 @@ if (!$rs) {
 		#		$pkglist = $pkglist .  '<SELECT name = Status>'.
 		#			"<option value=green+".$row[name].'+'.$row[version].'+'.$row[revision].'+green'. ($green ? 'selected>' : '>').'G'.
 		#			"<option value=red+".$row[name].'+'.$row[version].'+'.$row[revision].'+red'. ($green ? '>' : 'selected>').'R</SELECT>'; 	
-			}						
+			}					
+			
+			if(preg_match("/([^<]+)<.*/i", $row[maintainer], $matches))
+				$maintainer = $matches[1];
+				
 			if(! strcmp($sort, "maintainer"))
-			$pkglist = $pkglist . $row[maintainer].'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+			$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
 			 $row[version].'-'.$row[revision].$desc . "\n";  
 			else
 			$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			 $row[version].'-'.$row[revision].$desc .' - '.$row[maintainer]."\n"; 
+			 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
 
 			if($row[needtest] > 0)
 				$pkglist = $pkglist."</div>";
