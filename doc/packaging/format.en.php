@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/28 23:59:44';
+$cvs_date = 'Date: 2004/03/29 01:10:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -226,7 +226,7 @@ rather is the string %n.  (Introduced in fink-0.18.0)
 pseudo-hashes returning the subtype for the given <b>type</b>. See
 documentation for the <code>Type</code> field later in this document.
 The _raw form is the exact subtype string, while the _pkg form has all
-periods removed (as per Fink's language-version package naming
+period characters removed (as per Fink's language-version package naming
 convention and for other clever uses). (Introduced in a post-0.19.2
 CVS version of fink)
 </p>
