@@ -3,7 +3,7 @@
 <document filename="index" lang="en" >
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.3 2004/03/10 11:34:52 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.4 2004/03/18 10:06:26 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -834,12 +834,13 @@ stable/main&quot;. This list should be kept in sync with the
         </li>
         <li>
           <p>
-            <em>Distribution:</em> 10.1 or 10.2</p>
-          <p>Fink needs to know which version of Mac OS X you are running. The
-10.1 distribution is meant for users of Mac OS X 10.1, while 10.2 will
-only work for those who run Mac OS X 10.2 &quot;Jaguar&quot; on their systems.
-Mac OS X 10.0 and earlier are not supported. You should not need to
-alter this value.
+            <em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, or 10.3</p>
+          <p>Fink needs to know which version of Mac OS X you are
+running. Mac OS X 10.0 and earlier are not supported, and 10.1 is no
+longer supported by this version of fink. Mac OS X 10.2 is only still
+supported if the August 2003 Developer Tools update is installed. This
+field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
+script. You should not need to alter this value manually.
 </p>
         </li>
         <li>
@@ -888,6 +889,18 @@ Concurrent Version System (CVS) is not used to achieve this when set to
 selfupdate-cvs</code> command, so you should not need to change it
 manually.</p>
         </li>
+	<li>
+	  <p>
+	    <em>Buildpath:</em> path</p>
+	  <p>Fink needs to create several temporary directories for
+each package it compiles from source. By default, they are placed
+in <filename>/sw/src</filename> but if you want them to be somewhere
+else, specify the path here. See the descriptions of
+the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
+later in this document for more information about these temporary
+directories.
+	    </p>
+	</li>
       </ul>
     </section>
     <section name="downloading" >

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/10 11:34:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/18 10:06:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 include_once "header.inc";

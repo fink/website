@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/10 11:34:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/18 10:06:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -106,12 +106,13 @@ stable/main". This list should be kept in sync with the
         </li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1 or 10.2</p>
-          <p>Fink needs to know which version of Mac OS X you are running. The
-10.1 distribution is meant for users of Mac OS X 10.1, while 10.2 will
-only work for those who run Mac OS X 10.2 "Jaguar" on their systems.
-Mac OS X 10.0 and earlier are not supported. You should not need to
-alter this value.
+            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, or 10.3</p>
+          <p>Fink needs to know which version of Mac OS X you are
+running. Mac OS X 10.0 and earlier are not supported, and 10.1 is no
+longer supported by this version of fink. Mac OS X 10.2 is only still
+supported if the August 2003 Developer Tools update is installed. This
+field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
+script. You should not need to alter this value manually.
 </p>
         </li>
         <li>
@@ -160,6 +161,18 @@ True. It is set automatically by the <code>fink
 selfupdate-cvs</code> command, so you should not need to change it
 manually.</p>
         </li>
+	<li>
+	  <p>
+	    <b>Buildpath:</b> path</p>
+	  <p>Fink needs to create several temporary directories for
+each package it compiles from source. By default, they are placed
+in <code>/sw/src</code> but if you want them to be somewhere
+else, specify the path here. See the descriptions of
+the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
+later in this document for more information about these temporary
+directories.
+	    </p>
+	</li>
       </ul>
     
     <h2><a name="downloading">5.5 Download Settings</a></h2>

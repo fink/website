@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/10 11:34:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/03/18 10:06:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
