@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.3 2004/02/28 17:21:14 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.4 2004/05/18 15:48:28 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -119,7 +119,7 @@ X11 では、ウィンドウ枠 (または &quot; 装飾 &quot;) は別のプロ
 </p>
 <p>
 多くのウィンドウマネージャが Fink パッケージ化されています。
-<link url="http://fink.sourceforge.net/pdb/section.php/x11-wm/" >一覧</link>をご覧下さい。
+<link url="http://fink.sourceforge.net/pdb/section.php/x11-wm" >一覧</link>をご覧下さい。
 </p>
 </section>
 <section name="desktop" >
@@ -595,7 +595,8 @@ Apple X11 を削除する場合は <filename>.xinitrc</filename> を開いて <f
 これについての詳細はマニュアルページをご覧下さい。
 </p>
 <p>
-注記: Mac OS X では、ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
+注記: Panther 以前のMac OS X では、
+ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
 これは
 </p>
 </section>
@@ -651,7 +652,9 @@ xinit はシェルを通して起動する方法を知っています。
 </p>
 <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
 <p>
-Fink を使っている場合、 source <filename>init.sh</filename> を一番最初に実行します。
+Fink を使っている場合、 source <filename>init.sh</filename> (bash シェルの場合)、または
+<filename>init.csh</filename> (tcsh シェルの場合)
+を一番最初に実行します。
 これによって環境が正しく設定されます。
 </p>
 <p>
@@ -673,7 +676,11 @@ Fink を使っている場合、 source <filename>init.sh</filename> を一番�
 <p>
 以下のサンプルでは GNOME を起動しています:
 </p>
-<codeblock>source /sw/bin/init.sh
+<p>bash の場合:</p>
+<codeblock>. /sw/bin/init.sh
+exec gnome-session</codeblock>
+<p>tcsh の場合:</p>
+<codeblock>source /sw/bin/init.csh
 exec gnome-session</codeblock>
 <p>
 より複雑に、 bell をオフにし、クライアントをいくつか起動してから Enlightenment ウィンドウマネージャを起動するには:
@@ -687,6 +694,32 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
+<p>tcsh ユーザーは、最初の行を書き換えます:</p>
+<codeblock>source /sw/bin/init.csh</codeblock>
+<p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
+<codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</codeblock>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>GNOME2.4 を Apple X11 下で起動するには、 metacity が自動的に起動するため、以下の通りです:</p>
+<codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</codeblock>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>KDE 3.2 (version &lt; 3.2.2-21) を Apple X11 下で起動するには</p>
+<codeblock>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+</codeblock>
+<p>注記: tcsh ユーザーは上述の要領で第一行目を変更する。</p>
+<p>最後に、最新版の unstable な KDE を Apple X11 下で起動するには:</p>
+<codeblock>. /sw/bin/init.sh
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+</codeblock>
 </section>
 </chapter>
 <chapter filename="xtools" >
@@ -884,13 +917,16 @@ Aqua が存在しているのにコンソールモードのサーバ (純粋な 
 <code>XDarwinQuartz</code> <filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename> へのシンボリックリンク;
 <code>XDarwinStartup</code> 小さい実行可能ファイル。
 もしどれか一つでもないか、違うファイルへリンクされていたら、修正する必要があります。
-修正の方法はどうやって XFree86 をインストールしたかによります。
-<xref section="rootless" chapter="inst-xfree86" >ネット上のルートレスサーバ</xref>を参考にして下さい。
+修正の方法はどうやって XFree86 をインストールしたかによって変わります。
+Fink で XFree86 をインストールした場合、
+<code>xfree86</code> パッケージ (または OS 10.2 以前は<code>xfree86-rootless</code>)
+を再インストールする必要があります。
+手動でインストールした場合、Xquartz.tgz からファイルを取得します。
 </p>
 <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
-> Error:            Can't find file &quot;unknown&quot; for geometry include
->                   Exiting
->                   Abandoning geometry file &quot;(null)&quot;
+&gt; Error:            Can't find file &quot;unknown&quot; for geometry include
+&gt;                   Exiting
+&gt;                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</codeblock>
 <p>
 Class: Mostly harmless.
@@ -1038,16 +1074,30 @@ Apple に将来の Mac OS X に、ちゃんとしたロケールサポートを�
 <p>
 X11 アプリケーションをターミナル.app から起動するには、環境変数 &quot;DISPLAY&quot; が必要です。
 この値はアプリケーションにどこで X11 ウィンドウサーバを探すかを指定します。
-デフォルト設定では、 XDarwin は同じマシン上で動作し、 tcsh では以下のように環境変数を設定します:
+デフォルト設定では、 XDarwin は同じマシン上で動作し、以下のように環境変数を設定します:
 </p>
+<ul>
+<li><p>tcsh の場合:</p>
 <codeblock>setenv DISPLAY :0.0</codeblock>
+</li>
+<li><p>bash の場合:</p>
+<codeblock>export DISPLAY=":0.0"</codeblock>
+</li>
+</ul>
 <p>
-ログイン時に XDarwin.app を起動するようにし (システム環境設定のログインパネルで) 、以下を 
-<filename>.cshrc</filename> に追加するとよいでしょう:
+ログイン時に XDarwin.app を起動するようにし (MacOSX 10.2 の場合、システム環境設定のログインパネルで、
+MacOSX 10.3 の場合、アカウントパネルの起動項目で) 、
 </p>
+<ul>
+<li><p>tcsh の場合: 以下を <filename>.cshrc</filename> に追加:</p>
 <codeblock>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</codeblock>
+</li>
+<li><p>bash の場合: 以下を <filename>.zshrc</filename> に追加:</p>
+<codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
+</li>
+</ul>
 <p>
 全てのシェルで DISPLAY を自動的に設定しますが、既に設定されている場合は上書きをしません。
 これにより、 X11 アプリケーションを遠隔から、 ssh や X11 トンネリングで実行することができます。
@@ -1094,11 +1144,22 @@ X11 システムは複数のクリップボード (X11 的な言葉では カッ
 <p>
 (注記: ウィンドウマネージャを exec する<em>前に</em>、バックグラウンドで実行して下さい。
 最後に追加するだけでは起動されません。)
+これは Apple X11 では必要ではありません。
+(<xref chapter="inst-xfree86" section="apple-binary" >Apple X11 を使う際の注意点</xref> を参照)。
 </p>
 <p>
 Apple X11 を使う場合、通常の Map アプリのように Command-C か Edit-&gt;Copy 
 を使ってクリップボードにコピーすることができます。
-しかし、 Apple X11 で Command-V を使ったペーストはまだできません。
+ペーストは、マウスの中ボタンをクリックか Command-V を押します。
+</p>
+<p>
+いずれにせよ、 Aqua と X11 の間のコピー・ペーストで問題が合った場合、
+まずはペーストを２回試してください
+(コピーに時間がかかる場合があるようです)。
+これで駄目なら、他のアプリケーションを試してください。
+例: Aqua 側では TextEdit や Terminal.app 、
+X11 側では nedit や xterm 。
+私の経験上、これでうまく行きます。
 </p>
 </section>
 </chapter>
