@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/21 20:53:00';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/08/31 12:34:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -115,7 +115,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.12: stddef.h | wchar.h | crt1.o が見つからないというメッセージが出ます。
+<div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>crt1.o</code> が見つからないというメッセージが出ます。
 これはどこにありますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このヘッダは Developer Tools の DevSDK によって提供されるファイルです。
 <code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p></div>

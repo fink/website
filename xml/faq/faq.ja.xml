@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.21 2004/08/21 20:53:00 dmacks Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.22 2004/08/31 12:34:37 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1110,7 +1110,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </faqentry>
 <faqentry name="basic-headers" >
 <question>
-<p>stddef.h | wchar.h | crt1.o が見つからないというメッセージが出ます。
+<p><filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>crt1.o</filename> が見つからないというメッセージが出ます。
 これはどこにありますか?</p>
 </question>
 <answer>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 一般";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/21 20:53:00';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/08/31 12:34:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係"><link rel="prev" href="index.php?phpLang=ja" title="F.A.Q. Contents">';
 
 
