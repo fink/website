@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.3 2004/03/19 17:48:41 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.4 2004/03/25 01:29:13 michga Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -213,6 +213,9 @@ Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoir
 Dans la plupart des cas, vous le ferez à l'aide de la commande :
 </p>
       <codeblock>open /sw/bin/pathsetup.command</codeblock>
+      <p>ou pour <code>fink-0.18.3</code> ou <code>fink-0.19.2</code>, en lançant (exactement comme indiqué ci-dessous) :
+</p>
+      <codeblock>/sw/bin/pathsetup.sh</codeblock>
       <p>
 Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez.
 Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :
