@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.24 2003/01/07 07:35:16 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.25 2003/01/07 07:54:51 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2003-01-07</date>
 	<headline>RSS Feeds available</headline>
 	<body>
 	<p>
-	Thanks to one of our most valuable developers, Ben Hines, it is now possible to receive RSS 1.0 Feeds that cotain a lot of valuable information
+	Thanks to one of our most valuable developers, Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that cotain a lot of valuable information
 
 <link url="http://fink.sf.net/news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
