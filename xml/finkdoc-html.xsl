@@ -200,6 +200,13 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 </table>
 </xsl:template>
 
+<xsl:template match="pairtable">
+<table border="0" cellpadding="0" cellspacing="10">
+<tr valign="bottom"><th align="left"><xsl:value-of select="@labelt" /></th><th align="left"><xsl:value-of select="@labeld" /></th></tr>
+<xsl:apply-templates select="item" />
+</table>
+</xsl:template>
+
 <xsl:template match="item">
 <tr valign="top"><td><xsl:apply-templates select="itemt" /></td>
 <td><xsl:apply-templates select="itemd" /></td></tr>
