@@ -3,7 +3,7 @@
 <article filename="readme">
 <title>Fink ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.xml,v 1.7 2001/10/13 11:28:33 chrisp Exp $</cvsid>
+<cvsid>$Id: readme.xml,v 1.8 2001/10/13 11:35:23 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -106,7 +106,7 @@ The project's website is at
 <p>
 To be informed of new releases, go to
 <link url="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</link>
-and subscribe yourself to the fink-announce mailing list.
+and subscribe to the fink-announce mailing list.
 The list is moderated and low-traffic.
 </p>
 </section>
