@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/22 18:51:41 $';
+$cvs_date = '$Date: 2003/11/22 18:58:01 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -15,8 +15,8 @@ include "header.inc";
 <!-- Added Temprorarily by dmalloc -->
 <!-- Remove leading // to activate custom variables -->
 <script language="Javascript">
-//var DOCUMENTGROUP='';
-//var DOCUMENTNAME='';
+var DOCUMENTGROUP='Main';
+var DOCUMENTNAME='index_main';
 //var ACTION='';
 </script>
 <!-- End of Customization Code -->
