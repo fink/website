@@ -3,14 +3,14 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.9 2004/06/25 21:16:11 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.10 2004/07/02 15:43:26 michga Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
             accepted package in Fink remains with the respective maintainer,
             Fink recognizes the necessity to offer a uniform policy on how to
             react to security incidents found in software which are offered as
-            Fink packages. </p>
+            Fink packages. Every package maintainer is required to comply with it.</p>
     </preface>
     <chapter filename="respo">
         <title>Responsibility</title>
@@ -29,9 +29,9 @@
             <title>Whom shall I contact?</title>
             <p>If there are security incidents within a certain piece of
                 packaged software, you should notify the maintainer of that
-                package as well as the <em>Fink Core Team.</em> The email of the
+                package as well as the <em>Fink Core Team</em>. The email of the
                 maintainer can be found within the packages info, and the email
-                of the <em>Fink Core Team.</em> is
+                of the <em>Fink Core Team</em> is
                 fink-core@lists.sourceforge.net </p>
         </section>
         <section name="prenotifications">
@@ -39,8 +39,8 @@
             <p>Serious security incidents in software packaged by Fink might
                 require you to pre-notify the maintainer of that package. Since
                 it is possible that the maintainer cannot be reached in a timely
-                manner, pre-notification should always also be submitted to the
-                    <em>Fink Security Team.</em> Each team members e-mail is
+                manner, pre-notifications should always also be submitted to the
+                    <em>Fink Security Team</em>. Each team members e-mail is
                 listed individually later on in this document. Please note that
                 fink-core@lists.sourceforge.net is a publically archived mailing
                 list, private pre-notifications should <em>never</em> be sent to
@@ -49,7 +49,7 @@
         <section name="response">
             <title>Response</title>
             <p>Submitted reports about a security incident will be answered by
-                the <em>Fink Core Team.</em> Each maintainer is required by Fink
+                the <em>Fink Core Team</em>. Each maintainer is required by Fink
                 to acknowledge the reported issue individually. In the unlikely
                 event that the maintainer is not available and the maintainer
                 has not acknowledged the report within 24 hours, a note should
@@ -77,9 +77,9 @@
             <title>Response times</title>
             <p>Each package should strive to meet the following response times.
                 For some types of vulnerabilities the <em>Fink Core Team</em>
-                might choose to take immediate action. If that is the case one
+                might choose to take immediate action. If that is the case, one
                 of the Core Team members will notify the maintainer of the
-                package in question. Also, keep in mind that while we strive to
+                package in question. Also, keep in mind that, while we strive to
                 meet these response times, Fink is a volunteer effort, and they
                 cannot be guaranteed.</p>
             <itemtable labeld="Repsonse time" labelt="Vulnerability">
@@ -138,7 +138,7 @@
             <title>Acceptable Incident Sources.</title>
             <p>As submitter of a security incident in Fink-packaged software you
                 have to ensure that the vulnerability of the software also
-                exists on Mac OS X. It the responsibility of the notifying party
+                exists on Mac OS X. It is the responsibility of the notifying party
                 to ensure that one of the following sources reinforces the
                 reported issue for the particular software in question.</p>
             <ol>
@@ -269,7 +269,7 @@
                 to be met:</p>
             <ul>
                 <li>The author of the software has contacted the maintainer
-                    and/or the <em>Fink Core Team.</em> directly providing a
+                    and/or the <em>Fink Core Team</em> directly providing a
                     patch or work around to a vulnerability.</li>
                 <li>One of the keyword-denoted sources has issued a security
                     bulletin with updated sources for the software packaged for
@@ -288,7 +288,7 @@
             <title>Unstable to stable moves.</title>
             <p>Security updates for a specific package will first be applied to
                 the unstable tree. After a waiting period of no less than
-                <em>12</em> hours the packages' info file will be moved into the
+                <em>12</em> hours the packages' info (and eventually patch) files will be moved into the
                 stable tree as well. The retention period shall be used to
                 carefully observe whether the updated package works and the
                 security update does not introduce any new issues.</p>
@@ -375,7 +375,7 @@
                         Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
                         References: MISC 
                         Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
-            <p> Please note that the <em>Affected</em> keyword referrs to all vulnerable software versions not
+            <p> Please note that the <em>Affected</em> keyword refers to all vulnerable software versions not
             only those that might be packaged for Fink. The sample report shows this clearly.</p>
         </section>
     </chapter>
