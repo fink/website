@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-commits";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2003/01/29 08:12:40 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2004/12/02 10:51:08 $';
 
 include "header.inc";
 ?>
@@ -22,26 +22,26 @@ you can simply hit reply when you have questions about the change.
 <h2>Filtering</h2>
 
 <p>
-fink-commits is a high traffic list, and you're strongly advised to
+fink-commits is a high traffic list, and you are strongly advised to
 use your mailer's filtering feature.
-Here are some Subject substrings you can filter on:
+You can filter the Subject lines that begin with the following strings:
 </p>
 <table border="0" cellpadding="0" cellspacing="6">
 
-<tr><td><tt>CVS:</tt></td><td>&nbsp;</td>
-<td>All fink-commits messages will have this.</td></tr>
-
-<tr><td><tt>CVS: fink</tt></td><td></td>
+<tr><td><tt>fink/</tt></td><td></td>
 <td>Changes to the fink module, i.e. the package manager code.</td></tr>
 
-<tr><td><tt>CVS: packages</tt></td><td></td>
+<tr><td><tt>dists/</tt></td><td></td>
 <td>New or updated packages.</td></tr>
 
-<tr><td><tt>CVS: packages/dists/unstable</tt></td><td></td>
-<td>New or updated unstable packages.</td></tr>
+<tr><td><tt>dists/10.3/unstable</tt></td><td></td>
+<td>New or updated unstable packages in the &quot;10.3&quot; tree.</td></tr>
 
-<tr><td><tt>CVS: packages/dists/stable</tt></td><td></td>
-<td>Packages that have been moved from unstable to stable.</td></tr>
+<tr><td><tt>dists/10.3/stable</tt></td><td></td>
+<td>Packages in the &quot;10.3&quot; tree that have been moved from unstable to stable.</td></tr>
+
+<tr><td><tt>web</tt></td><td></td>
+<td>Changes to the <a href="../..">Fink website</a></td></tr>
 
 </table>
 
@@ -97,7 +97,7 @@ To change your subscription (set options like digest and delivery modes, get a r
 </center>
 </form>
 
-<p>Powered by <a href="http://www.list.org/">Mailman</a> and syncmail.</p>
+<p>Powered by <a href="http://www.list.org/">Mailman</a> and <a href="http://cvs-syncmail.sourceforge.net">syncmail</a>.</p>
 
 
 <?
