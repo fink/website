@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:17:56';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/24 20:57:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -245,7 +245,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.1</code> are  virtual packages to
         indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
         package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1 as
-        part of their main Developer Tools installation).</p></div>
+        part of their main Developer Tools installation).</p><p><b>Note:  </b>Installing gcc2.95 and/or gcc3.1 will not interfere with your gcc3.3 compiler--they can all coexist.  </p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>
