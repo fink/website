@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/01 15:32:29 $';
+$cvs_date = '$Date: 2001/08/13 16:43:55 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -29,6 +29,10 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-08-13: The <a href="doc/porting/index.php">porting tips</a>
+document has a new chapter on shared libraries and modules. The <a
+href="doc/x11/index.php">X11</a> document was also updated
+recently.</p>
 <p>2001-08-01: There was a bootstrapping problem in Fink 0.2.4. It is
 fixed in Fink 0.2.4a. You only need this if you're doing a first time
 install, updates are not affected.</p>
@@ -36,10 +40,6 @@ install, updates are not affected.</p>
 href="download.php">download page</a>. Some highlights: The GIMP
 1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
 and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.</p>
-<p>2001-07-19: A comprehensive document about <a
-href="doc/x11/index.php">X11 on Darwin and Mac OS X</a> is now
-available. It was written to be useful for anyone, not just Fink
-users.</p>
 
 <h2>Status</h2>
 
