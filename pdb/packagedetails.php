@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2005/02/11 05:49:42 $';
+$cvs_date = '$Date: 2005/02/11 05:54:17 $';
 
 $uses_pathinfo = 0;
 include "header.inc";
@@ -16,11 +16,16 @@ if ($package == "-") {
 
 print "<h2>Package <a href=package.php/$package>$package</a>-$tree-$version</h2>";
 
-if($tree) {
- $q = "SELECT * FROM package WHERE fullname='$package-$version' AND release='$tree' ORDER BY latest DESC";
+if($version) {
+	$version = "-$version";
 } else {
- $q = "SELECT * FROM package WHERE fullname='$package-$version' ORDER BY latest DESC";
+	$version = "%";
+}
 
+if($tree) {
+ $q = "SELECT * FROM package WHERE fullname LIKE '$package$version' AND release='$tree' ORDER BY latest DESC";
+} else {
+ $q = "SELECT * FROM package WHERE fullname LIKE '$package$version' ORDER BY latest DESC";
 }
 
 $rs = mysql_query($q, $dbh);
@@ -28,7 +33,7 @@ if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
   if(mysql_num_rows($rs) > 1) {
-  	print "Found the package $package-$version in multiple trees:\n";
+  	print "Found the package $package in multiple trees:\n";
 	it_start();
 	while ($row = mysql_fetch_array($rs)) {
 	  	it_item("Tree:", '<a href="'.$pdbroot."packagedetails.php?tree=".$row[release]."&pkg=$package&version=$version\">".$row[release].'</a>'); 
