@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.22 2005/02/18 23:57:31 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.23 2005/02/23 03:43:43 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -725,11 +725,12 @@ fink apropos -s=kde irc
  - Affiche l'interprétation des clés fournies
  dans leur ordre d'apparition après l'option -p.</codeblock>
 </section>
+<!-- 'fink snapshot' will not be included in 0.24
 <section name="snapshot">
 <title>snapshot - instantané</title>
 <p>Disponible uniquement dans une version de <code>fink</code> supérieure à la version 0.23.5</p>
 <p>Crée un nouveau fichier <filename>.info</filename> dans le répertoire <filename>/tmp</filename> qui décrit tous les paquets installés. Vous pouvez dupliquer votre environnement Fink sur un autre ordinateur en copiant ce fichier sur une machine où Fink est déjà installé. Le fichier comporte des explications sur la façon d'utiliser cet instantané.</p>
 </section>
-
+-->
 </chapter>
 </document>

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/09 21:05:41';
+$cvs_date = 'Date: 2005/02/23 03:43:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -195,11 +195,6 @@ fink apropos -s=kde irc
 -p clé, --percent=clé
  - Affiche l'interprétation des clés fournies
  dans leur ordre d'apparition après l'option -p.</pre>
-
-<h2><a name="snapshot">6.23 snapshot - instantané</a></h2>
-
-<p>Disponible uniquement dans une version de <code>fink</code> supérieure à la version 0.23.5</p>
-<p>Crée un nouveau fichier <code>.info</code> dans le répertoire <code>/tmp</code> qui décrit tous les paquets installés. Vous pouvez dupliquer votre environnement Fink sur un autre ordinateur en copiant ce fichier sur une machine où Fink est déjà installé. Le fichier comporte des explications sur la façon d'utiliser cet instantané.</p>
 
 
 
