@@ -1,7 +1,7 @@
 <?
-$title = "Fink bug trqacking system";
+$title = "Fink bug tracking system";
 $cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 23:48:38 $';
+$cvs_date = '$Date: 2005/01/22 23:52:39 $';
 
 include "header.inc";
 ?>
