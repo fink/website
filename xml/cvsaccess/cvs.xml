@@ -4,7 +4,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.10 2003/09/10 15:23:59 alexkhansen Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.11 2003/11/04 10:08:40 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -19,9 +19,9 @@ The information on this page applies to Fink 0.3.x and later.
 
 
 <section><title>Fink CVS Structure</title>
-<p>Fink has several CVS modules. The module <code>packages</code> (<link
-url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</link>)
-contains the package descriptions and patches, in the <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/dists/">dists</link> subdirectory. There are other modules
+<p>Fink has several CVS modules. The module <code>dists</code> (<link
+url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">ViewCVS</link>)
+contains the package descriptions and patches for OS X 10.2 and above. There are other modules
 used by Fink developers, which anyone can view, but these are
 not interesting for most users.</p>
 </section>
