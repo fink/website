@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/04/14 12:50:43 $';
+$cvs_date = '$Date: 2003/04/14 12:56:03 $';
 
 include "header.inc";
 ?>
@@ -25,16 +25,16 @@ is fitting.
 </p>
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=2022">Archives</a>)<br>
+(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">Archives</a>)<br>
 Announcement list for new Fink releases. (low traffic)</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=4714">Archives</a>)<br>
+(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-beginners">Archives</a>)<br>
 Discussion and support list for new Fink users</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=3200">Archives</a>)<br>
+(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">Archives</a>)<br>
 Discussion and support list for advanced Fink users.</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
-(<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=2056">Archives</a>)<br>
+(<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-devel">Archives</a>)<br>
 Discussion list for Fink package maintainers and developers.</p></li>
 <li><p><a href="fink-commits.php">fink-commits</a><br>
 Distribution list for automated CVS commit reports.</p></li>
