@@ -239,6 +239,17 @@ Next: <a href="{@filename}.php"><xsl:value-of select="title" /></a>
 <a href="{@url}"><xsl:apply-templates/></a>
 </xsl:template>
 
+<xsl:template match="xref">
+<a><xsl:attribute name="href">
+<xsl:if test="boolean(@chapter)"><xsl:value-of select="@chapter" />.php</xsl:if>
+<!--
+<xsl:if test="boolean(@chapter)"><xsl:value-of select="/document/chapter[@name = {@chapter}]/@filename" />.php</xsl:if>
+-->
+<xsl:if test="boolean(@section)">#<xsl:value-of select="@section" /></xsl:if>
+</xsl:attribute>
+<xsl:apply-templates/></a>
+</xsl:template>
+
 
 <!-- *** special stuff *** -->
 
