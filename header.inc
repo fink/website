@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.85 2004/11/13 14:26:04 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.86 2004/11/13 15:29:36 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -245,6 +245,7 @@ function insert_sub ($navbox, $active_page) {
 		}
 	}
 }
+
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -256,7 +257,16 @@ function insert_sub ($navbox, $active_page) {
 	<meta name="keywords" content="<? echo META_KEYWORDS; ?>">
 	<meta name="description" content="<? echo META_DESCRIPTION; ?>" 
 	<meta name="robots" content="all">
-	<link rel="alternate" title="Fink News RDF" href="http://fink.sourceforge.net/news/news.rdf" TYPE="application/rss+xml">
+<?
+	$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
+	echo "<!-- $rdf_file  -->\n";
+	if (is_readable ($rdf_file )) {
+		$rdf_file = 'http://fink.sourceforge.net/news/news.' . $lang_code . '.rdf';
+	} else {
+		$rdf_file = 'http://fink.sourceforge.net/news/news.rdf';
+	}
+?>
+	<link rel="alternate" title="Fink News RDF" href="<? print $rdf_file ?>" type="application/rss+xml">
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
 	<link rel="stylesheet" href="<? print $root ?>fink.css">
 	<? if ($metatags) echo $metatags; ?>
