@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Instructions de mise à niveau pour Mac OS X 10.3";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 21:56:50 $';
+$cvs_date = '$Date: 2004/03/17 11:07:50 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ avant de mettre à niveau Fink.
 </p><p>
 Lancer la commande "fink selfupdate" devrait faire la mise à niveau pour vous. La
 dernière version du gestionnaire de paquets fink détectera automatiquement
-quelles versions de OS X et de gcc vous avez installées, et se règlera en
+quelles versions de OS X et de gcc vous avez installées, et se réglera en
 conséquence.
 </p><p>
 Si vous désirez faire une nouvelle installation de Fink sur un système 10.3,
