@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/11 15:44:55';
+$cvs_date = 'Date: 2004/07/15 16:27:46';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.10 2004/07/11 15:44:55 michga Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.11 2004/07/15 16:27:46 michga Exp $-->
     <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
@@ -53,6 +53,7 @@ file) - slides from a presentation at the <a href="http://conferences.oreillynet
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</a>) </li>
       <li><a href="porting/index.php">Porting Tips</a> - notes for porting
 Unix applications to Darwin</li>
+      <li><a href="quick-start-pkg/index.php">Packaging Tutorial</a> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
       <li><a href="packaging/index.php">Packaging Manual</a> - how to create and
 maintain Fink packages</li>
     </ul>
