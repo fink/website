@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/03/03 05:42:52';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/03/03 14:31:29';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -114,6 +114,7 @@ strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;
 Where did they come from?</a></li>
 <li><a href="usage-general.php#compile-myself">6.4 How do I compile something
 myself using fink-installed software?</a></li>
+<li><a href="usage-general.php#libpng-versions">6.5 When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
 <ul>
@@ -134,7 +135,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.96 2003/03/03 05:42:52 htodd Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.97 2003/03/03 14:31:29 alexkhansen Exp $</i></p>
 
 
 <?
