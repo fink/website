@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../finkfaq.dtd">
-<document filename="index" lang="en">
+<document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.1 2004/05/13 01:16:25 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.2 2004/05/19 12:14:51 babayoshihiko Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas estan enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
