@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/25 11:09:27 $';
+$cvs_date = '$Date: 2001/09/04 13:07:21 $';
 
 $uses_pathinfo = 1;
 
@@ -42,7 +42,7 @@ if (!$rs) {
 
   it_start();
 
-  $releases = array("0.2.5-stable", "current-stable", "current-unstable");
+  $releases = array("0.2.6-stable", "current-stable", "current-unstable");
   for ($i = 0; $i < sizeof($releases); $i++) {
     $cr = $releases[$i];
     it_item("<nobr>In $cr:</nobr>", $rmap[$cr] ? "Version ".$rmap[$cr] : "not present");
