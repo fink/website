@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/13 07:17:59';
+$cvs_date = 'Date: 2004/02/13 07:44:11';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -18,12 +18,12 @@ include "header.inc";
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
-installation in /sw and the package gimp-1.2.1-1.</p>
-<p>In the <b>unpack phase</b> the directory /sw/src/gimp-1.2.1-1 is created
+installation in <code>/sw</code> and the package gimp-1.2.1-1.</p>
+<p>In the <b>unpack phase</b> the directory <code>/sw/src/gimp-1.2.1-1</code> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. /sw/src/gimp-1.2.1-1/gimp-1.2.1). Details can be controlled with
+(i.e. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
 fields.</p>
 <p>In the <b>patch phase</b> the source is patched so that it will
@@ -35,9 +35,9 @@ compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
-directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
-All files that would normally be installed to /sw are installed in
-/sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
+directory, <code>/sw/src/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
+All files that would normally be installed to <code>/sw</code> are installed in
+<code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
@@ -186,6 +186,9 @@ For virtual packages it is allowed to list the names of the provided
 packages here; they will be handled appropriately.
 This fields also supports versioned dependencies like the Depends
 field, but not alternatives (wouldn't make sense).
+If a package is listed in its own Conflicts, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
 </p>
 <p>
 <b>Note:</b> Fink itself currently ignores this field.
@@ -201,6 +204,9 @@ Without this field, dpkg may generate errors when installing the
 package because files are still owned by the other package.
 It is also a hint that the two packages involved are genuine
 alternatives and one can be removed in favor of the other.
+If a package is listed in its own Replaces, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
 </p>
 <p>
 <b>Note:</b> Fink itself currently ignores this field.
@@ -262,15 +268,17 @@ supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <b>mirror-name</b> in Fink's
 configuration, append the <b>relative-path</b> part and use that as
-the actual URL. Alternatively, using <code>custom</code> as the
+the actual URL. The known <b>mirror-name</b>s are listed in
+<code>/sw/lib/fink/mirror/_list</code>, which is part of the fink or fink-mirrors
+package. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
+Before the URL is used, percent expansion takes place.
+</p>
+<p>
 Since fink 0.18.0, <code>Source: none</code> has the special meaning
 that there is no source to fetch. See the description of the
 <code>Type</code> field for more information.
-</p>
-<p>
-Before the URL is used, percent expansion takes place.
 The value <code>gnu</code> is a shorthand for
 <code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
@@ -322,7 +330,7 @@ caused by this, you would then use something like
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 In the above example this would result in the tarball being stored under
-/sw/src/coolapp-1.2.3.tar.gz as one would expect.
+<code>/sw/src/coolapp-1.2.3.tar.gz</code> as one would expect.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
@@ -941,7 +949,7 @@ Your package must provide each script in two variants: one for sh compatible she
 Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to /sw), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/13 07:17:59';
+$cvs_date = 'Date: 2004/02/13 07:44:11';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -478,8 +478,8 @@ which depend on <code>foo</code>.
 </p><p>
 Traditionally, the Fink packages for perl modules have the suffix 
 <code>-pm</code>, and have been build using the <code>Type: perl</code> 
-directive, which stores the perl module's files in /sw/lib/perl5 and/or
-/sw/lib/perl5/darwin.  Under the new policy, this storage location is only 
+directive, which stores the perl module's files in <code>/sw/lib/perl5</code> and/or
+<code>/sw/lib/perl5/darwin</code>.  Under the new policy, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
 being used to compile them.
 </p><p>
@@ -491,7 +491,7 @@ of a file with a suffix <code>.bundle</code>.
 A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.6.0</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-/sw/lib/perl5/5.6.0 and /sw/lib/perl5/5.6.0/darwin.  A new convention
+<code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  A new convention
 is being introducted of using the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which will soon include 

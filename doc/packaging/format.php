@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/13 07:17:59';
+$cvs_date = 'Date: 2004/02/13 07:44:11';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -154,12 +154,12 @@ the <b>f</b>ull package name, i.e. %n-%v-%r
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-the <b>p</b>refix where Fink is installed, e.g. /sw
+the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 the <b>d</b>estination directory where the tree to be packaged is built, e.g.
-/sw/src/root-gimp-1.2.1-1
+<code>/sw/src/root-gimp-1.2.1-1</code>
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -181,7 +181,7 @@ the path where the p<b>a</b>tches can be found
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-the <b>b</b>uild directory, e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1 
+the <b>b</b>uild directory, e.g. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the
