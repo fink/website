@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.17 2002/01/19 23:54:59 finlayd Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.18 2002/01/20 00:02:59 finlayd Exp $</cvsid>
 
 <preface>
 <p>
@@ -306,7 +306,7 @@ If the documentation included in a package is explicitly put under the
 GNU Free Documentation License, a <code>/GFDL</code> may be appended to
 the License field, e.g. <code>GPL/GFDL</code>. If the documentation
 included in a package is explicitly put under the Linux Documentation
-Project licence, the same applies, e.g. <code>GPL/LDP</code>.
+Project license, the same applies, e.g. <code>GPL/LDP</code>.
 </p>
 </section>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/06 23:19:03';
+$cvs_author = 'Author: finlayd';
+$cvs_date = 'Date: 2002/01/19 23:54:59';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -97,7 +97,7 @@ If the documentation included in a package is explicitly put under the
 GNU Free Documentation License, a <tt><nobr>/GFDL</nobr></tt> may be appended to
 the License field, e.g. <tt><nobr>GPL/GFDL</nobr></tt>. If the documentation
 included in a package is explicitly put under the Linux Documentation
-Project licence, the same applies, e.g. <tt><nobr>GPL/LDP</nobr></tt>.
+Project license, the same applies, e.g. <tt><nobr>GPL/LDP</nobr></tt>.
 </p>
 
 
