@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.6 2004/02/22 04:45:22 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.7 2004/02/27 12:59:03 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 他の FAQ と同様に、質問は実際に発生したものと予想して作られたものがあります。
@@ -875,21 +875,22 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 </faqentry>
 <faqentry name="missing-make">
 <question>
-<p>&quot;make: command not found&quot; と出ましたが、どういう意味ですか?</p>
+<p><code>make</code> に関連したエラーがでました。</p>
 </question>
 <answer>
-<p>Developer Tools をインストールして下さい、という意味です。</p>
-</answer>
-</faqentry>
-<faqentry name="make" >
-<question>
-<p>make: illegal option -- C</p>
-</question>
-<answer>
-<p>Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
-パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 <code>/usr/bin/make</code> が <code>gnumake</code> のシンボリックリンクであることを確認してください。
+<p>もしメッセージが以下のようであれば</p>
+<codeblock>make: command not found</codeblock>
+<p>あるいは</p>
+<codeblock>Can't exec &quot;make&quot;: No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
+<p>Developer Tools をインストールする必要があります。</p>
+<p>もしメッセージが以下のようであれば</p>
+<codeblock>make: illegal option -- C</codeblock>
+Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
+パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 
+<code>/usr/bin/make</code> が <code>gnumake</code> のシンボリックリンクであることを確認してください。
 <code>bsdmake</code> ではありません。
-さらに、 <code>/usr/local/bin/</code> に他の <code>make</code> がないことも確認してください。</p>
+さらに、 <code>/usr/local/bin/</code> に他の <code>make</code> がないことも確認してください。
+</p>
 </answer>
 </faqentry>
 <faqentry name="head" >
@@ -945,7 +946,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 <p>パッケージをインストールしようとした時の &quot;execution of mv failed, exit code 1&quot; とはどういう意味ですか?</p>
 </question>
 <answer>
-<p>StuffIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
+<p>StuffIt Pro がインストールされている場合、 &quot;Archive Via Real Name&quot; モードが設定されていると思われます。
 システム環境設定の StuffIt 設定で "ArchiveViaRealName" を無効化してください。
 これはいくつかの重要なシステムコールのバ再実装のバグで、この件のような不思議なエラーをたくさん出します。</p>
 <p>この問題でない場合、 <filename>mv</filename> のエラーは通常、ビルドの前の方で発生した別のエラーを意味しています。
@@ -1065,7 +1066,7 @@ sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
 <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face" 
+/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before &quot;pango_ft2_font_get_face&quot;
 /sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1 
 make[1]: *** [all-recursive] Error 1 
@@ -1074,7 +1075,7 @@ make: *** [all-recursive-am] Error 2
 Failed: compiling librsvg2-2.4.0-3 failed</codeblock> 
 <p>あるいは</p> 
 <codeblock>In file included from vteft2.c:32: 
-vteglyph.h:64: error: parse error before "FT_Library" 
+vteglyph.h:64: error: parse error before &quot;FT_Library&quot;
 vteglyph.h:64: warning: no semicolon at end of struct or union 
 vteft2.c: In function `_vte_ft2_get_text_width': 
 vteft2.c:236: error: dereferencing pointer to incomplete type 
@@ -1124,7 +1125,7 @@ unix_dl.c: In function `rep_find_c_symbol':
 unix_dl.c:466: error: `Dl_info' undeclared (first use in this function) 
 unix_dl.c:466: error: (Each undeclared identifier is reported only once 
 unix_dl.c:466: error: for each function it appears in.) 
-unix_dl.c:466: error: parse error before "info" 
+unix_dl.c:466: error: parse error before &quot;info&quot;
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
 make[1]: *** [unix_dl.lo] Error 1</codeblock> 
 <p>おそらくヘッダファイル <code>/usr/local/include/dlfcn.h</code> が Panther と非互換だと思われます。
@@ -1306,15 +1307,15 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
+setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;</codeblock>
 <p>-bash-</p> 
 <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock> 
+export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock> 
 <p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
 この環境変数を使わないパッケージの場合、
 &quot;-I/sw/include&quot; (ヘッダ用) and &quot;-L/sw/lib&quot; (ライブラリ用)
@@ -1552,7 +1553,7 @@ exec gnome-session</codeblock>
 <p>Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</p>
 </question>
 <answer>
-<p>あなたは X11 を Panther に付属する "X11 1.0 - XFree86 4.3.0" にアップグレードしなかったようです。
+<p>あなたは X11 を Panther に付属する &quot;X11 1.0 - XFree86 4.3.0&quot; にアップグレードしなかったようです。
 Disk 3 の X11.pkg から X11 をインストールできます。</p>
 </answer>
 </faqentry>
