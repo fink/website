@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/04 13:00:37 $';
+$cvs_date = '$Date: 2001/09/07 09:45:20 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -36,6 +36,8 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-09-07: The binary distribution is now fully updated to
+Fink 0.2.6. Enjoy.</p>
 <p>2001-09-04: Fink 0.2.6 is released, fixing several bootstrap
 problems. The source release is available from the <a
 href="download.php">download page</a> or via the 'fink selfupdate'

@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/05 17:57:00 $';
+$cvs_date = '$Date: 2001/09/07 09:45:20 $';
 
 include "header.inc";
 ?>
@@ -57,8 +57,8 @@ and apt-get tools.
 <p>
 Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
-An installer based on 0.2.6 is now online, packages are still in the
-proccess of being updated.
+The binary distribution is now up to date with the 0.2.6 source
+release.
 </p>
 <ul>
 <li><a href="bindist/install/fink-0.2.6-installer.dmg">Fink 0.2.6 Binary
