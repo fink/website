@@ -135,7 +135,7 @@ If you don't know how to add the line, run these commands:
 <pre>cd
 pico .cshrc</pre>
 <p>
-You're not in a full-screen (well, full terminal window) text editor
+You are now in a full-screen (well, full terminal window) text editor
 and can simply start typing the <tt><nobr>source /sw/bin/init.csh</nobr></tt>
 line.
 It's okay if there is a note that says &quot;New file&quot;.
