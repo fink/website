@@ -1,5 +1,22 @@
 <?
-/* $Id: header.inc,v 1.68 2004/03/01 10:35:01 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.69 2004/03/01 10:51:12 babayoshihiko Exp $ */
+// +--------------------------------------------------------------------------+
+// | header.inc                                                               |
+// +--------------------------------------------------------------------------+
+// | Copyright (c)                                                            |
+// +--------------------------------------------------------------------------+
+// | License:  GNU/GPL - http://www.gnu.org/copyleft/gpl.html                 |
+// +--------------------------------------------------------------------------+
+// | Used by all the PHP files at http://fink.sourceforge.net                 |
+// |    to produce the headers (incl HTML headers and top parts)              |
+// |                                                                          |
+// | usage:    1. read the comments                                           |
+// |           2. include this file before outputting anything                |
+// +--------------------------------------------------------------------------+
+// | issues:                                                                  |
+// |           1. too many! issues remained                                   |
+// |                                                                          |
+// +--------------------------------------------------------------------------+
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
@@ -167,6 +184,7 @@ function insert_sub ($navbox, $active_page) {
 			}
 		}
 	}
+	if ('bindist' == $dirname1) $active_page = $i - 2;	// bindist (ad hoc)
 	if (-1 == $active_page) $active_page = 0;
 	
 	if ('htdocs/index.php' == $filename && $active_page == -1) $active_page = 0; 
