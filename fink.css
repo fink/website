@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.7 2002/04/19 13:07:41 fingolfin Exp $ */
+/* $Id: fink.css,v 1.8 2002/05/30 21:26:03 fingolfin Exp $ */
 
 body {
   color:black;
@@ -56,6 +56,17 @@ h2 {
   color:black;
   font-family:"Trebuchet MS",sans-serif;
   font-size:10pt;
+}
+
+.news_date {
+  color:rgb(96,96,96);
+  font-size:10pt;
+  font-weight:bold;
+}
+
+.news_headline {
+  font-size:10pt;
+  font-weight:bold;
 }
 
 input {
