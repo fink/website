@@ -6,7 +6,8 @@ distribution, which is consulted by users' copies of Fink when using the
 These days, each complete Fink distribution is tuned to a particular
 "tree", such as 10.2-gcc3.3.  As of this writing, there are three files
 containing tree-specific version information:
-  CURRENT-FINK-10.2
+
+  CURRENT-FINK-10.2 (most likely frozen forever with value "0.5.4")
   CURRENT-FINK-10.2-gcc3.3
   CURRENT-FINK-10.3
 
