@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/17 12:23:19';
+$cvs_date = 'Date: 2003/07/25 12:07:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -73,16 +73,15 @@ more!</a></li>
 <li><a href="usage-fink.php#cvs-busy">3.13 When I try to run <q>fink selfupdate</q> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
-<li><a href="usage-fink.php#cant-login-anymore">3.15 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
-<li><a href="usage-fink.php#not-found">3.16 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
-<li><a href="usage-fink.php#fink-not-found">3.17 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li>
-<li><a href="usage-fink.php#invisible-sw">3.18 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
-<li><a href="usage-fink.php#install-info-bad">3.19 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li>
-<li><a href="usage-fink.php#bad-list-file">3.20 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li>
-<li><a href="usage-fink.php#error-nineteen">3.21 When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</a></li>
-<li><a href="usage-fink.php#dselect-garbage">3.22 I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</a></li>
-<li><a href="usage-fink.php#perl-undefined-symbol">3.23 Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</a></li>
-<li><a href="usage-fink.php#cant-upgrade">3.24 I can't seem to update Fink's version.</a></li>
+<li><a href="usage-fink.php#not-found">3.15 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
+<li><a href="usage-fink.php#fink-not-found">3.16 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li>
+<li><a href="usage-fink.php#invisible-sw">3.17 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
+<li><a href="usage-fink.php#install-info-bad">3.18 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li>
+<li><a href="usage-fink.php#bad-list-file">3.19 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li>
+<li><a href="usage-fink.php#error-nineteen">3.20 When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</a></li>
+<li><a href="usage-fink.php#dselect-garbage">3.21 I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</a></li>
+<li><a href="usage-fink.php#perl-undefined-symbol">3.22 Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</a></li>
+<li><a href="usage-fink.php#cant-upgrade">3.23 I can't seem to update Fink's version.</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -105,44 +104,38 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#apple-x11">5.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
-<li><a href="comp-packages.php#automake-autoconf">5.5 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
-<li><a href="comp-packages.php#cctools">5.6 &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</a></li>
+<li><a href="comp-packages.php#cctools">5.5 &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
-<li><a href="usage-general.php#gnome-icons">6.1 Some GNOME applications display
-black icons only. What's wrong?</a></li>
-<li><a href="usage-general.php#xlocale">6.2 I'm getting lots of messages
+<li><a href="usage-general.php#xlocale">6.1 I'm getting lots of messages
 like &quot;locale not supported by C library&quot;. Is that bad?</a></li>
-<li><a href="usage-general.php#passwd">6.3 There are suddenly a number of 
+<li><a href="usage-general.php#passwd">6.2 There are suddenly a number of 
 strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</a></li>
-<li><a href="usage-general.php#compile-myself">6.4 How do I compile something
+<li><a href="usage-general.php#compile-myself">6.3 How do I compile something
 myself using fink-installed software?</a></li>
-<li><a href="usage-general.php#libpng-versions">6.5 When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</a></li>
-<li><a href="usage-general.php#apple-x11-applications-menu">6.6 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li>
-<li><a href="usage-general.php#x-options">6.7 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li>
+<li><a href="usage-general.php#apple-x11-applications-menu">6.4 I can't run any of my fink-installed applications using the Applications menu in Apple X11.</a></li>
+<li><a href="usage-general.php#x-options">6.5 I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
 <ul>
-<li><a href="usage-packages.php#gnome-panel">7.1 The GNOME panel displays
-black icons only. What's wrong?</a></li>
-<li><a href="usage-packages.php#xmms-quiet">7.2 I get no sound from
+<li><a href="usage-packages.php#xmms-quiet">7.1 I get no sound from
 XMMS</a></li>
-<li><a href="usage-packages.php#nedit-window-locks">7.3 If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</a></li>
-<li><a href="usage-packages.php#xdarwin-start">7.4 Help! When I start
+<li><a href="usage-packages.php#nedit-window-locks">7.2 If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</a></li>
+<li><a href="usage-packages.php#xdarwin-start">7.3 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="usage-packages.php#no-server">7.5 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
-<li><a href="usage-packages.php#xfree-keymapping">7.6 I just upgraded to Mac
+<li><a href="usage-packages.php#no-server">7.4 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
+<li><a href="usage-packages.php#xfree-keymapping">7.5 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
-<li><a href="usage-packages.php#xterm-error">7.7 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
-<li><a href="usage-packages.php#libXmuu">7.8 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
-<li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
-<li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
+<li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
+<li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
+<li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
+<li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.119 2003/07/17 12:23:19 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.120 2003/07/25 12:07:58 alexkhansen Exp $</i></p>
 
 
 <?

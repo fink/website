@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/17 12:23:19';
+$cvs_date = 'Date: 2003/07/25 12:07:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -11,17 +11,8 @@ include "header.inc";
 <h1>F.A.Q. - 6 Package Usage Problems - General</h1>
 
 
-<a name="gnome-icons">
-<div class="question"><p><b>Q6.1: Some GNOME applications display
-black icons only. What's wrong?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-This is caused by limitations in the operating system kernel.
-The only solution so far is to turn off shared memory.
-The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
-</p></div>
-</a>
 <a name="xlocale">
-<div class="question"><p><b>Q6.2: I'm getting lots of messages
+<div class="question"><p><b>Q6.1: I'm getting lots of messages
 like &quot;locale not supported by C library&quot;. Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
@@ -31,7 +22,7 @@ The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/troubl
 </p></div>
 </a>
 <a name="passwd">
-<div class="question"><p><b>Q6.3: There are suddenly a number of 
+<div class="question"><p><b>Q6.2: There are suddenly a number of 
 strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -72,7 +63,7 @@ have come as a surprise.
 </p></div>
 </a>
 <a name="compile-myself">
-<div class="question"><p><b>Q6.4: How do I compile something
+<div class="question"><p><b>Q6.3: How do I compile something
 myself using fink-installed software?</b></p></div>
 <div class="answer"><p><b>A:</b> When compiling something yourself outside of fink, the compiler and
 linker need to be told where to find the fink-installed libraries and
@@ -95,19 +86,12 @@ variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 options.
 </p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div>
 </a>
-<a name="libpng-versions">
-<div class="question"><p><b>Q6.5: When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</b></p></div>
-<div class="answer"><p><b>A:</b> This is relevant to you if you see messages such as:</p><pre>libpng warning: Application was compiled with png.h from libpng-1.2.5
-libpng warning: Application  is running with png.c from libpng-1.0.12
-libpng error: Incompatible libpng version in application and library</pre><p>when running certain X applications.  The problem is due to an upstream incompatiblity between <code>libpng</code> and <code>libpng3</code>.  Start by running &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<code>fink update <b>packagename</b>
-</code>&quot; or &quot;<code>fink update-all</code>&quot;.</p><p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <code>libpng</code> or <code>libpng3</code>.  There is a new version of the <code>fix-fink</code> package in unstable that checks for this.  NOTE:  if you have KDE 3.0.7 installed, running <code>fix-fink</code> will report that your KDE packages are linked to libpng-1.0.12, but rebuilding won't change them.</p><p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p></div>
-</a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b>Q6.6: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
+<div class="question"><p><b>Q6.4: I can't run any of my fink-installed applications using the Applications menu in Apple X11.</b></p></div>
 <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your fink apps.  The solution is to preface the name of a fink-installed application with</p><pre>source /sw/bin/init.sh ; </pre><p>For example, if you want to run a fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p></div>
 </a>
 <a name="x-options">
-<div class="question"><p><b>Q6.7: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
+<div class="question"><p><b>Q6.5: I'm bewildered by the Xwindows options:  Apple X11, XFree86, etc.  What should I install?</b></p></div>
 <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them.  Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable.  There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p><p>The most popular choices, and the fink packages to make them work are:</p><ul>
 <li>
 <p>4.2.x built via Fink:  install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>

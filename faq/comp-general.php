@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/17 12:23:19';
+$cvs_date = 'Date: 2003/07/25 12:07:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -55,7 +55,7 @@ want to use Fink.
 The bootstrap script of the source release now checks for this, but
 you can still run into it if you use the binary release for first-time
 installation or install libwww after you installed Fink.
-</p></div>
+</p><p>This problem has also been reported due to the installation of <code>/sw/bin/HEAD</code> (not by any Fink package).  This is easier to solve:  rename <code>/sw/bin/HEAD</code>.</p></div>
 </a>
 <a name="also_in">
 <div class="question"><p><b>Q4.5: When I try to install a package I get an error message about trying to overwrite a file that is in another package.</b></p></div>

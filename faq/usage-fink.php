@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/17 12:23:19';
+$cvs_date = 'Date: 2003/07/25 12:07:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -251,16 +251,8 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p></div>
 </a>
-<a name="cant-login-anymore">
-<div class="question"><p><b>Q3.15: I ran the fink-0.4.1 installer and now I can't log in to my machine!</b></p></div>
-<div class="answer"><p><b>A:</b> This is fixed now, but there was a <a href="http://fink.sourceforge.net/news/index.php">problem</a> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p><p>Perform the follwing sequence of operations:</p><p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p><p>2.  When the command line appears, do the following commands:</p><pre>fsck -y
-mount -uw
-chmod 1775 /
-reboot
-</pre><p>3.  Your system should reboot.  Once it does, you should perform &quot;<code>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</code>&quot; to prevent this from happening again.</p></div>
-</a>
 <a name="not-found">
-<div class="question"><p><b>Q3.16: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
+<div class="question"><p><b>Q3.15: I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</b></p></div>
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
 versions are released.</p><p>The first thing you should do is run <code>fink selfupdate-cvs</code>.
 It may be that the package maintainer has already fixed this, and you will
@@ -282,20 +274,20 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q3.17: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
+<div class="question"><p><b>Q3.16: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <code>tcsh</code>).  When <code>tcsh</code> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <code>~/.tcshrc</code>, and if that isn't found, <code>~/.cshrc</code>; note that if you have both, only <code>~/.tcshrc</code> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <code>~/.tcshrc</code>, and therefore <code>~/.cshrc</code> isn't being read.  A good fix is to add the following line to <code>~/.tcshrc</code>:</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
-<div class="question"><p><b>Q3.18: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
+<div class="question"><p><b>Q3.17: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
 <div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
 </a>
 <a name="install-info-bad">
-<div class="question"><p><b>Q3.19: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
+<div class="question"><p><b>Q3.18: I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH.  In a terminal window type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a> in the Users Guide.  If <code>/sw/sbin</code> is there, but there are other directories ahead of it (e.g. <code>/usr/local/bin</code>), then you will either want to reorder your PATH so that <code>/sw/sbin</code> is near the beginning, or if you really need the other directory to be before <code>/sw/sbin</code>, then you'll want to temporarily rename the other <code>install-info</code> when you use fink.</p></div>
 </a>
 <a name="bad-list-file">
-<div class="question"><p><b>Q3.20: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
+<div class="question"><p><b>Q3.19: I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> Typically these errors take the form:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>or</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p><pre>dpkg --contents <b>full-path-to-debfile</b></pre><p>e.g.</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <b>packagename</b>
 </code>, to build the .deb--it won't install yet, though.</p><p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p><pre>dpkg -c <b>full-path-to-debfile</b>
   | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
@@ -306,7 +298,7 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
   &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></div>
 </a>
 <a name="error-nineteen">
-<div class="question"><p><b>Q3.21: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
+<div class="question"><p><b>Q3.20: When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</b></p></div>
 <div class="answer"><p><b>A:</b> The number 19 appears because your OS X system is localized to a language
 other than English. (This is a bug in Apple's Installer, that it doesn't
 just show you the English-language error message.)</p><p>The English language error message corresponding to number 19 is</p><p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p><p>You may be getting this error if you've used finkbefore, and didn't delete <code>/sw</code>.  If you haven't installed Fink before, the most likely cause of this
@@ -315,11 +307,11 @@ As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p></div>
 </a>
 <a name="dselect-garbage">
-<div class="question"><p><b>Q3.22: I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</b></p></div>
+<div class="question"><p><b>Q3.21: I get a bunch of garbage when I select packages in <code>dselect</code>.  How can I use it?</b></p></div>
 <div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and <code>Terminal.app</code>.  A workaround is to enter the following command</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b>Q3.23: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
+<div class="question"><p><b>Q3.22: Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</b></p></div>
 <div class="answer"><p><b>A:</b> If you see an error sequence like the following:</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -333,7 +325,7 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
-<div class="question"><p><b>Q3.24: I can't seem to update Fink's version.</b></p></div>
+<div class="question"><p><b>Q3.23: I can't seem to update Fink's version.</b></p></div>
 <div class="answer"><p><b>A:</b> THere are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> to follow under these circumstances.</p></div>
 </a>
 <p align="right">

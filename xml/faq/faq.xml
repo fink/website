@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.119 2003/07/17 12:23:19 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.120 2003/07/25 12:07:58 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -603,23 +603,6 @@ software before using Fink.
 </p>
 </answer>
 </faqentry>
-<faqentry name="cant-login-anymore" >
-<question>
-<p>I ran the fink-0.4.1 installer and now I can't log in to my machine!</p>
-</question>
-<answer>
-<p>This is fixed now, but there was a <link url="http://fink.sourceforge.net/news/index.php" >problem</link> wherein if one used the 0.4.1 installer twice some key system permissions got screwed up.  Fortunately, this problem can be fixed.</p>
-<p>Perform the follwing sequence of operations:</p>
-<p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p>
-<p>2.  When the command line appears, do the following commands:</p>
-<codeblock>fsck -y
-mount -uw
-chmod 1775 /
-reboot
-</codeblock>
-<p>3.  Your system should reboot.  Once it does, you should perform &quot;<code>sudo rm -rf /Library/Receipts/Fink 0.4.1 Installer.pkg</code>&quot; to prevent this from happening again.</p>
-</answer>
-</faqentry>
 <faqentry name="not-found" >
 <question>
 <p>I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</p>
@@ -832,6 +815,7 @@ The bootstrap script of the source release now checks for this, but
 you can still run into it if you use the binary release for first-time
 installation or install libwww after you installed Fink.
 </p>
+<p>This problem has also been reported due to the installation of <filename>/sw/bin/HEAD</filename> (not by any Fink package).  This is easier to solve:  rename <filename>/sw/bin/HEAD</filename>.</p>  
 </answer>
 </faqentry>
 <faqentry name="also_in" >
@@ -1008,20 +992,6 @@ version.  This really shouldn't happen, so I'm bailing.  :(</codeblock>
 <p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
 </answer>
 </faqentry>
-<faqentry name="automake-autoconf" >
-<question>
-<p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p>
-</question>
-<answer>
-<p>Update whichever package is giving the dependency error, e.g. if you get a message like:</p>
-<codeblock>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
-dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
-automake depends on autoconf25 (>= 2.52-1)
-autoconf25 is to be removed.</codeblock>
-<p>then use <code>fink update <em>automake</em>
-</code>.  You should then be able to update autoconf.</p>
-</answer>
-</faqentry>
 <faqentry name="cctools">
 <question>
 <p>"When I try to install KDE, I get the following message:  'Can't resolve dependency "cctools (>= 446-1)"'</p>
@@ -1034,19 +1004,6 @@ autoconf25 is to be removed.</codeblock>
 <chapter filename="usage-general" >
 <title>Package Usage Problems - General</title>
 <shorttitle>Usage (1)</shorttitle>
-<faqentry name="gnome-icons" >
-<question>
-<p>Some GNOME applications display
-black icons only. What's wrong?</p>
-</question>
-<answer>
-<p>
-This is caused by limitations in the operating system kernel.
-The only solution so far is to turn off shared memory.
-The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black" >details</link>.
-</p>
-</answer>
-</faqentry>
 <faqentry name="xlocale" >
 <question>
 <p>I'm getting lots of messages
@@ -1140,21 +1097,6 @@ options.
 <p>In addition, you may need to install the development headers (e.g. <em>foo-1.0-1-dev</em> for the library packages that you are using, if they aren't already installed.</p>
 </answer>
 </faqentry>
-<faqentry name="libpng-versions" >
-<question>
-<p>When I try to run an application, I get messages about incompatible versions of libpng.  What does this mean?</p>
-</question>
-<answer>
-<p>This is relevant to you if you see messages such as:</p>
-<codeblock>libpng warning: Application was compiled with png.h from libpng-1.2.5
-libpng warning: Application  is running with png.c from libpng-1.0.12
-libpng error: Incompatible libpng version in application and library</codeblock>
-<p>when running certain X applications.  The problem is due to an upstream incompatiblity between <filename>libpng</filename> and <filename>libpng3</filename>.  Start by running &quot;<code>fink selfupdate-cvs</code>&quot; to update your package descriptions, and then see if you can update your package and its dependencies as usual with &quot;<code>fink update <em>packagename</em>
-</code>&quot; or &quot;<code>fink update-all</code>&quot;.</p>
-<p>  If this doesn't work, then you may need to rebuild the package and/or any of its dependencies that themselves depend on <filename>libpng</filename> or <filename>libpng3</filename>.  There is a new version of the <filename>fix-fink</filename> package in unstable that checks for this.  NOTE:  if you have KDE 3.0.7 installed, running <filename>fix-fink</filename> will report that your KDE packages are linked to libpng-1.0.12, but rebuilding won't change them.</p>
-<p>If things still don't work, then you may have encountered a package that hasn't been modified yet.  Notify the package's maintainer.</p>
-</answer>
-</faqentry>
 <faqentry name="apple-x11-applications-menu" >
 <question>
 <p>I can't run any of my fink-installed applications using the Applications menu in Apple X11.</p>
@@ -1192,19 +1134,6 @@ libpng error: Incompatible libpng version in application and library</codeblock>
 <chapter filename="usage-packages" >
 <title>Package Usage Problems - Specific Packages</title>
 <shorttitle>Usage (2)</shorttitle>
-<faqentry name="gnome-panel" >
-<question>
-<p>The GNOME panel displays
-black icons only. What's wrong?</p>
-</question>
-<answer>
-<p>
-This is caused by limitations in the operating system kernel.
-The only solution so far is to turn off shared memory.
-The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#black" >details</link>.
-</p>
-</answer>
-</faqentry>
 <faqentry name="xmms-quiet" >
 <question>
 <p>I get no sound from

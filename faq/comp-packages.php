@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/17 12:23:19';
+$cvs_date = 'Date: 2003/07/25 12:07:58';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -60,16 +60,8 @@ package.
 </pre><p>then you need to install the SDK package as well as the User package. The SDK is available from <a href="http://www.apple.com/macosx/x11/download/">the Apple X11 downoad page</a> (the link is in a box at the lower right corner labeled <b>X11 for Mac OS X Public Beta SDK</b>).</p><p>If, on the other hand, you get the following message:</p><pre>An error occurred trying to find your XFree86 installation's
 version.  This really shouldn't happen, so I'm bailing.  :(</pre><p>then you need to update your package descriptions and install a newer version of system-xfree86.  If you are installing Apple X11 Beta 3, then you will need <code>system-xfree86-4.2-11</code> or later.</p></div>
 </a>
-<a name="automake-autoconf">
-<div class="question"><p><b>Q5.5: I can't update autoconf/automake, because of a dependency on automake/autoconf.</b></p></div>
-<div class="answer"><p><b>A:</b> Update whichever package is giving the dependency error, e.g. if you get a message like:</p><pre>dpkg: considering removing autoconf25 in favour of autoconf2.5 ...
-dpkg: no, cannot remove autoconf25 (--auto-deconfigure will help):
-automake depends on autoconf25 (&gt;= 2.52-1)
-autoconf25 is to be removed.</pre><p>then use <code>fink update <b>automake</b>
-</code>.  You should then be able to update autoconf.</p></div>
-</a>
 <a name="cctools">
-<div class="question"><p><b>Q5.6: &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</b></p></div>
+<div class="question"><p><b>Q5.5: &quot;When I try to install KDE, I get the following message:  'Can't resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</b></p></div>
 <div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the December 2002 Developer Tools (but not the <code>gcc 3.3</code> update).</p></div>
 </a>
 <p align="right">
