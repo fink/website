@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.93 2003/02/25 14:25:13 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.94 2003/02/27 15:15:41 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -582,8 +582,12 @@ Failed: Logging into the CVS server for anonymous read-only access failed.
 Connection reset by peer
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-<p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p>
-<p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p>
+<p>or</p>
+<codeblock>cvs [update aborted]: connect to cvs.sourceforge.net:2401 failed:
+End of file received from server
+### execution of su failed, exit code 1</codeblock>
+<p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p>
+<p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p>
 <codeblock>
 cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
