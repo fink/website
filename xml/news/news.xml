@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.129 2004/08/03 19:01:14 dmacks Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.130 2004/08/03 20:09:48 dmacks Exp $</cvsid>
 
 <newsitem>
 	<date>2004-08-01</date>
@@ -23,7 +23,7 @@
 	 To get a better understanding of the different types of mirrors 
 	 Fink offers, please review <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hestitate in <extlink url="mailto:mirrors@finkmirrors.net">contacting us</extlink> as well.
+	 web-space for testing as an example, please do not hesitate in <extlink url="mailto:mirrors@finkmirrors.net">contacting us</extlink> as well.
 	</p>
 	</body>
 </newsitem>
