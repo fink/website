@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/15 23:03:29';
+$cvs_date = 'Date: 2004/03/17 17:22:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 include_once "header.inc";
@@ -115,7 +115,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p><pre>fink-virtual-pkgs --debug</pre><p>来获取还缺少什么东西的信息。</p><p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p><ul>
           <li>你可以在：<a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>下载。</li>
           <li>把它保存在你喜欢的位置。</li>
-          <li>通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
+          <li>在终端程序窗口通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
         </ul></div>
     </a>
     <a name="apple-x11-beta-wants-xfree86">
@@ -139,7 +139,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         <code>fink-0.19.0</code> 或更新的版本，那么你可以运行</p><pre>fink-virtual-pkgs --debug</pre><p>来获取还缺少什么东西的信息。</p><p>如果你在运行更早版本的 <code>fink</code>，那么有一个 Perl 脚本（由 Martin Costabel 提供）也可以获取同样的信息。</p><ul>
           <li>你可以在：<a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>下载。</li>
           <li>把它保存在你喜欢的位置。</li>
-          <li>通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
+          <li>在终端程序窗口通过 <pre>perl fink-x11-debug</pre> 运行它。</li>
         </ul></div>
     </a>
   

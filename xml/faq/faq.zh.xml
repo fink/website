@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.6 2004/03/15 23:03:29 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.7 2004/03/17 17:22:26 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -1465,7 +1465,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         <ul>
           <li>你可以在：<link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>下载。</li>
           <li>把它保存在你喜欢的位置。</li>
-          <li>通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
+          <li>在终端程序窗口通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
         </ul>
       </answer>
     </faqentry>
@@ -1504,7 +1504,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         <ul>
           <li>你可以在：<link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>下载。</li>
           <li>把它保存在你喜欢的位置。</li>
-          <li>通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
+          <li>在终端程序窗口通过 <codeblock>perl fink-x11-debug</codeblock> 运行它。</li>
         </ul>
       </answer>
     </faqentry>
