@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/05/25 04:57:35 $';
+$cvs_date = '$Date: 2005/02/11 05:49:42 $';
 
 $uses_pathinfo = 0;
 include "header.inc";
@@ -9,35 +9,37 @@ $package = param(pkg);
 $tree = param(tree);
 $version = param(version);
 include "releases.inc";
-?>
 
-
-<?
 if ($package == "-") {
-?>
-<p><b>No package specified.</b></p>
-<?
-} else { /* if (no package) */
-?>
+	print "<p><b>No package specified.</b></p>";
+} else {
 
-<h1>Package <? print $package ?></h1>
+print "<h2>Package <a href=package.php/$package>$package</a>-$tree-$version</h2>";
 
-<?
+if($tree) {
+ $q = "SELECT * FROM package WHERE fullname='$package-$version' AND release='$tree' ORDER BY latest DESC";
+} else {
+ $q = "SELECT * FROM package WHERE fullname='$package-$version' ORDER BY latest DESC";
 
-$q = "SELECT * FROM package WHERE fullname='$package-$version' AND release='$tree' ORDER BY latest DESC";
+}
+
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
   if(mysql_num_rows($rs) > 1) {
-  	print "Error: Found more than one package $package-$version in $tree !\n";
+  	print "Found the package $package-$version in multiple trees:\n";
+	it_start();
+	while ($row = mysql_fetch_array($rs)) {
+	  	it_item("Tree:", '<a href="'.$pdbroot."packagedetails.php?tree=".$row[release]."&pkg=$package&version=$version\">".$row[release].'</a>'); 
+	}
+	it_end();
   } else if (! mysql_num_rows($rs)) {
   	print "Error: Found no package $package-$version in $tree !\n";
+  	
+  	
   } else {
-  
 	  $row = mysql_fetch_array($rs);
-	
-	  print "<br>";
 	  it_start();
 	  $desc = $row[desclong];
 	  it_item("<p>Description:</p>", $desc);
@@ -69,64 +71,85 @@ if (!$rs) {
 	  if ($row[parentname]) {
 		it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$row[parentname].'">'.$row[parentname].'</a>');
 	  }
+	  it_item("Reports:", "Stable: ".$row[stable]." Unstable: ".$row[unstable]);
 	
 	// Print contents 
-	$q = "SELECT DISTINCT pkghash FROM contentspackages WHERE package='$package' AND version='$version' AND release='$tree'";
+	$q = "SELECT DISTINCT pkghash,votes FROM contentspackages ".
+		 "WHERE package='$package' AND version='$version' AND release='$tree' ORDER BY votes DESC";
 	$rs = mysql_query($q, $dbh);
 	if (!$rs) {
 	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
 	} else {
 	  $count = mysql_num_rows($rs);
 	  	if($count == 0) {
-			it_item("Contents:", 'Contents for this package and version have not been submitted yet. Submit using \'fink report -c\'');	  	
+			it_item("Contents:", 'Contents for this package and version have not been submitted yet. Submit using \'fink report -c\'');	 
+			it_end(); 	
 		} else if($count > 1) {
-			it_item("Contents:", "$count builds of this package have been submitted. Most common:");
+			it_item("Contents:", "$count builds of this package have been submitted.");
+			it_end();
+			print "<form action=\"packagedetails.php\" method=\"POST\">\n";
+			print "<INPUT TYPE=hidden name=tree value=$tree>\n";
+			print "<INPUT TYPE=hidden name=pkg value=$package>\n";
+			print "<INPUT TYPE=hidden name=version value=$version>\n";
+			print "<SELECT name = pkghash>\n";
+			$sel = 1;
+			while($row = mysql_fetch_array($rs)) 
+			{
+				$votes = $row[votes];
+				if(param(pkghash)) {
+					if(param(pkghash) == $row[pkghash])
+						$sel == 1; else	$sel = 0;
+				}
+				if($sel)
+					$selhash = $row[pkghash];
+				print '<option value='. $row[pkghash]. ($sel ? ' selected>' : '>').$votes.
+													  (($votes == 1) ? ' Vote' : ' Votes')."\n";
+				$sel--;
+			}	
+			print '</SELECT><input type="submit" value="List"></FORM>';
 		} else {
 			it_item("Contents:", '1 build of this package has been submitted:');
+			it_end();
+			$row = mysql_fetch_array($rs);
+			$selhash = $row[pkghash];
 		}
 	}
-
-
-	it_end();
-	it_start();
-
-	if($count == 1) {
+	it_start();	
 	
-		$row = mysql_fetch_array($rs);
-		$q = "SELECT filepath,filesize,fileperms,filegroup,fileowner FROM contents,contentspackages WHERE (contentspackages.file_id=contents.file_id) AND contentspackages.pkghash='".$row[pkghash]."' ORDER BY filepath";
+	if($count) {
+		$q = "SELECT filepath,filesize,fileperms,filegroup,fileowner,votes,submitter FROM contents,contentspackages".
+			" WHERE (contentspackages.file_id=contents.file_id) AND contentspackages.pkghash='$selhash'".
+			" ORDER BY filepath";
 		$rs = mysql_query($q, $dbh);
 		if (!$rs) {
 		  print '<p><b>error during query:</b> '.mysql_error().'</p>';
 		} else {
 	  		$count = mysql_num_rows($rs);
-			print '<table>';
-		  	while ($row = mysql_fetch_array($rs)) {
-				print '<tr><td>'.$row[filepath].'</td><td>'.$row[filesize]."</td><td>".$row[fileperms].'</td><td>'.$row[fileowner].'</td>';
-			}
-			print '</table>';
+			$row = mysql_fetch_array($rs);
+			print "Hash: $selhash - Submitter: $row[submitter]\n";
+			print "<table>\n";
+			do {
+				print '<tr><td>'.$row[filepath].'</td><td>'.$row[filesize]."</td><td>".$row[fileperms].
+												'</td><td>'.$row[fileowner].'/'.$row[filegroup]."</td>\n";
+			} 	while ($row = mysql_fetch_array($rs));
+			print "</table>\n";
 			print "$count files.\n";
 		}
 	
-	} else if ($count > 1) {
-	
 	}
-
-
-		
-			// List the splitoffs of this package
-
-		$q = "SELECT * FROM splitoffs WHERE parentkey='$row[release]$row[name]'";
-		$rs = mysql_query($q, $dbh);
-		if (!$rs) {
-		  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-		} else {
-		  if($row = mysql_fetch_array($rs))
-			it_item("SplitOffs:", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
-		  while ($row = mysql_fetch_array($rs)) {
-			it_item(" ", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
-		  }
-		}
-	  it_end();
+	// List the splitoffs of this package
+	$q = "SELECT * FROM splitoffs WHERE parentkey='$row[release]$row[name]'";
+	$rs = mysql_query($q, $dbh);
+	if (!$rs) {
+	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+	} else {
+	  if($row = mysql_fetch_array($rs))
+		it_item("SplitOffs:", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
+	  while ($row = mysql_fetch_array($rs)) {
+		it_item(" ", '<a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a> '.htmlentities($row[descshort]));
+	  }
+	}
+  it_end();
 	}
 ?>
 
