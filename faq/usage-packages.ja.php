@@ -111,50 +111,66 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 <div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性があります。</p><ul>
 		<li><b>バイナリからのインストール:</b> 
-		お使いの <code>fink</code> パッケージのバージョンが 0.17.0 より前のものであれば
-		(Fink-0.6.2 インストーラに含まれていたものも)
-		fink を更新することで直ります。
-		<pre>sudo apt-get update
-sudo apt-get install fink</pre>
 		<p>
-		これで駄目なら、 X11User パッケージを再インストールする必要があります。
-		インストーラがファイルをインストールしないことがあるためです。</p>
+		<code>fink</code> が最新 (&gt;=0.18.3-1) であれば、通常は X11User 
+		パッケージを再インストールする必要があります。
+		</p>
+		<p>
+		これは、インストーラがしばしばファイルをインストールをし忘れることがあるためです。
+		インストールは何回かする必要があるかもしれません。
+		</p>
 		<pre>fink list -i system-xfree86</pre> 
-		<p>で
-		<code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
-		のパッケージがインストールされているかはわかります。
+		<p>を実行することで、
+		<code>system-xfree86</code> と <code>system-xfree86-shlibs</code> 
+		がインストールされたかが分かります。
 		</p>
 		<p>
-		X11User パッケージの再インストールができない場合、
-		<a href="#special-x11-debug">special debug</a> 解決法を参照。
+		X11User パッケージを再インストールしても問題がある場合、下記の
+		<a href="#special-x11-debug">特殊なデバグ</a> の手順を試してみてください。
 		</p>
+		<p>
+		古い<code>fink</code> を使っている場合、 <code>fink</code> を更新することで直ります。
+		</p>
+<pre>sudo apt-get update
+sudo apt-get install fink</pre>
 		</li>
 		<li><b>ソースからのインストール: </b>
-		<code>fink</code> のバージョンが 0.17 以前であれば、
-		<code>fink</code> を更新します。
-		<pre>fink selfupdate</pre>
-		(CVS または rsync 更新が有効になっている必要があります。)
-		<p>最新版の fink により、</p>
-		<pre>fink list -i system-xfree86</pre>
 		<p>
-		を実行することで，<code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, 
-		and <code>system-xfree86-dev</code> がインストールされているか分かります。
-		最初の二つのうちいずれかがない場合、 X11User パッケージを再インストールします。
-		<code>-dev</code> がない場合、 X11SDK を(再)インストールします。
-		これは、 Xcode CD に入っていますが、デフォルトではインストール<b>されません</b>。
-		Xcode をインストールしても、 X11SDK はデフォルトではインストール<b>されません</b>。
-		Xcode のインストール時にカスタムを選択するか、<code>Packages</code> フォルダ内の
-		<code>X11SDK</code> pkg をダブルクリックします。
+		<code>fink</code> が最新であれば、 X11SDK を(再)インストールする必要があります。
+		これは、パッケージをソースからビルドする際に必須です。
+		X11SDK は Xcode CD にありますが、XCode をインストールしても、デフォルトではインストール<b>されません</b>。
+		インストール時にカスタムを選択してパッケージを選択するか、
+		XCode の CD 内の <code>Packages</code> フォルダから X11SDK pkg をダブルクリックします。
 		</p>
- 		<p>
-		<b>Jaguar (X11 beta 3) ユーザーへの注記</b>:  
-		XCode を使っていないため、ダウンロード済みの X11SDK パッケージが必要です。
-		X11 beta 3 は既に有効期限が切れ、X11SDK パッケージ (と X11User パッケージ)
+		<p>
+		これでも問題がある場合、
+		</p>
+		<pre>fink list -i system-xfree86</pre> 
+		<p>を実行をし、
+		<code>system-xfree86</code> と <code>system-xfree86-shlibs</code> と <code>system-xfree86-dev</code>
+		がインストールされているか確認します。
+		<code>-dev</code> が無い場合は X11SDK を再インストールします。
+		Apple のインストーラはファイルをインストールし忘れることがあるようです。
+		他の二つのうちどちらかが無い場合、 X11User パッケージをインストールします (理由は同じ)。
+		</p>
+		<p><b>Jaguar (X11 beta 3) の利用者への注記</b>:
+		Jaguar では XCode は使用していないため、ダウンロード済みの X11SDK が必要になります。
+		X11 beta 3 は既に期限が切れているため、X11SDK パッケージ (および X11User パッケージ)
 		はダウンロードできません。
-		バイナリ版をインストールするか、 Panther に更新する必要があります。
+		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86 
+		をインストールするか、 Panther にアップグレードするしかありません。
 		</p>
-		<p>これで問題が解決されない場合、
-		<a href="#special-x11-debug">special debug</a> 解決法を参照。</p>
+		<p>
+		<code>fink</code> 0.17 以前を使っている場合、更新します。
+		</p>
+		<pre>fink selfupdate</pre>
+		<p>
+		(ポイントリリースではなく、CVS または rsync 更新ができる場合)
+		</p>
+		<p>
+		これでも問題が発生する場合、下記の
+		<a href="#special-x11-debug">特殊なデバグ</a> の手順を試してみてください。
+		</p>
 		</li>
 	</ul></div>
 </a>
