@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/06/10 13:35:37';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/08/04 21:05:58';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -481,6 +481,24 @@ If the package supports it, it is preferably to use <tt><nobr>make install
 DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
+</td></tr><tr valign="top"><td>JarFiles</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This field is somewhat similar to DocFiles. It installs the specified jar
+files into <tt><nobr>%p/share/java/%n</nobr></tt>.
+Example:
+</p>
+<pre>JarFiles: lib/*.jar foo.jar:fooBar.jar</pre>
+<p>
+This will install all the jars that were in the lib directory and will install
+foo.jar as fooBar.jar.
+</p>
+<p>
+It also ensures that these jar files (specifically: all files in
+<tt><nobr>%p/share/java/%n</nobr></tt> that end in .jar)
+are added to the CLASSPATH environment variable. This allows tools like
+configure or ant to properly detect the installed jar files.
+</p>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>
 This field provides a convenient way to install README or COPYING
@@ -495,6 +513,26 @@ new name separated by a colon (:),
 e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
 This field works by appending appropriate <tt><nobr>install</nobr></tt>
 commands to the InstallScript.
+</p>
+</td></tr><tr valign="top"><td>RuntimeVars</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts.
+</p>
+<p>
+The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
+</p>
+<pre>RuntimeVars: &lt;&lt;
+ SomeVar: %p/Value
+ AnotherVar: foo bar
+&lt;&lt;</pre>
+<p>
+will set two environment variables 'SomeVar' and 'AnotherVar' and their values
+will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+</p>
+<p>
+This field works by appending appropriate commands to the InstallScript.
+These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
 </p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p>
@@ -739,6 +777,19 @@ either one of these (they are equivalent):</p>
 <p>These two fields are not mutually-exclusive - you can use both, and
 they will both be executed. In that case the PatchScript is executed
 last.</p>
+
+
+<a name="profile.d"><h2>5.6 Profile.d scripts</h2></a>
+
+<p>
+If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
+These scripts are sourced by the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts. Normally, all fink users will load these scripts in their shell startup files (<tt><nobr>.cshrc</nobr></tt> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <tt><nobr>/sw/etc/profile.d/%n.[c]sh</nobr></tt> (where %n as usual stands for the package name).
+Also, their executable bit has to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+</p>
+<p>
+If you just need to set some environment variables (for example, QTDIR to /sw), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+</p>
 
 
 

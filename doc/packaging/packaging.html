@@ -50,6 +50,7 @@ currently has no maintainer.</a>
 <li><a href="#reference.splitoffs">5.3 SplitOffs</a></li>
 <li><a href="#reference.scripts">5.4 Scripts</a></li>
 <li><a href="#reference.patches">5.5 Patches</a></li>
+<li><a href="#reference.profile.d">5.6 Profile.d scripts</a></li>
 </ul>
 </ul><a name="intro"><h2>1 Introduction</h2></a>
 
@@ -1331,6 +1332,24 @@ If the package supports it, it is preferably to use <tt><nobr>make install
 DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
+</td></tr><tr valign="top"><td>JarFiles</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This field is somewhat similar to DocFiles. It installs the specified jar
+files into <tt><nobr>%p/share/java/%n</nobr></tt>.
+Example:
+</p>
+<pre>JarFiles: lib/*.jar foo.jar:fooBar.jar</pre>
+<p>
+This will install all the jars that were in the lib directory and will install
+foo.jar as fooBar.jar.
+</p>
+<p>
+It also ensures that these jar files (specifically: all files in
+<tt><nobr>%p/share/java/%n</nobr></tt> that end in .jar)
+are added to the CLASSPATH environment variable. This allows tools like
+configure or ant to properly detect the installed jar files.
+</p>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>
 This field provides a convenient way to install README or COPYING
@@ -1345,6 +1364,26 @@ new name separated by a colon (:),
 e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
 This field works by appending appropriate <tt><nobr>install</nobr></tt>
 commands to the InstallScript.
+</p>
+</td></tr><tr valign="top"><td>RuntimeVars</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#reference.profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts.
+</p>
+<p>
+The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
+</p>
+<pre>RuntimeVars: &lt;&lt;
+ SomeVar: %p/Value
+ AnotherVar: foo bar
+&lt;&lt;</pre>
+<p>
+will set two environment variables 'SomeVar' and 'AnotherVar' and their values
+will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+</p>
+<p>
+This field works by appending appropriate commands to the InstallScript.
+These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
 </p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p>
@@ -1591,6 +1630,19 @@ they will both be executed. In that case the PatchScript is executed
 last.</p>
 
 
+<a name="reference.profile.d"><h3>5.6 Profile.d scripts</h3></a>
+
+<p>
+If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
+These scripts are sourced by the <tt><nobr>/sw/bin/init.[c]sh</nobr></tt> scripts. Normally, all fink users will load these scripts in their shell startup files (<tt><nobr>.cshrc</nobr></tt> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <tt><nobr>/sw/etc/profile.d/%n.[c]sh</nobr></tt> (where %n as usual stands for the package name).
+Also, their executable bit has to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+</p>
+<p>
+If you just need to set some environment variables (for example, QTDIR to /sw), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+</p>
+
+
 
 
 <hr><h2>Copyright Notice</h2>
@@ -1600,4 +1652,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: packaging.xml,v 1.30 2002/06/10 13:35:37 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: packaging.xml,v 1.32 2002/08/04 21:05:58 fingolfin Exp $</i></p></body></html>
