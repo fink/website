@@ -261,8 +261,8 @@ define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Uni
 define (HEADER_HOSTED_BY, 'Hosted by {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %b %Y,  %R %Z');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %B %Y,  %R %Z');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z');
 </codeblock>
 <p><em>Note:</em> the first lines of Footer section have been splitted for display purpose, do not split them in the file.</p>
       <p>When you translate, you normally follow the steps as below (suppose

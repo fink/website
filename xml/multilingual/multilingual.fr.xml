@@ -274,8 +274,8 @@ define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Uni
 define (HEADER_HOSTED_BY, 'Hosted by {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %b %Y,  %R %Z');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated on %a, %d %B %Y,  %R %Z');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z');
 </codeblock>
 <p><em>Note :</em> les premières lignes de la section Footer ont été coupées pour des raisons d'affichage. Ne les coupez pas dans le fichier.</p>
 
@@ -510,7 +510,7 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
       <p>Note : comme la simple exécution du commit d'un fichier XML génère un message sur la liste de diffusion fink-commits qui remplit tous les critères mentionnés ci-dessus, le plus simple est de faire suivre le message en changeant son objet. Néanmoins, cela ne fonctionne pas bien, si le nombre de changements est important.</p>
     </section>
    <section name="doc-updates">
-       <title>Nouveau document :</title>
+       <title>Nouveau document</title>
       <p>On fait un <xref chapter="files" section="committing">commit</xref> sur la version anglaise du document et on l'<xref chapter="files" section="website">active</xref>, il est ensuite <xref section="new-translations">traduit</xref> comme expliqué ci-dessous.</p>
     </section>
   <section name="new-translation">
@@ -524,7 +524,7 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
       </ul>
     </section>
     <section name="prompt-update">
-      <title>Mise à jour rapide de la documentation existante :</title>
+      <title>Mise à jour rapide de la documentation existante</title>
       <p>On fait un <xref chapter="files" section="committing">commit</xref> et l'on <xref chapter="files" section="website">active</xref> immédiatement la documentation maître anglaise, - quelque soit la personne qui change le fichier XML, elle doit aussi faire le commit des fichiers PHP et HTML et activer les changements. Ensuite les équipes de traduction mettent à jour leurs versions, font un <xref chapter="files" section="committing">commit</xref> de <em>tous</em> les fichiers (XML et PHP), puis <xref chapter="files" section="activate">activent</xref> les changements.</p>
       <p><em>Notes :</em></p>
       <ol>

@@ -1,5 +1,5 @@
-﻿<?
-/* $Id: constants.fr.inc,v 1.5 2004/06/24 07:00:25 michga Exp $ */
+<?
+/* $Id: constants.fr.inc,v 1.6 2004/06/25 04:57:31 michga Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -51,5 +51,5 @@ define (HEADER_HOSTED_BY, 'Hébergé par {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Langues disponibles ');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Généré dynamiquement par ');
 define (FOOTER_DATABASE_LAST_UPDATED, 'Dernière mise à jour le %d %B %Y à %R %Z');
-define (FOOTER_LAST_CHANGED, 'Dernière mise à jour le %d %b %Y à %R %Z par {author}');
+define (FOOTER_LAST_CHANGED, 'Dernière mise à jour le %d %B %Y à %R %Z par {author}');
 ?>
