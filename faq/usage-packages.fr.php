@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/23 07:50:12';
+$cvs_date = 'Date: 2005/02/23 08:22:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -96,8 +96,8 @@ sudo apt-get install fink</pre>
 </a>
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: Problèmes persistents entre X11 et Fink</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si les solutions données aux sections <a href="#apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a> or <a href="#wants-xfree86-on-upgrade">Fink veut installer XFree86</a> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non  :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xorg xorg-shlibs xfree86 xfree86-shlibs \
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si les solutions données aux sections <a href="#apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a> or <a href="#wants-xfree86-on-upgrade">Fink veut installer XFree86</a> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non  :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
+system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless \
 xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \

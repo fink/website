@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/23 07:50:12';
+$cvs_date = 'Date: 2005/02/23 08:22:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -163,7 +163,9 @@ sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
 rm fink_0.22.4-1_darwin-powerpc.deb
 fink selfupdate</pre></li>
 <li><b>10.2.x :</b> (distribution 0.6.3)
-<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
+fink-0.6.3/release/main/binary-darwin-powerpc/base\
+/fink_0.18.3-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
 rm fink_0.18.3-1_darwin-powerpc.deb
 fink selfupdate</pre></li>

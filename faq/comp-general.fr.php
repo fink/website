@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/23 07:50:12';
+$cvs_date = 'Date: 2005/02/23 08:22:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -137,13 +137,13 @@ undefined reference to _FT_Access_Frame</pre><p>vous êtes probablement en prés
 <a name="dlfcn-from-oo">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.16: Messages d'erreur concernant `Dl_info'.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous avez des messages d'erreur similaire à celui-ci :</p><pre>unix_dl.c: In function `rep_open_dl_library':
-unix_dl.c:328: warning: assignment discards qualifiers from pointer \
-target type 
+unix_dl.c:328: warning: assignment discards qualifiers from \
+pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
 unix_dl.c:466: error: `Dl_info' undeclared (first use in this \
 function)
-unix_dl.c:466: error: (Each undeclared identifier is reported only \
-once 
+unix_dl.c:466: error: (Each undeclared identifier is reported \
+only once 
 unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info" 
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
