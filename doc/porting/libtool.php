@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/02 15:29:21';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/04/25 12:00:52';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="preparing.php" title="Preparing for 10.2"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -74,12 +74,12 @@ happens to be the majority of libtool-using packages out there) need a
 patch to build shared libraries on Darwin.
 Apple includes a patched version of libtool 1.3.5 in Mac OS X, but it
 will not work correctly in most cases.
-I have improved that patch to hardcode the correct path and to do full
-versioning.
-The changes have been incorporated into upstream libtool releases and
+Christoph Pfisterer improved that patch to hardcode the correct path and to 
+do full versioning.
+The changes were incorporated into upstream libtool releases and
 development versions starting with 1.4.
-I continue to make improvements and forward them to the libtool
-maintainers.
+Members of the Fink team continue to make improvements and forward them to 
+the libtool maintainers.
 The versioning scheme is compatible across all libtool versions.
 </p>
 <p>
@@ -92,11 +92,13 @@ on Darwin when dlcompat is installed.
 
 <h2><a name="patch-135">3.2 The 1.3.5 Patch</a></h2>
 <p>
-After applying <a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
-patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source, you
-must delete the files ltconfig and ltmain.sh.
-They will be recreated from the appropriate .in files when you run
-configure and make.
+If you are building libtool 1.3.5 for yourself, you will need to apply
+<a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">this
+patch</a> <b>[updated 2001-08-30]</b> to the libtool 1.3.5 source and
+then delete the files ltconfig and ltmain.sh.
+(They will be recreated from the appropriate .in files when you run
+configure and make.)  This is done automatically, by the way, in the 
+current Fink package for libtool 1.3.5.</p><p>
 But that's only half the work - every package using libtool comes with
 its own copies of ltconfig and ltmain.sh.
 So you must replace these in every package that you want to build as a
