@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/06 14:21:16 $';
+$cvs_date = '$Date: 2001/09/08 10:07:56 $';
 
 include "header.inc";
 ?>
@@ -36,6 +36,7 @@ Fink (in alphabetical order):</p>
 <li>Peter O'Gorman</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
+<li>Matt Stephenson</li>
 <li>Paul Swenson</li>
 <li>Aaron Voisine</li>
 <li>Tom Zerucha</li>
