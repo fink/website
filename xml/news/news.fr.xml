@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="fr" fsroot="../..">
-<cvsid>$Id: news.fr.xml,v 1.10 2004/09/22 07:55:57 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.11 2004/10/16 10:10:04 michga Exp $</cvsid>
+
+<newsitem>
+<date>15/10/2004</date>
+<headline>Résolution de problèmes concernant gcc</headline>
+<body>
+<p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version &quote;vérolée&quote; pour compiler les paquets qui présentent ce problème.</p>
+<p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">ici</link>.</p>
+<p>Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.</p>
+</body>
+</newsitem>
 
 <newsitem>
 <date>20/09/2004</date>
