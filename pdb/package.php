@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/08/28 18:07:13 $';
+$cvs_date = '$Date: 2004/08/29 00:26:10 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -34,7 +34,8 @@ if (!$rs) {
     $lastrow = $row;
     if($row[epoch] > 0)
 		$epoch = "$row[epoch]:";
-	
+	else 
+		$epoch = "";
 	$rmap[$row[release]] = $epoch.$row[version]."-".$row[revision];
     
     $row = mysql_fetch_array($rs);
