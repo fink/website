@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:33:58';
+$cvs_date = 'Date: 2005/02/09 21:05:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -147,8 +147,12 @@ La valeur par défaut est 1.</p>
 <p><b>MirrorOrder:</b> MasterFirst, MasterLast, MasterNever ou ClosestFirst</p>
 <p>Fink gère des miroirs 'Maîtres', serveurs miroirs des archives tar du code source de tous les paquets Fink. L'utilisation d'un miroir maître a pour avantage que les URL de téléchargement du source ne sont jamais obsolètes. Les utilisateurs peuvent choisir d'utiliser ces miroirs maintenus par l'équipe Fink, ou de n'utiliser que les URL initiales du source et des miroirs externes tels les miroirs gnome, KDE ou debian. De plus, on peut combiner les deux jeux de miroirs ; la recherche aura lieu alors par ordre de proximité de la zone de téléchargement, comme cela a été expliqué ci-dessus. Avec les options MasterFirst et MasterLast, l'utilisateur va directement au jeu de miroirs maîtres (ou au jeu de miroirs non maîtres) si un téléchargement échoue. Les options sont les  suivantes :</p>
 <pre>
-MasterFirst - Cherche d'abord dans les miroirs "Maîtres". MasterLast - Cherche dans les miroirs "Maîtres" à la fin. MasterNever - N'utilise jamais les miroirs "Maîtres". ClosestFirst - Cherche d'abord dans les miroirs les plus proches 
-  (combine tous les miroirs en un seul jeu de miroirs). </pre>
+MasterFirst - Cherche d'abord dans les miroirs "Maîtres". 
+MasterLast - Cherche dans les miroirs "Maîtres" à la fin. 
+MasterNever - N'utilise jamais les miroirs "Maîtres". 
+ClosestFirst - Cherche d'abord dans les miroirs les plus proches 
+  (combine tous les miroirs en un seul jeu de miroirs). 
+</pre>
 </li>
 </ul>
 
@@ -206,7 +210,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 
 # Put local modifications to this file below this line, or at the top. </pre>
-<p>Pour la bonne compréhension de fonctionnement de ce fichier, voici la traduction en français</p>
+<p>Pour la bonne compréhension du fonctionnement de ce fichier, voici la traduction en français :</p>
 <pre>
 # Les modifications locales doivent se faire soit au-dessus de cette ligne,
 # soit tout-à-fait à la fin du fichier. #
