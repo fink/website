@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Fink Benutzerhandbuch</title>
   <shorttitle>Benutzerhandbuch</shorttitle>
-  <cvsid>$Id: uguide.de.xml,v 1.2 2004/09/28 05:43:09 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.de.xml,v 1.3 2004/12/09 18:17:04 dmacks Exp $</cvsid>
   <preface>
   <p>Achtung: die deutsche Version dieses Dokuments ist nicht mit der Englische Version synchron.</p>
     <p>
@@ -531,7 +531,7 @@ stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</c
             <tt>Medium</tt> (zeigt fast alles an)
 <em>3</em>
             <tt>Hoch</tt> (zeigt alles an).
-Der Standardwert ist 3.
+Der Standardwert ist 1.
 </p>
         </li>
         <li>

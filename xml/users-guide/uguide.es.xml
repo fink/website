@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.4 2004/08/30 22:44:42 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.5 2004/12/09 18:17:04 dmacks Exp $</cvsid>
   <preface>
   <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p>
@@ -694,7 +694,7 @@ Esta opción determina cuanta información Fink te da respecto a lo que esta hac
             <tt>Medium</tt> (muestra casi todo)
 <em>3</em>
             <tt>High</tt> (muestra todo)
-el valor por omisión es 3.
+el valor por omisión es 1.
 </p>
         </li>
         <li>

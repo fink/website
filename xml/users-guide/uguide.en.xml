@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.20 2004/11/08 02:03:27 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.21 2004/12/09 18:17:04 dmacks Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -906,7 +906,7 @@ doing. The values are:
             <tt>Medium</tt> (shows almost everything)
 <em>3</em>
             <tt>High</tt> (shows everything)
-The default value is 3.
+The default value is 1.
 </p>
         </li>
         <li>

@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.9 2004/08/12 15:01:33 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.10 2004/12/09 18:17:04 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
@@ -679,7 +679,7 @@ unstable/main   - 其它未稳定软件包
             <tt>中模式</tt> （几乎显示所有信息）
 <em>3</em>
             <tt>高模式</tt> （显示所有信息）
-默认值是 3。
+默认值是 1。
 </p>
         </li>
         <li>
