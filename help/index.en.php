@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/05/29 15:18:51 $';
+$cvs_date = '$Date: 2004/07/16 14:21:22 $';
 
 include "header.inc";
 ?>
@@ -144,13 +144,7 @@ documentation. <nobr><tt>;-)</tt></nobr>
 <p>
 <b>Make packages.</b>
 If you have some experience installing Unix software from source, you
-can help by making new packages.
-Grab the <a href="../doc/packaging/index.php">Packaging Manual</a>,
-read it carefully and thoroughly, subscribe to <a
-href="../lists/fink-devel.php">fink-devel</a> and post your packages
-to the <a
-href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">package
-submission tracker</a>.
+can help by making new packages. To get started read the <a href="../doc/quick-start-pkg/index.php">Packaging Tutorial</a>. Then grab the <a href="../doc/packaging/index.php">Packaging Manual</a>, read it carefully and thoroughly, subscribe to <a href="../lists/fink-devel.php">fink-devel</a>, and post your packages to the <a href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">package submission tracker</a>.
 Note that your submission will likely be rejected or treated with low
 priority unless it is compliant with the packaging policy.
 </p>

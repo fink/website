@@ -1,7 +1,7 @@
 <?
 $title = "Aide";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/05/29 15:18:51 $';
+$cvs_date = '$Date: 2004/07/16 14:21:22 $';
 
 include "header.inc";
 ?>
@@ -97,7 +97,7 @@ Le projet est toujours à la recherche de personnes pour écrire la documentatio
 
 <p>
 <b>Création de paquets.</b>
-Si vous avez quelque expérience dans le domaine de l'installation d'application Unix à partir des sources, vous pouvez nous aider en créant de nouveaux paquets. Téléchargez le <a href="../doc/packaging/index.php">Guide de création de paquets</a> (Packaging manual), lisez-le attentivement, abonnez-vous à la liste de diffusion <a href="../lists/fink-devel.php">fink-devel</a> et postez vos paquets sur le <a href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">traqueur de proposition de paquets</a> (package submission tracker).
+Si vous avez quelque expérience dans le domaine de l'installation d'application Unix à partir des sources, vous pouvez nous aider en créant de nouveaux paquets. Pour démarrer, lisez le <a href="../doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a>. Puis téléchargez le <a href="../doc/packaging/index.php">Guide de création de paquets</a> (Packaging manual), lisez-le attentivement, abonnez-vous à la liste de diffusion <a href="../lists/fink-devel.php">fink-devel</a> et postez vos paquets sur le <a href="http://sourceforge.net/tracker/?atid=414256&group_id=17203">traqueur de proposition de paquets</a> (package submission tracker).
 Notez que votre proposition a toutes les chances d'être rejetée ou traitée avec un niveau de priorité très bas, si elle ne respecte pas les normes de construction de paquets.
 </p>
 
