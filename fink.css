@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.9 2002/07/17 00:22:02 fingolfin Exp $ */
+/* $Id: fink.css,v 1.10 2003/02/28 02:46:52 fingolfin Exp $ */
 
 body {
   color:black;
@@ -62,13 +62,13 @@ h2 {
   font-size:10pt;
 }
 
-.news_date {
+.news-date {
   color:rgb(96,96,96);
   font-size:10pt;
   font-weight:bold;
 }
 
-.news_headline {
+.news-headline {
   font-size:10pt;
   font-weight:bold;
 }

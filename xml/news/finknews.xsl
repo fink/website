@@ -33,13 +33,13 @@
 <xsl:choose>
   <xsl:when test="boolean(headline)">
 	<xsl:text disable-output-escaping="yes">&lt;a name=&quot;</xsl:text><xsl:value-of select="date" /><xsl:text> </xsl:text><xsl:value-of select="headline" /><xsl:text disable-output-escaping="yes">&quot;&gt;</xsl:text>
-	<span class="news_date"><xsl:value-of select="date" /><xsl:text>: </xsl:text></span>
-	<span class="news_headline"><xsl:value-of select="headline" /></span>
+	<span class="news-date"><xsl:value-of select="date" /><xsl:text>: </xsl:text></span>
+	<span class="news-headline"><xsl:value-of select="headline" /></span>
 	<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
   </xsl:when>
   <xsl:otherwise>
 	<xsl:text disable-output-escaping="yes">&lt;a name=&quot;</xsl:text><xsl:value-of select="date" /><xsl:text disable-output-escaping="yes">&quot; /&gt;</xsl:text>
-	<span class="news_date"><xsl:value-of select="date" /></span>
+	<span class="news-date"><xsl:value-of select="date" /></span>
 	<xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
   </xsl:otherwise>
 </xsl:choose>
