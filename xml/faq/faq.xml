@@ -3,7 +3,7 @@
 <document filename="index" lang="en" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.172 2004/02/16 00:10:38 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.173 2004/02/20 15:24:08 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1393,7 +1393,7 @@ need to set some environment variables:
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
-setenv ACLOCAL_FLAGS "-I/sw/share/aclocal"
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
 <p>-bash-</p>
 <codeblock>export CFLAGS=-I/sw/include
