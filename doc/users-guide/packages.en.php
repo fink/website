@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/16 10:22:40';
+$cvs_date = 'Date: 2004/10/21 08:48:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -153,8 +153,13 @@ not installable
 E: Sorry, broken packages</pre>
       <p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
     
-    <h2><a name="src">3.4 Installing Packages from Source</a></h2>
+    <h2><a name="src">3.4 Installing Binary and Source Packages with fink</a></h2>
       
+      <p>
+The <code>fink</code> tool will allow you to install packages that are not yet
+available in the <a href="intro.php?phpLang=en#src-vs-bin">binary
+distribution</a>.
+      </p>
       <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
       <p>
 To get a list of packages that are available for installation from

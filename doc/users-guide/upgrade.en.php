@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/16 10:22:40';
+$cvs_date = 'Date: 2004/10/21 08:48:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 
@@ -44,9 +44,7 @@ older than 0.3.0, see the
     <h2><a name="src">4.2 Upgrading the Source Distribution</a></h2>
       
       <p>
-Upgrading is a bit more complicated if you use the source
-distribution.
-The procedure consists of two steps.
+If you use the source distribution the procedure consists of two steps.
 In the first step, you download the latest package descriptions to
 your computer.
 In the second step, these package descriptions are used to compile new

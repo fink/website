@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/16 10:22:40';
+$cvs_date = 'Date: 2004/10/21 08:48:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -232,7 +232,7 @@ others.
     <h2><a name="dumpinfo">6.20 dumpinfo</a></h2>
       
       <p>
-	Note: not available until a CVS version of fink after 0.20.0.
+Only available in <code>fink</code> newer than version 0.21.0
       </p>
       <p>
 	Shows how Fink parses parts of a package's .info file. Various

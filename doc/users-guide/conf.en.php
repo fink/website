@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/16 10:22:40';
+$cvs_date = 'Date: 2004/10/21 08:48:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -318,8 +318,9 @@ only operates on that single <b>fink</b> invocation.
         <li>
           <p>
             <b>CCacheDir:</b> path</p>
-          <p><b>Introduced in a post-0.20.5 CVS version of fink.</b> If the Fink package ccache-default is installed, the cache files it makes
+          <p>If the Fink package ccache-default is installed, the cache files it makes
 while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
+<b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
       </ul>

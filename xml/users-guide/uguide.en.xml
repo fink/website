@@ -3,14 +3,14 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.16 2004/10/16 10:22:40 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.17 2004/10/21 08:48:47 michga Exp $</cvsid>
   <preface>
     <p>
-      <em>This document is a work in progress.</em>
-The following older documents may offer a broader view:
+This document gives an overview over all features of Fink.
+(The following older documents may offer a broader view:
 <link url="http://fink.sourceforge.net/doc/bundled/install.php">Installation</link>,
 <link url="http://fink.sourceforge.net/doc/bundled/usage.php">Usage</link>
-and the ReadMe.rtf included in the binary distribution disk image.
+and the ReadMe.rtf included in the binary distribution disk image.)
 Also check out the
 <link url="http://fink.sourceforge.net/doc/">documentation
 section</link> of the web site, it has some other useful documents
@@ -522,7 +522,12 @@ E: Sorry, broken packages</codeblock>
       <p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
     </section>
     <section name="src">
-      <title>Installing Packages from Source</title>
+      <title>Installing Binary and Source Packages with fink</title>
+      <p>
+The <code>fink</code> tool will allow you to install packages that are not yet
+available in the <xref chapter="intro" section="src-vs-bin">binary
+distribution</xref>.
+      </p>
       <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <link url="http://connect.apple.com">http://connect.apple.com</link>.</p>
       <p>
 To get a list of packages that are available for installation from
@@ -682,9 +687,7 @@ older than 0.3.0, see the
     <section name="src">
       <title>Upgrading the Source Distribution</title>
       <p>
-Upgrading is a bit more complicated if you use the source
-distribution.
-The procedure consists of two steps.
+If you use the source distribution the procedure consists of two steps.
 In the first step, you download the latest package descriptions to
 your computer.
 In the second step, these package descriptions are used to compile new
@@ -1048,8 +1051,9 @@ only operates on that single <em>fink</em> invocation.
         <li>
           <p>
             <em>CCacheDir:</em> path</p>
-          <p><em>Introduced in a post-0.20.5 CVS version of fink.</em> If the Fink package ccache-default is installed, the cache files it makes
+          <p>If the Fink package ccache-default is installed, the cache files it makes
 while building Fink packages will be placed here. Defaults to <filename>/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
+<em>Only available in fink newer than version 0.21.0</em>.
           </p>
         </li>
       </ul>
@@ -1325,7 +1329,7 @@ others.
     <section name="dumpinfo">
       <title>dumpinfo</title>
       <p>
-	Note: not available until a CVS version of fink after 0.20.0.
+Only available in <code>fink</code> newer than version 0.21.0
       </p>
       <p>
 	Shows how Fink parses parts of a package's .info file. Various
