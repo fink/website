@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/31 20:08:34';
+$cvs_date = 'Date: 2004/04/16 01:42:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -195,9 +195,13 @@ the path where the p<b>a</b>tches can be found
 <p>
 the <b>b</b>uild directory, e.g. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.
 You must not assume that
-<code>root-%f</code> will be in <code>%p/src</code> since
+<code>%f</code> will be in <code>%p/src</code> since
 a user can change that directory using the <code>Buildpath</code> field
 in <code>/sw/etc/fink.conf</code>.
+The innermost directory is named based on the <code>Source</code>
+filename, or is the value of the <code>SourceDirectory</code> field
+(if present), or is not used if <code>NoSourceDirectory</code>
+is <code>true</code>.
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the

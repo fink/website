@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/03 16:17:09';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/16 01:06:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -148,7 +148,7 @@ chemin des rustines
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
+répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
 </p>
 <p>
 Note: ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est

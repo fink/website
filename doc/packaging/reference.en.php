@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/31 20:08:34';
+$cvs_date = 'Date: 2004/04/16 01:42:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -1056,7 +1056,7 @@ of the packages by using <code>DocFiles</code> several times.
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
-(<code>%b</code> is the current directory when scripts are
+(<code>%b</code>) is the current directory when scripts are
 executed. You should always use relative pathnames or
 percent-expansions for files and directories in the fink hierarchy,
 not complete absolute pathnames. Two forms are supported.

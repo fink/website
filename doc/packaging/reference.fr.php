@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/03 16:17:09';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/16 01:06:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -569,7 +569,7 @@ Each package being built is required to document the licensing arrangement in %i
 <h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>
-The PatchScript, CompileScript and InstallScript fields allow you to specify shell commands to be executed. The build directory (<code>%b</code> is the current directory when scripts are executed. You should always use relative pathnames or percent-expansions for files and directories in the fink hierarchy, not complete absolute pathnames. Two forms are supported.
+The PatchScript, CompileScript and InstallScript fields allow you to specify shell commands to be executed. The build directory (<code>%b</code>) is the current directory when scripts are executed. You should always use relative pathnames or percent-expansions for files and directories in the fink hierarchy, not complete absolute pathnames. Two forms are supported.
 </p>
 <p>
 This field can be a simple list of commands. This is sort of like a shell script. However, the commands are executed via system(), one line at a time, so setting variables or changing the directory only affects commands on that same line. Starting in a CVS version of fink after 0.18.2, you can wrap long lines similar to normal shell scripts: a backslash (<code>\</code>) at the end of a line indicates that the next line is a continuation.

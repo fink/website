@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/22 19:48:05';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/16 01:06:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 include_once "header.inc";
@@ -152,7 +152,7 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
 构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>。
-你不应该假设 <code>root-%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
+你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
 <p>
 注意：仅在没有其它选择的情况下才使用它。构建目录是脚本运行的当前目录；在命令中你应该使用相对路径。
 </p>
