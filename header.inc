@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.74 2004/04/03 15:34:29 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.75 2004/04/20 05:59:26 benh57 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -18,6 +18,24 @@
 // |                                                                          |
 // +--------------------------------------------------------------------------+
 
+
+// param() allows us to work without register_globals set on the server.
+function param($Name) {
+	 global $HTTP_GET_VARS;
+	 global $HTTP_POST_VARS;
+	 global $HTTP_COOKIE_VARS;
+	 if(isset($HTTP_GET_VARS[$Name]))
+		return($HTTP_GET_VARS[$Name]);
+	
+	 if(isset($HTTP_POST_VARS[$Name]))
+		return($HTTP_POST_VARS[$Name]);
+	
+	 if(isset($HTTP_COOKIE_VARS[$Name]))
+		return($HTTP_COOKIE_VARS[$Name]);
+	
+	 return("");
+}	
+ 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
 $lang_code = 'en';
@@ -119,6 +137,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 $metatags = ereg_replace('<([^/]*)/>', '<\1>', $metatags);
 
 // Functions Used in PDB
+        
 function it_start() {
   global $it_flag;
 
