@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.55 2003/12/11 03:10:17 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.56 2003/12/11 09:11:46 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -226,6 +226,13 @@ the <em>n</em>ame of the current package
 <p>
 the <em>N</em>ame of the parent package (the same as %n unless within a
 <code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%e</itemt>
+<itemd>
+<p>
+the package <em>e</em>poch
 </p>
 </itemd></item>
 
@@ -1140,9 +1147,11 @@ Required field.
 <itemd>
 <p>
 <em>Introduced in fink 0.12.0.</em>
-This optional field can be used to specify the epoch of the package.
-For more information refer to the <link
-url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</link>.
+This optional field can be used to specify the epoch of the package
+(which defaults to 0 if not specified). For more information refer to
+the <link
+url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
+Policy Manual</link>.
 </p>
 </itemd></item>
 

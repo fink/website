@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/12/09 23:04:49';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2003/12/11 03:10:17';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -83,8 +83,10 @@ Required field.
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>Introduced in fink 0.12.0.</b>
-This optional field can be used to specify the epoch of the package.
-For more information refer to the <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>.
+This optional field can be used to specify the epoch of the package
+(which defaults to 0 if not specified). For more information refer to
+the <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
+Policy Manual</a>.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>

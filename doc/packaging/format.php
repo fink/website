@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/12/09 23:04:49';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2003/12/11 03:10:17';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -135,6 +135,10 @@ the <b>n</b>ame of the current package
 <p>
 the <b>N</b>ame of the parent package (the same as %n unless within a
 <code>SplitOff</code>)
+</p>
+</td></tr><tr valign="top"><td>%e</td><td>
+<p>
+the package <b>e</b>poch
 </p>
 </td></tr><tr valign="top"><td>%v</td><td>
 <p>
