@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/22 21:05:57';
+$cvs_date = 'Date: 2003/02/24 21:56:49';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -72,7 +72,7 @@ wrong?</a></li>
 more!</a></li>
 <li><a href="usage-fink.php#selfupdate-tar-fails">3.13 Why doesn't 'fink selfupdate'
 work?</a></li>
-<li><a href="usage-fink.php#cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
+<li><a href="usage-fink.php#cvs-busy">3.14 When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<tt><nobr>Updating using CVS failed. Check the error messages above.</nobr></tt>&quot;
 		</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.15 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
@@ -134,7 +134,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.90 2003/02/22 21:05:57 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.91 2003/02/24 21:56:49 alexkhansen Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/22 21:05:57';
+$cvs_date = 'Date: 2003/02/24 21:56:49';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -11,25 +11,27 @@ include "header.inc";
 <h1>F.A.Q. - 6 Package Usage Problems - General</h1>
 
 
-
-<a name="gnome-icons"><div class="question"><p><b>Q6.1: Some GNOME applications display
+<a name="gnome-icons">
+<div class="question"><p><b>Q6.1: Some GNOME applications display
 black icons only. What's wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 This is caused by limitations in the operating system kernel.
 The only solution so far is to turn off shared memory.
 The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
-</p></div></a>
-
-<a name="xlocale"><div class="question"><p><b>Q6.2: I'm getting lots of messages
+</p></div>
+</a>
+<a name="xlocale">
+<div class="question"><p><b>Q6.2: I'm getting lots of messages
 like &quot;locale not supported by C library&quot;. Is that bad?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 It's not bad, it just means that the program will use the default
 English messages, date formats, etc.
 The program will function normally otherwise.
 The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.
-</p></div></a>
-
-<a name="passwd"><div class="question"><p><b>Q6.3: There are suddenly a number of 
+</p></div>
+</a>
+<a name="passwd">
+<div class="question"><p><b>Q6.3: There are suddenly a number of 
 strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -54,7 +56,8 @@ The presence of these extra users is a standard Unix convention for running
 certain services; the passwd package simply adds a couple of extra that Apple 
 did not provide.  You can see these Apple-installed users in NetInfo 
 Manager.app, or by running
-<tt><nobr>niutil -list . /users</nobr></tt></li>
+<tt><nobr>niutil -list . /users</nobr></tt>
+</li>
 <li>If you do decide to delete these users, be very careful of how you go about
  it.  Using the &quot;System Preferences: Users&quot; pane will assign all of their files
  to a random administrator account, and there have been reports of havoc played
@@ -66,9 +69,10 @@ command line tool <tt><nobr>niutil</nobr></tt> in Terminal.  Read the man page
 </ul><p>Fink <b>does</b> request permission to install these additional users on 
 your system during the installation of the passwd package, so this should not 
 have come as a surprise.
-</p></div></a>
-
-<a name="compile-myself"><div class="question"><p><b>Q6.4: How do I compile something
+</p></div>
+</a>
+<a name="compile-myself">
+<div class="question"><p><b>Q6.4: How do I compile something
 myself using fink-installed software?</b></p></div>
 <div class="answer"><p><b>A:</b> When compiling something yourself outside of fink, the compiler and
 linker need to be told where to find the fink-installed libraries and
@@ -89,8 +93,8 @@ compile lines yourself. Some packages may use similar non-standard
 variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 &quot;./configure --help&quot; will usually give you a list of the extra configure
 options.
-</p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div></a>
-
+</p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div>
+</a>
 <p align="right">
 Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages</a></p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/22 21:05:57';
+$cvs_date = 'Date: 2003/02/24 21:56:49';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -11,8 +11,8 @@ include "header.inc";
 <h1>F.A.Q. - 2 Relations with Other Projects</h1>
 
 
-
-<a name="upstream"><div class="question"><p><b>Q2.1: Do you contribute your patches
+<a name="upstream">
+<div class="question"><p><b>Q2.1: Do you contribute your patches
 back to the upstream maintainers?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 We're trying to.
@@ -32,10 +32,10 @@ platforms.</li>
 or months until they release a new version of their package.</li>
 <li>The package has been abhandoned by the original authors and there
 will be no new releases into which the patch could be merged.</li>
-</ul></div></a>
-
-
-<a name="debian"><div class="question"><p><b>Q2.2: What is your relation with the
+</ul></div>
+</a>
+<a name="debian">
+<div class="question"><p><b>Q2.2: What is your relation with the
 Debian project? Are you porting Debian Linux to Mac OS X?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 There is no formal relation between Fink and
@@ -46,10 +46,10 @@ apt-get) though, and use these tools and the .deb binary package
 format.
 The actual packages are tailor-made for Mac OS X / Darwin and don't
 use the Debian source package format.
-</p></div></a>
-
-
-<a name="apple"><div class="question"><p><b>Q2.3: What is your relation with
+</p></div>
+</a>
+<a name="apple">
+<div class="question"><p><b>Q2.3: What is your relation with
 Apple?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 <a href="http://www.apple.com/">Apple</a> is aware of Fink and
@@ -64,29 +64,28 @@ Quote:
 not willing to provide.  We'll get better at the open source game over
 time.&quot;</b>
 Thanks Apple!
-</p></div></a>
-
-
-<a name="openosx"><div class="question"><p><b>Q2.4: What is your relation with
+</p></div>
+</a>
+<a name="openosx">
+<div class="question"><p><b>Q2.4: What is your relation with
 OpenOSX.com?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 They used Fink to build the first release of their GIMP CD and refuse
 to acknowledge that properly.
 Read the <a href="http://fink.sourceforge.net/pr/openosx.php">public
 statement</a> for details.
-</p></div></a>
-
-
-<a name="forked"><div class="question"><p><b>Q2.5: What is your relation with
+</p></div>
+</a>
+<a name="forked">
+<div class="question"><p><b>Q2.5: What is your relation with
 macosx.forked.net?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 That site redistributes some Fink packages as Installer.app packages,
 unchanged but with their own boilerplate that doesn't mention Fink.
 Read the <a href="http://fink.sourceforge.net/pr/forked.php">public
 statement</a> for details.
-</p></div></a>
-
-
+</p></div>
+</a>
 <p align="right">
 Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
 
