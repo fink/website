@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/25 10:15:14 $';
+$cvs_date = '$Date: 2001/10/26 21:04:11 $';
 
 include "header.inc";
 ?>
@@ -71,7 +71,8 @@ forums there)
 Some links to sites with more or less useful information:
 <a href="http://mrcla.com/XonX/">XonX</a> -
 <a href="http://macgimp.org/">macgimp.org</a> -
-<a href="http://macosx.org/">macosx.org</a>
+<a href="http://macosx.org/">macosx.org</a> -
+<a href="http://macosxhints.com/">macosxhints.com</a>
 </p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
