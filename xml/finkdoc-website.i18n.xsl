@@ -68,7 +68,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 <xsl:apply-templates select="chapter" />
 
 <xsl:text disable-output-escaping="yes">
-&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;</xsl:text>
+&lt;!--? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?--&gt;</xsl:text>
 </body></html>
 </xsl:document>
 
@@ -151,7 +151,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 </xsl:for-each>
 
 <xsl:text disable-output-escaping="yes">
-&lt;? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;
+&lt;!--? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?--&gt;
 </xsl:text>
 </body></html>
 </xsl:document>
@@ -183,7 +183,7 @@ include_once "header.inc";
 <xsl:apply-templates select="section" />
 
 <xsl:text disable-output-escaping="yes">
-&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?&gt;
+&lt;!--? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">footer.inc"; ?--&gt;
 </xsl:text>
 </body></html>
 </xsl:document>
