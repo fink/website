@@ -1,7 +1,11 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/06 19:54:38 $';
+$cvs_date = '$Date: 2001/05/07 19:44:19 $';
+
+$metatags = '<link rel="start" href="index.php" title="FAQ Contents">
+<link rel="next" href="general.php" title="General questions">
+';
 
 include "header.inc";
 ?>
