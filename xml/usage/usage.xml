@@ -3,7 +3,7 @@
 <article filename="usage">
 <title>Fink 0.2.5 Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.7 2001/08/23 09:32:56 chrisp Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.8 2001/08/23 10:12:39 chrisp Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
@@ -163,6 +163,20 @@ default settings back.</p>
 Reruns the Fink configuration process.
 This will let you change your mirror sites and proxy settings, among
 others.
+</p>
+</section>
+
+<section><title>selfupdate</title>
+<p>
+This command automates the process of upgrading to a new Fink
+release.
+It checks the Fink website to see if a new version is available.
+It then downloads the package descriptions and updates the core
+packages, including fink itself.
+This command can only upgrade to regular releases, but you can use it
+to upgrade from a CVS version to a later regular release.
+It will refuse to run if you have /sw/fink set up to get package
+descriptions directly from CVS.
 </p>
 </section>
 
