@@ -8,10 +8,10 @@ $metatags = '<link rel="contents" href="install.php" title="Installation Content
 include "header.inc";
 ?>
 
-<h1>Fink 0.5.0a Installation</h1>
+<h1>Fink 0.5.1 Installation</h1>
 <p>
 These are the installation instructions for the &quot;source&quot; distribution
-of Fink 0.5.0a.
+of Fink 0.5.1.
 This document does not apply to the &quot;binary&quot; distribution.
 There are instructions for both first time installation and upgrading
 from a previous version.
