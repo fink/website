@@ -25,10 +25,10 @@ $cvs_date = 'Date: <xsl:value-of select="cvsid"/>';
 <xsl:text disable-output-escaping="yes">$metatags = &quot;&lt;link rel=\&quot;contents\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents\&quot; /&gt;&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
+<xsl:text disable-output-escaping="yes"> Contents\&quot;&gt;\n\t&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="chapter/title"/>
-<xsl:text disable-output-escaping="yes">\&quot; /&gt;&quot;</xsl:text>;
+<xsl:text disable-output-escaping="yes">\&quot;&gt;\n\t&quot;</xsl:text>;
 
 include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
@@ -42,32 +42,29 @@ include_once "header.<xsl:value-of select="$lang-ext" />.inc";
 <h2><xsl:text>Contents</xsl:text></h2>
 
 <ul><xsl:text>
-</xsl:text>
-<xsl:for-each select="chapter">
-<li><a><xsl:attribute name="href">
-<xsl:value-of select="@filename"/><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext" />
-</xsl:attribute>
-<b><xsl:number format="1 " /><xsl:value-of select="title" /></b></a></li><xsl:text>
-</xsl:text>
-
-<ul><xsl:text>
-</xsl:text>
-<xsl:for-each select="faqentry|section">
-<li><a><xsl:attribute name="href">
-<xsl:value-of select="../@filename" /><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext" /><xsl:text>#</xsl:text><xsl:value-of select="@name" />
-</xsl:attribute>
-<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
-<xsl:for-each select="question/p">
-<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
-</xsl:for-each>
-<xsl:value-of select="title" />
-</a></li><xsl:text>
-</xsl:text>
-</xsl:for-each>
-</ul><xsl:text>
-</xsl:text>
-
-</xsl:for-each>
+	</xsl:text>
+	<xsl:for-each select="chapter">
+	<li>
+		<a><xsl:attribute name="href"><xsl:value-of select="@filename"/><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext" /></xsl:attribute>
+			<b><xsl:number format="1 " /><xsl:value-of select="title" /></b>
+		</a>
+		<ul>
+		<xsl:for-each select="faqentry|section">
+			<li>
+			<a><xsl:attribute name="href">
+			<xsl:value-of select="../@filename" /><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext" /><xsl:text>#</xsl:text><xsl:value-of select="@name" />
+			</xsl:attribute>
+			<xsl:number count="chapter" format="1." /><xsl:number format="1 " />
+				<xsl:for-each select="question/p">
+				<xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
+				</xsl:for-each>
+				<xsl:value-of select="title" />
+			</a>
+			</li>
+		</xsl:for-each>
+		</ul>
+	</li>
+	</xsl:for-each>
 </ul>
 
 <!-- end TOC -->
@@ -125,13 +122,13 @@ $cvs_date = 'Date: <xsl:value-of select="../cvsid" />';
 <xsl:text disable-output-escaping="yes">$metatags = &quot;&lt;link rel=\&quot;contents\&quot; href=\&quot;</xsl:text><xsl:value-of select="../@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="../shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents\&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes"> Contents\&quot;&gt;\n\t</xsl:text>
 <xsl:for-each select="following-sibling::chapter">
 <xsl:if test="position()=1">
 <xsl:text disable-output-escaping="yes">&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="title"/>
-<xsl:text disable-output-escaping="yes">\&quot; /&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">\&quot;&gt;\n\t</xsl:text>
 </xsl:if>
 </xsl:for-each>
 <xsl:for-each select="preceding-sibling::chapter">
