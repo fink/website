@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.14 2004/07/29 06:31:25 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.15 2004/08/12 15:01:32 dmacks Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -1040,12 +1040,6 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
       <title>scanpackages - création de fichiers Packages</title>
       <p>
    Lance dpkg-scanpackages(8) avec les arborescences spécifiées.
-</p>
-    </section>
-    <section name="checksums" >
-      <title>checksums - sommes de contrôle</title>
-      <p>
-   Valide les sommes de contrôle MD5 de toutes les archives tar dans <code>/sw/src</code>,  quand cela est possible.
 </p>
     </section>
     <section name="cleanup" >

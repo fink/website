@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.10 2004/07/29 22:31:20 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.11 2004/08/12 15:01:33 dmacks Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -1189,12 +1189,6 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <title>scanpackages</title>
 <p>
 指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
-</p>
-</section>
-<section name="checksums" >
-<title>checksums</title>
-<p>
-可能な限り、 <code>/sw/src</code> 内にある全ての tarball の MD5 を検証します。
 </p>
 </section>
 <section name="cleanup" >

@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.2 2004/04/12 02:48:49 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.3 2004/08/12 15:01:32 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>Este documento es un trabajo en proceso.</em>
@@ -967,12 +967,6 @@ Re-ejecuta el procesos de configuración de Fink. Este comando te permitira camb
       <title>scanpackages</title>
       <p>
    Ejecuta dpkg-scanpackages(8) usando los árboles especificados.
-</p>
-    </section>
-    <section name="checksums">
-      <title>checksums</title>
-      <p>
-   Verifica la validez de los MD5 de todos los tarballs en el directorio <code>/sw/src</code>, siempre y cuando sea posible.
 </p>
     </section>
     <section name="cleanup">

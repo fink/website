@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.13 2004/07/28 19:44:24 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.14 2004/08/12 15:01:32 dmacks Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -1311,12 +1311,6 @@ others.
       <title>scanpackages</title>
       <p>
    Calls dpkg-scanpackages(8) with the specified trees.
-</p>
-    </section>
-    <section name="checksums">
-      <title>checksums</title>
-      <p>
-   Validates the MD5 digest of all tarballs in <code>/sw/src</code>, where possible.
 </p>
     </section>
     <section name="cleanup">
