@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.4 2002/05/30 21:53:44 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.5 2002/05/30 21:58:47 fingolfin Exp $</cvsid>
 
 <newsitem>
   <date>2002-05-29</date>
@@ -66,6 +66,7 @@
 
 <newsitem>
   <date>2002-01-08</date>
+  <headline>Binary distribution lost</headline>
   <body>
     <p>
       Due to a faulty script, the whole fink website, including our binary distro, has been wiped! This means you can't use the binary distro right now. I am working as quick as I can on uploading the new Fink 0.3.2 binary distro. In addition, the package database is not working for now. Please bear with us. 
@@ -98,6 +99,7 @@
 
 <newsitem>
   <date>2001-11-02</date>
+  <headline>Running X11 document updated</headline>
   <body>
     <p>
       The <link url="doc/x11/index.php">Running X11</link> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
@@ -109,44 +111,30 @@
   <date>2001-10-31</date>
   <body>
     <p>
-      <extlink url="http://www.macosxhints.com/">MacOSXHints</extlink> has posted an <extlink url="http://homepage.mac.com/rgriff/xdarwin.html">installation guide</extlink> for XFree86, Fink, Window Maker and The GIMP. 
+      <extlink url="http://www.macosxhints.com/">MacOSXHints</extlink> has
+      posted an <extlink url="http://homepage.mac.com/rgriff/xdarwin.html">
+      installation guide</extlink> for XFree86, Fink, Window Maker and The GIMP.
     </p>
   </body>
 </newsitem>
 
 <newsitem>
   <date>2001-10-23</date>
+  <headline>forked.net</headline>
   <body>
     <p>
-      In addition to ripping off Fink packages and breaking the GPL, the ports collection at <extlink url="http://macosx.forked.net/">forked.net</extlink> has just gone commercial. More details soon. 
+      In addition to ripping off Fink packages and breaking the GPL, the ports
+      collection at <extlink url="http://macosx.forked.net/">forked.net
+      </extlink> has just gone commercial. More details soon. 
     </p>
   </body>
 </newsitem>
 
 <newsitem>
   <date>2001-10-03</date>
+  <headline>Binary distribution complete</headline>
   <body>
-    <p>
-      The binary distribution update is now complete. The <link url="news/puma.php">10.1 compatibility report</link> has been updated to reflect the fixes in Fink 0.3.0. 
-    </p>
-  </body>
-</newsitem>
-
-<newsitem>
-  <date>2001-09-30</date>
-  <headline>Fink 0.3.0 is released</headline>
-  <body>
-    <p>
-      The source release, the binary installer and a binary upgrade kit for broken-by-10.1 installations are available in the new <link url="download/index.php">download section</link>. The bulk of the binary distribution will be updated gradually over the next few days, as usual. 
-    </p>
-  </body>
-</newsitem>
-
-<newsitem>
-  <date>2001-10-03</date>
-  <headline>FOOOO</headline>
-  <body>
-    <p>2001-10-03: The binary distribution update is now complete.
+    <p>The binary distribution update is now complete.
     The <link url="news/puma.php">10.1 compatibility report</link> has been
     updated to reflect the fixes in Fink 0.3.0.
     </p>
@@ -155,10 +143,9 @@
 
 <newsitem>
   <date>2001-09-30</date>
-  <headline>FOOOO</headline>
+  <headline>Fink 0.3.0 is released</headline>
   <body>
-    <p>2001-09-30: Fink 0.3.0 is released.
-    The source release, the binary installer and a binary upgrade kit for
+    <p>The source release, the binary installer and a binary upgrade kit for
     broken-by-10.1 installations are available in the new <link
     url="download/index.php">download section</link>.
     The bulk of the binary distribution will be updated gradually over the
@@ -235,7 +222,7 @@
 
 <newsitem>
   <date>2001-08-22</date>
-  <headline>Bew help page</headline>
+  <headline>New help page</headline>
   <body>
     <p>The new <link url="help/index.php">help page</link> lists various ways
     to get help using Fink. It also lists some ideas how you can give back to
@@ -354,6 +341,7 @@
 
 <newsitem>
   <date>2001-04-26</date>
+  <headline>FAQ online</headline>
   <body>
     <p>
       This site now sports a <link url="faq/index.php">FAQ section</link>. Not much content yet, but it's here to stay. 
