@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: mrvacbob $';
-$cvs_date = '$Date: 2003/01/19 01:20:28 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2003/02/17 13:56:56 $';
 
 include "header.inc";
 ?>
@@ -116,6 +116,7 @@ this list.</p>
 <li>Stefano Rodriguez</li> 
 <li>Andrew Rohl</li> 
 <li>David Ross</li> 
+<li>Michel Salim</li>
 <li>Michel Schinz</li> 
 <li>Chris Shabsin</li> 
 <li>Leigh Smith</li> 
