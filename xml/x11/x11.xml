@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.31 2003/05/24 03:33:15 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.32 2003/05/24 19:07:11 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -698,7 +698,7 @@ directory, XFree86 will use its default file,
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
-<codeblock>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</codeblock>
+<codeblock>cp /usr/X11R6/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
 <p>
 If you're using Fink, you should source <filename>init.sh</filename>
 right at the beginning to make sure the environment is set up correctly.
