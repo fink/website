@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/04/03 15:21:40 $';
+$cvs_date = '$Date: 2004/04/03 16:29:15 $';
 
 include "header.inc";
 ?>
@@ -41,19 +41,19 @@ then double-click the "Fink <? print $fink_version; ?> Installer.pkg" package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
-At the end of the installation, a Terminal.app window will be launched, 
-and the pathsetup.command script will automatically be run. You will be 
-asked for permission before your shell's configuration files are edited. 
-When the script has finished, close the window are you are set to go!
+At the end of the installation, the pathsetup utility will be launched.
+You will be asked for permission before your shell's configuration files
+are edited. When the utility has finished, you are set to go!
 </p></li>
 <li><p>
 If anything goes wrong during this process, you can try again by launching 
-pathsetup.command file which appears on the installer disk, or by 
+the pathsetup application which appears on the installer disk, or by
 running (from the command line in a Terminal.app window) 
-</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
-(This step should also be repeated by any other users on your system: each user must run pathsetup.command in his or her own account.)
+</p><pre>/sw/bin/pathsetup.sh <RETURN></pre><p>
+(This step should also be repeated by any other users on your system: 
+each user must run pathsetup in his or her own account.)
 </p><p>
-If pathsetup.command generates errors messages, consult the documentation, 
+If pathsetup generates errors messages, consult the documentation, 
 particularly 
 <a href="../doc/users-guide/install.php#setup">section
 2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
