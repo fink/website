@@ -1,13 +1,24 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/01 15:32:29 $';
+$cvs_date = '$Date: 2001/08/04 12:03:53 $';
 
 include "header.inc";
 ?>
 
 
 <h1>Download Fink</h1>
+
+<h2>Source Release</h2>
+
+<p>
+The "source release" contains the fink package manager plus package
+descriptions and patches.
+It will download the source code from the original distribution sites
+and build them on your local machine.
+This is the native release of Fink; other distribution forms are
+derived from it.
+</p>
 
 <p>
 Fink 0.2.4 was released on 1 August 2001.
@@ -33,15 +44,48 @@ and for printing).
 They are also available online in the <a
 href="doc/index.php">documentation section</a>.
 </p>
+<p>
+To be informed of new releases, subscribe to the <a
+href="lists/fink-announce.php">fink-announce mailinglist</a>.
+</p>
+
+
+<h2>Binary Release</h2>
+
+<p>
+The "binary release" of Fink saves you the burden of compiling the
+programs on your local machine.
+After installing a base system using the installer package, you can
+download pre-compiled binary packages from this site with the dselect
+and apt-get tools.
+</p>
+<p>
+<b>WARNING: This is highly experimental right now.</b>
+Only a very small number of packages are actually available as binary
+packages; the others can only be built from source as with the source
+release.
+The following is based on the 0.2.4 release, but updated packages are
+added as they become available.
+</p>
+<ul>
+<li><a href="bindist/install/fink-installer.dmg">Fink Binary
+Installer</a> - 6.3 MB, .dmg disk image</li>
+<li><a href="bindist/">Browse the Distribution Directory</a> - here
+you will find the binary packages and the corresponding source.</li>
+</ul>
+<p>
+Documentation is sparse at the moment.
+The installer image contains some hints (ReadMe.rtf), plus the
+documentation from the source release in HTML (in the Other Docs
+folder).
+</p>
+
+<h2>Old Stuff</h2>
 
 <p>
 Older releases are always available from the Fink <a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
 area</a> at SourceForge.
-</p>
-<p>
-To be informed of new releases, subscribe to the <a
-href="lists/fink-announce.php">fink-announce mailinglist</a>.
 </p>
 
 
