@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.6 2004/03/18 04:05:57 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.7 2004/03/21 07:45:29 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -1223,6 +1223,15 @@ Lire le <link url="http://fink.sourceforge.net/pr/forked.php" >communiqué offic
         part of their main Developer Tools installation.</p>
       </answer>
     </faqentry>
+    		<faqentry name="system-java">
+			<question>
+				<p>Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</p>
+			</question>
+			<answer>
+				<p>That's because it's a virtual package. This type of error occurs when Java gets updated by Software Update: the header files get removed, which causes the -dev package not to be generated.</p>
+				<p>You need to download the appropriate <filename>Java Developer Tools</filename> package from <link url="http://connect.apple.com">Apple</link>. In this specific case that's the <filename>Java 1.4.2 Developer Tools</filename>.</p>
+			</answer>
+		</faqentry>
   </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>

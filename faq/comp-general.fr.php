@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compiling (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/18 04:05:57';
+$cvs_date = 'Date: 2004/03/21 07:45:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installing, Using and Maintaining Fink">';
 
 include_once "header.inc";
@@ -228,6 +228,10 @@ include_once "header.inc";
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
         part of their main Developer Tools installation.</p></div>
     </a>
+    		<a name="system-java">
+			<div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>
+			<div class="answer"><p><b>A:</b> That's because it's a virtual package. This type of error occurs when Java gets updated by Software Update: the header files get removed, which causes the -dev package not to be generated.</p><p>You need to download the appropriate <code>Java Developer Tools</code> package from <a href="http://connect.apple.com">Apple</a>. In this specific case that's the <code>Java 1.4.2 Developer Tools</code>.</p></div>
+		</a>
   <p align="right">
 Next: <a href="comp-packages.php?phpLang=fr">7 Compile Problems - Specific Packages</a></p>
 
