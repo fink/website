@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.59 2003/05/06 01:56:26 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.60 2003/06/16 10:59:58 dmalloc Exp $</cvsid>
+
+
+<newsitem>
+        <date>2003-06-16</date>
+        <headline>Fink logo contest begins.</headline>
+               <body>
+               <p>Fink and 
+<extlink url="http://www.macwelt.de/">Macwelt</extlink> have managed to organise a logo contest.
+For the next six weeks everyone is invited to submit their logo creations. 
+Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
+The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
+ <extlink url="http://fink.sf.net/logo.php">here</extlink>. 
+                </p>
+<p>
+Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+</p>
+                </body>
+</newsitem>
+
+
 
 <newsitem>
 	<date>2003-05-05</date>
