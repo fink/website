@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/08/11 12:26:16';
+$cvs_date = 'Date: 2002/08/12 21:32:43';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -340,9 +340,50 @@ As you can see, the value to the left is exactly the value you need.
 <b>Introduced in fink 0.10.0.</b>
 This is just the same as the <tt><nobr>Source-MD5</nobr></tt> field, except that it
 is used to specify the MD5 checksum of the Nth tarball as specified by the
+corresponding <tt><nobr>Source<b>N</b></nobr></tt> field.
+</p>
+</td></tr><tr valign="top"><td>TarFilesRename</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This field only applies to source files that are using the tar format
+</p>
+<p>
+With this field you can rename files in the given source tarball during
+the extraction of the tarball. This is very useful to work around
+the fact that the HFS+ file system is not case sensitive, as files like
+<tt><nobr>install</nobr></tt> and <tt><nobr>INSTALL</nobr></tt> will
+collide on a standard Mac OS X system. With this field you can avoid
+these issues without having to repackage the tarball (as was done in
+the past in such cases).
+</p>
+<p>
+In this field you simply specify a list of files that are to be renamed. You
+can make use of wildcards. By default any given file will be renamed to its
+current name with <tt><nobr>_tmp</nobr></tt> appended. You can override this default
+by using the same syntax as in the <tt><nobr>Files</nobr></tt> and <tt><nobr>DocFiles</nobr></tt>
+fields, namely by writing the old filename followed by a : and then followed by
+the new filename.
+Example:
+</p>
+<pre>TarFilesRename: foo bar.* qux:quux
+Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
+<p>
+<b>Note:</b> This field is implemented by means of a special feature of
+BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
+(since there are tarballs which can only be expanded by GNU tar), but whenever
+a package uses TarFilesRename, Fink will use BSD tar by directly invoking
+<tt><nobr>/usr/bin/tar</nobr></tt>.
+</p>
+</td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
+<p>
+<b>Introduced in fink 0.10.0.</b>
+This is just the same as the <tt><nobr>TarFilesRename</nobr></tt> field, except that it
+is used for the Nth tarball as specified by the corresponding
 <tt><nobr>Source<b>N</b></nobr></tt> field.
 </p>
 </td></tr></table>
+
+
 <p><b>Patch Phase:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
