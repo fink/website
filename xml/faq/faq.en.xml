@@ -3,7 +3,7 @@
 <document lang="en" filename="index" >
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.37 2004/10/17 19:47:53 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.38 2004/10/24 15:27:59 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -374,7 +374,7 @@
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        &lt;packagename></code>.</p>
+        <em>packagename</em></code>.</p>
         <p>Packages often have dependencies, and packages in unstable often
         depend on other packages in unstable. For that reason, it is best to
         activate all of unstable.</p>
@@ -470,7 +470,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeb
       <answer>
         <p>If the message is</p>
         <codeblock>Can't exec &quot;cvs&quot;: No such file or directory at 
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN> line 3.
+/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</codeblock>
         <p>then you need to install the Developer Tools.</p>
         <p>If, on the other hand, the last line is</p>
@@ -672,14 +672,14 @@ fink selfupdate-cvs</codeblock>
 else if (substr($6, length($6), 1) == &quot;/&quot;)\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
-> /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
+&gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
         <p>e.g.</p>
         <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
 '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } \
 else if (substr($6, length($6), 1) == &quot;/&quot;) \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
-> /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>What this does is to extract the contents of the .deb file, remove
         everything but the filenames, and write these to the .list file.</p>
       </answer>
@@ -964,7 +964,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
       </question>
       <answer>
         <p>If you're seeing this:</p>
-        <codeblock>Unknown option: 1 Usage: head [-options] &lt;url>...</codeblock>
+        <codeblock>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</codeblock>
         <p>followed by a list of option descriptions, you have a broken
         <code>head</code> executable. This happens when you install the Perl
         libwww library on an HFS+ system volume. It tries to create a new
@@ -1345,7 +1345,7 @@ endif</codeblock>
         <p>Here's how to proceed:</p>
         <p/>
         <p>
-          <em>Note: 10.2.x users with up-to-date versions of Fink (>=
+          <em>Note: 10.2.x users with up-to-date versions of Fink (&gt;=
         0.16.2) and 10.3.x users should skip step 1 below (it won't work
         anyway).</em>
         </p>
@@ -1429,7 +1429,7 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </faqentry><-->    <faqentry name="cctools" >
       <question>
         <p>&quot;When I try to install KDE, I get the following message: 'Can't
-        resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
+        resolve dependency &quot;cctools (&gt;= 446-1)&quot;'</p>
       </question>
       <answer>
         <p>This somewhat cryptic message means you need to install the
@@ -1796,7 +1796,7 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
       <answer>
         <p>This is a known problem that occurs with recent versions of
         <filename>nedit</filename> and <filename>lesstif</filename> on all
-        platforms. The workaround is to open a new window with File-->New,
+        platforms. The workaround is to open a new window with File--&gt;New,
         then open the next file you want to work on.</p>
         <p>This is now fixed in <filename>nedit-5.3-6</filename>, which
         depends on <filename>openmotif3</filename> rather than
@@ -1965,7 +1965,7 @@ exec metacity &amp; exec gnome-session</codeblock>
         <ul>
           <li>
             <em>You are installing from binaries:</em>
-            <p>If you have a current version of <code>fink</code> (>=0.18.3-1), typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.  You may need to do this multiple times.</p>Running
+            <p>If you have a current version of <code>fink</code> (&gt;=0.18.3-1), typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.  You may need to do this multiple times.</p>Running
 <codeblock>fink list -i system-xfree86</codeblock>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are installed.<p>If reinstalling the X11User package doesn't work, then consult the <xref section="special-x11-debug" >special debug</xref> instructions, below.</p>
             <p>If you are running an earlier version of the <code>fink</code> package, then
           updating <code>fink</code> may solve your problem immediately, e.g.

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/17 19:47:53';
+$cvs_date = 'Date: 2004/10/24 15:27:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -107,7 +107,7 @@ include_once "header.en.inc";
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        &lt;packagename&gt;</code>.</p><p>Packages often have dependencies, and packages in unstable often
+        <b>packagename</b></code>.</p><p>Packages often have dependencies, and packages in unstable often
         depend on other packages in unstable. For that reason, it is best to
         activate all of unstable.</p><p>If you want Fink to use all of unstable, edit
         <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
