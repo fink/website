@@ -1,4 +1,35 @@
-<a name="2003-10-25 Look Ma, a logo for Fink"><span class="news-date">2003-10-25: </span><span class="news-headline">Look Ma, a logo for Fink</span></a><?php gray_line(); ?>
+<a name="2003-10-31 Happy Halloween and welcome new mirrors"><span class="news-date">2003-10-31: </span><span class="news-headline">Happy Halloween and welcome new mirrors</span></a><?php gray_line(); ?>
+		<p>
+		We wish all of you a happy Halloween.
+		</p>
+		<p>
+		Furthermore I would like to welcome our new mirrors to the Fink family.
+		From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
+		has been sponsored by the <a href="http://mac.dir.hr/">Jabucnjak</a> Apple user group. 
+		This is our first mirror in Europe, so I hope that more will be joining us 
+		soon.
+		</p>
+		<p>
+		Dave Schroeder from the <a href="http://mirror.services.wisc.edu/">University of 
+		Wisconsin</a> in Madison is sponsoring a 100Mbit dedicated Master server.
+		A. J. Wright and <a href="http://sunsite.utk.edu/">SunSITE@UTK</a> are helping out with 
+		another full mirror in the United states. 
+		</p>
+		<p>
+		This raises our full mirror count to four and the rsync mirror count to 
+		five. We are happy to have such a great community back us up, but I know 
+		that more mirrors will join over time. I will not stop nagging you until
+		Fink has its own mirror in every state of the USA. Yet, with such a 
+		brilliant community backing us up, I am not too worried about not
+		reaching my goal very soon.
+		</p>
+		<p>
+		Trick or treat! Our most wanted treat is more mirrors, so come forth 
+		Administrators and fill our bag. Information on how you can be a mirror
+		can be found on the official <a href="http://finkmirrors.net">
+		mirroring website</a>.
+		</p>
+		<a name="2003-10-25 Look Ma, a logo for Fink"><span class="news-date">2003-10-25: </span><span class="news-headline">Look Ma, a logo for Fink</span></a><?php gray_line(); ?>
 	<p>As you surely noticed, Fink has a logo. This is the result of our
 	Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
 	This new, official, logo has been displayed since the 24th of October and
@@ -52,14 +83,4 @@ system-xfree86-43; fink selfupdate; fink index</pre>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 </p>
-		<a name="2003-10-23 Say Hello to Mirror Numero Uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say Hello to Mirror Numero Uno</span></a><?php gray_line(); ?>
-	<p>You are too late. Rus Foster from <a href="http://www.jvds.com">JVDS</a>
-	beat you all to it. He is the first one to provide us with resources 
-	for a Fink rsync mirror.
-	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
-	</p>
-	<p>For those of you who are still waiting, join in. The more mirrors we have
-	the faster you can rsync your info files. As per usual, updated and current
-	information on the mirror structure can be found on <a href="http://finkmirrors.net"> Finkmirrors.net </a>
-	</p>
 		

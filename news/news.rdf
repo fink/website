@@ -4,9 +4,46 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 30 Oct 2003 12:46:16 EST</lastBuildDate>
+    <lastBuildDate>Fri, 31 Oct 2003 21:17:23 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Happy Halloween and welcome new mirrors</title>
+    <link>http://fink.sf.net/news/#2003-10-31%20Happy%20Halloween%20and%20welcome%20new%20mirrors</link>
+    <dc:date>2003-10-31</dc:date>
+    <description>
+		
+		We wish all of you a happy Halloween.
+		
+		
+		Furthermore I would like to welcome our new mirrors to the Fink family.
+		From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
+		has been sponsored by the Jabucnjak Apple user group. 
+		This is our first mirror in Europe, so I hope that more will be joining us 
+		soon.
+		
+		
+		Dave Schroeder from the University of 
+		Wisconsin in Madison is sponsoring a 100Mbit dedicated Master server.
+		A. J. Wright and SunSITE@UTK are helping out with 
+		another full mirror in the United states. 
+		
+		
+		This raises our full mirror count to four and the rsync mirror count to 
+		five. We are happy to have such a great community back us up, but I know 
+		that more mirrors will join over time. I will not stop nagging you until
+		Fink has its own mirror in every state of the USA. Yet, with such a 
+		brilliant community backing us up, I am not too worried about not
+		reaching my goal very soon.
+		
+		
+		Trick or treat! Our most wanted treat is more mirrors, so come forth 
+		Administrators and fill our bag. Information on how you can be a mirror
+		can be found on the official 
+		mirroring website.
+		
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Look Ma, a logo for Fink</title>
     <link>http://fink.sf.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink</link>
@@ -468,18 +505,5 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
 news.rdf This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
 
 </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>New Upgrade Matrix</title>
-    <link>http://fink.sf.net/news/#2002-12-22%20New%20Upgrade%20Matrix</link>
-    <dc:date>2002-12-22</dc:date>
-    <description>
-  A new Upgrade Matrix is
-  now available, for use in upgrading earlier versions of Fink to the
-  current version, under either OS X 10.1 or OS X 10.2.  Users upgrading
-  under 10.1 will be brought to Fink version 0.4.1a, while users
-  upgrading under 10.2 will be brought to Fink version 0.5.0a.
-  
-  </description>
   </item>
 </rdf:RDF>
