@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/08/12 01:26:11';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/21 20:53:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 

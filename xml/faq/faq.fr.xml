@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.33 2004/08/20 12:07:43 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.34 2004/08/21 21:16:59 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -873,10 +873,10 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>Un message indique qu'il est impossible de trouver stddef.h,  ou wchar.h, ou crt1.o</p>
+        <p>Un message indique qu'il est impossible de trouver <filename>stddef.h</filename>,  ou <filename>wchar.h</filename>, ou <filename>crt1.o</filename></p>
       </question>
       <answer>
-        <p>Ces headers, comme beaucoup d'autres, sont fourniq par le paquet DevSDK des Developer Tools. Vérifiez que <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p>
+        <p>Ces headers, comme beaucoup d'autres, sont fournis par le paquet DevSDK des Developer Tools. Vérifiez que <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies">
