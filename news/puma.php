@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/26 07:01:59 $';
+$cvs_date = '$Date: 2001/09/26 07:03:30 $';
 
 include "header.inc";
 ?>
@@ -60,6 +60,10 @@ href="../lists/fink-users.php">mailing list</a> or through the <a
 href="http://sourceforge.net/tracker/?atid=117203&group_id=17203">bug
 tracker</a> at SourceForge.
 Expect a new Fink release once the apt-get issue has been fixed.
+</p>
+<p>
+Oh, one more thing: Many thanks to Apple for providing the project
+with a pre-release copy of Mac OS X 10.1!
 </p>
 
 
