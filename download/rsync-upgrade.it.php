@@ -1,7 +1,7 @@
 <?
 $title = "Passare al metodo Rsync Upgrade";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:20:46 $';
+$cvs_date = '$Date: 2004/11/07 14:35:26 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 L'aggiornamento del gestore pacchetti attraverso rsync, è
 un'alternativa all'aggiornamento attraverso il metodo CVS.  Se avete problemi con CVS,
 infatti, 
-non vi sarà possibile aggiornarlo con il metodo CVS!
+non vi sartûpossibile aggiornarlo con il metodo CVS!
 </p><p>
 Se avete problemi di aggiornamento, dovreste come prima cosa ottenere i
 tarball per fink (versioen 0.14.0 o successiva) da
@@ -22,8 +22,8 @@ Usare <code> tar xfz </code> per decomprimere, quindi <code>cd</code>
 nella directory creata, eseguire il comando
 <code>./inject.pl</code>
 </p>
-<p>Così facendo dovreste aver installato l'ultima versione.  Dopo questo passaggio,
-eseguite il comando <code>fink selfupdate-rsync</code> che passerà automaticamente al nuovo metodo.
+<p>Cosz?facendo dovreste aver installato l'ultima versione.  Dopo questo passaggio,
+eseguite il comando <code>fink selfupdate-rsync</code> che passertûautomaticamente al nuovo metodo.
  Fatto questo, potrete aggiornare il tutto usando il semplice comando <code>fink selfupdate</code>
 </p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:20:45 $';
+$cvs_date = '$Date: 2004/11/07 14:35:26 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
@@ -18,12 +18,12 @@ Il progetto Fink vuole portare il mondo del software Unix
 <a href="http://www.opensource.apple.com/">Darwin</a> e
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
 Noi modifichiamo software Unix in modo che si compili e che funzioni su Mac OS X
-(questa procedura è chiamata "port")e lo rendiamo disponibile per aggiornamenti.
+(questa procedura x?chiamata "port")e lo rendiamo disponibile per aggiornamenti.
 Fink usa gli strumenti <a href="http://www.debian.org/">Debian</a> come dpkg
 e apt-get per avere una potente gestione dei pacchetti binari.
 You can choose whether you want to download precompiled binary
 packages or build everything from source.
-<a href="about.php">Più informazioni...</a>
+<a href="about.php">Pi?informazioni...</a>
 </p>
 
 
@@ -49,7 +49,7 @@ include "fink_version.inc";
 <p>
 Fink 0.6.3 (per OS X 10.2) e Fink <? print $fink_version ?> sono stati rilasciati il
 <? print $release_date ?>.  
-Questi rilasci comprendono codice e pacchetti binari così come installatori precompilati. 
+Questi rilasci comprendono codice e pacchetti binari cosz?come installatori precompilati. 
 </p>
 
 <h1>Risorse</h1>
@@ -61,7 +61,7 @@ Questa pagina comprende anche opzioni per aiutare il progetto e inviare un comme
 </p>
 
 <p>
-Il progetto Fink è ospitato da
+Il progetto Fink x?ospitato da
 <a href="http://sourceforge.net/">SourceForge</a>.
 Oltre che ad ospitare il sito e i downloads, SourceForge
 mette a disposizione le seguenti risorse per il progetto:

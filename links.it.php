@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:20:45 $';
+$cvs_date = '$Date: 2004/11/07 14:35:26 $';
 
 include "header.inc";
 ?>
@@ -33,7 +33,7 @@ anche informazioni riguardanti FSF e le licenze GNU</li>
 Initiative</a> - Informazioni generali riguardo Open Source
 (esp. licenze)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
-la più grande directory di software Open Source sul web</li>
+la pi?grande directory di software Open Source sul web</li>
 <li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
 un progetto Open Source di Apple</li>
 <li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
@@ -71,11 +71,11 @@ target="_blank">HEP on X</a> - Collezione di pacchetti RPM</li>
 <p>Siti con informazioni correlate</p>
 <ul>
 <li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-portale di informazioni e novità, contenente anche un archivio software</li>
+portale di informazioni e novittÔΩ™ contenente anche un archivio software</li>
 <li><a href="http://www.mrcla.com/XonX/" target="_blank">X on X</a> -
 usare XFree86 su Darwin e Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
-novità, articoli e archivio software</li>
+novittÔΩ™ articoli e archivio software</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 aiuti all'uso di GIMP, GTK e X su un Mac</li>
 </ul>

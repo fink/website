@@ -1,7 +1,7 @@
 <?
 $title = "Aggiornare il kit per OS X 10.1";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:20:46 $';
+$cvs_date = '$Date: 2004/11/07 14:35:26 $';
 
 include "header.inc";
 ?>
@@ -14,10 +14,10 @@ Da quando le vecchie versioni di apt non funzionano su Mac OS X 10.1, qui
 di seguito trovate una procedura per aggiornare un'installazione di Fink creata dal binary installer.
 </p>
 <p>
-Una procedura molto simile può essere usata per aggiornare installazioni molto vecchie di
+Una procedura molto simile pu|ûessere usata per aggiornare installazioni molto vecchie di
 Fink 0.2.x (incluso MacGIMP e la prima release di OpenOSX's GIMP
 CD).
-L'unica richiesta è che Fink sia installato in <tt>/sw</tt> e
+L'unica richiesta x?che Fink sia installato in <tt>/sw</tt> e
 non in un'altra cartella.
 Leggete <a href="#oldversion">di seguito</a>.
 </p>
@@ -25,7 +25,7 @@ Leggete <a href="#oldversion">di seguito</a>.
 <h2>Fink 0.3.0 e superiore</h2>
 
 <p>
-Partendo con la versione 0.3.0, Fink è pienamente compatibile con Mac OS X 10.1.
+Partendo con la versione 0.3.0, Fink x?pienamente compatibile con Mac OS X 10.1.
 Quindi non avrete nulla di speciale da fare.
 </p>
 
@@ -34,7 +34,7 @@ Quindi non avrete nulla di speciale da fare.
 <p>
 Questa procedura presume che abbiate installato Fink con il
 binary installer ufficiale.
-Il primo installere è basato su Fink 0.2.4.
+Il primo installere x?basato su Fink 0.2.4.
 La procedura ha tre passaggi principali:
 </p>
 <ol>
@@ -62,7 +62,7 @@ sudo apt-get update</pre>
 </li>
 
 <li><p>Aggiornare i base packages.
-È importante avere l'ultima versione del gestore pacchetti installata,
+Â?importante avere l'ultima versione del gestore pacchetti installata,
 quella che avete attualmente potrebbe avere bisogno di un aggiornamento.
 </p>
 <pre>sudo apt-get install base-files gettext dpkg fink</pre>
@@ -107,7 +107,7 @@ sudo apt-get update</pre>
 </li>
 
 <li><p>Aggiornare altri pacchetti base.
-È importante avere l'ultima versione del gestore pacchetti installata,
+Â?importante avere l'ultima versione del gestore pacchetti installata,
 quella che avete attualmente potrebbe contenere dei bug o avere bisogno di un aggiornamento.
 </p>
 <pre>sudo apt-get install base-files gettext dpkg</pre>
@@ -116,12 +116,12 @@ quella che avete attualmente potrebbe contenere dei bug o avere bisogno di un ag
 <li><p>Rendere X11 riordinato.
 Prima di procedere dovete riordinare le dipendenze di X11.
 Con i pacchetti MacGIMP e OpenOSX', avrete bisogno di un'installazione "manuale" di XFree86
-(dal punto di vista di Fink, così è), quindi dovreste installare il pacchetto
+(dal punto di vista di Fink, cosz?xH, quindi dovreste installare il pacchetto
 <code>system-xfree86</code>:
 </p>
 <pre>sudo apt-get install system-xfree86</pre>
 <p>
-Se il pacchetto XFree86 installato è molto vecchio, dovrete prima aggiornarlo,
+Se il pacchetto XFree86 installato x?molto vecchio, dovrete prima aggiornarlo,
 e poi rieseguire i comandi sopra descritti.
 </p>
 </li>
