@@ -1,11 +1,17 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.17 2004/10/20 11:00:50 dmacks Exp $
+# $Id: Makefile.i18n.common,v 1.18 2004/10/20 11:11:22 dmacks Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
 
 BASE_SOURCE := $(SOURCE)
 BASE_TARGET := $(TARGET)
+
+ifdef LANGUAGES_AVAILABLE
+ifndef LANGUAGES
+LANGUAGES = $(LANGUAGES_AVAILABLE)
+endif
+endif
 
 ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
@@ -75,7 +81,7 @@ force: clean all
 
 %.html: %.html.tmp $(PROCESS_HTML)
 #	$(PROCESS_HTML) <$< >$@
-	$(PROCESS_HTML) $< $(LANGUAGES) >$@
+	$(PROCESS_HTML) $< $(LANGUAGES_AVAILABLE) >$@
 
 
 # rendering to pure text (monolithic)

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 2004/07/17 17:28:54 sao_x Exp $
+# $Id: Makefile,v 1.3 2004/10/20 11:11:24 dmacks Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -10,7 +10,8 @@ TARGET = index.php essential.php finkandpanther.php finkandpanther2.php finkcomm
 WANT_HTML = 1
 DESTDIR = doc/saos-pages
 
-LANGUAGES = en
+LANGUAGES_AVAILABLE = en
+LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
 # eof

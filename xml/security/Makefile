@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 2004/07/08 15:51:37 babayoshihiko Exp $
+# $Id: Makefile,v 1.5 2004/10/20 11:11:25 dmacks Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -9,7 +9,8 @@ TARGET = index.php respo.php severity.php sources.php updating.php notification.
 WANT_HTML = 1
 DESTDIR = doc/security
 
-LANGUAGES = en fr zh ja
+LANGUAGES_AVAILABLE = en fr zh ja
+LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
 # eof

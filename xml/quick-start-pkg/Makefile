@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 2004/07/16 08:46:48 michga Exp $
+# $Id: Makefile,v 1.3 2004/10/20 11:11:24 dmacks Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -11,7 +11,8 @@ TARGET = index.php howtostart.php example.php
 WANT_HTML = 1
 DESTDIR = doc/quick-start-pkg
 
-LANGUAGES = en fr
+LANGUAGES_AVAILABLE = en fr
+LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
 # eof
