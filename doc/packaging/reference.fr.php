@@ -347,7 +347,7 @@ Liste de commandes à exécuter durant la phase de compilation. Voir plus bas la
 <pre>./configure %c
 make</pre>
 <p>
-Elles conviennent pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut sont les suivantes :
+Elles conviennent pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut (à partir de la version 0.13.4 de fink) sont les suivantes :
 </p>
 <pre>perl Makefile.PL PREFIX=%p \
  INSTALLPRIVLIB=%p/lib/perl5 \
@@ -355,21 +355,32 @@ Elles conviennent pour les paquets utilisant GNU autoconf. Pour ceux de type per
  INSTALLSITELIB=%p/lib/perl5 \
  INSTALLSITEARCH=%p/lib/perl5/darwin \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
-<p>Si le type est du style <code>perl $version</code> (où $version est, par exemple,  5.6.0), les commandes par défaut sont les suivantes :
+<p>Si le type est du style <code>perl $version</code> (où <code>$version</code> est, par exemple,  5.6.0), les commandes par défaut sont les suivantes :
 </p>
 <pre>perl$version Makefile.PL \
  PERL=perl$version PREFIX=%p \
  INSTALLPRIVLIB=%p/lib/perl5/$version \
- INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+ INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
  INSTALLSITELIB=%p/lib/perl5/$version \
- INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+ INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
+<p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
 <p>
 L'interprétation des raccourcis (voir la section précédente) a lieu avant que les commandes soient exécutées.
 </p>
@@ -391,22 +402,33 @@ Liste de commandes à exécuter durant la phase d'installation. Voir plus bas la
 </p>
 <pre>make install prefix=%i</pre>
 <p>
-Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut sont les suivantes :
+Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut (à partir de la version 0.13.4 de fink) sont les suivantes :
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
  INSTALLARCHLIB=%i/lib/perl5/darwin \
  INSTALLSITELIB=%i/lib/perl5 \
  INSTALLSITEARCH=%i/lib/perl5/darwin \
  INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</pre>
-<p>Si le type est du style <code>perl $version</code> (où $version est, par exemple,  5.6.0), les commandes par défaut sont les suivantes :
+ INSTALLMAN3DIR=%i/share/man/man3 \
+ INSTALLSITEMAN1DIR=%i/share/man/man1 \
+ INSTALLSITEMAN3DIR=%i/share/man/man3 \
+ INSTALLBIN=%i/bin \
+ INSTALLSITEBIN=%i/bin \
+ INSTALLSCRIPT=%i/bin</pre>
+<p>Si le type est du style <code>perl $version</code> (où <code>$version</code> est, par exemple,  5.6.0), les commandes par défaut sont les suivantes :
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
- INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+ INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
  INSTALLSITELIB=%i/lib/perl5/$version \
- INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+ INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
  INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</pre>
+ INSTALLMAN3DIR=%i/share/man/man3 \
+ INSTALLSITEMAN1DIR=%i/share/man/man1 \
+ INSTALLSITEMAN3DIR=%i/share/man/man3 \
+ INSTALLBIN=%i/bin \
+ INSTALLSITEBIN=%i/bin \
+ INSTALLSCRIPT=%i/bin</pre>
+<p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, et "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
 <p>
 Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .
 </p>
@@ -525,90 +547,90 @@ Notes spécifiques au portage du paquet sur Darwin. Les éléments du type : "co
 </td></tr></table>
 
 
-<h2><a name="splitoffs">5.3 SplitOffs</a></h2>
+<h2><a name="splitoffs">5.3 Paquets multiples</a></h2>
 <p>
-Beginning with fink 0.9.9, a single .info file can be used to build multiple packages.   The install phase begins as usual, with the execution of the  <code>InstallScript</code> and <code>DocFiles</code> commands. A <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, if present, then triggers the creation of an additional install directory.  Within the  <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, the new install directory is referred to as %i, while the original install directory of the parent  package is referred to as %I.
+À partir de la version 0.9.9 de fink, on peut utiliser un seul fichier .info pour construire plusieurs paquets. La phase d'installation commence, comme pour tout autre type de paquet, par l'exécution des scripts <code>InstallScript</code> et <code>DocFiles</code>. Si un champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> est présent, il y a création d'un répertoire d'installation supplémentaire. À l'intérieur des champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>, le nouveau répertoire d'installation est désigné par %i, tandis que le répertoire d'installation du paquet parent est désigné par %I.
 </p>
 <p>
-Each <code>SplitOff</code> and <code>SplitOff<b>N</b></code> field must contain a number of fields of its own.  In fact, it resembles a complete package description, but with certain fields missing.  Here is what belongs in the sub-description (by category):
+Chaque champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> doit contenir un certain nombre de champs qui lui sont propres. En fait, cela ressemble à une description de paquet ordinaire, mais certains champs sont omis. Voici les champs qui peuvent y figurer (classés par catégorie) :
 </p>
 <ul>
-<li>Initial Data: Only the <code>Package</code> needs to be specified, everything else is inherited from the parent package.  You may modify <code>Type</code> and <code>License</code> by declaring the field within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent expansion can be used, and it is often convenient to refer to the name %N of the parent package.</li>
-<li>Dependencies: All of these are allowed.</li>
-<li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant and will be ignored.</li>
-<li>Install Phase, Build Phase: Any of these fields are allowed (except that SplitOffs cannot themselves contain additional SplitOffs).</li>
-<li>Additional Data: These are inherited from the parent package but may be modified by declaring the field within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.</li>
+<li>Données initiales : seul le champ <code>Package</code> doit être spécifié, tout le reste est hérité du paquet parent. Vous pouvez modifier les champs <code>Type</code> et <code>License</code> en déclarant ces champs dans les champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>. On peut utiliser les raccourcis ; il est préférable de mentionner le nom du paquet parent sous la forme %N.</li>
+<li>Dépendances : tous les champs sont autorisés.</li>
+<li>Phases de décompression, d'application des rustines, de compilation : ces champs n'ont pas de signification dans ce contexte et seront ignorés s'ils sont présents.</li>
+<li>Phases d'installation et de construction : tous les champs sont autorisés à l'exception des champs SplitOff (un champ SplitOff ne peut contenir lui-même un autre champ SplitOff).</li>
+<li>Données supplémentaires : elles sont héritées du paquet parent, mais peuvent être modifiées en déclarant le champ dans les champs <code>SplitOff</code> ou <code>SplitOff<b>N</b></code>.</li>
 </ul>
 <p>
-During the install phase, the <code>InstallScript</code> and <code>DocFiles</code> of the parent package are executed first. Next comes processing of the <code>SplitOff</code> and <code>SplitOff<b>N</b></code> fields. For each such field in turn, the <code>Files</code> command causes the listed files and directories to be moved from the parent's installation directory %I to the current installation directory %i.  Then the <code>InstallScript</code> and <code>DocFiles</code> of the given <code>SplitOff</code> or <code>SplitOff<b>N</b></code> package are executed.  
+Lors de la phase d'installation, les champs <code>InstallScript</code> et <code>DocFiles</code> du paquet parent sont exécutés en premier. Puis vient l'exécution des champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>. Pour chacun de ces champs à tour de rôle, la commande <code>Files</code> déplace les fichiers et répertoires spécifiés, du répertoire d'installation %I du paquet parent dans le répertoire de l'installation en cours %i. Puis les scripts <code>InstallScript</code> et <code>DocFiles</code> des paquets <code>SplitOff</code> et <code>SplitOff<b>N</b></code> sont exécutés.
 </p>
 <p>
-At this time, the <code>SplitOff</code> is processed first (if present), followed by each <code>SplitOff<b>N</b></code> in numerical order by N. However, this may change in the future, so, for example, instead of:
+À l'heure actuelle, le champ <code>SplitOff</code>, s'il existe, est exécuté en premier, suivi des champs <code>SplitOff<b>N</b></code> par ordre numérique. Néanmoins, cela pourrait changer dans le futur. Il est donc conseillé de ne pas utiliser :
 </p>
 <pre>
 SplitOff: &lt;&lt;
-  Description: Some header files
+  Description: certains headers
   Files: include/foo.h include/bar.h
 &lt;&lt;
 SplitOff2: &lt;&lt;
-  Description: All other header files
+  Description: tous les autres headers
   Files: include/*
 &lt;&lt;
 </pre>
 <p>
-which only works correctly if <code>SplitOff</code> is processed before <code>SplitOff2</code> it's safer to list explicitly the files for each (or use more specific filename globs).
+qui ne fonctionne correctement que si <code>SplitOff</code> est exécuté avant <code>SplitOff2</code>. Il vaut mieux donner la liste explicite des fichiers pour chaque champ (ou utiliser des noms de fichier plus explicites).
 </p>
 <p>
-During the build phase, the pre/post install/remove scripts for each of the packages is constructed by using the build phase commands which were specified for that package.
+Lors de la phase de construction du paquet, les scripts pre/post install/remove de chacun des paquets sont construits à partir des commandes spécifiques de la phase de construction desdits paquets.
 </p>
 <p>
-Each package being built is required to document the licensing arrangement in %i/share/doc/%n (and of course %n takes a different value for each package).  Note that <code>DocFiles</code> copies files rather than moving them, so it is possible to install identical copies of the documentation into each  of the packages by using <code>DocFiles</code> several times.
+Chaque paquet à construire doit placer les fichiers de licence dans %i/share/doc/%n (avec %n ayant une valeur différente pour chaque paquet). Notez que <code>DocFiles</code> copie les fichiers au lieu de les déplacer ; il est donc possible d'installer une même copie de la documentation dans chacun des paquets en utilisant <code>DocFiles</code> plusieurs fois.
 </p>
 
 
 <h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>
-The PatchScript, CompileScript and InstallScript fields allow you to specify shell commands to be executed. The build directory (<code>%b</code>) is the current directory when scripts are executed. You should always use relative pathnames or percent-expansions for files and directories in the fink hierarchy, not complete absolute pathnames. Two forms are supported.
+Les champs PatchScript, CompileScript et InstallScript vous permettent d'indiquer des commandes shell à exécuter. Le répertoire de construction (<code>%b</code>) est le répertoire en cours lors de l'exécution des scripts. Vous devez toujours utiliser des chemins relatifs ou des raccourcis pour les fichiers et répertoires de l'arborescence fink, et jamais des chemins absolus. Deux formats différents sont possibles pour ces champs.
 </p>
 <p>
-This field can be a simple list of commands. This is sort of like a shell script. However, the commands are executed via system(), one line at a time, so setting variables or changing the directory only affects commands on that same line. Starting in a CVS version of fink after 0.18.2, you can wrap long lines similar to normal shell scripts: a backslash (<code>\</code>) at the end of a line indicates that the next line is a continuation.
+Le champ peut être constitué d'une simple liste de commandes, un peu comme un script shell. Néanmoins, les commandes sont exécutées ligne après ligne via system(). Il en résulte que l'assignation de variables ou les changements de répertoire n'ont d'effet que pour les commandes résidant sur une même ligne. À partir d'une version CVS de fink postérieure à 0.18.2, vous pouvez ajuster la longueur des lignes de la même manière que dans les scripts shell : une barre oblique inversée (<code>\</code>) à la fin de la ligne indique que la ligne suivante est la suite de la ligne précédente.
 </p>
 <p>
-Alternately, you can embed a complete script here, using the interpreter of your choice. As with any Unix script, the first line must begin with <code>#!</code> followed by the full pathname of to the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>, <code>#!/bin/bash -ev</code>, etc.). In this situation, the whole *Script field is dumped into a temporary file that is then executed.
+Vous pouvez aussi insérer un script complet, en utilisant l'interpréteur que vous voulez. Comme avec tout autre script Unix, la première ligne doit commencer par <code>#!</code> suivi du chemin complet de l'interpréteur et des options désirées (exemple : <code>#!/bin/csh</code>, <code>#!/bin/bash -ev</code>, etc...). Dans ce cas, la totalité du champ *Script est déversé dans un fichier temporaire, qui est alors exécuté.
 </p>
 
 
-<h2><a name="patches">5.5 Patches</a></h2>
+<h2><a name="patches">5.5 Rustines</a></h2>
 
 <p>
-If your package needs a patch to compile on Darwin (or to work with fink), name the patch with the same name as the package description, using the extension ".patch" instead of ".info" and put it in the same directory as the .info file. If you use the full package in the filename specify either one of these (they are equivalent):
+Si votre paquet nécessite une rustine pour compiler sous Darwin (ou pour fonctionner avec fink), donnez à la rustine le même nom que celui indiqué dans la description du paquet, en utilisant l'extension ".patch" au lieu de ".info", et placez-la dans le même répertoire que le fichier .info. Si vous utilisez le nom complet du paquet dans le nom du fichier, indiquez-le dans le champ d'une des façons suivantes (elles sont équivalentes) :
 </p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
 <p>
-If you use the newer simple package filename convention, use %n insead of %f. These two fields are not mutually-exclusive - you can use both, and they will both be executed. In that case the PatchScript is executed last.
+Si vous utilisez les nouvelles conventions de nommage d'un paquet unique, utilisez %n au lieu de %f. Ces deux champs ne sont pas exclusifs l'un de l'autre ; vous pouvez utiliser les deux et ils seront tous deux exécutés. Dans ce cas,  le script PatchScript sera exécuté en dernier.
 </p>
 <p>
-Because you may need to have the users chosen prefix in the patch file it is recommended that you have a variable such as <code>@PREFIX@</code>  instead of <code>/sw</code> in the patch and then use:
+Comme il se peut que vous ayez besoin du préfixe choisi par l'utilisateur dans le fichier rustine, il est conseillé d'utiliser une variable telle <code>@PREFIX@</code> au lieu de <code>/sw</code> dans la rustine et d'utiliser ensuite :
 </p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
-<p>Patches should be in unidiff format and are normally generated by using:</p>
-<pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
+<p>Les rustines doivent être en format unidiff et sont, en général, créées en utilisant :</p>
+<pre>diff -urN &lt;répertoiredusourceoriginel&gt; &lt;répertoiredusourcemodifié&gt;</pre>
 <p>
-If you have used emacs to edit files, you can add <code>-x'*~'</code> to the diff command above in order to exclude automatically-generated backup files.</p>
+Si vous utilisez emacs pour modifier les fichiers, vous devez ajouter <code>-x'*~'</code> à la commande diff ci-dessus, pour exclure les fichiers de sauvegarde générés automatiquement.</p>
 <p>
-It must also be noted that extremely large patches should not be put in cvs. They should be put on a web/ftp server and specified using the <code>SourceN:</code> field. If you don't have a website, fink project admins can make the file available from fink's own website. If your patch is larger than about 30Kb, you should consider making it a separate download.
+Il faut aussi noter que les très grosses rustines ne doivent pas être mises dans cvs. Elles doivent être placées sur un serveur web/ftp et référencées en utilisant le champ <code>SourceN:</code>. Si vous n'avez pas de site web, les administrateurs du projet fink peuvent mettre le fichier à disposition à partir du site web de fink. Si votre rustine fait plus de 30Kb, vous devez la traiter comme un téléchargement distinct.
 </p>
 
 
-<h2><a name="profile.d">5.6 Profile.d scripts</a></h2>
+<h2><a name="profile.d">5.6 Scripts profile.d</a></h2>
 
 <p>
-If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts. These script fragments are sourced by the <code>/sw/bin/init.[c]sh</code> scripts. Normally, all fink users will load these scripts in their shell startup files (<code>.cshrc</code> and comparable files). Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <code>/sw/etc/profile.d/%n.[c]sh</code> (where %n as usual stands for the package name). Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+Si votre paquet nécessite une initialisation à l'exécution (par exemple, pour définir des variables d'environnement), vous pouvez utiliser des scripts profile.d. Ces scripts sont sourcés par les scripts <code>/sw/bin/init.[c]sh</code>. Normalement, tout utilisateur de fink charge ces scripts dans ses fichiers de démarrage de shell (<code>.cshrc</code> et équivalents). Votre paquet doit fournir deux variantes de scripts : l'une pour les shells compatibles avec sh (sh, zsh, bash, ksh, ...), l'autre pour les shells compatibles avec csh (csh, tcsh). Elles doivent être installées sous la forme <code>/sw/etc/profile.d/%n.[c]sh</code> (où %n représente le nom du paquet). Il faut aussi positionner leurs bits de lecture et d'exécution (c'est-à-dire les installer avec -m 755), autrement elles ne seront pas chargées correctement.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.
 </p>
 
 

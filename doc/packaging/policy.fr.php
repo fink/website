@@ -313,14 +313,11 @@ La directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire do
 (Cette directive est disponible à partir de la version 0.13.0 de fink.)
 </p><p>
 Sous la réglementation de mai 2003, il était permis de créer un paquet <code>-pm</code>, qui est essentiellement un paquet "lot", qui charge la variante <code>-pm560</code> ou une autre variante existante.
-Cette stratégie est déconseillée sous la réglementation d'avril 2004, et sera complètement interdite après une période de transition. (La seule exception sera la paquet <code>storable-pm</code> qui doit se présenter sous cette forme pour le bootstrap).
+Cette stratégie est déconseillée sous la réglementation d'avril 2004, et sera complètement interdite après une période de transition. (La seule exception sera le paquet <code>storable-pm</code> qui doit se présenter sous cette forme pour le bootstrap).
 </p>
-<p>À partir de la version 0.20.1 de fink, le paquet virtuel system-perl "fournit" automatiquement certains modules perl quand la version de Peerl présente sur le système est supérieure ou égale à 5.8.0. Dans le cas de system-perl-5.8.1-1, ces modules sont les suivants : 
-<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm, 
-file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm, 
-i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm, 
-mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm, 
-time-hires-pm581.</b>
+<p>À partir de la version 0.20.2 de fink, le paquet virtuel system-perl "fournit" automatiquement certains modules perl quand la version de Peerl présente sur le système est supérieure ou égale à 5.8.0. Dans le cas de system-perl-5.8.1-1, ces modules sont les suivants : 
+<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, test-simple-pm581, time-hires-pm581.</b>
+(Cette liste était légèrement différente dans la version 0.20.1 de fink ; les mainteneurs de paquet sont invités à vérifier que c'est bien sur la nouvelle liste qu'ils se basent). 
 </p>
 <p>
 Effective à partir de la version 0.13.0 de fink, la commande <code>fink validate</code>, quand elle est appliquée à un fichier <code>.deb</code>, teste si le paquet fink est un module XS qui a été installé dans un répertoire dont le nom ne comporte pas le numéro de version, et, génère, dans ce cas, une alerte.
