@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
-<news filename="index" lang="es" fsroot="../..">
-<cvsid>$Id: news.es.xml,v 1.6 2004/10/25 06:56:14 michga Exp $</cvsid>
+<news lang="es" fsroot="../..">
+<cvsid>$Id: news.es.xml,v 1.7 2004/11/10 00:01:51 dmacks Exp $</cvsid>
  <newsitem>
     <date>2004-10-15</date>
     <headline>Resolución de problemas con gcc.</headline>

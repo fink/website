@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
-<news filename="index" lang="fr" fsroot="../..">
-<cvsid>$Id: news.fr.xml,v 1.12 2004/10/16 10:17:47 michga Exp $</cvsid>
+<news lang="fr" fsroot="../..">
+<cvsid>$Id: news.fr.xml,v 1.13 2004/11/10 00:01:51 dmacks Exp $</cvsid>
 
 <newsitem>
 <date>15/10/2004</date>
@@ -64,7 +64,6 @@ Pour avoir une vue d'ensemble des différents types de miroirs que Fink propose,
 	</p>
 	</body>
 </newsitem>
-<newsitem>
 
 <newsitem>
 	<date>06/04/2004</date>
