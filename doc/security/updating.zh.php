@@ -1,7 +1,7 @@
 <?
-$title = "Security Policy - secup";
+$title = "Security Policy - Updates";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/07/06 17:15:37';
+$cvs_date = 'Date: 2004/07/13 21:24:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="next" href="notification.php?phpLang=zh" title="发送通知"><link rel="prev" href="sources.php?phpLang=zh" title="安全漏洞信息来源">';
 
 

@@ -3,13 +3,13 @@
 <document filename="index" lang="zh">
     <title>Fink 软件包的通用安全政策</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.zh.xml,v 1.4 2004/07/06 17:15:37 jeff_yecn Exp $</cvsid>
+    <cvsid>$Id: sec-policy.zh.xml,v 1.5 2004/07/13 21:24:49 jeff_yecn Exp $</cvsid>
     <preface>
         <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。每个 Fink 软件包的维护者都应该遵循这个规则。</p>
     </preface>
     <chapter filename="respo">
         <title>责任</title>
-        <shorttitle>Respo</shorttitle>
+        <shorttitle>Responsibility</shorttitle>
         <section name="who">
             <title>由谁负责？</title>
             <p>每个 Fink 软件包都有一个维护人。可以在命令行输入 <code>fink info packagename</code> 命令来查询到这个维护人。这会返回一系列信息，其中一段类似：
@@ -33,7 +33,7 @@
     </chapter>
     <chapter filename="severity">
         <title>响应时间和立即行动。</title>
-        <shorttitle>responses</shorttitle>
+        <shorttitle>Responses</shorttitle>
         <preface>
             <p>响应时间和才于的行动主要取决于由于 Fink 中包含的这个软件包安全性漏洞可能导致的损失的严重程度。在任何情况下，如果 <em>Fink 核心团队</em>必须立刻保护 Fink 用户社区，它将会采取立即的行动。</p>
         </preface>
@@ -87,7 +87,7 @@
     </chapter>
     <chapter filename="sources">
         <title>安全漏洞信息来源</title>
-        <shorttitle>isource</shorttitle>
+        <shorttitle>Source</shorttitle>
         <section name="sources">
             <title>可接受的漏洞信息来源</title>
             <p>作为安全漏洞的提交者，你有责任确定软件的脆弱性的确存在于 Mac OS X 中。作为通知方的责任，他应该使下面的组织之一确认可疑的问题的确存在。</p>
@@ -208,7 +208,7 @@
     </chapter>
     <chapter filename="updating">
         <title>安全性更新流程</title>
-        <shorttitle>secup</shorttitle>
+        <shorttitle>Updates</shorttitle>
         <section name="procedure">
             <title>添加安全性有关更新。</title>
             <p>安全性更新只能在软件包的原作者检验并发现是安全性问题以后才可实施。在更新之前，<em>必须</em> 附和下述条件之一或以上：</p>
@@ -227,7 +227,7 @@
     </chapter>
     <chapter filename="notification">
         <title>发送通知</title>
-        <shorttitle>notify</shorttitle>
+        <shorttitle>Notification</shorttitle>
         <preface>
             <p>有些用户不会很经常地更新他们的软件。为了确保那些从源代码安装软件包的用户可以尽快更新发生问题的软件包，维护者可以向 Fink 通知邮件列表发送邮件要求发送通知。</p>
         </preface>
@@ -274,7 +274,7 @@
                         Mac OS X version: 10.3, 10.2 
                         Fix: upstream
                         Updated by: forced update (dmalloc@users.sourceforge.net)
-                        Description: Multiple vulnerabilities in CVS found my ematters
+                        Description: Multiple vulnerabilities in CVS found my Ematters
                         Security. References: BID 
                         Ref-URL:    http://www.securityfocus.com/bid/10499 
                         References: CVE 

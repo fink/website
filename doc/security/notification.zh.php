@@ -1,7 +1,7 @@
 <?
-$title = "Security Policy - notify";
+$title = "Security Policy - Notification";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/07/06 17:15:37';
+$cvs_date = 'Date: 2004/07/13 21:24:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="prev" href="updating.php?phpLang=zh" title="安全性更新流程">';
 
 
@@ -56,7 +56,7 @@ include_once "header.zh.inc";
                         Mac OS X version: 10.3, 10.2 
                         Fix: upstream
                         Updated by: forced update (dmalloc@users.sourceforge.net)
-                        Description: Multiple vulnerabilities in CVS found my ematters
+                        Description: Multiple vulnerabilities in CVS found my Ematters
                         Security. References: BID 
                         Ref-URL:    http://www.securityfocus.com/bid/10499 
                         References: CVE 
