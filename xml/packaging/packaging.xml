@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.54 2003/12/09 23:04:49 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.55 2003/12/11 03:10:17 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -321,6 +321,16 @@ specified with ConfigureParams
 the <em>m</em>achine architecture string.  This is the same as 
 <code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
 and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
+</p>
+</itemd></item>
+
+<item><itemt>%%</itemt>
+<itemd>
+<p>
+the percent character (one that will not be expanded according
+according to whatever follows it).  Expansion occurs strictly
+left-to-right, so %%n is not anything related to the package name, but
+rather is the string %n.  (Introduced in fink-0.18.0)
 </p>
 </itemd></item>
 </itemtable>
