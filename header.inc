@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.88 2005/01/16 16:02:51 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.89 2005/01/16 17:28:44 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -46,6 +46,8 @@ if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_LC_ALL, 'en_US');
+define (FINK_SF_ENCODING, 'ISO-8859-1');
+define (FINK_DATE_FORMAT, '%d %B %Y');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'Home');
@@ -190,8 +192,9 @@ function convert_date_to_locale ($initialstringdate) {
 	$date_exploded = @explode(' ', $initialstringdate, 3);
 	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 	$search_month = array_search($date_exploded[1], $array_month)+1;
-	$date_converted=gmstrftime('%d %B %Y', mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
+	$date_converted=gmstrftime(FINK_DATE_FORMAT, mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
 	$date_encoding = mb_detect_encoding($date_converted);
+	if ($date_encoding == '') $date_encoding = FINK_SF_ENCODING;
 	$date_converted = mb_convert_encoding($date_converted, "UTF-8", $date_encoding);
 	return $date_converted;
 }

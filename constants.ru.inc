@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ru.inc,v 1.2 2005/01/16 09:31:18 horsager Exp $ */
+/* $Id: constants.ru.inc,v 1.3 2005/01/16 17:28:44 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -17,6 +17,7 @@
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_LC_ALL, 'ru_RU');
+define (FINK_SF_ENCODING, 'ISO-8859-5');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'Главная');

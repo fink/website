@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.6 2004/11/05 05:28:39 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.7 2005/01/16 17:28:44 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -14,6 +14,11 @@
 // | usage:    1. read the comments                                           |
 // |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
+
+/* The Sections.  Used in Menu Navigation Bar */
+define (FINK_LC_ALL, 'ja_JP');
+define (FINK_SF_ENCODING, 'EUC');
+define (FINK_DATE_FORMAT, '%Y年%B%e日');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'ホーム');
