@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.28 2003/11/01 19:10:06 rangerrick Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.29 2003/11/13 15:54:41 rangerrick Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -274,7 +274,7 @@ manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
 running the command:
 </p>
-<codeblock>echo $0</codeblock>
+<codeblock>echo $SHELL</codeblock>
 <p>
  If it says "csh" or "tcsh" in it, you are using the C shell.  If it is
  bash, zsh, sh, or something similar, you are likely running a variant
