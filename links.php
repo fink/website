@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/01 14:17:42 $';
+$cvs_date = '$Date: 2001/10/07 18:44:26 $';
 
 include "header.inc";
 ?>
@@ -12,14 +12,20 @@ include "header.inc";
 <p>Here's the obvious link collection... All links will open in a new
 browser window.</p>
 
-<p>The Obvious</p>
+<p>Open Source Software</p>
 <ul>
-<li><a href="http://www.apple.com/macosx/" target="_blank">Mac OS X</a></li>
-<li><a href="http://www.opensource.apple.com/" target="_blank">Darwin</a></li>
-<li><a href="http://www.gnu.org/" target="_blank">GNU Software</a></li>
+<li><a href="http://www.gnu.org/" target="_blank">GNU Software</a> -
+also has information about the FSF and the GNU licenses</li>
+<li><a href="http://www.opensource.org/" target="_blank">Open Source
+Initiative</a> - general information about Open Source
+(esp. licenses)</li>
+<li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
+the biggest directory of Open Source software on the web</li>
+<li><a href="http://www.opensource.apple.com/" target="_blank">Darwin</a>
+and Apple's other Open Source projects</li>
 </ul>
 
-<p>Related Projects</p>
+<p>Similar Projects</p>
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin
 Distribution</a></li>
