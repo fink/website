@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/10 17:26:27';
+$cvs_date = 'Date: 2001/08/26 21:15:15';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -200,7 +200,7 @@ file:
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
 through the standard C library, the program will use the default
-messages, usually in English.
+English messages, date formats, and so on.
 There are several ways to deal with this:
 </p>
 <ul>
@@ -224,6 +224,9 @@ Use the <tt><nobr>libxpg4</nobr></tt> Fink package (currently only in CVS).
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).
+You may have to set the LANG environment variable to a fully qualified
+value, e.g. <tt><nobr>de_DE.ISO_8859-1</nobr></tt> instead of <tt><nobr>de</nobr></tt>
+or <tt><nobr>de_DE</nobr></tt>.
 </p></li>
 <li><p>
 Ask Apple to include proper locale support in a future version of Mac
