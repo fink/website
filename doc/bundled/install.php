@@ -1,7 +1,7 @@
 <?
 $title = "Installation";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/22 15:35:13';
+$cvs_date = 'Date: 2004/03/17 00:34:29';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
@@ -48,6 +48,6 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.17 2003/06/22 15:35:13 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.19 2004/03/17 00:34:29 dmrrsn Exp $</i></p>
 
 <? include_once "footer.inc"; ?>

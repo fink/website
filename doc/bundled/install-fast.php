@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/22 15:35:13';
+$cvs_date = 'Date: 2004/03/17 00:34:29';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -82,7 +82,7 @@ home directory. Enjoy.
 
 [frodo:~/fink-0.6.2-full] testuser% <b>cd</b>
 [frodo:~] testuser% <b>rm -r fink-0.6.2-full</b>
-[frodo:~] testuser% <b>open /sw/bin/pathsetup.command</b></pre>
+[frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths
 (and other things) for use with Fink.  In most cases, it will run
