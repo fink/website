@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/01/11 00:04:44';
+$cvs_date = 'Date: 2002/01/11 11:23:42';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -70,7 +70,7 @@ to install it).  Thus in order to get rid of Fink, enter this command:
 <pre>sudo rm -rf /sw</pre>
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
-<pre>sudo rm -rf /usr/X11R6 /etc/X11 /Application/XDarwin.app</pre>
+<pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre>
 </p></div></a>
 
 <a name="kde"><div class="question"><p><b>Q3.6: Why are there no packages for
