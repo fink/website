@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.24 2001/11/04 15:45:26 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.25 2002/01/10 23:53:45 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -250,9 +250,9 @@ If you were not asked for proxies on first time installation, you can
 run <code>fink configure</code> to set it up.
 You can also run that command at any time to reconfigure the
 <code>fink</code> command.
-These settings do not apply to <code>apt-get</code> and
-<code>dselect</code>, though.
-Investigations continue...
+If you followed the instructions in the installation guide, and use
+/sw/bin/init.csh (or /sw/bin/init.sh), then <code>apt-get</code> and
+<code>dselect</code> also will use these proxy settings.
 </p>
 </answer></faqentry>
 
@@ -279,7 +279,18 @@ hidden traps somewhere.
 </p>
 </answer></faqentry>
 
-
+<faqentry name="removing"><question><p>How can I remove all
+of Fink?</p></question>
+<answer>
+<p>
+Almost all files installed by Fink are in /sw (or wherever you chose
+to install it).  Thus in order to get rid of Fink, enter this command:
+<codeblock>sudo rm -rf /sw</codeblock>
+The only exception to this rule is XFree86. If you also need to remove
+XFree86, additionally enter this:
+<codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Application/XDarwin.app</codeblock>
+</p>
+</answer></faqentry>
 
 <faqentry name="kde"><question><p>Why are there no packages for
 KDE?</p></question>
