@@ -471,13 +471,16 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			
 			<p>
 				2003 年 5 月以来， Fink には Perl モジュールに対する新しいポリシーがあります．
+				これは 2004 年 4 月に見直しされました．
 			</p>
 			<p>
 				伝統的に，perl モジュールの Fink パッケージには <code>-pm</code> が後置され，
 				ディレクティブ <code>Type: perl</code> を使ってビルドされて来ました．
 				このディレクティブは Perl モジュールのファイルを
 				<code>/sw/lib/perl5</code> 及び/または <code>/sw/lib/perl5/darwin</code> に格納していました．
-				新ポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない Perl モジュールのみを格納します．
+				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 
+				(また，このバージョン非依存性を欠いた Perl モジュールに依存しない)
+				Perl モジュールのみを格納します．
 			</p>
 			<p>
 				バージョンに依存する Perl モジュールはいわゆる XS モジュールであり，
@@ -489,18 +492,32 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				を使ってビルドされなければいけません．
 				またモジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
 				(<code>/sw/lib/perl5/5.6.0</code> や <code>/sw/lib/perl5/5.6.0/darwin</code> など) に格納しなければいけません．
-				導入が進んでいる新しい命名規約は，バージョン 5.6.0 に依存する Perl モジュールに <code>-pm560</code> を後置するというものです．
-				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，間もなく perl 5.6.1 と perl 5.8.0 でもそうなります．
+				命名規約により，バージョン 5.6.0 に依存する Perl モジュールに <code>-pm560</code> を後置するというものです．
+				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
+				perl 5.6.1 (10.2 ツリー) と perl 5.8.0， perl 5.8.1， perl 5.8.4 (間もなく) でもそうなります．
 			</p>
 			<p>
-				新しいディレクティブ <code>Type: perl 5.6.0</code> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
+				ディレクティブ <code>Type: perl 5.6.0</code> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
 				できたファイルを適切なサブディレクトリに格納します．
 				(このディレクティブは Fink 0.13.0 で導入されました．)
 			</p>
 			<p>
 				<code>-pm</code> の付くパッケージも作成できます．
-				これは本質的には「バンドル」パッケージで， <code>-pm560</code> などの付く同等なパッケージなどをロードします．
-				アップグレードを簡単にするため， XS モジュールのための既存のFinkパッケージに対してはこの方式が推奨されます．
+				これは本質的には「バンドル」パッケージで， <code>-pm560</code> 
+				などの付く同等なパッケージなどをロードします．
+				2004 年 4 月より，この方式は順次廃止されていきます
+				(bootstrap に必要な <code>storable-pm</code> は例外です)．
+			</p>
+			<p>
+				fink 0.20.1 の時点で， system-perl バーチャルパッケージは，
+				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
+				system-perl-5.8.1-1 の場合，
+				<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm,
+			 file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm,
+			 i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm,
+			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm,
+			 time-hires-pm581</b>
+				です．
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
