@@ -7,6 +7,8 @@
 <!-- Root elements -->
 <!ELEMENT article ( title, shorttitle, cvsid, preface?, section+ ) >
 <!ATTLIST article filename ID #REQUIRED >
+<!ATTLIST article lang CDATA "en" >
+<!ATTLIST article fsroot CDATA "../" >
 
 <!ELEMENT document ( title, shorttitle, cvsid, preface?, chapter+ ) >
 <!ATTLIST document filename ID #REQUIRED >

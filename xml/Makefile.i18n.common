@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.7 2004/02/22 10:55:43 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.8 2004/02/26 01:48:07 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -11,7 +11,7 @@ ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
 SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.xml,.xml,$(SOURCE)))
 TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
-TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
+#TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
 ifndef STYLESHEET_WEBSITE
@@ -67,6 +67,7 @@ install: $(INSTALL_FILES)
 ifdef DESTDIR
 	echo "Installing PHP files" \
 	$(foreach  PHPFILE, $(INSTALL_FILES), && cp $(PHPFILE) $(basedir)/web/$(DESTDIR)/)
+	-cp *.inc $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
