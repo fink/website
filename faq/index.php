@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/25 22:08:01';
+$cvs_date = 'Date: 2001/10/01 23:30:42';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -80,8 +80,12 @@ like "locale not supported by C library". Is that bad?</a></li>
 XMMS</a></li>
 <li><a href="packages.php#gnome-terminal">Why won't gnome-terminal
 start up?</a></li>
+<li><a href="packages.php#xfree-keymapping">I just upgraded to Mac
+OS X 10.1 and now XFree86 always quits immediately. In the messages it
+says "assert failed on line 454 of darwinKeyboard.c!". What's
+wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.15 2001/09/25 22:08:01 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.16 2001/10/01 23:30:42 chrisp Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/25 22:08:01';
+$cvs_date = 'Date: 2001/10/01 23:30:42';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage.php" title="Usage Questions">';
 
@@ -120,6 +120,21 @@ produce an error message when gnome-terminal is started (thus
 preventing even more confusion).
 It is expected that this will be fixed in Mac OS X 10.1.
 </p></div></a>
+
+<a name="xfree-keymapping"><div class="question"><p><b>Q: I just upgraded to Mac
+OS X 10.1 and now XFree86 always quits immediately. In the messages it
+says "assert failed on line 454 of darwinKeyboard.c!". What's
+wrong?</b></p></div> 
+<div class="answer"><p><b>A:</b> 
+This is a known problem on 10.1.
+You must use the "Load from file" keymapping option since the default
+option (get it from the kernel) doesn't work anymore.
+The setting is in the Preferences dialog.
+If you can't get to the Preferences dialog because you disabled all
+splash screens, you can delete
+~/Library/Preferences/org.xfree86.XDarwin.plist to get it back.
+</p></div></a>
+
 
 
 
