@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/01/17 00:59:46 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -43,7 +43,7 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink <? print $fink_version ?> 已经于 <? print $release_date ?> 发布。 
+Fink <? print $fink_version ?> 已经于 <? print convert_date_to_locale($release_date) ?> 发布。 
 它包括源代码和二进制文件两种发行方式，同时也包括二进制形式可执行的安装程序，它们都是针对 OS X 10.3 设计。Fink 0.6.3 (针对 OS X 10.2) 和 0.4.1 (针对 OS X 10.1) 仍然可以获得。
 </p>
 

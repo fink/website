@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.zh.inc,v 1.4 2004/04/17 01:13:23 jeff_yecn Exp $ */
+/* $Id: constants.zh.inc,v 1.5 2005/01/17 00:58:23 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -16,38 +16,43 @@
 // +--------------------------------------------------------------------------+
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME, 'é¦–é¡µ');
-define (FINK_SECTION_DOWNLOAD, 'ä¸‹è½½');
-define (FINK_SECTION_PACKAGE, 'è½¯ä»¶åŒ…');
-define (FINK_SECTION_HELP, 'å¸®åŠ©');
-define (FINK_SECTION_FAQ, 'å¸¸è§ç–‘é—®');
-define (FINK_SECTION_DOCUMENTATION, 'æ–‡æ¡£');
-define (FINK_SECTION_MAILING_LISTS, 'é‚®ä»¶åˆ—è¡¨');
+define (FINK_LC_ALL, 'zh_CN');
+define (FINK_SF_ENCODING, 'gb2312');
+define (FINK_DATE_FORMAT, '%YÇ¯%m·î%eÆü');
+
+/* The Sections.  Used in Menu Navigation Bar */
+define (FINK_SECTION_HOME, 'é¦{íáT');
+define (FINK_SECTION_DOWNLOAD, 'ä¸v¯ï\');
+define (FINK_SECTION_PACKAGE, 'è½¯ä»¶åŒsF);
+define (FINK_SECTION_HELP, 'å¸®åuŽ§');
+define (FINK_SECTION_FAQ, 'å¸¸è§ç–y±ÝM');
+define (FINK_SECTION_DOCUMENTATION, 'åôt«áB');
+define (FINK_SECTION_MAILING_LISTS, 'é‚®ä»¶åˆ|¯áG');
 
 /* The Home Subsections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME_INDEX, 'ç´¢å¼•');
-define (FINK_SECTION_HOME_NEWS, 'æ–°é—»');
-define (FINK_SECTION_HOME_ABOUT, 'å…³äºŽ Fink');
-define (FINK_SECTION_HOME_CONTRIBUTORS, 'è´¡çŒ®è€…');
+define (FINK_SECTION_HOME_INDEX, 'ç´¢å»ó');
+define (FINK_SECTION_HOME_NEWS, 'åô°é|Z');
+define (FINK_SECTION_HOME_ABOUT, 'å…³ä¹ì Fink');
+define (FINK_SECTION_HOME_CONTRIBUTORS, 'è´¡çvŽ¬çßsF);
 define (FINK_SECTION_HOME_LINKS, 'é“¾æŽ¥');
 
 /* The word 'Sections'.  Used in Menu Navigation Bar */
-define (FINK_SECTIONS, 'åˆ†ç±»');
+define (FINK_SECTIONS, 'åˆsééZ');
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, 'ç›®å½•');
 
 /* Printer */
-define (FINK_PRINTER, 'æ‰“å°æœº');
-define (FINK_PRINT_VERSION, 'æ‰“å°ç‰ˆæœ¬');
+define (FINK_PRINTER, 'åçz©ØOåúº§);
+define (FINK_PRINT_VERSION, 'åçz©ØOç‰tçßŽª');
 
 /* Footer */
-define (META_KEYWORDS, 'Mac OS X, Fink, Debian, éº¦é‡‘å¡”, è‹¹æžœ, UNIX, å¼€æ”¾æºç ,
-             ä¸‹è½½, è‡ªç”±è½¯ä»¶, ç§»æ¤, å¼€å‘, è½¯ä»¶åŒ…ç®¡ç†');
-define (META_DESCRIPTION, 'Fink é¡¹ç›®å¸Œæœ›æŠŠ Unix              ä¸–ç•Œçš„å„ç§è‡ªç”±è½¯ä»¶å¸¦åˆ° Darwin å’Œ Mac OS X å¹³å°ä¸Šã€‚æˆ‘ä»¬ä¿®æ”¹ Unix è½¯ä»¶ï¼Œä½¿å¾—å®ƒä»¬å¯ä»¥åœ¨ Mac OS X ä¸Šç¼–è¯‘å’Œè¿è¡Œï¼Œå¹¶ä½¿å¾—å®ƒä»¬ä½œä¸ºä¸€ä¸ªæ•´ä½“çš„å‘è¡Œç‰ˆæœ¬æ¥è¢«ä¸‹è½½ã€‚');
-define (HEADER_HOSTED_BY, 'ç½‘é¡µå¯„å­˜äºŽ {img}');
-define (FOOTER_AVAILABLE_LANGUAGES, 'çŽ°æœ‰è¯­è¨€ç‰ˆæœ¬');
-define (FOOTER_GENERATED_DYNAMICALLY, 'åŠ¨æ€åˆ›å»ºè‡ª');
-define (FOOTER_DATABASE_LAST_UPDATED, 'æœ€åŽæ›´æ–°ï¼š%x %X');
-define (FOOTER_LAST_CHANGED, 'æœ€åŽä¿®æ”¹è€… {author}ï¼ŒäºŽ %a, %d %b %Y,  %R %Z');
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, éº¦ét0å¡zŽª çé¹æÓ UNIX, å¼pçÛŽ¼æºxéà,
+             ä¸v¯ï\, çåªçzŽ¯è½¯ä»¶, ç§»æ£ë, å¼påÙ0, è½¯ä»¶åŒs­çÞæ/sŽ¥);
+define (META_DESCRIPTION, 'Fink é¡¹ç~Må¸vçßÒå¯ÖÛ¶nix              ä¸{éÜ+çšråÙ¤æFw¯ÕIç”±è½¯ä»¶å¸¦åˆ¯þDarwin å’vÛ®ac OS X å¹³åxOä¸uáÑŽ€åæy§îKä¿®æzŽ· Unix è½¯ä»¶ï¼vãï^å¾|©ç¢äŽ¹¬åxNä»¥å~Ž¦ Mac OS X ä¸uéîÈæŽ­y©Ú´æŽ½xëá+ï¼våíUä½¿å½õå®r§îKä½~ãìŽ¸ä¸pãìŽ¨åó´ä½“çšråÙ0è¡véÖ'åú¬æDè¢«ä·éè½½ãpŽ€');
+define (HEADER_HOSTED_BY, 'ç½y±áTå¯råç7äº {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'çŽ°æ~®æŽ­­è§ßç‰tçßŽª');
+define (FOOTER_GENERATED_DYNAMICALLY, 'åŠ¨æpåˆ~©îYçåª§);
+define (FOOTER_DATABASE_LAST_UPDATED, 'åúpåÙ¸åÑêçÜŽ®ï¼}Ž£x %X');
+define (FOOTER_LAST_CHANGED, 'åúpåÙ¸äŽ½®æzŽ·çßs?{author}ï¼vãí·%a, %d %b %Y,  %R %Z');
 ?>
