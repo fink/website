@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/12/08 15:08:34 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2004/02/17 13:26:51 $';
 
 include "header.inc";
 ?>
@@ -57,15 +57,23 @@ particularly
 2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
 </li>
 <li><p>
-Open a new Terminal.app window and type 
-"sudo dselect", which will 
-launch you into a package selection app.
-In the menu, hit "[U]pdate" once, then go to "[S]elect" to choose the
-packages you want installed.
-When you're done, hit "[I]nstall" to actually install the packages.
+Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>" 
+</p>
 </p></li>
-<li><p>When you install packages in the future, repeat step 5.
-</p></li> 
+<li><p>Once those two commands are finished you can install packages. There are several ways to install packages in fink:
+<ol>
+<li>
+Use the included Fink Commander to select and install packages. Fink Commander provides an easy to use GUI for fink. This is the recommended method for new users, or users who are not comfortable with the command line.
+</ul>
+<li>
+Use apt-get. Apt-get will fetch and install binary packages for you, saving compiling time. Note, however, not all fink packages are in binary form. To use apt-get open a Terminal.app window and type, for example, "<code>sudo apt-get install gimp</code>".
+</ul>
+<li>
+Install from source. Use "<code>fink install</code>" to fetch and compile from source code.  For example, to install the Gimp, run "<code>fink install gimp</code>". 
+</li> 
+</ol>
+
+</li> 
 </ol>
 
 <p>
