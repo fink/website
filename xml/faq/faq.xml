@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.117 2003/07/08 18:11:19 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.118 2003/07/14 09:14:22 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -755,6 +755,14 @@ _perl_get_sv</codeblock>
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
 fink selfupdate-cvs</codeblock>
+</answer>
+</faqentry>
+<faqentry name="cant-upgrade">
+<question>
+<p>I can't seem to update Fink's version.</p>
+</question>
+<answer>
+<p>THere are <link url="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</link> to follow under these circumstances.</p>
 </answer>
 </faqentry>
 </chapter>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/08 18:11:19';
+$cvs_date = 'Date: 2003/07/14 09:14:22';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -331,6 +331,10 @@ _perl_get_sv</pre><p>then what has probably happened is that you updated Perl to
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
+</a>
+<a name="cant-upgrade">
+<div class="question"><p><b>Q3.24: I can't seem to update Fink's version.</b></p></div>
+<div class="answer"><p><b>A:</b> THere are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> to follow under these circumstances.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
