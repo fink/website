@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.1 2002/05/30 21:21:02 fingolfin Exp $</cvsid>
-
-<newsitem>
-  <date>2002-05-30</date>
-  <headline>New news system active!</headline>
-  <body>
-    <p>
-      The new news system is now active! Enjoy. 
-    </p>
-  </body>
-</newsitem>
+<cvsid>$Id: news.xml,v 1.2 2002/05/30 21:29:18 fingolfin Exp $</cvsid>
 
 <newsitem>
   <date>2002-05-29</date>
