@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.fr.inc,v 1.6 2004/06/25 04:57:31 michga Exp $ */
+/* $Id: constants.fr.inc,v 1.7 2004/07/10 18:01:35 michga Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -37,8 +37,11 @@ define (FINK_SECTION_HOME_LINKS, 'Liens');
 /* The word 'Sections'.  Used in Menu Navigation Bar */
 define (FINK_SECTIONS, 'Sections');
 
-/* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
+/* Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, 'Sommaire');
+define (FINK_NEXT, 'Suite');
+define (FINK_Q, 'Q.');
+define (FINK_A, 'R.');
 
 /* Printer */
 define (FINK_PRINTER, 'Imprimante');
