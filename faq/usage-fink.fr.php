@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 02:13:19';
+$cvs_date = 'Date: 2004/04/03 23:07:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 include_once "header.inc";
@@ -122,48 +122,13 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>La le
 fink selfupdate-cvs</pre></div>
     </a>
     <a name="kernel-panics">
-      <div class="question"><p><b>Q5.13: When I use Fink, my whole machine freezes up/kernel panics/dies.
-        Help!</b></p></div>
-      <div class="answer"><p><b>A:</b> A number of recent reports on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
-        mailing list</a> have indicated problems (including kernel panics
-        and infinite hangs during patching) when using Fink to compile
-        packages while anti-virus software is installed. You may need to
-        switch off any anti-virus software before using Fink.</p></div>
+      <div class="question"><p><b>Q5.13: Lors de l'utilisation de Fink, ma machine se fige, entre en kernel panic ou bien
+	plante. À l'aide !</b></p></div>
+      <div class="answer"><p><b>A:</b> De nombreuses personnes ont signalé sur la liste de diffusion <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</a> des problèmes (y compris des kernel panics ou des suspensions infinies lors de l'application d'une rustine) quand on utilise Fink pour compiler des paquets, alors qu'un anti-virus est installé. Il faut alors désactiver l'anti-virus avant d'utiliser Fink.</p></div>
     </a>
     <a name="not-found">
-      <div class="question"><p><b>Q5.14: I'm trying to install a package, but Fink can't download it. The
-        download site shows a later version number of the package than what
-        Fink has. What do I do?</b></p></div>
-      <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new
-        versions are released.</p><p>The first thing you should do is run <code>fink selfupdate</code>.
-        It may be that the package maintainer has already fixed this, and you
-        will get an updated package description with either a more recent
-        version or a revised download URL.</p><p>If this doesn't work, most sources are available on <a href="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</a>
-        (thanks to Rob Braun) , and you can run <code>fink configure</code> to
-        choose to search "Master" source mirrors so that Fink will
-        automatically look there.</p><p>If this doesn't work, please let the package maintainer (available
-        from "<code>fink describe <b>packagename</b>
-          </code>") know that the
-        URL is broken; not all maintainers read the mailing lists all of the
-        time.</p><p>To get a usable source, first try hunting around the remote site in
-        other directories for the same version of the source that Fink wants
-        (e.g. in an "old" directory). Keep in mind, though, that some remote
-        sites like to trash the old versions of their packages. If the
-        official site doesn't have it, then try a web search--sometimes there
-        are unofficial sites that have the tarball you want. Another place to
-        look is <a href="http://us.dl.sourceforge.net/fink/direct_download/source/">http://us.dl.sourceforge.net/fink/direct_download/source/</a>,
-        which is where Fink stores sourcefiles from packages that have been
-        released in binary form. If all of the above fail, then you might
-        consider posting on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
-        mailing list</a> to ask if anybody has the old source available to
-        give you.</p><p>Once you locate the proper source tarball, download it manually,
-        and then move the file into your Fink source location (i.e. for a
-        default Fink install, "<code>sudo mv <b>package-source.tar.gz</b>
-        /sw/src/</code>". Then use '<code>fink install <b>packagename</b>
-          </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the
-        maintainer to deal with the problem. They may either post a link to
-        the old source, or update the .info and .patch files to use the newer
-        version.</p></div>
+      <div class="question"><p><b>Q5.14: Lors de l'installation d'un paquet, Fink ne peut le télécharger. Le site de téléchargement indique une version du paquet plus récente que celle de Fink. Que faire ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Les sources du paquet sont déplacées par les sites en amont quand de nouvelles versions sont publiées.</p><p>La première chose à faire est d'exécuter <code>fink selfupdate</code>. Il est possible que le responsable du paquet ait déjà pris ce changement en compte. Vous obtiendrez alors une mise à jour de la description du paquet soit avec une version plus récente, soit avec une nouvelle URL de téléchargement.</p><p>Si cela ne marche pas, la plupart des sources sont accessibles sur <a href="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</a> (grâce à Rob Braun), et vous pouvez exécuter <code>fink configure</code> pour choisir les miroirs source "Master", afin que Fink s'y réfère automatiquement.</p><p>Si cela ne marche pas, veuillez informer le mainteneur du paquet (disponible via "<code>fink describe <b>nom_du_paquet</b></code>") que l'URL n'est pas valide. Tous les mainteneurs ne lisent pas la liste de diffusion régulièrement.</p><p>Pour obtenir un source utilisable, recherchez d'abord dans les autres répertoires du site distant la version du source que Fink recherche. (par exemple dans un répertoire "old"). Rappelez-vous, cependant, que certains sites distants ne conservent pas les anciennes versions de leurs paquets. Si le site officiel ne l'a pas, recherchez sur la toile - il arrive parfois que des sites non officiels aient l'archive tar que vous cherchez. Recherchez aussi sur <a href="http://us.dl.sourceforge.net/fink/direct_download/source/">http://us.dl.sourceforge.net/fink/direct_download/source/</a>. C'est là que Fink sauvegarde les fichiers source des paquets qui ont été distribués sous forme binaire. Si rien de ce qui précède ne fonctionne, postez alors un message sur la liste de diffusion <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</a> pour demander si quelqu'un peut mettre à votre disposition l'ancien source.</p><p>Une fois l'archive tar adéquate repérée, téléchargez-la manuellement et placez-la dans le répertoire des sources de Fink (c'est-à-dire pour l'installation par défaut de Fink, "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>". Puis utilisez '<code>fink install <b>nom_du_paquet</b></code>' comme d'habitude.</p><p>Si vous n'arrivez pas à obtenir le fichier source, vous devrez alors attendre que le mainteneur se charge du problème. Il peut soit poster un lien vers une source ancienne, soit mettre à jour les fichiers .info et .patch pour utiliser la nouvelle version.</p></div>
     </a>
     <a name="fink-not-found">
       <div class="question"><p><b>Q5.15: I get "command not found" errors when I run Fink or anything that I

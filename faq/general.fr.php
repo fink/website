@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Généralités";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 02:13:19';
+$cvs_date = 'Date: 2004/04/03 23:07:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets"><link rel="prev" href="index.php?phpLang=fr" title="Q.F.P. Contents">';
 
 include_once "header.inc";

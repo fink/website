@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/26 03:09:18';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/04/03 23:07:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 include_once "header.inc";
@@ -245,7 +245,7 @@ fink selfupdate-cvs</pre></div>
         default Fink install, "<code>sudo mv <b>package-source.tar.gz</b>
         /sw/src/</code>". Then use '<code>fink install <b>packagename</b>
           </code>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the
-        maintainer to deal with the problem. They may either post a link to
+        maintainer to deal with the problem. He may either post a link to
         the old source, or update the .info and .patch files to use the newer
         version.</p></div>
     </a>
