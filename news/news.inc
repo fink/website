@@ -6,7 +6,7 @@ THIS SOFTWARE UNDER ANY CIRCUMSTANCES.  Installing it after Fink is installed
 will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 </p><p>
-This bug has been <a href="http://forums.mcafeehelp.com/viewtopic.php?t%5C=6318&amp;sid%5C=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
+This bug has been <a href="http://forums.mcafeehelp.com/viewtopic.php?t=6318&amp;sid=33d08f3c34f7e09dc546aa1ddf1c299c">reported 
 to Virex's manufacturer.</a>  We will keep the
 Fink community informed about the situation as it develops.
 </p><a name="2003-01-26 Apple X11 Library Warning"><span class="news_date">2003-01-26: </span><span class="news_headline">Apple X11 Library Warning</span></a><?php gray_line(); ?>
