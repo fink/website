@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/15 22:39:10 $';
+$cvs_date = '$Date: 2001/03/24 09:28:50 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,8 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-03-24: Mac OS X is released. Expect Fink packages to be
+adapted to the final release within the next one or two weeks.</p>
 <p>2001-03-15: Updated the <a href="darwin/libtool.php">libtool
 page</a> with a revised patch that does full shared library
 versioning.</p>
