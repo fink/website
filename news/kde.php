@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/29 14:20:56 $';
+$cvs_date = '$Date: 2002/05/29 15:04:59 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,14 @@ include "header.inc";
 <h1>KDE Support In Fink</h1>
 
 <p>
- The Fink team is happy to announce preliminary support for KDE on MacOS X.
+ The Fink team is happy to announce preliminary support for
+ <a href="http://www.kde.org/">KDE</a> on 
+ <a href="http://www.apple.com/macosx/">MacOS X</a>.
+</p>
+<p>
+ To find out more about the K Desktop Environment, see
+ <a href="http://www.kde.org/whatiskde/index.html">What is KDE?</a>
+ at the KDE web site.
 </p>
 
 <p>
