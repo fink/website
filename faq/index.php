@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/26 16:22:18 $';
+$cvs_date = '$Date: 2001/04/27 17:05:49 $';
 
 include "header.inc";
 ?>
@@ -28,8 +28,10 @@ questions are listed and linked in the table of contents below.</p>
 <li><b>Installation</b></li>
 <ul>
 </ul>
-<li><b>Usage</b></li>
+<li><a href="usage.php"><b>Usage</b></a></li>
 <ul>
+<li><a href="usage.php#what-packages">How can I find out what packages
+Fink supports?</a></li>
 </ul>
 <li><a href="packages.php"><b>Problems with certain packages</b></a></li>
 <ul>
