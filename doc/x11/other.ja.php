@@ -2,7 +2,7 @@
 
 $title = "Running X11 - その他";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/27 09:04:12';
+$cvs_date = 'Date: 2004/02/28 17:21:14';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"trouble.php?phpLang=ja\" title=\"XFree86 トラブルシューティング\" /><link rel=\"prev\" href=\"xtools.php?phpLang=ja\" title=\"Xtools\" />";
 
 include_once "header.ja.inc"; 

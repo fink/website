@@ -2,7 +2,7 @@
 
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/22 04:45:22';
+$cvs_date = 'Date: 2004/02/28 17:05:56';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"general.php?phpLang=ja\" title=\"一般的な質問\" />";
 
 include_once "header.ja.inc"; 
@@ -161,4 +161,4 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li>
 <li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
 <li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.ja.php,v 1.1 2004/02/28 15:58:09 babayoshihiko Exp $</i></p><? include_once "../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.ja.php,v 1.2 2004/02/28 20:47:24 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>

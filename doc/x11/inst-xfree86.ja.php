@@ -1,8 +1,8 @@
 <?
 
-$title = "Running X11 - Installing XFree86";
+$title = "Running X11 - XFree86 のインストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/27 09:04:12';
+$cvs_date = 'Date: 2004/02/28 17:21:14';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"run-xfree86.php?phpLang=ja\" title=\"XFree86 の起動\" /><link rel=\"prev\" href=\"history.php?phpLang=ja\" title=\"歴史\" />";
 
 include_once "header.ja.inc"; 

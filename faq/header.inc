@@ -1,19 +1,22 @@
 <?
-/* $Id: header.inc,v 1.8 2001/11/04 21:24:41 chrisp Exp $ */
+/* This file is generated, do not edit manually! */
 
-$section = "faq";
+$section = "documentation";
+$parents = array("doc/index.php", "Document List");
 $navbox = array(
-  "faq/index.php", "FAQ Contents",
+  "faq/index.php", "Contents",
   "faq/general.php", "General",
   "faq/relations.php", "Relations",
-  "faq/usage-fink.php", "Distribution",
+  "faq/mirrors.php", "Mirrors",
+  "faq/upgrade-fink.php", "Upgrading Fink",
+  "faq/usage-fink.php", "Fink Usage",
   "faq/comp-general.php", "Compiling (1)",
   "faq/comp-packages.php", "Compiling (2)",
   "faq/usage-general.php", "Usage (1)",
-  "faq/usage-packages.php", "Usage (2)"
+  "faq/usage-packages.php", "Usage (2)",
 );
 $printlink = "faq/faq.html";
 
-$fsroot = $root = "../";
+$fsroot = $root = "../../";
 include $fsroot."header.inc";
 ?>

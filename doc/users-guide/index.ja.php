@@ -84,4 +84,4 @@ Fink ユーザーズガイドへようこそ。
 <li><a href="usage.php?phpLang=ja#checksums">6.19 checksums</a></li>
 <li><a href="usage.php?phpLang=ja#cleanup">6.20 cleanup</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.ja.php,v 1.1 2004/02/28 16:23:36 babayoshihiko Exp $</i></p><? include_once "../../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.ja.php,v 1.2 2004/02/28 20:47:23 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>
