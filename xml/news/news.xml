@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.68 2003/09/02 21:14:31 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.69 2003/10/13 01:13:18 dmrrsn Exp $</cvsid>
 
+
+<newsitem>
+	<date>2003-10-12</date>
+	<headline>New update method available</headline>
+		<body>
+<p>The latest version of the fink package manager offers a new update
+method, <code>fink selfupdate-rsync</code>, as an alternative to the
+CVS updates which have been so problematic in the past few months.
+If you have difficulty updating to the new version, please follow
+<link url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</link>.
+</p>
+<p>In addition, this version of the fink package manager is compatible
+with last summer's Developer Tools updates.  After installing both the new
+package manager and the Developer Tools update, 
+fink will ask you to reset your gcc version whenever
+that is necessary.</p>
+	</body>
+</newsitem>
 
 <newsitem>
 	<date>2003-09-02</date>

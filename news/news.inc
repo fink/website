@@ -1,4 +1,17 @@
-<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
+<a name="2003-10-12 New update method available"><span class="news-date">2003-10-12: </span><span class="news-headline">New update method available</span></a><?php gray_line(); ?>
+<p>The latest version of the fink package manager offers a new update
+method, <code>fink selfupdate-rsync</code>, as an alternative to the
+CVS updates which have been so problematic in the past few months.
+If you have difficulty updating to the new version, please follow
+<a href="<?php print $root; ?>http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</a>.
+</p>
+<p>In addition, this version of the fink package manager is compatible
+with last summer's Developer Tools updates.  After installing both the new
+package manager and the Developer Tools update, 
+fink will ask you to reset your gcc version whenever
+that is necessary.</p>
+	<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
 <p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>http://fink.sourceforge.net/logo.php"> here, </a>
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
@@ -31,34 +44,4 @@ code for the following Fink packages have not yet been verified:
 <code>slib</code>.
 It may be difficult to install those packages at present.
 </p>
-                <a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
-<p><b>Quick Summary: DO NOT INSTALL THIS UPDATE.</b></p>
-               <p>
-Apple has released a patch to the December 2002 
-Developer Tools which includes gcc 3.3,
-their new compiler.
-</p><p>
-Fink does not yet support compiling with gcc 3.3.  In addition, it is important
-not to "mix and match" between compilers:  all C++ code in fink packages
-needs to be compiled
-with the same compiler.
-</p><p>
-For this reason, the Fink team recommends that if you update your
-Developer Tools with the new patch, you should be careful to run
-<code>sudo gcc_select 3</code>
-prior to any "fink build" or "fink install" commands.
-</p>
-<p><b>Update 30 June 2003:</b> A 
-<a href="<?php print $root; ?>http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
-has now been detected</a> with
-the new assembler program which the update installs, which may prevent
-certain Fink packages from being compiled at all if you install this
-update.  
-</p>
-<p><b>Generally, Fortran programs will break if you install the update;
-the breakage does not stop by simply switching back to gcc 3.1.</b>
-The Fink team is working on a workaround for this problem, but until it
-is ready, if you need Fortran-related programs you should not install
-the update.</p>
-
                 

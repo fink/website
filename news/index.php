@@ -1,14 +1,27 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/09/02 21:14:31';
+$cvs_date = 'Date: 2003/10/13 01:13:18';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
+<a name="2003-10-12 New update method available"><span class="news-date">2003-10-12: </span><span class="news-headline">New update method available</span></a><?php gray_line(); ?>
+<p>The latest version of the fink package manager offers a new update
+method, <code>fink selfupdate-rsync</code>, as an alternative to the
+CVS updates which have been so problematic in the past few months.
+If you have difficulty updating to the new version, please follow
+<a href="<?php print $root; ?>http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</a>.
+</p>
+<p>In addition, this version of the fink package manager is compatible
+with last summer's Developer Tools updates.  After installing both the new
+package manager and the Developer Tools update, 
+fink will ask you to reset your gcc version whenever
+that is necessary.</p>
+	<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
 <p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>http://fink.sourceforge.net/logo.php"> here, </a>
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
