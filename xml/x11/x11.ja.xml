@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.1 2004/02/27 09:04:12 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.2 2004/02/27 12:37:29 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -335,8 +335,10 @@ Fink ツリー下にあるプログラムをアプリケーションメニュー
 このような場合、フルパスを追加するのではなく、例えば
 </p>
 <codeblock>/sw/bin/emacs</codeblock>
-<p>ではなく、:</p>
+<p>ではなく、 bash であれば:</p>
 <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+<p>tcsh であれば:</p>
+<codeblock>source /sw/bin/init.sh ; emacs</codeblock>
 <p>
 これにより PATH 情報が正しく伝わります。
 Fink でインストールしたアプリケーションなら、どれでもこの方法が使えます。
