@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/01/07 23:05:16';
+$cvs_date = 'Date: 2003/01/08 00:25:41';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -48,7 +48,7 @@ OpenGL.
 </p>
 <p>
 As of the time of this writing, to use the Apple binaries you will need to make sure you
-have the Fink <tt><nobr>system-xfree86</nobr></tt> package, version 4.2.1-3 or higher, installed.
+have the Fink <tt><nobr>system-xfree86</nobr></tt> package, version 4.2-3 or higher, installed.
 Also, make sure you download BOTH the SDK (linked from the main site), and the public
 beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
 interact poorly with Fink's installation.
