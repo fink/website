@@ -1,7 +1,7 @@
 <?
 $title = "Fink bug tracking system";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/01/24 02:10:39 $';
+$cvs_date = '$Date: 2005/01/24 02:38:47 $';
 
 include "header.inc";
 ?>
@@ -30,26 +30,29 @@ include "header.inc";
 
 <h2>Viewing bug reports on the WWW</h2> 
 
-<form method="get" action="http://bugs.finkproject.org/cgi-bin/bugreport.cgi">
-<p>
-	Find a bug by <strong>number</strong>: 
-		<input type="text" size="9" name="bug" value=""> <input type="submit" value="Find"> 
-		<label><input type="checkbox" name="mbox" value="yes"> as mbox</label> 
-</p>
-</form>
+<dl>
+	<dt>Find a bug by <strong>number</strong></dt>
+	<dd>
+		<form method="get" action="http://bugs.finkproject.org/cgi-bin/bugreport.cgi">
+			<input type="text" size="9" name="bug" value=""> <input type="submit" value="Find"> 
+			<label><input type="checkbox" name="mbox" value="yes"> as mbox</label> 
+		</form>
+	</dd>
 
-<form method="get" action="http://bugs.finkproject.org/cgi-bin/pkgreport.cgi">
+	<dt>General bug <strong>search</strong></dt>
+	<dd>
+		<form method="get" action="http://bugs.finkproject.org/cgi-bin/pkgreport.cgi">
 <p>
-	Find bugs by: 
+	What to search for:
+	<br>
 	<label><input type="radio" name="which" value="pkg" checked><strong>package</strong></label> 
 	<label><input type="radio" name="which" value="src"><strong>source&nbsp;package</strong></label> 
-	<label><input type="radio" name="which" value="maint"><strong>maintainer&nbsp;email</strong></label> 
-	<label><input type="radio" name="which" value="submitter"><strong>submitter&nbsp;email</strong></label> 
+	<label><input type="radio" name="which" value="maint"><strong>package-maintainer&nbsp;email</strong></label> 
+	<label><input type="radio" name="which" value="submitter"><strong>bug-submitter&nbsp;email</strong></label> 
 	<label><input type="radio" name="which" value="severity"><strong>severity</strong></label> 
 	<label><input type="radio" name="which" value="tag"><strong>tag</strong></label> 
 	<br>
-	<label>What to search for:<input type="text" name="data" value="" size="50"></label> <input type="submit" value="Find"> 
-	<br>
+	<label><input type="text" name="data" value="" size="50"></label> <input type="submit" value="Find"> 
 </p>
 <p>
 	Additional settings (which you may leave untouched, the defaults will work): 
@@ -162,7 +165,9 @@ include "header.inc";
 		</small>
 	</li>
 </ul>
-</form>
+		</form>
+	</dd>
+</dl>
 
 <p>
 	The above queries can also be made by visiting URLs of the following forms, respectively: 
