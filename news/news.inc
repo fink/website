@@ -1,4 +1,15 @@
-<span class="news_date">2002-08-20: </span><span class="news_headline">Mac OS X 10.2 / Jaguar</span><?php gray_line(); ?>
+<span class="news_date">2002-09-08: </span><span class="news_headline">Test version of Jaguar updater available</span><?php gray_line(); ?>
+  <p> A test version of the 10.2 updater for Fink is now available.
+The update process is somewhat complicated at the moment, but is
+explained in  <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions
+for updating</a>.
+We also have separate <a href="<?php print $root; ?>news/jag-bootstrap.php">instructions
+to install Fink from scratch on 10.2</a>.
+</p><p> At the moment, approximately 800 out of 1150 Fink packages have
+been made ready for 10.2.  However, virtually all of these packages are
+still being tested and have not yet been moved to the &quot;stable&quot; tree in
+the 10.2 section; moreover, binaries for 10.2 packages are not yet available.
+</p><span class="news_date">2002-08-20: </span><span class="news_headline">Mac OS X 10.2 / Jaguar</span><?php gray_line(); ?>
     <p>
       During the last few weeks, we got a lot of emails asking whether Fink will work Mac OS X 10.2.
     </p>
@@ -30,9 +41,5 @@
     </p>
     <p>
       An overview of what changed since version 0.9.12 can be found <a href="<?php print $root; ?>http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
-    </p>
-  <span class="news_date">2002-07-17: </span><span class="news_headline">Binary distribution moves</span><?php gray_line(); ?>
-    <p>
-      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <a href="<?php print $root; ?>news/bindist_move.php">read more here.</a>.
     </p>
   
