@@ -170,7 +170,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 <title><xsl:value-of select="shorttitle" /></title>
 </head><body>
 <xsl:text disable-output-escaping="yes">&lt;!--?
-include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disable-output-escaping="yes">.inc";
+include_once "header.inc";
 ?--&gt;
 </xsl:text>
 
