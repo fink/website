@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
     <title>認可済みパッケージに関する一般 Fink セキュリティポリシー</title>
     <shorttitle>セキュリティポリシー</shorttitle>
-    <cvsid>$Id: sec-policy.ja.xml,v 1.1 2004/07/08 15:50:32 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: sec-policy.ja.xml,v 1.2 2005/02/04 09:30:20 babayoshihiko Exp $</cvsid>
     <preface>
 		<p>
 			この文書は、 Fink に受け入れられたパッケージに関わるセキュリティ案件の取り扱いを解説します。
@@ -303,19 +303,27 @@
                 <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
                 291E</tt>.
                 </li>
-                <li>Found at
+                <li>ここにあります
                 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt></li></ul>
                 <p>
                 上記は故意にリンクされていません。</p>
 				<p> 
 					他の正式なチームメンバーは (ここに皆の公開鍵を追加):
 				</p>
-				<p>peter@pogma.com signed by the PGP key with the fingerprint:</p>
+				<p>peter@pogma.com が署名した PGP キーの指紋:</p>
 	        <ul>
 	            <li><tt>
-		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt></li>
 		<li>
-		Found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+		ここにあります <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+            </ul>
+				<p>ranger@befunk.com が署名した PGP キーの指紋:</p>
+	        <ul>
+	            <li><tt>
+		6401 D02A A35F 55E9 D7DD  71C5 52EF A366 D3F6 65FE</tt></li>
+		<li>
+		ここにあります <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xD3F665FE</tt>
         </li>
             </ul>
         </section>
