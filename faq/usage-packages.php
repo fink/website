@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/08 21:17:37';
+$cvs_date = 'Date: 2003/01/09 18:22:15';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -107,6 +107,14 @@ sort this out.
 You are missing a file that is supposed to be installed by <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
 </a>
 
+<a name="apple-x-delete"><div class="question"><p><b>Q7.8: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
+<div class="answer"><p><b>A:</b> Some users have reported that the behavior of the <tt><nobr>delete</nobr></tt> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>
+xterm*.deleteIsDEL: true
+xterm*.backarrowKey: false
+xterm*.ttyModes: erase ^?
+</pre><p><b>.xinitrc</b></p><pre>xrdb -load $HOME/.Xresources
+xmodmap $HOME/.Xmodmap</pre><p></p></div>
+</a>
 
 
 <?

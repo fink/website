@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.75 2003/01/08 23:06:43 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -595,6 +595,10 @@ which among other stuff contains the C compiler, <code>cc</code>.
 </p>
 </answer></faqentry>
 
+<faqentry name="cvs"><question><p>When I try a "fink selfupdate-cvs" I get this message: "cvs: Command not found." </p></question>
+<answer><p>You need to install the Developer Tools.</p></answer>
+</faqentry>
+
 <faqentry name="make"><question><p>make: illegal option -- C</p></question>
 <answer>
 <p>
@@ -931,7 +935,23 @@ sort this out.
 <answer><p>
 You are missing a file that is supposed to be installed by <code>xfree86-rootless-(threaded)-shlibs</code>.  You should reinstall it using <code>fink reinstall xfree86-rootless-shlibs</code> (<code>fink reinstall xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-rootless-shlibs</code> for binaries.</p></answer>
 </faqentry>
-</chapter>
+
+<faqentry name="apple-x-delete"><question><p>I want the delete key in Apple's X11.app to behave like that in XDarwin.</p></question>
+<answer><p>Some users have reported that the behavior of the <code>delete</code> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p>
+<p><em>.Xmodmap:</em></p>
+<codeblock>keycode 59 = Delete</codeblock>
+<p><em>.Xresources:</em></p>
+<codeblock>
+xterm*.deleteIsDEL: true
+xterm*.backarrowKey: false
+xterm*.ttyModes: erase ^?
+</codeblock>
+<p><em>.xinitrc</em></p>
+<codeblock>xrdb -load $HOME/.Xresources
+xmodmap $HOME/.Xmodmap</codeblock>
+<p></p>
+</answer>
+</faqentry></chapter>
 
 
 </document>

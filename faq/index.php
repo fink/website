@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/08 21:17:37';
+$cvs_date = 'Date: 2003/01/09 18:22:15';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -84,11 +84,12 @@ freezes up/kernel panics/dies. Help!</a></li>
 <ul>
 <li><a href="comp-general.php#compiler">4.1 A configure script complains
 that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
-<li><a href="comp-general.php#make">4.2 make: illegal option -- C</a></li>
-<li><a href="comp-general.php#head">4.3 I'm getting a strange usage message
+<li><a href="comp-general.php#cvs">4.2 When I try a &quot;fink selfupdate-cvs&quot; I get this message: &quot;cvs: Command not found.&quot; </a></li>
+<li><a href="comp-general.php#make">4.3 make: illegal option -- C</a></li>
+<li><a href="comp-general.php#head">4.4 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
-<li><a href="comp-general.php#also_in">4.4 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
-<li><a href="comp-general.php#weak_lib">4.5 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li>
+<li><a href="comp-general.php#also_in">4.5 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
+<li><a href="comp-general.php#weak_lib">4.6 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -125,8 +126,9 @@ says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 <li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
 <li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
+<li><a href="usage-packages.php#apple-x-delete">7.8 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.74 2003/01/08 21:17:37 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</i></p>
 
 
 <?
