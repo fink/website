@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/26 21:14:14';
+$cvs_date = 'Date: 2001/09/08 16:54:54';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -34,13 +34,18 @@ GNU-Darwin)?</a></li>
 configure Fink to use an HTTP proxy?</a></li>
 <li><a href="install.php#head">I'm getting a strange usage message
 from the head command. What's broken?</a></li>
+<li><a href="install.php#moving">Can I move Fink to another
+location after installation?</a></li>
+<li><a href="install.php#moving-symlink">If I move Fink after
+installation and provide a symlink from the old location, will it
+work?</a></li>
 </ul>
 <li><a href="usage.php"><b>Usage Questions</b></a></li>
 <ul>
 <li><a href="usage.php#what-packages">How can I find out what packages Fink supports?</a></li>
-<li><a href="usage.php#unstable">There's this package in unstable that I want
-to install, but Fink just says 'no package found'. How can I install
-it?</a></li>
+<li><a href="usage.php#unstable">There's this package in
+unstable that I want to install, but Fink just says 'no package
+found'. How can I install it?</a></li>
 <li><a href="usage.php#sudo">I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
 <li><a href="usage.php#exec-init-csh">When I try to run
@@ -58,8 +63,10 @@ dbopen and lots of other stuff.</a></li>
 mention ANSI C++.</a></li>
 <li><a href="packages.php#xlocale">I'm getting lots of messages
 like "locale not supported by C library". Is that bad?</a></li>
+<li><a href="packages.php#xmms-quiet">I get no sound from
+XMMS</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.9 2001/08/26 21:14:14 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.10 2001/09/08 16:54:54 chrisp Exp $</i></p>
 
 
 <?

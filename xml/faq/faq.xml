@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.9 2001/08/26 21:14:14 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.10 2001/09/08 16:54:54 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -154,6 +154,29 @@ starts to catch this error.
 </p>
 </answer></faqentry>
 
+<faqentry name="moving"><question><p>Can I move Fink to another
+location after installation?</p></question>
+<answer>
+<p>
+No.
+Well, of course you can move the files using mv or the Finder, but 99%
+of the programs will stop working when you do.
+That's because basically all Unix software depends on hardcoded paths
+to find data files, libraries and other stuff.
+</p>
+</answer></faqentry>
+
+<faqentry name="moving-symlink"><question><p>If I move Fink after
+installation and provide a symlink from the old location, will it
+work?</p></question>
+<answer>
+<p>
+Maybe.
+The general expectation is that it should work, but there may be
+hidden traps somewhere.
+</p>
+</answer></faqentry>
+
 </chapter>
 
 
@@ -171,24 +194,37 @@ Example:
 </p>
 <codeblock>fink list</codeblock>
 <p>
+If you're using the binary distribution, <code>dselect</code> gives
+you a nice browsable listing of available packages.
+Note that you must run it as root if you want to select and install
+packages from withing dselect.
+</p>
+<p>
 There's also the <link url="http://fink.sourceforge.net/pdb/">package
 database</link> at the website.
 </p>
 </answer></faqentry>
 
-<faqentry name="unstable"><question><p>There's this package in unstable that I want
-to install, but Fink just says 'no package found'. How can I install
-it?</p></question>
-<answer><p>First make sure you understand what 'unstable' means. Packages
-in there usually have not been tested at all, many have problems or
-just won't compile. That is why Fink doesn't search the unstable
-tree by default.</p>
-<p>If you only want one or two specific packages, it is safer
-to copy those .info files (and their associated .patch files, if there
-are any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename> to
-<filename>/sw/fink/dists/local/main/finkinfo</filename>. If you want Fink to use all of
-unstable, edit <filename>/sw/etc/fink.conf</filename> and add <literal>unstable/main</literal> to the
-<literal>Trees:</literal> line.</p>
+<faqentry name="unstable"><question><p>There's this package in
+unstable that I want to install, but Fink just says 'no package
+found'. How can I install it?</p></question>
+<answer>
+<p>
+First make sure you understand what 'unstable' means.
+Packages in there usually have not been tested at all, many have
+problems or just won't compile.
+That is why Fink doesn't search the unstable tree by default.
+</p>
+<p>
+If you only want one or two specific packages, it is safer to copy
+those .info files (and their associated .patch files, if there are
+any) from <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
+to <filename>/sw/fink/dists/local/main/finkinfo</filename>.
+If you want Fink to use all of unstable, edit
+<filename>/sw/etc/fink.conf</filename> and add
+<literal>unstable/main</literal> to the <literal>Trees:</literal>
+line.
+</p>
 </answer></faqentry>
 
 <faqentry name="sudo"><question><p>I'm tired of typing my password into sudo again
@@ -297,6 +333,47 @@ It's not bad, it just means that the program will use the default
 English messages, date formats, etc.
 The program will function normally otherwise.
 The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</link>.
+</p>
+</answer></faqentry>
+
+<faqentry name="xmms-quiet"><question><p>I get no sound from
+XMMS</p></question>
+<answer>
+<p>
+Make sure you have the "eSound Output Plugin" selected in the XMMS
+preferences.
+For some strange reason, it selects the disk writer plugin as the
+default.
+</p>
+<p>
+If you still get no sound output or XMMS complains that it can't find
+your sound card try this:
+</p>
+<ul>
+<li>Make sure you haven't muted sound output in Mac OS X.</li>
+<li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
+file of a decent size).
+If you hear a short noise, esound works and XMMS should work too if
+it's configured correctly.
+If you don't hear anything, esd isn't working for some reason.
+You can try to start it up manually with <code>esd &amp;</code> and watch
+the messages.
+</li>
+<li>
+If it still doesn't work, check the permissions on
+<code>/tmp/.esd</code> and <code>/tmp/.esd/socket</code>.
+Those should have your normal user account as the owner.
+If they aren't owned by you, kill esd if it's running, remove the
+directory as root (<code>sudo rm -rf /tmp/.esd</code>), then start esd
+again (as a normal user, not as root).
+</li>
+</ul>
+<p>
+Note that esd is designed to be run by a normal user, not by root.
+It usually communicates via the file system socket
+<code>/tmp/.esd/socket</code>.
+You only need the <code>-tcp</code> and <code>-port</code> switches if
+you want to run esd clients on another machine over the network.
 </p>
 </answer></faqentry>
 
