@@ -68,7 +68,7 @@ work?</a></li>
 freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="#usage-fink.cant-login-anymore">3.16 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
 <li><a href="#usage-fink.not-found">3.17 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
-<li><a href="#usage-fink.fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
+<li><a href="#usage-fink.fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</a></li>
 <li><a href="#usage-fink.invisible-sw">3.19 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
 <li><a href="#usage-fink.install-info-bad">3.20 I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</a></li>
 <li><a href="#usage-fink.bad-list-file">3.21 I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</a></li>
@@ -321,9 +321,8 @@ database</a> at the website.
 <a name="usage-fink.proxy">
 <div class="question"><p><b>Q3.2: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-The <tt style="white-space: nowrap;">fink</tt> command supports explicit proxy settings that
-are passed on to <tt style="white-space: nowrap;">wget</tt> resp. <tt style="white-space: nowrap;">curl</tt>.
+<div class="answer"><p><b>A:</b> The <tt style="white-space: nowrap;">fink</tt> command supports explicit proxy settings that
+are passed on to <tt style="white-space: nowrap;">wget</tt>/<tt style="white-space: nowrap;">curl</tt>.
 If you were not asked for proxies on first time installation, you can
 run <tt style="white-space: nowrap;">fink configure</tt> to set it up.
 You can also run that command at any time to reconfigure the
@@ -331,8 +330,7 @@ You can also run that command at any time to reconfigure the
 If you followed the instructions in the installation guide, and use
 <tt style="white-space: nowrap;">/sw/bin/init.csh</tt> (or <tt style="white-space: nowrap;">/sw/bin/init.sh</tt>),
 then <tt style="white-space: nowrap;">apt-get</tt> and <tt style="white-space: nowrap;">dselect</tt> also will use these
-proxy settings.
-</p></div>
+proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p></div>
 </a>
 <a name="usage-fink.firewalled-cvs">
 <div class="question"><p><b>Q3.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
@@ -611,7 +609,7 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p></div>
 </a>
 <a name="usage-fink.fink-not-found">
-<div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
+<div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <tt style="white-space: nowrap;">tcsh</tt>).  When <tt style="white-space: nowrap;">tcsh</tt> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <tt style="white-space: nowrap;">~/.tcshrc</tt>, and if that isn't found, <tt style="white-space: nowrap;">~/.cshrc</tt>; note that if you have both, only <tt style="white-space: nowrap;">~/.tcshrc</tt> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <tt style="white-space: nowrap;">~/.tcshrc</tt>, and therefore <tt style="white-space: nowrap;">~/.cshrc</tt> isn't being read.  A good fix is to add the following line to <tt style="white-space: nowrap;">~/.tcshrc</tt>:</p><pre>source ~/.cshrc</pre></div>
 </a>
@@ -998,4 +996,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.91 2003/02/24 21:56:49 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.93 2003/02/25 14:25:13 alexkhansen Exp $</i></p></body></html>

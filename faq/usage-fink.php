@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/24 21:56:49';
+$cvs_date = 'Date: 2003/02/25 14:25:13';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -31,9 +31,8 @@ database</a> at the website.
 <a name="proxy">
 <div class="question"><p><b>Q3.2: I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</b></p></div>
-<div class="answer"><p><b>A:</b> 
-The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
-are passed on to <tt><nobr>wget</nobr></tt> resp. <tt><nobr>curl</nobr></tt>.
+<div class="answer"><p><b>A:</b> The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
+are passed on to <tt><nobr>wget</nobr></tt>/<tt><nobr>curl</nobr></tt>.
 If you were not asked for proxies on first time installation, you can
 run <tt><nobr>fink configure</nobr></tt> to set it up.
 You can also run that command at any time to reconfigure the
@@ -41,8 +40,7 @@ You can also run that command at any time to reconfigure the
 If you followed the instructions in the installation guide, and use
 <tt><nobr>/sw/bin/init.csh</nobr></tt> (or <tt><nobr>/sw/bin/init.sh</nobr></tt>),
 then <tt><nobr>apt-get</nobr></tt> and <tt><nobr>dselect</nobr></tt> also will use these
-proxy settings.
-</p></div>
+proxy settings.  Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labled &quot;Use Passive FTP Mode (PASV)&quot; is checked.</p></div>
 </a>
 <a name="firewalled-cvs">
 <div class="question"><p><b>Q3.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
@@ -321,7 +319,7 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 </p></div>
 </a>
 <a name="fink-not-found">
-<div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
+<div class="question"><p><b>Q3.18: I've edited my .cshrc and started a new terminal, but I still get &quot;command not found&quot; errors when I run fink or anything that I installed with fink.</b></p></div>
 <div class="answer"><p><b>A:</b> 
 (This assumes you are using <tt><nobr>tcsh</nobr></tt>).  When <tt><nobr>tcsh</nobr></tt> is started, it first reads system-wide scripts, and then those for your user account.  It looks first for <tt><nobr>~/.tcshrc</nobr></tt>, and if that isn't found, <tt><nobr>~/.cshrc</nobr></tt>; note that if you have both, only <tt><nobr>~/.tcshrc</nobr></tt> gets run.</p><p>What has probably happened is that some application package (e.g. CodeWarrior) has created a <tt><nobr>~/.tcshrc</nobr></tt>, and therefore <tt><nobr>~/.cshrc</nobr></tt> isn't being read.  A good fix is to add the following line to <tt><nobr>~/.tcshrc</nobr></tt>:</p><pre>source ~/.cshrc</pre></div>
 </a>
