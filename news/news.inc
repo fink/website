@@ -4,7 +4,7 @@
 	with some caveats.  Please read <a href="<?php print $root; ?>doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</a> section of the Fink X11 Documentation for details.</p>
 	<a name="2003-01-07 RSS Feeds available"><span class="news_date">2003-01-07: </span><span class="news_headline">RSS Feeds available</span></a><?php gray_line(); ?>
 	<p>
-	Thanks to one of our most valuable developers, Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information
+	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information
 
 <a href="<?php print $root; ?>news/fink-stable.rdf">fink-stable.rdf</a> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
