@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/24 13:09:17';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 include_once "header.inc";
@@ -262,7 +262,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepRootDir:</b> ブール値</p>
-<p>パッケージのビルド後に /sw/src/root-name-version ディレクトリを削除しません。
+<p>パッケージのビルド後に /sw/src/root-[name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 </p>
@@ -270,7 +270,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepBuildDir:</b> ブール値</p>
-<p>パッケージのビルド後に /sw/src/name-version ディレクトリを削除しません。
+<p>パッケージのビルド後に /sw/src/[name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 </p>

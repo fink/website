@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink.conf";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/19 20:59:04';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/12 02:48:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
 include_once "header.inc";
@@ -205,13 +205,13 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         <li>
           <p>
             <b>KeepRootDir:</b> 布尔值</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-name-version 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-[name]-[version]-[revision] 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/name-version 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/[name]-[version]-[revision] 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
           </p>
         </li>
       </ul>

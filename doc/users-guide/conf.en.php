@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/24 01:56:46';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/12 02:54:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -284,17 +284,21 @@ them. The following options fall into this category.</p>
         <li>
           <p>
             <b>KeepRootDir:</b> boolean</p>
-          <p>Causes Fink not to delete the /sw/src/root-name-version directory
+          <p>Causes Fink not to delete the /sw/src/root-[name]-[version]-[revision] directory
 after building a package. Defaults to false. <b>Be careful, this
 option can fill your hard-disk quickly!</b>
+Passing <b>fink</b> the <b>-K</b> flag has the same effect, but
+only operates on that single <b>fink</b> invocation.
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-          <p>Causes Fink not to delete the /sw/src/name-version directory after
+          <p>Causes Fink not to delete the /sw/src/[name]-[version]-[revision] directory after
 building a package. Defaults to false. <b>Be careful, this option can
 fill your hard-disk quickly!</b>
+Passing <b>fink</b> the <b>-k</b> flag has the same effect, but
+only operates on that single <b>fink</b> invocation.
           </p>
         </li>
       </ul>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/24 01:56:46';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/04/12 02:54:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 include_once "header.inc";
@@ -234,6 +234,12 @@ others.
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
    This can reclaim large amounts of disk space.
 </p>
+    
+    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+      
+      <p>
+	Shows how Fink parses parts of a package's .info file.
+      </p>
     
   
 
