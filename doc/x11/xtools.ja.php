@@ -45,4 +45,3 @@ Xtools 1.1 までには修正されることを期待します。
 <? include_once "../../footer.inc"; ?>
 
 
-

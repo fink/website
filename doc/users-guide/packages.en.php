@@ -202,7 +202,7 @@ If you run into errors during that process, please first check the
         <li><b>0.6.3:</b>  this is the version that can be installed from binaries for OS 10.2.</li>
         <li>
           <p>
-<b>0.7.0:</b>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=en">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+<b>0.7.1:</b>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=en">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
         </li>
         <li>
           <p>

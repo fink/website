@@ -160,4 +160,3 @@ quartz-wm --only-proxy &amp;
 <? include_once "../../footer.inc"; ?>
 
 
-

@@ -36,4 +36,3 @@ Xtools utilise l'accelération matériel OpenGL en mode sans racine et fournit l
 <? include_once "../../footer.inc"; ?>
 
 
-

@@ -89,4 +89,3 @@ version had been completely integrated into the main XFree86 distribution.
 <? include_once "../../footer.inc"; ?>
 
 
-

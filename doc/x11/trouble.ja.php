@@ -290,4 +290,3 @@ Apple に将来の Mac OS X に、ちゃんとしたロケールサポートを�
 <? include_once "../../footer.inc"; ?>
 
 
-

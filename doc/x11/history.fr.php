@@ -65,4 +65,3 @@ Pendant ce temps, Apple sortait Mac OS X 10.0 et Darwin 1.3 ; quelques semaines 
 <? include_once "../../footer.inc"; ?>
 
 
-

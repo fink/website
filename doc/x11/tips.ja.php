@@ -109,4 +109,3 @@ X11 側では nedit や xterm 。
 <? include_once "../../footer.inc"; ?>
 
 
-

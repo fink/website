@@ -74,4 +74,3 @@ En fait, le système X11 possède plusieurs presse-papiers distincts (appelés  
 <? include_once "../../footer.inc"; ?>
 
 
-

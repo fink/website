@@ -4,9 +4,9 @@ $cvs_author = 'Author: fingolfin';
 $cvs_date = 'Date: 2004/02/29 23:08:22';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink ReadMe</h1><!--Generated from $Fink: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $-->
 <p>
 Fink は Open Source ソフトウェアを Darwin と Mac OS X　で使えるようにすることを目的としたパッケージ管理システムです。
@@ -90,5 +90,6 @@ Fink に貢献をしたい場合、上記のヘルプページに、テストや
 このリストは受信専用で、トラフィック量は小さいです。
 </p>
 
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 19 Sep 2004 08:30:34 EDT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Sep 2004 08:30:00 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5">

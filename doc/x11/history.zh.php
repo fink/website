@@ -68,4 +68,3 @@ XFree86 4.0.2 能在 Darwin 上运行得很好，但在 Mac OS X 上却需要退
 <? include_once "../../footer.inc"; ?>
 
 
-

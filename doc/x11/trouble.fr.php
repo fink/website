@@ -194,4 +194,3 @@ Demander à Apple d'inclure une gestion correcte des locales dans une version ul
 <? include_once "../../footer.inc"; ?>
 
 
-

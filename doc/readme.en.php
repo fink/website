@@ -4,9 +4,9 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/03/12 09:25:16';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink ReadMe</h1><!--Generated from $Fink: readme.en.xml,v 1.3 2004/03/12 09:25:16 michga Exp $-->
 <p>
 This is Fink, a package management system that aims to bring the full
@@ -102,5 +102,6 @@ and subscribe to the fink-announce mailing list.
 The list is moderated and low-traffic.
 </p>
 
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+

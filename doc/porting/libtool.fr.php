@@ -262,4 +262,3 @@ Ceci peut être réalisé en configurant GNU libtool avec
 <? include_once "../../footer.inc"; ?>
 
 
-

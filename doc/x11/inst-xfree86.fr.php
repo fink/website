@@ -205,4 +205,3 @@ Voici un court résumé des options d'installation et des paquets Fink à instal
 <? include_once "../../footer.inc"; ?>
 
 
-

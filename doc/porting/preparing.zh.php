@@ -107,4 +107,3 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 <? include_once "../../footer.inc"; ?>
 
 
-

@@ -40,4 +40,3 @@ Jeff Whitaker 氏の <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc pa
 <? include_once "../../footer.inc"; ?>
 
 
-

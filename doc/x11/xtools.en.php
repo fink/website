@@ -52,4 +52,3 @@ Hopefully this will be fixed in Xtools 1.1 once it is released.
 <? include_once "../../footer.inc"; ?>
 
 
-

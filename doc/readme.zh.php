@@ -4,9 +4,9 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/17 20:38:16';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink 自述文件</h1><!--Generated from $Fink: readme.zh.xml,v 1.1 2004/03/17 20:38:16 jeff_yecn Exp $-->
 <p>
 这是 Fink，一个目标是把所有的开放源码软件带到 Darwin 和 Mac OS X 平台上的软件包管理系统。
@@ -84,5 +84,6 @@ USAGE 文件描述如何设置你的路径以及如何安装和删除软件包�
 这个列表是受管的低流量列表。
 </p>
 
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+

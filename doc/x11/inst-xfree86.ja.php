@@ -340,4 +340,3 @@ Apple X11 を削除する場合は <code>.xinitrc</code> を開いて <code>quar
 <? include_once "../../footer.inc"; ?>
 
 
-
