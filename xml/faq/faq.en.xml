@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.17 2004/05/25 21:29:32 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.18 2004/05/25 21:45:38 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1314,8 +1314,7 @@ endif</codeblock>
         <p>-or-</p>
         <p>3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code>
         package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004 isn't in the binary
-        distro yet, and is currently only in the unstable tree [see <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">how to install unstable package</link>].
-FAQ 3.9].</p>
+        distro yet, and is currently only in the unstable tree [see <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">how to install unstable package</link>].</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread">
