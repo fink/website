@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.44 2005/02/23 07:50:12 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.45 2005/02/23 08:22:31 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -567,7 +567,9 @@ sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
 rm fink_0.22.4-1_darwin-powerpc.deb
 fink selfupdate</codeblock></li>
 <li><em>10.2.x :</em> (distribution 0.6.3)
-<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
+fink-0.6.3/release/main/binary-darwin-powerpc/base\
+/fink_0.18.3-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
 rm fink_0.18.3-1_darwin-powerpc.deb
 fink selfupdate</codeblock></li>
@@ -945,13 +947,13 @@ undefined reference to _FT_Access_Frame</codeblock>
 <answer>
 <p>Si vous avez des messages d'erreur similaire à celui-ci :</p>
 <codeblock>unix_dl.c: In function `rep_open_dl_library':
-unix_dl.c:328: warning: assignment discards qualifiers from pointer \
-target type 
+unix_dl.c:328: warning: assignment discards qualifiers from \
+pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
 unix_dl.c:466: error: `Dl_info' undeclared (first use in this \
 function)
-unix_dl.c:466: error: (Each undeclared identifier is reported only \
-once 
+unix_dl.c:466: error: (Each undeclared identifier is reported \
+only once 
 unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info" 
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
@@ -1467,8 +1469,8 @@ sudo apt-get install fink</codeblock>
 </question>
 <answer>     
 <p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> or <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non  :</p>
-<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xorg xorg-shlibs xfree86 xfree86-shlibs \
+<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
+system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless \
 xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
