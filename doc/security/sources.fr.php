@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:12:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="updating.php?phpLang=fr" title="Procédure de correctif de sécurité"><link rel="prev" href="severity.php?phpLang=fr" title="Délais de réponse et actions immédiates.">';
 
-include_once "header.inc";
-?>
 
-<h1>Charte de sécurité - 3 Sources répertoriant les failles</h1>
+include_once "header.fr.inc";
+?>
+<h1>Charte de sécurité - 3. Sources répertoriant les failles</h1>
         
         
         <h2><a name="sources">3.1 Sources reconnues répertoriant les failles</a></h2>
@@ -127,7 +127,9 @@ include_once "header.inc";
             </ol>
             <p>Les mots clés ci-dessus sont conformes à la liste des mots clés recommandés par CVE. Vous la trouverez <a href="http://www.cve.mitre.org/cve/refs/refkey.html">ici</a>. </p>
         
-    <p align="right">
-Next: <a href="updating.php?phpLang=fr">4 Procédure de correctif de sécurité</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="updating.php?phpLang=fr">4. Procédure de correctif de sécurité</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

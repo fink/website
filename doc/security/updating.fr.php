@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:12:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="notification.php?phpLang=fr" title="Envoi des notifications"><link rel="prev" href="sources.php?phpLang=fr" title="Sources répertoriant les failles">';
 
-include_once "header.inc";
-?>
 
-<h1>Charte de sécurité - 4 Procédure de correctif de sécurité</h1>
+include_once "header.fr.inc";
+?>
+<h1>Charte de sécurité - 4. Procédure de correctif de sécurité</h1>
         
         
         <h2><a name="procedure">4.1 Ajout de correctifs de sécurité</a></h2>
@@ -25,7 +25,9 @@ include_once "header.inc";
             
             <p>Les correctifs de sécurité pour un paquet donné sont d'abord appliqués à la branche instable. Après une période d'attente maximale de <b>12</b> heures, les fichiers info (et éventuellement patch) du paquet sont aussi mis dans la branche stable. La période de rétention doit être utilisée pour vérifier soigneusement que le paquet mis à jour fonctionne et que le correctif de sécurité n'introduit pas de nouveaux problèmes.</p>
         
-    <p align="right">
-Next: <a href="notification.php?phpLang=fr">5 Envoi des notifications</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="notification.php?phpLang=fr">5. Envoi des notifications</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

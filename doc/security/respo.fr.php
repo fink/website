@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:12:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="severity.php?phpLang=fr" title="Délais de réponse et actions immédiates."><link rel="prev" href="index.php?phpLang=fr" title="Charte de sécurité Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Charte de sécurité - 1 Responsabilité</h1>
+include_once "header.fr.inc";
+?>
+<h1>Charte de sécurité - 1. Responsabilité</h1>
         
         
         <h2><a name="who">1.1 Qui est responsable ?</a></h2>
@@ -27,7 +27,9 @@ include_once "header.inc";
             <p><b>L'équipe Fink Core</b> répond aux rapports de failles de sécurité envoyés. Chaque mainteneur doit accuser réception lui-même du problème soumis. Dans l'hypothèse où le mainteneur ne serait pas disponible ou qu'il n'ait pas accusé réception du rapport dans les 24 heures suivant l'envoi, une note doit être envoyée à <b>l'équipe Fink Core</b> pour l'informer que le mainteneur ne semble pas réagir.</p>
             <p>Si vous avez tenté de contacter le mainteneur du paquet et que vous ayez reçu un message d'erreur de distribution du système de courrier, vous devez immédiatement informer <b>l'équipe Fink Core</b> de ce que le mainteneur n'est pas joignable et que le paquet doit être mis à jour sans tenir compte du mainteneur.</p>
         
-    <p align="right">
-Next: <a href="severity.php?phpLang=fr">2 Délais de réponse et actions immédiates.</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="severity.php?phpLang=fr">2. Délais de réponse et actions immédiates.</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

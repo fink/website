@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 17:15:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="next" href="severity.php?phpLang=zh" title="响应时间和立即行动。"><link rel="prev" href="index.php?phpLang=zh" title="Security Policy Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 1 责任</h1>
+include_once "header.zh.inc";
+?>
+<h1>Security Policy - 1. 责任</h1>
         
         
         <h2><a name="who">1.1 由谁负责？</a></h2>
@@ -30,7 +30,9 @@ include_once "header.inc";
             <p>关于安全性问题所提交的报告会由 <b>Fink 核心团队</b>进行回应。每个维护者都被要求自行回复处理被报告的问题。在不太常见的情况下，如果找不到维护者或维护者不能在 24 小时之内回复，应该向 <b>Fink 核心团队</b> 发送信息通知他们维护者似乎没有回应。</p>
             <p>如果你尝试通知维护者但是却被邮件系统退信，你应该立即通知 <b>Fink 核心团队</b>联系不到维护者这样软件包可以不经过维护者而得到更新。</p>
         
-    <p align="right">
-Next: <a href="severity.php?phpLang=zh">2 响应时间和立即行动。</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="severity.php?phpLang=zh">2. 响应时间和立即行动。</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

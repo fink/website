@@ -4,9 +4,9 @@ $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2004/03/24 18:14:58';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink - Documentacion</h1><!--Generated from $Fink: doc.es.xml,v 1.5 2004/03/24 18:14:58 dmrrsn Exp $-->
     <p>
 Este es una coleccion de varios documentos escritos para el Fink. Algunos de ellos tambien pueden ser utiles para la gente que usa Mac OS X o Darwin sin Fink y que deseen aprender a hacer "puertos" de software de Unix. </p>
@@ -40,5 +40,7 @@ Un grupo de documentos que son mas completos, pero ligeramente desactualizados y
       <li><a href="packaging/index.php">Manual de Paquetes</a> - como crear y mantener paquetes de Fink</li>
     </ul>
   
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

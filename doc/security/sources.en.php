@@ -1,13 +1,13 @@
 <?
-$title = "Security Policy - isource";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 15:43:26';
+$title = "Security Policy - Source";
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/07/10 13:51:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="updating.php?phpLang=en" title="Security update procedure."><link rel="prev" href="severity.php?phpLang=en" title="Response times and immediate actions.">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 3 Incident Sources</h1>
+include_once "header.en.inc";
+?>
+<h1>Security Policy - 3. Incident Sources</h1>
         
         
         <h2><a name="sources">3.1 Acceptable Incident Sources.</a></h2>
@@ -131,7 +131,9 @@ include_once "header.inc";
             <p>The above keywords are in full compliance with the CVE
                 recommended keyword list found <a href="http://www.cve.mitre.org/cve/refs/refkey.html">here</a>. </p>
         
-    <p align="right">
-Next: <a href="updating.php?phpLang=en">4 Security update procedure.</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="updating.php?phpLang=en">4. Security update procedure.</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

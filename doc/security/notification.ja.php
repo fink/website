@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/08 15:50:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="prev" href="updating.php?phpLang=ja" title="セキュリティ更新手段">';
 
-include_once "header.inc";
-?>
 
-<h1>セキュリティポリシー - 5 告知</h1>
+include_once "header.ja.inc";
+?>
+<h1>セキュリティポリシー - 5. 告知</h1>
         
         
         
@@ -94,5 +94,7 @@ include_once "header.inc";
 			</p>
         
     
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

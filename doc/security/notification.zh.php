@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 17:15:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="prev" href="updating.php?phpLang=zh" title="安全性更新流程">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 5 发送通知</h1>
+include_once "header.zh.inc";
+?>
+<h1>Security Policy - 5. 发送通知</h1>
         
         
         
@@ -74,5 +74,7 @@ include_once "header.inc";
         <p>请注意 <b>Affected</b> 关键字所指的软件包并不只包含 Fink 中的软件包。在样本报告中很清楚地展示了这点。</p>   
         
     
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

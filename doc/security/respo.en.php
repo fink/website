@@ -1,13 +1,13 @@
 <?
-$title = "Security Policy - Respo";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 15:43:26';
+$title = "Security Policy - Responsibility";
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/07/10 13:51:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="severity.php?phpLang=en" title="Response times and immediate actions."><link rel="prev" href="index.php?phpLang=en" title="Security Policy Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 1 Responsibility</h1>
+include_once "header.en.inc";
+?>
+<h1>Security Policy - 1. Responsibility</h1>
         
         
         <h2><a name="who">1.1 Who is responsible?</a></h2>
@@ -57,7 +57,9 @@ include_once "header.inc";
                 unreachable and that the package may be updated irrespective of
                 the maintainer. </p>
         
-    <p align="right">
-Next: <a href="severity.php?phpLang=en">2 Response times and immediate actions.</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="severity.php?phpLang=en">2. Response times and immediate actions.</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

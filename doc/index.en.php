@@ -4,9 +4,9 @@ $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/29 01:07:30';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink - Documentation</h1><!--Generated from $Fink: doc.en.xml,v 1.8 2004/03/29 01:07:30 alexkhansen Exp $-->
     <p>
 This is a collection of various documents written for Fink.
@@ -46,7 +46,6 @@ releases</li>
   <h2><a name="developerdoc">Developer Documentation</a></h2>
     
     <ul>
-    <li><a href="security/index.php">Fink Security Policy.</a> - Mandatory read for all of those who either have packages in Fink or would like to add their own.</li>
       <li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
 file) - slides from a presentation at the <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</a> (also available as a
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</a>) </li>
@@ -65,5 +64,7 @@ effort</li>
       <li><a href="netiquette/index.php">Mailing List Netiquette</a> - how best to employ the Fink mailing lists.</li>
     </ul>
   
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

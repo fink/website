@@ -4,9 +4,9 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/04/17 01:15:30';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink－文档</h1><!--Generated from $Fink: doc.zh.xml,v 1.7 2004/04/17 01:15:30 jeff_yecn Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
@@ -48,5 +48,7 @@ include_once "header.inc";
       <li><a href="netiquette/index.php">邮件列表使用规则</a>-如何更好地使用 Fink 邮件列表。</li>
     </ul>
   
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

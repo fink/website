@@ -1,13 +1,13 @@
 <?
-$title = "Security Policy - secup";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 15:43:26';
+$title = "Security Policy - Updates";
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/07/10 13:51:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="notification.php?phpLang=en" title="Sending notifications"><link rel="prev" href="sources.php?phpLang=en" title="Incident Sources">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 4 Security update procedure.</h1>
+include_once "header.en.inc";
+?>
+<h1>Security Policy - 4. Security update procedure.</h1>
         
         
         <h2><a name="procedure">4.1 Adding security related updates.</a></h2>
@@ -43,7 +43,9 @@ include_once "header.inc";
                 carefully observe whether the updated package works and the
                 security update does not introduce any new issues.</p>
         
-    <p align="right">
-Next: <a href="notification.php?phpLang=en">5 Sending notifications</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="notification.php?phpLang=en">5. Sending notifications</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

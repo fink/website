@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/08 15:50:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="next" href="sources.php?phpLang=ja" title="事件ソース"><link rel="prev" href="respo.php?phpLang=ja" title="責任">';
 
-include_once "header.inc";
-?>
 
-<h1>セキュリティポリシー - 2 返答時間と即時行動</h1>
+include_once "header.ja.inc";
+?>
+<h1>セキュリティポリシー - 2. 返答時間と即時行動</h1>
         
         
         
@@ -46,7 +46,9 @@ include_once "header.inc";
 					返答の最大時間を満たしていない特にも forced update が行使される。
 				</p>
         
-    <p align="right">
-Next: <a href="sources.php?phpLang=ja">3 事件ソース</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="sources.php?phpLang=ja">3. 事件ソース</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

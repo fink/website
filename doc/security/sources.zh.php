@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 17:15:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="next" href="updating.php?phpLang=zh" title="安全性更新流程"><link rel="prev" href="severity.php?phpLang=zh" title="响应时间和立即行动。">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 3 安全漏洞信息来源</h1>
+include_once "header.zh.inc";
+?>
+<h1>Security Policy - 3. 安全漏洞信息来源</h1>
         
         
         <h2><a name="sources">3.1 可接受的漏洞信息来源</a></h2>
@@ -126,7 +126,9 @@ include_once "header.inc";
             </ol>
             <p>上面的关键字附和<a href="http://www.cve.mitre.org/cve/refs/refkey.html">这里</a>的关键字列表标准 CVE。</p>
         
-    <p align="right">
-Next: <a href="updating.php?phpLang=zh">4 安全性更新流程</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="updating.php?phpLang=zh">4. 安全性更新流程</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

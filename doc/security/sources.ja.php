@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/08 15:50:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="next" href="updating.php?phpLang=ja" title="セキュリティ更新手段"><link rel="prev" href="severity.php?phpLang=ja" title="返答時間と即時行動">';
 
-include_once "header.inc";
-?>
 
-<h1>セキュリティポリシー - 3 事件ソース</h1>
+include_once "header.ja.inc";
+?>
+<h1>セキュリティポリシー - 3. 事件ソース</h1>
         
         
         <h2><a name="sources">3.1 許可される事件ソース</a></h2>
@@ -131,7 +131,9 @@ include_once "header.inc";
 					上記のキーワードは <a href="http://www.cve.mitre.org/cve/refs/refkey.html">CVE 推奨キーワード一覧</a>による。
 				</p>
         
-    <p align="right">
-Next: <a href="updating.php?phpLang=ja">4 セキュリティ更新手段</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="updating.php?phpLang=ja">4. セキュリティ更新手段</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/08 15:50:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="next" href="notification.php?phpLang=ja" title="告知"><link rel="prev" href="sources.php?phpLang=ja" title="事件ソース">';
 
-include_once "header.inc";
-?>
 
-<h1>セキュリティポリシー - 4 セキュリティ更新手段</h1>
+include_once "header.ja.inc";
+?>
+<h1>セキュリティポリシー - 4. セキュリティ更新手段</h1>
         
         
         <h2><a name="procedure">4.1 セキュリティ関連の更新の追加</a></h2>
@@ -43,7 +43,9 @@ include_once "header.inc";
 				この間は、更新されたパッケージが動作し、新たな問題を起こさないことを確認します。
 			</p>
         
-    <p align="right">
-Next: <a href="notification.php?phpLang=ja">5 告知</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="notification.php?phpLang=ja">5. 告知</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

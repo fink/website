@@ -1,13 +1,13 @@
 <?
-$title = "Security Policy - notify";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 15:43:26';
+$title = "Security Policy - Notification";
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/07/10 13:51:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="prev" href="updating.php?phpLang=en" title="Security update procedure.">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 5 Sending notifications</h1>
+include_once "header.en.inc";
+?>
+<h1>Security Policy - 5. Sending notifications</h1>
         
         
         
@@ -60,7 +60,9 @@ include_once "header.inc";
                         Fix: patch|upstream 
                         Updated by: maintainer|forced update (Email)
                         Description: A short description describing the issue.
-                        References: KEYWORD (see above) Ref-URL: URL </pre>
+                        References: KEYWORD (see above) 
+			Ref-URL: URL 
+			</pre>
             
             <p>A sample report could look somewhat like this:</p>
             <pre> ID: FINK-2004-06-01 
@@ -73,8 +75,9 @@ include_once "header.inc";
                         Mac OS X version: 10.3, 10.2 
                         Fix: upstream
                         Updated by: forced update (dmalloc@users.sourceforge.net)
-                        Description: Multiple vulnerabilities in CVS found my ematters
-                        Security. References: BID 
+                        Description: Multiple vulnerabilities in CVS found by Ematters
+                        Security. 
+			References: BID 
                         Ref-URL:    http://www.securityfocus.com/bid/10499 
                         References: CVE 
                         Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
@@ -92,5 +95,7 @@ include_once "header.inc";
             only those that might be packaged for Fink. The sample report shows this clearly.</p>
         
     
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

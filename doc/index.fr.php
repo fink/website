@@ -4,9 +4,9 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/03/31 02:20:52';
 $metatags = '';
 
+
 include_once "header.inc";
 ?>
-
 <h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.8 2004/03/31 02:20:52 michga Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
@@ -46,5 +46,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
       <li><a href="netiquette/index.php">Étiquette net des listes de diffusion</a> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
     </ul>
   
+<? include_once "../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

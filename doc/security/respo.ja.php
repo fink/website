@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/08 15:50:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="next" href="severity.php?phpLang=ja" title="返答時間と即時行動"><link rel="prev" href="index.php?phpLang=ja" title="セキュリティポリシー Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>セキュリティポリシー - 1 責任</h1>
+include_once "header.ja.inc";
+?>
+<h1>セキュリティポリシー - 1. 責任</h1>
         
         
         <h2><a name="who">1.1 誰が責任を負うのか?</a></h2>
@@ -51,7 +51,9 @@ include_once "header.inc";
 					パッケージは、メンテナに関わり無く直ちに更新されます。
 				</p>
         
-    <p align="right">
-Next: <a href="severity.php?phpLang=ja">2 返答時間と即時行動</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="severity.php?phpLang=ja">2. 返答時間と即時行動</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

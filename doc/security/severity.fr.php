@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 17:12:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="sources.php?phpLang=fr" title="Sources répertoriant les failles"><link rel="prev" href="respo.php?phpLang=fr" title="Responsabilité">';
 
-include_once "header.inc";
-?>
 
-<h1>Charte de sécurité - 2 Délais de réponse et actions immédiates.</h1>
+include_once "header.fr.inc";
+?>
+<h1>Charte de sécurité - 2. Délais de réponse et actions immédiates.</h1>
         
         
         
@@ -34,7 +34,9 @@ include_once "header.inc";
             
             <p>Un membre de <b>l'équipe Fink Core</b> peut décider de mettre à jour un paquet sans attendre que le mainteneur le fasse. On appelle cela une mise à jour forcée. Le fait de ne pas tenir le délai de réponse pour une vulnérabilité donnée dans un paquet de Fink entraîne également une mise à jour forcée de ce paquet.</p>
         
-    <p align="right">
-Next: <a href="sources.php?phpLang=fr">3 Sources répertoriant les failles</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="sources.php?phpLang=fr">3. Sources répertoriant les failles</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

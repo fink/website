@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 17:15:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="next" href="sources.php?phpLang=zh" title="安全漏洞信息来源"><link rel="prev" href="respo.php?phpLang=zh" title="责任">';
 
-include_once "header.inc";
-?>
 
-<h1>Security Policy - 2 响应时间和立即行动。</h1>
+include_once "header.zh.inc";
+?>
+<h1>Security Policy - 2. 响应时间和立即行动。</h1>
         
         
         
@@ -35,7 +35,9 @@ include_once "header.inc";
             
             <p><b>Fink 核心团队</b>中的一个成员有可能会选择更新软件包而不等待软件包的维护者先采取行动。这称为强制更新。对导致某些脆弱性问题的软件包未能在最长时间要求内完成更新也会导致一次强制更新。</p>
         
-    <p align="right">
-Next: <a href="sources.php?phpLang=zh">3 安全漏洞信息来源</a></p>
+    <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="sources.php?phpLang=zh">3. 安全漏洞信息来源</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
