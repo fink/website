@@ -4,9 +4,61 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Jeu, 08 avr 2004 12:06:36 CEST</lastBuildDate>
+    <lastBuildDate>Sat, 21 Aug 2004 11:54:34 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0">
+    <title>Error in fink-0.22.0</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</link>
+    <dc:date>2004-08-21</dc:date>
+    <description>
+	
+	The fink-0.22.0 package manager, which was available briefly in the 
+	unstable tree this past week, had a bug which prevents further
+	updating via rsync.  If you installed this version of fink, you
+	can recover by running the command 
+	fink install fink-0.21.2-1 which will downgrade fink
+	to the version in the stable tree, and subsequently running
+	fink selfupdate
+	
+	If for any reason those commands don't work, go to 
+	the 
+	fink file release page at sourceforge and download the
+	file fink-0.22.1.tar.gz .  Unpack this file with
+	tar xfz fink-0.22.1.tar.gz , and then from within the
+	fink-0.22.1 directory, run the command ./inject.pl
+	
+	
+	The fink team apologizes for the error, and thanks the user 
+	community for bringing it to our attention quickly.
+	
+	</description>
+  </item>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
+    <title>Improving our mirrors. Can you help?</title>
+    <link>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</link>
+    <dc:date>2004-08-01</dc:date>
+    <description>
+	
+	Fink's decision to gradually build its own network of mirrors
+	has paid off. To make sure that we can continue to offer
+	a high quality service we need to improve our mirror network.
+	It has been some time since we last asked for more mirrors. 
+	It is time to do so again. Fink is very grateful for the resources 
+	granted to us by our community. To further improve our service to the 
+	community we require an even better mirror system. We especially lack 
+	mirrors in central Europe, Russia and the Far East. If you feel that 
+	you have at least two Mbit to spare for a rsync mirror, or more to offer 
+	a distfiles mirror, please contact us.
+	
+	
+	 To get a better understanding of the different types of mirrors 
+	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 If you feel that you can offer other types of resources, 
+	 web-space for testing as an example, please do not hesitate in contacting us as well.
+	
+	</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.">
     <title>Fink 0.6.3 and 0.7.0 released.</title>
     <link>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</link>
@@ -366,72 +418,6 @@ after free registration from connect.apple.com.
 		can be found on the official 
 		mirroring website.
 		
-		</description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink">
-    <title>Look Ma, a logo for Fink</title>
-    <link>http://fink.sourceforge.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink</link>
-    <dc:date>2003-10-25</dc:date>
-    <description>
-	As you surely noticed, Fink has a logo. This is the result of our
-	Logo contest held earlier this year.
-	This new, official, logo has been displayed since the 24th of October and
-	those of you who wondered how it has been picked and what the name of the
-	winner is should read up in the PR section.
-	
-	
-	The longer explanation also features a larger version of the logo itself,
-	so that you may have a closer look at its details. We like our new logo,
-	we hope that you will like it too.
-	
-	IMPORTANT: We do not yet have a formal licensing agreement for the new
-   logo and so are unable to give permission to distribute it.  Currently, it
-   can only be displayed on the Fink web page.  Thank you for your understanding.
-	
-		</description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3">
-    <title>Upgrade to gcc 3.3 and/or 10.3</title>
-    <link>http://fink.sourceforge.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3</link>
-    <dc:date>2003-10-24</dc:date>
-    <description>
-	It is now possible to upgrade Fink to take full advantage of the gcc 3.3
-compiler, or to use OS X 10.3 if you have that installed.  Binary packages
-corresponding to these upgrades are not yet available, so if you make 
-extensive use of binary packages you may wish to wait a few days before 
-upgrading.
-
-If you wish to perform this upgrade, and you had previously installed the
-June 2003 Developer Tools update from Apple, you will need to install
-the August 2003 Developer Tools update BEFORE you upgrade Fink.  Under
-10.3, be sure to install XCode from the XCode disk before upgrading
-Fink.
-
-Running "fink selfupdate" should perform the upgrade for you.  The latest
-version of the fink package manager will automatically detect which
-version of OS X and which version of gcc you have installed, and will
-adjust itself accordingly.
-
-If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-bootstrapping from
-source, starting from fink-full-0.6.0.tar.gz available
-on fink's sourceforge 
-download page.  You'll need XCode for this as
-well.
-
-Also note that once you have Fink version 0.15.0 or higher, you do
-not need to install system-xfree86 anymore.  Fink is
-capable of automatically determining your system-xfree86 version if you
-don't already have any fink x11 packages installed.  If you currently
-have an old system-xfree86 package of any kind installed, please run the
-following:
-
-sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
-system-xfree86-43; fink selfupdate; fink index
-
-The Fink team is still working on getting Fink packages working under 10.3,
-but many many packages already work.
-
 		</description>
   </item>
 </rdf:RDF>
