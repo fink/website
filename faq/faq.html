@@ -1,0 +1,638 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Fink Documentation - The Fink F.A.Q.</title></head><body><h1 align="center">The Fink F.A.Q.</h1>
+<p>This is the list of frequently asked questions about Fink. Like
+in most FAQs, some questions are taken from real life and some are
+made up. It's really more like a documentation written in an ad-hoc,
+question and answer style.</p>
+<p>The FAQ consists of several pages, one for each section. All
+questions are listed and linked in the table of contents below.</p>
+<h2>Contents</h2><ul>
+<li><a href="#general"><b>General Questions</b></a></li>
+<ul>
+<li><a href="#general.what">What is Fink?</a></li>
+<li><a href="#general.naming">What does the name Fink stand for?</a></li>
+<li><a href="#general.bsd-ports">How is Fink different
+from the BSD port mechanism (this includes OpenPackages and
+GNU-Darwin)?</a></li>
+<li><a href="#general.usr-local">Why doesn't Fink install into
+/usr/local?</a></li>
+<li><a href="#general.why-sw">Then why did you choose
+/sw?</a></li>
+</ul>
+<li><a href="#relations"><b>Relations with Other Projects</b></a></li>
+<ul>
+<li><a href="#relations.upstream">Do you contribute your patches
+back to the upstream maintainers?</a></li>
+<li><a href="#relations.debian">What is your relation with the
+Debian project? Are you porting Debian Linux to Mac OS X?</a></li>
+<li><a href="#relations.apple">What is your relation with
+Apple?</a></li>
+<li><a href="#relations.openosx">What is your relation with
+OpenOSX.com?</a></li>
+<li><a href="#relations.forked">What is your relation with
+macosx.forked.net?</a></li>
+</ul>
+<li><a href="#usage-fink"><b>Installing, Using and Maintaining Fink</b></a></li>
+<ul>
+<li><a href="#usage-fink.what-packages">How can I find out what packages Fink supports?</a></li>
+<li><a href="#usage-fink.proxy">I'm behind a firewall. How do I
+configure Fink to use an HTTP proxy?</a></li>
+<li><a href="#usage-fink.moving">Can I move Fink to another
+location after installation?</a></li>
+<li><a href="#usage-fink.moving-symlink">If I move Fink after
+installation and provide a symlink from the old location, will it
+work?</a></li>
+<li><a href="#usage-fink.kde">Why are there no packages for
+KDE?</a></li>
+<li><a href="#usage-fink.bindist">The package database at the
+website lists package xxx, but apt-get and dselect know nothing about
+it. Who's lying?</a></li>
+<li><a href="#usage-fink.unstable">There's this package in
+unstable that I want to install, but the fink command just says 'no
+package found'. How can I install it?</a></li>
+<li><a href="#usage-fink.sudo">I'm tired of typing my password into sudo again
+and again. Is there a way around this?</a></li>
+<li><a href="#usage-fink.exec-init-csh">When I try to run
+init.csh, I get a "Permission denied" error. What am I doing
+wrong?</a></li>
+<li><a href="#usage-fink.dselect-access">Help! I used the
+"[A]ccess" menu entry in dselect and now I can't download packages any
+more!</a></li>
+</ul>
+<li><a href="#comp-general"><b>Compile Problems - General</b></a></li>
+<ul>
+<li><a href="#comp-general.compiler">A configure script complains
+that it can't find an "acceptable cc". What's that?</a></li>
+<li><a href="#comp-general.make">make: illegal option -- C</a></li>
+<li><a href="#comp-general.head">I'm getting a strange usage message
+from the head command. What's broken?</a></li>
+</ul>
+<li><a href="#comp-packages"><b>Compile Problems - Specific Packages</b></a></li>
+<ul>
+<li><a href="#comp-packages.nedit">nedit is broken.</a></li>
+<li><a href="#comp-packages.gnome-libs-db">gnome-libs complains about
+dbopen and lots of other stuff.</a></li>
+<li><a href="#comp-packages.libiconv">libiconv fails with errors that
+mention ANSI C++.</a></li>
+<li><a href="#comp-packages.xaw3d">Xaw3D fails to compile with a
+two-level namespace error.</a></li>
+</ul>
+<li><a href="#usage-general"><b>Package Usage Problems - General</b></a></li>
+<ul>
+<li><a href="#usage-general.gnome-icons">Some GNOME applications display
+black icons only. What's wrong?</a></li>
+<li><a href="#usage-general.xlocale">I'm getting lots of messages
+like "locale not supported by C library". Is that bad?</a></li>
+</ul>
+<li><a href="#usage-packages"><b>Package Usage Problems - Specific Packages</b></a></li>
+<ul>
+<li><a href="#usage-packages.gnome-panel">The GNOME panel displays
+black icons only. What's wrong?</a></li>
+<li><a href="#usage-packages.xmms-quiet">I get no sound from
+XMMS</a></li>
+<li><a href="#usage-packages.gnome-terminal">Why won't gnome-terminal
+start up?</a></li>
+<li><a href="#usage-packages.xdarwin-start">Help! When I start
+XDarwin, it immediately quits!</a></li>
+<li><a href="#usage-packages.xfree-keymapping">I just upgraded to Mac
+OS X 10.1 and now XFree86 always quits immediately. In the messages it
+says "assert failed on line 454 of darwinKeyboard.c!". What's
+wrong?</a></li>
+</ul>
+</ul><a name="general"><h2>General Questions</h2></a>
+
+
+
+<a name="general.what"><div class="question"><p><b>Q: What is Fink?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Fink wants to bring more Unix software to Mac OS X, which results in
+two main goals:
+</p><p>
+Goal number one is porting software to Mac OS X.
+That means we take commodity Open Source Unix software and fix
+whatever is necessary so that it will compile and run on Mac OS X.
+Sometimes that's easy, but it can also be very hard or even impossible
+for some packages.
+We're trying to provide tools and documentation to make this easier.
+</p><p>
+Goal number two is making the results available to casual users.
+For this, we build a distribution using package management tools
+ported over from Linux, namely <tt><nobr>dpkg</nobr></tt> and
+<tt><nobr>apt-get</nobr></tt>, written by and for the <a href="http://www.debian.org/">Debian GNU/Linux</a> project.
+The binary distribution uses the <tt><nobr>.deb</nobr></tt> package format.
+For building packages from source, we have our own tool, named
+<tt><nobr>fink</nobr></tt>, which creates those <tt><nobr>.deb</nobr></tt> package
+files.
+</p></div></a>
+
+<a name="general.naming"><div class="question"><p><b>Q: What does the name Fink stand for?</b></p></div>
+<div class="answer"><p><b>A:</b> Nothing, it's just a name. It's not even an acronym.</p><p>Well, actually Fink is the German name for Finch, a kind of
+bird. I was looking for a name for the project, and the name of the
+OS, Darwin, led me to think about Charles Darwin, the Galapagos
+Islands and evolution. I remembered a piece about the so-called Darwin
+Finches and their beaks from school, and well, that's it...</p></div></a>
+
+<a name="general.bsd-ports"><div class="question"><p><b>Q: How is Fink different
+from the BSD port mechanism (this includes OpenPackages and
+GNU-Darwin)?</b></p></div>
+<div class="answer"><p><b>A:</b> Some main advantages:</p><ul>
+<li><p>
+It's written in Perl, not make/shell.
+Thus it doesn't rely on special features only found in BSD make.
+There is no need to flag packages that need GNU make to build.
+</p></li>
+<li><p>
+dpkg provides sophisticated management for binary packages - smooth
+updating, special handling for configuration files, virtual packages
+and other advanced dependencies.
+</p></li>
+<li><p>
+Fink doesn't install into /usr/local unless explicitly requested and
+doesn't require fiddling with /usr/bin/make or other system-provided
+commands.
+That makes it safer to use and reduces interference with Mac OS X and
+third-party packages to a minimum.
+</p></li>
+</ul></div></a>
+
+<a name="general.usr-local"><div class="question"><p><b>Q: Why doesn't Fink install into
+/usr/local?</b></p></div>
+<div class="answer"><p><b>A:</b> There are several reasons, but the common line is "because
+breakage will occur".</p><p>Reason One: Third-party software. /usr/local is the
+well-established place to put software that is not part of the system
+shipped by the original vendor. This means that it is a good place to
+put stuff. However, it also means that other people will put stuff
+there, too. Most install routines will just overwrite what's there -
+this also applies to dpkg. One can, of course, choose not to install
+third-party software in /usr/local. Unfortunately, most installers
+don't tell you beforehand what they will install where.</p><p>Reason Two: /usr/local/bin is in the default PATH. This means that
+your shell will find the install programs without additional
+measures. But it also means that you do have to take additional
+measures if you do not want to use the programs. In extreme cases,
+this can also affect the system itself - many parts depend on shell
+scripts.</p><p>Reason Three: The compiler tool chain searches /usr/local by
+default. The compiler searches /usr/local/include for header files and
+the linker searches /usr/local/lib for libraries. Again, this is
+sometimes a welcome convenience, but it's very hard to disable should
+the need arise. You can easily disable the compiler by putting a
+garbage file called <tt><nobr>stdio.h</nobr></tt> into /usr/local/include.</p><p>All that said, it is possible to install Fink into /usr/local. The
+installation script will warn you explicitly, but proceed once you
+acknowledge that you're doing this at your own risk.</p></div></a>
+
+<a name="general.why-sw"><div class="question"><p><b>Q: Then why did you choose
+/sw?</b></p></div>
+<div class="answer"><p><b>A:</b> That choice is quite arbitrary. If you have a better
+suggestion, post it to the fink-devel mailing list. But you should be
+aware of the arguments about /usr/local in the previous question.</p></div></a>
+
+
+
+<a name="relations"><h2>Relations with Other Projects</h2></a>
+
+
+
+<a name="relations.upstream"><div class="question"><p><b>Q: Do you contribute your patches
+back to the upstream maintainers?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+We're trying to.
+Sometimes sending patches back is easy and everyone is happy once the
+next release of the package is out.
+Unfortunately with most packages it's not that easy.
+Some common problems:
+</p><ul>
+<li>The Fink package maintaner is very busy and doesn't have the time
+to send the patch and accompanying explanations to the upstream
+maintainers.</li>
+<li>The upstream maintainers reject the patch. There are lots of valid
+reasons for this. Most upstream maintainers have a strong interest in
+clean code, clean configure checks, and compatibility with other
+platforms.</li>
+<li>The upstream maintainers accept the patch, but it takes some weeks
+or months until they release a new version of their package.</li>
+<li>The package has been abhandoned by the original authors and there
+will be no new releases into which the patch could be merged.</li>
+</ul></div></a>
+
+
+<a name="relations.debian"><div class="question"><p><b>Q: What is your relation with the
+Debian project? Are you porting Debian Linux to Mac OS X?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+There is no formal relation between Fink and
+<a href="http://www.debian.org">Debian</a>.
+Fink is <b>not</b> a port of the Debian GNU/Linux distribution.
+We have ported Debian's package management tools (dpkg, dselect,
+apt-get) though, and use these tools and the .deb binary package
+format.
+The actual packages are tailor-made for Mac OS X / Darwin and don't
+use the Debian source package format.
+</p></div></a>
+
+
+<a name="relations.apple"><div class="question"><p><b>Q: What is your relation with
+Apple?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+<a href="http://www.apple.com/">Apple</a> is aware of Fink and
+has started to support us as part of their Open Source relations
+efforts.
+So far they are providing us with pre-release seeds of new Mac OS X
+versions in the hope that Fink packages can be adapted in time for the
+release.
+Quote:
+<i>"Hopefully it underscores the commitment that many suspect we're
+not willing to provide.  We'll get better at the open source game over
+time."</i>
+Thanks Apple!
+</p></div></a>
+
+
+<a name="relations.openosx"><div class="question"><p><b>Q: What is your relation with
+OpenOSX.com?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+They used Fink to build the first release of their GIMP CD and refuse
+go acknowledge that properly.
+Read the <a href="http://fink.sourceforge.net/pr/openosx.php">public
+statement</a> for details.
+</p></div></a>
+
+
+<a name="relations.forked"><div class="question"><p><b>Q: What is your relation with
+macosx.forked.net?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+That site redistributes some Fink packages as Installer.app packages,
+unchanged but with their own boilerplate that doesn't mention Fink.
+Read the <a href="http://fink.sourceforge.net/pr/forked.php">public
+statement</a> for details.
+</p></div></a>
+
+
+<a name="usage-fink"><h2>Installing, Using and Maintaining Fink</h2></a>
+
+
+
+<a name="usage-fink.what-packages"><div class="question"><p><b>Q: How can I find out what packages Fink supports?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
+It produces a list of all packages known to your Fink installation.
+Example:
+</p><pre>fink list</pre><p>
+If you're using the binary distribution, <tt><nobr>dselect</nobr></tt> gives
+you a nice browsable listing of available packages.
+Note that you must run it as root if you want to select and install
+packages from within dselect.
+</p><p>
+There's also the <a href="http://fink.sourceforge.net/pdb/">package
+database</a> at the website.
+</p></div></a>
+
+<a name="usage-fink.proxy"><div class="question"><p><b>Q: I'm behind a firewall. How do I
+configure Fink to use an HTTP proxy?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+The <tt><nobr>fink</nobr></tt> command supports explicit proxy settings that
+are passed on to <tt><nobr>wget</nobr></tt> resp. <tt><nobr>curl</nobr></tt>.
+If you were not asked for proxies on first time installation, you can
+run <tt><nobr>fink configure</nobr></tt> to set it up.
+You can also run that command at any time to reconfigure the
+<tt><nobr>fink</nobr></tt> command.
+These settings do not apply to <tt><nobr>apt-get</nobr></tt> and
+<tt><nobr>dselect</nobr></tt>, though.
+Investigations continue...
+</p></div></a>
+
+<a name="usage-fink.moving"><div class="question"><p><b>Q: Can I move Fink to another
+location after installation?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+No.
+Well, of course you can move the files using mv or the Finder, but 99%
+of the programs will stop working when you do.
+That's because basically all Unix software depends on hardcoded paths
+to find data files, libraries and other stuff.
+</p></div></a>
+
+<a name="usage-fink.moving-symlink"><div class="question"><p><b>Q: If I move Fink after
+installation and provide a symlink from the old location, will it
+work?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Maybe.
+The general expectation is that it should work, but there may be
+hidden traps somewhere.
+</p></div></a>
+
+
+
+<a name="usage-fink.kde"><div class="question"><p><b>Q: Why are there no packages for
+KDE?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Because there simply are none.
+</p><p>
+Seriously, KDE has (or at least had) serious problems that prevent a
+port to Mac OS X.
+It assumes it can do things with shared libraries that are only
+possible on ELF systems like Linux, *BSD and Solaris.
+It could very well be that some people are trying to port it
+nevertheless, but we haven't heard of any breakthroughs yet.
+Note that Qt is a different story, we have a package for it and it
+works fine.
+</p></div></a>
+
+<a name="usage-fink.bindist"><div class="question"><p><b>Q: The package database at the
+website lists package xxx, but apt-get and dselect know nothing about
+it. Who's lying?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Both are correct.
+The <a href="http://fink.sourceforge.net/pdb/">package database</a>
+knows about every package, including those that are still in the
+unstable section.
+The <tt><nobr>dselect</nobr></tt> and <tt><nobr>apt-get</nobr></tt> tools on the other
+hand only know about the packages available as precompiled binary
+packages.
+Many packages are not available in precompiled form through these
+tools for a variety of reasons.
+A package must be in the "stable" section of the latest point release
+to be considered, and it must pass additional checks for policy
+compliance as well as licensing and patent restrictions.
+</p><p>
+If you want to install a package that is not available via
+<tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
+from source using <tt><nobr>fink install <i>packagename</i></nobr></tt>.
+Make sure you have the Developer Tools installed before you try this.
+See also the question about unstable below.
+</p></div></a>
+
+<a name="usage-fink.unstable"><div class="question"><p><b>Q: There's this package in
+unstable that I want to install, but the fink command just says 'no
+package found'. How can I install it?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+First make sure you understand what 'unstable' means.
+Packages in there usually have not been tested at all, many have
+problems or just won't compile.
+That is why Fink doesn't search the unstable tree by default.
+</p><p>
+If you only want one or two specific packages, it is safer to copy
+those .info files (and their associated .patch files, if there are
+any) from <tt><nobr>/sw/fink/dists/unstable/main/finkinfo</nobr></tt>
+to <tt><nobr>/sw/fink/dists/local/main/finkinfo</nobr></tt>.
+If you want Fink to use all of unstable, edit
+<tt><nobr>/sw/etc/fink.conf</nobr></tt> and add
+<tt><nobr>unstable/main</nobr></tt> to the <tt><nobr>Trees:</nobr></tt>
+line.
+</p></div></a>
+
+<a name="usage-fink.sudo"><div class="question"><p><b>Q: I'm tired of typing my password into sudo again
+and again. Is there a way around this?</b></p></div>
+<div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
+password. To do this, edit <tt><nobr>/etc/sudoers</nobr></tt> as root
+and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace <tt><nobr>username</nobr></tt> with your actual username, of course. This
+line allows you to run any command via sudo without typing your
+password.</p></div></a>
+
+<a name="usage-fink.exec-init-csh"><div class="question"><p><b>Q: When I try to run
+init.csh, I get a "Permission denied" error. What am I doing
+wrong?</b></p></div>
+<div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
+sets environment variables like PATH and MANPATH in your shell. To
+have a lasting effect on the shell, it must be processed with the
+<tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
+
+<a name="usage-fink.dselect-access"><div class="question"><p><b>Q: Help! I used the
+"[A]ccess" menu entry in dselect and now I can't download packages any
+more!</b></p></div>
+<div class="answer"><p><b>A:</b> 
+You probably pointed apt at a Debian mirror, which of course doesn't
+have the Fink files.
+You can fix this manually or through dselect.
+To fix it manually, edit the file
+<tt><nobr>/sw/etc/apt/sources.list</nobr></tt> in a text editor as root.
+Remove lines that mention debian.org and replace them with these:
+</p><pre>deb http://fink.sourceforge.net/bindist relase main crypto
+deb http://fink.sourceforge.net/bindist current main crypto</pre><p>
+To fix it through dselect, run "[A]ccess" again, choose the "apt"
+method and enter the following info:
+</p><p>
+URL: http://fink.sourceforge.net/bindist -
+Distribution: release -
+Components: main crypto
+</p><p>
+Then, say you want to add another source and repeat the process with
+"current" instead of "release".
+</p><p>
+A fixed version of the apt package (which provides the configuration
+script as a plug-in for dselect) is making it's way through CVS now.
+</p></div></a>
+
+<a name="comp-general"><h2>Compile Problems - General</h2></a>
+
+
+
+<a name="comp-general.compiler"><div class="question"><p><b>Q: A configure script complains
+that it can't find an "acceptable cc". What's that?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Read the docs next time.
+To compile packages from source, you must install the Developer Tools,
+which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
+</p></div></a>
+
+<a name="comp-general.make"><div class="question"><p><b>Q: make: illegal option -- C</b></p></div>
+<div class="answer"><p><b>A:</b> 
+You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
+installed as part of the Developer Tools with a BSD version of make.
+Many packages rely on special features only supported by GNU make.
+Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
+<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>.
+</p></div></a>
+
+<a name="comp-general.head"><div class="question"><p><b>Q: I'm getting a strange usage message
+from the head command. What's broken?</b></p></div>
+<div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1
+Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of option descriptions, you have a broken
+<tt><nobr>head</nobr></tt> executable.
+This happens when you install the Perl libwww library on an HFS+
+system volume.
+It tries to create a new command <tt><nobr>/usr/bin/HEAD</nobr></tt>, which
+overwrites the existing <tt><nobr>head</nobr></tt> command because the file
+system is case-insensitive.
+<tt><nobr>head</nobr></tt> is a standard command used in many shell scripts and
+Makefiles.
+You need to get the original <tt><nobr>head</nobr></tt> executable back if you
+want to use Fink.
+</p><p>
+The bootstrap script of the source release now checks for this, but
+you can still run into it if you use the binary release for first-time
+installation or install libwww after you installed Fink.
+</p></div></a>
+
+<a name="comp-packages"><h2>Compile Problems - Specific Packages</h2></a>
+
+
+
+<a name="comp-packages.nedit"><div class="question"><p><b>Q: nedit is broken.</b></p></div>
+<div class="answer"><p><b>A:</b> If you're seeing <tt><nobr>Xm/BulletinB.h: No such file or
+directory</nobr></tt> in the error messages, that's because you have Xtools
+installed. Xtools includes OpenMotif, but unfortunately Tenon forgot
+to include some required header files. There is no workaround yet, and
+it is unknown whether this is fixed in recent releases on Xtools.</p></div></a>
+
+<a name="comp-packages.gnome-libs-db"><div class="question"><p><b>Q: gnome-libs complains about
+dbopen and lots of other stuff.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This can happen when you manually installed Berkeley DB 3 without
+backward compatibility.
+gnome-libs expects to find a DB 1.86 compatible interface.
+Remove the DB 3 installation from /usr/local or replace it with one
+that has DB 1.86 compatibility.
+</p></div></a>
+
+<a name="comp-packages.libiconv"><div class="question"><p><b>Q: libiconv fails with errors that
+mention ANSI C++.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This happens when you make a symlink from <tt><nobr>gcc</nobr></tt> to
+<tt><nobr>c++</nobr></tt>.
+That causes all C code to be compiled as C++ code.
+Unfortunately, C allows some things that C++ doesn't allow, resulting
+in these errors.
+You should remove the symlink you created, or at least point it at
+<tt><nobr>cc</nobr></tt> instead.
+</p></div></a>
+
+<a name="comp-packages.xaw3d"><div class="question"><p><b>Q: Xaw3D fails to compile with a
+two-level namespace error.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This can happen on Mac OS X 10.1 if you have installed XFree86
+manually (i.e. you have system-xfree86) or if you have Xtools.
+Xaw3D uses the configuration files installed by XFree86 and fails if
+those have not been patched for Mac OS X 10.1.
+xfree86-base already has those patches in Fink 0.3.0.
+system-xfree86 and system-xtools have been fixed to patch the
+configuration files on the fly if necessary.
+They are available in CVS; the binary distribution has also been
+updated with these new packages.
+</p></div></a>
+
+<a name="usage-general"><h2>Package Usage Problems - General</h2></a>
+
+
+
+<a name="usage-general.gnome-icons"><div class="question"><p><b>Q: Some GNOME applications display
+black icons only. What's wrong?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This is caused by limitations in the operating system kernel.
+The only solution so far is to turn off shared memory.
+The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
+</p></div></a>
+
+<a name="usage-general.xlocale"><div class="question"><p><b>Q: I'm getting lots of messages
+like "locale not supported by C library". Is that bad?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+It's not bad, it just means that the program will use the default
+English messages, date formats, etc.
+The program will function normally otherwise.
+The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.
+</p></div></a>
+
+<a name="usage-packages"><h2>Package Usage Problems - Specific Packages</h2></a>
+
+
+
+<a name="usage-packages.gnome-panel"><div class="question"><p><b>Q: The GNOME panel displays
+black icons only. What's wrong?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+This is caused by limitations in the operating system kernel.
+The only solution so far is to turn off shared memory.
+The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#black">details</a>.
+</p></div></a>
+
+<a name="usage-packages.xmms-quiet"><div class="question"><p><b>Q: I get no sound from
+XMMS</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Make sure you have the "eSound Output Plugin" selected in the XMMS
+preferences.
+For some strange reason, it selects the disk writer plugin as the
+default.
+</p><p>
+If you still get no sound output or XMMS complains that it can't find
+your sound card try this:
+</p><ul>
+<li>Make sure you haven't muted sound output in Mac OS X.</li>
+<li>Run <tt><nobr>esdcat /usr/libexec/config.guess</nobr></tt> (or any other
+file of a decent size).
+If you hear a short noise, esound works and XMMS should work too if
+it's configured correctly.
+If you don't hear anything, esd isn't working for some reason.
+You can try to start it up manually with <tt><nobr>esd &amp;</nobr></tt> and watch
+the messages.
+</li>
+<li>
+If it still doesn't work, check the permissions on
+<tt><nobr>/tmp/.esd</nobr></tt> and <tt><nobr>/tmp/.esd/socket</nobr></tt>.
+Those should have your normal user account as the owner.
+If they aren't owned by you, kill esd if it's running, remove the
+directory as root (<tt><nobr>sudo rm -rf /tmp/.esd</nobr></tt>), then start esd
+again (as a normal user, not as root).
+</li>
+</ul><p>
+Note that esd is designed to be run by a normal user, not by root.
+It usually communicates via the file system socket
+<tt><nobr>/tmp/.esd/socket</nobr></tt>.
+You only need the <tt><nobr>-tcp</nobr></tt> and <tt><nobr>-port</nobr></tt> switches if
+you want to run esd clients on another machine over the network.
+</p><p>
+There have also been reports of XMMS crashing or freezing on 10.1.
+We don't have an analysis or a fix yet.
+</p></div></a>
+
+<a name="usage-packages.gnome-terminal"><div class="question"><p><b>Q: Why won't gnome-terminal
+start up?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
+working.
+The actual bug (file descriptor passing doesn't work) is masked by
+another issue (unusual stack size limit), which was left as is to
+produce an error message when gnome-terminal is started (thus
+preventing even more confusion).
+It is expected that this will be fixed in Mac OS X 10.1.
+</p></div></a>
+
+<a name="usage-packages.xdarwin-start"><div class="question"><p><b>Q: Help! When I start
+XDarwin, it immediately quits!</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Don't Panic.
+The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit">troubleshooting
+section</a> for this common problem.
+</p></div></a>
+
+<a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q: I just upgraded to Mac
+OS X 10.1 and now XFree86 always quits immediately. In the messages it
+says "assert failed on line 454 of darwinKeyboard.c!". What's
+wrong?</b></p></div> 
+<div class="answer"><p><b>A:</b> 
+This is a known problem on 10.1.
+You must use the "Load from file" keymapping option since the default
+option (loading it from the kernel) doesn't work anymore.
+The setting is in the XDarwin Preferences dialog.
+Be sure that a file is selected (e.g. USA.keymapping) - simply
+activating the check box may not be sufficient with some versions.
+If you can't get to the Preferences dialog because you disabled all
+splash screens, you can delete
+<tt><nobr>~/Library/Preferences/org.xfree86.XDarwin.plist</nobr></tt> to get it
+back, then start XDarwin and go to the Preferences dialog while the
+splash screen is displayed.
+Alternatively, you can edit that file manually in a text editor to
+enable the keymapping option (the UseKeymappingFile and KeymappingFile
+bits).
+</p><p>
+As a last resort, you can run <tt><nobr>startx -- -quartz -keymap
+USA.keymapping</nobr></tt> from Terminal.app.
+If this still doesn't work, you have another problem in addition to
+the keymapping problem that prevents XDarwin from starting.
+You'll get a bunch of diagnostic messages in Terminal.app to help you
+sort this out.
+</p></div></a>
+
+
+<hr><h2>Copyright Notice</h2>
+<p>Copyright (c) 2001 Christoph Pfisterer.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.24 2001/11/04 15:45:26 chrisp Exp $</i></p></body></html>
