@@ -1,7 +1,7 @@
 <?
 $title = "Organization of Fink";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/05/04 13:55:13 $';
+$cvs_date = '$Date: 2004/05/05 12:45:56 $';
 
 include "header.inc";
 ?>
@@ -16,14 +16,15 @@ Fink project.</p>
 <a name="core"><h2>The Fink Core Team</h2></a>
 
 <p>The Fink Core Team is responsible for several aspects of central
-management of the fink project.  They work on the fink program and
+management of the Fink project.  Team members work on the fink program 
+itself and
 coordinate contributions of others to that program; they serve as
 Maintainers for all of the "essential" packages in the Fink collection,
 and ensure that bootstrapping with these essential packages works;
 they manage releases of the fink program and related programs;
-they managre creation and release of major fink distributions,
-including the source and binary distribution.  They also help to
-coordinate the other groups of volunteers which work on the Fink
+they manage creation and release of major fink distributions,
+including the source and binary distributions.  They also help to
+coordinate the other groups of volunteers who work on the Fink
 project. 
 </p>
 
