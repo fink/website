@@ -4,12 +4,12 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 02 Sep 2003 12:57:25 CEST</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2003 17:15:26 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>It is all over</title>
-    <link>http://fink.sf.net/news/#2003-09-02%20It%20is%20all%20over</link>
+    <title>Logo contest ends</title>
+    <link>http://fink.sf.net/news/#2003-09-02%20Logo%20contest%20ends</link>
     <dc:date>2003-09-02</dc:date>
     <description>
 The Logo contest held by Fink, announced  here, 

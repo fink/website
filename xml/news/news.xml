@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.67 2003/09/02 10:58:40 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.68 2003/09/02 21:14:31 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
 	<date>2003-09-02</date>
-	<headline>It is all over</headline>
+	<headline>Logo contest ends</headline>
 		<body>
 <p>The Logo contest held by Fink, announced <link url="http://fink.sourceforge.net/logo.php"> here, </link>
 ended yesterday. With over 80 different proposals from countries all over the world we 

@@ -1,4 +1,4 @@
-<a name="2003-09-02 It is all over"><span class="news-date">2003-09-02: </span><span class="news-headline">It is all over</span></a><?php gray_line(); ?>
+<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
 <p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>http://fink.sourceforge.net/logo.php"> here, </a>
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
@@ -39,14 +39,14 @@ Developer Tools which includes gcc 3.3,
 their new compiler.
 </p><p>
 Fink does not yet support compiling with gcc 3.3.  In addition, it is important
-not to "mix and match" between compilers:  all C++ code in fink packages
+not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
 needs to be compiled
 with the same compiler.
 </p><p>
 For this reason, the Fink team recommends that if you update your
 Developer Tools with the new patch, you should be careful to run
 <code>sudo gcc_select 3</code>
-prior to any "fink build" or "fink install" commands.
+prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
 </p>
 <p><b>Update 30 June 2003:</b> A 
 <a href="<?php print $root; ?>http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
