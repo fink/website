@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/14 02:31:00';
+$cvs_date = 'Date: 2004/04/26 03:33:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 include_once "header.inc";
@@ -190,8 +190,18 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
         <h2><a name="dumpinfo">6.21 dumpinfo - analyse des fichiers info</a></h2>
       
       <p>
-	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet.
+	Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet. Les <b>options</b> suivantes permettent de moduler l'affichage des champs et l'interprétation des raccourcis :
       </p>
+      <pre>
+-h, --help           - Affiche les options disponibles.
+-a, --all            - Affiche tous les champs de description du paquet.
+                       C'est le mode par défaut quand aucune option 
+                       --field ou --percent n'est utilisée.
+-f nomchamp,         - Affiche le contenu des champs indiqués
+  --field=nomchamp     dans leur ordre d'apparition après l'option -f.
+-p clé,              - Affiche l'interprétation des clés fournies
+   --percent=clé       dans leur ordre d'apparition après l'option -p.
+     </pre>
     
 
   
