@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.8 2004/03/23 23:46:45 vasi Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.9 2004/03/25 01:18:53 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -271,7 +271,8 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>
 <itemd>
 <p>
 the <em>d</em>estination directory where the tree to be packaged is built, e.g.
-<filename>/sw/src/root-gimp-1.2.1-1</filename>. You must not assume that
+<filename>/sw/src/root-gimp-1.2.1-1</filename>. This temporary directory serves
+as root during the installation phase of compiling a package. You must not assume that
 <filename>root-%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
 in <filename>/sw/etc/fink.conf</filename>.
