@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/12/10 14:33:52';
+$cvs_date = 'Date: 2003/12/10 14:36:15';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -73,7 +73,7 @@ startup or not, for applications that use weak references.</p></div>
 </a>
 <a name="mv-failed">
 <div class="question"><p><b>Q5.7: What does "execution of mv failed, exit code 1" mean when I try to build a package?</b></p></div>
-<div class="answer"><p><b>A:</b> It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
+<div class="answer"><p><b>A:</b> If you have StuffIt Pro installed, it could be that you have "Archive Via Real Name" mode enabled.  Check for a StuffIt preference pane in the System Preferences tool, and disable "ArchiveViaRealName" if it's enabled.  It contains a buggy reimplementation of a few important system calls that will cause a number of strange and transient errors such as this.</p><p>Otherwise, a mv error typically means that another error happened earlier in the build, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
  No such file or directory

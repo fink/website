@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.158 2003/12/10 14:36:15 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.159 2003/12/11 01:13:20 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -900,7 +900,8 @@ startup or not, for applications that use weak references.</p>
 <p>What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</p>
 </question>
 <answer>
-<p>It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
+<p>If you have StuffIt Pro installed, it could be that you have "Archive Via Real Name" mode enabled.  Check for a StuffIt preference pane in the System Preferences tool, and disable "ArchiveViaRealName" if it's enabled.  It contains a buggy reimplementation of a few important system calls that will cause a number of strange and transient errors such as this.</p>
+<p>Otherwise, a mv error typically means that another error happened earlier in the build, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
 <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
