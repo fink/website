@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.15 2004/04/30 04:57:48 dmacks Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.16 2004/05/18 15:49:15 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -862,6 +862,35 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 と書かれている部分を削除します。</p> 
 </answer> 
 </faqentry>
+<faqentry name="ext-drive">
+<question>
+	<p>
+	メインパーティション以外に Fink をインストールしていますが、
+	ソースからの更新ができません。
+	<quote>chowname</quote> を含んだエラーが出ます。
+	</p>
+</question>
+<answer>
+<p>このようなエラーであれば:</p>
+<codeblock>This first test is designed to die, so please ignore the error
+ message on the next line.
+ # Looks like your test died before it could output anything.
+ ./00compile............................ok
+ ./Base/initialize......................ok
+ ./Base/param...........................ok
+ ./Base/param_boolean...................ok
+ ./Command/cat..........................ok
+ ./Command/chowname.....................#
+ Failed test (./Command/chowname.t at line 27)
+ #          got: 'root'
+ #     expected: 'nobody'</codeblock>
+<p>
+、Fink がインストールされているドライブ/パーティションを
+「<em>情報を見る</em>」し、 &quot;所有権を無視する&quot; を外します。
+</p>
+</answer>
+</faqentry>
+
 </chapter>
 <chapter filename="comp-general" >
 <title>コンパイルの問題 - 一般</title>
