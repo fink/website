@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 03:06:07 $';
+$cvs_date = '$Date: 2004/04/21 03:14:04 $';
 
 include "header.inc";
 include "releases.inc";
@@ -39,7 +39,9 @@ if(param("splitoffs"))
 $sort = 'maintainer';
 if(param("sort"))
 	$sort = param("sort");
-
+else
+	$sort = 'maintainer';
+	
 if(param("red"))
 	$op = 3;
 if(param("green"))
@@ -86,8 +88,8 @@ if (!$rs) {
   		($splitoffs ? 'checked>' : '>').
   		"Include Splitoffs<br>";
   print 'Sort: <SELECT name = sort>'.
-  		'<option value=name '. ($sort ? 'selected>' : '>'). 'Package Name'.
-  		'<option value=maintainer '. ($sort ? '>' : 'selected>'). 'Maintainer</SELECT>'; 
+  		'<option value=maintainer '. (strcmp($sort, "maintainer") ? '>' : 'selected>'). 'Maintainer'.
+  		'<option value=name '. (strcmp($sort, "name") ? '>' : 'selected>'). 'Package Name</SELECT>';
   
 ?>  
 <input type="submit" value="Search">
@@ -166,11 +168,11 @@ if (!$rs) {
 				$maintainer = $matches[1];
 				
 			if(! strcmp($sort, "maintainer"))
-			$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			 $row[version].'-'.$row[revision].$desc . "\n";  
+				$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				 $row[version].'-'.$row[revision].$desc . "\n";  
 			else
-			$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
+				$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
 
 			if($row[needtest] > 0)
 				$pkglist = $pkglist."</div>";
