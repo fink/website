@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/11/21 14:33:03';
+$cvs_date = 'Date: 2002/11/21 15:01:35';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -83,6 +83,7 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 <li><a href="comp-general.php#make">4.2 make: illegal option -- C</a></li>
 <li><a href="comp-general.php#head">4.3 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
+<li><a href="comp-general.php#also_in">4.4 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -114,7 +115,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.54 2002/11/21 14:33:03 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.55 2002/11/21 15:01:35 alexkhansen Exp $</i></p>
 
 
 <?

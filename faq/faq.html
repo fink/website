@@ -73,6 +73,7 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 <li><a href="#comp-general.make">4.2 make: illegal option -- C</a></li>
 <li><a href="#comp-general.head">4.3 I'm getting a strange usage message
 from the head command. What's broken?</a></li>
+<li><a href="#comp-general.also_in">4.4 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
 </ul>
 <li><a href="#comp-packages"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -543,6 +544,8 @@ The bootstrap script of the source release now checks for this, but
 you can still run into it if you use the binary release for first-time
 installation or install libwww after you installed Fink.
 </p></div></a>
+<a name="comp-general.also_in"><div class="question"><p><b>Q4.4: When I try to install a package I get an error message about trying to overwrite a file that is in another package.</b></p></div>
+<div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <tt><nobr>foo</nobr></tt> to <tt><nobr>foo-shlibs</nobr></tt>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p><pre>sudo dpkg -i --force-overwite packagename</pre><p>where <b>packagename</b> is the package that you are trying to install.</p></div></a>
 
 <a name="comp-packages"><h2>5 Compile Problems - Specific Packages</h2></a>
 
@@ -734,4 +737,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.54 2002/11/21 14:33:03 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.55 2002/11/21 15:01:35 alexkhansen Exp $</i></p></body></html>
