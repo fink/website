@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/02/19 16:40:34';
+$cvs_date = 'Date: 2003/02/22 21:05:57';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -283,7 +283,8 @@ versions are released.</p><p>The first thing you should do is run <tt><nobr>fink
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
 revised download URL.</p><p>If this doesn't work, please let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
-other directories for the source that fink wants (e.g. in an &quot;old&quot;
+other directories for the same version of the source that fink wants 
+(e.g. in an &quot;old&quot;
 directory).  Keep in mind, though, that some remote sites like to trash the
 old versions of their packages.  If the official site doesn't have it, then
 try a web search--sometimes there are unofficial sites that have the 
