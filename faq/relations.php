@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/11/20 03:44:59';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2003/11/23 04:06:39';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -61,7 +61,7 @@ versions in the hope that Fink packages can be adapted in time for the
 release.
 Quote:
 <b>"Hopefully it underscores the commitment that many suspect we're
-not willing to provide.  We'll get better at the open source game over
+not willing to provide. We'll get better at the open source game over
 time."</b>
 Thanks Apple!
 </p></div>

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 18 Nov 2003 09:06:54 EST</lastBuildDate>
+    <lastBuildDate>Tue, 18 Nov 2003 09:04:13 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -35,7 +35,7 @@ want to only use the binaries from this
 new distribution for now, while the Fink team continues to modify
 Fink packages for 10.3.
 
-*Exceptions include: emacs, qt.
+*Exceptions include: emacs.
 
 	</description>
   </item>
