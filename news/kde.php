@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/30 15:17:59 $';
+$cvs_date = '$Date: 2002/05/30 20:04:03 $';
 
 include "header.inc";
 ?>
@@ -151,8 +151,15 @@ Screenshots:
    <p>Next, update your package cache by running <b><tt>sudo apt-get update</tt></b>. This
    will update the local list of all available binary packages.</p>
   </li>
-  <li> <p> Then, if you have system-xfree86, you will need to upgrade to the newest
-   XFree86 packages.  Just run "<b><tt>sudo apt-get install xfree86-base; sudo apt-get
+  <li> <p> Then, if you have system-xfree86 or a version of xfree86-base older than
+   4.2.0-5, you will need to upgrade to the newest XFree86 packages.  To determine the
+   version that you are currently running, do:
+   </p>
+   <p>
+    <nobr><b><tt>dpkg -l xfree86-base</tt></b></nobr>
+   </p>
+   <p>
+   To upgrade, just run "<b><tt>sudo apt-get install xfree86-base; sudo apt-get
    install xfree86-rootless</tt></b>" to make your X installation current. </p> </li>
   <li>
    If all went well, you should now be able to install any of the KDE packages. To
