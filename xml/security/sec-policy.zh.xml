@@ -3,9 +3,9 @@
 <document filename="index" lang="zh">
     <title>Fink 软件包的通用安全政策</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.zh.xml,v 1.3 2004/06/28 17:45:38 jeff_yecn Exp $</cvsid>
+    <cvsid>$Id: sec-policy.zh.xml,v 1.4 2004/07/06 17:15:37 jeff_yecn Exp $</cvsid>
     <preface>
-        <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。</p>
+        <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。每个 Fink 软件包的维护者都应该遵循这个规则。</p>
     </preface>
     <chapter filename="respo">
         <title>责任</title>
@@ -222,7 +222,7 @@
         </section>
         <section name="moving">
             <title>Unstable 到 stable 的迁移。</title>
-            <p>对某个软件包的安全性更新会首先应用在 unstable 分支。经过不少于 <em>12</em> 小时的间隔以后软件包的信息文件会同样放入 stable 分支。这个间隔时间应该用来密切注视更新软件包的工作情况以及安全更新不会导致新的安全问题。</p>
+            <p>对某个软件包的安全性更新会首先应用在 unstable 分支。经过不少于 <em>12</em> 小时的间隔以后软件包的信息文件(最终还将包括补丁文件)会同样放入 stable 分支。这个间隔时间应该用来密切注视更新软件包的工作情况以及安全更新不会导致新的安全问题。</p>
         </section>
     </chapter>
     <chapter filename="notification">
