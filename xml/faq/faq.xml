@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.88 2003/02/19 15:31:11 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.89 2003/02/19 16:40:34 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -628,16 +628,16 @@ you. </p>
 <p>e.g.</p> 
 <p><code>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code></p>
 <p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <em>packagename</em></code>, to build the .deb--it won't install yet, though.</p>
-<p>Once you have a valid .deb file, then you can reconstitute the file using the following command (on one line--it's split for readability here):</p>
-<p><code>% dpkg -c <em>full-path-to-debfile</em></code></p>
+<p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p>
+<p><code># dpkg -c <em>full-path-to-debfile</em></code></p>
 <p><code>| awk '{if ($6 == "./"){ print "/."; } else if (substr($6, length($6), 1) == "/")</code></p>
 <p><code> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </code></p>
 <p><code>> /sw/var/lib/dpkg/info/<em>packagename</em>.list</code></p>
 <p>e.g.</p>
-<p><code>% dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code></p>
-<p><code>         | awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/")</code></p>
-<p><code>	  {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</code></p>
-<p><code>	  > /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code></p>
+<p><code># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code></p>
+<p><code>| awk '{if ($6 == "./") { print "/."; } else if (substr($6, length($6), 1) == "/")</code></p>
+<p><code>{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</code></p>
+<p><code>> /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code></p>
 <p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p></answer></faqentry>
 </chapter>
 
