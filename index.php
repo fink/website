@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/17 17:57:22 $';
+$cvs_date = '$Date: 2001/01/17 18:52:06 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -26,8 +26,8 @@ internet.</p>
 
 <h2>News</h2>
 
-<p>2001-01-17: Version 0.1.2 is out. Or rather, it would be, if the
-SourceForge file release system was working.</p>
+<p>2001-01-17: Version 0.1.2 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-01-16: GNOME! I've got the core GNOME system running. It has
 lots of rough edges, but looks promising...</p>
 <p>2001-01-16: Several patches that add shared library support to
@@ -38,10 +38,8 @@ pages</a>. More patches are to follow.</p>
 
 <p>Version 0.1.2 was released on 17 January 2001. It adds package
 revisions, primitive (but working) dependency support and GNOME
-packages. Still, this is an early release, so be careful. You can get
-the release from the <a
-href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
-area</a> at SourceForge.</p>
+packages. Still, this is an early release, so be careful. You can grab
+it from the <a href="download.php">download page</a>.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td>
 

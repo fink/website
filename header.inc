@@ -1,9 +1,10 @@
 <?
-/* $Id: header.inc,v 1.5 2001/01/16 09:01:08 chrisp Exp $ */
+/* $Id: header.inc,v 1.6 2001/01/17 18:52:06 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
   "index.php", "Home",
+  "download.php", "Download",
   "darwin.php", "Darwin",
   "todo.php", "ToDo",
   "links.php", "Links"
