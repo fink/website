@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.10 2004/02/29 22:31:41 fingolfin Exp $
+# $Id: Makefile.i18n.common,v 1.11 2004/02/29 23:08:01 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -47,19 +47,19 @@ clean:
 force: clean all
 
 %.php: $(SOURCE) $(STYLESHEET_WEBSITE)
-	xmllint --noout --valid $(SOURCE) \
-	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
-	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
-	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
+	xmllint --noout --valid $(SOURCE)
+	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
+	$(foreach PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
+	$(foreach PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
 	rm -f *.tmp
 
 %.html: %.xml $(STYLESHEET_HTML) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE);
-	$(foreach  XMLFILE, $(SOURCE), xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE); )
-	$(foreach XMLFILE, $(SOURCE), sed -e 's,$$Id,$$Fink,g' $(patsubst %.xml,%.html.tmp,$(XMLFILE)) > $(patsubst %.xml,%.html,$(XMLFILE)); ) 
-	rm -f *.html.tmp
+	xmllint --noout --valid $<
+	xsltproc -o $@.tmp $(STYLESHEET_HTML) $<
+	sed -e 's,$$Id,$$Fink,g' $@.tmp > $@
+	rm -f  $@.tmp
 
-install: $(INSTALL_FILES)
+install: $(INSTALL_FILES) install-hook
 
 ifdef DESTDIR
 	echo "Installing PHP files" \
@@ -73,3 +73,7 @@ ifdef WANT_HTML
 	echo "Installing HTML files" \
 	$(foreach  HTMLFILE, $(INSTALL_HTML), && cp $(HTMLFILE) $(basedir)/scripts/installer/dmg/$(DESTDIR)/)
 endif
+
+install-hook:
+
+# eof
