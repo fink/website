@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.63 2004/02/13 07:44:11 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.64 2004/02/13 07:48:12 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -832,7 +832,7 @@ which depend on <code>foo</code>.
 Traditionally, the Fink packages for perl modules have the suffix 
 <code>-pm</code>, and have been build using the <code>Type: perl</code> 
 directive, which stores the perl module's files in <filename>/sw/lib/perl5</filename> and/or
-<filename>/sw/lib/perl5/darwin<filename>.  Under the new policy, this storage location is only 
+<filename>/sw/lib/perl5/darwin</filename>.  Under the new policy, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
 being used to compile them.
 </p><p>
@@ -1383,7 +1383,7 @@ supports a special URL scheme for mirrors:
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
 look up the mirror setting for <em>mirror-name</em> in Fink's
 configuration, append the <em>relative-path</em> part and use that as
-the actual URL. The known <em>mirror-name<em>s are listed in
+the actual URL. The known <em>mirror-name</em>s are listed in
 <filename>/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
 package. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
