@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.23 2001/11/04 15:44:41 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.24 2001/11/04 15:45:26 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -305,7 +305,7 @@ it. Who's lying?</p></question>
 <answer>
 <p>
 Both are correct.
-The <link url="http://fink.sourceforge.net/pdb/">package database</a>
+The <link url="http://fink.sourceforge.net/pdb/">package database</link>
 knows about every package, including those that are still in the
 unstable section.
 The <code>dselect</code> and <code>apt-get</code> tools on the other
