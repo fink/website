@@ -2,601 +2,709 @@
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index" lang="ja" >
-<title>Fink パッケージの作成</title>
-<shorttitle>パッケージ化</shorttitle>
-<cvsid>$Id: packaging.ja.xml,v 1.1 2004/03/09 15:29:17 babayoshihiko Exp $</cvsid>
+	<title>Fink パッケージの作成</title>
+	<shorttitle>パッケージ化</shorttitle>
+	<cvsid>$Id: packaging.ja.xml,v 1.2 2004/03/27 06:45:08 babayoshihiko Exp $</cvsid>
 
-<preface>
-<p>
-本ドキュメントは Fink パッケージ管理システム用のパッケージ詳細の作成方法について述べています。
-また、 Fink ディストリビューションのポリシーとガイドラインも含んでいます。
-詳細の形式とディストリビューションポリシーはまだ発展段階ですので、このページの
- &quot;Last changed&quot; の情報と CVS タグを確認して下さい。
- 現在の本ドキュメントは <tt>fink</tt> パッケージ管理システム 0.9.0 開発バージョン以降に関するものです。
-</p>
-<p>
-Fink 用にパッケージを作成した場合、 <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
-メーリングリストを購読して下さい。
-もし Fink を手伝おうと思って十分な能力があるなら、<link url="http://fink.sourceforge.net/pdb/nomaintainer.php">
-メンテナのいないパッケージ</link>のご協力をお願いいたします。
-</p>
-</preface>
-
-
-<chapter filename="intro">
-<title>序章</title>
-<shorttitle>序章</shorttitle>
+	<preface>
+		<p>
+			本ドキュメントは Fink パッケージ管理システム用のパッケージ詳細の作成方法について述べています。
+			また、 Fink ディストリビューションのポリシーとガイドラインも含んでいます。
+			詳細の形式とディストリビューションポリシーはまだ発展段階ですので、このページの
+			&quot;Last changed&quot; の情報と CVS タグを確認して下さい。
+			現在の本ドキュメントは <tt>fink</tt> パッケージ管理システム 0.9.0 開発バージョン以降に関するものです。
+		</p>
+		<p>
+			Fink 用にパッケージを作成した場合、 <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
+			メーリングリストを購読して下さい。
+			もし Fink を手伝おうと思って十分な能力があるなら、<link url="http://fink.sourceforge.net/pdb/nomaintainer.php">
+				メンテナのいないパッケージ</link>のご協力をお願いいたします。
+		</p>
+	</preface>
 
 
-<section name="def1"><title>パッケージとは何か?</title>
-<p>
-パッケージとは、ある単位を構成するソフトウェアを指します。
-パッケージの典型的な例としては、実行可能ファイル必要なデータファイル、国際化やドキュメントの
-ためのメッセージカタログなどがあります。
-Fink においてはパッケージはパッケージ詳細とインストール可能なバイナリパッケージファイルの２種類があります。
-</p>
-<p>
-パッケージ詳細は人間が読むことができるテキストファイルで、パッケージをビルドするために必要な全ての情報を含んでいます。
-バイナリパッケージファイルの他、メタデータ (パッケージ名や目的など) 、ソースコードの URL 、 configure 
-やコンパイル、インストールの方法が書かれています。
-この詳細にはパッチが付随することもあります。
-</p>
-<p>
-バイナリパッケージファイルとは、パッケージを構成する各ファイルのアーカイブを指します。
-これには実行可能ファイル、データファイル、メッセージカタログ、ライブラリ、インクルードなどのファイルを含みます。
-また、メタデータも含まれています。
-バイナリパッケージは既に使用できる形式ですので、インストールとは主にファイルを展開することです。
-Fink は dpkg パッケージ管理を使用しているので、バイナリファイルは dpkg 形式で .deb 拡張子がつきます。
-</p>
-</section>
+	<chapter filename="intro">
+		<title>序章</title>
+		<shorttitle>序章</shorttitle>
 
 
-<section name="ident"><title>パッケージの特定</title>
-<p>
-パッケージは３つの言葉で特定されます。
-この３つとは、パッケージ名、バージョン、リビジョンです。
-いずれも英語の小文字 (a から z)、数字 (0-9)、 ダッシュ記号 (-)、プラス記号 (+)、ドット (.) のみ使えます。
-この他の字は使えません。
-特に、大文字とアンダースコアも使えないので注意指定ください。
-</p>
-<p>
-パッケージ名とは、 openssh などソフトウェアの名称を際します。
-バージョン、あるいは上流のバージョンとは元となるソフトウェアパッケージのバージョンを指します。
-バージョンには 2.9p1 など英小文字を含んでもかまいません。
-fink も dpkg も正しく認識します。
-他方、リビジョンとは、１から始まり、パッケージ詳細の変更回数に応じて一つづつ大きくなる整数です。
-これは上流のバージョンが変わると 1 に戻ります。
-リビジョンはダッシュを含みません。
-パッケージの完全な名称は、この３つの言葉をダッシュでつないだもので、
-openssh-2.9p1-2 というような形式になります。
-</p>
-</section>
+		<section name="def1">
+			<title>パッケージとは何か?</title>
+			<p>
+				パッケージとは、ある単位を構成するソフトウェアを指します。
+				パッケージの典型的な例としては、実行可能ファイル必要なデータファイル、国際化やドキュメントの
+				ためのメッセージカタログなどがあります。
+				Fink においてはパッケージはパッケージ詳細とインストール可能なバイナリパッケージファイルの２種類があります。
+			</p>
+			<p>
+				パッケージ詳細は人間が読むことができるテキストファイルで、パッケージをビルドするために必要な全ての情報を含んでいます。
+				バイナリパッケージファイルの他、メタデータ (パッケージ名や目的など) 、ソースコードの URL 、
+				configure やコンパイル、インストールの方法が書かれています。
+				この詳細にはパッチが付随することもあります。
+			</p>
+			<p>
+				バイナリパッケージファイルとは、パッケージを構成する各ファイルのアーカイブを指します。
+				これには実行可能ファイル、データファイル、メッセージカタログ、ライブラリ、インクルードなどのファイルを含みます。
+				また、メタデータも含まれています。
+				バイナリパッケージは既に使用できる形式ですので、インストールとは主にファイルを展開することです。
+				Fink は dpkg パッケージ管理を使用しているので、バイナリファイルは dpkg 形式で .deb 拡張子がつきます。
+			</p>
+		</section>
 
-</chapter>
+
+		<section name="ident">
+			<title>パッケージの特定</title>
+			<p>
+				パッケージは３つの言葉で特定されます。
+				この３つとは、パッケージ名、バージョン、リビジョンです。
+				いずれも英語の小文字 (a から z)、数字 (0-9)、 ダッシュ記号 (-)、プラス記号 (+)、ドット (.) のみ使えます。
+				この他の字は使えません。
+				特に、大文字とアンダースコアも使えないので注意指定ください。
+			</p>
+			<p>
+				パッケージ名とは、 openssh などソフトウェアの名称を際します。
+				バージョン、あるいは上流のバージョンとは元となるソフトウェアパッケージのバージョンを指します。
+				バージョンには 2.9p1 など英小文字を含んでもかまいません。
+				fink も dpkg も正しく認識します。
+				他方、リビジョンとは、１から始まり、パッケージ詳細の変更回数に応じて一つづつ大きくなる整数です。
+				これは上流のバージョンが変わると 1 に戻ります。
+				リビジョンはダッシュを含みません。
+				パッケージの完全な名称は、この３つの言葉をダッシュでつないだもので、
+				openssh-2.9p1-2 というような形式になります。
+			</p>
+		</section>
+
+	</chapter>
 
 
-<chapter filename="format">
-<title>パッケージ詳細</title>
-<shorttitle>パッケージ詳細</shorttitle>
+	<chapter filename="format">
+		<title>パッケージ詳細</title>
+		<shorttitle>パッケージ詳細</shorttitle>
 
-<section name="trees"><title>Tree レイアウト</title>
-<p>
-パッケージ詳細は <filename>/sw/fink/dists</filename> ディレクトリ下の
-<code>finkinfo</code> ディレクトリから読み込まれます。
-&quot;Tree&quot; の設定は <filename>/sw/etc/fink.conf</filename> ファイルにあり、どのディレクトリを読むかを設定することができます。
-パッケージ詳細の名称は完全なパッケージ名に拡張子 &quot;.info&quot; をつけたものです。
-fink 0.13.0 からは、簡便のためパッケージ名に拡張子 &quot;.info&quot; をつけたものも読みこむように採用されました。
-</p>
-<p>
-パッケージ詳細ツリーは多段階に構成されています。
-最上段にあるディレクトリは:
-</p>
-<ul>
-<li><code>dists</code> から始まる。
- <code>dists</code> ディレクトリは Debian ツールで必須。
- </li>
-<li>ディストリビューション。<code>stable</code>,<code>unstable</code>, <code>local</code> がある。
-<code>local</code> ディレクトリはローカルの管理者とユーザが管理する。
-<code>stable</code> と <code>unstable</code> ディレクトリは Fink が管理する。
-</li>
-<li>ツリー。
-<code>main</code> ツリーには沢山のパッケージがある。
-暗号関連のソフトウェアは、削除がしやすいように <code>crypto</code> という別ツリーにある。
-</li>
-<li><code>finkinfo</code> vs. <code>binary-darwin-powerpc</code>。
-<code>finkinfo</code> は Fink パッケージ詳細とパッチを含み、
-<code>binary-darwin-powerpc</code> は <code>.deb</code> バイナリパッケージを含んでいる。
-</li>
-<li>セクション。
-<code>main</code> ツリー内は管理用にセクションごとに分類されている。
-<code>crypto</code> ツリーは現在のところ分類されていない。
-</li>
-</ul>
-</section>
+		<section name="trees">
+			<title>Tree レイアウト</title>
+			<p>
+				パッケージ詳細は <filename>/sw/fink/dists</filename> ディレクトリ下の
+				<code>finkinfo</code> ディレクトリから読み込まれます。
+				&quot;Tree&quot; の設定は <filename>/sw/etc/fink.conf</filename> ファイルにあり、どのディレクトリを読むかを設定することができます。
+				パッケージ詳細の名称は完全なパッケージ名に拡張子 &quot;.info&quot; をつけたものです。
+				fink 0.13.0 からは、簡便のためパッケージ名に拡張子 &quot;.info&quot; をつけたものも読みこむように採用されました。
+			</p>
+			<p>
+				パッケージ詳細ツリーは多段階に構成されています。
+				最上段にあるディレクトリは:
+			</p>
+			<ul>
+				<li>
+					<code>dists</code> から始まる。
+					<code>dists</code> ディレクトリは Debian ツールで必須。
+				</li>
+				<li>ディストリビューション。<code>stable</code>,<code>unstable</code>, <code>local</code> がある。
+					<code>local</code> ディレクトリはローカルの管理者とユーザが管理する。
+					<code>stable</code> と <code>unstable</code> ディレクトリは Fink が管理する。
+				</li>
+				<li>ツリー。
+					<code>main</code> ツリーには沢山のパッケージがある。
+					暗号関連のソフトウェアは、削除がしやすいように <code>crypto</code> という別ツリーにある。
+				</li>
+				<li>
+					<code>finkinfo</code> vs. <code>binary-darwin-powerpc</code>。
+					<code>finkinfo</code> は Fink パッケージ詳細とパッチを含み、
+					<code>binary-darwin-powerpc</code> は <code>.deb</code> バイナリパッケージを含んでいる。
+				</li>
+				<li>セクション。
+					<code>main</code> ツリー内は管理用にセクションごとに分類されている。
+					<code>crypto</code> ツリーは現在のところ分類されていない。
+				</li>
+			</ul>
+		</section>
 
-<section name="format"><title>ファイル形式</title>
-<p>
-詳細ファイルは、単純なキーと値の対の形式になっていて、フィールドとも呼ばれています。
-角行は、以下の例のように、キーで始まりコロン (:) 以降が値になります:
-</p>
+		<section name="format">
+			<title>ファイル形式</title>
+			<p>
+				詳細ファイルは、単純なキーと値の対の形式になっていて、フィールドとも呼ばれています。
+				角行は、以下の例のように、キーで始まりコロン (:) 以降が値になります:
+			</p>
 <codeblock>Key: Value</codeblock>
-<p>
-フィールドが複数行にわたらせるには二つの方法があります。
-</p><p>
-一つ目はシェルスクリプトに使われている here-document 文法で、
-こちらを使うことをお勧めします。
-この文法では、最初の行にキーがあり、 <code>&lt;&lt;</code> 以降 <code>&lt;&lt;</code> までが値です。
-例はこのようになります:
-</p>
+			<p>
+				フィールドが複数行にわたらせるには二つの方法があります。
+			</p>
+			<p>
+				一つ目はシェルスクリプトに使われている here-document 文法で、
+				こちらを使うことをお勧めします。
+				この文法では、最初の行にキーがあり、 <code>&lt;&lt;</code> 以降 <code>&lt;&lt;</code> までが値です。
+				例はこのようになります:
+			</p>
 <codeblock>InstallScript: &lt;&lt;
 mkdir -p %i/share/man
 make install prefix=%i mandir=%i/share/man
 mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</codeblock>
-<p>
-インデントを使うとさらに見やすくなるでしょう。
-</p><p>
-here-document 文法はネストすることもできます。
-これは<code>SplitOff</code> と <code>SplitOff<em>N</em></code>  フィールドでよく見られます。
-この文法は、複数業にわたる副フィールドを持つような構造にも対応でき、以下のようになります:
-</p>
+			<p>
+				インデントを使うとさらに見やすくなるでしょう。
+			</p>
+			<p>
+				here-document 文法はネストすることもできます。
+				これは<code>SplitOff</code> と <code>SplitOff<em>N</em>
+				</code>  フィールドでよく見られます。
+				この文法は、複数業にわたる副フィールドを持つような構造にも対応でき、以下のようになります:
+			</p>
 <codeblock>
 SplitOff: &lt;&lt;
-  Package: %N-shlibs
-  InstallScript: &lt;&lt;
-    ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
-  &lt;&lt;
+Package: %N-shlibs
+InstallScript: &lt;&lt;
+ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
+&lt;&lt;
 &lt;&lt;
 </codeblock>
-<p>
-これよりも古い方法は RFC822 ヘッダフォールディング方法で、空白で始まる行を前の行からの続きと認識します。
-例:
-</p>
+			<p>
+				これよりも古い方法は RFC822 ヘッダフォールディング方法で、空白で始まる行を前の行からの続きと認識します。
+				例:
+			</p>
 <codeblock>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</codeblock>
-<p>
-角行の先頭の空白に気づきましたでしょうか。
-</p><p>
-どちらの形式を採用しても、空行とハッシュ (#) で始まる行は無視されます。
-キー (フィールド名) は Fink では大文字と小文字を区別しませんので、
-<code>InstallScript</code> を <code>installscript</code> や <code>INSTALLSCRIPT</code>
-と記述してもかまいませんが、最初の文字を大文字にする方法が一般的です。
-ブール値をとるフィールドでは、 &quot;true&quot;, &quot;yes&quot;, &quot;on&quot;, &quot;1&quot;
-(大文字、小文字の区別なし) は全て true として認識され、他は全て false として扱われます。
-</p>
-</section>
+make install prefix=%i mandir=%i/share/man
+mkdir -p %i/share/doc/%n
+install -m 644 COPYING %i/share/doc/%n</codeblock>
+			<p>
+				角行の先頭の空白に気づきましたでしょうか。
+			</p>
+			<p>
+				どちらの形式を採用しても、空行とハッシュ (#) で始まる行は無視されます。
+				キー (フィールド名) は Fink では大文字と小文字を区別しませんので、
+				<code>InstallScript</code> を <code>installscript</code> や <code>INSTALLSCRIPT</code>
+				と記述してもかまいませんが、最初の文字を大文字にする方法が一般的です。
+				ブール値をとるフィールドでは、 &quot;true&quot;, &quot;yes&quot;, &quot;on&quot;, &quot;1&quot;
+				(大文字、小文字の区別なし) は全て true として認識され、他は全て false として扱われます。
+			</p>
+		</section>
 
-<section name="percent"><title>パーセント拡張</title>
-<p>
-簡便のため、 フィールドによっては拡張があります。
-</p>
-<itemtable labeld="" labelt="">
-<item><itemt>%n</itemt>
-<itemd>
-<p>
-<em>n</em>ame。パッケージ名称。
-</p>
-</itemd></item>
+		<section name="percent">
+			<title>パーセント拡張</title>
+			<p>
+				簡便のため、 フィールドによっては拡張があります。
+			</p>
+			<itemtable labeld="" labelt="">
+				<item>
+					<itemt>%n</itemt>
+					<itemd>
+						<p>
+							<em>n</em>ame。パッケージ名称。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%N</itemt>
-<itemd>
-<p>
-<em>N</em>ame。親パッケージの名称 (<code>SplitOff</code> がない場合は %n と同じ)。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%N</itemt>
+					<itemd>
+						<p>
+							<em>N</em>ame。親パッケージの名称 (<code>SplitOff</code> がない場合は %n と同じ)。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%e</itemt>
-<itemd>
-<p>
-<em>e</em>poch。パッケージのエポック。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%e</itemt>
+					<itemd>
+						<p>
+							<em>e</em>poch。パッケージのエポック。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%v</itemt>
-<itemd>
-<p>
-<em>v</em>ersion。バージョン。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%v</itemt>
+					<itemd>
+						<p>
+							<em>v</em>ersion。バージョン。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%r</itemt>
-<itemd>
-<p>
-<em>r</em>evision。パッケージのリビジョン
-</p>
-</itemd></item>
+				<item>
+					<itemt>%r</itemt>
+					<itemd>
+						<p>
+							<em>r</em>evision。パッケージのリビジョン
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%f</itemt>
-<itemd>
-<p>
-<em>f</em>ull package name。%n-%v-%r と等価。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%f</itemt>
+					<itemd>
+						<p>
+							<em>f</em>ull package name。%n-%v-%r と等価。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%p, %P</itemt>
-<itemd>
-<p>
-<em>p</em>refix。Fink のインストール場所。例: <filename>/sw</filename>。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%p, %P</itemt>
+					<itemd>
+						<p>
+							<em>p</em>refix。Fink のインストール場所。例: <filename>/sw</filename>。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%d</itemt>
-<itemd>
-<p>
-<em>d</em>estination。パッケージ化するツリーのビルド先。
-例:<filename>/sw/src/root-gimp-1.2.1-1</filename>
-</p>
-</itemd></item>
+				<item>
+					<itemt>%d</itemt>
+					<itemd>
+						<p>
+							<em>d</em>estination。パッケージ化するツリーのビルド先。
+							例:<filename>/sw/src/root-gimp-1.2.1-1</filename>
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%D</itemt>
-<itemd>
-<p>
-<em>D</em>estination。
-親パッケージのビルド先 (<code>SplitOff</code> がない場合は %d と同じ)。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%D</itemt>
+					<itemd>
+						<p>
+							<em>D</em>estination。
+							親パッケージのビルド先 (<code>SplitOff</code> がない場合は %d と同じ)。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%i</itemt>
-<itemd>
-<p>
-<em>i</em>nstall-phase prefix
-完全なプリフィックス。
-%d%p と等価。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%i</itemt>
+					<itemd>
+						<p>
+							<em>i</em>nstall-phase prefix
+							完全なプリフィックス。
+							%d%p と等価。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%I</itemt>
-<itemd>
-<p>
-<em>I</em>nstall prefix。
-親パッケージのビルド先。%D%Pと等価 (<code>SplitOff</code> がない場合は %i と同じ)。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%I</itemt>
+					<itemd>
+						<p>
+							<em>I</em>nstall prefix。
+							親パッケージのビルド先。%D%Pと等価 (<code>SplitOff</code> がない場合は %i と同じ)。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%a</itemt>
-<itemd>
-<p>
-p<em>a</em>tches 。
-パッチを検索するパス。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%a</itemt>
+					<itemd>
+						<p>
+							p<em>a</em>tches 。
+							パッチを検索するパス。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%b</itemt>
-<itemd>
-<p>
-<em>b</em>uild。
-ビルドディレクトリ。例: <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
-</p>
-<p>
-注記: これは他に手段がないときだけ使用して下さい。
-ビルドディレクトリはスクリプトが実行されるディレクトリで、通常コマンドでは相対パス名を使って下さい。
-</p>
-</itemd></item>
+				<item>
+					<itemt>%b</itemt>
+					<itemd>
+						<p>
+							<em>b</em>uild。
+							ビルドディレクトリ。例: <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
+						</p>
+						<p>
+							注記: これは他に手段がないときだけ使用して下さい。
+							ビルドディレクトリはスクリプトが実行されるディレクトリで、通常コマンドでは相対パス名を使って下さい。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%c</itemt>
-<itemd>
-<p>
-the parameters for 
+				<item>
+					<itemt>%c</itemt>
+					<itemd>
+						<p>
+							the parameters for 
 
-<em>c</em>onfigure。
-configure パラメータ: <code>--prefix=%p</code> と ConfigureParams で指定するもの全て。
-</p>
-</itemd></item>
+							<em>c</em>onfigure。
+							configure パラメータ: <code>--prefix=%p</code> と ConfigureParams で指定するもの全て。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%m</itemt>
-<itemd>
-<p>
-the <em>m</em>achine architecture string.  This is the same as 
-<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
-and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
+				<item>
+					<itemt>%m</itemt>
+					<itemd>
+						<p>
+							the <em>m</em>achine architecture string.  This is the same as 
+							<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
+							and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
 
-<em>m</em>achine architecture。
-マシンアーキテクチャーを示す記号で、<code>uname -p</code> の出力。
-現在の値は、 PPC マシンでは 'powerpc' で x86 マシンでは 'i386' です
-(0.12.1 以降の CVS版 fink で導入)。
-</p>
-</itemd></item>
+							<em>m</em>achine architecture。
+							マシンアーキテクチャーを示す記号で、<code>uname -p</code> の出力。
+							現在の値は、 PPC マシンでは 'powerpc' で x86 マシンでは 'i386' です
+							(0.12.1 以降の CVS版 fink で導入)。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>%%</itemt>
-<itemd>
-<p>
-パーセント記号 (この後の文字を拡張しない)。
-拡張は厳密に左から右へ解釈していくので、 %%n がパッケージ名称をとられることはありません。
-常に %n と解釈されます。
-(fink-0.18.0 で導入)
-</p>
-</itemd></item>
-</itemtable>
+				<item>
+					<itemt>%%</itemt>
+					<itemd>
+						<p>
+							パーセント記号 (この後の文字を拡張しない)。
+							拡張は厳密に左から右へ解釈していくので、 %%n がパッケージ名称をとられることはありません。
+							常に %n と解釈されます。
+							(fink-0.18.0 で導入)
+						</p>
+					</itemd>
+				</item>
+			</itemtable>
 
-</section>
+		</section>
 
-</chapter>
-
-
-<chapter filename="policy">
-<title>パッケージ化ポリシー</title>
-<shorttitle>ポリシー</shorttitle>
-
-<section name="licenses"><title>パッケージのライセンス</title>
-<p>
-Fink に含まれているパッケージのライセンスには様々なものがあります。
-ほとんどのものはソースや、特にバイナリを再配布することに制限を設けています。
-Fink のパッケージの中には、ライセンス制限上の問題でバイナリ配布を行えないものもあります。
-メンテナはパッケージのライセンスには十分注意をして下さい。
-</p>
-<p>
-バイナリで配布されるパッケージは必ずライセンスと一緒に配布する必要があります。
-これは doc ディレクトリ、つまり <code>%p/share/doc/%n</code> にインストールされます。
-DocFiles フィールドに記述することでその他は自動的に処理されます。
-元のソースに明示的なライセンスが存在しない場合、そのパッケージの状態についてのメモを書いたテキストを代わりとします。
-ほとんどの場合、配布時にライセンスを付与することになっています。
-</p>
-<p>
-バイナリ配布のメンテナンスを自動化するために、配布されるパッケージは必ず 
-<code>ライセンス</code> フィールドを記述して下さい。
-このフィールドはライセンスの性質に関するもので、当該パッケージがバイナリ配布できるかどうかを決定する際に確認されます。
-上述のように、このフィールドは、ライセンスがバイナリパッケージに付属する場合のみ存在する場合もあります。
-</p>
-<p>
-<code>ライセンス</code>フィールドを有効に使用するため、値は下記の中から選択して下さい。
-下記の選択肢の中から選べないようなパッケージがある場合、開発用メーリングリストへ質問を投げかけて下さい。
-</p>
-<ul>
-
-<li><code>GPL</code> - GNU General Public License。
-このライセンスではソースがバイナリと同じ場所から入手できる必要がある。
-</li>
-<li><code>LGPL</code> - GNU Lesser General Public License。
-このライセンスではソースがバイナリと同じ場所から入手できる必要がある。
-</li>
-<li><code>GPL/LGPL</code> - 
-これはパッケージの一部 (実行可能ファイルなど) が GPL で、別の部分 (ライブラリなど) が LGPL などの特殊な場合。
-</li>
-
-<li><code>BSD</code>  - 
-BSD形式のライセンス。
-これには、いわゆる&quot;オリジナル&quot; BSD ライセンス、&quot;修正&quot; BSD ライセンスおよび 
-&quot;MIT&quot; ライセンスが含まれる。
-Apache ライセンスも BSD に含まれる。
-これらのライセンスでは、ソースコードの配布は必須ではない。
-</li>
-
-<li><code>Artistic</code> - 
-Artistic ライセンスとその派生ライセンス。
-</li>
-
-<li><code>Artistic/GPL</code> - 
-Artistic と GPL の２重ライセンス。
-</li> 
-
-<li><code>GNU Free Documentation License</code> and <code>Linux
-Documentation Project</code> -
-付属ドキュメントが明示的にこのライセンスのどちらかを採用している場合、
-<code>/GFDL</code> あるいは <code>/LDP</code> 
-または両方を組み合わせて追加する。
-例: &quot;GFDL&quot;, &quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;, 
-&quot;LDP&quot;, &quot;GPL/LGPL/LDP&quot;.
-</li>
-
-<li><code>OSI-Approved</code> - 
-その他のオープンソースライセンスで、<link url="http://www.opensource.org/">Open Source Initiative</link>
-が承認したもの。
-OSI の必要条件の一つとして、バイナリとソースの自由な配布があry。
-複数のライセンスを採用しているパッケージは、この値を使用することもできる。
-</li>
-
-<li><code>Restrictive</code> - 
-制限付きのライセンス。
-ソースは作者から自由に入手・使用できるが、自由な配布が認められていない場合に使用する。
-</li>
-
-<li><code>Restrictive/Distributable</code> - 
-制限付きのライセンスで、ソースとバイナリの配布が認められているもの。
-作者から入手でき、ソースとバイナリの配布が許可されているがオープンソースライセンスと認められない制限がある場合に使用する。
-</li>
-
-<li><code>Commercial</code> - 
-制限付きの商用ライセンス。
-商用パッケージ (例: フリーウェア、シェアウェア) で、ソースやバイナリの自由な再配布を認めていないもの。
-</li>
-
-<li><code>Public Domain</code> - 
-パブリックドメインにあるパッケージ。
-パブリックドメインとは、作者がコードに対するコピーライトを放棄したことを指す。
-この場合、パッケージにはライセンスが存在せず、だれが何をしても良い。
-</li>
-
-</ul>
-
-</section>
+	</chapter>
 
 
-<section name="prefix"><title>基本システムインターフェイス</title>
-<p>
-Fink は基本のシステムとは別のディレクトリにインストールされるディストリビューションです。
-パッケージは Fink のディレクトリ外にはファイルをインストールすることはできません。
-</p>
-<p>
-XFree86 の例など、他に選択肢がない場合には例外的に認められることがあります。
-この場合、パッケージは事前に必ず既存ファイルを確認し、書き換えをするような場合はインストールを中止します。
-また、パッケージはそのパッケージが削除されるときに Fink ディレクトリ外にインストールしたファイルを全て削除するか、
-あるいは残しても問題がないかを十分確認する必要があります
-(例えば、実行前にバイナリが存在するかなどのチェックなどを行う必要があります)。
-</p>
-</section>
+	<chapter filename="policy">
+		<title>パッケージ化ポリシー</title>
+		<shorttitle>ポリシー</shorttitle>
 
-<section name="sharedlibs"><title>共有ライブラリ (Shared Libraries)</title>
-<p>
-Fink は共有ライブラリに関して新しいポリシーを設定し、 2002年２月から施行しています。
-本節ではこのポリシーのバージョン4 、 Fink 自体に関しては 0.5.0 リリースについて解説します。
-最初に要点をかいつまんで述べ、詳細は後で解説する文体をとります。
-</p>
-<p>
-共有ライブラリをビルドするパッケージで、
-(1) stable ツリーに入っているか、または (2) 新規のパッケージである場合、
-Fink ポリシーに従って共有ライブラリを扱う必要があります。
-これは:
-</p>
-<ul>
-<li>
-<code>otool -L</code> を使い、
-それぞれのライブラリの install_name 、互換性、現在のバージョン番号が正しいか
-確認する。
-</li>
-<li>
-共有ライブラリを別パッケージとし (例外は libfoo.dylib から install_name へのリンク) 、
-パッケージに <code>Shlibs</code> フィールドを設ける。
-</li>
-<li>
-ヘッダと libfoo.dylib からの最後のリンクをパッケージにいれ、
-<code>BuildDependsOnly: True</code> として他のパッケージがこれに依存しないこととする。
-</li>
-</ul>
-<p>
-このポリシーに反し、パッケージを分割しない場合には DescPackaging に理由を記述する。
-</p>
-<p>
-パッケージによっては、主パッケージと -shlib パッケージを作成するとポリシー通りとなる場合もある。
-こうならない場合、さらに別のパッケージを作成する。
-<code>SplitOff</code> という新しいフィールドを使用すると便利です。
-</p>
-<p>
-３つのパッケージが必要となった場合、パッケージにとってライブラリとバイナリのどちらが重要かによって名称が変わる。
-パッケージ、つまりバイナリが重要な場合、以下の様式を使用する。
-</p>
-<itemtable labeld="Contents" labelt="Package">
-<item><itemt><code>foo-shlibs</code></itemt>
-<itemd><p>共有ライブラリ</p></itemd></item>
-<item><itemt><code>foo</code></itemt>
-<itemd><p>ヘッダ</p></itemd></item>
-<item><itemt><code>foo-bin</code></itemt>
-<itemd><p>バイナリなど</p></itemd></item>
-</itemtable>
+		<section name="licenses">
+			<title>パッケージのライセンス</title>
+			<p>
+				Fink に含まれているパッケージのライセンスには様々なものがあります。
+				ほとんどのものはソースや、特にバイナリを再配布することに制限を設けています。
+				Fink のパッケージの中には、ライセンス制限上の問題でバイナリ配布を行えないものもあります。
+				メンテナはパッケージのライセンスには十分注意をして下さい。
+			</p>
+			<p>
+				バイナリで配布されるパッケージは必ずライセンスと一緒に配布する必要があります。
+				これは doc ディレクトリ、つまり <code>%p/share/doc/%n</code> にインストールされます。
+				DocFiles フィールドに記述することでその他は自動的に処理されます。
+				元のソースに明示的なライセンスが存在しない場合、そのパッケージの状態についてのメモを書いたテキストを代わりとします。
+				ほとんどの場合、配布時にライセンスを付与することになっています。
+			</p>
+			<p>
+				バイナリ配布のメンテナンスを自動化するために、配布されるパッケージは必ず 
+				<code>ライセンス</code> フィールドを記述して下さい。
+				このフィールドはライセンスの性質に関するもので、当該パッケージがバイナリ配布できるかどうかを決定する際に確認されます。
+				上述のように、このフィールドは、ライセンスがバイナリパッケージに付属する場合のみ存在する場合もあります。
+			</p>
+			<p>
+				<code>ライセンス</code>フィールドを有効に使用するため、値は下記の中から選択して下さい。
+				下記の選択肢の中から選べないようなパッケージがある場合、開発用メーリングリストへ質問を投げかけて下さい。
+			</p>
+			<ul>
 
-<p>ライブラリが重要な場合:</p>
-<itemtable labeld="Contents" labelt="Package">
-<item><itemt><code>foo-shlibs</code></itemt>
-<itemd><p>共有ライブラリ</p></itemd></item>
-<item><itemt><code>foo-dev</code></itemt>
-<itemd><p>ヘッダ</p></itemd></item>
-<item><itemt><code>foo</code></itemt>
-<itemd><p>バイナリなど</p></itemd></item>
-</itemtable>
+				<li>
+					<code>GPL</code> - GNU General Public License。
+					このライセンスではソースがバイナリと同じ場所から入手できる必要がある。
+				</li>
+				<li>
+					<code>LGPL</code> - GNU Lesser General Public License。
+					このライセンスではソースがバイナリと同じ場所から入手できる必要がある。
+				</li>
+				<li>
+					<code>GPL/LGPL</code> - 
+					これはパッケージの一部 (実行可能ファイルなど) が GPL で、別の部分 (ライブラリなど) が LGPL などの特殊な場合。
+				</li>
 
-<p>
-後者は既存パッケージをアップグレードすることが難しくなります。
-アップグレードする際に、<code>Depends: foo</code> と記述されている全てのパッケージに
-<code>BuildDepends: foo-dev</code> を追加する必要があります。
-他にも、(中間にまた別のパッケージがあり) 間接的に当該パッケージに依存している別のパッケージがあれば、
-<code>BuildDepends: foo</code> あるいは <code>BuildDepends: foo-dev</code>
-を含む必要がある場合があります。
-これがないとアップグレードに失敗する可能性があり、当該パッケージのメンテナが他のパッケージの
-<code>BuildDepends</code> を確認する責任を負います。
-</p>
-<p><em>ポリシー詳細</em></p>
-<p>
-以下ではさらに詳しく解説していきます。
-最初に新しくソフトウェアをポートする際のポリシーを、次に既存 Fink パッケージのアップグレードを解説します。
-ポリシーの実例としては libpng, libjpeg, libtiff パッケージを参考にして下さい。
-</p><p>
-Darwin にポートされたソフトウェアはできる限り共有ライブラリを使用します。
-(パッケージメンテナは必要に応じて静的ライブラリをビルドし、静的ライブラリのパッケージを作成しても構いません)
-共有ライブラリを使用する場合、<em>ふたつの</em>相互関連するパッケージが作成され、 foo と foo-shlibs といった名称になります。
-共有ライブラリは foo-shlibs に入り、ヘッダは foo に入ります。
-両パッケ−ジは <code>SplitOff</code> を利用して .info ファイルを共有することもできます。
-この方法は下記を参照して下さい。
-(現実にはさらに多くのパッケージに分割する必要がある場合も多く、この場合は
-<code>SplitOff2</code>, <code>SplitOff3</code> と追加していきます。)
-</p><p>
-共有ライブラリ用にビルドされるソフトウェアには、それぞれ<em>メジャーバージョン番号</em> N を付けます。
-メジャー番号は API の上位互換性がないような変更がされた場合にのみ変更されます。
-Fink では、名称は以下の要領で作成されます。
-上リュのパッケージ名が bar であるとき、 Fink パッケージは barN と barN-shlibs となります。
-(これは新規パッケージと、古いパッケージがメジャーバージョンアップする場合に厳密に適用されています)
-例えば、libpng では当初メジャーバージョン番号が 2 で、現在では 3 になっています。
-このため、 Fink では４つのパッケージが存在します: libpng, libpng-shlibs, libpng3, libpng3-shlibs 。
-libpng と libpng3 はどちらか一つしかインストールすることはできません。
-libpng-shlibs と libpng3-shlibs は同時にインストールされます。
-(この４つの例では、 .info ファイルは二つだけ必要になります。)
-</p><p>
-共有ファイル自体などのファイルは barN-shlibs パッケージに含まれます。
-&quot;include&quot; ファイルなどのファイルは barN パッケージに含まれます。
-両者に重複するファイルは許されす、barN-shlibs に含まれるものは全てメジャーバージョン番号 N に対応したパス名を使います。
-多くの場合、パッケージは実行時に <filename>%i/lib/bar/</filename> や
-<filename>%i/share/bar/</filename> にあるファイルを必要としますので、インストールパスを
- <filename>%i/lib/bar/N/</filename> や <filename>%i/share/bar/N/</filename> のように調整して下さい。
-</p><p>
-bar のメジャーバージョン N に依存する他のパッケージは、全て以下の依存性を使って下さい。
-</p>
+				<li>
+					<code>BSD</code>  - 
+					BSD形式のライセンス。
+					これには、いわゆる&quot;オリジナル&quot; BSD ライセンス、&quot;修正&quot; BSD ライセンスおよび 
+					&quot;MIT&quot; ライセンスが含まれる。
+					Apache ライセンスも BSD に含まれる。
+					これらのライセンスでは、ソースコードの配布は必須ではない。
+				</li>
+
+				<li>
+					<code>Artistic</code> - 
+					Artistic ライセンスとその派生ライセンス。
+				</li>
+
+				<li>
+					<code>Artistic/GPL</code> - 
+					Artistic と GPL の２重ライセンス。
+				</li> 
+
+				<li>
+					<code>GNU Free Documentation License</code> and <code>Linux
+						Documentation Project</code> -
+					付属ドキュメントが明示的にこのライセンスのどちらかを採用している場合、
+					<code>/GFDL</code> あるいは <code>/LDP</code> 
+					または両方を組み合わせて追加する。
+					例: &quot;GFDL&quot;, &quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;, 
+					&quot;LDP&quot;, &quot;GPL/LGPL/LDP&quot;.
+				</li>
+
+				<li>
+					<code>OSI-Approved</code> - 
+					その他のオープンソースライセンスで、<link url="http://www.opensource.org/">Open Source Initiative</link>
+					が承認したもの。
+					OSI の必要条件の一つとして、バイナリとソースの自由な配布があry。
+					複数のライセンスを採用しているパッケージは、この値を使用することもできる。
+				</li>
+
+				<li>
+					<code>Restrictive</code> - 
+					制限付きのライセンス。
+					ソースは作者から自由に入手・使用できるが、自由な配布が認められていない場合に使用する。
+				</li>
+
+				<li>
+					<code>Restrictive/Distributable</code> - 
+					制限付きのライセンスで、ソースとバイナリの配布が認められているもの。
+					作者から入手でき、ソースとバイナリの配布が許可されているがオープンソースライセンスと認められない制限がある場合に使用する。
+				</li>
+
+				<li>
+					<code>Commercial</code> - 
+					制限付きの商用ライセンス。
+					商用パッケージ (例: フリーウェア、シェアウェア) で、ソースやバイナリの自由な再配布を認めていないもの。
+				</li>
+
+				<li>
+					<code>Public Domain</code> - 
+					パブリックドメインにあるパッケージ。
+					パブリックドメインとは、作者がコードに対するコピーライトを放棄したことを指す。
+					この場合、パッケージにはライセンスが存在せず、だれが何をしても良い。
+				</li>
+
+			</ul>
+
+		</section>
+
+
+		<section name="prefix">
+			<title>基本システムインターフェイス</title>
+			<p>
+				Fink は基本のシステムとは別のディレクトリにインストールされるディストリビューションです。
+				パッケージは Fink のディレクトリ外にはファイルをインストールすることはできません。
+			</p>
+			<p>
+				XFree86 の例など、他に選択肢がない場合には例外的に認められることがあります。
+				この場合、パッケージは事前に必ず既存ファイルを確認し、書き換えをするような場合はインストールを中止します。
+				また、パッケージはそのパッケージが削除されるときに Fink ディレクトリ外にインストールしたファイルを全て削除するか、
+				あるいは残しても問題がないかを十分確認する必要があります
+				(例えば、実行前にバイナリが存在するかなどのチェックなどを行う必要があります)。
+			</p>
+		</section>
+
+		<section name="sharedlibs">
+			<title>共有ライブラリ (Shared Libraries)</title>
+			<p>
+				Fink は共有ライブラリに関して新しいポリシーを設定し、 2002年２月から施行しています。
+				本節ではこのポリシーのバージョン4 、 Fink 自体に関しては 0.5.0 リリースについて解説します。
+				最初に要点をかいつまんで述べ、詳細は後で解説する文体をとります。
+			</p>
+			<p>
+				共有ライブラリをビルドするパッケージで、
+				(1) stable ツリーに入っているか、または (2) 新規のパッケージである場合、
+				Fink ポリシーに従って共有ライブラリを扱う必要があります。
+				これは:
+			</p>
+			<ul>
+				<li>
+					<code>otool -L</code> を使い、
+					それぞれのライブラリの install_name 、互換性、現在のバージョン番号が正しいか
+					確認する。
+				</li>
+				<li>
+					共有ライブラリを別パッケージとし (例外は libfoo.dylib から install_name へのリンク) 、
+					パッケージに <code>Shlibs</code> フィールドを設ける。
+				</li>
+				<li>
+					ヘッダと libfoo.dylib からの最後のリンクをパッケージにいれ、
+					<code>BuildDependsOnly: True</code> として他のパッケージがこれに依存しないこととする。
+				</li>
+			</ul>
+			<p>
+				このポリシーに反し、パッケージを分割しない場合には DescPackaging に理由を記述する。
+			</p>
+			<p>
+				パッケージによっては、主パッケージと -shlib パッケージを作成するとポリシー通りとなる場合もある。
+				こうならない場合、さらに別のパッケージを作成する。
+				<code>SplitOff</code> という新しいフィールドを使用すると便利です。
+			</p>
+			<p>
+				３つのパッケージが必要となった場合、パッケージにとってライブラリとバイナリのどちらが重要かによって名称が変わる。
+				パッケージ、つまりバイナリが重要な場合、以下の様式を使用する。
+			</p>
+			<itemtable labeld="Contents" labelt="Package">
+				<item>
+					<itemt>
+						<code>foo-shlibs</code>
+					</itemt>
+					<itemd>
+						<p>共有ライブラリ</p>
+					</itemd>
+				</item>
+				<item>
+					<itemt>
+						<code>foo</code>
+					</itemt>
+					<itemd>
+						<p>ヘッダ</p>
+					</itemd>
+				</item>
+				<item>
+					<itemt>
+						<code>foo-bin</code>
+					</itemt>
+					<itemd>
+						<p>バイナリなど</p>
+					</itemd>
+				</item>
+			</itemtable>
+
+			<p>ライブラリが重要な場合:</p>
+			<itemtable labeld="Contents" labelt="Package">
+				<item>
+					<itemt>
+						<code>foo-shlibs</code>
+					</itemt>
+					<itemd>
+						<p>共有ライブラリ</p>
+					</itemd>
+				</item>
+				<item>
+					<itemt>
+						<code>foo-dev</code>
+					</itemt>
+					<itemd>
+						<p>ヘッダ</p>
+					</itemd>
+				</item>
+				<item>
+					<itemt>
+						<code>foo</code>
+					</itemt>
+					<itemd>
+						<p>バイナリなど</p>
+					</itemd>
+				</item>
+			</itemtable>
+
+			<p>
+				後者は既存パッケージをアップグレードすることが難しくなります。
+				アップグレードする際に、<code>Depends: foo</code> と記述されている全てのパッケージに
+				<code>BuildDepends: foo-dev</code> を追加する必要があります。
+				他にも、(中間にまた別のパッケージがあり) 間接的に当該パッケージに依存している別のパッケージがあれば、
+				<code>BuildDepends: foo</code> あるいは <code>BuildDepends: foo-dev</code>
+				を含む必要がある場合があります。
+				これがないとアップグレードに失敗する可能性があり、当該パッケージのメンテナが他のパッケージの
+				<code>BuildDepends</code> を確認する責任を負います。
+			</p>
+			<p>
+				<em>ポリシー詳細</em>
+			</p>
+			<p>
+				以下ではさらに詳しく解説していきます。
+				最初に新しくソフトウェアをポートする際のポリシーを、次に既存 Fink パッケージのアップグレードを解説します。
+				ポリシーの実例としては libpng, libjpeg, libtiff パッケージを参考にして下さい。
+			</p>
+			<p>
+				Darwin にポートされたソフトウェアはできる限り共有ライブラリを使用します。
+				(パッケージメンテナは必要に応じて静的ライブラリをビルドし、静的ライブラリのパッケージを作成しても構いません)
+				共有ライブラリを使用する場合、<em>ふたつの</em>相互関連するパッケージが作成され、 foo と foo-shlibs といった名称になります。
+				共有ライブラリは foo-shlibs に入り、ヘッダは foo に入ります。
+				両パッケ−ジは <code>SplitOff</code> を利用して .info ファイルを共有することもできます。
+				この方法は下記を参照して下さい。
+				(現実にはさらに多くのパッケージに分割する必要がある場合も多く、この場合は
+				<code>SplitOff2</code>, <code>SplitOff3</code> と追加していきます。)
+			</p>
+			<p>
+				共有ライブラリ用にビルドされるソフトウェアには、それぞれ<em>メジャーバージョン番号</em> N を付けます。
+				メジャー番号は API の上位互換性がないような変更がされた場合にのみ変更されます。
+				Fink では、名称は以下の要領で作成されます。
+				上リュのパッケージ名が bar であるとき、 Fink パッケージは barN と barN-shlibs となります。
+				(これは新規パッケージと、古いパッケージがメジャーバージョンアップする場合に厳密に適用されています)
+				例えば、libpng では当初メジャーバージョン番号が 2 で、現在では 3 になっています。
+				このため、 Fink では４つのパッケージが存在します: libpng, libpng-shlibs, libpng3, libpng3-shlibs 。
+				libpng と libpng3 はどちらか一つしかインストールすることはできません。
+				libpng-shlibs と libpng3-shlibs は同時にインストールされます。
+				(この４つの例では、 .info ファイルは二つだけ必要になります。)
+			</p>
+			<p>
+				共有ファイル自体などのファイルは barN-shlibs パッケージに含まれます。
+				&quot;include&quot; ファイルなどのファイルは barN パッケージに含まれます。
+				両者に重複するファイルは許されす、barN-shlibs に含まれるものは全てメジャーバージョン番号 N に対応したパス名を使います。
+				多くの場合、パッケージは実行時に <filename>%i/lib/bar/</filename> や
+				<filename>%i/share/bar/</filename> にあるファイルを必要としますので、インストールパスを
+				<filename>%i/lib/bar/N/</filename> や <filename>%i/share/bar/N/</filename> のように調整して下さい。
+			</p>
+			<p>
+				bar のメジャーバージョン N に依存する他のパッケージは、全て以下の依存性を使って下さい。
+			</p>
 <codeblock>
-  Depends: barN-shlibs
-  BuildDepends: barN
+Depends: barN-shlibs
+BuildDepends: barN
 </codeblock>
-<p>
-現在では、他のパッケージが barN 自体に依存することは認められていません。
-(互換性のために古いパッケージに関しては認められています)
-以下のフィールドは他の開発者にこのことを明示しています:
-</p>
+			<p>
+				現在では、他のパッケージが barN 自体に依存することは認められていません。
+				(互換性のために古いパッケージに関しては認められています)
+				以下のフィールドは他の開発者にこのことを明示しています:
+			</p>
 <codeblock>
-  BuildDependsOnly: True
+BuildDependsOnly: True
 </codeblock>
-<p>
-共有ライブラリとバイナリファイルをもつパッケージの場合、バイナリファイルが (ビルド時だけでなく) 実行時に必要であれば、３つ目のパッケージを作成して下さい。
-他のパッケージは barN-bin と barN-shlibs の両方に依存できるようになります。
-</p><p>
-共有ライブラリをビルドしている時は、メジャーバージョン番号 N に対して、ライブラリの&quot;install_name&quot;を <filename>%p/lib/bar.N.dylib</filename> とします。
-(install_name は、ライブラリに <code>otool -L</code> を実行するとわかります。)
-実際のライブラリファイルのインストール先は、
-</p>
+			<p>
+				共有ライブラリとバイナリファイルをもつパッケージの場合、バイナリファイルが (ビルド時だけでなく) 実行時に必要であれば、
+				3つ目のパッケージを作成して下さい。
+				他のパッケージは barN-bin と barN-shlibs の両方に依存できるようになります。
+			</p>
+			<p>
+				共有ライブラリをビルドしている時は、メジャーバージョン番号 N に対して、ライブラリの&quot;install_name&quot;を
+				<filename>%p/lib/bar.N.dylib</filename> とします。
+				(install_name は、ライブラリに <code>otool -L</code> を実行するとわかります。)
+				実際のライブラリファイルのインストール先は、
+			</p>
 <codeblock>
-  %i/lib/bar.N.x.y.dylib
+%i/lib/bar.N.x.y.dylib
 </codeblock>
-<p>
-とし、パッケージ側でシンボリックリンクを作成します。
-</p>
+			<p>
+				とし、パッケージ側でシンボリックリンクを作成します。
+			</p>
 <codeblock>
-  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+%i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+%i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
 </codeblock>
-<p>
-静的ファイルをビルドする場合、インストール先は
-</p>
+			<p>
+				静的ファイルをビルドする場合、インストール先は
+			</p>
 <codeblock>
-  %i/lib/bar.a
+%i/lib/bar.a
 </codeblock>
-<p>
-パッケージが libtool を使っている場合、上記のことはほぼ自動的に処理されますが、各イベントごとに正しくされているか確認するようにして下さい。
-また、 current_version と compatibility_version が適切に定義されているかも確認して下さい。
-(これは <code>otool -L</code> クエリでも表示されます。)
-</p><p>
-ファイルは、以下のように二つに分割されます。
-</p>
-<ul>
-<li>パッケージ barN-shlibs:
+			<p>
+				パッケージが libtool を使っている場合、上記のことはほぼ自動的に処理されますが、各イベントごとに正しくされているか確認するようにして下さい。
+				また、 current_version と compatibility_version が適切に定義されているかも確認して下さい。
+				(これは <code>otool -L</code> クエリでも表示されます。)
+			</p>
+			<p>
+				ファイルは、以下のように二つに分割されます。
+			</p>
+			<ul>
+				<li>パッケージ barN-shlibs:
 <codeblock>
-  %i/lib/bar.N.x.y.dylib
-  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
-  %i/lib/bar/N/*
-  %i/share/bar/N/*
-  %i/share/doc/barN-shlibs/*
-</codeblock></li>
-<li>パッケージ barN:
+%i/lib/bar.N.x.y.dylib
+%i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+%i/lib/bar/N/*
+%i/share/bar/N/*
+%i/share/doc/barN-shlibs/*
+</codeblock>
+				</li>
+				<li>パッケージ barN:
 <codeblock>
-  %i/include/*
-  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.a
-  %i/share/doc/barN/*
-  other files, if needed
-</codeblock></li></ul>
-<p>
-両パッケージはライセンス文書が必要ですが、 DocFiles を含むディレクトリが違うことに気づいたでしょうか。
-</p><p>
-この処理は実際、 <code>SplitOff</code> を使うと非常に簡単です。
-以下は実行 (の途中) の例です:
-</p>
+%i/include/*
+%i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+%i/lib/bar.a
+%i/share/doc/barN/*
+other files, if needed
+</codeblock>
+				</li>
+			</ul>
+			<p>
+				両パッケージはライセンス文書が必要ですが、 DocFiles を含むディレクトリが違うことに気づいたでしょうか。
+			</p>
+			<p>
+				この処理は実際、 <code>SplitOff</code> を使うと非常に簡単です。
+				以下は実行 (の途中) の例です:
+			</p>
 <codeblock>
 Package: barN
 Version: N.x.y
@@ -606,1516 +714,1665 @@ Depends: barN-shlibs (= %v-%r)
 BuildDependsOnly: True
 DocFiles: COPYING
 SplitOff: &lt;&lt;
-  Package: barN-shlibs
-  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
-  DocFiles: COPYING
+Package: barN-shlibs
+Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+DocFiles: COPYING
 &lt;&lt;
 </codeblock>
-<p>
-<code>SplitOff</code> フィールドの実行は、指定ファイルと指定ディレクトリをメインパッケージのインストールディレクトリ %I から スプリットオフのインストールディレクトリ %i に移動させます。
-(名称規則は同様に、 %N がメインパッケージの名称で、 %n が現在のパッケージの名称になります。)
-<code>DocFiles</code> コマンドは <filename>%i/share/doc/barN-shlibs</filename> にドキュメントをコピーします。
-</p><p>
-メインパッケージ barN は、barN-shlibs の現在のバージョン (%N-shlibs (= %v-%r)) に、正確に依存するよう注意して下さい。
-これによってバージョンが一致し、また barN が barN-shlibs の依存性を取り込む結果になります。
-</p>
-<p><em>Shlibs フィールド:</em>
-</p><p>
-共有ライブラリを正しいパッケージに入れることに加え、ポリシーの第４版では全ての共有ライブラリを <code>Shlibs</code> フィールドで宣言して下さい。
-このフィールドは共有ライブラリごとに行を追加し、各行はライブラリの <code>-install_name</code>、
- <code>-compatibility_version</code> 、 バージョン依存情報を含みます。
-依存性の書式は <code> foo (>= version-revision)</code> で、<code>version-revision</code> 
-で Fink に導入されている (互換性のある) <em>最初の</em>バージョンを指します。
-例えば:
-</p>
+			<p>
+				<code>SplitOff</code> フィールドの実行は、指定ファイルと指定ディレクトリをメインパッケージのインストールディレクトリ %I から スプリットオフのインストールディレクトリ %i に移動させます。
+				(名称規則は同様に、 %N がメインパッケージの名称で、 %n が現在のパッケージの名称になります。)
+				<code>DocFiles</code> コマンドは <filename>%i/share/doc/barN-shlibs</filename> にドキュメントをコピーします。
+			</p>
+			<p>
+				メインパッケージ barN は、barN-shlibs の現在のバージョン (%N-shlibs (= %v-%r)) に、正確に依存するよう注意して下さい。
+				これによってバージョンが一致し、また barN が barN-shlibs の依存性を取り込む結果になります。
+			</p>
+			<p>
+				<em>Shlibs フィールド:</em>
+			</p>
+			<p>
+				共有ライブラリを正しいパッケージに入れることに加え、ポリシーの第４版では全ての共有ライブラリを <code>Shlibs</code> フィールドで宣言して下さい。
+				このフィールドは共有ライブラリごとに行を追加し、各行はライブラリの <code>-install_name</code>、
+				<code>-compatibility_version</code> 、 バージョン依存情報を含みます。
+				依存性の書式は <code> foo (>= version-revision)</code> で、<code>version-revision</code> 
+				で Fink に導入されている (互換性のある) <em>最初の</em>バージョンを指します。
+				例えば:
+			</p>
 <codeblock>
-  Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2)
-  &lt;&lt;
+Shlibs: &lt;&lt;
+%p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2)
+&lt;&lt;
 </codeblock>
-<p>
-という宣言は、 <code>-install_name</code> %p/lib/bar.1.dylib と 
-<code>-compatibiliary_version</code> 2.1.0 
-というライブラリが、
-<em>bar1</em> パッケージの 1.1-2 バージョン以降からインストールされていることを示しています。
-さらに、この宣言は、メンテナがこの名称で互換バージョン 2.1.0 以降のライブラリが今後も <em>bar1</em> パッケージに含まれることを約束したことにもなっています。
-</p><p>
-ライブラリの名称には %p を使用するよう注意して下さい。
-これによって、インストールディレクトリに関係なく Fink ユーザが正しい <code>-install_name</code> を検索することができるようになります。
-</p><p>
-パッケージが更新されるとき、通常は <code>Shlibs</code> フィールドは次のバージョン/リビジョンへコピーされるだけです。
-例外では <code>-compatibility_version</code> の番号も増えます。
-この場合、依存情報のバージョン番号も新しいバージョン/リビジョンに変更する必要があります
-(これが新しい互換バージョン番号のライブラリの最初のバージョン/リビジョンになります) 。
-</p><p>
-<em>メジャーバージョン番号が変わるとき:</em>
-</p><p>
-メジャーバージョン番号が N から M に変わるとき、新規に barM と barM-shlibs を作成します。
-多くのユーザは両方のパッケージをインストールするため、 パッケージ barM-shlibs と barN-shlibs は独立させます。
-パッケージ barM では、依存性は
-</p>
+			<p>
+				という宣言は、 <code>-install_name</code> %p/lib/bar.1.dylib と 
+				<code>-compatibiliary_version</code> 2.1.0 
+				というライブラリが、
+				<em>bar1</em> パッケージの 1.1-2 バージョン以降からインストールされていることを示しています。
+				さらに、この宣言は、メンテナがこの名称で互換バージョン 2.1.0 以降のライブラリが今後も <em>bar1</em> パッケージに含まれることを約束したことにもなっています。
+			</p>
+			<p>
+				ライブラリの名称には %p を使用するよう注意して下さい。
+				これによって、インストールディレクトリに関係なく Fink ユーザが正しい <code>-install_name</code> を検索することができるようになります。
+			</p>
+			<p>
+				パッケージが更新されるとき、通常は <code>Shlibs</code> フィールドは次のバージョン/リビジョンへコピーされるだけです。
+				例外では <code>-compatibility_version</code> の番号も増えます。
+				この場合、依存情報のバージョン番号も新しいバージョン/リビジョンに変更する必要があります
+				(これが新しい互換バージョン番号のライブラリの最初のバージョン/リビジョンになります) 。
+			</p>
+			<p>
+				<em>メジャーバージョン番号が変わるとき:</em>
+			</p>
+			<p>
+				メジャーバージョン番号が N から M に変わるとき、新規に barM と barM-shlibs を作成します。
+				多くのユーザは両方のパッケージをインストールするため、 パッケージ barM-shlibs と barN-shlibs は独立させます。
+				パッケージ barM では、依存性は
+			</p>
 <codeblock>
-  Conflicts: barN
-  Replaces: barN
+Conflicts: barN
+Replaces: barN
 </codeblock>
-<p>
-となり、同時に barN も以下の依存情報を含むようにします
-</p>
+			<p>
+				となり、同時に barN も以下の依存情報を含むようにします
+			</p>
 <codeblock>
-  Conflicts: barM
-  Replaces: barM
+Conflicts: barM
+Replaces: barM
 </codeblock>
-<p>
-ユーザから見ると、他のパッケージをビルドすることで、依存している共有ライブラリの異なる barN や barM が代わる代わる入ってくることになりますが、barN-shlibs と barM-shlibs はずっとインストールされたままになります。
-</p><p>
-<em>既存の Fink パッケージをアップグレードする:</em>
-</p><p>
-既存のパッケージで静的ライブラリや共有ライブラリをインストールしるものをアップグレードするには、上記ポリシーに従って、 foo の新バージョンと foo-shlibs という新しいパッケージを作成することが最善策です。
-共有ライブラリ (あるいは foo-shlibs 内の他のファイル) が既にインストールされている場合、このパッケージは
-</p>
+			<p>
+				ユーザから見ると、他のパッケージをビルドすることで、依存している共有ライブラリの異なる barN や barM が代わる代わる入ってくることになりますが、barN-shlibs と barM-shlibs はずっとインストールされたままになります。
+			</p>
+			<p>
+				<em>既存の Fink パッケージをアップグレードする:</em>
+			</p>
+			<p>
+				既存のパッケージで静的ライブラリや共有ライブラリをインストールしるものをアップグレードするには、上記ポリシーに従って、 foo の新バージョンと foo-shlibs という新しいパッケージを作成することが最善策です。
+				共有ライブラリ (あるいは foo-shlibs 内の他のファイル) が既にインストールされている場合、このパッケージは
+			</p>
 <codeblock>
-  Replaces: foo (&lt;&lt; earliest.compliant.version)
+Replaces: foo (&lt;&lt; earliest.compliant.version)
 </codeblock>
-<p>
-と言い、ユーザに見せずにアップグレードします。
-(&quot;Conflicts: foo&quot; ではアップグレードが止まるので、<em>使用しないで下さい</em>。)
-</p><p>
-アップグレード後、&quot;Depends: foo&quot; と言っているパッケージは普通に動作します。
-それでもこのパッケージのメンテナに対してできる限り早く &quot;Depends: foo-shlibs, BuildDepends: foo&quot; と修正するように伝える必要があります。
-メンテナが適切に対応するまで、新しいメジャーバージョン番号の共有ライブラリを使った fooM, fooM-shlibs というパッケージを作成することはできません。
-</p><p>
-既存のパッケージで、 install_name の名称や、共有ライブラリの名称やシンボリックリンクの名称を正しく使っていない場合、注意してケースバイケースで対処することになります。
-自分がメンテナンスしているパッケージを新ポリシーにあってアップグレードさせる方法を決定することが困難であれば、 fink-devel メーリングリストで議論して下さい。
-</p><p>
-<em>バイナリとライブラリの両方を含むパッケージ:</em>
-</p><p>
-上流パッケージがバイナリとライブラリの両方を含んでいる場合、 
-Fink パッケージを作成する際の注意点があります。
-場合によっては、バイナリファイルは <code>foo-config</code> 
-のような名称で、推測するとビルド時に使用されるだけで実行時には使われない可能性もあります。
-この場合、バイナリはヘッダファイルとともに <code>foo</code> パッケージに入ります。
-</p><p>
-これと異なり、他のパッケージがバイナリファイルを実行時に呼び出すような場合、
-<code>foo-bin</code> のような名称で分割したパッケージにする必要があります。
-<code>foo-bin</code> パッケージは <code>foo-shlibs</code> パッケージに依存し、他のパッケージのメンテナは
-</p>
+			<p>
+				と言い、ユーザに見せずにアップグレードします。
+				(&quot;Conflicts: foo&quot; ではアップグレードが止まるので、<em>使用しないで下さい</em>。)
+			</p>
+			<p>
+				アップグレード後、&quot;Depends: foo&quot; と言っているパッケージは普通に動作します。
+				それでもこのパッケージのメンテナに対してできる限り早く &quot;Depends: foo-shlibs, BuildDepends: foo&quot; と修正するように伝える必要があります。
+				メンテナが適切に対応するまで、新しいメジャーバージョン番号の共有ライブラリを使った fooM, fooM-shlibs というパッケージを作成することはできません。
+			</p>
+			<p>
+				既存のパッケージで、 install_name の名称や、共有ライブラリの名称やシンボリックリンクの名称を正しく使っていない場合、注意してケースバイケースで対処することになります。
+				自分がメンテナンスしているパッケージを新ポリシーにあってアップグレードさせる方法を決定することが困難であれば、 fink-devel メーリングリストで議論して下さい。
+			</p>
+			<p>
+				<em>バイナリとライブラリの両方を含むパッケージ:</em>
+			</p>
+			<p>
+				上流パッケージがバイナリとライブラリの両方を含んでいる場合、 
+				Fink パッケージを作成する際の注意点があります。
+				場合によっては、バイナリファイルは <code>foo-config</code> 
+				のような名称で、推測するとビルド時に使用されるだけで実行時には使われない可能性もあります。
+				この場合、バイナリはヘッダファイルとともに <code>foo</code> パッケージに入ります。
+			</p>
+			<p>
+				これと異なり、他のパッケージがバイナリファイルを実行時に呼び出すような場合、
+				<code>foo-bin</code> のような名称で分割したパッケージにする必要があります。
+				<code>foo-bin</code> パッケージは <code>foo-shlibs</code> パッケージに依存し、他のパッケージのメンテナは
+			</p>
 <codeblock>
-  Depends: foo-bin
-  BuildDepends: foo
+Depends: foo-bin
+BuildDepends: foo
 </codeblock>
-<p>
-とするようにして下さい。
-これによって foo-shlibs に依存します。
-</p><p>
-このような状況では、ユーザには <code>foo-bin</code> をインストールするように知らせないため、アップグレード時に問題が発生します。
-この問題を回避するため、他のパッケージメンテナが見直し、<code>foo</code> に依存しているパッケージがアップグレードされるまで、 <code>foo</code> パッケージは
-</p>
+			<p>
+				とするようにして下さい。
+				これによって foo-shlibs に依存します。
+			</p>
+			<p>
+				このような状況では、ユーザには <code>foo-bin</code> をインストールするように知らせないため、アップグレード時に問題が発生します。
+				この問題を回避するため、他のパッケージメンテナが見直し、<code>foo</code> に依存しているパッケージがアップグレードされるまで、 <code>foo</code> パッケージは
+			</p>
 <codeblock>
-  Depends: foo-shlibs (= exact.version), foo-bin
+Depends: foo-shlibs (= exact.version), foo-bin
 </codeblock>
-<p>
-と言い、強制的に foo-bin をインストールします。
-</p>
+			<p>
+				と言い、強制的に foo-bin をインストールします。
+			</p>
 
-</section>
+		</section>
 
-<section name="perlmods"><title>Perl モジュール</title>
-<p>Fink は Perl モジュールについてのポリシーを 2003年５月より施行しています。
-</p><p>
-伝統的に、 Fink の Perl モジュールには <code>-pm</code> がつけられて、<code>Type: perl</code> ディレクティブを使ってビルドされていました。
-Perl モジュールのファイルは <filename>/sw/lib/perl5</filename> および/または 
-<filename>/sw/lib/perl5/darwin</filename> にインストールされていました。
-新ポリシーでは、この保存先はコンパイル時に使う Perl のバージョンと関係ない Perl モジュールだけに許されています。
-</p><p>
-バージョンに依存する Perl モジュールは、 XS モジュールと呼ばれていて、純粋な Perl のコードの他にコンパイルされた C のコードを含んでいることが多いようです。
-このモジュールは、ファイル名の拡張子に <code>.bundle</code> が付いています。
-</p><p>
-バージョンに依存する Perl モジュールは、該当バージョンの Perl を使ってビルドを行い、ファイルをサブディレクトリに保存します。例えば、 
-<code>perl5.6.0</code> であれば <filename>/sw/lib/perl5/5.6.0</filename> と 
-<filename>/sw/lib/perl5/5.6.0/darwin</filename> になります。
-また、新たに接尾語の使用がが導入されています。
-Perl 5.6.0 のモジュールであれば、 <code>-pm560</code> を使い、Perl 5.6.1 や Perl 5.8.0 など他のバージョンの Perl も同様の命名規則が適用されます。
-</p><p>
-新しいディレクティブの <code>Type: perl 5.6.0</code> 
-は、自動的にバージョン化された Perl バイナリを使い、ファイルを正しいサブディレクトリに保存します。
-(このディレクティブは Fink 0.13.0 から導入されています。)
-</p><p>
-この他に、 <code>-pm</code> パッケージとして作成することもできます。
-これは、本質的には &quot;バンドル&quot;パッケージで、 <code>-pm560</code> または他のパッケージをロードします。
-アップグレードを簡単にするため、既存の Fink XS モジュールにはこの方式が推奨されています。
-</p><p>
-Fink 0.13.0 より、 <code>fink validate</code> コマンドを用いて指定の 
-<code>.deb</code> ファイルが バージョン化されずにインストールされた XS モジュールか検証し、
-XS モジュールであれば警告を発します。
-</p>
-
-
-</section>
-</chapter>
-
-
-<chapter filename="fslayout">
-<title>ファイルシステムのレイアウト</title>
-<shorttitle>FS レイアウト</shorttitle>
+		<section name="perlmods">
+			<title>Perl モジュール</title>
+			<p>Fink は Perl モジュールについてのポリシーを 2003年５月より施行しています。
+			</p>
+			<p>
+				伝統的に、 Fink の Perl モジュールには <code>-pm</code> がつけられて、<code>Type: perl</code> ディレクティブを使ってビルドされていました。
+				Perl モジュールのファイルは <filename>/sw/lib/perl5</filename> および/または 
+				<filename>/sw/lib/perl5/darwin</filename> にインストールされていました。
+				新ポリシーでは、この保存先はコンパイル時に使う Perl のバージョンと関係ない Perl モジュールだけに許されています。
+			</p>
+			<p>
+				バージョンに依存する Perl モジュールは、 XS モジュールと呼ばれていて、純粋な Perl のコードの他にコンパイルされた C のコードを含んでいることが多いようです。
+				このモジュールは、ファイル名の拡張子に <code>.bundle</code> が付いています。
+			</p>
+			<p>
+				バージョンに依存する Perl モジュールは、該当バージョンの Perl を使ってビルドを行い、ファイルをサブディレクトリに保存します。例えば、 
+				<code>perl5.6.0</code> であれば <filename>/sw/lib/perl5/5.6.0</filename> と 
+				<filename>/sw/lib/perl5/5.6.0/darwin</filename> になります。
+				また、新たに接尾語の使用がが導入されています。
+				Perl 5.6.0 のモジュールであれば、 <code>-pm560</code> を使い、Perl 5.6.1 や Perl 5.8.0 など他のバージョンの Perl も同様の命名規則が適用されます。
+			</p>
+			<p>
+				新しいディレクティブの <code>Type: perl 5.6.0</code> 
+				は、自動的にバージョン化された Perl バイナリを使い、ファイルを正しいサブディレクトリに保存します。
+				(このディレクティブは Fink 0.13.0 から導入されています。)
+			</p>
+			<p>
+				この他に、 <code>-pm</code> パッケージとして作成することもできます。
+				これは、本質的には &quot;バンドル&quot;パッケージで、 <code>-pm560</code> または他のパッケージをロードします。
+				アップグレードを簡単にするため、既存の Fink XS モジュールにはこの方式が推奨されています。
+			</p>
+			<p>
+				Fink 0.13.0 より、 <code>fink validate</code> コマンドを用いて指定の 
+				<code>.deb</code> ファイルが バージョン化されずにインストールされた XS モジュールか検証し、
+				XS モジュールであれば警告を発します。
+			</p>
 
 
-<preface>
-<p>
-以下はファイルシステムレイアウトのガイドラインで、 Fink のパッケージ化ポリシーに含まれています。
-</p>
-</preface>
+		</section>
+	</chapter>
 
 
-<section name="fhs"><title>ファイルシステム構造標準 (Filesystem Hierarchy Standard)</title>
-<p>
-Fink は<link url="http://www.pathname.com/fhs/">ファイルシステム構造標準 (Filesystem Hierarchy Standard)</link>
-あるいは FHS の精神に従っています。
-精神に、と限定しているのは、 FHS は <filename>/</filename> と <filename>/usr</filename> ハイエラルキー
-への管理権限を有するシステムベンダー向けに作成されているものだからです。
-Fink は追加型のディストリビューションに過ぎず、その権限はインストールディレクトリまでです。
-例ではデフォルトの接頭部である <filename>/sw</filename> を使用します。
-</p>
-</section>
-
-<section name="dirs"><title>ディレクトリ</title>
-<p>
-ファイルは以下のサブディレクトリに保存します:
-</p>
-
-<itemtable>
-
-<item><itemt><filename>/sw/bin</filename></itemt>
-<itemd>
-<p>
-一般的な実行可能プログラム。
-サブディレクトリはなし。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/sbin</filename></itemt>
-<itemd>
-<p>
-管理者が使う実行可能プログラム用のディレクトリ。
-バックグラウンドデーモンもここに保存する。
-サブディレクトリはなし。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/include</filename></itemt>
-<itemd>
-<p>
-このディレクトリは C と C++ ヘッダファイル用。
-必要に応じてサブディレクトリを作成することができる。
-標準 C ヘッダと混同しそうなヘッダファイルをインストールする場合は<em>必ず</em>サブディレクトリに入れること。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/lib</filename></itemt>
-<itemd>
-<p>
-アーキテクチャ依存のデータファイルやライブラリを保存するディレクトリ。
-静的ライブラリと共有ライブラリは特に理由がない限りは <filename>/sw/lib</filename> に置く。
-また、ユーザによって直接実行されない実行可能ファイルもここに置く
-(層でない場合は libexec に置く)。
-</p>
-<p>
-パッケージはデータやローダブルモジュールを保存するサブディレクトリを自由に作成することができます。
-サブディレクトリの名称は、互換性のためにも意味のある、特にメジャーバージョン番号を用いて
-<filename>/sw/lib/perl5</filename> や <filename>/sw/lib/apache/1.3</filename>
-などのように付けて下さい。
-ホストタイプを付ける場合、 <code>powerpc-apple-darwin1.3.3</code> 
-などは、互換性を考えるとあまり宜しくありません。
-<code>powerpc-apple-darwin1.3</code> あるいは <code>powerpc-apple-darwin</code> 
-の方が適しています。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/share</filename></itemt>
-<itemd>
-<p>
-このディレクトリはアーキテクチャ比依存のデータファイル用で、
-<filename>/sw/lib</filename> も同様。
-両者に共通のサブディレクトリについては下記を参照。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/share/man</filename></itemt>
-<itemd>
-<p>
-マニュアルページ用ディレクトリ。
-通常のセクションツリーに構造化されている。
-<filename>/sw/bin</filename> と <filename>/sw/sbin</filename> にあるプログラムには全てマニュアルページを添付する。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/share/info</filename></itemt>
-<itemd>
-<p>
-Info 形式のドキュメント用ディレクトリ。
-Texinfo ソースから作成される。 
-<code>dir</code> ファイルのメンテナンスは Debian 版の <code>install-info</code> (<code>dpkg</code> の一部)
-で自動化されている。
-<code>InfoDocs</code> 詳細フィールドを使って自動的に <code>postinst</code> と
-<code>prerm</code> パッケージスクリプトのコードを作成する。
-Fink は、それぞれのパッケージが勝手に <code>dir</code> ファイルを作成しないように確認をする。 
-サブディレクトリはなし。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/share/doc</filename></itemt>
-<itemd>
-<p>
-man でも Info でもないドキュメント用のディレクトリ。
-README, LICENSE, COPYING はここに保存する。
-全てのパッケージはサブディレクトリを作成し、名称はパッケージ名とする。
-名称には (パッケージ名に付いている番号以外の) バージョン番号はつけない。
-<code>%n</code> を使うのがベスト。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/share/locale</filename></itemt>
-<itemd>
-<p>
-国際化用のメッセージカタログディレクトリ。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/var</filename></itemt>
-<itemd>
-<p>
-<filename>var</filename> ディレクトリにはデータを保存する。
-データとは、スプールディレクトリ、ロックファイル、状態のデータベース、ゲームのハイスコアやログファイルがある。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/etc</filename></itemt>
-<itemd>
-<p>
-設定ファイル用ディレクトリ。
-複数のファイルを使用するパッケージはサブディレクトリを作る方が好ましい。
-サブディレクトリの名称はパッケージ名称かプログラム名とする。
-</p>
-</itemd></item>
-
-<item><itemt><filename>/sw/src</filename></itemt>
-<itemd>
-<p>
-ソースコードを保存、ビルドするディレクトリ。
-パッケージが何かをインストールする場所ではない。
-</p>
-</itemd></item>
-
-</itemtable>
-</section>
+	<chapter filename="fslayout">
+		<title>ファイルシステムのレイアウト</title>
+		<shorttitle>FS レイアウト</shorttitle>
 
 
-<section name="avoid"><title>回避すること</title>
-<p>
-上述のディレクトリ以外は /sw に作成をしない。
-特に、
-<filename>/sw/man</filename>, <filename>/sw/info</filename>,
-<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
-<filename>/sw/lib/locale</filename>
-は作成しない。
-</p>
-</section>
+		<preface>
+			<p>
+				以下はファイルシステムレイアウトのガイドラインで、 Fink のパッケージ化ポリシーに含まれています。
+			</p>
+		</preface>
 
 
-</chapter>
+		<section name="fhs">
+			<title>ファイルシステム構造標準 (Filesystem Hierarchy Standard)</title>
+			<p>
+				Fink は<link url="http://www.pathname.com/fhs/">ファイルシステム構造標準 (Filesystem Hierarchy Standard)</link>
+				あるいは FHS の精神に従っています。
+				精神に、と限定しているのは、 FHS は <filename>/</filename> と <filename>/usr</filename> ハイエラルキー
+				への管理権限を有するシステムベンダー向けに作成されているものだからです。
+				Fink は追加型のディストリビューションに過ぎず、その権限はインストールディレクトリまでです。
+				例ではデフォルトの接頭部である <filename>/sw</filename> を使用します。
+			</p>
+		</section>
+
+		<section name="dirs">
+			<title>ディレクトリ</title>
+			<p>
+				ファイルは以下のサブディレクトリに保存します:
+			</p>
+
+			<itemtable>
+
+				<item>
+					<itemt>
+						<filename>/sw/bin</filename>
+					</itemt>
+					<itemd>
+						<p>
+							一般的な実行可能プログラム。
+							サブディレクトリはなし。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/sbin</filename>
+					</itemt>
+					<itemd>
+						<p>
+							管理者が使う実行可能プログラム用のディレクトリ。
+							バックグラウンドデーモンもここに保存する。
+							サブディレクトリはなし。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/include</filename>
+					</itemt>
+					<itemd>
+						<p>
+							このディレクトリは C と C++ ヘッダファイル用。
+							必要に応じてサブディレクトリを作成することができる。
+							標準 C ヘッダと混同しそうなヘッダファイルをインストールする場合は<em>必ず</em>サブディレクトリに入れること。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/lib</filename>
+					</itemt>
+					<itemd>
+						<p>
+							アーキテクチャ依存のデータファイルやライブラリを保存するディレクトリ。
+							静的ライブラリと共有ライブラリは特に理由がない限りは <filename>/sw/lib</filename> に置く。
+							また、ユーザによって直接実行されない実行可能ファイルもここに置く
+							(層でない場合は libexec に置く)。
+						</p>
+						<p>
+							パッケージはデータやローダブルモジュールを保存するサブディレクトリを自由に作成することができます。
+							サブディレクトリの名称は、互換性のためにも意味のある、特にメジャーバージョン番号を用いて
+							<filename>/sw/lib/perl5</filename> や <filename>/sw/lib/apache/1.3</filename>
+							などのように付けて下さい。
+							ホストタイプを付ける場合、 <code>powerpc-apple-darwin1.3.3</code> 
+							などは、互換性を考えるとあまり宜しくありません。
+							<code>powerpc-apple-darwin1.3</code> あるいは <code>powerpc-apple-darwin</code> 
+							の方が適しています。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/share</filename>
+					</itemt>
+					<itemd>
+						<p>
+							このディレクトリはアーキテクチャ比依存のデータファイル用で、
+							<filename>/sw/lib</filename> も同様。
+							両者に共通のサブディレクトリについては下記を参照。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/share/man</filename>
+					</itemt>
+					<itemd>
+						<p>
+							マニュアルページ用ディレクトリ。
+							通常のセクションツリーに構造化されている。
+							<filename>/sw/bin</filename> と <filename>/sw/sbin</filename> にあるプログラムには全てマニュアルページを添付する。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/share/info</filename>
+					</itemt>
+					<itemd>
+						<p>
+							Info 形式のドキュメント用ディレクトリ。
+							Texinfo ソースから作成される。 
+							<code>dir</code> ファイルのメンテナンスは Debian 版の <code>install-info</code> (<code>dpkg</code> の一部)
+							で自動化されている。
+							<code>InfoDocs</code> 詳細フィールドを使って自動的に <code>postinst</code> と
+							<code>prerm</code> パッケージスクリプトのコードを作成する。
+							Fink は、それぞれのパッケージが勝手に <code>dir</code> ファイルを作成しないように確認をする。 
+							サブディレクトリはなし。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/share/doc</filename>
+					</itemt>
+					<itemd>
+						<p>
+							man でも Info でもないドキュメント用のディレクトリ。
+							README, LICENSE, COPYING はここに保存する。
+							全てのパッケージはサブディレクトリを作成し、名称はパッケージ名とする。
+							名称には (パッケージ名に付いている番号以外の) バージョン番号はつけない。
+							<code>%n</code> を使うのがベスト。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/share/locale</filename>
+					</itemt>
+					<itemd>
+						<p>
+							国際化用のメッセージカタログディレクトリ。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/var</filename>
+					</itemt>
+					<itemd>
+						<p>
+							<filename>var</filename> ディレクトリにはデータを保存する。
+							データとは、スプールディレクトリ、ロックファイル、状態のデータベース、ゲームのハイスコアやログファイルがある。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/etc</filename>
+					</itemt>
+					<itemd>
+						<p>
+							設定ファイル用ディレクトリ。
+							複数のファイルを使用するパッケージはサブディレクトリを作る方が好ましい。
+							サブディレクトリの名称はパッケージ名称かプログラム名とする。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>
+						<filename>/sw/src</filename>
+					</itemt>
+					<itemd>
+						<p>
+							ソースコードを保存、ビルドするディレクトリ。
+							パッケージが何かをインストールする場所ではない。
+						</p>
+					</itemd>
+				</item>
+
+			</itemtable>
+		</section>
 
 
-<chapter filename="reference">
-<title>参照</title>
-<shorttitle>参照</shorttitle>
+		<section name="avoid">
+			<title>回避すること</title>
+			<p>
+				上述のディレクトリ以外は /sw に作成をしない。
+				特に、
+				<filename>/sw/man</filename>, <filename>/sw/info</filename>,
+				<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
+				<filename>/sw/lib/locale</filename>
+				は作成しない。
+			</p>
+		</section>
 
 
-<section name="build"><title>ビルドプロセス</title>
+	</chapter>
 
-<p>
-各フィールドの意味を理解するには、 Fink のビルドプロセスに関する知識が必要となります。
-このプロセスは５段階になっていて、それぞれ解梱 (unpack)、パッチ (patch)、コンパイル (compile)、インストール (install)、ビルド (build) と呼ばれています。
-下記の例では <filename>/sw</filename> に gimp-1.2.1-1 パッケージをインストールしています。
-</p>
-<p>
-<em>解梱段階</em>では、 <filename>/sw/src/gimp-1.2.1-1</filename> ディレクトリが作成されてソース tarball が解梱されます。
-大抵ここで gimp-1.2.1 ディレクトリが作られ、ソースが中にあります。
-これ以降のステップはすべてこの中 (例 <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>) で行われます。
-細かな点については SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
-フィールドによって変更することができます。
-</p>
-<p>
-<em>パッチ段階</em>では、ソースに Darwin ビルド用のパッチが当てられます。
-UpdateConfigGuess, UpdateLibtool, Patch and PatchScript 各フィールドに指定されているアクションを、この順で実行します。
-</p>
-<p>
-<em>コンパイル段階</em>では、ソースは設定後にコンパイルされます。
-通常、これは <code>configure</code> スクリプトをパラメータ付きで呼び出して、 
-<code>make</code> コマンドを発行します。
-詳細は CompileScript フィールドを参照して下さい。
-</p>
-<p>
-<em>インストール段階</em>では、パッケージは仮ディレクトリ 
-<filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d) にインストールされます。
-(&quot;root-&quot; に注意。)
-<filename>/sw</filename> ディレクトリにインストールされる予定のファイルは全て、
-<filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) にインストールされます。
-詳細は InstallScript フィールドを参照して下さい。
-</p>
-<p>
-(<em>Fink 0.9.9 で導入。</em>
-<code>SplitOff</code> フィールドを用いると、一つのパッケージ詳細から複数のパッケージを作成することができます。
-インストール段階の最後のあたりでパッケージごとにインストールディレクトリを分け、ファイルを適当なディレクトリに振り分けていきます。)
-</p>
-<p>
-<em>ビルド段階</em>では、バイナリパッケージファイル (.deb) を仮ディレクトリからビルドします。
-この段階を直接制御することはできません。
-代わりに、パッケージ詳細からの様々な情報を使って dpkg 用の <filename>control</filename> ファイルを作成します。
-</p>
-</section>
 
-<section name="fields"><title>フィールド</title>
+	<chapter filename="reference">
+		<title>参照</title>
+		<shorttitle>参照</shorttitle>
 
-<p>
-ここではフィールドを分類して解説しています。
-以下のフィールド一覧は完全なものではありません。
-<code>:-)</code>
-</p>
-<p><em>初期データ (Initial Data):</em></p>
-<itemtable>
-<item><itemt>Package</itemt>
-<itemd>
-<p>
-パッケージ名称。
-英小文字、数字、記号 '.', '+', '-' 。
-アンダースコア ('_') と英大文字は不可。
-必須フィールド。
-</p>
-<p>
-Fink 0.9.9 で導入。
-パーセント拡張を適用することもできる。
-この他にも、
-Depends, BuildDepends, Provides, Conflicts,
-Replaces, Recommends, Suggests, Enhances
-のフィールドで適用することができる。
-</p>
-</itemd></item>
 
-<item><itemt>Version</itemt>
-<itemd>
-<p>
-上流のバージョン番号。
-Package フィールドと同じ制限。
-必須フィールド。
-</p>
-</itemd></item>
+		<section name="build">
+			<title>ビルドプロセス</title>
 
-<item><itemt>Revision</itemt>
-<itemd>
-<p>
-パッケージリビジョン。
-同じ上流バージョンに対して新しい詳細を作成する場合にリビジョン番号が増加する。
-リビジョン番号は１から始まる。
-必須フィールド。
-</p>
-</itemd></item>
+			<p>
+				各フィールドの意味を理解するには、 Fink のビルドプロセスに関する知識が必要となります。
+				このプロセスは５段階になっていて、それぞれ解梱 (unpack)、パッチ (patch)、コンパイル (compile)、インストール (install)、ビルド (build) と呼ばれています。
+				下記の例では <filename>/sw</filename> に gimp-1.2.1-1 パッケージをインストールしています。
+			</p>
+			<p>
+				<em>解梱段階</em>では、 <filename>/sw/src/gimp-1.2.1-1</filename> ディレクトリが作成されてソース tarball が解梱されます。
+				大抵ここで gimp-1.2.1 ディレクトリが作られ、ソースが中にあります。
+				これ以降のステップはすべてこの中 (例 <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>) で行われます。
+				細かな点については SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
+				フィールドによって変更することができます。
+			</p>
+			<p>
+				<em>パッチ段階</em>では、ソースに Darwin ビルド用のパッチが当てられます。
+				UpdateConfigGuess, UpdateLibtool, Patch and PatchScript 各フィールドに指定されているアクションを、この順で実行します。
+			</p>
+			<p>
+				<em>コンパイル段階</em>では、ソースは設定後にコンパイルされます。
+				通常、これは <code>configure</code> スクリプトをパラメータ付きで呼び出して、 
+				<code>make</code> コマンドを発行します。
+				詳細は CompileScript フィールドを参照して下さい。
+			</p>
+			<p>
+				<em>インストール段階</em>では、パッケージは仮ディレクトリ 
+				<filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d) にインストールされます。
+				(&quot;root-&quot; に注意。)
+				<filename>/sw</filename> ディレクトリにインストールされる予定のファイルは全て、
+				<filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) にインストールされます。
+				詳細は InstallScript フィールドを参照して下さい。
+			</p>
+			<p>
+				(<em>Fink 0.9.9 で導入。</em>
+				<code>SplitOff</code> フィールドを用いると、一つのパッケージ詳細から複数のパッケージを作成することができます。
+				インストール段階の最後のあたりでパッケージごとにインストールディレクトリを分け、ファイルを適当なディレクトリに振り分けていきます。)
+			</p>
+			<p>
+				<em>ビルド段階</em>では、バイナリパッケージファイル (.deb) を仮ディレクトリからビルドします。
+				この段階を直接制御することはできません。
+				代わりに、パッケージ詳細からの様々な情報を使って dpkg 用の <filename>control</filename> ファイルを作成します。
+			</p>
+		</section>
 
-<item><itemt>Epoch</itemt>
-<itemd>
-<p>
-<em>Fink 0.12.0 で導入</em>
-パッケージの時代を特定する (指定されていない場合、デフォルト値は0) 。
-詳細は <link url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</link> を参照。
-任意のフィールド。
-</p>
-</itemd></item>
+		<section name="fields">
+			<title>フィールド</title>
 
-<item><itemt>Description</itemt>
-<itemd>
-<p>
-パッケージの短い説明。
-一覧で表示される一行の記述なので、簡潔かつわかりやすく。
-60 chars 以下で、45 chars 以下が好ましい。
-パッケージの名称をこの中に入れる必要はない。
-常に適切な文脈で表示されるようにすること。
-必須フィールド。
-</p>
-</itemd></item>
+			<p>
+				ここではフィールドを分類して解説しています。
+				以下のフィールド一覧は完全なものではありません。
+				<code>:-)</code>
+			</p>
+			<p>
+				<em>初期データ (Initial Data):</em>
+			</p>
+			<itemtable>
+				<item>
+					<itemt>Package</itemt>
+					<itemd>
+						<p>
+							パッケージ名称。
+							英小文字、数字、記号 '.', '+', '-' 。
+							アンダースコア ('_') と英大文字は不可。
+							必須フィールド。
+						</p>
+						<p>
+							Fink 0.9.9 で導入。
+							パーセント拡張を適用することもできる。
+							この他にも、
+							Depends, BuildDepends, Provides, Conflicts,
+							Replaces, Recommends, Suggests, Enhances
+							のフィールドで適用することができる。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Type</itemt>
-<itemd>
-<p>
- <code>bundle</code> の場合。
-バンドルパッケージは関連するパッケージをひとまとめにするために使われる。
-これは依存性だけの問題で、コードやインストールファイルはない。
-Source, PatchScript, CompileScript, InstallScript などのフィールドは、バンドルパッケージでは無視される。
-</p>
-<p>
-<code>nosource</code> は非常に良く似た型である。
-これは、ソース tarball がないため、何も取りにいかず、解梱段階では空ディレクトリを作成する。
-パッチ、コンパイル、インストール段階は通常通り実行される。
-このようにして全てのコードをパッチで作成したり、 InstallScript でディレクトリを作成することができる。
-Fink 0.18.0 以降では <code>Source: none</code> を設定しても同じ挙動をする。
-こちらを使用すると、 &quot;Type&quot; を他の目的 (<code>Type: perl</code> など) に使うことができる。
-</p>
-<p>
-Fink 0.9.5 以降では、<code>perl</code> という型を設定してコンパイルとインストールのスクリプトを指定できる。
-Fink 0.13.0 からは、さらにバージョンを <code>perl $version</code> として指定することができる。
-$version は３つの数字からなる Perl のバージョンで、 <code>perl 5.6.0</code> の形式。
-</p>
-</itemd></item>
+				<item>
+					<itemt>Version</itemt>
+					<itemd>
+						<p>
+							上流のバージョン番号。
+							Package フィールドと同じ制限。
+							必須フィールド。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>License</itemt>
-<itemd>
-<p>
-パッケージ配布の際のライセンスの性質を表す。
-値は、前出の <xref chapter="policy" section="licenses">パッケージのライセンス</xref> の節の中から選択する。
-さらに、このフィールドはパッケージがパッケージングポリシーに適合する場合の指定する。
-例えば、当該パッケージ用の doc ディレクトリにライセンスのコピーをインストールする。
-</p>
-</itemd></item>
+				<item>
+					<itemt>Revision</itemt>
+					<itemd>
+						<p>
+							パッケージリビジョン。
+							同じ上流バージョンに対して新しい詳細を作成する場合にリビジョン番号が増加する。
+							リビジョン番号は１から始まる。
+							必須フィールド。
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Maintainer</itemt>
-<itemd>
-<p>
-パッケージに責任を負っている人物の名前とメールアドレス。
-必須フィールド。
-以下の形式で、名前とメールアドレスはそれぞれ一つだけとする。
-</p>
+				<item>
+					<itemt>Epoch</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.12.0 で導入</em>
+							パッケージの時代を特定する (指定されていない場合、デフォルト値は0) 。
+							詳細は <link url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</link> を参照。
+							任意のフィールド。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>Description</itemt>
+					<itemd>
+						<p>
+							パッケージの短い説明。
+							一覧で表示される一行の記述なので、簡潔かつわかりやすく。
+							60 chars 以下で、45 chars 以下が好ましい。
+							パッケージの名称をこの中に入れる必要はない。
+							常に適切な文脈で表示されるようにすること。
+							必須フィールド。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>Type</itemt>
+					<itemd>
+						<p>
+							<code>bundle</code> の場合。
+							バンドルパッケージは関連するパッケージをひとまとめにするために使われる。
+							これは依存性だけの問題で、コードやインストールファイルはない。
+							Source, PatchScript, CompileScript, InstallScript などのフィールドは、バンドルパッケージでは無視される。
+						</p>
+						<p>
+							<code>nosource</code> は非常に良く似た型である。
+							これは、ソース tarball がないため、何も取りにいかず、解梱段階では空ディレクトリを作成する。
+							パッチ、コンパイル、インストール段階は通常通り実行される。
+							このようにして全てのコードをパッチで作成したり、 InstallScript でディレクトリを作成することができる。
+							Fink 0.18.0 以降では <code>Source: none</code> を設定しても同じ挙動をする。
+							こちらを使用すると、 &quot;Type&quot; を他の目的 (<code>Type: perl</code> など) に使うことができる。
+						</p>
+						<p>
+							Fink 0.9.5 以降では、<code>perl</code> という型を設定してコンパイルとインストールのスクリプトを指定できる。
+							Fink 0.13.0 からは、さらにバージョンを <code>perl $version</code> として指定することができる。
+							$version は３つの数字からなる Perl のバージョンで、 <code>perl 5.6.0</code> の形式。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>License</itemt>
+					<itemd>
+						<p>
+							パッケージ配布の際のライセンスの性質を表す。
+							値は、前出の <xref chapter="policy" section="licenses">パッケージのライセンス</xref> の節の中から選択する。
+							さらに、このフィールドはパッケージがパッケージングポリシーに適合する場合の指定する。
+							例えば、当該パッケージ用の doc ディレクトリにライセンスのコピーをインストールする。
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>Maintainer</itemt>
+					<itemd>
+						<p>
+							パッケージに責任を負っている人物の名前とメールアドレス。
+							必須フィールド。
+							以下の形式で、名前とメールアドレスはそれぞれ一つだけとする。
+						</p>
 <codeblock>Firstname Lastname &lt;user@host.domain.com&gt;</codeblock>
-</itemd></item>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>依存性 (Dependency):</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>依存性関連</em>
+			</p>
+			<itemtable>
 
-<item><itemt>Depends</itemt>
-<itemd>
-<p>
-A list of packages which must be installed before this package can be
-built.
-Usually, this is just a comma-separated list for plain package names,
-but Fink now supports alternatives and version clauses with the same
-syntax as dpkg.
-A fully featured example:
-</p>
+				<item>
+					<itemt>Depends</itemt>
+					<itemd>
+						<p>
+							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
+							普通，これは「パッケージ名」の単なるカンマ区切りのリストだが，
+							現在のFinkは代替パッケージとヴァージョンを（dpkgと同じ形式で）指定する形式に対応している．
+							それらを全て盛りこんだ例:
+						</p>
 <codeblock>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</codeblock>
-<p>
-Note that there is no way to express real optional dependencies.
-If a package works both with and without another package, you must
-either make sure that the other package is not used even when it is
-present or add it to the Depends field.
-If you want to offer the user both options, make two separate
-packages, e.g. wget and wget-ssl.
-</p><p>
-Starting with a post-0.18.2 CVS version of fink, you can have
-conditional dependencies. These are specified by placing
-<code>(string1 op string2)</code> before a package name. Percent
-expansion is performed as usual and then the two strings are compared
-according to the <code>op</code> operator: &lt;&lt;, &lt;=, =, !=,
-&gt;&gt;, &gt;=. The immediately-following package is only considered
-as a dependency if the comparison is true.
-</p><p>
-You can use this format to simplify maintaining several similar
-packages. For example, both elinks and elinks-ssl could list:
-</p>
+						<p>
+							本当の意味で省略可能な依存性を表現する方法がないことに注意．
+							あるパッケージが別のパッケージがあってもなくても動作するとき，
+							もう片方のパッケージが（存在するときであっても）確かに使われていないか確かめるか，
+							またはフィールド Depends に加えるかのどちらかを行うこと．
+							ユーザにどちらの使い方をも提供したいときは，2つの別々のパッケージ（例えば wget と wget-ttl）を作る．
+						</p>
+						<p>
+							Finkのヴァージョン post-0.18.2 CVS 以降では，条件付き依存性を記述できる．
+							それを指定するには「パッケージ名」の前に <code>(string1 op string2)</code> を付ける．
+							パーセント記法が普通に展開され，オペレータ <code>op</code> によって2つの文字列が比較される．
+							<code>op</code> には以下のものが使える: &lt;&lt;, &lt;=, =, !=, &gt;&gt;, &gt;=．
+							その直後に続くパッケージへの依存性は，比較が真を返したときのみ存在すると判断される．
+						</p>
+						<p>
+							この機能は，複数の似通ったパッケージを管理する際に手間を省くためにも使える．
+							例えば elinks と elinks-ssl は次のように列挙できますが，
+						</p>
 <codeblock>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</codeblock>
-<p>
-would have the same effect as having elinks list:
-</p>
+						<p>
+							これは elinks の方で
+						</p>
 <codeblock>Depends: expat-shlibs</codeblock>
-<p>
-and elinks-ssl list:
-</p>
+						<p>
+							とし， elinks-ssl の方で
+						</p>
 <codeblock>Depends: openssl097-shlibs, expat-shlibs</codeblock>
-</itemd></item>
+						<p>
+							とすることと同じです．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>BuildDepends</itemt>
-<itemd>
-<p>
-<em>Fink 0.9.0 で導入</em>
-A list of dependencies that is applied at build time only.
-This can be used to list tools (e.g. flex) that must be present to
-build the packages, but which are not used at run time.
-Supports the same syntax as Depends.
-</p>
-</itemd></item>
+				<item>
+					<itemt>BuildDepends</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.9.0 で導入</em>
+							ビルド時のみに適用される依存性のリスト．
+							ビルド時には必要だが，実行時には使われないツール（flexなど）を列挙するのに使う．
+							書式は Depends と同じ．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Provides</itemt>
-<itemd>
-<p>
-A comma-separated list of package names that this package is
-considered to "provide".
-If a package named "pine" specifies <code>Provides: mailer</code>,
-then any dependency on "mailer" is considered satisfied when "pine" is
-installed.
-You'll usually also want to name these packages in the "Conflicts" and
-the "Replaces" field.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Provides</itemt>
+					<itemd>
+						<p>
+							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りのリスト．
+							パッケージ pine の finkinfo に <code>Provides: mailer</code> とある場合，
+							pine がインストールされると mailer についての全ての依存性は解決したものとされる．
+							普通，そのようなパッケージは pine のフィールド Conflicts や Replaces にも入れるとよい．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Conflicts</itemt>
-<itemd>
-<p>
-A comma-separated list of package names that must not be installed at
-the same time as this package.
-For virtual packages it is allowed to list the names of the provided
-packages here; they will be handled appropriately.
-This fields also supports versioned dependencies like the Depends
-field, but not alternatives (wouldn't make sense).
-If a package is listed in its own Conflicts, it will be (silently)
-removed from that list. (Introduced in a post-0.18.2 CVS version of
-fink.)
-</p>
-<p>
-<em>Note:</em> Fink itself currently ignores this field.
-However, it is passed on to dpkg and will be handled accordingly.
-In summary, it only effects run-time, not build-time.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Conflicts</itemt>
+					<itemd>
+						<p>
+							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りのリスト．
+							ヴァーチャル・パッケージでは，そのパッケージが提供する「パッケージ名」をここに指定してもよい．
+							それらは適切に扱われる．
+							このフィールドはフィールド Depends のようにヴァージョン付きの依存性情報にも対応しているが，
+							代替パッケージには対応していない（意味をなさない）．
+							あるパッケージがそれ自身のフィールド Conflicts に入っていると，（暗黙のうちに）そこから取り除かれる．
+							（Fink のヴァージョン post-0.18.2 CVS で導入された．）
+						</p>
+						<p>
+							<em>注意:</em> Fink自身はこのフィールドを無視する．
+							しかしこれは dpkg に渡され，そこで適切に扱われる．
+							要するにこのフィールドが影響するのはビルド時でなく実行時だ．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Replaces</itemt>
-<itemd>
-<p>
-This is used together with "Conflicts", when this package not only
-takes over the function of the conflicting package, but also has some
-common files.
-Without this field, dpkg may generate errors when installing the
-package because files are still owned by the other package.
-It is also a hint that the two packages involved are genuine
-alternatives and one can be removed in favor of the other.
-If a package is listed in its own Replaces, it will be (silently)
-removed from that list. (Introduced in a post-0.18.2 CVS version of
-fink.)
-</p>
-<p>
-<em>Note:</em> Fink itself currently ignores this field.
-However, it is passed on to dpkg and will be handled accordingly.
-In summary, it only effects run-time, not build-time.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Replaces</itemt>
+					<itemd>
+						<p>
+							Conflicts と共に使われる．
+							そのパッケ−ジが，衝突するパッケ−ジの機能の代わりになるだけでなく，共通するファイルを持つときに使われる．
+							このフィールドがないと，dpkgはパッケージのインストール時にエラーを出すかも知れない．
+							それはファイルが依然として元あった方のパッケージに属しているからだ．
+							それら2つのパッケージが純粋な意味で互いに代替物であり，どちらかがあればもう片方は要らないようなときはこれを使うとよい．
+							あるパッケージのフィールド Replaces 内にそのパッケージそのものが含まれていたら，（暗黙のうちに）取り除かれる．
+							（Finkのヴァージョン post-0.18.2 CVS で導入された．）
+						</p>
+						<p>
+							<em>注意:</em> Fink自身はこのフィールドを無視する．
+							しかしこれは dpkg に渡され，そこで適切に扱われる．
+							要するにこのフィールドが影響するのはビルド時でなく実行時だ．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Recommends, Suggests, Enhances</itemt>
-<itemd>
-<p>
-These fields specify additional package relations in the same style as
-the other dependency fields.
-These three relations don't affect actual installation via
-<code>dpkg</code> or <code>apt-get</code>.
-However, they are used by <code>dselect</code> and other frontends to
-help the user make sensible choices.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Recommends, Suggests, Enhances</itemt>
+					<itemd>
+						<p>
+							これらのフィールドはパッケージ同士の付加的な関係情報を指定する．
+							書式は他の依存情報フィールドと同じ．
+							これら3つの関係情報は dpkg や apt-get によるインストール過程そのものには影響しない．
+							しかしこれらの情報は，dselect や他のフロントエンドが，微妙な選択を行うユーザの判断を助けるのに使われます．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Pre-Depends</itemt>
-<itemd>
-<p>
-A special variation of the Depends field with more strict semantics.
-This field must only be used after the case has been discussed on the
-developer mailing list and a consensus has been reached that it is
-necessary.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Pre-Depends</itemt>
+					<itemd>
+						<p>
+							フィールド Depends の特別なもので，意味の上で厳密さが必要になる．
+							このフィールドを使うのは，開発者用メーリングリストで議論を行い，確かに使う必要があるとの同意が得られた場合に限る．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Essential</itemt>
-<itemd>
-<p>
-A boolean value that denotes essential packages. Essential
-packages are installed as part of the bootstrap process. All
-non-essential packages implicitly depend on the essential ones. dpkg
-will refuse to remove essential packages from the system unless
-special flags are used to override this.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Essential</itemt>
+					<itemd>
+						<p>
+							必須パッケージを表すのに使われる真偽値フィールド．
+							必須パッケージはブートストラップ・プロセスの一環としてインストールされる．
+							必須パッケージでない全てのパッケージは，必須パッケージに暗黙のうちに依存して構わない．
+							dpkg は，このフィールドの指示に優先する特別なフラグを使わない限り，必須パッケージをシステムから取り除くことを拒む．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>BuildDependsOnly</itemt>
-<itemd>
-<p>
-<em>Introduced in fink 0.9.9.</em>
-A boolean value which indicates that no other packages should Depend on
-this one, they should only BuildDepend.
-</p>
-</itemd></item>
+				<item>
+					<itemt>BuildDependsOnly</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.9.9 で導入された．</em>
+							真偽値フィールド．
+							他のパッケージはそのパッケージを（フィールド BuildDepends に入れてもよいが） Depends に入れてはいけないことを示す．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>Unpack Phase:</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>解凍段階:</em>
+			</p>
+			<itemtable>
 
-<item><itemt>CustomMirror</itemt>
-<itemd>
-<p>
-A list of mirror sites. Each mirror site appears on a separate line,
-in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>.
-<em>location</em> can be a continent code (e.g. <code>nam</code>), a
-country code (e.g. <code>nam-us</code>), or anything else;
-mirrors are tried in that order.
-Example:
-</p>
+				<item>
+					<itemt>CustomMirror</itemt>
+					<itemd>
+						<p>
+							ミラーサイトのリスト．
+							各ミラーサイトは <code>&lt;場所&gt;: &lt;url&gt;</code> という書式に従って1行に1つずつ記述する．
+							<em>場所</em> には大陸コード（例えば nam）や国コード（例えば nam-us）など（何でもよい）を使う．
+							ミラーサイトはここに記述した順に試される．
+							例:
+						</p>
 <codeblock>CustomMirror: &lt;&lt;
 nam-US: ftp://ftp.fooquux.com/pub/bar
 asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &gt;&gt;</codeblock>
-</itemd></item>
+					</itemd>
+				</item>
 
-<item><itemt>Source</itemt>
-<itemd>
-<p>
-An URL to the source tarball. It should be a HTTP or FTP URL, but
-Fink doesn't really care - it just passes the URL to wget. This field
-supports a special URL scheme for mirrors:
-<code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
-look up the mirror setting for <em>mirror-name</em> in Fink's
-configuration, append the <em>relative-path</em> part and use that as
-the actual URL. The known <em>mirror-name</em>s are listed in
-<filename>/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
-package. Alternatively, using <code>custom</code> as the
-<em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
-field.
-Before the URL is used, percent expansion takes place.
-</p>
-<p>
-Since fink 0.18.0, <code>Source: none</code> has the special meaning
-that there is no source to fetch. See the description of the
-<code>Type</code> field for more information.
-The value <code>gnu</code> is a shorthand for
-<code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
-<code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
-default is <code>%n-%v.tar.gz</code> (i.e. a manual
-download).
-</p>
-</itemd></item>
+				<item>
+					<itemt>Source</itemt>
+					<itemd>
+						<p>
+							ソースのtarボールのURL．
+							HTTPまたはFTPでなければいけないが，Finkはそれを単にwgetに渡すだけなので，実際には問題にならない．
+							このフィールドは，ミラーサイトのための特殊なURL記法に対応している．
+							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
+							こうするとFinkに &lt;ミラー名称&gt; として設定されたURLを探し，その後ろに &lt;相対パス&gt; を付け加え，それを実際のURLとして使う．
+							Finkの認識する &lt;ミラー名称&gt; の一覧は /sw/lib/fink/mirror/_list （パッケージ fink または fink-mirrors の一部）の中にある．
+							または， &lt;ミラー名称&gt; に custom と書くことで，フィールド CustomMirror をFinkに使わせることもできる．
+							URLが wget に渡される前に，パーセント記法の展開が行われる．
+						</p>
+						<p>
+							Fink 0.18.0 以降では Source: none は特殊な意味を持ち，取り寄せるべきソースは存在しないことを表す．
+							詳細についてはフィールド Type の説明を参照．
+							<code>gnu</code> という値は <code>mirror:gnu:%n/%n-%v.tar.gz</code> の，
+							<code>gnome</code> という値は <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code> の省略形．
+							デフォルトでは <code>%n-%v.tar.gz</code> （すなわちマニュアル・ダウンロード）になっている．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Source<em>N</em></itemt>
-<itemd>
-<p>
-If a package consists of several tarballs, name them with these
-additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of "main" tarball) goes into <code>Source</code>, the
-second tarball in <code>Source2</code> and so on. The rules are the same
-as for Source, only that the "gnu" and "gnome" shortcuts are not
-expanded - that would be useless anyway.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Source<em>N</em>
+					</itemt>
+					<itemd>
+						<p>
+							パッケージが複数のtarボールから形成されているときは，これらの（省略可能な）フィールドで指定を行う．
+							Nは数で，2から始まる．
+							つまり最初のtarボール（ある意味「メイン」になるもの）をフィールド <code>Source</code> に，
+							2番目のtarボールをフィールド <code>Source2</code> に，という風になる．
+							値の書式は <code>Source</code> と共通だが， <code>gnu</code> や <code>gnome</code> という省略形は展開されない (結局，意味をなさない)．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>SourceDirectory</itemt>
-<itemd>
-<p>
-Must be used when the tarball expands to a single directory, but
-the directory's name is different from the basename of the tarball.
-Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
-named "foo-1.0". If it produces a directory with a different name,
-specify it with this parameter. Percent expansion is performed on this
-field.
-</p>
-</itemd></item>
+				<item>
+					<itemt>SourceDirectory</itemt>
+					<itemd>
+						<p>
+							tar ボールが単一のディレクトリに展開されはするが，
+							そのディレクトリ名が tar ボールのファイル名から拡張子を除いたものと異なるときに使う．
+							つまり，普通なら "foo-1.0.tar.gz" という tar ボールは "foo-1.0" というディレクトリを生成する．
+							しかし生成されるディレクトリ名がそれと異なる場合，そのディレクトリ名をこのフィールドで指定する．
+							パーセント記法は展開される．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>NoSourceDirectory</itemt>
-<itemd>
-<p>
-Set this boolean parameter to a true value if the tarball does not
-expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
-will produce a directory named "foo-1.0". If it just unpacks the files
-to the current directory, use this parameter and set it to a boolean
-true value.
-</p>
-</itemd></item>
+				<item>
+					<itemt>NoSourceDirectory</itemt>
+					<itemd>
+						<p>
+							真偽値フィールド．
+							tar ボールが単一のディレクトリに展開されないときにこのフィールドを設定する．
+							つまり，普通なら "foo-1.0.tar.gz" という tar ボールは "foo-1.0" というディレクトリを生成する．
+							しかし tar ボールを展開したときにファイルがカレントディレクトリに撒き散らされる場合は，
+							このフィールドの値を true に設定する．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Source<em>N</em>ExtractDir</itemt>
-<itemd>
-<p>
-Normally, an auxiliary tarball will be extracted in the same
-directory as the main tarball. If you need to extract it in a
-specific subdirectory instead, use this field to specify
-it. Source2ExtractDir corresponds to the Source2 tarball, as one would
-expect. See ghostscript, vim and tetex for examples of usage.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Source<em>N</em>ExtractDir</itemt>
+					<itemd>
+						<p>
+							普通，補助的な tar ボールは「メイン」の tar ボールと同じディレクトリで展開される．
+							それを特定のサブディレクトリ内で展開して欲しいときは，このフィールドで指定する．
+							ご想像の通り， Source2ExtractDir は Source2 で指定した tar ボールに対応する．
+							用例についてはパッケージ ghostscript, vim や tetex を参照．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>SourceRename</itemt>
-<itemd>
-<p>
-This field can renames a source tar ball on the fly. This is useful
-if for example the version of the source is encoded in the directory name on
-the server, but the tar ball itself has the same name for all versions, e.g.
-://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
-caused by this, you would then use something like
-</p>
+				<item>
+					<itemt>SourceRename</itemt>
+					<itemd>
+						<p>
+							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
+							これが便利なのは，例えば，ソースのヴァージョンがサーバのディレクトリ名には示されているが，
+							tar ボールそのものはどのヴァージョンでも同じ名前のときだ．
+							（例えば ://www.foobar.org/coolapp/1.2.3/source.tar.gz というとき）
+							このことで起きる問題を回避するためには次のようにすればよい．
+						</p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
-<p>
-In the above example this would result in the tarball being stored under
-<filename>/sw/src/coolapp-1.2.3.tar.gz</filename> as one would expect.
-</p>
-</itemd></item>
+						<p>
+							この例では，ご想像の通り， tar ボールは <filename>/sw/src/coolapp-1.2.3.tar.gz</filename> として格納されることになる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Source<em>N</em>Rename</itemt>
-<itemd>
-<p>
-This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the Nth tarball as specified by the <code>Source<em>N</em></code>
-field. See context or hyperref for examples of usage.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Source<em>N</em>Rename</itemt>
+					<itemd>
+						<p>
+							これはフィールド <code>SourceRename</code> と同じだが，
+							<code>Source<em>N</em>
+							</code> で指定された N 番目の tar ボールのリネームに使う．
+							用例についてはパッケージ context や hyperref を参照．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Source-MD5</itemt>
-<itemd>
-<p>
-<em>Introduced in fink 0.10.0.</em>
-With this field you can specify the MD5 checksum of the source file. This
-information is then used by Fink to detect incorrect source files, that is,
-tarballs not matching the one the package creator used. Common causes for this
-problem include: incompletely downloaded tarballs; upstream maintainers silently
-replaced a tarball; a trojan or similar attacks; and so on.
-</p>
-<p>
-A typical usage example looks like this:
-</p>
+				<item>
+					<itemt>Source-MD5</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.10.0 で導入．</em>
+							このフィールドではソースファイルの MD5 チェックサムを指定する．
+							Fink はこの情報によりおかしなソースファイル，
+							すなわち fink パッケージの作成者が指定したものではない tar ボールを見分けられる．
+							この問題の原因は，大抵次のようなものだ:
+							tar ボールのダウンロードに失敗した，上流のメインテナが知らないうちに tar ボールを更新した，トロイの木馬のような攻撃，等々．
+						</p>
+						<p>
+							このフィールドの典型的な用例は次のようなものだ．
+						</p>
 <codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
-<p>
-To compute the checksum, the <code>md5sum</code> tool is used. If you want to
-determine the checksum of the tarball <filename>/sw/src/apache_1.3.23.tar.gz</filename>,
-you run the following command (displayed with output here):
-</p>
+						<p>
+							チェックサムの算出にはツール <code>md5sum</code> が使われる．
+							tar ボール <filename>/sw/src/apache_1.3.23.tar.gz</filename> のチェックサムが知りたいときには，
+							次のコマンドを実行する（出力も一緒に示した）．
+						</p>
 <codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
 4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</codeblock>
-<p>
-As you can see, the value to the left is exactly the value you need.
-</p>
-</itemd></item>
+						<p>
+							ご覧のように，左に表示された値がここで必要なものだ．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Source<em>N</em>-MD5</itemt>
-<itemd>
-<p>
-<em>Fink 0.10.0 で導入</em>
-This is just the same as the <code>Source-MD5</code> field, except that it
-is used to specify the MD5 checksum of the Nth tarball as specified by the
-corresponding <code>Source<em>N</em></code> field.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Source<em>N</em>-MD5</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.10.0 で導入．</em>
+							フィールド <code>Source-MD5</code> と同様だが，
+							フィールド <code>Source<em>N</em>
+							</code> に対応する N 番目の tar ボールの MD5 チェックサムを指定する．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>TarFilesRename</itemt>
-<itemd>
-<p>
-<em>Fink 0.10.0 で導入</em>
-This field only applies to source files that are using the tar format
-</p>
-<p>
-With this field you can rename files in the given source tarball during
-the extraction of the tarball. This is very useful to work around
-the fact that the HFS+ file system is not case sensitive, as files like
-<filename>install</filename> and <filename>INSTALL</filename> will
-collide on a standard Mac OS X system. With this field you can avoid
-these issues without having to repackage the tarball (as was done in
-the past in such cases).
-</p>
-<p>
-In this field you simply specify a list of files that are to be renamed. You
-can make use of wildcards. By default any given file will be renamed to its
-current name with <code>_tmp</code> appended. You can override this default
-by using the same syntax as in the <code>Files</code> and <code>DocFiles</code>
-fields, namely by writing the old filename followed by a : and then followed by
-the new filename.
-Example:
-</p>
+				<item>
+					<itemt>TarFilesRename</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.10.0 で導入．</em>
+							このフィールドは tar 形式を使うソースファイルにのみ適用される．
+						</p>
+						<p>
+							このフィールドを使うと，任意のソース tar ボールの中のファイルを， tar ボールの展開中にリネームできる．
+							ファイルシステム HFS+ がケースインセンシティブだ（大文字と小文字を区別しない）という事実を回避するのためには，これは非常に便利だ．
+							普通の Mac OS X システムでは，ファイル <filename>install</filename> と <filename>INSTALL</filename> は衝突してしまう．
+							このフィールドを使うと， tar ボールをわざわざ再パッケージしなくとも（以前，そういう場合には行われていた），そういった問題を回避できる．
+						</p>
+						<p>
+							このフィールドでは，リネームされるファイルのリストを単に指定する．
+							ワイルドカードも使える．
+							デフォルトでは，任意のファイルは，元の名前に <code>_tmp</code> を後置したファイル名にリネームされる．
+							フィールド <code>Files</code> や <code>DocFiles</code> と同様の書式を使って，このデフォルト値より優先した指定ができる．
+							すなわち，元のファイル名，コロン (:)，新ファイル名，という順だ．
+							例:
+						</p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
-<p>
-<em>Note:</em> This field is implemented by means of a special feature of
-BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
-(since there are tarballs which can only be expanded by GNU tar), but whenever
-a package uses TarFilesRename, Fink will use BSD tar by directly invoking
-<filename>/usr/bin/tar</filename>.
-</p>
-</itemd></item>
+						<p>
+							<em>注意:</em>
+							このフィールドは， BSD tar の特殊機能を使って実装されている．
+							GNU tar はこの機能に対応していない．
+							デフォルトでは Fink は GNU tar を使うが（GNU tar でしか展開できない tar ボールがあるため），
+							パッケージに TarFilesRename が使われているときは，
+							Fink は常に（<filename>/usr/bin/tar</filename> という直接指定により） BSD tar を使う．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Tar<em>N</em>FilesRename</itemt>
-<itemd>
-<p>
-<em>Introduced in fink 0.10.0.</em>
-This is just the same as the <code>TarFilesRename</code> field, except that it
-is used for the Nth tarball as specified by the corresponding
-<code>Source<em>N</em></code> field.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Tar<em>N</em>FilesRename</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.10.0 で導入．</em>
+							フィールド <code>TarFilesRename</code> と同様だが，
+							フィールド <code>Source<em>N</em>
+							</code> に対応する N 番目の tar ボールに対して機能する．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
+			</itemtable>
 
-<!-- Patch Phase -->
-<p><em>パッチ (Patch Phase):</em></p>
-<itemtable>
+			<!-- Patch Phase -->
+			<p>
+				<em>パッチ段階:</em>
+			</p>
+			<itemtable>
 
-<item><itemt>UpdateConfigGuess</itemt>
-<itemd>
-<p>
-A boolean value. If true, the files config.guess and config.sub
-in the build directory will be replaced with versions that know about
-Darwin. This happens in the patch phase and before the PatchScript
-is run. <em>Only</em> use this when you know it is necessary,
-i.e. when the configure script fails with a "unknown host"
-message.
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdateConfigGuess</itemt>
+					<itemd>
+						<p>
+							真偽値フィールド．
+							真にすると，ビルド用ディレクトリ内のファイル config.guess と config.sub が Darwin に対応したヴァージョンに取り換えられる．
+							その動作は，パッチ段階で，PatchScript が実行される前に行われる．
+							これが必要だと分かっているとき<em>のみ</em>使うこと．
+							すなわち，スクリプト configure が "unknown host" というメッセージで失敗するとき．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>UpdateConfigGuessInDirs</itemt>
-<itemd>
-<p>
-<em>post-0.9.0 CVS バージョンで導入</em>
-A list of subdirectories.
-This does the same as UpdateConfigGuess, but is useful for packages
-that have outdated config.guess files in several directories
-throughout the source tree.
-Previously you had to copy/move the files there manually in the
-PatchScript.
-With this new field you can just list the directories.
-Use <code>.</code> to update files in the build directory itself.
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdateConfigGuessInDirs</itemt>
+					<itemd>
+						<p>
+							<em>post-0.9.0 CVS バージョンで導入．</em>
+							サブディレクトリのリストを指定する．
+							これは UpdateConfigGuess と同じことを行うが，ソースツリー中の複数のディレクトリに古い config.guess が入っているパッケージで便利だ．
+							以前はコピーや移動を行うよう PatchScript に手動で指定する必要があったが，この新フィールドではディレクトリを単に列挙するだけでよい．
+							ビルド用ディレクトリ自身の中のファイルの更新には <code>.</code> とする．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>UpdateLibtool</itemt>
-<itemd>
-<p>
-A boolean value. If true, the files ltconfig and ltmain.sh in the
-build directory will be replaced with versions that know about
-Darwin. This happens in the patch phase and before the PatchScript
-is run. <em>Only</em> use this when you know that the package needs
-it. Some packages can be broken by overwriting the libtool scripts
-with mismatching versions. See the <link
-url="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
-page</link> for further information.
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdateLibtool</itemt>
+					<itemd>
+						<p>
+							真偽値フィールド．
+							真にすると，ビルド用ディレクトリ内のファイル ltconfig と ltmain.sh が Darwin に対応したヴァージョンに取り換えられる．
+							その動作は，パッチ段階で，PatchScript が実行される前に行われる．
+							これが必要だと分かっているとき<em>のみ</em>使うこと．
+							libtool 関連のスクリプトをヴァージョンの合わないものに取り換えると壊れるパッケージもある．
+							詳細については<link url="http://fink.sourceforge.net/doc/porting/libtool.php">libtool のページ</link>を参照．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>UpdateLibtoolInDirs</itemt>
-<itemd>
-<p>
-<em>post-0.9.0 CVS バージョンで導入</em>
-A list of subdirectories.
-This does the same as UpdateLibtool, but is useful for packages
-that have outdated libtool 1.3.x scripts in several directories
-throughout the source tree.
-Previously you had to copy/move the files there manually in the
-PatchScript.
-With this new field you can just list the directories.
-Use <code>.</code> to update files in the build directory itself.
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdateLibtoolInDirs</itemt>
+					<itemd>
+						<p>
+							<em>post-0.9.0 CVS バージョンで導入</em>
+							サブディレクトリのリストを指定する．
+							これは UpdateLibtool と同じことを行うが，ソースツリー中の複数のディレクトリに古い libtool 1.3.x 系列のスクリプトが入っているパッケージで便利だ．
+							以前はコピーや移動を行うよう PatchScript に手動で指定する必要があったが，この新フィールドではディレクトリを単に列挙するだけでよい．
+							ビルド用ディレクトリ自身の中のファイルの更新には <code>.</code> とする．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>UpdatePoMakefile</itemt>
-<itemd>
-<p>
-A boolean value.
-If true, the file <filename>Makefile.in.in</filename> in the
-subdirectory <filename>po</filename> is replaced with a patched version.
-This happens in the patch phase and before the PatchScript is run.
-</p>
-<p>
-The patched version respects DESTDIR and makes sure that message
-catalogs end up in <filename>/sw/share/locale</filename>, not
-<filename>/sw/lib/locale</filename>.
-Before using this field, make sure that you won't break the package
-and that it's really required.
-You can run <code>diff</code> to find the differences between the
-package's version and Fink's version (in
-<filename>/sw/lib/fink/update</filename>).
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdatePoMakefile</itemt>
+					<itemd>
+						<p>
+							真偽値フィールド．
+							真にすると，サブディレクトリ <filename>po</filename> 内のファイル <filename>Makefile.in.in</filename> が，パッチの当たったものと取り換えられる．
+							その動作は，パッチ段階で，PatchScript が実行される前に行われる．
+						</p>
+						<p>
+							パッチの当たった <filename>Makefile.in.in</filename> は DESTDIR の指定を優先し，メッセージカタログを，
+							<filename>/sw/lib/locale</filename> ではなく，確実に <filename>/sw/share/locale</filename> に格納する．
+							このフィールドを利用する前に，入れ換えによってパッケージを破壊していないこと，また入れ換えが本当に必要かどうかを確認すること．
+							<code>diff</code> を実行すれば，パッケージ付属のものと Fink 向けのもの (<filename>/sw/lib/fink/update</filename> 内にある) との違いが分かる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Patch</itemt>
-<itemd>
-<p>
-The filename of a patch to be applied with <code>patch -p1
-&lt;<em>patch-file</em></code>. This should be just a filename; the
-appropriate path will be prepended automatically. Percent expansion is
-performed on this field, so a typical value is simply
-<code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
-before the PatchScript is run (if any).
-</p>
-</itemd></item>
+				<item>
+					<itemt>Patch</itemt>
+					<itemd>
+						<p>
+							<code>patch -p1 &lt;<em>パッチファイル</em>
+							</code> として適用されるパッチのファイル名．
+							これには単なるファイル名を指定する．
+							適切なパスは自動的に前置される．
+							このフィールドではパーセント記法が展開されるので，典型的な場合では，値は単に <code>%f.patch</code> または <code>%n.patch</code> となる．
+							PatchScript が指定されているとき，パッチはその後に実行される．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>PatchScript</itemt>
-<itemd>
-<p>
-A list of commands that are run in the patch phase. See the note
-on scripts below. This is the place to put commands that patch or
-otherwise modify the package. There is no default. Before the
-commands are executed, percent expansion takes place (see last
-section).
-</p>
-</itemd></item>
+				<item>
+					<itemt>PatchScript</itemt>
+					<itemd>
+						<p>
+							パッチ段階で実行されるコマンドのリスト．
+							以下のスクリプトの注意書きを参照．
+							ここには，パッチを当てるか，またはパッケージに変更を加えるコマンドを指定する．
+							デフォルト値はない．
+							コマンドが実行される前に，パーセント記法が展開される（前節を参照）．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>コンパイル (Compile Phase):</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>コンパイル (Compile Phase):</em>
+			</p>
+			<itemtable>
 
-<item><itemt>Set<em>ENVVAR</em></itemt>
-<itemd>
-<p>
-Causes certain environment variables to be set in the
-compile and install phases. This can be used to pass compiler flags
-etc. to configure scripts and Makefiles. Currently supported variables
-are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
-MAKE, MFLAGS, MAKEFLAGS. The value you specify is subject to the
-percent expansion described in the last section. A common example:
-</p>
+				<item>
+					<itemt>Set<em>環境変数名</em>
+					</itemt>
+					<itemd>
+						<p>
+							コンパイルおよびインストールの段階の間，環境変数を設定しておく．
+							コンパイラ・フラグ等を configure スクリプトや Makefile に渡すために使われる．
+							現在，対応している変数は次の通り: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS, MAKE, MFLAGS, MAKEFLAGS.
+							指定した値では，前節で説明したパーセント記法が展開される．
+							よく使われる例:
+						</p>
 <codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
-<p>
-The variables CPPFLAGS and LDFLAGS are special. They default to
-<code>-I%p/include</code> and <code>-L%p/lib</code>,
-respectively. If you specify a value for one of these, it will be
-prepended to the default value.
-</p>
-</itemd></item>
+						<p>
+							変数 CPPFLAGS および LDFLAGS は特別で，それぞれ <code>-I%p/include</code> および <code>-L%p/lib</code> というデフォルト値を持つ．
+							これらの環境変数に値を指定すると，指定した値はデフォルト値の前に加えられる（デフォルト値は常に含まれる）．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>NoSet<em>ENVVAR</em></itemt>
-<itemd>
-<p>
-When set to a true value, deactivates the default values for
-CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
-remain unset, specify <code>NoSetLDFLAGS: true</code> .
-</p>
-</itemd></item>
+				<item>
+					<itemt>NoSet<em>ENVVAR</em>
+					</itemt>
+					<itemd>
+						<p>
+							真偽値フィールド．
+							真にすると，上述の CPPFLAGS および LDFLAGS に対するデフォルト値は無効になる．
+							すなわち， LDFLAGS の値を空にしたいときには <code>NoSetLDFLAGS: true</code> とする．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>ConfigureParams</itemt>
-<itemd>
-<p>
-Additional parameters to pass to the configure script. (See
-CompileScript for details.)
+				<item>
+					<itemt>ConfigureParams</itemt>
+					<itemd>
+						<p>
+							configure スクリプトに渡す付加的なパラメータ．
+							（詳細は CompileScript を参照．）
 
-As of fink > 0.13.7, this parameter will also work with perl modules
-<code>Type: Perl</code>, and will append to the default perl Makefile.PL
-string.
-</p>
-</itemd></item>
+							0.13.7 より上のヴァージョンの Fink では，
+							このパラメータは <code>Type: Perl</code> となっている perl モジュールにも使える．
+							その場合，デフォルトの perl Makefile.PL 文字列に後置される．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>GCC</itemt>
-<itemd>
-<p>
-The required version of the gcc compiler to use.  Allowed values are: 
-<code>2.95.2</code> or <code>2.95</code>
-(for use in the 10.1 package tree only), <code>3.1</code>
-(for use in the 10.2 package tree only), and <code>3.3</code>
-(for use in the 10.2-gcc3.3 and 10.3 package trees only).
-</p>
-<p>As of fink 0.13.8, when this flag is present, the version of gcc
-is tested using <code>gcc_select</code>, and fink exits with an error
-if the wrong version is present.
-</p>
-<p>
-This field was added to fink to aid in the transition between the gcc
-compilers, which introduced a binary incompatibility between libraries
-that involve C++ code which is not reflected in the versioning
-scheme.
-</p>
-</itemd></item>
+				<item>
+					<itemt>GCC</itemt>
+					<itemd>
+						<p>
+							コンパイルに使う gcc に要求されるヴァージョン．
+							指定できる値は以下の通り:
+							<code>2.95.2</code> または <code>2.95</code> （パッケージ・ツリー 10.1 でのみ利用可能），
+							<code>3.1</code> （パッケージ・ツリー 10.1 でのみ利用可能），
+							<code>3.3</code> （パッケージ・ツリー 10.2-gcc3.3 および 10.3 でのみ利用可能）．
+						</p>
+						<p>
+							Fink 0.13.8 以降，このフラグが指定されると， gcc のヴァージョンは <code>gcc_select</code> によって調べられ，
+							誤ったヴァージョンのものが存在すると Fink はエラー終了する．
+						</p>
+						<p>
+							このフィールドは gcc コンパイラ間の移行を助けるために Fink に加えられた．
+							gcc では， C++ コードの関わるライブラリ間で，バイナリ・ファイル同士の（ヴァージョン名に反映されない）非互換が生じることがある．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>CompileScript</itemt>
-<itemd>
-<p>
-A list of commands that are run in the compile phase. See the note
-on scripts below. This is the place to put commands that configure and
-compile the package. Normally the default is:
-</p>
+				<item>
+					<itemt>CompileScript</itemt>
+					<itemd>
+						<p>
+							コンパイル段階で実行されるコマンドのリスト．
+							See the note on scripts below.
+							パッケージの configure およびコンパイルを行うコマンドをここに指定する．
+							普通，デフォルトは次のようなものだ．
+						</p>
 <codeblock>./configure %c
 make</codeblock>
-<p>
-This is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field)
-with the perl version not specified,
-the default instead is:
-</p>
+						<p>
+							これは GNU autoconf を利用するパッケージには適切だ．
+							Perl タイプ（フィールド Type で指定される）のパッケージのうち perl のヴァージョン指定がないものでは，
+							デフォルト値は次のようになる．
+						</p>
 <codeblock>perl Makefile.PL PREFIX=%p \
- INSTALLPRIVLIB=%p/lib/perl5 \
- INSTALLARCHLIB=%p/lib/perl5/darwin \
- INSTALLSITELIB=%p/lib/perl5 \
- INSTALLSITEARCH=%p/lib/perl5/darwin \
- INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+INSTALLPRIVLIB=%p/lib/perl5 \
+INSTALLARCHLIB=%p/lib/perl5/darwin \
+INSTALLSITELIB=%p/lib/perl5 \
+INSTALLSITEARCH=%p/lib/perl5/darwin \
+INSTALLMAN1DIR=%p/share/man/man1 \
+INSTALLMAN3DIR=%p/share/man/man3
 make
 make test</codeblock>
-<p>If the type is <code>perl $version</code> with the version specified
-(e.g., $version might be 5.6.0),
-then the default becomes:
-</p>
+						<p>
+							タイプが <code>perl $version</code> となっていて，ヴァージョンが指定されているものでは（例えば $version は 5.6.0 とする），
+							デフォルト値は次のようになる．
+						</p>
 <codeblock>perl$version Makefile.PL \
- PERL=perl$version PREFIX=%p \
- INSTALLPRIVLIB=%p/lib/perl5/$version \
- INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
- INSTALLSITELIB=%p/lib/perl5/$version \
- INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
- INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+PERL=perl$version PREFIX=%p \
+INSTALLPRIVLIB=%p/lib/perl5/$version \
+INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+INSTALLSITELIB=%p/lib/perl5/$version \
+INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+INSTALLMAN1DIR=%p/share/man/man1 \
+INSTALLMAN3DIR=%p/share/man/man3
 make
 make test</codeblock>
-<p>
-Before the commands are executed, percent expansion takes place
-(see previous section).
-</p>
-</itemd></item>
+						<p>
+							コマンドの実行前に，パーセント記法が展開される（前節を参照）．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>NoPerlTests</itemt>
-<itemd> 
-<p>
-<em>Introduced in fink > 0.13.7.</em>
-A boolean value, specific for perl module packages.
-If true, the <code>make test</code> portion
-of the <code>CompileScript</code> will be ignored
-for that specific perl module package.
-</p>
-</itemd></item>
+				<item>
+					<itemt>NoPerlTests</itemt>
+					<itemd>
+						<p>
+							<em>Fink > 0.13.7 で導入．</em>
+							真偽値フィールド．
+							Perl モジュールのパッケージでのみ指定する．
+							真にすると， <code>CompileScript</code> のうち <code>make test</code> の部分が，その perl モジュールのパッケージでは無視される．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>インストール (Install Phase):</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>インストール段階:</em>
+			</p>
+			<itemtable>
 
-<item><itemt>UpdatePOD</itemt>
-<itemd>
-<p>
-<em>Introduced in fink 0.9.5.</em>
-A boolean value, specific for perl module packages.
-If true, this will add code to the install, postrm and postinst
-scripts that maintains the .pod files provided by perl packages.
-This includes adding and removing the .pod date from the central
-<filename>/sw/lib/perl5/darwin/perllocal.pod</filename> file.
-(If the type has been given as <code>perl $version</code> with a
-specific version of perl such as 5.6.0,
-then these scripts are adapted to deal with the central .pod file
-<filename>/sw/lib/perl5/$version/perllocal.pod</filename>.)
-</p>
-</itemd></item>
+				<item>
+					<itemt>UpdatePOD</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.9.5 で導入．</em>
+							真偽値フィールド．
+							Perl モジュールのパッケージでのみ指定する．
+							真にすると，スクリプト install, postrm および postinst に， perl パッケージの提供する .pod ファイルを管理するためのコードを追加する．
+							このとき，中央のファイル <filename>/sw/lib/perl5/darwin/perllocal.pod</filename> に .pod ファイルのデータを追加したり，そこから削除も行う．
+							(タイプが， <code>perl $version</code> のように，perl の特定のヴァージョン (例えば 5.6.0) と共に指定された場合は，
+							それらのスクリプトが扱う中央 .pod ファイルは <filename>/sw/lib/perl5/$version/perllocal.pod</filename> になる．)
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>InstallScript</itemt>
-<itemd>
-<p>
-A list of commands that are run in the install phase. See the note
-on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. Normally the
-default is:
-</p>
+				<item>
+					<itemt>InstallScript</itemt>
+					<itemd>
+						<p>
+							インストール段階で実行されるコマンドのリスト．
+							See the note on scripts below.
+							ここには必要な全てのファイルをパッケージの stow directory にコピーするコマンドを指定する．
+							普通，デフォルト値は次のようになる．
+						</p>
 <codeblock>make install prefix=%i</codeblock>
-<p>
-The default is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field)
-with the perl version not specified,
-the default instead is:
-</p>
+						<p>
+							これは GNU autoconf を利用するパッケージには適切だ．
+							Perl タイプ（フィールド Type で指定される）のパッケージのうち perl のヴァージョン指定がないものでは，
+							デフォルト値は次のようになる．
+						</p>
 <codeblock>make install INSTALLPRIVLIB=%i/lib/perl5 \
- INSTALLARCHLIB=%i/lib/perl5/darwin \
- INSTALLSITELIB=%i/lib/perl5 \
- INSTALLSITEARCH=%i/lib/perl5/darwin \
- INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</codeblock>
-<p>If the type is <code>perl $version</code> with the version specified
-(e.g., $version might be 5.6.0),
-then the default becomes:
-</p>
+INSTALLARCHLIB=%i/lib/perl5/darwin \
+INSTALLSITELIB=%i/lib/perl5 \
+INSTALLSITEARCH=%i/lib/perl5/darwin \
+INSTALLMAN1DIR=%i/share/man/man1 \
+INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+						<p>
+							タイプが <code>perl $version</code> となっていて，ヴァージョンが指定されているものでは (例えば $version は 5.6.0 とする)，
+							デフォルト値は次のようになる．
+						</p>
 <codeblock>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
- INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
- INSTALLSITELIB=%i/lib/perl5/$version \
- INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
- INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</codeblock>
-<p>
-If the package supports it, it is preferably to use <code>make install
-DESTDIR=%d</code> instead. Before the commands are executed, percent
-expansion takes place (see previous section).
-</p>
-</itemd></item>
+INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+INSTALLSITELIB=%i/lib/perl5/$version \
+INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+INSTALLMAN1DIR=%i/share/man/man1 \
+INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+						<p>
+							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
+							コマンドの実行前に，パーセント記法が展開される (前節を参照)．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>JarFiles</itemt>
-<itemd>
-<p>
-<em>Fink-0.10.0で導入</em>
-This field is somewhat similar to DocFiles. It installs the specified jar
-files into <filename>%p/share/java/%n</filename>.
-Example:
-</p>
+				<item>
+					<itemt>JarFiles</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.10.0で導入</em>
+							このフィールドは DocFiles に似ている．
+							ここで指定した jar ファイルは <filename>%p/share/java/%n</filename> にインストールされる．
+							例:
+						</p>
 <codeblock>JarFiles: lib/*.jar foo.jar:fooBar.jar</codeblock>
-<p>
-This will install all the jars that were in the lib directory and will install
-foo.jar as fooBar.jar.
-</p>
-<p>
-It also ensures that these jar files (specifically: all files in
-<filename>%p/share/java/%n</filename> that end in .jar)
-are added to the CLASSPATH environment variable. This allows tools like
-configure or ant to properly detect the installed jar files.
-</p>
-</itemd></item>
+						<p>
+							こうすると，ディレクトリ lib 内の全ての jar ファイルをインストールし，
+							foo.jar を fooBar.jar としてインストールする．
+						</p>
+						<p>
+							また，これらの jar ファイル (特にディレクトリ <filename>%p/share/java/%n</filename> 内にある .jar で終わるファイル)
+							は環境変数 CLASSPATH に確実に追加される．
+							このフィールドにより， configure や ant といったツールが，インストールされる jar ファイルを適切に判別できるようになる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>DocFiles</itemt>
-<itemd>
-<p>
-This field provides a convenient way to install README or COPYING
-files in the doc directory for the package,
-<filename>%p/share/doc/%n</filename>.
-The value is a space-separated list of files.
-You can copy files from subdirectories of the build directory, but
-they will end up in the doc directory itself, not in a subdirectory.
-Shell wildcards are allowed.
-It is also possible to rename single files on the fly by appending the
-new name separated by a colon (:),
-e.g. <code>libgimp/COPYING:COPYING.libgimp</code>.
-This field works by appending appropriate <code>install</code>
-commands to the InstallScript.
-</p>
-</itemd></item>
+				<item>
+					<itemt>DocFiles</itemt>
+					<itemd>
+						<p>
+							このフィールドにより，ファイル README や COPYING を，
+							パッケージの doc ディレクトリ (<filename>%p/share/doc/%n</filename>) に容易にインストールできる．
+							値にはスペース区切りのファイルのリストを指定する．
+							ビルド用ディレクトリのサブディレクトリからファイルをコピーすることはできるが，
+							それらのファイルは doc ディレクトリそのものに入れなければいけない (そのサブディレクトリに入れてはいけない)．
+							シェルのワイルドカードが利用できる．
+							単一のファイルを，実行時にリネームすることもできる．
+							新ファイル名はコロンで区切って後置する．
+							例:
+							<code>libgimp/COPYING:COPYING.libgimp</code>.
+							このフィールドは InstallScript に適切な <code>install</code> コマンドを前置することで動作する．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Shlibs</itemt>
-<itemd>
-<p>
-<em>Fink-0.11.0 バージョンで導入</em>
-This field declares the shared libraries which are installed in the
-package.  There is one line for each
-shared library, which contains three items separated by whitespace:
-the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, and versioned 
-dependency information specifying the Fink package which provides
-this library at this compatibility version.  The dependency should
-be stated in the form <code> foo (>= version-revision)</code> where 
-<code>version-revision</code> refers to
-the <em>first</em> version of a Fink package which made
-this library (with this compatibility version) available.
-The Shlibs declaration amounts to a promise
-from the maintainer that a libary with this name and a 
-<code>-compatibility_version</code>
-of at least this number will always be found in later versions of this
-Fink package.
-</p></itemd></item>
+				<item>
+					<itemt>Shlibs</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.11.0 バージョンで導入</em>
+							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定する．
+							各共有ライブラリ毎に1行ずつ，空白文字で区切った以下の3項目を記述する．
+							1) ライブラリの <code>-install_name</code> 2) ライブラリの<code>-compatibility_version</code>
+							3) ヴァージョン付き依存性情報で，その -compatibility_version を持つこのライブラリを提供するFinkパッケージを指定するもの
+							依存情報は <code>foo (>= ヴァージョン-版)</code> という型式で指定しなければいけない．
+							ここで <code>ヴァージョン-版</code> は，（互換性ヴァージョンの同じ）そのライブラリを利用可能にしてくれる Fink パッケージの
+							<em>一番古い</em>ヴァージョンを指す．
+							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
+							その Fink パッケージの今後のヴァージョンでも必ず含まれている」というメインテナからの保証に相当する．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>RuntimeVars</itemt>
-<itemd>
-<p>
-<em>Fink-0.10.0 バージョンで導入</em>
-This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <xref section="profile.d">profile.d scripts section</xref>). As long as your package is installed, these variables will be set via the <filename>/sw/bin/init.[c]sh</filename> scripts.
-</p>
-<p>
-The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
-</p>
+				<item>
+					<itemt>RuntimeVars</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.10.0 バージョンで導入</em>
+							このフィールドは，実行時に環境変数を何らかの固定された値に設定する簡便な方法を提供する．
+							（柔軟性が必要なら <xref section="profile.d">profile.d スクリプト section</xref> を参照．）
+							そのパッケージがインストールされる限り，
+							ここに指定した環境変数はスクリプト <filename>/sw/bin/init.[c]sh</filename> によって設定される．
+						</p>
+						<p>
+							環境変数の値には空白文字が使える（値の末尾に来ると取り除かれるが）．
+							またパーセント記法は展開される．
+							例:
+						</p>
 <codeblock>RuntimeVars: &lt;&lt;
- SomeVar: %p/Value
- AnotherVar: foo bar
+SomeVar: %p/Value
+AnotherVar: foo bar
 &lt;&lt;</codeblock>
-<p>
-will set two environment variables 'SomeVar' and 'AnotherVar' and their values
-will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
-</p>
-<p>
-This field works by appending appropriate commands to the InstallScript.
-These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
-</p>
-</itemd></item>
+						<p>
+							これは2つの環境変数 'SomeVar' および 'AnotherVar' を，それぞれ '/sw/Value' (あなたの環境のプリフィクスの値による) および 'foo bar' に設定する．
+						</p>
+						<p>
+							このフィールドは InstallScript に適切なコマンドを後置することで機能する．
+							それらのコマンドは，各環境変数に対して setenv/export 行をパッケージの profile.d スクリプトに追加する．
+							よってあなた独自の環境変数は上書きされないので，自由に追加できる．
+							これらの行はスクリプトに前置されるので，これらの環境変数をスクリプト内で利用できる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>SplitOff</itemt>
-<itemd>
-<p>
-<em>Fink-0.9.9 バージョンで導入</em>
-Generate a second package from the same compile/install run.
-For details about how this works, see the separate
-<link url="#splitoffs">splitoff section</link> below.
-</p>
-</itemd></item>
+				<item>
+					<itemt>SplitOff</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.9.9 バージョンで導入</em>
+							1回のコンパイル/インストール操作で第2のパッケージを生成する．
+							これの動作の詳細については，個別に書かれた <link url="#splitoffs">splitoff の章</link> を参照．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>SplitOff<em>N</em></itemt>
-<itemd>
-<p>
-<em>Fink-0.9.9 バージョンで導入</em>
-This is the same as <code>SplitOff</code>, used to generate a third,
-fourth, etc. package from the same compile/install run.
-</p>
-</itemd></item>
+				<item>
+					<itemt>SplitOff<em>N</em>
+					</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.9.9 バージョンで導入</em>
+							これはフィールド <code>SplitOff</code> と同様だが，1回のコンパイル/インストール操作で第3，第4のパッケージを生成するために使われる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>Files</itemt>
-<itemd>
-<p>
-<em>Fink-0.9.9 バージョンで導入</em>
-Used <em>only</em>
-within a <code>SplitOff</code> or <code>SplitOff<em>N</em></code> field,
-this designates which files and directories
-should be moved from the parent package's  installation
-directory %I to the current installation directory %i.  Note that this
-is executed after the InstallScript and the DocFiles of the parent package,
-but before the InstallScript and Docfiles of the current package.
-</p>
-</itemd></item>
+				<item>
+					<itemt>Files</itemt>
+					<itemd>
+						<p>
+							<em>Fink-0.9.9 バージョンで導入</em>
+							フィールド <code>SplitOff</code> または <code>SplitOff<em>N</em>
+							</code> の内部<em>のみ</em>で使われる．
+							ここでは，親パッケージのインストールディレクトリ %I から splitoff したパッケージのインストールディレクトリ %i に
+							どのファイルやディレクトリを移動するべきかを指定する．
+							これが実行されるタイミングは，親パッケージの InstallScript や DocFiles に指定したコマンドの実行後で，
+							splitoff したパッケージの InstallScript や Docfiles の実行前であることに注意．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>ビルド (Build Phase):</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>ビルド段階:</em>
+			</p>
+			<itemtable>
 
-<item><itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
-<itemd>
-<p>
-These fields specify pieces of shell scripts that will be called when
-the package is installed, upgraded or removed.
-Fink automatically adds the shell script header
-<code>#!/bin/sh</code>, and calls <code>set -e</code> so any command
-that fails will result in instant termination of the script.
-Fink also adds an <code>exit 0</code> at the end.
-To indicate an error, exit from the script with a non-zero exit code.
-The first parameter (<code>$1</code>) is set to a value indicating
-what action is being performed.
-Some possible values are <code>install</code>, <code>upgrade</code>,
-<code>remove</code> and <code>purge</code>.
-Note that there are more values, used during error rollback or when
-removing a package in favor of another one.
-</p>
-<p>
-The scripts are called at the following times:
-</p>
-<ul>
-<li>PreInstScript: When the package is installed for the first time
-and before upgrading the package to this version.</li>
-<li>PostInstScript: After unpacking and setting up the package.</li>
-<li>PreRmScript: Before the package is removed or upgraded to a later
-version.</li>
-<li>PostRmScript: After the package was removed or upgraded to a later
-version.</li>
-</ul>
-<p>
-To make it more clear, an upgrade invokes both the ...Inst scripts of
-the new version and the ...Rm scripts of the old version.
-Details can be found in the Debian Policy Manual,
-<link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapter 6</link>.
-</p>
-<p>
-Percent expansion is performed on the scripts.
-Commands can generally be called without giving a full path.
-</p>
-</itemd></item>
+				<item>
+					<itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
+					<itemd>
+						<p>
+							これらのフィールドには，パッケージがインストール，アップグレード，または削除されるときに実行されるシェルスクリプトの断片を記述する．
+							Fink はシェルスクリプトのヘッダ <code>#!/bin/sh</code> を自動的に追加し，また <code>set -e</code> を実行してくれる．
+							よってどのコマンドが実行に失敗しても，スクリプトはその時点で停止する．
+							また Fink は末尾に <code>exit 0</code> を追加する．
+							エラーの発生を示すには，非ゼロの終了コードでスクリプトから exit する．
+							第1実引数 (<code>$1</code>) は，どのアクションが実行されているかを示す値に設定される．
+							値としては <code>install</code>, <code>upgrade</code>, <code>remove</code> および <code>purge</code> が使われ得る．
+							Note that there are more values,
+							used during error rollback or when removing a package in favor of another one.
+						</p>
+						<p>
+							このスクリプトは以下のタイミングで実行される．
+						</p>
+						<ul>
+							<li>PreInstScript: パッケージが初めてインストールされたときと，パッケージをそのヴァージョンにアップグレードする前．</li>
+							<li>PostInstScript: パッケージの解凍後で，パッケージを設定する前．</li>
+							<li>PreRmScript: パッケージが削除される前，または新しいヴァージョンにアップグレードされる前．</li>
+							<li>PostRmScript: パッケージが削除された後，または新しいヴァージョンにアップグレードされた後．</li>
+						</ul>
+						<p>
+							補足説明: アップグレードは新ヴァージョンの ...Inst スクリプトと，旧ヴァージョンの ...Rm スクリプトを実行する．
+							詳細については the Debian Policy Manual,
+							<link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">第6章</link> を参照．
+						</p>
+						<p>
+							スクリプト内ではパーセント記法は展開される．
+							一般に，コマンドはフルパスを指定しなくても実行できる．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>ConfFiles</itemt>
-<itemd>
-<p>
-A space-separated list of files that are user-modifiable configuration
-files.
-The files must be specified with an absolute path,
-e.g. <filename>%p/etc/foo.conf</filename>.
-The named files will receive special treatment by dpkg.
-When a package is upgraded and the file has changed both on disk and
-in the package, the user is asked which version to use and backups
-of the file will be made.
-When a package is "remove"d, the configuration files will remain on
-disk.
-Only a "purge" also removes the configuration files.
-</p>
-</itemd></item>
+				<item>
+					<itemt>ConfFiles</itemt>
+					<itemd>
+						<p>
+							ユーザが修正し得る設定ファイルの空白区切りのリスト．
+							ファイルは，次のように絶対パスで指定しなければいけない．
+							<filename>%p/etc/foo.conf</filename>.
+							dpkg はここで指定されたファイルを特別扱いする．
+							パッケージがアップグレードされたとき，新設定ファイルが提供され，しかもユーザが旧パッケージの設定ファイルが修正していた場合は，
+							ユーザはどちらのヴァージョンを使うか尋ねられ，設定ファイルのバックアップが作られる．
+							パッケージを "remove" しても，設定ファイルは削除されずにディスク上に残る．
+							設定ファイルも削除されるのは "purge" を命じたときのみ．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>InfoDocs</itemt>
-<itemd>
-<p>
-Lists the names of Info documents that the package installs in
-%p/share/info.
-This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <code>dir</code>.
-This feature is still in flux, more fields for finer control may be
-added in the future.
-</p>
-</itemd></item>
+				<item>
+					<itemt>InfoDocs</itemt>
+					<itemd>
+						<p>
+							パッケージが %p/share/info にインストールする Info 文書のリスト．
+							この設定により，Info ディレクトリ・ファイル <code>dir</code> を管理するための適切なコードがスクリプト postinst および prerm に追加される．
+							この機能はまだ流動的で，将来，精密な管理のためにさらにフィールドが追加されるかも知れない．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>DaemonicFile</itemt>
-<itemd>
-<p>
-Gives a service description for <code>daemonic</code>.
-<code>daemonic</code> is used by Fink to create and remove
-StartupItems for daemon processes (e.g. web servers).
-The description will added to the package as a file named
-<code>%p/etc/daemons/<em>name</em>.xml</code>, where <em>name</em> is
-specified by the DaemonicName field and defaults to the package
-name.
-Percent expansion is performed on the contents of this field.
-Note that you must add <code>daemonic</code> to the dependency list if
-your package uses it.
-</p>
-</itemd></item>
+				<item>
+					<itemt>DaemonicFile</itemt>
+					<itemd>
+						<p>
+							<code>daemonic</code> のサービスの説明を記述する．
+							Fink は <code>daemonic</code> を使ってデーモン・プロセス (web サーバ等) のための StartupItems を生成したり削除する．
+							The description will added to the package as a file named <code>%p/etc/daemons/<em>name</em>.xml</code>,
+							ここで <em>name</em> はフィールド DaemonicName で指定される (デフォルト値は「パッケージ名」)．
+							このフィールドの値ではパーセント記法が展開される．
+							パッケージが <code>daemonic</code> を利用するなら，依存性リストに加えなければいけないことに注意．
+						</p>
+					</itemd>
+				</item>
 
-<item><itemt>DaemonicName</itemt>
-<itemd>
-<p>
-A name for the <code>daemonic</code> service description file.
-See the description of DaemonicFile for details.
-</p>
-</itemd></item>
+				<item>
+					<itemt>DaemonicName</itemt>
+					<itemd>
+						<p>
+							<code>daemonic</code> サービスの情報記述ファイルが使う名前．
+							詳細についてはフィールド DaemonicFile の説明を参照．
+						</p>
+					</itemd>
+				</item>
 
-</itemtable>
-<p><em>Additional Data:</em></p>
-<itemtable>
+			</itemtable>
+			<p>
+				<em>付加的データ: </em>
+			</p>
+			<itemtable>
 
-<item><itemt>Homepage</itemt>
-<itemd>
-<p>
-The URL of the upstream home page of the package.
-</p>
-</itemd></item>
-
-
-<item><itemt>DescDetail</itemt>
-<itemd>
-<p>
-A more detailed description than the one in the <code>Description</code>
-field (what is it, what can I use it for?).
-Multiple lines allowed. Because this field will be displayed without
-the benefit of word-wrap, you should manually insert line breaks in
-order to keep lines less than 79 chars (if possible).
-</p>
-</itemd></item>
-
-<item><itemt>DescUsage</itemt>
-<itemd>
-<p>
-This is for information that is needed to use the package (how do
-I use it?). As in "run wmaker.inst once before using WindowMaker".
-Multiple lines allowed. Because this field will be displayed without
-the benefit of word-wrap, you should manually insert line breaks in
-order to keep lines less than 79 chars (if possible).
-</p>
-</itemd></item>
-
-<item><itemt>DescPackaging</itemt>
-<itemd>
-<p>
-Notes about the packaging. Stuff like "patches the Makefile to put
-everything in place" goes here. Multiple lines allowed.
-</p>
-</itemd></item>
-
-<item><itemt>DescPort</itemt>
-<itemd>
-<p>
-Notes that are specific to porting the package to Darwin. Stuff
-like "config.guess and libtool scripts are updated, -no-cpp-precomp
-is necessary" goes here. Multiple lines allowed.
-</p>
-</itemd></item>
-
-</itemtable>
-</section>
-
-<section name="splitoffs"><title>スプリットオフ (SplitOff)</title>
-<p>
-Fink 0.9.9 に導入。
-ひとつの .info ファイルで複数のパッケージを作成できる。
-インストール段階は普通に始まり、 <code>InstallScript</code> と <code>DocFiles</code> 
-コマンドを実行する。
-<code>SplitOff</code> フィールドが存在すれば、２つ目のインストールディレクトリを作成する。
-<code>SplitOff</code> フィールドでは、新規インストールディレクトリは %I で参照され、元のインストールディレクトリは %i で参照される。
-</p>
-<p>
-<code>SplitOff</code> フィールドには多くのフィールドを含み、実質上完全なパッケージ詳細とよく似ているが、<code>SplitOff</code> フィールドにはないフィールドもある。
-以下は <code>SplitOff</code> に含まれる副詳細 (分野別)。
-</p>
-<ul>
-<li>
-初期データ (Initial Data):
-<code>Package</code> のみ特定する必要があります。
-その他は全て親パッケージから引き継がれます。
-<code>Type</code> と <code>License</code> は <code>SplitOff</code> 
-内で宣言することで変更することができます。
-パーセント拡張も使うことができます。
-特に、親パッケージの名称を参照する %N は便利です。
-</li>
-<li>依存性 (Dependency): 全てのフィールドが対象です。</li>
-<li>
-解梱段階 (Unpack Phase), パッチ段階 (Patch Phase), コンパイル段階 (Compile Phase): 
-このフィールドは関連がないため無視されます。
-</li>
-<li>
-インストール段階 (Install Phase), ビルド段階 (Build Phase):
-いずれも全てのフィールドを修正可能
-(<code>SplitOff</code> は <code>SplitOff</code> 内では使用できない)。
-</li>
-<li>
-追加データ:
-親パッケージから引き継がれるが、 <code>SplitOff</code> 内で宣言して修正できる。
-</li>
-</ul>
-<p>
-インストール段階では、まず親パッケージの <code>InstallScript</code> と 
-<code>DocFiles</code> が実行されます。
-次に、 <code>SplitOff</code> フィールド内の <code>Files</code> が実行され、
-親インストールディレクトリ %I から 現在のインストールディレクトリ %i にファイルを移し、
-<code>SplitOff</code> パッケージ内の <code>InstallScript</code> や
-<code>DocFiles</code> などが実行されます。
-</p><p>
-<code>SplitOff2</code>, <code>SplitOff3</code> など、さらに副パッケージが存在する場合、
-同じ順序 (<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>)
-で順々に実行されていきます。
-</p><p>
-ビルド段階中、各パッケージの pre/post install/remove スクリプトをビルド段階コマンドを使って作成します。
-</p><p>
-それぞれのパッケージは、ビルド時に %i/share/doc/%n 内にあるライセンスの同意を得る必要があります
-(%n の値は当然パッケージごとに異なります)。
-<code>DocFiles</code> はファイルを移動ではなくコピーします。
-これにより、 <code>DocFiles</code> を使ってそれぞれのパッケージに同一のドキュメントをインストールします。
-</p>
+				<item>
+					<itemt>Homepage</itemt>
+					<itemd>
+						<p>
+							上流パッケージのホームページの URL．
+						</p>
+					</itemd>
+				</item>
 
 
-</section>
+				<item>
+					<itemt>DescDetail</itemt>
+					<itemd>
+						<p>
+							フィールド <code>Description</code> よりも詳しい説明．
+							（それが何であるか，何のために使うものか？）
+							複数行に渡ってよい．
+							このフィールドはワードラップの恩恵に預らずに表示されるので， (可能ならば）手動で改行を挿入して1行を79文字以内に収めること．
+						</p>
+					</itemd>
+				</item>
 
-<section name="scripts"><title>スクリプト</title>
+				<item>
+					<itemt>DescUsage</itemt>
+					<itemd>
+						<p>
+							パッケージを利用する上で必要になる情報を記述する．
+							(そのパッケージはどのように使うものなのか？)
+							例えば「 WindowMaker を使う前に wmaker.inst を起動．」等を (英語で) ここに記述する．
+							複数行に渡ってよい．
+							このフィールドはワードラップの恩恵に預らずに表示されるので，（可能ならば) 手動で改行を挿入して1行を79文字以内に収めること．
+						</p>
+					</itemd>
+				</item>
 
-<p>
-PatchScript, CompileScript, InstallScript のフィールドには、実行させたいシェルコマンドを記述します。
-形式は２種類あります。
-</p><p>
-このフィールドはコマンド一覧です。
-これはシェルスクリプトのようですが、 system() を通して実行されます。
-一行ごとに実行し、変数の設定やディレクトリの移動はその行内でのみ有効です。
-0.18.2 以降の CVS 版では通常のシェルスクリプトと同様に長い行をバックスラッシュ 
-(<code>\</code>) で改行できるようになりました。
-</p><p>
-Alternately, you can embed a complete script here, using the
-interpreter of your choice. As with any Unix script, the first line
-must begin with <code>#!</code> followed by the full pathname of to
-the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
-<code>#!/bin/bash -ev</code>, etc.). In this situation, the whole
-*Script field is dumped into a temporary file that is then executed.
-</p>
-</section>
+				<item>
+					<itemt>DescPackaging</itemt>
+					<itemd>
+						<p>
+							パッケージングに関する注意書き．
+							「ファイルを適切な場所に置くために Makefile にパッチを当てる」等を (英語で) ここに記述する．
+							複数行に渡ってよい．
+						</p>
+					</itemd>
+				</item>
 
-<section name="patches"><title>パッチ</title>
+				<item>
+					<itemt>DescPort</itemt>
+					<itemd>
+						<p>
+							パッケージを Darwin に移植する場合について特有の注意書き．
+							「config.guess と libtool スクリプトはアップデートする． -no-cpp-precomp が必要」等を (英語で) ここに記述する．
+							複数行に渡ってよい．
+						</p>
+					</itemd>
+				</item>
 
-<p>If your package needs a patch to compile on Darwin (or to work with
-fink), name the patch with the same name as the package description,
-using the extension ".patch" instead of ".info" and put it in the same
-directory as the .info file. If you use the full package in the
-filename specify either one of these (they are equivalent):</p>
+			</itemtable>
+		</section>
+
+		<section name="splitoffs">
+			<title>スプリットオフ (SplitOff)</title>
+			<p>
+				Fink 0.9.9 に導入。
+				ひとつの .info ファイルで複数のパッケージを作成できる。
+				インストール段階は普通に始まり、 <code>InstallScript</code> と <code>DocFiles</code> コマンドを実行する。
+				<code>SplitOff</code> フィールドが存在すれば、２つ目のインストールディレクトリを作成する。
+				<code>SplitOff</code> フィールドでは、新規インストールディレクトリは %I で参照され、元のインストールディレクトリは %i で参照される。
+			</p>
+			<p>
+				<code>SplitOff</code> フィールドには多くのフィールドを含み、実質上，完全なパッケージ記述情報とよく似ている．
+				しかし <code>SplitOff</code> フィールドにはないフィールドもある。
+				以下は <code>SplitOff</code> に含まれる副詳細 (分野別)。
+			</p>
+			<ul>
+				<li>
+					初期データ (Initial Data):
+					<code>Package</code> のみ特定する必要があります。
+					その他は全て親パッケージから引き継がれます。
+					<code>Type</code> と <code>License</code> は <code>SplitOff</code> 内で宣言することで変更することができます。
+					パーセント拡張も使うことができます。
+					特に、親パッケージの名称を参照する %N は便利です。
+				</li>
+				<li>依存性 (Dependency): 全てのフィールドが対象です。</li>
+				<li>
+					解梱段階 (Unpack Phase), パッチ段階 (Patch Phase), コンパイル段階 (Compile Phase): このフィールドは関連がないため無視されます。
+				</li>
+				<li>
+					インストール段階 (Install Phase), ビルド段階 (Build Phase): いずれも全てのフィールドを修正可能
+					(<code>SplitOff</code> は <code>SplitOff</code> 内では使用できない)。
+				</li>
+				<li>
+					追加データ: 親パッケージから引き継がれるが、 <code>SplitOff</code> 内で宣言して修正できる。
+				</li>
+			</ul>
+			<p>
+				インストール段階では、まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行されます。
+				次に、 <code>SplitOff</code> フィールド内の <code>Files</code> が実行され、
+				親インストールディレクトリ %I から 現在のインストールディレクトリ %i にファイルを移し、
+				<code>SplitOff</code> パッケージ内の <code>InstallScript</code> や <code>DocFiles</code> などが実行されます。
+			</p>
+			<p>
+				<code>SplitOff2</code>, <code>SplitOff3</code> など、さらに副パッケージが存在する場合、
+				同じ順序 (<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>) で順々に実行されていきます。
+			</p>
+			<p>
+				ビルド段階中、各パッケージの pre/post install/remove スクリプトをビルド段階コマンドを使って作成します。
+			</p>
+			<p>
+				それぞれのパッケージは、ビルド時に %i/share/doc/%n 内にあるライセンスの同意を得る必要があります
+				(%n の値は当然パッケージごとに異なります)。
+				<code>DocFiles</code> はファイルを移動ではなくコピーします。
+				これにより、 <code>DocFiles</code> を使ってそれぞれのパッケージに同一のドキュメントをインストールします。
+			</p>
+
+		</section>
+
+		<section name="scripts">
+			<title>スクリプト</title>
+
+			<p>
+				フィールド PatchScript, CompileScript, InstallScript には、実行させたいシェルコマンドを記述します。
+				形式は2種類あります。
+			</p>
+			<p>
+				このフィールドはコマンド一覧です。
+				これは一見シェルスクリプトのようですが、 system() を通して実行されます。
+				一行ごとに実行し、変数の設定やディレクトリの移動はその行内でのみ有効です。
+				0.18.2 以降の CVS 版では通常のシェルスクリプトと同様に長い行をバックスラッシュ (<code>\</code>) で改行できるようになりました。
+			</p>
+			<p>
+				または，ここには，任意のスクリプト処理系の完全なスクリプトを記述することもできる．
+				その場合，他の Unix のスクリプトファイルと同様，第1行目は <code>#!</code> にインタプリタのフルパス名を続け，
+				さらに必要なフラグを続けたものでなければいけない．
+				(<code>#!/bin/csh</code>, <code>#!/bin/bash -ev</code> 等．)
+				その場合，フィールド *Script の値全体が一時ファイルにダンプされ，実行される．
+			</p>
+		</section>
+
+		<section name="patches">
+			<title>パッチ</title>
+
+			<p>
+				パッケージを Darwin でコンパイルするために (または Fink と協調して動作するようにするために) パッチが必要な場合，
+				パッケージ情報記述ファイルの拡張子 ".info" を ".patch" に変えたファイル名を使い， .info ファイルと同じディレクトリに入れる．
+				パッケージファイル名に full package を使っている場合は，次のどちらかを使う (どちらも同等)．
+			</p>
 <codeblock>Patch: %f.patch</codeblock>
-<codeblock>PatchScript: patch -p1 &lt;%a/%f.patch</codeblock>
-<p>If you use the newer simple package filename convention, use %n
-insead of %f. These two fields are not mutually-exclusive - you can
-use both, and they will both be executed. In that case the PatchScript
-is executed last.</p>
-<p>Because you may need to have the users chosen prefix in the patch file
-it is recommended that you have a variable such as <code>@PREFIX@</code> 
-instead of <code>/sw</code> in the patch and then use:</p>
+			<codeblock>PatchScript: patch -p1 &lt;%a/%f.patch</codeblock>
+			<p>
+				新しく導入された方の簡潔なパッケージファイル命名規則を採用しているなら， %f でなく %n を使うこと．
+				これら2つのフィールドは互いに排他的ではなく，両方指定してもよい (すると PatchScript, Patch の順に両方実行される)．
+			</p>
+			<p>
+				パッチファイルを使ってユーザがプリフィクスを選択できるようにする方がよいので，
+				<code>/sw</code> という決め打ちではなく <code>@PREFIX@</code> 等の変数を使った方がよい．
+				そして次のようにする．
+			</p>
 <codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</codeblock>
-<p>Patches should be in unidiff format and are normally generated by using:</p>
+			<p>
+				パッチの書式は unidiff (unified diff) でなければいけない．
+				普通，次のようにして生成できる．
+			</p>
 <codeblock>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</codeblock>
-<p>If you have used emacs to edit files, you can add <code>-x'*~'</code> to the diff command above in order to exclude automatically-generated backup files.</p>
-<p>It must also be noted that extremely large patches should not be put in cvs.
-They should be put on a web/ftp server and specified using the
-<code>SourceN:</code> field. If you don't have a website, fink project
-admins can make the file available from fink's own website. If your
-patch is larger than about 30Kb, you should consider making it a
-separate download.
-</p>
-</section>
+			<p>
+				エディタに Emacs を使っているなら，上記のコマンド diff の引数に <code>-x'*~'</code> を加え，
+				自動生成されたバックアップファイルを比較対象から除くとよい．
+			</p>
+			<p>
+				巨大なファイルサイズのパッチを cvs に入れるのはまずいことにも注意．
+				そういうパッチは web/ftp サーバに置き，フィールド <code>SourceN:</code> に指定する．
+				自分のウェブサイトを持っていなくても， Fink プロジェクトの管理者がそのファイルを Fink のサイトそのものからダウンロードできるようにしてくれる．
+				パッチが 30KB より大きければ，独立にダウンロードする方法を考慮した方がよい．
+			</p>
+		</section>
 
-<section name="profile.d"><title>Profile.d スクリプト</title>
+		<section name="profile.d">
+			<title>Profile.d スクリプト</title>
 
-<p>
-If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
-These script fragments are sourced by the <filename>/sw/bin/init.[c]sh</filename> scripts. Normally, all fink users will load these scripts in their shell startup files (<filename>.cshrc</filename> and comparable files).
-Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <filename>/sw/etc/profile.d/%n.[c]sh</filename> (where %n as usual stands for the package name).
-Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
-</p>
-<p>
-If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
-</p>
-</section>
+			<p>
+				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよい．
+				これらのスクリプト断片はスクリプト <filename>/sw/bin/init.[c]sh</filename> に読み込まれる．
+				普通，全ての Fink ユーザがシェルのスタートアップファイル (<filename>.cshrc</filename> またはそれと互換なファイル) でそれを読み込むはずだ．
+				パッケージでは，どのスクリプトにも2種類を用意しなければいけない:
+				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用だ．
+				それらのスクリプトは <filename>/sw/etc/profile.d/%n.[c]sh</filename> としてインストールされなければいけない．
+				(ここで %n は，他と同様に「パッケージ名」を表す．)
+				また，それらのパーミッションは実行，読み込みが共に可能でなければいけない．
+				(すなわち，それらのインストールには引数 -m 755 を付ける．)
+				そうでないと正しく読み込まれないからだ．
+			</p>
+			<p>
+				いくつかの環境変数を単に設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよい．
+				このフィールドはまさにその作業を簡略化するために用意されたものだ．
+			</p>
+		</section>
 
-
-</chapter>
-
+	</chapter>
 
 </document>
