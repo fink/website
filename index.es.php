@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 14:13:44 $';
+$cvs_date = '$Date: 2004/09/22 22:34:13 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -16,12 +16,12 @@ El proyecto de Fink desea traer el gran mundo del software de Unix de
 <a href="http://www.opensource.org/">Código Abierto</a> a
 <a href="http://www.opensource.apple.com/">Darwin</a> y al 
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
-Nosotros modificamos el software de UNIX de manera que pyeda ser compilado
- y ejecutado en Mac OS X (hacemos "un puerto") y loa hacemos disponible
+Nosotros modificamos el software de UNIX de manera que pueda ser compilado
+ y ejecutado en Mac OS X (hacemos "un puerto") y lo hacemos disponible
  como una distribución coherente que se pueda descargar.
  Fink usa herramientas de  <a href="http://www.debian.org/">Debian</a>
  tales como dpkg y apt-get para proveer un poderoso manejo de paquetes.
-Usted puede escoger entre la descarga de un binario precompilado y todo
+Usted puede escoger entre la descarga de un binario precompilado o todo
 desde código fuente. 
 <a href="about.php">Más información...</a>
 </p>
@@ -51,7 +51,7 @@ como instaladores binarios. Fink 0.6.3 (para OS X 10.2) y 0.4.1 (para OS X 10.1)
 
 <h1>Recursos</h1>
 <p>
-Si estas buscando soporte, revisa la<a
+Si estas buscando soporte, revisa la <a
 href="help/index.php">página de ayuda</a>.
 Esta página también lista varias opciones para ayudar al proyecto y
 proporcionar retroalimentación.</p>
@@ -63,7 +63,7 @@ Además de albergar el sitio y las descargas, SourceForge
 provee los siguientes recursos al proyecto:</p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">página de SourceForge
-del resumen del proyecto </a></li>
+del resúmen del proyecto </a></li>
 <li><a
 href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Reporte o revisión de bugs</a></li>
 <li><a
@@ -80,7 +80,7 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Someter un
 <li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">de navegación en línea</a>, <a href="doc/cvsaccess/index.php">Instrucciones de acceso</a>)</li>
 </ul>
 <p>
-Por favor, note que para hacer uso de algunos de estos recursos (ie, para
+Por favor, note que para hacer uso de algunos de estos recursos (ie. para
 reportar un bug o solicitar un nuevo paquete de Fink), usted deberá estar
 logeado en una cuenta del SourceForge.  Si no tiene dicha cuenta, deberá obtener una en el <a href="http://sourceforge.net/">sitio web del SourceForge</a>.
 </p>
