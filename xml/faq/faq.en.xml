@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.24 2004/06/10 18:22:34 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.25 2004/06/10 23:17:35 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1015,7 +1015,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
         if it's enabled. It contains a buggy reimplementation of a few
         important system calls that will cause a number of strange and
         transient errors such as this.</p>
-        <p>Otherwise, am <filename>mv</filename> error typically means that
+        <p>Otherwise, an  <filename>mv</filename> error typically means that
         another error happened earlier in the build, but the build process
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something
@@ -1320,16 +1320,11 @@ endif</codeblock>
         packages that depend on X11, this is straightforward. Frequently,
         however, many packages that depend on X11 are installed. Rather than
         uninstalling all of them, you can use</p>
-        <p>
-          <code>sudo dpkg --remove --force-depends system-xfree86</code>
-        </p>
+        <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
         <p>to remove it, leaving everything in place. If you don't have
         <code>system-xfree86</code> installed then proceed to step 3.</p>
         <p>2. Manually remove all of XFree86. This can be done with</p>
-        <p>
-          <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
-        /etc/X11</code>
-        </p>
+        <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</codeblock>
         <p>If you are switching from Apple X11, remove the X11 application,
         too.</p>
         <p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code>
@@ -1337,9 +1332,13 @@ endif</codeblock>
         "<code>fink install</code>" for source users, "<code>apt-get
         install</code>" or <code>dselect</code> for binaries.</p>
         <p>-or-</p>
-        <p>3a. To get XFree86-4.3.x, install Fink's <code>xfree86</code>
-        package, with "fink install xfree86"--this version isn't in the binary
-        distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
+        <p>
+-        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004 isn't in the binary
+-        distro yet, and is currently only in the unstable tree [see &lt;link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable"&gt;how to install unstable package&lt;/link&gt;]
+
+3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code>
+        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary
+        distro yet, and is currently only in the unstable tree [see <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable\">how to install unstable packages</link>].</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread">
@@ -1460,8 +1459,8 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
         compromised and suddenly had write permission to all files on the
         system). Thus, the passwd package takes the work out of setting up
         these extra users for Fink packages that require this.</p>
-        <p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane, but suppress the urge
+        <p>It can be alarming to discover suddenly a number of unexpected
+        users in your "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x), but suppress the urge 
         to delete them:</p>
         <ul>
           <li>First of all, you have obviously chosen to install a package
@@ -1476,8 +1475,7 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
           running <code>niutil -list . /users</code>
           </li>
           <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane will
-          assign all of their files to a random administrator account, and
+          you go about it. Using the "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will assign all of their files to a random administrator account, and
           there have been reports of havoc played with the administrator
           account's permissions. This is a bug with System Preferences, and
           has been submitted to Apple. A safer way to remove these users from
@@ -1640,7 +1638,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
 	  virtual package "installed".
 	</p>
         <p>
-	  You can run the program <code>fink-virtual-packages</code>
+	  You can run the program <code>fink-virtual-pkgs</code>
 	  (part of the fink package) to get a listing of exactly what
 	  fink thinks is installed. Adding the <code>--debug</code>
 	  flag will give lots of diagnostic information about exactly
@@ -1936,7 +1934,7 @@ exec metacity &amp; exec gnome-session</codeblock>
           updating <code>fink</code> may solve your problem immediately, e.g.
           via</p><codeblock>sudo apt-get update
 sudo apt-get install fink</codeblock><p>If this fails, or if you have a later version of Fink, then typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.</p>Running
-<codeblock>fink list -i system-xfree86</codeblock>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> pacakges are installed.<p>If reinstalling the X11User package doesn't work, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p>
+<codeblock>fink list -i system-xfree86</codeblock>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are installed.<p>If reinstalling the X11User package doesn't work, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p>
           </li>
           <li>
             <em>You are installing from source: </em><p>If you are running a version of <filename>fink</filename> prior to 0.17 then you should update
