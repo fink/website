@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.6 2004/03/22 02:55:00 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.7 2004/03/22 03:29:15 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -210,6 +210,10 @@ as false.
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
+In order to prevent ambiguity, you can use curly-braces to denote
+exactly what character(s) should be considered for a percent
+expansion. For example, <code>%{n}</code> has the same meaning
+as <code>%n</code>.
 The available expansions are:
 </p>
 <itemtable labeld="" labelt="">

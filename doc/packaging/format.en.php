@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/22 02:55:00';
+$cvs_date = 'Date: 2004/03/22 03:29:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -123,6 +123,10 @@ as false.
 <p>
 To make life easier, Fink supports a set of expansions that are
 performed on some fields.
+In order to prevent ambiguity, you can use curly-braces to denote
+exactly what character(s) should be considered for a percent
+expansion. For example, <code>%{n}</code> has the same meaning
+as <code>%n</code>.
 The available expansions are:
 </p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
