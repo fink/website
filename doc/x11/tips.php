@@ -15,7 +15,7 @@ include "header.inc";
 
 <p>
 To launch X11 applications from a Terminal.app window, you must set
-the environment variable &quot;DISPLAY&quot;.
+the environment variable "DISPLAY".
 This variable tells the applications where to find the X11 window
 server.
 In the default setup - XDarwin runs on the same machine, your shell is
@@ -66,15 +66,15 @@ Copy and paste from Classic to X11 doesn't work.
 Anyway, the trick is to use the respective methods of the environment
 you're in.
 To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
-destination window to the front and use the &quot;middle mouse button&quot;, i.e. Option-click
+destination window to the front and use the "middle mouse button", i.e. Option-click
 on a single-button mouse (this can be configured 
 under XDarwin's Preferences), to paste.
 To transfer text from X11 to Aqua, simply select the text with the
 mouse in X11, then use Cmd-V in Aqua to paste it.
 </p>
 <p>
-The X11 system actually has several separate clipboards (called &quot;cut
-buffers&quot; in X11 speak), and some applications have weird views which
+The X11 system actually has several separate clipboards (called "cut
+buffers" in X11 speak), and some applications have weird views which
 one should be used.
 In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
 because of this.

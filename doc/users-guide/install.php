@@ -36,9 +36,9 @@ The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
 After downloading the disk image from the
 <a href="http://fink.sourceforge.net/download/bindist.php">download page</a>
-(you may have to use your browser's &quot;Save Target as...&quot; or &quot;Download
-to Disk&quot; function), double-click it to mount it.
-Open the &quot;Fink 0.x.x Installer&quot; disk icon that appears on your desktop
+(you may have to use your browser's "Save Target as..." or "Download
+to Disk" function), double-click it to mount it.
+Open the "Fink 0.x.x Installer" disk icon that appears on your desktop
 after Disk Copy has verified the file.
 Inside you'll find some documentation and a installer package.
 Double-click the installer package and follow the instructions on
@@ -141,7 +141,7 @@ pico .cshrc</pre>
 You are now in a full-screen (well, full terminal window) text editor
 and can simply start typing the <code>source /sw/bin/init.csh</code>
 line.
-It's okay if there is a note that says &quot;New file&quot;.
+It's okay if there is a note that says "New file".
 Be sure that you pressed Return at least once after the line, then
 press Control-O, Return, Control-X to get out of the editor.
 </p>

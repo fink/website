@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:51:27';
+$cvs_author = 'Author: thesin';
+$cvs_date = 'Date: 2003/09/04 16:46:22';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -35,7 +35,7 @@ compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
-directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the &quot;root-&quot; part.)
+directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
 All files that would normally be installed to /sw are installed in
 /sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
@@ -166,12 +166,12 @@ Supports the same syntax as Depends.
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
 A comma-separated list of package names that this package is
-considered to &quot;provide&quot;.
-If a package named &quot;pine&quot; specifies <code>Provides: mailer</code>,
-then any dependency on &quot;mailer&quot; is considered satisfied when &quot;pine&quot; is
+considered to "provide".
+If a package named "pine" specifies <code>Provides: mailer</code>,
+then any dependency on "mailer" is considered satisfied when "pine" is
 installed.
-You'll usually also want to name these packages in the &quot;Conflicts&quot; and
-the &quot;Replaces&quot; field.
+You'll usually also want to name these packages in the "Conflicts" and
+the "Replaces" field.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
@@ -189,7 +189,7 @@ In summary, it only effects run-time, not build-time.
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
-This is used together with &quot;Conflicts&quot;, when this package not only
+This is used together with "Conflicts", when this package not only
 takes over the function of the conflicting package, but also has some
 common files.
 Without this field, dpkg may generate errors when installing the
@@ -273,25 +273,25 @@ download).
 <p>
 If a package consists of several tarballs, name them with these
 additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of &quot;main&quot; tarball) goes into <code>Source</code>, the
+should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
-as for Source, only that the &quot;gnu&quot; and &quot;gnome&quot; shortcuts are not
+as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
 Must be used when the tarball expands to a single directory, but
 the directory's name is different from the basename of the tarball.
-Usually, a tarball named &quot;foo-1.0.tar.gz&quot; will produce a directory
-named &quot;foo-1.0&quot;. If it produces a directory with a different name,
+Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
+named "foo-1.0". If it produces a directory with a different name,
 specify it with this parameter. Percent expansion is performed on this
 field.
 </p>
 </td></tr><tr valign="top"><td>NoSourceDirectory</td><td>
 <p>
 Set this boolean parameter to a true value if the tarball does not
-expand to a single directory. Usually, a tarball named &quot;foo-1.0.tar.gz&quot;
-will produce a directory named &quot;foo-1.0&quot;. If it just unpacks the files
+expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
+will produce a directory named "foo-1.0". If it just unpacks the files
 to the current directory, use this parameter and set it to a boolean
 true value.
 </p>
@@ -401,7 +401,7 @@ A boolean value. If true, the files config.guess and config.sub
 in the build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <b>Only</b> use this when you know it is necessary,
-i.e. when the configure script fails with a &quot;unknown host&quot;
+i.e. when the configure script fails with a "unknown host"
 message.
 </p>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
@@ -500,6 +500,10 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 Additional parameters to pass to the configure script. (See
 CompileScript for details.)
+
+As of fink &gt; 0.13.7, this parameter will also work with perl modules
+<code>Type: Perl</code>, and will append to the default perl Makefile.PL
+string.
 </p>
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
@@ -541,6 +545,14 @@ make test</pre>
 <p>
 Before the commands are executed, percent expansion takes place
 (see previous section).
+</p>
+</td></tr><tr valign="top"><td>NoPerlTests</td><td> 
+<p>
+<b>Introduced in fink &gt; 0.13.7.</b>
+A boolean value, specific for perl module packages.
+If true, the <code>make test</code> portion
+of the <code>CompileScript</code> will be ignored
+for that specific perl module package.
 </p>
 </td></tr></table>
 <p><b>Install Phase:</b></p>
@@ -738,9 +750,9 @@ The named files will receive special treatment by dpkg.
 When a package is upgraded and the file has changed both on disk and
 in the package, the user is asked which version to use and backups
 of the file will be made.
-When a package is &quot;remove&quot;d, the configuration files will remain on
+When a package is "remove"d, the configuration files will remain on
 disk.
-Only a &quot;purge&quot; also removes the configuration files.
+Only a "purge" also removes the configuration files.
 </p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
 <p>
@@ -784,19 +796,19 @@ Multiple lines allowed.
 </td></tr><tr valign="top"><td>DescUsage</td><td>
 <p>
 This is for information that is needed to use the package (how do
-I use it?). As in &quot;run wmaker.inst once before using WindowMaker&quot;.
+I use it?). As in "run wmaker.inst once before using WindowMaker".
 Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>DescPackaging</td><td>
 <p>
-Notes about the packaging. Stuff like &quot;patches the Makefile to put
-everything in place&quot; goes here. Multiple lines allowed.
+Notes about the packaging. Stuff like "patches the Makefile to put
+everything in place" goes here. Multiple lines allowed.
 </p>
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>
 Notes that are specific to porting the package to Darwin. Stuff
-like &quot;config.guess and libtool scripts are updated, -no-cpp-precomp
-is necessary&quot; goes here. Multiple lines allowed.
+like "config.guess and libtool scripts are updated, -no-cpp-precomp
+is necessary" goes here. Multiple lines allowed.
 </p>
 </td></tr></table>
 
@@ -879,7 +891,7 @@ line. This may be fixed one day in the future.</p>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the full package name plus the extension
-&quot;.patch&quot; and put it in the same directory as the .info file. Specify
+".patch" and put it in the same directory as the .info file. Specify
 either one of these (they are equivalent):</p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>

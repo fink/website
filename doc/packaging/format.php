@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:51:27';
+$cvs_author = 'Author: thesin';
+$cvs_date = 'Date: 2003/09/04 16:46:22';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -16,10 +16,10 @@ include "header.inc";
 <p>
 Package descriptions are read from the <code>finkinfo</code>
 directories below the <code>/sw/fink/dists</code> directory.
-The &quot;Trees&quot; setting in <code>/sw/etc/fink.conf</code> controls
+The "Trees" setting in <code>/sw/etc/fink.conf</code> controls
 which directories are read.
 The name of package description files must be the full package name
-plus the extension &quot;.info&quot;.
+plus the extension ".info".
 </p>
 <p>
 The package description tree is organized with several levels of
@@ -113,7 +113,7 @@ Keys (field names) are case-insensitive in Fink, so you can write
 <code>InstallScript</code>, <code>installscript</code> or
 <code>INSTALLSCRIPT</code> as you please.
 The first form is preferred for readability, though.
-Some fields take a boolean value - any of &quot;true&quot;, &quot;yes&quot;, &quot;on&quot;, &quot;1&quot;
+Some fields take a boolean value - any of "true", "yes", "on", "1"
 (case-insensitive) are treated as true, all other values are treated
 as false.
 </p>

@@ -110,7 +110,7 @@ fink list                 - list all packages
 fink list bash            - check if bash is available and what version.
 fink list --outdated      - list packages which are out of date
 fink list --section=kde   - list the packages in the kde section
-fink list &quot;gnome*&quot;         - list all packages that start with 'gnome'
+fink list "gnome*"         - list all packages that start with 'gnome'
 </pre>
 <p>
 The quotes in the last example are necessary to stop the shell from

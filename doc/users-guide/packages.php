@@ -80,7 +80,7 @@ dselect</a></h2>
 <p>
 <code>dselect</code> is a program that lets you browse the list of
 available packages and select which ones you want installed.
-It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
+It runs inside Terminal.app, but takes over the whole "screen" and
 uses simple keyboard navigation.
 Like the other package management tools, <code>dselect</code> requires
 root privileges, so you must either become root before you start it or
@@ -141,7 +141,7 @@ You do not need them, although they won't do harm.
 </ul>
 <p>
 You'll spend most of your time with dselect in the package browser,
-reachable through the &quot;[S]elect&quot; menu item.
+reachable through the "[S]elect" menu item.
 Before dselect shows you the package list, it presents you with an
 introductory help screen.
 You can press 'k' to get a full listing of keyboard commands, or just
@@ -159,7 +159,7 @@ alternative for a virtual package dependency), or press 'R'
 Both the sublists and the main package list are left by pressing
 Return.
 When you're happy with your selections, leave the main list and use
-the &quot;[I]nstall&quot; menu item to actually install the packages.
+the "[I]nstall" menu item to actually install the packages.
 </p>
 
 <h2><a name="bin-apt">3.3 Installing Binary Packages with
@@ -177,7 +177,7 @@ available packages with this command:
 </p>
 <pre>sudo apt-get update</pre>
 <p>
-Like the &quot;[U]pdate&quot; menu item in dselect, this doesn't update the
+Like the "[U]pdate" menu item in dselect, this doesn't update the
 actual files on your computer, just apt's list of available packages.
 To install a package, you just give apt-get the name, like this:
 </p>
@@ -216,17 +216,17 @@ installed, <code>i</code> for installed, <code>(i)</code> for
 installed but not the latest version), followed by the package name,
 the latest version, and a short description.
 You can ask for more information about a specific package using the
-&quot;describe&quot; command (&quot;info&quot; is an alias for this):
+"describe" command ("info" is an alias for this):
 </p>
 <pre>fink describe xmms</pre>
 <p>
 When you have found a package that you want to install, use the
-&quot;install&quot; command:
+"install" command:
 </p>
 <pre>fink install wget-ssl</pre>
 <p>
 The <code>fink</code> command will first check if all necessary
-prerequisites (&quot;dependencies&quot;) are present, and will ask you if it's
+prerequisites ("dependencies") are present, and will ask you if it's
 okay to install them if some are missing.
 Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.

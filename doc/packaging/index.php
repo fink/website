@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:51:27';
+$cvs_author = 'Author: thesin';
+$cvs_date = 'Date: 2003/09/04 16:46:22';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -14,7 +14,7 @@ This manual documents how to create package descriptions for the Fink
 package manager.
 It also provides a policy and guidelines for the Fink distribution.
 Both the description format and the distribution policy are still
-evolving, so watch the &quot;Last changed&quot; info and the CVS tag on this
+evolving, so watch the "Last changed" info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
 policy used in post-0.9.0 development versions of the fink
@@ -63,7 +63,7 @@ currently has no maintainer.</a>
 <li><a href="reference.php#patches">5.5 Patches</a></li>
 <li><a href="reference.php#profile.d">5.6 Profile.d scripts</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.46 2003/05/20 19:51:27 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.48 2003/09/04 16:46:22 thesin Exp $</i></p>
 
 
 <?

@@ -51,7 +51,7 @@ OpenGL.  A new version was released on February 10, 2003 with additional feature
 As of the time of this writing, to use the Apple binaries you will need to make sure you
 have the Fink <code>system-xfree86</code> package, version 4.2-11 or higher, installed.
 Also, make sure you download BOTH the SDK (linked from the main site), and the public
-beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
+beta files.  Do not download the "common toolkits" from OpenDarwin, they will likely
 interact poorly with Fink's installation.
 </p>
 <p>
@@ -86,7 +86,7 @@ Some notes on using Apple's X11:
 <p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications 
 that you have installed with fink (e.g. window managers, gnome-session, other apps under 
 <code>/sw/bin</code>) put the following near the top of <code>~/.xinitrc</code> (i.e. after the 
-initial &quot;<code>#!/bin/sh</code>&quot;, but before you run any programs):</p>
+initial "<code>#!/bin/sh</code>", but before you run any programs):</p>
 <pre> . /sw/bin/init.sh
 </pre>
 <p>so that the Fink environment is initialized.  Note:  <code>init.sh</code> is used rather than <code>init.csh</code> because <code>.xinitrc</code> is run by <code>sh</code> rather than <code>tcsh</code>.</p>
@@ -163,7 +163,7 @@ with the following commands:
 <pre>make World
 sudo make install install.man</pre>
 <p>To update to 4.2.1.1, follow the instructions in the <a href="#official-binary">Official Binaries</a> section.</p>
-<p>To install 4.3.0, follow the above instructions, replacing &quot;2&quot; with &quot;3&quot;, but don't do the 4.2.1.1 update procedure.</p>
+<p>To install 4.3.0, follow the above instructions, replacing "2" with "3", but don't do the 4.2.1.1 update procedure.</p>
 <p>
 As with the official binaries, you've now got XFree86 with a server
 that can do fullscreen, or rootless under Mac OS X.

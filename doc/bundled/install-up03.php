@@ -15,7 +15,7 @@ include "header.inc";
 
 <p>
 If you already have Fink 0.3.x installed, you can update your
-installation to 0.5.3 with the built-in 'selfupdate' command.
+installation to 0.5.2 with the built-in 'selfupdate' command.
 </p>
 
 
@@ -34,7 +34,7 @@ packages. However, it will not update any other packages.
 <h2><a name="tetex">3.2 Getting tetex Sorted Out</a></h2>
 <p>
 If you are upgrading from a Fink release prior to 0.3.1, and you have
-tetex installed, you should run the command &quot;fink remove tetex&quot; before
+tetex installed, you should run the command "fink remove tetex" before
 upgrading. (It may also be necessary to remove the packages which
 depend on tetex, such as lyx, before tetex can be removed.) Afterwards
 you can again install tetex and the other packages you removed. 

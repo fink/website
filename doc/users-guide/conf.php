@@ -40,7 +40,7 @@ Your fink.conf file consists of multiple lines, in the format:</p>
 <pre>OptionName: Value</pre>
 <p>Options are one per line, and the option name is separated from its
 value by a : and a single space. The contents of value depends on the
-option, but it is normally either a boolean (&quot;True&quot; or &quot;False&quot;), a
+option, but it is normally either a boolean ("True" or "False"), a
 string, or a list of strings delimited by a space. 
 For example:
 </p>
@@ -100,8 +100,8 @@ unstable/main   - other unstable packages
 <p>
 You may also add your own trees in the <code>/sw/fink/dists</code>
 directory for your own purposes, but this is not necessary in most
-circumstances. The default trees are &quot;local/main local/bootstrap
-stable/main&quot;. This list should be kept in sync with the
+circumstances. The default trees are "local/main local/bootstrap
+stable/main". This list should be kept in sync with the
 <code>/sw/etc/apt/sources.list</code> file.
 </p>
 </li>
@@ -110,7 +110,7 @@ stable/main&quot;. This list should be kept in sync with the
 <b>Distribution:</b> 10.1 or 10.2</p>
 <p>Fink needs to know which version of Mac OS X you are running. The
 10.1 distribution is meant for users of Mac OS X 10.1, while 10.2 will
-only work for those who run Mac OS X 10.2 &quot;Jaguar&quot; on their systems.
+only work for those who run Mac OS X 10.2 "Jaguar" on their systems.
 Mac OS X 10.0 and earlier are not supported. You should not need to
 alter this value.
 </p>
@@ -147,7 +147,7 @@ The default value is 3.
 <p>Fink caches its package descripition files in /sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not thepackage index needs to be updated unless this
-option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is not
+option is set to "True". It defaults to "False" and it is not
 recommended that you change it. If you do, you may need to manually run
 the <code>fink index</code> command to update the index.</p>
 </li>
@@ -171,7 +171,7 @@ package data.</p>
 <li>
 <p>
 <b>ProxyPassiveFTP:</b> boolean</p>
-<p>This option makes Fink use &quot;passive&quot; mode for FTP downloads. Some
+<p>This option makes Fink use "passive" mode for FTP downloads. Some
 FTP server or network configurations require this option to be set to
 True. It is recommended that you leave this option on at all
 times since active FTP is deprecated.</p>
@@ -255,9 +255,9 @@ documented above. When using the MasterFirst or MasterLast options, the user can
 to the Master (or non Master) set if a download fails. The options are:
 </p>
 <pre>
-MasterFirst - Search &quot;Master&quot; source mirrors first.
-MasterLast - Search &quot;Master&quot; source mirrors last.
-MasterNever - Never use &quot;Master&quot; source mirrors.
+MasterFirst - Search "Master" source mirrors first.
+MasterLast - Search "Master" source mirrors last.
+MasterNever - Never use "Master" source mirrors.
 ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
 </pre>
 </li>

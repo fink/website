@@ -26,8 +26,8 @@ Just ask the tool of your choice to get the latest package listing
 from the server and let it update all packages.
 </p>
 <p>
-For dselect, it is sufficient to hit &quot;[U]pdate&quot;, then &quot;[I]nstall&quot;.
-Of course, you may want to run &quot;[S]elect&quot; in between to check the
+For dselect, it is sufficient to hit "[U]pdate", then "[I]nstall".
+Of course, you may want to run "[S]elect" in between to check the
 selections that were made and to find out about new packages.
 </p>
 <p>
@@ -72,7 +72,7 @@ If you have a version of Fink older than 0.2.5, you must download the
 package descriptions manually.
 Visit the <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
 area</a> and look for the latest packages-0.x.x.tar.gz tarball in
-the &quot;distribution&quot; module.
+the "distribution" module.
 Download it, then install it as follows:
 </p>
 <pre>tar -xzf packages-0.x.x.tar.gz

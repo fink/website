@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/20 19:51:27';
+$cvs_author = 'Author: thesin';
+$cvs_date = 'Date: 2003/09/04 16:46:22';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -64,7 +64,7 @@ one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
 
 <li><code>BSD</code> - for BSD-style licenses.
-This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
+This includes the so-called "original" BSD license, the "modified" BSD
 license and the MIT license. The Apache license also counts as
 BSD. With these licenses the distribution of source code is
 optional.</li>
@@ -79,8 +79,8 @@ licenses.</li>
 Documentation Project</code> - if the documentation included in a package
 is explicitly included under one of the licenses, then this is indicated by
 appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
-allowed combinations: &quot;GFDL&quot;,
-&quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;, &quot;LDP&quot;, or &quot;GPL/LGPL/LDP&quot;.
+allowed combinations: "GFDL",
+"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
 </li>
 
 <li><code>OSI-Approved</code> - for other Open Source licenses
@@ -223,7 +223,7 @@ but libpng-shlibs and libpng3-shlibs can be installed at the same time.
 (Note that only two .info files are required to build these four packages.)
 </p><p>
 The shared library itself and certain related files will be put into 
-the package barN-shlibs; the &quot;include&quot; files and certain other files will
+the package barN-shlibs; the "include" files and certain other files will
 be put into the package barN.  There can be no overlapping files
 between these two packages, and everything stored in barN-shlibs must have
 a pathname which somehow includes the major version number N.  In many
@@ -259,7 +259,7 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the &quot;install_name&quot; of the library be <code>%p/lib/bar.N.dylib</code>.  
+the "install_name" of the library be <code>%p/lib/bar.N.dylib</code>.  
 (You can
 find the install_name by running <code>otool -L</code> on your library.)  The
 actual library file should be installed at
@@ -343,7 +343,7 @@ Notice that we have included the exact current version of barN-shlibs as a
 dependency of the main package barN (which can be abbreviated 
 %N-shlibs (= %v-%r) ).
 This ensures that the versions match, and also guarantees that barN
-automatically &quot;inherits&quot; all the dependencies of barN-shlibs.
+automatically "inherits" all the dependencies of barN-shlibs.
 </p>
 <p><b>The Shlibs field:</b>
 </p><p>
@@ -420,12 +420,12 @@ say
 </pre>
 <p>
 so that upgrading will be transparent to users.  (You should <b>not</b>
-say &quot;Conflicts: foo&quot; because this will prevent the upgrade.)
+say "Conflicts: foo" because this will prevent the upgrade.)
 </p><p>
-After your upgrade, packages which say &quot;Depends: foo&quot; will continue to
+After your upgrade, packages which say "Depends: foo" will continue to
 function normally.  However, you should contact the fink maintainers
 of all such packages and urge them to modify their packages to say 
-&quot;Depends: foo-shlibs, BuildDepends: foo&quot; as soon as possible.  You will 
+"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
 not be able to create new packages fooM, fooM-shlibs which implement a 
 new major version of the shared library until they have done so.
 </p><p>
@@ -502,7 +502,7 @@ versioned perl binary and stores the files in the correct subdirectories.
 (This directive is available starting with version 0.13.0 of fink.)
 </p><p>
 It is permitted to create a <code>-pm</code> package which is essentially
-a &quot;bundle&quot; package that loads the <code>-pm560</code> variant or any
+a "bundle" package that loads the <code>-pm560</code> variant or any
 others which may be exist.  This strategy is encouraged for existing
 Fink packages for XS modules, in order to provide a smooth upgrade path.
 </p><p>

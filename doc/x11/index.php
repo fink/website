@@ -75,7 +75,7 @@ or crashes almost immediately</a></li>
 menu of a GNOME application</a></li>
 <li><a href="trouble.php#keyboard">7.3 The keyboard doesn't work in XFree86</a></li>
 <li><a href="trouble.php#delete-key">7.4 The Backspace key doesn't work</a></li>
-<li><a href="trouble.php#locale">7.5 &quot;Warning: locale not supported by C library&quot;</a></li>
+<li><a href="trouble.php#locale">7.5 "Warning: locale not supported by C library"</a></li>
 </ul>
 <li><a href="tips.php"><b>8 Usage Tips</b></a></li>
 <ul>

@@ -85,7 +85,7 @@ which often results in confusion over the terms.
 In an environment with workstations and servers, you will run the X11
 display server on the workstation machine and the applications (the X
 clients) on the server machine.
-So when talking about the &quot;server&quot;, that means the X11 display server
+So when talking about the "server", that means the X11 display server
 program, not the machine hidden in your wardrobe.
 </p>
 
@@ -97,8 +97,8 @@ X11 models the screen as a hierarchy of windows contained in each
 other.
 At the top of the hierarchy is a special window which is the size of
 the screen and contains all other windows.
-This window contains the desktop background and is called the &quot;root
-window&quot;.
+This window contains the desktop background and is called the "root
+window".
 </p>
 <p>
 Now back on topic:
@@ -121,7 +121,7 @@ This eliminates the need to switch between two screens.
 It also eliminates the X11 root window, because Quartz already takes
 care of the desktop background.
 Because there is no (visible) root window, this mode is called
-&quot;rootless&quot;.  It is the most comfortable way to use X11 on Mac OS X.
+"rootless".  It is the most comfortable way to use X11 on Mac OS X.
 </p>
 
 <h2><a name="wm">1.8 What is a window manager?</a></h2>
@@ -130,7 +130,7 @@ Because there is no (visible) root window, this mode is called
 In most graphical environments the look of window frames (title bar,
 close button, etc.) is defined by the system.
 X11 is different.
-With X11, the window frames (also called &quot;decoration&quot;) are provided by
+With X11, the window frames (also called "decoration") are provided by
 a separate program, called the window manager.
 In most respects, the window manager is just another client
 application; it is started the same way and talks to the X server

@@ -126,18 +126,18 @@ but there are some caveats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them &quot;in the background&quot; by adding a <code>&amp;</code> at
+shell to put them "in the background" by adding a <code>&amp;</code> at
 the end of the line.
 </p>
 <p>
 Second, <code>xinit</code> waits for the <code>.xinitrc</code>
-script to finish and interprets that as &quot;the session has ended, I should
-kill the X server now, too&quot;.
+script to finish and interprets that as "the session has ended, I should
+kill the X server now, too".
 This means that the last command of your <code>.xinitrc</code>
 must not be run in the background and it should be a long-living program.
 Customarily, the window manager is used for this purpose.
 In fact, most window managers assume that <code>xinit</code> is
-waiting for them to finish and use this to make the &quot;Log out&quot; entry in
+waiting for them to finish and use this to make the "Log out" entry in
 their menus work.
 (Note: To save some memory and CPU cycles, you can put an
 <code>exec</code> before the last line like in the examples below.)

@@ -29,7 +29,7 @@ InstallScript) which does nothing
 by simply putting a semicolon in the script.  This does not work
 under bash, and must be replaced by something like
 <pre>
-  CompileScript: echo &quot;nothing to do&quot;
+  CompileScript: echo "nothing to do"
 </pre>
 </li>
 <li>
@@ -53,7 +53,7 @@ When this happens, <code>configure</code> contains the following:
 <pre>
 archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
 -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
--install_name $rpath/$soname $(test -n &quot;$verstring&quot; -a x$verstring != 
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring != 
 x0.0 &amp;&amp; echo $verstring)'
 </pre>
 Here is a patch (but it must be used with care, because sometimes there are
@@ -68,30 +68,30 @@ diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
       #        yet detect zsh echo's removal of \ escapes.
 -    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
 -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
--install_name $rpath/$soname $(test -n &quot;$verstring&quot; -a x$verstring != 
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring != 
 x0.0 &amp;&amp; echo $verstring)'
 +    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
 -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
 -install_name $rpath/$soname $tmp_verstring'
       # We need to add '_' to the symbols in $export_symbols first
-      #archive_expsym_cmds=&quot;$archive_cmds&quot;' &amp;&amp; strip -s $export_symbols'
+      #archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
       hardcode_direct=yes
 diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 --- gdk-pixbuf-0.16.0/ltmain.sh 2002-01-22 20:11:43.000000000 -0500
 +++ gp-new/ltmain.sh    2002-05-10 03:04:49.000000000 -0400
 @@ -2862,6 +2862,11 @@
-        if test -n &quot;$export_symbols&quot; &amp;&amp; test -n &quot;$archive_expsym_cmds&quot;;
+        if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds";
 	then
-          eval cmds=\&quot;$archive_expsym_cmds\&quot;
+          eval cmds=\"$archive_expsym_cmds\"
         else
-+         if test &quot;x$verstring&quot; = &quot;x0.0&quot;; then
++         if test "x$verstring" = "x0.0"; then
 +           tmp_verstring=
 +         else
-+           tmp_verstring=&quot;$verstring&quot;
++           tmp_verstring="$verstring"
 +         fi
-          eval cmds=\&quot;$archive_cmds\&quot;
+          eval cmds=\"$archive_cmds\"
         fi
-        IFS=&quot;${IFS=     }&quot;; save_ifs=&quot;$IFS&quot;; IFS='~'
+        IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 </pre>
 </li>
 </ul>

@@ -78,7 +78,7 @@ I'm talking hours or even days here.
 <b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
 All developers run it, and packages are tested on this system.
-It is considered &quot;fully supported and tested&quot;, although there may
+It is considered "fully supported and tested", although there may
 still be stray compile problems with single packages.
 </p>
 <p>
@@ -97,13 +97,13 @@ Mac OS X - affected packages include XFree86 and possibly esound.
 <h2><a name="src-vs-bin">1.4 Source vs. Binary</a></h2>
 
 <p>
-Software is written (&quot;developed&quot;) in human-readable programming
-languages; this form is called the &quot;source code&quot;.
+Software is written ("developed") in human-readable programming
+languages; this form is called the "source code".
 Before a computer can actually run a program, it must be transformed
 into low-level machine code instructions (unreadable by most humans).
-That process is called &quot;compiling&quot; and the resulting program is called
-&quot;executable&quot; or &quot;binary&quot;.
-(The process is also refered to as &quot;building&quot;, because it usually
+That process is called "compiling" and the resulting program is called
+"executable" or "binary".
+(The process is also refered to as "building", because it usually
 involves more steps than just compiling.)
 </p>
 <p>
@@ -124,10 +124,10 @@ program that can be run.
 </p>
 <p>
 Fink lets you choose between the two models.
-The &quot;source&quot; distribution will download the original source, adapt it
+The "source" distribution will download the original source, adapt it
 to Mac OS X and to Fink's policy, and compile it on your computer.
 That process is fully automated, but takes some time.
-The &quot;binary&quot; distribution on the other hand will download pre-compiled
+The "binary" distribution on the other hand will download pre-compiled
 packages from the Fink site and install those, saving you the time for
 compiling.
 It is actually possible to mix the two models at will.
