@@ -4,9 +4,23 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 18 Aug 2003 19:42:53 EDT</lastBuildDate>
+    <lastBuildDate>Thu, 04 Sep 2003 14:01:25 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Logo contest ends</title>
+    <link>http://fink.sf.net/news/#2003-09-02%20Logo%20contest%20ends</link>
+    <dc:date>2003-09-02</dc:date>
+    <description>
+The Logo contest held by Fink, announced  here, 
+ended yesterday. With over 80 different proposals from countries all over the world we 
+consider the contest a big success.  
+In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
+curious and cannot wait may have a look at an incomplete  preview 
+Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and  MacWelt  for their continued support.
+
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Source files from ftp.gnu.org</title>
     <link>http://fink.sf.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org</link>
@@ -440,18 +454,5 @@ not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
     At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which is targeted for October, will be geared towards 10.2. In the meantime refer to the news item below on how to upgrade Fink for 10.2.
     
   </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Possible conflicts with anti-virus software</title>
-    <link>http://fink.sf.net/news/#2002-09-27%20Possible%20conflicts%20with%20anti-virus%20software</link>
-    <dc:date>2002-09-27</dc:date>
-    <description>
- A number of recent reports on the 
-fink-users
-mailing list have indicated problems (including kernel panics and
-infinite hangs during patching) when using Fink to compile packages while
-anti-virus software is installed.  You may need to switch off any anti-virus
-software before using Fink.
-</description>
   </item>
 </rdf:RDF>
