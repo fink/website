@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/17 17:29:20';
+$cvs_date = 'Date: 2002/12/17 18:57:35';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -100,7 +100,7 @@ sort this out.
 
 <a name="libXmuu"><div class="question"><p><b>Q7.6: When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
-You are missing a file that is supposed to be in <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink rebuild xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
+You are missing a file that is supposed to be in <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should reinstall it using <tt><nobr>fink reinstall xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink reinstall xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages) for source, or <tt><nobr>sudo apt-get install --reinstall xfree86-rootless-shlibs</nobr></tt> for binaries.</p></div>
 </a>
 
 
