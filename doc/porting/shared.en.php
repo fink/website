@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="libtool.php?phpLang=en" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=en" title="Basics">';
 
-include_once "header.inc";
-?>
 
-<h1>Porting - 2 Shared Code</h1>
+include_once "header.en.inc";
+?>
+<h1>Porting - 2. Shared Code</h1>
 		
 		
 
@@ -90,7 +90,9 @@ systems require it; this is harmless.
 
 
 
-<p align="right">
-Next: <a href="libtool.php?phpLang=en">3 GNU libtool</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="libtool.php?phpLang=en">3. GNU libtool</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

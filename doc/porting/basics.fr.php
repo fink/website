@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/04/26 04:20:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="shared.php?phpLang=fr" title="Code partagé"><link rel="prev" href="index.php?phpLang=fr" title="Portage Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Portage - 1 Notions de base</h1>
+include_once "header.fr.inc";
+?>
+<h1>Portage - 1. Notions de base</h1>
 		
 		
 
@@ -63,7 +63,9 @@ include_once "header.inc";
 
 		
 
-	<p align="right">
-Next: <a href="shared.php?phpLang=fr">2 Code partagé</a></p>
+	<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="shared.php?phpLang=fr">2. Code partagé</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="prev" href="libtool.php?phpLang=zh" title="GNU libtool">';
 
-include_once "header.inc";
-?>
 
-<h1>移植 - 4 为 10.2 做准备</h1>
+include_once "header.zh.inc";
+?>
+<h1>移植 - 4. 为 10.2 做准备</h1>
 
 
 
@@ -104,5 +104,7 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 
 
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

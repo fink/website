@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="shared.php?phpLang=zh" title="共享代码"><link rel="prev" href="index.php?phpLang=zh" title="移植 Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>移植 - 1 基本知识</h1>
+include_once "header.zh.inc";
+?>
+<h1>移植 - 1. 基本知识</h1>
 		
 		
 
@@ -92,7 +92,9 @@ include_once "header.inc";
 
 		
 
-	<p align="right">
-Next: <a href="shared.php?phpLang=zh">2 共享代码</a></p>
+	<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="shared.php?phpLang=zh">2. 共享代码</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
-include_once "header.inc";
-?>
 
-<h1>Porting - 3 GNU libtool</h1>
+include_once "header.en.inc";
+?>
+<h1>Porting - 3. GNU libtool</h1>
 
 
 
@@ -294,7 +294,9 @@ This can be achieved by configuring GNU libtool with
 </p>
 
 
-<p align="right">
-Next: <a href="preparing.php?phpLang=en">4 Preparing for 10.2</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing.php?phpLang=en">4. Preparing for 10.2</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

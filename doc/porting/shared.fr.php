@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/04/26 04:20:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="libtool.php?phpLang=fr" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=fr" title="Notions de base">';
 
-include_once "header.inc";
-?>
 
-<h1>Portage - 2 Code partagé</h1>
+include_once "header.fr.inc";
+?>
+<h1>Portage - 2. Code partagé</h1>
 		
 		
 
@@ -84,7 +84,9 @@ Quelques paquets placent un "lib" avant le nom, car certains systèmes l'exigent
 
 
 
-<p align="right">
-Next: <a href="libtool.php?phpLang=fr">3 GNU libtool</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="libtool.php?phpLang=fr">3. GNU libtool</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

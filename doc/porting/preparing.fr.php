@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/04/26 04:20:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
-include_once "header.inc";
-?>
 
-<h1>Portage - 4 Préparation pour la version 10.2</h1>
+include_once "header.fr.inc";
+?>
+<h1>Portage - 4. Préparation pour la version 10.2</h1>
 
 
 
@@ -116,5 +116,7 @@ ne peuvent être liés à des librairies compilées avec gcc2.</p>
 
 
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

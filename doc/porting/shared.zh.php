@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/03/12 15:06:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="libtool.php?phpLang=zh" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=zh" title="基本知识">';
 
-include_once "header.inc";
-?>
 
-<h1>移植 - 2 共享代码</h1>
+include_once "header.zh.inc";
+?>
+<h1>移植 - 2. 共享代码</h1>
 		
 		
 
@@ -120,7 +120,9 @@ cc -bundle -flat_namespace -undefined suppress \
 
 
 
-<p align="right">
-Next: <a href="libtool.php?phpLang=zh">3 GNU libtool</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="libtool.php?phpLang=zh">3. GNU libtool</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
