@@ -1,9 +1,9 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/10 21:06:55';
+$cvs_date = 'Date: 2001/07/14 14:20:49';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="intro.php" title="Introduction">';
+$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
 include "header.inc";
 ?>
@@ -21,6 +21,32 @@ directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
 </p>
+<p>
+The package description tree is organized with several levels of
+directories.
+The directories in top-down order:
+</p>
+<ul>
+<li><tt><nobr>dists</nobr></tt> is where is starts. The <tt><nobr>dists</nobr></tt>
+directory is necessary for the Debian tools.</li>
+<li>The distribution. There is <tt><nobr>stable</nobr></tt>,
+<tt><nobr>unstable</nobr></tt> and <tt><nobr>local</nobr></tt>. The <tt><nobr>local</nobr></tt>
+directory is under the control of the local administrator/user. The
+<tt><nobr>stable</nobr></tt> and <tt><nobr>unstable</nobr></tt> directores are part of
+Fink.</li>
+<li>The tree. The <tt><nobr>main</nobr></tt> tree contains the bulk of the
+packages. Cryptographic software is kept in a separate tree,
+<tt><nobr>crypto</nobr></tt>, to make removal easy should it become
+necessary.</li>
+<li><tt><nobr>finkinfo</nobr></tt>
+vs. <tt><nobr>binary-darwin-powerpc</nobr></tt>. <tt><nobr>finkinfo</nobr></tt> contains
+the Fink package descriptions and patches, while
+<tt><nobr>binary-darwin-powerpc</nobr></tt> contains the <tt><nobr>.deb</nobr></tt>
+binary packages.</li>
+<li>Sections. The <tt><nobr>main</nobr></tt> tree is subdivided into thematic
+sections to make it manageable. The <tt><nobr>crypto</nobr></tt> tree is not
+divided into sections at the moment.</li>
+</ul>
 
 
 <h2>File Format</h2>

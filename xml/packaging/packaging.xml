@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.5 2001/07/10 21:06:55 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.6 2001/07/14 14:20:49 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -100,6 +100,32 @@ directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
 </p>
+<p>
+The package description tree is organized with several levels of
+directories.
+The directories in top-down order:
+</p>
+<ul>
+<li><code>dists</code> is where is starts. The <code>dists</code>
+directory is necessary for the Debian tools.</li>
+<li>The distribution. There is <code>stable</code>,
+<code>unstable</code> and <code>local</code>. The <code>local</code>
+directory is under the control of the local administrator/user. The
+<code>stable</code> and <code>unstable</code> directores are part of
+Fink.</li>
+<li>The tree. The <code>main</code> tree contains the bulk of the
+packages. Cryptographic software is kept in a separate tree,
+<code>crypto</code>, to make removal easy should it become
+necessary.</li>
+<li><code>finkinfo</code>
+vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
+the Fink package descriptions and patches, while
+<code>binary-darwin-powerpc</code> contains the <code>.deb</code>
+binary packages.</li>
+<li>Sections. The <code>main</code> tree is subdivided into thematic
+sections to make it manageable. The <code>crypto</code> tree is not
+divided into sections at the moment.</li>
+</ul>
 </section>
 
 <section name="format"><title>File Format</title>
@@ -183,9 +209,118 @@ ConfigureParams</dd>
 </chapter>
 
 
+<chapter filename="policy">
+<title>Packaging Policy</title>
+<shorttitle>Policy</shorttitle>
+
+<section name="licenses"><title>Package Licenses</title>
+<p>
+The packages included in Fink come with a wide variety of licenses.
+Most of them place restrictions on redistributing the full source and
+especially on distributing binaries.
+Some packages can not be included in the binary distribution of Fink
+because of these license restrictions.
+Thus it is very important that package maintainers check the license
+of their package.
+</p>
+<p>
+Every package that is to be distributed as a binary package must
+contain a copy of the license.
+It must be installed in the doc directory,
+i.e. in <code>%p/share/doc/%n</code>.
+If there is no explicit license in the original source, include a
+small text file with a note about the status of the package.
+Note that most licenses require that the license accompanies any
+distribution, but Fink's policy is to do this even if it is not
+explicitly required.
+</p>
+<p>
+To make an automated maintenance of the binary distribution possible,
+any package that is to be distributed must have a <code>License</code>
+field.
+This field denotes the nature of the license and is used to decide
+which packages make it into the binary distribution and which must be
+held back.
+The field may only be present if the actual license terms are included
+in the binary package, as explained above.
+</p>
+<p>
+To make the <code>License</code> field useful, only one of the
+following pre-defined values may be used.
+If you're packaging something that doesn't fit into these categories,
+ask for help on the developer mailing list.
+</p>
+<ul>
+
+<li><code>GPL</code> - the GNU General Public License.
+This license requires that the source is available from the same place
+as the binary.</li>
+<li><code>LGPL</code> - the GNU Lesser General Public License.
+This license requires that the source is available from the same place
+as the binary.</li>
+<li><code>GPL/LGPL</code> - this if a special case for packages where
+one part is licensed under the GPL (e.g. the executables) and another
+part is licensed under the LGPL (e.g. the libraries).</li>
+
+<li><code>BSD</code> - for BSD-style licenses.
+This includes the so-called "original" BSD license, the "modified" BSD
+license and the MIT license. The Apache license also counts as
+BSD. With these licenses the distribution of source code is
+optional.</li>
+
+<li><code>Artistic</code> - for the Artistic license and
+derivatives.</li>
+
+<li><code>OSI-Approved</code> - for other Open Source licenses
+approved by the <link url="http://www.opensource.org/">Open Source
+Initiative</link>. One of OSI's requirements is that free distribution
+of binaries and sources is allowed.</li>
+
+<li><code>Restrictive</code> - for restrictive licenses.
+Use this for packages that are available from the author in source
+form for free use, but don't allow free redistribution.</li>
+
+<li><code>Commercial</code> - for restrictive, commercial licenses.
+Use this for commercial packages (e.g. Freeware, Shareware) that do
+not allow free redistribution of source or binaries.</li>
+
+</ul>
+</section>
+
+
+<section name="prefix"><title>Base System Interference</title>
+<p>
+Fink is an add-on distribution that is installed in a directory
+separate from the base system.
+It is crucial that a package does not install files outside of Fink's
+directory.
+</p>
+<p>
+Exceptions can be made when there is no other possibility, e.g. with
+XFree86.
+In this case the package must check for existing files before
+installation and refuse to install if it would overwrite existing
+files.
+The package must make sure that all files it installed outside of the
+Fink directory are deleted when the package is removed.
+</p>
+</section>
+
+
+</chapter>
+
+
 <chapter filename="fslayout">
 <title>Filesystem Layout</title>
 <shorttitle>FS Layout</shorttitle>
+
+
+<preface>
+<p>
+The following file system layout guidelines are part of the Fink
+packaging policy.
+</p>
+</preface>
 
 
 <section name="fhs"><title>The Filesystem Hierarchy Standard</title>

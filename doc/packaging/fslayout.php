@@ -1,15 +1,23 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/10 21:06:55';
+$cvs_date = 'Date: 2001/07/14 14:20:49';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="format.php" title="Package Descriptions">';
+$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="reference.php" title="Reference"><link rel="prev" href="policy.php" title="Packaging Policy">';
 
 include "header.inc";
 ?>
 
 <h1>Packaging - Filesystem Layout</h1>
 
+
+
+
+
+<p>
+The following file system layout guidelines are part of the Fink
+packaging policy.
+</p>
 
 
 
