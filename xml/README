@@ -1,4 +1,4 @@
-$Id: README,v 1.2 2001/07/31 16:02:17 chrisp Exp $   -*- text -*-
+$Id: README,v 1.3 2002/04/13 18:39:52 fingolfin Exp $   -*- text -*-
 
  README for XML Documents
 ==========================
@@ -18,12 +18,10 @@ for rendering:
    format. The textify.pl script does the actual text rendering. This
    is also for inclusion with the distribution.
 
-To render the documents, you still need Saxon, an XSLT interpreter
-written in Java. Download Saxon 6.2.2 from
-<http://users.iclway.co.uk/mhkay/saxon/> and put the file 'saxon.jar'
-in this directory. You can then use the provided Makefiles to render
-the documents. There are .cvsignore files to keep CVS from complaining
-about generated files.
+To render the documents, you need xsltproc, available in the "libxslt"
+package in Fink (we used to use Saxon, but xsltproc is much much faster).
+You can then use the provided Makefiles to render the documents. There
+are .cvsignore files to keep CVS from complaining about generated files.
 
 
 EOF.

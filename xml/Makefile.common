@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.7 2001/10/28 08:18:26 chrisp Exp $
+# $Id: Makefile.common,v 1.8 2002/04/13 18:39:52 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -42,7 +42,7 @@ force: clean all
 # rendering to php-framed HTML for the website (multi-page)
 
 %.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_WEBSITE)
+	xsltproc $(STYLESHEET_WEBSITE) $(SOURCE)
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
@@ -50,7 +50,7 @@ force: clean all
 # rendering to pure HTML (monolithic)
 
 %.html.tmp: %.xml $(STYLESHEET_HTML)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_HTML) >$@
+	xsltproc -o $(patsubst %.xml,%.html.tmp,$(SOURCE)) $(STYLESHEET_HTML) $(SOURCE)
 
 %.html: %.html.tmp
 	$(PROCESS_HTML) <$< >$@
@@ -58,7 +58,7 @@ force: clean all
 # rendering to pure text (monolithic)
 
 %.txt.tmp: %.xml $(STYLESHEET_TEXT)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_TEXT) >$@
+	xsltproc -o $(patsubst %.xml,%.txt.tmp,$(SOURCE)) $(STYLESHEET_TEXT) $(SOURCE)
 
 %.txt: %.txt.tmp $(PROCESS_TEXT)
 	$(PROCESS_TEXT) <$< >$@
