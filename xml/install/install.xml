@@ -3,7 +3,7 @@
 <document filename="install">
 <title>Fink 0.2.6 Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.8 2001/09/04 12:06:13 chrisp Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.9 2001/09/04 12:15:12 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -92,7 +92,7 @@ shells, add 'source /sw/bin/init.csh' to the init script '.cshrc' in your
 home directory. Enjoy.
 
 [frodo:~/fink-0.2.6-full] testuser% <em>cd</em>
-[frodo:~] testuser% <em>rm -r fink-0.2.6-full</em></codeblock>
+[frodo:~] testuser% <em>rm -r fink-0.2.6-full</em>
 [frodo:~] testuser% <em>pico .cshrc</em></codeblock>
 <p>
 The last command launches you into a text file editor.
