@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/16 01:42:15';
+$cvs_date = 'Date: 2004/04/19 03:23:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -139,8 +139,9 @@ Beginning in a CVS version of fink after fink-0.19.2, the language/language-vers
 been generalized to allow any Maintainer-defined types and associated
 subtypes and more than a single type for a given package. The type and
 subtype are each arbitrary strings of non-whitespace characters (but
-parentheses, commas, and percent signs should not be used); no
-percent-expansion is performed. Multiple type values (each with an
+parentheses, commas, braces, and percent signs should not be used); no
+percent-expansion is performed, and the type (not not subtype) values
+are converted to all-lowercase.  Multiple type values (each with an
 optional whitespace-separated subtype) are specified in a
 comma-separated list.
 </p>

@@ -1,8 +1,8 @@
 <?
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 20:51:30';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Reference"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
+$cvs_date = 'Date: 2004/04/17 21:29:57';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 include_once "header.inc";
 ?>
@@ -88,6 +88,6 @@ Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans
 
 
 <p align="right">
-Next: <a href="reference.php?phpLang=fr">5 Reference</a></p>
+Next: <a href="reference.php?phpLang=fr">5 Référence</a></p>
 
 <? include_once "footer.inc"; ?>
