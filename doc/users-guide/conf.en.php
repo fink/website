@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:50:43';
+$cvs_date = 'Date: 2004/03/10 11:34:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -162,7 +162,7 @@ manually.</p>
         </li>
       </ul>
     
-    <h2><a name="downloding">5.5 Download Settings</a></h2>
+    <h2><a name="downloading">5.5 Download Settings</a></h2>
       
       <p>There are various settings which influence the way Fink downloads
 package data.</p>

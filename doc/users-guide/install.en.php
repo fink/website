@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:50:43';
+$cvs_date = 'Date: 2004/03/10 11:34:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -37,9 +37,8 @@ After downloading the disk image from the
 <a href="http://fink.sourceforge.net/download/bindist.php">download page</a>
 (you may have to use your browser's "Save Target as..." or "Download
 to Disk" function), double-click it to mount it.
-Open the "Fink 0.x.x Installer" disk icon that appears on your desktop
-after Disk Copy has verified the file.
-Inside you'll find some documentation and a installer package.
+Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
+Inside you'll find some documentation and an installer package.
 Double-click the installer package and follow the instructions on
 screen.
 </p>
@@ -147,7 +146,7 @@ running the command:
    you have an existing <code>.bash_profile</code> file, you should use that
    instead):
   </p>
-          <pre>source /sw/bin/init.sh</pre>
+          <pre>. /sw/bin/init.sh</pre>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -155,7 +154,7 @@ running the command:
 pico .profile</pre>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
-   can simply start typing the <code>source /sw/bin/init.sh</code> line.  It's
+   can simply start typing the <code>. /sw/bin/init.sh</code> line.  It's
    okay if there is a note that says "New file".  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
@@ -165,7 +164,7 @@ pico .profile</pre>
           <p>
             C Shell (default on Mac OS X 10.2 and earlier) </p>
           <p>
-   If you use tcsh (the default on Mac OS X), add the following line to
+   If you use tcsh, add the following line to
    the file <code>.cshrc</code> in your home directory:
   </p>
           <pre>source /sw/bin/init.csh</pre>
@@ -199,8 +198,7 @@ pico .cshrc</pre>
             <li>
               <p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
               <p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p>
-              <pre>mkdir ~/Library/init
-  mkdir ~/Library/init/tcsh
+              <pre>mkdir -p ~/Library/init/tcsh
   pico ~/library/init/tcsh/path</pre>
               <p>and put:</p>
               <pre>source ~/.cshrc</pre>
@@ -218,7 +216,7 @@ pico .cshrc</pre>
       </ul>
       <p>
 Note that the scripts also add <code>/usr/X11R6/bin</code> and
-<code>/usr/X11R6/man</code> to your path so you can use X11 when
+<code>/usr/X11R6/man</code> to your PATH so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.

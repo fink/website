@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:50:43';
+$cvs_date = 'Date: 2004/03/10 11:34:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 include_once "header.inc";
@@ -28,13 +28,12 @@ available packages and select which ones you want installed.
 It runs inside Terminal.app, but takes over the whole "screen" and
 uses simple keyboard navigation.
 Like the other package management tools, <code>dselect</code> requires
-root privileges, so you must either become root before you start it or
-use sudo:
+root privileges, so you should use sudo (from an account with administrator privileges):
 </p>
       <pre>sudo dselect</pre>
       <p>
         <b>Note:</b>
-        <code>dselect</code> has known difficulties with the OSX Terminal application.  You should run the following commands before using it, or put them in the appropriate startup file (e.g. <code>.cshrc</code> | <code>.profile</code>):</p>
+        <code>dselect</code> has known difficulties with the Mac OS X Terminal application.  You should run the following commands before using it, or put them in the appropriate startup file (e.g. <code>.cshrc</code> / <code>.profile</code>):</p>
       <p>tcsh users:</p>
       <pre>setenv TERM xterm-color</pre>
       <p>bash users:</p>

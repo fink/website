@@ -4,7 +4,7 @@
 $section = "documentation";
 $parents = array("doc/index.php", "Document List");
 $navbox = array(
-  "doc/users-guide/index.php?phpLang=fr", "Sommaire",
+  "doc/users-guide/index.php?phpLang=fr", "Contents",
   "doc/users-guide/intro.php?phpLang=fr", "Introduction",
   "doc/users-guide/install.php?phpLang=fr", "Installation",
   "doc/users-guide/packages.php?phpLang=fr", "Paquets",

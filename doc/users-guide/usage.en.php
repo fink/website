@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/09 23:50:43';
+$cvs_date = 'Date: 2004/03/10 11:34:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 include_once "header.inc";
@@ -16,8 +16,7 @@ include_once "header.inc";
 Some of them need at
 least one package name, but can handle several package names at
 once. You can specify just the package name (e.g. gimp), or a fully
-qualified name with a version number (e.g. gimp-1.2.1 or
-gimp-1.2.1-3). Fink will automatically choose the latest available
+qualified name with a version number (e.g. gimp-1.2.1) or with both version and revision numbers (e.g. gimp-1.2.1-3). Fink will automatically choose the latest available
 version and revision when they are not specified.  Others have different options.</p>
       <p>What follows is a list of the commands for the <code>fink</code> tool:</p>
     
@@ -153,7 +152,7 @@ tarballs even when they were downloaded before.</p>
     
     <h2><a name="fetch-missing">6.10 fetch-missing</a></h2>
       
-      <p>Downloads <b>all</b> package source files. This command will only download
+      <p>Downloads <b>all</b> missing package source files. This command will only download
 files that are not present on the system.</p>
     
     <h2><a name="build">6.11 build</a></h2>
