@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.106 2003/04/15 01:23:43 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.107 2003/04/15 19:13:32 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -782,7 +782,7 @@ _perl_get_sv</codeblock>
 <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
-fink index</codeblock></answer></faqentry>
+fink selfupdate-cvs</codeblock></answer></faqentry>
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
