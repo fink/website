@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/13 20:40:22 $';
+$cvs_date = '$Date: 2001/07/30 17:14:06 $';
 
 include "header.inc";
 ?>
@@ -21,10 +21,8 @@ system</li>
 <li>Get rid of .../var/fink-stamp</li>
 <li>Optimization: make sure all binaries are stripped and at least
 basic optimization flags are used (e.g. <tt>-O2</tt>)</li>
-<li>Package database on the web site</li>
 <li>Make it run on older Perl versions</li>
 <li>Support other Unices</li>
-<li>Manage info and other documentation</li>
 </ul>
 
 <p>To request other features, use the <a href="http://sourceforge.net/tracker/?atid=367203&group_id=17203&func=browse">Feature
