@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.19 2001/10/25 10:10:37 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.20 2001/10/25 14:32:37 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -356,7 +356,7 @@ To fix it manually, edit the file
 Remove lines that mention debian.org and replace them with these:
 </p>
 <codeblock>deb http://fink.sourceforge.net/bindist relase main crypto
-deb http://fink.sourceforge.net/bindist relase main crypto</codeblock>
+deb http://fink.sourceforge.net/bindist current main crypto</codeblock>
 <p>
 To fix it through dselect, run "[A]ccess" again, choose the "apt"
 method and enter the following info:

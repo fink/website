@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/25 10:10:37';
+$cvs_date = 'Date: 2001/10/25 14:32:37';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -123,7 +123,7 @@ To fix it manually, edit the file
 <tt><nobr>/sw/etc/apt/sources.list</nobr></tt> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
 </p><pre>deb http://fink.sourceforge.net/bindist relase main crypto
-deb http://fink.sourceforge.net/bindist relase main crypto</pre><p>
+deb http://fink.sourceforge.net/bindist current main crypto</pre><p>
 To fix it through dselect, run "[A]ccess" again, choose the "apt"
 method and enter the following info:
 </p><p>
