@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/13 18:27:33 $';
+$cvs_date = '$Date: 2001/02/18 16:43:52 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -11,15 +11,11 @@ include "header.inc";
 
 <h1>Download Fink</h1>
 
-<p>Fink 0.1.4 was released on 4 February 2001.</p>
-<p><b>Important:</b> The original 0.1.4 release has a small (but
-fatal) bug in the install.sh script. It's fixed in release
-0.1.4a. Nothing else has changed, you only need this if you had
-install problems.</p>
+<p>Fink 0.1.5 was released on 18 February 2001.</p>
 <ul>
 <li><a
-href="http://download.sourceforge.net/fink/fink-0.1.4a.tar.gz">Fink
-0.1.4a</a> - 128K, .tar.gz format</li>
+href="http://download.sourceforge.net/fink/fink-0.1.5.tar.gz">Fink
+0.1.5</a> - 132K, .tar.gz format</li>
 </ul>
 
 <p>For older releases, please visit the Fink <a

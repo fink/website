@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/11 12:17:38 $';
+$cvs_date = '$Date: 2001/02/18 16:43:52 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,8 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-02-18: Version 0.1.5 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-02-04: There was a small (but fatal) bug in the
 install.sh script. Thanks to Roland Quast for pointing it out. It's
 fixed in release 0.1.4a, available on the <a
@@ -34,16 +36,12 @@ href="download.php">download page</a>. Nothing else has changed, you
 only need this if you had install problems.</p>
 <p>2001-02-04: Version 0.1.4 is out. Get it from the <a
 href="download.php">download page</a>.</p>
-<p>2001-01-30: Version 0.1.3 is out. Get it from the <a
-href="download.php">download page</a>.</p>
-<p>2001-01-28: Documentation on Fink's <a
-href="fink/info-format.php">package descriptions</a> is available.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.4 was released on 4 February 2001. If has some new and
-updated packages, and adds a command for updating packages. You can
-grab the release from the <a
+<p>Version 0.1.5 was released on 18 February 2001. As usual, there are
+some new and updated packages and some new commands in the package
+manager. You can grab the release from the <a
 href="download.php">download page</a>.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
