@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.29 2005/01/18 22:47:55 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.30 2005/03/07 12:19:21 babayoshihiko Exp $ */
 ?>
 
 </td></tr>
@@ -34,7 +34,7 @@
 		if ($dyndate == 1) {
 		 	print FOOTER_GENERATED_DYNAMICALLY;
 		} elseif ($dyndate) {
-			print convert_date_to_locale($dyndate);
+			print gmstrftime(FINK_DATE_FORMAT, $dyndate);
 		} else {
 		 	// print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
 			$print_lastchanged = FOOTER_LAST_CHANGED;
