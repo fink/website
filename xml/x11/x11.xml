@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.7 2001/08/10 17:26:27 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.8 2001/08/26 21:15:15 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -914,7 +914,7 @@ file:
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
 through the standard C library, the program will use the default
-messages, usually in English.
+English messages, date formats, and so on.
 There are several ways to deal with this:
 </p>
 <ul>
@@ -938,6 +938,9 @@ Use the <code>libxpg4</code> Fink package (currently only in CVS).
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).
+You may have to set the LANG environment variable to a fully qualified
+value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
+or <code>de_DE</code>.
 </p></li>
 <li><p>
 Ask Apple to include proper locale support in a future version of Mac
