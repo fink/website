@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.48 2003/04/09 17:58:20 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.49 2003/04/09 18:01:07 fingolfin Exp $</cvsid>
 <newsitem>
 	<date>2003-04-09</date>
-	<headline>Interview with on OSNews.com</headline>
+	<headline>Interview on OSNews.com</headline>
 	<body>
 	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring an
 	<extlink url="http://osnews.com/story.php?news_id=3236">mini-interview</extlink> with
