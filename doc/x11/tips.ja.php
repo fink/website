@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/18 15:48:28';
+$cvs_date = 'Date: 2004/05/19 12:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=ja" title="XFree86 トラブルシューティング">';
 
 include_once "header.inc";
@@ -37,7 +37,7 @@ MacOSX 10.3 の場合、アカウントパネルの起動項目で) 、
   setenv DISPLAY :0.0
 endif</pre>
 </li>
-<li><p>bash の場合: 以下を <code>.zshrc</code> に追加:</p>
+<li><p>bash の場合: 以下を <code>.bashrc</code> に追加:</p>
 <pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
 </li>
 </ul>

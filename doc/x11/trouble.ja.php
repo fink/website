@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - トラブルシューティング";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/18 15:48:28';
+$cvs_date = 'Date: 2004/05/19 12:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=ja" title="使用上の Tips"><link rel="prev" href="other.php?phpLang=ja" title="その他の X11">';
 
 include_once "header.inc";

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.16 2004/05/19 02:33:27 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.17 2004/05/22 03:06:12 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -530,7 +530,7 @@ Vous pouvez vous servir de ce fichier comme base pour votre propre fichier .xini
 </p>
       <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
       <p>
-Si vous utilisez Fink, vous devez sourcer <filename>init.sh</filename> (si vous utilisez le shell bash) ou <filename>init.csh</filename> (si vous utilisez le shell tcsh) en début de fichier pour garantir une définition corrrecte de votre environnement.
+Si vous utilisez Fink, vous devez sourcer <filename>init.sh</filename> en début de fichier pour garantir une définition corrrecte de votre environnement.
 </p>
       <p>
 Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <filename>.xinitrc</filename>, mais il faut tenir compte des éléments suivants.
@@ -550,10 +550,6 @@ En fait, la plupart des gestionnaires de fenêtres partent du principe que <code
 </p>
       <codeblock>. /sw/bin/init.sh
 exec gnome-session</codeblock>
-      <p>pour les utilisateurs de bash et :</p>
-       <codeblock>source /sw/bin/init.csh
-exec gnome-session</codeblock>
-<p>pour les utilisateurs de tcsh.</p>
 <p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
       <codeblock>. /sw/bin/init.sh
 
@@ -564,28 +560,23 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
-<p>Les utilisateurs de tcsh doivent changer la première ligne de la manière suivante :</p>
-      <codeblock>source /sw/bin/init.csh</codeblock>
- <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
+<p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
  <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock> 
-<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
 <p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduiteq à :</p>    
  <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock> 
-<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
 <p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
 <codeblock>. /sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
-<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
 <p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
 <codeblock>. /sw/bin/init.sh
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
