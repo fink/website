@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/26 12:31:10';
+$cvs_date = 'Date: 2003/10/30 17:56:22';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -150,7 +150,7 @@ to <code>/sw/fink/dists/local/main/finkinfo</code>.  However, note that your pac
 <code>/sw/etc/fink.conf</code>, add
 <code>unstable/main</code> and <code>unstable/crypto</code> 
 to the beginning of the <code>Trees:</code>
-line, and then run the command <code>fink index</code>.
+line, and then run <code>fink selfupdate; fink index</code>.
 </p></div>
 </a>
 <a name="sudo">

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/26 12:31:10';
+$cvs_date = 'Date: 2003/10/30 17:56:22';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -149,7 +149,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x11-no-windowbar">8.11 I upgraded to Apple's X11 in Panther and now my window title bars are missing.</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.137 2003/10/26 12:31:10 rangerrick Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.138 2003/10/30 17:56:22 rangerrick Exp $</i></p>
 
 
 <?
