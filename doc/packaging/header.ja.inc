@@ -6,9 +6,9 @@ $parents = array("doc/index.php", "Document List");
 $navbox = array(
   "doc/packaging/index.php?phpLang=ja", "Contents",
   "doc/packaging/intro.php?phpLang=ja", "始めに",
-  "doc/packaging/format.php?phpLang=ja", "パッケージ記述情報",
+  "doc/packaging/format.php?phpLang=ja", "パッケージ記述",
   "doc/packaging/policy.php?phpLang=ja", "ポリシー",
-  "doc/packaging/fslayout.php?phpLang=ja", "FS レイアウト",
+  "doc/packaging/fslayout.php?phpLang=ja", "ファイルシステム",
   "doc/packaging/reference.php?phpLang=ja", "リファレンス",
 );
 $printlink = "doc/packaging/packaging.ja.html";
