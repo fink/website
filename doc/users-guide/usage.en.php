@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: chrisdolan';
-$cvs_date = 'Date: 2005/02/16 02:25:05';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/02/21 02:44:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -305,20 +305,7 @@ Only available in <code>fink</code> newer than version 0.21.0
    --percent=key       in the order listed.
       </pre>
     
-    <h2><a name="snapshot">6.23 snapshot</a></h2>
-      
-      <p>
-	Only available in <code>fink</code> newer than version 0.23.5
-      </p>
-      <p>
-	Creates a new .info file for you in /tmp which describes all
-	of the current packages you have installed.  If you copy that
-	.info file to another computer with Fink installed and build
-	it, you can closely replicate your Fink environment.
-	Documentation for how to use the snapshot is included in the
-	created .info file itself.
-      </p>
-    
+
   
 <? include_once "../../footer.inc"; ?>
 
