@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/07/25 13:23:10 $';
+$cvs_date = '$Date: 2002/09/28 12:37:10 $';
 
 include "header.inc";
 ?>
@@ -26,12 +26,12 @@ the binary release.
 <ol>
 <li><p>
 Download the installer disk image:<br>
-<a href="http://us.dl.sourceforge.net/fink/fink-0.4.0a-installer.dmg">Fink
-0.4.0a Binary Installer</a> - 8.4 MB
+<a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg">Fink
+0.4.1 Binary Installer</a> - 10 MB
 </p></li>
 <li><p>
-Double-click "fink-0.4.0a-installer.dmg" to mount the disk image,
-then double-click the "Fink 0.4.0a Installer.pkg" package
+Double-click "Fink-0.4.1-installer.dmg" to mount the disk image,
+then double-click the "Fink 0.4.1 Installer.pkg" package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
@@ -71,7 +71,7 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 <p>
 The source code for the packages in the installer disk image can be
 downloaded from this site,
-<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/source/base/">here</a>.
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/source/base/">here</a>.
 </p>
 
 

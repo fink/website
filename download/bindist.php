@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/07/25 13:23:10 $';
+$cvs_date = '$Date: 2002/09/28 12:37:10 $';
 
 include "header.inc";
 ?>
@@ -21,13 +21,13 @@ This is mainly due to legal reasons with the affected (missing) packages.
 </p>
 <p>
 <b>Status:</b>
-A binary installer for Fink 0.4.0a has been posted.
+A binary installer for Fink 0.4.1 has been posted.
 The binary distribution is complete.
 </p>
 <ul>
-<li><a href="http://us.dl.sourceforge.net/fink/fink-0.4.0a-installer.dmg">Fink
-0.4.0a Binary Installer</a> - 8.4 MB, compressed .dmg disk image</li>
-<li><a href="http://us.dl.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg">Fink
+0.4.1 Binary Installer</a> - 10 MB, compressed .dmg disk image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
 <p>

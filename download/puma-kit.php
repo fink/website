@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/07/25 13:23:10 $';
+$cvs_date = '$Date: 2002/09/28 12:37:10 $';
 
 include "header.inc";
 ?>
@@ -42,12 +42,12 @@ The procedure has three main steps:
 
 <li><p>Getting a decent apt package.
 Download the
-<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt_0.5.4-4_darwin-powerpc.deb">apt-0.5.4-4</a>
 package.
 In a Terminal.app window, go to the folder where you downloaded the
 file and run this command:
 </p>
-<pre>sudo dpkg -i apt_0.5.4-1_darwin-powerpc.deb</pre>
+<pre>sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb</pre>
 <p>
 Once apt is installed, use these commands to update the package
 listings:
@@ -85,18 +85,18 @@ The procedure has four main steps:
 
 <li><p>Getting decent apt and fink packages.
 Download the
-<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/apt_0.5.4-4_darwin-powerpc.deb">apt-0.5.4-4</a>
 and the
-<a href="http://us.dl.sourceforge.net/fink/direct_download/dists/fink-0.4.0/main/binary-darwin-powerpc/base/fink_0.9.11-1_darwin-powerpc.deb">fink-0.9.11-1</a>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/binary-darwin-powerpc/base/fink_0.10.0-1_darwin-powerpc.deb">fink-0.10.0-1</a>
 packages.
 (Yes, that version number is for real.
-The <tt>fink</tt> command in the fink package now has separate
+The <tt>fink</tt> command in the fink package has separate
 version numbering from the Fink distribution.)
 In a Terminal.app window, go to the folder where you downloaded the
 file and run these commands to install the packages:
 </p>
-<pre>sudo dpkg -i apt_0.5.4-1_darwin-powerpc.deb
-sudo dpkg -i fink_0.9.11-1_darwin-powerpc.deb</pre>
+<pre>sudo dpkg -i apt_0.5.4-4_darwin-powerpc.deb
+sudo dpkg -i fink_0.10.0-1_darwin-powerpc.deb</pre>
 <p>
 Once they are installed, use these commands to update the package
 listings:

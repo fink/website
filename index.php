@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/08 01:00:45 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/09/28 12:37:09 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -44,9 +44,7 @@ include $fsroot."news/news.inc";
 <h1>Status</h1>
 
 <p>
-Fink 0.4.0 was released on 18 April 2002.
-A minor update, Fink 0.4.0a, changed the download URLs to be compatible
-with sourceforge's new mirroring setup.
+Fink 0.4.1 was released on 28 September 2002.
 </p>
 
 <h1>Resources</h1>

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.43 2002/09/01 18:17:04 benh57 Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.44 2002/09/28 12:37:11 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -455,8 +455,8 @@ problem, there are two easy workarounds:</p>
     <p>Manually install the latest version of the package manager. Go to the
     <link url="http://fink.sourceforge.net/download/srcdist.php">source release
     download page</link> and get the latest version, then update like this:</p>
-    <codeblock>tar -xzf fink-0.4.0a-full.tar.gz
-cd fink-0.4.0a-full/
+    <codeblock>tar -xzf fink-0.4.1-full.tar.gz
+cd fink-0.4.1-full/
 ./inject.pl /sw
 cd pkginfo
 ./inject.pl /sw</codeblock>

@@ -15,7 +15,7 @@ include "header.inc";
 
 <p>
 If you already have Fink 0.3.x installed, you can update your
-installation to 0.4.0a with the built-in 'selfupdate' command.
+installation to 0.4.1 with the built-in 'selfupdate' command.
 </p>
 
 

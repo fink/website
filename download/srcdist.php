@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/08 22:08:49 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/09/28 12:37:10 $';
 
 include "header.inc";
 ?>
@@ -17,15 +17,13 @@ and build them on your local machine.
 </p>
 
 <p>
-Fink 0.4.0 was released on 18 April 2002.
-A minor update, Fink 0.4.0a, changed the download URLs to be compatible
-with sourceforge's new mirroring setup.
+Fink 0.4.1 was officially released on 28 September 2002.
 
 </p>
 <ul>
 <li><a
-href="http://us.dl.sourceforge.net/fink/fink-0.4.0a-full.tar.gz">Fink
-0.4.0a</a> - 2222K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-0.4.1-full.tar.gz">Fink
+0.4.1</a> - 3601K, .tar.gz format</li>
 </ul>
 
 <p>

@@ -126,12 +126,12 @@ for existence before calling them and the like).
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 3
-of the policy, which coincides with the release of fink's 0.4.0 distribution.
+of the policy, which coincides with the release of Fink's 0.4.0 distribution.
 We begin with a quick summary, and then discuss things in more detail.
 </p><p>
 Any package which builds shared libraries and is either (1) being put into
-  the stable tree, or (2) a new package in fink, should treat its shared
-  libraries according to fink's policy.  This means:</p>
+  the stable tree, or (2) a new package in Fink, should treat its shared
+  libraries according to Fink's policy.  This means:</p>
 <ul>
 <li>   verify, using <tt><nobr>otool -L</nobr></tt>, that 
        the install_name of each library and
