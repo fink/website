@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/07 01:11:54';
+$cvs_date = 'Date: 2005/03/09 03:08:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -24,27 +24,38 @@ version and revision when they are not specified.  Others have different options
       
       <p>
 There are some options, which apply to all fink commands. If you 
-type <code>fink --help</code> you get the list of options:
+type <code>fink --help</code> you get the list of options: 
       </p>
-      <pre>
--h, --help            - display this help text
+      <p>(as of <code>fink-0.24.1</code>)</p>
+      <pre>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
 -v, --verbose         - causes fink to be more verbose, opposite of --quiet
--y, --yes             - assume default answer for all interactive questions
+-y, --yes             - assume default answer for all interactive questio
 -b, --use-binary-dist - download pre-compiled packages from the binary 
-                          distribution if available
-      </pre>
+                        distribution if available (e.g. to reduce compile
+		       time or disk usage).
+		        Note that this mode instructs Fink to download the
+                        version it wants if that version is available for
+		        download; it does not cause Fink to choose a version
+    		        based on its binary availability.
+--no-use-binary-dist  - Don't use pre-compiled binary packages from the
+                        binary distribution (opposite of --use-binary-dist)
+-K, --keep-root-dir   - Causes Fink not to delete the
+                        /sw/src/root-[name]-[version]-[revision]
+		        directory after building a package.
+-k, --keep-build-dir  - Causes Fink not to delete the
+                        /sw/src/[name]-[version]-[revision]
+                        directory after building a package.
+--build-as-nobody     - Drop to a non-root user when performing the unpack,
+                        patch, compile,and install phases. Note that packages
+                        built with this option may be non-functional. You
+                        should use this mode for package development
+                        and debugging only.ns</pre>
       <p>
 Most of these options are self-explanatory. They can also be set in the 
 <a href="conf.php?phpLang=en">Fink configuration file</a> (fink.conf) if you want 
-to set them permanently and not just for that invocation of <code>fink</code>.
-      </p>
-      <p>
-The <code>--use-binary-dist</code> option causes <code>fink</code> to try to
-download pre-compiled binary packages from the binary distribution if available
-and if the binary package is not already on the system. (Only available as of <code>fink</code> version 0.23.0)
-      </p>
+to set them permanently and not just for that invocation of <code>fink</code>.</p>
     
     <h2><a name="install">6.3 install</a></h2>
       
@@ -59,17 +70,13 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</pre>
-      <p>
-If you add the <a href="#options">--use-binary-dist option</a>
-<code>fink</code> will try to download binary packages, if available, instead 
-of building them. This can save a lot of installation time.
-      </p>
+      <p>Use of the <a href="#options">--use-binary-dist</a> option with <code>fink install</code> can speed the build process for complicated packages by quite a lot.</p>
       <p>Aliases for the install command: update, enable, activate, use (most
 of these for historic reasons).</p>
     
     <h2><a name="remove">6.4 remove</a></h2>
       
-      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current implementation has a flaw: it
+      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current default implementation has a flaw: it
 doesn't check dependencies itself but rather completely leaves that to
 the dpkg tool (usually this poses no problem, though).</p>
       <p>The remove command only removes the actual package files,
@@ -78,6 +85,11 @@ the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
 <code>/sw/fink/dists</code> tree.</p>
+      <p>These flags can be used with the fink remove command
+</p>
+      <pre>-h,--help             - Show the options which are available.
+-r,--recursive        - Also remove packages that depend on the package(s) to
+                        be removed (i.e. overcome the above-mentioned flaw).</pre>
       <p>Aliases: disable, deactivate, unuse, delete.</p>
     
     <h2><a name="purge">6.5 purge</a></h2>
@@ -85,16 +97,17 @@ again. If you need the disk space, you can remove the .deb from the
       <p>The purge command purges packages from the system. This is
 the same as the remove command except that it removes configuration
 files as well.</p>
+      <p>This command takes the:</p>
+      <pre>-h,--help
+-r,--recursive</pre>
+      <p>options.</p>
     
     <h2><a name="update-all">6.6 update-all</a></h2>
       
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
       <pre>fink update-all</pre>
-      <p>
-The <a href="#options">--use-binary-dist option</a> is also
-applicable here.
-      </p>
+      <p><a href="#options">--use-binary-dist</a> is also useful with this command.</p>
     
     <h2><a name="list">6.7 list</a></h2>
       
@@ -114,7 +127,7 @@ meanings:
      not installed
  i   latest version is installed
 (i)  installed, but a newer version is available
-</pre>
+ p   a virtual package provided by a package that is installed</pre>
       <p>
 There are also some flags for the <code>fink list</code> command
 </p>
@@ -135,6 +148,12 @@ There are also some flags for the <code>fink list</code> command
 -s=expr,--section=expr
 	  Show only packages in the sections matching the regular
 	  expression expr.
+-m expr,--maintainer=expr
+          Show only packages with the maintainer  matching the
+          regular expression expr.
+-t expr,--tree=expr
+          Show only packages in the trees matching the regular
+          expression expr.
 -w=xyz,--width=xyz
 	  Sets the width of the display you would like the output
 	  formatted for. xyz is either a numeric value or auto.
@@ -188,13 +207,21 @@ will download the tarballs even if they were downloaded before.</p>
     
     <h2><a name="fetch-all">6.11 fetch-all</a></h2>
       
-      <p>Downloads <b>all</b> package source files. Like fetch, this downloads the
+      <p>Downloads <b>all</b> package source files. Like<code>fetch</code>, this downloads the
 tarballs even when they were downloaded before.</p>
+      <p>These flags can be used with the <code>fink fetch-all</code> command:</p>
+      <pre>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</pre>
     
     <h2><a name="fetch-missing">6.12 fetch-missing</a></h2>
       
       <p>Downloads <b>all</b> missing package source files. This command will only download
 files that are not present on the system.</p>
+      <p>These flags can be used with the <code>fink fetch-missing</code> command:</p>
+      <pre>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</pre>
     
     <h2><a name="build">6.13 build</a></h2>
       
@@ -214,9 +241,6 @@ The <a href="#options">--use-binary-dist option</a> is applicable here.
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via <code>dpkg</code>. Very useful
 during package development.</p>
-      <p>
-The <a href="#options">--use-binary-dist option</a> is applicable here.
-      </p>
     
     <h2><a name="reinstall">6.15 reinstall</a></h2>
       
@@ -261,8 +285,14 @@ the list of available packages in the binary distribution is also updated.
       <p>
    This command performs various checks on .info and .deb files. Package
    maintainers should run this on their package descriptions and
-   corresponding built packages before submitting them.
-</p>
+   corresponding built packages before submitting them.</p>
+      <p>The following optional options may be used:</p>
+      <pre>-h,--help            - Show the options which are available.
+-p,--prefix          - Simulate an alternate Fink basepath prefix (%p) within
+                      the files being validated.
+--pedantic, --no-pedantic
+                     - Control the display of nitpicky formatting warnings.
+                      --pedantic is the default.</pre>
       <p>
    Aliases: check
 </p>
@@ -281,7 +311,7 @@ the list of available packages in the binary distribution is also updated.
 </p>
       <p>
 If the <a href="#options">--use-binary-dist option</a> is enabled
-obsolete downloaded binary packages are also deleted.
+obsolete downloaded binary packages are also deleted and <code>fink scanpackages</code> is run as well.
       </p>
     
     <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
@@ -304,6 +334,22 @@ Only available in <code>fink</code> newer than version 0.21.0
 -p key,              - Display the given percent expansion key(s),
    --percent=key       in the order listed.
       </pre>
+    
+    <h2><a name="show-deps">6.23 show-deps</a></h2>
+      
+      <p>Only available in fink-0.23-6 and later.</p>
+      <p>Shows how Fink parses parts of a package's .info file. Various fields and percent expansions will be displayed according to options as follows:</p>
+      <pre>-h,--help            - Show the options which are available.
+-a,--all             - Display all fields from the package description.  This
+                       is the default mode when no --field or --percent flags
+                       are given.
+-f fieldname, --field=fieldname
+                     - Display the given fieldname(s), in the order listed.
+-p key, --percent=key
+                     - Display the given percent expansion key(s), in the
+                      order listed.
+</pre>
+      <p></p>
     
     
   
