@@ -38,14 +38,16 @@ X11 with or without Fink.
 <li><a href="inst-xfree86.php"><b>3 Getting and Installing XFree86</b></a></li>
 <ul>
 <li><a href="inst-xfree86.php#fink">3.1 Installing through Fink</a></li>
-<li><a href="inst-xfree86.php#official-binary">3.2 The Official Binaries</a></li>
-<li><a href="inst-xfree86.php#official-source">3.3 The Official Source</a></li>
-<li><a href="inst-xfree86.php#latest-cvs">3.4 The Latest Development Source</a></li>
-<li><a href="inst-xfree86.php#xonx-bin">3.5 The XonX binary test releases (XAqua,
+<li><a href="inst-xfree86.php#apple-binary">3.2 Apple's Binaries</a></li>
+<li><a href="inst-xfree86.php#official-binary">3.3 The Official Binaries</a></li>
+<li><a href="inst-xfree86.php#official-source">3.4 The Official Source</a></li>
+<li><a href="inst-xfree86.php#latest-cvs">3.5 The Latest Development Source</a></li>
+<li><a href="inst-xfree86.php#xonx-bin">3.6 The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="inst-xfree86.php#macgimp">3.6 MacGimp</a></li>
-<li><a href="inst-xfree86.php#rootless">3.7 Roaming Rootless Servers</a></li>
-<li><a href="inst-xfree86.php#fink-summary">3.8 Fink package summary</a></li>
+<li><a href="inst-xfree86.php#macgimp">3.7 MacGimp</a></li>
+<li><a href="inst-xfree86.php#rootless">3.8 Roaming Rootless Servers</a></li>
+<li><a href="inst-xfree86.php#switching-x11">3.9 Replacing X11</a></li>
+<li><a href="inst-xfree86.php#fink-summary">3.10 Fink package summary</a></li>
 </ul>
 <li><a href="run-xfree86.php"><b>4 Starting XFree86</b></a></li>
 <ul>

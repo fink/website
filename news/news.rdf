@@ -4,9 +4,36 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 05 Jan 2003 17:35:47 EST</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2003 17:03:40 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink Interaction with Apple's X11 Public Beta</title>
+    <link>http://fink.sf.net/news/#2003-01-07%20Fink%20Interaction%20with%20Apple's%20X11%20Public%20Beta</link>
+    <dc:date>2003-01-07</dc:date>
+    <description>
+	
+	Fink works just fine with the public beta X11 release
+	with some caveats.  Please read the newly added Apple X11 section of the Fink X11 Documentation for details.
+	</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>RSS Feeds available</title>
+    <link>http://fink.sf.net/news/#2003-01-07%20RSS%20Feeds%20available</link>
+    <dc:date>2003-01-07</dc:date>
+    <description>
+	
+	Thanks to one of our most valuable developers, Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that cotain a lot of valuable information
+
+fink-stable.rdf will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+
+fink-unstable.rdf will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
+
+news.rdf This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
+
+</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New Upgrade Matrix</title>
     <link>http://fink.sf.net/news/#2002-12-22%20New%20Upgrade%20Matrix</link>
@@ -326,30 +353,6 @@ software before using Fink.
     The binary distribution update is now complete.
     The 10.1 compatibility report has been
     updated to reflect the fixes in Fink 0.3.0.
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.3.0 is released</title>
-    <link>http://fink.sf.net/news/#2001-09-30%20Fink%200.3.0%20is%20released</link>
-    <dc:date>2001-09-30</dc:date>
-    <description>
-    The source release, the binary installer and a binary upgrade kit for
-    broken-by-10.1 installations are available in the new download section.
-    The bulk of the binary distribution will be updated gradually over the
-    next few days, as usual.
-    
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Mac OS X 10.1 released</title>
-    <link>http://fink.sf.net/news/#2001-09-26%20Mac%20OS%20X%2010.1%20released</link>
-    <dc:date>2001-09-26</dc:date>
-    <description>
-    Mac OS X 10.1 has been officially released yesterday. Before you use Fink
-    on 10.1, check out the compatibility report.
-    Update: The apt-get issue has been solved, expect a new release
-    this weekend.
     
   </description>
   </item>

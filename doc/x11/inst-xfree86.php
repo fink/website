@@ -40,7 +40,46 @@ overwrites your manually installed server.
 </p>
 
 
-<a name="official-binary"><h2>3.2 The Official Binaries</h2></a>
+<a name="apple-binary"><h2>3.2 Apple's Binaries</h2></a>
+<p>
+On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
+X11 implementation based on XFree86</a> which includes Quartz rendering and accelerated
+OpenGL.
+</p>
+<p>
+As of the time of this writing, to use the Apple binaries you will need to make sure you
+have the Fink <tt><nobr>system-xfree86</nobr></tt> package, version 4.2.1-3 or higher, installed.
+Also, make sure you download BOTH the SDK (linked from the main site), and the public
+beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
+interact poorly with Fink's installation.
+</p>
+<p>
+If you have existing xfree86 packages installed, be it through Fink or otherwise, you
+can follow the <a href="inst-xfree86.php#switching-x11">instructions on
+replacing one X11 package with another</a>.  Make sure that you remove your existing
+packages, and then install <tt><nobr>system-xfree86</nobr></tt>.
+</p>
+<p>
+Some notes on using Apple's X11:
+</p>
+<ul>
+ <li>
+  <p>The <tt><nobr>autocutsel</nobr></tt> package is no longer needed.  If you're starting
+  X11 with it enabled, you should disable it.</p>
+ </li>
+ <li>
+  <p>Apple's X11 uses your existing <tt><nobr>~/.xinitrc</nobr></tt> file.  If you want the
+  full effect of Quartz integration, you should use <tt><nobr>/usr/X11R6/bin/quartz-wm</nobr></tt>
+  as your window manager, or delete your ~/.xinitrc completely.</p>
+ </li>
+ <li>
+  <p><tt><nobr>quartz-wm</nobr></tt> doesn't fully support Gnome/KDE window manager hints, so
+  you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
+ </li>
+</ul>
+
+
+<a name="official-binary"><h2>3.3 The Official Binaries</h2></a>
 <p>
 The XFree86 project has an official binary distribution of XFree86
 4.2.0.
@@ -58,7 +97,7 @@ rootless under Mac OS X.
 
 
 
-<a name="official-source"><h2>3.3 The Official Source</h2></a>
+<a name="official-source"><h2>3.4 The Official Source</h2></a>
 <p>
 If you've got the time to spare, you can build XFree86 4.2.0 from
 source.
@@ -87,7 +126,7 @@ that can do fullscreen, or rootless under Mac OS X.
 
 
 
-<a name="latest-cvs"><h2>3.4 The Latest Development Source</h2></a>
+<a name="latest-cvs"><h2>3.5 The Latest Development Source</h2></a>
 <p>
 If you have not only time, but also some nerves to spare you can get
 the latest development version of XFree86 from the public CVS
@@ -103,7 +142,7 @@ Then, follow the source build instructions above.
 
 
 
-<a name="xonx-bin"><h2>3.5 The XonX binary test releases (XAqua,
+<a name="xonx-bin"><h2>3.6 The XonX binary test releases (XAqua,
 XDarwin)</h2></a>
 <p>
 In the time before 4.1.0 was released, the XonX team put out a series
@@ -124,7 +163,7 @@ installed on top of XFree86 4.2.0.
 
 
 
-<a name="macgimp"><h2>3.6 MacGimp</h2></a>
+<a name="macgimp"><h2>3.7 MacGimp</h2></a>
 <p>
 The downloadable installer which was offered by the MacGimp people 
 during 2001
@@ -141,7 +180,7 @@ The server does rootless mode, using a patch from the time before
 </p>
 
 
-<a name="rootless"><h2>3.7 Roaming Rootless Servers</h2></a>
+<a name="rootless"><h2>3.8 Roaming Rootless Servers</h2></a>
 
 <p>
 There are various rootless server binaries roaming around
@@ -150,7 +189,46 @@ this should not be a desirable way to install XFree86.
 </p>
 
 
-<a name="fink-summary"><h2>3.8 Fink package summary</h2></a>
+<a name="switching-x11"><h2>3.9 Replacing X11</h2></a>
+<p>
+If you have already installed one of the Fink X11 packages but for one reason or another
+have decided you need to remove one and replace it with another, the procedure is pretty
+straightforward.  You will have to force a removal of the old packages, and then install the
+new, to keep your dpkg database consistent.
+</p>
+<p>
+There are two different ways to do this:
+</p>
+<ol>
+ <li>
+  <p>Use FinkCommander</p>
+  <p>
+   If you are using <a href="http://finkcommander.sf.net/">FinkCommander</a>, you
+   can force removal through the menu.  For example, if you have
+   <tt><nobr>xfree86-rootless</nobr></tt> installed, but want the threaded version, you
+   can select your <tt><nobr>xfree86-rootless</nobr></tt>,
+   <tt><nobr>xfree86-rootless-shlibs</nobr></tt>, <tt><nobr>xfree86-base</nobr></tt>, and
+   <tt><nobr>xfree86-base-shlibs</nobr></tt> packages, and then run:
+  </p>
+  <pre>Source -&gt; Force Remove</pre>
+ </li>
+ <li>
+  <p>Manually Remove from the Command-Line</p>
+  <p>
+   To manually, remove them, you use the <tt><nobr>dpkg</nobr></tt> with the --force-depends
+   option, like so:
+  </p>
+  <pre>dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
+  <p>
+   Note that if you have apps that require threaded XFree86, you may have trouble with your
+   dpkg database if you force remove it and install a different XFree86 package or placeholder
+   package.
+  </p>
+ </li>
+</ol>
+
+
+<a name="fink-summary"><h2>3.10 Fink package summary</h2></a>
 <p>
 A quick summary of the install options and the Fink packages you
 should install:

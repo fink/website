@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body><h1 align="center">Running X11 on Darwin and Mac OS X</h1>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body><h1 style="text-align: center;">Running X11 on Darwin and Mac OS X</h1>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
 OS X and Darwin systems.
@@ -28,14 +28,16 @@ X11 with or without Fink.
 <li><a href="#inst-xfree86"><b>3 Getting and Installing XFree86</b></a></li>
 <ul>
 <li><a href="#inst-xfree86.fink">3.1 Installing through Fink</a></li>
-<li><a href="#inst-xfree86.official-binary">3.2 The Official Binaries</a></li>
-<li><a href="#inst-xfree86.official-source">3.3 The Official Source</a></li>
-<li><a href="#inst-xfree86.latest-cvs">3.4 The Latest Development Source</a></li>
-<li><a href="#inst-xfree86.xonx-bin">3.5 The XonX binary test releases (XAqua,
+<li><a href="#inst-xfree86.apple-binary">3.2 Apple's Binaries</a></li>
+<li><a href="#inst-xfree86.official-binary">3.3 The Official Binaries</a></li>
+<li><a href="#inst-xfree86.official-source">3.4 The Official Source</a></li>
+<li><a href="#inst-xfree86.latest-cvs">3.5 The Latest Development Source</a></li>
+<li><a href="#inst-xfree86.xonx-bin">3.6 The XonX binary test releases (XAqua,
 XDarwin)</a></li>
-<li><a href="#inst-xfree86.macgimp">3.6 MacGimp</a></li>
-<li><a href="#inst-xfree86.rootless">3.7 Roaming Rootless Servers</a></li>
-<li><a href="#inst-xfree86.fink-summary">3.8 Fink package summary</a></li>
+<li><a href="#inst-xfree86.macgimp">3.7 MacGimp</a></li>
+<li><a href="#inst-xfree86.rootless">3.8 Roaming Rootless Servers</a></li>
+<li><a href="#inst-xfree86.switching-x11">3.9 Replacing X11</a></li>
+<li><a href="#inst-xfree86.fink-summary">3.10 Fink package summary</a></li>
 </ul>
 <li><a href="#run-xfree86"><b>4 Starting XFree86</b></a></li>
 <ul>
@@ -341,39 +343,78 @@ version had been completely integrated into the main XFree86 distribution.
 <p>
 Fink will let you install X11 in any way you like,
 but it also provides XFree86 packages of its own. If you
-use <tt><nobr>fink install ...</nobr></tt>, it will download
+use <tt style="white-space: nowrap;">fink install ...</tt>, it will download
 the source code and compile it on your computer. If
-you use <tt><nobr>apt-get install ...</nobr></tt> or the
-<tt><nobr>dselect</nobr></tt> frontend, it will download
+you use <tt style="white-space: nowrap;">apt-get install ...</tt> or the
+<tt style="white-space: nowrap;">dselect</tt> frontend, it will download
 precompiled binary packages, similar to the official
 XFree86 distribution.
 </p>
 <p>
-The <tt><nobr>xfree86-base</nobr></tt> package contains all
+The <tt style="white-space: nowrap;">xfree86-base</tt> package contains all
 of XFree86 4.2.0 except the XDarwin server.  
-The <tt><nobr>xfree86-rootless</nobr></tt> is the server from the standard,
+The <tt style="white-space: nowrap;">xfree86-rootless</tt> is the server from the standard,
 stable XFree86 4.2.0 release. It supports both full-screen and rootless
 operation, and has OpenGL support.  
-(In the early days, Fink also had an <tt><nobr>xfree86-server</nobr></tt> package
+(In the early days, Fink also had an <tt style="white-space: nowrap;">xfree86-server</tt> package
 which only provided fullscreen mode, but this is no longer a relevant
 option.)
 You also have the option to
 install the server yourself; see below.  In this case, you should
-only install <tt><nobr>xfree86-base</nobr></tt>, or you'll risk that Fink
+only install <tt style="white-space: nowrap;">xfree86-base</tt>, or you'll risk that Fink
 overwrites your manually installed server.
 </p>
 
 
-<a name="inst-xfree86.official-binary"><h3>3.2 The Official Binaries</h3></a>
+<a name="inst-xfree86.apple-binary"><h3>3.2 Apple's Binaries</h3></a>
+<p>
+On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
+X11 implementation based on XFree86</a> which includes Quartz rendering and accelerated
+OpenGL.
+</p>
+<p>
+As of the time of this writing, to use the Apple binaries you will need to make sure you
+have the Fink <tt style="white-space: nowrap;">system-xfree86</tt> package, version 4.2.1-3 or higher, installed.
+Also, make sure you download BOTH the SDK (linked from the main site), and the public
+beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
+interact poorly with Fink's installation.
+</p>
+<p>
+If you have existing xfree86 packages installed, be it through Fink or otherwise, you
+can follow the <a href="#inst-xfree86.switching-x11">instructions on
+replacing one X11 package with another</a>.  Make sure that you remove your existing
+packages, and then install <tt style="white-space: nowrap;">system-xfree86</tt>.
+</p>
+<p>
+Some notes on using Apple's X11:
+</p>
+<ul>
+ <li>
+  <p>The <tt style="white-space: nowrap;">autocutsel</tt> package is no longer needed.  If you're starting
+  X11 with it enabled, you should disable it.</p>
+ </li>
+ <li>
+  <p>Apple's X11 uses your existing <tt style="white-space: nowrap;">~/.xinitrc</tt> file.  If you want the
+  full effect of Quartz integration, you should use <tt style="white-space: nowrap;">/usr/X11R6/bin/quartz-wm</tt>
+  as your window manager, or delete your ~/.xinitrc completely.</p>
+ </li>
+ <li>
+  <p><tt style="white-space: nowrap;">quartz-wm</tt> doesn't fully support Gnome/KDE window manager hints, so
+  you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
+ </li>
+</ul>
+
+
+<a name="inst-xfree86.official-binary"><h3>3.3 The Official Binaries</h3></a>
 <p>
 The XFree86 project has an official binary distribution of XFree86
 4.2.0.
 You can find it on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <tt><nobr>4.2.0/binaries/Darwin-ppc</nobr></tt>.
-Be sure to get the <tt><nobr>Xprog.tgz</nobr></tt> and <tt><nobr>Xquartz.tgz</nobr></tt>
+the directory <tt style="white-space: nowrap;">4.2.0/binaries/Darwin-ppc</tt>.
+Be sure to get the <tt style="white-space: nowrap;">Xprog.tgz</tt> and <tt style="white-space: nowrap;">Xquartz.tgz</tt>
 tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
-Run the <tt><nobr>Xinstall.sh</nobr></tt> script as root to install the stuff.
+Run the <tt style="white-space: nowrap;">Xinstall.sh</tt> script as root to install the stuff.
 (You might want to read the <a href="http://www.xfree86.org/4.2.0/Install.html">official
 instructions</a> before installing.)
 You've now got XFree86 with a server that can do fullscreen, or 
@@ -382,19 +423,19 @@ rootless under Mac OS X.
 
 
 
-<a name="inst-xfree86.official-source"><h3>3.3 The Official Source</h3></a>
+<a name="inst-xfree86.official-source"><h3>3.4 The Official Source</h3></a>
 <p>
 If you've got the time to spare, you can build XFree86 4.2.0 from
 source.
 You can find the source on you local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <tt><nobr>4.2.0/source</nobr></tt>.
-Grab all three <tt><nobr>X420src-#.tgz</nobr></tt> tarballs and extract them in
+the directory <tt style="white-space: nowrap;">4.2.0/source</tt>.
+Grab all three <tt style="white-space: nowrap;">X420src-#.tgz</tt> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
-<tt><nobr>config/cf/host.def</nobr></tt> in the XFree86 source tree.
+<tt style="white-space: nowrap;">config/cf/host.def</tt> in the XFree86 source tree.
 
 See
-<tt><nobr>config/cf/darwin.cf</nobr></tt> for some hints.
+<tt style="white-space: nowrap;">config/cf/darwin.cf</tt> for some hints.
 (Note: Only the macros that have an #ifndef check around them can be
 overwritten in host.def.)
 </p>
@@ -411,7 +452,7 @@ that can do fullscreen, or rootless under Mac OS X.
 
 
 
-<a name="inst-xfree86.latest-cvs"><h3>3.4 The Latest Development Source</h3></a>
+<a name="inst-xfree86.latest-cvs"><h3>3.5 The Latest Development Source</h3></a>
 <p>
 If you have not only time, but also some nerves to spare you can get
 the latest development version of XFree86 from the public CVS
@@ -421,13 +462,13 @@ is usually not the same as what you got yesterday.
 </p>
 <p>
 To install, follow the <a href="http://www.xfree86.org/cvs/">XFree86
-CVS</a> instructions to download the <tt><nobr>xc</nobr></tt> module.
+CVS</a> instructions to download the <tt style="white-space: nowrap;">xc</tt> module.
 Then, follow the source build instructions above.
 </p>
 
 
 
-<a name="inst-xfree86.xonx-bin"><h3>3.5 The XonX binary test releases (XAqua,
+<a name="inst-xfree86.xonx-bin"><h3>3.6 The XonX binary test releases (XAqua,
 XDarwin)</h3></a>
 <p>
 In the time before 4.1.0 was released, the XonX team put out a series
@@ -448,7 +489,7 @@ installed on top of XFree86 4.2.0.
 
 
 
-<a name="inst-xfree86.macgimp"><h3>3.6 MacGimp</h3></a>
+<a name="inst-xfree86.macgimp"><h3>3.7 MacGimp</h3></a>
 <p>
 The downloadable installer which was offered by the MacGimp people 
 during 2001
@@ -465,7 +506,7 @@ The server does rootless mode, using a patch from the time before
 </p>
 
 
-<a name="inst-xfree86.rootless"><h3>3.7 Roaming Rootless Servers</h3></a>
+<a name="inst-xfree86.rootless"><h3>3.8 Roaming Rootless Servers</h3></a>
 
 <p>
 There are various rootless server binaries roaming around
@@ -474,12 +515,51 @@ this should not be a desirable way to install XFree86.
 </p>
 
 
-<a name="inst-xfree86.fink-summary"><h3>3.8 Fink package summary</h3></a>
+<a name="inst-xfree86.switching-x11"><h3>3.9 Replacing X11</h3></a>
+<p>
+If you have already installed one of the Fink X11 packages but for one reason or another
+have decided you need to remove one and replace it with another, the procedure is pretty
+straightforward.  You will have to force a removal of the old packages, and then install the
+new, to keep your dpkg database consistent.
+</p>
+<p>
+There are two different ways to do this:
+</p>
+<ol>
+ <li>
+  <p>Use FinkCommander</p>
+  <p>
+   If you are using <a href="http://finkcommander.sf.net/">FinkCommander</a>, you
+   can force removal through the menu.  For example, if you have
+   <tt style="white-space: nowrap;">xfree86-rootless</tt> installed, but want the threaded version, you
+   can select your <tt style="white-space: nowrap;">xfree86-rootless</tt>,
+   <tt style="white-space: nowrap;">xfree86-rootless-shlibs</tt>, <tt style="white-space: nowrap;">xfree86-base</tt>, and
+   <tt style="white-space: nowrap;">xfree86-base-shlibs</tt> packages, and then run:
+  </p>
+  <pre>Source -&gt; Force Remove</pre>
+ </li>
+ <li>
+  <p>Manually Remove from the Command-Line</p>
+  <p>
+   To manually, remove them, you use the <tt style="white-space: nowrap;">dpkg</tt> with the --force-depends
+   option, like so:
+  </p>
+  <pre>dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
+  <p>
+   Note that if you have apps that require threaded XFree86, you may have trouble with your
+   dpkg database if you force remove it and install a different XFree86 package or placeholder
+   package.
+  </p>
+ </li>
+</ol>
+
+
+<a name="inst-xfree86.fink-summary"><h3>3.10 Fink package summary</h3></a>
 <p>
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-rootless</tt></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><tt style="white-space: nowrap;">system-xfree86</tt> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><tt style="white-space: nowrap;">system-xfree86</tt> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><tt style="white-space: nowrap;">xfree86-base</tt> only</p></td></tr></table>
 
 
 
@@ -491,7 +571,7 @@ should install:
 <a name="run-xfree86.darwin"><h3>4.1 Darwin</h3></a>
 <p>
 On pure Darwin, XFree86 behaves like on any other Unix.
-The usual way to start it is via <tt><nobr>startx</nobr></tt> from the console;
+The usual way to start it is via <tt style="white-space: nowrap;">startx</tt> from the console;
 that starts both the server and some initial clients like the window
 manager and a terminal emulator with a shell.
 On pure Darwin it is not necessary to specify any parameters, so you
@@ -501,13 +581,13 @@ can just type:
 <p>
 You can customize what is started through several files in your home
 directory.
-<tt><nobr>.xinitrc</nobr></tt> controls what clients get started.
-<tt><nobr>.xserverrc</nobr></tt> controls server options and may even
+<tt style="white-space: nowrap;">.xinitrc</tt> controls what clients get started.
+<tt style="white-space: nowrap;">.xserverrc</tt> controls server options and may even
 start a different server.
 If you're having trouble (as in, you only get a blank screen or
 XFree86 drops you right back to the console), you can start
 troubleshooting by moving these files out of the way.
-When <tt><nobr>startx</nobr></tt> doesn't find these files, it will use safe
+When <tt style="white-space: nowrap;">startx</tt> doesn't find these files, it will use safe
 defaults that should always work.
 </p>
 <p>
@@ -516,19 +596,19 @@ options, like this:
 </p>
 <pre>X -query remotehost</pre>
 <p>
-Details about this can be found in the <tt><nobr>Xserver</nobr></tt> manual
+Details about this can be found in the <tt style="white-space: nowrap;">Xserver</tt> manual
 page.
 </p>
 <p>
-Finally, there is the option to set up <tt><nobr>xdm</nobr></tt>; read its
+Finally, there is the option to set up <tt style="white-space: nowrap;">xdm</tt>; read its
 manual page for details.
 </p>
 <p>
-Note: If you're running Mac OS X, you can type <tt><nobr>&gt;console</nobr></tt>
+Note: If you're running Mac OS X, you can type <tt style="white-space: nowrap;">&gt;console</tt>
 at the login window and you'll get a text console that is
 equivalent to pure Darwin.
 You can use all of the start methods outlined above, with the
-exception of <tt><nobr>xdm</nobr></tt>.
+exception of <tt style="white-space: nowrap;">xdm</tt>.
 </p>
 
 
@@ -550,15 +630,15 @@ the application.
 </p>
 <p>
 The other way to start XFree86 under Mac OS X is via
-<tt><nobr>startx</nobr></tt> from Terminal.app.
+<tt style="white-space: nowrap;">startx</tt> from Terminal.app.
 If you start the server this way, you must tell it that it should run
 in parallel with Quartz.
-You do this by passing the <tt><nobr>-fullscreen</nobr></tt> option, like this:
+You do this by passing the <tt style="white-space: nowrap;">-fullscreen</tt> option, like this:
 </p>
 <pre>startx -- -fullscreen</pre>
 <p>
 That will start up the server in fullscreen mode, 
-plus the clients inyour <tt><nobr>.xinitrc</nobr></tt>.  
+plus the clients inyour <tt style="white-space: nowrap;">.xinitrc</tt>.  
 </p>
 <p>
 NOTE: prior to 4.2, -quartz was used for fullscreen mode.
@@ -566,10 +646,10 @@ NOTE: prior to 4.2, -quartz was used for fullscreen mode.
 <p>
 If the server you have supports rootless operation, 
 you can start it in rootless mode with the 
-<tt><nobr>-rootless</nobr></tt> option:</p>
+<tt style="white-space: nowrap;">-rootless</tt> option:</p>
 <pre>startx -- -rootless</pre>
 <p>
-The <tt><nobr>-quartz</nobr></tt> option no longer selects fullscreen mode,
+The <tt style="white-space: nowrap;">-quartz</tt> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
 
@@ -577,48 +657,48 @@ but rather uses the default mode set in the preferences.
 
 <a name="run-xfree86.xinitrc"><h3>4.3 The .xinitrc File</h3></a>
 <p>
-If a file named <tt><nobr>.xinitrc</nobr></tt> exists in your home
+If a file named <tt style="white-space: nowrap;">.xinitrc</tt> exists in your home
 directory, it will be used to start some initial X clients, e.g. the
 window manager and some xterms or a desktop environment like GNOME.
-The <tt><nobr>.xinitrc</nobr></tt> file is a shell script that contains
+The <tt style="white-space: nowrap;">.xinitrc</tt> file is a shell script that contains
 the commands to do this.
-It is <b>not</b> necessary to put the usual <tt><nobr>#!/bin/sh</nobr></tt>
+It is <b>not</b> necessary to put the usual <tt style="white-space: nowrap;">#!/bin/sh</tt>
 in the first line and to set the executable bit on the file;
 xinit will still know how to run it through a shell.
 </p>
 <p>
-When there is no <tt><nobr>.xinitrc</nobr></tt> file in your home
+When there is no <tt style="white-space: nowrap;">.xinitrc</tt> file in your home
 directory, XFree86 will use its default file,
-<tt><nobr>/usr/X11R6/lib/X11/xinit/xinitrc</nobr></tt>.
+<tt style="white-space: nowrap;">/usr/X11R6/lib/X11/xinit/xinitrc</tt>.
 You can use the default file as a starting point for your own
 .xinitrc:
 </p>
 <pre>cp /usr/X11R6/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
 <p>
-If you're using Fink, you should source <tt><nobr>init.sh</nobr></tt>
+If you're using Fink, you should source <tt style="white-space: nowrap;">init.sh</tt>
 right at the beginning to make sure the environment is set up correctly.
 </p>
 <p>
-You can put fairly arbitrary commands in an <tt><nobr>.xinitrc</nobr></tt>,
+You can put fairly arbitrary commands in an <tt style="white-space: nowrap;">.xinitrc</tt>,
 but there are some cheavats.
 First, the shell that interprets the file will by default wait for
 every program to finish before it starts the next one.
 If you want several programs to run in parallel, you must tell the
-shell to put them &quot;in the background&quot; by adding a <tt><nobr>&amp;</nobr></tt> at
+shell to put them &quot;in the background&quot; by adding a <tt style="white-space: nowrap;">&amp;</tt> at
 the end of the line.
 </p>
 <p>
-Second, <tt><nobr>xinit</nobr></tt> waits for the <tt><nobr>.xinitrc</nobr></tt>
+Second, <tt style="white-space: nowrap;">xinit</tt> waits for the <tt style="white-space: nowrap;">.xinitrc</tt>
 script to finish and interprets that as &quot;the session has ended, I should
 kill the X server now, too&quot;.
-This means that the last command of your <tt><nobr>.xinitrc</nobr></tt>
+This means that the last command of your <tt style="white-space: nowrap;">.xinitrc</tt>
 must not be run in the background and it should be a long-living program.
 Customarily, the window manager is used for this purpose.
-In fact, most window managers assume that <tt><nobr>xinit</nobr></tt> is
+In fact, most window managers assume that <tt style="white-space: nowrap;">xinit</tt> is
 waiting for them to finish and use this to make the &quot;Log out&quot; entry in
 their menus work.
 (Note: To save some memory and CPU cycles, you can put an
-<tt><nobr>exec</nobr></tt> before the last line like in the examples below.)
+<tt style="white-space: nowrap;">exec</tt> before the last line like in the examples below.)
 </p>
 <p>
 A simple example that starts up GNOME:
@@ -654,7 +734,7 @@ Be sure to select the startup volume when asked.
 </p>
 <p>
 If you're using Fink, you should install the
-<tt><nobr>system-xtools</nobr></tt> package after you've installed Xtools.
+<tt style="white-space: nowrap;">system-xtools</tt> package after you've installed Xtools.
 That package will not install any files, it will just check that the
 libraries etc. are there and act as a placeholder in Fink's dependency
 system.
@@ -666,7 +746,7 @@ system.
 <p>
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
-<tt><nobr>.xinitrc</nobr></tt> file.
+<tt style="white-space: nowrap;">.xinitrc</tt> file.
 Xtools additionally allows you to start clients via the menu.
 </p>
 
@@ -756,7 +836,7 @@ by the XonX project, so &quot;1.0a1&quot; may actually be any version between
 These are essential in pinpointing the particular problem you
 experience.
 How you get the error messages depends on how you started XDarwin.
-If you ran <tt><nobr>startx</nobr></tt> from a Terminal window, you'll have the
+If you ran <tt style="white-space: nowrap;">startx</tt> from a Terminal window, you'll have the
 messages right there in that window.
 Remember that you can scroll up.
 If you started XDarwin by double-clicking the icon, the messages end
@@ -804,7 +884,7 @@ fixed after 1.0a3 was released.
 Class: Mostly harmless.
 It is unknown where these messages come from and they seem to have no
 impact on operations.
-You can get rid of them by running <tt><nobr>touch .Xauthority</nobr></tt> in
+You can get rid of them by running <tt style="white-space: nowrap;">touch .Xauthority</tt> in
 your home directory.
 </p>
 
@@ -857,7 +937,7 @@ simply activating the check box may not be sufficient with some
 versions of XDarwin.
 If you can't get to the Preferences dialog because XDarwin closes
 before you get a chance, run it from Terminal with the command
-<tt><nobr>startx -- -quartz -keymap USA.keymapping</nobr></tt>.
+<tt style="white-space: nowrap;">startx -- -quartz -keymap USA.keymapping</tt>.
 This usually allows XDarwin to start up, and you can then make the
 permanent choice in the Preferences dialog.
 </p>
@@ -884,20 +964,20 @@ while you were logged into Aqua.
 Usually this happens when you installed the official XFree86 binary
 distribution and left out the Xquartz.tgz tarball.
 It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you issue the command <tt><nobr>XDarwin</nobr></tt> in a Terminal
+or when you issue the command <tt style="white-space: nowrap;">XDarwin</tt> in a Terminal
 window to start the server (you should use startx instead in that
 case, see <a href="#run-xfree86">Starting XFree86</a>).
 </p>
 <p>
-In any case, you can run <tt><nobr>ls -l /usr/X11R6/bin/X*</nobr></tt> and
+In any case, you can run <tt style="white-space: nowrap;">ls -l /usr/X11R6/bin/X*</tt> and
 check the output.
 You should see four relevant entries:
-<tt><nobr>X</nobr></tt>, a symlink pointing at <tt><nobr>XDarwinStartup</nobr></tt>;
-<tt><nobr>XDarwin</nobr></tt>, an executable file (this is the console
+<tt style="white-space: nowrap;">X</tt>, a symlink pointing at <tt style="white-space: nowrap;">XDarwinStartup</tt>;
+<tt style="white-space: nowrap;">XDarwin</tt>, an executable file (this is the console
 mode server);
-<tt><nobr>XDarwinQuartz</nobr></tt>, a symlink pointing at
-<tt><nobr>/Applications/XDarwin.app/Contents/MacOS/XDarwin</nobr></tt>;
-and <tt><nobr>XDarwinStartup</nobr></tt>, a small executable file.
+<tt style="white-space: nowrap;">XDarwinQuartz</tt>, a symlink pointing at
+<tt style="white-space: nowrap;">/Applications/XDarwin.app/Contents/MacOS/XDarwin</tt>;
+and <tt style="white-space: nowrap;">XDarwinStartup</tt>, a small executable file.
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
@@ -924,7 +1004,7 @@ This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
 initialization files are not set up to add /usr/X11R6/bin to the PATH
 variable.
 If you use Fink and haven't changed your default shell, adding the
-line <tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt>
+line <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> to <tt style="white-space: nowrap;">.cshrc</tt>
 in your home directory (as recommended by the Fink instructions) should
 be sufficient.
 </p>
@@ -941,7 +1021,7 @@ at once,
 or maybe after an unclean shutdown (i.e. crash) of XDarwin.
 It might also be a file permission problem with the sockets for local
 connections.
-You can try to clean that up with <tt><nobr>rm -rf /tmp/.X11-unix</nobr></tt>.
+You can try to clean that up with <tt style="white-space: nowrap;">rm -rf /tmp/.X11-unix</tt>.
 Restarting the computer also helps in most cases (Mac OS X
 automatically cleans up /tmp when it boots, and the network stack is
 reset).
@@ -968,16 +1048,16 @@ touch .Xauthority</pre>
 
 <p>
 Another common cause for XFree86 startup failures is an incorrect
-<tt><nobr>.xinitrc</nobr></tt> file.
-What happens is that the <tt><nobr>.xinitrc</nobr></tt> is run and for some
+<tt style="white-space: nowrap;">.xinitrc</tt> file.
+What happens is that the <tt style="white-space: nowrap;">.xinitrc</tt> is run and for some
 reason terminates almost immediately.
-<tt><nobr>xinit</nobr></tt> interprets this as &quot;the user's session has ended&quot;
+<tt style="white-space: nowrap;">xinit</tt> interprets this as &quot;the user's session has ended&quot;
 and kills XDarwin.
 See the <a href="#run-xfree86.xinitrc">.xinitrc
 section</a> for more details.
 Remember to set up the PATH and to have one long-lived program that is
 not started in the background.
-It is a good idea to add <tt><nobr>exec xterm</nobr></tt> as a fallback when
+It is a good idea to add <tt style="white-space: nowrap;">exec xterm</tt> as a fallback when
 your window manager or similar can't be found.
 </p>
 
@@ -1006,7 +1086,7 @@ The XFree86 servers installed by Fink (i.e. the xfree86-server and
 xfree86-rootless packages) have it turned off.
 The GIMP and the GNOME panel have been innoculated as well.
 If you experience black icons in another application, start that
-application with the <tt><nobr>--no-xshm</nobr></tt> command line option.
+application with the <tt style="white-space: nowrap;">--no-xshm</tt> command line option.
 </p>
 
 
@@ -1076,13 +1156,13 @@ Example for .cshrc:
 <pre>unsetenv LANG</pre>
 </li>
 <li><p>
-Use the <tt><nobr>libxpg4</nobr></tt> Fink package.
+Use the <tt style="white-space: nowrap;">libxpg4</tt> Fink package.
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
 DYLD_INSERT_LIBRARIES environment variable).
 You may have to set the LANG environment variable to a fully qualified
-value, e.g. <tt><nobr>de_DE.ISO_8859-1</nobr></tt> instead of <tt><nobr>de</nobr></tt>
-or <tt><nobr>de_DE</nobr></tt>.
+value, e.g. <tt style="white-space: nowrap;">de_DE.ISO_8859-1</tt> instead of <tt style="white-space: nowrap;">de</tt>
+or <tt style="white-space: nowrap;">de_DE</tt>.
 </p></li>
 <li><p>
 Ask Apple to include proper locale support in a future version of Mac
@@ -1128,7 +1208,7 @@ with X11 tunneling.
 <a name="tips.open"><h3>8.2 Launching Aqua apps from an xterm</h3></a>
 <p>
 One way to launch Aqua applications from an xterm (or any other shell,
-actually) is the <tt><nobr>open</nobr></tt> command.
+actually) is the <tt style="white-space: nowrap;">open</tt> command.
 Some examples:
 </p>
 <pre>open /Applications/TextEdit.app
@@ -1164,7 +1244,7 @@ buffers&quot; in X11 speak), and some applications have weird views which
 one should be used.
 In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
 because of this.
-The program <tt><nobr>autocutsel</nobr></tt> can help here; it automatically
+The program <tt style="white-space: nowrap;">autocutsel</tt> can help here; it automatically
 synchronizes the two main cut buffers.
 To run it, install the autocutsel Fink package and add the following
 line to your .xinitrc:

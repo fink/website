@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.16 2002/05/22 17:31:50 dmrrsn Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.17 2003/01/07 22:08:46 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -318,6 +318,45 @@ overwrites your manually installed server.
 </p>
 </section>
 
+<section name="apple-binary"><title>Apple's Binaries</title>
+<p>
+On January 7, 2003, Apple released <link url="http://www.apple.com/macosx/x11/">a custom
+X11 implementation based on XFree86</link> which includes Quartz rendering and accelerated
+OpenGL.
+</p>
+<p>
+As of the time of this writing, to use the Apple binaries you will need to make sure you
+have the Fink <filename>system-xfree86</filename> package, version 4.2.1-3 or higher, installed.
+Also, make sure you download BOTH the SDK (linked from the main site), and the public
+beta files.  Do not download the "common toolkits" from OpenDarwin, they will likely
+interact poorly with Fink's installation.
+</p>
+<p>
+If you have existing xfree86 packages installed, be it through Fink or otherwise, you
+can follow the <xref chapter="inst-xfree86" section="switching-x11">instructions on
+replacing one X11 package with another</xref>.  Make sure that you remove your existing
+packages, and then install <filename>system-xfree86</filename>.
+</p>
+<p>
+Some notes on using Apple's X11:
+</p>
+<ul>
+ <li>
+  <p>The <filename>autocutsel</filename> package is no longer needed.  If you're starting
+  X11 with it enabled, you should disable it.</p>
+ </li>
+ <li>
+  <p>Apple's X11 uses your existing <filename>~/.xinitrc</filename> file.  If you want the
+  full effect of Quartz integration, you should use <filename>/usr/X11R6/bin/quartz-wm</filename>
+  as your window manager, or delete your ~/.xinitrc completely.</p>
+ </li>
+ <li>
+  <p><filename>quartz-wm</filename> doesn't fully support Gnome/KDE window manager hints, so
+  you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
+ </li>
+</ul>
+</section>
+
 <section name="official-binary"><title>The Official Binaries</title>
 <p>
 The XFree86 project has an official binary distribution of XFree86
@@ -437,6 +476,45 @@ There are various rootless server binaries roaming around
 the net.  With the release of the official 4.2.0 binaries
 this should not be a desirable way to install XFree86.
 </p>
+</section>
+
+<section name="switching-x11"><title>Replacing X11</title>
+<p>
+If you have already installed one of the Fink X11 packages but for one reason or another
+have decided you need to remove one and replace it with another, the procedure is pretty
+straightforward.  You will have to force a removal of the old packages, and then install the
+new, to keep your dpkg database consistent.
+</p>
+<p>
+There are two different ways to do this:
+</p>
+<ol>
+ <li>
+  <p>Use FinkCommander</p>
+  <p>
+   If you are using <link url="http://finkcommander.sf.net/">FinkCommander</link>, you
+   can force removal through the menu.  For example, if you have
+   <filename>xfree86-rootless</filename> installed, but want the threaded version, you
+   can select your <filename>xfree86-rootless</filename>,
+   <filename>xfree86-rootless-shlibs</filename>, <filename>xfree86-base</filename>, and
+   <filename>xfree86-base-shlibs</filename> packages, and then run:
+  </p>
+  <codeblock>Source -&gt; Force Remove</codeblock>
+ </li>
+ <li>
+  <p>Manually Remove from the Command-Line</p>
+  <p>
+   To manually, remove them, you use the <filename>dpkg</filename> with the --force-depends
+   option, like so:
+  </p>
+  <codeblock>dpkg -r --force-depends xfree86-rootless xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
+  <p>
+   Note that if you have apps that require threaded XFree86, you may have trouble with your
+   dpkg database if you force remove it and install a different XFree86 package or placeholder
+   package.
+  </p>
+ </li>
+</ol>
 </section>
 
 <section name="fink-summary"><title>Fink package summary</title>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2002/12/08 00:05:40';
+$cvs_date = 'Date: 2002/12/21 01:53:22';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -66,7 +66,7 @@ apt-get</a></li>
 <li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
 <li><a href="conf.php#developer">5.7 Developer Settings</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.14 2002/12/08 00:05:40 benh57 Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.15 2002/12/21 01:53:22 benh57 Exp $</i></p>
 
 
 <?

@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Fink User's Guide</title></head><body><h1 align="center">Fink User's Guide</h1>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Fink Documentation - Fink User's Guide</title></head><body><h1 style="text-align: center;">Fink User's Guide</h1>
 <p>
 <b>This document is a work in progress.</b>
 The following older documents may offer a broader view:
@@ -227,7 +227,7 @@ When the installer is finished, proceed with the
 <a name="install.src"><h3>2.2 Installing the Source Distribution</h3></a>
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
-It contains only the <tt><nobr>fink</nobr></tt> package manager and its package
+It contains only the <tt style="white-space: nowrap;">fink</tt> package manager and its package
 descriptions and will download the source for packages on the fly.
 You can get it from the
 <a href="http://fink.sourceforge.net/download/srcdist.php">download page</a>.
@@ -246,7 +246,7 @@ The following command extracts the archive:
 <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
 <p>
 That creates a directory with the same name as the archive.
-We'll just keep on using the placeholder <tt><nobr>fink-0.x.x-full</nobr></tt>
+We'll just keep on using the placeholder <tt style="white-space: nowrap;">fink-0.x.x-full</tt>
 here.
 Now, change into that directory and run the bootstrap script:
 </p>
@@ -257,7 +257,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<tt><nobr>/sw</nobr></tt>.
+<tt style="white-space: nowrap;">/sw</tt>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -269,8 +269,8 @@ You'll be asked for things like proxy and mirror settings and whether
 you want verbose messages.
 If you don't understand a question, just press return to accept the
 default choice.
-You can re-run this process later using the <tt><nobr>fink
-configure</nobr></tt> command.
+You can re-run this process later using the <tt style="white-space: nowrap;">fink
+configure</tt> command.
 </p>
 <p>
 When the bootstrap script has all the information it needs, it will
@@ -293,7 +293,7 @@ the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
 Shell scripts are provided to make this easy.
 If you use tcsh (the default on Mac OS X), add the following line to
-the file <tt><nobr>.cshrc</nobr></tt> in your home directory:
+the file <tt style="white-space: nowrap;">.cshrc</tt> in your home directory:
 </p>
 <pre>source /sw/bin/init.csh</pre>
 <p>
@@ -303,7 +303,7 @@ If you don't know how to add the line, run these commands:
 pico .cshrc</pre>
 <p>
 You are now in a full-screen (well, full terminal window) text editor
-and can simply start typing the <tt><nobr>source /sw/bin/init.csh</nobr></tt>
+and can simply start typing the <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt>
 line.
 It's okay if there is a note that says &quot;New file&quot;.
 Be sure that you pressed Return at least once after the line, then
@@ -313,18 +313,18 @@ press Control-O, Return, Control-X to get out of the editor.
 Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
-You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
+You'll also need to run <tt style="white-space: nowrap;">rehash</tt> because tcsh caches the
 list of available commands internally.
 </p>
 <p>
 If you use a Bourne style shell (e.g. sh, bash, zsh), use
-<tt><nobr>/sw/bin/init.sh</nobr></tt> instead.
-The file to edit varies with the shell, although <tt><nobr>.profile</nobr></tt>
+<tt style="white-space: nowrap;">/sw/bin/init.sh</tt> instead.
+The file to edit varies with the shell, although <tt style="white-space: nowrap;">.profile</tt>
 should work for all Bourne style shells.
 </p>
 <p>
-Note that the scripts also add <tt><nobr>/usr/X11R6/bin</nobr></tt> and
-<tt><nobr>/usr/X11R6/man</nobr></tt> to your path so you can use X11 when
+Note that the scripts also add <tt style="white-space: nowrap;">/usr/X11R6/bin</tt> and
+<tt style="white-space: nowrap;">/usr/X11R6/man</tt> to your path so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.
@@ -403,11 +403,11 @@ and Mac OS X document</a>.
 <a name="packages.bin-dselect"><h3>3.2 Installing Binary Packages with
 dselect</h3></a>
 <p>
-<tt><nobr>dselect</nobr></tt> is a program that lets you browse the list of
+<tt style="white-space: nowrap;">dselect</tt> is a program that lets you browse the list of
 available packages and select which ones you want installed.
 It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
 uses simple keyboard navigation.
-Like the other package management tools, <tt><nobr>dselect</nobr></tt> requires
+Like the other package management tools, <tt style="white-space: nowrap;">dselect</tt> requires
 root privileges, so you must either become root before you start it or
 use sudo:
 </p>
@@ -480,10 +480,10 @@ the &quot;[I]nstall&quot; menu item to actually install the packages.
 <a name="packages.bin-apt"><h3>3.3 Installing Binary Packages with
 apt-get</h3></a>
 <p>
-<tt><nobr>dselect</nobr></tt> doesn't actually download the packages itself.
+<tt style="white-space: nowrap;">dselect</tt> doesn't actually download the packages itself.
 Instead, it runs apt to do the dirty work.
 If you prefer a pure command line interface, you can access the
-functions of apt directly, with the <tt><nobr>apt-get</nobr></tt> command.
+functions of apt directly, with the <tt style="white-space: nowrap;">apt-get</tt> command.
 </p>
 <p>
 Like with dselect, you must first download the current listing of
@@ -511,12 +511,12 @@ Removing packages is just as easy:
 <a name="packages.src"><h3>3.4 Installing Packages from Source</h3></a>
 <p>
 To get a list of packages that are available for installation from
-source, ask the <tt><nobr>fink</nobr></tt> tool:
+source, ask the <tt style="white-space: nowrap;">fink</tt> tool:
 </p>
 <pre>fink list</pre>
 <p>
 The first column lists the installation state (blank for not
-installed, <tt><nobr>i</nobr></tt> for installed, <tt><nobr>(i)</nobr></tt> for
+installed, <tt style="white-space: nowrap;">i</tt> for installed, <tt style="white-space: nowrap;">(i)</tt> for
 installed but not the latest version), followed by the package name,
 the latest version, and a short description.
 You can ask for more information about a specific package using the
@@ -529,7 +529,7 @@ When you have found a package that you want to install, use the
 </p>
 <pre>fink install wget-ssl</pre>
 <p>
-The <tt><nobr>fink</nobr></tt> command will first check if all necessary
+The <tt style="white-space: nowrap;">fink</tt> command will first check if all necessary
 prerequisites (&quot;dependencies&quot;) are present, and will ask you if it's
 okay to install them if some are missing.
 Then it goes ahead and downloads source code, unpacks it, patches it,
@@ -564,8 +564,8 @@ Of course, you may want to run &quot;[S]elect&quot; in between to check the
 selections that were made and to find out about new packages.
 </p>
 <p>
-For apt, run <tt><nobr>apt-get update</nobr></tt> to get the latest package
-list, then <tt><nobr>apt-get upgrade</nobr></tt> to update all packages that
+For apt, run <tt style="white-space: nowrap;">apt-get update</tt> to get the latest package
+list, then <tt style="white-space: nowrap;">apt-get upgrade</tt> to update all packages that
 have new versions available.
 </p>
 <p>
@@ -587,11 +587,11 @@ packages; the actual source code is downloaded as needed.
 </p>
 <p>
 If you have Fink 0.2.5 or later, the first step can be accomplished by
-running <tt><nobr>fink selfupdate</nobr></tt>.
+running <tt style="white-space: nowrap;">fink selfupdate</tt>.
 That command will check with the Fink website to see if a new point
 release is available, and will automatically download and install the
 package descriptions in that case.
-In recent versions of the <tt><nobr>fink</nobr></tt> command, you get the
+In recent versions of the <tt style="white-space: nowrap;">fink</tt> command, you get the
 option to pull package descriptions directly from CVS.
 CVS is a version-controlled repository where the package descriptions
 are stored and managed.
@@ -610,8 +610,8 @@ cd packages-0.x.x
 ./inject.pl</pre>
 <p>
 Once you have updated your package descriptions (no matter which way),
-you should update all packages at once with the command <tt><nobr>fink
-update-all</nobr></tt>.
+you should update all packages at once with the command <tt style="white-space: nowrap;">fink
+update-all</tt>.
 </p>
 
 
@@ -620,9 +620,9 @@ update-all</nobr></tt>.
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions
 above to upgrade your Fink installation.
-That is, first use <tt><nobr>dselect</nobr></tt> or <tt><nobr>apt-get</nobr></tt> to get
+That is, first use <tt style="white-space: nowrap;">dselect</tt> or <tt style="white-space: nowrap;">apt-get</tt> to get
 the latest versions of the packages that are available as binaries,
-then use <tt><nobr>fink selfupdate</nobr></tt> and <tt><nobr>fink update-all</nobr></tt>
+then use <tt style="white-space: nowrap;">fink selfupdate</tt> and <tt style="white-space: nowrap;">fink update-all</tt>
 to get the current package descriptions and to update the remaining
 packages.
 </p>
@@ -643,13 +643,13 @@ file (fink.conf) and how they influence the behaviour of Fink.
 When Fink is initially installed it prompts you for the answers to some
 questions to set up your configuration file, such as which <a href="#conf.mirrors">mirrors</a> you want to use for downloading files
 and how to acquire super-user rights. You can re-run this process by
-calling the <tt><nobr>fink configure</nobr></tt> command. In order to set some
+calling the <tt style="white-space: nowrap;">fink configure</tt> command. In order to set some
 options, you may need to edit your <b>fink.conf</b> file by hand. In
 general, these options are meant for advanced users only.
 </p>
 <p>
 The <b>fink.conf</b> file is located at
-<tt><nobr>/sw/etc/fink.conf</nobr></tt>, and can be edited in your favourite
+<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>, and can be edited in your favourite
 text editor. You will need super-user rights to edit it.
 </p>
 
@@ -712,11 +712,11 @@ unstable/crypto - unstable cryptographic packages
 unstable/main   - other unstable packages
 </pre>
 <p>
-You may also add your own trees in the <tt><nobr>/sw/fink/dists</nobr></tt>
+You may also add your own trees in the <tt style="white-space: nowrap;">/sw/fink/dists</tt>
 directory for your own purposes, but this is not necessary in most
 circumstances. The default trees are &quot;local/main local/bootstrap
 stable/main&quot;. This list should be kept in sync with the
-<tt><nobr>/sw/etc/apt/sources.list</nobr></tt> file.
+<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> file.
 </p>
 </li>
 <li><p><b>Distribution:</b> 10.1 or 10.2</p>
@@ -729,7 +729,7 @@ alter this value.
 </li>
 <li><p><b>FetchAltDir:</b> path</p>
 <p>usually fink will store the sources it fetches in
-<tt><nobr>/sw/src</nobr></tt>. You can specify an alernate directory to look for
+<tt style="white-space: nowrap;">/sw/src</tt>. You can specify an alernate directory to look for
 downloaded source code in using this option. For example:
 </p>
 <pre>FetchAltDir: /usr/src</pre>
@@ -751,14 +751,14 @@ save it having to read and parse them all every time it runs. Fink
 checks whether or not thepackage index needs to be updated unless this
 option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is not
 recommended that you change it. If you do, you may need to manually run
-the <tt><nobr>fink index</nobr></tt> command to update the index.</p>
+the <tt style="white-space: nowrap;">fink index</tt> command to update the index.</p>
 </li>
 <li><p><b>SelfUpdateNoCVS:</b> boolean</p>
-<p>The command <tt><nobr>fink selfupdate</nobr></tt> upgrades Fink package
+<p>The command <tt style="white-space: nowrap;">fink selfupdate</tt> upgrades Fink package
 manager to the latest release. This option makes sure that the
 Concurrent Version System (CVS) is not used to achieve this when set to
-True. It is set automatically by the <tt><nobr>fink
-selfupdate-cvs</nobr></tt> command, so you should not need to change it
+True. It is set automatically by the <tt style="white-space: nowrap;">fink
+selfupdate-cvs</tt> command, so you should not need to change it
 manually.</p>
 </li>
 </ul>
@@ -814,16 +814,16 @@ different mirror anywhere in the world.</p>
 would like to use.</p>
 <ul>
 <li><p><b>MirrorContinent:</b> three letter code</p>
-<p>You should change this value using the <tt><nobr>fink configure</nobr></tt>
+<p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
-<tt><nobr>/sw/lib/fink/mirror/_keys</nobr></tt>.
+<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
 For example, if you live in europe:</p>
 <pre>MirrorContinent: eur</pre>
 </li>
 <li><p><b>MirrorCountry:</b> six letter code</p>
-<p>You should change this value using the <tt><nobr>fink configure</nobr></tt>
+<p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
-<tt><nobr>/sw/lib/fink/mirror/_keys</nobr></tt>.
+<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
 For example, if you live in Austria:</p>
 <pre>MirrorCountry: eur-AT</pre>
 </li>
@@ -857,4 +857,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: uguide.xml,v 1.14 2002/12/08 00:05:40 benh57 Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: uguide.xml,v 1.15 2002/12/21 01:53:22 benh57 Exp $</i></p></body></html>
