@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/05/22 20:41:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 include_once "header.inc";
@@ -509,15 +509,17 @@ and after a transitional period it will be outlawed entirely.  (The
 one exception will be the package <code>storable-pm</code> which needs
 to be in this form for bootstrapping purposes.)
 </p>
-<p>As of fink 0.20.1, the system-perl virtual package automatically
+<p>As of fink 0.20.2, the system-perl virtual package automatically
 "Provides" certain perl modules when the version of Perl present on
 the system is at
 least 5.8.0.  In the case of system-perl-5.8.1-1, these are:
-<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm, 
-file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm, 
-i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm, 
-mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm, 
-time-hires-pm581.</b>
+<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, 
+file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, 
+i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, 
+mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, 
+test-simple-pm581, time-hires-pm581.</b>
+(This list was slightly different in fink 0.20.1: package maintainers are
+encouraged to check to be sure that they are assuming the correct list.)
 </p>
 <p>
 Effective with version 0.13.0 of fink, the <code>fink validate</code>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/05/22 20:41:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -695,7 +695,7 @@ make</pre>
 This is appropriate for packages that use GNU autoconf.
 For packages with of type perl (as specified via the Type field)
 with the perl version not specified,
-the default instead is:
+the default instead (as of fink 0.13.4) is:
 </p>
 <pre>perl Makefile.PL PREFIX=%p \
  INSTALLPRIVLIB=%p/lib/perl5 \
@@ -703,23 +703,36 @@ the default instead is:
  INSTALLSITELIB=%p/lib/perl5 \
  INSTALLSITEARCH=%p/lib/perl5/darwin \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>If the type is <code>perl $version</code> with the version specified
-(e.g., $version might be 5.6.0),
+(e.g., <code>$version</code> might be 5.6.0),
 then the default becomes:
 </p>
 <pre>perl$version Makefile.PL \
  PERL=perl$version PREFIX=%p \
  INSTALLPRIVLIB=%p/lib/perl5/$version \
- INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+ INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
  INSTALLSITELIB=%p/lib/perl5/$version \
- INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+ INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
+<p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
+earlier, and is 
+"darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
 <p>
 Before the commands are executed, percent expansion takes place
 (see previous section).
@@ -759,24 +772,39 @@ default is:
 The default is appropriate for packages that use GNU autoconf.
 For packages with of type perl (as specified via the Type field)
 with the perl version not specified,
-the default instead is:
+the default instead (as of fink 0.13.4) is:
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
  INSTALLARCHLIB=%i/lib/perl5/darwin \
  INSTALLSITELIB=%i/lib/perl5 \
  INSTALLSITEARCH=%i/lib/perl5/darwin \
  INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</pre>
+ INSTALLMAN3DIR=%i/share/man/man3 \
+ INSTALLSITEMAN1DIR=%i/share/man/man1 \
+ INSTALLSITEMAN3DIR=%i/share/man/man3 \
+ INSTALLBIN=%i/bin \
+ INSTALLSITEBIN=%i/bin \
+ INSTALLSCRIPT=%i/bin
+</pre>
 <p>If the type is <code>perl $version</code> with the version specified
-(e.g., $version might be 5.6.0),
+(e.g., <code>$version</code> might be 5.6.0),
 then the default becomes:
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
- INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+ INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
  INSTALLSITELIB=%i/lib/perl5/$version \
- INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+ INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
  INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3</pre>
+ INSTALLMAN3DIR=%i/share/man/man3 \
+ INSTALLSITEMAN1DIR=%i/share/man/man1 \
+ INSTALLSITEMAN3DIR=%i/share/man/man3 \
+ INSTALLBIN=%i/bin \
+ INSTALLSITEBIN=%i/bin \
+ INSTALLSCRIPT=%i/bin
+</pre>
+<p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
+earlier, and is 
+"darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
 <p>
 If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead. Before the commands are executed, percent
