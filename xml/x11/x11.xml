@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.38 2003/08/30 20:26:12 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.39 2003/11/24 19:49:02 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -280,6 +280,7 @@ version had been completely integrated into the main XFree86 distribution.
 <shorttitle>Installing XFree86</shorttitle>
 <section name="fink" >
 <title>Installing through Fink</title>
+<p><em>Please bear with us while this section is being updated.</em></p>
 <p>
 Fink will let you install X11 in any way you like,
 but it also provides XFree86 packages of its own. If you
@@ -304,32 +305,33 @@ install the server yourself; see below.  In this case, you should
 only install <code>xfree86-base</code>, or you'll risk that Fink
 overwrites your manually installed server.  Note that the current stable version of<code> xfree86-base</code> (4.2.1.1-3) generates the <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code>, and <code>xfree86-rootless-shlibs</code> during its build process.  In this case, all four packages must be installed for you to have a working XFree86 setup.
 </p>
-<p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <filename>xine</filename>.  One thing to note is that if you switch to Apple's X11 (which doesn't support threading), you won't be able to run binaries that you compiled against the threaded version.</p>
-<p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with fink.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
+<p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <filename>xine</filename>.</p>
+<p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
+<p><em>Note for 10.3 users:</em>  you will need to install <code>xfree86-4.3.99.15-1</code> or later (currently in <code>10.3/unstable</code>).  This is a prerelease for XFree86-4.4 .</p>
 </section>
 <section name="apple-binary" >
 <title>Apple's Binaries</title>
 <p>
 On January 7, 2003, Apple released <link url="http://www.apple.com/macosx/x11/" >a custom
-X11 implementation based on XFree86</link> which includes Quartz rendering and accelerated
-OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release was made on March 17, 2003 with further additional features and bugfixes. 
+X11 implementation based on XFree86-4.2</link> which includes Quartz rendering and accelerated
+OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release (i.e. Beta 3) was made on March 17, 2003 with further additional features and bugfixes.  This version is usable on Jaguar.
+</p>
+<p>On October 24, 2003, Apple released Panther (10.3), which includes the release version of their X11 distribution.  This version is based on XFree86-4.3.</p>
+<p>
+To use the Apple binaries, you need to make sure the <em>X11 User</em> package is installed, and you should also 
+<link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</link> Fink.</p>  
+<p>Under <code>fink-0.16.2</code>, you will need to install the <em>X11 SDK</em> package, as well.  After you do this, Fink will
+create a <code>system-xfree86</code> virtual package.</p>
+<p>Under <code>fink-0.17.0</code> and later (currently in unstable), installing the X11 SDK is only necessary if 
+you want to build packages from source.  In this case, even if you don't have the SDK, there will be a <code>system-xfree86</code>
+virtual package.  If you do install the SDK, there will also be a <code>system-xfree86-shlibs</code> package and a 
+<code>system-xfree86-dev</code> package, representing the libraries and headers, respectively.
 </p>
 <p>
-As of the time of this writing, to use the Apple binaries you will need to make sure you
-have the Fink <filename>system-xfree86</filename> package, version 4.2-11 or higher, installed.
-Also, make sure you download BOTH the SDK (linked from the main site), and the public
-beta files.  Do not download the &quot;common toolkits&quot; from OpenDarwin, they will likely
-interact poorly with Fink's installation.
-</p>
-<p>
-If you have existing xfree86 packages installed, be it through Fink or otherwise, you
+If you have an existing XFree86 distribution installed, be it through Fink or otherwise, you
 can follow the <xref section="switching-x11" chapter="inst-xfree86" >instructions on
 replacing one X11 package with another</xref>.  Make sure that you remove your existing
-packages, and then install <filename>system-xfree86</filename>.  Be sure you first remove
-your old X11 packages, then install Apple's X11 and X11 SDK, and then run
-either '<code>sudo apt-get update; sudo apt-get install system-xfree86</code>' (for
-binaries) or '<code>fink selfupdate-cvs; fink install system-xfree86</code>' (to
-get the latest system-xfree86 package from CVS).
+packages, then install Apple's X11 (and X11 SDK, if needed or desired).
 </p>
 <p>
 Some notes on using Apple's X11:
@@ -342,7 +344,12 @@ Some notes on using Apple's X11:
 <li>
 <p>Apple's X11 uses your existing <filename>~/.xinitrc</filename> file.  If you want the
   full effect of Quartz integration, you should use <filename>/usr/X11R6/bin/quartz-wm</filename>
-  as your window manager, or delete your ~/.xinitrc completely.</p>
+  as your window manager, or delete your <filename>~/.xinitrc</filename> completely.</p>  
+<p>If you just want cut-and-paste integration, but want to use a different window manager, you can do 
+this as in the following example:</p>
+<codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
+exec /sw/bin/fvwm2</codeblock>
+ <p>You may, of course, call any other window manager, <code>startkde</code>, etc.</p>
 </li>
 <li>
 <p>
@@ -359,7 +366,7 @@ initial &quot;<filename>#!/bin/sh</filename>&quot;, but before you run any progr
 <p>so that the Fink environment is initialized.  Note:  <filename>init.sh</filename> is used rather than <filename>init.csh</filename> because <filename>.xinitrc</filename> is run by <filename>sh</filename> rather than <filename>tcsh</filename>.</p>
 </li>
 <li>
-<p>Applications that require calling other programs under /sw for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
+<p>Applications that require calling other programs which reside within your Fink tree for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
 <codeblock>/sw/bin/emacs</codeblock>
 <p>you'll want to use something like the following:</p>
 <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
@@ -371,6 +378,10 @@ initial &quot;<filename>#!/bin/sh</filename>&quot;, but before you run any progr
 defined in indirectly referenced dynamic library 
 /usr/X11R6/lib/libX11.6.dylib</codeblock>
 <p>then you'll need to make sure to that <code>-lX11</code> is present during linking.  Check your package's configuration options to see how to feed it the extra argument.</p>
+</li>
+<li>
+<p>If you use the <code>xfree86</code> package, and later switch to Apple's X11 (on either 10.2.x or 10.3.x), any
+packages you have built against <code>xfree86</code> will need to be rebuilt, as the binaries are incompatible.</p>
 </li>
 </ul>
 </section>
@@ -459,7 +470,7 @@ CVS</link> instructions to download the <filename>xc</filename> module.
 Then, follow the source build instructions above.
 </p>
 </section>
-<section name="xonx-bin" >
+<!--><section name="xonx-bin" >
 <title>The XonX binary test releases (XAqua,
 XDarwin)</title>
 <p>
@@ -478,7 +489,7 @@ web page</link> indicates that post-4.2.0 testing versions of XDarwin may
 someday be released, but none have been as yet.  They would presumably be 
 installed on top of XFree86 4.2.0 (or later).
 </p>
-</section>
+</section><-->
 <section name="macgimp" >
 <title>MacGimp</title>
 <p>
@@ -496,14 +507,14 @@ The server does rootless mode, using a patch from the time before
 4.1.0.
 </p>
 </section>
-<section name="rootless" >
+<!--><section name="rootless" >
 <title>Roaming Rootless Servers</title>
 <p>
 There are various rootless server binaries roaming around
 the net.  With the release of the official 4.2.0 binaries
 this should not be a desirable way to install XFree86.
 </p>
-</section>
+</section><-->
 <section name="switching-x11" >
 <title>Replacing X11</title>
 <p>
@@ -543,6 +554,9 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
   </p>
 </li>
 </ol>
+<!--todo><p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it manually via:</p>
+<codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</codeblock>
+<p><em>Note:</em>  <code>/usr/lib/libXplugin.1.dylib</code></p><--> 
 </section>
 <section name="fink-summary" >
 <title>Fink package summary</title>
@@ -571,14 +585,14 @@ should install:
 <itemt>4.x official binaries</itemt>
 <itemd>
 <p>
-<code>system-xfree86</code> only</p>
+<code>system-xfree86</code> only (+splitoffs)</p>
 </itemd>
 </item>
 <item>
 <itemt>4.x built from source, or from the latest CVS source</itemt>
 <itemd>
 <p>
-<code>system-xfree86</code> only</p>
+<code>system-xfree86</code> only (+splitoffs)</p>
 </itemd>
 </item>
 <item>
@@ -592,7 +606,14 @@ should install:
 <itemt>4.2.x from Apple</itemt>
 <itemd>
 <p>
-<code>system-xfree86</code>
+<code>system-xfree86</code> only (+splitoffs)
+</p>
+</itemd>
+</item>
+<item>
+<itemt>4.3.x from Apple</itemt>
+<itemd><p>
+<code>system-xfree86</code> only (+splitoffs)
 </p>
 </itemd>
 </item>
