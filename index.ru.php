@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: horsager $';
-$cvs_date = '$Date: 2005/01/01 05:12:36 $';
+$cvs_date = '$Date: 2005/01/16 09:32:59 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -11,15 +11,15 @@ $metatags = '<meta name="description" content="Fink, a distribution of Unix soft
 include "header.inc";
 ?>
 
-<p>Проект Fink нацелен на привнесение всего мира ПО Unix
-<a href="http://www.opensource.org/">с открытым источником кода</a> в
+<p>Проект Fink нацелен на перенос всего мира ПО Unix
+<a href="http://www.opensource.org/">с открытым исходным кодом</a> в
 <a href="http://www.opensource.apple.com/">Darwin</a> и
 <a href="http://www.apple.com/macosx/">Mac OS X</a>. 
-Мы модифицируем ПО Unix таким образом, чтобы оно могло компилирова
-ться и работать в Mac OS X ("переносим" его), и обеспечиваем возможность
-его скачивания в виде связного распространения.
-Fink использует такие инструменты<a href="http://www.debian.org/"> Debian</a> , как dpkg 
-и apt-get для обеспечения эффективного управления бинарными пакетами. 
+Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться
+и работать в Mac OS X ("переносим" его), и обеспечиваем возможность
+его скачивания в виде связной дистрибуции.
+Fink использует такие инструменты<a href="http://www.debian.org/"> Debian</a>, как dpkg 
+и apt-get, для обеспечения эффективного управления бинарными пакетами. 
 Выбор за вами: скачать предварительно компилированные бинарные пакеты или построить все начиная от исходного кода.
 <a href="about.php">Более подробно...</a> 
 </p>
@@ -44,10 +44,10 @@ include "fink_version.inc";
 ?>
 
 <p>
-Дата выпуска Fink <? print $fink_version ?>  : <? print convert_date_to_locale($release_date) ?>.  
-Данный выпуск включает исходные и бинарные пакеты, а также бинарный инсталлятор, все из которых 
-предназначены для пользователей OS X версии 10.3.
-Fink 0.6.3 (для OS X 10.2) и 0.4.1 (для OS X 10.1) также все еще могут быть предоставлены.
+Версия Fink <? print $fink_version ?>  вышла <? print convert_date_to_locale($release_date) ?> г.  
+Данная версия включает пакеты на основе исходного кода и бинарные пакеты, а также бинарный инсталлятор, все из которых 
+предназначены для пользователей OS X версии 10.3. 
+Версии Fink 0.6.3 (для OS X 10.2) и 0.4.1 (для OS X 10.1) также все еще могут быть предоставлены.
 </p>
 
 <h1>Ресурсы</h1>
@@ -59,7 +59,7 @@ href="help/index.php">помощь</a>.
 </p>
 
 <p>
-Хостинг проекта Fink осуществляется
+Хостинг проекта Fink осуществляет
 <a href="http://sourceforge.net/">SourceForge</a>.
 Помимо хостинга данного веб-сайта и скачивания, SourceForge
 обеспечивает для проекта следующие ресурсы:
@@ -75,14 +75,14 @@ href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Отчет
  <li><a
  href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Предоставление нового пакета Fink (неосновные разработчики)</a></li>
  <li><a
- href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Предоставление корректировок для fink (программа)</a></li>
+ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Предоставление патча для fink (программа)</a></li>
 <li><a href="lists\index.php">Списки рассылки</a> </li>
 <li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">онлайновый просмотр</a>,
 <a href="doc\cvsaccess\index.php">инструкции доступа</a>) </li>
 </ul>
 <p>
 Просим иметь в виду, что для использования некоторых из этих ресурсов (н-р, отчет об ошибках или запрос о
-новом пакете вам надо зарегистрировать свой счет в SourceForge. Если у вас нет такого счета, можно его открыть
+новом пакете) вам надо зарегистрировать свой счет в SourceForge. Если у вас нет такого счета, можно его открыть
 бесплатно на сайте <a href="http://sourceforge.net/">SourceForge</a>.
 </p>
 
