@@ -3,7 +3,7 @@
 <document filename="index" lang="zh">
     <title>Fink 软件包的通用安全政策</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.zh.xml,v 1.1 2004/06/25 01:02:37 jeff_yecn Exp $</cvsid>
+    <cvsid>$Id: sec-policy.zh.xml,v 1.2 2004/06/28 17:43:04 jeff_yecn Exp $</cvsid>
     <preface>
         <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。</p>
     </preface>
@@ -233,12 +233,19 @@
         </preface>
         <section name="who">
             <title>谁应该发送它们？</title>
-            <p>这些通知应该只由 <em>Fink 安全团队</em>发布。 多数通知会发自 dmalloc@users.sourceforge.net，邮件会用 PGP 密钥签署，其指纹为：<tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt>。公开密钥可以在<tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>找到(this is intentionally not marked as a link)。</p>
-            <p>其它被授权的团队成员包括：( Other authorised Team members are: (here you add your email +
-                public key like I did above)</p><p>
-	        peter@pogma.com，PGP 密钥指纹为 <tt>
-		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>。公开密钥可以在 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt> 找到。
-</p>
+            <p>这些通知应该只由 <em>Fink 安全团队</em>发布。 多数通知会发自 dmalloc@users.sourceforge.net，邮件会用 PGP 密钥签署，其指纹为：</p>
+            <ul>
+            <ui><tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt></ui>
+            <ui>可以在<tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>找到。</ui>
+            </ul>
+            <p>上述网址是特意设为非链接的。</p>
+            <p>其它被授权的团队成员包括：(here you add your email +
+                public key like I did above)</p>
+				<p>peter@pogma.com，PGP 密钥指纹为：</p>
+				<ul>
+				<ui><tt>4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt></ui>
+				<ui>它可以在 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt> 找到。</ui>
+				</ul>
         </section>
         <section name="how">
             <title>如何提交</title>
@@ -246,7 +253,8 @@
             <codeblock> ID: FINK-YYYY-MMDD-NN 
                         Reported: YYYY-MM-DD 
                         Updated:  YYYY-MM-DD 
-                        Package:  package-name 
+                        Package:  package-name
+                        Affected: &lt;= versionid
                         Maintainer: maintainer-name
                         Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
                         Mac OS X version: 10.3, 10.2 
@@ -260,6 +268,7 @@
                         Reported:         2004-06-09 
                         Updated:          2004-06-09 
                         Package:          cvs 
+                        Affected:             &lt;= 1.11.16, &lt;= 1.12.8
                         Maintainer:       Sylvain Cuaz 
                         Tree(s):    10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable 
                         Mac OS X version: 10.3, 10.2 
@@ -280,6 +289,7 @@
                         Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
                         References: MISC 
                         Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
+        <p>请注意 <em>Affected</em> 关键字所指的软件包并不只包含 Fink 中的软件包。在样本报告中很清楚地展示了这点。</p>   
         </section>
     </chapter>
 </document>
