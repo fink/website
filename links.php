@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/22 09:19:39 $';
+$cvs_date = '$Date: 2001/01/28 20:02:30 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -38,6 +38,8 @@ news, articles and a software archive</li>
 help running The GIMP, GTK and X on a Mac</li>
 <li><a href="http://www.osxfaq.com/" target="_blank">OS X FAQ</a> -
 port news and general help</li>
+<li><a href="http://www.caos.aamu.edu/pub/MacOS_X/" target="_blank">A
+port archive</a></li>
 </ul>
 
 
