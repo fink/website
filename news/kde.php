@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 19:51:45 $';
+$cvs_date = '$Date: 2002/05/28 19:52:59 $';
 
 include "header.inc";
 ?>
@@ -32,7 +32,7 @@ Screenshots:
  The work-in-progress KDE source tree is being graciously hosted by the
  folks at <a href="http://www.opendarwin.org/">OpenDarwin</a>. More info
  on our progress and things that need to be done are regularly updated
- in the <a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/proj/KDE-Darwin/README.Darwin?rev=HEAD&auml;content-type=text/x-cvsweb-markup">README.Darwin</a>
+ in the <a href="http://www.opendarwin.org/cgi-bin/cvsweb.cgi/proj/KDE-Darwin/README.Darwin?rev=HEAD&amp;content-type=text/x-cvsweb-markup">README.Darwin</a>
  file available at the top of the KDE-Darwin tree.
 </p>
 
@@ -143,7 +143,7 @@ Screenshots:
 <p>
  ...please check the
  <a href="http://fink.sourceforge.net/lists/index.php">list archives</a> and
- <a href="http://sourceforge.net/tracker/?atid=117203&auml;group_id=17203">bug tracker</a>
+ <a href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">bug tracker</a>
  before posting questions.  You can also try the
  <b><a href="http://www.aquaflux.org/~fink/">#fink</a></b> channel on
  The <a href="http://www.openprojects.net/">OpenProjects IRC network</a>
