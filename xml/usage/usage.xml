@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <article filename="usage">
-<title>Fink 0.2.1 Usage</title>
+<title>Fink 0.2.2 Usage</title>
 <shorttitle>Usage</shorttitle>
+<cvsid>$Id: usage.xml,v 1.2 2001/06/23 16:21:47 chrisp Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>To use the software installed in Fink's directory hierarchy, including
@@ -67,6 +68,12 @@ does not need a package list, so you just type:</p>
 <codeblock>fink update-all</codeblock>
 </section>
 
+<section><title>describe</title>
+<p>This command displays a description of the package you name on the
+command line. Note that only a small part of the packages currently
+have a description.</p>
+</section>
+
 <section><title>fetch</title>
 <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
@@ -106,7 +113,7 @@ default settings back.</p>
 </section>
 
 <section><title>configure</title>
-<p>Reruns the configuration process. This will let you change your mirror
+<p>Reruns the Fink configuration process. This will let you change your mirror
 sites settings, among others.</p>
 </section>
 
