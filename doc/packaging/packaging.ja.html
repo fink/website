@@ -287,7 +287,7 @@ SplitOff: &lt;&lt;
 							(Fink のパッケージ命名規約の「プログラミング言語-バージョン」方式に使う．他にもうまい使い方があるかも)．
 							(0.19.2 CVS 版以降の Fink で利用可能)
 						</p>
-					</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+					</td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 						<p>
 							"<b>n</b>ame <b>i</b>nvariant"．
 							%n や %N と似ているが， %type_pkg[] と %type_raw[] に当たる部分は全て空白に変わる．
@@ -1084,7 +1084,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 							必須フィールド．
 						</p>
 						<p>
-							このフィールドで行われるパーセント展開は %N, %Ni, %type_raw[] と %type_pkg[] のみ．
+							このフィールドで行われるパーセント展開は %N, %{Ni}, %type_raw[] と %type_pkg[] のみ．
 						</p>
 						<p>
 							Fink のパッケージングポリシーでは，
@@ -1397,7 +1397,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							Fink にフィールド <tt style="white-space: nowrap;">CustomMirror</tt> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
 							Fink 0.18.0 以降では <tt style="white-space: nowrap;">Source: none</tt> は特殊な意味を持ち，取り寄せるべきソースは存在しないことを表す．
@@ -1592,7 +1592,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						</p>
 						<p>
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 							単一のパッチファイルを管理し，
 							各変種固有の変更点を <tt style="white-space: nowrap;">PatchScript</tt> に記述する方が，
 							各変種毎にパッチファイルを作るより手間が少ない．
@@ -2143,4 +2143,4 @@ Copyright (c) 2001-2004 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.14 2004/06/28 14:35:22 babayoshihiko Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.ja.xml,v 1.15 2004/07/10 08:22:40 babayoshihiko Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/28 14:35:22';
+$cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 include_once "header.inc";
@@ -70,7 +70,7 @@ include_once "header.inc";
 							必須フィールド．
 						</p>
 						<p>
-							このフィールドで行われるパーセント展開は %N, %Ni, %type_raw[] と %type_pkg[] のみ．
+							このフィールドで行われるパーセント展開は %N, %{Ni}, %type_raw[] と %type_pkg[] のみ．
 						</p>
 						<p>
 							Fink のパッケージングポリシーでは，
@@ -383,7 +383,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
 							Fink 0.18.0 以降では <code>Source: none</code> は特殊な意味を持ち，取り寄せるべきソースは存在しないことを表す．
@@ -578,7 +578,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						</p>
 						<p>
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 							単一のパッチファイルを管理し，
 							各変種固有の変更点を <code>PatchScript</code> に記述する方が，
 							各変種毎にパッチファイルを作るより手間が少ない．

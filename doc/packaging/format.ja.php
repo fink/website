@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/28 14:35:22';
+$cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 include_once "header.inc";
@@ -220,7 +220,7 @@ SplitOff: &lt;&lt;
 							(Fink のパッケージ命名規約の「プログラミング言語-バージョン」方式に使う．他にもうまい使い方があるかも)．
 							(0.19.2 CVS 版以降の Fink で利用可能)
 						</p>
-					</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+					</td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 						<p>
 							"<b>n</b>ame <b>i</b>nvariant"．
 							%n や %N と似ているが， %type_pkg[] と %type_raw[] に当たる部分は全て空白に変わる．

@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.14 2004/06/28 14:35:22 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.15 2004/07/10 08:22:40 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -359,7 +359,7 @@ SplitOff: &lt;&lt;
 					</itemd>
 				</item>
 				<item>
-					<itemt>%ni, %Ni</itemt>
+					<itemt>%{ni}, %{Ni}</itemt>
 					<itemd>
 						<p>
 							&quot;<em>n</em>ame <em>i</em>nvariant&quot;．
@@ -1240,7 +1240,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 							必須フィールド．
 						</p>
 						<p>
-							このフィールドで行われるパーセント展開は %N, %Ni, %type_raw[] と %type_pkg[] のみ．
+							このフィールドで行われるパーセント展開は %N, %{Ni}, %type_raw[] と %type_pkg[] のみ．
 						</p>
 						<p>
 							Fink のパッケージングポリシーでは，
@@ -1635,7 +1635,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
 							Fink 0.18.0 以降では <code>Source: none</code> は特殊な意味を持ち，取り寄せるべきソースは存在しないことを表す．
@@ -1896,7 +1896,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 						</p>
 						<p>
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
-							ここでは %ni を (ことによると特定の %type_ の展開値と共に) 使うとよい．
+							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 							単一のパッチファイルを管理し，
 							各変種固有の変更点を <code>PatchScript</code> に記述する方が，
 							各変種毎にパッチファイルを作るより手間が少ない．
