@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.157 2003/12/10 14:33:52 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.158 2003/12/10 14:36:15 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -1447,7 +1447,7 @@ exec gnome-session</codeblock>
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
 		<p>Then, reinstall X11 from the third Panther CD and X11SDK from the Xcode CD.</p>
-        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for <code>fink-0.17.0</code> and later.</p>
+        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for binary installs if you have <code>fink-0.17.0</code> or later.</p>
         </answer>
 </faqentry>
 <faqentry name="apple-x11-beta-wants-xfree86" >
@@ -1462,7 +1462,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
 		<p>Then, reinstall X11 and the X11SDK.</p>
-        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for <code>fink-0.17.0</code> and later.</p>
+        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for binary installs if you have <code>fink-0.17.0</code> or later.</p>
 	 </answer>
 </faqentry>
 </chapter>
