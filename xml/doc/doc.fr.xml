@@ -4,7 +4,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle></shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.1 2004/03/07 06:17:08 michga Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.2 2004/03/07 16:55:26 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -41,7 +41,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 <section name="developerdoc"><title>Documentation développeur</title>
 
 <ul>
-<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</link> (fichier pdf 2MB) - diapositives d'une présentation lors de la<link
+<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</link> (fichier pdf 2MB) - diapositives d'une présentation lors de la <link
 url="http://conferences.oreillynet.com/macosx2002/"
 >Conférence O'Reilly Mac OS X</link> (disponible aussi sous <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</link>) </li>
 <li><varlink url="porting/index.php" varurl="porting/porting.html">Trucs et astuces pour le portage</varlink> - notes sur le portage d'applications Unix sur Darwin</li>
