@@ -3,7 +3,7 @@
                 version="1.1">
 
 <xsl:output method="html"
-	indent="no" encoding="iso-8859-1"
+	indent="no" encoding="utf-8"
 	doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
 	doctype-system="http://www.w3.org/TR/html4/loose.dtd"/>
 
