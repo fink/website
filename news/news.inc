@@ -1,4 +1,12 @@
-<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
+<a name="2003-09-02 It is all over"><span class="news-date">2003-09-02: </span><span class="news-headline">It is all over</span></a><?php gray_line(); ?>
+<p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>http://fink.sourceforge.net/logo.php"> here, </a>
+ended yesterday. With over 80 different proposals from countries all over the world we 
+consider the contest a big success.  
+In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
+curious and cannot wait may have a look at an incomplete <a href="<?php print $root; ?>http://nour.net/logo/incomplete.html"> preview </a></p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <a href="<?php print $root; ?>http://www.macwelt.de"> MacWelt </a> for their continued support.
+</p>
+	<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
 <p>As announced in <a href="<?php print $root; ?>http://www.cert.org/advisories/CA-2003-21.html">this CERT 
 advisory</a>, it has recently been discovered that
 the ftp servers for GNU software were compromised back in March, 
@@ -31,14 +39,14 @@ Developer Tools which includes gcc 3.3,
 their new compiler.
 </p><p>
 Fink does not yet support compiling with gcc 3.3.  In addition, it is important
-not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
+not to "mix and match" between compilers:  all C++ code in fink packages
 needs to be compiled
 with the same compiler.
 </p><p>
 For this reason, the Fink team recommends that if you update your
 Developer Tools with the new patch, you should be careful to run
 <code>sudo gcc_select 3</code>
-prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
+prior to any "fink build" or "fink install" commands.
 </p>
 <p><b>Update 30 June 2003:</b> A 
 <a href="<?php print $root; ?>http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
@@ -53,20 +61,4 @@ The Fink team is working on a workaround for this problem, but until it
 is ready, if you need Fortran-related programs you should not install
 the update.</p>
 
-                <a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
-               <p>
-The <a href="http://fink.sourceforge.net">Fink</a>, 
-<a href="http://www.gentoo.org">Gentoo</a>, 
-and 
-<a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 
-projects are pleased to announce the formation of  a cooperative development 
-alliance forged to facilitate delivery of freely available software to 
-Mac OS X.  Under this new alliance, the projects will share information and 
-coordinate efforts for porting software to 
-Apple's <a href="http://www.apple.com/macosx">Mac OS X</a> 
-and <a href="http://www.apple.com/darwin">Darwin</a> operating 
-systems.  Members of the alliance will share information using 
-the <a href="http://www.metapkg.org">www.metapkg.org</a> Web 
-site,  which  will provide a home for this cooperative effort. 
-</p>
                 

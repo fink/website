@@ -8,7 +8,15 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
+<a name="2003-09-02 It is all over"><span class="news-date">2003-09-02: </span><span class="news-headline">It is all over</span></a><?php gray_line(); ?>
+<p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>http://fink.sourceforge.net/logo.php"> here, </a>
+ended yesterday. With over 80 different proposals from countries all over the world we 
+consider the contest a big success.  
+In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
+curious and cannot wait may have a look at an incomplete <a href="<?php print $root; ?>http://nour.net/logo/incomplete.html"> preview </a></p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <a href="<?php print $root; ?>http://www.macwelt.de"> MacWelt </a> for their continued support.
+</p>
+	<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
 <p>As announced in <a href="<?php print $root; ?>http://www.cert.org/advisories/CA-2003-21.html">this CERT 
 advisory</a>, it has recently been discovered that
 the ftp servers for GNU software were compromised back in March, 
@@ -41,14 +49,14 @@ Developer Tools which includes gcc 3.3,
 their new compiler.
 </p><p>
 Fink does not yet support compiling with gcc 3.3.  In addition, it is important
-not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
+not to "mix and match" between compilers:  all C++ code in fink packages
 needs to be compiled
 with the same compiler.
 </p><p>
 For this reason, the Fink team recommends that if you update your
 Developer Tools with the new patch, you should be careful to run
 <code>sudo gcc_select 3</code>
-prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
+prior to any "fink build" or "fink install" commands.
 </p>
 <p><b>Update 30 June 2003:</b> A 
 <a href="<?php print $root; ?>http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
@@ -194,8 +202,8 @@ version 0.2 of Apple's X11.app which was released yesterday.
         A problem was uncovered today concerning the versions of imlib,
  libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
  work addressing this problem.  As a workaround, users can downgrade
-their imlib package to the stable version, &quot;<code>fink install
- imlib-1.9.10-9</code>&quot;, until the problem is fixed.
+their imlib package to the stable version, "<code>fink install
+ imlib-1.9.10-9</code>", until the problem is fixed.
 </p><p>
    Many Fink users may be using Fink's unstable tree without being
 fully aware of what this entails.  For a few months in the fall,
@@ -270,7 +278,7 @@ project</a>.  If you are using Fink's
 xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
 xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
 the 10.2/unstable tree; to gain access to them, you may need to run 
-&quot;fink selfupdate-cvs&quot; and/or enable the unstable tree
+"fink selfupdate-cvs" and/or enable the unstable tree
   </p>
   <a name="2002-10-30 Don't reuse binary installer"><span class="news-date">2002-10-30: </span><span class="news-headline">Don't reuse binary installer</span></a><?php gray_line(); ?>
   <p>
@@ -279,14 +287,14 @@ once</b> on a given machine.  Due to an apparent bug in Apple's
 Installer.app program, attempting a second installation on the same
 machine can result in permissions being altered in the machine's root
 directory, in some cases leaving the machine in a non-bootable state.
-</p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
-than an &quot;Install&quot; button when installing Fink 0.4.1, <b>do not proceed
+</p><p> If Installer.app presents you with an "Upgrade" button rather
+than an "Install" button when installing Fink 0.4.1, <b>do not proceed
 any further!</b> </p>
 <p>A new version of the binary installer for Fink 0.4.1 became available
 on November 5.  The new version avoids
 the problem of the machine not booting, but even with the new version,
-users are advised to only &quot;Install&quot;,
-not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
+users are advised to only "Install",
+not "Upgrade."  (You can recognize the new version by its filesize of
 12582912 bytes, while the old version had a filesize of 10541112 bytes.)
 </p><a name="2002-09-28 Fink 0.4.1 released"><span class="news-date">2002-09-28: </span><span class="news-headline">Fink 0.4.1 released</span></a><?php gray_line(); ?>
     <p>
@@ -310,7 +318,7 @@ software before using Fink.
 			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions for updating</a>. We also have separate <a href="<?php print $root; ?>news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</a>. 
 		</p>
 		<p>
-			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the &quot;stable&quot; tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
+			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
 		</p>
 	<a name="2002-08-20 Mac OS X 10.2 / Jaguar"><span class="news-date">2002-08-20: </span><span class="news-headline">Mac OS X 10.2 / Jaguar</span></a><?php gray_line(); ?>
     <p>
@@ -326,7 +334,7 @@ software before using Fink.
 	<p>
 	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
 	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
-	 Some packages need special changes to build on 10.2. Adding &quot;unstable/main&quot; to your
+	 Some packages need special changes to build on 10.2. Adding "unstable/main" to your
 	 list of trees in /sw/etc/fink.conf (see also the <a href="<?php print $root; ?>faq/usage-fink.php#unstable">FAQ</a>)
 	 will give you access to the latest versions of packages, many of which include important
 	 fixes for 10.2.
@@ -512,7 +520,7 @@ software before using Fink.
     </p>
   <a name="2001-04-15 Released version 0.1.8a"><span class="news-date">2001-04-15: </span><span class="news-headline">Released version 0.1.8a</span></a><?php gray_line(); ?>
     <p>
-      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems (&quot;stow not found&quot;). Get it from the <a href="<?php print $root; ?>download.php">download page</a>. 
+      Released version 0.1.8a, fixing install problems. You only need this if you downloaded 0.1.8 and had install problems ("stow not found"). Get it from the <a href="<?php print $root; ?>download.php">download page</a>. 
     </p>
   <a name="2001-04-14 Version 0.1.8 is out"><span class="news-date">2001-04-14: </span><span class="news-headline">Version 0.1.8 is out</span></a><?php gray_line(); ?>
     <p>
