@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/01/04 21:27:42';
+$cvs_date = 'Date: 2004/02/13 07:17:59';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -90,11 +90,11 @@ Policy Manual</a>.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
-A short description of the package (what is it?). This is a
-one-line description that will be displayed in lists, so it must be
-short and informative.  Keep it to around 30 to 50 chars. It is not
-necessary to repeat the package name in this field - it will always
-be displayed in proper context. Required field.
+A short description of the package (what is it?). This is a one-line
+description that will be displayed in lists, so it must be short and
+informative. It should be less than 45 chars and must be less than
+60. It is not necessary to repeat the package name in this field - it
+will always be displayed in proper context. Required field.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
@@ -817,13 +817,17 @@ The URL of the upstream home page of the package.
 <p>
 A more detailed description than the one in the <code>Description</code>
 field (what is it, what can I use it for?).
-Multiple lines allowed.
+Multiple lines allowed. Because this field will be displayed without
+the benefit of word-wrap, you should manually insert line breaks in
+order to keep lines less than 79 chars (if possible).
 </p>
 </td></tr><tr valign="top"><td>DescUsage</td><td>
 <p>
 This is for information that is needed to use the package (how do
 I use it?). As in "run wmaker.inst once before using WindowMaker".
-Multiple lines allowed.
+Multiple lines allowed. Because this field will be displayed without
+the benefit of word-wrap, you should manually insert line breaks in
+order to keep lines less than 79 chars (if possible).
 </p>
 </td></tr><tr valign="top"><td>DescPackaging</td><td>
 <p>
