@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/24 22:14:30';
+$cvs_date = 'Date: 2004/03/27 00:34:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 include_once "header.inc";
@@ -205,6 +205,18 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 <a href="http://connect.apple.com">Apple</a> から、適切な <code>Java Developer Tools</code> パッケージをダウンロードする必要があります。
 この問題の場合は、 <code>Java 1.4.2 Developer Tools</code> です。
 </p></div>
+</a>
+<a name="dpkg-split">
+<div class="question"><p><b>Q6.19: 
+    何をインストールしようとしても、
+     <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
+     というエラーが出ます。
+     どうしたらいいですか?
+    </b></p></div>
+<div class="answer"><p><b>A:</b> 
+    通常、環境変数を正しく設定することで直ります。
+    参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
+    </p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php?phpLang=ja">7 コンパイルの問題 - 特定のバージョン</a></p>
