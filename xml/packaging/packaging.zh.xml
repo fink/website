@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.7 2004/03/22 19:48:05 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.8 2004/04/16 01:06:34 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -252,7 +252,7 @@ SplitOff: &lt;&lt;
 <itemd>
 <p>
 构建（<em>b</em>uild）过程所在的目录，例如：<filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>。
-你不应该假设 <filename>root-%f</filename> 一定在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
+你不应该假设 <filename>%f</filename> 一定在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
 <p>
 注意：仅在没有其它选择的情况下才使用它。构建目录是脚本运行的当前目录；在命令中你应该使用相对路径。
 </p>

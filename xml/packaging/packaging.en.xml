@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.21 2004/04/16 00:59:22 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.22 2004/04/16 01:06:34 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -320,7 +320,7 @@ the path where the p<em>a</em>tches can be found
 <p>
 the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.
 You must not assume that
-<filename>root-%f</filename> will be in <filename>%p/src</filename> since
+<filename>%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
 in <filename>/sw/etc/fink.conf</filename>.
 </p>
