@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.33 2001/10/03 18:12:52 chrisp Exp $ */
+/* $Id: header.inc,v 1.34 2001/10/11 16:45:26 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -129,10 +129,9 @@ if (is_array($parents)) {
   for ($i = 0; $i < sizeof($parents); $i += 2) {
     $link = '<a href="'.$root.$parents[$i].'">';
 
-    print '<tr align="left" valign="middle">';
-    print '<td background="'.$root.'img/nav-norm.gif">';
+    print '<tr align="left" valign="middle"><td>';
     print $link.'<img src="'.$root.'img/nav-upicon.gif" width="18" height="15" border="0" alt="^ "/></a>';
-    print '</td><td background="'.$root.'img/nav-norm.gif">';
+    print '</td><td>';
     print '<p class="nav">'.$link.$parents[$i+1].'</a></p>';
     print '</td></tr>'."\n";
 
