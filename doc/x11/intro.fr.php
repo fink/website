@@ -1,13 +1,13 @@
 <?
 $title = "Utilisation de X11 - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_date = 'Date: 2004/05/27 14:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="Historique"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Utilisation de X11 - 1 Introduction</h1>
+include_once "header.fr.inc";
+?>
+<h1>Utilisation de X11 - 1. Introduction</h1>
     
     
     <h2><a name="def-x11">1.1 Qu'est-ce que X11 ?</a></h2>
@@ -134,7 +134,9 @@ Par exemple, un nombre de plus en plus grand d'<a href="http://fink.sourceforge.
 Malheureusement, <a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">ce n'est pas encore le cas</a> pour les <a href="http://www.kde.org/">applications KDE</a>.
       </p>
     
-  <p align="right">
-Next: <a href="history.php?phpLang=fr">2 Historique</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="history.php?phpLang=fr">2. Historique</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

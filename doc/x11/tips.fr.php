@@ -1,13 +1,13 @@
 <?
 $title = "Utilisation de X11 - Conseils";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_date = 'Date: 2004/05/27 14:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="prev" href="trouble.php?phpLang=fr" title="Résolution de problèmes engendrés par XFree86">';
 
-include_once "header.inc";
-?>
 
-<h1>Utilisation de X11 - 8 Conseils d'utilisation</h1>
+include_once "header.fr.inc";
+?>
+<h1>Utilisation de X11 - 8. Conseils d'utilisation</h1>
     
     
     <h2><a name="terminal-app">8.1 Lancement d'applications X11 à partir de Terminal.app</a></h2>
@@ -71,5 +71,7 @@ En fait, le système X11 possède plusieurs presse-papiers distincts (appelés  
 <p>Dans tous les cas de figure, si vous avez des difficultés à copier-coller du texte d'Aqua dans X11 ou vice-versa, vous pouvez tout d'abord réitérer l'action coller (il arrive qu'elle ne soit pas exécutée la première fois), ensuite vous pouvez utiliser des applications intermédiaires, par exemple TextEdit ou Terminal.app sous Aqua, nedit ou un xterm sous X11. Il y a toujours une solution à ce problème.</p>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

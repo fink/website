@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="trouble.php?phpLang=zh" title="XFree86 故障排除"><link rel="prev" href="xtools.php?phpLang=zh" title="Xtools">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 6 其它 X11 可能</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 6. 其它 X11 可能</h1>
     
     
     <h2><a name="vnc">6.1 VNC</a></h2>
@@ -36,7 +36,9 @@ Jeff Whitaker 的 <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc 页�
 如果你有更多的信息，请告诉我们。
 </p>
     
-  <p align="right">
-Next: <a href="trouble.php?phpLang=zh">7 XFree86 故障排除</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="trouble.php?phpLang=zh">7. XFree86 故障排除</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

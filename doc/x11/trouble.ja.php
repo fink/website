@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - トラブルシューティング";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=ja" title="使用上の Tips"><link rel="prev" href="other.php?phpLang=ja" title="その他の X11">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 7 XFree86 トラブルシューティング</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 7. XFree86 トラブルシューティング</h1>
 
 
 <h2><a name="immedate-quit">7.1 XDarwin を起動した直後に終了かクラッシュします</a></h2>
@@ -285,7 +285,9 @@ Apple に将来の Mac OS X に、ちゃんとしたロケールサポートを�
 </li>
 </ul>
 
-<p align="right">
-Next: <a href="tips.php?phpLang=ja">8 使用上の Tips</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="tips.php?phpLang=ja">8. 使用上の Tips</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

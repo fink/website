@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 7 Troubleshooting XFree86</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 7. Troubleshooting XFree86</h1>
     
     
     <h2><a name="immedate-quit">7.1 When I launch XDarwin, it quits
@@ -357,7 +357,9 @@ OS X.
         </li>
       </ul>
     
-  <p align="right">
-Next: <a href="tips.php?phpLang=en">8 Usage Tips</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="tips.php?phpLang=en">8. Usage Tips</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

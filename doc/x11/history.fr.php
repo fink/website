@@ -1,13 +1,13 @@
 <?
 $title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_date = 'Date: 2004/05/27 14:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>Utilisation de X11 - 2 Historique</h1>
+include_once "header.fr.inc";
+?>
+<h1>Utilisation de X11 - 2. Historique</h1>
     
     
     
@@ -60,7 +60,9 @@ Pendant ce temps, Apple sortait Mac OS X 10.0 et Darwin 1.3 ; quelques semaines 
       <p>Les travaux d'intégration du mode sans racine dans XFree86 continuèrent, si bien que, lorsque XFree86 4.2.0 sortit en janvier 2002, la version Darwin/Mac OS X avait été complètement intégrée dans la distribution principale de XFree86.
 </p>
     
-  <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=fr">3 Récupération et installation de XFree86</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="inst-xfree86.php?phpLang=fr">3. Récupération et installation de XFree86</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

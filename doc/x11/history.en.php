@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 2 History</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 2. History</h1>
     
     
     
@@ -84,7 +84,9 @@ so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X
 version had been completely integrated into the main XFree86 distribution.
 </p>
     
-  <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=en">3 Getting and Installing XFree86</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="inst-xfree86.php?phpLang=en">3. Getting and Installing XFree86</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="tips.php?phpLang=zh" title="使用提示"><link rel="prev" href="other.php?phpLang=zh" title="其它 X11 可能">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 7 XFree86 故障排除</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 7. XFree86 故障排除</h1>
     
     
     <h2><a name="immedate-quit">7.1 当我启动 XDarwin，它几乎立刻就退出或崩溃了</a></h2>
@@ -270,7 +270,9 @@ DYLD_INSERT_LIBRARIES 环境变量）。
         </li>
       </ul>
     
-  <p align="right">
-Next: <a href="tips.php?phpLang=zh">8 使用提示</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="tips.php?phpLang=zh">8. 使用提示</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

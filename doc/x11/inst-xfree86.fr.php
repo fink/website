@@ -1,13 +1,13 @@
 <?
 $title = "Utilisation de X11 - Installation de XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_date = 'Date: 2004/05/27 14:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
-include_once "header.inc";
-?>
 
-<h1>Utilisation de X11 - 3 Récupération et installation de XFree86</h1>
+include_once "header.fr.inc";
+?>
+<h1>Utilisation de X11 - 3. Récupération et installation de XFree86</h1>
     
     
     <h2><a name="fink">3.1 Installation via Fink</a></h2>
@@ -200,7 +200,9 @@ Voici un court résumé des options d'installation et des paquets Fink à instal
 </p>
           </td></tr></table>
     
-  <p align="right">
-Next: <a href="run-xfree86.php?phpLang=fr">4 Lancement de XFree86</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="run-xfree86.php?phpLang=fr">4. Lancement de XFree86</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - イントロ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 1 イントロダクション</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 1. イントロダクション</h1>
 
 
 <h2><a name="def-x11">1.1 What is X11?</a></h2>
@@ -144,7 +144,9 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">そこまで達していません</a>。
 </p>
 
-<p align="right">
-Next: <a href="history.php?phpLang=ja">2 歴史</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="history.php?phpLang=ja">2. 歴史</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

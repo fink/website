@@ -1,13 +1,13 @@
 <?
 $title = "Utilisation de X11 - Résolution de problèmes";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/22 03:06:12';
+$cvs_date = 'Date: 2004/05/27 14:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Conseils d\'utilisation"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
 
-include_once "header.inc";
-?>
 
-<h1>Utilisation de X11 - 7 Résolution de problèmes engendrés par XFree86</h1>
+include_once "header.fr.inc";
+?>
+<h1>Utilisation de X11 - 7. Résolution de problèmes engendrés par XFree86</h1>
     
     
     <h2><a name="immedate-quit">7.1 Après lancement, XDarwin se termine ou se plante quasi immédiatement</a></h2>
@@ -189,7 +189,9 @@ Demander à Apple d'inclure une gestion correcte des locales dans une version ul
         </li>
       </ul>
     
-  <p align="right">
-Next: <a href="tips.php?phpLang=fr">8 Conseils d'utilisation</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="tips.php?phpLang=fr">8. Conseils d'utilisation</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="xtools.php?phpLang=zh" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=zh" title="获取和安装 XFree86">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 4 启动 XFree86</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 4. 启动 XFree86</h1>
     
     
     <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -145,7 +145,9 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
     
-  <p align="right">
-Next: <a href="xtools.php?phpLang=zh">5 Xtools</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="xtools.php?phpLang=zh">5. Xtools</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

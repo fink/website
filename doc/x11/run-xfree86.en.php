@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 4 Starting XFree86</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 4. Starting XFree86</h1>
     
     
     <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -181,7 +181,9 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
    
-  <p align="right">
-Next: <a href="xtools.php?phpLang=en">5 Xtools</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="xtools.php?phpLang=en">5. Xtools</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="trouble.php?phpLang=en" title="Troubleshooting XFree86"><link rel="prev" href="xtools.php?phpLang=en" title="Xtools">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 6 Other X11 Possibilities</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 6. Other X11 Possibilities</h1>
     
     
     <h2><a name="vnc">6.1 VNC</a></h2>
@@ -42,7 +42,9 @@ Because of this, there is no special support for eXodus in Fink.
 If you have more info, please throw it our way.
 </p>
     
-  <p align="right">
-Next: <a href="trouble.php?phpLang=en">7 Troubleshooting XFree86</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="trouble.php?phpLang=en">7. Troubleshooting XFree86</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - その他";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="trouble.php?phpLang=ja" title="XFree86 トラブルシューティング"><link rel="prev" href="xtools.php?phpLang=ja" title="Xtools">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 6 その他の X11</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 6. その他の X11</h1>
 
 
 <h2><a name="vnc">6.1 VNC</a></h2>
@@ -35,7 +35,9 @@ Jeff Whitaker 氏の <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc pa
 もし何らかの情報があれば、我々に下さい。
 </p>
 
-<p align="right">
-Next: <a href="trouble.php?phpLang=ja">7 XFree86 トラブルシューティング</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="trouble.php?phpLang=ja">7. XFree86 トラブルシューティング</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

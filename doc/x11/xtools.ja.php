@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=ja" title="その他の X11"><link rel="prev" href="run-xfree86.php?phpLang=ja" title="XFree86 の起動">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 5 Xtools</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 5. Xtools</h1>
 
 
 <h2><a name="install">5.1 Xtools のインストール</a></h2>
@@ -40,7 +40,9 @@ Xtools はハードウェア加速の OpenGL をルートレスで行い、サ�
 Xtools 1.1 までには修正されることを期待します。
 </p>
 
-<p align="right">
-Next: <a href="other.php?phpLang=ja">6 その他の X11</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="other.php?phpLang=ja">6. その他の X11</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

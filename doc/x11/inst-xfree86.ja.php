@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - XFree86 のインストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ja" title="XFree86 の起動"><link rel="prev" href="history.php?phpLang=ja" title="歴史">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 3 XFree86 の入手とインストール</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 3. XFree86 の入手とインストール</h1>
 
 
 <h2><a name="fink">3.1 Fink を使ったインストール</a></h2>
@@ -335,7 +335,9 @@ Apple X11 を削除する場合は <code>.xinitrc</code> を開いて <code>quar
 </p>
 </td></tr></table>
 
-<p align="right">
-Next: <a href="run-xfree86.php?phpLang=ja">4 XFree86 の起動</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="run-xfree86.php?phpLang=ja">4. XFree86 の起動</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 8 Usage Tips</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 8. Usage Tips</h1>
     
     
     <h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
@@ -102,5 +102,7 @@ be executed.) And remember that it is no more necessary for Apple's X11 (see <a 
 <p>In any case, if you encounter problems copying or pasting from Aqua to X11 and vice-versa, you may first try to do the pasting part twice (it may happen that the copy does not occur at once), then use intermediate applications, e.g. TextEdit or Terminal.app on the Aqua side, nedit or an xterm on the X11 side. In my experience, there is always a solution.</p>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="prev" href="trouble.php?phpLang=zh" title="XFree86 故障排除">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 8 使用提示</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 8. 使用提示</h1>
     
     
     <h2><a name="terminal-app">8.1 在终端程序窗口启动 X11</a></h2>
@@ -78,5 +78,7 @@ X11 系统实际上有几个单独的剪贴板（X11 中称为 "剪切缓冲区�
 <p>任何情况下，如果你碰到从 Aqua 拷贝粘贴到 X11 或相反的问题，首先你可以尝试粘贴两次(有些时候拷贝操作不是立刻进行)，其次你可以使用中间终须，也就是说，在 Aqua 的一边使用TextEdit 或 Terminal.app，在 X11 一边则使用 nedit 或 xterm。在我的经验中，总是可以找到解决的办法。</p>
     
   
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

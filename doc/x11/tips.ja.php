@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=ja" title="XFree86 トラブルシューティング">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 8 使用上の Tips</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 8. 使用上の Tips</h1>
 
 
 <h2><a name="terminal-app">8.1 
@@ -106,5 +106,7 @@ X11 側では nedit や xterm 。
 </p>
 
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="history.php?phpLang=zh" title="历史"><link rel="prev" href="index.php?phpLang=zh" title="运行 X11 Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 1 介绍</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 1. 介绍</h1>
     
     
     <h2><a name="def-x11">1.1 什么是 X11？</a></h2>
@@ -146,7 +146,9 @@ GNOME 程序精选
 </a>。 
       </p>
     
-  <p align="right">
-Next: <a href="history.php?phpLang=zh">2 历史</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="history.php?phpLang=zh">2. 历史</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

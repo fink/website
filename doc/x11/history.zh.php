@@ -4,10 +4,10 @@ $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=zh" title="获取和安装 XFree86"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
-include_once "header.inc";
-?>
 
-<h1>运行 X11 - 2 历史</h1>
+include_once "header.zh.inc";
+?>
+<h1>运行 X11 - 2. 历史</h1>
     
     
     
@@ -63,7 +63,9 @@ XFree86 4.0.2 能在 Darwin 上运行得很好，但在 Mac OS X 上却需要退
       <p>把无根模式集成进 XFree86 的开发工作一直在进行，到 2002 年一月 XFree86 4.2.0 发布的时候，Darwin/Mac OS X 的版本已经完全集成到 XFree86 的主发布版本中了。
 </p>
     
-  <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=zh">3 获取和安装 XFree86</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="inst-xfree86.php?phpLang=zh">3. 获取和安装 XFree86</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

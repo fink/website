@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/22 03:06:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=en" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php?phpLang=en" title="Starting XFree86">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 5 Xtools</h1>
+include_once "header.en.inc";
+?>
+<h1>Running X11 - 5. Xtools</h1>
     
     
     <h2><a name="install">5.1 Installing Xtools</a></h2>
@@ -47,7 +47,9 @@ Fink doesn't offer a workaround at this time.
 Hopefully this will be fixed in Xtools 1.1 once it is released.
 </p>
     
-  <p align="right">
-Next: <a href="other.php?phpLang=en">6 Other X11 Possibilities</a></p>
+  <p align="right"><? echo FINK_NEXT ; ?>:
+<a href="other.php?phpLang=en">6. Other X11 Possibilities</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

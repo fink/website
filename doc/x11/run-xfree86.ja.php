@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - XFree86 の起動";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:23:57';
+$cvs_date = 'Date: 2004/05/29 15:43:25';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="XFree86 の入手とインストール">';
 
-include_once "header.inc";
-?>
 
-<h1>Running X11 - 4 XFree86 の起動</h1>
+include_once "header.ja.inc";
+?>
+<h1>Running X11 - 4. XFree86 の起動</h1>
 
 
 <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -155,7 +155,9 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 
-<p align="right">
-Next: <a href="xtools.php?phpLang=ja">5 Xtools</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="xtools.php?phpLang=ja">5. Xtools</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
