@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/02/28 17:05:56';
+$cvs_date = 'Date: 2004/03/12 13:44:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 include_once "header.inc";
@@ -117,7 +117,7 @@ root 権限で <code>/etc/sudoers</code> を開き、次の行を追加します
 何がおかしいのですか?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh と init.sh は通常のコマンドのように実行するものではありません。
 これらのファイルは環境変数の PATH や MANPATH を設定するものです。
-これをシェルがずっと保持するには、 <code>source</code> コマンドを使い:</p><p> csh/tcsh の場合:</p><pre>source /sw/bin/init.csh</pre><p> bash の場合:</p><pre>source /sw/bin/init.sh</pre><p>と入力します。</p></div>
+これをシェルに保持させるには、csh/tcsh では <code>source</code> コマンド、bash/zsh では <code>.</code> コマンドを使い:</p><p> csh/tcsh の場合:</p><pre>source /sw/bin/init.csh</pre><p> bash の場合:</p><pre>. /sw/bin/init.sh</pre><p>と入力します。</p></div>
 </a>
 <a name="dselect-access">
 <div class="question"><p><b>Q5.11: うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</b></p></div>
