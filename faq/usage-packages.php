@@ -143,7 +143,10 @@ exec gnome-session</pre></div>
 </a>
 <a name="apple-x11-wants-xfree86">
 	<div class="question"><p><b>Q8.12: I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</b></p></div>
-	<div class="answer"><p><b>A:</b> You need to install the X11 SDK, which is on the Xcode CD, and is <b>not</b> installed by default.</p></div>
+	<div class="answer"><p><b>A:</b> You need to install the X11 SDK, which is on the Xcode CD, and is <b>not</b> installed by default.</p><p>Also note that you do not need to install system-xfree86 anymore, fink is capable of figuring out
+		your X11 version automatically in cases where you would have installed system-xfree86 previously.</p><p>If you still have an old system-xfree86 package installed, run
+		<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; fink selfupdate; fink index</code>
+		</p></div>
 </a>
 
 

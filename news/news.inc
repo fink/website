@@ -37,6 +37,16 @@ on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">
 download page.</a>  You'll need XCode for this as
 well.
 </p><p>
+Also note that once you have Fink version 0.15.0 or higher, you do
+not need to install system-xfree86 anymore.  Fink is
+capable of automatically determining your system-xfree86 version if you
+don't already have any fink x11 packages installed.  If you currently
+have an old system-xfree86 package of any kind installed, please run the
+following command:
+</p>
+<p>
+<code>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43; fink selfupdate; fink index</code>
+</p><p>
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 </p>
