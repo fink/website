@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.89 2003/02/19 16:40:34 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.90 2003/02/22 21:05:57 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -584,7 +584,8 @@ get an updated package description with either a more recent version or a
 revised download URL.</p>
 <p>If this doesn't work, please let the package maintainer (available from "<code>fink describe <em>packagename</em></code>") know that the URL is broken; not all maintainers read the mailing lists all of the time.</p>
 <p>To get a usable source, first try hunting around the remote site in
-other directories for the source that fink wants (e.g. in an "old"
+other directories for the same version of the source that fink wants 
+(e.g. in an "old"
 directory).  Keep in mind, though, that some remote sites like to trash the
 old versions of their packages.  If the official site doesn't have it, then
 try a web search--sometimes there are unofficial sites that have the 

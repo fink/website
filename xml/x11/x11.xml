@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.24 2003/02/11 14:04:33 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.25 2003/02/22 21:05:58 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -360,9 +360,11 @@ Some notes on using Apple's X11:
   <p><filename>quartz-wm</filename> doesn't fully support Gnome/KDE window manager hints, so
   you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
  </li>
-<li><p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications that you have installed with fink (e.g. window managers, gnome-session, other apps under <filename>/sw/bin</filename>) make the following line the third one in your <filename>~/.xinitrc</filename>:</p>
-<codeblock>
-. /sw/bin/init.sh
+<li><p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications 
+that you have installed with fink (e.g. window managers, gnome-session, other apps under 
+<filename>/sw/bin</filename>) put the following near the top of <filename>~/.xinitrc</filename> (i.e. after the 
+initial "<filename>#!/bin/sh</filename>", but before you run any programs):</p>
+<codeblock> . /sw/bin/init.sh
 </codeblock>
 <p>so that the Fink environment is initialized.  Note:  <filename>init.sh</filename> is used rather than <filename>init.csh</filename> because <filename>.xinitrc</filename> is run by <filename>sh</filename> rather than <filename>tcsh</filename>.</p></li>
 </ul>
