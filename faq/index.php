@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/09 18:22:15';
+$cvs_date = 'Date: 2003/01/10 15:42:15';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -79,6 +79,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#cant-login-anymore">3.16 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
 <li><a href="usage-fink.php#not-found">3.17 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
 <li><a href="usage-fink.php#fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
+<li><a href="usage-fink.php#invisible-sw">3.19 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -129,7 +130,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.78 2003/01/10 15:42:15 alexkhansen Exp $</i></p>
 
 
 <?

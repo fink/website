@@ -69,6 +69,7 @@ freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="#usage-fink.cant-login-anymore">3.16 I ran the fink-0.4.1 installer and now I can't log in to my machine!</a></li>
 <li><a href="#usage-fink.not-found">3.17 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
 <li><a href="#usage-fink.fink-not-found">3.18 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
+<li><a href="#usage-fink.invisible-sw">3.19 I want to hide /sw in the Finder to keep users from damaging the fink setup.</a></li>
 </ul>
 <li><a href="#comp-general"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -560,7 +561,9 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 If you use tcsh and happen to have a <tt style="white-space: nowrap;">.tcshrc</tt> file in your home directory, this will be read instead of <tt style="white-space: nowrap;">.cshrc</tt> .  You can go ahead and put <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> in <tt style="white-space: nowrap;">.tcshrc</tt> 
 .</p></div>
 </a>
-
+<a name="usage-fink.invisible-sw"><div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
+<div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
+</a>
 <a name="comp-general"><h2>4 Compile Problems - General</h2></a>
 
 
@@ -856,4 +859,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.76 2003/01/09 18:22:15 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.78 2003/01/10 15:42:15 alexkhansen Exp $</i></p></body></html>

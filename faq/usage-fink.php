@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/09 18:22:15';
+$cvs_date = 'Date: 2003/01/10 15:42:15';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -282,7 +282,9 @@ you. </p><p>Once you locate the proper source tarball, download it manually, and
 If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your home directory, this will be read instead of <tt><nobr>.cshrc</nobr></tt> .  You can go ahead and put <tt><nobr>source /sw/bin/init.csh</nobr></tt> in <tt><nobr>.tcshrc</nobr></tt> 
 .</p></div>
 </a>
-
+<a name="invisible-sw"><div class="question"><p><b>Q3.19: I want to hide /sw in the Finder to keep users from damaging the fink setup.</b></p></div>
+<div class="answer"><p><b>A:</b> You can indeed do this.  If you have the Development Tools installed, then you can run the following command:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>This makes /sw invisible, just like the standard system folders (/usr, etc.).  If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p></div>
+</a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 
