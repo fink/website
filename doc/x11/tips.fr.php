@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Conseils";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/13 01:48:06';
+$cvs_date = 'Date: 2004/05/15 06:53:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="prev" href="trouble.php?phpLang=fr" title="Résolution de problèmes engendrés par XFree86">';
 
 include_once "header.inc";
@@ -13,81 +13,62 @@ include_once "header.inc";
     <h2><a name="terminal-app">8.1 Lancement d'applications X11 à partir de Terminal.app</a></h2>
       
       <p>
-Pour lancer des applications X11 à partir d'une fenêtre de Terminal.app, vous devez définir la variable d'environnement "DISPLAY". Cette variable indique aux applications l'emplacement du serveur de fenêtres X11. 
-In the default setup - XDarwin runs on the same machine, your shell is
-tcsh - you can set the variable as follows:
+Pour lancer des applications X11 à partir d'une fenêtre de Terminal.app, vous devez initialiser la variable d'environnement "DISPLAY". Cette variable indique aux applications l'emplacement du serveur de fenêtre X11. Quand XDarwin tourne sur la même machine que le serveur, vous pouvez initialiser cette variable de la façon suivante :
 </p>
+<ul>
+<li><p>Pour les utilisateurs de tcsh :</p>
       <pre>setenv DISPLAY :0.0</pre>
+</li>
+<li><p>Pour les utilisateur de bash :</p>
+<pre>export DISPLAY=":0.0"</pre>
+</li>
+</ul>
       <p>
-A nice setup is to have XDarwin.app started when you log in (settable
-in the Login panel of the System Preferences) and add the following to
-your .cshrc:
+Il est intéressant d'avoir une configuration qui lance XDarwin.app au démarrage (à indiquer dans les Préférences système, panneau Éléments d'ouverture sur Mac OS 10.2, panneau Comptes, Démarrage sur Mac OS 10.3):
 </p>
+<ul><li><p>Pour les utilisateurs de tcsh, ajoutez les ligne suivantes à votre fichier .cshrc :</p>
       <pre>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</pre>
+</li>
+<li><p>Pour les utilisateurs de bash, ajoutez les lignes suivantes à votre fichier .zshrc :</p>
+<pre>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</pre>
+</li></ul>
       <p>
-This sets DISPLAY automatically in every shell.
-It doesn't override the current value when DISPLAY is already set,
-though.
-This way you can still run X11 applications remotely or through ssh
-with X11 tunneling.
+Ces lignes initialisent automatiquement la variable DISPLAY dans tout shell ouvert, mais ne modifient pas sa valeur si elle est déjà initialisée. De cette manière, vous pouvez continuer à exécuter des applications X11 à distance ou via ssh par un tunnel X11.
 </p>
     
-    <h2><a name="open">8.2 Launching Aqua apps from an xterm</a></h2>
+    <h2><a name="open">8.2 Lancement d'applications Aqua à partir d'un xterm</a></h2>
       
       <p>
-One way to launch Aqua applications from an xterm (or any other shell,
-actually) is the <code>open</code> command.
-Some examples:
+Pour lancer des applications Aqua à partir d'un xterm (ou de n'importe quel autre shell), vous pouvez utiliser la commande <code>open</code>. Exemples :
 </p>
       <pre>open /Applications/TextEdit.app
 open SomeDocument.rtf
 open -a /Applications/TextEdit.app index.html</pre>
       <p>
-The second example opens the document in the application that is
-associated with it, the third example explicitly gives an application
-to use.
+Le second exemple ouvre le document dans l'application qui lui est associée, le troisième exemple indique explicitement l'application à utiliser.
 </p>
     
-    <h2><a name="copy-n-paste">8.3 Copy and Paste</a></h2>
+    <h2><a name="copy-n-paste">8.3 Copier-coller</a></h2>
       
       <p>
-Copy and Paste generally works between the Aqua and X11 environments.
-There are still some bugs.
-Emacs is reported to be picky about the current selection.
-Copy and paste from Classic to X11 doesn't work.
+Le copier-coller fonctionne, en général, entre les environnements Aqua et X11. Il reste quelques bogues. Emacs est particulièrement sensible à la sélection en cours. Le copier-coller entre Classic et X11 ne fonctionne pas.
 </p>
       <p>
-Anyway, the trick is to use the respective methods of the environment
-you're in.
-To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
-destination window to the front and use the "middle mouse button", i.e. Option-click
-on a single-button mouse (this can be configured 
-under XDarwin's Preferences), to paste.
-To transfer text from X11 to Aqua, simply select the text with the
-mouse in X11, then use Cmd-V in Aqua to paste it.
+Ce qui est important est d'utiliser la bonne méthode selon l'environnement dans lequel vous êtes.
+Pour transférer du texte de Aqua vers X11, utilisez Cmd-C dans Aqua, faites venir la fenêtre de destination au premier-plan et utilisez le "bouton central de la souris", ou Alt-clic avec une souris à un bouton (vous pouvez configurer cette action dans les Préférences de XDarwin) pour coller.
+Pour transférer du texte de X11 vers Aqua, sélectionnez le texte avec la souris dans X11, puis utilisez Cmd-V dans Aqua pour le coller.
 </p>
       <p>
-The X11 system actually has several separate clipboards (called "cut
-buffers" in X11 speak), and some applications have weird views which
-one should be used.
-In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
-because of this.
-The program <code>autocutsel</code> can help here; it automatically
-synchronizes the two main cut buffers.
-To run it, install the autocutsel Fink package and add the following
-line to your .xinitrc:
+En fait, le système X11 possède plusieurs presse-papiers distincts (appelés  "buffers de coupe" dans la terminologie X11) et certaines applications ont des idées bien arrêtées sur celui qu'elle doivent utiliser. C'est ainsi que le collage dans GNU Emacs ou XEmacs ne fonctionne pas toujours bien. Le programme <code>autocutsel</code> permet d'améliorer les choses ; il synchronise automatiquement les deux buffers de coupe principaux. Pour l'exécuter, installez le paquet Fink autocutsel et ajoutez la ligne suivante à votre fichier .xinitrc :
 </p>
       <pre>autocutsel &amp;</pre>
       <p>
-(Make sure it's <b>before</b> the line that exec's the window
-manager and never returns! Don't just add it at the end, it won't
-be executed.)
+(Assurez-vous que cette ligne est placée <b>avant</b> la ligne d'exécution du gestionnaire de fenêtres et qu'elle tourne en arrière-plan. Ne l'ajoutez pas à la fin, elle ne serait jamais exécutée). Et rappelez-vous que ce paquet n'est plus nécessaire avec X11 d'Apple (voir <a href="inst-xfree86.php?phpLang=fr#apple-binary">Notes au sujet de l'utilisation de X11 d'Apple</a>).
 </p>
-      <p>If you are using Apple's X11, then you can use Command-C or Edit-&gt;Copy, as 
-usual for Mac apps, to copy text to the clipboard.  However, pasting 
-from the clipboard to Apple X11 via Command-V doesn't work yet.</p>
+      <p>Si vous utilisez X11 d'Apple, vous pouvez utilisez Cmd-C ou Édition-&gt;Copier, comme pour les applications Mac, pour copier du texte dans le presse-papiers, et le bouton central de la souris ou Cmd-V pour coller le texte dans X11.</p>
+<p>Dans tous les cas de figure, si vous avez des difficultés à copier-coller du texte d'Aqua dans X11 ou vice-versa, vous pouvez tout d'abord réitérer l'action coller (il arrive qu'elle ne soit pas exécutée la première fois), ensuite vous pouvez utiliser des applications intermédiaires, par exemple TextEdit ou Terminal.app sous Aqua, nedit ou un xterm sous X11. Il y a toujours une solution à ce problème.</p>
     
   
 
