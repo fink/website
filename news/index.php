@@ -8,6 +8,12 @@ $metatags = '';
 include "header.inc";
 ?>
 
+<a name="2003-10-22 Mirror, mirror on the wall..."><span class="news-date">2003-10-22: </span><span class="news-headline">Mirror, mirror on the wall...</span></a><?php gray_line(); ?>
+	<p>..who will mirror Fink above all? There is a new player on the turf
+	and it belongs to the Fink team. <a href="<?php print $root; ?>http://finkmirrors.net"> Finkmirrors.net</a> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	</p>
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are look for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <a href="<?php print $root; ?>http://finkmirrors.net"> Finkmirrors.net</a>. 
+</p>
 <a name="2003-10-12 New update method available"><span class="news-date">2003-10-12: </span><span class="news-headline">New update method available</span></a><?php gray_line(); ?>
 <p>The latest version of the fink package manager offers a new update
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
