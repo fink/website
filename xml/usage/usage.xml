@@ -3,7 +3,7 @@
 <article filename="usage">
 <title>Fink 0.2.4 Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.5 2001/07/31 16:09:09 chrisp Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.6 2001/07/31 16:32:50 chrisp Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
@@ -167,11 +167,15 @@ others.
 </section>
 
 <section><title>Further Questions</title>
-<p>If your questions are not answered by this document, read the FAQ at
-the Fink website: <link url="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</link>. If that still
-doesn't answer your questions, subscribe to the fink-users mailing
-list via <link url="http://lists.sourceforge.net/lists/listinfo/fink-users">http://lists.sourceforge.net/lists/listinfo/fink-users</link> and
-ask there.</p>
+<p>
+If your questions are not answered by this document, read the FAQ at
+the Fink website:
+<link url="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</link>.
+If that still doesn't answer your questions, subscribe to the
+fink-users mailing list via <link
+url="http://fink.sourceforge.net/lists/fink-users.php">http://fink.sourceforge.net/lists/fink-users.php</link>
+and ask there.
+</p>
 </section>
 
 </article>
