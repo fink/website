@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.105 2003/04/14 13:16:25 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.106 2003/04/15 01:23:43 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -754,7 +754,7 @@ other than English.  (This is a bug in Apple's Installer, that it doesn't
 just show you the English-language error message.)</p>
 <p>The English language error message corresponding to number 19 is</p>
 <p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
-<p>You may be getting this error if you've used fink before, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
+<p>You may be getting this error if you've used finkbefore, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p>
@@ -768,6 +768,21 @@ the Virex folks having made errors in the way they set things up).</p>
 <p>before you run <filename>dselect</filename>.</p></answer>
 </faqentry>
 
+<faqentry name="perl-undefined-symbol"><question><p>Why do I get a bunch of "dyld: perl undefined symbols" errors when I run Fink commands?</p></question>
+<answer><p>If you see an error sequence like the following:</p>
+<codeblock>dyld: perl Undefined symbols:
+_Perl_safefree
+_Perl_safemalloc
+_Perl_saferealloc
+_Perl_sv_2pv
+_perl_call_sv
+_perl_eval_sv
+_perl_get_sv</codeblock>
+<p>then what has probably happened is that you updated Perl to a new version and now <filename>storable-pm</filename> needs to be rebuilt.  You will have to have the Developer Tools for this.  Perform the following commands:</p>
+<codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
+sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
+fink rebuild storable-pm
+fink index</codeblock></answer></faqentry>
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
