@@ -3,7 +3,7 @@
 <document lang="en" filename="index" >
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.xml,v 1.174 2004/02/26 00:14:53 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.1 2004/02/29 22:31:41 fingolfin Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are

@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.9 2004/02/28 15:32:53 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.10 2004/02/29 22:31:41 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -9,7 +9,6 @@ BASE_TARGET := $(TARGET)
 
 ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
-SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.xml,.xml,$(SOURCE)))
 TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
 #TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
@@ -28,7 +27,6 @@ INSTALL_FILES += $(BASE_TARGET)
 ifdef WANT_HTML
 ifdef LANGUAGES
 ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
-ALL_TARGETS := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(ALL_TARGETS),$(subst .en.html,.html,$(ALL_TARGETS)))
 INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
 else
@@ -59,7 +57,6 @@ force: clean all
 	xmllint --noout --valid $(SOURCE);
 	$(foreach  XMLFILE, $(SOURCE), xsltproc -o $(patsubst %.xml,%.html.tmp,$(XMLFILE)) $(STYLESHEET_HTML) $(XMLFILE); )
 	$(foreach XMLFILE, $(SOURCE), sed -e 's,$$Id,$$Fink,g' $(patsubst %.xml,%.html.tmp,$(XMLFILE)) > $(patsubst %.xml,%.html,$(XMLFILE)); ) 
-	-mv $(subst .xml,.html,$(BASE_SOURCE)) $(subst .xml,.en.html,$(BASE_SOURCE))
 	rm -f *.html.tmp
 
 install: $(INSTALL_FILES)
