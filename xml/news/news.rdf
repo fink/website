@@ -4,10 +4,34 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 18 Nov 2003 09:04:13 EST</lastBuildDate>
+    <lastBuildDate>Tue, 25 Nov 2003 23:50:42 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F">
+    <title>More mirrors....pretty please?</title>
+    <link>http://fink.sf.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</link>
+    <dc:date>2003-11-24</dc:date>
+    <description>
+	While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
+        we crave more. To improve our service to all of you, we would like to ask that
+        you evaluate carefully if you maybe do have the resources to become a mirror. 
+            
+             
+        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
+        here. Especially mirrors in
+        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+        those regions yet. If you feel generous and wish to donate even more resources, please visit
+        finkmirrors.net to learn about your options.
+            
+             
+        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+        We are looking forward to many new applications and thank our community in advance. 
+            
+	</description>
+  </item>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-11-17%20Fink%200.6.2%20released">
     <title>Fink 0.6.2 released</title>
     <link>http://fink.sf.net/news/#2003-11-17%20Fink%200.6.2%20released</link>
     <dc:date>2003-11-17</dc:date>
@@ -35,11 +59,11 @@ want to only use the binaries from this
 new distribution for now, while the Fink team continues to modify
 Fink packages for 10.3.
 
-*Exceptions include: emacs.
+*Exceptions include: emacs, qt.
 
 	</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-11-04%20User%20Deletion%20Bug%2F%20Dselect%20Troubles">
     <title>User Deletion Bug/ Dselect Troubles</title>
     <link>http://fink.sf.net/news/#2003-11-04%20User%20Deletion%20Bug%2F%20Dselect%20Troubles</link>
     <dc:date>2003-11-04</dc:date>
@@ -74,7 +98,7 @@ repair it as above.
 
 	</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-11-01%20Fink%200.6.1%20released">
     <title>Fink 0.6.1 released</title>
     <link>http://fink.sf.net/news/#2003-11-01%20Fink%200.6.1%20released</link>
     <dc:date>2003-11-01</dc:date>
@@ -106,7 +130,7 @@ after free registration from connect.apple.com.
 
                 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-31%20Happy%20Halloween%20and%20welcome%20new%20mirrors">
     <title>Happy Halloween and welcome new mirrors</title>
     <link>http://fink.sf.net/news/#2003-10-31%20Happy%20Halloween%20and%20welcome%20new%20mirrors</link>
     <dc:date>2003-10-31</dc:date>
@@ -143,7 +167,7 @@ after free registration from connect.apple.com.
 		
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink">
     <title>Look Ma, a logo for Fink</title>
     <link>http://fink.sf.net/news/#2003-10-25%20Look%20Ma%2C%20a%20logo%20for%20Fink</link>
     <dc:date>2003-10-25</dc:date>
@@ -165,7 +189,7 @@ after free registration from connect.apple.com.
 	
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3">
     <title>Upgrade to gcc 3.3 and/or 10.3</title>
     <link>http://fink.sf.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3</link>
     <dc:date>2003-10-24</dc:date>
@@ -209,7 +233,7 @@ but many many packages already work.
 
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-23%20Say%20Hello%20to%20Mirror%20Numero%20Uno">
     <title>Say Hello to Mirror Numero Uno</title>
     <link>http://fink.sf.net/news/#2003-10-23%20Say%20Hello%20to%20Mirror%20Numero%20Uno</link>
     <dc:date>2003-10-23</dc:date>
@@ -225,7 +249,7 @@ but many many packages already work.
 	
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-22%20Mirror%2C%20mirror%20on%20the%20wall...">
     <title>Mirror, mirror on the wall...</title>
     <link>http://fink.sf.net/news/#2003-10-22%20Mirror%2C%20mirror%20on%20the%20wall...</link>
     <dc:date>2003-10-22</dc:date>
@@ -240,7 +264,7 @@ UPDATE: Yes, I screwed up when I initially installed the DNS records. If you can
 
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-10-12%20New%20update%20method%20available">
     <title>New update method available</title>
     <link>http://fink.sf.net/news/#2003-10-12%20New%20update%20method%20available</link>
     <dc:date>2003-10-12</dc:date>
@@ -259,7 +283,7 @@ fink will ask you to reset your gcc version whenever
 that is necessary.
 	</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-09-02%20Logo%20contest%20ends">
     <title>Logo contest ends</title>
     <link>http://fink.sf.net/news/#2003-09-02%20Logo%20contest%20ends</link>
     <dc:date>2003-09-02</dc:date>
@@ -273,7 +297,7 @@ Fink is proud to be part of such a supportive community and would like to thank 
 
 	</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org">
     <title>Source files from ftp.gnu.org</title>
     <link>http://fink.sf.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org</link>
     <dc:date>2003-08-18</dc:date>
@@ -304,7 +328,7 @@ It may be difficult to install those packages at present.
 
                 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-06-26%20Developer%20Tools%20Update.">
     <title>Developer Tools Update.</title>
     <link>http://fink.sf.net/news/#2003-06-26%20Developer%20Tools%20Update.</link>
     <dc:date>2003-06-26</dc:date>
@@ -340,7 +364,7 @@ the update.
 
                 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.">
     <title>Darwin packaging groups to coordinate efforts.</title>
     <link>http://fink.sf.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.</link>
     <dc:date>2003-06-20</dc:date>
@@ -362,7 +386,7 @@ site,  which  will provide a home for this cooperative effort.
 
                 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.">
     <title>Fink logo contest begins.</title>
     <link>http://fink.sf.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.</link>
     <dc:date>2003-06-16</dc:date>
@@ -379,7 +403,7 @@ Fink and MacWelt hope that many of you will participate as we might just find so
 
                 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-05-05%20KDE%203.1.1%20Binaries%20Available">
     <title>KDE 3.1.1 Binaries Available</title>
     <link>http://fink.sf.net/news/#2003-05-05%20KDE%203.1.1%20Binaries%20Available</link>
     <dc:date>2003-05-05</dc:date>
@@ -395,7 +419,7 @@ announcement.
 
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-04-16%20Virex%20problem%20resolved">
     <title>Virex problem resolved</title>
     <link>http://fink.sf.net/news/#2003-04-16%20Virex%20problem%20resolved</link>
     <dc:date>2003-04-16</dc:date>
@@ -417,7 +441,7 @@ to restore files which the Virex upgrade may have deleted.
 
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-04-14%20Fink%200.5.2%20released">
     <title>Fink 0.5.2 released</title>
     <link>http://fink.sf.net/news/#2003-04-14%20Fink%200.5.2%20released</link>
     <dc:date>2003-04-14</dc:date>
@@ -432,7 +456,7 @@ special instructions.)
 
 		</description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-04-09%20Interview%20on%20OSNews.com">
     <title>Interview on OSNews.com</title>
     <link>http://fink.sf.net/news/#2003-04-09%20Interview%20on%20OSNews.com</link>
     <dc:date>2003-04-09</dc:date>
@@ -443,7 +467,7 @@ special instructions.)
 	so even if you know Fink fairly well, you might find it informative.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-03-29%20KDE%203.1.1%20Final%20In%20Unstable">
     <title>KDE 3.1.1 Final In Unstable</title>
     <link>http://fink.sf.net/news/#2003-03-29%20KDE%203.1.1%20Final%20In%20Unstable</link>
     <dc:date>2003-03-29</dc:date>
@@ -457,7 +481,7 @@ read here.
 	will be released as an update shortly thereafter.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-03-18%20KDE%203.1%20Final%20In%20Stable">
     <title>KDE 3.1 Final In Stable</title>
     <link>http://fink.sf.net/news/#2003-03-18%20KDE%203.1%20Final%20In%20Stable</link>
     <dc:date>2003-03-18</dc:date>
@@ -471,7 +495,7 @@ read here.
 	release.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-03-17%20Apple%20X11%20Beta%203%20Released">
     <title>Apple X11 Beta 3 Released</title>
     <link>http://fink.sf.net/news/#2003-03-17%20Apple%20X11%20Beta%203%20Released</link>
     <dc:date>2003-03-17</dc:date>
@@ -485,7 +509,7 @@ that takes the new Apple X11 into account.  It should be appearing in stable
 shortly.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-02-14%20New%20version%20of%20FinkCommander">
     <title>New version of FinkCommander</title>
     <link>http://fink.sf.net/news/#2003-02-14%20New%20version%20of%20FinkCommander</link>
     <dc:date>2003-02-14</dc:date>
@@ -498,7 +522,7 @@ that Fink has installed for a particular package, as well as many
 other improvements.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-02-07%20DO%20NOT%20INSTALL%20VIREX%207.2">
     <title>DO NOT INSTALL VIREX 7.2</title>
     <link>http://fink.sf.net/news/#2003-02-07%20DO%20NOT%20INSTALL%20VIREX%207.2</link>
     <dc:date>2003-02-07</dc:date>
@@ -516,7 +540,7 @@ to Virex's manufacturer.  We will keep the
 Fink community informed about the situation as it develops.
 </description>
   </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/#2003-01-26%20Apple%20X11%20Library%20Warning">
     <title>Apple X11 Library Warning</title>
     <link>http://fink.sf.net/news/#2003-01-26%20Apple%20X11%20Library%20Warning</link>
     <dc:date>2003-01-26</dc:date>
@@ -537,35 +561,5 @@ Update 11 February 2003: This script is not needed with
 version 0.2 of Apple's X11.app which was released yesterday.
 
 </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Gnome, libpng, and the unstable tree</title>
-    <link>http://fink.sf.net/news/#2003-01-21%20Gnome%2C%20libpng%2C%20and%20the%20unstable%20tree</link>
-    <dc:date>2003-01-21</dc:date>
-    <description>
-	
-        A problem was uncovered today concerning the versions of imlib,
- libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
- work addressing this problem.  As a workaround, users can downgrade
-their imlib package to the stable version, &quot;fink install
- imlib-1.9.10-9&quot;, until the problem is fixed.
-
-   Many Fink users may be using Fink's unstable tree without being
-fully aware of what this entails.  For a few months in the fall,
-enabling the unstable tree was the only way to gain access to
- 10.2-compatible versions of Fink packages.  
-That is no longer the case.
-Fink users who do not wish to help the Fink team with testing should
-disable their unstable tree.  To do this, edit the file
-/sw/etc/fink.conf and remove the items
- unstable/main and unstable/crypto from the
- Trees line.
-	
-The Fink team appreciates those users who are willing to stick with
-the unstable tree, even when there are problems like today's, and provide
-the team with prompt feedback.  This is a community effort and we
-appreciate your participation.
-
-	</description>
   </item>
 </rdf:RDF>
