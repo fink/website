@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Usage (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/17 10:53:13';
+$cvs_date = 'Date: 2004/03/18 04:05:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -165,41 +165,11 @@ sudo apt-get install fink</pre></li>
           <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre></li>
         </ul></div>
     </a>
-    <a name="apple-x11-beta-wants-xfree86">
-      <div class="question"><p><b>Q9.12: I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
-          <li><b>You are installing from binaries:</b> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<pre>sudo apt-get update 
-sudo apt-get install fink</pre></li>
-          <li><b>You are installing from source: </b>You should first update
-          <code>fink</code>, e.g. via a <pre>fink selfupdate</pre>Then you need to (re)install the X11SDK, which
-          you should have downloaded when you downloaded your beta copy of
-          Apple's X11.</li>
-        </ul><p>For either case, you can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the
-        <code>Package: system-xfree86</code>and <code>Package:
-        system-xfree86-shlibs</code> (as well as the <code>Package:
-        system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and the <code>provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p><p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 
-\ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg 
-\ /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 (and the X11SDK, if needed).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing.</p><p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p><ul>
-          <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a></li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre></li>
-        </ul></div>
+    <a name="wants-xfree86-on-upgrade">
+      <div class="question"><p><b>Q9.12: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
+      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
+
+You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> or <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a> entries, above.</p></div>
     </a>
   
 
