@@ -1,7 +1,7 @@
 <a name="2003-11-24 More mirrors....pretty please?"><span class="news-date">2003-11-24: </span><span class="news-headline">More mirrors....pretty please?</span></a><?php gray_line(); ?>
 	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
         we crave more. To improve our service to all of you, we would like to ask that
-        you evaluate carefully if you do not have the resources to become a mirror. 
+        you evaluate carefully if you maybe do have the resources to become a mirror. 
         </p>    
         <p>     
         All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 

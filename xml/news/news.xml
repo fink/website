@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.102 2003/11/24 08:45:09 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.103 2003/11/24 08:48:47 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2003-11-24</date>
@@ -9,7 +9,7 @@
 	<body>
 	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
         we crave more. To improve our service to all of you, we would like to ask that
-        you evaluate carefully if you do not have the resources to become a mirror. 
+        you evaluate carefully if you maybe do have the resources to become a mirror. 
         </p>    
         <p>     
         All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
