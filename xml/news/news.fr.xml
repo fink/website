@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.1 2004/03/25 00:55:08 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.2 2004/04/08 07:56:12 michga Exp $</cvsid>
+
+<newsitem>
+	<date>06/04/2004</date>
+	<headline>Fink 0.6.3 et 0.7.0 sont disponibles</headline>
+	<body>
+	<p>
+Les dernières versions de Fink 0.6.3 (pour 10.2) et 0.7.0 (pour 10.3) sont, dès à présent, disponibles sous forme de sources ou de binaires.  La version 0.6.3 a été compilée sur <em>10.2</em>, tandis que la version 0.7.0 l'a été sur <em>10.3</em>. Cela devrait rendre la gestion des différentes plate-formes plus facile.
+	</p>
+	<p>
+Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire de paquets, ajouté de nombreux paquets binaires non disponibles sous cette forme auparavant, et recompilé certains paquets qui posaient des problèmes sur 10.3.
+	</p>
+	<p>
+Pour faire une première installation de Fink, vous devez suivre les instructions données <link url="download/index.php?phpLang=en">ici</link>.
+Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données <link url="download/upgrade.php?phpLang=en">là</link>.
+
+Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus <link url="lists/index.php?phpLang=en">ici</link>.
+		</p>
+		<p>
+Vérifiez que vous avez téléchargé le <em>bon installeur</em> pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
+		</p>
+	<p>
+L'équipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs.
+Nous remercions aussi notre communauté. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui. 
+</p>
+</body>
+</newsitem>
 
 <newsitem>
 	<date>19/02/2004</date>
