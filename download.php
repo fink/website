@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/15 07:54:19 $';
+$cvs_date = '$Date: 2001/04/20 15:16:35 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -19,17 +19,20 @@ href="http://prdownloads.sourceforge.net/fink/fink-0.1.8a.tar.gz">Fink
 0.1.8a</a> - 236K, .tar.gz format</li>
 </ul>
 
-<p>If you're still using Mac OS X Public Beta or Darwin 1.2, get
-version 0.1.6 from the Fink <a
-href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
-area</a> at SourceForge or <a href="fink/cvs.php">use CVS</a> to get
-the last Public Beta compatible version.</p>
+<p>Fink 0.2.0 was released on 20 April 2001. It is the first release
+to use dpkg instead of stow for package management. Treat this as a
+test release for now.</p>
+<ul>
+<li><a
+href="http://prdownloads.sourceforge.net/fink/fink-0.2.0-full.tar.gz">Fink
+0.2.0</a> - 199K, .tar.gz format</li>
+</ul>
 
 <p>Older releases are always available from the Fink <a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
 area</a> at SourceForge.</p>
 <p>Te be informed of new releases, subscribe to the <a
-href="http://lists.sourceforge.net/lists/listinfo/fink-users">fink-users
+href="http://lists.sourceforge.net/lists/listinfo/fink-announce">fink-announce
 mailinglist</a>.</p>
 
 <?

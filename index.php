@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/15 07:54:19 $';
+$cvs_date = '$Date: 2001/04/20 15:16:35 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,9 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-04-20: Version 0.2.0 is released. It now uses dpkg for binary
+package management. You can get it from the download page, but be
+aware that this version is not yet as stable as the 0.1.x series.</p>
 <p>2001-04-15: Released version 0.1.8a, fixing install problems. You
 only need this if you downloaded 0.1.8 and had install problems ("stow
 not found"). Get it from the <a href="download.php">download
