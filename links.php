@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/16 08:46:57 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/05/05 17:47:00 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,8 @@ porting info and news, plus a software archive</li>
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 news, articles and a software archive</li>
+<li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
+a GUI for Fink</li>
 <!-- currently broken
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 help running The GIMP, GTK and X on a Mac</li>
