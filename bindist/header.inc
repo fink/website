@@ -1,24 +1,6 @@
 <?
-/* header.inc */
+/* $Id: header.inc,v 1.2 2002/07/22 18:31:58 fingolfin Exp $ */
 
-
-// directory index settings
-$headrowcolor = "#cccccc";
-$rowcolor1 = "#ffffff";
-$rowcolor2 = "#eeeeee";
-
-
-// Fink website stuff
-$fsroot = $root = $binbase."../";
-
-$title = "Fink Archive Browser";
-include $fsroot."download/nav.inc";
-
+$fsroot = $root = "../";
 include $fsroot."header.inc";
-
-
-// print a title
 ?>
-
-<h1>The Fink Archive</h1>
-
