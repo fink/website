@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.53 2004/11/01 23:02:15 rangerrick Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.54 2004/11/02 02:38:51 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -2233,7 +2233,6 @@ symlink to the <filename>/Applications/Fink</filename> directory.
 Example:
 </p>
 <codeblock>AppBundles: build/*.app Foo.app</codeblock>
-</p>
 </itemd></item>
 
 <item><itemt>JarFiles</itemt>
