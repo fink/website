@@ -1,3 +1,19 @@
+<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<p>
+The version of gcc included with XCode 1.5 is known to produce 
+incorrect output from c++ code under certain circumstances.
+Fink now has a mechanism to warn users about this, and Fink will soon
+refuse
+to use the "broken" gcc to compile packages which are known to
+have this problem.
+</p><p>
+If you have already upgraded XCode to version 1.5, there is a workaround,
+described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> here </a>.
+</p><p> If you have not yet upgraded, you should consider remaining with
+XCode version 1.2 until the problem has been resolved.
+</p>
+
+
 <a name="2004-09-20 Fink 0.7.1 released."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 released.</span></a><?php gray_line(); ?>
 <p>
 The latest Fink release, version 0.7.1 (for 10.3),
@@ -19,7 +35,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&cmp=0&tree2=0.7.0-stable&splitoffs=on&sort=name">page.</a>
+<a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</a>
 </p>
 
 <p>
@@ -29,7 +45,7 @@ If you have questions or problems, please try the Fink mailing lists.  You can l
 
 <p>
 Please make sure you pick the <b>appropriate installer</b> for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Fink 0.6.3 will only install on Mac OS X 10.2.*, while Fink 0.7.1 will only install on Mac OS X 10.3.*
 </p>
 
         <p>
@@ -53,27 +69,5 @@ Without their constant support and valuable pointers, Fink would not be where we
 	are  missing after compiling with g++.)  
 	Packages already known to have this problem include
 	octave, singular-factory, singular-libfac, and possibly sdl.
-	</p>
-	<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
-	<p>
-	The fink-0.22.0 package manager, which was available briefly in the 
-	unstable tree this past week, had a bug which prevents further
-	updating via rsync.  If you installed this version of fink, you
-	can recover by running the command 
-	<code>fink install fink-0.21.2-1</code> which will downgrade fink
-	to the version in the stable tree, and subsequently running
-	<code>fink selfupdate</code>
-	</p><p>
-	If for any reason those commands don't work, go to 
-	<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the 
-	fink file release page at sourceforge</a> and download the
-	file <code>fink-0.22.1.tar.gz</code> (or a more recent, i.e.,
-	higher numbered, version).  Unpack this file with
-	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
-	fink-0.22.1 directory, run the command <code>./inject.pl</code>
-	</p>
-	<p>
-	The fink team apologizes for the error, and thanks the user 
-	community for bringing it to our attention quickly.
 	</p>
 	

@@ -1,11 +1,27 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/09/20 15:56:45';
+$cvs_date = 'Date: 2004/10/15 15:20:44';
 $metatags = '';
 
 include_once "header.inc";
 ?>
+
+<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<p>
+The version of gcc included with XCode 1.5 is known to produce 
+incorrect output from c++ code under certain circumstances.
+Fink now has a mechanism to warn users about this, and Fink will soon
+refuse
+to use the "broken" gcc to compile packages which are known to
+have this problem.
+</p><p>
+If you have already upgraded XCode to version 1.5, there is a workaround,
+described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> here </a>.
+</p><p> If you have not yet upgraded, you should consider remaining with
+XCode version 1.2 until the problem has been resolved.
+</p>
+
 
 <a name="2004-09-20 Fink 0.7.1 released."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 released.</span></a><?php gray_line(); ?>
 <p>
@@ -38,7 +54,7 @@ If you have questions or problems, please try the Fink mailing lists.  You can l
 
 <p>
 Please make sure you pick the <b>appropriate installer</b> for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Fink 0.6.3 will only install on Mac OS X 10.2.*, while Fink 0.7.1 will only install on Mac OS X 10.3.*
 </p>
 
         <p>
