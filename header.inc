@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.37 2001/10/25 09:25:16 chrisp Exp $ */
+/* $Id: header.inc,v 1.38 2001/11/04 15:19:25 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -53,6 +53,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 if ($metatags)
   print $metatags;
 ?>
+<link rel="start" href="<? print $root ?>index.php">
 <link rel="copyright" href="<? print $root ?>legal.php">
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
