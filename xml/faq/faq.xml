@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.60 2002/12/09 21:30:03 benh57 Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.61 2002/12/10 13:30:57 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -601,7 +601,7 @@ endif
 <p>to remove it, leaving everything in place.  If you don't have <code>system-xfree86</code> installed then proceed to step 3.</p>
 <p>3. Manually remove all of XFree86.  This can be done with</p> 
 <p><code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</code></p>   
-<p>4. Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries (binary not available on Jaguar as of this writing).</p>
+<p>4. Install fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> by the usual means:  "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p>
 <p>5. If you had <code>xaw3d</code> and <code>xaw3d-shlibs</code> installed originally, then reinstall them (since some other package on your system likely depends on them).  If by some chance you installed them through other means than fink, install the fink packages.</p> 
 </answer></faqentry>
 
