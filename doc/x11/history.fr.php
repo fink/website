@@ -2,7 +2,7 @@
 $title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/04/08 08:01:50';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de XFree86"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
 ?>
@@ -61,6 +61,6 @@ Pendant ce temps, Apple sortait Mac OS X 10.0 et Darwin 1.3 ; quelques semaines 
 </p>
     
   <p align="right">
-Next: <a href="inst-xfree86.php?phpLang=fr">3 Getting and Installing XFree86</a></p>
+Next: <a href="inst-xfree86.php?phpLang=fr">3 Récupération et installation de XFree86</a></p>
 
 <? include_once "footer.inc"; ?>

@@ -1,5 +1,5 @@
 <?
-$title = "Utilisation de X11 - Installing XFree86";
+$title = "Utilisation de X11 - Installation de XFree86";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/04/08 08:01:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
@@ -7,116 +7,82 @@ $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation
 include_once "header.inc";
 ?>
 
-<h1>Utilisation de X11 - 3 Getting and Installing XFree86</h1>
+<h1>Utilisation de X11 - 3 Récupération et installation de XFree86</h1>
     
     
-    <h2><a name="fink">3.1 Installing through Fink</a></h2>
+    <h2><a name="fink">3.1 Installation via Fink</a></h2>
       
       <p>
-Fink will let you install X11 in any way you like,
-but it also provides XFree86 packages of its own. If you
-use <code>fink install ...</code>, it will download
-the source code and compile it on your computer. If
-you use <code>apt-get install ...</code> or the
-<code>dselect</code> frontend, it will download
-precompiled binary packages, similar to the official
-XFree86 distribution.
+Fink vous permet d'installer X11 comme vous voulez, mais il fournit aussi ses propres paquets XFree86. Si vous utilisez, <code>fink install ...</code>, il téléchargera le code source et le compilera sur votre ordinateur. Si vous utilisez <code>apt-get install ...</code> ou l'interface <code>dselect</code>, il téléchargera des paquets binaires précompilés, identiques à ceux de la distribution officielle XFree86.
 </p>
       <p>
-The <code>xfree86-base</code> package contains all
-of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
-The <code>xfree86-rootless</code> package is the server from the standard,
-stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
-operation, and has OpenGL support.  
-(In the early days, Fink also had an <code>xfree86-server</code> package
-which only provided fullscreen mode, but this is no longer a relevant
-option.)
-You also have the option to
-install the server yourself; see below.  In this case, you should
-only install <code>xfree86-base</code>, or you'll risk that Fink
-overwrites your manually installed server.  Note that the current stable version of<code> xfree86-base</code> (4.2.1.1-3) generates the <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code>, and <code>xfree86-rootless-shlibs</code> during its build process.  In this case, all four packages must be installed for you to have a working XFree86 setup.
+Le paquet <code>xfree86-base</code> contient l'ensemble de XFree86 4.2.1.1 (4.2.0 pour les utilisateurs de 10.1), sauf le serveur XDarwin.  
+Le paquet <code>xfree86-rootless</code> est le serveur de la version standard, stable de  XFree86 4.2.1.1. Il gère à la fois les modes plein écran et racine, ainsi qu'OpenGL.
+(Au début, Fink avait aussi un paquet <code>xfree86-server</code> qui ne fournissait que le mode plein écran, mais ce n'est plus nécessaire.)
+Vous pouvez aussi installer le serveur vous-même ; voir plus bas. Dans ce cas, vous devez installer <code>xfree86-base</code>, sinon Fink viendra écraser le serveur installé précédemment. Notez que la version stable actuelle de <code> xfree86-base</code> (4.2.1.1-3) génère <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code> et <code>xfree86-rootless-shlibs</code> pendant la compilation. Dans ce cas, les quatre paquets doivent être installés pour avoir une configuration valide de XFree86.
 </p>
-      <p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <code>xine</code>.</p>
-      <p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
+      <p>Les paquets <code> xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> sont similaires aux précédents, mais ont été modifiés pour gérer les processus légers, nécessaires à un petit nombre d'applications, tel <code>xine</code>.</p>
+      <p>XFree86 4.2.11 (sans gestion des processus légers) est considérée comme la version de base stable de XFree86 à utiliser avec Fink sur 10.2. XFree86 4.3.0 est disponible, mais elle est plus expérimentale, et n'était disponible que dans la branche instable à l'époque où ce document a été écrit. Elle gère nativement les processus légers et est plus rapide que la version 4.2.1.1.  Pour installer cette version, vous devez installer le paquet <code>xfree86</code>. Notez que, dans cette version, il n'y a plus de séparation entre paquet -base et paquet -rootless, bien que les librairies soient regroupées dans un paquet <code>xfree86-shlibs</code>. Si vous compilez des binaires avec la version 4.3, ils peuvent ne pas fonctionner sur 4.2.1.1 ou Apple X11, tenez-en compte.</p>
       <p>
-        <b>10.3 users:</b>  You will need to install version 4.3.99.16-2 or later, which are prereleases for XFree86-4.4.  If you are working from the binary distribution, make sure to update your package descriptions (e.g. via <code>sudo apt-get update</code>).</p>
+        <b>Utilisateurs 10.3 :</b> Vous devez installer la version 4.3.99.16-2 ou ultérieure, qui sont des pré-versions de XFree86-4.4. Si vous travaillez à partir de la distribution binaire, assurez-vous que vous mettez à jour les descriptions de paquets (par exemple via <code>sudo apt-get update</code>).</p>
     
-    <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
+    <h2><a name="apple-binary">3.2 Binaires d'Apple</a></h2>
       
       <p>
-On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
-X11 implementation based on XFree86-4.2</a> which includes Quartz rendering and accelerated
-OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release (i.e. Beta 3) was made on March 17, 2003 with further additional features and bugfixes.  This version is usable on Jaguar.
+Le 7 janvier 2003, Apple a mis à disposition <a href="http://www.apple.com/macosx/x11/">une implémentation X11 personnalisée et basée sur XFree86-4.2</a>, qui incluait un rendu Quartz et l'accélération OpenGL. Une nouvelle version est sortie le 10 Février 2003, qui comportait des fonctionnalités supplémentaires et des corrections de bogues. Une troisième version (la Bêta 3) est sortie le 17 mars 2003 avec de nouvelles fonctionnalités et des corrections de bogues. Cette version peut être utilisée sur Jaguar.
 </p>
-      <p>On October 24, 2003, Apple released Panther (10.3), which includes the release version of their X11 distribution.  This version is based on XFree86-4.3.</p>
+      <p>Le 24 octobre 2003, Apple a sorti Panther (10.3), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.3.</p>
       <p>
-To use the Apple binaries, you need to make sure the <b>X11 User</b> package is installed, and you should also 
-<a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</a> Fink.</p>
-      <p>Under <code>fink-0.16.2</code>, you will need to install the <b>X11 SDK</b> package, as well.  After you do this, Fink will
-create a <code>system-xfree86</code> virtual package.</p>
-      <p>Under <code>fink-0.17.0</code> and later installing the X11 SDK is only necessary if 
-you want to build packages from source.  In this case, even if you don't have the SDK, there will be <code>system-xfree86</code>
-and <code>system-xfree86-shlibs</code> virtual packages, the latter representing the shared libraries.  If you do install the SDK, there will also be a  
-<code>system-xfree86-dev</code> package, representing the headers.
+Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <b>X11 User</b> est installé et, d'autre part <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">mettre à jour</a> Fink.</p>
+      <p>Avec <code>fink-0.16.2</code>, vous devez aussi installer le paquet <b>X11 SDK</b>. Ensuite, Fink créera un paquet virtuel <code>system-xfree86</code>.
+      </p>
+      <p>Avec <code>fink-0.17.0</code> et les versions ultérieures, n'installez le paquet X11 SDK que si vous souhaitez construire des paquets à partir du source. Dans ce cas, même si vous n'avez pas installé le SDK, il y aura création des paquets virtuels <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>, ce dernier correspondant aux librairies partagées. Si vous installez le SDK, il y aura création d'un paquet <code>system-xfree86-dev</code>, représentant les headers.
 </p>
       <p>
-If you have an existing XFree86 distribution installed, be it through Fink or otherwise, you
-can follow the <a href="inst-xfree86.php?phpLang=fr#switching-x11">instructions on
-replacing one X11 package with another</a>.  Make sure that you remove your existing
-packages, then install Apple's X11 (and X11 SDK, if needed or desired).
+Si vous avez déjà installé une distribution XFree86, que ce soit avec Fink ou non, vous pouvez suivez les  <a href="inst-xfree86.php?phpLang=fr#switching-x11">instructions de remplacement d'un paquet X11 par un autre</a>. Supprimez vos paquets existants, puis installez X11 d'Apple (et, éventuellement, X11 SDK).
 </p>
       <p>
-Some notes on using Apple's X11:
+Notes au sujet de l'utilisation de X11 d'Apple :
 </p>
       <ul>
         <li>
-          <p>The <code>autocutsel</code> package is no longer needed.  If you're starting
-  X11 with it enabled, you should disable it.</p>
+          <p>Le paquet <code>autocutsel</code> n'est plus nécessaire. Vous devez le désactiver avant de démarrer X11 d'Apple, dans le cas où il serait activé.</p>
         </li>
         <li>
-          <p>Apple's X11 uses your existing <code>~/.xinitrc</code> file.  If you want the
-  full effect of Quartz integration, you should use <code>/usr/X11R6/bin/quartz-wm</code>
-  as your window manager, or delete your <code>~/.xinitrc</code> completely.</p>
-          <p>If you just want cut-and-paste integration, but want to use a different window manager, you can do 
-this as in the following example:</p>
+          <p>X11 d'Apple utilise votre fichier de configuration <code>~/.xinitrc</code>, s'il existe. Si vous voulez profiter au maximum de l'intégration Quartz, utilisez <code>/usr/X11R6/bin/quartz-wm</code> comme gestionnaire de fenêtres, ou supprimez complètement votre fichier <code>~/.xinitrc</code>.</p>
+          <p>Si vous voulez simplement pouvoir copier-coller, mais désirez utiliser un autre gestionnaire de fenêtres, vous pouvez vous baser sur l'exemple suivant :</p>
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
 exec /sw/bin/fvwm2</pre>
-          <p>You may, of course, call any other window manager, <code>startkde</code>, etc.</p>
+          <p>Vous pouvez, bien entendu, utiliser un autre gestionnaire de fenêtres, <code>startkde</code>, etc...</p>
         </li>
         <li>
           <p>
-            <code>quartz-wm</code> doesn't fully support Gnome/KDE window manager hints, so
-  you may see some strange behavior on windows that shouldn't have decorations, but do.</p>
+            <code>quartz-wm</code> ne gère pas complètement les astuces des gestionnaires de fenêtres Gnome/KDE. Vous observerez peut-être des comportements étranges dans des fenêtres qui ne devraient pas avoir d'ornements, mais en ont pourtant.</p>
         </li>
         <li>
-          <p>Apple X11 doesn't honor the Fink environment settings by default.  In order to call up startup applications 
-that you have installed with fink (e.g. window managers, gnome-session, other apps under 
-<code>/sw/bin</code>) put the following near the top of <code>~/.xinitrc</code> (i.e. after the 
-initial "<code>#!/bin/sh</code>", but before you run any programs):</p>
+          <p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <code>/sw/bin</code>), placez la ligne suivante dans les premières lignes du fichier <code>~/.xinitrc</code> (c'est-à-dire après l'initialisation "<code>#!/bin/sh</code>", mais avant de démarrer tout autre programme) :</p>
           <pre> . /sw/bin/init.sh
 </pre>
-          <p>so that the Fink environment is initialized.  Note:  <code>init.sh</code> is used rather than <code>init.csh</code> because <code>.xinitrc</code> is run by <code>sh</code> rather than <code>tcsh</code>.</p>
+          <p>de façon à ce que votre environnement Fink soit initialisé. Note : <code>init.sh</code> est utilisé au lieu de <code>init.csh</code>, car <code>.xinitrc</code> est lancé par <code>sh</code> au lieu de <code>tcsh</code>.</p>
         </li>
         <li>
-          <p>Applications that require calling other programs which reside within your Fink tree for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
+          <p>Les applications qui appellent d'autres programmes situés dans l'arborescence de Fink pour réaliser certaines de leurs fonctions doivent subir un traitement spécial pour que l'on puisse les appeler à partir du menu Applications. Au lieu de mettre le chemin complet du fichier, par exemple :</p>
           <pre>/sw/bin/emacs</pre>
-          <p>you'll want to use something like the following, if you're using bash as your
-default shell:</p>
+          <p>vous devez utiliser une commande semblable à la suivante, si vous utilisez le shell bash :</p>
           <pre>. /sw/bin/init.sh ; emacs</pre>
-          <p>and if you're using tcsh:</p>
+          <p>et si vous utilisez le shell tcsh, une commande semblable à celle-ci :</p>
           <pre>source /sw/bin/init.csh ; emacs</pre>
-          <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
+          <p>Ceci garantit que l'application aura un PATH correct. Vous pouvez utiliser cette syntaxe pour toute application installée via Fink.</p>
         </li>
         <li>
-          <p>If you are trying to build a package by hand against Apple's X11 and you see a failure like:</p>
+          <p>Si vous tentez de compiler un paquet avec X11 d'Apple et que vous obtenez une erreur du genre suivant :</p>
           <pre>ld: err.o illegal reference to symbol: _XSetIOErrorHandler 
 defined in indirectly referenced dynamic library 
 /usr/X11R6/lib/libX11.6.dylib</pre>
-          <p>then you'll need to make sure to that <code>-lX11</code> is present during linking.  Check your package's configuration options to see how to feed it the extra argument.</p>
+          <p>assurez-vous alors que le drapeau <code>-lX11</code> existe à l'édition de liens. Vérifiez les options de compilation de votre paquet pour voir comment fournir ce paramètre.</p>
         </li>
         <li>
-          <p>If you use the <code>xfree86</code> package, and later switch to Apple's X11 (on either 10.2.x or 10.3.x), any
-packages you have built against <code>xfree86</code> will need to be rebuilt, as the binaries are incompatible.</p>
+          <p>Si vous utilisez le paquet <code>xfree86</code> et que vous changiez plus tard pour X11 d'Apple (sur 10.2.x ou 10.3.x), vous devez recompiler tout paquet compilé antérieurement avec <code>xfree86</code>, car les binaires sont incompatibles.</p>
         </li>
       </ul>
     
