@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.4 2004/03/11 22:36:57 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.5 2004/07/10 13:53:58 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -36,6 +36,9 @@ define (FINK_SECTIONS, 'セクション');
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, '目次');
+define (FINK_NEXT, '次');
+define (FINK_Q, '質問');
+define (FINK_A, '回答');
 
 /* Printer */
 define (FINK_PRINTER, 'プリンタ');
