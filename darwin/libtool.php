@@ -1,7 +1,7 @@
 <?
-$title = "libtool patch";
+$title = "GNU libtool and Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/25 15:39:28 $';
+$cvs_date = '$Date: 2001/05/25 15:40:22 $';
 
 include "header.inc";
 ?>
