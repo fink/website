@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.1 2004/04/04 02:30:21 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.2 2004/04/04 20:43:03 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -73,105 +73,69 @@ Ainsi, lorsque l'on parle de &quot;serveur&quot;, on entend par là le serveur d
 </p>
     </section>
     <section name="rootless" >
-      <title>What does rootless mean?</title>
+      <title>Que signifie sans racine (rootless) ?</title>
       <p>
-A little background:
-X11 models the screen as a hierarchy of windows contained in each
-other.
-At the top of the hierarchy is a special window which is the size of
-the screen and contains all other windows.
-This window contains the desktop background and is called the &quot;root
-window&quot;.
+Contexte :
+X11 modélise l'écran comme une arborescence de fenêtre contenues les unes dans les autres.
+À la racine de l'arborescence se trouve une fenêtre spéciale de la taille de l'écran et qui contient toutes les autres fenêtres.
+Cette fenêtre contient le fond du bureau et est appelée la &quot;fenêtre racine&quot;.
 </p>
       <p>
-Now back on topic:
-Like any graphical environment, X11 was written to stand alone and
-have full control over the screen.
-In Mac OS X, Quartz already governs the screen, so one must make
-arrangements if both are to get along together.
+Maintenant, revenons à nos moutons :
+comme tout environnement graphique, X11 a été écrit pour fonctionner seul et prendre le contrôle de l'écran tout entier.
+Sous Mac OS X, Quartz contrôle déjà l'écran, aussi il faut prendre des dispositions pour que les deux environnements puissent fonctionner en même temps.
 </p>
       <p>
-One arrangement is to let the two take turns.
-Each environment gets a complete screen, but only one of them is
-visible at a time and the user can switch between them.
-This is called full-screen or rooted mode.
-It is called rooted because there is a perfectly normal root window on
-the X11 screen that works like on other systems.
+Une des possibilités est de faire fonctionner les deux environnements à tour de rôle.
+À chaque environnement est affecté un écran, mais seul l'un d'entre eux est visible à un moment donné, et l'utilisateur peut basculer de l'un à l'autre.
+C'est ce qu'on appelle le mode plein-écran ou mode racine.
+Il est appelé ainsi car il y a alors sur l'écran X11 une fenêtre racine parfaitement normale qui fonctionne exactement comme sur les autres systèmes.
 </p>
       <p>
-Another arrangement is to mix the two environments window by window.
-This eliminates the need to switch between two screens.
-It also eliminates the X11 root window, because Quartz already takes
-care of the desktop background.
-Because there is no (visible) root window, this mode is called
-&quot;rootless&quot;.  It is the most comfortable way to use X11 on Mac OS X.
+L'autre possibilité consiste à mêler les fenêtres des deux environnements.
+Cela élimine la nécessité de basculer entre les deux écrans.
+Cela élimine aussi la fenêtre racine de X11, car Quartz se charge déjà du fond de bureau.
+Comme il n'y aucune fenêtre racine (visible), ce mode est appelé &quot;sans racine&quot;. C'est la façon la plus agréable d'utiliser X11 sous Mac OS X.
 </p>
     </section>
     <section name="wm" >
-      <title>What is a window manager?</title>
+      <title>Qu'est-ce qu'un gestionnaire de fenêtres ?</title>
       <p>
-In most graphical environments the look of window frames (title bar,
-close button, etc.) is defined by the system.
-X11 is different.
-With X11, the window frames (also called &quot;decoration&quot;) are provided by
-a separate program, called the window manager.
-In most respects, the window manager is just another client
-application; it is started the same way and talks to the X server
-through the same channels.
+Dans la plupart des environnements graphiques, l'aspect des cadres de fenêtres (barre de titre, bouton de fermeture, etc...) est défini par le système.
+Sous X11, il en va autrement.
+Dans cet environnement, les cadres de fenêtres (aussi nommés &quot;ornements&quot;) sont fournis par un programme distinct, appelé le gestionnaire de fenêtres.
+À bien des égards, le gestionnaire de fenêtres n'est autre qu'une application client ; il est lancé de la même façon et dialogue avec le serveur X au travers des mêmes canaux. 
 </p>
       <p>
-There is a large number of different window managers to choose from.
-<link url="http://www.xwinman.org/" >xwinman.org</link> has a
-comprehensive list.
-Most popular ones allow the user to customize the appearance via
-so-called <link url="http://www.themes.org/" >themes</link>.
-Many window managers also provide additional functionality, like pop
-up menus in the root window, docks or launch buttons.
+Vous avez le choix entre une multitude de gestionnaires de fenêtres.
+Le site <link url="http://www.xwinman.org/" >xwinman.org</link> en donne la liste complète.
+Les plus populaires sont ceux qui permettent à l'utilisateur de personnaliser leur apparence via ce qu'on appelle des <link url="http://www.themes.org/" >thèmes</link>.
+La plupart des gestionnaires de fenêtres fournissent d'autres fonctionnalités, comme les menus déroulant dans la fenêtre racine, les docks et les boutons de lancement.
 </p>
       <p>
-Many window managers have been packaged for Fink; here is a
-<link url="http://fink.sourceforge.net/pdb/section.php/x11-wm/" >    
-current list.
-</link>
+De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <link url="http://fink.sourceforge.net/pdb/section.php/x11-wm/" >liste actuelle</link>.
       </p>
     </section>
     <section name="desktop" >
-      <title>What are Quartz/Aqua, Gnome, and KDE?</title>
+      <title>Que sont Quartz/Aqua, Gnome et KDE ?</title>
       <p>
-They are desktop environments, and there are many others.  Their purpose 
-is to provide additional framework to applications, so that their look, 
-feel, and behaviour can be visually consistent.  Example: 
+Ce sont des environnements de bureau, et il y en a bien d'autres. Leur but est de proposer un cadre aux applications, de telle sorte que leur aspect et leur comportement présentent une constante visuelle. Par exemple :
 </p>
-      <p> graphics engine : X11
+      <p>un moteur graphique : X11
 </p>
-      <p> window manager:
-<link url="http://sawmill.sourceforge.net/" >sawfish</link>
+      <p>un gestionnaire de fenêtre : <link url="http://sawmill.sourceforge.net/" >sawfish</link>
       </p>
-      <p> desktop: <link url="http://www.gnome.org/" >Gnome</link>
+      <p>un bureau  : <link url="http://www.gnome.org/" >Gnome</link>
       </p>
       <p>
-The lines between graphics display engine, window manager,
-and desktop are blurred because similar, or the same functionality, 
-may be implemented by one or more of them. This is one reason why a
-particular window manager may not be able to be used with a
-particular desktop environment.
+La frontière entre moteur d'affichage graphique, gestionnaire de fenêtres et bureau est floue, car une même fonctionnalité (ou une fonctionnalité similaire) peut être implémentée par l'un de ces environnements ou plusieurs d'entre eux. C'est une des raisons pour laquelle un gestionnaire de fenêtres particulier peut ne pas fonctionner avec un environnement de bureau donné.
 
 </p>
       <p>
-Many applications are developed to integrate with a particular desktop.  
-Most often by installing the libraries for the desktop environment 
-(and the other underlying libraries) that an application was developed 
-for, the application will work with limited or no function loss.  
-Examples are the increasing 
-<link url="http://fink.sourceforge.net/pdb/section.php/gnome" >
-selection of GNOME applications 
-</link>
-available to be installed and run without running GNOME.  
-Unfortunately, the same 
-<link url="http://fink.sourceforge.net/faq/usage-fink.php#kde" >
-progress is not quite yet able to be made
-</link>
-with <link url="http://www.kde.org/" >KDE applications.</link>
+De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. 
+Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités.
+Par exemple, un nombre de plus en plus grand d'<link url="http://fink.sourceforge.net/pdb/section.php/gnome" >applications GNOME</link> fonctionnent hors de l'environnement GNOME.
+Malheureusement, <link url="http://fink.sourceforge.net/faq/usage-fink.php#kde" >ce n'est pas encore le cas</link> pour les <link url="http://www.kde.org/" >applications KDE</link>.
       </p>
     </section>
   </chapter>
