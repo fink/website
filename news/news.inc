@@ -1,4 +1,8 @@
-<span class="news_date">2002-05-29: </span><span class="news_headline">KDE support</span><?php gray_line(); ?>
+<span class="news_date">2002-07-17: </span><span class="news_headline">Binary distribution moves</span><?php gray_line(); ?>
+    <p>
+      The Fink binary distribution has moved to a new location. All Fink users wishing to use the binary distribution will have to make sure they are using the new binary distribution (many of you already are using it, maybe without even noticing). If you want to know how to switch and why we do this, <a href="<?php print $root; ?>news/bindist_move.php">read more here.</a>.
+    </p>
+  <span class="news_date">2002-05-29: </span><span class="news_headline">KDE support</span><?php gray_line(); ?>
     <p>
       Fink <a href="<?php print $root; ?>news/kde.php">announces support</a> for <a href="http://www.kde.org">KDE</a>. Packages are available in the unstable distribution, as well as pre-built binaries. For more information on installing and running it, see the full <a href="<?php print $root; ?>news/kde.php">KDE Support In Fink</a> announcement. 
     </p>
@@ -16,9 +20,5 @@
     </ul>
     <p>
       See <a href="<?php print $root; ?>faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</a> for more information about the passwd package. 
-    </p>
-  <span class="news_date">2002-04-18: </span><span class="news_headline">Fink 0.4.0 released</span><?php gray_line(); ?>
-    <p>
-      The source release and the binary installer are available now, as well as many of the binary packages. As usual, the rest of the binaries will be made available during the next few days. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
     </p>
   

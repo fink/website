@@ -1,0 +1,16 @@
+# Default APT sources configuration for Fink
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download current main crypto
+
+# Local package trees - packages built from source locally
+# NOTE: keep this in sync with the Trees: line in /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to create Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+deb file:/sw/fink unstable main crypto

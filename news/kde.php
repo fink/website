@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/07/07 19:49:49 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2002/07/17 00:22:26 $';
 
 include "header.inc";
 ?>
@@ -44,11 +44,9 @@ Screenshots:
 </p>
 
 <h1>What's New?</h1>
-<p>
- <font color="#ff0000" size="+1">
+<p class="attention">
   The current Fink binary dist of KDE is 3.0.2. <br>
   The current Fink source dist of KDE is 3.0.2.
- </font>
 </p>
 <p>
  New in the 3.0.2 release of the KDE fink packages is a number of
@@ -60,9 +58,9 @@ Screenshots:
 
 <h1>Upgrading Fink KDE</h1>
 
-<p>
- <font color="#ff0000" size="+1">If you are upgrading from the previous
- release of the Fink KDE packages, read this carefully.</font>
+<p class="attention">
+ If you are upgrading from the previous
+ release of the Fink KDE packages, read this carefully.
 </p>
 <p>
  The initial KDE packages exposed a bug in the xfree86-base package that was
