@@ -35,12 +35,16 @@ sub render {
     }
   } else {
     # normal text flow
-    $s =~ s/^\n+//s;
-    $s =~ s/\s+/ /gs;
-    $s =~ s/\s+$//s;
+
+    $s =~ s/^\n+//s;       # no newlines at the beginning (but a blank is okay)
+    $s =~ s/\s+/ /gs;      # collapse whitespace (removes newlines, too)
+    $s =~ s/\s+$//s;       # no whitespace at the end
     $s =~ s/((\S+)\s\[(\S+)\])/
-      ($2 eq $3) ? ("<".$3.">") : $1/ge;
-    $s =~ s/\$Id/\$Fink/g;
+      ($2 eq $3) ? ("<".$3.">") : $1/ge;   # collapse links with URL = text
+    $s =~ s/\$Id/\$Fink/g; # hide CVS tag from CVS
+    $s =~ s/&lt;/</g;      # HTML entities
+    $s =~ s/&gt;/>/g;      #  "
+    $s =~ s/&amp;/&/g;     #  "
 
     my $space = $linelength - length($prefix);
     while (length($s) > $space) {
