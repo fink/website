@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/11/08 02:03:27';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -139,7 +139,7 @@ doing. The values are:
             Medium (shows almost everything)
 <b>3</b>
             High (shows everything)
-The default value is 3.
+The default value is 1.
 </p>
         </li>
         <li>

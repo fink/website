@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Actualizaciones";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/30 22:44:42';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
 

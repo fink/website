@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - fink.conf";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/28 05:43:09';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="usage.php?phpLang=de" title="Das fink-Tool über die Kommandozeile benutzen"><link rel="prev" href="upgrade.php?phpLang=de" title="Fink Aktualisieren">';
 
 
@@ -103,7 +103,7 @@ stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</c
             Medium (zeigt fast alles an)
 <b>3</b>
             Hoch (zeigt alles an).
-Der Standardwert ist 3.
+Der Standardwert ist 1.
 </p>
         </li>
         <li>

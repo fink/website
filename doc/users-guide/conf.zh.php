@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink.conf";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:33';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
 
@@ -109,7 +109,7 @@ unstable/main   - 其它未稳定软件包
             中模式 （几乎显示所有信息）
 <b>3</b>
             高模式 （显示所有信息）
-默认值是 3。
+默认值是 1。
 </p>
         </li>
         <li>

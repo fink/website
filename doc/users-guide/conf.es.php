@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - fink.conf";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/30 22:44:42';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="usage.php?phpLang=es" title="Usando el Fink desde la línea de comando"><link rel="prev" href="upgrade.php?phpLang=es" title="Actualizando Fink">';
 
 
@@ -116,7 +116,7 @@ Esta opción determina cuanta información Fink te da respecto a lo que esta hac
             Medium (muestra casi todo)
 <b>3</b>
             High (muestra todo)
-el valor por omisión es 3.
+el valor por omisión es 1.
 </p>
         </li>
         <li>

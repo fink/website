@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/11/05 05:24:42';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -132,7 +132,7 @@ Low (tarball の展開を報告しない)
 Medium (ほとんど全て報告する)
 <b>3</b>
 High (全て報告する)
-デフォルト値は 3 です。
+デフォルト値は 1 です。
 </p>
 </li>
 <li>

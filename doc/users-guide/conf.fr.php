@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/11/08 04:12:42';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/12/09 18:17:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -109,7 +109,7 @@ Cette option permet de faire varier la quantité d'information que Fink donne su
             Moyen (affiche presque tout)
 <b>3</b>
             Fort (affiche tout)
-La valeur par défaut est 3.
+La valeur par défaut est 1.
 </p>
         </li>
         <li>
