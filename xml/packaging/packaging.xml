@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.47 2003/08/30 03:41:24 thesin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.48 2003/09/04 16:46:22 thesin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1661,6 +1661,10 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 Additional parameters to pass to the configure script. (See
 CompileScript for details.)
+
+As of fink > 0.13.7, this parameter will also work with perl modules
+<code>Type: Perl</code>, and will append to the default perl Makefile.PL
+string.
 </p>
 </itemd></item>
 
