@@ -108,7 +108,7 @@ exec gnome-session</pre><p>
 Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性があります。</p><ul>
 		<li><b>バイナリからのインストール:</b> 
 		<p>
@@ -157,7 +157,7 @@ sudo apt-get install fink</pre>
 		Jaguar では XCode は使用していないため、ダウンロード済みの X11SDK が必要になります。
 		X11 beta 3 は既に期限が切れているため、X11SDK パッケージ (および X11User パッケージ)
 		はダウンロードできません。
-		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86 
+		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86  または X.org
 		をインストールするか、 Panther にアップグレードするしかありません。
 		</p>
 		<p>
@@ -177,7 +177,7 @@ sudo apt-get install fink</pre>
 
 <a name="wants-xfree86-on-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.12: 
-    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
+    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
     </b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
     以下の古い代替パッケージのうちいずれかを削除する必要があります:
@@ -194,7 +194,7 @@ sudo apt-get install fink</pre>
     X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
     </p><p>
     これでも問題が解決されない場合、上の
-    <a href="#apple-x11-wants-xfree86">Fink wants XFree86</a>
+    <a href="#apple-x11-wants-xfree86">Fink wants XFree86 or X.org</a>
     を参照してください。
     </p></div>
 </a>
@@ -202,20 +202,20 @@ sudo apt-get install fink</pre>
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-		<a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a> や
+		<a href="#apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> や
 		<a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
 		<a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a>
 		</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86 xfree86-shilbs \
+xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</pre><p>
 		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
-		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 を再インストールします。
+		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のような代替物を再インストールします。
 		</p><p>
 		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
 		</p><pre>fink-virtual-pkgs --debug</pre><p>で何が不足しているかの情報が得られます。</p><p>

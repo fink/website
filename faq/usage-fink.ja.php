@@ -73,8 +73,8 @@ dselect からパッケージを選択してインストールする場合、 ro
 <a name="removing">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.6: Fink を全てアンインストールするには?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink でインストールしたファイルはほとんど /sw (あるいはインストール時に選択した場所) にあります。
-なので、 Fink を削除するには、通常このコマンドを入力します:</p><pre>sudo rm -rf /sw</pre><p>唯一の例外は XFree86 です。もし XFree86 を Fink でインストールした (<code>xfree86</code> または
-<code>xfree86-rootless</code> パッケージ) なら、次のコマンドも必要です:
+なので、 Fink を削除するには、通常このコマンドを入力します:</p><pre>sudo rm -rf /sw</pre><p>唯一の例外は XFree86 または X.org です。もし X サーバを Fink でインストールした (<code>xfree86</code> 、
+<code>xfree86-rootless</code> または <code>xorg</code> パッケージ) なら、次のコマンドも必要です:
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Fink をインストールし直すことがないのでしたら、テキストエディタを使い、 <code>.cshrc</code> ファイルの中の "<code>source /sw/bin/init.csh</code>" と書かれている行、あるいは <code>.bashrc</code> ファイルの中の "<code>source /sw/bin/init.sh</code>" と書かれている行を削除して下さい。</p></div>
 </a>
 <a name="bindist">

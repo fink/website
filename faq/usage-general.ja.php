@@ -89,32 +89,37 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 		<p>
 		Apple X11 (3枚目のディスク):
 		X11 関連のプログラムをコンパイルや Fink でソースインストールする場合、 
-		X11SDK (XCode ディスク) も忘れずにインストールする。
+		X11SDK (XCode ディスク) も忘れずにインストールする
 		</p>
 		</li>
 		<li>
 		<p>4.4.x built via Fink: 
 		<code>xfree86</code> と
-		<code>xfree86-shlibs</code> のパッケージをインストールする。
+		<code>xfree86-shlibs</code> のパッケージをインストールする
 		</p>
+		</li>
+		<li>
+			<p> X.org built via Fink: <code>xorg</code> と
+			<code>xorg-shlibs</code> のパッケージをインストールする
+			</p>
 		</li>
 	</ul><p>Jaguar では、一番使われていて Fink パッケージが使えるのは:</p><ul>
 		<li>
 		<p>Fink でビルドする 4.2.x: <code>xfree86-base</code> と 
 		<code>xfree86-rootless</code> または <code>xfree86-base-threaded</code> 
-		と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール。
+		と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール
 		</p>
 		</li>
 		<li>
 		<p>Fink でビルドする 4.3.x: <code>xfree86</code> と <code>xfree86-shlibs</code> 
-		パッケージをインストール。
+		パッケージをインストール
 		</p>
 		</li>
 		<li>
 		<p>
 		Apple の 4.2.x (User+SDK パッケージがインストールされている場合): 
 		<code>system-xfree86</code> パッケージが自動的にインストールされる。
-		ユーザーはインストールを行わない。
+		ユーザーはインストールを行わない
 		(注記: Jaguar 用の Apple X11 Public Beta は既に入手不可能です。
 		この方法は以前入手した人のみに有効です。)
 		</p>

@@ -249,6 +249,16 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 		まだ Master ミラーに反映されていない場合によくおこります。
 	</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
 </a>
+<a name="compile-options">
+	<div class="question"><p><b><? echo FINK_Q ; ?>6.22: パッケージをビルドするときに、 Fink に違うオプションを使わせたい</b></p></div>
+	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
+			これが比較的簡単な方法です。
+			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
+			<a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> 
+			と <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a> をお読みください。
+		</p><p><b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
+</a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>
 <? include_once "../footer.inc"; ?>
