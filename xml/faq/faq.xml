@@ -137,10 +137,10 @@ compile X11 applications.</p></li>
 <li><p>You installed XFree86 4.0.2 or 4.0.3 and used ranlib on the
 static libraries. Now configure scripts are failing in the
 <code>checking for XOpenDisplay in -lX11</code> test. To fix this, use the
-<code>-c</code> option for ranlib, i.e.:
+<code>-c</code> option for ranlib, i.e.:</p>
 <codeblock>cd /usr/X11R6/lib
 sudo ranlib -c *.a</codeblock>
-Note that this can't happen with more recent versions of XFree86, as
+<p>Note that this can't happen with more recent versions of XFree86, as
 they compile the libraries (both static and shared) without common
 symbols.</p></li>
 </ul>
