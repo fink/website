@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.26 2004/05/29 14:34:11 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.27 2004/06/15 00:27:55 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -709,7 +709,28 @@ Failed test (./Command/chowname.t at line 27)
         <p>vous devez exécuter <em>Lire les informations</em> (Cmd-I quand l'icône de la partition ou du disque est selectionnée) sur le disque (ou la partition) sur lequel (laquelle) Fink est installé et décocher l'option "Ignorer les autorisations de ce volume".</p>
       </answer>
     </faqentry>
-  </chapter>
+    <faqentry name="mirror-gnu">
+      <question>
+        <p>Fink refuse de mettre à jour les paquets. Il semble ne pas trouver le miroir 'gnu'.</p>
+      </question>
+      <answer>
+        <p>Si un message d'erreur se terminant par :</p>
+        <codeblock>Failed: No mirror site list file found for mirror 'gnu'.</codeblock>
+        <p>apparaît, il est plus que probable que vous deviez mettre à jour le paquet <code>fink-mirrors</code> via, par exemple :</p>
+        <codeblock>fink install fink-mirrors</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="cant-move-fink">
+      <question>
+        <p>Impossible de mettre à jour Fink, car le répertoire /sw/fink ne peut être déplacé.</p>
+      </question>
+      <answer>
+        <p>L'erreur suivante :</p>
+        <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
+        <p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les :</p>
+        <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
+      </answer>
+    </faqentry>  </chapter>
   <chapter filename="comp-general">
     <title>Problèmes de compilation généraux</title>
     <shorttitle>Compilation (1)</shorttitle>
@@ -818,12 +839,12 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
     </faqentry>
     <faqentry name="usr-local-libs">
       <question>
-        <p>Problèmes de compilation de paquet Fink quand des librairies sont installées dans /usr/local/lib</p>
+        <p>Problèmes de compilation de paquet Fink quand des librairies ou des headers sont installés dans /usr/local</p>
       </question>
       <answer>
-        <p>C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies installées dans <filename>/usr/local/lib</filename> avant celles installées dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <filename>/usr/local/lib</filename>. Si c'est le cas, renommez-les autrement, par exemple :</p>
+        <p>C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies et les headers installés dans <filename>/usr/local</filename> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <filename>/usr/local/lib</filename> ou des headers installés dans <filename>/usr/local/include</filename>. Si c'est le cas, déplacez temporairement <filename>/usr/local</filename> :</p>
         <codeblock>sudo mv /usr/local /usr/local.moved</codeblock>
-        <p>construisez le paquet, puis redéplacez <filename>/usr/local</filename> :</p>
+        <p>construisez le paquet, puis remettez en place <filename>/usr/local</filename> :</p>
         <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
       </answer>
     </faqentry>
@@ -851,10 +872,10 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>Un message indique qu'il est impossible de trouver  stddef.h.</p>
+        <p>Un message indique qu'il est impossible de trouver stddef.h,  ou wchar.h, ou crt.o</p>
       </question>
       <answer>
-        <p>Ce header, comme beaucoup d'autres, est fourni par le paquet DevSDK des Developer Tools. Vérifiez que <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p>
+        <p>Ces headers, comme beaucoup d'autres, sont fourniq par le paquet DevSDK des Developer Tools. Vérifiez que <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies">
@@ -986,12 +1007,12 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Ce problème se résout, en général, par la définition correcte de votre environnement, cf. <xref chapter="usage-fink" section="fink-not-found">cette partie des QFP</xref>.</p>
       </answer>
     </faqentry>
-     <faqentry name="xml-parser">
+     <faqentry name="xml-parser-pm">
       <question>
-        <p>Le message d'erreur suivant apparaît : <quote>configure: error: XML::Parser perl module is required for intltool</quote>.</p>
+        <p><code>intltool</code> semble ne pas trouver XML::Parser. Pourtant xml-parser-pm est installé.</p>
       </question>
       <answer>
-        <p>Vous devez vérifier que vous avez la variante du paquet xml-parser-pm qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (vous pouvez aussi avoir le paquet fantôme <code>xml-parser-pm</code>), car vous avez <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>.</p>
+        <p>Cette erreur se produit le plus souvent lors de mises à jour. Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et sous Jaguar <code>xml-parser-pm560</code>.</p>
       </answer>
     </faqentry>
  </chapter>
@@ -1179,7 +1200,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
 <p>Sous Panther, vous avez le choix entre :</p>
 <ul>
     <li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
-<li><p>4.4.x compilé via via Fink : installez les paquets xfree86 et xfree86-shlibs</p></li>
+<li><p>4.4.x compilé via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 </ul>
         <p>Sous Jaguar, les choix les plus populaires et les paquets Fink qui leur correspondent sont les suivants :</p>
         <ul>
@@ -1190,7 +1211,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
             <p>4.3.x compilé via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
           </li>
           <li>
-            <p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet system-xfree86 est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre eux qui l'avez déjà installé au temps où elle était encore disponible).</p>
+            <p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
           </li>
         </ul>
         <p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <link url="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</link>.</p>
@@ -1395,32 +1416,65 @@ exec metacity &amp; exec gnome-session</codeblock>
     </faqentry>
     <faqentry name="apple-x11-wants-xfree86">
       <question>
-        <p>Après installation de X11 d'Apple sous Panther, Fink continue à vouloir installer xfree86.</p>
+        <p>Après installation de X11 d'Apple, Fink continue à vouloir installer xfree86.</p>
       </question>
       <answer>
         <p>Il faut envisager deux hypothèses :</p>
         <ul>
           <li>
-            <em>Vous faites une installation à partir des binaires :</em> si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0 (par exemple celle qui est fournie par l'installeur Fink-0.6.2), il suffit, en général, de mettre à jour fink, par exemple via :
+            <em>Vous faites une installation à partir des binaires :</em>
+            <p>Si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via :</p>
             <codeblock>sudo apt-get update
 sudo apt-get install fink</codeblock>
-          </li>
+<p>Si cela ne suffit pas à résoudre le problème ou si vous utilisez une version postérieure de fink, vous devez réinstaller le paquet X11User, car il arrive parfois que l'installation ne soit pas complète.</p>
+<p>Exécutez ensuite :</p>
+<codeblock>fink list  -i system-xfree86</codeblock>
+<p>pour vérifier que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code> sont bien installés.</p>
+<p>Si la réinstallation de X11User ne suffit pas à résoudre le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
+</li>
           <li>
-            <em>Vous faites une installation à partir du source :</em> vous devez d'abord mettre à jour <code>fink</code>, par exemple :
-            <codeblock>fink selfupdate</codeblock> Ensuite vous devez réinstaller ou installer le X11SDK, situé sur le CD Xcode et qui <em>n'est pas</em> installé par défaut. Même si vous avez installé XCode, le X11SDK <em>n'est pas</em> installé par défaut. Il doit être installé soit en utilisant une installation personnalisée de Xcode, soit en cliquant sur le pkg <code>X11SDK</code> situé dans le répertoire <code>Packages</code>.</li>
+            <em>Vous faites une installation à partir du source :</em>
+            <p>Si vous utilisez une version de <filename>fink</filename> antérieure à la version 0.17, vous devez mettre à jour <code>fink</code>, par exemple :</p>
+            <codeblock>fink selfupdate</codeblock> 
+            (en supposant que vous faites la mise à jour via CVS ou via rsync et que vous n'utilisez pas les mises à jour ponctuelles).
+            <p>Quand vous aurez une version à jour de <code>fink</code>, exécutez :</p>
+            <codeblock>fink list -i system-xfree86</codeblock> pour vérifier que les paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>sont bien installés. Si l'un des deux premiers est manquant, vous devez réinstaller le paquet X11User. Si le paquet <code>-dev</code> est manquant, vous devez l'installer ou le réinstaller. Il est situé sur le CD Xcode et <em>n'est pas</em> installé par défaut. Même si vous avez installé XCode, le X11SDK <em>n'est pas</em> installé par défaut. Il doit être installé soit en utilisant une installation personnalisée de Xcode, soit en cliquant sur le pkg <code>X11SDK</code> situé dans le répertoire <code>Packages</code>.
+            <p><em>Note pour les utilisateurs de Jaguar (X11 bêta 3)</em> : Vous ne pouvez pas utiliser XCode, vous devez donc avoir déjà téléchargé le paquet X11SDK correspondant à votre système. Comme la date limite d'utilisation de X11 bêta 3 est dépassée, vous ne pouvez plus télécharger le paquet X11SDK ni le paquet X11User correspondant. Vous devez vous en tenir à l'installation de paquets binaires X11, ou bien installer XFree86, ou encore passer à Panther.</p>
+            <p>Si ceci ne résout pas le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
+            </li>
         </ul>
-        <p>Dans les deux cas, vous pouvez vérifier votre installation en lançant  :</p>
-        <codeblock>fink-virtual-pkgs</codeblock>
-        <p>et vous assurer que les sections <code>Package: system-xfree86 </code> et <code>Package: system-xfree86-shlibs</code> (ainsi que <code>Package: system-xfree86-dev</code>, si vous avez installé le SDK) sont présentes et que les lignes <code>Provides:</code> contiennent <code>x11 </code> et <code>x11-shlibs</code> (ainsi que <code>x11-dev</code>).</p>
-        <p>Si l'installation ne semble pas correcte, la meilleure façon de résoudre le problème est de supprimer toutes les versions anciennes de xfree86 ou de system-xfree86 et de réinstaller X11 d'Apple (et X11SDK, si vous envisagez d'installer des paquets à partir du source). Il se peut que vous voyez apparaître des messages, vous pouvez les ignorer :</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \ 
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>Puis réinstallez X11 à partir du troisième CD de Panther (et le X11SDK à partir du CD de Xcode).</p>
-        <p>Note : <code>system-xfree86</code> ne nécessite plus le X11SDK pour les installations binaires si vous utilisez <code>fink-0.17.0</code> ou une version postérieure.</p>
-        <p>Si les problèmes persistent et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer  :</p>
+        </answer>
+        </faqentry>
+     <faqentry name="wants-xfree86-on-upgrade">
+      <question>
+        <p>Après passage de la version 10.2 de Fink à la version 10.2-gcc3.3 ou 10.3, Fink veut installer XFree86 alors que X11 d'Apple est déjà installé.</p>
+      </question>
+      <answer>
+        <p>Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename> ou <filename>system-xfree86-43</filename>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <filename>system-xfree86</filename>, vous devez utiliser la commande :</p>
+        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
+        <p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant :</p>
+        <codeblock>fink list -i system-xfree86</codeblock>
+        <p>et vous assurer que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>sont présents. Si vous avez installé le X11SDK, vous devez aussi avoir le paquet <code>system-xfree86-dev</code>.</p>
+        <p>Si le problème persiste, voir plus haut <xref section="apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86</xref>.</p>
+      </answer>
+    </faqentry>
+       <faqentry name="special-x11-debug">
+      <question>
+        <p>Problèmes persistents entre X11 et Fink</p>
+      </question>
+      <answer>     
+        <p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86</xref> or <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non  :</p>
+       <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+xfree86 xfree86-shilbs \
+xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
+xfree86-base-threaded xfree86-base-threaded-shlibs \
+xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
+rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
+fink selfupdate; fink index</codeblock>
+<p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuie X11 d'Apple (et le X11SDK, si besoin est) ou XFree86.</p>
+<p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p>
         <codeblock>fink-virtual-pkgs --debug</codeblock>
-        <p>pour savoir ce qui manque.</p>
+        <p>pour savoir quels sont les paquets manquants.</p>
         <p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p>
         <ul>
           <li>Vous le trouverez ici : <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
@@ -1430,59 +1484,6 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
           <codeblock>perl fink-x11-debug</codeblock>
           </li>
         </ul>
-      </answer>
-    </faqentry>
-    <faqentry name="apple-x11-beta-wants-xfree86">
-      <question>
-        <p>Après installation de X11 d'Apple avec la version 10.2-gcc3.3 de Fink, il continue à vouloir installer xfree86.</p>
-      </question>
-      <answer>
-        <p>Il faut envisager deux hypothèses :</p>
-        <ul>
-          <li>
-            <em>Vous faites une installation à partir des binaires :</em> si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0 (par exemple celle qui est fournie par l'installeur Fink-0.6.2), il vous suffit, en général, de mettre à jour fink, par exemple via :
-            <codeblock>sudo apt-get update 
-sudo apt-get install fink</codeblock>
-          </li>
-          <li>
-            <em>Vous faites une installation à partir du source :</em> vous devez d'abord mettre à jour <code>fink</code>, par exemple via :
-            <codeblock>fink selfupdate</codeblock>
-            Puis vous devez réinstaller (ou installer) le X11SDK, que vous avez téléchargé en même temps que la version bêta de X11 d'Apple.</li>
-        </ul>
-        <p>Dans les deux cas, vous pouvez vérifier votre installation en lançant :</p>
-        <codeblock>fink-virtual-pkgs</codeblock>
-        <p>et vous assurer que les sections <code>Package: system-xfree86</code> et <code>Package: system-xfree86-shlibs</code> (ainsi que <code>Package: system-xfree86-dev</code>, si vous avez installé le SDK) sont présentes et que les lignes <code>provides:</code> contiennent <code>x11 </code> et <code>x11-shlibs</code> (ainsi que <code>x11-dev</code>).</p>
-        <p>Si l'installation ne semble pas correcte, la meilleure façon de résoudre le problème est de supprimer les anciennes versions de xfree86 ou de system-xfree86 et de réinstaller X11 d'Apple (et X11SDK, si vous envisagez d'installer des paquets à partir des sources). Il se peut que des messages apparaissent, vous pouvez les ignorer :</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>Puis réinstallez X11 (et X11DSK, si besoin est).</p>
-        <p>Note : <code>system-xfree86</code> ne nécessite plus X11DSK pour l'installation des binaires si vous utilisez <code>fink-0.17.0</code> ou une version postérieure.</p>
-        <p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p>
-        <codeblock>fink-virtual-pkgs --debug</codeblock>
-        <p>pour savoir ce qu'il manque.</p>
-        <p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p>
-        <ul>
-          <li>Vous le trouverez ici : <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
-          </li>
-          <li>Sauvegardez-le où vous voulez.</li>
-          <li>Exécutez-le dans une fenêtre de terminal via :
-          <codeblock>perl fink-x11-debug</codeblock>
-          </li>
-        </ul>
-      </answer>
-    </faqentry>
-    <faqentry name="wants-xfree86-on-upgrade">
-      <question>
-        <p>Après passage de la version 10.2 de Fink à la version 10.2-gcc3.3 ou 10.3, Fink veut installer XFree86 alors que X11 d'Apple est déjà installé.</p>
-      </question>
-      <answer>
-        <p>Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename> ou <filename>system-xfree86-43</filename>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <filename>system-xfree86</filename>, vous devez utiliser la commande :</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
-        <p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant :</p>
-        <codeblock>fink-virtual-pkgs</codeblock>
-        <p>et vous assurer que les sections <code>Package: system-xfree86</code> et <code>Package: system-xfree86-shlibs</code> sont présentes et que les lignes provides: contiennent <code>x11</code> et <code>x11-shlibs</code>. Si vous avez installé X11SDK, vous devez aussi avoir <code>Package: system-xfree86-dev</code>.</p>
-        <p>Si le problème persiste, voir plus haut <xref section="apple-x11-wants-xfree86">Fink veut installer XFree86 sous 10.3</xref> ou <xref section="apple-x11-beta-wants-xfree86">Fink veut installer Xfree86 sous 10.2-gcc3.3</xref>.</p>
       </answer>
     </faqentry>
   </chapter>

@@ -41,13 +41,7 @@ endif</pre></div>
         too.</p><p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code>
         and <code>xfree86-rootless</code> packages by the usual means:
         "<code>fink install</code>" for source users, "<code>apt-get
-        install</code>" or <code>dselect</code> for binaries.</p><p>-or-</p><p>
--        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004 isn't in the binary
--        distro yet, and is currently only in the unstable tree [see &lt;link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable"&gt;how to install unstable package&lt;/link&gt;]
-
-3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code>
-        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary
-        distro yet, and is currently only in the unstable tree [see <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable%5C">how to install unstable packages</a>].</p></div>
+        install</code>" or <code>dselect</code> for binaries.</p><p>-or-</p><p>3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code> package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary distro yet, and is currently only in the unstable tree [see <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable%5C">how to install unstable packages</a>].</p></div>
     </a>
     <a name="change-thread-nothread">
       <div class="question"><p><b>Q7.3: How do I change from the non-threaded version of Fink's XFree86

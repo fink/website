@@ -61,8 +61,8 @@ Failed: installing foo-0.1.2-3 failed</pre><p>vous devez rechercher <code>libbar
         </ul></div>
     </a>
     <a name="usr-local-libs">
-      <div class="question"><p><b>Q6.9: Problèmes de compilation de paquet Fink quand des librairies sont installées dans /usr/local/lib</b></p></div>
-      <div class="answer"><p><b>A:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies installées dans <code>/usr/local/lib</code> avant celles installées dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <code>/usr/local/lib</code>. Si c'est le cas, renommez-les autrement, par exemple :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis redéplacez <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+      <div class="question"><p><b>Q6.9: Problèmes de compilation de paquet Fink quand des librairies ou des headers sont installés dans /usr/local</b></p></div>
+      <div class="answer"><p><b>A:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies et les headers installés dans <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <code>/usr/local/lib</code> ou des headers installés dans <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement <code>/usr/local</code> :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="toc-out-of-date">
       <div class="question"><p><b>Q6.10: Lors de la construction d'un paquet, un message indique que "table of
@@ -76,8 +76,8 @@ rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tan
       <div class="answer"><p><b>A:</b> Ceci provient du fait qu'une des étapes de la compilation du paquet <code>atlas</code> envoie une invite à l'utilisateur et que Fink Commander ne l'affiche pas. Vous devez utiliser <code>fink install atlas</code> au lieu de passer par Fink Commander.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b>Q6.12: Un message indique qu'il est impossible de trouver  stddef.h.</b></p></div>
-      <div class="answer"><p><b>A:</b> Ce header, comme beaucoup d'autres, est fourni par le paquet DevSDK des Developer Tools. Vérifiez que <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p></div>
+      <div class="question"><p><b>Q6.12: Un message indique qu'il est impossible de trouver stddef.h,  ou wchar.h, ou crt.o</b></p></div>
+      <div class="answer"><p><b>A:</b> Ces headers, comme beaucoup d'autres, sont fourniq par le paquet DevSDK des Developer Tools. Vérifiez que <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des outils de développement et installez le paquet DevSDK en choisissant Custom Install.</p></div>
     </a>
     <a name="multiple-dependencies">
       <div class="question"><p><b>Q6.13: Impossible de mettre à jour, un message indique que Fink est "unable to resolve version conflict
@@ -161,9 +161,9 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="question"><p><b>Q6.19: Lors de l'installation d'un paquet, le message d'erreur suivant apparaît : <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.</b></p></div>
       <div class="answer"><p><b>A:</b> Ce problème se résout, en général, par la définition correcte de votre environnement, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">cette partie des QFP</a>.</p></div>
     </a>
-     <a name="xml-parser">
-      <div class="question"><p><b>Q6.20: Le message d'erreur suivant apparaît : <q>configure: error: XML::Parser perl module is required for intltool</q>.</b></p></div>
-      <div class="answer"><p><b>A:</b> Vous devez vérifier que vous avez la variante du paquet xml-parser-pm qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (vous pouvez aussi avoir le paquet fantôme <code>xml-parser-pm</code>), car vous avez <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>.</p></div>
+     <a name="xml-parser-pm">
+      <div class="question"><p><b>Q6.20: <code>intltool</code> semble ne pas trouver XML::Parser. Pourtant xml-parser-pm est installé.</b></p></div>
+      <div class="answer"><p><b>A:</b> Cette erreur se produit le plus souvent lors de mises à jour. Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et sous Jaguar <code>xml-parser-pm560</code>.</p></div>
     </a>
  <p align="right">
 Next: <a href="comp-packages.php?phpLang=fr">7 Problèmes de compilation de certains paquets</a></p>

@@ -142,7 +142,7 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b>Q6.12: I get messages saying that I'm missing stddef.h | whar.h | crt.o. Where do I find them?</b></p></div>
+      <div class="question"><p><b>Q6.12: I get messages saying that I'm missing stddef.h | wchar.h | crt.o. Where do I find them?</b></p></div>
       <div class="answer"><p><b>A:</b> These headers, and many others, are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
@@ -245,7 +245,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation.</p></div>
+        part of their main Developer Tools installation).</p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>

@@ -251,7 +251,14 @@ Failed test (./Command/chowname.t at line 27)
 #          got: 'root'
 #     expected: 'nobody'</pre><p>vous devez exécuter <b>Lire les informations</b> (Cmd-I quand l'icône de la partition ou du disque est selectionnée) sur le disque (ou la partition) sur lequel (laquelle) Fink est installé et décocher l'option "Ignorer les autorisations de ce volume".</p></div>
     </a>
-  <p align="right">
+    <a name="mirror-gnu">
+      <div class="question"><p><b>Q5.29: Fink refuse de mettre à jour les paquets. Il semble ne pas trouver le miroir 'gnu'.</b></p></div>
+      <div class="answer"><p><b>A:</b> Si un message d'erreur se terminant par :</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>apparaît, il est plus que probable que vous deviez mettre à jour le paquet <code>fink-mirrors</code> via, par exemple :</p><pre>fink install fink-mirrors</pre></div>
+    </a>
+    <a name="cant-move-fink">
+      <div class="question"><p><b>Q5.30: Impossible de mettre à jour Fink, car le répertoire /sw/fink ne peut être déplacé.</b></p></div>
+      <div class="answer"><p><b>A:</b> L'erreur suivante :</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les :</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+    </a>  <p align="right">
 Next: <a href="comp-general.php?phpLang=fr">6 Problèmes de compilation généraux</a></p>
 
 <? include_once "footer.inc"; ?>

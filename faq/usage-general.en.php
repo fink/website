@@ -97,8 +97,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         should I install?</b></p></div>
       <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. There are
-  different options under Panther and under Jaguar.
-  Under Panther you have the choice between:</p><ul>
+  different options under Panther and under Jaguar.</p><p>Under Panther you have the choice between:</p><ul>
           <li><p>     Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
   (on the XCode disk) if you want to compile programs or if you plan to

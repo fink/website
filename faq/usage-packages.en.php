@@ -137,7 +137,7 @@ exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for
     </a>
     <a name="apple-x11-wants-xfree86">
       <div class="question"><p><b>Q9.11: I installed Apple's X11 but Fink keeps asking to install
-        xfree86.</b></p></div>
+        XFree86.</b></p></div>
       <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b>   <p>If you are running a
@@ -156,7 +156,7 @@ sudo apt-get install fink</pre><p>If this fails, or if you have a later version 
           default. It has to be installed either with a custom Xcode install,
           or by clicking on the <code>X11SDK</code> pkg in the
           <code>Packages</code> folder of the XCode CD.  
-<p><b>Note for Jaguar (X11 beta 3) users</b>:  As you aren't using XCode, you need to have already download a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86, or update to Panther.</p><p>If you're still having problems, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p></li>
+<p><b>Note for Jaguar (X11 beta 3) users</b>:  As you aren't using XCode, you need to have already downloaded a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86, or update to Panther.</p><p>If you're still having problems, then consult the <a href="#special-x11-debug">special debug</a> instructions, below.</p></li>
         </ul></div>
     </a>
     <a name="wants-xfree86-on-upgrade">

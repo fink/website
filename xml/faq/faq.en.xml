@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.25 2004/06/10 23:17:35 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.26 2004/06/15 00:27:55 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1104,7 +1104,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing stddef.h | whar.h | crt.o. Where do I find them?</p>
+        <p>I get messages saying that I'm missing stddef.h | wchar.h | crt.o. Where do I find them?</p>
       </question>
       <answer>
         <p>These headers, and many others, are provided by the DevSDK package of
@@ -1247,7 +1247,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>This is because <filename>gcc2</filename> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
-        part of their main Developer Tools installation.</p>
+        part of their main Developer Tools installation).</p>
       </answer>
     </faqentry>
     <faqentry name="system-java">
@@ -1332,13 +1332,7 @@ endif</codeblock>
         "<code>fink install</code>" for source users, "<code>apt-get
         install</code>" or <code>dselect</code> for binaries.</p>
         <p>-or-</p>
-        <p>
--        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004 isn't in the binary
--        distro yet, and is currently only in the unstable tree [see &lt;link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable"&gt;how to install unstable package&lt;/link&gt;]
-
-3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code>
-        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary
-        distro yet, and is currently only in the unstable tree [see <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable\">how to install unstable packages</link>].</p>
+        <p>3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code> package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary distro yet, and is currently only in the unstable tree [see <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable\">how to install unstable packages</link>].</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread">
@@ -1554,8 +1548,8 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
       <answer>
         <p>All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. There are
-  different options under Panther and under Jaguar.
-  Under Panther you have the choice between:</p>
+  different options under Panther and under Jaguar.</p>
+ <p>Under Panther you have the choice between:</p>
         <ul>
           <li><p>     Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
@@ -1923,7 +1917,7 @@ exec metacity &amp; exec gnome-session</codeblock>
     <faqentry name="apple-x11-wants-xfree86">
       <question>
         <p>I installed Apple's X11 but Fink keeps asking to install
-        xfree86.</p>
+        XFree86.</p>
       </question>
       <answer>
         <p>There are two possibilities to consider.</p>
@@ -1945,7 +1939,7 @@ sudo apt-get install fink</codeblock><p>If this fails, or if you have a later ve
           default. It has to be installed either with a custom Xcode install,
           or by clicking on the <code>X11SDK</code> pkg in the
           <code>Packages</code> folder of the XCode CD.  
-<p><em>Note for Jaguar (X11 beta 3) users</em>:  As you aren't using XCode, you need to have already download a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86, or update to Panther.</p><p>If you're still having problems, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p></li>
+<p><em>Note for Jaguar (X11 beta 3) users</em>:  As you aren't using XCode, you need to have already downloaded a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86, or update to Panther.</p><p>If you're still having problems, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p></li>
         </ul>
       </answer>
     </faqentry>

@@ -46,7 +46,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'
       <div class="question"><p><b>Q8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
       <div class="answer"><p><b>A:</b> Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p><p>Sous Panther, vous avez le choix entre :</p><ul>
     <li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
-<li><p>4.4.x compilé via via Fink : installez les paquets xfree86 et xfree86-shlibs</p></li>
+<li><p>4.4.x compilé via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 </ul><p>Sous Jaguar, les choix les plus populaires et les paquets Fink qui leur correspondent sont les suivants :</p><ul>
           <li>
             <p>4.2.x compilé via Fink : installez <code>xfree86-base</code> et <code>xfree86-rootless</code> ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> correspondants)</p>
@@ -55,7 +55,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'
             <p>4.3.x compilé via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
           </li>
           <li>
-            <p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet system-xfree86 est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre eux qui l'avez déjà installé au temps où elle était encore disponible).</p>
+            <p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
           </li>
         </ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
     </a>
