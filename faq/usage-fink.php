@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/12/11 01:13:20';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/01/04 19:12:25';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -229,7 +229,7 @@ software before using Fink.
 versions are released.</p><p>The first thing you should do is run <code>fink selfupdate</code>.
 It may be that the package maintainer has already fixed this, and you will
 get an updated package description with either a more recent version or a
-revised download URL.</p><p>If this doesn't work, most sources are available on <a href="http://distfiles.opendarwin.org">http://distfiles.opendarwin.org</a> (thanks to Rob Braun) , and you can run <code>fink configure</code> to choose to search "Master" source mirrors so that Fink will automatically look there.</p><p>If this doesn't work, please let the package maintainer (available from "<code>fink describe <b>packagename</b>
+revised download URL.</p><p>If this doesn't work, most sources are available on <a href="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</a> (thanks to Rob Braun) , and you can run <code>fink configure</code> to choose to search "Master" source mirrors so that Fink will automatically look there.</p><p>If this doesn't work, please let the package maintainer (available from "<code>fink describe <b>packagename</b>
 </code>") know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in
 other directories for the same version of the source that Fink wants 
 (e.g. in an "old"
