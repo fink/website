@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/12/06 17:21:20 $';
+$cvs_date = '$Date: 2001/12/16 12:51:38 $';
 
 include "header.inc";
 ?>
@@ -16,6 +16,12 @@ All are hosted by SourceForge and archived at Geocrawler.
 <p>
 All lists are public and have an open subscription policy.
 Click on a mailing list name below to get more information.
+</p>
+<p>
+<em>Please do not cross-post!</em> Choose one list for your
+posts. If you are unsure which list is most appropriate for
+your request, feel free to ask on the list if your question
+is fitting.
 </p>
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
