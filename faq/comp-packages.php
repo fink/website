@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/25 14:32:37';
+$cvs_date = 'Date: 2001/10/28 07:57:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -44,7 +44,7 @@ You should remove the symlink you created, or at least point it at
 <a name="xaw3d"><div class="question"><p><b>Q: Xaw3D fails to compile with a
 two-level namespace error.</b></p></div>
 <div class="answer"><p><b>A:</b> 
-This can happen on Mac OS X 10.1. if you have installed XFree86
+This can happen on Mac OS X 10.1 if you have installed XFree86
 manually (i.e. you have system-xfree86) or if you have Xtools.
 Xaw3D uses the configuration files installed by XFree86 and fails if
 those have not been patched for Mac OS X 10.1.

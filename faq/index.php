@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/25 14:32:37';
+$cvs_date = 'Date: 2001/10/28 07:57:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -95,12 +95,14 @@ black icons only. What's wrong?</a></li>
 XMMS</a></li>
 <li><a href="usage-packages.php#gnome-terminal">Why won't gnome-terminal
 start up?</a></li>
+<li><a href="usage-packages.php#xdarwin-start">Help! When I start
+XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#xfree-keymapping">I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.20 2001/10/25 14:32:37 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.21 2001/10/28 07:57:01 chrisp Exp $</i></p>
 
 
 <?

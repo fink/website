@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/25 14:32:37';
+$cvs_date = 'Date: 2001/10/28 07:57:01';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -64,11 +64,19 @@ start up?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 There is a bug in Mac OS X 10.0.x that keeps gnome-terminal from
 working.
-The actual bug (file descriptior passing doesn't work) is masked by
-another issue (ununual stack size limit), which was left as is to
+The actual bug (file descriptor passing doesn't work) is masked by
+another issue (unusual stack size limit), which was left as is to
 produce an error message when gnome-terminal is started (thus
 preventing even more confusion).
 It is expected that this will be fixed in Mac OS X 10.1.
+</p></div></a>
+
+<a name="xdarwin-start"><div class="question"><p><b>Q: Help! When I start
+XDarwin, it immediately quits!</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Don't Panic.
+The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immedate-quit">troubleshooting
+section</a> for this common problem.
 </p></div></a>
 
 <a name="xfree-keymapping"><div class="question"><p><b>Q: I just upgraded to Mac
