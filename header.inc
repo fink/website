@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.35 2001/10/12 20:06:22 chrisp Exp $ */
+/* $Id: header.inc,v 1.36 2001/10/21 08:14:48 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -89,7 +89,7 @@ height="8" border="0" alt=""></td>
 <table border="0" cellpadding="0" cellspacing="0" width="120">
 
 <? /* sections */ ?>
-<tr align="left"><td colspan="2"><img src="<? print $root ?>img/sect-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd"><img src="<? print $root ?>img/sect-head.gif"
 width="120" height="26" border="0" alt="Sections:"></td></tr>
 <?
 for ($i = 0; $i < sizeof($sections); $i += 3) {
@@ -105,7 +105,7 @@ for ($i = 0; $i < sizeof($sections); $i += 3) {
   print '</a></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 
@@ -122,7 +122,7 @@ if (!$nonav) {
   }
 
 ?>
-<tr align="left"><td colspan="2"><img src="<? print $root ?>img/nav-head.gif"
+<tr align="left"><td colspan="2" bgcolor="#dddddd"><img src="<? print $root ?>img/nav-head.gif"
 width="120" height="26" border="0" alt="Navigation:"></td></tr>
 <?
 if (is_array($parents)) {
@@ -165,7 +165,7 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
   print '<tr bgcolor="#ffffff"><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td colspan="2"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 
@@ -177,7 +177,7 @@ if ($printlink) {
 <tr align="left"><td colspan="2"><a href="<? print $root.$printlink ?>"><img
 src="<? print $root ?>img/printlink.gif" width="120" height="22"
 border="0" alt="Print Version"></a></td></tr>
-<tr align="left"><td colspan="2"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#999999"><img src="<? print $root
 ?>img/sect-bottom.gif" width="120" height="3" border="0"
 alt=""></td></tr>
 <?
