@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/08/10 15:40:26';
+$cvs_date = 'Date: 2004/08/20 11:52:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -142,7 +142,7 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing stddef.h | wchar.h | crt.o. Where do I find them?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing stddef.h | wchar.h | crt1.o. Where do I find them?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> These headers, and many others, are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
