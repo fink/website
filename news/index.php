@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/04/16 22:36:13';
+$cvs_date = 'Date: 2003/04/16 22:40:46';
 
 $metatags = '';
 
@@ -18,9 +18,9 @@ installed, and subsequently
 wish to install Fink, you will need to delete the <code>/sw</code>
 directory by hand before installing.  And if you upgrade Virex with
 Fink already installed, you should immediately run
-<code>
+</p><p><code>
 fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
-</code>
+</code></p><p>
 to restore files which the Virex upgrade has deleted.
 </p>
 

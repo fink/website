@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.55 2003/04/16 22:36:13 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.56 2003/04/16 22:40:46 dmrrsn Exp $</cvsid>
 
 <newsitem>
 	<date>2003-04-16</date>
@@ -16,9 +16,9 @@ installed, and subsequently
 wish to install Fink, you will need to delete the <code>/sw</code>
 directory by hand before installing.  And if you upgrade Virex with
 Fink already installed, you should immediately run
-<code>
+</p><p><code>
 fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
-</code>
+</code></p><p>
 to restore files which the Virex upgrade has deleted.
 </p>
 
