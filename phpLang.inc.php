@@ -171,7 +171,7 @@ if(!defined('phpLang_current')) {
 if(defined('phpLang_current')) {
 	if(phpLang_useCookie) {
 		// set a cookie expiring in one year for current language
-		setcookie('phpLangCookie', phpLang_current, time() + 60*60*24*365);
+		setcookie('phpLangCookie', phpLang_current, time() + 60*60*24*365, "/");
 	}
 	
 	// defines a string to add at the end of each link
