@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.3 2002/05/30 21:40:40 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.4 2002/05/30 21:53:44 fingolfin Exp $</cvsid>
 
 <newsitem>
   <date>2002-05-29</date>
@@ -146,10 +146,10 @@
   <date>2001-10-03</date>
   <headline>FOOOO</headline>
   <body>
-	<p>2001-10-03: The binary distribution update is now complete.
-	The <link url="news/puma.php">10.1 compatibility report</link> has been
-	updated to reflect the fixes in Fink 0.3.0.
-	</p>
+    <p>2001-10-03: The binary distribution update is now complete.
+    The <link url="news/puma.php">10.1 compatibility report</link> has been
+    updated to reflect the fixes in Fink 0.3.0.
+    </p>
   </body>
 </newsitem>
 
@@ -157,13 +157,13 @@
   <date>2001-09-30</date>
   <headline>FOOOO</headline>
   <body>
-	<p>2001-09-30: Fink 0.3.0 is released.
-	The source release, the binary installer and a binary upgrade kit for
-	broken-by-10.1 installations are available in the new <link
-	url="download/index.php">download section</link>.
-	The bulk of the binary distribution will be updated gradually over the
-	next few days, as usual.
-	</p>
+    <p>2001-09-30: Fink 0.3.0 is released.
+    The source release, the binary installer and a binary upgrade kit for
+    broken-by-10.1 installations are available in the new <link
+    url="download/index.php">download section</link>.
+    The bulk of the binary distribution will be updated gradually over the
+    next few days, as usual.
+    </p>
   </body>
 </newsitem>
 
@@ -171,11 +171,11 @@
   <date>2001-09-26</date>
   <headline>Mac OS X 10.1 released</headline>
   <body>
-	<p>Mac OS X 10.1 has been officially released yesterday. Before you use Fink
-	on 10.1, check out the <link url="news/puma.php">compatibility report</link>.
-	<em>Update:</em> The apt-get issue has been solved, expect a new release
-	this weekend.
-	</p>
+    <p>Mac OS X 10.1 has been officially released yesterday. Before you use Fink
+    on 10.1, check out the <link url="news/puma.php">compatibility report</link>.
+    <em>Update:</em> The apt-get issue has been solved, expect a new release
+    this weekend.
+    </p>
   </body>
 </newsitem>
 
@@ -183,9 +183,9 @@
   <date>2001-09-07</date>
   <headline>Binary distribution fully updated</headline>
   <body>
-	<p>The binary distribution is now fully updated to
-	Fink 0.2.6. Enjoy.
-	</p>
+    <p>The binary distribution is now fully updated to
+    Fink 0.2.6. Enjoy.
+    </p>
   </body>
 </newsitem>
 
@@ -193,10 +193,10 @@
   <date>2001-09-04</date>
   <headline>Fink 0.2.6 is released</headline>
   <body>
-	<p>Fink 0.2.6 is released, fixing several bootstrap problems. The source
-	release is available from the <link url="download.php">download page</link>
-	or via the 'fink selfupdate' command. The binary release will follow soon.
-	</p>
+    <p>Fink 0.2.6 is released, fixing several bootstrap problems. The source
+    release is available from the <link url="download.php">download page</link>
+    or via the 'fink selfupdate' command. The binary release will follow soon.
+    </p>
  </body>
 </newsitem>
 
@@ -204,10 +204,10 @@
   <date>2001-09-02</date>
   <headline>Fink IRC Channel</headline>
   <body>
-	<p>Chat with the developers and other users! We now have a #fink channel
-	on the <extlink url="http://openprojects.net/">openprojects.net</extlink>
-	IRC network.
-	</p>
+    <p>Chat with the developers and other users! We now have a #fink channel
+    on the <extlink url="http://openprojects.net/">openprojects.net</extlink>
+    IRC network.
+    </p>
  </body>
 </newsitem>
 
@@ -215,10 +215,10 @@
   <date>2001-08-25</date>
   <headline>Fink 0.2.5 was released</headline>
   <body>
-	<p>The source release is
-	available from the <link url="download.php">download page</link>, the
-	binary release will follow soon.
-	</p>
+    <p>The source release is
+    available from the <link url="download.php">download page</link>, the
+    binary release will follow soon.
+    </p>
   </body>
 </newsitem>
 
@@ -226,11 +226,130 @@
   <date>2001-08-23</date>
   <headline>OpenOSX.com</headline>
   <body>
-	<p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
-	CDs. Read Christoph's <link url="pr/openosx.php">public statement</link>
-	on the issue.
-	</p>
+    <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
+    CDs. Read Christoph's <link url="pr/openosx.php">public statement</link>
+    on the issue.
+    </p>
  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-22</date>
+  <headline>Bew help page</headline>
+  <body>
+    <p>The new <link url="help/index.php">help page</link> lists various ways
+    to get help using Fink. It also lists some ideas how you can give back to
+    the project.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-13</date>
+  <headline>Porting tips and X11 document updated</headline>
+  <body>
+    <p>The <link url="doc/porting/index.php">porting tips</link> document has
+    a new chapter on shared libraries and modules. The <link
+    url="doc/x11/index.php">X11</link> document was also updated recently.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-01</date>
+  <headline>Version 0.2.4a is released</headline>
+  <body>
+    <p>There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
+    0.2.4a. You only need this if you're doing a first time install, updates
+    are not affected.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-08-01</date>
+  <headline>Version 0.2.4 is released</headline>
+  <body>
+    <p>Version 0.2.4 is released. Get it from the <link
+    url="download.php">download page</link>. Some highlights: The GIMP
+    1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
+    and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-19</date>
+  <headline>New document: X11 on Darwin and Mac OS X</headline>
+  <body>
+    <p>A comprehensive document about <link url="doc/x11/index.php">X11 on
+    Darwin and Mac OS X</link> is now available. It was written to be useful
+    for anyone, not just Fink users.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-13</date>
+  <headline>Package database now online</headline>
+  <body>
+    <p>A prototype of the <link url="pdb/index.php">package database</link>
+    is now online.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-09</date>
+  <headline>Version 0.2.3 is released</headline>
+  <body>
+    <p>Get it from the <link url="download.php">download page</link>. This
+    version fixes the dpkg download problems many of you were having.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-07-03</date>
+  <headline>Packaging Manual updated</headline>
+  <body>
+    <p>The <link url="doc/packaging/index.php">Packaging Manual</link> was
+    updated to include all recently added fields.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-06-30</date>
+  <headline>Web site restructuring</headline>
+  <body>
+    <p>A major restructuring of the web site has started. The non-Fink-specific
+    documents were removed because I don't have the time to maintain them. All
+    documentation will be consolidated in the new <link url="doc/index.php">
+    Documentation section</link>.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-06-24</date>
+  <headline>Version 0.2.2 is released</headline>
+  <body>
+    <p>Version 0.2.2 is finally released. Get it from the <link
+    url="download.php">download page</link>. Be sure to read the notes
+    about X11 in the INSTALL file.
+    </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-05-19</date>
+  <headline>CVS instructions updated</headline>
+  <body>
+    <p>The <link url="fink/cvs.php">CVS instructions</link> have
+    been updated for Fink 0.2.x.
+    </p>
+  </body>
 </newsitem>
 
 <newsitem>
@@ -274,11 +393,18 @@
 
 <newsitem>
   <date>2001-03-30</date>
-  <headline>Porting notes updated; Version 0.1.7 is out!</headline>
+  <headline>Porting notes updated</headline>
   <body>
     <p>
       The <link url="darwin/porting.php">porting notes</link> have been updated with information on Mac OS X Final. 
     </p>
+  </body>
+</newsitem>
+
+<newsitem>
+  <date>2001-03-30</date>
+  <headline>Version 0.1.7 is out!</headline>
+  <body>
     <p>
       Get it from the <link url="download.php">download page</link>. 
     </p>
