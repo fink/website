@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.22 2003/05/08 01:37:40 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.23 2003/05/18 02:21:06 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -23,7 +23,6 @@ both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
 </preface>
-
 <chapter filename="intro" >
 <title>Introduction</title>
 <shorttitle>Introduction</shorttitle>
@@ -151,7 +150,6 @@ The rest of this manual will show you how.
 </p>
 </section>
 </chapter>
-
 <chapter filename="install" >
 <title>First Time Installation</title>
 <shorttitle>Install</shorttitle>
@@ -287,8 +285,8 @@ press Control-O, Return, Control-X to get out of the editor.
 </p>
 <p>There are a couple of common situations where you may need to edit additional files:</p>
 <ol>
-
-<li><p>You have a <code>~/.tcshrc</code>.</p>
+<li>
+<p>You have a <code>~/.tcshrc</code>.</p>
 <p>Such a file occasionally gets created by third-party applications, or 
 you may have done it yourself.
 In any case what will happen is that <code>~/.tcshrc</code> gets read and 
@@ -297,16 +295,18 @@ The recommended procedure is to edit <code>~/.tcshrc</code> in a similar
 manner to how you edited
 <code>~/.cshrc</code> above, and add the following line at the end:</p>
 <codeblock>source ~/.cshrc</codeblock>
-<p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p></li>
-
-<li><p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
-<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p> 
+<p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p>
+</li>
+<li>
+<p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
+<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p>
 <codeblock>mkdir ~/Library/init
 mkdir ~/Library/init/tcsh
 pico ~/library/init/tcsh/path</codeblock>
-<p>and put:</p> 
+<p>and put:</p>
 <codeblock>source ~/.cshrc</codeblock>
-<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p></li>
+<p>in it.  You should also modify your .tcshrc as in item 1 above, to make sure that your PATH is set correctly for situations where <code>~/.login</code> doesn't get read.</p>
+</li>
 </ol>
 <p>
 Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
@@ -336,7 +336,6 @@ package management tools included in Fink.
 </p>
 </section>
 </chapter>
-
 <chapter filename="packages" >
 <title>Installing Packages</title>
 <shorttitle>Packages</shorttitle>
@@ -565,8 +564,32 @@ If you run into errors during that process, please first check the
 <link url="http://fink.sourceforge.net/faq/" >FAQ</link>.
 </p>
 </section>
+<section>
+<title>Available versions</title>
+<p>When you want to install a package, you should first check the <link url="http://fink.sourceforge.net/pdb/index.php" >package database</link> and see if it is available at all through Fink.  The available version(s) of the package will be shown in the following fields:</p>
+<ul>
+<li>
+<p>
+<em>In 0.4.1-stable:</em>  this is the latest version that can be installed from binaries for OS 10.1 only.</p>
+</li>
+<li>
+<p>
+<em>In 0.5.2-stable:</em>  this is the latest version that can be installed from binaries for OS 10.2 .  If you don't see this version of the package as available,  you probably need to <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php" >upgrade</link> Fink.</p>
+</li>
+<li>
+<p>
+<em>In current-stable:</em>  this is the most recent stable version that can be installed from source (for OS 10.2).  To be able to install this version, you'll need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS access</link>.</p>
+<p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see below).  Enabling CVS gives you access to new stable versions of packages before the binary distribution is updated. 
+</p>
+</li>
+<li>
+<p>
+<em>In latest-unstable:</em>  This is the latest unstable version that can be installed from source.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstahle packages.</p>
+<p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
+</p></li>
+</ul>
+</section>
 </chapter>
-
 <chapter filename="upgrade" >
 <title>Upgrading Fink</title>
 <shorttitle>Upgrade</shorttitle>
@@ -624,7 +647,7 @@ are stored and managed.
 Using CVS has the advantage that it is updated continuously.
 </p>
 <p>(If you are having trouble upgrading a source installation, consult
-<link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
+<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >these
 special instructions</link>.)</p>
 <p>
 If you have a version of Fink older than 0.2.5, you must download the
@@ -657,7 +680,6 @@ packages.
 </p>
 </section>
 </chapter>
-
 <chapter filename="conf" >
 <title>The Fink Configuration File</title>
 <shorttitle>fink.conf</shorttitle>
@@ -905,9 +927,9 @@ documented above. When using the MasterFirst or MasterLast options, the user can
 to the Master (or non Master) set if a download fails. The options are:
 </p>
 <codeblock>
-MasterFirst - Search "Master" source mirrors first.
-MasterLast - Search "Master" source mirrors last.
-MasterNever - Never use "Master" source mirrors.
+MasterFirst - Search &quot;Master&quot; source mirrors first.
+MasterLast - Search &quot;Master&quot; source mirrors last.
+MasterNever - Never use &quot;Master&quot; source mirrors.
 ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
 </codeblock>
 </li>
@@ -938,12 +960,11 @@ fill your hard-disk quickly!</em>
 </ul>
 </section>
 </chapter>
-
 <chapter filename="usage" >
 <title>Controlling Fink from the command line</title>
 <shorttitle>Command line</shorttitle>
-
-<section name="using"><title>Using Fink</title>
+<section name="using" >
+<title>Using Fink</title>
 <p>Fink has several commands that work on packages. All of them need at
 least one package name, and all can handle several package names at
 once. You can specify just the package name (e.g. gimp), or a fully
@@ -952,8 +973,8 @@ gimp-1.2.1-3). Fink will automatically choose the latest available
 version and revision when they are not specified.</p>
 <p>What follows is a list of commands that Fink understands:</p>
 </section>
-
-<section name="install"><title>install</title>
+<section name="install" >
+<title>install</title>
 <p>The install command is used to install packages. It downloads,
 configure, builds and installs the packages you name. It will also
 install required dependencies automatically, but will ask you for
@@ -968,8 +989,8 @@ Do you want to continue? [Y/n]</codeblock>
 <p>Aliases for the install command: update, enable, activate, use (most
 of these for historic reasons).</p>
 </section>
-
-<section name="remove"><title>remove</title>
+<section name="remove" >
+<title>remove</title>
 <p>The remove command removes packages from the system by calling 'dpkg
 --remove'. The current implementation has some flaws: It only works on
 packages Fink knows about (i.e. where an .info file is present); and it
@@ -982,14 +1003,14 @@ again. If you need the disk space, you can remove the .deb from the
 /sw/fink/dists tree.</p>
 <p>Aliases: disable, deactivate, unuse, delete.</p>
 </section>
-
-<section name="update-all"><title>update-all</title>
+<section name="update-all" >
+<title>update-all</title>
 <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
 <codeblock>fink update-all</codeblock>
 </section>
-
-<section name="list"><title>list</title>
+<section name="list" >
+<title>list</title>
 <p>
 This command produces a list of available packages, listing
 installation status, the latest version and a short description.
@@ -1048,8 +1069,8 @@ The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
 </p>
 </section>
-
-<section name="apropos"><title>apropos</title>
+<section name="apropos" >
+<title>apropos</title>
 <p>
 This command behaves almost identical to <code>fink list</code>. The most
 notable difference is that <code>fink apropos</code> also searches
@@ -1061,8 +1082,8 @@ fink apropos irc          - list all packages for which 'irc' occurs in the name
 fink apropos -s=kde irc   - the same as above, but restricted to packages from the kde section
 </codeblock>
 </section>
-
-<section name="describe"><title>describe</title>
+<section name="describe" >
+<title>describe</title>
 <p>
 This command displays a description of the package you name on the
 command line.
@@ -1073,23 +1094,23 @@ description.
 Aliases: desc, description, info
 </p>
 </section>
-
-<section name="fetch"><title>fetch</title>
+<section name="fetch" >
+<title>fetch</title>
 <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
 </section>
-
-<section name="fetch-all"><title>fetch-all</title>
+<section name="fetch-all" >
+<title>fetch-all</title>
 <p>Downloads <em>all</em> package source files. Like fetch, this downloads the
 tarballs even when they were downloaded before.</p>
 </section>
-
-<section name="fetch-missing"><title>fetch-missing</title>
+<section name="fetch-missing" >
+<title>fetch-missing</title>
 <p>Downloads <em>all</em> package source files. This command will only download
 files that are not present on the system.</p>
 </section>
-
-<section name="build"><title>build</title>
+<section name="build" >
+<title>build</title>
 <p>Builds a package, but does not install it. As usual, the source
 tarballs are downloaded if they can not be found. The result of this
 command is an installable .deb package file, which you can quickly
@@ -1097,30 +1118,30 @@ install later with the install command. This command will do nothing
 if the .deb already exists. Note that dependencies are still
 <em>installed</em>, not just built.</p>
 </section>
-
-<section name="rebuild"><title>rebuild</title>
+<section name="rebuild" >
+<title>rebuild</title>
 <p>Builds a package (like the build command), but ignores and overwrites
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via dpkg. Very useful
 during package development.</p>
 </section>
-
-<section name="reinstall"><title>reinstall</title>
+<section name="reinstall" >
+<title>reinstall</title>
 <p>Same as install, but will install the package via dpkg even when it is
 already installed. You can use this when you accidentally deleted
 package files or changed configuration files and want to get the
 default settings back.</p>
 </section>
-
-<section name="configure"><title>configure</title>
+<section name="configure" >
+<title>configure</title>
 <p>
 Reruns the Fink configuration process.
 This will let you change your mirror sites and proxy settings, among
 others.
 </p>
 </section>
-
-<section name="selfupdate"><title>selfupdate</title>
+<section name="selfupdate" >
+<title>selfupdate</title>
 <p>
 	This command automates the process of upgrading to a new Fink
 	release. It checks the Fink website to see if a new version is
@@ -1131,15 +1152,15 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
 </section>
-
-<section name="index"><title>index</title>
+<section name="index" >
+<title>index</title>
 <p>
    Rebuilds the package cache. You should not normally need to execute
    this manually, as fink should auto-detect when it needs to be updated.
 </p>
 </section>
-
-<section name="validate"><title>validate</title>
+<section name="validate" >
+<title>validate</title>
 <p>
    This command performs various checks on .info and .deb files. Package
    maintainers should run this on their package descriptions and
@@ -1149,27 +1170,24 @@ others.
    Aliases: check
 </p>
 </section>
-
-<section name="scanpackages"><title>scanpackages</title>
+<section name="scanpackages" >
+<title>scanpackages</title>
 <p>
    Calls dpkg-scanpackages(8) with the specified trees.
 </p>
 </section>
-
-<section name="checksums"><title>checksums</title>
+<section name="checksums" >
+<title>checksums</title>
 <p>
    Validates the MD5 digest of all tarballs in <code>/sw/src</code>, where possible.
 </p>
 </section>
-
-<section name="cleanup"><title>cleanup</title>
+<section name="cleanup" >
+<title>cleanup</title>
 <p>
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
    This can reclaim large amounts of disk space.
 </p>
 </section>
-
-
 </chapter>
-
 </document>
