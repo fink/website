@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.1 2004/03/04 05:05:24 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.2 2004/03/05 03:26:57 jeff_yecn Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -379,18 +379,13 @@ installed on top of XFree86 4.2.0 (or later).
 </section><-->    <section name="macgimp" >
       <title>MacGimp</title>
       <p>
-The downloadable installer which was offered by the MacGimp people 
-during 2001
-did not contain XFree86.
-(It would overwrite some XFree86 configuration files, though.)
+MacGimp 2001 年时提供的可下载的安装程序不包括 XFree86。
+（虽然它可能会覆盖一些 XFree86 配置文件）。
 </p>
       <p>
-The CD that <link url="http://www.macgimp.com/" >MacGimp, Inc.</link>
-offers for sale reportedly contains XFree86.
-It's not quite clear what version it is; it may be a mix of
-4.0.3, 4.1.0 and a development snapshot.
-The server does rootless mode, using a patch from the time before
-4.1.0.
+<link url="http://www.macgimp.com/" >MacGimp, Inc.</link>销售的 CD 据称包括 XFree86。
+它的确切版本并不清楚，可能是 4.0.3，4.1.0 和一个开发版本的混合。
+服务器程序支持无根模式，使用 4.1.0 之前的一个补丁程序。
 </p>
     </section>
 <!--><section name="rootless" >
@@ -401,85 +396,74 @@ the net.  With the release of the official 4.2.0 binaries
 this should not be a desirable way to install XFree86.
 </p>
 </section><-->    <section name="switching-x11" >
-      <title>Replacing X11</title>
+      <title>替换 X11</title>
       <p>
-If you have already installed one of the Fink X11 packages but for one reason or another
-have decided you need to remove one and replace it with another, the procedure is pretty
-straightforward.  You will have to force a removal of the old packages, and then install the
-new, to keep your dpkg database consistent.
+如果你已经安装了一个 Fink X11 软件包，但由于某个原因你希望删除它，换成另外一个。操作过程很简单。首先你需要牵制删除旧的安装包，然后安装新的，保持你的 dpkg 数据库的一致性。
 </p>
       <p>
-There are two different ways to do this:
+有两个办法这样做：
 </p>
       <ol>
         <li>
-          <p>Use FinkCommander</p>
+          <p>使用 FinkCommander</p>
           <p>
-   If you are using <link url="http://finkcommander.sourceforge.net/" >FinkCommander</link>, you
-   can force removal through the menu.  For example, if you have
-   <filename>xfree86-rootless</filename> installed, but want the threaded version, you
-   can select your <filename>xfree86-rootless</filename>,
-   <filename>xfree86-rootless-shlibs</filename>, <filename>xfree86-base</filename>, and
-   <filename>xfree86-base-shlibs</filename> packages, and then run:
+   如果你使用<link url="http://finkcommander.sourceforge.net/" >FinkCommander</link>，你可以从菜单里面进行强制删除。例如，如果你安装了 <filename>xfree86-rootless</filename>，但希望改用线程化的版本，你可以选择 <filename>xfree86-rootless</filename>，
+   <filename>xfree86-rootless-shlibs</filename>，<filename>xfree86-base</filename> 和
+   <filename>xfree86-base-shlibs</filename> 软件包，然后选择菜单：
   </p>
           <codeblock>Source -> Force Remove</codeblock>
         </li>
         <li>
-          <p>Manually Remove from the Command-Line</p>
+          <p>在命令行手工删除</p>
           <p>
-   To manually, remove them, you use the <filename>dpkg</filename> with the --force-depends
-   option, like so:
+   要手工删除，你可以使用带 --force-depends 参数的 <filename>dpkg</filename> 命令，象这样：
   </p>
           <codeblock>sudo dpkg -r --force-depends xfree86-rootless\ 
 xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
           <p>
-   Note that if you have apps that require threaded XFree86, you may have trouble with your
-   dpkg database if you force remove it and install a different XFree86 package or placeholder
-   package.
+   如果你有需要使用线程化 XFree86 的程序，那么删除它并安装另外一个 XFree86 软件包会有问题。
   </p>
         </li>
       </ol>
-      <p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it via the command line:</p>
+      <p>如果，你有一个不是由 Fink 安装的 X11，你需要在命令行删除它：</p>
       <codeblock>sudo rm -rf /usr/X11R6 /etc/X11</codeblock>
-      <p>The above holds true for removing any flavor of X11 that you didn't install through Fink.  You will also need to remove <filename>XDarwin.app</filename> | 
-<code>X11.app</code>, depending on what you had installed.  Make sure to check your <filename>.xinitrc</filename> if you are removing Apple's X11 to 
-make sure that you aren't trying to run <filename>quartz-wm</filename>.  You can now install whatever new X11 variety you want, manually or via Fink.</p>
+      <p>上面办法应该对任何不是通过 Fink 安装的 X11 都有效。根据你安装的版本不同，你还需要删除 <filename>XDarwin.app</filename> 或 
+<code>X11.app</code>。如果你删除的是苹果的 X11，那么检查你的 <filename>.xinitrc</filename> 文件，确定你运行的窗口管理器不是 <filename>quartz-wm</filename>。你现在可以安装你喜欢的 X11 变种，手工或通过 Fink。</p>
     </section>
     <section name="fink-summary" >
-      <title>Fink package summary</title>
+      <title>Fink 软件包简介</title>
       <p>
-A quick summary of the install options and the Fink packages you
-should install:
+一个关于安装选项和你应该安装的 Fink 软件包的归纳：
 </p>
       <itemtable labelt="Install Type" labeld="Fink packages" >
         <item>
-          <itemt>4.2.x built via Fink</itemt>
+          <itemt>Fink 的 4.2.x 已编译版</itemt>
           <itemd>
             <p>
-              <code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
-            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
+              <code>xfree86-base</code> 和 <code>xfree86-rootless</code> （以及他们的 <code>-shlibs</code>）</p>
+            <p>或 <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> （以及 <code>-shlibs</code>）</p>
           </itemd>
         </item>
         <item>
-          <itemt>4.3.x built via Fink</itemt>
+          <itemt>Fink 的 4.3.x 已编译版</itemt>
           <itemd>
             <p>
-              <code>xfree86</code> and <code>xfree86-shlibs</code>
+              <code>xfree86</code> 和 <code>xfree86-shlibs</code>
             </p>
           </itemd>
         </item>
         <item>
-          <itemt>4.x official binaries</itemt>
+          <itemt>4.x 官方二进制版</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+              仅 <code>system-xfree86</code> （以及一些 splitoff）</p>
           </itemd>
         </item>
         <item>
-          <itemt>4.x built from source, or from the latest CVS source</itemt>
+          <itemt>4.x 已编译版，包括从源代码发布版或最新的 CVS 源代码编译的。</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+              仅 <code>system-xfree86</code> （以及一些 splitoff）</p>
           </itemd>
         </item>
 <!--obsolete><item>
@@ -489,18 +473,18 @@ should install:
 <code>xfree86-base</code> only</p>
 </itemd>
 </item><-->        <item>
-          <itemt>4.2.x from Apple</itemt>
+          <itemt>苹果的 4.2.x 版</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)
+              仅 <code>system-xfree86</code> （以及一些 splitoff）
 </p>
           </itemd>
         </item>
         <item>
-          <itemt>4.3.x from Apple</itemt>
+          <itemt>苹果的 4.3.x 版</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)
+              仅 <code>system-xfree86</code> （以及一些 splitoff）
 </p>
           </itemd>
         </item>
@@ -508,148 +492,106 @@ should install:
     </section>
   </chapter>
   <chapter filename="run-xfree86" >
-    <title>Starting XFree86</title>
-    <shorttitle>Starting XFree86</shorttitle>
+    <title>启动 XFree86</title>
+    <shorttitle>启动 XFree86</shorttitle>
     <section name="darwin" >
       <title>Darwin</title>
       <p>
-On pure Darwin, XFree86 behaves like on any other Unix.
-The usual way to start it is via <code>startx</code> from the console;
-that starts both the server and some initial clients like the window
-manager and a terminal emulator with a shell.
-On pure Darwin it is not necessary to specify any parameters, so you
-can just type:
+在纯 Darwin 环境下，XFree86 和其它 Unix 环境的使用基本一样。
+通常的启动方式是在控制台运行 <code>startx</code>； 
+这会启动服务器程序可一些最初的客户程序，例如窗口管理器和一个运行 shell 的终端模拟程序。
+在纯 Darwin 中，不需要指明任何参数，只需要输入：
 </p>
       <codeblock>startx</codeblock>
       <p>
-You can customize what is started through several files in your home
-directory.
-<filename>.xinitrc</filename> controls what clients get started.
-<filename>.xserverrc</filename> controls server options and may even
-start a different server.
-If you're having trouble (as in, you only get a blank screen or
-XFree86 drops you right back to the console), you can start
-troubleshooting by moving these files out of the way.
-When <code>startx</code> doesn't find these files, it will use safe
-defaults that should always work.
+你可以通过你自己主目录中的几个文件来定制需要启动什么。
+<filename>.xinitrc</filename> 控制什么客户程序会被启动。
+<filename>.xserverrc</filename> 可以控制服务器程序的选项，甚至启动一个不同的服务器。
+如果你碰到麻烦（比如，只有一个空白的屏幕或退回了控制台），你可以通过把这些文件暂时移开来确定问题所在。
+当 <code>startx</code> 找不到这些文件的时候，它会使用安全的默认设置，一般这时候应该能正常工作。
 </p>
       <p>
-Alternatively, you can start the server directly with one of the XDMCP
-options, like this:
+另外的办法是，你可以直接通过一个 XDMCP 选项直接启动服务器，象这样：
 </p>
       <codeblock>X -query remotehost</codeblock>
       <p>
-Details about this can be found in the <code>Xserver</code> manual
-page.
+关于它的详细信息请查看 <code>Xserver</code> 的手册页面。
 </p>
       <p>
-Finally, there is the option to set up <code>xdm</code>; read its
-manual page for details.
+最后，可以有些选项设置 <code>xdm</code>；请阅读它的手册页面获取详细信息。
 </p>
       <p>
-Note: If you're running Mac OS X, you can type <code>>console</code>
-at the login window and you'll get a text console that is
-equivalent to pure Darwin.
-You can use all of the start methods outlined above, with the
-exception of <code>xdm</code>.
+注意：如果你使用 Mac OS X，你可以在登录窗口输入 <code>&gt;console</code>　来获得一个和纯 Darwin 环境等效的纯文本控制台。
+然后，你可以使用上面描述的启动方法，除了 <code>xdm</code> 作为一个例外。
 </p>
     </section>
     <section name="macosx-41" >
       <title>Mac OS X + XFree86 4.x.y</title>
       <p>
-There are basically two ways to start XFree86 under Mac OS X.
-One is double-clicking the XDarwin.app application in your
-Applications folder.  This will let you choose between full 
-screen and rootless mode in a dialog at startup, just 
-double-click the XDarwin.app application. You can disable 
-the dialog and set XDarwin to always use the mode of your 
-choice in the Preferences dialog.  
+基本上，在 Mac OS X 下启动 XFree86 有两种办法。
+一种办法是在你应用程序中双击 XDarwin.app 程序图标。在启动过程中会有一个对话框让你选择是全屏幕模式还是无根模式。你可以在偏好设定对话框中设定总是使用你选择模式并禁用选择对话框。  
 </p>
       <p>
-Prior to 4.2.0 it would fire up fullscreen mode automatically, 
-and there was no way to get rootless mode by double-clicking 
-the application.
+在 4.2.0 之前，它会自动启动全屏幕模式，没有办法通过双击程序来进入无根模式。
 </p>
       <p>
-The other way to start XFree86 under Mac OS X is via
-<code>startx</code> from Terminal.app.
-If you start the server this way, you must tell it that it should run
-in parallel with Quartz.
-You do this by passing the <code>-fullscreen</code> option, like this:
+另外一种在 Mac OS X 中启动 XFree86 的办法是在终端程序中运行
+<code>startx</code>。
+如果你用这种办法启动服务器程序，你必须告诉它应该与 Quartz 并行使用。
+这可以通过使用 <code>-fullscreen</code> 参数，比如：
 </p>
       <codeblock>startx -- -fullscreen</codeblock>
       <p>
-That will start up the server in fullscreen mode, 
-plus the clients inyour <filename>.xinitrc</filename>.  
+这会以全屏幕模式启动服务器，以及你的 <filename>.xinitrc</filename> 文件里面的客户程序。  
 </p>
       <p>
-NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.
+注意，在 4.2 之前，使用 <code>-quartz</code> 参数来进入全屏幕模式。
 </p>
       <p>
-If the server you have supports rootless operation, 
-you can start it in rootless mode with the 
-<code>-rootless</code> option:</p>
+如果你的服务器程序支持无根模式，你可以用 <code>-rootless</code> 参数用无根模式启动：</p>
       <codeblock>startx -- -rootless</codeblock>
       <p>
-The <code>-quartz</code> option no longer selects fullscreen mode,
-but rather uses the default mode set in the preferences.
+<code>-quartz</code> 选项不再选择全屏幕模式，而是使用偏好设定里面的默认设置。
 </p>
-      <p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
+      <p>对于 4.3，如果不带参数地使用 <code>startx</code>，会显示启动对话框。</p>
     </section>
     <section name="xinitrc" >
-      <title>The .xinitrc File</title>
+      <title>.xinitrc 文件</title>
       <p>
-If a file named <filename>.xinitrc</filename> exists in your home
-directory, it will be used to start some initial X clients, e.g. the
-window manager and some xterms or a desktop environment like GNOME.
-The <filename>.xinitrc</filename> file is a shell script that contains
-the commands to do this.
-It is <em>not</em> necessary to put the usual <code>#!/bin/sh</code>
-in the first line and to set the executable bit on the file;
-xinit will still know how to run it through a shell.
+如果在你的主目录中有一个 <filename>.xinitrc</filename> 文件，它可以用于启动一些最初的 X 客户程序，比如，窗口管理器，或者一些 xterm 终端或象 GNOME 这样的桌面环境。<filename>.xinitrc</filename> 文件实际上是包括一些命令 shell 脚本。
+<em>不</em> 需要把通常的 <code>#!/bin/sh</code> 放在第一行和把这个文件设为可执行；xinit 知道怎么在 shell 里面运行它。
 </p>
       <p>
-When there is no <filename>.xinitrc</filename> file in your home
-directory, XFree86 will use its default file,
-<filename>/private/etc/X11/xinit/xinitrc</filename>.
-You can use the default file as a starting point for your own
-.xinitrc:
+如果在你的主目录里面没有 <filename>.xinitrc</filename> 文件，XFree86 会使用它的默认文件，
+<filename>/private/etc/X11/xinit/xinitrc</filename>。
+你可以使用这个默认文件作为你自己的 .xinitrc 文件的一个起点：
 </p>
       <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
       <p>
-If you're using Fink, you should source <filename>init.sh</filename>
-right at the beginning to make sure the environment is set up correctly.
+如果你使用 Fink，你可以在文件的开头使用 source <filename>init.sh</filename>
+来确保环境被正确设置。
 </p>
       <p>
-You can put fairly arbitrary commands in an <filename>.xinitrc</filename>,
-but there are some caveats.
-First, the shell that interprets the file will by default wait for
-every program to finish before it starts the next one.
-If you want several programs to run in parallel, you must tell the
-shell to put them &quot;in the background&quot; by adding a <code>&amp;</code> at
-the end of the line.
+虽然原则上你可以在 <filename>.xinitrc</filename> 中使用任意命令，但是还是有些需要注意的地方。
+首先，解释这个文件的 shell 默认情况下会等待一个程序执行完毕才会执行下一个程序。
+因此，如果你希望同时运行多个程序，你需要告诉 shell 应该&quot;在后台&quot;运行他们。这可以通过在一行命令的末尾加一个 <code>&amp;</code> 号来实现。
 </p>
       <p>
-Second, <code>xinit</code> waits for the <filename>.xinitrc</filename>
-script to finish and interprets that as &quot;the session has ended, I should
-kill the X server now, too&quot;.
-This means that the last command of your <filename>.xinitrc</filename>
-must not be run in the background and it should be a long-living program.
-Customarily, the window manager is used for this purpose.
-In fact, most window managers assume that <code>xinit</code> is
-waiting for them to finish and use this to make the &quot;Log out&quot; entry in
-their menus work.
-(Note: To save some memory and CPU cycles, you can put an
-<code>exec</code> before the last line like in the examples below.)
+第二，<code>xinit</code> 会等待 <filename>.xinitrc</filename>
+脚本执行完，然后认为 &quot;这个部分已经执行完毕，现在我应该关闭 X 服务器了&quot;。
+这意味着你的 <filename>.xinitrc</filename> 文件里面的最后一个命令一定不能是后台运行的，而且它应该是一个一直运行的程序。
+一般情况下，窗口管理器正好可以用于这个用途。
+事实上，多数窗口管理器会假设 <code>xinit</code> 在等待它结束运行，并以此来作为它们菜单里面&quot;注销&quot;功能的工作原理。
+（注意：为了节省一些内存和 CPU 的消耗，你可以象下面的例子一样在最后一条命令前加上
+<code>exec</code>。）
 </p>
       <p>
-A simple example that starts up GNOME:
+关于启动 GNOME 的一个简单例子：
 </p>
       <codeblock>source /sw/bin/init.sh
 exec gnome-session</codeblock>
       <p>
-A more complex example that turns the X11 bell off, starts some clients
-and finally executes the Enlightenment window manager:
+一个稍微复杂一点的例子会关闭 X11 响铃，启动一些客户程序，最后运行 Enlightenment 窗口管理器：
 </p>
       <codeblock>source /sw/bin/init.sh
 
@@ -666,250 +608,191 @@ exec enlightenment</codeblock>
     <title>Xtools</title>
     <shorttitle>Xtools</shorttitle>
     <section name="install" >
-      <title>Installing Xtools</title>
+      <title>安装 Xtools</title>
       <p>
-Now that's easy for a change.
-Get the installer, double-click it, and follow the instructions.
-Be sure to select the startup volume when asked.
+现在一切都很简单。获取一个安装程序，双击它，然后安装有关的屏幕指示进行。
+注意在提示选择安装宗卷的时候要选择启动宗卷。
 </p>
       <p>
-If you're using Fink, you should install the
-<code>system-xtools</code> package after you've installed Xtools.
-That package will not install any files, it will just check that the
-libraries etc. are there and act as a placeholder in Fink's dependency
-system.
+如果你使用 Fink，你应该在安装 Xtools 以后，在 Fink 里面安装
+<code>system-xtools</code> 软件包。
+这个软件包并不安装任何文件，它只是检查必须的库函数，然后做为 Fink 依赖关系系统的一个占位符存在。
 </p>
     </section>
     <section name="run" >
-      <title>Running Xtools</title>
+      <title>运行 Xtools</title>
       <p>
-To run Xtools, double-click Xtools.app in your Applications folder.
-Like XFree86, Xtools will run the clients you specify in your
-<filename>.xinitrc</filename> file.
-Xtools additionally allows you to start clients via the menu.
+要运行 Xtools，在你的应用程序文件夹里面双击 Xtools.app 程序图标。
+象 XFree86 一样，Xtools 会运行你
+<filename>.xinitrc</filename> 文件里面的客户程序。
+Xtools 还可以让你在菜单里面启动客户程序。
 </p>
     </section>
     <section name="opengl" >
-      <title>OpenGL Notes</title>
+      <title>OpenGL 注意事项</title>
       <p>
-Xtools does hardware-accelerated OpenGL in rootless mode and comes
-with the libraries to support it.
-While the main libGL library is fine, the libGLU and libglut libraries
-are only present as static libraries, which is not sufficient for
-full binary compatibility with XFree86.
-Also, some headers are missing.
-Fink doesn't offer a workaround at this time.
-Hopefully this will be fixed in Xtools 1.1 once it is released.
+Xtools 可以在无根模式下使用硬件加速的 OpenGL，并包括有关的支持函数库。
+虽然主 libGL 函数库没有什么问题，但 libGLU 和 libglut 函数库只是静态连接库，这并不足以提供与 XFree86 的二进制兼容。
+另外，还缺乏一些头文件。
+Fink 暂时还没有解决的办法。
+希望这会在 Xtools 1.1 发布的时候修正。
 </p>
     </section>
   </chapter>
   <chapter filename="other" >
-    <title>Other X11 Possibilities</title>
-    <shorttitle>Other Stuff</shorttitle>
+    <title>其它 X11 可能</title>
+    <shorttitle>其它东西</shorttitle>
     <section name="vnc" >
       <title>VNC</title>
       <p>
-VNC is a network-capable graphics display system similar in design to
-X11.
-However, it works at a lower level, making implementation easier.
-With the Xvnc server and a Mac OS X display client, it is possible to
-run X11 applications with Mac OS X.
-Jeff Whitaker's <link url="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/" >Xvnc page</link> has
-more information on that.
+VNC 是一个在设计上和 X11 类似的网络图象显示系统。
+不过，它工作于更底层，而使得实现更为简单。
+使用 Xvnc 服务器和一个 Mac OS X 显示客户程序，有可能在 Mac OS X 上运行 X11 应用程序。
+Jeff Whitaker 的 <link url="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/" >Xvnc 页面</link>有关于它的更多信息。
 </p>
     </section>
     <section name="wiredx" >
       <title>WiredX</title>
       <p>
-        <link url="http://www.jcraft.com/wiredx/" >WiredX</link> is an X11
-server written in Java.
-It also supports rootless mode.
-An Installer.app package is available at the web site.
+        <link url="http://www.jcraft.com/wiredx/" >WiredX</link> 是一个由 Java 写成的 X11 服务器程序。
+它也支持无根模式。
+在它的网站上可以下载得到一个安装程序。
 </p>
     </section>
     <section name="exodus" >
       <title>eXodus</title>
       <p>
-According to the website, <link url="http://www.powerlan-usa.com/exodus/" >eXodus 8</link> by Powerlan
-USA runs natively on Mac OS X.
-It is unknown what codebase it uses and whether/how it supports local
-clients.
-Because of this, there is no special support for eXodus in Fink.
-If you have more info, please throw it our way.
+根据<link url="http://www.powerlan-usa.com/exodus/" >eXodus 8</link>网站的资料，这个由 Powerlan USA 开发的程序可以在 Mac OS X 直接运行。
+现在还不知道它使用代码基础，以及它是否支持本地客户程序。
+因此，在 Fink 中对 eXodus 没有什么特别的支持。
+如果你有更多的信息，请告诉我们。
 </p>
     </section>
   </chapter>
   <chapter filename="trouble" >
-    <title>Troubleshooting XFree86</title>
-    <shorttitle>Troubleshooting</shorttitle>
+    <title>XFree86 故障排除</title>
+    <shorttitle>故障排除</shorttitle>
     <section name="immedate-quit" >
-      <title>When I launch XDarwin, it quits
-or crashes almost immediately</title>
+      <title>当我启动 XDarwin，它几乎立刻就退出或崩溃了</title>
       <p>
-First of all: Don't Panic!
-There are lots of things than can go wrong with XFree86, and a good
-number of them can cause startup failures.
-Further, it is not unusual that XDarwin crashes when it experiences
-startup problems.
-This section tries to provide a comprehensive list of problems you may
-come across.
-But first, you need to gather two important pieces of information:
+首先：不要惊慌！
+在 XFree86 中可能发生问题的地方很多，中间有不少会引起启动失败。
+而且，当 XDarwin 碰到启动问题的时候崩溃并不是什么特别奇怪的事情。
+本部分提供你可能会碰到的问题的详细清单。
+但首先，你需要收集两部分的重要信息：
 </p>
       <p>
-        <em>XDarwin version.</em>
-You can find the XDarwin version in the Finder by clicking
-<em>once</em> on the XDarwin icon and then selecting &quot;Show Info&quot;
-from the menu.
-The version is only incremented when a new binary test release is made
-by the XonX project, so &quot;1.0a1&quot; may actually be any version between
-1.0a1 and 1.0a2.
+        <em>XDarwin 版本。</em>
+你可以用这个办法获知 XDarwin 的版本：在 Finder 中<em>单击</em> XDarwin 的图标，然后在菜单中选择&quot;显示信息&quot;。
+这个版本号只有在 XonX 项目发布一个新的二进制安装版的时候才会增加，所以 &quot;1.0a1&quot; 实际上可能是
+1.0a1 和 1.0a2 之间的任何版本。
 </p>
       <p>
-        <em>Error messages.</em>
-These are essential in pinpointing the particular problem you
-experience.
-How you get the error messages depends on how you started XDarwin.
-If you ran <code>startx</code> from a Terminal window, you'll have the
-messages right there in that window.
-Remember that you can scroll up.
-If you started XDarwin by double-clicking the icon, the messages end
-up in the system log, which you can access through the Console
-application in the Utilities folder.
-Be sure to pick the right set of messages, i.e. the last one.
+        <em>出错信息。</em>
+这对说明你实际碰到的问题很重要。
+如何获取错误信息取决于你如何启动 XDarwin。
+如果你在终端窗口运行 <code>startx</code>，你可以在那个窗口直接看到出错信息。
+记住，你可以向上翻卷。
+如果你通过双击启动 XDarwin，错误信息会保存到系统日志。你可以通过实用工具文件夹里面的控制台程序来察看。
+注意，要选择合适部分的信息，通常就是说，应该是最后的一部分信息。
 </p>
       <p>
-We'll start with a list of the messages you may see:
+下面是你可能会看到的信息：
 </p>
       <codeblock>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</codeblock>
       <codeblock>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</codeblock>
       <p>
-Class: Harmless.
-X11 creates hidden directories in /tmp to store the socket &quot;files&quot; for
-local connections.
-For security reasons, X11 prefers if these directories are owned by
-root, but since they are world-writable anyway it will still run
-without any problems.
-(Note: It's quite hard to have these dirs owned by root, as Mac OS X
-wipes out /tmp on reboots and XDarwin doesn't run with root privileges
-and doesn't need to.)
+分类：无害。
+X11 会在 /tmp 下创建一些隐藏文件来保存用于本地连接的套接口&quot;文件&quot;。
+出于安全的原因，X11 希望这些目录由 root 用户拥有，不过由于它们是所有人可写的，所以它的运行不会有问题。
+（注意：要让这些目录由 root 拥有会很困难，因为 Mac OS X
+会在每次启动的时候清空 /tmp 目录，而 XDarwin 又不是以 root 权限运行，事实上它也不需要）。
 </p>
       <codeblock>QuartzAudioInit: AddIOProc returned 1852797029</codeblock>
       <codeblock>-[NSCFArray objectAtIndex:]: index (2) beyond bounds (2)</codeblock>
       <codeblock>kCGErrorIllegalArgument : CGSGetDisplayBounds (display 35434400)</codeblock>
       <codeblock>No core keyboard</codeblock>
       <p>
-Class: Bogus.
-These are follow-up errors that result when the server tries to reset
-itself after a previous error.
-During that, another copy of the startup banner is printed, followed
-by one or more of the above messages because resetting the server
-doesn't really work in the affected versions of XDarwin.
-So when you see messages like these, scroll up in the Terminal
-resp. Console window and look for another set of banner and messages.
-This affects all versions up to and including XDarwin 1.0a3; it was
-fixed after 1.0a3 was released.
+分类：虚假错误。
+这是由于服务器程序由于以前的错误后试图复位自己而产生的后续错误。
+在那期间，会打印新的启动标题，以及一个或更多的上述错误，因为对受此影响的 XDarwin 版本，复位功能实际并不能工作。
+当你看到上面的信息时，你应该向上翻卷终端程序输出或控制台窗口。并寻找另外一个启动标题和错误信息。受此影响的版本包括 XDarwin 1.0a3 及之前版本，在 1.0a3 发布以后，这个问题被修正了。
 </p>
       <codeblock>cat: /Users/chrisp/.Xauthority: No such file or directory</codeblock>
       <p>
-Class: Mostly harmless.
-It is unknown where these messages come from and they seem to have no
-impact on operations.
-You can get rid of them by running <code>touch .Xauthority</code> in
-your home directory.
+分类：多数情况下无害。
+暂时还不知道这些信息从哪里来的，但看起来它们没有对任何操作造成影响。
+你可以在你目录里面运行 <code>touch .Xauthority</code> 命令来消除这个错误。
 </p>
       <codeblock>Gdk-WARNING **: locale not supported by C library</codeblock>
       <p>
-Class: Harmless.
-This just means what it says and won't keep the application from
-working.
-For more information, <xref section="locale" >see below</xref>.
+分类：无害。
+正如信息所说的意思，它并不会使程序不能工作。
+更多的信息，<xref section="locale" >参考下面</xref>。
 </p>
       <codeblock>Gdk-WARNING **: locale not supported by Xlib, locale set to C
 Gdk-WARNING **: can not set locale modifiers</codeblock>
       <p>
-Class: Bad, but not fatal.
-These messages may appear in addition to the one above.
-This indicates that XFree86's locale data files are not present.
-It appears that this happens unreproducably when building XFree86 from
-source.
-Most applications will still work, GNU Emacs is a noteable exception.
+分类：有些糟糕，但并非致命的。
+这些信息可能和前面的一个信息一起出现。
+这意味着 XFree86 的本地化数据文件找不到了。
+在从 XFree86 源程序编译安装的时候，可能会导致这个问题，但暂时这个问题没有办法固定地重现。
+多数程序仍然可以工作，不过 GNU Emacs 是一个重要的例外。
 </p>
       <codeblock>Unable to open keymapping file USA.keymapping.
 Reverting to kernel keymapping.</codeblock>
       <p>
-Class: Often fatal.
-This can happen with XDarwin 1.0a1, with the &quot;Load from file&quot;
-keymapping option enabled.
-That version needs a full path when the file to load is set via the
-Preferences dialog, but searches automatically when it is passed on
-the command line.
-The message will usually be followed by the &quot;assert&quot; message shown
-below.
-To fix this, follow the directions below.
+分类：通常是致命的。
+这通常发生于 XDarwin 1.0a1，同时启用 &quot;Load from file&quot;
+键盘映射选项的时候。
+那个版本在要装载的文件是通过偏好设定对话框设置的时候需要文件的全路径，但如果作为命令行参数传递的时候却自动搜索。
+这个信息后面通常会紧跟下面的 &quot;assert&quot; 消息。
+要修正这个错误，可以按照下面的办法。
 </p>
       <codeblock>Fatal server error:
 assert failed on line 454 of darwinKeyboard.c!</codeblock>
       <codeblock>Fatal server error:
 Could not get kernel keymapping! Load keymapping from file instead.</codeblock>
       <p>
-Class: Fatal.
-Changes Apple made in Mac OS X 10.1 broke the code in XFree86 that
-reads the keyboard layout from the operating system kernel;
-the message above is the result of that.
-You must use the &quot;Load from file&quot; keymapping option on Mac OS X 10.1.
-The setting is in the XDarwin Preferences dialog.
-Be sure that a file is selected (i.e. use the &quot;Pick file&quot; button) -
-simply activating the check box may not be sufficient with some
-versions of XDarwin.
-If you can't get to the Preferences dialog because XDarwin closes
-before you get a chance, run it from Terminal with the command
-<code>startx -- -quartz -keymap USA.keymapping</code>.
-This usually allows XDarwin to start up, and you can then make the
-permanent choice in the Preferences dialog.
+分类：致命错误。
+苹果在 Mac OS X 10.1 所做的改变破坏了 XFree86 从系统核心读取眼键盘布局的代码，上面的信息就是因此而引起的。
+在 Mac OS X 10.1 中，你必须使用 &quot;Load from file&quot; 键盘映射选项。
+你可以在 XDarwin 的偏好设定对话框中进行设置。
+确定已经选择了文件（就是说，使用 &quot;Pick file&quot; 按钮）－对 XDarwin 的一些版本来说，简单的激活对话框并不足够。
+如果 XDarwin 在你能够选择偏好设置之前就关闭了，在终端里面运行命令：
+<code>startx -- -quartz -keymap USA.keymapping</code>。
+这通常可以让 XDarwin 启动起来，然后你可以在偏好设定对话框中进行持久的选择。
 </p>
       <codeblock>Fatal server error:
 Could not find keymapping file .</codeblock>
-      <p>Class: Fatal (as it says).  This error is due to the absence of the keymapping files under Panther.  You need to install <code>xfree86-4.3.99-16</code> or later, since these versions don't need the keymapping files.</p>
+      <p>分类：致命错误（它也是这么说的）。这个错误是因为在 Panther 下缺乏键盘映射文件。你需要安装 <code>xfree86-4.3.99-16</code> 或更新版本，因为这些版本不需要键盘映射文件。</p>
       <codeblock>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</codeblock>
       <p>
-Class: Mostly harmless.
-XDarwin 1.0a2 and later launch an interactive shell behind the scenes
-to run your client startup file (.xinitrc).
-This was done so that you don't have to add statements to set up PATH
-in that file.
-Some shells complain that they're not connected to a real terminal,
-but that can be ignored since that shell instance is not used for
-anything that requires job control or the like.
+分类：多数时候是无害的。
+XDarwin 1.0a2 或更早的版本会启动一个非交互的 shell 程序来执行你的客户启动文件（.xinitrc）。
+这么做使得你不需要在那个文件里面添加设置 PATH 的语句。
+有些 shells 程序会提示说他们呢没有连接到一个真正的终端，但这一般可以被忽略，因为这些 shell 实例并不需要进行作业控制或其它类似的事情。
 </p>
       <codeblock>Fatal server error:
 failed to connect as window server!</codeblock>
       <p>
-Class: Fatal.
-This means that the console-mode server (for pure Darwin) got started
-while you were logged into Aqua.
-Usually this happens when you installed the official XFree86 binary
-distribution and left out the Xquartz.tgz tarball.
-It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you issue the command <code>XDarwin</code> in a Terminal
-window to start the server (you should use startx instead in that
-case, see <xref chapter="run-xfree86" >Starting XFree86</xref>).
+分类：致命错误。
+这意味着在你登录进 Aqua 时，控制台模式的服务器程序（对纯 Darwin）已经被启动。
+这通常发生在你安装了官方的 XFree86 二进制发行版，却遗漏了安装 Xquartz.tgz 压缩档。
+它也可能发生在 /usr/X11R6/bin 中的符号连接出现混乱的情况。也可能是因为你在终端窗口使用 <code>XDarwin</code> 命令来启动服务器程序（你应该使用 startx 命令，参阅<xref chapter="run-xfree86" >启动 XFree86</xref>）。
 </p>
       <p>
-In any case, you can run <code>ls -l /usr/X11R6/bin/X*</code> and
-check the output.
-You should see four relevant entries:
-<code>X</code>, a symlink pointing at <code>XDarwinStartup</code>;
-<code>XDarwin</code>, an executable file (this is the console
-mode server);
-<code>XDarwinQuartz</code>, a symlink pointing at
-<filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename>;
-and <code>XDarwinStartup</code>, a small executable file.
-If any of these are missing or pointing at different files, you need
-to fix that.
-How you do that depends on the method you used to install XFree86.
-See the <xref section="rootless" chapter="inst-xfree86" >Roaming
-Rootless Servers</xref> section for more hints.
+上面的任意情况下，你可以运行 <code>ls -l /usr/X11R6/bin/X*</code> 命令并观察输出。
+你应该可以看到四个相关的项目：
+<code>X</code>，一个指向 <code>XDarwinStartup</code> 的符号连接；
+<code>XDarwin</code>，一个可执行文件（这是控制台模式服务器程序）；
+<code>XDarwinQuartz</code>，一个指向
+<filename>/Applications/XDarwin.app/Contents/MacOS/XDarwin</filename>的符号连接；
+以及 <code>XDarwinStartup</code>，一个很小的可执行文件。
+如果任意的一个不存在或指向另外的文件，你需要修正它。
+应该如何做取决于你安装 XFree86 的方式。
+参考 <xref section="rootless" chapter="inst-xfree86" >《无根模式服务器介绍》</xref>部分获取更多的提示。
 </p>
       <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
 > Error:            Can't find file &quot;unknown&quot; for geometry include
@@ -917,21 +800,17 @@ Rootless Servers</xref> section for more hints.
 >                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</codeblock>
       <p>
-Class: Mostly harmless.
-As the message says, it is not fatal.
-To my knowledge, XDarwin doesn't use the XKB extension at all.
-Probably some client program tries to use it anyway...
+分类：多数情况下无害。
+正如消息说的，它是非致命的。
+就我所知，XDarwin 根本不使用 XKB 扩展。
+也许有些客户程序尝试使用它…
 </p>
       <codeblock>startx: Command not found.</codeblock>
       <p>
-Class: Fatal.
-This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
-initialization files are not set up to add /usr/X11R6/bin to the PATH
-variable.
-If you use Fink and haven't changed your default shell, adding the
-line <code>source /sw/bin/init.csh</code> to <filename>.cshrc</filename>
-in your home directory (as recommended by the Fink instructions) should
-be sufficient.
+分类：致命错误。
+这在 XDarwin 1.0a2 和 1.0a3 下可能会发生，如果你的 shell 初始化文件没有把 /usr/X11R6/bin 加入到 PATH 变量中。
+如果你使用 Fink 而且没有改变你的默认 shell，把 <code>source /sw/bin/init.csh</code> 这一行添加到你主目录下的 <filename>.cshrc</filename>
+文件中（这也是 Fink 使用指南所推荐的）应该就足够了。
 </p>
       <codeblock>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
@@ -939,29 +818,19 @@ _XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
 Cannot establish any listening sockets - Make sure an X server isn't already
 running</codeblock>
       <p>
-Class: Fatal.
-This can happen when you accidentally run several instances of XDarwin
-at once,
-or maybe after an unclean shutdown (i.e. crash) of XDarwin.
-It might also be a file permission problem with the sockets for local
-connections.
-You can try to clean that up with <code>rm -rf /tmp/.X11-unix</code>.
-Restarting the computer also helps in most cases (Mac OS X
-automatically cleans up /tmp when it boots, and the network stack is
-reset).
+分类：致命错误。
+这个错误发生在你碰巧同时运行了多个 XDarwin 的实例，或者更多的情况是一次不完整的 XDarwin 关闭（比如，崩溃）之后。
+这也许还有可能是一个用于本地连接的套接口文件的权限错误。
+你可以尝试用命令 <code>rm -rf /tmp/.X11-unix</code> 来清理它。
+多数情况下重新启动也会有帮助（因为 Mac OS X 在启动时会自动清空 /tmp 目录，同时也复位网络栈）。
 </p>
       <codeblock>Xlib: connection to &quot;:0.0&quot; refused by server
 Xlib: Client is not authorized to connect to Server</codeblock>
       <p>
-Class: Fatal.
-The client programs can't connect to the display server (XDarwin)
-because they use bogus authentication data.
-This can be caused by some VNC installations,
-by running XDarwin through sudo,
-and probably some other freak accidents.
-The usual fix is to delete the .Xauthority file (which stores the
-authentication data) in your home directory and re-create an empty
-file:
+分类：致命。
+客户程序无法连接显示服务器（XDarwin），因为它们使用了错误的认证数据。
+这可能由于一些 VNC 安装，或者用 sudo 运行 XDarwin 引起，也有可能因为一些其它奇怪的意外。
+通常的处理办法时删除你主目录下的 .Xauthority 文件（它保存了身份验证数据），然后重新建立一个空文件：
 </p>
       <codeblock>cd
 rm .Xauthority
@@ -969,18 +838,15 @@ touch .Xauthority</codeblock>
 <!--
 <codeblock>more error messages still to come...</codeblock>
 -->      <p>
-Another common cause for XFree86 startup failures is an incorrect
-<filename>.xinitrc</filename> file.
-What happens is that the <filename>.xinitrc</filename> is run and for some
-reason terminates almost immediately.
-<code>xinit</code> interprets this as &quot;the user's session has ended&quot;
-and kills XDarwin.
-See the <xref section="xinitrc" chapter="run-xfree86" >.xinitrc
-section</xref> for more details.
-Remember to set up the PATH and to have one long-lived program that is
-not started in the background.
-It is a good idea to add <code>exec xterm</code> as a fallback when
-your window manager or similar can't be found.
+另外导致 XFree86 启动失败的原因是不正确的
+<filename>.xinitrc</filename> 文件。
+发生的原因是 <filename>.xinitrc</filename> 被执行，但又由于某种原因立刻终止。
+<code>xinit</code> 把这个解析为 &quot;用户执行过程已经结束&quot;
+并关闭 XDarwin。
+查阅<xref section="xinitrc" chapter="run-xfree86" >.xinitrc
+部分</xref>获取更多细节。
+记得设置 PATH 变量并不要把最后一个持续运行的程序放到后台执行。
+通常添加一个 <code>exec xterm</code> 作为你的窗口管理器或类似的东西不能运行的时候的替代是一个好主意。
 </p>
 <!--
 <p>
@@ -1030,199 +896,148 @@ when XDarwin crashes after some seconds.
 </p>
 -->    </section>
     <section name="black" >
-      <title>Black icons in the GNOME panel or in the
-menu of a GNOME application</title>
+      <title>在 GNOME 面板或 GNOME 程序中出现黑图标</title>
       <p>
-A common problem is that icons or other images are displayed as black
-rectangles or black outlines.
-Ultimately, this is caused by limitations in the operating system
-kernel.
-The problem has been reported to Apple, but so far they seem unwilling
-to fix it; see the filed <link url="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html" >Darwin
-bug report</link> for details.
+通常的问题现象是那些图标或图象显示为黑色的方块或边框。
+这是由于操作系统核心的限制引起的。
+问题已经报告给苹果，但到目前位置，他们似乎还不愿意修复它；查看<link url="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html" >Darwin
+缺陷报告</link>档案获取详细信息。
 </p>
       <p>
-The current situation is that the MIT-SHM extension of the X11
-protocol is practically unusable on Darwin and Mac OS X.
-There are two ways to turn the protocol extension off: in the server
-or in the clients.
-The XFree86 servers installed by Fink (i.e. the xfree86-server and
-xfree86-rootless packages) have it turned off.
-The GIMP and the GNOME panel have been innoculated as well.
-If you experience black icons in another application, start that
-application with the <code>--no-xshm</code> command line option.
+当前的情况是 MIT-SHM 对 X11
+协议的扩展实际上对 Darwin 和 Mac OS X 不可用。
+有两种办法把协议扩展关掉：服务器端或客户程序端。
+由 Fink 安装的 XFree86 服务器程序（指 xfree86-server 和
+xfree86-rootless 软件包）已经关闭了它。
+GIMP 和 GNOME 面板也经过这样的处理。
+如果你在其它程序中碰到同样的黑图标问题，用 <code>--no-xshm</code> 命令行参数启动那个程序。
 </p>
     </section>
     <section name="keyboard" >
-      <title>The keyboard doesn't work in XFree86</title>
+      <title>在 XFree86 下键盘不能使用</title>
       <p>
-This is a known problem that so far seems to affect only portables
-(PowerBook, iBook).
-To work around this, the &quot;Load from file&quot; keymapping option was
-implemented.
-Nowadays it has become the default because the old method (reading the
-mapping from the kernel) stopped working with Mac OS X 10.1.
-If you haven't enabled the option already, you can do so in the
-XDarwin preferences dialog.
-Check the &quot;Load from file&quot; checkbox and select the keymapping file to
-load.
-After restarting XDarwin, your keyboard should mostly work (see
-below).
+这是一个仅影响笔记本电脑（PowerBook，iBook）的已知问题。
+要暂时解决，使用 &quot;Load from file&quot; 键盘映射选项。
+现在这已经成为默认设置，因为传统的办法（从核心读取键盘映射）从 Mac OS X 10.1 开始已经失效。
+如果你还没有启用这个选项，你可以在 XDarwin 偏好设置对话框中进行设置。
+选中 &quot;Load from file&quot; 选项盒并选择要读取的键盘映射文件。
+重新启动 XDarwin 后，你的键盘应该基本能工作（看下面的内容）》
 </p>
       <p>
-If you're starting XFree86 from the command line, you can pass the
-name of the keymapping file to load as an option, as in:
+如果你从命令行启动 XFree86，你可以把键盘映射文件作为一个参数传递给程序，象这样：
 </p>
       <codeblock>startx -- -quartz -keymap USA.keymapping</codeblock>
     </section>
     <section name="delete-key" >
-      <title>The Backspace key doesn't work</title>
+      <title>回退（Backspace）键不行</title>
       <p>
-This can happen when you use the &quot;Load keymapping from file&quot; option
-described above.
-The mapping files describe the backspace key as &quot;Delete&quot;, not as
-&quot;Backspace&quot;.
-You can correct that by putting the following line in your .xinitrc
-file:
+这可能会发生在你使用上面描述的 &quot;Load keymapping from file&quot; 选项时。映射文件把回退键描述为 &quot;Delete&quot;，而不是
+&quot;Backspace&quot;。
+你可以在你的 .xinitrc 文件中加入一行：
 </p>
       <codeblock>xmodmap -e &quot;keycode 59 = BackSpace&quot;</codeblock>
       <p>
-If I remember correctly, XDarwin 1.0a2 and later have code that
-correctly maps the Backspace key automatically.
+如果我没有记错的话，XDarwin 1.0a2 及更新版本已经自动可以正确映射回退键。
 </p>
     </section>
     <section name="locale" >
       <title>&quot;Warning: locale not supported by C library&quot;</title>
       <p>
-These messages are quite common, but harmless.
-It just means what it says - internationalization is not supported
-through the standard C library, the program will use the default
-English messages, date formats, and so on.
-There are several ways to deal with this:
+这个消息很常见，但无害。
+它只是表达它的意思－国际化不能通过标准的 C 函数库支持，程序会使用默认的英语消息，日期格式等等。
+有几种办法来处理它：
 </p>
       <ul>
         <li>
           <p>
-Just ignore the messages.
+简单地忽略这个信息。
 </p>
         </li>
         <li>
           <p>
-Get rid of the messages by unsetting the environment variable LANG.
-Note that this will also turn internationalization off in programs
-that actually support it (via gettext/libintl).
-Example for .xinitrc:
+通过取消定义环境变量 LANG 来消除这个消息。
+注意，这也会关闭那些支持国际化的程序（通过 gettext/libintl）的国际化功能。使用 .xinitrc 的例子：
 </p>
           <codeblock>unset LANG</codeblock>
           <p>
-Example for .cshrc:
+使用 .cshrc 的例子：
 </p>
           <codeblock>unsetenv LANG</codeblock>
         </li>
         <li>
           <p>
-(10.1 only) Use the <code>libxpg4</code> Fink package.
-It builds a small library that contains working locale functions and
-arranges that it is loaded before the system libraries (using the
-DYLD_INSERT_LIBRARIES environment variable).
-You may have to set the LANG environment variable to a fully qualified
-value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
-or <code>de_DE</code>.
+（仅对10.1）使用 <code>libxpg4</code> Fink 软件包。
+它建立一个常用 locale 函数的库并在系统库之前装载（使用
+DYLD_INSERT_LIBRARIES 环境变量）。
+你需要把你的 LANG 环境变量设成完成的形式，比如：<code>de_DE.ISO_8859-1</code> 而不是 <code>de</code>
+或 <code>de_DE</code>。
 </p>
         </li>
         <li>
           <p>
-Ask Apple to include proper locale support in a future version of Mac
-OS X.
+要求苹果在未来的 Mac OS X 版本中加入合适的本地化支持。
 </p>
         </li>
       </ul>
     </section>
   </chapter>
   <chapter filename="tips" >
-    <title>Usage Tips</title>
-    <shorttitle>Tips</shorttitle>
+    <title>使用提示</title>
+    <shorttitle>提示</shorttitle>
     <section name="terminal-app" >
-      <title>Launching X11 apps from Terminal.app</title>
+      <title>在终端程序窗口启动 X11</title>
       <p>
-To launch X11 applications from a Terminal.app window, you must set
-the environment variable &quot;DISPLAY&quot;.
-This variable tells the applications where to find the X11 window
-server.
-In the default setup - XDarwin runs on the same machine, your shell is
-tcsh - you can set the variable as follows:
+要从终端程序窗口启动 X11 程序，你需要设置 &quot;DISPLAY&quot; 环境变量。
+这个变量告诉程序在哪里找到 X11 窗口服务器。
+默认设置－XDarwin 运行在相同的机器上，你的 shell 是 tcsh－的情况下，你可以这样设置环境变量：
 </p>
       <codeblock>setenv DISPLAY :0.0</codeblock>
       <p>
-A nice setup is to have XDarwin.app started when you log in (settable
-in the Login panel of the System Preferences) and add the following to
-your .cshrc:
+一个不错的设置办法是在你登录的时候让 XDarwin.app 程序自动启动（可以在系统设置的登录面板中设置），并在你的 .cshrc 中加进：
 </p>
       <codeblock>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</codeblock>
       <p>
-This sets DISPLAY automatically in every shell.
-It doesn't override the current value when DISPLAY is already set,
-though.
-This way you can still run X11 applications remotely or through ssh
-with X11 tunneling.
+这会在每个 shell 中自动设置 DISPLAY 变量。但它不会覆盖已经设置的 DISPLAY 值。这样你仍然可以远程地运行 X11 程序或通过 ssh X11 隧道来使用它。
 </p>
     </section>
     <section name="open" >
-      <title>Launching Aqua apps from an xterm</title>
+      <title>在 xterm 里面启动 Aqua 程序</title>
       <p>
-One way to launch Aqua applications from an xterm (or any other shell,
-actually) is the <code>open</code> command.
-Some examples:
+在 xterm（或其它 shell）里面启动 Aqua 程序的办法是使用 <code>open</code> 命令，一些例子：
 </p>
       <codeblock>open /Applications/TextEdit.app
 open SomeDocument.rtf
 open -a /Applications/TextEdit.app index.html</codeblock>
       <p>
-The second example opens the document in the application that is
-associated with it, the third example explicitly gives an application
-to use.
+第二个例子用与那个文档关联的程序来打开那个文档，第三个例子则显式制定一个用来打开的程序。
 </p>
     </section>
     <section name="copy-n-paste" >
-      <title>Copy and Paste</title>
+      <title>拷贝和粘贴</title>
       <p>
-Copy and Paste generally works between the Aqua and X11 environments.
-There are still some bugs.
-Emacs is reported to be picky about the current selection.
-Copy and paste from Classic to X11 doesn't work.
+拷贝和粘贴一般来说可以在 Aqua 和 X11 环境之间进行。
+但还有一些缺陷。
+据说 Emacs 目前的选择中最好的。
+不能 Classic 和 X11 之间拷贝和粘贴。
 </p>
       <p>
-Anyway, the trick is to use the respective methods of the environment
-you're in.
-To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
-destination window to the front and use the &quot;middle mouse button&quot;, i.e. Option-click
-on a single-button mouse (this can be configured 
-under XDarwin's Preferences), to paste.
-To transfer text from X11 to Aqua, simply select the text with the
-mouse in X11, then use Cmd-V in Aqua to paste it.
+秘诀在于要使用相应环境的方法。
+要从 Aqua 拷贝文字到 X11，在 Aqua 里面使用 Cmd-C，然后把你要粘贴到的 X11 窗口选到最前面，然后使用&quot;鼠标中键&quot;，对于单键鼠标即 Option-鼠标键（这可以在 XDarwin 的偏好设定里面设置）去粘贴。
+要从 X11 拷贝文字到 Aqua，简单地用鼠标在 X11 中选中文字，然后在 Aqua 中用 Cmd-V 粘贴。
 </p>
       <p>
-The X11 system actually has several separate clipboards (called &quot;cut
-buffers&quot; in X11 speak), and some applications have weird views which
-one should be used.
-In particular, pasting into GNU Emacs or XEmacs sometimes doesn't work
-because of this.
-The program <code>autocutsel</code> can help here; it automatically
-synchronizes the two main cut buffers.
-To run it, install the autocutsel Fink package and add the following
-line to your .xinitrc:
+X11 系统实际上有几个单独的剪贴板（X11 中称为 &quot;剪切缓冲区），有些程序会搞混应该使用哪一个。
+对于 GNU Emacs 或 XEmacs，粘贴有些时候不成功就是因为这个原因。
+<code>autocutsel</code> 这个程序会有帮助，因为它自动同步两个主要剪切缓冲区。
+要运行它，安装 autocutsel Fink 软件包，并在你的 .xinitrc 中添加一行：
 </p>
       <codeblock>autocutsel &amp;</codeblock>
       <p>
-(Make sure it's <em>before</em> the line that exec's the window
-manager and never returns! Don't just add it at the end, it won't
-be executed.)
+（要把它放在运行窗口管理器<em>之前</em>，否则它不会被运行！不要把它添加在末尾，那样它不会被运行）。
 </p>
-      <p>If you are using Apple's X11, then you can use Command-C or Edit->Copy, as 
-usual for Mac apps, to copy text to the clipboard.  However, pasting 
-from the clipboard to Apple X11 via Command-V doesn't work yet.</p>
+      <p>如果你使用苹果的 X11，你可以使用 Command-C 或 编辑->拷贝，就象一般的 mac 程序一样，来拷贝文本到剪贴板。不过，暂时你还不能用 Command-V 粘贴剪贴板里面的内容。</p>
     </section>
   </chapter>
 </document>

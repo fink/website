@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+
+<document filename="index" lang="en" >
+<title>Creating Fink Packages</title>
+<shorttitle>Packaging</shorttitle>
+<cvsid>$Id: packaging.en.xml,v 1.1 2004/03/05 03:26:56 jeff_yecn Exp $</cvsid>
+
+<preface>
+<p>
+This manual documents how to create package descriptions for the Fink
+package manager.
+It also provides a policy and guidelines for the Fink distribution.
+Both the description format and the distribution policy are still
+evolving, so watch the "Last changed" info and the CVS tag on this
+page to detect updates.
+What you're reading right now is a description of the format and
+policy used in post-0.9.0 development versions of the <tt>fink</tt>
+package manager.
+</p>
+<p>
+If you create packages for Fink, you may want to subscribe to the
+<link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
+mailing list.
+If you are looking for a way to help out with Fink, and you have skills
+in this area, you might consider adopting a
+<link url="http://fink.sourceforge.net/pdb/nomaintainer.php">package which
+currently has no maintainer.</link>
+</p>
+</preface>
+
+
+<chapter filename="intro">
+<title>Introduction</title>
+<shorttitle>Intro</shorttitle>
+
+
+<section name="def1"><title>What is a Package?</title>
+<p>
+A package is a piece of software that forms an atomic unit.
+A typical package contains an executable program, the data files it
+needs, message catalogs for internationalisation and documentation.
+In Fink, packages can exist in two forms: the package description
+and the ready-to-install binary package file.
+</p>
+<p>
+The package description is a human readable text file that contains
+everything needed to build a package, i.e. to create the binary
+package file.
+The information includes meta-data (like the package's name and a prose
+description of its purpose), the URL of the source code and the
+instructions necessary to configure, compile and wrap up the package.
+The description may be accompanied by a patch file.
+</p>
+<p>
+A binary package file is a file archive that contains the actual files
+that make up the package,
+i.e. executables, data files, message catalogs, libraries, include
+files, etc.
+The package file also contains some meta-data for the package.
+Installing a binary package mainly consists of unpacking its contents
+as it is already in an ready-to-use form.
+Since Fink builds on the dpkg package manager, the binary package
+files are in the dpkg format and have the extension .deb.
+</p>
+</section>
+
+
+<section name="ident"><title>Identifying a Package</title>
+<p>
+A package is identified by three strings: the package name, the
+version and the revision.
+All of these may contain lower-case letters (a-z), numbers (0-9),
+dashes (-), plus signs (+) and dots (.).
+Other characters are not allowed.
+In particular, capital letters and underscores are not allowed.
+</p>
+<p>
+The package name is simply the name of the software, e.g. openssh.
+The version, also called the upstream version, is the version
+identifier of the original software package.
+It is okay to use letters in the version, e.g. 2.9p1.
+Both fink and dpkg know how to sort these correctly.
+The revision is a counter that is increased when the package
+description changes.
+It starts at 1 and should be reset to 1 when the upstream version
+changes.
+The revision must not contain dashes.
+The full name of a package is all three items concatenated, with
+dashes in between, e.g. openssh-2.9p1-2.
+</p>
+</section>
+
+</chapter>
+
+
+<chapter filename="format">
+<title>Package Descriptions</title>
+<shorttitle>Package Descriptions</shorttitle>
+
+<section name="trees"><title>Tree Layout</title>
+<p>
+Package descriptions are read from the <code>finkinfo</code>
+directories below the <filename>/sw/fink/dists</filename> directory.
+The "Trees" setting in <filename>/sw/etc/fink.conf</filename> controls
+which directories are read.
+The name of package description files must be the full package name
+plus the extension ".info".
+Starting with fink 0.13.0, the use of the simple package name plus
+".info" is also supported in order to simplify package updates.
+</p>
+<p>
+The package description tree is organized with several levels of
+directories.
+The directories in top-down order:
+</p>
+<ul>
+<li><code>dists</code> is where is starts. The <code>dists</code>
+directory is necessary for the Debian tools.</li>
+<li>The distribution. There is <code>stable</code>,
+<code>unstable</code> and <code>local</code>. The <code>local</code>
+directory is under the control of the local administrator/user. The
+<code>stable</code> and <code>unstable</code> directories are part of
+Fink.</li>
+<li>The tree. The <code>main</code> tree contains the bulk of the
+packages. Cryptographic software is kept in a separate tree,
+<code>crypto</code>, to make removal easy should it become
+necessary.</li>
+<li><code>finkinfo</code>
+vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
+the Fink package descriptions and patches, while
+<code>binary-darwin-powerpc</code> contains the <code>.deb</code>
+binary packages.</li>
+<li>Sections. The <code>main</code> tree is subdivided into thematic
+sections to make it manageable. The <code>crypto</code> tree is not
+divided into sections at the moment.</li>
+</ul>
+</section>
+
+<section name="format"><title>File Format</title>
+<p>
+The description files are simple lists of key-value pairs, also called
+'fields'.
+Each line starts with a key, terminated by a colon (:) and followed by
+the value, like this:
+</p>
+<codeblock>Key: Value</codeblock>
+<p>
+There are two notations for fields that must span multiple lines.
+</p><p>
+The preferred notation is based on the here-document
+syntax in shell scripts.
+In this syntax, the first line consists of the key, followed by <code>&lt;&lt;</code>
+as the value.
+All following lines are treated as the actual value, until a line with
+just <code>&lt;&lt;</code> on it is encountered.
+The example from above now looks like this:
+</p>
+<codeblock>InstallScript: &lt;&lt;
+mkdir -p %i/share/man
+make install prefix=%i mandir=%i/share/man
+mkdir -p %i/share/doc/%n
+install -m 644 COPYING %i/share/doc/%n
+&lt;&lt;</codeblock>
+<p>
+Indentation using this format is optional, but it can be used to
+improve readability.
+</p><p>
+The here-document syntax can be nested. This is often used in
+a <code>SplitOff</code> or <code>SplitOff<em>N</em></code> field.
+These fields contain other fields (multiple lines), and this syntax
+allows these sub-fields to have multiple lines themselves.  The same
+terminator <code>&lt;&lt;</code> is used for the sub-here-document.
+Here is an example:
+</p>
+<codeblock>
+SplitOff: &lt;&lt;
+  Package: %N-shlibs
+  InstallScript: &lt;&lt;
+    ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
+  &lt;&lt;
+&lt;&lt;
+</codeblock>
+<p>
+An older, deprecated, notation is crafted after the RFC 822 header folding
+method.
+A line that starts with whitespace is treated as a continuation of the
+previous line.
+Example:
+</p>
+<codeblock>InstallScript: mkdir -p %i/share/man
+ make install prefix=%i mandir=%i/share/man
+ mkdir -p %i/share/doc/%n
+ install -m 644 COPYING %i/share/doc/%n</codeblock>
+<p>
+Note the mandatory indentation of the lines.
+</p><p>
+In both formats, empty lines and lines starting with a hash (#) are ignored.
+Keys (field names) are case-insensitive in Fink, so you can write
+<code>InstallScript</code>, <code>installscript</code> or
+<code>INSTALLSCRIPT</code> as you please.
+The first capitalization form is preferred for readability, though.
+Some fields take a boolean value - any of "true", "yes", "on", "1"
+(case-insensitive) are treated as true, all other values are treated
+as false.
+</p>
+</section>
+
+<section name="percent"><title>Percent Expansion</title>
+<p>
+To make life easier, Fink supports a set of expansions that are
+performed on some fields.
+The available expansions are:
+</p>
+<itemtable labeld="" labelt="">
+<item><itemt>%n</itemt>
+<itemd>
+<p>
+the <em>n</em>ame of the current package
+</p>
+</itemd></item>
+
+<item><itemt>%N</itemt>
+<itemd>
+<p>
+the <em>N</em>ame of the parent package (the same as %n unless within a
+<code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%e</itemt>
+<itemd>
+<p>
+the package <em>e</em>poch
+</p>
+</itemd></item>
+
+<item><itemt>%v</itemt>
+<itemd>
+<p>
+the package <em>v</em>ersion
+</p>
+</itemd></item>
+
+<item><itemt>%r</itemt>
+<itemd>
+<p>
+the package <em>r</em>evision
+</p>
+</itemd></item>
+
+<item><itemt>%f</itemt>
+<itemd>
+<p>
+the <em>f</em>ull package name, i.e. %n-%v-%r
+</p>
+</itemd></item>
+
+<item><itemt>%p, %P</itemt>
+<itemd>
+<p>
+the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>
+</p>
+</itemd></item>
+
+<item><itemt>%d</itemt>
+<itemd>
+<p>
+the <em>d</em>estination directory where the tree to be packaged is built, e.g.
+<filename>/sw/src/root-gimp-1.2.1-1</filename>
+</p>
+</itemd></item>
+
+<item><itemt>%D</itemt>
+<itemd>
+<p>
+the <em>D</em>estination for the parent package (the same as %d unless within a
+<code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%i</itemt>
+<itemd>
+<p>
+the full <em>i</em>nstall-phase prefix, equivalent to %d%p
+</p>
+</itemd></item>
+
+<item><itemt>%I</itemt>
+<itemd>
+<p>
+the <em>I</em>nstall prefix of the parent package, equivalent to %D%P (the same
+as %i unless within a <code>SplitOff</code>)
+</p>
+</itemd></item>
+
+<item><itemt>%a</itemt>
+<itemd>
+<p>
+the path where the p<em>a</em>tches can be found
+</p>
+</itemd></item>
+
+<item><itemt>%b</itemt>
+<itemd>
+<p>
+the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
+</p>
+<p>
+Note: Use this only when there is no other way. The build directory is the
+current directory when scripts are executed; you should use relative path names
+in commands.
+</p>
+</itemd></item>
+
+<item><itemt>%c</itemt>
+<itemd>
+<p>
+the parameters for <em>c</em>onfigure: <code>--prefix=%p</code> plus anything
+specified with ConfigureParams
+</p>
+</itemd></item>
+
+<item><itemt>%m</itemt>
+<itemd>
+<p>
+the <em>m</em>achine architecture string.  This is the same as 
+<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
+and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
+</p>
+</itemd></item>
+
+<item><itemt>%%</itemt>
+<itemd>
+<p>
+the percent character (one that will not be expanded according
+according to whatever follows it).  Expansion occurs strictly
+left-to-right, so %%n is not anything related to the package name, but
+rather is the string %n.  (Introduced in fink-0.18.0)
+</p>
+</itemd></item>
+</itemtable>
+
+</section>
+
+</chapter>
+
+
+<chapter filename="policy">
+<title>Packaging Policy</title>
+<shorttitle>Policy</shorttitle>
+
+<section name="licenses"><title>Package Licenses</title>
+<p>
+The packages included in Fink come with a wide variety of licenses.
+Most of them place restrictions on redistributing the full source and
+especially on distributing binaries.
+Some packages can not be included in the binary distribution of Fink
+because of these license restrictions.
+Thus it is very important that package maintainers check the license
+of their package carefully.
+</p>
+<p>
+Every package that is to be distributed as a binary package must
+contain a copy of the license.
+It must be installed in the doc directory,
+i.e. in <filename>%p/share/doc/%n</filename>.
+(In the InstallScript, %i must be used instead of %p, of course.
+The DocFiles field takes care of the details automatically.)
+If there is no explicit license in the original source, include a
+small text file with a note about the status of the package.
+Most licenses require that the license accompanies any distribution.
+Fink's policy is to always do this, even if it is not explicitly
+required.
+</p>
+<p>
+To make an automated maintenance of the binary distribution possible,
+any package that is to be distributed must have a <code>License</code>
+field.
+This field denotes the nature of the license and is used to decide
+which packages make it into the binary distribution and which must be
+held back.
+The field may only be present if the actual license terms are included
+in the binary package, as explained above.
+</p>
+<p>
+To make the <code>License</code> field useful, only one of the
+following pre-defined values may be used.
+If you're packaging something that doesn't fit into these categories,
+ask for help on the developer mailing list.
+</p>
+<ul>
+
+<li><code>GPL</code> - the GNU General Public License.
+This license requires that the source is available from the same place
+as the binary.</li>
+<li><code>LGPL</code> - the GNU Lesser General Public License.
+This license requires that the source is available from the same place
+as the binary.</li>
+<li><code>GPL/LGPL</code> - this if a special case for packages where
+one part is licensed under the GPL (e.g. the executables) and another
+part is licensed under the LGPL (e.g. the libraries).</li>
+
+<li><code>BSD</code> - for BSD-style licenses.
+This includes the so-called "original" BSD license, the "modified" BSD
+license and the MIT license. The Apache license also counts as
+BSD. With these licenses the distribution of source code is
+optional.</li>
+
+<li><code>Artistic</code> - for the Artistic license and
+derivatives.</li>
+
+<li><code>Artistic/GPL</code> - dual-licensed under the Artistic and GPL
+licenses.</li> 
+
+<li><code>GNU Free Documentation License</code> and <code>Linux
+Documentation Project</code> - if the documentation included in a package
+is explicitly included under one of the licenses, then this is indicated by
+appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
+allowed combinations: "GFDL",
+"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
+</li>
+
+<li><code>OSI-Approved</code> - for other Open Source licenses
+approved by the <link url="http://www.opensource.org/">Open Source
+Initiative</link>. One of OSI's requirements is that free distribution
+of binaries and sources is allowed. This value can also be used as an
+umbrella for dual-licensed packages.</li>
+
+<li><code>Restrictive</code> - for restrictive licenses.
+Use this for packages that are available from the author in source
+form for free use, but don't allow free redistribution.</li>
+
+<li><code>Restrictive/Distributable</code> - for restrictive licenses which
+permit distribution of source and binaries.
+Use this for packages that are available from the author in source
+form, permit distribution of source and binaries, but have restrictions which
+make them non-open source licenses.</li>
+
+<li><code>Commercial</code> - for restrictive, commercial licenses.
+Use this for commercial packages (e.g. Freeware, Shareware) that do
+not allow free redistribution of source or binaries.</li>
+
+<li><code>Public Domain</code> - for packages that are in the Public
+Domain, i.e. the author has given up his copyright on the code. These
+packages don't have licenses at all and anyone can do anything with
+them.</li>
+
+</ul>
+
+</section>
+
+
+<section name="prefix"><title>Base System Interference</title>
+<p>
+Fink is an add-on distribution that is installed in a directory
+separate from the base system.
+It is crucial that a package does not install files outside of Fink's
+directory.
+</p>
+<p>
+Exceptions can be made when there is no other possibility, e.g. with
+XFree86.
+In this case the package must check for existing files before
+installation and refuse to install if it would overwrite existing
+files.
+The package must make sure that all files it installed outside of the
+Fink directory are deleted when the package is removed, or that they
+cause no harm if they are left there (i.e. they need to check binaries
+for existence before calling them and the like).
+</p>
+</section>
+
+<section name="sharedlibs"><title>Shared Libraries</title>
+<p>
+Fink has a new policy about shared libraries, effective in February 2002.
+This section of the documentation discusses version 4
+of the policy, which coincides with the release of Fink's 0.5.0 distribution.
+We begin with a quick summary, and then discuss things in more detail.
+</p><p>
+Any package which builds shared libraries and is either (1) being put into
+  the stable tree, or (2) a new package in Fink, should treat its shared
+  libraries according to Fink's policy.  This means:</p>
+<ul>
+<li>   verify, using <code>otool -L</code>, that 
+       the install_name of each library and
+       its compatibility and current version numbers are correct </li>
+<li>   put the shared libraries in a separate package (except for the
+       links from libfoo.dylib to the install_name), and include
+       the <code>Shlibs</code> field in that package</li>
+<li>   put the headers and the final links from libfoo.dylib into a package
+       which is classified as <code>BuildDependsOnly: True</code>, and plan
+        to have
+       no other package depend on this one.</li>
+</ul>
+<p>
+  A maintainer who has reasons to deviate from this policy and not split the
+  package should explain the reasons in the DescPackaging field.
+</p><p>
+For some packages, everything can be accomplished with a main package and a
+-shlibs package; in other cases you also need a third package.  The new
+<code>SplitOff</code> field actually makes this quite easy.
+</p><p>
+When three packages are needed, there are two different ways they could be
+named, depending on whether the libraries or the binaries
+are the most important feature of
+the package, or the binaries are the most important feature.  For option 1, 
+use the layout:
+</p>
+<itemtable labeld="Contents" labelt="Package">
+<item><itemt><code>foo-shlibs</code></itemt>
+<itemd><p>Shared libraries</p></itemd></item>
+<item><itemt><code>foo</code></itemt>
+<itemd><p>Headers</p></itemd></item>
+<item><itemt><code>foo-bin</code></itemt>
+<itemd><p>Binaries, etc.</p></itemd></item>
+</itemtable>
+
+<p>while for option 2, use the layout:</p>
+<itemtable labeld="Contents" labelt="Package">
+<item><itemt><code>foo-shlibs</code></itemt>
+<itemd><p>Shared libraries</p></itemd></item>
+<item><itemt><code>foo-dev</code></itemt>
+<itemd><p>Headers</p></itemd></item>
+<item><itemt><code>foo</code></itemt>
+<itemd><p>Binaries, etc.</p></itemd></item>
+</itemtable>
+
+<p>
+With option 2 it is harder to upgrade an existing package:  at the same
+time as you upgrade, 
+you need to add <code>BuildDepends: foo-dev</code> to every
+package which says <code>Depends: foo</code>.
+One other upgrade issue to keep in mind: a package which indirectly depends
+on your package (through another package as an intermediary) may need
+to have <code>BuildDepends: foo</code> or <code>BuildDepends: foo-dev</code>
+added to it to ensure a successful upgrade.  It is your responsibility
+to make sure that these <code>BuildDepends</code> entries are added.
+</p>
+<p><em>The policy in detail</em></p>
+<p>
+We now discuss things in more detail, first discussing the policy as 
+applied to newly ported software, and 
+then turning to the question of upgrading existing fink packages.  For 
+examples of the policy in action, see the  libpng, libjpeg  and 
+libtiff packages.
+</p><p>
+Software which has been ported to Darwin should build shared libraries 
+whenever possible.  (Package maintainers
+are also free to build static libraries as well, if appropriate
+for their packages; or they may submit packages containing only static
+libraries if they wish.)
+Whenever shared libraries are being built,
+<em>two</em> closely related fink packages should be made, named foo 
+and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
+files go in foo.  These two packages
+can be made with a single .info file, using
+the <code>SplitOff</code> field, as described below.  
+(In fact, it is often necessary
+to make more than two packages from the source, and this can be done
+using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
+</p><p>
+Each software package for which shared libraries can be built must have
+a <em>major version number</em> N.  The major version number is only supposed
+to change when a backwards-incompatible change in the library's API has been
+made.  Fink uses the following naming convention: if the upstream name
+of the package is bar, then the fink packages are called barN and 
+barN-shlibs.  (This is only strictly applied to new packages, or when the 
+major version number changes.)  For example, the major version number for
+the pre-existing libpng package was 2, but recent versions of the
+library have major version number 3.  So there are now four fink packages
+to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
+Only one of libpng and libpng3 can be installed at any given time,
+but libpng-shlibs and libpng3-shlibs can be installed at the same time.
+(Note that only two .info files are required to build these four packages.)
+</p><p>
+The shared library itself and certain related files will be put into 
+the package barN-shlibs; the "include" files and certain other files will
+be put into the package barN.  There can be no overlapping files
+between these two packages, and everything stored in barN-shlibs must have
+a pathname which somehow includes the major version number N.  In many
+instances, your package will need some files at runtime which are
+typically installed into <filename>%i/lib/bar/</filename> or 
+<filename>%i/share/bar/</filename> ; you should adjust the installation
+paths to <filename>%i/lib/bar/N/</filename> or
+<filename>%i/share/bar/N/</filename>.
+</p><p>
+All other packages which depend on bar, major version N, will be asked to
+use the dependencies
+</p>
+<codeblock>
+  Depends: barN-shlibs
+  BuildDepends: barN
+</codeblock>
+<p>
+Once this system is fully in place, it will not be permitted for 
+another package to depend on barN itself.  (For backward compatibility,
+such dependencies are allowed for pre-existing packages.)  This is
+signaled to other developers by a boolean field
+</p>
+<codeblock>
+  BuildDependsOnly: True
+</codeblock>
+<p>
+within the package description for barN.
+</p><p>
+If your package includes both shared libraries and binary files, and
+if the binary files need to be present at runtime (not just at build
+time), then the binaries must be split off into a third package, which
+could be called barN-bin.  Other packages are allowed to depend on
+barN-bin as well as barN-shlibs.
+</p><p>
+When building shared libraries under major version N, it is important that
+the "install_name" of the library be <filename>%p/lib/bar.N.dylib</filename>.  
+(You can
+find the install_name by running <code>otool -L</code> on your library.)  The
+actual library file should be installed at
+</p>
+<codeblock>
+  %i/lib/bar.N.x.y.dylib
+</codeblock>
+<p>
+and your packages should create symbolic links
+</p>
+<codeblock>
+  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+</codeblock>
+<p>
+If the static library is also built, then it will be installed at
+</p>
+<codeblock>
+  %i/lib/bar.a
+</codeblock>
+<p>
+If the package uses libtool, these things are usually handled automatically,
+but in any event you should
+check that they have been done correctly in your case.  You should also
+check that current_version and compatibility_version were defined 
+appropriately for your shared libraries.  (These are also shown with the 
+<code>otool -L</code> query.)
+</p><p>
+Files are then divided between the two packages as follows
+</p>
+<ul>
+<li>  in package barN-shlibs:
+<codeblock>
+  %i/lib/bar.N.x.y.dylib
+  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/bar/N/*
+  %i/share/bar/N/*
+  %i/share/doc/barN-shlibs/*
+</codeblock></li>
+<li>  in package barN:
+<codeblock>
+  %i/include/*
+  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/bar.a
+  %i/share/doc/barN/*
+  other files, if needed
+</codeblock></li></ul>
+<p>
+Notice that both packages are required to have some documentation about
+the license, but that the directories containing the DocFiles will be
+different.
+</p><p>
+Doing this is quite easy in practice, using the 
+<code>SplitOff</code> field.  Here is
+how the example above would be implemented (in part):
+</p>
+<codeblock>
+Package: barN
+Version: N.x.y
+Revision: 1
+License: GPL
+Depends: barN-shlibs (= %v-%r)
+BuildDependsOnly: True
+DocFiles: COPYING
+SplitOff: &lt;&lt;
+  Package: barN-shlibs
+  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  DocFiles: COPYING
+&lt;&lt;
+</codeblock>
+<p>
+During the execution of the <code>SplitOff</code>
+field, the specified files and directories are moved from the 
+install directory %I of the main package to the install directory %i of the
+splitoff package.  (There is a similar convention for names: %N is the
+name of the main package, and %n is the name of the current package.)
+The <code>DocFiles</code> command then puts a copy of the documentation into 
+<filename>%i/share/doc/barN-shlibs</filename>.
+</p><p>
+Notice that we have included the exact current version of barN-shlibs as a 
+dependency of the main package barN (which can be abbreviated 
+%N-shlibs (= %v-%r) ).
+This ensures that the versions match, and also guarantees that barN
+automatically "inherits" all the dependencies of barN-shlibs.
+</p>
+<p><em>The Shlibs field:</em>
+</p><p>
+In addition to putting the shared libraries in the correct package, as of
+version 4 of this policy, you must also declare all of the shared libraries
+using the <code>Shlibs</code> field.  This field has one line for each
+shared library, which contains the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
+dependency information specifying the Fink package which provides
+this library at this compatibility version.  The dependency should
+be stated in the form <code> foo (>= version-revision)</code> where 
+<code>version-revision</code> refers to
+the <em>first</em> version of a Fink package which made
+this library (with this compatibility version) available.  For example,
+a declaration</p>
+<codeblock>
+  Shlibs: &lt;&lt;
+    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2)
+  &lt;&lt;
+</codeblock>
+<p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
+and <code>-compatibiliary_version</code> 2.1.0 has been installed since
+version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
+amounts to  a promise
+from the maintainer that a libary with this name and a compatibility-version
+of at least 2.1.0 will always be found in later versions of the <em>bar1</em> 
+package.
+</p><p>
+Note the use of %p in the name of the library, which allows the correct
+<code>-install_name</code> to be found by all users of Fink, no matter
+what prefix they have chosen.
+</p><p>
+When a package is updated, usually the <code>Shlibs</code> field can simply
+be copied to the next version/revision of the package.  The exception to
+this is if the <code>-compatibility_version</code> increases: in that
+case, the version number in the dependency information should be changed
+to the current version/revision (which is the first version/revision to
+provide the library with the new compatibility version number).
+</p><p>
+<em>What to do when the major version number changes:</em>
+</p><p>
+If the major version number changes from N to M, you will create two new
+packages barM and barM-shlibs.  The package barM-shlibs can have no
+overlap with the package barN-shlibs, since many users will have both of
+these installed simultaneously.  In package barM, you should use dependencies
+</p>
+<codeblock>
+  Conflicts: barN
+  Replaces: barN
+</codeblock>
+<p>
+and similarly, you should revise barN to include dependencies
+</p>
+<codeblock>
+  Conflicts: barM
+  Replaces: barM
+</codeblock>
+<p>
+Users will then see barN and barM shuffling in and out as various other
+packages are built which depend on one version or another of the shared
+library, while barN-shlibs and barM-shlibs remain permanently installed.
+</p><p>
+<em>How to upgrade an existing fink package:</em>
+</p><p>
+For an existing fink package which installs either static or shared 
+libraries, the best way to upgrade is to create a new version foo of
+your package, accompanied by a new package foo-shlibs, which satisfy
+the above policy.  If shared libraries (or any other files now present
+in foo-shlibs) were installed previously, then these new packages should 
+say
+</p>
+<codeblock>
+  Replaces: foo (&lt;&lt; earliest.compliant.version)
+</codeblock>
+<p>
+so that upgrading will be transparent to users.  (You should <em>not</em>
+say "Conflicts: foo" because this will prevent the upgrade.)
+</p><p>
+After your upgrade, packages which say "Depends: foo" will continue to
+function normally.  However, you should contact the fink maintainers
+of all such packages and urge them to modify their packages to say 
+"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
+not be able to create new packages fooM, fooM-shlibs which implement a 
+new major version of the shared library until they have done so.
+</p><p>
+Existing fink packages which have not used the correct install_name or
+which have not used the correct names or symbolic links for shared libraries
+must be upgraded carefully, on a case-by-case basis.  If you are
+having trouble finding an upgrade strategy to make your packages compliant
+with the new policy, please discuss it on the fink-devel mailing list.
+</p><p>
+<em>Packages containing both binary files and libraries:</em>
+</p><p>
+When an upstream package contains both binary files and libraries, some
+care must be exercised in constructing fink packages.  In some cases,
+the only binary files will be things like <code>foo-config</code> which
+are presumably only used at build time and never at run time.  In these
+cases, the binaries can go with the header files in the <code>foo</code>
+package.
+</p><p>
+In other cases, the binary files will be needed by other packages at
+runtime, and they must be split off into a separate fink package with
+a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
+package should depend on the <code>foo-shlibs</code> package, and
+maintainers of other packages should be encouraged to use
+</p>
+<codeblock>
+  Depends: foo-bin
+  BuildDepends: foo
+</codeblock>
+<p>
+which will take care of foo-shlibs implicitly.
+</p><p>
+Upgrading presents a problem in this situation, however, since users won't
+be prompted to install <code>foo-bin</code>.  To work around this, until
+all other package maintainers have revised their packages as above,
+your <code>foo</code> package can say
+</p>
+<codeblock>
+  Depends: foo-shlibs (= exact.version), foo-bin
+</codeblock>
+<p>
+This will force the installation of foo-bin on most users' systems, until
+such time as the other package maintainers have upgraded their packages
+which depend on <code>foo</code>.
+</p>
+
+</section>
+
+<section name="perlmods"><title>Perl Modules</title>
+<p>Fink has a new policy about perl modules, effective in May, 2003.
+</p><p>
+Traditionally, the Fink packages for perl modules have the suffix 
+<code>-pm</code>, and have been build using the <code>Type: perl</code> 
+directive, which stores the perl module's files in <filename>/sw/lib/perl5</filename> and/or
+<filename>/sw/lib/perl5/darwin</filename>.  Under the new policy, this storage location is only 
+permitted for perl modules which are independent of the version of perl 
+being used to compile them.
+</p><p>
+The perl modules which are version-dependent are the so-called XS modules,
+which frequently contain compiled C code as well as pure perl routines.
+There are a number of ways of recognizing these, including the presence
+of a file with a suffix <code>.bundle</code>.
+</p><p>
+A version-dependent perl module must be built using a versioned binary
+of perl, such as <code>perl5.6.0</code>, and must store its files in
+versioned subdirectories of the standard perl directories, such as
+<filename>/sw/lib/perl5/5.6.0</filename> and <filename>/sw/lib/perl5/5.6.0/darwin</filename>.  A new convention
+is being introducted of using the suffix <code>-pm560</code> for
+a perl module of version 5.6.0.  Similar storage and naming conventions
+are in force for other versions of perl, which will soon include 
+perl 5.6.1 and perl 5.8.0.  
+</p><p>
+The new directive <code>Type: perl 5.6.0</code> automatically uses the
+versioned perl binary and stores the files in the correct subdirectories. 
+(This directive is available starting with version 0.13.0 of fink.)
+</p><p>
+It is permitted to create a <code>-pm</code> package which is essentially
+a "bundle" package that loads the <code>-pm560</code> variant or any
+others which may be exist.  This strategy is encouraged for existing
+Fink packages for XS modules, in order to provide a smooth upgrade path.
+</p><p>
+Effective with version 0.13.0 of fink, the <code>fink validate</code>
+command when applied to a <code>.deb</code> file will check to see if
+the fink package is an XS module which has been installed in a non-versioned 
+directory, and will issue a warning if so.
+</p>
+
+
+</section>
+</chapter>
+
+
+<chapter filename="fslayout">
+<title>Filesystem Layout</title>
+<shorttitle>FS Layout</shorttitle>
+
+
+<preface>
+<p>
+The following file system layout guidelines are part of the Fink
+packaging policy.
+</p>
+</preface>
+
+
+<section name="fhs"><title>The Filesystem Hierarchy Standard</title>
+<p>
+Fink follows the spirit of the <link
+url="http://www.pathname.com/fhs/">Filesystem Hierarchy
+Standard</link>, or FHS for short.
+It can only follow it in spirit because the FHS was created for system
+vendors that have control over the <filename>/</filename> and
+<filename>/usr</filename> hierarchies.
+Fink is an add-on distribution that controls only its install
+directory (or prefix).
+The examples use the default prefix of <filename>/sw</filename>.
+</p>
+</section>
+
+<section name="dirs"><title>The Directories</title>
+<p>
+Files should go into the following subdirectories of the hierarchy:
+</p>
+
+<itemtable>
+
+<item><itemt><filename>/sw/bin</filename></itemt>
+<itemd>
+<p>
+This directory is for general executable programs.
+There are no subdirectories.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/sbin</filename></itemt>
+<itemd>
+<p>
+This directory is for executable programs that are intended to be used
+by administrators only.
+Background daemons go here.
+There are no subdirectories.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/include</filename></itemt>
+<itemd>
+<p>
+This directory is for C and C++ header files.
+Subdirectories can be created as necessary.
+If a package installs header files that can be confused with standard
+C headers, those headers <em>must</em> go to a subdirectory.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/lib</filename></itemt>
+<itemd>
+<p>
+This directory is for architecture-dependent data files and
+libraries.
+Static and shared libraries should be placed directly in
+<filename>/sw/lib</filename> unless there is a good reason not to.
+This is also the place for executables that should not be executed
+directly by the user (which would otherwise be placed in libexec).
+</p>
+<p>
+A package is free to create a subdirectory to store private data or
+loadable modules.
+Make sure to use directory names that make sense for compatibility.
+It is wise to use the package major version in the directory name or
+as an additional hierarchy level, e.g. <filename>/sw/lib/perl5</filename>
+or <filename>/sw/lib/apache/1.3</filename>.
+Care should be taken when the host type is used to create
+directories.
+A <code>powerpc-apple-darwin1.3.3</code> directory is bad for
+compatibility, <code>powerpc-apple-darwin1.3</code> or just
+<code>powerpc-apple-darwin</code> are better choices.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/share</filename></itemt>
+<itemd>
+<p>
+This directory is for architecture-independent data files.
+The same rules as for <filename>/sw/lib</filename> apply.
+Some common subdirectories are described below.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/share/man</filename></itemt>
+<itemd>
+<p>
+This directory contains manual pages.
+It is organized into the usual section tree.
+Every program in <filename>/sw/bin</filename> and
+<filename>/sw/sbin</filename> should have an associated manual page here.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/share/info</filename></itemt>
+<itemd>
+<p>
+This directory contains documentation in the Info format (produced
+from Texinfo sources).
+Maintenance of the <code>dir</code> file is automated through Debian's
+version of <code>install-info</code> (part of the <code>dpkg</code>
+package).
+Use the <code>InfoDocs</code> description field to automatically
+generate appropriate code for the <code>postinst</code> and
+<code>prerm</code> package scripts.
+Fink makes sure that no package installs a <code>dir</code> file of
+its own.
+There are no subdirectories.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/share/doc</filename></itemt>
+<itemd>
+<p>
+This directory contains documentation that is neither a man page nor
+an Info document.
+README, LICENSE and COPYING files go here.
+Every package must create a subdirectory here, named after the
+package.
+The subdirectory name must not contain any version numbers (unless
+they are a part of the package name proper).
+Hint: Just use <code>%n</code>.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/share/locale</filename></itemt>
+<itemd>
+<p>
+This directory contains message catalogs for internationalization.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/var</filename></itemt>
+<itemd>
+<p>
+The <filename>var</filename> directory stores variable data.
+This includes spool directories, lock files, state databases, game
+high scores and log files.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/etc</filename></itemt>
+<itemd>
+<p>
+This directory holds configuration files.
+For packages that have more than one or two files here a subdirectory
+should be made.
+The subdirectory must have the name of the package or program in it so
+that it is identifiable.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/src</filename></itemt>
+<itemd>
+<p>
+This directory is for storing and building source code.
+Nothing should be installed here by a package.
+</p>
+</itemd></item>
+
+</itemtable>
+</section>
+
+
+<section name="avoid"><title>Things to Avoid</title>
+<p>
+No other directories than the ones mentioned above should exist in
+<filename>/sw</filename>.
+In particular, the following should not be used:
+<filename>/sw/man</filename>, <filename>/sw/info</filename>,
+<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
+<filename>/sw/lib/locale</filename>.
+</p>
+</section>
+
+
+</chapter>
+
+
+<chapter filename="reference">
+<title>Reference</title>
+<shorttitle>Reference</shorttitle>
+
+
+<section name="build"><title>The Build Process</title>
+
+<p>To understand some of the fields, you need some knowledge of the
+build process Fink uses. It consists of five phases: unpack, patch,
+compile, install and build. The example paths below are for an
+installation in <filename>/sw</filename> and the package gimp-1.2.1-1.</p>
+<p>In the <em>unpack phase</em> the directory <filename>/sw/src/gimp-1.2.1-1</filename> is created
+and the source tarball(s) are unpacked there. In most cases, this will
+create a directory gimp-1.2.1 with the source in it; all following
+steps will be executed in that directory
+(i.e. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
+the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
+fields.</p>
+<p>In the <em>patch phase</em> the source is patched so that it will
+build on Darwin. The actions specified by the UpdateConfigGuess,
+UpdateLibtool, Patch and PatchScript fields will be executed, in that
+order.</p>
+<p>In the <em>compile phase</em> the source is configured and
+compiled. Usually this means calling the <code>configure</code> script
+with some parameters and then issuing a <code>make</code> command. See the
+CompileScript field description for details.</p>
+<p>In the <em>install phase</em> the package is installed to a temporary
+directory, <filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
+All files that would normally be installed to <filename>/sw</filename> are installed in
+<filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the
+InstallScript field description for details.</p>
+<p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several
+packages from a single package description using the <code>SplitOff</code>
+field.  Towards the end of the install phase, separate install directories
+are created for each package being created, and files are moved to
+the appropriate directory.)</p>
+<p>In the <em>build phase</em> a binary package file (.deb) is built
+from the temporary directory. You can't influence this step directly,
+but various information from the package description is used to
+generate a <filename>control</filename> file for dpkg.</p>
+</section>
+
+<section name="fields"><title>Fields</title>
+
+<p>We have divided the list of fields into several categories.
+The list of fields is not necessarily complete. <code>:-)</code></p>
+<p><em>Initial Data:</em></p>
+<itemtable>
+<item><itemt>Package</itemt>
+<itemd>
+<p>
+The package name.
+May contain lowercase letters, numbers and the special characters '.',
+'+' and '-'.
+No underscores ('_'), no capital letters.
+Required field.
+</p>
+<p>Effective with fink 0.9.9, percent expansion is applied to this field,
+as well as the fields Depends, BuildDepends, Provides, Conflicts,
+Replaces, Recommends, Suggests, and Enhances.</p>
+</itemd></item>
+
+<item><itemt>Version</itemt>
+<itemd>
+<p>
+The upstream version number.
+Same limitations as the Package field.
+Required field.
+</p>
+</itemd></item>
+
+<item><itemt>Revision</itemt>
+<itemd>
+<p>
+The package revision.
+Increase this when you make a new description for the same upstream
+version.
+Revision numbers start at 1.
+Required field.
+</p>
+</itemd></item>
+
+<item><itemt>Epoch</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.12.0.</em>
+This optional field can be used to specify the epoch of the package
+(which defaults to 0 if not specified). For more information refer to
+the <link
+url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
+Policy Manual</link>.
+</p>
+</itemd></item>
+
+<item><itemt>Description</itemt>
+<itemd>
+<p>
+A short description of the package (what is it?). This is a one-line
+description that will be displayed in lists, so it must be short and
+informative. It should be less than 45 chars and must be less than
+60. It is not necessary to repeat the package name in this field - it
+will always be displayed in proper context. Required field.
+</p>
+</itemd></item>
+
+<item><itemt>Type</itemt>
+<itemd>
+<p>
+This can be set to <code>bundle</code>.
+Bundle packages are used to group a set of related packages together.
+They only have dependencies, but no code and no installed files.
+The fields Source, PatchScript, CompileScript, InstallScript and
+related ones are ignored for bundle packages.
+</p>
+<p>
+<code>nosource</code> is a very similar type.
+It indicates that there is no source tarball, so nothing is fetched
+and the unpack phase creates just an empty directory.
+However, the patch, compile and install phases are executed normally.
+This way you can bring in all the code with a patch, or just create
+some directories in the InstallScript.
+Since fink 0.18.0, you can get the same behavior by setting
+<code>Source: none</code>. This allows you to use "Type" for other
+purposes (<code>Type: perl</code>, etc.)
+</p>
+<p>
+Finally since fink 0.9.5 there is type <code>perl</code> which causes
+alternate default values for the compile and install scripts to be used. 
+Beginning in fink 0.13.0, there is a new variant of this type,
+<code>perl $version</code>, where $version is a specific version of perl 
+consisting of three numbers separated by periods, e.g., 
+<code>perl 5.6.0</code>.
+</p>
+</itemd></item>
+
+<item><itemt>License</itemt>
+<itemd>
+<p>
+This field gives the nature of the license under which the package is
+distributed.
+The value must be one of the values described in <xref
+chapter="policy" section="licenses">Package Licenses</xref> earlier in
+this document.
+Additionally, this field must only be given if the package actually
+complies to the packaging policy in these respects, i.e. a copy of the
+license is installed in the doc directory for the package.
+</p>
+</itemd></item>
+
+<item><itemt>Maintainer</itemt>
+<itemd>
+<p>
+The name and e-mail address of the person responsible for the package.
+This field is required, and there must be exactly one name and address
+in the following format:
+</p>
+<codeblock>Firstname Lastname &lt;user@host.domain.com&gt;</codeblock>
+</itemd></item>
+
+</itemtable>
+<p><em>Dependencies:</em></p>
+<itemtable>
+
+<item><itemt>Depends</itemt>
+<itemd>
+<p>
+A list of packages which must be installed before this package can be
+built.
+Usually, this is just a comma-separated list for plain package names,
+but Fink now supports alternatives and version clauses with the same
+syntax as dpkg.
+A fully featured example:
+</p>
+<codeblock>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</codeblock>
+<p>
+Note that there is no way to express real optional dependencies.
+If a package works both with and without another package, you must
+either make sure that the other package is not used even when it is
+present or add it to the Depends field.
+If you want to offer the user both options, make two separate
+packages, e.g. wget and wget-ssl.
+</p><p>
+Starting with a post-0.18.2 CVS version of fink, you can have
+conditional dependencies. These are specified by placing
+<code>(string1 op string2)</code> before a package name. Percent
+expansion is performed as usual and then the two strings are compared
+according to the <code>op</code> operator: &lt;&lt;, &lt;=, =, !=,
+&gt;&gt;, &gt;=. The immediately-following package is only considered
+as a dependency if the comparison is true.
+</p><p>
+You can use this format to simplify maintaining several similar
+packages. For example, both elinks and elinks-ssl could list:
+</p>
+<codeblock>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</codeblock>
+<p>
+would have the same effect as having elinks list:
+</p>
+<codeblock>Depends: expat-shlibs</codeblock>
+<p>
+and elinks-ssl list:
+</p>
+<codeblock>Depends: openssl097-shlibs, expat-shlibs</codeblock>
+</itemd></item>
+
+<item><itemt>BuildDepends</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.0.</em>
+A list of dependencies that is applied at build time only.
+This can be used to list tools (e.g. flex) that must be present to
+build the packages, but which are not used at run time.
+Supports the same syntax as Depends.
+</p>
+</itemd></item>
+
+<item><itemt>Provides</itemt>
+<itemd>
+<p>
+A comma-separated list of package names that this package is
+considered to "provide".
+If a package named "pine" specifies <code>Provides: mailer</code>,
+then any dependency on "mailer" is considered satisfied when "pine" is
+installed.
+You'll usually also want to name these packages in the "Conflicts" and
+the "Replaces" field.
+</p>
+</itemd></item>
+
+<item><itemt>Conflicts</itemt>
+<itemd>
+<p>
+A comma-separated list of package names that must not be installed at
+the same time as this package.
+For virtual packages it is allowed to list the names of the provided
+packages here; they will be handled appropriately.
+This fields also supports versioned dependencies like the Depends
+field, but not alternatives (wouldn't make sense).
+If a package is listed in its own Conflicts, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
+</p>
+<p>
+<em>Note:</em> Fink itself currently ignores this field.
+However, it is passed on to dpkg and will be handled accordingly.
+In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>Replaces</itemt>
+<itemd>
+<p>
+This is used together with "Conflicts", when this package not only
+takes over the function of the conflicting package, but also has some
+common files.
+Without this field, dpkg may generate errors when installing the
+package because files are still owned by the other package.
+It is also a hint that the two packages involved are genuine
+alternatives and one can be removed in favor of the other.
+If a package is listed in its own Replaces, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
+</p>
+<p>
+<em>Note:</em> Fink itself currently ignores this field.
+However, it is passed on to dpkg and will be handled accordingly.
+In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>Recommends, Suggests, Enhances</itemt>
+<itemd>
+<p>
+These fields specify additional package relations in the same style as
+the other dependency fields.
+These three relations don't affect actual installation via
+<code>dpkg</code> or <code>apt-get</code>.
+However, they are used by <code>dselect</code> and other frontends to
+help the user make sensible choices.
+</p>
+</itemd></item>
+
+<item><itemt>Pre-Depends</itemt>
+<itemd>
+<p>
+A special variation of the Depends field with more strict semantics.
+This field must only be used after the case has been discussed on the
+developer mailing list and a consensus has been reached that it is
+necessary.
+</p>
+</itemd></item>
+
+<item><itemt>Essential</itemt>
+<itemd>
+<p>
+A boolean value that denotes essential packages. Essential
+packages are installed as part of the bootstrap process. All
+non-essential packages implicitly depend on the essential ones. dpkg
+will refuse to remove essential packages from the system unless
+special flags are used to override this.
+</p>
+</itemd></item>
+
+<item><itemt>BuildDependsOnly</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.9.</em>
+A boolean value which indicates that no other packages should Depend on
+this one, they should only BuildDepend.
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Unpack Phase:</em></p>
+<itemtable>
+
+<item><itemt>CustomMirror</itemt>
+<itemd>
+<p>
+A list of mirror sites. Each mirror site appears on a separate line,
+in the following format: <code>&lt;location&gt;: &lt;url&gt;</code>.
+<em>location</em> can be a continent code (e.g. <code>nam</code>), a
+country code (e.g. <code>nam-us</code>), or anything else;
+mirrors are tried in that order.
+Example:
+</p>
+<codeblock>CustomMirror: &lt;&lt;
+nam-US: ftp://ftp.fooquux.com/pub/bar
+asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
+eur-DE: ftp://ftp.barfoo.de/bar
+Primary: ftp://ftp.barbarorg/pub/
+&gt;&gt;</codeblock>
+</itemd></item>
+
+<item><itemt>Source</itemt>
+<itemd>
+<p>
+An URL to the source tarball. It should be a HTTP or FTP URL, but
+Fink doesn't really care - it just passes the URL to wget. This field
+supports a special URL scheme for mirrors:
+<code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>. This will
+look up the mirror setting for <em>mirror-name</em> in Fink's
+configuration, append the <em>relative-path</em> part and use that as
+the actual URL. The known <em>mirror-name</em>s are listed in
+<filename>/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
+package. Alternatively, using <code>custom</code> as the
+<em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
+field.
+Before the URL is used, percent expansion takes place.
+</p>
+<p>
+Since fink 0.18.0, <code>Source: none</code> has the special meaning
+that there is no source to fetch. See the description of the
+<code>Type</code> field for more information.
+The value <code>gnu</code> is a shorthand for
+<code>mirror:gnu:%n/%n-%v.tar.gz</code>; <code>gnome</code> is a shorthand for
+<code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. The
+default is <code>%n-%v.tar.gz</code> (i.e. a manual
+download).
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em></itemt>
+<itemd>
+<p>
+If a package consists of several tarballs, name them with these
+additional fields, starting with N = 2. So, the first tarball (which
+should be some kind of "main" tarball) goes into <code>Source</code>, the
+second tarball in <code>Source2</code> and so on. The rules are the same
+as for Source, only that the "gnu" and "gnome" shortcuts are not
+expanded - that would be useless anyway.
+</p>
+</itemd></item>
+
+<item><itemt>SourceDirectory</itemt>
+<itemd>
+<p>
+Must be used when the tarball expands to a single directory, but
+the directory's name is different from the basename of the tarball.
+Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
+named "foo-1.0". If it produces a directory with a different name,
+specify it with this parameter. Percent expansion is performed on this
+field.
+</p>
+</itemd></item>
+
+<item><itemt>NoSourceDirectory</itemt>
+<itemd>
+<p>
+Set this boolean parameter to a true value if the tarball does not
+expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
+will produce a directory named "foo-1.0". If it just unpacks the files
+to the current directory, use this parameter and set it to a boolean
+true value.
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em>ExtractDir</itemt>
+<itemd>
+<p>
+Normally, an auxiliary tarball will be extracted in the same
+directory as the main tarball. If you need to extract it in a
+specific subdirectory instead, use this field to specify
+it. Source2ExtractDir corresponds to the Source2 tarball, as one would
+expect. See ghostscript, vim and tetex for examples of usage.
+</p>
+</itemd></item>
+
+<item><itemt>SourceRename</itemt>
+<itemd>
+<p>
+This field can renames a source tar ball on the fly. This is useful
+if for example the version of the source is encoded in the directory name on
+the server, but the tar ball itself has the same name for all versions, e.g.
+://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+caused by this, you would then use something like
+</p>
+<codeblock>SourceRename: %n-%v.tar.gz</codeblock>
+<p>
+In the above example this would result in the tarball being stored under
+<filename>/sw/src/coolapp-1.2.3.tar.gz</filename> as one would expect.
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em>Rename</itemt>
+<itemd>
+<p>
+This is just the same as the <code>SourceRename</code> field, except that it
+is used to rename the Nth tarball as specified by the <code>Source<em>N</em></code>
+field. See context or hyperref for examples of usage.
+</p>
+</itemd></item>
+
+<item><itemt>Source-MD5</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+With this field you can specify the MD5 checksum of the source file. This
+information is then used by Fink to detect incorrect source files, that is,
+tarballs not matching the one the package creator used. Common causes for this
+problem include: incompletely downloaded tarballs; upstream maintainers silently
+replaced a tarball; a trojan or similar attacks; and so on.
+</p>
+<p>
+A typical usage example looks like this:
+</p>
+<codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
+<p>
+To compute the checksum, the <code>md5sum</code> tool is used. If you want to
+determine the checksum of the tarball <filename>/sw/src/apache_1.3.23.tar.gz</filename>,
+you run the following command (displayed with output here):
+</p>
+<codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</codeblock>
+<p>
+As you can see, the value to the left is exactly the value you need.
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em>-MD5</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This is just the same as the <code>Source-MD5</code> field, except that it
+is used to specify the MD5 checksum of the Nth tarball as specified by the
+corresponding <code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
+
+<item><itemt>TarFilesRename</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field only applies to source files that are using the tar format
+</p>
+<p>
+With this field you can rename files in the given source tarball during
+the extraction of the tarball. This is very useful to work around
+the fact that the HFS+ file system is not case sensitive, as files like
+<filename>install</filename> and <filename>INSTALL</filename> will
+collide on a standard Mac OS X system. With this field you can avoid
+these issues without having to repackage the tarball (as was done in
+the past in such cases).
+</p>
+<p>
+In this field you simply specify a list of files that are to be renamed. You
+can make use of wildcards. By default any given file will be renamed to its
+current name with <code>_tmp</code> appended. You can override this default
+by using the same syntax as in the <code>Files</code> and <code>DocFiles</code>
+fields, namely by writing the old filename followed by a : and then followed by
+the new filename.
+Example:
+</p>
+<codeblock>TarFilesRename: foo bar.* qux:quux
+Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
+<p>
+<em>Note:</em> This field is implemented by means of a special feature of
+BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
+(since there are tarballs which can only be expanded by GNU tar), but whenever
+a package uses TarFilesRename, Fink will use BSD tar by directly invoking
+<filename>/usr/bin/tar</filename>.
+</p>
+</itemd></item>
+
+<item><itemt>Tar<em>N</em>FilesRename</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This is just the same as the <code>TarFilesRename</code> field, except that it
+is used for the Nth tarball as specified by the corresponding
+<code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
+
+</itemtable>
+
+<!-- Patch Phase -->
+<p><em>Patch Phase:</em></p>
+<itemtable>
+
+<item><itemt>UpdateConfigGuess</itemt>
+<itemd>
+<p>
+A boolean value. If true, the files config.guess and config.sub
+in the build directory will be replaced with versions that know about
+Darwin. This happens in the patch phase and before the PatchScript
+is run. <em>Only</em> use this when you know it is necessary,
+i.e. when the configure script fails with a "unknown host"
+message.
+</p>
+</itemd></item>
+
+<item><itemt>UpdateConfigGuessInDirs</itemt>
+<itemd>
+<p>
+<em>Introduced in a post-0.9.0 CVS version.</em>
+A list of subdirectories.
+This does the same as UpdateConfigGuess, but is useful for packages
+that have outdated config.guess files in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <code>.</code> to update files in the build directory itself.
+</p>
+</itemd></item>
+
+<item><itemt>UpdateLibtool</itemt>
+<itemd>
+<p>
+A boolean value. If true, the files ltconfig and ltmain.sh in the
+build directory will be replaced with versions that know about
+Darwin. This happens in the patch phase and before the PatchScript
+is run. <em>Only</em> use this when you know that the package needs
+it. Some packages can be broken by overwriting the libtool scripts
+with mismatching versions. See the <link
+url="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
+page</link> for further information.
+</p>
+</itemd></item>
+
+<item><itemt>UpdateLibtoolInDirs</itemt>
+<itemd>
+<p>
+<em>Introduced in a post-0.9.0 CVS version.</em>
+A list of subdirectories.
+This does the same as UpdateLibtool, but is useful for packages
+that have outdated libtool 1.3.x scripts in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <code>.</code> to update files in the build directory itself.
+</p>
+</itemd></item>
+
+<item><itemt>UpdatePoMakefile</itemt>
+<itemd>
+<p>
+A boolean value.
+If true, the file <filename>Makefile.in.in</filename> in the
+subdirectory <filename>po</filename> is replaced with a patched version.
+This happens in the patch phase and before the PatchScript is run.
+</p>
+<p>
+The patched version respects DESTDIR and makes sure that message
+catalogs end up in <filename>/sw/share/locale</filename>, not
+<filename>/sw/lib/locale</filename>.
+Before using this field, make sure that you won't break the package
+and that it's really required.
+You can run <code>diff</code> to find the differences between the
+package's version and Fink's version (in
+<filename>/sw/lib/fink/update</filename>).
+</p>
+</itemd></item>
+
+<item><itemt>Patch</itemt>
+<itemd>
+<p>
+The filename of a patch to be applied with <code>patch -p1
+&lt;<em>patch-file</em></code>. This should be just a filename; the
+appropriate path will be prepended automatically. Percent expansion is
+performed on this field, so a typical value is simply
+<code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
+before the PatchScript is run (if any).
+</p>
+</itemd></item>
+
+<item><itemt>PatchScript</itemt>
+<itemd>
+<p>
+A list of commands that are run in the patch phase. See the note
+on scripts below. This is the place to put commands that patch or
+otherwise modify the package. There is no default. Before the
+commands are executed, percent expansion takes place (see last
+section).
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Compile Phase:</em></p>
+<itemtable>
+
+<item><itemt>Set<em>ENVVAR</em></itemt>
+<itemd>
+<p>
+Causes certain environment variables to be set in the
+compile and install phases. This can be used to pass compiler flags
+etc. to configure scripts and Makefiles. Currently supported variables
+are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
+MAKE, MFLAGS, MAKEFLAGS. The value you specify is subject to the
+percent expansion described in the last section. A common example:
+</p>
+<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
+<p>
+The variables CPPFLAGS and LDFLAGS are special. They default to
+<code>-I%p/include</code> and <code>-L%p/lib</code>,
+respectively. If you specify a value for one of these, it will be
+prepended to the default value.
+</p>
+</itemd></item>
+
+<item><itemt>NoSet<em>ENVVAR</em></itemt>
+<itemd>
+<p>
+When set to a true value, deactivates the default values for
+CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
+remain unset, specify <code>NoSetLDFLAGS: true</code> .
+</p>
+</itemd></item>
+
+<item><itemt>ConfigureParams</itemt>
+<itemd>
+<p>
+Additional parameters to pass to the configure script. (See
+CompileScript for details.)
+
+As of fink > 0.13.7, this parameter will also work with perl modules
+<code>Type: Perl</code>, and will append to the default perl Makefile.PL
+string.
+</p>
+</itemd></item>
+
+<item><itemt>GCC</itemt>
+<itemd>
+<p>
+The required version of the gcc compiler to use.  Allowed values are: 
+<code>2.95.2</code> or <code>2.95</code>
+(for use in the 10.1 package tree only), <code>3.1</code>
+(for use in the 10.2 package tree only), and <code>3.3</code>
+(for use in the 10.2-gcc3.3 and 10.3 package trees only).
+</p>
+<p>As of fink 0.13.8, when this flag is present, the version of gcc
+is tested using <code>gcc_select</code>, and fink exits with an error
+if the wrong version is present.
+</p>
+<p>
+This field was added to fink to aid in the transition between the gcc
+compilers, which introduced a binary incompatibility between libraries
+that involve C++ code which is not reflected in the versioning
+scheme.
+</p>
+</itemd></item>
+
+<item><itemt>CompileScript</itemt>
+<itemd>
+<p>
+A list of commands that are run in the compile phase. See the note
+on scripts below. This is the place to put commands that configure and
+compile the package. Normally the default is:
+</p>
+<codeblock>./configure %c
+make</codeblock>
+<p>
+This is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field)
+with the perl version not specified,
+the default instead is:
+</p>
+<codeblock>perl Makefile.PL PREFIX=%p \
+ INSTALLPRIVLIB=%p/lib/perl5 \
+ INSTALLARCHLIB=%p/lib/perl5/darwin \
+ INSTALLSITELIB=%p/lib/perl5 \
+ INSTALLSITEARCH=%p/lib/perl5/darwin \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3
+make
+make test</codeblock>
+<p>If the type is <code>perl $version</code> with the version specified
+(e.g., $version might be 5.6.0),
+then the default becomes:
+</p>
+<codeblock>perl$version Makefile.PL \
+ PERL=perl$version PREFIX=%p \
+ INSTALLPRIVLIB=%p/lib/perl5/$version \
+ INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+ INSTALLSITELIB=%p/lib/perl5/$version \
+ INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3
+make
+make test</codeblock>
+<p>
+Before the commands are executed, percent expansion takes place
+(see previous section).
+</p>
+</itemd></item>
+
+<item><itemt>NoPerlTests</itemt>
+<itemd> 
+<p>
+<em>Introduced in fink > 0.13.7.</em>
+A boolean value, specific for perl module packages.
+If true, the <code>make test</code> portion
+of the <code>CompileScript</code> will be ignored
+for that specific perl module package.
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Install Phase:</em></p>
+<itemtable>
+
+<item><itemt>UpdatePOD</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.5.</em>
+A boolean value, specific for perl module packages.
+If true, this will add code to the install, postrm and postinst
+scripts that maintains the .pod files provided by perl packages.
+This includes adding and removing the .pod date from the central
+<filename>/sw/lib/perl5/darwin/perllocal.pod</filename> file.
+(If the type has been given as <code>perl $version</code> with a
+specific version of perl such as 5.6.0,
+then these scripts are adapted to deal with the central .pod file
+<filename>/sw/lib/perl5/$version/perllocal.pod</filename>.)
+</p>
+</itemd></item>
+
+<item><itemt>InstallScript</itemt>
+<itemd>
+<p>
+A list of commands that are run in the install phase. See the note
+on scripts below. This is the place to put commands that copy all
+necessary files to the stow directory for the package. Normally the
+default is:
+</p>
+<codeblock>make install prefix=%i</codeblock>
+<p>
+The default is appropriate for packages that use GNU autoconf.
+For packages with of type perl (as specified via the Type field)
+with the perl version not specified,
+the default instead is:
+</p>
+<codeblock>make install INSTALLPRIVLIB=%i/lib/perl5 \
+ INSTALLARCHLIB=%i/lib/perl5/darwin \
+ INSTALLSITELIB=%i/lib/perl5 \
+ INSTALLSITEARCH=%i/lib/perl5/darwin \
+ INSTALLMAN1DIR=%i/share/man/man1 \
+ INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+<p>If the type is <code>perl $version</code> with the version specified
+(e.g., $version might be 5.6.0),
+then the default becomes:
+</p>
+<codeblock>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
+ INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
+ INSTALLSITELIB=%i/lib/perl5/$version \
+ INSTALLSITEARCH=%i/lib/perl5/$version/darwin \
+ INSTALLMAN1DIR=%i/share/man/man1 \
+ INSTALLMAN3DIR=%i/share/man/man3</codeblock>
+<p>
+If the package supports it, it is preferably to use <code>make install
+DESTDIR=%d</code> instead. Before the commands are executed, percent
+expansion takes place (see previous section).
+</p>
+</itemd></item>
+
+<item><itemt>JarFiles</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field is somewhat similar to DocFiles. It installs the specified jar
+files into <filename>%p/share/java/%n</filename>.
+Example:
+</p>
+<codeblock>JarFiles: lib/*.jar foo.jar:fooBar.jar</codeblock>
+<p>
+This will install all the jars that were in the lib directory and will install
+foo.jar as fooBar.jar.
+</p>
+<p>
+It also ensures that these jar files (specifically: all files in
+<filename>%p/share/java/%n</filename> that end in .jar)
+are added to the CLASSPATH environment variable. This allows tools like
+configure or ant to properly detect the installed jar files.
+</p>
+</itemd></item>
+
+<item><itemt>DocFiles</itemt>
+<itemd>
+<p>
+This field provides a convenient way to install README or COPYING
+files in the doc directory for the package,
+<filename>%p/share/doc/%n</filename>.
+The value is a space-separated list of files.
+You can copy files from subdirectories of the build directory, but
+they will end up in the doc directory itself, not in a subdirectory.
+Shell wildcards are allowed.
+It is also possible to rename single files on the fly by appending the
+new name separated by a colon (:),
+e.g. <code>libgimp/COPYING:COPYING.libgimp</code>.
+This field works by appending appropriate <code>install</code>
+commands to the InstallScript.
+</p>
+</itemd></item>
+
+<item><itemt>Shlibs</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.11.0.</em>
+This field declares the shared libraries which are installed in the
+package.  There is one line for each
+shared library, which contains three items separated by whitespace:
+the <code>-install_name</code> of the
+library, the <code>-compatibility_version</code>, and versioned 
+dependency information specifying the Fink package which provides
+this library at this compatibility version.  The dependency should
+be stated in the form <code> foo (>= version-revision)</code> where 
+<code>version-revision</code> refers to
+the <em>first</em> version of a Fink package which made
+this library (with this compatibility version) available.
+The Shlibs declaration amounts to a promise
+from the maintainer that a libary with this name and a 
+<code>-compatibility_version</code>
+of at least this number will always be found in later versions of this
+Fink package.
+</p></itemd></item>
+
+<item><itemt>RuntimeVars</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <xref section="profile.d">profile.d scripts section</xref>). As long as your package is installed, these variables will be set via the <filename>/sw/bin/init.[c]sh</filename> scripts.
+</p>
+<p>
+The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
+</p>
+<codeblock>RuntimeVars: &lt;&lt;
+ SomeVar: %p/Value
+ AnotherVar: foo bar
+&lt;&lt;</codeblock>
+<p>
+will set two environment variables 'SomeVar' and 'AnotherVar' and their values
+will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+</p>
+<p>
+This field works by appending appropriate commands to the InstallScript.
+These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
+</p>
+</itemd></item>
+
+<item><itemt>SplitOff</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.9.</em>
+Generate a second package from the same compile/install run.
+For details about how this works, see the separate
+<link url="#splitoffs">splitoff section</link> below.
+</p>
+</itemd></item>
+
+<item><itemt>SplitOff<em>N</em></itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.9.</em>
+This is the same as <code>SplitOff</code>, used to generate a third,
+fourth, etc. package from the same compile/install run.
+</p>
+</itemd></item>
+
+<item><itemt>Files</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.9.9.</em>
+Used <em>only</em>
+within a <code>SplitOff</code> or <code>SplitOff<em>N</em></code> field,
+this designates which files and directories
+should be moved from the parent package's  installation
+directory %I to the current installation directory %i.  Note that this
+is executed after the InstallScript and the DocFiles of the parent package,
+but before the InstallScript and Docfiles of the current package.
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Build Phase:</em></p>
+<itemtable>
+
+<item><itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
+<itemd>
+<p>
+These fields specify pieces of shell scripts that will be called when
+the package is installed, upgraded or removed.
+Fink automatically adds the shell script header
+<code>#!/bin/sh</code>, and calls <code>set -e</code> so any command
+that fails will result in instant termination of the script.
+Fink also adds an <code>exit 0</code> at the end.
+To indicate an error, exit from the script with a non-zero exit code.
+The first parameter (<code>$1</code>) is set to a value indicating
+what action is being performed.
+Some possible values are <code>install</code>, <code>upgrade</code>,
+<code>remove</code> and <code>purge</code>.
+Note that there are more values, used during error rollback or when
+removing a package in favor of another one.
+</p>
+<p>
+The scripts are called at the following times:
+</p>
+<ul>
+<li>PreInstScript: When the package is installed for the first time
+and before upgrading the package to this version.</li>
+<li>PostInstScript: After unpacking and setting up the package.</li>
+<li>PreRmScript: Before the package is removed or upgraded to a later
+version.</li>
+<li>PostRmScript: After the package was removed or upgraded to a later
+version.</li>
+</ul>
+<p>
+To make it more clear, an upgrade invokes both the ...Inst scripts of
+the new version and the ...Rm scripts of the old version.
+Details can be found in the Debian Policy Manual,
+<link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapter 6</link>.
+</p>
+<p>
+Percent expansion is performed on the scripts.
+Commands can generally be called without giving a full path.
+</p>
+</itemd></item>
+
+<item><itemt>ConfFiles</itemt>
+<itemd>
+<p>
+A space-separated list of files that are user-modifiable configuration
+files.
+The files must be specified with an absolute path,
+e.g. <filename>%p/etc/foo.conf</filename>.
+The named files will receive special treatment by dpkg.
+When a package is upgraded and the file has changed both on disk and
+in the package, the user is asked which version to use and backups
+of the file will be made.
+When a package is "remove"d, the configuration files will remain on
+disk.
+Only a "purge" also removes the configuration files.
+</p>
+</itemd></item>
+
+<item><itemt>InfoDocs</itemt>
+<itemd>
+<p>
+Lists the names of Info documents that the package installs in
+%p/share/info.
+This will add appropriate code to the postinst and prerm scripts to
+maintain the Info directory file, <code>dir</code>.
+This feature is still in flux, more fields for finer control may be
+added in the future.
+</p>
+</itemd></item>
+
+<item><itemt>DaemonicFile</itemt>
+<itemd>
+<p>
+Gives a service description for <code>daemonic</code>.
+<code>daemonic</code> is used by Fink to create and remove
+StartupItems for daemon processes (e.g. web servers).
+The description will added to the package as a file named
+<code>%p/etc/daemons/<em>name</em>.xml</code>, where <em>name</em> is
+specified by the DaemonicName field and defaults to the package
+name.
+Percent expansion is performed on the contents of this field.
+Note that you must add <code>daemonic</code> to the dependency list if
+your package uses it.
+</p>
+</itemd></item>
+
+<item><itemt>DaemonicName</itemt>
+<itemd>
+<p>
+A name for the <code>daemonic</code> service description file.
+See the description of DaemonicFile for details.
+</p>
+</itemd></item>
+
+</itemtable>
+<p><em>Additional Data:</em></p>
+<itemtable>
+
+<item><itemt>Homepage</itemt>
+<itemd>
+<p>
+The URL of the upstream home page of the package.
+</p>
+</itemd></item>
+
+
+<item><itemt>DescDetail</itemt>
+<itemd>
+<p>
+A more detailed description than the one in the <code>Description</code>
+field (what is it, what can I use it for?).
+Multiple lines allowed. Because this field will be displayed without
+the benefit of word-wrap, you should manually insert line breaks in
+order to keep lines less than 79 chars (if possible).
+</p>
+</itemd></item>
+
+<item><itemt>DescUsage</itemt>
+<itemd>
+<p>
+This is for information that is needed to use the package (how do
+I use it?). As in "run wmaker.inst once before using WindowMaker".
+Multiple lines allowed. Because this field will be displayed without
+the benefit of word-wrap, you should manually insert line breaks in
+order to keep lines less than 79 chars (if possible).
+</p>
+</itemd></item>
+
+<item><itemt>DescPackaging</itemt>
+<itemd>
+<p>
+Notes about the packaging. Stuff like "patches the Makefile to put
+everything in place" goes here. Multiple lines allowed.
+</p>
+</itemd></item>
+
+<item><itemt>DescPort</itemt>
+<itemd>
+<p>
+Notes that are specific to porting the package to Darwin. Stuff
+like "config.guess and libtool scripts are updated, -no-cpp-precomp
+is necessary" goes here. Multiple lines allowed.
+</p>
+</itemd></item>
+
+</itemtable>
+</section>
+
+<section name="splitoffs"><title>SplitOffs</title>
+<p>Beginning with fink 0.9.9, a single .info file can be used to build
+multiple packages.  
+The install phase begins as usual, with the execution of the 
+<code>InstallScript</code> and <code>DocFiles</code> commands.
+A <code>SplitOff</code> field, if present, then triggers the
+creation of a
+second install directory.  Within the 
+<code>SplitOff</code> field, the new install directory is referred to as %i,
+while the original install directory of the parent 
+package is referred to as %I.
+</p>
+<p>
+The <code>SplitOff</code> field must contain a number of fields of its
+own.  In fact, it resembles a complete package description, but with
+certain fields missing.  Here is what belongs in the sub-description
+(by category):
+</p>
+<ul>
+<li>Initial Data: Only the <code>Package</code> needs to be specified,
+everything else is inherited from the parent package.  You may modify
+<code>Type</code> and <code>License</code> by declaring the field
+within the <code>SplitOff</code>.  Percent expansion can be used, and
+it is often convenient to refer to the name %N of the parent
+package.</li>
+<li>Dependencies: All of these are allowed.</li>
+<li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
+and will be ignored.</li>
+<li>Install Phase, Build Phase: Any of these fields are allowed (except
+that <code>SplitOff</code> should not be used within a <code>SplitOff</code>
+field).</li>
+<li>Additional Data: These are inherited from the parent package but may
+be modified by declaring the field within the <code>SplitOff</code>.</li>
+</ul>
+<p>
+During the install phase, the <code>InstallScript</code> and 
+<code>DocFiles</code> of the parent package are executed first.
+Next comes the <code>Files</code> command specified in the
+<code>SplitOff</code> field, which causes the listed files and directories
+to be moved from the parent's installation directory %I to the
+current installation directory %i.  Then the <code>InstallScript</code>
+and <code>DocFiles</code> of the <code>SplitOff</code> package are
+executed.  
+</p><p>
+If there are additional sub-packages specified with <code>SplitOff2</code>,
+<code>SplitOff3</code>, etc., this same sequence of commands
+(<code>Files</code>, <code>InstallScript</code>, <code>DocFiles</code>)
+is executed for each of them in turn.
+</p><p>
+During the build phase, the pre/post install/remove scripts for each of
+the packages is constructed by using the build phase commands which
+were specified for that package.
+</p><p>
+Each package being built is required
+to document the licensing arrangement in %i/share/doc/%n (and of course
+%n takes a different value for each package).  Note that
+<code>DocFiles</code> copies files rather than moving them, so it is
+possible to install identical copies of the documentation into each 
+of the packages by using <code>DocFiles</code> several times.
+</p>
+
+
+</section>
+
+<section name="scripts"><title>Scripts</title>
+
+<p>The PatchScript, CompileScript and InstallScript fields allow you
+to specify shell commands to be executed. Two forms are supported.
+</p><p>
+This field can be a simple list of commands. This is sort of like a
+shell script. However, the commands are executed via system(), one
+line at a time, so setting variables or changing the directory only
+affects commands on that same line. Starting in a CVS version of fink
+after 0.18.2, you can wrap long lines similar to normal shell scripts:
+a backslash (<code>\</code>) at the end of a line indicates that the
+next line is a continuation.
+</p><p>
+Alternately, you can embed a complete script here, using the
+interpreter of your choice. As with any Unix script, the first line
+must begin with <code>#!</code> followed by the full pathname of to
+the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
+<code>#!/bin/bash -ev</code>, etc.). In this situation, the whole
+*Script field is dumped into a temporary file that is then executed.
+</p>
+</section>
+
+<section name="patches"><title>Patches</title>
+
+<p>If your package needs a patch to compile on Darwin (or to work with
+fink), name the patch with the same name as the package description,
+using the extension ".patch" instead of ".info" and put it in the same
+directory as the .info file. If you use the full package in the
+filename specify either one of these (they are equivalent):</p>
+<codeblock>Patch: %f.patch</codeblock>
+<codeblock>PatchScript: patch -p1 &lt;%a/%f.patch</codeblock>
+<p>If you use the newer simple package filename convention, use %n
+insead of %f. These two fields are not mutually-exclusive - you can
+use both, and they will both be executed. In that case the PatchScript
+is executed last.</p>
+<p>Because you may need to have the users chosen prefix in the patch file
+it is recommended that you have a variable such as <code>@PREFIX@</code> 
+instead of <code>/sw</code> in the patch and then use:</p>
+<codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</codeblock>
+<p>Patches should be in unidiff format and are normally generated by using:</p>
+<codeblock>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</codeblock>
+<p>If you have used emacs to edit files, you can add <code>-x'*~'</code> to the diff command above in order to exclude automatically-generated backup files.</p>
+<p>It must also be noted that extremely large patches should not be put in cvs.
+They should be put on a web/ftp server and specified using the
+<code>SourceN:</code> field. If you don't have a website, fink project
+admins can make the file available from fink's own website. If your
+patch is larger than about 30Kb, you should consider making it a
+separate download.
+</p>
+</section>
+
+<section name="profile.d"><title>Profile.d scripts</title>
+
+<p>
+If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
+These script fragments are sourced by the <filename>/sw/bin/init.[c]sh</filename> scripts. Normally, all fink users will load these scripts in their shell startup files (<filename>.cshrc</filename> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <filename>/sw/etc/profile.d/%n.[c]sh</filename> (where %n as usual stands for the package name).
+Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+</p>
+<p>
+If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+</p>
+</section>
+
+
+</chapter>
+
+
+</document>
