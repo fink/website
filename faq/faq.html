@@ -514,7 +514,10 @@ cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.
-		</pre><p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p><pre>
+		</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Connection reset by peer
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p><pre>
 cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
@@ -888,4 +891,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.83 2003/01/30 17:01:43 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.84 2003/01/30 17:28:53 alexkhansen Exp $</i></p></body></html>

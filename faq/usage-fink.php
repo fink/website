@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/30 17:01:43';
+$cvs_date = 'Date: 2003/01/30 17:28:53';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -233,7 +233,10 @@ cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.
-		</pre><p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p><pre>
+		</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Connection reset by peer
+### execution of su failed, exit code 1
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>Then it's likely that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility is that you have some bad permissions in your CVS directories , in which case you get &quot;Permission denied&quot; messages:</p><pre>
 cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
