@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.49 2003/04/09 18:01:07 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.50 2003/04/09 18:03:18 fingolfin Exp $</cvsid>
 <newsitem>
 	<date>2003-04-09</date>
 	<headline>Interview on OSNews.com</headline>
 	<body>
-	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring an
+	<p><extlink url="http://osnews.com/">OSNews.com</extlink> today is featuring a
 	<extlink url="http://osnews.com/story.php?news_id=3236">mini-interview</extlink> with
 	one of our project leaders, Max Horn. It contains some rather unusual questions,
 	so even if you know Fink fairly well, you might find it informative.
