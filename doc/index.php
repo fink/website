@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/19 12:52:44 $';
+$cvs_date = '$Date: 2001/07/20 19:25:20 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,8 @@ distribution)</li>
 and the installed software (for Fink users, also included in the
 distribution)</li>
 <li><a href="x11/index.php">X11 on Darwin and Mac OS X</a> - covers
-concepts, installation and launching</li>
+concepts, installation and launching (for Fink users, but also for
+Darwin and Mac OS X users in general)</li>
 <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the Fink CVS
 repository to get the latest code and packages between releases (for
 Fink users)</li>
