@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.9 2004/03/26 03:09:18 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.10 2004/04/03 23:07:04 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -565,7 +565,7 @@ fink selfupdate-cvs</codeblock>
         /sw/src/</code>". Then use '<code>fink install <em>packagename</em>
           </code>' as normal.</p>
         <p>If you can't get the source file, then you'll have to wait for the
-        maintainer to deal with the problem. They may either post a link to
+        maintainer to deal with the problem. He may either post a link to
         the old source, or update the .info and .patch files to use the newer
         version.</p>
       </answer>
