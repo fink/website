@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.19 2003/04/16 13:03:47 dmalloc Exp $ */
+/* $Id: footer.inc,v 1.20 2003/05/31 23:48:43 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -43,20 +43,6 @@ if ($date)
   print gmstrftime("%a, %b %d %Y, %R GMT", $date);
 ?></div>
 </td></tr>
-
-<td align="right">
-<!--- Stats4You.Com counter code --->
-<NOSCRIPT>
-<a href="http://www.stats4you.com" target="_new">
-<img src="http://www.stats4you.com/scripts/counter.asp?ID=finkproject&page=home&js=no" border="0"></a>
-</NOSCRIPT>
-<SCRIPT src="http://www.stats4you.com/scripts/include.asp?ID=finkproject&page=home"></SCRIPT>
-<!--- Stats4You.Com counter code --->
-</td>
-
-
-</tr>
-
 
 
 <tr><td height="7" class="layout">
