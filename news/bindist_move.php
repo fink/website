@@ -1,7 +1,7 @@
 <?
 $title = "Binary distribution moved to new location";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/07/17 00:22:26 $';
+$cvs_date = '$Date: 2002/07/17 00:27:49 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ To this end, the whole binary distribution is already available in the new locat
 </p>
 
 <p>
-We suggest that you switch as soon as possible. The old binary distro will be removed on Monday, July 22nd. Don't worry though, switching to the new binary distro will be possible later on without problems, too. Feel free to contact us via on of our <a href="../lists/index.php">mailing lists</a> if you have any questions or problems.
+We suggest that you switch as soon as possible. The old binary distro will be removed on Monday, July 22nd. Don't worry though, switching to the new binary distro will still be possible later on without problems. Feel free to contact us via on of our <a href="../lists/index.php">mailing lists</a> if you have any questions or problems.
 </p>
 
 <h1>Switching to the new binary distribution</h1>
