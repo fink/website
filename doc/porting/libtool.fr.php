@@ -1,8 +1,8 @@
 <?
 $title = "Portage - libtool";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/22 00:01:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing.php?phpLang=fr" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
+$cvs_date = 'Date: 2004/03/25 02:58:58';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
 
 include_once "header.inc";
 ?>
@@ -258,6 +258,6 @@ Ceci peut être réalisé en configurant GNU libtool avec
 
 
 <p align="right">
-Next: <a href="preparing.php?phpLang=fr">4 Preparing for 10.2</a></p>
+Next: <a href="preparing.php?phpLang=fr">4 Préparation pour la version 10.2</a></p>
 
 <? include_once "footer.inc"; ?>

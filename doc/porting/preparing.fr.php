@@ -1,62 +1,59 @@
 <?
-$title = "Portage - Preparing for 10.2";
+$title = "Portage - Préparation pour 10.2";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/22 00:01:29';
+$cvs_date = 'Date: 2004/03/25 02:58:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
 include_once "header.inc";
 ?>
 
-<h1>Portage - 4 Preparing for 10.2</h1>
+<h1>Portage - 4 Préparation pour la version 10.2</h1>
 
 
 
 
-<h2><a name="bash">4.1 The bash shell</a></h2>
+<h2><a name="bash">4.1 Shell bash</a></h2>
 <p>
-Fink made the transition from OS X 10.0 to OS X 10.1 fairly easily, thanks
-in part to planning ahead for the changes that were coming.  We will try
-to do the same for the next transition, but not many details are known
-yet. </p>
-<p> We understand that OS X 10.2 will use bash rather than zsh to provide
-<code>/bin/sh</code> functionality.  This has at least three implications
-for fink. 
+Fink a fait la transition de OS X 10.0 à OS X 10.1 facilement, et cela, en partie, grâce
+à la planification des changements à faire. Nous essayerons de faire de même
+pour la prochaine transition, mais peu de détails nous sont connus pour l'instant.
+</p>
+<p> Nous savons que OS X 10.2 utilisera bash au lieu de zsh dans le but de fournir la fonctionnalité
+<code>/bin/sh</code>. Ceci a au moins trois conséquences pour Fink.
 </p>
 <ul><li>
-In the past, some fink packages created a CompileScript (or PatchScript or
-InstallScript) which does nothing
-by simply putting a semicolon in the script.  This does not work
-under bash, and must be replaced by something like
+Dans le passé, certains paquets de Fink créaient un CompileScript (ou un PatchScript, 
+ou un InstallScript) qui ne faisait rien, simplement en mettant un point virgule dans le script. 
+Ceci ne fonctionne pas avec bash et doit être remplacé par :
 <pre>
   CompileScript: echo "nothing to do"
 </pre>
 </li>
 <li>
-In the past, some fink packages used a the <code>lib(foo|bar).dylib</code>
-construction to refer to two libraries at once; this doesn't work under
-bash (and the bash alternative <code>lib{foo,bar}.dylib</code> doesn't work
-under zsh).  Solution: write out the names in full.
+Dans le passé, certains paquets de Fink utilisaient la construction <code>lib(foo|bar).dylib</code>
+pour faire référence à deux librairies simultanément ; ceci ne fonctionne pas avec bash (et l'alternative
+<code>lib{foo,bar}.dylib</code> ne fonctionne pas avec zsh). La solution : écrire les noms intégralement.
 </li>
 <li>
-A libtool patch is needed in many cases, to prevent libraries from being
-build unversioned under bash.  
-<b> Note: you do not need this patch with
- libtool-1.3.5, for example, if you are using UpdateLibtool:
- True. </b>
-The symptom: when building under bash,
-you see
+Avec bash, une rustine de libtool est nécessaire dans de nombreux cas, pour éviter 
+que les librairies ne soient construites sans numéro de version.  
+<b> Note : vous n'avez pas besoin de cette rustine avec libtool-1.3.5, par exemple,
+si vous utilisez
+UpdateLibtool: True. </b>
+Le symptome : quand vous construisez sous bash,
+vous voyez
 <pre>
 ../libtool: test: too many arguments
 </pre>
-When this happens, <code>configure</code> contains the following:
+Quand cela arrive, <code>configure</code> contient ce qui suit :
 <pre>
 archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo 
 -dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts 
 -install_name $rpath/$soname $(test -n "$verstring" -a x$verstring != 
 x0.0 &amp;&amp; echo $verstring)'
 </pre>
-Here is a patch (but it must be used with care, because sometimes there are
-other libtool problems as well so this patch must be applied by hand):
+Voici une rustine (mais elle doit être appliquée avec précaution, car quelquefois
+il y a aussi d'autres problêmes avec libtool, si bien que cette rustine doit être appliquée à la main):
 <pre>
 diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
 --- gdk-pixbuf-0.16.0/configure 2002-01-22 20:11:48.000000000 -0500
@@ -95,24 +92,25 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </li>
 </ul>
 
-<h2><a name="gcc3">4.2 The gcc3 compiler</a></h2>
+<h2><a name="gcc3">4.2 Compilateur gcc3</a></h2>
 
-	<p>Mac OS X 10.2 uses the gcc3 compiler.</p>
+	<p>Mac OS X 10.2 utilise le compilateur gcc3.</p>
 	
-	<p>Some packages which have loadable modules and use
-libtool fail with an install_name error, because libtool passes
-the -install_name flag even along with the -bundle flag (when it is not
-strictly needed).  This behavior was accepted by the gcc2 compiler but is
-not being accepted by the gcc3 compiler.  The fix can be found<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">here.</a>
-Note that you do not need the patch if your package uses libtool-1.3.5
-(for example, if you are using <code>UpdateLibtool: True</code>)
-since it has already been incorporated into a revised version of fink's
-ltconfig file (available in pre-release versions of fink).
+	<p>Certains paquets qui ont des modules chargeables et qui 
+	utilisent libtool échouent avec une erreur install_name, car
+	libtool passe le drapeau -install_name même avec le drapeau -bundle
+	(alors que cela n'est pas strictement nécessaire). 
+	Ce comportement était accepté par le compilateur gcc2 mais n'est plus accepté maintenant
+	par le compilateur gcc3. Vous trouverez la rustine <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">ici</a>.
+	Notez que vous n'avez pas besoin de cette rustine si votre paquet utilise libtool-1.3.5
+	(par exemple, si vous utilisez <code>UpdateLibtool: True</code>)
+	puisque elle a déjà été insérée dans une version révisée du fichier ltconfig  
+	(accessible dans des préversions de fink).
 </p>
 
-<p>Another issue with the gcc3 compiler is an incompatibility for C++ ABIs
-between gcc2 and gcc3.  In practice, this means that C++ programs compiled
-with gcc3 cannot link to libraries compiled with gcc2.</p>
+<p>Un autre problème avec le compilateur gcc3 est l'incompatibilité pour les ABI C++
+entre gcc2 et gcc3.  En pratique, ceci signifie que les programmes C++ compilés avec gcc3
+ne peuvent être liés à des librairies compilées avec gcc2.</p>
 
 
 

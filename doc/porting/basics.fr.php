@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Notions de base";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/22 00:01:29';
+$cvs_date = 'Date: 2004/03/25 02:58:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="shared.php?phpLang=fr" title="Code partagé"><link rel="prev" href="index.php?phpLang=fr" title="Portage Contents">';
 
 include_once "header.inc";
