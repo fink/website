@@ -117,6 +117,10 @@
 
 <!-- i -->
 
+<xsl:template match="quote">
+&quot;<xsl:apply-templates/>&quot;
+</xsl:template>
+
 <xsl:template match="code|filename">
 "<xsl:apply-templates/>"
 </xsl:template>

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.111 2003/05/18 22:01:02 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.112 2003/05/31 23:58:39 fingolfin Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -508,8 +508,7 @@ To fix it manually, edit the file
 <code>/sw/etc/apt/sources.list</code> in a text editor as root.
 Remove lines that mention debian.org and replace them with these:
 </p>
-<codeblock>
-deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+<codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
 <p>
 (Or if you live in Europe, you can use <code>eu.dl.sourceforge.net</code>
@@ -536,8 +535,7 @@ script as a plug-in for dselect) is making it's way through CVS now.
 </faqentry>
 <faqentry name="cvs-busy" >
 <question>
-<p>When I try to run &quot;fink selfupdate&quot; or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;
-		</p>
+<p>When I try to run <quote>fink selfupdate</quote> or &quot;fink selfupdate-cvs&quot;, I get the error &quot;<code>Updating using CVS failed. Check the error messages above.</code>&quot;</p>
 </question>
 <answer>
 <p>If the message is</p>
@@ -548,14 +546,12 @@ script as a plug-in for dselect) is making it's way through CVS now.
 <p>If, on the other hand, the last line is</p>
 <codeblock>### execution of su failed, exit code 1</codeblock>
 <p>you'll need to look further back in the output to see the error.  If you see a message that your connection was refused:</p>
-<codeblock>
-(Logging in to anonymous@cvs.sourceforge.net)
+<codeblock>(Logging in to anonymous@cvs.sourceforge.net)
 CVS password:
 cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.
-		</codeblock>
+Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
 <p>or a message like the following:</p>
 <codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
 Connection reset by peer
@@ -567,8 +563,7 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
 <codeblock>cvs [update aborted]: received broken pipe signal</codeblock>
 <p>then it's likely that the cvs servers are overloaded and you have to try the update later.</p>
 <p>Another possibility is that you have some bad permissions in your CVS directories, in which case you get &quot;Permission denied&quot; messages:</p>
-<codeblock>
-cvs update: in directory 10.2/stable/main:
+<codeblock>cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or  directory
 cvs server: Updating 10.2/stable/main
 cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
@@ -577,10 +572,8 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:  No such 
 Failed: Updating using CVS failed. Check the error messages above.
 </codeblock>
 <p>In this case you need to reset your cvs directories. Use the command:</p>
-<codeblock> 
-sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
-fink selfupdate-cvs
-		</codeblock>
+<codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+fink selfupdate-cvs</codeblock>
 <p>If, you don't see either of the above messages, then this almost always means you've modified a file in your /sw/fink/dists tree and now the maintainer has changed it.  Look further back in the selfupdate-cvs output for lines that start with &quot;C&quot;, like so:
 </p>
 <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
@@ -619,8 +612,7 @@ software before using Fink.
 <p>Perform the follwing sequence of operations:</p>
 <p>1.  Start up in Single-User Mode (press and hold the Command-S key combination during startup until white text appears).</p>
 <p>2.  When the command line appears, do the following commands:</p>
-<codeblock>
-fsck -y
+<codeblock>fsck -y
 mount -uw
 chmod 1775 /
 reboot
@@ -696,51 +688,25 @@ you. </p>
 </question>
 <answer>
 <p>Typically these errors take the form:</p>
-<p>
-<code>files list file for package <em>packagename</em> contains empty filename</code>
-</p>
+<codeblock>files list file for package <em>packagename</em> contains empty filename</codeblock>
 <p>or</p>
-<p>
-<code>files list file for package <em>packagename</em> is missing final newline</code>
-</p>
+<codeblock>files list file for package <em>packagename</em> is missing final newline</codeblock>
 <p>This can be fixed, with a little work.  If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p>
-<p>
-<code>dpkg --contents <em>full-path-to-debfile</em>
-</code>
-</p>
+<codeblock>dpkg --contents <em>full-path-to-debfile</em></codeblock>
 <p>e.g.</p>
-<p>
-<code>dpkg --contents /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
-</p>
+<codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
 <p>If you get back a listing of directories and files, then your .deb is OK.  If the output is something other than directories and files, or if you don't have the deb file, you can still proceed because the error doesn't interfere with builds.  Just use <code>fink rebuild <em>packagename</em>
 </code>, to build the .deb--it won't install yet, though.</p>
 <p>Once you have a valid .deb file, then you can reconstitute the file.  First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p>
-<p>
-<code># dpkg -c <em>full-path-to-debfile</em>
-</code>
-</p>
-<p>
-<code>| awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
-</p>
-<p>
-<code> {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' </code>
-</p>
-<p>
-<code>> /sw/var/lib/dpkg/info/<em>packagename</em>.list</code>
-</p>
+<codeblock>dpkg -c <em>full-path-to-debfile</em>
+  | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
+  &gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
 <p>e.g.</p>
-<p>
-<code># dpkg -c /sw/fink/10.2/unstable/main/binary-darwin-powerpc/gnome/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</code>
-</p>
-<p>
-<code>| awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)</code>
-</p>
-<p>
-<code>{print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'</code>
-</p>
-<p>
-<code>> /sw/var/lib/dpkg/info/libgnomeui2-dev.list</code>
-</p>
+<codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
+  | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
+   {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
+  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
 <p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p>
 </answer>
 </faqentry>

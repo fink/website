@@ -254,6 +254,10 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <i><xsl:apply-templates/></i>
 </xsl:template>
 
+<xsl:template match="quote">
+<q><xsl:apply-templates/></q>
+</xsl:template>
+
 <xsl:template match="code|filename">
 <code><xsl:apply-templates/></code>
 </xsl:template>

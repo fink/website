@@ -1,5 +1,5 @@
 <!ENTITY % block "codeblock | p | ul" >
-<!ENTITY % inline "#PCDATA | code | em | filename | link | tt | xref" >
+<!ENTITY % inline "#PCDATA | code | em | filename | link | tt | quote | xref" >
 
 <!ENTITY fink_version "0.5.2" >
 
@@ -27,7 +27,7 @@
 
 
 <!-- Block elements -->
-<!ELEMENT codeblock ( #PCDATA ) >
+<!ELEMENT codeblock ( #PCDATA | em )* >
 <!ELEMENT p ( %inline; )* >
 
 
@@ -36,6 +36,7 @@
 <!ELEMENT em ( #PCDATA ) >
 <!ELEMENT filename ( #PCDATA ) >
 <!ELEMENT tt ( #PCDATA ) >
+<!ELEMENT quote ( #PCDATA ) >
 
 
 <!-- Links -->

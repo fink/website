@@ -181,6 +181,10 @@
 <i><xsl:apply-templates/></i>
 </xsl:template>
 
+<xsl:template match="quote">
+<q><xsl:apply-templates/></q>
+</xsl:template>
+
 <xsl:template match="code|filename">
 <tt style="white-space: nowrap;"><xsl:apply-templates/></tt>
 </xsl:template>
