@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.32 2001/10/02 16:38:32 chrisp Exp $ */
+/* $Id: header.inc,v 1.33 2001/10/03 18:12:52 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -94,10 +94,12 @@ width="120" height="26" border="0" alt="Sections:"></td></tr>
 <?
 for ($i = 0; $i < sizeof($sections); $i += 3) {
   $name = $sections[$i+2];
-  print '<tr align="left"><td colspan="2"><a href="'.$root.$sections[$i].'">';
+  print '<tr align="left">';
   if ($section == $sections[$i+2]) {
+    print '<td colspan="2" bgcolor="#87b9e7"><a href="'.$root.$sections[$i].'">';
     print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
   } else {
+    print '<td colspan="2"><a href="'.$root.$sections[$i].'">';
     print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'"/>';
   }
   print '</a></td></tr>'."\n";
@@ -134,7 +136,7 @@ if (is_array($parents)) {
     print '<p class="nav">'.$link.$parents[$i+1].'</a></p>';
     print '</td></tr>'."\n";
 
-    print '<tr><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+    print '<tr bgcolor="#ffffff"><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
   }
 }
 
@@ -148,21 +150,20 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
     $link = 0;
   }
 
-  print '<tr align="left" valign="middle">';
   if ($link) {
-    print '<td background="'.$root.'img/nav-norm.gif">';
+    print '<tr align="left" valign="middle"><td>';
     print $link.'<img src="'.$root.'img/nav-normicon.gif" width="18" height="15" border="0" alt="- "/></a>';
-    print '</td><td background="'.$root.'img/nav-norm.gif">';
+    print '</td><td>';
     print '<p class="nav">'.$link.$navbox[$i+1].'</a></p>';
   } else {
-    print '<td background="'.$root.'img/nav-down.gif">';
+    print '<tr align="left" valign="middle" bgcolor="#87b9e7"><td>';
     print '<img src="'.$root.'img/nav-downicon.gif" width="18" height="15" border="0" alt="- "/>';
-    print '</td><td background="'.$root.'img/nav-down.gif">';
+    print '</td><td bgcolor="#87b9e7">';
     print '<p class="nav">'.$navbox[$i+1].'</p>';
   }
   print '</td></tr>'."\n";
 
-  print '<tr><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
+  print '<tr bgcolor="#ffffff"><td><img src="'.$root.'img/nav-space1.gif" width="18" height="1" border="0" alt=""/></td><td><img src="'.$root.'img/nav-space2.gif" width="102" height="1" border="0" alt=""/></td></tr>'."\n";
 }
 ?>
 <tr align="left"><td colspan="2"><img src="<? print $root
