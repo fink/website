@@ -1,14 +1,14 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/10/19 13:05:56 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/12/17 23:42:15 $';
 
 include "header.inc";
 ?>
 
 <?
 $q = "SELECT name,descshort FROM package ".
-     "WHERE maintainer LIKE '%None%' AND latest=1 ORDER BY name ASC";
+     "WHERE maintainer LIKE '%None%' AND latest=1 AND parentname IS NULL ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
