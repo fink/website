@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.82 2004/10/07 21:07:06 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.83 2004/10/12 12:45:41 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -287,18 +287,7 @@ function insert_sub ($navbox, $active_page) {
 </tr>
 <tr valign="bottom">
 	<td align="right" class="header">
-<?
-	$img = '<a href="http://sourceforge.net/">
-			<img 
-				src="http://sourceforge.net/sflogo.php?group_id=17203" 
-				width="88"
-				height="31" 
-				border="0" 
-				alt="SourceForge" 
-				style="vertical-align:text-bottom">
-		</a>';
-		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
-?>
+<? include "hostlogo.inc" ?>
 	</td>
 </tr>
 </table>
