@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/19 18:09:15 $';
+$cvs_date = '$Date: 2003/01/20 02:43:41 $';
 
 include "header.inc";
 ?>
@@ -42,7 +42,12 @@ for binary installations and for source installations.
 <?
 it_start();
 it_item('<b>Current installation (binary release)</b>', '<b>Upgrade method</b>');
-it_item("Fink official binary distribution, version 0.3.x or later",
+it_item("Fink official binary distribution, version 0.5.x",
+  '<p>Update normally through <tt>dselect</tt>: Choose "[U]pdate",
+  then "[I]nstall".
+Or in <tt>FinkCommander</tt>, run "Update" followed by
+"Dist-Upgrade" (both in the <tt>Binary</tt> menu).</p>');
+it_item("Fink official binary distribution, version 0.3.x or 0.4.x",
   '<p>Update using either the <a href="10.1-upgrade.php">Upgrade
   instructions for 10.1</a> or the <a href="10.2-upgrade.php">Upgrade
   instructions for 10.2</a>.</p>');
