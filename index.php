@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/17 19:59:48 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2002/05/03 13:50:31 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,6 +33,25 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2002-05-03: All Fink users are urged to update their <i>passwd</i> 
+package to version 20020329 or newer. Older versions of the 
+<i>passwd</i> package are affected by a bug which could lead to the 
+loss of all data on your hard disk if you remove system users created 
+by Fink manually from the system via System Preferences. (Removing 
+them via the NetInfo tool is safe.) You can check the version of your 
+passwd package by entering <i>dpkg -s passwd</i>. If your version is 
+oudated, you can update to the current one in two ways:
+<ul>
+<li>Via the binary distribution. First make sure you have the latest 
+list of packages available: <i>sudo apt-get update</i>. Then you can 
+perform the actual update: <i>sudo apt-get install passwd</i>.
+<li>Via the source distribution. First make sure you have the latest 
+set of package descriptions: <i>fink selfupdate-cvs</i>. Then, update 
+the passwd package: <i>fink update passwd</i>
+</ul>
+<p>See <a href="faq/usage-general.php#passwd">Fink's FAQ, question 6.3,</a>
+for more information about the passwd package.</p>
+
 <p>2002-04-18: Fink 0.4.0 is released.
 The source release and the binary installer are available now, 
 as well as many of the binary packages. As usual, the rest of the
@@ -44,14 +63,6 @@ For information about upgrading, visit the
 The source release and the binary installer are available now, the
 bulk of binary packages will be built and made available gradually
 over the next few days as usual.
-For information about upgrading, visit the
-<a href="download/upgrade.php">Upgrade Matrix</a> and the
-<a href="doc/users-guide/index.php">User's Guide</a>.
-</p>
-<p>2002-01-09: Fink 0.3.2 is released.
-The source release is available now, the binary installer will
-follow soon. The bulk of binary packages will
-be built and made available gradually over the next few days as usual.
 For information about upgrading, visit the
 <a href="download/upgrade.php">Upgrade Matrix</a> and the
 <a href="doc/users-guide/index.php">User's Guide</a>.
