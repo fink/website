@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/12/16 14:10:02 $';
+$cvs_date = '$Date: 2002/06/27 09:28:23 $';
 
 include "header.inc";
 ?>
@@ -33,11 +33,13 @@ href="../faq/index.php">online FAQ</a>.
 <p>
 <b>The users mailing list.</b>
 If you can't figure out your problem by yourself, you can ask on the
-<a href="../lists/fink-users.php">fink-users</a> mailing list.
-You may want to check the <a
-href="http://www.geocrawler.com/redir-sf.php3?list=fink-users">archives</a>
-first - it is tiresome to answer the same question over and over
-again.
+<a href="../lists/fink-beginners.php">fink-beginners</a> mailing list or
+on the <a href="../lists/fink-users.php">fink-users</a> mailing list.
+You may want to check the 
+<a href="http://www.mail-archive.com/fink-beginners@lists.sourceforge.net">fink-beginners archives</a>
+and also the
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net">fink-users archives</a>
+first - it is tiresome to answer the same question over and over again.
 </p>
 <p>
 When posting a problem report, be sure to include relevant information
