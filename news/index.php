@@ -307,7 +307,7 @@ software before using Fink.
     <p>
       The <a href="<?php print $root; ?>doc/x11/index.php">Running X11</a> document has had a significant update. The troubleshooting section now has a comprehensive list of XDarwin error messages with explanations. 
     </p>
-  <a name="2001-10-31" /><span class="news-date">2001-10-31</span></a><?php gray_line(); ?>
+  <a name="2001-10-31"><span class="news-date">2001-10-31</span></a><?php gray_line(); ?>
     <p>
       <a href="http://www.macosxhints.com/">MacOSXHints</a> has
       posted an <a href="http://homepage.mac.com/rgriff/xdarwin.html">
