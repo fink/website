@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/11 19:13:25 $';
+$cvs_date = '$Date: 2001/01/16 09:01:08 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -12,28 +12,46 @@ include "header.inc";
 href="http://www.gnu.org/">GNU</a> and other Open Source software to
 <a href="http://www.opensource.apple.com/">Darwin</a> and <a
 href="http://www.apple.com/macosx/">Mac OS X</a>. Think of it as an
-add-on distribution (in the Linux sense) for these systems.</p>
+add-on distribution (in the Linux sense) for these systems. Once it is
+more mature, I want Fink to evolve into a general package manager
+suitable for all Unix variants.</p>
 
 <p>Fink wants to be simple, functional and fully automated. GNU stow
 is used to manage a separate directory tree. The fink package manager
 downloads, configures, compiles and installs software from the
 internet.</p>
 
-<h2>Download</h2>
+<p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top"><td>
+
+<h2>News</h2>
+
+<p>2001-01-16: GNOME! I've got the core GNOME system running. It has
+lots of rough edges, but looks promising...</p>
+<p>2001-01-16: Several patches that add shared library support to
+basic libraries are now available on the <a href="patches.php">patches
+pages</a>. More patches are to follow.</p>
+
+<h2>Status</h2>
 
 <p>Version 0.1.1 was released on 8 January 2001. You can grab it from
 the <a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
 area</a> at SourceForge. This is a very early release, so be
-careful.</p>
+careful.<br>
+A new release with more packages and support for package revision is
+on it's way. After that, I'll implement dependencies.</p>
 
-<h2>Porting</h2>
+</td><td>&nbsp;&nbsp;&nbsp;</td><td>
 
-<p>I've compiled some <a href="porting.php">hints on porting</a> GNU
-software to Darwin, including how to build GNU libraries as shared
-libraries. I hope to add more stuff in the future.</p>
+<h2>Darwin Resources</h2>
 
-<h2>Resources</h2>
+<p>The <a href="darwin.php">Darwin section</a> of this site has useful
+information on Darwin in general, like <a href="porting.php">porting
+hints</a>, <a href="patches.php">patches</a> and <a
+href="x11-choices.php">X11 information</a>. Check it out!</p>
+
+<h2>Fink Resources</h2>
 
 <p>This project is hosted by <a
 href="http://sourceforge.net">SourceForge</a>. Have a look at the <a
@@ -43,6 +61,8 @@ href="http://lists.sourceforge.net/lists/listinfo/fink-users">mailing
 list</a> for users is also available.</p>
 <p>If you have any questions, suggestions, rants etc. please mail <a
 href="mailto:fink@chrisp.de">fink@chrisp.de</a>.</p>
+
+</td></tr></table></p>
 
 
 <?
