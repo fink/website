@@ -1,11 +1,38 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/12 09:25:17';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/04/06 19:04:41';
 $metatags = '';
 
 include_once "header.inc";
 ?>
+
+<a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
+	<p>
+The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
+are now available for both source and binary users.  The 0.6.3 release has 
+been built on 10.2 and will only install on a 10.2 based system while release 
+0.7.0 has been built on 10.3 and will only install on a 10.3 based system.
+	</p>
+	<p>
+These new releases incorporate various fixes to the package manager, many previously 
+unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
+	</p>
+	<p>
+To complete a new Fink installation you should follow the instructions posted 
+<a href="<?php print $root; ?>download/index.php?phpLang=en">here</a>.
+You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="<?php print $root; ?>download/upgrade.php?phpLang=en">here</a>.
+
+If you have questions or problems, please try the Fink mailing lists you can learn more about them 
+<a href="<?php print $root; ?>lists/index.php?phpLang=en">here</a>.
+		</p>
+		<p>
+The Fink Team would like to thank its many contributors, frequent helpers 
+and developers for making this release happen. 
+We also thank our community, without their constant support and valuable 
+pointers Fink would not be where we are now.. 
+
+</p>
 
 <a name="2004-02-19 Raise your Flag."><span class="news-date">2004-02-19: </span><span class="news-headline">Raise your Flag.</span></a><?php gray_line(); ?>
 	<p>
