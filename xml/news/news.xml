@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.15 2002/10/30 21:04:44 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.16 2002/10/30 21:09:03 dmrrsn Exp $</cvsid>
 
 <newsitem>
   <date>2002-10=30</date>
@@ -12,10 +12,10 @@
 once</em> on a given machine.  Due to an apparent bug in Apple's
 Installer.app program, attempting a second installation on the same
 machine can result in permissions being altered in the machine's root
-directly, in some cases leaving the machine in a non-bootable state.
+directory, in some cases leaving the machine in a non-bootable state.
 </p><p> If Installer.app presents you with an "Upgrade" button rather
-than an "Install" button when installing Fink 0.4.1, do not proceed
-any further! </p>
+than an "Install" button when installing Fink 0.4.1, <em>do not proceed
+any further!</em> </p>
 <p>A new version of the binary installer for Fink 0.4.1 is being tested
 which will avoid the problem of the machine not booting, but even
 once the new version is available users are advised to only "Install",

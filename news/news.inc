@@ -4,10 +4,10 @@
 once</b> on a given machine.  Due to an apparent bug in Apple's
 Installer.app program, attempting a second installation on the same
 machine can result in permissions being altered in the machine's root
-directly, in some cases leaving the machine in a non-bootable state.
+directory, in some cases leaving the machine in a non-bootable state.
 </p><p> If Installer.app presents you with an &quot;Upgrade&quot; button rather
-than an &quot;Install&quot; button when installing Fink 0.4.1, do not proceed
-any further! </p>
+than an &quot;Install&quot; button when installing Fink 0.4.1, <b>do not proceed
+any further!</b> </p>
 <p>A new version of the binary installer for Fink 0.4.1 is being tested
 which will avoid the problem of the machine not booting, but even
 once the new version is available users are advised to only &quot;Install&quot;,
