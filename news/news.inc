@@ -1,4 +1,20 @@
-<a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
+<a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
+               <p>
+Apple has released a patch to the December 2002 
+Developer Tools which includes gcc 3.3,
+their new compiler.
+</p><p>
+Fink does not yet support compiling with gcc 3.3.  In addition, it is important
+not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
+needs to be compiled
+with the same compiler.
+</p><p>
+For this reason, the Fink team recommends that if you update your
+Developer Tools with the new patch, you should be careful to run
+<code>sudo gcc_select 3</code>
+prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
+</p>
+                <a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
                <p>
 The <a href="http://fink.sourceforge.net">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 
@@ -25,14 +41,4 @@ The initial announcement by Macnews is in German, for those of you not capable o
 <p>
 Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
 </p>
-                <a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
-	       <p>KDE 3.1.1 binaries are now available.  Since they
-have been released after 0.5.2 came out, you will need to update
-your package descriptions by running <code>sudo apt-get update</code>
-(or equivalent) before they will be available for installation.
-For pointers to the changes and security fixes in this release,
-see <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=2068947&amp;forum_id=2022">the
-announcement</a>.
-</p>
-
-		
+                

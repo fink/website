@@ -4,9 +4,31 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 20 Jun 2003 14:35:18 EDT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jun 2003 19:17:07 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Developer Tools Update.</title>
+    <link>http://fink.sf.net/news/#2003-06-26%20Developer%20Tools%20Update.</link>
+    <dc:date>2003-06-26</dc:date>
+    <description>
+               
+Apple has released a patch to the December 2002 
+Developer Tools which includes gcc 3.3,
+their new compiler.
+
+Fink does not yet support compiling with gcc 3.3.  In addition, it is important
+not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
+needs to be compiled
+with the same compiler.
+
+For this reason, the Fink team recommends that if you update your
+Developer Tools with the new patch, you should be careful to run
+sudo gcc_select 3
+prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
+
+                </description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Darwin packaging groups to coordinate efforts.</title>
     <link>http://fink.sf.net/news/#2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts.</link>
@@ -399,34 +421,5 @@ software before using Fink.
 			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the &quot;stable&quot; tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
 		
 	</description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Mac OS X 10.2 / Jaguar</title>
-    <link>http://fink.sf.net/news/#2002-08-20%20Mac%20OS%20X%2010.2%20%2F%20Jaguar</link>
-    <dc:date>2002-08-20</dc:date>
-    <description>
-    
-      During the last few weeks, we got a lot of emails asking whether Fink will work Mac OS X 10.2.
-    
-    
-      The answer is: Yes, we will support 10.2. However, due to some
-      major changes in this new OS version, we had to make a lot of adjustments both
-      to the Fink tool itself and to many packages. The current binary distribution,
-      0.4.0a, will only work partially on 10.2. We are working on an upgrade guide,
-      as well as a new Fink release, to support 10.2.
-    
-	
-	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
-	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
-	 Some packages need special changes to build on 10.2. Adding &quot;unstable/main&quot; to your
-	 list of trees in /sw/etc/fink.conf (see also the FAQ)
-	 will give you access to the latest versions of packages, many of which include important
-	 fixes for 10.2.
-	
-    
-     As of now, please do not email us asking about 10.2 support. If you can't wait,
-     consult the mailing list archives instead.
-    
-  </description>
   </item>
 </rdf:RDF>

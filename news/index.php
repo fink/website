@@ -1,14 +1,30 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/20 18:34:48';
+$cvs_date = 'Date: 2003/06/26 23:16:15';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
+<a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
+               <p>
+Apple has released a patch to the December 2002 
+Developer Tools which includes gcc 3.3,
+their new compiler.
+</p><p>
+Fink does not yet support compiling with gcc 3.3.  In addition, it is important
+not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
+needs to be compiled
+with the same compiler.
+</p><p>
+For this reason, the Fink team recommends that if you update your
+Developer Tools with the new patch, you should be careful to run
+<code>sudo gcc_select 3</code>
+prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
+</p>
+                <a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
                <p>
 The <a href="http://fink.sourceforge.net">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 

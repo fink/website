@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.61 2003/06/20 18:34:48 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.62 2003/06/26 23:16:15 dmrrsn Exp $</cvsid>
+
+<newsitem>
+        <date>2003-06-26</date>
+        <headline>Developer Tools Update.</headline>
+               <body>
+               <p>
+Apple has released a patch to the December 2002 
+Developer Tools which includes gcc 3.3,
+their new compiler.
+</p><p>
+Fink does not yet support compiling with gcc 3.3.  In addition, it is important
+not to "mix and match" between compilers:  all C++ code in fink packages
+needs to be compiled
+with the same compiler.
+</p><p>
+For this reason, the Fink team recommends that if you update your
+Developer Tools with the new patch, you should be careful to run
+<code>sudo gcc_select 3</code>
+prior to any "fink build" or "fink install" commands.
+</p>
+                </body>
+</newsitem>
+
 
 <newsitem>
         <date>2003-06-20</date>
