@@ -25,10 +25,10 @@ $cvs_date = 'Date: <xsl:value-of select="cvsid"/>';
 <xsl:text disable-output-escaping="yes">$metatags = &quot;&lt;link rel=\&quot;contents\&quot; href=\&quot;</xsl:text><xsl:value-of select="@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="shorttitle"/>
-<xsl:text disable-output-escaping="yes"> Contents\&quot;&gt;\n\t&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
+<xsl:text disable-output-escaping="yes"> Contents\&quot;&gt;&lt;link rel=\&quot;next\&quot; href=\&quot;</xsl:text><xsl:value-of select="chapter/@filename"/>
 <xsl:text disable-output-escaping="yes">.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/>
 <xsl:text disable-output-escaping="yes">\&quot; title=\&quot;</xsl:text><xsl:value-of select="chapter/title"/>
-<xsl:text disable-output-escaping="yes">\&quot;&gt;\n\t&quot;</xsl:text>;
+<xsl:text disable-output-escaping="yes">\&quot;&gt;&quot;</xsl:text>;
 
 include_once "header.<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
