@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_date = '$Date: 2001/10/03 12:07:48 $';
 
 include "header.inc";
 ?>
@@ -19,8 +19,9 @@ Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
 </p>
 <p>
-<b>Status:</b> The installer has been updated for the 0.3.0 release.
-The bulk of packages will be updated gradually in the next few days.
+<b>Status:</b>
+The binary distribution has been fully updated to Fink 0.3.0.
+145 of 227 packages are available as binaries.
 </p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/fink-0.3.0-installer.dmg">Fink
