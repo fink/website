@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:17:59';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/01/24 22:48:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -151,7 +151,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink signale que <code>gcc2</code> ou <code>gcc3.1</code> n'existe pas, mais il ne semble pas possible de les installer.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>gcc2</code> et <code>gcc3.1</code> sont des  paquets virtuels qui indiquent la présence de gcc-2.95 ou de gcc3.1 dans votre système. Installez les paquets gcc2.95 ou gcc3.1 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>gcc2</code> et <code>gcc3.1</code> sont des  paquets virtuels qui indiquent la présence de gcc-2.95 ou de gcc3.1 dans votre système. Installez les paquets gcc2.95 ou gcc3.1 à partir de XCode Tools (les versions précédentes du système opératoire inclut gcc-2.95 dans l'installation standard des Developer Tools).</p><p><b>Note : </b>L'installation de gcc2.95 et / ou de  gcc3.1 n'interfère pas avec le compilateur gcc3.3. Ils peuvent coexister.</p></div>
     </a>
     <a name="system-java">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink signale <code>Failed: Can't resolve dependency "system-java14-dev"</code>, mais il n'existe pas de paquet system-java14-dev.</b></p></div>

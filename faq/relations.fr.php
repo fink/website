@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Relations";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:17:59';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/01/24 22:48:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="mirrors.php?phpLang=fr" title="Miroirs de Fink"><link rel="prev" href="general.php?phpLang=fr" title="Questions générales">';
 
 
