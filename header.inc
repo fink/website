@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.6 2001/01/17 18:52:06 chrisp Exp $ */
+/* $Id: header.inc,v 1.7 2001/01/23 20:06:14 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -12,6 +12,7 @@ $pages_main = array(
 $pages_darwin = array(
   "darwin.php", "Darwin",
   "porting.php", "Porting",
+  "gnome.php", "GNOME",
   "patches.php", "Patches",
   "libtool.php", "libtool",
   "x11-choices.php", "X11 Choices",

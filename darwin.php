@@ -1,7 +1,7 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/16 09:01:08 $';
+$cvs_date = '$Date: 2001/01/23 20:06:14 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -19,6 +19,8 @@ in general. Current installments:</p>
 <ul>
 <li><a href="porting.php">Porting Hints</a> for porting Unix software
 to Darwin</li>
+<li><a href="gnome.php">GNOME on Darwin</a> - instructions and patches
+needed to get the core GNOME packages up and running</li>
 <li><a href="patches.php">Patches</a> for various packages - mostly
 shared library support right now</li>
 <li><a href="libtool.php">A libtool Patch</a> to build shared
