@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.17 2004/05/22 03:06:12 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.18 2004/05/27 14:22:42 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -566,7 +566,7 @@ quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock> 
-<p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduiteq à :</p>    
+<p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduites à :</p>    
  <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
