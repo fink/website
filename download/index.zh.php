@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 09:42:24 $';
 
 include "header.inc";
 ?>
@@ -40,7 +40,7 @@ include "../fink_version.inc";
 </p></li>
 <li><p>
 如果在此过程中发生了什么错误，你可以尝试重新运行一次安装程序宗卷里面的 pathsetup.command 文件（需要在终端窗口里面运行）。 
-</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
+</p><pre>open /sw/bin/pathsetup.command </pre><p>
 （这个过程应该对你机器的每个帐号都运行一次：每个用户应该登录到自己的帐号运行一次 pathsetup.command 脚本）。
 </p><p>
 如果 pathsetup.command 产生了错误信息，请参考文档，
@@ -50,7 +50,7 @@ include "../fink_version.inc";
 <li><p>
 打开一个新的终端程序并运行下面的命令 "<code>fink scanpackages; fink index</code>"，或使用所附的 Fink Commander 图形界面程序（你应该把它拖拽到你你系统的合适文件夹里面，而不要在磁盘映象里面运行）选择菜单：<em>Source->scanpackages</em> followed by <em>Source->Tools->index</em>。
 </p>
-</p></li>
+</li>
 <li><p>一旦做完上面的两个命令，你应该更新 <code>fink</code> 软件包，比确保已经读取发布以后可能又有的重要变化。在这以后你可以安装其它软件包。你有几种办法：
 <ul>
 <li>
@@ -70,7 +70,7 @@ include "../fink_version.inc";
 </ol></li></ul>
 <p>现在你已经更新好 <code>fink</code>，你可以安装其它软件包。</p>  
 <ul>
-<li>要从二进制文件安装，选择软件包，然后使用 Binary->Install。</p></li>
+<li>要从二进制文件安装，选择软件包，然后使用 Binary->Install。</li>
 <li>要从源代码安装，选择软件包，然后 Source->Install。</li>
 </ul>
 </li>
