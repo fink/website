@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/09 10:20:15 $';
+$cvs_date = '$Date: 2001/05/19 16:21:42 $';
 
 include "header.inc";
 ?>
@@ -15,8 +15,7 @@ could become future features):</p>
 <ul>
 <li>More distinct dependencies: build-time vs. run-time, specific
 versions</li>
-<li>Port ncurses, dselect and apt, so that we can make a binary
-distribution</li>
+<li>Port apt, so that we can make a binary distribution</li>
 <li>Infrastructure for daemons and cron jobs</li>
 <li>Support virtual packages (Provides, Replaces)</li>
 <li>Pseudo-packages for software that is already installed on the host
@@ -28,7 +27,6 @@ basic optimization flags are used (e.g. <tt>-O2</tt>)</li>
 <li>Make it run on older Perl versions</li>
 <li>Support other Unices</li>
 <li>Manage info and other documentation</li>
-<li>Support for dpkg preinst/postinst/prerm scripts</li>
 <li>Support for dpkg configuration file handling</li>
 </ul>
 
