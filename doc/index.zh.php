@@ -1,11 +1,11 @@
 <?
 $title = "";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/04 05:05:24';
+$cvs_date = 'Date: 2004/03/07 01:53:45';
 include_once 'nav.inc';
 $fsroot = $root = '../';
 include_once '../header.inc'; 
-?><h1>Fink － 文档</h1><p>Generated from <i>$Id: index.zh.php,v 1.3 2004/03/05 15:55:24 fingolfin Exp $</i></p>
+?><h1>Fink－文档</h1><p>Generated from <i>$Id: index.zh.php,v 1.4 2004/03/07 02:16:07 jeff_yecn Exp $</i></p>
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。

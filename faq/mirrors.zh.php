@@ -2,7 +2,7 @@
 
 $title = "常见疑问（F.A.Q.） - Mirrors";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/03 05:20:03';
+$cvs_date = 'Date: 2004/03/07 01:55:45';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"upgrade-fink.php?phpLang=zh\" title=\"升级 Fink （解决特定版本的问题）\">\n\t<link rel=\"prev\" href=\"relations.php?phpLang=zh\" title=\"与其它项目的关系\" />";
 
 include_once "header.zh.inc"; 

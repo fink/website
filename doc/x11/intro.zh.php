@@ -2,7 +2,7 @@
 
 $title = "运行 X11 - 介绍";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/05 03:26:57';
+$cvs_date = 'Date: 2004/03/07 01:55:46';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"history.php?phpLang=zh\" title=\"历史\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\" />";
 
 include_once "header.zh.inc"; 
@@ -12,7 +12,7 @@ include_once "header.zh.inc";
     <h2><a name="def-x11">1.1 什么是 X11？</a></h2>
       
       <p>
-<a href="http://www.x.org/">X Window 系统</a>版本 11，简称 X11，是一个具有对网络透明特性的客户／服务器架构的图形显示系统。
+<a href="http://www.x.org/">X Window 系统</a>版本 11，简称 X11，是一个对网络透明的客户／服务器架构的图形显示系统。
 它支持应用程序在你的屏幕上绘制象素，线条，文字，图象等等。
 X11 还包括一些其它的辅助的函数库，使得它可以容易地绘制用户界面，例如：按钮，文本输入区等等。</p>
       <p>

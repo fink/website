@@ -1,8 +1,8 @@
 <?
 
 $title = "用户指南 - 升级";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 13:02:38';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/03/07 01:55:45';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"conf.php?phpLang=zh\" title=\"Fink 配置文件\">\n\t<link rel=\"prev\" href=\"packages.php?phpLang=zh\" title=\"安装软件包\" />";
 
 include_once "header.zh.inc"; 

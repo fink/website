@@ -2,7 +2,7 @@
 
 $title = "常见疑问（F.A.Q.） - 关系";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/03 05:20:03';
+$cvs_date = 'Date: 2004/03/07 01:55:45';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"常见疑问（F.A.Q.） Contents\">\n\t<link rel=\"next\" href=\"mirrors.php?phpLang=zh\" title=\"Fink 镜像\">\n\t<link rel=\"prev\" href=\"general.php?phpLang=zh\" title=\"一般性问题\" />";
 
 include_once "header.zh.inc"; 

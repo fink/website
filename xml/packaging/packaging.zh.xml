@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.1 2004/03/05 03:26:56 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.2 2004/03/07 02:16:07 jeff_yecn Exp $</cvsid>
 
 <preface>
 <p>
@@ -30,57 +30,39 @@
 
 <section name="def1"><title>什么是软件包？</title>
 <p>
-A package is a piece of software that forms an atomic unit.
-A typical package contains an executable program, the data files it
-needs, message catalogs for internationalisation and documentation.
-In Fink, packages can exist in two forms: the package description
-and the ready-to-install binary package file.
+软件包是一个以原子状态（也就是说，它不可以被分割成更细小的可独立存在软件）存在的一个软件。
+典型的软件包包括一个可执行的程序，必须的数据文件，供国际化和文档使用的消息目录。
+在 Fink 中，软件包有两种形式：软件包描述文件和可安装二进制软件包文件。
 </p>
 <p>
-The package description is a human readable text file that contains
-everything needed to build a package, i.e. to create the binary
-package file.
-The information includes meta-data (like the package's name and a prose
-description of its purpose), the URL of the source code and the
-instructions necessary to configure, compile and wrap up the package.
-The description may be accompanied by a patch file.
+软件包描述文件是一个可阅读的纯文本文件，它包括了构建一个软件包（即，创建二进制软件包文件）所需要的全部信息。
+信息包括：元数据（比如软件包的名字，它的作用等），源代码的下载网址和应该如果配置，编译，封装软件包的指引。
+描述文件可以还会附有一个补丁文件。
 </p>
 <p>
-A binary package file is a file archive that contains the actual files
-that make up the package,
-i.e. executables, data files, message catalogs, libraries, include
-files, etc.
-The package file also contains some meta-data for the package.
-Installing a binary package mainly consists of unpacking its contents
-as it is already in an ready-to-use form.
-Since Fink builds on the dpkg package manager, the binary package
-files are in the dpkg format and have the extension .deb.
+二进制软件包文件是一个构成软件包的实际文件的压缩档。这些实际文件包括可执行程序，数据文件，信息目录，函数库，头文件等等。
+这种软件包问题还会包括软件包的一些元数据。
+安装一个二进制软件包的过程主要就是解压缩而已，因为它实际上已经出于立刻可以使用的状态了。
+由于 Fink 构建在 dpkg 软件包管理器上，二进制软件包文件采用 dpkg 的文件格式并具有 .deb 的扩展名。
 </p>
 </section>
 
 
-<section name="ident"><title>Identifying a Package</title>
+<section name="ident"><title>识别一个软件包</title>
 <p>
-A package is identified by three strings: the package name, the
-version and the revision.
-All of these may contain lower-case letters (a-z), numbers (0-9),
-dashes (-), plus signs (+) and dots (.).
-Other characters are not allowed.
-In particular, capital letters and underscores are not allowed.
+一个软件包由三个字串来标识：软件包名，版本号和修订版号。
+他们均由小写字母（a-z），数字（0-9），减号（-），加号（+）以及句点（.）组成。不允许使用其它的字符。
+特别地，不能使用大写字母和下划线。
 </p>
 <p>
-The package name is simply the name of the software, e.g. openssh.
-The version, also called the upstream version, is the version
-identifier of the original software package.
-It is okay to use letters in the version, e.g. 2.9p1.
-Both fink and dpkg know how to sort these correctly.
-The revision is a counter that is increased when the package
-description changes.
-It starts at 1 and should be reset to 1 when the upstream version
-changes.
-The revision must not contain dashes.
-The full name of a package is all three items concatenated, with
-dashes in between, e.g. openssh-2.9p1-2.
+软件包名就是软件的名称，例如：openssh。
+版本号，也称为上游版本号，是原始软件包的版本标识号。
+在版本号中可以使用字母，例如：2.9p1。
+fink 和 dpkg 都知道如何正确地给它们排序。
+修订版号是一个递增的反映软件包描述被修改的计数。
+它从 1 开始递增，让上游版本号发生改变以后，又回到 1 重新开始。
+修订版号不可以包括减号。
+完整的软件包名称是它们三项的连接，中间用减号分隔，例如：openssh-2.9p1-2。
 </p>
 </section>
 
@@ -88,66 +70,47 @@ dashes in between, e.g. openssh-2.9p1-2.
 
 
 <chapter filename="format">
-<title>Package Descriptions</title>
-<shorttitle>Package Descriptions</shorttitle>
+<title>软件包描述文件</title>
+<shorttitle>软件包描述文件</shorttitle>
 
-<section name="trees"><title>Tree Layout</title>
+<section name="trees"><title>文件树结构</title>
 <p>
-Package descriptions are read from the <code>finkinfo</code>
-directories below the <filename>/sw/fink/dists</filename> directory.
-The "Trees" setting in <filename>/sw/etc/fink.conf</filename> controls
-which directories are read.
-The name of package description files must be the full package name
-plus the extension ".info".
-Starting with fink 0.13.0, the use of the simple package name plus
-".info" is also supported in order to simplify package updates.
+软件包描述文件保存在 <filename>/sw/fink/dists</filename> 目录树内的 <code>finkinfo</code> 目录中。
+<filename>/sw/etc/fink.conf</filename> 中的 &quot;Trees&quot; 设置控制会控制应该读取那个目录。
+软件包描述文件的名字必须要软件包全名加上 &quot;.info&quot; 扩展名组成。
+从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 &quot;.info&quot; 来组成。
 </p>
 <p>
-The package description tree is organized with several levels of
-directories.
-The directories in top-down order:
+到软件包描述文件的目录树由几层目录组成。
+自上而下顺序为：
 </p>
 <ul>
-<li><code>dists</code> is where is starts. The <code>dists</code>
-directory is necessary for the Debian tools.</li>
-<li>The distribution. There is <code>stable</code>,
-<code>unstable</code> and <code>local</code>. The <code>local</code>
-directory is under the control of the local administrator/user. The
-<code>stable</code> and <code>unstable</code> directories are part of
-Fink.</li>
-<li>The tree. The <code>main</code> tree contains the bulk of the
-packages. Cryptographic software is kept in a separate tree,
-<code>crypto</code>, to make removal easy should it become
-necessary.</li>
+<li><code>dists</code> 是目录的起点。<code>dists</code>
+对 Debian 工具来说是必须的。</li>
+<li>发布类型。可以是 <code>stable</code>，
+<code>unstable</code> 和 <code>local</code>。<code>local</code>
+目录由本机的管理员／用户控制。<code>stable</code> 和 <code>unstable</code> 目录则是 Fink 的一部分。</li>
+<li>目录树。<code>main</code> 目录树包含软件包的实际部分。加密功能的软件被放到一个称为 <code>crypto</code> 的单独的目录树中，使得需要删除的时候会容易一些。</li>
 <li><code>finkinfo</code>
-vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
-the Fink package descriptions and patches, while
-<code>binary-darwin-powerpc</code> contains the <code>.deb</code>
-binary packages.</li>
-<li>Sections. The <code>main</code> tree is subdivided into thematic
-sections to make it manageable. The <code>crypto</code> tree is not
-divided into sections at the moment.</li>
+及 <code>binary-darwin-powerpc</code>。<code>finkinfo</code> 目录中包含了  Fink 软件包描述文件和补丁，而
+<code>binary-darwin-powerpc</code> 则包含了 <code>.deb</code>
+二进制软件包。</li>
+<li>分组。<code>main</code>目录树按类别被分成几组以方便管理。<code>crypto</code> 目录树目前没有被分组。</li>
 </ul>
 </section>
 
-<section name="format"><title>File Format</title>
+<section name="format"><title>文件格式</title>
 <p>
-The description files are simple lists of key-value pairs, also called
-'fields'.
-Each line starts with a key, terminated by a colon (:) and followed by
-the value, like this:
+描述文件只是键－值对的简单列表，一个键－值对有时也称为一个“字段”。
+每一行由一个以冒号（:）为结束的键开始，然后跟着是相对应的值，就象这样：
 </p>
 <codeblock>Key: Value</codeblock>
 <p>
-There are two notations for fields that must span multiple lines.
+当你需要把一个分成几行书写的时候，可以有两种标记办法。
 </p><p>
-The preferred notation is based on the here-document
-syntax in shell scripts.
-In this syntax, the first line consists of the key, followed by <code>&lt;&lt;</code>
-as the value.
-All following lines are treated as the actual value, until a line with
-just <code>&lt;&lt;</code> on it is encountered.
-The example from above now looks like this:
+推荐的方式是通常用于在 shell 脚本 here-document 语法。这种方法第一行是键，然后跟着以 <code>&lt;&lt;</code> 为它的取值。
+在这之后，在下一个 <code>&lt;&lt;</code> 之前的所有行会被视作实际的取值。
+下面是一个例子：
 </p>
 <codeblock>InstallScript: &lt;&lt;
 mkdir -p %i/share/man
@@ -156,15 +119,11 @@ mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</codeblock>
 <p>
-Indentation using this format is optional, but it can be used to
-improve readability.
+在这种格式下，缩进是可选的，但它可以改进可阅读性。
 </p><p>
-The here-document syntax can be nested. This is often used in
-a <code>SplitOff</code> or <code>SplitOff<em>N</em></code> field.
-These fields contain other fields (multiple lines), and this syntax
-allows these sub-fields to have multiple lines themselves.  The same
-terminator <code>&lt;&lt;</code> is used for the sub-here-document.
-Here is an example:
+这种 here-document 语法格式可以嵌套使用。这通常使用于 <code>SplitOff</code> 或 <code>SplitOff<em>N</em></code> 字段。
+这些字段包含其它字段（多行），因此通过这种语法可以使得子字段也可以具有多行。在子的 here-document 块中同样使用的 <code>&lt;&lt;</code> 作为终结符。
+下面是一个例子：
 </p>
 <codeblock>
 SplitOff: &lt;&lt;
@@ -175,91 +134,85 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </codeblock>
 <p>
-An older, deprecated, notation is crafted after the RFC 822 header folding
-method.
-A line that starts with whitespace is treated as a continuation of the
-previous line.
-Example:
+另外一种旧的，已经过时的标记方法是参照 RFC 822 数据包头的分行方式。
+以空白字符开始的行会被当作上一行的继续。
+例子：
 </p>
 <codeblock>InstallScript: mkdir -p %i/share/man
  make install prefix=%i mandir=%i/share/man
  mkdir -p %i/share/doc/%n
  install -m 644 COPYING %i/share/doc/%n</codeblock>
 <p>
-Note the mandatory indentation of the lines.
+注意上面续行中强制要求的缩进格式。
 </p><p>
-In both formats, empty lines and lines starting with a hash (#) are ignored.
-Keys (field names) are case-insensitive in Fink, so you can write
-<code>InstallScript</code>, <code>installscript</code> or
-<code>INSTALLSCRIPT</code> as you please.
-The first capitalization form is preferred for readability, though.
-Some fields take a boolean value - any of "true", "yes", "on", "1"
-(case-insensitive) are treated as true, all other values are treated
-as false.
+在两种格式中，空行或以井号（#）打头的行都会被忽略。
+键（字段名）在 Fink 中是区分大小写的，你可以随便使用
+<code>InstallScript</code>，<code>installscript</code> 或
+<code>INSTALLSCRIPT</code>。
+不过，建议使用首字母大写的方式以方便阅读。
+对于那些使用布尔值的字段－&quot;true&quot;，&quot;yes&quot;，&quot;on&quot;，&quot;1&quot;（不区分大小写），都会被认为是真值，而其它的值则会被认为是假值。
 </p>
 </section>
 
-<section name="percent"><title>Percent Expansion</title>
+<section name="percent"><title>百分号展开</title>
 <p>
-To make life easier, Fink supports a set of expansions that are
-performed on some fields.
-The available expansions are:
+为了简化一些书写，Fink 在一些字段中支持一套展开（替换）规则。
+目前支持的展开包括：
 </p>
 <itemtable labeld="" labelt="">
 <item><itemt>%n</itemt>
 <itemd>
 <p>
-the <em>n</em>ame of the current package
+当前软件包的名字（<em>n</em>ame）
 </p>
 </itemd></item>
 
 <item><itemt>%N</itemt>
 <itemd>
 <p>
-the <em>N</em>ame of the parent package (the same as %n unless within a
-<code>SplitOff</code>)
+父软件包的名字（<em>N</em>ame），除非在 <code>SplitOff</code> 中，否则应该和 %n 相同
 </p>
 </itemd></item>
 
 <item><itemt>%e</itemt>
 <itemd>
 <p>
-the package <em>e</em>poch
+软件包的额外版本标识（<em>e</em>poch）。它主要用于强行替代版本号的顺序，比方说你现在已经有一个 2.0Beta1 版，然后现在 2.0 版出来了，显然 2.0 版应该是一个更新的版本。但是 字符串比较的结果却是 2.0Beta1 &lt; 2.0。所以，要么你只能把 2.0 命名为 2.0Final，要么你使用 epoch 来强行制定版本的先后顺序。比方说：epcho 1, version 1.0 是一个比 epcho 0, version 2.0 更新的版本。
 </p>
 </itemd></item>
 
 <item><itemt>%v</itemt>
 <itemd>
 <p>
-the package <em>v</em>ersion
+软件包的版本号（<em>v</em>ersion）
 </p>
 </itemd></item>
 
 <item><itemt>%r</itemt>
 <itemd>
 <p>
-the package <em>r</em>evision
+软件包的修订版号（<em>r</em>evision）
 </p>
 </itemd></item>
 
 <item><itemt>%f</itemt>
 <itemd>
 <p>
-the <em>f</em>ull package name, i.e. %n-%v-%r
+完整的（<em>f</em>ull）软件包名，即 %n-%v-%r
 </p>
 </itemd></item>
 
 <item><itemt>%p, %P</itemt>
 <itemd>
 <p>
-the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>
+标识 Fink 安装位置的前缀（<em>p</em>refix）比如：<filename>/sw</filename>
 </p>
 </itemd></item>
 
 <item><itemt>%d</itemt>
 <itemd>
 <p>
-the <em>d</em>estination directory where the tree to be packaged is built, e.g.
+要打包的全套文件将被构建于的目标（<em>d</em>estination）目录，例如：
 <filename>/sw/src/root-gimp-1.2.1-1</filename>
 </p>
 </itemd></item>
@@ -267,23 +220,21 @@ the <em>d</em>estination directory where the tree to be packaged is built, e.g.
 <item><itemt>%D</itemt>
 <itemd>
 <p>
-the <em>D</em>estination for the parent package (the same as %d unless within a
-<code>SplitOff</code>)
+父文件包的目标（<em>D</em>estination）目录（除非是在 <code>SplitOff</code> 中，否则和 %d 相同）
 </p>
 </itemd></item>
 
 <item><itemt>%i</itemt>
 <itemd>
 <p>
-the full <em>i</em>nstall-phase prefix, equivalent to %d%p
+安装态（<em>i</em>nstall-phase）的完整路径前缀，等于 %d%p。安装态是指从源代码编译安装到临时位置后的状态，然后我们需要把它封装成 .deb 包。
 </p>
 </itemd></item>
 
 <item><itemt>%I</itemt>
 <itemd>
 <p>
-the <em>I</em>nstall prefix of the parent package, equivalent to %D%P (the same
-as %i unless within a <code>SplitOff</code>)
+父软件包的安装（<em>I</em>nstall）态路径前缀，等于 %D%P（除非是 <code>SplitOff</code> 中，否则应该和 %i 相等）
 </p>
 </itemd></item>
 

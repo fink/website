@@ -1,8 +1,8 @@
 <?
 
 $title = "用户指南 - 介绍";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 13:02:38';
+$cvs_author = 'Author: jeff_yecn';
+$cvs_date = 'Date: 2004/03/07 01:55:45';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\">\n\t<link rel=\"next\" href=\"install.php?phpLang=zh\" title=\"首次安装\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=zh\" title=\"用户指南 Contents\" />";
 
 include_once "header.zh.inc"; 
@@ -32,7 +32,7 @@ Fink 是 OS X 和 Darwin 上的开放源代码的 Unix 软件。
         <li>
           <p>
 互联网访问。
-要安装的源代码或可执行安装包都从互联网下载站点进行下载。
+要安装的源代码或可执行安装包都需要从互联网下载站点进行下载。
 </p>
         </li>
       </ul>
@@ -50,7 +50,7 @@ Fink 是 OS X 和 Darwin 上的开放源代码的 Unix 软件。
           <p>
 即使你不打算从源代码编译安装软件，安装开发工具仍然是个很好的主意。
 开发工具包安装的一些程序实际上是一些通用的命令行工具。
-后面你要安装的一些软件包可能要依赖于他们才可以运行。
+后面你要安装的一些软件包可能需要有他们才可以运行。
 </p>
         </li>
         <li>
