@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/29 17:42:13';
+$cvs_date = 'Date: 2003/01/30 17:01:43';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -119,19 +119,20 @@ myself using fink-installed software?</a></li>
 black icons only. What's wrong?</a></li>
 <li><a href="usage-packages.php#xmms-quiet">7.2 I get no sound from
 XMMS</a></li>
-<li><a href="usage-packages.php#xdarwin-start">7.3 Help! When I start
+<li><a href="usage-packages.php#nedit-window-locks">7.3 If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</a></li>
+<li><a href="usage-packages.php#xdarwin-start">7.4 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="usage-packages.php#no-server">7.4 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
-<li><a href="usage-packages.php#xfree-keymapping">7.5 I just upgraded to Mac
+<li><a href="usage-packages.php#no-server">7.5 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
+<li><a href="usage-packages.php#xfree-keymapping">7.6 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
-<li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
-<li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
-<li><a href="usage-packages.php#apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
-<li><a href="usage-packages.php#apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
+<li><a href="usage-packages.php#xterm-error">7.7 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
+<li><a href="usage-packages.php#libXmuu">7.8 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
+<li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
+<li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.82 2003/01/29 17:42:13 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.83 2003/01/30 17:01:43 alexkhansen Exp $</i></p>
 
 
 <?

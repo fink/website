@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.82 2003/01/29 17:42:13 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.83 2003/01/30 17:01:43 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -914,6 +914,9 @@ There have also been reports of XMMS crashing or freezing on 10.1.
 We don't have an analysis or a fix yet.
 </p>
 </answer></faqentry>
+
+<faqentry name="nedit-window-locks"><question><p>If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</p></question>
+<answer><p>This is a known problem that occurs with recent versions of nedit and lesstif on all platforms.  The workaround is to open a new window with File-->New, then open the next file you want to work on.</p></answer></faqentry>
 
 <faqentry name="xdarwin-start"><question><p>Help! When I start
 XDarwin, it immediately quits!</p></question>

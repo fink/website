@@ -109,17 +109,18 @@ myself using fink-installed software?</a></li>
 black icons only. What's wrong?</a></li>
 <li><a href="#usage-packages.xmms-quiet">7.2 I get no sound from
 XMMS</a></li>
-<li><a href="#usage-packages.xdarwin-start">7.3 Help! When I start
+<li><a href="#usage-packages.nedit-window-locks">7.3 If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</a></li>
+<li><a href="#usage-packages.xdarwin-start">7.4 Help! When I start
 XDarwin, it immediately quits!</a></li>
-<li><a href="#usage-packages.no-server">7.4 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
-<li><a href="#usage-packages.xfree-keymapping">7.5 I just upgraded to Mac
+<li><a href="#usage-packages.no-server">7.5 When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</a></li>
+<li><a href="#usage-packages.xfree-keymapping">7.6 I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
-<li><a href="#usage-packages.xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
-<li><a href="#usage-packages.libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
-<li><a href="#usage-packages.apple-x-bugs">7.8 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
-<li><a href="#usage-packages.apple-x-delete">7.9 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
+<li><a href="#usage-packages.xterm-error">7.7 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
+<li><a href="#usage-packages.libXmuu">7.8 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
+<li><a href="#usage-packages.apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
+<li><a href="#usage-packages.apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
 </ul><a name="general"><h2>1 General Questions</h2></a>
 
@@ -812,7 +813,10 @@ There have also been reports of XMMS crashing or freezing on 10.1.
 We don't have an analysis or a fix yet.
 </p></div></a>
 
-<a name="usage-packages.xdarwin-start"><div class="question"><p><b>Q7.3: Help! When I start
+<a name="usage-packages.nedit-window-locks"><div class="question"><p><b>Q7.3: If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</b></p></div>
+<div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of nedit and lesstif on all platforms.  The workaround is to open a new window with File--&gt;New, then open the next file you want to work on.</p></div></a>
+
+<a name="usage-packages.xdarwin-start"><div class="question"><p><b>Q7.4: Help! When I start
 XDarwin, it immediately quits!</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Don't Panic.
@@ -820,11 +824,11 @@ The Running X11 document now has an extensive <a href="http://fink.sourceforge.n
 section</a> for this common problem.
 </p></div></a>
 
-<a name="usage-packages.no-server"><div class="question"><p><b>Q7.4: When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</b></p></div>
+<a name="usage-packages.no-server"><div class="question"><p><b>Q7.5: When I try to start XDarwin I get the message &quot;xinit:  No such file or directory (errno 2):  no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> This has come up recently:  all of the <tt style="white-space: nowrap;">xfree86</tt> packages get built, but only <tt style="white-space: nowrap;">xfree86-base</tt> and <tt style="white-space: nowrap;">xfree86-base-shlibs</tt> are installed.  Check whether you have <tt style="white-space: nowrap;">xfree86-rootless</tt> and <tt style="white-space: nowrap;">xfree86-rootless-shlibs</tt> installed.  If not, then <tt style="white-space: nowrap;">fink install xfree86-rootless</tt> should do the trick.</p><p>If you do have it installed, then try <tt style="white-space: nowrap;">fink rebuild xfree86-rootless</tt>.  If that doesn't work, verify that you have <tt style="white-space: nowrap;">/usr/bin/X11R6</tt> in your PATH.  If not, then make sure you are sourcing init.csh (or init.sh) in your startup.</p></div></a>
 
 
-<a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q7.5: I just upgraded to Mac
+<a name="usage-packages.xfree-keymapping"><div class="question"><p><b>Q7.6: I just upgraded to Mac
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</b></p></div> 
@@ -852,15 +856,15 @@ You'll get a bunch of diagnostic messages in Terminal.app to help you
 sort this out.
 </p></div></a>
 
-<a name="usage-packages.xterm-error"><div class="question"><p><b>Q7.6: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
+<a name="usage-packages.xterm-error"><div class="question"><p><b>Q7.7: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt style="white-space: nowrap;">xfree86</tt> packages, then you can get an upgrade by the usual means (&quot;<tt style="white-space: nowrap;">fink selfupdate-cvs ; fink update-all</tt>&quot; for installation from source, <tt style="white-space: nowrap;">fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div></a>
 
-<a name="usage-packages.libXmuu"><div class="question"><p><b>Q7.7: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
+<a name="usage-packages.libXmuu"><div class="question"><p><b>Q7.8: When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</b></p></div>
 <div class="answer"><p><b>A:</b> 
 You are missing a file that is supposed to be installed by <tt style="white-space: nowrap;">xfree86-rootless-(threaded)-shlibs</tt>.  You should reinstall it using <tt style="white-space: nowrap;">fink reinstall xfree86-rootless-shlibs</tt> (<tt style="white-space: nowrap;">fink reinstall xfree86-rootless-threaded-shlibs</tt> if you are using the threaded XFree86 packages) for source, or <tt style="white-space: nowrap;">sudo apt-get install --reinstall xfree86-rootless-shlibs</tt> for binaries.</p></div>
 </a>
 
-<a name="usage-packages.apple-x-bugs"><div class="question"><p><b>Q7.8: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
+<a name="usage-packages.apple-x-bugs"><div class="question"><p><b>Q7.9: I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</b></p></div>
 <div class="answer"><p><b>A:</b> 
   First of all, if you previously had the &quot;threaded&quot; versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing.  Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
  </p><p>
@@ -869,7 +873,7 @@ You are missing a file that is supposed to be installed by <tt style="white-spac
   If you have general questions regarding Apple's X11 that are not really related to Fink, you may want to check <a href="http://www.lists.apple.com/x11-users">Apple's official discussion list on X11</a>. They also have also recommended that bugs in X11 be <a href="http://developer.apple.com/bugreporter">submitted to the Apple bug reporter</a>.
  </p></div>
 </a>
-<a name="usage-packages.apple-x-delete"><div class="question"><p><b>Q7.9: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
+<a name="usage-packages.apple-x-delete"><div class="question"><p><b>Q7.10: I want the delete key in Apple's X11.app to behave like that in XDarwin.</b></p></div>
 <div class="answer"><p><b>A:</b> Some users have reported that the behavior of the <tt style="white-space: nowrap;">delete</tt> key is different between XDarwin and Apple X11.  This can be rectified by adding lines to the appropriate X startup files:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>
 xterm*.deleteIsDEL: true
 xterm*.backarrowKey: false
@@ -884,4 +888,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.82 2003/01/29 17:42:13 alexkhansen Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.83 2003/01/30 17:01:43 alexkhansen Exp $</i></p></body></html>
