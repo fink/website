@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/30 12:00:30';
+$cvs_date = 'Date: 2003/07/14 23:25:21';
 
 $metatags = '';
 
@@ -9,6 +9,7 @@ include "header.inc";
 ?>
 
 <a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
+<p><b>Quick Summary: DO NOT INSTALL THIS UPDATE.</b></p>
                <p>
 Apple has released a patch to the December 2002 
 Developer Tools which includes gcc 3.3,
@@ -31,6 +32,12 @@ the new assembler program which the update installs, which may prevent
 certain Fink packages from being compiled at all if you install this
 update.  
 </p>
+<p><b>Generally, Fortran programs will break if you install the update;
+the breakage does not stop by simply switching back to gcc 3.1.</b>
+The Fink team is working on a workaround for this problem, but until it
+is ready, if you need Fortran-related programs you should not install
+the update.</p>
+
                 <a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
                <p>
 The <a href="http://fink.sourceforge.net">Fink</a>, 

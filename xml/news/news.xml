@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.63 2003/06/30 12:00:30 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.64 2003/07/14 23:25:21 dmrrsn Exp $</cvsid>
 
 <newsitem>
         <date>2003-06-26</date>
         <headline>Developer Tools Update.</headline>
                <body>
+<p><em>Quick Summary: DO NOT INSTALL THIS UPDATE.</em></p>
                <p>
 Apple has released a patch to the December 2002 
 Developer Tools which includes gcc 3.3,
@@ -29,6 +30,12 @@ the new assembler program which the update installs, which may prevent
 certain Fink packages from being compiled at all if you install this
 update.  
 </p>
+<p><em>Generally, Fortran programs will break if you install the update;
+the breakage does not stop by simply switching back to gcc 3.1.</em>
+The Fink team is working on a workaround for this problem, but until it
+is ready, if you need Fortran-related programs you should not install
+the update.</p>
+
                 </body>
 </newsitem>
 
