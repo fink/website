@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/10 15:44:39';
+$cvs_date = 'Date: 2001/09/27 22:10:36';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 

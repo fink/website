@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/10 15:44:39';
+$cvs_date = 'Date: 2001/09/27 22:10:36';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -111,6 +111,14 @@ either make sure that the other package is not used even when it is
 present or add it to the Depends field.
 If you want to offer the user both options, make two separate
 packages, e.g. wget and wget-ssl.
+</p>
+</td></tr><tr valign="top"><td>BuildDepends</td><td>
+<p>
+<i>Introduced in fink 0.9.0.</i>
+A list of dependencies that is applied at build time only.
+This can be used to list tools (e.g. flex) that must be present to
+build the packages, but which are not used at run time.
+Supports the same syntax as Depends.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
@@ -237,6 +245,18 @@ is run. <b>Only</b> use this when you know it is necessary,
 i.e. when the configure script fails with a "unknown host"
 message.
 </p>
+</td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
+<p>
+<i>Introduced in a post-0.9.0 CVS version.</i>
+A list of subdirectories.
+This does the same as UpdateConfigGuess, but is useful for packages
+that have outdated config.guess files in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <tt><nobr>.</nobr></tt> to update files in the build directory itself.
+</p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
 <p>
 A boolean value. If true, the files ltconfig and ltmain.sh in the
@@ -247,9 +267,20 @@ it. Some packages can be broken by overwriting the libtool scripts
 with mismatching versions. See the <a href="http://fink.sourceforge.net/darwin/libtool.php">libtool
 page</a> for further information.
 </p>
+</td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
+<p>
+<i>Introduced in a post-0.9.0 CVS version.</i>
+A list of subdirectories.
+This does the same as UpdateLibtool, but is useful for packages
+that have outdated libtool 1.3.x scripts in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <tt><nobr>.</nobr></tt> to update files in the build directory itself.
+</p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>
-<i>Introduced in a post-0.2.4 CVS version.</i>
 A boolean value.
 If true, the file <tt><nobr>Makefile.in.in</nobr></tt> in the subdirectory
 <tt><nobr>po</nobr></tt> is replaced with a patched version.

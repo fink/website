@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/10 15:44:39';
+$cvs_date = 'Date: 2001/09/27 22:10:36';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -17,7 +17,8 @@ Both the description format and the distribution policy are still
 evolving, so watch the "Last changed" info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
-policy used in post-0.2.6 development versions of Fink.
+policy used in post-0.9.0 development versions of the fink
+package manager.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -54,7 +55,7 @@ mailing list.
 <li><a href="reference.php#scripts">Scripts</a></li>
 <li><a href="reference.php#patches">Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.10 2001/09/10 15:44:39 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.11 2001/09/27 22:10:36 chrisp Exp $</i></p>
 
 
 <?

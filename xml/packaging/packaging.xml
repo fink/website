@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.10 2001/09/10 15:44:39 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.11 2001/09/27 22:10:36 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -14,7 +14,8 @@ Both the description format and the distribution policy are still
 evolving, so watch the "Last changed" info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
-policy used in post-0.2.6 development versions of Fink.
+policy used in post-0.9.0 development versions of the <tt>fink</tt>
+package manager.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -642,6 +643,17 @@ packages, e.g. wget and wget-ssl.
 </p>
 </itemd></item>
 
+<item><itemt>BuildDepends</itemt>
+<itemd>
+<p>
+<i>Introduced in fink 0.9.0.</i>
+A list of dependencies that is applied at build time only.
+This can be used to list tools (e.g. flex) that must be present to
+build the packages, but which are not used at run time.
+Supports the same syntax as Depends.
+</p>
+</itemd></item>
+
 <item><itemt>Provides</itemt>
 <itemd>
 <p>
@@ -803,6 +815,21 @@ message.
 </p>
 </itemd></item>
 
+<item><itemt>UpdateConfigGuessInDirs</itemt>
+<itemd>
+<p>
+<i>Introduced in a post-0.9.0 CVS version.</i>
+A list of subdirectories.
+This does the same as UpdateConfigGuess, but is useful for packages
+that have outdated config.guess files in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <code>.</code> to update files in the build directory itself.
+</p>
+</itemd></item>
+
 <item><itemt>UpdateLibtool</itemt>
 <itemd>
 <p>
@@ -817,10 +844,24 @@ page</link> for further information.
 </p>
 </itemd></item>
 
+<item><itemt>UpdateLibtoolInDirs</itemt>
+<itemd>
+<p>
+<i>Introduced in a post-0.9.0 CVS version.</i>
+A list of subdirectories.
+This does the same as UpdateLibtool, but is useful for packages
+that have outdated libtool 1.3.x scripts in several directories
+throughout the source tree.
+Previously you had to copy/move the files there manually in the
+PatchScript.
+With this new field you can just list the directories.
+Use <code>.</code> to update files in the build directory itself.
+</p>
+</itemd></item>
+
 <item><itemt>UpdatePoMakefile</itemt>
 <itemd>
 <p>
-<i>Introduced in a post-0.2.4 CVS version.</i>
 A boolean value.
 If true, the file <code>Makefile.in.in</code> in the subdirectory
 <code>po</code> is replaced with a patched version.
