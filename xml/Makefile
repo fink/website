@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.3 2001/07/15 20:13:53 chrisp Exp $
+# $Id: Makefile,v 1.4 2001/07/25 18:55:23 chrisp Exp $
 
 # generate all documents
 
-SUBDIRS = faq cvsaccess packaging usage install x11
+SUBDIRS = faq cvsaccess packaging fink-readme usage install x11
 
 all clean force:
 	@for i in $(SUBDIRS) ; do \
