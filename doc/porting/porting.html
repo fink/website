@@ -528,6 +528,18 @@ not the actual problem, but with great success anyway), you can use this fix
         for cmd in $cmds; do
 </pre>
 </li>
+<li>
+<b>The DESTDIR bug</b>:
+Certain packages which set DESTDIR and use libtool 1.4.2 have problems
+with relinking.
+The problems are discussed in these email messages:
+<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html</a>
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006244.html">http://mail.gnu.org/pipermail/libtool/2002-April/006244.html</a>
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006250.html">http://mail.gnu.org/pipermail/libtool/2002-April/006250.html</a>
+and a patch for the problem is discussed in these messages:
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006268.html">http://mail.gnu.org/pipermail/libtool/2002-April/006268.html</a>
+<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html</a>
+</li>
 
 
 
@@ -642,4 +654,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: porting.xml,v 1.10 2002/05/15 19:10:48 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: porting.xml,v 1.11 2002/05/22 02:20:58 dmrrsn Exp $</i></p></body></html>

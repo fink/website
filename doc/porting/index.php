@@ -1,7 +1,7 @@
 <?
 $title = "Porting";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/15 19:10:48';
+$cvs_date = 'Date: 2002/05/22 02:20:58';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="basics.php" title="Basics">';
 
@@ -44,7 +44,7 @@ a superset of Darwin.
 <ul>
 <li><a href="preparing.php#bash">4.1 The bash shell</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: porting.xml,v 1.10 2002/05/15 19:10:48 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: porting.xml,v 1.11 2002/05/22 02:20:58 dmrrsn Exp $</i></p>
 
 
 <?

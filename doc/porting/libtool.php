@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/15 19:10:48';
+$cvs_date = 'Date: 2002/05/22 02:20:58';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="next" href="preparing.php" title="Preparing for 10.2"><link rel="prev" href="shared.php" title="Shared Code">';
 
@@ -197,6 +197,18 @@ not the actual problem, but with great success anyway), you can use this fix
         save_ifs=&quot;$IFS&quot;; IFS='~'
         for cmd in $cmds; do
 </pre>
+</li>
+<li>
+<b>The DESTDIR bug</b>:
+Certain packages which set DESTDIR and use libtool 1.4.2 have problems
+with relinking.
+The problems are discussed in these email messages:
+<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003018.html</a>
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006244.html">http://mail.gnu.org/pipermail/libtool/2002-April/006244.html</a>
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006250.html">http://mail.gnu.org/pipermail/libtool/2002-April/006250.html</a>
+and a patch for the problem is discussed in these messages:
+<a href="http://mail.gnu.org/pipermail/libtool/2002-April/006268.html">http://mail.gnu.org/pipermail/libtool/2002-April/006268.html</a>
+<a href="http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html">http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html</a>
 </li>
 
 
