@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/17 09:20:23';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/07/18 07:54:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -189,7 +189,8 @@ as %i unless within a <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-the path where the p<b>a</b>tches can be found
+the path where the p<b>a</b>tches can be found.
+This expansion should be used only in the <code>PatchScript</code> field.
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
