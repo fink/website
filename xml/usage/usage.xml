@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <article filename="usage">
-<title>Fink 0.2.3 Usage</title>
+<title>Fink 0.2.4 Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.4 2001/07/08 12:31:09 chrisp Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.5 2001/07/31 16:09:09 chrisp Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
-<p>To use the software installed in Fink's directory hierarchy, including
+<p>
+To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
-(and some others) accordingly. Shell scripts are provided to do this
-for you. If you use tcsh, add the following to your .cshrc:</p>
+(and some others) accordingly.
+Shell scripts are provided to do this for you.
+If you use tcsh, add the following to your .cshrc:
+</p>
 <codeblock>source /sw/bin/init.csh</codeblock>
-<p>Editing .cshrc will only affect new shells (i.e. new Terminal
+<p>
+Editing .cshrc will only affect new shells (i.e. new Terminal
 windows), so you should also run this command in all Terminal windows
-that you opened before you edited the file.</p>
-<p>If you use a Bourne type shell (e.g. sh, bash, zsh), use
-/sw/bin/init.sh instead.</p>
+that you opened before you edited the file.
+You'll also need to run <code>rehash</code> because tcsh caches the
+list of available commands internally.
+</p>
+<p>
+If you use a Bourne type shell (e.g. sh, bash, zsh), use
+/sw/bin/init.sh instead.
+</p>
 <p>
 Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
 your path so you can use X11 when it is installed.
@@ -41,7 +50,6 @@ install required dependencies automatically, but will ask you for
 confirmation before it does so. Example:</p>
 <codeblock>fink install nedit
 
-Reading configuration...
 Reading package info...
 Information about 131 packages read.
 The following additional package will be installed:
@@ -101,9 +109,15 @@ interpreting the pattern itself.
 </section>
 
 <section><title>describe</title>
-<p>This command displays a description of the package you name on the
-command line. Note that only a small part of the packages currently
-have a description.</p>
+<p>
+This command displays a description of the package you name on the
+command line.
+Note that only a small part of the packages currently have a
+description.
+</p>
+<p>
+Aliases: desc, description, info
+</p>
 </section>
 
 <section><title>fetch</title>
@@ -145,8 +159,11 @@ default settings back.</p>
 </section>
 
 <section><title>configure</title>
-<p>Reruns the Fink configuration process. This will let you change your mirror
-sites settings, among others.</p>
+<p>
+Reruns the Fink configuration process.
+This will let you change your mirror sites and proxy settings, among
+others.
+</p>
 </section>
 
 <section><title>Further Questions</title>

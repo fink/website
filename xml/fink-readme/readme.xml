@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <article filename="readme">
-<title>Fink 0.2.3 ReadMe</title>
+<title>Fink 0.2.4 ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.xml,v 1.1 2001/07/25 18:55:23 chrisp Exp $</cvsid>
+<cvsid>$Id: readme.xml,v 1.2 2001/07/31 16:09:09 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -20,7 +20,7 @@ are included with this distribution, everything else is downloaded off
 the Internet.
 </p>
 <p>
-This is version 0.2.3, a development release.
+This is version 0.2.4, a development release.
 It has rough edges everywhere, and lacks lots of useful features.
 The package list is also quite short. You're walking on thin ground.
 It could easily break your system (although it hasn't broken mine to
