@@ -1,18 +1,18 @@
 <?
-/* $Id: nav.fr.inc,v 1.4 2004/03/24 18:15:00 dmrrsn Exp $ */
+/* $Id: nav.fr.inc,v 1.5 2004/03/24 18:29:08 dmrrsn Exp $ */
 
 $section = "documentation";
 $navbox = array(
-  "doc/index.php", "Documentation",
-  "doc/users-guide/index.php", "Guide utilisateur",
-  "doc/x11/index.php", "Utilisation de X11",
-  "doc/bundled/install.php", "Installation",
-  "doc/bundled/usage.php", "Utilisation",
-  "doc/readme.php", "ReadMe",
-  "doc/cvsaccess/index.php", "Accès CVS",
-  "doc/porting/index.php", "Portage",
-  "doc/packaging/index.php", "Construction de paquets",
-  "doc/multilingual/index.php", "Internationalisation"
+  "doc/index.php?phpLang=fr", "Documentation",
+  "doc/users-guide/index.php?phpLang=fr", "Guide utilisateur",
+  "doc/x11/index.php?phpLang=fr", "Utilisation de X11",
+  "doc/bundled/install.php?phpLang=fr", "Installation",
+  "doc/bundled/usage.php?phpLang=fr", "Utilisation",
+  "doc/readme.php?phpLang=fr", "ReadMe",
+  "doc/cvsaccess/index.php?phpLang=fr", "Accès CVS",
+  "doc/porting/index.php?phpLang=fr", "Portage",
+  "doc/packaging/index.php?phpLang=fr", "Construction de paquets",
+  "doc/multilingual/index.php?phpLang=fr", "Internationalisation"
 );
 
 ?>
