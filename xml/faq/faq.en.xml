@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.39 2004/11/29 04:41:55 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.40 2004/12/02 16:41:59 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1129,14 +1129,15 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing <filename>stddef.h</filename>, <filename>wchar.h</filename>, or <filename>crt1.o</filename>. Where do I find them?</p>
+        <p>I get messages saying that I'm missing <filename>stddef.h</filename>, <filename>wchar.h</filename>, or <filename>crt1.o</filename>, or that my "C compiler cannot create executables".</p>
       </question>
       <answer>
-        <p>These headers, and many others, are provided by the DevSDK package of
+        <p>Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
         the Developer Tools. Check whether
         <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your
         system. If not, then run the Dev Tools Installer again, and install
         the DevSDK package using a Custom Install.</p>
+	<p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies">
