@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2001/11/18 13:35:41 $';
+$cvs_date = '$Date: 2001/11/18 14:00:19 $';
 
 include "header.inc";
 ?>
@@ -33,6 +33,7 @@ Fink (in alphabetical order):</p>
 <h2>Occasional Contributors</h2>
 
 <ul>
+<li>Bill Bumgarner</li>
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Jake Goulding</li>
@@ -43,6 +44,7 @@ Fink (in alphabetical order):</p>
 <li>Paul Swenson</li>
 <li>Aaron Voisine</li>
 <li>Tom Zerucha</li>
+<li>Sasha Zucker</li>
 </ul>
 
 <p>If I forgot to list someone, please forgive me and let me know you
