@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/29 06:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -294,6 +294,5 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=fr">6. Utilisation de l'outil fink en ligne de commande</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

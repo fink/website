@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/26 16:54:28';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 
@@ -168,20 +168,14 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    使用指定的代码树来调用 dpkg-scanpackages(8) 命令。
 </p>
     
-    <h2><a name="checksums">6.19 checksums</a></h2>
-      
-      <p>
-   验证 <code>/sw/src</code>　目录中所有可以验证的压缩档的 MD5 摘要。
-</p>
-    
-    <h2><a name="cleanup">6.20 cleanup</a></h2>
+    <h2><a name="cleanup">6.19 cleanup</a></h2>
       
       <p>
    删除所有已经有新版本的失效的软件包文件（.info, .patch, .deb）。
    这会释放出大量的磁盘空间。
 </p>
     
-    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.20 dumpinfo</a></h2>
       
       <p>注：仅对 fink CVS 0.20.0 之后版本有效。</p>
       <p>
@@ -199,6 +193,5 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     
   
 <? include_once "../../footer.inc"; ?>
-
 
 

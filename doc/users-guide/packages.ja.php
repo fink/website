@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/29 22:31:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 
@@ -257,6 +257,5 @@ X11 のインストールと使用の詳細は、
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=ja">4. Fink のアップグレード</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/29 06:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -235,6 +235,5 @@ Pour de plus amples informations sur l'installation et l'utilisation de X11, voi
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=fr">4. Mise à niveau de Fink</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/28 19:44:24';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 
@@ -137,6 +137,5 @@ The rest of this manual will show you how.
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=en">2. First Time Installation</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

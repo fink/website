@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/28 19:44:24';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -222,20 +222,14 @@ others.
    Calls dpkg-scanpackages(8) with the specified trees.
 </p>
     
-    <h2><a name="checksums">6.19 checksums</a></h2>
-      
-      <p>
-   Validates the MD5 digest of all tarballs in <code>/sw/src</code>, where possible.
-</p>
-    
-    <h2><a name="cleanup">6.20 cleanup</a></h2>
+    <h2><a name="cleanup">6.19 cleanup</a></h2>
       
       <p>
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
    This can reclaim large amounts of disk space.
 </p>
     
-    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.20 dumpinfo</a></h2>
       
       <p>
 	Note: not available until a CVS version of fink after 0.20.0.
@@ -258,6 +252,5 @@ others.
     
   
 <? include_once "../../footer.inc"; ?>
-
 
 

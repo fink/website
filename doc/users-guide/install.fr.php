@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/29 06:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -184,6 +184,5 @@ Quand vous aurez fini de définir votre environnement, allez au chapitre
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=fr">3. Installation de paquets</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

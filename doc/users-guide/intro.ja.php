@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - はじめに";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/29 22:31:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="install.php?phpLang=ja" title="初めてのインストール"><link rel="prev" href="index.php?phpLang=ja" title="ユーザーガイド Contents">';
 
 
@@ -114,6 +114,5 @@ Fink では、二つの選択肢があります。
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=ja">2. 初めてのインストール</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

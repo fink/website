@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/28 19:44:24';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -371,6 +371,5 @@ to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sourc
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=en">6. Using the fink Tool from the Command Line</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

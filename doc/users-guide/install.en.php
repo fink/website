@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/28 19:44:24';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -233,6 +233,5 @@ package management tools included in Fink.
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=en">3. Installing Packages</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

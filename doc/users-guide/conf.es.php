@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - fink.conf";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="usage.php?phpLang=es" title="Usando el Fink desde la línea de comando"><link rel="prev" href="upgrade.php?phpLang=es" title="Actualizando Fink">';
 
 
@@ -231,6 +231,5 @@ ClosestFirst - Buca la lista de espejos más cercanos (combina todos los espejos
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=es">6. Usando el Fink desde la línea de comando</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

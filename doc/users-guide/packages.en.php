@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/28 19:44:24';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -278,6 +278,5 @@ and Mac OS X document</a>.
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=en">4. Upgrading Fink</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

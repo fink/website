@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - アップグレード";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/29 22:31:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="conf.php?phpLang=ja" title="Fink 設定ファイル"><link rel="prev" href="packages.php?phpLang=ja" title="パッケージのインストール">';
 
 
@@ -91,6 +91,5 @@ Fink Commander を使用している場合、まず <a href="#bin">バイナリ�
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=ja">5. Fink 設定ファイル</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

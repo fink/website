@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/29 22:31:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -214,20 +214,14 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
 </p>
 
-<h2><a name="checksums">6.19 checksums</a></h2>
-
-<p>
-可能な限り、 <code>/sw/src</code> 内にある全ての tarball の MD5 を検証します。
-</p>
-
-<h2><a name="cleanup">6.20 cleanup</a></h2>
+<h2><a name="cleanup">6.19 cleanup</a></h2>
 
 <p>
 新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
 かなりのディスク容量が利用できるようになります。
 </p>
 
-    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.20 dumpinfo</a></h2>
       
       <p>
 	  注記: 0.20.0 以降の CVS 版より前は未対応
@@ -250,6 +244,5 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
     
 
 <? include_once "../../footer.inc"; ?>
-
 
 

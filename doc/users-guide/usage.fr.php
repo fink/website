@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/29 06:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -174,20 +174,14 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
    Lance dpkg-scanpackages(8) avec les arborescences spécifiées.
 </p>
     
-    <h2><a name="checksums">6.19 checksums - sommes de contrôle</a></h2>
-      
-      <p>
-   Valide les sommes de contrôle MD5 de toutes les archives tar dans <code>/sw/src</code>,  quand cela est possible.
-</p>
-    
-    <h2><a name="cleanup">6.20 cleanup - épuration</a></h2>
+    <h2><a name="cleanup">6.19 cleanup - épuration</a></h2>
       
       <p>
    Supprime les fichiers correspondants aux paquets obsolètes (.info, .patch, .deb) quand des versions plus récentes sont disponibles.
    Cela peut libérer une grande portion d'espace disque.
 </p>
     
-        <h2><a name="dumpinfo">6.21 dumpinfo - analyse des fichiers info</a></h2>
+        <h2><a name="dumpinfo">6.20 dumpinfo - analyse des fichiers info</a></h2>
       
      <p>
 	Note : disponible dans une version CVS de fink postérieure à la version 0.20.0.
@@ -209,6 +203,5 @@ Cela vous permet de changer les sites miroirs et les configurations proxy, entre
 
   
 <? include_once "../../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Actualizaciones";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
 
@@ -74,6 +74,5 @@ para obtener las descripciones actules y actualizar los paquetes restantes. Si u
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=es">5. El archivo de configuración de Fink</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

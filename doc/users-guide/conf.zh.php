@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink.conf";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/26 16:54:28';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:33';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
 
@@ -221,6 +221,5 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=zh">6. 在命令行使用 Fink 工具</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

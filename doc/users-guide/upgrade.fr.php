@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Mise à niveau";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/29 06:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2004/08/12 15:01:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink"><link rel="prev" href="packages.php?phpLang=fr" title="Installation de paquets">';
 
 
@@ -77,6 +77,5 @@ pour récupérer les descriptions de paquets et mettre à jour les autres paquet
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=fr">5. Fichier de Configuration de Fink</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 
