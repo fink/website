@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/18 16:43:52 $';
+$cvs_date = '$Date: 2001/02/21 09:21:05 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,6 +27,9 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-02-21: Fink is now available via CVS, so you can get the
+newest updates without waiting for the next release. Check out the <a
+href="fink/cvs.php">instructions</a>.</p>
 <p>2001-02-18: Version 0.1.5 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-02-04: There was a small (but fatal) bug in the
