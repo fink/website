@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 2004/11/10 16:32:30 rangerrick Exp $
+# $Id: Makefile,v 1.6 2004/11/24 05:37:49 babayoshihiko Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -16,7 +16,7 @@ DESTDIR = news
 STYLESHEET_WEBSITE = finknews.i18n.xsl
 STYLESHEET_RDF = finknews-rdf.i18n.xsl
 
-LANGUAGES_AVAILABLE = en de es fr zh
+LANGUAGES_AVAILABLE = en de es fr zh ja
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.i18n.common
 
