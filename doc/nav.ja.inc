@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.ja.inc,v 1.7 2004/03/24 22:36:02 babayoshihiko Exp $ */
+/* $Id: nav.ja.inc,v 1.8 2004/03/29 04:56:48 babayoshihiko Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -12,7 +12,8 @@ $navbox = array(
   "doc/cvsaccess/index.php?phpLang=ja", "CVS アクセス",
   "doc/porting/index.php?phpLang=ja", "ポート",
   "doc/packaging/index.php?phpLang=ja", "パッケージ化",
-  "doc/multilingual/index.php?phpLang=ja", "国際化"
+  "doc/multilingual/index.php?phpLang=ja", "国際化",
+  "doc/netiquette/index.php?phpLang=ja", "ネチケット"
 );
 
 ?>

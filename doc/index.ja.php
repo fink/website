@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/24 18:14:58';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/03/29 01:56:23';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.8 2004/03/24 18:14:58 dmrrsn Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.ja.xml,v 1.9 2004/03/29 01:56:23 babayoshihiko Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -58,6 +58,8 @@ Fink パッケージの作り方、メンテナンス方法。</li>
 <ul>
 <li><a href="multilingual/index.php">国際化ガイド</a> - 
 現在進行中のウェブサイト国際化に関するドキュメント</li>
+<li><a href="netiquette/index.php">メーリングリスト投稿時の注意</a> - 
+メーリングリストを快適に保つために</li>
 </ul>
 
 
