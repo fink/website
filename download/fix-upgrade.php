@@ -1,7 +1,7 @@
 <?
 $title = "Repairing the Upgrade Path";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/04/15 21:38:12 $';
+$cvs_date = '$Date: 2003/04/15 21:41:53 $';
 
 include "header.inc";
 ?>
@@ -21,7 +21,8 @@ Here is how to update in this situation:
 <li><p>Install an older version of the fink package manager, by running
 the following commands in a Terminal.app window:
 </p>
-<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.5.1/main/binary-darwin-powerpc/base/fink_0.11.1-10_darwin-powerpc.deb
+<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.5.1/\
+main/binary-darwin-powerpc/base/fink_0.11.1-10_darwin-powerpc.deb
 sudo dpkg -i fink_0.11.1-10_darwin-powerpc.deb
 rm fink_0.11.1-10_darwin-powerpc.deb</pre>
 <li><p>
