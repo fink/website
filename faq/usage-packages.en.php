@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/24 15:27:59';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/11/29 04:41:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
@@ -63,6 +63,7 @@ include_once "header.en.inc";
         xfree86-rootless</code>. If that doesn't work, verify that you have
         <code>/usr/bin/X11R6</code> in your PATH.</p></div>
     </a>
+    
     <a name="xterm-error">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.5: xterm fails with "dyld: xterm Undefined symbols: xterm undefined
         reference to _tgetent expected to be defined in

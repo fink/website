@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/24 15:27:59';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/11/29 04:41:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -360,8 +360,18 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.22: I can't seem to update Fink's version.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special
-        instructions</a> to follow under these circumstances.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If neither running <code>fink selfupdate</code> nor <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> updates you to a newer Fink release, then you may need to download a newer version of the <code>fink</code> package manually.  The relevant commands are:</p><ul>
+          <li><b>10.3.x:</b> (0.7.1 distribution)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+          <li><b>10.2.x:</b> (0.6.3 distribution)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+        </ul></div>
     </a>
     <a name="spaces-in-directory">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Can I put Fink in a volume or directory with a space in its
