@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.17 2004/10/21 08:48:47 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.18 2004/10/21 10:20:09 michga Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -557,7 +557,27 @@ compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
 <link url="http://fink.sourceforge.net/faq/">FAQ</link>.
-</p>
+      </p>
+      <p>
+For <code>fink</code> versions since 0.23.0 you can tell it to try to download
+pre-compiled binary packages, if available, instead of building them. Just pass
+the <xref chapter="usage" section="options">--use-binary-dist (or -b)
+option</xref> to <code>fink</code>. This can save you a lot of time. E.g.
+calling
+      </p>
+      <codeblock>fink --use-binary-dist install wget-ssl</codeblock>
+      <p>or</p>
+      <codeblock>fink -b install wget-ssl</codeblock>
+      <p>
+will first download all dependencies for wget-ssl that are available from the
+binary distribution and only build the remainder from source. This option can
+also be enabled permanently in the <xref chapter="conf">Fink configuration
+file</xref> (fink.conf) or by running the command <code>fink configure</code>.
+      </p>
+      <p>
+More details about the <code>fink</code> tool are available in the chapter 
+<xref chapter="usage">"Using the fink Tool from the Command Line"</xref>.
+      </p>
     </section>
     <section name="fink-commander">
       <title>Fink Commander</title>
@@ -736,8 +756,22 @@ That is, first use <code>dselect</code> or <code>apt-get</code> to get
 the latest versions of the packages that are available as binaries,
 then use <code>fink selfupdate</code> and <code>fink update-all</code>
 to get the current package descriptions and to update the remaining
-packages.  If you are using Fink commander, then follow the <xref section="bin">binary</xref> instructions, followed by those for <xref section="src">source</xref>.
-</p>
+packages.
+		</p>
+      <p>
+Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<xref chapter="usage" section="options">--use-binary-dist (or -b) option</xref>
+or in the <xref chapter="conf">Fink configuration file</xref>) both source and
+binary descriptions will be updated if you call <code>fink selfupdate</code>.
+In this case you don't need a separate <code>apt-get</code> call anymore.
+     </p>
+      <p>
+If you are using Fink Commander select Binary-&gt;Update descriptions to update
+the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
+versions. After that do Source-&gt;Selfupdate to download new package
+information files, and then Source-&gt;Update-all (see previous sections for
+details).
+      </p>
     </section>
   </chapter>
   <chapter filename="conf">
@@ -950,6 +984,34 @@ time. The default value is <em>curl</em>.
 <em>The application you chose as DownloadMethod MUST be installed!</em>
           </p>
         </li>
+        <li>
+          <p>
+            <em>SelfUpdateMethod:</em> point, rsync or cvs</p>
+          <p>
+Fink can use some different methods to update the package info files.
+<em>rsync</em> is the recommended setting, it uses rsync to download only
+modified files in the trees that you have enabled. Note that if you have
+changed or added to files in the stable or unstable trees, using rsync will
+delete them. Make a backup first. <em>cvs</em> will download using anonymous or
+:ext: cvs access from the fink repository. This has the disadvantage that cvs
+can not switch mirrors, if the server is unavailable you will not be able to
+update. <em>point</em> will download only the latest released version of the
+packages. It is not recommended as your packages may be quite out of date.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>UseBinaryDist:</em> boolean</p>
+          <p>
+Causes fink to try to download pre-compiled binary packages from the binary
+distribution if available and if the binary package is not already on the
+system. This can save a lot of installation time and it is therefore 
+recommended to set this option. Passing fink the 
+<xref chapter="usage">--use-binary-dist option</xref> has the same effect, 
+but only operates on that single fink invocation.
+<em>Only available in fink newer than version 0.23.0</em>.
+          </p>
+        </li>
       </ul>
     </section>
     <section name="mirrors">
@@ -1117,6 +1179,33 @@ qualified name with a version number (e.g. gimp-1.2.1) or with both version and 
 version and revision when they are not specified.  Others have different options.</p>
       <p>What follows is a list of the commands for the <code>fink</code> tool:</p>
     </section>
+    <section name="options">
+      <title>Global options</title>
+      <p>
+There are some options, which apply to all fink fink commands. If you 
+type <code>fink --help</code> you get the list of options:
+      </p>
+      <codeblock>
+-h, --help            - display this help text
+-q, --quiet           - causes fink to be less verbose, opposite of --verbose
+-V, --version         - display version information
+-v, --verbose         - causes fink to be more verbose, opposite of --quiet
+-y, --yes             - assume default answer for all interactive questions
+-b, --use-binary-dist - download pre-compiled packages from the binary 
+                          distribution if available
+      </codeblock>
+      <p>
+Most of these options are self-explanatory. They can also be set in the 
+<xref chapter="conf">Fink configuration file</xref> (fink.conf) if you want 
+to set them permanently and not just for that invocation of <code>fink</code>.
+      </p>
+      <p>
+The <code>--use-binary-dist</code> option causes <code>fink</code> to try to
+download pre-compiled binary packages from the binary distribution if available
+and if the binary package is not already on the system. (Only available in
+<code>fink</code> newer than version 0.23.0)
+      </p>
+    </section>
     <section name="install">
       <title>install</title>
       <p>The install command is used to install packages. It downloads,
@@ -1130,6 +1219,11 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
+      <p>
+If you add the <xref section="options">--use-binary-dist option</xref>
+<code>fink</code> will try to download binary packages, if available, instead 
+of building them. This can save a lot of installation time.
+      </p>
       <p>Aliases for the install command: update, enable, activate, use (most
 of these for historic reasons).</p>
     </section>
@@ -1151,6 +1245,10 @@ again. If you need the disk space, you can remove the .deb from the
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
       <codeblock>fink update-all</codeblock>
+      <p>
+The <xref section="options">--use-binary-dist option</xref> is also
+applicable here.
+      </p>
     </section>
     <section name="list">
       <title>list</title>
@@ -1260,6 +1358,9 @@ command is an installable .deb package file, which you can quickly
 install later with the install command. This command will do nothing
 if the .deb already exists. Note that dependencies are still
 <em>installed</em>, not just built.</p>
+      <p>
+The <xref section="options">--use-binary-dist option</xref> is applicable here.
+      </p>
     </section>
     <section name="rebuild">
       <title>rebuild</title>
@@ -1267,6 +1368,9 @@ if the .deb already exists. Note that dependencies are still
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via <code>dpkg</code>. Very useful
 during package development.</p>
+      <p>
+The <xref section="options">--use-binary-dist option</xref> is applicable here.
+      </p>
     </section>
     <section name="reinstall">
       <title>reinstall</title>
@@ -1294,6 +1398,10 @@ others.
 	directory tree for direct CVS updates.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
+      <p>
+I the <xref section="options">--use-binary-dist option</xref> is enabled
+the list of available packages in the binary distribution is also updated.
+      </p>
     </section>
     <section name="index">
       <title>index</title>
@@ -1325,6 +1433,10 @@ others.
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
    This can reclaim large amounts of disk space.
 </p>
+      <p>
+If the <xref section="options">--use-binary-dist option</xref> is enabled
+obsolete downloaded binary packages are also deleted.
+      </p>
     </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/21 08:48:47';
+$cvs_date = 'Date: 2004/10/21 10:20:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -189,7 +189,27 @@ compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
 <a href="http://fink.sourceforge.net/faq/">FAQ</a>.
-</p>
+      </p>
+      <p>
+For <code>fink</code> versions since 0.23.0 you can tell it to try to download
+pre-compiled binary packages, if available, instead of building them. Just pass
+the <a href="usage.php?phpLang=en#options">--use-binary-dist (or -b)
+option</a> to <code>fink</code>. This can save you a lot of time. E.g.
+calling
+      </p>
+      <pre>fink --use-binary-dist install wget-ssl</pre>
+      <p>or</p>
+      <pre>fink -b install wget-ssl</pre>
+      <p>
+will first download all dependencies for wget-ssl that are available from the
+binary distribution and only build the remainder from source. This option can
+also be enabled permanently in the <a href="conf.php?phpLang=en">Fink configuration
+file</a> (fink.conf) or by running the command <code>fink configure</code>.
+      </p>
+      <p>
+More details about the <code>fink</code> tool are available in the chapter 
+<a href="usage.php?phpLang=en">"Using the fink Tool from the Command Line"</a>.
+      </p>
     
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
       

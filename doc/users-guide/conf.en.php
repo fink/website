@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/10/21 08:48:47';
+$cvs_date = 'Date: 2004/10/21 10:20:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -215,6 +215,34 @@ application which tries to determine the closest server that has a
 certain file. The use of <b>axel</b> and <b>axelautomirror</b> are not recommended at this
 time. The default value is <b>curl</b>.
 <b>The application you chose as DownloadMethod MUST be installed!</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
+          <p>
+Fink can use some different methods to update the package info files.
+<b>rsync</b> is the recommended setting, it uses rsync to download only
+modified files in the trees that you have enabled. Note that if you have
+changed or added to files in the stable or unstable trees, using rsync will
+delete them. Make a backup first. <b>cvs</b> will download using anonymous or
+:ext: cvs access from the fink repository. This has the disadvantage that cvs
+can not switch mirrors, if the server is unavailable you will not be able to
+update. <b>point</b> will download only the latest released version of the
+packages. It is not recommended as your packages may be quite out of date.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>UseBinaryDist:</b> boolean</p>
+          <p>
+Causes fink to try to download pre-compiled binary packages from the binary
+distribution if available and if the binary package is not already on the
+system. This can save a lot of installation time and it is therefore 
+recommended to set this option. Passing fink the 
+<a href="usage.php?phpLang=en">--use-binary-dist option</a> has the same effect, 
+but only operates on that single fink invocation.
+<b>Only available in fink newer than version 0.23.0</b>.
           </p>
         </li>
       </ul>
