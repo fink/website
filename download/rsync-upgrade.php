@@ -1,7 +1,7 @@
 <?
 $title = "Switching to the Rsync Upgrade Method";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/10/13 01:06:14 $';
+$cvs_date = '$Date: 2003/10/13 01:07:49 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,7 @@ Use <code> tar xfz </code> to unpack the tarball, then <code>cd</code>
 into the directory it creates, and run the command
 <code>./inject.pl</code>
 </p>
-<p>That should install the latest package manager.  Once it is installed,
+<p>That should install the latest package manager.  After it is installed,
 running the command <code>fink selfupdate-rsync</code> will switch you
 to the new method.  Once you have switched, you can do subsequent updates
 with the simple command <code>fink selfupdate</code>
