@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/05/04 13:55:13 $';
+$cvs_date = '$Date: 2004/06/15 02:27:40 $';
 
 include "header.inc";
 ?>
@@ -144,6 +144,7 @@ this list.</p>
 <li>Tim Seufert</li>
 <Li>Paul Swenson</li> 
 <li>Patrick Tescher</li> 
+<li>Chris Turkel (<i>zizban</i>)</li>
 <li>Andrei Verovski</li> 
 <li>Aaron Voisine</li> 
 <li>Dominik Westner</li> 
