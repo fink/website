@@ -274,7 +274,8 @@ include_once "header.inc";
 </xsl:template>
 
 <xsl:template match="cvsid">
-<xsl:comment><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p></xsl:comment>
+<xsl:text>
+</xsl:text><xsl:comment><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p></xsl:comment>
 </xsl:template>
 
 

@@ -239,8 +239,8 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <xsl:apply-templates/>
 </xsl:template>
 
-<xsl:template match="cvsid">
-<p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
+<xsl:template match="cvsid"><xsl:text>
+</xsl:text><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
 
 

@@ -167,7 +167,8 @@
 </xsl:template>
 
 <xsl:template match="cvsid">
-<hr/><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
+<hr/><xsl:text>
+</xsl:text><p><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
 
 
