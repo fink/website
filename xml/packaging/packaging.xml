@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.62 2004/02/13 07:38:27 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.63 2004/02/13 07:44:11 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -260,7 +260,7 @@ the <em>f</em>ull package name, i.e. %n-%v-%r
 <item><itemt>%p, %P</itemt>
 <itemd>
 <p>
-the <em>p</em>refix where Fink is installed, e.g. /sw
+the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>
 </p>
 </itemd></item>
 
@@ -268,7 +268,7 @@ the <em>p</em>refix where Fink is installed, e.g. /sw
 <itemd>
 <p>
 the <em>d</em>estination directory where the tree to be packaged is built, e.g.
-/sw/src/root-gimp-1.2.1-1
+<filename>/sw/src/root-gimp-1.2.1-1</filename>
 </p>
 </itemd></item>
 
@@ -305,7 +305,7 @@ the path where the p<em>a</em>tches can be found
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-the <em>b</em>uild directory, e.g. /sw/src/gimp-1.2.1-1/gimp-1.2.1 
+the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
 </p>
 <p>
 Note: Use this only when there is no other way. The build directory is the
@@ -831,8 +831,8 @@ which depend on <code>foo</code>.
 </p><p>
 Traditionally, the Fink packages for perl modules have the suffix 
 <code>-pm</code>, and have been build using the <code>Type: perl</code> 
-directive, which stores the perl module's files in /sw/lib/perl5 and/or
-/sw/lib/perl5/darwin.  Under the new policy, this storage location is only 
+directive, which stores the perl module's files in <filename>/sw/lib/perl5</filename> and/or
+<filename>/sw/lib/perl5/darwin<filename>.  Under the new policy, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
 being used to compile them.
 </p><p>
@@ -844,7 +844,7 @@ of a file with a suffix <code>.bundle</code>.
 A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.6.0</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-/sw/lib/perl5/5.6.0 and /sw/lib/perl5/5.6.0/darwin.  A new convention
+<filename>/sw/lib/perl5/5.6.0</filename> and <filename>/sw/lib/perl5/5.6.0/darwin</filename>.  A new convention
 is being introducted of using the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which will soon include 
@@ -1071,12 +1071,12 @@ In particular, the following should not be used:
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
-installation in /sw and the package gimp-1.2.1-1.</p>
-<p>In the <em>unpack phase</em> the directory /sw/src/gimp-1.2.1-1 is created
+installation in <filename>/sw</filename> and the package gimp-1.2.1-1.</p>
+<p>In the <em>unpack phase</em> the directory <filename>/sw/src/gimp-1.2.1-1</filename> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. /sw/src/gimp-1.2.1-1/gimp-1.2.1). Details can be controlled with
+(i.e. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
 fields.</p>
 <p>In the <em>patch phase</em> the source is patched so that it will
@@ -1088,9 +1088,9 @@ compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.</p>
 <p>In the <em>install phase</em> the package is installed to a temporary
-directory, /sw/src/root-gimp-1.2.1-1 (= %d). (Note the "root-" part.)
-All files that would normally be installed to /sw are installed in
-/sw/src/root-gimp-1.2.1-1/sw (= %i = %d%p) instead. See the
+directory, <filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
+All files that would normally be installed to <filename>/sw</filename> are installed in
+<filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
@@ -1384,7 +1384,7 @@ supports a special URL scheme for mirrors:
 look up the mirror setting for <em>mirror-name</em> in Fink's
 configuration, append the <em>relative-path</em> part and use that as
 the actual URL. The known <em>mirror-name<em>s are listed in
-/sw/lib/fink/mirror/_list, which is part of the fink or fink-mirrors
+<filename>/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
 package. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
@@ -1460,7 +1460,7 @@ caused by this, you would then use something like
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 <p>
 In the above example this would result in the tarball being stored under
-/sw/src/coolapp-1.2.3.tar.gz as one would expect.
+<filename>/sw/src/coolapp-1.2.3.tar.gz</filename> as one would expect.
 </p>
 </itemd></item>
 
@@ -2204,7 +2204,7 @@ Your package must provide each script in two variants: one for sh compatible she
 Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to /sw), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
 </section>
 
