@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.60 2004/02/13 07:17:59 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.61 2004/02/13 07:25:14 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1278,6 +1278,9 @@ For virtual packages it is allowed to list the names of the provided
 packages here; they will be handled appropriately.
 This fields also supports versioned dependencies like the Depends
 field, but not alternatives (wouldn't make sense).
+If a package is listed in its own Conflicts, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
 </p>
 <p>
 <em>Note:</em> Fink itself currently ignores this field.
@@ -1296,6 +1299,9 @@ Without this field, dpkg may generate errors when installing the
 package because files are still owned by the other package.
 It is also a hint that the two packages involved are genuine
 alternatives and one can be removed in favor of the other.
+If a package is listed in its own Replaces, it will be (silently)
+removed from that list. (Introduced in a post-0.18.2 CVS version of
+fink.)
 </p>
 <p>
 <em>Note:</em> Fink itself currently ignores this field.
