@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/08/28 17:54:44 $';
+$cvs_date = '$Date: 2004/08/28 18:07:13 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -24,9 +24,7 @@ if ($package == "-") {
 <?
 
 $q = "SELECT * FROM package WHERE name='$package' ORDER BY latest DESC";
-$qmaintainer = "SELECT * FROM package WHERE name='$package' AND latest=1";
 $rs = mysql_query($q, $dbh);
-$qs = mysql_query($qmaintainer, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
@@ -43,8 +41,6 @@ if (!$rs) {
   }
 
   $row = $lastrow;
-
-$maintainer = mysql_fetch_row($qs);
 
   it_start2();
   it_item2("Tree", "Stable", "Unstable");
@@ -77,11 +73,19 @@ $maintainer = mysql_fetch_row($qs);
   it_item("<p>Description:</p>", $desc);
   it_item("Section:", '<a href="'.$pdbroot.'section.php/'.$row[section].'">'.$row[section].'</a>');
 
+
+$qlatest = "SELECT * FROM package WHERE name='$package' AND latest=1";
+$qs = mysql_query($qlatest, $dbh);
+if (!$qs) {
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+} else {
+	$latest = mysql_fetch_array($qs);
+}
   // Get the maintainer field, and try to parse out the email address
-  if ($maintainer[8]) {
-	$maintainers = $maintainer[8];
+  if ($latest[maintainer]) {
+	$maintainers = $latest[maintainer];
 	preg_match("/^(.+?)\s*<(\S+)>/", $maintainers, $matches);
-    $maintainers = $matches[1];
+    $maintainer = $matches[1];
     $email = $matches[2];
   } else {
     $maintainer = "unknown";
@@ -89,7 +93,7 @@ $maintainer = mysql_fetch_row($qs);
   // If there was an email specified, make the maintainer field a mailto: link
   if ($email) {
     $email = str_replace(array("@","."), array("AT","DOT"), $email);
-    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainers.'">'.$maintainers.' &lt;'.$email.'&gt;'.'</a>');
+    it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.' &lt;'.$email.'&gt;'.'</a>');
 #    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
   } else {
     it_item("Maintainer:", '<a href="'.$pdbroot.'maintainer.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
