@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+<article filename="index" lang="ru">
+    <title>Fink - Документация  </title>
+    <shorttitle>Документация</shorttitle>
+    <cvsid>$Id: doc.ru.xml,v 1.1 2005/01/16 09:41:52 horsager Exp $</cvsid>
+    <preface>
+        <p> Это комплект различных документов, составленных для Fink. Некоторые
+            из них могут быть также полезны тем, кто использует Mac OS X или
+            Darwin без Fink и хочет узнать о переносе ПО Unix.</p>
+    </preface>
+    <section name="userdoc">
+        <title>Документация пользователя</title>
+        <p> Текущая документация пользователя Fink:</p>
+        <ul>
+            <li>
+                <varlink url="users-guide/index.php"
+                    varurl="users-guide/uguide.en.html">Руководство пользователя Fink 
+                </varlink> - инсталляция самого Fink, инсталляция пакетов,
+                обновление до новых версий Fink. Содержит инструкции
+                относительно исходного кода и бинарной версии.</li>
+            <li>
+                <varlink url="x11/index.php" varurl="x11/x11.en.html">Выполнение
+                    X11 в Darwin и Mac OS X</varlink> - концепции, инсталляция и запуск
+                (также предназначается  для пользователей Darwin и Mac OS
+                Xl в целом)</li>
+        </ul>
+        <p> Комплект документов, более полных, но отчасти
+            устаревших и более не поддерживаемых:</p>
+        <ul>
+            <li>
+                <varlink url="bundled/install.php"
+                    varurl="bundled/install.html">Инсталляция и
+                обновление</varlink> - инсталляция Fink и обновление до новой версии</li>
+            <li>
+                <varlink url="bundled/usage.php"
+                varurl="bundled/usage.html">Использование</varlink> - использование Fink
+                и инсталлированного ПО</li>
+            <li>
+                <varlink url="readme.php" varurl="readme.en.html">Fink
+                ReadMe</varlink> - файл ReadMe для дистрибуции на основе исходного кода </li>
+            <li>
+                <varlink url="cvsaccess/index.php"
+                    varurl="cvsaccess/cvs.en.html">Доступ CVS </varlink> - доступ к
+                хранилищу Fink CVS для получения последних исходных пакетов 
+                между выпусками версий</li>
+        </ul>
+    </section>
+    <section name="developerdoc">
+        <title>Документация разработчика</title>
+        <ul>
+            <li>
+                <varlink url="security/index.php"
+                    varurl="security/security.en.html">Пособие по политике
+                безопасности</varlink> - обязательное пособие для изучения теми, кто
+                поддерживает пакеты в Fink или хотел бы добавить собственные пакеты.</li>
+            <li>
+                <link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Использование
+                    Fink: пособие разработчика</link> (файл 2MB pdf) - начиная от презентации
+                на <link
+                    url="http://conferences.oreillynet.com/macosx2002/">Конференции O'Reilly
+                    Mac OS X </link> (также возможной как <link
+                    url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">файл PowerPoint
+                </link>) </li>
+            <li>
+                <varlink url="porting/index.php"
+                    varurl="porting/porting.en.html">Подсказки по переносу </varlink> -
+                заметки о переносе приложений Unix в Darwin</li>
+            <li>
+                <varlink url="quick-start-pkg/index.php"
+                    varurl="quick-start-pkg/quickstartpkg.en.html">Пособие по пакетированию
+                </varlink> - дополнение к учебнику пакетирования, которое 
+                дает реальные примеры и дает вводную информацию о пакетировании для начинающих.</li>
+            <li>
+                <varlink url="packaging/index.php"
+                    varurl="packaging/packaging.en.html">Учебник пакетирования
+                </varlink> - о создании и поддержке пакетов Fink</li>
+        </ul>
+    </section>
+    <section name="otherdoc">
+        <title>Другие документы</title>
+        <ul>
+            <li>
+                <varlink url="multilingual/index.php"
+                    varurl="multilingual/multilingual.en.html">Руководство по интернационализации 
+                </varlink> - материал о развитии деятельности по интернационализации веб-сайтов
+                </li>
+            <li>
+                <varlink url="netiquette/index.php"
+                    varurl="netiquette/netiquette.en.html">Сетевой этикет 
+                списков рассылки</varlink> - как наилучшим образом применять списки рассылки Fink</li>
+        </ul>
+    </section>
+</article>
