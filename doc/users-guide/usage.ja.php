@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/04/16 21:24:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 include_once "header.inc";
@@ -227,6 +227,13 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 かなりのディスク容量が利用できるようになります。
 </p>
 
+    <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
+      
+      <p>
+	Shows how Fink parses parts of a package's .info file.
+	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
+      </p>
+    
 
 
 <? include_once "footer.inc"; ?>

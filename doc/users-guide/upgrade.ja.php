@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - アップグレード";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/04/12 02:48:49';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/04/16 21:24:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="conf.php?phpLang=ja" title="Fink 設定ファイル"><link rel="prev" href="packages.php?phpLang=ja" title="パッケージのインストール">';
 
 include_once "header.inc";
