@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="en">
+  <title>Sao's Fink and X11 Pages	</title>
+  <shorttitle>Sao's Pages</shorttitle>
+  <cvsid>$Id: saos-pages.en.xml,v 1.1 2004/07/12 12:59:45 alexkhansen Exp $</cvsid>
+  <preface>
+    <p>
+Welcome to Sao's Fink and X11 pages.  These have been adapted from <link url="http://homepage.mac.com/sao1/fink/">Sao's place</link>, with his permission, as a service to the Fink community.</p>
+    <p>These pages are intended to supplement the other Fink documentation, and are written with the novice user in mind.</p>
+  </preface>
+  <chapter filename="essential">
+    <title>Essential reading</title>
+    <shorttitle>Essential</shorttitle>
+    <preface>
+      <p>You heard about Open Source, XFree86, Fink, XDarwin, Apple's X11 and you are a Unix beginner. Now you decided to give it a try and play with all these new things.  Many of them you may not understand...and you wish that the information available was written simply and clearly.
+</p>
+      <p>What I learned is that it's not an easy subject, and that if you have no prior Unix knowledge, it's even worse. The truth is, even these pages, written with beginners in mind, will still require a great effort to gain understanding, as it is not an easy process.
+</p>
+    </preface>
+    <section name="x11">
+      <title>X11</title>
+      <p>X11 is a graphics display system with a network-transparent client-server architecture.
+</p>
+      <p>It allows applications to draw pixels, lines, text, images, etc. on your screen. X11 also comes with additional libraries that let applications easily draw user interfaces, i.e. buttons, text fields, and so on. X11 is the de facto standard graphics system in the Unix world.</p>
+    </section>
+    <section>
+      <title>XFree86</title>
+      <p>XFree86 is an Open-Source implementation of X11. It's available free of charge and redistributable.                     </p>
+      <p>It runs on UNIX(R) and UNIX-like operating systems such as Linux, all of the BSD variants, Sun Solaris x86, Mac OS X (via Darwin), as well as other platforms like OS/2 and Cygwin.</p>
+      <p>XFree86 is:</p>
+      <ul>
+        <li><p>platform-independent</p></li>
+        <li><p>network-transparent</p></li>
+        <li><p>extensible                     </p></li>
+      </ul>
+      <p>It provides a client/server interface between display hardware (the mouse, keyboard, and video displays) and the desktop environment while at the same time providing both the windowing infrastructure and a standardized application interface (API).
+</p>
+      <p>It supports freedom of the user desktop, meaning that you can customize and personalize your desktops with the application of your choice, whether it be KDE, GNOME, Enlightenment, Blackbox, AfterStep, fvwm or twm.</p>
+    </section>
+    <section name="macosx">
+      <title>Mac OSX</title>
+      <p>Is a UNIX-based operating system produced by Apple Computer, and offers a unique combination of technical elements. The graphics engine in MacOS X is called Quartz and the look and feel is called Aqua.
+
+</p>
+      <p>The latest release from Apple, MacOS X 10.2 (Jaguar), integrates features from FreeBSD 4.4 and GCC 3.1 into Darwin, the Open Source base of Mac OS X, which means we can use key applications on top of a state-of-the art BSD UNIX implementation.
+</p>
+    </section>
+    <section name="darwin">
+      <title>Darwin</title>
+      <p>Darwin is the Open Source release of the Mac OS X operating system. Is available free of charge and with full source code. It does not contain Quartz, Aqua, or any other related technology.
+</p>
+    </section>
+    <section name="x11-xfree86">
+      <title>MacOS X and X11 (XFree86) work together</title>
+      <p>In X11, the top window, called the root window, is the size of the screen and contains all other windows and also the desktop background. As a stand alone graphical environment it has full control over the screen.
+
+</p>
+      <p>In MacOS X it is Quartz (the graphics engine) who has full control of the screen.
+</p>
+      <p><em>There are 2 ways for making these environments work together:</em></p>
+      <ol>
+        <li><em>Fullscreen (rooted mode)
+</em><p>The two environments take turns and each of them take full control of the screen. We see only one at a time, but it's very easy to switch between them.</p>
+</li>
+        <li>
+<em>Rootless mode</em>
+<p>Mixing the two environments. Letting Quartz take care of the desktop background, eliminating the X11 top window or root window. That's why this mode is called 'rootless'. This way eliminates the need to switch between two screens.
+</p></li>
+      </ol>
+    </section>
+    <section name="xdarwin">
+      <title>XDarwin</title>
+      <p>XDarwin provides the mechanism for switching which graphics system controls the screen. XDarwin is the name of the X server which runs on systems using Darwin or Mac OS X.
+</p>
+      <p>
+Double clicking on the XDarwin.app will show you a dialog window where you can choose between 'fullscreen' and 'rootless' mode.
+
+</p>
+      <p>In XDarwin Preferences, you can set XDarwin to always use the mode of your choice and disable the startup dialog.
+
+</p>
+      <p>Or to start from the terminal.app you can type either:
+
+</p>
+      <codeblock>startx -- -fullscreen</codeblock>
+      <p>or</p>
+      <codeblock>startx -- -rootless</codeblock>
+      <p>Through rootless mode, it allows Xclients to display windows on the Aqua desktop.
+
+</p>
+      <p>In fullscreen mode now we can choose different settings than Aqua for depth, size and screen refresh rate. 
+
+</p>
+      <p>The latest release added Xinerama support and the keymap setup is improved for international keyboards.
+</p>
+    </section>
+    <section name="apple-x11">
+      <title>Apple's X11 1.0 (Panther)</title>
+      <p>Apple released with Panther a custom "X11" implementation based on XFree86-4.3 which includes Quartz rendering and accelerated OpenGL. Apple's X11 for Mac OS X is compatible, fast and fully integrated with Mac OS X. You can activate X11 applications directly from the Dock, double-click applications directly in the Finder. It supports rootless and full screen mode, and includes the <code>quartz-wm</code>, libraries, basic utilities such as <code>xterm</code> and supports SSH tunneling.
+
+</p>
+      <p>For more info:
+</p>
+      <ul>
+        <li><link url="http://www.apple.com/macosx/features/x11/">Apple's X11 Page</link></li>
+        <li><link url="http://www.lists.apple.com/mailman/listinfo/x11-users">X11 for Mac OS X discussion list (x11-users)</link>
+</li>
+        <li><link url="http://developer.apple.com/qa/qa2001/qa1232.html">The F.A.Q. for X11 for Mac OS X</link>
+</li>
+        <li><link url="http://www.apple.com/macosx/x11/download/">Get X11 for Mac OS X</link>
+</li>
+        <li><link url="http://forums.macosxhints.com/showthread.php?s=&amp;threadid=8704">forums.macosxhints.com X11 FAQ</link>
+</li>
+      </ul>
+    </section>
+    <section name="fink-apple-x11-panther">
+      <title>Installing Apple's X11 and Fink in Panther</title>
+      <ul>
+        <li>Install first Apple's X11 1.0 from the Panther CD, XCode and the X11SDK.pkg from the Xcode Tools CD. You can also download X11 from:  Apple X11 web page.
+</li>
+        <li>Download and install <link url="http://fink.sourceforge.net/download/index.php">Fink "Binary" release</link>.
+And follow the indications on the Fink download page.<p>or</p></li>
+        <li>Download and install <link url="http://fink.sourceforge.net/download/srcdist.php">Fink "Source" release</link>.
+Installation and usage instructions are inside the distribution tarball.</li>
+      </ul>
+      <p>Since Fink version 0.15.0 or higher, you do not need to install <code>system-xfree86</code> anymore. Fink is capable of automatically determining your <code>system-xfree86</code> version if you don't already have any fink x11 packages installed.
+</p>
+    </section>
+    <section name="previous-fink-and-x11">
+      <title>Previous Fink installation and Apple's X11 1.0 in 10.3</title>
+      <p>If you installed Panther with the 'archive and install' method, and then installed Apple's X11 1.0 and the X11 SDK, be sure to install XCode from the XCode disk before upgrading Fink.</p>
+      <p>Then, running "fink selfupdate" should perform the upgrade for you. The latest version of the fink package manager will automatically detect which version of OS X and which version of gcc you have installed, and will adjust itself accordingly.</p>
+      <p>If you currently have an old system-xfree86 package of any kind installed, please run the following commands:</p>
+      <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43
+fink selfupdate; fink index</codeblock>
+    </section>
+    <section name="about-fink">
+      <title>About Fink</title>
+      <p>Fink is free, fast and reliable. It offers the easiest and most painless install of Xwindows on macOS X. Fink currently lists in its database 3247 packages in 22 sections you could install, including the unstable tree and the latest packages from CVS (as 18-01-04). And, thanks to the hard work of the Fink developers, the fink packages seem to get updated fairly quickly to follow the updates in the basic unix source. If you feel you don't need fink anymore, it's extremely easy to uninstall, as it keeps all the things at one place. Fink has support 24/7 through the fink-mailing lists. Give it a try and start installing at your heart's content. You can't go wrong with it, and you will learn things.</p>
+      <p>Fink developers are porting Open Source Unix software so it can run in MacOS X. To install the software Fink uses package management tools ported over from Linux:</p>
+      <p><code>apt-get</code>, <code>dselect</code>,</p>
+      <p>and it's own tool named ...'<code>fink</code>'</p>
+      <p><em>Using Fink to install packages</em></p>
+      <p>You can choose between two installing models:</p>
+      <ol>
+        <li><em>Pre-compiled binary packages</em>
+
+<p>When you install a binary package what you get is a:</p>
+
+<p><em>ready to run program</em></p>
+
+<p>Saving you the time for compiling.</p>
+
+<p>The tools used to install pre-compiled binary packages are:</p>
+
+<codeblock>apt-get</codeblock>
+<p>and</p>
+<codeblock>dselect</codeblock>
+
+<p>Apt-get or dselect only know about packages available as precompiled binary packages.</p>
+
+<p>The binary distribution of Fink uses the .deb package format. The packages are tailor-made for Mac OS X / Darwin and don't use the Debian source package format.</p></li>
+        <li><em>The source distribution</em>
+<p>To install packages from source with Fink, you need the Apple Developer Tools (Xcode) installed. Install Xcode from the Xcode Tools CD that came with Panther or after you register for free, you can get them from the:</p>
+
+<p><link url="http://connect.apple.com/">Apple Developer Connection</link></p> 
+
+<p>If you install from source you have the advantage to usually get newer software. You get to test the latest packages, and as Fink is a volunteer effort, you can then provide feedback through the fink mailing lists and report both success and failure to the package maintainer.</p>
+
+<p>When you buy commercial software you don't get to see the source code (companies treat it as a trade secret). In Open Source software, the source code is open for anyone to see and modify.</p>
+
+<p>With Fink, you can install packages from source, using its own tool named 'fink'</p>.
+
+<p>So, if you run in terminal:</p>
+
+<codeblock>fink install 'packagename'</codeblock>
+
+<p>Fink will figure out what dependencies are involved, ask if you would like to install them too, then after you say 'Yes' it will download everything.</p>
+
+<p>For each package, it will unpack it, apply any needed patches, auto-configure, compile, test, and install into a .deb file which gets installed for you by dpkg.</p>
+
+<p>Compared to binary installs it's a slow process -- but it can be much more reliable in many cases.</p></li>
+      </ol>
+    </section>
+    <section name="about-fink-commander">
+      <title>About FinkCommander</title>
+      <p>For those who want to stay away from the CLI, there is an excellent piece of software called FinkCommander, made by Steven Burr, that provides a GUI front end to Fink.</p>
+      <p><link url="http://finkcommander.sourceforge.net/">FinkCommander web site</link></p>
+      <p>"FinkCommander is a graphical user interface for the Fink software packaging system for Mac OS X. It provides an intuitive front-end to the Fink command-line tools for downloading and installing Unix software".</p>
+    </section>
+    <section name="installing-xfree86">
+      <title>Installing XFree86</title>
+      <p>XFree86 is a free X11 implementation that supports Darwin and Mac OS X. Fink will let you install XFree86 in any way you like. In Panther you can install it from the official Xfree86 Project, or install Apple's X11 implementation, based on Xfree86-4.3, or use Fink to install it's own Xfree86 packages.</p>
+      <ol>
+        <li><p><em>Fink's own XFree86 packages:</em></p><p>If you have Panther (10.3) installed, install the 'xfree86' package version -4.3.99.16-2 or later.
+</p><p>If you are still using Jaguar (10.2), you may either use the 'xfree86' package, or the 'xfree86-base' and 'xfree86-rootless' packages.</p><p>Whatever option you choose will install the XFree86 libraries, utilities, clients and data. This will let you run X11 applications and desktop environments.</p></li>
+        <li><p><em>XFree86 Project:</em></p><p>Is the organization which produces XFree86, a freely redistributable open-source implementation of the X Window System. The current 4.4.0 release is expected to be the basis for future releases of Apple's X11. XFree86 4.4.0 provides identical performance to Apple's X11 on Panther and is fully compatible with quartz-wm.</p><link url="ftp://ftp.xfree86.org/pub/XFree86/snapshots/4.3.99.902/binaries/Darwin-ppc-7.x">Prebuilt binaries for Panther</link><p>Download all *.tgz files, Xinstall.sh, and extract. Then run "sudo sh Xinstall.sh" from the directory you downloaded to. This will install everything for you.</p>
+</li>
+        <li><em>The Xonx Project:</em><p>"The XonX project is used by developers of XFree86 for Darwin and Mac OS X to share and distribute code and information. All of the code developed is committed to the XFree86 Project's CVS server".</p><link url="http://sourceforge.net/projects/xonx">A GUI installer of XFree86 4.3.0</link><p>is available only for Mac OS X 10.2.x (Jaguar). The binaries installed are identical to what is available directly from the XFree86 Project. However, this release is packaged in a Mac OS X friendly installer.</p></li>
+        <li><em>Apple's X11 implementation:</em>
+<p>If you have Panther (10.3) installed, you can install the release version of Apple's X11 based on Xfree86-4.3 which is available as optional install from the Panther CD. Under <code>fink-0.16.2</code>, you will also need to install the "X11SDK" package. Then Fink will create a system-xfree86 virtual package. If you're 'only' installing binary packages with <code>fink-0.17.0</code> or later installed, system-xfree86 no longer requires the "X11SDK".</p></li>
+      </ol>
+    </section>
+    <section name="setting-path">
+      <title>Setting your PATH environment variable</title>
+      <p>To use the software you installed with Fink, you must set your PATH environment variable. You can do this via the command:</p>
+      <codeblock>launch /sw/bin/pathsetup.sh</codeblock>
+      <p>If that doesn't work, you can configure it manually depending on the shell you are using:
+
+</p>
+      <ul>
+        <li>If you use <code>bash</code> (the default shell in Panther), or other variant of the Bourne style shell, like <code>sh</code> or <code>zsh</code>, add the following lines to your <code>.profile</code> or <code>.bash_profile</code> in your home directory:<codeblock>source /sw/bin/init.sh</codeblock><p>If you don't have a .profile file, you can create it by running from Terminal.app the following commands:</p><codeblock>cd </codeblock><p>(to go to your home directory)</p><codeblock>pico .profile</codeblock><p>(to open the text editor Pico, and create a file named .profile).  When the text editor opens, type:</p><codeblock>source /sw/bin/init.sh</codeblock><p>at the end of the line press Return once.  Then press Control-O, Return, and control-X to save the file and return to the prompt.  Now you should type </p><codeblock>rehash</codeblock><p>or close the terminal window and open a new one.</p></li>
+        <li>If you use <code>tcsh</code> (the default shell in Jaguar), add the following line to the <code>.cshrc</code> file in your home directory:<codeblock>source /sw/bin/init.csh</codeblock><p>If you don't have a <code>.cshrc</code> file, you can create it by running from Terminal.app the following commands:</p><p>cd (to go to your home directory)
+
+pico .cshrc (to open the text editor Pico, and create a file named .cshrc)
+
+When the text editor open, type:
+
+source /sw/bin/init.csh
+
+at the end of the line press Return once.
+
+Then press Control-O, Return, and control-X
+
+to save the file and return to the prompt.
+
+Now you should type rehash or close-open the terminal window.
+
+</p><p><em>Attention:</em></p><p>If you use <code>tcsh</code> and happen to have a <code>.tcshrc</code> file in your home directory, this file will be read instead of your <code>.cshrc</code> file. In this case, you can write </p><codeblock>source /sw/bin/init.csh</codeblock><p>in your <code>.tcshrc</code> file instead, or add </p><codeblock>source ~/.cshrc</codeblock><p>at the end of your <code>.tcshrc</code> file.</p></li>
+      </ul>
+      <p>The scripts also add <filename>/usr/X11R6/bin</filename> and <filename>/usr/X11R6/man</filename> to your PATH so you can use X11 when it is installed.</p>
+    </section>
+    <section name="window-manager">
+      <title>Window Manager</title>
+      <p>To work in X11 we need to install a window manager.
+
+</p>
+      <p>These are the programs that provide the window frames (title bar, close button, etc. also called "decorations"). Most window managers provide additional functionality, like pop up menus in the root window, docks or launch buttons and many of them allow you to customize their appearance with themes.
+
+</p>
+      <p>Apple's X11 includes <filename>quartz-wm</filename>, its own window manager. But, it is possible to run another window manager instead of <filename>quartz-wm</filename> with Apple's X11.
+
+</p>
+      <p>Refer to the <xref chapter="window-manager">Window Mgrs</xref> page to see which window managers are available for installation with Fink.</p>
+    </section>
+    <section name="xinitrc">
+      <title>The .xinitrc file</title>
+      <p>
+The <filename>.xinitrc</filename> file is a shell script that runs when you start the X11 system (or when it automatically starts for you).
+
+</p>
+      <p><em>This file contains the commands to define which applications are started when your X11 system boots up.</em>
+
+</p>
+      <p>By default, when no <filename>~/.xinitrc</filename> file is found, the system will run applications listed its default file.  Apple's <filename>X11.app</filename>, for example, starts the X server, launches the <filename>quartz-wm</filename> window manager, and opens one naked unconfigured <filename>xterm</filename> window. But if you have a <filename>~/.xinitrc</filename> file, Apple's <filename>X11.app  </filename>will start the X server and the applications you specify in your <filename>~/.xinitrc</filename> file, and then stay in the background, giving you a better control of the hundreds of possible startup parameters.
+
+</p>
+      <p>The <filename>~/.xinitrc</filename> file contains, for example, the commands to start the window manager, some xterms or a desktop environment (like GNOME or KDE), along with various command line options to control their behavior or appearance, such as setting sizes, background colors, fonts, etc.
+
+</p>
+      <p>If you want to run a bunch of apps at launch, add them to your <filename>.xinitrc</filename> file and add </p>
+      <codeblock>exec quartz-wm</codeblock>
+      <p>if you want them to run with Apple's window manager. If you want Apple's X11 to run with another window manager, add</p>
+      <codeblock>exec <em>wmanagername</em></codeblock>
+      <p>to your <filename>.xinitrc</filename> file.
+
+</p>
+      <p>What is typically done is to start applications in the background:</p>
+      <codeblock><em>appname</em> &amp;</codeblock>
+      <p>and then finally start the window manager in the foreground (i.e. without the <quote>&amp;</quote>. In this way, when exit from the window manager, the <filename>.xinitrc</filename> script exits and the X11 system goes away.
+
+</p>
+      <p>When the .xinitrc script exits, the X11 system will close down and allow you to logout.
+
+</p>
+      <p>You will find XFree86 xinitrc default file in:
+
+</p>
+      <codeblock>/private/etc/X11/xinit/xinitrc</codeblock>
+      <p>To use it as a starting point for your own .xinitrc file, copy the file to your home directory:
+
+</p>
+      <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
+      <p>Then, you can edit it with your own choices.
+</p>
+      <p><em>Some simple .xinitrc examples:</em></p>
+      <p><strong>To start autocutsel and the Windowmaker-wm:</strong></p>
+      <codeblock>source /sw/bin/init.sh
+
+
+autocutsel &amp;
+
+exec wmaker</codeblock>
+      <p><strong>To start an xterm and Apple's quartz-wm:</strong></p>
+      <codeblock>source /sw/bin/init.sh
+
+xterm -geometry 75x34+687+40 &amp;
+
+exec quartz-wm</codeblock>
+      <p><strong>To start Gnome:</strong></p>
+      <codeblock>source /sw/bin/init.sh
+
+exec gnome-session</codeblock>
+      <p><strong>To start KDE and the KDE window manager:</strong></p>
+      <codeblock>source /sw/bin/init.sh
+
+export KDEWM=kwin
+
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</codeblock>
+      <p>To start blackbox-wm and other apps. at launch:</p>
+      <codeblock>source /sw/bin/init.sh
+
+quartz-wm --only-proxy &amp;
+
+xterm -geometry 75x34+687+40 &amp;
+multi-gnome-terminal --geometry 75x34+687+40 &amp;
+
+wmCalClock &amp;
+wmMoonClock &amp;
+wmSpaceWeather &amp;
+gkrellm -w &amp;
+
+exec blackbox</codeblock>
+      <p>If you start <filename>quartz-wm</filename> with the option <filename>--only-proxy</filename> like in the above <filename>~/.xinitrc</filename> file, Apple's X11 will let you use another window manager, but the 'cut and paste' is handled by <filename>quartz-wm</filename>.  </p>
+      <p>XFree86-4.4 lets you use <filename>quartz-wm</filename> in this manner, too.  You don't get the cut-and-paste option, but you do get to use <filename>quartz-wm</filename>'s display acceleration (on Panther only).</p>
+    </section>
+    <section name="volunteer">
+      <title>Fink is a volunteer effort</title>
+      <p>There are packages in the Fink stable and unstable sections. The latter is called "unstable" because these packages are not well-tested.
+
+</p>
+      <p>As I mentioned before, <code>apt-get</code> or <code>dselect</code> only know about packages available as precompiled binary packages. Many packages are not available in precompiled form for a variety of reasons, one of them being that a package must be in the "stable" section of the latest point release to be considered.
+
+</p>
+      <p>One of the ways we all can help is by testing the packages from unstable. If nobody tested them, it will take longer for them to be upgraded to the stable section.
+</p>
+      <p>
+In order to 'test' a package you need:
+
+</p>
+      <ul>
+        <li>The Developer Tools installed
+</li>
+        <li>To compile it from source using 'fink install packagename'
+</li>
+        <li>The latest package descriptions
+</li>
+        <li>To configure Fink to use unstable
+</li>
+      </ul>
+      <p>
+Right now there are about 1412 packages (18-01-04) that need testing and feedback.
+
+
+</p>
+      <p><link url="http://fink.sourceforge.net/pdb/testing.php">List of Packages that need testing</link> 
+
+
+
+
+
+</p>
+      <p><em>To configure Fink to use unstable</em>
+
+</p>
+      <p>If you only want one or two specific packages:
+
+</p>
+      <p>You need to switch over to CVS updating, because rsync only updates the trees that are active in your fink.conf. If not present, add '<code>local/main</code>' to the Trees: line in <filename>/sw/etc/fink.conf</filename>, then run </p>
+      <codeblock>fink selfupdate </codeblock>
+      <p>to download the package description files.
+
+</p>
+      <p>Now copy the .info files and their associated .patch files from:
+
+</p>
+      <codeblock>/sw/fink/dists/unstable/main/finkinfo </codeblock>
+      <p>to 
+
+</p>
+      <codeblock>/sw/fink/dists/local/main/finkinfo</codeblock>
+      <p>Your package may depend on other packages which are also only in 'unstable' and you will have to move their .info and .patch files as well. After you move all of the files, then run</p>
+      <codeblock>fink index</codeblock>
+      <p>If you want Fink to use all of unstable:
+
+</p>
+      <p>edit /sw/etc/fink.conf and add '<code>unstable/main unstable/crypto</code>'
+
+to the beginning of the Trees: line, and then run the command:
+
+</p>
+      <codeblock>fink index</codeblock>
+      <p>As an example, I chose to configure fink to use all of unstable.  The Trees:line in my fink.conf file looks like this:
+
+
+
+</p>
+      <codeblock>Trees: local/main unstable/main unstable/crypto stable/main stable/crypto local/bootstrap</codeblock>
+    </section>
+    <section name="dedication">
+      <title>Dedication</title>
+      <p>
+It all started with MacOS X Public Beta. Suddenly, X became part of my daily vocabulary. MacOS X opened the world of Unix, and as an old Macintosh user who knew nothing about it, I started a journey of discovery, searching for tutorials throughout the Web.
+
+</p>
+      <p>Then, I found the "MacOS X Hints" Web site. The work done there by Rob Griffiths inspired and encouraged me. Through his excellent "XFree86 Installation Guide" I was introduced to the concept of "open source" and "Fink". In the end, I got so much from Rob's work and ideas that I felt I had to give something back -- thus, the making of this site.
+
+</p>
+      <p>Talking about inspiration, I came to realize how grateful I am to a bunch of people..."the Fink developers". In this time and age, where greed rules, I'm amazed at the great work they do. They work for free, dedicating their time and effort to the open source community. Time after time, I have gone to them with problems, and they have always patiently helped me find solutions. I have now installed more than 1,000 packages, something I could never have done without Fink. So, my gratitude and thanks go to...
+
+
+</p>
+      <p>...the Fink developers and Rob Griffiths.
+</p>
+    </section>
+  </chapter>
+  <chapter filename="fink-and-panther">
+    <title>Fink and Panther FAQ</title>
+    <shorttitle>Fink &amp; Panther</shorttitle>
+    <section name="selfupdate-rsync">
+      <title>Switching to the Rsync Upgrade Method</title>
+      <p>Since version 0.14.0 , the fink package manager offers a new update method, upgrading via rsync, as an alternative to the CVS upgrade method.
+
+</p>
+      <p>After you install the latest fink package manager, running the command:</p>
+      <codeblock>fink selfupdate-rsync</codeblock>
+      <p>will switch you to the new method.
+
+</p>
+      <p>Once you have switched, you can do subsequent updates with the simple command:
+
+</p>
+      <codeblock>fink selfupdate</codeblock>
+      <p><code>fink selfupdate</code> is the only documented method of updating package descriptions.
+
+</p>
+      <p>It is not advised to switch frequently between update methods; you should pick one method and stick to it. You can switch between rsync and cvs update methods, but it is not recommended, as it's not sure whether the anonymous 'cvs update method' will remain an option for fink users. It is possible that the ability for users to do 'anonymous cvs selfupdate's' will be removed from fink as soon as Fink gets more 'rsync' mirrors.
+
+</p>
+      <p>To change the selfupdate method edit the:
+
+<code>SelfUpdateMethod</code> field
+
+in the <filename>/sw/etc/fink.conf</filename> file.
+
+</p>
+      <p><code>SelfUpdateMethod</code> can be set to one of "cvs" " rsync " or "point" . Changes to this field are recognized the next time fink selfupdate is run, and the method listed in the configuration file will be used. For more info check </p>
+      <codeblock>man fink.conf</codeblock>
+      <ul>
+        <li>Firewall problem - Are you behind a firewall?
+<p>Does it allow rsync connections to pass through?</p> 
+<p>rsync uses port 873. You may also use a web proxy, if it allows CONNECT on port 873. See the rsync man page, and look for RSYNC_PROXY.</p>
+
+</li>
+        <li><p>The new rsync method only updates the trees which are mentioned in your <filename>fink.conf</filename> file, so a user who does a selfupdate with only 'stable' enabled will not get new unstable package descriptions.
+</p>
+</li>
+        <li><p>All CVS directories under /sw/fink will be removed when you run the rsync update method.</p>
+
+
+
+
+
+</li>
+      </ul>
+    </section>
+    <section name="postinstall">
+      <title>How do I get Fink to realize I'm running Panther?
+
+</title>
+      <p>Run:</p>
+      <codeblock>sudo /sw/lib/fink/postinstall.pl</codeblock>
+    </section>
+    <section name="xfree86">
+      <title>Fink xfree86 4.3.0 and Panther</title>
+      <p>
+
+4.3.0 is broken on Panther. It is suggested to use Apple's X11 instead, or you can install Fink's package <code>xfree86-4.3.99</code> or later. It should work fine on Panther.
+
+
+
+
+
+</p>
+    </section>
+    <section name="upgrading">
+      <title>Upgrading your previous Fink installation</title>
+      <p>
+
+If you installed Panther with the 'archive and install' method, and then installed Apple's X11 1.0 and the X11 SDK, be sure to install XCode from the XCode disk before upgrading Fink.
+
+</p>
+      <p>Then, running:
+
+</p>
+      <codeblock>fink selfupdate</codeblock>
+      <p>should perform the upgrade for you. The latest version of the <code>fink</code> package manager will automatically detect which version of OS X and which version of <code>gcc</code> you have installed, and will adjust itself accordingly.
+
+
+
+
+
+</p>
+    </section>
+    <section name="available-packages-panther">
+      <title>Which packages have been updated to work with 10.3?
+
+</title>
+      <p>Run <code>fink list</code> on 10.3.
+</p>
+    </section>
+    <section name="short-list">
+      <title>Short 'fink list'</title>
+      <p>
+
+You need to do a <code>fink selfupdate</code>and choose a method other than the point release (preferably <em>rsync</em>) and get the latest package descriptions. (you may need to run <code>fink index</code> afterwards)
+
+
+
+
+
+</p>
+    </section>
+    <section name="no-such-file">
+      <title>"no such file or directory" errors</title>
+      <p>
+
+The "no such file or directory" errors typically mean that something failed to build earlier on. Check further back in your output for a different error.
+
+
+
+
+
+</p>
+    </section>
+    <section name="rsync-trees">
+      <title>Which trees are updated by the rsync update method?</title>
+      <p>
+
+The rsync update method only updates those trees which are enabled in <filename>fink.conf</filename>; add <code>unstable/main</code> and <code>unstable/crypto</code> to your <code>Trees:</code> line in <filename>fink.conf</filename> and <code>fink selfupdate</code> will update them.
+
+
+
+
+
+</p>
+    </section>
+    <section name="wrong-dist">
+      <title>On Panther but fink.conf says "Distribution: 10.2"</title>
+      <p>Standard upgrade to Panther; Apple's X11, Xcode and X11 SDK installed. However, in fink.conf still have one line saying "Distribution: 10.2". Should it not be 10.3?  If you run 
+
+</p>
+      <codeblock>fink reinstall fink</codeblock>
+      <p>this should get corrected to 10.3.
+
+
+
+
+
+</p>
+    </section>
+    <section name="sources">
+      <title>How can I grab the source to a package?</title>
+      <codeblock>fink fetch <em>some_package</em></codeblock>
+      <p>The source should wind up in <filename>/sw/src</filename>.  The patches live in your <code>/sw/fink/dists/</code> directory.
+
+
+
+
+
+</p>
+    </section>
+    <section name="wrong-dist">
+      <p>Using Fink to install KDE on Panther
+
+Install Apple's X11 1.0 from the Panther CD, Xcode and the X11 SDK from the Xcode CD.
+
+Install Fink from:
+Fink Binary Installer 0.7.0
+or
+Fink Source Release 0.7.0
+
+Then, to install all of the official KDE packages with Fink, install:
+'bundle-kde' or 'bundle-kde-ssl'
+
+To install binaries, you can use apt-get:
+sudo apt-get update
+sudo apt-get install bundle-kde
+
+From source:
+fink selfupdate
+fink install bundle-kde
+
+If you are using Apple's X11 but want to use the KDE window manager, create a file called ".xinitrc" in your home directory, with the following lines:
+
+
+
+source /sw/bin/init.sh
+export KDEWM=kwin
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+
+
+
+-If you plan on running in rootless mode, you will likely want to disable desktop icons, or else the root window desktop will cover up your Aqua destkop. You can do this by starting the KDE control center, expanding the "Desktop" list, click "Behavior", and uncheck the "Enable icons on desktop" checkbox.
+
+-If you have problems to access the KDE control center in Apple's X11, choose minimize from the Apple's X11 Window menu after KDE has launched, the KDE desktop shrinks to the Dock and and you will be able to access KDE windows and menus with the mouse or keyboard.
+
+-If you try to run KDE apps after you upgraded to Panther and Fink 0.6.1 and get the following error messages:
+
+
+
+/sw/lib/libqt-mt.3.dylib undefined reference to
+_FT_Access_Frame expected to be defined in
+/usr/X11R6/lib/libfreetype.6.dylib
+
+
+
+Your best bet will be to recompile qt3. Run:
+
+fink rebuild qt3
+
+It takes about 3 hours, you will need the Xcode tools installed, including the X11 SDK.
+
+
+
+
+
+Installing Fink Binary packages in Panther
+
+1- Install Apple's X11 from the X11.pkg on Panther CD 3.
+2- Install Xcode and the "X11 SDK" from the Xcode CD.
+
+2- Install Fink:
+Download the installer disk image from:
+Fink 0.6.1 Binary Installer - 18 MB
+
+Don't Use dselect:
+The binary release uses binary packages. It comes with a graphical installer package for first-time installation and a package browser and selection app (dselect). 
+
+But, dselect is broken in Panther, and if you try to install via dselect, Fink will indicate that it needs X11, and will offer xfree86-base and system-xtools as options, and it could also exhibit a problem where all users get deleted from the netinfo database, and you become unable to log in, in the case you have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0 on Mac OS X 10.3 .
+
+For installing binary packages in Panther, you can use:
+
+the command apt-get
+or FinkCommander
+
+Important before you start installing packages:
+
+Check that the file /sw/etc/apt/sources.list has 10.3 in the deb lines:
+
+
+
+# Official binary distribution: download location for
+# packages from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for
+# updated packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+
+
+Then run:
+
+fink scanpackages (only needed the first time you do this)
+
+---------------------------
+
+- For the binary packages to become available in FinkCommander:
+
+Run "Update" followed by "Dist-Upgrade" (both in the Binary menu)
+
+Or Run:
+
+Binary:Update descriptions
+
+and then:
+
+File:Update Table
+
+---------------------------
+
+-Using apt-get to install binary packages:
+
+The most frequently used apt-get commands are 'update' and 'install' .
+
+To retrieve and scan the Packages.gz files, so that information about new and updated packages is available, run:
+
+sudo apt-get update
+
+To 'download and install' the especified deb package, run:
+
+sudo apt-get install packagename
+
+
+
+apt-get commands:
+update - Retrieve new lists of packages
+upgrade - Perform an upgrade
+install - Install new packages (pkg is libc6 not libc6.deb)
+remove - Remove packages
+source - Download source archives
+build-dep - Configure build-dependencies for source packages
+dist-upgrade - Distribution upgrade, see apt-get(8)
+dselect-upgrade - Follow dselect selections
+clean - Erase downloaded archive files
+autoclean - Erase old downloaded archive files
+check - Verify that there are no broken dependencies
+
+
+Running apt-get with the -s option (No-act. Perform ordering simulation) will give you a list of all the packages that will be installed.
+
+apt-get -s install packagename
+
+For more info on using apt-get run:
+
+apt-get --help
+
+----------------------------
+
+Summary
+
+Check that the file /sw/etc/apt/sources.list has 10.3 in the deb lines.
+fink scanpackages (only needed the first time you do this)
+sudo apt-get update
+sudo apt-get install packagename
+
+
+
+
+
+Updating Fink emacs21-xaw3d in Panther
+
+I had installed emacs21-xaw3d before the update to Panther. Then, in Panther when I wanted to 'update build' emacs21-xaw3d I got the following error:
+
+
+
+./emacs -q -batch -f list-load-path-shadows
+Fatal error (10).^Cmake[1]: *** Deleting file `emacs'
+make[1]: *** [emacs] Interrupt
+make: *** [src] Interrupt
+### execution of failed, exit code 2
+Failed: compiling emacs21-xaw3d-21.3-21 failed.
+
+
+
+Then, I changed and built fink emacs21 package and it compiled without any issues. I had already xaw3d built and was "seen and built in", and as far as I can tell the end result is the same as emacs21-xaw3d and it works quite well till now.
+
+
+
+
+
+</p>
+    </section>
+    <section name="panther-open-source">
+      <title>Panther default open source packages and Fink</title>
+      <p>Here is a list of a number of packages that are provided by Fink and are already included with the default install of 10.3 (some were in Jaguar as well):</p>
+      <codeblock>AutoConf
+AutoMake
+M4
+Bash
+Tcsh
+Zsh
+Emacs21
+VIM
+Gzip
+libiconv
+Ncurses
+Tar
+libxml2
+openssl
+postfix
+Perl
+python23
+tcl (but not tk?)
+X11 and freetype2</codeblock>
+      <p>Apple has added a number of new open source pacakges with each major release of OS X. But, keep in mind that sometimes the system versions lack important pieces, e.g. python on Jaguar, which was missing the headers, so you couldn't build anything against it.
+
+</p>
+      <p>[Sao] From what I know, fink's philosophy till now has been to keep providing a fink version of the package, even after Apple is providing their own. Maybe they don't trust Apple to be consistent in what they provide, like for example, when they used to provide wget, which fink relied on, and then at a certain point they switched to curl.
+
+</p>
+      <p>Many users will already have the "Fink" version of the library linked in to their packages, and upgrading becomes pretty tricky if they were to try to revert to Apple's version.
+
+</p>
+      <p>Generally, I tend to follow Fink on this, as Apple is not always good about keeping packages "current", and Fink does that more frequently.
+</p>
+    </section>
+    <section name="panther-open-source">
+      <p>
+
+</p>
+      <p>bus error after fileutils update
+
+There is a bug, apparently in 'gettext' when you run:
+
+'fink rebuild fileutils ; fink install fileutils'.
+
+After that, running the simple command "ls" results in a bus error.
+
+To fix it, run first:
+
+dpkg -r --force-depends fileutils
+
+so that the rebuild doesn't get killed by crashing mv or cp commands.
+
+An then:
+
+fink rebuild gettext
+
+Or
+
+sudo dpkg --remove fileutils
+fink reinstall gettext
+fink reinstall fileutils
+
+
+
+
+
+compiling qt3-3.2.2-1 fails
+
+
+
+ld: Undefined symbols: qInitImages_designercore()
+/usr/bin/libtool: internal link edit command failed
+......
+......
+Failed: compiling qt3-3.2.2-1 failed
+
+
+
+Remove the qt3 packages before you rebuild qt3. You may need to use force:
+
+sudo dpkg -r --force-depends qt3 qt3-dev qt3-shlibs
+
+Then:
+
+fink install qt3
+
+
+
+
+
+a root directory /sw exists
+
+"trying to install fink 0.6.1 after deleting all other fink files on os x 10.2.8. message "a root directory /sw exists. please see the read me file for update instructions, or for information on installing fink on a separate volume".
+
+You need to remove /sw if you are reinstalling Fink:
+
+sudo rm -rf /sw
+
+
+
+
+
+</p>
+    </section>
+    <section name="mv">
+      <title>The "trailing slash" or "mv" bug</title>
+      <codeblock>/sw/src/root-aalib-bin-1.4rc5-22/sw/()
+mv: rename /sw/src/root-aalib-1.4rc5-22/sw/bin/ to
+/sw/src/root-aalib-bin-1.4rc5-22/sw/bin/: No such file or directory
+### execution of mv failed, exit code 1
+Failed: installing aalib-bin-1.4rc5-22 failed</codeblock>
+      <p>In Panther in some cases the <code>mv</code> command appears to not be able to handle trailing slashes. This is caused by the Stuffit Pro kext.  Go to your Stuffit Pro Preferences in the "System Preferences" and desactivate "ArchiveViaRealName".
+
+
+
+
+
+
+</p>
+      <p>/sw/bin/pathsetup.command; exit
+
+If you get the following message in your Terminal.app:
+
+
+
+/sw/bin/pathsetup.command; exit
+Welcome to Darwin!
+[macme01:~] pro% /sw/bin/pathsetup.command; exit
+Your environment seems to be correctly
+set up for Fink already.
+(You can close this window now)
+logout
+
+
+Your terminal preferences contain the instruction to run pathsetup. You probably pressed the "Use Settings as Default" in the Terminal when fink had opened the window automatically.
+
+To fix it, open the file com.apple.Terminal.plist in:
+
+~/Library/Preferences
+
+and remove the entry for ExecutionString which probably reads like:
+
+&lt;key&gt;ExecutionString&lt;/key&gt;
+&lt;string&gt;/sw/bin/pathsetup.command&lt;/string&gt;
+
+to this:
+
+&lt;key&gt;ExecutionString &lt;/key&gt;
+&lt;string&gt;&lt;/string&gt;
+
+
+
+
+</p>
+    </section>
+    <section name="mv">
+      <title>Removing extra trees.</title>
+      <p>
+If you're running 10.3, you can remove both the <filename>/sw/fink/10.2</filename> and <filename>/sw/fink/10.2-gcc3.3</filename> directories to reclaim some space. If you are doing <code>selfupdate-cvs</code>, they will come back, however, whereas  <code>selfupdate-rsync</code> leaves them alone.</p>
+    </section>
+  </chapter>
+  <chapter filename="window-manager">
+    <title>Window Managers</title>
+    <shorttitle>Window Mgrs</shorttitle>
+    <preface>
+      <p>In X11, the window frames (title bar, close button, also called "decorations") are provided by a separate program, called the window manager. Most window managers provide additional functionality, like pop up menus in the root window, docks or launch buttons and some of them allow you to customize their appearance with themes. Visit their home pages to get a glimpse of how they look and study how the configuration files work. The following is a list of window managers that have been ported by Fink.</p>
+    </preface>
+    <section name="twm">
+      <title>TWM</title>
+      <p>Twm (Tab Window Manager, or sometimes Tom's Window Manager, after the principle author Tom LaStrange) provides titlebars, shaped windows, several forms of icon management, user-defined macro functions, click-to-type and pointer-driven keyboard focus, and user-specified key and pointer button bindings.
+
+</p>
+      <p>It has however been left behind by more recent window managers, making it something of mainly historical interest. It was for some time the only real choice of window manager, after taking over from the very simplistic uwm.
+
+</p>
+      <p>Nearly every window manager since has borrowed heavily from it, either directly, or indirectly through other window managers, such as fvwm. The source code is no longer maintained, but old TWM archives for various releases of X are available.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/twm.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://www.plig.org/xwinman/archive/twm/">Archive</link>
+
+</p>
+      <p><em>TWM is the default window manager for XFree86 and is also included with Apple's X11.</em>
+
+
+
+
+</p>
+    </section>
+    <section name="windowmaker">
+      <title>Windowmaker</title>
+      <p>
+
+Window Maker is an X11 window manager originally designed to provide integration support for the GNUstep Desktop Environment. In every way possible, it reproduces the elegant look and feel of the NEXTSTEP[tm] user interface. It is fast, feature rich, easy to configure, and easy to use. It is also free software, with contributions being made by programmers from around the world.
+
+</p>
+      <p>Window Maker includes compatibility options which allow it to work with other popular desktop environments, namely GNOME and KDE, and comes with a powerful GUI configuration editor, called WPrefs, which removes the need to edit text-based config files by hand.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/wmaker.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://windowmaker.org/">Web site</link> 
+</p>
+      <p><link url="http://www.windowmaker.org/documentation-userguide.html">User Guide</link>
+
+</p>
+      <p><em>Fink Package windowmaker:</em></p>
+      <p>Maintainer -- Max Horn
+
+
+
+
+</p>
+    </section>
+    <section name="enlightenment">
+      <title>Enlightenment</title>
+      <p>
+
+Enlightenment is a completely themeable, highly configurable Window Manager for the X Window System, traditionally used in Unix environments.
+
+</p>
+      <p>Its design goal is to be as configurable as possible - in look AND in feel. Enlightenment's current design aim is to become a desktop shell. That means it will manage your application windows, being able to launch applications, and also manage your files.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/enlightenment.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://www.enlightenment.org/pages/main.html">Web site</link> 
+</p>
+      <p><link url="http://www.enlightenment.org/pages/faq.html">FAQ
+</link></p>
+      <p><link url="http://www.enlightenment.org/pages/docs.html">Documentation</link>
+
+</p>
+      <p><em>Fink Package enlightenment:</em>
+
+</p>
+      <p>Maintainer -- N/A
+
+
+
+
+</p>
+    </section>
+    <section name="icewm">
+      <title>Icewm</title>
+      <p>Ithas been coded from scratch in C++ for performance and size and attempts to achieve the following goals:
+
+</p>
+      <ul>
+        <li>Feel good and fast to use, be simple and don't get in the way.</li>
+        <li>Default configuration should be fully usable without tweaking.</li>
+        <li>Mouse is optional.</li>
+        <li>Combine the best features of other wmanagers and GUIs.</li>
+        <li>Themes can customize the look, user can customize the feel.</li>
+      </ul>
+      <p>
+
+
+
+
+
+<link url="http://homepage.mac.com/sao1/fink/screenshots/icewm.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://icewm.sourceforge.net/">Web site
+</link></p>
+      <p><link url="http://icewmfaq.cjb.net/">FAQ</link> 
+
+</p>
+      <p><em>Fink Package icewm:</em>
+
+</p>
+      <p>Maintainer -- Jeffrey Whitaker
+
+
+
+
+</p>
+    </section>
+    <section name="afterstep">
+      <title>Afterstep</title>
+      <p>
+
+Originally based on the look and feel of the NeXTStep interface, it has evolved into its own creature, with interest expressed by GNUstep, to make AfterStep the window manager of choice for X11.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/after.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://www.afterstep.org/">Web site</link> 
+</p>
+      <p><link url="http://www.afterstep.org/FAQ/">FAQ</link> 
+</p>
+      <p><link url="http://www.malfunction.de/afterstep/ashow/overview.html">Overview</link> 
+
+</p>
+      <p><em>Fink Package afterstep:</em>
+
+</p>
+      <p>Maintainer -- Finlay Dobbie
+
+
+
+
+</p>
+    </section>
+    <section name="blackbox">
+      <title>Blackbox</title>
+      <p>Blackbox is that fast, light window manager you have been looking for without all those annoying library dependancies.  It's designed to be fairly small and minimal, making it particularly suited to less powerful computers.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/bb.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://blackboxwm.sourceforge.net/">Web site</link>
+</p>
+      <p><link url="http://bbtools.windsofstorm.net/">bbtools</link>
+
+</p>
+      <p><em>Fink Package blackbox:</em>
+
+</p>
+      <p>Maintainer -- Christian Swinehart
+
+
+
+
+</p>
+    </section>
+    <section name="sawfish">
+      <title>Sawfish</title>
+      <p>Sawfish is an extensible window manager using a Lisp-based scripting language --all window decorations are configurable and all user-interface policy is controlled through the extension language. This is no layer on top of twm, but a wholly new architecture.
+
+</p>
+      <p>User-configuration is possible either by writing Lisp code in a personal <filename>.sawfishrc</filename> file, or through the integrated customization system.
+
+
+
+</p>
+      <p><link url="http://sawmill.sourceforge.net/">Web site</link> 
+</p>
+      <p><link url="http://sawmill.sourceforge.net/FAQ.html">FAQ</link>
+</p>
+      <p><link url="http://sawmill.sourceforge.net/prog-manual.html">Manual</link>
+
+</p>
+      <p><em>Fink Package sawfish:</em>
+
+</p>
+      <p>Maintainer -- Daryl Anderman
+
+
+
+
+</p>
+    </section>
+    <section name="fvwm">
+      <title>Fvwm</title>
+      <p>Fvwm, developed by Robert Nation, was once dominant in the window manager stakes, especially in the Linux community. It borrows heavily from Tom LaStrange's famous twm window manager, which was the first ICCCM-compliant window manager to be written.
+
+</p>
+      <p>Fvwm was designed to minimize memory consumption, provide a 3-D look (similar to from Motif's mwm) and provide a simple virtual desktop. Functionality can be enhanced by the use of various modules.
+</p>
+      <p><link url="http://www.fvwm.org/">Web site</link> 
+</p>
+      <p><link url="http://www.fvwm.org/generated/FAQ.html">FAQ</link> 
+</p>
+      <p><link url="http://www.hpc.uh.edu/fvwm/archive/">Archive</link> 
+</p>
+      <p><link url="http://www.fvwm.org/generated/manpages/">manpages</link> 
+
+</p>
+      <p><em>Fink Packages fvwm and fvwm2:</em>
+
+</p>
+      <p>Maintainer -- Dave Morrison
+
+
+
+
+</p>
+    </section>
+    <section name="ion">
+      <title>Ion</title>
+      <p>Ion is a minimalist window manager. It doesn't rely on things like icons, title bars, window buttons, launch pads, and the like. It follows the premise that the window manager should be managing the windows, not the user. Window management is what it does best and it makes good use of desktop real estate without having to deal with issues like icons or taskbars.  Ion is an unusual kind of X11 window manager that brings a text-editorish, keyboard friendly user interface to window management. 
+
+</p>
+      <p>Ion was written as an experiment on a different kind of window management model and it tries to address the navigation problem by having the screen divided into frames that take up the whole screen and never overlap. Big displays have so much space that this should be convenient and smaller displays couldn't show more than one window at a time anyway.
+
+</p>
+      <p>Start up Ion, you get a single frame. Press F2 and it starts up a terminal. Press F3 and it prompts you for an application you want to start. You could type mozilla, for example, and start up the browser. Adding applications to a group it's done automatically, so now you have two applications open in the same frame, with tabs you can click on to switch between the two or you could also use the keystroke combination Alt-K-N to switch between them.
+
+</p>
+      <p>Now, just go to Mozilla and press Alt-F9. This will open a new workspace (a new frame in a new work area) and move Mozilla to that new location. In this case, it will be workspace 2. Then go to the terminal and press Alt-F9 again, and it will create workspace 3 and put it there. Now you can switch between these two workspaces with Alt-2 and Alt-3.
+
+</p>
+      <p>The frame layout is, of course, dynamic and different on each workspace. Given the tree instead of coordinate-based frame layout, moving between the frames can be conveniently done from the keyboard. As in PWM, the frames may have multiple clients attached.
+
+</p>
+      <p>Ion also lets you do things like split frames vertically or horizontally, start new applications within the new frames, and resize frames. After you worked for some time with ion and learned how to use it to your advantage, it's hard to go back to use another window manager.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/ion.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://modeemi.cs.tut.fi/~tuomov/ion/">Web site</link> 
+</p>
+      <p><link url="http://modeemi.cs.tut.fi/~tuomov/ion/faq.html">FAQ</link> 
+</p>
+      <p><link url="http://rt.fm/ion/archive/">Mailing Lists</link> 
+
+</p>
+      <p><em>Fink Package ion:</em>
+
+</p>
+      <p>Maintainer -- Currently unmaintained
+
+
+
+
+</p>
+    </section>
+    <section name="pwm">
+      <title>Pwm</title>
+      <p>PWM is a rather lightweight window manager for X11. It has the unique feature that multiple client windows can be attached to the same frame. This feature helps keeping windows, especially the numerous xterms, organized.
+
+</p>
+      <p>PWM does have workspaces, menus and Window Maker dockapp support. It has pretty good keyboard support and almost all the functionality is configurable.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/pwm.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://modeemi.cs.tut.fi/~tuomov/pwm/">Web site</link> 
+</p>
+      <p><link url="http://modeemi.cs.tut.fi/~tuomov/pwm/pwmfaq.html">FAQ</link> 
+</p>
+      <p>
+<em>Fink Package pwm:</em>
+
+</p>
+      <p>Maintainer -- Jeffrey Whitaker
+
+
+
+
+</p>
+    </section>
+    <section name="ratpoison">
+      <title>Ratpoison</title>
+      <p>Ratpoison is a simple window manager with no large library dependencies, fancy graphics, or window decorations. All interaction with the window manager is done through keystrokes.
+
+</p>
+      <p>Ratpoison has a prefix map to minimize the key clobbering, and all windows are maximized and kept maximized to avoid wasting screen space. Ratpoison is a simple Window Manager with no fat library dependencies, no fancy graphics, no window decorations, and no rodent dependence. It is largely modelled after GNU Screen which has done wonders in virtual terminal market.
+
+</p>
+      <p>All windows are maximized and kept maximized to take full advantage of your precious screen real estate.
+
+</p>
+      <p>All interaction with the window manager is done through keystrokes. ratpoison has a prefix map to minimize the key clobbering that cripples Emacs and other quality pieces of software.</p>
+      <p><link url="http://ratpoison.sourceforge.net/">Web site</link> 
+</p>
+      <p><link url="http://www.geocrawler.com/lists/3/SourceForge/5915/0/">Lists</link> 
+
+</p>
+      <p><em>Fink Package ratpoison:</em>
+
+</p>
+      <p>Maintainer -- Chris Shabsin
+
+
+
+
+</p>
+    </section>
+    <section name="xfce">
+      <title>Xfce</title>
+      <p>XFce is a lightweight desktop environment for UNIX platforms. It is similar to the commercial CDE, and is now based on the GTK+ toolkit.
+
+</p>
+      <p>A strong point of XFce is its ease of configuration - it is driven entirely by the mouse. The latest version features drag and drop, session management, translations for numerous languages, including support for multi-byte character sets, and numerous other features.
+
+</p>
+      <p>From version to version, XFce became more and more user friendly and easily configurable. As XFce is made for the user, it has to be very simple to configure. The desktop environment includes a window manager, called XFwm, the main panel, a file manager, a backdrop manager, a sound manager, a calendar, a pager module, and a GNOME compliance module.
+
+</p>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/xfce.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://www.xfce.org/">Web site</link> 
+</p>
+      <p><link url="http://www.xfce.org/help/html/help.html">Help</link> 
+
+</p>
+      <p><em>Fink Package xfce:</em>
+
+</p>
+      <p>Maintainer -- Jeremy Higgs
+
+
+
+
+</p>
+    </section>
+    <section name="metacity">
+      <title>Metacity</title>
+      <p>Metacity is a simple window manager that integrates nicely with GNOME 2.
+</p>
+      <p><link url="http://people.redhat.com/~hp/metacity/">Web Site</link></p>
+      <p><em>Fink Package metacity:</em>
+
+</p>
+      <p>Maintainer -- The Gnome Core Team
+
+
+
+</p>
+    </section>
+    <!--<section>
+<p>oroborus
+
+Oroborus is a small, themeable window manager for X which provides all the necessary window management functions as well as a themeable desktop, full keyboard controls and virtual desktops.
+
+Oroborus doesn't provide any kind of dock, toolbar, program launcher, background changer or root menu as these are added weight and their functions can be provided by seperate applications.
+
+Click here for screenshot (N/A)
+
+Web site 
+Mailing Lists 
+
+Fink Package oroborus:
+
+Maintainer - - -  Dave Morrison
+
+
+
+
+</p>
+</section>
+
+-->
+    <!--<section>
+<p>oroborus2
+
+Oroborus Light-weight window manager, is a small but fully featured window manager that is GNOME compliant.
+
+Click here for screenshot (N/A)
+
+
+Fink Package oroborus2:
+
+Maintainer - - -  Dave Morrison
+
+
+
+
+</p>
+</section>
+
+-->
+    <section name="fluxbox">
+      <title>Fluxbox</title>
+      <p>Fluxbox is yet another windowmanager for X. It's based on the Blackbox 0.61.1 code. Fluxbox looks like blackbox and handles styles, colors, window placement and similar thing exactly like blackbox (100% theme/style compability).
+
+</p>
+      <p>Features:
+</p>
+      <ul>
+        <li>     Configurable window tabs.
+     </li>
+        <li>Iconbar (for minimized/iconified windows)
+     </li>
+        <li>Wheel scroll changes workspace
+     </li>
+        <li>Configurable titlebar (placement of buttons, new buttons etc)
+     </li>
+        <li>KDE support
+     </li>
+        <li>New native integrated keygrabber (supports emacs like keychains)
+     </li>
+        <li>Maximize over slit option
+     </li>
+        <li>Partial GNOME support
+
+
+</li>
+      </ul>
+      <p><link url="http://homepage.mac.com/sao1/fink/screenshots/fluxbox.html">Click here for screenshot</link>
+
+</p>
+      <p><link url="http://fluxbox.sourceforge.net/">Web site</link> 
+</p>
+      <p><link url="http://fluxbox.sourceforge.net/docs.php">FAQ</link>
+</p>
+      <p><link url="http://fluxbox.sourceforge.net/themes.php">Themes</link> 
+
+</p>
+      <p><em>Fink Package fluxbox:</em>
+
+</p>
+      <p>Maintainer -- Joe Gorse
+
+
+
+
+</p>
+    </section>
+    <section name="themes">
+      <title>Themes for window managers</title>
+      <p><link url="http://themes.freshmeat.net/articles/view/439/">Themes at freshmeat.net</link> 
+</p>
+    </section>
+  </chapter>
+</document>
