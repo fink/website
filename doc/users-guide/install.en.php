@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/02/21 02:44:10';
+$cvs_date = 'Date: 2005/03/01 19:16:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -121,12 +121,15 @@ When the bootstrap is finished, proceed with the
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.
-In most cases, you can do this via the command
-</p>
-      <pre>open /sw/bin/pathsetup.command</pre>
-      <p>, or for <code>fink-0.18.3</code> or <code>fink-0.19.2</code>, by running (exactly as shown below):
-</p>
+In most cases, you can do this by entering the command
+      </p>
       <pre>/sw/bin/pathsetup.sh</pre>
+      <p>
+	in a terminal window. Note that for some older versions of
+	fink called this <code>pathsetup.command</code>, and one could
+	run it by entering the command:
+      </p>
+      <pre>open /sw/bin/pathsetup.command</pre>
       <p>However, if that doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and

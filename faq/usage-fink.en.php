@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/24 20:57:39';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/03/01 19:18:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -251,14 +251,24 @@ fink selfupdate-cvs</pre></div>
     <a name="fink-not-found">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.15: I get "command not found" errors when I run Fink or anything that I
         installed with Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If this always happens, then you may have inadvertently modified (or failed to modify) your startup scripts. Run the
-        <code>/sw/bin/pathsetup.command</code> script (either by
-        double-clicking in the Finder or in a terminal), which will attempt to
-        detect your startup configuration. You'll then need to open a new
-        terminal session so that your environment settings are loaded.  <b>Note:</b>  for <code>fink-0.18.3</code> and <code>fink-0.19.2</code>, the script has been changed to <code>/sw/bin/pathsetup.sh</code>, and must be run in a terminal.</p><p>On the other hand, if you only have problems in the Apple X11
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If this always happens, then you may have inadvertently
+        modified (or failed to modify) your startup scripts. Run the
+        <code>/sw/bin/pathsetup.sh</code> script in a terminal
+        window. This program will attempt to detect your default shell
+        and add a command to load Fink's shell initialization script
+        into your shell's configuration. You'll then need to open a
+        new terminal session so that your environment settings are
+        loaded. <b>Note:</b> Some older versions fink called this
+        script <code>pathsetup.command</code> instead
+        of <code>pathsetup.sh</code>. Alternately, you can run
+        the <code>pathsetup.app</code> application on the Fink
+        binary distribution disk image.</p><p>On the other hand, if you only have problems in the Apple X11
         terminal, this probably means that you need to create a <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a>
         file and add the line</p><pre>. /sw/bin/init.sh</pre><p>near the beginning (i.e. before any programs get run). Restart X11
-        (if running) after you do this.</p></div>
+        (if running) after you do this.</p><p>These <code>/sw/bin/init.*</code> scripts do much
+	more than just add <code>/sw/bin</code> to your PATH.
+	Many packages will not work correctly without these additional
+	actions.</p></div>
     </a>
     <a name="invisible-sw">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.16: I want to hide /sw in the Finder to keep users from damaging the
