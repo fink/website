@@ -1,20 +1,17 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/18 01:53:37';
+$cvs_date = 'Date: 2004/03/21 02:41:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
 ?>
 
-<h1>The Fink F.A.Q.</h1>
-    <p>This is the list of frequently asked questions about Fink. Like in most
+<h1>The Fink F.A.Q.</h1><p>This is the list of frequently asked questions about Fink. Like in most
     FAQs, some questions are taken from real life and some are made up. It's
     really more like a documentation written in an ad-hoc, question and answer
-    style.</p>
-    <p>The FAQ consists of several pages, one for each section. All questions
-    are listed and linked in the table of contents below.</p>
-  <h2>Contents</h2><ul>
+    style.</p><p>The FAQ consists of several pages, one for each section. All questions
+    are listed and linked in the table of contents below.</p><h2>Contents</h2><ul>
 	<li><a href="general.php?phpLang=en"><b>1 General Questions</b></a><ul><li><a href="general.php?phpLang=en#what">1.1 What is Fink?</a></li><li><a href="general.php?phpLang=en#naming">1.2 What does the name Fink stand for?</a></li><li><a href="general.php?phpLang=en#bsd-ports">1.3 How is Fink different from the BSD port mechanism (this includes
         OpenPackages and GNU-Darwin)?</a></li><li><a href="general.php?phpLang=en#usr-local">1.4 Why doesn't Fink install into /usr/local?</a></li><li><a href="general.php?phpLang=en#why-sw">1.5 Then why did you choose /sw?</a></li></ul></li><li><a href="relations.php?phpLang=en"><b>2 Relations with Other Projects</b></a><ul><li><a href="relations.php?phpLang=en#upstream">2.1 Do you contribute your patches back to the upstream
         maintainers?</a></li><li><a href="relations.php?phpLang=en#debian">2.2 What is your relation with the Debian project? Are you porting
@@ -59,7 +56,7 @@ include_once "header.inc";
         it?</a></li><li><a href="comp-general.php?phpLang=en#multiple-dependencies">6.13 I can't update, because Fink is "unable to resolve version conflict
         on multiple dependencies".</a></li><li><a href="comp-general.php?phpLang=en#dpkg-parse-error">6.14 I can't install anything because I get "dpkg: parse error, in file
         `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=en#freetype-problems">6.15 I get errors involving freetype.</a></li><li><a href="comp-general.php?phpLang=en#dlfcn-from-oo">6.16 I get build errors involving `Dl_info'.</a></li><li><a href="comp-general.php?phpLang=en#gcc2">6.17 Fink says I'm missing <code>gcc2</code> but I can't seem to
-        install it.</a></li></ul></li><li><a href="comp-packages.php?phpLang=en"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=en#libgtop">7.1 A package fails to build with errors involving
+        install it.</a></li><li><a href="comp-general.php?phpLang=en#system-java">6.18 Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</a></li></ul></li><li><a href="comp-packages.php?phpLang=en"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=en#libgtop">7.1 A package fails to build with errors involving
         <code>sed</code>.</a></li><li><a href="comp-packages.php?phpLang=en#cant-install-xfree">7.2 I want to switch to Fink's XFree86 packages, but I can't install
         <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
         with <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=en#change-thread-nothread">7.3 How do I change from the non-threaded version of Fink's XFree86
@@ -84,6 +81,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.5 2004/03/18 01:53:37 alexkhansen Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.6 2004/03/21 02:41:26 alexkhansen Exp $-->
 
 <? include_once "footer.inc"; ?>

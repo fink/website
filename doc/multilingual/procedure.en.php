@@ -37,11 +37,11 @@ include_once "header.inc";
       to forward such a message and re-title the subject. However, this will
       fail if many changes were made.</p>
     
-    <h2><a name="doc-updates">3.2 New Document:</a></h2>
+    <h2><a name="doc-updates">3.2 New Document</a></h2>
       
       <p>The English version of the document is <a href="files.php?phpLang=en#committing">committed</a> and <a href="files.php?phpLang=en#website">activated</a>, and it is <a href="#new-translations">translated</a> as below.</p>
     
-    <h2><a name="new-translation">3.3 New Translations:</a></h2>
+    <h2><a name="new-translation">3.3 New Translations</a></h2>
       
       <p>The language team leader (or someone else with CVS access) will <a href="files.php?phpLang=en#committing">commit</a> and <a href="files.php?phpLang=en#website">activate</a> each document as it becomes ready.</p>
       <p>This classification includes:</p>
@@ -51,7 +51,7 @@ include_once "header.inc";
         <li>Translation of a new English document</li>
       </ul>
     
-    <h2><a name="prompt-update">3.4 Prompt Update to Existing Documentation:</a></h2>
+    <h2><a name="prompt-update">3.4 Prompt Update to Existing Documentation</a></h2>
       
       <p>The base English documentation is <a href="files.php?phpLang=en#committing">committed</a> and <a href="files.php?phpLang=en#website">activated</a> immediately. The
       translation teams then update their versions, <a href="files.php?phpLang=en#committing">commit</a><b> all</b> of the files (XML and
@@ -59,14 +59,14 @@ include_once "header.inc";
       changes.</p>
       <p><b>Notes:</b></p>
       <ol>
-        <li>Changes to the Internationalzation HOWTO (this document) will
+        <li>Changes to the Internationalization HOWTO (this document) will
         <b>always</b> be made on this schedule, because such changes affect all
         translation teams.</li>
         <li>Changes to the static documents (PHP files not generated from XML)
         will <b>always</b> be made on this schedule as well, because it's hard to <a href="#delayed-update">delay</a> their activation.</li>
       </ol>
     
-    <h2><a name="delayed-update">3.5 Delayed Update to Existing Documentation (XML-generated files only):</a></h2>
+    <h2><a name="delayed-update">3.5 Delayed Update to Existing Documentation (XML-generated files only)</a></h2>
       
       <p>In this case, the English version of the XML file is <a href="files.php?phpLang=en#committing">committed</a>, but <b>not</b> the
         PHP and HTML files, i.e. stop at step 5 under of Dynamic under <a href="files.php?phpLang=en#committing">2.9</a>. All translators do
