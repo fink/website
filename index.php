@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/30 09:01:41 $';
+$cvs_date = '$Date: 2001/02/04 17:27:11 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -26,6 +26,8 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-02-04: Version 0.1.4 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-01-30: Version 0.1.3 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-01-28: Documentation on Fink's <a
@@ -36,11 +38,9 @@ available.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.3 was released on 30 January 2001. It adds mirror
-selection upon installation. Installation should be much smoother
-now. Other changes include improved command handling and of course new
-and updated packages, including the first contributed package: vnc by
-Jeff Whitaker. You can grab the release from the <a
+<p>Version 0.1.4 was released on 4 February 2001. If has some new and
+updated packages, and adds a command for updating packages. You can
+grab the release from the <a
 href="download.php">download page</a>.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
