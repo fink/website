@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/12 19:02:10';
+$cvs_date = 'Date: 2001/10/19 21:05:22';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
@@ -72,7 +72,7 @@ in time.
 It is strongly recommended that you upgrade to the latest update in
 that series, 10.0.4, through the Software Update panel in the System
 Preferences.
-Note that support for 10.0.x will be dropped in the future when 10.1
+Note that support for 10.0.x will be dropped in the future once 10.1
 is in widespread use.
 </p>
 <p>
@@ -100,19 +100,29 @@ this case.
 
 <a name="src-vs-bin"><h2>Source vs. Binary</h2></a>
 <p>
-Software is written in human-readable programming languages, called
-the "source code".
-When you buy commercial software you don't get to see the source code,
-however.
-All you get is the ready-to-run program (also called "executable" or
-"binary").
+Software is written ("developed") in human-readable programming
+languages; this form is called the "source code".
+Before a computer can actually run a program, it must be transformed
+into low-level machine code instructions (unreadable by most humans).
+That process is called "compiling" and the resulting program is called
+"executable" or "binary".
+(The process is also refered to as "building", because it usually
+involves more steps than just compiling.)
 </p>
 <p>
-Not so with Open Source software.
+When you buy commercial software you don't get to see the source code,
+though - companies treat it as a trade secret.
+You only get the ready-to-run executable, which means you have no way
+to modify the program or even find out what it actually does when it's
+run.
+</p>
+<p>
+Not so with <a href="http://www.opensource.org/">Open Source</a>
+software.
 As the name implies, the source code is open for anyone to see and
 modify.
 In fact, most Open Source software is only distributed as source code
-by its authors, and you must "compile" it on your computer to get a
+by its authors, and you must compile it on your computer to get a
 program that can be run.
 </p>
 <p>

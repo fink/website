@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/12 19:02:10';
+$cvs_date = 'Date: 2001/10/19 21:05:22';
 
 $metatags = '<link rel="start" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -53,7 +53,7 @@ Package installation and maintenance is covered as well.
 <li><a href="upgrade.php#bin">Upgrading using Binary Packages</a></li>
 <li><a href="upgrade.php#src">Upgrading the Source Distribution</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.5 2001/10/12 19:02:10 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.7 2001/10/19 21:05:22 chrisp Exp $</i></p>
 
 
 <?
