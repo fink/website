@@ -1,8 +1,9 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/05 07:44:57 $';
+$cvs_date = '$Date: 2001/02/11 12:17:38 $';
 $wantnav = "main";
+$is_home = 1;
 
 include "header.inc";
 ?>
@@ -36,7 +37,7 @@ href="download.php">download page</a>.</p>
 <p>2001-01-30: Version 0.1.3 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-01-28: Documentation on Fink's <a
-href="info-format.php">package descriptions</a> is available.</p>
+href="fink/info-format.php">package descriptions</a> is available.</p>
 
 <h2>Status</h2>
 
@@ -49,10 +50,11 @@ href="download.php">download page</a>.</p>
 
 <h2>Darwin Resources</h2>
 
-<p>The <a href="darwin.php">Darwin section</a> of this site has useful
-information on Darwin in general, like <a href="porting.php">porting
-hints</a>, <a href="patches.php">patches</a> and <a
-href="x11-choices.php">X11 information</a>. Check it out!</p>
+<p>The <a href="darwin/index.php">Darwin section</a> of this site has
+useful information on Darwin in general, like <a
+href="darwin/porting.php">porting hints</a>, <a
+href="darwin/patches.php">patches</a> and <a
+href="darwin/x11-choices.php">X11 information</a>. Check it out!</p>
 
 <h2>Fink Resources</h2>
 

@@ -1,7 +1,7 @@
 <?
 $title = "About Content Markers";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/11 19:13:24 $';
+$cvs_date = '$Date: 2001/02/11 12:17:38 $';
 
 include "header.inc";
 ?>
@@ -26,6 +26,17 @@ there are:</p>
 alt="General content" /></td>
 <td>
 <p>These are pages like this one - they apply to all audiences.</p>
+</td></tr>
+
+<tr valign="top">
+<td><img src="img/marker-fink.gif" width="160" height="22"
+alt="Fink related" /></td>
+<td>
+<p>These pages contain information specific to the Fink package
+manager. It is likely not useful to you if you don't use Fink (but it
+might). Currently, Fink's only target platform is Darwin / Mac OS X,
+so this will probably not be useful if you use another Unix
+variant.</p>
 </td></tr>
 
 <tr valign="top">

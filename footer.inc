@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.3 2001/01/11 19:13:25 chrisp Exp $ */
+/* $Id: footer.inc,v 1.4 2001/02/11 12:17:38 chrisp Exp $ */
 ?>
 
 </td></tr>
@@ -8,26 +8,26 @@
 
 <? /* footer */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td colspan="4" background="img/footer-top.gif"><img
-src="img/footer-top.gif" width="32" height="8" border="0"
+<tr><td colspan="4" background="<? print $root ?>img/footer-top.gif"><img
+src="<? print $root ?>img/footer-top.gif" width="32" height="8" border="0"
 alt="-----"></td></tr>
 
 <tr valign="middle">
-<td background="img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
-<td align="left" background="img/footer-back.gif" width="50%">
+<td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
+<td align="left" background="<? print $root ?>img/footer-back.gif" width="50%">
 <p class="footer">Last changed by <? print $author ?> on <?
 print strftime("%a, %b %d %Y", $date);
 ?></p>
 </td>
-<td align="right" background="img/footer-back.gif" width="50%">
-<p class="footer"><a href="legal.php">Copyright</a> &copy; 2001
+<td align="right" background="<? print $root ?>img/footer-back.gif" width="50%">
+<p class="footer"><a href="<? print $root ?>legal.php">Copyright</a> &copy; 2001
 Christoph Pfisterer</p>
 </td>
-<td background="img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
+<td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
 </tr>
 
-<tr><td colspan="4" background="img/footer-bottom.gif"><img
-src="img/footer-bottom.gif" width="32" height="8" border="0"
+<tr><td colspan="4" background="<? print $root ?>img/footer-bottom.gif"><img
+src="<? print $root ?>img/footer-bottom.gif" width="32" height="8" border="0"
 alt="-----"></td></tr>
 
 <tr valign="top"><td>&nbsp;</td></tr>
