@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/09 20:18:06 $';
+$cvs_date = '$Date: 2001/05/13 15:56:37 $';
 if (!$wantnav)
   $wantnav = "main";
 
@@ -17,6 +17,10 @@ include "header.inc";
 href="http://prdownloads.sourceforge.net/fink/fink-0.2.1-full.tar.gz">Fink
 0.2.1</a> - 228K, .tar.gz format</li>
 </ul>
+
+<p>Installation and usage instructions are inside the distribution, in
+the files README, INSTALL and USAGE. Read them - that's what they're
+there for.</p>
 
 <p>Older releases are always available from the Fink <a
 href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
