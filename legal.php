@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/02/12 22:36:28 $';
+$cvs_date = '$Date: 2004/02/17 13:32:03 $';
 
 include "header.inc";
 ?>
@@ -21,7 +21,7 @@ If you want to reuse material from this website,
 consequence relating directly or indirectly to any action or inaction you take 
 based on the information or other material on this site. The <b>Fink Project</b> 
 cannot guarantee, and will not be responsible for any damage or loss related to 
-the accuracy, completeness or timeliness of any of the information listed above. 
+the accuracy, completeness or timeliness of any of the information listed. 
 You agree to indemnify, defend and hold harmless anyone associated with the <b>Fink 
 Project</b>, its contributers and occasional helpers from any liability, loss, 
 claim and expense (including attorneys reasonable fees) related to your use of 
