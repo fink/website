@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Porting Unix software to Darwin and Mac OS X</title>
 <shorttitle>Porting</shorttitle>
-<cvsid>$Id: porting.xml,v 1.18 2002/06/11 23:30:14 dmrrsn Exp $</cvsid>
+<cvsid>$Id: porting.xml,v 1.19 2002/06/12 12:34:03 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -759,7 +759,7 @@ make[1]: *** [FileCopyFtp.o] Error 1
 </codeblock></li>
 <li>libghttp-1.0.9-3 (internal link edit command failed)</li>
 <li>librep-0.14-6 (breaks with install_name error)</li>
-<li>libxml2-2.4.22-1 (breaks with install_name error)</li>
+<li>libxml2-2.4.22-1 (breaks with install_name error) <em>fixed June 11</em></li>
 <li>libxslt-1.0.18-1 failed with install_name error</li>
 <li>mc-4.5.55-1 (see log)</li>
 <li>mozilla-1.0rc3-1 (iid_NS_ISUPPORTS_IID causes a section type conflict, 
