@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/27 17:18:32';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="prev" href="upgrade.php" title="Upgrading Fink">';
 
@@ -17,8 +17,8 @@ This chapter explains the settings available in the Fink configuration
 file (fink.conf) and how they influence the behaviour of Fink.
 </p>
 
-
 <h2><a name="about">5.1 About fink.conf</a></h2>
+
 <p>
 When Fink is initially installed it prompts you for the answers to some
 questions to set up your configuration file, such as which <a href="#mirrors">mirrors</a> you want to use for downloading files
@@ -33,8 +33,8 @@ The <b>fink.conf</b> file is located at
 text editor. You will need super-user rights to edit it.
 </p>
 
-
 <h2><a name="syntax">5.2 fink.conf syntax</a></h2>
+
 <p>
 Your fink.conf file consists of multiple lines, in the format:</p>
 <pre>OptionName: Value</pre>
@@ -50,15 +50,17 @@ StringOption: Something
 ListOption: Option1 Option2 Option3
 </pre>
 
-
 <h2><a name="required">5.3 Required Settings</a></h2>
+
 <p>
 Some of the settings in the <b>fink.conf</b> are mandatory. Without
 them Fink cannot to function properly. The following settings belong to
 this category.
 </p>
 <ul>
-<li><p><b>Basepath:</b> path</p>
+<li>
+<p>
+<b>Basepath:</b> path</p>
 <p>
 Tells Fink where it was installed. Defaults to <b>/sw</b> unless you
 changed it during the initial installation of Fink. You should
@@ -67,21 +69,25 @@ changed it during the initial installation of Fink. You should
 </li>
 </ul>
 
-
 <h2><a name="optional">5.4 Optional User Settings</a></h2>
+
 <p>
 There are various optional settings which users can customize to change
 the behaviour of Fink.
 </p>
 <ul>
-<li><p><b>RootMethod:</b> su or sudo or none</p>
+<li>
+<p>
+<b>RootMethod:</b> su or sudo or none</p>
 <p>For some operations, Fink needs super user rights. Recognized values
 are <b>sudo</b> or <b>su</b>. You can also set this to
 <b>none</b>, in which case you must run Fink as root yourself. The
 default value is <b>sudo</b> and in most cases it should not be
 changed.</p>
 </li>
-<li><p><b>Trees:</b> list of trees</p>
+<li>
+<p>
+<b>Trees:</b> list of trees</p>
 <p>Available trees are:</p>
 <pre>
 local/main      - any local packages you want to install
@@ -99,7 +105,9 @@ stable/main&quot;. This list should be kept in sync with the
 <code>/sw/etc/apt/sources.list</code> file.
 </p>
 </li>
-<li><p><b>Distribution:</b> 10.1 or 10.2</p>
+<li>
+<p>
+<b>Distribution:</b> 10.1 or 10.2</p>
 <p>Fink needs to know which version of Mac OS X you are running. The
 10.1 distribution is meant for users of Mac OS X 10.1, while 10.2 will
 only work for those who run Mac OS X 10.2 &quot;Jaguar&quot; on their systems.
@@ -107,25 +115,35 @@ Mac OS X 10.0 and earlier are not supported. You should not need to
 alter this value.
 </p>
 </li>
-<li><p><b>FetchAltDir:</b> path</p>
+<li>
+<p>
+<b>FetchAltDir:</b> path</p>
 <p>usually fink will store the sources it fetches in
 <code>/sw/src</code>. You can specify an alernate directory to look for
 downloaded source code in using this option. For example:
 </p>
 <pre>FetchAltDir: /usr/src</pre>
 </li>
-<li><p><b>Verbose:</b> a number from 0 to 3</p>
+<li>
+<p>
+<b>Verbose:</b> a number from 0 to 3</p>
 <p>
 This option sets how much information Fink tells you about what it is
 doing. The values are:
-<b>0</b> Quiet (don't show download stats)
-<b>1</b> Low (don't show tarballs being expanded)
-<b>2</b> Medium (shows almost everything)
-<b>3</b> High (shows everything)
+<b>0</b>
+Quiet (don't show download stats)
+<b>1</b>
+Low (don't show tarballs being expanded)
+<b>2</b>
+Medium (shows almost everything)
+<b>3</b>
+High (shows everything)
 The default value is 3.
 </p>
 </li>
-<li><p><b>NoAutoIndex:</b> boolean</p>
+<li>
+<p>
+<b>NoAutoIndex:</b> boolean</p>
 <p>Fink caches its package descripition files in /sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not thepackage index needs to be updated unless this
@@ -133,7 +151,9 @@ option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is no
 recommended that you change it. If you do, you may need to manually run
 the <code>fink index</code> command to update the index.</p>
 </li>
-<li><p><b>SelfUpdateNoCVS:</b> boolean</p>
+<li>
+<p>
+<b>SelfUpdateNoCVS:</b> boolean</p>
 <p>The command <code>fink selfupdate</code> upgrades Fink package
 manager to the latest release. This option makes sure that the
 Concurrent Version System (CVS) is not used to achieve this when set to
@@ -144,28 +164,37 @@ manually.</p>
 </ul>
 
 <h2><a name="downloding">5.5 Download Settings</a></h2>
+
 <p>There are various settings which influence the way Fink downloads
 package data.</p>
 <ul>
-<li><p><b>ProxyPassiveFTP:</b> boolean</p>
+<li>
+<p>
+<b>ProxyPassiveFTP:</b> boolean</p>
 <p>This option makes Fink use &quot;passive&quot; mode for FTP downloads. Some
 FTP server or network configurations require this option to be set to
 True. It is recommended that you leave this option on at all
 times since active FTP is deprecated.</p>
 </li>
-<li><p><b>ProxyFTP:</b> url</p>
+<li>
+<p>
+<b>ProxyFTP:</b> url</p>
 <p>If you use a FTP proxy then you should enter its address here, for
 example:</p>
 <pre>ProxyFTP: ftp://yourhost.com:2121/</pre>
 <p>Leave if blank if you do not use a FTP proxy.</p>
 </li>
-<li><p><b>ProxyHTTP:</b> url</p>
+<li>
+<p>
+<b>ProxyHTTP:</b> url</p>
 <p>If you use a HTTP proxy then you should enter its address here, for
 example:</p>
 <pre>ProxyHTTP: http://yourhost.com:3128/</pre>
 <p>Leave if blank if you do not use a HTTP proxy.</p>
 </li>
-<li><p><b>DownloadMethod:</b> wget or curl or axel or axelautomirror</p>
+<li>
+<p>
+<b>DownloadMethod:</b> wget or curl or axel or axelautomirror</p>
 <p>Fink can use three different applications to download files from the
 Internet - <b>wget</b>, <b>curl</b>, or <b>axel</b>. The value
 <b>axelautomirror</b> uses an experimental mode of the <b>axel</b>
@@ -178,6 +207,7 @@ time. The default value is <b>curl</b>.
 </ul>
 
 <h2><a name="mirrors">5.6 Mirror Settings</a></h2>
+
 <p>Getting software from the Internet can be tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
@@ -193,14 +223,18 @@ different mirror anywhere in the world.</p>
 <p>The <b>fink.conf</b> file holds settings about which mirrors you
 would like to use.</p>
 <ul>
-<li><p><b>MirrorContinent:</b> three letter code</p>
+<li>
+<p>
+<b>MirrorContinent:</b> three letter code</p>
 <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
 <code>/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in europe:</p>
 <pre>MirrorContinent: eur</pre>
 </li>
-<li><p><b>MirrorCountry:</b> six letter code</p>
+<li>
+<p>
+<b>MirrorCountry:</b> six letter code</p>
 <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
 <code>/sw/lib/fink/mirror/_keys</code>.
@@ -210,24 +244,28 @@ For example, if you live in Austria:</p>
 </ul>
 
 <h2><a name="developer">5.7 Developer Settings</a></h2>
+
 <p>Some options in the <b>fink.conf</b> are only useful to
 developers. We do not recommend that conventional Fink users modify
 them. The following options fall into this category.</p>
 <ul>
-<li><p><b>KeepRootDir:</b> boolean</p>
+<li>
+<p>
+<b>KeepRootDir:</b> boolean</p>
 <p>Causes Fink not to delete the /sw/src/root-name-version directory
 after building a package. Defaults to false. <b>Be careful, this
-option can fill your hard-disk quickly!</b></p>
+option can fill your hard-disk quickly!</b>
+</p>
 </li>
-<li><p><b>KeepBuildDir:</b> boolean</p>
+<li>
+<p>
+<b>KeepBuildDir:</b> boolean</p>
 <p>Causes Fink not to delete the /sw/src/name-version directory after
 building a package. Defaults to false. <b>Be careful, this option can
 fill your hard-disk quickly!</b>
 </p>
 </li>
 </ul>
-
-
 
 
 

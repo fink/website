@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:30';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="xtools.php" title="Xtools"><link rel="prev" href="inst-xfree86.php" title="Getting and Installing XFree86">';
 
@@ -11,9 +11,8 @@ include "header.inc";
 <h1>Running X11 - 4 Starting XFree86</h1>
 
 
-
-
 <h2><a name="darwin">4.1 Darwin</a></h2>
+
 <p>
 On pure Darwin, XFree86 behaves like on any other Unix.
 The usual way to start it is via <code>startx</code> from the console;
@@ -56,9 +55,8 @@ You can use all of the start methods outlined above, with the
 exception of <code>xdm</code>.
 </p>
 
-
-
 <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.0</a></h2>
+
 <p>
 There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
@@ -67,7 +65,7 @@ screen and rootless mode in a dialog at startup, just
 double-click the XDarwin.app application. You can disable 
 the dialog and set XDarwin to always use the mode of your 
 choice in the Preferences dialog.  
-</p> 
+</p>
 <p>
 Prior to 4.2.0 it would fire up fullscreen mode automatically, 
 and there was no way to get rootless mode by double-clicking 
@@ -98,9 +96,8 @@ The <code>-quartz</code> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
 
-
-
 <h2><a name="xinitrc">4.3 The .xinitrc File</a></h2>
+
 <p>
 If a file named <code>.xinitrc</code> exists in your home
 directory, it will be used to start some initial X clients, e.g. the
@@ -163,8 +160,6 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
-
-
 
 <p align="right">
 Next: <a href="xtools.php">5 Xtools</a></p>

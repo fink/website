@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:30';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -11,9 +11,9 @@ include "header.inc";
 <h1>Running X11 - 7 Troubleshooting XFree86</h1>
 
 
-
 <h2><a name="immedate-quit">7.1 When I launch XDarwin, it quits
 or crashes almost immediately</a></h2>
+
 <p>
 First of all: Don't Panic!
 There are lots of things than can go wrong with XFree86, and a good
@@ -49,7 +49,6 @@ Be sure to pick the right set of messages, i.e. the last one.
 <p>
 We'll start with a list of the messages you may see:
 </p>
-
 <pre>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</pre>
 <pre>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</pre>
 <p>
@@ -63,7 +62,6 @@ without any problems.
 wipes out /tmp on reboots and XDarwin doesn't run with root privileges
 and doesn't need to.)
 </p>
-
 <pre>QuartzAudioInit: AddIOProc returned 1852797029</pre>
 <pre>-[NSCFArray objectAtIndex:]: index (2) beyond bounds (2)</pre>
 <pre>kCGErrorIllegalArgument : CGSGetDisplayBounds (display 35434400)</pre>
@@ -80,7 +78,6 @@ resp. Console window and look for another set of banner and messages.
 This affects all versions up to and including XDarwin 1.0a3; it was
 fixed after 1.0a3 was released.
 </p>
-
 <pre>cat: /Users/chrisp/.Xauthority: No such file or directory</pre>
 <p>
 Class: Mostly harmless.
@@ -89,7 +86,6 @@ impact on operations.
 You can get rid of them by running <code>touch .Xauthority</code> in
 your home directory.
 </p>
-
 <pre>Gdk-WARNING **: locale not supported by C library</pre>
 <p>
 Class: Harmless.
@@ -97,7 +93,6 @@ This just means what it says and won't keep the application from
 working.
 For more information, <a href="#locale">see below</a>.
 </p>
-
 <pre>Gdk-WARNING **: locale not supported by Xlib, locale set to C
 Gdk-WARNING **: can not set locale modifiers</pre>
 <p>
@@ -108,7 +103,6 @@ It appears that this happens unreproducably when building XFree86 from
 source.
 Most applications will still work, GNU Emacs is a noteable exception.
 </p>
-
 <pre>Unable to open keymapping file USA.keymapping.
 Reverting to kernel keymapping.</pre>
 <p>
@@ -122,7 +116,6 @@ The message will usually be followed by the &quot;assert&quot; message shown
 below.
 To fix this, follow the directions below.
 </p>
-
 <pre>Fatal server error:
 assert failed on line 454 of darwinKeyboard.c!</pre>
 <pre>Fatal server error:
@@ -143,7 +136,6 @@ before you get a chance, run it from Terminal with the command
 This usually allows XDarwin to start up, and you can then make the
 permanent choice in the Preferences dialog.
 </p>
-
 <pre>Warning: no access to tty (Inappropriate ioctl for device).
 Thus no job control in this shell.</pre>
 <p>
@@ -156,7 +148,6 @@ Some shells complain that they're not connected to a real terminal,
 but that can be ignored since that shell instance is not used for
 anything that requires job control or the like.
 </p>
-
 <pre>Fatal server error:
 failed to connect as window server!</pre>
 <p>
@@ -186,7 +177,6 @@ How you do that depends on the method you used to install XFree86.
 See the <a href="inst-xfree86.php#rootless">Roaming
 Rootless Servers</a> section for more hints.
 </p>
-
 <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
 &gt; Error:            Can't find file &quot;unknown&quot; for geometry include
 &gt;                   Exiting
@@ -198,7 +188,6 @@ As the message says, it is not fatal.
 To my knowledge, XDarwin doesn't use the XKB extension at all.
 Probably some client program tries to use it anyway...
 </p>
-
 <pre>startx: Command not found.</pre>
 <p>
 Class: Fatal.
@@ -210,7 +199,6 @@ line <code>source /sw/bin/init.csh</code> to <code>.cshrc</code>
 in your home directory (as recommended by the Fink instructions) should
 be sufficient.
 </p>
-
 <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</pre>
 <pre>Fatal server error:
@@ -228,7 +216,6 @@ Restarting the computer also helps in most cases (Mac OS X
 automatically cleans up /tmp when it boots, and the network stack is
 reset).
 </p>
-
 <pre>Xlib: connection to &quot;:0.0&quot; refused by server
 Xlib: Client is not authorized to connect to Server</pre>
 <p>
@@ -245,9 +232,6 @@ file:
 <pre>cd
 rm .Xauthority
 touch .Xauthority</pre>
-
-
-
 <p>
 Another common cause for XFree86 startup failures is an incorrect
 <code>.xinitrc</code> file.
@@ -263,13 +247,9 @@ It is a good idea to add <code>exec xterm</code> as a fallback when
 your window manager or similar can't be found.
 </p>
 
-
-
-
-
-
 <h2><a name="black">7.2 Black icons in the GNOME panel or in the
 menu of a GNOME application</a></h2>
+
 <p>
 A common problem is that icons or other images are displayed as black
 rectangles or black outlines.
@@ -291,9 +271,8 @@ If you experience black icons in another application, start that
 application with the <code>--no-xshm</code> command line option.
 </p>
 
-
-
 <h2><a name="keyboard">7.3 The keyboard doesn't work in XFree86</a></h2>
+
 <p>
 This is a known problem that so far seems to affect only portables
 (PowerBook, iBook).
@@ -314,9 +293,8 @@ name of the keymapping file to load as an option, as in:
 </p>
 <pre>startx -- -quartz -keymap USA.keymapping</pre>
 
-
-
 <h2><a name="delete-key">7.4 The Backspace key doesn't work</a></h2>
+
 <p>
 This can happen when you use the &quot;Load keymapping from file&quot; option
 described above.
@@ -331,9 +309,8 @@ If I remember correctly, XDarwin 1.0a2 and later have code that
 correctly maps the Backspace key automatically.
 </p>
 
-
-
 <h2><a name="locale">7.5 &quot;Warning: locale not supported by C library&quot;</a></h2>
+
 <p>
 These messages are quite common, but harmless.
 It just means what it says - internationalization is not supported
@@ -342,10 +319,13 @@ English messages, date formats, and so on.
 There are several ways to deal with this:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 Just ignore the messages.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Get rid of the messages by unsetting the environment variable LANG.
 Note that this will also turn internationalization off in programs
 that actually support it (via gettext/libintl).
@@ -357,7 +337,8 @@ Example for .cshrc:
 </p>
 <pre>unsetenv LANG</pre>
 </li>
-<li><p>
+<li>
+<p>
 Use the <code>libxpg4</code> Fink package.
 It builds a small library that contains working locale functions and
 arranges that it is loaded before the system libraries (using the
@@ -365,14 +346,15 @@ DYLD_INSERT_LIBRARIES environment variable).
 You may have to set the LANG environment variable to a fully qualified
 value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
 or <code>de_DE</code>.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Ask Apple to include proper locale support in a future version of Mac
 OS X.
-</p></li>
+</p>
+</li>
 </ul>
-
-
 
 <p align="right">
 Next: <a href="tips.php">8 Usage Tips</a></p>

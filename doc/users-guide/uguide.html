@@ -11,7 +11,6 @@ Also check out the
 section</a> of the web site, it has some other useful documents
 beyond that.
 </p>
-
 <p>
 Welcome to the Fink User's Guide.
 This guide covers first time installation and upgrade procedures for
@@ -23,8 +22,8 @@ dselect</a></li><li><a href="#packages.bin-apt">3.3 Installing Binary Packages w
 apt-get</a></li><li><a href="#packages.bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></li><li><a href="#packages.src">3.5 Installing Packages from Source</a></li></ul></li><li><a href="#upgrade"><b>4 Upgrading Fink</b></a><ul><li><a href="#upgrade.bin">4.1 Upgrading using Binary Packages</a></li><li><a href="#upgrade.src">4.2 Upgrading the Source Distribution</a></li><li><a href="#upgrade.mix">4.3 Mixing Binaries and Source</a></li></ul></li><li><a href="#conf"><b>5 The Fink Configuration File</b></a><ul><li><a href="#conf.about">5.1 About fink.conf</a></li><li><a href="#conf.syntax">5.2 fink.conf syntax</a></li><li><a href="#conf.required">5.3 Required Settings</a></li><li><a href="#conf.optional">5.4 Optional User Settings</a></li><li><a href="#conf.downloding">5.5 Download Settings</a></li><li><a href="#conf.mirrors">5.6 Mirror Settings</a></li><li><a href="#conf.developer">5.7 Developer Settings</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
 
 
-
 <h3><a name="intro.what">1.1 What is Fink?</a></h3>
+
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -32,30 +31,35 @@ It brings a wide range of free command-line and graphical software
 developed for Linux and similar operating systems to your Mac.
 </p>
 
-
 <h3><a name="intro.req">1.2 Requirements</a></h3>
+
 <p>
 In any case you will need:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 An installed Mac OS X system, version 10.2 or later, or equivalent
 Darwin releases.
 Earlier versions of both will <b>not</b> work.
 See below for more information about supported systems.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Internet access.
 Both source code and binary packages are downloaded from Internet
 download sites.
-</p></li>
+</p>
+</li>
 </ul>
 <p>
 If you intend to use the source distribution (see below), you will
 also need:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 Development tools.
 On Mac OS X, install the Developer.pkg package from the Developer
 Tools CD.
@@ -68,16 +72,19 @@ don't intend to build packages from source.
 Some of the programs installed by the package are actually general
 purpose command line tools.
 Some packages may depend on those to run.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Patience.
 Compiling several big packages takes time.
 I'm talking hours or even days here.
-</p></li>
+</p>
+</li>
 </ul>
 
-
 <h3><a name="intro.supported-os">1.3 Supported Systems</a></h3>
+
 <p>
 <b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
@@ -98,8 +105,8 @@ You may run into problems with packages that use features specific to
 Mac OS X - affected packages include XFree86 and possibly esound.
 </p>
 
-
 <h3><a name="intro.src-vs-bin">1.4 Source vs. Binary</a></h3>
+
 <p>
 Software is written (&quot;developed&quot;) in human-readable programming
 languages; this form is called the &quot;source code&quot;.
@@ -138,9 +145,7 @@ It is actually possible to mix the two models at will.
 The rest of this manual will show you how.
 </p>
 
-
 <h2><a name="install">2 First Time Installation</a></h2>
-
 
 
 
@@ -161,8 +166,8 @@ This is covered in the <a href="#packages">Installing Packages
 chapter</a>.
 </p>
 
-
 <h3><a name="install.bin">2.1 Installing the Binary Distribution</a></h3>
+
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -187,8 +192,8 @@ When the installer is finished, proceed with the
 <a href="#install.setup">Setting Up Your Environment</a> section.
 </p>
 
-
 <h3><a name="install.src">2.2 Installing the Source Distribution</a></h3>
+
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <tt style="white-space: nowrap;">fink</tt> package manager and its package
@@ -249,8 +254,8 @@ When the bootstrap is finished, proceed with the
 <a href="#install.setup">Setting Up Your Environment</a> section.
 </p>
 
-
 <h3><a name="install.setup">2.3 Setting Up Your Environment</a></h3>
+
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
@@ -273,8 +278,30 @@ It's okay if there is a note that says &quot;New file&quot;.
 Be sure that you pressed Return at least once after the line, then
 press Control-O, Return, Control-X to get out of the editor.
 </p>
+<p>There are a couple of common situations where you may need to edit additional files:</p>
+<ol>
+
+<li><p>You have a <tt style="white-space: nowrap;">~/.tcshrc</tt>.</p>
+<p>Such a file occasionally gets created by third-party applications, or 
+you may have done it yourself.
+In any case what will happen is that <tt style="white-space: nowrap;">~/.tcshrc</tt> gets read and 
+<tt style="white-space: nowrap;">~/.cshrc</tt> is ignored.
+The recommended procedure is to edit <tt style="white-space: nowrap;">~/.tcshrc</tt> in a similar 
+manner to how you edited
+<tt style="white-space: nowrap;">~/.cshrc</tt> above, and add the following line at the end 
+(replace 
+&quot;/Users/you&quot; with your actual home
+directory):</p>
+<pre>source /Users/you/.cshrc</pre>
+<p>That way, if you ever need to remove <tt style="white-space: nowrap;">~/.tcshrc</tt>, you will be able to run Fink.</p></li>
+
+<li><p>You followed the instructions under <tt style="white-space: nowrap;">/usr/share/tcsh/examples/README</tt>.</p>
+<p>These instructions tell you to create a <tt style="white-space: nowrap;">~/.tcshrc</tt> and a<tt style="white-space: nowrap;"> ~/.login</tt> .  The problem in this case is with <tt style="white-space: nowrap;">~/.login</tt>, which gets run after <tt style="white-space: nowrap;">~/.tcshrc</tt>, and sources <tt style="white-space: nowrap;">/usr/share/tcsh/examples/login</tt>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is modify <tt style="white-space: nowrap;">~/Library/init/tcsh/path</tt> (create it if necessary), and add (once again, replace &quot;/Users/you&quot; with your actual home directory):</p> 
+<pre>source /Users/you/.cshrc</pre>
+<p>to it.</p></li>
+</ol>
 <p>
-Editing .cshrc will only affect new shells (i.e. newly opened Terminal
+Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
 You'll also need to run <tt style="white-space: nowrap;">rehash</tt> because tcsh caches the
@@ -300,9 +327,7 @@ you can install some actually useful packages using the various
 package management tools included in Fink.
 </p>
 
-
 <h2><a name="packages">3 Installing Packages</a></h2>
-
 
 
 
@@ -314,8 +339,8 @@ Before we explain how to install packages using either the source or
 the binary distribution, some important notes that apply to both.
 </p>
 
-
 <h3><a name="packages.x11">3.1 Getting X11 Sorted Out</a></h3>
+
 <p>
 Since there are several X11 implementations available for Mac OS X
 (XFree86, Tenon Xtools, eXodus) and several ways to install them
@@ -327,7 +352,8 @@ applications.
 Here is a list of the available packages and X11 installation methods:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 xfree86-base:
 This package is the real thing.
 It installs the whole load of XFree86 as a Fink package.
@@ -338,8 +364,10 @@ xfree86-rootless package.
 Or you can install it manually, for example using an &quot;XDarwin&quot; test
 release from the XonX project or one of the &quot;rootless&quot; servers
 circulating the net.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 system-xfree86:
 This package expects that you installed XFree86 manually, either from
 source or from the official binary distribution.
@@ -349,13 +377,16 @@ Note that XFree86 4.0.2 or 4.0.3 will not pass the test.
 You need a version that builds shared libraries.
 Usually that will be 4.1.0 or later, but CVS versions of XFree86 starting
 around spring 2001 will also work.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 system-xtools:
 Install this package if you have Tenon's Xtools product installed.
 Like system-xfree86, this will just do a sanity check and leave the
 actual files alone.
-</p></li>
+</p>
+</li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
@@ -363,9 +394,9 @@ For more information on installing and running X11, refer to the
 and Mac OS X document</a>.
 </p>
 
-
 <h3><a name="packages.bin-dselect">3.2 Installing Binary Packages with
 dselect</a></h3>
+
 <p>
 <tt style="white-space: nowrap;">dselect</tt> is a program that lets you browse the list of
 available packages and select which ones you want installed.
@@ -380,43 +411,54 @@ use sudo:
 The main menu has several choices:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 <b>[A]ccess</b> - this configures the network access method to use.
 <b>You do not need to run this</b>, since Fink pre-configures
 everything for you.
 Actually, you should avoid this menu item as it may overwrite the
 default configuration with one that doesn't work.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 <b>[U]pdate</b> - this item downloads the list of available packages
 from the Fink site.
 This item does not install or update any actual packages, it just
 updates the listings used for the package browser.
 You must run this at least once after installing Fink.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 <b>[S]elect</b> - this gives you the actual package listing, where
 you can select and deselect the packages you want on your system.
 More about this later.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 <b>[I]nstall</b> - this is where the action is.
 The menu items above only affect dselect's package listings and status
 database.
 This one actually goes out and downloads and installs the packages you
 have requested.
 It also removes the packages you have deselected in the browser.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 <b>[C]onfig</b> and <b>[R]emove</b> - these are relics from the
 time before apt.
 You do not need them, although they won't do harm.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 <b>[Q]uit</b> - now that should really be obvious.
-</p></li>
+</p>
+</li>
 </ul>
-
 <p>
 You'll spend most of your time with dselect in the package browser,
 reachable through the &quot;[S]elect&quot; menu item.
@@ -440,9 +482,9 @@ When you're happy with your selections, leave the main list and use
 the &quot;[I]nstall&quot; menu item to actually install the packages.
 </p>
 
-
 <h3><a name="packages.bin-apt">3.3 Installing Binary Packages with
 apt-get</a></h3>
+
 <p>
 <tt style="white-space: nowrap;">dselect</tt> doesn't actually download the packages itself.
 Instead, it runs apt to do the dirty work.
@@ -468,11 +510,10 @@ Removing packages is just as easy:
 </p>
 <pre>sudo apt-get remove lynx</pre>
 <p>
-
 </p>
 
-
 <h3><a name="packages.bin-exceptions">3.4 Installing Dependent Packages that are Unvailable in the Binary Distribution</a></h3>
+
 <p>Sometimes, when doing a binary install, you may get messages that a dependency can't be installed. e.g.:</p>
 <pre>Sorry, but the following packages have unmet
 dependencies:
@@ -481,9 +522,8 @@ not installable
 E: Sorry, broken packages</pre>
 <p>What has happened is that the package you are trying to install depends on another package that can't be distributed as a binary, due to licensing requirements.  You must install the dependency from source (see the next section).</p>
 
-
-
 <h3><a name="packages.src">3.5 Installing Packages from Source</a></h3>
+
 <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
 <p>
 To get a list of packages that are available for installation from
@@ -515,9 +555,7 @@ If you run into errors during that process, please first check the
 <a href="http://fink.sourceforge.net/faq/">FAQ</a>.
 </p>
 
-
 <h2><a name="upgrade">4 Upgrading Fink</a></h2>
-
 
 
 
@@ -526,8 +564,8 @@ This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
 </p>
 
-
 <h3><a name="upgrade.bin">4.1 Upgrading using Binary Packages</a></h3>
+
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -550,8 +588,8 @@ older than 0.3.0, see the
 <a href="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</a>.
 </p>
 
-
 <h3><a name="upgrade.src">4.2 Upgrading the Source Distribution</a></h3>
+
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -590,8 +628,8 @@ you should update all packages at once with the command <tt style="white-space: 
 update-all</tt>.
 </p>
 
-
 <h3><a name="upgrade.mix">4.3 Mixing Binaries and Source</a></h3>
+
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions
@@ -603,7 +641,6 @@ to get the current package descriptions and to update the remaining
 packages.
 </p>
 
-
 <h2><a name="conf">5 The Fink Configuration File</a></h2>
 
 
@@ -613,8 +650,8 @@ This chapter explains the settings available in the Fink configuration
 file (fink.conf) and how they influence the behaviour of Fink.
 </p>
 
-
 <h3><a name="conf.about">5.1 About fink.conf</a></h3>
+
 <p>
 When Fink is initially installed it prompts you for the answers to some
 questions to set up your configuration file, such as which <a href="#conf.mirrors">mirrors</a> you want to use for downloading files
@@ -629,8 +666,8 @@ The <b>fink.conf</b> file is located at
 text editor. You will need super-user rights to edit it.
 </p>
 
-
 <h3><a name="conf.syntax">5.2 fink.conf syntax</a></h3>
+
 <p>
 Your fink.conf file consists of multiple lines, in the format:</p>
 <pre>OptionName: Value</pre>
@@ -646,15 +683,17 @@ StringOption: Something
 ListOption: Option1 Option2 Option3
 </pre>
 
-
 <h3><a name="conf.required">5.3 Required Settings</a></h3>
+
 <p>
 Some of the settings in the <b>fink.conf</b> are mandatory. Without
 them Fink cannot to function properly. The following settings belong to
 this category.
 </p>
 <ul>
-<li><p><b>Basepath:</b> path</p>
+<li>
+<p>
+<b>Basepath:</b> path</p>
 <p>
 Tells Fink where it was installed. Defaults to <b>/sw</b> unless you
 changed it during the initial installation of Fink. You should
@@ -663,21 +702,25 @@ changed it during the initial installation of Fink. You should
 </li>
 </ul>
 
-
 <h3><a name="conf.optional">5.4 Optional User Settings</a></h3>
+
 <p>
 There are various optional settings which users can customize to change
 the behaviour of Fink.
 </p>
 <ul>
-<li><p><b>RootMethod:</b> su or sudo or none</p>
+<li>
+<p>
+<b>RootMethod:</b> su or sudo or none</p>
 <p>For some operations, Fink needs super user rights. Recognized values
 are <b>sudo</b> or <b>su</b>. You can also set this to
 <b>none</b>, in which case you must run Fink as root yourself. The
 default value is <b>sudo</b> and in most cases it should not be
 changed.</p>
 </li>
-<li><p><b>Trees:</b> list of trees</p>
+<li>
+<p>
+<b>Trees:</b> list of trees</p>
 <p>Available trees are:</p>
 <pre>
 local/main      - any local packages you want to install
@@ -695,7 +738,9 @@ stable/main&quot;. This list should be kept in sync with the
 <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> file.
 </p>
 </li>
-<li><p><b>Distribution:</b> 10.1 or 10.2</p>
+<li>
+<p>
+<b>Distribution:</b> 10.1 or 10.2</p>
 <p>Fink needs to know which version of Mac OS X you are running. The
 10.1 distribution is meant for users of Mac OS X 10.1, while 10.2 will
 only work for those who run Mac OS X 10.2 &quot;Jaguar&quot; on their systems.
@@ -703,25 +748,35 @@ Mac OS X 10.0 and earlier are not supported. You should not need to
 alter this value.
 </p>
 </li>
-<li><p><b>FetchAltDir:</b> path</p>
+<li>
+<p>
+<b>FetchAltDir:</b> path</p>
 <p>usually fink will store the sources it fetches in
 <tt style="white-space: nowrap;">/sw/src</tt>. You can specify an alernate directory to look for
 downloaded source code in using this option. For example:
 </p>
 <pre>FetchAltDir: /usr/src</pre>
 </li>
-<li><p><b>Verbose:</b> a number from 0 to 3</p>
+<li>
+<p>
+<b>Verbose:</b> a number from 0 to 3</p>
 <p>
 This option sets how much information Fink tells you about what it is
 doing. The values are:
-<b>0</b> Quiet (don't show download stats)
-<b>1</b> Low (don't show tarballs being expanded)
-<b>2</b> Medium (shows almost everything)
-<b>3</b> High (shows everything)
+<b>0</b>
+Quiet (don't show download stats)
+<b>1</b>
+Low (don't show tarballs being expanded)
+<b>2</b>
+Medium (shows almost everything)
+<b>3</b>
+High (shows everything)
 The default value is 3.
 </p>
 </li>
-<li><p><b>NoAutoIndex:</b> boolean</p>
+<li>
+<p>
+<b>NoAutoIndex:</b> boolean</p>
 <p>Fink caches its package descripition files in /sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not thepackage index needs to be updated unless this
@@ -729,7 +784,9 @@ option is set to &quot;True&quot;. It defaults to &quot;False&quot; and it is no
 recommended that you change it. If you do, you may need to manually run
 the <tt style="white-space: nowrap;">fink index</tt> command to update the index.</p>
 </li>
-<li><p><b>SelfUpdateNoCVS:</b> boolean</p>
+<li>
+<p>
+<b>SelfUpdateNoCVS:</b> boolean</p>
 <p>The command <tt style="white-space: nowrap;">fink selfupdate</tt> upgrades Fink package
 manager to the latest release. This option makes sure that the
 Concurrent Version System (CVS) is not used to achieve this when set to
@@ -740,28 +797,37 @@ manually.</p>
 </ul>
 
 <h3><a name="conf.downloding">5.5 Download Settings</a></h3>
+
 <p>There are various settings which influence the way Fink downloads
 package data.</p>
 <ul>
-<li><p><b>ProxyPassiveFTP:</b> boolean</p>
+<li>
+<p>
+<b>ProxyPassiveFTP:</b> boolean</p>
 <p>This option makes Fink use &quot;passive&quot; mode for FTP downloads. Some
 FTP server or network configurations require this option to be set to
 True. It is recommended that you leave this option on at all
 times since active FTP is deprecated.</p>
 </li>
-<li><p><b>ProxyFTP:</b> url</p>
+<li>
+<p>
+<b>ProxyFTP:</b> url</p>
 <p>If you use a FTP proxy then you should enter its address here, for
 example:</p>
 <pre>ProxyFTP: ftp://yourhost.com:2121/</pre>
 <p>Leave if blank if you do not use a FTP proxy.</p>
 </li>
-<li><p><b>ProxyHTTP:</b> url</p>
+<li>
+<p>
+<b>ProxyHTTP:</b> url</p>
 <p>If you use a HTTP proxy then you should enter its address here, for
 example:</p>
 <pre>ProxyHTTP: http://yourhost.com:3128/</pre>
 <p>Leave if blank if you do not use a HTTP proxy.</p>
 </li>
-<li><p><b>DownloadMethod:</b> wget or curl or axel or axelautomirror</p>
+<li>
+<p>
+<b>DownloadMethod:</b> wget or curl or axel or axelautomirror</p>
 <p>Fink can use three different applications to download files from the
 Internet - <b>wget</b>, <b>curl</b>, or <b>axel</b>. The value
 <b>axelautomirror</b> uses an experimental mode of the <b>axel</b>
@@ -774,6 +840,7 @@ time. The default value is <b>curl</b>.
 </ul>
 
 <h3><a name="conf.mirrors">5.6 Mirror Settings</a></h3>
+
 <p>Getting software from the Internet can be tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
@@ -789,14 +856,18 @@ different mirror anywhere in the world.</p>
 <p>The <b>fink.conf</b> file holds settings about which mirrors you
 would like to use.</p>
 <ul>
-<li><p><b>MirrorContinent:</b> three letter code</p>
+<li>
+<p>
+<b>MirrorContinent:</b> three letter code</p>
 <p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
 <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
 For example, if you live in europe:</p>
 <pre>MirrorContinent: eur</pre>
 </li>
-<li><p><b>MirrorCountry:</b> six letter code</p>
+<li>
+<p>
+<b>MirrorCountry:</b> six letter code</p>
 <p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
 <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
@@ -806,16 +877,22 @@ For example, if you live in Austria:</p>
 </ul>
 
 <h3><a name="conf.developer">5.7 Developer Settings</a></h3>
+
 <p>Some options in the <b>fink.conf</b> are only useful to
 developers. We do not recommend that conventional Fink users modify
 them. The following options fall into this category.</p>
 <ul>
-<li><p><b>KeepRootDir:</b> boolean</p>
+<li>
+<p>
+<b>KeepRootDir:</b> boolean</p>
 <p>Causes Fink not to delete the /sw/src/root-name-version directory
 after building a package. Defaults to false. <b>Be careful, this
-option can fill your hard-disk quickly!</b></p>
+option can fill your hard-disk quickly!</b>
+</p>
 </li>
-<li><p><b>KeepBuildDir:</b> boolean</p>
+<li>
+<p>
+<b>KeepBuildDir:</b> boolean</p>
 <p>Causes Fink not to delete the /sw/src/name-version directory after
 building a package. Defaults to false. <b>Be careful, this option can
 fill your hard-disk quickly!</b>
@@ -823,11 +900,9 @@ fill your hard-disk quickly!</b>
 </li>
 </ul>
 
-
-
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
 Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: uguide.xml,v 1.17 2003/04/05 15:29:30 alexkhansen Exp $</i></p></body></html>

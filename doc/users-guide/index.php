@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/27 17:18:32';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -20,7 +20,6 @@ Also check out the
 section</a> of the web site, it has some other useful documents
 beyond that.
 </p>
-
 <p>
 Welcome to the Fink User's Guide.
 This guide covers first time installation and upgrade procedures for
@@ -67,7 +66,7 @@ apt-get</a></li>
 <li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
 <li><a href="conf.php#developer">5.7 Developer Settings</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.16 2003/01/27 17:18:32 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.17 2003/04/05 15:29:30 alexkhansen Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/27 17:18:32';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="packages.php" title="Installing Packages"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -9,7 +9,6 @@ include "header.inc";
 ?>
 
 <h1>User's Guide - 2 First Time Installation</h1>
-
 
 
 
@@ -30,8 +29,8 @@ This is covered in the <a href="packages.php">Installing Packages
 chapter</a>.
 </p>
 
-
 <h2><a name="bin">2.1 Installing the Binary Distribution</a></h2>
+
 <p>
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
@@ -56,8 +55,8 @@ When the installer is finished, proceed with the
 <a href="#setup">Setting Up Your Environment</a> section.
 </p>
 
-
 <h2><a name="src">2.2 Installing the Source Distribution</a></h2>
+
 <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <code>fink</code> package manager and its package
@@ -118,8 +117,8 @@ When the bootstrap is finished, proceed with the
 <a href="#setup">Setting Up Your Environment</a> section.
 </p>
 
-
 <h2><a name="setup">2.3 Setting Up Your Environment</a></h2>
+
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
@@ -142,8 +141,30 @@ It's okay if there is a note that says &quot;New file&quot;.
 Be sure that you pressed Return at least once after the line, then
 press Control-O, Return, Control-X to get out of the editor.
 </p>
+<p>There are a couple of common situations where you may need to edit additional files:</p>
+<ol>
+
+<li><p>You have a <code>~/.tcshrc</code>.</p>
+<p>Such a file occasionally gets created by third-party applications, or 
+you may have done it yourself.
+In any case what will happen is that <code>~/.tcshrc</code> gets read and 
+<code>~/.cshrc</code> is ignored.
+The recommended procedure is to edit <code>~/.tcshrc</code> in a similar 
+manner to how you edited
+<code>~/.cshrc</code> above, and add the following line at the end 
+(replace 
+&quot;/Users/you&quot; with your actual home
+directory):</p>
+<pre>source /Users/you/.cshrc</pre>
+<p>That way, if you ever need to remove <code>~/.tcshrc</code>, you will be able to run Fink.</p></li>
+
+<li><p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
+<p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is modify <code>~/Library/init/tcsh/path</code> (create it if necessary), and add (once again, replace &quot;/Users/you&quot; with your actual home directory):</p> 
+<pre>source /Users/you/.cshrc</pre>
+<p>to it.</p></li>
+</ol>
 <p>
-Editing .cshrc will only affect new shells (i.e. newly opened Terminal
+Editing .cshrc (and other startup files) will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
 You'll also need to run <code>rehash</code> because tcsh caches the
@@ -168,7 +189,6 @@ Once your environment is set up, proceed to the
 you can install some actually useful packages using the various
 package management tools included in Fink.
 </p>
-
 
 <p align="right">
 Next: <a href="packages.php">3 Installing Packages</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - History";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:30';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php" title="Getting and Installing XFree86"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -15,6 +15,7 @@ include "header.inc";
 <p>[Sorry for the epic language, I couldn't resist...]</p>
 
 <h2><a name="early">2.1 The early days</a></h2>
+
 <p>
 In the beginning, there was void.
 Darwin was in its infancy, Mac OS X was still in development and there
@@ -29,8 +30,8 @@ The patches found their way into the Darwin CVS repository and slept
 there, waiting for things to come.
 </p>
 
-
 <h2><a name="xonx-forms">2.2 XonX forms</a></h2>
+
 <p>
 One fine day Torrey T. Lyons came along and gave the Darwin patches
 the attention they had been waiting for.
@@ -47,8 +48,8 @@ At about the same time Tenon started to build Xtools, using XFree86
 4.0 as the foundation.
 </p>
 
-
 <h2><a name="root-or-not">2.3 To root or not to root</a></h2>
+
 <p>
 Soon the XonX team had XFree86 running in a fullscreen mode in
 parallel to Quartz and was putting out test releases for adventurous
@@ -83,7 +84,6 @@ and Tenon released Xtools 1.0 some weeks after that.
 so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X 
 version had been completely integrated into the main XFree86 distribution.
 </p>
-
 
 <p align="right">
 Next: <a href="inst-xfree86.php">3 Getting and Installing XFree86</a></p>

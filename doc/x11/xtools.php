@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:30';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="other.php" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php" title="Starting XFree86">';
 
@@ -11,9 +11,8 @@ include "header.inc";
 <h1>Running X11 - 5 Xtools</h1>
 
 
-
-
 <h2><a name="install">5.1 Installing Xtools</a></h2>
+
 <p>
 Now that's easy for a change.
 Get the installer, double-click it, and follow the instructions.
@@ -27,9 +26,8 @@ libraries etc. are there and act as a placeholder in Fink's dependency
 system.
 </p>
 
-
-
 <h2><a name="run">5.2 Running Xtools</a></h2>
+
 <p>
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
@@ -37,9 +35,8 @@ Like XFree86, Xtools will run the clients you specify in your
 Xtools additionally allows you to start clients via the menu.
 </p>
 
-
-
 <h2><a name="opengl">5.3 OpenGL Notes</a></h2>
+
 <p>
 Xtools does hardware-accelerated OpenGL in rootless mode and comes
 with the libraries to support it.
@@ -50,8 +47,6 @@ Also, some headers are missing.
 Fink doesn't offer a workaround at this time.
 Hopefully this will be fixed in Xtools 1.1 once it is released.
 </p>
-
-
 
 <p align="right">
 Next: <a href="other.php">6 Other X11 Possibilities</a></p>

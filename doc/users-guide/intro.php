@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/27 17:18:32';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
@@ -11,8 +11,8 @@ include "header.inc";
 <h1>User's Guide - 1 Introduction</h1>
 
 
-
 <h2><a name="what">1.1 What is Fink?</a></h2>
+
 <p>
 Fink is a distribution of Unix Open Source software for Mac OS X and
 Darwin.
@@ -20,30 +20,35 @@ It brings a wide range of free command-line and graphical software
 developed for Linux and similar operating systems to your Mac.
 </p>
 
-
 <h2><a name="req">1.2 Requirements</a></h2>
+
 <p>
 In any case you will need:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 An installed Mac OS X system, version 10.2 or later, or equivalent
 Darwin releases.
 Earlier versions of both will <b>not</b> work.
 See below for more information about supported systems.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Internet access.
 Both source code and binary packages are downloaded from Internet
 download sites.
-</p></li>
+</p>
+</li>
 </ul>
 <p>
 If you intend to use the source distribution (see below), you will
 also need:
 </p>
 <ul>
-<li><p>
+<li>
+<p>
 Development tools.
 On Mac OS X, install the Developer.pkg package from the Developer
 Tools CD.
@@ -56,16 +61,19 @@ don't intend to build packages from source.
 Some of the programs installed by the package are actually general
 purpose command line tools.
 Some packages may depend on those to run.
-</p></li>
-<li><p>
+</p>
+</li>
+<li>
+<p>
 Patience.
 Compiling several big packages takes time.
 I'm talking hours or even days here.
-</p></li>
+</p>
+</li>
 </ul>
 
-
 <h2><a name="supported-os">1.3 Supported Systems</a></h2>
+
 <p>
 <b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
@@ -86,8 +94,8 @@ You may run into problems with packages that use features specific to
 Mac OS X - affected packages include XFree86 and possibly esound.
 </p>
 
-
 <h2><a name="src-vs-bin">1.4 Source vs. Binary</a></h2>
+
 <p>
 Software is written (&quot;developed&quot;) in human-readable programming
 languages; this form is called the &quot;source code&quot;.
@@ -125,7 +133,6 @@ compiling.
 It is actually possible to mix the two models at will.
 The rest of this manual will show you how.
 </p>
-
 
 <p align="right">
 Next: <a href="install.php">2 First Time Installation</a></p>

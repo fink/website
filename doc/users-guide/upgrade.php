@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/27 17:18:32';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="conf.php" title="The Fink Configuration File"><link rel="prev" href="packages.php" title="Installing Packages">';
 
@@ -12,14 +12,13 @@ include "header.inc";
 
 
 
-
 <p>
 This chapter covers the procedures used to update your Fink
 installation with the latest and greatest stuff.
 </p>
 
-
 <h2><a name="bin">4.1 Upgrading using Binary Packages</a></h2>
+
 <p>
 If you use the binary distribution exclusively, there is no separate
 upgrade procedure.
@@ -42,8 +41,8 @@ older than 0.3.0, see the
 <a href="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</a>.
 </p>
 
-
 <h2><a name="src">4.2 Upgrading the Source Distribution</a></h2>
+
 <p>
 Upgrading is a bit more complicated if you use the source
 distribution.
@@ -82,8 +81,8 @@ you should update all packages at once with the command <code>fink
 update-all</code>.
 </p>
 
-
 <h2><a name="mix">4.3 Mixing Binaries and Source</a></h2>
+
 <p>
 If you use precompiled binary packages for some packages and build
 others from source, you'll have to follow both sets of instructions
@@ -94,7 +93,6 @@ then use <code>fink selfupdate</code> and <code>fink update-all</code>
 to get the current package descriptions and to update the remaining
 packages.
 </p>
-
 
 <p align="right">
 Next: <a href="conf.php">5 The Fink Configuration File</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2003/01/27 15:08:02 $';
+$cvs_date = '$Date: 2003/04/05 15:31:13 $';
 
 include "header.inc";
 ?>
@@ -46,8 +46,11 @@ A text editor will pop up.
 Enter this line:
 </p><pre>source /sw/bin/init.csh</pre><p>
 and then hit return.
-To get out of the editor, press control-O, return, control-X.
-Close the Terminal.app window.
+To get out of the editor, press control-O, return, control-X.</p>
+<p>Some users may may need to modify some more files.  Run the following command:</p>
+<p><pre>ls -a ~</pre></p>
+<p>if files called <code>.login</code> or <code>.tcshrc</code> are among those listed, you'll need to do some more editing.  Consult the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">relevant page</a> of the Fink Users Guide.</p>
+<p>Close the Terminal.app window when you're done editing files.
 </p></li>
 <li><p>
 Open a new Terminal.app window and type "fink scanpackages".

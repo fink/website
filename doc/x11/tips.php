@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/31 16:57:30';
+$cvs_date = 'Date: 2003/04/05 15:29:30';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="prev" href="trouble.php" title="Troubleshooting XFree86">';
 
@@ -11,9 +11,8 @@ include "header.inc";
 <h1>Running X11 - 8 Usage Tips</h1>
 
 
-
-
 <h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
+
 <p>
 To launch X11 applications from a Terminal.app window, you must set
 the environment variable &quot;DISPLAY&quot;.
@@ -39,9 +38,8 @@ This way you can still run X11 applications remotely or through ssh
 with X11 tunneling.
 </p>
 
-
-
 <h2><a name="open">8.2 Launching Aqua apps from an xterm</a></h2>
+
 <p>
 One way to launch Aqua applications from an xterm (or any other shell,
 actually) is the <code>open</code> command.
@@ -56,9 +54,8 @@ associated with it, the third example explicitly gives an application
 to use.
 </p>
 
-
-
 <h2><a name="copy-n-paste">8.3 Copy and Paste</a></h2>
+
 <p>
 Copy and Paste generally works between the Aqua and X11 environments.
 There are still some bugs.
@@ -69,8 +66,9 @@ Copy and paste from Classic to X11 doesn't work.
 Anyway, the trick is to use the respective methods of the environment
 you're in.
 To transfer text from Aqua to X11, use Cmd-C in Aqua, then bring the
-destination window to the front and use the middle mouse button to
-paste.
+destination window to the front and use the &quot;middle mouse button&quot;, i.e. Option-click
+on a single-button mouse (this can be configured 
+under XDarwin's Preferences), to paste.
 To transfer text from X11 to Aqua, simply select the text with the
 mouse in X11, then use Cmd-V in Aqua to paste it.
 </p>
@@ -91,8 +89,9 @@ line to your .xinitrc:
 manager and never returns! Don't just add it at the end, it won't
 be executed.)
 </p>
-
-
+<p>If you are using Apple's X11, then you can use Command-C or Edit-&gt;Copy, as 
+usual for Mac apps, to copy text to the clipboard.  However, pasting 
+from the clipboard to Apple X11 via Command-V doesn't work yet.</p>
 
 
 
