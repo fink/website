@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/09 03:44:35';
+$cvs_date = 'Date: 2005/03/09 14:16:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -341,18 +341,8 @@ Only available in <code>fink</code> newer than version 0.21.0
     <h2><a name="show-deps">6.23 show-deps</a></h2>
       
       <p>Only available in fink-0.23-6 and later.</p>
-      <p>Shows how Fink parses parts of a package's .info file. Various fields and percent expansions will be displayed according to options as follows:</p>
-      <pre>-h,--help            - Show the options which are available.
--a,--all             - Display all fields from the package description.  This
-                       is the default mode when no --field or --percent flags
-                       are given.
--f fieldname, --field=fieldname
-                     - Display the given fieldname(s), in the order listed.
--p key, --percent=key
-                     - Display the given percent expansion key(s), in the
-                      order listed.
-</pre>
-      <p></p>
+<p>Displays a human-readable list of the compile-time (build) and run-
+           time (installation) dependencies of the listed package(s).</p>
     
     
   
