@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.18 2003/11/04 10:05:28 fingolfin Exp $
+# $Id: Makefile.common,v 1.19 2004/03/01 08:01:10 dmacks Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -89,5 +89,10 @@ endif
 #endif
 
 install-hook:
+
+# validate the XML files
+
+check:
+	xmllint --noout --valid $(SOURCE)
 
 # eof
