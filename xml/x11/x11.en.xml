@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.5 2004/05/08 21:36:33 michga Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.6 2004/05/08 21:40:13 michga Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -783,27 +783,27 @@ exec enlightenment</codeblock>
       <codeblock>source /sw/bin/init.csh</codeblock>
  <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>    
  <codeblock>. /sw/bin/init.sh
-quartz-wm --only-proxy &
-metacity &
+quartz-wm --only-proxy &amp;
+metacity &amp;
 exec gnome-session
 </codeblock> 
 <p>Note: same change on the first line for tcsh users as stated above.</p>
 <p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>    
  <codeblock>. /sw/bin/init.sh
-quartz-wm --only-proxy &
+quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock> 
 <p>Note: same change on the first line for tcsh users as stated above.</p>
-<p>To start KDE 3.2 (version < 3.2.2-21) under Apple's X11</p>
+<p>To start KDE 3.2 (version &lt; 3.2.2-21) under Apple's X11</p>
 <codeblock>. /sw/bin/init.sh
 export KDEWM=kwin
-quartz-wm --only-proxy &
-/sw/bin/startkde >/tmp/kde.log 2>&1
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 <p>Note: same change on the first line for tcsh users as stated above.</p>
 <p>And finally to start the latest unstable version of KDE under Apple's X11:</p>
 <codeblock>. /sw/bin/init.sh
-/sw/bin/startkde >/tmp/kde.log 2>&1
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
    </section>
   </chapter>
