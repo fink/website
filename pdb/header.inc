@@ -1,12 +1,12 @@
 <?
-/* $Id: header.inc,v 1.2 2001/08/01 13:37:24 chrisp Exp $ */
+/* $Id: header.inc,v 1.3 2001/08/03 16:51:30 chrisp Exp $ */
 
 if ($uses_pathinfo) {
   if ($PATH_INFO == "") {
     $pispec = "-";
     $title .= "(none)";
     $pdbroot = "";
-  } elseif (ereg("^/([a-zA-Z0-9_.-]+)$", $PATH_INFO, $r)) {
+  } elseif (ereg("^/([a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
     $pispec = $r[1];
     $title .= $pispec;
     $pdbroot = "../";
