@@ -1,7 +1,7 @@
 <?
 $title = "Charte de sécurité - Procédure";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 17:12:03';
+$cvs_date = 'Date: 2004/07/10 18:09:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="notification.php?phpLang=fr" title="Envoi des notifications"><link rel="prev" href="sources.php?phpLang=fr" title="Sources répertoriant les failles">';
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Charte de sécurité - Notification";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 17:12:03';
+$cvs_date = 'Date: 2004/07/10 18:09:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="prev" href="updating.php?phpLang=fr" title="Procédure de correctif de sécurité">';
 
 
@@ -76,7 +76,7 @@ include_once "header.fr.inc";
                 References:       MISC
                    Ref-URL:       http://security.e-matters.de/advisories/092004.html
             </pre>
-            <p>Notez que les mots clés <b>Affected</b> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetés pour Fink. L'exemple ci-dessus le montre clairement.</p>
+            <p>Notez que les mots clés <b>Affected</b> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetées pour Fink. L'exemple ci-dessus le montre clairement.</p>
         
     
 <? include_once "../../footer.inc"; ?>

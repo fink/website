@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.8 2004/03/31 02:20:52 michga Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.9 2004/07/10 18:22:31 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -35,6 +35,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
 </section>
 <section name="developerdoc"><title>Documentation développeur</title>
 <ul>
+<li><varlink url="security/index.php" varurl="security/security.fr.html">Charte de sécurité</varlink> - Lecture obligatoire pour tous ceux qui sont mainteneurs de paquets dans Fink ou qui veulent le devenir.</li>
 <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</link> (fichier pdf 2MB) - diapositives d'une présentation lors de la <link
 url="http://conferences.oreillynet.com/macosx2002/"
 >Conférence O'Reilly Mac OS X</link> (disponible aussi sous <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</link>) </li>

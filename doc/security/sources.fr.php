@@ -1,7 +1,7 @@
 <?
 $title = "Charte de sécurité - Sources";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 17:12:03';
+$cvs_date = 'Date: 2004/07/10 18:09:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="updating.php?phpLang=fr" title="Procédure de correctif de sécurité"><link rel="prev" href="severity.php?phpLang=fr" title="Délais de réponse et actions immédiates.">';
 
 

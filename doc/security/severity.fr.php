@@ -1,7 +1,7 @@
 <?
 $title = "Charte de sécurité - Délais";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/02 17:12:03';
+$cvs_date = 'Date: 2004/07/10 18:09:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Charte de sécurité Contents"><link rel="next" href="sources.php?phpLang=fr" title="Sources répertoriant les failles"><link rel="prev" href="respo.php?phpLang=fr" title="Responsabilité">';
 
 
@@ -17,7 +17,7 @@ include_once "header.fr.inc";
             
             <p>Tout mainteneur de paquet doit faire son possible pour tenir les délais de réponse indiqués ci-dessous. <b>L'équipe Fink Core</b> peut décider d'engager des actions immédiates pour certains types de vulnérabilité. Dans ce cas, l'un des membres de <b>l'équipe Fink Core</b> devra notifier le mainteneur du paquet. Gardez toutefois à l'esprit que, bien que nous fassions tout notre possible pour tenir les délais, Fink est basé sur le bénévolat et que ces délais ne peuvent donc être garantis.</p>
             <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Vulnérabilité</th><th align="left">Temps de réponse</th></tr><tr valign="top"><td>Exploit à distance sur root</td><td>
-                        <p>minimum : <b>immediat</b>; maximum : <b>12</b> heures.</p>
+                        <p>minimum : <b>immédiat</b>; maximum : <b>12</b> heures.</p>
                     </td></tr><tr valign="top"><td>Exploit local sur root</td><td>
                         <p>minimum : <b>12</b> heures ; maximum : <b>36</b> heures.</p>
                     </td></tr><tr valign="top"><td>Déni de service à distance</td><td>
