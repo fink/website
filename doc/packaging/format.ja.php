@@ -147,6 +147,8 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%p, %P</td><td>
 						<p>
 							<b>p</b>refix．Fink のインストール場所．例: <code>/sw</code>．
+							全てのユーザーが <code>/sw</code> に Fink をインストールしているわけではない．
+							<code>%p</code> で正しいパスを取得する．
 						</p>
 					</td></tr><tr valign="top"><td>%d</td><td>
 						<p>
@@ -196,7 +198,6 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>%c</td><td>
 						<p>
-							The parameters for <b>c</b>onfigure．
 							configure に渡すパラメータ: <code>--prefix=%p</code> の他，フィールド <code>ConfigureParams</code> で指定したもの全て．
 						</p>
 					</td></tr><tr valign="top"><td>%m</td><td>

@@ -89,6 +89,18 @@ include_once "header.ja.inc";
 							値にはフィールド Package と同じ制限がある．
 							必須フィールド．
 						</p>
+						<p>
+							プログラムによっては被標準的なバージョン番号の付け方をしていて，ソートや当フィールドで認められていない字を使っている場合がある．
+							このような状況では，上流のバージョンを適切にソートされるものに変える．
+							バージョン文字列のソートのされ方がわからない場合，<code>dpkg</code> コマンドをシェルで入力する．例えば，
+						</p>
+<pre> 
+ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"
+</pre>
+						<p>
+							これは "1.2.1" の方が "1.3" より小さいため "true" を出力する．
+							詳細は <code>dpkg</code> man ページを参照．
+						</p>
 					</td></tr><tr valign="top"><td>Revision</td><td>
 						<p>
 							Fink パッケージとしての「版」．
@@ -96,6 +108,11 @@ include_once "header.ja.inc";
 							最初は 1 で始まる．
 							必須フィールド．
 						</p>
+						<p>
+							Fink のポリシーでは，パッケージのバイナリ (コンパイル済み) 形式 (<code>.deb</code> ファイル)が変わる<b>いかなる</b>場合でも，<code>Revision</code> をあげなければ<b>ならない</b>．
+							例えば，<code>Depends</code> や他のパッケージ一覧フィールド， Splitoff パッケージの追加・削除・名称変更， Splitoff パッケージ間でのファイルの移動など．
+							パッケージのツリーを統合 (例えば 10.2 から 10.3) する場合，新しい方のツリーでは <code>Revision</code> を 10 あげて古い方のツリーでのパッケージの更新に対応できるようにする．
+ 						</p>
 					</td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
 							<b>Fink 0.12.0 で導入:</b>
@@ -275,7 +292,25 @@ CompileScript:  &lt;&lt;
 						</p>
 <pre>Depends: openssl097-shlibs, expat-shlibs</pre>
 						<p>
-							とすることと同じ．
+							とすることと同じである．
+						</p>
+						<p>
+							Depends/BuildDepends を，複数のメジャーバージョンを持つ共有ライブラリパッケージに使用する場合，下記のようにしては<b>いけない</b>:
+ </p>
+<pre>
+  Package: foo
+  Depends: id3lib3.7-shlibs | id3lib4-shlibs
+  BuildDepends: id3lib3.7-dev | id3lib4-dev
+</pre>
+						<p>
+							どちらのライブラリとも動作するパッケージであっても，どちらか一つ (適切に動作する高い方のバージョンが望ましい) のパッケージを選び，パッケージ内で統一する． 
+						</p>
+						<p>
+							<a href="policy.php?phpLang=ja#sharedlibs">共有ライブラリポリシー</a>で説明したように， -dev パッケージがインストールされるのは一つだけである．
+							各パッケージは -shlibs パッケージに関連づけられた異なるファイル名へ同じ名前のシンボリックリンクを作成することがある．
+							しかし，パッケージ foo をコンパイルする際には実際の (-shlibs パッケージ内の) ファイル名の方が foo バイナリにハードコードされる．
+							パッケージは，コンパイル時にインストールされた -dev に合った -shlibs パッケージを必要とする．
+							このため， <code>Depends</code> でどちらも満たすようにはできないのである．
 						</p>
 					</td></tr><tr valign="top"><td>BuildDepends</td><td>
 						<p>
@@ -290,6 +325,15 @@ CompileScript:  &lt;&lt;
 							パッケージ pine で <code>Provides: mailer</code> となっている場合，
 							pine がインストールされると mailer についての全ての依存性は解決したものとされる．
 							普通，そのようなパッケージは pine のフィールド Conflicts や Replaces にも入れるとよい．
+						</p>
+
+						<p>
+							Provides 項目には，バージョン番号に関連した情報はない．
+							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
+							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
+							結果として，同一の代理パッケージを提供するバリアントが多数あるのは危険である．
+							これによってバージョンを指定した依存性ができなくなるためである．
+							例えば， foo-gnome と foo-nogome が "Provides: foo" を提供する場合，"Depends: foo (&gt; 1.1)" は動作しない．
 						</p>
 					</td></tr><tr valign="top"><td>Conflicts</td><td>
 						<p>
@@ -345,6 +389,9 @@ CompileScript:  &lt;&lt;
 							<b>Fink 0.9.9 で導入:</b>
 							真偽値フィールド．
 							他パッケージはこのパッケージを BuildDepend に入れてもよいが， Depend に入れてはいけないことを示す．
+							通常の真偽値とは異なり，<code>BuildDependsOnly</code> は３つの状態を持つ．
+							未定義 (何も指定しない) の場合，明示的に False を指定するのとは異なる．
+							詳細は<a href="policy.php?phpLang=ja#sharedlibs">共有ライブラリポリシー</a>を参照．
 						</p>
 						<p>
 							fink 0.20.5 より，このフィールドが設定されているか，設定されている場合その値が，
@@ -369,6 +416,10 @@ asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
+						<p>
+							大陸及び国のコードは  <code>/sw/lib/fink/mirror/_keys</code> にある．
+							これは， fink および fink-mirrors パッケージの一部である．
+						</p>
 					</td></tr><tr valign="top"><td>Source</td><td>
 						<p>
 							ソースの tar ボールの URL ．
@@ -391,6 +442,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							<code>gnu</code> という値は <code>mirror:gnu:%n/%n-%v.tar.gz</code> の，
 							<code>gnome</code> という値は <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code> の省略形．
 							デフォルト値は <code>%n-%v.tar.gz</code>  (すなわちマニュアル・ダウンロード) になっている．
+							暗示的に <code>Source</code> を指定するのは廃止予定である (明示的に簡単なファイル名指定/手動ダウンロードするのは可)．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 						<p>
@@ -616,20 +668,40 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							このパラメータは <code>Type: Perl</code> となっている perl モジュールにも使える．
 							その場合，指定した値はデフォルトの文字列 perl Makefile.PL の後ろに追加される．
 						</p>
+						<p>
+							fink-0.22.0 より，このフィールドは条件をサポートする．
+							文法は <code>Depends</code> や他のパッケージ一覧フィールドと同様である．
+							条件は，スペースデリミティッドな "word"  の直後に記述する．
+							例えば:
+						</p>
+<pre>
+Type: -x11 (boolean)
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
+</pre>
+						<p>
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11 バリアントの場合のみ <code>--with-x11</code> を送る．
+						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
-							コンパイルに使う gcc に要求されるバージョン．
-							指定できる値は以下の通り:
-							<code>2.95.2</code> または <code>2.95</code> (パッケージツリー 10.1 でのみ利用可能)，
-							<code>3.1</code> (パッケージツリー 10.1 でのみ利用可能)，
-							<code>3.3</code> (パッケージツリー 10.2-gcc3.3 および 10.3 でのみ利用可能)．
+							当フィールドは，パッケージ内の C++ コードが使用する GCC-ABI を指定する．
+							(このフィールドは，ABI が２度変わり，C++ コードと，それがリンクするライブラリが同じ ABI でなければならないために必要である．)
+						</p><p>
+							値としては:
+							<code>2.95.2</code> (or <code>2.95</code>),
+							<code>3.1</code>,
+							<code>3.3</code>
+							がある．
+							最後の値は， gcc 3.1 およびそれ以降の gcc の GCC-ABI である．
+						</p><p>
+							注記: GCC 値が既定値と異なる場合， (CC や CXX フラグを設定するなど) パッケージ内でコンパイラを指定する必要がある．
+							また， (virtual) gcc パッケージへの依存性を指定する．
 						</p>
 						<p>
 							Fink 0.13.8 以降，このフラグが指定されると， gcc のバージョンは <code>gcc_select</code> によって調べられ，
 							誤ったバージョンのものが存在すると Fink はエラー終了する．
 						</p>
 						<p>
-							このフィールドは gcc コンパイラ間の移行を助けるために Fink に加えられた．
+							このフィールドは gcc コンパイラ間の移行をメンテナが知ることができるように Fink に加えられた．
 							gcc では， C++ コードの関わるライブラリ間で，実行可能・ファイル同士の (バージョン名に反映されない) 非互換が生じることがある．
 						</p>
 					</td></tr><tr valign="top"><td>CompileScript</td><td>
@@ -761,6 +833,13 @@ INSTALLSCRIPT=%i/bin
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
 							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
 						</p>
+					</td></tr><tr valign="top"><td>AppBundles</td><td>
+						<p>
+							<b>post-0.23.1 バージョンから導入</b>
+							当フィールドは，アプリケーションバンドルを <code>%p/Applications</code> にインストールし， <code>/Applications/Fink</code>  にシンボリックリンクを作成する．
+							例:
+						</p>
+<pre>AppBundles: build/*.app Foo.app</pre>
 					</td></tr><tr valign="top"><td>JarFiles</td><td>
 						<p>
 							<b>Fink 0.10.0 で導入:</b>
@@ -895,8 +974,9 @@ AnotherVar: foo bar
 					</td></tr><tr valign="top"><td>ConfFiles</td><td>
 						<p>
 							ユーザが修正し得る設定ファイルの空白区切りのリスト．
+							パーセント展開が行われる．
 							ファイルは，次のように絶対パスで指定しなければいけない．
-							<code>%p/etc/foo.conf</code>.
+							<code>%p/etc/%n.conf</code>.
 							dpkg はここで指定されたファイルを特別扱いする．
 							パッケージがアップグレードされたとき，新設定ファイルが提供され，しかもユーザが旧パッケージの設定ファイルが修正していた場合は，
 							ユーザはどちらのバージョンを使うか尋ねられ，設定ファイルのバックアップが作られる．
@@ -1100,20 +1180,19 @@ SplitOff2: &lt;&lt;
 		<h2><a name="profile.d">5.6 Profile.d スクリプト</a></h2>
 			
 			<p>
-				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよい．
-				これらのスクリプト断片はスクリプト <code>/sw/bin/init.[c]sh</code> によって読み込まれる．
-				普通，全ての Fink ユーザがシェルのスタートアップファイル (<code>.cshrc</code> またはそれと互換なファイル) でそれを読み込むはずだ．
-				パッケージでは，どのスクリプトにも2種類を用意しなければいけない:
-				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用だ．
-				それらのスクリプトは <code>/sw/etc/profile.d/%n.[c]sh</code> としてインストールされなければいけない．
+				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよいでしょう．
+				これらのスクリプト断片はスクリプト <code>/sw/bin/init.[c]sh</code> によって読み込まれます．
+				通常，全ての Fink ユーザがシェルのスタートアップファイル (<code>.cshrc</code> またはそれと互換なファイル) でそれを読み込むようになっています．
+				パッケージの方では，どのスクリプトにも2種類を用意しなければいけません:
+				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用です．
+				両スクリプトとも <code>/sw/etc/profile.d/%n.[c]sh</code> としてインストールされる必要があります．
 				(ここで %n は，他と同様に「パッケージ名」を表す．)
-				また，それらのパーミッションは実行，読み込みが共に可能でなければいけない．
+				また，正しく読み込まれるためには，それらのパーミッションは実行，読み込みが共に可能でなければいけません．
 				(すなわち，それらのインストールには引数 <code>-m 755</code> を付ける．)
-				そうでないと正しく読み込まれないからだ．
 			</p>
 			<p>
-				いくつかの環境変数を単に設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよい．
-				このフィールドはまさにその作業を簡略化するために用意されたものだ．
+				環境変数をいくつか設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
+				このフィールドはまさにその作業を簡略化するために用意されたものです．
 			</p>
 		
 	
