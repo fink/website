@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/25 17:50:21';
+$cvs_date = 'Date: 2002/05/29 13:41:39';
 
 $metatags = '<link rel="contents" href="index.php" title="Porting Contents"><link rel="prev" href="libtool.php" title="GNU libtool">';
 
@@ -98,8 +98,8 @@ is experimenting with this on Fink packages, using the version of gcc3
 which Apple provided with the April 2002 Developer Tools.  As of May 22,
 we have had reports of success and failure with just a handful of Fink
 packages when one attempts to compile them with gcc3.  (Thanks to Jeff
-Hester, Mathias Meyer, and Alexander Strange for providing reports.
-Further reports can
+Hester, Jan de Leeuw, Mathias Meyer, and Alexander Strange for providing
+reports. Further reports can
 be sent to fink-devel@lists.sourceforge.net .)
 </p><p><b> Successful packages:</b></p>
 
@@ -137,6 +137,7 @@ __ZTI9pkgSystem) </li>
 <li>galeon-1.2.1-1</li>
 <li>gaim-0.57-1 (breaks with install_name error)</li>
 <li>qt3-3.0.4-5</li>
+<li><a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02051.html">emacs21</a></li>
 
 <p>In general, packages which have loadable modules and use libtool are
 failing with this install_name error at the moment, because libtool passes
