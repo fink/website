@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/21 21:01:44';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2004/09/14 15:29:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -65,9 +65,9 @@ include_once "header.en.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>5.6: How can I uninstall all of Fink?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Almost all files installed by Fink are in /sw (or wherever you
         chose to install it). Thus in order to get rid of Fink, enter this
-        command:</p><pre>sudo rm -rf /sw</pre><p>The only exception to this rule is XFree86. If you installed
-        XFree86 through Fink (i.e., you installed the <code>xfree86</code> or
-        <code>xfree86-rootless</code> packages, instead of using
+        command:</p><pre>sudo rm -rf /sw</pre><p>The only exception to this rule is XFree86 or X.org. If you installed
+        an X server through Fink (i.e., you installed the <code>xfree86</code>,
+        <code>xfree86-rootless</code>, or <code>xorg</code> packages, instead of using
         <code>system-xfree86</code>) and want to remove it, you will need
         additionally to enter this:</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>If you aren't planning to reinstall Fink you also will want to
         remove the "<code>source /sw/bin/init.csh</code>" line you added to

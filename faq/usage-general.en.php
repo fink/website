@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/21 21:01:44';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2004/09/14 15:29:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 
@@ -104,6 +104,8 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
   install other X11-related Fink packages from source.</p></li>
           <li><p>        4.4.x built via Fink: install the <code>xfree86</code> and
   <code>xfree86-shlibs</code> packages </p></li>
+          <li><p>       X.org built via Fink: install the <code>xorg</code> and
+  <code>xorg-shlibs</code> packages </p></li>
         </ul><p>Under Jaguar, the most popular choices, and the Fink packages to
           make them work are:</p><ul>
           <li>

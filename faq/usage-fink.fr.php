@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/21 21:16:59';
+$cvs_date = 'Date: 2004/09/15 02:42:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -44,7 +44,7 @@ include_once "header.fr.inc";
     </a>
     <a name="removing">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.6: Comment désinstaller la totalité de Fink ?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Presque tous les fichiers installés par fink se trouvent dans le répertoire /sw (ou bien l'endroit où vous avez choisi de faire l'installation). Donc, pour supprimer Fink, entrez cette commande :</p><pre>sudo rm -rf /sw</pre><p>La seule exception concerne XFRee86. Si vous avez installé XFree86 via Fink (vous avez, par exemple,  installé le paquet <code>xfree86</code> ou <code>xfree86-rootless</code>, au lieu d'utiliser <code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Si vous ne pensez pas réinstaller Fink, vous pourrez aussi
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Presque tous les fichiers installés par fink se trouvent dans le répertoire /sw (ou bien l'endroit où vous avez choisi de faire l'installation). Donc, pour supprimer Fink, entrez cette commande :</p><pre>sudo rm -rf /sw</pre><p>Les seules exceptions à cette règle concernent XFRee86 et X.org. Si vous avez installé un serveur X via Fink (vous avez, par exemple,  installé le paquet <code>xfree86</code> ou <code>xfree86-rootless</code>, ou encore <code>xorg</code> au lieu d'utiliser <code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Si vous ne pensez pas réinstaller Fink, vous pourrez aussi
 	supprimer la ligne "<code>source /sw/bin/init.csh</code>" que
 	vous aviez ajoutée dans le fichier <code>.cshrc</code> ou la ligne "<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier <code>.bashrc</code>, suivant vos réglages, en utilisant un éditeur de texte.</p></div>
     </a>

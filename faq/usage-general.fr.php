@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/21 21:16:59';
+$cvs_date = 'Date: 2004/09/15 02:42:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
 
 
@@ -45,8 +45,9 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'
     <a name="x-options">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p><p>Sous Panther, vous avez le choix entre :</p><ul>
-    <li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
+<li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
 <li><p>4.4.x compilé via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
+<li><p>X.org compilé via Fink : installez les paquets <code>xorg</code> et <code>xorg-shlibs</code></p></li>
 </ul><p>Sous Jaguar, les choix les plus populaires et les paquets Fink qui leur correspondent sont les suivants :</p><ul>
           <li>
             <p>4.2.x compilé via Fink : installez <code>xfree86-base</code> et <code>xfree86-rootless</code> ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> correspondants)</p>
