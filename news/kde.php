@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 02:21:22 $';
+$cvs_date = '$Date: 2002/05/28 02:24:00 $';
 
 include "header.inc";
 ?>
@@ -16,8 +16,8 @@ include "header.inc";
 
 <p>
  Work has been progressing steadily on getting KDE 3.0.x ported to
- MacOS X on XFree86.  Packages and pre-built binaries are now available
- for users interested in running KDE on MacOS X with Fink.
+ run in XFree86 on MacOS X.  Packages and pre-built binaries are now
+ available for users interested in running KDE on MacOS X with Fink.
 </p>
 <p>
  There are a large number of issues remaining before the port is truly
