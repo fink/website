@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 04:26:29 $';
+$cvs_date = '$Date: 2004/04/21 04:39:28 $';
 
 include "header.inc";
 include "releases.inc";
@@ -102,7 +102,7 @@ if (!$rs) {
 $q = "SELECT name,maintainer,version,revision,moveflag,needtest FROM package ".
   	 "WHERE release LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
-  	 "ORDER BY \"$sort\" ASC";
+  	 "ORDER BY ".(strcmp($sort, "name") ? 'maintainer,name' : 'name')." ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print "<p><b>error during query ".$q.':</b> '.mysql_error().'</p>';
