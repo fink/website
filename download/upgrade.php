@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/18 22:09:40 $';
+$cvs_date = '$Date: 2003/01/19 18:09:15 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,10 @@ before upgrading.  (It may also be necessary to remove the packages
 which depend on tetex, such as lyx, before tetex can be removed.)
 Afterwards you can again install tetex and the other packages you removed.
 </p>
+<? 
+include "../fink_version.inc";
+?>
+
 <p>
 Due to the SourceForge website reorganization in spring 2002 and the move
 of our binary distribution in summer 2002, upgrading has become slightly
@@ -55,17 +59,17 @@ it_item("Fink source release 0.2.5 or newer",
   '<p>Run "<tt>fink selfupdate</tt>".  If you are upgrading from 10.1 to
   10.2, you may need to do this twice to be fully updated.</p>');
 it_item("Fink source release 0.2.4 or older (down to 0.2.0)",
-  '<p>If upgrading under OS X 10.1, 
+  "<p>If upgrading under OS X 10.1, 
 download the <a
-  href="http://prdownloads.sourceforge.net/fink/packages-0.4.1.tar.gz">packages
+  href=\"http://prdownloads.sourceforge.net/fink/packages-0.4.1.tar.gz\">packages
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.4.1
+  \"<tt><nobr>./inject.pl</nobr></tt>\" inside the packages-0.4.1
   directory.</p><p>
 If upgrading under OS X 10.2, download the <a
-  href="http://prdownloads.sourceforge.net/fink/dists-0.5.1.tar.gz">dists
+  href=\"http://prdownloads.sourceforge.net/fink/dists-$fink_version.tar.gz\">dists
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the dists-0.5.1
-  directory.</p>');
+  \"<tt><nobr>./inject.pl</nobr></tt>\" inside the 
+  dists-$fink_version directory.</p>");
 it_end();
 ?>
 

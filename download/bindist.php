@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/18 22:09:40 $';
+$cvs_date = '$Date: 2003/01/19 18:09:15 $';
 
 include "header.inc";
 ?>
@@ -19,14 +19,17 @@ Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
 This is mainly due to legal reasons with the affected (missing) packages.
 </p>
+<? 
+include "../fink_version.inc";
+?>
 <p>
 <b>Status:</b>
-A binary installer for Fink 0.5.1 has been posted.
+A binary installer for Fink <? print $fink_version; ?> has been posted.
 The binary distribution is complete.
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/fink-0.5.1-Installer.dmg?download">Fink
-0.5.1 Binary Installer</a> - 11 MB, compressed .dmg disk image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
+<? print $fink_version; ?> Binary Installer</a> - 11 MB, compressed .dmg disk image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>

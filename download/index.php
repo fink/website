@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/18 22:09:40 $';
+$cvs_date = '$Date: 2003/01/19 18:09:15 $';
 
 include "header.inc";
 ?>
@@ -22,19 +22,22 @@ New to Fink?
 These quick start instructions are here to get you up to speed with
 the binary release.
 </p>
+<? 
+include "../fink_version.inc";
+?>
 
 <ol>
 <li><p>
 Download the installer disk image:<br>
-<a href="http://prdownloads.sourceforge.net/fink/fink-0.5.1-Installer.dmg?download">Fink
-0.5.1 Binary Installer</a> - 11 MB<br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
+<? print $fink_version; ?> Binary Installer</a> - 11 MB<br>
 (10.1 users - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
 0.4.1</a>)
 </p>
 </li>
 <li><p>
-Double-click "Fink-0.5.1-Installer.dmg" to mount the disk image,
-then double-click the "Fink 0.5.1 Installer.pkg" package
+Double-click "Fink-<? print $fink_version; ?>-Installer.dmg" to mount the disk image,
+then double-click the "Fink <? print $fink_version; ?> Installer.pkg" package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
@@ -74,7 +77,8 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 <p>
 The source code for the packages in the installer disk image can be
 downloaded from this site,
-<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.5.1/main/source/base/">here</a>.
+<a
+href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">here</a>.
 </p>
 
 

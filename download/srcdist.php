@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 21:00:09 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2003/01/19 18:09:15 $';
 
 include "header.inc";
 ?>
@@ -15,15 +15,19 @@ descriptions and patches.
 It will download the source code from the original distribution sites
 and build them on your local machine.
 </p>
+<? 
+include "../fink_version.inc";
+?>
 
 <p>
-Fink 0.5.0a was officially released on 8 December 2002.
+Fink <? print $fink_version; ?> was officially released on 
+<? print $release_date; ?>.
 
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-0.5.0a-full.tar.gz">Fink
-0.5.0a</a> - 3497K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
+<? print $release_version; ?></a> - 3497K, .tar.gz format</li>
 </ul>
 
 <p>

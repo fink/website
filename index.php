@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/18 21:52:57 $';
+$cvs_date = '$Date: 2003/01/19 18:09:15 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -42,9 +42,12 @@ include $fsroot."news/news.inc";
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
 <h1>Status</h1>
+<? 
+include "fink_version.inc";
+?>
 
 <p>
-Fink 0.5.1 was released on 18 January 2003.
+Fink <? print $fink_version; ?> was released on <? print $release_date; ?>.
 </p>
 
 <h1>Resources</h1>
