@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/02/17 13:32:03 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2004/02/24 11:43:55 $';
 
 include "header.inc";
 ?>
@@ -23,7 +23,7 @@ based on the information or other material on this site. The <b>Fink Project</b>
 cannot guarantee, and will not be responsible for any damage or loss related to 
 the accuracy, completeness or timeliness of any of the information listed. 
 You agree to indemnify, defend and hold harmless anyone associated with the <b>Fink 
-Project</b>, its contributers and occasional helpers from any liability, loss, 
+Project</b>, its contributors and occasional helpers from any liability, loss, 
 claim and expense (including attorneys reasonable fees) related to your use of 
 this site or violation of this agreement.</p>
 
@@ -49,7 +49,7 @@ of the <b>Fink Project</b>. Any unauthorised use of the Trademarks may violate s
 
 
 <h2 class="legalhead">Changes to the Site</h2>
-<p class="legal">The <b>Fink Project</b> may make improvements or changes in the information,services, products, and other materials on this site, or terminate this site, at any time without notice. The <b>Fink Project</b> may modify this agreement at any time, and such modifications shall be effective
+<p class="legal">The <b>Fink Project</b> may make improvements or changes in the information, services, products, and other materials on this site, or terminate this site, at any time without notice. The <b>Fink Project</b> may modify this agreement at any time, and such modifications shall be effective
 immediately upon posting of the modified agreement. Accordingly, you
 agree to review the agreement periodically, and your continued access
 or use of this site shall be deemed your acceptance of the modified
