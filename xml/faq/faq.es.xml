@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.4 2004/07/15 18:35:34 michga Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.5 2004/11/30 17:27:06 zifra Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -730,8 +730,21 @@ fink selfupdate-cvs</codeblock>
         <p>No puedo actualizar la versión Fink.</p>
       </question>
       <answer>
-        <p>There are <link url="http://fink.sourceforge.net/download/fix-upgrade.php">special
-        instructions</link> to follow under these circumstances.</p>
+        <p>Si ni ejecutar <code>fink selfupdate</code> ni <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> 
+        te actualiza a una versión más nueva de Fink, entonces puedes descargar manualmente una versión más nueva del
+        paquete <code>fink</code>.  Los comandos a usar son:</p>
+        <ul>
+          <li><em>10.3.x:</em> (Distribución 0.7.1)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+          <li><em>10.2.x:</em> (Distribución 0.6.3)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+        </ul>
       </answer>
     </faqentry>
     <faqentry name="spaces-in-directory">
