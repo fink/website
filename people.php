@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/04/27 18:58:05 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/11/27 00:34:27 $';
 
 include "header.inc";
 ?>
@@ -35,6 +35,12 @@ this list.</p>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
+<li>Peter O'Gorman (<i>pogma</i>)</li>
+</ul>
+
+<h2>Administrativa and PR.</h2>
+<ul>
+<li>David H&#246;hn (<i>dmalloc</i>)</li>
 </ul>
 
 <h2>Regular Contributors</h2>
@@ -49,7 +55,6 @@ this list.</p>
 <li>Carsten Klapp</li>
 <li>Thomas Kotzian</li> 
 <li>Matthias Neeracher (<i>Murr</i>)</li>
-<li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Christian Schaffner</li>
 <li>Masanori Sekino (<i>msek</i>)</li>
 <li>Matt Stephenson</li>
@@ -64,7 +69,6 @@ this list.</p>
 <ul>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
-<li>Darian Lanx (<i>dmalloc</i>)</li> <!-- doc writer -->
 </ul>
 
 <h2>Occasional Contributors</h2>
