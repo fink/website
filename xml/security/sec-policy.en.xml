@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.13 2004/07/08 16:42:06 dmalloc Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.14 2004/07/10 13:51:48 dmalloc Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -14,7 +14,7 @@
     </preface>
     <chapter filename="respo">
         <title>Responsibility</title>
-        <shorttitle>Respo</shorttitle>
+        <shorttitle>Responsibility</shorttitle>
         <section name="who">
             <title>Who is responsible?</title>
             <p>Every Fink package has a Maintainer. The maintainer of a
@@ -65,7 +65,7 @@
     </chapter>
     <chapter filename="severity">
         <title>Response times and immediate actions.</title>
-        <shorttitle>responses</shorttitle>
+        <shorttitle>Responses</shorttitle>
         <preface>
             <p>Response time and actions taken greatly depend on the severity of
                 the loss introduced by a particular flaw in the software that
@@ -133,7 +133,7 @@
     </chapter>
     <chapter filename="sources">
         <title>Incident Sources</title>
-        <shorttitle>isource</shorttitle>
+        <shorttitle>Source</shorttitle>
         <section name="sources">
             <title>Acceptable Incident Sources.</title>
             <p>As submitter of a security incident in Fink-packaged software you
@@ -259,7 +259,7 @@
     </chapter>
     <chapter filename="updating">
         <title>Security update procedure.</title>
-        <shorttitle>secup</shorttitle>
+        <shorttitle>Updates</shorttitle>
         <section name="procedure">
             <title>Adding security related updates.</title>
             <p>Security updates may only be applied once they have been verified
@@ -296,7 +296,7 @@
     </chapter>
     <chapter filename="notification">
         <title>Sending notifications</title>
-        <shorttitle>notify</shorttitle>
+        <shorttitle>Notification</shorttitle>
         <preface>
             <p>Some users might choose not to update their software too
                 frequently. To ensure that those who install their packages from
