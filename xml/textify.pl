@@ -35,7 +35,9 @@ sub render {
     }
   } else {
     # normal text flow
+    $s =~ s/^\n+//s;
     $s =~ s/\s+/ /gs;
+    $s =~ s/\s+$//s;
     $s =~ s/((\S+)\s\[(\S+)\])/
       ($2 eq $3) ? ("<".$3.">") : $1/ge;
     $s =~ s/\$Id/\$Fink/g;
@@ -79,7 +81,7 @@ sub starttag {
     $ptype = 2;
     $s = " ";
   } elsif ($tag eq "p") {
-    if ($ptype == 1 or $ptype == 2 or $ptype == 99 or $ptype == 98) {
+    if ($ptype == 2 or $ptype == 99 or $ptype == 98) {
       $leading = 0;
     } else {
       $leading = 1;
