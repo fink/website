@@ -1,14 +1,14 @@
 <?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/05 14:02:13 $';
+$cvs_date = '$Date: 2004/03/17 11:02:30 $';
 
 include "header.inc";
 ?>
 
 <h1>Contributeurs</h1>
 
-<p>La maintenance du projet Fink est assurée par un groupe de volontaires. Chaque paquet de Fink a un mainteneur qui travaille d'arrache-pieds pour que le paquet fonctionne comme prévu. De plus, il y a des personnes qui travaillent sur le programme fink.
+<p>La maintenance du projet Fink est assurée par un groupe de volontaires. Chaque paquet de Fink a un mainteneur qui travaille d'arrache-pied pour que le paquet fonctionne comme prévu. De plus, il y a des personnes qui travaillent sur le programme fink.
 Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin d'aide, ceci se fait au travers de nos listes de diffusion et de notre canal IRC. Ces tâches et de nombreuses autres demandent beaucoup de travail, c'est pourquoi nous souhaitons dire "Merci" à toutes ces personnes qui sacrifient leur temps libre pour aider la communauté. Cette page donne une liste des personnes qui ont apporté leur contribution à Fink d'une manière ou d'une autre.
 </p>
 
