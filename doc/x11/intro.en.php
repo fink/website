@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/24 01:00:01';
+$cvs_date = 'Date: 2005/03/10 02:35:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -65,8 +65,9 @@ including OS/2, Darwin, Mac OS X and Windows.
       <p>
 Xtools is a product of <a href="http://www.tenon.com/">Tenon
 Intersystems</a>.
-It is a version of X11 for Mac OS X, based on XFree86.
+It is a version of X11 for Mac OS X, based on XFree86.  
 </p>
+<p>Note:  Development apparently stopped sometime before OS 10.3 was released.</p>
     
     <h2><a name="client-server">1.6 Client and Server</a></h2>
       

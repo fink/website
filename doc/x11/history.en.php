@@ -1,8 +1,8 @@
 <?
 $title = "Running X11 - History";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/24 01:00:01';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
+$cvs_date = 'Date: 2005/03/10 02:35:35';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
 include_once "header.en.inc";
@@ -85,7 +85,7 @@ version had been completely integrated into the main XFree86 distribution.
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="inst-xfree86.php?phpLang=en">3. Getting and Installing XFree86</a></p>
+<a href="inst-xfree86.php?phpLang=en">3. Getting and Installing X11</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

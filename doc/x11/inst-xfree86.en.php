@@ -1,20 +1,20 @@
 <?
-$title = "Running X11 - Installing XFree86";
+$title = "Running X11 - Installing X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/24 01:00:01';
+$cvs_date = 'Date: 2005/03/10 02:35:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
 include_once "header.en.inc";
 ?>
-<h1>Running X11 - 3. Getting and Installing XFree86</h1>
+<h1>Running X11 - 3. Getting and Installing X11</h1>
     
     
-    <h2><a name="fink">3.1 Installing through Fink</a></h2>
+    <h2><a name="fink">3.1 Installing X11 via Fink</a></h2>
       
       <p>
-Fink will let you install X11 in any way you like,
-but it also provides XFree86 packages of its own. If you
+Fink will let you install X11 in a variety of ways,
+among these it provides XFree86 packages of its own. If you
 use <code>fink install ...</code>, it will download
 the source code and compile it on your computer. If
 you use <code>apt-get install ...</code> or the
@@ -22,24 +22,26 @@ you use <code>apt-get install ...</code> or the
 precompiled binary packages, similar to the official
 XFree86 distribution.
 </p>
-      <p>
-The <code>xfree86-base</code> package contains all
-of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
-The <code>xfree86-rootless</code> package is the server from the standard,
-stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
-operation, and has OpenGL support.  
-(In the early days, Fink also had an <code>xfree86-server</code> package
-which only provided fullscreen mode, but this is no longer a relevant
-option.)
-You also have the option to
-install the server yourself; see below.  In this case, you should
-only install <code>xfree86-base</code>, or you'll risk that Fink
-overwrites your manually installed server.  Note that the current stable version of<code> xfree86-base</code> (4.2.1.1-3) generates the <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code>, and <code>xfree86-rootless-shlibs</code> during its build process.  In this case, all four packages must be installed for you to have a working XFree86 setup.
+<p><b>General notes:</b></p>
+<ul><li>All of the X11 packages currently available via Fink support both full-screen and rootless
+operation, and have OpenGL support.</li>
+<li><b>Important note:</b>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
+<p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
+<p>For 10.3, the X11 hierarchy is as follows:</p>
+<pre>xorg &gt; xfree86 &gt; Apple's X11 </pre>
+</li></ul>
+<p><b>10.3 users:</b></p>
+<p>You can install version 4.3.99.16-2 (that which is in the current binary distribution) or 4.4 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install the X.org X11 release (currently version 6.8) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.4, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
+
+<p><b>10.2 users:</b></p>
+<p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
 </p>
-      <p>The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications, such as <code>xine</code>.</p>
-      <p>XFree86 4.2.11 (unthreaded) is considered to be the stable, baseline XFree86 version to use with Fink on 10.2.  XFree86 4.3.0 is also available, but is considered to be more experimental, and as of this writing is only available in the unstable tree.  It has threading support built in, and is faster than 4.2.1.1 .  To install this version, you should install the <code>xfree86</code> package.  Note that for this version, there are no longer separate -base and -rootless packages, although the libraries are splitoff into <code>xfree86-shlibs</code>.  If you build binaries against 4.3, they may not work on 4.2.1.1 or Apple X11, so be warned.</p>
-      <p>
-        <b>10.3 users:</b>  You will need to install version 4.3.99.16-2 or later, which are prereleases for XFree86-4.4.  If you are working from the binary distribution, make sure to update your package descriptions (e.g. via <code>sudo apt-get update</code>).</p>
+
+      <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
+      
+<p><b>10.1 users:</b></p>
+<p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
     
     <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
       
@@ -118,6 +120,7 @@ defined in indirectly referenced dynamic library
           <p>If you use the <code>xfree86</code> package, and later switch to Apple's X11 (on either 10.2.x or 10.3.x), any
 packages you have built against <code>xfree86</code> will need to be rebuilt, as the binaries are incompatible.</p>
         </li>
+<li><p><b>10.3 users only:</b>  It is possible to use Apple's display server and window manager on top of either XFree86-4.4 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p></li>
       </ul>
       <p>For more information on using Apple's X11, check out this <a href="http://developer.apple.com/darwin/runningx11.html">article</a> at the Apple Developer Connection.</p>
     
