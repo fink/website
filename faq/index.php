@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/01/08 18:21:48';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/01/08 21:17:37';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -96,6 +96,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
+<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -125,7 +126,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#xterm-error">7.6 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
 <li><a href="usage-packages.php#libXmuu">7.7 When I try to start XFree86 I get one of the following errors:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library:  /usr/X11R6/lib/libXext.6.dylib&quot;</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.73 2003/01/08 18:21:48 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.74 2003/01/08 21:17:37 alexkhansen Exp $</i></p>
 
 
 <?

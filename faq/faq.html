@@ -86,6 +86,7 @@ from the head command. What's broken?</a></li>
 <li><a href="#comp-packages.cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="#comp-packages.change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="#comp-packages.pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
+<li><a href="#comp-packages.apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</a></li>
 </ul>
 <li><a href="#usage-general"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -639,6 +640,10 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <a name="comp-packages.pil-wont-build"><div class="question"><p><b>Q5.4: PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</b></p></div>
 <div class="answer"><p><b>A:</b> Check and see if you have <tt style="white-space: nowrap;">freetype2-2.1.3-1</tt> installed.  This was made available for a short time, but wasn't backwards compatible with <tt style="white-space: nowrap;">pil</tt>, among other packages, and was removed.  Find and delete <tt style="white-space: nowrap;">freetype2_2.1.3-1_darwin-powerpc.deb</tt>, and then you can downgrade it with <tt style="white-space: nowrap;">fink install freetype2-2.0.9-1</tt>.</p></div>
 </a>
+
+<a name="comp-packages.apple-x11"><div class="question"><p><b>Q5.5: I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</b></p></div>
+<div class="answer"><p><b>A:</b> You need to install the SDK package as well as the User package.</p></div>
+</a>
 <a name="usage-general"><h2>6 Package Usage Problems - General</h2></a>
 
 
@@ -827,4 +832,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: faq.xml,v 1.73 2003/01/08 18:21:48 dmrrsn Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: faq.xml,v 1.74 2003/01/08 21:17:37 alexkhansen Exp $</i></p></body></html>
