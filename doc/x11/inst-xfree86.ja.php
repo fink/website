@@ -159,6 +159,7 @@ defined in indirectly referenced dynamic library
 </p>
 </li>
 </ul>
+<p>Apple X11 の使用に関しては、Apple Developer Connection の<a href="http://developer.apple.com/darwin/runningx11.html">記事</a> が参考になります。</p>
 
 <h2><a name="official-binary">3.3 公式バイナリ</a></h2>
 

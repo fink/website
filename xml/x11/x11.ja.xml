@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.7 2004/10/13 23:56:37 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.8 2005/01/25 03:07:03 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -361,6 +361,7 @@ defined in indirectly referenced dynamic library
 </p>
 </li>
 </ul>
+<p>Apple X11 の使用に関しては、Apple Developer Connection の<link url="http://developer.apple.com/darwin/runningx11.html">記事</link> が参考になります。</p>
 </section>
 <section name="official-binary" >
 <title>公式バイナリ</title>
