@@ -1,7 +1,7 @@
 <?
 $title = "Help";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/09/18 22:27:48 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2003/05/31 23:52:30 $';
 
 include "header.inc";
 ?>
@@ -36,9 +36,9 @@ If you can't figure out your problem by yourself, you can ask on the
 <a href="../lists/fink-beginners.php">fink-beginners</a> mailing list or
 on the <a href="../lists/fink-users.php">fink-users</a> mailing list.
 You may want to check the 
-<a href="http://www.mail-archive.com/fink-beginners@lists.sourceforge.net">fink-beginners archives</a>
+<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-beginners">fink-beginners archives</a>
 and also the
-<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net">fink-users archives</a>
+<a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users archives</a>
 first - it is tiresome to answer the same question over and over again.
 </p>
 <p>
