@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/05/31 23:55:26 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2003/06/26 22:37:26 $';
 
 include "header.inc";
 ?>
@@ -40,30 +40,33 @@ then double-click the "Fink <? print $fink_version; ?> Installer.pkg" package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
-Open a new Terminal.app window and type "pico .cshrc".
-A text editor will pop up.
-Enter this line:
-</p><pre>source /sw/bin/init.csh</pre><p>
-and then hit return.
-To get out of the editor, press control-O, return, control-X.</p>
-<p>Some users may may need to modify some more files.  Run the following command:</p>
-<p><pre>ls -a ~</pre></p>
-<p>if files called <code>.login</code> or <code>.tcshrc</code> are among those listed, you'll need to do some more editing.  Consult the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">relevant page</a> of the Fink Users Guide.</p>
-<p>Close the Terminal.app window when you're done editing files.
+At the end of the installation, a Terminal.app window will be launched, 
+and the pathsetup.command script will automatically be run.  You will be 
+asked for permission before your shell's configuration files are edited.  
+When the script has finished, close the window are you are set to go!
 </p></li>
 <li><p>
-Open a new Terminal.app window and type "fink scanpackages".
-(This does one final bit of necessary setup.  
-When asked for a password, enter the password of your normal user
-account.)
-Then type
+If anything goes wrong during this process, you can try again by launching 
+pathsetup.command file which appears on the installer disk, or by 
+running (from the command line in a Terminal.app window) 
+</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>
+(This step should also be repeated by any other users on your system: each user must run  pathsetup.command in his or her own account.)
+</p><p>
+If pathsetup.command generates errors messages, consult the documentation, 
+particularly 
+<a href="../doc/users-guide/install.php#setup">section
+2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
+</li>
+<li><p>
+Open a new Terminal.app window and type 
 "sudo dselect", which will 
 launch you into a package selection app.
 In the menu, hit "[U]pdate" once, then go to "[S]elect" to choose the
 packages you want installed.
 When you're done, hit "[I]nstall" to actually install the packages.
 </p></li>
-<li><p>When you install packages in the future, repeat step 4, but you can skip running "fink scanpackages".</p></li> 
+<li><p>When you install packages in the future, repeat step 5.
+</p></li> 
 </ol>
 
 <p>
