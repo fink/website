@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/24 17:29:42';
+$cvs_date = 'Date: 2001/09/10 15:44:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -51,19 +51,25 @@ generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
-The package name. May contain lowercase letters, numbers and
-the special characters '.' and '-'. No underscores ('_'), no capital
-letters. Required field.
+The package name.
+May contain lowercase letters, numbers and the special characters '.'
+and '-'.
+No underscores ('_'), no capital letters.
+Required field.
 </p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
-The upstream version number. Required field.
+The upstream version number.
+Same limitations as the Package field.
+Required field.
 </p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
-The package revision. Increase this when you make a new
-description for the same upstream version. Revision numbers should
-start at 1. Required field.
+The package revision.
+Increase this when you make a new description for the same upstream
+version.
+Revision numbers start at 1.
+Required field.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
@@ -90,13 +96,16 @@ in the following format:
 <pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
 </td></tr><tr valign="top"><td>Depends</td><td>
 <p>
-A comma-separated list of packages which must be installed before
-this package can be built. Currently, only plain package names are
-allowed; there is no mechanism to request a specific version of a
-package yet.
+A list of packages which must be installed before this package can be
+built.
+Usually, this is just a comma-separated list for plain package names,
+but Fink now supports alternatives and version clauses with the same
+syntax as dpkg.
+A fully featured example:
 </p>
+<pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 <p>
-Also note that there is no way to express optional dependencies.
+Note that there is no way to express real optional dependencies.
 If a package works both with and without another package, you must
 either make sure that the other package is not used even when it is
 present or add it to the Depends field.
@@ -119,6 +128,8 @@ A comma-separated list of package names that must not be installed at
 the same time as this package.
 For virtual packages it is allowed to list the names of the provided
 packages here; they will be handled appropriately.
+This fields also supports versioned dependencies like the Depends
+field, but not alternatives (wouldn't make sense).
 </p>
 <p>
 <b>Note:</b> Fink itself currently ignores this field.
@@ -139,6 +150,22 @@ alternatives and one can be removed in favor of the other.
 <b>Note:</b> Fink itself currently ignores this field.
 However, it is passed on to dpkg and will be handled accordingly.
 In summary, it only effects run-time, not build-time.
+</p>
+</td></tr><tr valign="top"><td>Recommends, Suggests, Enhances</td><td>
+<p>
+These fields specify additional package relations in the same style as
+the other dependency fields.
+These three relations don't affect actual installation via
+<tt><nobr>dpkg</nobr></tt> or <tt><nobr>apt-get</nobr></tt>.
+However, they are used by <tt><nobr>dselect</nobr></tt> and other frontends to
+help the user make sensible choices.
+</p>
+</td></tr><tr valign="top"><td>Pre-Depends</td><td>
+<p>
+A special variation of the Depends field with more strict semantics.
+This field must only be used after the case has been discussed on the
+developer mailing list and a consensus has been reached that it is
+necessary.
 </p>
 </td></tr><tr valign="top"><td>Essential</td><td>
 <p>
@@ -286,6 +313,21 @@ package supports it, it is preferably to use <tt><nobr>make install
 DESTDIR=%d</nobr></tt> instead. Before the commands are executed, percent
 expansion takes place (see previous section).
 </p>
+</td></tr><tr valign="top"><td>DocFiles</td><td>
+<p>
+This field provides a convenient way to install README or COPYING
+files in the doc directory for the package,
+<tt><nobr>%p/share/doc/%n</nobr></tt>.
+The value is a space-separated list of files.
+You can copy files from subdirectories of the build directory, but
+they will end up in the doc directory itself, not in a subdirectory.
+Shell wildcards are allowed.
+It is also possible to rename single files on the fly by appending the
+new name separated by a colon (:),
+e.g. <tt><nobr>libgimp/COPYING:COPYING.libgimp</nobr></tt>.
+This field works by appending appropriate <tt><nobr>install</nobr></tt>
+commands to the InstallScript.
+</p>
 </td></tr><tr valign="top"><td>Set<i>ENVVAR</i></td><td>
 <p>
 Causes certain environment variables to be set in the
@@ -416,6 +458,16 @@ everything in place" goes here. Multiple lines allowed.
 Notes that are specific to porting the package to Darwin. Stuff
 like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
+</p>
+</td></tr><tr valign="top"><td>License</td><td>
+<p>
+This field gives the nature of the license under which the package is
+distributed.
+The value must be one of the values described in <a href="policy.php#license">Package Licenses</a> earlier in
+this document.
+Additionally, this field must only be given if the package actually
+complies to the packaging policy in these respects, i.e. a copy of the
+license is installed in the doc directory for the package.
 </p>
 </td></tr><tr valign="top"><td>Homepage</td><td>
 <p>

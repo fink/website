@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/24 17:29:42';
+$cvs_date = 'Date: 2001/09/10 15:44:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -27,7 +27,8 @@ Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
 i.e. in <tt><nobr>%p/share/doc/%n</nobr></tt>.
-(In the InstallScript, %i must be used instead of %p, of course.)
+(In the InstallScript, %i must be used instead of %p, of course.
+The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
 Note that most licenses require that the license accompanies any
@@ -74,7 +75,8 @@ derivatives.</li>
 <li><tt><nobr>OSI-Approved</nobr></tt> - for other Open Source licenses
 approved by the <a href="http://www.opensource.org/">Open Source
 Initiative</a>. One of OSI's requirements is that free distribution
-of binaries and sources is allowed.</li>
+of binaries and sources is allowed. This value can also be used as an
+umbrella for dual-licensed packages.</li>
 
 <li><tt><nobr>Restrictive</nobr></tt> - for restrictive licenses.
 Use this for packages that are available from the author in source
@@ -90,6 +92,11 @@ packages don't have licenses at all and anyone can do anything with
 them.</li>
 
 </ul>
+<p>
+If the documentation included in a package is explicitly put under the
+GNU Free Documentation License, a <tt><nobr>/GFDL</nobr></tt> may be appended to
+the License field, e.g. <tt><nobr>GPL/GFDL</nobr></tt>.
+</p>
 
 
 

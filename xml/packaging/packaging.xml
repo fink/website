@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.9 2001/08/24 17:29:42 chrisp Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.10 2001/09/10 15:44:39 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -14,7 +14,7 @@ Both the description format and the distribution policy are still
 evolving, so watch the "Last changed" info and the CVS tag on this
 page to detect updates.
 What you're reading right now is a description of the format and
-policy used in post-0.2.4 development versions of Fink.
+policy used in post-0.2.6 development versions of Fink.
 </p>
 <p>
 If you create packages for Fink, you may want to subscribe to the
@@ -79,6 +79,7 @@ The revision is a counter that is increased when the package
 description changes.
 It starts at 1 and should be reset to 1 when the upstream version
 changes.
+The revision must not contain dashes.
 The full name of a package is all three items concatenated, with
 dashes in between, e.g. openssh-2.9p1-2.
 </p>
@@ -234,7 +235,8 @@ Every package that is to be distributed as a binary package must
 contain a copy of the license.
 It must be installed in the doc directory,
 i.e. in <code>%p/share/doc/%n</code>.
-(In the InstallScript, %i must be used instead of %p, of course.)
+(In the InstallScript, %i must be used instead of %p, of course.
+The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
 Note that most licenses require that the license accompanies any
@@ -281,7 +283,8 @@ derivatives.</li>
 <li><code>OSI-Approved</code> - for other Open Source licenses
 approved by the <link url="http://www.opensource.org/">Open Source
 Initiative</link>. One of OSI's requirements is that free distribution
-of binaries and sources is allowed.</li>
+of binaries and sources is allowed. This value can also be used as an
+umbrella for dual-licensed packages.</li>
 
 <li><code>Restrictive</code> - for restrictive licenses.
 Use this for packages that are available from the author in source
@@ -297,6 +300,11 @@ packages don't have licenses at all and anyone can do anything with
 them.</li>
 
 </ul>
+<p>
+If the documentation included in a package is explicitly put under the
+GNU Free Documentation License, a <code>/GFDL</code> may be appended to
+the License field, e.g. <code>GPL/GFDL</code>.
+</p>
 </section>
 
 
@@ -556,25 +564,31 @@ generate a <code>control</code> file for dpkg.</p>
 <item><itemt>Package</itemt>
 <itemd>
 <p>
-The package name. May contain lowercase letters, numbers and
-the special characters '.' and '-'. No underscores ('_'), no capital
-letters. Required field.
+The package name.
+May contain lowercase letters, numbers and the special characters '.'
+and '-'.
+No underscores ('_'), no capital letters.
+Required field.
 </p>
 </itemd></item>
 
 <item><itemt>Version</itemt>
 <itemd>
 <p>
-The upstream version number. Required field.
+The upstream version number.
+Same limitations as the Package field.
+Required field.
 </p>
 </itemd></item>
 
 <item><itemt>Revision</itemt>
 <itemd>
 <p>
-The package revision. Increase this when you make a new
-description for the same upstream version. Revision numbers should
-start at 1. Required field.
+The package revision.
+Increase this when you make a new description for the same upstream
+version.
+Revision numbers start at 1.
+Required field.
 </p>
 </itemd></item>
 
@@ -610,13 +624,16 @@ in the following format:
 <item><itemt>Depends</itemt>
 <itemd>
 <p>
-A comma-separated list of packages which must be installed before
-this package can be built. Currently, only plain package names are
-allowed; there is no mechanism to request a specific version of a
-package yet.
+A list of packages which must be installed before this package can be
+built.
+Usually, this is just a comma-separated list for plain package names,
+but Fink now supports alternatives and version clauses with the same
+syntax as dpkg.
+A fully featured example:
 </p>
+<codeblock>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</codeblock>
 <p>
-Also note that there is no way to express optional dependencies.
+Note that there is no way to express real optional dependencies.
 If a package works both with and without another package, you must
 either make sure that the other package is not used even when it is
 present or add it to the Depends field.
@@ -645,6 +662,8 @@ A comma-separated list of package names that must not be installed at
 the same time as this package.
 For virtual packages it is allowed to list the names of the provided
 packages here; they will be handled appropriately.
+This fields also supports versioned dependencies like the Depends
+field, but not alternatives (wouldn't make sense).
 </p>
 <p>
 <em>Note:</em> Fink itself currently ignores this field.
@@ -668,6 +687,28 @@ alternatives and one can be removed in favor of the other.
 <em>Note:</em> Fink itself currently ignores this field.
 However, it is passed on to dpkg and will be handled accordingly.
 In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>Recommends, Suggests, Enhances</itemt>
+<itemd>
+<p>
+These fields specify additional package relations in the same style as
+the other dependency fields.
+These three relations don't affect actual installation via
+<code>dpkg</code> or <code>apt-get</code>.
+However, they are used by <code>dselect</code> and other frontends to
+help the user make sensible choices.
+</p>
+</itemd></item>
+
+<item><itemt>Pre-Depends</itemt>
+<itemd>
+<p>
+A special variation of the Depends field with more strict semantics.
+This field must only be used after the case has been discussed on the
+developer mailing list and a consensus has been reached that it is
+necessary.
 </p>
 </itemd></item>
 
@@ -860,6 +901,24 @@ expansion takes place (see previous section).
 </p>
 </itemd></item>
 
+<item><itemt>DocFiles</itemt>
+<itemd>
+<p>
+This field provides a convenient way to install README or COPYING
+files in the doc directory for the package,
+<code>%p/share/doc/%n</code>.
+The value is a space-separated list of files.
+You can copy files from subdirectories of the build directory, but
+they will end up in the doc directory itself, not in a subdirectory.
+Shell wildcards are allowed.
+It is also possible to rename single files on the fly by appending the
+new name separated by a colon (:),
+e.g. <code>libgimp/COPYING:COPYING.libgimp</code>.
+This field works by appending appropriate <code>install</code>
+commands to the InstallScript.
+</p>
+</itemd></item>
+
 <item><itemt>Set<i>ENVVAR</i></itemt>
 <itemd>
 <p>
@@ -1026,6 +1085,20 @@ everything in place" goes here. Multiple lines allowed.
 Notes that are specific to porting the package to Darwin. Stuff
 like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
+</p>
+</itemd></item>
+
+<item><itemt>License</itemt>
+<itemd>
+<p>
+This field gives the nature of the license under which the package is
+distributed.
+The value must be one of the values described in <xref
+chapter="policy" section="license">Package Licenses</xref> earlier in
+this document.
+Additionally, this field must only be given if the package actually
+complies to the packaging policy in these respects, i.e. a copy of the
+license is installed in the doc directory for the package.
 </p>
 </itemd></item>
 

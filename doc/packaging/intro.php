@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/24 17:29:42';
+$cvs_date = 'Date: 2001/09/10 15:44:39';
 
 $metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="format.php" title="Package Descriptions"><link rel="prev" href="index.php" title="Packaging Contents">';
 
@@ -63,6 +63,7 @@ The revision is a counter that is increased when the package
 description changes.
 It starts at 1 and should be reset to 1 when the upstream version
 changes.
+The revision must not contain dashes.
 The full name of a package is all three items concatenated, with
 dashes in between, e.g. openssh-2.9p1-2.
 </p>
