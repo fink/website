@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/07 09:45:20 $';
+$cvs_date = '$Date: 2001/09/27 06:44:13 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,13 @@ Fink 0.2.6 was released on 4 September 2001.
 href="http://prdownloads.sourceforge.net/fink/fink-0.2.6-full.tar.gz">Fink
 0.2.6</a> - 566K, .tar.gz format</li>
 </ul>
+<p>
+<b>Important:</b>
+Don't extract the archive with StuffIt, it will corrupt some file
+names.
+Use the command line <tt>tar</tt> utility instead.
+Instructions are in the Installation document.
+</p>
 
 <p>
 Installation and usage instructions are inside the distribution
@@ -66,6 +73,11 @@ Installer</a> - 6.4 MB, .dmg disk image</li>
 <li><a href="bindist/">Browse the Distribution Directory</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
+<p>
+<b>Important:</b>
+The binary distribution currently doesn't work on Mac OS X 10.1.
+An updated installer will be posted this weekend.
+</p>
 <p>
 Documentation is sparse at the moment.
 The installer disk image contains some hints (Fink ReadMe.rtf), plus
