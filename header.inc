@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.41 2002/01/22 00:44:58 fingolfin Exp $ */
+/* $Id: header.inc,v 1.42 2002/03/24 21:50:46 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -73,13 +73,14 @@ if (!$is_home)
 <td align="right">
 <p>Hosted by <a href="http://sourceforge.net/"><img
 src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
-height="31" border="0" alt="SourceForge Logo" align="absbottom"></a>&nbsp;</p>
+height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"></a>&nbsp;
+</p>
 </td>
 </tr>
 <tr valign="top">
-<td align="left" background="<? print $root ?>img/top-line.gif"><img
+<td align="left" style="background-image:url(<? print $root ?>img/top-line.gif)"><img
 src="<? print $root ?>img/title2-2.gif" width="400" height="8" border="0" alt=""></td>
-<td background="<? print $root ?>img/top-line.gif"><img src="<? print $root ?>img/shim.gif" width="1"
+<td style="background-image:url(<? print $root ?>img/top-line.gif)"><img src="<? print $root ?>img/shim.gif" width="1"
 height="8" border="0" alt=""></td>
 </tr>
 </table>

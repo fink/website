@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.7 2001/09/30 14:57:23 chrisp Exp $ */
+/* $Id: footer.inc,v 1.8 2002/03/24 21:50:46 fingolfin Exp $ */
 ?>
 
 </td></tr>
@@ -36,16 +36,16 @@ if ($date)
   print strftime("%a, %b %d %Y", $date);
 ?></p>
 </td></tr>
-<tr><td background="<? print $root
-?>img/bottom-line2.gif"><img src="<? print $root
-?>img/bottom-line2.gif" width="32" height="10" border="0"
-alt=""></td></tr>
+<tr><td style="background-image:url(<? print $root ?>img/bottom-line2.gif)">
+<img src="<? print $root ?>img/bottom-line2.gif" width="32" height="10" border="0" alt="">
+</td></tr>
 </table>
 
 </td>
 </tr>
 
 <tr><td>&nbsp;</td></tr>
+
 </table>
 
 
