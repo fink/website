@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/04 17:27:11 $';
+$cvs_date = '$Date: 2001/02/05 07:44:57 $';
 $wantnav = "main";
 
 include "header.inc";
@@ -26,15 +26,17 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-02-04: There was a small (but fatal) bug in the
+install.sh script. Thanks to Roland Quast for pointing it out. It's
+fixed in release 0.1.4a, available on the <a
+href="download.php">download page</a>. Nothing else has changed, you
+only need this if you had install problems.</p>
 <p>2001-02-04: Version 0.1.4 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-01-30: Version 0.1.3 is out. Get it from the <a
 href="download.php">download page</a>.</p>
 <p>2001-01-28: Documentation on Fink's <a
 href="info-format.php">package descriptions</a> is available.</p>
-<p>2001-01-24: Instructions and patches for <a
-href="gnome.php">building GNOME</a> on Darwin (without Fink) are now
-available.</p>
 
 <h2>Status</h2>
 
