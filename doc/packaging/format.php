@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/19 07:48:09';
+$cvs_date = 'Date: 2004/02/24 09:30:02';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -55,30 +55,16 @@ divided into sections at the moment.</li>
 <p>
 The description files are simple lists of key-value pairs, also called
 'fields'.
-The format is based on the popular RFC 822 header format.
 Each line starts with a key, terminated by a colon (:) and followed by
 the value, like this:
 </p>
 <pre>Key: Value</pre>
 <p>
 There are two notations for fields that must span multiple lines.
-The traditional notation is crafted after the RFC 822 header folding
-method.
-A line that starts with whitespace is treated as a continuation of the
-previous line.
-Example:
-</p>
-<pre>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</pre>
-<p>
-Note the indentation of the lines.
-</p>
-<p>
-The more recent alternative notation is based on the here-document
+</p><p>
+The preferred notation is based on the here-document
 syntax in shell scripts.
-The first line consists of the key, followed by <code>&lt;&lt;</code>
+In this syntax, the first line consists of the key, followed by <code>&lt;&lt;</code>
 as the value.
 All following lines are treated as the actual value, until a line with
 just <code>&lt;&lt;</code> on it is encountered.
@@ -91,13 +77,15 @@ mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</pre>
 <p>
-Note the lack of indentation and the terminating
-<code>&lt;&lt;</code>.
+Indentation using this format is optional, but it can be used to
+improve readability.
 </p><p>
-As a special case, when working within a <code>SplitOff</code> or
-<code>SplitOff<b>N</b></code> field, the here-document syntax
-can be nested.  The same terminator <code>&lt;&lt;</code> is used
-for the sub-here-document.  Here is an example:
+The here-document syntax can be nested. This is often used in
+a <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field.
+These fields contain other fields (multiple lines), and this syntax
+allows these sub-fields to have multiple lines themselves.  The same
+terminator <code>&lt;&lt;</code> is used for the sub-here-document.
+Here is an example:
 </p>
 <pre>
 SplitOff: &lt;&lt;
@@ -108,13 +96,24 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 <p>
-(The indentation is optional, but it improves readability.)
+An older, deprecated, notation is crafted after the RFC 822 header folding
+method.
+A line that starts with whitespace is treated as a continuation of the
+previous line.
+Example:
+</p>
+<pre>InstallScript: mkdir -p %i/share/man
+ make install prefix=%i mandir=%i/share/man
+ mkdir -p %i/share/doc/%n
+ install -m 644 COPYING %i/share/doc/%n</pre>
+<p>
+Note the mandatory indentation of the lines.
 </p><p>
-Empty lines and lines starting with a hash (#) are ignored.
+In both formats, empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
 <code>InstallScript</code>, <code>installscript</code> or
 <code>INSTALLSCRIPT</code> as you please.
-The first form is preferred for readability, though.
+The first capitalization form is preferred for readability, though.
 Some fields take a boolean value - any of "true", "yes", "on", "1"
 (case-insensitive) are treated as true, all other values are treated
 as false.
