@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/05/03 03:01:58';
+$cvs_date = 'Date: 2003/05/09 01:50:58';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="policy.php" title="Packaging Policy"><link rel="prev" href="intro.php" title="Introduction">';
 
@@ -186,6 +186,12 @@ in commands.
 <p>
 the parameters for <b>c</b>onfigure: <code>--prefix=%p</code> plus anything
 specified with ConfigureParams
+</p>
+</td></tr><tr valign="top"><td>%m</td><td>
+<p>
+the <b>m</b>achine architecture string.  This is the same as 
+<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
+and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
 </p>
 </td></tr></table>
 
