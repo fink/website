@@ -4,12 +4,12 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>2003-01-05T14:33:17-05:00</lastBuildDate>
+    <lastBuildDate>2003-01-05T14:38:34-05:00</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New Upgrade Matrix</title>
-    <link>http://fink.sf.net/news/#New%20Upgrade%20Matrix%202002-12-22</link>
+    <link>http://fink.sf.net/news/#2002-12-22%20New%20Upgrade%20Matrix</link>
     <dc:date>2002-12-22</dc:date>
     <description>
   A new Upgrade Matrix is
@@ -22,7 +22,7 @@
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New Upgrade Matrix coming</title>
-    <link>http://fink.sf.net/news/#New%20Upgrade%20Matrix%20coming%202002-12-11</link>
+    <link>http://fink.sf.net/news/#2002-12-11%20New%20Upgrade%20Matrix%20coming</link>
     <dc:date>2002-12-11</dc:date>
     <description>
   The Fink team is aware of the shortcomings of the current
@@ -36,7 +36,7 @@ made available on 2002-09-08.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.5.0a Released</title>
-    <link>http://fink.sf.net/news/#Fink%200.5.0a%20Released%202002-12-09</link>
+    <link>http://fink.sf.net/news/#2002-12-09%20Fink%200.5.0a%20Released</link>
     <dc:date>2002-12-09</dc:date>
     <description>
   
@@ -56,7 +56,7 @@ made available on 2002-09-08.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Update XFree86 for use with OS X 10.2.2</title>
-    <link>http://fink.sf.net/news/#Update%20XFree86%20for%20use%20with%20OS%20X%2010.2.2%202002-11-11</link>
+    <link>http://fink.sf.net/news/#2002-11-11%20Update%20XFree86%20for%20use%20with%20OS%20X%2010.2.2</link>
     <dc:date>2002-11-11</dc:date>
     <description>
   
@@ -73,7 +73,7 @@ the 10.2/unstable tree; to gain access to them, you may need to run
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Don't reuse binary installer</title>
-    <link>http://fink.sf.net/news/#Don't%20reuse%20binary%20installer%202002-10-30</link>
+    <link>http://fink.sf.net/news/#2002-10-30%20Don't%20reuse%20binary%20installer</link>
     <dc:date>2002-10-30</dc:date>
     <description>
   
@@ -95,7 +95,7 @@ not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.4.1 released</title>
-    <link>http://fink.sf.net/news/#Fink%200.4.1%20released%202002-09-28</link>
+    <link>http://fink.sf.net/news/#2002-09-28%20Fink%200.4.1%20released</link>
     <dc:date>2002-09-28</dc:date>
     <description>
     
@@ -111,7 +111,7 @@ not &quot;Upgrade.&quot;  (You can recognize the new version by its filesize of
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Possible conflicts with anti-virus software</title>
-    <link>http://fink.sf.net/news/#Possible%20conflicts%20with%20anti-virus%20software%202002-09-27</link>
+    <link>http://fink.sf.net/news/#2002-09-27%20Possible%20conflicts%20with%20anti-virus%20software</link>
     <dc:date>2002-09-27</dc:date>
     <description>
  A number of recent reports on the 
@@ -124,7 +124,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Test version of Jaguar updater available</title>
-    <link>http://fink.sf.net/news/#Test%20version%20of%20Jaguar%20updater%20available%202002-09-08</link>
+    <link>http://fink.sf.net/news/#2002-09-08%20Test%20version%20of%20Jaguar%20updater%20available</link>
     <dc:date>2002-09-08</dc:date>
     <description>
 		
@@ -137,7 +137,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Mac OS X 10.2 / Jaguar</title>
-    <link>http://fink.sf.net/news/#Mac%20OS%20X%2010.2%20%2F%20Jaguar%202002-08-20</link>
+    <link>http://fink.sf.net/news/#2002-08-20%20Mac%20OS%20X%2010.2%20%2F%20Jaguar</link>
     <dc:date>2002-08-20</dc:date>
     <description>
     
@@ -166,7 +166,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink package manager 0.10.0 released</title>
-    <link>http://fink.sf.net/news/#Fink%20package%20manager%200.10.0%20released%202002-08-06</link>
+    <link>http://fink.sf.net/news/#2002-08-06%20Fink%20package%20manager%200.10.0%20released</link>
     <dc:date>2002-08-06</dc:date>
     <description>
     
@@ -182,7 +182,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Binary distribution moves</title>
-    <link>http://fink.sf.net/news/#Binary%20distribution%20moves%202002-07-17</link>
+    <link>http://fink.sf.net/news/#2002-07-17%20Binary%20distribution%20moves</link>
     <dc:date>2002-07-17</dc:date>
     <description>
     
@@ -192,7 +192,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>KDE support</title>
-    <link>http://fink.sf.net/news/#KDE%20support%202002-05-29</link>
+    <link>http://fink.sf.net/news/#2002-05-29%20KDE%20support</link>
     <dc:date>2002-05-29</dc:date>
     <description>
     
@@ -202,7 +202,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Bug in passwd package</title>
-    <link>http://fink.sf.net/news/#Bug%20in%20passwd%20package%202002-05-03</link>
+    <link>http://fink.sf.net/news/#2002-05-03%20Bug%20in%20passwd%20package</link>
     <dc:date>2002-05-03</dc:date>
     <description>
     
@@ -223,7 +223,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.4.0 released</title>
-    <link>http://fink.sf.net/news/#Fink%200.4.0%20released%202002-04-18</link>
+    <link>http://fink.sf.net/news/#2002-04-18%20Fink%200.4.0%20released</link>
     <dc:date>2002-04-18</dc:date>
     <description>
     
@@ -233,7 +233,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.3.2a is released</title>
-    <link>http://fink.sf.net/news/#Fink%200.3.2a%20is%20released%202002-01-16</link>
+    <link>http://fink.sf.net/news/#2002-01-16%20Fink%200.3.2a%20is%20released</link>
     <dc:date>2002-01-16</dc:date>
     <description>
     
@@ -243,7 +243,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.3.2 is released</title>
-    <link>http://fink.sf.net/news/#Fink%200.3.2%20is%20released%202002-01-09</link>
+    <link>http://fink.sf.net/news/#2002-01-09%20Fink%200.3.2%20is%20released</link>
     <dc:date>2002-01-09</dc:date>
     <description>
     
@@ -253,7 +253,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Binary distribution lost</title>
-    <link>http://fink.sf.net/news/#Binary%20distribution%20lost%202002-01-08</link>
+    <link>http://fink.sf.net/news/#2002-01-08%20Binary%20distribution%20lost</link>
     <dc:date>2002-01-08</dc:date>
     <description>
     
@@ -263,7 +263,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Yes, we are alive!</title>
-    <link>http://fink.sf.net/news/#Yes%2C%20we%20are%20alive!%202001-12-16</link>
+    <link>http://fink.sf.net/news/#2001-12-16%20Yes%2C%20we%20are%20alive!</link>
     <dc:date>2001-12-16</dc:date>
     <description>
     
@@ -276,7 +276,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.3.1 is released</title>
-    <link>http://fink.sf.net/news/#Fink%200.3.1%20is%20released%202001-11-04</link>
+    <link>http://fink.sf.net/news/#2001-11-04%20Fink%200.3.1%20is%20released</link>
     <dc:date>2001-11-04</dc:date>
     <description>
     
@@ -286,7 +286,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Running X11 document updated</title>
-    <link>http://fink.sf.net/news/#Running%20X11%20document%20updated%202001-11-02</link>
+    <link>http://fink.sf.net/news/#2001-11-02%20Running%20X11%20document%20updated</link>
     <dc:date>2001-11-02</dc:date>
     <description>
     
@@ -308,7 +308,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>forked.net</title>
-    <link>http://fink.sf.net/news/#forked.net%202001-10-23</link>
+    <link>http://fink.sf.net/news/#2001-10-23%20forked.net</link>
     <dc:date>2001-10-23</dc:date>
     <description>
     
@@ -320,7 +320,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Binary distribution complete</title>
-    <link>http://fink.sf.net/news/#Binary%20distribution%20complete%202001-10-03</link>
+    <link>http://fink.sf.net/news/#2001-10-03%20Binary%20distribution%20complete</link>
     <dc:date>2001-10-03</dc:date>
     <description>
     The binary distribution update is now complete.
@@ -331,7 +331,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.3.0 is released</title>
-    <link>http://fink.sf.net/news/#Fink%200.3.0%20is%20released%202001-09-30</link>
+    <link>http://fink.sf.net/news/#2001-09-30%20Fink%200.3.0%20is%20released</link>
     <dc:date>2001-09-30</dc:date>
     <description>
     The source release, the binary installer and a binary upgrade kit for
@@ -343,7 +343,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Mac OS X 10.1 released</title>
-    <link>http://fink.sf.net/news/#Mac%20OS%20X%2010.1%20released%202001-09-26</link>
+    <link>http://fink.sf.net/news/#2001-09-26%20Mac%20OS%20X%2010.1%20released</link>
     <dc:date>2001-09-26</dc:date>
     <description>
     Mac OS X 10.1 has been officially released yesterday. Before you use Fink
@@ -355,7 +355,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Binary distribution fully updated</title>
-    <link>http://fink.sf.net/news/#Binary%20distribution%20fully%20updated%202001-09-07</link>
+    <link>http://fink.sf.net/news/#2001-09-07%20Binary%20distribution%20fully%20updated</link>
     <dc:date>2001-09-07</dc:date>
     <description>
     The binary distribution is now fully updated to
@@ -365,7 +365,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.2.6 is released</title>
-    <link>http://fink.sf.net/news/#Fink%200.2.6%20is%20released%202001-09-04</link>
+    <link>http://fink.sf.net/news/#2001-09-04%20Fink%200.2.6%20is%20released</link>
     <dc:date>2001-09-04</dc:date>
     <description>
     Fink 0.2.6 is released, fixing several bootstrap problems. The source
@@ -376,7 +376,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink IRC Channel</title>
-    <link>http://fink.sf.net/news/#Fink%20IRC%20Channel%202001-09-02</link>
+    <link>http://fink.sf.net/news/#2001-09-02%20Fink%20IRC%20Channel</link>
     <dc:date>2001-09-02</dc:date>
     <description>
     Chat with the developers and other users! We now have a #fink channel
@@ -387,7 +387,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Fink 0.2.5 was released</title>
-    <link>http://fink.sf.net/news/#Fink%200.2.5%20was%20released%202001-08-25</link>
+    <link>http://fink.sf.net/news/#2001-08-25%20Fink%200.2.5%20was%20released</link>
     <dc:date>2001-08-25</dc:date>
     <description>
     The source release is
@@ -398,7 +398,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>OpenOSX.com</title>
-    <link>http://fink.sf.net/news/#OpenOSX.com%202001-08-23</link>
+    <link>http://fink.sf.net/news/#2001-08-23%20OpenOSX.com</link>
     <dc:date>2001-08-23</dc:date>
     <description>
     OpenOSX.com refuses to give fair credit after using Fink to create GIMP
@@ -409,7 +409,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New help page</title>
-    <link>http://fink.sf.net/news/#New%20help%20page%202001-08-22</link>
+    <link>http://fink.sf.net/news/#2001-08-22%20New%20help%20page</link>
     <dc:date>2001-08-22</dc:date>
     <description>
     The new help page lists various ways
@@ -420,7 +420,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Porting tips and X11 document updated</title>
-    <link>http://fink.sf.net/news/#Porting%20tips%20and%20X11%20document%20updated%202001-08-13</link>
+    <link>http://fink.sf.net/news/#2001-08-13%20Porting%20tips%20and%20X11%20document%20updated</link>
     <dc:date>2001-08-13</dc:date>
     <description>
     The porting tips document has
@@ -430,7 +430,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.2.4a is released</title>
-    <link>http://fink.sf.net/news/#Version%200.2.4a%20is%20released%202001-08-01</link>
+    <link>http://fink.sf.net/news/#2001-08-01%20Version%200.2.4a%20is%20released</link>
     <dc:date>2001-08-01</dc:date>
     <description>
     There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
@@ -441,7 +441,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.2.4 is released</title>
-    <link>http://fink.sf.net/news/#Version%200.2.4%20is%20released%202001-08-01</link>
+    <link>http://fink.sf.net/news/#2001-08-01%20Version%200.2.4%20is%20released</link>
     <dc:date>2001-08-01</dc:date>
     <description>
     Version 0.2.4 is released. Get it from the download page. Some highlights: The GIMP
@@ -452,7 +452,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>New document: X11 on Darwin and Mac OS X</title>
-    <link>http://fink.sf.net/news/#New%20document%3A%20X11%20on%20Darwin%20and%20Mac%20OS%20X%202001-07-19</link>
+    <link>http://fink.sf.net/news/#2001-07-19%20New%20document%3A%20X11%20on%20Darwin%20and%20Mac%20OS%20X</link>
     <dc:date>2001-07-19</dc:date>
     <description>
     A comprehensive document about X11 on
@@ -463,7 +463,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Package database now online</title>
-    <link>http://fink.sf.net/news/#Package%20database%20now%20online%202001-07-13</link>
+    <link>http://fink.sf.net/news/#2001-07-13%20Package%20database%20now%20online</link>
     <dc:date>2001-07-13</dc:date>
     <description>
     A prototype of the package database
@@ -473,7 +473,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.2.3 is released</title>
-    <link>http://fink.sf.net/news/#Version%200.2.3%20is%20released%202001-07-09</link>
+    <link>http://fink.sf.net/news/#2001-07-09%20Version%200.2.3%20is%20released</link>
     <dc:date>2001-07-09</dc:date>
     <description>
     Get it from the download page. This
@@ -483,7 +483,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Packaging Manual updated</title>
-    <link>http://fink.sf.net/news/#Packaging%20Manual%20updated%202001-07-03</link>
+    <link>http://fink.sf.net/news/#2001-07-03%20Packaging%20Manual%20updated</link>
     <dc:date>2001-07-03</dc:date>
     <description>
     The Packaging Manual was
@@ -493,7 +493,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Web site restructuring</title>
-    <link>http://fink.sf.net/news/#Web%20site%20restructuring%202001-06-30</link>
+    <link>http://fink.sf.net/news/#2001-06-30%20Web%20site%20restructuring</link>
     <dc:date>2001-06-30</dc:date>
     <description>
     A major restructuring of the web site has started. The non-Fink-specific
@@ -505,7 +505,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.2.2 is released</title>
-    <link>http://fink.sf.net/news/#Version%200.2.2%20is%20released%202001-06-24</link>
+    <link>http://fink.sf.net/news/#2001-06-24%20Version%200.2.2%20is%20released</link>
     <dc:date>2001-06-24</dc:date>
     <description>
     Version 0.2.2 is finally released. Get it from the download page. Be sure to read the notes
@@ -515,7 +515,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>CVS instructions updated</title>
-    <link>http://fink.sf.net/news/#CVS%20instructions%20updated%202001-05-19</link>
+    <link>http://fink.sf.net/news/#2001-05-19%20CVS%20instructions%20updated</link>
     <dc:date>2001-05-19</dc:date>
     <description>
     The CVS instructions have
@@ -525,7 +525,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>FAQ online</title>
-    <link>http://fink.sf.net/news/#FAQ%20online%202001-04-26</link>
+    <link>http://fink.sf.net/news/#2001-04-26%20FAQ%20online</link>
     <dc:date>2001-04-26</dc:date>
     <description>
     
@@ -535,7 +535,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.2.0 is released</title>
-    <link>http://fink.sf.net/news/#Version%200.2.0%20is%20released%202001-04-20</link>
+    <link>http://fink.sf.net/news/#2001-04-20%20Version%200.2.0%20is%20released</link>
     <dc:date>2001-04-20</dc:date>
     <description>
     
@@ -545,7 +545,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Released version 0.1.8a</title>
-    <link>http://fink.sf.net/news/#Released%20version%200.1.8a%202001-04-15</link>
+    <link>http://fink.sf.net/news/#2001-04-15%20Released%20version%200.1.8a</link>
     <dc:date>2001-04-15</dc:date>
     <description>
     
@@ -555,7 +555,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.1.8 is out</title>
-    <link>http://fink.sf.net/news/#Version%200.1.8%20is%20out%202001-04-14</link>
+    <link>http://fink.sf.net/news/#2001-04-14%20Version%200.1.8%20is%20out</link>
     <dc:date>2001-04-14</dc:date>
     <description>
     
@@ -565,7 +565,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Porting notes updated</title>
-    <link>http://fink.sf.net/news/#Porting%20notes%20updated%202001-03-30</link>
+    <link>http://fink.sf.net/news/#2001-03-30%20Porting%20notes%20updated</link>
     <dc:date>2001-03-30</dc:date>
     <description>
     
@@ -575,7 +575,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.1.7 is out!</title>
-    <link>http://fink.sf.net/news/#Version%200.1.7%20is%20out!%202001-03-30</link>
+    <link>http://fink.sf.net/news/#2001-03-30%20Version%200.1.7%20is%20out!</link>
     <dc:date>2001-03-30</dc:date>
     <description>
     
@@ -585,7 +585,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Mac OS X is released!</title>
-    <link>http://fink.sf.net/news/#Mac%20OS%20X%20is%20released!%202001-03-24</link>
+    <link>http://fink.sf.net/news/#2001-03-24%20Mac%20OS%20X%20is%20released!</link>
     <dc:date>2001-03-24</dc:date>
     <description>
     
@@ -595,7 +595,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Libtool page updated</title>
-    <link>http://fink.sf.net/news/#Libtool%20page%20updated%202001-03-15</link>
+    <link>http://fink.sf.net/news/#2001-03-15%20Libtool%20page%20updated</link>
     <dc:date>2001-03-15</dc:date>
     <description>
     
@@ -605,7 +605,7 @@ software before using Fink.
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Version 0.1.6 is out</title>
-    <link>http://fink.sf.net/news/#Version%200.1.6%20is%20out%202001-03-08</link>
+    <link>http://fink.sf.net/news/#2001-03-08%20Version%200.1.6%20is%20out</link>
     <dc:date>2001-03-08</dc:date>
     <description>
     
