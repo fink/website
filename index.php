@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/01/09 09:06:22 $';
+$cvs_date = '$Date: 2002/01/16 21:21:10 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,29 +33,34 @@ packages or build everything from source.
 
 <h2>News</h2>
 
-<p>2001-12-09: Fink 0.3.2 is released.
+<p>2002-01-16: Fink 0.3.2a is released.
+The source release and the binary installer are available now, the
+bulk of binary packages will be built and made available gradually
+over the next few days as usual.
+For information about upgrading, visit the
+<a href="download/upgrade.php">Upgrade Matrix</a> and the
+<a href="doc/users-guide/index.php">User's Guide</a>.
+</p>
+<p>2002-01-09: Fink 0.3.2 is released.
 The source release is available now, the binary installer will
-follow within the next 24 hours. The bulk of binary packages will
+follow soon. The bulk of binary packages will
 be built and made available gradually over the next few days as usual.
 For information about upgrading, visit the
 <a href="download/upgrade.php">Upgrade Matrix</a> and the
 <a href="doc/users-guide/index.php">User's Guide</a>.
 </p>
-<p>2001-12-16:
-Yes, we are alive! Despite the fact that no news were listed here
-for over a month, the fink project was quite busy in the recent time.
-Sadly, our leader, Christoph, left us last month. But despite this, development
-is going on actively.
-<br>
-Version 0.9.5 of the Fink package manager was recently released, and many
-updated and new packages are in our <a href="doc/cvsaccess/index.php">CVS</a>.
-</p>
+<p>2002-01-08:
+Due to a faulty script, the whole fink website, including our
+binary distro, has been wiped! This means you can't use the binary
+distro right now. I am working as quick as I can on uploading
+the new Fink 0.3.2 binary distro. In addition, the package database
+is not working for now. Please bear with us.
 
 <h2>Status</h2>
 
 <p>
-Fink 0.3.2 was released on 7 January 2002.
-The source release is available now, the binary installer and the
+Fink 0.3.2a was released on 16 January 2002.
+The source release and the binary installer are available now, the
 other binary packages are still being built.
 </p>
 
