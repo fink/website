@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/20 17:42:30 $';
+$cvs_date = '$Date: 2001/08/11 20:18:29 $';
 
 include "header.inc";
 
@@ -20,25 +20,48 @@ about all packages in CVS ("current-stable" and "current-unstable").
 Note that some packages are only available in the "unstable" tree.
 </p>
 
+<?
+$q = "SELECT name FROM package WHERE latest=1";
+$rs = mysql_query($q, $dbh);
+if (!$rs) {
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+  $pkgcount = '?';
+} else {
+  $pkgcount = mysql_num_rows($rs);
+}
+
+$q = "SELECT * FROM sections ORDER BY name ASC";
+$rs = mysql_query($q, $dbh);
+if (!$rs) {
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+} else {
+  $seccount = mysql_num_rows($rs);
+?>
+
+<p>
+The database was last updated on <?
+print strftime("%A, %B %d", $dyndate)
+?> and currently lists <? print $pkgcount ?> packages in <? print
+$seccount ?> sections.
+</p>
+
 <p>
 You can browse the <a href="list.php">complete list of packages</a>,
 or you can browse by section:
 </p>
+
 <ul>
 <?
-
-$q = "SELECT DISTINCT section FROM package ORDER BY section ASC";
-$rs = mysql_query($q, $dbh);
-if ($rs) {
   while ($row = mysql_fetch_array($rs)) {
-    print '<li><a href="section.php/'.$row[section].'">'.$row[section].'</a></li>'."\n";
+    print '<li><a href="section.php/'.$row[name].'">'.$row[name].'</a>'.
+      ($row[description] ? (' - '.$row[description]) : '').
+      '</li>'."\n";
   }
-} else {
-  print '<li><b>error during query:</b> '.mysql_error().'</li>';
-}
-
 ?>
 </ul>
+<?
+}
+?>
 
 
 <?
