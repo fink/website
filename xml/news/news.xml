@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.62 2003/06/26 23:16:15 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.63 2003/06/30 12:00:30 dmrrsn Exp $</cvsid>
 
 <newsitem>
         <date>2003-06-26</date>
@@ -21,6 +21,13 @@ For this reason, the Fink team recommends that if you update your
 Developer Tools with the new patch, you should be careful to run
 <code>sudo gcc_select 3</code>
 prior to any "fink build" or "fink install" commands.
+</p>
+<p><em>Update 30 June 2003:</em> A 
+<link url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
+has now been detected</link> with
+the new assembler program which the update installs, which may prevent
+certain Fink packages from being compiled at all if you install this
+update.  
 </p>
                 </body>
 </newsitem>

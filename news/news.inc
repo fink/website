@@ -14,6 +14,13 @@ Developer Tools with the new patch, you should be careful to run
 <code>sudo gcc_select 3</code>
 prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
 </p>
+<p><b>Update 30 June 2003:</b> A 
+<a href="<?php print $root; ?>http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
+has now been detected</a> with
+the new assembler program which the update installs, which may prevent
+certain Fink packages from being compiled at all if you install this
+update.  
+</p>
                 <a name="2003-06-20 Darwin packaging groups to coordinate efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
                <p>
 The <a href="http://fink.sourceforge.net">Fink</a>, 
