@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/03/01 01:25:09 $';
+$cvs_date = '$Date: 2003/03/20 22:27:39 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -68,6 +68,9 @@ if (!$rs) {
   }
   if ($row[homepage]) {
     it_item("Website:", '<a href="'.$row[homepage].'">'.$row[homepage].'</a>');
+  }
+  if ($row[license]) {
+    it_item("License:", $row[license]);
   }
   if ($row[parentname]) {
     it_item("Parent:", '<a href="'.$pdbroot.'package.php/'.$row[parentname].'">'.$row[parentname].'</a>');
