@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/24 14:12:16';
+$cvs_date = 'Date: 2005/02/08 00:22:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 

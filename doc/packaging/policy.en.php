@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:29:31';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/04/05 03:04:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -111,8 +111,25 @@ them.</li>
 
 
 
+<h2><a name="openssl">3.2 The GPL and OpenSSL</a></h2>
+<p>
+(Policy change effective April, 2005.)
+</p>
+<p>
+Due to the apparent incompatibilty of the OpenSSL license with the GPL and 
+LGPL licenses, fink packages which link to openssl but are licensed under 
+the GPL or LGPL are marked as "Restrictive."  As a consequence, the Fink 
+project will not distribute binaries of such packages, although users are 
+free to compile them from source at their discretion.
+</p>
+<p>
+Package maintainers are encouraged to record the original package license in 
+the <code>DescPackaging</code> field.
+</p>
 
-<h2><a name="prefix">3.2 Base System Interference</a></h2>
+
+
+<h2><a name="prefix">3.3 Base System Interference</a></h2>
 <p>
 Fink is an add-on distribution that is installed in a directory
 separate from the base system.
@@ -132,7 +149,7 @@ for existence before calling them and the like).
 </p>
 
 
-<h2><a name="sharedlibs">3.3 Shared Libraries</a></h2>
+<h2><a name="sharedlibs">3.4 Shared Libraries</a></h2>
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 4
@@ -511,7 +528,7 @@ which depend on <code>foo</code>.
 
 
 
-<h2><a name="perlmods">3.4 Perl Modules</a></h2>
+<h2><a name="perlmods">3.5 Perl Modules</a></h2>
 <p>Fink's policy about perl modules, originally implemented in
 May 2003,  has been revised as of April 2004.
 </p><p>
@@ -572,7 +589,7 @@ directory, and will issue a warning if so.
 
 
 
-<h2><a name="emacs">3.5 Emacs Policy</a></h2>
+<h2><a name="emacs">3.6 Emacs Policy</a></h2>
 <p> The Fink project has chosen to follow the Debian project's policy
 regarding emacs, with a few small differences.
 (The Debian policy document can be found at
