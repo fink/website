@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/10 12:57:04 $';
+$cvs_date = '$Date: 2002/06/10 12:59:41 $';
 
 include "header.inc";
 ?>
@@ -44,14 +44,6 @@ this list.</p>
 </ul>
 <?
 }
-
-
-<ul>
-<li><a href="package.php/libtool">libtool</a> 1.3.5-10 - description</li>
-</ul>
-
-
-
 
 
 <?
