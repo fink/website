@@ -1,7 +1,7 @@
 <?
 $title = "The logo!";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/10/25 13:41:34 $';
+$cvs_date = '$Date: 2003/10/25 13:48:46 $';
 
 include "header.inc";
 ?>
@@ -40,7 +40,7 @@ After receiving all the votes from the main Administrators summing up the points
 my own one of our participants had to be the victor and I am proud to present his work as 
 our new, official Fink logo.
 <br />
-<img src="../img/logo_big.png" alt="Big logo" width="640" height="317"> </p> 
+<img src="../img/logobig.png" alt="Big logo" width="640" height="317"> </p> 
 <p> This is the work of <b>Paul Enste</b>. For those of you who are macwelt.de 
   premium members a little interview can be found here</a>. Since I know that 
   not all of you might be able to access that nor able to comprehend German well 
