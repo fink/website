@@ -1,7 +1,7 @@
 <?
 $title = "X11 Choices";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/15 22:35:34 $';
+$cvs_date = '$Date: 2001/04/01 12:00:57 $';
 
 include "header.inc";
 ?>
@@ -54,8 +54,6 @@ X11 applications side-by-side. Their server also has accelerated
 OpenGL support. Xtools is a commercial product, but you can get a
 time-limited trial version at <a href="http://www.tenon.com/">Tenon's
 website</a>.</p>
-<p>I've tested version 1.0b6. It works, but it's still quite
-buggy.</p>
 
 <h2>Xvnc</h2>
 
