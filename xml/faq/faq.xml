@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.35 2002/05/20 12:56:54 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.36 2002/05/20 13:06:26 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -339,6 +339,10 @@ If you want to install a package that is not available via
 <code>dselect</code> / <code>apt-get</code>, you have to compile it
 from source using <code>fink install <em>packagename</em></code>.
 Make sure you have the Developer Tools installed before you try this.
+(If there is no installer for the Developer Tools in your
+<code>/Applications</code> folder, you can get them from the <link
+url="http://connect.apple.com/">Apple Developer Connection</link> after
+free registration.)
 See also the question about unstable below.
 </p>
 </answer></faqentry>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/05/20 12:56:54';
+$cvs_date = 'Date: 2002/05/20 13:06:26';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -108,6 +108,9 @@ If you want to install a package that is not available via
 <tt><nobr>dselect</nobr></tt> / <tt><nobr>apt-get</nobr></tt>, you have to compile it
 from source using <tt><nobr>fink install <b>packagename</b></nobr></tt>.
 Make sure you have the Developer Tools installed before you try this.
+(If there is no installer for the Developer Tools in your
+<tt><nobr>/Applications</nobr></tt> folder, you can get them from the <a href="http://connect.apple.com/">Apple Developer Connection</a> after
+free registration.)
 See also the question about unstable below.
 </p></div></a>
 
