@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-announce";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/30 17:30:10 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2003/01/29 08:12:40 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,14 @@ password will be emailed to you as a reminder.</td></tr>
 </form>
 </blockquote>
 
+<p>
+<form Method=POST ACTION="http://lists.sourceforge.net/lists/subscribe/fink-announce">
+To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:<p>
+<center> 
+<input name="info" type="TEXT" value="" size="30" >  
+<input name="UserOptions" type="SUBMIT" value="Edit Options" >
+</center>
+</form>
 
 <p>Powered by <a href="http://www.list.org/">Mailman</a>.</p>
 
