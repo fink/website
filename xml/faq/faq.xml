@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.84 2003/01/30 17:28:53 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.85 2003/02/07 16:34:31 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -746,8 +746,8 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <p>Check and see if you have <code>freetype2-2.1.3-1</code> installed.  This was made available for a short time, but wasn't backwards compatible with <code>pil</code>, among other packages, and was removed.  Find and delete <code>freetype2_2.1.3-1_darwin-powerpc.deb</code>, and then you can downgrade it with <code>fink install freetype2-2.0.9-1</code>.</p></answer>
 </faqentry>
 
-<faqentry name="apple-x11"><question><p>I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</p></question>
-	<answer><p>You need to install the SDK package as well as the User package. The SDK is available from <code>http://www.apple.com/macosx/X11/</code> and the actual X11 is from a form a level deeper.</p></answer>
+<faqentry name="apple-x11"><question><p>I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <filename>/usr/X11R6/lib/libX11.dylib</filename>, <filename>/usr/X11R6/lib/libXpm.dylib</filename>, <filename>/usr/X11R6/lib/libXaw.dylib</filename>, and <filename>/usr/X11R6/include/X11/Xlib.h</filename> are missing.</p></question>
+	<answer><p>You need to install the SDK package as well as the User package. The SDK is available from <link url="http://www.apple.com/macosx/x11/">the Apple X11 page</link> (the link is in a box at the lower right corner labeled <em>Developer's Kit</em>).</p></answer>
 </faqentry>
 
 <faqentry name="automake-autoconf"><question><p>I can't update autoconf/automake, because of a dependency on automake/autoconf.</p></question>

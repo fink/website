@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/01/30 17:28:53';
+$cvs_date = 'Date: 2003/02/07 16:34:31';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -98,7 +98,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
 <li><a href="comp-packages.php#pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
-<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  There's no error message.</a></li>
+<li><a href="comp-packages.php#apple-x11">5.5 I've installed the Apple X11 package, but system-xfree86 won't install.  The message says that <tt><nobr>/usr/X11R6/lib/libX11.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXpm.dylib</nobr></tt>, <tt><nobr>/usr/X11R6/lib/libXaw.dylib</nobr></tt>, and <tt><nobr>/usr/X11R6/include/X11/Xlib.h</nobr></tt> are missing.</a></li>
 <li><a href="comp-packages.php#automake-autoconf">5.6 I can't update autoconf/automake, because of a dependency on automake/autoconf.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
@@ -132,7 +132,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x-bugs">7.9 I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</a></li>
 <li><a href="usage-packages.php#apple-x-delete">7.10 I want the delete key in Apple's X11.app to behave like that in XDarwin.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.84 2003/01/30 17:28:53 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.85 2003/02/07 16:34:31 alexkhansen Exp $</i></p>
 
 
 <?
