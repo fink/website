@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="format.php?phpLang=zh" title="软件包描述文件"><link rel="prev" href="index.php?phpLang=zh" title="打包 Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>打包 - 1 介绍</h1>
+include_once "header.zh.inc";
+?>
+<h1>打包 - 1. 介绍</h1>
 
 
 
@@ -50,7 +50,9 @@ fink 和 dpkg 都知道如何正确地给它们排序。
 </p>
 
 
-<p align="right">
-Next: <a href="format.php?phpLang=zh">2 软件包描述文件</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="format.php?phpLang=zh">2. 软件包描述文件</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

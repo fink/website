@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
-include_once "header.inc";
-?>
 
-<h1>打包 - 2 软件包描述文件</h1>
+include_once "header.zh.inc";
+?>
+<h1>打包 - 2. 软件包描述文件</h1>
 
 
 
@@ -193,7 +193,9 @@ _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版�
 
 
 
-<p align="right">
-Next: <a href="policy.php?phpLang=zh">3 打包相关规则</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="policy.php?phpLang=zh">3. 打包相关规则</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

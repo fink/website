@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="format.php?phpLang=fr" title="Descriptions de paquets"><link rel="prev" href="index.php?phpLang=fr" title="Paquets Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Paquets - 1 Introduction</h1>
+include_once "header.fr.inc";
+?>
+<h1>Paquets - 1. Introduction</h1>
 
 
 
@@ -49,7 +49,9 @@ Le nom complet du paquet est constitué de la concaténation de ces trois élém
 </p>
 
 
-<p align="right">
-Next: <a href="format.php?phpLang=fr">2 Descriptions de paquets</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="format.php?phpLang=fr">2. Descriptions de paquets</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

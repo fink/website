@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
-include_once "header.inc";
-?>
 
-<h1>Packaging - 4 Filesystem Layout</h1>
+include_once "header.en.inc";
+?>
+<h1>Packaging - 4. Filesystem Layout</h1>
 
 
 
@@ -156,7 +156,9 @@ In particular, the following should not be used:
 
 
 
-<p align="right">
-Next: <a href="reference.php?phpLang=en">5 Reference</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reference.php?phpLang=en">5. Reference</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

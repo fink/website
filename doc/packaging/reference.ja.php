@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
-include_once "header.inc";
-?>
 
-<h1>パッケージ作成 - 5 リファレンスマニュアル</h1>
+include_once "header.ja.inc";
+?>
+<h1>パッケージ作成 - 5. リファレンスマニュアル</h1>
 		
 		
 		<h2><a name="build">5.1 ビルドプロセス</a></h2>
@@ -1125,5 +1125,7 @@ SplitOff2: &lt;&lt;
 			</p>
 		
 	
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
-include_once "header.inc";
-?>
 
-<h1>打包 - 3 打包相关规则</h1>
+include_once "header.zh.inc";
+?>
+<h1>打包 - 3. 打包相关规则</h1>
 
 
 
@@ -323,7 +323,9 @@ http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
 
 
 
-<p align="right">
-Next: <a href="fslayout.php?phpLang=zh">4 文件系统布局</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="fslayout.php?phpLang=zh">4. 文件系统布局</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

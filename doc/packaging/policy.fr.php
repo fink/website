@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
-include_once "header.inc";
-?>
 
-<h1>Paquets - 3 Règles de distribution des paquets</h1>
+include_once "header.fr.inc";
+?>
+<h1>Paquets - 3. Règles de distribution des paquets</h1>
 
 
 
@@ -358,7 +358,9 @@ Il existe deux différences dans les règles de Fink. Premièrement, ces règles
 </p>
 
 
-<p align="right">
-Next: <a href="fslayout.php?phpLang=fr">4 Organisation des fichiers</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="fslayout.php?phpLang=fr">4. Organisation des fichiers</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

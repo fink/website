@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
-include_once "header.inc";
-?>
 
-<h1>Packaging - 3 Packaging Policy</h1>
+include_once "header.en.inc";
+?>
+<h1>Packaging - 3. Packaging Policy</h1>
 
 
 
@@ -588,7 +588,9 @@ may change some day in the future.)    And second, unlike the Debian policy,
 
 
 
-<p align="right">
-Next: <a href="fslayout.php?phpLang=en">4 Filesystem Layout</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="fslayout.php?phpLang=en">4. Filesystem Layout</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="reference.php?phpLang=zh" title="操作手册"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
 
-include_once "header.inc";
-?>
 
-<h1>打包 - 4 文件系统布局</h1>
+include_once "header.zh.inc";
+?>
+<h1>打包 - 4. 文件系统布局</h1>
 
 
 
@@ -129,7 +129,9 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 
 
 
-<p align="right">
-Next: <a href="reference.php?phpLang=zh">5 操作手册</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reference.php?phpLang=zh">5. 操作手册</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

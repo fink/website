@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
-include_once "header.inc";
-?>
 
-<h1>パッケージ作成 - 2 パッケージ記述</h1>
+include_once "header.ja.inc";
+?>
+<h1>パッケージ作成 - 2. パッケージ記述</h1>
 		
 		
 		<h2><a name="trees">2.1 ツリーレイアウト</a></h2>
@@ -229,7 +229,9 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr></table>
 		
-	<p align="right">
-Next: <a href="policy.php?phpLang=ja">3 パッケージ化ポリシー</a></p>
+	<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="policy.php?phpLang=ja">3. パッケージ化ポリシー</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

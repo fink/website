@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
-include_once "header.inc";
-?>
 
-<h1>パッケージ作成 - 3 パッケージ化ポリシー</h1>
+include_once "header.ja.inc";
+?>
+<h1>パッケージ作成 - 3. パッケージ化ポリシー</h1>
 		
 		
 		<h2><a name="licenses">3.1 パッケージのライセンス</a></h2>
@@ -586,7 +586,9 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				<code>/sw/share/emacs/site-lisp</code> にインストールして構いません．
 			</p>
 		
-	<p align="right">
-Next: <a href="fslayout.php?phpLang=ja">4 ファイルシステムのレイアウト</a></p>
+	<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="fslayout.php?phpLang=ja">4. ファイルシステムのレイアウト</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
-include_once "header.inc";
-?>
 
-<h1>Paquets - 5 Référence</h1>
+include_once "header.fr.inc";
+?>
+<h1>Paquets - 5. Référence</h1>
 
 
 
@@ -636,5 +636,7 @@ Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par
 </p>
 
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

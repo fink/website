@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
-include_once "header.inc";
-?>
 
-<h1>Packaging - 1 Introduction</h1>
+include_once "header.en.inc";
+?>
+<h1>Packaging - 1. Introduction</h1>
 
 
 
@@ -68,7 +68,9 @@ dashes in between, e.g. openssh-2.9p1-2.
 </p>
 
 
-<p align="right">
-Next: <a href="format.php?phpLang=en">2 Package Descriptions</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="format.php?phpLang=en">2. Package Descriptions</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

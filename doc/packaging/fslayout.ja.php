@@ -4,10 +4,10 @@ $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/07/10 08:22:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
-include_once "header.inc";
-?>
 
-<h1>パッケージ作成 - 4 ファイルシステムのレイアウト</h1>
+include_once "header.ja.inc";
+?>
+<h1>パッケージ作成 - 4. ファイルシステムのレイアウト</h1>
 		
 		
 		
@@ -153,7 +153,9 @@ include_once "header.inc";
 				<code>/sw/libexec</code>, <code>/sw/lib/locale</code>
 			</p>
 		
-	<p align="right">
-Next: <a href="reference.php?phpLang=ja">5 リファレンスマニュアル</a></p>
+	<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="reference.php?phpLang=ja">5. リファレンスマニュアル</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

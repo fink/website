@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:15:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>Paquets - 2 Descriptions de paquets</h1>
+include_once "header.fr.inc";
+?>
+<h1>Paquets - 2. Descriptions de paquets</h1>
 
 
 
@@ -181,7 +181,9 @@ la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à
 </td></tr></table>
 
 
-<p align="right">
-Next: <a href="policy.php?phpLang=fr">3 Règles de distribution des paquets</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="policy.php?phpLang=fr">3. Règles de distribution des paquets</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

@@ -4,10 +4,10 @@ $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/07/02 19:13:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
-include_once "header.inc";
-?>
 
-<h1>Packaging - 2 Package Descriptions</h1>
+include_once "header.en.inc";
+?>
+<h1>Packaging - 2. Package Descriptions</h1>
 
 
 
@@ -245,7 +245,9 @@ and %{Ni} to avoid confusion with the %n and %N expansions.
 
 
 
-<p align="right">
-Next: <a href="policy.php?phpLang=en">3 Packaging Policy</a></p>
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="policy.php?phpLang=en">3. Packaging Policy</a></p>
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+

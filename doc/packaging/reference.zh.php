@@ -4,10 +4,10 @@ $cvs_author = 'Author: dmacks';
 $cvs_date = 'Date: 2004/05/19 15:04:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
-include_once "header.inc";
-?>
 
-<h1>打包 - 5 操作手册</h1>
+include_once "header.zh.inc";
+?>
+<h1>打包 - 5. 操作手册</h1>
 
 
 
@@ -821,5 +821,7 @@ shell 脚本类似。不过，命令是通过 system() 调用执行的，每次�
 
 
 
+<? include_once "../../footer.inc"; ?>
 
-<? include_once "footer.inc"; ?>
+
+
