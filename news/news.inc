@@ -44,11 +44,11 @@ not need to install system-xfree86 anymore.  Fink is
 capable of automatically determining your system-xfree86 version if you
 don't already have any fink x11 packages installed.  If you currently
 have an old system-xfree86 package of any kind installed, please run the
-following (all on one line):
+following:
 </p>
-<p><code>
-sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43;
-fink selfupdate; fink index</code>
+<p>
+<b>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43;
+fink selfupdate; fink index</b>
 </p>
 <p>
 The Fink team is still working on getting Fink packages working under 10.3,
