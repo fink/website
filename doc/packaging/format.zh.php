@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/15 16:15:01';
+$cvs_date = 'Date: 2004/03/22 19:48:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 include_once "header.inc";
@@ -95,6 +95,8 @@ SplitOff: &lt;&lt;
 <h2><a name="percent">2.3 百分号展开</a></h2>
 <p>
 为了简化一些书写，Fink 在一些字段中支持一套展开（替换）规则。
+为了避免含混，你可以使用大括号来指明确切是那些字母需要作为百分号展开。
+例如，<code>%{n}</code> 与 <code>%n</code> 的含义是一样的。
 目前支持的展开包括：
 </p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
@@ -128,7 +130,8 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
-<code>/sw/src/root-gimp-1.2.1-1</code>
+<code>/sw/src/root-gimp-1.2.1-1</code>。
+你不应该假设 <code>root-%f</code> 会在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -148,8 +151,8 @@ SplitOff: &lt;&lt;
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>
-</p>
+构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>。
+你不应该假设 <code>root-%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
 <p>
 注意：仅在没有其它选择的情况下才使用它。构建目录是脚本运行的当前目录；在命令中你应该使用相对路径。
 </p>

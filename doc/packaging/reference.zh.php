@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/15 16:15:01';
+$cvs_date = 'Date: 2004/03/22 19:48:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 include_once "header.inc";
@@ -682,7 +682,10 @@ StartupItems (例如 web 服务器)。
 
 <h2><a name="scripts">5.4 脚本</a></h2>
 
-<p>PatchScript，CompileScript 和 InstallScript 字段允许你指定需要执行的 shell 命令。支持两种形式。
+<p>PatchScript，CompileScript 和 InstallScript 字段允许你指定需要执行的 shell 命令。
+构建目录(<code>%b</code>)是脚本执行的当前目录。
+你应该总是使用相对路径名或百分号扩展来引用 fink 目录结构中的文件和目录，而不应该是绝对路径的形式。 
+它有两种形式。
 </p><p>
 这个字段可以是命令的简单罗列。它和一个
 shell 脚本类似。不过，命令是通过 system() 调用执行的，每次一行，所以设置环境变量和更改路径只对同一行有效。从 fink 0.18.2 后的 CVS 版本开始，你可以用与普通 shell 脚本类似的方法来绕回太长的行：

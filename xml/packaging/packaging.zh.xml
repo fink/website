@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.6 2004/03/15 16:15:01 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.7 2004/03/22 19:48:05 jeff_yecn Exp $</cvsid>
 
 <preface>
 <p>
@@ -157,6 +157,8 @@ SplitOff: &lt;&lt;
 <section name="percent"><title>百分号展开</title>
 <p>
 为了简化一些书写，Fink 在一些字段中支持一套展开（替换）规则。
+为了避免含混，你可以使用大括号来指明确切是那些字母需要作为百分号展开。
+例如，<code>%{n}</code> 与 <code>%n</code> 的含义是一样的。
 目前支持的展开包括：
 </p>
 <itemtable labeld="" labelt="">
@@ -213,7 +215,8 @@ SplitOff: &lt;&lt;
 <itemd>
 <p>
 要打包的全套文件将被构建于的目标（<em>d</em>estination）目录，例如：
-<filename>/sw/src/root-gimp-1.2.1-1</filename>
+<filename>/sw/src/root-gimp-1.2.1-1</filename>。
+你不应该假设 <filename>root-%f</filename> 会在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
 </itemd></item>
 
@@ -248,8 +251,8 @@ SplitOff: &lt;&lt;
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-构建（<em>b</em>uild）过程所在的目录，例如：<filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>
-</p>
+构建（<em>b</em>uild）过程所在的目录，例如：<filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>。
+你不应该假设 <filename>root-%f</filename> 一定在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它。</p>
 <p>
 注意：仅在没有其它选择的情况下才使用它。构建目录是脚本运行的当前目录；在命令中你应该使用相对路径。
 </p>
@@ -1662,7 +1665,10 @@ StartupItems (例如 web 服务器)。
 
 <section name="scripts"><title>脚本</title>
 
-<p>PatchScript，CompileScript 和 InstallScript 字段允许你指定需要执行的 shell 命令。支持两种形式。
+<p>PatchScript，CompileScript 和 InstallScript 字段允许你指定需要执行的 shell 命令。
+构建目录(<filename>%b</filename>)是脚本执行的当前目录。
+你应该总是使用相对路径名或百分号扩展来引用 fink 目录结构中的文件和目录，而不应该是绝对路径的形式。 
+它有两种形式。
 </p><p>
 这个字段可以是命令的简单罗列。它和一个
 shell 脚本类似。不过，命令是通过 system() 调用执行的，每次一行，所以设置环境变量和更改路径只对同一行有效。从 fink 0.18.2 后的 CVS 版本开始，你可以用与普通 shell 脚本类似的方法来绕回太长的行：
