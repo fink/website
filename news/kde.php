@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/05/29 14:17:44 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2002/05/29 14:20:56 $';
 
 include "header.inc";
 ?>
@@ -92,7 +92,8 @@ Screenshots:
 	 kdebase3-ssl</tt></b>").  If you want to build all of the official KDE
 	 distribution that has been ported, there is a convenience package that
 	 will build everything for you.  Just run "<b><tt>fink install
-	 bundle-kde</tt></b>". </p> </li>
+	 bundle-kde</tt></b>" (or "<b><tt>fink install bundle-kde-ssl</tt></b>").
+         </p> </li>
 	<li> <p><strong> Wait.  A long, long time. </strong></p>
 	 <p> Seriously, building all of bundle-kde from scratch took over 24 hours
 	 on a G4/800 with 640MB RAM.  This is not a small project to build -- if
@@ -131,7 +132,8 @@ Screenshots:
    apps, run <b><tt>sudo apt-get install kdebase3</tt></b> (or
    <b><tt>sudo apt-get install kdebase3-ssl</tt></b> if you enabled crypto support in step 1).
    If you want to install all of the official KDE packages that have been
-   ported so far, run <b><tt>sudo apt-get install bundle-kde</tt></b>.  Alternatively
+   ported so far, run <b><tt>sudo apt-get install bundle-kde</tt></b> (or
+   <b><tt>sudo apt-get install bundle-kde-ssl</tt></b>).  Alternatively
    you can also select and install individual packages via the <b><tt>dselect</tt></b>
    command in an interactive fashion.
   </li>
