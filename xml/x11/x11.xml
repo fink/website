@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.40 2003/11/28 12:53:51 fingolfin Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.41 2003/12/02 02:38:25 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -554,9 +554,11 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
   </p>
 </li>
 </ol>
-<!--todo><p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it manually via:</p>
-<codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11 /usr/lib/libXplugin.1.dylib</codeblock>
-<p><em>Note:</em>  <code>/usr/lib/libXplugin.1.dylib</code></p><--> 
+<p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it via the command line:</p>
+<codeblock>sudo rm -rf /usr/X11R6 /etc/X11</codeblock> 
+<p>The above holds true for removing any flavor of X11 that you didn't install through Fink.  You will also need to remove <filename>XDarwin.app</filename> | 
+<code>X11.app</code>, depending on what you had installed.  Make sure to check your <filename>.xinitrc</filename> if you are removing Apple's X11 to 
+make sure that you aren't trying to run <filename>quartz-wm</filename>.  You can now install whatever new X11 variety you want, manually or via Fink.</p>  
 </section>
 <section name="fink-summary" >
 <title>Fink package summary</title>
@@ -595,13 +597,13 @@ should install:
 <code>system-xfree86</code> only (+splitoffs)</p>
 </itemd>
 </item>
-<item>
+<!--obsolete><item>
 <itemt>4.2.x base system built via Fink + binary rootless server</itemt>
 <itemd>
 <p>
 <code>xfree86-base</code> only</p>
 </itemd>
-</item>
+</item><-->
 <item>
 <itemt>4.2.x from Apple</itemt>
 <itemd>
