@@ -62,6 +62,8 @@
 <xsl:template match="chapter">
 <xsl:document href="{@filename}.html" method="html" indent="no" encoding="iso-8859-1">
 <html><head>
+<!-- this will be seen and then removed by postprocess.pl -->
+<xsl:value-of select="../cvsid" />
 <title><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:value-of select="shorttitle"/></title>
 <link rel="start" href="{../@filename}.php" title="{../shorttitle} Contents" />
 <link rel="contents" href="{../@filename}.php" title="{../shorttitle} Contents" />
