@@ -1,11 +1,22 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/04/16 01:44:48 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/11/22 18:51:55 $';
 
 include "header.inc";
 ?>
-
+<!-- IndexTools Customization Code -->
+<!-- Added Temprorarily by dmalloc -->
+<!-- Remove leading // to activate custom variables -->
+<script language="Javascript">
+var DOCUMENTGROUP='downloads';
+var DOCUMENTNAME='upgrade';
+//var ACTION='';
+</script>
+<!-- End of Customization Code --><!-- IndexTools Code v3.01 - All rights reserved -->
+<script language="javascript1.1" src="../indextools.js"></script><noscript>
+<img src="http://stats.indextools.com/p.pl?a=100048449005&js=no" width="1" height="1"></noscript><!--//-->
+<!-- End of IndexTools Code -->
 
 <h1>Fink Upgrade Matrix</h1>
 
