@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/15 22:35:46 $';
+$cvs_date = '$Date: 2001/03/30 09:42:29 $';
 
 include "header.inc";
 ?>
@@ -40,6 +40,16 @@ to bring all packages up to the newest revision.</p>
 /sw/fink directory (or equivalent) and execute
 <pre>  cvs -z3 update -d</pre>
 Then, proceed as usual (e.g. fink update-all).</p>
+
+<h2>Public Beta / Darwin 1.2 Branch</h2>
+
+<p>The current release no longer works on Mac OS X Public Beta and
+Darwin 1.2. The last version that worked has been tagged in CVS with
+the tag &quot;pb_compat&quot;. To retrieve it, run
+<pre>  cvs update -d -P -r pb_compat</pre>
+Note that the tag is sticky, that is CVS will automatically use the
+tag in future cvs update runs until you run &quot;cvs update
+-A&quot;.</p>
 
 
 <?

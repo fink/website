@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/03/24 09:38:03 $';
+$cvs_date = '$Date: 2001/03/30 09:42:23 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -27,20 +27,22 @@ internet.</p>
 
 <h2>News</h2>
 
+<p>2001-03-30: Version 0.1.7 is out. Get it from the <a
+href="download.php">download page</a>.</p>
 <p>2001-03-24: Mac OS X is released. Expect Fink packages to be
 adapted to the final release within the next one or two weeks.</p>
 <p>2001-03-15: Updated the <a href="darwin/libtool.php">libtool
 page</a> with a revised patch that does full shared library
 versioning.</p>
-<p>2001-03-08: Version 0.1.6 is out. Get it from the <a
-href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.1.6 was released on 8 March 2001. As usual, there are
-some new and updated packages and some behind-the-scenes improvements
-to the package manager. You can grab the release from the <a
-href="download.php">download page</a>.</p>
+<p>Version 0.1.7 was released on 30 March 2001. Most packages have
+been verified with Mac OS X Final and fixed as neccessary.
+Most likely this will be the last release before the transition from
+stow to dpkg. That transition will eliminate many of the current
+problems caused by stow and will allow a binary distribution to be set
+up. Stay tuned.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
