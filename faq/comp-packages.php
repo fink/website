@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/11/06 20:10:48';
+$cvs_date = 'Date: 2002/11/06 20:20:55';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -20,7 +20,7 @@ endif
 </pre></div></a>
 
 <a name="cant-install-xfree"><div class="question"><p><b>Q5.2: I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</b></p></div>
-<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p><p><b>Here's how to proceed:</b></p><p>1. Remove <tt><nobr>system-xfree86</nobr></tt>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11are installed.  Rather than uninstalling all of them, you can use</p><p><tt><nobr>sudo dpkg --remove --force-depends system-xfree86</nobr></tt></p><p>to remove it, leaving everything in place.  If you don't have <tt><nobr>system-xfree86</nobr></tt> installed then proceed to 2.</p><p>2. Manually remove all of XFree86.  This can be done with</p><p><tt><nobr>sudo rm /Applications/XDarwin.app /usr/X11R6 /etc/X11</nobr></tt></p><p>3. Install fink's <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> by the usual means:  &quot;<tt><nobr>fink install</nobr></tt>&quot; for source users, &quot;<tt><nobr>apt-get install</nobr></tt>&quot; or <tt><nobr>dselect</nobr></tt> for binaries (binary not available on Jaguar as of this writing).</p></div></a>
+<div class="answer"><p><b>A:</b> XFree86, unfortunately, really needs to be installed in /usr/X11R6.  Because of this the fink <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> packages install there, too.  However, since fink won't remove any files that aren't in its database, it won't automatically replace a non-fink installation of XFree86.</p><p><b>Here's how to proceed:</b></p><p>1. Remove <tt><nobr>system-xfree86</nobr></tt>.  If you don't have any packages that depend on X11, this is straightforward.  Frequently, however, many packages that depend on X11are installed.  Rather than uninstalling all of them, you can use</p><p><tt><nobr>sudo dpkg --remove --force-depends system-xfree86</nobr></tt></p><p>to remove it, leaving everything in place.  If you don't have <tt><nobr>system-xfree86</nobr></tt> installed then proceed to 2.</p><p>2. Manually remove all of XFree86.  This can be done with</p><p><tt><nobr>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</nobr></tt></p><p>3. Install fink's <tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt> by the usual means:  &quot;<tt><nobr>fink install</nobr></tt>&quot; for source users, &quot;<tt><nobr>apt-get install</nobr></tt>&quot; or <tt><nobr>dselect</nobr></tt> for binaries (binary not available on Jaguar as of this writing).</p></div></a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
 

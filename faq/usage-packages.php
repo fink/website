@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/11/06 20:10:48';
+$cvs_date = 'Date: 2002/11/06 20:20:55';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
