@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/05 15:29:30';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/04/09 23:52:04';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="intro.php" title="Introduction">';
 
@@ -66,7 +66,30 @@ apt-get</a></li>
 <li><a href="conf.php#mirrors">5.6 Mirror Settings</a></li>
 <li><a href="conf.php#developer">5.7 Developer Settings</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: uguide.xml,v 1.17 2003/04/05 15:29:30 alexkhansen Exp $</i></p>
+<li><a href="usage.php"><b>6 Controlling Fink from the command line</b></a></li>
+<ul>
+<li><a href="usage.php#using">6.1 Using Fink</a></li>
+<li><a href="usage.php#install">6.2 install</a></li>
+<li><a href="usage.php#remove">6.3 remove</a></li>
+<li><a href="usage.php#update-all">6.4 update-all</a></li>
+<li><a href="usage.php#list">6.5 list</a></li>
+<li><a href="usage.php#apropos">6.6 apropos</a></li>
+<li><a href="usage.php#describe">6.7 describe</a></li>
+<li><a href="usage.php#fetch">6.8 fetch</a></li>
+<li><a href="usage.php#fetch-all">6.9 fetch-all</a></li>
+<li><a href="usage.php#fetch-missing">6.10 fetch-missing</a></li>
+<li><a href="usage.php#build">6.11 build</a></li>
+<li><a href="usage.php#rebuild">6.12 rebuild</a></li>
+<li><a href="usage.php#reinstall">6.13 reinstall</a></li>
+<li><a href="usage.php#configure">6.14 configure</a></li>
+<li><a href="usage.php#selfupdate">6.15 selfupdate</a></li>
+<li><a href="usage.php#index">6.16 index</a></li>
+<li><a href="usage.php#validate">6.17 validate</a></li>
+<li><a href="usage.php#scanpackages">6.18 scanpackages</a></li>
+<li><a href="usage.php#checksums">6.19 checksums</a></li>
+<li><a href="usage.php#cleanup">6.20 cleanup</a></li>
+</ul>
+</ul><p>Generated from <i>$Fink: uguide.xml,v 1.19 2003/04/09 23:52:04 fingolfin Exp $</i></p>
 
 
 <?

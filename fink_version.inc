@@ -1,5 +1,5 @@
 <?php
-  $fink_version = "0.5.1";
-  $release_date = "18 January 2003";
-  $dmg_size = "12.5 MB";
+  $fink_version = "0.5.2";
+  $release_date = "14 April 2003";
+  $dmg_size = "16.7 MB";
 ?>

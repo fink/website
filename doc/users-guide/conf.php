@@ -1,9 +1,9 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/04/05 15:29:30';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/04/09 23:52:04';
 
-$metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="prev" href="upgrade.php" title="Upgrading Fink">';
+$metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="usage.php" title="Controlling Fink from the command line"><link rel="prev" href="upgrade.php" title="Upgrading Fink">';
 
 include "header.inc";
 ?>
@@ -91,7 +91,7 @@ changed.</p>
 <p>Available trees are:</p>
 <pre>
 local/main      - any local packages you want to install
-local/bootstrap - packages used in the installation of fink
+local/bootstrap - packages used during the installation of Fink
 stable/crypto   - stable cryptographic packages
 stable/main     - other stable packages
 unstable/crypto - unstable cryptographic packages
@@ -241,6 +241,26 @@ command. The three letter code is one found in
 For example, if you live in Austria:</p>
 <pre>MirrorCountry: eur-AT</pre>
 </li>
+<li>
+<p>
+<b>MirrorOrder:</b> MasterFirst or MasterLast or MasterNever or ClosestFirst</p>
+<p>
+Fink supports 'Master' mirrors, which are mirrored repositories of the source
+tarballs for all Fink packages. The advantage of using the Master mirror set is that 
+the source download URLs will never break. Users can choose to use 
+these mirrors which are maintained by the Fink team, or to use only the original 
+source URLs and external mirror sites such as the gnome, KDE, and debian mirror sites.
+Additionally users can choose to combine the two sets, which are then searched in proximity order, as 
+documented above. When using the MasterFirst or MasterLast options, the user can 'skip ahead' 
+to the Master (or non Master) set if a download fails. The options are:
+</p>
+<pre>
+MasterFirst - Search &quot;Master&quot; source mirrors first.
+MasterLast - Search &quot;Master&quot; source mirrors last.
+MasterNever - Never use &quot;Master&quot; source mirrors.
+ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
+</pre>
+</li>
 </ul>
 
 <h2><a name="developer">5.7 Developer Settings</a></h2>
@@ -267,7 +287,8 @@ fill your hard-disk quickly!</b>
 </li>
 </ul>
 
-
+<p align="right">
+Next: <a href="usage.php">6 Controlling Fink from the command line</a></p>
 
 
 <?
