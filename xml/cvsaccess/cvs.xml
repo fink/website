@@ -4,7 +4,7 @@
 <article filename="index">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.xml,v 1.9 2002/04/17 17:54:09 fingolfin Exp $</cvsid>
+<cvsid>$Id: cvs.xml,v 1.10 2003/09/10 15:23:59 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -21,9 +21,9 @@ The information on this page applies to Fink 0.3.x and later.
 <section><title>Fink CVS Structure</title>
 <p>Fink has several CVS modules. The module <code>packages</code> (<link
 url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</link>)
-contains the package descriptions and patches. There are other modules
-used by Fink developers, which anyone is free to view, but which are
-not interesting for most.</p>
+contains the package descriptions and patches, in the <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/dists/">dists</link> subdirectory. There are other modules
+used by Fink developers, which anyone can view, but these are
+not interesting for most users.</p>
 </section>
 
 <section><title>Updating the Package Descriptions</title>
@@ -35,12 +35,9 @@ versions, this is a very simple procedure. Just issue this command:
 includes retrieving the latest set of Package Descriptions, and updating
 a few essential core packages (among them the Fink package manager).
 </p>
-<p>Note that this command currently doesn't work if you are behind a
-firewall (this is a limitation in CVS, not in Fink). We are working
-on a solution to tunnel through HTTP firewalls (by enhancing
-cvs to support these), but no release date has been set for this.
+<p>If you are behind a firewall consult <link url="http://fink.sourceforge.net/faq/usage-fink.php#proxy">FAQ 3.2</link>.
 </p>
-<p>After you have updated your Package Descriptions this ways, you may
+<p>After you have updated your package descriptions this way, you may
 want to update your packages to the latest available versions. You can
 do so by with the following command:
 </p>
@@ -49,7 +46,7 @@ do so by with the following command:
 
 <section><title>Updating the Package Manager</title>
 <p>
-<em>Note:</em> As of September 20 it is no longer necessary to update
+<em>Note:</em> As of September 20, 2001 it is no longer necessary to update
 the package manager separately; it is treated like any other package.
 It's still possible to update it directly from CVS, though this is
 usually only interesting for people creating packages, not the average

@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/17 17:54:09';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/09/10 15:23:59';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.9 2002/04/17 17:54:09 fingolfin Exp $</i></p>
+<h1>Setting up Fink CVS Access</h1><p>Generated from <i>$Fink: cvs.xml,v 1.10 2003/09/10 15:23:59 alexkhansen Exp $</i></p>
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -19,9 +19,9 @@ The information on this page applies to Fink 0.3.x and later.
 </p>
 <h2><a name="">Fink CVS Structure</a></h2>
 <p>Fink has several CVS modules. The module <code>packages</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/">ViewCVS</a>)
-contains the package descriptions and patches. There are other modules
-used by Fink developers, which anyone is free to view, but which are
-not interesting for most.</p>
+contains the package descriptions and patches, in the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/packages/dists/">dists</a> subdirectory. There are other modules
+used by Fink developers, which anyone can view, but these are
+not interesting for most users.</p>
 <h2><a name="">Updating the Package Descriptions</a></h2>
 <p>In the past this was a bit tedious procedure; but in the current Fink
 versions, this is a very simple procedure. Just issue this command:
@@ -31,19 +31,16 @@ versions, this is a very simple procedure. Just issue this command:
 includes retrieving the latest set of Package Descriptions, and updating
 a few essential core packages (among them the Fink package manager).
 </p>
-<p>Note that this command currently doesn't work if you are behind a
-firewall (this is a limitation in CVS, not in Fink). We are working
-on a solution to tunnel through HTTP firewalls (by enhancing
-cvs to support these), but no release date has been set for this.
+<p>If you are behind a firewall consult <a href="http://fink.sourceforge.net/faq/usage-fink.php#proxy">FAQ 3.2</a>.
 </p>
-<p>After you have updated your Package Descriptions this ways, you may
+<p>After you have updated your package descriptions this way, you may
 want to update your packages to the latest available versions. You can
 do so by with the following command:
 </p>
 <pre>fink update-all</pre>
 <h2><a name="">Updating the Package Manager</a></h2>
 <p>
-<b>Note:</b> As of September 20 it is no longer necessary to update
+<b>Note:</b> As of September 20, 2001 it is no longer necessary to update
 the package manager separately; it is treated like any other package.
 It's still possible to update it directly from CVS, though this is
 usually only interesting for people creating packages, not the average
