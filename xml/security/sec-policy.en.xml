@@ -3,12 +3,12 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.3 2004/06/17 12:43:23 alexkhansen Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.4 2004/06/23 02:45:48 rangerrick Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
-            have been accepted by Fink. While main responsibility for every
+            have been accepted by Fink. While the main responsibility for every
             accepted package in Fink remains with the respective maintainer,
-            Fink recognizes the necessity to offer a uniform policy how to react
+            Fink recognizes the necessity to offer a uniform policy on how to react
             to security incidents found in software which are offered as Fink
             packages. </p>
     </preface>
@@ -29,7 +29,7 @@
             <title>Whom shall I contact?</title>
             <p>If there are security incidents within a certain piece of
                 packaged software, you should notify the maintainer of that
-                packages as well as the <em>Fink Core Team.</em> The email of
+                package as well as the <em>Fink Core Team.</em> The email of
                 the maintainer can be found within the packages info, and the email
                 of the <em>Fink Core Team.</em> is
                 fink-core@lists.sourceforge.net </p>
@@ -39,7 +39,7 @@
             <p>Serious security incidents in software packaged by Fink might
                 require you to pre-notify the maintainer of that package. Since
                 it is possible that the maintainer cannot be reached in a timely manner,
-                pre-notification should always be submitted to the <em>Fink Core
+                pre-notification should always also be submitted to the <em>Fink Core
                 Team.</em> at fink-core@lists.sourceforge.net</p>
         </section>
         <section name="response">
@@ -54,8 +54,8 @@
             <p>In the event that you attempted to notify the maintainer of the
                 package in question but the mail system returned a delivery
                 error for that email you should notify the <em>Fink Core
-                Team.</em> immediately informing them that the maintainer is
-                unreachable and this package may be updated irrespective of the
+                Team</em> immediately to inform them that the maintainer is
+                unreachable and that the package may be updated irrespective of the
                 maintainer. </p>
         </section>
     </chapter>
@@ -65,18 +65,19 @@
         <preface>
             <p>Response time and actions taken greatly depend on the 
                 severity of the loss introduced by a particular flaw in the software
-                that has been packaged for Fink. This is a work in progress, an it
-                is meant as a pointer for the package maintainers. In any case
-                the <em>Fink Core Team.</em> will take immediate action whenever
+                that has been packaged for Fink.  In any case
+                the <em>Fink Core Team</em> will take immediate action whenever
                 it feels it is necessary to protect the Fink user community.</p>
         </preface>
         <section name="resptimes">
             <title>Response times</title>
             <p>Each package should strive to meet the following response times.
-                For some type of vulnerabilities the <em>Fink Core Team</em>
-                might choose to take immediate action. If that is the case one
+                For some types of vulnerabilities the <em>Fink Core Team</em>
+                might choose to take immediate action.  If that is the case one
                 of the Core Team members will notify the maintainer of the
-                package in question.</p>
+                package in question.  Also, keep in mind that while we strive to
+                meet these response times, Fink is a volunteer effort, and they
+                cannot be guaranteed.</p>
             <itemtable labeld="Repsonse time" labelt="Vulnerability">
                 <item>
                     <itemt>remote root exploit</itemt>
@@ -267,11 +268,11 @@
                 <li>The author of the software has contacted the maintainer
                     and/or the <em>Fink Core Team.</em> directly providing a
                     patch or work around to a vulnerability.</li>
-                <li>One of the keywor denoted sources has issued a security
-                    bulletin with updates sources for the software packaged for
+                <li>One of the keyword-denoted sources has issued a security
+                    bulletin with updated sources for the software packaged for
                     Fink in question.</li>
-                <li>A patch has been issued to one of the following keyword
-                    denoted sources: BUGTRAQ,FULLDISC,SF-INCIDENTS,VULN-DEV.</li>
+                <li>A patch has been issued to one of the following
+                    keyword-denoted sources: BUGTRAQ,FULLDISC,SF-INCIDENTS,VULN-DEV.</li>
                 <li>An official security bulletin has been issued and assigned
                     CVE Candidate status, describing the vulnerability,
                     supplying a work around, patch or link to updated sources.</li>
