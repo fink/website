@@ -1,13 +1,11 @@
 <?
-/* $Id: header.inc,v 1.27 2001/08/01 13:37:23 chrisp Exp $ */
+/* $Id: header.inc,v 1.28 2001/08/22 06:38:38 chrisp Exp $ */
 
 // main navigation box
 $default_navbox = array(
   "index.php", "Home",
   "download.php", "Download",
-  "faq/index.php", "F.A.Q.",
-  "doc/index.php", "Documentation",
-  "pdb/index.php", "Packages",
+  "help/index.php", "Getting Help",
   "lists/index.php", "Mailing Lists",
   "people.php", "Contributors",
   "links.php", "Links"

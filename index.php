@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/13 16:43:55 $';
+$cvs_date = '$Date: 2001/08/22 06:38:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -29,17 +29,13 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-08-22: The new <a href="help/index.php">help page</a> lists
+various ways to get help using Fink. It also lists some ideas how you
+can give back to the project.</p>
 <p>2001-08-13: The <a href="doc/porting/index.php">porting tips</a>
 document has a new chapter on shared libraries and modules. The <a
 href="doc/x11/index.php">X11</a> document was also updated
 recently.</p>
-<p>2001-08-01: There was a bootstrapping problem in Fink 0.2.4. It is
-fixed in Fink 0.2.4a. You only need this if you're doing a first time
-install, updates are not affected.</p>
-<p>2001-08-01: Version 0.2.4 is released. Get it from the <a
-href="download.php">download page</a>. Some highlights: The GIMP
-1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
-and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.</p>
 
 <h2>Status</h2>
 
@@ -47,7 +43,8 @@ and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.</p>
 Fink 0.2.4 was released on 1 August 2001.
 Now that a base feature set is implemented, focus is shifting to
 provide more packages, keep them current and improve quality.
-A binary distribution is also in the works.
+A binary distribution is also in the works, an experimental release is
+available for download now.
 </p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
