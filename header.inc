@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.12 2001/04/21 15:39:44 chrisp Exp $ */
+/* $Id: header.inc,v 1.13 2001/04/26 16:20:02 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -26,6 +26,11 @@ $pages_darwin = array(
   "darwin/libtool.php", "libtool", 0,
   "darwin/x11-choices.php", "X11 Choices", 0,
   "links.php", "Links", 1
+);
+$pages_faq = array(
+  "faq/index.php", "FAQ Contents", 0,
+  "faq/general.php", "General", 0,
+  "faq/packages.php", "Packages", 0
 );
 
 // get author and change date from CVS vars
@@ -124,6 +129,9 @@ if ($wantnav == "main") {
   $donav = 1;
 } elseif ($wantnav == "darwin") {
   $pages = $pages_darwin;
+  $donav = 1;
+} elseif ($wantnav == "faq") {
+  $pages = $pages_faq;
   $donav = 1;
 }
 

@@ -1,6 +1,6 @@
 <?
-/* $Id: header.inc,v 1.1 2001/04/26 12:57:01 chrisp Exp $ */
-$wantnav = "fink";
+/* $Id: header.inc,v 1.2 2001/04/26 16:21:08 chrisp Exp $ */
+$wantnav = "faq";
 $section = "fink";
 
 $fsroot = $root = "../";
