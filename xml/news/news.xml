@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.125 2004/04/06 19:19:57 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.126 2004/08/02 21:51:23 dmalloc Exp $</cvsid>
 
+<newsitem>
+	<date>2004-08-01</date>
+	<headline>All your Server are belong to us.</headline>
+	<body>
+	<p>
+	It has been some time since we last asked for more mirrors. 
+	It is time to do so again. Fink is very grateful for the ressources 
+	granted to us by our community. To further improve our service to the 
+	community we require an even better mirror system. We especially lack 
+	mirrors in central Europe, Russia and the Far East. If you feel that 
+	you have at least two Mbit to spare for a rsync mirror or more to offer 
+	a distfiles mirror please <extlink url="mailto:mirrors@finkmirrors.net">contact</extlink> us.
+	</p>
+	<p>
+	 To get a better understanding of the different types of mirrors 
+	 Fink offers, please go and review <extlink url="http://finkmirrors.net/">finkmirrors.net</extlink>. This is the official homepage for all mirror related issues.
+	 If you feel that you can offer other types of ressources, 
+	 web-space for testing as an example, please do not hestitate <extlink url="mailto:mirrors@finkmirrors.net">contacting</extlink> us as well.
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2004-04-06</date>
 	<headline>Fink 0.6.3 and 0.7.0 released.</headline>
