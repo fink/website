@@ -1,8 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/17 20:23:21 $';
-$wantnav = "main";
+$cvs_date = '$Date: 2001/08/01 13:37:23 $';
 
 include "header.inc";
 ?>
@@ -23,6 +22,7 @@ Fink (in alphabetical order):</p>
 <li>Max Horn</li>
 <li>David R. Morrison</li>
 <li>Andrew Rohl</li>
+<li>Christian Swinehart</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Ashley Yakeley</li>
 </ul>
@@ -35,7 +35,6 @@ Fink (in alphabetical order):</p>
 <li>Peter O'Gorman</li>
 <li>Chris Pepper</li>
 <li>David Ross</li>
-<li>Christian Swinehart</li>
 <li>Aaron Voisine</li>
 <li>Tom Zerucha</li>
 </ul>

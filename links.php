@@ -1,9 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/12 09:49:30 $';
-if (!$wantnav)
-  $wantnav = "main";
+$cvs_date = '$Date: 2001/08/01 13:37:23 $';
 
 include "header.inc";
 ?>

@@ -1,4 +1,4 @@
 <?
-$target = "fink/info-format.php";
+$target = "doc/packaging/index.php";
 include "redirect.inc";
 ?>

@@ -1,4 +1,4 @@
 <?
-$target = "darwin/x11-choices.php";
+$target = "doc/x11/index.php";
 include "redirect.inc";
 ?>

@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.1 2001/07/13 20:26:30 chrisp Exp $ */
+/* $Id: header.inc,v 1.2 2001/08/01 13:37:24 chrisp Exp $ */
 
 if ($uses_pathinfo) {
   if ($PATH_INFO == "") {
@@ -17,9 +17,9 @@ if ($uses_pathinfo) {
   $root = "-".$pdbroot;
 }
 
-$customnav = array(
-  "pdb/index.php", "Sections", 0,
-  "pdb/list.php", "Flat list", 0
+$navbox = array(
+  "pdb/index.php", "Sections",
+  "pdb/list.php", "Flat list"
 );
 
 include "timestamp.inc";

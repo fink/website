@@ -1,15 +1,15 @@
 <?
-/* $Id: nav.inc,v 1.6 2001/07/30 12:08:19 chrisp Exp $ */
+/* $Id: nav.inc,v 1.7 2001/08/01 13:37:24 chrisp Exp $ */
 
-$customnav = array(
-  "doc/index.php", "Documentation", 0,
-  "doc/bundled/readme.php", "ReadMe", 0,
-  "doc/bundled/install.php", "Installation", 0,
-  "doc/bundled/usage.php", "Usage", 0,
-  "doc/x11/index.php", "X11 Explained", 0,
-  "doc/cvsaccess/index.php", "CVS Access", 0,
-  "doc/porting/index.php", "Porting", 0,
-  "doc/packaging/index.php", "Packaging", 0
+$navbox = array(
+  "doc/index.php", "Documentation",
+  "doc/bundled/readme.php", "ReadMe",
+  "doc/bundled/install.php", "Installation",
+  "doc/bundled/usage.php", "Usage",
+  "doc/x11/index.php", "X11 Explained",
+  "doc/cvsaccess/index.php", "CVS Access",
+  "doc/porting/index.php", "Porting",
+  "doc/packaging/index.php", "Packaging"
 );
 
 ?>

@@ -1,13 +1,12 @@
 <?
-/* $Id: header.inc,v 1.3 2001/06/30 11:11:49 chrisp Exp $ */
-$section = "fink";
+/* $Id: header.inc,v 1.4 2001/08/01 13:37:24 chrisp Exp $ */
 
-$customnav = array(
-  "faq/index.php", "FAQ Contents", 0,
-  "faq/general.php", "General", 0,
-  "faq/install.php", "Installation", 0,
-  "faq/usage.php", "Usage", 0,
-  "faq/packages.php", "Packages", 0
+$navbox = array(
+  "faq/index.php", "FAQ Contents",
+  "faq/general.php", "General",
+  "faq/install.php", "Installation",
+  "faq/usage.php", "Usage",
+  "faq/packages.php", "Packages"
 );
 
 $fsroot = $root = "../";

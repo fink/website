@@ -1,8 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/30 17:33:09 $';
-$wantnav = "main";
+$cvs_date = '$Date: 2001/08/01 13:37:23 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -30,22 +29,23 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-08-01: Version 0.2.4 is released. Get it from the <a
+href="download.php">download page</a>. Some highlights: The GIMP
+1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
+and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.</p>
 <p>2001-07-19: A comprehensive document about <a
 href="doc/x11/index.php">X11 on Darwin and Mac OS X</a> is now
 available. It was written to be useful for anyone, not just Fink
 users.</p>
-<p>2001-07-13: A prototype of the <a href="pdb/index.php">package
-database</a> is now online.</p>
-<p>2001-07-09: Version 0.2.3 is released. Get it from the <a
-href="download.php">download page</a>. This version fixes the dpkg
-download problems many of you were having.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.2.3 was released on 9 July 2001. Now that a base feature
-set is implemented, focus is shifting to provide more packages, keep
-them current and improve quality. A binary distribution is also in the
-works.</p>
+<p>
+Fink 0.2.4 was released on 1 August 2001.
+Now that a base feature set is implemented, focus is shifting to
+provide more packages, keep them current and improve quality.
+A binary distribution is also in the works.
+</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 

@@ -1,16 +1,16 @@
 <?
-/* $Id: header.inc,v 1.26 2001/07/30 17:30:10 chrisp Exp $ */
+/* $Id: header.inc,v 1.27 2001/08/01 13:37:23 chrisp Exp $ */
 
 // main navigation box
-$pages_main = array(
-  "index.php", "Home", 0,
-  "download.php", "Download", 0,
-  "faq/index.php", "F.A.Q.", 0,
-  "doc/index.php", "Documentation", 0,
-  "pdb/index.php", "Packages", 0,
-  "lists/index.php", "Mailing Lists", 0,
-  "people.php", "Contributors", 0,
-  "links.php", "Links", 0
+$default_navbox = array(
+  "index.php", "Home",
+  "download.php", "Download",
+  "faq/index.php", "F.A.Q.",
+  "doc/index.php", "Documentation",
+  "pdb/index.php", "Packages",
+  "lists/index.php", "Mailing Lists",
+  "people.php", "Contributors",
+  "links.php", "Links"
 );
 
 // get author and change date from CVS vars
@@ -101,20 +101,15 @@ width="32" height="3" border="0" alt="" /></td></tr>
 
 <? /* navigation box */
 
-$donav = 0;
-if (is_array($customnav)) {
-  $pages = $customnav;
-  $donav = 1;
-} elseif ($wantnav) {
-  $pages = $pages_main;
-  $donav = 1;
+if (!is_array($navbox)) {
+  $navbox = $default_navbox;
 }
 
-if ($donav) {
+if (!$nonav) {
   // determine active page
   $active_page = -1;
-  for ($i = 0; $i < sizeof($pages); $i += 3) {
-    if (ereg($pages[$i]."$", $PHP_SELF)) {
+  for ($i = 0; $i < sizeof($navbox); $i += 2) {
+    if (ereg($navbox[$i]."$", $PHP_SELF)) {
       $active_page = $i;
       break;
     }
@@ -130,13 +125,13 @@ src="<? print $root ?>img/nav-left.gif" width="20" height="16" border="0" alt=""
 <td width="92" background="<? print $root ?>img/nav-center.gif">
 
 <p class="nav"><?
-for ($i = 0; $i < sizeof($pages); $i += 3) {
+for ($i = 0; $i < sizeof($navbox); $i += 2) {
   $showlink = ($i != $active_page);
   if ($showlink)
-    print '<a href="'.$root.$pages[$i].'">';
+    print '<a href="'.$root.$navbox[$i].'">';
   else
     print '<b>';
-  print $pages[$i+1];
+  print $navbox[$i+1];
   if ($showlink)
     print '</a>';
   else
