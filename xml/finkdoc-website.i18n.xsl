@@ -137,7 +137,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 ?--&gt;
 </xsl:text>
 
-<h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1 " />. <xsl:value-of select="title"/></h1>
+<h1><xsl:value-of select="../shorttitle"/><xsl:text> - </xsl:text><xsl:number format="1. " /><xsl:value-of select="title"/></h1>
 
 <xsl:apply-templates/>
 
@@ -145,7 +145,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 <xsl:if test="position()=1">
 <p align="right">
 <xsl:text>{FINK_NEXT}</xsl:text>:
-<a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1 " /><xsl:value-of select="title" /></a>
+<a href="{@filename}.php?phpLang={$lang-ext}"><xsl:number format="1. " /><xsl:value-of select="title" /></a>
 </p>
 </xsl:if>
 </xsl:for-each>
