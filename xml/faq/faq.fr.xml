@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.18 2004/04/13 22:31:06 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.19 2004/04/17 05:14:20 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -1050,7 +1050,15 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Generally, this can be fixed by setting your environment up correctly, cf. <xref chapter="usage-fink" section="fink-not-found">this FAQ entry</xref>.</p>
       </answer>
     </faqentry>
-  </chapter>
+     <faqentry name="xml-parser">
+      <question>
+        <p>I get the following message: <quote>configure: error: XML::Parser perl module is required for intltool</quote>.  What do I do about it?</p>
+      </question>
+      <answer>
+        <p>You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p>
+      </answer>
+    </faqentry>
+ </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>
     <shorttitle>Compiling (2)</shorttitle>

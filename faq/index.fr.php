@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P.";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/13 22:31:06';
+$cvs_date = 'Date: 2004/04/17 05:14:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="general.php?phpLang=fr" title="Questions générales">';
 
 include_once "header.inc";
@@ -28,7 +28,7 @@ include_once "header.inc";
         it?</a></li><li><a href="comp-general.php?phpLang=fr#multiple-dependencies">6.13 I can't update, because Fink is "unable to resolve version conflict
         on multiple dependencies".</a></li><li><a href="comp-general.php?phpLang=fr#dpkg-parse-error">6.14 I can't install anything because I get "dpkg: parse error, in file
         `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=fr#freetype-problems">6.15 I get errors involving freetype.</a></li><li><a href="comp-general.php?phpLang=fr#dlfcn-from-oo">6.16 I get build errors involving `Dl_info'.</a></li><li><a href="comp-general.php?phpLang=fr#gcc2">6.17 Fink says I'm missing <code>gcc2</code> but I can't seem to
-        install it.</a></li><li><a href="comp-general.php?phpLang=fr#system-java">6.18 Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</a></li><li><a href="comp-general.php?phpLang=fr#dpkg-split">6.19 When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</a></li></ul></li><li><a href="comp-packages.php?phpLang=fr"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=fr#libgtop">7.1 A package fails to build with errors involving
+        install it.</a></li><li><a href="comp-general.php?phpLang=fr#system-java">6.18 Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</a></li><li><a href="comp-general.php?phpLang=fr#dpkg-split">6.19 When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</a></li><li><a href="comp-general.php?phpLang=fr#xml-parser">6.20 I get the following message: <q>configure: error: XML::Parser perl module is required for intltool</q>.  What do I do about it?</a></li></ul></li><li><a href="comp-packages.php?phpLang=fr"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=fr#libgtop">7.1 A package fails to build with errors involving
         <code>sed</code>.</a></li><li><a href="comp-packages.php?phpLang=fr#cant-install-xfree">7.2 I want to switch to Fink's XFree86 packages, but I can't install
         <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
         with <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=fr#change-thread-nothread">7.3 How do I change from the non-threaded version of Fink's XFree86
@@ -55,6 +55,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.fr.xml,v 1.18 2004/04/13 22:31:06 michga Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=fr#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.fr.xml,v 1.19 2004/04/17 05:14:20 michga Exp $-->
 
 <? include_once "footer.inc"; ?>

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/13 22:31:06';
+$cvs_date = 'Date: 2004/04/17 05:14:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 include_once "header.inc";
@@ -245,7 +245,11 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="question"><p><b>Q6.19: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
       <div class="answer"><p><b>A:</b> Generally, this can be fixed by setting your environment up correctly, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">this FAQ entry</a>.</p></div>
     </a>
-  <p align="right">
+     <a name="xml-parser">
+      <div class="question"><p><b>Q6.20: I get the following message: <q>configure: error: XML::Parser perl module is required for intltool</q>.  What do I do about it?</b></p></div>
+      <div class="answer"><p><b>A:</b> You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p></div>
+    </a>
+ <p align="right">
 Next: <a href="comp-packages.php?phpLang=fr">7 Compile Problems - Specific Packages</a></p>
 
 <? include_once "footer.inc"; ?>
