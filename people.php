@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/03 22:21:26 $';
+$cvs_date = '$Date: 2002/04/06 18:05:23 $';
 
 include "header.inc";
 ?>
@@ -39,6 +39,7 @@ Fink (in alphabetical order):</p>
 <ul>
 <li>Bill Bumgarner</li>
 <li>Jake Goulding</li>
+<li>Ben Hines</li>
 <li>Chris Pepper</li>
 <li>Andrew Rohl</li>
 <li>David Ross</li>
