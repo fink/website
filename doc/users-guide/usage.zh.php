@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/26 03:33:24';
+$cvs_date = 'Date: 2004/04/26 16:54:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 include_once "header.inc";
@@ -183,6 +183,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     
     <h2><a name="dumpinfo">6.21 dumpinfo</a></h2>
       
+      <p>注：仅对 fink CVS 0.20.0 之后版本有效。</p>
       <p>
 	显示 Fink 如何解析软件包的 .info 文件的各个部分。各个字段和百分号展开会按照下面<b>选项</b>的设置来显示：
       </p>

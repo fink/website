@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.7 2004/04/26 03:33:24 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.8 2004/04/26 16:54:28 jeff_yecn Exp $</cvsid>
   <preface>
     <p>
       <em>本文档尚在不断修改中。</em>
@@ -965,6 +965,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
+      <p>注：仅对 fink CVS 0.20.0 之后版本有效。</p>
       <p>
 	显示 Fink 如何解析软件包的 .info 文件的各个部分。各个字段和百分号展开会按照下面<em>选项</em>的设置来显示：
       </p>
