@@ -111,6 +111,9 @@ and the unpack phase creates just an empty directory.
 However, the patch, compile and install phases are executed normally.
 This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
+Since fink 0.18.0, you can get the same behavior by setting
+<code>Source: none</code>. This allows you to use "Type" for other
+purposes (<code>Type: perl</code>, etc.)
 </p>
 <p>
 Finally since fink 0.9.5 there is type <code>perl</code> which causes
@@ -262,6 +265,9 @@ configuration, append the <b>relative-path</b> part and use that as
 the actual URL. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
+Since fink 0.18.0, <code>Source: none</code> has the special meaning
+that there is no source to fetch. See the description of the
+<code>Type</code> field for more information.
 </p>
 <p>
 Before the URL is used, percent expansion takes place.

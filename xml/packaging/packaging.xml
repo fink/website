@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.56 2003/12/11 09:11:46 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.57 2003/12/19 12:52:33 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1182,6 +1182,9 @@ and the unpack phase creates just an empty directory.
 However, the patch, compile and install phases are executed normally.
 This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
+Since fink 0.18.0, you can get the same behavior by setting
+<code>Source: none</code>. This allows you to use "Type" for other
+purposes (<code>Type: perl</code>, etc.)
 </p>
 <p>
 Finally since fink 0.9.5 there is type <code>perl</code> which causes
@@ -1377,6 +1380,9 @@ configuration, append the <em>relative-path</em> part and use that as
 the actual URL. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
+Since fink 0.18.0, <code>Source: none</code> has the special meaning
+that there is no source to fetch. See the description of the
+<code>Type</code> field for more information.
 </p>
 <p>
 Before the URL is used, percent expansion takes place.
