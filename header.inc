@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.84 2004/10/12 13:21:26 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.85 2004/11/13 14:26:04 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -256,6 +256,7 @@ function insert_sub ($navbox, $active_page) {
 	<meta name="keywords" content="<? echo META_KEYWORDS; ?>">
 	<meta name="description" content="<? echo META_DESCRIPTION; ?>" 
 	<meta name="robots" content="all">
+	<link rel="alternate" title="Fink News RDF" href="http://fink.sourceforge.net/news/news.rdf" TYPE="application/rss+xml">
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
 	<link rel="stylesheet" href="<? print $root ?>fink.css">
 	<? if ($metatags) echo $metatags; ?>
