@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.zh.inc,v 1.3 2004/03/11 07:18:36 dmalloc Exp $ */
+/* $Id: constants.zh.inc,v 1.4 2004/04/17 01:13:23 jeff_yecn Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -36,4 +36,18 @@ define (FINK_SECTIONS, '分类');
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, '目录');
+
+/* Printer */
+define (FINK_PRINTER, '打印机');
+define (FINK_PRINT_VERSION, '打印版本');
+
+/* Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, 麦金塔, 苹果, UNIX, 开放源码,
+             下载, 自由软件, 移植, 开发, 软件包管理');
+define (META_DESCRIPTION, 'Fink 项目希望把 Unix              世界的各种自由软件带到 Darwin 和 Mac OS X 平台上。我们修改 Unix 软件，使得它们可以在 Mac OS X 上编译和运行，并使得它们作为一个整体的发行版本来被下载。');
+define (HEADER_HOSTED_BY, '网页寄存于 {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, '现有语言版本');
+define (FOOTER_GENERATED_DYNAMICALLY, '动态创建自');
+define (FOOTER_DATABASE_LAST_UPDATED, '最后更新：%x %X');
+define (FOOTER_LAST_CHANGED, '最后修改者 {author}，于 %a, %d %b %Y,  %R %Z');
 ?>
