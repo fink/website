@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.21 2001/10/28 07:57:01 chrisp Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.22 2001/11/04 15:18:15 chrisp Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -382,6 +382,27 @@ script as a plug-in for dselect) is making it's way through CVS now.
 <chapter filename="comp-general">
 <title>Compile Problems - General</title>
 <shorttitle>Compiling (1)</shorttitle>
+
+<faqentry name="compiler"><question><p>A configure script complains
+that it can't find an "acceptable cc". What's that?</p></question>
+<answer>
+<p>
+Read the docs next time.
+To compile packages from source, you must install the Developer Tools,
+which among other stuff contains the C compiler, <code>cc</code>.
+</p>
+</answer></faqentry>
+
+<faqentry name="make"><question><p>make: illegal option -- C</p></question>
+<answer>
+<p>
+You've replaced the GNU version of the <code>make</code> utility
+installed as part of the Developer Tools with a BSD version of make.
+Many packages rely on special features only supported by GNU make.
+Make sure that <code>/usr/bin/make</code> is a symlink to
+<code>gnumake</code>, not <code>bsdmake</code>.
+</p>
+</answer></faqentry>
 
 <faqentry name="head"><question><p>I'm getting a strange usage message
 from the head command. What's broken?</p></question>

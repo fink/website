@@ -1,9 +1,9 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/28 07:57:01';
+$cvs_date = 'Date: 2001/11/04 15:18:15';
 
-$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
+$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
 include "header.inc";
 ?>
@@ -11,6 +11,23 @@ include "header.inc";
 <h1>F.A.Q. - Compile Problems - General</h1>
 
 
+
+<a name="compiler"><div class="question"><p><b>Q: A configure script complains
+that it can't find an "acceptable cc". What's that?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Read the docs next time.
+To compile packages from source, you must install the Developer Tools,
+which among other stuff contains the C compiler, <tt><nobr>cc</nobr></tt>.
+</p></div></a>
+
+<a name="make"><div class="question"><p><b>Q: make: illegal option -- C</b></p></div>
+<div class="answer"><p><b>A:</b> 
+You've replaced the GNU version of the <tt><nobr>make</nobr></tt> utility
+installed as part of the Developer Tools with a BSD version of make.
+Many packages rely on special features only supported by GNU make.
+Make sure that <tt><nobr>/usr/bin/make</nobr></tt> is a symlink to
+<tt><nobr>gnumake</nobr></tt>, not <tt><nobr>bsdmake</nobr></tt>.
+</p></div></a>
 
 <a name="head"><div class="question"><p><b>Q: I'm getting a strange usage message
 from the head command. What's broken?</b></p></div>

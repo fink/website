@@ -1,9 +1,9 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/28 07:57:01';
+$cvs_date = 'Date: 2001/11/04 15:18:15';
 
-$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
+$metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
 include "header.inc";
 ?>
@@ -67,6 +67,9 @@ more!</a></li>
 </ul>
 <li><a href="comp-general.php"><b>Compile Problems - General</b></a></li>
 <ul>
+<li><a href="comp-general.php#compiler">A configure script complains
+that it can't find an "acceptable cc". What's that?</a></li>
+<li><a href="comp-general.php#make">make: illegal option -- C</a></li>
 <li><a href="comp-general.php#head">I'm getting a strange usage message
 from the head command. What's broken?</a></li>
 </ul>
@@ -102,7 +105,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says "assert failed on line 454 of darwinKeyboard.c!". What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.21 2001/10/28 07:57:01 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.22 2001/11/04 15:18:15 chrisp Exp $</i></p>
 
 
 <?
