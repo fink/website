@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:23 $';
+$cvs_date = '$Date: 2001/10/01 15:41:16 $';
 
 include "header.inc";
 ?>
@@ -25,8 +25,8 @@ release.
 <ul>
 <li><a href="bundled/readme.php">Fink ReadMe</a> - the ReadMe for the
 distribution</li>
-<li><a href="bundled/install.php">Installation</a> - how to install
-Fink or upgrade to a new version</li>
+<li><a href="bundled/install.php">Installation and Upgrading</a> - how
+to install Fink or upgrade to a new version</li>
 <li><a href="bundled/usage.php">Usage</a> - how to use Fink
 and the installed software</li>
 </ul>
