@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.1 2004/03/02 03:15:43 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.2 2004/03/03 05:20:03 jeff_yecn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -557,101 +557,97 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="fink-not-found" >
       <question>
-        <p>I get &quot;command not found&quot; errors when I run Fink or anything that I installed with Fink.</p>
+        <p>当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 &quot;command not found&quot; 错误。</p>
       </question>
       <answer>
-        <p>If this always happens, then you may have inadvertently modified your startup scripts.  Run the <filename>/sw/bin/pathsetup.command</filename> script (either by double-clicking in the Finder or in a terminal), which will attempt to detect your startup configuration.  You'll then need to open a new terminal session so that your environment settings are loaded.</p>
-        <p>On the other hand, if you only have problems in the Apple X11 terminal, this probably means that you need to create a <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc" >.xinitrc</link> file and add the line</p>
+        <p>如果这总是发生，那么也许你已经不小心修改了你的启动脚本。运行 <filename>/sw/bin/pathsetup.command</filename> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。</p>
+        <p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc" >.xinitrc</link> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p>
         <codeblock>. /sw/bin/init.sh</codeblock>
-        <p>near the beginning (i.e. before any programs get run).  Restart X11 (if running) after you do this.</p>
+        <p>在做完以后，重新运行 X11。</p>
       </answer>
     </faqentry>
     <faqentry name="invisible-sw" >
       <question>
-        <p>I want to hide /sw in the Finder to keep users from damaging the Fink setup.</p>
+        <p>我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</p>
       </question>
       <answer>
-        <p>You can indeed do this. If you have the Development Tools installed, then you can run the following command:</p>
+        <p>如果你安装了开发工具包，你可以做到这一点。你可以运行下面的命令：</p>
         <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
-        <p>This makes /sw invisible, just like the standard system folders (/usr, etc.). If you don't have the Developer Tools, there are various third-party applications that let you manipulate file attributes--you need to set /sw to be invisible.</p>
+        <p>这会使得 /sw 象其它标准系统文件夹一样（比如 /usr），在 Finder 中不可见。如果你没有开发工具包，也有其它第三方程序可以让你修改文件属性-你需要把 /sw 设为隐藏。</p>
       </answer>
     </faqentry>
     <faqentry name="install-info-bad" >
       <question>
-        <p>I can't install anything, because I get the following error: &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</p>
+        <p>我不能安装任何软件，因为我碰到下面的错误信息：&quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;。</p>
       </question>
       <answer>
-        <p>This usually is due to a problem in your PATH. In a terminal window type:</p>
+        <p>这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p>
         <codeblock>printenv PATH</codeblock>
-        <p>If <filename>/sw/sbin</filename> doesn't appear at all, then you need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >instructions</link> in the Users Guide. If <filename>/sw/sbin</filename> is there, but there are other directories ahead of it (e.g. <filename>/usr/local/bin</filename>), then you will either want to reorder your PATH so that <filename>/sw/sbin</filename> is near the beginning, or if you really need the other directory to be before <filename>/sw/sbin</filename>, then you'll want to temporarily rename the other <filename>install-info</filename> when you use Fink.</p>
+        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面，要么如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，这时也许你需要在使用 Fink 的时候临时重命名其它 <filename>install-info</filename>。</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file" >
       <question>
-        <p>I can't install or remove anything, because of a problem with a &quot;files list file&quot;.</p>
+        <p>我不能安装或删除任何东西，因为一个 &quot;files list file&quot; 问题。</p>
       </question>
       <answer>
-        <p>Typically these errors take the form:</p>
-        <codeblock>files list file for package <em>packagename</em> contains empty filename</codeblock>
-        <p>or</p>
-        <codeblock>files list file for package <em>packagename</em> is missing final newline</codeblock>
-        <p>This can be fixed, with a little work. If you have the .deb file for the offending package currently available on your system, then check its integrity by running</p>
-        <codeblock>dpkg --contents <em>full-path-to-debfile</em>
+        <p>通常这些错误的形式是：</p>
+        <codeblock>files list file for package <em>软件包名</em> contains empty filename</codeblock>
+        <p>或</p>
+        <codeblock>files list file for package <em>软件包名</em> is missing final newline</codeblock>
+        <p>这可以通过一点小小的工作而修复。如果你在系统里面有发生问题的这个软件包的 .deb 文件，用下面命令检查它的完整性：</p>
+        <codeblock>dpkg --contents <em>deb文件的完整路径</em>
         </codeblock>
-        <p>e.g.</p>
+        <p>例如</p>
         <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
-        <p>If you get back a listing of directories and files, then your .deb is OK. If the output is something other than directories and files, or if you don't have the .deb file, you can still proceed because the error doesn't interfere with builds.</p>
-        <p>If you have been installing from the binary distribution or you know for sure that the version in the binary distribution is the same as what you have installed (e.g. by checking the <link url="http://fink.sourceforge.net/pdb/index.php" >package database</link>), then you can get a .deb file by running <code>sudo apt=get install --reinstall --download-only <em>packagename</em>
-          </code>. Otherwise you can build one yourself by running <code>fink rebuild <em>packagename</em>
-          </code>, but it won't install yet.</p>
-        <p>Once you have a valid .deb file, then you can reconstitute the file. First become root by using <code>sudo -s</code> (enter your administrative user password if necessary), and then use the following command (on one line--it's split for readability here):</p>
-        <codeblock>dpkg -c <em>full-path-to-debfile</em>
+        <p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p>
+        <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://fink.sourceforge.net/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <em>软件包名</em>
+          </code>。否则你也可以用下面的办法自己从源代码重新构建一个：<code>fink rebuild <em>软件包名</em>
+          </code>，但它暂时还不能安装。</p>
+        <p>一旦你有了一个正常的 .deb 文件，你可以重新安装文件。首先用下面的命令成为 root 用户：<code>sudo -s</code>（有需要的话，输入你的管理员密码），然后使用下面的命令（我们把它分行以方便阅读，但实际使用的时候，你应该在一行里面输入）：</p>
+        <codeblock>dpkg -c <em>deb文件的完整路径</em>
   | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
-  > /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
-        <p>e.g.</p>
+  > /sw/var/lib/dpkg/info/<em>软件包名</em>.list</codeblock>
+        <p>例如：</p>
         <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
   | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
   > /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
-        <p>What this does is to extract the contents of the .deb file, remove everything but the filenames, and write these to the .list file.</p>
+        <p>这里做的事情是抽取 .deb 文件的内容，删掉除文件名以外的所有信息，并把文件名信息写回到 .list 文件中。</p>
       </answer>
     </faqentry>
     <faqentry name="error-nineteen" >
       <question>
-        <p>When I use the Fink binary installer package, I get a big &quot;19&quot; in the window and can't install anything.</p>
+        <p>当我使用 Fink 二进制安装包的时候，我碰到一个很大的 &quot;19&quot; 在窗口中，而不能安装任何东西。</p>
       </question>
       <answer>
-        <p>The number 19 appears because your OS X system is localized to a language
-other than English. (This is a bug in Apple's Installer, that it doesn't
-just show you the English-language error message.)</p>
-        <p>The English language error message corresponding to number 19 is</p>
-        <p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
-        <p>You may be getting this error if you've used Fink before, and didn't delete <filename>/sw</filename>. If you haven't installed Fink before, the most likely cause of this
-is that you installed the Virex program available for free to .Mac users.
-As explained on Fink's webpage, Virex is incompatible with Fink (due to
-the Virex folks having made errors in the way they set things up).</p>
+        <p>显示数字 19 是因为你的 OS X 系统被本地化为别的语言。（这是苹果安装程序的一个问题，它这时没有显示英语的错误信息）。</p>
+        <p>对应于错误 19 的英语错误信息是：</p>
+        <p>&quot;/sw 目录已存在，请参阅自述文件已获取升级指南，或关于如何安装 Fink 到一个单独的宗卷。&quot;</p>
+        <p>如果你以前使用过 Fink，而又没有删除 <filename>/sw</filename> 目录，你会碰到这个错误信息。如果你以前没有安装过 Fink，最大的可能是你作为 .Mac 用户免费安装了 Virex 程序。
+正如 Fink 的网页所解释的一样，Virex 与 Fink 不兼容（因为 Virex 错误的设置方式）。</p>
       </answer>
     </faqentry>
     <faqentry name="dselect-garbage" >
       <question>
-        <p>I get a bunch of garbage when I select packages in <filename>dselect</filename>. How can I use it?</p>
+        <p>当我在 <filename>dselect</filename> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</p>
       </question>
       <answer>
-        <p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>. A workaround is to enter the following command</p>
-        <p>tcsh users:</p>
+        <p>在 <filename>dselect</filename> 和 终端程序（<filename>Terminal.app</filename>）中间存在一些问题。暂时解决方法是在运行 <filename>dselect</filename> 前输入下面的命令。</p>
+        <p>对 tcsh 用户：</p>
         <codeblock>setenv TERM xterm-color</codeblock>
-        <p>bash users:</p>
+        <p>对 bash 用户：</p>
         <codeblock>export TERM=xterm-color</codeblock>
-        <p>before you run <filename>dselect</filename>.  You may want to put this in your startup file (e.g. <code>.cshrc</code> | <code>.profile</code>) so that it gets run all of the time.</p>
+        <p>你可以把它放到你的启动文件（比如 <code>.cshrc</code> 或 <code>.profile</code>），这样它就总是会自动运行。</p>
       </answer>
     </faqentry>
     <faqentry name="perl-undefined-symbol" >
       <question>
-        <p>Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</p>
+        <p>为什么我运行 Fink 命令时会有一堆的 &quot;dyld: perl undefined symbols&quot; 错误？</p>
       </question>
       <answer>
-        <p>If you see an error sequence like the following:</p>
+        <p>如果你看到象下面的错误信息：</p>
         <codeblock>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -660,10 +656,10 @@ _Perl_sv_2pv
 _perl_call_sv
 _perl_eval_sv
 _perl_get_sv</codeblock>
-        <p>then what has probably happened is that you updated Perl to a new version and now <filename>storable-pm</filename> needs to be updated. 
-You should update Fink.  During the process you will be prompted to install either <filename>perl-core</filename> or <filename>system-perl</filename>; choose the latter. 
-In addition, <filename>storable-pm</filename> should also get updated.</p>
-        <p>For OS 10.1.x, perform the following commands (you'll need the Developer Tools):</p>
+        <p>那么很可能你升级了 Perl，现在 <filename>storable-pm</filename> 也应该需要升级。
+你应该更新 Fink。在这个过程中，你会被提示要安装 <filename>perl-core</filename> 还是 <filename>system-perl</filename>；这时需要选择后者。 
+另外，<filename>storable-pm</filename> 应该也会更新。</p>
+        <p>对 OS 10.1.x，可以执行下面的命令（你需要安装了开发工具）：</p>
         <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
@@ -672,26 +668,26 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="cant-upgrade" >
       <question>
-        <p>I can't seem to update Fink's version.</p>
+        <p>我看不到要升级的 Fink 版本。</p>
       </question>
       <answer>
-        <p>There are <link url="http://fink.sourceforge.net/download/fix-upgrade.php" >special instructions</link> to follow under these circumstances.</p>
+        <p>在这种情况下，参考<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >特别指引</link>。</p>
       </answer>
     </faqentry>
     <faqentry name="spaces-in-directory" >
       <question>
-        <p>Can I put Fink in a volume or directory with a space in its name?</p>
+        <p>我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</p>
       </question>
       <answer>
-        <p>We recommend against putting your Fink directory tree inside a directory with spaces in its name. It's just not worth the hassle.</p>
+        <p>我们不推荐把你的 Fink 目录树放到名字中有空格的目录里面。完全不值得冒这个险。</p>
       </answer>
     </faqentry>
     <faqentry name="packages-gz" >
       <question>
-        <p>When I try to do a binary update, there are many messages with &quot;File not found&quot;</p>
+        <p>当我进行二进制升级的时候，有很多 &quot;File not found&quot; 错误。</p>
       </question>
       <answer>
-        <p>If you see something like the following:</p>
+        <p>如果你看到这样的错误：</p>
         <codeblock>
 Err file: local/main Packages
   File not found
@@ -726,254 +722,234 @@ ones used instead.
 
 update available list script returned error exit status 1.
 </codeblock>
-        <p>then all you need to do is run <code>fink scanpackages</code>. This generates the files that aren't being found.</p>
+        <p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p>
       </answer>
     </faqentry>
     <faqentry name="wrong-tree" >
       <question>
-        <p>I've changed my OS | Developer Tools, but Fink doesn't recognize the change.</p>
+        <p>我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</p>
       </question>
       <answer>
-        <p>When changing the Fink distribution (of which the source and binary distros are subsets), Fink needs to be told that this has happened.  To do this, you can run a script that normally gets run when you first install Fink:</p>
+        <p>在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p>
         <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
-        <p>Doing this will point Fink to the correct place.</p>
+        <p>运行完这个脚本以后，Fink 应该能够适应改动的结果。</p>
       </answer>
     </faqentry>
     <faqentry name="seg-fault" >
       <question>
-        <p>I get errors with <code>gzip</code> | <code>dpkg-deb</code>I applications from the<code> fileutils </code>package! Help!</p>
+        <p>当我运行<code> fileutils </code>中的 <code>gzip</code> 或 <code>dpkg-deb</code> 程序时出现错误！救命！</p>
       </question>
       <answer>
-        <p>Errors of the form:</p>
+        <p>出错的形式：</p>
         <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</codeblock>
-        <p>or</p>
+        <p>或</p>
         <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe
 ### execution of gzip failed, exit code 138</codeblock>
-        <p>or</p>
+        <p>或</p>
         <codeblock>dpkg-deb -b root-base-files-1.9.0-1
 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
 ### execution of dpkg-deb failed, exit code 10
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
-        <p>or segmentation faults when running utilities from<code> fileutils</code>, e.g. <code>ls</code> or <code>mv</code>, are likely to be due to a prebinding error in a library, and can be fixed by running</p>
+        <p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p>
         <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
       </answer>
     </faqentry>
     <faqentry name="pathsetup-keeps-running" >
       <question>
-        <p>When I open a Terminal window, I get a message that &quot;Your environment seems to be correctly
-set up for Fink already.&quot;, and it logs out.</p>
+        <p>当我打开终端程序窗口时，我看到下面的信息 &quot;Your environment seems to be correctly
+set up for Fink already.&quot;，然后它就退出登录了。</p>
       </question>
       <answer>
-        <p>What happened is that somehow the OSX Terminal program has been told to run <code>/sw/bin/pathsetup.command</code> every time you log in.  You can fix this by removing the Preferences file, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p>
-        <p>If you have other preferences that you want to keep, you can edit the file with a text editor and remove the reference to <code>/sw/bin/pathsetup.command</code>.</p>
+        <p>发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p>
+        <p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p>
       </answer>
     </faqentry>
   </chapter>
   <chapter filename="comp-general" >
-    <title>Compile Problems - General</title>
-    <shorttitle>Compiling (1)</shorttitle>
+    <title>一般性编译问题</title>
+    <shorttitle>编译（１）</shorttitle>
     <faqentry name="compiler" >
       <question>
-        <p>A configure script complains
-that it can't find an &quot;acceptable cc&quot;. What's that?</p>
+        <p>一个配置脚本出错说找不到一个 &quot;acceptable cc&quot;。什么意思？</p>
       </question>
       <answer>
         <p>
-Read the docs next time.
-To compile packages from source, you must install the Developer Tools,
-which among other stuff contains the C compiler, <code>cc</code>.
+下次应该阅读一下文档。
+要从源代码编译软件包，你需要安装开发工具包，其中就包括 C 编译器：<code>cc</code>。
 </p>
       </answer>
     </faqentry>
     <faqentry name="cvs" >
       <question>
-        <p>When I try a &quot;fink selfupdate-cvs&quot; I get this message: &quot;cvs: Command not found.&quot; </p>
+        <p>我运行 &quot;fink selfupdate-cvs&quot;，但出现这个错误：&quot;cvs: Command not found.&quot;。</p>
       </question>
       <answer>
-        <p>You need to install the Developer Tools.</p>
+        <p>你需要安装开发工具包。</p>
       </answer>
     </faqentry>
     <faqentry name="missing-make" >
       <question>
-        <p>I'm getting an error message involving <code>make</code>
+        <p>我碰到一个涉及 <code>make</code> 的错误。
         </p>
       </question>
       <answer>
-        <p>if your message is of the form</p>
+        <p>如果错误信息是这种形式</p>
         <codeblock>make: command not found</codeblock>
-        <p>or</p>
+        <p>或</p>
         <codeblock>Can't exec &quot;make&quot;: No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
-        <p>It means you need to install the Developer Tools.</p>
-        <p>On the other hand, if your error message looks like</p>
+        <p>它表示你需要安装开发工具。</p>
+        <p>如果你的错误信息是这样的</p>
         <codeblock>make: illegal option -- C</codeblock>
-        <p>then you've replaced the GNU version of the <code>make</code> utility
-installed as part of the Developer Tools with a BSD version of make.
-Many packages rely on special features only supported by GNU make.
-Make sure that <code>/usr/bin/make</code> is a symlink to
-<code>gnumake</code>, not <code>bsdmake</code>. Furthermore,
-make sure that <code>/usr/local/bin/</code> does not contain another
-copy of <code>make</code>.
+        <p>那是因为你把开发工具包里面 GNU 版本的 <code>make</code> 工具换成了 BSD 版本。许多软件包依赖于 GNU Make 的特有功能。
+确定 <code>/usr/bin/make</code> 是一个指向
+<code>gnumake</code>的符号链接，而不是指向 <code>bsdmake</code>。另外，确定 <code>/usr/local/bin/</code> 中没有另外一个 <code>make</code>。
 </p>
       </answer>
     </faqentry>
     <faqentry name="head" >
       <question>
-        <p>I'm getting a strange usage message
-from the head command. What's broken?</p>
+        <p>我碰到 head 命令的一个奇怪的错误信息。什么出问题了？</p>
       </question>
       <answer>
-        <p>If you're seeing this:</p>
+        <p>如果你看到的是：</p>
         <codeblock>Unknown option: 1
 Usage: head [-options] &lt;url>...</codeblock>
-        <p>followed by a list of option descriptions, you have a broken
-<code>head</code> executable.
-This happens when you install the Perl libwww library on an HFS+
-system volume.
-It tries to create a new command <code>/usr/bin/HEAD</code>, which
-overwrites the existing <code>head</code> command because the file
-system is case-insensitive.
-<code>head</code> is a standard command used in many shell scripts and
-Makefiles.
-You need to get the original <code>head</code> executable back if you
-want to use Fink.
+        <p>后面是一列选项描述，你的 <code>head</code> 程序被损坏了。
+这会在你安装 Perl 的 libwww 库到一个 HFS+ 系统宗卷时发生。
+原因是它会建立一个新的命令 <code>/usr/bin/HEAD</code>，它会覆盖现存的 <code>head</code> 命令，因为 HFS+ 是不区分大小写的。
+<code>head</code> 是一个在许多 shell 脚本和 Makefiles 中用到的标准命令。
+如果你想使用 Fink，你需要装回原来的 <code>head</code> 程序。
 </p>
         <p>
-The bootstrap script of the source release now checks for this, but
-you can still run into it if you use the binary release for first-time
-installation or install libwww after you installed Fink.
+现在源代码发布版的 bootstrap 脚本会检查这一点，但你仍然会碰到这个问题，如果你使用二进制安装或在安装 Fink 以后又安装 libwww。
 </p>
-        <p>This problem has also been reported due to the installation of <filename>/sw/bin/HEAD</filename> (not by any Fink package). This is easier to solve: rename <filename>/sw/bin/HEAD</filename>.</p>
+        <p>也曾经有报告说发生这个问题是因为安装了 <filename>/sw/bin/HEAD</filename>（这不是 Fink 软件包安装的）。这种情况很容易解决：重命名 <filename>/sw/bin/HEAD</filename>。</p>
       </answer>
     </faqentry>
     <faqentry name="also_in" >
       <question>
-        <p>When I try to install a package I get an error message about trying to overwrite a file that is in another package.</p>
+        <p>当我安装一个软件包的时候，我碰到一个错误信息说我试图覆盖另外一个软件包的文件。</p>
       </question>
       <answer>
-        <p>This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <code>foo</code> to <code>foo-shlibs</code>. What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p>
-        <codeblock>sudo dpkg -i --force-overwrite <em>filename</em>
+        <p>当你安装那些具有版本分支的软件包（也就是那些名字末尾有 -dev，-shlibs，等的）时，如果需要有些文件从一个版本分支移动到另一个版本分支（例如，从 <code>foo</code> 到 <code>foo-shlibs</code>）的时候，你就会碰到这个错误。你可以做的是使用你现在安装的版本来覆盖旧有的版本（因为他们通常是相同的）：</p>
+        <codeblock>sudo dpkg -i --force-overwrite <em>文件名</em>
         </codeblock>
-        <p>where <em>filename</em> is the .deb file corresponding to the package that you are trying to install.</p>
+        <p>这里文件名 <em>filename</em> 是对应于你要安装的软件包的 .deb 文件名称。</p>
       </answer>
     </faqentry>
     <faqentry name="weak_lib" >
       <question>
-        <p>After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</p>
+        <p>我安装了 December 2002 开发工具包以后，碰到 &quot;weak libraries&quot; 的错误。</p>
       </question>
       <answer>
-        <p>This is new with the December 2002 Tools. You may occasionally see messages like (choosing libgdk-pixbuf as an example):</p>
+        <p>这是 December 2002 工具的新问题。偶尔你会看到这样的信息（比如说选择 libgdk-pixbuf）：</p>
         <p>
           <code>ld: warning dynamic shared library: /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</code>
         </p>
-        <p>You may regard these as harmless. If you are curious, read through the release notes in the developer documentation directory, 
-especially GCC's and the linker's, for more info. It essentially has to 
-do with whether missing symbols at runtime is considered a fatal error on 
-startup or not, for applications that use weak references.</p>
+        <p>你可以把这些看做一些无害的信息。如果你对此好奇的话，仔细阅读开发者文档目录里面的 release notes，尤其是关于 GCC 和 linker　的部分。补充的信息的是，对于那些使用弱引用的程序，它和程序启动的时候发现一些运行时标识不存在话，是否把它当做致命错误有关。</p>
       </answer>
     </faqentry>
     <faqentry name="mv-failed" >
       <question>
-        <p>What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package?</p>
+        <p>当我构建一个软件包时，&quot;execution of mv failed, exit code 1&quot; 错误是什么意思？</p>
       </question>
       <answer>
-        <p>If you have StuffIt Pro installed, it could be that you have &quot;Archive Via Real Name&quot; mode enabled.  Check for a StuffIt preference pane in the System Preferences tool, and disable &quot;ArchiveViaRealName&quot; if it's enabled.  It contains a buggy reimplementation of a few important system calls that will cause a number of strange and transient errors such as this.</p>
-        <p>Otherwise, am <filename>mv</filename> error typically means that another error happened earlier in the build, but the build process didn't stop. To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
+        <p>如果你安装了 StuffIt Pro，这可能是因为你使用了 &quot;Archive Via Real Name&quot; 模式。在系统预置中检查 StuffIt 面板，禁用 &quot;ArchiveViaRealName&quot;。它包括对一些重要的系统调用的不正确的替代，从而引起一些古怪的错误。</p>
+        <p>否则，一个 <filename>mv</filename> 错误通常意味着构建过程更早期发生了错误，但是构建过程并没有因为那个错误而终止。要找到发生的问题的文件，可以搜索那个不存在文件构建时候的输出。比如，如果你碰到这样的错误：</p>
         <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
  No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</codeblock>
-        <p>then you should look for <filename>libbar</filename> somewhere further back in the output of your build attempt.</p>
+        <p>那么你应该在你构建输出信息的更前面的地方寻找有关 <filename>libbar</filename> 的信息。</p>
       </answer>
     </faqentry>
     <faqentry name="node-exists" >
       <question>
-        <p>I can't install a package | update because I get a message that a &quot;node&quot; already exists.</p>
+        <p>我无法安装软件包或更新它，因为我碰到一个错误说一个 &quot;node&quot; 已经存在。</p>
       </question>
       <answer>
-        <p>These errors look something like this:</p>
+        <p>这个错误的大约是这个样子的：</p>
         <codeblock>Failed: Internal error: node for system-xfree86 already exists</codeblock>
-        <p>This problem is that the dependency engine is confused, due to changes in some of the package info files. To fix it:</p>
+        <p>这个问题是因为依赖关系引擎发生了混乱，原因是修改了某些软件包的 info 文件。要修正它：</p>
         <ul>
           <li>
-            <p>Remove the offending package by force, e. g.</p>
+            <p>强行删除出现问题的软件包，例如，对于上面的例子，可以：</p>
             <codeblock>sudo dpkg -r --force-all system-xfree86</codeblock>
-            <p>for the example given above.</p>
           </li>
           <li>
-            <p>Try again to install | upgrade. At some point a &quot;virtual dependency&quot; prompt will come up that includes the package you just removed. Select it, and it will be reinstalled during your build.</p>
+            <p>再尝试安装或升级。有时会提示一个包含你删除了的软件包的 &quot;virtual dependency&quot;。选择它，它会在构建过程中重新被安装。</p>
           </li>
         </ul>
       </answer>
     </faqentry>
     <faqentry name="usr-local-libs" >
       <question>
-        <p>I've heard that libraries installed in /usr/local/lib sometimes cause build problems for Fink. Is this true?</p>
+        <p>我听说安装在 /usr/local/lib 的库有时会引起 Fink 构建的问题。是这样吗？</p>
       </question>
       <answer>
-        <p>This is a frequent source of problems, because the package configuration script finds libraries under <filename>/usr/local/lib</filename> before searching in the Fink path. If you are having problems with a build that aren't covered by another FAQ entry, you should check whether you have libraries in <filename>/usr/local/lib</filename>. If so, then try renaming <filename>/usr/local</filename> to something else, e.g.:</p>
+        <p>这是一个经常发生的问题，因为软件包的配置脚本会在搜索 <filename>/usr/local/lib</filename> 之后才在 Fink 路径中搜索库。如果你碰到其它 FAQ 中没有解释的构建问题，你应该检查涉及的库时候在 <filename>/usr/local/lib</filename> 中。如果是这样的话，尝试把 <filename>/usr/local</filename> 改成其它名字，例如：</p>
         <codeblock>sudo mv /usr/local /usr/local.moved</codeblock>
-        <p>do your build, and then put <filename>/usr/local</filename> back:</p>
+        <p>完成你的构建，然后把 <filename>/usr/local</filename> 改回来：</p>
         <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
       </answer>
     </faqentry>
     <faqentry name="toc-out-of-date" >
       <question>
-        <p>When I try to build a package, I get a message that a &quot;table of contents&quot; is out of date. What do I need to do?</p>
+        <p>当我构建一个软件包的时候，我碰到一个消息说 &quot;table of contents&quot; 已经过时。我需要怎么办？</p>
       </question>
       <answer>
-        <p>The output hints at what to do. The message is usually something like:</p>
+        <p>输出已经提示了该怎么办。消息通常是这样的：</p>
         <codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
-        <p>What you need to do is run ranlib (as root) on whatever library is causing the problem. As an example, for the case above, you would run:</p>
+        <p>你需要（以 root 权限）运行 ranlib 处理引起问题的库。例如对上面的情况，你可以运行：</p>
         <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
       </answer>
     </faqentry>
     <faqentry name="fc-atlas" >
       <question>
-        <p>Fink Commander hangs when I try to install atlas.</p>
+        <p>当我安装 atlas 时 Fink Commander 挂了。</p>
       </question>
       <answer>
-        <p>This happens because one of the steps in the build of <code>atlas</code> sends a prompt to the user that Fink Commander doesn't display. You'll have to use <code>fink install atlas</code> instead.</p>
+        <p>这原因时在构建 <code>atlas</code> 时，Fink Commander 遗漏了一个发向用户要求选择的信息。你需要使用 <code>fink install atlas</code> 命令来安装。</p>
       </answer>
     </faqentry>
     <faqentry name="basic-headers" >
       <question>
-        <p>I get messages saying that I'm missing stddef.h. Where do I find it?</p>
+        <p>我碰到信息说我缺少 stddef.h 文件。我可以在哪里找到它？</p>
       </question>
       <answer>
-        <p>This header, and many others, are provided by the DevSDK package of the Developer Tools. Check whether <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your system. If not, then run the Dev Tools Installer again, and install the DevSDK package using a Custom Install.</p>
+        <p>这个头文件，以及很多其它类似文件，都是由开发工具包中的 DevSDK 包提供。检查你系统中是否存在 <filename>/Library/Receipts/DevSDK.pkg</filename> 文件。如果没有的话，再运行一次开发工具安装程序，并使用定制安装来安装 DevSDK 包。</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies" >
       <question>
-        <p>I can't update, because Fink is &quot;unable to resolve version conflict on multiple dependencies&quot;.</p>
+        <p>我无法升级，因为 Fink &quot;unable to resolve version conflict on multiple dependencies&quot;。</p>
       </question>
       <answer>
-        <p>To get around this, try updating a single package, then try to use &quot;fink update-all&quot; again. If you still get the message, repeat the process.</p>
+        <p>要回避这个问题，尝试升级一个单独的软件包，然后再次尝试使用 &quot;fink update-all&quot;。如果你还碰到这个信息，重复这个过程。</p>
       </answer>
     </faqentry>
     <faqentry name="dpkg-parse-error" >
       <question>
-        <p>I can't install anything because I get &quot;dpkg: parse error, in file `/sw/var/lib/dpkg/status'&quot;!</p>
+        <p>我不能安装任何东西，因为我碰到 &quot;dpkg: parse error, in file `/sw/var/lib/dpkg/status'&quot; 错误！</p>
       </question>
       <answer>
-        <p>This means that somehow your dpkg database got corrupted, usually from a crash or some other unrecoverable error. You can fix it by copying the previous
-version of the database, like so:</p>
+        <p>这意味着你的 dpkg 数据库被损坏了，通常是由于一次程序崩溃或其它不可恢复错误造成。你可以用拷贝以前的版本的数据库办法来解决，象这样：</p>
         <codeblock>
 sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
 </codeblock>
-        <p>You may need to re-install the last couple of packages you installed before the problem started occurring.</p>
+        <p>你也许需要重新安装问题发生前安装的最后几个软件包。</p>
       </answer>
     </faqentry>
     <faqentry name="freetype-problems" >
       <question>
-        <p>I get errors involving freetype.</p>
+        <p>我碰到一个涉及 freetype 的错误。</p>
       </question>
       <answer>
-        <p>There are several varieties of such errors.  If your error looks like:</p>
+        <p>这个错误有几种形式。如果你的错误是这样的：</p>
         <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
@@ -984,7 +960,7 @@ make[1]: *** [all-recursive] Error 1
 make: *** [all-recursive-am] Error 2
 ### execution of make failed, exit code 2
 Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
-        <p>or</p>
+        <p>或</p>
         <codeblock>In file included from vteft2.c:32:
 vteglyph.h:64: error: parse error before &quot;FT_Library&quot;
 vteglyph.h:64: warning: no semicolon at end of struct or union
@@ -1002,31 +978,31 @@ make[1]: *** [all-recursive] Error 1
 make: *** [all] Error 2
 ### execution of make failed, exit code 2
 Failed: compiling vte-0.11.10-3 failed</codeblock>
-        <p>or</p>
+        <p>或</p>
         <codeblock>checking for freetype-config... /usr/X11R6/bin/freetype-config
 checking For sufficiently new FreeType (at least 2.0.1)... no
 configure: error: pangoxft Pango backend found but did not find freetype libraries
 make: *** No targets specified and no makefile found.  Stop.
 ### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2
 Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
-        <p>the problem is due to confusion between headers from the <code>freetype</code> | <code>freetype-hinting</code> package and the <code>freetype2</code> headers that are included with X11 | XFree86.</p>
+        <p>问题发生在 <code>freetype</code> 或 <code>freetype-hinting</code> 软件包的头文件和包含在 X11 或 XFree86 中的 <code>freetype2</code> 头文件之间发生混淆。</p>
         <codeblock>fink remove freetype freetype-hinting</codeblock>
-        <p>will remove whichever variant you have installed.  On the other hand, if your error looks like:</p>
+        <p>命令可以删除你安装的（导致问题的）变种。如果你的错误是这样的：</p>
         <codeblock>ld: Undefined symbols:
 _FT_Access_Frame </codeblock>
-        <p>this is typically due to a residual file from a prior installation of X11.  Reinstall the X11 SDK.  Finally, if you get an error like </p>
+        <p>这通常是用于以前安装的 X11 的残余文件。你需要重新安装 X11 SDK。最后，如果你获得一个这样的错误：</p>
         <codeblock>dyld: klines Undefined symbols:
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
 </codeblock>
-        <p>then you probably have a binary version that built fine with <code>gcc3.3</code> on Jaguar but doesn't work on Panther.  This has now been updated, so you you just need to update your packages, e.g. via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
+        <p>那么你很可能安装了一个在 Jaguar 上使用 <code>gcc3.3</code> 编译的二进制包，但它却不能在 Panther 上使用。这现在已经被修正了，所以你只需要更新你的软件包就可以了，例如，通过 <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>。</p>
       </answer>
     </faqentry>
     <faqentry name="dlfcn-from-oo" >
       <question>
-        <p>I get build errors involving `Dl_info'.</p>
+        <p>我碰到一个涉及 `Dl_info' 的编译错误。</p>
       </question>
       <answer>
-        <p>If you have an error that looks like this</p>
+        <p>如果你的错误是这样的</p>
         <codeblock>unix_dl.c: In function `rep_open_dl_library':
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type
 unix_dl.c: In function `rep_find_c_symbol':
@@ -1036,31 +1012,31 @@ unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before &quot;info&quot;
 unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</codeblock>
-        <p>then most likely you have a header file, <code>/usr/local/include/dlfcn.h</code>, that is incompatible with Panther.  Move it out of the way.</p>
-        <p>This usually is installed by Open Office, and you should replace this header file, as well as the library <code>/usr/local/lib/libdl.dylib</code>, with symbolic links to Panther's builtin files</p>
+        <p>最可能是你有这样的一个头文件：<code>/usr/local/include/dlfcn.h</code>，它和 Panther 不兼容。</p>
+        <p>这一般是由 Open Office 所安装的，你应该通过符号链接把这个头文件和对应的 <code>/usr/local/lib/libdl.dylib</code> 库指向 Panther 的内置文件</p>
         <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       </answer>
     </faqentry>
     <faqentry name="gcc2" >
       <question>
-        <p>Fink says I'm missing <filename>gcc2</filename> but I can't seem to install it.</p>
+        <p>Fink 说我缺少 <filename>gcc2</filename>，但我不知道怎么安装它。</p>
       </question>
       <answer>
-        <p>This is because <filename>gcc2</filename> is a virtual package to indicate the presence of gcc-2.95 on your system.  Install the gcc2.95 package from the XCode Tools (earlier OS versions have gcc-2.95 as part of their main Developer Tools installation.</p>
+        <p>这是因为 <filename>gcc2</filename> 是一个代表你系统上 gcc-2.95 的虚拟软件包。在 XCode 工具中安装 gcc2.95 软件包（早期操作系统的开发工具安装把 gcc-2.95 作为主要的编译工具安装）。</p>
       </answer>
     </faqentry>
   </chapter>
   <chapter filename="comp-packages" >
-    <title>Compile Problems - Specific Packages</title>
-    <shorttitle>Compiling (2)</shorttitle>
+    <title>编译问题－特定软件包</title>
+    <shorttitle>编译（２）</shorttitle>
     <faqentry name="libgtop" >
       <question>
-        <p>A package fails to build with errors involving <code>sed</code>.</p>
+        <p>一个软件包构建失败，错误和 <code>sed</code> 有关。</p>
       </question>
       <answer>
-        <p>This can happen if your login script (e.g. <code>~/.cshrc</code>) does something that writes to the terminal, e.g &quot;<code>echo Hello</code>&quot; or <code>xttitle</code>. To get rid of the problem, the easy solution is to comment out the offending lines.</p>
-        <p>If you want to keep the echo, then you can do something like the following:</p>
+        <p>如果你的登录脚本（例如 <code>~/.cshrc</code>）向终端输出了些信息，比如 &quot;<code>echo Hello</code>&quot; 或 <code>xttitle</code>，可能会导致这个错误。要消除这个问题，最简单的办法是注释掉这些行。</p>
+        <p>如果你想保留这些回显信息，你可以这样做：</p>
         <codeblock>if ( $?prompt) then
 echo Hello
 endif</codeblock>
@@ -1068,60 +1044,60 @@ endif</codeblock>
     </faqentry>
     <faqentry name="cant-install-xfree" >
       <question>
-        <p>I want to switch to Fink's XFree86 packages, but I can't install <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts with <code>system-xfree86</code>.</p>
+        <p>我想改用 Fink　的 XFree86 软件包，但我不能安装 <code>xfree86-base</code> 或 <code>xfree86</code>，因为它和 <code>system-xfree86</code> 冲突。</p>
       </question>
       <answer>
-        <p>All flavors of X11, unfortunately, really needs to be installed in /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and <code>xfree86-rootless</code> packages install there, too. However, since Fink won't remove any files that aren't in its database, it won't automatically replace a non-Fink installation of X11.</p>
+        <p>很不幸，各种 X11 都不可避免地要安装在 /usr/X11R6 中。因此 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包也需要安装在那里。不过，由于 Fink 不会删除任何没有在它数据库里面的文件，它不会自动替换非 Fink 安装的 X11。</p>
         <p/>
-        <p>Here's how to proceed:</p>
+        <p>下面是应该怎么做：</p>
         <p/>
         <p>
-          <em>Note:  10.2.x users with up-to-date versions of Fink (>= 0.16.2) and 10.3.x users should skip step 1 below (it won't work anyway).</em>
+          <em>注意：安装了新版（0.16.2 或更新）Fink 的 10.2.x 用户和 10.3.x 的用户应该跳过下面的步骤 1（事实上，他们也做不了步骤 1）。</em>
         </p>
-        <p>1. Remove <code>system-xfree86</code>. If you don't have any packages that depend on X11, this is straightforward. Frequently, however, many packages that depend on X11 are installed. Rather than uninstalling all of them, you can use</p>
+        <p>1. 删除 <code>system-xfree86</code>。如果你暂时还没有依赖于 X11 的软件包，这很简单。但通常情况是，已经安装了需要依赖于 X11 的软件包。如果不想全部删除他们，你可以使用：</p>
         <p>
           <code>sudo dpkg --remove --force-depends system-xfree86</code>
         </p>
-        <p>to remove it, leaving everything in place. If you don't have <code>system-xfree86</code> installed then proceed to step 3.</p>
-        <p>2. Manually remove all of XFree86. This can be done with</p>
+        <p>来进行删除，而保持其它软件包仍然存在。如果你没有安装 <code>system-xfree86</code>，那么跳到步骤 3。</p>
+        <p>2. 手工删除所有 XFree86。可以这么做：</p>
         <p>
           <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</code>
         </p>
-        <p>If you are switching from Apple X11, remove the X11 application, too.</p>
-        <p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code> and <code>xfree86-rootless</code> packages by the usual means: &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
-        <p> -or-</p>
-        <p>3a. To get XFree86-4.3.x, install Fink's <code>xfree86</code> package, with &quot;fink install xfree86&quot;--this version isn't in the binary distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
+        <p>如果你正在使用的是苹果的 X11，同时也删除 X11 程序。</p>
+        <p>3. 要获取 XFree86-4.2.1，用通常的办法安装 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包：对使用源代码安装的用户　&quot;<code>fink install</code>&quot;；对二进制安装的用户 &quot;<code>apt-get install</code>&quot; 或 <code>dselect</code>。</p>
+        <p>或</p>
+        <p>3a. 要获取 XFree86-4.3.x，使用 &quot;fink install xfree86&quot; 安装 Fink 的 <code>xfree86</code> 软件包，这个版本目前还没有二进制安装版发布，而且仅有未稳定的版本[FAQ 3.9]。</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread" >
       <question>
-        <p>How do I change from the non-threaded version of Fink's XFree86 packages to the threaded version (or vice-versa)?</p>
+        <p>怎么把 Fink 的 XFree86 从非线程化的版本改为线程化的版本（或相反）？</p>
       </question>
       <answer>
-        <p>If you are running the Fink version of XFree86 and you want to switch between the threaded and non-threaded versions of Fink, you need to manually remove the old version. This is done at the command-line with the commands:</p>
+        <p>如果你正在使用 Fink 版本的 XFree86，并且你希望在线程化或非线程化的版本之间转换，你需要手工删除旧的版本，你可以用下面的命令行命令实现：</p>
         <codeblock>
 sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
 sudo dpkg -r --force-depends xfree86-rootless
 sudo dpkg -r --force-depends xfree86-rootless-shlibs
 	</codeblock>
-        <p>or to delete the threaded versions:</p>
+        <p>或者删除线程化的版本：</p>
         <codeblock>
 sudo dpkg -r --force-depends xfree86-base-threaded
 sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 	</codeblock>
-        <p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <code>Source Menu</code> use &quot;<code>Force Remove</code>.&quot;</p>
-        <p>If you are using system-xfree86, see the previous question for removing it.</p>
-        <p>Install the version of xfree86 you want: </p>
+        <p>FinkCommander 也可以删除软件包。在源代码版本窗口，选择一个软件包，然后在 <code>Source Menu</code> 使用 &quot;<code>Force Remove</code>&quot;。</p>
+        <p>如果你正在使用 system-xfree86，查看前面关于删除它的问题。</p>
+        <p>安装你需要的 xfree86 版本：</p>
         <p>
-          <code>xfree86-base</code> and <code>xfree86-rootless</code>
+          <code>xfree86-base</code> 和 <code>xfree86-rootless</code>
         </p>
         <p>
-          <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code>
+          <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code>
         </p>
-        <p>by the usual means: &quot;<code>fink install</code>&quot; for source users, &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for binaries.</p>
+        <p>你可以使用通常的办法：对源代码安装用户 &quot;<code>fink install</code>&quot;；对二进制安装用户 &quot;<code>apt-get install</code>&quot; or <code>dselect</code> 。</p>
       </answer>
     </faqentry>
 <!--obsolete><faqentry name="apple-x11" >
@@ -1147,10 +1123,10 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </answer>
 </faqentry><-->    <faqentry name="cctools" >
       <question>
-        <p>&quot;When I try to install KDE, I get the following message: 'Can't resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
+        <p>&quot;当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency &quot;cctools (>= 446-1)&quot;'</p>
       </question>
       <answer>
-        <p>This somewhat cryptic message means you need to install the December 2002 Developer Tools.</p>
+        <p>这个晦涩的消息表明你需要安装 December 2002 开发工具。</p>
       </answer>
     </faqentry>
 <!--obsolete><faqentry name="system-xfree86-upgrade" >
@@ -1163,89 +1139,59 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </answer>
 </faqentry><-->  </chapter>
   <chapter filename="usage-general" >
-    <title>Package Usage Problems - General</title>
-    <shorttitle>Usage (1)</shorttitle>
+    <title>一般性软件包使用问题</title>
+    <shorttitle>使用（１）</shorttitle>
     <faqentry name="xlocale" >
       <question>
-        <p>I'm getting lots of messages
-like &quot;locale not supported by C library&quot;. Is that bad?</p>
+        <p>我碰到很多这样的消息：&quot;locale not supported by C library&quot;。有问题吗？</p>
       </question>
       <answer>
         <p>
-It's not bad, it just means that the program will use the default
-English messages, date formats, etc.
-The program will function normally otherwise.
-The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale" >details</link>.
+没有什么问题，它只是表示程序会使用默认的英语信息提示，日期格式等。
+程序其它的功能应该是正常的。
+X11 文档有更多的<link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale" >细节</link>。
 </p>
       </answer>
     </faqentry>
     <faqentry name="passwd" >
       <question>
-        <p>There are suddenly a number of 
-strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.
-Where did they come from?</p>
+        <p>我的系统上突然多很很多陌生的用户，名字象 &quot;mysql&quot;，&quot;pgsql&quot;，和 &quot;games&quot;。
+它们是哪来的？</p>
       </question>
       <answer>
         <p>
-You have used Fink to install a package which is dependent on another package,
-passwd. passwd installs a number of extra users on your system for security 
-reasons -- on Unix systems, files and processes belong to &quot;owners&quot;, which 
-allows
-system administrators to fine-tune the permissions and security of the system. 
- Programs such as Apache and MySQL need an &quot;owner&quot;, and it is insecure to 
-assign these daemons to root (imagine what would happen if Apache were to be 
-compromised and suddenly had write permission to all files on the system). 
-Thus, the passwd package takes the work out of setting up these extra users 
-for Fink packages that require this.</p>
-        <p>It can be alarming to suddenly discover a number of unexpected users in your
- &quot;System Preferences: Users&quot; pane, but suppress the urge to delete them:
+你用 Fink 安装了一些软件包，这些软件包依赖于另外一个叫 passwd 的软件包。passwd 出于安全的原因在你的系统上增加了一些额外的用户－Unix 系统上，文件和进程由一些（不同的） &quot;owners&quot; 所有，这可以使得系统管理员可以微调系统的权限和安全性设置。
+象 Apache 和 MySQL 这样的程序需要有 &quot;owner&quot;，把这些守护进程由 root 来运行是不安全的（想像一下如果 Apache 被攻破而它又有对系统所有文件的写权限的情况）。
+因此，passwd 软件按照 Fink 软件包的需要建立了这些额外的用户。</p>
+        <p>如果在你的&quot;系统预置：用户&quot;面板里面突然出现了这些用户，那么要警惕，但不要那么着急去删除它们：
 </p>
         <ul>
-          <li>First of all, you have obviously chosen to install a package which requires
- their use, so deleting the user doesn't make much sense, does it?</li>
-          <li>There are in fact a number of extra users already installed on Mac OS X 
-that you may not have known about: www, daemon, nobody, are just a few of 
-them.
-The presence of these extra users is a standard Unix convention for running 
-certain services; the passwd package simply adds a couple of extra that Apple 
-did not provide. You can see these Apple-installed users in NetInfo 
-Manager.app, or by running
-<code>niutil -list . /users</code>
+          <li>首先，很明显你选择安装了那些需要这些用户的软件包，所以删除它们是不合情理的，不是吗？</li>
+          <li>事实上，在 Mac OS X 里面已经有很多这些你不是很清楚的额外用户：www，daemon，nobody，只是其中的一部分。
+这些额外用户的存在是标准的 Unix 运行某些服务的方式；passwd 软件包只是添加了一些苹果没有提供的一些额外的用户。你可以在 NetInfo管理器程序或运行
+<code>niutil -list . /users</code> 命令看到这些苹果定义的用户。
           </li>
-          <li>If you do decide to delete these users, be very careful of how you go about
- it. Using the &quot;System Preferences: Users&quot; pane will assign all of their files
- to a random administrator account, and there have been reports of havoc played
- with the administrator account's permissions. This is a bug with System 
-Preferences, and has been submitted to Apple. A safer way to remove these 
-users from your system is to do so from within NetInfo Manager.app or use the 
-command line tool <code>niutil</code> in Terminal. Read the man page
- for <code>niutil</code> for more information about NetInfo.</li>
+          <li>如果你的确决定要删除这些用户，那么你要很小心如何去做。使用 &quot;系统预置：用户&quot; 面板去删除会把它们拥有的文件随机分配给一个管理员帐号，而且的确已经发生过因此而造成的使用管理员帐号的大混乱。这是系统预置的一个软件缺陷，并已经被提交给苹果公司。一个从你的系统中删除这些用户的安全的办法是使用 NetInfo管理器程序或使用命令行工具 <code>niutil</code>。阅读 <code>niutil</code> 的帮助页可以获得关于 NetInfo　的更多信息。</li>
         </ul>
-        <p>Fink <em>does</em> request permission to install these additional users on 
-your system during the installation of the passwd package, so this should not 
-have come as a surprise.
+        <p>Fink 在你安装 passwd 软件包的时候<em>确实</em>曾经向你要求安装这些额外用户的许可， 所以这些用户的存在本不应该觉得奇怪的。
 </p>
       </answer>
     </faqentry>
     <faqentry name="compile-myself" >
       <question>
-        <p>How do I compile something
-myself using Fink-installed software?</p>
+        <p>如何使用 Fink 安装的软件编译一些我自己的东西？</p>
       </question>
       <answer>
-<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->        <p>When compiling something yourself outside of Fink, the compiler and
-linker need to be told where to find the Fink-installed libraries and
-headers. For a package that uses standard configure/make process, you
-need to set some environment variables:
+<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->        <p>当你编译一些不属于 Fink 的东西的时候，编译器和连接器需要知道去哪里找 Fink 安装的库和头文件。对于那些使用标准 configure/make 过程的软件，你需要设置这些环境变量：
 </p>
-        <p>-tcsh-</p>
+        <p>对于 tcsh</p>
         <codeblock>setenv CFLAGS -I/sw/include
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
 setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;</codeblock>
-        <p>-bash-</p>
+        <p>对于 bash</p>
         <codeblock>export CFLAGS=-I/sw/include
 export LDFLAGS=-L/sw/lib
 export CXXFLAGS=$CFLAGS
@@ -1253,157 +1199,142 @@ export CPPFLAGS=$CXXFLAGS
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
 export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
         <p>
-It is often easiest just to add these to your startup files (e.g. <filename>.cshrc</filename> | <filename>.profile</filename>) so they
-are set automatically.
-If a package does not use these variables, you may need to add the
-&quot;-I/sw/include&quot; (for headers) and &quot;-L/sw/lib&quot; (for libraries) to the
-compile lines yourself. Some packages may use similar non-standard
-variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
-&quot;./configure --help&quot; will usually give you a list of the extra configure
-options.
+通常最简单的办法是把这些东西加到你的启动脚本文件（比如 <filename>.cshrc</filename> 或 <filename>.profile</filename>），这样他们就可以自动被设置。
+如果一个软件包不使用这些环境变量，你需要自己添加
+&quot;-I/sw/include&quot; (对头文件) 和 &quot;-L/sw/lib&quot; (对库文件) 到编译指令的一行。有些软件包会使用类似 EXTRA_CFLAGS 或 --with-qt-dir= 这样的非标准配置选项。
+通常 &quot;./configure --help&quot; 会告诉你额外的编译选项。
 </p>
-        <p>In addition, you may need to install the development headers (e.g. <em>foo-1.0-1-dev</em>) for the library packages that you are using, if they aren't already installed.</p>
+        <p>另外，你也许需要安装那些你使用的软件包的开发版的头文件（例如 <em>foo-1.0-1-dev</em>），如果你还没有安装它们的话）。</p>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-applications-menu" >
       <question>
-        <p>I can't run any of my Fink-installed applications using the Applications menu in Apple X11.</p>
+        <p>我不能在苹果的 X11 的应用程序菜单里面运行任何 Fink 安装的程序。</p>
       </question>
       <answer>
-        <p>Apple X11 doesn't keep track of the Fink environment settings, which means that the Applications menu doesn't have the PATH set correctly to find your Fink applications. The solution is to preface the name of a Fink-installed application with</p>
+        <p>苹果的 X11 不使用 Fink 的环境变量设置，这意味着应用程序菜单没有正确的环境变量设置来找到你的 Fink 程序。解决办法是在 Fink 安装的程序前面加上：</p>
         <codeblock>source /sw/bin/init.sh ; </codeblock>
-        <p>For example, if you want to run a Fink-installed GIMP, then put</p>
+        <p>例如，如果你希望运行 Fink 安装的 GIMP，那么填入</p>
         <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
-        <p>in the Command field of your GIMP entry.</p>
-        <p>You can also edit your .xinitrc file (in your user directory) and add:</p>
+        <p>到你 GIMP 项的命令一栏。</p>
+        <p>你也可以编辑你的 .xinitrc 文件（在你的用户目录中）并添加：</p>
         <codeblock>source /sw/bin/init.sh</codeblock>
-        <p>after the first line.</p>
+        <p>到第一行之后。</p>
       </answer>
     </faqentry>
     <faqentry name="x-options" >
       <question>
-        <p>I'm bewildered by the X11 options: Apple X11, XFree86, etc. What should I install?</p>
+        <p>我被 X11 的选择弄糊涂了：苹果 X11，XFree86，等等。我应该安装哪一个？</p>
       </question>
       <answer>
-        <p>All are variants on XFree86 (they're all based on the XFree86 code), but have some slight differences between them. Apple's X11, which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster than standard XFree86-4.2.1.1, but the latter is more stable. There is also a modification of 4.2.1.1 with threading support added, which is required by a few packages.</p>
-        <p>Currently, under Panther, Apple's X11 (on the third disk) is the only choice. Don't forget to install the X11 SDK (on the XCode disk) if you want to compile programs.</p>
-        <p> Under Jaguar, the most popular choices, and the Fink packages to make them work are:</p>
+        <p>这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但之前有一些轻微的差别。苹果的 X11，从 XFree86-4.2.1 修改而来，而 XFree86-4.3 比标准的 XFree86-4.2.1.1 要快，但后者就更稳定。另外，还有对 4.2.1.1 的修订来添加进线程的支持，这对一些软件包来说是必须的。</p>
+        <p>现在，在 Panther 下，苹果的 X11 （在第三张光盘上）是唯一的选择。不要忘记同时安装 X11 SDK （在 XCode 光盘上），如果你希望编译程序。</p>
+        <p>在 Jaguar 下，多数的选择是通过 Fink 安装的：</p>
         <ul>
           <li>
-            <p>4.2.x built via Fink: install <code>xfree86-base</code> and <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and the respective <code>-shlibs</code>)</p>
+            <p>Fink 的 4.2.x 版：安装 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 或 <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> （以及相应的 <code>-shlibs</code>）</p>
           </li>
           <li>
-            <p>4.3.x built via Fink: install the <code>xfree86</code> and <code>xfree86-shlibs</code> packages</p>
+            <p>Fink 的 4.3.x 版：安装 <code>xfree86</code> 和 <code>xfree86-shlibs</code> 软件包</p>
           </li>
           <li>
-            <p>4.2.x from Apple (User+SDK packages installed): install the <code>system-xfree86</code> package</p>
+            <p>苹果的 4.2.x 版（安装了用户和 SDK 软件包）： 安装 <code>system-xfree86</code> 软件包</p>
           </li>
         </ul>
-        <p>There are other options, as well. There is a more extensive treatment in the <link url="http://fink.sourceforge.net/doc/x11/index.php" >Running X11 document</link>.</p>
+        <p>还有另外一些选择。在 <link url="http://fink.sourceforge.net/doc/x11/index.php" >运行 X11 的文档</link>里面有专门的叙述。</p>
       </answer>
     </faqentry>
     <faqentry name="no-display" >
       <question>
-        <p>When I try to run an application, I get a message that says &quot;cannot open display:&quot;. What do I need to do?</p>
+        <p>当我试图运行一个程序，我碰到一个错误信息说： &quot;cannot open display:&quot;。我应该怎么办？</p>
       </question>
       <answer>
-        <p>This error means that the system isn't connecting with your X display. Make sure you do the following:</p>
-        <p>1. Start X (Apple's X11, XFree86, ...).</p>
-        <p>2. Make sure your DISPLAY environment variable is set correctly. If you are using the default setup for X, you can do this with</p>
+        <p>这个错误意味着系统不能连接到你的 X 显示。确定你按下面的步骤处理：</p>
+        <p>1. 启动 X （苹果的 X11，XFree86，…）。</p>
+        <p>2. 确定你正确设置了 DISPLAY 环境变量。如果你使用 X 的默认设置，你应该这么做：</p>
+        <p>如果你使用 <code>tcsh</code></p>
         <codeblock>setenv DISPLAY :0</codeblock>
-        <p>if you are running <code>tcsh</code>, or</p>
+        <p>或如果你使用 <code>bash</code></p>
         <codeblock>export DISPLAY=:0</codeblock>
-        <p>if you're running <code>bash</code>.</p>
       </answer>
     </faqentry>
     <faqentry name="suggest-package" >
       <question>
-        <p>I don't see my favorite program in Fink. How do I suggest a new package for inclusion in Fink?</p>
+        <p>我在 Fink 里面看不到我喜欢的那个程序。我应该怎么建议增加一个新的软件包到 Fink 里面？</p>
       </question>
       <answer>
-        <p>Make the request on the <link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203" >Package Request Tracker</link> on the Fink project page.</p>
-        <p>Note that you must have a SourceForge id to do so.</p>
+        <p>在 Fink 项目的<link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203" >软件包需求追踪器</link>。</p>
+        <p>注意你需要一个 SourceForge 帐号才可以添加。</p>
       </answer>
     </faqentry>
   </chapter>
   <chapter filename="usage-packages" >
-    <title>Package Usage Problems - Specific Packages</title>
-    <shorttitle>Usage (2)</shorttitle>
+    <title>特定软件包使用问题</title>
+    <shorttitle>使用（２）</shorttitle>
     <faqentry name="xmms-quiet" >
       <question>
-        <p>I get no sound from
-XMMS</p>
+        <p>在 XMMS 中我听不到声音。</p>
       </question>
       <answer>
         <p>
-Make sure you have the &quot;eSound Output Plugin&quot; selected in the XMMS
-preferences.
-For some strange reason, it selects the disk writer plugin as the
-default.
+确定你在 XMMS 的 preferences 中选择了 &quot;eSound Output Plugin&quot;。
+由于一些很奇怪的原因，它默认选择 disk writer 插件。
 </p>
         <p>
-If you still get no sound output or XMMS complains that it can't find
-your sound card try this:
+如果还不行或 XMMS 提示说找不到你的声卡，尝试这个办法：
 </p>
         <ul>
-          <li>Make sure you haven't muted sound output in Mac OS X.</li>
-          <li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
-file of a decent size).
-If you hear a short noise, eSound works and XMMS should work too if
-it's configured correctly.
-If you don't hear anything, esd isn't working for some reason.
-You can try to start it up manually with <code>esd &amp;</code> and watch
-the messages.
+          <li>确定你没有在 Mac OS X 中把声音输出设定为静音状态。</li>
+          <li>运行 <code>esdcat /usr/libexec/config.guess</code> （或任意一个有一定长度的文件）。
+如果你能听到一些短的声音，eSound 工作正常，那么如果配置正确的话 XMMS 应该也可以工作。
+如果你听不到任何声音，因为某种原因，esd 没有工作。
+你可以尝试手工启动 <code>esd &amp;</code> 并观察消息的输出。
 </li>
           <li>
-If it still doesn't work, check the permissions on
-<code>/tmp/.esd</code> and <code>/tmp/.esd/socket</code>.
-Those should have your normal user account as the owner.
-If they aren't owned by you, kill esd if it's running, remove the
-directory as root (<code>sudo rm -rf /tmp/.esd</code>), then start esd
-again (as a normal user, not as root).
+如果还不行，检查
+<code>/tmp/.esd</code> 和 <code>/tmp/.esd/socket</code> 文件的权限。
+它们应该是被你的普通用户帐号所拥有。
+如果它们不是由你拥有，杀掉运行中的 esd 进程，用 root 权限删除那些目录（<code>sudo rm -rf /tmp/.esd</code>），然后重新启动 esd
+（作为普通用户，而不是 root）。
 </li>
         </ul>
         <p>
-Note that esd is designed to be run by a normal user, not by root.
-It usually communicates via the file system socket
-<code>/tmp/.esd/socket</code>.
-You only need the <code>-tcp</code> and <code>-port</code> switches if
-you want to run esd clients on another machine over the network.
+注意 esd 是设计为由普通用户运行，而不是 root。
+它通常通过文件系统的套接字
+<code>/tmp/.esd/socket</code>来通信。
+如果你希望在网络上的另一台计算机上运行 esd 客户，你只需要添加 <code>-tcp</code> 和 <code>-port</code> 开关。
 </p>
-        <p>There have also been reports of XMMS crashing or freezing on 10.1. We don't have an analysis or a fix yet.</p>
+        <p>还有一些报告说 XMMS 在 10.1 下会崩溃或挂掉。目前我们还没有分析或修正。</p>
       </answer>
     </faqentry>
     <faqentry name="nedit-window-locks" >
       <question>
-        <p>If I am editing a file in nedit, when I open another file its window pops up but is unresponsive.</p>
+        <p>在我用 nedit 编辑一个文件时，想要打开另外一个文件，但窗口出现了，却没有响应。</p>
       </question>
       <answer>
-        <p>This is a known problem that occurs with recent versions of <filename>nedit</filename> and <filename>lesstif</filename> on all platforms. The workaround is to open a new window with File-->New, then open the next file you want to work on.</p>
-        <p>This is now fixed in <filename>nedit-5.3-6</filename>, which depends on <filename>openmotif3</filename> rather than <filename>lesstif</filename>.</p>
+        <p>这是 <filename>nedit</filename> 和 <filename>lesstif</filename> 的当前版本在所有平台上的已知问题。暂时的办法时用 File-->New 先打开一个窗口，然后打开你需要打开的另一个文件。</p>
+        <p>在 <filename>nedit-5.3-6</filename> 中这个问题得到修正，这个版本依赖于 <filename>openmotif3</filename> 而不是 <filename>lesstif</filename>。</p>
       </answer>
     </faqentry>
     <faqentry name="xdarwin-start" >
       <question>
-        <p>Help! When I start
-XDarwin, it immediately quits!</p>
+        <p>求救！当我启动 XDarwin，它立刻就退出了！</p>
       </question>
       <answer>
         <p>
-Don't Panic.
-The Running X11 document now has an extensive <link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit" >troubleshooting
-section</link> for this common problem.
+不要惊慌。
+现在《运行 X11》文档有专门一部分<link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit" >《故障排除》</link>针对这个常见问题。
 </p>
       </answer>
     </faqentry>
     <faqentry name="no-server" >
       <question>
-        <p>When I try to start XDarwin I get the message &quot;xinit: No such file or directory (errno 2): no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;.</p>
+        <p>当我尝试启动 XDarwin 的时候，我碰到这个错误信息：&quot;xinit: No such file or directory (errno 2): no server &quot;/usr/X11R6/bin/X&quot; in PATH&quot;。</p>
       </question>
       <answer>
-        <p>First, make sure you are sourcing init.sh in your X startup <code>~/.xinitrc</code>.</p>
-        <p>In Jaguar, sometimes all of the <code>xfree86</code> packages get built, but only <code>xfree86-base</code> and <code>xfree86-base-shlibs</code> are installed. Check whether you have <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code> installed. If not, then <code>fink install xfree86-rootless</code> should do the trick.</p>
-        <p>If you do have it installed, then try <code>fink rebuild xfree86-rootless</code>. If that doesn't work, verify that you have <code>/usr/bin/X11R6</code> in your PATH.</p>
+        <p>首先，确定你在你的 X 启动文件 <code>~/.xinitrc</code> 中引用了 init.sh 文件。</p>
+        <p>在 Jaguar 中，有时会构建了所有的 <code>xfree86</code> 软件包，但只有 <code>xfree86-base</code> 和 <code>xfree86-base-shlibs</code> 被安装了。检查时候已经安装了 <code>xfree86-rootless</code> 和 <code>xfree86-rootless-shlibs</code>。如果没有，运行 <code>fink install xfree86-rootless</code> 应该可以解决问题。</p>
+        <p>如果你都安装了它们，那么尝试 <code>fink rebuild xfree86-rootless</code>。如果还不行，检查是否有把 <code>/usr/bin/X11R6</code> 包括在你的 PATH 中。</p>
       </answer>
     </faqentry>
 <!--
@@ -1424,48 +1355,47 @@ sort this out.
 </faqentry>
 -->    <faqentry name="xterm-error" >
       <question>
-        <p>xterm fails with &quot;dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</p>
+        <p>xterm 出现错误：&quot;dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;。</p>
       </question>
       <answer>
-        <p>This is caused by using a 10.1 version of XFree86 on 10.2. You must upgrade to a 10.2 version.</p>
-        <p>If you are using the Fink <code>xfree86</code> packages, then you can get an upgrade by the usual means (&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot; for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot; for installation from binaries.</p>
-        <p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <link url="http://mrcla.com/XonX" >XonX web site</link>.</p>
+        <p>这是因为使用了 10.1 版本的 XFree86 在 10.2 上。你需要升级到一个 10.2 的版本。</p>
+        <p>如果你使用 Fink <code>xfree86</code> 软件包，那么你不能用通常的办法升级（对于从源代码安装：&quot;<code>fink selfupdate-cvs ; fink update-all</code>&quot;；对于从二进制安装：<code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>&quot;）。</p>
+        <p>如果你用其它手段安装了 XFree86，你可以在 <link url="http://mrcla.com/XonX" >XonX 网站</link>上找到更新的补丁。</p>
       </answer>
     </faqentry>
     <faqentry name="libXmuu" >
       <question>
-        <p>When I try to start XFree86 I get one of the following errors: &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib&quot;</p>
+        <p>当我启动 XFree86 时，出现错误：&quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot; or &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib&quot;</p>
       </question>
       <answer>
         <p>
-You are missing a file that is supposed to be installed by <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> if you are using the threaded XFree86 packages) for source, or <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> for binaries.</p>
+你缺少一个应该由 <code>xfree86-base-(threaded)-shlibs</code> 安装的文件。你应该用 <code>fink reinstall xfree86-base-shlibs</code>来从源文件重新安装它（如果你使用线程化的 XFree86 软件包，那么应该是 <code>fink reinstall xfree86-base-threaded-shlibs</code>）或用 <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> 从二进制安装。</p>
       </answer>
     </faqentry>
     <faqentry name="apple-x-bugs" >
       <question>
-        <p>I had Fink's XFree86 installed, and I've replaced it with Apple's X11, and now everything's crashing!</p>
+        <p>我已经安装了 Fink 的 XFree86，然后我把它换成苹果的 X11，现在一切都崩溃了！</p>
       </question>
       <answer>
-        <p>First of all, if you previously had the &quot;threaded&quot; versions of Fink's XFree86 packages installed, you may need to rebuild the application that is crashing. Some programs check for the availability of threading at build time, and then from then on believe that threading is available to them.
+        <p>首先，如果你以前安装了&quot;线程化&quot;的 Fink XFree86 软件包，你需要重新编译崩溃的软件。一些程序在编译的时候检测时候具有线程支持，然后从此以后就假设总是可以使用线程。 </p>
+        <p>第二，也许你碰上苹果的 X11 的一个软件缺陷。在写本文档的时候，已知由几个缺陷正在由苹果团队在修正。
  </p>
-        <p>Secondly, you may have just hit an Apple X11 bug. As of the time of this writing, a number of bugs are known by the Apple team and are being worked on.
- </p>
-        <p>If you have general questions regarding Apple's X11 that are not really related to Fink, you may want to check <link url="http://www.lists.apple.com/x11-users" >Apple's official discussion list on X11</link>. They also have also recommended that bugs in X11 be <link url="http://developer.apple.com/bugreporter" >submitted to the Apple bug reporter</link>.
+        <p>如果你有与 Fink 没有直接联系的苹果 X11 的一般性问题，你可以访问<link url="http://www.lists.apple.com/x11-users" >苹果 X11 官方讨论组</link>。他们还希望把缺陷<link url="http://developer.apple.com/bugreporter" >提交到苹果软件缺陷报告</link>。
  </p>
       </answer>
     </faqentry>
     <faqentry name="apple-x-delete" >
       <question>
-        <p>I want the delete key in Apple's X11.app to behave like that in XDarwin.</p>
+        <p>我希望苹果 X11 里面删除键和 XDarwin 中的作用一样。</p>
       </question>
       <answer>
-        <p>Some users have reported that the behavior of the <code>delete</code> key is different between XDarwin and Apple X11. This can be rectified by adding lines to the appropriate X startup files:</p>
+        <p>有些用户报告说 XDarwin 和苹果 X11 中删除键的行为不一样。这可以通过在恰当的 X 启动文件中添加几行来修正：</p>
         <p>
-          <em>.Xmodmap:</em>
+          <em>.Xmodmap 里面：</em>
         </p>
         <codeblock>keycode 59 = Delete</codeblock>
         <p>
-          <em>.Xresources:</em>
+          <em>.Xresources 里面：</em>
         </p>
         <codeblock>
 xterm*.deleteIsDEL: true
@@ -1473,7 +1403,7 @@ xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?
 </codeblock>
         <p>
-          <em>.xinitrc</em>
+          <em>.xinitrc 里面：</em>
         </p>
         <codeblock>xrdb -load $HOME/.Xresources
 xmodmap $HOME/.Xmodmap</codeblock>
@@ -1482,10 +1412,10 @@ xmodmap $HOME/.Xmodmap</codeblock>
     </faqentry>
     <faqentry name="gnome-two" >
       <question>
-        <p>I upgraded from GNOME 1.x to GNOME 2.x and now <code>gnome-session</code> won't open a window manager.</p>
+        <p>我从 GNOME 1.x 升级到 GNOME 2.x，现在<code>gnome-session</code> 不会打开一个窗口管理器。</p>
       </question>
       <answer>
-        <p>While under GNOME 1.x <code>gnome-session</code> invokes the <code>sawfish</code> window manager automatically, under GNOME 2.x, you'll have to call a window manager in <code>~/.xinitrc</code> before running <code>gnome-session</code>, e.g.:</p>
+        <p>在 GNOME 1.x 下，<code>gnome-session</code> 自动调用 <code>sawfish</code> 窗口管理器；在 GNOME 2.x 下，你要在运行<code>gnome-session</code>之前在 <code>~/.xinitrc</code> 启动窗口管理器：</p>
         <codeblock>...
 exec metacity &amp;
 exec gnome-session</codeblock>
@@ -1493,43 +1423,43 @@ exec gnome-session</codeblock>
     </faqentry>
     <faqentry name="apple-x11-no-windowbar" >
       <question>
-        <p>I upgraded to Apple's X11 in Panther and now my window title bars are missing.</p>
+        <p>我在 Panther 中升级到苹果 X11，现在看不到窗口的标题栏了。</p>
       </question>
       <answer>
-        <p>You didn't upgrade X11 to version &quot;X11 1.0 - XFree86 4.3.0&quot; included with Panther. You can install X11 from X11.pkg on Disk 3.</p>
+        <p>你还没有升级到与 Panther 一起提供的 X11 版本 &quot;X11 1.0 - XFree86 4.3.0&quot;。你可以在第三张光盘的 X11.pkg 安装 X11。</p>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-wants-xfree86" >
       <question>
-        <p>I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</p>
+        <p>我在 Panther 中安装了苹果的 X11，但 Fink 还要我安装 xfree86。</p>
       </question>
       <answer>
-        <p>You need to (re)install the X11SDK, which is on the Xcode CD, and is <em>not</em> installed by default.</p>
-        <p>Even if you install XCode, the X11SDK is <em>not</em> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK</code> pkg in the <code>Packages</code> folder.</p>
-        <p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code>
+        <p>你需要（重）安装 X11SDK，它在 Xcode CD 上，它<em>不会</em>默认安装。</p>
+        <p>即使你安装了 XCode，X11SDK 也<em>不会</em>默认安装。它只能作为 Xcode 的一个定制安装，或者双击 <code>Packages</code> 文件夹里面的 <code>X11SDK</code> pkg 文件进行安装。</p>
+        <p>你可以通过运行 <code>fink-virtual-pkgs</code> 来检查安装情况。确定 <code>Package: system-xfree86</code> 部分存在和 <code>provides:</code> 一行包括 <code>x11</code>。
         </p>
-        <p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p>
+        <p>如果你看不到这些东西都正确安装，最安全的办法是删除所有旧的 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会在第一行看到警告信息，你可以忽略它：</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>Then, reinstall X11 from the third Panther CD and X11SDK from the Xcode CD.</p>
-        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for binary installs if you have <code>fink-0.17.0</code> or later.</p>
+        <p>然后，从 Panther 的第三张 CD 安装 X11，以及从 Xcode CD 中安装 X11SDK 。</p>
+        <p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-beta-wants-xfree86" >
       <question>
-        <p>I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</p>
+        <p>我安装了苹果的 X11 以及 10.2-gcc3.3 版本的 Fink，但 Fink 仍然要求我安装 xfree86。</p>
       </question>
       <answer>
-        <p>You need to (re)install the X11SDK, which you should have downloaded when you downloaded your beta copy of Apple's X11.</p>
-        <p>You can check your install by running <code>fink-virtual-pkgs</code> and checking to see that the <code>Package: system-xfree86</code> section is present and the <code>provides:</code> line contains <code>x11</code>
+        <p>你需要（重）安装 X11SDK，你应该在下载 Beta 版苹果的 X11 的同时下载得到。</p>
+        <p>你可以用 <code>fink-virtual-pkgs</code> 来检查你的安装，你应该查看 <code>Package: system-xfree86</code> 部分在不在，以及 <code>provides:</code> 一行有没有包括 <code>x11</code>。
         </p>
-        <p>If you don't see everything properly installed, the safest way to fix this error is to remove all older copies of xfree86 or system-xfree86 and reinstall Apple's X11 and the X11SDK. You may see warnings from the first line, which you can ignore:</p>
+        <p>如果你没有看到全部东西都正确安装，最安全的修复这个错误的办法是删除全部 xfree86 或 system-xfree86，并重新安装苹果的 X11 和 X11SDK。你也许会看到第一行产生警告信息，你可以忽略它：</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 /Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>Then, reinstall X11 and the X11SDK.</p>
-        <p>Note:  <code>system-xfree86</code> no longer requires the X11SDK for binary installs if you have <code>fink-0.17.0</code> or later.</p>
+        <p>然后，重新安装 X11 和 X11SDK。</p>
+        <p>注意：如果你使用 <code>fink-0.17.0</code> 或更新版本，对二进制安装，<code>system-xfree86</code> 不在需要 X11SDK。</p>
       </answer>
     </faqentry>
   </chapter>

@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_date = '$Date: 2004/03/03 05:20:03 $';
 
 include "header.inc";
 ?>
@@ -38,7 +38,7 @@ Fink 是一个把 Unix 上各种
 <h2>为什么使用 Fink？</h2>
 
 <p>
-有五个利用你应该使用 Fink 来安装 Unix 软件到你的 Mac上：
+有五个理由你应该使用 Fink 来安装 Unix 软件到你的 Mac上：
 </p>
 
 <p>
