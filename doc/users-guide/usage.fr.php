@@ -20,17 +20,21 @@ include_once "header.fr.inc";
 <p>Ce sont des options qui s'appliquent à toutes les commandes fink. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
 <pre>
 -h, --help
- - affiche ce message d'aide
+    affiche ce message d'aide
 -q, --quiet
- - diminue le niveau de verbosité de fink, effet contraire à celui de --verbose
+    diminue le niveau de verbosité de fink, 
+    effet contraire à celui de --verbose
 -V, --version
- - affiche les informations de version
+    affiche les informations de version
 -v, --verbose
- - augmente le niveau de verbosité de fink, effet contraire à celui de --quiet
+    augmente le niveau de verbosité de fink, 
+    effet contraire à celui de --quiet
 -y, --yes
- - applique la réponse par défaut à toutes les questions interactives
+    applique la réponse par défaut à toutes 
+    les questions interactives
 -b, --use-binary-dist 
- - télécharge les paquets pré-compilés de la distribution binaire s'ils sont disponibles
+    télécharge les paquets pré-compilés de la 
+    distribution binaire s'ils sont disponibles
 </pre>
 <p>La plupart de ces options ne nécessite pas d'explication supplémentaire. Elles peuvent être configurées dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
 <p>L'option <code>--use-binary-dist</code> force <code>fink</code> à télécharger les paquets binaires à partir de la distribution binaire, s'ils sont disponibles et qu'ils ne sont pas déjà sur votre système. Disponible à partir de la version 0.23.0 de <code>fink</code>.</p>
@@ -76,37 +80,41 @@ Do you want to continue? [Y/n]</pre>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <pre>
 -h,--help
-  Affiche les options disponibles. 
+    Affiche les options disponibles. 
 -t,--tab
-  Affiche la liste en séparant les divers éléments d'une ligne par une tabulation,
-  utile en cas d'utilisation à l'intérieur d'un script. 
+    Affiche la liste en séparant les divers éléments 
+    d'une ligne par une tabulation,
+    utile en cas d'utilisation à l'intérieur d'un script. 
 -i,--installed
-  N'affiche que les paquets installés. 
+    N'affiche que les paquets installés. 
 -o,--outdated
-  N'affiche que les paquets obsolètes. 
+    N'affiche que les paquets obsolètes. 
 -u,--uptodate
-  N'affiche que les paquets à jour. 
+    N'affiche que les paquets à jour. 
 -n,--notinstalled
-  Affiche les paquets qui ne sont pas installés. 
+    Affiche les paquets qui ne sont pas installés. 
 -s=expr,--section=expr
-  Affiche les paquets dans les sections correspondant à l'expression régulière
-  fournie. 
+    Affiche les paquets dans les sections correspondant 
+    à l'expression régulière fournie. 
 -w=xyz,--width=xyz
-  Fixe la largeur de l'affichage. xyz est soit une valeur numérique, soit auto. 
-  auto correspond à la largeur du terminal. 
-  La valeur par défaut est auto.</pre>
+    Fixe la largeur de l'affichage. xyz est soit une 
+    valeur numérique, soit auto. 
+    auto correspond à la largeur du terminal. 
+    La valeur par défaut est auto.</pre>
 <p>Quelques exemples d'utilisation :</p>
 <pre>
 fink list
- - affiche tous les paquets
+    affiche tous les paquets
 fink list bash
- - vérifie si bash est installé et affiche la version installée
+    vérifie si bash est installé et affiche la 
+    version installée
 fink list --outdated
- - affiche les paquets obsolètes
+    affiche les paquets obsolètes
 fink list --section=kde 
- - affiche les paquets de la section kde
+    affiche les paquets de la section kde
 fink list "gnome*"
- - affiche tous les paquets dont le nom commence par 'gnome'
+    affiche tous les paquets dont le nom 
+    commence par 'gnome'
 </pre>
 <p>Dans le dernier exemple, les guillemets sont nécessaires pour empêcher le shell d'interpréter le modèle lui-même.</p>
 
@@ -115,9 +123,11 @@ fink list "gnome*"
 <p>Cette commande est presque identique à la commande <code>fink list</code>. La différence la plus notable est que <code>fink apropos</code> recherche aussi dans les fichiers de descriptions de paquets pour trouver les paquets. La seconde différence est que la chaîne de recherche n'est pas optionnelle, elle doit être fournie.</p>
 <pre>
 fink apropos irc
- - affiche tous les paquets où 'irc' apparaît soit dans le nom, soit dans la description
+    affiche tous les paquets où 'irc' apparaît 
+    soit dans le nom, soit dans la description
 fink apropos -s=kde irc
- - identique au précèdent, mais restreint aux paquets de la section kde
+    identique au précèdent, mais restreint aux 
+    paquets de la section kde
 </pre>
 
 <h2><a name="describe">6.9 describe - description</a></h2>
@@ -184,17 +194,17 @@ fink apropos -s=kde irc
 <p>Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet. Les <b>options</b> suivantes permettent de moduler l'affichage des champs et l'interprétation des raccourcis :</p>
 <pre>
 -h, --help           
- - Affiche les options disponibles. 
+    Affiche les options disponibles. 
 -a, --all
- - Affiche tous les champs de description du paquet.
- C'est le mode par défaut quand aucune option 
- --field ou --percent n'est utilisée. 
+    Affiche tous les champs de description du paquet.
+    C'est le mode par défaut quand aucune option 
+    --field ou --percent n'est utilisée. 
 -f nomchamp, --field=nomchamp
- - Affiche le contenu des champs indiqués
- dans leur ordre d'apparition après l'option -f. 
+    Affiche le contenu des champs indiqués
+    dans leur ordre d'apparition après l'option -f. 
 -p clé, --percent=clé
- - Affiche l'interprétation des clés fournies
- dans leur ordre d'apparition après l'option -p.</pre>
+    Affiche l'interprétation des clés fournies
+    dans leur ordre d'apparition après l'option -p.</pre>
 
 
 

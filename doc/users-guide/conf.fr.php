@@ -123,7 +123,8 @@ La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><b>UseBinaryDist:</b> booléen</p>
-<p>Force fink à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'<a href="usage.php?phpLang=fr">option --use-binary-dist</a> avec fink a le même effet, mais est restreint à cette invocation de fink. <b>Disponible à partir de la versin 0.23.0 de fink</b>.</p>
+<p>Force <code>fink</code> à télécharger les paquets binaires pré-compilés à partir de la distribution binaire, s'ils sont disponibles et si les-dits paquets ne sont pas déjà installés sur votre système. Ceci permet de gagner beaucoup de temps à l'installation. Nous vous recommandons donc d'utiliser cette option. Le fait d'utiliser l'option <a href="usage.php?phpLang=fr">--use-binary-dist</a> avec <code>fink</code> (ou le drapeau <code>-b</code>) a le même effet, mais est restreint à cette invocation de <code>fink</code>. L'utilisation du drapeau <code>--no-use-binary-dist</code> avec <code>fink</code> a l'effet inverse et est, de même, restreint à cette invocation de <code>fink</code>. <b>Disponible à partir de la version 0.23.0 de fink</b>.</p>
+<p>Notez que, dans ce mode, <code>fink</code> télécharge la version requise d'un paquet, si elle est disponible, mais ne force pas <code>fink</code> à choisir la version en fonction de sa disponibilité binaire.</p>
 </li>
 </ul>
 
@@ -186,52 +187,68 @@ La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <
 <p><b>CCacheDir:</b> path</p>
 <p>Si le paquet ccache-default est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <code>/sw/var/ccache</code>. Quand la valeur du champ est <code>none</code>, fink ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <code>$HOME/.ccache</code>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire  utilisateur. <b>Introduit dans une version de fink postérieure à la version 0.21.0</b>. </p>
 </li>
+<li>
+<p><b>NotifyPlugin:</b> plugin</p>
+<p>Indique un plugin de notification pour savoir quand des paquets sont installés ou désinstallés. Le plugin par défaut est Growl (nécessite <code>Mac::Growl</code> pour fonctionner). Vous trouverez d'autres plugins dans le répertoire <code>/sw/lib/perl5/Fink/Notify</code>.
+</p>
+</li>
 </ul>
 
 <h2><a name="sourceslist">5.9 Gestion du fichier sources.list d'apt</a></h2>
 
 <p>À partir de la version 0.21.0, fink gère activement le fichier <code>/sw/etc/apt/sources.list</code>, qui est utilisé par apt pour trouver l'emplacement des fichiers binaires à installer. Le fichier sources.list par "défaut" possède un contenu similaire à celui indiqué ci-dessous. Son contenu prend en compte la distribution et les branches dont vous vous servez.</p>
-<pre># Local modifications should either go above this line, or at the end. #
-# Default APT sources configuration for Fink, written by the fink program
+<pre># Local modifications should either go above this line, 
+# or at the end. #
+# Default APT sources configuration for Fink, written by the fink 
+# program
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
 # /sw/etc/fink.conf
-# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+# NOTE: run 'fink scanpackages' to update the corresponding 
+# Packages.gz files
 deb file:/sw/fink local main
 deb file:/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
-deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release \
+main crypto
 
 # Official binary distribution: download location for updated
 # packages built between releases
-deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current \
+main crypto
 
 # Put local modifications to this file below this line, or at the top. </pre>
 <p>Pour la bonne compréhension du fonctionnement de ce fichier, voici la traduction en français :</p>
 <pre>
-# Les modifications locales doivent se faire soit au-dessus de cette ligne,
-# soit tout-à-fait à la fin du fichier. #
-# Configuration par défaut des sources APT pour Fink, générée par le programme fink 
+# Les modifications locales doivent se faire soit au-dessus de 
+# cette ligne, soit tout-à-fait à la fin du fichier. #
+# Configuration par défaut des sources APT pour Fink, générée par le 
+# programme fink 
 
-# Arborescence locale des paquets - paquets construits localement à partir des sources
+# Arborescence locale des paquets - paquets construits localement 
+# à partir des sources
 # NOTE : automatiquement synchronisée avec la ligne Trees du fichier
 # /sw/etc/fink.conf
-# NOTE : exécutez 'fink scanpackages' pour mettre à jour les fichiers Packages.gz correspondants
+# NOTE : exécutez 'fink scanpackages' pour mettre à jour les fichiers 
+# Packages.gz correspondants
 deb file:/sw/fink local main
 deb file:/sw/fink stable main crypto
 
-# Distribution binaire officielle : adresse de téléchargement des paquets
-# à partir de la dernière version
-deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+# Distribution binaire officielle : adresse de téléchargement des 
+# paquets à partir de la dernière version
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release \
+main crypto
 
-# Distribution binaire officielle : adresse de téléchargement des paquets
-# mis à jour entre deux versions
-deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+# Distribution binaire officielle : adresse de téléchargement des 
+# paquets mis à jour entre deux versions
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current \
+main crypto
 
-# Faites vos modifications en-dessous de cette ligne ou tout-à-fait au début du fichier. </pre>
+# Faites vos modifications en-dessous de cette ligne ou tout-à-fait 
+# au début du fichier. </pre>
 <p>Avec ce fichier par défaut, apt-get cherche d'abord dans votre installation locale les binaires déjà compilés, puis recherche les autres dans la distribution binaire officielle. Vous pouvez modifier l'ordre de recherche en ajoutant des lignes en début de fichier (ce seront elles qui seront les plus prioritaires) ou à la fin du fichier (elles seront les moins prioritaires).</p>
 <p>Si vous changez la ligne Trees ou la distribution que vous utilisez, fink modifie automatiquement la partie "par défaut" (similaire à celle ci-dessus) du fichier pour qu'elle corresponde aux nouvelles valeurs. Néanmoins Fink préserve toutes les modifications locales apportées au fichier, à condition que les changements soient situés au début (au-dessus de la première ligne par "défaut" ou à la fin du fichier (en dessous de la dernière ligne par défaut).</p>
 <p>Note : si vous avez modifié <code>/sw/etc/apt/sources.list</code> avant de passer à la version 0.21.0 de fink, votre ancien fichier sources.list sera sauvegardé sous <code>/sw/etc/apt/sources.list.finkbak</code> .</p>
