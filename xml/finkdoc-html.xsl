@@ -51,6 +51,8 @@
 
 <xsl:apply-templates select="chapter" />
 
+<xsl:call-template name="copyright" />
+
 <xsl:apply-templates select="cvsid" />
 
 </body></html>
@@ -78,6 +80,8 @@
 <xsl:apply-templates select="preface" />
 
 <xsl:apply-templates select="section" />
+
+<xsl:call-template name="copyright" />
 
 <xsl:apply-templates select="cvsid" />
 
@@ -180,6 +184,8 @@
 </xsl:template>
 
 <xsl:template match="cvsid">
+<xsl:text>
+</xsl:text>
 <p><hr/><xsl:text>Generated from </xsl:text><i><xsl:apply-templates/></i></p>
 </xsl:template>
 
@@ -215,6 +221,18 @@
 
 <xsl:template name="plain">
 <xsl:apply-templates/>
+</xsl:template>
+
+
+<xsl:template name="copyright">
+<xsl:text>
+</xsl:text>
+<h2>Copyright Notice</h2>
+<p><xsl:text>Copyright (c) 2001 Christoph Pfisterer.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</xsl:text></p>
 </xsl:template>
 
 
