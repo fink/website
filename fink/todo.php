@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/18 16:43:57 $';
+$cvs_date = '$Date: 2001/03/15 22:35:46 $';
 
 include "header.inc";
 ?>
@@ -17,7 +17,6 @@ could become future features):</p>
 versions</li>
 <li>Binary packages</li>
 <li>Infrastructure for daemons and cron jobs</li>
-<li>Bundle packages (i.e. install all on GNOME with one command)</li>
 <li>Pseudo-packages for software that is already installed on the host
 system</li>
 <li>Optimization: make sure all binaries are stripped and at least
@@ -34,8 +33,7 @@ information and patches stuff (i.e. the data)</li>
 
 <ul>
 <li>sawfish (turned out to be a bit difficult)</li>
-<li>enlightenment</li>
-<li>openssl, openssh</li>
+<li>possibly KDE</li>
 </ul>
 
 

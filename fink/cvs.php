@@ -1,7 +1,7 @@
 <?
 $title = "Setting up Fink CVS access";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/21 09:22:47 $';
+$cvs_date = '$Date: 2001/03/15 22:35:46 $';
 
 include "header.inc";
 ?>
@@ -39,7 +39,7 @@ to bring all packages up to the newest revision.</p>
 <p>To update such an installation with the newest stuff, go to the
 /sw/fink directory (or equivalent) and execute
 <pre>  cvs -z3 update -d</pre>
-Then, proceed as usual (e.g. update-all).</p>
+Then, proceed as usual (e.g. fink update-all).</p>
 
 
 <?
