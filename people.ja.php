@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/06 01:47:40 $';
+$cvs_date = '$Date: 2004/03/08 03:33:13 $';
 
 include "header.inc";
 ?>
@@ -43,7 +43,7 @@ Fink プロジェクトはボランティアによって成り立っています
 
 <h2>企画広報</h2>
 <ul>
-<li>David H&#246;hn aka. Darian Lanx (<i>dmalloc</i>)</li>
+<li>David H&#246;hn 別名 Darian Lanx (<i>dmalloc</i>)</li>
 </ul>
 
 <h2>貢献者</h2>
@@ -76,7 +76,7 @@ Fink プロジェクトはボランティアによって成り立っています
 
 <h2>サポート、翻訳、ドキュメンテーションチーム</h2>
 <ul>
-<li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
+<li>馬場 美彦 (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
 </ul>
