@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.69 2004/03/01 10:51:12 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.70 2004/03/02 10:34:48 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -257,7 +257,7 @@ function insert_sub ($navbox, $active_page) {
 <? /* navigation column table */ ?>
 
 <? /* sections */ ?>
-	<dt class="yellowboarder" style="padding: 4px 0px; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dd>
+	<dt class="yellowboarder" style="padding: 4px 0px; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dt>
 	
 <? foreach ($section_files as $key => $filename) {
 		$toc_sections_class = 'toc_sections';
@@ -268,12 +268,9 @@ function insert_sub ($navbox, $active_page) {
 <?
 			} else {
 ?>
-		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a>
+		<dd class="menu_item"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
 <?
 				if ($section == $key && $nonav != 1) insert_sub ($navbox, $active_page);
-?>
-		</dd>
-<?
 			}
 		} else {
 ?>
