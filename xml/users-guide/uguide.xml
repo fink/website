@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<document filename="index">
+<title>Fink User's Guide</title>
+<shorttitle>User's Guide</shorttitle>
+<cvsid>$Id: uguide.xml,v 1.1 2001/09/18 16:52:28 chrisp Exp $</cvsid>
+
+<preface>
+<p>
+This will one day become a comprehensive user's guide to Fink.
+Most sections are targeted at users with previous Unix command line
+experience.
+</p>
+<p>
+This guide covers first time installation and upgrade procedures for
+both the source and the binary distribution.
+Package installation and maintenance is covered as well.
+</p>
+</preface>
+
+
+<chapter filename="intro">
+<title>Introduction</title>
+<shorttitle>Introduction</shorttitle>
+
+<section name="what"><title>What is Fink?</title>
+<p>
+</p>
+</section>
+
+<section name="req"><title>Requirements</title>
+<p>
+You need:
+</p>
+<ul>
+<li><p>
+An installed Mac OS X system, version 10.0 or later, or equivalent
+Darwin releases.
+Earlier versions of both will <em>not</em> work.
+See below for more information about supported systems.
+</p></li>
+<li><p>
+Development tools.
+On Mac OS X, install the Developer.pkg package from the Developer
+Tools CD.
+On Darwin, the tools should be present in the default install.
+Note that while the tools are usually not needed in a binary
+</p></li>
+<li><p>
+Many other things that come with Mac OS X and the Developer Tools.
+This includes perl 5.6 and either wget or curl.
+</p></li>
+<li><p>
+Internet access.
+All source code is downloaded from mirror sites.
+</p></li>
+<li><p>
+Patience.
+Compiling several big packages takes time.
+I'm talking hours or even days here.
+</p></li>
+</ul>
+</section>
+
+
+<!--
+(There may still be some stray linker-related problems with 10.1.)
+Darwin 1.3.1 should also work, but this has not been tested.
+-->
+
+
+</chapter>
+
+
+</document>
