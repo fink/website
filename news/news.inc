@@ -1,7 +1,10 @@
 <span class="news_date">2002-12-09: </span><span class="news_headline">Fink 0.5.0a Released</span><?php gray_line(); ?>
   <p>
-    Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final release) This release includes over 700
-    binary packages for OS X 10.2 as well as over 1800 source packages of all kinds.
+    Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
+    release, and replaces 0.5.0 which was never officially released.) This
+    release includes over 700 
+    binary packages for OS X 10.2 as well as over 1800 source packages of
+    all kinds. 
   </p>
   <p>
       The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the <a href="<?php print $root; ?>download/upgrade.php">Upgrade Matrix</a>. 
