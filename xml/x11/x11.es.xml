@@ -2,11 +2,11 @@
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 <document filename="index" lang="es">
   <title>Ejecutando X11 en Darwin y Mac OS X</title>
-  <shorttitle>Ejecutando X11</shorttitle>
-  <cvsid>$Id: x11.es.xml,v 1.1 2004/10/25 10:15:38 michga Exp $</cvsid>
+  <shorttitle>Ejecución de X11</shorttitle>
+  <cvsid>$Id: x11.es.xml,v 1.2 2004/10/27 12:42:57 zifra Exp $</cvsid>
   <preface>
     <p>
-Este documento es sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
+Este documento trata sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
 Mac OS X y Darwin de Apple.
 Proporciona una introducción y una historia del desarrollo y, a partir de ahí, 
 describe el estado actual del arte y las múltiples elecciones disponibles para 
@@ -14,12 +14,12 @@ utilizar X11 con/sin  Fink.
 </p>
   </preface>
   <chapter filename="intro">
-    <title>Introduction</title>
+    <title>Introducción</title>
     <shorttitle>Intro</shorttitle>
     <section name="def-x11">
       <title>¿Qué es X11?</title>
       <p>
-<link url="http://www.x.org/">X Window System</link> Versión 11
+        <link url="http://www.x.org/">X Window System</link> Versión 11
 o, más brevemente, X11 es un sistema de visualización de gráficos (graphics 
 display system) con una arquitectura cliente-servidor trasparente a la red.
 Permite a la aplicaciones dibujar píxeles, líneas, texto, imágenes, etc. en
@@ -29,7 +29,7 @@ dibujar interfaces de usuario (botones, campos de texto y similares)
 </p>
       <p>
 X11 es el sistema gráfico estándar de facto en el mundo Unix.
-Acompaña a Linux, a los *BSDs y a muchos sabores comerciales de Unix.
+Acompaña a Linux, a los *BSD y a muchos sabores comerciales de Unix.
 Los entornos de escritorio CDE, KDE y GNOME se ejecutan sobre él.
 </p>
     </section>
@@ -258,10 +258,10 @@ distribución principal de XFree86.
     </section>
   </chapter>
   <chapter filename="inst-xfree86">
-    <title>Obteniendo e instalando XFree86</title>
-    <shorttitle>Instalando XFree86</shorttitle>
+    <title>Cómo obtener e instalar XFree86</title>
+    <shorttitle>Instalación de XFree86</shorttitle>
     <section name="fink">
-      <title>Instalando a través de Fink</title>
+      <title>Instalación desde Fink</title>
       <p>
 Fink te permite instalar X11 como quieras 
 y además proporciona los paquetes XFree86. Si
@@ -329,10 +329,11 @@ Fink.</p>
       <p>Bajo <code>fink-0.16.2</code> es necesario instalar el paquete 
 <em>X11 SDK</em> también.  Después de hacer esto, Fink puede crear
 un paquete virtual <code>system-xfree86</code>.</p>
-      <p>Bajo <code>fink-0.17.0</code> instalar X11 SDK solo es necesario si necesitas construir paquetes desde el código fuente.  
+      <p>Bajo <code>fink-0.17.0</code> instalar X11 SDK solo es necesario 
+      si necesitas construir paquetes desde el código fuente.  
 En ese caso, incluso si no se posee el SDK hay paquetes virtuales
 <code>system-xfree86</code> y <code>system-xfree86-shlibs</code>, representando 
-este último a las librerías compartidas. Si instalas el SDK, existe un paquete
+este último a las bibliotecas compartidas. Si instalas el SDK, existe un paquete
 <code>system-xfree86-dev</code> representando a las cabeceras.
 </p>
       <p>
@@ -348,7 +349,8 @@ Algunas notas de uso del X11 de Apple:
 </p>
       <ul>
         <li>
-          <p>El paquete <filename>autocutsel</filename> no se usa ya. Si estás arrancando X11 con él habilitado, debes deshabilitarlo.</p>
+          <p>El paquete <filename>autocutsel</filename> no se usa ya. Si estás 
+          arrancando X11 con él habilitado, debes deshabilitarlo.</p>
         </li>
         <li>
           <p>X11 usa tu fichero <filename>~/.xinitrc</filename> existente.  Si
@@ -384,7 +386,8 @@ ningún programa):</p>
 </codeblock>
           <p>para inicializar el entorno de Fink.  
 Nota:  Se usa <filename>init.sh</filename> en lugar de 
-<filename>init.csh</filename> porque <filename>.xinitrc</filename> se ejecuta por <filename>sh</filename> y no por <filename>tcsh</filename>.</p>
+<filename>init.csh</filename> porque <filename>.xinitrc</filename> se ejecuta 
+por <filename>sh</filename> y no por <filename>tcsh</filename>.</p>
         </li>
         <li>
           <p>Las aplicaciones que llaman a otros programas situados en el árbol 
@@ -392,10 +395,10 @@ de Fink para algunas de sus funciones requieren un tratamiento
 especial cuando son invocadas desde el menú Aplicaciones.  En lugar de colocar la 
 ruta completa hasta el fichero, p.e.</p>
           <codeblock>/sw/bin/emacs</codeblock>
-          <p>hay que usar algo como lo siguiente, si se está usando bash 
+          <p>hay que usar algo como lo siguiente, si usas bash 
 como shell por defecto:</p>
           <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
-          <p>o, si se está usando tcsh:</p>
+          <p>o, si usas tcsh:</p>
           <codeblock>source /sw/bin/init.csh ; emacs</codeblock>
           <p>Así nos aseguramos que la aplicación tiene la información correcta
 en PATH. Se debe usar esta sintaxis para cualquier aplicación instalada vía Fink.</p>
@@ -406,12 +409,15 @@ Apple y obtienes un fallo como éste:</p>
           <codeblock>ld: err.o illegal reference to symbol: _XSetIOErrorHandler 
 defined in indirectly referenced dynamic library 
 /usr/X11R6/lib/libX11.6.dylib</codeblock>
-          <p>entonces necesitas asegurarte de que <code>-lX11</code> se ha usado durante el enlazado (linking).  Comprueba las opciones de 
+          <p>entonces necesitas asegurarte de que <code>-lX11</code> se ha usado 
+          durante el enlazado (linking).  Comprueba las opciones de 
  configuración de tu paquete para ver como incluir el argumento extra.</p>
         </li>
         <li>
-          <p>Si usas el paquete <code>xfree86</code> package, y después cambias al X11 de  Apple's X11 (en 10.2.x o en 10.3.x), cualquier paquete construido a 
-través de  <code>xfree86</code> deberá ser reconstruido, pues los binarios son incompatibles.</p>
+          <p>Si usas el paquete <code>xfree86</code>, y después cambias 
+          al X11 de  Apple (en 10.2.x o en 10.3.x), cualquier paquete 
+          construido a través de  <code>xfree86</code> deberá ser reconstruido, 
+          pues los binarios son incompatibles.</p>
         </li>
       </ul>
     </section>
@@ -420,7 +426,8 @@ través de  <code>xfree86</code> deberá ser reconstruido, pues los binarios son
       <p>
 El proyecto XFree86 tiene una distribución binaria oficial de XFree86
 4.2.0, la cual puede ser actualizada a  4.2.1.1 mediante parches.
-La puedes enciontrar en tu    <link url="http://www.xfree86.org/MIRRORS.shtml">réplica de XFree86</link> 
+La puedes enciontrar en tu    
+<link url="http://www.xfree86.org/MIRRORS.shtml">réplica de XFree86</link> 
 favorita, en el directorio <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
 Asegúrate de obtener <filename>Xprog.tgz</filename> y 
  <filename>Xquartz.tgz</filename>
@@ -434,15 +441,22 @@ instalar el material descargado.
 oficiales</link> antes de la instalación).   
 Si lo prefieres, puedes usar los  
 <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">
-binarios</link> de XonX, que provienen del mismo código fuente, pero son más fáciles de usar.  En cualquier caso descarga, descomprime y ejecuta las siguientes actualizaciones:</p>
+binarios</link> de XonX, que provienen del mismo código fuente, 
+pero son más fáciles de usar.  En cualquier caso descarga, descomprime y ejecuta las siguientes actualizaciones:</p>
       <ol>
-        <li>Usuarios 10.1: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>.  Usuarios 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>
+        <li>Usuarios 10.1: 
+        <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>.  
+        Usuarios 10.2:  
+        <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>
         </li>
-        <li>Usuarios de 10.1 y 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</link>
+        <li>Usuarios de 10.1 y 10.2:  
+        <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</link>
         </li>
       </ol>
       <p>También hay una distribución oficial binaria de la versión 4.3.0 
-en las <link url="http://www.xfree86.org/MIRRORS.shtml">réplicas de XFree86 </link> en el directorio <code>4.3.0/binaries/Darwin-ppc-6.x</code>.
+en las <link url="http://www.xfree86.org/MIRRORS.shtml">réplicas 
+de XFree86 </link> en el directorio 
+<code>4.3.0/binaries/Darwin-ppc-6.x</code>.
 Asegúrate de obetener <filename>Xprog.tgz</filename> y 
  <filename>Xquartz.tgz</filename>
 aunque estén marcados como optativos.
@@ -487,17 +501,17 @@ con los siguientes comandos:
 </p>
       <codeblock>make World
 sudo make install install.man</codeblock>
-      <p>Para actualizar  4.2.1.1, sigue las instrucciones en <xref section="official-binary">Binarios oficiales</xref> section.</p>
+      <p>Para actualizar  4.2.1.1, sigue las instrucciones 
+      en <xref section="official-binary">Binarios oficiales</xref> section.</p>
       <p>Para instalar 4.3.0, sigue las instrucciones anteriores, 
 reemplazando "2" por "3" y no actualices a 4.2.1.1.</p>
       <p>
 Como con los binarios oficiales, ya dispones de XFree86
 con un servidor a pantalla completa o rootless ejecutable bajo Mac OS X.
-.
 </p>
     </section>
     <section name="latest-cvs">
-      <title>Versión para desarrolladores: lo último</title>
+      <title>Versión para desarrolladores: lo último de lo último</title>
       <p>
 Si además de tiempo tienes nervios de sobra puedes obtener 
 la última versión de desarrollo de XFree86 del repositorio CVS
@@ -526,7 +540,7 @@ put out binary test releases, this time under the name XDarwin.
 Este eventually resulted in the XDarwin released with 4.2.0.
 </p>
 <p>The <link url="http://www.mrcla.com/XonX/" >XonX
-web page</link> indicates that post-4.2.0 testing versions of XDarwin may
+web page</link> indicates that post-4.2.0 te/Users/joserasting versions of XDarwin may
 someday be released, but none have been as yet.  They would presumably be 
 installed on top of XFree86 4.2.0 (or later).
 </p>
@@ -536,7 +550,8 @@ installed on top of XFree86 4.2.0 (or later).
       <p>
 El instalador descargable ofrecido por el personal de MacGimp  
 durante 2001
-no contiene XFree86, pero puede sobreescribir algunas ficheros de configuración de XFree86.
+no contiene XFree86, pero puede sobreescribir algunas ficheros 
+]de configuración de XFree86.
 </p>
       <p>
 El CD que <link url="http://www.macgimp.com/">MacGimp, Inc.</link>
@@ -556,7 +571,7 @@ this should not be a desirable way to install XFree86.
 </p>
 </section><-->
     <section name="switching-x11">
-      <title>Reemplazando X11</title>
+      <title>Cómo reemplazar X11</title>
       <p>
 Si has  instalado alguno de los paquetes X11 de Fink y, por alguna razón 
 u otra has decidido que necesitas eliminarlo, el procedimiento a seguir 
@@ -669,7 +684,7 @@ CVS</itemt>
     </section>
   </chapter>
   <chapter filename="run-xfree86">
-    <title>Arrancando XFree86</title>
+    <title>El arranque de XFree86</title>
     <shorttitle>Arrancando XFree86</shorttitle>
     <section name="darwin">
       <title>Darwin</title>
@@ -851,7 +866,7 @@ bajo X11 de Apple:</p>
     <title>Xtools</title>
     <shorttitle>Xtools</shorttitle>
     <section name="install">
-      <title>Instalando Xtools</title>
+      <title>Instalación de Xtools</title>
       <p>
 Para variar, es fácil. Obtén el instalador, haz doble clic y sigue 
 las instrucciones. Asegúrate de seleccionar el volumen de arranque 
@@ -866,7 +881,7 @@ actua como un paquete fantasma en el sistema de  dependencias de Fink.
 </p>
     </section>
     <section name="run">
-      <title>Ejecutando Xtools</title>
+      <title>Ejecución de Xtools</title>
       <p>
 Para ejecutar Xtools, doble clic en Xtools.app en tu carpeta Aplicaciones. 
 Como XFree86, Xtools ejecutará los clientes que especifiques en tu fichero
@@ -925,7 +940,7 @@ Si tienes más información, por favor acércanosla.
     </section>
   </chapter>
   <chapter filename="trouble">
-    <title>Resolviendo problemas con XFree86</title>
+    <title>Resolución de problemas con XFree86</title>
     <shorttitle>Resolviendo problemas</shorttitle>
     <section name="immedate-quit">
       <title>Cuando lanzo XDarwin, termina o se cuelga inmediatamente.</title>
@@ -1002,7 +1017,7 @@ ejecutando <code>touch .Xauthority</code> en tu directorio raíz.
       <codeblock>Gdk-WARNING **: locale not supported by C library</codeblock>
       <p>
 Tipo: Inofensivo.
-Significa justo lo que dice: el sistema locale no es osportado por la librería C, 
+Significa justo lo que dice: el sistema locale no es soportado por la biblioteca C, 
 pero no impide trabajar a la aplicación.
 Para más información, <xref section="locale">ver más adelante</xref>.
 </p>
@@ -1120,7 +1135,7 @@ Cannot establish any listening sockets - Make sure an X server isn't already
 running</codeblock>
       <p>
 Tipo: Fatal.
-Puede suceder si ejecutas accidentalemente varias instancias de 
+Puede suceder si ejecutas accidentalmente varias instancias de 
 XDarwin a la vez o después de un cierre sucio (i.e. crash) de XDarwin.
 También puede ser debido a un problema de permisos de ficheros con los 
 sockets de las conexiones locale.
@@ -1270,7 +1285,7 @@ tecla de borrar adecuadamente.
       <p>
 Mensajes comunes, pero inofensivos. Significan lo que dicen: 
 la internacionalización no está soportada a través de las 
-librerías C estándares, el progrma usará los mensajes en inglés
+bibliotecas C estándares, el programa usará los mensajes en inglés
 por defecto, formatos de fecha y así sucesivamente...
 Hay varias formas de comportarse con respecto a ésto:
 </p>
@@ -1307,7 +1322,7 @@ o <code>de_DE</code>.
         </li>
         <li>
           <p>
-Pídele a Apple que incluya soporte real para locale en las futuras versines de 
+Pídele a Apple que incluya soporte real para locale en las futuras versiones de 
 Mac OS X.
 </p>
         </li>
@@ -1327,12 +1342,14 @@ el servidor de ventanas X11.
 Si XDarwin se ejecuta en la misma máquina que el servidor, puedes hacerlo de las maneras siguientes:
 </p>
       <ul>
-        <li><p>Usuarios tcsh:</p>
-      <codeblock>setenv DISPLAY :0.0</codeblock>
-</li>
-        <li><p>Usuarios bash:</p>
-<codeblock>export DISPLAY=":0.0"</codeblock>
-</li>
+        <li>
+          <p>Usuarios tcsh:</p>
+          <codeblock>setenv DISPLAY :0.0</codeblock>
+        </li>
+        <li>
+          <p>Usuarios bash:</p>
+          <codeblock>export DISPLAY=":0.0"</codeblock>
+        </li>
       </ul>
       <p>
 Es interesante tener una configuración que lance XDarwin.app en el arranque 
@@ -1340,15 +1357,17 @@ Es interesante tener una configuración que lance XDarwin.app en el arranque
 en Mac OS 10.2, o en el panel Cuentas en Mac OS 10.3):
 </p>
       <ul>
-        <li><p>Los usuarios tcshañadirán a su fichero .cshrc:</p>
-      <codeblock>if (! $?DISPLAY) then
+        <li>
+          <p>Los usuarios tcshañadirán a su fichero .cshrc:</p>
+          <codeblock>if (! $?DISPLAY) then
   setenv DISPLAY :0.0
 endif</codeblock>
-</li>
-        <li><p>Los usuarios de bash añadirán esta línea 
+        </li>
+        <li>
+          <p>Los usuarios de bash añadirán esta línea 
 en su fichero .bashrc:</p>
-<codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
-</li>
+          <codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
+        </li>
       </ul>
       <p>
 Esto inicia  DISPLAY automáticamente en cada shell, pero no sobreescribe el valor actual cuando DISPLAY ha sido inicializado previamente.
@@ -1356,7 +1375,7 @@ De esa manera, se puede seguir ejecutando aplicaciones X11 a distancia mediante 
 </p>
     </section>
     <section name="open">
-      <title>Lanzando aplicaciones Aqua desde un xterm</title>
+      <title>Lanzamiento de aplicaciones Aqua desde un xterm</title>
       <p>
 Una manera de lanzar aplicaciones Aqua desde un xterm (realmente, 
 desde cualquier shell) es el comando <code>open</code>.
@@ -1373,8 +1392,9 @@ El tercer ejemplo proporciona explícitamente la aplicación a utilizar.
     <section name="copy-n-paste">
       <title>Copiar y Pegar</title>
       <p>
-Copiar y Pegar funciona generalmente entre los entornos Aqua y X11, pero hay algunos errores. 
-Emacs es especialemente delicado con la selección en curso.
+Copiar y Pegar funciona generalmente entre los entornos Aqua y X11, 
+pero hay algunos errores. 
+Emacs es especialmente delicado con la selección en curso.
 Copiar y Pegar desde Classic a X11 no funciona.
 </p>
       <p>

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 2004/10/25 10:25:41 michga Exp $
+# $Id: Makefile,v 1.11 2004/10/27 12:42:57 zifra Exp $
 
 # process XML files with stylesheet to produce HTML
 
