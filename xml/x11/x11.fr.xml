@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Utilisation de X11 sous Darwin et Mac OS X</title>
   <shorttitle>Utilisation de X11</shorttitle>
-  <cvsid>$Id: x11.fr.xml,v 1.10 2004/04/27 00:57:07 michga Exp $</cvsid>
+  <cvsid>$Id: x11.fr.xml,v 1.11 2004/05/08 22:05:21 michga Exp $</cvsid>
   <preface>
     <p>
 Ce document traite de l'utilisation de X11 / XFree86 / Xtools sur les systèmes Mac OS X et Darwin d'Apple.
@@ -530,7 +530,7 @@ Vous pouvez vous servir de ce fichier comme base pour votre propre fichier .xini
 </p>
       <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
       <p>
-Si vous utilisez Fink, vous devez sourcer <filename>init.sh</filename> en début de fichier pour garantir une définition corrrecte de votre environnement.
+Si vous utilisez Fink, vous devez sourcer <filename>init.sh</filename> (si vous utilisez le shell bash) ou <filename>init.csh</filename> (si vous utilisez le shell tcsh) en début de fichier pour garantir une définition corrrecte de votre environnement.
 </p>
       <p>
 Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <filename>.xinitrc</filename>, mais il faut tenir compte des éléments suivants.
@@ -546,15 +546,16 @@ En fait, la plupart des gestionnaires de fenêtres partent du principe que <code
 (Note : Pour restreindre l'usage de la mémoire et le nombre de cycles CPU, vous pouvez mettre un <code>exec</code> au début de la dernière ligne comme dans les exemples ci-dessous.)
 </p>
       <p>
-A simple example that starts up GNOME:
+ Exemple de démarrage de GNOME :
 </p>
-      <codeblock>source /sw/bin/init.sh
+      <codeblock>. /sw/bin/init.sh
 exec gnome-session</codeblock>
-      <p>
-A more complex example that turns the X11 bell off, starts some clients
-and finally executes the Enlightenment window manager:
-</p>
-      <codeblock>source /sw/bin/init.sh
+      <p>pour les utilisateurs de bash et :</p>
+       <codeblock>source /sw/bin/init.csh
+exec gnome-session</codeblock>
+<p>pour les utilisateurs de tcsh.</p>
+<p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
+      <codeblock>. /sw/bin/init.sh
 
 xset b off
 
@@ -563,46 +564,56 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
+<p>Les utilisateurs de tcsh doivent changer la première ligne de la manière suivante :</p>
+      <codeblock>source /sw/bin/init.csh</codeblock>
+ <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
+ <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</codeblock> 
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduiteq à :</p>    
+ <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</codeblock> 
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
+<codeblock>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+</codeblock>
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
+<codeblock>. /sw/bin/init.sh
+/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+</codeblock>
     </section>
   </chapter>
   <chapter filename="xtools" >
     <title>Xtools</title>
     <shorttitle>Xtools</shorttitle>
     <section name="install" >
-      <title>Installing Xtools</title>
+      <title>Installation de Xtools</title>
       <p>
-Now that's easy for a change.
-Get the installer, double-click it, and follow the instructions.
-Be sure to select the startup volume when asked.
+Pour une fois, c'est facile. Récupérez l'installeur, double-cliquez dessus et suivez les instructions à l'écran. Veillez à choisir le volume de démarrage lorsqu'on vous le demandera.
 </p>
       <p>
-If you're using Fink, you should install the
-<code>system-xtools</code> package after you've installed Xtools.
-That package will not install any files, it will just check that the
-libraries etc. are there and act as a placeholder in Fink's dependency
-system.
+Si vous utilisez Fink, vous devez installer le paquet <code>system-xtools</code> après avoir installé Xtools. Ce paquet n'installe aucun fichier, il s'assure simplement que les librairies et autres fichiers nécessaires sont présents sur votre système et tient lieu de paquet fantôme dans le système de dépendances de Fink.
 </p>
     </section>
     <section name="run" >
-      <title>Running Xtools</title>
+      <title>Lancement de Xtools</title>
       <p>
-To run Xtools, double-click Xtools.app in your Applications folder.
-Like XFree86, Xtools will run the clients you specify in your
-<filename>.xinitrc</filename> file.
-Xtools additionally allows you to start clients via the menu.
+Pour lancer Xtools, double-cliquez sur Xtools.app dans le répertoire Applications. Tout comme XFree86, Xtools lance les clients spécifiés dans le fichier <filename>.xinitrc</filename>. De plus, Xtools vous permet de lancer des clients via son menu.
 </p>
     </section>
     <section name="opengl" >
-      <title>OpenGL Notes</title>
+      <title>Notes sur OpenGL</title>
       <p>
-Xtools does hardware-accelerated OpenGL in rootless mode and comes
-with the libraries to support it.
-While the main libGL library is fine, the libGLU and libglut libraries
-are only present as static libraries, which is not sufficient for
-full binary compatibility with XFree86.
-Also, some headers are missing.
-Fink doesn't offer a workaround at this time.
-Hopefully this will be fixed in Xtools 1.1 once it is released.
+Xtools utilise l'accelération matériel OpenGL en mode sans racine et fournit les librairies pour gérer cette fonctionnalité. La librairie principale libGL est parfaite, mais les librairies libGLU et libglut n'existent que sous forme statique, ce qui n'est pas suffisant pour assurer une compatibilité binaire complète avec XFree86. Quelques headers manquent. Fink ne propose pas de solution à ce problème pour le moment. Nous espérons que le problème sera résolu dans Xtools 1.1.
 </p>
     </section>
   </chapter>

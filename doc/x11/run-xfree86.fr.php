@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Lancement de XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/27 00:57:07';
+$cvs_date = 'Date: 2004/05/08 22:05:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de XFree86">';
 
 include_once "header.inc";
@@ -86,7 +86,7 @@ Vous pouvez vous servir de ce fichier comme base pour votre propre fichier .xini
 </p>
       <pre>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
       <p>
-Si vous utilisez Fink, vous devez sourcer <code>init.sh</code> en début de fichier pour garantir une définition corrrecte de votre environnement.
+Si vous utilisez Fink, vous devez sourcer <code>init.sh</code> (si vous utilisez le shell bash) ou <code>init.csh</code> (si vous utilisez le shell tcsh) en début de fichier pour garantir une définition corrrecte de votre environnement.
 </p>
       <p>
 Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <code>.xinitrc</code>, mais il faut tenir compte des éléments suivants.
@@ -102,15 +102,16 @@ En fait, la plupart des gestionnaires de fenêtres partent du principe que <code
 (Note : Pour restreindre l'usage de la mémoire et le nombre de cycles CPU, vous pouvez mettre un <code>exec</code> au début de la dernière ligne comme dans les exemples ci-dessous.)
 </p>
       <p>
-A simple example that starts up GNOME:
+ Exemple de démarrage de GNOME :
 </p>
-      <pre>source /sw/bin/init.sh
+      <pre>. /sw/bin/init.sh
 exec gnome-session</pre>
-      <p>
-A more complex example that turns the X11 bell off, starts some clients
-and finally executes the Enlightenment window manager:
-</p>
-      <pre>source /sw/bin/init.sh
+      <p>pour les utilisateurs de bash et :</p>
+       <pre>source /sw/bin/init.csh
+exec gnome-session</pre>
+<p>pour les utilisateurs de tcsh.</p>
+<p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
+      <pre>. /sw/bin/init.sh
 
 xset b off
 
@@ -119,6 +120,32 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
+<p>Les utilisateurs de tcsh doivent changer la première ligne de la manière suivante :</p>
+      <pre>source /sw/bin/init.csh</pre>
+ <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
+ <pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session
+</pre> 
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduiteq à :</p>    
+ <pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec gnome-session
+</pre> 
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
+<pre>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &amp;
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</pre>
+<p>Note : même changement sur la première ligne pour les utilisateurs de tcshs que celle indiquée ci-dessus.</p>
+<p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
+<pre>. /sw/bin/init.sh
+/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+</pre>
     
   <p align="right">
 Next: <a href="xtools.php?phpLang=fr">5 Xtools</a></p>
