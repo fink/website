@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: ogorman $';
-$cvs_date = '$Date: 2004/01/29 12:47:13 $';
+$cvs_date = '$Date: 2004/01/29 13:01:04 $';
 
 include "header.inc";
 ?>
@@ -46,6 +46,7 @@ this list.</p>
 <h2>Regular Contributors</h2>
 
 <ul>
+<li>Rob Braun (<i>bbraun</i>)</li>
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
@@ -54,23 +55,26 @@ this list.</p>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Carsten Klapp</li>
 <li>Thomas Kotzian</li> 
+<li>Daniel Macks (<i>dmacks</i)</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
-<li>Christian Schaffner</li>
+<li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Masanori Sekino (<i>msek</i>)</li>
 <li>Matt Stephenson</li>
+<li>Michael G. Schwern</li>
 <li>Alexander Strange (<i>Feanor</i>)</li>
 <li>Christian Swinehart</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
-<li>Michael G. Schwern</li>
+
+
 </ul>
 
 <h2>Support and Documentation Team</h2>
 <ul>
+<li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Alexander Hansen</li> <!-- support work on mailing lists! -->
-<li>Baba Yoshihiko</li> <!-- i18n and l10n -->
 </ul>
 
 <h2>Occasional Contributors</h2>
