@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.44 2004/02/13 14:29:08 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.45 2004/02/22 02:52:21 alexkhansen Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -367,8 +367,11 @@ initial &quot;<filename>#!/bin/sh</filename>&quot;, but before you run any progr
 <li>
 <p>Applications that require calling other programs which reside within your Fink tree for some of their functions need special treatment to get them to work when called from the Application menu.  Instead of putting just the full path to the filename, e.g.</p>
 <codeblock>/sw/bin/emacs</codeblock>
-<p>you'll want to use something like the following:</p>
+<p>you'll want to use something like the following, if you're using bash as your
+default shell:</p>
 <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+<p>and if you're using tcsh:</p>
+<codeblock>source /sw/bin/init.csh ; emacs</codeblock> 
 <p>This makes sure that the application has the correct PATH information.  You can use this syntax for any Fink-installed application.</p>
 </li>
 <li>
