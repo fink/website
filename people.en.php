@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2004/04/13 01:25:42 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2004/05/04 13:55:13 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 
 <p>The Fink project is maintained by a group of volunteers. Each
 Fink package has a Maintainer who works hard to ensure the package works as
-desired. Furthermore there are people that work on the fink program itself.
+desired. Furthermore there is the <a href="organization.php#core">fink core team</a> that works on the fink program itself.
 The web site has to be kept current. Users need support, provided via our mailing lists
 and our IRC channel. These and many more tasks require a lot of work, thus we would
 like to say "Thank you" to all these people who sacrifice their spare time to help
@@ -25,14 +25,15 @@ this list.</p>
 
 <p>Italicized items denote nicknames used on the IRC channel.</p>
 
-<h2>Former project lead</h2>
+<h2>Former project lead (retired)</h2>
 <ul>
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
-<h2>Current project leads</h2>
+<h2>Fink Core Team</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
+<li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
