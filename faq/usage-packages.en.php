@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/03/15 15:10:23';
+$cvs_date = 'Date: 2004/03/17 03:20:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -157,12 +157,12 @@ sudo apt-get install fink</pre></li>
 \ /Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 from the third Panther CD (and the X11SDK from the
         Xcode CD).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
         binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing.</p><p>If you are running an earlier version of <code>fink</code>, then
+        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing. </p><p>If you are running an earlier version of <code>fink</code>, then
         there is a Perl script (courtesy of Martin Costabel) that you can
         download and run to get the same information.</p><ul>
           <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a></li>
-          <li>Save it whereever you like.</li>
-          <li>Run it via <pre>perl fink-x11-debug</pre></li>
+          <li>Save it wherever you like.</li>
+          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre></li>
         </ul></div>
     </a>
     <a name="apple-x11-beta-wants-xfree86">
@@ -197,8 +197,8 @@ sudo apt-get install fink</pre></li>
         there is a Perl script (courtesy of Martin Costabel) that you can
         download and run to get the same information.</p><ul>
           <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a></li>
-          <li>Save it whereever you like.</li>
-          <li>Run it via <pre>perl fink-x11-debug</pre></li>
+          <li>Save it wherever you like.</li>
+          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre></li>
         </ul></div>
     </a>
   
