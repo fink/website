@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/17 06:52:12 $';
+$cvs_date = '$Date: 2001/05/24 10:32:48 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -36,6 +36,17 @@ are any) from /sw/fink/dists/unstable/main/finkinfo to
 /sw/fink/dists/local/main/finkinfo. If you want Fink to use all of
 unstable, edit /sw/etc/fink.conf and add <tt>unstable/main</tt> to the
 <tt>Trees:</tt> line.</p>
+
+<p><a name="sudo"><b>I'm tired of typing my password into sudo again
+and again. Is there a way around this?</b></a></p>
+
+<p>If you're not paranoid, you can configure sudo to not ask you for a
+password. To do this, edit /etc/sudoers as root and add a line like
+this:
+<pre>username  ALL = NOPASSWD: ALL</pre>
+Replace <tt>username</tt> with your actual username, of course. This
+line allows you to run any command via sudo without typing your
+password.</p>
 
 
 <?
