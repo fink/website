@@ -1,14 +1,14 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/08/03 00:12:24';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2004/08/03 15:15:43';
 $metatags = '';
 
-include_once "header.inc";
-?>
-
-<a name="2004-08-01 Bandwidth to spare?"><span class="news-date">2004-08-01: </span><span class="news-headline">Bandwidth to spare?</span></a><?php gray_line(); ?>
+<a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
 	<p>
+	Finks decision to gradually build its own network of mirrors
+	has payed off. To make sure that we can continue to offer
+	a high quality service we need to improve our mirror network.
 	It has been some time since we last asked for more mirrors. 
 	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
@@ -931,5 +931,5 @@ software before using Fink.
       Get it from the <a href="<?php print $root; ?>download.php">download page</a>. 
     </p>
   
-<? include_once "footer.inc"; ?>
+
 
