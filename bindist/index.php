@@ -151,7 +151,7 @@ foreach ($files as $fn) {
   if ($type == "link") {
     $rfn = readlink($rfn);
     $type = filetype($rfn);
-    $special = "-> $rfn";
+    $special = "->&nbsp;$rfn";
   }
 
   if ($type == "file") {
