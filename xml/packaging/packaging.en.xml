@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.31 2004/06/02 01:56:41 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.32 2004/06/15 18:31:38 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1561,6 +1561,10 @@ special flags are used to override this.
 <em>Introduced in fink 0.9.9.</em>
 A boolean value which indicates that no other packages should Depend on
 this one, they should only BuildDepend.
+</p>
+<p>As of fink 0.20.3, the value of this field is recorded into the .deb
+file when a package is built.  Therefore, <em>if you change the value of
+BuildDependsOnly you must increase the revision number</em> of the package.
 </p>
 </itemd></item>
 

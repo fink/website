@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/05/22 20:41:52';
+$cvs_date = 'Date: 2004/06/15 18:31:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -374,6 +374,10 @@ special flags are used to override this.
 <b>Introduced in fink 0.9.9.</b>
 A boolean value which indicates that no other packages should Depend on
 this one, they should only BuildDepend.
+</p>
+<p>As of fink 0.20.3, the value of this field is recorded into the .deb
+file when a package is built.  Therefore, <b>if you change the value of
+BuildDependsOnly you must increase the revision number</b> of the package.
 </p>
 </td></tr></table>
 <p><b>Unpack Phase:</b></p>
