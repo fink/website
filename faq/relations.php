@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/03/03 14:31:29';
+$cvs_date = 'Date: 2003/03/06 22:01:54';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php" title="Installing, Using and Maintaining Fink"><link rel="prev" href="general.php" title="General Questions">';
 
@@ -86,8 +86,8 @@ statement</a> for details.
 </p></div>
 </a>
 <a name="darwinports">
-	<div class="question"><p><b>Q2.6: What is your relation with Darwinports?</b></p></div>
-	<div class="answer"><p><b>A:</b> 
+<div class="question"><p><b>Q2.6: What is your relation with Darwinports?</b></p></div>
+<div class="answer"><p><b>A:</b> 
 			Darwinports and fink are complementary projects. There is some
 			overlap between the two projects, and several people contribute to
 			both the Fink and Opendarwin projects. For example, Benjamin Reed
@@ -100,7 +100,6 @@ statement</a> for details.
 			for details.
 		</p></div>
 </a>
-
 <p align="right">
 Next: <a href="usage-fink.php">3 Installing, Using and Maintaining Fink</a></p>
 
