@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.7 2002/08/06 11:58:17 fingolfin Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.8 2002/08/20 20:57:32 fingolfin Exp $</cvsid>
+
+<newsitem>
+  <date>2002-08-20</date>
+  <headline>Mac OS X 10.2 / Jaguar</headline>
+  <body>
+    <p>
+      During the last few weeks, we got a lot of emails asking whether Fink will work Mac OS X 10.2.
+    </p>
+    <p>
+      The answer is: Yes, we will support 10.2. However, due to some
+      major changes in this new OS version, we had to make a lot of adjustments both
+      to the Fink tool itself and to many packages. The current binary distribution,
+      0.4.0a, will only work partially on 10.2. We are working on an upgrade guide,
+      as well as a new Fink release, to support 10.2.
+    </p>
+	<p>
+	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
+	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
+	 Some packages need special changes to build on 10.2. Adding "main/unstable" to your
+	 list of trees in /sw/etc/fink.conf (see also the <link url="faq/usage-fink.php#unstable">FAQ</link>)
+	 will give you access to the latest versions of packages, many of which include important
+	 fixes for 10.2.
+	</p>
+    <p>
+     As of now, please do not email us asking about 10.2 support. If you can't wait,
+     consult the <link url="lists/index.php">mailing list archives</link> instead.
+    </p>
+  </body>
+</newsitem>
 
 <newsitem>
   <date>2002-08-06</date>
