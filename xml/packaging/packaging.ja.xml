@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.17 2004/07/21 18:45:14 dmacks Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.18 2004/07/24 14:12:16 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -366,6 +366,21 @@ SplitOff: &lt;&lt;
 							%n や %N と似ているが， %type_pkg[] と %type_raw[] に当たる部分は全て空白に変わる．
 							(0.19.2 CVS 版以降の Fink で利用可能)
 							%n や %N を使った際の混乱を避けるためには %{ni} や %{Ni} を使うこと．
+						</p>
+					</itemd>
+				</item>
+				
+				<item>
+					<itemt>%{default_script}</itemt>
+					<itemd>
+						<p>
+							<code>*Script</code> フィールドでのみ有効．
+							<code>*Script</code> フィールドでのデフォルトフィールド．
+							値は <code>Type</code> に依存するが，常に存在する（または空欄）．
+							<code>SplitOff: InstallScript</code> で使われる場合，
+							<code>SplitOff</code> パッケージの <code>InstallScript</code> デフォルトが空欄であっても，
+							この展開は<em>親</em>のデフォルトになります．
+							
 						</p>
 					</itemd>
 				</item>
@@ -1700,7 +1715,7 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>SourceRename</itemt>
 					<itemd>
 						<p>
-							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
+							このフィールドを使うと，ビルド時にソースの tarball をリネームできる．
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
 							tar ボールそのものはどのバージョンでも同じ名前のときだ．
 							(例えば <filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename> というとき)

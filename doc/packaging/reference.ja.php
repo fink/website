@@ -428,7 +428,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 					</td></tr><tr valign="top"><td>SourceRename</td><td>
 						<p>
-							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
+							このフィールドを使うと，ビルド時にソースの tarball をリネームできる．
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
 							tar ボールそのものはどのバージョンでも同じ名前のときだ．
 							(例えば <code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code> というとき)

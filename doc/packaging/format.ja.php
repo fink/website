@@ -227,6 +227,16 @@ SplitOff: &lt;&lt;
 							(0.19.2 CVS 版以降の Fink で利用可能)
 							%n や %N を使った際の混乱を避けるためには %{ni} や %{Ni} を使うこと．
 						</p>
+					</td></tr><tr valign="top"><td>%{default_script}</td><td>
+						<p>
+							<code>*Script</code> フィールドでのみ有効．
+							<code>*Script</code> フィールドでのデフォルトフィールド．
+							値は <code>Type</code> に依存するが，常に存在する（または空欄）．
+							<code>SplitOff: InstallScript</code> で使われる場合，
+							<code>SplitOff</code> パッケージの <code>InstallScript</code> デフォルトが空欄であっても，
+							この展開は<b>親</b>のデフォルトになります．
+							
+						</p>
 					</td></tr></table>
 		
 	<p align="right"><? echo FINK_NEXT ; ?>:
