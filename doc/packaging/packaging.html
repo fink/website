@@ -88,7 +88,7 @@ files are in the dpkg format and have the extension .deb.
 A package is identified by three strings: the package name, the
 version and the revision.
 All of these may contain lower-case letters (a-z), numbers (0-9),
-dashes (-) and dots (.).
+dashes (-), plus signs (+) and dots (.).
 Other characters are not allowed.
 In particular, capital letters and underscores are not allowed.
 </p>
@@ -245,7 +245,7 @@ especially on distributing binaries.
 Some packages can not be included in the binary distribution of Fink
 because of these license restrictions.
 Thus it is very important that package maintainers check the license
-of their package.
+of their package carefully.
 </p>
 <p>
 Every package that is to be distributed as a binary package must
@@ -256,9 +256,9 @@ i.e. in <tt><nobr>%p/share/doc/%n</nobr></tt>.
 The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
-Note that most licenses require that the license accompanies any
-distribution.
-Fink's policy is to do this even if it is not explicitly required.
+Most licenses require that the license accompanies any distribution.
+Fink's policy is to always do this, even if it is not explicitly
+required.
 </p>
 <p>
 To make an automated maintenance of the binary distribution possible,
@@ -339,7 +339,9 @@ In this case the package must check for existing files before
 installation and refuse to install if it would overwrite existing
 files.
 The package must make sure that all files it installed outside of the
-Fink directory are deleted when the package is removed.
+Fink directory are deleted when the package is removed, or that they
+cause no harm if they are left there (i.e. they need to check binaries
+for existence before calling them and the like).
 </p>
 
 
@@ -486,7 +488,7 @@ Nothing should be installed here by a package.
 No other directories than the ones mentioned above should exist
 in /sw.
 In particular, the following should not be used: /sw/man, /sw/info,
-/sw/doc, /sw/libexec.
+/sw/doc, /sw/libexec, /sw/lib/locale.
 </p>
 
 
@@ -1042,4 +1044,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p>
-<p><hr>Generated from <i>$Fink: packaging.xml,v 1.11 2001/09/27 22:10:36 chrisp Exp $</i></p></body></html>
+<p><hr>Generated from <i>$Fink: packaging.xml,v 1.12 2001/11/04 15:21:13 chrisp Exp $</i></p></body></html>

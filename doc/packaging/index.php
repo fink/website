@@ -1,9 +1,9 @@
 <?
 $title = "Packaging";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/27 22:10:36';
+$cvs_date = 'Date: 2001/11/04 15:21:13';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
+$metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="intro.php" title="Introduction">';
 
 include "header.inc";
 ?>
@@ -55,7 +55,7 @@ mailing list.
 <li><a href="reference.php#scripts">Scripts</a></li>
 <li><a href="reference.php#patches">Patches</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: packaging.xml,v 1.11 2001/09/27 22:10:36 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: packaging.xml,v 1.12 2001/11/04 15:21:13 chrisp Exp $</i></p>
 
 
 <?

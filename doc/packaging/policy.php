@@ -1,9 +1,9 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/27 22:10:36';
+$cvs_date = 'Date: 2001/11/04 15:21:13';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
+$metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ especially on distributing binaries.
 Some packages can not be included in the binary distribution of Fink
 because of these license restrictions.
 Thus it is very important that package maintainers check the license
-of their package.
+of their package carefully.
 </p>
 <p>
 Every package that is to be distributed as a binary package must
@@ -31,9 +31,9 @@ i.e. in <tt><nobr>%p/share/doc/%n</nobr></tt>.
 The DocFiles field takes care of the details automatically.)
 If there is no explicit license in the original source, include a
 small text file with a note about the status of the package.
-Note that most licenses require that the license accompanies any
-distribution.
-Fink's policy is to do this even if it is not explicitly required.
+Most licenses require that the license accompanies any distribution.
+Fink's policy is to always do this, even if it is not explicitly
+required.
 </p>
 <p>
 To make an automated maintenance of the binary distribution possible,
@@ -114,7 +114,9 @@ In this case the package must check for existing files before
 installation and refuse to install if it would overwrite existing
 files.
 The package must make sure that all files it installed outside of the
-Fink directory are deleted when the package is removed.
+Fink directory are deleted when the package is removed, or that they
+cause no harm if they are left there (i.e. they need to check binaries
+for existence before calling them and the like).
 </p>
 
 

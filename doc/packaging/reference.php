@@ -1,9 +1,9 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/27 22:10:36';
+$cvs_date = 'Date: 2001/11/04 15:21:13';
 
-$metatags = '<link rel="start" href="index.php" title="Packaging Contents"><link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
+$metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
 include "header.inc";
 ?>
