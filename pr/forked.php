@@ -1,7 +1,7 @@
 <?
 $title = "Relations with forked.net";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/23 15:33:19 $';
+$cvs_date = '$Date: 2001/10/25 08:33:33 $';
 
 include "header.inc";
 ?>
@@ -71,6 +71,16 @@ As usual, judge for yourself.
 </p>
 <p>
 -Christoph Pfisterer
+</p>
+
+<p align="right">Update October 25th, 2001</p>
+<p>
+One day after I posted this page, the macosx.forked.net front page
+changed again.
+All PayPal buttons are gone, the downloads are freely accessible
+again, and there are news items mentioning Fink and the GPL.
+I guess I should have made daily backup copies of their front page.
+It will be interesting to see how long it lasts this time...
 </p>
 
 
