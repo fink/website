@@ -52,7 +52,7 @@ generate a <tt><nobr>control</nobr></tt> file for dpkg.</p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th>Field</th><th>Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
 The package name.
-May contain lowercase letters, numbers and the special characters '.'
+May contain lowercase letters, numbers and the special characters '.', '+'
 and '-'.
 No underscores ('_'), no capital letters.
 Required field.
@@ -87,6 +87,8 @@ However, the patch, compile and install phases are executed normally.
 This way you can bring in all the code with a patch, or just create
 some directories in the InstallScript.
 </p>
+Finally there is <tt><nobr>perl</nobr></tt> in which case alternate default
+values for CompileScript and InstallScript are used. 
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
 The name and e-mail address of the person responsible for the package.
