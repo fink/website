@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/03 16:11:10 $';
+$cvs_date = '$Date: 2001/07/09 20:04:03 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,19 +30,19 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-07-09: Version 0.2.3 is released. Get it from the <a
+href="download.php">download page</a>. This version fixes the dpkg
+download problems many of you were having.</p>
 <p>2001-07-03: The <a href="doc/packaging/index.php">Packaging
 Manual</a> was updated to include all recently added fields.</p>
 <p>2001-06-30: A major restructuring of the web site has started. The
 non-Fink-specific documents were removed because I don't have the time
 to maintain them. All documentation will be consolidated in the new <a
 href="doc/index.php">Documentation section</a>.</p>
-<p>2001-06-24: Version 0.2.2 is finally released. Get it from the <a
-href="download.php">download page</a>. Be sure to read the notes
-about X11 in the INSTALL file.</p>
 
 <h2>Status</h2>
 
-<p>Version 0.2.2 was released on 24 June 2001. Now that a base feature
+<p>Version 0.2.3 was released on 9 July 2001. Now that a base feature
 set is implemented, focus is shifting to provide more packages, keep
 them current and improve quality. A binary distribution is also in the
 works.</p>
