@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.166 2004/02/08 21:26:14 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.167 2004/02/09 18:56:48 rangerrick Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -456,7 +456,7 @@ See also the question about unstable below.
 		<p>There's this package in unstable that I want to install, but the fink command just says 'no package found'. How can I install it?</p>
 	</question>
 	<answer>
-		<p>First make sure you understand what 'unstable' means. Packages in the unstable tree usually have not been tested by more than one person. For that reason, Fink doesn't search the unstable tree by default.</p>
+		<p>First make sure you understand what 'unstable' means. Packages in the unstable tree usually have not been tested by more than a few people. For that reason, Fink doesn't search the unstable tree by default.  If you do enable unstable, please remember to e-mail the maintainer if something works (or even if it doesn't).  Feedback from users like you is what we use to determine if something is ready for stable!  To find out the maintainer of a package, run <code>fink info &lt;packagename&gt;</code>.</p>
 		<p>Packages often have dependencies, and packages in unstable often depend on other packages in unstable. For that reason, it is best to activate all of unstable.</p>
 		<p>If you want Fink to use all of unstable, edit <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code> and <code>unstable/crypto</code> to the <code>Trees:</code> line, and then run <code>fink selfupdate; fink index</code>.</p>
 		<p>If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating (i.e. use <code>fink selfupdate-cvs</code>), because rsync only updates the trees that are active in your <filename>fink.conf</filename>. 
