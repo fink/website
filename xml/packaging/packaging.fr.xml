@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.39 2004/07/21 18:40:51 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.40 2004/07/29 21:37:48 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -198,7 +198,7 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 <item><itemt>%p, %P</itemt>
 <itemd>
 <p>
-<em>p</em>réfixe d'installation de Fink, par exemple : <filename>/sw</filename>
+<em>p</em>réfixe d'installation de Fink, par exemple : <filename>/sw</filename>. Vous ne devez jamais utiliser <filename>/sw</filename>, car l'utilisateur peut avoir changer le répertoire d'installation de Fink. Utilisez <code>%p</code> à la place.
 </p>
 </itemd></item>
 
