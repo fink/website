@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.137 2004/09/20 14:43:13 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.138 2004/09/20 15:54:10 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -15,8 +15,8 @@ Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based 
 </p>
 
 <p>
-This new release incorporate various fixes to the package manager, many previously
-unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
+This new release incorporates various fixes to the package manager, many previously
+unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
 binaries for KDE 3.1.4 and GNOME 2.4.
 </p>
 
@@ -36,8 +36,8 @@ If you have questions or problems, please try the Fink mailing lists.  You can l
 </p>
 
 <p>
-Please make sure you pick the <em>appropriate installer</em> for your Platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Please make sure you pick the <em>appropriate installer</em> for your platform.
+Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
 </p>
 
         <p>

@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 20 Sep 2004 16:40:56 CEST</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2004 11:53:29 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.">
@@ -13,14 +13,14 @@
     <dc:date>2004-09-20</dc:date>
     <description>
 
-The latest Fink releases, version 0.7.1 (for 10.3),
+The latest Fink release, version 0.7.1 (for 10.3),
 is now available for both source and binary users. This release is meant for Panther (10.3)  based
 Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
 
 
 
-This new releases incorporate various fixes to the package manager, many previously
-unavailable Binary packages have been added resulting in a total of 1650 Binary packages. This includes
+This new release incorporates various fixes to the package manager, many previously
+unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
 binaries for KDE 3.1.4 and GNOME 2.4.
 
 
@@ -35,20 +35,20 @@ page.
 
 
 
-If you have questions or problems, please try the Fink mailing lists you can learn more about them
+If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
 here.
 
 
 
-Please make sure you pick the appropriate installer for your Platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Please make sure you pick the appropriate installer for your platform.
+Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
 
 
         
 The Fink Team would like to thank its many contributors, frequent helpers
 and developers for making this release happen.
-We also thank our community for downloading the prior release 0.7.0 more than 130'000 times. 
-Without their constant support and valuable pointers Fink would not be where we are now..
+We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
+Without their constant support and valuable pointers Fink would not be where we are now.
 
 
 </description>
