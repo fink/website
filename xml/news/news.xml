@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.120 2004/02/19 15:01:49 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.121 2004/02/29 19:18:19 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2004-02-19</date>
 	<headline>Raise your Flag.</headline>
 	<body>
 	<p>
-Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for internalisation efforts. 
+Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
+internationalisation efforts. 
 The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
 </p>
 <p>
