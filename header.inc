@@ -1,33 +1,45 @@
 <?
-/* $Id: header.inc,v 1.63 2004/02/29 16:11:07 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.64 2004/02/29 23:12:54 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
 $lang_code = 'en';
 if ((phpLang_current)) $lang_code = phpLang_current;
 
-if ('ja' == $lang_code) {
-	// section navigation (always visible)
-	$section_names = array(
-		'home' => 'ホーム',
-		'download' => 'ダウンロード',
-		'packages' => 'パッケージ',
-		'help' => 'ヘルプ',
-		'faq' => 'F.A.Q.',
-		'documentation' => '文書',
-		'mailing-lists' => 'メーリングリスト'
-	);
-} else  {
-	$section_names = array(
-		'home' => 'Home',
-		'download' => 'Download',
-		'packages' => 'Packages',
-		'help' => 'Help',
-		'faq' => 'F.A.Q.',
-		'documentation' => 'Documentation',
-		'mailing-lists' => 'Mailing Lists'
-	);
-}
+if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
+	include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc";
+
+/* The Sections.  Used in Menu Navigation Bar */
+define (FINK_SECTION_HOME, 'Home');
+define (FINK_SECTION_DOWNLOAD, 'Download');
+define (FINK_SECTION_PACKAGE, 'Packages');
+define (FINK_SECTION_HELP, 'Help');
+define (FINK_SECTION_FAQ, 'F.A.Q.');
+define (FINK_SECTION_DOCUMENTATION, 'Documentation');
+define (FINK_SECTION_MAILING_LISTS, 'MAILING_LISTS');
+
+/* The Home Subsections.  Used in Menu Navigation Bar */
+define (FINK_SECTION_HOME_INDEX, 'Index');
+define (FINK_SECTION_HOME_NEWS, 'News');
+define (FINK_SECTION_HOME_ABOUT, 'About');
+define (FINK_SECTION_HOME_CONTRIBUTORS, 'Contributors');
+define (FINK_SECTION_HOME_LINKS, 'Links');
+
+/* The word 'Sections'.  Used in Menu Navigation Bar */
+define (FINK_SECTIONS, 'Sections');
+
+/* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
+define (FINK_CONTENTS, 'Contents');
+
+$section_names = array(
+	'home' => FINK_SECTION_HOME,
+	'download' => FINK_SECTION_DOWNLOAD,
+	'packages' => FINK_SECTION_PACKAGE,
+	'help' => FINK_SECTION_HELP,
+	'faq' => FINK_SECTION_FAQ,
+	'documentation' => FINK_SECTION_DOCUMENTATION,
+	'mailing-lists' => FINK_SECTION_MAILING_LISTS
+);
 
 $section_files = array(
 	'home' => 'index.php',
@@ -44,11 +56,11 @@ if (!$section) $section = "home";
 // main navigation box
 if (!is_array($navbox) && $nonav != 1) {
 	$navbox = array(
-		"index.php", "Home",
-		"news/index.php", "News",
-		"about.php", "About",
-		"people.php", "Contributors",
-		"links.php", "Links"
+		'index.php', FINK_SECTION_HOME_INDEX,
+		'news/index.php', FINK_SECTION_HOME_NEWS,
+		'about.php', FINK_SECTION_HOME_ABOUT,
+		'people.php', FINK_SECTION_HOME_CONTRIBUTORS,
+		'links.php', FINK_SECTION_HOME_LINKS
 );
 }
 
@@ -161,7 +173,7 @@ function insert_sub ($navbox, $active_page) {
 	if ('test/index.php' == $filename && $active_page == -1) $active_page = 0; 
 	
 	for ($i = 0; $i < sizeof($navbox); $i += 2) {
-		echo "\t<tr>\n";
+		if ('Contents' == $navbox[$i + 1]) $navbox[$i + 1] = FINK_CONTENTS;
 		if ($i != $active_page) {
 			// For testing locally at my machine
 			if (substr($navbox[$i ], 0, 7) != 'http://') {
@@ -169,19 +181,12 @@ function insert_sub ($navbox, $active_page) {
 			} else {
 				$_link = $navbox[$i ];
 			}
-			
 			if (substr($link, -2) == ".*") $link = substr($link, 0, -2);
-			
-			echo "\t\t<td class=\"toc_subsections\">\n";
-			echo "\t\t\t<a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a>\n";
+			echo "\t\t<dd class=\"toc_subsections\"><a href=\"" . $_link . '" >' . $navbox[$i + 1] . "</a></dd>\n";
 		} else {
-			echo "\t\t<td class=\"toc_subsections_selected\">\n";
-			echo "\t\t\t" . $navbox[$i + 1] . "\n";
+			echo "\t\t<dd class=\"toc_subsections_selected\">" . $navbox[$i + 1] . "</dd>\n";
 		}
-		echo "\t\t</td>\n";
-		echo "\t</tr>\n";
 	}
-	echo "\t\t<tr><td>$filename</td></tr>\n";
 }
 ?>
 
@@ -227,21 +232,15 @@ function insert_sub ($navbox, $active_page) {
 		<td align="left" width="120" class="layout"  bgcolor="#eeeeee" >
 
 <? /* navigation column table */ ?>
-	<table width="120" cellspacing="0" >
 
 <? /* sections */ ?>
-	<tr>
-		<td align="center" class="toc_top" style="background-image:url(<? echo $root; ?>img/stripes.gif)">Sections</td></tr>
-<? foreach ($section_files as $key => $filename) {
+	<dd class="toc_top" style="text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)"><? echo FINK_SECTIONS; ?></dd>
 	
+<? foreach ($section_files as $key => $filename) {
 	$toc_sections_class = 'toc_sections';
 	if ($section == $key && $nonav == 1) $toc_sections_class = 'toc_sections_selected';
 ?>
-	<tr>
-		<td class="<? echo  $toc_sections_class ?>">
-			<a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a>
-		</td>
-	</tr>
+		<dd class="<? echo  $toc_sections_class ?>"><a href="<? echo $root . $section_files[$key] ?>" ><? echo $section_names[$key] ?></a></dd>
 <?
 	if ($section == $key && $nonav != 1) insert_sub ($navbox, $active_page);
 	} 
@@ -249,19 +248,13 @@ function insert_sub ($navbox, $active_page) {
 
 <? /* link to print version */ ?>
 <? if ($printlink) { ?>
-	<tr>
-		<td class="toc_top">&nbsp;</td>
-	</tr>
-	<tr>
-		<td class="toc_top">
+		<dd class="toc_top">&nbsp;</dd>
+		<dd class="toc_top">
 			<a href="<? echo $root . $printlink ?>">
 			<img src="<? echo $root ?>img/printlink.gif" width="120" height="22" border="0" alt="Print Version">
 			</a>
-		</td>
-	</tr>
+		</dd>
 <? } ?>
-
-</table>
 <? /* end navigation column */ ?>
 
 </td>

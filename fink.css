@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.17 2004/02/28 18:25:19 fingolfin Exp $ */
+/* $Id: fink.css,v 1.18 2004/02/29 23:12:55 babayoshihiko Exp $ */
 /* A good way to get colors which fit well together is to use the color wheel
  found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
  were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
@@ -39,6 +39,11 @@ h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  fon
 .default {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
 
 .attention { color:red; }
+
+dd a {
+  text-decoration: none;
+  display: block;
+}
 
 .toc_top {
 	font-family: Verdana,Helvetica,Arial,sans-serif ;  
