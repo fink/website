@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.inc,v 1.2 2001/07/23 11:46:31 chrisp Exp $ */
+/* $Id: nav.inc,v 1.3 2001/07/25 19:02:46 chrisp Exp $ */
 
 $customnav = array(
   "doc/x11/index.php", "Contents", 0,
@@ -9,7 +9,7 @@ $customnav = array(
   "doc/x11/run-xfree86.php", "XFree86 (2)", 0,
   "doc/x11/xtools.php", "Xtools", 0,
   "doc/x11/other.php", "Other Stuff", 0,
-  "doc/x11/trouble.php", "Troubleshooting", 0
+  "doc/x11/trouble.php", "Problems?", 0
 );
 
 ?>
