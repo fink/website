@@ -1,7 +1,7 @@
 <?
 $title = "Help";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/06/27 09:28:23 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/09/18 22:27:48 $';
 
 include "header.inc";
 ?>
@@ -54,7 +54,7 @@ Also say if you have software from other sources installed in
 <p>
 <b>The IRC channel.</b>
 There is a <tt>#fink</tt> channel on the
-<a href="http://openprojects.net">openprojects.net</a> IRC network.
+<a href="http://freenode.net">freenode</a> IRC network.
 You can chat with other Fink users and some of the developers there.
 </p>
 
@@ -111,7 +111,7 @@ and it helps the Unix world in general, because it helps the
 recognition of Mac OS X as a Unix OS worth supporting.
 </p>
 <p>
-You can also tell Apple that you like the path they have taken with
+You can also <a href="http://www.apple.com/macosx/feedback/">tell Apple</a> that you like the path they have taken with
 the BSD underpinnings of Mac OS X and you would like them to further
 improve the BSD layer.
 </p>
