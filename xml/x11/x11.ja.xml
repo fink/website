@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.4 2004/05/18 15:48:28 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.5 2004/05/19 12:23:57 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -1094,7 +1094,7 @@ MacOSX 10.3 の場合、アカウントパネルの起動項目で) 、
   setenv DISPLAY :0.0
 endif</codeblock>
 </li>
-<li><p>bash の場合: 以下を <filename>.zshrc</filename> に追加:</p>
+<li><p>bash の場合: 以下を <filename>.bashrc</filename> に追加:</p>
 <codeblock>[[ -z $DISPLAY ]] &amp;&amp; export DISPLAY=":0.0"</codeblock>
 </li>
 </ul>
