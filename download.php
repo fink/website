@@ -1,7 +1,7 @@
 <?
 $title = "Download";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/01 13:37:23 $';
+$cvs_date = '$Date: 2001/08/01 15:32:29 $';
 
 include "header.inc";
 ?>
@@ -11,11 +11,16 @@ include "header.inc";
 
 <p>
 Fink 0.2.4 was released on 1 August 2001.
+It had a bootstrapping problem, which was corrected in Fink 0.2.4a,
+released some hours later.
+The two are absolutely identical in all other respects.
+You do not need to upgrade to 0.2.4a if you successfully installed
+0.2.4.
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-0.2.4-full.tar.gz">Fink
-0.2.4</a> - 499K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-0.2.4a-full.tar.gz">Fink
+0.2.4a</a> - 500K, .tar.gz format</li>
 </ul>
 
 <p>
