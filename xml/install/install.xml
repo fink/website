@@ -4,13 +4,13 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.15 2002/04/15 19:53:09 fingolfin Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.16 2003/02/26 14:51:52 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
 of Fink &fink_version;.
-This document does not apply to the "binary" distribution.
+This document does not apply to the "<link url="http://fink.sourceforge.net/download/index.php">binary</link>" distribution.
 There are instructions for both first time installation and upgrading
 from a previous version.
 Fast track instructions for the impatient are at the top.

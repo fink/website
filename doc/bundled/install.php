@@ -1,7 +1,7 @@
 <?
 $title = "Installation";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/15 19:53:09';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/02/26 14:51:52';
 
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
@@ -12,7 +12,7 @@ include "header.inc";
 <p>
 These are the installation instructions for the &quot;source&quot; distribution
 of Fink 0.5.1.
-This document does not apply to the &quot;binary&quot; distribution.
+This document does not apply to the &quot;<a href="http://fink.sourceforge.net/download/index.php">binary</a>&quot; distribution.
 There are instructions for both first time installation and upgrading
 from a previous version.
 Fast track instructions for the impatient are at the top.
@@ -49,7 +49,7 @@ Track</a></li>
 <ul>
 <li><a href="install-up01.php#upgrade-01">5.1 Clean cut</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: install.xml,v 1.15 2002/04/15 19:53:09 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: install.xml,v 1.16 2003/02/26 14:51:52 alexkhansen Exp $</i></p>
 
 
 <?
