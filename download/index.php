@@ -1,14 +1,20 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2003/04/05 15:31:13 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/04/16 13:03:55 $';
 
 include "header.inc";
 ?>
 
 
 <h1>Fink Downloads</h1>
-
+<div align="right">
+<NOSCRIPT>
+<a href="http://www.stats4you.com" target="_new">
+<img src="http://www.stats4you.com/scripts/counter.asp?ID=finkproject&page=downlaod&js=no" border="0"></a>
+</NOSCRIPT>
+<SCRIPT src="http://www.stats4you.com/scripts/include.asp?ID=finkproject&page=downlaod"></SCRIPT>
+</div>
 <p>
 There are many ways to install or upgrade Fink.
 For new users, the quick start instructions below are recommended.
@@ -86,6 +92,8 @@ downloaded from this site,
 href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">here</a>.
 </p>
 
+<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
 
 <?
 include "footer.inc";

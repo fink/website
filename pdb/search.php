@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package Search";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/09 20:44:32 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/04/16 13:03:57 $';
 
 $have_key = isset($s);
 $key = $s;
@@ -90,6 +90,8 @@ if ($key) {
 }  /* $key valid */
 ?>
 
+<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
 
 <?
 include "footer.inc";

@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/06/10 23:45:40 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/04/16 13:03:56 $';
 
 include "header.inc";
 ?>
@@ -82,6 +82,8 @@ or you can browse by archive section:
 }
 ?>
 
+<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
 
 <?
 include "footer.inc";

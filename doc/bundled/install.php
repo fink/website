@@ -51,6 +51,8 @@ Track</a></li>
 </ul>
 </ul><p>Generated from <i>$Fink: install.xml,v 1.16 2003/02/26 14:51:52 alexkhansen Exp $</i></p>
 
+<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
 
 <?
 include "footer.inc";

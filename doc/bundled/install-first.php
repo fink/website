@@ -186,6 +186,8 @@ and Mac OS X document</a>.
 <p align="right">
 Next: <a href="install-up03.php">3 Upgrading From Fink 0.3.x</a></p>
 
+<script language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&page=unknown"></noscript>
 
 <?
 include "footer.inc";
