@@ -24,6 +24,9 @@ $text =~ s|</head>.*<body>|';\n\ninclude "header.inc";\n?>\n\n|s;
 $text =~ s|</body>.*</html>|\n\n\n<?\ninclude "footer.inc";\n?>\n|s;
 $text =~ s|\$Id|\$Fink|g;
 
+$text =~ s|\@ROOT\@|<?php print \$root; ?>|g;
+
+
 print $text;
 
 exit 0;

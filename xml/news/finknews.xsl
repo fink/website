@@ -100,8 +100,8 @@
 
 <xsl:template match="link">
   <a>
-    <xsl:attribute name="name">
-      <xsl:text disable-output-escaping="yes">&lt;?php print $root; ?&gt;</xsl:text>
+    <xsl:attribute name="href">
+      <xsl:text>@ROOT@</xsl:text>
       <xsl:value-of select="@url" />
     </xsl:attribute>
     <xsl:apply-templates/>
