@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.33 2002/08/05 12:54:48 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.34 2002/08/11 12:26:16 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1434,7 +1434,7 @@ catalogs end up in <filename>/sw/share/locale</filename>, not
 Before using this field, make sure that you won't break the package
 and that it's really required.
 You can run <code>diff</code> to find the differences between the
-packages's version and Fink's version (in
+package's version and Fink's version (in
 <filename>/sw/lib/fink/update</filename>).
 </p>
 </itemd></item>
