@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/09/07 12:28:47';
+$cvs_date = 'Date: 2004/09/11 20:56:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -115,12 +115,12 @@ Required field.
   binary (compiled) form of a package (the <code>.deb</code>
   file), you <b>must</b> increase <code>Revision</code>. This
   includes changing the <code>Depends</code> or other package lists,
-  with the exception of<code>BuildDepends</code>, and adding,
+  and adding,
   removing, or renaming splitoff packages or shifting files among
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
   increase <code>Revision</code> by 10 in the newer tree in order to
-  leave space space for future updates to the package in the older
+  leave space for future updates to the package in the older
   tree.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
