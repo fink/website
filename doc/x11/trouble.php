@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/10/26 20:57:48';
+$cvs_date = 'Date: 2001/10/31 10:16:26';
 
 $metatags = '<link rel="start" href="index.php" title="Running X11 Contents"><link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="tips.php" title="Usage Tips"><link rel="prev" href="other.php" title="Other X11 Possibilities">';
 
@@ -62,6 +62,23 @@ without any problems.
 (Note: It's quite hard to have these dirs owned by root, as Mac OS X
 wipes out /tmp on reboots and XDarwin doesn't run with root privileges
 and doesn't need to.)
+</p>
+
+<pre>QuartzAudioInit: AddIOProc returned 1852797029</pre>
+<pre>-[NSCFArray objectAtIndex:]: index (2) beyond bounds (2)</pre>
+<pre>kCGErrorIllegalArgument : CGSGetDisplayBounds (display 35434400)</pre>
+<pre>No core keyboard</pre>
+<p>
+Class: Bogus.
+These are follow-up errors that result when the server tries to reset
+itself after a previous error.
+During that, another copy of the startup banner is printed, followed
+by one or more of the above messages because resetting the server
+doesn't really work in the affected versions of XDarwin.
+So when you see messages like these, scroll up in the Terminal
+resp. Console window and look for another set of banner and messages.
+This affects all versions up to and including XDarwin 1.0a3; it was
+fixed after 1.0a3 was released.
 </p>
 
 <pre>cat: /Users/chrisp/.Xauthority: No such file or directory</pre>
@@ -147,8 +164,9 @@ while you were logged into Aqua.
 Usually this happens when you installed the official XFree86 binary
 distribution and left out the Xquartz.tgz tarball.
 It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you used the command <tt><nobr>XDarwin</nobr></tt> to start the
-server.
+or when you issue the command <tt><nobr>XDarwin</nobr></tt> in a Terminal
+window to start the server (you should use startx instead in that
+case, see <a href="run-xfree86.php">Starting XFree86</a>).
 </p>
 <p>
 In any case, you can run <tt><nobr>ls -l /usr/X11R6/bin/X*</nobr></tt> and
@@ -163,6 +181,8 @@ mode server);
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
+See the <a href="inst-xfree86.php#rootless">Roaming
+Rootless Servers</a> section for more hints.
 </p>
 
 <pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
@@ -183,10 +203,10 @@ Class: Fatal.
 This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
 initialization files are not set up to add /usr/X11R6/bin to the PATH
 variable.
-If you use Fink and haven't changed your default shell, adding
-<tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt> in your
-home directory (as recommended by the Fink instructions) should be
-sufficient.
+If you use Fink and haven't changed your default shell, adding the
+line <tt><nobr>source /sw/bin/init.csh</nobr></tt> to <tt><nobr>.cshrc</nobr></tt> in
+your home directory (as recommended by the Fink instructions) should
+be sufficient.
 </p>
 
 <pre>Xlib: connection to ":0.0" refused by server
@@ -206,8 +226,21 @@ file:
 rm .Xauthority
 touch .Xauthority</pre>
 
+<pre>more error messages still to come...</pre>
+
 <p>
-more to be written...
+Another common cause for XFree86 startup failures is an incorrect
+<tt><nobr>.xinitrc</nobr></tt> file.
+What happens is that the <tt><nobr>.xinitrc</nobr></tt> is run and for some
+reason terminates almost immediately.
+<tt><nobr>xinit</nobr></tt> interprets this as "the user's session has ended"
+and kills XDarwin.
+See the <a href="run-xfree86.php#xinitrc">.xinitrc
+section</a> for more details.
+Remember to set up the PATH and to have one long-lived program that is
+not started in the background.
+It is a good idea to add <tt><nobr>exec xterm</nobr></tt> as a fallback when
+your window manager or similar can't be found.
 </p>
 
 

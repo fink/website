@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.10 2001/10/26 20:57:48 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.11 2001/10/31 10:16:26 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -815,6 +815,23 @@ wipes out /tmp on reboots and XDarwin doesn't run with root privileges
 and doesn't need to.)
 </p>
 
+<codeblock>QuartzAudioInit: AddIOProc returned 1852797029</codeblock>
+<codeblock>-[NSCFArray objectAtIndex:]: index (2) beyond bounds (2)</codeblock>
+<codeblock>kCGErrorIllegalArgument : CGSGetDisplayBounds (display 35434400)</codeblock>
+<codeblock>No core keyboard</codeblock>
+<p>
+Class: Bogus.
+These are follow-up errors that result when the server tries to reset
+itself after a previous error.
+During that, another copy of the startup banner is printed, followed
+by one or more of the above messages because resetting the server
+doesn't really work in the affected versions of XDarwin.
+So when you see messages like these, scroll up in the Terminal
+resp. Console window and look for another set of banner and messages.
+This affects all versions up to and including XDarwin 1.0a3; it was
+fixed after 1.0a3 was released.
+</p>
+
 <codeblock>cat: /Users/chrisp/.Xauthority: No such file or directory</codeblock>
 <p>
 Class: Mostly harmless.
@@ -898,8 +915,9 @@ while you were logged into Aqua.
 Usually this happens when you installed the official XFree86 binary
 distribution and left out the Xquartz.tgz tarball.
 It can also happen when the symlinks in /usr/X11R6/bin are messed up
-or when you used the command <code>XDarwin</code> to start the
-server.
+or when you issue the command <code>XDarwin</code> in a Terminal
+window to start the server (you should use startx instead in that
+case, see <xref chapter="run-xfree86">Starting XFree86</xref>).
 </p>
 <p>
 In any case, you can run <code>ls -l /usr/X11R6/bin/X*</code> and
@@ -914,6 +932,8 @@ mode server);
 If any of these are missing or pointing at different files, you need
 to fix that.
 How you do that depends on the method you used to install XFree86.
+See the <xref chapter="inst-xfree86" section="rootless">Roaming
+Rootless Servers</xref> section for more hints.
 </p>
 
 <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
@@ -934,10 +954,10 @@ Class: Fatal.
 This can happen with XDarwin 1.0a2 and 1.0a3 when your shell
 initialization files are not set up to add /usr/X11R6/bin to the PATH
 variable.
-If you use Fink and haven't changed your default shell, adding
-<code>source /sw/bin/init.csh</code> to <code>.cshrc</code> in your
-home directory (as recommended by the Fink instructions) should be
-sufficient.
+If you use Fink and haven't changed your default shell, adding the
+line <code>source /sw/bin/init.csh</code> to <code>.cshrc</code> in
+your home directory (as recommended by the Fink instructions) should
+be sufficient.
 </p>
 
 <codeblock>Xlib: connection to ":0.0" refused by server
@@ -957,22 +977,26 @@ file:
 rm .Xauthority
 touch .Xauthority</codeblock>
 
+<codeblock>more error messages still to come...</codeblock>
+
 <p>
-more to be written...
+Another common cause for XFree86 startup failures is an incorrect
+<code>.xinitrc</code> file.
+What happens is that the <code>.xinitrc</code> is run and for some
+reason terminates almost immediately.
+<code>xinit</code> interprets this as "the user's session has ended"
+and kills XDarwin.
+See the <xref chapter="run-xfree86" section="xinitrc">.xinitrc
+section</xref> for more details.
+Remember to set up the PATH and to have one long-lived program that is
+not started in the background.
+It is a good idea to add <code>exec xterm</code> as a fallback when
+your window manager or similar can't be found.
 </p>
 
 
 <!--
 <p>
-This usually happens when your <code>.xinitrc</code> isn't set up
-correctly.
-See also: <link url="run-xfree86.php#xinitrc">The .xinitrc File</link>.
-</p>
-<p>
-What happens is that the <code>.xinitrc</code> is run and for some
-reason terminates almost immediately.
-<code>xinit</code> interprets this as "the user's session has ended"
-and kills XDarwin.
 Some common problems that lead to this:
 </p>
 <ul>
