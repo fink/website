@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
-<article filename="index">
+<article filename="index" lang="es">
   <title>Ajustando el Acceso al CVS de Fink</title>
   <shorttitle>Acceso al CVS de Fink</shorttitle>
-  <cvsid>$Id: cvs.es.xml,v 1.1 2004/03/04 07:43:38 dmalloc Exp $</cvsid>
+  <cvsid>$Id: cvs.es.xml,v 1.2 2004/03/05 15:35:00 fingolfin Exp $</cvsid>
   <preface>
     <p>
 Fink es desarrollado mediante CVS.
