@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.26 2004/06/15 00:27:55 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.27 2004/07/15 01:19:13 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -717,6 +717,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
         I run Fink commands?</p>
       </question>
       <answer>
+        <p>Obsolete</p>
         <p>If you see an error sequence like the following:</p>
         <codeblock>dyld: perl Undefined symbols: 
 _Perl_safefree
@@ -1275,6 +1276,15 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p>
       </answer>
     </faqentry>
+    <faqentry name="master-problems">
+      <question>
+        <p>I'm trying to download a package, but Fink goes to some weird site with <quote>distfiles</quote> in its name, and the file isn't there.</p>
+      </question>
+      <answer>
+        <p>What's happened here is that Fink is trying to use one of it's so called <quote>Master</quote> mirrors.  These were set up to makes sure that sources for Fink packages are available even when the upstream site has moved them around.  Typically these errors occur when a new upstream version of a package is released, but hasn't made it to the Master mirrors yet.</p>
+        <p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p>
+      </answer>
+    </faqentry>
   </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>
@@ -1421,6 +1431,18 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
         <p>This most frequently happens on updates.  You need to make sure that you also have <code>xml-parser-pmXXX</code> installed, where 'XXX" corresponds to the correct version of Perl for your system, e.g. 560 for Jaguar's built in Perl, and  581 for Panther's. </p>
       </answer>
     </faqentry>
+    <faqentry name="libiconv-gettext">
+      <question>
+        <p>I can't update <code>libiconv</code>.</p>
+      </question>
+      <answer>
+        <p>If you get errors of the form:</p>
+        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+        <p>you can solve this problem by running</p>
+        <codeblock>fink remove gettext-dev
+fink install libiconv</codeblock>
+      </answer>
+    </faqentry>
   </chapter>
   <chapter filename="usage-general">
     <title>Package Usage Problems - General</title>
@@ -1549,7 +1571,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
         <p>All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. There are
   different options under Panther and under Jaguar.</p>
- <p>Under Panther you have the choice between:</p>
+        <p>Under Panther you have the choice between:</p>
         <ul>
           <li><p>     Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
@@ -1965,7 +1987,7 @@ You can check your installation by running</p>
       <answer>
         <p>If the hints in the  <xref section="apples-x11-wants-xfree86">Fink tries to install XFree86</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situtation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86 xfree86-shilbs \
+xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
