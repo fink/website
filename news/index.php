@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/03/18 21:05:33';
+$cvs_date = 'Date: 2003/03/29 20:49:27';
 
 $metatags = '';
 
@@ -14,8 +14,8 @@ include "header.inc";
 	Improvements over 3.1 final include many upstream bugfixes,
 	build improvements, koffice bugfixes, kmail crash fixes,
 	and other miscellaneous updates.  Binary packages will not
-	be available in time for the binary distribution, but will
-	be released as an update shortly thereafter.
+	be available in time for the next binary distribution, but
+	will be released as an update shortly thereafter.
 </p><a name="2003-03-18 KDE 3.1 Final In Stable"><span class="news-date">2003-03-18: </span><span class="news-headline">KDE 3.1 Final In Stable</span></a><?php gray_line(); ?>
 	<p>KDE 3.1 is now in Fink stable.  The full announcement can be
 <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</a>.

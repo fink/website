@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sat, 29 Mar 2003 15:47:37 EST</lastBuildDate>
+    <lastBuildDate>Sat, 29 Mar 2003 15:50:38 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -17,8 +17,8 @@ read here.
 	Improvements over 3.1 final include many upstream bugfixes,
 	build improvements, koffice bugfixes, kmail crash fixes,
 	and other miscellaneous updates.  Binary packages will not
-	be available in time for the binary distribution, but will
-	be released as an update shortly thereafter.
+	be available in time for the next binary distribution, but
+	will be released as an update shortly thereafter.
 </description>
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
