@@ -1,5 +1,5 @@
 <?php
-/* $Id: config.inc.php,v 1.1 2002/12/26 08:23:40 benh57 Exp $ */
+/* $Id: config.inc.php,v 1.2 2002/12/26 08:56:01 benh57 Exp $ */
 // vim: expandtab sw=4 ts=4 sts=4:
 
 /**
@@ -36,7 +36,7 @@ if (!isset($old_error_reporting)) {
  * If the auto-detection code does work properly, you can set to TRUE the
  * $cfg['PmaAbsoluteUri_DisableWarning'] variable below.
  */
-$cfg['PmaAbsoluteUri'] = 'http://fink.sf.net/phpmyadmin/';
+$cfg['PmaAbsoluteUri'] = 'http://fink.sourceforge.net/phpmyadmin/';
 
 
 /**
@@ -496,5 +496,5 @@ set_magic_quotes_runtime(0);
 /**
  * File Revision - do not change either!
  */
-$cfg['FileRevision'] = '$Revision: 1.1 $';
+$cfg['FileRevision'] = '$Revision: 1.2 $';
 ?>
