@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/05/28 19:52:59 $';
+$cvs_date = '$Date: 2002/05/29 13:42:45 $';
 
 include "header.inc";
 ?>
@@ -139,6 +139,24 @@ Screenshots:
  </li>
 </ul>
 
+<h1>Running KDE</h1>
+<p>
+ To start the KDE environment on MacOS X, all you need to do is make an
+ <b><tt>~/.xinitrc</tt></b> file with the following line in it:
+</p>
+<p>
+  <nobr><b><tt>/sw/bin/startkde</tt></b></nobr>
+</p>
+<p>
+ Then just start XFree86 (Applications -> XDarwin) and KDE should come up.  Dynamic
+ loading in KDE is still pretty slow at the moment, so there are usually noticeable
+ pauses in the amount of time KDE apps can take to start up if a library they use
+ has not been loaded before.
+</p>
+<p>
+ <b>Tip</b>: to run KDE in rootless mode, disable desktop icons by starting the
+ "Control Center" app, then going to "Desktop" and unchecking "Enable Icons on Desktop".
+</p>
 <h1>If You Have Problems...</h1>
 <p>
  ...please check the
