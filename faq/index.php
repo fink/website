@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/11/04 18:03:14';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2003/11/10 03:06:50';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -105,6 +105,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#fc-atlaas">5.11 Fink Commander hangs when I try to install atlas.</a></li>
 <li><a href="comp-general.php#basic-headers">5.12 I get messages saying that I'm missing stddef.h.  Where do I find it?</a></li>
 <li><a href="comp-general.php#multiple-dependencies">5.13 I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</a></li>
+<li><a href="comp-general.php#dpkg-parse-error">5.14 I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
@@ -149,7 +150,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#apple-x11-no-windowbar">8.11 I upgraded to Apple's X11 in Panther and now my window title bars are missing.</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.12 I installed Apple's X11 in Panther but fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.141 2003/11/04 18:03:14 htodd Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.142 2003/11/10 03:06:50 rangerrick Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/11/04 18:03:14';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2003/11/10 03:06:50';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php" title="Installing, Using and Maintaining Fink">';
 
@@ -112,6 +112,13 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
 <a name="multiple-dependencies">
 <div class="question"><p><b>Q5.13: I can't update, because Fink is "unable to resolve version conflict on multiple dependencies".</b></p></div>
 <div class="answer"><p><b>A:</b> To get around this, try updating a single package, then try to use "fink update-all" again.  If you still get the message, repeat the process.</p></div>
+</a>
+<a name="dpkg-parse-error">
+<div class="question"><p><b>Q5.14: I can't install anything because I get "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</b></p></div>
+<div class="answer"><p><b>A:</b> This means that somehow your dpkg database got corrupted, usually from a crash or some other unrecoverable error.  You can fix it by copying the previous
+version of the database, like so:</p><pre>
+sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
+</pre><p>You may need to re-install the last couple of packages you installed before the problem started occurring.</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php">6 Compile Problems - Specific Packages</a></p>
