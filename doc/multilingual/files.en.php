@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 02:15:04';
+$cvs_date = 'Date: 2004/09/28 08:28:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -119,6 +119,8 @@ include_once "header.en.inc";
         script. As a translator, your responsibility is to translate the XML
         file.</p></li>
       </ol>
+      <p>In addition, you will have to translate or modify a few other files, such as Makefile, nav.xx.inc, constants.xx.inc. Without them, the pages either will not appear on the web site or will not appear correctly.</p>
+      <p>All files are <b>utf-8 encoded</b>, consequently you should not change the encoding unless it is wrong (i.e. not utf-8), or use any html entities but those already in the English files.</p>
     
     <h2><a name="updating">2.5 Update to latest revision</a></h2>
       
@@ -150,10 +152,10 @@ include_once "header.en.inc";
         below)</li>
        <li>Static PHP files (e.g. <code>xml/web/*.en.php</code>)</li>
        <li>Documentation navigation files (e.g. <code>xml/web/doc/nav.*.inc</code>) (same handling as constants.*.inc)</li>
+        <li>Document Index (<code>xml/doc/doc.en.xml</code>)</li>
        <li>User's Guide (<code>xml/uguide.en.xml</code>)</li>
        <li>FAQ (<code>xml/faq.en.xml</code>)</li>
         <li>Running X11 (<code>xml/x11/x11.en.xml</code>)</li>
-        <li>Document Index (<code>xml/doc/doc.en.xml</code>)</li>
         <li>CVS Access (<code>xml/cvsaccess/cvs.en.xml</code>)</li>
         <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
         <li>Net Etiquette (<code>xml/netiquette/netiquette.en.xml</code>)</li>
@@ -430,6 +432,5 @@ For other
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="procedure.php?phpLang=en">3. Procedure for Updating Documents</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

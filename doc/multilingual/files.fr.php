@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 08:43:11';
+$cvs_date = 'Date: 2004/09/28 08:28:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -80,6 +80,8 @@ include_once "header.fr.inc";
         <li><b>Fichiers statiques (fichiers PHP seuls)</b> <p>Ce sont des documents dont l'organisation (c'est-à-dire la numérotation des articles) a peu de chances de varier d'un jour sur l'autre. Dans ce cas, le document est représenté par un fichier PHP, que vous devez traduire.</p></li>
         <li><b>Fichiers dynamiques (fichiers XML générant des fichiers PHP et HTML)</b> <p>Ces documents (par exemple les QFP) sont mis à jour et restructurés plus souvent, il faut donc pouvoir les réorganiser dynamiquement. Ils ont pour base un fichier XML à partir duquel sont créés des fichiers PHP et HTML au moyen d'un script. En tant que traducteur, vous devez traduire le fichier XML.</p></li>
       </ol>
+      <p>De plus, vous devrez traduite ou modifier d'autres fichiers, tels les Makefile, les fichiers de type nac.xx.inc et constants.xx.inc. En leur absence, soit les pages n'apparaîtront sur le site web, soit elles n'apparaîtront pa correctement.</p>
+      <p>Tous les fichiers sont <b>encodés en utf-8</b>. Il en résulte que vous ne devez pas changer l'encodage à moins qu'il ne soit incorrect. De même vous ne devez utiliser aucune entités html autres que celles existant déjà dans les fichiers anglais.</p>
     
     <h2><a name="updating">2.5 Récupération de la révision la plus récente</a></h2>
       
@@ -103,10 +105,10 @@ include_once "header.fr.inc";
         <li>Fichiers de constantes ( par exemple <code>xml/web/constants.*.inc</code>) (voir ci-dessous)</li>
        <li>Fichiers statiques PHP ( par exemple <code>xml/web/*.en.php</code>)</li>
      <li>Fichiers de navigation dans la documentation (par exemple <code>xml/web/doc/nav.*.inc</code>) (même traitement que constants.*.inc)</li>
+       <li>Index de la documentation (<code>xml/doc/doc.en.xml</code>)</li>
        <li>Guide utilisateur (<code>xml/uguide.en.xml</code>)</li>
        <li>QFP (<code>xml/faq.en.xml</code>)</li>
        <li>Utilisation de X11 (<code>xml/x11/x11.en.xml</code>)</li>
-       <li>Index de la documentation (<code>xml/doc/doc.en.xml</code>)</li>
        <li>Accès CVS (<code>xml/cvsaccess/cvs.en.xml</code>)</li>
        <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
        <li>Étiquette net (<code>xml/netiquette/netiquette.en.xml</code>)</li>
@@ -324,6 +326,5 @@ Pour les autres documents, les fichiers à ajouter ne sont, bien entendu, pas le
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="procedure.php?phpLang=fr">3. Procédure de mise à jour des documents</a></p>
 <? include_once "../../footer.inc"; ?>
-
 
 

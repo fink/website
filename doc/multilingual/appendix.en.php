@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Appendix";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/16 02:15:04';
+$cvs_date = 'Date: 2004/09/28 08:28:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=en" title="Additional Resources           ">';
 
 
@@ -34,6 +34,5 @@ include_once "header.en.inc";
     
   
 <? include_once "../../footer.inc"; ?>
-
 
 
