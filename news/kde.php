@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2002/07/03 01:06:12 $';
+$cvs_date = '$Date: 2002/07/03 20:36:36 $';
 
 include "header.inc";
 ?>
@@ -46,7 +46,7 @@ Screenshots:
 <h1>What's New?</h1>
 <p>
  <font color="#ff0000" size="+1">
-  The current Fink binary dist of KDE is 3.0.1. <br>
+  The current Fink binary dist of KDE is 3.0.2. <br>
   The current Fink source dist of KDE is 3.0.2.
  </font>
 </p>
