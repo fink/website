@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/11 00:17:34';
+$cvs_date = 'Date: 2004/04/16 21:23:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 include_once "header.inc";
@@ -217,6 +217,20 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
     通常、環境変数を正しく設定することで直ります。
     参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
     </p></div>
+</a>
+<a name="xml-parser">
+<div class="question"><p><b>Q6.20: 
+	次のメッセージが出ます:<q>configure: error: XML::Parser perl module is required for intltool</q>。
+	どうしたら良いでしょうか?
+	</b></p></div>
+<div class="answer"><p><b>A:</b> 
+	自分のシステムの Perl のバージョンに合った xml-parser-pm パッケージがあるか確認する必要があります。
+	例えば、 Panther の場合、
+	<code>xml-parser-pm581</code> であって、
+	<code>xml-parser-pm560</code> ではありません
+	(<code>xml-parser-pm</code> 代替パッケージでも可)。
+	Perl のバージョンが <code>Perl-5.8.1</code> であって <code>Perl-5.6.0</code> ではないからです。
+	</p></div>
 </a>
 <p align="right">
 Next: <a href="comp-packages.php?phpLang=ja">7 コンパイルの問題 - 特定のバージョン</a></p>

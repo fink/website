@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/04/11 00:17:34';
+$cvs_date = 'Date: 2004/04/16 21:23:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 include_once "header.inc";
@@ -107,6 +107,84 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 <div class="answer"><p><b>A:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
+
+<a name="virtpackage">
+<div class="question"><p><b>Q8.8: 
+	  <code>system-*</code> "virtual packages" というのを時々見かけますが、
+	  インストールも削除もできません。
+	  これはいったいなんですか?
+	</b></p></div>
+<div class="answer"><p><b>A:</b> 
+	  <code>system-perl</code> のような名前のパッケージは代替パッケージです。
+	  これは、実際にはファイル等を含んでいる訳ではなく、
+	  fink 外で手動でインストールされたプログラムを fink に伝えるための仕組みとして存在します。
+	</p><p>
+	  この仕組みは10.3 ディストリビューションから導入されました。
+	  ほとんどの代替パッケージは自分でインストールや削除できるものではありません。
+	  その代わりに、手動でインストールされたプログラム一覧を元に fink プログラム自体が作成する
+	  "Virtual Packages" パッケージデータ構造となっています。
+	  fink は、それぞれのパッケージについて特定の場所の特定のファイルを確認し、
+	  見つかった場合はバーチャルパッケージがインストール済みと判断します。
+	</p><p>
+	  fink が認識しているインストール済みの一覧は、
+	  <code>fink-virtual-packages</code> を実行することで見ることができます。
+	  <code>--debug</code> フラグを追加すると、具体的にどのファイルを見ているのかという診断情報も確認できます。
+	</p><p>
+	  任意のプログラムを (fink 外で) インストールし、 fink にこれを認識させる仕組みは残念ながらありません。
+	  configure やコンパイルフラグ、パス名などを確認するのは非常に困難なためです。
+	</p><p>
+	  以下は、 fink が定義するバーチャルパッケージのうち最も重要なものです (fink-0.19.2 時点) :
+	</p><ul>
+	  <li>system-perl: [virtual package representing perl]
+	    <p>
+		  これの実体は <code>/usr/bin/perl</code> で、デフォルトの OS X インストールの一部になっています。
+		  このパッケージは、 perl インタープリータのバージョン X.X.X である
+		  <code>system-perlXXX</code> と <code>perlXXX-core</code> も提供します。
+	    </p>
+	  </li>
+	  <li>system-javaXXX: [virtual package representing Java X.X.X]
+	    <p>
+		  これの実体は Java Runtime Environment で、 OS X (および Apple Software Update) の一部です。
+		  詳細は、 <a href="http://www.apple.co.jp/java">Apple の Java のページ</a> をご覧ください。
+	    </p>
+	  </li>
+	  <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+	    <p>
+		  これの実体は Java SDK で、 <a href="http://connect.apple.com">connect.apple.com</a>
+		  (登録が必要) からダウンロードし、インストールする必要があります。
+		  Java Runtime Environment を更新した場合、 SDK は自動的に更新されません (削除されることもあります!) 。
+		  Runtime Environment をインストールや更新した場合、 SDK を確認 (し、必要に応じてダウンロード、インストール)
+		  してください。
+		  <a href="comp-general.php?phpLang=ja#system-java">この FAQ</a> も合わせてお読みください。
+	    </p>
+	  </li>
+	  <li>system-java3d: [virtual package representing Java3D]</li>
+	  <li>system-javaai: [virtual package representing Java Advanced Imaging]
+	    <p>
+		  これの実体は、 Java の 3D 画像処理の機能拡張です。
+		  Apple からダウンロードし、インストールします。
+		  <a href="http://docs.info.apple.com/article.html?artnum=120289">Apple のページ</a>
+		  をお読みください。
+	    </p>
+	  </li>
+	  <li>system-xfree86: [placeholder for user installed x11]</li>
+	  <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
+	    <p>
+		  これの実体は Apple X11/XDarwin で、  OS X のオプション (X11User.pkg) です。
+		  二つのパッケージは、それぞれ <code>x11</code> と <code>x11-shlibs</code>
+		  になります。
+		  <a href="comp-packages.php?phpLang=ja#cant-install-xfree">この FAQ</a> も合わせてお読みください。
+	    </p>
+	  </li>
+	  <li>system-xfree86-dev [placeholder for user installed x11 development tools]
+	    <p>
+		  これの実体は Apple X11/XDarwin SDK で、  OS X のオプション (X11SDK.pkg) です。
+		  <a href="comp-packages.php?phpLang=ja#cant-install-xfree">この FAQ</a> も合わせてお読みください。
+	    </p>
+	  </li>
+	</ul></div>
+</a>
+
 <p align="right">
 Next: <a href="usage-packages.php?phpLang=ja">9 パッケージ使用上の問題 - 特定のパッケージ</a></p>
 
