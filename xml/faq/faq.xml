@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.128 2003/09/06 21:04:23 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.129 2003/09/06 21:20:22 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -838,8 +838,9 @@ installation or install libwww after you installed Fink.
 </question>
 <answer>
 <p>This occasionally happens with splitoff packages (i.e. the ones with -dev, -shlibs, etc.) when a file gets moved from one part of the splitoff to another (e.g. from <code>foo</code> to <code>foo-shlibs</code>.  What you can do is overwrite the file with that from the package you are trying to install (since they are nominally the same):</p>
-<codeblock>sudo dpkg -i --force-overwrite packagename</codeblock>
-<p>where <em>packagename</em> is the package that you are trying to install.</p>
+<codeblock>sudo dpkg -i --force-overwrite <em>filename</em>
+</codeblock>
+<p>where <em>filename</em> is the .deb file corresponding to the package that you are trying to install.</p>
 </answer>
 </faqentry>
 <faqentry name="weak_lib" >
