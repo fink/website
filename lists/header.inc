@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.7 2004/03/03 17:04:03 dmalloc Exp $ */
+/* $Id: header.inc,v 1.8 2004/03/03 17:07:55 dmalloc Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -19,7 +19,7 @@
 // +--------------------------------------------------------------------------+
 
 // Language Code (from phpLang.inc.php)
-include_once dirname(__FILE__) . "/phpLang.inc.php";
+include_once "../phpLang.inc.php";
 $lang_code = 'en'; 
 if ((phpLang_current)) $lang_code = phpLang_current;
 

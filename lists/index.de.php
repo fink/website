@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/03 17:04:03 $';
+$cvs_date = '$Date: 2004/03/03 17:07:55 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ Fink hat mehrere Diskussions-Listen. Alle Listen werden von SourceForge zur
 Verfügung gestellt und von Geocrawler archiviert.
 </p>
 <p>
-Alle dieser Diskussions-Listen sind fre zug�nglich nachdem Sie sich angemeldet haben. Clicken Sie auf den Namen der Liste die Sie interessiert und Sie erhalten mehr Informationen.
+Alle dieser Diskussions-Listen sind frei zugänglich nachdem Sie sich angemeldet haben. Clicken Sie auf den Namen der Liste die Sie interessiert und Sie erhalten mehr Informationen.
 </p>
 <p>
 <em>Bitte kein cross-posting!</em> 
