@@ -1,7 +1,7 @@
 <?
 $title = "ソースリリースのダウンロード";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/02 16:21:21 $';
+$cvs_date = '$Date: 2004/03/25 01:26:22 $';
 
 include "header.inc";
 ?>
@@ -38,9 +38,9 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 インストールと使用方法は tarball 内にあります。
 Fink はワンクリックで動作するものではないので、必ず読んで下さい。
 README, INSTALL と USAGE はテキスト形式 (コマンドラインで読むため) とHTML形式 (ブラウザで読んだり印刷するため) で配布されています。
-いずれも <a href="../doc/index.php">ドキュメントセクション</a>
-からも読むことができます。
+いずれも当サイトの<a href="../doc/index.php">文書</a>からも読むことができます。
 </p>
+
 <p>
 <a href="../lists/fink-announce.php">fink-announce mailinglist</a>
 ではリリースの公表をしていますので、興味のある方は購読して下さい。

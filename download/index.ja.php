@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/06 12:42:20 $';
+$cvs_date = '$Date: 2004/03/25 01:26:22 $';
 
 include "header.inc";
 ?>
@@ -11,14 +11,14 @@ include "header.inc";
 <p>
 Fink をインストール、アップグレードする方法はたくさんありますが、
 初めての方には、このページの方法をお勧めします。
-より詳しい情報は <a href="overview.php">overview</a> と
+より詳しい情報は <a href="overview.php">概要</a> と
 <a href="upgrade.php">アップグレード表</a> をご覧下さい。
 </p>
 
 <h2>Quick Start</h2>
 <p>
 初めてですか?
-Quick Start では手軽にバイナリリリースをインストールする方法を解説します。
+はじめの一歩では手軽にバイナリリリースをインストールする方法を解説します。
 </p>
 <? 
 include "../fink_version.inc";
@@ -137,9 +137,9 @@ Developer Tools がインストールされていない場合が、この方法�
 
 <p>
 詳細や他の情報については、
-<a href="../faq/index.php?phpLang=ja">よくある質問</a>
+<a href="../faq/index.php?phpLang=ja">F.A.Q.</a>
 と
-<a href="../doc/index.php?phpLang=ja">ドキュメンテーション</a>
+<a href="../doc/index.php?phpLang=ja">各種文書</a>
 をご覧下さい。
 これでもまだ疑問がありましたら、 <a
 href="../help/index.php?phpLang=ja">ヘルプページ</a>
