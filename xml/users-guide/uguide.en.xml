@@ -3,7 +3,7 @@
 <document filename="index" lang="en" >
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.2 2004/03/09 23:50:43 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.3 2004/03/10 11:34:52 michga Exp $</cvsid>
   <preface>
     <p>
       <em>This document is a work in progress.</em>
@@ -181,9 +181,8 @@ After downloading the disk image from the
 <link url="http://fink.sourceforge.net/download/bindist.php" >download page</link>
 (you may have to use your browser's &quot;Save Target as...&quot; or &quot;Download
 to Disk&quot; function), double-click it to mount it.
-Open the &quot;Fink 0.x.x Installer&quot; disk icon that appears on your desktop
-after Disk Copy has verified the file.
-Inside you'll find some documentation and a installer package.
+Open the &quot;Fink 0.x.x Installer&quot; disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
+Inside you'll find some documentation and an installer package.
 Double-click the installer package and follow the instructions on
 screen.
 </p>
@@ -291,7 +290,7 @@ running the command:
    you have an existing <code>.bash_profile</code> file, you should use that
    instead):
   </p>
-          <codeblock>source /sw/bin/init.sh</codeblock>
+          <codeblock>. /sw/bin/init.sh</codeblock>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -299,7 +298,7 @@ running the command:
 pico .profile</codeblock>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
-   can simply start typing the <code>source /sw/bin/init.sh</code> line.  It's
+   can simply start typing the <code>. /sw/bin/init.sh</code> line.  It's
    okay if there is a note that says &quot;New file&quot;.  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
@@ -309,7 +308,7 @@ pico .profile</codeblock>
           <p>
             <strong>C Shell</strong> (default on Mac OS X 10.2 and earlier) </p>
           <p>
-   If you use tcsh (the default on Mac OS X), add the following line to
+   If you use tcsh, add the following line to
    the file <filename>.cshrc</filename> in your home directory:
   </p>
           <codeblock>source /sw/bin/init.csh</codeblock>
@@ -343,8 +342,7 @@ pico .cshrc</codeblock>
             <li>
               <p>You followed the instructions under <code>/usr/share/tcsh/examples/README</code>.</p>
               <p>These instructions tell you to create a <code>~/.tcshrc</code> and a<code> ~/.login</code> .  The problem in this case is with <code>~/.login</code>, which gets run after <code>~/.tcshrc</code>, and sources <code>/usr/share/tcsh/examples/login</code>.  The latter contains a line that overwrites your previous PATH setup.  What you should do in this case is create <code>~/Library/init/tcsh/path</code>:</p>
-              <codeblock>mkdir ~/Library/init
-  mkdir ~/Library/init/tcsh
+              <codeblock>mkdir -p ~/Library/init/tcsh
   pico ~/library/init/tcsh/path</codeblock>
               <p>and put:</p>
               <codeblock>source ~/.cshrc</codeblock>
@@ -362,7 +360,7 @@ pico .cshrc</codeblock>
       </ul>
       <p>
 Note that the scripts also add <filename>/usr/X11R6/bin</filename> and
-<filename>/usr/X11R6/man</filename> to your path so you can use X11 when
+<filename>/usr/X11R6/man</filename> to your PATH so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.
@@ -396,13 +394,12 @@ available packages and select which ones you want installed.
 It runs inside Terminal.app, but takes over the whole &quot;screen&quot; and
 uses simple keyboard navigation.
 Like the other package management tools, <code>dselect</code> requires
-root privileges, so you must either become root before you start it or
-use sudo:
+root privileges, so you should use sudo (from an account with administrator privileges):
 </p>
       <codeblock>sudo dselect</codeblock>
       <p>
         <em>Note:</em>
-        <code>dselect</code> has known difficulties with the OSX Terminal application.  You should run the following commands before using it, or put them in the appropriate startup file (e.g. <code>.cshrc</code> | <code>.profile</code>):</p>
+        <code>dselect</code> has known difficulties with the Mac OS X Terminal application.  You should run the following commands before using it, or put them in the appropriate startup file (e.g. <code>.cshrc</code> / <code>.profile</code>):</p>
       <p>tcsh users:</p>
       <codeblock>setenv TERM xterm-color</codeblock>
       <p>bash users:</p>
@@ -893,7 +890,7 @@ manually.</p>
         </li>
       </ul>
     </section>
-    <section name="downloding" >
+    <section name="downloading" >
       <title>Download Settings</title>
       <p>There are various settings which influence the way Fink downloads
 package data.</p>
@@ -1027,8 +1024,7 @@ fill your hard-disk quickly!</em>
 Some of them need at
 least one package name, but can handle several package names at
 once. You can specify just the package name (e.g. gimp), or a fully
-qualified name with a version number (e.g. gimp-1.2.1 or
-gimp-1.2.1-3). Fink will automatically choose the latest available
+qualified name with a version number (e.g. gimp-1.2.1) or with both version and revision numbers (e.g. gimp-1.2.1-3). Fink will automatically choose the latest available
 version and revision when they are not specified.  Others have different options.</p>
       <p>What follows is a list of the commands for the <code>fink</code> tool:</p>
     </section>
@@ -1164,7 +1160,7 @@ tarballs even when they were downloaded before.</p>
     </section>
     <section name="fetch-missing" >
       <title>fetch-missing</title>
-      <p>Downloads <em>all</em> package source files. This command will only download
+      <p>Downloads <em>all</em> missing package source files. This command will only download
 files that are not present on the system.</p>
     </section>
     <section name="build" >
