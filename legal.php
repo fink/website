@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/01/16 07:29:08 $';
+$cvs_date = '$Date: 2003/01/16 14:16:30 $';
 
 include "header.inc";
 ?>
@@ -41,9 +41,7 @@ such, unless you are notified otherwise, these Materials are subject to
 the copyright laws and may not be used without the prior express
 permission of the <b>Fink Project</b>. Without the prior written permission of
 the <b>Fink Project</b> you may not copy, distribute or transfer any material
-on this site, in whole or in part. All materials may be accessed,
-downloaded or printed for your personal non-commercial use only. Any
-unauthorised use of the Materials may violate such laws. The <b>Fink
+on this site, in whole or in part. All materials may be accessed, printed for your personal non-commercial use only unless otherwise stated. Downloads are subject to the enclosed license and or copyright notice. Any unauthorised use of the Materials may violate such laws. The <b>Fink
 Project</b> shall not be responsible for, and you hereby agree to indemnify
 the <b>Fink Project</b> for, any liability associated with infringement of the copyright laws related to your use of Materials displayed on this site.
 <br><br>
