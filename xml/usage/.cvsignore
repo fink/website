@@ -1,3 +1,4 @@
 *.php
-*.pphp
 *.html
+*.txt
+*.txml

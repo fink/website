@@ -1,25 +1,34 @@
-# $Id: Makefile.common,v 1.1 2001/06/18 13:51:50 chrisp Exp $
+# $Id: Makefile.common,v 1.2 2001/06/23 17:05:32 chrisp Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
 
-STYLESHEET = $(basedir)/finkdoc-html.xsl
-POSTPROCESSOR = $(basedir)/postprocess.pl
+STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
+STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
-all: $(TARGET)
+PROCESS_HTML = $(basedir)/postprocess.pl
+PROCESS_TEXT = $(basedir)/textify.pl
+
+all: $(TARGET) $(patsubst %.xml,%.txt,$(SOURCE))
 
 force: clean all
 
-%.html: $(SOURCE) $(STYLESHEET)
-	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET)
+%.html: $(SOURCE) $(STYLESHEET_HTML)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_HTML)
 
-%.php: %.html $(POSTPROCESSOR)
-	$(POSTPROCESSOR) <$< >$@
+%.php: %.html $(PROCESS_HTML)
+	$(PROCESS_HTML) <$< >$@
+
+%.txml: %.xml $(STYLESHEET_TEXT)
+	CLASSPATH=$(basedir)/saxon.jar java com.icl.saxon.StyleSheet $(SOURCE) $(STYLESHEET_TEXT) >$@
+
+%.txt: %.txml $(PROCESS_TEXT)
+	$(PROCESS_TEXT) <$< >$@
 
 clean:
-	rm -rf *.php *.html
+	rm -rf *.php *.html *.txt *.txml
 
-.SUFFIXES: .xml .php .html
+.SUFFIXES: .xml .php .html .txt .txml
 
 .PHONY: all clean force
 

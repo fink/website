@@ -14,7 +14,7 @@ $text =~ s|<html>.*<head>.*<title>|<?\n\$title = "|s;
 $text =~ s|</title>|";\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';\n\n\$metatags = '|s;
 $text =~ s|</head>.*<body>|';\n\ninclude "header.inc";\n?>\n\n|s;
 $text =~ s|</body>.*</html>|\n\n\n<?\ninclude "footer.inc";\n?>\n|s;
-$text =~ s|\$Id|&#36;Id|g;
+$text =~ s|\$Id|\$Fink|g;
 
 print $text;
 
