@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.113 2004/01/10 14:09:18 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.114 2004/01/11 18:22:25 rangerrick Exp $</cvsid>
 <newsitem>
 	<date>2004-01-10</date>
 	<headline>Pssst want to install GNOME 2.4?</headline> 
 	<body>
 	<p>
-	Finally after a lot of work by packaging newcomer Keith Conger and old GNOME 
-	Maintainer Masanori Sekino GNOME 2.4 has finally made it into the unstable 
-	tree of 10.3
+	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
+	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino GNOME 2.4 has
+	finally been released to the 10.3 unstable tree.
 	</p>
 	<p>
-	It is there for the taking please offer some of your time and test these packages
-	if you are on unstable already. We expect now issues with upgrading or freshly 
-	installed GNOME you can reach the all GNOME savvy people at 
-	&quot;fink-gnome-coreATlists.sourceforge.net&quot; none the less. 
-	Please do report success stories there as well. The more good reports we get the
-	faster GNOME 2.4 can be moved to stable.
+	It is there for the taking; please offer some of your time and test these packages
+	if you are on unstable already.  Because of the massive number of changes, it is
+	expected that there will be issues upgrading or installing the new GNOME.  If you
+	have problems, you can reach the GNOME-savvy people at
+	&quot;fink-gnome-coreATlists.sourceforge.net&quot;.  Please do report success
+	stories there as well.  The more good reports we get the faster GNOME 2.4 can be
+	moved to stable.
 	</p>
 	<p>
-	For those of you who do not read our mailing lists, why aren?t you subscribed yet anyways, here is a link to detailed 
+	For those of you who do not read our mailing lists, <extlink
+	url="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</extlink>?
+	Here is a link to detailed 
 	<extlink url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</extlink> 
 	how to install or upgrade GNOME and what new stuff it brings.
 	</p>
