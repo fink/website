@@ -26,25 +26,29 @@ include_once "header.ja.inc";
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
-<pre>
- -h, --help            - このヘルプテキストを表示
+<pre> -h, --help            - このヘルプテキストを表示
  -q, --quiet           - fink をやかましくなくさせます --verboseの反対
  -V, --version         - バージョン情報を表示
  -v, --verbose         - fink をやかましくなくさせます --quietの反対
  -y, --yes             - 全ての質問にデフォルト値を自動的に回答
- -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用
-</pre>
+ -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用 (コンパイル時間やディスク節約のため)
+                         このモードは、パッケージが要求するバージョンがある場合に限りダウンロード
+                         するよう Fink に指示します。バイナリ版があるバージョンを無理にダウン
+                         ロードすることはありません。
+ --no-use-binary-dist  - コンパイル済みバイナリパッケージを使用しない (--use-binary-dist の逆)
+ -K, --keep-root-dir   - /sw/src/root-[name]-[version]-[revision] ディレクトリをパッケー
+                         ジビルド後に削除しないように Fink に指示をする
+ -k, --keep-build-dir  - /sw/src/[name]-[version]-[revision] ディレクトリをパッケー
+                         ジビルド後に削除しないように Fink に指示をする
+ --build-as-nobody     - 解凍、パッチ、コンパイル、インストール時に root 以外のユーザーになる。
+                         このオプションで作成されたパッケージは機能しない可能性があることに注意。
+                         このモードはパッケージの開発とデバッグ目的にのみ使用。</pre>
 <p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
 <p>
 ほとんどのオプションは名前から内容が推測できると思います。
 一回限りではなく、常に使用したいオプションは
 <a href="conf.php?phpLang=ja">Fink 設定ファイル</a> (fink.conf)
 で設定することができます。
-</p>
-<p>
-<code>--use-binary-dist</code> を使用すると， <code>fink</code> は
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードしようとします
-(<code>fink</code> バージョン 0.23.0 以降で有効)。
 </p>
 
 <h2><a name="install">6.3 install</a></h2>
@@ -61,9 +65,7 @@ The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</pre>
 <p>
-<a href="#options">--use-binary-dist</a> を使用すると， <code>fink</code> to try to
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします。
-これにより時間を節約することができます。
+<a href="#options">--use-binary-dist</a> を使用することで時間を節約することができます。
 </p>
 <p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
 </p>
@@ -79,6 +81,10 @@ remove コマンドは実際のパッケージファイル (設定ファイル�
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
 ディスク容量が必要であれば、 <code>/sw/fink/dists</code> ツリーから .deb ファイルを取り除いてもかまいません。
 </p>
+<p>fink remove 時に、以下のフラグを使用することができます。</p>
+<pre>-h,--help             使用できるオプションを表示
+-r,--recursive        当該パッケージに依存するパッケージを削除
+                         (上述の問題を解決します)</pre>
 <p>エイリアス: disable, deactivate, unuse, delete.</p>
 
 <h2><a name="purge">6.5 purge</a></h2>
@@ -113,6 +119,7 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
      未インストール
  i   最新バージョンがインストール済
 (i)  インストール済だが最新バージョンではない
+p   インストールされたパッケージにより提供されたバーチャルパッケージ
 </pre>
 <p>
 <code>fink list</code> コマンドにはフラグがあります:
@@ -133,6 +140,10 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
 	  未インストールパッケージのみ表示。
 -s=expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
+ -m expr,--maintainer=expr
+	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
+ -t expr,--tree=expr
+	  正規表現 expr にマッチするツリ−内にあるパッケージのみ表示
 -w=xyz,--width=xyz.
 	  出力形式の幅を設定する。
 	  xyz は数値か auto 。
@@ -184,14 +195,21 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 
 <p>
 <b>全ての</b>パッケージソースファイルをダウンロードします。
-fetch と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
+<code>fetch</code> と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
 </p>
+<p><code>fink fetch-all</code> コマンドには以下のフラグが使用できます:</p>
+<pre>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</pre>
 
 <h2><a name="fetch-missing">6.12 fetch-missing</a></h2>
 
 <p>
 ローカルに存在しない<b>全ての</b>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
+<p><code>fink fetch-missing</code> コマンドには以下のフラグが使用できます:</p>
+<pre>-h,--help
+-i,--ignore-restrictive</pre>
 
 <h2><a name="build">6.13 build</a></h2>
 
@@ -211,9 +229,6 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
 パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
 パッケージの開発中にはとても役に立ちます。
-</p>
-<p>
-<a href="#options">--use-binary-dist option</a> はここでも使用することができます。
 </p>
 
 <h2><a name="reinstall">6.15 reinstall</a></h2>
@@ -252,9 +267,15 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <h2><a name="validate">6.19 validate</a></h2>
 
 <p>
-このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
-パッケージメンテナーは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
+このコマンドは、 .info と .deb ファイルについていくつかの評価を行ないます。
+パッケージメンテナは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
 </p>
+<p>以下のフラグが使用できます:</p>
+<pre>-h,--help            - 使用できるオプションを表示
+ -p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
+ --pedantic, --no-pedantic
+                      - 形式に関する警告の表示を制御します
+                       --pedantic が規定値</pre>
 <p>
 エイリアス: check
 </p>
@@ -272,7 +293,8 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 かなりのディスク容量が利用できるようになります。
 </p>
 <p>
-<a href="#options">--use-binary-dist option</a> を使用すると，古いバイナリパッケージも削除されます。
+<a href="#options">--use-binary-dist option</a> を使用すると，古いバイナリパッケージも削除され、
+<code>fink scanpackages</code> が実行されます。
 </p>
 
     <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
@@ -294,6 +316,13 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 -p key,              - Display the given percent expansion key(s),
    --percent=key       in the order listed.
       </pre>
+    
+    <h2><a name="show-deps">6.23 show-deps</a></h2>
+      
+      <p>fink-0.23-6 および以降。</p>
+      <p>
+      	コンパイル時 (ビルド) と実行時 (インストール) の依存するパッケージを人間が読める一形式で表示する。
+      </p>
     
 
 <? include_once "../../footer.inc"; ?>

@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.17 2005/03/08 14:32:53 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.18 2005/03/25 22:26:18 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -999,6 +999,12 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 					<em>0.21.0 以降でのみ有効</em>.
 				</p>
 			</li>
+        	<li><p><em>NotifyPlugin:</em> プラグイン</p><p>
+           			パッケージがいつインストール/アンインストールされたかを答える告知プラグインを指定する。
+           			規定値は Growl (<code>Mac::Growl</code> が必要)。
+           			他のプラグインは、 <filename>/sw/lib/perl5/Fink/Notify</filename> にある。
+				</p>
+			</li>
 		</ul>
 	</section>
 	<section name="sourceslist" >
@@ -1064,25 +1070,29 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
-<codeblock>
- -h, --help            - このヘルプテキストを表示
+<codeblock> -h, --help            - このヘルプテキストを表示
  -q, --quiet           - fink をやかましくなくさせます --verboseの反対
  -V, --version         - バージョン情報を表示
  -v, --verbose         - fink をやかましくなくさせます --quietの反対
  -y, --yes             - 全ての質問にデフォルト値を自動的に回答
- -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用
-</codeblock>
+ -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用 (コンパイル時間やディスク節約のため)
+                         このモードは、パッケージが要求するバージョンがある場合に限りダウンロード
+                         するよう Fink に指示します。バイナリ版があるバージョンを無理にダウン
+                         ロードすることはありません。
+ --no-use-binary-dist  - コンパイル済みバイナリパッケージを使用しない (--use-binary-dist の逆)
+ -K, --keep-root-dir   - /sw/src/root-[name]-[version]-[revision] ディレクトリをパッケー
+                         ジビルド後に削除しないように Fink に指示をする
+ -k, --keep-build-dir  - /sw/src/[name]-[version]-[revision] ディレクトリをパッケー
+                         ジビルド後に削除しないように Fink に指示をする
+ --build-as-nobody     - 解凍、パッチ、コンパイル、インストール時に root 以外のユーザーになる。
+                         このオプションで作成されたパッケージは機能しない可能性があることに注意。
+                         このモードはパッケージの開発とデバッグ目的にのみ使用。</codeblock>
 <p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
 <p>
 ほとんどのオプションは名前から内容が推測できると思います。
 一回限りではなく、常に使用したいオプションは
 <xref chapter="conf">Fink 設定ファイル</xref> (fink.conf)
 で設定することができます。
-</p>
-<p>
-<code>--use-binary-dist</code> を使用すると， <code>fink</code> は
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードしようとします
-(<code>fink</code> バージョン 0.23.0 以降で有効)。
 </p>
 </section>
 <section name="install" >
@@ -1099,9 +1109,7 @@ The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
 <p>
-<xref section="options">--use-binary-dist</xref> を使用すると， <code>fink</code> to try to
-コンパイル済みバイナリがあり、システムにインストールされていない場合、バイナリ版をダウンロードします。
-これにより時間を節約することができます。
+<xref section="options">--use-binary-dist</xref> を使用することで時間を節約することができます。
 </p>
 <p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
 </p>
@@ -1117,6 +1125,10 @@ remove コマンドは実際のパッケージファイル (設定ファイル�
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
 ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから .deb ファイルを取り除いてもかまいません。
 </p>
+<p>fink remove 時に、以下のフラグを使用することができます。</p>
+<codeblock>-h,--help             使用できるオプションを表示
+-r,--recursive        当該パッケージに依存するパッケージを削除
+                         (上述の問題を解決します)</codeblock>
 <p>エイリアス: disable, deactivate, unuse, delete.</p>
 </section>
 <section name="purge">
@@ -1151,6 +1163,7 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
      未インストール
  i   最新バージョンがインストール済
 (i)  インストール済だが最新バージョンではない
+p   インストールされたパッケージにより提供されたバーチャルパッケージ
 </codeblock>
 <p>
 <code>fink list</code> コマンドにはフラグがあります:
@@ -1171,6 +1184,10 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
 	  未インストールパッケージのみ表示。
 -s=expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
+ -m expr,--maintainer=expr
+	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
+ -t expr,--tree=expr
+	  正規表現 expr にマッチするツリ−内にあるパッケージのみ表示
 -w=xyz,--width=xyz.
 	  出力形式の幅を設定する。
 	  xyz は数値か auto 。
@@ -1222,14 +1239,21 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <title>fetch-all</title>
 <p>
 <em>全ての</em>パッケージソースファイルをダウンロードします。
-fetch と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
+<code>fetch</code> と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
 </p>
+<p><code>fink fetch-all</code> コマンドには以下のフラグが使用できます:</p>
+<codeblock>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</codeblock>
 </section>
 <section name="fetch-missing" >
 <title>fetch-missing</title>
 <p>
 ローカルに存在しない<em>全ての</em>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
+<p><code>fink fetch-missing</code> コマンドには以下のフラグが使用できます:</p>
+<codeblock>-h,--help
+-i,--ignore-restrictive</codeblock>
 </section>
 <section name="build" >
 <title>build</title>
@@ -1249,9 +1273,6 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <p>パッケージをビルドします (build コマンドと同様に) が、すでにある .deb ファイルは無視し、上書きします。
 パッケージがインストールされたら、新しい .deb ファイルは <code>dpkg</code> を用いてインストールされます。
 パッケージの開発中にはとても役に立ちます。
-</p>
-<p>
-<xref section="options">--use-binary-dist option</xref> はここでも使用することができます。
 </p>
 </section>
 <section name="reinstall" >
@@ -1290,9 +1311,15 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <section name="validate" >
 <title>validate</title>
 <p>
-このコマンドは、 .info と .deb ファイルについていくつかチェックを行ないます。
-パッケージメンテナーは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
+このコマンドは、 .info と .deb ファイルについていくつかの評価を行ないます。
+パッケージメンテナは、 submit する前にパッケージ記述と対応するパッケージに対して実行して下さい。
 </p>
+<p>以下のフラグが使用できます:</p>
+<codeblock>-h,--help            - 使用できるオプションを表示
+ -p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
+ --pedantic, --no-pedantic
+                      - 形式に関する警告の表示を制御します
+                       --pedantic が規定値</codeblock>
 <p>
 エイリアス: check
 </p>
@@ -1310,7 +1337,8 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 かなりのディスク容量が利用できるようになります。
 </p>
 <p>
-<xref section="options">--use-binary-dist option</xref> を使用すると，古いバイナリパッケージも削除されます。
+<xref section="options">--use-binary-dist option</xref> を使用すると，古いバイナリパッケージも削除され、
+<code>fink scanpackages</code> が実行されます。
 </p>
 </section>
     <section name="dumpinfo">
@@ -1332,6 +1360,13 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 -p key,              - Display the given percent expansion key(s),
    --percent=key       in the order listed.
       </codeblock>
+    </section>
+    <section name="show-deps">
+      <title>show-deps</title>
+      <p>fink-0.23-6 および以降。</p>
+      <p>
+      	コンパイル時 (ビルド) と実行時 (インストール) の依存するパッケージを人間が読める一形式で表示する。
+      </p>
     </section>
 </chapter>
 </document>

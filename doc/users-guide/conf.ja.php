@@ -330,6 +330,12 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 					<b>0.21.0 以降でのみ有効</b>.
 				</p>
 			</li>
+        	<li><p><b>NotifyPlugin:</b> プラグイン</p><p>
+           			パッケージがいつインストール/アンインストールされたかを答える告知プラグインを指定する。
+           			規定値は Growl (<code>Mac::Growl</code> が必要)。
+           			他のプラグインは、 <code>/sw/lib/perl5/Fink/Notify</code> にある。
+				</p>
+			</li>
 		</ul>
 	
 	<h2><a name="sourceslist">5.9 apt の sources.list ファイルを管理</a></h2>
