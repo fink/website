@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.57 2004/02/10 21:40:34 dmalloc Exp $ */
+/* $Id: header.inc,v 1.58 2004/02/21 14:12:11 babayoshihiko Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -49,11 +49,11 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html lang="en">
+<html >
 <head>
 <title>Fink - <? print $title ?></title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management">
 <meta name="description" content="The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution" 
 <meta name="robots" content="all">
@@ -269,4 +269,5 @@ function gray_line ()
 	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
 }
 
+if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;";
 ?>
