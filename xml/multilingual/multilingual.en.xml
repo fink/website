@@ -492,7 +492,7 @@ For other
     </section>
     <section name="prompt-update">
       <title>Prompt Update to Existing Documentation</title>
-      <p>The base English documentation is <xref chapter="files" section="committing">committed</xref> and <xref chapter="files" section="website">activated</xref> immediately. The
+      <p>The base English documentation is <xref chapter="files" section="committing">committed</xref> and <xref chapter="files" section="website">activated</xref> immediately--whomever changed the XML should commit the HTML and PHP, and do the activation. The
       translation teams then update their versions, <xref chapter="files" section="committing">commit</xref><em> all</em> of the files (XML and
       PHP), then <xref chapter="files" section="activate">activate</xref> the
       changes.</p>
@@ -514,6 +514,10 @@ For other
         files will be generated, committed, and <xref chapter="files" section="website">activated</xref> simultaneously at an
         agreed-upon time by one person, e.g. someone from the i18n core
         team.</p>
+    </section>
+    <section name="summary">
+      <title>For Developers and English Language Documenters:</title>
+      <p>The current policy is that all documents should be updated according to the <xref section="prompt-update">prompt update</xref> schedule, unless you have a specific reason to do otherwise.</p>
     </section>
   </chapter>
   <chapter filename="resources">
