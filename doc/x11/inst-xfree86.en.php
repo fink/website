@@ -1,9 +1,9 @@
 <?
 
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:54';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"run-xfree86.php?phpLang=en\" title=\"Starting XFree86\" /><link rel=\"prev\" href=\"history.php?phpLang=en\" title=\"History\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:42';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"run-xfree86.php?phpLang=en\" title=\"Starting XFree86\">\n\t<link rel=\"prev\" href=\"history.php?phpLang=en\" title=\"History\" />";
 
 include_once "header.en.inc"; 
 ?><h1>Running X11 - 3 Getting and Installing XFree86</h1>

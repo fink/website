@@ -1,9 +1,9 @@
 <?
 
 $title = "Running X11 - Troubleshooting";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:54';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"tips.php?phpLang=en\" title=\"Usage Tips\" /><link rel=\"prev\" href=\"other.php?phpLang=en\" title=\"Other X11 Possibilities\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:42';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"tips.php?phpLang=en\" title=\"Usage Tips\">\n\t<link rel=\"prev\" href=\"other.php?phpLang=en\" title=\"Other X11 Possibilities\" />";
 
 include_once "header.en.inc"; 
 ?><h1>Running X11 - 7 Troubleshooting XFree86</h1>

@@ -3,7 +3,7 @@
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"general.php?phpLang=ja\" title=\"一般的な質問\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\"><link rel=\"next\" href=\"general.php?phpLang=ja\" title=\"一般的な質問\">";
 
 include_once "header.ja.inc"; 
 ?><h1>The Fink F.A.Q.</h1>
@@ -14,151 +14,37 @@ include_once "header.ja.inc";
 下記の目次にすべての質問があります。
 それぞれリンクされていますので、辿っていってください。</p>
 <h2>Contents</h2><ul>
-<li><a href="general.php?phpLang=ja"><b>1 一般的な質問</b></a></li>
-<ul>
-<li><a href="general.php?phpLang=ja#what">1.1 Fink とは何ですか?</a></li>
-<li><a href="general.php?phpLang=ja#naming">1.2 Fink とはどういう意味ですか?</a></li>
-<li><a href="general.php?phpLang=ja#bsd-ports">1.3 
+	<li><a href="general.php?phpLang=ja"><b>1 一般的な質問</b></a><ul><li><a href="general.php?phpLang=ja#what">1.1 Fink とは何ですか?</a></li><li><a href="general.php?phpLang=ja#naming">1.2 Fink とはどういう意味ですか?</a></li><li><a href="general.php?phpLang=ja#bsd-ports">1.3 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
-</a></li>
-<li><a href="general.php?phpLang=ja#usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li>
-<li><a href="general.php?phpLang=ja#why-sw">1.5 ではなぜ /sw を選んだのですか?</a></li>
-</ul>
-<li><a href="relations.php?phpLang=ja"><b>2 他のプロジェクトとの関係</b></a></li>
-<ul>
-<li><a href="relations.php?phpLang=ja#upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li>
-<li><a href="relations.php?phpLang=ja#debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li>
-<li><a href="relations.php?phpLang=ja#apple">2.3 Apple とは関係がありますか?</a></li>
-<li><a href="relations.php?phpLang=ja#openosx">2.4 OpenOSX.com とは関係がありますか?</a></li>
-<li><a href="relations.php?phpLang=ja#forked">2.5 macosx.forked.net とは関係がありますか?</a></li>
-<li><a href="relations.php?phpLang=ja#darwinports">2.6 Darwinports とは関係がありますか?</a></li>
-</ul>
-<li><a href="mirrors.php?phpLang=ja"><b>3 Fink ミラー</b></a></li>
-<ul>
-<li><a href="mirrors.php?phpLang=ja#when-use">3.1 Fink ミラーとは何ですか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#where">3.3 Fink ミラーの情報はどこにありますか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li>
-<li><a href="mirrors.php?phpLang=ja#howswitch">3.6 どのように方式を切り替えるのですか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#status">3.7 rsync ミラーの現在の状態は見ることが出来ますか?</a></li>
-<li><a href="mirrors.php?phpLang=ja#Master">3.8 Distfiles ミラーとは何ですか?</a></li>
-</ul>
-<li><a href="upgrade-fink.php?phpLang=ja"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a></li>
-<ul>
-<li><a href="upgrade-fink.php?phpLang=ja#gcc-0.16.0">4.1 バージョン0.16.0にアップグレードして "Your version of the
-gcc 3.3 compiler is out of date." と言われました。どうしたらいいですか?</a></li>
-</ul>
-<li><a href="usage-fink.php?phpLang=ja"><b>5 Fink のインストール、使用、メンテナンス</b></a></li>
-<ul>
-<li><a href="usage-fink.php?phpLang=ja#what-packages">5.1 Fink がサポートしているパッケージはどのように探せますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#proxy">5.2 ファイヤーウォールの内側にいます。どう設定したら Fink で HTTP プロキシが使えますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#firewalled-cvs">5.3 ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#moving">5.4 インストール後に Fink を他の場所に移動できますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#moving-symlink">5.5 Fink をインストール後、他の場所に移動してシンボリックリンクを張ったら、動きますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#removing">5.6 Fink を全てアンインストールするには?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#bindist">5.7 ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
-</a></li>
-<li><a href="usage-fink.php?phpLang=ja#unstable">5.8 unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#sudo">5.9 sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#exec-init-csh">5.10 init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。
-何がおかしいのですか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#dselect-access">5.11 うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</a></li>
-<li><a href="usage-fink.php?phpLang=ja#cvs-busy">5.12 <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<code>Updating using CVS failed. Check the error messages above.</code>" エラーが出ました。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#kernel-panics">5.13 Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</a></li>
-<li><a href="usage-fink.php?phpLang=ja#not-found">5.14 パッケージをインストールしようとすると、 Fink がダウンロードできません。
+</a></li><li><a href="general.php?phpLang=ja#usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li><li><a href="general.php?phpLang=ja#why-sw">1.5 ではなぜ /sw を選んだのですか?</a></li></ul></li><li><a href="relations.php?phpLang=ja"><b>2 他のプロジェクトとの関係</b></a><ul><li><a href="relations.php?phpLang=ja#upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li><li><a href="relations.php?phpLang=ja#debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li><li><a href="relations.php?phpLang=ja#apple">2.3 Apple とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#openosx">2.4 OpenOSX.com とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#forked">2.5 macosx.forked.net とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#darwinports">2.6 Darwinports とは関係がありますか?</a></li></ul></li><li><a href="mirrors.php?phpLang=ja"><b>3 Fink ミラー</b></a><ul><li><a href="mirrors.php?phpLang=ja#when-use">3.1 Fink ミラーとは何ですか?</a></li><li><a href="mirrors.php?phpLang=ja#why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li><li><a href="mirrors.php?phpLang=ja#where">3.3 Fink ミラーの情報はどこにありますか?</a></li><li><a href="mirrors.php?phpLang=ja#when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li><li><a href="mirrors.php?phpLang=ja#otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li><li><a href="mirrors.php?phpLang=ja#howswitch">3.6 どのように方式を切り替えるのですか?</a></li><li><a href="mirrors.php?phpLang=ja#status">3.7 rsync ミラーの現在の状態は見ることが出来ますか?</a></li><li><a href="mirrors.php?phpLang=ja#Master">3.8 Distfiles ミラーとは何ですか?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=ja"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a><ul><li><a href="upgrade-fink.php?phpLang=ja#gcc-0.16.0">4.1 バージョン0.16.0にアップグレードして "Your version of the
+gcc 3.3 compiler is out of date." と言われました。どうしたらいいですか?</a></li></ul></li><li><a href="usage-fink.php?phpLang=ja"><b>5 Fink のインストール、使用、メンテナンス</b></a><ul><li><a href="usage-fink.php?phpLang=ja#what-packages">5.1 Fink がサポートしているパッケージはどのように探せますか?</a></li><li><a href="usage-fink.php?phpLang=ja#proxy">5.2 ファイヤーウォールの内側にいます。どう設定したら Fink で HTTP プロキシが使えますか?</a></li><li><a href="usage-fink.php?phpLang=ja#firewalled-cvs">5.3 ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</a></li><li><a href="usage-fink.php?phpLang=ja#moving">5.4 インストール後に Fink を他の場所に移動できますか?</a></li><li><a href="usage-fink.php?phpLang=ja#moving-symlink">5.5 Fink をインストール後、他の場所に移動してシンボリックリンクを張ったら、動きますか?</a></li><li><a href="usage-fink.php?phpLang=ja#removing">5.6 Fink を全てアンインストールするには?</a></li><li><a href="usage-fink.php?phpLang=ja#bindist">5.7 ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
+</a></li><li><a href="usage-fink.php?phpLang=ja#unstable">5.8 unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</a></li><li><a href="usage-fink.php?phpLang=ja#sudo">5.9 sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</a></li><li><a href="usage-fink.php?phpLang=ja#exec-init-csh">5.10 init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。
+何がおかしいのですか?</a></li><li><a href="usage-fink.php?phpLang=ja#dselect-access">5.11 うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</a></li><li><a href="usage-fink.php?phpLang=ja#cvs-busy">5.12 <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<code>Updating using CVS failed. Check the error messages above.</code>" エラーが出ました。</a></li><li><a href="usage-fink.php?phpLang=ja#kernel-panics">5.13 Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</a></li><li><a href="usage-fink.php?phpLang=ja#not-found">5.14 パッケージをインストールしようとすると、 Fink がダウンロードできません。
 ダウンロードサイトとは Fink よりも新しいバージョンを示しています。
-何をしたらいいですか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#fink-not-found">5.15 Fink や Fink でインストールしたものを実行しようとすると
-"command not found" エラーが出ます。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#invisible-sw">5.16 Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#install-info-bad">5.17 何もインストールできません。
+何をしたらいいですか?</a></li><li><a href="usage-fink.php?phpLang=ja#fink-not-found">5.15 Fink や Fink でインストールしたものを実行しようとすると
+"command not found" エラーが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#invisible-sw">5.16 Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</a></li><li><a href="usage-fink.php?phpLang=ja#install-info-bad">5.17 何もインストールできません。
 "install-info: unrecognized option `--infodir=/sw/share/info'"
-のエラーが出るだけです。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#bad-list-file">5.18 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#error-nineteen">5.19 Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#dselect-garbage">5.20 <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
-これはどうやったら使えますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#perl-undefined-symbol">5.21 なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#cant-upgrade">5.22 Fink のバージョンをアップデートできないようです。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#spaces-in-directory">5.23 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</a></li>
-<li><a href="usage-fink.php?phpLang=ja#packages-gz">5.24 バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#wrong-tree">5.25 OS | Developer Tools を変えたら、 Fink が認識してくれません。</a></li>
-<li><a href="usage-fink.php?phpLang=ja#seg-fault">5.26 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</a></li>
-<li><a href="usage-fink.php?phpLang=ja#pathsetup-keeps-running">5.27 ターミナルウィンドウを開くと、
+のエラーが出るだけです。</a></li><li><a href="usage-fink.php?phpLang=ja#bad-list-file">5.18 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</a></li><li><a href="usage-fink.php?phpLang=ja#error-nineteen">5.19 Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</a></li><li><a href="usage-fink.php?phpLang=ja#dselect-garbage">5.20 <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
+これはどうやったら使えますか?</a></li><li><a href="usage-fink.php?phpLang=ja#perl-undefined-symbol">5.21 なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</a></li><li><a href="usage-fink.php?phpLang=ja#cant-upgrade">5.22 Fink のバージョンをアップデートできないようです。</a></li><li><a href="usage-fink.php?phpLang=ja#spaces-in-directory">5.23 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</a></li><li><a href="usage-fink.php?phpLang=ja#packages-gz">5.24 バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#wrong-tree">5.25 OS | Developer Tools を変えたら、 Fink が認識してくれません。</a></li><li><a href="usage-fink.php?phpLang=ja#seg-fault">5.26 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</a></li><li><a href="usage-fink.php?phpLang=ja#pathsetup-keeps-running">5.27 ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
-というメッセージが出てログアウトします。</a></li>
-</ul>
-<li><a href="comp-general.php?phpLang=ja"><b>6 コンパイルの問題 - 一般</b></a></li>
-<ul>
-<li><a href="comp-general.php?phpLang=ja#compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
-これは何ですか?</a></li>
-<li><a href="comp-general.php?phpLang=ja#cvs">6.2 "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
-</a></li>
-<li><a href="comp-general.php?phpLang=ja#missing-make">6.3 <code>make</code> に関連したエラーがでました。</a></li>
-<li><a href="comp-general.php?phpLang=ja#head">6.4 head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</a></li>
-<li><a href="comp-general.php?phpLang=ja#also_in">6.5 あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
-</a></li>
-<li><a href="comp-general.php?phpLang=ja#weak_lib">6.6 December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: I get messages about "weak libraries"</a></li>
-<li><a href="comp-general.php?phpLang=ja#mv-failed">6.7 パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</a></li>
-<li><a href="comp-general.php?phpLang=ja#node-exists">6.8 '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</a></li>
-<li><a href="comp-general.php?phpLang=ja#usr-local-libs">6.9 /usr/local/lib にインストールされているライブラリが Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</a></li>
-<li><a href="comp-general.php?phpLang=ja#toc-out-of-date">6.10 パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
-</a></li>
-<li><a href="comp-general.php?phpLang=ja#fc-atlas">6.11 atlas をインストールしようとすると、 Fink Commander がハングアップします。</a></li>
-<li><a href="comp-general.php?phpLang=ja#basic-headers">6.12 stddef.h が見つからないというメッセージが出ます。
-これはどこにありますか?</a></li>
-<li><a href="comp-general.php?phpLang=ja#multiple-dependencies">6.13 Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</a></li>
-<li><a href="comp-general.php?phpLang=ja#dpkg-parse-error">6.14 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
-というメッセージが出て、何もインストールできません!</a></li>
-<li><a href="comp-general.php?phpLang=ja#freetype-problems">6.15 freetype に関係したエラーが出ます。</a></li>
-<li><a href="comp-general.php?phpLang=ja#dlfcn-from-oo">6.16 `Dl_info' のエラーが出ます。</a></li>
-<li><a href="comp-general.php?phpLang=ja#gcc2">6.17 Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</a></li>
-</ul>
-<li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a></li>
-<ul>
-<li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li>
-<li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li>
-<li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li>
-<li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li>
-</ul>
-<li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a></li>
-<ul>
-<li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
+というメッセージが出てログアウトします。</a></li></ul></li><li><a href="comp-general.php?phpLang=ja"><b>6 コンパイルの問題 - 一般</b></a><ul><li><a href="comp-general.php?phpLang=ja#compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
+これは何ですか?</a></li><li><a href="comp-general.php?phpLang=ja#cvs">6.2 "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
+</a></li><li><a href="comp-general.php?phpLang=ja#missing-make">6.3 <code>make</code> に関連したエラーがでました。</a></li><li><a href="comp-general.php?phpLang=ja#head">6.4 head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</a></li><li><a href="comp-general.php?phpLang=ja#also_in">6.5 あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
+</a></li><li><a href="comp-general.php?phpLang=ja#weak_lib">6.6 December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: I get messages about "weak libraries"</a></li><li><a href="comp-general.php?phpLang=ja#mv-failed">6.7 パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</a></li><li><a href="comp-general.php?phpLang=ja#node-exists">6.8 '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</a></li><li><a href="comp-general.php?phpLang=ja#usr-local-libs">6.9 /usr/local/lib にインストールされているライブラリが Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</a></li><li><a href="comp-general.php?phpLang=ja#toc-out-of-date">6.10 パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
+</a></li><li><a href="comp-general.php?phpLang=ja#fc-atlas">6.11 atlas をインストールしようとすると、 Fink Commander がハングアップします。</a></li><li><a href="comp-general.php?phpLang=ja#basic-headers">6.12 stddef.h が見つからないというメッセージが出ます。
+これはどこにありますか?</a></li><li><a href="comp-general.php?phpLang=ja#multiple-dependencies">6.13 Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</a></li><li><a href="comp-general.php?phpLang=ja#dpkg-parse-error">6.14 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+というメッセージが出て、何もインストールできません!</a></li><li><a href="comp-general.php?phpLang=ja#freetype-problems">6.15 freetype に関係したエラーが出ます。</a></li><li><a href="comp-general.php?phpLang=ja#dlfcn-from-oo">6.16 `Dl_info' のエラーが出ます。</a></li><li><a href="comp-general.php?phpLang=ja#gcc2">6.17 Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
 "locale not supported by C library"
-これはまずいことですか?</a></li>
-<li><a href="usage-general.php?phpLang=ja#passwd">8.2 いきなり変なユーザーがシステムに現れました。
+これはまずいことですか?</a></li><li><a href="usage-general.php?phpLang=ja#passwd">8.2 いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
-こいつらはどこから来たのですか?</a></li>
-<li><a href="usage-general.php?phpLang=ja#compile-myself">8.3 Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</a></li>
-<li><a href="usage-general.php?phpLang=ja#apple-x11-applications-menu">8.4 Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</a></li>
-<li><a href="usage-general.php?phpLang=ja#x-options">8.5 X11 の種類が多くて迷っています。
-Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</a></li>
-<li><a href="usage-general.php?phpLang=ja#no-display">8.6 アプリケーションを実行しようとすると、
+こいつらはどこから来たのですか?</a></li><li><a href="usage-general.php?phpLang=ja#compile-myself">8.3 Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</a></li><li><a href="usage-general.php?phpLang=ja#apple-x11-applications-menu">8.4 Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</a></li><li><a href="usage-general.php?phpLang=ja#x-options">8.5 X11 の種類が多くて迷っています。
+Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</a></li><li><a href="usage-general.php?phpLang=ja#no-display">8.6 アプリケーションを実行しようとすると、
 "cannot open display:"
 というメッセージがでます。
-どうしたら良いですか?</a></li>
-<li><a href="usage-general.php?phpLang=ja#suggest-package">8.7 自分の好きなプログラムが Fink にありません。
-Fink に推薦したいのですが、どうしたら良いですか?</a></li>
-</ul>
-<li><a href="usage-packages.php?phpLang=ja"><b>9 パッケージ使用上の問題 - 特定のパッケージ</b></a></li>
-<ul>
-<li><a href="usage-packages.php?phpLang=ja#xmms-quiet">9.1 XMMS から音がでません。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#nedit-window-locks">9.2 nedit でファイルを編集していると、他のファイルを開く時にウィンドウが出ますが、反応がありません。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#xdarwin-start">9.3 助けて!
-XDarwin を起動してもすぐ終了しちゃう!</a></li>
-<li><a href="usage-packages.php?phpLang=ja#no-server">9.4 XDarwin を起動しようとすると、このメッセージがでます
+どうしたら良いですか?</a></li><li><a href="usage-general.php?phpLang=ja#suggest-package">8.7 自分の好きなプログラムが Fink にありません。
+Fink に推薦したいのですが、どうしたら良いですか?</a></li></ul></li><li><a href="usage-packages.php?phpLang=ja"><b>9 パッケージ使用上の問題 - 特定のパッケージ</b></a><ul><li><a href="usage-packages.php?phpLang=ja#xmms-quiet">9.1 XMMS から音がでません。</a></li><li><a href="usage-packages.php?phpLang=ja#nedit-window-locks">9.2 nedit でファイルを編集していると、他のファイルを開く時にウィンドウが出ますが、反応がありません。</a></li><li><a href="usage-packages.php?phpLang=ja#xdarwin-start">9.3 助けて!
+XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-packages.php?phpLang=ja#no-server">9.4 XDarwin を起動しようとすると、このメッセージがでます
 "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"。
-</a></li>
-<li><a href="usage-packages.php?phpLang=ja#xterm-error">9.5 xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#libXmuu">9.6 XFree86 を起動しようとすると、下記のエラーのひとつがでます。
+</a></li><li><a href="usage-packages.php?phpLang=ja#xterm-error">9.5 xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</a></li><li><a href="usage-packages.php?phpLang=ja#libXmuu">9.6 XFree86 を起動しようとすると、下記のエラーのひとつがでます。
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
-または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li>
-<li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li>
-<li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
-<li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li>
-</ul>
-</ul><p>Generated from <i>$Id: index.ja.php,v 1.3 2004/02/29 13:21:18 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>
+または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Panther で Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-beta-wants-xfree86">9.12 Apple の X11 と 10.2-gcc3.3 バージョンの Fink をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</a></li></ul></li></ul><p>Generated from <i>$Id: index.ja.php,v 1.4 2004/02/29 23:29:17 fingolfin Exp $</i></p><? include_once "../footer.inc"; ?>

@@ -1,9 +1,9 @@
 <?
 
 $title = "Running X11 - Tips";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:54';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" /><link rel=\"prev\" href=\"trouble.php?phpLang=en\" title=\"Troubleshooting XFree86\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:42';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"prev\" href=\"trouble.php?phpLang=en\" title=\"Troubleshooting XFree86\" />";
 
 include_once "header.en.inc"; 
 ?><h1>Running X11 - 8 Usage Tips</h1>

@@ -3,7 +3,7 @@
 $title = "F.A.Q. - 一般";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:05:56';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"relations.php?phpLang=ja\" title=\"他のプロジェクトとの関係\" /><link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"relations.php?phpLang=ja\" title=\"他のプロジェクトとの関係\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=ja\" title=\"F.A.Q. Contents\" />";
 
 include_once "header.ja.inc"; 
 ?><h1>F.A.Q. - 1 一般的な質問</h1>

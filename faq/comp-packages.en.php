@@ -1,9 +1,9 @@
 <?
 
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:53';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"usage-general.php?phpLang=en\" title=\"Package Usage Problems - General\" /><link rel=\"prev\" href=\"comp-general.php?phpLang=en\" title=\"Compile Problems - General\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"usage-general.php?phpLang=en\" title=\"Package Usage Problems - General\">\n\t<link rel=\"prev\" href=\"comp-general.php?phpLang=en\" title=\"Compile Problems - General\" />";
 
 include_once "header.en.inc"; 
 ?><h1>F.A.Q. - 7 Compile Problems - Specific Packages</h1>

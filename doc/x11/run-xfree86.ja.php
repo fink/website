@@ -3,7 +3,7 @@
 $title = "Running X11 - XFree86 の起動";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2004/02/28 17:21:14';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"xtools.php?phpLang=ja\" title=\"Xtools\" /><link rel=\"prev\" href=\"inst-xfree86.php?phpLang=ja\" title=\"XFree86 の入手とインストール\" />";
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=ja\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"xtools.php?phpLang=ja\" title=\"Xtools\">\n\t<link rel=\"prev\" href=\"inst-xfree86.php?phpLang=ja\" title=\"XFree86 の入手とインストール\" />";
 
 include_once "header.ja.inc"; 
 ?><h1>Running X11 - 4 XFree86 の起動</h1>

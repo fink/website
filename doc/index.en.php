@@ -1,11 +1,11 @@
 <?
 $title = "";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/06/29 18:03:07';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
 include_once 'nav.inc';
 $fsroot = $root = '../';
 include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1><p>Generated from <i>$Id: index.en.php,v 1.1 2004/02/28 16:21:48 babayoshihiko Exp $</i></p>
+?><h1>Fink - Documentation</h1><p>Generated from <i>$Id: index.en.php,v 1.2 2004/02/29 23:29:16 fingolfin Exp $</i></p>
 <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X

@@ -1,9 +1,9 @@
 <?
 
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:54';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" /><link rel=\"next\" href=\"history.php?phpLang=en\" title=\"History\" /><link rel=\"prev\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:42';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\">\n\t<link rel=\"next\" href=\"history.php?phpLang=en\" title=\"History\">\n\t<link rel=\"prev\" href=\"index.php?phpLang=en\" title=\"Running X11 Contents\" />";
 
 include_once "header.en.inc"; 
 ?><h1>Running X11 - 1 Introduction</h1>

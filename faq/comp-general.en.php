@@ -1,9 +1,9 @@
 <?
 
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:53';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"comp-packages.php?phpLang=en\" title=\"Compile Problems - Specific Packages\" /><link rel=\"prev\" href=\"usage-fink.php?phpLang=en\" title=\"Installing, Using and Maintaining Fink\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"comp-packages.php?phpLang=en\" title=\"Compile Problems - Specific Packages\">\n\t<link rel=\"prev\" href=\"usage-fink.php?phpLang=en\" title=\"Installing, Using and Maintaining Fink\" />";
 
 include_once "header.en.inc"; 
 ?><h1>F.A.Q. - 6 Compile Problems - General</h1>

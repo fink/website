@@ -1,9 +1,9 @@
 <?
 
 $title = "F.A.Q. - Relations";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:53';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"mirrors.php?phpLang=en\" title=\"Fink mirrors\" /><link rel=\"prev\" href=\"general.php?phpLang=en\" title=\"General Questions\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"mirrors.php?phpLang=en\" title=\"Fink mirrors\">\n\t<link rel=\"prev\" href=\"general.php?phpLang=en\" title=\"General Questions\" />";
 
 include_once "header.en.inc"; 
 ?><h1>F.A.Q. - 2 Relations with Other Projects</h1>

@@ -1,9 +1,9 @@
 <?
 
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:53';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"comp-general.php?phpLang=en\" title=\"Compile Problems - General\" /><link rel=\"prev\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"comp-general.php?phpLang=en\" title=\"Compile Problems - General\">\n\t<link rel=\"prev\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\" />";
 
 include_once "header.en.inc"; 
 ?><h1>F.A.Q. - 5 Installing, Using and Maintaining Fink</h1>

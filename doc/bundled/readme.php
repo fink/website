@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2002/04/13 21:14:21';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.9 2002/04/13 21:14:21 fingolfin Exp $</i></p>
+<h1>Fink ReadMe</h1><p>Generated from <i>$Fink: readme.en.xml,v 1.1 2004/02/29 22:31:41 fingolfin Exp $</i></p>
 <p>
 This is Fink, a package management system that aims to bring the full
 world of Open Source software to Darwin and Mac OS X.

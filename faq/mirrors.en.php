@@ -1,9 +1,9 @@
 <?
 
 $title = "F.A.Q. - Mirrors";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/02/26 00:14:53';
-$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\" /><link rel=\"next\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\" /><link rel=\"prev\" href=\"relations.php?phpLang=en\" title=\"Relations with Other Projects\" />";
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2004/02/29 22:31:41';
+$metatags = "<link rel=\"contents\" href=\"index.php?phpLang=en\" title=\"F.A.Q. Contents\">\n\t<link rel=\"next\" href=\"upgrade-fink.php?phpLang=en\" title=\"Upgrading Fink (version-specific troubleshooting)\">\n\t<link rel=\"prev\" href=\"relations.php?phpLang=en\" title=\"Relations with Other Projects\" />";
 
 include_once "header.en.inc"; 
 ?><h1>F.A.Q. - 3 Fink mirrors</h1>
