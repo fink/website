@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/03/01 01:03:59';
+$cvs_date = 'Date: 2003/05/02 17:37:59';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -62,6 +62,9 @@ as the binary.</li>
 <li><code>GPL/LGPL</code> - this if a special case for packages where
 one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
+<li><code>Artistic/GPL </code>, <code>GPL/GFDL</code>, <code>LGPL/GFDL</code>
+ - these are similar to <code>GPL/LGPL</code> above, and should require no
+further explanation.</li>
 
 <li><code>BSD</code> - for BSD-style licenses.
 This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
