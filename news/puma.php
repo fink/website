@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_date = '$Date: 2001/10/03 11:50:11 $';
 
 include "header.inc";
 ?>
@@ -22,28 +22,34 @@ Unfortunately there are also new bugs, and old issues like broken SysV
 shared memory and locale functions are still there.
 </p>
 
+<p><b>(Updated Oct 3.)</b></p>
 <p>
-The bad news first: apt-get currently doesn't work on 10.1.
-You'll get the message <tt>The package cache file is corrupted</tt>
-when you run it.
-The cause is still unknown, but it's a top priority to resolve this.
+apt-get had an issue that is now fixed in Fink 0.3.0.
+If you use the binary distribution (i.e. you use <tt>dselect</tt> or
+<tt>apt-get</tt> instead of <tt>fink install ...</tt>) and you've
+already upgraded to 10.1, you'll need the
+<a href="../download/puma-kit.php">special upgrade kit</a>.
+Other users are not affected, but it is strongly recommended to
+upgrade Fink to 0.3.0 before upgrading Mac OS X to 10.1.
 </p>
 <p>
-The following packages in Fink 0.2.6 don't compile on Mac OS X 10.1,
-but have fixed versions in unstable:
-apache, php, librep, tcltk, python, enlightenment.
-</p>
-<p>
-PostgreSQL also doesn't compile on 10.1.
+PostgreSQL doesn't work on 10.1 in its current state.
 We have been provided with a patch, but there are problems with it and
 there's no updated package yet.
 </p>
 <p>
-OpenSSH has been fixed, a new package is in stable CVS.
+OpenSSH has been fixed, a new package is in Fink 0.3.0.
 The new package also supports incoming X11 forwarding.
+If you upgrade to 10.1, you may want to rebuild OpenSSH to take
+advantage of /dev/urandom.
+Just run 'fink rebuild openssh'.
 </p>
 <p>
-GNOME 1.4 has been patched for 10.1 and is in stable CVS.
+There is a problem with XFree86 on 10.1 that can be corrected by
+adjusting your keymapping preferences.
+If XDarwin quits immediately when you start it after upgrading to
+10.1, check out <a href="../faq/packages.php#xfree-keymapping">this
+FAQ entry</a>.
 </p>
 <p>
 Apple has removed wget and replaced it with curl due to licensing
@@ -53,23 +59,26 @@ whatever is available to download source tarballs.
 The latest versions of both wget and curl are available as packages.
 </p>
 <p>
-There are no further known issues with 10.1 beyond those listed here;
-Fink 0.2.6 already included fixes for most library-bearing packages.
+Xaw3D and possibly some other packages don't compile on 10.1 if you
+have installed XFree86 manually (i.e. you have system-xfree86) or if
+you have Xtools.
+This is because Xaw3D uses XFree86's configuration files and only the
+xfree86-base package has been adapted for 10.1.
+Recent CVS versions of XFree86 also work, but only when you compiled
+the whole thing yourself, not with the XDarwin 1.0a# binary test
+releases.
+</p>
+<p>
+There are no further known 10.1-related issues beyond those listed
+here.
 If you run into problems, please report them on the <a
 href="../lists/fink-users.php">mailing list</a> or through the <a
 href="http://sourceforge.net/tracker/?atid=117203&group_id=17203">bug
 tracker</a> at SourceForge.
-Expect a new Fink release once the apt-get issue has been fixed.
 </p>
 <p>
 Oh, one more thing: Many thanks to Apple for providing the project
 with a pre-release copy of Mac OS X 10.1!
-</p>
-
-<p>
-<b>Update Sep 27:</b> The apt-get issue has been solved. New versions
-of the Fink distribution and the binary installer will be released
-this weekend.
 </p>
 
 
