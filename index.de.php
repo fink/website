@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: costabel $';
-$cvs_date = '$Date: 2004/04/09 18:02:06 $';
+$cvs_author = '$Author: g5cpu $';
+$cvs_date = '$Date: 2004/04/16 22:29:57 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -30,9 +30,9 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 
 <?
 // Include news items
-include $fsroot."news/news.inc";
+include $fsroot."news/news.de.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php">Older News...</a></div>
+<div align="right"><a href="<? print $root; ?>news/index.php">Ältere News...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
@@ -76,7 +76,8 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Einen Patc
 </a>, <a href="doc/cvsaccess/index.php">Zugangsdaten</a>)</li>
 </ul>
 <p>
-Um uns Bugs zu melden oder manche der anderen Dienste nutzen zu können, brauchen Sie eine Mitgliedschaft bei <a href="http://sourceforge.net/">SourceForge</a>. Diese ist kostenlos und sobald Sie sich angemeldet haben, können Sie schon loslegen. Wir freuen uns auf Ihre Mitarbeit!
+Um uns Bugs zu melden oder manche der anderen Dienste nutzen zu können, brauchen Sie eine Mitgliedschaft bei <a href="http://sourceforge.net/">SourceForge</a>. Diese ist kostenlos und sobald Sie sich angemeldet haben, können Sie schon loslegen. Wir freu
+en uns auf Ihre Mitarbeit!
 </p>
 
 </td></tr></table>
