@@ -318,9 +318,6 @@ as the binary.</li>
 <li><tt style="white-space: nowrap;">GPL/LGPL</tt> - this if a special case for packages where
 one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
-<li><tt style="white-space: nowrap;">Artistic/GPL </tt>, <tt style="white-space: nowrap;">GPL/GFDL</tt>, <tt style="white-space: nowrap;">LGPL/GFDL</tt>
- - these are similar to <tt style="white-space: nowrap;">GPL/LGPL</tt> above, and should require no
-further explanation.</li>
 
 <li><tt style="white-space: nowrap;">BSD</tt> - for BSD-style licenses.
 This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
@@ -330,6 +327,17 @@ optional.</li>
 
 <li><tt style="white-space: nowrap;">Artistic</tt> - for the Artistic license and
 derivatives.</li>
+
+<li><tt style="white-space: nowrap;">Artistic/GPL</tt> - dual-licensed under the Artistic and GPL
+licenses.</li> 
+
+<li><tt style="white-space: nowrap;">GNU Free Documentation License</tt> and <tt style="white-space: nowrap;">Linux
+Documentation Project</tt> - if the documentation included in a package
+is explicitly included under one of the licenses, then this is indicated by
+appending <tt style="white-space: nowrap;">/GFDL</tt> or <tt style="white-space: nowrap;">/LDP</tt>, giving one of the
+allowed combinations: &quot;GFDL&quot;,
+&quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;, &quot;LDP&quot;, or &quot;GPL/LGPL/LDP&quot;.
+</li>
 
 <li><tt style="white-space: nowrap;">OSI-Approved</tt> - for other Open Source licenses
 approved by the <a href="http://www.opensource.org/">Open Source
@@ -342,9 +350,9 @@ Use this for packages that are available from the author in source
 form for free use, but don't allow free redistribution.</li>
 
 <li><tt style="white-space: nowrap;">Restrictive/Distributable</tt> - for restrictive licenses which
-permit distribution of binaries.
+permit distribution of source and binaries.
 Use this for packages that are available from the author in source
-form, permit distribution of binaries, but have restrictions which
+form, permit distribution of source and binaries, but have restrictions which
 make them non-open source licenses.</li>
 
 <li><tt style="white-space: nowrap;">Commercial</tt> - for restrictive, commercial licenses.
@@ -357,13 +365,7 @@ packages don't have licenses at all and anyone can do anything with
 them.</li>
 
 </ul>
-<p>
-If the documentation included in a package is explicitly put under the
-GNU Free Documentation License, a <tt style="white-space: nowrap;">/GFDL</tt> may be appended to
-the License field, e.g. <tt style="white-space: nowrap;">GPL/GFDL</tt>. If the documentation
-included in a package is explicitly put under the Linux Documentation
-Project license, the same applies, e.g. <tt style="white-space: nowrap;">GPL/LDP</tt>.
-</p>
+
 
 
 
@@ -1740,4 +1742,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.40 2003/05/02 17:37:59 fingolfin Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.41 2003/05/02 20:36:34 dmrrsn Exp $</i></p></body></html>

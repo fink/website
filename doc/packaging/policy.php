@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/05/02 17:37:59';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/05/02 20:36:34';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="next" href="fslayout.php" title="Filesystem Layout"><link rel="prev" href="format.php" title="Package Descriptions">';
 
@@ -62,9 +62,6 @@ as the binary.</li>
 <li><code>GPL/LGPL</code> - this if a special case for packages where
 one part is licensed under the GPL (e.g. the executables) and another
 part is licensed under the LGPL (e.g. the libraries).</li>
-<li><code>Artistic/GPL </code>, <code>GPL/GFDL</code>, <code>LGPL/GFDL</code>
- - these are similar to <code>GPL/LGPL</code> above, and should require no
-further explanation.</li>
 
 <li><code>BSD</code> - for BSD-style licenses.
 This includes the so-called &quot;original&quot; BSD license, the &quot;modified&quot; BSD
@@ -74,6 +71,17 @@ optional.</li>
 
 <li><code>Artistic</code> - for the Artistic license and
 derivatives.</li>
+
+<li><code>Artistic/GPL</code> - dual-licensed under the Artistic and GPL
+licenses.</li> 
+
+<li><code>GNU Free Documentation License</code> and <code>Linux
+Documentation Project</code> - if the documentation included in a package
+is explicitly included under one of the licenses, then this is indicated by
+appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
+allowed combinations: &quot;GFDL&quot;,
+&quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;, &quot;LDP&quot;, or &quot;GPL/LGPL/LDP&quot;.
+</li>
 
 <li><code>OSI-Approved</code> - for other Open Source licenses
 approved by the <a href="http://www.opensource.org/">Open Source
@@ -86,9 +94,9 @@ Use this for packages that are available from the author in source
 form for free use, but don't allow free redistribution.</li>
 
 <li><code>Restrictive/Distributable</code> - for restrictive licenses which
-permit distribution of binaries.
+permit distribution of source and binaries.
 Use this for packages that are available from the author in source
-form, permit distribution of binaries, but have restrictions which
+form, permit distribution of source and binaries, but have restrictions which
 make them non-open source licenses.</li>
 
 <li><code>Commercial</code> - for restrictive, commercial licenses.
@@ -101,13 +109,7 @@ packages don't have licenses at all and anyone can do anything with
 them.</li>
 
 </ul>
-<p>
-If the documentation included in a package is explicitly put under the
-GNU Free Documentation License, a <code>/GFDL</code> may be appended to
-the License field, e.g. <code>GPL/GFDL</code>. If the documentation
-included in a package is explicitly put under the Linux Documentation
-Project license, the same applies, e.g. <code>GPL/LDP</code>.
-</p>
+
 
 
 
