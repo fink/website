@@ -1,40 +1,56 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.2 2004/02/16 13:50:34 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
 
+BASE_SOURCE := $(SOURCE)
+BASE_TARGET := $(TARGET)
+
+ifdef LANGUAGES
+SOURCE := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
+SOURCE := $(if $(shell /usr/bin/find . -name $(patsubst %.xml,%.en.xml,$(BASE_SOURCE))),$(SOURCE),$(subst .en.,.,$(SOURCE)))
+TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
+endif
+
 ifndef STYLESHEET_WEBSITE
-STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
+STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.i18n.xsl
 endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 
 PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 
-all_targets = $(TARGET)
-install_files = $(TARGET)
+ALL_TARGETS = $(TARGET)
+INSTALL_FILES = $(TARGET)
 
 ifdef WANT_HTML
-all_targets += $(patsubst %.xml,%.html,$(SOURCE))
-install_files += $(patsubst %.xml,%.html,$(SOURCE))
-install_html = $(patsubst %.xml,%.html,$(SOURCE))
+ifdef LANGUAGES
+ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+else
+ALL_TARGETS += $(patsubst %.xml,%.html,$(BASE_SOURCE))
+INSTALL_FILES += $(patsubst %.xml,%.html,$(BASE_SOURCE))
+INSTALL_HTML = $(patsubst %.xml,%.html,$(BASE_SOURCE))
+endif
 endif
 
 .SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
 .PHONY: all clean force install
 
-all: $(all_targets)
+all: $(ALL_TARGETS)
 
 clean:
-	rm -f $(all_targets) *.tmp
+	rm -f $(ALL_TARGETS) *.tmp
 
 force: clean all
 
 %.php: $(SOURCE) $(STYLESHEET_WEBSITE)
 	xmllint --noout --valid $(SOURCE) \
 	$(foreach  XMLFILE, $(SOURCE), && xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(XMLFILE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE))
-	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: \$$Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
-	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: \$$Id: Makefile.i18n.common,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
+	$(foreach  PHPFILE, $(TARGET), sed -e 's/Author: .Id: [^ ]\{1,\} [^ ]\{1,\} [^ ]\{10\} [^ ]\{8\} \([^ ]\{1,\}\) Exp \$$/Author: \1/' $(PHPFILE) >$(addsuffix .tmp, $(PHPFILE)); )
+	$(foreach  PHPFILE, $(TARGET), sed -e 's/Date: .Id: [^ ]\{1,\} [^ ]\{1,\} \([^ ]\{10\} [^ ]\{8\}\) [^ ]\{1,\} Exp \$$/Date: \1/' $(addsuffix .tmp, $(PHPFILE)) >$(PHPFILE); )
 	rm -f *.tmp
 	$(foreach  PHPFILE, $(BASE_TARGET), echo "<? require_once '../phpLang.inc.php'; ?>" >$(PHPFILE); )
 
@@ -52,16 +68,16 @@ force: clean all
 %.txt: %.txt.tmp $(PROCESS_TEXT)
 	$(PROCESS_TEXT) <$< >$@
 
-install: $(install_files)
+install: $(INSTALL_FILES)
 
 ifdef DESTDIR
 	echo "Installing PHP files" \
-	$(foreach  PHPFILE, $(install_files), && cp $(PHPFILE) $(basedir)/web/$(DESTDIR)/)
+	$(foreach  PHPFILE, $(INSTALL_FILES), && cp $(PHPFILE) $(basedir)/web/$(DESTDIR)/)
 else
 	@echo "DESTDIR not defined, can't install"
 endif
 
 ifdef WANT_HTML
 	echo "Installing HTML files" \
-	$(foreach  HTMLFILE, $(install_html), && cp $(HTMLFILE) $(basedir)/scripts/installer/dmg/$(DESTDIR)/)
+	$(foreach  HTMLFILE, $(INSTALL_HTML), && cp $(HTMLFILE) $(basedir)/scripts/installer/dmg/$(DESTDIR)/)
 endif
