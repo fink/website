@@ -1,0 +1,3 @@
+AddType application/octet-stream .dmg
+AddType application/octet-stream .deb
+AddType application/octet-stream .bz2
