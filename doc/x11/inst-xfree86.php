@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/01/07 22:08:46';
+$cvs_date = 'Date: 2003/01/07 22:40:47';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -57,7 +57,9 @@ interact poorly with Fink's installation.
 If you have existing xfree86 packages installed, be it through Fink or otherwise, you
 can follow the <a href="inst-xfree86.php#switching-x11">instructions on
 replacing one X11 package with another</a>.  Make sure that you remove your existing
-packages, and then install <tt><nobr>system-xfree86</nobr></tt>.
+packages, and then install <tt><nobr>system-xfree86</nobr></tt>.  Be sure you first remove
+your old X11 packages, then install Apple's X11 and X11 SDK, and then run
+'<tt><nobr>fink install system-xfree86</nobr></tt>' (in that order).
 </p>
 <p>
 Some notes on using Apple's X11:
@@ -233,7 +235,7 @@ There are two different ways to do this:
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.x.0 built via Fink</td><td><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p></td></tr><tr valign="top"><td>4.x.0 official binaries</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.x.0 built from source, or from the latest CVS source</td><td><p><tt><nobr>system-xfree86</nobr></tt> only</p></td></tr><tr valign="top"><td>4.2.0 base system built via Fink + binary rootless server</td><td><p><tt><nobr>xfree86-base</nobr></tt> only</p></td></tr><tr valign="top"><td>4.2.x from Apple</td><td><p><tt><nobr>system-xfree86</nobr></tt></p></td></tr></table>
 
 
 

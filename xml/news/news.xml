@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.27 2003/01/07 22:13:34 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.28 2003/01/07 23:05:11 rangerrick Exp $</cvsid>
 
 <newsitem>
 	<date>2003-01-07</date>
 	<headline>Fink Interaction with Apple's X11 Public Beta</headline>
 	<body>
 	<p>
-	Fink works just fine with the <link url="http://www.apple.com/macosx/x11/">public beta X11 release</link>
-	with some caveats.  Please read <link url="http://fink.sourceforge.net/doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
+	Fink works just fine with the <extlink url="http://www.apple.com/macosx/x11/">public beta X11 release</extlink>
+	with some caveats.  Please read <link url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
 	</body>
 </newsitem>
 
@@ -20,12 +20,12 @@
 	<p>
 	Thanks to one of our most valuable developers, Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that cotain a lot of valuable information
 
-<link url="http://fink.sf.net/news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+<link url="news/fink-stable.rdf">fink-stable.rdf</link> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
-<p><link url="http://fink.sf.net/news/fink-unstable.rdf">fink-unstable.rdf</link> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+<p><link url="news/fink-unstable.rdf">fink-unstable.rdf</link> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
 The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
 </p>
-<p><link url="http://fink.sf.net/news/news.rdf">news.rdf</link> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
+<p><link url="news/news.rdf">news.rdf</link> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
 </p>
 </body>
 </newsitem>

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.18 2003/01/07 22:40:47 rangerrick Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.19 2003/01/07 23:05:16 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -538,6 +538,9 @@ should install:
 
 <item><itemt>4.2.0 base system built via Fink + binary rootless server</itemt>
 <itemd><p><code>xfree86-base</code> only</p></itemd></item>
+
+<item><itemt>4.2.x from Apple</itemt>
+<itemd><p><code>system-xfree86</code></p></itemd></item>
 
 </itemtable>
 </section>
