@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/17 11:18:54';
+$cvs_date = 'Date: 2004/03/19 17:48:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 include_once "header.inc";
@@ -84,9 +84,8 @@ stable/main". Cette liste doit toujours être identique à celle figurant dans l
         </li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1 ou 10.2</p>
-          <p>Fink doit savoir quelle version de Mac OS X est installée sur votre système. La distribution 10.1 est destinée aux utilisateurs de Mac OS X, tandis que la version 10.2 ne fonctionne que sur un système Mac OS X 10.2 "Jaguar".
-Mac OS X 10.0 et les versions antérieures ne sont pas gérées. Il est peu probable que vous ayez à  changer cette valeur.
+            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, ou 10.3</p>
+          <p>Fink doit savoir quelle version de Mac OS X est installée sur votre système. Mac OS X 10.0 et les versions antérieures ne sont pas gérées, et Mac OS X 10.1 n'est plus maintenue dans cette version de fink. Mac OS X10.2 n'est gérée que si la mise à jour d'août 2003 des Developer Tools a été installée. Ce champ est configuré par l'exécution du script <code>/sw/lib/fink/postinstall.pl</code>. Il est peu probable que vous ayez à changer cette valeur.
 </p>
         </li>
         <li>
@@ -123,6 +122,12 @@ La valeur par défaut est 3.
             <b>SelfUpdateNoCVS:</b> booléen</p>
           <p>La commande <code>fink selfupdate</code> met à jour le gestionnaire de paquets Fink. Cette option assure que CVS n'est pas utilisé pour ce faire quand elle a pour valeur True. La valeur de l'option est définie automatiquement par la commande <code>fink selfupdate-cvs</code>, vous n'avez donc pas besoin de la modifier manuellement.</p>
         </li>
+        	<li>
+	  <p>
+	    <b>Buildpath:</b> chemin</p>
+	  <p>Fink doit créer plusieurs répertoires temporaires pour les paquets compilés à partir du source. Par défaut, ces répertoires sont placés dans <code>/sw/src</code>, mais si vous voulez qu'ils soient créés ailleurs, indiquez ici le chemin. Voir les définitions des champs <code>KeepRootDir</code> et <code>KeepBuildDir</code> ci-dessous pour de plus amples informations sur ces répertoires temporaires.
+	    </p>
+	</li>
       </ul>
     
     <h2><a name="downloading">5.5 Options de téléchargement</a></h2>
@@ -187,7 +192,8 @@ Fink gère des miroirs 'Maîtres', serveurs miroirs des archives tar du code sou
 MasterFirst - Cherche d'abord dans les miroirs "Maîtres".
 MasterLast - Cherche dans les miroirs "Maîtres" à la fin.
 MasterNever - N'utilise jamais les miroirs "Maîtres".
-ClosestFirst - Cherche d'abord dans les miroirs les plus proches (combine tous les miroirs en un seul jeu de miroirs).
+ClosestFirst - Cherche d'abord dans les miroirs les plus proches 
+           (combine tous les miroirs en un seul jeu de miroirs).
 </pre>
         </li>
       </ul>
