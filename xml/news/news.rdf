@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 24 Oct 2003 16:37:52 EDT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Oct 2003 22:52:54 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -51,7 +51,7 @@ but many many packages already work.
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
 	
-	For those of you who are still wondering, join in. The mirrors we have
+	For those of you who are still waiting, join in. The more mirrors we have
 	the faster you can rsync your info files. As per usual, updated and current
 	information on the mirror structure can be found on  Finkmirrors.net 
 	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.77 2003/10/24 20:42:01 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.78 2003/10/25 02:54:20 rangerrick Exp $</cvsid>
 
 
 <newsitem>
@@ -26,11 +26,11 @@ version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<link url="http://fink.sf.net/download/srcdist.php">bootstrapping from
-source,</link> starting from fink-full-0.6.0.tar.gz available
-on fink's <link 
+<extlink url="http://fink.sf.net/download/srcdist.php">bootstrapping from
+source,</extlink> starting from fink-full-0.6.0.tar.gz available
+on fink's <extlink
 url="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
-download page.</link>  You'll need XCode for this as
+download page.</extlink>  You'll need XCode for this as
 well.
 </p><p>
 The Fink team is still working on getting Fink packages working under 10.3,
@@ -42,14 +42,14 @@ but many many packages already work.
 	<date>2003-10-23</date>
 	<headline>Say hello to mirror numero uno</headline>
 		<body>
-	<p>You are too late. Rus Foster from <link url="http://www.jvds.com">JVDS</link>
+	<p>You are too late. Rus Foster from <extlink url="http://www.jvds.com">JVDS</extlink>
 	beat you all to it. He is the first one to provide us with ressources 
 	for a Fink rsync mirror.
 	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
 	</p>
-	<p>For those of you who are still wondering, join in. The mirrors we have
+	<p>For those of you who are still waiting, join in. The more mirrors we have
 	the faster you can rsync your info files. As per usual, updated and current
-	information on the mirror structure can be found on <link url="http://finkmirrors.net"> Finkmirrors.net </link>
+	information on the mirror structure can be found on <extlink url="http://finkmirrors.net"> Finkmirrors.net </extlink>
 	</p>
 		</body>
 </newsitem>
@@ -58,9 +58,9 @@ but many many packages already work.
 	<headline>Mirror, mirror on the wall...</headline>
 		<body>
 	<p>..who will mirror Fink above all? There is a new player on the turf
-	and it belongs to the Fink team. <link url="http://finkmirrors.net"> Finkmirrors.net</link> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	and it belongs to the Fink team. <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	</p>
-	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <link url="http://finkmirrors.net"> Finkmirrors.net</link>. 
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <extlink url="http://finkmirrors.net"> Finkmirrors.net</extlink>. 
 </p>
 <p>
 UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
@@ -76,8 +76,8 @@ UPDATE: Yes, I screwed up when I initially installed the DNS records. If you can
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
 CVS updates which have been so problematic in the past few months.
 If you have difficulty updating to the new version, please follow
-<link url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
-special update instructions</link>.
+<extlink url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+special update instructions</extlink>.
 </p>
 <p>In addition, this version of the fink package manager is compatible
 with last summer's Developer Tools updates.  After installing both the new
@@ -91,12 +91,12 @@ that is necessary.</p>
 	<date>2003-09-02</date>
 	<headline>Logo contest ends</headline>
 		<body>
-<p>The Logo contest held by Fink, announced <link url="http://fink.sourceforge.net/logo.php"> here, </link>
+<p>The Logo contest held by Fink, announced <extlink url="http://fink.sourceforge.net/logo.php"> here, </extlink>
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
 In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
-curious and cannot wait may have a look at an incomplete <link url="http://nour.net/logo/incomplete.html"> preview </link></p>
-<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <link url="http://www.macwelt.de"> MacWelt </link> for their continued support.
+curious and cannot wait may have a look at an incomplete <extlink url="http://nour.net/logo/incomplete.html"> preview </extlink></p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <extlink url="http://www.macwelt.de"> MacWelt </extlink> for their continued support.
 </p>
 	</body>
 </newsitem>
@@ -105,9 +105,9 @@ curious and cannot wait may have a look at an incomplete <link url="http://nour.
         <date>2003-08-18</date>
         <headline>Source files from ftp.gnu.org</headline>
                <body>
-<p>As announced in <link 
+<p>As announced in <extlink
 url="http://www.cert.org/advisories/CA-2003-21.html">this CERT 
-advisory</link>, it has recently been discovered that
+advisory</extlink>, it has recently been discovered that
 the ftp servers for GNU software were compromised back in March, 
 although it is not believed that any of the source code housed there
 was affected.
@@ -155,8 +155,8 @@ Developer Tools with the new patch, you should be careful to run
 prior to any "fink build" or "fink install" commands.
 </p>
 <p><em>Update 30 June 2003:</em> A 
-<link url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
-has now been detected</link> with
+<extlink url="http://sourceforge.net/mailarchive/forum.php?thread_id=2680195&amp;forum_id=2056">problem
+has now been detected</extlink> with
 the new assembler program which the update installs, which may prevent
 certain Fink packages from being compiled at all if you install this
 update.  
