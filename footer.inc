@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.4 2001/02/11 12:17:38 chrisp Exp $ */
+/* $Id: footer.inc,v 1.5 2001/07/13 20:27:33 chrisp Exp $ */
 ?>
 
 </td></tr>
@@ -15,7 +15,13 @@ alt="-----"></td></tr>
 <tr valign="middle">
 <td background="<? print $root ?>img/footer-back.gif">&nbsp;&nbsp;&nbsp;</td>
 <td align="left" background="<? print $root ?>img/footer-back.gif" width="50%">
-<p class="footer">Last changed by <? print $author ?> on <?
+<p class="footer"><?
+if ($dyndate) {
+  print "Database last updated on ";
+  $date = $dyndate;
+} else {
+  print "Last changed by $author on ";
+}
 print strftime("%a, %b %d %Y", $date);
 ?></p>
 </td>
