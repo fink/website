@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.32 2004/09/14 15:29:20 rangerrick Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.33 2004/09/23 00:07:36 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -214,6 +214,19 @@
         <p>should tell you what version you have. As of October 24th, 2003, we require build 1493 or higher.</p>
         <p>10.2 users can download the August 2003 Updater from <link url="http://developer.apple.com/">Apple Developer Connection</link> (free registration required).</p>
         <p>10.3 users should upgrade to a Panther-compatible developer tools release (i.e. XCode). A CD with XCode should have been provided with your Panther media.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="fink-0220">
+      <question>
+        <p>I haven't had any package updates from Fink in a while.</p>
+      </question>
+      <answer>
+        <p>Check your version:</p>
+        <codeblock>fink --version</codeblock>
+        <p>There is a known problem with <code>fink-0.22.0</code> wherein rsync selfupdating stopped working.  To fix this, switch to CVS selfupdating via</p>
+        <codeblock>fink selfupdate-cvs	</codeblock>
+        <p>This will bring you a newer <code>fink</code> version.  After you do this we recommend switching back to rsync selfupdating:</p>
+        <codeblock>fink selfupdate-rsync</codeblock>
       </answer>
     </faqentry>
   </chapter>
@@ -1283,6 +1296,15 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       <answer>
         <p>What's happened here is that Fink is trying to use one of it's so called <quote>Master</quote> mirrors.  These were set up to makes sure that sources for Fink packages are available even when the upstream site has moved them around.  Typically these errors occur when a new upstream version of a package is released, but hasn't made it to the Master mirrors yet.</p>
         <p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="compile-options">
+      <question>
+        <p>I want Fink to use different options in building a package.</p>
+      </question>
+      <answer>
+        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>.</p>
+        <p><em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
       </answer>
     </faqentry>
   </chapter>

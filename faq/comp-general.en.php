@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/09/14 15:29:20';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/09/23 00:07:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -262,6 +262,10 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <a name="master-problems">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.21: I'm trying to download a package, but Fink goes to some weird site with <q>distfiles</q> in its name, and the file isn't there.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> What's happened here is that Fink is trying to use one of it's so called <q>Master</q> mirrors.  These were set up to makes sure that sources for Fink packages are available even when the upstream site has moved them around.  Typically these errors occur when a new upstream version of a package is released, but hasn't made it to the Master mirrors yet.</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
+    </a>
+    <a name="compile-options">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: I want Fink to use different options in building a package.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p><b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>
