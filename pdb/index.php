@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/18 05:37:57 $';
+$cvs_date = '$Date: 2001/10/25 10:15:14 $';
 
 include "header.inc";
 ?>
@@ -28,7 +28,7 @@ The <a href="testing.php">Packages in Testing</a> page lists all
 packages that still have to pass testing.
 In order to test the packages, you have to get the latest
 descriptions from <a href="../doc/cvsaccess/index.php">CVS</a> and
-configure Fink to <a href="../faq/usage.php#unstable">use
+configure Fink to <a href="../faq/usage-fink.php#unstable">use
 unstable</a>.
 </p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Mac OS X 10.1 Compatibility Report";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/07 10:15:47 $';
+$cvs_date = '$Date: 2001/10/25 10:15:14 $';
 
 include "header.inc";
 ?>
@@ -57,7 +57,7 @@ Just run 'fink rebuild openssh'.
 There is a problem with XFree86 on 10.1 that can be corrected by
 adjusting your keymapping preferences.
 If XDarwin quits immediately when you start it after upgrading to
-10.1, check out <a href="../faq/packages.php#xfree-keymapping">this
+10.1, check out <a href="../faq/usage-packages.php#xfree-keymapping">this
 FAQ entry</a>.
 </p>
 <p>

@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/25 09:26:39 $';
+$cvs_date = '$Date: 2001/10/25 10:15:14 $';
 
 include "header.inc";
 ?>
@@ -124,7 +124,7 @@ solve the problems posted there by other users.
 <b>Test packages.</b>
 Grab the latest package descriptions from <a
 href="../doc/cvsaccess/index.php">CVS</a>, configure Fink to <a
-href="../faq/usage.php#unstable">use unstable</a> and test the
+href="../faq/usage-fink.php#unstable">use unstable</a> and test the
 packages.
 The package database lists <a href="../pdb/testing.php">packages that
 need testing</a> on a separate page.
