@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:32';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/09/02 14:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -191,7 +191,7 @@ If you run into errors during that process, please first check the
       <p>Fink Commander is an Aqua interface to both <code>apt-get</code> and the <code>fink</code> tool.  The Binary menu lets you do operations on the binary distribution, and the Source menu does the same thing for the source distribution.</p>
       <p>Fink Commander is included with the Fink binary installer.  To download it separately (e.g. if you've bootstrapped Fink from source), or for additional information, visit the <a href="http://finkcommander.sourceforge.net">Fink Commander website</a>.</p>
     
-    <h2><a name="">3.6 Available versions</a></h2>
+    <h2><a name="available-versions">3.6 Available versions</a></h2>
       
       <p>When you want to install a package, you should first check the <a href="http://fink.sourceforge.net/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
@@ -199,25 +199,26 @@ If you run into errors during that process, please first check the
           <p>
             <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p>
         </li>
+        <li><b>0.6.3:</b>  this is the version that can be installed from binaries for OS 10.2.</li>
         <li>
           <p>
-<b>0.7.0:</b>  This is the base version that can be installed from binaries for OS 10.2 or OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=en">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+<b>0.7.0:</b>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=en">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
         </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
-          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
+            <b>current-10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-        <li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
+        <li><p><b>current-10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
 </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
+            <b>current-10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-        <li><b>10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+        <li><b>current-10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
       </ul>
     
     <h2><a name="x11">3.7 Getting X11 Sorted Out</a></h2>

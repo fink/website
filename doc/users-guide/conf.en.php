@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/08/12 15:01:32';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/09/02 14:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -331,7 +331,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
-<pre># Local modifications should either go above this line, or at the end.
+      <pre># Local modifications should either go above this line, or at the end.
 #
 # Default APT sources configuration for Fink, written by the fink program
 
@@ -352,18 +352,19 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 
 # Put local modifications to this file below this line, or at the top.
 </pre>
-<p>With this default file, apt-get first looks in your local installation
+      <p>With this default file, apt-get first looks in your local installation
 for already-compiled binaries, and then looks in the official binary
 distribution.  You can alter this by making entries at the beginning of
 the file (which will be searched first) or at the end of the file (which
 will be searched last).</p>
-<p>If you change your Trees line or the Distribution you are using,
+      <p>If you change your Trees line or the Distribution you are using,
 fink will automatically modify the "default" portion of the file to
 correspond to the new values.  Fink will, however, preserve any local
 modifications you have made to the file, provided that you confine your
 modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
-</p><p>
+</p>
+      <p>
 Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
 to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
 </p>
