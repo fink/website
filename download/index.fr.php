@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/04/08 22:11:56 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:25:50 $';
 
 include "header.inc";
 ?>
@@ -40,7 +40,7 @@ Double-cliquez sur "Fink-<? print $fink_version; ?>-Installer.dmg" pour monter l
 </p></li>
 <li><p>
 Si quelque chose ne se passe pas bien durant le processus, vous pouvez relancer l'application pathsetup à partir de l'image disque de l'installeur, ou exécuter la commande suivante : 
-</p><pre>/sw/bin/pathsetup.sh <RETURN></pre><p>
+</p><pre>/sw/bin/pathsetup.sh </pre><p>
 dans une fenêtre de Terminal.app.
 (Cette étape doit être répétée pour tout utilisateur de votre système : chaque utilisateur doit exécuter pathsetup dans son propre compte.)
 </p><p>
@@ -49,7 +49,6 @@ Si pathsetup génère des messages d'erreur, consultez la documentation, en part
 </li>
 <li><p>
 Ouvrez une nouvelle fenêtre de Terminal.app et exécutez la commande suivante : "<code>fink scanpackages; fink index</code>", ou utilisez l'application graphique Fink Commander incluse (elle doit être placée dans un répertoire réel sur votre système, et non pas lancée à partir de l'image disque) et lancez les commandes suivantes à partir de son menu : <em>Source->scanpackages</em> suivie de <em>Source->Tools->index</em>.
-</p>
 </p></li>
 <li><p>Quand ces deux commandes auront été exécutées, vous devrez mettre à jour le paquet  <code>fink</code>, au cas où il y aurait eu des changements importants depuis la dernière version. Ensuite, vous pourrez installer d'autres paquets. Il y a plusieurs manières de le faire :
 <ul>
@@ -71,7 +70,7 @@ Ouvrez une nouvelle fenêtre de Terminal.app et exécutez la commande suivante :
 </ol></li></ul>
 <p>Maintenant que vous avez mis à jour <code>fink</code>, vous pouvez installer d'autres paquets.</p>  
 <ul>
-<li>Pour installer un paquet à partir des binaires, sélectionnez le paquet et utilisez Binary->Install.</p></li>
+<li>Pour installer un paquet à partir des binaires, sélectionnez le paquet et utilisez Binary->Install.</li>
 <li>Pour installer un paquet à partir du source, sélectionnez le paquet et utilisez Source->Install</li>
 </ul>
 </li>

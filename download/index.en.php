@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/04/08 22:00:19 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:25:50 $';
 
 include "header.inc";
 ?>
@@ -49,7 +49,7 @@ are edited. When the utility has finished, you are set to go!
 If anything goes wrong during this process, you can try again by launching 
 the pathsetup application which appears on the installer disk, or by
 running (from the command line in a Terminal.app window) 
-</p><pre>/sw/bin/pathsetup.sh <RETURN></pre><p>
+</p><pre>/sw/bin/pathsetup.sh</pre><p>
 (This step should also be repeated by any other users on your system: 
 each user must run pathsetup in his or her own account.)
 </p><p>
@@ -60,7 +60,6 @@ particularly
 </li>
 <li><p>
 Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Tools->index</em>.
-</p>
 </p></li>
 <li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release.  After you do this you can install other packages.  There are several ways to do this:
 <ul>
@@ -81,7 +80,7 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 </ol></li></ul>
 <p>Now that you've updated <code>fink</code>, you can install other packages.</p>  
 <ul>
-<li>To install from binaries, select the package, and use Binary->Install.</p></li>
+<li>To install from binaries, select the package, and use Binary->Install.</li>
 <li>To install from source, select the package, and use Source->Install</li>
 </ul>
 </li>

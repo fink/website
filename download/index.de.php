@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/16 22:26:36 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2004/11/26 08:25:50 $';
 
 include "header.inc";
 ?>
@@ -43,7 +43,7 @@ Vor Ende der Installation öffnet sich das Terminal und das pathsetup.command-Sc
 </p></li>
 <li><p>
 Sollte währenddessen irgendetwas schief laufen, können Sie versuchen, das Skript erneut auszuführen, indem Sie entweder die pathsetup.command-Datei auf der Installations-Disc starten oder indem Sie im Terminal folgenden Befehl eingeben:
-</p><pre>open /sw/bin/pathsetup.command <RETURN></pre><p>(Diese Eingabe sollte im Übrigen von jedem Benutzer ihres Systems durchgeführt werden: Jeder Benutzer muss das pathsetup.command-Skript unter seinem Profil ausführen.)
+</p><pre>open /sw/bin/pathsetup.command </pre><p>(Diese Eingabe sollte im Übrigen von jedem Benutzer ihres Systems durchgeführt werden: Jeder Benutzer muss das pathsetup.command-Skript unter seinem Profil ausführen.)
 </p><p>
 Sollte das Skript (pathsetup.command) eine Fehlermeldung ausgeben, schauen Sie in die Dokumentation, hier insbesondere  
 <a href="../doc/users-guide/install.php#setup">Kapitel 2.3 "Konfiguration der Umgebung"</a> des Benutzerhandbuchs.</p>
@@ -51,7 +51,7 @@ Sollte das Skript (pathsetup.command) eine Fehlermeldung ausgeben, schauen Sie i
 <li><p>
 Öffnen Sie ein Terminal Fenster und führen Sie Folgendes aus: "<code>fink scanpackages; fink index</code>", oder nutzen Sie die enthaltene Fink Commander GUI Anwendung (die in einen Ordner Ihres Systems verschoben werden muss und nicht aus dem Disc-Image gestartet werden kann) und führen Sie im dortigen Menü die folgenden Befehle aus:  <em>Source->scanpackages</em> gefolgt von <em>Source->Tools->index</em>.
 </p>
-</p></li>
+</li>
 <li><p>Nachdem die beiden Befehle ausgeführt wurden, sollten Sie das <code>fink</code>-Paket aktualisieren, falls es seit dem letzten Release erhebliche Änderungen gegeben haben sollte. Anschließend können Sie weitere Pakete installieren. Hierzu gibt es verschiedene Möglichkeiten:
 <ul>
 <li>
@@ -71,7 +71,7 @@ Sollte das Skript (pathsetup.command) eine Fehlermeldung ausgeben, schauen Sie i
 </ol></li></ul>
 <p>Nachdem Sie nun das <code>fink</code>-Update durchgeführt haben, können Sie weitere Pakete installieren.</p>  
 <ul>
-<li>Um Pakete mit Hilfe der Binärdateien zu installieren, wählen Sie das Paket aus und führen Sie anschließend Binär->Install aus.</p></li>
+<li>Um Pakete mit Hilfe der Binärdateien zu installieren, wählen Sie das Paket aus und führen Sie anschließend Binär->Install aus.</li>
 <li>Um Pakete mit Hilfe der Quelldateien zu installieren, wählen sie das Paket aus und führen Sie anschließend Source->Install aus.</li>
 </ul>
 </li>
