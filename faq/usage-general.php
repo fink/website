@@ -68,6 +68,28 @@ your system during the installation of the passwd package, so this should not
 have come as a surprise.
 </p></div></a>
 
+<a name="compile-myself"><div class="question"><p><b>Q6.4: How do I compile something
+myself using fink-installed software?</b></p></div>
+<div class="answer"><p><b>A:</b> When compiling something yourself outside of fink, the compiler and
+linker need to be told where to find the fink-installed libraries and
+headers. For a package that uses standard configure/make process, you
+need to set the CFLAGS, CPPFLAGS, CXXFLAGS, and LDFLAGS environment
+variables:
+</p><pre>
+setenv CFLAGS -I/sw/include
+setenv LDFLAGS -L/sw/lib
+setenv CXXFLAGS $CFLAGS
+setenv CPPFLAGS $CXXFLAGS
+</pre><p>
+It is often easiest just to add these to your .tcshrc or .cshrc so they
+are set automatically.
+If a package does not use these variables, you may need to add the
+&quot;-I/sw/include&quot; (for headers) and &quot;-L/sw/lib&quot; (for libraries) to the
+compile lines yourself. Some packages may use similar non-standard
+variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
+&quot;./configure --help&quot; will usually give you a list of the extra configure
+options.
+</p></div></a>
 <p align="right">
 Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages</a></p>
 

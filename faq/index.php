@@ -101,6 +101,8 @@ like &quot;locale not supported by C library&quot;. Is that bad?</a></li>
 <li><a href="usage-general.php#passwd">6.3 There are suddenly a number of 
 strange users on my system, with names like &quot;mysql&quot;, &quot;pgsql&quot;, and &quot;games&quot;.  
 Where did they come from?</a></li>
+<li><a href="usage-general.php#compile-myself">6.4 How do I compile something
+myself using fink-installed software?</a></li>
 </ul>
 <li><a href="usage-packages.php"><b>7 Package Usage Problems - Specific Packages</b></a></li>
 <ul>
