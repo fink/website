@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 05:11:42 $';
+$cvs_date = '$Date: 2004/04/22 05:08:02 $';
 
 include "header.inc";
 include "releases.inc";
@@ -59,17 +59,15 @@ if(param("white"))
 
 if($op) {
 	foreach ($HTTP_POST_VARS as $argb) {	
-		if (preg_match("/chg=([^!]+)!([^!]+)!([^!]+)/i", $argb, $matches)) {
+		if (preg_match("/chg=([^!]+)/i", $argb, $matches)) {
 			$name = $matches[1];
-			$vers = $matches[2];
-			$rev = $matches[3];
-			$q = "UPDATE package SET moveflag = ".($op - 1)." WHERE (release = '".$tree1.
-			"' AND name='".$name."' AND version = '".$vers."' AND revision = '".$rev."')";	
-			$rs2 = mysql_query($q, $dbh);
+			$q = "UPDATE move SET moveflag = ".($op - 1)." WHERE (release = '".$tree1.
+				"' AND name='".$name."')";	
+			$rsr = mysql_query($q, $dbh);
 			if (mysql_errno()) {
 				print '<p><b>errno $err error during UPDATE:</b> '.mysql_error().'</p>';
 				die;
-			}				
+			}							
 		}
 	}
 }
@@ -125,7 +123,7 @@ if (!$rs) {
 #Special case for 10.2-gcc3.3 to 10.3 move
   if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
   {
-  	$line = 0;
+  	$line = $greencount = $redcount = $whitecount = 0;
    	print "Key:<br><ul><li><div class=\"bgreen\">Will not be moved, obsolete or changed names</div><li><div class=\"bred\">Does not compile</div></ul>";
    	print "\"Wow, you know that's a lot of checkboxes\" - Check packages then click the buttons below to change a line's status.<br>";
   }
@@ -148,41 +146,72 @@ if (!$rs) {
  		}
   		if($hit)
   		{
-			if($row[moveflag] == 1) {
-				$greencount++;
-				if($hidegreen)
-					continue;
-				$pkglist = $pkglist."<li><div class=\"bgreen\">";
-				$green = 1;
-				$red = 0;
-			}	elseif($row[moveflag] == 2) {
-				$redcount++;
-				if($hidered)
-					continue;
-				$pkglist = $pkglist."<li><div class=\"bred\">";
-				$red = 1;
-				$green = 0;
-			} elseif ($hidewhite) {
-				$whitecount++;
-				continue;
-			} else {
-				$whitecount++;
-				$pkglist = $pkglist."<li>";	
-			}
-			$desc = "";  	
 			#Special case for 10.2-gcc3.3 to 10.3 move
 			if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
 			{
+				$qmove = "SELECT moveflag FROM move ".
+      				"WHERE release LIKE \"$tree1\" AND name=\"" . $row['name'] . '"';
+				$rsm = mysql_query($qmove, $dbh);				
+				$err = mysql_errno();
+				if (!$rsm) {
+					print '<p><b>errno $err error during query :</b> '.mysql_error()."$qmove".'</p>';
+					die;	
+				}			
+				
+  				$mcount = mysql_num_rows($rsm);
+  				
+  				if($mcount == 0) {
+					### Must be new here. Insert the record into the move table		
+					$qmove2 = "INSERT INTO move (release, name, moveflag) VALUES (\"".$tree1.
+							  "\",\"".$row[name]."\", 0)"; 
+					$rs1 = mysql_query($qmove2, $dbh);				
+					$err = mysql_errno();
+					if (!$rs1) {
+						print '<p><b>errno $err error during query :</b> '.mysql_error()."$qmove2".'</p>';
+						die;	
+					}		
+					$moveflag = 0;					
+  				} elseif($mcount =! 1) {
+  					### This should never happen. PRIMARY KEY violated?
+  					die("Error: mcount for ".$row[name]."in move table is $mcount !");
+				} else {
+					### Fetch the moveflag from the first SELECT		
+					while ($row3 = mysql_fetch_array($rsm)) {
+						$moveflag = $row3[moveflag];
+					}
+				}
+			
+			if($moveflag == 1) {
+					$greencount++;
+					if($hidegreen)
+						continue;
+					$pkglist = $pkglist."<li><div class=\"bgreen\">";
+					$green = 1;
+					$red = 0;
+				}	elseif($moveflag == 2) {
+					$redcount++;
+					if($hidered)
+						continue;
+					$pkglist = $pkglist."<li><div class=\"bred\">";
+					$red = 1;
+					$green = 0;
+				} elseif ($hidewhite) {
+					$whitecount++;
+					continue;
+				} else {
+					$whitecount++;
+					$pkglist = $pkglist."<li>";	
+				}
 				$line++;
 				$pkglist = $pkglist . 
 					"<input type=checkbox name=change-$line value=chg=".$row[name].'!'.$row[version].'!'.$row[revision].'>   '; 	
-		#		$pkglist = $pkglist .  '<SELECT name = Status>'.
-		#			"<option value=green+".$row[name].'+'.$row[version].'+'.$row[revision].'+green'. ($green ? 'selected>' : '>').'G'.
-		#			"<option value=red+".$row[name].'+'.$row[version].'+'.$row[revision].'+red'. ($green ? '>' : 'selected>').'R</SELECT>'; 	
-			}					
+			}			
+			$desc = "";  			
 			
 			if(preg_match("/([^<]+)<.*/i", $row[maintainer], $matches))
 				$maintainer = $matches[1];
+			else
+				$maintainer = 'None ';
 				
 			if(! strcmp($sort, "maintainer"))
 				$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
