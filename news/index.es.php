@@ -16,8 +16,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.</p>
       <p>
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
-<a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a>
-and <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 
@@ -33,11 +33,11 @@ Esta nueva versión incorpora varias correcciones al manejador de paquetes e int
 </p>
 
 <p>
-Para realizar una primera instalación de Fink, hay que seguir los consejos de <a href="<?php print $root; ?>http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalación de Fink, hay que seguir los consejos de <a href="http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras <a href="<?php print $root; ?>http://fink.sourceforge.net/lists/index.php">aquí</a>.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras <a href="http://fink.sourceforge.net/lists/index.php">aquí</a>.
 </p>
 
 <p>
@@ -73,7 +73,7 @@ También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de
 		<code>fink selfupdate</code>
 	</p><p>
 	Si por alguna razón estos comandos no funcionan, vaya a
-		<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203"> la página de la liberación del archivo fink en el 
+		<a href="http://sourceforge.net/project/showfiles.php?group_id=17203"> la página de la liberación del archivo fink en el 
 		sourceforge</a> y descarge el archivo
 		<code>fink-0.22.1.tar.gz</code> . Desempaque este archivo con	<code>tar xfz fink-0.22.1.tar.gz</code> , y desde dentro del directorio
 	fink-0.22.1 directory, ejecute el comando <code>./inject.pl</code>
@@ -373,7 +373,7 @@ after free registration from connect.apple.com.
 	Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
 	This new, official, logo has been displayed since the 24th of October and
 	those of you who wondered how it has been picked and what the name of the
-	winner is should read up in the PR <a href="<?php print $root; ?>pr/index.php">section</a>.
+	winner is should read up in the PR <a href="pr/index.php">section</a>.
 	</p>
 	<p>
 	The longer explanation also features a larger version of the logo itself,
@@ -698,7 +698,7 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
   <b>Upgrade Matrix</b> page, which is inadequate for upgrading
 to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
-  here.  In the meantime, some of you may wish to use the <a href="<?php print $root; ?>news/jaguar.php">test version of the Jaguar updater</a> which was
+  here.  In the meantime, some of you may wish to use the <a href="news/jaguar.php">test version of the Jaguar updater</a> which was
 made available on 2002-09-08.
   </p>
   <a name="2002-12-09 Fink 0.5.0a Released"><span class="news-date">2002-12-09: </span><span class="news-headline">Fink 0.5.0a Released</span></a><?php gray_line(); ?>
@@ -719,7 +719,7 @@ made available on 2002-09-08.
   <p>
 Users should update their XFree86 installations to version 4.2.1.1
 for use with OS X 10.2.2.  If you are using system-xfree86, you
-can get the new version from the <a href="<?php print $root; ?>https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
+can get the new version from the <a href="https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
 project</a>.  If you are using Fink's
 xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
 xfree86-rootless-4.2.1.1-1.  These packages are recent additions to
@@ -754,7 +754,7 @@ not "Upgrade."  (You can recognize the new version by its filesize of
     </p>
   <a name="2002-09-27 Possible conflicts with anti-virus software"><span class="news-date">2002-09-27: </span><span class="news-headline">Possible conflicts with anti-virus software</span></a><?php gray_line(); ?>
 <p> A number of recent reports on the 
-<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
 mailing list</a> have indicated problems (including kernel panics and
 infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
@@ -797,7 +797,7 @@ software before using Fink.
       Please report any problems you encounter with this version via our bug tracker.
     </p>
     <p>
-      An overview of what changed since version 0.9.12 can be found <a href="<?php print $root; ?>http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
+      An overview of what changed since version 0.9.12 can be found <a href="http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
     </p>
   <a name="2002-07-17 Binary distribution moves"><span class="news-date">2002-07-17: </span><span class="news-headline">Binary distribution moves</span></a><?php gray_line(); ?>
     <p>
@@ -872,7 +872,7 @@ software before using Fink.
     </p>
   <a name="2001-09-30 Fink 0.3.0 is released"><span class="news-date">2001-09-30: </span><span class="news-headline">Fink 0.3.0 is released</span></a><?php gray_line(); ?>
     <p>The source release, the binary installer and a binary upgrade kit for
-    broken-by-10.1 installations are available in the new <a href="<?php print $root; ?>download/index.php">download section</a>.
+    broken-by-10.1 installations are available in the new <a href="download/index.php">download section</a>.
     The bulk of the binary distribution will be updated gradually over the
     next few days, as usual.
     </p>
@@ -903,17 +903,17 @@ software before using Fink.
     </p>
   <a name="2001-08-23 OpenOSX.com"><span class="news-date">2001-08-23: </span><span class="news-headline">OpenOSX.com</span></a><?php gray_line(); ?>
     <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
-    CDs. Read Christoph's <a href="<?php print $root; ?>pr/openosx.php">public statement</a>
+    CDs. Read Christoph's <a href="pr/openosx.php">public statement</a>
     on the issue.
     </p>
  <a name="2001-08-22 New help page"><span class="news-date">2001-08-22: </span><span class="news-headline">New help page</span></a><?php gray_line(); ?>
-    <p>The new <a href="<?php print $root; ?>help/index.php">help page</a> lists various ways
+    <p>The new <a href="help/index.php">help page</a> lists various ways
     to get help using Fink. It also lists some ideas how you can give back to
     the project.
     </p>
   <a name="2001-08-13 Porting tips and X11 document updated"><span class="news-date">2001-08-13: </span><span class="news-headline">Porting tips and X11 document updated</span></a><?php gray_line(); ?>
     <p>The <a href="<?php print $root; ?>doc/porting/index.php">porting tips</a> document has
-    a new chapter on shared libraries and modules. The <a href="<?php print $root; ?>doc/x11/index.php">X11</a> document was also updated recently.
+    a new chapter on shared libraries and modules. The <a href="doc/x11/index.php">X11</a> document was also updated recently.
     </p>
   <a name="2001-08-01 Version 0.2.4a is released"><span class="news-date">2001-08-01: </span><span class="news-headline">Version 0.2.4a is released</span></a><?php gray_line(); ?>
     <p>There was a bootstrapping problem in Fink 0.2.4. It is fixed in Fink
@@ -921,17 +921,17 @@ software before using Fink.
     are not affected.
     </p>
   <a name="2001-08-01 Version 0.2.4 is released"><span class="news-date">2001-08-01: </span><span class="news-headline">Version 0.2.4 is released</span></a><?php gray_line(); ?>
-    <p>Version 0.2.4 is released. Get it from the <a href="<?php print $root; ?>download.php">download page</a>. Some highlights: The GIMP
+    <p>Version 0.2.4 is released. Get it from the <a href="download.php">download page</a>. Some highlights: The GIMP
     1.2.2, sound playback and recording via esound (thanks to Shawn Hsiao
     and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
     </p>
   <a name="2001-07-19 New document: X11 on Darwin and Mac OS X"><span class="news-date">2001-07-19: </span><span class="news-headline">New document: X11 on Darwin and Mac OS X</span></a><?php gray_line(); ?>
-    <p>A comprehensive document about <a href="<?php print $root; ?>doc/x11/index.php">X11 on
+    <p>A comprehensive document about <a href="doc/x11/index.php">X11 on
     Darwin and Mac OS X</a> is now available. It was written to be useful
     for anyone, not just Fink users.
     </p>
   <a name="2001-07-13 Package database now online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-    <p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
+    <p>A prototype of the <a href="pdb/index.php">package database</a>
     is now online.
     </p>
   <a name="2001-07-09 Version 0.2.3 is released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -945,11 +945,11 @@ software before using Fink.
   <a name="2001-06-30 Web site restructuring"><span class="news-date">2001-06-30: </span><span class="news-headline">Web site restructuring</span></a><?php gray_line(); ?>
     <p>A major restructuring of the web site has started. The non-Fink-specific
     documents were removed because I don't have the time to maintain them. All
-    documentation will be consolidated in the new <a href="<?php print $root; ?>doc/index.php">
+    documentation will be consolidated in the new <a href="doc/index.php">
     Documentation section</a>.
     </p>
   <a name="2001-06-24 Version 0.2.2 is released"><span class="news-date">2001-06-24: </span><span class="news-headline">Version 0.2.2 is released</span></a><?php gray_line(); ?>
-    <p>Version 0.2.2 is finally released. Get it from the <a href="<?php print $root; ?>download.php">download page</a>. Be sure to read the notes
+    <p>Version 0.2.2 is finally released. Get it from the <a href="download.php">download page</a>. Be sure to read the notes
     about X11 in the INSTALL file.
     </p>
   <a name="2001-05-19 CVS instructions updated"><span class="news-date">2001-05-19: </span><span class="news-headline">CVS instructions updated</span></a><?php gray_line(); ?>

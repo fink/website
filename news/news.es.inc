@@ -7,8 +7,8 @@ Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
 de los cuales se sepa que tienen este problema.</p>
       <p>
 Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
-<a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a>
-and <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
 </p>
       <p> Si no te has actualizado aún, nuestro consejo es que 
 consideres no hacerlo y quedarte con  XCode versión 1.2 
@@ -24,11 +24,11 @@ Esta nueva versión incorpora varias correcciones al manejador de paquetes e int
 </p>
 
 <p>
-Para realizar una primera instalación de Fink, hay que seguir los consejos de <a href="<?php print $root; ?>http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para realizar una primera instalación de Fink, hay que seguir los consejos de <a href="http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0%26tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras <a href="<?php print $root; ?>http://fink.sourceforge.net/lists/index.php">aquí</a>.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas listas la encontraras <a href="http://fink.sourceforge.net/lists/index.php">aquí</a>.
 </p>
 
 <p>

@@ -8,8 +8,8 @@ to use the "broken" gcc to compile packages which are known to
 have this problem.
 </p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
-and <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
 </p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
 </p>
@@ -36,7 +36,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</a>
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</a>
 </p>
 
 <p>

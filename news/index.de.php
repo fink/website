@@ -17,8 +17,8 @@ to use the "broken" gcc to compile packages which are known to
 have this problem.
 </p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
-and <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
 </p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
 </p>
@@ -30,7 +30,7 @@ Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für So
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
 <p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="<?php print $root; ?>http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="<?php print $root; ?>http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</a> nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</a> nachgeschaut werden.
 </p>
 <p>
 Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="<?php print $root; ?>lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
@@ -60,7 +60,7 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Sym
 	<code>fink selfupdate</code>
 	</p><p>
 	If for any reason those commands don't work, go to 
-	<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
 	fink file release page at sourceforge</a> and download the
 	file <code>fink-0.22.1.tar.gz</code> (or a more recent, i.e.,
 	higher numbered, version).  Unpack this file with
@@ -341,7 +341,7 @@ mirroring website</a>.
 Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
 This new, official, logo has been displayed since the 24th of October and
 those of you who wondered how it has been picked and what the name of the
-winner is should read up in the PR <a href="<?php print $root; ?>pr/index.php">section</a>.
+winner is should read up in the PR <a href="pr/index.php">section</a>.
 </p>
 <p>
 The longer explanation also features a larger version of the logo itself,
@@ -687,7 +687,7 @@ This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
 <p>
 Users should update their XFree86 installations to version 4.2.1.1
 for use with OS X 10.2.2. If you are using system-xfree86, you
-can get the new version from the <a href="<?php print $root; ?>https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
+can get the new version from the <a href="https://sourceforge.net/project/shownotes.php?release_id=118483">XonX 
 project</a>. If you are using Fink's
 xfree86 packages, you should update to xfree86-base-4.2.1.1-1 and
 xfree86-rootless-4.2.1.1-1. These packages are recent additions to
@@ -722,7 +722,7 @@ At the same time, this release is not meant for Mac OS X 10.2. Fink 0.5.0. which
 </p>
 <a name="2002-09-27 Possible conflicts with anti-virus software"><span class="news-date">2002-09-27: </span><span class="news-headline">Possible conflicts with anti-virus software</span></a><?php gray_line(); ?>
 <p>A number of recent reports on the 
-<a href="<?php print $root; ?>http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
+<a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
 mailing list</a> have indicated problems (including kernel panics and
 infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed. You may need to switch off any anti-virus
@@ -765,7 +765,7 @@ Yesterday version 0.10.0 of the Fink package manager was released to the unstabl
 Please report any problems you encounter with this version via our bug tracker.
 </p>
 <p>
-An overview of what changed since version 0.9.12 can be found <a href="<?php print $root; ?>http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
+An overview of what changed since version 0.9.12 can be found <a href="http://sourceforge.net/project/shownotes.php?release_id=103599">here.</a>
 </p>
 <a name="2002-07-17 Binary distribution moves"><span class="news-date">2002-07-17: </span><span class="news-headline">Binary distribution moves</span></a><?php gray_line(); ?>
 <p>
@@ -871,11 +871,11 @@ binary release will follow soon.
 </p>
 <a name="2001-08-23 OpenOSX.com"><span class="news-date">2001-08-23: </span><span class="news-headline">OpenOSX.com</span></a><?php gray_line(); ?>
 <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
-CDs. Read Christoph's <a href="<?php print $root; ?>pr/openosx.php">public statement</a>
+CDs. Read Christoph's <a href="pr/openosx.php">public statement</a>
 on the issue.
 </p>
 <a name="2001-08-22 New help page"><span class="news-date">2001-08-22: </span><span class="news-headline">New help page</span></a><?php gray_line(); ?>
-<p>The new <a href="<?php print $root; ?>help/index.php">help page</a> lists various ways
+<p>The new <a href="help/index.php">help page</a> lists various ways
 to get help using Fink. It also lists some ideas how you can give back to
 the project.
 </p>
@@ -894,12 +894,12 @@ are not affected.
 and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
 </p>
 <a name="2001-07-19 New document: X11 on Darwin and Mac OS X"><span class="news-date">2001-07-19: </span><span class="news-headline">New document: X11 on Darwin and Mac OS X</span></a><?php gray_line(); ?>
-<p>A comprehensive document about <a href="<?php print $root; ?>doc/x11/index.php">X11 on
+<p>A comprehensive document about <a href="doc/x11/index.php">X11 on
 Darwin and Mac OS X</a> is now available. It was written to be useful
 for anyone, not just Fink users.
 </p>
 <a name="2001-07-13 Package database now online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-<p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
+<p>A prototype of the <a href="pdb/index.php">package database</a>
 is now online.
 </p>
 <a name="2001-07-09 Version 0.2.3 is released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -913,7 +913,7 @@ updated to include all recently added fields.
 <a name="2001-06-30 Web site restructuring"><span class="news-date">2001-06-30: </span><span class="news-headline">Web site restructuring</span></a><?php gray_line(); ?>
 <p>A major restructuring of the web site has started. The non-Fink-specific
 documents were removed because I don't have the time to maintain them. All
-documentation will be consolidated in the new <a href="<?php print $root; ?>doc/index.php">
+documentation will be consolidated in the new <a href="doc/index.php">
 Documentation section</a>.
 </p>
 <a name="2001-06-24 Version 0.2.2 is released"><span class="news-date">2001-06-24: </span><span class="news-headline">Version 0.2.2 is released</span></a><?php gray_line(); ?>
