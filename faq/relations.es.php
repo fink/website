@@ -1,8 +1,8 @@
 <?
 $title = "P.M.F. - Relaciones";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:14:51';
-$metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="mirrors.php?phpLang=es" title="Fink mirrors"><link rel="prev" href="general.php?phpLang=es" title="Preguntas generales">';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/17 00:55:00';
+$metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="mirrors.php?phpLang=es" title="Espejos de distribución"><link rel="prev" href="general.php?phpLang=es" title="Preguntas generales">';
 
 include_once "header.inc";
 ?>
@@ -46,6 +46,6 @@ plataformas.
       <div class="answer"><p><b>A:</b> Darwinports y Fiink son proyectos complementarios. Hay un poco de traslape entre los dos proyectos, y varias personas contribuyen a ambos proyectos Fink y OpenDarwin. Por ejemplo, Benjamin Reed está haciendo los paquetes KDE para ambos. Darwinports/OpenDarwin usan parches de Fink, y hemos discutido la colaboración en una nueva estructura de dependencias.</p><p>OpenDarwin empezó desde cero intentando un acercamiento diferente en el sistema de empaquetamiento. Lee el estatuto sobre <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a> para mas detalles.</p></div>
     </a>
   <p align="right">
-Next: <a href="mirrors.php?phpLang=es">3 Fink mirrors</a></p>
+Next: <a href="mirrors.php?phpLang=es">3 Espejos de distribución</a></p>
 
 <? include_once "footer.inc"; ?>

@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Compiling (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:14:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/17 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=es" title="Installing, Using and Maintaining Fink">';
 
 include_once "header.inc";
@@ -11,19 +11,17 @@ include_once "header.inc";
     
     
     <a name="compiler">
-      <div class="question"><p><b>Q6.1: A configure script complains that it can't find an "acceptable cc".
-        What's that?</b></p></div>
+      <div class="question"><p><b>Q6.1: Un script de configuración se queja que no puede encontar un "cc aceptable". ¿Qué es eso?</b></p></div>
       <div class="answer"><p><b>A:</b> Read the docs next time. To compile packages from source, you must
         install the Developer Tools, which among other stuff contains the C
         compiler, <code>cc</code>.</p></div>
     </a>
     <a name="cvs">
-      <div class="question"><p><b>Q6.2: When I try a "fink selfupdate-cvs" I get this message: "cvs:
-        Command not found."</b></p></div>
+      <div class="question"><p><b>Q6.2: Cuando quiero hacer un "fink selfupdate-cvs" Me aparece este mensaje: "cvs: Command not found."</b></p></div>
       <div class="answer"><p><b>A:</b> You need to install the Developer Tools.</p></div>
     </a>
     <a name="missing-make">
-      <div class="question"><p><b>Q6.3: I'm getting an error message involving <code>make</code>
+      <div class="question"><p><b>Q6.3: Me esta apareciendo un mensaje de error involucrando <code>make</code>.
         </b></p></div>
       <div class="answer"><p><b>A:</b> if your message is of the form</p><pre>make: command not found</pre><p>or</p><pre>Can't exec "make": 
 No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>It means you need to install the Developer Tools.</p><p>On the other hand, if your error message looks like</p><pre>make: illegal option -- C</pre><p>then you've replaced the GNU version of the <code>make</code>
@@ -35,8 +33,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>It
         <code>make</code>.</p></div>
     </a>
     <a name="head">
-      <div class="question"><p><b>Q6.4: I'm getting a strange usage message from the head command. What's
-        broken?</b></p></div>
+      <div class="question"><p><b>Q6.4: Me esta apareciendo un mensaje de uso extraño del comando head. ¿Qué se ha roto?</b></p></div>
       <div class="answer"><p><b>A:</b> If you're seeing this:</p><pre>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</pre><p>followed by a list of option descriptions, you have a broken
         <code>head</code> executable. This happens when you install the Perl
         libwww library on an HFS+ system volume. It tries to create a new
@@ -51,8 +48,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>It
         easier to solve: rename <code>/sw/bin/HEAD</code>.</p></div>
     </a>
     <a name="also_in">
-      <div class="question"><p><b>Q6.5: When I try to install a package I get an error message about trying
-        to overwrite a file that is in another package.</b></p></div>
+      <div class="question"><p><b>Q6.5: Cuando trato de instalar un paquete me aparece un mensaje con el error acerca de "sobreescribir un archivo que está en otro paquete".</b></p></div>
       <div class="answer"><p><b>A:</b> This occasionally happens with splitoff packages (i.e. the ones
         with -dev, -shlibs, etc.) when a file gets moved from one part of the
         splitoff to another (e.g. from <code>foo</code> to
@@ -63,8 +59,8 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>It
         package that you are trying to install.</p></div>
     </a>
     <a name="weak_lib">
-      <div class="question"><p><b>Q6.6: After I installed the December 2002 Development Tools I get
-        messages about "weak libraries".</b></p></div>
+      <div class="question"><p><b>Q6.6: Después de que instalé  las Herramientas de Desarrollo de Diciembre del 2002 me aparece un mensaje sobre "librerías débiles" ("weak libraries").
+</b></p></div>
       <div class="answer"><p><b>A:</b> This is new with the December 2002 Tools. You may occasionally see
         messages like (choosing libgdk-pixbuf as an example):</p><pre>ld: warning dynamic shared library:
 /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
@@ -75,8 +71,7 @@ MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>You may regar
         startup or not, for applications that use weak references.</p></div>
     </a>
     <a name="mv-failed">
-      <div class="question"><p><b>Q6.7: What does "execution of mv failed, exit code 1" mean when I try to
-        build a package?</b></p></div>
+      <div class="question"><p><b>Q6.7: ¿Qué quiere decir "execution of mv failed, exit code 1" cuando trato de instalar un paquete?</b></p></div>
       <div class="answer"><p><b>A:</b> If you have StuffIt Pro installed, it could be that you have
         "Archive Via Real Name" mode enabled. Check for a StuffIt preference
         pane in the System Preferences tool, and disable "ArchiveViaRealName"
@@ -95,8 +90,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         further back in the output of your build attempt.</p></div>
     </a>
     <a name="node-exists">
-      <div class="question"><p><b>Q6.8: I can't install a package | update because I get a message that a
-        "node" already exists.</b></p></div>
+      <div class="question"><p><b>Q6.8: No puedo instalar o actualizar un paquete porque me aparece un mensaje de que un "node" ya existe.</b></p></div>
       <div class="answer"><p><b>A:</b> These errors look something like this:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>This problem is that the dependency engine is confused, due to
         changes in some of the package info files. To fix it:</p><ul>
           <li>
@@ -113,8 +107,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         </ul></div>
     </a>
     <a name="usr-local-libs">
-      <div class="question"><p><b>Q6.9: I've heard that libraries installed in /usr/local/lib sometimes
-        cause build problems for Fink. Is this true?</b></p></div>
+      <div class="question"><p><b>Q6.9: He escuchado que las librerías instaladas en /usr/local/lib a veces causan problemas de compilación para Fink, ¿és cierto?</b></p></div>
       <div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package
         configuration script finds libraries under
         <code>/usr/local/lib</code> before searching in the Fink path.
@@ -125,8 +118,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="toc-out-of-date">
-      <div class="question"><p><b>Q6.10: When I try to build a package, I get a message that a "table of
-        contents" is out of date. What do I need to do?</b></p></div>
+      <div class="question"><p><b>Q6.10: Cuando trato de instalar un paquete, me aparece un mensaje que la "tabla de contenidos" ("table of  contents") está desactualizada. ¿Qué necesito hacer?</b></p></div>
       <div class="answer"><p><b>A:</b> The output hints at what to do. The message is usually something
         like:</p><pre>ld: table of contents for archive: 
 /sw/lib/libintl.a is out of date; 
@@ -135,15 +127,14 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         run:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
     </a>
     <a name="fc-atlas">
-      <div class="question"><p><b>Q6.11: Fink Commander hangs when I try to install atlas.</b></p></div>
+      <div class="question"><p><b>Q6.11: Fink Commander falla cuando trato de instalar atlas.</b></p></div>
       <div class="answer"><p><b>A:</b> This happens because one of the steps in the build of
         <code>atlas</code> sends a prompt to the user that Fink Commander
         doesn't display. You'll have to use <code>fink install atlas</code>
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b>Q6.12: I get messages saying that I'm missing stddef.h. Where do I find
-        it?</b></p></div>
+      <div class="question"><p><b>Q6.12: Me aparece un mensaje que dice que me falta stddef.h. ¿Dónde lo puedo encontrar?</b></p></div>
       <div class="answer"><p><b>A:</b> This header, and many others, are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
@@ -151,22 +142,20 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         the DevSDK package using a Custom Install.</p></div>
     </a>
     <a name="multiple-dependencies">
-      <div class="question"><p><b>Q6.13: I can't update, because Fink is "unable to resolve version conflict
-        on multiple dependencies".</b></p></div>
+      <div class="question"><p><b>Q6.13: No puedo actualizar porque Fink dice "unable to resolve version conflict on multiple dependencies" </b></p></div>
       <div class="answer"><p><b>A:</b> To get around this, try updating a single package, then try to use
         "fink update-all" again. If you still get the message, repeat the
         process.</p></div>
     </a>
     <a name="dpkg-parse-error">
-      <div class="question"><p><b>Q6.14: I can't install anything because I get "dpkg: parse error, in file
-        `/sw/var/lib/dpkg/status'"!</b></p></div>
+      <div class="question"><p><b>Q6.14: No puedo instalar nada porque me aparece:  "dpkg: parse error, in file  `/sw/var/lib/dpkg/status'"!</b></p></div>
       <div class="answer"><p><b>A:</b> This means that somehow your dpkg database got corrupted, usually
         from a crash or some other unrecoverable error. You can fix it by
         copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p></div>
     </a>
     <a name="freetype-problems">
-      <div class="question"><p><b>Q6.15: I get errors involving freetype.</b></p></div>
+      <div class="question"><p><b>Q6.15: Me aparecen errores involucrando a freetype.</b></p></div>
       <div class="answer"><p><b>A:</b> There are several varieties of such errors. If your error looks
         like:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
@@ -223,7 +212,7 @@ undefined reference to _FT_Access_Frame</pre><p>then you probably have a binary 
         via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p></div>
     </a>
     <a name="dlfcn-from-oo">
-      <div class="question"><p><b>Q6.16: I get build errors involving `Dl_info'.</b></p></div>
+      <div class="question"><p><b>Q6.16: Me aparecen errores al compilar involucrando "Dl info".</b></p></div>
       <div class="answer"><p><b>A:</b> If you have an error that looks like this</p><pre>unix_dl.c: In function `rep_open_dl_library':
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
@@ -241,23 +230,22 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header fil
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
-      <div class="question"><p><b>Q6.17: Fink says I'm missing <code>gcc2</code> but I can't seem to
-        install it.</b></p></div>
+      <div class="question"><p><b>Q6.17: Fink dice que me falta el <code>gcc2</code>, pero yo no creo haberlo instalado.</b></p></div>
       <div class="answer"><p><b>A:</b> This is because <code>gcc2</code> is a virtual package to
         indicate the presence of gcc-2.95 on your system. Install the gcc2.95
         package from the XCode Tools (earlier OS versions have gcc-2.95 as
         part of their main Developer Tools installation.</p></div>
     </a>
     <a name="system-java">
-      <div class="question"><p><b>Q6.18: Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</b></p></div>
+      <div class="question"><p><b>Q6.18: Fink dice <code>Failed: Can't resolve dependency "system-java14-dev"</code>, pero ese paquete no existe.</b></p></div>
       <div class="answer"><p><b>A:</b> That's because it's a virtual package.  This type of error occurs when Java gets updated by Software Update:  the header files get removed, which causes the -dev package not to be generated.</p><p>You need to download the appropriate <code>Java Developer Tools</code> package from <a href="http://connect.apple.com">Apple</a>.  In this specific case that's the <code>Java 1.4.2 Developer Tools</code>.</p></div>
     </a>
     <a name="dpkg-split">
-      <div class="question"><p><b>Q6.19: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
+      <div class="question"><p><b>Q6.19: Cualquier cosa que trato de instalar siempre me aparece: <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory.</q> ¿Cómo soluciono esto?</b></p></div>
       <div class="answer"><p><b>A:</b> Generally, this can be fixed by setting your environment up correctly, cf. <a href="usage-fink.php?phpLang=es#fink-not-found">this FAQ entry</a>.</p></div>
     </a>
     <a name="xml-parser">
-      <div class="question"><p><b>Q6.20: I get the following message: <q>configure: error: XML::Parser perl module is required for intltool</q>.  What do I do about it?</b></p></div>
+      <div class="question"><p><b>Q6.20: Me aparece el mensaje siguiente: <q>configure: error: XML::Parser perl module is required for intltool.</q> ¿Qué debo hacer?</b></p></div>
       <div class="answer"><p><b>A:</b> You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p></div>
     </a>
   <p align="right">

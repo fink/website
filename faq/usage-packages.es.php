@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:14:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/17 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="prev" href="usage-general.php?phpLang=es" title="Package Usage Problems - General">';
 
 include_once "header.inc";
@@ -11,7 +11,7 @@ include_once "header.inc";
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b>Q9.1: I get no sound from XMMS</b></p></div>
+      <div class="question"><p><b>Q9.1:  No me sale sonido de XMMS.</b></p></div>
       <div class="answer"><p><b>A:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
         preferences. For some strange reason, it selects the disk writer
         plugin as the default.</p><p>If you still get no sound output or XMMS complains that it can't
@@ -36,8 +36,7 @@ include_once "header.inc";
         We don't have an analysis or a fix yet.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b>Q9.2: If I am editing a file in nedit, when I open another file its
-        window pops up but is unresponsive.</b></p></div>
+      <div class="question"><p><b>Q9.2: Cuando estoy editando un archivo en nedit, si abro otro archivo su ventana aparece pero no me responde.</b></p></div>
       <div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of
         <code>nedit</code> and <code>lesstif</code> on all
         platforms. The workaround is to open a new window with File--&gt;New,
@@ -46,13 +45,12 @@ include_once "header.inc";
         <code>lesstif</code>.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b>Q9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
+      <div class="question"><p><b>Q9.3: Ayuda! Cuando abro XDarwin, inmediatamente se cuelga!</b></p></div>
       <div class="answer"><p><b>A:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b>Q9.4: When I try to start XDarwin I get the message "xinit: No such file
-        or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
+      <div class="question"><p><b>Q9.4: Cuando intento abrir XDarwin me sale el siguiente mensaje: "xinit: No such file  or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
       <div class="answer"><p><b>A:</b> First, make sure you are sourcing init.sh in your X startup
         <code>~/.xinitrc</code>.</p><p>In Jaguar, sometimes all of the <code>xfree86</code> packages get
         built, but only <code>xfree86-base</code> and
@@ -65,9 +63,7 @@ include_once "header.inc";
     </a>
     
     <a name="xterm-error">
-      <div class="question"><p><b>Q9.5: xterm fails with "dyld: xterm Undefined symbols: xterm undefined
-        reference to _tgetent expected to be defined in
-        /usr/lib/libSystem.B.dylib".</b></p></div>
+      <div class="question"><p><b>Q9.5: xterm falla con: "dyld: xterm Undefined symbols: xterm undefined  reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
       <div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2. You must
         upgrade to a 10.2 version.</p><p>If you are using the Fink <code>xfree86</code> packages, then you
         can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
@@ -78,9 +74,7 @@ include_once "header.inc";
         web site</a>.</p></div>
     </a>
     <a name="libXmuu">
-      <div class="question"><p><b>Q9.6: When I try to start XFree86 I get one of the following errors:
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
+      <div class="question"><p><b>Q9.6: Cuando quiero abrir XFree86 aparece uno de los siguientes errores: "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or  "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
       <div class="answer"><p><b>A:</b> You are missing a file that is supposed to be installed by
         <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it
         using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink
@@ -89,8 +83,7 @@ include_once "header.inc";
         --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
     </a>
     <a name="apple-x-bugs">
-      <div class="question"><p><b>Q9.7: I had Fink's XFree86 installed, and I've replaced it with Apple's
-        X11, and now everything's crashing!</b></p></div>
+      <div class="question"><p><b>Q9.7: Tenía instalado XFree86 de Fink, lo reemplazé con el X11 de Apple, y ahora todo se cuelga!</b></p></div>
       <div class="answer"><p><b>A:</b> First of all, if you previously had the "threaded" versions of
         Fink's XFree86 packages installed, you may need to rebuild the
         application that is crashing. Some programs check for the availability
@@ -104,8 +97,7 @@ include_once "header.inc";
         Apple bug reporter</a>.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b>Q9.8: I want the delete key in Apple's X11.app to behave like that in
-        XDarwin.</b></p></div>
+      <div class="question"><p><b>Q9.8: Quiero que la tecla para borrar en el X11 de Apple se comporte como la tecla en Xdarwin.</b></p></div>
       <div class="answer"><p><b>A:</b> Some users have reported that the behavior of the
         <code>delete</code> key is different between XDarwin and Apple X11.
         This can be rectified by adding lines to the appropriate X startup
@@ -121,8 +113,7 @@ xterm*.ttyModes: erase ^?</pre><p>
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="gnome-two">
-      <div class="question"><p><b>Q9.9: I upgraded from GNOME 1.x to GNOME 2.x and now
-        <code>gnome-session</code> won't open a window manager.</b></p></div>
+      <div class="question"><p><b>Q9.9:  Actualizé GNOME 1.x a GNOME 2.x y ahora <code>gnome-session</code> no abre al gestor de ventanas.</b></p></div>
       <div class="answer"><p><b>A:</b> While under GNOME 1.x <code>gnome-session</code> invokes the
         <code>sawfish</code> window manager automatically, under GNOME 2.x,
         you'll have to call a window manager in <code>~/.xinitrc</code> before
@@ -130,14 +121,12 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
 exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for <b>GNOME 2.4</b>.  Running <code>gnome-session</code> invokes a window manager.</p></div>
     </a>
     <a name="apple-x11-no-windowbar">
-      <div class="question"><p><b>Q9.10: I upgraded to Apple's X11 in Panther and now my window title bars
-        are missing.</b></p></div>
+      <div class="question"><p><b>Q9.10: He actualizado al X11 de Apple en Panther y ahora las barras de los títulos de las ventanas han desaparecido.</b></p></div>
       <div class="answer"><p><b>A:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0"
         included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
-      <div class="question"><p><b>Q9.11: I installed Apple's X11 in Panther but Fink keeps asking to install
-        xfree86.</b></p></div>
+      <div class="question"><p><b>Q9.11: Instalé el X11 de Apple en Panther pero Fink aun insiste en querer instalar xfree86.</b></p></div>
       <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b> If you are running a
@@ -179,8 +168,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         </ul></div>
     </a>
     <a name="apple-x11-beta-wants-xfree86">
-      <div class="question"><p><b>Q9.12: I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</b></p></div>
+      <div class="question"><p><b>Q9.12:  Instalé el X11 de Apple con la version 10.2-gcc3.3 de Fink pero Fink continua pidiéndome que instale xfree86.</b></p></div>
       <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b> If you are running a
@@ -220,7 +208,7 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
         </ul></div>
     </a>
     <a name="wants-xfree86-on-upgrade">
-      <div class="question"><p><b>Q9.13: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
+      <div class="question"><p><b>Q9.13: Cambié la version de Fink 10.2 a 10.2-gcc3.3 ó 10.3, tengo instalado el X11 de Apple, y Fink me pide que instale XFree86.</b></p></div>
       <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
 
 You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> or <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a> entries, above.</p></div>

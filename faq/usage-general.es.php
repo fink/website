@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:14:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/17 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-packages.php?phpLang=es" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -11,16 +11,13 @@ include_once "header.inc";
     
     
     <a name="xlocale">
-      <div class="question"><p><b>Q8.1: I'm getting lots of messages like "locale not supported by C
-        library". Is that bad?</b></p></div>
+      <div class="question"><p><b>Q8.1: Me aparecen muchos mensajes con "locale not supported by C  library". ¿Es malo esto?</b></p></div>
       <div class="answer"><p><b>A:</b> It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
         normally otherwise. The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.</p></div>
     </a>
     <a name="passwd">
-      <div class="question"><p><b>Q8.2: There are suddenly a number of strange users on my system, with
-        names like "mysql", "pgsql", and "games". Where did they come
-        from?</b></p></div>
+      <div class="question"><p><b>Q8.2: De repente han aparecido una cantidad de usuarios desconocidos en mi sistema, con nombres como "mysql", "pgsql" y "games". ¿De dónde salieron?</b></p></div>
       <div class="answer"><p><b>A:</b> You have used Fink to install a package which is dependent on
         another package, passwd. passwd installs a number of extra users on
         your system for security reasons -- on Unix systems, files and
@@ -58,8 +55,7 @@ include_once "header.inc";
         this should not have come as a surprise.</p></div>
     </a>
     <a name="compile-myself">
-      <div class="question"><p><b>Q8.3: How do I compile something myself using Fink-installed
-        software?</b></p></div>
+      <div class="question"><p><b>Q8.3: Cómo puedo compilar algo usando el software instalado por Fink.</b></p></div>
       <div class="answer"><p><b>A:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
         headers. For a package that uses standard configure/make process, you
@@ -85,8 +81,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         if they aren't already installed.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b>Q8.4: I can't run any of my Fink-installed applications using the
-        Applications menu in Apple X11.</b></p></div>
+      <div class="question"><p><b>Q8.4: No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menu de Aplicaciones de las X11 de Apple.</b></p></div>
       <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the Fink environment settings,
         which means that the Applications menu doesn't have the PATH set
         correctly to find your Fink applications. The solution is to preface
@@ -94,8 +89,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
-        should I install?</b></p></div>
+      <div class="question"><p><b>Q8.5: Estoy confundido con todas las opciones de las X11: X11 de Apple, XFree86, etc. ¿Cuál de ellas debería instalar?</b></p></div>
       <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. Apple's X11,
         which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster
@@ -124,22 +118,18 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         document</a>.</p></div>
     </a>
     <a name="no-display">
-      <div class="question"><p><b>Q8.6: When I try to run an application, I get a message that says "cannot
-        open display:". What do I need to do?</b></p></div>
+      <div class="question"><p><b>Q8.6: Cuando intento correr una aplicación, me sale un mensaje diciendo: "cannot open display". ¿Qué debo hacer?</b></p></div>
       <div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your X
         display. Make sure you do the following:</p><p>1. Start X (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If
         you are using the default setup for X, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
     </a>
     <a name="suggest-package">
-      <div class="question"><p><b>Q8.7: I don't see my favorite program in Fink. How do I suggest a new
-        package for inclusion in Fink?</b></p></div>
+      <div class="question"><p><b>Q8.7: No encuentro a mi programa favorito en Fink. ¿Cómo sugiero que se incluya un nuevo paquete en Fink?</b></p></div>
       <div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
         Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
     <a name="virtpackage">
-      <div class="question"><p><b>Q8.8: What are all these <code>system-*</code> "virtual
-	  packages" that are sometimes present, but that I can't
-	  seem to install or remove myself?</b></p></div>
+      <div class="question"><p><b>Q8.8:  ¿Qué son todos estos system-* "virtual packages" que a veces estan presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</b></p></div>
       <div class="answer"><p><b>A:</b> 
 	  Packages with names like <code>system-perl</code> are
 	  placeholder packages. These do not contain actual files, but

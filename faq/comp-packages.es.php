@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Compiling (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/19 12:14:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/06/17 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-general.php?phpLang=es" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=es" title="Compile Problems - General">';
 
 include_once "header.inc";
@@ -11,8 +11,7 @@ include_once "header.inc";
     
     
     <a name="libgtop">
-      <div class="question"><p><b>Q7.1: A package fails to build with errors involving
-        <code>sed</code>.</b></p></div>
+      <div class="question"><p><b>Q7.1: A Falla la compilación de un paquete con errores involucrando a <code>sed</code>.</b></p></div>
       <div class="answer"><p><b>A:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
         does something that writes to the terminal, e.g "<code>echo
         Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
@@ -22,9 +21,7 @@ include_once "header.inc";
 endif</pre></div>
     </a>
     <a name="cant-install-xfree">
-      <div class="question"><p><b>Q7.2: I want to switch to Fink's XFree86 packages, but I can't install
-        <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
-        with <code>system-xfree86</code>.</b></p></div>
+      <div class="question"><p><b>Q7.2: Quiero cambiarme a los paquetes XFree86 de Fink, pero no puedo instalar <code>xfree86-base</code> - <code>xfree86</code>, porque existe un conflicto con <code>system-xfree86</code>.</b></p></div>
       <div class="answer"><p><b>A:</b> All flavors of X11, unfortunately, really needs to be installed in
         /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and
         <code>xfree86-rootless</code> packages install there, too. However,
@@ -51,8 +48,7 @@ endif</pre></div>
         distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
     </a>
     <a name="change-thread-nothread">
-      <div class="question"><p><b>Q7.3: How do I change from the non-threaded version of Fink's XFree86
-        packages to the threaded version (or vice-versa)?</b></p></div>
+      <div class="question"><p><b>Q7.3: ¿Cómo puedo cambiar de la version non-threaded del paquete XFree86 de Fink a la version threaded  (o viceversa)?</b></p></div>
       <div class="answer"><p><b>A:</b> If you are running the Fink version of XFree86 and you want to
         switch between the threaded and non-threaded versions of Fink, you
         need to manually remove the old version. This is done at the
@@ -76,8 +72,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
     </a>
     
     <a name="cctools">
-      <div class="question"><p><b>Q7.4: "When I try to install KDE, I get the following message: 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
+      <div class="question"><p><b>Q7.4: ¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
       <div class="answer"><p><b>A:</b> This somewhat cryptic message means you need to install the
         December 2002 Developer Tools.</p></div>
     </a>
