@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.12 2004/05/19 15:04:47 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.13 2004/07/21 06:30:43 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1183,7 +1183,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <itemd>
 <p>
 这个字段可以在下载过程中改变源程序压缩档的名字。它经常用于在服务器上用目录来区别不同的版本，但压缩档的名字却都是相同的场合。例如：
-://www.foobar.org/coolapp/1.2.3/source.tar.gz。要解决这个问题，你可以使用：
+<filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename>。要解决这个问题，你可以使用：
 </p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 <p>

@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.37 2004/07/20 06:14:35 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.38 2004/07/21 06:30:41 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1077,7 +1077,7 @@ Normalement, une archive tar auxiliaire est extraite dans le même répertoire q
 <item><itemt>SourceRename</itemt>
 <itemd>
 <p>
-Ce champ renomme une archive tar à la volée. Ceci est utile, par exemple, lorsque la version du source est encodée dans le nom du répertoire du serveur, mais que l'archive elle-même porte le même nom pour toutes les versions, comme //www.foobar.org/coolapp/1.2.3/source.tar.gz. Pour résoudre les problèmes que cela cause, vous pouvez utiliser quelque chose de similaire à :
+Ce champ renomme une archive tar à la volée. Ceci est utile, par exemple, lorsque la version du source est encodée dans le nom du répertoire du serveur, mais que l'archive elle-même porte le même nom pour toutes les versions, comme <filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename>. Pour résoudre les problèmes que cela cause, vous pouvez utiliser quelque chose de similaire à :
 </p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 <p>

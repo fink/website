@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.39 2004/07/20 06:14:35 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.40 2004/07/21 06:30:40 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1729,10 +1729,10 @@ expect. See ghostscript, vim and tetex for examples of usage.
 <item><itemt>SourceRename</itemt>
 <itemd>
 <p>
-This field can renames a source tar ball on the fly. This is useful
+This field can renames a source tarball on the fly. This is useful
 if for example the version of the source is encoded in the directory name on
-the server, but the tar ball itself has the same name for all versions, e.g.
-://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+the server, but the tarball itself has the same name for all versions, e.g.
+<filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename>. To circumvent the problems
 caused by this, you would then use something like
 </p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>

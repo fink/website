@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.15 2004/07/10 08:22:40 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.16 2004/07/21 06:30:41 dmacks Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1703,7 +1703,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							このフィールドを使うと，ビルド時にソースの tar ボールをリネームできる．
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
 							tar ボールそのものはどのバージョンでも同じ名前のときだ．
-							(例えば ://www.foobar.org/coolapp/1.2.3/source.tar.gz というとき)
+							(例えば <filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename> というとき)
 							このことで起きる問題を回避するためには次のようにすればよい．
 						</p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
