@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/11/20 16:49:07 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/11/27 00:38:51 $';
 
 include "header.inc";
 ?>
@@ -14,6 +14,7 @@ browser window.</p>
 
 <p>Fink related links</p>
 <ul>
+<li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> - Instructions how to become a Fink mirror as well as status messages about current mirrors.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 a GUI for Fink</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
