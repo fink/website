@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/12 23:39:14';
+$cvs_date = 'Date: 2004/05/13 09:11:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";
@@ -379,19 +379,19 @@ L'interprétation des raccourcis (voir la section précédente) a lieu avant que
 Valeur booléenne spécifique aux paquets de module perl. Si sa valeur est true (vraie), la partie <code>make test</code> de <code>CompileScript</code> est ignorée pour ce paquet.
 </p>
 </td></tr></table>
-<p><b>Install Phase:</b></p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
+<p><b>Phase d'installation :</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>UpdatePOD</td><td>
 <p>
-<b>Introduced in fink 0.9.5.</b>
-A boolean value, specific for perl module packages. If true, this will add code to the install, postrm and postinst scripts that maintains the .pod files provided by perl packages. This includes adding and removing the .pod date from the central <code>/sw/lib/perl5/darwin/perllocal.pod</code> file. (If the type has been given as <code>perl $version</code> with a specific version of perl such as 5.6.0, then these scripts are adapted to deal with the central .pod file <code>/sw/lib/perl5/$version/perllocal.pod</code>.)
+<b>Introduit dans la version 0.9.5 de fink.</b>
+Valeur booléenne réservée aux paquets de module perl. Si sa valeur est true (vraie), du code est ajouté aux scripts install, postrm et postinst, qui gèrent les fichiers .pod fournis par les paquets perl. En particulier, la date .pod est ajoutée et ôtée du fichier central <code>/sw/lib/perl5/darwin/perllocal.pod</code>. (Si le type est du style <code>perl $version</code>, où $version est, par exemple, 5.6.0, les scripts sont adaptés pour gérer le fichier central .pod <code>/sw/lib/perl5/$version/perllocal.pod</code>.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
-A list of commands that are run in the install phase. See the note on scripts below. This is the place to put commands that copy all necessary files to the stow directory for the package. Normally the default is:
+Liste de commandes à exécuter durant la phase d'installation. Voir plus bas la note au sujet des scripts. C'est là où il faut mettre les commandes qui copient tous les fichiers requis dans le répertoire de construction du paquet. Normalement, on utilise :
 </p>
 <pre>make install prefix=%i</pre>
 <p>
-The default is appropriate for packages that use GNU autoconf. For packages with of type perl (as specified via the Type field) with the perl version not specified, the default instead is:
+Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut sont les suivantes :
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
  INSTALLARCHLIB=%i/lib/perl5/darwin \
@@ -399,7 +399,7 @@ The default is appropriate for packages that use GNU autoconf. For packages with
  INSTALLSITEARCH=%i/lib/perl5/darwin \
  INSTALLMAN1DIR=%i/share/man/man1 \
  INSTALLMAN3DIR=%i/share/man/man3</pre>
-<p>If the type is <code>perl $version</code> with the version specified (e.g., $version might be 5.6.0), then the default becomes:
+<p>Si le type est du style <code>perl $version</code> (où $version est, par exemple,  5.6.0), les commandes par défaut sont les suivantes :
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
  INSTALLARCHLIB=%i/lib/perl5/$version/darwin \
@@ -408,27 +408,27 @@ The default is appropriate for packages that use GNU autoconf. For packages with
  INSTALLMAN1DIR=%i/share/man/man1 \
  INSTALLMAN3DIR=%i/share/man/man3</pre>
 <p>
-If the package supports it, it is preferably to use <code>make install DESTDIR=%d</code> instead. Before the commands are executed, percent expansion takes place (see previous section).
+Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .
 </p>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This field is somewhat similar to DocFiles. It installs the specified jar files into <code>%p/share/java/%n</code>. Example:
+<b>Introduit dans la version 0.10.0 de fink.</b>
+Champ similaire au champ DocFiles. Il installe les fichiers jar spécifiés dans <code>%p/share/java/%n</code>. Exemple :
 </p>
 <pre>JarFiles: lib/*.jar foo.jar:fooBar.jar</pre>
 <p>
-This will install all the jars that were in the lib directory and will install foo.jar as fooBar.jar.
+Cette commande installe tous les fichiers jar situés dans le répertoire lib, puis installe le fichier foo.jar sous le nom de fooBar.jar.
 </p>
 <p>
-It also ensures that these jar files (specifically: all files in <code>%p/share/java/%n</code> that end in .jar) are added to the CLASSPATH environment variable. This allows tools like configure or ant to properly detect the installed jar files.
+Elle garantit aussi que les fichiers jar (en fait, tous les fichiers d'extension .jar situés dans <code>%p/share/java/%n</code>) sont ajoutés à la variable d'environnement CLASSPATH. Ceci permet aux outils tels configure ou ant de détecter correctement les fichiers jar installés.
 </p>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>
-This field provides a convenient way to install README or COPYING files in the doc directory for the package, <code>%p/share/doc/%n</code>. The value is a space-separated list of files. You can copy files from subdirectories of the build directory, but they will end up in the doc directory itself, not in a subdirectory. Shell wildcards are allowed. It is also possible to rename single files on the fly by appending the new name separated by a colon (:), e.g. <code>libgimp/COPYING:COPYING.libgimp</code>. This field works by appending appropriate <code>install</code> commands to the InstallScript.
+Ce champ fournit un moyen simple d'installer les fichiers README et COPYING dans le répertoire doc du paquet, soit <code>%p/share/doc/%n</code>. Sa valeur consiste en une liste de fichiers séparés par des espaces. Vous pouvez copier les fichiers à partir de sous-répertoires du répertoire de compilation, ils seront placés dans le répertoire lui-même et non pas dans un sous-répertoire. Les caractères joker reconnus par le shell sont autorisés. On peut aussi renommer des fichiers à la volée en faisant suivre le nom du fichier de deux-points (:), puis du nouveau nom. Exemple :<code>libgimp/COPYING:COPYING.libgimp</code>. Ce champ ajoute les commandes <code>install</code> appropriées au script InstallScript.
 </p>
 </td></tr><tr valign="top"><td>Shlibs</td><td>
 <p>
-<b>Introduced in fink 0.11.0.</b>
+<b>Introduuit dans la version 0.11.0 de fink.</b>
 This field declares the shared libraries which are installed in the package.  There is one line for each shared library, which contains three items separated by whitespace: the <code>-install_name</code> of the library, the <code>-compatibility_version</code>, and versioned  dependency information specifying the Fink package which provides this library at this compatibility version.  The dependency should be stated in the form <code> foo (&gt;= version-revision)</code> where  <code>version-revision</code> refers to the <b>first</b> version of a Fink package which made this library (with this compatibility version) available. The Shlibs declaration amounts to a promise from the maintainer that a libary with this name and a  <code>-compatibility_version</code> of at least this number will always be found in later versions of this Fink package.
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
