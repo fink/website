@@ -1,7 +1,7 @@
 <?
 $title = "Advanced - Binary Distro Server";
-$cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2005/01/19 17:06:41';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/01/20 16:26:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=en" title="Advanced Contents">';
 
 
@@ -18,8 +18,8 @@ installation to use a central build server ("master") that distributes binary
 packages to all clients in the group.
       </p>
       <p>
-(<b>Note:</b>: These instructions assume that you have a fink version &gt;= 0.24.0
-on your client machines. Read at the 
+(<b>Note:</b> These instructions assume that you have a fink version &gt;= 0.24.0
+on your client machines. Read the 
 <a href="#remarks">remarks below</a> if you are using older fink
 versions.)
       </p>
@@ -29,28 +29,34 @@ The method involves the following steps on the
 <a href="#client">client machines</a>:
       </p>
     
-    <h2><a name="master">1.2 On the "master" (build) server</a></h2>
+    <h2><a name="master">1.2 Steps on "master" (build) server</a></h2>
       
       <ol>
         <li>
-Install Fink at the <code>/sw</code> (default) prefix (use a symlink if necessary).
+Install Fink at <code>/sw</code> (default basepath, use a
+symlink if necessary).
         </li>
         <li>
-Build packages as usual -- they don't necessarily have to be installed, just
+Build packages as usual. They don't necessarily have to be installed, just
 built.
         </li>
         <li>
+          <p>
 Run <code>fink scanpackages</code> whenever your set of built
 packages has changed. This will make fink generate apt indexes for all of your
 enabled trees.
+          </p>
+          <p>
+As an alternative you could run <code>fink cleanup</code> which will
+clean all obsolete src and binary packages. <code>scanpackages</code>
+will be called at the end of the cleaning process.
+          </p>
         </li>
         <li>
 Start a web server:  E.g. enable "Personal Web Sharing" in the Sharing section
 of System Preferences. Then set up httpd to serve your <code>/sw/fink</code>
 directory by adding the following lines to your
 <code>/etc/httpd/httpd.conf</code> file. 
-        </li>
-        <li>
           <pre>
 Alias /fink /sw/fink
 &lt;Directory /sw/fink&gt;
@@ -64,12 +70,12 @@ web server.
         </li>
       </ol>
       <p>
-Remember to re-run <code>fink scanpackages</code> whenever you
-build/update packages on the "master" server to make them available to your
-remote machines.
+Remember to re-run <code>fink scanpackages</code> (or <code>fink
+cleanup</code>) whenever you build/update packages on the "master"
+server to make them available to your remote machines.
       </p>
       <p>
-Notes:
+<b>Notes:</b>
       </p>
       <p>
 You could also create a user 'fink' and add the above lines to 
@@ -79,11 +85,11 @@ You could also create a user 'fink' and add the above lines to
 If you use the apache2 package from Fink adjust the paths above accordingly.
       </p>
     
-    <h2><a name="client">1.3 On the client machines</a></h2>
+    <h2><a name="client">1.3 Steps on client machines</a></h2>
       
       <ol>
         <li>
-Install Fink at the <code>/sw</code> (default) prefix.
+Install Fink at <code>/sw</code> (default basepath).
         </li>
         <li>
 Run <code>fink configure</code> and enable the option to download

@@ -10,10 +10,10 @@ English |
 </table>
 <h1 style="text-align: center;">Advanced Fink Topics</h1>
     <p>
-This document gives describes some advanced topics not found in the
-<a href="http://fink.sourceforge.net/users-guide/">User's Guide</a>.
+This document describes advanced topics not found in the
+<a href="http://fink.sourceforge.net/doc/users-guide/">User's Guide</a>.
     </p>
-  <h2>Contents</h2><ul><li><a href="#bindist"><b>1 Running your own Binary Distribution Server</b></a><ul><li><a href="#bindist.intro">1.1 Introduction</a></li><li><a href="#bindist.master">1.2 On the "master" (build) server</a></li><li><a href="#bindist.client">1.3 On the client machines</a></li><li><a href="#bindist.remarks">1.4 Remarks</a></li></ul></li></ul><h2><a name="bindist">1 Running your own Binary Distribution Server</a></h2>
+  <h2>Contents</h2><ul><li><a href="#bindist"><b>1 Running your own Binary Distribution Server</b></a><ul><li><a href="#bindist.intro">1.1 Introduction</a></li><li><a href="#bindist.master">1.2 Steps on "master" (build) server</a></li><li><a href="#bindist.client">1.3 Steps on client machines</a></li><li><a href="#bindist.remarks">1.4 Remarks</a></li></ul></li></ul><h2><a name="bindist">1 Running your own Binary Distribution Server</a></h2>
     
     
     <h3><a name="bindist.intro">1.1 Introduction</a></h3>
@@ -24,8 +24,8 @@ installation to use a central build server ("master") that distributes binary
 packages to all clients in the group.
       </p>
       <p>
-(<b>Note:</b>: These instructions assume that you have a fink version &gt;= 0.24.0
-on your client machines. Read at the 
+(<b>Note:</b> These instructions assume that you have a fink version &gt;= 0.24.0
+on your client machines. Read the 
 <a href="#bindist.remarks">remarks below</a> if you are using older fink
 versions.)
       </p>
@@ -35,28 +35,34 @@ The method involves the following steps on the
 <a href="#bindist.client">client machines</a>:
       </p>
     
-    <h3><a name="bindist.master">1.2 On the "master" (build) server</a></h3>
+    <h3><a name="bindist.master">1.2 Steps on "master" (build) server</a></h3>
       
       <ol>
         <li>
-Install Fink at the <tt style="white-space: nowrap;">/sw</tt> (default) prefix (use a symlink if necessary).
+Install Fink at <tt style="white-space: nowrap;">/sw</tt> (default basepath, use a
+symlink if necessary).
         </li>
         <li>
-Build packages as usual -- they don't necessarily have to be installed, just
+Build packages as usual. They don't necessarily have to be installed, just
 built.
         </li>
         <li>
+          <p>
 Run <tt style="white-space: nowrap;">fink scanpackages</tt> whenever your set of built
 packages has changed. This will make fink generate apt indexes for all of your
 enabled trees.
+          </p>
+          <p>
+As an alternative you could run <tt style="white-space: nowrap;">fink cleanup</tt> which will
+clean all obsolete src and binary packages. <tt style="white-space: nowrap;">scanpackages</tt>
+will be called at the end of the cleaning process.
+          </p>
         </li>
         <li>
 Start a web server:  E.g. enable "Personal Web Sharing" in the Sharing section
 of System Preferences. Then set up httpd to serve your <tt style="white-space: nowrap;">/sw/fink</tt>
 directory by adding the following lines to your
 <tt style="white-space: nowrap;">/etc/httpd/httpd.conf</tt> file. 
-        </li>
-        <li>
           <pre>
 Alias /fink /sw/fink
 &lt;Directory /sw/fink&gt;
@@ -70,12 +76,12 @@ web server.
         </li>
       </ol>
       <p>
-Remember to re-run <tt style="white-space: nowrap;">fink scanpackages</tt> whenever you
-build/update packages on the "master" server to make them available to your
-remote machines.
+Remember to re-run <tt style="white-space: nowrap;">fink scanpackages</tt> (or <tt style="white-space: nowrap;">fink
+cleanup</tt>) whenever you build/update packages on the "master"
+server to make them available to your remote machines.
       </p>
       <p>
-Notes:
+<b>Notes:</b>
       </p>
       <p>
 You could also create a user 'fink' and add the above lines to 
@@ -85,11 +91,11 @@ You could also create a user 'fink' and add the above lines to
 If you use the apache2 package from Fink adjust the paths above accordingly.
       </p>
     
-    <h3><a name="bindist.client">1.3 On the client machines</a></h3>
+    <h3><a name="bindist.client">1.3 Steps on client machines</a></h3>
       
       <ol>
         <li>
-Install Fink at the <tt style="white-space: nowrap;">/sw</tt> (default) prefix.
+Install Fink at <tt style="white-space: nowrap;">/sw</tt> (default basepath).
         </li>
         <li>
 Run <tt style="white-space: nowrap;">fink configure</tt> and enable the option to download
@@ -149,4 +155,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: bindist.en.xml,v 1.1 2005/01/19 17:06:41 chris01 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: advanced.en.xml,v 1.2 2005/01/20 16:26:09 alexkhansen Exp $</i></p></body></html>
