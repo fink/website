@@ -1625,9 +1625,9 @@ but before the InstallScript and Docfiles of the current package.
 <p>
 These fields specify pieces of shell scripts that will be called when
 the package is installed, upgraded or removed.
-Fink automatically adds a shell script header that calls 'set -e', so
-any command that fails will result in instant termination of the
-script.
+Fink automatically adds the shell script header
+<tt style="white-space: nowrap;">#!/bin/sh</tt>, and calls <tt style="white-space: nowrap;">set -e</tt> so any command
+that fails will result in instant termination of the script.
 Fink also adds an <tt style="white-space: nowrap;">exit 0</tt> at the end.
 To indicate an error, exit from the script with a non-zero exit code.
 The first parameter (<tt style="white-space: nowrap;">$1</tt>) is set to a value indicating
@@ -1840,4 +1840,4 @@ Copyright (c) 2001-2003 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.51 2003/11/05 08:59:01 dmacks Exp $</i></p></body></html>
+requires the explicit consent of the author.</p><hr><p>Generated from <i>$Fink: packaging.xml,v 1.52 2003/11/12 09:02:17 dmacks Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2003/11/05 08:59:01';
+$cvs_date = 'Date: 2003/11/12 09:02:17';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -706,9 +706,9 @@ but before the InstallScript and Docfiles of the current package.
 <p>
 These fields specify pieces of shell scripts that will be called when
 the package is installed, upgraded or removed.
-Fink automatically adds a shell script header that calls 'set -e', so
-any command that fails will result in instant termination of the
-script.
+Fink automatically adds the shell script header
+<code>#!/bin/sh</code>, and calls <code>set -e</code> so any command
+that fails will result in instant termination of the script.
 Fink also adds an <code>exit 0</code> at the end.
 To indicate an error, exit from the script with a non-zero exit code.
 The first parameter (<code>$1</code>) is set to a value indicating

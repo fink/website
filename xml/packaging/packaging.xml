@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.52 2003/11/12 09:02:17 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.53 2003/11/13 05:33:01 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1909,9 +1909,9 @@ but before the InstallScript and Docfiles of the current package.
 <p>
 These fields specify pieces of shell scripts that will be called when
 the package is installed, upgraded or removed.
-Fink automatically adds a shell script header that calls 'set -e', so
-any command that fails will result in instant termination of the
-script.
+Fink automatically adds the shell script header
+<code>#!/bin/sh</code>, and calls <code>set -e</code> so any command
+that fails will result in instant termination of the script.
 Fink also adds an <code>exit 0</code> at the end.
 To indicate an error, exit from the script with a non-zero exit code.
 The first parameter (<code>$1</code>) is set to a value indicating
