@@ -1,4 +1,18 @@
-<a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
+<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
+<p>As announced in <a href="<?php print $root; ?>http://www.cert.org/advisories/CA-2003-21.html">this CERT 
+advisory</a>, it has recently been discovered that
+the ftp servers for GNU software were compromised back in March, 
+although it is not believed that any of the source code housed there
+was affected.
+</p><p>
+Fink relies on MD5 checksums when downloading software, and we have had
+no reports of incorrect checksums in Fink packages.  The Free Software
+Foundation is in the process of verifying the integrity of all of the
+source code distributed from that ftp site.  As of this writing, the source
+code for the Fink package <code>guile16</code> has not yet been verified,
+so it may be difficult to install that package at present.
+</p>
+                <a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
 <p><b>Quick Summary: DO NOT INSTALL THIS UPDATE.</b></p>
                <p>
 Apple has released a patch to the December 2002 
@@ -43,16 +57,5 @@ and <a href="http://www.apple.com/darwin">Darwin</a> operating
 systems.  Members of the alliance will share information using 
 the <a href="http://www.metapkg.org">www.metapkg.org</a> Web 
 site,  which  will provide a home for this cooperative effort. 
-</p>
-                <a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
-               <p>Fink and 
-<a href="http://www.macwelt.de/">Macwelt</a> have managed to organise a logo contest.
-For the next six weeks everyone is invited to submit their logo creations. 
-Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
-The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
- <a href="http://fink.sf.net/logo.php">here</a>. 
-                </p>
-<p>
-Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
 </p>
                 

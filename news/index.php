@@ -1,14 +1,28 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/07/14 23:25:21';
+$cvs_date = 'Date: 2003/08/18 21:28:30';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
+<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
+<p>As announced in <a href="<?php print $root; ?>http://www.cert.org/advisories/CA-2003-21.html">this CERT 
+advisory</a>, it has recently been discovered that
+the ftp servers for GNU software were compromised back in March, 
+although it is not believed that any of the source code housed there
+was affected.
+</p><p>
+Fink relies on MD5 checksums when downloading software, and we have had
+no reports of incorrect checksums in Fink packages.  The Free Software
+Foundation is in the process of verifying the integrity of all of the
+source code distributed from that ftp site.  As of this writing, the source
+code for the Fink package <code>guile16</code> has not yet been verified,
+so it may be difficult to install that package at present.
+</p>
+                <a name="2003-06-26 Developer Tools Update."><span class="news-date">2003-06-26: </span><span class="news-headline">Developer Tools Update.</span></a><?php gray_line(); ?>
 <p><b>Quick Summary: DO NOT INSTALL THIS UPDATE.</b></p>
                <p>
 Apple has released a patch to the December 2002 

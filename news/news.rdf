@@ -4,9 +4,29 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 14 Jul 2003 19:25:00 EDT</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2003 17:28:44 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Source files from ftp.gnu.org</title>
+    <link>http://fink.sf.net/news/#2003-08-18%20Source%20files%20from%20ftp.gnu.org</link>
+    <dc:date>2003-08-18</dc:date>
+    <description>
+As announced in this CERT 
+advisory, it has recently been discovered that
+the ftp servers for GNU software were compromised back in March, 
+although it is not believed that any of the source code housed there
+was affected.
+
+Fink relies on MD5 checksums when downloading software, and we have had
+no reports of incorrect checksums in Fink packages.  The Free Software
+Foundation is in the process of verifying the integrity of all of the
+source code distributed from that ftp site.  As of this writing, the source
+code for the Fink package guile16 has not yet been verified,
+so it may be difficult to install that package at present.
+
+                </description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Developer Tools Update.</title>
     <link>http://fink.sf.net/news/#2003-06-26%20Developer%20Tools%20Update.</link>
@@ -422,18 +442,5 @@ infinite hangs during patching) when using Fink to compile packages while
 anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Test version of Jaguar updater available</title>
-    <link>http://fink.sf.net/news/#2002-09-08%20Test%20version%20of%20Jaguar%20updater%20available</link>
-    <dc:date>2002-09-08</dc:date>
-    <description>
-		
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in step-by-step instructions for updating. We also have separate instructions to install Fink from scratch on 10.2. 
-		
-		
-			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the &quot;stable&quot; tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
-		
-	</description>
   </item>
 </rdf:RDF>
