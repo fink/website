@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/09/20 15:54:10';
+$cvs_date = 'Date: 2004/09/20 15:56:45';
 $metatags = '';
 
 include_once "header.inc";
@@ -15,7 +15,8 @@ Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based 
 </p>
 
 <p>
-This new release incorporates various fixes to the package manager, many previously
+This new release incorporates various fixes to the package manager, 
+and many previously
 unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
 binaries for KDE 3.1.4 and GNOME 2.4.
 </p>
@@ -44,7 +45,7 @@ Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only insta
 The Fink Team would like to thank its many contributors, frequent helpers
 and developers for making this release happen.
 We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
-Without their constant support and valuable pointers Fink would not be where we are now.
+Without their constant support and valuable pointers, Fink would not be where we are now.
 </p>
 
 <a name="2004-08-23 Problems with XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problems with XCode 1.5</span></a><?php gray_line(); ?>
