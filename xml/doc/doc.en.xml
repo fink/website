@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
 <article filename="index" lang="en">
-<title>Fink - Documentation</title>
-<shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.en.xml,v 1.7 2004/03/24 18:14:58 dmrrsn Exp $</cvsid>
-
-<preface>
-<p>
+  <title>Fink - Documentation</title>
+  <shorttitle>Documentation</shorttitle>
+  <cvsid>$Id: doc.en.xml,v 1.8 2004/03/29 01:07:30 alexkhansen Exp $</cvsid>
+  <preface>
+    <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
 or Darwin without Fink and want to learn about porting Unix software.
@@ -58,10 +57,11 @@ maintain Fink packages</li>
   <section name="otherdoc">
     <title>Other Documents</title>
     <ul>
-      <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.en.html">Internationalization Guide</varlink>- material concerning
+      <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.en.html">Internationalization Guide</varlink> - material concerning
 the ongoing website
 internationalization 
 effort</li>
+      <li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.en.html">Mailing List Netiquette</varlink> - how best to employ the Fink mailing lists.</li>
     </ul>
   </section>
 </article>
