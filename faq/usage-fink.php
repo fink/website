@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2002/06/01 17:58:44';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2002/06/08 00:57:26';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -188,8 +188,8 @@ problem, there are two easy workarounds:</p><ul>
     <p>Manually install the latest version of the package manager. Go to the
     <a href="http://fink.sourceforge.net/download/srcdist.php">source release
     download page</a> and get the latest version, then update like this:</p>
-    <pre>tar -xzf fink-0.4.0-full.tar.gz
-cd fink-0.4.0-full/
+    <pre>tar -xzf fink-0.4.0a-full.tar.gz
+cd fink-0.4.0a-full/
 ./inject.pl /sw
 cd pkginfo
 ./inject.pl /sw</pre>
