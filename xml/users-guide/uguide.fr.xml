@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.1 2004/03/09 23:49:26 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.2 2004/03/17 11:18:54 michga Exp $</cvsid>
   <preface>
 <p>
 <em>Ce document est en cours d'élaboration.</em>
@@ -268,7 +268,7 @@ pico .cshrc</codeblock>
             <li>
               <p>Vous avez suivi les instructions figurant dans le fichier <code>/usr/share/tcsh/examples/README</code>.</p>
               <p>Vous avez donc créé deux fichiers <code>~/.tcshrc</code> et <code> ~/.login</code> .  Dans ce cas,  <code>~/.login</code>, qui est lu après <code>~/.tcshrc</code>, source le fichier  <code>/usr/share/tcsh/examples/login</code>.  Ce dernier contient une ligne qui écrase la définition précédente de votre variable d'environnement PATH.  Vous devez alors créer un répertoire <code>~/Library/init/tcsh/path</code>:</p>
-              <codeblock>                            mkdir -p ~/Library/init/tcsh
+              <codeblock>mkdir -p ~/Library/init/tcsh
   pico ~/library/init/tcsh/path</codeblock>
               <p>et y intégrez la ligne suivante :</p>
               <codeblock>source ~/.cshrc</codeblock>
@@ -650,7 +650,7 @@ D'autres éléments sont optionnels et permettent aux utilisateurs de changer le
           <p>La liste des arborescences disponibles est la suivante :</p>
           <codeblock>
 local/main      - tout paquet local que vous désirez installer
-local/bootstrap - paquets utillisés pendant l'installation de Fink
+local/bootstrap - paquets utilisés pendant l'installation de Fink
 stable/crypto   - paquets cryptographiques stables
 stable/main     - autres paquets stables
 unstable/crypto - paquets cryptographiques instables
