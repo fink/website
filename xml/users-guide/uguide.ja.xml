@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.3 2004/02/24 03:03:42 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.4 2004/03/11 23:56:35 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 <em>このドキュメントは未完成です。</em>
@@ -229,34 +229,38 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <code>.profile</code> ファイルに追加して下さい (あるいは、 <code>.bash_profile</code> がある場合、こちらを使って下さい):
   </p>
-  <codeblock>source /sw/bin/init.sh</codeblock>
+  <codeblock>. /sw/bin/init.sh</codeblock>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
   <codeblock>cd pico .profile</codeblock>
-  <p>
-   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.sh</code> 行をタイプできるようになります。
-   &quot;New file&quot; という文字が出ていても大丈夫です。
-   行を追加したら、最低一回はリターンキーを押して下さい。
-   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
-  </p>
+<p>
+フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
+<code>. /sw/bin/init.sh</code> 行をタイプできるようになります。
+&quot;New file&quot; という文字が出ていても大丈夫です。
+行を追加したら、最低一回はリターンキーを押して下さい。
+その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+</p>
  </li>
  <li>
   <p><strong>C シェル</strong> (Mac OS X 10.2 までのデフォルト) </p>
   <p>
-   tcsh を使っている場合、以下の行をホームディレクトリ内の <filename>.cshrc</filename> ファイルに追加して下さい:
+   tcsh を使っている場合、以下の行をホームディレクトリ内の 
+   <filename>.cshrc</filename> ファイルに追加して下さい:
   </p>
   <codeblock>source /sw/bin/init.csh</codeblock>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
-  <codeblock>cd pico .cshrc</codeblock>
-  <p>
-   フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 <code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
-   "New file" という文字が出ていても大丈夫です。
-   行を追加したら、最低一回はリターンキーを押して下さい。
-   その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
-  </p>
+<codeblock>cd
+pico .profile</codeblock>
+<p>
+フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
+<code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
+&quot;New file&quot; という文字が出ていても大丈夫です。
+行を追加したら、最低一回はリターンキーを押して下さい。
+その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
+</p>
   <p>状況によっては、さらに数行編集する必要がある場合もあります:</p>
   <ol>
   <li>
@@ -275,8 +279,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   ここで問題は、 <code>~/.login</code> が <code>~/.tcshrc</code> の後で実行され、 <code>/usr/share/tcsh/examples/login</code> を source することです。
   後者は、あなたの設定した PATH を上書きする行を含んでいます。
   <code>~/Library/init/tcsh/path</code> を作成するのがよいでしょう:</p>
-  <codeblock>mkdir ~/Library/init
-mkdir ~/Library/init/tcsh
+<codeblock>mkdir -p ~/Library/init/tcsh
 pico ~/library/init/tcsh/path</codeblock>
   <p>としてから:</p>
   <codeblock>source ~/.cshrc</codeblock>
@@ -319,13 +322,13 @@ Fink のパッケージはそれぞれ設定を追加することができます
 <p>
 <code>dselect</code> は、入手可能なパッケージの一覧を表示し、インストールするものを選択できるプログラムです。
 これはターミナル.app 内で動作しますが、 &quot;スクリーン&quot; 全体を簡単なキーボードナビゲーションで使います。
-他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、あらかじめ root になるか、 sudo を使い:
+他のパッケージ管理ツールと同様、 <code>dselect</code> はルート権限を必要とするので、sudo を使い:
 </p>
 <codeblock>sudo dselect</codeblock>
 <p>
 とします。
 <em>注記：</em>
-<code>dselect</code> は OSX ターミナル上では問題があります。
+<code>dselect</code> は Mac OS X ターミナル上では問題があります。
 これを避けるには以下のコマンドを先に実行するか、起動ファイル (例 <code>.cshrc</code> | <code>.profile</code>) に書いておく必要があります。
 </p>
 <p>tcsh の場合:</p>
@@ -779,7 +782,7 @@ Mac OS X 10.0 以前はサポートされていません。
 </li>
 </ul>
 </section>
-<section name="downloding" >
+<section name="downloading" >
 <title>ダウンロード設定</title>
 <p>Fink がダウンロードする手段を変える設定はいくつかあります。</p>
 <ul>
@@ -1036,7 +1039,7 @@ fetch と同様、以前ダウンロードしたかどうかに関わらず tarb
 <section name="fetch-missing" >
 <title>fetch-missing</title>
 <p>
-<em>全ての</em>パッケージソースファイルをダウンロードします。
+ローカルに存在しない<em>全ての</em>パッケージソースファイルをダウンロードします。
 このコマンドは、システム上に無いパッケージのみダウンロードします。</p>
 </section>
 <section name="build" >
