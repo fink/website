@@ -1,7 +1,7 @@
 <?
 $title = "GNOME on Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/02/11 12:17:44 $';
+$cvs_date = '$Date: 2001/02/25 14:57:05 $';
 
 include "header.inc";
 ?>
@@ -131,6 +131,21 @@ Download: Available on GNOME mirrors.</p>
 Fixes: libtool.<br>
 Download: Available on GNOME mirrors.</p>
 
+<p><b>audiofile 0.1.9:</b> An sound file handling library.<br>
+Fixes: host type, libtool. <a
+href="../files/audiofile-0.1.9-darwin.patch">This patch</a> removes a
+-lm from audiofile-config.<br>
+Download: Available on GNOME mirrors.</p>
+
+<p><b>esound 0.2.22:</b> A sound playing and mixing daemon. Also known
+as ESD.<br>
+Fixes: libtool. Call the configure script with
+<tt>--disable-local-sound</tt>. esound doesn't support Darwin for
+actually playing sound. You could try <a
+href="http://www.jcraft.com/jesd/index.html">JEsd</a> for playback on
+Mac OS X.<br>
+Download: Available on GNOME mirrors.</p>
+
 <h2>GNOME packages</h2>
 
 <p><b>orbit 0.5.6:</b> The CORBA request broker used in GNOME.<br>
@@ -143,7 +158,8 @@ Download: Available on GNOME mirrors.</p>
 
 <p><b>gnome-libs 1.2.11:</b> The core GNOME libraries.<br>
 Fixes: host type, libtool, -traditional-cpp. <a
-href="../files/gnome-libs-1.2.11-darwin.patch">This patch</a> fixes
+href="../files/gnome-libs-1.2.11-darwin.patch">This patch</a>
+<b>[updated 2001-02-25]</b> fixes
 several issues: -lm flags in the configure script, code that includes
 malloc.h without checking HAVE_MALLOC_H first and missing library
 flags in gnome-config. Run <tt>autoconf</tt> after applying.<br>
@@ -163,9 +179,11 @@ Download: Available on GNOME mirrors.</p>
 <p><b>gnome-core 1.2.4:</b> The session manager, the panel and other
 core components.<br>
 Fixes: libtool, -traditional-cpp. <a
-href="../files/gnome-core-1.2.4-darwin.patch">This patch</a> fixes a
-symbol clash issue (the desk guide applet redefines some gdk and
-gdk_pixbuf functions).<br>
+href="../files/gnome-core-1.2.4-darwin.patch">This patch</a>
+<b>[updated 2001-02-25]</b> fixes a symbol clash issue (the desk guide
+applet redefines some gdk and gdk_pixbuf functions) and adds flags to
+that the applets that are built as modules are actually built as
+modules and not as shared libraries.<br>
 Download: Available on GNOME mirrors.</p>
 
 <p><b>gnome-applets 1.2.4:</b> Lots of nice applets for your
@@ -175,7 +193,7 @@ href="../files/gnome-applets-1.2.4-darwin.patch">This patch</a> fixes a
 problem with jbc and disables the mini-commander applet (it is too
 broken to compile on Darwin right now). Note that some applets will
 not be built because libgtop and ESD are missing or because they were
-written for Linux API.<br>
+written for Linux-specific APIs.<br>
 Download: Available on GNOME mirrors.</p>
 
 <p><b>icewm 1.0.6:</b> A GNOME-compliant window manager.<br>
@@ -201,4 +219,3 @@ depend on special APIs not present in Darwin.</li>
 <?
 include "footer.inc";
 ?>
-s

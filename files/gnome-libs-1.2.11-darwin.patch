@@ -1,6 +1,6 @@
 diff -ru gnome-libs-1.2.11/configure.in gnome-libs-1.2.11-patched/configure.in
 --- gnome-libs-1.2.11/configure.in	Wed Jan 24 21:09:48 2001
-+++ gnome-libs-1.2.11-patched/configure.in	Sun Feb  4 13:23:45 2001
++++ gnome-libs-1.2.11-patched/configure.in	Tue Feb  6 01:25:24 2001
 @@ -268,7 +268,7 @@
      AC_CHECK_LIB(tiff34, TIFFFlushData,
        AC_CHECK_HEADER(tiffio.h,
@@ -19,9 +19,18 @@ diff -ru gnome-libs-1.2.11/configure.in gnome-libs-1.2.11-patched/configure.in
  if test "$png_ok" = yes; then
    AC_MSG_CHECKING([for png_structp in png.h])
    AC_TRY_COMPILE([#include <png.h>],
+@@ -386,7 +386,7 @@
+ ART_LIBS="-lart_lgpl"
+ GNOME_LIBS="-lgnome -lgnomesupport $LIBGNOME_LIBS"
+ GNOMEUI_LIBS="-lgnomeui $ART_LIBS $GDK_IMLIB_LIBS $GTK_LIBS $GNOME_LIBS"
+-GTKXMHTML_LIBS="-lgtkxmhtml $LIBGTKXMHTML_LIBS"
++GTKXMHTML_LIBS="-lgtkxmhtml -lgnomesupport $LIBGTKXMHTML_LIBS"
+ ZVT_LIBS="-lzvt $UTIL_LIBS $GTK_LIBS"
+ 
+ dnl These definitions are expanded in make and gnome-config
 diff -ru gnome-libs-1.2.11/gnome-config.in gnome-libs-1.2.11-patched/gnome-config.in
 --- gnome-libs-1.2.11/gnome-config.in	Wed Nov 22 02:56:27 2000
-+++ gnome-libs-1.2.11-patched/gnome-config.in	Sun Feb  4 13:23:45 2001
++++ gnome-libs-1.2.11-patched/gnome-config.in	Mon Feb  5 21:32:13 2001
 @@ -177,7 +177,7 @@
    	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
@@ -33,7 +42,7 @@ diff -ru gnome-libs-1.2.11/gnome-config.in gnome-libs-1.2.11-patched/gnome-confi
      gtkxmhtml)
 diff -ru gnome-libs-1.2.11/libgnomeui/gnome-canvas-load.c gnome-libs-1.2.11-patched/libgnomeui/gnome-canvas-load.c
 --- gnome-libs-1.2.11/libgnomeui/gnome-canvas-load.c	Tue Aug 24 02:24:48 1999
-+++ gnome-libs-1.2.11-patched/libgnomeui/gnome-canvas-load.c	Sun Feb  4 13:23:45 2001
++++ gnome-libs-1.2.11-patched/libgnomeui/gnome-canvas-load.c	Mon Feb  5 21:32:13 2001
 @@ -12,7 +12,9 @@
   */
  #include <config.h>
@@ -46,7 +55,7 @@ diff -ru gnome-libs-1.2.11/libgnomeui/gnome-canvas-load.c gnome-libs-1.2.11-patc
  
 diff -ru gnome-libs-1.2.11/zvt/gnome-pty-helper.c gnome-libs-1.2.11-patched/zvt/gnome-pty-helper.c
 --- gnome-libs-1.2.11/zvt/gnome-pty-helper.c	Sat Mar 18 08:57:13 2000
-+++ gnome-libs-1.2.11-patched/zvt/gnome-pty-helper.c	Sun Feb  4 13:23:45 2001
++++ gnome-libs-1.2.11-patched/zvt/gnome-pty-helper.c	Mon Feb  5 21:32:13 2001
 @@ -45,7 +45,9 @@
  #include <fcntl.h>
  #include <termios.h>
