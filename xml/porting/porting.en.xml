@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 	<title>Porting Unix software to Darwin and Mac OS X</title>
 	<shorttitle>Porting</shorttitle>
-	<cvsid>$Id: porting.en.xml,v 1.3 2005/03/10 20:01:09 dmacks Exp $</cvsid> 
+	<cvsid>$Id: porting.en.xml,v 1.4 2005/03/16 18:01:32 dmacks Exp $</cvsid> 
 
 	<preface>
 		<p>This document contains hints for porting Unix applications to Darwin and Mac OS X. The information here applies to Mac OS X version 10.0.x and Darwin 1.3.x. Both systems will be referred to as Darwin, since Mac OS X is actually a superset of Darwin.</p>
@@ -381,7 +381,7 @@ This can be achieved by configuring GNU libtool with
 
 </chapter>
 
-<chapter filename="preparing">
+<chapter filename="preparing-10.2">
 <title>Preparing for 10.2</title>
 <shorttitle>Preparing for 10.2</shorttitle>
 
@@ -494,5 +494,11 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 </chapter>
 
+<chapter filename="preparing-10.3">
+<title>Preparing for 10.3</title>
+<shorttitle>Preparing for 10.3</shorttitle>
+<section name="perl"><title>Perl</title>
+</section>
+</chapter>
 
 </document>

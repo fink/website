@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.6 2005/03/11 04:52:46 michga Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.7 2005/03/16 18:01:44 dmacks Exp $</cvsid> 
 <preface>
 <p>Ce document contient des indications pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent à Mac OS X version 10.0.x et Darwin 1.3.x. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est actuellement un sur-ensemble de Darwin.</p>
 </preface>
@@ -182,7 +182,7 @@ for cmd in $cmds; do
 Cependant, cet outil n'a rien à voir avec GNU libtool. L'outil GNU libtool qu'Apple fournit est installé sous le nom de <code>glibtool</code>. Ceci peut être réalisé en configurant GNU libtool avec <code>--program-transform-name=s/libtool/glibtool/</code>.</p>
 </section>
 </chapter>
-<chapter filename="preparing">
+<chapter filename="preparing-10.2">
 <title>Préparation pour la version 10.2</title>
 <shorttitle>Préparation pour 10.2</shorttitle>
 <section name="bash"><title>Shell bash</title>
@@ -249,6 +249,12 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 <p>Certains paquets qui ont des modules chargeables et qui utilisent libtool échouent avec une erreur install_name, car libtool passe le drapeau -install_name même avec le drapeau -bundle (alors que cela n'est pas strictement nécessaire). Ce comportement était accepté par le compilateur gcc2 mais n'est plus accepté maintenant par le compilateur gcc3. Vous trouverez la rustine <link url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">ici</link>. Notez que vous n'avez pas besoin de cette rustine si votre paquet utilise libtool-1.3.5 (par exemple, si vous utilisez <code>UpdateLibtool: True</code>) puisque elle a déjà été insérée dans une version révisée du fichier ltconfig 
 (accessible dans des préversions de fink).</p>
 <p>Un autre problème avec le compilateur gcc3 est l'incompatibilité pour les ABI C++ entre gcc2 et gcc3. En pratique, ceci signifie que les programmes C++ compilés avec gcc3 ne peuvent être liés à des librairies compilées avec gcc2.</p>
+</section>
+</chapter>
+<chapter filename="preparing-10.3">
+<title>Préparation pour la version 10.3</title>
+<shorttitle>Préparation pour 10.3</shorttitle>
+<section name="perl"><title>Perl</title>
 </section>
 </chapter>
 </document>

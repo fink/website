@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェの Darwin と Mac OS X へのポーティング</title>
   <shorttitle>ポーティング</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.2 2005/01/31 01:46:14 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.3 2005/03/16 18:01:45 dmacks Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -454,7 +454,7 @@ Apple の提供する GNU libtool は <code>glibtool</code> としてインス�
 </p>
     </section>
   </chapter>
-  <chapter filename="preparing">
+  <chapter filename="preparing-10.2">
     <title>10.2 に向けて</title>
     <shorttitle>10.2 に向けて</shorttitle>
     <section name="bash">
@@ -543,6 +543,13 @@ libtool-1.3.5 を使うパッケージ (<code>UpdateLibtool: True</code> を使�
       <p>他の gcc3 コンパイラの問題は， gcc2 と gcc3 での C++ ABI の非互換性によります．
 gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされた C++ プログラムからリンクできないことを意味します．
 </p>
+    </section>
+  </chapter>
+  <chapter filename="preparing-10.3">
+    <title>10.3 に向けて</title>
+    <shorttitle>10.3 に向けて</shorttitle>
+    <section name="perl">
+      <title>Perl</title>
     </section>
   </chapter>
 </document>
