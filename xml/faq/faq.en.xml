@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.27 2004/07/15 01:19:13 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.28 2004/07/15 14:16:04 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1273,7 +1273,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>I get the following message: <quote>configure: error: XML::Parser perl module is required for intltool</quote>.  What do I do about it?</p>
       </question>
       <answer>
-        <p>You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.</p>
+        <p>You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.  If you're on Jaguar, and are using the default system Perl version, you'll have the <code>pm560</code> variant, and if you've installed <code>Perl 5.8.0</code> you may have the <code>pm580</code> variant.</p>
       </answer>
     </faqentry>
     <faqentry name="master-problems">
@@ -1423,14 +1423,6 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 <p>Either of these will provide <code>x11</code>. <code>system-xfree86</code> is now a bundle that installs the appropriate one of the above packages, depending on the version of XFree86 / Apple X11 that is installed. Unfortunately, switching the provider of a virtual package is sufficiently complicated that the automatic upgrade procedure can't deal with it (currently). Do an additional <code>selfupdate</code> to get the latest version of the package, then try to update again.</p>
 </answer>
 </faqentry><-->
-    <faqentry name="xml-parser-pm">
-      <question>
-        <p><code>intltool</code> says that I need XML::Parser.  I have xml-parser-pm installed.</p>
-      </question>
-      <answer>
-        <p>This most frequently happens on updates.  You need to make sure that you also have <code>xml-parser-pmXXX</code> installed, where 'XXX" corresponds to the correct version of Perl for your system, e.g. 560 for Jaguar's built in Perl, and  581 for Panther's. </p>
-      </answer>
-    </faqentry>
     <faqentry name="libiconv-gettext">
       <question>
         <p>I can't update <code>libiconv</code>.</p>
