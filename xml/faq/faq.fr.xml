@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.15 2004/04/04 16:49:38 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.16 2004/04/08 07:59:43 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -354,12 +354,11 @@ finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch) et pla
     </faqentry>
    <faqentry name="sudo">
       <question>
-        <p>Comment ne plus avoir à saisir mon mot de passe après la
+        <p>Comment ne plus avoir à saisir son mot de passe après la
 	commande sudo ?</p>
       </question>
       <answer>
-        <p>Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, modifiez
-	<filename>/etc/sudoers</filename> en tant que super-utilisateur et ajoutez la ligne suivante :</p>
+        <p>Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <code>visudo</code>, puis ajoutez la ligne suivante :</p>
         <codeblock>username ALL = NOPASSWD: ALL</codeblock>
         <p>Remplacez bien sûr <code>username</code> par votre nom
 	d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle
@@ -509,93 +508,54 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="install-info-bad">
       <question>
-        <p>I can't install anything, because I get the following error:
-        "install-info: unrecognized option `--infodir=/sw/share/info'"</p>
+        <p>Impossible d'installer quoi que ce soit. Le message d'erreur suivant : "install-info: unrecognized option `--infodir=/sw/share/info'" apparaît.</p>
       </question>
       <answer>
-        <p>This usually is due to a problem in your PATH. In a terminal window
-        type:</p>
-        <codeblock>printenv PATH</codeblock>
-        <p>If <filename>/sw/sbin</filename> doesn't appear at all, then you
-        need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link>
-        in the Users Guide. If <filename>/sw/sbin</filename> is there, but
-        there are other directories ahead of it (e.g.
-        <filename>/usr/local/bin</filename>), then you will either want to
-        reorder your PATH so that <filename>/sw/sbin</filename> is near the
-        beginning, or if you really need the other directory to be before
-        <filename>/sw/sbin</filename>, then you'll want to temporarily rename
-        the other <filename>install-info</filename> when you use Fink.</p>
+        <p>Ceci est généralement lié à un problème de PATH. Lancez dans une fenêtre de terminal :</p>
+<codeblock>printenv PATH</codeblock>
+        <p>Si <filename>/sw/sbin</filename> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> du Guide de l'Utilisateur. Si <filename>/sw/sbin</filename> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <filename>/usr/local/bin</filename>), vous devrez alors réordonner votre PATH pour que <filename>/sw/sbin</filename> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <filename>/sw/sbin</filename>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <filename>install-info</filename> quand vous utiliserez Fink.</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file">
       <question>
-        <p>I can't install or remove anything, because of a problem with a
-        "files list file".</p>
+        <p>Impossible de d'installer ou de supprimer quoi que ce soit à cause d'un problème "files list file".</p>
       </question>
       <answer>
-        <p>Typically these errors take the form:</p>
-        <codeblock>files list file for package <em>packagename</em> contains empty filename</codeblock>
-        <p>or</p>
-        <codeblock>files list file for package <em>packagename</em> is missing final newline</codeblock>
-        <p>This can be fixed, with a little work. If you have the .deb file
-        for the offending package currently available on your system, then
-        check its integrity by running</p>
-        <codeblock>dpkg --contents <em>full-path-to-debfile</em>
-        </codeblock>
-        <p>e.g.</p>
-        <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
-        <p>If you get back a listing of directories and files, then your .deb
-        is OK. If the output is something other than directories and files, or
-        if you don't have the .deb file, you can still proceed because the
-        error doesn't interfere with builds.</p>
-        <p>If you have been installing from the binary distribution or you
-        know for sure that the version in the binary distribution is the same
-        as what you have installed (e.g. by checking the <link url="http://fink.sourceforge.net/pdb/index.php">package
-        database</link>), then you can get a .deb file by running <code>sudo
-        apt=get install --reinstall --download-only <em>packagename</em>
-          </code>. Otherwise you can build one yourself by running <code>fink
-        rebuild <em>packagename</em>
-          </code>, but it won't install yet.</p>
-        <p>Once you have a valid .deb file, then you can reconstitute the
-        file. First become root by using <code>sudo -s</code> (enter your
-        administrative user password if necessary), and then use the following
-        command:</p>
-        <codeblock>dpkg -c <em>full-path-to-debfile</em> | awk '{if ($6 == "./"){ print "/."; } \
+        <p>En général, ces erreurs sont de la forme :</p>
+<codeblock>files list file for package <em>nom_du_paquet</em> contains empty filename</codeblock>
+        <p>ou</p>
+<codeblock>files list file for package <em>nom_du_paquet</em> is missing final newline</codeblock>
+        <p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p>
+<codeblock>dpkg --contents <em>chemin_complet_du_fichier_deb</em></codeblock>
+        <p>par exemple :</p>
+<codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+        <p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si,par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p>
+        <p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
+        <p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante : </p>
+        <codeblock>dpkg -c <em>chemin_complet_du_fichier_deb</em> | awk '{if ($6 == "./"){ print "/."; } \
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
-&gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
-        <p>e.g.</p>
+&gt; /sw/var/lib/dpkg/info/<em>nom_du_paquet</em>.list</codeblock>
+        <p>par exemple :</p>
         <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
-        <p>What this does is to extract the contents of the .deb file, remove
-        everything but the filenames, and write these to the .list file.</p>
+        <p>Cela a pour effet d'extraire le contenu du fichier .deb, de tout supprimer sauf les noms de fichiers, puis de les écrire dans le fichier .list.</p>
       </answer>
     </faqentry>
     <faqentry name="error-nineteen">
       <question>
-        <p>When I use the Fink binary installer package, I get a big "19" in
-        the window and can't install anything.</p>
+        <p>Lors de l'utilisation du paquet d'installation binaire de Fink, un gros "19" apparaît dans la fenêtre et plus il n'est plus possible d'installer quoi que ce soit.</p>
       </question>
       <answer>
-        <p>The number 19 appears because your OS X system is localized to a
-        language other than English. (This is a bug in Apple's Installer, that
-        it doesn't just show you the English-language error message.)</p>
-        <p>The English language error message corresponding to number 19
-        is</p>
-        <p>"A root directory /sw exists. Please see the Read Me file for
-        update instructions, or for information on installing Fink on a
-        separate volume."</p>
-        <p>You may be getting this error if you've used Fink before, and
-        didn't delete <filename>/sw</filename>. If you haven't installed Fink
-        before, the most likely cause of this is that you installed the Virex
-        program available for free to .Mac users. As explained on Fink's
-        webpage, Virex is incompatible with Fink (due to the Virex folks
-        having made errors in the way they set things up).</p>
+        <p>Le numéro 19 apparaît car votre système OS X n'utilise pas l'anglais. (C'est un défaut dans l'installeur d'Apple qui l'empêche de vous afficher le message d'erreur en anglais.)</p>
+        <p>Le message d'erreur correspondant au numéro 19 est :</p>
+        <p>"Un répertoire racine /sw existe. Veuillez lire le fichier Read Me pour des instructions de mise à jour, ou pour savoir comment installer Fink sur un volume différent."</p>
+        <p>Il est possible que vous ayez cette erreur si vous avez déjà utilisé Fink auparavant et que vous n'ayez pas supprimé le répertoire <filename>/sw</filename>. Si vous n'avez jamais utilisé Fink, il est fort probable que vous ayez installé le logiciel Virex disponible gratuitement pour les possesseurs d'un compte .Mac. Comme expliqué sur le site web de Fink, Virex est incompatible avec Fink (à cause d'une erreur de configuration des développeurs de Virex).</p>
       </answer>
     </faqentry>
     <faqentry name="dselect-garbage">

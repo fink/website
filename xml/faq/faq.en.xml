@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.10 2004/04/03 23:07:04 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.11 2004/04/08 07:59:43 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -397,8 +397,7 @@
       </question>
       <answer>
         <p>If you're not paranoid, you can configure sudo to not ask you for a
-        password. To do this, edit <filename>/etc/sudoers</filename> as root
-        and add a line like this:</p>
+        password. To do this, run <code>visudo</code> as root and add a line like this:</p>
         <codeblock>username ALL = NOPASSWD: ALL</codeblock>
         <p>Replace <code>username</code> with your actual username, of course.
         This line allows you to run any command via sudo without typing your
@@ -565,7 +564,7 @@ fink selfupdate-cvs</codeblock>
         /sw/src/</code>". Then use '<code>fink install <em>packagename</em>
           </code>' as normal.</p>
         <p>If you can't get the source file, then you'll have to wait for the
-        maintainer to deal with the problem. He may either post a link to
+        maintainer to deal with the problem. They may either post a link to
         the old source, or update the .info and .patch files to use the newer
         version.</p>
       </answer>
@@ -619,9 +618,8 @@ fink selfupdate-cvs</codeblock>
         there are other directories ahead of it (e.g.
         <filename>/usr/local/bin</filename>), then you will either want to
         reorder your PATH so that <filename>/sw/sbin</filename> is near the
-        beginning, or if you really need the other directory to be before
-        <filename>/sw/sbin</filename>, then you'll want to temporarily rename
-        the other <filename>install-info</filename> when you use Fink.</p>
+        beginning. Or if you really need the other directory to be before
+        <filename>/sw/sbin</filename>,  and this former directory includes another install-info directory, then you'll want to temporarily rename this <filename>install-info</filename> subdirectory when you use Fink.</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file">
