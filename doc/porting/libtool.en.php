@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:32';
+$cvs_date = 'Date: 2005/03/16 18:33:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
 
@@ -99,7 +99,7 @@ then delete the files ltconfig and ltmain.sh.
 configure and make.)  This is done automatically, by the way, in the 
 current Fink package for libtool 1.3.5.</p><p>
 But that's only half the work - every package using libtool comes with
-its own copies of ltconfig and ltmain.sh.
+its own copies of <code>ltconfig</code> and <code>ltmain.sh</code>.
 So you must replace these in every package that you want to build as a
 shared library.
 Note that you must do this before running the configure script.
@@ -113,9 +113,9 @@ For your convenience, you can get the two files right here:
 <p>
 There are at least three different versions of libtool 1.4.x now in wide use
 (1.4.1, 1.4.2, and later development snapshots). They all have some issues on
-Darwin, though the exact changes required to fix them differ. The libtool14
+Darwin, though the exact changes required to fix them differ. The "libtool14"
 package shipped via Fink has all required patches already applied to it.
-However, you still have to manually fix the ltmain.sh/configure files of
+However, you still have to manually fix the <code>ltmain.sh</code> and <code>configure</code> files of
 affected packages in order to get them working.
 </p>
 
@@ -144,7 +144,7 @@ diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
 <li>
 <b>The loadable module bug</b>:
 This bug is caused by the non-standard behaviour of zsh (which is the default
-shell in 10.0 and 10.1; in 10.2 it is supposed to be replaced by bash).
+shell in 10.0 and 10.1; starting in 10.2 bash is the default).
 Zsh's non-standard quoting behaviours prevents loadable module from being built
 correctly, they end up as shared libraries instead (unlike Linux, these are
 reall different things on Darwin). A typical fix for this (cut off, so you can't

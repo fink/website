@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:32';
+$cvs_date = 'Date: 2005/03/16 18:33:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.3.php?phpLang=en" title="Preparing for 10.3"><link rel="prev" href="libtool.php?phpLang=en" title="GNU libtool">';
 
 
@@ -103,7 +103,7 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 libtool fail with an install_name error, because libtool passes
 the -install_name flag even along with the -bundle flag (when it is not
 strictly needed).  This behavior was accepted by the gcc2 compiler but is
-not being accepted by the gcc3 compiler.  The fix can be found<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">here.</a>
+not being accepted by the gcc3 compiler.  The fix can be found <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">here.</a>
 Note that you do not need the patch if your package uses libtool-1.3.5
 (for example, if you are using <code>UpdateLibtool: True</code>)
 since it has already been incorporated into a revised version of fink's
