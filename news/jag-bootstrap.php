@@ -1,7 +1,7 @@
 <?
 $title = "Bootstapping Fink under Mac OS X 10.2";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/09/23 00:47:15 $';
+$cvs_date = '$Date: 2002/10/21 03:10:47 $';
 
 include "header.inc";
 ?>
@@ -12,9 +12,7 @@ include "header.inc";
 <p>
 Apple introduced major changes in Mac OS X 10.2, and the Fink installation
 procedure has changed somewhat with the new OS.  The instructions 
-in this document are
-current as of 8 September 2002, and can be expected to simplify at a later 
-date as further progress in updating Fink is made.
+in this document are current as of 20 October 2002.
 </p>
 <p>
 If you are trying to upgrade an existing Fink installation, see the
@@ -27,29 +25,14 @@ Here are the step-by-step instructions to install Fink on Mac OS X 10.2.
 <li> <b>Step 1: Install Mac OS X 10.2 and the OS X 10.2 Developer Tools.</b>
 A binary option is not yet available for the 10.2 version of Fink.
 <br><br>
-<li> <b>Step 2: Obtain the files for the Fink installation.</b>
-To do this, create a directory <b>finkcvs</b> in a location of your
-choice with the command
-<pre>
-  mkdir finkcvs
-</pre>
-Next, issue the commands
-<pre>
-  cd finkcvs
-  cvs -d:pserver:anonymous@cvs.fink.sourceforge.net:/cvsroot/fink login
-  cvs -d:pserver:anonymous@cvs.fink.sourceforge.net:/cvsroot/fink co fink
-  cd fink
-</pre>
-(After the "login" command, just press a carriage return when it asks for
-a password: no password is needed.)
-All subsequent commands will assume that you are in the <b>finkcvs/fink</b>
-directory.
+<li> <b>Step 2: Obtain the files for the Fink upgrade.</b>
+Download the <A href="http://prdownloads.sourceforge.net/fink/fink-0.11.0.tar.gz?download">Fink 0.11.0 archive</A>. Double click on the archive to expand it (Stuffit Expander or OpenUp both work), then open a terminal window and "cd" into the <b>fink-0.11.0</b> directory. All subsequent commands will assume that you are in the <b>fink-0.11.0</b> directory.
 <br><br>
 <li><b>Step 3: Install Fink.</b>  To do this, run the command
 <pre>
   ./bootstrap.sh
 </pre>
-from within the finkcvs/fink directory.
+from within the fink-0.11.0 directory.
 <br><br>
 <li><b>Step 4: Edit your fink.conf file.</b>
 You will find this file at /sw/etc/fink.conf (or another location if you
@@ -84,7 +67,7 @@ You will need an active internet connection during this step, which will
 provide you with package descriptions for the 10.2 packages.
 <br><br>
 <li> Finally, when all of this has been completed, you may remove the
-finkcvs directory and its contents if you wish.
+fink-0.11.0 archive, directory, and its contents.
 </ul>
 <p> You should now have a fully functioning Fink installation, into which
 you can install whichever Fink packages you wish.

@@ -1,7 +1,7 @@
 <?
 $title = "Upgrading Fink for Mac OS X 10.2";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 01:25:23 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/10/21 03:10:47 $';
 
 include "header.inc";
 ?>
@@ -14,10 +14,7 @@ Apple introduced major changes in Mac OS X 10.2, and Fink installations
 need to be upgraded with care in order to cope with these changes.
 If you have upgraded to Mac OS X 10.2 on a machine with a pre-existing
 Fink installation, then this document will provide step-by-step instructions
-for upgrading Fink.  The instructions are current as of 8 September 2002,
-and can be expected to simplify at a later date as further progress in
-updating Fink is made.  Roughly 800 out of 1150 Fink packages are available
-in the new 10.2 version of Fink, with more coming every day.
+for upgrading Fink.  The instructions in this document are current as of 20 October 2002.
 </p>
 <p>If you want to install a fresh copy of Fink on Mac OS X 10.2, then you
 should consult the <a href="jag-bootstrap.php">Jaguar bootstrap guide</a>
@@ -33,22 +30,7 @@ install the Developer Tools, because the 10.2 Fink packages are not yet
 available in binary form.
 <br><br>
 <li> <b>Step 2: Obtain the files for the Fink upgrade.</b>
-To do this, create a directory <b>finkcvs</b> in a location of your
-choice with the command
-<pre>
-  mkdir finkcvs
-</pre>
-Next, issue the commands
-<pre>
-  cd finkcvs
-  cvs -d:pserver:anonymous@cvs.fink.sourceforge.net:/cvsroot/fink login
-  cvs -d:pserver:anonymous@cvs.fink.sourceforge.net:/cvsroot/fink co fink
-  cd fink
-</pre>
-(After the "login" command, just press a carriage return when it asks for
-a password: no password is needed.)
-All subsequent commands will assume that you are in the <b>finkcvs/fink</b>
-directory.
+Download the <A href="http://prdownloads.sourceforge.net/fink/fink-0.11.0.tar.gz?download">Fink 0.11.0 archive</A>. Double click on the archive to expand it (Stuffit Expander or OpenUp both work), then open a terminal window and "cd" into the <b>fink-0.11.0</b> directory. All subsequent commands will assume that you are in the <b>fink-0.11.0</b> directory.
 <br><br>
 <li><b>Step 3: Verify the integrity of your Fink installation, and update
 any external software which is related to Fink.</b>  If you have installed
@@ -88,7 +70,7 @@ the unstable tree and have not yet been moved to the stable tree, so
 this step is highly recommended.
 <br><br>
 <li><b>Step 5: Run the update script.</b>
-From within the finkcvs/fink directory, issue the command
+From within the fink-0.11.0 directory, issue the command
 <pre>
   sudo ./update-fink.sh
 </pre>
@@ -113,7 +95,7 @@ if you prefer to customize things you may issue individual <b>fink update</b>
 commands.
 <br><br>
 <li> Finally, when all of this has been completed, you may remove the
-finkcvs directory and its contents if you wish.
+fink-0.11.0 archive, directory, and its contents.
 </ul>
 
 
