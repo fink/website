@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.2 2003/10/23 20:52:58 dmalloc Exp $ */
+/* $Id: theader.inc,v 1.3 2003/10/23 21:09:59 dmalloc Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -135,7 +135,7 @@ for ($i = 0; $i < sizeof($sections); $i += 3) {
   print '</a></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td height="3" colspan="2" bgcolor="#999999" class="layout"></td></tr>
+<tr align="left"><td height="3" colspan="2" bgcolor="#FFCF61" class="layout"></td></tr>
 
 <? /* intra-section navigation */
 if (!$nonav) {
@@ -193,7 +193,7 @@ for ($i = 0; $i < sizeof($navbox); $i += 2) {
   print '<tr class="layout" bgcolor="#ffffff"><td class="layout" height="1"></td><td class="layout" height="1"></td></tr>'."\n";
 }
 ?>
-<tr align="left"><td height="3" colspan="2" bgcolor="#999999" class="layout"></td></tr>
+<tr align="left"><td height="3" colspan="2" bgcolor="#FFCF61" class="layout"></td></tr>
 
 <?
 } /* end !$nonav */
@@ -203,7 +203,7 @@ if ($printlink) {
 <tr align="left"><td colspan="2" class="layout"><a href="<? print $root.$printlink ?>"><img
 src="<? print $root ?>img/printlink.gif" width="120" height="22"
 border="0" alt="Print Version"></a></td></tr>
-<tr align="left"><td colspan="2" bgcolor="#999999" class="layout"><img src="<? print $root
+<tr align="left"><td colspan="2" bgcolor="#FFCF61" class="layout"><img src="<? print $root
 ?>img/sect-bottom.png" width="120" height="3" border="0"
 alt=""></td></tr>
 <?
