@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/01/19 18:54:53 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2003/01/27 15:08:02 $';
 
 include "header.inc";
 ?>
@@ -45,6 +45,7 @@ Open a new Terminal.app window and type "pico .cshrc".
 A text editor will pop up.
 Enter this line:
 </p><pre>source /sw/bin/init.csh</pre><p>
+and then hit return.
 To get out of the editor, press control-O, return, control-X.
 Close the Terminal.app window.
 </p></li>
@@ -60,6 +61,7 @@ In the menu, hit "[U]pdate" once, then go to "[S]elect" to choose the
 packages you want installed.
 When you're done, hit "[I]nstall" to actually install the packages.
 </p></li>
+<li><p>When you install packages in the future, repeat step 4, but you can skip running "fink scanpackages".</p></li> 
 </ol>
 
 <p>
