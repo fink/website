@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compiling (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/04 16:49:38';
+$cvs_date = 'Date: 2004/04/08 07:59:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=fr" title="Compile Problems - General">';
 
 include_once "header.inc";

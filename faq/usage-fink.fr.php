@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/04 16:49:38';
+$cvs_date = 'Date: 2004/04/08 07:59:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 include_once "header.inc";
@@ -143,7 +143,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="bad-list-file">
       <div class="question"><p><b>Q5.18: Impossible de d'installer ou de supprimer quoi que ce soit à cause d'un problème "files list file".</b></p></div>
-      <div class="answer"><p><b>A:</b> En général, ces erreurs sont de la forme :</p><pre>files list file for package <b>nom_du_paquet</b> contains empty filename</pre><p>ou</p><pre>files list file for package <b>nom_du_paquet</b> is missing final newline</pre><p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p><pre>dpkg --contents <b>chemin_complet_du_fichier_deb</b></pre><p>par exemple :</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si,par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p><p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <a href="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</a>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <b>nom_du_paquet</b></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <b>nom_du_paquet</b></code>, mais cela ne l'installera pas.</p><p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante : </p><pre>dpkg -c <b>chemin_complet_du_fichier_deb</b> | awk '{if ($6 == "./"){ print "/."; } \
+      <div class="answer"><p><b>A:</b> En général, ces erreurs sont de la forme :</p><pre>files list file for package <b>nom_du_paquet</b> contains empty filename</pre><p>ou</p><pre>files list file for package <b>nom_du_paquet</b> is missing final newline</pre><p>Cela peut être corrigé relativement facilement. Si vous avez sur votre système le fichier .deb du paquet posant problème, vérifiez son intégrité en tapant la commande suivante :</p><pre>dpkg --contents <b>chemin_complet_du_fichier_deb</b></pre><p>par exemple :</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent  ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p><p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <a href="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</a>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <b>nom_du_paquet</b></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <b>nom_du_paquet</b></code>, mais cela ne l'installera pas.</p><p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante : </p><pre>dpkg -c <b>chemin_complet_du_fichier_deb</b> | awk '{if ($6 == "./"){ print "/."; } \
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
@@ -159,111 +159,82 @@ else { print substr($6, 2, length($6) - 1);}}' \
       <div class="answer"><p><b>A:</b> Le numéro 19 apparaît car votre système OS X n'utilise pas l'anglais. (C'est un défaut dans l'installeur d'Apple qui l'empêche de vous afficher le message d'erreur en anglais.)</p><p>Le message d'erreur correspondant au numéro 19 est :</p><p>"Un répertoire racine /sw existe. Veuillez lire le fichier Read Me pour des instructions de mise à jour, ou pour savoir comment installer Fink sur un volume différent."</p><p>Il est possible que vous ayez cette erreur si vous avez déjà utilisé Fink auparavant et que vous n'ayez pas supprimé le répertoire <code>/sw</code>. Si vous n'avez jamais utilisé Fink, il est fort probable que vous ayez installé le logiciel Virex disponible gratuitement pour les possesseurs d'un compte .Mac. Comme expliqué sur le site web de Fink, Virex est incompatible avec Fink (à cause d'une erreur de configuration des développeurs de Virex).</p></div>
     </a>
     <a name="dselect-garbage">
-      <div class="question"><p><b>Q5.20: I get a bunch of garbage when I select packages in
-        <code>dselect</code>. How can I use it?</b></p></div>
-      <div class="answer"><p><b>A:</b> There are issues between <code>dselect</code> and
-        <code>Terminal.app</code>. A workaround is to enter the
-        following command</p><p>tcsh users:</p><pre>setenv TERM xterm-color</pre><p>bash users:</p><pre>export TERM=xterm-color</pre><p>before you run <code>dselect</code>. You may want to put
-        this in your startup file (e.g. <code>.cshrc</code> |
-        <code>.profile</code>) so that it gets run all of the time.</p></div>
+      <div class="question"><p><b>Q5.20: La commande <code>dselect</code> produit un tas de lignes incompréhensibles. Comment éviter cela ?</b></p></div>
+      <div class="answer"><p><b>A:</b> <code>dselect</code> et <code>Terminal.app</code> communiquent assez mal. Pour résoudre ce problème, vous pouvez lancer cette commande :</p><p>Utilisateurs de tcsh :</p><pre>setenv TERM xterm-color</pre><p>Utilisateurs de bash :</p><pre>export TERM=xterm-color</pre><p>avant de lancer <code>dselect</code>. Vous pouvez mettre ceci dans votre fichier de démarrage (par exemple <code>.cshrc</code> ou <code>.profile</code>) pour que cela se fasse automatiquement.</p></div>
     </a>
     <a name="perl-undefined-symbol">
-      <div class="question"><p><b>Q5.21: Why do I get a bunch of "dyld: perl undefined symbols" errors when
-        I run Fink commands?</b></p></div>
-      <div class="answer"><p><b>A:</b> If you see an error sequence like the following:</p><pre>dyld: perl Undefined symbols: 
+      <div class="question"><p><b>Q5.21: Pourquoi des erreurs "dyld: perl undefined symbols" apparaissent à l'utilisation de commandes de Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Si vous voyez une erreur analogue à la suivante :</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
-_Perl_safemalloc 
-_Perl_saferealloc 
-_Perl_sv_2pv 
+_Perl_safemalloc
+_Perl_saferealloc
+_Perl_sv_2pv
 _perl_call_sv
-_perl_eval_sv 
-_perl_get_sv</pre><p>then what has probably happened is that you updated Perl to a new
-        version and now <code>storable-pm</code> needs to be updated.
-        You should update Fink. During the process you will be prompted to
-        install either <code>perl-core</code> or
-        <code>system-perl</code>; choose the latter. In addition,
-        <code>storable-pm</code> should also get updated.</p><p>For OS 10.1.x, perform the following commands (you'll need the
-        Developer Tools):</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp 
-sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp 
-fink rebuild storable-pm 
+_perl_eval_sv
+_perl_get_sv</pre><p>alors vous avez certainement mis à jour Perl et vous devez aussi mettre à jour <code>storable-pm</code>. Vous devez mettre à jour Fink. Pendant la mise à jour, il va vous être demandé d'installer soit <code>perl-core</code>, soit <code>system-perl</code> ; choisissez <code>system-perl</code>. De plus, <code>storable-pm</code> doit aussi être mis à jour.</p><p>Pour OS 10.1.x, utilisez les commandes suivantes (il vous faut les Developer Tools) :</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
+sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
+fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
-      <div class="question"><p><b>Q5.22: I can't seem to update Fink's version.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special
-        instructions</a> to follow under these circumstances.</p></div>
+      <div class="question"><p><b>Q5.22: Impossible de mettre à jour Fink.</b></p></div>
+      <div class="answer"><p><b>A:</b> Suivez les <a href="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b>Q5.23: Can I put Fink in a volume or directory with a space in its
-        name?</b></p></div>
-      <div class="answer"><p><b>A:</b> We recommend against putting your Fink directory tree inside a
-        directory with spaces in its name. It's just not worth the hassle.</p></div>
+      <div class="question"><p><b>Q5.23: Est-il possible d'installer Fink sur un volume ou dans un répertoire contenant un espace dans le nom?</b></p></div>
+      <div class="answer"><p><b>A:</b> Nous déconseillons de le faire. Le jeu n'en vaut vraiment pas la chandelle.</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b>Q5.24: When I try to do a binary update, there are many messages with
-        "File not found"</b></p></div>
-      <div class="answer"><p><b>A:</b> If you see something like the following:</p><pre>Err file: local/main Packages 
-File not found 
-Ign file: local/main Release 
-Err file: stable/main Packages 
-File not found 
-Ign file: stable/main Release 
-Err file: stable/crypto Packages 
-File not found 
-Ign file: stable/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/main Release 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/main Release 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release 
+      <div class="question"><p><b>Q5.24: Lors de la mise à jour binaire, de nombreux messages "File not found" apparaissent.</b></p></div>
+      <div class="answer"><p><b>A:</b> Si vous voyez ceci :</p><pre>
+Err file: local/main Packages
+File not found
+Ign file: local/main Release
+Err file: stable/main Packages
+File not found
+Ign file: stable/main Release
+Err file: stable/crypto Packages
+File not found
+Ign file: stable/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/release/main Packages
+Hit http://us.dl.sourceforge.net 10.3/release/main Release
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
+Hit http://us.dl.sourceforge.net 10.3/current/main Packages
+Hit http://us.dl.sourceforge.net 10.3/current/main Release
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
+Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
 Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
-File not found 
+File not found
 Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
 File not found
 Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
-File not found 
-Reading Package Lists... Done 
-Building Dependency Tree...Done 
+File not found
+Reading Package Lists... Done
+Building Dependency Tree... Done
 E: Some index files failed to download, 
-they have been ignored, or old ones used instead. 
-update available list script returned error exit status 1.</pre><p>then all you need to do is run <code>fink scanpackages</code>. This
-        generates the files that aren't being found.</p></div>
+they have been ignored, or old ones used instead.
+update available list script returned error exit status 1.
+</pre><p>alors vous devez juste lancer <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p></div>
     </a>
     <a name="wrong-tree">
-      <div class="question"><p><b>Q5.25: I've changed my OS | Developer Tools, but Fink doesn't recognize
-        the change.</b></p></div>
-      <div class="answer"><p><b>A:</b> When changing the Fink distribution (of which the source and binary
-        distros are subsets), Fink needs to be told that this has happened. To
-        do this, you can run a script that normally gets run when you first
-        install Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Doing this will point Fink to the correct place.</p></div>
+      <div class="question"><p><b>Q5.25: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>
+      <div class="answer"><p><b>A:</b> Lorsque vous changez la distribution de Fink (dont la distribution source et la distribution binaire sont des sous-ensembles), il faut le préciser à Fink. Pour cela, vous pouvez lancer le script qui est généralement exécuté lors de la première installation de Fink :</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Fink pointera alors à l'endroit approprié.</p></div>
     </a>
     <a name="seg-fault">
-      <div class="question"><p><b>Q5.26: I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
-        applications from the<code> fileutils </code>package! Help!</b></p></div>
-      <div class="answer"><p><b>A:</b> Errors of the form:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
-### execution of gzip failed, exit code 139</pre><p>or</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
-gzip: stdout: Broken pipe 
-### execution of gzip failed, exit code 138</pre><p>or</p><pre>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
-
-### execution of dpkg-deb failed, exit code 1
-Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or segmentation faults when running utilities from<code>
-        fileutils</code>, e.g. <code>ls</code> or <code>mv</code>, are likely
-        to be due to a prebinding error in a library, and can be fixed by
-        running</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
+      <div class="question"><p><b>Q5.26: Des erreurs apparaissent lors de l'utilisation de <code>gzip</code> ou <code>dpkg-deb</code> inclus dans le paquet <code>fileutils</code>.</b></p></div>
+      <div class="answer"><p><b>A:</b> Les erreurs de la forme :</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
+### execution of gzip failed, exit code 139</pre><p>ou :</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+gzip: stdout: Broken pipe
+### execution of gzip failed, exit code 138</pre><p>ou encore :</p><pre>dpkg-deb -b root-base-files-1.9.0-1
+/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+### execution of dpkg-deb failed, exit code 10
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ou des fautes de segmentation lors de l'utilisation d'utilitaires inclus dans <code>fileutils</code>, par exemple <code>ls</code> ou <code>mv</code>, sont généralement dues à une erreur de lien pré-encodé dans une librairie.
+Vous pouvez la corriger avec la commande suivante :</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b>Q5.27: When I open a Terminal window, I get a message that "Your
-        environment seems to be correctly set up for Fink already.", and it
-        logs out.</b></p></div>
-      <div class="answer"><p><b>A:</b> What happened is that somehow the OSX Terminal program has been
-        told to run <code>/sw/bin/pathsetup.command</code> every time you log
-        in. You can fix this by removing the Preferences file,
-        <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>If you have other preferences that you want to keep, you can edit
-        the file with a text editor and remove the reference to
-        <code>/sw/bin/pathsetup.command</code>.</p></div>
+      <div class="question"><p><b>Q5.27: À l'ouverture d'une fenêtre de Terminal, le message "Your environment seems to be set up for Fink already" apparaît, puis le Terminal se déconnecte.</b></p></div>
+      <div class="answer"><p><b>A:</b> Ce qui se passe ici est que, d'une façon ou d'une autre, l'application Terminal.app a été chargée d'exécuter <code>/sw/bin/pathsetup.command</code> à chaque connexion. Vous pouvez corriger cela en supprimant le fichier de préférences, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>Si vous voulez conserver certaines préférences, vous pouvez modifier le fichier avec un éditeur de texte classique et supprimer la référence à <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
   <p align="right">
 Next: <a href="comp-general.php?phpLang=fr">6 Compile Problems - General</a></p>
