@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/08/21 21:22:24 $';
+$cvs_date = '$Date: 2001/08/25 19:15:45 $';
 
 include "header.inc";
 ?>
@@ -97,6 +97,16 @@ improve the BSD layer.
 If you have some experience to share, join the <a
 href="../lists/fink-users.php">fink-users</a> mailing list and help
 solve the problems posted there by other users.
+</p>
+
+<p>
+<b>Test packages.</b>
+Grab the latest package descriptions from <a
+href="../doc/cvsaccess/index.php">CVS</a>, configure Fink to <a
+href="../faq/usage.php#unstable">use unstable</a> and test the
+packages.
+You can send success and failure reports to the package maintainer or
+a mailing list of your choice.
 </p>
 
 <p>
