@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/09/07 09:57:30';
+$cvs_date = 'Date: 2004/09/07 11:52:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -108,6 +108,20 @@ Increase this when you make a new description for the same upstream
 version.
 Revision numbers start at 1.
 Required field.
+</p>
+<p>
+  Fink's policy is that <b>any</b> time you make a change to the
+  <code>.info</code> file that results in changes to the
+  binary (compiled) form of a package (the <code>.deb</code>
+  file), you <b>must</b> increase <code>Revision</code>. This
+  includes changing the <code>Depends</code> or other package lists,
+  with the exception of<code>BuildDepends</code>, and adding,
+  removing, or renaming splitoff packages or shifting files among
+  them. When migrating a package to a new tree (from 10.2 to 10.3, for
+  example) involves such changes, you should
+  increase <code>Revision</code> by 10 in the newer tree in order to
+  leave space space for future updates to the package in the older
+  tree.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
@@ -309,6 +323,32 @@ Depends: (%type_pkg[-x11]) x11
 <p>
 would set the package x11 as a dependency for the nethack-x11 variant
 but not for the nethack variant.
+</p>
+<p>
+  Note that when using Depends/BuildDepends for shared library packages
+  for which more than one major-version is available, you must
+  <b>not</b> do the following:
+</p>
+<pre>
+  Package: foo
+  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+  BuildDepends: id3lib3.7-dev | id3lib4-dev
+</pre>
+<p>
+  even if your package could work with either library. Pick one
+  (preferably the highest version that can be used successfully) and
+  use it consistently in your package.
+</p>
+<p>
+  As explained in the <a href="policy.php?phpLang=en#sharedlibs">Shared Library Policy</a>, only one of the
+  -dev packages can be installed at a time, and each has links of the
+  same name that could point to different filenames in the associated
+  -shlibs package. When compiling package foo, the actual filename (in
+  the -shlibs package) gets hard-coded into the foo binary. That means
+  the resulting package needs the specific -shlibs package associated
+  with the -dev that was installed at compile-time. As a result, one
+  cannot have a <code>Depends</code> that indicates that either one
+  will suffice.
 </p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
