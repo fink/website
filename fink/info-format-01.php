@@ -9,16 +9,14 @@ include "header.inc";
 
 <h1>Making Fink Packages</h1>
 
+<p><b>This is an archived page.</b> The information here applies to
+Fink 0.1.6 through 0.1.8a.</p>
+
 <p>This page tries to document the format of Fink's package
 description files. This is difficult because the format is still
 evolving. Watch the "Last changed" info in the footer of the
 page. What you're reading right now is a description of the format
-used in Fink 0.2.1. The document for Fink 0.1.x has been <a
-href="info-format-01.php">archived.</a></p>
-<p>If you create packages for Fink, you may want to subscribe to the
-<a
-href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a>
-mailing list.</p>
+used in Fink 0.1.6.</p>
 
 <h2>General Notes</h2>
 
@@ -28,13 +26,12 @@ will let you use any ASCII character, but it's strongly discouraged.)
 There may be several versions of a package. Version numbers consists
 of a upstream version (commonly just called "version") and a packaging
 revision. As for allowed characters, the same rules as for package
-names apply. It is okay to use versions with letters, e.g. 2.9p1. Both
-fink and dpkg will know how to sort these correctly. Only one version
-of a package can be installed at any time. The full name of a package
-is
+names apply. Only one version of a package can be installed at any
+time. (Fink currently doesn't enforce this, but it usually won't work
+because of conflicts. Stow catches that for us...) The full name of a
+package is
 <tt>&lt;package-name&gt;-&lt;upstream-version&gt;-&lt;revision&gt;</tt>,
-e.g. <tt>gimp-1.2.1-1</tt>.</p>
-<!--
+e.g. <tt>stow-1.3.2-1</tt>.</p>
 <p>Package descriptions are read from files in the info subdirectory,
 i.e. /sw/fink/info if you installed Fink in /sw. Each file describes
 one revision of a package. The name of the file should be the full
@@ -43,14 +40,13 @@ builds its internal data structures from that. It will skip files that
 start with a dot (.) or a hash (#) and files that end with a tilde (~)
 or a hash (#). This is to keep out backup or temporary files from text
 editors.</p>
--->
 <p>The description files are simple lists of key-value pairs. The
-format is based on the popular RFC 822 header format. Each line starts
-with a key, terminated by a colon (:) and followed by the
-value. Values may be broken accross several lines by starting the next
-line with whitespace. In Fink, empty lines and lines starting with a
-hash (#) are ignored. If that description confused you, just look at
-the files.</p>
+format is that of a RFC 822 header - each line starts with a key,
+terminated by a colon (:) and followed by the value. Values may be
+broken accross several lines by starting the next line with
+whitespace. In Fink, empty lines and lines starting with a hash (#)
+are ignored. If that description confused you, just look at the
+files.</p>
 <p>Keys (field names) are case-insensitive in Fink. Some fields take
 a boolean value - any of "true", "yes", "on", "1" (case-insensitive)
 are treated as true, all other strings are treated as false. For all
