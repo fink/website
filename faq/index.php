@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2002/12/18 07:37:46';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2002/12/18 15:13:11';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -122,7 +122,7 @@ wrong?</a></li>
 <li><a href="usage-packages.php#xterm-error">7.5 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
 <li><a href="usage-packages.php#libXmuu">7.6 When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.66 2002/12/18 07:37:46 htodd Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.67 2002/12/18 15:13:11 alexkhansen Exp $</i></p>
 
 
 <?

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2002/12/18 07:37:46';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2002/12/18 15:13:11';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -236,7 +236,7 @@ Failed: Logging into the CVS server for anonymous read-only access failed.
 		</pre><p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p><p>Another possibility, is that you need to reset your cvs directories. Use the command:</p><pre> 
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
-		</pre></div>
+		</pre><p>If, on the other hand you can log in and download package descriptions but there is a message that says &quot;<tt><nobr>### execution of su failed, exit code 1</nobr></tt>&quot;, then what has probably happened is that the permissions on one or more of your info or patch files got modified such that cvs won't modify them.  Check your output for words to the effect of &quot;move it out of the way&quot; applied to some info or patch file(s), and manually remove (&quot;<tt><nobr>sudo rm</nobr></tt>&quot;) the offending file(s).</p></div>
 </a>
 
 <a name="kernel-panics"><div class="question"><p><b>Q3.15: When I use fink, my whole machine 
