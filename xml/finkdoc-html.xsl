@@ -19,14 +19,17 @@
 
 <h2><xsl:text>Contents</xsl:text></h2>
 
-<ul>
+<ul><xsl:text>
+</xsl:text>
 <xsl:for-each select="chapter">
 <li><a><xsl:attribute name="href">
 <xsl:text>#</xsl:text><xsl:value-of select="@filename"/>
 </xsl:attribute>
-<b><xsl:value-of select="title" /></b></a></li>
+<b><xsl:value-of select="title" /></b></a></li><xsl:text>
+</xsl:text>
 
-<ul>
+<ul><xsl:text>
+</xsl:text>
 <xsl:for-each select="faqentry|section">
 <li><a><xsl:attribute name="href">
 <xsl:text>#</xsl:text><xsl:value-of select="../@filename" /><xsl:text>.</xsl:text><xsl:value-of select="@name" />
@@ -35,9 +38,11 @@
 <xsl:if test='position() = 1'><xsl:call-template name="plain"/></xsl:if>
 </xsl:for-each>
 <xsl:value-of select="title" />
-</a></li>
+</a></li><xsl:text>
+</xsl:text>
 </xsl:for-each>
-</ul>
+</ul><xsl:text>
+</xsl:text>
 
 </xsl:for-each>
 </ul>
