@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/10/12 05:32:04 $';
+$cvs_date = '$Date: 2004/10/12 05:42:03 $';
 
 include "header.inc";
 include "releases.inc";
@@ -127,7 +127,7 @@ if (!$rs) {
    	print "Key:<br><ul><li><div class=\"bgreen\">Will not be moved, obsolete or changed names</div><li><div class=\"bred\">Does not compile</div></ul>";
    	print "\"Wow, you know that's a lot of checkboxes\" - Check packages then click the buttons below to change a line's status.<br>";
   }
- $pkglist = $pkglist . '<ul>';  
+ $pkglist = $pkglist . "<ul>\n";
   while ($row = mysql_fetch_array($rs)) {
 	$q2 = "SELECT name FROM package ".
       "WHERE release LIKE \"$tree2\" AND name=\"" . $row['name'] . '"';	
@@ -205,7 +205,10 @@ if (!$rs) {
 				$line++;
 				$pkglist = $pkglist . 
 					"<input type=checkbox name=change-$line value=chg=".$row[name].'!'.$row[version].'!'.$row[revision].'>   '; 	
-			}			
+			} else {
+				$pkglist = $pkglist . '<li>';
+			}
+
 			$desc = "";  			
 			
 			if(preg_match("/([^<]+)<.*/i", $row[maintainer], $matches))
@@ -214,10 +217,10 @@ if (!$rs) {
 				$maintainer = 'None ';
 				
 			if(! strcmp($sort, "maintainer"))
-				$pkglist = $pkglist . '<li>' . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
 				 $row[version].'-'.$row[revision].$desc . "\n";  
 			else
-				$pkglist = $pkglist . '<li>' . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
 				 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
 
 			if($row[moveflag] > 0)
@@ -232,7 +235,8 @@ if (!$rs) {
   $pkglist = $pkglist . '</ul>';
   print "<br>Found $hitcount Packages in $tree1 that ". ($cmp ? 'are' : 'are not') .
   		" in $tree2.<br>";
-  print "Total: $greencount green, $redcount red, $whitecount white packages.<br>$pkglist";		
+  print "Total: $greencount green, $redcount red, $whitecount white packages.<br>\n";
+  print "$pkglist\n";
 	#Special case for 10.2-gcc3.3 to 10.3 move
 	if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
 	{
