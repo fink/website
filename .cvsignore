@@ -1,4 +1,5 @@
 .DS_Store
 db.inc.php
 fix_perm.sh
+index.shtml
 update.sh
