@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 08:35:16 $';
+$cvs_date = '$Date: 2004/09/22 14:13:44 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -30,7 +30,6 @@ Vous avez le choix entre le téléchargement des paquets binaires précompilés 
 include $fsroot."news/news.fr.inc";
 ?>
 <div align="right"><a href="news/index.php">Nouvelles archivées...</a></div>
-
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 

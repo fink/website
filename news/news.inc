@@ -19,7 +19,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</a>
+<a href="<?php print $root; ?>http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&cmp=0&tree2=0.7.0-stable&splitoffs=on&sort=name">page.</a>
 </p>
 
 <p>

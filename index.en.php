@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/09/19 23:42:05 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/09/22 14:13:44 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -26,7 +26,6 @@ You can choose whether you want to download precompiled binary
 packages or build everything from source.
 <a href="about.php">Read more...</a>
 </p>
-
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
