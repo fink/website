@@ -1,7 +1,7 @@
 <?
 $title = "Binary Upgrade Instructions for Mac OS X 10.2";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/12/17 18:55:00 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2003/01/04 18:02:50 $';
 
 include "header.inc";
 ?>
@@ -27,8 +27,12 @@ packages.
 In a Terminal.app window, go to the folder where you downloaded these
 files and run these commands:
 </p>
-<pre>sudo dpkg -i apt-shlibs_0.5.4-7_darwin-powerpc.deb 
+<pre>source /sw/bin/init.csh
+sudo dpkg -i apt-shlibs_0.5.4-7_darwin-powerpc.deb 
 sudo dpkg -i apt_0.5.4-7_darwin-powerpc.deb</pre>
+<p>
+(if you are using bash as your shell, source /sw/bin/init.sh instead)
+</p>
 </li>
 <li><p>
 Once apt is installed, use these commands to update apt and your installed
