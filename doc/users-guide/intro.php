@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: finlayd';
-$cvs_date = 'Date: 2002/11/24 12:36:57';
+$cvs_author = 'Author: benh57';
+$cvs_date = 'Date: 2002/12/08 00:05:40';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="install.php" title="First Time Installation"><link rel="prev" href="index.php" title="User\'s Guide Contents">';
 
@@ -27,7 +27,7 @@ In any case you will need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.0 or later, or equivalent
+An installed Mac OS X system, version 10.2 or later, or equivalent
 Darwin releases.
 Earlier versions of both will <b>not</b> work.
 See below for more information about supported systems.
@@ -67,39 +67,23 @@ I'm talking hours or even days here.
 
 <a name="supported-os"><h2>1.3 Supported Systems</h2></a>
 <p>
-<b>Mac OS X 10.1</b> is the operating system of choice for running
+<b>Mac OS X 10.2</b> is the operating system of choice for running
 Fink.
 All developers run it, and packages are tested on this system.
 It is considered &quot;fully supported and tested&quot;, although there may
 still be stray compile problems with single packages.
 </p>
 <p>
-<b>Mac OS X 10.0.x</b> is still supported to some extent.
-Most packages were originally created and tested on this system, and
-usually they still compile and work on 10.0.
-However, the Fink project doesn't have the resources to actually test
-this.
-Starting with Fink 0.3.1, the binary distribution is compiled on a
-10.1 system, and we can't guarantee that these binary packages will
-work on 10.0.
-If you still use 10.0, you should use the source distribution (see
-below).
-In future versions support for 10.0 will be gradually dropped as the
-packages take advantage of new features in 10.1.
+<b>Mac OS X 10.1</b> is still supported to some extent.
+You must run Fink 0.4.1 and no later versions.
 </p>
 <p>
-<b>Darwin 1.4.1</b> is the Darwin version corresponding to Mac OS X
-10.1.
+<b>Darwin 6.0.2</b> is the Darwin version corresponding to Mac OS X
+10.2.
 It should work in general, but this has not been tested as most people
 just run Mac OS X proper instead.
 You may run into problems with packages that use features specific to
 Mac OS X - affected packages include XFree86 and possibly esound.
-</p>
-<p>
-<b>Darwin 1.3.1</b> is the Darwin version corresponding to Mac OS X
-10.0.x and should work as well.
-Both the notes about Darwin 1.4.1 and about Mac OS X 10.0 apply in
-this case.
 </p>
 
 

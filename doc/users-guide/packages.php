@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: finlayd';
-$cvs_date = 'Date: 2002/11/24 12:36:57';
+$cvs_author = 'Author: benh57';
+$cvs_date = 'Date: 2002/12/08 00:05:40';
 
 $metatags = '<link rel="contents" href="index.php" title="User\'s Guide Contents"><link rel="next" href="upgrade.php" title="Upgrading Fink"><link rel="prev" href="install.php" title="First Time Installation">';
 
@@ -54,7 +54,7 @@ It will just check that the installation is useful and then act as a
 dependency placeholder.
 Note that XFree86 4.0.2 or 4.0.3 will not pass the test.
 You need a version that builds shared libraries.
-Usually that will be 4.1.0, but CVS versions of XFree86 starting
+Usually that will be 4.1.0 or later, but CVS versions of XFree86 starting
 around spring 2001 will also work.
 </p></li>
 <li><p>
