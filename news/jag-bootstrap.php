@@ -1,7 +1,7 @@
 <?
 $title = "Bootstapping Fink under Mac OS X 10.2";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/09/09 01:25:23 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/09/23 00:47:15 $';
 
 include "header.inc";
 ?>
@@ -64,7 +64,18 @@ time virtually all of the 10.2 Fink packages are still being tested in
 the unstable tree and have not yet been moved to the stable tree, so
 this step is highly recommended.
 <br><br>
-<li><b>Step 5: Obtain updated fink packages.</b>
+<li><b>Step 5: Add fink to your paths.</b>
+Type:
+<pre>
+pico ~/.cshrc
+</pre>
+A text editor will pop up. Enter this line:
+<pre>
+source /sw/bin/init.csh
+</pre>
+To get out of the editor, press control-O, return, control-X. 
+Close the Terminal.app window and open a new one.
+<li><b>Step 6: Obtain updated fink packages.</b>
 To do this, issue the command
 <pre>
 fink selfupdate-cvs
