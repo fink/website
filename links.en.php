@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/05/18 08:54:58 $';
+$cvs_date = '$Date: 2004/09/24 12:48:40 $';
 
 include "header.inc";
 ?>
@@ -17,6 +17,8 @@ browser window.</p>
 <li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> - Instructions how to become a Fink mirror as well as status messages about current mirrors.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 a GUI for Fink</li>
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 the #fink IRC channel logs & stats</li>
