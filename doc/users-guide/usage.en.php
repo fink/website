@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/09 03:08:57';
+$cvs_date = 'Date: 2005/03/09 03:44:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -31,10 +31,11 @@ type <code>fink --help</code> you get the list of options:
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
 -v, --verbose         - causes fink to be more verbose, opposite of --quiet
--y, --yes             - assume default answer for all interactive questio
+-y, --yes             - assume default answer for all interactive 
+                        questions.
 -b, --use-binary-dist - download pre-compiled packages from the binary 
                         distribution if available (e.g. to reduce compile
-		       time or disk usage).
+		        time or disk usage).
 		        Note that this mode instructs Fink to download the
                         version it wants if that version is available for
 		        download; it does not cause Fink to choose a version
@@ -51,7 +52,7 @@ type <code>fink --help</code> you get the list of options:
                         patch, compile,and install phases. Note that packages
                         built with this option may be non-functional. You
                         should use this mode for package development
-                        and debugging only.ns</pre>
+                        and debugging only.</pre>
       <p>
 Most of these options are self-explanatory. They can also be set in the 
 <a href="conf.php?phpLang=en">Fink configuration file</a> (fink.conf) if you want 
@@ -168,7 +169,7 @@ fink list                 - list all packages
 fink list bash            - check if bash is available and what version.
 fink list --outdated      - list packages which are out of date
 fink list --section=kde   - list the packages in the kde section
-fink list "gnome*"         - list all packages that start with 'gnome'
+fink list "gnome*"        - list all packages that start with 'gnome'
 </pre>
       <p>
 The quotes in the last example are necessary to stop the shell from
@@ -184,8 +185,10 @@ the package descriptions to find packages. The second difference is that
 the search string must be supplied and is not optional.
 </p>
       <pre>
-fink apropos irc          - list all packages for which 'irc' occurs in the name or description
-fink apropos -s=kde irc   - the same as above, but restricted to packages from the kde section
+fink apropos irc          - list all packages for which 'irc' 
+			    occurs in the name or description.
+fink apropos -s=kde irc   - the same as above, but restricted to 
+			    packages from the kde section.
 </pre>
     
     <h2><a name="describe">6.9 describe</a></h2>
