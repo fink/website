@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2004/02/29 19:18:19';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/12 09:25:17';
 $metatags = '';
 
 include_once "header.inc";
@@ -349,7 +349,7 @@ that is necessary.</p>
 <p>The Logo contest held by Fink, announced <a href="http://fink.sourceforge.net/logo.php">here</a>,
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
-In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
+In the next couple of days all the submitted entries will be put on-line in a publicly accessible gallery and more details on the participants shall be published. For those who are 
 curious and cannot wait may have a look at an incomplete <a href="http://nour.net/logo/incomplete.html">preview</a>.</p>
 <p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <a href="http://www.macwelt.de">MacWelt</a> for their continued support.
 </p>
@@ -700,7 +700,7 @@ software before using Fink.
     </p>
   <a name="2002-05-03 Bug in passwd package"><span class="news-date">2002-05-03: </span><span class="news-headline">Bug in passwd package</span></a><?php gray_line(); ?>
     <p>
-      All Fink users are urged to update their <b> passwd </b> package to version 20020329 or newer. Older versions of the <b> passwd </b> package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering <b> dpkg -s passwd</b>. If your version is oudated, you can update to the current one in two ways: 
+      All Fink users are urged to update their <b> passwd </b> package to version 20020329 or newer. Older versions of the <b> passwd </b> package are affected by a bug which could lead to the loss of all data on your hard disk if you remove system users created by Fink manually from the system via System Preferences. (Removing them via the NetInfo tool is safe.) You can check the version of your passwd package by entering <b> dpkg -s passwd</b>. If your version is outdated, you can update to the current one in two ways: 
     </p>
     <ul>
       <li>

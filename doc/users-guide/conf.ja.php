@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/11 23:56:35';
+$cvs_date = 'Date: 2004/03/24 13:09:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 include_once "header.inc";
@@ -99,12 +99,13 @@ stable/main" です。
 </li>
 <li>
 <p>
-<b>Distribution:</b> 10.1 または 10.2</p>
+<b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3</p>
 <p>Fink はどのバージョンの Mac OS X を使っているか知る必要があります。
-10.1 ディストリビューションは Mac OS X 10.1 を指します。
-10.2 ディストリビューションは Mac OS X 10.2 "Jaguar" を指します。
-Mac OS X 10.0 以前はサポートされていません。
-この値は変える必要はありません。
+10.0 以前はサポートされていません。
+10.1 は現バージョンからサポート対象外となりました。
+10.2 は August 2003 Developer Tools に更新している場合のみサポートされています。
+このフィールドは <code>/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
+ユーザーがこの値を変えてはいけません。
 </p>
 </li>
 <li>
@@ -148,6 +149,15 @@ High (全て報告する)
 <p><code>fink selfupdate</code> コマンドは、 Fink パッケージマネージャーを最新版にアップグレードします。
 このオプションは True の時、 Concurrent Version System (CVS) を使わないことを保証します。
 これは <code>fink selfupdate-cvs</code> コマンドが自動的に設定するので、手動では変更しないで下さい。
+</p>
+</li>
+<li>
+<p>
+<b>Buildpath:</b> パス</p>
+<p>
+Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
+デフォルトでは <code>/sw/src</code> 内に作成しますが、別の場所を使いたい場合はここでパスを指定します。
+仮ディレクトリについては、後述の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
 </p>
 </li>
 </ul>

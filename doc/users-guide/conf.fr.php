@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/19 17:48:41';
+$cvs_date = 'Date: 2004/03/25 01:29:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 include_once "header.inc";

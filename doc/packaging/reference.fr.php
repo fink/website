@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Reference";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/19 17:52:07';
+$cvs_date = 'Date: 2004/03/25 01:19:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Filesystem Layout">';
 
 include_once "header.inc";
@@ -325,8 +325,9 @@ should be some kind of "main" tarball) goes into <code>Source</code>, the
 second tarball in <code>Source2</code> and so on. The rules are the same
 as for Source, only that the "gnu" and "gnome" shortcuts are not
 expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.1, you no longer need to use consecutive values for
-N. However, you still may not have duplicates.
+of fink after 0.19.2, you may use arbitrary integer values of N,
+rather than numbering upwards from N = 2. However, you still may not have
+duplicates.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
@@ -369,7 +370,7 @@ In the above example this would result in the tarball being stored under
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
 This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the Nth tarball as specified by the <code>Source<b>N</b></code>
+is used to rename the tarball specified by the <code>Source<b>N</b></code>
 field. See context or hyperref for examples of usage.
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
@@ -399,7 +400,7 @@ As you can see, the value to the left is exactly the value you need.
 <p>
 <b>Introduced in fink 0.10.0.</b>
 This is just the same as the <code>Source-MD5</code> field, except that it
-is used to specify the MD5 checksum of the Nth tarball as specified by the
+is used to specify the MD5 checksum of the tarball specified by the
 corresponding <code>Source<b>N</b></code> field.
 </p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
@@ -438,7 +439,7 @@ a package uses TarFilesRename, Fink will use BSD tar by directly invoking
 <p>
 <b>Introduced in fink 0.10.0.</b>
 This is just the same as the <code>TarFilesRename</code> field, except that it
-is used for the Nth tarball as specified by the corresponding
+is used for the tarball specified by the corresponding
 <code>Source<b>N</b></code> field.
 </p>
 </td></tr></table>
@@ -755,9 +756,10 @@ For details about how this works, see the separate
 <p>
 <b>Introduced in fink 0.9.9.</b>
 This is the same as <code>SplitOff</code>, used to generate a third,
-fourth, etc. package from the same compile/install run. Starting with
-a CVS version of fink after 0.19.1, you no longer need to use
-consecutive values for N. However, you still may not have duplicates.
+fourth, etc. package from the same compile/install run. Starting with a
+CVS version of fink after 0.19.2, you may use arbitrary integer values
+of N, rather than numbering upwards from N = 2. However, you still
+may not have duplicates.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
@@ -954,7 +956,11 @@ of the packages by using <code>DocFiles</code> several times.
 <h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. Two forms are supported.
+to specify shell commands to be executed. The build directory
+(<code>%b</code> is the current directory when scripts are
+executed. You should always use relative pathnames or
+percent-expansions for files and directories in the fink hierarchy,
+not complete absolute pathnames. Two forms are supported.
 </p><p>
 This field can be a simple list of commands. This is sort of like a
 shell script. However, the commands are executed via system(), one

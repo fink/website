@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/19 17:48:41';
+$cvs_date = 'Date: 2004/03/25 01:29:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -99,6 +99,9 @@ Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoir
 Dans la plupart des cas, vous le ferez à l'aide de la commande :
 </p>
       <pre>open /sw/bin/pathsetup.command</pre>
+      <p>ou pour <code>fink-0.18.3</code> ou <code>fink-0.19.2</code>, en lançant (exactement comme indiqué ci-dessous) :
+</p>
+      <pre>/sw/bin/pathsetup.sh</pre>
       <p>
 Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez.
 Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :

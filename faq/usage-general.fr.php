@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Usage (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/21 08:45:54';
+$cvs_date = 'Date: 2004/03/25 01:26:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -42,7 +42,8 @@ include_once "header.inc";
           Unix convention for running certain services; the passwd package
           simply adds a couple of extra that Apple did not provide. You can
           see these Apple-installed users in NetInfo Manager.app, or by
-          running <code>niutil -list . /users</code></li>
+          running <code>niutil -list . /users</code>
+          </li>
           <li>If you do decide to delete these users, be very careful of how
           you go about it. Using the "System Preferences: Users" pane will
           assign all of their files to a random administrator account, and
@@ -62,13 +63,17 @@ include_once "header.inc";
       <div class="answer"><p><b>A:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
         headers. For a package that uses standard configure/make process, you
-        need to set some environment variables:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include setenv LDFLAGS -L/sw/lib setenv
-        CXXFLAGS $CFLAGS setenv CPPFLAGS $CXXFLAGS setenv ACLOCAL_FLAGS "-I
-        /sw/share/aclocal" setenv PKG_CONFIG_PATH
-        "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include export LDFLAGS=-L/sw/lib export
-        CXXFLAGS=$CFLAGS export CPPFLAGS=$CXXFLAGS export ACLOCAL_FLAGS="-I
-        /sw/share/aclocal" export
-        PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to add these to your startup files (e.g.
+        need to set some environment variables:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal" 
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+export LDFLAGS=-L/sw/lib 
+export CXXFLAGS=$CFLAGS 
+export CPPFLAGS=$CXXFLAGS 
+export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to add these to your startup files (e.g.
         <code>.cshrc</code> | <code>.profile</code>) so they
         are set automatically. If a package does not use these variables, you
         may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
@@ -100,14 +105,20 @@ include_once "header.inc";
         only choice. Don't forget to install the X11 SDK (on the XCode disk)
         if you want to compile programs.</p><p>Under Jaguar, the most popular choices, and the Fink packages to
         make them work are:</p><ul>
-          <li><p>4.2.x built via Fink: install <code>xfree86-base</code> and
+          <li>
+            <p>4.2.x built via Fink: install <code>xfree86-base</code> and
           <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code>
           and <code>xfree86-rootless-threaded</code> (and the respective
-          <code>-shlibs</code>)</p></li>
-          <li><p>4.3.x built via Fink: install the <code>xfree86</code> and
-          <code>xfree86-shlibs</code> packages</p></li>
-          <li><p>4.2.x from Apple (User+SDK packages installed): install the
-          <code>system-xfree86</code> package</p></li>
+          <code>-shlibs</code>)</p>
+          </li>
+          <li>
+            <p>4.3.x built via Fink: install the <code>xfree86</code> and
+          <code>xfree86-shlibs</code> packages</p>
+          </li>
+          <li>
+            <p>4.2.x from Apple (User+SDK packages installed): install the
+          <code>system-xfree86</code> package</p>
+          </li>
         </ul><p>There are other options, as well. There is a more extensive
         treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11
         document</a>.</p></div>

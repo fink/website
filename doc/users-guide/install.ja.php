@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/03/11 23:56:35';
+$cvs_date = 'Date: 2004/03/24 13:09:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 include_once "header.inc";
@@ -94,6 +94,8 @@ Fink ディレクトリ階層にインストールされたソフトウェア、
 これはコマンドを使って
 </p>
 <pre>open /sw/bin/pathsetup.command</pre>
+<p><code>fink-0.18.3</code> あるいは <code>fink-0.19.2</code> の場合は (下記の通り正確に)</p>
+<pre>/sw/bin/pathsetup.sh</pre>
 <p>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。

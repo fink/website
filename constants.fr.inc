@@ -1,5 +1,5 @@
-<?
-/* $Id: constants.fr.inc,v 1.3 2004/03/11 07:18:36 dmalloc Exp $ */
+﻿<?
+/* $Id: constants.fr.inc,v 1.4 2004/03/25 01:34:51 michga Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -36,4 +36,17 @@ define (FINK_SECTIONS, 'Sections');
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
 define (FINK_CONTENTS, 'Sommaire');
+
+/* Printer */
+define (FINK_PRINTER, 'Imprimante');
+define (FINK_PRINT_VERSION, 'Version imprimable');
+
+/* Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, téléchargement, logiciels libres, portage, développement, gestion de paquets');
+define (META_DESCRIPTION, "Le projet Fink a pour but d'ouvrir toutes grandes les portes du monde des logiciels Open Source Unix à Darwin et à Mac OS X. Nous modifions les logiciels Unix pour qu'ils compilent et tournent sur Mac OS X et en faisons une distribution cohérente téléchargeable.");
+define (HEADER_HOSTED_BY, 'Hébergé par {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'Langues disponibles ');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Généré dynamiquement par ');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Dernière mise à jour : %x %X');
+define (FOOTER_LAST_CHANGED, 'Dernière mise à jour le %d %b %Y à %R %Z par {author}');
 ?>

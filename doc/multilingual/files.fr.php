@@ -161,8 +161,8 @@ include_once "header.inc";
       </ol>
 
       <p>Les fichiers <code>constants.*.inc</code> servent à traduire des mots inclus tels quels dans les fichiers PHP. La plupart correspondent à des articles de menu, situés en haut et à gauche des pages. Il vous faut les isoler des scripts  et créer un fichier constants.xx.inc pour votre langue. Pour ce faire, exécutez la commande suivante dans une fenêtre de terminal :</p>
-      <pre>cp constants.de.inc constants.xx.inc</pre>
-      <p>où xx est votre code langue (par exemple fr pour le français).
+      <pre>cp constants.fr.inc constants.xx.inc</pre>
+      <p>où xx est votre code langue (par exemple de pour l'allemand).
       Ensuite, il vous faudra traduire la partie située entre guillemets simples de chaque ligne commençant par define. Si vous ne comprenez pas l'allemand, voici la traduction en anglais :</p>
 
       <pre>
@@ -186,7 +186,21 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 define (FINK_SECTIONS, 'Sections'); 
       
 /* Contents as Table of Contents. Used in FAQ/Documentation Sections */ 
-define (FINK_CONTENTS, 'Contents');</pre>
+define (FINK_CONTENTS, 'Contents');
+
+/* Printer */
+define (FINK_PRINTER, 'Printer');
+define (FINK_PRINT_VERSION, 'Print Version');
+
+/* Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, port, development, package management');
+define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution.');
+define (HEADER_HOSTED_BY, 'Hosted by {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated: %x %X');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+</pre>
 
       <p>Quand vous traduisez, vous devez suivre les étapes suivantes (disons que vous traduisez en français le document Running X11) :</p>
 

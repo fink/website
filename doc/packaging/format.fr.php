@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/19 17:52:07';
+$cvs_date = 'Date: 2004/03/25 01:19:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 include_once "header.inc";
@@ -100,6 +100,7 @@ Certains champs prennent une valeur booléenne ; sont traitées comme vraies, le
 <h2><a name="percent">2.3 Raccourcis %</a></h2>
 <p>
 Pour vous rendre la vie plus facile, Fink gère un jeu de raccourcis sur certains champs.
+Pour lever toute ambiguïté, vous pouvez utiliser des accolades autour des caractères qui doivent être considérés comme des raccourcis. Par exemple, <code>%{n}</code> a la même signification que <code>%n</code>.
 Les raccourcis disponibles sont les suivants :</p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
 <p>
@@ -133,7 +134,8 @@ nom complet du paquet, c'est-à-dire : %n-%v-%r
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 répertoire <b>d</b>ans lequel le paquet est construit, par exemple : 
-<code>/sw/src/root-gimp-1.2.1-1</code>
+<code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que 
+<code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -155,7 +157,7 @@ chemin des rustines
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>
+répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répoertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.
 </p>
 <p>
 Note: ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
