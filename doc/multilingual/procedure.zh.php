@@ -57,7 +57,7 @@ include_once "header.inc";
     
     <h2><a name="prompt-update">3.5 提示更新一个已经翻译的文档：</a></h2>
       
-      <p>基准英文文档被<a href="files.php?phpLang=zh#committing">提交</a>并立即<a href="files.php?phpLang=zh#website">激活</a>。
+      <p>基准英文文档被<a href="files.php?phpLang=zh#committing">提交</a>并立即<a href="files.php?phpLang=zh#website">激活</a>-修改者应该提交相应的 PHP 和 HTML 文件，并负责激活更新。
       翻译团队需要更新它们的版本，<a href="files.php?phpLang=zh#committing">提交</a><b>所有的</b>文件（XML 和 PHP），然后<a href="files.php?phpLang=zh#activate">激活</a>更新。</p>
       <p><b>注意：</b></p>
       <ol>
@@ -69,7 +69,10 @@ include_once "header.inc";
       
       <p>这种情况下，XML 文件的英文版本会被<a href="files.php?phpLang=zh#committing">提交</a>，但<b>不会</b>提交相应的 PHP 和 HTML 文件，也就是说，在 <a href="files.php?phpLang=zh#committing">2.9节</a>的关于动态文件部分的第 5 步完成后就结束。所有的翻译者在一个大家确定的时间段内进行翻译并<b>仅仅</b><a href="files.php?phpLang=zh#committing">提交</a>相应的 XML 文件（也就是说，和英文版一样）。在这个时间段以后，由一个人，例如 i18n 核心团队的一员负责生成，提交和<a href="files.php?phpLang=zh#website">激活</a>所有的 PHP 和 HTML 文件。</p>
     
-
+	<h2><a name="summary">3.7 对开发者和英语文档作者</a></h2>
+      
+      <p>当前的政策是所有文档应该按照 <a href="#prompt-update">提示更新</a> 流程进行更新，除非你有很特别的理由不这样做。</p>
+    
   <p align="right">
 Next: <a href="resources.php?phpLang=zh">4 附加的资源</a></p>
 

@@ -205,7 +205,26 @@ define (FINK_SECTION_HOME_LINKS, 'Links');
 define (FINK_SECTIONS, 'Sections'); 
 
 /* Contents as Table of Contents. Used in FAQ/Documentation Sections */ 
-define (FINK_CONTENTS, 'Contents');</pre>
+define (FINK_CONTENTS, 'Contents');
+
+/* Printer */
+define (FINK_PRINTER, 'Printer');
+define (FINK_PRINT_VERSION, 'Print Version');
+
+/* Footer */
+define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source,
+             download, free software, port, development, package management');
+define (META_DESCRIPTION, 'The Fink project wants to bring the full world of Unix Open
+             Source software to Darwin and Mac OS X. We modify Unix software so that it 
+             compiles and runs on Mac OS X and make it available for download as a coherent
+             distribution.');
+define (HEADER_HOSTED_BY, 'Hosted by {img}');
+define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
+define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically from');
+define (FOOTER_DATABASE_LAST_UPDATED, 'Last updated: %x %X');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z');
+</pre>
+<p><b>注意：</b>Footer 部分的第一行由于显示的原因被分割成两行，在实际的文件不要这样分割。</p>
 
       <p>在你翻译的时候，你通常会按照下面的步骤（
       假设你正在翻译《运行 X11》这份文档到简体中文）：</p>
