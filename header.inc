@@ -1,23 +1,13 @@
 <?
-/* $Id: header.inc,v 1.61 2004/02/29 05:45:35 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.62 2004/02/29 13:10:56 babayoshihiko Exp $ */
 
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";
 $lang_code = 'en';
 if ((phpLang_current)) $lang_code = phpLang_current;
 
-if ('en' == $lang_code) {
+if ('ja' == $lang_code) {
 	// section navigation (always visible)
-	$section_names = array(
-		'home' => 'Home',
-		'download' => 'Download',
-		'packages' => 'Packages',
-		'help' => 'Help',
-		'faq' => 'F.A.Q.',
-		'documentation' => 'Documentation',
-		'mailing-lists' => 'Mailing Lists'
-	);
-} elseif ('ja' == $lang_code)  {
 	$section_names = array(
 		'home' => 'ホーム',
 		'download' => 'ダウンロード',
@@ -26,6 +16,16 @@ if ('en' == $lang_code) {
 		'faq' => 'F.A.Q.',
 		'documentation' => '文書',
 		'mailing-lists' => 'メーリングリスト'
+	);
+} else  {
+	$section_names = array(
+		'home' => 'Home',
+		'download' => 'Download',
+		'packages' => 'Packages',
+		'help' => 'Help',
+		'faq' => 'F.A.Q.',
+		'documentation' => 'Documentation',
+		'mailing-lists' => 'Mailing Lists'
 	);
 }
 
@@ -42,7 +42,7 @@ $section_files = array(
 if (!$section) $section = "home";
 
 // main navigation box
-if (!is_array($navbox) && $nonva != 1) {
+if (!is_array($navbox) && $nonav != 1) {
 	$navbox = array(
 		"index.php", "Home",
 		"news/index.php", "News",
@@ -277,4 +277,11 @@ function insert_sub ($navbox, $active_page) {
 	<td width="100%">
 
 <? /* Call phpLang function */ ?>
-<? /* if (function_exists(AddFlags)) AddFlags(' ', true); else echo "&nbsp;";  */ ?>
+<? 
+if (function_exists(AddLanguageNames)) {
+	echo 'Available Languages';
+	AddLanguageNames(' | ', true); 
+} else {
+	echo "&nbsp;";
+}
+?>
