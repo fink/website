@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/02/16 02:33:50';
+$cvs_date = 'Date: 2004/02/16 09:09:51';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -918,11 +918,23 @@ of the packages by using <code>DocFiles</code> several times.
 <h2><a name="scripts">5.4 Scripts</a></h2>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. This is sort of like a shell
-script. However, the commands are executed via system(), one by one,
-so you can't use constructs that span multiple lines. It also means
-the <code>cd</code> commands only affect commands that are on the same
-line. This may be fixed one day in the future.</p>
+to specify shell commands to be executed. Two forms are supported.
+</p><p>
+This field can be a simple list of commands. This is sort of like a
+shell script. However, the commands are executed via system(), one
+line at a time, so setting variables or changing the directory only
+affects commands on that same line. Starting in a CVS version of fink
+after 0.18.2, you can wrap long lines similar to normal shell scripts:
+a backslash (<code>\</code>) at the end of a line indicates that the
+next line is a continuation.
+</p><p>
+Alternately, you can embed a complete script here, using the
+interpreter of your choice. As with any Unix script, the first line
+must begin with <code>#!</code> followed by the full pathname of to
+the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
+<code>#!/bin/bash -ev</code>, etc.). In this situation, the whole
+*Script field is dumped into a temporary file that is then executed.
+</p>
 
 
 <h2><a name="patches">5.5 Patches</a></h2>
