@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:01 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2004/03/12 11:58:23 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 
 <p>The Fink project is maintained by a group of volunteers. Each
 Fink package has a Maintainer who works hard to ensure the package works as
-desired. Futhermore there are people that work on the fink program itself.
+desired. Furthermore there are people that work on the fink program itself.
 The web site has to be kept current. Users need support, provided via our mailing lists
 and our IRC channel. These and many more tasks require a lot of work, thus we would
 like to say "Thank you" to all these people who sacrifice their spare time to help
