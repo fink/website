@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/11/23 04:06:39';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/11/28 12:53:51';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -242,7 +242,7 @@ other directories for the same version of the source that Fink wants
 directory). Keep in mind, though, that some remote sites like to trash the
 old versions of their packages. If the official site doesn't have it, then
 try a web search--sometimes there are unofficial sites that have the 
-tarball you want. Another place to look is <a href="http://us.dl.sf.net/fink/direct_download/source/">http://us.dl.sf.net/fink/direct_download/source/</a>, 
+tarball you want. Another place to look is <a href="http://us.dl.sourceforge.net/fink/direct_download/source/">http://us.dl.sourceforge.net/fink/direct_download/source/</a>, 
 which is where Fink stores sourcefiles from packages that have been 
 released in binary form. If all of the above fail, then you might consider posting on the
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.39 2003/11/24 19:49:02 alexkhansen Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.40 2003/11/28 12:53:51 fingolfin Exp $</cvsid>
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -530,7 +530,7 @@ There are two different ways to do this:
 <li>
 <p>Use FinkCommander</p>
 <p>
-   If you are using <link url="http://finkcommander.sf.net/" >FinkCommander</link>, you
+   If you are using <link url="http://finkcommander.sourceforge.net/" >FinkCommander</link>, you
    can force removal through the menu.  For example, if you have
    <filename>xfree86-rootless</filename> installed, but want the threaded version, you
    can select your <filename>xfree86-rootless</filename>,

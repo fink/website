@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/11/24 19:49:02';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/11/28 12:53:51';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -229,7 +229,7 @@ There are two different ways to do this:
 <li>
 <p>Use FinkCommander</p>
 <p>
-   If you are using <a href="http://finkcommander.sf.net/">FinkCommander</a>, you
+   If you are using <a href="http://finkcommander.sourceforge.net/">FinkCommander</a>, you
    can force removal through the menu.  For example, if you have
    <code>xfree86-rootless</code> installed, but want the threaded version, you
    can select your <code>xfree86-rootless</code>,

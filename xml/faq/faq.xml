@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.150 2003/11/23 04:06:39 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.151 2003/11/28 12:53:51 fingolfin Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -625,7 +625,7 @@ other directories for the same version of the source that Fink wants
 directory). Keep in mind, though, that some remote sites like to trash the
 old versions of their packages. If the official site doesn't have it, then
 try a web search--sometimes there are unofficial sites that have the 
-tarball you want. Another place to look is <link url="http://us.dl.sf.net/fink/direct_download/source/" >http://us.dl.sf.net/fink/direct_download/source/</link>, 
+tarball you want. Another place to look is <link url="http://us.dl.sourceforge.net/fink/direct_download/source/" >http://us.dl.sourceforge.net/fink/direct_download/source/</link>, 
 which is where Fink stores sourcefiles from packages that have been 
 released in binary form. If all of the above fail, then you might consider posting on the
 <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users" >fink-users

@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2003/11/24 08:51:39';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/11/28 12:53:51';
 
 $metatags = '';
 
@@ -173,7 +173,7 @@ version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<a href="http://fink.sf.net/download/srcdist.php">bootstrapping from
+<a href="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
 source,</a> starting from fink-full-0.6.0.tar.gz available
 on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
 download page.</a>  You'll need XCode for this as
@@ -309,7 +309,7 @@ site,  which  will provide a home for this cooperative effort.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
- <a href="http://fink.sf.net/logo.php">here</a>. 
+ <a href="http://fink.sourceforge.net/logo.php">here</a>. 
                 </p>
 <p>
 Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
