@@ -1,7 +1,7 @@
 <?
 $title = "GNOME on Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/25 21:33:58 $';
+$cvs_date = '$Date: 2001/01/26 08:55:48 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -187,8 +187,9 @@ Download: <a href="http://download.sourceforge.net/icewm/icewm-1.0.6-4.tar.gz">h
 <ul>
 <li>Icons in the panel and its menus sometimes display as "black
 holes". This happens with both Xtools and and XFree86. My guess is
-that it's a shared memory problem. Running the panel with --no-shm
-and/or --no-xshm may help, but I haven't tried yet.</li>
+that it's a shared memory problem. Running the panel with --no-xshm
+helps. Unfortunately, you must hand-edit ~/.gnome/session to add the
+parameter (find the panel's RestartCommand).</li>
 <li>libgtop is missing, some applets depend on it. Other applets
 depend on special APIs not present in Darwin.</li>
 <li>Documentation is in a bad shape.</li>
