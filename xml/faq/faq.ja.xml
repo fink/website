@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.13 2004/04/11 00:17:34 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.14 2004/04/16 21:23:54 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1196,6 +1196,24 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
     </p>
 </answer>
 </faqentry>
+<faqentry name="xml-parser">
+<question>
+	<p>
+	次のメッセージが出ます:<quote>configure: error: XML::Parser perl module is required for intltool</quote>。
+	どうしたら良いでしょうか?
+	</p>
+</question>
+<answer>
+	<p>
+	自分のシステムの Perl のバージョンに合った xml-parser-pm パッケージがあるか確認する必要があります。
+	例えば、 Panther の場合、
+	<code>xml-parser-pm581</code> であって、
+	<code>xml-parser-pm560</code> ではありません
+	(<code>xml-parser-pm</code> 代替パッケージでも可)。
+	Perl のバージョンが <code>Perl-5.8.1</code> であって <code>Perl-5.6.0</code> ではないからです。
+	</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>コンパイルの問題 - 特定のバージョン</title>
@@ -1449,6 +1467,93 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 <p>注記: SourceFourge の ID が必要です。</p>
 </answer>
 </faqentry>
+
+<faqentry name="virtpackage">
+<question>
+	<p>
+	  <code>system-*</code> &quot;virtual packages&quot; というのを時々見かけますが、
+	  インストールも削除もできません。
+	  これはいったいなんですか?
+	</p>
+</question>
+<answer>
+	<p>
+	  <code>system-perl</code> のような名前のパッケージは代替パッケージです。
+	  これは、実際にはファイル等を含んでいる訳ではなく、
+	  fink 外で手動でインストールされたプログラムを fink に伝えるための仕組みとして存在します。
+	</p>
+	<p>
+	  この仕組みは10.3 ディストリビューションから導入されました。
+	  ほとんどの代替パッケージは自分でインストールや削除できるものではありません。
+	  その代わりに、手動でインストールされたプログラム一覧を元に fink プログラム自体が作成する
+	  &quot;Virtual Packages&quot; パッケージデータ構造となっています。
+	  fink は、それぞれのパッケージについて特定の場所の特定のファイルを確認し、
+	  見つかった場合はバーチャルパッケージがインストール済みと判断します。
+	</p>
+	<p>
+	  fink が認識しているインストール済みの一覧は、
+	  <code>fink-virtual-packages</code> を実行することで見ることができます。
+	  <code>--debug</code> フラグを追加すると、具体的にどのファイルを見ているのかという診断情報も確認できます。
+	</p>
+	<p>
+	  任意のプログラムを (fink 外で) インストールし、 fink にこれを認識させる仕組みは残念ながらありません。
+	  configure やコンパイルフラグ、パス名などを確認するのは非常に困難なためです。
+	</p>
+	<p>
+	  以下は、 fink が定義するバーチャルパッケージのうち最も重要なものです (fink-0.19.2 時点) :
+	</p>
+	<ul>
+	  <li>system-perl: [virtual package representing perl]
+	    <p>
+		  これの実体は <filename>/usr/bin/perl</filename> で、デフォルトの OS X インストールの一部になっています。
+		  このパッケージは、 perl インタープリータのバージョン X.X.X である
+		  <code>system-perlXXX</code> と <code>perlXXX-core</code> も提供します。
+	    </p>
+	  </li>
+	  <li>system-javaXXX: [virtual package representing Java X.X.X]
+	    <p>
+		  これの実体は Java Runtime Environment で、 OS X (および Apple Software Update) の一部です。
+		  詳細は、 <link url="http://www.apple.co.jp/java">Apple の Java のページ</link> をご覧ください。
+	    </p>
+	  </li>
+	  <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+	    <p>
+		  これの実体は Java SDK で、 <link url="http://connect.apple.com">connect.apple.com</link>
+		  (登録が必要) からダウンロードし、インストールする必要があります。
+		  Java Runtime Environment を更新した場合、 SDK は自動的に更新されません (削除されることもあります!) 。
+		  Runtime Environment をインストールや更新した場合、 SDK を確認 (し、必要に応じてダウンロード、インストール)
+		  してください。
+		  <xref chapter="comp-general" section="system-java">この FAQ</xref> も合わせてお読みください。
+	    </p>
+	  </li>
+	  <li>system-java3d: [virtual package representing Java3D]</li>
+	  <li>system-javaai: [virtual package representing Java Advanced Imaging]
+	    <p>
+		  これの実体は、 Java の 3D 画像処理の機能拡張です。
+		  Apple からダウンロードし、インストールします。
+		  <link url="http://docs.info.apple.com/article.html?artnum=120289">Apple のページ</link>
+		  をお読みください。
+	    </p>
+	  </li>
+	  <li>system-xfree86: [placeholder for user installed x11]</li>
+	  <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
+	    <p>
+		  これの実体は Apple X11/XDarwin で、  OS X のオプション (X11User.pkg) です。
+		  二つのパッケージは、それぞれ <code>x11</code> と <code>x11-shlibs</code>
+		  になります。
+		  <xref chapter="comp-packages" section="cant-install-xfree">この FAQ</xref> も合わせてお読みください。
+	    </p>
+	  </li>
+	  <li>system-xfree86-dev [placeholder for user installed x11 development tools]
+	    <p>
+		  これの実体は Apple X11/XDarwin SDK で、  OS X のオプション (X11SDK.pkg) です。
+		  <xref chapter="comp-packages" section="cant-install-xfree">この FAQ</xref> も合わせてお読みください。
+	    </p>
+	  </li>
+	</ul>
+</answer>
+</faqentry>
+
 </chapter>
 <chapter filename="usage-packages" >
 <title>パッケージ使用上の問題 - 特定のパッケージ</title>
