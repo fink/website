@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
   <title>Guide de l'utilisateur Fink</title>
   <shorttitle>Guide utilisateur</shorttitle>
-  <cvsid>$Id: uguide.fr.xml,v 1.17 2004/10/21 21:34:34 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.fr.xml,v 1.18 2004/11/08 04:12:42 michga Exp $</cvsid>
   <preface>
 <p>
 Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets :
@@ -952,9 +952,13 @@ Si vous ajoutez l'<xref section="options">option --use-binary-dist</xref>, <code
     </section>
     <section name="remove" >
       <title>remove - suppression</title>
-      <p>La commande remove supprime les paquets du système en appelant la commande  '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande possède quelques défauts : elle ne fonctionne que sur les paquets dont l'outil <code>fink</code> a connaissance (c'est à dire quand un fichier .info est présent) ; elle ne vérifie pas les dépendances elle-même, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
-      <p>La commande remove ne supprime que le paquet lui-même. Le paquet compressé .deb reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers .deb de l'arborescence <filename>/sw/fink/dists</filename>.</p>
+<p>La commande remove supprime les paquets du système en appelant la commande  '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas les dépendances elle-même, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
+      <p>La commande remove ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé .deb reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers .deb de l'arborescence <filename>/sw/fink/dists</filename>.</p>
       <p>Alias : disable, deactivate, unuse, delete.</p>
+    </section>
+    <section name="purge">
+      <title>purge</title>
+<p>La commande purge supprime les paquets du système. Elle agit de la même façon que la commande remove, mais elle supprime en plus les fichiers de configuration.</p>
     </section>
     <section name="update-all" >
       <title>update-all - tout mettre à jour</title>
