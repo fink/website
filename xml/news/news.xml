@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.123 2004/04/06 19:04:41 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.124 2004/04/06 19:13:37 dmalloc Exp $</cvsid>
 
 <newsitem>
 	<date>2004-04-06</date>
@@ -10,8 +10,8 @@
 	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
-been built on 10.2 and will only install on a 10.2 based system while release 
-0.7.0 has been built on 10.3 and will only install on a 10.3 based system.
+been built on <em>10.2</em> and will only install on a <em>10.2</em> based systems, while release 
+0.7.0 has been built on <em>10.3</em> and will only install on a <em>10.3</em> based systems.
 	</p>
 	<p>
 These new releases incorporate various fixes to the package manager, many previously 
@@ -26,6 +26,10 @@ If you have questions or problems, please try the Fink mailing lists you can lea
 <link url="lists/index.php?phpLang=en">here</link>.
 		</p>
 		<p>
+Please make sure you pick the <em>appropriate installer</em> for your Platform.
+Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
+		</p>
+	<p>
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
 We also thank our community, without their constant support and valuable 
