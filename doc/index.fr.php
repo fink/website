@@ -1,13 +1,13 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/03/24 18:14:58';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/03/31 02:20:52';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.6 2004/03/24 18:14:58 dmrrsn Exp $-->
+<h1>Fink - Documentation</h1><!--Generated from $Fink: doc.fr.xml,v 1.8 2004/03/31 02:20:52 michga Exp $-->
 <p>
 Voici un ensemble de documents écrits pour Fink.
 Certains de ces documents peuvent également être utiles aux personnes qui utilisent Mac OS X or Darwin sans Fink et souhaitent apprendre à porter des logiciels Unix sur ces systèmes.
@@ -43,6 +43,7 @@ Un grand nombre de documents plus complets, mais obsolètes et non remis à jour
     
     <ul>
       <li><a href="multilingual/index.php">Guide d'internationalisation</a> - document concernant le travail en cours d'internationalisation du site web</li>
+      <li><a href="netiquette/index.php">Étiquette net des listes de diffusion</a> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
     </ul>
   
 

@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.7 2004/03/31 02:19:21 michga Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.8 2004/03/31 02:20:52 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -46,8 +46,7 @@ url="http://conferences.oreillynet.com/macosx2002/"
     <title>Autres Documents</title>
     <ul>
       <li><varlink url="multilingual/index.php" varurl="multilingual/multilingual.fr.html">Guide d'internationalisation</varlink> - document concernant le travail en cours d'internationalisation du site web</li>
-        </ul>
-            <li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.fr.html">Étiquette net des listes de diffusion</varlink> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
+      <li><varlink url="netiquette/index.php" varurl="netiquette/netiquette.fr.html">Étiquette net des listes de diffusion</varlink> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
     </ul>
   </section>
 </article>
