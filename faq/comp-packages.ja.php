@@ -20,13 +20,13 @@ endif</pre></div>
 </a>
 <a name="cant-install-xfree">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> すべての X11 は、残念なことに、 /usr/X11E6 にインストールしなければなりません。
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> どのような X11 でも、残念なことに、 /usr/X11R6 にインストールしなければなりません。
 Fink の <code>xfree86-base</code> と <code>xfree86-rootless</code> もここにインストールします。
 しかし、 Fink はデータベースに無いファイルは削除しないため、 Fink 以外の X11 を自動的に置き換えることはありません。
-</p><p>という訳で、:</p><p><b>注記: 10.2.x と 最新版の Fink (&gt;= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (やっても動きませんが)。</b></p><p>1. <code>system-xfree86</code> を削除します。
+</p><p>という訳で、:</p><p><b>注記: 10.2.x と 最新版の Fink (&gt;= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (実行しても何も起きませんが)。</b></p><p>1. <code>system-xfree86</code> を削除します。
 X11 に依存するパッケージがない場合、これは単純です。
 しかし、 X11 に依存するパッケージがインストールされていることの方が多いでしょう。
-これを全てアンインストールする代わりに、次のコマンドをうちます:</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>これにより、他は触らずに削除します。
+これを全てアンインストールする代わりに、次のコマンドをうちます:</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>これで、他のパッケージは触らずに削除します。
 <code>system-xfree86</code> がなければステップ 3 に進みます。
 </p><p>2. XFree86 を全て手動で削除する。これは:</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Apple X11 から切替える場合、 X11 アプリケーションも削除します。</p><p>3. XFree86-4.2.1 を入れるには、 Fink の <code>xfree86-base</code> と 
 <code>xfree86-rootless</code> をインストールします。

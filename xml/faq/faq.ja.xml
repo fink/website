@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.23 2004/10/04 05:01:42 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.24 2004/10/13 23:54:06 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1360,18 +1360,18 @@ endif</codeblock>
 <p>Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</p>
 </question>
 <answer>
-<p>すべての X11 は、残念なことに、 /usr/X11E6 にインストールしなければなりません。
+<p>どのような X11 でも、残念なことに、 /usr/X11R6 にインストールしなければなりません。
 Fink の <code>xfree86-base</code> と <code>xfree86-rootless</code> もここにインストールします。
 しかし、 Fink はデータベースに無いファイルは削除しないため、 Fink 以外の X11 を自動的に置き換えることはありません。
 </p>
 <p>という訳で、:</p>
-<p><em>注記: 10.2.x と 最新版の Fink (>= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (やっても動きませんが)。</em></p>
+<p><em>注記: 10.2.x と 最新版の Fink (>= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (実行しても何も起きませんが)。</em></p>
 <p>1. <code>system-xfree86</code> を削除します。
 X11 に依存するパッケージがない場合、これは単純です。
 しかし、 X11 に依存するパッケージがインストールされていることの方が多いでしょう。
 これを全てアンインストールする代わりに、次のコマンドをうちます:</p>
 <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
-<p>これにより、他は触らずに削除します。
+<p>これで、他のパッケージは触らずに削除します。
 <code>system-xfree86</code> がなければステップ 3 に進みます。
 </p>
 <p>2. XFree86 を全て手動で削除する。これは:</p>
