@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/17 06:51:21 $';
+$cvs_date = '$Date: 2001/05/18 09:53:39 $';
 
 $metatags = '<link rel="start" href="index.php" title="FAQ Contents">
 <link rel="next" href="general.php" title="General questions">
@@ -50,6 +50,8 @@ install it?</a></li>
 </ul>
 <li><a href="packages.php"><b>Problems with certain packages</b></a></li>
 <ul>
+<li><a href="packages.php#nox">Package foo says there is no X11 on my
+system!?</a></li>
 <li><a href="packages.php#icewm">IceWM won't compile.</a></li>
 <li><a href="packages.php#gnomecore">The gnome-core package won't
 compile. It complains about multiple definitions of _login_tty. What's

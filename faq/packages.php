@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Package Specific";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/08 17:50:10 $';
+$cvs_date = '$Date: 2001/05/18 09:53:39 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -13,6 +13,22 @@ include "header.inc";
 
 
 <h1>Fink F.A.Q. - Problems with certain packages</h1>
+
+<p><a name="nox"><b>Package foo says there is no X11 on my system!?</b></a></p>
+
+<p>There are several things that can cause this:</p>
+<ul>
+<li>You don't have X11 installed. You must install X11 manually,
+either <a href="http://www.xfree86.org/">XFree86</a> or <a
+href="http://www.tenon.com/">Xtools</a>. XFree86 packages for Fink are
+under development, but not yet ready for prime time.</li>
+<li>You installed the XFree86 binary distribution, but left out the
+Xprog.tgz tarball. It is an optional tarball, but must be installed to
+compile X11 applications.</li>
+<li>Some people have reported problems beyond that. It seems that
+sometimes the static X11 libraries can become broken, which results in
+the <tt>checking for XOpenDisplay in -lX11</tt> test failing.</li>
+</ul>
 
 <p><a name="icewm"><b>IceWM won't compile.</b></a></p>
 
