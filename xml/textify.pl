@@ -45,6 +45,7 @@ sub render {
     $s =~ s/&lt;/</g;      # HTML entities
     $s =~ s/&gt;/>/g;      #  "
     $s =~ s/&amp;/&/g;     #  "
+    $s =~ s/&quot;/\"/g;   #  "
 
     my $space = $linelength - length($prefix);
     while (length($s) > $space) {
