@@ -2,7 +2,7 @@
 
 $title = "运行 X11 - Xtools";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/04 05:05:24';
+$cvs_date = 'Date: 2004/03/05 03:26:57';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"other.php?phpLang=zh\" title=\"其它 X11 可能\">\n\t<link rel=\"prev\" href=\"run-xfree86.php?phpLang=zh\" title=\"启动 XFree86\" />";
 
 include_once "header.zh.inc"; 

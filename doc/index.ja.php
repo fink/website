@@ -5,7 +5,7 @@ $cvs_date = 'Date: 2004/02/28 07:39:55';
 include_once 'nav.inc';
 $fsroot = $root = '../';
 include_once '../header.inc'; 
-?><h1>Fink - Documentation</h1><p>Generated from <i>$Id: index.ja.php,v 1.2 2004/02/29 23:29:16 fingolfin Exp $</i></p>
+?><h1>Fink - Documentation</h1><p>Generated from <i>$Id: index.ja.php,v 1.3 2004/03/05 15:55:24 fingolfin Exp $</i></p>
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。

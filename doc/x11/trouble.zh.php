@@ -2,7 +2,7 @@
 
 $title = "运行 X11 - 故障排除";
 $cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/04 05:05:24';
+$cvs_date = 'Date: 2004/03/05 03:26:57';
 $metatags = "<link rel=\"contents\" href=\"index.php?phpLang=zh\" title=\"运行 X11 Contents\">\n\t<link rel=\"next\" href=\"tips.php?phpLang=zh\" title=\"使用提示\">\n\t<link rel=\"prev\" href=\"other.php?phpLang=zh\" title=\"其它 X11 可能\" />";
 
 include_once "header.zh.inc"; 
