@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/10 13:30:57';
+$cvs_date = 'Date: 2002/12/16 14:57:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php" title="Package Usage Problems - General">';
 
@@ -95,6 +95,13 @@ You'll get a bunch of diagnostic messages in Terminal.app to help you
 sort this out.
 </p></div></a>
 
+<a name="xterm-error"><div class="question"><p><b>Q7.5: xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p><p>If you are using the fink <tt><nobr>xfree86</nobr></tt> packages, then you can get an upgrade by the usual means (&quot;<tt><nobr>fink selfupdate-cvs ; fink update-all</nobr></tt>&quot; for installation from source, <tt><nobr>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</nobr></tt>&quot; for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div></a>
+
+<a name="libXmuu"><div class="question"><p><b>Q7.6: When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</b></p></div>
+<div class="answer"><p><b>A:</b> 
+You are missing a file that is supposed to be in <tt><nobr>xfree86-rootless-(threaded)-shlibs</nobr></tt>.  You should rebuild it using <tt><nobr>fink rebuild xfree86-rootless-shlibs</nobr></tt> (<tt><nobr>fink rebuild xfree86-rootless-threaded-shlibs</nobr></tt> if you are using the threaded XFree86 packages).</p></div>
+</a>
 
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/10 13:30:57';
+$cvs_date = 'Date: 2002/12/16 14:57:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -75,6 +75,7 @@ work?</a></li>
 <li><a href="usage-fink.php#kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
 <li><a href="usage-fink.php#not-found">3.15 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
+<li><a href="usage-fink.php#fink-not-found">3.16 I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -90,6 +91,7 @@ from the head command. What's broken?</a></li>
 <li><a href="comp-packages.php#libgtop">5.1 libgtop fails to build with errors involving sed.</a></li>
 <li><a href="comp-packages.php#cant-install-xfree">5.2 I want to switch to fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">5.3 How do I change from the non-threaded version of fink to the threaded version (or vice-versa)?</a></li>
+<li><a href="comp-packages.php#pil-wont-build">5.4 PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</a></li>
 </ul>
 <li><a href="usage-general.php"><b>6 Package Usage Problems - General</b></a></li>
 <ul>
@@ -115,8 +117,10 @@ XDarwin, it immediately quits!</a></li>
 OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
+<li><a href="usage-packages.php#xterm-error">7.5 xterm fails with &quot;dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib&quot;.</a></li>
+<li><a href="usage-packages.php#libXmuu">7.6 When I try to start XFree86 I get the following error:  &quot;dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib&quot;</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.61 2002/12/10 13:30:57 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.62 2002/12/16 14:57:48 alexkhansen Exp $</i></p>
 
 
 <?

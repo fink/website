@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.61 2002/12/10 13:30:57 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.62 2002/12/16 14:57:48 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -513,6 +513,12 @@ url="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users m
 <p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></answer></faqentry>
 
+<faqentry name="fink-not-found"><question><p>I've edited my .cshrc and started a new terminal, but I still get "fink: command not found".</p></question>
+<answer><p>
+If you use tcsh and happen to have a <code>.tcshrc</code> file in your home directory, this will be read instead of <code>.cshrc</code> .  You can go ahead and put <code>source /sw/bin/init.csh</code> in <code>.tcshrc</code> 
+.</p></answer>
+</faqentry>
+
 </chapter>
 
 
@@ -628,7 +634,10 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 	<p><code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code></p>
 	<p>by the usual means: "<code>fink install</code>" for source users, "<code>apt-get install</code>" or <code>dselect</code> for binaries.</p>
 </answer></faqentry>
-
+<faqentry name="pil-wont-build"><question><p>PIL fails to build with "ld:  Undefined symbols:  _FT_New_Face".</p></question>
+<answer>
+<p>Check and see if you have <code>freetype2-2.1.3-1</code> installed.  This was made available for a short time, but wasn't backwards compatible with <code>pil</code>, among other packages, and was removed.  Find and delete <code>freetype2_2.1.3-1_darwin-powerpc.deb</code>, and then you can downgrade it with <code>fink install freetype2-2.0.9-1</code>.</p></answer>
+</faqentry>
 </chapter>
 
 
@@ -832,6 +841,16 @@ sort this out.
 </p>
 </answer></faqentry>
 
+<faqentry name="xterm-error"><question><p>xterm fails with "dyld: xterm Undefined symbols:  xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</p></question>
+<answer>
+<p>This is caused by using a 10.1 version of XFree86 on 10.2.  You must upgrade to a 10.2 version.</p>  
+<p>If you are using the fink <code>xfree86</code> packages, then you can get an upgrade by the usual means ("<code>fink selfupdate-cvs ; fink update-all</code>" for installation from source, <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" for installation from binaries.</p>
+<p>If you have installed XFree86 by other means, you can find patches to bring you up to date at the <link url="http://mrcla.com/XonX">XonX web site</link>.</p></answer></faqentry>
+
+<faqentry name="libXmuu"><question><p>When I try to start XFree86 I get the following error:  "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"</p></question>
+<answer><p>
+You are missing a file that is supposed to be in <code>xfree86-rootless-(threaded)-shlibs</code>.  You should rebuild it using <code>fink rebuild xfree86-rootless-shlibs</code> (<code>fink rebuild xfree86-rootless-threaded-shlibs</code> if you are using the threaded XFree86 packages).</p></answer>
+</faqentry>
 </chapter>
 
 

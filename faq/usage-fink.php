@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/10 13:30:57';
+$cvs_date = 'Date: 2002/12/16 14:57:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -237,6 +237,12 @@ software before using Fink.
 <div class="answer"><p><b>A:</b> The package sources get moved around by the upstream sites when new versions are released.</p><p>The first thing you should do is let the package maintainer (available from &quot;<tt><nobr>fink describe <b>packagename</b></nobr></tt>&quot;) know that the URL is broken; not all maintainers read the mailing lists all of the time.</p><p>To get a usable source, first try hunting around the remote site in other directories for the source that fink wants (e.g. in an &quot;old&quot; directory).  Keep in mind, though, that some remote sites like to trash the old versions of their packages.  If the official site doesn't have it, then try a web search--sometimes there are unofficial sites that have the tarball you want.  If that fails, then you might consider posting on the
 <a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users mailing list</a> to ask if anybody has the old source available to give you. Once you locate the proper source tarball, download it manually, and then move the file into your fink source location (i.e. for a default fink install, &quot;<tt><nobr>sudo mv <b>package-source.tar.gz</b> /sw/src/</nobr></tt>&quot;.  Then use '<tt><nobr>fink install <b>packagename</b></nobr></tt>' as normal.</p><p>If you can't get the source file, then you'll have to wait for the maintainer to deal with the problem.  They may either post a link to the old source, or update the .info and .patch files to use the newer version.
 </p></div></a>
+
+<a name="fink-not-found"><div class="question"><p><b>Q3.16: I've edited my .cshrc and started a new terminal, but I still get &quot;fink: command not found&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> 
+If you use tcsh and happen to have a <tt><nobr>.tcshrc</nobr></tt> file in your home directory, this will be read instead of <tt><nobr>.cshrc</nobr></tt> .  You can go ahead and put <tt><nobr>source /sw/bin/init.csh</nobr></tt> in <tt><nobr>.tcshrc</nobr></tt> 
+.</p></div>
+</a>
 
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/10 13:30:57';
+$cvs_date = 'Date: 2002/12/16 14:57:48';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-general.php" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php" title="Compile Problems - General">';
 
@@ -34,7 +34,9 @@ sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 	</pre><p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <tt><nobr>Source Menu</nobr></tt> use &quot;<tt><nobr>Force Remove</nobr></tt>.&quot;</p><p>If you are using system-xfree86, see the previous question for removing it.</p><p>Install the version of xfree86 you want: </p><p><tt><nobr>xfree86-base</nobr></tt> and <tt><nobr>xfree86-rootless</nobr></tt></p><p><tt><nobr>xfree86-base-threaded</nobr></tt> and <tt><nobr>xfree86-rootless-threaded</nobr></tt></p><p>by the usual means: &quot;<tt><nobr>fink install</nobr></tt>&quot; for source users, &quot;<tt><nobr>apt-get install</nobr></tt>&quot; or <tt><nobr>dselect</nobr></tt> for binaries.</p></div></a>
-
+<a name="pil-wont-build"><div class="question"><p><b>Q5.4: PIL fails to build with &quot;ld:  Undefined symbols:  _FT_New_Face&quot;.</b></p></div>
+<div class="answer"><p><b>A:</b> Check and see if you have <tt><nobr>freetype2-2.1.3-1</nobr></tt> installed.  This was made available for a short time, but wasn't backwards compatible with <tt><nobr>pil</nobr></tt>, among other packages, and was removed.  Find and delete <tt><nobr>freetype2_2.1.3-1_darwin-powerpc.deb</nobr></tt>, and then you can downgrade it with <tt><nobr>fink install freetype2-2.0.9-1</nobr></tt>.</p></div>
+</a>
 <p align="right">
 Next: <a href="usage-general.php">6 Package Usage Problems - General</a></p>
 
