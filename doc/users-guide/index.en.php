@@ -89,4 +89,4 @@ apt-get</a></li>
 <li><a href="usage.php?phpLang=en#checksums">6.19 checksums</a></li>
 <li><a href="usage.php?phpLang=en#cleanup">6.20 cleanup</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.en.php,v 1.2 2004/02/28 20:47:23 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.en.php,v 1.3 2004/02/29 13:11:22 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>

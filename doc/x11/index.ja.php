@@ -78,4 +78,4 @@ include_once "header.ja.inc";
 <li><a href="tips.php?phpLang=ja#open">8.2 xterm からの Aqua アプリケーションの起動</a></li>
 <li><a href="tips.php?phpLang=ja#copy-n-paste">8.3 コピーとペースト</a></li>
 </ul>
-</ul><p>Generated from <i>$Id: index.ja.php,v 1.2 2004/02/28 20:47:23 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>
+</ul><p>Generated from <i>$Id: index.ja.php,v 1.3 2004/02/29 13:11:22 fingolfin Exp $</i></p><? include_once "../../footer.inc"; ?>
