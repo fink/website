@@ -949,7 +949,7 @@ added in the future.
 Gives a service description for <code>daemonic</code>.
 <code>daemonic</code> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
-The description will added to the package as a file named
+The description will be added to the package as a file named
 <code>%p/etc/daemons/<b>name</b>.xml</code>, where <b>name</b> is
 specified by the DaemonicName field and defaults to the package
 name.

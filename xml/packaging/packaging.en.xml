@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.27 2004/04/30 08:23:47 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.28 2004/05/19 11:39:53 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -2259,7 +2259,7 @@ added in the future.
 Gives a service description for <code>daemonic</code>.
 <code>daemonic</code> is used by Fink to create and remove
 StartupItems for daemon processes (e.g. web servers).
-The description will added to the package as a file named
+The description will be added to the package as a file named
 <code>%p/etc/daemons/<em>name</em>.xml</code>, where <em>name</em> is
 specified by the DaemonicName field and defaults to the package
 name.

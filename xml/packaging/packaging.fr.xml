@@ -4,7 +4,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.27 2004/05/16 09:37:18 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.28 2004/05/19 11:39:53 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -1378,67 +1378,67 @@ Utilisé <em>uniquement</em> avec un champ <code>SplitOff</code> ou <code>SplitO
 </itemd></item>
 
 </itemtable>
-<p><em>Build Phase:</em></p>
-<itemtable>
+<p><em>Phase de construction :</em></p>
+<itemtable labeld="Utilisation" labelt="Champ">
 
 <item><itemt>PreInstScript, PostInstScript, PreRmScript, PostRmScript</itemt>
 <itemd>
 <p>
-These fields specify pieces of shell scripts that will be called when the package is installed, upgraded or removed. Fink automatically adds the shell script header <code>#!/bin/sh</code>, and calls <code>set -e</code> so any command that fails will result in instant termination of the script. Fink also adds an <code>exit 0</code> at the end. To indicate an error, exit from the script with a non-zero exit code. The first parameter (<code>$1</code>) is set to a value indicating what action is being performed. Some possible values are <code>install</code>, <code>upgrade</code>, <code>remove</code> and <code>purge</code>. Note that there are more values, used during error rollback or when removing a package in favor of another one.
+Ces champs correspondent à des scripts shell qui seront appelés lors de l'installation, la mise à jour ou la suppression du paquet. Fink ajoute automatiquement l'en-tête du script shell <code>#!/bin/sh</code> et appelle  <code>set -e</code>, de façon à ce que tout échec d'une commande entraîne 'arrêt immédiat du script. Fink ajoute aussi  <code>exit 0</code> à la fin du script. Pour signaler une erreur, utilisez exit avec un code non nul. Le premier paramètre (<code>$1</code>) contient une valeur indiquant l'action à faire. Exemples de valeurs possibles : <code>install</code>, <code>upgrade</code>, <code>remove</code> et <code>purge</code>. Notez qu'il existe d'autres valeurs, utilisées lors des reprises sur erreur et du remplacement d'un paquet par un autre.
 </p>
 <p>
-The scripts are called at the following times:
+Ces différents scripts sont appelés lors des évènements suivants :
 </p>
 <ul>
-<li>PreInstScript: When the package is installed for the first time and before upgrading the package to this version.</li>
-<li>PostInstScript: After unpacking and setting up the package.</li>
-<li>PreRmScript: Before the package is removed or upgraded to a later version.</li>
-<li>PostRmScript: After the package was removed or upgraded to a later version.</li>
+<li>PreInstScript : lors de la première installation d'un paquet et avant la mise à jour d'un paquet à la même version.</li>
+<li>PostInstScript : après le dépaquetage et la définition des variables spécifiques au paquet.</li>
+<li>PreRmScript : avant la suppression et la mise à jour d'un paquet à une version ultérieure.</li>
+<li>PostRmScript : après la suppression et la mise à jour du paquet à une version ultérieure.</li>
 </ul>
 <p>
-To make it more clear, an upgrade invokes both the ...Inst scripts of the new version and the ...Rm scripts of the old version. Details can be found in the Debian Policy Manual, <link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapter 6</link>.
+Soyons plus clair. Une mise à jour invoque à la fois les scripts ...Inst de la nouvelle version et les scripts ...Rm de l'ancienne version. Vous trouverez de plus amples informations à ce sujet dans le <link url="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapitre 6</link> du Manuel des normes Debian.
 </p>
 <p>
-Percent expansion is performed on the scripts. Commands can generally be called without giving a full path.
+L'interprétation des raccourcis a lieu dans ces scripts. Les commandes peuvent, en général, être lancées sans donner leur chemin complet.
 </p>
 </itemd></item>
 
 <item><itemt>ConfFiles</itemt>
 <itemd>
 <p>
-A space-separated list of files that are user-modifiable configuration files. The files must be specified with an absolute path, e.g. <filename>%p/etc/foo.conf</filename>. The named files will receive special treatment by dpkg. When a package is upgraded and the file has changed both on disk and in the package, the user is asked which version to use and backups of the file will be made. When a package is "remove"d, the configuration files will remain on disk. Only a "purge" also removes the configuration files.
+Liste de fichiers séparés par des espaces. Ces fichiers sont des fichiers de configuration modifiables par l'utilisateur. Le chemin complet des fichiers doit être indiqué, comme dans <filename>%p/etc/foo.conf</filename>. Ces fichiers sont traités de façon spéciale par dpkg. Quand un paquet est mis à jour et que le fichier de configuration a changé à la fois sur le disque et dans le paquet, dpkg demande à l'utilisateur quelle version il veut utiliser et sauvegarde l'ancien fichier. Quand un paquet est supprimé avec "remove", les fichiers de configuration ne sont pas supprimés. Pour les supprimer, il faut utiliser "purge".
 </p>
 </itemd></item>
 
 <item><itemt>InfoDocs</itemt>
 <itemd>
 <p>
-Lists the names of Info documents that the package installs in %p/share/info. This will add appropriate code to the postinst and prerm scripts to maintain the Info directory file, <code>dir</code>. This feature is still in flux, more fields for finer control may be added in the future.
+Liste des documents Info que le paquet installe dans %p/share/info. Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <code>dir</code>. Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.
 </p>
 </itemd></item>
 
 <item><itemt>DaemonicFile</itemt>
 <itemd>
 <p>
-Gives a service description for <code>daemonic</code>. <code>daemonic</code> is used by Fink to create and remove StartupItems for daemon processes (e.g. web servers). The description will added to the package as a file named <code>%p/etc/daemons/<em>name</em>.xml</code>, where <em>name</em> is specified by the DaemonicName field and defaults to the package name. Percent expansion is performed on the contents of this field. Note that you must add <code>daemonic</code> to the dependency list if your package uses it.
+Décrit un service pour <code>daemonic</code>. <code>daemonic</code> est utilisé par Fink pour créer et supprimer des éléments à lancer au démarrage pour les processus démon (par exemple les serveurs web). La description est ajoutée au paquet sous la forme d'un fichier nommé <code>%p/etc/daemons/<em>nom</em>.xml</code>, où <em>nom</em> est indiqué par le champ DaemonicName et est réduit, par défaut,  au nom du paquet. L'interprétation des raccourcis a lieu sur le contenu de ce champ. Notez que vous devez ajouter <code>daemonic</code> à la liste des dépendances, si votre paquet utilise ce champ.
 </p>
 </itemd></item>
 
 <item><itemt>DaemonicName</itemt>
 <itemd>
 <p>
-A name for the <code>daemonic</code> service description file. See the description of DaemonicFile for details.
+Nom du fichier de description d'un service <code>daemonic</code>. Voir la description de DaemonicFile pour de plus amples informations.
 </p>
 </itemd></item>
 
 </itemtable>
-<p><em>Additional Data:</em></p>
-<itemtable>
+<p><em>Autres informations :</em></p>
+<itemtable labeld="Utilisation" labelt="Champ">
 
 <item><itemt>Homepage</itemt>
 <itemd>
 <p>
-The URL of the upstream home page of the package.
+URL de la page d'accueil du paquet en amont.
 </p>
 </itemd></item>
 
@@ -1446,28 +1446,28 @@ The URL of the upstream home page of the package.
 <item><itemt>DescDetail</itemt>
 <itemd>
 <p>
-A more detailed description than the one in the <code>Description</code> field (what is it, what can I use it for?). Multiple lines allowed. Because this field will be displayed without the benefit of word-wrap, you should manually insert line breaks in order to keep lines less than 79 chars (if possible).
+Description plus détaillée que celle figurant dans le champ <code>Description</code> (répond aux questions : qu'est-ce que c'est ?, comment l'utiliser?). Les lignes multiples sont autorisées. Comme ce champ sera affiché sans que la longueur des lignes soit adaptée à la largeur de la fenêtre d'affichage, vous devez insérer des sauts de ligne, de façon à ce que les lignes ne dépassent pas 78 caractères (si possible).
 </p>
 </itemd></item>
 
 <item><itemt>DescUsage</itemt>
 <itemd>
 <p>
-This is for information that is needed to use the package (how do I use it?). As in "run wmaker.inst once before using WindowMaker". Multiple lines allowed. Because this field will be displayed without the benefit of word-wrap, you should manually insert line breaks in order to keep lines less than 79 chars (if possible).
+Information nécessaire à l'utilisation du paquet (répond à la question : comment l'utiliser ?). Exemple : "run wmaker.inst once before using WindowMaker". Lignes multiples autorisées. Comme ce champ sera affiché sans que la longueur des lignes soit adaptée à la largeur de la fenêtre d'affichage, vous devez insérer des sauts de ligne, de façon à ce que les lignes ne dépassent pas 78 caractères (si possible).
 </p>
 </itemd></item>
 
 <item><itemt>DescPackaging</itemt>
 <itemd>
 <p>
-Notes about the packaging. Stuff like "patches the Makefile to put everything in place" goes here. Multiple lines allowed.
+Notes sur la construction du paquet. Les éléments du type : "patches the Makefile to put everything in place" sont placés dans ce champ. Lignes multiples autorisées.
 </p>
 </itemd></item>
 
 <item><itemt>DescPort</itemt>
 <itemd>
 <p>
-Notes that are specific to porting the package to Darwin. Stuff like "config.guess and libtool scripts are updated, -no-cpp-precomp is necessary" goes here. Multiple lines allowed.
+Notes spécifiques au portage du paquet sur Darwin. Les éléments du type : "config.guess and libtool scripts are updated, -no-cpp-precomp is necessary" sont placés dans ce champ. Lignes multiples autorisées.
 </p>
 </itemd></item>
 
