@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/18 10:06:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/24 01:56:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 include_once "header.inc";
@@ -124,8 +124,10 @@ environment variable (and some others) accordingly.
 In most cases, you can do this via the command
 </p>
       <pre>open /sw/bin/pathsetup.command</pre>
-      <p>
-However, if that doesn't work for some reason, you can configure it
+      <p>, or for <code>fink-0.18.3</code> or <code>fink-0.19.2</code>, by running (exactly as shown below):
+</p>
+      <pre>/sw/bin/pathsetup.sh</pre>
+      <p>However, if that doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
 running the command:

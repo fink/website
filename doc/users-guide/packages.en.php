@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/18 10:06:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/24 01:56:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 include_once "header.inc";
@@ -209,15 +209,15 @@ If you run into errors during that process, please first check the
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-<li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
-</li> 
+        <li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
+</li>
         <li>
           <p>
             <b>10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-<li><b>10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+        <li><b>10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
       </ul>
     
     <h2><a name="x11">3.7 Getting X11 Sorted Out</a></h2>

@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/18 10:06:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/24 01:56:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -161,7 +161,7 @@ True. It is set automatically by the <code>fink
 selfupdate-cvs</code> command, so you should not need to change it
 manually.</p>
         </li>
-	<li>
+        <li>
 	  <p>
 	    <b>Buildpath:</b> path</p>
 	  <p>Fink needs to create several temporary directories for

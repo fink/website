@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/18 10:06:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/24 01:56:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 include_once "header.inc";
@@ -34,7 +34,7 @@ For apt, run <code>apt-get update</code> to get the latest package
 list, then <code>apt-get upgrade</code> to update all packages that
 have new versions available.
 </p>
-<p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
+      <p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
       <p>
 For more information, especially about upgrading from Fink versions
 older than 0.3.0, see the
@@ -83,7 +83,7 @@ Once you have updated your package descriptions (no matter which way),
 you should update all packages at once with the command <code>fink
 update-all</code>.
 </p>
-<p>To update the source distribution using Fink Commander, select Source-&gt;Selfupdate to download new package information files, and then Source-&gt;Update-all to update your outdated packages.</p>
+      <p>To update the source distribution using Fink Commander, select Source-&gt;Selfupdate to download new package information files, and then Source-&gt;Update-all to update your outdated packages.</p>
     
     <h2><a name="mix">4.3 Mixing Binaries and Source</a></h2>
       
@@ -97,7 +97,6 @@ then use <code>fink selfupdate</code> and <code>fink update-all</code>
 to get the current package descriptions and to update the remaining
 packages.  If you are using Fink commander, then follow the <a href="#bin">binary</a> instructions, followed by those for <a href="#src">source</a>.
 </p>
-
     
   <p align="right">
 Next: <a href="conf.php?phpLang=en">5 The Fink Configuration File</a></p>

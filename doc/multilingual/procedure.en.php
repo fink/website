@@ -53,7 +53,7 @@ include_once "header.inc";
     
     <h2><a name="prompt-update">3.4 Prompt Update to Existing Documentation</a></h2>
       
-      <p>The base English documentation is <a href="files.php?phpLang=en#committing">committed</a> and <a href="files.php?phpLang=en#website">activated</a> immediately. The
+      <p>The base English documentation is <a href="files.php?phpLang=en#committing">committed</a> and <a href="files.php?phpLang=en#website">activated</a> immediately--whomever changed the XML should commit the HTML and PHP, and do the activation. The
       translation teams then update their versions, <a href="files.php?phpLang=en#committing">commit</a><b> all</b> of the files (XML and
       PHP), then <a href="files.php?phpLang=en#activate">activate</a> the
       changes.</p>
@@ -75,6 +75,10 @@ include_once "header.inc";
         files will be generated, committed, and <a href="files.php?phpLang=en#website">activated</a> simultaneously at an
         agreed-upon time by one person, e.g. someone from the i18n core
         team.</p>
+    
+    <h2><a name="summary">3.6 For Developers and English Language Documenters:</a></h2>
+      
+      <p>The current policy is that all documents should be updated according to the <a href="#prompt-update">prompt update</a> schedule, unless you have a specific reason to do otherwise.</p>
     
   <p align="right">
 Next: <a href="resources.php?phpLang=en">4 Additional Resources           </a></p>

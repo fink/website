@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/03/18 10:06:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2004/03/24 01:56:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 include_once "header.inc";
@@ -80,7 +80,7 @@ All developers run it, and packages are tested on this system.
 It is considered "fully supported and tested", although there may
 still be stray compile problems with single packages.
 </p>
-<p><b>Mac OS X 10.2</b> is still supported, though some newer packages may not have 10.2 versions available.</p>
+      <p><b>Mac OS X 10.2</b> is still supported, though some newer packages may not have 10.2 versions available.</p>
       <p>
         <b>Mac OS X 10.1</b> is still supported to some extent.
 You must run Fink 0.4.1 and no later versions.
