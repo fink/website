@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 08:31:55 $';
+$cvs_date = '$Date: 2004/09/22 08:35:16 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -21,7 +21,6 @@ Fink utilise des outils de gestion de paquets binaires <a href="http://www.debia
 Vous avez le choix entre le téléchargement des paquets binaires précompilés ou la construction des paquets à partir des sources.
 <a href="about.php">Voir la suite...</a>
 </p>
-
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
