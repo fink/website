@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/01/19 19:13:52';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2003/03/01 01:03:59';
 
 $metatags = '<link rel="contents" href="index.php" title="Packaging Contents"><link rel="prev" href="fslayout.php" title="Filesystem Layout">';
 
@@ -79,6 +79,12 @@ Increase this when you make a new description for the same upstream
 version.
 Revision numbers start at 1.
 Required field.
+</p>
+</td></tr><tr valign="top"><td>Epoch</td><td>
+<p>
+<b>Introduced in fink 0.12.0.</b>
+This optional field can be used to specify the epoch of the package.
+For more information refer to the <a href="http://www.debian.org/doc/debian-policy/ch-versions.html">Debian Policy Manual</a>.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
@@ -298,7 +304,7 @@ expect. See ghostscript, vim and tetex for examples of usage.
 This field can renames a source tar ball on the fly. This is useful
 if for example the version of the source is encoded in the directory name on
 the server, but the tar ball itself has the same name for all versions, e.g.
-http://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
 caused by this, you would then use something like
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
@@ -757,27 +763,6 @@ everything in place&quot; goes here. Multiple lines allowed.
 Notes that are specific to porting the package to Darwin. Stuff
 like &quot;config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary&quot; goes here. Multiple lines allowed.
-</p>
-</td></tr><tr valign="top"><td>Comment</td><td>
-<p>
-<b>Obsolete.</b> Was: General comments on the package.
-</p>
-</td></tr><tr valign="top"><td>CommentPort</td><td>
-<p>
-<b>Obsolete.</b> Was: Comments on the package that are specific to the
-Darwin port. Describe what special parameters or patches are
-necessary, what doesn't work (yet), etc.
-</p>
-</td></tr><tr valign="top"><td>CommentStow</td><td>
-<p>
-<b>Obsolete.</b> Was: Comments on the package that apply to using it
-with stow. Describe special treatment necessary and potential
-problems.
-</p>
-</td></tr><tr valign="top"><td>UsesGettext</td><td>
-<p>
-<b>Obsolete.</b> gettext is now an essential package and
-always available.
 </p>
 </td></tr></table>
 

@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.38 2003/01/19 19:13:52 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.39 2003/03/01 01:03:59 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1068,6 +1068,16 @@ Required field.
 </p>
 </itemd></item>
 
+<item><itemt>Epoch</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.12.0.</em>
+This optional field can be used to specify the epoch of the package.
+For more information refer to the <link
+url="http://www.debian.org/doc/debian-policy/ch-versions.html">Debian Policy Manual</link>.
+</p>
+</itemd></item>
+
 <item><itemt>Description</itemt>
 <itemd>
 <p>
@@ -1349,7 +1359,7 @@ expect. See ghostscript, vim and tetex for examples of usage.
 This field can renames a source tar ball on the fly. This is useful
 if for example the version of the source is encoded in the directory name on
 the server, but the tar ball itself has the same name for all versions, e.g.
-http://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
+://www.foobar.org/coolapp/1.2.3/source.tar.gz. To circumvent the problems
 caused by this, you would then use something like
 </p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
@@ -1925,39 +1935,6 @@ everything in place" goes here. Multiple lines allowed.
 Notes that are specific to porting the package to Darwin. Stuff
 like "config.guess and libtool scripts are updated, -no-cpp-precomp
 is necessary" goes here. Multiple lines allowed.
-</p>
-</itemd></item>
-
-<item><itemt>Comment</itemt>
-<itemd>
-<p>
-<em>Obsolete.</em> Was: General comments on the package.
-</p>
-</itemd></item>
-
-<item><itemt>CommentPort</itemt>
-<itemd>
-<p>
-<em>Obsolete.</em> Was: Comments on the package that are specific to the
-Darwin port. Describe what special parameters or patches are
-necessary, what doesn't work (yet), etc.
-</p>
-</itemd></item>
-
-<item><itemt>CommentStow</itemt>
-<itemd>
-<p>
-<em>Obsolete.</em> Was: Comments on the package that apply to using it
-with stow. Describe special treatment necessary and potential
-problems.
-</p>
-</itemd></item>
-
-<item><itemt>UsesGettext</itemt>
-<itemd>
-<p>
-<em>Obsolete.</em> gettext is now an essential package and
-always available.
 </p>
 </itemd></item>
 
