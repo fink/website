@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/12/17 18:55:01 $';
+$cvs_date = '$Date: 2003/01/18 22:09:40 $';
 
 include "header.inc";
 ?>
@@ -62,9 +62,9 @@ download the <a
   "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.4.1
   directory.</p><p>
 If upgrading under OS X 10.2, download the <a
-  href="http://prdownloads.sourceforge.net/fink/dists-0.5.0a.tar.gz">dists
+  href="http://prdownloads.sourceforge.net/fink/dists-0.5.1.tar.gz">dists
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the dists-0.5.0a
+  "<tt><nobr>./inject.pl</nobr></tt>" inside the dists-0.5.1
   directory.</p>');
 it_end();
 ?>
