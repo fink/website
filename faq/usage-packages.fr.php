@@ -1,5 +1,5 @@
 <?
-$title = "Q.F.P. - Usage (2)";
+$title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/25 21:29:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
@@ -7,223 +7,112 @@ $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Cont
 include_once "header.inc";
 ?>
 
-<h1>Q.F.P. - 9 Package Usage Problems - Specific Packages</h1>
+<h1>Q.F.P. - 9 Problèmes d'utilisation spécifiques à certains paquets</h1>
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b>Q9.1: I get no sound from XMMS</b></p></div>
-      <div class="answer"><p><b>A:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
-        preferences. For some strange reason, it selects the disk writer
-        plugin as the default.</p><p>If you still get no sound output or XMMS complains that it can't
-        find your sound card try this:</p><ul>
-          <li>Make sure you haven't muted sound output in Mac OS X.</li>
-          <li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
-          file of a decent size). If you hear a short noise, eSound works and
-          XMMS should work too if it's configured correctly. If you don't hear
-          anything, esd isn't working for some reason. You can try to start it
-          up manually with <code>esd &amp;</code> and watch the messages.</li>
-          <li>If it still doesn't work, check the permissions on
-          <code>/tmp/.esd</code> and <code>/tmp/.esd/socket</code>. Those
-          should have your normal user account as the owner. If they aren't
-          owned by you, kill esd if it's running, remove the directory as root
-          (<code>sudo rm -rf /tmp/.esd</code>), then start esd again (as a
-          normal user, not as root).</li>
-        </ul><p>Note that esd is designed to be run by a normal user, not by root.
-        It usually communicates via the file system socket
-        <code>/tmp/.esd/socket</code>. You only need the <code>-tcp</code> and
-        <code>-port</code> switches if you want to run esd clients on another
-        machine over the network.</p><p>There have also been reports of XMMS crashing or freezing on 10.1.
-        We don't have an analysis or a fix yet.</p></div>
+      <div class="question"><p><b>Q9.1: Aucun son n'est disponible avec XMMS</b></p></div>
+      <div class="answer"><p><b>A:</b> Vérifiez que vous avez sélectionné "eSound Output Plugin" dans les préférences de XMMS. Pour d'obscures raisons, c'est le plugin d'écriture sur le disque qui est sélectionné par défaut.</p><p>Si cela ne résout pas le problème ou si XMMS se plaint qu'il ne peut trouver votre carte son, essayez ceci :</p><ul>
+          <li>Vérifiez que la sortie son n'est pas réglée sur silence dans Mac OS X.</li>
+          <li>Lancez <code>esdcat /usr/libexec/config.guess</code> (ou choisissez n'importe quel autre fichier de taille significative). Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de le lancer manuellement via <code>esd &amp;</code>, puis analysez les messages.</li>
+          <li>S'il ne fonctionne toujours pas, vérifiez les permissions de <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le possesseur doit être votre compte utilisateur. Si ce n'est pas le cas, tuez esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur (<code>sudo rm -rf /tmp/.esd</code>), puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
+        </ul><p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p><p>Certains personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu d'analyse ou de solution à ce phénomène à ce jour.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b>Q9.2: If I am editing a file in nedit, when I open another file its
-        window pops up but is unresponsive.</b></p></div>
-      <div class="answer"><p><b>A:</b> This is a known problem that occurs with recent versions of
-        <code>nedit</code> and <code>lesstif</code> on all
-        platforms. The workaround is to open a new window with File--&gt;New,
-        then open the next file you want to work on.</p><p>This is now fixed in <code>nedit-5.3-6</code>, which
-        depends on <code>openmotif3</code> rather than
-        <code>lesstif</code>.</p></div>
+      <div class="question"><p><b>Q9.2: Lors de la modification d'un fichier dans nedit, si l'on tente d'ouvrir un autre fichier, sa fenêtre apparaît mais elle ne répond pas.</b></p></div>
+      <div class="answer"><p><b>A:</b> C'est un problème connu qui se produit avec des versions récentes de <code>nedit</code> et <code>lesstif</code> sur toutes les plates-formes. La solution est d'ouvrir une nouvelle fenêtre avec File--&gt;New, puis d'ouvrir le nouveau fichier sur lequel vous voulez travailler.</p><p>Ce problème est résolu dans la version <code>nedit-5.3-6</code>, qui dépend d'<code>openmotif3</code> et non plus de <code>lesstif</code>.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b>Q9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b>A:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
-        section</a> for this common problem.</p></div>
+      <div class="question"><p><b>Q9.3: XDarwin quitte immédiatement après lancement.</b></p></div>
+      <div class="answer"><p><b>A:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b>Q9.4: When I try to start XDarwin I get the message "xinit: No such file
-        or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-      <div class="answer"><p><b>A:</b> First, make sure you are sourcing init.sh in your X startup
-        <code>~/.xinitrc</code>.</p><p>In Jaguar, sometimes all of the <code>xfree86</code> packages get
-        built, but only <code>xfree86-base</code> and
-        <code>xfree86-base-shlibs</code> are installed. Check whether you have
-        <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code>
-        installed. If not, then <code>fink install xfree86-rootless</code>
-        should do the trick.</p><p>If you do have it installed, then try <code>fink rebuild
-        xfree86-rootless</code>. If that doesn't work, verify that you have
-        <code>/usr/bin/X11R6</code> in your PATH.</p></div>
+      <div class="question"><p><b>Q9.4: Au démarrage de XDarwin, le message suivant apparaît : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
+      <div class="answer"><p><b>A:</b> Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p><p>Sous Jaguar, il arrive parfois que tous les paquets <code>xfree86</code> soient compilés, mais que seuls les paquets <code>xfree86-base</code> et <code>xfree86-base-shlibs</code> soient installés. Vérifiez que les paquets <code>xfree86-rootless</code> et <code>xfree86-rootless-shlibs</code> sont installés. Si ce n'est pas le cas, lancez <code>fink install xfree86-rootless</code>. Cela devrait résoudre le problème.</p><p>Si ces paquets sont installés, essayez <code>fink rebuild xfree86-rootless</code>. Si cela ne marche pas, vérifiez que <code>/usr/bin/X11R6</code> est dans votre PATH.</p></div>
     </a>
     
     <a name="xterm-error">
-      <div class="question"><p><b>Q9.5: xterm fails with "dyld: xterm Undefined symbols: xterm undefined
-        reference to _tgetent expected to be defined in
-        /usr/lib/libSystem.B.dylib".</b></p></div>
-      <div class="answer"><p><b>A:</b> This is caused by using a 10.1 version of XFree86 on 10.2. You must
-        upgrade to a 10.2 version.</p><p>If you are using the Fink <code>xfree86</code> packages, then you
-        can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
-        fink update-all</code>" for installation from source, <code>fink
-        selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>"
-        for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches
-        to bring you up to date at the <a href="http://mrcla.com/XonX">XonX
-        web site</a>.</p></div>
+      <div class="question"><p><b>Q9.5: Le lancement de xterm échoue avec le message suivant : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
+      <div class="answer"><p><b>A:</b> Cela se produit lorsque l'on utilise une version 10.1 de XFree86 sur 10.2. Vous devez passer à une version 10.2.</p><p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source,  <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p><p>Si vous avez installé XFree86 par d'autres moyens, vous trouverez les rustines qui vous permettront de faire la mise à jour sur le <a href="http://mrcla.com/XonX">site web de XonX</a>.</p></div>
     </a>
     <a name="libXmuu">
-      <div class="question"><p><b>Q9.6: When I try to start XFree86 I get one of the following errors:
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
-      <div class="answer"><p><b>A:</b> You are missing a file that is supposed to be installed by
-        <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it
-        using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink
-        reinstall xfree86-base-threaded-shlibs</code> if you are using the
-        threaded XFree86 packages) for source, or <code>sudo apt-get install
-        --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
+      <div class="question"><p><b>Q9.6: Au démarrage de XFree86, l'un des messages d'erreur suivants apparaît : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
+      <div class="answer"><p><b>A:</b> Un fichier censé être installé par <code>xfree86-base-(threaded)-shlibs</code> manque. Vous devez l'installer via <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> si vous utilisez les paquets XFree86 avec gestion des processus légers) pour les utilisateurs des sources, ou <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> pour les utilisateurs de binaires.</p></div>
     </a>
     <a name="apple-x-bugs">
-      <div class="question"><p><b>Q9.7: I had Fink's XFree86 installed, and I've replaced it with Apple's
-        X11, and now everything's crashing!</b></p></div>
-      <div class="answer"><p><b>A:</b> First of all, if you previously had the "threaded" versions of
-        Fink's XFree86 packages installed, you may need to rebuild the
-        application that is crashing. Some programs check for the availability
-        of threading at build time, and then from then on believe that
-        threading is available to them.</p><p>Secondly, you may have just hit an Apple X11 bug. As of the time of
-        this writing, a number of bugs are known by the Apple team and are
-        being worked on.</p><p>If you have general questions regarding Apple's X11 that are not
-        really related to Fink, you may want to check <a href="http://www.lists.apple.com/x11-users">Apple's official discussion
-        list on X11</a>. They also have also recommended that bugs in X11
-        be <a href="http://developer.apple.com/bugreporter">submitted to the
-        Apple bug reporter</a>.</p></div>
+      <div class="question"><p><b>Q9.7: Après installation de XFree86 et son remplacement par X11 d'Apple, tous les programmes se plantent.</b></p></div>
+      <div class="answer"><p><b>A:</b> Premièrement, si vous aviez installé précédemment les versions "avec processus légers" (threaded) des paquets Fink XFree86, vous devez recompiler l'application qui se plante. Certains programmes vérifie la disponibilité des processus légers lors de la compilation et à partir de là supputent que les processus légers sont toujours disponibles.</p><p>Deuxièmement, il se peut que vous soyez tombé sur un bogue d'Apple X11. Au moment où cette page a été écrite, un certain nombre de bogues étaient connus d'Apple et en en cours de résolution.</p><p>Si vous vous posez des questions sur X11 d'Apple qui ne sont pas liées à Fink, voyez la <a href="http://www.lists.apple.com/x11-users">liste de discussion officielle d'Apple sur X11</a>. Il est aussi conseillé de soumettre les bogues découverts dans X11 via le <a href="http://developer.apple.com/bugreporter">moteur de rapport de bogues</a> d'Apple.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b>Q9.8: I want the delete key in Apple's X11.app to behave like that in
-        XDarwin.</b></p></div>
-      <div class="answer"><p><b>A:</b> Some users have reported that the behavior of the
-        <code>delete</code> key is different between XDarwin and Apple X11.
-        This can be rectified by adding lines to the appropriate X startup
-        files:</p><p>
-          <b>.Xmodmap:</b>
+      <div class="question"><p><b>Q9.8: Comment avoir sous X11 d'Apple le même comportement de la touche suppr que sous XDarwin ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Certains utilisateurs ont signalé que la touche <code>suppr</code> se comporte différemment sous XDarwin et sous X11 d'Apple. On peut rectifier cela en ajoutant les lignes suivantes au fichier de démarrage approprié de X :</p><p>
+          <b>.Xmodmap :</b>
         </p><pre>keycode 59 = Delete</pre><p>
-          <b>.Xresources:</b>
+          <b>.Xresources :</b>
         </p><pre>xterm*.deleteIsDEL: true 
 xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?</pre><p>
-          <b>.xinitrc</b>
+          <b>.xinitrc :</b>
         </p><pre>xrdb -load $HOME/.Xresources 
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="gnome-two">
-      <div class="question"><p><b>Q9.9: I upgraded from GNOME 1.x to GNOME 2.x and now
-        <code>gnome-session</code> won't open a window manager.</b></p></div>
-      <div class="answer"><p><b>A:</b> While under GNOME 1.x <code>gnome-session</code> invokes the
-        <code>sawfish</code> window manager automatically, under GNOME 2.x,
-        you'll have to call a window manager in <code>~/.xinitrc</code> before
-        running <code>gnome-session</code>, e.g.:</p><pre>... 
-exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for <b>GNOME 2.4</b>.  Running <code>gnome-session</code> invokes a window manager.</p></div>
+      <div class="question"><p><b>Q9.9: Après passage de GNOME 1.x à GNOME 2.x, <code>gnome-session</code> n'ouvre plus de gestionnaire de fenêtres.</b></p></div>
+      <div class="answer"><p><b>A:</b> Alors que, sous GNOME 1.x, <code>gnome-session</code> invoque automatiquement le gestionnaire de fenêtres <code>sawfish</code>, sous GNOME 2.x, vous devez vous-même appeler un gestionnaire de fenêtres dans le fichier <code>~/.xinitrc</code> avant de lancer <code>gnome-session</code>, par exemple :</p><pre>... 
+exec metacity &amp; exec gnome-session</pre><p>Note : ceci n'est plus vrai pour <b>GNOME 2.4</b>. Le lancement de <code>gnome-session</code> invoque un gestionnaire de fenêtres.</p></div>
     </a>
     <a name="apple-x11-no-windowbar">
-      <div class="question"><p><b>Q9.10: I upgraded to Apple's X11 in Panther and now my window title bars
-        are missing.</b></p></div>
-      <div class="answer"><p><b>A:</b> You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0"
-        included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
+      <div class="question"><p><b>Q9.10: Après passage à X11 d'Apple sous Panther, les barres de titre de fenêtre n'apparaissent plus.</b></p></div>
+      <div class="answer"><p><b>A:</b> Vous n'êtes pas passé à la version "X11 1.0 - XFree86 4.3.0" incluse dans Panther. Vous devez installer X11 à partir de X11.pkg qui est situé sur le disque 3.</p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
-      <div class="question"><p><b>Q9.11: I installed Apple's X11 in Panther but Fink keeps asking to install
-        xfree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
+      <div class="question"><p><b>Q9.11: Après installation de X11 d'Apple sous Panther, Fink continue à vouloir installer xfree86.</b></p></div>
+      <div class="answer"><p><b>A:</b> Il faut envisager deux hypothèses :</p><ul>
           <li>
-            <b>You are installing from binaries:</b> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<pre>sudo apt-get update
+            <b>Vous faites une installation à partir des binaires :</b> si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0 (par exemple celle qui est fournie par l'installeur Fink-0.6.2), il suffit, en général, de mettre à jour fink, par exemple via :
+            <pre>sudo apt-get update
 sudo apt-get install fink</pre>
           </li>
           <li>
-            <b>You are installing from source: </b>You should first update
-          <code>fink</code>, e.g. via a <pre>fink selfupdate</pre>Then you need to (re)install the X11SDK, which
-          is on the Xcode CD, and is <b>not</b> installed by default. Even
-          if you install XCode, the X11SDK is <b>not</b> installed by
-          default. It has to be installed either with a custom Xcode install,
-          or by clicking on the <code>X11SDK</code> pkg in the
-          <code>Packages</code> folder.</li>
-        </ul><p>For either case, you can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the
-        <code>Package: system-xfree86 </code>and <code>Package: system-xfree86-shlibs</code> (as well as the <code>Package: system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and that the <code>Provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p><p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \ 
+            <b>Vous faites une installation à partir du source :</b> vous devez d'abord mettre à jour <code>fink</code>, par exemple :
+            <pre>fink selfupdate</pre> Ensuite vous devez réinstaller ou installer le X11SDK, situé sur le CD Xcode et qui <b>n'est pas</b> installé par défaut. Même si vous avez installé XCode, le X11SDK <b>n'est pas</b> installé par défaut. Il doit être installé soit en utilisant une installation personnalisée de Xcode, soit en cliquant sur le pkg <code>X11SDK</code> situé dans le répertoire <code>Packages</code>.</li>
+        </ul><p>Dans les deux cas, vous pouvez vérifier votre installation en lançant  :</p><pre>fink-virtual-pkgs</pre><p>et vous assurer que les sections <code>Package: system-xfree86 </code> et <code>Package: system-xfree86-shlibs</code> (ainsi que <code>Package: system-xfree86-dev</code>, si vous avez installé le SDK) sont présentes et que les lignes <code>Provides:</code> contiennent <code>x11 </code> et <code>x11-shlibs</code> (ainsi que <code>x11-dev</code>).</p><p>Si l'installation ne semble pas correcte, la meilleure façon de résoudre le problème est de supprimer toutes les versions anciennes de xfree86 ou de system-xfree86 et de réinstaller X11 d'Apple (et X11SDK, si vous envisagez d'installer des paquets à partir du source). Il se peut que vous voyez apparaître des messages, vous pouvez les ignorer :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \ 
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 from the third Panther CD (and the X11SDK from the
-        Xcode CD).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing. </p><p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p><ul>
-          <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
+/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Puis réinstallez X11 à partir du troisième CD de Panther (et le X11SDK à partir du CD de Xcode).</p><p>Note : <code>system-xfree86</code> ne nécessite plus le X11SDK pour les installations binaires si vous utilisez <code>fink-0.17.0</code> ou une version postérieure.</p><p>Si les problèmes persistent et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer  :</p><pre>fink-virtual-pkgs --debug</pre><p>pour savoir ce qui manque.</p><p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p><ul>
+          <li>Vous le trouverez ici : <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
           </li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre>
+          <li>Sauvegardez-le où vous voulez.</li>
+          <li>Lancez-le dans une fenêtre de terminal ainsi :
+          <pre>perl fink-x11-debug</pre>
           </li>
         </ul></div>
     </a>
     <a name="apple-x11-beta-wants-xfree86">
-      <div class="question"><p><b>Q9.12: I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> There are two possibilities to consider.</p><ul>
+      <div class="question"><p><b>Q9.12: Après installation de X11 d'Apple avec la version 10.2-gcc3.3 de Fink, il continue à vouloir installer xfree86.</b></p></div>
+      <div class="answer"><p><b>A:</b> Il faut envisager deux hypothèses :</p><ul>
           <li>
-            <b>You are installing from binaries:</b> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<pre>sudo apt-get update 
+            <b>Vous faites une installation à partir des binaires :</b> si vous utilisez une version du paquet <code>fink</code> antérieure à la version 0.17.0 (par exemple celle qui est fournie par l'installeur Fink-0.6.2), il vous suffit, en général, de mettre à jour fink, par exemple via :
+            <pre>sudo apt-get update 
 sudo apt-get install fink</pre>
           </li>
           <li>
-            <b>You are installing from source: </b>You should first update
-          <code>fink</code>, e.g. via a <pre>fink selfupdate</pre>Then you need to (re)install the X11SDK, which
-          you should have downloaded when you downloaded your beta copy of
-          Apple's X11.</li>
-        </ul><p>For either case, you can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the
-        <code>Package: system-xfree86</code>and <code>Package:
-        system-xfree86-shlibs</code> (as well as the <code>Package:
-        system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and the <code>provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p><p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+            <b>Vous faites une installation à partir du source :</b> vous devez d'abord mettre à jour <code>fink</code>, par exemple via :
+            <pre>fink selfupdate</pre>
+            Puis vous devez réinstaller (ou installer) le X11SDK, que vous avez téléchargé en même temps que la version bêta de X11 d'Apple.</li>
+        </ul><p>Dans les deux cas, vous pouvez vérifier votre installation en lançant :</p><pre>fink-virtual-pkgs</pre><p>et vous assurer que les sections <code>Package: system-xfree86</code> et <code>Package: system-xfree86-shlibs</code> (ainsi que <code>Package: system-xfree86-dev</code>, si vous avez installé le SDK) sont présentes et que les lignes <code>provides:</code> contiennent <code>x11 </code> et <code>x11-shlibs</code> (ainsi que <code>x11-dev</code>).</p><p>Si l'installation ne semble pas correcte, la meilleure façon de résoudre le problème est de supprimer les anciennes versions de xfree86 ou de system-xfree86 et de réinstaller X11 d'Apple (et X11SDK, si vous envisagez d'installer des paquets à partir des sources). Il se peut que des messages apparaissent, vous pouvez les ignorer :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Then, reinstall X11 (and the X11SDK, if needed).</p><p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p><p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing.</p><p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p><ul>
-          <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
+/Library/Receipts/X11User.pkg; fink selfupdate; fink index</pre><p>Puis réinstallez X11 (et X11DSK, si besoin est).</p><p>Note : <code>system-xfree86</code> ne nécessite plus X11DSK pour l'installation des binaires si vous utilisez <code>fink-0.17.0</code> ou une version postérieure.</p><p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p><pre>fink-virtual-pkgs --debug</pre><p>pour savoir ce qu'il manque.</p><p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p><ul>
+          <li>Vous le trouverez ici : <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
           </li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre>
+          <li>Sauvegardez-le où vous voulez.</li>
+          <li>Exécutez-le dans une fenêtre de terminal via :
+          <pre>perl fink-x11-debug</pre>
           </li>
         </ul></div>
     </a>
     <a name="wants-xfree86-on-upgrade">
-      <div class="question"><p><b>Q9.13: I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</b></p></div>
-      <div class="answer"><p><b>A:</b> You may need to remove one of the old place-holder packages: <code>system-xfree86</code>, <code>system-xfree86-42</code>, or <code>system-xfree86-43</code>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <code>system-xfree86</code>, you must use the command</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>to remove the out-of-date versions.
-
-You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p><p>If you are still having problems then refer to the <a href="#apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</a> or <a href="#apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</a> entries, above.</p></div>
+      <div class="question"><p><b>Q9.13: Après passage de la version 10.2 de Fink à la version 10.2-gcc3.3 ou 10.3, Fink veut installer XFree86 alors que X11 d'Apple est déjà installé.</b></p></div>
+      <div class="answer"><p><b>A:</b> Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <code>system-xfree86</code>, <code>system-xfree86-42</code> ou <code>system-xfree86-43</code>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <code>system-xfree86</code>, vous devez utiliser la commande :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant :</p><pre>fink-virtual-pkgs</pre><p>et vous assurer que les sections <code>Package: system-xfree86</code> et <code>Package: system-xfree86-shlibs</code> sont présentes et que les lignes provides: contiennent <code>x11</code> et <code>x11-shlibs</code>. Si vous avez installé X11SDK, vous devez aussi avoir <code>Package: system-xfree86-dev</code>.</p><p>Si le problème persiste, voir plus haut <a href="#apple-x11-wants-xfree86">Fink veut installer XFree86 sous 10.3</a> ou <a href="#apple-x11-beta-wants-xfree86">Fink veut installer Xfree86 sous 10.2-gcc3.3</a>.</p></div>
     </a>
   
 

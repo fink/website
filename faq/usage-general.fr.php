@@ -2,7 +2,7 @@
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/25 21:29:34';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
 
 include_once "header.inc";
 ?>
@@ -39,23 +39,12 @@ export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b>Q8.4: I can't run any of my Fink-installed applications using the
-        Applications menu in Apple X11.</b></p></div>
-      <div class="answer"><p><b>A:</b> Apple X11 doesn't keep track of the Fink environment settings,
-        which means that the Applications menu doesn't have the PATH set
-        correctly to find your Fink applications. The solution is to preface
-        the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ;</pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and
-        add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
+      <div class="question"><p><b>Q8.4: Impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</b></p></div>
+      <div class="answer"><p><b>A:</b> X11 d'Apple ne garde pas trace des variables d'environnement de Fink, ce qui signifie que le menu Applications n'a pas le PATH correct pour trouver les applications Fink. Vous pouvez résoudre ce problème en ajoutant devant le nom d'une application installée via Fink la commande suivante :</p><pre>source /sw/bin/init.sh ;</pre><p>Par exemple, si vous voulez lancer GIMP installé via Fink, saisissez :</p><pre>source /sw/bin/init.sh ; gimp</pre><p>dans le champ "Command" en regard de la ligne GIMP.</p><p>Vous pouvez aussi modifier le fichier .xinitrc, situé dans votre répertoire utilisateur, et ajoutez la commande suivante :</p><pre>source /sw/bin/init.sh</pre><p>après la première ligne.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
-        should I install?</b></p></div>
-      <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86
-        code), but have some slight differences between them. Apple's X11,
-        which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster
-        than standard XFree86-4.2.1.1, but the latter is more stable. There is
-        also a modification of 4.2.1.1 with threading support added, which is
-        required by a few packages.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the
+      <div class="question"><p><b>Q8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Sera traduit quand la version anglaise aura été mise à jour.</p><p>Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. X11 d'Apple, qui est une version modifiée de XFree86+4.2.1, et XFree86-4.3 sont plus rapides que le standard XFree86-4.2.1.1, mais cette dernière version est plus stable. Il existe aussi une version modifiée de la version 4.2.1.1 qui permet de gérer les processus légers, nécessaires pour certains paquets.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the
         only choice. Don't forget to install the X11 SDK (on the XCode disk)
         if you want to compile programs.</p><p>Under Jaguar, the most popular choices, and the Fink packages to
         make them work are:</p><ul>
@@ -78,113 +67,44 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'
         document</a>.</p></div>
     </a>
     <a name="no-display">
-      <div class="question"><p><b>Q8.6: When I try to run an application, I get a message that says "cannot
-        open display:". What do I need to do?</b></p></div>
-      <div class="answer"><p><b>A:</b> This error means that the system isn't connecting with your X
-        display. Make sure you do the following:</p><p>1. Start X (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If
-        you are using the default setup for X, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
+      <div class="question"><p><b>Q8.6: Au lancement d'une application, le message suivant apparaît : "cannot
+        open display:". Que faire ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Cette erreur signifie que le système n'est pas connecté à l'affichage X. Assurez-vous que vous avez suivi les étapes suivantes :</p><p>1. Démarrer X (X11 d'Apple, XFree86, ...).</p><p>2. Vérifier que la variable d'environnement DISPLAY est définie correctement. Si vous utilisez les paramètres par défaut pour X, vous pouvez la définir de la façon suivante :</p><pre>setenv DISPLAY :0</pre><p>si vous utilisez <code>tcsh</code>, ou</p><pre>export DISPLAY=:0</pre><p>si vous utilisez <code>bash</code>.</p></div>
     </a>
     <a name="suggest-package">
-      <div class="question"><p><b>Q8.7: I don't see my favorite program in Fink. How do I suggest a new
-        package for inclusion in Fink?</b></p></div>
-      <div class="answer"><p><b>A:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
-        Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
+      <div class="question"><p><b>Q8.7: Certains programmes ne sont pas disponibles via Fink. Comment faire en sorte qu'ils soient inclus dans Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Déposez une requête dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
+        Request Tracker</a> sur la page du projet Fink.</p><p>Notez que vous devez avoir un identifiant SourceForge pour ce faire.</p></div>
     </a>
 
     <a name="virtpackage">
-      <div class="question"><p><b>Q8.8: What are all these <code>system-*</code> "virtual
-	  packages" that are sometimes present, but that I can't
-	  seem to install or remove myself?</b></p></div>
-      <div class="answer"><p><b>A:</b> 
-	  Packages with names like <code>system-perl</code> are
-	  placeholder packages. These do not contain actual files, but
-	  merely serve as a mechanism for fink to know about programs
-	  that have been installed manually outside of fink.
-	</p><p>
-	  Starting with the 10.3 distribution, most placeholders
-	  aren't even real packages that you can install and remove.
-	  Instead, they are "Virtual Packages", package data
-	  structures generated by the fink program itself in response
-	  to a preconfigured list of manually installed programs. For
-	  each virtual package, fink checks for certain files in
-	  certain locations, and if they are found, considers that
-	  virtual package "installed".
-	</p><p>
-	  You can run the program <code>fink-virtual-pkgs</code>
-	  (part of the fink package) to get a listing of exactly what
-	  fink thinks is installed. Adding the <code>--debug</code>
-	  flag will give lots of diagnostic information about exactly
-	  what files fink is checking.
-	</p><p>
-	  Unfortunately, there is no mechanism by which you can
-	  install an arbitrary program yourself (outside of fink) and
-	  have fink recognize that program rather than trying to
-	  install its own version of it. It's just too difficult in
-	  the general case to be able to check configure and compiler
-	  flags, pathnames, etc.
-	</p><p>
-	  Here are the most important virtual packages that fink
-	  defines (as of fink-0.19.2):
-	</p><ul>
-	  <li>system-perl: [virtual package representing perl]
-	    <p>
-	      Represents <code>/usr/bin/perl</code>, which is
-	      part of the default OS X installation. This package also
-	      provides <code>system-perlXXX</code> and
-	      <code>perlXXX-core</code> according to the version X.X.X
-	      of that perl interpreter.
-	    </p>
+      <div class="question"><p><b>Q8.8: À quoi correspondent les "paquets virtuels" <code>system-*</code> qui apparaissent de-ci de-là, mais qu'il ne semble pas possible d'installer ou de supprimer soi-même ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Les paquets tel <code>system-perl</code> sont des paquets fantômes. Ils ne contiennent aucun fichier, mais font partie d'un mécanisme qui permet à Fink de savoir quels programmes ont été installés en dehors de Fink.</p><p>À partir de la distribution 10.3, la plupart de ces paquets fantômes ne sont même plus des paquets réels que vous pouvez installer et supprimer. Ce sont des "Paquets virtuels", structures de données de paquets générées par le programme fink au vu d'une liste préconfigurée de paquets installés manuellement. Pour chaque paquet virtuel, fink vérifie l'existence de certains fichiers à certains emplacements. S'ils les trouvent, il considère que le paquet virtuel correspondant est "installé".</p><p>Vous pouvez exécuter le programme <code>fink-virtual-pkgs</code> (qui fait partie du paquet fink) pour obtenir la liste des choses que fink considère comme installées. En ajoutant l'option <code>--debug</code>, vous obtiendrez la liste des tests que fink effectue.</p><p>Malheureusement, il n'existe pas de mécanisme qui permette à Fink de reconnaître un paquet arbitraire installé hors de fink, l'empêchant ainsi d'installer sa propre version dudit programme. C'est beaucoup trop difficile de tester les options de configuration et de compilation, les chemins, etc... dans le cas général.</p><p>Voici les paquets virtuels les plus importants définis par fink (à partir de la version 0.19.2) :</p><ul>
+	  <li>system-perl : [paquet virtuel correspondant à perl]
+	    <p>Représente <code>/usr/bin/perl</code>, qui fait partie de l'installation par défaut de OS X. Ce paquet fournit aussi <code>system-perlXXX</code> et <code>perlXXX-core</code> selon la version X.X.X de l'interpréteur perl.</p>
 	  </li>
-	  <li>system-javaXXX: [virtual package representing Java X.X.X]
-	    <p>
-	      Represents the Java Runtime Environment, which is part of OS
-	      X (and Apple's Software Update). See
-	      <a href="http://www.apple.com/java">Apple's Java
-	      page</a> for more information.
-	    </p>
+	  <li>system-javaXXX : [paquet virtuel correspondant à Java X.X.X]
+	    <p>Représente l'environnement d'exécution de Java (JRE), qui fait partie de OS X (et des mises à jour d'Apple). Voir la <a href="http://www.apple.com/java">page Java d'Apple</a> pour de plus amples informations.</p>
 	  </li>
-	  <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
-	    <p>
-	      Represents the Java SDK, which must be manually
-	      downloaded from <a href="http://connect.apple.com">connect.apple.com</a>
-	      (free registration required) and installed. If you have
-	      updated your Java Runtime Environment, your SDK may not
-	      be updated automatically (and may even be deleted!).
-	      Remember to check for (and download and install if
-	      necessary) the SDK after installing or upgrading your
-	      Runtime Environment. See also <a href="comp-general.php?phpLang=fr#system-java">this FAQ
-	      entry</a>.
-	    </p>
+	  <li>system-javaXXX-dev : [paquet virtuel correspondant aux headers de développement Java X.X.X]
+	    <p>Représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <a href="http://connect.apple.com">connect.apple.com</a> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE,  et téléchargez-le et installez-le si nécessaire. Voir aussi <a href="comp-general.php?phpLang=fr#system-java">cette QFP</a>.</p>
 	  </li>
-	  <li>system-java3d: [virtual package representing Java3D]</li>
-	  <li>system-javaai: [virtual package representing Java Advanced Imaging]
-	    <p>
-	      Represent Java extensions for 3D graphics and image
-	      processing, which must be manually downloaded from Apple
-	      and installed. See <a href="http://docs.info.apple.com/article.html?artnum=120289">Apple'
-	      webpage</a> for more information.
-	    </p>
+	  <li>system-java3d : [paquet virtuel représentant Java3D]</li>
+	  <li>system-javaai : [paquet virtuel représent Java Advanced Imaging]
+	    <p>Représentent les extensions Java pour les graphiques 3D et le traitement d'images, qui peuvent être téléchargées et installées à partir du site d'Apple. Voir cette <a href="http://docs.info.apple.com/article.html?artnum=120289">page web d'Apple</a> pour de plus amples informations.</p>
 	  </li>
-	  <li>system-xfree86: [placeholder for user installed x11]</li>
-	  <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
-	    <p>
-	      Represent Apple's X11/XDarwin, an optional part of OS X
-	      (X11User.pkg). These packages provide <code>x11</code>
-	      and <code>x11-shlibs</code>, respectively. See
-	      also <a href="comp-packages.php?phpLang=fr#cant-install-xfree">this FAQ entry</a>.
-	    </p>
+	  <li>system-xfree86 : [paquet fantôme pour un paquet x11 installé manuellement]</li>
+	  <li>system-xfree86-shlibs : [paquet fantôme pour les librairies partagées x11 installées manuellement]
+	    <p>Représentent X11/XDarwin d'Apple, partie optionnelle de OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">cette QFP</a>.</p>
 	  </li>
-	  <li>system-xfree86-dev [placeholder for user installed x11 development tools]
-	    <p>
-	      Represents Apple's X11/XDarwin SDK, an optional part of
-	      OS X (X11SDK.pkg). This package provides
-	      <code>x11-dev</code>. See also <a href="comp-packages.php?phpLang=fr#cant-install-xfree">this FAQ entry</a>.
+	  <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]
+	    <p>Représente X11/XDarwin SDK d'Apple, partie optionnelle de OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">cette QFP</a>.
 	    </p>
 	  </li>
 	</ul></div>
     </a>
 
   <p align="right">
-Next: <a href="usage-packages.php?phpLang=fr">9 Package Usage Problems - Specific Packages</a></p>
+Next: <a href="usage-packages.php?phpLang=fr">9 Problèmes d'utilisation spécifiques à certains paquets</a></p>
 
 <? include_once "footer.inc"; ?>

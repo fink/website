@@ -13,7 +13,7 @@ $navbox = array(
   "faq/comp-general.php?phpLang=fr", "Compilation (1)",
   "faq/comp-packages.php?phpLang=fr", "Compilation (2)",
   "faq/usage-general.php?phpLang=fr", "Utilisation (1)",
-  "faq/usage-packages.php?phpLang=fr", "Usage (2)",
+  "faq/usage-packages.php?phpLang=fr", "Utilisation (2)",
 );
 $printlink = "faq/faq.fr.html";
 
