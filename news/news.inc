@@ -8,9 +8,9 @@ installed, and subsequently
 wish to install Fink, you will need to delete the <code>/sw</code>
 directory by hand before installing.  And if you upgrade Virex with
 Fink already installed, you should immediately run
-</p><p><code>
+<b>
 fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
-</code></p><p>
+</b>
 to restore files which the Virex upgrade has deleted.
 </p>
 
