@@ -1,7 +1,7 @@
 <?
 $title = "About";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:23 $';
+$cvs_date = '$Date: 2001/10/07 20:59:30 $';
 
 include "header.inc";
 ?>
@@ -12,10 +12,10 @@ include "header.inc";
 <h2>What is Fink?</h2>
 
 <p>
-Fink is a project that wants to bring the full world of Unix Open
-Source software to <a
-href="http://www.opensource.apple.com/">Darwin</a> and <a
-href="http://www.apple.com/macosx/">Mac OS X</a>.
+Fink is a project that wants to bring the full world of Unix
+<a href="http://www.opensource.org/">Open Source</a> software to
+<a href="http://www.opensource.apple.com/">Darwin</a> and
+<a href="http://www.apple.com/macosx/">Mac OS X</a>.
 As a result, we have two main goals.
 First, to modify existing Open Source software so that it will compile
 and run on Mac OS X.
@@ -23,6 +23,8 @@ and run on Mac OS X.
 Second, to make the results available to casual users as a coherent,
 comfortable distribution that matches what Linux users are used to.
 (This process is called packaging.)
+The project offers precompiled binary packages as well as a fully
+automated build-from-source system.
 </p>
 <p>
 To achieve these goals, Fink relies on the excellent package

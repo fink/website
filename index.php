@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/03 12:07:47 $';
+$cvs_date = '$Date: 2001/10/07 20:59:30 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -13,8 +13,9 @@ include "header.inc";
 
 
 <p>
-The Fink project wants to bring the full world of Unix Open Source
-software to <a href="http://www.opensource.apple.com/">Darwin</a> and
+The Fink project wants to bring the full world of Unix
+<a href="http://www.opensource.org/">Open Source</a> software to
+<a href="http://www.opensource.apple.com/">Darwin</a> and
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
 We modify Unix software so that it compiles and runs on Mac OS X
 ("port" it) and make it available for download as a coherent
