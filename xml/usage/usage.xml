@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <article filename="usage">
-<title>Fink 0.2.4 Usage</title>
+<title>Fink 0.2.5 Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.6 2001/07/31 16:32:50 chrisp Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.7 2001/08/23 09:32:56 chrisp Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
@@ -15,7 +15,7 @@ If you use tcsh, add the following to your .cshrc:
 </p>
 <codeblock>source /sw/bin/init.csh</codeblock>
 <p>
-Editing .cshrc will only affect new shells (i.e. new Terminal
+Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
 You'll also need to run <code>rehash</code> because tcsh caches the

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <document filename="install">
-<title>Fink 0.2.4 Installation</title>
+<title>Fink 0.2.5 Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.5 2001/08/01 05:38:04 chrisp Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.6 2001/08/23 09:32:56 chrisp Exp $</cvsid>
 
 <preface>
 <p>
-These are the installation instructions for Fink version 0.2.4.
+These are the installation instructions for Fink version 0.2.5.
 This document covers both first time installation and upgrading from a
 previous version.
 Fast track instructions for the impatient are at the top.
@@ -36,7 +36,7 @@ chapter="install-first">next section</xref>.
 <section name="install"><title>First Time Installation Fast
 Track</title>
 <p>
-Start out by copying the <code>fink-0.2.4-full.tar.gz</code> file to
+Start out by copying the <code>fink-0.2.5-full.tar.gz</code> file to
 your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -44,16 +44,16 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.4-full.tar.gz</em>
-[frodo:~] testuser% <em>cd fink-0.2.4-full</em>
-[frodo:~/fink-0.2.4-full] testuser% <em>./bootstrap.sh /sw</em>
+<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.5-full.tar.gz</em>
+[frodo:~] testuser% <em>cd fink-0.2.5-full</em>
+[frodo:~/fink-0.2.5-full] testuser% <em>./bootstrap.sh /sw</em>
 
 Welcome to Fink.
 
 ...
 Choose a method: [1] <em>1</em>
 
-sudo /Users/testuser/fink-0.2.4-full/bootstrap.pl .sudo '/sw'
+sudo /Users/testuser/fink-0.2.5-full/bootstrap.pl .sudo '/sw'
 Password:<em>(your normal password here)</em>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -86,7 +86,7 @@ cp -f wget-ssl-1.7-1.patch /sw/fink/dists/stable/crypto/finkinfo/
 You should now have a working Fink installation in '/sw'. Use
 '/sw/bin/init.csh' to set up your environment to use it. Enjoy.
 
-[frodo:~/fink-0.2.4-full] testuser% <em>cd</em>
+[frodo:~/fink-0.2.5-full] testuser% <em>cd</em>
 [frodo:~] testuser% <em>pico .cshrc</em></codeblock>
 <p>
 The last command launches you into a text file editor.
@@ -127,7 +127,7 @@ documentation when your problem actually is well-documented.
 
 <section name="update"><title>Update Fast Track</title>
 <p>
-Start out by copying the <code>fink-0.2.4-full.tar.gz</code> file to
+Start out by copying the <code>fink-0.2.5-full.tar.gz</code> file to
 your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -135,9 +135,9 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.4-full.tar.gz</em>
-[frodo:~] testuser% <em>cd fink-0.2.4-full</em>
-[frodo:~/fink-0.2.4-full] testuser% <em>./inject.pl /sw</em>
+<codeblock>[frodo:~] testuser% <em>tar xzf fink-0.2.5-full.tar.gz</em>
+[frodo:~] testuser% <em>cd fink-0.2.5-full</em>
+[frodo:~/fink-0.2.5-full] testuser% <em>./inject.pl /sw</em>
 sudo ./inject.pl /sw
 Password:<em>(your normal password here)</em>
 Copying package descriptions
@@ -146,8 +146,8 @@ Done.
 
 Your Fink installation in '/sw' was updated with new fink packages.
 
-[frodo:~/fink-0.2.4-full] testuser% <em>cd pkginfo</em>
-[frodo:~/fink-0.2.4-full/pkginfo] testuser% <em>./inject.pl /sw</em>
+[frodo:~/fink-0.2.5-full] testuser% <em>cd pkginfo</em>
+[frodo:~/fink-0.2.5-full/pkginfo] testuser% <em>./inject.pl /sw</em>
 sudo ./inject.pl /sw
 Copying...
 ...
@@ -156,7 +156,7 @@ Your Fink installation in '/sw' was updated with new package description
 files. Use appropriate fink commands to update the packages, e.g. 'fink
 update-all'.
 
-[frodo:~/fink-0.2.4-full/pkginfo] testuser% <em>cd</em>
+[frodo:~/fink-0.2.5-full/pkginfo] testuser% <em>cd</em>
 [frodo:~] testuser% <em>fink update-all</em>
 ...</codeblock>
 </section>
@@ -230,16 +230,16 @@ have been warned.
 
 <section name="install"><title>Installation</title>
 <p>
-First, you need to unpack the fink-0.2.4-full.tar.gz tarball.
+First, you need to unpack the fink-0.2.5-full.tar.gz tarball.
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<codeblock>tar xzf fink-0.2.4-full.tar.gz</codeblock>
+<codeblock>tar xzf fink-0.2.5-full.tar.gz</codeblock>
 <p>
-You now have a directory named fink-0.2.4-full.
-Change to it with <code>cd fink-0.2.4-full</code>.
+You now have a directory named fink-0.2.5-full.
+Change to it with <code>cd fink-0.2.5-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
@@ -247,7 +247,7 @@ bootstrap.pl.
 It is accompanied by a small shell script, bootstrap.sh, which checks
 some basic requirements and then hands over control to the perl
 script.
-So, to start installation, go to the fink-0.2.4-full directory and run
+So, to start installation, go to the fink-0.2.5-full directory and run
 this command:
 </p>
 <codeblock>./bootstrap.sh</codeblock>
@@ -343,7 +343,7 @@ and Mac OS X document</link>.
 <preface>
 <p>
 If you already have Fink 0.2.x installed, you can update your
-installation to 0.2.4 with this package.
+installation to 0.2.5 with this package.
 </p>
 <p>
 Actually, there are two pieces that are updated independently: the
@@ -355,7 +355,7 @@ update the package manager first.
 <section name="packman"><title>Updating The Package Manager</title>
 <p>
 To update the package manager, run the inject.pl script in the
-fink-0.2.4-full directory, like this:
+fink-0.2.5-full directory, like this:
 </p>
 <codeblock>./inject.pl</codeblock>
 <p>
@@ -373,7 +373,7 @@ the new versions of the fink and base-files packages.
 
 <section name="descriptions"><title>Updating The Package Descriptions</title>
 <p>
-If you downloaded the fink-0.2.4-full tarball, the package
+If you downloaded the fink-0.2.5-full tarball, the package
 descriptions are in the subdirectory pkginfo. To install them, run the
 inject.pl script in that directory:
 </p>
@@ -385,7 +385,7 @@ manager.
 </p>
 <p>
 You can also grab the package descriptions as a separate tarball,
-packages-0.2.4. If you did that, just unpack it and run the inject.pl
+packages-0.2.5. If you did that, just unpack it and run the inject.pl
 script inside.
 </p>
 </section>
