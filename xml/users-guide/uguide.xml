@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.20 2003/04/16 01:50:17 dmrrsn Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.21 2003/04/16 01:57:24 dmrrsn Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -624,7 +624,7 @@ Using CVS has the advantage that it is updated continuously.
 </p>
 <p>(If you are having trouble upgrading a source installation, consult
 <link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
-special instructions.</link></p>
+special instructions</link>.)</p>
 <p>
 If you have a version of Fink older than 0.2.5, you must download the
 package descriptions manually.
