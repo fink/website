@@ -1,69 +1,32 @@
 <?
-$title = "Q.F.P. - Usage (1)";
+$title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 10:38:19';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages">';
+$cvs_date = 'Date: 2004/05/24 09:25:51';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
 
 include_once "header.inc";
 ?>
 
-<h1>Q.F.P. - 8 Package Usage Problems - General</h1>
+<h1>Q.F.P. - 8 Problème généraux d'utilisation de paquets</h1>
     
     
     <a name="xlocale">
-      <div class="question"><p><b>Q8.1: I'm getting lots of messages like "locale not supported by C
-        library". Is that bad?</b></p></div>
-      <div class="answer"><p><b>A:</b> It's not bad, it just means that the program will use the default
-        English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.</p></div>
+      <div class="question"><p><b>Q8.1: De nombreux messages similaires à "locale not supported by C
+        library" apparaissent. Est-ce un problème ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
     </a>
     <a name="passwd">
-      <div class="question"><p><b>Q8.2: There are suddenly a number of strange users on my system, with
-        names like "mysql", "pgsql", and "games". Where did they come
-        from?</b></p></div>
-      <div class="answer"><p><b>A:</b> You have used Fink to install a package which is dependent on
-        another package, passwd. passwd installs a number of extra users on
-        your system for security reasons -- on Unix systems, files and
-        processes belong to "owners", which allows system administrators to
-        fine-tune the permissions and security of the system. Programs such as
-        Apache and MySQL need an "owner", and it is insecure to assign these
-        daemons to root (imagine what would happen if Apache were to be
-        compromised and suddenly had write permission to all files on the
-        system). Thus, the passwd package takes the work out of setting up
-        these extra users for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane, but suppress the urge
-        to delete them:</p><ul>
-          <li>First of all, you have obviously chosen to install a package
-          which requires their use, so deleting the user doesn't make much
-          sense, does it?</li>
-          <li>There are in fact a number of extra users already installed on
-          Mac OS X that you may not have known about: www, daemon, nobody, are
-          just a few of them. The presence of these extra users is a standard
-          Unix convention for running certain services; the passwd package
-          simply adds a couple of extra that Apple did not provide. You can
-          see these Apple-installed users in NetInfo Manager.app, or by
-          running <code>niutil -list . /users</code>
+      <div class="question"><p><b>Q8.2: Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql", and "games". D'où proviennent-ils ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. passwd installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "possesseurs", ce qui permet aux administrateurs système de moduler les permissions et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "possesseur", et il n'est pas raisonnable que le super-utilisateur soit le possesseur de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup permission d'écrire dans tous les fichiers du système. Donc, le paquet passwd se charge de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p><p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), mais réfléchissez bien avant de les supprimer :</p><ul>
+          <li>Tout d'abord, vous avez manifestement choisi d'installer un paquet qui nécessite leur utilisation ; donc leur suppression n'a pas grand sens dans ce contexte.</li>
+          <li>En fait, il y a déjà un certain nombre d'utilisateurs supplémentaires installés par Mac OS X, dont vous ignorez peut-être l'existence : www, daemon, nobody entre autres. La présence de ces utilisateurs supplémentaires correspond à une convention standard d'Unix nécessaire à l'utilisation de certains services ; le paquet passwd ne fait qu'en ajouter quelques autres qu'Apple ne fournit pas. Vous pouvez voir les utilisateurs installés par Apple via le Gestionnaire NetInfo ou en lançant <code>niutil -list . /users</code>
           </li>
-          <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane will
-          assign all of their files to a random administrator account, and
-          there have been reports of havoc played with the administrator
-          account's permissions. This is a bug with System Preferences, and
-          has been submitted to Apple. A safer way to remove these users from
-          your system is to do so from within NetInfo Manager.app or use the
-          command line tool <code>niutil</code> in Terminal. Read the man page
-          for <code>niutil</code> for more information about NetInfo.</li>
-        </ul><p>Fink <b>does</b> request permission to install these additional
-        users on your system during the installation of the passwd package, so
-        this should not have come as a surprise.</p></div>
+          <li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les permissions du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la man page de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
+        </ul><p>Fink vous <b>demande</b> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd package, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p></div>
     </a>
     <a name="compile-myself">
-      <div class="question"><p><b>Q8.3: How do I compile something myself using Fink-installed
-        software?</b></p></div>
-      <div class="answer"><p><b>A:</b> When compiling something yourself outside of Fink, the compiler and
-        linker need to be told where to find the Fink-installed libraries and
-        headers. For a package that uses standard configure/make process, you
-        need to set some environment variables:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+      <div class="question"><p><b>Q8.3: Comment compiler soi-même en utilisant des logiciels installés par Fink ?</b></p></div>
+      <div class="answer"><p><b>A:</b> Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les librairies et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
@@ -73,16 +36,7 @@ export LDFLAGS=-L/sw/lib
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to add these to your startup files (e.g.
-        <code>.cshrc</code> | <code>.profile</code>) so they
-        are set automatically. If a package does not use these variables, you
-        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
-        libraries) to the compile lines yourself. Some packages may use
-        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
-        configure options. "./configure --help" will usually give you a list
-        of the extra configure options.</p><p>In addition, you may need to install the development headers (e.g.
-        <b>foo-1.0-1-dev</b>) for the library packages that you are using,
-        if they aren't already installed.</p></div>
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
       <div class="question"><p><b>Q8.4: I can't run any of my Fink-installed applications using the

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/05/04 01:23:53';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/05/24 09:25:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -31,7 +31,7 @@ include_once "header.inc";
         compromised and suddenly had write permission to all files on the
         system). Thus, the passwd package takes the work out of setting up
         these extra users for Fink packages that require this.</p><p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane, but suppress the urge
+        users in your "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x), but suppress the urge
         to delete them:</p><ul>
           <li>First of all, you have obviously chosen to install a package
           which requires their use, so deleting the user doesn't make much
@@ -45,7 +45,7 @@ include_once "header.inc";
           running <code>niutil -list . /users</code>
           </li>
           <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane will
+          you go about it. Using the "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will
           assign all of their files to a random administrator account, and
           there have been reports of havoc played with the administrator
           account's permissions. This is a bug with System Preferences, and

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/05/23 08:27:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 include_once "header.inc";

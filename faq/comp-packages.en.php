@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/05/04 01:23:53';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/05/24 09:25:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 include_once "header.inc";
@@ -36,19 +36,16 @@ endif</pre></div>
         </p><p>1. Remove <code>system-xfree86</code>. If you don't have any
         packages that depend on X11, this is straightforward. Frequently,
         however, many packages that depend on X11 are installed. Rather than
-        uninstalling all of them, you can use</p><p>
-          <code>sudo dpkg --remove --force-depends system-xfree86</code>
-        </p><p>to remove it, leaving everything in place. If you don't have
-        <code>system-xfree86</code> installed then proceed to step 3.</p><p>2. Manually remove all of XFree86. This can be done with</p><p>
-          <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
-        /etc/X11</code>
-        </p><p>If you are switching from Apple X11, remove the X11 application,
-        too.</p><p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code>
+        uninstalling all of them, you can use</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>to remove it, leaving everything in place. If you don't have
+        <code>system-xfree86</code> installed then proceed to step 3.</p><p>2. Manually remove all of XFree86. This can be done with</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
+        /etc/X11</pre><p>If you are switching from Apple X11, remove the X11 application,
+        too.</p><p>3. To get XFree86-4.2.1, install Fink's <code>xfree86-base</code>
         and <code>xfree86-rootless</code> packages by the usual means:
         "<code>fink install</code>" for source users, "<code>apt-get
-        install</code>" or <code>dselect</code> for binaries.</p><p>-or-</p><p>3a. To get XFree86-4.3.x, install Fink's <code>xfree86</code>
-        package, with "fink install xfree86"--this version isn't in the binary
-        distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
+        install</code>" or <code>dselect</code> for binaries.</p><p>-or-</p><p>3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code>
+        package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004 isn't in the binary
+        distro yet, and is currently only in the unstable tree [see <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">how to install unstable package</a>].
+FAQ 3.9].</p></div>
     </a>
     <a name="change-thread-nothread">
       <div class="question"><p><b>Q7.3: How do I change from the non-threaded version of Fink's XFree86

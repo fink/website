@@ -1,8 +1,8 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/08 10:38:19';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
+$cvs_date = 'Date: 2004/05/24 09:25:51';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 include_once "header.inc";
 ?>
@@ -166,6 +166,6 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="answer"><p><b>A:</b> Vous devez vérifier que vous avez la variante du paquet xml-parser-pm qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (vous pouvez aussi avoir le paquet fantôme <code>xml-parser-pm</code>), car vous avez <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>.</p></div>
     </a>
  <p align="right">
-Next: <a href="comp-packages.php?phpLang=fr">7 Compile Problems - Specific Packages</a></p>
+Next: <a href="comp-packages.php?phpLang=fr">7 Problèmes de compilation de certains paquets</a></p>
 
 <? include_once "footer.inc"; ?>

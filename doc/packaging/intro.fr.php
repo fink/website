@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Intro";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/05/23 08:27:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="format.php?phpLang=fr" title="Descriptions de paquets"><link rel="prev" href="index.php?phpLang=fr" title="Paquets Contents">';
 
 include_once "header.inc";

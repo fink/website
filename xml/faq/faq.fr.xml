@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.23 2004/05/24 09:25:51 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.24 2004/05/25 21:29:34 michga Exp $</cvsid>
 <preface>
 <p><em>En cours de traduction</em></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
@@ -997,20 +997,15 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     </faqentry>
  </chapter>
   <chapter filename="comp-packages">
-    <title>Compile Problems - Specific Packages</title>
-    <shorttitle>Compiling (2)</shorttitle>
+    <title>Problèmes de compilation de certains paquets</title>
+    <shorttitle>Compilation (2)</shorttitle>
     <faqentry name="libgtop">
       <question>
-        <p>A package fails to build with errors involving
-        <code>sed</code>.</p>
+        <p>La compilation d'un paquet échoue avec des messages d'erreur concernant <code>sed</code>.</p>
       </question>
       <answer>
-        <p>This can happen if your login script (e.g. <code>~/.cshrc</code>)
-        does something that writes to the terminal, e.g "<code>echo
-        Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
-        easy solution is to comment out the offending lines.</p>
-        <p>If you want to keep the echo, then you can do something like the
-        following:</p>
+        <p>Ceci peut se produire si votre script de connexion (par exemple <code>~/.cshrc</code>) lance une commande qui écrit dans le terminal, exemple : "<code>echo Hello</code>" ou <code>xttitle</code>. Pour résoudre le problème, la solution la plus simple est de mettre les lignes qui causent problème en commentaires.</p>
+        <p>Si vous voulez conserver l'écho, vous pouvez le faire ainsi :</p>
         <codeblock>if ( $?prompt) then 
 	echo Hello 
 endif</codeblock>
@@ -1018,85 +1013,53 @@ endif</codeblock>
     </faqentry>
     <faqentry name="cant-install-xfree">
       <question>
-        <p>I want to switch to Fink's XFree86 packages, but I can't install
-        <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
-        with <code>system-xfree86</code>.</p>
+        <p>Lors d'une tentative de passage aux paquets XFree86 de Fink, il est impossible d'installer <code>xfree86-base</code> ou <code>xfree86</code>, car ces paquets entrent en conflit avec <code>system-xfree86</code>.</p>
       </question>
       <answer>
-        <p>All flavors of X11, unfortunately, really needs to be installed in
-        /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and
-        <code>xfree86-rootless</code> packages install there, too. However,
-        since Fink won't remove any files that aren't in its database, it
-        won't automatically replace a non-Fink installation of X11.</p>
+        <p>Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit /usr/X11R6. C'est pourquoi, les paquets de Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p>
         <p></p>
-        <p>Here's how to proceed:</p>
+        <p>Voici comment procéder :</p>
         <p></p>
         <p>
-          <em>Note: 10.2.x users with up-to-date versions of Fink (&gt;=
-        0.16.2) and 10.3.x users should skip step 1 below (it won't work
-        anyway).</em>
+          <em>Note : Les utilisateurs de 10.2.x ayant une version de Fink à jour  (&gt;=0.16.2) et les utilisateurs de 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</em>
         </p>
-        <p>1. Remove <code>system-xfree86</code>. If you don't have any
-        packages that depend on X11, this is straightforward. Frequently,
-        however, many packages that depend on X11 are installed. Rather than
-        uninstalling all of them, you can use</p>
-        <p>
-          <code>sudo dpkg --remove --force-depends system-xfree86</code>
-        </p>
-        <p>to remove it, leaving everything in place. If you don't have
-        <code>system-xfree86</code> installed then proceed to step 3.</p>
-        <p>2. Manually remove all of XFree86. This can be done with</p>
-        <p>
-          <code>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
-        /etc/X11</code>
-        </p>
-        <p>If you are switching from Apple X11, remove the X11 application,
-        too.</p>
-        <p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code>
-        and <code>xfree86-rootless</code> packages by the usual means:
-        "<code>fink install</code>" for source users, "<code>apt-get
-        install</code>" or <code>dselect</code> for binaries.</p>
-        <p>-or-</p>
-        <p>3a. To get XFree86-4.3.x, install Fink's <code>xfree86</code>
-        package, with "fink install xfree86"--this version isn't in the binary
-        distro yet, and is currently only in the unstable tree [FAQ 3.9].</p>
+        <p>1. Supprimez <code>system-xfree86</code>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser :</p>
+          <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
+        <p>pour supprimer system-xfree86, ce qui laisse tout le reste en place. Si <code>system-xfree86</code> n'est pas installé, passez à l'étape 3.</p>
+        <p>2. Supprimez XFree86 avec :</p>
+          <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6
+        /etc/X11</codeblock>
+        <p>Si vous aviez installé Apple X11 auparavant, supprimez également l'application X11.</p>
+        <p>3. Pour installer XFree86-4.2.1, installez les paquets Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> comme vous le faites d'habitude : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p>
+        <p>- ou -</p>
+        <p>3a. Pour installer XFree86-4.3.x ou une version postérieure, installez le paquet Fink <code>xfree86</code> via "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable [ voir <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">comment installer un paquet instable</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread">
       <question>
-        <p>How do I change from the non-threaded version of Fink's XFree86
-        packages to the threaded version (or vice-versa)?</p>
+        <p>Comment passer de la version sans processus légers à la version avec processus légers (ou vice-versa) ?</p>
       </question>
       <answer>
-        <p>If you are running the Fink version of XFree86 and you want to
-        switch between the threaded and non-threaded versions of Fink, you
-        need to manually remove the old version. This is done at the
-        command-line with the commands:</p>
+        <p>Si vous avez installé la version Fink de XFree86 et que vous vouliez passer de la version sans processus légers de Fink à celle avec processus légers de Fink, vous devez supprimer l'ancienne version manuellement. Vous pouvez le faire via la ligne de commande comme ceci :</p>
         <codeblock>sudo dpkg -r --force-depends xfree86-base 
 sudo dpkg -r --force-depends xfree86-shlibs 
 sudo dpkg -r --force-depends xfree86-rootless 
 sudo dpkg -r --force-depends xfree86-rootless-shlibs</codeblock>
-        <p>or to delete the threaded versions:</p>
+        <p>ou pour supprimer la version avec processus légers :</p>
         <codeblock>sudo dpkg -r --force-depends xfree86-base-threaded 
 sudo dpkg -r --force-depends xfree86-shlibs-threaded 
 sudo dpkg -r --force-depends xfree86-rootless-threaded 
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
-        <p>FinkCommander also has a way to remove packages. In the source
-        window, select a package, and then in the <code>Source Menu</code> use
-        "<code>Force Remove</code>."</p>
-        <p>If you are using system-xfree86, see the previous question for
-        removing it.</p>
-        <p>Install the version of xfree86 you want:</p>
+        <p>FinkCommander peut aussi supprimer des paquets. Dans la fenêtre "source", sélectionnez un paquet et utilisez "<code>Force Remove</code>" dans le menu <code>Source</code>.</p>
+        <p>Si vous avez installé system-xfree86, voir la précédente question pour savoir comment le supprimer.</p>
+        <p>Installez la version désirée de xfree86 :</p>
         <p>
-          <code>xfree86-base</code> and <code>xfree86-rootless</code>
+          <code>xfree86-base</code> et <code>xfree86-rootless</code>
         </p>
         <p>
-          <code>xfree86-base-threaded</code> and
-        <code>xfree86-rootless-threaded</code>
+          <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code>
         </p>
-        <p>by the usual means: "<code>fink install</code>" for source users,
-        "<code>apt-get install</code>" or <code>dselect</code> for
-        binaries.</p>
+        <p>par les méthodes habituelles : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p>
       </answer>
     </faqentry>
     <!--obsolete><faqentry name="apple-x11" >
@@ -1123,12 +1086,11 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </faqentry><-->
     <faqentry name="cctools">
       <question>
-        <p>"When I try to install KDE, I get the following message: 'Can't
+        <p>Lors de l'installation de KDE, le message suivant apparaît : 'Can't
         resolve dependency "cctools (&gt;= 446-1)"'</p>
       </question>
       <answer>
-        <p>This somewhat cryptic message means you need to install the
-        December 2002 Developer Tools.</p>
+        <p>Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p>
       </answer>
     </faqentry>
     <!--obsolete><faqentry name="system-xfree86-upgrade" >
@@ -1142,77 +1104,40 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </faqentry><-->
   </chapter>
   <chapter filename="usage-general">
-    <title>Package Usage Problems - General</title>
-    <shorttitle>Usage (1)</shorttitle>
+    <title>Problème généraux d'utilisation de paquets</title>
+    <shorttitle>Utilisation (1)</shorttitle>
     <faqentry name="xlocale">
       <question>
-        <p>I'm getting lots of messages like "locale not supported by C
-        library". Is that bad?</p>
+        <p>De nombreux messages similaires à "locale not supported by C
+        library" apparaissent. Est-ce un problème ?</p>
       </question>
       <answer>
-        <p>It's not bad, it just means that the program will use the default
-        English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</link>.</p>
+        <p>Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">plus amples informations</link> à ce sujet.</p>
       </answer>
     </faqentry>
     <faqentry name="passwd">
       <question>
-        <p>There are suddenly a number of strange users on my system, with
-        names like "mysql", "pgsql", and "games". Where did they come
-        from?</p>
+        <p>Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql", and "games". D'où proviennent-ils ?</p>
       </question>
       <answer>
-        <p>You have used Fink to install a package which is dependent on
-        another package, passwd. passwd installs a number of extra users on
-        your system for security reasons -- on Unix systems, files and
-        processes belong to "owners", which allows system administrators to
-        fine-tune the permissions and security of the system. Programs such as
-        Apache and MySQL need an "owner", and it is insecure to assign these
-        daemons to root (imagine what would happen if Apache were to be
-        compromised and suddenly had write permission to all files on the
-        system). Thus, the passwd package takes the work out of setting up
-        these extra users for Fink packages that require this.</p>
-        <p>It can be alarming to suddenly discover a number of unexpected
-        users in your "System Preferences: Users" pane, but suppress the urge
-        to delete them:</p>
+        <p>Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. passwd installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "possesseurs", ce qui permet aux administrateurs système de moduler les permissions et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "possesseur", et il n'est pas raisonnable que le super-utilisateur soit le possesseur de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup permission d'écrire dans tous les fichiers du système. Donc, le paquet passwd se charge de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p>
+        <p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), mais réfléchissez bien avant de les supprimer :</p>
         <ul>
-          <li>First of all, you have obviously chosen to install a package
-          which requires their use, so deleting the user doesn't make much
-          sense, does it?</li>
-          <li>There are in fact a number of extra users already installed on
-          Mac OS X that you may not have known about: www, daemon, nobody, are
-          just a few of them. The presence of these extra users is a standard
-          Unix convention for running certain services; the passwd package
-          simply adds a couple of extra that Apple did not provide. You can
-          see these Apple-installed users in NetInfo Manager.app, or by
-          running <code>niutil -list . /users</code>
+          <li>Tout d'abord, vous avez manifestement choisi d'installer un paquet qui nécessite leur utilisation ; donc leur suppression n'a pas grand sens dans ce contexte.</li>
+          <li>En fait, il y a déjà un certain nombre d'utilisateurs supplémentaires installés par Mac OS X, dont vous ignorez peut-être l'existence : www, daemon, nobody entre autres. La présence de ces utilisateurs supplémentaires correspond à une convention standard d'Unix nécessaire à l'utilisation de certains services ; le paquet passwd ne fait qu'en ajouter quelques autres qu'Apple ne fournit pas. Vous pouvez voir les utilisateurs installés par Apple via le Gestionnaire NetInfo ou en lançant <code>niutil -list . /users</code>
           </li>
-          <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane will
-          assign all of their files to a random administrator account, and
-          there have been reports of havoc played with the administrator
-          account's permissions. This is a bug with System Preferences, and
-          has been submitted to Apple. A safer way to remove these users from
-          your system is to do so from within NetInfo Manager.app or use the
-          command line tool <code>niutil</code> in Terminal. Read the man page
-          for <code>niutil</code> for more information about NetInfo.</li>
+          <li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les permissions du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la man page de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
         </ul>
-        <p>Fink <em>does</em> request permission to install these additional
-        users on your system during the installation of the passwd package, so
-        this should not have come as a surprise.</p>
+        <p>Fink vous <em>demande</em> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd package, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p>
       </answer>
     </faqentry>
     <faqentry name="compile-myself">
       <question>
-        <p>How do I compile something myself using Fink-installed
-        software?</p>
+        <p>Comment compiler soi-même en utilisant des logiciels installés par Fink ?</p>
       </question>
       <answer>
         <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
-        <p>When compiling something yourself outside of Fink, the compiler and
-        linker need to be told where to find the Fink-installed libraries and
-        headers. For a package that uses standard configure/make process, you
-        need to set some environment variables:</p>
+        <p>Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les librairies et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p>
         <p>-tcsh-</p>
         <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -1227,17 +1152,8 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
-        <p>It is often easiest just to add these to your startup files (e.g.
-        <filename>.cshrc</filename> | <filename>.profile</filename>) so they
-        are set automatically. If a package does not use these variables, you
-        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
-        libraries) to the compile lines yourself. Some packages may use
-        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
-        configure options. "./configure --help" will usually give you a list
-        of the extra configure options.</p>
-        <p>In addition, you may need to install the development headers (e.g.
-        <em>foo-1.0-1-dev</em>) for the library packages that you are using,
-        if they aren't already installed.</p>
+        <p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
+        <p>De plus, vous devrez peut-être installer les headers de développement (par exemple <em>foo-1.0-1-dev</em>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-applications-menu">

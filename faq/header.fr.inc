@@ -11,8 +11,8 @@ $navbox = array(
   "faq/upgrade-fink.php?phpLang=fr", "Mise à jour de Fink",
   "faq/usage-fink.php?phpLang=fr", "Utilisation de Fink",
   "faq/comp-general.php?phpLang=fr", "Compilation (1)",
-  "faq/comp-packages.php?phpLang=fr", "Compiling (2)",
-  "faq/usage-general.php?phpLang=fr", "Usage (1)",
+  "faq/comp-packages.php?phpLang=fr", "Compilation (2)",
+  "faq/usage-general.php?phpLang=fr", "Utilisation (1)",
   "faq/usage-packages.php?phpLang=fr", "Usage (2)",
 );
 $printlink = "faq/faq.fr.html";

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/05/04 01:23:53';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/05/24 09:25:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 include_once "header.inc";
