@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.zh.inc,v 1.6 2005/01/17 01:16:38 babayoshihiko Exp $ */
+/* $Id: constants.zh.inc,v 1.7 2005/01/17 01:21:20 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -15,7 +15,10 @@
 // |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
 
-/* The Sections.  Used in Menu Navigation Bar */define (FINK_LC_ALL, 'zh_CN');define (FINK_SF_ENCODING, 'EUC');define (FINK_DATE_FORMAT, '%Y年%m月%e日');
+/* The Sections.  Used in Menu Navigation Bar */
+define (FINK_LC_ALL, 'zh_CN');
+define (FINK_SF_ENCODING, 'UTF-8');
+define (FINK_DATE_FORMAT, '%Y年%m月%e日');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, '首页');
