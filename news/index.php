@@ -1,18 +1,19 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2003/02/08 03:09:02';
+$cvs_date = 'Date: 2003/02/08 03:27:22';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-02-07 DO NOT INSTALL VIREX"><span class="news_date">2003-02-07: </span><span class="news_headline">DO NOT INSTALL VIREX</span></a><?php gray_line(); ?>
+<a name="2003-02-07 DO NOT INSTALL VIREX 7.2"><span class="news_date">2003-02-07: </span><span class="news_headline">DO NOT INSTALL VIREX 7.2</span></a><?php gray_line(); ?>
         <p>
         The Virex 7.2 package, currently being distributed free to all .Mac 
-members, has a serious conflict with Fink.  FINK USERS SHOULD NOT INSTALL
-THIS SOFTWARE UNDER ANY CIRCUMSTANCES.  Installing it after Fink is installed
+members, has a serious conflict with Fink.  <b>Fink users should not install 
+Virex 7.2 under any circumstances.</b>
+  Installing it after Fink is installed
 will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 </p><p>

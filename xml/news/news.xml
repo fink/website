@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.40 2003/02/08 03:27:22 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.41 2003/02/08 04:14:35 dmrrsn Exp $</cvsid>
 <newsitem>
         <date>2003-02-07</date>
-        <headline>DO NOT INSTALL VIREX</headline>
+        <headline>DO NOT INSTALL VIREX 7.2</headline>
         <body>
         <p>
         The Virex 7.2 package, currently being distributed free to all .Mac 
-members, has a serious conflict with Fink.  FINK USERS SHOULD NOT INSTALL
-THIS SOFTWARE UNDER ANY CIRCUMSTANCES.  Installing it after Fink is installed
+members, has a serious conflict with Fink.  <em>Fink users should not install 
+Virex 7.2 under any circumstances.</em>
+  Installing it after Fink is installed
 will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 </p><p>

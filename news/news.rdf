@@ -4,18 +4,19 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 07 Feb 2003 22:12:38 EST</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2003 23:09:48 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>DO NOT INSTALL VIREX</title>
-    <link>http://fink.sf.net/news/#2003-02-07%20DO%20NOT%20INSTALL%20VIREX</link>
+    <title>DO NOT INSTALL VIREX 7.2</title>
+    <link>http://fink.sf.net/news/#2003-02-07%20DO%20NOT%20INSTALL%20VIREX%207.2</link>
     <dc:date>2003-02-07</dc:date>
     <description>
         
         The Virex 7.2 package, currently being distributed free to all .Mac 
-members, has a serious conflict with Fink.  FINK USERS SHOULD NOT INSTALL
-THIS SOFTWARE UNDER ANY CIRCUMSTANCES.  Installing it after Fink is installed
+members, has a serious conflict with Fink.  Fink users should not install 
+Virex 7.2 under any circumstances.
+  Installing it after Fink is installed
 will damage your Fink installation; installing it prior to Fink will make
 it impossible to install Fink without damaging Virex.
 
