@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.81 2004/09/20 06:45:20 dmalloc Exp $ */
+/* $Id: header.inc,v 1.82 2004/10/07 21:07:06 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -201,9 +201,15 @@ function gray_line ()
 	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
 }
 
+// $linkroot is used for links to other parts of the website; $root is
+// used for files that are loaded locally.  (This enables us to move
+// portions of the website to other servers without losing the navigation.)
+
+if (!$linkroot) $linkroot = $root;
+
 // Used in Sections
 function insert_sub ($navbox, $active_page) {
-	global $root;
+	global $root, $linkroot;
 	
 	// Determine the active page
 	$active_page = -1;
@@ -225,8 +231,10 @@ function insert_sub ($navbox, $active_page) {
 		if ('Contents' == $navbox[$i + 1]) $navbox[$i + 1] = FINK_CONTENTS;
 		if ($i != $active_page) {
 			// For testing locally at my machine
+			// (also: allows some navbox items to link to other
+			// websites)
 			if (substr($navbox[$i ], 0, 7) != 'http://') {
-				$_link = $root . $navbox[$i ];
+				$_link = $linkroot . $navbox[$i ];
 			} else {
 				$_link = $navbox[$i ];
 			}
@@ -267,7 +275,7 @@ function insert_sub ($navbox, $active_page) {
 <table width="100%" cellspacing="0" class="header">
 <tr valign="bottom">
 	<td align="left" rowspan="2" class="header">
-	<? if (!$is_home) echo '<a href="' . $root . 'index.php">'; ?>
+	<? if (!$is_home) echo '<a href="' . $linkroot . 'index.php">'; ?>
 	<img src="<? echo $root ?>img/mlogo.png"  border="0" alt="Fink">
 	<? if (!$is_home) echo '</a>'; ?>
 	</td>
@@ -320,18 +328,18 @@ function insert_sub ($navbox, $active_page) {
 		if ($section == $key && 1 == $nonav) {
 			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
 		} elseif ($section == $key) {
-			echo '<a href="' . $root . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
+			echo '<a href="' . $linkroot . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
 			insert_sub ($navbox, $active_page);
 			echo "\t\t";
 		} else {
-			echo '<a href="' . $root . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
+			echo '<a href="' . $linkroot . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
 		}
 	} 
 ?>
 <? /* link to print version */ ?>
 <? if ($printlink) { ?>
 		<li class="menu_item">
-			<a href="<? echo $root . $printlink ?>" style="border-width: 0px ; ">
+			<a href="<? echo $linkroot . $printlink ?>" style="border-width: 0px ; ">
 				<img src="<? echo $root; ?>img/printer.png" 
 					alt="<? echo FINK_PRINTER; ?>" 
 					width="18" height="16" 
