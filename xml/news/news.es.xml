@@ -2,7 +2,7 @@
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="es" fsroot="../..">
 <news>
-<cvsid>$Id: news.es.xml,v 1.3 2004/09/22 02:43:46 michga Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.4 2004/09/22 07:54:02 michga Exp $</cvsid>
 
 <newsitem>
 <date>2004-09-20</date>
@@ -17,11 +17,11 @@ Esta nueve versión incorpora varios arreglos al manejador de paquetes e integra
 </p>
 
 <p>
-Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
-Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="lists/index.php">allí</link>.
+Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="http://fink.sourceforge.net/lists/index.php">allí</link>.
 </p>
 
 <p>

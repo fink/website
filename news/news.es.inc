@@ -6,10 +6,10 @@ La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponib
 Esta nueve versión incorpora varios arreglos al manejador de paquetes e integra numerosos binarios previamiente inasequibles resultando en mas de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 </p>
 <p>
-Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+Para hacer una primera instalación de Fink, hay que seguir los consejos de <link url="http://fink.sourceforge.net/download/index.php">esta página</link>. Para actualizar una instalación de Fink con lo último, usa tu instalación de Fink. En <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">esta página</link> encontrara la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 <p>
-Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="lists/index.php">allí</link>.
+Si tienes algunas preguntas o problemas, usa las listas de correo de Fink. Informaciones sobre ellas se encuentran <link url="http://fink.sourceforge.net/lists/index.php">allí</link>.
 </p>
 <p>
 Asegúrate de escoger el <em>instalador adecuado</em> para tu plataforma. Fink 0.6.3 solo se instalará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se instalará en Mac OS X 10.3.* </p>

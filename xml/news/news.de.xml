@@ -1,76 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" fsroot="../.." lang="de">
-<cvsid>$Id: news.de.xml,v 1.3 2004/09/22 02:43:46 michga Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.4 2004/09/22 07:55:57 michga Exp $</cvsid>
 
 <newsitem>
 <date>2004-09-20</date>
-<headline>Fink 0.7.1 released.</headline>
+<headline>Fink 0.7.1 veröffentlich.</headline>
 <body>
 <p>
-The latest Fink release, version 0.7.1 (for 10.3),
-is now available for both source and binary users. This release is meant for Panther (10.3)  based
-Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
+Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
 </p>
-
 <p>
-This new release incorporates various fixes to the package manager, 
-and many previously
-unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
-binaries for KDE 3.1.4 and GNOME 2.4.
+Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
-
 <p>
-To complete a new Fink installation you should follow the instructions posted
-<link url="download/index.php">here</link>.
-You may upgrade your existing Fink to the latest Fink using your current installation.
-
-A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
-
-<link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">page.</link>
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable%26cmp=0%26tree2=0.7.0-stable%26splitoffs=on%26sort=name">hier</link> nachgeschaut werden.
 </p>
-
 <p>
-If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
-<link url="lists/index.php">here</link>.
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <link url="lists/index.php?phpLang=de">Hier</link> können Sie mehr über sie erfahren.
 </p>
-
 <p>
-Please make sure you pick the <em>appropriate installer</em> for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2,* while Fink 0.7.1 will only install on Mac OS X 10.3.*
+Bitte stellen Sie sicher, dass Sie den <em>passenden Installer</em> für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
 </p>
-
         <p>
-The Fink Team would like to thank its many contributors, frequent helpers
-and developers for making this release happen.
-We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
-Without their constant support and valuable pointers, Fink would not be where we are now.
+Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
 </p>
-
 </body>
 </newsitem>
 
-
-
-
 <newsitem>
 	<date>2004-08-23</date>
-	<headline>Problems with XCode 1.5</headline>
+	<headline>Probleme mit XCode 1.5</headline>
 	<body>
 	<p>
-	In the past few days, there have been reports that some fink packages 
-	do not compile correctly using XCode 1.5.  If you have not already
-	upgraded to XCode 1.5, we suggest that you wait until this issue
-	is resolved before doing so.
-	</p><p>
-	If you are having problems with a package which compiled under
-	XCode 1.2 but does not compile correctly under XCode 1.5, 
-	please report the package to
-	the fink-devel mailing list.  (The usual symptom is: some symbols
-	are  missing after compiling with g++.)  
-	Packages already known to have this problem include
-	octave, singular-factory, singular-libfac, and possibly sdl.
-	</p>
+In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit XCode 1.5 kompilieren. Falls Sie noch nicht auf XCode 1.5 aktualisiert haben, empfehlen wir das Sie damit noch warten, bis die Probleme behoben sind.
+</p>
+<p>
+Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
+teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
+</p>
 	</body>
 </newsitem>
 <newsitem>

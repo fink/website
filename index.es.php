@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/09/22 02:45:14 $';
+$cvs_date = '$Date: 2004/09/22 07:59:44 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -25,7 +25,6 @@ Usted puede escoger entre la descarga de un binario precompilado y todo
 desde código fuente. 
 <a href="about.php">Más información...</a>
 </p>
-
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
