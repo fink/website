@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/10/20 20:18:11';
+$cvs_date = 'Date: 2002/10/20 20:23:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -71,7 +71,7 @@ wrong?</a></li>
 more!</a></li>
 <li><a href="usage-fink.php#selfupdate-tar-fails">3.12 Why doesn't 'fink selfupdate'
 work?</a></li>
-<li><a href="usage-fink.php#kernel-panics">3.13 When i use fink, my whole machine 
+<li><a href="usage-fink.php#kernel-panics">3.13 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
@@ -121,7 +121,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.45 2002/10/20 20:18:11 dmrrsn Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.46 2002/10/20 20:23:19 dmrrsn Exp $</i></p>
 
 
 <?

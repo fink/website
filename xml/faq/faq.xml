@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.45 2002/10/20 20:18:11 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.46 2002/10/20 20:23:19 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -470,7 +470,7 @@ edit line 479 of <filename>/sw/lib/perl5/Fink/SelfUpdate.pm</filename> and chang
 <p>It is always a good idea to make a backup of any file before modifying it.</p>
 </answer></faqentry>
 
-<faqentry name="kernel-panics"><question><p>When i use fink, my whole machine 
+<faqentry name="kernel-panics"><question><p>When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</p></question>
 <answer>
 <p> A number of recent reports on the 

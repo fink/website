@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2002/10/20 20:18:11';
+$cvs_date = 'Date: 2002/10/20 20:23:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -207,7 +207,7 @@ cd pkginfo
 </ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
 edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f -&quot;;</pre><p>to</p><pre>$unpack_cmd = &quot;tar -xz${verbosity}f $pkgtarball&quot;;</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
 
-<a name="kernel-panics"><div class="question"><p><b>Q3.13: When i use fink, my whole machine 
+<a name="kernel-panics"><div class="question"><p><b>Q3.13: When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</b></p></div>
 <div class="answer"><p><b>A:</b>  A number of recent reports on the 
 <a href="http://www.mail-archive.com/fink-users@lists.sourceforge.net/">fink-users
