@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.2 2004/03/11 07:32:00 dmalloc Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.3 2004/03/12 09:25:18 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -115,7 +115,7 @@ directories.
 The directories in top-down order:
 </p>
 <ul>
-<li><code>dists</code> is where is starts. The <code>dists</code>
+<li><code>dists</code> is where it starts. The <code>dists</code>
 directory is necessary for the Debian tools.</li>
 <li>The distribution. There is <code>stable</code>,
 <code>unstable</code> and <code>local</code>. The <code>local</code>
@@ -720,7 +720,7 @@ a declaration</p>
 and <code>-compatibiliary_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
 amounts to  a promise
-from the maintainer that a libary with this name and a compatibility-version
+from the maintainer that a library with this name and a compatibility-version
 of at least 2.1.0 will always be found in later versions of the <em>bar1</em> 
 package.
 </p><p>
@@ -844,7 +844,7 @@ A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.6.0</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
 <filename>/sw/lib/perl5/5.6.0</filename> and <filename>/sw/lib/perl5/5.6.0/darwin</filename>.  A new convention
-is being introducted of using the suffix <code>-pm560</code> for
+is being introduced of using the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which will soon include 
 perl 5.6.1 and perl 5.8.0.  
@@ -1569,7 +1569,7 @@ the new filename.
 Example:
 </p>
 <codeblock>TarFilesRename: foo bar.* qux:quux
-Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
+Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
 <p>
 <em>Note:</em> This field is implemented by means of a special feature of
 BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar

@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.17 2003/06/22 15:35:13 dmrrsn Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.18 2004/03/12 09:25:17 michga Exp $</cvsid>
 
 <preface>
 <p>
@@ -535,7 +535,7 @@ don't want to download them again, move them to another directory.
 </p></li>
 <li><p>
 Wipe out the /sw directory, i.e. <code>cd / ; rm -rf /sw</code>.
-Do this as root if neccessary.
+Do this as root if necessary.
 </p></li>
 <li><p>
 Follow the procedures for a first time installation above.
