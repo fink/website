@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.4 2004/04/27 00:57:08 michga Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.5 2004/05/08 21:36:33 michga Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -736,8 +736,7 @@ You can use the default file as a starting point for your own
 </p>
       <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
       <p>
-If you're using Fink, you should source <filename>init.sh</filename>
-right at the beginning to make sure the environment is set up correctly.
+If you're using Fink, you should source <filename>init.sh</filename> (if you use bash shell) or <filename>init.csh</filename> (if you use tcsh shell) right at the beginning to make sure the environment is set up correctly.
 </p>
       <p>
 You can put fairly arbitrary commands in an <filename>.xinitrc</filename>,
@@ -764,13 +763,14 @@ their menus work.
       <p>
 A simple example that starts up GNOME:
 </p>
-      <codeblock>source /sw/bin/init.sh
+      <codeblock>. /sw/bin/init.sh
 exec gnome-session</codeblock>
-      <p>
-A more complex example that turns the X11 bell off, starts some clients
-and finally executes the Enlightenment window manager:
-</p>
-      <codeblock>source /sw/bin/init.sh
+      <p>for bash users and:</p>
+       <codeblock>source /sw/bin/init.csh
+exec gnome-session</codeblock>
+<p>for tcsh users.</p>
+<p>A more complex example for bash users that turns the X11 bell off, starts some clients and finally executes the Enlightenment window manager:</p>
+      <codeblock>. /sw/bin/init.sh
 
 xset b off
 
@@ -779,7 +779,33 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
-    </section>
+<p>For tcsh users, just change the first line to:</p>
+      <codeblock>source /sw/bin/init.csh</codeblock>
+ <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>    
+ <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &
+metacity &
+exec gnome-session
+</codeblock> 
+<p>Note: same change on the first line for tcsh users as stated above.</p>
+<p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>    
+ <codeblock>. /sw/bin/init.sh
+quartz-wm --only-proxy &
+exec gnome-session
+</codeblock> 
+<p>Note: same change on the first line for tcsh users as stated above.</p>
+<p>To start KDE 3.2 (version < 3.2.2-21) under Apple's X11</p>
+<codeblock>. /sw/bin/init.sh
+export KDEWM=kwin
+quartz-wm --only-proxy &
+/sw/bin/startkde >/tmp/kde.log 2>&1
+</codeblock>
+<p>Note: same change on the first line for tcsh users as stated above.</p>
+<p>And finally to start the latest unstable version of KDE under Apple's X11:</p>
+<codeblock>. /sw/bin/init.sh
+/sw/bin/startkde >/tmp/kde.log 2>&1
+</codeblock>
+   </section>
   </chapter>
   <chapter filename="xtools" >
     <title>Xtools</title>
