@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/06/21 11:01:16 $';
+$cvs_date = '$Date: 2002/07/14 09:45:37 $';
 
 include "header.inc";
 ?>
@@ -53,8 +53,9 @@ Fink (in alphabetical order):</p>
 <li>Matthew Flanagan</li> 
 <li>Chris Frank</li> 
 <li>Paul Gaborit</li> 
-<li>Stanton Gallegos</li> 
+<li>Stanton Gallegos (<i>stantron</i>)</li> 
 <li>Jake Goulding</li> 
+<li>Joe Gorse (<i>inca34</i>)</li>
 <li>Matthew Harris</li> 
 <li>Sam Johnston</li> 
 <li>Richard Kiss</li> 
@@ -85,6 +86,7 @@ Fink (in alphabetical order):</p>
 <li>Chris Shabsin</li> 
 <li>Leigh Smith</li> 
 <li>Daniel Sohl</li> 
+<li>Lindsey Spratt</li>
 <li>Damian Steer</li> 
 <li>Mark Stosberg</li> 
 <li>Paul Swenson</li> 
