@@ -1,6 +1,8 @@
 <!ENTITY % block "codeblock | ol | p | ul" >
 <!ENTITY % inline "#PCDATA | code | em | filename | link | tt | xref" >
 
+<!ENTITY fink_version "0.4.0" >
+
 
 <!-- Root elements -->
 <!ELEMENT article ( title, shorttitle, cvsid, preface?, section+ ) >

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 2001/12/25 15:41:18 fingolfin Exp $
+# $Id: Makefile,v 1.8 2002/04/15 19:53:09 fingolfin Exp $
 
 # generate all documents
 
@@ -10,6 +10,11 @@ all clean force install:
 	@for i in $(SUBDIRS) ; do \
 	  $(MAKE) -C $$i -w $@ ; \
 	done
+
+# validate the XML files
+
+check:
+	find -name "*.xml" | xargs xmllint --noout --valid
 
 .PHONY: all clean force install
 
