@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.17 2003/01/07 22:08:46 rangerrick Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.18 2003/01/07 22:40:47 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -335,7 +335,9 @@ interact poorly with Fink's installation.
 If you have existing xfree86 packages installed, be it through Fink or otherwise, you
 can follow the <xref chapter="inst-xfree86" section="switching-x11">instructions on
 replacing one X11 package with another</xref>.  Make sure that you remove your existing
-packages, and then install <filename>system-xfree86</filename>.
+packages, and then install <filename>system-xfree86</filename>.  Be sure you first remove
+your old X11 packages, then install Apple's X11 and X11 SDK, and then run
+'<code>fink install system-xfree86</code>' (in that order).
 </p>
 <p>
 Some notes on using Apple's X11:
