@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.34 2002/08/11 12:26:16 fingolfin Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.35 2002/08/12 21:32:43 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1355,11 +1355,58 @@ As you can see, the value to the left is exactly the value you need.
 <em>Introduced in fink 0.10.0.</em>
 This is just the same as the <code>Source-MD5</code> field, except that it
 is used to specify the MD5 checksum of the Nth tarball as specified by the
+corresponding <code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
+
+<item><itemt>TarFilesRename</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This field only applies to source files that are using the tar format
+</p>
+<p>
+With this field you can rename files in the given source tarball during
+the extraction of the tarball. This is very useful to work around
+the fact that the HFS+ file system is not case sensitive, as files like
+<filename>install</filename> and <filename>INSTALL</filename> will
+collide on a standard Mac OS X system. With this field you can avoid
+these issues without having to repackage the tarball (as was done in
+the past in such cases).
+</p>
+<p>
+In this field you simply specify a list of files that are to be renamed. You
+can make use of wildcards. By default any given file will be renamed to its
+current name with <code>_tmp</code> appended. You can override this default
+by using the same syntax as in the <code>Files</code> and <code>DocFiles</code>
+fields, namely by writing the old filename followed by a : and then followed by
+the new filename.
+Example:
+</p>
+<codeblock>TarFilesRename: foo bar.* qux:quux
+Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
+<p>
+<em>Note:</em> This field is implemented by means of a special feature of
+BSD tar. GNU tar does not support this feature. Fink by default uses GNU tar
+(since there are tarballs which can only be expanded by GNU tar), but whenever
+a package uses TarFilesRename, Fink will use BSD tar by directly invoking
+<filename>/usr/bin/tar</filename>.
+</p>
+</itemd></item>
+
+<item><itemt>Tar<em>N</em>FilesRename</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.10.0.</em>
+This is just the same as the <code>TarFilesRename</code> field, except that it
+is used for the Nth tarball as specified by the corresponding
 <code>Source<em>N</em></code> field.
 </p>
 </itemd></item>
 
 </itemtable>
+
+<!-- Patch Phase -->
 <p><em>Patch Phase:</em></p>
 <itemtable>
 
