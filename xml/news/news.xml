@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.30 2003/01/12 17:46:24 rangerrick Exp $</cvsid>
-
+<cvsid>$Id: news.xml,v 1.31 2003/01/14 23:46:10 dmalloc Exp $</cvsid>
+<newsitem>
+	<date>2003-01-15</date>
+	<headline>Concerning recent CVS issues and Sourceforge..</headline>
+	<body>
+	<p>
+	Due to issues with the CVS setup on Sourceforge the selfupdate-cvs command might not work for the next 24 hours. Only developer access to Sourceforge CVS works right now, anonymous access has been turned off. More info can be found on their <link url=" https://sourceforge.net/">website.</link>
+	</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2003-01-07</date>
 	<headline>Fink Interaction with Apple's X11 Public Beta</headline>
@@ -12,7 +20,6 @@
 	with some caveats.  Please read <link url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</link> section of the Fink X11 Documentation for details.</p>
 	</body>
 </newsitem>
-
 <newsitem>
 	<date>2003-01-07</date>
 	<headline>RSS Feeds available</headline>
@@ -29,7 +36,6 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
 </p>
 </body>
 </newsitem>
-
 <newsitem>
   <date>2002-12-22</date>
   <headline>New Upgrade Matrix</headline>
