@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.16 2002/10/30 21:09:03 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.17 2002/11/05 19:15:25 dmrrsn Exp $</cvsid>
 
 <newsitem>
-  <date>2002-10=30</date>
+  <date>2002-10-30</date>
   <headline>Don't reuse binary installer</headline>
   <body>
   <p>
@@ -16,10 +16,12 @@ directory, in some cases leaving the machine in a non-bootable state.
 </p><p> If Installer.app presents you with an "Upgrade" button rather
 than an "Install" button when installing Fink 0.4.1, <em>do not proceed
 any further!</em> </p>
-<p>A new version of the binary installer for Fink 0.4.1 is being tested
-which will avoid the problem of the machine not booting, but even
-once the new version is available users are advised to only "Install",
-not "Upgrade."
+<p>A new version of the binary installer for Fink 0.4.1 became available
+on November 5.  The new version avoids
+the problem of the machine not booting, but even with the new version,
+users are advised to only "Install",
+not "Upgrade."  (You can recognize the new version by its filesize of
+12582912 bytes, while the old version had a filesize of 10541112 bytes.)
 </p></body></newsitem>
 
 <newsitem>
