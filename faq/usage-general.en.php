@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/25 21:45:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/05/29 13:44:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 include_once "header.inc";
@@ -94,16 +94,19 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
+      <div class="question"><p><b>Q8.5: I'm bewildered by the X11 options: Apple's X11, XFree86, etc. What
         should I install?</b></p></div>
       <div class="answer"><p><b>A:</b> All are variants on XFree86 (they're all based on the XFree86
-        code), but have some slight differences between them. Apple's X11,
-        which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster
-        than standard XFree86-4.2.1.1, but the latter is more stable. There is
-        also a modification of 4.2.1.1 with threading support added, which is
-        required by a few packages.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the
-        only choice. Don't forget to install the X11 SDK (on the XCode disk)
-        if you want to compile programs.</p><p>Under Jaguar, the most popular choices, and the Fink packages to
+        code), but they have some slight differences between them. There are
+different options under Panther and under Jaguar.
+Under Panther you have the choice between:</p><ul>
+    <li><p>     Apple's X11 (on the third disk). Don't forget to install the
+X11 SDK
+(on the XCode disk) if you want to compile programs or if you plan to
+install other X11-related Fink packages from source.</p></li>
+<li><p>        4.4.x built via Fink: install the xfree86 and
+xfree86-shlibs packages </p></li>
+</ul><p>Under Jaguar, the most popular choices, and the Fink packages to
         make them work are:</p><ul>
           <li>
             <p>4.2.x built via Fink: install <code>xfree86-base</code> and
@@ -116,8 +119,14 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
           <code>xfree86-shlibs</code> packages</p>
           </li>
           <li>
-            <p>4.2.x from Apple (User+SDK packages installed): install the
-          <code>system-xfree86</code> package</p>
+            <p>4.2.x from Apple (assuming you have the User + SDK packages installed): 
+the
+system-xfree86
+package is automatically generated, do NOT install it.
+(Note that the public beta of Apple's X11 for Jaguar is no longer
+available, so this is only an option for you if you already have this 
+installed, from the time in which it
+was available.)</p>
           </li>
         </ul><p>There are other options, as well. There is a more extensive
         treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11

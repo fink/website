@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/05/25 21:45:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2004/05/29 13:44:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 include_once "header.inc";
@@ -60,7 +60,7 @@ include_once "header.inc";
         names like "mysql", "pgsql", and "games". Where did they come
         from?</a></li><li><a href="usage-general.php?phpLang=en#compile-myself">8.3 How do I compile something myself using Fink-installed
         software?</a></li><li><a href="usage-general.php?phpLang=en#apple-x11-applications-menu">8.4 I can't run any of my Fink-installed applications using the
-        Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=en#x-options">8.5 I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
+        Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=en#x-options">8.5 I'm bewildered by the X11 options: Apple's X11, XFree86, etc. What
         should I install?</a></li><li><a href="usage-general.php?phpLang=en#no-display">8.6 When I try to run an application, I get a message that says "cannot
         open display:". What do I need to do?</a></li><li><a href="usage-general.php?phpLang=en#suggest-package">8.7 I don't see my favorite program in Fink. How do I suggest a new
         package for inclusion in Fink?</a></li><li><a href="usage-general.php?phpLang=en#virtpackage">8.8 What are all these <code>system-*</code> "virtual
@@ -77,6 +77,6 @@ include_once "header.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 in Panther but Fink keeps asking to install
         xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-beta-wants-xfree86">9.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but
-        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.18 2004/05/25 21:45:38 michga Exp $-->
+        Fink keeps asking to install xfree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.13 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.19 2004/05/29 13:44:24 dmrrsn Exp $-->
 
 <? include_once "footer.inc"; ?>
