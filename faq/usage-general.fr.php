@@ -44,27 +44,20 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'
     </a>
     <a name="x-options">
       <div class="question"><p><b>Q8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
-      <div class="answer"><p><b>A:</b> Sera traduit quand la version anglaise aura été mise à jour.</p><p>Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. X11 d'Apple, qui est une version modifiée de XFree86+4.2.1, et XFree86-4.3 sont plus rapides que le standard XFree86-4.2.1.1, mais cette dernière version est plus stable. Il existe aussi une version modifiée de la version 4.2.1.1 qui permet de gérer les processus légers, nécessaires pour certains paquets.</p><p>Currently, under Panther, Apple's X11 (on the third disk) is the
-        only choice. Don't forget to install the X11 SDK (on the XCode disk)
-        if you want to compile programs.</p><p>Under Jaguar, the most popular choices, and the Fink packages to
-        make them work are:</p><ul>
+      <div class="answer"><p><b>A:</b> Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p><p>Sous Panther, vous avez le choix entre :</p><ul>
+    <li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
+<li><p>4.4.x compilé via via Fink : installez les paquets xfree86 et xfree86-shlibs</p></li>
+</ul><p>Sous Jaguar, les choix les plus populaires et les paquets Fink qui leur correspondent sont les suivants :</p><ul>
           <li>
-            <p>4.2.x built via Fink: install <code>xfree86-base</code> and
-          <code>xfree86-rootless</code> or <code>xfree86-base-threaded</code>
-          and <code>xfree86-rootless-threaded</code> (and the respective
-          <code>-shlibs</code>)</p>
+            <p>4.2.x compilé via Fink : installez <code>xfree86-base</code> et <code>xfree86-rootless</code> ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> correspondants)</p>
           </li>
           <li>
-            <p>4.3.x built via Fink: install the <code>xfree86</code> and
-          <code>xfree86-shlibs</code> packages</p>
+            <p>4.3.x compilé via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
           </li>
           <li>
-            <p>4.2.x from Apple (User+SDK packages installed): install the
-          <code>system-xfree86</code> package</p>
+            <p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet system-xfree86 est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre eux qui l'avez déjà installé au temps où elle était encore disponible).</p>
           </li>
-        </ul><p>There are other options, as well. There is a more extensive
-        treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11
-        document</a>.</p></div>
+        </ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
     </a>
     <a name="no-display">
       <div class="question"><p><b>Q8.6: Au lancement d'une application, le message suivant apparaît : "cannot

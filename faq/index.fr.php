@@ -8,7 +8,6 @@ include_once "header.inc";
 ?>
 
 <h1>Fink - Q.F.P.</h1>
-<p><b>En cours de traduction</b></p>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
 <h2>Contents</h2><ul>
