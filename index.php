@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/04 22:44:47 $';
+$cvs_date = '$Date: 2001/11/04 22:50:37 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -38,7 +38,7 @@ The source release and the binary installer are available now, the
 bulk of binary packages will be built and made available gradually
 over the next few days as usual.
 For information about upgrading, visit the
-<a href="download/index.php">download section</a> and the recently
+<a href="download/upgrade.php">Upgrade Matrix</a> and the recently
 updated <a href="doc/users-guide/index.php">User's Guide</a>.
 </p>
 <p>2001-11-02:
