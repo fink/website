@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/17 00:55:00';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/15 18:35:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-general.php?phpLang=es" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -20,7 +20,7 @@ include_once "header.es.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The <code>fink</code> command supports explicit proxy settings that are passed on to <code>wget</code>/<code>curl</code>. If you were not asked for proxies on first time installation, you can run <code>fink configure</code> to set it up. You can also run that command at any time to reconfigure the <code>fink</code> command. If you  followed the instructions in the installation guide, and use  <code>/sw/bin/init.csh</code> (or <code>/sw/bin/init.sh</code>), then <code>apt-get</code> and <code>dselect</code> also will use these proxy settings. Make sure that you put the protocol in front of the proxy, e.g.</p><pre>ftp://proxy.yoursite.somewhere</pre><p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labeled "Use Passive FTP Mode (PASV)" is checked.</p></div>
     </a>
     <a name="firewalled-cvs">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.3: ¿Cómo actualizo paquetes disponibles  de CVS cuando estoy atras de un firewall?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.3: ¿Cómo actualizo paquetes disponibles  de CVS cuando estoy atrás de un firewall?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The package <b>cvs-proxy</b> can tunnel through HTTP proxies.</p><ul>
           <li>
             <p>First download the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
@@ -49,14 +49,14 @@ include_once "header.es.inc";
           <code>fink configure</code>.</p></div>
     </a>
     <a name="moving">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.4: ¿Puedo mover Fink a otro lugar despues de la instalación?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.4: ¿Puedo mover Fink a otro lugar después de la instalación?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> No. Well, of course you can move the files using mv or the Finder,
         but 99% of the programs will stop working when you do. That's because
         basically all Unix software depends on hardcoded paths to find data
         files, libraries and other stuff.</p></div>
     </a>
     <a name="moving-symlink">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.5: Si muevo Fink después de la instalación y proveeo un symlink a la ubicación vieja, ¿funcionará?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.5: Si muevo Fink después de la instalación y proveo un symlink a la ubicación vieja, ¿funcionará?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Maybe. The general expectation is that it should work, but there
         may be hidden traps somewhere.</p></div>
     </a>
@@ -96,7 +96,7 @@ include_once "header.es.inc";
         below.</p></div>
     </a>
     <a name="unstable">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.8: xiste este paquete en unstable que quiero instalar, pero el comando fink dice "no encuentr el paquete" ('no package found'). ¿Cómo lo puedo instalar?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.8: Existe este paquete en unstable que quiero instalar, pero el comando fink dice "no encuentro el paquete" ('no package found'). ¿Cómo lo puedo instalar?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First make sure you understand what 'unstable' means. Packages in
         the unstable tree usually have not been tested by more than a few
         people. For that reason, Fink doesn't search the unstable tree by
@@ -347,7 +347,7 @@ fink selfupdate-cvs</pre></div>
         instructions</a> to follow under these circumstances.</p></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: ¿Puedo colocar a Fink en un volúmen o directorio con un espacio en su nombre?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: ¿Puedo colocar a Fink en un volumen o directorio con un espacio en su nombre?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> We recommend against putting your Fink directory tree inside a
         directory with spaces in its name. It's just not worth the hassle.</p></div>
     </a>
@@ -413,7 +413,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or se
         <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
     <a name="ext-drive">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente.. Hay errores involucrando <q>chowname</q>.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente. Hay errores involucrando <q>chowname</q>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If your error looks like:</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.

@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/17 00:55:00';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/15 18:35:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="prev" href="usage-general.php?phpLang=es" title="Package Usage Problems - General">';
 
 
@@ -83,7 +83,7 @@ include_once "header.es.inc";
         --reinstall xfree86-base-shlibs</code> for binaries.</p></div>
     </a>
     <a name="apple-x-bugs">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Tenía instalado XFree86 de Fink, lo reemplazé con el X11 de Apple, y ahora todo se cuelga!</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Tenía instalado XFree86 de Fink, lo reemplacé con el X11 de Apple, y ahora todo se cuelga!</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First of all, if you previously had the "threaded" versions of
         Fink's XFree86 packages installed, you may need to rebuild the
         application that is crashing. Some programs check for the availability
@@ -113,7 +113,7 @@ xterm*.ttyModes: erase ^?</pre><p>
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="gnome-two">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.9:  Actualizé GNOME 1.x a GNOME 2.x y ahora <code>gnome-session</code> no abre al gestor de ventanas.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.9:  Actualicé GNOME 1.x a GNOME 2.x y ahora <code>gnome-session</code> no abre al gestor de ventanas.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> While under GNOME 1.x <code>gnome-session</code> invokes the
         <code>sawfish</code> window manager automatically, under GNOME 2.x,
         you'll have to call a window manager in <code>~/.xinitrc</code> before

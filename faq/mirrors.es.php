@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Espejos";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/17 00:55:00';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/15 18:35:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos">';
 
 
@@ -15,11 +15,11 @@ include_once "header.es.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink mirrors are rsync servers mirroring the current and stable description files that Fink uses to build packages from source.</p></div>
     </a>
     <a name="why">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.2: Por qué deberia de usar espejos rsync?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.2: Por qué debería de usar espejos rsync?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Rsync is a very fast protocol. It will update the description files faster than the old CVS update method. Furthermore, CVS updates are  always done from sourceforge.net while rsync updates can be done from a mirror close to you.</p></div>
     </a>
     <a name="where">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.3: ¿Dónde podria encontrar mas información acerca de los espejos Fink?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.3: ¿Dónde podría encontrar mas información acerca de los espejos Fink?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> All Fink mirrors are consolidated under the finkmirrors.net domain. The Web-Site at http://finkmirrors.net/ has more information.</p></div>
     </a>
     <a name="when-not">

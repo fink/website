@@ -3,10 +3,10 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.3 2004/06/17 00:55:00 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.4 2004/07/15 18:35:34 michga Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
-    <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas estan enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
+    <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
   </preface>
   <chapter filename="general">
     <title>Preguntas generales</title>
@@ -17,8 +17,8 @@
       </question>
       <answer>
         <p>Fink desea traer más software de Unix a Mac OS X, lo cual resulta en dos metas principales:</p>
-        <p>Meta numero uno es el llevar software a Mac OS X. Eso quiere decir que tomamos Paquetes Unix de Software Libre y arreglamos lo que sea necesario para que compile y corra en MacOS X. A veces eso es fácil, pero a veces puedo ser muy difícil o imposible para algunos paquetes. Estamos tratando de proveer herramientas y documentos para hacerlo más fácil.</p>
-        <p>La Meta número dos es hacer los resultados disponibles para usuarios casuales. Para esto, construimos una distribución usando herramientas de distribución de paquetes portadas de Linux, básicamente <code>dpkg</code> y <code>apt-get</code>escritas por y para el proyecto <link url="http://www.debian.org/index.es.html">Debian GNU/Linux</link>. La distribución binaria usa el formato de paquete <code>.deb</code>. Para construir paquetes a partir de la fuente, tenemos nuestra propia herramienta, llamada <code>fink</code>, la cual crea esos archivos de paquete <code>.deb</code>.</p>
+        <p>Meta número uno es el llevar software a Mac OS X. Eso quiere decir que tomamos Paquetes Unix de Software Libre y arreglamos lo que sea necesario para que compile y corra en MacOS X. A veces eso es fácil, pero a veces puedo ser muy difícil o imposible para algunos paquetes. Estamos tratando de proveer herramientas y documentos para hacerlo más fácil.</p>
+        <p>La Meta número dos es hacer los resultados disponibles para usuarios casuales. Para esto, construimos una distribución usando herramientas de distribución de paquetes portadas de Linux, básicamente <code>dpkg</code> y <code>apt-get</code> escritas por y para el proyecto <link url="http://www.debian.org/index.es.html">Debian GNU/Linux</link>. La distribución binaria usa el formato de paquete <code>.deb</code>. Para construir paquetes a partir de la fuente, tenemos nuestra propia herramienta, llamada <code>fink</code>, la cual crea esos archivos de paquete <code>.deb</code>.</p>
       </answer>
     </faqentry>
     <faqentry name="naming">
@@ -41,10 +41,10 @@
             <p>Está escrito en Perl, no en make/shell. De esta manera, no se apoya en aspectos especiales únicamente encontrados en BSD make. No hay necesidad de marcar los paquetes que necesiten GNU make para compilar.</p>
           </li>
           <li>
-            <p>dpkg provee una administración sofisticada para paquetes binarios –actualización fluída, manejo especial para configuar archivos, paquetes virtuales y otras dependencias avanzadas.</p>
+            <p>dpkg provee una administración sofisticada para paquetes binarios –actualización fluida, manejo especial para configurar archivos, paquetes virtuales y otras dependencias avanzadas.</p>
           </li>
           <li>
-            <p>Fink no se instala en /usr/local a menos que se le solicite explícitamente y no require manejar /usr/bin/make u otro commando provisto por el sistema. Eso lo hace mas seguro para usar y reduce la interferencia con Mac OS X y paquetes de una tercera parte al mínimo.</p>
+            <p>Fink no se instala en /usr/local a menos que se le solicite explícitamente y no requiere manejar /usr/bin/make u otro comando provisto por el sistema. Eso lo hace mas seguro para usar y reduce la interferencia con Mac OS X y paquetes de una tercera parte al mínimo.</p>
           </li>
         </ul>
       </answer>
@@ -55,7 +55,7 @@
       </question>
       <answer>
         <p>Hay varias razones, pero la línea común es que 'podría ocurrir una falla en el sistema'.</p>
-        <p>Razón Uno: Software de una Tercera parte. /usr/local es el lugar mas establecido donde colocar software que no es parte del sistema distribuido por el vendedor original. Esto quiere decir que es un buen lugar para poner cosas. Sin embargo, significa que otras personas también pueden poner cosas allí. La mayoría de las rutinas de instalación simplemente van a sobreescribir lo que ahí está – esto también aplica a dpkg. Uno puede, claro, escoger el no instalar software de una Tercera parte en /usr/local. Desafortunadmaente, la mayoria de los instaladores, no dicen de antemano qué es lo que van a instalar y adónde.</p>
+        <p>Razón Uno: Software de una Tercera parte. /usr/local es el lugar mas establecido donde colocar software que no es parte del sistema distribuido por el vendedor original. Esto quiere decir que es un buen lugar para poner cosas. Sin embargo, significa que otras personas también pueden poner cosas allí. La mayoría de las rutinas de instalación simplemente van a sobreescribir lo que ahí está – esto también aplica a dpkg. Uno puede, claro, escoger el no instalar software de una Tercera parte en /usr/local. Desafortunadamente, la mayoría de los instaladores, no dicen de antemano qué es lo que van a instalar y adónde.</p>
         <p>Razón Dos: /usr/local/bin esta en el default PATH. Esto quiere decir que tu shell encontrará los programas instalados sin medidas adicionales. Pero también quiere decir que tienes que tener medidas adicionales si no quieres usar estos programas. En casos extremos, esto también puede afectar al sistema mismo – muchas partes dependen de shell scripts.</p>
         <p>Razón Tres:  La cadena de herramientas del compilador busca /usr/local por default. El compilador busca los headers en /usr/local/include y el linker busca las librerías en /usr/local/lib. Nuevamente, esto a veces es una conveniencia bienvenida, pero es muy difícil de anular si surge la necesidad. Es muy fácil incapacitar al compilador poniendo un archivo de basura llamado <code>stdio.h</code> en /usr/local/include.</p>
         <p>Después de todo lo dicho, es posible instalar Fink en /usr/local. El script de instalación te advertirá explícitamente, pero continua una vez que reconozcas que lo estas haciendo bajo tu propio riesgo.</p>
@@ -63,7 +63,7 @@
     </faqentry>
     <faqentry name="why-sw">
       <question>
-        <p>Entonces ¿por qué escogíeron /sw?</p>
+        <p>Entonces ¿por qué escogieron /sw?</p>
       </question>
       <answer>
         <p>Esa elección es bastante arbitraria, pero se puede decir que por razones prácticas (de actualización) quedará así en un futuro cercano y además existe el hecho de que es un lugar seguro para evitar conflictos con otros sistemas de empaquetamiento.</p>
@@ -78,15 +78,15 @@
         <p>¿Contribuyen los parches hechos por ustedes a los mantenedores de fuente (upstream)?</p>
       </question>
       <answer>
-        <p>Estamos tratando. A veces el regresar los parches es fácil y todo el mundo está contento una vez que la version actualizada del paquete ha salido. Desafortunadamente con la mayoría de los paquetes no es tan fácil. Algunos problemas communes:</p>
+        <p>Estamos tratando. A veces el regresar los parches es fácil y todo el mundo está contento una vez que la versión actualizada del paquete ha salido. Desafortunadamente con la mayoría de los paquetes no es tan fácil. Algunos problemas comunes:</p>
         <ul>
           <li>El mantenedor de paquetes de Fink está muy ocupado y no tiene tiempo de mandar el parche y las explicaciones que le acompañan a los mantenedores principales de fuente (upstream).
 	
 </li>
-          <li>Los mantenedores de fuente rechazan el parche. Hay muchas rezones válidas para esto. La mayoría de los mantenedores de fuente tienen un fuerte interés en un código limpio, verificaciones de configuración limpias y compatibilidad con otras 
+          <li>Los mantenedores de fuente rechazan el parche. Hay muchas razones válidas para esto. La mayoría de los mantenedores de fuente tienen un fuerte interés en un código limpio, verificaciones de configuración limpias y compatibilidad con otras 
 plataformas.
 </li>
-          <li>Los mantenedores de fuente aceptan el parche, pero les lleva unas semanas o meses hasta que sacan una nueva version de su paquete.
+          <li>Los mantenedores de fuente aceptan el parche, pero les lleva unas semanas o meses hasta que sacan una nueva versión de su paquete.
 	
 </li>
           <li>El paquete ha sido abandonado por los autores originales y no habrá ninguna nueva edición en la cual el parche pueda converger.</li>
@@ -106,7 +106,7 @@ plataformas.
         <p>¿Cuál es su relación con Apple?</p>
       </question>
       <answer>
-        <p><link url="http://www.apple.com/es/">Apple</link> sabe que Fink existe y nos ha dado apoyo como parte de su esfuerzo de relaciones de Fuente Abierta. En el verano y otoño del 2001, nos otorgaron semillas de pre-lanzamiento de las nuevas versions Mac OS X esperando que los paquetes Fink pudieran ser adaptados a tiempo para su lanzamiento. Cita: <em>"Esperamos que acentúe el cometido de que muchos sospechan no estamos dispuestos a proveer. Mejoraremos con el tiempo en el juego de Fuente Abierta."</em> ¡Gracias Apple!</p>
+        <p><link url="http://www.apple.com/es/">Apple</link> sabe que Fink existe y nos ha dado apoyo como parte de su esfuerzo de relaciones de Fuente Abierta. En el verano y otoño del 2001, nos otorgaron semillas de pre-lanzamiento de las nuevas versiones Mac OS X esperando que los paquetes Fink pudieran ser adaptados a tiempo para su lanzamiento. Cita: <em>"Esperamos que acentúe el cometido de que muchos sospechan no estamos dispuestos a proveer. Mejoraremos con el tiempo en el juego de Fuente Abierta."</em> ¡Gracias Apple!</p>
       </answer>
     </faqentry>
     <faqentry name="openosx">
@@ -130,7 +130,7 @@ plataformas.
         <p>¿Cuál es su relación con Darwinports?</p>
       </question>
       <answer>
-        <p>Darwinports y Fiink son proyectos complementarios. Hay un poco de traslape entre los dos proyectos, y varias personas contribuyen a ambos proyectos Fink y OpenDarwin. Por ejemplo, Benjamin Reed está haciendo los paquetes KDE para ambos. Darwinports/OpenDarwin usan parches de Fink, y hemos discutido la colaboración en una nueva estructura de dependencias.</p>
+        <p>Darwinports y Fink son proyectos complementarios. Hay un poco de traslape entre los dos proyectos, y varias personas contribuyen a ambos proyectos Fink y OpenDarwin. Por ejemplo, Benjamin Reed está haciendo los paquetes KDE para ambos. Darwinports/OpenDarwin usan parches de Fink, y hemos discutido la colaboración en una nueva estructura de dependencias.</p>
         <p>OpenDarwin empezó desde cero intentando un acercamiento diferente en el sistema de empaquetamiento. Lee el estatuto sobre <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</link> para mas detalles.</p>
       </answer>
     </faqentry>
@@ -148,7 +148,7 @@ plataformas.
     </faqentry>
     <faqentry name="why">
       <question>
-        <p>Por qué deberia de usar espejos rsync?</p>
+        <p>Por qué debería de usar espejos rsync?</p>
       </question>
       <answer>
         <p>Rsync is a very fast protocol. It will update the description files faster than the old CVS update method. Furthermore, CVS updates are  always done from sourceforge.net while rsync updates can be done from a mirror close to you.</p>
@@ -156,7 +156,7 @@ plataformas.
     </faqentry>
     <faqentry name="where">
       <question>
-        <p>¿Dónde podria encontrar mas información acerca de los espejos Fink?</p>
+        <p>¿Dónde podría encontrar mas información acerca de los espejos Fink?</p>
       </question>
       <answer>
         <p>All Fink mirrors are consolidated under the finkmirrors.net domain. The Web-Site at http://finkmirrors.net/ has more information.</p>
@@ -246,7 +246,7 @@ plataformas.
     </faqentry>
     <faqentry name="firewalled-cvs">
       <question>
-        <p>¿Cómo actualizo paquetes disponibles  de CVS cuando estoy atras de un firewall?</p>
+        <p>¿Cómo actualizo paquetes disponibles  de CVS cuando estoy atrás de un firewall?</p>
       </question>
       <answer>
         <p>The package <em>cvs-proxy</em> can tunnel through HTTP proxies.</p>
@@ -282,7 +282,7 @@ plataformas.
     </faqentry>
     <faqentry name="moving">
       <question>
-        <p>¿Puedo mover Fink a otro lugar despues de la instalación?</p>
+        <p>¿Puedo mover Fink a otro lugar después de la instalación?</p>
       </question>
       <answer>
         <p>No. Well, of course you can move the files using mv or the Finder,
@@ -293,7 +293,7 @@ plataformas.
     </faqentry>
     <faqentry name="moving-symlink">
       <question>
-        <p>Si muevo Fink después de la instalación y proveeo un symlink a la ubicación vieja, ¿funcionará?</p>
+        <p>Si muevo Fink después de la instalación y proveo un symlink a la ubicación vieja, ¿funcionará?</p>
       </question>
       <answer>
         <p>Maybe. The general expectation is that it should work, but there
@@ -350,7 +350,7 @@ plataformas.
     </faqentry>
     <faqentry name="unstable">
       <question>
-        <p>xiste este paquete en unstable que quiero instalar, pero el comando fink dice "no encuentr el paquete" ('no package found'). ¿Cómo lo puedo instalar?</p>
+        <p>Existe este paquete en unstable que quiero instalar, pero el comando fink dice "no encuentro el paquete" ('no package found'). ¿Cómo lo puedo instalar?</p>
       </question>
       <answer>
         <p>First make sure you understand what 'unstable' means. Packages in
@@ -736,7 +736,7 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="spaces-in-directory">
       <question>
-        <p>¿Puedo colocar a Fink en un volúmen o directorio con un espacio en su nombre?</p>
+        <p>¿Puedo colocar a Fink en un volumen o directorio con un espacio en su nombre?</p>
       </question>
       <answer>
         <p>We recommend against putting your Fink directory tree inside a
@@ -834,7 +834,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
     </faqentry>
     <faqentry name="ext-drive">
       <question>
-        <p>Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente.. Hay errores involucrando <quote>chowname</quote>.</p>
+        <p>Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente. Hay errores involucrando <quote>chowname</quote>.</p>
       </question>
       <answer>
         <p>If your error looks like:</p>
@@ -859,7 +859,7 @@ Failed test (./Command/chowname.t at line 27)
     <shorttitle>Compiling (1)</shorttitle>
     <faqentry name="compiler">
       <question>
-        <p>Un script de configuración se queja que no puede encontar un "cc aceptable". ¿Qué es eso?</p>
+        <p>Un script de configuración se queja que no puede encontrar un "cc aceptable". ¿Qué es eso?</p>
       </question>
       <answer>
         <p>Read the docs next time. To compile packages from source, you must
@@ -1008,7 +1008,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
     </faqentry>
     <faqentry name="usr-local-libs">
       <question>
-        <p>He escuchado que las librerías instaladas en /usr/local/lib a veces causan problemas de compilación para Fink, ¿és cierto?</p>
+        <p>He escuchado que las librerías instaladas en /usr/local/lib a veces causan problemas de compilación para Fink, ¿es cierto?</p>
       </question>
       <answer>
         <p>This is a frequent source of problems, because the package
@@ -1459,7 +1459,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
     </faqentry>
     <faqentry name="apple-x11-applications-menu">
       <question>
-        <p>No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menu de Aplicaciones de las X11 de Apple.</p>
+        <p>No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menú de Aplicaciones de las X11 de Apple.</p>
       </question>
       <answer>
         <p>Apple X11 doesn't keep track of the Fink environment settings,
@@ -1541,7 +1541,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
     </faqentry>
     <faqentry name="virtpackage">
       <question>
-        <p> ¿Qué son todos estos system-* "virtual packages" que a veces estan presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</p>
+        <p> ¿Qué son todos estos system-* "virtual packages" que a veces están presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</p>
       </question>
       <answer>
         <p>
@@ -1765,7 +1765,7 @@ sort this out.
     </faqentry>
     <faqentry name="apple-x-bugs">
       <question>
-        <p>Tenía instalado XFree86 de Fink, lo reemplazé con el X11 de Apple, y ahora todo se cuelga!</p>
+        <p>Tenía instalado XFree86 de Fink, lo reemplacé con el X11 de Apple, y ahora todo se cuelga!</p>
       </question>
       <answer>
         <p>First of all, if you previously had the "threaded" versions of
@@ -1812,7 +1812,7 @@ xmodmap $HOME/.Xmodmap</codeblock>
     </faqentry>
     <faqentry name="gnome-two">
       <question>
-        <p> Actualizé GNOME 1.x a GNOME 2.x y ahora <code>gnome-session</code> no abre al gestor de ventanas.</p>
+        <p> Actualicé GNOME 1.x a GNOME 2.x y ahora <code>gnome-session</code> no abre al gestor de ventanas.</p>
       </question>
       <answer>
         <p>While under GNOME 1.x <code>gnome-session</code> invokes the

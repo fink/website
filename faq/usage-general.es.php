@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/17 00:55:00';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/15 18:35:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-packages.php?phpLang=es" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages">';
 
 
@@ -81,7 +81,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         if they aren't already installed.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.4: No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menu de Aplicaciones de las X11 de Apple.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.4: No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menú de Aplicaciones de las X11 de Apple.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 doesn't keep track of the Fink environment settings,
         which means that the Applications menu doesn't have the PATH set
         correctly to find your Fink applications. The solution is to preface
@@ -129,7 +129,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
     <a name="virtpackage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.8:  ¿Qué son todos estos system-* "virtual packages" que a veces estan presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>8.8:  ¿Qué son todos estos system-* "virtual packages" que a veces están presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	  Packages with names like <code>system-perl</code> are
 	  placeholder packages. These do not contain actual files, but

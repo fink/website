@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Compiling (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/06/17 00:55:00';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2004/07/15 18:35:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=es" title="Installing, Using and Maintaining Fink">';
 
 
@@ -11,7 +11,7 @@ include_once "header.es.inc";
     
     
     <a name="compiler">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.1: Un script de configuración se queja que no puede encontar un "cc aceptable". ¿Qué es eso?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.1: Un script de configuración se queja que no puede encontrar un "cc aceptable". ¿Qué es eso?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Read the docs next time. To compile packages from source, you must
         install the Developer Tools, which among other stuff contains the C
         compiler, <code>cc</code>.</p></div>
@@ -107,7 +107,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         </ul></div>
     </a>
     <a name="usr-local-libs">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.9: He escuchado que las librerías instaladas en /usr/local/lib a veces causan problemas de compilación para Fink, ¿és cierto?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.9: He escuchado que las librerías instaladas en /usr/local/lib a veces causan problemas de compilación para Fink, ¿es cierto?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a frequent source of problems, because the package
         configuration script finds libraries under
         <code>/usr/local/lib</code> before searching in the Fink path.
