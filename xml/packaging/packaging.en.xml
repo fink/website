@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.34 2004/07/02 19:13:11 michga Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.35 2004/07/13 06:56:48 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -380,6 +380,19 @@ the package <em>n</em>ame <em>i</em>nvariant portion. These are like
 %n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
 (Introduced in a post-0.19.2 CVS version of fink) You should use %{ni}
 and %{Ni} to avoid confusion with the %n and %N expansions.
+</p>
+</itemd></item>
+
+<item><itemt>%{default_script}</itemt>
+<itemd>
+<p>
+Valid only in <code>*Script</code> fields, the default contents of
+that type of field. The value is often dependent on
+the <code>Type</code> field, and is always defined (though it may be
+blank). When used in a <code>SplitOff: InstallScript</code>, this
+expansion will yield the <em>parent's</em> default, even though the
+default for <code>InstallScript</code> in a <code>SplitOff</code>
+package is blank. (Introduced in fink-0.20.6)
 </p>
 </itemd></item>
 </itemtable>
