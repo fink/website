@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.58 2002/12/02 19:07:17 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.59 2002/12/02 20:58:58 htodd Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -621,6 +621,7 @@ sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 	</codeblock>
+	<p>FinkCommander also has a way to remove packages. In the source window, select a package, and then in the <code>Source Menu</code> use "<code>Force Remove</code>."</p>
 	<p>If you are using system-xfree86, see the previous question for removing it.</p>
 	<p>Install the version of xfree86 you want: </p>
 	<p><code>xfree86-base</code> and <code>xfree86-rootless</code></p>
