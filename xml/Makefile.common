@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.14 2003/01/05 19:37:05 rangerrick Exp $
+# $Id: Makefile.common,v 1.15 2003/06/29 18:24:17 dmrrsn Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -10,9 +10,9 @@ endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
-PROCESS_WEBSITE = $(basedir)/postprocess.pl
+PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
 PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
-PROCESS_TEXT = $(basedir)/textify.pl
+PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
 # selectors
 
@@ -20,13 +20,17 @@ all_targets = $(TARGET)
 install_files = $(TARGET)
 #install_files = $(filter %.php,$(TARGET))
 
+
 ifdef WANT_HTML
 all_targets += $(patsubst %.xml,%.html,$(SOURCE))
-install_files += $(patsubst %.xml,%.html,$(SOURCE))
+#install_files += $(patsubst %.xml,%.html,$(SOURCE))
+install_html = $(patsubst %.xml,%.html,$(SOURCE))
 endif
 
 ifdef WANT_TEXT
 all_targets += $(patsubst %.xml,%.txt,$(SOURCE))
+install_txt = $(patsubst %.xml,%.txt,$(SOURCE))
+install_txt += $(patsubst %.xml,%.html,$(SOURCE))
 endif
 
 # basics
@@ -73,9 +77,16 @@ force: clean all
 
 install: $(install_files)
 ifdef DESTDIR
-	cp $(install_files) $(basedir)/../$(DESTDIR)/
+	cp $(install_files) $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
+ifdef WANT_HTML
+	cp $(install_html) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
+endif
+#ifdef WANT_TEXT
+#	cp $(install_txt) $(basedir)/fink/
+#endif
+
 
 # eof
