@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.xml,v 1.51 2003/11/05 08:59:01 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.xml,v 1.52 2003/11/12 09:02:17 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1610,8 +1610,8 @@ The filename of a patch to be applied with <code>patch -p1
 &lt;<em>patch-file</em></code>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
-<code>%f.patch</code>. The patch is applied before the PatchScript
-is run (if any).
+<code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
+before the PatchScript is run (if any).
 </p>
 </itemd></item>
 
@@ -1637,7 +1637,7 @@ Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
 are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
-MAKE, MFLAGS. The value you specify is subject to the
+MAKE, MFLAGS, MAKEFLAGS. The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
 <codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
@@ -2125,14 +2125,16 @@ line. This may be fixed one day in the future.</p>
 <section name="patches"><title>Patches</title>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
-fink), name the patch with the full package name plus the extension
-".patch" and put it in the same directory as the .info file. Specify
-either one of these (they are equivalent):</p>
+fink), name the patch with the same name as the package description,
+using the extension ".patch" instead of ".info" and put it in the same
+directory as the .info file. If you use the full package in the
+filename specify either one of these (they are equivalent):</p>
 <codeblock>Patch: %f.patch</codeblock>
 <codeblock>PatchScript: patch -p1 &lt;%a/%f.patch</codeblock>
-<p>These two fields are not mutually-exclusive - you can use both, and
-they will both be executed. In that case the PatchScript is executed
-last.</p>
+<p>If you use the newer simple package filename convention, use %n
+insead of %f. These two fields are not mutually-exclusive - you can
+use both, and they will both be executed. In that case the PatchScript
+is executed last.</p>
 </section>
 
 <section name="profile.d"><title>Profile.d scripts</title>

@@ -461,8 +461,8 @@ The filename of a patch to be applied with <code>patch -p1
 &lt;<b>patch-file</b></code>. This should be just a filename; the
 appropriate path will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
-<code>%f.patch</code>. The patch is applied before the PatchScript
-is run (if any).
+<code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
+before the PatchScript is run (if any).
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
@@ -480,7 +480,7 @@ Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
 are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
-MAKE, MFLAGS. The value you specify is subject to the
+MAKE, MFLAGS, MAKEFLAGS. The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
@@ -890,14 +890,16 @@ line. This may be fixed one day in the future.</p>
 <h2><a name="patches">5.5 Patches</a></h2>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
-fink), name the patch with the full package name plus the extension
-".patch" and put it in the same directory as the .info file. Specify
-either one of these (they are equivalent):</p>
+fink), name the patch with the same name as the package description,
+using the extension ".patch" instead of ".info" and put it in the same
+directory as the .info file. If you use the full package in the
+filename specify either one of these (they are equivalent):</p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
-<p>These two fields are not mutually-exclusive - you can use both, and
-they will both be executed. In that case the PatchScript is executed
-last.</p>
+<p>If you use the newer simple package filename convention, use %n
+insead of %f. These two fields are not mutually-exclusive - you can
+use both, and they will both be executed. In that case the PatchScript
+is executed last.</p>
 
 
 <h2><a name="profile.d">5.6 Profile.d scripts</a></h2>
