@@ -1,13 +1,13 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/21 04:59:49 $';
+$cvs_date = '$Date: 2004/04/21 05:11:42 $';
 
 include "header.inc";
 include "releases.inc";
 ?>
   <STYLE TYPE="text/css">
-.bgreen { background: green; display: inline; }
+.bgreen { background: #66FF10; display: inline; }
        
 .bred { background: red; display: inline; }
 
@@ -149,20 +149,24 @@ if (!$rs) {
   		if($hit)
   		{
 			if($row[moveflag] == 1) {
+				$greencount++;
 				if($hidegreen)
 					continue;
 				$pkglist = $pkglist."<li><div class=\"bgreen\">";
 				$green = 1;
 				$red = 0;
 			}	elseif($row[moveflag] == 2) {
+				$redcount++;
 				if($hidered)
 					continue;
 				$pkglist = $pkglist."<li><div class=\"bred\">";
 				$red = 1;
 				$green = 0;
 			} elseif ($hidewhite) {
+				$whitecount++;
 				continue;
 			} else {
+				$whitecount++;
 				$pkglist = $pkglist."<li>";	
 			}
 			$desc = "";  	
@@ -198,8 +202,8 @@ if (!$rs) {
   }
   $pkglist = $pkglist . '</ul>';
   print "<br>Found $hitcount Packages in $tree1 that ". ($cmp ? 'are' : 'are not') .
-  		" in $tree2$pkglist";
-  		
+  		" in $tree2.<br>";
+  print "Total: $greencount green, $redcount red, $whitecount white packages.<br>$pkglist";		
 	#Special case for 10.2-gcc3.3 to 10.3 move
 	if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
 	{
