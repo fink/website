@@ -1,17 +1,19 @@
 <?
-/* $Id: header.inc,v 1.13 2001/04/26 16:20:02 chrisp Exp $ */
+/* $Id: header.inc,v 1.14 2001/04/26 16:24:10 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
   "index.php", "Home", 0,
   "download.php", "Download", 0,
   "fink/index.php", "Fink", 0,
+  "faq/index.php", "F.A.Q.", 0,
   "darwin/index.php", "Darwin", 0,
   "links.php", "Links", 0
 );
 $pages_fink = array(
   "fink/index.php", "Fink", 0,
   "download.php", "Download", 1,
+  "faq/index.php", "F.A.Q.", 0,
   "fink/lists.php", "Mailing Lists", 0,
   "fink/cvs.php", "CVS Updating", 0,
   "fink/todo.php", "ToDo", 0,
