@@ -1,7 +1,7 @@
 <?
 $title = "Help";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/17 19:53:15 $';
+$cvs_date = '$Date: 2001/10/10 17:20:00 $';
 
 include "header.inc";
 ?>
@@ -62,9 +62,9 @@ Some links to web discussion forums:
 <a href="http://sourceforge.net/forum/?group_id=18034">XonX forums at
 SourceForge</a> -
 <a href="http://www.xdarwin.org/forum/">xdarwin.org forums</a> -
-<a href="http://forums.macnn.com/cgi-bin/ultimatebb.cgi?ubb=forum&f=1">MacNN
+<a href="http://newforums.macnn.com/cgi-bin/ultimatebb.cgi?ubb=forum&f=1">MacNN
 Unix forum</a> -
-<a href="http://macosx.com">macosx.com</a> (look for the Unix forums)
+<a href="http://macosx.com/">macosx.com</a> (look for the Unix forums)
 </p>
 <p>
 Some links to sites with more or less useful information:
