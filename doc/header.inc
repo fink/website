@@ -1,8 +1,8 @@
 <?
-/* $Id: header.inc,v 1.1 2001/06/30 11:11:49 chrisp Exp $ */
-
-include "nav.inc";
+/* $Id: header.inc,v 1.2 2004/03/07 23:46:42 fingolfin Exp $ */
 
 $fsroot = $root = "../";
+
+include $fsroot."doc/nav.inc";
 include $fsroot."header.inc";
 ?>
