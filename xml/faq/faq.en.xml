@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.43 2005/03/01 19:18:38 dmacks Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.44 2005/03/24 09:01:16 dmacks Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -934,6 +934,8 @@ Failed test (./Command/chowname.t at line 27)
     </faqentry>
   </chapter>
   <chapter filename="comp-general">
+  <!-- FAQs in comp-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Compile Problems - General</title>
     <shorttitle>Compiling (1)</shorttitle>
     <faqentry name="compiler">
@@ -1276,6 +1278,9 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       </answer>
     </faqentry>
     <faqentry name="gcc2">
+    <!-- FAQ comp-general.gcc2 is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
       <question>
         <p>Fink says I'm missing <filename>gcc2</filename> or <filename>gcc3.1</filename> but I can't seem to
         install it.</p>
@@ -1484,6 +1489,8 @@ fink install libiconv</codeblock>
     </faqentry>
   </chapter>
   <chapter filename="usage-general">
+  <!-- FAQs in usage-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Package Usage Problems - General</title>
     <shorttitle>Usage (1)</shorttitle>
     <faqentry name="xlocale">
@@ -1678,6 +1685,9 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
       </answer>
     </faqentry>
     <faqentry name="virtpackage">
+    <!-- FAQ usage-general.virtpackage is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
       <question>
         <p>What are all these <code>system-*</code> "virtual
 	  packages" that are sometimes present, but that I can't
@@ -1780,6 +1790,8 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
     </faqentry>
   </chapter>
   <chapter filename="usage-packages">
+  <!-- FAQs in usage-packages are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Package Usage Problems - Specific Packages</title>
     <shorttitle>Usage (2)</shorttitle>
     <faqentry name="xmms-quiet">
@@ -1984,6 +1996,9 @@ exec metacity &amp; exec gnome-session</codeblock>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-wants-xfree86">
+    <!-- FAQ comp-general.apple-x11-wants-xfree86 is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
       <question>
         <p>I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</p>
