@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/11/06 20:20:55';
+$cvs_author = 'Author: htodd';
+$cvs_date = 'Date: 2002/11/09 06:37:47';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -47,33 +47,34 @@ macosx.forked.net?</a></li>
 Fink supports?</a></li>
 <li><a href="usage-fink.php#proxy">3.2 I'm behind a firewall. How do I
 configure Fink to use an HTTP proxy?</a></li>
-<li><a href="usage-fink.php#moving">3.3 Can I move Fink to another
+<li><a href="usage-fink.php#firewalled-cvs">3.3 How do I update available packages from CVS when I am behind a firewall?</a></li>
+<li><a href="usage-fink.php#moving">3.4 Can I move Fink to another
 location after installation?</a></li>
-<li><a href="usage-fink.php#moving-symlink">3.4 If I move Fink after
+<li><a href="usage-fink.php#moving-symlink">3.5 If I move Fink after
 installation and provide a symlink from the old location, will it
 work?</a></li>
-<li><a href="usage-fink.php#removing">3.5 How can I remove all
+<li><a href="usage-fink.php#removing">3.6 How can I remove all
 of Fink?</a></li>
-<li><a href="usage-fink.php#kde">3.6 What is the status of KDE in Fink?</a></li>
-<li><a href="usage-fink.php#bindist">3.7 The package database at the
+<li><a href="usage-fink.php#kde">3.7 What is the status of KDE in Fink?</a></li>
+<li><a href="usage-fink.php#bindist">3.8 The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</a></li>
-<li><a href="usage-fink.php#unstable">3.8 There's this package in
+<li><a href="usage-fink.php#unstable">3.9 There's this package in
 unstable that I want to install, but the fink command just says 'no
 package found'. How can I install it?</a></li>
-<li><a href="usage-fink.php#sudo">3.9 I'm tired of typing my password into sudo again
+<li><a href="usage-fink.php#sudo">3.10 I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li>
-<li><a href="usage-fink.php#exec-init-csh">3.10 When I try to run
+<li><a href="usage-fink.php#exec-init-csh">3.11 When I try to run
 init.csh, I get a &quot;Permission denied&quot; error. What am I doing
 wrong?</a></li>
-<li><a href="usage-fink.php#dselect-access">3.11 Help! I used the
+<li><a href="usage-fink.php#dselect-access">3.12 Help! I used the
 &quot;[A]ccess&quot; menu entry in dselect and now I can't download packages any
 more!</a></li>
-<li><a href="usage-fink.php#selfupdate-tar-fails">3.12 Why doesn't 'fink selfupdate'
+<li><a href="usage-fink.php#selfupdate-tar-fails">3.13 Why doesn't 'fink selfupdate'
 work?</a></li>
-<li><a href="usage-fink.php#kernel-panics">3.13 When I use fink, my whole machine 
+<li><a href="usage-fink.php#kernel-panics">3.14 When I use fink, my whole machine 
 freezes up/kernel panics/dies. Help!</a></li>
-<li><a href="usage-fink.php#not-found">3.14 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
+<li><a href="usage-fink.php#not-found">3.15 I'm trying to install a package, but fink can't download it.  The download site shows a later version number of the package than what fink has.  What do I do?</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
@@ -113,7 +114,7 @@ OS X 10.1 and now XFree86 always quits immediately. In the messages it
 says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's
 wrong?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.50 2002/11/06 20:20:55 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.53 2002/11/09 06:37:47 htodd Exp $</i></p>
 
 
 <?
