@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.4 2004/11/09 14:33:04 babayoshihiko Exp $
+# $Id: Makefile,v 1.5 2004/11/10 16:32:30 rangerrick Exp $
 
 # process XML files with stylesheet to produce HTML
 
 CURRDATE := `date '+%a, %d %b %Y %H:%M:%S %Z'`
+W3CDTFDATE := `LANG=C date '+%Y-%m-%dT%H:%M:%S%z' | perl -pe 's,^(.*)(\d\d)$$,$$1:$$2,'`
 
 basedir = ..
 
@@ -28,7 +29,7 @@ include $(basedir)/Makefile.i18n.common
 
 news.rdf %.rdf: $(SOURCE) $(STYLESHEET_RDF)
 	xmllint --noout --valid $(SOURCE)
-	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam currdate "$(CURRDATE)" -o $(subst .xml,.rdf,$(XMLFILE)) $(STYLESHEET_RDF) $(XMLFILE); )
+	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam currdate "$(W3CDTFDATE)" -o $(subst .xml,.rdf,$(XMLFILE)) $(STYLESHEET_RDF) $(XMLFILE); )
 	-cp news.en.rdf news.rdf
 
 %.inc: %.inc.tmp $(PROCESS_WEBSITE)
