@@ -2,7 +2,7 @@
 $title = "Utilisation de X11 - Résolution de problèmes";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/13 01:48:06';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Usage Tips"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Conseils d\'utilisation"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
 
 include_once "header.inc";
 ?>
@@ -111,7 +111,7 @@ Cannot establish any listening sockets - Make sure an X server isn't already
 running</pre>
       <p>
 Sévérité : fatal.
-Ceci arrive quand vous lancez involontairement plusieurs instances de XDarwin en même temps, ou après une déconnexion sauvage (un crash) de XDarwin. Cela peut provenir aussi d'un problème de permission sur les fichiers sockets utilisés pour les connexions locales. Vous pouvez tenter de résoudre le problème en exécutant <code>rm -rf /tmp/.X11-unix</code>. Le redémarrage de l'ordinateur résout aussi le problème dans la plupart des cas (Mac OS X vide automatiquement le répertoire /tmp lors du démarrage, et la pile réseau est redéfinie).
+Ceci arrive quand vous lancez involontairement plusieurs instances de XDarwin en même temps, ou après une terminaison anormale (un plantage) de XDarwin. Cela peut provenir aussi d'un problème de permission sur les fichiers sockets utilisés pour les connexions locales. Vous pouvez tenter de résoudre le problème en exécutant <code>rm -rf /tmp/.X11-unix</code>. Le redémarrage de l'ordinateur résout aussi le problème dans la plupart des cas (Mac OS X vide automatiquement le répertoire /tmp lors du démarrage, et la pile réseau est redéfinie).
 </p>
       <pre>Xlib: connection to ":0.0" refused by server
 Xlib: Client is not authorized to connect to Server</pre>
@@ -126,116 +126,70 @@ touch .Xauthority</pre>
 Une autre cause fréquente d'échec de démarrage de XFree86 est un fichier <code>.xinitrc</code> incorrect. Le fichier <code>.xinitrc</code> est lancé et, pour une raison inconnue, se termine quasi immédiatement. <code>xinit</code> interprète cette fin comme "une fin de session demandée par l'utilisateur" et tue XDarwin. Voir la <a href="run-xfree86.php?phpLang=fr#xinitrc">section Fichier .xinitrc</a> pour de plus amples informations. N'oubliez pas de définir le PATH et de choisir comme dernière commande un programme de longue durée ne tournant pas en arrière-plan. Conseil : ajoutez <code>exec xterm</code> comme roue de secours pour le cas où il serait impossible de trouver votre gestionnaire de fenêtres ou un programme équivalent.
 </p>
     
-    <h2><a name="black">7.2 Black icons in the GNOME panel or in the
-menu of a GNOME application</a></h2>
+    <h2><a name="black">7.2 Icônes noires dans le panneau GNOME ou dans le menu d'une application GNOME</a></h2>
       
       <p>
-A common problem is that icons or other images are displayed as black
-rectangles or black outlines.
-Ultimately, this is caused by limitations in the operating system
-kernel.
-The problem has been reported to Apple, but so far they seem unwilling
-to fix it; see the filed <a href="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
-bug report</a> for details.
+Les icônes ou images sont affichées sous forme de rectangles noirs ou ont une bordure noire. Ceci est dû aux limitations du noyau du système opératoire. Le problème a été rapporté à Apple, mais, pour l'instant, il ne semble pas qu'il y ait une réelle volonté de le résoudre ; voir le <a href="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">rapport de bogue Darwin</a> pour de plus amples informations.
 </p>
       <p>
-The current situation is that the MIT-SHM extension of the X11
-protocol is practically unusable on Darwin and Mac OS X.
-There are two ways to turn the protocol extension off: in the server
-or in the clients.
-The XFree86 servers installed by Fink (i.e. the xfree86-server and
-xfree86-rootless packages) have it turned off.
-The GIMP and the GNOME panel have been inoculated as well.
-If you experience black icons in another application, start that
-application with the <code>--no-xshm</code> command line option.
+À l'heure actuelle, l'extension MIT-SHM du protocole X11 est inutilisable sous Darwin et Mac OS X. Il y a deux façons de désactiver l'extension : dans le serveur ou dans les clients. Les serveurs XFree86 installés par Fink (les paquets xfree86-server et xfree86-rootless) désactivent cette extension. The GIMP et le panneau GNOME aussi. Si vous voyez apparaître des icônes noires dans d'autres applications, démarrez-les avec l'option <code>--no-xshm</code>.
 </p>
     
-    <h2><a name="keyboard">7.3 The keyboard doesn't work in XFree86</a></h2>
+    <h2><a name="keyboard">7.3 Le clavier ne fonctionne pas sous XFree86</a></h2>
       
       <p>
-This is a known problem that so far seems to affect only portables
-(PowerBook, iBook).
-To work around this, the "Load from file" keymapping option was
-implemented.
-Nowadays it has become the default because the old method (reading the
-mapping from the kernel) stopped working with Mac OS X 10.1.
-If you haven't enabled the option already, you can do so in the
-XDarwin preferences dialog.
-Check the "Load from file" checkbox and select the keymapping file to
-load.
-After restarting XDarwin, your keyboard should mostly work (see
-below).
+C'est un problème qui ne semble affecter que les portables (PowerBook, iBook).
+Pour corriger ce problème, on a implémenté l'option de mappage de clavier "Load from file". Maintenant, cette méthode est devenue la méthode par défaut, car l'ancienne méthode (de lecture du mappage à partir du noyau) a cessé de fonctionner à partir de Mac OS X 10.1. Si vous n'avez pas encore activé cette option, vous pouvez le faire dans le dialogue de préférences de XDarwin. N'oubliez pas de cocher la case "Load from file" et sélectionnez le fichier de mappage à charger. Après redémarrage de XDarwin, votre clavier devrait fonctionner à peu près correctement (voir plus bas).
 </p>
       <p>
-If you're starting XFree86 from the command line, you can pass the
-name of the keymapping file to load as an option, as in:
+Si vous démarrez XFree86 en ligne de commande, vous pouvez passer le nom du fichier de mappage en option, de la façon suivante :
 </p>
       <pre>startx -- -quartz -keymap USA.keymapping</pre>
     
-    <h2><a name="delete-key">7.4 The Backspace key doesn't work</a></h2>
+    <h2><a name="delete-key">7.4 La touche retour arrière ne fonctionne pas</a></h2>
       
       <p>
-This can happen when you use the "Load keymapping from file" option
-described above.
-The mapping files describe the backspace key as "Delete", not as
-"Backspace".
-You can correct that by putting the following line in your .xinitrc
-file:
+Ceci survient quand vous utilisez l'option "Load keymapping from file" décrite ci-dessus. Les fichiers de mappage font correspondre la touche retour arrière à "Suppression", et non pas à "Retour arrière". Vous pouvez modifier cette correspondance en insérant la ligne suivante dans votre fichier .xinitrc.
 </p>
       <pre>xmodmap -e "keycode 59 = BackSpace"</pre>
       <p>
-If I remember correctly, XDarwin 1.0a2 and later have code that
-correctly maps the Backspace key automatically.
+Si mes souvenirs sont bons, XDarwin 1.0a2 et les versions ultérieures assurent une correspondance correcte de la touche retour arrière.
 </p>
     
     <h2><a name="locale">7.5 "Warning: locale not supported by C library"</a></h2>
       
       <p>
-These messages are quite common, but harmless.
-It just means what it says - internationalization is not supported
-through the standard C library, the program will use the default
-English messages, date formats, and so on.
-There are several ways to deal with this:
+Ces messages sont courants, et inoffensifs. Cela signifie simplement que l'internationalisation n'est pas gérée par la librairie standard C, le programme utilisera donc, par défaut, l'anglais pour les messages, les formats de date, etc... Il y a plusieurs façons de résoudre le problème :
 </p>
       <ul>
         <li>
           <p>
-Just ignore the messages.
+Ignorer ces messages.
 </p>
         </li>
         <li>
           <p>
-Get rid of the messages by unsetting the environment variable LANG.
-Note that this will also turn internationalization off in programs
-that actually support it (via gettext/libintl).
-Example for .xinitrc:
+Supprimer ces messages en supprimant la définition de la variable d'environnement LANG. Notez que cela désactivera aussi l'internationalisation des programmes (pour les programmes qui la gèrent via gettext/libintl). Exemple pour .xinitrc :
 </p>
           <pre>unset LANG</pre>
           <p>
-Example for .cshrc:
+Exemple pour .cshrc :
 </p>
           <pre>unsetenv LANG</pre>
         </li>
         <li>
           <p>
-(10.1 only) Use the <code>libxpg4</code> Fink package.
-It builds a small library that contains working locale functions and
-arranges that it is loaded before the system libraries (using the
-DYLD_INSERT_LIBRARIES environment variable).
-You may have to set the LANG environment variable to a fully qualified
-value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
-or <code>de_DE</code>.
+(10.1 uniquement) Utiliser le paquet Fink <code>libxpg4</code>. Il construit une petite librairie qui contient des fonctions locales et gère leur chargement avant celui des librairies système (en utilisant la variable d'environnement DYLD_INSERT_LIBRARIES). Vous devrez peut-être donner à la variable d'environnement LANG une valeur complète, par exemple : <code>de_DE.ISO_8859-1</code> au lieu de <code>de</code> ou <code>de_DE</code>.
 </p>
         </li>
         <li>
           <p>
-Ask Apple to include proper locale support in a future version of Mac
-OS X.
+Demander à Apple d'inclure une gestion correcte des locales dans une version ultérieure de Mac OS X.
 </p>
         </li>
       </ul>
     
   <p align="right">
-Next: <a href="tips.php?phpLang=fr">8 Usage Tips</a></p>
+Next: <a href="tips.php?phpLang=fr">8 Conseils d'utilisation</a></p>
 
 <? include_once "footer.inc"; ?>

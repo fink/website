@@ -12,7 +12,7 @@ $navbox = array(
   "doc/x11/xtools.php?phpLang=fr", "Xtools",
   "doc/x11/other.php?phpLang=fr", "Autres X11",
   "doc/x11/trouble.php?phpLang=fr", "Résolution de problèmes",
-  "doc/x11/tips.php?phpLang=fr", "Tips",
+  "doc/x11/tips.php?phpLang=fr", "Conseils",
 );
 $printlink = "doc/x11/x11.fr.html";
 

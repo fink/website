@@ -110,7 +110,7 @@ Les plus populaires sont ceux qui permettent à l'utilisateur de personnaliser l
 La plupart des gestionnaires de fenêtres fournissent d'autres fonctionnalités, comme les menus déroulant dans la fenêtre racine, les docks et les boutons de lancement.
 </p>
       <p>
-De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">liste actuelle</a>.
+De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">liste actuelle</a>.
       </p>
     
     <h2><a name="desktop">1.9 Que sont Quartz/Aqua, Gnome et KDE ?</a></h2>

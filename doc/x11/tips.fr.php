@@ -1,5 +1,5 @@
 <?
-$title = "Utilisation de X11 - Tips";
+$title = "Utilisation de X11 - Conseils";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2004/05/13 01:48:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="prev" href="trouble.php?phpLang=fr" title="Résolution de problèmes engendrés par XFree86">';
@@ -7,16 +7,13 @@ $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation
 include_once "header.inc";
 ?>
 
-<h1>Utilisation de X11 - 8 Usage Tips</h1>
+<h1>Utilisation de X11 - 8 Conseils d'utilisation</h1>
     
     
-    <h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
+    <h2><a name="terminal-app">8.1 Lancement d'applications X11 à partir de Terminal.app</a></h2>
       
       <p>
-To launch X11 applications from a Terminal.app window, you must set
-the environment variable "DISPLAY".
-This variable tells the applications where to find the X11 window
-server.
+Pour lancer des applications X11 à partir d'une fenêtre de Terminal.app, vous devez définir la variable d'environnement "DISPLAY". Cette variable indique aux applications l'emplacement du serveur de fenêtres X11. 
 In the default setup - XDarwin runs on the same machine, your shell is
 tcsh - you can set the variable as follows:
 </p>
