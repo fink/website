@@ -1,7 +1,7 @@
 <?
 $title = "ToDo";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/07 19:52:28 $';
+$cvs_date = '$Date: 2001/05/09 10:20:15 $';
 
 include "header.inc";
 ?>
@@ -21,6 +21,7 @@ distribution</li>
 <li>Support virtual packages (Provides, Replaces)</li>
 <li>Pseudo-packages for software that is already installed on the host
 system</li>
+<li>Get rid of .../var/fink-stamp</li>
 <li>Optimization: make sure all binaries are stripped and at least
 basic optimization flags are used (e.g. <tt>-O2</tt>)</li>
 <li>Package database on the web site</li>
