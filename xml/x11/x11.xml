@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.4 2001/07/18 20:55:27 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.5 2001/07/23 11:36:26 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -676,15 +676,155 @@ more information on that.
 
 <section name="wiredx"><title>WiredX</title>
 <p>
-<link url="http://www.jcraft.com/wiredx/">WiredX</link> is a X11
+<link url="http://www.jcraft.com/wiredx/">WiredX</link> is an X11
 server written in Java.
 It also supports rootless mode.
-A Installer.app package is available at the web site.
+An Installer.app package is available at the web site.
+</p>
+</section>
+
+
+<section name="exodus"><title>eXodus</title>
+<p>
+Reportedly, a Mac OS X native version of <link
+url="http://www.powerlan-usa.com/exodus/">eXodus</link> is now in beta
+testing.
+If someone can provide more information, just throw it my way.
 </p>
 </section>
 
 
 </chapter>
 
+
+<chapter filename="trouble">
+<title>Troubleshooting and Tips</title>
+<shorttitle>Troubleshooting</shorttitle>
+
+<section name=""><title>When I launch XDarwin, it quits almost immediately</title>
+<p>
+This usually happens when your <code>.xinitrc</code> isn't set up
+correctly.
+See also: <link url="run-xfree86.php#xinitrc">The .xinitrc File</link>.
+</p>
+<p>
+What happens is that the <code>.xinitrc</code> is run and for some
+reason terminates almost immediately.
+<code>xinit</code> interprets this as "the user's session has ended"
+and kills XDarwin.
+Some common problems that lead to this:
+</p>
+<ul>
+
+<li><p>
+All apps are started in the background.
+Instead the last one must be started if the foreground (no
+<code>&amp;</code> at the end of the line), or better with
+<code>exec</code>.
+</p></li>
+
+<li><p>
+The app that should run in the foreground can't be found.
+This can happen when you give just the name without the path
+(e.g. <code>xterm</code>), but forget to set the shell's search path
+(environment variable PATH).
+Neither /usr/X11R6/bin nor /sw/bin are in the default path.
+If you use Fink, just add an <code>source /sw/bin/init.sh</code> to
+the start of the <code>.xinitrc</code>.
+To set the path manually, use this piece:
+</p>
+<codeblock>PATH=$PATH:/usr/X11R6/bin
+export PATH</codeblock>
+</li>
+
+<li><p>
+The app that should run in the foreground doesn't start or quits
+immediately for some other reason.
+There are many possibilities here, like missing libraries or missing
+configuration files.
+WindowMaker for instance requires that you run
+<code>wmaker.inst</code> once before using it.
+A good troubleshooting tactic in this situation is to replace the
+forground app with <code>xterm</code> and launch it manually from the
+xterm that comes up.
+This way you can see diagnostic messages.
+</p></li>
+
+</ul>
+<p>
+Of course, there's always the last reason: a bug in XDarwin.
+But most of the time, it really boils down to one of the above, even
+when XDarwin crashes after some seconds.
+</p>
+</section>
+
+
+<section name="black"><title>Black icons in the GNOME panel</title>
+<p>
+A common problem is that icons or other images are displayed as black
+rectangles or black outlines.
+Ultimately, this is caused by limitations in the operating system
+kernel.
+The problem has been reported to Apple, but so far they seem unwilling
+to fix it; see the filed <link
+url="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
+bug report</link> for details.
+</p>
+<p>
+The current situation is that the MIT-SHM extension of the X11
+protocol is practically unusable on Darwin and Mac OS X.
+There are two ways to turn the protocol extension off: in the server
+or in the clients.
+To turn it off in the server, the server must be recompiled with a
+special configuration setting; this is not practical for most users.
+</p>
+<p>
+To turn the extension off in the clients, you can pass the
+<code>--no-xshm</code> command line option when you start the
+application.
+In the case of the GNOME panel, you must edit your GNOME session file
+(<code>~/.gnome/session</code>).
+Be sure to pick the right section and add the <code>--no-xshm</code>
+to the <code>RestartCommand</code> line, like in this example:
+</p>
+<codeblock>7,id=11c0a80208000099479218400000018970007
+7,RestartStyleHint=2
+7,Priority=40
+7,Program=panel
+7,CurrentDirectory=/Users/chrisp
+7,CloneCommand=panel
+7,RestartCommand=panel --sm-client-id 11c0a80208000099479218400000018970007 --no-xshm</codeblock>
+</section>
+
+
+<section name="terminal-app"><title>Launching X11 apps from Terminal.app</title>
+<p>
+To launch X11 applications from a Terminal.app window, you must set
+the environment variable "DISPLAY".
+This variable tells the applications where to find the X11 window
+server.
+In the default setup - XDarwin runs on the same machine, your shell is
+tcsh - you can set the variable as follows:
+</p>
+<codeblock>setenv DISPLAY :0.0</codeblock>
+<p>
+A nice setup is to have XDarwin.app started when you log in (settable
+in the Login panel of the System Preferences) and add the following to
+your .cshrc:
+</p>
+<codeblock>if (! $?DISPLAY) then
+  setenv DISPLAY :0.0
+endif</codeblock>
+<p>
+This sets DISPLAY automatically in every shell.
+It doesn't override the current value when DISPLAY is already set,
+though.
+This way you can still run X11 applications remotely or through ssh
+with X11 tunneling.
+</p>
+</section>
+
+
+</chapter>
 
 </document>
