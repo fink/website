@@ -1,7 +1,7 @@
 <?
 $title = "Public Stuff";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/23 15:33:19 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2003/10/25 13:41:34 $';
 
 include "header.inc";
 ?>
@@ -10,6 +10,7 @@ include "header.inc";
 <h1>Public Stuff</h1>
 
 <ul>
+<li><a href="thelogo.php">All about Fink's logo</a></li>
 <li><a href="openosx.php">Fink Relations with OpenOSX</a></li>
 <li><a href="forked.php">Fink Relations with forked.net</a></li>
 </ul>
