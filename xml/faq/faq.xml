@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.110 2003/05/11 15:33:21 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.111 2003/05/18 22:01:02 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -750,26 +750,32 @@ you. </p>
 </question>
 <answer>
 <p>The number 19 appears because your OS X system is localized to a language
-other than English.  (This is a bug in Apple's Installer, that it doesn't
+other than English. (This is a bug in Apple's Installer, that it doesn't
 just show you the English-language error message.)</p>
 <p>The English language error message corresponding to number 19 is</p>
-<p>&quot;A root directory /sw exists.  Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
+<p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
 <p>You may be getting this error if you've used finkbefore, and didn't delete <filename>/sw</filename>.  If you haven't installed Fink before, the most likely cause of this
 is that you installed the Virex program available for free to .Mac users.
 As explained on Fink's webpage, Virex is incompatible with Fink (due to
 the Virex folks having made errors in the way they set things up).</p>
 </answer>
 </faqentry>
-
-<faqentry name="dselect-garbage">
-<question><p>I get a bunch of garbage when I select packages in <filename>dselect</filename>.  How can I use it?</p></question>
-<answer><p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>.  A workaround is to entter the following command</p>
+<faqentry name="dselect-garbage" >
+<question>
+<p>I get a bunch of garbage when I select packages in <filename>dselect</filename>.  How can I use it?</p>
+</question>
+<answer>
+<p>There are issues between <filename>dselect</filename> and <filename>Terminal.app</filename>.  A workaround is to entter the following command</p>
 <codeblock>setenv TERM xterm-xfree86</codeblock>
-<p>before you run <filename>dselect</filename>.</p></answer>
+<p>before you run <filename>dselect</filename>.</p>
+</answer>
 </faqentry>
-
-<faqentry name="perl-undefined-symbol"><question><p>Why do I get a bunch of "dyld: perl undefined symbols" errors when I run Fink commands?</p></question>
-<answer><p>If you see an error sequence like the following:</p>
+<faqentry name="perl-undefined-symbol" >
+<question>
+<p>Why do I get a bunch of &quot;dyld: perl undefined symbols&quot; errors when I run Fink commands?</p>
+</question>
+<answer>
+<p>If you see an error sequence like the following:</p>
 <codeblock>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -782,7 +788,9 @@ _perl_get_sv</codeblock>
 <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
-fink selfupdate-cvs</codeblock></answer></faqentry>
+fink selfupdate-cvs</codeblock>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-general" >
 <title>Compile Problems - General</title>
@@ -877,10 +885,12 @@ do with whether missing symbols at runtime is considered a fatal error on
 startup or not, for applications that use weak references.</p>
 </answer>
 </faqentry>
-
-<faqentry name="mv-failed">
-<question><p>What does "execution of mv failed, exit code 1" mean when I try to build a package mean?</p></question>
-<answer><p>It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
+<faqentry name="mv-failed" >
+<question>
+<p>What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</p>
+</question>
+<answer>
+<p>It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
 <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
  /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
  mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
@@ -888,8 +898,28 @@ startup or not, for applications that use weak references.</p>
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</codeblock>
 <p>then you should look for <filename>libbar</filename> somewhere further back in the output of your build attempt.</p>
-</answer></faqentry>
-
+</answer>
+</faqentry>
+<faqentry name="node-exists" >
+<question>
+<p>I can't install a package | update because I get a message that a &quot;node&quot; already exists.</p>
+</question>
+<answer>
+<p>These errors look something like this:</p>
+<codeblock>Failed: Internal error: node for system-xfree86 already exists</codeblock>
+<p>This problem is that the dependency engine is confused, due to changes in some of the package info files.  To fix it:</p>
+<ul>
+<li>
+<p>Remove the offending package by force, e. g.</p>
+<codeblock>sudo dpkg -r --force-all system-xfree86</codeblock>
+<p>for the example given above.</p>
+</li>
+<li>
+<p>Try again to install | upgrade.  At some point a &quot;virtual dependency&quot; prompt will come up that includes the package you just removed.  Select it, and it will be reinstalled during your build.</p>
+</li>
+</ul>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>Compile Problems - Specific Packages</title>
