@@ -33,17 +33,3 @@ Vérifiez que vous avez téléchargé le <b>bon installeur</b> pour votre plate-
 L'équipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs.
 Nous remercions aussi notre communauté. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui. 
 </p>
-<a name="19/02/2004 "><span class="news-date">19/02/2004 : </span><span class="news-headline">Hissez vos couleurs</span></a><?php gray_line(); ?>
-	<p>
-Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. 
-L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
-</p>
-<p>
-Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée.
-Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française.
-En quelle langue êtes-vous prêt à traduire ?
-</p>
-<p>
-Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion.
-Pour ce faire, allez sur la <a href="lists/index.php?phpLang=fr">page des listes de diffusion</a>. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">ici</a>.
-</p>
