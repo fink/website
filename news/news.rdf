@@ -4,9 +4,35 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Fri, 28 Nov 2003 13:54:13 CET</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2003 20:40:52 PST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
+    <title>There they are! New mirrors..</title>
+    <link>http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..</link>
+    <dc:date>2003-11-30</dc:date>
+    <description>
+		
+	Thank you, thank you, thank you. What a great community we have.
+	Thank you for providing us with more mirrors. 
+		
+		
+	Matthew Healey member of the Western 
+	Australian Macintosh User Group and their 
+	ISP extremedsl
+	are providing Fink with a full mirror in Perth, Australia. This is our first
+	mirror in down under, thus I am pleased to welcome them to the family.
+	Furthermore the UKMIRROR service 
+	has accepted us, making distfile services available for Fink 
+	on 21 load balanced server.
+		
+		
+	We are very happy about this development, but we still need more rsync mirrors.
+	Thus, once more, if you feel like helping, please visit 
+	finkmirrors.net and get in touch.
+		
+		</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F">
     <title>More mirrors....pretty please?</title>
     <link>http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</link>
@@ -383,23 +409,6 @@ and Darwin operating
 systems.  Members of the alliance will share information using 
 the www.metapkg.org Web 
 site,  which  will provide a home for this cooperative effort. 
-
-                </description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.">
-    <title>Fink logo contest begins.</title>
-    <link>http://fink.sourceforge.net/news/#2003-06-16%20Fink%20logo%20contest%20begins.</link>
-    <dc:date>2003-06-16</dc:date>
-    <description>
-               Fink and 
-MacWelt have managed to organize a logo contest.
-For the next six weeks everyone is invited to submit their logo creations. 
-Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
-The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
- here. 
-                
-
-Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
 
                 </description>
   </item>
