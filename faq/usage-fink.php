@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: htodd';
-$cvs_date = 'Date: 2003/11/14 18:06:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/11/16 18:56:20';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -142,10 +142,9 @@ Packages in there usually have not been tested at all, many have
 problems or just won't compile.
 That is why Fink doesn't search the unstable tree by default.
 </p><p>
-If you only want one or two specific packages, it is safer to copy
-those .info files (and their associated .patch files, if there are
+If you only want one or two specific packages, and nothing else from unstable, then you need to switch over to CVS updating, because rsync only updates the trees that are active in your <code>fink.conf</code>.  Then you'll need to run <code>fink selfupdate</code> to download the package description files.  Now copy the relevant <code>.info</code> files (and their associated <code>.patch</code> files, if there are
 any) from <code>/sw/fink/dists/unstable/main/finkinfo</code>
-to <code>/sw/fink/dists/local/main/finkinfo</code>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.</p><p>If you want Fink to use all of unstable, edit
+to <code>/sw/fink/dists/local/main/finkinfo</code>.  However, note that your package may depend on other packages (or particular versions) which are also only in unstable.  You will have to move their .info and .patch files as well.  After you move all of the files, make sure to run <code>fink index</code>, so that Fink's record of available packages is updated.</p><p>If you want Fink to use all of unstable, edit
 <code>/sw/etc/fink.conf</code>, add
 <code>unstable/main</code> and <code>unstable/crypto</code> 
 to the beginning of the <code>Trees:</code>
