@@ -8,6 +8,7 @@
 
 <!ELEMENT document ( title, shorttitle, cvsid, preface?, chapter+ ) >
 <!ATTLIST document filename ID #REQUIRED >
+<!ATTLIST document lang CDATA "" >
 
 
 <!-- Structure -->
