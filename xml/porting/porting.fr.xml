@@ -4,7 +4,7 @@
 <document filename="index" lang="fr">
 	<title>Portage de logiciel sur Darwin et Mac OS X</title>
 	<shorttitle>Portage</shorttitle>
-	<cvsid>$Id: porting.fr.xml,v 1.4 2004/03/25 02:58:58 michga Exp $</cvsid> 
+	<cvsid>$Id: porting.fr.xml,v 1.5 2004/04/26 04:20:57 michga Exp $</cvsid> 
 
 	<preface>
 		<p>Ce document contient des indications pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent à Mac OS X version 10.0.x et Darwin 1.3.x. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est actuellement un sur-ensemble de Darwin.</p>
@@ -447,7 +447,7 @@ archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo
 x0.0 &amp;&amp; echo $verstring)'
 </codeblock>
 Voici une rustine (mais elle doit être appliquée avec précaution, car quelquefois
-il y a aussi d'autres problêmes avec libtool, si bien que cette rustine doit être appliquée à la main):
+il y a aussi d'autres problèmes avec libtool, si bien que cette rustine doit être appliquée à la main):
 <codeblock>
 diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
 --- gdk-pixbuf-0.16.0/configure 2002-01-22 20:11:48.000000000 -0500

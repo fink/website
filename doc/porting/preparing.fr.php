@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Préparation pour 10.2";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/25 02:58:58';
+$cvs_date = 'Date: 2004/04/26 04:20:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="prev" href="libtool.php?phpLang=fr" title="GNU libtool">';
 
 include_once "header.inc";
@@ -53,7 +53,7 @@ archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo
 x0.0 &amp;&amp; echo $verstring)'
 </pre>
 Voici une rustine (mais elle doit être appliquée avec précaution, car quelquefois
-il y a aussi d'autres problêmes avec libtool, si bien que cette rustine doit être appliquée à la main):
+il y a aussi d'autres problèmes avec libtool, si bien que cette rustine doit être appliquée à la main):
 <pre>
 diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
 --- gdk-pixbuf-0.16.0/configure 2002-01-22 20:11:48.000000000 -0500
