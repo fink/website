@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/01 23:19:34 $';
+$cvs_date = '$Date: 2004/03/12 13:31:17 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -64,20 +64,20 @@ Fink プロジェクトは
 サイトホスティングとダウンロードの他、 SourceForge は以下のサービスを提供しています。
 </p>
 <ul>
-<li><a href="http://sourceforge.net/projects/fink/">SourceForge project summary page</a></li>
+<li><a href="http://sourceforge.net/projects/fink/">SourceForge プロジェクト Summary ページ</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Report or view bugs</a></li>
+href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">バグレポート</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a package that's not in Fink</a></li>
+href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">パッケージ化の要求</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
+href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">fink への機能追加の要求</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a new Fink package (non-core developers)</a></li>
+href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">新パッケージの投稿 (コア開発者以外)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submit a patch for fink (the program)</a></li>
-<li><a href="lists/index.php">Mailing lists</a></li>
-<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">browse
-online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
+href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">fink へのパッチを送る</a></li>
+<li><a href="lists/index.php">メーリングリスト</a></li>
+<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">オンライン
+ブラウザ</a>, <a href="doc/cvsaccess/index.php">アクセスの仕方</a>)</li>
 </ul>
 <p>
 上記のサービスの中には SourceForge アカウントにログインして使う機能 (バグレポートやパッケージ化の要望など) もあります。
