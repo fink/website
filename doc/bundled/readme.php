@@ -1,18 +1,17 @@
 <?
 $title = "ReadMe";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/31 16:32:49';
+$cvs_date = 'Date: 2001/08/23 10:12:39';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.4 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.3 2001/07/31 16:32:49 chrisp Exp $</i></p>
+<h1>Fink 0.2.5 ReadMe</h1><p>Generated from <i>$Fink: readme.xml,v 1.5 2001/08/23 10:12:39 chrisp Exp $</i></p>
 <p>
 This is Fink, a package management system that aims to bring the full
-world of GNU and other common Open Source software to Darwin and
-Mac OS X.
+world of Open Source software to Darwin and Mac OS X.
 </p>
 <p>
 With the help of dpkg, it maintains a separate directory hierarchy.
@@ -23,11 +22,11 @@ are included with this distribution, everything else is downloaded off
 the Internet.
 </p>
 <p>
-This is version 0.2.4, a development release.
+This is version 0.2.5, a development release.
 It has rough edges everywhere, and lacks lots of useful features.
-The package list is also quite short. You're walking on thin ground.
-It could easily break your system (although it hasn't broken mine to
-date).
+The package list is also quite short.
+You're walking on thin ground.
+Read the instructions carefully.
 You have been warned.
 </p>
 <p>
@@ -41,6 +40,7 @@ You need:
 <ul>
 <li><p>
 An installed Mac OS X system, version 10.0 or later.
+(There may be some stray linker-related problems with 10.1.)
 Darwin 1.3.1 should also work, but this has not been tested.
 Earlier versions of both will <b>not</b> work.
 </p></li>

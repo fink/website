@@ -1,14 +1,14 @@
 <?
 $title = "Usage";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/31 16:32:50';
+$cvs_date = 'Date: 2001/08/23 10:12:39';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<h1>Fink 0.2.4 Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.6 2001/07/31 16:32:50 chrisp Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
+<h1>Fink 0.2.5 Usage</h1><p>Generated from <i>$Fink: usage.xml,v 1.8 2001/08/23 10:12:39 chrisp Exp $</i></p><a name=""><h2>Setting The Paths</h2></a>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -18,7 +18,7 @@ If you use tcsh, add the following to your .cshrc:
 </p>
 <pre>source /sw/bin/init.csh</pre>
 <p>
-Editing .cshrc will only affect new shells (i.e. new Terminal
+Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
 You'll also need to run <tt><nobr>rehash</nobr></tt> because tcsh caches the
@@ -140,6 +140,18 @@ default settings back.</p>
 Reruns the Fink configuration process.
 This will let you change your mirror sites and proxy settings, among
 others.
+</p>
+<a name=""><h2>selfupdate</h2></a>
+<p>
+This command automates the process of upgrading to a new Fink
+release.
+It checks the Fink website to see if a new version is available.
+It then downloads the package descriptions and updates the core
+packages, including fink itself.
+This command can only upgrade to regular releases, but you can use it
+to upgrade from a CVS version to a later regular release.
+It will refuse to run if you have /sw/fink set up to get package
+descriptions directly from CVS.
 </p>
 <a name=""><h2>Further Questions</h2></a>
 <p>

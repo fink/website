@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/08/01 05:38:04';
+$cvs_date = 'Date: 2001/08/23 10:12:39';
 
 $metatags = '<link rel="start" href="install.php" title="Installation Contents"><link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
@@ -28,7 +28,7 @@ If you're looking for the real instructions, skip to the <a href="install-first.
 <a name="install"><h2>First Time Installation Fast
 Track</h2></a>
 <p>
-Start out by copying the <tt><nobr>fink-0.2.4-full.tar.gz</nobr></tt> file to
+Start out by copying the <tt><nobr>fink-0.2.5-full.tar.gz</nobr></tt> file to
 your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
@@ -36,16 +36,16 @@ Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<tt><nobr>...</nobr></tt>).
 </p>
-<pre>[frodo:~] testuser% <b>tar xzf fink-0.2.4-full.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.2.4-full</b>
-[frodo:~/fink-0.2.4-full] testuser% <b>./bootstrap.sh /sw</b>
+<pre>[frodo:~] testuser% <b>tar xzf fink-0.2.5-full.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.2.5-full</b>
+[frodo:~/fink-0.2.5-full] testuser% <b>./bootstrap.sh /sw</b>
 
 Welcome to Fink.
 
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.2.4-full/bootstrap.pl .sudo '/sw'
+sudo /Users/testuser/fink-0.2.5-full/bootstrap.pl .sudo '/sw'
 Password:<b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -78,7 +78,7 @@ cp -f wget-ssl-1.7-1.patch /sw/fink/dists/stable/crypto/finkinfo/
 You should now have a working Fink installation in '/sw'. Use
 '/sw/bin/init.csh' to set up your environment to use it. Enjoy.
 
-[frodo:~/fink-0.2.4-full] testuser% <b>cd</b>
+[frodo:~/fink-0.2.5-full] testuser% <b>cd</b>
 [frodo:~] testuser% <b>pico .cshrc</b></pre>
 <p>
 The last command launches you into a text file editor.
@@ -91,7 +91,9 @@ You're now back at the prompt:
 [frodo:~] testuser% </pre>
 <p>
 If you have several Terminal.app windows open, close the other ones.
-That's it.
+That's it, you now have a base system installed.
+</p>
+<p>
 You can now install additional packages with the <tt><nobr>fink</nobr></tt>
 command, like this:
 </p>
@@ -117,7 +119,7 @@ documentation when your problem actually is well-documented.
 
 <a name="update"><h2>Update Fast Track</h2></a>
 <p>
-Start out by copying the <tt><nobr>fink-0.2.4-full.tar.gz</nobr></tt> file to
+Start out by copying the <tt><nobr>fink-0.2.5-full.tar.gz</nobr></tt> file to
 your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
@@ -125,9 +127,9 @@ Computer output is in <tt><nobr>normal face</nobr></tt>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<tt><nobr>...</nobr></tt>).
 </p>
-<pre>[frodo:~] testuser% <b>tar xzf fink-0.2.4-full.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.2.4-full</b>
-[frodo:~/fink-0.2.4-full] testuser% <b>./inject.pl /sw</b>
+<pre>[frodo:~] testuser% <b>tar xzf fink-0.2.5-full.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.2.5-full</b>
+[frodo:~/fink-0.2.5-full] testuser% <b>./inject.pl /sw</b>
 sudo ./inject.pl /sw
 Password:<b>(your normal password here)</b>
 Copying package descriptions
@@ -136,8 +138,8 @@ Done.
 
 Your Fink installation in '/sw' was updated with new fink packages.
 
-[frodo:~/fink-0.2.4-full] testuser% <b>cd pkginfo</b>
-[frodo:~/fink-0.2.4-full/pkginfo] testuser% <b>./inject.pl /sw</b>
+[frodo:~/fink-0.2.5-full] testuser% <b>cd pkginfo</b>
+[frodo:~/fink-0.2.5-full/pkginfo] testuser% <b>./inject.pl /sw</b>
 sudo ./inject.pl /sw
 Copying...
 ...
@@ -146,7 +148,7 @@ Your Fink installation in '/sw' was updated with new package description
 files. Use appropriate fink commands to update the packages, e.g. 'fink
 update-all'.
 
-[frodo:~/fink-0.2.4-full/pkginfo] testuser% <b>cd</b>
+[frodo:~/fink-0.2.5-full/pkginfo] testuser% <b>cd</b>
 [frodo:~] testuser% <b>fink update-all</b>
 ...</pre>
 
