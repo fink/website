@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/11/28 12:53:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/12/02 02:38:24';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -106,12 +106,10 @@ from the head command. What's broken?</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>6 Compile Problems - Specific Packages</b></a></li>
 <ul>
-<li><a href="comp-packages.php#libgtop">6.1 libgtop fails to build with errors involving sed.</a></li>
-<li><a href="comp-packages.php#cant-install-xfree">6.2 I want to switch to Fink's xfree86 packages, but I can't install xfree86-base, because it conflicts with system-xfree86.</a></li>
+<li><a href="comp-packages.php#libgtop">6.1 A package fails to build with errors involving <code>sed</code>.</a></li>
+<li><a href="comp-packages.php#cant-install-xfree">6.2 I want to switch to Fink's XFree86 packages, but I can't install <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts with <code>system-xfree86</code>.</a></li>
 <li><a href="comp-packages.php#change-thread-nothread">6.3 How do I change from the non-threaded version of Fink's XFree86 packages to the threaded version (or vice-versa)?</a></li>
-<li><a href="comp-packages.php#apple-x11">6.4 I've installed the Apple X11 package, but system-xfree86 won't install.</a></li>
-<li><a href="comp-packages.php#cctools">6.5 "When I try to install KDE, I get the following message: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li>
-<li><a href="comp-packages.php#system-xfree86-upgrade">6.6 I can't update system-xfree86, because of a conflict with x11.</a></li>
+<li><a href="comp-packages.php#cctools">6.4 "When I try to install KDE, I get the following message: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li>
 </ul>
 <li><a href="usage-general.php"><b>7 Package Usage Problems - General</b></a></li>
 <ul>
@@ -144,7 +142,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.151 2003/11/28 12:53:51 fingolfin Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.152 2003/12/02 02:38:24 alexkhansen Exp $</i></p>
 
 
 <?

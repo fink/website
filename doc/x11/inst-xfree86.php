@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2003/11/28 12:53:51';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2003/12/02 02:38:25';
 
 $metatags = '<link rel="contents" href="index.php" title="Running X11 Contents"><link rel="next" href="run-xfree86.php" title="Starting XFree86"><link rel="prev" href="history.php" title="History">';
 
@@ -253,7 +253,11 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
   </p>
 </li>
 </ol>
- 
+<p>If, on the other hand, you have an X11 version that was not installed via Fink, you'll need to remove it via the command line:</p>
+<pre>sudo rm -rf /usr/X11R6 /etc/X11</pre> 
+<p>The above holds true for removing any flavor of X11 that you didn't install through Fink.  You will also need to remove <code>XDarwin.app</code> | 
+<code>X11.app</code>, depending on what you had installed.  Make sure to check your <code>.xinitrc</code> if you are removing Apple's X11 to 
+make sure that you aren't trying to run <code>quartz-wm</code>.  You can now install whatever new X11 variety you want, manually or via Fink.</p>  
 
 <h2><a name="fink-summary">3.8 Fink package summary</a></h2>
 
@@ -275,9 +279,6 @@ should install:
 </td></tr><tr valign="top"><td>4.x built from source, or from the latest CVS source</td><td>
 <p>
 <code>system-xfree86</code> only (+splitoffs)</p>
-</td></tr><tr valign="top"><td>4.2.x base system built via Fink + binary rootless server</td><td>
-<p>
-<code>xfree86-base</code> only</p>
 </td></tr><tr valign="top"><td>4.2.x from Apple</td><td>
 <p>
 <code>system-xfree86</code> only (+splitoffs)
