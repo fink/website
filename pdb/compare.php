@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/26 00:05:07 $';
+$cvs_date = '$Date: 2004/04/20 05:58:43 $';
 
 include "header.inc";
 include "releases.inc";
@@ -15,14 +15,21 @@ It does not take versions into account.<br>
 <form action="compare.php" method="GET">
 
 <?PHP
-if(!isset($tree1))
-  $tree1 = 'current-unstable';
-if(!isset($tree2))
-  $tree2 = 'current-stable';
-if(!isset($cmp))
-  $cmp = 0;
-if(!isset($splitoffs))
-  $splitoffs = 0;
+$tree1 = 'current-10.2-gcc3.3-unstable';
+if(param("tree1"))
+	$tree1 = param("tree1");
+$tree2 = 'current-10.3-unstable';
+if(param("tree2"))
+	$tree2 = param("tree2");
+$cmp = 0;
+if(param("cmp"))
+	$cmp = param("cmp");
+$splitoffs = 0;
+if(param("splitoffs"))
+	$splitoffs = param("splitoffs");
+$sort = 'maintainer';
+if(param("sort"))
+	$sort = param("sort");
 
 $q = "SELECT * FROM release";
 $rs = mysql_query($q, $dbh);
@@ -46,6 +53,10 @@ if (!$rs) {
   print "<input type=checkbox name=\"splitoffs\" ".
   		($splitoffs ? 'checked>' : '>').
   		"Include Splitoffs<br>";
+  print 'Sort: <SELECT name = sort>'.
+  		'<option value=name '. ($sort ? 'selected>' : '>'). 'Package Name'.
+  		'<option value=maintainer '. ($sort ? '>' : 'selected>'). 'Maintainer</SELECT>'; 
+  
 ?>  
 <input type="submit" value="Search">
 </form>
@@ -54,7 +65,7 @@ if (!$rs) {
 $q = "SELECT * FROM package ".
   	 "WHERE release LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
-  	 "ORDER BY name ASC";
+  	 "ORDER BY \"$sort\" ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print "<p><b>error during query ".$q.':</b> '.mysql_error().'</p>';
@@ -87,9 +98,12 @@ if (!$rs) {
 			 $desc = " - ".$row[descshort];
 			if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
 			  $desc = "";
+			if(! strcmp($sort, "maintainer"))
+			$pkglist = $pkglist . '<li>'.$row[maintainer].'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+			 $row[version].'-'.$row[revision].$desc . "</li>\n";  
+			else
 			$pkglist = $pkglist . '<li><a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
-			  $row[version].'-'.$row[revision].$desc . "</li>\n";
-			  
+			 $row[version].'-'.$row[revision].$desc .' - '.$row[maintainer]."</li>\n"; 
   			$hitcount++;			
   		}
 	} 
@@ -99,11 +113,11 @@ if (!$rs) {
   		" in $tree2<p><ul> $pkglist";
 ?>
 
-
 <?
 }
 ?>
 
 <?
-include "footer.inc";
+include "footer.inc";     
+
 ?>
