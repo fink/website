@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.27 2002/01/11 11:23:42 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.28 2002/01/12 18:51:10 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -440,7 +440,9 @@ You've replaced the GNU version of the <code>make</code> utility
 installed as part of the Developer Tools with a BSD version of make.
 Many packages rely on special features only supported by GNU make.
 Make sure that <code>/usr/bin/make</code> is a symlink to
-<code>gnumake</code>, not <code>bsdmake</code>.
+<code>gnumake</code>, not <code>bsdmake</code>. Furthermore,
+make sure that <code>/usr/local/bin/</code> does not contain another
+copy of <code>make</code>.
 </p>
 </answer></faqentry>
 
@@ -522,6 +524,17 @@ system-xfree86 and system-xtools have been fixed to patch the
 configuration files on the fly if necessary.
 They are available in CVS; the binary distribution has also been
 updated with these new packages.
+</p>
+</answer></faqentry>
+
+<faqentry name="gettext"><question><p>gettext compiles fine but then
+installing it fails.</p></question>
+<answer>
+<p>
+This is a known problem which hopefully should be fixed in an upcoming
+Fink release. For now the workaround  is to enter the following commands:
+<codeblock>fink rebuild gettext
+fink update gettext</codeblock>
 </p>
 </answer></faqentry>
 
