@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/05/30 21:27:03 $';
+$cvs_date = '$Date: 2002/05/30 22:06:48 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -45,8 +45,6 @@ include $fsroot."news/news.inc";
 
 <p>
 Fink 0.4.0 was released on 18 April 2002.
-The source release and the binary installer are available now, the
-other binary packages are still being built.
 </p>
 
 <h1>Resources</h1>
