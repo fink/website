@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.79 2003/10/25 03:26:39 rangerrick Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.80 2003/10/25 14:06:59 dmalloc Exp $</cvsid>
 
 
+<newsitem>
+	<date>2003-10-25</date>
+	<headline>Look Ma, a logo for Fink</headline>
+		<body>
+	<p>As you surely noticed, Fink has a logo. This is the result of our
+	Logo <link url="logo.php">contest</link> held earlier this year.
+	This new, official, logo has been displayed since the 24th of October and
+	those of you who wondered how it has been picked and what the name of the
+	winner is should read up in the PR <link url="pr/index.php">section</link>.
+	</p>
+	<p>
+	The longer explanation also features a larger version of the logo itself,
+	so that you may have a closer look at its details. We like our new logo,
+	we hope that you will like it too.
+	</p>
+	<p>IMPORTANT: Due to no formal licensing agreement as of yet, it is forbidden for any third party to display this logo. Thank you for your understanding
+	</p>
+		</body>
+</newsitem>
 <newsitem>
 	<date>2003-10-24</date>
 	<headline>Upgrade to gcc 3.3 and/or 10.3</headline>
