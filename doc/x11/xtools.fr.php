@@ -1,8 +1,8 @@
 <?
 $title = "Utilisation de X11 - Xtools";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/21 07:27:20';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="other.php?phpLang=fr" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php?phpLang=fr" title="Starting XFree86">';
+$cvs_date = 'Date: 2004/04/27 00:57:07';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="other.php?phpLang=fr" title="Other X11 Possibilities"><link rel="prev" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86">';
 
 include_once "header.inc";
 ?>

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 09:26:01';
+$cvs_date = 'Date: 2004/04/27 00:57:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing XFree86">';
 
 include_once "header.inc";
@@ -47,21 +47,24 @@ Finally, there is the option to set up <code>xdm</code>; read its
 manual page for details.
 </p>
       <p>
-Note: If you're running Mac OS X, you can type <code>&gt;console</code>
+Note: If you're running Mac OS X anterior to Panther, you can type <code>&gt;console</code>
 at the login window and you'll get a text console that is
 equivalent to pure Darwin.
+In case you don't see a field to enter a user's name in the login window, just type the first letter of whichever user's name, following by option-return.
 You can use all of the start methods outlined above, with the
 exception of <code>xdm</code>.
 </p>
-    
+<p>
+Note: If you are running Mac OS X Panther, you cannot start XFree86 from the console window.
+</p>
+
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
       
       <p>
 There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
 Applications folder.  This will let you choose between full 
-screen and rootless mode in a dialog at startup, just 
-double-click the XDarwin.app application. You can disable 
+screen and rootless mode in a dialog at startup. You can disable 
 the dialog and set XDarwin to always use the mode of your 
 choice in the Preferences dialog.  
 </p>

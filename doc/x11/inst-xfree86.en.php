@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing XFree86";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/04/17 09:26:01';
+$cvs_date = 'Date: 2004/04/27 00:57:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 include_once "header.inc";
