@@ -1,9 +1,9 @@
 <?
-/* $Id: nav.ja.inc,v 1.6 2004/03/24 18:29:08 dmrrsn Exp $ */
+/* $Id: nav.ja.inc,v 1.7 2004/03/24 22:36:02 babayoshihiko Exp $ */
 
 $section = "documentation";
 $navbox = array(
-  "doc/index.php?phpLang=ja", "ドキュメント一覧",
+  "doc/index.php?phpLang=ja", "文書一覧",
   "doc/users-guide/index.php?phpLang=ja", "利用ガイド",
   "doc/x11/index.php?phpLang=ja", "X11 を使う",
   "doc/bundled/install.php?phpLang=ja", "インストール",
