@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.12 2004/07/25 13:57:37 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.13 2004/10/04 05:25:22 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -19,12 +19,12 @@
 現在のユーザー向け Fink ドキュメント:
 </p>
 <ul>
-<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.ja.html">Fink User's Guide</varlink> -
+<li><varlink url="users-guide/index.php" varurl="users-guide/uguide.ja.html">Fink ユーザーガイド</varlink> -
 Fink 本体のインストール、パッケージのインストール、新しい Fink リリースへのアップグレードなどが書かれています。
-ソースとバイナリリリースの両方の説明が書かれています。
+ソースとバイナリリリースの両方の説明が書かれています
 <em>現在作業中!</em></li>
-<li><varlink url="x11/index.php" varurl="x11/x11.ja.html">Running X11 on Darwin and Mac OS X</varlink> -
-コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) 。</li>
+<li><varlink url="x11/index.php" varurl="x11/x11.ja.html">Darwin と Mac OS X での X11</varlink> -
+コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) </li>
 </ul>
 
 <p>
@@ -49,18 +49,18 @@ releases</li>
 
 <ul>
 <li><varlink url="security/index.php" varurl="security/sec-policy.en.html">セキュリティーポリシー</varlink> - 
-Fink のパッケージをメンテナンスしている人、したいと思っている人、必見。</li>
+Fink のパッケージをメンテナンスしている人、したいと思っている人、必見</li>
 <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
 file) - <link
 url="http://conferences.oreillynet.com/macosx2002/"
 >O'Reilly Mac OS X Conference</link> でのプレゼンテーション用スライド (
-<link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</link> もあります) 。</li>
+<link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</link> もあります) </li>
 <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Porting Tips</varlink> - 
-Unix アプリケーションを Darwin へポートする際に有用な情報。</li>
+Unix アプリケーションを Darwin へポートする際に有用な情報</li>
 <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">パッケージ化チュートリアル</varlink> - 
-パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書。</li>
+パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">パッケージ化マニュアル</varlink> - 
-Fink パッケージの作り方、メンテナンス方法。</li>
+Fink パッケージの作り方、メンテナンス方法</li>
 </ul>
 </section>
 <section name="otherdoc">
