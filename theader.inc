@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.3 2003/10/23 21:09:59 dmalloc Exp $ */
+/* $Id: theader.inc,v 1.4 2003/10/23 21:24:33 dmalloc Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -90,7 +90,7 @@ if ($metatags)
 <td align="left" class="layout"><?
 if (!$is_home)
   print '<a href="'.$root.'index.php">';
-?><img src="<? print $root ?>img/mlogo.png" width="400"
+?><img src="<? print $root ?>img/mlogo.png" 
 border="0" alt="Fink"><?
 if (!$is_home)
   print '</a>';
