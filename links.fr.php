@@ -1,7 +1,7 @@
 <?
 $title = "Liens";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/05/08 20:45:31 $';
+$cvs_date = '$Date: 2004/05/19 02:25:57 $';
 
 include "header.inc";
 ?>
@@ -16,7 +16,7 @@ include "header.inc";
 <li><a href="http://finkmirrors.net/" target="_blank">Miroirs de Fink</a> - comment installer un miroir de Fink et statut des miroirs existants.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 interface graphique pour Fink</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=67">Rate Fink @ O'Reilly's OSDir.com</a> - Donnez une note à Fink et aidez-nous à le promouvoir.</li>
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Donnez une note à Fink et aidez-nous à le promouvoir.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 logs & stats du canal IRC #fink</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
