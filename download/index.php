@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/10/21 20:14:11 $';
+$cvs_date = '$Date: 2002/12/09 21:00:09 $';
 
 include "header.inc";
 ?>
@@ -22,18 +22,19 @@ New to Fink?
 These quick start instructions are here to get you up to speed with
 the binary release.
 </p>
-<p>
-<b>Note</b>: Currently, these instructions only apply to <b>10.1</b> users. New Jaguar users <a href="../news/jag-bootstrap.php">install here</A>. Jaguar users with previous fink installs <a href="../news/jaguar.php">upgrade here</a>.
-</p>
+
 <ol>
 <li><p>
 Download the installer disk image:<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg">Fink
-0.4.1 Binary Installer</a> - 10 MB
-</p></li>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-0.5.0a-Installer.dmg">Fink
+0.5.0a Binary Installer</a> - 10 MBM<br>
+(10.1 users - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg">Fink
+0.4.1</a>)
+</p>
+</li>
 <li><p>
-Double-click "Fink-0.4.1-installer.dmg" to mount the disk image,
-then double-click the "Fink 0.4.1 Installer.pkg" package
+Double-click "Fink-0.5.0a-Installer.dmg" to mount the disk image,
+then double-click the "Fink 0.5.0a Installer.pkg" package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
@@ -73,7 +74,7 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 <p>
 The source code for the packages in the installer disk image can be
 downloaded from this site,
-<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.4.1/main/source/base/">here</a>.
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-0.5.0a/main/source/base/">here</a>.
 </p>
 
 
