@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/04/03 22:17:03 $';
+$cvs_date = '$Date: 2002/04/03 22:21:26 $';
 
 include "header.inc";
 ?>
@@ -19,17 +19,17 @@ Fink (in alphabetical order):</p>
 <ul>
 <li>Sylvain Cuaz</li>
 <li>Martin Costabel</li>
-<li>Finlay Dobbie (aka AngusD)</li>
-<li>Justin F. Hallett (aka TheSin)</li>
+<li>Finlay Dobbie (<i>AngusD</i>)</li>
+<li>Justin F. Hallett (<i>TheSin</i>)</li>
 <li>Jeremy Higgs</li>
-<li>Max Horn (aka Fingolfin)</li>
-<li>David R. Morrison (aka drm)</li>
-<li>Matthias Neeracher (aka Murr)</li>
-<li>Peter O'Gorman (aka pogma)</li>
-<li>Benjamin Reed (aka RangerRick)</li>
-<li>Masanori Sekino (aka msek)</li>
+<li>Max Horn (<i>Fingolfin</i>)</li>
+<li>David R. Morrison (<i>drm</i>)</li>
+<li>Matthias Neeracher (<i>Murr</i>)</li>
+<li>Peter O'Gorman (<i>pogma</i>)</li>
+<li>Benjamin Reed (<i>RangerRick</i>)</li>
+<li>Masanori Sekino</li>
 <li>Matt Stephenson</li>
-<li>Alexander Strange (aka Feanor)</li>
+<li>Alexander Strange (<i>Feanor</i>)</li>
 <li>Christian Swinehart</li>
 <li>Jeffrey S. Whitaker</li>
 </ul>
