@@ -1,9 +1,9 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 15:34:49';
+$cvs_date = 'Date: 2001/09/16 18:51:18';
 
-$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="install.php" title="Installation Questions"><link rel="prev" href="index.php" title="F.A.Q. Contents">';
+$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="relations.php" title="Relations with Other Projects"><link rel="prev" href="index.php" title="F.A.Q. Contents">';
 
 include "header.inc";
 ?>
@@ -71,7 +71,7 @@ aware of the arguments about /usr/local in the previous question.</p></div></a>
 
 
 <p align="right">
-Next: <a href="install.php">Installation Questions</a></p>
+Next: <a href="relations.php">Relations with Other Projects</a></p>
 
 
 <?

@@ -1,16 +1,14 @@
 <?
 $title = "F.A.Q. - Installation";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 15:34:49';
+$cvs_date = 'Date: 2001/09/16 18:51:18';
 
-$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage.php" title="Usage Questions"><link rel="prev" href="general.php" title="General Questions">';
+$metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage.php" title="Usage Questions"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
 include "header.inc";
 ?>
 
 <h1>F.A.Q. - Installation Questions</h1>
-
-
 
 
 

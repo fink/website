@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/09/16 15:34:49';
+$cvs_date = 'Date: 2001/09/16 18:51:18';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -27,6 +27,17 @@ GNU-Darwin)?</a></li>
 /usr/local?</a></li>
 <li><a href="general.php#why-sw">Then why did you choose
 /sw?</a></li>
+</ul>
+<li><a href="relations.php"><b>Relations with Other Projects</b></a></li>
+<ul>
+<li><a href="relations.php#upstream">Do you contribute your patches
+back to the upstream maintainers?</a></li>
+<li><a href="relations.php#debian">What is your relation with the
+Debian project? Are you porting Debian Linux to Mac OS X?</a></li>
+<li><a href="relations.php#apple">What is your relation with
+Apple?</a></li>
+<li><a href="relations.php#openosx">What is your relation with
+OpenOSX.com?</a></li>
 </ul>
 <li><a href="install.php"><b>Installation Questions</b></a></li>
 <ul>
@@ -68,7 +79,7 @@ XMMS</a></li>
 <li><a href="packages.php#gnome-terminal">Why won't gnome-terminal
 start up?</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.12 2001/09/16 15:34:49 chrisp Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.14 2001/09/16 18:51:18 chrisp Exp $</i></p>
 
 
 <?
