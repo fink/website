@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.28 2001/08/22 06:38:38 chrisp Exp $ */
+/* $Id: header.inc,v 1.29 2001/09/02 13:08:35 chrisp Exp $ */
 
 // main navigation box
 $default_navbox = array(
@@ -80,7 +80,9 @@ width="54" height="22" border="0" alt="F.A.Q." /></a><a href="<? print $root ?>d
 src="<? print $root ?>img/menu-docu.gif" width="110" height="22"
 border="0" alt="Documentation" /></a><a href="<? print $root ?>pdb/index.php"><img
 src="<? print $root ?>img/menu-packages.gif" width="70" height="22"
-border="0" alt="Packages" /></a></td>
+border="0" alt="Packages" /></a><a href="<? print $root ?>help/index.php"><img
+src="<? print $root ?>img/menu-help.gif" width="42" height="22"
+border="0" alt="Help" /></a></td>
 
 <td align="right" background="<? print $root ?>img/menu-back.gif"><img src="<? print $root ?>img/menu-back.gif"
 width="160" height="22" border="0" alt="" /></td>
