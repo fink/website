@@ -281,10 +281,7 @@ More Information on setting and updating library version numbers using libtool c
 
 
 <h2><a name="notes">3.5 Further Notes</a></h2>
-<p>
-For more information on libtool itself and what it does, see the <a href="http://www.gnu.org/software/libtool/libtool.html">libtool
-homepage</a>.
-</p>
+<p>For more information on libtool itself and what it does, see the <a href="http://www.gnu.org/software/libtool/libtool.html">libtool homepage</a>.</p>
 
 <p>
 Side note:

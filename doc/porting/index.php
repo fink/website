@@ -9,21 +9,15 @@ include "header.inc";
 ?>
 
 <h1>Porting Unix software to Darwin and Mac OS X</h1>
-<p>
-This document contains hints for porting Unix applications to Darwin
-and Mac OS X.
-The information here applies to Mac OS X version 10.0.x and Darwin
-1.3.x.
-Both systems will be referred to as Darwin, since Mac OS X is actually
-a superset of Darwin.
-</p>
-<h2>Contents</h2><ul>
+		<p>This document contains hints for porting Unix applications to Darwin and Mac OS X. The information here applies to Mac OS X version 10.0.x and Darwin 1.3.x. Both systems will be referred to as Darwin, since Mac OS X is actually a superset of Darwin.</p>
+	<h2>Contents</h2><ul>
 <li><a href="basics.php"><b>1 Basics</b></a></li>
 <ul>
 <li><a href="basics.php#heritage">1.1 Where Darwin came from</a></li>
 <li><a href="basics.php#compiler">1.2 The Compiler and Tools</a></li>
 <li><a href="basics.php#host-type">1.3 Host type</a></li>
 <li><a href="basics.php#libraries">1.4 Libraries</a></li>
+<li><a href="basics.php#other-sources">1.5 Other sources of information</a></li>
 </ul>
 <li><a href="shared.php"><b>2 Shared Code</b></a></li>
 <ul>

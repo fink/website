@@ -97,8 +97,10 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 </ul>
 
 <h2><a name="gcc3">4.2 The gcc3 compiler</a></h2>
-<p>Mac OS X 10.2 uses the gcc3 compiler.
-</p><p>Some packages which have loadable modules and use
+
+	<p>Mac OS X 10.2 uses the gcc3 compiler.</p>
+	
+	<p>Some packages which have loadable modules and use
 libtool fail with an install_name error, because libtool passes
 the -install_name flag even along with the -bundle flag (when it is not
 strictly needed).  This behavior was accepted by the gcc2 compiler but is
