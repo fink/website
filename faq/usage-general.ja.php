@@ -84,7 +84,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (
 <div class="answer"><p><b>A:</b> 
 	いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、細かな違いがあります。
 	Jaguar と Panther では選択肢も変わります。
-	</p><ul>
+	</p><p>Panther では:</p><ul>
 		<li>
 		<p>
 		Apple X11 (3枚目のディスク):

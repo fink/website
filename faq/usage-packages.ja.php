@@ -108,7 +108,7 @@ exec gnome-session</pre><p>
 Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
-<div class="question"><p><b>Q9.11: Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</b></p></div>
+<div class="question"><p><b>Q9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</b></p></div>
 <div class="answer"><p><b>A:</b> 二つの可能性があります。</p><ul>
 		<li><b>バイナリからのインストール:</b> 
 		お使いの <code>fink</code> パッケージのバージョンが 0.17.0 より前のものであれば

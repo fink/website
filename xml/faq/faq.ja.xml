@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.17 2004/06/14 05:48:00 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.18 2004/06/19 15:34:09 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1109,7 +1109,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </faqentry>
 <faqentry name="basic-headers" >
 <question>
-<p>stddef.h | whar.h | crt.o が見つからないというメッセージが出ます。
+<p>stddef.h | wchar.h | crt.o が見つからないというメッセージが出ます。
 これはどこにありますか?</p>
 </question>
 <answer>
@@ -1510,6 +1510,7 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
 	いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、細かな違いがあります。
 	Jaguar と Panther では選択肢も変わります。
 	</p>
+	<p>Panther では:</p>
 	<ul>
 		<li>
 		<p>
@@ -1834,7 +1835,7 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p>
 </faqentry>
 <faqentry name="apple-x11-wants-xfree86" >
 <question>
-	<p>Apple X11 をインストールしたけれども、 Fink が xfree86 をインストールしろといい続けます。</p>
+	<p>Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</p>
 </question>
 <answer>
 	<p>二つの可能性があります。</p>

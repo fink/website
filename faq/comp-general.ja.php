@@ -115,7 +115,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b>Q6.12: stddef.h | whar.h | crt.o が見つからないというメッセージが出ます。
+<div class="question"><p><b>Q6.12: stddef.h | wchar.h | crt.o が見つからないというメッセージが出ます。
 これはどこにありますか?</b></p></div>
 <div class="answer"><p><b>A:</b> このヘッダは Developer Tools の DevSDK によって提供されるファイルです。
 <code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p></div>
