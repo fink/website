@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/13 20:38:32 $';
+$cvs_date = '$Date: 2001/07/19 12:52:44 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -30,13 +30,15 @@ Internet.</p>
 
 <h2>News</h2>
 
+<p>2001-07-19: A comprehensive document about <a
+href="doc/x11/index.php">X11 on Darwin and Mac OS X</a> is now
+available. It was written to be useful for anyone, not just Fink
+users.</p>
 <p>2001-07-13: A prototype of the <a href="pdb/index.php">package
 database</a> is now online.</p>
 <p>2001-07-09: Version 0.2.3 is released. Get it from the <a
 href="download.php">download page</a>. This version fixes the dpkg
 download problems many of you were having.</p>
-<p>2001-07-03: The <a href="doc/packaging/index.php">Packaging
-Manual</a> was updated to include all recently added fields.</p>
 
 <h2>Status</h2>
 

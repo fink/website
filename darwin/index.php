@@ -1,7 +1,7 @@
 <?
 $title = "Darwin Info";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/06/30 11:11:49 $';
+$cvs_date = '$Date: 2001/07/19 12:52:44 $';
 
 include "header.inc";
 ?>
@@ -25,8 +25,8 @@ shared library support right now</li>
 -->
 <li><a href="libtool.php">GNU libtool</a> and Darwin - how to get
 shared libraries</li>
-<li><a href="x11-choices.php">X11 Choices</a> - the various ways to
-run X11 applications on Mac OS X</li>
+<li><a href="../doc/x11/index.php">X11 on Darwin and Mac OS X</a> -
+covers concepts, installation and launching</li>
 </ul>
 
 <p>Unfortunately, I don't have time to keep all of these pages

@@ -1,7 +1,7 @@
 <?
 $title = "Documentation";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/07/08 18:10:38 $';
+$cvs_date = '$Date: 2001/07/19 12:52:44 $';
 
 include "header.inc";
 ?>
@@ -23,6 +23,8 @@ distribution)</li>
 <li><a href="bundled/usage.php">Usage</a> - how to use Fink
 and the installed software (for Fink users, also included in the
 distribution)</li>
+<li><a href="x11/index.php">X11 on Darwin and Mac OS X</a> - covers
+concepts, installation and launching</li>
 <li><a href="cvsaccess/index.php">CVS Access</a> - how to access the Fink CVS
 repository to get the latest code and packages between releases (for
 Fink users)</li>
@@ -35,7 +37,6 @@ maintain Fink packages (for Fink developers)</li>
 <li>A <a href="../fink/todo.php">ToDo list</a></li>
 <li><a href="../darwin/porting.php">Darwin porting tips</a></li>
 <li><a href="../darwin/libtool.php">libtool musings</a></li>
-<li><a href="../darwin/x11-choices.php">X11 Choices</a> (somewhat outdated)</li>
 </ul>
 
 
