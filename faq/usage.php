@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/17 06:51:21 $';
+$cvs_date = '$Date: 2001/05/17 06:52:12 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -29,8 +29,8 @@ it?</b></a></p>
 <p>First make sure you understand what 'unstable' means. Packages
 in there usually have not been tested at all, many have problems or
 just won't compile. That is why Fink doesn't search the unstable
-tree by default.<br>
-If you only want one or two specific packages, it is safer
+tree by default.</p>
+<p>If you only want one or two specific packages, it is safer
 to copy those .info files (and their associated .patch files, if there
 are any) from /sw/fink/dists/unstable/main/finkinfo to
 /sw/fink/dists/local/main/finkinfo. If you want Fink to use all of
