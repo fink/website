@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/08/23 11:48:22';
+$cvs_date = 'Date: 2004/08/23 11:51:05';
 $metatags = '';
 
 include_once "header.inc";
@@ -14,7 +14,7 @@ include_once "header.inc";
 	upgraded to XCode 1.5, we suggest that you wait until this issue
 	is resolved before doing so.
 	</p><p>
-	If you have having problems with a package which compiled under
+	If you are having problems with a package which compiled under
 	XCode 1.2 but does not compile correctly under XCode 1.5, 
 	please report the package to
 	the fink-devel mailing list.  (The usual symptom is: some symbols

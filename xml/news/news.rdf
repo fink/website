@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Mon, 23 Aug 2004 07:48:37 EDT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Aug 2004 07:51:13 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5">
@@ -18,7 +18,7 @@
 	upgraded to XCode 1.5, we suggest that you wait until this issue
 	is resolved before doing so.
 	
-	If you have having problems with a package which compiled under
+	If you are having problems with a package which compiled under
 	XCode 1.2 but does not compile correctly under XCode 1.5, 
 	please report the package to
 	the fink-devel mailing list.  (The usual symptom is: some symbols
