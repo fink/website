@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/20 15:16:35 $';
+$cvs_date = '$Date: 2001/04/21 15:33:23 $';
 $wantnav = "main";
 $is_home = 1;
 
@@ -36,17 +36,13 @@ not found"). Get it from the <a href="download.php">download
 page</a>.</p>
 <p>2001-04-14: Version 0.1.8 is out. Get it from the <a
 href="download.php">download page</a>.</p>
-<p>2001-03-30: The <a href="darwin/porting.php">porting notes</a> have
-been updated with information on Mac OS X Final.</p>
-<p>2001-03-30: Version 0.1.7 is out. Get it from the <a
-href="download.php">download page</a>.</p>
 
 <h2>Status</h2>
 
 <p>Version 0.1.8a was released on 15 April 2001. This is the last
-release to use stow. A new version using dpkg for low-level package
-management is nearing usable state and will be released Real Soon
-Now(tm).</p>
+release to use stow. Version 0.2.0, released on 20 April 2001, uses
+dpkg for low-level package management. When it has received a bit more
+testing, the 0.1.x series will be discontinued.</p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
