@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.15 2004/03/23 12:42:23 dmrrsn Exp $
+# $Id: Makefile.i18n.common,v 1.16 2004/03/23 12:46:29 dmrrsn Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -20,7 +20,8 @@ STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
 PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
-PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
+#PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
+PROCESS_HTML = /usr/bin/perl $(basedir)/htmlify.pl
 PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
 ALL_TARGETS = $(TARGET)
@@ -73,7 +74,8 @@ force: clean all
 	xsltproc -o $@ $(STYLESHEET_HTML) $<
 
 %.html: %.html.tmp
-	$(PROCESS_HTML) <$< >$@
+#	$(PROCESS_HTML) <$< >$@
+	$(PROCESS_HTML) $< $(LANGUAGES) >$@
 
 
 # rendering to pure text (monolithic)
