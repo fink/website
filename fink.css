@@ -1,49 +1,143 @@
-/* $Id: fink.css,v 1.14 2004/02/12 22:36:28 dmalloc Exp $ */
-body {  color:black;  background-color:white;  font-family:"Trebuchet MS",sans-serif;}
+/* $Id: fink.css,v 1.15 2004/02/28 15:52:08 babayoshihiko Exp $ */
+body { color:black; background-color:white;  font-family:"Trebuchet MS",sans-serif;}
 
-a:link {  color:rgb(204,141,4);}
+a:link { color:rgb(204,141,4); }
 
-a:visited {  color:rgb(51,25,0);}
+a:visited { color:rgb(51,25,0); }
 
-a:active {  color:rgb(255,51,51);}
+a:active { color:rgb(255,51,51); }
 
-p,ul,ol,li,dl,dt,dd,td,th {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt;}
+table {
+	background-color: transparent ;
+	border-style: none ;
+	border-width: 0px ;
+	border-collapse: separate;
+	border-spacing: 0px;
+	margin: 0px ;
+	padding: 0px ;
+}
 
-td.layout {  font-size:0px;}
+p,ul,ol,li,dl,dt,dd,td,th { color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
 
-h1 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:18pt;  font-weight:bold;}
+td.layout { 
+	font-size: 0px;
+	border-style: none ;
+	border-width: 0px ;
+	margin: 0px;
+	padding: 0px 0px ;
+}
 
-h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  font-weight:bold;}
+h1 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:18pt;  font-weight:bold; }
 
-.default {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt;}
+h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  font-weight:bold; }
 
-.attention {  color:red;}
+.default {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
 
-.nav {  color:black;  font-family:Verdana,Helvetica,Arial,sans-serif;  font-size:8pt;}
+.attention { color:red; }
 
-.footer {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:10pt;}
+.toc_top {
+	color: black ;  
+	font-family: Verdana,Helvetica,Arial,sans-serif ;  
+	font-size: 9pt ;
+	font-weight: bold ;
+	border-style: solid ;
+	border-width: 0px 0px 4px 0px ;
+	border-color: #ffcc66 ;
+	margin: 0px;
+	padding: 4px 0px ;
+}
 
-.news-date {  color:rgb(96,96,96);  font-size:10pt;  font-weight:bold;}
+.toc_sections {
+	color: black ;
+	background-color: #eeeeee ;
+	font-family: Verdana,Helvetica,Arial,sans-serif ;  
+	font-size: 8pt ;
+	font-weight: bold ;
+	text-align: left ;
+	padding: 2px 4px 2px 2px ;
+	border-style: solid ;
+	border-width: 0px 0px 1px 0px ;
+	border-color: #ffffff ;
+	margin: 0px;
+	padding: 2px 4px ;
+}
 
-.news-headline {  font-size:10pt;  font-weight:bold;}
+.toc_sections:hover {
+	background-color: #87b9e7 ;
+}
 
-input {  color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;}
+.toc_sections_selected {
+	color: black ;
+	background-color: #87b9e7 ;
+	font-family: Verdana,Helvetica,Arial,sans-serif ;  
+	font-size: 8pt ;
+	font-weight: bold ;
+	text-align: left ;
+	border-style: solid ;
+	border-width: 0px 0px 1px 0px ;
+	border-color: #ffffff ;
+	margin: 0px;
+	padding: 2px 4px 2px 2px ;
+}
 
-tt {  color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;}
+.toc_subsections {
+	color: black ;
+	background-color: #eeeeee ;
+	font-family: Verdana,Helvetica,Arial,sans-serif ;  
+	font-size: 8pt ;
+	font-weight: normal ;
+	text-align: left ;
+	border-style: solid ;
+	border-width: 0px 0px 1px 0px ;
+	border-color: #ffffff ;
+	margin: 0px;
+	padding: 2px 2px 2px 14px ;
+}
 
-code {  color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;  white-space:nowrap;}
+.toc_subsections:hover {
+	background-color: #87b9e7 ;
+}
 
-pre {  color:black;  background-color:rgb(230,230,255);  padding:4px;  padding-left:8px;  margin-left:16px;  margin-right:16px;  font-family:Courier,"Courier New",monospace;  font-size:10pt;}
+.toc_subsections_selected {
+	color: black ;
+	background-color: #87b9e7 ;
+	font-family: Verdana,Helvetica,Arial,sans-serif ;  
+	font-size: 8pt ;
+	font-weight: normal ;
+	text-align: left ;
+	border-style: solid ;
+	border-width: 0px 0px 1px 0px ;
+	border-color: #ffffff ;
+	margin: 0px;
+	padding: 2px 2px 2px 14px ;
+}
 
-img {  border:0;}
+.nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
 
-.legalhead {	font: oblique lighter 1.5em/1.3em "Times New Roman", Times, serif;}
+.footer { color:black;  font-family:"Trebuchet MS",sans-serif; font-size:10pt; }
 
-.legalheadBig {	font: oblique lighter 2.0em/1.0em "Times New Roman", Times, serif;}
+.news-date { color:rgb(96,96,96); font-size:10pt; font-weight:bold; }
 
-.legal {	font: normal 1.0em/1.3em "Times New Roman", Times, serif;
-		text-align: justify;
-		word-spacing: 0.3em;
-		margin: 5px;
-		width: 440px;
-	}
+.news-headline { font-size:10pt; font-weight:bold; }
+
+input { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+
+tt { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+
+code { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;  white-space:nowrap; }
+
+pre { color:black;  background-color:rgb(230,230,255);  padding:4px;  padding-left:8px;  margin-left:16px;  margin-right:16px;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+
+img { border:0; }
+
+.legalhead { font: oblique lighter 1.5em/1.3em "Times New Roman", Times, serif; }
+
+.legalheadBig {	font: oblique lighter 2.0em/1.0em "Times New Roman", Times, serif; }
+
+.legal { 
+	font: normal 1.0em/1.3em "Times New Roman", Times, serif;
+	text-align: justify;
+	word-spacing: 0.3em;
+	margin: 5px;
+	width: 440px;
+}
