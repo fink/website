@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.26 2002/01/11 00:04:44 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.27 2002/01/11 11:23:42 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -290,7 +290,7 @@ to install it).  Thus in order to get rid of Fink, enter this command:
 <codeblock>sudo rm -rf /sw</codeblock>
 The only exception to this rule is XFree86. If you also need to remove
 XFree86, additionally enter this:
-<codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Application/XDarwin.app</codeblock>
+<codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 </p>
 </answer></faqentry>
 
