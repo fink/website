@@ -4,7 +4,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.65 2002/12/18 07:34:41 htodd Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.66 2002/12/18 07:37:46 htodd Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -508,10 +508,10 @@ Failed: Logging into the CVS server for anonymous read-only access failed.
 		</codeblock>
 		<p>One possibility is that the cvs servers are overloaded and you have to try the update later.</p>
 		<p>Another possibility, is that you need to reset your cvs directories. Use the command:</p>
-		<p><codeblock> 
+		<codeblock> 
 sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs
-		</codeblock></p>
+		</codeblock>
 	</answer>
 </faqentry>
 
