@@ -4,7 +4,7 @@
 <document filename="index">
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.13 2002/12/08 00:04:57 benh57 Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.14 2002/12/08 00:05:40 benh57 Exp $</cvsid>
 
 <preface>
 <p>
@@ -94,7 +94,7 @@ It is considered "fully supported and tested", although there may
 still be stray compile problems with single packages.
 </p>
 <p>
-<em>Mac OS X 10.1/em> is still supported to some extent.
+<em>Mac OS X 10.1</em> is still supported to some extent.
 You must run Fink 0.4.1 and no later versions.
 </p>
 <p>
