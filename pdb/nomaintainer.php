@@ -1,10 +1,9 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/03/03 10:00:01 $';
+$cvs_date = '$Date: 2005/03/03 10:01:36 $';
 
 include "header.inc";
-?>
 
 if (!param(distro)) {
   $distro_sql = "AND (release LIKE 'current-10.2-gcc3.3%' OR release LIKE 'current-10.3%')";
@@ -21,10 +20,9 @@ if (!param(distro)) {
   $distro_txt = ' in the '.param(distro). ' release';
 }
 
-<?
 $q = "SELECT name,descshort FROM package ".
      "WHERE maintainer LIKE '%None%' AND latest=1 AND parentname IS NULL ".
-     " $distro_sql ORDER BY name ASC";
+     "$distro_sql ORDER BY name ASC";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
