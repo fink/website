@@ -1,13 +1,28 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/08/21 16:06:36';
+$cvs_date = 'Date: 2004/08/23 11:48:22';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
+<a name="2004-08-23 Problems with XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problems with XCode 1.5</span></a><?php gray_line(); ?>
+	<p>
+	In the past few days, there have been reports that some fink packages 
+	do not compile correctly using XCode 1.5.  If you have not already
+	upgraded to XCode 1.5, we suggest that you wait until this issue
+	is resolved before doing so.
+	</p><p>
+	If you have having problems with a package which compiled under
+	XCode 1.2 but does not compile correctly under XCode 1.5, 
+	please report the package to
+	the fink-devel mailing list.  (The usual symptom is: some symbols
+	are  missing after compiling with g++.)  
+	Packages already known to have this problem include
+	octave, singular-factory, singular-libfac, and possibly sdl.
+	</p>
+	<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
 	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further

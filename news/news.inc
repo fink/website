@@ -1,4 +1,19 @@
-<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
+<a name="2004-08-23 Problems with XCode 1.5"><span class="news-date">2004-08-23: </span><span class="news-headline">Problems with XCode 1.5</span></a><?php gray_line(); ?>
+	<p>
+	In the past few days, there have been reports that some fink packages 
+	do not compile correctly using XCode 1.5.  If you have not already
+	upgraded to XCode 1.5, we suggest that you wait until this issue
+	is resolved before doing so.
+	</p><p>
+	If you have having problems with a package which compiled under
+	XCode 1.2 but does not compile correctly under XCode 1.5, 
+	please report the package to
+	the fink-devel mailing list.  (The usual symptom is: some symbols
+	are  missing after compiling with g++.)  
+	Packages already known to have this problem include
+	octave, singular-factory, singular-libfac, and possibly sdl.
+	</p>
+	<a name="2004-08-21 Error in fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error in fink-0.22.0</span></a><?php gray_line(); ?>
 	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further
@@ -38,35 +53,4 @@
 	 If you feel that you can offer other types of resources, 
 	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
 	</p>
-	<a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
-	<p>
-The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
-are now available for both source and binary users.  The 0.6.3 release has 
-been built on <b>10.2</b>, while release 
-0.7.0 has been built on <b>10.3</b>. This should facilitate better support for the different platforms. 
-	</p>
-	<p>
-These new releases incorporate various fixes to the package manager, many previously 
-unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	</p>
-	<p>
-To complete a new Fink installation you should follow the instructions posted 
-<a href="<?php print $root; ?>download/index.php?phpLang=en">here</a>.
-You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="<?php print $root; ?>download/upgrade.php?phpLang=en">here</a>.
-
-If you have questions or problems, please try the Fink mailing lists you can learn more about them 
-<a href="<?php print $root; ?>lists/index.php?phpLang=en">here</a>.
-		</p>
-		<p>
-Please make sure you pick the <b>appropriate installer</b> for your Platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		</p>
-	<p>
-The Fink Team would like to thank its many contributors, frequent helpers 
-and developers for making this release happen. 
-We also thank our community, without their constant support and valuable 
-pointers Fink would not be where we are now.. 
-
-</p>
-
-
+	
