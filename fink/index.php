@@ -1,7 +1,7 @@
 <?
 $title = "Fink";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/04/21 15:39:49 $';
+$cvs_date = '$Date: 2001/04/26 14:19:05 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ is used to manage a separate directory tree. The fink package manager
 downloads, configures, compiles and installs software from the
 internet.</p>
 
-<h2>Fink Resources</h2>
+<h2>Resources</h2>
 
 <p>This project is hosted by <a
 href="http://sourceforge.net">SourceForge</a>.  Have a look at the <a
@@ -45,8 +45,14 @@ href="http://sourceforge.net/project/showfiles.php?group_id=17203">Download
 Area</a></li>
 </ul>
 
-<p>If you have any questions, suggestions, rants etc. feel free to
-mail <a href="mailto:fink@chrisp.de">fink@chrisp.de</a>.</p>
+<h2>Feedback</h2>
+
+<p>Fink is still under development, so I appreciate feedback that
+helps me improve Fink. You can send it my way at <a
+href="mailto:fink@chrisp.de">fink@chrisp.de</a>. Keep in mind that,
+like most people on this planet, I'm usually quite busy. If you need
+help with using or troubleshooting Fink, a better place to ask is the
+<a href="fink/lists.php">users mailing list</a>.</p>
 
 
 <?
