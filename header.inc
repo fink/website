@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.31 2001/09/30 14:57:23 chrisp Exp $ */
+/* $Id: header.inc,v 1.32 2001/10/02 16:38:32 chrisp Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -178,7 +178,7 @@ alt=""></td></tr>
 </table>
 <? /* end navigation column */ ?>
 
-</td><td align="left">
+</td><td align="left" width="100%">
 
 <? /* content column table */ ?>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
