@@ -4,9 +4,43 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 23 Oct 2003 21:04:23 CEST</lastBuildDate>
+    <lastBuildDate>Fri, 24 Oct 2003 11:21:53 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Upgrade to gcc 3.3 and/or 10.3</title>
+    <link>http://fink.sf.net/news/#2003-10-24%20Upgrade%20to%20gcc%203.3%20and%2For%2010.3</link>
+    <dc:date>2003-10-24</dc:date>
+    <description>
+	It is now possible to upgrade Fink to take full advantage of the gcc 3.3
+compiler, or to use OS X 10.3 if you have that installed.  Binary packages
+corresponding to these upgrades are not yet available, so if you make 
+extensive use of binary packages you may wish to wait a few days before 
+upgrading.
+
+If you wish to perform this upgrade, and you had previously installed the
+June 2003 Developer Tools update from Apple, you will need to install
+the August 2003 Developer Tools update BEFORE you upgrade Fink.  Under
+10.3, be sure to install XCode from the XCode disk before upgrading
+Fink.
+
+Running &quot;fink selfupdate&quot; should perform the upgrade for you.  The latest
+version of the fink package manager will automatically detect which
+version of OS X and which version of gcc you have installed, and will
+adjust itself accordingly.
+
+If you wish to do a fresh install of Fink on a 10.3 system, we recommend
+bootstrapping from
+source, starting from fink-full-0.6.0.tar.gz available
+on fink's sourceforge 
+download page.  You'll need XCode for this as
+well.
+
+The Fink team is still working on getting Fink packages working under 10.3,
+but many many packages already work.
+
+		</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>Say hello to mirror numero uno</title>
     <link>http://fink.sf.net/news/#2003-10-23%20Say%20hello%20to%20mirror%20numero%20uno</link>
@@ -427,26 +461,6 @@ to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
   here.  In the meantime, some of you may wish to use the test version of the Jaguar updater which was
 made available on 2002-09-08.
-  
-  </description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Fink 0.5.0a Released</title>
-    <link>http://fink.sf.net/news/#2002-12-09%20Fink%200.5.0a%20Released</link>
-    <dc:date>2002-12-09</dc:date>
-    <description>
-  
-    Fink 0.5.0a for Mac OS X 10.2 is now complete. (Note: 0.5.0a is a final
-    release, and replaces 0.5.0 which was never officially released.) This
-    release includes over 700 
-    binary packages for OS X 10.2 as well as over 1800 source packages of
-    all kinds. 
-  
-  
-      The source release and the binary installer are available now, as well as all binary packages. For information about upgrading, visit the Upgrade Matrix. 
-  
-  
-  This release is for Mac OS X 10.2 only. 10.1 users should use Fink 0.4.1.
   
   </description>
   </item>

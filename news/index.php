@@ -1,14 +1,42 @@
 <?
 $title = "News";
-$cvs_author = 'Author: uid104432';
-$cvs_date = 'Date: 2003/10/23 18:37:45';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2003/10/24 15:20:30';
 
 $metatags = '';
 
 include "header.inc";
 ?>
 
-<a name="2003-10-23 Say hello to mirror numero uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say hello to mirror numero uno</span></a><?php gray_line(); ?>
+<a name="2003-10-24 Upgrade to gcc 3.3 and/or 10.3"><span class="news-date">2003-10-24: </span><span class="news-headline">Upgrade to gcc 3.3 and/or 10.3</span></a><?php gray_line(); ?>
+	<p>It is now possible to upgrade Fink to take full advantage of the gcc 3.3
+compiler, or to use OS X 10.3 if you have that installed.  Binary packages
+corresponding to these upgrades are not yet available, so if you make 
+extensive use of binary packages you may wish to wait a few days before 
+upgrading.
+</p><p>
+If you wish to perform this upgrade, and you had previously installed the
+June 2003 Developer Tools update from Apple, you will need to install
+the August 2003 Developer Tools update BEFORE you upgrade Fink.  Under
+10.3, be sure to install XCode from the XCode disk before upgrading
+Fink.
+</p><p>
+Running "fink selfupdate" should perform the upgrade for you.  The latest
+version of the fink package manager will automatically detect which
+version of OS X and which version of gcc you have installed, and will
+adjust itself accordingly.
+</p><p>
+If you wish to do a fresh install of Fink on a 10.3 system, we recommend
+<a href="<?php print $root; ?>http://fink.sf.net/download/srcdist.php">bootstrapping from
+source,</a> starting from fink-full-0.6.0.tar.gz available
+on fink's <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
+download page.</a>  You'll need XCode for this as
+well.
+</p><p>
+The Fink team is still working on getting Fink packages working under 10.3,
+but many many packages already work.
+</p>
+		<a name="2003-10-23 Say hello to mirror numero uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say hello to mirror numero uno</span></a><?php gray_line(); ?>
 	<p>You are too late. Rus Foster from <a href="<?php print $root; ?>http://www.jvds.com">JVDS</a>
 	beat you all to it. He is the first one to provide us with ressources 
 	for a Fink rsync mirror.
