@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.2 2004/02/20 00:18:18 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.3 2004/02/21 01:44:06 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の よくある質問 (FAQ) です。
 他の FAQ と同様に、質問は実際に発生したものとあらかじめ作られたものがあります。
@@ -1336,14 +1336,14 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
-setenv ACLOCAL_FLAGS "-I/sw/share/aclocal"
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
 <p>-bash-</p> 
 <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I/sw/share/aclocal" 
+export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock> 
 <p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
 この環境変数を使わないパッケージの場合、
