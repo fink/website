@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/31 10:31:47 $';
+$cvs_date = '$Date: 2001/11/02 10:08:59 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,6 +33,12 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-11-02:
+The <a href="doc/x11/index.php">Running X11</a> document has had a
+significant update.
+The troubleshooting section now has a comprehensive list of XDarwin
+error messages with explanations.
+</p>
 <p>2001-10-31:
 <a href="http://www.macosxhints.com/">MacOSXHints</a> has posted an
 <a href="http://homepage.mac.com/rgriff/xdarwin.html">installation
@@ -43,10 +49,6 @@ In addition to ripping off Fink packages and breaking the GPL, the
 ports collection at <a href="http://macosx.forked.net/">forked.net</a>
 has just gone commercial.
 More <a href="pr/forked.php">details</a> now available.
-</p>
-<p>2001-10-03: The binary distribution update is now complete.
-The <a href="news/puma.php">10.1 compatibility report</a> has been
-updated to reflect the fixes in Fink 0.3.0.
 </p>
 
 <h2>Status</h2>
