@@ -1,7 +1,7 @@
 <?
 $title = "GNOME on Darwin";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/01/23 20:06:14 $';
+$cvs_date = '$Date: 2001/01/23 20:13:56 $';
 $section = "darwin";
 $wantnav = "darwin";
 
@@ -64,8 +64,7 @@ Download: Available on GNU mirrors.</p>
 
 <p><b>dlcompat 20010123:</b> This is a small compatibility library
 that provides dynamic loading.<br>
-Download: - no download yet because SourceForge's upload is
-broken -</p>
+Download: <a href="files/dlcompat-20010123.tar.gz">http://fink.sourceforge.net/files/dlcompat-20010123.tar.gz</a></p>
 
 <p><b>bzip2 1.0.1:</b> A new compression program and library.<br>
 Fixes: <a href="files/bzip2-1.0.1-darwin.patch">This patch</a> changes
