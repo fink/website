@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.17 2001/05/07 19:30:55 chrisp Exp $ */
+/* $Id: header.inc,v 1.18 2001/06/05 18:48:48 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -13,6 +13,7 @@ $pages_main = array(
 $pages_fink = array(
   "fink/index.php", "Fink", 0,
   "download.php", "Download", 1,
+  "fink/usage.php", "Usage", 0,
   "faq/index.php", "F.A.Q.", 0,
   "fink/lists.php", "Mailing Lists", 0,
   "fink/cvs.php", "CVS Updating", 0,
