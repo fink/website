@@ -94,6 +94,7 @@ that it can't find an &quot;acceptable cc&quot;. What's that?</a></li>
 from the head command. What's broken?</a></li>
 <li><a href="comp-general.php#also_in">4.5 When I try to install a package I get an error message about trying to overwrite a file that is in another package.</a></li>
 <li><a href="comp-general.php#weak_lib">4.6 After I installed the December 2002 Development Tools I get messages about &quot;weak libraries&quot;.</a></li>
+<li><a href="comp-general.php#mv-failed">4.7 What does &quot;execution of mv failed, exit code 1&quot; mean when I try to build a package mean?</a></li>
 </ul>
 <li><a href="comp-packages.php"><b>5 Compile Problems - Specific Packages</b></a></li>
 <ul>

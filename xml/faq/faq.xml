@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.109 2003/05/08 01:37:40 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.110 2003/05/11 15:33:21 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -877,6 +877,19 @@ do with whether missing symbols at runtime is considered a fatal error on
 startup or not, for applications that use weak references.</p>
 </answer>
 </faqentry>
+
+<faqentry name="mv-failed">
+<question><p>What does "execution of mv failed, exit code 1" mean when I try to build a package mean?</p></question>
+<answer><p>It typically means that another error happened earlier in the build, and so one or more files weren't created, but the build process didn't stop.  To track down the offending file(s), search in the output of the build for the nonexistent file, e.g. if you have something like:</p>
+<codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
+ /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
+ mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+ No such file or directory
+### execution of mv failed, exit code 1
+Failed: installing foo-0.1.2-3 failed</codeblock>
+<p>then you should look for <filename>libbar</filename> somewhere further back in the output of your build attempt.</p>
+</answer></faqentry>
+
 </chapter>
 <chapter filename="comp-packages" >
 <title>Compile Problems - Specific Packages</title>
