@@ -1,7 +1,7 @@
 <?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/05/08 20:04:35 $';
+$cvs_date = '$Date: 2004/07/02 19:44:23 $';
 
 include "header.inc";
 ?>
@@ -135,6 +135,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Tim Seufert</li>
 <Li>Paul Swenson</li> 
 <li>Patrick Tescher</li> 
+<li>Chris Turkel (<i>zizban</i>)</li>
 <li>Andrei Verovski</li> 
 <li>Aaron Voisine</li> 
 <li>Dominik Westner</li> 
