@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.90 2005/01/16 17:51:21 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.91 2005/01/20 15:15:15 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ define (HEADER_HOSTED_BY, 'Hosted By {img}');
 define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
 define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically');
 define (FOOTER_DATABASE_LAST_UPDATED, 'Database last updated on  %a, %b %d %Y, %R GMT');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %b %d %Y, %R GMT');
+define (FOOTER_LAST_CHANGED, 'Last changed by {author} on {date}, {time}');
 
 setlocale(LC_TIME, FINK_LC_ALL);
 $section_names = array(
@@ -193,7 +193,7 @@ function convert_date_to_locale ($initialstringdate) {
 	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 	$search_month = array_search($date_exploded[1], $array_month)+1;
 	$date_converted=gmstrftime(FINK_DATE_FORMAT, mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
-	$date_encoding = mb_detect_encoding($date_converted);
+	// $date_encoding = mb_detect_encoding($date_converted);
 	// if ($date_encoding == '') $date_encoding = FINK_SF_ENCODING;
 	$date_encoding = FINK_SF_ENCODING;
 	$date_converted = mb_convert_encoding($date_converted, "UTF-8", $date_encoding);
