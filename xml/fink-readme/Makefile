@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 2004/03/17 20:38:16 jeff_yecn Exp $
+# $Id: Makefile,v 1.8 2004/03/23 13:11:00 dmrrsn Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -15,6 +15,7 @@ include $(basedir)/Makefile.i18n.common
 
 install-hook:
 	cp readme.en.html $(basedir)/fink/README.html
+        cp readme.*.html $(basedir)/fink/
 	cp readme.en.txt $(basedir)/fink/README
 
 # eof
