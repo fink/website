@@ -3,7 +3,7 @@
 <article filename="index" lang="en">
   <title>Fink - Documentation</title>
   <shorttitle>Documentation</shorttitle>
-  <cvsid>$Id: doc.en.xml,v 1.9 2004/07/10 13:31:52 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: doc.en.xml,v 1.10 2004/07/11 15:44:55 michga Exp $</cvsid>
   <preface>
     <p>
 This is a collection of various documents written for Fink.
@@ -46,7 +46,7 @@ releases</li>
     <title>Developer Documentation</title>
     <ul>
       <li><varlink url="security/index.php" varurl="security/security.en.html">Security Policy Manual</varlink> - 
-	  Mandatory read for all of those who either have packages in Fink or would like to add their own.</li>
+	  Mandatory read for all of those who either maintain packages in Fink or would like to add their own.</li>
       <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
 file) - slides from a presentation at the <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</link> (also available as a
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</link>) </li>
