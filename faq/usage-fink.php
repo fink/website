@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/07/25 12:07:58';
+$cvs_date = 'Date: 2003/07/26 02:42:12';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -319,7 +319,9 @@ _Perl_saferealloc
 _Perl_sv_2pv
 _perl_call_sv
 _perl_eval_sv
-_perl_get_sv</pre><p>then what has probably happened is that you updated Perl to a new version and now <code>storable-pm</code> needs to be rebuilt.  You will have to have the Developer Tools for this.  Perform the following commands:</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
+_perl_get_sv</pre><p>then what has probably happened is that you updated Perl to a new version and now <code>storable-pm</code> needs to be updated.  
+You should update Fink.  During the process you will be prompted to install either <code>perl-core</code> or <code>system-perl</code>; choose the latter. 
+In addition, <code>storable-pm</code> should also get updated.</p><p>For OS 10.1.x, perform the following commands (you'll need the Developer Tools):</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>

@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.120 2003/07/25 12:07:58 alexkhansen Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.121 2003/07/26 02:42:12 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -733,11 +733,16 @@ _Perl_sv_2pv
 _perl_call_sv
 _perl_eval_sv
 _perl_get_sv</codeblock>
-<p>then what has probably happened is that you updated Perl to a new version and now <filename>storable-pm</filename> needs to be rebuilt.  You will have to have the Developer Tools for this.  Perform the following commands:</p>
+<p>then what has probably happened is that you updated Perl to a new version and now <filename>storable-pm</filename> needs to be updated.  
+You should update Fink.  During the process you will be prompted to install either <filename>perl-core</filename> or <filename>system-perl</filename>; choose the latter. 
+In addition, <filename>storable-pm</filename> should also get updated.</p>
+
+<p>For OS 10.1.x, perform the following commands (you'll need the Developer Tools):</p>
 <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
 sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm
 fink selfupdate-cvs</codeblock>
+
 </answer>
 </faqentry>
 <faqentry name="cant-upgrade">
