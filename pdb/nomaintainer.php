@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2002/06/10 13:01:48 $';
+$cvs_date = '$Date: 2002/06/10 13:03:20 $';
 
 include "header.inc";
 ?>
@@ -27,8 +27,7 @@ not already a core Fink developer, please <a
 href="mailto:fink-devel@lists.sourceforge.net">contact the Fink
 developers</a> and volunteer!</p>
 <p>Core Fink developers are welcome to adopt a package by changing the
-maintainer name in the package's .info file, and removing the package from
-this list.</p>
+maintainer name in the package's .info file to their own.</p>
 
 <p>Found <? print $count ?> packages without maintainers:</p>
 
