@@ -173,6 +173,32 @@ A fixed version of the apt package (which provides the configuration
 script as a plug-in for dselect) is making it's way through CVS now.
 </p></div></a>
 
+<a name="selfupdate-tar-fails"><div class="question"><p><b>Q3.12: Why doesn't 'fink selfupdate'
+work?</b></p></div>
+<div class="answer"><p><b>A:</b> When using fink selfupdate to update from 0.3.2 (not 0.3.2a), selfupdate may
+freeze during the "untar" phase. This will result in fink hanging after the output:</p><pre>I will now download the package descriptions for Fink 0.3.2 and
+update the core packages. After that, you should update the other
+packages using commands like 'fink update-all'.
+
+curl -L -s -S -O http://prdownloads.sourceforge.net/fink/packages-0.3.2.tar.gz
+tar -xzf -</pre><p>This is a known bug in 0.3.2 that was fixed in 0.3.2a. If you encounter this 
+problem, there are two easy workarounds:</p><ul>
+  <li>
+    <p>Downgrade to a previous version of fink, then run</p>
+    <pre>fink selfupdate</pre>
+  </li>
+  <li>
+    <p>Manually install the latest version of the package manager. Go to the
+    <a href="http://fink.sourceforge.net/download/srcdist.php">source release
+    download page</a> and get the latest version, then update like this:</p>
+    <pre>tar -xzf fink-0.3.2a-full.tar.gz
+cd fink-0.3.2a-full/
+./inject.pl /sw
+cd pkginfo
+./inject.pl /sw</pre>
+  </li>
+</ul><p>Or, if you are happy with modifying a file in the distribution manually, you can
+edit line 479 of <tt><nobr>/sw/lib/perl5/Fink/SelfUpdate.pm</nobr></tt> and change:</p><pre>$unpack_cmd = "tar -xz${verbosity}f -";</pre><p>to</p><pre>$unpack_cmd = "tar -xz${verbosity}f $pkgtarball";</pre><p>It is always a good idea to make a backup of any file before modifying it.</p></div></a>
 <p align="right">
 Next: <a href="comp-general.php">4 Compile Problems - General</a></p>
 

@@ -70,6 +70,8 @@ wrong?</a></li>
 <li><a href="usage-fink.php#dselect-access">3.11 Help! I used the
 "[A]ccess" menu entry in dselect and now I can't download packages any
 more!</a></li>
+<li><a href="usage-fink.php#selfupdate-tar-fails">3.12 Why doesn't 'fink selfupdate'
+work?</a></li>
 </ul>
 <li><a href="comp-general.php"><b>4 Compile Problems - General</b></a></li>
 <ul>
