@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/07/15 20:08:29';
+$cvs_date = 'Date: 2001/07/19 14:33:47';
 
 $metatags = '<link rel="start" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -26,7 +26,8 @@ to install, but Fink just says 'no package found'. How can I install
 it?</a></li><li><a href="usage.php#sudo">I'm tired of typing my password into sudo again
 and again. Is there a way around this?</a></li><li><a href="usage.php#exec-init-csh">When I try to run
 init.csh, I get a "Permission denied" error. What am I doing
-wrong?</a></li></ul><li><a href="packages.php"><b>Problems With Certain Packages</b></a></li><ul><li><a href="packages.php#nedit">nedit is broken.</a></li></ul></ul><p>Generated from <i>$Fink: faq.xml,v 1.6 2001/07/15 20:08:29 chrisp Exp $</i></p>
+wrong?</a></li></ul><li><a href="packages.php"><b>Problems With Certain Packages</b></a></li><ul><li><a href="packages.php#nedit">nedit is broken.</a></li><li><a href="packages.php#gnome-panel">The GNOME panel displays
+black icons only. What's wrong?</a></li></ul></ul><p>Generated from <i>$Fink: faq.xml,v 1.7 2001/07/19 14:33:47 chrisp Exp $</i></p>
 
 
 <?
