@@ -4,9 +4,44 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Thu, 01 Jan 2004 14:00:35 EST</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jan 2004 15:21:54 CET</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!">
+    <title>Whaaazaaap Dawgs, Two Zero Zero Four is on!</title>
+    <link>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</link>
+    <dc:date>2004-01-02</dc:date>
+    <description>
+	
+	A happy new year to all of you from the whole team. Blame this outburst of an 
+	attempt as slang language on my having to watch the MTV Music Awards all day long.
+	
+	
+	Last year has been a good year for Fink. We have had hard times keeping up with 
+	the changes introduces by Apple, but we also learned that we have a great community
+	which is willing to go trough great lengths to support us. 
+	It is for us to say Thank You. I am sure many of us keep doing what they are 
+	doing because they feel needed and that includes me.
+	
+	
+	Two Zero Zero Four should not make us slow down, but speed up. There are some 
+	interesting things in the pipe, like GNOME 2.4 a new release of KDE, major 
+	changes to the package manager itself and organisational restructuring. 
+	Hopefully we will advance into yet a bigger Project, with developer conferences, 
+	real life meetings and a CD in your favourite shop.
+	
+	
+	High ambitions can make one fall very deeply, thus we shall take it slow, but 
+	still we are all counting on your support in this year. Tell us what you think 
+	about Fink, tell us what you like or dislike, show us ways to improve ourselves.
+	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
+	to improve the package manager or add another piece of software by creating an
+	info file. Browse this website and hopefully indulge yourself. We enjoy serving
+	such a nice community, hopefully we shall make it a smooth ride for you and
+	your Macintosh in Two Zero Zero Four.
+	
+	</description>
+  </item>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year">
     <title>Merry Christmas and a happy new year</title>
     <link>http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year</link>
@@ -373,42 +408,6 @@ libosip1,
 sed,
 slib.
 It may be difficult to install those packages at present.
-
-                </description>
-  </item>
-  <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2003-06-26%20Developer%20Tools%20Update.">
-    <title>Developer Tools Update.</title>
-    <link>http://fink.sourceforge.net/news/#2003-06-26%20Developer%20Tools%20Update.</link>
-    <dc:date>2003-06-26</dc:date>
-    <description>
-Quick Summary: DO NOT INSTALL THIS UPDATE.
-               
-Apple has released a patch to the December 2002 
-Developer Tools which includes gcc 3.3,
-their new compiler.
-
-Fink does not yet support compiling with gcc 3.3.  In addition, it is important
-not to &quot;mix and match&quot; between compilers:  all C++ code in fink packages
-needs to be compiled
-with the same compiler.
-
-For this reason, the Fink team recommends that if you update your
-Developer Tools with the new patch, you should be careful to run
-sudo gcc_select 3
-prior to any &quot;fink build&quot; or &quot;fink install&quot; commands.
-
-Update 30 June 2003: A 
-problem
-has now been detected with
-the new assembler program which the update installs, which may prevent
-certain Fink packages from being compiled at all if you install this
-update.  
-
-Generally, Fortran programs will break if you install the update;
-the breakage does not stop by simply switching back to gcc 3.1.
-The Fink team is working on a workaround for this problem, but until it
-is ready, if you need Fortran-related programs you should not install
-the update.
 
                 </description>
   </item>

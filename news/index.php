@@ -8,7 +8,36 @@ $metatags = '';
 include "header.inc";
 ?>
 
-<a name="2003-12-28 Merry Christmas and a happy new year"><span class="news-date">2003-12-28: </span><span class="news-headline">Merry Christmas and a happy new year</span></a><?php gray_line(); ?>
+<a name="2004-01-02 Whaaazaaap Dawgs, Two Zero Zero Four is on!"><span class="news-date">2004-01-02: </span><span class="news-headline">Whaaazaaap Dawgs, Two Zero Zero Four is on!</span></a><?php gray_line(); ?>
+	<p>
+	A happy new year to all of you from the whole team. Blame this outburst of an 
+	attempt as slang language on my having to watch the MTV Music Awards all day long.
+	</p>
+	<p>
+	Last year has been a good year for Fink. We have had hard times keeping up with 
+	the changes introduces by Apple, but we also learned that we have a great community
+	which is willing to go trough great lengths to support us. 
+	It is for us to say Thank You. I am sure many of us keep doing what they are 
+	doing because they feel needed and that includes me.
+	</p>
+	<p>
+	Two Zero Zero Four should not make us slow down, but speed up. There are some 
+	interesting things in the pipe, like GNOME 2.4 a new release of KDE, major 
+	changes to the package manager itself and organisational restructuring. 
+	Hopefully we will advance into yet a bigger Project, with developer conferences, 
+	real life meetings and a CD in your favourite shop.
+	</p>
+	<p>
+	High ambitions can make one fall very deeply, thus we shall take it slow, but 
+	still we are all counting on your support in this year. Tell us what you think 
+	about Fink, tell us what you like or dislike, show us ways to improve ourselves.
+	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
+	to improve the package manager or add another piece of software by creating an
+	info file. Browse this website and hopefully indulge yourself. We enjoy serving
+	such a nice community, hopefully we shall make it a smooth ride for you and
+	your Macintosh in Two Zero Zero Four.
+	</p>
+	<a name="2003-12-28 Merry Christmas and a happy new year"><span class="news-date">2003-12-28: </span><span class="news-headline">Merry Christmas and a happy new year</span></a><?php gray_line(); ?>
 		<p>
  The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
  forward to yet another year where we can help the Macintosh community grow into the 
