@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:24';
+$cvs_date = 'Date: 2003/12/03 17:25:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php" title="Upgrading Fink (version-specific troubleshooting)">';
 
@@ -89,14 +89,23 @@ hidden traps somewhere.
 </p></div>
 </a>
 <a name="removing">
-<div class="question"><p><b>Q4.6: How can I remove all of Fink?</b></p></div>
+<div class="question"><p><b>Q4.6: How can I uninstall all of Fink?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Almost all files installed by Fink are in /sw (or wherever you chose
 to install it). Thus in order to get rid of Fink, enter this command:
 </p><pre>sudo rm -rf /sw</pre><p>
-The only exception to this rule is XFree86. If you also need to remove
-XFree86, additionally enter this:
-</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>You also will want to remove the "source /sw/bin/init.csh" or line you added to your .cshrc file or the "source /sw/bin/init.sh" you added to your .bashrc file using a text editor.</p></div>
+The only exception to this rule is XFree86. If you installed XFree86 through
+Fink (i.e., you installed the <code>xfree86</code> or 
+<code>xfree86-rootless</code> packages,
+instead of using <code>system-xfree86</code>) and want to remove it, you 
+will need additionally to enter this:
+</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>If you aren't planning to reinstall Fink you also will want to remove 
+the "<code>source 
+/sw/bin/init.csh</code>" line you added to your 
+<code>.cshrc</code> file or the 
+"<code>source /sw/bin/init.sh</code>" line you added to your 
+<code>.bashrc</code> file, whichever is appropriate to your setup,  
+using a text editor.</p></div>
 </a>
 <a name="bindist">
 <div class="question"><p><b>Q4.7: The package database at the

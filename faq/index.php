@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2003/12/02 02:38:24';
+$cvs_date = 'Date: 2003/12/03 17:25:19';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="general.php" title="General Questions">';
 
@@ -57,7 +57,7 @@ location after installation?</a></li>
 <li><a href="usage-fink.php#moving-symlink">4.5 If I move Fink after
 installation and provide a symlink from the old location, will it
 work?</a></li>
-<li><a href="usage-fink.php#removing">4.6 How can I remove all of Fink?</a></li>
+<li><a href="usage-fink.php#removing">4.6 How can I uninstall all of Fink?</a></li>
 <li><a href="usage-fink.php#bindist">4.7 The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</a></li>
@@ -142,7 +142,7 @@ XDarwin, it immediately quits!</a></li>
 <li><a href="usage-packages.php#apple-x11-wants-xfree86">8.11 I installed Apple's X11 in Panther but Fink keeps asking to install xfree86.</a></li>
 <li><a href="usage-packages.php#apple-x11-beta-wants-xfree86">8.12 I installed Apple's X11 with the 10.2-gcc3.3 version of Fink but Fink keeps asking to install xfree86.</a></li>
 </ul>
-</ul><p>Generated from <i>$Fink: faq.xml,v 1.152 2003/12/02 02:38:24 alexkhansen Exp $</i></p>
+</ul><p>Generated from <i>$Fink: faq.xml,v 1.154 2003/12/03 17:25:19 alexkhansen Exp $</i></p>
 
 
 <?

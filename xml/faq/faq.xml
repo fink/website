@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.153 2003/12/02 20:34:17 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.154 2003/12/03 17:25:19 alexkhansen Exp $</cvsid>
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
 in most FAQs, some questions are taken from real life and some are
@@ -394,7 +394,7 @@ hidden traps somewhere.
 </faqentry>
 <faqentry name="removing" >
 <question>
-<p>How can I remove all of Fink?</p>
+<p>How can I uninstall all of Fink?</p>
 </question>
 <answer>
 <p>
@@ -404,12 +404,19 @@ to install it). Thus in order to get rid of Fink, enter this command:
 <codeblock>sudo rm -rf /sw</codeblock>
 <p>
 The only exception to this rule is XFree86. If you installed XFree86 through
-Fink (i.e., you installed the "xfree86" or "xfree86-rootless" packages,
-instead of using system-xfree86), you will need to additionally enter this:
+Fink (i.e., you installed the <code>xfree86</code> or 
+<code>xfree86-rootless</code> packages,
+instead of using <code>system-xfree86</code>) and want to remove it, you 
+will need additionally to enter this:
 </p>
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
-<p>You also will want to remove the &quot;source /sw/bin/init.csh&quot; or line you added to your .cshrc file or the &quot;source /sw/bin/init.sh&quot; you added to your .bashrc file using a text editor.</p>
-</answer>
+<p>If you aren't planning to reinstall Fink you also will want to remove 
+the &quot;<code>source 
+/sw/bin/init.csh</code>&quot; line you added to your 
+<filename>.cshrc</filename> file or the 
+&quot;<code>source /sw/bin/init.sh</code>&quot; line you added to your 
+<filename>.bashrc</filename> file, whichever is appropriate to your setup,  
+using a text editor.</p> </answer>
 </faqentry>
 <faqentry name="bindist" >
 <question>
