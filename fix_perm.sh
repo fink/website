@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo "Fixing permissions"
-chmod -f -R g+w,a+r .
 chgrp -R fink .
+chmod -f -R g+w,a+r .
 chmod a-w db.inc.php
