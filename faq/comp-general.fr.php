@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/07/15 11:05:05';
+$cvs_date = 'Date: 2004/07/15 11:08:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
