@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_date = '$Date: 2001/11/04 22:44:47 $';
 
 include "header.inc";
 ?>
@@ -22,15 +22,22 @@ If you're unsure which version of Fink you have, run
 "<tt><nobr>/sw/bin/fink --version</nobr></tt>" in a Terminal window.
 (Unless you explicitly installed Fink elsewhere, of course.)
 </p>
+<p>
+In case you're still running Mac OS X 10.0, please stick to the source
+release, i.e. don't upgrade using <tt>dselect</tt> or
+<tt><nobr>apt-get</nobr></tt>.
+The precompiled packages downloaded by these tools are now built on a
+10.1 system and we can't guarantee that they will work on 10.0.
+</p>
 
 <?
 it_start();
 it_item('<b>Current installation</b>', '<b>Upgrade method</b>');
-it_item("Fink official binary distribution on Mac OS X 10.1",
-  '<p>Use the <a href="puma-kit.php">10.1 Upgrade Kit</a>.</p>');
-it_item("Fink official binary distribution on Mac OS X 10.0.x",
+it_item("Fink official binary distribution, version 0.3.0",
   '<p>Update normally through <tt>dselect</tt>: Choose "[U]pdate",
   then "[I]nstall".</p>');
+it_item("Fink official binary distribution, version 0.2.x",
+  '<p>Use the <a href="puma-kit.php">10.1 Upgrade Kit</a>.</p>');
 it_item("MacGIMP or OpenOSX.com install of Fink 0.2.1",
   '<p>Use the <a href="puma-kit.php">10.1 Upgrade Kit</a>.
   Make sure you install the <tt><nobr>system-xfree86</nobr></tt>
@@ -39,9 +46,9 @@ it_item("Fink source release 0.2.5 or newer",
   '<p>Run "<tt>fink selfupdate</tt>".</p>');
 it_item("Fink source release 0.2.4 or older (down to 0.2.0)",
   '<p>Download the <a
-  href="http://prdownloads.sourceforge.net/fink/packages-0.3.0.tar.gz">packages
+  href="http://prdownloads.sourceforge.net/fink/packages-0.3.1.tar.gz">packages
   tarball</a>, unpack it using the <tt>tar</tt> utility and run
-  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.0
+  "<tt><nobr>./inject.pl</nobr></tt>" inside the packages-0.3.1
   directory.</p>');
 it_end();
 ?>

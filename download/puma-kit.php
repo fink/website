@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Kit for Mac OS X 10.1";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/04 16:13:23 $';
+$cvs_date = '$Date: 2001/11/04 22:44:47 $';
 
 include "header.inc";
 ?>
@@ -35,12 +35,12 @@ The procedure has three main steps:
 
 <li><p>Getting a decent apt package.
 Download the
-<a href="../bindist/dists/fink-0.3.0/main/binary-darwin-powerpc/base/apt_0.5.3-7_darwin-powerpc.deb">apt-0.5.3-7</a>
+<a href="../bindist/dists/fink-0.3.1/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
 package.
 In a Terminal.app window, go to the folder where you downloaded the
 file and run this command:
 </p>
-<pre>sudo dpkg -i apt_0.5.3-7_darwin-powerpc.deb</pre>
+<pre>sudo dpkg -i apt_0.5.4-1_darwin-powerpc.deb</pre>
 <p>
 Once apt is installed, use these commands to update the package
 listings:
@@ -78,9 +78,9 @@ The procedure has four main steps:
 
 <li><p>Getting decent apt and fink packages.
 Download the
-<a href="../bindist/dists/fink-0.3.0/main/binary-darwin-powerpc/base/apt_0.5.3-7_darwin-powerpc.deb">apt-0.5.3-7</a>
+<a href="../bindist/dists/fink-0.3.1/main/binary-darwin-powerpc/base/apt_0.5.4-1_darwin-powerpc.deb">apt-0.5.4-1</a>
 and the
-<a href="../bindist/dists/fink-0.3.0/main/binary-darwin-powerpc/base/fink_0.9.1-1_darwin-powerpc.deb">fink-0.9.1-1</a>
+<a href="../bindist/dists/fink-0.3.1/main/binary-darwin-powerpc/base/fink_0.9.4-1_darwin-powerpc.deb">fink-0.9.4-1</a>
 packages.
 (Yes, that version number is for real.
 The <tt>fink</tt> command in the fink package now has separate
@@ -88,8 +88,8 @@ version numbering from the Fink distribution.)
 In a Terminal.app window, go to the folder where you downloaded the
 file and run these commands to install the packages:
 </p>
-<pre>sudo dpkg -i apt_0.5.3-7_darwin-powerpc.deb
-sudo dpkg -i fink_0.9.1-1_darwin-powerpc.deb</pre>
+<pre>sudo dpkg -i apt_0.5.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.9.4-1_darwin-powerpc.deb</pre>
 <p>
 Once they are installed, use these commands to update the package
 listings:

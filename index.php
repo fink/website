@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/11/02 10:08:59 $';
+$cvs_date = '$Date: 2001/11/04 22:44:47 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -33,16 +33,19 @@ packages or build everything from source.
 
 <h2>News</h2>
 
+<p>2001-11-04: Fink 0.3.1 is released.
+The source release and the binary installer are available now, the
+bulk of binary packages will be built and made available gradually
+over the next few days as usual.
+For information about upgrading, visit the
+<a href="download/index.php">download section</a> and the recently
+updated <a href="doc/users-guide/index.php">User's Guide</a>.
+</p>
 <p>2001-11-02:
 The <a href="doc/x11/index.php">Running X11</a> document has had a
 significant update.
 The troubleshooting section now has a comprehensive list of XDarwin
 error messages with explanations.
-</p>
-<p>2001-10-31:
-<a href="http://www.macosxhints.com/">MacOSXHints</a> has posted an
-<a href="http://homepage.mac.com/rgriff/xdarwin.html">installation
-guide</a> for XFree86, Fink, Window Maker and The GIMP.
 </p>
 <p>2001-10-23:
 In addition to ripping off Fink packages and breaking the GPL, the
@@ -54,9 +57,9 @@ More <a href="pr/forked.php">details</a> now available.
 <h2>Status</h2>
 
 <p>
-Fink 0.3.0 was released on 30 September 2001.
-Almost all problems with Mac OS X 10.1 have been fixed.
-Work continues normally.
+Fink 0.3.1 was released on 4 November 2001.
+The source release and the binary installer are available now, the
+other binary packages are still being built.
 </p>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
