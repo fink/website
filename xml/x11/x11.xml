@@ -3,16 +3,15 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.1 2001/07/15 20:13:53 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.2 2001/07/15 20:33:25 chrisp Exp $</cvsid>
 
 <preface>
 <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
 OS X and Darwin systems.
-It gives an introduction and a history of development, followed by a
-description of the current situation.
-It goes on to describe the many options you have to use X11 with
-Fink.
+It gives an introduction and a history of development, then goes on to
+describe the current situation and the many options you have to use
+X11 with or without Fink.
 </p>
 </preface>
 
