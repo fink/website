@@ -3,7 +3,7 @@
 <document filename="index">
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.xml,v 1.2 2001/07/15 20:33:25 chrisp Exp $</cvsid>
+<cvsid>$Id: x11.xml,v 1.3 2001/07/18 14:18:55 chrisp Exp $</cvsid>
 
 <preface>
 <p>
@@ -287,6 +287,32 @@ Then, follow the source build instructions above.
 </section>
 
 
+<section name="xonx-bin"><title>The XonX binary test releases (XAqua,
+XDarwin)</title>
+<p>
+In the time before 4.1.0 was released, the XonX team put out a series
+of binary test releases with the name XAqua.
+These releses are obsolete and should not be used.
+</p>
+<p>
+With the introduction of rootless mode into XFree86's mainline CVS,
+the XonX team has once again started to put out binary test releases,
+this time under the name XDarwin.
+These releases are available from the <link url="http://sourceforge.net/project/showfiles.php?group_id=18034&amp;release_id=43842">SourceForge
+download page</link>.
+To install them, you must first install XFree86 4.1.0, e.g. the
+official binary release.
+Then, extract the XDarwin tarball as root like this:
+</p>
+<codeblock>cd /
+sudo gnutar xzvf /path/to/XDarwin1.0a1.tgz</codeblock>
+<p>
+That will update the X servers in /Applications and /usr/X11R6/bin and
+add some OpenGL stuff, too.
+</p>
+</section>
+
+
 <section name="fink"><title>Compiling via Fink</title>
 <p>
 Fink will let you install X11 in any way you like, but it
@@ -358,19 +384,6 @@ Now you should have an XFree86 installation that can run in rootless
 mode.
 </p>
 </section>
-
-
-<section name="xaqua0"><title>The XAqua 0.x releases</title>
-<p>
-The XAqua 0.x test releases available from the XonX project have been
-superseded by XFree86 4.1.0.
-They should not be installed; get the official 4.1.0 binary release
-instead.
-A new series of test releases will start in the near future; I'll
-update this document when it happens.
-</p>
-</section>
-
 
 </chapter>
 
@@ -464,7 +477,8 @@ in rootless mode with the <code>-rootless</code> option:
 
 <section name="macosx-42"><title>Mac OS X + XFree86 CVS</title>
 <p>
-Recent development versions of XFree86 come with rootless mode built
+Recent development versions of XFree86 (this includes the XDarwin test
+releases from the XonX project) come with rootless mode built
 in and let you choose between fullscreen and rootless mode in a dialog
 at startup.
 Just double-click the XDarwin.app application.
@@ -481,10 +495,62 @@ The <code>-fullscreen</code> option forces fullscreen mode, while
 </p>
 </section>
 
+
 <section name="xinitrc"><title>The .xinitrc File</title>
 <p>
-to be written...
+If a file named <code>.xinitrc</code> exists in your home directory,
+it will be used to start some initial X clients, e.g. the window
+manager and some xterms or a desktop environment like GNOME.
+The <code>.xinitrc</code> is a shell script that contains the commands
+to do this.
+It is <em>not</em> necessary to put the usual <code>#!/bin/sh</code>
+in the first line and make to set the executable bit on the file;
+xinit will still know how to run it through a shell.
 </p>
+<p>
+If you're using Fink, you should source <code>init.sh</code> right at
+the beginning to make sure the environment is set up correctly.
+</p>
+<p>
+You can put fairly arbitrary commands in an <code>.xinitrc</code>, but
+there are some cheavats.
+First, the shell that interprets the file will by default wait for
+every program to finish before it starts the next one.
+If you want several programs to run in parallel, you must tell the
+shell to put them "in the background" by appending a <code>&amp;</code> at
+the end of the line.
+</p>
+<p>
+Second, <code>xinit</code> waits for the <code>.xinitrc</code> script
+to finish and interprets that as "the session has ended, I should kill
+the X server now, too".
+This means that the last command of your <code>.xinitrc</code> must
+not be run in the background and it should be a long-living program.
+Customarily, the window manager is used for this purpose.
+In fact, most window managers assume that <code>xinit</code> is
+waiting for them to finish and use this to make the "Log out" entry in
+their menus work.
+(Note: To save some memory and CPU cycles, you can put an
+<code>exec</code> before the last line like in the examples below.)
+</p>
+<p>
+A simple example that starts up GNOME:
+</p>
+<codeblock>source /sw/bin/init.sh
+exec gnome-session</codeblock>
+<p>
+A more complex example that turns the X11 bell off, starts some clients
+and finally executes the Enlightenment window manager:
+</p>
+<codeblock>source /sw/bin/init.sh
+
+xset b off
+
+xclock -geometry -0+0 &amp;
+xterm &amp;
+xterm &amp;
+
+exec enlightenment</codeblock>
 </section>
 
 
@@ -517,7 +583,7 @@ system.
 To run Xtools, double-click Xtools.app in your Applications folder.
 Like XFree86, Xtools will run the clients you specify in your
 <code>.xinitrc</code> file.
-Xtools also allows you to start clients via the menu.
+Xtools additionally allows you to start clients via the menu.
 </p>
 </section>
 
