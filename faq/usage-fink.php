@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: chrisp';
-$cvs_date = 'Date: 2001/11/04 15:45:26';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2002/01/11 00:04:44';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="comp-general.php" title="Compile Problems - General"><link rel="prev" href="relations.php" title="Relations with Other Projects">';
 
@@ -12,7 +12,8 @@ include "header.inc";
 
 
 
-<a name="what-packages"><div class="question"><p><b>Q3.1: How can I find out what packages Fink supports?</b></p></div>
+<a name="what-packages"><div class="question"><p><b>Q3.1: How can I find out what packages
+Fink supports?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Since Fink 0.2.3, there is the <tt><nobr>list</nobr></tt> command.
 It produces a list of all packages known to your Fink installation.
@@ -36,9 +37,10 @@ If you were not asked for proxies on first time installation, you can
 run <tt><nobr>fink configure</nobr></tt> to set it up.
 You can also run that command at any time to reconfigure the
 <tt><nobr>fink</nobr></tt> command.
-These settings do not apply to <tt><nobr>apt-get</nobr></tt> and
-<tt><nobr>dselect</nobr></tt>, though.
-Investigations continue...
+If you followed the instructions in the installation guide, and use
+<tt><nobr>/sw/bin/init.csh</nobr></tt> (or <tt><nobr>/sw/bin/init.sh</nobr></tt>),
+then <tt><nobr>apt-get</nobr></tt> and <tt><nobr>dselect</nobr></tt> also will use these
+proxy settings.
 </p></div></a>
 
 <a name="moving"><div class="question"><p><b>Q3.3: Can I move Fink to another
@@ -60,9 +62,18 @@ The general expectation is that it should work, but there may be
 hidden traps somewhere.
 </p></div></a>
 
+<a name="removing"><div class="question"><p><b>Q3.5: How can I remove all
+of Fink?</b></p></div>
+<div class="answer"><p><b>A:</b> 
+Almost all files installed by Fink are in /sw (or wherever you chose
+to install it).  Thus in order to get rid of Fink, enter this command:
+<pre>sudo rm -rf /sw</pre>
+The only exception to this rule is XFree86. If you also need to remove
+XFree86, additionally enter this:
+<pre>sudo rm -rf /usr/X11R6 /etc/X11 /Application/XDarwin.app</pre>
+</p></div></a>
 
-
-<a name="kde"><div class="question"><p><b>Q3.5: Why are there no packages for
+<a name="kde"><div class="question"><p><b>Q3.6: Why are there no packages for
 KDE?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 Because there simply are none.
@@ -77,7 +88,7 @@ Note that Qt is a different story, we have a package for it and it
 works fine.
 </p></div></a>
 
-<a name="bindist"><div class="question"><p><b>Q3.6: The package database at the
+<a name="bindist"><div class="question"><p><b>Q3.7: The package database at the
 website lists package xxx, but apt-get and dselect know nothing about
 it. Who's lying?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -101,7 +112,7 @@ Make sure you have the Developer Tools installed before you try this.
 See also the question about unstable below.
 </p></div></a>
 
-<a name="unstable"><div class="question"><p><b>Q3.7: There's this package in
+<a name="unstable"><div class="question"><p><b>Q3.8: There's this package in
 unstable that I want to install, but the fink command just says 'no
 package found'. How can I install it?</b></p></div>
 <div class="answer"><p><b>A:</b> 
@@ -120,7 +131,7 @@ If you want Fink to use all of unstable, edit
 line.
 </p></div></a>
 
-<a name="sudo"><div class="question"><p><b>Q3.8: I'm tired of typing my password into sudo again
+<a name="sudo"><div class="question"><p><b>Q3.9: I'm tired of typing my password into sudo again
 and again. Is there a way around this?</b></p></div>
 <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
 password. To do this, edit <tt><nobr>/etc/sudoers</nobr></tt> as root
@@ -128,7 +139,7 @@ and add a line like this:</p><pre>username  ALL = NOPASSWD: ALL</pre><p>Replace 
 line allows you to run any command via sudo without typing your
 password.</p></div></a>
 
-<a name="exec-init-csh"><div class="question"><p><b>Q3.9: When I try to run
+<a name="exec-init-csh"><div class="question"><p><b>Q3.10: When I try to run
 init.csh, I get a "Permission denied" error. What am I doing
 wrong?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh is not supposed to be run like normal commands. It
@@ -136,7 +147,7 @@ sets environment variables like PATH and MANPATH in your shell. To
 have a lasting effect on the shell, it must be processed with the
 <tt><nobr>source</nobr></tt> command, like this:</p><pre>source /sw/bin/init.csh</pre><p>The same goes for Bourne-type shells and init.sh.</p></div></a>
 
-<a name="dselect-access"><div class="question"><p><b>Q3.10: Help! I used the
+<a name="dselect-access"><div class="question"><p><b>Q3.11: Help! I used the
 "[A]ccess" menu entry in dselect and now I can't download packages any
 more!</b></p></div>
 <div class="answer"><p><b>A:</b> 
