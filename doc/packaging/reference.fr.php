@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/09/11 22:27:13';
+$cvs_date = 'Date: 2004/09/12 20:17:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -234,8 +234,7 @@ Primary: ftp://ftp.barbarorg/pub/
 URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification  - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et  c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du packet fink-mirrors. Par ailleurs, l'utilisation de  <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ  %type_, il est donc conseillé d'utiliser ici %{ni} (avec, éventuellement, des spécifications de %type_).
 </p>
 <p>
-À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire).
-</p>
+À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire). Cette forme de définition implicite pour <code>Source</code> est obsolète (il est toujours possible de fournir un nom de fichier explicite ou d'opérer un téléchargement manuel).</p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
 Quand un paquet est constitué de plusieurs archives tar, vous devez les énumérer en utilisant ces champs supplémentaires, où N commence à 2. Le premier fichier archive tar (sorte d'archive tar "principale") est indiqué dans <code>Source</code>, le second dans <code>Source2</code>, et ainsi de suite. Les règles sont les mêmes que celles en vigueur pour le champ Source, mais les raccourcis "gnu" et "gnome" ne sont pas interprétés - cela n'aurait aucune utilité par ailleurs. À partir d'une version CVS de fink postérieure à la version 0.19.2, vous pouvez utiliser n'importe quels nombres entiers N &gt;= 2 (non nécessairement consécutifs). Néanmoins, les doublons ne sont pas autorisés.
