@@ -3,8 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.xml,v 1.13 2004/03/10 02:23:16 alexkhansen Exp
-  $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.14 2004/07/11 18:06:44 michga Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
