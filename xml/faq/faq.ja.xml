@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.22 2004/08/31 12:34:37 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.23 2004/10/04 05:01:42 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -280,6 +280,25 @@ Mac OS X 10.2 の December 2002 developer tools 用 XCode ベータ・アップ�
 XCode の入った CD が Panther に同梱されているはずです。</p>
 </answer>
 </faqentry>
+<faqentry name="fink-0220">
+	<question>
+		<p>長いこと Fink からのパッケージ更新がありませんでしたが</p>
+	</question>
+	<answer>
+		<p>バージョンを確認してください:</p>
+		<codeblock>fink --version</codeblock>
+		<p>
+			rsync selfupdate が動作しないという既知の問題が <code>fink-0.22.0</code> にあります。
+			これを直すために、 CVS selfupdate を行います
+		</p>
+		<codeblock>fink selfupdate-cvs  </codeblock>
+		<p>
+			これにより <code>fink</code> が新しくなります。
+			この語、 rsync selfupdate に戻すようおすすめします。
+		</p>
+		<codeblock>fink selfupdate-rsync</codeblock>
+	</answer>
+</faqentry>
 </chapter>
 <chapter filename="usage-fink" >
 <title>Fink のインストール、使用、メンテナンス</title>
@@ -380,8 +399,8 @@ dselect からパッケージを選択してインストールする場合、 ro
 <p>Fink でインストールしたファイルはほとんど /sw (あるいはインストール時に選択した場所) にあります。
 なので、 Fink を削除するには、通常このコマンドを入力します:</p>
 <codeblock>sudo rm -rf /sw</codeblock>
-<p>唯一の例外は XFree86 です。もし XFree86 を Fink でインストールした (<code>xfree86</code> または
-<code>xfree86-rootless</code> パッケージ) なら、次のコマンドも必要です:
+<p>唯一の例外は XFree86 または X.org です。もし X サーバを Fink でインストールした (<code>xfree86</code> 、
+<code>xfree86-rootless</code> または <code>xorg</code> パッケージ) なら、次のコマンドも必要です:
 </p>
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
 <p>Fink をインストールし直すことがないのでしたら、テキストエディタを使い、 <filename>.cshrc</filename> ファイルの中の &quot;<code>source /sw/bin/init.csh</code>&quot; と書かれている行、あるいは <filename>.bashrc</filename> ファイルの中の &quot;<code>source /sw/bin/init.sh</code>&quot; と書かれている行を削除して下さい。</p>
@@ -1303,6 +1322,21 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	<p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p>
 </answer>
 </faqentry>
+<faqentry name="compile-options">
+	<question>
+		<p>パッケージをビルドするときに、 Fink に違うオプションを使わせたい</p>
+	</question>
+	<answer>
+		<p>
+			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
+			これが比較的簡単な方法です。
+			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
+			<link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> 
+			と <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link> をお読みください。
+		</p>
+		<p><em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
+	</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>コンパイルの問題 - 特定のバージョン</title>
@@ -1528,14 +1562,19 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
 		<p>
 		Apple X11 (3枚目のディスク):
 		X11 関連のプログラムをコンパイルや Fink でソースインストールする場合、 
-		X11SDK (XCode ディスク) も忘れずにインストールする。
+		X11SDK (XCode ディスク) も忘れずにインストールする
 		</p>
 		</li>
 		<li>
 		<p>4.4.x built via Fink: 
 		<code>xfree86</code> と
-		<code>xfree86-shlibs</code> のパッケージをインストールする。
+		<code>xfree86-shlibs</code> のパッケージをインストールする
 		</p>
+		</li>
+		<li>
+			<p> X.org built via Fink: <code>xorg</code> と
+			<code>xorg-shlibs</code> のパッケージをインストールする
+			</p>
 		</li>
 	</ul>
 	<p>Jaguar では、一番使われていて Fink パッケージが使えるのは:</p>
@@ -1543,19 +1582,19 @@ export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
 		<li>
 		<p>Fink でビルドする 4.2.x: <code>xfree86-base</code> と 
 		<code>xfree86-rootless</code> または <code>xfree86-base-threaded</code> 
-		と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール。
+		と <code>xfree86-rootless-threaded</code> (および、それぞれの <code>-shlibs</code>) をインストール
 		</p>
 		</li>
 		<li>
 		<p>Fink でビルドする 4.3.x: <code>xfree86</code> と <code>xfree86-shlibs</code> 
-		パッケージをインストール。
+		パッケージをインストール
 		</p>
 		</li>
 		<li>
 		<p>
 		Apple の 4.2.x (User+SDK パッケージがインストールされている場合): 
 		<code>system-xfree86</code> パッケージが自動的にインストールされる。
-		ユーザーはインストールを行わない。
+		ユーザーはインストールを行わない
 		(注記: Jaguar 用の Apple X11 Public Beta は既に入手不可能です。
 		この方法は以前入手した人のみに有効です。)
 		</p>
@@ -1847,7 +1886,7 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p>
 </faqentry>
 <faqentry name="apple-x11-wants-xfree86" >
 <question>
-	<p>Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</p>
+	<p>Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</p>
 </question>
 <answer>
 	<p>二つの可能性があります。</p>
@@ -1899,7 +1938,7 @@ sudo apt-get install fink</codeblock>
 		Jaguar では XCode は使用していないため、ダウンロード済みの X11SDK が必要になります。
 		X11 beta 3 は既に期限が切れているため、X11SDK パッケージ (および X11User パッケージ)
 		はダウンロードできません。
-		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86 
+		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86  または X.org
 		をインストールするか、 Panther にアップグレードするしかありません。
 		</p>
 		<p>
@@ -1921,7 +1960,7 @@ sudo apt-get install fink</codeblock>
 <faqentry name="wants-xfree86-on-upgrade">
 <question>
     <p>
-    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
+    10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
     </p>
 </question>
 <answer>
@@ -1945,7 +1984,7 @@ sudo apt-get install fink</codeblock>
     </p>
     <p>
     これでも問題が解決されない場合、上の
-    <xref section="apple-x11-wants-xfree86">Fink wants XFree86</xref>
+    <xref section="apple-x11-wants-xfree86">Fink wants XFree86 or X.org</xref>
     を参照してください。
     </p>
 </answer>
@@ -1957,14 +1996,14 @@ sudo apt-get install fink</codeblock>
 </question>
 <answer>
         <p>
-		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86</xref> や
+		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> や
 		<xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
 		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86</xref>
 		</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
-xfree86 xfree86-shilbs \
+xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
@@ -1972,7 +2011,7 @@ rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
         <p>
 		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
-		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 を再インストールします。
+		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のような代替物を再インストールします。
 		</p>
         <p>
 		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
