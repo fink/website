@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.89 2005/01/16 17:28:44 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.90 2005/01/16 17:51:21 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -194,7 +194,8 @@ function convert_date_to_locale ($initialstringdate) {
 	$search_month = array_search($date_exploded[1], $array_month)+1;
 	$date_converted=gmstrftime(FINK_DATE_FORMAT, mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
 	$date_encoding = mb_detect_encoding($date_converted);
-	if ($date_encoding == '') $date_encoding = FINK_SF_ENCODING;
+	// if ($date_encoding == '') $date_encoding = FINK_SF_ENCODING;
+	$date_encoding = FINK_SF_ENCODING;
 	$date_converted = mb_convert_encoding($date_converted, "UTF-8", $date_encoding);
 	return $date_converted;
 }
