@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2002/12/18 20:04:53';
+$cvs_date = 'Date: 2002/12/20 19:55:31';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php" title="Compile Problems - Specific Packages">';
 
@@ -89,7 +89,7 @@ compile lines yourself. Some packages may use similar non-standard
 variables such as EXTRA_CFLAGS or --with-qt-dir= configure options.
 &quot;./configure --help&quot; will usually give you a list of the extra configure
 options.
-</p></div></a>
+</p><p>In addition, you may need to install the development headers (e.g. <b>foo-1.0-1-dev</b> for the library packages that you are using, if they aren't already installed.</p></div></a>
 <p align="right">
 Next: <a href="usage-packages.php">7 Package Usage Problems - Specific Packages</a></p>
 
