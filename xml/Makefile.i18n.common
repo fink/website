@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.18 2004/10/20 11:11:22 dmacks Exp $
+# $Id: Makefile.i18n.common,v 1.19 2004/11/07 11:52:36 babayoshihiko Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -16,6 +16,10 @@ endif
 ifdef LANGUAGES
 SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
 TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+ifdef STYLESHEET_RDF
+TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(BASE_TARGET)))
+TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(BASE_TARGET)))
+endif
 #TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
@@ -52,7 +56,7 @@ endif
 
 
 
-.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
+.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf .inc .inc.tmp
 .PHONY: all clean force install
 
 # basics
@@ -60,7 +64,7 @@ endif
 all: $(ALL_TARGETS)
 
 clean:
-	rm -f *.php *.inc *.html *.tmp
+	rm -f *.php *.inc *.html *.tmp *.rdf
 
 force: clean all
 

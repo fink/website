@@ -4,6 +4,9 @@
 
 <!-- Root element -->
 <!ELEMENT news ( cvsid, newsitem+ ) >
+<!ATTLIST news lang CDATA "en" >
+<!ATTLIST news fsroot CDATA "../" >
+
 <!ELEMENT cvsid ( #PCDATA ) >
 
 <!-- Structure -->
