@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package Search";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2004/02/28 20:34:01 $';
+$cvs_date = '$Date: 2004/02/28 20:35:57 $';
 
 $have_key = isset($s);
 $search_key = $s;
@@ -11,7 +11,7 @@ include "header.inc";
 
 
 <?
-$key = ereg_replace(" ", "", $search_key);
+$search_key = ereg_replace(" ", "", $search_key);
 
 if (ereg("[^a-zA-Z0-9_.+-]", $search_key)) {
 ?>
