@@ -1,21 +1,21 @@
 <a name="2004-08-01 Improving our mirrors. Can you help?"><span class="news-date">2004-08-01: </span><span class="news-headline">Improving our mirrors. Can you help?</span></a><?php gray_line(); ?>
 	<p>
-	Finks decision to gradually build its own network of mirrors
-	has payed off. To make sure that we can continue to offer
+	Fink's decision to gradually build its own network of mirrors
+	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
 	It has been some time since we last asked for more mirrors. 
 	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror or more to offer 
-	a distfiles mirror please <a href="mailto:mirrors@finkmirrors.net">contact</a> us.
+	you have at least two Mbit to spare for a rsync mirror, or more to offer 
+	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
 	</p>
 	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please go and review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hestitate in <a href="mailto:mirrors@finkmirrors.net">contacting</a> us as well.
+	 web-space for testing as an example, please do not hestitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
 	</p>
 	<a name="2004-04-06 Fink 0.6.3 and 0.7.0 released."><span class="news-date">2004-04-06: </span><span class="news-headline">Fink 0.6.3 and 0.7.0 released.</span></a><?php gray_line(); ?>
 	<p>

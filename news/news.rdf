@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 03 Aug 2004 17:15:50 CEST</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2004 15:01:56 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sourceforge.net/news/" rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
@@ -13,20 +13,20 @@
     <dc:date>2004-08-01</dc:date>
     <description>
 	
-	Finks decision to gradually build its own network of mirrors
-	has payed off. To make sure that we can continue to offer
+	Fink's decision to gradually build its own network of mirrors
+	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
 	It has been some time since we last asked for more mirrors. 
 	It is time to do so again. Fink is very grateful for the resources 
 	granted to us by our community. To further improve our service to the 
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror or more to offer 
-	a distfiles mirror please contact us.
+	you have at least two Mbit to spare for a rsync mirror, or more to offer 
+	a distfiles mirror, please contact us.
 	
 	
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please go and review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
 	 web-space for testing as an example, please do not hestitate in contacting us as well.
 	
