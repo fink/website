@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.10 2001/02/21 09:21:05 chrisp Exp $ */
+/* $Id: header.inc,v 1.11 2001/03/28 11:17:42 chrisp Exp $ */
 
 // available pages
 $pages_main = array(
@@ -171,4 +171,32 @@ height="24" border="0" alt=""></td></tr>
 
 <? /* end navigation box */
 }
+
+function it_start() {
+  global $it_flag;
+
+  $it_flag = 0;
+?>
+<table border="0" cellpadding="0" cellspacing="0">
+<?
+}
+
+function it_item($title, $item) {
+  global $it_flag;
+
+  if ($it_flag) {
+    print '<tr><td><img src="<? print $root ?>img/shim.gif" width="1" height="8" border="0" alt="" /></td></tr>'."\n";
+  }
+  $it_flag = 1;
+
+  print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
+        $item.'</td></tr>'."\n";
+}
+
+function it_end() {
+?>
+</table>
+<?
+}
+
 ?>
