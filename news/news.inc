@@ -1,4 +1,28 @@
-<a name="2003-11-04 User Deletion Bug/ Dselect Troubles"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug/ Dselect Troubles</span></a><?php gray_line(); ?>
+<a name="2003-11-17 Fink 0.6.2 released"><span class="news-date">2003-11-17: </span><span class="news-headline">Fink 0.6.2 released</span></a><?php gray_line(); ?>
+        <p>The latest Fink release, version 0.6.2, is now available
+for both source and binary users.  This is a bug-fix release, intended
+to address two problems: the dselect/user deletion bug, and a 
+problem with ownership of files.  The dselect bug was addressed by
+updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
+it is safe to once again use dselect.  However, if you ran dselect
+at any time since 0.6.0, you should carefully check the integrity
+of the file at <code>/sw/etc/apt/sources.list</code>.  If you have
+any doubts about this file, you should replace it with
+<a href="<?php print $root; ?>files/sources.list">the default sources.list file</a>.
+</p>
+<p>Users who have installed binary files from the 0.6.1 distribution
+may find that certain files in their Fink installation are owned
+by UID 2011 rather than by root.  To correct this problem,
+run the command:</p>
+<pre>sudo find /sw/ -user 2011 -exec chown root:admin {} \;</pre>
+<p>This release, like the previous one, was built on OS X 10.2
+using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+users who upgrade to 10.3 will continue to
+want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+</p>
+	<a name="2003-11-04 User Deletion Bug/ Dselect Troubles"><span class="news-date">2003-11-04: </span><span class="news-headline">User Deletion Bug/ Dselect Troubles</span></a><?php gray_line(); ?>
 <p><b>Quick Summary: DO NOT USE DSELECT,</b> and if you've used it,
 check your /sw/etc/apt/sources.list file carefully.</p>
 		<p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
@@ -53,35 +77,4 @@ the command-line <code>fink</code> program
 under OS X 10.2, be sure to install the August2003gccUpdater, available
 after free registration from connect.apple.com.
 </p>
-                <a name="2003-10-31 Happy Halloween and welcome new mirrors"><span class="news-date">2003-10-31: </span><span class="news-headline">Happy Halloween and welcome new mirrors</span></a><?php gray_line(); ?>
-		<p>
-		We wish all of you a happy Halloween.
-		</p>
-		<p>
-		Furthermore I would like to welcome our new mirrors to the Fink family.
-		From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
-		has been sponsored by the <a href="http://mac.dir.hr/">Jabucnjak</a> Apple user group. 
-		This is our first mirror in Europe, so I hope that more will be joining us 
-		soon.
-		</p>
-		<p>
-		Dave Schroeder from the <a href="http://mirror.services.wisc.edu/">University of 
-		Wisconsin</a> in Madison is sponsoring a 100Mbit dedicated Master server.
-		A. J. Wright and <a href="http://sunsite.utk.edu/">SunSITE@UTK</a> are helping out with 
-		another full mirror in the United states. 
-		</p>
-		<p>
-		This raises our full mirror count to four and the rsync mirror count to 
-		five. We are happy to have such a great community back us up, but I know 
-		that more mirrors will join over time. I will not stop nagging you until
-		Fink has its own mirror in every state of the USA. Yet, with such a 
-		brilliant community backing us up, I am not too worried about not
-		reaching my goal very soon.
-		</p>
-		<p>
-		Trick or treat! Our most wanted treat is more mirrors, so come forth 
-		Administrators and fill our bag. Information on how you can be a mirror
-		can be found on the official <a href="http://finkmirrors.net">
-		mirroring website</a>.
-		</p>
-		
+                

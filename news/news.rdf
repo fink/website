@@ -4,9 +4,39 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Sun, 09 Nov 2003 22:04:57 EST</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2003 22:10:27 EST</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
+  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
+    <title>Fink 0.6.2 released</title>
+    <link>http://fink.sf.net/news/#2003-11-17%20Fink%200.6.2%20released</link>
+    <dc:date>2003-11-17</dc:date>
+    <description>
+        The latest Fink release, version 0.6.2, is now available
+for both source and binary users.  This is a bug-fix release, intended
+to address two problems: the dselect/user deletion bug, and a 
+problem with ownership of files.  The dselect bug was addressed by
+updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
+it is safe to once again use dselect.  However, if you ran dselect
+at any time since 0.6.0, you should carefully check the integrity
+of the file at /sw/etc/apt/sources.list.  If you have
+any doubts about this file, you should replace it with
+the default sources.list file.
+
+Users who have installed binary files from the 0.6.1 distribution
+may find that certain files in their Fink installation are owned
+by UID 2011 rather than by root.  To correct this problem,
+run the command:
+sudo find /sw/ -user 2011 -exec chown root:admin {} \;
+This release, like the previous one, was built on OS X 10.2
+using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+users who upgrade to 10.3 will continue to
+want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+
+	</description>
+  </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
     <title>User Deletion Bug/ Dselect Troubles</title>
     <link>http://fink.sf.net/news/#2003-11-04%20User%20Deletion%20Bug%2F%20Dselect%20Troubles</link>
@@ -534,16 +564,6 @@ the unstable tree, even when there are problems like today's, and provide
 the team with prompt feedback.  This is a community effort and we
 appreciate your participation.
 
-	</description>
-  </item>
-  <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
-    <title>Anonymous CVS issues resolved</title>
-    <link>http://fink.sf.net/news/#2003-01-17%20Anonymous%20CVS%20issues%20resolved</link>
-    <dc:date>2003-01-17</dc:date>
-    <description>
-	
-	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net site status page.
-	
 	</description>
   </item>
 </rdf:RDF>

@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.97 2003/11/05 01:23:59 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.98 2003/11/17 03:06:32 dmrrsn Exp $</cvsid>
 
 
+<newsitem>
+	<date>2003-11-17</date>
+	<headline>Fink 0.6.2 released</headline>
+	<body>
+        <p>The latest Fink release, version 0.6.2, is now available
+for both source and binary users.  This is a bug-fix release, intended
+to address two problems: the dselect/user deletion bug, and a 
+problem with ownership of files.  The dselect bug was addressed by
+updating the fink, dpkg, and apt packages.  After updating to 0.6.2,
+it is safe to once again use dselect.  However, if you ran dselect
+at any time since 0.6.0, you should carefully check the integrity
+of the file at <code>/sw/etc/apt/sources.list</code>.  If you have
+any doubts about this file, you should replace it with
+<link href="files/sources.list">the default sources.list file</link>.
+</p>
+<p>Users who have installed binary files from the 0.6.1 distribution
+may find that certain files in their Fink installation are owned
+by UID 2011 rather than by root.  To correct this problem,
+run the command:</p>
+<codeblock>sudo find /sw/ -user 2011 -exec chown root:admin {} \;</codeblock>
+<p>This release, like the previous one, was built on OS X 10.2
+using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
+users who upgrade to 10.3 will continue to
+want to only use the binaries from this
+new distribution for now, while the Fink team continues to modify
+Fink packages for 10.3.
+</p>
+	</body>
+</newsitem>
 <newsitem>
 	<date>2003-11-04</date>
 	<headline>User Deletion Bug/ Dselect Troubles</headline>
