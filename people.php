@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/07/14 09:45:37 $';
+$cvs_date = '$Date: 2002/07/14 09:48:00 $';
 
 include "header.inc";
 ?>
@@ -54,8 +54,8 @@ Fink (in alphabetical order):</p>
 <li>Chris Frank</li> 
 <li>Paul Gaborit</li> 
 <li>Stanton Gallegos (<i>stantron</i>)</li> 
-<li>Jake Goulding</li> 
 <li>Joe Gorse (<i>inca34</i>)</li>
+<li>Jake Goulding</li> 
 <li>Matthew Harris</li> 
 <li>Sam Johnston</li> 
 <li>Richard Kiss</li> 
