@@ -3,7 +3,7 @@
 <document filename="index">
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.xml,v 1.28 2002/01/12 18:51:10 fingolfin Exp $</cvsid>
+<cvsid>$Id: faq.xml,v 1.29 2002/01/31 16:31:00 fingolfin Exp $</cvsid>
 
 <preface>
 <p>This is the list of frequently asked questions about Fink. Like
@@ -192,7 +192,7 @@ OpenOSX.com?</p></question>
 <answer>
 <p>
 They used Fink to build the first release of their GIMP CD and refuse
-go acknowledge that properly.
+to acknowledge that properly.
 Read the <link
 url="http://fink.sourceforge.net/pr/openosx.php">public
 statement</link> for details.

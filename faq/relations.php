@@ -70,7 +70,7 @@ Thanks Apple!
 OpenOSX.com?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 They used Fink to build the first release of their GIMP CD and refuse
-go acknowledge that properly.
+to acknowledge that properly.
 Read the <a href="http://fink.sourceforge.net/pr/openosx.php">public
 statement</a> for details.
 </p></div></a>
