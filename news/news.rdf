@@ -4,7 +4,7 @@
     <title>Fink Project News</title>
     <link>http://fink.sf.net/news/</link>
     <description>Fink Project News</description>
-    <lastBuildDate>Tue, 15 Apr 2003 02:45:37 CEST</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2003 22:03:14 EDT</lastBuildDate>
     <rss091:language xmlns="" rdf:parseType="Literal">en</rss091:language>
   </channel>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">
@@ -13,9 +13,13 @@
     <dc:date>2003-04-14</dc:date>
     <description>
 	       Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the download page.
-		With over 190 new binary packages, KDE, Koffice and Kdevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
+		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
 		The full announcement can be read on the fink-announce mailing list.
 		
+(If you are having trouble upgrading a source installation, consult
+these
+special instructions.)
+
 		</description>
   </item>
   <item channel="http://fink.sf.net/news/" rdf:about="http://fink.sf.net/news/">

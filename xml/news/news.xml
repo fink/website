@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news>
-<cvsid>$Id: news.xml,v 1.52 2003/04/15 12:17:04 dmalloc Exp $</cvsid>
+<cvsid>$Id: news.xml,v 1.53 2003/04/16 02:03:08 dmrrsn Exp $</cvsid>
 
 <newsitem>
 	<date>2003-04-14</date>
@@ -11,6 +11,10 @@
 		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
 		The full announcement can be read on the <extlink url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</extlink> mailing list.
 		</p>
+<p>(If you are having trouble upgrading a source installation, consult
+<link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
+special instructions</link>.)</p>
+
 		</body>
 </newsitem>
 
