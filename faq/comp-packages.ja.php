@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -40,17 +40,13 @@ X11 に依存するパッケージがない場合、これは単純です。
 <a name="change-thread-nothread">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.3: non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink 版の xfree86 を使っていて、 threaded と non-threaded を切替えたいのなら、 手動で古いバージョンを削除する必要があります。
-これは、コマンドラインで:</p><pre>
-sudo dpkg -r --force-depends xfree86-base
+これは、コマンドラインで:</p><pre>sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
 sudo dpkg -r --force-depends xfree86-rootless
-sudo dpkg -r --force-depends xfree86-rootless-shlibs
-</pre><p>threaded 版の場合:</p><pre>
-sudo dpkg -r --force-depends xfree86-base-threaded
+sudo dpkg -r --force-depends xfree86-rootless-shlibs</pre><p>threaded 版の場合:</p><pre>sudo dpkg -r --force-depends xfree86-base-threaded
 sudo dpkg -r --force-depends xfree86-shlibs-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded
-sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
-	</pre><p>FinkCommander でもパッケージを削除することができます。
+sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkCommander でもパッケージを削除することができます。
 ソース画面で、パッケージを選択し、次に <code>Source Menu</code> で "<code>Force Remove</code>." を選択します。
 </p><p>system-xfree86 を使っている場合、 前の質問を参照して削除してください。</p><p>希望するバージョンの xfree86 をインストールします: </p><p>
 <code>xfree86-base</code> と <code>xfree86-rootless</code>
@@ -63,20 +59,13 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
 </a>
 
-<a name="xml-parser-pm">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>intltool</code> が XML::Parser が必要と言っていますが、
-	xml-parser-pm は既にインストールされています。
-	</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-	これは更新時によく発生します。
-	<code>xml-parser-pmXXX</code> がインストールされている確認してください。
-	'XXX' は、システム上の Perl のバージョンで、 Jaguar に入っている Perl は 560 、
-	Panther は 581 です。
-	</p></div>
+<a name="libiconv-gettext">
+<div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>libiconv</code> が更新できません。</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
+fink install libiconv</pre></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=ja">8. パッケージ使用上の問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

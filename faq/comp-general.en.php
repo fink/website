@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 14:16:04';
+$cvs_date = 'Date: 2004/08/10 15:40:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -266,6 +266,5 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

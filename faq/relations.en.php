@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Relations";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 14:16:04';
+$cvs_date = 'Date: 2004/08/10 15:40:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="mirrors.php?phpLang=en" title="Fink mirrors"><link rel="prev" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -45,6 +45,5 @@ include_once "header.en.inc";
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="mirrors.php?phpLang=en">3. Fink mirrors</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 一般";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係"><link rel="prev" href="index.php?phpLang=ja" title="F.A.Q. Contents">';
 
 
@@ -76,6 +76,5 @@ dpkg のバイナリパッケージ管理は洗練されています。
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="relations.php?phpLang=ja">2. 他のプロジェクトとの関係</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

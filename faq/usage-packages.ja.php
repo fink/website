@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -216,6 +216,5 @@ fink selfupdate; fink index</pre><p>
 
 
 <? include_once "../footer.inc"; ?>
-
 
 

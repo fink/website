@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 関係";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="mirrors.php?phpLang=ja" title="Fink ミラー"><link rel="prev" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -60,6 +60,5 @@ OpenDarwin は独自のパッケージ・システムを開発しています。
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="mirrors.php?phpLang=ja">3. Fink ミラー</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

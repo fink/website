@@ -21,4 +21,3 @@ gcc 3.3 compiler is out of date." 我应该怎么办？</b></p></div>
 <? include_once "../footer.inc"; ?>
 
 
-

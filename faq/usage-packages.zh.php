@@ -155,4 +155,3 @@ xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
 <? include_once "../footer.inc"; ?>
 
 
-

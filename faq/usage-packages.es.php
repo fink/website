@@ -217,4 +217,3 @@ You can check your installation by running</p><pre>fink-virtual-pkgs</pre><p>and
 <? include_once "../footer.inc"; ?>
 
 
-

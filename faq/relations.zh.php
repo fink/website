@@ -71,4 +71,3 @@ Fink <b>不是</b> Debian GNU/Linux 发布版的一个移植。
 <? include_once "../footer.inc"; ?>
 
 
-

@@ -116,4 +116,3 @@ fink selfupdate; fink index</pre><p>(Vous verrez peut-être apparaître un messa
 <? include_once "../footer.inc"; ?>
 
 
-

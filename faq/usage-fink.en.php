@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 14:16:04';
+$cvs_date = 'Date: 2004/08/10 15:40:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -461,6 +461,5 @@ Failed test (./Command/chowname.t at line 27)
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=en">6. Compile Problems - General</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

@@ -58,4 +58,3 @@ Fink n'installe rien dans /usr/local à moins d'une requête explicite et ne né
 <? include_once "../footer.inc"; ?>
 
 
-

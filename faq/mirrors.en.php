@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Mirrors";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 14:16:04';
+$cvs_date = 'Date: 2004/08/10 15:40:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=en" title="Relations with Other Projects">';
 
 
@@ -45,6 +45,5 @@ include_once "header.en.inc";
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade-fink.php?phpLang=en">4. Upgrading Fink (version-specific troubleshooting)</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -286,7 +286,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </a>
 <a name="perl-undefined-symbol">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このようなエラー:</p><pre>dyld: perl Undefined symbols: 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 古すぎる情報</p><p>このようなエラー:</p><pre>dyld: perl Undefined symbols: 
 _Perl_safefree
 _Perl_safemalloc
 _Perl_saferealloc
@@ -424,6 +424,5 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

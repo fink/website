@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -55,9 +55,10 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
     </a></li><li><a href="comp-general.php?phpLang=ja#xml-parser">6.20 
 	次のメッセージが出ます:<q>configure: error: XML::Parser perl module is required for intltool</q>。
 	どうしたら良いでしょうか?
-	</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ja#xml-parser-pm">7.5 <code>intltool</code> が XML::Parser が必要と言っていますが、
-	xml-parser-pm は既にインストールされています。
-	</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
+	</a></li><li><a href="comp-general.php?phpLang=ja#master-problems">6.21 
+		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <q>distfiles</q>
+		と書いてあるだけで、しかもそのファイルはそこに存在しません。
+	</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ja#libiconv-gettext">7.5 <code>libiconv</code> が更新できません。</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</a></li><li><a href="usage-general.php?phpLang=ja#passwd">8.2 いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
@@ -77,7 +78,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
 または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Apple X11 をインストールしたけれども、 Fink が XFree86 をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#wants-xfree86-on-upgrade">9.12 
     10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 をインストールしろと言われます。
-    </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.18 2004/06/19 15:34:09 babayoshihiko Exp $-->
+    </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul><!--Generated from $Fink: faq.ja.xml,v 1.19 2004/07/24 14:10:18 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

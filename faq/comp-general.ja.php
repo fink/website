@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -228,17 +228,29 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	どうしたら良いでしょうか?
 	</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-	自分のシステムの Perl のバージョンに合った xml-parser-pm パッケージがあるか確認する必要があります。
-	例えば、 Panther の場合、
-	<code>xml-parser-pm581</code> であって、
-	<code>xml-parser-pm560</code> ではありません
-	(<code>xml-parser-pm</code> 代替パッケージでも可)。
-	Perl のバージョンが <code>Perl-5.8.1</code> であって <code>Perl-5.6.0</code> ではないからです。
+	自分のシステムにある Perl に合った、正しいバージョンの xml-parser-pm が必要です。
+	例えば、 Panther では <code>xml-parser-pm581</code> が正しく、 <code>xml-parser-pm560</code> 
+	ではありません
+	( <code>xml-parser-pm</code> 代替パッケージでも可)。
+	システムにあるのが、 <code>Perl-5.8.1</code> であり、 <code>Perl-5.6.0</code> ではないためです。
+	Jaguar でデフォルトのシステム Perl バージョンを使っている場合、 <code>pm560</code> で、
+	<code>Perl 5.8.0</code> をインストールしている場合は <code>pm580</code> でも構いません。
 	</p></div>
+</a>
+<a name="master-problems">
+<div class="question"><p><b><? echo FINK_Q ; ?>6.21: 
+		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <q>distfiles</q>
+		と書いてあるだけで、しかもそのファイルはそこに存在しません。
+	</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+		これは、 Fink が <q>Master</q> と呼ばれるものを使おうとしたために発生しています。
+		上流サイトが移動しても Fink パッケージのソースが入手できるための仕組みです。
+		この問題は、新しい上流バージョンのパッケージがリリースされたが、
+		まだ Master ミラーに反映されていない場合によくおこります。
+	</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 

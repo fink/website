@@ -52,4 +52,3 @@ Un miroir Fink est un serveur rsync qui reflète les fichiers de description act
 <? include_once "../footer.inc"; ?>
 
 
-

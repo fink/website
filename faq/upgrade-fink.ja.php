@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink のアップグレード";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/06/19 15:34:09';
+$cvs_date = 'Date: 2004/07/24 14:10:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス"><link rel="prev" href="mirrors.php?phpLang=ja" title="Fink ミラー">';
 
 
@@ -23,6 +23,5 @@ XCode の入った CD が Panther に同梱されているはずです。</p></d
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-fink.php?phpLang=ja">5. Fink のインストール、使用、メンテナンス</a></p>
 <? include_once "../footer.inc"; ?>
-
 
 
