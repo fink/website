@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 2004/02/29 23:09:09 fingolfin Exp $
+# $Id: Makefile,v 1.6 2004/03/06 18:37:59 michga Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -10,7 +10,7 @@ WANT_TEXT = 1
 WANT_HTML = 1
 DESTDIR = doc/bundled
 
-LANGUAGES = en ja
+LANGUAGES = fr en ja
 include $(basedir)/Makefile.i18n.common
 
 install-hook:
