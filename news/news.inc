@@ -26,11 +26,11 @@ well.
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 </p>
-		<a name="2003-10-23 Say hello to mirror numero uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say hello to mirror numero uno</span></a><?php gray_line(); ?>
+		<a name="2003-10-23 Say Hello to Mirror Numero Uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say Hello to Mirror Numero Uno</span></a><?php gray_line(); ?>
 	<p>You are too late. Rus Foster from <a href="http://www.jvds.com">JVDS</a>
-	beat you all to it. He is the first one to provide us with ressources 
+	beat you all to it. He is the first one to provide us with resources 
 	for a Fink rsync mirror.
-	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
+	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
 	</p>
 	<p>For those of you who are still waiting, join in. The more mirrors we have
 	the faster you can rsync your info files. As per usual, updated and current
@@ -38,11 +38,11 @@ but many many packages already work.
 	</p>
 		<a name="2003-10-22 Mirror, mirror on the wall..."><span class="news-date">2003-10-22: </span><span class="news-headline">Mirror, mirror on the wall...</span></a><?php gray_line(); ?>
 	<p>..who will mirror Fink above all? There is a new player on the turf
-	and it belongs to the Fink team. <a href="http://finkmirrors.net"> Finkmirrors.net</a> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	and it belongs to the Fink team. <a href="http://finkmirrors.net"> Finkmirrors.net</a> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	</p>
-	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <a href="http://finkmirrors.net"> Finkmirrors.net</a>. 
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <a href="http://finkmirrors.net"> Finkmirrors.net</a>. 
 </p>
 <p>
-UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect please try again later. I am very sorry for this inconvenience. Thank you for your understanding.
 </p>
 

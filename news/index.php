@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2003/10/24 20:42:01';
+$cvs_date = 'Date: 2003/10/25 02:54:20';
 
 $metatags = '';
 
@@ -36,11 +36,11 @@ well.
 The Fink team is still working on getting Fink packages working under 10.3,
 but many many packages already work.
 </p>
-		<a name="2003-10-23 Say hello to mirror numero uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say hello to mirror numero uno</span></a><?php gray_line(); ?>
+		<a name="2003-10-23 Say Hello to Mirror Numero Uno"><span class="news-date">2003-10-23: </span><span class="news-headline">Say Hello to Mirror Numero Uno</span></a><?php gray_line(); ?>
 	<p>You are too late. Rus Foster from <a href="http://www.jvds.com">JVDS</a>
-	beat you all to it. He is the first one to provide us with ressources 
+	beat you all to it. He is the first one to provide us with resources 
 	for a Fink rsync mirror.
-	The mirror is located in Atlanta, GA and updated every two hours, 35 minutes past.
+	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
 	</p>
 	<p>For those of you who are still waiting, join in. The more mirrors we have
 	the faster you can rsync your info files. As per usual, updated and current
@@ -48,12 +48,12 @@ but many many packages already work.
 	</p>
 		<a name="2003-10-22 Mirror, mirror on the wall..."><span class="news-date">2003-10-22: </span><span class="news-headline">Mirror, mirror on the wall...</span></a><?php gray_line(); ?>
 	<p>..who will mirror Fink above all? There is a new player on the turf
-	and it belongs to the Fink team. <a href="http://finkmirrors.net"> Finkmirrors.net</a> tells you everything you wanted to know about mirroring Fink and its related ressources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+	and it belongs to the Fink team. <a href="http://finkmirrors.net"> Finkmirrors.net</a> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
 	</p>
-	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share ressources will find all the necessary information on <a href="http://finkmirrors.net"> Finkmirrors.net</a>. 
+	<p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <a href="http://finkmirrors.net"> Finkmirrors.net</a>. 
 </p>
 <p>
-UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect right this moment please do try again later. I am very sorry for this inconvinience. Thank you for your understanding.
+UPDATE: Yes, I screwed up when I initially installed the DNS records. If you cannot connect please try again later. I am very sorry for this inconvenience. Thank you for your understanding.
 </p>
 <a name="2003-10-12 New update method available"><span class="news-date">2003-10-12: </span><span class="news-headline">New update method available</span></a><?php gray_line(); ?>
 <p>The latest version of the fink package manager offers a new update
@@ -69,12 +69,12 @@ package manager and the Developer Tools update,
 fink will ask you to reset your gcc version whenever
 that is necessary.</p>
 	<a name="2003-09-02 Logo contest ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
-<p>The Logo contest held by Fink, announced <a href="http://fink.sourceforge.net/logo.php"> here, </a>
+<p>The Logo contest held by Fink, announced <a href="http://fink.sourceforge.net/logo.php">here</a>,
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
 In the next couple of days all the submitted entries will be put on-line in a publically accessable gallery and more details on the participants shall be published. For those who are 
-curious and cannot wait may have a look at an incomplete <a href="http://nour.net/logo/incomplete.html"> preview </a></p>
-<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <a href="http://www.macwelt.de"> MacWelt </a> for their continued support.
+curious and cannot wait may have a look at an incomplete <a href="http://nour.net/logo/incomplete.html">preview</a>.</p>
+<p>Fink is proud to be part of such a supportive community and would like to thank those who submitted entries and <a href="http://www.macwelt.de">MacWelt</a> for their continued support.
 </p>
 	<a name="2003-08-18 Source files from ftp.gnu.org"><span class="news-date">2003-08-18: </span><span class="news-headline">Source files from ftp.gnu.org</span></a><?php gray_line(); ?>
 <p>As announced in <a href="http://www.cert.org/advisories/CA-2003-21.html">this CERT 
@@ -149,14 +149,14 @@ site,  which  will provide a home for this cooperative effort.
 </p>
                 <a name="2003-06-16 Fink logo contest begins."><span class="news-date">2003-06-16: </span><span class="news-headline">Fink logo contest begins.</span></a><?php gray_line(); ?>
                <p>Fink and 
-<a href="http://www.macwelt.de/">Macwelt</a> have managed to organise a logo contest.
+<a href="http://www.macwelt.de/">MacWelt</a> have managed to organize a logo contest.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
  <a href="http://fink.sf.net/logo.php">here</a>. 
                 </p>
 <p>
-Fink and Macwelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
+Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
 </p>
                 <a name="2003-05-05 KDE 3.1.1 Binaries Available"><span class="news-date">2003-05-05: </span><span class="news-headline">KDE 3.1.1 Binaries Available</span></a><?php gray_line(); ?>
 	       <p>KDE 3.1.1 binaries are now available.  Since they
