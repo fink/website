@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/12/08 15:09:55 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2004/10/19 12:59:42 $';
 
 include "header.inc";
 ?>
@@ -25,10 +25,9 @@ You can help improve the situation by testing those packages and
 reporting both success and failure to the package maintainer.
 The <a href="testing.php">Packages in Testing</a> page lists all
 packages that still have to pass testing.
-In order to test the packages, you have to get the latest
-descriptions from <a href="../doc/cvsaccess/index.php">CVS</a> and
-configure Fink to <a href="../faq/usage-fink.php#unstable">use
-unstable</a>.
+In order to test the packages, you need to configure Fink to <a href="../faq/usage-fink.php#unstable">use
+unstable</a> and then download the latest descriptions by running <i>fink selfupdate-rsync</i> 
+(or <i>fink selfupdate-cvs</i> if you can't use rsync for some reason).
 </p>
 <p>Help is also needed to find new maintainers for the <a
 href="nomaintainer.php">packages without maintainers</a>.</p>
