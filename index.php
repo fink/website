@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2003/06/22 15:39:50 $';
+$cvs_date = '$Date: 2003/06/22 15:43:39 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -50,7 +50,7 @@ include "fink_version.inc";
 Fink <? print $fink_version; ?> was released on <? print $release_date; ?>.
 Note that this version does <em>not</em> support the upcoming OS X version 
 10.3. Once the Fink developers have received pre-release seeds of 10.3, we 
-will being testing.
+will begin testing.
 </p>
 
 <h1>Resources</h1>
