@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/08/02 19:35:46 $';
+$cvs_author = '$Author: benh57 $';
+$cvs_date = '$Date: 2002/08/28 20:37:31 $';
 
 include "header.inc";
 ?>
@@ -18,6 +18,10 @@ browser window.</p>
 a GUI for Fink</li>
 <li><a href="http://aquaflux.org/~fink/" target="_blank">FinkBot</a> -
 the #fink IRC channel logs & stats</li>
+<li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
+Un-official Fink CD distribution and book of Fink tips</li>
+<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
+Set of scripts to aid distributing fink packages to network clients via NFS</li>
 </ul>
 
 <p>Open Source Software</p>
