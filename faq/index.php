@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/07 19:44:19 $';
+$cvs_date = '$Date: 2001/05/09 18:58:56 $';
 
 $metatags = '<link rel="start" href="index.php" title="FAQ Contents">
 <link rel="next" href="general.php" title="General questions">
@@ -27,7 +27,10 @@ questions are listed and linked in the table of contents below.</p>
 <li><a href="general.php"><b>General questions</b></a></li>
 <ul>
 <li><a href="general.php#what">What is Fink?</a></li>
-<li><a href="general.php#naming">What does the name Fink stand for?</a></li>
+<li><a href="general.php#naming">What does the name Fink stand
+for?</a></li>
+<li><a href="general.php#proxy">I'm behind a firewall. How do I
+configure Fink to use an HTTP proxy?</a></li>
 </ul>
 <li><a href="install.php"><b>Installation</b></a></li>
 <ul>

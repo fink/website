@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - General";
 $cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/05/07 19:44:19 $';
+$cvs_date = '$Date: 2001/05/09 18:58:56 $';
 
 $metatags = '<link rel="contents" href="index.php" title="FAQ Contents">
 <link rel="start" href="index.php" title="FAQ Contents">
@@ -32,6 +32,16 @@ bird. I was looking for a name for the project, and the name of the
 OS, Darwin, led me to think about Charles Darwin, the Galapagos
 Islands and evolution. I remembered a piece about the so-called Darwin
 Finches and their beaks from school, and well, that's it...</p>
+
+<p><a name="proxy"><b>I'm behind a firewall. How do I configure Fink
+to use an HTTP proxy?</b></a></p>
+
+<p>Fink does not have a proxy setting because it lets <a
+href="http://www.gnu.org/software/wget/wget.html">wget</a> do all the
+downloading. To use a proxy, you must tell wget to use it. You can do
+that by setting the environment variable <tt>http_proxy</tt>. See the
+<a href="http://www.gnu.org/manual/wget/html_chapter/wget_8.html#SEC36">wget
+manual</a> for details.</p>
 
 
 <?
