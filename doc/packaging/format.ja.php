@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/06/03 02:18:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 include_once "header.inc";

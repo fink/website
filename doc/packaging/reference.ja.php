@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/05/19 15:04:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2004/06/03 02:18:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 include_once "header.inc";
@@ -363,7 +363,7 @@ nam-US: ftp://ftp.fooquux.com/pub/bar
 asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
-&gt;&gt;</pre>
+&lt;&lt;</pre>
 					</td></tr><tr valign="top"><td>Source</td><td>
 						<p>
 							ソースの tar ボールの URL ．
