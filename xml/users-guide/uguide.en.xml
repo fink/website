@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.24 2005/03/01 19:16:47 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.25 2005/03/07 01:11:54 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1006,20 +1006,25 @@ packages. It is not recommended as your packages may be quite out of date.
           <p>
             <em>UseBinaryDist:</em> boolean</p>
           <p>
-Causes fink to try to download pre-compiled binary packages from the binary
+Causes <code>fink</code> to try to download pre-compiled binary packages from the binary
 distribution if available and if the binary package is not already on the
 system. This can save a lot of installation time and it is therefore 
 recommended to set this option. Passing fink the 
-<xref chapter="usage">--use-binary-dist option</xref> has the same effect, 
-but only operates on that single fink invocation.
+<xref chapter="usage">--use-binary-dist</xref> option (or the <code>-b</code> flag) has the same effect,  
+but only operates on that single fink invocation.  Passing <code>fink</code> the
+           <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
+           for that single <code>fink</code> invocation.
 <em>Only available as of  fink version 0.23.0</em>.
-          </p>
+          </p><p>Note that this mode instructs <code>fink</code> to download the version it wants
+           if that version is available for download; it does not cause <code>fink</code>
+           to choose a version based on its binary availability.
+</p>
         </li>
       </ul>
     </section>
     <section name="mirrors">
       <title>Mirror Settings</title>
-      <p>Getting software from the Internet can be tedious thing and often
+      <p>Getting software from the Internet can be a tedious thing and often
 downloads are not as fast as we would like them to be. Mirror servers
 host copies of files available on other servers, but may have a faster
 connection to the Internet or be geographically closer to you, thus
@@ -1121,6 +1126,12 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
 <em>Only available in fink newer than version 0.21.0</em>.
           </p>
         </li>
+        <li><p><em>NotifyPlugin:</em> plugin</p><p>
+           Specify a notification plugin to tell you when packages have been
+           installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
+           operate).  Other plugins can be found in the
+           <filename><![CDATA[]]>/sw/lib/perl5/Fink/Notify</filename> directory.
+</p></li>
       </ul>
     </section>
     <section name="sourceslist">
@@ -1467,7 +1478,7 @@ Only available in <code>fink</code> newer than version 0.21.0
    --percent=key       in the order listed.
       </codeblock>
     </section>
-<!-- 'fink snapshot' will not be included in 0.24
+    <!-- 'fink snapshot' will not be included in 0.24
     <section name="snapshot">
       <title>snapshot</title>
       <p>
