@@ -3,7 +3,7 @@
 <document filename="index" >
 <title>Fink User's Guide</title>
 <shorttitle>User's Guide</shorttitle>
-<cvsid>$Id: uguide.xml,v 1.17 2003/04/05 15:29:30 alexkhansen Exp $</cvsid>
+<cvsid>$Id: uguide.xml,v 1.18 2003/04/09 23:17:03 fingolfin Exp $</cvsid>
 <preface>
 <p>
 <em>This document is a work in progress.</em>
@@ -23,6 +23,7 @@ both the source and the binary distribution.
 Package installation and maintenance is covered as well.
 </p>
 </preface>
+
 <chapter filename="intro" >
 <title>Introduction</title>
 <shorttitle>Introduction</shorttitle>
@@ -150,6 +151,7 @@ The rest of this manual will show you how.
 </p>
 </section>
 </chapter>
+
 <chapter filename="install" >
 <title>First Time Installation</title>
 <shorttitle>Install</shorttitle>
@@ -333,6 +335,7 @@ package management tools included in Fink.
 </p>
 </section>
 </chapter>
+
 <chapter filename="packages" >
 <title>Installing Packages</title>
 <shorttitle>Packages</shorttitle>
@@ -562,6 +565,7 @@ If you run into errors during that process, please first check the
 </p>
 </section>
 </chapter>
+
 <chapter filename="upgrade" >
 <title>Upgrading Fink</title>
 <shorttitle>Upgrade</shorttitle>
@@ -649,6 +653,7 @@ packages.
 </p>
 </section>
 </chapter>
+
 <chapter filename="conf" >
 <title>The Fink Configuration File</title>
 <shorttitle>fink.conf</shorttitle>
@@ -882,6 +887,26 @@ command. The three letter code is one found in
 For example, if you live in Austria:</p>
 <codeblock>MirrorCountry: eur-AT</codeblock>
 </li>
+<li>
+<p>
+<em>MirrorOrder:</em> MasterFirst or MasterLast or MasterNever or ClosestFirst</p>
+<p>
+Fink supports 'Master' mirrors, which are mirrored repositories of the source
+tarballs for all Fink packages. The advantage of using the Master mirror set is that 
+the source download URLs will never break. Users can choose to use 
+these mirrors which are maintained by the Fink team, or to use only the original 
+source URLs and external mirror sites such as the gnome, KDE, and debian mirror sites.
+Additionally users can choose to combine the two sets, which are then searched in proximity order, as 
+documented above. When using the MasterFirst or MasterLast options, the user can 'skip ahead' 
+to the Master (or non Master) set if a download fails. The options are:
+</p>
+<codeblock>
+MasterFirst - Search "Master" source mirrors first.
+MasterLast - Search "Master" source mirrors last.
+MasterNever - Never use "Master" source mirrors.
+ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
+</codeblock>
+</li>
 </ul>
 </section>
 <section name="developer" >
@@ -909,4 +934,5 @@ fill your hard-disk quickly!</em>
 </ul>
 </section>
 </chapter>
+
 </document>
