@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/03/31 17:49:15 $';
+$cvs_date = '$Date: 2002/04/18 13:02:18 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -57,7 +57,9 @@ if (!$rs) {
   }
   // If there was an email specified, make the maintainer field a mailto: link
   if ($email) {
-    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
+    $email = str_replace(array("@","."), array(" AT "," DOT "), $email);
+    it_item("Maintainer:", $maintainer.' &lt;'.$email.'&gt;');
+#    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
   } else {
     it_item("Maintainer:", $maintainer);
   }
