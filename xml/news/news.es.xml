@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news filename="index" lang="es" fsroot="../..">
-<news>
-<cvsid>$Id: news.es.xml,v 1.5 2004/09/22 22:33:06 michga Exp $</cvsid>
-
+<cvsid>$Id: news.es.xml,v 1.6 2004/10/25 06:56:14 michga Exp $</cvsid>
+ <newsitem>
+    <date>2004-10-15</date>
+    <headline>Resolución de problemas con gcc.</headline>
+    <body>
+      <p>
+Se sabe que la versión de gcc incluída en XCode 1.5 produce 
+salidas incorrectas desde código c++ bajo determinadas circunstancias.
+Fink tiene ahora un mecanismo para avisar al usuario de esto. Además, 
+Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
+de los cuales se sepa que tienen este problema.</p>
+      <p>
+Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
+<link url="http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel"> aquí </link>.
+</p>
+      <p> Si no te has actualizado aún, nuestro consejo es que 
+consideres no hacerlo y quedarte con  XCode versión 1.2 
+hasta que el problema sea resuelto.
+</p>
+    </body>
+  </newsitem>
 <newsitem>
 <date>2004-09-20</date>
 <headline>Fink 0.7.1 liberado.</headline>
@@ -27,14 +45,13 @@ Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más inf
 <p>
 Asegúrate de seleccionar el <em>instalador adecuado</em> para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* </p>
 
-        <p>
+	<p>
 El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
 También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 </p>
 
 </body>
 </newsitem>
-
 <newsitem>
 	<date>2004-08-23</date>
 	<headline>Problemas con XCode 1.5</headline>
@@ -93,7 +110,7 @@ También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de
 	mejorar nuestro servicio a la comunidad requerimos un aún mejor
 	sistema de espejos. En particular, carecemos de espejos en Europa
 	Central, Rusia y el Lejano Oriente. Sí sientes que tienes 2 Mbit para
-	compartir con un espejo de rsync, o aún má´s para ofrecer un espejo de
+	compartir con un espejo de rsync, o aún más para ofrecer un espejo de
 	distfiles, por favor  <extlink url="mailto:mirrors@finkmirrors.net">contactanos</extlink>.
 	</p>
 	<p>
@@ -146,8 +163,7 @@ También agradecemos a nuestra comunidad, sin su constante apoyo y valiosas indi
 Gracias a Baba Yoshihiko, Fink ha tomado los pasos necesarios para permitirnos la internacionalización.
 La infraestructura mejorada nos permite desplegar un sitio web multilenguaje a nuestros visitantes de todo el mundo.</p>
 <p>
-Esto también significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elección. Una traducción al japonés esta en proceso al igual que una al francés, lidereada por Michele Garoche.This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
-A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
+Esto también significa que se necesitan voluntarios. El sitio web de Fink necesita ser traducido al lenguaje de tu elección. Una traducción al japonés esta en proceso al igual que una al francés, lidereada por Michele Garoche.
 ¿A qué idioma estas dispuesto a traducir?
 </p>
 <p>
@@ -249,7 +265,7 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
  The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
  forward to yet another year where we can help the Macintosh community grow into the 
  world of UNIX together with Mac OS X.
- 		</p>
+		</p>
 		<p>
  We wish you all, that your hope is not too frail and that you will carry on following 
  through with your wishes. May the world we live in gradually become a better place and
@@ -293,29 +309,29 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 	<headline>More mirrors....pretty please?</headline>
 	<body>
 	<p>While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
-        we crave more. To improve our service to all of you, we would like to ask that
-        you evaluate carefully if you maybe do have the resources to become a mirror. 
-        </p>    
-        <p>     
-        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
-        <extlink url="http://finkmirrors.net/rsync.html">here</extlink>. Especially mirrors in
-        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
-        those regions yet. If you feel generous and wish to donate even more resources, please visit
-        <extlink url="http://finkmirrors.net">finkmirrors.net</extlink> to learn about your options.
-        </p>    
-        <p>     
-        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
-        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
-        We are looking forward to many new applications and thank our community in advance. 
-        </p>    
+	we crave more. To improve our service to all of you, we would like to ask that
+	you evaluate carefully if you maybe do have the resources to become a mirror. 
+	</p>    
+	<p>     
+	All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
+	willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
+	<extlink url="http://finkmirrors.net/rsync.html">here</extlink>. Especially mirrors in
+	Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
+	those regions yet. If you feel generous and wish to donate even more resources, please visit
+	<extlink url="http://finkmirrors.net">finkmirrors.net</extlink> to learn about your options.
+	</p>    
+	<p>     
+	The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
+	We hope to improve this service in the future, yet this depends on your willingness to help us out. 
+	We are looking forward to many new applications and thank our community in advance. 
+	</p>    
 	</body>
 </newsitem>
 <newsitem>
 	<date>2003-11-17</date>
 	<headline>Fink 0.6.2 released</headline>
 	<body>
-        <p>The latest Fink release, version 0.6.2, is now available
+	<p>The latest Fink release, version 0.6.2, is now available
 for both source and binary users.  This is a bug-fix release, intended
 to address two problems: the dselect/user deletion bug, and a 
 problem with ownership of files.  The dselect bug was addressed by
@@ -377,10 +393,10 @@ repair it as above.
 	</body>
 </newsitem>
 <newsitem>
-        <date>2003-11-01</date>
-        <headline>Fink 0.6.1 released</headline>
-                <body>
-        <p>The latest Fink release, version 0.6.1, is now available
+	<date>2003-11-01</date>
+	<headline>Fink 0.6.1 released</headline>
+		<body>
+	<p>The latest Fink release, version 0.6.1, is now available
 for both source and binary users.  This release was built on OS X 10.2
 using the gcc 3.3 compiler, and runs well on OS X 10.3.  Most Fink
 users who upgrade to 10.3 will want to only use the binaries from this
@@ -405,7 +421,7 @@ the command-line <code>fink</code> program
 under OS X 10.2, be sure to install the August2003gccUpdater, available
 after free registration from connect.apple.com.
 </p>
-                </body>
+		</body>
 </newsitem>
 
 <newsitem>
@@ -573,9 +589,9 @@ curious and cannot wait may have a look at an incomplete <extlink url="http://no
 </newsitem>
 
 <newsitem>
-        <date>2003-08-18</date>
-        <headline>Source files from ftp.gnu.org</headline>
-               <body>
+	<date>2003-08-18</date>
+	<headline>Source files from ftp.gnu.org</headline>
+	       <body>
 <p>As announced in <extlink
 url="http://www.cert.org/advisories/CA-2003-21.html">this CERT 
 advisory</extlink>, it has recently been discovered that
@@ -601,16 +617,16 @@ code for the following Fink packages have not yet been verified:
 <code>slib</code>.
 It may be difficult to install those packages at present.
 </p>
-                </body>
+		</body>
 </newsitem>
 
 
 <newsitem>
-        <date>2003-06-26</date>
-        <headline>Developer Tools Update.</headline>
-               <body>
+	<date>2003-06-26</date>
+	<headline>Developer Tools Update.</headline>
+	       <body>
 <p><em>Quick Summary: DO NOT INSTALL THIS UPDATE.</em></p>
-               <p>
+	       <p>
 Apple has released a patch to the December 2002 
 Developer Tools which includes gcc 3.3,
 their new compiler.
@@ -638,15 +654,15 @@ The Fink team is working on a workaround for this problem, but until it
 is ready, if you need Fortran-related programs you should not install
 the update.</p>
 
-                </body>
+		</body>
 </newsitem>
 
 
 <newsitem>
-        <date>2003-06-20</date>
-        <headline>Darwin packaging groups to coordinate efforts.</headline>
-               <body>
-               <p>
+	<date>2003-06-20</date>
+	<headline>Darwin packaging groups to coordinate efforts.</headline>
+	       <body>
+	       <p>
 The <extlink url="http://fink.sourceforge.net">Fink</extlink>, 
 <extlink url="http://www.gentoo.org">Gentoo</extlink>, 
 and 
@@ -661,25 +677,25 @@ systems.  Members of the alliance will share information using
 the <extlink url="http://www.metapkg.org">www.metapkg.org</extlink> Web 
 site,  which  will provide a home for this cooperative effort. 
 </p>
-                </body>
+		</body>
 </newsitem>
 
 
 <newsitem>
-        <date>2003-06-16</date>
-        <headline>Fink logo contest begins.</headline>
-               <body>
-               <p>Fink and 
+	<date>2003-06-16</date>
+	<headline>Fink logo contest begins.</headline>
+	       <body>
+	       <p>Fink and 
 <extlink url="http://www.macwelt.de/">MacWelt</extlink> have managed to organize a logo contest.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
  <extlink url="http://fink.sourceforge.net/logo.php">here</extlink>. 
-                </p>
+		</p>
 <p>
 Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
 </p>
-                </body>
+		</body>
 </newsitem>
 
 
@@ -782,10 +798,10 @@ that takes the new Apple X11 into account.  It should be appearing in stable
 shortly.
 </p></body></newsitem>
 <newsitem>
-        <date>2003-02-14</date>
-        <headline>New version of FinkCommander</headline>
-        <body>
-        <p><extlink
+	<date>2003-02-14</date>
+	<headline>New version of FinkCommander</headline>
+	<body>
+	<p><extlink
  url="http://finkcommander.sourceforge.net/">FinkCommander</extlink>,
  a separate project which provides a GUI for Fink,
 has released version 0.5.0, their first Jaguar-only version.  The new
@@ -795,11 +811,11 @@ url="http://finkcommander.sourceforge.net/pages/VERSION_HISTORY.html">many
 other improvements.</extlink>
 </p></body></newsitem>
 <newsitem>
-        <date>2003-02-07</date>
-        <headline>DO NOT INSTALL VIREX 7.2</headline>
-        <body>
-        <p>
-        The Virex 7.2 package, currently being distributed free to all .Mac 
+	<date>2003-02-07</date>
+	<headline>DO NOT INSTALL VIREX 7.2</headline>
+	<body>
+	<p>
+	The Virex 7.2 package, currently being distributed free to all .Mac 
 members, has a serious conflict with Fink.  <em>Fink users should not install 
 Virex 7.2 under any circumstances.</em>
   Installing it after Fink is installed
@@ -837,7 +853,7 @@ version 0.2 of Apple's X11.app which was released yesterday.
 	<headline>Gnome, libpng, and the unstable tree</headline>
 	<body>
 	<p>
-        A problem was uncovered today concerning the versions of imlib,
+	A problem was uncovered today concerning the versions of imlib,
  libpng, and gnome in Fink's unstable tree.  The Fink team is hard at
  work addressing this problem.  As a workaround, users can downgrade
 their imlib package to the stable version, "<code>fink install
@@ -1097,10 +1113,10 @@ software before using Fink.
     </p>
     <ul>
       <li>
-        Via the binary distribution. First make sure you have the latest list of packages available: <em> sudo apt-get update</em>. Then you can perform the actual update: <em> sudo apt-get install passwd</em>. 
+	Via the binary distribution. First make sure you have the latest list of packages available: <em> sudo apt-get update</em>. Then you can perform the actual update: <em> sudo apt-get install passwd</em>. 
       </li>
       <li>
-        Via the source distribution. First make sure you have the latest set of package descriptions: <em> fink selfupdate-cvs</em>. Then, update the passwd package: <em> fink update passwd</em> 
+	Via the source distribution. First make sure you have the latest set of package descriptions: <em> fink selfupdate-cvs</em>. Then, update the passwd package: <em> fink update passwd</em> 
       </li>
     </ul>
     <p>

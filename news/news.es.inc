@@ -1,3 +1,11 @@
+<a name="2004-10-15 Resolución de problemas con gcc"><span class="news-date">2004-10-15:</span><span class="news-headline">Resolución de problemas con gcc</span></a><?php gray_line(); ?>
+      <p>
+Se sabe que la versión de gcc incluída en XCode 1.5 produce salidas incorrectas desde código c++ bajo determinadas circunstancias. Fink tiene ahora un mecanismo para avisar al usuario de esto. Además, Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes de los cuales se sepa que tienen este problema.</p>
+      <p>
+Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita <a href="<?php print $root; ?>http://article.gmane.org/gmane.os.apple.fink.beginners/13580/match=cc1plus+download+costabel">aquí</a>.
+</p>
+      <p> Si no te has actualizado aún, nuestro consejo es que consideres no hacerlo y quedarte con  XCode versión 1.2 hasta que el problema sea resuelto.
+</p>
 <a name="2004-09-20 Fink 0.7.1 liberado"><span class="news-date">2004-09-20:</span><span class="news-headline">Fink 0.7.1 liberado.</span></a><?php gray_line(); ?>
 <p>
 La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. Ésta ha sido creada para las versiones Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para las versiones Jaguar (10.2) de Mac OS X.
@@ -30,24 +38,3 @@ También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de
 	 some symbols are  missing after compiling with g++.)  
 	Algunos paquetes que se sabe tiene este problema son octave, 
 	singular-factory, singular-libfac, y posbilemente sdl.	</p>
-<a name="2004-08-21 Error en fink-0.22.0"><span class="news-date">2004-08-21: </span><span class="news-headline">Error en fink-0.22.0</span></a><?php gray_line(); ?>
-	<p>
-	El manejador de paquetes del fink-0.22.0, el cual estuvo brevemente
-	disponible en el árbol inestable la semana pasada, tiene un bug el 
-	cual previene cualquier actualización via rsync. Si instalaste esta
-	versión de fink, te puedes recuperar ejecutando el comando 
-	<code>fink install fink-0.21.2-1</code> el cual ejecutará el downgrade
-	de fink a la versión del árbol estable, subsecuentemente debes 
-	ejecutar:
-		<code>fink selfupdate</code>
-	</p><p>
-	Si por alguna razón estos comandos no funcionan, vaya a
-		<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203"> la página de la liberación del archivo fink en el 
-		sourceforge</a> y descarge el archivo
-		<code>fink-0.22.1.tar.gz</code> . Desempaque este archivo con	<code>tar xfz fink-0.22.1.tar.gz</code> , y desde dentro del directorio
-	fink-0.22.1 directory, ejecute el comando <code>./inject.pl</code>
-	</p>
-	<p>
-	El equipo de Fink se disculpa por el error y agradece a la comunidad 
-	de usuarios por llamar nuestra atención rápidamente.
-	</p>
