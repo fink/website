@@ -1,7 +1,7 @@
 <a name="2004-01-10 Pssst want to install GNOME 2.4?"><span class="news-date">2004-01-10: </span><span class="news-headline">Pssst want to install GNOME 2.4?</span></a><?php gray_line(); ?>
 	<p>
 	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
-	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino GNOME 2.4 has
+	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
 	finally been released to the 10.3 unstable tree.
 	</p>
 	<p>
@@ -9,9 +9,9 @@
 	if you are on unstable already.  Because of the massive number of changes, it is
 	expected that there will be issues upgrading or installing the new GNOME.  If you
 	have problems, you can reach the GNOME-savvy people at
-	"fink-gnome-coreATlists.sourceforge.net".  Please do report success
-	stories there as well.  The more good reports we get the faster GNOME 2.4 can be
-	moved to stable.
+	<a href="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</a>.
+	Please do report success stories there as well.  The more good reports we get, the
+	faster GNOME 2.4 can be moved to stable.
 	</p>
 	<p>
 	For those of you who do not read our mailing lists, <a href="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</a>?
