@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: ogorman $';
-$cvs_date = '$Date: 2004/01/29 13:02:05 $';
+$cvs_date = '$Date: 2004/01/29 14:03:30 $';
 
 include "header.inc";
 ?>
@@ -47,6 +47,7 @@ this list.</p>
 
 <ul>
 <li>Rob Braun (<i>bbraun</i>)</li>
+<li>Keith Conger (<i>kconger</i>)</li>
 <li>Martin Costabel</li>
 <li>Sylvain Cuaz</li>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
