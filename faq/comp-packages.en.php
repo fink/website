@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 01:19:13';
+$cvs_date = 'Date: 2004/07/15 14:16:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -75,12 +75,8 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
         December 2002 Developer Tools.</p></div>
     </a>
     
-    <a name="xml-parser-pm">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>intltool</code> says that I need XML::Parser.  I have xml-parser-pm installed.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This most frequently happens on updates.  You need to make sure that you also have <code>xml-parser-pmXXX</code> installed, where 'XXX" corresponds to the correct version of Perl for your system, e.g. 560 for Jaguar's built in Perl, and  581 for Panther's. </p></div>
-    </a>
     <a name="libiconv-gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: I can't update <code>libiconv</code>.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
     </a>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2004/07/15 01:19:13';
+$cvs_date = 'Date: 2004/07/15 14:16:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -54,7 +54,7 @@ include_once "header.en.inc";
         <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
         with <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=en#change-thread-nothread">7.3 How do I change from the non-threaded version of Fink's XFree86
         packages to the threaded version (or vice-versa)?</a></li><li><a href="comp-packages.php?phpLang=en#cctools">7.4 "When I try to install KDE, I get the following message: 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=en#xml-parser-pm">7.5 <code>intltool</code> says that I need XML::Parser.  I have xml-parser-pm installed.</a></li><li><a href="comp-packages.php?phpLang=en#libiconv-gettext">7.6 I can't update <code>libiconv</code>.</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
+        resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=en#libiconv-gettext">7.5 I can't update <code>libiconv</code>.</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
         library". Is that bad?</a></li><li><a href="usage-general.php?phpLang=en#passwd">8.2 There are suddenly a number of strange users on my system, with
         names like "mysql", "pgsql", and "games". Where did they come
         from?</a></li><li><a href="usage-general.php?phpLang=en#compile-myself">8.3 How do I compile something myself using Fink-installed
@@ -75,7 +75,7 @@ include_once "header.en.inc";
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=en#gnome-two">9.9 I upgraded from GNOME 1.x to GNOME 2.x and now
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
-        XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.27 2004/07/15 01:19:13 alexkhansen Exp $-->
+        XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul><!--Generated from $Fink: faq.en.xml,v 1.28 2004/07/15 14:16:04 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
