@@ -16,8 +16,8 @@
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 
 $title = "<xsl:value-of select="shorttitle"/>";
-$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $';
-$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $';
+$cvs_author = 'Author: <xsl:value-of select="cvsid"/>';
+$cvs_date = 'Date: <xsl:value-of select="cvsid"/>';
 $metatags = '<link rel="contents" href="{@filename}{$lang-ext}.php" title="{shorttitle} Contents" />
 <link rel="next" href="{chapter/@filename}{$lang-ext}.php" title="{chapter/title}" />';
 
@@ -150,8 +150,8 @@ Next: <a href="{@filename}.php"><xsl:number format="1 " /><xsl:value-of select="
 <xsl:document href="{@filename}{$lang-ext}.php" method="html" indent="no" encoding="utf-8">
 <xsl:text disable-output-escaping="yes">&lt;?</xsl:text>
 $title = "<xsl:value-of select="shorttitle" />";
-$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $';
-$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.1 2004/02/15 13:35:38 babayoshihiko Exp $';
+$cvs_author = '$Id: finkdoc-website.i18n.xsl,v 1.2 2004/02/21 13:50:37 babayoshihiko Exp $';
+$cvs_date = '$Id: finkdoc-website.i18n.xsl,v 1.2 2004/02/21 13:50:37 babayoshihiko Exp $';
 include_once "header<xsl:value-of select="$lang-ext" />.inc"; 
 <xsl:text disable-output-escaping="yes">?&gt;</xsl:text> 
 
