@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.7 2004/06/24 14:50:39 ogorman Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.8 2004/06/25 21:13:51 dmalloc Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -309,16 +309,27 @@
             <p>These announcements may only be sent by the <em>Fink Security
                 Team</em>. Most announcement will be sent from
                 dmalloc@users.sourceforge.net signed by the PGP key with the
-                fingerprint <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
-                291E</tt>. The public key can be found at
-                <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
-                (this is intentionally not marked as a link).</p>
+                fingerprint:
+            </p>
+                <ul>
+                    <li>
+                <tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24
+                291E</tt>.
+                </li>
+                <li>Found at
+                <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt></li></ul>
+                <p>
+                The above is intentionally not marked as a link.</p>
             <p> Other authorised Team members are: (here you add your email +
                 public key like I did above)</p><p>
-	        peter@pogma.com signed by the PGP key with the fingerprint <tt>
-		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>. The
-	        public key can be found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
-</p>
+	        peter@pogma.com signed by the PGP key with the fingerprint:</p>
+	        <ul>
+	            <li><tt>
+		4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
+		<li>
+		Found at <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+            </ul>
         </section>
         <section name="how">
             <title>How to submit </title>
@@ -328,7 +339,8 @@
             <codeblock> ID: FINK-YYYY-MMDD-NN 
                         Reported: YYYY-MM-DD 
                         Updated:  YYYY-MM-DD 
-                        Package:  package-name 
+                        Package:  package-name
+                        Affected: &lt;= versionid
                         Maintainer: maintainer-name
                         Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
                         Mac OS X version: 10.3, 10.2 
@@ -339,10 +351,11 @@
             
             <p>A sample report could look somewhat like this:</p>
             <codeblock> ID: FINK-2004-06-01 
-                        Reported:         2004-06-09 
-                        Updated:          2004-06-09 
-                        Package:          cvs 
-                        Maintainer:       Sylvain Cuaz 
+                        Reported:             2004-06-09 
+                        Updated:              2004-06-09 
+                        Package:              cvs
+                        Affected:             &lt;= 1.11.16, &lt;= = 1.12.8
+                        Maintainer:           Sylvain Cuaz 
                         Tree(s):    10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable 
                         Mac OS X version: 10.3, 10.2 
                         Fix: upstream
@@ -362,6 +375,8 @@
                         Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
                         References: MISC 
                         Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
+            <p> Please note that the <em>Affected</em> keyword referrs to all vulnerable software versions not
+            only those that might be packaged for Fink. The sample report shows this clearly.</p>
         </section>
     </chapter>
 </document>
