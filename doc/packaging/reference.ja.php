@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/02/08 00:22:05';
+$cvs_date = 'Date: 2005/04/07 06:47:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -719,17 +719,17 @@ make</pre>
 							デフォルト値は次のようになる (0.13.4) ．
 						</p>
 <pre>perl Makefile.PL PREFIX=%p \
-INSTALLPRIVLIB=%p/lib/perl5 \
-INSTALLARCHLIB=%p/lib/perl5/darwin \
-INSTALLSITELIB=%p/lib/perl5 \
-INSTALLSITEARCH=%p/lib/perl5/darwin \
-INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3 \
-INSTALLSITEMAN1DIR=%p/share/man/man1 \
-INSTALLSITEMAN3DIR=%p/share/man/man3 \
-INSTALLBIN=%p/bin \
-INSTALLSITEBIN=%p/bin \
-INSTALLSCRIPT=%p/bin
+ INSTALLPRIVLIB=%p/lib/perl5 \
+ INSTALLARCHLIB=%p/lib/perl5/darwin \
+ INSTALLSITELIB=%p/lib/perl5 \
+ INSTALLSITEARCH=%p/lib/perl5/darwin \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 						<p>
@@ -738,18 +738,18 @@ make test</pre>
 							デフォルト値は次のようになる．
 						</p>
 <pre>perl$version Makefile.PL \
-PERL=perl$version PREFIX=%p \
-INSTALLPRIVLIB=%p/lib/perl5/$version \
-INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
-INSTALLSITELIB=%p/lib/perl5/$version \
-INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
-INSTALLMAN1DIR=%p/share/man/man1 \
-INSTALLMAN3DIR=%p/share/man/man3 \
-INSTALLSITEMAN1DIR=%p/share/man/man1 \
-INSTALLSITEMAN3DIR=%p/share/man/man3 \
-INSTALLBIN=%p/bin \
-INSTALLSITEBIN=%p/bin \
-INSTALLSCRIPT=%p/bin
+ PERL=perl$version PREFIX=%p \
+ INSTALLPRIVLIB=%p/lib/perl5/$version \
+ INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
+ INSTALLSITELIB=%p/lib/perl5/$version \
+ INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
+ INSTALLMAN1DIR=%p/share/man/man1 \
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>
