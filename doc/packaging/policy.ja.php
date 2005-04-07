@@ -103,7 +103,21 @@ include_once "header.ja.inc";
 				</li>
 			</ul>
 		
-		<h2><a name="prefix">3.2 基盤システムへの干渉問題</a></h2>
+		<h2><a name="openssl">3.2 The GPL and OpenSSL</a></h2>
+			<p>
+				(2005年４月より施行)
+			</p>
+			<p>
+				OpenSSL ライセンスが GPL と LPGL ライセンスが明らかに整合性を欠いていることから，
+				openssl にリンクをしている fink パッケージのうち， GPL または LGPL ライセンスを使用しているものは
+				"Restrictive" となる．
+				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになるが，利用者は自己判断でコンパイルすることができる．				
+			</p>
+			<p>
+				パッケージメンテナは，元のパッケージライセンスを <code>DescPackaging</code> に記述されたい．
+			</p>
+		
+		<h2><a name="prefix">3.3 基盤システムへの干渉問題</a></h2>
 			
 			<p>
 				Finkは基盤システムから分離したディレクトリにインストールされるアドオン・ディストリビューションです．
@@ -117,7 +131,7 @@ include_once "header.ja.inc";
 				(すなわち，実行可能ファイルを呼び出す前にそれが存在するかどうか調べたりする必要があります)．
 			</p>
 		
-		<h2><a name="sharedlibs">3.3 共有ライブラリ</a></h2>
+		<h2><a name="sharedlibs">3.4 共有ライブラリ</a></h2>
 			
 			<p>
 				Fink は共有ライブラリに関して新しいポリシーを定め， 2002 年 2 月から施行しています．
@@ -511,7 +525,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
 		
-		<h2><a name="perlmods">3.4 Perl モジュール</a></h2>
+		<h2><a name="perlmods">3.5 Perl モジュール</a></h2>
 			
 			<p>
 				2003 年 5 月以来， Fink には Perl モジュールに対する新しいポリシーがあります．
@@ -570,7 +584,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				その Fink パッケージが XS モジュールで，バージョンの付かないディレクトリにインストールされるかチェックし，そうなら警告を発します．
 			</p>
 		
-		<h2><a name="emacs">3.5 Emacs ポリシー</a></h2>
+		<h2><a name="emacs">3.6 Emacs ポリシー</a></h2>
 			
 			<p>
 				Fink プロジェクトでは Emacs について Debian プロジェクトのポリシーに従うことに決定しましたが，小さな違いもあります．

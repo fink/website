@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.19 2005/02/08 00:22:05 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.20 2005/04/07 06:47:42 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -483,6 +483,20 @@ SplitOff: &lt;&lt;
 					この場合，パッケージにはライセンスが存在せず，だれが何をしても良い．
 				</li>
 			</ul>
+		</section>
+		<section name="openssl"><title>The GPL and OpenSSL</title>
+			<p>
+				(2005年４月より施行)
+			</p>
+			<p>
+				OpenSSL ライセンスが GPL と LPGL ライセンスが明らかに整合性を欠いていることから，
+				openssl にリンクをしている fink パッケージのうち， GPL または LGPL ライセンスを使用しているものは
+				&quot;Restrictive&quot; となる．
+				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになるが，利用者は自己判断でコンパイルすることができる．				
+			</p>
+			<p>
+				パッケージメンテナは，元のパッケージライセンスを <code>DescPackaging</code> に記述されたい．
+			</p>
 		</section>
 		<section name="prefix">
 			<title>基盤システムへの干渉問題</title>
