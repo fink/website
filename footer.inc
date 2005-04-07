@@ -1,36 +1,27 @@
 <?
-/* $Id: footer.inc,v 1.30 2005/03/07 12:19:21 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.31 2005/04/07 14:43:38 babayoshihiko Exp $ */
 ?>
 
-</td></tr>
 <? /* end content table */ ?>
-</table>
-
-
-<table width="100%" cellspacing="0" class="footer">
-<tr valign="bottom">
-<td class="footer_left" width="120">
-	<p style="border-style: solid ; border-width: 3px 0px 0px 0px ; border-color: #999999 ; padding: 6px ; margin: 0px ; text-align: center; background-image:url(<? echo $root; ?>img/stripes.gif)">
-		<a href="<? echo $root; ?>legal.php" style="text-decoration:none ; color:black ; font-size:8pt;">
+</div>
+<div id="footer-left">
+		<a href="http://fink.sourceforge.net/legal.php" style="text-decoration:none ; color:black ;">
 			Copyright &copy 2001-05<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
-	</p>
-</td><td class="footer">
-		<? /* Inserts Links to Available Languages */ ?>
-		<div class="footer">
-		<?
+</div>
+<div id="footer">
+	<?
 		if (function_exists(AddLanguageNames)) {
 			echo FOOTER_AVAILABLE_LANGUAGES . ': ';
 			AddLanguageNames(' | ', false); 
 		} else {
 			echo "&nbsp;";
 		}
-		?>
-		</div>
-		
-		<? /* The Real Footer */ ?>
-		<div class="footer">
-		<?
+	?>
+	<br>
+	<? /* The Real Footer */ ?>
+	
+	<?
 		if ($dyndate == 1) {
 		 	print FOOTER_GENERATED_DYNAMICALLY;
 		} elseif ($dyndate) {
@@ -47,10 +38,8 @@
 			$print_lastchanged = str_replace("{time}", gmstrftime(" %R GMT", $date), $print_lastchanged);
 			print $print_lastchanged;
 		}
-		?>
-		</div>
-</td>
-</tr>
-</table>
+	?>
+</div>
+
 </body>
 </html>

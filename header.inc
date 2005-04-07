@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.91 2005/01/20 15:15:15 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.92 2005/04/07 14:43:38 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -289,47 +289,31 @@ function insert_sub ($navbox, $active_page) {
 <!-- End of Tracking Code -->
 
 <? /* header and sourceforge logo */ ?>
-<table width="100%" cellspacing="0" class="header">
-<tr valign="bottom">
-	<td align="left" rowspan="2" class="header">
+<div id="header-left">
+
 	<? if (!$is_home) echo '<a href="' . $linkroot . 'index.php">'; ?>
-	<img src="<? echo $root ?>img/mlogo.png"  border="0" alt="Fink">
+	<img src="<? echo $root ?>img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
 	<? if (!$is_home) echo '</a>'; ?>
-	</td>
-	<td align="right" class="header">
-	
+</div>
+
+<div id="header">
 	<? /* Call phpLang function */ ?>
 	<? if (function_exists(AddFlags)) AddFlags('', false, $root); ?>
-	</td>
-</tr>
-<tr valign="bottom">
-	<td align="right" class="header">
+	<br>
 <? if (!$hostlogo) include "hostlogo.inc" ;
 		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
 ?>
+</div>
 
-	</td>
-</tr>
-</table>
 <? /* main table with navigation column and content column */ ?>
-<table width="100%" cellspacing="0" class="main">
-<tr valign="top">
-<td class="main_left" width="120">
+<div id="sidebar">
+
 <? /* navigation column table */ ?>
 
 <? /* sections */ ?>
-	<p style="
-			background-image: url(<? echo $root; ?>img/stripes.gif) ; 
-			font-weight: bold ;
-			display: block ; 
-			border-style: solid ; 
-			border-width: 0px 0px 4px 0px ; 
-			border-color: #fc6 ; 
-			text-align: center ; 
-			margin: 0px ;
-			padding: 6px 3px">
+	<div id="sections">
 		<? echo FINK_SECTIONS; ?>
-	</p>
+	</div>
 	<ul class="menu">
 <? 
 	foreach ($section_files as $key => $filename) {
@@ -359,6 +343,7 @@ function insert_sub ($navbox, $active_page) {
 		</li>
 <? } ?>
 	</ul>
-</td>
+	
 <? /* end navigation column */ ?>
-<td class="main">
+</div>
+<div id="main">

@@ -1,4 +1,4 @@
-/* $Id: fink.css,v 1.23 2004/04/28 01:30:30 babayoshihiko Exp $ */
+/* $Id: fink.css,v 1.24 2005/04/07 14:43:38 babayoshihiko Exp $ */
 /* A good way to get colors which fit well together is to use the color wheel
  found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
  were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
@@ -23,21 +23,6 @@ table {
 	padding: 0px ;
 }
 
-table.header {
-}
-
-table.main {
-	border-style: solid ;
-	border-width: 4px 0px 0px 0px ;
-	border-color: #ffcc66 #ffffff #ffffff #ffffff;
-}
-
-table.footer {
-	border-style: solid ;
-	border-width: 0px 0px 3px 0px ;
-	border-color: #ffffff #ffffff #999999 #ffffff;
-}
-
 p,ul,ol,li,dl,dt,dd,td,th { 
 	color: black ;  
 	font-family: "Trebuchet MS",sans-serif ;
@@ -48,46 +33,6 @@ p,ul,ol,li,dl,dt,dd,td,th {
 td { 
 	margin: 4px ;
 	padding: 4px ;
-}
-
-td.layout { 
-	font-size: 0px;
-	border-style: none ;
-	border-width: 0px ;
-	margin: 0px ;
-	padding: 0px ;
-}
-
-td.header {
-	margin: 4px ;
-	padding: 4px ;
-}
-
-td.main_left {
-	background-color: #eee ;
-	width: 120px ;
-	margin: 0px ;
-	padding: 0px ;
-}
-
-td.main {
-	text-align: left ;
-	margin: 10px ;
-	padding: 10px ;
-}
-
-td.footer_left {
-	text-align: center ;
-	background-color: #eee ;
-	width: 120px ;
-	margin: 0px ;
-	padding: 0px ;
-}
-
-td.footer {
-	text-align: center ;
-	margin: 0px 10px ;
-	padding: 0px 10px ;
 }
 
 h1 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:18pt;  font-weight:bold; }
@@ -161,14 +106,6 @@ ul.menu li a:hover {
 
 .nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
 
-/* Footer */
-div.footer {
-	color:black ;
-	font-family:"Trebuchet MS",sans-serif ;
-	font-size:10pt ;
-	text-align: center ;
-}
-
 /* Used for News */
 .news-date { color:rgb(96,96,96); font-size:10pt; font-weight:bold; }
 
@@ -205,4 +142,86 @@ img { border:0; }
 	margin: 5px;
 	font-size: 1.0em;
 	line-height: 1.3em;
+}
+
+/* DIV tags for Layout */
+div#header-left {
+	float: left ;
+	padding: 0px 0px 10px 0px ;
+	margin: 0px ;
+	width: 180px ;
+	height: 90px ;
+	border-style: solid ;
+	border-width: 0px 0px 3px 0px ;
+	border-color: #fc6 ;
+}
+
+div#header {
+	padding: 0px 0px 10px 0px ;
+	margin: 0px ;
+	height: 90px ;
+	border-style: solid ;
+	border-width: 0px 0px 3px 180px ;
+	border-color: #fff #fff #fc6 #fff ;
+	font-family: "Trebuchet MS", sans-serif ;
+	text-align: right ;
+}
+
+div#sidebar {
+	float: left ;
+	padding: 0px ;
+	margin: 0px ;
+	width: 150px ;
+	border-style: solid ;
+	border-width: 0px ;
+	border-color: #333 ;
+}
+
+div#sections {
+	padding: 6px 3px ;
+	margin: 0px ;
+	background-image: url(http://fink.sourceforge.net/img/stripes.gif) ;
+	font-weight: bold ;
+	display: block ;
+	border-style: solid ;
+	border-width: 0px 0px 4px 0px ;
+	border-color: #fc6 ;
+	font-family: "Trebuchet MS", sans-serif ;
+	text-align: center ;
+}
+
+div#main {
+	padding: 0px 0px 20px 10px ;
+	margin: 0px ;
+	border-style: solid ;
+	border-width: 0px 0px 0px 150px ;
+	border-color: #eee ;
+}
+
+div#footer-left {
+	clear: both ;
+	float: left;
+	padding: 10px 0px 10px 0px ;
+	margin: 0px ;
+	width: 150px ;
+	height: 50px ;
+	border-style: solid ;
+	border-width: 3px 0px 3px 0px ;
+	border-color: #666 ;
+	text-align: center ;
+	font-family: "Trebuchet MS", sans-serif ;
+	font-size: smaller ;
+	background-image: url(http://fink.sourceforge.net/img/stripes.gif) ;
+}
+
+div#footer {
+	padding: 10px 0px 10px 10px ;
+	margin: 0px ;
+	height: 50px ;
+	border-style: solid ;
+	border-width: 3px 0px 3px 150px ;
+	border-color: #fff #fff #666 #eee ;
+	text-align: center ;
+	font-family: "Trebuchet MS", sans-serif ;
+	font-size: smaller ;
 }
