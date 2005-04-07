@@ -40,7 +40,7 @@ include_once "header.zh.inc";
 不可以使用下划线("_"),不可以使用大写字母。
 这是一个必需字段。
 </p>
-<p>对这个字段，只可应用 %N、%Ni、%type_raw[] 和 %type_pkg[] 这几种百分号扩展。</p>
+<p>对这个字段，只可应用 %N、%{Ni}、%type_raw[] 和 %type_pkg[] 这几种百分号扩展。</p>
 <p>
 作为 Fink 的打包规则，给定的软件包应该总是使用相同的选项进行编译。
 如果对一个软件包由多个变种(查阅关于 <code>Type</code> 字段的文档)，你必须在 <code>Package</code> 字段中加入特定变种的信息(查阅关于 %type_pkg[] 百分号展开的文档)。
@@ -52,6 +52,26 @@ include_once "header.zh.inc";
 上游版本号。与 Package 字段具有同样的限制。
 这是一个必需字段。
 </p>
+
+<p>
+  Note that some programs use nonstandard version numbering schemes
+  that may cause sorting confusion or that contain characters that are
+  not allowed in this field. In these situations, when writing the
+  Fink package, you must convert the upstream value to one that is
+  acceptable and that allows the versions to be arranged in the
+  correct order. When in doubt about how version strings will be
+  sorted, you can use the <code>dpkg</code> command at a shell
+  prompt. For example,
+</p>
+<pre>
+  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"
+</pre>
+<p>
+  will print "true" because version string "1.2.1"
+  is less than "1.3". See the <code>dpkg</code> manpage for
+  more details.
+</p>
+
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
 软件包的修订版号。
@@ -59,6 +79,22 @@ include_once "header.zh.inc";
 修订版号从 1 开始。
 这是一个必需字段。
 </p>
+
+<p>
+  Fink's policy is that <b>any</b> time you make a change to the
+  <code>.info</code> file that results in changes to the
+  binary (compiled) form of a package (the <code>.deb</code>
+  file), you <b>must</b> increase <code>Revision</code>. This
+  includes changing the <code>Depends</code> or other package lists,
+  and adding,
+  removing, or renaming splitoff packages or shifting files among
+  them. When migrating a package to a new tree (from 10.2 to 10.3, for
+  example) involves such changes, you should
+  increase <code>Revision</code> by 10 in the newer tree in order to
+  leave space for future updates to the package in the older
+  tree.
+</p>
+
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>从 fink 0.12.0 开始。</b>
@@ -199,6 +235,34 @@ Type: -x11 (boolean)
 Depends: (%type_pkg[-x11]) x11
 </pre>
 <p>会把软件包 X11 设为 nethack-x11 变量的一个依赖关系，而不是 nethack。</p>
+
+<p>
+  Note that when using Depends/BuildDepends for shared library packages
+  for which more than one major-version is available, you must
+  <b>not</b> do the following:
+</p>
+<pre>
+  Package: foo
+  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+  BuildDepends: id3lib3.7-dev | id3lib4-dev
+</pre>
+<p>
+  even if your package could work with either library. Pick one
+  (preferably the highest version that can be used successfully) and
+  use it consistently in your package.
+</p>
+<p>
+  As explained in the <a href="policy.php?phpLang=zh#sharedlibs">Shared Library Policy</a>, only one of the
+  -dev packages can be installed at a time, and each has links of the
+  same name that could point to different filenames in the associated
+  -shlibs package. When compiling package foo, the actual filename (in
+  the -shlibs package) gets hard-coded into the foo binary. That means
+  the resulting package needs the specific -shlibs package associated
+  with the -dev that was installed at compile-time. As a result, one
+  cannot have a <code>Depends</code> that indicates that either one
+  will suffice.
+</p>
+
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>从 fink 0.9.0 开始。</b>
@@ -211,6 +275,16 @@ Depends: (%type_pkg[-x11]) x11
 如果一个名为 "pine" 的软件包指明 <code>Provides: mailer</code> 的话，那么只要安装了"pine"，所有对"mailer"的依赖关系都会被认为已经满足。
 你通常会把这些软件包名字同时列在 "Conflicts" 和 "Replaces" 字段。
 </p>
+
+<p>
+Note that there is no versioning data associated with Provides
+items. They do not inherit from the parent package that contains the
+Provides list nor is there a syntax for specifing an arbitrary version
+in the Provides field itself. Further, a dependency that contains a
+version specification is not satisfied by a package that Provides that
+needed package name. As a result, having many variants provide a common surrogate package may be harmful, because it precludes the use of versioned dependencies. For example, if foo-gnome and foo-nognome both have "Provides: foo", another package with "Depends: foo (&gt; 1.1)" will not work.
+</p>
+
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
 一个逗号分隔的软件包名清单，这些软件包不应该和本软件安装在同一台机器上。
@@ -246,7 +320,19 @@ Depends: (%type_pkg[-x11]) x11
 <p>
 <b>从 fink 0.9.9 开始。</b>
 一个布尔值，它表明没有其它软件包会依赖于它，它们应该只是 BuildDepend。
+
+Unlike usual boolean fields, <code>BuildDependsOnly</code> is
+tri-state: leaving it undefined (not specifying it at all) is
+different than defining it as logically false. See the <a href="policy.php?phpLang=zh#sharedlibs">Shared Library Policy</a> for
+more information.
 </p>
+<p>As of fink 0.20.5, the presence or absence of this field, and its value
+if present, are recorded into the .deb
+file when the package is built.  Therefore, <b>if you change the value of
+BuildDependsOnly or if you add or remove it,
+you must increase the revision number</b> of the package.
+</p>
+
 </td></tr></table>
 <p><b>解压阶段：</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>CustomMirror</td><td>
@@ -261,6 +347,13 @@ asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &gt;&gt;</pre>
+
+<p>
+  The standard continent and country codes are listed in
+  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+  fink or fink-mirrors package.
+</p>
+
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
 源代码压缩档的 URL。它应该是一个 HTTP 或 FTP URL，但 Fink 本身并不关心这一点-它只是把它传递给 wget。这个字段对镜像站点的 URL 标记模式：
@@ -268,7 +361,7 @@ Primary: ftp://ftp.barbarorg/pub/
 这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <code>/sw/lib/fink/mirror/_list</code> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <b>mirror-name</b> 会使 Fink 使用 <code>CustomMirror</code>
 字段。
 在 URL 使用前，会进行百分号展开。
-记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %ni(也许还包括一些特定的 %type_ 展开)。
+记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %{ni}(也许还包括一些特定的 %type_ 展开)。
 </p>
 <p>
 从 0.18.0 开始，<code>Source: none</code> 具有特别的含义。它标识不需要下载源文件。参考
@@ -276,7 +369,11 @@ Primary: ftp://ftp.barbarorg/pub/
 <code>gnu</code> 这个值代表
 <code>mirror:gnu:%n/%n-%v.tar.gz</code>；<code>gnome</code> 则代表
 <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>。默认值是 <code>%n-%v.tar.gz</code> (即一个手工指定的下载)。
+
+This implicitly-defined <code>Source</code> form is deprecated
+(explicitly-stated simple filename/manual download is still okay).
 </p>
+
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
 如果一个软件包包含几个压缩档，在这些额外的字段中说明它们呢，从 N = 2 开始。所以，第一个压缩档(它应该是所谓的"主"压缩档)会被放在 <code>Source</code>，第二个压缩档则作为 <code>Source2</code>，依此类推。这里的规则和 Source 是一样的，区别只是 "gnu" 和 "gnome" 捷径不会被展开-那样做并没有意义。从 fink 的 0.19.2 后的一个 CVS 版本开始，你可以使用任意(不需要连续)的 N &gt;= 2 的整数值。不过，你仍然要保证它们是不重复的。
@@ -413,7 +510,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 <code>%f.patch</code> 或 <code>%n.patch</code>。补丁会在 PatchScript 脚本运行之前应用(如果有的话)。
 </p>
 <p>
-记住 %n 包括所有 %type_ 变种数据，所以你可能需要在这里使用 %ni (也许需要包括一些特定的 %type_ 展开)。
+记住 %n 包括所有 %type_ 变种数据，所以你可能需要在这里使用 %{ni} (也许需要包括一些特定的 %type_ 展开)。
 维护一个单独的补丁文件，然后在 <code>PatchScript</code> 字段中列出与变种有关的修改会比对每个变种使用单独的补丁文件容易些。
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
@@ -444,20 +541,55 @@ CompileScript 字段的说明获取详细信息)。
 对于 &lt; 0.13.7 的 fink 版本，这个参数也对 perl 模块<code>Type: Perl</code>有效，并会添加到默认的 perl Makefile.PL
 字符串中。
 </p>
-</td></tr><tr valign="top"><td>GCC</td><td>
+
 <p>
-要求使用的 gcc 编译器版本。允许值包括：
-<code>2.95.2</code> 或 <code>2.95</code>
-(仅用于 10.1 软件包代码树)，<code>3.1</code>
-(仅用于 10.2 软件包代码树)，和 <code>3.3</code>
-(仅用于 10.2-gcc3.3 和 10.3 软件包代码树)。
+  Starting in fink-0.22.0, this field supports conditionals. The
+  syntax is the same as that used in the <code>Depends</code> and
+  other package-list fields. The conditional expression only applies
+  to the whitespace-delimited "word" immediately following
+  it. For example
+</p>
+<pre>
+Type: -x11 (boolean)
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
+</pre>
+<p>
+  will always pass the <code>--mandir</code> and <code>--disable-shared</code> flags, but only pass <code>--with-x11</code> in the -x11 variant.
+</p>
+
+</td></tr><tr valign="top"><td>GCC</td><td>
+
+<p>
+This field specifies the GCC-ABI used by C++ code in this package.
+(It is needed because that ABI has changed twice, and any libraries
+which you link to containing C++ code must be compiled with the same ABI
+you are currently using.)
+</p><p>
+The allowed values are:
+<code>2.95.2</code> (or <code>2.95</code>),
+ <code>3.1</code>,
+and <code>3.3</code>.
+This last is expected to be the GCC-ABI for gcc 3.3 and all subsequent
+versions of gcc.
+The default values for the various package trees are:
+<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
+and <code>3.3</code> in the 10.2-gcc3.3, 10.3, and all subsequent trees.
+</p><p>
+Note that when the GCC value is different from the default, the compiler
+must be specified within the package (typically by setting the CC or CXX
+flags), and a dependency on one of the (virtual) gcc packages should be
+specified.
 </p>
 <p>对于 fink 0.13.8，如果使用了这个标志，会使用 <code>gcc_select</code> 来检测 gcc 的版本，如果检测到错误的版本，fink 会出错退出。
 </p>
 <p>
-这个字段被添加到 fink 以辅助在 gcc
-编译器之间的转换，因为这些不同的编译器在涉及有关没有考虑版本区别的 C++ 代码中存在着不兼容。
+This field was added to fink to aid maintainers
+in tracking the transition between the gcc
+compilers, which introduced a binary incompatibility between libraries
+that involve C++ code which is not reflected in the versioning
+scheme.
 </p>
+
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
 在编译阶段运行的一系列命令。参阅下面关于脚本的注解。这里是放置配置和编译软件包的命令的地方。通常默认值是：
@@ -474,22 +606,37 @@ make</pre>
  INSTALLSITELIB=%p/lib/perl5 \
  INSTALLSITEARCH=%p/lib/perl5/darwin \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
-<p>如果是指定版本的 <code>perl $version</code> 类型(比如 $version 可能是 5.6.0)，
+<p>如果是指定版本的 <code>perl $version</code> 类型(比如 <code>$version</code> 可能是 5.6.0)，
 默认值是：
 </p>
 <pre>perl$version Makefile.PL \
  PERL=perl$version PREFIX=%p \
  INSTALLPRIVLIB=%p/lib/perl5/$version \
- INSTALLARCHLIB=%p/lib/perl5/$version/darwin \
+ INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
  INSTALLSITELIB=%p/lib/perl5/$version \
- INSTALLSITEARCH=%p/lib/perl5/$version/darwin \
+ INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
  INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3
+ INSTALLMAN3DIR=%p/share/man/man3 \
+ INSTALLSITEMAN1DIR=%p/share/man/man1 \
+ INSTALLSITEMAN3DIR=%p/share/man/man3 \
+ INSTALLBIN=%p/bin \
+ INSTALLSITEBIN=%p/bin \
+ INSTALLSCRIPT=%p/bin
 make
 make test</pre>
+
+<p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
+earlier, and is 
+"darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
+
 <p>
 在命令执行之前，会进行百分号展开(参阅前面的章节)。
 </p>
@@ -542,6 +689,17 @@ make test</pre>
 如果软件包支持的话，首选会使用 <code>make install
 DESTDIR=%d</code>。在命令执行之前，会进行百分号替换(参看前面的章节)。
 </p>
+</td></tr><tr valign="top"><td>AppBundles</td><td>
+
+<p>
+<b>Introduced in a post-0.23.1 version.</b>
+This field installs the specified application bundle(s) into
+<code>%p/Applications</code>.  It will also create a
+symlink to the <code>/Applications/Fink</code> directory.
+Example:
+</p>
+
+<pre>AppBundles: build/*.app Foo.app</pre>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
@@ -654,7 +812,8 @@ Fink 还会在最后添加一个 <code>exit 0</code>。
 </td></tr><tr valign="top"><td>ConfFiles</td><td>
 <p>
 以空格分开的用户可以编辑的配置文件的列表。
-这些文件必须以绝对路径指明，例如，<code>%p/etc/foo.conf</code>。
+Percent expansion  is performed on this field.
+这些文件必须以绝对路径指明，例如，<code>%p/etc/%n.conf</code>。
 这些文件会被 dpkg 特别对待。
 当软件包被升级，而软件包和磁盘上的文件相比被改动过的话，用户会被询问使用哪个版本，以及是否需要进行备份。
 当一个软件包被删除后，配置文件仍然还保留在磁盘上。

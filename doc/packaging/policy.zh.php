@@ -70,7 +70,26 @@ Documentation Project</code>－如果文档中的其中一个软件包明显地�
 
 
 
-<h2><a name="prefix">3.2 避免干扰基本系统</a></h2>
+<h2><a name="openssl">3.2 The GPL and OpenSSL</a></h2>
+<p>
+(Policy change effective April, 2005.)
+</p>
+<p>
+Due to the apparent incompatibilty of the OpenSSL license with the GPL and 
+LGPL licenses, fink packages which link to openssl but are licensed under 
+the GPL or LGPL are marked as "Restrictive."  As a consequence, the Fink 
+project will not distribute binaries of such packages, although users are 
+free to compile them from source at their discretion.
+</p>
+<p>
+Package maintainers are encouraged to record the original package license in 
+the <code>DescPackaging</code> field.
+</p>
+
+
+
+
+<h2><a name="prefix">3.3 避免干扰基本系统</a></h2>
 <p>
 Fink 是一个安装在基本系统之外的独立目录里面的外加的软件系统。
 保证不要把文件安装到 Fink 的目录之外对一个软件包来说是非常重要的。
@@ -82,7 +101,7 @@ Fink 是一个安装在基本系统之外的独立目录里面的外加的软件
 </p>
 
 
-<h2><a name="sharedlibs">3.3 共享函数库</a></h2>
+<h2><a name="sharedlibs">3.4 共享函数库</a></h2>
 <p>
 Fink 对于共享库有了新的规则，它从 2002 年 2 月开始生效。
 本段内容讨论的是规则的第四版，它是与 Fink's 0.5.0 一同发布的。
@@ -218,6 +237,50 @@ SplitOff: &lt;&lt;
 这可以确保版本会匹配，而且保证 barN
 自动继承 "inherits" barN-shlibs 的所有依赖关系。
 </p>
+
+<p><b>The BuildDependsOnly field</b>
+</p><p>
+When libraries are being upgraded over time, it is often necessary to have
+two versions of the header files available during a transition period,
+with one version used for compiling some things and the other version
+used for compiling others.  For this reason, the packages containing
+header files must be constructed with some care.  If both foo-dev and
+bar-dev contain overlapping headers, then foo-dev should declare
+</p>
+<pre>
+  Conflicts: bar-dev
+  Replaces: bar-dev
+</pre>
+<p>and similarly bar-dev declares Conflicts/Replaces on foo-dev.
+</p><p>
+In addition, both packages should declare
+</p>
+<pre>
+  BuildDependsOnly: True
+</pre>
+<p>This inhibits others from writing packages which depend on foo-dev or
+bar-dev, since any such dependency will prevent the smooth operation of the
+Conflicts/Replaces method.
+</p><p>
+There are some packages containing header files for which it's not
+appropriate to declare BuildDependsOnly to be true.  In that case,
+the package should declare
+</p>
+<pre>
+  BuildDependsOnly: False
+</pre>
+<p>and the reason must be given in the DescPackaging field.
+</p><p>
+The BuildDependsOnly field should only be mentioned in the package's .info
+file if the package contains header files, installed into /sw/include.
+</p><p>
+As of fink 0.20.5, "fink validate" will issue a warning for any .deb
+which contains header files and at least one dylib, and does not declare
+BuildDependsOnly to be either true or false.  (It is possible that in
+future versions of fink, this warning will be expanded to cover the case of
+a .deb with header files and a static library as well.)
+</p>
+
 <p><b>Shlibs 字段：</b>
 </p><p>
 除了把共享库放到合适的软件包中外，作为规则版本 4，你还需要用 <code>Shlibs</code> 字段声明全部共享库。这个字段每个共享库占一行，这行中包含库的 <code>-install_name</code>，<code>-compatibility_version</code>，以及版本依赖信息，这个信息指明在本兼容版本中提供库的 Fink 软件包。依赖关系应该用 <code>foo (&gt;= version-revision)</code> 的形式指明。其中
@@ -288,7 +351,7 @@ SplitOff: &lt;&lt;
 
 
 
-<h2><a name="perlmods">3.4 Perl 模块</a></h2>
+<h2><a name="perlmods">3.5 Perl 模块</a></h2>
 <p>Fink 从 2003 年 5 月开始实施的对 perl 模块的规则，在 2004 年 4 月进行了修改。
 </p><p>
 传统上，关于 perl 模块的 Fink 软件包具有
@@ -305,13 +368,23 @@ SplitOff: &lt;&lt;
 <code>Type: perl 5.6.0</code> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
 (这个指令从 fink 0.13.0 版本开始提供)。</p>
 <p>按照 2003 年 5 月的规则，可以允创建一个 <code>-pm</code> 软件包，它实际是去加载 <code>-pm560</code> 或其它存在的相应版本的"束"软件包。按照 2004 年 4 月的规则，不再鼓励这样做，而且经过一个过渡期后，将会完全放弃这种做法。(唯一的例外是 <code>storable-pm</code> 软件包因为自举的需要仍然需要保持这种形式)。</p>
-<p>对于 fink 0.20.1，如果当前 perl 版本号至少是 5.8.0 的时候，system-perl 虚拟软件包会自动”提供”一些 perl 模块。对于 system-perl-5.8.1-1，它们是：<b>attribute-handlers-pm, cgi-pm, digest-md5-pm581, file-spec-pm, file-temp-pm, filter-simple-pm581, filter-util-pm581, getopt-long-pm, i18n-langtags-pm, libnet-pm, locale-maketext-pm, memoize-pm, mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm, test-simple-pm, time-hires-pm581。</b></p>
-<p>从 fink 0.13.0 版本开始，对 <code>.deb</code> 文件使用 <code>fink validate</code> 命令的时候，将会检查这个 fink 软件包是否一个安装在没有标定版本的目录中的 XS 模块，如果是的话，将给出一个警告信息。
+
+<p>As of fink 0.20.2, the system-perl virtual package automatically
+"Provides" certain perl modules when the version of Perl present on
+the system is at
+least 5.8.0.  In the case of system-perl-5.8.1-1, these are:
+<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, 
+file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, 
+i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, 
+mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, 
+test-simple-pm581, time-hires-pm581.</b>
+(This list was slightly different in fink 0.20.1: package maintainers are
+encouraged to check to be sure that they are assuming the correct list.)
 </p>
 
 
 
-<h2><a name="emacs">3.5 Emacs 规则</a></h2>
+<h2><a name="emacs">3.6 Emacs 规则</a></h2>
 <p>Fink 项目选择遵循 Debian 项目针对 emacs 的规则，但稍微有些差别。
 （Debian 规则文档可以在
 <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">

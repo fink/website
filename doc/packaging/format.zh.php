@@ -127,9 +127,11 @@ SplitOff: &lt;&lt;
 完整的（<b>f</b>ull）软件包名，即 %n-%v-%r
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
+
 <p>
-标识 Fink 安装位置的前缀（<b>p</b>refix）比如：<code>/sw</code>
+the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to ge the correct path.
 </p>
+
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
@@ -182,12 +184,22 @@ SplitOff: &lt;&lt;
 _raw 形式表明使用子类型字符串的精确形式，
 _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版本软件包的命名约定一样)。(在 fink 的 CVS 0.19.2 后版本中引入)。
 </p>
-</td></tr><tr valign="top"><td>%ni, %Ni</td><td>
+</td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
 软件包的固定名称(<b>n</b>ame <b>i</b>nvariant)部分。
 它们和 %n 和 %N 类似，除了所有 %type_pkg[] 和 %type_raw[] 被去掉。
 (在 fink 的 CVS 0.19.2 后版本中引入)。
 你应该使用 %{ni} 和 %{Ni} 以避免与 %n 和 %N 扩展相混淆。
+</p>
+</td></tr><tr valign="top"><td>%{default_script}</td><td>
+<p>
+Valid only in <code>*Script</code> fields, the default contents of
+that type of field. The value is often dependent on
+the <code>Type</code> field, and is always defined (though it may be
+blank). When used in a <code>SplitOff: InstallScript</code>, this
+expansion will yield the <b>parent's</b> default, even though the
+default for <code>InstallScript</code> in a <code>SplitOff</code>
+package is blank. (Introduced in fink-0.20.6)
 </p>
 </td></tr></table>
 
