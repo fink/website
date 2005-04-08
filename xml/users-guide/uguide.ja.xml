@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.18 2005/03/25 22:26:18 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.19 2005/04/08 08:20:10 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -495,7 +495,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 <link url=" http://finkcommander.sourceforge.net " >Fink Commander website</link> リンクを辿って下さい。
 </p>
 </section>
-<section>
+<section name="available-versions">
 <title>用意されているバージョン</title>
 <p>パッケージをインストールする場合、まず<link url="http://fink.sourceforge.net/pdb/index.php" >Package Database</link>を確認して Fink にあるかどうか確認して下さい。
 用意されているバージョンは次の行に書かれてあります:</p>
@@ -504,6 +504,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 <p>
 <em>0.4.1-stable:</em> OS 10.1 でバイナリインストールできる最新バージョン</p>
 </li>
+<li><em>0.6.3:</em> OS 10.2 でバイナリインストールできる最新バージョン</li>
 <li>
 <p>
 <em>&fink_version;:</em> これは OS 10.3 と 10.2 向けのバイナリインストールできる基本バージョン。
@@ -512,7 +513,7 @@ Fink を <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php" >�
 </li>
 <li>
 <p>
-<em>10.2-gcc3.3 stable:</em> これはソースから <code>gcc 3.3</code> でインストールできる OS 10.2 向け最新バージョン。
+<em>current-10.2-gcc3.3 stable:</em> これはソースから <code>gcc 3.3</code> でインストールできる OS 10.2 向け最新バージョン。
 このバージョンをインストールできるようにするには、 <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS </link> または rsync アクセスを有効にする必要がある。
 もし <code>gcc 3.3</code> に更新していない場合、このバージョン (あるいはパッケージ自体) が表示されない可能性がある。
 </p>
@@ -523,17 +524,10 @@ CVS | rsync を有効にすることで、バイナリディストリビュー�
 </li>
 <li>
 <p>
-<em>10.3 stable:</em> これはソースからインストールできる OS 10.3 向け最新バージョン。
+<em>current-10.3 stable:</em> これはソースからインストールできる OS 10.3 向け最新バージョン。
 CVS または rsync アクセスを有効にする必要がある。
 </p> 
-</li> 
-<li>
-<p>
-<em>In latest-unstable:</em> 最新の非安定バージョン。
-このバージョンをインストールするには、非安定バージョンのインストール方法の<link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">説明</link> に従って下さい。
-</p>
-<p>注意: 非安定バージョンは使用できないと言うわけではありませんが、自己責任で使用して下さい。
-</p></li>
+</li>
 </ul>
 </section>
 <section name="x11" >
@@ -1184,9 +1178,9 @@ p   インストールされたパッケージにより提供されたバーチ
 	  未インストールパッケージのみ表示。
 -s=expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
- -m expr,--maintainer=expr
+-m expr,--maintainer=expr
 	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
- -t expr,--tree=expr
+-t expr,--tree=expr
 	  正規表現 expr にマッチするツリ−内にあるパッケージのみ表示
 -w=xyz,--width=xyz.
 	  出力形式の幅を設定する。

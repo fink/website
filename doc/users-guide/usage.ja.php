@@ -140,9 +140,9 @@ p   インストールされたパッケージにより提供されたバーチ
 	  未インストールパッケージのみ表示。
 -s=expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
- -m expr,--maintainer=expr
+-m expr,--maintainer=expr
 	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
- -t expr,--tree=expr
+-t expr,--tree=expr
 	  正規表現 expr にマッチするツリ−内にあるパッケージのみ表示
 -w=xyz,--width=xyz.
 	  出力形式の幅を設定する。

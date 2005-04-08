@@ -190,7 +190,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 <a href="http://finkcommander.sourceforge.net%20">Fink Commander website</a> リンクを辿って下さい。
 </p>
 
-<h2><a name="">3.6 用意されているバージョン</a></h2>
+<h2><a name="available-versions">3.6 用意されているバージョン</a></h2>
 
 <p>パッケージをインストールする場合、まず<a href="http://fink.sourceforge.net/pdb/index.php">Package Database</a>を確認して Fink にあるかどうか確認して下さい。
 用意されているバージョンは次の行に書かれてあります:</p>
@@ -199,6 +199,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 <p>
 <b>0.4.1-stable:</b> OS 10.1 でバイナリインストールできる最新バージョン</p>
 </li>
+<li><b>0.6.3:</b> OS 10.2 でバイナリインストールできる最新バージョン</li>
 <li>
 <p>
 <b>0.7.1:</b> これは OS 10.3 と 10.2 向けのバイナリインストールできる基本バージョン。
@@ -207,7 +208,7 @@ Fink を <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">ア�
 </li>
 <li>
 <p>
-<b>10.2-gcc3.3 stable:</b> これはソースから <code>gcc 3.3</code> でインストールできる OS 10.2 向け最新バージョン。
+<b>current-10.2-gcc3.3 stable:</b> これはソースから <code>gcc 3.3</code> でインストールできる OS 10.2 向け最新バージョン。
 このバージョンをインストールできるようにするには、 <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS </a> または rsync アクセスを有効にする必要がある。
 もし <code>gcc 3.3</code> に更新していない場合、このバージョン (あるいはパッケージ自体) が表示されない可能性がある。
 </p>
@@ -218,17 +219,10 @@ CVS | rsync を有効にすることで、バイナリディストリビュー�
 </li>
 <li>
 <p>
-<b>10.3 stable:</b> これはソースからインストールできる OS 10.3 向け最新バージョン。
+<b>current-10.3 stable:</b> これはソースからインストールできる OS 10.3 向け最新バージョン。
 CVS または rsync アクセスを有効にする必要がある。
 </p> 
-</li> 
-<li>
-<p>
-<b>In latest-unstable:</b> 最新の非安定バージョン。
-このバージョンをインストールするには、非安定バージョンのインストール方法の<a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">説明</a> に従って下さい。
-</p>
-<p>注意: 非安定バージョンは使用できないと言うわけではありませんが、自己責任で使用して下さい。
-</p></li>
+</li>
 </ul>
 
 <h2><a name="x11">3.7 X11 を使う</a></h2>
