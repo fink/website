@@ -3,14 +3,16 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.10 2004/12/09 18:17:04 dmacks Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.11 2005/04/08 08:26:15 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
-      <em>本文档尚在不断修改中。</em>
-下面的旧文档可以给你更详尽的概念：
+      <!-- start translation -->
+      This document gives an overview over all features of Fink.
+      <!-- end translation -->
+(下面的旧文档可以给你更详尽的概念：
 <link url="http://fink.sourceforge.net/doc/bundled/install.php" >安装</link>,
 <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >使用</link>
-以及包括在发行安装版本的磁盘映象中的 ReadMe.rtf 文件。
+以及包括在发行安装版本的磁盘映象中的 ReadMe.rtf 文件。)
 同时也可以查阅本网站的
 <link url="http://fink.sourceforge.net/doc/" >文档部分</link> ，它包括一些其它的有用资讯。
 </p>
@@ -204,12 +206,19 @@ fink-0.x.x-full.tar.gz 压缩档的目录。
       <title>设置你的环境</title>
       <p>
 要使用 Fink 目录下安装的软件，包括软件包管理器本身，你必须相应设置 PATH 环境变量。
-多数情况下，你可以在命令行这样做：
-</p>
-      <codeblock>open /sw/bin/pathsetup.command</codeblock>
-      <p>或对于 <code>fink-0.18.3</code> 或 <code>fink-0.19.2</code>，通过运行(就象下面一样)：
-</p>
+<!-- start translation -->
+In most cases, you can do this by entering the command
+<!-- end translation -->
+      </p>
       <codeblock>/sw/bin/pathsetup.sh</codeblock>
+      <!-- start translation -->
+      <p>
+	in a terminal window. Note that for some older versions of
+	fink called this <filename>pathsetup.command</filename>, and one could
+	run it by entering the command:
+      </p>
+      <!-- end translation -->
+      <codeblock>open /sw/bin/pathsetup.command</codeblock>
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
 你可以通过打开终端窗口并运行下面指令来查看你 shell 类型：
@@ -408,6 +417,13 @@ E: Sorry, broken packages</codeblock>
     </section>
     <section name="src" >
       <title>从源代码安装软件包</title>
+      <!-- start translation -->
+      <p>
+The <code>fink</code> tool will allow you to install packages that are not yet
+available in the <xref chapter="intro" section="src-vs-bin">binary
+distribution</xref>.
+      </p>
+      <!-- end translation -->
       <p>首先，你需要在你的系统中安装合适版本的开发工具。在 <link url="http://connect.apple.com" >http://connect.apple.com</link>中免费注册以后可以下载得到它。</p>
       <p>
 要获得可以从源代码安装的软件包清单，可以用 <code>fink</code> 工具查询：
@@ -430,40 +446,65 @@ E: Sorry, broken packages</codeblock>
 如果你发现此过程中发生了错误，请首先查看
 <link url="http://fink.sourceforge.net/faq/" >FAQ</link>。
 </p>
+      <!-- start translation -->
+      <p>
+For <code>fink</code> versions since 0.23.0 you can tell it to try to download
+pre-compiled binary packages, if available, instead of building them. Just pass
+the <xref chapter="usage" section="options">--use-binary-dist (or -b)
+option</xref> to <code>fink</code>. This can save you a lot of time. E.g.
+calling
+      </p>
+      <codeblock>fink --use-binary-dist install wget-ssl</codeblock>
+      <p>or</p>
+      <codeblock>fink -b install wget-ssl</codeblock>
+      <p>
+will first download all dependencies for wget-ssl that are available from the
+binary distribution and only build the remainder from source. This option can
+also be enabled permanently in the <xref chapter="conf">Fink configuration
+file</xref> (fink.conf) or by running the command <code>fink configure</code>.
+      </p>
+      <p>
+More details about the <code>fink</code> tool are available in the chapter 
+<xref chapter="usage">"Using the fink Tool from the Command Line"</xref>.
+      </p>
+      <!-- end translation -->
     </section>
     <section name="fink-commander">
       <title>Fink Commander</title>
       <p>Fink Commander 是 <code>apt-get</code> 和 <code>fink</code> 工具的 Aqua 界面。二进制包菜单可以让你管理二进制安装包，源程序菜单则相应管理源程序安装包。</p>
       <p>Fink Commander 被包括在 Fink 的二进制安装包中。如果你想要单独下载它（比方说，你是从源代码开始建立 Fink 的），或者需要额外的信息，可以访问 <link url="http://finkcommander.sourceforge.net" >Fink Commander 网站</link>。</p>
     </section>
-    <section>
+    <section name="available-versions">
       <title>可用版本</title>
       <p>当你希望安装一个软件包，你应该首先查看 <link url="http://fink.sourceforge.net/pdb/index.php" >软件包数据库</link> 来找找是不是可以通过 Fink 获得。软件包的各个可用版本会在一个表格的多个行中出现。就象这样：</p>
+      <!-- start translation -->
       <ul>
         <li>
           <p>
             <em>0.4.1:</em>  this is the version that can be installed from binaries for OS 10.1.</p>
         </li>
+        <li><em>0.6.3:</em>  this is the version that can be installed from binaries for OS 10.2.</li>
         <li>
           <p>
-<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.2 or OS 10.3, under the current Fink release.  If you <xref chapter="upgrade" >upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <xref chapter="upgrade">upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
         </li>
         <li>
           <p>
-            <em>10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php" >CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see ths version (or possibly even the package).</p>
-          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS | rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
+            <em>current-10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-<li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS | rsync access may be needed to access this version.</p>
-</li> 
+        <li><p><em>current-10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
+</li>
         <li>
           <p>
-            <em>10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable" >instructions</link> on how to install unstahle packages.</p>
+            <em>current-10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-<li><em>10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+        <li><em>current-10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
       </ul>
+      <!-- end translation -->
     </section>
     <section name="x11" >
       <title>找到 X11</title>
@@ -540,7 +581,6 @@ system-xtools:
     <section name="src" >
       <title>升级从源码安装版本</title>
       <p>
-如果你使用的是源码安装，升级会稍微复杂一些。
 整个过程由两个步骤组成。
 第一步，下载最新的软件包描述到你的计算机。
 第二步，使用这些软件包描述来编译新的软件包，实际的源代码会根据需要下载。
@@ -566,15 +606,30 @@ cd packages-0.x.x
 更新了软件包描述以后（无论你采用什么办法），
 你应该可以用　<code>fink　update-all</code>　命令一次更新所有软件包。
 </p>
-<p>如果使用 Fink Commander 更新源代码发布版本，选择 Source->Selfupdate 下载最新的软件包信息文件，然后选择 Source->Updata-all 来更新所有不是最新的软件包。</p>
+<p>如果使用 Fink Commander 更新源代码发布版本，选择 Source-&gt;Selfupdate 下载最新的软件包信息文件，然后选择 Source-&gt;Updata-all 来更新所有不是最新的软件包。</p>
     </section>
     <section name="mix" >
       <title>混合使用二进制和源文件安装的情况</title>
       <p>
 如果你的某些软件包是使用预编译好的二进制安装包安装，而另外一些则使用源代码安装，你需要使用上面的两套步骤来更新你的 Fink 安装。
-也就是说，首先使用 <code>dselect</code> 或 <code>apt-get</code> 来获取可用的二进制安装版本，然后使用 <code>fink selfupdate</code> 和 <code>fink update-all</code>　来过去最新的软件包描述，并更新剩下的软件包。如果你使用 Fink commander，请按照 <xref section="bin">二进制升级</xref> 的指引，然后在按 <xref section="src">源代码升级</xref>完成剩下的步骤。
-</p>
-
+也就是说，首先使用 <code>dselect</code> 或 <code>apt-get</code> 来获取可用的二进制安装版本，然后使用 <code>fink selfupdate</code> 和 <code>fink update-all</code>　来过去最新的软件包描述，并更新剩下的软件包。
+		</p>
+	  <!-- start translation -->
+      <p>
+Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<xref chapter="usage" section="options">--use-binary-dist (or -b) option</xref>
+or in the <xref chapter="conf">Fink configuration file</xref>) both source and
+binary descriptions will be updated if you call <code>fink selfupdate</code>.
+In this case you don't need a separate <code>apt-get</code> call anymore.
+     </p>
+      <p>
+If you are using Fink Commander select Binary-&gt;Update descriptions to update
+the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
+versions. After that do Source-&gt;Selfupdate to download new package
+information files, and then Source-&gt;Update-all (see previous sections for
+details).
+      </p>
+      <!-- end translation -->
     </section>
   </chapter>
   <chapter filename="conf" >
@@ -650,6 +705,9 @@ unstable/main   - 其它未稳定软件包
 </codeblock>
           <p>
 你可以根据需要在　<code>/sw/fink/dists</code>　目录中加入你自己的代码树，但通常来说不需要这样做。默认的代码树是 &quot;local/main local/bootstrap　stable/main&quot;。这个设置清单应该与 <code>/sw/etc/apt/sources.list</code> 文件内容保持一致。
+<!-- start translation -->
+(As of fink 0.21.0, fink does this for you automatically.)
+<!-- end translation -->
 </p>
         </li>
         <li>
@@ -728,6 +786,43 @@ unstable/main   - 其它未稳定软件包
 <em>你这里选择的程序必须已经安装在你的计算机上！</em>
           </p>
         </li>
+        <!-- start translation -->
+        <li>
+          <p>
+            <em>SelfUpdateMethod:</em> point, rsync or cvs</p>
+          <p>
+Fink can use some different methods to update the package info files.
+<em>rsync</em> is the recommended setting, it uses rsync to download only
+modified files in the trees that you have enabled. Note that if you have
+changed or added to files in the stable or unstable trees, using rsync will
+delete them. Make a backup first. <em>cvs</em> will download using anonymous or
+:ext: cvs access from the fink repository. This has the disadvantage that cvs
+can not switch mirrors, if the server is unavailable you will not be able to
+update. <em>point</em> will download only the latest released version of the
+packages. It is not recommended as your packages may be quite out of date.
+          </p>
+        </li>
+        <!-- end translation -->
+        <!-- start translation -->
+        <li>
+          <p>
+            <em>UseBinaryDist:</em> boolean</p>
+          <p>
+Causes <code>fink</code> to try to download pre-compiled binary packages from the binary
+distribution if available and if the binary package is not already on the
+system. This can save a lot of installation time and it is therefore 
+recommended to set this option. Passing fink the 
+<xref chapter="usage">--use-binary-dist</xref> option (or the <code>-b</code> flag) has the same effect,  
+but only operates on that single fink invocation.  Passing <code>fink</code> the
+           <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
+           for that single <code>fink</code> invocation.
+<em>Only available as of  fink version 0.23.0</em>.
+          </p><p>Note that this mode instructs <code>fink</code> to download the version it wants
+           if that version is available for download; it does not cause <code>fink</code>
+           to choose a version based on its binary availability.
+</p>
+        </li>
+        <!-- start translation -->
       </ul>
     </section>
     <section name="mirrors" >
@@ -788,6 +883,82 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         </li>
       </ul>
     </section>
+    <!-- start translation -->
+    <section name="advanced">
+      <title>Advanced Settings</title>
+      <p>There are some other options which may be useful, but require some knowledge to get right.</p>
+      <ul>
+        <li>
+          <p>
+            <em>MatchPackageRegEx:</em> </p>
+          <p>Causes fink not to ask which package to install if one (and only one) of the choices matches the perl Regular Expression given here. Example:</p>
+          <codeblock>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</codeblock>
+          <p>will match packages ending in '-ssl', and will match 'xfree86' and 'xfree86-shlibs' exactly.</p>
+        </li>
+        <li>
+          <p>
+            <em>CCacheDir:</em> path</p>
+          <p>If the Fink package ccache-default is installed, the cache files it makes
+while building Fink packages will be placed here. Defaults to <filename>/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
+<em>Only available in fink newer than version 0.21.0</em>.
+          </p>
+        </li>
+        <li><p><em>NotifyPlugin:</em> plugin</p><p>
+           Specify a notification plugin to tell you when packages have been
+           installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
+           operate).  Other plugins can be found in the
+           <filename>/sw/lib/perl5/Fink/Notify</filename> directory.
+</p></li>
+      </ul>
+    </section>
+    <!-- end translation -->
+    <!-- start translation -->
+    <section name="sourceslist">
+      <title>Managing apt's sources.list file</title>
+      <p>Starting with fink 0.21.0, fink actively manages the file
+<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+binary files for installation.  The default sources.list file looks 
+something like this, adjusted to match your Distribution and Trees:
+</p>
+      <codeblock># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in 
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.
+</codeblock>
+      <p>With this default file, apt-get first looks in your local installation
+for already-compiled binaries, and then looks in the official binary
+distribution.  You can alter this by making entries at the beginning of
+the file (which will be searched first) or at the end of the file (which
+will be searched last).</p>
+      <p>If you change your Trees line or the Distribution you are using,
+fink will automatically modify the "default" portion of the file to
+correspond to the new values.  Fink will, however, preserve any local
+modifications you have made to the file, provided that you confine your
+modifications to the top of the file (above the first default line) and
+the bottom of the file (below the last default line).
+</p>
+      <p>
+Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
+to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
+</p>
+    </section>
+    <!-- end translation -->
   </chapter>
   <chapter filename="usage" >
     <title>在命令行使用 Fink 工具</title>
@@ -797,6 +968,46 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
       <p><code>fink</code> 工具使用几个后缀命令来处理源程序发行包。其中的一些需要至少有一个软件包名称，但同时可以处理多个软件包。你可以简单地应用软件包的名称（例如，　gimp），或包括版本号的全名（例如 gimp-1.2.1) 或包含版本号和修订版号的名称 (例如 gimp-1.2.1-3）。在没有指明版本的情况下，Fink 会自动选择最新的版本。其它还具有不同的选项。</p>
       <p>下面是 <code>fink</code> 工具的命令清单：</p>
     </section>
+    <!-- start translation -->
+    <section name="options">
+      <title>Global options</title>
+      <p>
+There are some options, which apply to all fink commands. If you 
+type <code>fink --help</code> you get the list of options: 
+      </p>
+      <p>(as of <code>fink-0.24.1</code>)</p>
+      <codeblock>-h, --help            - display this help text
+-q, --quiet           - causes fink to be less verbose, opposite of --verbose
+-V, --version         - display version information
+-v, --verbose         - causes fink to be more verbose, opposite of --quiet
+-y, --yes             - assume default answer for all interactive 
+                        questions.
+-b, --use-binary-dist - download pre-compiled packages from the binary 
+                        distribution if available (e.g. to reduce compile
+		        time or disk usage).
+		        Note that this mode instructs Fink to download the
+                        version it wants if that version is available for
+		        download; it does not cause Fink to choose a version
+    		        based on its binary availability.
+--no-use-binary-dist  - Don't use pre-compiled binary packages from the
+                        binary distribution (opposite of --use-binary-dist)
+-K, --keep-root-dir   - Causes Fink not to delete the
+                        /sw/src/root-[name]-[version]-[revision]
+		        directory after building a package.
+-k, --keep-build-dir  - Causes Fink not to delete the
+                        /sw/src/[name]-[version]-[revision]
+                        directory after building a package.
+--build-as-nobody     - Drop to a non-root user when performing the unpack,
+                        patch, compile,and install phases. Note that packages
+                        built with this option may be non-functional. You
+                        should use this mode for package development
+                        and debugging only.</codeblock>
+      <p>
+Most of these options are self-explanatory. They can also be set in the 
+<xref chapter="conf">Fink configuration file</xref> (fink.conf) if you want 
+to set them permanently and not just for that invocation of <code>fink</code>.</p>
+    </section>
+    <!-- end translation -->
     <section name="install" >
       <title>install</title>
       <p>install 命令用于安装软件包。它下载，配置，构建和安装你指名的软件包。它还会自动安装需要的依赖关系，但在此之前会要求你确认。例如：</p>
@@ -807,18 +1018,48 @@ Information about 131 packages read.
 The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
+      <!-- start translation -->
+      <p>Use of the <xref section="options">--use-binary-dist</xref> option with <code>fink install</code> can speed the build process for complicated packages by quite a lot.</p>
+      <!-- end translation -->
       <p>install 命令的别名包括： update, enable, activate, use （这些别名多数是因为历史原因形成的）。</p>
     </section>
+    <!-- start translation -->
     <section name="remove" >
       <title>remove</title>
-      <p>remove 命令会使用 '<code>dpkg --remove</code>' 命令从系统中删除软件包。当前这个命令实现有一些缺陷：它只对 <code>fink</code> 工具知道的软件包（也就是说，那些有 .info 文件的）有效；而且它自己并不检查依赖关系，而把这个工作完全交给 dpkg 工具（虽然通常情况下这不会有问题）。</p>
-      <p>remove 命令只会删除实际软件包包括的文件，而保留 .deb 压缩包文件。这意味着你可以在以后重新安装这个软件包，而不需要重新进行编译。如果你需要磁盘空间，你可以在<filename>/sw/fink/dists</filename> 代码树中删除它们。</p>
-      <p>别名：disable，deactivate，unuse，delete。</p>
+      <p>The remove command removes packages from the system by calling '<code>dpkg --remove</code>'. The current default implementation has a flaw: it
+doesn't check dependencies itself but rather completely leaves that to
+the dpkg tool (usually this poses no problem, though).</p>
+      <p>The remove command only removes the actual package files,
+(excluding configuration files), but leaves
+the .deb compressed package file intact. This means that you can
+re-install the package later without going through the compile process
+again. If you need the disk space, you can remove the .deb from the
+<filename>/sw/fink/dists</filename> tree.</p>
+      <p>These flags can be used with the fink remove command
+</p>
+      <codeblock>-h,--help             - Show the options which are available.
+-r,--recursive        - Also remove packages that depend on the package(s) to
+                        be removed (i.e. overcome the above-mentioned flaw).</codeblock>
+      <p>Aliases: disable, deactivate, unuse, delete.</p>
     </section>
+    <section name="purge">
+      <title>purge</title>
+      <p>The purge command purges packages from the system. This is
+the same as the remove command except that it removes configuration
+files as well.</p>
+      <p>This command takes the:</p>
+      <codeblock>-h,--help
+-r,--recursive</codeblock>
+      <p>options.</p>
+    </section>
+    <!-- end translation -->
     <section name="update-all" >
       <title>update-all</title>
       <p>这个命令会更新所有已经安装的软件包到最新的版本。它不需要输入要更新的软件包清单，你只需要输入：</p>
       <codeblock>fink update-all</codeblock>
+      <!-- start translation -->
+      <p><xref section="options">--use-binary-dist</xref> is also useful with this command.</p>
+      <!-- end translation -->
     </section>
     <section name="list" >
       <title>list</title>
@@ -829,12 +1070,14 @@ Do you want to continue? [Y/n]</codeblock>
 </p>
       <p>
 第一列显示的安装状态的意义为：
-</p>
+</p><!-- start translation -->
       <codeblock>
      未安装
  i   已安装最新版本
 (i)  已安装，但不是最新版本
+ p   a virtual package provided by a package that is installed
 </codeblock>
+<!-- end translation -->
       <p>
 <code>fink list</code> 命令可以使用下面这些标志：
 </p>
@@ -853,6 +1096,12 @@ Do you want to continue? [Y/n]</codeblock>
 	  只显示没有安装的软件包。
 -s=expr,--section=expr
 	  只显示满足正则表达式的软件包。
+-m expr,--maintainer=expr
+          Show only packages with the maintainer  matching the
+          regular expression expr.
+-r expr,--tree=expr
+          Show only packages in the trees matching the regular
+          expression expr.
 -w=xyz,--width=xyz
 	  设定你希望输出格式化为的宽度。xyz 可以为一个数字或者 auto。
 	  auto 会根据终端的宽度来设置输出宽度。
@@ -898,11 +1147,23 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     </section>
     <section name="fetch-all" >
       <title>fetch-all</title>
-      <p>下载 <em>所有</em> 软件包源程序文件。和 fetch　一样，它会下载即使已经下载过的压缩档。</p>
+      <p>下载 <em>所有</em> 软件包源程序文件。和 <code>fetch</code>　一样，它会下载即使已经下载过的压缩档。</p>
+      <!-- start translation -->
+      <p>These flags can be used with the <code>fink fetch-all</code> command:</p>
+      <codeblock>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</codeblock>
+      <!-- end translation -->
     </section>
     <section name="fetch-missing" >
       <title>fetch-missing</title>
       <p>下载 <em>所有</em> 缺失的软件包源程序文件。这个命令只下载系统中没有的文件。</p>
+      <!-- start translation -->
+      <p>These flags can be used with the <code>fink fetch-missing</code> command:</p>
+      <codeblock>-h,--help
+-i,--ignore-restrictive
+-d,--dry-run</codeblock>
+      <!-- start translation -->
     </section>
     <section name="build" >
       <title>build</title>
@@ -911,6 +1172,9 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     <section name="rebuild" >
       <title>rebuild</title>
       <p>构建一个软件包（和 build 命令类似），但忽略和覆盖现存的 .deb 文件。如果这个软件包已经安装，新创建的 .deb 文件也会通过 <code>dpkg</code> 安装到系统。对软件包开发过程很有用。</p>
+      <!-- start translation -->
+      <p>The <xref section="options">--use-binary-dist option</xref> is applicable here.</p>
+      <!-- end translation -->
     </section>
     <section name="reinstall" >
       <title>reinstall</title>
@@ -928,6 +1192,10 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       <p>
 	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <filename>/sw/fink/dists</filename> 目录树来使用直接 CVS 进行升级。这意味着你可以访问所有软件包的最新修订版。
 </p>
+      <!-- start translation -->
+      <p>If the <xref section="options">--use-binary-dist option</xref> is enabled, the list of available packages in the binary distribution is also updated.
+      </p>
+      <!-- end translation -->
     </section>
     <section name="index" >
       <title>index</title>
@@ -940,6 +1208,15 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       <p>
    这个命令会对 .info 和 .deb 文件进行一些检查。软件包维护人员在提交他们负责的软件包之前，应该运行这个命令来对它的描述和相应的构建好的软件包进行检查。
 </p>
+      <!-- start translation -->
+      <p>The following optional options may be used:</p>
+      <codeblock>-h,--help            - Show the options which are available.
+-p,--prefix          - Simulate an alternate Fink basepath prefix (%p) within
+                      the files being validated.
+--pedantic, --no-pedantic
+                     - Control the display of nitpicky formatting warnings.
+                      --pedantic is the default.</codeblock>
+      <!-- start translation -->
       <p>
    别名： check
 </p>
@@ -956,10 +1233,17 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    删除所有已经有新版本的失效的软件包文件（.info, .patch, .deb）。
    这会释放出大量的磁盘空间。
 </p>
+      <!-- start translation -->
+      <p>If the <xref section="options">--use-binary-dist option</xref> is enabled, 
+      obsolete downloaded binary packages are also deleted and <code>fink scanpackages</code> is run as well.
+      </p>
+      <!-- end translation -->
     </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
-      <p>注：仅对 fink CVS 0.20.0 之后版本有效。</p>
+      <!-- start translation -->
+      <p>Only available in <code>fink</code> newer than version 0.21.0</p>
+      <!-- end translation -->
       <p>
 	显示 Fink 如何解析软件包的 .info 文件的各个部分。各个字段和百分号展开会按照下面<em>选项</em>的设置来显示：
       </p>
@@ -973,5 +1257,13 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    --percent=关键字
       </codeblock>
     </section>
+    <!-- start translation -->
+    <section name="show-deps">
+      <title>show-deps</title>
+      <p>Only available in fink-0.23-6 and later.</p>
+<p>Displays a human-readable list of the compile-time (build) and run-
+           time (installation) dependencies of the listed package(s).</p>
+    </section>
+    <!-- end translation -->
   </chapter>
 </document>

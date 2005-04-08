@@ -37,7 +37,6 @@ include_once "header.zh.inc";
     <h2><a name="src">4.2 升级从源码安装版本</a></h2>
       
       <p>
-如果你使用的是源码安装，升级会稍微复杂一些。
 整个过程由两个步骤组成。
 第一步，下载最新的软件包描述到你的计算机。
 第二步，使用这些软件包描述来编译新的软件包，实际的源代码会根据需要下载。
@@ -69,9 +68,24 @@ cd packages-0.x.x
       
       <p>
 如果你的某些软件包是使用预编译好的二进制安装包安装，而另外一些则使用源代码安装，你需要使用上面的两套步骤来更新你的 Fink 安装。
-也就是说，首先使用 <code>dselect</code> 或 <code>apt-get</code> 来获取可用的二进制安装版本，然后使用 <code>fink selfupdate</code> 和 <code>fink update-all</code>　来过去最新的软件包描述，并更新剩下的软件包。如果你使用 Fink commander，请按照 <a href="#bin">二进制升级</a> 的指引，然后在按 <a href="#src">源代码升级</a>完成剩下的步骤。
-</p>
-
+也就是说，首先使用 <code>dselect</code> 或 <code>apt-get</code> 来获取可用的二进制安装版本，然后使用 <code>fink selfupdate</code> 和 <code>fink update-all</code>　来过去最新的软件包描述，并更新剩下的软件包。
+		</p>
+	  
+      <p>
+Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<a href="usage.php?phpLang=zh#options">--use-binary-dist (or -b) option</a>
+or in the <a href="conf.php?phpLang=zh">Fink configuration file</a>) both source and
+binary descriptions will be updated if you call <code>fink selfupdate</code>.
+In this case you don't need a separate <code>apt-get</code> call anymore.
+     </p>
+      <p>
+If you are using Fink Commander select Binary-&gt;Update descriptions to update
+the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
+versions. After that do Source-&gt;Selfupdate to download new package
+information files, and then Source-&gt;Update-all (see previous sections for
+details).
+      </p>
+      
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=zh">5. Fink 配置文件</a></p>

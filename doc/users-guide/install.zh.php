@@ -90,12 +90,19 @@ fink-0.x.x-full.tar.gz 压缩档的目录。
       
       <p>
 要使用 Fink 目录下安装的软件，包括软件包管理器本身，你必须相应设置 PATH 环境变量。
-多数情况下，你可以在命令行这样做：
-</p>
-      <pre>open /sw/bin/pathsetup.command</pre>
-      <p>或对于 <code>fink-0.18.3</code> 或 <code>fink-0.19.2</code>，通过运行(就象下面一样)：
-</p>
+
+In most cases, you can do this by entering the command
+
+      </p>
       <pre>/sw/bin/pathsetup.sh</pre>
+      
+      <p>
+	in a terminal window. Note that for some older versions of
+	fink called this <code>pathsetup.command</code>, and one could
+	run it by entering the command:
+      </p>
+      
+      <pre>open /sw/bin/pathsetup.command</pre>
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
 你可以通过打开终端窗口并运行下面指令来查看你 shell 类型：
