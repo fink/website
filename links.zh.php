@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "Links";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/04/08 08:19:05 $';
 
 include "header.inc";
 ?>
@@ -15,6 +15,11 @@ include "header.inc";
 <ul>
 <li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> － 介绍怎么成为一个 Fink 镜像，以及关于当前镜像的状态信息。</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> － Fink 的图形界面。</li>
+<!-- start translation -->
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.
+<!-- end translation -->
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> － #fink IRC 频道的日志和统计。</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> － 非官方的 Fink 发布版以及一本关于 Fink 使用提示的书。</li>
 <li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> － 一组脚本程序，用来帮助在网络上通过 NFS 分发 fink 软件包。</li>
