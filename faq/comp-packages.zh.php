@@ -44,6 +44,14 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
       <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个晦涩的消息表明你需要安装 December 2002 开发工具。</p></div>
     </a>
+  
+    
+    <a name="libiconv-gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
+fink install libiconv</pre></div>
+    </a>
+    
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=zh">8. 一般性软件包使用问题</a></p>
 <? include_once "../footer.inc"; ?>

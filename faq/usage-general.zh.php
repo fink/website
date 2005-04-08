@@ -8,6 +8,7 @@ $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑�
 include_once "header.zh.inc";
 ?>
 <h1>常见疑问（F.A.Q.） - 8. 一般性软件包使用问题</h1>
+  
     
     
     <a name="xlocale">
@@ -64,6 +65,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这些都是 XFree86 的变种（它们都基于 XFree86 的代码），但相互之间有一些轻微的差别。对于在 Panther 和 Jaguar 下有不同的可选方式。在 Panther 下你可以选择：</p><ul>
         <li><p>苹果的 X11 （在第三张光盘上）。不要忘记同时安装 X11 SDK （在 XCode 光盘上），如果你希望编译程序，或着你希望用 Fink 从源代码安装和 X 有关的软件包。</p></li>
         <li><p>Fink 的 4.4.x 版本。安装 xfree86 和 xfree86-shlibs 软件包。</p></li>
+        <li><p>Fink 的 X.org 版本。安装 <code>xorg</code> 和 <code>xorg-shlibs</code> 软件包。</p></li>
         </ul><p>在 Jaguar 下，多数的选择是通过 Fink 安装的：</p><ul>
           <li>
             <p>Fink 的 4.2.x 版：安装 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 或 <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> （以及相应的 <code>-shlibs</code>）</p>
@@ -72,7 +74,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
             <p>Fink 的 4.3.x 版：安装 <code>xfree86</code> 和 <code>xfree86-shlibs</code> 软件包</p>
           </li>
           <li>
-            <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： system-xfree86 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
+            <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： <code>system-xfree86</code> 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
           </li>
         </ul><p>还有另外一些选择。在 <a href="http://fink.sourceforge.net/doc/x11/index.php">运行 X11 的文档</a>里面有专门的叙述。</p></div>
     </a>
@@ -85,6 +87,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在 Fink 项目的<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">软件包需求追踪器</a>。</p><p>注意你需要一个 SourceForge 帐号才可以添加。</p></div>
     </a>
     <a name="virtpackage">
+    
       <div class="question"><p><b><? echo FINK_Q ; ?>8.8: 这些名为 <code>system-*</code> 的“虚拟软件包”有些时候会存在，但我却不能自己安装或删除它们？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	  名为类似 <code>system-perl</code> 的软件包是占位软件包。它们不包含实际的文件，而仅仅作为 fink 识别在它之外手工安装的程序一种机制。

@@ -74,8 +74,8 @@ include_once "header.zh.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：
 </p><pre>sudo rm -rf /sw</pre><p>
-这个规则的唯一例外是 XFree86。如果你通过 Fink 安装（也就是说，你安装了 <code>xfree86</code> 或 
-<code>xfree86-rootless</code> 软件包，
+这个规则的唯一例外是 XFree86。如果你通过 Fink 安装（也就是说，你安装了 <code>xfree86</code>， 或 
+<code>xfree86-rootless</code> 或 <code>xorg</code> 软件包，
 而不是使用 <code>system-xfree86</code>）并希望删除它，你需要再输入：
 </p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>如果你不是打算重安装 Fink 的话，根据你的配置方式你还要使用一个纯文本编辑器，从你的 <code>.cshrc</code> 文件中删除 "<code>source 
 /sw/bin/init.csh</code>" 这一行；或从 <code>.bashrc</code> 文件中删除 "<code>source /sw/bin/init.sh</code>" 这一行。</p></div>
@@ -99,7 +99,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     </a>
     <a name="unstable">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.8: 我想安装一个未稳定版本，但 fink 说 'no package found'。我怎么才能安装它？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 首先，请确定你明白“未稳定”的含义。在未稳定代码树的软件包仅仅经过几个人的测试。因此，默认情况下，Fink 不会搜索未稳定代码树。如果你确实启用了未稳定代码树，记得 e-mail 通知维护者某项功能是正常的（或者不正常）。从象你这样的用户的反馈是我们决定一个软件包是否已经稳定的因素！要找出一个软件包的维护者，运行 <code>fink info &lt;软件包名</code> 命令。</p><p>软件包通常会有依赖关系，未稳定的软件包通常依赖于未稳定的其它软件包。所以最好启用所有未稳定软件包。</p><p>如果你希望 Fink 使用所有未稳定软件包，编辑 <code>/sw/etc/fink.conf</code> 文件，添加 <code>unstable/main</code> 和 <code>unstable/crypto</code> 到 <code>Trees:</code> 这一行，然后运行 <code>fink selfupdate; fink index</code> 命令。</p><p>如果你只希望安装一两个特别的未稳定软件包，而不希望使用其它的，那么你需要改为从 CVS 更新（也就是说，使用 <code>fink selfupdate-cvs</code> 命令），因为 rsync 只更新那些在你的 <code>fink.conf</code> 激活的代码树。
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 首先，请确定你明白“未稳定”的含义。在未稳定代码树的软件包仅仅经过几个人的测试。因此，默认情况下，Fink 不会搜索未稳定代码树。如果你确实启用了未稳定代码树，记得 e-mail 通知维护者某项功能是正常的（或者不正常）。从象你这样的用户的反馈是我们决定一个软件包是否已经稳定的因素！要找出一个软件包的维护者，运行 <code>fink info <b>软件包名</b></code> 命令。</p><p>软件包通常会有依赖关系，未稳定的软件包通常依赖于未稳定的其它软件包。所以最好启用所有未稳定软件包。</p><p>如果你希望 Fink 使用所有未稳定软件包，编辑 <code>/sw/etc/fink.conf</code> 文件，添加 <code>unstable/main</code> 和 <code>unstable/crypto</code> 到 <code>Trees:</code> 这一行，然后运行 <code>fink selfupdate; fink index</code> 命令。</p><p>如果你只希望安装一两个特别的未稳定软件包，而不希望使用其它的，那么你需要改为从 CVS 更新（也就是说，使用 <code>fink selfupdate-cvs</code> 命令），因为 rsync 只更新那些在你的 <code>fink.conf</code> 激活的代码树。
 		编辑 <code>/sw/etc/fink.conf</code> 文件并添加 <code>local/main</code> 到 <code>Trees:</code> 这一行，如果还没有添加的话。然后你需要运行 <code>fink selfupdate</code> 来下载软件包描述文件。现在从 <code>/sw/fink/dists/unstable/main/finkinfo</code> 拷贝相应的 <code>.info</code> 文件
 		（以及它们相应的 <code>.patch</code> 文件，如果有这些文件的话）到 <code>/sw/fink/dists/local/main/finkinfo</code>。不过，记住，你的软件包也许会依赖于其它只有未稳定版本的软件包（或某个特定的版本）。这时你也需要把它们的 <code>.info</code> 文件和 <code>.patch</code> 文件移动到相应的位置。在移动好以后，确定运行 <code>fink index</code> 命令，这样 Fink 关于可用软件包的纪录会得到更新。
 		做完以后，你可以转换会 rsync 方式（<code>fink selfupdate-rsync</code>），如果你希望这样的话。</p></div>
@@ -184,7 +184,21 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="fink-not-found">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.15: 当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 "command not found" 错误。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果这总是发生，那么也许你已经不小心修改了(或没有成功修改)你的启动脚本。运行 <code>/sw/bin/pathsetup.command</code> 脚本（在 Finder 里面双击或在终端窗口中运行），它会尝试检测你启动配置。然后需要你需要重新打开一个新的终端窗口来使用新的环境设置。<b>注意：</b>对 <code>fink-0.18.3</code> 和 <code>fink-0.19.2</code>，这个脚本已经改为 <code>/sw/bin/pathsetup.sh</code>，而且必须在终端窗口中运行。</p><p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p><pre>. /sw/bin/init.sh</pre><p>在做完以后，重新运行 X11。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If this always happens, then you may have inadvertently
+        modified (or failed to modify) your startup scripts. Run the
+        <code>/sw/bin/pathsetup.sh</code> script in a terminal
+        window. This program will attempt to detect your default shell
+        and add a command to load Fink's shell initialization script
+        into your shell's configuration. You'll then need to open a
+        new terminal session so that your environment settings are
+        loaded. <b>Note:</b> Some older versions fink called this
+        script <code>pathsetup.command</code> instead
+        of <code>pathsetup.sh</code>. Alternately, you can run
+        the <code>pathsetup.app</code> application on the Fink
+        binary distribution disk image.</p><p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p><pre>. /sw/bin/init.sh</pre><p>在做完以后，重新运行 X11。</p><p>These <code>/sw/bin/init.*</code> scripts do much
+		more than just add <code>/sw/bin</code> to your PATH.
+		Many packages will not work correctly without these additional
+		actions.</p></div>
     </a>
     <a name="invisible-sw">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.16: 我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</b></p></div>
@@ -218,7 +232,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="perl-undefined-symbol">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 为什么我运行 Fink 命令时会有一堆的 "dyld: perl undefined symbols" 错误？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你看到象下面的错误信息：</p><pre>dyld: perl Undefined symbols:
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolete</p><p>如果你看到象下面的错误信息：</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
 _Perl_saferealloc
@@ -234,7 +248,18 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 我看不到要升级的 Fink 版本。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特别指引</a>。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特别指引</a>。</p><ul>
+          <li><b>10.3.x:</b> (0.7.1 distribution)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+          <li><b>10.2.x:</b> (0.6.3 distribution)
+		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</pre></li>
+        </ul></div>
     </a>
     <a name="spaces-in-directory">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</b></p></div>
@@ -311,6 +336,18 @@ Failed test (./Command/chowname.t at line 27)
 #          got: 'root'
 #     expected: 'nobody'</pre><p>那么你需要在 Fink 安装的驱动器/分区上运行 <b>Get Info</b>，并取消选择 "Ignore ownership" 的按钮。</p></div>
     </a>
+    
+    <a name="mirror-gnu">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get an error that ends with</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
+    </a>
+    
+    
+    <a name="cant-move-fink">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+    </a>
+    
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=zh">6. 一般性编译问题</a></p>
 <? include_once "../footer.inc"; ?>

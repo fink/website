@@ -8,6 +8,7 @@ $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑�
 include_once "header.zh.inc";
 ?>
 <h1>常见疑问（F.A.Q.） - 6. 一般性编译问题</h1>
+  
     
     
     <a name="compiler">
@@ -75,7 +76,13 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
     </a>
     <a name="usr-local-libs">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.9: 我听说安装在 /usr/local/lib 的库有时会引起 Fink 构建的问题。是这样吗？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这是一个经常发生的问题，因为软件包的配置脚本会在搜索 <code>/usr/local/lib</code> 之后才在 Fink 路径中搜索库。如果你碰到其它 FAQ 中没有解释的构建问题，你应该检查涉及的库时候在 <code>/usr/local/lib</code> 中。如果是这样的话，尝试把 <code>/usr/local</code> 改成其它名字，例如：</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>完成你的构建，然后把 <code>/usr/local</code> 改回来：</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a frequent source of problems, because the package
+        configuration script finds headers and libraries in 
+        <code>/usr/local</code> and decides to use them rather than using those in the Fink path.
+        If you are having problems with a build that aren't covered by another
+        FAQ entry, you should check whether you have libraries in
+        <code>/usr/local/lib</code> or headers in /usr/local/include. If so, then try renaming
+        <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>完成你的构建，然后把 <code>/usr/local</code> 改回来：</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="toc-out-of-date">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.10: 当我构建一个软件包的时候，我碰到一个消息说 "table of contents" 已经过时。我需要怎么办？</b></p></div>
@@ -85,10 +92,16 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
       <div class="question"><p><b><? echo FINK_Q ; ?>6.11: 当我安装 atlas 时 Fink Commander 挂了。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这原因时在构建 <code>atlas</code> 时，Fink Commander 遗漏了一个发向用户要求选择的信息。你需要使用 <code>fink install atlas</code> 命令来安装。</p></div>
     </a>
+    
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: 我碰到信息说我缺少 stddef.h 文件。我可以在哪里找到它？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个头文件，以及很多其它类似文件，都是由开发工具包中的 DevSDK 包提供。检查你系统中是否存在 <code>/Library/Receipts/DevSDK.pkg</code> 文件。如果没有的话，再运行一次开发工具安装程序，并使用定制安装来安装 DevSDK 包。</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code>, <code>wchar.h</code>, or <code>crt1.o</code>, or that my "C compiler cannot create executables".</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
+        the Developer Tools. Check whether
+        <code>/Library/Receipts/DevSDK.pkg</code> exists on your
+        system. If not, then run the Dev Tools Installer again, and install
+        the DevSDK package using a Custom Install.</p><p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
     </a>
+    
     <a name="multiple-dependencies">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: 我无法升级，因为 Fink "unable to resolve version conflict on multiple dependencies"。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 要回避这个问题，尝试升级一个单独的软件包，然后再次尝试使用 "fink update-all"。如果你还碰到这个信息，重复这个过程。</p></div>
@@ -149,10 +162,17 @@ unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</pre><p>最可能是你有这样的一个头文件：<code>/usr/local/include/dlfcn.h</code>，它和 Panther 不兼容。</p><p>这一般是由 Open Office 所安装的，你应该通过符号链接把这个头文件和对应的 <code>/usr/local/lib/libdl.dylib</code> 库指向 Panther 的内置文件</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
+    
     <a name="gcc2">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink 说我缺少 <code>gcc2</code>，但我不知道怎么安装它。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这是因为 <code>gcc2</code> 是一个代表你系统上 gcc-2.95 的虚拟软件包。在 XCode 工具中安装 gcc2.95 软件包（早期操作系统的开发工具安装把 gcc-2.95 作为主要的编译工具安装）。</p></div>
+    
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says I'm missing <code>gcc2</code> or <code>gcc3.1</code> but I can't seem to
+        install it.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.1</code> are  virtual packages to
+        indicate the presence of gcc-2.95 and gcc-3.1, respectively, on your system. Install the gcc2.95 and/or the gcc3.1
+        package from the XCode Tools (earlier OS versions have gcc-2.95 and gcc-3.1 as
+        part of their main Developer Tools installation).</p><p><b>Note:  </b>Installing gcc2.95 and/or gcc3.1 will not interfere with your gcc3.3 compiler--they can all coexist.  </p></div>
     </a>
+    
     <a name="system-java">
     <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink 提示说 <code>Failed: Can't resolve dependency "system-java14-dev"</code>，但我却找不到有这个软件包。</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这是因为它是一个虚拟软件包。
@@ -165,8 +185,23 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="xml-parser">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.20: 我碰到这个 <q>configure: error: XML::Parser perl module is required for intltool</q> 错误信息。我应该怎么办？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 你需要确定你安装了对应你系统中的 Perl 版本的 xml-parser-pm 软件包。例如，如果你使用 Panther，你应该安装 <code>xml-parser-pm581</code>，而不是 <code>xml-parser-pm560</code>(你可以会有 <code>xml-parser-pm</code> 占位软件包)，因为你使用 <code>Perl-5.8.1</code>，而不是 <code>Perl-5.6.0</code>。</p></div>
+      
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.  If you're on Jaguar, and are using the default system Perl version, you'll have the <code>pm560</code> variant, and if you've installed <code>Perl 5.8.0</code> you may have the <code>pm580</code> variant.</p></div>
+      
     </a>
+    
+    <a name="master-problems">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.21: I'm trying to download a package, but Fink goes to some weird site with <q>distfiles</q> in its name, and the file isn't there.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> What's happened here is that Fink is trying to use one of it's so called <q>Master</q> mirrors.  These were set up to makes sure that sources for Fink packages are available even when the upstream site has moved them around.  Typically these errors occur when a new upstream version of a package is released, but hasn't made it to the Master mirrors yet.</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
+    </a>
+    
+    
+    <a name="compile-options">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: I want Fink to use different options in building a package.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p>
+          <b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
+    </a>
+    
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=zh">7. 编译问题－特定软件包</a></p>
 <? include_once "../footer.inc"; ?>
