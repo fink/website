@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "貢献している人々";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/02/01 10:01:55 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/04/08 08:18:33 $';
 
 include "header.inc";
 ?>
@@ -36,6 +36,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <h2>プロジェクトリーダー</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
+<li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
