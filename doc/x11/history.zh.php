@@ -2,7 +2,7 @@
 $title = "运行 X11 - 历史";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=zh" title="获取和安装 XFree86"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=zh" title="获取和安装 X11"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
 include_once "header.zh.inc";
@@ -64,7 +64,7 @@ XFree86 4.0.2 能在 Darwin 上运行得很好，但在 Mac OS X 上却需要退
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="inst-xfree86.php?phpLang=zh">3. 获取和安装 XFree86</a></p>
+<a href="inst-xfree86.php?phpLang=zh">3. 获取和安装 X11</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

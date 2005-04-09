@@ -53,6 +53,9 @@ Xtools 是 <a href="http://www.tenon.com/">Tenon
 Intersystems</a> 的一个产品。
 它有针对 Mac OS X 上基于 XFree86 的 X11 的产品。
 </p>
+      
+      <p>Note:  Development apparently stopped sometime before OS 10.3 was released.</p>
+      
     
     <h2><a name="client-server">1.6 客户和服务器</a></h2>
       

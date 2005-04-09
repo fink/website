@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.4 2004/07/06 19:14:48 jeff_yecn Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.5 2005/04/09 16:14:05 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -55,6 +55,9 @@ Xtools 是 <link url="http://www.tenon.com/" >Tenon
 Intersystems</link> 的一个产品。
 它有针对 Mac OS X 上基于 XFree86 的 X11 的产品。
 </p>
+      <!-- start translation -->
+      <p>Note:  Development apparently stopped sometime before OS 10.3 was released.</p>
+      <!-- end translation -->
     </section>
     <section name="client-server" >
       <title>客户和服务器</title>
@@ -207,8 +210,8 @@ XFree86 4.0.2 能在 Darwin 上运行得很好，但在 Mac OS X 上却需要退
     </section>
   </chapter>
   <chapter filename="inst-xfree86" >
-    <title>获取和安装 XFree86</title>
-    <shorttitle>安装 XFree86</shorttitle>
+    <title>获取和安装 X11</title>
+    <shorttitle>安装 X11</shorttitle>
     <section name="fink" >
       <title>通过 Fink 安装</title>
       <p>
@@ -216,16 +219,43 @@ Fink 可以让你以你喜欢的方式安装 X11，
 不过它也提供自己的 XFree86 软件包。如果你使用 <code>fink install ...</code>，它会下载源代码，并在你的计算机上进行编译。如果你使用 <code>apt-get install ...</code> 或 <code>dselect</code> 前端工具，它会下载预编译的二进制包，类似官方的
 XFree86 发行版。
 </p>
-      <p>
-<code>xfree86-base</code> 软件包包括除 XDarwin 服务器外的所有 XFree86 4.2.1.1 （对 10.1 用户是 4.2.0）程序。
-<code>xfree86-rootless</code> 软件是来自标准稳定版的 XFree86 4.2.1.1 的服务器软件。它同时支持全屏幕和无根模式，也包括 OpenGL 支持。
-（早期，Fink 还有一个只提供全屏幕模式的 <code>xfree86-server</code> 软件包，但现在已经不是一个有关联的选择了）。
-你可以选择象后面那样，自己安装服务器。这种情况下，你只应该安装 <code>xfree86-base</code>，否则 Fink 可能会覆盖你自己安装的服务器。注意，当前<code> xfree86-base</code> (4.2.1.1-3) 的稳定版本在构建过程中还会产生 <code>xfree86-rootless</code>，<code>xfree86-base-shlibs</code> 和 <code>xfree86-rootless-shlibs</code>。你必须安装全部这四个软件包才能获得一个可用的 XFree86 环境。
+<!-- start translation -->
+<p><em>General notes:</em></p>
+<ul><li>All of the X11 packages currently available via Fink support both full-screen and rootless
+operation, and have OpenGL support.</li>
+<li><em>Important note:</em>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
+<p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
+<p>For 10.3, the X11 hierarchy is as follows:</p>
+<codeblock>xorg > xfree86 > Apple's X11 </codeblock>
+</li></ul>
+<p><em>10.3 users:</em></p>
+<p>You can install version 4.3.99.16-2 (that which is in the current binary distribution) or 4.4 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install the X.org X11 release (currently version 6.8) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.4, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
+<!-->Verify latest bindist version when online</-->
+<p><em>10.2 users:</em></p>
+<p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
 </p>
-      <p><code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> 本质上是相同的东西，但被修改以提供线程支持。对某些程序来说，例如<filename>xine</filename>，这是必须的。</p>
-      <p>XFree86 4.2.11 （非线程版）被认为是在 10.2 下与 Fink 一起使用的稳定的基准版本。XFree86 4.3.0 也有提供，但更多地被认为是试验性的，而且在本文档写作的时候，仍出于未稳定代码树中。它内置了线程支持，并比 4.2.1.1 快。要安装这个版本，你应该安装 <code>xfree86</code> 软件包。注意，对这个版本，再没有单独的 -base 和 -rootless 软件包，虽然函数库仍被划分到 <code>xfree86-shlibs</code>中。如果你构建与 4.3 连接的二进制版本，他们不能在 4.2.1.1 或苹果的 X11 上运行，请小心行事。</p>
-      <p>
-        <em>10.3 用户：</em>你需要安装版本 4.3.99.16-2 或更新，它是 XFree86-4.4 升级版。如果你是使用二进制发布方式，确认已经升级了软件包描述（例如，运行 <code>sudo apt-get update</code>）。</p>
+<!-->
+Irrelevant now?
+
+The <code>xfree86-base</code> package contains all
+of XFree86 4.2.1.1 (4.2.0 for 10.1 users) except the XDarwin server.  
+The <code>xfree86-rootless</code> package is the server from the standard,
+stable XFree86 4.2.1.1 release. It supports both full-screen and rootless
+operation, and has OpenGL support.  
+(In the early days, Fink also had an <code>xfree86-server</code> package
+which only provided fullscreen mode, but this is no longer a relevant
+option.)
+You also have the option to
+install the server yourself; see below.  In this case, you should
+only install <code>xfree86-base</code>, or you'll risk that Fink
+overwrites your manually installed server.  Note that the current stable version of<code> xfree86-base</code> (4.2.1.1-3) generates the <code>xfree86-rootless</code>, <code>xfree86-base-shlibs</code>, and <code>xfree86-rootless-shlibs</code> during its build process.  In this case, all four packages must be installed for you to have a working XFree86 setup.
+</-->
+      <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
+      <!-->The<code> xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> packages are essentially the same thing, but have been modified to support threading, which is required by a few applications.</-->
+<p><em>10.1 users:</em></p>
+<p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
+    <!-- end translation -->
     </section>
     <section name="apple-binary" >
       <title>苹果公司的二进制版本</title>
@@ -241,7 +271,7 @@ XFree86 发行版。
 <code>system-xfree86-dev</code> 软件包，代表头文件。
 </p>
       <p>
-如果你已经安装了 XFree86，无论是否通过 Fink 安装，你都可以<xref section="switching-x11" chapter="inst-xfree86" >用一个 X11 软件包来替换另一个</xref>。确定你删除了现有的软件包，然后安装苹果的 X11（如果需要的话，还包括 X11 SDK）。
+如果你已经安装了 XFree86，无论是否通过 Fink 安装，你都可以<xref chapter="inst-xfree86" section="switching-x11" >用一个 X11 软件包来替换另一个</xref>。确定你删除了现有的软件包，然后安装苹果的 X11（如果需要的话，还包括 X11 SDK）。
 </p>
       <p>
 关于使用苹果 X11 的一些注意事项：
@@ -288,7 +318,15 @@ defined in indirectly referenced dynamic library
         <li>
           <p>如果你原来使用 <code>xfree86</code> 软件包，后来又转到苹果的 X11 （无论是 10.2.x 还是 10.3.x 上），任何连接到 <code>xfree86</code> 的软件包都需要重新编译，因为他们并不二进制兼容。</p>
         </li>
+        <!-- start translation -->
+        <li>
+          <p><em>10.3 users only:</em>  It is possible to use Apple's display server and window manager on top of either XFree86-4.4 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p>
+        </li>
+        <!-- end translation -->
       </ul>
+      <!-- start translation -->
+      <p>For more information on using Apple's X11, check out this <link url="http://developer.apple.com/darwin/runningx11.html">article</link> at the Apple Developer Connection.</p>
+      <!-- end translation -->
     </section>
     <section name="official-binary" >
       <title>官方二进制版本</title>
@@ -821,9 +859,9 @@ failed to connect as window server!</codeblock>
 如果你通过 Fink 安装 XFree86，那么你需要重新安装 <code>xfree86</code> 软件包(或对于 OS X 10.2 及更早版本，安装 <code>xfree86-rootless</code>)。如果你自己安装 Xfree86，那么从 Xquartz.tgz 中解压出这些文件。
 </p>
       <codeblock>The XKEYBOARD keymap compiler (xkbcomp) reports:
-> Error:            Can't find file &quot;unknown&quot; for geometry include
->                   Exiting
->                   Abandoning geometry file &quot;(null)&quot;
+&gt; Error:            Can't find file &quot;unknown&quot; for geometry include
+&gt;                   Exiting
+&gt;                   Abandoning geometry file &quot;(null)&quot;
 Errors from xkbcomp are not fatal to the X server</codeblock>
       <p>
 分类：多数情况下无害。
@@ -869,7 +907,7 @@ touch .Xauthority</codeblock>
 发生的原因是 <filename>.xinitrc</filename> 被执行，但又由于某种原因立刻终止。
 <code>xinit</code> 把这个解析为 &quot;用户执行过程已经结束&quot;
 并关闭 XDarwin。
-查阅<xref section="xinitrc" chapter="run-xfree86" >.xinitrc
+查阅<xref chapter="run-xfree86" section="xinitrc" >.xinitrc
 部分</xref>获取更多细节。
 记得设置 PATH 变量并不要把最后一个持续运行的程序放到后台执行。
 通常添加一个 <code>exec xterm</code> 作为你的窗口管理器或类似的东西不能运行的时候的替代是一个好主意。

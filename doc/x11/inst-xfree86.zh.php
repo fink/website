@@ -1,5 +1,5 @@
 <?
-$title = "运行 X11 - 安装 XFree86";
+$title = "运行 X11 - 安装 X11";
 $cvs_author = 'Author: jeff_yecn';
 $cvs_date = 'Date: 2004/07/06 19:14:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 XFree86"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
@@ -7,7 +7,7 @@ $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 
 
 include_once "header.zh.inc";
 ?>
-<h1>运行 X11 - 3. 获取和安装 XFree86</h1>
+<h1>运行 X11 - 3. 获取和安装 X11</h1>
     
     
     <h2><a name="fink">3.1 通过 Fink 安装</a></h2>
@@ -17,16 +17,28 @@ Fink 可以让你以你喜欢的方式安装 X11，
 不过它也提供自己的 XFree86 软件包。如果你使用 <code>fink install ...</code>，它会下载源代码，并在你的计算机上进行编译。如果你使用 <code>apt-get install ...</code> 或 <code>dselect</code> 前端工具，它会下载预编译的二进制包，类似官方的
 XFree86 发行版。
 </p>
-      <p>
-<code>xfree86-base</code> 软件包包括除 XDarwin 服务器外的所有 XFree86 4.2.1.1 （对 10.1 用户是 4.2.0）程序。
-<code>xfree86-rootless</code> 软件是来自标准稳定版的 XFree86 4.2.1.1 的服务器软件。它同时支持全屏幕和无根模式，也包括 OpenGL 支持。
-（早期，Fink 还有一个只提供全屏幕模式的 <code>xfree86-server</code> 软件包，但现在已经不是一个有关联的选择了）。
-你可以选择象后面那样，自己安装服务器。这种情况下，你只应该安装 <code>xfree86-base</code>，否则 Fink 可能会覆盖你自己安装的服务器。注意，当前<code> xfree86-base</code> (4.2.1.1-3) 的稳定版本在构建过程中还会产生 <code>xfree86-rootless</code>，<code>xfree86-base-shlibs</code> 和 <code>xfree86-rootless-shlibs</code>。你必须安装全部这四个软件包才能获得一个可用的 XFree86 环境。
+
+<p><b>General notes:</b></p>
+<ul><li>All of the X11 packages currently available via Fink support both full-screen and rootless
+operation, and have OpenGL support.</li>
+<li><b>Important note:</b>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
+<p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
+<p>For 10.3, the X11 hierarchy is as follows:</p>
+<pre>xorg &gt; xfree86 &gt; Apple's X11 </pre>
+</li></ul>
+<p><b>10.3 users:</b></p>
+<p>You can install version 4.3.99.16-2 (that which is in the current binary distribution) or 4.4 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install the X.org X11 release (currently version 6.8) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.4, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
+
+<p><b>10.2 users:</b></p>
+<p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
 </p>
-      <p><code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> 本质上是相同的东西，但被修改以提供线程支持。对某些程序来说，例如<code>xine</code>，这是必须的。</p>
-      <p>XFree86 4.2.11 （非线程版）被认为是在 10.2 下与 Fink 一起使用的稳定的基准版本。XFree86 4.3.0 也有提供，但更多地被认为是试验性的，而且在本文档写作的时候，仍出于未稳定代码树中。它内置了线程支持，并比 4.2.1.1 快。要安装这个版本，你应该安装 <code>xfree86</code> 软件包。注意，对这个版本，再没有单独的 -base 和 -rootless 软件包，虽然函数库仍被划分到 <code>xfree86-shlibs</code>中。如果你构建与 4.3 连接的二进制版本，他们不能在 4.2.1.1 或苹果的 X11 上运行，请小心行事。</p>
-      <p>
-        <b>10.3 用户：</b>你需要安装版本 4.3.99.16-2 或更新，它是 XFree86-4.4 升级版。如果你是使用二进制发布方式，确认已经升级了软件包描述（例如，运行 <code>sudo apt-get update</code>）。</p>
+
+      <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
+      
+<p><b>10.1 users:</b></p>
+<p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
+    
     
     <h2><a name="apple-binary">3.2 苹果公司的二进制版本</a></h2>
       
@@ -89,7 +101,15 @@ defined in indirectly referenced dynamic library
         <li>
           <p>如果你原来使用 <code>xfree86</code> 软件包，后来又转到苹果的 X11 （无论是 10.2.x 还是 10.3.x 上），任何连接到 <code>xfree86</code> 的软件包都需要重新编译，因为他们并不二进制兼容。</p>
         </li>
+        
+        <li>
+          <p><b>10.3 users only:</b>  It is possible to use Apple's display server and window manager on top of either XFree86-4.4 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p>
+        </li>
+        
       </ul>
+      
+      <p>For more information on using Apple's X11, check out this <a href="http://developer.apple.com/darwin/runningx11.html">article</a> at the Apple Developer Connection.</p>
+      
     
     <h2><a name="official-binary">3.3 官方二进制版本</a></h2>
       
