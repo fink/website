@@ -3,7 +3,7 @@
 <document filename="index" lang="zh">
     <title>Fink 软件包的通用安全政策</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.zh.xml,v 1.5 2004/07/13 21:24:49 jeff_yecn Exp $</cvsid>
+    <cvsid>$Id: sec-policy.zh.xml,v 1.6 2005/04/09 16:12:59 babayoshihiko Exp $</cvsid>
     <preface>
         <p>本文档解释对已被 Fink 接纳的软件包的安全性意外的处理规则。虽然对于每个被接纳的软件包的主要责任仍然在于它们相应的维护者，但是 Fink 项目组仍然人为有必要提供统一的规则以应对可能发生的安全性意外事件。每个 Fink 软件包的维护者都应该遵循这个规则。</p>
     </preface>
@@ -245,6 +245,13 @@
 				<ul>
 				<li><tt>4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt></li>
 				<li>它可以在 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt> 找到。</li>
+				</ul>
+            <p>其它被授权的团队成员包括：(here you add your email +
+                public key like I did above)</p>
+				<p>ranger@befunk.com，PGP 密钥指纹为：</p>
+				<ul>
+				<li><tt>6401 D02A A35F 55E9 D7DD  71C5 52EF A366 D3F6 65FE</tt></li>
+				<li>它可以在 <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xD3F665FE</tt> 找到。</li>
 				</ul>
         </section>
         <section name="how">
