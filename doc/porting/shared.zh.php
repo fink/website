@@ -16,7 +16,11 @@ include_once "header.zh.inc";
 			
 
 			<p>Mach-O 的一个令人吃惊的特性是对共享函数库和可加载模块的严格区分。
-			在 ELF 系统上，两者是相同的；任何的共享代码都可以作为函数库或作为动态加载模块。</p>
+			在 ELF 系统上，两者是相同的；任何的共享代码都可以作为函数库或作为动态加载模块。
+			
+			Use <code>otool -hv <b>some_file</b></code> to see the filetype of <code>some_file</code>.
+			
+			</p>
 
 			<p>Mach-O 共享函数库具有 MH_DYLIB 文件类型，扩展名为 <code>.dylib</code>。
 			它们可以通过常用的静态连接标志进行连接，，比如 <code>-lfoo</code> 会连接 libfoo.dylib。
@@ -55,13 +59,16 @@ include_once "header.zh.inc";
 			第一个数字必需为非零值。
 			第二和第三个数字可以不提供，这时缺省为零值。
 			没有指定版本号的时候，默认为 0.0.0，这是一种通配值。</p>
-
-			<p>"current"版本号主要是用于信息的用途。
-			"compatibility" 版本号用于后面的版本检查。
-			当一个可执行程序要连接的时候，库的版本信息被拷贝到可执行程序中。
-			当可执行程序运行的时候，这个版本信息会用来和要使用的库的版本进行进行核对。
-			除非使用的版本号等于或高于连接时候的库的版本号，否则 dyld 会产生一个运行时错误并终止程序的执行。</p>
-
+            
+            <p>The "current" version is for informational purposes only. The 
+            "compatibility" version is used for checking as follows. 
+            When an executable is linked, the version information from the library 
+            is copied into the executable. When that executable is run, the stored 
+            version information is checked against the version information in the 
+            library that is loaded. dyld generates a run-time error and terminates 
+            the program unless the loaded library version is equal to or newer 
+            than the one used during linking.</p>
+            
 		
 
 		<h2><a name="cflags">2.3 编译器标志</a></h2>
@@ -81,7 +88,7 @@ include_once "header.zh.inc";
 			这可以通过一个完整的例子来演示。
 			我们要编译一个名为 libfoo 的库，它由 source.c 和 code.c 两个源程序文件组成。
 			版本号是 2.4.5，2 是主版本号(发生了不兼容的 API 改变)，4 是次要版本号(后向兼容的 API 改变)，5 是修正错误的修订版计数(有些人把这称为 "teeny" 修订版，它包含完全兼容的改变)。
-			函数库不依赖于其它共享库，会被安装在 /usr/local/lib。</p>
+			函数库不依赖于其它共享库，会被安装在 <code>/usr/local/lib</code>。</p>
 
 <pre>cc -fno-common -c source.c
 cc -fno-common -c code.c
@@ -93,9 +100,15 @@ ln -s libfoo.2.4.5.dylib libfoo.2.dylib
 ln -s libfoo.2.4.5.dylib libfoo.dylib</pre>
 <p>
 注意版本号的各个部分所使用的地方。
-同时也注意静态连接器会使用 libfoo.dylib 符号连接，
-而动态连接器会使用 libfoo.2.dylib 符号连接。
-也可以把这些符号连接指到函数库的不同次要修订版上。
+
+When linking against this library, one would normally use the <code>-lfoo</code> 
+flag, which accesses the <code>libfoo.dylib</code> symlink. Regardless of 
+which symlink or file is specified, though, it is the <code>install_name</code> 
+that is written into one's program. That means one can delete the "higher" 
+(less version-specific) symlink <code>libfoo.dylib</code> after compiling. 
+During a minor-revision library upgrade, one just changes the target of the 
+<code>libfoo.2.dylib</code> symlink that is used by the runtime dynamic linker.
+
 </p>
 
 
@@ -115,7 +128,10 @@ cc -bundle -flat_namespace -undefined suppress \
 注意这里没有使用版本号码。
 理论上来说，可以使用版本号码，但从实用的角度来说，这样做是没有意义的。
 另外注意的是，对束没有命名限制。
-一些软件包喜欢使用 "lib"，因为在其它系统会有这个要求。这样做不会有问题。
+一些软件包喜欢使用 "lib"，因为在其它系统会有这个要求。这样做不会有问题
+
+since a program would use the full filename when loading a module.
+
 </p>
 
 

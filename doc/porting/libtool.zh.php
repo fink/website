@@ -67,13 +67,17 @@ Fink 团队的成员仍然不对 libtool 进行改进，并把他们的结果反
 <p>
 附注：
 所有 libtool 版本所包括的 libltdl 库只有在安装了 dlcompat 的 Darwin 才可以使用。
+
+This is included with OS X starting with 10.3. For previous versions,
+one can install the fink "dlcompat" family of packages.
+
 </p>
 
 
 
 <h2><a name="patch-135">3.2 1.3.5 补丁</a></h2>
 <p>
-如果你自己构建 libtool 1.3.5，你需要应用<a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">这个补丁</a> <b>[updated 2002-06-09]</b> 到 libtool 1.3.5 的源程序，然后删除 ltconfig 和 ltmain.sh 两个文件(它们会在你运行 configure 和 make 的时候从合适的 .in 文件中重建)。
+如果你自己构建 libtool 1.3.5，你需要应用<a href="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">这个补丁</a> <b>[updated 2002-06-09]</b> 到 libtool 1.3.5 的源程序，然后删除 <code>ltconfig</code> 和 <code>ltmain.sh</code> 两个文件(它们会在你运行 configure 和 make 的时候从合适的 .in 文件中重建)。
 在 Fink 的 libtool 1.3.5 软件包中，这个过程是自动的。</p><p>
 但那仅是全部工作的一半 ─ 每个软件包是通过它自己附带的 ltconfig 和 ltmain.sh 来使用 libtool。
 所以如果你需要构建共享库的时候，你要把每个软件包里面的这两个文件替换掉。
@@ -86,8 +90,8 @@ Fink 团队的成员仍然不对 libtool 进行改进，并把他们的结果反
 
 <h2><a name="fixing-14x">3.3 修正 1.4.x</a></h2>
 <p>
-现在广泛使用的 libtool 1.4.x 至少有三个不同版本(1.4.1，1.4.2，和更新的开发版本)，它们在 Darwin 上都有一些问题。不过在它们上面如何修正的方法却是不同的。Fink 所提供的 libtool14 软件包已经包括了所有需要的修正。
-不过，你仍然需要手工修正受影响的文件包的 ltmain.sh/configure 文件来使它可以正常工作。
+现在广泛使用的 libtool 1.4.x 至少有三个不同版本(1.4.1，1.4.2，和更新的开发版本)，它们在 Darwin 上都有一些问题。不过在它们上面如何修正的方法却是不同的。Fink 所提供的 "libtool14" 软件包已经包括了所有需要的修正。
+不过，你仍然需要手工修正受影响的文件包的  <code>ltconfig</code> 和 <code>ltmain.sh</code> 文件来使它可以正常工作。
 </p>
 
 <ol>
@@ -113,7 +117,7 @@ diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
 </li>
 <li>
 <b>可加载模块问题</b>：
-这个问题是由于 zsh (在 10.0 和 10.1 上是默认的 shell；从 10.2 开始，它被替换为 bash) 的非标准行为引起的。
+这个问题是由于 zsh (在 10.0 和 10.1 上是默认的 shell；starting in 10.2 bash is the default) 的非标准行为引起的。
 Zsh 的非标准引号处理方式使得可加载模块不能正确地构建，最后它们被构建程共享库(不象 Linux，在 Darwin 上这是完全不同的东西)。一个典型的修正办法是(你不能完全不经修改地照搬)：
 <pre>
 diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
@@ -176,75 +180,7 @@ diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
 </ol>
 
 
-<h2><a name="dylibversionfix">3.4 修正 libtool 产生的 dylib 的版本字符串</a></h2>
-
-<p>由 libtool 产生的库可能会有错误的版本号。
-这是由于软件包的 Makefile 文件的一个错误标识而导致的。
-当 libtool 在这样一个 Makefile 文件里面被调用的时候：
-<code>
--release "version"
-</code>
-在 make 命令运行以后产生的二进制文件是这样的：</p>
-<ol>
-<li> libname.dylib</li>
-<li> libname-"version".dylib</li>
-</ol>
-<p>
-你可以很容易分辨在你的 Makefile 里面是不是使用了 <code>-release</code>。
-你也许还注意到在函数库名后面的 <b>-</b>。
-这表明 libtool 是以 <code>-release</code> 参数被调用来产生二进制文件的。
-一些其它的情况下，产生的二进制文件是类似这样的：
-</p>
-
-<ol>
-<li>libname.dylib</li>
-<li>libname-"version".x.x.x.dylib</li>
-</ol>
-<p>
-表明两个的标志 <code>-release</code> 和 <code>-version-info</code> 都被使用了。</p>
-<p>
-设置正确的 <code>-version-info</code> 可以是一项很复杂的工作。
-苹果在它的开发者工具文档里面提供了一些很有用的信息。 
-因为你在运行 Fink，所以你应该安装了某个版本的开发工具。
-对当前 Mac OS X 系统的 libtool 的精确解释可以在<a href="file://localhost/Developer/Documentation/DeveloperTools/libtool/libtool_6.html#SEC34">文档</a>中找到。
-为了使本文档完整化，我们引用了上面提到的文档的一个摘要。
-</p>
-<p>
-引自《开发者文档》：
-libtool 库版本由三个整数来描述：
-</p>
-
-<ul><li>
-<b>当前</b>
-<p>
-这个函数库实现的最近的调用界面版本。
-</p>
-</li>
-<li>
-<b>修订版</b>
-<p>
-当前调用界面的实现版本。
-</p>
-</li>
-<li>
-<b>年龄</b>
-<p>
-这个函数库实现的最近和最旧的调用界面的版本号差别。
-换句话说，这个函数库实现从当前版本往前年龄范围内的全部调用界面─到现在的年龄。如果两个函数库由相同的当前和年龄号，那么动态连接器选择比较大修订版号的一个进行连接。
-</p>
-
-</li>
-</ul>
-<p>
-使用 libtool 设置和更新函数库的版本的更多信息可以在上面链接的文档中找到。
-它完整地包括了如何使用 <code>-version-info</code> 创建和更新一个函数库版本号。
-</p>
-
-
-
-
-
-<h2><a name="notes">3.5 更多注解</a></h2>
+<h2><a name="notes">3.4 更多注解</a></h2>
 <p>关于 libtool 本身以及它的进展的更多信息，查看<a href="http://www.gnu.org/software/libtool/libtool.html">libtool 首页</a>。</p>
 
 <p>

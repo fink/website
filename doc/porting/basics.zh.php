@@ -57,7 +57,11 @@ include_once "header.zh.inc";
 			有些时候会加上第四部分-这时第三部分表示内核，而第四部分表示操作系统。
 			所有部分都使用小写字母，并以破折号连接。
 			例如：<code>i586-pc-linux-gnu</code>，<code>hppa1.1-hp-hpux10.20</code>，<code>sparc-sun-solaris2.6</code>。
-			对应于 Mac OS X 10.0 的主机类型是 <code>powerpc-apple-darwin1.3</code>。</p>
+			对应于 Mac OS X 10.0 的主机类型是 <code>powerpc-apple-darwin1.3</code>。
+			
+			Versions of Mac OS X 10.2 bring various <code>powerpc-apple-darwin6.x.0</code> and 10.3 gives <code>powerpc-apple-darwin7.x.0</code>, where "x" depends on the exact OS version.
+			
+			</p>
 
 			<p>许多使用 autoconf 的软件包需要知道它们所编译于的系统平台。(附注：为了支持交叉编译和移植，实际上会有三种类型-主机类型，构建类型，目标类型。通常来说，它们是相同的)。
 			你可以把主机类型作为参数传递给 configure 脚本，或让它自己猜测。</p>
@@ -67,7 +71,11 @@ include_once "header.zh.inc";
 			直到最近，这些脚本才能够认识 Darwin 或 Mac OS X。
 			如果你有一个不认识 Darwin 的软件包，你需要替换包括在软件包里面的 config.guess 和 config.sub 脚本。
 			幸运的是，苹果放了一个可用的版本在 /usr/share/libtool (对 10.2 之前的版本是 /usr/libexec) 中，所以你只需要从那里拷贝就可以了。</p>
-
+            
+			<p>If you are constructing a Fink package, you can use the <code>UpdateConfigGuess</code>
+			and/or <code>UpdateConfigGuessInDirs</code> fields in your <code>.info</code> 
+			package description file to do this update automatically.</p>
+            
 		
 
 		<h2><a name="libraries">1.4 函数库</a></h2>
@@ -86,7 +94,7 @@ include_once "header.zh.inc";
 		<h2><a name="other-sources">1.5 其它信息来源</a></h2>
 			
 
-			<p>关于移植的另外一个信息来源是一个在<a href="http://www.metapkg.org/wiki">MetaPkg Wiki</a> 的 Wiki 站点。</p>
+			<p>关于移植的另外一个信息来源是一个在 <a href="http://www.metapkg.org/wiki">MetaPkg Wiki</a> 的 Wiki 站点。</p>
 
 			<p>你可以阅读苹果的技术文摘 <a href="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</a>：《移植 Unix 命令行工具到 Mac OS X》。</p>
 
