@@ -195,6 +195,10 @@
         这类文档使用 XML 文件作为产生 PHP 和 HTML 文件的基础，我们可以通过一个脚本从它生成需要的文件。
         作为翻译者，你的职责是翻译 XML 文件。</p></li>
       </ol>
+      <!-- start translation -->
+      <p>In addition, you will have to translate or modify a few other files, such as Makefile, nav.xx.inc, constants.xx.inc. Without them, the pages either will not appear on the web site or will not appear correctly.</p>
+      <p>All files are <em>utf-8 encoded</em>, consequently you should not change the encoding unless it is wrong (i.e. not utf-8), or use any html entities but those already in the English files.</p>
+      <!-- end translation -->
     </section>
 
     <section name="updating">
@@ -234,21 +238,24 @@
 
       <ol>
         <li>常数文件（<filename>xml/web/constants.*.inc</filename>）（参考下面）</li>
-
         <li>静态 PHP 文件（例如：<filename>xml/web/*.en.php</filename>）</li>
-
-        <li>用户指南（<filename>xml/uguide.en.xml</filename>）</li>
-
-        <li>FAQ（<filename>xml/faq.en.xml</filename>）</li>
-
+        <li>FAQ（<filename>xml/faq/faq.en.xml</filename>）</li>
+        <li>用户指南（<filename>xml/users-guide/uguide.en.xml</filename>）</li>
         <li>运行 X11 （<filename>xml/x11/x11.en.xml</filename>）</li>
-
         <li>文档目录（<filename>xml/doc/doc.en.xml</filename>，但由于尚余的 xslt 问题，它的 PHP 文件还不能用运行 <code>make</code> 的方法生成）</li>
-
+       <!-- start translation -->
+       <li>User's Guide (<filename>xml/users-guide/uguide.en.xml</filename>)</li>
+       <li>Advanced (<filename>xml/advanced/advanced.en.xml</filename>)</li>
+        <li>Running X11 (<filename>xml/x11/x11.en.xml</filename>)</li>
+        <li>CVS Access (<filename>xml/cvsaccess/cvs.en.xml</filename>)</li>
+        <li>Net Etiquette (<filename>xml/netiquette/netiquette.en.xml</filename>)</li>
+        <li>Internationalization (<filename>xml/multilingual/multilingual.en.xml</filename>)</li>
+        <li>ReadMe (<filename>xml/fink-readme/readme.en.xml</filename>)</li>
+        <li>Security (<filename>xml/security/security.en.xml</filename>)</li>
+        <li>Packaging Tutorial (<filename>xml/quick-start-pkg/quick-start-pkg.en.xml</filename>)</li>
+       <!-- end translation -->
         <li>打包（<filename>xml/packaging/packaging.en.xml</filename>）</li>
-
         <li>移植（<filename>xml/porting/porting.en.xml</filename>）</li>
-
         <li>新闻（<filename>xml/news/news.en.xml</filename>）</li>
       </ol>
 
@@ -309,7 +316,9 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z')
         <li>编辑文件里面的这行来声明它是简体中文，以及它的字符编码是 UTF-8
         <codeblock>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="zh" &gt; ...</codeblock></li>
-
+        <!-- start translation -->
+        <li><em>Very important notice:</em> Check that the cvsid line near the beginning of the file is not splitted.</li>
+        <!-- end translation -->
         <li>保存为 UTF-8。注意字符编码格式必需为 utf-8，除了真正的文本内容以外，不要去修改任何其它内容（也就是那些尖括号里面的内容）。</li>
 
         <li>翻译完成以后，或者你希望测试一下的话，编辑
@@ -546,12 +555,9 @@ scripts/installer/dmg/faq.ru.html</codeblock>
       </ul>
 
       <p>附注：由于提交对 XML 文件的修改后会自动在 fink-commits 邮件列表中产生满足这个条件的邮件，所以一个方便的办法是修改这个邮件的主题然后把它重新发送作为通知。不过，当连续发生了很多更新的时候，可能就无法这样做了。</p>
-    </section>
-
-    <section name="new-translation">
-      <title>新翻译作品</title>
-
-      <p>在一种新的语言的翻译过程中，我们会冻结对英文和其它语言文档的修改，这样新语言的翻译团队就不用担心它们在翻译过程中文档又发生了变化。这种情况下，每种文档会在准备好的情况上线，并激活。</p>
+      <!-- start translation -->
+      <p><em>Note</em>: When the new document is inside a new directory, you shoould add that new directory to the Makefile located in the <filename>xml</filename> directory. Otherwise the built process will not complete successfully.</p>
+      <!-- end translation -->
     </section>
 
 <section name="doc-updates">
@@ -572,6 +578,10 @@ scripts/installer/dmg/faq.ru.html</codeblock>
       <title>提示更新一个已经翻译的文档：</title>
       <p>基准英文文档被<xref chapter="files" section="committing">提交</xref>并立即<xref chapter="files" section="website">激活</xref>-修改者应该提交相应的 PHP 和 HTML 文件，并负责激活更新。
       翻译团队需要更新它们的版本，<xref chapter="files" section="committing">提交</xref><em>所有的</em>文件（XML 和 PHP），然后<xref chapter="files" section="activate">激活</xref>更新。</p>
+      <!-- start translation -->
+      <p><em>Never</em> change a  dynamically generated php file; change the xml file instead.</p>
+      <p><em>Check</em> that the cvsid line near the beginning of an xml file is not splitted.</p>
+      <!-- end translation -->
       <p><em>注意：</em></p>
       <ol>
         <li>对国际化指南（本文档），<em>总是</em>按这个模式处理，因为它的改变影响所有翻译团队。</li>

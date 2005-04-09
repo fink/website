@@ -122,6 +122,10 @@ include_once "header.zh.inc";
         这类文档使用 XML 文件作为产生 PHP 和 HTML 文件的基础，我们可以通过一个脚本从它生成需要的文件。
         作为翻译者，你的职责是翻译 XML 文件。</p></li>
       </ol>
+      
+      <p>In addition, you will have to translate or modify a few other files, such as Makefile, nav.xx.inc, constants.xx.inc. Without them, the pages either will not appear on the web site or will not appear correctly.</p>
+      <p>All files are <b>utf-8 encoded</b>, consequently you should not change the encoding unless it is wrong (i.e. not utf-8), or use any html entities but those already in the English files.</p>
+      
     
 
     <h2><a name="updating">2.5 更新到最新修订版</a></h2>
@@ -161,21 +165,24 @@ include_once "header.zh.inc";
 
       <ol>
         <li>常数文件（<code>xml/web/constants.*.inc</code>）（参考下面）</li>
-
         <li>静态 PHP 文件（例如：<code>xml/web/*.en.php</code>）</li>
-
-        <li>用户指南（<code>xml/uguide.en.xml</code>）</li>
-
-        <li>FAQ（<code>xml/faq.en.xml</code>）</li>
-
+        <li>FAQ（<code>xml/faq/faq.en.xml</code>）</li>
+        <li>用户指南（<code>xml/users-guide/uguide.en.xml</code>）</li>
         <li>运行 X11 （<code>xml/x11/x11.en.xml</code>）</li>
-
         <li>文档目录（<code>xml/doc/doc.en.xml</code>，但由于尚余的 xslt 问题，它的 PHP 文件还不能用运行 <code>make</code> 的方法生成）</li>
-
+       
+       <li>User's Guide (<code>xml/users-guide/uguide.en.xml</code>)</li>
+       <li>Advanced (<code>xml/advanced/advanced.en.xml</code>)</li>
+        <li>Running X11 (<code>xml/x11/x11.en.xml</code>)</li>
+        <li>CVS Access (<code>xml/cvsaccess/cvs.en.xml</code>)</li>
+        <li>Net Etiquette (<code>xml/netiquette/netiquette.en.xml</code>)</li>
+        <li>Internationalization (<code>xml/multilingual/multilingual.en.xml</code>)</li>
+        <li>ReadMe (<code>xml/fink-readme/readme.en.xml</code>)</li>
+        <li>Security (<code>xml/security/security.en.xml</code>)</li>
+        <li>Packaging Tutorial (<code>xml/quick-start-pkg/quick-start-pkg.en.xml</code>)</li>
+       
         <li>打包（<code>xml/packaging/packaging.en.xml</code>）</li>
-
         <li>移植（<code>xml/porting/porting.en.xml</code>）</li>
-
         <li>新闻（<code>xml/news/news.en.xml</code>）</li>
       </ol>
 
@@ -236,7 +243,9 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z')
         <li>编辑文件里面的这行来声明它是简体中文，以及它的字符编码是 UTF-8
         <pre>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ...
 &lt;document filename="index" lang="zh" &gt; ...</pre></li>
-
+        
+        <li><b>Very important notice:</b> Check that the cvsid line near the beginning of the file is not splitted.</li>
+        
         <li>保存为 UTF-8。注意字符编码格式必需为 utf-8，除了真正的文本内容以外，不要去修改任何其它内容（也就是那些尖括号里面的内容）。</li>
 
         <li>翻译完成以后，或者你希望测试一下的话，编辑
