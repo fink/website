@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/04/05 03:04:00';
+$cvs_date = 'Date: 2005/04/11 23:07:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -715,21 +715,58 @@ section).
 Causes certain environment variables to be set in the
 compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
-are: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS,
-MAKE, MFLAGS, MAKEFLAGS. The value you specify is subject to the
+are:
+CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
+LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
+LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
+MFLAGS, MAKEFLAGS.
+The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>
-The variables CPPFLAGS and LDFLAGS are special. They default to
-<code>-I%p/include</code> and <code>-L%p/lib</code>,
-respectively. If you specify a value for one of these, it will be
+Some environment variables have default preset values.
+If you specify a value for one of these, it will be
 prepended to the default value.
+The preset variables (and their default values) are:
 </p>
+<pre>
+CPPFLAGS: -I%p/include
+LDFLAGS: -L%p/lib
+</pre>
+<p>
+In addition, starting in fink 0.17.0:
+</p>
+<pre>
+LD_PREBIND: 1
+LD_PREBIND_ALLOW_OVERLAP: 1
+LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
+</pre>
+<p>
+Also, starting in fink 0.24.3 (and 0.23.7), when the distribution is
+10.3 or 10.4-transitional we have
+</p>
+<pre>
+CXXFLAGS: -fabi-version=1
+</pre>
+<p>
+while when the distribution is 10.4 or later we have
+</p>
+<pre>
+CXXFLAGS: -fabi-version=2
+</pre>
+<p>
+Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
+on which version of OSX is being run, but setting a value for it for 
+a package will override (rather than prepend to) the default value.
+</p>
+
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>
-When set to a true value, deactivates the default values for
-CPPFLAGS and LDFLAGS mentioned above. That is, if you want LDFLAGS to
+When set to a true value, deactivates the default values for the preset
+variables (such as
+CPPFLAGS, LDFLAGS, CXXFLAGS  mentioned above). For 
+example, if you want LDFLAGS to
 remain unset, specify <code>NoSetLDFLAGS: true</code> .
 </p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>

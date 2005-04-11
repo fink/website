@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/21 18:45:15';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/04/07 08:18:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 
