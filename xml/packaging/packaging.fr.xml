@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.53 2005/04/06 03:15:32 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.54 2005/04/13 02:56:01 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Last changed..." pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -710,13 +710,32 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
 <itemtable labeld="Utilisation" labelt="Champ">
 <item><itemt>Set<em>ENVVAR</em></itemt>
 <itemd>
-<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
+<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME, LD, LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
 <codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
-<p>Les variables CPPFLAGS et LDFLAGS sont spéciales. Elles ont pour valeur par défaut respective : <code>-I%p/include</code> et <code>-L%p/lib</code>. Si vous spécifiez une valeur pour l'une de ces deux variables, elle sera ajoutée avant la valeur par défaut.</p>
+<p>Certaines de ces variables ont des valeurs pré-établies par défaut. Si vous leur donnez une valeur, celle-ci sera ajoutée dans la liste devant la valeur par défaut. Les variables à valeur pré-établies sont les suivantes :</p>
+<codeblock>
+CPPFLAGS: -I%p/include
+LDFLAGS: -L%p/lib
+</codeblock>
+<p>Puis, à partir de la version 0.17.0 de fink :</p>
+<codeblock>
+LD_PREBIND: 1
+LD_PREBIND_ALLOW_OVERLAP: 1
+LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
+</codeblock>
+<p>Enfin, à partir des versions 0.24.3 et 0.23.7 de fink, on trouve  dans les branches 103 et 10.4-transitionnelle :</p>
+<codeblock>
+CXXFLAGS: -fabi-version=1
+</codeblock>
+<p>et dans la branche 10.4 et les branches suivantes :</p>
+<codeblock>
+CXXFLAGS: -fabi-version=2
+</codeblock>
+<p>Enfin, la variable MACOSX_DEPLOYMENT_TARGET a une valeur par défaut qui dépend de la version de Mac OS X en cours d'exécution, mais le fait d'affecter une valeur à cette variable pour un paquet donné remplace la valeur par défaut, elle ne vient pas s'ajouter devant la valeur par défaut.</p>
 </itemd></item>
 <item><itemt>NoSet<em>ENVVAR</em></itemt>
 <itemd>
-<p>Quand la valeur de ce champ est true (vraie), les valeurs par défaut de CPPFLAGS et LDFLAGS mentionnées ci-dessus sont désactivées. Autrement dit, si vous ne voulez pas que LDFLAGS ait une valeur par défaut, utilisez <code>NoSetLDFLAGS: true</code>.</p>
+<p>Quand la valeur de ce champ est true (vraie), les valeurs par défaut des variables à valeurs pré-établies, telles CPPFLAGS, LDFLAGS et CXXFLAGS mentionnées ci-dessus, sont désactivées. Autrement dit, si vous ne voulez pas que LDFLAGS ait une valeur par défaut, utilisez <code>NoSetLDFLAGS: true</code>.</p>
 </itemd></item>
 <item><itemt>ConfigureParams</itemt>
 <itemd>
