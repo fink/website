@@ -103,7 +103,7 @@ include_once "header.ja.inc";
 				</li>
 			</ul>
 		
-		<h2><a name="openssl">3.2 The GPL and OpenSSL</a></h2>
+		<h2><a name="openssl">3.2 GPL と OpenSSL</a></h2>
 			<p>
 				(2005年４月より施行)
 			</p>

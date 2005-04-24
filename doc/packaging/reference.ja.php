@@ -643,7 +643,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						<p>
 							コンパイルおよびインストールの段階の間，環境変数を設定しておく．
 							コンパイラフラグなどを configure スクリプトや Makefile に渡すために使われる．
-							現在，対応している変数は次の通り: CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, LD, LDFLAGS, LIBS, MAKE, MFLAGS, MAKEFLAGS.
+							現在，対応している変数は次の通り: 
+							CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
+							LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
+							LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
+							MFLAGS, MAKEFLAGS.
 							指定した値の中では前節で説明したパーセント展開が行われる．
 							よく使われる例:
 						</p>
