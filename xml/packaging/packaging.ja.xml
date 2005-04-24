@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.22 2005/04/24 02:10:00 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.23 2005/04/24 02:28:18 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -2010,9 +2010,40 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 						</p>
 <codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
 						<p>
-							変数 CPPFLAGS および LDFLAGS は特別で，それぞれ <code>-I%p/include</code> および <code>-L%p/lib</code> というデフォルト値を持つ．
-							これらに値を指定すると，指定した値はデフォルト値の前に追加される (デフォルト値は常に含まれる)．
+							環境変数には，既定値を持つものもある．
+							この場合に値を指定すると，既定値に追加される．
+							既定値を持つ変数とその値は:
 						</p>
+<codeblock>
+CPPFLAGS: -I%p/include
+LDFLAGS: -L%p/lib
+</codeblock>
+						<p>
+							fink 0.17.0 からはさらに以下が追加されている:
+						</p>
+<codeblock>
+LD_PREBIND: 1
+LD_PREBIND_ALLOW_OVERLAP: 1
+LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
+</codeblock>
+						<p>
+							fink 0.24.3 (と 0.23.7) からの 10.3 および 10.4-transitional 用ディストリビューションでは
+						</p>
+<codeblock>
+CXXFLAGS: -fabi-version=1
+</codeblock>
+						<p>
+							10.4 以降のディストリビューションでは
+						</p>
+<codeblock>
+CXXFLAGS: -fabi-version=2
+</codeblock>
+						<p>
+							がある．
+							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持つ．
+							これに値を指定することで (値の追加ではなく) 既定値を書き換える．
+						</p>
+
 					</itemd>
 				</item>
 				<item>
@@ -2020,9 +2051,8 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 					</itemt>
 					<itemd>
 						<p>
-							真偽値フィールド．
-							&quot;true&quot; にすると，上述の CPPFLAGS および LDFLAGS に対するデフォルト値は無効になる．
-							すなわち， LDFLAGS の値を空にしたいときには <code>NoSetLDFLAGS: true</code> とする．
+							真の場合，既定値を持つ変数 (上述の CPPFLAGS, LDFLAGS, CXXFLAGS など) の既定値を使わない．
+							例えば，LDFLAGS を unset のままにしたい場合， <code>NoSetLDFLAGS: true</code> とする．
 						</p>
 					</itemd>
 				</item>
