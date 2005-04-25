@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/02/01 10:01:55 $';
+$cvs_author = '$Author: asari $';
+$cvs_date = '$Date: 2005/04/25 10:24:15 $';
 
 include "header.inc";
 ?>
@@ -50,6 +50,9 @@ this list.</p>
 <li>Jorge Acereda</li> 
 <li>Aida Shinra</li>
 <li>Asari Takashi (<i>asari</i>)</li>
+<li>Okayama Tomoaki</li>
+<li>Onoda Hiroyuki (<i>oldGeese</i>)</li>
+<li>Washida Motoi (<i>wm3</i>)</li>
 <li>Spundun Bhatt (<i>Spundun</i>)</li>
 <li>Rob Braun (<i>bbraun</i>)</li>
 <li>Keith Conger (<i>kconger</i>)</li>
