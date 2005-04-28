@@ -1,5 +1,10 @@
 <?
 $releases = array(
+	"10.4<br>(transitional)" => array(
+			"",
+			"current-10.4-transitional-stable",
+			"current-10.4-transitional-unstable"
+			),
 	"10.3" => array(
 			array("0.7.1"),
 			"current-10.3-stable",
