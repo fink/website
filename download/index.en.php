@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 08:25:50 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2005/04/28 02:17:22 $';
 
 include "header.inc";
 ?>
@@ -59,7 +59,7 @@ particularly
 2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
 </li>
 <li><p>
-Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Tools->index</em>.
+Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Utilities->index</em>.
 </p></li>
 <li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release.  After you do this you can install other packages.  There are several ways to do this:
 <ul>
