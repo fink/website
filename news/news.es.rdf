@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2005-02-01T09:41:09+01:00</dc:date>
+    <dc:date>2005-04-29T12:10:26-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Soluci%F3n%20a%20los%20problemas%20con%20gcc.">
       <title>Solución a los problemas con gcc.</title>

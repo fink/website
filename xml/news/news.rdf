@@ -5,8 +5,57 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-02-01T09:41:09+01:00</dc:date>
+    <dc:date>2005-04-29T12:10:25-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
+      <title>Fink and Tiger.</title>
+      <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</link>
+      <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</guid>
+      <description>
+
+Fink is ready for OS X 10.4!  There are several ways you can update:
+
+
+A binary installer will be available within a few weeks, for binary-only
+users.
+
+For users of the stable tree, we recommend that you delete your current
+fink with sudo rm -Rf /sw and then "bootstrap" an
+installation of fink-0.23.9 using
+
+fink-0.23.9.tar.gz.  After running bootstrap.sh in that directory,
+you'll need to run "fink selfupdate".
+
+For users of the unstable tree, you may be able to upgrade just by 
+installing fink-0.24.5.  Be sure to reinstall this fink package
+("fink reinstall fink") after upgrading to 10.4.
+
+
+
+</description>
+      <content:encoded>
+
+Fink is ready for OS X 10.4!  There are several ways you can update:
+
+
+A binary installer will be available within a few weeks, for binary-only
+users.
+
+For users of the stable tree, we recommend that you delete your current
+fink with sudo rm -Rf /sw and then "bootstrap" an
+installation of fink-0.23.9 using
+
+fink-0.23.9.tar.gz.  After running bootstrap.sh in that directory,
+you'll need to run "fink selfupdate".
+
+For users of the unstable tree, you may be able to upgrade just by 
+installing fink-0.24.5.  Be sure to reinstall this fink package
+("fink reinstall fink") after upgrading to 10.4.
+
+
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.">
       <title>Solution to gcc problems.</title>
       <link>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</link>
@@ -666,49 +715,6 @@ apt-get, dselect or FinkCommander to install binary files as usual.
 	finkmirrors.net and get in touch.
 		
 		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F">
-      <title>More mirrors....pretty please?</title>
-      <link>http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2003-11-24%20More%20mirrors....pretty%20please%3F</guid>
-      <description>
-	While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
-        we crave more. To improve our service to all of you, we would like to ask that
-        you evaluate carefully if you maybe do have the resources to become a mirror. 
-            
-             
-        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
-        here. Especially mirrors in
-        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
-        those regions yet. If you feel generous and wish to donate even more resources, please visit
-        finkmirrors.net to learn about your options.
-            
-             
-        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
-        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
-        We are looking forward to many new applications and thank our community in advance. 
-            
-	</description>
-      <content:encoded>
-	While we welcome our latest full mirror in Norway, sponsored by Havar Valeur, 
-        we crave more. To improve our service to all of you, we would like to ask that
-        you evaluate carefully if you maybe do have the resources to become a mirror. 
-            
-             
-        All it takes is a 10Mbit link, around 100MB of disk space  and some bandwidth you are 
-        willing to share for Fink. The exact setup instructions for rsync mirrors can be found 
-        here. Especially mirrors in
-        Asia, Australia, New Zealand, South Europe and Middle Europe are welcome, since we have none in 
-        those regions yet. If you feel generous and wish to donate even more resources, please visit
-        finkmirrors.net to learn about your options.
-            
-             
-        The current status of all available rsync mirrors can be viewed on the finkmirrors.net pages as well.
-        We hope to improve this service in the future, yet this depends on your willingness to help us out. 
-        We are looking forward to many new applications and thank our community in advance. 
-            
-	</content:encoded>
     </item>
   </channel>
 </rss>

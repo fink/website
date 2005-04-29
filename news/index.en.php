@@ -7,6 +7,27 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<p>
+Fink is ready for OS X 10.4!  There are several ways you can update:
+</p><ul>
+<li>
+A binary installer will be available within a few weeks, for binary-only
+users.
+</li><li>
+For users of the stable tree, we recommend that you delete your current
+fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
+installation of fink-0.23.9 using
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">
+fink-0.23.9.tar.gz</a>.  After running bootstrap.sh in that directory,
+you'll need to run "fink selfupdate".
+</li><li>
+For users of the unstable tree, you may be able to upgrade just by 
+installing fink-0.24.5.  Be sure to reinstall this fink package
+("fink reinstall fink") after upgrading to 10.4.
+</li>
+</ul>
+
 <a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 

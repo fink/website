@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.6 2004/11/26 09:14:28 benh57 Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.7 2005/04/29 16:27:59 dmrrsn Exp $</cvsid>
 
+
+<newsitem>
+<date>2005-04-29</date>
+<headline>Fink and Tiger.</headline>
+<body>
+<p>
+Fink is ready for OS X 10.4!  There are several ways you can update:
+</p><ul>
+<li>
+A binary installer will be available within a few weeks, for binary-only
+users.
+</li><li>
+For users of the stable tree, we recommend that you delete your current
+fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
+installation of fink-0.23.9 using
+<varlink 
+url="http://sourceforge.net/project/showfiles.php?group_id=17203">
+fink-0.23.9.tar.gz</varlink>.  After running bootstrap.sh in that directory,
+you'll need to run "fink selfupdate".
+</li><li>
+For users of the unstable tree, you may be able to upgrade just by 
+installing fink-0.24.5.  Be sure to reinstall this fink package
+("fink reinstall fink") after upgrading to 10.4.
+</li>
+</ul>
+
+</body>
+</newsitem>
 
 <newsitem>
 <date>2004-11-20</date>
