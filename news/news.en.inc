@@ -1,6 +1,6 @@
-<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
-Fink is ready for OS X 10.4!  There are several ways you can update:
+Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
@@ -10,8 +10,11 @@ For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
 installation of fink-0.23.9 using
 <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</a>.  After running the command
-<code> ./bootstrap.sh </code> in that directory,
+fink-0.23.9.tar.gz</a>--download that file and expand it, 
+eg. via
+<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code> ./bootstrap.sh </code> in the resulting
+<code>fink-0.23.9</code> directory,
 you'll need to run <code>fink selfupdate</code>
 </li><li>
 For users of the unstable tree, you may be able to upgrade just by 
@@ -24,9 +27,12 @@ followed by <code>fink selfupdate</code>
 improve over the next several weeks.  The stable tree contains substantially
 fewer packages than in 10.3, but all of them should compile.
 </p>
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
+users with mission-critical applications to check in on the mailing 
+lists to verify whether anyone has had experience with the package in 
+question before upgrading.</p>
 
-
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
@@ -40,7 +46,7 @@ matter, and working to resolve it as quickly as possible.
 </p>
 
 
-<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-10-15%20Workaround%20for%20gcc%20problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
 <p>
 The version of gcc included with XCode 1.5 is known to produce 
 incorrect output from c++ code under certain circumstances.
