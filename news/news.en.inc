@@ -20,6 +20,11 @@ reinstall the fink package using <code>fink reinstall fink</code>
 followed by <code>fink selfupdate</code>
 </li>
 </ul>
+<p>Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
+</p>
+
 
 <a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>

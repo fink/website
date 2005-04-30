@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-04-29T21:20:44-04:00</dc:date>
+    <dc:date>2005-04-29T21:28:07-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
       <title>Fink and Tiger.</title>
@@ -33,6 +33,11 @@ reinstall the fink package using fink reinstall fink
 followed by fink selfupdate
 
 
+Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
+
+
 
 </description>
       <content:encoded>
@@ -55,6 +60,11 @@ For users of the unstable tree, you may be able to upgrade just by
 installing fink-0.24.5.  After upgrading to 10.4, you should
 reinstall the fink package using fink reinstall fink
 followed by fink selfupdate
+
+
+Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
 
 
 

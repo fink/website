@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.8 2005/04/30 01:22:16 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.9 2005/04/30 01:28:59 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -30,6 +30,11 @@ reinstall the fink package using <code>fink reinstall fink</code>
 followed by <code>fink selfupdate</code>
 </li>
 </ul>
+<p>Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
+</p>
+
 
 </body>
 </newsitem>
