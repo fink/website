@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.9 2005/04/30 01:28:59 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.10 2005/04/30 15:03:31 alexkhansen Exp $</cvsid>
 
 
 <newsitem>
@@ -9,7 +9,7 @@
 <headline>Fink and Tiger.</headline>
 <body>
 <p>
-Fink is ready for OS X 10.4!  There are several ways you can update:
+Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
@@ -34,7 +34,10 @@ followed by <code>fink selfupdate</code>
 improve over the next several weeks.  The stable tree contains substantially
 fewer packages than in 10.3, but all of them should compile.
 </p>
-
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
+users with mission-critical applications to check in on the mailing 
+lists to verify whether anyone has had experience with the package in 
+question before upgrading.</p>
 
 </body>
 </newsitem>
