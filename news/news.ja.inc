@@ -1,6 +1,6 @@
 <a name="2005-04-29 Fink と Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink と Tiger.</span></a><?php gray_line(); ?>
 			<p>
-Fink は OS X 10.3 対応! 更新方法はいくつかあります:
+Fink は OS X 10.4 対応! 更新方法はいくつかあります:
 </p>
 			<ul>
 				<li>
