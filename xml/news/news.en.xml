@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.10 2005/04/30 15:03:31 alexkhansen Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.11 2005/04/30 18:13:19 alexkhansen Exp $</cvsid>
 
 
 <newsitem>
@@ -20,8 +20,11 @@ fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
 installation of fink-0.23.9 using
 <varlink 
 url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</varlink>.  After running the command
-<code> ./bootstrap.sh </code> in that directory,
+fink-0.23.9.tar.gz</varlink>--download that file and expand it, 
+eg. via
+<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code> ./bootstrap.sh </code> in the resulting
+<filename>fink-0.23.9</filename> directory,
 you'll need to run <code>fink selfupdate</code>
 </li><li>
 For users of the unstable tree, you may be able to upgrade just by 
