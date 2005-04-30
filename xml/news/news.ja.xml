@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.4 2005/04/30 11:34:42 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.5 2005/04/30 11:44:15 babayoshihiko Exp $</cvsid>
 	<newsitem>
 		<date>2005-04-29</date>
 		<headline>Fink と Tiger.</headline>
@@ -29,7 +29,7 @@ unstable ツリーを利用している方は、 fink-0.24.5 をインストー�
 			</ul>
 			<p>
 全てのパッケージが 10.4 で動作する訳ではありませんが、数週間で改善されるでしょう。
-stable つりーは 10.3 よりもだいぶ少ないですが、全てがコンパイルできるはずです。
+stable ツリーのパッケージは 10.3 よりもだいぶ少ないですが、全てがコンパイルできるはずです。
 </p>
 		</body>
 	</newsitem>

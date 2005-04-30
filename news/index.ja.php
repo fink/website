@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/11/29 11:59:31';
+$cvs_date = 'Date: 2005/04/30 11:34:42';
 $metatags = '';
 
 include_once "header.inc";
@@ -31,7 +31,7 @@ unstable ツリーを利用している方は、 fink-0.24.5 をインストー�
 			</ul>
 			<p>
 全てのパッケージが 10.4 で動作する訳ではありませんが、数週間で改善されるでしょう。
-stable つりーは 10.3 よりもだいぶ少ないですが、全てがコンパイルできるはずです。
+stable ツリーのパッケージは 10.3 よりもだいぶ少ないですが、全てがコンパイルできるはずです。
 </p>
 		<a name="2004-11-20 gcc 問題の解決"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 問題の解決</span></a><?php gray_line(); ?>
 			<p>Apple は、2004年11月に gcc3 アップデータをリリースしました。
