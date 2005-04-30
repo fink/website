@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: benh57';
-$cvs_date = 'Date: 2004/11/26 09:14:28';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/04/29 16:27:59';
 $metatags = '';
 
 include_once "header.inc";
@@ -18,13 +18,15 @@ users.
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
 installation of fink-0.23.9 using
-<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">
-fink-0.23.9.tar.gz</a>.  After running bootstrap.sh in that directory,
-you'll need to run "fink selfupdate".
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+fink-0.23.9.tar.gz</a>.  After running the command
+<code> ./bootstrap.sh </code> in that directory,
+you'll need to run <code>fink selfupdate</code>
 </li><li>
 For users of the unstable tree, you may be able to upgrade just by 
-installing fink-0.24.5.  Be sure to reinstall this fink package
-("fink reinstall fink") after upgrading to 10.4.
+installing fink-0.24.5.  After upgrading to 10.4, you should
+reinstall the fink package using <code>fink reinstall fink</code>
+followed by <code>fink selfupdate</code>
 </li>
 </ul>
 
