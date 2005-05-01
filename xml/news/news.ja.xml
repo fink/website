@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.7 2005/05/01 02:56:39 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.8 2005/05/01 10:32:12 babayoshihiko Exp $</cvsid>
 	<newsitem>
 		<date>2005-04-29</date>
 		<headline>Fink と Tiger.</headline>
@@ -22,9 +22,11 @@ fink-0.23.9.tar.gz</varlink> をダウンロード後、解凍し、&quot;bootst
 その後、<code>fink selfupdate</code> を実行する必要があります。
 </li>
 				<li>
-unstable ツリーを利用している方は、 fink-0.24.5 をインストールするだけです。
-10.4 へのアップグレード後は、 <code>fink reinstall fink</code> で fink を再インストールします。
-その後に、 <code>fink selfupdate</code> します。
+unstable ツリーの利用者は、 fink のバージョンが 0.24.5 以前であれば <code>fink selfupdate</code> 
+することでアップグレードされます。
+<code>fink --version</code> で現在のバージョンを確認してください。
+0.24.5 以前であれば、 <code>fink selfupdate</code> を実行してください。
+次に、 <code>fink reinstall fink</code> し、 <code>fink selfupdate</code> を実行してください。
 </li>
 			</ul>
 			<p>
