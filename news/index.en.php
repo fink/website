@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/01 05:40:06';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/05/01 23:22:33';
 $metatags = '';
 
 include_once "header.inc";
@@ -26,7 +26,7 @@ eg. via
 <code>fink-0.23.9</code> directory,
 you'll need to run <code>fink selfupdate</code>
 </li><li>
-For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink issueing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
+For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
 </li>
 </ul>
 <p>Not all packages are working yet under 10.4, but that situation will
