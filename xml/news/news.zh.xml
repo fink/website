@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
-<cvsid>$Id: news.zh.xml,v 1.8 2005/05/01 04:54:46 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: news.zh.xml,v 1.9 2005/05/01 22:08:05 jeff_yecn Exp $</cvsid>
 
 <newsitem>
 <date>2005-04-29</date>
@@ -23,8 +23,11 @@ fink-0.23.9.tar.gz</varlink> fink-0.23.9 版本的源代码用 bootstrap 的方�
 <code> ./bootstrap.sh </code> 命令，
 然后你需要运行 <code>fink selfupdate</code> 做进一步更新。
 </li><li>
-对于那些使用未稳定代码树的用户，你可以通过安装 fink-0.24.5 版本的方式进行升级。在升级到 10.4 
-完成后，你可以用 <code>fink reinstall fink</code> 来重新安装 fink 软件包，在这之后再用 
+对于那些使用未稳定代码树的用户，如果你的版本低于 0.24.5，你可以运行 
+<code>fink selfupdate</code> 来安装 fink-0.24.5。在升级到 10.4 
+完成后，首先用 <code>fink --version</code> 命令来检查你是不是已经升级到正确的版本。
+如果你的版本低于 0.24.5，那么你可以用 <code>fink selfupdate</code> 来获得正确的版本。
+然后你可以用 <code>fink reinstall fink</code> 来重新安装 fink 软件包，在这之后再用 
 <code>fink selfupdate</code> 做进一步的更新。
 </li>
 </ul>
