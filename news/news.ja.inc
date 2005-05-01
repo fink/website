@@ -1,6 +1,6 @@
 <a name="2005-04-29 Fink と Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink と Tiger.</span></a><?php gray_line(); ?>
 			<p>
-Fink は OS X 10.4 対応! 更新方法はいくつかあります:
+Fink が OS X 10.4 に対応! 更新は以下の通り:
 </p>
 			<ul>
 				<li>
@@ -9,10 +9,10 @@ Fink は OS X 10.4 対応! 更新方法はいくつかあります:
 				<li>
 stable ツリーの利用者は、現在の fink を <code>sudo rm -Rf /sw</code> で削除し、
 <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</a> を用いて
-"bootstrap" してください。
-<code> ./bootstrap.sh </code> を実行後、
-<code>fink selfupdate</code> を実行する必要があります。
+fink-0.23.9.tar.gz</a> をダウンロード後、解凍し、"bootstrap"します。
+つまり、 <code>tar -xvzf fink-0.23.9.tar.gz</code> し、
+<code>fink-0.23.9</code> 内で <code>./bootstrap.sh </code> を実行します。
+その後、<code>fink selfupdate</code> を実行する必要があります。
 </li>
 				<li>
 unstable ツリーを利用している方は、 fink-0.24.5 をインストールするだけです。

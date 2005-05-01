@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.6 2005/04/30 12:05:33 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.7 2005/05/01 02:56:39 babayoshihiko Exp $</cvsid>
 	<newsitem>
 		<date>2005-04-29</date>
 		<headline>Fink と Tiger.</headline>
 		<body>
 			<p>
-Fink は OS X 10.4 対応! 更新方法はいくつかあります:
+Fink が OS X 10.4 に対応! 更新は以下の通り:
 </p>
 			<ul>
 				<li>
@@ -16,10 +16,10 @@ Fink は OS X 10.4 対応! 更新方法はいくつかあります:
 				<li>
 stable ツリーの利用者は、現在の fink を <code>sudo rm -Rf /sw</code> で削除し、
 <varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</varlink> を用いて
-"bootstrap" してください。
-<code> ./bootstrap.sh </code> を実行後、
-<code>fink selfupdate</code> を実行する必要があります。
+fink-0.23.9.tar.gz</varlink> をダウンロード後、解凍し、&quot;bootstrap&quot;します。
+つまり、 <code>tar -xvzf fink-0.23.9.tar.gz</code> し、
+<filename>fink-0.23.9</filename> 内で <code>./bootstrap.sh </code> を実行します。
+その後、<code>fink selfupdate</code> を実行する必要があります。
 </li>
 				<li>
 unstable ツリーを利用している方は、 fink-0.24.5 をインストールするだけです。
