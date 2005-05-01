@@ -1,4 +1,4 @@
-<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
@@ -17,10 +17,7 @@ eg. via
 <code>fink-0.23.9</code> directory,
 you'll need to run <code>fink selfupdate</code>
 </li><li>
-For users of the unstable tree, you may be able to upgrade just by 
-installing fink-0.24.5.  After upgrading to 10.4, you should
-reinstall the fink package using <code>fink reinstall fink</code>
-followed by <code>fink selfupdate</code>
+For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink issueing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
 </li>
 </ul>
 <p>Not all packages are working yet under 10.4, but that situation will
@@ -32,7 +29,7 @@ users with mission-critical applications to check in on the mailing
 lists to verify whether anyone has had experience with the package in 
 question before upgrading.</p>
 
-<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
@@ -46,7 +43,7 @@ matter, and working to resolve it as quickly as possible.
 </p>
 
 
-<a name="2004-10-15%20Workaround%20for%20gcc%20problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
 <p>
 The version of gcc included with XCode 1.5 is known to produce 
 incorrect output from c++ code under certain circumstances.
