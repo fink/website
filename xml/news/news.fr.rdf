@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2005-04-29T21:28:08-04:00</dc:date>
+    <dc:date>2005-05-01T07:42:20+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger">
+      <title>Fink et Tiger</title>
+      <link>http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger</link>
+      <guid>http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger</guid>
+      <description>
+Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la mise à jour :
+
+Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires.
+Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande sudo rm -Rf /sw, puis d'amorcer l'installation de la version 0.23.9 de fink avec le fichier compressé fink-0.23.9.tar.gz. Téléchargez ce fichier et décompressez-le via la commande tar -xvzf fink-0.23.9.tar.gz. Exécutez ensuite la commande ./bootstrap.sh dans le répertoire fink-0.23.9 nouvellement créé. Enfin, lancez la commande fink selfupdate.
+Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, il faudra réinstaller le paquet fink via la commande fink reinstall fink.
+
+Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.
+Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.
+</description>
+      <content:encoded>
+Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la mise à jour :
+
+Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires.
+Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande sudo rm -Rf /sw, puis d'amorcer l'installation de la version 0.23.9 de fink avec le fichier compressé fink-0.23.9.tar.gz. Téléchargez ce fichier et décompressez-le via la commande tar -xvzf fink-0.23.9.tar.gz. Exécutez ensuite la commande ./bootstrap.sh dans le répertoire fink-0.23.9 nouvellement créé. Enfin, lancez la commande fink selfupdate.
+Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, il faudra réinstaller le paquet fink via la commande fink reinstall fink.
+
+Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.
+Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#20%2F11%2F2004%20Solution%20aux%20probl%E8mes%20gcc">
       <title>Solution aux problèmes gcc</title>
       <link>http://fink.sourceforge.net/news/#20%2F11%2F2004%20Solution%20aux%20probl%E8mes%20gcc</link>
@@ -368,33 +393,6 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
 		
 		
 			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
-		
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#24%2F11%2F2003%20Un%20autre%20miroir....%20Mais%20est-ce%20bien%20suffisant%20%3F">
-      <title>Un autre miroir.... Mais est-ce bien suffisant ?</title>
-      <link>http://fink.sourceforge.net/news/#24%2F11%2F2003%20Un%20autre%20miroir....%20Mais%20est-ce%20bien%20suffisant%20%3F</link>
-      <guid>http://fink.sourceforge.net/news/#24%2F11%2F2003%20Un%20autre%20miroir....%20Mais%20est-ce%20bien%20suffisant%20%3F</guid>
-      <description>
-		
-			Nous souhaitons la bienvenue à notre nouveau miroir situé en Norvège, sponsorisé par Havar Valeur, mais nous faisons encore appel à votre générosité. Pour améliorer le service qui vous est destiné, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
-		
-		
-			Il suffit de posséder un lien à 10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante à partager avec Fink. Les instructions précises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle Zélande, en Europe méridionale et en Europe centrale : nous n'en avons encore aucun dans ces régions. Si vous vous sentez d'humeur particulièrement généreuse et désirez faire davantage, allez sur finkmirrors.net pour découvrir les options qui s'offrent à vous. 
-		
-		
-			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
-		
-		</description>
-      <content:encoded>
-		
-			Nous souhaitons la bienvenue à notre nouveau miroir situé en Norvège, sponsorisé par Havar Valeur, mais nous faisons encore appel à votre générosité. Pour améliorer le service qui vous est destiné, nous vous demandons de bien vouloir regarder si vous ne pourriez pas devenir miroir. 
-		
-		
-			Il suffit de posséder un lien à 10 Mbit/s, environ 100 Mo d'espace disque disponible et de la bande passante à partager avec Fink. Les instructions précises pour la mise en place de rsync sont disponibles ici. Nous recherchons, en particulier, des miroirs en Asie, en Australie, en Nouvelle Zélande, en Europe méridionale et en Europe centrale : nous n'en avons encore aucun dans ces régions. Si vous vous sentez d'humeur particulièrement généreuse et désirez faire davantage, allez sur finkmirrors.net pour découvrir les options qui s'offrent à vous. 
-		
-		
-			Vous pouvez connaître, à tout instant, l'état de nos miroirs rsync sur finkmirrors.net. Nous comptons améliorer ce service par la suite, ce qui ne pourra être fait que grâce à la bonne volonté de chacun. Nous pensons à de nombreuses autres applications et remercions d'avance l'ensemble de notre communauté. 
 		
 		</content:encoded>
     </item>
