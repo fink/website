@@ -1,3 +1,34 @@
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<p>
+Fink can be used on OS X 10.4!  There are several ways you can update:
+</p><ul>
+<li>
+A binary installer will be available within a few weeks, for binary-only
+users.
+</li><li>
+For users of the stable tree, we recommend that you delete your current
+fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
+installation of fink-0.23.9 using
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+fink-0.23.9.tar.gz</a>--download that file and expand it, 
+eg. via
+<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code> ./bootstrap.sh </code> in the resulting
+<code>fink-0.23.9</code> directory,
+you'll need to run <code>fink selfupdate</code>
+</li><li>
+For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
+</li>
+</ul>
+<p>Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
+</p>
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
+users with mission-critical applications to check in on the mailing 
+lists to verify whether anyone has had experience with the package in 
+question before upgrading.</p>
+
 <a name="2004-11-20 Solución a los problemas con gcc."><span class="news-date">2004-11-20: </span><span class="news-headline">Solución a los problemas con gcc.</span></a><?php gray_line(); ?>
 <p>
 Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
@@ -28,35 +59,4 @@ también <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">
 consideres no hacerlo y quedarte con  XCode versión 1.2 
 hasta que el problema sea resuelto.
 </p>
-    <a name="2004-09-20 Fink 0.7.1 liberado."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 liberado.</span></a><?php gray_line(); ?>
-<p>
-La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. 
-Ésta ha sido creada para la versión Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para la versión Jaguar (10.2) de Mac OS X.
-</p>
-
-<p>
-Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
-dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
-</p>
-
-<p>
-Para realizar una primera instalación de Fink, hay que seguir los consejos 
-de <a href="http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
-</p>
-
-<p>
-Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas 
-listas la encontraras <a href="http://fink.sourceforge.net/lists/index.php">aquí</a>.
-
-</p>
-
-<p>
-Asegúrate de seleccionar el <b>instalador adecuado</b> para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* </p>
-
-<p>
-El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
-También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. 
-Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
-</p>
-
-
+    

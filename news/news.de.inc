@@ -1,3 +1,34 @@
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<p>
+Fink can be used on OS X 10.4!  There are several ways you can update:
+</p><ul>
+<li>
+A binary installer will be available within a few weeks, for binary-only
+users.
+</li><li>
+For users of the stable tree, we recommend that you delete your current
+fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
+installation of fink-0.23.9 using
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+fink-0.23.9.tar.gz</a>--download that file and expand it, 
+eg. via
+<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code> ./bootstrap.sh </code> in the resulting
+<code>fink-0.23.9</code> directory,
+you'll need to run <code>fink selfupdate</code>
+</li><li>
+For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
+</li>
+</ul>
+<p>Not all packages are working yet under 10.4, but that situation will
+improve over the next several weeks.  The stable tree contains substantially
+fewer packages than in 10.3, but all of them should compile.
+</p>
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
+users with mission-critical applications to check in on the mailing 
+lists to verify whether anyone has had experience with the package in 
+question before upgrading.</p>
+
 <a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
@@ -26,24 +57,5 @@ described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"
 and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
 </p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
-</p>
-<a name="2004-09-20 Fink 0.7.1 veröffentlich."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 veröffentlich.</span></a><?php gray_line(); ?>
-<p>
-Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
-</p>
-<p>
-Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
-</p>
-<p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</a> nachgeschaut werden.
-</p>
-<p>
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="<?php print $root; ?>lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
-</p>
-<p>
-Bitte stellen Sie sicher, dass Sie den <b>passenden Installer</b> für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
-</p>
-        <p>
-Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
 </p>
 
