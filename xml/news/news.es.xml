@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.18 2005/05/03 21:30:11 michga Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.19 2005/05/03 21:58:14 michga Exp $</cvsid>
 
 <newsitem>
 <date>2005-04-29</date>
@@ -27,44 +27,6 @@ instalando fink-0.24.5, mediante <code>fink selfupdate</code> desde cualquier ve
 <p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
 
 <p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
-</body>
-</newsitem>
-
-<newsitem>
-<date>2005-04-29</date>
-<headline>Fink and Tiger.</headline>
-<body>
-<p>
-Fink can be used on OS X 10.4!  There are several ways you can update:
-</p><ul>
-<li>
-A binary installer will be available within a few weeks, for binary-only
-users.
-</li><li>
-For users of the stable tree, we recommend that you delete your current
-fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
-installation of fink-0.23.9 using
-<varlink 
-url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</varlink>--download that file and expand it, 
-eg. via
-<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
-<code> ./bootstrap.sh </code> in the resulting
-<filename>fink-0.23.9</filename> directory,
-you'll need to run <code>fink selfupdate</code>
-</li><li>
-For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
-</li>
-</ul>
-<p>Not all packages are working yet under 10.4, but that situation will
-improve over the next several weeks.  The stable tree contains substantially
-fewer packages than in 10.3, but all of them should compile.
-</p>
-<p>Of course, some wrinkles still need to be ironed out.  We encourage 
-users with mission-critical applications to check in on the mailing 
-lists to verify whether anyone has had experience with the package in 
-question before upgrading.</p>
-
 </body>
 </newsitem>
 
