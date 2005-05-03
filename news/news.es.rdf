@@ -5,8 +5,55 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2005-05-02T11:34:29+09:00</dc:date>
+    <dc:date>2005-05-03T23:28:55+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.">
+      <title>Fink y Tiger.</title>
+      <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.</link>
+      <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.</guid>
+      <description>
+
+¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
+
+
+En pocas semanas estará disponible un instalador binario, para aquellos que sólo utilizan binarios.
+
+Para usuarios de la rama estable, recomendamos borrar la instalación actual de
+fink con sudo rm -Rf /sw y "bootstrap" una instalación de 
+fink-0.23.9 utilizando 
+
+fink-0.23.9.tar.gz -descargar el fichero y descomprimirlo mediante tar -xvzf fink-0.23.9.tar.gz. Tras ejecutar bootstrap.sh en el directorio fink-0.23.9 resultante, necesitarás ejecutar fink selfupdate.
+
+Los usuarios de la rama inestable pueden actualizarse simplemente
+instalando fink-0.24.5, mediante fink selfupdate desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante fink --version. Si el resultado del comando es menor que 0.24.5, ejéctuse fink selfupdate para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante fink reinstall fink y después fink selfupdate.
+
+
+No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .
+
+Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.
+</description>
+      <content:encoded>
+
+¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
+
+
+En pocas semanas estará disponible un instalador binario, para aquellos que sólo utilizan binarios.
+
+Para usuarios de la rama estable, recomendamos borrar la instalación actual de
+fink con sudo rm -Rf /sw y "bootstrap" una instalación de 
+fink-0.23.9 utilizando 
+
+fink-0.23.9.tar.gz -descargar el fichero y descomprimirlo mediante tar -xvzf fink-0.23.9.tar.gz. Tras ejecutar bootstrap.sh en el directorio fink-0.23.9 resultante, necesitarás ejecutar fink selfupdate.
+
+Los usuarios de la rama inestable pueden actualizarse simplemente
+instalando fink-0.24.5, mediante fink selfupdate desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante fink --version. Si el resultado del comando es menor que 0.24.5, ejéctuse fink selfupdate para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante fink reinstall fink y después fink selfupdate.
+
+
+No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .
+
+Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
       <title>Fink and Tiger.</title>
       <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</link>
@@ -628,53 +675,6 @@ Muchos de los archivos binarios para el 10.3 han sido actualizados, eliminando l
 		
 		
 	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..">
-      <title>There they are! New mirrors..</title>
-      <link>http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..</link>
-      <guid>http://fink.sourceforge.net/news/#2003-11-30%20There%20they%20are!%20New%20mirrors..</guid>
-      <description>
-		
-	Thank you, thank you, thank you. What a great community we have.
-	Thank you for providing us with more mirrors. 
-		
-		
-	Matthew Healey, member of the Western 
-	Australian Macintosh User Group, and their 
-	ISP extremedsl
-	are providing Fink with a full mirror in Perth, Australia. This is our first
-	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the UKMIRROR service 
-	has accepted us, making distfile services available for Fink 
-	on 21 load balanced server.
-		
-		
-	We are very happy about this development, but we still need more rsync mirrors.
-	Thus, once more, if you feel like helping, please visit 
-	finkmirrors.net and get in touch.
-		
-		</description>
-      <content:encoded>
-		
-	Thank you, thank you, thank you. What a great community we have.
-	Thank you for providing us with more mirrors. 
-		
-		
-	Matthew Healey, member of the Western 
-	Australian Macintosh User Group, and their 
-	ISP extremedsl
-	are providing Fink with a full mirror in Perth, Australia. This is our first
-	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the UKMIRROR service 
-	has accepted us, making distfile services available for Fink 
-	on 21 load balanced server.
-		
-		
-	We are very happy about this development, but we still need more rsync mirrors.
-	Thus, once more, if you feel like helping, please visit 
-	finkmirrors.net and get in touch.
-		
-		</content:encoded>
     </item>
   </channel>
 </rss>

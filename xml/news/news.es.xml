@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.17 2005/05/02 02:37:14 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.18 2005/05/03 21:30:11 michga Exp $</cvsid>
+
+<newsitem>
+<date>2005-04-29</date>
+<headline>Fink y Tiger.</headline>
+<body>
+<p>
+¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
+</p><ul>
+<li>
+En pocas semanas estará disponible un instalador binario, para aquellos que sólo utilizan binarios.
+</li><li>
+Para usuarios de la rama estable, recomendamos borrar la instalación actual de
+fink con <code>sudo rm -Rf /sw</code> y "bootstrap" una instalación de 
+fink-0.23.9 utilizando 
+<varlink 
+url="http://sourceforge.net/project/showfiles.php?group_id=17203">
+fink-0.23.9.tar.gz</varlink> -descargar el fichero y descomprimirlo mediante <code>tar -xvzf fink-0.23.9.tar.gz</code>. Tras ejecutar bootstrap.sh en el directorio <filename>fink-0.23.9</filename> resultante, necesitarás ejecutar <code>fink selfupdate</code>.
+</li><li>
+Los usuarios de la rama inestable pueden actualizarse simplemente
+instalando fink-0.24.5, mediante <code>fink selfupdate</code> desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante <code>fink --version</code>. Si el resultado del comando es menor que 0.24.5, ejéctuse <code>fink selfupdate</code> para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante <code>fink reinstall fink</code> y después <code>fink selfupdate</code>.
+</li>
+</ul>
+<p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
+
+<p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
+</body>
+</newsitem>
 
 <newsitem>
 <date>2005-04-29</date>

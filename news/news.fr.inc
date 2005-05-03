@@ -1,4 +1,4 @@
-<a name="29/04/2005 Fink et Tiger"><span class="news-date">29/04/2005: </span><span class="news-headline">Fink et Tiger</span></a><?php gray_line(); ?>
+<a name="29/04/2005%20Fink%20et%20Tiger"><span class="news-date">29/04/2005: </span><span class="news-headline">Fink et Tiger</span></a><?php gray_line(); ?>
 <p>Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la mise à jour :</p>
 <ul>
 <li>Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires.</li>
@@ -7,12 +7,12 @@
 </ul>
 <p>Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.</p>
 <p>Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.</p>
-<a name="20/11/2004 Solution aux problèmes gcc"><span class="news-date">20/11/2004: </span><span class="news-headline">Solution aux problèmes gcc</span></a><?php gray_line(); ?>
+<a name="20/11/2004%20Solution%20aux%20probl%C3%A8mes%20gcc"><span class="news-date">20/11/2004: </span><span class="news-headline">Solution aux problèmes gcc</span></a><?php gray_line(); ?>
 <p>Apple a publié une mise à jour de gcc3 en novembre 2004 (November 2004 gcc3 updater). Elle est disponible sur connect.apple.com après enregistrement gratuit. Cette mise à jour résout les problèmes du compilateur gcc3 dans XCode 1.5. Si vous utilisez ce dernier, vous devez installer la mise à jour. Elle s'effectuera correctement, que vous ayez ou non installé précédemment la solution recommandée par Fink.</p>
 <p>Remercions Apple d'avoir répondu à nos rapports sur ce sujet et d'avoir travaillé à la résolution de ce problème aussi rapidement que possible.</p>
 
 
-<a name="15/10/2004 Résolution de problèmes concernant gcc"><span class="news-date">15/10/2004: </span><span class="news-headline">Résolution de problèmes concernant gcc</span></a><?php gray_line(); ?>
+<a name="15/10/2004%20R%C3%A9solution%20de%20probl%C3%A8mes%20concernant%20gcc"><span class="news-date">15/10/2004: </span><span class="news-headline">Résolution de problèmes concernant gcc</span></a><?php gray_line(); ?>
 <p>Il s'avère que la version de gcc incluse dans XCode 1.5 produit des résultats incorrects avec du code C++ dans certains cas. Fink possède maintenant un mécanisme pour en avertir l'utilisateur et refusera bientôt d'utiliser cette version "vérolée" pour compiler les paquets qui présentent ce problème.</p>
 <p>Si vous êtes déjà passé à la version 1.5 de XCode, vous trouverez une solution décrite <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">ici</a> ou <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">là</a>.</p>
 <p>Si vous n'avez pas encore mis à jour XCode, il vous est conseillé de ne pas le faire tant que ce problème ne sera pas résolu.</p>

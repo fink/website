@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2005-05-01T08:04:03+02:00</dc:date>
+    <dc:date>2005-05-03T23:28:56+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger">
       <title>Fink et Tiger</title>
