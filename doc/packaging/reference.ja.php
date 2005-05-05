@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/24 02:10:00';
+$cvs_date = 'Date: 2005/04/24 02:28:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -293,6 +293,18 @@ CompileScript:  &lt;&lt;
 <pre>Depends: openssl097-shlibs, expat-shlibs</pre>
 						<p>
 							とすることと同じである．
+						</p>
+						<p>
+							この他の文法として， <code>(string)</code> 指定をすることもできる．
+							<code>string</code> が null でない場合， "true" を返す．
+						</p>
+<pre>
+Package: nethack%type_pkg[-x11]
+Type: -x11 (boolean)
+Depends: (%type_pkg[-x11]) x11
+</pre>
+						<p>
+							これにより，nethack-x11 は x11 パッケージに依存するが， nethack は依存しない．
 						</p>
 						<p>
 							Depends/BuildDepends を，複数のメジャーバージョンを持つ共有ライブラリパッケージに使用する場合，下記のようにしては<b>いけない</b>:
