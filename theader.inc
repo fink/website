@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.7 2003/11/14 03:26:31 htodd Exp $ */
+/* $Id: theader.inc,v 1.8 2005/05/05 21:09:37 fingolfin Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -98,7 +98,7 @@ if (!$is_home)
 <td align="right" class="layout">
 <span class="default">
 Hosted by <a href="http://sourceforge.net/"><img
-src="http://sourceforge.net/sflogo.php?group_id=17203" width="88"
+src="http://sflogo.sourceforge.net/sflogo.php?group_id=17203" width="88"
 height="31" border="0" alt="SourceForge Logo" style="vertical-align:text-bottom"></a>
 </span>
 </td>

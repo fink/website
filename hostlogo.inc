@@ -2,7 +2,7 @@
 $hostlogo = 1;
 	$img = '<a href="http://sourceforge.net/">
 			<img 
-				src="http://sourceforge.net/sflogo.php?group_id=17203" 
+				src="http://sflogo.sourceforge.net/sflogo.php?group_id=17203" 
 				width="88"
 				height="31" 
 				border="0" 
