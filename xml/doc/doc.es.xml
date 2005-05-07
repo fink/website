@@ -3,7 +3,7 @@
 <article filename="index" lang="es">
   <title>Fink - Documentación</title>
   <shorttitle>Documentación</shorttitle>
-  <cvsid>$Id: doc.es.xml,v 1.8 2004/10/20 08:13:44 dmacks Exp $</cvsid>
+  <cvsid>$Id: doc.es.xml,v 1.9 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
@@ -20,6 +20,8 @@ La documentación actual del Fink incluye:
 esto cubre la instalación del propio Fink, la instalación de paquetes, y actualizaciones del Fink. 
 Contiene instrucciones tanto para la version fuente como para la binaria.
 </li>
+      <li><varlink url="advanced/index.php" varurl="advanced/advanced.en.html">Fink Advanced Topics Guide</varlink> -
+covers more advanced concepts than those covered in the User's Guide.</li>
       <li><varlink url="x11/index.php" varurl="x11/x11.en.html">Ejecutando X11 en Mac OS X y Darwin</varlink> -
 cubre conceptos como la instalación y ejecución (tambien dedicado a los usuarios de Darwin y Mac OS X)</li>
     </ul>

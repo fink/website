@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.11 2005/03/08 14:31:13 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.12 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -21,7 +21,7 @@
 <ul>
 <li><varlink url="users-guide/index.php" varurl="users-guide/uguide.zh.html">Fink 用户指南</varlink> － 它涉及如何安装 Fink 自身，安装软件包，和升级到新的 Fink 版本。它包括对使用源代码版本和二进制版本的使用说明。
 </li>
-<li><varlink url="advanced/index.en.php" varurl="advanced/advanced.en.html">Fink Advanced Topics Guide</varlink> -
+<li><varlink url="advanced/index.php" varurl="advanced/advanced.en.html">Fink Advanced Topics Guide</varlink> -
 covers more advanced concepts than those covered in the User's Guide.</li>
 <li><varlink url="x11/index.php" varurl="x11/x11.zh.html">在 Darwin 和 Mac OS X 上运行 X11</varlink> － 涉及有关概念，安装和启动（同时面向 Darwin 和 Mac OS X 用户）</li>
 </ul>

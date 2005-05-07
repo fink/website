@@ -3,7 +3,7 @@
 <article filename="index" lang="ru">
     <title>Fink - Документация  </title>
     <shorttitle>Документация</shorttitle>
-    <cvsid>$Id: doc.ru.xml,v 1.2 2005/03/08 14:32:03 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: doc.ru.xml,v 1.3 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
     <preface>
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
@@ -20,7 +20,7 @@
                 обновление до новых версий Fink. Содержит инструкции
                 относительно исходного кода и бинарной версии.</li>
             <li>
-                <varlink url="advanced/index.en.php" varurl="advanced/advanced.en.html">Fink Advanced Topics Guide</varlink>  - 
+                <varlink url="advanced/index.php" varurl="advanced/advanced.en.html">Fink Advanced Topics Guide</varlink>  - 
 				covers more advanced concepts than those covered in the User's Guide.</li>
             <li>
                 <varlink url="x11/index.php" varurl="x11/x11.en.html">Выполнение

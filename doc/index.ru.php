@@ -1,14 +1,14 @@
 <?
 $title = "Документация";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/01/16 09:41:52';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/03/08 14:32:03';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Документация  </h1>
-<!--Generated from $Fink: doc.ru.xml,v 1.1 2005/01/16 09:41:52 horsager Exp $-->
+<!--Generated from $Fink: doc.ru.xml,v 1.2 2005/03/08 14:32:03 babayoshihiko Exp $-->
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
             Darwin без Fink и хочет узнать о переносе ПО Unix.</p>
@@ -22,7 +22,7 @@ include_once "header.inc";
                 обновление до новых версий Fink. Содержит инструкции
                 относительно исходного кода и бинарной версии.</li>
             <li>
-                <a href="advanced/index.en.php">Fink Advanced Topics Guide</a>  - 
+                <a href="advanced/index.php">Fink Advanced Topics Guide</a>  - 
 				covers more advanced concepts than those covered in the User's Guide.</li>
             <li>
                 <a href="x11/index.php">Выполнение

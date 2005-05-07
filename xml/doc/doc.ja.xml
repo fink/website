@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.15 2005/03/08 14:29:47 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.16 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -23,7 +23,7 @@
 Fink 本体のインストール、パッケージのインストール、新しい Fink リリースへのアップグレードなどが書かれています。
 ソースとバイナリリリースの両方の説明が書かれています
 </li>
-<li><varlink url="advanced/index.en.php" varurl="advanced/advanced.en.html">Fink 上級者向けトピックガイド</varlink> -
+<li><varlink url="advanced/index.php" varurl="advanced/advanced.en.html">Fink 上級者向けトピックガイド</varlink> -
 ユーザーガイドよりも上級者向けのトピックをカバーしています</li>
 <li><varlink url="x11/index.php" varurl="x11/x11.ja.html">Darwin と Mac OS X での X11</varlink> -
 コンセプト、インストール、起動について書かれています (一般的な Darwin と Mac OS X ユーザー向け) </li>

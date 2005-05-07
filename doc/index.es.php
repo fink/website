@@ -23,6 +23,8 @@ La documentación actual del Fink incluye:
 esto cubre la instalación del propio Fink, la instalación de paquetes, y actualizaciones del Fink. 
 Contiene instrucciones tanto para la version fuente como para la binaria.
 </li>
+      <li><a href="advanced/index.php">Fink Advanced Topics Guide</a> -
+covers more advanced concepts than those covered in the User's Guide.</li>
       <li><a href="x11/index.php">Ejecutando X11 en Mac OS X y Darwin</a> -
 cubre conceptos como la instalación y ejecución (tambien dedicado a los usuarios de Darwin y Mac OS X)</li>
     </ul>

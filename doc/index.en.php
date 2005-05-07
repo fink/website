@@ -25,7 +25,7 @@ this covers installing Fink itself, installing packages, and upgrading
 to a new Fink release. It contains instructions for both the source
 and the binary release.
 </li>
-      <li><a href="advanced/index.en.php">Fink Advanced Topics Guide</a> -
+      <li><a href="advanced/index.php">Fink Advanced Topics Guide</a> -
 covers more advanced concepts than those covered in the User's Guide.</li>
       <li><a href="x11/index.php">Running X11 on Darwin and Mac OS X</a> -
 covers concepts, installation and launching (also intended for Darwin
