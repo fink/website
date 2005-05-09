@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/24 02:28:18';
+$cvs_date = 'Date: 2005/05/09 08:49:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 
@@ -515,7 +515,10 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
-在补丁阶段运行的一系列命令。参阅下面关于脚本的注意事项。这是对软件包打补丁或修改软件包的地方。在这里没有默认运行的命令。在命令运行之前，会进行百分号展开。(查阅上一部分)。
+在补丁阶段运行的一系列命令。这是对软件包打补丁或修改软件包的地方。
+参阅下面关于<a href="reference.php?phpLang=zh#scripts">脚本的注意事项</a>。
+在命令运行之前，会进行<a href="format.php?phpLang=zh#percent">百分号展开</a>。
+在这里没有默认运行的命令。
 </p>
 </td></tr></table>
 <p><b>编译阶段：</b></p>
@@ -632,7 +635,10 @@ scheme.
 
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
-在编译阶段运行的一系列命令。参阅下面关于脚本的注解。这里是放置配置和编译软件包的命令的地方。通常默认值是：
+在编译阶段运行的一系列命令。这里是放置配置和编译软件包的命令的地方。
+参阅下面关于<a href="reference.php?phpLang=zh#scripts">脚本的注意事项</a>。
+在命令运行之前，会进行<a href="format.php?phpLang=zh#percent">百分号展开</a>。
+通常默认值是：
 </p>
 <pre>./configure %c
 make</pre>
@@ -677,9 +683,6 @@ make test</pre>
 earlier, and is 
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
 
-<p>
-在命令执行之前，会进行百分号展开(参阅前面的章节)。
-</p>
 </td></tr><tr valign="top"><td>NoPerlTests</td><td> 
 <p>
 <b>从 fink 0.13.7 之后开始。</b>
@@ -699,8 +702,10 @@ earlier, and is
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
-一系列在安装阶段运行的命令。查看下面关于脚本的注解。
+一系列在安装阶段运行的命令。
 这是把软件包的需要文件拷贝到正确的地方的指令。
+参阅下面关于<a href="reference.php?phpLang=zh#scripts">脚本的注意事项</a>。
+在命令运行之前，会进行<a href="format.php?phpLang=zh#percent">百分号展开</a>。
 通常的默认值是：
 </p>
 <pre>make install prefix=%i</pre>
@@ -727,7 +732,7 @@ earlier, and is
  INSTALLMAN3DIR=%i/share/man/man3</pre>
 <p>
 如果软件包支持的话，首选会使用 <code>make install
-DESTDIR=%d</code>。在命令执行之前，会进行百分号替换(参看前面的章节)。
+DESTDIR=%d</code>。
 </p>
 </td></tr><tr valign="top"><td>AppBundles</td><td>
 

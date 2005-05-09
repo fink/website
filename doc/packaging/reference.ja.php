@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/05 13:47:09';
+$cvs_date = 'Date: 2005/05/09 08:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -646,10 +646,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 					</td></tr><tr valign="top"><td>PatchScript</td><td>
 						<p>
 							パッチ段階で実行されるコマンドのリスト．
-							下記のスクリプトの注意書きを参照．
-							ここには，パッチを当てるか，またはパッケージに変更を加えるコマンドを指定する．
-							デフォルト値はない．
-							コマンドが実行される前に，パーセント展開が行われる (前節を参照)．
+							下記のスクリプトの注意書きを参照してください．
+							ここには，パッチを当てるか，またはパッケージに変更を加えるコマンドを指定します．
+							下記の<a href="reference.php?phpLang=ja#scripts">スクリプトに関する注記</a>もあわせて参照してください．
+							コマンド実行前に，<a href="format.php?phpLang=ja#percent">パーセント展開</a>が行われます．
+							デフォルト値はありません．
 						</p>
 					</td></tr></table>
 			<p>
@@ -759,6 +760,8 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 							コンパイル段階で実行されるコマンドのリスト．
 							下記のスクリプトの注意書きを参照してください．
 							パッケージの configure およびコンパイルを行うコマンドをここに指定します．
+							下記の<a href="reference.php?phpLang=ja#scripts">スクリプトに関する注記</a>もあわせて参照してください．
+							コマンド実行前に，<a href="format.php?phpLang=ja#percent">パーセント展開</a>が行われます．
 							通常は以下の通り．
 						</p>
 <pre>./configure %c
@@ -806,9 +809,6 @@ make test</pre>
 ここで， <code>$perlarchdir</code> はバージョン 5.8.0 以前では "darwin" であり，
 バージョン 5.8.1 以降では "darwin-thread-multi-2level" である．
 </p>
-						<p>
-							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
-						</p>
 					</td></tr><tr valign="top"><td>NoPerlTests</td><td>
 						<p>
 							<b>Fink 0.13.7 以降で導入:</b>
@@ -835,16 +835,18 @@ make test</pre>
 						</p>
 					</td></tr><tr valign="top"><td>InstallScript</td><td>
 						<p>
-							インストール段階で実行されるコマンドのリスト．
-							下記のスクリプトの注意書きを参照．
-							ここには必要な全てのファイルをパッケージの格納用ディレクトリにコピーするコマンドを指定する．
-							普通，デフォルト値は次のようになる．
+							インストール段階におけるコマンドの一覧．
+							ここでコマンドを指定することで，必要な全てのファイルを一時 dpkg ディレクトリにコピーします．
+							下記の<a href="reference.php?phpLang=ja#scripts">スクリプトに関する注記</a>もあわせて参照してください．
+							コマンド実行前に，<a href="format.php?phpLang=ja#percent">パーセント展開</a>が行われます．
+							通常，デフォルトでは:
 						</p>
 <pre>make install prefix=%i</pre>
 						<p>
-							このデフォルト値は GNU autoconf を利用するパッケージには適切だ．
+							となります．
+							このデフォルト値は GNU autoconf を利用するパッケージには適切です．
 							Perl タイプ (フィールド Type で指定される) のパッケージのうち perl のバージョン指定がないものでは，
-							デフォルト値は次のようになる．
+							デフォルト値は次のようになります．
 						</p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
 INSTALLARCHLIB=%i/lib/perl5/darwin \
@@ -881,7 +883,6 @@ INSTALLSCRIPT=%i/bin
 </p>
 						<p>
 							パッケージが対応しているなら，代わりに <code>make install DESTDIR=%d</code> を使うことが望ましい．
-							コマンドの実行前に，パーセント展開が行われる (前節を参照)．
 						</p>
 					</td></tr><tr valign="top"><td>AppBundles</td><td>
 						<p>
