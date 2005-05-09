@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.60 2005/04/11 23:07:20 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.61 2005/05/09 00:59:43 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2022,14 +2022,15 @@ for each variant.
 </p>
 </itemd></item>
 
-<item><itemt>PatchScript</itemt>
+<item><itemt>aaaPatchScript</itemt>
 <itemd>
 <p>
-A list of commands that are run in the patch phase. See the note
-on scripts below. This is the place to put commands that patch or
-otherwise modify the package. There is no default. Before the
-commands are executed, percent expansion takes place (see last
-section).
+A list of commands that are run in the patch phase. This is the place
+to put commands that patch or otherwise modify the package source. See
+the <xref chapter="reference" section="scripts">note on scripts</xref>
+below. Before the commands are executed, <xref chapter="format"
+section="percent">percent expansion</xref> takes place. There is no
+default.
 </p>
 </itemd></item>
 
@@ -2164,12 +2165,15 @@ scheme.
 </p>
 </itemd></item>
 
-<item><itemt>CompileScript</itemt>
+<item><itemt>aaaCompileScript</itemt>
 <itemd>
 <p>
-A list of commands that are run in the compile phase. See the note
-on scripts below. This is the place to put commands that configure and
-compile the package. Normally the default is:
+A list of commands that are run in the compile phase. This is the
+place to put commands that configure and compile the package. See
+the <xref chapter="reference" section="scripts">note on scripts</xref>
+below. Before the commands are executed, <xref chapter="format"
+section="percent">percent expansion</xref> takes place. Normally the
+default is:
 </p>
 <codeblock>./configure %c
 make</codeblock>
@@ -2215,10 +2219,6 @@ make test</codeblock>
 <p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
 earlier, and is 
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
-<p>
-Before the commands are executed, percent expansion takes place
-(see previous section).
-</p>
 </itemd></item>
 
 <item><itemt>NoPerlTests</itemt>
@@ -2252,12 +2252,15 @@ then these scripts are adapted to deal with the central .pod file
 </p>
 </itemd></item>
 
-<item><itemt>InstallScript</itemt>
+<item><itemt>aaaInstallScript</itemt>
 <itemd>
 <p>
-A list of commands that are run in the install phase. See the note
-on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. Normally the
+A list of commands that are run in the install phase. This is the
+place to put commands that copy all the necessary files into the
+temporary dpkg directory for the package. See the <xref
+chapter="reference" section="scripts">note on scripts</xref>
+below. Before the commands are executed, <xref chapter="format"
+section="percent">percent expansion</xref> takes place. Normally the
 default is:
 </p>
 <codeblock>make install prefix=%i</codeblock>
@@ -2300,8 +2303,7 @@ earlier, and is
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
 <p>
 If the package supports it, it is preferably to use <code>make install
-DESTDIR=%d</code> instead. Before the commands are executed, percent
-expansion takes place (see previous section).
+DESTDIR=%d</code> instead.
 </p>
 </itemd></item>
 

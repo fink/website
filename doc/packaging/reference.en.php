@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/04/11 23:07:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/05/09 00:59:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -700,13 +700,13 @@ easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
 </p>
-</td></tr><tr valign="top"><td>PatchScript</td><td>
+</td></tr><tr valign="top"><td>aaaPatchScript</td><td>
 <p>
-A list of commands that are run in the patch phase. See the note
-on scripts below. This is the place to put commands that patch or
-otherwise modify the package. There is no default. Before the
-commands are executed, percent expansion takes place (see last
-section).
+A list of commands that are run in the patch phase. This is the place
+to put commands that patch or otherwise modify the package source. See
+the <a href="reference.php?phpLang=en#scripts">note on scripts</a>
+below. Before the commands are executed, <a href="format.php?phpLang=en#percent">percent expansion</a> takes place. There is no
+default.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
@@ -825,11 +825,13 @@ compilers, which introduced a binary incompatibility between libraries
 that involve C++ code which is not reflected in the versioning
 scheme.
 </p>
-</td></tr><tr valign="top"><td>CompileScript</td><td>
+</td></tr><tr valign="top"><td>aaaCompileScript</td><td>
 <p>
-A list of commands that are run in the compile phase. See the note
-on scripts below. This is the place to put commands that configure and
-compile the package. Normally the default is:
+A list of commands that are run in the compile phase. This is the
+place to put commands that configure and compile the package. See
+the <a href="reference.php?phpLang=en#scripts">note on scripts</a>
+below. Before the commands are executed, <a href="format.php?phpLang=en#percent">percent expansion</a> takes place. Normally the
+default is:
 </p>
 <pre>./configure %c
 make</pre>
@@ -875,10 +877,6 @@ make test</pre>
 <p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
 earlier, and is 
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
-<p>
-Before the commands are executed, percent expansion takes place
-(see previous section).
-</p>
 </td></tr><tr valign="top"><td>NoPerlTests</td><td> 
 <p>
 <b>Introduced in fink &gt; 0.13.7.</b>
@@ -902,11 +900,12 @@ specific version of perl such as 5.6.0,
 then these scripts are adapted to deal with the central .pod file
 <code>/sw/lib/perl5/$version/perllocal.pod</code>.)
 </p>
-</td></tr><tr valign="top"><td>InstallScript</td><td>
+</td></tr><tr valign="top"><td>aaaInstallScript</td><td>
 <p>
-A list of commands that are run in the install phase. See the note
-on scripts below. This is the place to put commands that copy all
-necessary files to the stow directory for the package. Normally the
+A list of commands that are run in the install phase. This is the
+place to put commands that copy all the necessary files into the
+temporary dpkg directory for the package. See the <a href="reference.php?phpLang=en#scripts">note on scripts</a>
+below. Before the commands are executed, <a href="format.php?phpLang=en#percent">percent expansion</a> takes place. Normally the
 default is:
 </p>
 <pre>make install prefix=%i</pre>
@@ -949,8 +948,7 @@ earlier, and is
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
 <p>
 If the package supports it, it is preferably to use <code>make install
-DESTDIR=%d</code> instead. Before the commands are executed, percent
-expansion takes place (see previous section).
+DESTDIR=%d</code> instead.
 </p>
 </td></tr><tr valign="top"><td>AppBundles</td><td>
 <p>
