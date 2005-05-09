@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.61 2005/05/09 00:59:43 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.62 2005/05/09 02:06:55 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2022,7 +2022,7 @@ for each variant.
 </p>
 </itemd></item>
 
-<item><itemt>aaaPatchScript</itemt>
+<item><itemt>PatchScript</itemt>
 <itemd>
 <p>
 A list of commands that are run in the patch phase. This is the place
@@ -2165,7 +2165,7 @@ scheme.
 </p>
 </itemd></item>
 
-<item><itemt>aaaCompileScript</itemt>
+<item><itemt>CompileScript</itemt>
 <itemd>
 <p>
 A list of commands that are run in the compile phase. This is the
@@ -2252,7 +2252,7 @@ then these scripts are adapted to deal with the central .pod file
 </p>
 </itemd></item>
 
-<item><itemt>aaaInstallScript</itemt>
+<item><itemt>InstallScript</itemt>
 <itemd>
 <p>
 A list of commands that are run in the install phase. This is the
