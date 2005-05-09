@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/05/09 00:59:43';
+$cvs_date = 'Date: 2005/05/09 02:06:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -700,7 +700,7 @@ easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
 </p>
-</td></tr><tr valign="top"><td>aaaPatchScript</td><td>
+</td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
 A list of commands that are run in the patch phase. This is the place
 to put commands that patch or otherwise modify the package source. See
@@ -825,7 +825,7 @@ compilers, which introduced a binary incompatibility between libraries
 that involve C++ code which is not reflected in the versioning
 scheme.
 </p>
-</td></tr><tr valign="top"><td>aaaCompileScript</td><td>
+</td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
 A list of commands that are run in the compile phase. This is the
 place to put commands that configure and compile the package. See
@@ -900,7 +900,7 @@ specific version of perl such as 5.6.0,
 then these scripts are adapted to deal with the central .pod file
 <code>/sw/lib/perl5/$version/perllocal.pod</code>.)
 </p>
-</td></tr><tr valign="top"><td>aaaInstallScript</td><td>
+</td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
 A list of commands that are run in the install phase. This is the
 place to put commands that copy all the necessary files into the
