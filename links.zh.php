@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/04/08 08:19:05 $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -18,11 +18,11 @@ include "header.inc";
 <!-- start translation -->
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.</li>
 <!-- end translation -->
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> － #fink IRC 频道的日志和统计。</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> － 非官方的 Fink 发布版以及一本关于 Fink 使用提示的书。</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> － 一组脚本程序，用来帮助在网络上通过 NFS 分发 fink 软件包。</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> － 一组脚本程序，用来帮助在网络上通过 NFS 分发 fink 软件包。</li -->
 </ul>
 
 <p>开源软件</p>
@@ -65,7 +65,6 @@ target="_blank">HEP on X</a> － 一些 RPM 包的集合。</li>
 
 <p>具有相关信息的站点</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> － 移植信息和新闻，以及一个软件归档库。</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> － 在 Darwin 和 Mac OS X 上运行 XFree86。</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> － 新闻，文章和软件归档库。</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> － 帮助在 Mac 上运行 GIMP，GTK 以及 X。</li>

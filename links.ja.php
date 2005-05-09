@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "リンク集";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/12 02:40:15 $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -23,13 +23,13 @@ Fink ミラーの登録方法と現在のミラーのステータスの情報が
 Fink の GUI 。</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - 別の GUI for Fink (まだ alpha)。</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - パッケージデータベースの検索プラグイン Mozilla based ブラウザのみ (Fink のための検索)!</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Fink の宣伝のために評価してください。
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Fink の宣伝のために評価してください。</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 #fink IRC チャンネルの過去ログと統計。</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 非公式の Fink CD とFink tips の本を出版している。</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-Fink パッケージをネットワーククライアントに NFS で配布するスクリプト。</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
+Fink パッケージをネットワーククライアントに NFS で配布するスクリプト。</li -->
 </ul>
 
 <p>オープンソースソフトウェア</p>
@@ -54,6 +54,9 @@ X11 と Mac OS X を統合しようとしている X11 ウィンドウマネー�
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin Distribution</a></li>
 <li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin Ports</a> - 
 FreeBSD の ports collection をポートしている。</li>
+
+<li><a href="http://www.ie.u-ryukyu.ac.jp/darwin2/" target="_blank">EasyPackage</a> - 
+日本語での利用を前提としたパッケージングをしている。（日本語ページのみ）</li>
 </ul>
 
 <p>ポートされたパッケージ集</p>
@@ -70,14 +73,14 @@ RPM パッケージのコレクション。</li>
 
 <p>関連情報</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-ポートに関する情報やニュース。ソフトウェアアーカイブもある。</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 XFree86 を Darwin や Mac OS X で使う。</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
 ニュース、記事、ソフトウェアアーカイブ。</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 Mac 用の GIMP、GTK、X のサイト。</li>
+<li><a href="http://pc7.2ch.net/test/read.cgi/mac/1089767349/l50" target="_blank">ＦＩＮＫ使ってるの洩れだけなのかっ！？</a> -
+「2ちゃんねる」の Fink スレッド。（日本語ページのみ）</li>
 </ul>
 
 

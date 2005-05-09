@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 08:57:52 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -21,13 +21,13 @@ mensajes de estado acerca de los espejos actuales.</li>
 una GUI para Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - otra interface gráfica para Fink (aún alfa).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Plugin de busqueda para la base de Paquetes. Para navegadores basados en Mozilla exclusivamente (busqueda para Fink)!</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Califica Fink @ O'Reilly's OSDir.com</a> - Calificanos y ayudanos apromover Fink.
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Califica Fink @ O'Reilly's OSDir.com</a> - Calificanos y ayudanos apromover Fink.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 estadísticas y logs del canal de IRC #fink</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">Diversión con Fink</a> -
 Distribución no oficial en CD de Fink y libro de consejos de Fink</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink en NFS</a> -
-Un grupo de scripts para facilitar la distribución de los paquetes de fink packages a clientes de red mediante NFS</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink en NFS</a> -
+Un grupo de scripts para facilitar la distribución de los paquetes de fink packages a clientes de red mediante NFS</li -->
 </ul>
 
 <p>Software de Codigo Abierto</p>
@@ -72,8 +72,6 @@ target="_blank">HEP en X</a> - Una colección de paquetes RPM</li>
 
 <p>Sitios con información relacionada</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-información de puertos, noticias y archivo de software</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 ejecutando XFree86 en Darwin y Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -

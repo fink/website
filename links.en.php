@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -19,13 +19,13 @@ browser window.</p>
 a GUI for Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 the #fink IRC channel logs & stats</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 Un-official Fink CD distribution and book of Fink tips</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-Set of scripts to aid distributing fink packages to network clients via NFS</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
+Set of scripts to aid distributing fink packages to network clients via NFS</li -->
 </ul>
 
 <p>Open Source Software</p>
@@ -72,8 +72,6 @@ target="_blank">HEP on X</a> - A collection of RPM packages</li>
 
 <p>Sites with related information</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-porting info and news, plus a software archive</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 running XFree86 on Darwin and Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -

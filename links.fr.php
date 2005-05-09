@@ -1,7 +1,7 @@
 <?
 $title = "Liens";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -23,8 +23,8 @@ interface graphique pour Fink</li>
 logs & stats du canal IRC #fink</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 distribution non-officielle de Fink sur CD et livre de trucs et astuces sur Fink</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-collection de scripts facilitant la distribution des paquets Fink sur des réseaux clients via NFS</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
+collection de scripts facilitant la distribution des paquets Fink sur des réseaux clients via NFS</li -->
 </ul>
 
 <p>Logiciels Open Source</p>
@@ -68,8 +68,6 @@ target="_blank">HEP on X</a> - collection de paquets RPM</li>
 
 <p>Sites contenant des informations connexes</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-information et nouvelles sur le portage, plus une archive de logiciels</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 ou comment faire tourner XFree86 sur Darwin et Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -

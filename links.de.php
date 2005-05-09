@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/11 13:59:06 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -16,12 +16,15 @@ include "header.inc";
 - Wie werde ich ein Fink mirror, welche mirror gibt es und wie ist deren Status?</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 ein graphisches Frontend für Fink</li>
+<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 geloggt und ausgewertete Daten des #fink IRC chats</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 Inoffizielle Fink CD Distribution sowie ein Buch mit Fink Tipps</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-Eine Sammlung von Skripts die es ermöglichen Fink und seine Pakete via NFS über ein Netzwerk zu verteilen.</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
+Eine Sammlung von Skripts die es ermöglichen Fink und seine Pakete via NFS über ein Netzwerk zu verteilen.</li -->
 </ul>
 
 <p>Open Source Software</p>
@@ -68,8 +71,6 @@ target="_blank">HEP on X</a> - Eine Sammlung von RPM Paketen</li>
 
 <p>Web-Sites mit relevanten Informationen</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-porting Informationen und Neuigkeiten, sowie ein Software Archiv</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 wie läuft XFree86 UF Darwin und Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -

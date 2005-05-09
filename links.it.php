@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: claudio87 $';
-$cvs_date = '$Date: 2004/11/12 12:01:38 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -16,13 +16,13 @@ include "header.inc";
 <li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> - Istruzioni su come diventare un mirror Fink ed un aggiornamento sui mirror attuali.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 un GUI per Fink</li>
-<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Valuta Fink @ O'Reilly's OSDir.com</a> - Valutate e aiutateci a promuovere Fink.
+<li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Valuta Fink @ O'Reilly's OSDir.com</a> - Valutate e aiutateci a promuovere Fink.</li>
 <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
 il canale IRC #fink, logs & statistiche</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
 Distribuzione non ufficiale di cd di Fink e libro di trucchi per Fink</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink su NFS</a> -
-Set di script che aiuta la distribuzione di pacchetti fink a network clients attraverso NFS</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink su NFS</a> -
+Set di script che aiuta la distribuzione di pacchetti fink a network clients attraverso NFS</li -->
 </ul>
 
 <p>Open Source Software</p>
@@ -69,8 +69,6 @@ target="_blank">HEP on X</a> - Collezione di pacchetti RPM</li>
 
 <p>Siti con informazioni correlate</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a> -
-portale di informazioni e novità contenente anche un archivio software</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
 usare XFree86 su Darwin e Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -

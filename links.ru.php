@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "Links";
-$cvs_author = '$Author: horsager $';
-$cvs_date = '$Date: 2005/01/16 09:32:59 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/09 00:12:44 $';
 
 include "header.inc";
 ?>
@@ -18,12 +18,13 @@ include "header.inc";
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - Другой графический интерфейс пользователя для Fink (все еще альфа-версия).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Поисковый плагин для базы данных по пакетам. Только браузеры на базе Mozilla (поиск для Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a>-
- Дайте нам оценку и окажите содействие в развитии Fink.<li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a>-
+ Дайте нам оценку и окажите содействие в развитии Fink.</li>
+ <li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a>-
  Журналы и статистика канала IRC #fink</li>
 <li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a>-
  Неофициальная дистрибуция компакт-дисков Fink и книги подсказок Fink</li>
-<li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a>-
- Набор скриптов для содействия дистрибуции пакетов fink сетевым клиентам через NFS</li>
+<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a>-
+ Набор скриптов для содействия дистрибуции пакетов fink сетевым клиентам через NFS</li -->
 </ul>
 
 <p>Программное
@@ -75,8 +76,6 @@ target="_blank">HEP on X</a>-
 
 <p>Веб-сайты с информацией о смежных вопросах</p>
 <ul>
-<li><a href="http://www.darwinfo.org/" target="_blank">Darwinfo</a>-
- информация и новости о портинге плюс архив ПО</li>
 <li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a>-
  запуск XFree86 в Darwin и Mac OS X</li>
 <li><a href="http://www.stepwise.com/" target="_blank">StepWise</a>-
