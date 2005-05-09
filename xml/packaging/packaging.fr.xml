@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.54 2005/04/13 02:56:01 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.55 2005/05/09 04:47:33 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Last changed..." pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -703,7 +703,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
 </itemd></item>
 <item><itemt>PatchScript</itemt>
 <itemd>
-<p>Liste de commandes à exécuter lors de la phase d'application des rustines. Voir plus bas la note sur les scripts. C'est là où vous pouvez placer les commandes qui modifient le paquet. Il n'existe pas de script par défaut. L'interprétation des raccourcis (voir la section précédente) a lieu avant que les commandes ne soient exécutées.</p>
+<p>Liste de commandes à exécuter lors de la phase d'application des rustines. C'est là où vous pouvez placer les commandes qui corrigent ou modifient le paquet source. Voir plus loin la <xref chapter="reference" section="scripts">note au sujet des scripts</xref>. L'<xref chapter="format" section="percent">interprétation des raccourcis</xref> a lieu avant que les commandes ne soient exécutées. Il n'existe pas de script par défaut.</p>
 </itemd></item>
 </itemtable>
 <p><em>Phase de compilation :</em></p>
@@ -758,7 +758,7 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) \
 </itemd></item>
 <item><itemt>CompileScript</itemt>
 <itemd>
-<p>Liste de commandes à exécuter durant la phase de compilation. Voir plus bas la note au sujet des scripts. C'est là qu'il faut mettre les commandes de configuration et de compilation du paquet. Normalement, les commandes sont les suivantes :</p>
+<p>Liste de commandes à exécuter durant la phase de compilation. C'est là qu'il faut mettre les commandes de configuration et de compilation du paquet. Voir plus loin la <xref chapter="reference" section="scripts">note au sujet des scripts</xref>. L'<xref chapter="format" section="percent">interprétation des raccourcis</xref> a lieu avant que les commandes ne soient exécutées. Normalement, les commandes sont les suivantes :</p>
 <codeblock>./configure %c
 make</codeblock>
 <p>Elles conviennent pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut (à partir de la version 0.13.4 de fink) sont les suivantes :</p>
@@ -793,7 +793,6 @@ make test</codeblock>
 make
 make test</codeblock>
 <p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
-<p>L'interprétation des raccourcis (voir la section précédente) a lieu avant que les commandes soient exécutées.</p>
 </itemd></item>
 <item><itemt>NoPerlTests</itemt>
 <itemd> 
@@ -807,7 +806,7 @@ make test</codeblock>
 </itemd></item>
 <item><itemt>InstallScript</itemt>
 <itemd>
-<p>Liste de commandes à exécuter durant la phase d'installation. Voir plus bas la note au sujet des scripts. C'est là où il faut mettre les commandes qui copient tous les fichiers requis dans le répertoire de construction du paquet. Normalement, on utilise :</p>
+<p>Liste de commandes à exécuter durant la phase d'installation. C'est là où il faut mettre les commandes qui copient tous les fichiers requis dans le répertoire de construction du paquet. Voir plus loin la <xref chapter="reference" section="scripts">note au sujet des scripts</xref>. L'<xref chapter="format" section="percent">interprétation des raccourcis</xref> a lieu avant que les commandes ne soient exécutées. Normalement, on utilise :</p>
 <codeblock>make install prefix=%i</codeblock>
 <p>Ceci convient pour les paquets utilisant GNU autoconf. Pour ceux de type perl (indiqué via le champ Type) dont la version perl n'est pas indiquée, les commandes par défaut (à partir de la version 0.13.4 de fink) sont les suivantes :</p>
 <codeblock>make install INSTALLPRIVLIB=%i/lib/perl5 \
@@ -834,7 +833,7 @@ make test</codeblock>
  INSTALLSITEBIN=%i/bin \
  INSTALLSCRIPT=%i/bin</codeblock>
 <p>où <code>$perlarchdir</code> est "darwin" pour les versions antérieures ou égales à 5.8.0, et "darwin-thread-multi-2level" pour les versions postérieures ou égales à 5.8.1.</p>
-<p>Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>. L'interprétation des raccourcis (voir section précédente) a lieu avant que les commandes ne soient exécutées .</p>
+<p>Si le paquet l'admet, il est préférable d'utiliser <code>make install DESTDIR=%d</code>.</p>
 </itemd></item>
 <item><itemt>AppBundles</itemt>
 <itemd>
