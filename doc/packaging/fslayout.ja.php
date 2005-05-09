@@ -62,19 +62,19 @@ include_once "header.ja.inc";
 					</td><td>
 						<p>
 							アーキテクチャ依存のデータファイルやライブラリ用．
-							静的および共有ライブラリは，避ける理由が特にない限り <code>/sw/lib</code> 直下に置く．
+							静的および共有ライブラリは，避ける理由が特にない限り <code>/sw/lib</code> 直下に置きます．
 							ユーザが直接起動することのない実行可能プログラム
-							(普通なら <code>libexec</code> 下に置かれるはずのもの) もここに置く．
+							(普通なら <code>libexec</code> 下に置かれるはずのもの) もここに置きます．
 						</p>
 						<p>
-							パッケージは固有のデータやロード可能モジュールを保存するサブディレクトリを自由に作成できます．
+							パッケージは，固有のデータやロード可能モジュールを保存するサブディレクトリを自由に作成できます．
 							必ず互換性を考慮したディレクトリ名を使って下さい．
 							賢明な方法は，そのサブディレクトリの名前にパッケージの「メジャーバージョン」を含めたり，
 							「メジャーバージョン」をディレクトリ名にしたさらに深い階層を作ることです
 							(<code>/sw/lib/perl5</code> や <code>/sw/lib/apache/1.3</code> など)．
-							ディレクトリにホストの種類を使うときには注意して下さい．
-							<code>powerpc-apple-darwin1.3.3</code> は互換性の観点から問題があります．
-							<code>powerpc-apple-darwin1.3</code> または単に <code>powerpc-apple-darwin</code> とすべきです．
+							ディレクトリにホストの種類を使うときには注意が必要です．
+							<code>powerpc-apple-darwin1.3.3</code> は，互換性の観点から問題があります．
+							<code>powerpc-apple-darwin1.3</code> または単に <code>powerpc-apple-darwin</code> とします．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share</code>
@@ -112,7 +112,7 @@ include_once "header.ja.inc";
 							README, LICENSE, COPYING はここに保存する．
 							全てのパッケージは，ここに各「パッケージ名」に対応したサブディレクトリを作らなければいけない．
 							名前には (「パッケージ名」そのものの一部でない限り) 「バージョン」を含めてはいけない．
-							ヒント: 単に <code>%n</code> を使うとよい．
+							単に <code>%n</code> を使うとよいでしょう．
 						</p>
 					</td></tr><tr valign="top"><td>
 						<code>/sw/share/locale</code>
@@ -132,7 +132,7 @@ include_once "header.ja.inc";
 					</td><td>
 						<p>
 							設定ファイル用．
-							複数のファイルを使用するパッケージはここにサブディレクトリを作らなければいけない．
+							複数のファイルを使用するパッケージは，ここにサブディレクトリを作らなければいけない．
 							区別のため，そのサブディレクトリにはパッケージまたはその中のプログラムの名前を付けなければいけない．
 						</p>
 					</td></tr><tr valign="top"><td>

@@ -93,7 +93,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 			<p>
-				推奨されない，旧式の記法は「RFC 822 ヘッダ折り畳み方法」を手本に作られました．
+				今は推奨されない旧式の記法は「RFC 822 ヘッダ折り畳み方法」を手本に作られました．
 				空白で始まる行を前の行からの続きと認識します．
 				例:
 			</p>
@@ -176,7 +176,7 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>%a</td><td>
 						<p>
-							p<b>a</b>tches ．
+							p<b>a</b>tches．
 							パッチを検索するディレクトリパス．
 						</p>
 					</td></tr><tr valign="top"><td>%b</td><td>
