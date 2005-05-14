@@ -240,7 +240,7 @@ include_once "header.ja.inc";
 				libpng, libpng-shlibs, libpng3, libpng3-shlibs です．
 				libpng と libpng3 はどちらか片方しか同時にインストールできませんが，
 				libpng-shlibs と libpng3-shlibs は同時にインストールできます．
-				(これら 4 つのパッケージのビルドに必要な .info ファイルは 2 つだけであることに注意して下さい．)
+				(これら 4 つのパッケージのビルドに必要な .info ファイルは 2 つだけであることに注意してください．)
 			</p>
 			<p>
 				共有ライブラリ自身とそれに関わるファイルは，パッケージ barN-shlibs に入ります．
@@ -528,11 +528,11 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			
 			<p>
 				2003 年 5 月以来， Fink には Perl モジュールに対する新しいポリシーがあります．
-				これは 2004 年 4 月に見直しされました．
+				これは 2004 年 4 月に見直されました．
 			</p>
 			<p>
 				伝統的に，perl モジュールの Fink パッケージには <code>-pm</code> が後置され，
-				ディレクティブ <code>Type: perl</code> を使ってビルドされて来ました．
+				ディレクティブ <code>Type: perl</code> を使ってビルドされていました．
 				このディレクティブは Perl モジュールのファイルを
 				<code>/sw/lib/perl5</code> 及び/または <code>/sw/lib/perl5/darwin</code> に格納していました．
 				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 

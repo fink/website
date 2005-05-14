@@ -235,7 +235,7 @@ SplitOff: &lt;&lt;
 							値は <code>Type</code> に依存するが，常に存在する（または空欄）．
 							<code>SplitOff: InstallScript</code> で使われる場合，
 							<code>SplitOff</code> パッケージの <code>InstallScript</code> デフォルトが空欄であっても，
-							この展開は<b>親</b>のデフォルトになります．
+							この展開は<b>親</b>のデフォルトになる．
 							
 						</p>
 					</td></tr></table>

@@ -147,7 +147,7 @@ include_once "header.ja.inc";
 		<h2><a name="avoid">4.3 避けるべきこと</a></h2>
 			
 			<p>
-				<code>/sw</code> 下には，上述のもの以外ディレクトリを作ってはいけない．
+				<code>/sw</code> 下には，上述のもの以外ディレクトリを作ってはいけません．
 				特に以下のディレクトリを作らないこと:
 				<code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>,
 				<code>/sw/libexec</code>, <code>/sw/lib/locale</code>
