@@ -4,7 +4,8 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
-users.
+users.  In the meantime, new users should bootstrap fink 0.23.9, just
+as stable users, below.
 </li><li>
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an

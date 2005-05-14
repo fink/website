@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-05-03T23:57:28+02:00</dc:date>
+    <dc:date>2005-05-14T15:59:46-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
       <title>Fink and Tiger.</title>
@@ -17,7 +17,8 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 
 
 A binary installer will be available within a few weeks, for binary-only
-users.
+users.  In the meantime, new users should bootstrap fink 0.23.9, just
+as stable users, below.
 
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an
@@ -49,7 +50,8 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 
 
 A binary installer will be available within a few weeks, for binary-only
-users.
+users.  In the meantime, new users should bootstrap fink 0.23.9, just
+as stable users, below.
 
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.15 2005/05/01 23:22:33 alexkhansen Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.16 2005/05/14 20:00:33 rangerrick Exp $</cvsid>
 
 
 <newsitem>
@@ -13,7 +13,8 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
-users.
+users.  In the meantime, new users should bootstrap fink 0.23.9, just
+as stable users, below.
 </li><li>
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
