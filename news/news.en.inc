@@ -1,4 +1,4 @@
-<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
@@ -30,7 +30,7 @@ users with mission-critical applications to check in on the mailing
 lists to verify whether anyone has had experience with the package in 
 question before upgrading.</p>
 
-<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
@@ -44,7 +44,7 @@ matter, and working to resolve it as quickly as possible.
 </p>
 
 
-<a name="2004-10-15%20Workaround%20for%20gcc%20problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
 <p>
 The version of gcc included with XCode 1.5 is known to produce 
 incorrect output from c++ code under certain circumstances.
