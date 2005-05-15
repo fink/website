@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributeurs";
-$cvs_author = '$Author: asari $';
-$cvs_date = '$Date: 2005/04/25 10:24:15 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2005/05/15 05:53:20 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
+<li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
 <h2>Administration et revue de presse</h2>
@@ -82,7 +83,6 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Alexander Strange (<i>Feanor</i>)</li>
 <li>Christian Swinehart</li>
 <li>Mark Treiber</li>
-<li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Blair Zajac</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
