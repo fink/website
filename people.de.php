@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributors";
-$cvs_author = '$Author: asari $';
-$cvs_date = '$Date: 2005/04/25 10:24:14 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/05/16 12:16:12 $';
 
 include "header.inc";
 ?>
@@ -29,6 +29,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
+<li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
 <h2>Administrativa und Öffentlichkeitsarbeit</h2>
@@ -83,7 +84,6 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Alexander Strange (<i>Feanor</i>)</li>
 <li>Christian Swinehart</li>
 <li>Mark Treiber</li>
-<li>Dave Vasilevsky (<i>vasi</i>)</li>
 <li>Jeffrey S. Whitaker</li>
 <li>Blair Zajac</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
