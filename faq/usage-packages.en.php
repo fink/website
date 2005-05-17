@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/01 19:18:38';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/05/17 02:28:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
 include_once "header.en.inc";
 ?>
 <h1>F.A.Q. - 9. Package Usage Problems - Specific Packages</h1>
+    
     
     
     <a name="xmms-quiet">
@@ -136,6 +137,7 @@ exec metacity &amp; exec gnome-session</pre><p>Note:  this is no longer true for
         included with Panther. You can install X11 from X11.pkg on Disk 3.</p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
+      
       <div class="question"><p><b><? echo FINK_Q ; ?>9.11: I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>

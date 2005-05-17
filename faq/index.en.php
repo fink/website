@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/01 19:18:38';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/05/17 02:28:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -36,7 +36,7 @@ include_once "header.en.inc";
         the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
         applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
-        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.28 I have Fink installed away from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=en#mirror-gnu">5.29 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="usage-fink.php?phpLang=en#cant-move-fink">5.30 I can't update Fink, because it can't move /sw/fink out of the way.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
+        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.28 I have Fink installed away from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=en#mirror-gnu">5.29 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="usage-fink.php?phpLang=en#cant-move-fink">5.30 I can't update Fink, because it can't move /sw/fink out of the way.</a></li><li><a href="usage-fink.php?phpLang=en#four-oh-three">5.31 I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</a></li><li><a href="usage-fink.php?phpLang=en#fc-cache">5.32 I get a message that says "No fonts found".</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
         What's that?</a></li><li><a href="comp-general.php?phpLang=en#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs:
         Command not found."</a></li><li><a href="comp-general.php?phpLang=en#missing-make">6.3 I'm getting an error message involving <code>make</code>
         </a></li><li><a href="comp-general.php?phpLang=en#head">6.4 I'm getting a strange usage message from the head command. What's
@@ -76,7 +76,7 @@ include_once "header.en.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.en.xml,v 1.43 2005/03/01 19:18:38 dmacks Exp $-->
+<!--Generated from $Fink: faq.en.xml,v 1.45 2005/05/17 02:28:38 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

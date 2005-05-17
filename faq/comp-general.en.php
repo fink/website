@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/01 19:18:38';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/05/17 02:28:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
 include_once "header.en.inc";
 ?>
 <h1>F.A.Q. - 6. Compile Problems - General</h1>
+    
     
     
     <a name="compiler">
@@ -240,6 +241,7 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>then most likely you have a header fil
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
+      
       <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says I'm missing <code>gcc2</code> or <code>gcc3.1</code> but I can't seem to
         install it.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is because <code>gcc2</code> and <code>gcc3.1</code> are  virtual packages to

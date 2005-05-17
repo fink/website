@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/01 19:18:38';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/05/17 02:28:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 
 include_once "header.en.inc";
 ?>
 <h1>F.A.Q. - 8. Package Usage Problems - General</h1>
+    
     
     
     <a name="xlocale">
@@ -145,6 +146,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to a
         Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
     <a name="virtpackage">
+      
       <div class="question"><p><b><? echo FINK_Q ; ?>8.8: What are all these <code>system-*</code> "virtual
 	  packages" that are sometimes present, but that I can't
 	  seem to install or remove myself?</b></p></div>
