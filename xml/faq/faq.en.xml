@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.44 2005/03/24 09:01:16 dmacks Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.45 2005/05/17 02:28:38 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -606,7 +606,7 @@ fink selfupdate-cvs</codeblock>
         <codeblock>. /sw/bin/init.sh</codeblock>
         <p>near the beginning (i.e. before any programs get run). Restart X11
         (if running) after you do this.</p>
-	<p>These <filename>/sw/bin/init.*</filename> scripts do much
+        <p>These <filename>/sw/bin/init.*</filename> scripts do much
 	more than just add <filename>/sw/bin</filename> to your PATH.
 	Many packages will not work correctly without these additional
 	actions.</p>
@@ -830,6 +830,10 @@ Building Dependency Tree...Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead. 
 update available list script returned error exit status 1.</codeblock>
+        <p>or</p>
+        <codeblock>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</codeblock>
         <p>then all you need to do is run <code>fink scanpackages</code>. This
         generates the files that aren't being found.</p>
       </answer>
@@ -932,9 +936,45 @@ Failed test (./Command/chowname.t at line 27)
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
       </answer>
     </faqentry>
+<faqentry name="four-oh-three"><question><p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p></question>
+<answer><p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
+<ul>
+<li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (>= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+<codeblock>fink reinstall fink</codeblock>
+<p>or</p>
+<codeblock>sudo apt-get install fink</codeblock>
+<p>(if for whatever reason you don't want to use the source distribution).</p>
+</li>
+<li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
+<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
+<p>(use your favorite Unix-line-ending-compatible text editor). Change the liines that start with &quot;Official binary distribtution:&quot; thusly:</p>
+<codeblock># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+<p>Then save your work and quit the editor.  Now update your binary package list again, </p>
+</li>
+</ul>
+</answer></faqentry>
+
+<faqentry name="fc-cache">
+<question><p>I get a message that says &quot;No fonts found&quot;.</p></question>
+<answer>
+<p>If you see the following (so far only seen on OS 10.4):</p>
+<codeblock>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</codeblock>
+<p>then you can fix it by running</p>
+<codeblock>sudo fc-cache</codeblock>
+</answer></faqentry>
   </chapter>
   <chapter filename="comp-general">
-  <!-- FAQs in comp-general are coded into VirtPackage.pm
+    <!-- FAQs in comp-general are coded into VirtPackage.pm
        Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Compile Problems - General</title>
     <shorttitle>Compiling (1)</shorttitle>
@@ -1278,7 +1318,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
       </answer>
     </faqentry>
     <faqentry name="gcc2">
-    <!-- FAQ comp-general.gcc2 is coded into VirtPackage.pm
+      <!-- FAQ comp-general.gcc2 is coded into VirtPackage.pm
          Do not rename, remove, move to a different chapter, or
          otherwise cause the URL to change. -->
       <question>
@@ -1489,7 +1529,7 @@ fink install libiconv</codeblock>
     </faqentry>
   </chapter>
   <chapter filename="usage-general">
-  <!-- FAQs in usage-general are coded into VirtPackage.pm
+    <!-- FAQs in usage-general are coded into VirtPackage.pm
        Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Package Usage Problems - General</title>
     <shorttitle>Usage (1)</shorttitle>
@@ -1685,7 +1725,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
       </answer>
     </faqentry>
     <faqentry name="virtpackage">
-    <!-- FAQ usage-general.virtpackage is coded into VirtPackage.pm
+      <!-- FAQ usage-general.virtpackage is coded into VirtPackage.pm
          Do not rename, remove, move to a different chapter, or
          otherwise cause the URL to change. -->
       <question>
@@ -1790,7 +1830,7 @@ export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
     </faqentry>
   </chapter>
   <chapter filename="usage-packages">
-  <!-- FAQs in usage-packages are coded into VirtPackage.pm
+    <!-- FAQs in usage-packages are coded into VirtPackage.pm
        Do not rename, remove, or otherwise cause the URL to change. -->
     <title>Package Usage Problems - Specific Packages</title>
     <shorttitle>Usage (2)</shorttitle>
@@ -1996,7 +2036,7 @@ exec metacity &amp; exec gnome-session</codeblock>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-wants-xfree86">
-    <!-- FAQ comp-general.apple-x11-wants-xfree86 is coded into VirtPackage.pm
+      <!-- FAQ comp-general.apple-x11-wants-xfree86 is coded into VirtPackage.pm
          Do not rename, remove, move to a different chapter, or
          otherwise cause the URL to change. -->
       <question>
