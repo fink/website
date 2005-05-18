@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/05/17 02:28:38';
+$cvs_date = 'Date: 2005/05/18 01:22:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -485,7 +485,7 @@ Failed test (./Command/chowname.t at line 27)
 <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
 <pre>fink reinstall fink</pre>
 <p>or</p>
-<pre>sudo apt-get install fink</pre>
+<pre>sudo apt-get install --reinstall fink</pre>
 <p>(if for whatever reason you don't want to use the source distribution).</p>
 </li>
 <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
