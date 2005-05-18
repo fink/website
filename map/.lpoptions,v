@@ -1,0 +1,41 @@
+head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2005.05.18.01.13.14;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.01.13.14;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@Default photoprinter
+@
+
+
+1.1.1.1
+log
+@initial import of finkmap.png and fink.marker
+@
+text
+@@

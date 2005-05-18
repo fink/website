@@ -1,0 +1,350 @@
+head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.2
+	newmanbe:1.1.1;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2005.05.18.02.27.00;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.02.27.00;	author newmanbe;	state Exp;
+branches;
+next	1.1.1.2;
+
+1.1.1.2
+date	2005.05.18.02.33.19;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@@# @@;
+
+
+1.1
+date	2005.05.18.02.16.42;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.02.16.42;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@@@
+
+
+1.1
+log
+@@Initial revision
+@@
+text
+@@head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@@@@# @@@@;
+
+
+1.1
+date	2005.05.18.02.14.34;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.02.14.34;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@@@@@@@
+
+
+1.1
+log
+@@@@Initial revision
+@@@@
+text
+@@@@head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@@@@@@@@# @@@@@@@@;
+
+
+1.1
+date	2005.05.18.02.13.25;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.02.13.25;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@@@@@@@@@@@@@@@
+
+
+1.1
+log
+@@@@@@@@Initial revision
+@@@@@@@@
+text
+@@@@@@@@head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@@@@@@@@@@@@@@@@# @@@@@@@@@@@@@@@@;
+
+
+1.1
+date	2005.05.18.01.16.36;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+
+1.1.1.1
+date	2005.05.18.01.16.36;	author newmanbe;	state Exp;
+branches;
+next	;
+
+
+desc
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+1.1
+log
+@@@@@@@@@@@@@@@@Initial revision
+@@@@@@@@@@@@@@@@
+text
+@@@@@@@@@@@@@@@@head     1.1;
+branch   1.1.1;
+access   ;
+symbols  start:1.1.1.1 newmanbe:1.1.1;
+locks    ; strict;
+comment  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;
+
+
+1.1
+date     2005.05.18.01.13.13;  author newmanbe;  state Exp;
+branches 1.1.1.1;
+next     ;
+
+1.1.1.1
+date     2005.05.18.01.13.13;  author newmanbe;  state Exp;
+branches ;
+next     ;
+
+
+desc
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+1.1
+log
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Initial revision
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ÿãÙŠ:VßB&N~Â‹ØŒ†@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+1.1.1.1
+log
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@initial import of finkmap.png and fink.marker
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@
+
+
+1.1.1.1
+log
+@@@@@@@@@@@@@@@@initial import of finkmap.png and fink.marker
+@@@@@@@@@@@@@@@@
+text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@
+
+
+1.1.1.1
+log
+@@@@@@@@initial import of finkmap.png and fink.marker
+@@@@@@@@
+text
+@@@@@@@@@@@@@@@@
+@@@@
+
+
+1.1.1.1
+log
+@@@@initial import of finkmap.png and fink.marker
+@@@@
+text
+@@@@@@@@
+@@
+
+
+1.1.1.1
+log
+@@initial import of finkmap.png and fink.marker
+@@
+text
+@@@@
+@
+
+
+1.1.1.1
+log
+@initial import of finkmap.png and fink.marker
+@
+text
+@@
+
+
+1.1.1.2
+log
+@initial import of finkmap.png and fink.marker
+@
+text
+@d5 1
+a5 1
+	start:1.1.1.2
+a19 5
+next	1.1.1.2;
+
+1.1.1.2
+date	2005.05.18.02.33.19;	author newmanbe;	state Exp;
+branches;
+a198 88
+
+
+1.1.1.2
+log
+@@initial import of finkmap.png and fink.marker
+@@
+text
+@@d5 1
+a5 1
+	start:1.1.1.2
+a19 5
+next	1.1.1.2;
+
+1.1.1.2
+date	2005.05.18.02.33.19;	author newmanbe;	state Exp;
+branches;
+a158 69
+
+
+1.1.1.2
+log
+@@@@initial import of finkmap.png and fink.marker
+@@@@
+text
+@@@@d5 1
+a5 1
+	start:1.1.1.2
+a19 5
+next	1.1.1.2;
+
+1.1.1.2
+date	2005.05.18.02.33.19;	author newmanbe;	state Exp;
+branches;
+a118 50
+
+
+1.1.1.2
+log
+@@@@@@@@initial import of finkmap.png and fink.marker
+@@@@@@@@
+text
+@@@@@@@@d5 1
+a5 1
+	start:1.1.1.2
+a19 5
+next	1.1.1.2;
+
+1.1.1.2
+date	2005.05.18.02.33.19;	author newmanbe;	state Exp;
+branches;
+a78 31
+
+
+1.1.1.2
+log
+@@@@@@@@@@@@@@@@initial import of finkmap.png and fink.marker
+@@@@@@@@@@@@@@@@
+text
+@@@@@@@@@@@@@@@@d1 6
+a6 8
+head	1.1;
+branch	1.1.1;
+access;
+symbols
+	start:1.1.1.1
+	newmanbe:1.1.1;
+locks; strict;
+comment	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;
+d10 3
+a12 4
+date	2005.05.18.01.13.13;	author newmanbe;	state Exp;
+branches
+	1.1.1.1;
+next	;
+d15 3
+a17 3
+date	2005.05.18.01.13.13;	author newmanbe;	state Exp;
+branches;
+next	;
+d22 1
+@@@@@@@@@@@@@@@@
+
+@@@@@@@@
+
+@@@@
+
+@@
+
+@
+
