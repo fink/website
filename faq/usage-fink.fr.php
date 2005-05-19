@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/02 05:03:32';
+$cvs_date = 'Date: 2005/05/19 11:14:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -209,7 +209,11 @@ Building Dependency Tree... Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
-</pre><p>alors vous devez juste lancer <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
+</pre><p>ou cela :</p><pre>
+W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)
+</pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="wrong-tree">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>
@@ -251,7 +255,40 @@ Failed test (./Command/chowname.t at line 27)
 <a name="cant-move-fink">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.30: Impossible de mettre à jour Fink, car le répertoire /sw/fink ne peut être déplacé.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'erreur suivante :</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les :</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
-</a>  <p align="right"><? echo FINK_NEXT ; ?>:
+</a>  
+<a name="four-oh-three">
+<div class="question"><p><b><? echo FINK_Q ; ?>5.31: Des erreurs de type 403 apparaissent lors de l'utilisation de <code>apt-get</code>, <code>dselect</code> ou du menu binaire de Fink Commander.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Les serveurs de téléchargement de SourceForge ne sont pas toujours disponibles, c'est pourquoi nous sommes en train de changer de serveur pour la distribution binaire.</p><ul>
+<li>Si vous avez installé les Outils de Développement (Developer Tools), installez la dernière version (&gt;= 0.24.4.1) du paquet <code>fink-mirrors</code>, puis réinstallez <code>fink</code>, soit via :
+<pre>fink reinstall fink</pre>
+<p>ou via :</p>
+<pre>sudo apt-get install --reinstall fink</pre>
+<p>si vous ne souhaitez pas utiliser la distribution source.</p>
+</li>
+<li>Si vous n'avez pas installé les Outils de Développement (Developer Tools), vous devez changer votre configuration comme suit. Modifiez le fichier <code>sources.list</code> en tant que super-utilisateur, via :
+<pre>sudo pico /sw/etc/apt/sources.list</pre>
+<p>Utilisez votre éditeur de texte préféré compatible avec des fins de ligne Unix. Changez les lignes qui commencent par "Official binary distribtution:" ainsi :</p>
+<pre># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
+<p>Puis sauvegardez le fichier et quittez l'éditeur de texte. Enfin mettez à jour la liste des paquets binaires.</p>
+</li>
+</ul></div>
+</a>
+<a name="fc-cache">
+<div class="question"><p><b><? echo FINK_Q ; ?>5.32: Un message "No fonts found" apparaît.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez le message suivant (signalé uniquement sous Mac OS X 10.4 jusqu'à présent) :</p><pre>
+No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.
+</pre><p>corrigez l'erreur en exécutant :</p><pre>sudo fc-cache</pre></div></a>
+<p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=fr">6. Problèmes de compilation généraux</a></p>
 <? include_once "../footer.inc"; ?>
 
