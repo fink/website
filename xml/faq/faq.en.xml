@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.46 2005/05/18 01:22:28 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.47 2005/05/19 12:09:46 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -947,7 +947,7 @@ Failed test (./Command/chowname.t at line 27)
 </li>
 <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
 <codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
-<p>(use your favorite Unix-line-ending-compatible text editor). Change the liines that start with &quot;Official binary distribtution:&quot; thusly:</p>
+<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with &quot;Official binary distribution:&quot; thusly:</p>
 <codeblock># Official binary distribution: download location for packages
 # from the latest release
 deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
@@ -955,7 +955,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
-<p>Then save your work and quit the editor.  Now update your binary package list again, </p>
+<p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
 </ul>
 </answer></faqentry>
