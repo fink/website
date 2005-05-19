@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/05/18 01:22:28';
+$cvs_date = 'Date: 2005/05/19 12:09:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -490,7 +490,7 @@ Failed test (./Command/chowname.t at line 27)
 </li>
 <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
 <pre>sudo pico /sw/etc/apt/sources.list</pre>
-<p>(use your favorite Unix-line-ending-compatible text editor). Change the liines that start with "Official binary distribtution:" thusly:</p>
+<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
 <pre># Official binary distribution: download location for packages
 # from the latest release
 deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
@@ -498,7 +498,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
-<p>Then save your work and quit the editor.  Now update your binary package list again, </p>
+<p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
 </ul></div></a>
 
