@@ -1,9 +1,9 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/20 18:42:56 $';
+$cvs_date = '$Date: 2005/05/20 18:59:38 $';
 
-include "../header.inc";
+include "header.inc";
 ?>
 <h1>Fink Developer Map</h1>
 <p>Ever wonder where some of the <a href="../people.php">contributors</a> to Fink live? Even if you have not, you are in the right place to find that information.</p>
