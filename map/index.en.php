@@ -1,7 +1,7 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/20 00:17:38 $';
+$cvs_date = '$Date: 2005/05/20 01:25:55 $';
 
 include "../header.inc";
 ?>
@@ -29,7 +29,7 @@ include "../header.inc";
 <tr><td>16</td><td>Alexander 'akh' Hansen</td></tr>
 <tr><td>17</td><td>Ben 'Clef' Hines</td></tr>
 </table>
-<p>Think you should be on the map? E-mail <a href="mailto:newmanbe@freshell.org?Subject=Fink Developer Map">Benn Newman</a> using the following format:</p>
+<p>Think you should be on the map? E-mail <a href="mailto:newmanbe@freeshell.org?Subject=Fink Developer Map">Benn Newman</a> using the following format:</p>
 <p>
 <code>longitude latitude "First name '#fink nick' Last name"#what you do for fink(developer, maintainer)</code>
 </p>
