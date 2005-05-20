@@ -1,7 +1,7 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/20 19:31:52 $';
+$cvs_date = '$Date: 2005/05/20 19:47:30 $';
 
 include "header.inc";
 ?>
@@ -34,7 +34,7 @@ include "header.inc";
 <code>longitude latitude "First name '#fink nick' Last name"#what you do for fink(developer, maintainer)</code>
 </p>
 
-<p>To fit on the map, you may have to be combined with near-by people. Your actually coordinates will still be recorded.</p>
+<p>To fit on the map, you may have to be combined with near-by people. Your actual coordinates will still be recorded.</p>
 <?
 include "../footer.inc";
 ?>
