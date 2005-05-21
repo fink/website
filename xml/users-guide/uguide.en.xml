@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.29 2005/04/01 16:08:57 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.30 2005/05/21 01:26:36 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1199,7 +1199,7 @@ version and revision when they are not specified.  Others have different options
 There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options: 
       </p>
-      <p>(as of <code>fink-0.24.1</code>)</p>
+      <p>(as of <code>fink-0.24.6</code>)</p>
       <codeblock>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
@@ -1302,6 +1302,8 @@ meanings:
  i   latest version is installed
 (i)  installed, but a newer version is available
  p   a virtual package provided by a package that is installed</codeblock>
+      <p> The version column always lists the latest (highest) version known for the package, regardless of what version (if any) you have installed.  To see all versions of a package available on your sys-
+           tem, use the <xref section="dumpinfo">dumpinfo</xref> command.</p>
       <p>
 There are also some flags for the <code>fink list</code> command
 </p>
@@ -1319,7 +1321,7 @@ There are also some flags for the <code>fink list</code> command
 	  Show only packages which are up to date.
 -n,--notinstalled
 	  Show packages which are not currently installed.
--s=expr,--section=expr
+-s expr,--section=expr
 	  Show only packages in the sections matching the regular
 	  expression expr.
 -m expr,--maintainer=expr
@@ -1378,8 +1380,18 @@ Aliases: desc, description, info
     </section>
     <section name="fetch">
       <title>fetch</title>
-      <p>Downloads the named packages, but does not install it. This command
+      <p>Downloads the named packages, but does not install them. This command
 will download the tarballs even if they were downloaded before.</p>
+      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <codeblock>-h,--help		Show the options which are available.
+-i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
+                      	Useful for mirrors, because some restrictive packages
+                      	do not allow source mirroring.
+-d,--dry-run		Just display information about the file(s) that would
+			be downloaded for the package(s) to be fetched; do not
+			actually download anything.
+-r,--recursive		Also fetch packages that are dependencies of the
+			package(s) to be fetched.</codeblock>
     </section>
     <section name="fetch-all">
       <title>fetch-all</title>
@@ -1441,13 +1453,24 @@ others.
 	available. It then downloads the package descriptions and updates
 	the core packages, including <code>fink</code> itself. This command can upgrade
 	to regular releases, but it can also setup your <filename>/sw/fink/dists</filename>
-	directory tree for direct CVS updates.  This means that you then
+	directory tree for direct CVS or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
 If the <xref section="options">--use-binary-dist option</xref> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
+    </section>
+    <section name="selfupdate-cvs">
+      <title>selfupdate-rsync</title>
+      <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
+      <p>This is the recommended way to use Fink when building from source.</p>
+      <p><em>Note:</em>  rsync updates only update the active <xref chapter="conf" section="optional">trees</xref> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
+    </section>
+    <section name="selfupdate-cvs">
+      <title>selfupdate-cvs</title>
+      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
+      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
     </section>
     <section name="index">
       <title>index</title>
@@ -1514,7 +1537,7 @@ Only available in <code>fink</code> newer than version 0.21.0
     <section name="show-deps">
       <title>show-deps</title>
       <p>Only available in fink-0.23-6 and later.</p>
-<p>Displays a human-readable list of the compile-time (build) and run-
+      <p>Displays a human-readable list of the compile-time (build) and run-
            time (installation) dependencies of the listed package(s).</p>
     </section>
     <!-- 'fink snapshot' will not be included in 0.24
