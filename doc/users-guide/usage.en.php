@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/04/01 16:08:57';
+$cvs_date = 'Date: 2005/05/21 01:26:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -26,7 +26,7 @@ version and revision when they are not specified.  Others have different options
 There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options: 
       </p>
-      <p>(as of <code>fink-0.24.1</code>)</p>
+      <p>(as of <code>fink-0.24.6</code>)</p>
       <pre>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
@@ -129,6 +129,8 @@ meanings:
  i   latest version is installed
 (i)  installed, but a newer version is available
  p   a virtual package provided by a package that is installed</pre>
+      <p> The version column always lists the latest (highest) version known for the package, regardless of what version (if any) you have installed.  To see all versions of a package available on your sys-
+           tem, use the <a href="#dumpinfo">dumpinfo</a> command.</p>
       <p>
 There are also some flags for the <code>fink list</code> command
 </p>
@@ -146,7 +148,7 @@ There are also some flags for the <code>fink list</code> command
 	  Show only packages which are up to date.
 -n,--notinstalled
 	  Show packages which are not currently installed.
--s=expr,--section=expr
+-s expr,--section=expr
 	  Show only packages in the sections matching the regular
 	  expression expr.
 -m expr,--maintainer=expr
@@ -205,8 +207,18 @@ Aliases: desc, description, info
     
     <h2><a name="fetch">6.10 fetch</a></h2>
       
-      <p>Downloads the named packages, but does not install it. This command
+      <p>Downloads the named packages, but does not install them. This command
 will download the tarballs even if they were downloaded before.</p>
+      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <pre>-h,--help		Show the options which are available.
+-i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
+                      	Useful for mirrors, because some restrictive packages
+                      	do not allow source mirroring.
+-d,--dry-run		Just display information about the file(s) that would
+			be downloaded for the package(s) to be fetched; do not
+			actually download anything.
+-r,--recursive		Also fetch packages that are dependencies of the
+			package(s) to be fetched.</pre>
     
     <h2><a name="fetch-all">6.11 fetch-all</a></h2>
       
@@ -268,7 +280,7 @@ others.
 	available. It then downloads the package descriptions and updates
 	the core packages, including <code>fink</code> itself. This command can upgrade
 	to regular releases, but it can also setup your <code>/sw/fink/dists</code>
-	directory tree for direct CVS updates.  This means that you then
+	directory tree for direct CVS or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
@@ -276,14 +288,25 @@ If the <a href="#options">--use-binary-dist option</a> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     
-    <h2><a name="index">6.18 index</a></h2>
+    <h2><a name="selfupdate-cvs">6.18 selfupdate-rsync</a></h2>
+      
+      <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
+      <p>This is the recommended way to use Fink when building from source.</p>
+      <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=en#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
+    
+    <h2><a name="selfupdate-cvs">6.19 selfupdate-cvs</a></h2>
+      
+      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
+      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+    
+    <h2><a name="index">6.20 index</a></h2>
       
       <p>
    Rebuilds the package cache. You should not normally need to execute
    this manually, as <code>fink</code> should auto-detect when it needs to be updated.
 </p>
     
-    <h2><a name="validate">6.19 validate</a></h2>
+    <h2><a name="validate">6.21 validate</a></h2>
       
       <p>
    This command performs various checks on .info and .deb files. Package
@@ -300,13 +323,13 @@ the list of available packages in the binary distribution is also updated.
    Aliases: check
 </p>
     
-    <h2><a name="scanpackages">6.20 scanpackages</a></h2>
+    <h2><a name="scanpackages">6.22 scanpackages</a></h2>
       
       <p>
    Calls dpkg-scanpackages(8) with the specified trees.
 </p>
     
-    <h2><a name="cleanup">6.21 cleanup</a></h2>
+    <h2><a name="cleanup">6.23 cleanup</a></h2>
       
       <p>
    Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
@@ -317,7 +340,7 @@ If the <a href="#options">--use-binary-dist option</a> is enabled
 obsolete downloaded binary packages are also deleted and <code>fink scanpackages</code> is run as well.
       </p>
     
-    <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.24 dumpinfo</a></h2>
       
       <p>
 Only available in <code>fink</code> newer than version 0.21.0
@@ -338,10 +361,10 @@ Only available in <code>fink</code> newer than version 0.21.0
    --percent=key       in the order listed.
       </pre>
     
-    <h2><a name="show-deps">6.23 show-deps</a></h2>
+    <h2><a name="show-deps">6.25 show-deps</a></h2>
       
       <p>Only available in fink-0.23-6 and later.</p>
-<p>Displays a human-readable list of the compile-time (build) and run-
+      <p>Displays a human-readable list of the compile-time (build) and run-
            time (installation) dependencies of the listed package(s).</p>
     
     
