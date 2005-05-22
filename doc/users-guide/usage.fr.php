@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 07:49:11';
+$cvs_date = 'Date: 2005/05/22 08:03:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -199,13 +199,13 @@ fink apropos -s=kde irc
     est "Restrictive".
     Intéressant pour les miroirs, car certains 
     paquets interdisent le miroir source.
--d,--dry-run
-	Affiche simplement des informations sur les 
-	fichiers à télécharger.
-	Ne télécharge rien.
--r,--recursive
-	Télécharge également les paquets dépendants 
-	des paquets à télécharger.
+-d, --dry-run
+    Affiche simplement des informations sur les 
+    fichiers à télécharger.
+    Ne télécharge rien.
+-r, --recursive
+    Télécharge également les paquets dépendants 
+    des paquets à télécharger.
 </pre>
 
 <h2><a name="fetch-all">6.11 fetch-all - tout télécharger</a></h2>

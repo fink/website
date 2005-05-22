@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.31 2005/05/22 07:49:11 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.32 2005/05/22 08:03:42 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -743,13 +743,13 @@ fink apropos -s=kde irc
     est &quot;Restrictive&quot;.
     Intéressant pour les miroirs, car certains 
     paquets interdisent le miroir source.
--d,--dry-run
-	Affiche simplement des informations sur les 
-	fichiers à télécharger.
-	Ne télécharge rien.
--r,--recursive
-	Télécharge également les paquets dépendants 
-	des paquets à télécharger.
+-d, --dry-run
+    Affiche simplement des informations sur les 
+    fichiers à télécharger.
+    Ne télécharge rien.
+-r, --recursive
+    Télécharge également les paquets dépendants 
+    des paquets à télécharger.
 </codeblock>
 </section>
 <section name="fetch-all" >
