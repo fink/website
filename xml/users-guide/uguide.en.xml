@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.30 2005/05/21 01:26:36 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.31 2005/05/22 07:29:56 michga Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1461,7 +1461,7 @@ If the <xref section="options">--use-binary-dist option</xref> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     </section>
-    <section name="selfupdate-cvs">
+    <section name="selfupdate-rsync">
       <title>selfupdate-rsync</title>
       <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
       <p>This is the recommended way to use Fink when building from source.</p>
