@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/05/21 01:26:36';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/05/22 07:29:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -288,7 +288,7 @@ If the <a href="#options">--use-binary-dist option</a> is enabled
 the list of available packages in the binary distribution is also updated.
       </p>
     
-    <h2><a name="selfupdate-cvs">6.18 selfupdate-rsync</a></h2>
+    <h2><a name="selfupdate-rsync">6.18 selfupdate-rsync</a></h2>
       
       <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
       <p>This is the recommended way to use Fink when building from source.</p>

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/04/02 17:50:43';
+$cvs_date = 'Date: 2005/05/22 07:30:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -17,7 +17,7 @@ include_once "header.fr.inc";
 
 <h2><a name="options">6.2 Options globales</a></h2>
 
-<p>Ce sont des options qui s'appliquent à toutes les commandes fink à partir de la <code>version 0.24.1</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
+<p>Ce sont des options qui s'appliquent à toutes les commandes fink à partir de la <code>version 0.24.6</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
 <pre>
 -h, --help
     Affiche ce message d'aide.
@@ -122,6 +122,7 @@ Do you want to continue? [Y/n]</pre>
 (i)   installé, mais une version plus récente est disponible
  p    paquet virtuel fourni par un paquet installé
 </pre>
+<p>La colonne version affiche toujours la dernière version connue du paquet, quelque soit la version installée éventuellement. Pour connaître toutes les versions d'un paquet disponible sur votre système, utilisez  la commande  <a href="#dumpinfo">dumpinfo</a>.</p>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <pre>
 -h, --help
@@ -138,7 +139,7 @@ Do you want to continue? [Y/n]</pre>
     N'affiche que les paquets à jour. 
 -n, --notinstalled
     Affiche les paquets qui ne sont pas installés. 
--s=expr, --section=expr
+-s expr, --section=expr
     Affiche les paquets dans les sections correspondant 
     à l'expression régulière fournie. 
 -m expr, --maintainer=expr
@@ -189,6 +190,23 @@ fink apropos -s=kde irc
 <h2><a name="fetch">6.10 fetch - téléchargement</a></h2>
 
 <p>Télécharge les paquets nommés, mais ne les installe pas. Cette commande télécharge les archives tar, même si elles ont déjà été téléchargées.</p>
+<p>Vous pouvez utiliser les options suivantes avec la commande <code>fetch</code> :</p>
+<pre>
+-h, --help
+    Affiche les options disponibles. 
+-i, --ignore-restrictive
+    Ne télécharge pas les paquets dont la licence 
+    est &amp;Restrictive&amp;quot;.
+    Intéressant pour les miroirs, car certains 
+    paquets interdisent le miroir source.
+-d,--dry-run
+	Affiche simplement des informations sur les 
+	fichiers à télécharger.
+	Ne télécharge rien.
+-r,--recursive
+	Télécharge également les paquets dépendants 
+	des paquets à télécharger.
+</pre>
 
 <h2><a name="fetch-all">6.11 fetch-all - tout télécharger</a></h2>
 
@@ -229,14 +247,25 @@ fink apropos -s=kde irc
 
 <h2><a name="selfupdate">6.17 selfupdate - mise à jour automatique</a></h2>
 
-<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via CVS. Vous avez alors accès aux toutes dernières versions des paquets.</p>
+<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via CVS, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
 <p>Si l'option <a href="#options">--use-binary-dist option</a> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
 
-<h2><a name="index">6.18 index - indexer</a></h2>
+<h2><a name="selfupdate-rsync">6.18 selfupdate-rsync</a></h2>
+
+<p>Utilisez cette commande pour faire en sorte que la commande <code>fink selfupdate</code> utilise rsync pour mettre à jour la liste des paquets de fink.</p>
+<p>Nous vous recommandons d'utiliser cette méthode quand vous compilez à partir des sources.</p>
+<p><b>Note : </b>les mises à jour via rsync ne mettent à jour que les <a href="conf.php?phpLang=fr#optional">arborescences</a> (par exemple, si instable n'est pas activé dans le fichier <code>fink.conf</code>, la liste des paquets instables ne sera pas mise à jour).</p>
+
+<h2><a name="selfupdate-cvs">6.19 selfupdate-cvs</a></h2>
+
+<p>Utilisez cette commande pour faire en sorte que la commande <code>fink selfupdate</code> utilise cvs pour mettre à jour la liste des paquets de fink.</p>
+<p>La mise à jour via cvs est obsolète, sauf pour les développeurs et les personnes dont les murs pare-feux interdisent l'utilisation de rsync.</p>
+ 
+<h2><a name="index">6.20 index - indexer</a></h2>
 
 <p>Reconstruit le cache des paquets. Normalement, vous n'avez pas besoin d'exécuter cette commande manuellement, car <code>fink</code> est censé détecter automatiquement s'il est besoin de reconstruire le cache.</p>
 
-<h2><a name="validate">6.19 validate - valider</a></h2>
+<h2><a name="validate">6.21 validate - valider</a></h2>
 
 <p>Cette commande exécute différents contrôles sur les fichiers .info et .deb. Les mainteneurs de paquets doivent l'exécuter sur leurs descriptions de paquets et sur les paquets construits avant de les soumettre.</p>
 <p>Les options suivantes peuvent être utilisées :</p>
@@ -252,16 +281,16 @@ fink apropos -s=kde irc
 </pre>
 <p>Alias : check</p>
 
-<h2><a name="scanpackages">6.20 scanpackages - création de fichiers Packages</a></h2>
+<h2><a name="scanpackages">6.22 scanpackages - création de fichiers Packages</a></h2>
 
 <p>Lance dpkg-scanpackages(8) avec les arborescences spécifiées.</p>
 
-<h2><a name="cleanup">6.21 cleanup - épuration</a></h2>
+<h2><a name="cleanup">6.23 cleanup - épuration</a></h2>
 
 <p>Supprime les fichiers correspondants aux paquets obsolètes (.info, .patch, .deb) quand des versions plus récentes sont disponibles. Cela peut libérer une grande portion d'espace disque.</p>
 <p>Si l'option <a href="#options">--use-binary-dist</a> est activée, les paquets binaires téléchargés obsolètes sont supprimés et la commande <code>fink scanpackages</code> est exécutée.</p>
 
-<h2><a name="dumpinfo">6.22 dumpinfo - analyse des fichiers info</a></h2>
+<h2><a name="dumpinfo">6.24 dumpinfo - analyse des fichiers info</a></h2>
 
 <p>Note : disponible dans une version de fink postérieure à la version 0.21.0.</p>
 <p>Affiche l'analyse syntaxique des différentes parties d'un fichier .info d'un paquet. Les <b>options</b> suivantes permettent de moduler l'affichage des champs et l'interprétation des raccourcis :</p>
@@ -279,11 +308,9 @@ fink apropos -s=kde irc
     Affiche l'interprétation des clés fournies
     dans leur ordre d'apparition après l'option -p.</pre>
 
-<h2><a name="show-deps">6.23 show-deps - affiche les dépendances</a></h2>
+<h2><a name="show-deps">6.25 show-deps - affiche les dépendances</a></h2>
 
 <p>Disponible uniquement à partir de la version 0.23.6 de fink.</p>
-<p>Displays a human-readable list of the compile-time (build) and run-
-           time (installation) dependencies of the listed package(s).</p>
 <p>Affiche, sous une forme compréhensible, la liste des dépendances à la compilation (construction du paquet) et à l'exécution (installation du paquet).</p>
 
 
