@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.28 2005/04/02 17:50:43 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.29 2005/05/22 07:30:52 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -561,7 +561,7 @@ main crypto
 </section>
 <section name="options">
 <title>Options globales</title>
-<p>Ce sont des options qui s'appliquent à toutes les commandes fink à partir de la <code>version 0.24.1</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
+<p>Ce sont des options qui s'appliquent à toutes les commandes fink à partir de la <code>version 0.24.6</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
 <codeblock>
 -h, --help
     Affiche ce message d'aide.
@@ -666,6 +666,7 @@ Do you want to continue? [Y/n]</codeblock>
 (i)   installé, mais une version plus récente est disponible
  p    paquet virtuel fourni par un paquet installé
 </codeblock>
+<p>La colonne version affiche toujours la dernière version connue du paquet, quelque soit la version installée éventuellement. Pour connaître toutes les versions d'un paquet disponible sur votre système, utilisez  la commande  <xref section="dumpinfo">dumpinfo</xref>.</p>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <codeblock>
 -h, --help
@@ -682,7 +683,7 @@ Do you want to continue? [Y/n]</codeblock>
     N'affiche que les paquets à jour. 
 -n, --notinstalled
     Affiche les paquets qui ne sont pas installés. 
--s=expr, --section=expr
+-s expr, --section=expr
     Affiche les paquets dans les sections correspondant 
     à l'expression régulière fournie. 
 -m expr, --maintainer=expr
@@ -733,6 +734,23 @@ fink apropos -s=kde irc
 <section name="fetch" >
 <title>fetch - téléchargement</title>
 <p>Télécharge les paquets nommés, mais ne les installe pas. Cette commande télécharge les archives tar, même si elles ont déjà été téléchargées.</p>
+<p>Vous pouvez utiliser les options suivantes avec la commande <code>fetch</code> :</p>
+<codeblock>
+-h, --help
+    Affiche les options disponibles. 
+-i, --ignore-restrictive
+    Ne télécharge pas les paquets dont la licence 
+    est &amp;Restrictive&amp;quot;.
+    Intéressant pour les miroirs, car certains 
+    paquets interdisent le miroir source.
+-d,--dry-run
+	Affiche simplement des informations sur les 
+	fichiers à télécharger.
+	Ne télécharge rien.
+-r,--recursive
+	Télécharge également les paquets dépendants 
+	des paquets à télécharger.
+</codeblock>
 </section>
 <section name="fetch-all" >
 <title>fetch-all - tout télécharger</title>
@@ -773,9 +791,20 @@ fink apropos -s=kde irc
 </section>
 <section name="selfupdate" >
 <title>selfupdate - mise à jour automatique</title>
-<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <filename>/sw/fink/dists</filename> de telle sorte qu'elle soit mise à jour directement via CVS. Vous avez alors accès aux toutes dernières versions des paquets.</p>
+<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <filename>/sw/fink/dists</filename> de telle sorte qu'elle soit mise à jour directement via CVS, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
 <p>Si l'option <xref section="options">--use-binary-dist option</xref> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
 </section>
+<section name="selfupdate-rsync">
+<title>selfupdate-rsync</title>
+<p>Utilisez cette commande pour faire en sorte que la commande <code>fink selfupdate</code> utilise rsync pour mettre à jour la liste des paquets de fink.</p>
+<p>Nous vous recommandons d'utiliser cette méthode quand vous compilez à partir des sources.</p>
+<p><em>Note : </em>les mises à jour via rsync ne mettent à jour que les <xref chapter="conf" section="optional">arborescences</xref> (par exemple, si instable n'est pas activé dans le fichier <code>fink.conf</code>, la liste des paquets instables ne sera pas mise à jour).</p>
+</section>
+<section name="selfupdate-cvs">
+<title>selfupdate-cvs</title>
+<p>Utilisez cette commande pour faire en sorte que la commande <code>fink selfupdate</code> utilise cvs pour mettre à jour la liste des paquets de fink.</p>
+<p>La mise à jour via cvs est obsolète, sauf pour les développeurs et les personnes dont les murs pare-feux interdisent l'utilisation de rsync.</p>
+ </section>
 <section name="index" >
 <title>index - indexer</title>
 <p>Reconstruit le cache des paquets. Normalement, vous n'avez pas besoin d'exécuter cette commande manuellement, car <code>fink</code> est censé détecter automatiquement s'il est besoin de reconstruire le cache.</p>
@@ -826,8 +855,6 @@ fink apropos -s=kde irc
 <section name="show-deps">
 <title>show-deps - affiche les dépendances</title>
 <p>Disponible uniquement à partir de la version 0.23.6 de fink.</p>
-<p>Displays a human-readable list of the compile-time (build) and run-
-           time (installation) dependencies of the listed package(s).</p>
 <p>Affiche, sous une forme compréhensible, la liste des dépendances à la compilation (construction du paquet) et à l'exécution (installation du paquet).</p>
 </section>
 <!-- 'fink snapshot' will not be included in 0.24
