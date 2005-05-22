@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 07:30:52';
+$cvs_date = 'Date: 2005/05/22 07:43:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -196,7 +196,7 @@ fink apropos -s=kde irc
     Affiche les options disponibles. 
 -i, --ignore-restrictive
     Ne télécharge pas les paquets dont la licence 
-    est &amp;Restrictive&amp;quot;.
+    est "Restrictivequot;.
     Intéressant pour les miroirs, car certains 
     paquets interdisent le miroir source.
 -d,--dry-run
