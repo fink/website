@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/19 11:14:50';
+$cvs_date = 'Date: 2005/05/22 06:23:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -267,7 +267,7 @@ Failed test (./Command/chowname.t at line 27)
 </li>
 <li>Si vous n'avez pas installé les Outils de Développement (Developer Tools), vous devez changer votre configuration comme suit. Modifiez le fichier <code>sources.list</code> en tant que super-utilisateur, via :
 <pre>sudo pico /sw/etc/apt/sources.list</pre>
-<p>Utilisez votre éditeur de texte préféré compatible avec des fins de ligne Unix. Changez les lignes qui commencent par "Official binary distribtution:" ainsi :</p>
+<p>Utilisez votre éditeur de texte préféré compatible avec des fins de ligne Unix. Changez les lignes qui commencent par "Official binary distribution:" ainsi :</p>
 <pre># Official binary distribution: download location for packages
 # from the latest release
 deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
