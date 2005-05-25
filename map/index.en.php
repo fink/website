@@ -1,14 +1,14 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/25 18:24:13 $';
+$cvs_date = '$Date: 2005/05/25 18:36:19 $';
 
 include "header.inc";
 ?>
 <h1>Fink Developer Map</h1>
 <p>Ever wonder where some of the <a href="../people.php">contributors</a> to Fink live? Even if you have not, you are in the right place to find that information.</p>
 <p>Each person on the map has a number. Look on the list, then on the map to find out where each person lives. The name name in quotes is the nick used on #fink at irc.freenode.net.</p>
-<img src="finkmap_word.png" height="750" width="750" alt="">
+<img src="finkmap_world.png" height="750" width="750" alt="">
 <table summary="Listings for the Fink Developer Map">
 <tr><td>Number</td><td>Name</td><td>Location</td></tr>
 <tr><td>1</td><td>Benn 'newmanbe' Newman</td></tr>
