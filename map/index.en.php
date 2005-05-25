@@ -1,7 +1,7 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/25 19:14:06 $';
+$cvs_date = '$Date: 2005/05/25 20:00:25 $';
 
 include "header.inc";
 ?>
@@ -17,7 +17,7 @@ include "header.inc";
 <tr><td>4</td><td>Benjamin 'RangerRick' Reed</td></tr>
 <tr><td>5</td><td>Chris 'cirdan' Zubryzcki</td></tr>
 <tr><td>6</td><td>David 'dmalloc' H&#246;hn</td></tr>
-<tr><td>7</td><td>Justin 'TheSin' Hallet</td></tr>
+<tr><td>7</td><td>Justin 'TheSin' Hallett</td><td>Thorsby, Alberta, Canada</td></tr>
 <tr><td>8</td><td>Peter 'pogma' O'Gorman</td><td>Hyogo, Japan</td></tr>
 <tr><td>9</td><td>Martin Costabel</td></tr>
 <tr><td>10</td><td>Baba 'baba' Yoshihiko</td><td>Kyoto, Japan</td></tr>
