@@ -1,13 +1,13 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/25 18:36:19 $';
+$cvs_date = '$Date: 2005/05/25 19:14:06 $';
 
 include "header.inc";
 ?>
 <h1>Fink Developer Map</h1>
 <p>Ever wonder where some of the <a href="../people.php">contributors</a> to Fink live? Even if you have not, you are in the right place to find that information.</p>
-<p>Each person on the map has a number. Look on the list, then on the map to find out where each person lives. The name name in quotes is the nick used on #fink at irc.freenode.net.</p>
+<p>Each person on the map has a number. Look on the list, then on the map to find out where each person lives. The name in quotes is the nick used on #fink at irc.freenode.net.</p>
 <img src="finkmap_world.png" height="750" width="750" alt="">
 <table summary="Listings for the Fink Developer Map">
 <tr><td>Number</td><td>Name</td><td>Location</td></tr>
@@ -24,7 +24,7 @@ include "header.inc";
 <tr><td>11</td><td>Aida 'aida' Shinra</td><td>Tokyo, Japan</td></tr>
 <tr><td>12</td><td>Asari 'asari' Takashi</td><td>Tokyo, Japan</td></tr>
 <tr><td>13</td><td>Motoi 'wm3' Washida</td><td>Tokyo, Japan</td></tr>
-<tr><td>14</td><td>Dave 'vasi' Vasilevsky</td></tr>
+<tr><td>14</td><td>Dave 'vasi' Vasilevsky</td><td>Montr&#233;al, Canada</td></tr>
 <tr><td>15</td><td>Alexander 'Feanor' Strange</td></tr>
 <tr><td>16</td><td>Alexander 'akh' Hansen</td></tr>
 <tr><td>17</td><td>Ben 'Clef' Hines</td></tr>
