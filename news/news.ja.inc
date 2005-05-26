@@ -17,9 +17,9 @@ fink-0.23.9.tar.gz</a> をダウンロード後、解凍し、"bootstrap"しま�
 				<li>
 unstable ツリーの利用者は、 fink のバージョンが 0.24.5 以前であれば <code>fink selfupdate</code> 
 することでアップグレードされます。
-<code>fink --version</code> で現在のバージョンを確認してください。
+10.4 にアップグレードしたら、<code>fink --version</code> で現在の fink のバージョンを確認してください。
 0.24.5 以前であれば、 <code>fink selfupdate</code> を実行してください。
-次に、 <code>fink reinstall fink</code> し、 <code>fink selfupdate</code> を実行してください。
+次に、 selfupdate をした人もしていない人も、 <code>fink reinstall fink</code> し、 <code>fink selfupdate</code> を実行してください。
 </li>
 			</ul>
 			<p>

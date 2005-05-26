@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2005-05-15T10:35:37+02:00</dc:date>
+    <dc:date>2005-05-26T09:45:00+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
       <title>Fink and Tiger.</title>
@@ -30,7 +30,7 @@ tar -xvzf fink-0.23.9.tar.gz.  After running the command
 fink-0.23.9 directory,
 you'll need to run fink selfupdate
 
-For users of the unstable tree, you may be able to upgrade just by running fink selfupdate if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing fink --version.  If your version is less than 0.24.5, run fink selfupdate to get the right version of fink.  Then reinstall the fink package using fink reinstall fink, followed by fink selfupdate.
+For users of the unstable tree, you may be able to upgrade just by running fink selfupdate if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing fink --version.  If your version is less than 0.24.5, run fink selfupdate to get the right version of fink.  Then, whether you selfupdated or not, reinstall the fink package using fink reinstall fink, followed by fink selfupdate.
 
 
 Not all packages are working yet under 10.4, but that situation will
@@ -62,7 +62,7 @@ tar -xvzf fink-0.23.9.tar.gz.  After running the command
 fink-0.23.9 directory,
 you'll need to run fink selfupdate
 
-For users of the unstable tree, you may be able to upgrade just by running fink selfupdate if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing fink --version.  If your version is less than 0.24.5, run fink selfupdate to get the right version of fink.  Then reinstall the fink package using fink reinstall fink, followed by fink selfupdate.
+For users of the unstable tree, you may be able to upgrade just by running fink selfupdate if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing fink --version.  If your version is less than 0.24.5, run fink selfupdate to get the right version of fink.  Then, whether you selfupdated or not, reinstall the fink package using fink reinstall fink, followed by fink selfupdate.
 
 
 Not all packages are working yet under 10.4, but that situation will
