@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.27 2005/03/25 22:22:47 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.28 2005/05/26 01:24:04 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -823,6 +823,10 @@ ones used instead.
 
 update available list script returned error exit status 1.
 </codeblock>
+        <p>あるいは</p>
+        <codeblock>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</codeblock>
 <p><code>fink scanpackages</code> をするだけです。
 これによって見つからなかったファイルを作成します。</p>
 </answer>
@@ -942,8 +946,67 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 	<codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
 	</answer>
 </faqentry>
+    <faqentry name="four-oh-three">
+      <question><p>403 errors when I use <code>apt-get</code> または <code>dselect</code> または Fink Commander Binary メニューを使うと、403 エラーが出ます。</p>
+      </question>
+      <answer>
+        <p>
+          SourceForge のダウンロードサーバに問題があるようです。
+          このため、バイナリディストリビューション用のレポジトリに移行しました。
+        </p>
+        <ul>
+          <li>
+            Developer Tools がインストールされている場合、最新の
+            <code>fink-mirrors</code> package (>= 0.24.4.1) をインストールし、
+            <code>fink</code> を次のように再インストールします:
+<codeblock>fink reinstall fink</codeblock>
+            <p>あるいは</p>
+<codeblock>sudo apt-get install --reinstall fink</codeblock>
+            <p>ソースディストリビューションを使用したくない場合).</p>
+          </li>
+          <li>
+            Developer Tools をインストールしていない場合は、手動で行う必要があります。
+            <filename>sources.list</filename> ファイルを root で編集してください。
+            例えば、
+<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
+            <p>
+              (お好きな Unix-line-ending-compatible テキストエディタを使用)。
+              &quot;Official binary distribution:&quot; から始まる行を
+            </p>
+<codeblock># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+            <p>
+              とし、保存してエディタを終了します。
+              この後、バイナリパッケージリストを更新してください。
+            </p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-cache">
+      <question>
+        <p>&quot;No fonts found&quot; というメッセージが出ます。</p>
+      </question>
+      <answer>
+        <p>次のようであれば (OS 10.4 のみ):</p>
+<codeblock>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</codeblock>
+        <p>次のように実行します:</p>
+<codeblock>sudo fc-cache</codeblock>
+      </answer>
+    </faqentry>
 </chapter>
 <chapter filename="comp-general" >
+    <!-- FAQs in comp-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <title>コンパイルの問題 - 一般</title>
 <shorttitle>コンパイル (1)</shorttitle>
 <faqentry name="compiler" >
@@ -1238,6 +1301,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 </answer> 
 </faqentry>
 <faqentry name="gcc2"> 
+    <!-- FAQs in comp-general.gcc2 are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <question>
 <p>Fink が <filename>gcc2</filename> がないと言っていますが、インストールも出来ないようです。</p>
 </question> 
@@ -1437,6 +1502,8 @@ fink install libiconv</codeblock>
 </faqentry>
 </chapter>
 <chapter filename="usage-general" >
+    <!-- FAQs in usage-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <title>パッケージ使用上の問題 - 一般</title>
 <shorttitle>使用法 (1)</shorttitle>
 <faqentry name="xlocale" >
@@ -1630,6 +1697,8 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 </answer>
 </faqentry>
 <faqentry name="virtpackage">
+    <!-- FAQs in usage-general.virtpackage are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <question>
 	<p>
 	  <code>system-*</code> &quot;virtual packages&quot; というのを時々見かけますが、
@@ -1716,6 +1785,8 @@ Fink に推薦したいのですが、どうしたら良いですか?</p>
 </faqentry>
 </chapter>
 <chapter filename="usage-packages" >
+    <!-- FAQs in usage-general.usage-packages are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <title>パッケージ使用上の問題 - 特定のパッケージ</title>
 <shorttitle>使用法 (2)</shorttitle>
 <faqentry name="xmms-quiet" >
@@ -1876,6 +1947,8 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-wants-xfree86" >
+    <!-- FAQs in comp-general.apple-x11-wants-xfree86 are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
 <question>
 	<p>Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</p>
 </question>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:22:47';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -340,7 +340,9 @@ E: Some index files failed to download, they have been ignored, or old
 ones used instead.
 
 update available list script returned error exit status 1.
-</pre><p><code>fink scanpackages</code> をするだけです。
+</pre><p>あるいは</p><pre>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</pre><p><code>fink scanpackages</code> をするだけです。
 これによって見つからなかったファイルを作成します。</p></div>
 </a>
 <a name="wrong-tree"> 
@@ -415,6 +417,52 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 	これを削除するには:
 	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
 </a>
+    <a name="four-oh-three">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: 403 errors when I use <code>apt-get</code> または <code>dselect</code> または Fink Commander Binary メニューを使うと、403 エラーが出ます。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+          SourceForge のダウンロードサーバに問題があるようです。
+          このため、バイナリディストリビューション用のレポジトリに移行しました。
+        </p><ul>
+          <li>
+            Developer Tools がインストールされている場合、最新の
+            <code>fink-mirrors</code> package (&gt;= 0.24.4.1) をインストールし、
+            <code>fink</code> を次のように再インストールします:
+<pre>fink reinstall fink</pre>
+            <p>あるいは</p>
+<pre>sudo apt-get install --reinstall fink</pre>
+            <p>ソースディストリビューションを使用したくない場合).</p>
+          </li>
+          <li>
+            Developer Tools をインストールしていない場合は、手動で行う必要があります。
+            <code>sources.list</code> ファイルを root で編集してください。
+            例えば、
+<pre>sudo pico /sw/etc/apt/sources.list</pre>
+            <p>
+              (お好きな Unix-line-ending-compatible テキストエディタを使用)。
+              "Official binary distribution:" から始まる行を
+            </p>
+<pre># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
+            <p>
+              とし、保存してエディタを終了します。
+              この後、バイナリパッケージリストを更新してください。
+            </p>
+          </li>
+        </ul></div>
+    </a>
+    <a name="fc-cache">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: "No fonts found" というメッセージが出ます。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 次のようであれば (OS 10.4 のみ):</p><pre>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</pre><p>次のように実行します:</p><pre>sudo fc-cache</pre></div>
+    </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>

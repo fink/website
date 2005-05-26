@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:22:47';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 8. パッケージ使用上の問題 - 一般</h1>
+    
 
 
 <a name="xlocale">
@@ -144,6 +145,7 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
 <a name="virtpackage">
+    
 <div class="question"><p><b><? echo FINK_Q ; ?>8.8: 
 	  <code>system-*</code> "virtual packages" というのを時々見かけますが、
 	  インストールも削除もできません。

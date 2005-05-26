@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/08 08:25:39';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -300,7 +300,9 @@ E: Some index files failed to download, they have been ignored, or old
 ones used instead.
 
 update available list script returned error exit status 1.
-</pre><p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p></div>
+</pre><p>或</p><pre>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</pre><p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p></div>
     </a>
     <a name="wrong-tree">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.25: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
@@ -346,6 +348,37 @@ Failed test (./Command/chowname.t at line 27)
     <a name="cant-move-fink">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+    </a>
+    <a name="four-oh-three">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we have moved the binary distribution repository for this very reason.</p><ul>
+          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+<pre>fink reinstall fink</pre>
+            <p>or</p>
+<pre>sudo apt-get install --reinstall fink</pre>
+            <p>(if for whatever reason you don't want to use the source distribution).</p>
+          </li>
+          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
+<pre>sudo pico /sw/etc/apt/sources.list</pre>
+            <p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
+<pre># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
+            <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
+          </li>
+        </ul></div>
+    </a>
+    <a name="fc-cache">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

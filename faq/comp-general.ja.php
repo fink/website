@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:22:47';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 6. コンパイルの問題 - 一般</h1>
+    
 
 
 <a name="compiler">
@@ -192,6 +193,7 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>おそらくヘッダファイル <cod
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div> 
 </a>
 <a name="gcc2"> 
+    
 <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 <code>gcc2</code> は gcc-2.95 のバーチャルパッケージです。

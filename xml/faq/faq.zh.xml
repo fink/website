@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.14 2005/04/08 08:25:39 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.15 2005/05/26 01:24:04 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -773,6 +773,10 @@ ones used instead.
 
 update available list script returned error exit status 1.
 </codeblock>
+        <p>或</p>
+        <codeblock>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</codeblock>
         <p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p>
       </answer>
     </faqentry>
@@ -861,6 +865,47 @@ Failed test (./Command/chowname.t at line 27)
         <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
         <p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p>
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="four-oh-three">
+      <question><p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p>
+      </question>
+      <answer>
+        <p>There have been problems with the Sourceforge download servers, and therefore we have moved the binary distribution repository for this very reason.</p>
+        <ul>
+          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (>= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+<codeblock>fink reinstall fink</codeblock>
+            <p>or</p>
+<codeblock>sudo apt-get install --reinstall fink</codeblock>
+            <p>(if for whatever reason you don't want to use the source distribution).</p>
+          </li>
+          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
+<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
+            <p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with &quot;Official binary distribution:&quot; thusly:</p>
+<codeblock># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+            <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-cache">
+      <question><p>I get a message that says &quot;No fonts found&quot;.</p>
+      </question>
+      <answer>
+        <p>If you see the following (so far only seen on OS 10.4):</p>
+<codeblock>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</codeblock>
+        <p>then you can fix it by running</p>
+<codeblock>sudo fc-cache</codeblock>
       </answer>
     </faqentry>
     <!-- end translation -->

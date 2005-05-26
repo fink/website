@@ -1,13 +1,14 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:22:47';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 9. パッケージ使用上の問題 - 特定のパッケージ</h1>
+    
 
 
 <a name="xmms-quiet">
@@ -108,6 +109,7 @@ exec gnome-session</pre><p>
 Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
+    
 <div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性があります。</p><ul>
 		<li><b>バイナリからのインストール:</b> 

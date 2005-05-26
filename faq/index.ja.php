@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:22:47';
+$cvs_date = 'Date: 2005/05/26 01:24:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -38,7 +38,7 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
 	</a></li><li><a href="usage-fink.php?phpLang=ja#cant-move-fink">5.30 
 	Fink を更新できません。
 	/sw/fink を移動できないからです。
-	</a></li></ul></li><li><a href="comp-general.php?phpLang=ja"><b>6 コンパイルの問題 - 一般</b></a><ul><li><a href="comp-general.php?phpLang=ja#compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
+	</a></li><li><a href="usage-fink.php?phpLang=ja#four-oh-three">5.31 403 errors when I use <code>apt-get</code> または <code>dselect</code> または Fink Commander Binary メニューを使うと、403 エラーが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#fc-cache">5.32 "No fonts found" というメッセージが出ます。</a></li></ul></li><li><a href="comp-general.php?phpLang=ja"><b>6 コンパイルの問題 - 一般</b></a><ul><li><a href="comp-general.php?phpLang=ja#compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
 これは何ですか?</a></li><li><a href="comp-general.php?phpLang=ja#cvs">6.2 "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
 </a></li><li><a href="comp-general.php?phpLang=ja#missing-make">6.3 <code>make</code> に関連したエラーがでました。</a></li><li><a href="comp-general.php?phpLang=ja#head">6.4 head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</a></li><li><a href="comp-general.php?phpLang=ja#also_in">6.5 あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
 </a></li><li><a href="comp-general.php?phpLang=ja#weak_lib">6.6 December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: "weak libraries"</a></li><li><a href="comp-general.php?phpLang=ja#mv-failed">6.7 パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</a></li><li><a href="comp-general.php?phpLang=ja#node-exists">6.8 '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</a></li><li><a href="comp-general.php?phpLang=ja#usr-local-libs">6.9 /usr/local にインストールされているライブラリやヘッダが 
@@ -80,7 +80,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
 または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-bugs">9.7 Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x-delete">9.8 Apple X11 の delete キーを、 XDarwin のように使いたいのです。</a></li><li><a href="usage-packages.php?phpLang=ja#gnome-two">9.9 GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-no-windowbar">9.10 Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</a></li><li><a href="usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">9.11 Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</a></li><li><a href="usage-packages.php?phpLang=ja#wants-xfree86-on-upgrade">9.12 
 10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
 </a></li><li><a href="usage-packages.php?phpLang=ja#special-x11-debug">9.13 まだ X11 と Fink の問題が解決されません。</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.27 2005/03/25 22:22:47 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.28 2005/05/26 01:24:04 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
