@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.11 2005/04/08 08:26:15 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.12 2005/05/26 02:14:38 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
       <!-- start translation -->
@@ -975,7 +975,7 @@ to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sourc
 There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options: 
       </p>
-      <p>(as of <code>fink-0.24.1</code>)</p>
+      <p>(as of <code>fink-0.24.6</code>)</p>
       <codeblock>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
@@ -1078,6 +1078,8 @@ files as well.</p>
  p   a virtual package provided by a package that is installed
 </codeblock>
 <!-- end translation -->
+      <p> The version column always lists the latest (highest) version known for the package, regardless of what version (if any) you have installed.  To see all versions of a package available on your sys-
+           tem, use the <xref section="dumpinfo">dumpinfo</xref> command.</p>
       <p>
 <code>fink list</code> 命令可以使用下面这些标志：
 </p>
@@ -1094,7 +1096,7 @@ files as well.</p>
 	  只显示没有过期的软件包。
 -n,--notinstalled
 	  只显示没有安装的软件包。
--s=expr,--section=expr
+-s expr,--section=expr
 	  只显示满足正则表达式的软件包。
 -m expr,--maintainer=expr
           Show only packages with the maintainer  matching the
@@ -1144,6 +1146,18 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     <section name="fetch" >
       <title>fetch</title>
       <p>下载指定的软件包，但不安装它。这个命令下载压缩档，即使以前已经下载过。</p>
+      <!-- start translation -->
+      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <codeblock>-h,--help		Show the options which are available.
+-i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
+                      	Useful for mirrors, because some restrictive packages
+                      	do not allow source mirroring.
+-d,--dry-run		Just display information about the file(s) that would
+			be downloaded for the package(s) to be fetched; do not
+			actually download anything.
+-r,--recursive		Also fetch packages that are dependencies of the
+			package(s) to be fetched.</codeblock>
+	   <!-- end translation -->
     </section>
     <section name="fetch-all" >
       <title>fetch-all</title>
@@ -1189,14 +1203,24 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     </section>
     <section name="selfupdate" >
       <title>selfupdate</title>
+      <!-- start translation -->
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <filename>/sw/fink/dists</filename> 目录树来使用直接 CVS 进行升级。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <filename>/sw/fink/dists</filename> 目录树来使用直接 CVS 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
+      <!-- end translation -->
       <!-- start translation -->
       <p>If the <xref section="options">--use-binary-dist option</xref> is enabled, the list of available packages in the binary distribution is also updated.
       </p>
       <!-- end translation -->
     </section>
+    <!-- start translation -->
+    <section name="selfupdate-rsync">
+      <title>selfupdate-rsync</title>
+      <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
+      <p>This is the recommended way to use Fink when building from source.</p>
+      <p><em>Note:</em>  rsync updates only update the active <xref chapter="conf" section="optional">trees</xref> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
+    </section>
+    <!-- end translation -->
     <section name="index" >
       <title>index</title>
       <p>

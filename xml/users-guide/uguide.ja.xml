@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.19 2005/04/08 08:20:10 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.20 2005/05/26 02:14:38 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -1064,6 +1064,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
+        <p>(<code>fink-0.24.1</code> 時点で)</p>
 <codeblock> -h, --help            - このヘルプテキストを表示
  -q, --quiet           - fink をやかましくなくさせます --verboseの反対
  -V, --version         - バージョン情報を表示
@@ -1159,6 +1160,11 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
 (i)  インストール済だが最新バージョンではない
 p   インストールされたパッケージにより提供されたバーチャルパッケージ
 </codeblock>
+      <p>
+        バージョン列は、常にパッケージで知られている最新 (最高) のバージョンを表示します。
+        これは、インストールされているバージョンとは関係ありません。
+        入手可能な全てのバージョンを知りたい場合は、 <xref section="dumpinfo">dumpinfo</xref> を実行します。
+      </p>
 <p>
 <code>fink list</code> コマンドにはフラグがあります:
 </p>
@@ -1176,7 +1182,7 @@ p   インストールされたパッケージにより提供されたバーチ
 	  最新のパッケージのみ表示。
 -n,--notinstalled
 	  未インストールパッケージのみ表示。
--s=expr,--section=expr
+-s expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
 -m expr,--maintainer=expr
 	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
@@ -1228,6 +1234,14 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <title>fetch</title>
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
 このコマンドは、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。</p>
+      <p><code>fink fetch</code> コマンドには以下のフラグが使用できます:</p>
+<codeblock>-h,--help		使用できるオプションを表示します。
+-i,--ignore-restrictive	&amp;quot;License: Restrictive&amp;quot; なパッケージは fetch しません。
+                      	制限には、ミラーを許可しないという制限もありますので、
+                      	ミラー時に役に立ちます。
+-d,--dry-run		パッケージ用にダウンロードするファイルの情報を表示するだけで、
+			実際にはダウンロードしません。
+-r,--recursive		fetch するパッケージの依存するパッケージも fetch します。</codeblock>
 </section>
 <section name="fetch-all" >
 <title>fetch-all</title>
@@ -1287,14 +1301,27 @@ Fink を再設定します。
 <title>selfupdate</title>
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
-Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自身を含めたコアパッケージを更新します。
-通常リリースの他、 <filename>/sw/fink/dists</filename> を設定して直接 CVS アップデートすることもできます。
+Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自体を含めたコアパッケージを更新します。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に CVS または rsync を選択した場合、<filename>/sw/fink/dists</filename> を、直接 CVS または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
 <xref section="options">--use-binary-dist option</xref> を使用すると、バイナリディストリビューション中の一覧も更新されます。
 </p>
 </section>
+    <section name="selfupdate-rsync">
+      <title>selfupdate-rsync</title>
+      <p>
+        このコマンドを使うことで、<code>fink selfupdate</code> 時にパッケージ一覧の更新に rsync を使用します。
+      </p>
+      <p>
+        Fink でソースからビルドする際に、こちらの方法を推奨します。
+      </p>
+      <p>
+        <em>注記:</em> rsync 更新は、使用中の<xref chapter="conf" section="optional">ツリー</xref>を更新するだけです
+        (例えば、 unstable が <code>fink.conf</code> で設定されていない場合、unstable パッケージは更新されません)
+      </p>
+    </section>
 <section name="index" >
 <title>index</title>
 <p>
@@ -1310,10 +1337,10 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 </p>
 <p>以下のフラグが使用できます:</p>
 <codeblock>-h,--help            - 使用できるオプションを表示
- -p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
- --pedantic, --no-pedantic
-                      - 形式に関する警告の表示を制御します
-                       --pedantic が規定値</codeblock>
+-p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
+--pedantic, --no-pedantic
+                     - 形式に関する警告の表示を制御します
+                      --pedantic が規定値</codeblock>
 <p>
 エイリアス: check
 </p>

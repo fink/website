@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/08 08:20:10';
+$cvs_date = 'Date: 2005/05/26 02:14:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -26,6 +26,7 @@ include_once "header.ja.inc";
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
+        <p>(<code>fink-0.24.1</code> 時点で)</p>
 <pre> -h, --help            - このヘルプテキストを表示
  -q, --quiet           - fink をやかましくなくさせます --verboseの反対
  -V, --version         - バージョン情報を表示
@@ -121,6 +122,11 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
 (i)  インストール済だが最新バージョンではない
 p   インストールされたパッケージにより提供されたバーチャルパッケージ
 </pre>
+      <p>
+        バージョン列は、常にパッケージで知られている最新 (最高) のバージョンを表示します。
+        これは、インストールされているバージョンとは関係ありません。
+        入手可能な全てのバージョンを知りたい場合は、 <a href="#dumpinfo">dumpinfo</a> を実行します。
+      </p>
 <p>
 <code>fink list</code> コマンドにはフラグがあります:
 </p>
@@ -138,7 +144,7 @@ p   インストールされたパッケージにより提供されたバーチ
 	  最新のパッケージのみ表示。
 -n,--notinstalled
 	  未インストールパッケージのみ表示。
--s=expr,--section=expr
+-s expr,--section=expr
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
 -m expr,--maintainer=expr
 	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
@@ -190,6 +196,14 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
 このコマンドは、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。</p>
+      <p><code>fink fetch</code> コマンドには以下のフラグが使用できます:</p>
+<pre>-h,--help		使用できるオプションを表示します。
+-i,--ignore-restrictive	&amp;quot;License: Restrictive&amp;quot; なパッケージは fetch しません。
+                      	制限には、ミラーを許可しないという制限もありますので、
+                      	ミラー時に役に立ちます。
+-d,--dry-run		パッケージ用にダウンロードするファイルの情報を表示するだけで、
+			実際にはダウンロードしません。
+-r,--recursive		fetch するパッケージの依存するパッケージも fetch します。</pre>
 
 <h2><a name="fetch-all">6.11 fetch-all</a></h2>
 
@@ -249,22 +263,35 @@ Fink を再設定します。
 
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
-Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自身を含めたコアパッケージを更新します。
-通常リリースの他、 <code>/sw/fink/dists</code> を設定して直接 CVS アップデートすることもできます。
+Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自体を含めたコアパッケージを更新します。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に CVS または rsync を選択した場合、<code>/sw/fink/dists</code> を、直接 CVS または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
 <a href="#options">--use-binary-dist option</a> を使用すると、バイナリディストリビューション中の一覧も更新されます。
 </p>
 
-<h2><a name="index">6.18 index</a></h2>
+    <h2><a name="selfupdate-rsync">6.18 selfupdate-rsync</a></h2>
+      
+      <p>
+        このコマンドを使うことで、<code>fink selfupdate</code> 時にパッケージ一覧の更新に rsync を使用します。
+      </p>
+      <p>
+        Fink でソースからビルドする際に、こちらの方法を推奨します。
+      </p>
+      <p>
+        <b>注記:</b> rsync 更新は、使用中の<a href="conf.php?phpLang=ja#optional">ツリー</a>を更新するだけです
+        (例えば、 unstable が <code>fink.conf</code> で設定されていない場合、unstable パッケージは更新されません)
+      </p>
+    
+<h2><a name="index">6.19 index</a></h2>
 
 <p>
 パッケージキャッシュを再構築します。
 通常は <code>fink</code> が更新の必要に応じて自動検出するので、手動で行なう必要はありません。
 </p>
 
-<h2><a name="validate">6.19 validate</a></h2>
+<h2><a name="validate">6.20 validate</a></h2>
 
 <p>
 このコマンドは、 .info と .deb ファイルについていくつかの評価を行ないます。
@@ -272,21 +299,21 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 </p>
 <p>以下のフラグが使用できます:</p>
 <pre>-h,--help            - 使用できるオプションを表示
- -p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
- --pedantic, --no-pedantic
-                      - 形式に関する警告の表示を制御します
-                       --pedantic が規定値</pre>
+-p,--prefix          - 評価対象ファイルの Fink 基本パスのプリフィックス (%p) をシミュレートする
+--pedantic, --no-pedantic
+                     - 形式に関する警告の表示を制御します
+                      --pedantic が規定値</pre>
 <p>
 エイリアス: check
 </p>
 
-<h2><a name="scanpackages">6.20 scanpackages</a></h2>
+<h2><a name="scanpackages">6.21 scanpackages</a></h2>
 
 <p>
 指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
 </p>
 
-<h2><a name="cleanup">6.21 cleanup</a></h2>
+<h2><a name="cleanup">6.22 cleanup</a></h2>
 
 <p>
 新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
@@ -297,7 +324,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 <code>fink scanpackages</code> が実行されます。
 </p>
 
-    <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.23 dumpinfo</a></h2>
       
       <p>
 	  注記: 0.21.0 以降の <code>fink</code> で有効。
@@ -317,7 +344,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
    --percent=key       in the order listed.
       </pre>
     
-    <h2><a name="show-deps">6.23 show-deps</a></h2>
+    <h2><a name="show-deps">6.24 show-deps</a></h2>
       
       <p>fink-0.23-6 および以降。</p>
       <p>

@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/08 08:26:15';
+$cvs_date = 'Date: 2005/05/26 02:14:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 
@@ -22,7 +22,7 @@ include_once "header.zh.inc";
 There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options: 
       </p>
-      <p>(as of <code>fink-0.24.1</code>)</p>
+      <p>(as of <code>fink-0.24.6</code>)</p>
       <pre>-h, --help            - display this help text
 -q, --quiet           - causes fink to be less verbose, opposite of --verbose
 -V, --version         - display version information
@@ -125,6 +125,8 @@ files as well.</p>
  p   a virtual package provided by a package that is installed
 </pre>
 
+      <p> The version column always lists the latest (highest) version known for the package, regardless of what version (if any) you have installed.  To see all versions of a package available on your sys-
+           tem, use the <a href="#dumpinfo">dumpinfo</a> command.</p>
       <p>
 <code>fink list</code> 命令可以使用下面这些标志：
 </p>
@@ -141,7 +143,7 @@ files as well.</p>
 	  只显示没有过期的软件包。
 -n,--notinstalled
 	  只显示没有安装的软件包。
--s=expr,--section=expr
+-s expr,--section=expr
 	  只显示满足正则表达式的软件包。
 -m expr,--maintainer=expr
           Show only packages with the maintainer  matching the
@@ -191,6 +193,18 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     <h2><a name="fetch">6.10 fetch</a></h2>
       
       <p>下载指定的软件包，但不安装它。这个命令下载压缩档，即使以前已经下载过。</p>
+      
+      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <pre>-h,--help		Show the options which are available.
+-i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
+                      	Useful for mirrors, because some restrictive packages
+                      	do not allow source mirroring.
+-d,--dry-run		Just display information about the file(s) that would
+			be downloaded for the package(s) to be fetched; do not
+			actually download anything.
+-r,--recursive		Also fetch packages that are dependencies of the
+			package(s) to be fetched.</pre>
+	   
     
     <h2><a name="fetch-all">6.11 fetch-all</a></h2>
       
@@ -236,21 +250,31 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
     
     <h2><a name="selfupdate">6.17 selfupdate</a></h2>
       
+      
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/sw/fink/dists</code> 目录树来使用直接 CVS 进行升级。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/sw/fink/dists</code> 目录树来使用直接 CVS 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
+      
       
       <p>If the <a href="#options">--use-binary-dist option</a> is enabled, the list of available packages in the binary distribution is also updated.
       </p>
       
     
-    <h2><a name="index">6.18 index</a></h2>
+    
+    <h2><a name="selfupdate-rsync">6.18 selfupdate-rsync</a></h2>
+      
+      <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
+      <p>This is the recommended way to use Fink when building from source.</p>
+      <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=zh#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
+    
+    
+    <h2><a name="index">6.19 index</a></h2>
       
       <p>
    重建软件包缓存。通常你不应该手工运行这个命令，因为 <code>fink</code> 应该能够自动检测到什么时候需要更新。
 </p>
     
-    <h2><a name="validate">6.19 validate</a></h2>
+    <h2><a name="validate">6.20 validate</a></h2>
       
       <p>
    这个命令会对 .info 和 .deb 文件进行一些检查。软件包维护人员在提交他们负责的软件包之前，应该运行这个命令来对它的描述和相应的构建好的软件包进行检查。
@@ -268,13 +292,13 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
    别名： check
 </p>
     
-    <h2><a name="scanpackages">6.20 scanpackages</a></h2>
+    <h2><a name="scanpackages">6.21 scanpackages</a></h2>
       
       <p>
    使用指定的代码树来调用 dpkg-scanpackages(8) 命令。
 </p>
     
-    <h2><a name="cleanup">6.21 cleanup</a></h2>
+    <h2><a name="cleanup">6.22 cleanup</a></h2>
       
       <p>
    删除所有已经有新版本的失效的软件包文件（.info, .patch, .deb）。
@@ -286,7 +310,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       </p>
       
     
-    <h2><a name="dumpinfo">6.22 dumpinfo</a></h2>
+    <h2><a name="dumpinfo">6.23 dumpinfo</a></h2>
       
       
       <p>Only available in <code>fink</code> newer than version 0.21.0</p>
@@ -305,7 +329,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       </pre>
     
     
-    <h2><a name="show-deps">6.23 show-deps</a></h2>
+    <h2><a name="show-deps">6.24 show-deps</a></h2>
       
       <p>Only available in fink-0.23-6 and later.</p>
 <p>Displays a human-readable list of the compile-time (build) and run-
