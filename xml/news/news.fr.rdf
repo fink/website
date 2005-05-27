@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2005-05-26T05:15:16+02:00</dc:date>
+    <dc:date>2005-05-27T12:19:59+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger">
       <title>Fink et Tiger</title>
@@ -16,7 +16,7 @@ Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la m
 
 Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires. D'ici là, les nouveaux utilisateurs peuvent amorcer l'installation de la version 0.23.9 de fink, comme expliqué ci-dessous aux utilisateurs de la branche stable.
 Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande sudo rm -Rf /sw, puis d'amorcer l'installation de la version 0.23.9 de fink avec le fichier compressé fink-0.23.9.tar.gz. Téléchargez ce fichier et décompressez-le via la commande tar -xvzf fink-0.23.9.tar.gz. Exécutez ensuite la commande ./bootstrap.sh dans le répertoire fink-0.23.9 nouvellement créé. Enfin, lancez la commande fink selfupdate.
-Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant fink --version. Si la version est inférieure à 0.24.5, lancez fink selfupdate. Que vous ayez ou non exécuté la commande fink selfupdate, réinstallez ensuite le paquet fink via la commande fink reinstall fink, suivie de fink selfupdate.
+Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant fink --version. Si la version est inférieure à 0.24.5, lancez fink selfupdate. Que vous ayez ou non exécuté la commande fink selfupdate, réinstallez ensuite le paquet fink via la commande fink rebuild fink, suivie de fink selfupdate.
 
 Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.
 Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.
@@ -26,7 +26,7 @@ Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la m
 
 Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires. D'ici là, les nouveaux utilisateurs peuvent amorcer l'installation de la version 0.23.9 de fink, comme expliqué ci-dessous aux utilisateurs de la branche stable.
 Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande sudo rm -Rf /sw, puis d'amorcer l'installation de la version 0.23.9 de fink avec le fichier compressé fink-0.23.9.tar.gz. Téléchargez ce fichier et décompressez-le via la commande tar -xvzf fink-0.23.9.tar.gz. Exécutez ensuite la commande ./bootstrap.sh dans le répertoire fink-0.23.9 nouvellement créé. Enfin, lancez la commande fink selfupdate.
-Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant fink --version. Si la version est inférieure à 0.24.5, lancez fink selfupdate. Que vous ayez ou non exécuté la commande fink selfupdate, réinstallez ensuite le paquet fink via la commande fink reinstall fink, suivie de fink selfupdate.
+Les utilisateurs de la branche instable peuvent faire la mise à jour via fink selfupdate si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant fink --version. Si la version est inférieure à 0.24.5, lancez fink selfupdate. Que vous ayez ou non exécuté la commande fink selfupdate, réinstallez ensuite le paquet fink via la commande fink rebuild fink, suivie de fink selfupdate.
 
 Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.
 Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.
