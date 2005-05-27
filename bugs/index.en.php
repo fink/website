@@ -1,7 +1,7 @@
 <?
 $title = "Fink bug tracking system";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/01/24 02:38:47 $';
+$cvs_author = '$Author: beren12 $';
+$cvs_date = '$Date: 2005/05/27 03:39:20 $';
 
 include "header.inc";
 ?>
@@ -98,70 +98,50 @@ include "header.inc";
 		<small>Include severity: 
 		<label><input type="checkbox" name="sev-inc" value="critical">critical</label> 
 		<label><input type="checkbox" name="sev-inc" value="grave">grave</label> 
-		<label><input type="checkbox" name="sev-inc" value="serious">serious</label> 
-		<label><input type="checkbox" name="sev-inc" value="important">important</label> 
 		<label><input type="checkbox" name="sev-inc" value="normal">normal</label> 
 		<label><input type="checkbox" name="sev-inc" value="minor">minor</label> 
 		<label><input type="checkbox" name="sev-inc" value="wishlist">wishlist</label> 
-		<label><input type="checkbox" name="sev-inc" value="fixed">fixed</label>
 		</small>
 	</li>
 	<li>
 		<small>Exclude severity: 
 		<label><input type="checkbox" name="sev-exc" value="critical">critical</label> 
 		<label><input type="checkbox" name="sev-exc" value="grave">grave</label> 
-		<label><input type="checkbox" name="sev-exc" value="serious">serious</label> 
-		<label><input type="checkbox" name="sev-exc" value="important">important</label> 
 		<label><input type="checkbox" name="sev-exc" value="normal">normal</label> 
 		<label><input type="checkbox" name="sev-exc" value="minor">minor</label> 
 		<label><input type="checkbox" name="sev-exc" value="wishlist">wishlist</label> 
-		<label><input type="checkbox" name="sev-exc" value="fixed">fixed</label>
 		</small>
 	</li>
 	<li>
 		<small>Include tag: 
 		<label><input type="checkbox" name="include" value="10.2-gcc3.3">10.2-gcc3.3</label> 
 		<label><input type="checkbox" name="include" value="10.3">10.3</label> 
+		<label><input type="checkbox" name="include" value="10.4-transitional">10.4-transitional</label> 
 		<label><input type="checkbox" name="include" value="10.4">10.4</label> 
+		<label><input type="checkbox" name="include" value="stable">stable</label> 
+		<label><input type="checkbox" name="include" value="unstable">unstable</label> 
 		<label><input type="checkbox" name="include" value="experimental">experimental</label> 
-		<label><input type="checkbox" name="include" value="confirmed">confirmed</label> 
 		<label><input type="checkbox" name="include" value="fixed">fixed</label> 
-		<label><input type="checkbox" name="include" value="fixed-in-experimental">fixed-in-experimental</label> 
-		<label><input type="checkbox" name="include" value="fixed-upstream">fixed-upstream</label> 
-		<label><input type="checkbox" name="include" value="help">help</label> 
-		<label><input type="checkbox" name="include" value="l10n">l10n</label> 
 		<label><input type="checkbox" name="include" value="moreinfo">moreinfo</label> 
 		<label><input type="checkbox" name="include" value="patch">patch</label> 
-		<label><input type="checkbox" name="include" value="pending">pending</label> 
-		<label><input type="checkbox" name="include" value="security">security</label> 
 		<label><input type="checkbox" name="include" value="unreproducible">unreproducible</label> 
-		<label><input type="checkbox" name="include" value="upstream">upstream</label> 
 		<label><input type="checkbox" name="include" value="wontfix">wontfix</label> 
-		<label><input type="checkbox" name="include" value="ipv6">ipv6</label> 
-		<label><input type="checkbox" name="include" value="lfs">lfs</label> 
 		</small>
 	</li>
 	<li>
 		<small>Exclude tag: 
 		<label><input type="checkbox" name="exclude" value="10.2-gcc3.3">10.2-gcc3.3</label> 
 		<label><input type="checkbox" name="exclude" value="10.3">10.3</label> 
+		<label><input type="checkbox" name="exclude" value="10.4-transitional">10.4-transitional</label> 
 		<label><input type="checkbox" name="exclude" value="10.4">10.4</label> 
+		<label><input type="checkbox" name="exclude" value="stable">stable</label> 
+		<label><input type="checkbox" name="exclude" value="unstable">unstable</label> 
 		<label><input type="checkbox" name="exclude" value="experimental">experimental</label> 
-		<label><input type="checkbox" name="exclude" value="confirmed">confirmed</label> 
 		<label><input type="checkbox" name="exclude" value="fixed">fixed</label> 
-		<label><input type="checkbox" name="exclude" value="fixed-in-experimental">fixed-in-experimental</label> 
-		<label><input type="checkbox" name="exclude" value="fixed-upstream">fixed-upstream</label> 
-		<label><input type="checkbox" name="exclude" value="help">help</label> 
-		<label><input type="checkbox" name="exclude" value="l10n">l10n</label> 
 		<label><input type="checkbox" name="exclude" value="moreinfo">moreinfo</label> 
 		<label><input type="checkbox" name="exclude" value="patch">patch</label> 
-		<label><input type="checkbox" name="exclude" value="pending">pending</label> 
-		<label><input type="checkbox" name="exclude" value="security">security</label> 
 		<label><input type="checkbox" name="exclude" value="unreproducible">unreproducible</label> 
-		<label><input type="checkbox" name="exclude" value="upstream">upstream</label> 
 		<label><input type="checkbox" name="exclude" value="wontfix">wontfix</label> 
-		<label><input type="checkbox" name="exclude" value="ipv6">ipv6</label> 
-		<label><input type="checkbox" name="exclude" value="lfs">lfs</label> 
 		</small>
 	</li>
 </ul>
