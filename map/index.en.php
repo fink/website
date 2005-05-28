@@ -1,7 +1,7 @@
 <?
 $title = "Fink Developer Map";
 $cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/25 20:00:25 $';
+$cvs_date = '$Date: 2005/05/28 23:35:34 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,8 @@ include "header.inc";
 <tr><td>15</td><td>Alexander 'Feanor' Strange</td></tr>
 <tr><td>16</td><td>Alexander 'akh' Hansen</td></tr>
 <tr><td>17</td><td>Ben 'Clef' Hines</td></tr>
+<tr><td>18</td><td>Chris 'zizban' Turkel</td><td>Cheshire, 
+Massachusetts, United States of America</td></tr>
 </table>
 <p>Think you should be on the map? E-mail <a href="mailto:newmanbe@freeshell.org?Subject=Fink Developer Map">Benn Newman</a> using the following format:</p>
 <p>
@@ -38,3 +40,4 @@ include "header.inc";
 <?
 include "../footer.inc";
 ?>
+
