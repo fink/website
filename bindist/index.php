@@ -151,6 +151,11 @@ foreach ($files as $fn) {
   if ($type == "link") {
     $rfn = readlink($rfn);
     $type = filetype($rfn);
+// to address an issue with nested symlinks, we're going to assume that
+// all nested symlinks point to files, not directories
+    if ($type == "link") {
+      $type = "file";
+    }
     $special = "->&nbsp;$rfn";
   }
 
