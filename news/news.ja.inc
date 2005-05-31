@@ -19,7 +19,7 @@ unstable ツリーの利用者は、 fink のバージョンが 0.24.5 以前で
 することでアップグレードされます。
 10.4 にアップグレードしたら、<code>fink --version</code> で現在の fink のバージョンを確認してください。
 0.24.5 以前であれば、 <code>fink selfupdate</code> を実行してください。
-次に、 selfupdate をした人もしていない人も、 <code>fink reinstall fink</code> し、 <code>fink selfupdate</code> を実行してください。
+次に、 selfupdate をした人もしていない人も、 <code>fink rebuild fink</code> し <code>fink selfupdate</code> を実行してください。
 </li>
 			</ul>
 			<p>

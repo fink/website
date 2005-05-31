@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.9 2005/05/26 00:43:03 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.10 2005/05/31 01:09:12 babayoshihiko Exp $</cvsid>
 	<newsitem>
 		<date>2005-04-29</date>
 		<headline>Fink と Tiger.</headline>
@@ -26,7 +26,7 @@ unstable ツリーの利用者は、 fink のバージョンが 0.24.5 以前で
 することでアップグレードされます。
 10.4 にアップグレードしたら、<code>fink --version</code> で現在の fink のバージョンを確認してください。
 0.24.5 以前であれば、 <code>fink selfupdate</code> を実行してください。
-次に、 selfupdate をした人もしていない人も、 <code>fink reinstall fink</code> し、 <code>fink selfupdate</code> を実行してください。
+次に、 selfupdate をした人もしていない人も、 <code>fink rebuild fink</code> し <code>fink selfupdate</code> を実行してください。
 </li>
 			</ul>
 			<p>
