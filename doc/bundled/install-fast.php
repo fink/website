@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/07/30 15:53:31';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2005/05/31 15:36:05';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -74,11 +74,6 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-
-Run 'source /sw/bin/init.csh ; rehash' to set up this Terminal's environment
-to use Fink. To make the software installed by Fink available in all of your
-shells, add 'source /sw/bin/init.csh' to the init script '.cshrc' in your
-home directory. Enjoy.
 
 [frodo:~/fink-0.7.1-full] testuser% <b>cd</b>
 [frodo:~] testuser% <b>rm -r fink-0.7.1-full</b>
