@@ -111,7 +111,7 @@ sub starttag {
     $prefix .= "   ";
     $newprefix .= "   ";
   } elsif ($tag eq "u") {
-    $s .= "_";
+    #$s .= "_";
     $uscore++;
   }
 }
@@ -142,7 +142,7 @@ sub endtag {
     $prefix = substr($prefix,0,-3);
     $newprefix = substr($newprefix,0,-3);
   } elsif ($tag eq "u") {
-    $s .= "_";
+    #$s .= "_";
     $uscore--;
     $uscore = 0 if $uscore < 0;
   }
