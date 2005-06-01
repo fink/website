@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/05/19 12:09:46';
+$cvs_author = 'Author: vasi';
+$cvs_date = 'Date: 2005/06/01 02:26:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -112,7 +112,8 @@ include_once "header.en.inc";
         activate all of unstable.</p><p>If you want Fink to use all of unstable, edit
         <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index</code>.</p><p>If you only want one or two specific packages, and nothing else
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.
+        </p><p>If you only want one or two specific packages, and nothing else
         from unstable, then you need to switch over to CVS updating (i.e. use
         <code>fink selfupdate-cvs</code>), because rsync only updates the
         trees that are active in your <code>fink.conf</code>. Edit
