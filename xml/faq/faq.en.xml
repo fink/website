@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.47 2005/05/19 12:09:46 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.48 2005/06/01 02:26:52 vasi Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -381,7 +381,8 @@
         <p>If you want Fink to use all of unstable, edit
         <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index</code>.</p>
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.
+        </p>
         <p>If you only want one or two specific packages, and nothing else
         from unstable, then you need to switch over to CVS updating (i.e. use
         <code>fink selfupdate-cvs</code>), because rsync only updates the
