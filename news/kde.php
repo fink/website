@@ -1,7 +1,7 @@
 <?
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/07/22 07:34:00 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2005/06/03 19:43:08 $';
 
 include "header.inc";
 ?>
@@ -38,36 +38,53 @@ include "header.inc";
 
 To install all of the official KDE packages, install "bundle-kde" or
 "bundle-kde-ssl" (depending on whether crypotgraphic laws permit
-downloading strong cryptography).
+downloading strong cryptography).  Unless you have a specific reason
+not to, "bundle-kde-ssl" is suggested.
 
 ---[ Configuration ]--------------------------------------------------
 
 To use KDE as your windowing system in XDarwin, create a file called
-".xinitrc" in your home directory, with the following commands (it is
-safe to cut and paste these):
+".xinitrc" in your home directory, containing the following line:
 
-  echo "source /sw/bin/init.sh" &gt; ~/.xinitrc
-  echo "/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1" &gt;&gt; ~/.xinitrc
+  source /sw/bin/init.sh
+  /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 
-Note that this will overwrite an existing .xinitrc file!
+See http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc
+for more information on the xinitrc files and how they work.
+
+If you want to use Apple's X11 instead of the KDE window manager,
+put the following line before the startkde line in .xinitrc:
+
+  export KDEWM=quartz-wm
+
+Note that depending on your version of Apple's X11, this can cause
+strange resizing issues with the kicker (KDE task bar).
 
 ---[ Startup ]--------------------------------------------------------
 
 Once you have created an ~/.xinitrc file, you should be able to start
-KDE by clicking on the "XDarwin" icon in your Applications folder.
+KDE by clicking on the "XDarwin" icon in your Applications folder.  
 
-NOTE: If you plan on running in rootless mode, you will likely want to
-disable desktop icons, or else the root window desktop will cover up
-your Aqua destkop.  You can do this by starting the KDE control
-center, expanding the "Desktop" list, click "Behavior", and uncheck
-the "Enable icons on desktop" checkbox.
-
+NOTE: By default, X11 on Mac OS X runs in "rootless" mode, generally.
+If you run KDE in rootless mode, it will take over your desktop with
+a window that covers everything up.  You can remove this by disabling
+desktop icons in the KDE control center.  Open the control center
+(either from the "K" menu bar, or by typing "kcontrol" in an xterm)
+then expand the "Desktop" list, click "Behavior", and uncheck the
+"Show icons on desktop" checkbox.
+   
 ---[ Removal ]--------------------------------------------------------
+   
+To remove all of the official KDE packages, you can remove the KDE
+libraries and anything that depends on them by running, in a terminal:
+   
+  sudo apt-get remove kdelibs3-ssl-shlibs kdelibs3-shlibs
 
-To remove all of the official KDE packages, you can remove aRts and
-anything that depends on it, by running (in a terminal):
+To remove an individual KDE package collection (like kdenetwork3 or
+kdesdk3) you can generally remove [package]-base.  For example, to
+remove all of the kdenetwork3 packages, run:
 
-  sudo apt-get remove arts
+  sudo apt-get remove kdenetwork3-base
 </pre>
  
 
