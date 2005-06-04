@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/05/26 10:50:01';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/03 13:40:45';
 $metatags = '';
 
 include_once "header.inc";
@@ -13,25 +13,25 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
-users.  In the meantime, new users should bootstrap fink 0.23.9, just
+users.  In the meantime, new users should bootstrap fink 0.23.10, just
 as stable users, below.
 </li><li>
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
-installation of fink-0.23.9 using
+installation of fink-0.23.10 using
 <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</a>--download that file and expand it, 
+fink-0.23.10.tar.gz</a>--download that file and expand it, 
 eg. via
-<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code>tar -xvzf fink-0.23.10.tar.gz</code>.  After running the command
 <code> ./bootstrap.sh </code> in the resulting
-<code>fink-0.23.9</code> directory,
+<code>fink-0.23.10</code> directory,
 you'll need to run <code>fink selfupdate</code>
 </li><li>
 For users of the unstable tree, you may be able to upgrade just by running 
-<code>fink selfupdate</code> if your version of fink is less than 0.24.5.  
-It will install fink-0.24.5 for you.  After upgrading to 10.4, first check 
+<code>fink selfupdate</code> if your version of fink is less than 0.24.6.  
+It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
 that you have the right version of fink by issuing <code>fink --version</code>
-.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to 
+.  If your version is less than 0.24.6, run <code>fink selfupdate</code> to 
 get the right version of fink.  Then, whether you selfupdated or not, 
 reinstall the fink package using <code>fink rebuild fink</code>, 
 and follow that with another <code>fink selfupdate</code>.

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-05-27T12:19:56+02:00</dc:date>
+    <dc:date>2005-06-04T04:12:02+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
       <title>Fink and Tiger.</title>
@@ -17,25 +17,25 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 
 
 A binary installer will be available within a few weeks, for binary-only
-users.  In the meantime, new users should bootstrap fink 0.23.9, just
+users.  In the meantime, new users should bootstrap fink 0.23.10, just
 as stable users, below.
 
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an
-installation of fink-0.23.9 using
+installation of fink-0.23.10 using
 
-fink-0.23.9.tar.gz--download that file and expand it, 
+fink-0.23.10.tar.gz--download that file and expand it, 
 eg. via
-tar -xvzf fink-0.23.9.tar.gz.  After running the command
+tar -xvzf fink-0.23.10.tar.gz.  After running the command
  ./bootstrap.sh  in the resulting
-fink-0.23.9 directory,
+fink-0.23.10 directory,
 you'll need to run fink selfupdate
 
 For users of the unstable tree, you may be able to upgrade just by running 
-fink selfupdate if your version of fink is less than 0.24.5.  
-It will install fink-0.24.5 for you.  After upgrading to 10.4, first check 
+fink selfupdate if your version of fink is less than 0.24.6.  
+It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
 that you have the right version of fink by issuing fink --version
-.  If your version is less than 0.24.5, run fink selfupdate to 
+.  If your version is less than 0.24.6, run fink selfupdate to 
 get the right version of fink.  Then, whether you selfupdated or not, 
 reinstall the fink package using fink rebuild fink, 
 and follow that with another fink selfupdate.
@@ -57,25 +57,25 @@ Fink can be used on OS X 10.4!  There are several ways you can update:
 
 
 A binary installer will be available within a few weeks, for binary-only
-users.  In the meantime, new users should bootstrap fink 0.23.9, just
+users.  In the meantime, new users should bootstrap fink 0.23.10, just
 as stable users, below.
 
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an
-installation of fink-0.23.9 using
+installation of fink-0.23.10 using
 
-fink-0.23.9.tar.gz--download that file and expand it, 
+fink-0.23.10.tar.gz--download that file and expand it, 
 eg. via
-tar -xvzf fink-0.23.9.tar.gz.  After running the command
+tar -xvzf fink-0.23.10.tar.gz.  After running the command
  ./bootstrap.sh  in the resulting
-fink-0.23.9 directory,
+fink-0.23.10 directory,
 you'll need to run fink selfupdate
 
 For users of the unstable tree, you may be able to upgrade just by running 
-fink selfupdate if your version of fink is less than 0.24.5.  
-It will install fink-0.24.5 for you.  After upgrading to 10.4, first check 
+fink selfupdate if your version of fink is less than 0.24.6.  
+It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
 that you have the right version of fink by issuing fink --version
-.  If your version is less than 0.24.5, run fink selfupdate to 
+.  If your version is less than 0.24.6, run fink selfupdate to 
 get the right version of fink.  Then, whether you selfupdated or not, 
 reinstall the fink package using fink rebuild fink, 
 and follow that with another fink selfupdate.
