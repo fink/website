@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.26 2005/05/27 10:18:56 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.27 2005/06/04 01:57:27 michga Exp $</cvsid>
 
 <newsitem>
 <date>29/04/2005</date>
@@ -9,9 +9,9 @@
 <body>
 <p>Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la mise à jour :</p>
 <ul>
-<li>Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires. D'ici là, les nouveaux utilisateurs peuvent amorcer l'installation de la version 0.23.9 de fink, comme expliqué ci-dessous aux utilisateurs de la branche stable.</li>
-<li>Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande <code>sudo rm -Rf /sw</code>, puis d'amorcer l'installation de la version 0.23.9 de fink avec le fichier compressé <varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">fink-0.23.9.tar.gz</varlink>. Téléchargez ce fichier et décompressez-le via la commande <code>tar -xvzf fink-0.23.9.tar.gz</code>. Exécutez ensuite la commande <code>./bootstrap.sh</code> dans le répertoire <filename>fink-0.23.9</filename> nouvellement créé. Enfin, lancez la commande <code>fink selfupdate</code>.</li>
-<li>Les utilisateurs de la branche instable peuvent faire la mise à jour via <code>fink selfupdate</code> si leur version de fink est inférieure à la version 0.24.5. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant <code>fink --version</code>. Si la version est inférieure à 0.24.5, lancez <code>fink selfupdate</code>. Que vous ayez ou non exécuté la commande <code>fink selfupdate</code>, réinstallez ensuite le paquet fink via la commande <code>fink rebuild fink</code>, suivie de <code>fink selfupdate</code>.</li>
+<li>Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires. D'ici là, les nouveaux utilisateurs peuvent amorcer l'installation de la version 0.23.10 de fink, comme expliqué ci-dessous aux utilisateurs de la branche stable.</li>
+<li>Nous recommandons aux utilisateurs de la branche stable de supprimer fink en utilisant la commande <code>sudo rm -Rf /sw</code>, puis d'amorcer l'installation de la version 0.23.10 de fink avec le fichier compressé <varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">fink-0.23.10.tar.gz</varlink>. Téléchargez ce fichier et décompressez-le via la commande <code>tar -xvzf fink-0.23.10.tar.gz</code>. Exécutez ensuite la commande <code>./bootstrap.sh</code> dans le répertoire <filename>fink-0.23.10</filename> nouvellement créé. Enfin, lancez la commande <code>fink selfupdate</code>.</li>
+<li>Les utilisateurs de la branche instable peuvent faire la mise à jour via <code>fink selfupdate</code> si leur version de fink est inférieure à la version 0.24.6. Elle sera alors installée. Après passage à la version 10.4 de Mac OS X, vérifiez d'abord que vous avez la bonne version de fink en exécutant <code>fink --version</code>. Si la version est inférieure à 0.24.6, lancez <code>fink selfupdate</code>. Que vous ayez ou non exécuté la commande <code>fink selfupdate</code>, réinstallez ensuite le paquet fink via la commande <code>fink rebuild fink</code>, suivie de <code>fink selfupdate</code>.</li>
 </ul>
 <p>Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.</p>
 <p>Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.</p>
