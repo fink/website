@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/03 13:40:45';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/06/07 22:04:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -19,7 +19,7 @@ as stable users, below.
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
 installation of fink-0.23.10 using
-<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
 fink-0.23.10.tar.gz</a>--download that file and expand it, 
 eg. via
 <code>tar -xvzf fink-0.23.10.tar.gz</code>.  After running the command
