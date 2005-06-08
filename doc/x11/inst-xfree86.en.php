@@ -1,8 +1,8 @@
 <?
 $title = "Running X11 - Installing X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/10 02:35:35';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting XFree86"><link rel="prev" href="history.php?phpLang=en" title="History">';
+$cvs_date = 'Date: 2005/06/08 01:09:20';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting X11"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
 include_once "header.en.inc";
@@ -27,12 +27,15 @@ XFree86 distribution.
 operation, and have OpenGL support.</li>
 <li><b>Important note:</b>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
 <p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
-<p>For 10.3, the X11 hierarchy is as follows:</p>
+<p>For 10.3 or 10.4, the X11 hierarchy (newer -&gt; older codebases) is as follows:</p>
 <pre>xorg &gt; xfree86 &gt; Apple's X11 </pre>
 </li></ul>
+<p><b>10.4 users:</b></p>
+<p>You can install XFree86 version 4.5.0-23 from source.   You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install the X.org X11 release (currently version 6.8.2-35) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.5, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
 <p><b>10.3 users:</b></p>
-<p>You can install version 4.3.99.16-2 (that which is in the current binary distribution) or 4.4 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
-<p>You can also install the X.org X11 release (currently version 6.8) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.4, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
+<p>You can install XFree86 version 4.4.0-13 (that which is in the current binary distribution) or 4.5.0-13 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install X.org-6.8.2 via the <code>xorg</code> and <code>xorg-shlibs</code> packages as above.</p>
 
 <p><b>10.2 users:</b></p>
 <p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
@@ -50,7 +53,8 @@ On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a 
 X11 implementation based on XFree86-4.2</a> which includes Quartz rendering and accelerated
 OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release (i.e. Beta 3) was made on March 17, 2003 with further additional features and bugfixes.  This version is usable on Jaguar.
 </p>
-      <p>On October 24, 2003, Apple released Panther (10.3), which includes the release version of their X11 distribution.  This version is based on XFree86-4.3.</p>
+      <p>On October 24, 2003, Apple released Panther (10.3), which includes a release version of their X11 distribution.  This version is based on XFree86-4.3.</p>
+<p>On April 29, 2005, Apple released Tiger (10.4), which includes a release version of Apple's X11 based on XFree86-4.4.</p>
       <p>
 To use the Apple binaries, you need to make sure the <b>X11 User</b> package is installed, and you should also 
 <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</a> Fink.</p>
@@ -120,7 +124,7 @@ defined in indirectly referenced dynamic library
           <p>If you use the <code>xfree86</code> package, and later switch to Apple's X11 (on either 10.2.x or 10.3.x), any
 packages you have built against <code>xfree86</code> will need to be rebuilt, as the binaries are incompatible.</p>
         </li>
-<li><p><b>10.3 users only:</b>  It is possible to use Apple's display server and window manager on top of either XFree86-4.4 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p></li>
+<li><p><b>10.3 and 10.4 users only:</b>  It is possible to use Apple's display server and window manager on top of XFree86 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p></li>
       </ul>
       <p>For more information on using Apple's X11, check out this <a href="http://developer.apple.com/darwin/runningx11.html">article</a> at the Apple Developer Connection.</p>
     
@@ -271,32 +275,28 @@ make sure that you aren't trying to run <code>quartz-wm</code>.  You can now ins
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>4.2.x built via Fink</td><td>
-            <p>
-              <code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
+      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>XFree86-4.2.1.x (10.2 only)</td><td>
+             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
             <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
-          </td></tr><tr valign="top"><td>4.3.x built via Fink</td><td>
+          </td></tr><tr valign="top"><td>XFree86-4.4 or 4.5 (10.3 and 10.4)</td><td>
             <p>
               <code>xfree86</code> and <code>xfree86-shlibs</code>
             </p>
-          </td></tr><tr valign="top"><td>4.x official binaries</td><td>
+          </td></tr><tr valign="top"><td>X.org-6.8.2 (10.3 and 10.4)</td><td>
+	    <p><code>xorg</code> and <code>xorg-shlibs</code></p>
+	</td></tr><tr valign="top"><td>Apple's X11 (all versions)</td><td>
+            <p>
+              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building)</p>
+          </td></tr><tr valign="top"><td>XFree86-4.x official binaries</td><td>
             <p>
               <code>system-xfree86</code> only (+splitoffs)</p>
-          </td></tr><tr valign="top"><td>4.x built from source, or from the latest CVS source</td><td>
+          </td></tr><tr valign="top"><td>XFree86-4.x built from source, or from the latest CVS source</td><td>
             <p>
               <code>system-xfree86</code> only (+splitoffs)</p>
-          </td></tr><tr valign="top"><td>4.2.x from Apple</td><td>
-            <p>
-              <code>system-xfree86</code> only (+splitoffs)
-</p>
-          </td></tr><tr valign="top"><td>4.3.x from Apple</td><td>
-            <p>
-              <code>system-xfree86</code> only (+splitoffs)
-</p>
           </td></tr></table>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="run-xfree86.php?phpLang=en">4. Starting XFree86</a></p>
+<a href="run-xfree86.php?phpLang=en">4. Starting X11</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

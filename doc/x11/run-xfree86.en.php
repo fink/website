@@ -1,13 +1,13 @@
 <?
-$title = "Running X11 - Starting XFree86";
+$title = "Running X11 - Starting X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/10 02:35:35';
+$cvs_date = 'Date: 2005/06/08 01:09:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11">';
 
 
 include_once "header.en.inc";
 ?>
-<h1>Running X11 - 4. Starting XFree86</h1>
+<h1>Running X11 - 4. Starting X11</h1>
     
     
     <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -55,7 +55,7 @@ You can use all of the start methods outlined above, with the
 exception of <code>xdm</code>.
 </p>
       <p>
-Note: If you are running Mac OS X Panther, you cannot start XFree86 from the console window.
+Note: If you are running Mac OS X Panther or later, you cannot start XFree86 from the console window.
 </p>
     
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
@@ -65,7 +65,7 @@ There are basically two ways to start XFree86 under Mac OS X.
 One is double-clicking the XDarwin.app application in your
 Applications folder.  This will let you choose between full 
 screen and rootless mode in a dialog at startup. You can disable 
-the dialog and set XDarwin to always use the mode of your 
+the dialog and set XDarwin always to use the mode of your 
 choice in the Preferences dialog.  
 </p>
       <p>
@@ -99,7 +99,13 @@ but rather uses the default mode set in the preferences.
 </p>
       <p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
     
-    <h2><a name="xinitrc">4.3 The .xinitrc File</a></h2>
+    <h2><a name="starting-apples-x11">4.3 Starting Apple's X11</a></h2>
+      
+      <p>
+	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <code>.xinitrc</code> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <b>X11.app</b> icon (whose default location is <code>/Applications/Utilities</code>).</p>
+<p>If you don't set up a different window manager you will be running Apple's <code>quartz-wm</code> window manager.  <b>X11.app</b>'s Preferences give the option to switch between fullscreen and rootless modes without restarting.  However, this doesn't work for quartz-wm; it is necessary to choose a different window manager (e.g. in <code>.xinitrc</code>)</p>
+    
+    <h2><a name="xinitrc">4.4 The .xinitrc File</a></h2>
       
       <p>
 If a file named <code>.xinitrc</code> exists in your home

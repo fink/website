@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/03/10 02:35:35';
+$cvs_date = 'Date: 2005/06/08 01:09:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
 
