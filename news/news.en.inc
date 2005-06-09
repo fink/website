@@ -1,6 +1,8 @@
 <a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
-Three new Fink releases are available today: version 0.8.0 (for 10.4),
+Three new Fink releases are 
+<a href="<?php print $root; ?>download/index.php">available</a>
+ today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
