@@ -1,11 +1,31 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/07 22:04:22';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/09 13:17:01';
 $metatags = '';
 
 include_once "header.inc";
 ?>
+
+<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<p>
+Three new Fink releases are available today: version 0.8.0 (for 10.4),
+version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
+All three releases include source files, binary packages, and a Fink
+installer for new users.
+</p>
+<p>
+The new release for 10.4 includes all currently-available "stable" packages
+in source and binary form: there are 1565 of these, which constitutes more
+than 80% of the 1909 packages available in the 10.3 release.  Work continues
+by the fink developers on bringing more of the stable packages to Tiger.
+</p>
+<p>
+The new release for 10.2 will be the last official release for that
+version of Mac OS X.  Although no further updates (not even security
+updates) will be provided by the Fink team, we anticipate that the
+0.6.4 release will be usable for years to come.
+</p>
 
 <a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>

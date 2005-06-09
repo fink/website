@@ -1,3 +1,23 @@
+<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<p>
+Three new Fink releases are available today: version 0.8.0 (for 10.4),
+version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
+All three releases include source files, binary packages, and a Fink
+installer for new users.
+</p>
+<p>
+The new release for 10.4 includes all currently-available "stable" packages
+in source and binary form: there are 1565 of these, which constitutes more
+than 80% of the 1909 packages available in the 10.3 release.  Work continues
+by the fink developers on bringing more of the stable packages to Tiger.
+</p>
+<p>
+The new release for 10.2 will be the last official release for that
+version of Mac OS X.  Although no further updates (not even security
+updates) will be provided by the Fink team, we anticipate that the
+0.6.4 release will be usable for years to come.
+</p>
+
 <a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
@@ -48,23 +68,6 @@ the fink project had previously recommended.)
 </p><p>
 We would like to thank Apple for responding to our reports about this
 matter, and working to resolve it as quickly as possible.
-</p>
-
-
-<a name="2004-10-15 Workaround for gcc problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
-<p>
-The version of gcc included with XCode 1.5 is known to produce 
-incorrect output from c++ code under certain circumstances.
-Fink now has a mechanism to warn users about this, and Fink will soon
-refuse
-to use the "broken" gcc to compile packages which are known to
-have this problem.
-</p><p>
-If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
-and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
-</p><p> If you have not yet upgraded, you should consider remaining with
-XCode version 1.2 until the problem has been resolved.
 </p>
 
 
