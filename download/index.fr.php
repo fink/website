@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 08:25:50 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2005/06/09 23:54:28 $';
 
 include "header.inc";
 ?>
@@ -22,13 +22,12 @@ C'est votre premier essai sous Fink ?  Ces instructions vont vous aider à charg
 <? 
 include "../fink_version.inc";
 ?>
-
 <ol>
 <li><p>
 Téléchargez l'image disque de l'installeur :<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Installeur binaire Fink
-<? print $fink_version; ?></a> - <? print $dmg_size; ?><br>
-(utilisateurs de la version 10.2 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.3-Installer.dmg?download">Fink0.6.3</a>)<br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?></a> - <? print $dmg_size; ?><br>
+(utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a>)<br>
+(utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a>)<br>
 (utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a>)
 </p>
 </li>

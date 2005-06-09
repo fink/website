@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing X11";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/06/09 01:36:14';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/06/09 23:00:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting X11"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
@@ -150,9 +150,9 @@ rootless under Mac OS X.
       <p>
 If you've got the time to spare, you can build XFree86 4.5 from
 source.
-You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
+You can find the source on your local <a href="http://www.xfree86.org/mirrors/">XFree86 mirror</a> in
 the directory <code>4.5.0/source</code>.
-Grab all three <code>X420src-#.tgz</code> tarballs and extract them in
+Grab all seven <code>XFree86-4.5.0-src-#.tgz</code> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
 <code>config/cf/host.def</code> in the XFree86 source tree.
@@ -168,8 +168,7 @@ with the following commands:
 </p>
       <pre>make World
 sudo make install install.man</pre>
-      <p>To update to 4.2.1.1, follow the instructions in the <a href="#official-binary">Official Binaries</a> section.</p>
-      <p>To install 4.3.0, follow the above instructions, replacing "2" with "3", but don't do the 4.2.1.1 update procedure.</p>
+
       <p>
 As with the official binaries, you've now got XFree86 with a server
 that can do fullscreen, or rootless under Mac OS X.

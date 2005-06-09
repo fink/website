@@ -1,8 +1,8 @@
 <?
 $title = "Utilisation de X11 - Installation de X11";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/10 06:06:31';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de XFree86"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
+$cvs_date = 'Date: 2005/06/09 23:00:22';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de X11"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 
 include_once "header.fr.inc";
@@ -17,12 +17,15 @@ include_once "header.fr.inc";
 <ul><li>Tous les paquets X11 disponibles actuellement via Fink gèrent à la fois les opérations plein écran et sans racine, ainsi que OpenGL.</li>
 <li><b>Note importante</b> : certains fichiers ne sont pas situés au même endroit dans les différentes versions de X11. Cela signifie, qu'en général, si vous tentez de passer à une version inférieure de X11, les binaires (programmes exécutables, etc...) ne fonctionneront plus. Vous devrez alors reconstruire les paquets concernés par ce phénomène.
 <p>L'inverse n'est pas vrai : les paquets construits avec une ancienne version de X11 fonctionnent en général avec une version ultérieure.</p>
-<p>Pour 10.3, la hiérarchie X11 est la suivante :</p>
+<p>Pour 10.3 et 10.4, la hiérarchie X11 (postériorité du code source) est la suivante :</p>
 <pre>xorg &gt; xfree86 &gt; Apple's X11</pre>
 </li></ul>
+<p><b>Utilisateurs 10.4</b> :</p>
+<p>Vous pouvez installer la version 4.5.0-23 de XFree86 à partir du source. Vous devez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code> pour obtenir une installation parfaitement fonctionnelle.</p>
+<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8.2-35 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, situés dans l'arborescence instable. Cette version de X11 est similaire à la version 4.5 de XFree86, mais elle corrige certains bogues, apporte de nouvelles fonctionnalités et supprime certaines parties de code sur lesquels il existe des problèmes de licence.</p>
 <p><b>Utilisateurs 10.3</b> :</p>
-<p>Vous pouvez installer la version 4.3.99.16-2 (celle qui est dans la distribution binaire à la date de rédaction de ce manuel) ou la version 4.4 (celle qui est disponible sous forme source). Les paquets <code>xfree86</code> et <code>xfree86-shlibs</code> sont tous les deux nécessaires à une installation complètement fonctionnelle.</p>
-<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, situés dans l'arborescence instable. Cette version de X11 est similaire à  XFree86-4.4, mais elle comprend quelques corrections de bogues, de nouvelles fonctionnalités et supprime une partie de code sur laquelle il existe un problème de licence.</p>
+<p>Vous pouvez installer la version 4.4.0-13 (celle qui est dans la distribution binaire à la date de rédaction de ce manuel) ou la version 4.5.0-13 (celle qui est disponible sous forme source). Les paquets <code>xfree86</code> et <code>xfree86-shlibs</code> sont tous les deux nécessaires à une installation complètement fonctionnelle.</p>
+<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8.2 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, comme indiqué ci-dessus..</p>
 
 <p><b>Utilisateurs 10.2</b> :</p>
 <p>Les utilisateurs de la version Mac OS X 10.2 peuvent installer la version 4.3 sous forme source ou binaire, et la version 4.4 à partir de l'arborescence instable. Comme indiqué ci-dessus, vous devrez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code>.</p>
@@ -36,6 +39,7 @@ include_once "header.fr.inc";
 
 <p>Le 7 janvier 2003, Apple a mis à disposition <a href="http://www.apple.com/macosx/x11/">une implémentation X11 personnalisée basée sur XFree86-4.2</a>, qui incluait un rendu Quartz et l'accélération OpenGL. Une nouvelle version est sortie le 10 Février 2003, qui comportait des fonctionnalités supplémentaires et des corrections de bogues. Une troisième version (la Bêta 3) est sortie le 17 mars 2003 avec de nouvelles fonctionnalités et des corrections de bogues. Cette version peut être utilisée sur Jaguar.</p>
 <p>Le 24 octobre 2003, Apple a sorti Panther (10.3), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.3.</p>
+<p>Le 29 avril 2005, Apple a sortiTiger (10.4), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.4.</p>
 <p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <b>X11 User</b> est installé et, d'autre part <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">mettre à jour</a> Fink.</p>
 <p>Avec <code>fink-0.16.2</code>, vous devez aussi installer le paquet <b>X11 SDK</b>. Ensuite, Fink créera un paquet virtuel <code>system-xfree86</code>.</p>
 <p>Avec <code>fink-0.17.0</code> et les versions ultérieures, n'installez le paquet X11 SDK que si vous souhaitez construire des paquets à partir du source. Dans ce cas, même si vous n'avez pas installé le SDK, il y aura création des paquets virtuels <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>, ce dernier correspondant aux librairies partagées. Si vous installez le SDK, il y aura création d'un paquet <code>system-xfree86-dev</code>, représentant les headers.</p>
@@ -80,34 +84,26 @@ defined in indirectly referenced dynamic library
 <li>
 <p>Si vous utilisez le paquet <code>xfree86</code> et que vous changiez plus tard pour X11 d'Apple (sur 10.2.x ou 10.3.x), vous devez recompiler tout paquet compilé antérieurement avec <code>xfree86</code>, car les binaires sont incompatibles.</p>
 </li>
-<li><p><b>Utilisateurs 10.3 uniquement</b> : on peut utiliser le serveur d'affichage d'Apple et son gestionnaire de fenêtres avec XFree86-4.4 ou X.org. Si vous installez le paquet <code>applex11tools</code>, Fink installera tout ce qui est nécessaire pour ce faire à condition que le paquet X11User.pkg soit installé.</p></li>
+<li><p><b>Utilisateurs 10.3 et 10.4 uniquement</b> : on peut utiliser le serveur d'affichage d'Apple et son gestionnaire de fenêtres avec XFree86 ou X.org. Si vous installez le paquet <code>applex11tools</code>, Fink installera tout ce qui est nécessaire pour ce faire à condition que le paquet X11User.pkg soit installé.</p></li>
 </ul>
 <p>Pour de plus amples informations sur l'utilisation de X11 d'Apple, voir cet <a href="http://developer.apple.com/darwin/runningx11.html">article</a> sur Apple Developer Connection.</p>
 
 <h2><a name="official-binary">3.3 Binaires officiels</a></h2>
 
-<p>Le projet XFree86 comprend une distribution binaire officielle de XFree86 4.2.0, qui peut être mise au niveau 4.2.1.1 à l'aide de rustines. Vous la trouverez sur votre <a href="http://www.xfree86.org/MIRRORS.shtml">miroir XFree86</a> local dans le répertoire <code>4.2.0/binaries/Darwin-ppc-5.x</code>. Téléchargez les fichiers archives tar <code>Xprog.tgz</code> et <code>Xquartz.tgz</code> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <code>Xinstall.sh</code> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <a href="http://www.xfree86.org/4.2.0/Install.html">instructions officielles</a> avant l'installation). Vous pouvez aussi, si vous le souhaitez, utiliser le <a href="http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binaire</a> de XonX, qui a un source identique mais est plus facile à utiliser. Dans les deux cas, téléchargez, décompressez et lancez les mises à niveau suivantes :</p>
-<ol>
-<li>Utilisateurs 10.1 : <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">mise à niveau 4.2.0 -&gt; 4.2.0.1</a>.  Utilisateurs 10.2:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">mise à niveau 4.2.0 -&gt; 4.2.0.1</a>
-</li>
-<li>Utilisateurs 10.1 et 10.2 :  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">mise à niveau 4.2.0.1 -&gt; 4.2.1.1</a>
-</li>
-</ol>
-<p>Il existe aussi une distribution binaire officielle de XFree86 4.3.0 sur les <a href="http://www.xfree86.org/MIRRORS.shtml">miroirs XFree86</a> dans le répertoire <code>4.3.0/binaries/Darwin-ppc-6.x</code>. Téléchargez les fichiers archives tar <code>Xprog.tgz</code> et <code>Xquartz.tgz</code> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <code>Xinstall.sh</code> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <a href="http://www.xfree86.org/4.3.0/Install.html">instructions officielles</a> avant l'installation.)</p>
+<p>Le projet XFree86 comprend une distribution binaire officielle de XFree86 4.5. Vous la trouverez sur votre <a href="http://www.xfree86.org/mirrors/">miroir XFree86</a> local dans le répertoire <code>4.5.0/binaries/Darwin-ppc-6.x</code> (ou <code>4.5.0/binaries/Darwin-ppc-5.x</code> pour Mac OS X 10.1). Téléchargez les fichiers archives tar <code>Xprog.tgz</code> et <code>Xquartz.tgz</code> bien qu'ils soient mentionnés comme "optionnels". Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <code>Xinstall.sh</code> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <a href="http://www.xfree86.org/4.5.0/Install.html">instructions officielles</a> avant l'installation).</p>
+
 <p>Quelle que soit la version que vous avez installée, vous aurez alors XFree86 avec un serveur plein écran ou sans racine sous Mac OS X.</p>
 
 <h2><a name="official-source">3.4 Source Officiel</a></h2>
 
-<p>Si vous avez du temps à perdre, vous pouvez compiler XFree86 4.2.0 à partir du source.
-Vous trouverez le source sur un des miroirs cités sur <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> dans le répertoire <code>4.2.0/source</code>.
-Téléchargez les trois archives tar <code>X420src-#.tgz</code> et décompressez-les dans un même répertoire. Vous pouvez adapter la compilation à vos besoins en plaçant des définitions de macros dans le fichier <code>config/cf/host.def</code> situé dans l'arborescence source de XFree86.
+<p>Si vous avez du temps à perdre, vous pouvez compiler XFree86 4.5.0 à partir du source. Vous trouverez le source sur un des miroirs cités sur <a href="http://www.xfree86.org/mirrors/">XFree86 mirror</a> dans le répertoire <code>4.5.0/source</code>.
+Téléchargez les sept archives tar <code>XFree86-4.5.0-src-#.tgz</code> et décompressez-les dans un même répertoire. Vous pouvez adapter la compilation à vos besoins en plaçant des définitions de macros dans le fichier <code>config/cf/host.def</code> situé dans l'arborescence source de XFree86.
 
-Voir le fichier <code>config/cf/darwin.cf</code> pour quelques explication. (<b>Note</b> : seules les macros insérées dans un #ifndef peuvent être modifiées dans host.def).</p>
+Voir le fichier <code>config/cf/darwin.cf</code> pour quelques explications. (<b>Note</b> : seules les macros insérées dans un #ifndef peuvent être modifiées dans host.def).</p>
 <p>Quand vous aurez fini la configuration, compilez et installez XFree86 à l'aide des commandes suivantes :</p>
 <pre>make World
 sudo make install install.man</pre>
-<p>Pour passer en version 4.2.1.1, suivez les instructions de la section <a href="#official-binary">Binaires officiels</a>.</p>
-<p>Pour installer la version 4.3.0, suivez les instructions ci-dessus en remplaçant "2" par "3", et n'utilisez surtout pas la procédure de mise à jour 4.2.1.1.</p>
+
 <p>Tout comme avec les binaires officiels, vous obtiendrez XFree86 avec un serveur en mode plein écran ou sans racine sous Mac OS X.</p>
 
 <h2><a name="latest-cvs">3.5 Source le plus récent</a></h2>
@@ -115,13 +111,10 @@ sudo make install install.man</pre>
 <p>Si vous avez le temps et des nerfs à toute épreuve, vous pouvez utiliser la dernière version de développement de XFree86 via le référentiel public CVS. Notez que le code est mis à jour constamment ; d'un jour à l'autre il est modifié.</p>
 <p>Afin de l'installer, suivez les instructions sur <a href="http://www.xfree86.org/cvs/">XFree86 CVS</a> pour télécharger le module <code>xc</code>. Puis suivez les instructions de compilation du source ci-dessus.</p>
 
-    <h2><a name="macgimp">3.6 MacGimp</a></h2>
 
-<p>L'installeur téléchargeable qui fut proposé par l'équipe MacGimp en 2001 ne contenait pas XFree86. (Il écrasait, malgré tout, certains fichiers de configuration de XFree86.)</p>
-<p>Le CD vendu par <a href="http://www.macgimp.com/">MacGimp, Inc.</a> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des versions 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.</p>
 
     
-<h2><a name="switching-x11">3.7 Remplacement de X11</a></h2>
+<h2><a name="switching-x11">3.6 Remplacement de X11</a></h2>
 
 <p>Si vous avez installé l'un des paquets X11 de Fink, mais que, pour une raison ou une autre, vous décidez de le supprimer pour le remplacer par un autre, la procédure à suivre est simple. Vous devez forcer la suppression des anciens paquets, puis installer les nouveaux de façon à préserver la cohérence de la base de données dpkg.</p>
 <p>Il y a deux façons de le faire :</p>
@@ -143,26 +136,26 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 <pre>sudo rm -rf /usr/X11R6 /etc/X11</pre>
 <p>Ceci est vrai pour tout paquet X11 non installé via Fink. Vous devez aussi supprimer <code>XDarwin.app</code> ou <code>X11.app</code>, suivant l'installation effectuée. Examinez le fichier <code>.xinitrc</code> quand vous supprimez X11 d'Apple pour vous assurer qu'il ne lance pas <code>quartz-wm</code>.  Vous pouvez ensuite installer la nouvelle variante X11 désirée, manuellement ou via Fink.</p>
 
-<h2><a name="fink-summary">3.8 Résumé des paquets Fink disponibles</a></h2>
+<h2><a name="fink-summary">3.7 Résumé des paquets Fink disponibles</a></h2>
 
 <p>Voici un court résumé des options d'installation et des paquets Fink à installer :</p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Type d'installation</th><th align="left">Paquets Fink</th></tr><tr valign="top"><td>4.2.x compilé via Fink</td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Type d'installation</th><th align="left">Paquets Fink</th></tr><tr valign="top"><td>XFree86 version 4.4.0 ou 4.5.0 (utilisateurs 10.3 et 10.4)</td><td>
+<p><code>xfree86</code> et <code>xfree86-shlibs</code></p>
+</td></tr><tr valign="top"><td>X.org-6.8.2 (utilisateurs 10.3 et 10.4)</td><td>
+<p><code>xorg</code> et <code>xorg-shlibs</code></p>
+</td></tr><tr valign="top"><td>X11 d'Apple (toutes versions)</td><td>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
+</td></tr><tr valign="top"><td>Binaires officiels XFree86 4.x</td><td>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
+</td></tr><tr valign="top"><td>XFree86 version 4.x compilé à partir du source ou de la dernière version CVS</td><td>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
+</td></tr><tr valign="top"><td>XFree86 version 4.2.1.x (utilisateurs 10.2 uniquement) ou 4.2.0 (utilisateurs 10.1 uniquement)</td><td>
 <p><code>xfree86-base</code> et <code>xfree86-rootless</code> (et les paquets <code>-shlibs</code> associés)</p>
 <p>ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> associés)</p>
-</td></tr><tr valign="top"><td>4.3.x compilé via Fink</td><td>
-<p><code>xfree86</code> et <code>xfree86-shlibs</code></p>
-</td></tr><tr valign="top"><td>Binaires officiels 4.x </td><td>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
-</td></tr><tr valign="top"><td>4.x compilé à partir du source ou de la dernière version CVS</td><td>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
-</td></tr><tr valign="top"><td>4.2.x d'Apple</td><td>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
-</td></tr><tr valign="top"><td>4.3.x d'Apple</td><td>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="run-xfree86.php?phpLang=fr">4. Lancement de XFree86</a></p>
+<a href="run-xfree86.php?phpLang=fr">4. Lancement de X11</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

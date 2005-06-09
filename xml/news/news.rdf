@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-06-09T09:17:06-04:00</dc:date>
+    <dc:date>2005-06-10T01:32:36+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.">
       <title>New Fink releases.</title>
@@ -13,7 +13,9 @@
       <guid>http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.</guid>
       <description>
 
-Three new Fink releases are available today: version 0.8.0 (for 10.4),
+Three new Fink releases are 
+available
+ today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
@@ -29,12 +31,22 @@ The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
+
+
+Users upgrading to 10.4 can now simply issue a 
+fink selfupdate command, followed by
+sudo /sw/lib/fink/postinstall.pl (for first-time updaters
+on 10.4), fink scanpackages and sudo apt-get update.
+We don't recommend bootstrapping at the moment, since bootstrapping does
+not work with the newly-released XCode 2.1 from Apple.
 
 
 </description>
       <content:encoded>
 
-Three new Fink releases are available today: version 0.8.0 (for 10.4),
+Three new Fink releases are 
+available
+ today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
@@ -50,6 +62,14 @@ The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
+
+
+Users upgrading to 10.4 can now simply issue a 
+fink selfupdate command, followed by
+sudo /sw/lib/fink/postinstall.pl (for first-time updaters
+on 10.4), fink scanpackages and sudo apt-get update.
+We don't recommend bootstrapping at the moment, since bootstrapping does
+not work with the newly-released XCode 2.1 from Apple.
 
 
 </content:encoded>

@@ -5,8 +5,25 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2005-06-08T00:11:06+02:00</dc:date>
+    <dc:date>2005-06-10T01:32:37+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink">
+      <title>Nouvelles versions Fink</title>
+      <link>http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink</link>
+      <guid>http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink</guid>
+      <description>
+Trois nouvelles versions de Fink sont disponibles aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.
+La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.
+La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4  devrait fonctionner tout à fait correctement pour quelques années encore.
+Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter fink selfupdate, suivi de sudo /sw/lib/fink/postinstall.pl (pour les personnes qui passent au système 10.4 pour la première fois), de fink scanpackages et de sudo apt-get update. Nous  vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.
+</description>
+      <content:encoded>
+Trois nouvelles versions de Fink sont disponibles aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.
+La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.
+La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4  devrait fonctionner tout à fait correctement pour quelques années encore.
+Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter fink selfupdate, suivi de sudo /sw/lib/fink/postinstall.pl (pour les personnes qui passent au système 10.4 pour la première fois), de fink scanpackages et de sudo apt-get update. Nous  vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger">
       <title>Fink et Tiger</title>
       <link>http://fink.sourceforge.net/news/#29%2F04%2F2005%20Fink%20et%20Tiger</link>
@@ -364,37 +381,6 @@ Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vo
 		
 		
 	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#30%2F11%2F2003%20Encore%20de%20nouveaux%20miroirs%20!">
-      <title>Encore de nouveaux miroirs !</title>
-      <link>http://fink.sourceforge.net/news/#30%2F11%2F2003%20Encore%20de%20nouveaux%20miroirs%20!</link>
-      <guid>http://fink.sourceforge.net/news/#30%2F11%2F2003%20Encore%20de%20nouveaux%20miroirs%20!</guid>
-      <description>
-		
-			Merci, merci, merci ! Quelle formidable communauté ! Merci de nous offrir toujours plus de sites miroirs. 
-		
-		
-			Matthew Healey, membre du Western  Australian
-			Macintosh User Group, et son fournisseur d'accès 
-				extremedsl nous offrent un miroir complet à Perth, en Australie. Il s'agit de notre premier miroir à l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, accepté, rendant les distributions de Fink disponibles sur 21 serveurs à charge partagée. 
-		
-		
-			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
-		
-		</description>
-      <content:encoded>
-		
-			Merci, merci, merci ! Quelle formidable communauté ! Merci de nous offrir toujours plus de sites miroirs. 
-		
-		
-			Matthew Healey, membre du Western  Australian
-			Macintosh User Group, et son fournisseur d'accès 
-				extremedsl nous offrent un miroir complet à Perth, en Australie. Il s'agit de notre premier miroir à l'autre bout du monde, je suis donc d'autant plus heureux de l'accueillir dans notre famille. Le service UKMIRROR nous a, par ailleurs, accepté, rendant les distributions de Fink disponibles sur 21 serveurs à charge partagée. 
-		
-		
-			Nous en sommes très heureux, mais nous sommes toujours à la recherche de nouveaux miroirs basés sur rsync. Si vous désirez nous aider, allez sur finkmirrors.net et entrez contact avec nous. 
-		
-		</content:encoded>
     </item>
   </channel>
 </rss>
