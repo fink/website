@@ -27,7 +27,7 @@ If you're looking for the real instructions, skip to the <a href="install-first.
 <h2><a name="install">1.1 First Time Installation Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.7.1-full.tar.gz</code>
+Start out by copying the <code>fink-0.8.0-full.tar.gz</code>
 file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -35,16 +35,16 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<pre>[frodo:~] testuser% <b>tar xzf fink-0.7.1-full.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.7.1-full</b>
-[frodo:~/fink-0.7.1-full] testuser% <b>./bootstrap.sh /sw</b>
+<pre>[frodo:~] testuser% <b>tar xzf fink-0.8.0-full.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.8.0-full</b>
+[frodo:~/fink-0.8.0-full] testuser% <b>./bootstrap.sh /sw</b>
 
 Welcome to Fink.
 
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.7.1-full/bootstrap.pl .sudo '/sw'
+sudo /Users/testuser/fink-0.8.0-full/bootstrap.pl .sudo '/sw'
 Password:<b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -75,8 +75,8 @@ Bootstrapping a base system via /sw/bootstrap.
 
 You should now have a working Fink installation in '/sw'.
 
-[frodo:~/fink-0.7.1-full] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.7.1-full</b>
+[frodo:~/fink-0.8.0-full] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.8.0-full</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths
@@ -123,7 +123,7 @@ documentation when your problem actually is well-documented.
 
 <h2><a name="update">1.2 Update Fast Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.7.1-full.tar.gz</code>
+Start out by copying the <code>fink-0.8.0-full.tar.gz</code>
 file to your home folder.
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -131,9 +131,9 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<pre>[frodo:~] testuser% <b>tar xzf fink-0.7.1-full.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.7.1-full</b>
-[frodo:~/fink-0.7.1-full] testuser% <b>./inject.pl /sw</b>
+<pre>[frodo:~] testuser% <b>tar xzf fink-0.8.0-full.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.8.0-full</b>
+[frodo:~/fink-0.8.0-full] testuser% <b>./inject.pl /sw</b>
 sudo ./inject.pl /sw
 Password:<b>(your normal password here)</b>
 Copying package descriptions
@@ -142,8 +142,8 @@ Done.
 
 Your Fink installation in '/sw' was updated with new fink packages.
 
-[frodo:~/fink-0.7.1-full] testuser% <b>cd pkginfo</b>
-[frodo:~/fink-0.7.1-full/pkginfo] testuser% <b>./inject.pl /sw</b>
+[frodo:~/fink-0.8.0-full] testuser% <b>cd pkginfo</b>
+[frodo:~/fink-0.8.0-full/pkginfo] testuser% <b>./inject.pl /sw</b>
 sudo ./inject.pl /sw
 Copying...
 ...
@@ -152,8 +152,8 @@ Your Fink installation in '/sw' was updated with new package description
 files. Use appropriate fink commands to update the packages, e.g. 'fink
 update-all'.
 
-[frodo:~/fink-0.7.1-full/pkginfo] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.7.1-full</b>
+[frodo:~/fink-0.8.0-full/pkginfo] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.8.0-full</b>
 [frodo:~] testuser% <b>fink update-all</b>
 ...</pre>
 

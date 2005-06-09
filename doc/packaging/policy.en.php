@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/05/09 02:06:55';
+$cvs_author = 'Author: dmalloc';
+$cvs_date = 'Date: 2005/06/08 06:45:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -80,6 +80,10 @@ is explicitly included under one of the licenses, then this is indicated by
 appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
 allowed combinations: "GFDL",
 "GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
+</li>
+
+<li><code>DFSG-Approved</code> - for software that meets the guidelines
+of the <a href="http://www.debian.org/social_contract">Debian Social Contract</a>.
 </li>
 
 <li><code>OSI-Approved</code> - for other Open Source licenses

@@ -1,7 +1,7 @@
 <?
 $title = "セキュリティポリシー - 責任";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/07/08 15:50:32';
+$cvs_date = 'Date: 2005/02/04 09:30:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="セキュリティポリシー Contents"><link rel="next" href="severity.php?phpLang=ja" title="返答時間と即時行動"><link rel="prev" href="index.php?phpLang=ja" title="セキュリティポリシー Contents">';
 
 

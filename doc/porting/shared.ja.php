@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 共有コード";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:45';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/03/25 22:25:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="libtool.php?phpLang=ja" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=ja" title="基本">';
 
 

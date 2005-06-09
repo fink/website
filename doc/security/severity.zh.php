@@ -1,7 +1,7 @@
 <?
 $title = "Security Policy - Responses";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/07/13 21:24:49';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/04/09 16:12:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="Security Policy Contents"><link rel="next" href="sources.php?phpLang=zh" title="安全漏洞信息来源"><link rel="prev" href="respo.php?phpLang=zh" title="责任">';
 
 

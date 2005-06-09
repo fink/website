@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 故障排除";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/07/06 19:14:48';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/04/09 16:14:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="tips.php?phpLang=zh" title="使用提示"><link rel="prev" href="other.php?phpLang=zh" title="其它 X11 可能">';
 
 

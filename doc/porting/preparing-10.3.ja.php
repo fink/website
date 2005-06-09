@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 10.3 に向けて";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:01:45';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/03/25 22:25:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="prev" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて">';
 
 
@@ -78,7 +78,7 @@ include_once "header.ja.inc";
     このため，それぞれのツリー用に別々のパッケージ記述ファイルを用意する必要があります．
     <code>Revision</code> は通常通りあげる必要があります．
     この方法で，OS X 10.2 から 10.3 へアップグレードするユーザーは，10.2 用のパッケージより 10.3 用のパッケージの方が"より新しい"と認識することができます．
-    低い方のツリーでの変更があるかもしれないので，<code>Revision</code> は 10 あげてください．
+    低い方のツリーでの変更があるかもしれないので，その時にリビジョンをあげられるよう <code>Revision</code> は 10 あげてください．
   </p>
 
   <p>
