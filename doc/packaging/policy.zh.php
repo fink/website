@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 规则";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/09 08:49:24';
+$cvs_date = 'Date: 2005/06/09 21:45:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 
@@ -52,6 +52,12 @@ Fink 的规则要求总是这么做，即使软件本身没有明确要求。
 <li><code>GNU Free Documentation License</code> 和 <code>Linux
 Documentation Project</code>－如果文档中的其中一个软件包明显地被指出是这两种授权协议之一。那么应该在原来的协议后面加上 <code>/GFDL</code> 或 <code>/LDP</code>，这应该是下面的组合之一："GFDL"，"GPL/GFDL"，"LGPL/GFDL"，"GPL/LGPL/GFDL"，"LDP"，或"GPL/LGPL/LDP"。
 </li>
+
+
+<li><code>DFSG-Approved</code> - for software that meets the guidelines
+of the <a href="http://www.debian.org/social_contract">Debian Social Contract</a>.
+</li>
+
 
 <li><code>OSI-Approved</code>－那些由<a href="http://www.opensource.org/">开放源码组织</a>所批准的开放源码授权协议。OSI 的要求之一是二进制文件和源代码的自由发放。这个值也用于对双重协议的软件包的遮蔽。</li>
 

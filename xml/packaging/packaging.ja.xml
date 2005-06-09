@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.27 2005/05/14 08:48:52 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.28 2005/06/09 21:45:18 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -454,6 +454,10 @@ SplitOff: &lt;&lt;
 					値に <code>/GFDL</code> と <code>/LDP</code> のいずれか，または両方を後置する．
 					結果として以下の組合せが可能: &quot;GFDL&quot;, &quot;GPL/GFDL&quot;, &quot;LGPL/GFDL&quot;, &quot;GPL/LGPL/GFDL&quot;,
 					&quot;LDP&quot;, &quot;GPL/LGPL/LDP&quot;.
+				</li>
+				<li>
+					<code>DFSG-Approved</code> - 
+					<link url="http://www.debian.org/social_contract.ja.html">Debian 社会契約</link> のガイドラインに沿ったソフトウェア
 				</li>
 				<li>
 					<code>OSI-Approved</code> -

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/14 08:48:52';
+$cvs_date = 'Date: 2005/06/09 21:45:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -73,6 +73,10 @@ include_once "header.ja.inc";
 					値に <code>/GFDL</code> と <code>/LDP</code> のいずれか，または両方を後置する．
 					結果として以下の組合せが可能: "GFDL", "GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL",
 					"LDP", "GPL/LGPL/LDP".
+				</li>
+				<li>
+					<code>DFSG-Approved</code> - 
+					<a href="http://www.debian.org/social_contract.ja.html">Debian 社会契約</a> のガイドラインに沿ったソフトウェア
 				</li>
 				<li>
 					<code>OSI-Approved</code> -
