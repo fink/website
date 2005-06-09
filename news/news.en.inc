@@ -19,6 +19,14 @@ version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
 </p>
+<p>
+Users upgrading to 10.4 can now simply issue a 
+<code>fink selfupdate</code> command, followed by
+<code>sudo /sw/lib/fink/postinstall.pl</code> (for first-time updaters
+on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
+We don't recommend bootstrapping at the moment, since bootstrapping does
+not work with the newly-released XCode 2.1 from Apple.
+</p>
 
 <a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
