@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.20 2005/03/10 06:06:31 michga Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.21 2005/06/09 23:00:22 michga Exp $</cvsid>
 <preface>
 <p>Ce document traite de l'utilisation de X11, XFree86, Xtools et Xorg sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
@@ -94,12 +94,15 @@
 <ul><li>Tous les paquets X11 disponibles actuellement via Fink gèrent à la fois les opérations plein écran et sans racine, ainsi que OpenGL.</li>
 <li><em>Note importante</em> : certains fichiers ne sont pas situés au même endroit dans les différentes versions de X11. Cela signifie, qu'en général, si vous tentez de passer à une version inférieure de X11, les binaires (programmes exécutables, etc...) ne fonctionneront plus. Vous devrez alors reconstruire les paquets concernés par ce phénomène.
 <p>L'inverse n'est pas vrai : les paquets construits avec une ancienne version de X11 fonctionnent en général avec une version ultérieure.</p>
-<p>Pour 10.3, la hiérarchie X11 est la suivante :</p>
+<p>Pour 10.3 et 10.4, la hiérarchie X11 (postériorité du code source) est la suivante :</p>
 <codeblock>xorg > xfree86 > Apple's X11</codeblock>
 </li></ul>
+<p><em>Utilisateurs 10.4</em> :</p>
+<p>Vous pouvez installer la version 4.5.0-23 de XFree86 à partir du source. Vous devez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code> pour obtenir une installation parfaitement fonctionnelle.</p>
+<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8.2-35 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, situés dans l'arborescence instable. Cette version de X11 est similaire à la version 4.5 de XFree86, mais elle corrige certains bogues, apporte de nouvelles fonctionnalités et supprime certaines parties de code sur lesquels il existe des problèmes de licence.</p>
 <p><em>Utilisateurs 10.3</em> :</p>
-<p>Vous pouvez installer la version 4.3.99.16-2 (celle qui est dans la distribution binaire à la date de rédaction de ce manuel) ou la version 4.4 (celle qui est disponible sous forme source). Les paquets <code>xfree86</code> et <code>xfree86-shlibs</code> sont tous les deux nécessaires à une installation complètement fonctionnelle.</p>
-<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, situés dans l'arborescence instable. Cette version de X11 est similaire à  XFree86-4.4, mais elle comprend quelques corrections de bogues, de nouvelles fonctionnalités et supprime une partie de code sur laquelle il existe un problème de licence.</p>
+<p>Vous pouvez installer la version 4.4.0-13 (celle qui est dans la distribution binaire à la date de rédaction de ce manuel) ou la version 4.5.0-13 (celle qui est disponible sous forme source). Les paquets <code>xfree86</code> et <code>xfree86-shlibs</code> sont tous les deux nécessaires à une installation complètement fonctionnelle.</p>
+<p>Vous pouvez aussi installer la version X11 de X.org (version 6.8.2 à la date de rédaction de ce manuel) à l'aide des paquets <code>xorg</code> et <code>xorg-shlibs</code>, comme indiqué ci-dessus..</p>
 <!-->Verify latest bindist version when online</-->
 <p><em>Utilisateurs 10.2</em> :</p>
 <p>Les utilisateurs de la version Mac OS X 10.2 peuvent installer la version 4.3 sous forme source ou binaire, et la version 4.4 à partir de l'arborescence instable. Comme indiqué ci-dessus, vous devrez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code>.</p>
@@ -118,6 +121,7 @@ Irrelevant now?
 <title>Binaires d'Apple</title>
 <p>Le 7 janvier 2003, Apple a mis à disposition <link url="http://www.apple.com/macosx/x11/">une implémentation X11 personnalisée basée sur XFree86-4.2</link>, qui incluait un rendu Quartz et l'accélération OpenGL. Une nouvelle version est sortie le 10 Février 2003, qui comportait des fonctionnalités supplémentaires et des corrections de bogues. Une troisième version (la Bêta 3) est sortie le 17 mars 2003 avec de nouvelles fonctionnalités et des corrections de bogues. Cette version peut être utilisée sur Jaguar.</p>
 <p>Le 24 octobre 2003, Apple a sorti Panther (10.3), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.3.</p>
+<p>Le 29 avril 2005, Apple a sortiTiger (10.4), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.4.</p>
 <p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <em>X11 User</em> est installé et, d'autre part <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">mettre à jour</link> Fink.</p>
 <p>Avec <code>fink-0.16.2</code>, vous devez aussi installer le paquet <em>X11 SDK</em>. Ensuite, Fink créera un paquet virtuel <code>system-xfree86</code>.</p>
 <p>Avec <code>fink-0.17.0</code> et les versions ultérieures, n'installez le paquet X11 SDK que si vous souhaitez construire des paquets à partir du source. Dans ce cas, même si vous n'avez pas installé le SDK, il y aura création des paquets virtuels <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>, ce dernier correspondant aux librairies partagées. Si vous installez le SDK, il y aura création d'un paquet <code>system-xfree86-dev</code>, représentant les headers.</p>
@@ -162,13 +166,14 @@ defined in indirectly referenced dynamic library
 <li>
 <p>Si vous utilisez le paquet <code>xfree86</code> et que vous changiez plus tard pour X11 d'Apple (sur 10.2.x ou 10.3.x), vous devez recompiler tout paquet compilé antérieurement avec <code>xfree86</code>, car les binaires sont incompatibles.</p>
 </li>
-<li><p><em>Utilisateurs 10.3 uniquement</em> : on peut utiliser le serveur d'affichage d'Apple et son gestionnaire de fenêtres avec XFree86-4.4 ou X.org. Si vous installez le paquet <code>applex11tools</code>, Fink installera tout ce qui est nécessaire pour ce faire à condition que le paquet X11User.pkg soit installé.</p></li>
+<li><p><em>Utilisateurs 10.3 et 10.4 uniquement</em> : on peut utiliser le serveur d'affichage d'Apple et son gestionnaire de fenêtres avec XFree86 ou X.org. Si vous installez le paquet <code>applex11tools</code>, Fink installera tout ce qui est nécessaire pour ce faire à condition que le paquet X11User.pkg soit installé.</p></li>
 </ul>
 <p>Pour de plus amples informations sur l'utilisation de X11 d'Apple, voir cet <link url="http://developer.apple.com/darwin/runningx11.html">article</link> sur Apple Developer Connection.</p>
 </section>
 <section name="official-binary">
 <title>Binaires officiels</title>
-<p>Le projet XFree86 comprend une distribution binaire officielle de XFree86 4.2.0, qui peut être mise au niveau 4.2.1.1 à l'aide de rustines. Vous la trouverez sur votre <link url="http://www.xfree86.org/MIRRORS.shtml">miroir XFree86</link> local dans le répertoire <code>4.2.0/binaries/Darwin-ppc-5.x</code>. Téléchargez les fichiers archives tar <filename>Xprog.tgz</filename> et <filename>Xquartz.tgz</filename> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <filename>Xinstall.sh</filename> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <link url="http://www.xfree86.org/4.2.0/Install.html">instructions officielles</link> avant l'installation). Vous pouvez aussi, si vous le souhaitez, utiliser le <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binaire</link> de XonX, qui a un source identique mais est plus facile à utiliser. Dans les deux cas, téléchargez, décompressez et lancez les mises à niveau suivantes :</p>
+<p>Le projet XFree86 comprend une distribution binaire officielle de XFree86 4.5. Vous la trouverez sur votre <link url="http://www.xfree86.org/mirrors/">miroir XFree86</link> local dans le répertoire <code>4.5.0/binaries/Darwin-ppc-6.x</code> (ou <code>4.5.0/binaries/Darwin-ppc-5.x</code> pour Mac OS X 10.1). Téléchargez les fichiers archives tar <filename>Xprog.tgz</filename> et <filename>Xquartz.tgz</filename> bien qu'ils soient mentionnés comme &quot;optionnels&quot;. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <filename>Xinstall.sh</filename> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <link url="http://www.xfree86.org/4.5.0/Install.html">instructions officielles</link> avant l'installation).</p>
+<!--> Vous pouvez aussi, si vous le souhaitez, utiliser le <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binaire</link> de XonX, qui a un source identique mais est plus facile à utiliser. Dans les deux cas, téléchargez, décompressez et lancez les mises à niveau suivantes :</p>
 <ol>
 <li>Utilisateurs 10.1 : <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">mise à niveau 4.2.0 -> 4.2.0.1</link>.  Utilisateurs 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">mise à niveau 4.2.0 -> 4.2.0.1</link>
 </li>
@@ -176,13 +181,13 @@ defined in indirectly referenced dynamic library
 </li>
 </ol>
 <p>Il existe aussi une distribution binaire officielle de XFree86 4.3.0 sur les <link url="http://www.xfree86.org/MIRRORS.shtml">miroirs XFree86</link> dans le répertoire <code>4.3.0/binaries/Darwin-ppc-6.x</code>. Téléchargez les fichiers archives tar <filename>Xprog.tgz</filename> et <filename>Xquartz.tgz</filename> bien qu'ils soient mentionnés comme optionnels. Si vous ne savez pas quels fichiers sont nécessaires, téléchargez tout le répertoire. Lancez le script <filename>Xinstall.sh</filename> en tant que super-utilisateur pour installer l'ensemble. (Nous vous conseillons de lire les <link url="http://www.xfree86.org/4.3.0/Install.html">instructions officielles</link> avant l'installation.)</p>
+<-->
 <p>Quelle que soit la version que vous avez installée, vous aurez alors XFree86 avec un serveur plein écran ou sans racine sous Mac OS X.</p>
 </section>
 <section name="official-source">
 <title>Source Officiel</title>
-<p>Si vous avez du temps à perdre, vous pouvez compiler XFree86 4.2.0 à partir du source.
-Vous trouverez le source sur un des miroirs cités sur <link url="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</link> dans le répertoire <code>4.2.0/source</code>.
-Téléchargez les trois archives tar <filename>X420src-#.tgz</filename> et décompressez-les dans un même répertoire. Vous pouvez adapter la compilation à vos besoins en plaçant des définitions de macros dans le fichier <filename>config/cf/host.def</filename> situé dans l'arborescence source de XFree86.
+<p>Si vous avez du temps à perdre, vous pouvez compiler XFree86 4.5.0 à partir du source. Vous trouverez le source sur un des miroirs cités sur <link url="http://www.xfree86.org/mirrors/">XFree86 mirror</link> dans le répertoire <code>4.5.0/source</code>.
+Téléchargez les sept archives tar <filename>XFree86-4.5.0-src-#.tgz</filename> et décompressez-les dans un même répertoire. Vous pouvez adapter la compilation à vos besoins en plaçant des définitions de macros dans le fichier <filename>config/cf/host.def</filename> situé dans l'arborescence source de XFree86.
 <!--
 To build on pure Darwin, create the file
 <code>config/cf/host.def</code> in the XFree86 source tree and put the
@@ -190,12 +195,14 @@ following line in it:</p>
 <codeblock>#define DarwinQuartzSupport NO</codeblock>
 <p>You can add further defines to that file if you want; see
 -->
-Voir le fichier <filename>config/cf/darwin.cf</filename> pour quelques explication. (<em>Note</em> : seules les macros insérées dans un #ifndef peuvent être modifiées dans host.def).</p>
+Voir le fichier <filename>config/cf/darwin.cf</filename> pour quelques explications. (<em>Note</em> : seules les macros insérées dans un #ifndef peuvent être modifiées dans host.def).</p>
 <p>Quand vous aurez fini la configuration, compilez et installez XFree86 à l'aide des commandes suivantes :</p>
 <codeblock>make World
 sudo make install install.man</codeblock>
+<!-->
 <p>Pour passer en version 4.2.1.1, suivez les instructions de la section <xref section="official-binary">Binaires officiels</xref>.</p>
 <p>Pour installer la version 4.3.0, suivez les instructions ci-dessus en remplaçant &quot;2&quot; par &quot;3&quot;, et n'utilisez surtout pas la procédure de mise à jour 4.2.1.1.</p>
+<-->
 <p>Tout comme avec les binaires officiels, vous obtiendrez XFree86 avec un serveur en mode plein écran ou sans racine sous Mac OS X.</p>
 </section>
 <section name="latest-cvs">
@@ -217,17 +224,22 @@ This eventually resulted in the XDarwin released with 4.2.0.</p>
 web page</link> indicates that post-4.2.0 testing versions of XDarwin may
 someday be released, but none have been as yet.  They would presumably be 
 installed on top of XFree86 4.2.0 (or later).</p>
-</section><-->    <section name="macgimp">
+</section><-->
+<!-->
+<section name="macgimp">
 <title>MacGimp</title>
 <p>L'installeur téléchargeable qui fut proposé par l'équipe MacGimp en 2001 ne contenait pas XFree86. (Il écrasait, malgré tout, certains fichiers de configuration de XFree86.)</p>
 <p>Le CD vendu par <link url="http://www.macgimp.com/">MacGimp, Inc.</link> contient une version de XFree86. Toutefois, il est impossible de déterminer laquelle ; c'est probablement un mélange des versions 4.0.3, 4.1.0 et d'une version de développement. Le serveur fonctionne en mode sans racine, à partir d'une rustine datant d'avant la version 4.1.0.</p>
 </section>
-<!--><section name="rootless">
+<-->
+<!-->
+<section name="rootless">
 <title>Roaming Rootless Servers</title>
 <p>There are various rootless server binaries roaming around
 the net.  With the release of the official 4.2.0 binaries
 this should not be a desirable way to install XFree86.</p>
-</section><-->    
+</section>
+<-->    
 <section name="switching-x11">
 <title>Remplacement de X11</title>
 <p>Si vous avez installé l'un des paquets X11 de Fink, mais que, pour une raison ou une autre, vous décidez de le supprimer pour le remplacer par un autre, la procédure à suivre est simple. Vous devez forcer la suppression des anciens paquets, puis installer les nouveaux de façon à préserver la cohérence de la base de données dpkg.</p>
@@ -255,28 +267,40 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <p>Voici un court résumé des options d'installation et des paquets Fink à installer :</p>
 <itemtable labelt="Type d'installation" labeld="Paquets Fink">
 <item>
-<itemt>4.2.x compilé via Fink</itemt>
-<itemd>
-<p><code>xfree86-base</code> et <code>xfree86-rootless</code> (et les paquets <code>-shlibs</code> associés)</p>
-<p>ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> associés)</p>
-</itemd>
-</item>
-<item>
-<itemt>4.3.x compilé via Fink</itemt>
+<itemt>XFree86 version 4.4.0 ou 4.5.0 (utilisateurs 10.3 et 10.4)</itemt>
 <itemd>
 <p><code>xfree86</code> et <code>xfree86-shlibs</code></p>
 </itemd>
 </item>
 <item>
-<itemt>Binaires officiels 4.x </itemt>
+<itemt>X.org-6.8.2 (utilisateurs 10.3 et 10.4)</itemt>
 <itemd>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
+<p><code>xorg</code> et <code>xorg-shlibs</code></p>
+</itemd>
+</item>
+ <item>
+<itemt>X11 d'Apple (toutes versions)</itemt>
+<itemd>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
 </itemd>
 </item>
 <item>
-<itemt>4.x compilé à partir du source ou de la dernière version CVS</itemt>
+<itemt>Binaires officiels XFree86 4.x</itemt>
 <itemd>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
+</itemd>
+</item>
+<item>
+<itemt>XFree86 version 4.x compilé à partir du source ou de la dernière version CVS</itemt>
+<itemd>
+<p><code>system-xfree86</code> et <code>system-xfree86-shlibs</code> (et <code>system-xfree86-dev</code> pour construire les paquets basés sur X11)</p>
+</itemd>
+</item>
+<item>
+<itemt>XFree86 version 4.2.1.x (utilisateurs 10.2 uniquement) ou 4.2.0 (utilisateurs 10.1 uniquement)</itemt>
+<itemd>
+<p><code>xfree86-base</code> et <code>xfree86-rootless</code> (et les paquets <code>-shlibs</code> associés)</p>
+<p>ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> associés)</p>
 </itemd>
 </item>
 <!--obsolete><item>
@@ -284,24 +308,13 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <itemd>
 <p><code>xfree86-base</code> only</p>
 </itemd>
-</item><-->        <item>
-<itemt>4.2.x d'Apple</itemt>
-<itemd>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
-</itemd>
-</item>
-<item>
-<itemt>4.3.x d'Apple</itemt>
-<itemd>
-<p><code>system-xfree86</code> seulement (+ paquets associés)</p>
-</itemd>
-</item>
+</item><-->
 </itemtable>
 </section>
 </chapter>
 <chapter filename="run-xfree86">
-<title>Lancement de XFree86</title>
-<shorttitle>Lancement de XFree86</shorttitle>
+<title>Lancement de X11</title>
+<shorttitle>Lancement de X11</shorttitle>
 <section name="darwin">
 <title>Darwin</title>
 <p>Sous Darwin, XFree86 se comporte comme sur n'importe quel autre système Unix. En général, on le lance à partir de la console avec la commande <code>startx</code> ; elle lance le serveur et un certain nombre de clients, tels le gestionnaire de fenêtres et un émulateur de terminal avec shell. Sous Darwin, il n'est pas nécessaire de fournir des paramètres, on peut simplement utiliser :</p>
@@ -312,26 +325,39 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <p>Vous trouverez de plus amples informations dans la man page <code>Xserver</code>.</p>
 <p>Enfin, il existe une option pour paramétrer <code>xdm</code> ; voir la man page pour de plus amples informations.</p>
 <p><em>Note</em> : si vous utilisez Mac OS X antérieur à Panther, vous pouvez saisir <code>>console</code> dans la fenêtre d'ouverture de session. Vous accéderez ainsi à une console texte équivalente à Darwin. Si aucun champ pour saisir un nom d'utilisateur n'apparaît dans la fenêtre d'ouverture de session, tapez simplement la première lettre du nom d'un utilisateur quelconque, puis appuyez simultanément sur alt-retour chariot. Vous pourrez alors utiliser n'importe quelle méthode de démarrage ci-dessus, à l'exception de <code>xdm</code>.</p>
-<p><em>Note</em> : il est impossible de démarrer XFree86 à partir de la console sous Mac OS X Panther.</p>
+<p><em>Note</em> : il est impossible de démarrer XFree86 à partir de la console sous Mac OS X Panther et suivant.</p>
 </section>
 <section name="macosx-41">
 <title>Mac OS X + XFree86 4.x.y</title>
-<p>Il y a deux façons de lancer XFree86 sous Mac OS X. L'une est de double-cliquer sur l'application XDarwin.app, située dans le répertoire Applications. Vous pouvez alors choisir entre le mode plein écran et le mode sans racine dans la fenêtre de dialogue qui apparaît à l'écran au lancement. Vous pouvez désactiver cette fenêtre de dialogue et indiquer le mode de démarrage automatique souhaité dans les préférences de XDarwin.  </p>
+<p>Il y a deux façons de lancer XFree86 sous Mac OS X. L'une est de double-cliquer sur l'application <filename>XDarwin.app</filename>, située dans le répertoire <filename>Applications</filename>. Vous pouvez alors choisir entre le mode plein écran et le mode sans racine dans la fenêtre de dialogue qui apparaît à l'écran au lancement. Vous pouvez désactiver cette fenêtre de dialogue et indiquer le mode de démarrage automatique souhaité dans les préférences de XDarwin.  </p>
 <p>Avant la version 4.2.0, XDarwin démarrait automatiquement en mode plein écran, et il n'y avait aucun moyen de le faire démarrer en mode sans racine en double-cliquant sur l'application.</p>
 <p>La seconde façon de démarrer XFree86 sous Mac OS X est de lancer la commande 
-<code>startx</code> dans Terminal.app. Si vous démarrez le serveur de cette façon, vous devez lui indiquer qu'il fonctionnera en parallèle avec Quartz. Ce qui se fait en utilisant l'option <code>-fullscreen</code> :</p>
+<code>startx</code> dans <filename>Terminal.app</filename>. Si vous démarrez le serveur de cette façon, vous devez lui indiquer qu'il fonctionnera en parallèle avec Quartz. Ce qui se fait en utilisant l'option <code>-fullscreen</code> :</p>
 <codeblock>startx -- -fullscreen</codeblock>
 <p>Le serveur démarre alors en mode plein écran, et les clients mentionnés dans le fichier <filename>.xinitrc</filename> sont lancés.  </p>
 <p><em>Note</em> : antérieurement à la version 4.2, on utilisait l'option <code>-quartz</code> pour démarrer en mode plein écran.</p>
-<p>Si le serveur gère le mode sans racine, vous pouvez le lancer dans ce mode avec l'option <code>-rootless</code> :</p>
+<p>Vous pouvez le lancer en mode sans racine avec l'option <code>-rootless</code> :</p>
 <codeblock>startx -- -rootless</codeblock>
 <p>L'option <code>-quartz</code> ne sert plus à passer en mode plein écran, mais à utiliser le mode défini dans les préférences.</p>
 <p>À partir de la version 4.3, la fenêtre de dialogue de démarrage apparaît quand on utilise <code>startx</code> sans paramètres.</p>
 </section>
-<section name="xinitrc">
+<section name="starting-xorg">
+<title>Lancement de X.org</title>
+<p>X.org marche en tout point de façon identique à XFree86.</p>
+</section>
+<section name="starting-apples-x11">
+<title>Lancement de X11 d'Apple</title>
+<p>X11 d'Apple fonctionne de la manière similaire à XFree86 (c'est-à-dire qu'il utilise un fichier <filename>.xinitrc</filename> pour contrôler les clients lancés au démarrage). On le lance normalement en double-cliquant sur l'icône de <filename>X11.app</filename> (situé dans le répertoire <filename>/Applications/Utilitaires</filename>). Vous pouvez aussi utiliser <code>startx</code>, mais il n'existe pas d'option en ligne de commande pour choisir le mode d'affichage ; dans ce cas, <filename>X11.app</filename> démarre dans le mode précédemment choisi dans ses préférences.</p>
+<p>Par défaut, le gestionnaire de fenêtres est <code>quartz-wm</code>d'Apple. Vous pouvez passer de mode plein écran en mode sans racine en changeant l'option correspondante dans les préférences de <em>X11.app</em>. Il n'est pas nécessaire de redémarrer pour que le changement ait lieu. Néanmoins, ceci ne fonctionne pas avec <code>quartz-wm</code>, il faut choisir un autre gestionnaire de fenêtres (par exemple dans <filename>.xinitrc</filename>).</p>
+ </section>
+ <section name="applex11tools">
+<title>applex11tools</title>
+<p>Le paquet <code>applex11tools</code> de Fink vous permet d'utiliser <filename>X11.app</filename> et <code>quartz-wm</code> sous Mac OS X 10.3 et suivant avec XFree86 4.4 et suivant ou X.org.</p>
+<p>Pour installer ce paquet, vous devez activer la <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">branche instable</link> et avoir installé le paquet <filename>X11User.pkg</filename> dans la hiérarchie <filename>/Users</filename> ou <filename>/Volumes</filename>. <filename>X11.app</filename> sera installé dans le dossier <filename>Applications</filename> de l'arborescence Fink. Vous pourrez alors utilisé soit <filename>X11.app</filename> ou <filename>XDarwin.app</filename>.</p>
+</section><section name="xinitrc">
 <title>Fichier .xinitrc</title>
 <p>S'il existe dans votre répertoire utilisateur un fichier nommé <filename>.xinitrc</filename>, il sera utilisé pour lancer quelques clients X au démarrage, tels le gestionnaire de fenêtre, quelques xterm ou un environnement de bureau comme GNOME. Le fichier <filename>.xinitrc</filename> est un script shell qui contient les commandes pour ce faire. Il <em>n'est pas</em> nécessaire de mettre le traditionnel <code>#!/bin/sh</code> dans la première ligne du fichier et de rendre exécutable le fichier ; xinit sait le lancer via un shell.</p>
-<p>S'il n'existe pas de fichier <filename>.xinitrc</filename> dans votre répertoire utilisateur, XFree86 utilise le fichier par défaut <filename>/private/etc/X11/xinit/xinitrc</filename>. Vous pouvez vous servir de ce fichier comme base pour votre propre fichier .xinitrc :</p>
+<p>S'il n'existe pas de fichier <filename>.xinitrc</filename> dans votre répertoire utilisateur, X11 utilise le fichier par défaut <filename>/private/etc/X11/xinit/xinitrc</filename>. Vous pouvez vous servir de ce fichier comme base pour votre propre fichier .xinitrc :</p>
 <codeblock>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</codeblock>
 <p>Si vous utilisez Fink, vous devez sourcer <filename>init.sh</filename> en début de fichier pour garantir une définition corrrecte de votre environnement.</p>
 <p>Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <filename>.xinitrc</filename>, mais il faut tenir compte des éléments suivants. Tout d'abord, le shell qui interprète le fichier attend, par défaut, que chaque programme lancé soit terminé avant de lancer le suivant. Si vous voulez lancer plusieurs programmes en parallèle, vous devez indiquer au shell qu'il doit les faire tourner en &quot;arrière-plan&quot;, en ajoutant un <code>&amp;</code> à la fin de la ligne.</p>
@@ -371,6 +397,12 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 </section>
+<section name="oroborosx">
+<title>OroborOSX</title>
+<p><link url="oroborosx.sourceforge.net">OroborOSX</link> est une solution de remplacement pour les serveurs d'affichage X11.app et XDarwin display servers. Elle nécessite l'installation préexistante de X11 pour fonctionner. <filename>X11.app</filename> et <filename>XDarwin.app</filename> continuent à fonctionner en sa présence.</p>
+<p>Au lancement, <code>OroborOSX</code> lance son propre gestionnaire de fenêtres sans racine, mais ne lit ni le fichier <code>xinitrc</code> du système, ni le fichier <code>.xinitrc</code> de l'utilisateur. Après lancement, on peut activer l'option de menu correspondante pour exécuter le fichier <code>.xinitrc</code>. Néanmoins, <code>OroborOSX</code> a sa propre façon de définir les applicattions à lancer au démarrage. Il possède aussi un mécanisme de démarrage des applications X11 à partir du Finder via des scripts de démarrage.</p>  
+<p>Pour de plus amples informations, allez sur la <link url="oroborosx.sourceforge.net">page d'accueil d'OroborOSX</link>.</p>
+ </section>  
 </chapter>
 <chapter filename="xtools">
 <title>Xtools</title>

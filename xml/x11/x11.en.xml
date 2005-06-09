@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.15 2005/06/09 01:36:14 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.16 2005/06/09 23:00:10 michga Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -449,9 +449,9 @@ rootless under Mac OS X.
       <p>
 If you've got the time to spare, you can build XFree86 4.5 from
 source.
-You can find the source on your local <link url="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</link> in
+You can find the source on your local <link url="http://www.xfree86.org/mirrors/">XFree86 mirror</link> in
 the directory <code>4.5.0/source</code>.
-Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in
+Grab all seven <filename>XFree86-4.5.0-src-#.tgz</filename> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
 <filename>config/cf/host.def</filename> in the XFree86 source tree.
@@ -475,8 +475,9 @@ with the following commands:
 </p>
       <codeblock>make World
 sudo make install install.man</codeblock>
-      <p>To update to 4.2.1.1, follow the instructions in the <xref section="official-binary">Official Binaries</xref> section.</p>
+<!-->      <p>To update to 4.2.1.1, follow the instructions in the <xref section="official-binary">Official Binaries</xref> section.</p>
       <p>To install 4.3.0, follow the above instructions, replacing "2" with "3", but don't do the 4.2.1.1 update procedure.</p>
+<-->
       <p>
 As with the official binaries, you've now got XFree86 with a server
 that can do fullscreen, or rootless under Mac OS X.
