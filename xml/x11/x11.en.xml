@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.14 2005/06/08 01:09:20 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.15 2005/06/09 01:36:14 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -416,15 +416,15 @@ packages you have built against <code>xfree86</code> will need to be rebuilt, as
       <title>The Official Binaries</title>
       <p>
 The XFree86 project has an official binary distribution of XFree86
-4.2.0, which can be upgraded to 4.2.1.1 with patches.
-You can find it on your local <link url="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</link> in
-the directory <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
+4.5.0.  You can find it on your local <link url="http://www.xfree86.org/mirrors">XFree86 mirror</link> in
+the directory <code>4.5.0/binaries/Darwin-ppc-6.x</code> (or <code>4.5.0/binaries/Darwin-ppc-5.x</code> for OS 10.1).  
 Be sure to get the <filename>Xprog.tgz</filename> and <filename>Xquartz.tgz</filename>
-tarballs even though they are marked as optional.
+tarballs even though they are marked as &quot;optional&quot;.
 If you're unsure what you need, just download the whole directory.
 Run the <filename>Xinstall.sh</filename> script as root to install the stuff.
-(You might want to read the <link url="http://www.xfree86.org/4.2.0/Install.html">official
-instructions</link> before installing.)   If you prefer, you can use the <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binary</link> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
+(You might want to read the <link url="http://www.xfree86.org/4.5.0/Install.html">official
+instructions</link> before installing.)</p>
+<!-->If you prefer, you can use the <link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binary</link> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
       <ol>
         <li>10.1 users: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>.  10.2 users:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</link>
         </li>
@@ -439,18 +439,18 @@ tarballs even though they are marked as optional.
 If you're unsure what you need, just download the whole directory.
 Run the <filename>Xinstall.sh</filename> script as root to install the stuff.
 (You might want to read the <link url="http://www.xfree86.org/4.3.0/Install.html">official
-instructions</link> before installing.)</p>
-      <p>Whichever version you install, you've now got XFree86 with a server that can do fullscreen, or 
+instructions</link> before installing.)</p><-->
+      <p>You've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
     </section>
     <section name="official-source">
       <title>The Official Source</title>
       <p>
-If you've got the time to spare, you can build XFree86 4.2.0 from
+If you've got the time to spare, you can build XFree86 4.5 from
 source.
 You can find the source on your local <link url="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</link> in
-the directory <code>4.2.0/source</code>.
+the directory <code>4.5.0/source</code>.
 Grab all three <filename>X420src-#.tgz</filename> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
@@ -517,6 +517,7 @@ someday be released, but none have been as yet.  They would presumably be
 installed on top of XFree86 4.2.0 (or later).
 </p>
 </section><-->
+<!-->
     <section name="macgimp">
       <title>MacGimp</title>
       <p>
@@ -534,7 +535,8 @@ The server does rootless mode, using a patch from the time before
 4.1.0.
 </p>
     </section>
-    <!--><section name="rootless" >
+
+    <section name="rootless" >
 <title>Roaming Rootless Servers</title>
 <p>
 There are various rootless server binaries roaming around
@@ -594,15 +596,9 @@ A quick summary of the install options and the Fink packages you
 should install:
 </p>
       <itemtable labeld="Fink packages" labelt="Install Type">
+
         <item>
-          <itemt>XFree86-4.2.1.x (10.2 only)</itemt>
-          <itemd>
-             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
-            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
-          </itemd>
-        </item>
-        <item>
-          <itemt>XFree86-4.4 or 4.5 (10.3 and 10.4)</itemt>
+          <itemt>XFree86-4.4.0 or 4.5.0 (10.3 and 10.4)</itemt>
           <itemd>
             <p>
               <code>xfree86</code> and <code>xfree86-shlibs</code>
@@ -619,21 +615,23 @@ should install:
           <itemt>Apple's X11 (all versions)</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building)</p>
+              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)</p>
           </itemd>
         </item>
         <item>
           <itemt>XFree86-4.x official binaries</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+            </p>  
           </itemd>
         </item>
         <item>
           <itemt>XFree86-4.x built from source, or from the latest CVS source</itemt>
           <itemd>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+              </p>
           </itemd>
         </item>
         <!--obsolete><item>
@@ -641,8 +639,14 @@ should install:
 <itemd>
 <p>
 <code>xfree86-base</code> only</p>
-</itemd>
-</item><-->
+</itemd><-->
+        <item>
+          <itemt>XFree86-4.2.1.x (10.2 only) or 4.2.0 (10.1 only)</itemt>
+          <itemd>
+             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
+            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
+          </itemd>
+        </item>
 
       </itemtable>
     </section>
@@ -700,10 +704,10 @@ Note: If you are running Mac OS X Panther or later, you cannot start XFree86 fro
     </section>
     <section name="macosx-41">
       <title>Mac OS X + XFree86 4.x.y</title>
-      <p>
+       <p>
 There are basically two ways to start XFree86 under Mac OS X.
-One is double-clicking the XDarwin.app application in your
-Applications folder.  This will let you choose between full 
+One is double-clicking the <filename>XDarwin.app</filename> application in your
+<filename>Applications</filename> folder.  This will let you choose between full 
 screen and rootless mode in a dialog at startup. You can disable 
 the dialog and set XDarwin always to use the mode of your 
 choice in the Preferences dialog.  
@@ -715,7 +719,7 @@ the application.
 </p>
       <p>
 The other way to start XFree86 under Mac OS X is via
-<code>startx</code> from Terminal.app.
+<code>startx</code> from <filename>Terminal.app</filename>.
 If you start the server this way, you must tell it that it should run
 in parallel with Quartz.
 You do this by passing the <code>-fullscreen</code> option, like this:
@@ -729,22 +733,31 @@ plus the clients in your <filename>.xinitrc</filename>.
 NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.
 </p>
       <p>
-If the server you have supports rootless operation, 
-you can start it in rootless mode with the 
+
+You can start it in rootless mode with the 
 <code>-rootless</code> option:</p>
       <codeblock>startx -- -rootless</codeblock>
       <p>
 The <code>-quartz</code> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
-      <p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
+      <p>As of version 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
+    </section>
+    <section name="starting-xorg">
+      <title>Starting X.org</title>
+     <p>X.org works identically to XFree86 in all respects.</p>
     </section>
     <section name="starting-apples-x11">
       <title>Starting Apple's X11</title>
-      <p>
-	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <filename>.xinitrc</filename> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <em>X11.app</em> icon (whose default location is <filename>/Applications/Utilities</filename>).</p>
+       <p>
+	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <filename>.xinitrc</filename> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <filename>X11.app</filename> icon (whose default location is <filename>/Applications/Utilities</filename>).  You can use <code>startx</code>, as well, but it doesn't have a commmand-line option to set the display mode; <filename>X11.app</filename> will start up in whatever mode was previously set in its Preferences.</p>
 <p>If you don't set up a different window manager you will be running Apple's <code>quartz-wm</code> window manager.  <em>X11.app</em>'s Preferences give the option to switch between fullscreen and rootless modes without restarting.  However, this doesn't work for quartz-wm; it is necessary to choose a different window manager (e.g. in <filename>.xinitrc</filename>)</p>
     </section>
+    <section name="applex11tools">
+      <title>The applex11tools package</title>
+      <p>Fink's <code>applex11tools</code> package allows the use of <filename>X11.app</filename> and <code>quartz-wm</code> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
+      <p>To install this package you must enable the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable tree</link>, and have <filename>X11User.pkg</filename> somewhere within <filename>/Users</filename> or <filename>/Volumes</filename>.  <filename>X11.app</filename> will be installed in the <filename>Applications</filename> folder within your Fink tree.  You can now use either <filename>X11.app</filename>  or <filename>XDarwin.app</filename>.</p>
+</section>
     <section name="xinitrc">
       <title>The .xinitrc File</title>
       <p>
@@ -759,7 +772,7 @@ xinit will still know how to run it through a shell.
 </p>
       <p>
 When there is no <filename>.xinitrc</filename> file in your home
-directory, XFree86 will use its default file,
+directory, X11 will use its default file,
 <filename>/private/etc/X11/xinit/xinitrc</filename>.
 You can use the default file as a starting point for your own
 .xinitrc:
@@ -827,7 +840,14 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </codeblock>
     </section>
-  </chapter>
+    <section name="oroborosx">
+    <title>OroborOSX</title>
+    <p><link url="oroborosx.sourceforge.net">OroborOSX</link> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <filename>X11.app</filename> or <filename>XDarwin.app</filename> continue to function, as well</p>
+    <p>When run, <em>OroborOSX</em> starts its own rootless-only window manager, and doesn't read in either the system's <code>xinitrc</code> or user's <code>.xinitrc</code> files.  After starting, it does have a menu option to execute <code>.xinitrc</code>.  However, it does have its own method to set up applications to run when it starts.
+It also provides a mechanism to start X11 applications from the Finder via startup scripts.</p>  
+<p>For more information visit the <link url="oroborosx.sourceforge.net">OroborOSX homepage</link>.</p>
+    </section>  
+</chapter>
   <chapter filename="xtools">
     <title>Xtools</title>
     <shorttitle>Xtools</shorttitle>
