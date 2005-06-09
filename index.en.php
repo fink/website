@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2005/06/09 13:34:14 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -50,8 +50,9 @@ include "fink_version.inc";
 Fink <? print $fink_version ?> was released
 on <? print convert_date_to_locale($release_date) ?>.  
 This release includes source and binary packages 
-as well as a binary installer, all intended for users of OS X version 10.3.
-Fink 0.6.3 (for OS X 10.2) and 0.4.1 (for OS X 10.1) also remain available.
+as well as a binary installer, all intended for users of OS X version 10.4.
+Fink 0.7.2 (for OS X 10.3), 0.6.4 (for OS X 10.2),
+ and 0.4.1 (for OS X 10.1) also remain available.
 </p>
 
 <h1>Resources</h1>
