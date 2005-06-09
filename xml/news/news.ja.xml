@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.10 2005/05/31 01:09:12 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.11 2005/06/09 21:09:28 babayoshihiko Exp $</cvsid>
+<newsitem>
+<date>2005-06-09</date>
+<headline>新しい Fink リリース.</headline>
+<body>
+<p>
+３つの新しい Fink リリースが今日から
+<varlink url="download/index.php">ダウンロードできます</varlink>
+ : version 0.8.0 (for 10.4),
+version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
+いずれも、ソースファイル、バイナリパッケージ、新規ユーザー用インストーラが含まれています。
+</p>
+<p>
+10.4 用の新しいリリースは、現在のすべての &quot;stable&quot; パッケージを、ソースとバイナリで提供します:
+これは 1565 あり、10.3 リリースの 1909 パッケージの80%を超えるものです。
+更なるパッケージの提供にむけて fink 開発者は作業を続けています。
+</p>
+<p>
+新しい 10.2 用のリリースは、最後の公式リリースとなります。
+今後の更新は (セキュリティアップデートを含めて) ありませんが、0.6.4 リリ−巣は数年間の使用に耐えることができるでしょう。
+</p>
+<p>
+10.4 へアップグレードするには、
+<code>fink selfupdate</code> を実行し、
+(10.4 で初めての更新時には) <code>sudo /sw/lib/fink/postinstall.pl</code> を実行し、
+<code>fink scanpackages</code> と <code>sudo apt-get update</code> を実行します。
+現在は bootstrap を勧めていません。
+これは、Apple の XCode 2.1 では動作しないためです。
+</p>
+
+</body>
+</newsitem>
 	<newsitem>
 		<date>2005-04-29</date>
 		<headline>Fink と Tiger.</headline>
@@ -12,21 +43,22 @@ Fink が OS X 10.4 に対応! 更新は以下の通り:
 			<ul>
 				<li>
 バイナリの利用者に、バイナリインストーラは数週間以内に提供いたします。
+それまでの間は、新規インストールは下記のように bootstrap してください。
 </li>
 				<li>
 stable ツリーの利用者は、現在の fink を <code>sudo rm -Rf /sw</code> で削除し、
-<varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</varlink> をダウンロード後、解凍し、&quot;bootstrap&quot;します。
-つまり、 <code>tar -xvzf fink-0.23.9.tar.gz</code> し、
-<filename>fink-0.23.9</filename> 内で <code>./bootstrap.sh </code> を実行します。
+<varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+fink-0.23.10.tar.gz</varlink> をダウンロード後、解凍し、&quot;bootstrap&quot;します。
+つまり、 <code>tar -xvzf fink-0.23.10.tar.gz</code> し、
+<filename>fink-0.23.10</filename> 内で <code>./bootstrap.sh </code> を実行します。
 その後、<code>fink selfupdate</code> を実行する必要があります。
 </li>
 				<li>
-unstable ツリーの利用者は、 fink のバージョンが 0.24.5 以前であれば <code>fink selfupdate</code> 
+unstable ツリーの利用者は、 fink のバージョンが 0.24.6 以前であれば <code>fink selfupdate</code> 
 することでアップグレードされます。
 10.4 にアップグレードしたら、<code>fink --version</code> で現在の fink のバージョンを確認してください。
-0.24.5 以前であれば、 <code>fink selfupdate</code> を実行してください。
-次に、 selfupdate をした人もしていない人も、 <code>fink rebuild fink</code> し <code>fink selfupdate</code> を実行してください。
+0.24.6 以前であれば、 <code>fink selfupdate</code> を実行してください。
+次に、 selfupdate をしたいても、していなくても、 <code>fink rebuild fink</code> し <code>fink selfupdate</code> を実行してください。
 </li>
 			</ul>
 			<p>
