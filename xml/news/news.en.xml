@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.21 2005/06/09 13:17:01 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.22 2005/06/09 13:42:19 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -9,7 +9,9 @@
 <headline>New Fink releases.</headline>
 <body>
 <p>
-Three new Fink releases are available today: version 0.8.0 (for 10.4),
+Three new Fink releases are 
+<varlink url="download/index.php">available</varlink>
+ today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
