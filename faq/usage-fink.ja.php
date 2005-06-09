@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/26 01:24:04';
+$cvs_date = 'Date: 2005/06/09 21:34:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -100,7 +100,7 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 あなたのようなユーザーからのフィードバックが、 stable にするかどうかの判定材料なのです!
 メンテナの情報は <code>fink info &lt;packagename&gt;</code> で取得できます。</p><p>パッケージには依存性があり、 unstable にあるパッケージは unstable にある他のパッケージに依存していることも多いのです。
 このため、全ての unstable を更新するのが最適です。</p><p>Fink が unstable を使うようにするには、 <code>/sw/etc/fink.conf</code> ファイルの <code>Trees:</code> の行に <code>unstable/main</code> と <code>unstable/crypto</code> を追加します。
-この後、 <code>fink selfupdate; fink index</code> を実行します。
+この後、 <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
 </p><p>unstable のパッケージのうち、一つか小数だけ使用したいのであれば、 CVS アップデート (<code>fink selfupdate-cvs</code>) に切替えます。デフォルトの rsync は <code>fink.conf</code> にあるツリーしかアップデートしないからです。
 次に、<code>/sw/etc/fink.conf</code> ファイルの <code>Trees:</code> の行に <code>local/main</code> を追加します。
 次に、 <code>.info</code> ファイルと <code>.patch</code> ファイルを <code>/sw/fink/dists/unstable/main/finkinfo</code> (または <code>/sw/fink/dists/unstable/crypto/finkinfo</code>) から、 <code>/sw/fink/dists/local/main/finkinfo</code> にコピーします。

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/26 01:24:04';
+$cvs_date = 'Date: 2005/06/09 21:34:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -99,7 +99,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     </a>
     <a name="unstable">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.8: 我想安装一个未稳定版本，但 fink 说 'no package found'。我怎么才能安装它？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 首先，请确定你明白“未稳定”的含义。在未稳定代码树的软件包仅仅经过几个人的测试。因此，默认情况下，Fink 不会搜索未稳定代码树。如果你确实启用了未稳定代码树，记得 e-mail 通知维护者某项功能是正常的（或者不正常）。从象你这样的用户的反馈是我们决定一个软件包是否已经稳定的因素！要找出一个软件包的维护者，运行 <code>fink info <b>软件包名</b></code> 命令。</p><p>软件包通常会有依赖关系，未稳定的软件包通常依赖于未稳定的其它软件包。所以最好启用所有未稳定软件包。</p><p>如果你希望 Fink 使用所有未稳定软件包，编辑 <code>/sw/etc/fink.conf</code> 文件，添加 <code>unstable/main</code> 和 <code>unstable/crypto</code> 到 <code>Trees:</code> 这一行，然后运行 <code>fink selfupdate; fink index</code> 命令。</p><p>如果你只希望安装一两个特别的未稳定软件包，而不希望使用其它的，那么你需要改为从 CVS 更新（也就是说，使用 <code>fink selfupdate-cvs</code> 命令），因为 rsync 只更新那些在你的 <code>fink.conf</code> 激活的代码树。
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 首先，请确定你明白“未稳定”的含义。在未稳定代码树的软件包仅仅经过几个人的测试。因此，默认情况下，Fink 不会搜索未稳定代码树。如果你确实启用了未稳定代码树，记得 e-mail 通知维护者某项功能是正常的（或者不正常）。从象你这样的用户的反馈是我们决定一个软件包是否已经稳定的因素！要找出一个软件包的维护者，运行 <code>fink info <b>软件包名</b></code> 命令。</p><p>软件包通常会有依赖关系，未稳定的软件包通常依赖于未稳定的其它软件包。所以最好启用所有未稳定软件包。</p><p>如果你希望 Fink 使用所有未稳定软件包，编辑 <code>/sw/etc/fink.conf</code> 文件，添加 <code>unstable/main</code> 和 <code>unstable/crypto</code> 到 <code>Trees:</code> 这一行，然后运行 <code>fink selfupdate; fink index; fink scanpackages</code> 命令。</p><p>如果你只希望安装一两个特别的未稳定软件包，而不希望使用其它的，那么你需要改为从 CVS 更新（也就是说，使用 <code>fink selfupdate-cvs</code> 命令），因为 rsync 只更新那些在你的 <code>fink.conf</code> 激活的代码树。
 		编辑 <code>/sw/etc/fink.conf</code> 文件并添加 <code>local/main</code> 到 <code>Trees:</code> 这一行，如果还没有添加的话。然后你需要运行 <code>fink selfupdate</code> 来下载软件包描述文件。现在从 <code>/sw/fink/dists/unstable/main/finkinfo</code> 拷贝相应的 <code>.info</code> 文件
 		（以及它们相应的 <code>.patch</code> 文件，如果有这些文件的话）到 <code>/sw/fink/dists/local/main/finkinfo</code>。不过，记住，你的软件包也许会依赖于其它只有未稳定版本的软件包（或某个特定的版本）。这时你也需要把它们的 <code>.info</code> 文件和 <code>.patch</code> 文件移动到相应的位置。在移动好以后，确定运行 <code>fink index</code> 命令，这样 Fink 关于可用软件包的纪录会得到更新。
 		做完以后，你可以转换会 rsync 方式（<code>fink selfupdate-rsync</code>），如果你希望这样的话。</p></div>

@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.28 2005/05/26 01:24:04 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.29 2005/06/09 21:34:45 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -439,7 +439,7 @@ unstable を使用する場合、何か上手くいったら（上手くいか�
 <p>パッケージには依存性があり、 unstable にあるパッケージは unstable にある他のパッケージに依存していることも多いのです。
 このため、全ての unstable を更新するのが最適です。</p>
 <p>Fink が unstable を使うようにするには、 <filename>/sw/etc/fink.conf</filename> ファイルの <code>Trees:</code> の行に <code>unstable/main</code> と <code>unstable/crypto</code> を追加します。
-この後、 <code>fink selfupdate; fink index</code> を実行します。
+この後、 <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
 </p>
 <p>unstable のパッケージのうち、一つか小数だけ使用したいのであれば、 CVS アップデート (<code>fink selfupdate-cvs</code>) に切替えます。デフォルトの rsync は <filename>fink.conf</filename> にあるツリーしかアップデートしないからです。
 次に、<filename>/sw/etc/fink.conf</filename> ファイルの <code>Trees:</code> の行に <code>local/main</code> を追加します。

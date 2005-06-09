@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/26 01:24:04';
+$cvs_date = 'Date: 2005/06/09 21:34:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 
