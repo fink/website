@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/06/08 01:09:20';
+$cvs_date = 'Date: 2005/06/09 01:36:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting X11"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
@@ -132,41 +132,26 @@ packages you have built against <code>xfree86</code> will need to be rebuilt, as
       
       <p>
 The XFree86 project has an official binary distribution of XFree86
-4.2.0, which can be upgraded to 4.2.1.1 with patches.
-You can find it on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <code>4.2.0/binaries/Darwin-ppc-5.x</code>.
+4.5.0.  You can find it on your local <a href="http://www.xfree86.org/mirrors">XFree86 mirror</a> in
+the directory <code>4.5.0/binaries/Darwin-ppc-6.x</code> (or <code>4.5.0/binaries/Darwin-ppc-5.x</code> for OS 10.1).  
 Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
-tarballs even though they are marked as optional.
+tarballs even though they are marked as "optional".
 If you're unsure what you need, just download the whole directory.
 Run the <code>Xinstall.sh</code> script as root to install the stuff.
-(You might want to read the <a href="http://www.xfree86.org/4.2.0/Install.html">official
-instructions</a> before installing.)   If you prefer, you can use the <a href="http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">binary</a> from XonX, which uses identical source but is easier to use.  In either case, download, unzip and run the following upgrades:</p>
-      <ol>
-        <li>10.1 users: <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a>.  10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 upgrade</a>
-        </li>
-        <li>10.1 and 10.2 users:  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 upgrade</a>
-        </li>
-      </ol>
-      <p>There is an official binary distribution of XFree86
-4.3.0, as well, on the<a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirrors</a> in
-the directory <code>4.3.0/binaries/Darwin-ppc-6.x</code>.
-Be sure to get the <code>Xprog.tgz</code> and <code>Xquartz.tgz</code>
-tarballs even though they are marked as optional.
-If you're unsure what you need, just download the whole directory.
-Run the <code>Xinstall.sh</code> script as root to install the stuff.
-(You might want to read the <a href="http://www.xfree86.org/4.3.0/Install.html">official
+(You might want to read the <a href="http://www.xfree86.org/4.5.0/Install.html">official
 instructions</a> before installing.)</p>
-      <p>Whichever version you install, you've now got XFree86 with a server that can do fullscreen, or 
+
+      <p>You've now got XFree86 with a server that can do fullscreen, or 
 rootless under Mac OS X.
 </p>
     
     <h2><a name="official-source">3.4 The Official Source</a></h2>
       
       <p>
-If you've got the time to spare, you can build XFree86 4.2.0 from
+If you've got the time to spare, you can build XFree86 4.5 from
 source.
 You can find the source on your local <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 mirror</a> in
-the directory <code>4.2.0/source</code>.
+the directory <code>4.5.0/source</code>.
 Grab all three <code>X420src-#.tgz</code> tarballs and extract them in
 the same directory.
 You can customize the build by putting macro definitions in the file
@@ -206,25 +191,8 @@ Then, follow the source build instructions above.
 </p>
     
     
-    <h2><a name="macgimp">3.6 MacGimp</a></h2>
-      
-      <p>
-The downloadable installer which was offered by the MacGimp people 
-during 2001
-did not contain XFree86.
-(It would overwrite some XFree86 configuration files, though.)
-</p>
-      <p>
-The CD that <a href="http://www.macgimp.com/">MacGimp, Inc.</a>
-offers for sale reportedly contains XFree86.
-It's not quite clear what version it is; it may be a mix of
-4.0.3, 4.1.0 and a development snapshot.
-The server does rootless mode, using a patch from the time before
-4.1.0.
-</p>
-    
-    
-    <h2><a name="switching-x11">3.7 Replacing X11</a></h2>
+
+    <h2><a name="switching-x11">3.6 Replacing X11</a></h2>
       
       <p>
 If you have already installed one of the Fink X11 packages but for one reason or another
@@ -269,16 +237,13 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 <code>X11.app</code>, depending on what you had installed.  Make sure to check your <code>.xinitrc</code> if you are removing Apple's X11 to 
 make sure that you aren't trying to run <code>quartz-wm</code>.  You can now install whatever new X11 variety you want, manually or via Fink.</p>
     
-    <h2><a name="fink-summary">3.8 Fink package summary</a></h2>
+    <h2><a name="fink-summary">3.7 Fink package summary</a></h2>
       
       <p>
 A quick summary of the install options and the Fink packages you
 should install:
 </p>
-      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>XFree86-4.2.1.x (10.2 only)</td><td>
-             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
-            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
-          </td></tr><tr valign="top"><td>XFree86-4.4 or 4.5 (10.3 and 10.4)</td><td>
+      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>XFree86-4.4.0 or 4.5.0 (10.3 and 10.4)</td><td>
             <p>
               <code>xfree86</code> and <code>xfree86-shlibs</code>
             </p>
@@ -286,13 +251,18 @@ should install:
 	    <p><code>xorg</code> and <code>xorg-shlibs</code></p>
 	</td></tr><tr valign="top"><td>Apple's X11 (all versions)</td><td>
             <p>
-              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building)</p>
+              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)</p>
           </td></tr><tr valign="top"><td>XFree86-4.x official binaries</td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+            </p>  
           </td></tr><tr valign="top"><td>XFree86-4.x built from source, or from the latest CVS source</td><td>
             <p>
-              <code>system-xfree86</code> only (+splitoffs)</p>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+              </p>
+          </td></tr><tr valign="top"><td>XFree86-4.2.1.x (10.2 only) or 4.2.0 (10.1 only)</td><td>
+             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
+            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
           </td></tr></table>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/06/08 01:09:20';
+$cvs_date = 'Date: 2005/06/09 01:36:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11">';
 
 
@@ -60,10 +60,10 @@ Note: If you are running Mac OS X Panther or later, you cannot start XFree86 fro
     
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
       
-      <p>
+       <p>
 There are basically two ways to start XFree86 under Mac OS X.
-One is double-clicking the XDarwin.app application in your
-Applications folder.  This will let you choose between full 
+One is double-clicking the <code>XDarwin.app</code> application in your
+<code>Applications</code> folder.  This will let you choose between full 
 screen and rootless mode in a dialog at startup. You can disable 
 the dialog and set XDarwin always to use the mode of your 
 choice in the Preferences dialog.  
@@ -75,7 +75,7 @@ the application.
 </p>
       <p>
 The other way to start XFree86 under Mac OS X is via
-<code>startx</code> from Terminal.app.
+<code>startx</code> from <code>Terminal.app</code>.
 If you start the server this way, you must tell it that it should run
 in parallel with Quartz.
 You do this by passing the <code>-fullscreen</code> option, like this:
@@ -89,23 +89,32 @@ plus the clients in your <code>.xinitrc</code>.
 NOTE: prior to 4.2, <code>-quartz</code> was used for fullscreen mode.
 </p>
       <p>
-If the server you have supports rootless operation, 
-you can start it in rootless mode with the 
+
+You can start it in rootless mode with the 
 <code>-rootless</code> option:</p>
       <pre>startx -- -rootless</pre>
       <p>
 The <code>-quartz</code> option no longer selects fullscreen mode,
 but rather uses the default mode set in the preferences.
 </p>
-      <p>As of 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
+      <p>As of version 4.3, if you use <code>startx</code> without arguments, the startup dialog box will come up.</p>
     
-    <h2><a name="starting-apples-x11">4.3 Starting Apple's X11</a></h2>
+    <h2><a name="starting-xorg">4.3 Starting X.org</a></h2>
       
-      <p>
-	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <code>.xinitrc</code> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <b>X11.app</b> icon (whose default location is <code>/Applications/Utilities</code>).</p>
+     <p>X.org works identically to XFree86 in all respects.</p>
+    
+    <h2><a name="starting-apples-x11">4.4 Starting Apple's X11</a></h2>
+      
+       <p>
+	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <code>.xinitrc</code> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <code>X11.app</code> icon (whose default location is <code>/Applications/Utilities</code>).  You can use <code>startx</code>, as well, but it doesn't have a commmand-line option to set the display mode; <code>X11.app</code> will start up in whatever mode was previously set in its Preferences.</p>
 <p>If you don't set up a different window manager you will be running Apple's <code>quartz-wm</code> window manager.  <b>X11.app</b>'s Preferences give the option to switch between fullscreen and rootless modes without restarting.  However, this doesn't work for quartz-wm; it is necessary to choose a different window manager (e.g. in <code>.xinitrc</code>)</p>
     
-    <h2><a name="xinitrc">4.4 The .xinitrc File</a></h2>
+    <h2><a name="applex11tools">4.5 The applex11tools package</a></h2>
+      
+      <p>Fink's <code>applex11tools</code> package allows the use of <code>X11.app</code> and <code>quartz-wm</code> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
+      <p>To install this package you must enable the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable tree</a>, and have <code>X11User.pkg</code> somewhere within <code>/Users</code> or <code>/Volumes</code>.  <code>X11.app</code> will be installed in the <code>Applications</code> folder within your Fink tree.  You can now use either <code>X11.app</code>  or <code>XDarwin.app</code>.</p>
+
+    <h2><a name="xinitrc">4.6 The .xinitrc File</a></h2>
       
       <p>
 If a file named <code>.xinitrc</code> exists in your home
@@ -119,7 +128,7 @@ xinit will still know how to run it through a shell.
 </p>
       <p>
 When there is no <code>.xinitrc</code> file in your home
-directory, XFree86 will use its default file,
+directory, X11 will use its default file,
 <code>/private/etc/X11/xinit/xinitrc</code>.
 You can use the default file as a starting point for your own
 .xinitrc:
@@ -187,7 +196,14 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+    <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
+    
+    <p><a href="oroborosx.sourceforge.net">OroborOSX</a> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <code>X11.app</code> or <code>XDarwin.app</code> continue to function, as well</p>
+    <p>When run, <b>OroborOSX</b> starts its own rootless-only window manager, and doesn't read in either the system's <code>xinitrc</code> or user's <code>.xinitrc</code> files.  After starting, it does have a menu option to execute <code>.xinitrc</code>.  However, it does have its own method to set up applications to run when it starts.
+It also provides a mechanism to start X11 applications from the Finder via startup scripts.</p>  
+<p>For more information visit the <a href="oroborosx.sourceforge.net">OroborOSX homepage</a>.</p>
+      
+<p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=en">5. Xtools</a></p>
 <? include_once "../../footer.inc"; ?>
 
