@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.9 2005/06/10 00:51:23 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.10 2005/06/10 01:04:11 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -771,7 +771,7 @@ quartz-wm --only-proxy &amp;
 </section>
     <section name="oroborosx">
     <title>OroborOSX</title>
-    <p><link url="oroborosx.sourceforge.net">OroborOSX</link> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
+    <p><link url="http://oroborosx.sourceforge.net">OroborOSX</link> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
     これは、あらかじめ X11 を必要とします。
     <filename>X11.app</filename> または <filename>XDarwin.app</filename> もそのまま使うことができます。
     
@@ -782,7 +782,7 @@ quartz-wm --only-proxy &amp;
     しかし、起動時にアプリケーションを設定する独自の方法が採用されています。
     また、Finder から X11 アプリケーションを、スクリプトを用いて起動することができるメカニズムもあります。
     </p>
-    <p>詳しい情報は、 <link url="oroborosx.sourceforge.net">OroborOSX ホームページ</link>をご覧ください。</p>
+    <p>詳しい情報は、 <link url="http://oroborosx.sourceforge.net">OroborOSX ホームページ</link>をご覧ください。</p>
     </section>  
 </chapter>
 <chapter filename="xtools" >

@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.6 2005/06/10 00:51:23 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.7 2005/06/10 01:04:11 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -673,10 +673,10 @@ quartz-wm --only-proxy &amp;
     <!-- start translation -->
     <section name="oroborosx">
     <title>OroborOSX</title>
-    <p><link url="oroborosx.sourceforge.net">OroborOSX</link> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <filename>X11.app</filename> or <filename>XDarwin.app</filename> continue to function, as well</p>
+    <p><link url="http://oroborosx.sourceforge.net">OroborOSX</link> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <filename>X11.app</filename> or <filename>XDarwin.app</filename> continue to function, as well</p>
     <p>When run, <em>OroborOSX</em> starts its own rootless-only window manager, and doesn't read in either the system's <code>xinitrc</code> or user's <code>.xinitrc</code> files.  After starting, it does have a menu option to execute <code>.xinitrc</code>.  However, it does have its own method to set up applications to run when it starts.
 It also provides a mechanism to start X11 applications from the Finder via startup scripts.</p>  
-<p>For more information visit the <link url="oroborosx.sourceforge.net">OroborOSX homepage</link>.</p>
+<p>For more information visit the <link url="http://oroborosx.sourceforge.net">OroborOSX homepage</link>.</p>
     </section>
     <!-- end translation -->
   </chapter>
