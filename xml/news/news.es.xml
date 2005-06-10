@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.19 2005/05/03 21:58:14 michga Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.20 2005/06/10 02:18:21 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+<date>2005-06-09</date>
+<headline>New Fink releases.</headline>
+<body>
+<p>
+Three new Fink releases are 
+<varlink url="download/index.php">available</varlink>
+ today: version 0.8.0 (for 10.4),
+version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
+All three releases include source files, binary packages, and a Fink
+installer for new users.
+</p>
+<p>
+The new release for 10.4 includes all currently-available "stable" packages
+in source and binary form: there are 1565 of these, which constitutes more
+than 80% of the 1909 packages available in the 10.3 release.  Work continues
+by the fink developers on bringing more of the stable packages to Tiger.
+</p>
+<p>
+The new release for 10.2 will be the last official release for that
+version of Mac OS X.  Although no further updates (not even security
+updates) will be provided by the Fink team, we anticipate that the
+0.6.4 release will be usable for years to come.
+</p>
+<p>
+Users upgrading to 10.4 can now simply issue a 
+<code>fink selfupdate</code> command, followed by
+<code>sudo /sw/lib/fink/postinstall.pl</code> (for first-time updaters
+on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
+We don't recommend bootstrapping at the moment, since bootstrapping does
+not work with the newly-released XCode 2.1 from Apple.
+</p>
+
+</body>
+</newsitem>
 
 <newsitem>
 <date>2005-04-29</date>

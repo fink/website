@@ -1,4 +1,34 @@
-<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<p>
+Three new Fink releases are 
+<a href="<?php print $root; ?>download/index.php">available</a>
+ today: version 0.8.0 (for 10.4),
+version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
+All three releases include source files, binary packages, and a Fink
+installer for new users.
+</p>
+<p>
+The new release for 10.4 includes all currently-available "stable" packages
+in source and binary form: there are 1565 of these, which constitutes more
+than 80% of the 1909 packages available in the 10.3 release.  Work continues
+by the fink developers on bringing more of the stable packages to Tiger.
+</p>
+<p>
+The new release for 10.2 will be the last official release for that
+version of Mac OS X.  Although no further updates (not even security
+updates) will be provided by the Fink team, we anticipate that the
+0.6.4 release will be usable for years to come.
+</p>
+<p>
+Users upgrading to 10.4 can now simply issue a 
+<code>fink selfupdate</code> command, followed by
+<code>sudo /sw/lib/fink/postinstall.pl</code> (for first-time updaters
+on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
+We don't recommend bootstrapping at the moment, since bootstrapping does
+not work with the newly-released XCode 2.1 from Apple.
+</p>
+
+<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
@@ -29,7 +59,7 @@ users with mission-critical applications to check in on the mailing
 lists to verify whether anyone has had experience with the package in 
 question before upgrading.</p>
 
-<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
@@ -43,19 +73,4 @@ matter, and working to resolve it as quickly as possible.
 </p>
 
 
-<a name="2004-10-15%20Workaround%20for%20gcc%20problems."><span class="news-date">2004-10-15: </span><span class="news-headline">Workaround for gcc problems.</span></a><?php gray_line(); ?>
-<p>
-The version of gcc included with XCode 1.5 is known to produce 
-incorrect output from c++ code under certain circumstances.
-Fink now has a mechanism to warn users about this, and Fink will soon
-refuse
-to use the "broken" gcc to compile packages which are known to
-have this problem.
-</p><p>
-If you have already upgraded XCode to version 1.5, there is a workaround,
-described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
-and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
-</p><p> If you have not yet upgraded, you should consider remaining with
-XCode version 1.2 until the problem has been resolved.
-</p>
 
