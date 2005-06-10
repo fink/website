@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Lancement de X11";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/09 23:00:22';
+$cvs_date = 'Date: 2005/06/10 01:56:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de X11">';
 
 
@@ -94,9 +94,9 @@ quartz-wm --only-proxy &amp;
 
 <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
 
-<p><a href="oroborosx.sourceforge.net">OroborOSX</a> est une solution de remplacement pour les serveurs d'affichage X11.app et XDarwin display servers. Elle nécessite l'installation préexistante de X11 pour fonctionner. <code>X11.app</code> et <code>XDarwin.app</code> continuent à fonctionner en sa présence.</p>
+<p><a href="http://oroborosx.sourceforge.net">OroborOSX</a> est une solution de remplacement pour les serveurs d'affichage X11.app et XDarwin display servers. Elle nécessite l'installation préexistante de X11 pour fonctionner. <code>X11.app</code> et <code>XDarwin.app</code> continuent à fonctionner en sa présence.</p>
 <p>Au lancement, <code>OroborOSX</code> lance son propre gestionnaire de fenêtres sans racine, mais ne lit ni le fichier <code>xinitrc</code> du système, ni le fichier <code>.xinitrc</code> de l'utilisateur. Après lancement, on peut activer l'option de menu correspondante pour exécuter le fichier <code>.xinitrc</code>. Néanmoins, <code>OroborOSX</code> a sa propre façon de définir les applicattions à lancer au démarrage. Il possède aussi un mécanisme de démarrage des applications X11 à partir du Finder via des scripts de démarrage.</p>  
-<p>Pour de plus amples informations, allez sur la <a href="oroborosx.sourceforge.net">page d'accueil d'OroborOSX</a>.</p>
+<p>Pour de plus amples informations, allez sur la <a href="http://oroborosx.sourceforge.net">page d'accueil d'OroborOSX</a>.</p>
    
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=fr">5. Xtools</a></p>
