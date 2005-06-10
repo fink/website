@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - X11 の起動";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/10 00:51:23';
+$cvs_date = 'Date: 2005/06/10 01:04:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="X11 の入手とインストール">';
 
 
@@ -192,7 +192,7 @@ quartz-wm --only-proxy &amp;
 
     <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
     
-    <p><a href="oroborosx.sourceforge.net">OroborOSX</a> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
+    <p><a href="http://oroborosx.sourceforge.net">OroborOSX</a> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
     これは、あらかじめ X11 を必要とします。
     <code>X11.app</code> または <code>XDarwin.app</code> もそのまま使うことができます。
     
@@ -203,7 +203,7 @@ quartz-wm --only-proxy &amp;
     しかし、起動時にアプリケーションを設定する独自の方法が採用されています。
     また、Finder から X11 アプリケーションを、スクリプトを用いて起動することができるメカニズムもあります。
     </p>
-    <p>詳しい情報は、 <a href="oroborosx.sourceforge.net">OroborOSX ホームページ</a>をご覧ください。</p>
+    <p>詳しい情報は、 <a href="http://oroborosx.sourceforge.net">OroborOSX ホームページ</a>をご覧ください。</p>
       
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=ja">5. Xtools</a></p>
