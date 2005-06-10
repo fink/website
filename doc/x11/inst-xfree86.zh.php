@@ -1,8 +1,8 @@
 <?
 $title = "运行 X11 - 安装 X11";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/09 16:14:05';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 XFree86"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
+$cvs_date = 'Date: 2005/06/10 00:51:23';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 X11"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
 
 
 include_once "header.zh.inc";
@@ -33,9 +33,7 @@ operation, and have OpenGL support.</li>
 <p><b>10.2 users:</b></p>
 <p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
 </p>
-
       <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
-      
 <p><b>10.1 users:</b></p>
 <p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
     
@@ -46,6 +44,7 @@ operation, and have OpenGL support.</li>
 2003 年 1 月 7 日，苹果发布了<a href="http://www.apple.com/macosx/x11/">一个基于 XFree86-4.2 的 X11 定制实现</a>，它包括 Quartz 渲染和加速的 OpenGL。2003 年 2 月 10 日发布了补充更多特性和修正缺陷的新版本。第三个版本（Beta 3）2003 年 3 月 17 日，它包括更多的特性和缺陷修正。这个版本可以运行在 Juguar 上。
 </p>
       <p>2003 年 10 月 24 日，苹果发布了 Panther (10.3)，包括了它们 X11 的发布版本。这个版本基于 XFree86-4.3。</p>
+      <p>2005 年 4 月 29 日，苹果发布了 Tiger (10.4)，包括了它们 X11 的发布版本。这个版本基于 XFree86-4.4。</p>
       <p>
 要使用苹果的二进制版本，你需要安装 <b>X11 User</b> 软件包，你还需要
 <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">更新</a> Fink。</p>
@@ -78,8 +77,7 @@ exec /sw/bin/fvwm2</pre>
         <li>
           <p>默认情况下，苹果的 X11 不理会 Fink 的环境变量设置。为了启动你通过 fink 安装的程序（例如窗口管理器，gnome-session，其它在
 <code>/sw/bin</code> 下的应用程序），把下面移行放在 <code>~/.xinitrc</code> 文件比较靠前的地方（比如，在最初的 "<code>#!/bin/sh</code>" 的这一行之后，但在运行其它程序以前）：</p>
-          <pre> . /sw/bin/init.sh
-</pre>
+          <pre> . /sw/bin/init.sh</pre>
           <p>这样 Fink 的环境就被初始化了。注意：我们使用 <code>init.sh</code> 文件而不是 <code>init.csh</code> 文件是因为<code>.xinitrc</code> 是使用 <code>sh</code> 来做解释器，而不是 <code>tcsh</code>。</p>
         </li>
         <li>
@@ -103,7 +101,7 @@ defined in indirectly referenced dynamic library
         </li>
         
         <li>
-          <p><b>10.3 users only:</b>  It is possible to use Apple's display server and window manager on top of either XFree86-4.4 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p>
+          <p><b>10.3 and 10.4 users only:</b>  It is possible to use Apple's display server and window manager on top of XFree86 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p>
         </li>
         
       </ul>
@@ -114,33 +112,22 @@ defined in indirectly referenced dynamic library
     <h2><a name="official-binary">3.3 官方二进制版本</a></h2>
       
       <p>
-XFree86 项目又一个针对 XFree86 4.2.0 的官方二进制发行版，它还可以通过补丁升级到 4.2.1.1。
-你可以在你本地的 <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 镜像站点</a>中的<code>4.2.0/binaries/Darwin-ppc-5.x</code> 目录中找到它。
+XFree86 项目又一个针对 XFree86 4.5.0。
+你可以在你本地的 <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 镜像站点</a>中的<code>4.5.0/binaries/Darwin-ppc-6.x</code> (<code>4.5.0/binaries/Darwin-ppc-6.x</code> for 10.1) 目录中找到它。
 一定要同时下载 <code>Xprog.tgz</code> 和 <code>Xquartz.tgz</code>
 这两个压缩档，虽然它们被标为可选的。
 如果你不知道你需要些什么，那么可以下载整个目录。
 以 root 权限运行 <code>Xinstall.sh</code> 脚本来进行安装。
-（在安装之前，你也许要阅读一下<a href="http://www.xfree86.org/4.2.0/Install.html">官方指南</a>）。如果你愿意的话，也可以使用 XonX 的<a href="http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download">二进制安装包</a>，它使用相同的源程序，但更容易使用。上面两种情况下，你都应该下载，解压，然后运行下面的更新：</p>
-      <ol>
-        <li>10.1 用户：<a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download">4.2.0 -&gt; 4.2.0.1 升级</a>。10.2 用户：  <a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download">4.2.0 -&gt; 4.2.0.1 升级</a>
-        </li>
-        <li>10.1 和 10.2 用户：<a href="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download">4.2.0.1 -&gt; 4.2.1.1 升级</a>
-        </li>
-      </ol>
-      <p>同时，还有一个 XFree86 4.3.0 的官方二进制安装版，在 <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 镜像站点</a>的<code>4.3.0/binaries/Darwin-ppc-6.x</code>目录里面。
-一定要下载 <code>Xprog.tgz</code> 和 <code>Xquartz.tgz</code>
-这两个压缩档，即使它们被标为可选的。
-如果你不确定你需要什么，可以下载整个目录。
-用 root 权限运行 <code>Xinstall.sh</code> 脚本来进行安装。
-（你也许会希望在安装前先阅读一下<a href="http://www.xfree86.org/4.3.0/Install.html">官方指南</a>）。</p>
-      <p>无论你安装哪一个版本，你现在都拥有了一个 XFree86 软件包，其中包括一个可以在 OS X 下支持全屏幕或无根模式的服务器程序。
+（在安装之前，你也许要阅读一下<a href="http://www.xfree86.org/4.5.0/Install.html">官方指南</a>）。</p>
+
+      <p>你现在都拥有了一个 XFree86 软件包，其中包括一个可以在 OS X 下支持全屏幕或无根模式的服务器程序。
 </p>
     
     <h2><a name="official-source">3.4 官方源代码版</a></h2>
       
       <p>
-如果你有时间可花的话，你可以用源代码构建 XFree86 4.2.0。
-你可以在你本地的 <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 镜像站点</a>的<code>4.2.0/source</code>目录中找到它们。
+如果你有时间可花的话，你可以用源代码构建 XFree86 4.5。
+你可以在你本地的 <a href="http://www.xfree86.org/MIRRORS.shtml">XFree86 镜像站点</a>的<code>4.5.0/source</code>目录中找到它们。
 获取一共三个的 <code>X420src-#.tgz</code> 压缩档，并把它们解压到相同的一个目录里面。
 你可以把一些宏定义放到 XFree86 的源代码树的 <code>config/cf/host.def</code> 文件里面，来自己定制构建方式。
 
@@ -170,19 +157,9 @@ sudo make install install.man</pre>
 CVS</a> 中的办法下载 <code>xc</code> 模块。然后，按照上面的从源代码构建的办法进行。
 </p>
     
-    <h2><a name="macgimp">3.6 MacGimp</a></h2>
-      
-      <p>
-MacGimp 2001 年时提供的可下载的安装程序不包括 XFree86。
-（虽然它可能会覆盖一些 XFree86 配置文件）。
-</p>
-      <p>
-<a href="http://www.macgimp.com/">MacGimp, Inc.</a>销售的 CD 据称包括 XFree86。
-它的确切版本并不清楚，可能是 4.0.3，4.1.0 和一个开发版本的混合。
-服务器程序支持无根模式，使用 4.1.0 之前的一个补丁程序。
-</p>
     
-    <h2><a name="switching-x11">3.7 替换 X11</a></h2>
+
+<h2><a name="switching-x11">3.6 替换 X11</a></h2>
       
       <p>
 如果你已经安装了一个 Fink X11 软件包，但由于某个原因你希望删除它，换成另外一个。操作过程很简单。首先你需要牵制删除旧的安装包，然后安装新的，保持你的 dpkg 数据库的一致性。
@@ -217,37 +194,35 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
       <p>上面办法应该对任何不是通过 Fink 安装的 X11 都有效。根据你安装的版本不同，你还需要删除 <code>XDarwin.app</code> 或 
 <code>X11.app</code>。如果你删除的是苹果的 X11，那么检查你的 <code>.xinitrc</code> 文件，确定你运行的窗口管理器不是 <code>quartz-wm</code>。你现在可以安装你喜欢的 X11 变种，手工或通过 Fink。</p>
     
-    <h2><a name="fink-summary">3.8 Fink 软件包简介</a></h2>
+    <h2><a name="fink-summary">3.7 Fink 软件包简介</a></h2>
       
       <p>
 一个关于安装选项和你应该安装的 Fink 软件包的归纳：
 </p>
-      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>Fink 的 4.2.x 已编译版</td><td>
+      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Install Type</th><th align="left">Fink packages</th></tr><tr valign="top"><td>XFree86-4.4.0 or 4.5.0 (10.3 and 10.4)</td><td>
             <p>
-              <code>xfree86-base</code> 和 <code>xfree86-rootless</code> （以及他们的 <code>-shlibs</code>）</p>
-            <p>或 <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code> （以及 <code>-shlibs</code>）</p>
-          </td></tr><tr valign="top"><td>Fink 的 4.3.x 已编译版</td><td>
-            <p>
-              <code>xfree86</code> 和 <code>xfree86-shlibs</code>
+              <code>xfree86</code> and <code>xfree86-shlibs</code>
             </p>
-          </td></tr><tr valign="top"><td>4.x 官方二进制版</td><td>
+          </td></tr><tr valign="top"><td>X.org-6.8.2 (10.3 and 10.4)</td><td>
+	    <p><code>xorg</code> and <code>xorg-shlibs</code></p>
+	</td></tr><tr valign="top"><td>Apple's X11 (all versions)</td><td>
             <p>
-              仅 <code>system-xfree86</code> （以及一些 splitoff）</p>
-          </td></tr><tr valign="top"><td>4.x 已编译版，包括从源代码发布版或最新的 CVS 源代码编译的。</td><td>
+              <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)</p>
+          </td></tr><tr valign="top"><td>XFree86-4.x official binaries</td><td>
             <p>
-              仅 <code>system-xfree86</code> （以及一些 splitoff）</p>
-          </td></tr><tr valign="top"><td>苹果的 4.2.x 版</td><td>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+            </p>  
+          </td></tr><tr valign="top"><td>XFree86-4.x built from source, or from the latest CVS source</td><td>
             <p>
-              仅 <code>system-xfree86</code> （以及一些 splitoff）
-</p>
-          </td></tr><tr valign="top"><td>苹果的 4.3.x 版</td><td>
-            <p>
-              仅 <code>system-xfree86</code> （以及一些 splitoff）
-</p>
+	      <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> for building X11-based packages)
+              </p>
+          </td></tr><tr valign="top"><td>XFree86-4.2.1.x (10.2 only) or 4.2.0 (10.1 only)</td><td>
+             <p><code>xfree86-base</code> and <code>xfree86-rootless</code> (and their <code>-shlibs</code>)</p>
+            <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
           </td></tr></table>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="run-xfree86.php?phpLang=zh">4. 启动 XFree86</a></p>
+<a href="run-xfree86.php?phpLang=zh">4. 启动 X11</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

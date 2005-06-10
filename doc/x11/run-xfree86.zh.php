@@ -1,13 +1,13 @@
 <?
-$title = "运行 X11 - 启动 XFree86";
+$title = "运行 X11 - 启动 X11";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/04/09 16:14:05';
+$cvs_date = 'Date: 2005/06/10 00:51:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="xtools.php?phpLang=zh" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=zh" title="获取和安装 X11">';
 
 
 include_once "header.zh.inc";
 ?>
-<h1>运行 X11 - 4. 启动 XFree86</h1>
+<h1>运行 X11 - 4. 启动 X11</h1>
     
     
     <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -40,19 +40,19 @@ include_once "header.zh.inc";
 注意：如果你使用 Mac OS X Panther 之前的版本，你可以在登录窗口输入 <code>&gt;console</code>　来获得一个和纯 Darwin 环境等效的纯文本控制台。如果你在登录窗口看不到输入用户的地方，你可以按下随便一个用户名的第一个字母，然后按 Option+Return 组合键。
 然后，你可以使用上面描述的启动方法，除了 <code>xdm</code> 作为一个例外。
 </p>
-<p>如果你运行的是 Panther，你不能从控制台窗口启动 XFree86。</p>
+<p>如果你运行的是 Panther or later，你不能从控制台窗口启动 XFree86。</p>
     
     <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
       
       <p>
 基本上，在 Mac OS X 下启动 XFree86 有两种办法。
-一种办法是在你应用程序中双击 XDarwin.app 程序图标。在启动过程中会有一个对话框让你选择是全屏幕模式还是无根模式。你可以在偏好设定对话框中设定总是使用你选择模式并禁用选择对话框。  
+一种办法是在你<code>应用程序</code>中双击 <code>XDarwin.app</code> 程序图标。在启动过程中会有一个对话框让你选择是全屏幕模式还是无根模式。你可以在偏好设定对话框中设定总是使用你选择模式并禁用选择对话框。  
 </p>
       <p>
 在 4.2.0 之前，它会自动启动全屏幕模式，没有办法通过双击程序来进入无根模式。
 </p>
       <p>
-另外一种在 Mac OS X 中启动 XFree86 的办法是在终端程序中运行
+另外一种在 Mac OS X 中启动 XFree86 的办法是在<code>终端程序</code>中运行
 <code>startx</code>。
 如果你用这种办法启动服务器程序，你必须告诉它应该与 Quartz 并行使用。
 这可以通过使用 <code>-fullscreen</code> 参数，比如：
@@ -65,21 +65,38 @@ include_once "header.zh.inc";
 注意，在 4.2 之前，使用 <code>-quartz</code> 参数来进入全屏幕模式。
 </p>
       <p>
-如果你的服务器程序支持无根模式，你可以用 <code>-rootless</code> 参数用无根模式启动：</p>
+你可以用 <code>-rootless</code> 参数用无根模式启动：</p>
       <pre>startx -- -rootless</pre>
       <p>
 <code>-quartz</code> 选项不再选择全屏幕模式，而是使用偏好设定里面的默认设置。
 </p>
       <p>对于 4.3，如果不带参数地使用 <code>startx</code>，会显示启动对话框。</p>
     
-    <h2><a name="xinitrc">4.3 .xinitrc 文件</a></h2>
+    
+    <h2><a name="starting-xorg">4.3 Starting X.org</a></h2>
+      
+     <p>X.org works identically to XFree86 in all respects.</p>
+    
+    <h2><a name="starting-apples-x11">4.4 Starting Apple's X11</a></h2>
+      
+       <p>
+	Functionally, Apple's X11 works similarly to XFree86 (e.g. using a <code>.xinitrc</code> file to control the clients that are launched on startup).  The normal way to run it is by double-clicking the <code>X11.app</code> icon (whose default location is <code>/Applications/Utilities</code>).  You can use <code>startx</code>, as well, but it doesn't have a commmand-line option to set the display mode; <code>X11.app</code> will start up in whatever mode was previously set in its Preferences.</p>
+<p>If you don't set up a different window manager you will be running Apple's <code>quartz-wm</code> window manager.  <b>X11.app</b>'s Preferences give the option to switch between fullscreen and rootless modes without restarting.  However, this doesn't work for quartz-wm; it is necessary to choose a different window manager (e.g. in <code>.xinitrc</code>)</p>
+    
+    <h2><a name="applex11tools">4.5 The applex11tools package</a></h2>
+      
+      <p>Fink's <code>applex11tools</code> package allows the use of <code>X11.app</code> and <code>quartz-wm</code> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
+      <p>To install this package you must enable the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable tree</a>, and have <code>X11User.pkg</code> somewhere within <code>/Users</code> or <code>/Volumes</code>.  <code>X11.app</code> will be installed in the <code>Applications</code> folder within your Fink tree.  You can now use either <code>X11.app</code>  or <code>XDarwin.app</code>.</p>
+
+    
+    <h2><a name="xinitrc">4.6 .xinitrc 文件</a></h2>
       
       <p>
 如果在你的主目录中有一个 <code>.xinitrc</code> 文件，它可以用于启动一些最初的 X 客户程序，比如，窗口管理器，或者一些 xterm 终端或象 GNOME 这样的桌面环境。<code>.xinitrc</code> 文件实际上是包括一些命令 shell 脚本。
 <b>不</b> 需要把通常的 <code>#!/bin/sh</code> 放在第一行和把这个文件设为可执行；xinit 知道怎么在 shell 里面运行它。
 </p>
       <p>
-如果在你的主目录里面没有 <code>.xinitrc</code> 文件，XFree86 会使用它的默认文件，
+如果在你的主目录里面没有 <code>.xinitrc</code> 文件，X11 会使用它的默认文件，
 <code>/private/etc/X11/xinit/xinitrc</code>。
 你可以使用这个默认文件作为你自己的 .xinitrc 文件的一个起点：
 </p>
@@ -144,6 +161,15 @@ quartz-wm --only-proxy &amp;
 <pre>. /sw/bin/init.sh
 /sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
+    
+    
+    <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
+    
+    <p><a href="oroborosx.sourceforge.net">OroborOSX</a> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <code>X11.app</code> or <code>XDarwin.app</code> continue to function, as well</p>
+    <p>When run, <b>OroborOSX</b> starts its own rootless-only window manager, and doesn't read in either the system's <code>xinitrc</code> or user's <code>.xinitrc</code> files.  After starting, it does have a menu option to execute <code>.xinitrc</code>.  However, it does have its own method to set up applications to run when it starts.
+It also provides a mechanism to start X11 applications from the Finder via startup scripts.</p>  
+<p>For more information visit the <a href="oroborosx.sourceforge.net">OroborOSX homepage</a>.</p>
+    
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=zh">5. Xtools</a></p>

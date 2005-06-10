@@ -1,13 +1,13 @@
 <?
-$title = "Running X11 - XFree86 の起動";
+$title = "Running X11 - X11 の起動";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/01/25 03:07:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="XFree86 の入手とインストール">';
+$cvs_date = 'Date: 2005/06/10 00:51:23';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="X11 の入手とインストール">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>Running X11 - 4. XFree86 の起動</h1>
+<h1>Running X11 - 4. X11 の起動</h1>
 
 
 <h2><a name="darwin">4.1 Darwin</a></h2>
@@ -43,12 +43,15 @@ include_once "header.ja.inc";
 ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
 これは
 </p>
+<p>
+注記: Mac OS X Panther 以降では、 console ウィンドウからは XFree86 は起動できません。
+</p>
 
 <h2><a name="macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></h2>
 
 <p>
 Mac OS X で XFree86 を起動するには、基本的に二つの方法があります。
-ひとつはアプリケーションフォルダ内の XDarwin.app アプリケーションをダブルクリックします。
+ひとつは<code>アプリケーション</code>フォルダ内の <code>XDarwin.app</code> アプリケーションをダブルクリックします。
 この後、起動ダイアログでフルスクリーンかルートレスかを選択します。
 このダイアログは毎回でてきますが、 Preferences ダイアログで設定を行うと出てこなくなります。
 </p>
@@ -56,7 +59,7 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 4.2.0 より前は自動的にフルスクリーンモードで、ダブルクリックによる起動ではルートレスに変える方法はありませんでした。
 </p>
 <p>
-もうひとつの方法は、 Mac OS X 上でターミナル.appから <code>startx</code> を実行します。
+もうひとつの方法は、 Mac OS X 上で <code>ターミナル.app</code>から <code>startx</code> を実行します。
 この方法でサーバを起動する場合、Quartz と共存することを伝える必要があります。
 これは、 <code>-fullscreen</code> オプションをつけて:
 </p>
@@ -70,7 +73,7 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 注記: 4.2 より前では <code>-quartz</code> でフルスクリーンモードになりました。
 </p>
 <p>
-サーバがルートレスモードをサポートしていれば、 <code>-rootless</code> オプションを使って:
+<code>-rootless</code> オプションを使って:
 </p>
 <pre>startx -- -rootless</pre>
 <p>
@@ -79,7 +82,39 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 </p>
 <p>4.3 時点では、引数なしで <code>startx</code> を実行すると起動ダイアログが表示されます。</p>
 
-<h2><a name="xinitrc">4.3 .xinitrc ファイル</a></h2>
+    <h2><a name="starting-xorg">4.3 X.org の起動</a></h2>
+      
+     <p>X.org は XFree86 と全く同じ要領で起動します。</p>
+    
+    <h2><a name="starting-apples-x11">4.4 Apple X11 の起動</a></h2>
+      
+       <p>
+	     機能としては、 Apple X11 は XFree86 と同様です (例えば、<code>.xinitrc</code> を
+	     使って、クライアントを制御します)
+	     通常の起動方法は <code>X11.app</code> をダブルクリックします
+	     (これは<code>/アプリケーション/ユーティリティ</code>内にあります)。
+	     <code>startx</code>　コマンドを使うことも可能ですが、コマンドラインオプションを使ってディスプレーモードを指定することはできません;
+	     <code>X11.app</code> は、初期設定で選択されたモードで起動します。
+	   </p>
+       <p>
+         ウィンドウマネージャーは、ほかの設定をしない限り <code>quartz-wm</code> となります。
+         <b>X11.app</b> の初期設定で、再起動することなくフルスクリーンとルートレスを切り替えることができます。
+         しかし、これは quartz-wm では動作しません;
+         ほかのウィンドウマネージャーを (<code>.xinitrc</code> で設定して) 使う必要があります。
+       </p>
+    
+    <h2><a name="applex11tools">4.5 applex11tools パッケージ</a></h2>
+      
+      <p>
+        Fink の <code>applex11tools</code> を用いると、 OS 10.3 以降では、
+        XFree86 4.4 以降や X.org で <code>X11.app</code> と <code>quartz-wm</code> を組み合わせることができます。
+      </p>
+      <p>
+      	このパッケージを使用するには<a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable ツリー</a> を設定し、<code>X11User.pkg</code> を <code>/Users</code> または <code>/Volumes</code> のどこかに置きます。
+      	<code>X11.app</code> は、 Fink ツリー内の <code>Applications</code> フォルダーにインストールされます。
+      	これで <code>X11.app</code> や <code>XDarwin.app</code> を使うことができます。</p>
+
+<h2><a name="xinitrc">4.6 .xinitrc ファイル</a></h2>
 
 <p>
 ホームディレクトリに <code>.xinitrc</code> という名前のファイルがある場合、自動的にウィンドウマネージャや 
@@ -89,7 +124,7 @@ xterm, GNOME などのデスクトップ環境といったX クライアント�
 xinit はシェルを通して起動する方法を知っています。
 </p>
 <p>
-<code>.xinitrc</code> ファイルがホームディレクトリ内にない場合、 XFree86 はデフォルトのファイル
+<code>.xinitrc</code> ファイルがホームディレクトリ内にない場合、 X11 はデフォルトのファイル
 <code>/private/etc/X11/xinit/xinitrc</code>.
 を使用します。
 このデフォルトのファイルを元に編集するとよいかもしれません。
@@ -155,6 +190,21 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 
+    <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
+    
+    <p><a href="oroborosx.sourceforge.net">OroborOSX</a> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
+    これは、あらかじめ X11 を必要とします。
+    <code>X11.app</code> または <code>XDarwin.app</code> もそのまま使うことができます。
+    
+    </p>
+    <p><b>OroborOSX</b> が実行されると、独自のルートレスのみのウィンドウマネージャーを立ち上げ、
+    システムの <code>xinitrc</code> やユーザーの <code>.xinitrc</code> は読み込みません。
+    起動後に <code>.xinitrc</code> を実行するメニューがあります。
+    しかし、起動時にアプリケーションを設定する独自の方法が採用されています。
+    また、Finder から X11 アプリケーションを、スクリプトを用いて起動することができるメカニズムもあります。
+    </p>
+    <p>詳しい情報は、 <a href="oroborosx.sourceforge.net">OroborOSX ホームページ</a>をご覧ください。</p>
+      
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=ja">5. Xtools</a></p>
 <? include_once "../../footer.inc"; ?>

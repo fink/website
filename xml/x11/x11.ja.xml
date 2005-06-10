@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.8 2005/01/25 03:07:03 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.9 2005/06/10 00:51:23 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -61,6 +61,7 @@ Mac OS X から余計な部分を落とした無料版で、完全なソース�
 Xtools は <link url="http://www.tenon.com/" >Tenon Intersystems</link> の製品です。
 これは XFree86 をベースにした Mac OS X 用の X11 の一バージョンです。
 </p>
+<p>注記: OS 10.3 のリリース以前に開発が止まっているようです。</p>
 </section>
 <section name="client-server" >
 <title>クライアントとサーバー</title>
@@ -210,8 +211,8 @@ XFree86 4.1.0 がフルスクリーンモードで登場した後、ルートレ
 </section>
 </chapter>
 <chapter filename="inst-xfree86" >
-<title>XFree86 の入手とインストール</title>
-<shorttitle>XFree86 のインストール</shorttitle>
+<title>X11 の入手とインストール</title>
+<shorttitle>X11 のインストール</shorttitle>
 <section name="fink" >
 <title>Fink を使ったインストール</title>
 <p>
@@ -219,38 +220,63 @@ Fink はどのような X11 がインストールされていても問題なく�
 パッケージも提供しています。
 <code>fink install ...</code> と入力すれば、ソースコードをダウンロードしてコンパイルを開始します。
 もし <code>apt-get install ...</code> か <code>dselect</code> フロントエンドを使ったら、
-XFree86 の公式ディストリビューションに似たコンパイル済みのパッケージをインストールします。
+X11 の公式ディストリビューションに似たコンパイル済みのパッケージをインストールします。
+</p>
+<p><em>一般的事項:</em></p>
+<ul>
+	<li>
+		Fink の提供する全ての X11 パッケージは、フルスクリーンとルートレスの双方をサポートし、 OpenGL もサポートします。
+	</li>
+	<li>
+		<em>重要事項:</em>
+		X11 のリリースによってファイルが異なります。
+		これにより、 X11 をダウングレード使用とする場合、バイナリが動作しないことがあります。
+		この場合はパッケージを再度ビルドする必要があります。
+		<p>
+		逆は通常は問題ありません: 古い X11 用にビルドされたパッケージは、後のバージョンでも動作します。
+		</p>
+		<p>
+		10.3 と 10.4 では、X11 のヒエラルキー (新しい -&gt; 古い コードベース) は以下の通り:
+		</p>
+		<codeblock>xorg &gt; xfree86 &gt; Apple's X11 </codeblock>
+	</li>
+</ul>
+<p><em>10.4 利用者:</em></p>
+<p>
+XFree86 version 4.5.0-23 をソースからインストールすることができます。
+<code>xfree86</code> と <code>xfree86-shlibs</code>  の両方が必要です。
 </p>
 <p>
-<code>xfree86-base</code> パッケージは、 XDarwin サーバを除く全ての XFree86 4.2.1.1 (10.1 ユーザーは 4.2.0) を含んでいます。
-<code>xfree86-rootless</code> パッケージは、標準 XFree 4.2.1.1 安定板のサーバで、フルスクリーンとルートレスに対応、 OpenGL をサポートしています。
-(以前は Fink にフルスクリーンモードのみに対応している <code>xfree86-server</code> パッケージがありましたが、今はありません。)
-別の選択肢として、自分でサーバをインストールすることもできます。
-下記に詳しく書かれていますが、この場合は
-<code>xfree86-base</code> をインストールするだけですが、手動でインストールしたサーバは Fink が上書きするおそれがあります。
-現在の最新安定板である<code> xfree86-base</code> (4.2.1.1-3) はビルドプロセス中に <code>xfree86-rootless</code>, 
-<code>xfree86-base-shlibs</code>,  <code>xfree86-rootless-shlibs</code> を作成することに注意してください。
-この４つのパッケージは XFree86 を動作させるために必要です。
+X.org の X11 リリースをインストールすることもできます (currently version 6.8.2-35) 。
+これは unstable ツリーの <code>xorg</code> と <code>xorg-shlibs</code> をインストールします。
+この X11 は、 XFree86-4.5 に似ていますが、バグフィックス、新しい機能があり、係争中のライセンスのコードが除かれています。
+</p>
+<p><em>10.3 利用者:</em></p>
+<p>
+XFree86 version 4.4.0-13 (現在のバイナリディストリビューション内) または
+4.5.0-13 (ソースで提供) をインストールすることができます。
+<code>xfree86</code> と <code>xfree86-shlibs</code>  の両方が必要です。
 </p>
 <p>
-<code> xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code> 
-の二つのパッケージは、本質的には同じものですが、後者はスレッドをサポートするよう修正されています。
-現在スレッドを必要とするアプリケーションは<filename>xine</filename> など少数です。
+X.org-6.8.2 は、上記の方法で <code>xorg</code> と <code>xorg-shlibs</code> をインストールします。
+</p>
+<!-->Verify latest bindist version when online</-->
+<p><em>10.2 利用者:</em></p>
+<p>
+10.2 の利用者は、バージョン 4.3 をソースまたはバイナリで、4.4 を unstable ツリーからインストールできます。
+上述の通り、<code>xfree86</code> と <code>xfree86-shlibs</code> です。
 </p>
 <p>
-XFree86 4.2.1.1 (unthreaded) は、10.2 と Fink における安定版という位置づけにあります。
-XFree86 4.3.0 も入手可能ですが、実験的で、このドキュメントの執筆時点では unstable ツリーにしかありません。
-このバージョンはスレッドを組み込んでいて、 4.2.1.1 より速くなっています。
-インストールするには <code>xfree86</code> パッケージを選択します。
-このバージョンから、 -base と -rootless の区分はなくなりましたが、ライブラリが <code>xfree86-shlibs</code> と分かれました。
-4.3 用にバイナリをビルドした場合、 4.2.1.1 や Apple X11 では動作しない可能性がありますので注意してください。
+10.2 には、XFree86 4.2.1.1 もあり、<code>normal</code> と <code>-threaded</code> の２種類あります (これ以降は全てスレッドをサポートしています)が、既に古くなっています。
+<code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> パッケージ (または <code>-threaded</code> 付き)の全てをインストールする必要があります。
+これに加え、Fink が新しいバージョンをインストールしないよう、<code>xfree86-base-dev</code> と <code>xfree86-rootless-dev</code> (または <code>-threaded</code> 付き)をインストールする必要があります。
 </p>
+<p><em>10.1 利用者:</em></p>
 <p>
-<em>10.3 の使用:</em>  
-バージョン 4.3.99.16-2 以降が必要です。
-これは XFree86-4.4 のプレリリースです。
-バイナリディトリビューションを使用している場合、パッケージ詳細をアップデートしてください (例 <code>sudo apt-get update</code>) 。
+バイナリディストリビューション (のみ) からバージョン 4.2.0 をインストールすることができます。
+<code>xfree86-base</code> と <code>xfree86-rootless</code> をインストールします。
 </p>
+
 </section>
 <section name="apple-binary" >
 <title>Apple のバイナリ</title>
@@ -264,6 +290,10 @@ XFree86 4.3.0 も入手可能ですが、実験的で、このドキュメント
 <p>
 2003年10月24日、 Apple は Panther (10.3) をリリースしました。
 これには X11 が同梱されていて、このバージョンは XFree86-4.3 をベースにしたものです。
+</p>
+<p>
+2003年10月24日、 Apple は Tiger (10.4) をリリースしました。
+これには X11 が同梱されていて、このバージョンは XFree86-4.4 をベースにしたものです。
 </p>
 <p>
 アップルのバイナリを使うには、 <em>X11 User</em> パッケージがインストールされている必要があります。
@@ -360,48 +390,34 @@ defined in indirectly referenced dynamic library
 バイナリ互換ではないので <code>xfree86</code> 用にビルドしたパッケージをビルドし直す必要があります。
 </p>
 </li>
+<li><p><em>10.3 と 10.4 の利用者:</em>
+XFree86 や X.org の上に、Apple のディスプレイサーバとウィンドウマネージャーを使うこともできます。
+<code>applex11tools</code> をインストールすれば、 X11User.pkg があれば必要なものがインストールされます。
+</p>
+</li>
 </ul>
 <p>Apple X11 の使用に関しては、Apple Developer Connection の<link url="http://developer.apple.com/darwin/runningx11.html">記事</link> が参考になります。</p>
 </section>
 <section name="official-binary" >
 <title>公式バイナリ</title>
 <p>
-XFree86 プロジェクトには公式の Xfree86 4.2.0 バイナリディストリビューションがあり、パッチにより 4.2.1.1 にアップグレードされます。
-これは <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 ミラー</link> 内の
-<code>4.2.0/binaries/Darwin-ppc-5.x</code> ディレクトリにあります。
-<filename>Xprog.tgz</filename> と <filename>Xquartz.tgz</filename> は、たとえオプショナルと書かれてあっても忘れずに入手して下さい。
+XFree86 プロジェクトには公式の Xfree86 4.5.0 バイナリディストリビューションがあります。
+これは <link url="http://www.xfree86.org/mirrors" >XFree86 ミラー</link> 内の
+<code>4.5.0/binaries/Darwin-ppc-6.x</code> (10.1 用は <code>4.5.0/binaries/Darwin-ppc-5.x</code> ) ディレクトリにあります。
+<filename>Xprog.tgz</filename> と <filename>Xquartz.tgz</filename> は、たとえ &quot;optional&quot; と書かれてあっても忘れずに入手して下さい。
 もし何が必要なファイルかわからなければ、ディレクトリごとダウンロードして下さい。
 <filename>Xinstall.sh</filename> スクリプトを root で実行してインストールします。
-(インストール前に <link url="http://www.xfree86.org/4.2.0/Install.html" >official instructions</link> を読むといいでしょう。)
-また、 XonX による<link url=" http://prdownloads.sourceforge.net/xonx/XInstall_10.1.sit?download" >バイナリ</link>もあります。
-これは同じソースを使っていますが、もっと簡単です。
-どちらの場合でも、ダウンロード、解凍後、以下のようにアップグレードして下さい:
-</p>
-<ol>
-<li>10.1 の場合: <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.1.zip?download" >4.2.0 -> 4.2.0.1 アップグレード</link>.  
-10.2 の場合:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.0.1-10.2.zip?download" >4.2.0 -> 4.2.0.1 アップグレード</link>
-</li>
-<li>10.1 と 10.2:  <link url="http://prdownloads.sourceforge.net/xonx/XFree86_4.2.1.1.zip?download" >4.2.0.1 -> 4.2.1.1 アップグレード</link>
-</li>
-</ol>
-<p>
-公式の XFree86 4.3.0 バイナリディストリビューションも <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 ミラー</link>
-の <code>4.3.0/binaries/Darwin-ppc-6.x</code> 内にあります。
-<filename>Xprog.tgz</filename> と <filename>Xquartz.tgz</filename> は、たとえオプショナルと書かれてあっても忘れずに入手して下さい。
-もし何が必要なファイルかわからなければ、ディレクトリごとダウンロードして下さい。
-<filename>Xinstall.sh</filename> スクリプトを root で実行してインストールします。
-<filename>Xinstall.sh</filename> スクリプトを root で実行してインストールします。
-(インストール前に <link url="http://www.xfree86.org/4.2.0/Install.html" >official instructions</link> を読むといいでしょう。)
+(インストール前に <link url="http://www.xfree86.org/4.5.0/Install.html" >official instructions</link> を読むといいでしょう。)
 </p>
 <p>
-どのバージョンを選択しても、これで Mac OS X 上でフルスクリーンとルートレスの XFree86 が入りました。
+これで Mac OS X 上でフルスクリーンとルートレスの XFree86 が入りました。
 </p>
 </section>
 <section name="official-source" >
 <title>公式ソース</title>
 <p>
-もし時間が許せば、 XFree86 4.2.0 はソースからビルドすることもできます。
-ソースは <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 ミラー</link> の <code>4.2.0/source</code> ディレクトリ内にありますので
+もし時間が許せば、 XFree86 4.5 はソースからビルドすることもできます。
+ソースは <link url="http://www.xfree86.org/MIRRORS.shtml" >XFree86 ミラー</link> の <code>4.5.0/source</code> ディレクトリ内にありますので
 <filename>X420src-#.tgz</filename> の３つの tarball を同じディレクトリ内で取得・解凍して下さい。
 XFree86 ソースツリーにある <filename>config/cf/host.def</filename> ファイルにマクロ定義をすることで、ビルドをカスタマイズできます。
 (注記: #ifndef チェックがされているマクロだけが、 host.def で上書きできるマクロです。)
@@ -431,7 +447,7 @@ sudo make install install.man</codeblock>
 あとは上述のソースからのビルドに従って下さい。
 </p>
 </section>
-<section name="xonx-bin" >
+<!--><section name="xonx-bin" >
 <title>XonX バイナリテストリリース (XAqua, XDarwin)</title>
 <p>
 4.1.0 のリリース以前に、 XonX チームは XAqua というバイナリテストリリースを出しています。
@@ -447,8 +463,8 @@ XonX チームは再びバイナリテストリリースを出していますが
 のテストバージョンをいずれ出すと書かれていますが、今のところ出ていません。
 これはおそらく 4.2.0 (以降) の上にインストールされると思われます。
 </p>
-</section>
-<section name="macgimp" >
+</section><-->
+<!--><section name="macgimp" >
 <title>MacGimp</title>
 <p>
 MacGimp の人々によって 2001年に作られたインストーラには XFree86 は含まれていません。
@@ -465,7 +481,7 @@ MacGimp の人々によって 2001年に作られたインストーラには XFr
 <p>
 ネット上にはルートレスサーバのバイナリがよく転がっていますが、公式の 4.2.0 バイナリが出た現在、これは好ましいものではありません。
 </p>
-</section>
+</section><-->
 <section name="switching-x11" >
 <title>X11 の削除</title>
 <p>
@@ -516,57 +532,63 @@ Apple X11 を削除する場合は <filename>.xinitrc</filename> を開いて <f
 インストールオプションと必要な Fink パッケージの要点:
 </p>
 <itemtable labelt="Install Type" labeld="Fink packages" >
-<item>
-<itemt>Fink でビルドした 4.2.x</itemt>
+        <item>
+          <itemt>XFree86-4.4.0 または 4.5.0 (10.3 と 10.4)</itemt>
+          <itemd>
+            <p>
+              <code>xfree86</code> と <code>xfree86-shlibs</code>
+            </p>
+          </itemd>
+        </item>
+	<item>
+	  <itemt>X.org-6.8.2 (10.3 と 10.4)</itemt>
+	  <itemd>
+	    <p><code>xorg</code> と <code>xorg-shlibs</code></p>
+	</itemd>
+	</item>
+        <item>
+          <itemt>Apple's X11 (全てのバージョン)</itemt>
+          <itemd>
+            <p>
+              <code>system-xfree86</code> と <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> が X11 に依存するパッケージのビルド時に必要)</p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>XFree86-4.x 公式バイナリ</itemt>
+          <itemd>
+            <p>
+	      <code>system-xfree86</code> と <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> が X11 に依存するパッケージのビルド時に必要)
+            </p>  
+          </itemd>
+        </item>
+        <item>
+          <itemt>ソースまたは最新の CVS からビルドした XFree86-4.x</itemt>
+          <itemd>
+            <p>
+	      <code>system-xfree86</code> と <code>system-xfree86-shlibs</code> (+<code>system-xfree86-dev</code> が X11 に依存するパッケージのビルド時に必要))
+              </p>
+          </itemd>
+        </item>
+        <!--obsolete><item>
+<itemt>4.2.x base system built via Fink + binary rootless server</itemt>
 <itemd>
 <p>
-<code>xfree86-base</code> と <code>xfree86-rootless</code> (とその <code>-shlibs</code>)</p>
-<p>または <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code> (と <code>-shlibs</code>)</p>
-</itemd>
-</item>
-<item>
-<itemt>Fink でビルドした 4.3.x</itemt>
-<itemd>
-<p>
-<code>xfree86</code> と <code>xfree86-shlibs</code>
-</p>
-</itemd>
-</item>
-<item>
-<itemt>4.x 公式バイナリ</itemt>
-<itemd>
-<p>
-<code>system-xfree86</code> のみ (+おまけ)</p>
-</itemd>
-</item>
-<item>
-<itemt>ソースあるいは CVS からビルドした 4.x</itemt>
-<itemd>
-<p>
-<code>system-xfree86</code> のみ (+おまけ)</p>
-</itemd>
-</item>
-<item>
-<itemt>Apple の 4.2.x</itemt>
-<itemd>
-<p>
-<code>system-xfree86</code> のみ (+おまけ)
-</p>
-</itemd>
-</item>
-<item>
-<itemt>Apple の 4.3.x</itemt>
-<itemd><p>
-<code>system-xfree86</code> のみ (+おまけ)
-</p>
-</itemd>
-</item>
-</itemtable>
+<code>xfree86-base</code> only</p>
+</itemd><-->
+        <item>
+          <itemt>XFree86-4.2.1.x (10.2 のみ) または 4.2.0 (10.1 のみ)</itemt>
+          <itemd>
+             <p><code>xfree86-base</code> と <code>xfree86-rootless</code> (および その <code>-shlibs</code>)</p>
+            <p>または <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code> (および <code>-shlibs</code>)</p>
+          </itemd>
+        </item>
+
+      </itemtable>
 </section>
 </chapter>
 <chapter filename="run-xfree86" >
-<title>XFree86 の起動</title>
-<shorttitle>XFree86 の起動</shorttitle>
+<title>X11 の起動</title>
+<shorttitle>X11 の起動</shorttitle>
 <section name="darwin" >
 <title>Darwin</title>
 <p>
@@ -600,12 +622,15 @@ Apple X11 を削除する場合は <filename>.xinitrc</filename> を開いて <f
 ログイン画面で <code>&gt;console</code> と入力することでテキストコンソールに入ることもできます。
 これは
 </p>
+<p>
+注記: Mac OS X Panther 以降では、 console ウィンドウからは XFree86 は起動できません。
+</p>
 </section>
 <section name="macosx-41" >
 <title>Mac OS X + XFree86 4.x.y</title>
 <p>
 Mac OS X で XFree86 を起動するには、基本的に二つの方法があります。
-ひとつはアプリケーションフォルダ内の XDarwin.app アプリケーションをダブルクリックします。
+ひとつは<filename>アプリケーション</filename>フォルダ内の <filename>XDarwin.app</filename> アプリケーションをダブルクリックします。
 この後、起動ダイアログでフルスクリーンかルートレスかを選択します。
 このダイアログは毎回でてきますが、 Preferences ダイアログで設定を行うと出てこなくなります。
 </p>
@@ -613,7 +638,7 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 4.2.0 より前は自動的にフルスクリーンモードで、ダブルクリックによる起動ではルートレスに変える方法はありませんでした。
 </p>
 <p>
-もうひとつの方法は、 Mac OS X 上でターミナル.appから <code>startx</code> を実行します。
+もうひとつの方法は、 Mac OS X 上で <filename>ターミナル.app</filename>から <code>startx</code> を実行します。
 この方法でサーバを起動する場合、Quartz と共存することを伝える必要があります。
 これは、 <code>-fullscreen</code> オプションをつけて:
 </p>
@@ -627,7 +652,7 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 注記: 4.2 より前では <code>-quartz</code> でフルスクリーンモードになりました。
 </p>
 <p>
-サーバがルートレスモードをサポートしていれば、 <code>-rootless</code> オプションを使って:
+<code>-rootless</code> オプションを使って:
 </p>
 <codeblock>startx -- -rootless</codeblock>
 <p>
@@ -635,6 +660,38 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
 代わりに、 Preferences のデフォルトモードを使用します。
 </p>
 <p>4.3 時点では、引数なしで <code>startx</code> を実行すると起動ダイアログが表示されます。</p>
+</section>
+    <section name="starting-xorg">
+      <title>X.org の起動</title>
+     <p>X.org は XFree86 と全く同じ要領で起動します。</p>
+    </section>
+    <section name="starting-apples-x11">
+      <title>Apple X11 の起動</title>
+       <p>
+	     機能としては、 Apple X11 は XFree86 と同様です (例えば、<filename>.xinitrc</filename> を
+	     使って、クライアントを制御します)
+	     通常の起動方法は <filename>X11.app</filename> をダブルクリックします
+	     (これは<filename>/アプリケーション/ユーティリティ</filename>内にあります)。
+	     <code>startx</code>　コマンドを使うことも可能ですが、コマンドラインオプションを使ってディスプレーモードを指定することはできません;
+	     <filename>X11.app</filename> は、初期設定で選択されたモードで起動します。
+	   </p>
+       <p>
+         ウィンドウマネージャーは、ほかの設定をしない限り <code>quartz-wm</code> となります。
+         <em>X11.app</em> の初期設定で、再起動することなくフルスクリーンとルートレスを切り替えることができます。
+         しかし、これは quartz-wm では動作しません;
+         ほかのウィンドウマネージャーを (<filename>.xinitrc</filename> で設定して) 使う必要があります。
+       </p>
+    </section>
+    <section name="applex11tools">
+      <title>applex11tools パッケージ</title>
+      <p>
+        Fink の <code>applex11tools</code> を用いると、 OS 10.3 以降では、
+        XFree86 4.4 以降や X.org で <filename>X11.app</filename> と <code>quartz-wm</code> を組み合わせることができます。
+      </p>
+      <p>
+      	このパッケージを使用するには<link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable ツリー</link> を設定し、<filename>X11User.pkg</filename> を <filename>/Users</filename> または <filename>/Volumes</filename> のどこかに置きます。
+      	<filename>X11.app</filename> は、 Fink ツリー内の <filename>Applications</filename> フォルダーにインストールされます。
+      	これで <filename>X11.app</filename> や <filename>XDarwin.app</filename> を使うことができます。</p>
 </section>
 <section name="xinitrc" >
 <title>.xinitrc ファイル</title>
@@ -646,7 +703,7 @@ xterm, GNOME などのデスクトップ環境といったX クライアント�
 xinit はシェルを通して起動する方法を知っています。
 </p>
 <p>
-<filename>.xinitrc</filename> ファイルがホームディレクトリ内にない場合、 XFree86 はデフォルトのファイル
+<filename>.xinitrc</filename> ファイルがホームディレクトリ内にない場合、 X11 はデフォルトのファイル
 <filename>/private/etc/X11/xinit/xinitrc</filename>.
 を使用します。
 このデフォルトのファイルを元に編集するとよいかもしれません。
@@ -712,6 +769,21 @@ quartz-wm --only-proxy &amp;
 /sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 </section>
+    <section name="oroborosx">
+    <title>OroborOSX</title>
+    <p><link url="oroborosx.sourceforge.net">OroborOSX</link> は、X11.app や XDarwin ディスプレイマネージャーの代わりになります。
+    これは、あらかじめ X11 を必要とします。
+    <filename>X11.app</filename> または <filename>XDarwin.app</filename> もそのまま使うことができます。
+    
+    </p>
+    <p><em>OroborOSX</em> が実行されると、独自のルートレスのみのウィンドウマネージャーを立ち上げ、
+    システムの <code>xinitrc</code> やユーザーの <code>.xinitrc</code> は読み込みません。
+    起動後に <code>.xinitrc</code> を実行するメニューがあります。
+    しかし、起動時にアプリケーションを設定する独自の方法が採用されています。
+    また、Finder から X11 アプリケーションを、スクリプトを用いて起動することができるメカニズムもあります。
+    </p>
+    <p>詳しい情報は、 <link url="oroborosx.sourceforge.net">OroborOSX ホームページ</link>をご覧ください。</p>
+    </section>  
 </chapter>
 <chapter filename="xtools" >
 <title>Xtools</title>

@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - イントロ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/01/25 03:07:03';
+$cvs_date = 'Date: 2005/06/10 00:51:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
 
@@ -57,6 +57,7 @@ Mac OS X から余計な部分を落とした無料版で、完全なソース�
 Xtools は <a href="http://www.tenon.com/">Tenon Intersystems</a> の製品です。
 これは XFree86 をベースにした Mac OS X 用の X11 の一バージョンです。
 </p>
+<p>注記: OS 10.3 のリリース以前に開発が止まっているようです。</p>
 
 <h2><a name="client-server">1.6 クライアントとサーバー</a></h2>
 
