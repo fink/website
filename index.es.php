@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "Home";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/06/10 01:57:05 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -45,7 +45,7 @@ include "fink_version.inc";
 <p>
 Fink <? print $fink_version ?> ha sido liberado el <? print convert_date_to_locale($release_date) ?>.  
 Dicha liberación incluye paquetes en códigos fuente y binarios así
-como instaladores binarios. Fink 0.6.3 (para OS X 10.2) y 0.4.1 (para OS X 10.1) siguen siendo disponibles.
+como instaladores binarios. Fink 0.7.2 (para OS X 10.3), Fink 0.6.4 (para OS X 10.2) y 0.4.1 (para OS X 10.1) siguen siendo disponibles.
 </p>
 
 <h1>Recursos</h1>
