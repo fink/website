@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.93 2005/06/13 11:49:16 fingolfin Exp $ */
+/* $Id: header.inc,v 1.94 2005/06/13 11:50:41 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -300,7 +300,7 @@ function insert_sub ($navbox, $active_page) {
 	<? /* Call phpLang function */ ?>
 	<? if (function_exists(AddFlags)) AddFlags('', false, $root); ?>
 	<br>
-<? if (!$hostlogo) include dirname(__FILE__) . "hostlogo.inc" ;
+<? if (!$hostlogo) include dirname(__FILE__) . "/hostlogo.inc" ;
 		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
 ?>
 </div>
