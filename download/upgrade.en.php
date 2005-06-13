@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:02 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2005/06/13 15:53:48 $';
 
 include "header.inc";
 ?>
@@ -43,7 +43,7 @@ for binary installations and for source installations.
 <?
 it_start();
 it_item('<b>Current installation (binary release)</b>', '<b>Upgrade method</b>');
-it_item("Fink official binary distribution, version 0.5.x",
+it_item("Fink official binary distribution, version 0.5.x and later",
   '<p>Update normally through <tt>dselect</tt>: Choose "[U]pdate",
   then "[I]nstall".
 Or in <tt>FinkCommander</tt>, run "Update" followed by
