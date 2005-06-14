@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.63 2005/06/08 06:45:57 dmalloc Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.64 2005/06/14 12:51:41 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1590,6 +1590,10 @@ but not for the nethack variant.
   cannot have a <code>Depends</code> that indicates that either one
   will suffice.
 </p>
+<p>
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+</p>
 </itemd></item>
 
 <item><itemt>BuildDepends</itemt>
@@ -1691,10 +1695,11 @@ necessary.
 <itemd>
 <p>
 A boolean value that denotes essential packages. Essential
-packages are installed as part of the bootstrap process. All
-non-essential packages implicitly depend on the essential ones. dpkg
+packages are installed as part of the bootstrap process. <code>dpkg</code>
 will refuse to remove essential packages from the system unless
 special flags are used to override this.
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
 </p>
 </itemd></item>
 

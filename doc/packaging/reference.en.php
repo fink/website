@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmalloc';
-$cvs_date = 'Date: 2005/06/08 06:45:57';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/06/14 12:51:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -350,6 +350,10 @@ but not for the nethack variant.
   cannot have a <code>Depends</code> that indicates that either one
   will suffice.
 </p>
+<p>
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+</p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
 <b>Introduced in fink 0.9.0.</b>
@@ -430,10 +434,11 @@ necessary.
 </td></tr><tr valign="top"><td>Essential</td><td>
 <p>
 A boolean value that denotes essential packages. Essential
-packages are installed as part of the bootstrap process. All
-non-essential packages implicitly depend on the essential ones. dpkg
+packages are installed as part of the bootstrap process. <code>dpkg</code>
 will refuse to remove essential packages from the system unless
 special flags are used to override this.
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
 </p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p>
