@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/09 04:47:33';
+$cvs_date = 'Date: 2005/06/15 20:03:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -113,6 +113,7 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 </pre>
 <p>même si le paquet peut fonctionner avec l'une ou l'autre librairie. Il faut en choisir une (de préférence, la version la plus élevée possible) et s'y tenir dans l'ensemble du paquet.</p>
 <p>Comme cela a été expliqué dans la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a>, un seul des paquets -dev peut être installé à un instant donné, et chacun possède des liens de même nom qui peuvent se référer à des noms de fichiers différents dans le paquet associé -shlibs. Lors de la compilation du paquet foo, le nom réél du fichier (dans le paquet -shlibs) est codé en dur dans le binaire foo. Cela signifie que le paquet résultant nécessite le paquet -shlibs associé au -dev qui était installé au moment de la compilation. En conséquence, on ne peut indiquer dans le champ <code>Depends</code> que l'un quelconque des paquets est requis.</p>
+<p>Auparavant, les paquets non essentiels dépendaient implicitement des paquets essentiels ; ce n'est plus vrai.</p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p><b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends.</p>
 </td></tr><tr valign="top"><td>Provides</td><td>
@@ -129,7 +130,7 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 </td></tr><tr valign="top"><td>Pre-Depends</td><td>
 <p>Une variante spéciale du champ Depends avec une sémantique plus stricte. Ce champ ne doit être utilisé qu'après en avoir discuté sur la liste de développeurs et qu'il soit apparu évident que cela était nécessaire.</p>
 </td></tr><tr valign="top"><td>Essential</td><td>
-<p>Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lors du processus de bootstrap. Tous les paquets non essentiels dépendent implicitement des paquets essentiels. dpkg refusera de supprimer les paquets essentiels du système, à moins d'utiliser des options spéciales, qui permettent de lever cette interdiction.</p>
+<p>Valeur booléenne qui signale les paquets essentiels. Ceux-ci sont installés lors du processus de bootstrap. <code>dpkg</code> refusera de supprimer les paquets essentiels du système, à moins d'utiliser des options spéciales, qui permettent de lever cette interdiction. Auparavant, les paquets non essentiels dépendaient implicitement des paquets essentiels ; ce n'est plus vrai.</p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p><b>Introduit dans fink 0.9.9.</b> Valeur booléenne qui indique qu'aucun autre paquet ne doit avoir un champ Depend le mentionnant, seul le champ BuildDepend est autorisé. Contrairement aux autres champs booléens, <code>BuildDependsOnly</code> a trois valeurs : undéfini (non spécifié) n'a pas le même sens que faux. Voir la section <a href="policy.php?phpLang=fr#sharedlibs">Librairies partagées</a> pour de plus amples informations.</p>
 <p>À partir de la version 0.20.5 de fink, la présence ou l'absence de ce champ, et sa valeur s'il est présent, sont sauvegardées dans le fichier .deb à la construction du paquet. Par conséquent, <b>si vous changez la valeur de BuildDependsOnly, ou si vous l'ajoutez ou le supprimez, vous devez incrémenter le numéro de révision</b> du paquet.</p>
