@@ -1,11 +1,15 @@
 <?
 $title = "Réparation du chemin de mise à jour";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/29 04:27:34 $';
+$cvs_date = '$Date: 2005/06/15 19:11:05 $';
 
 include "header.inc";
 ?>
 
+
+<h1>Mise à jour des sources après mise à jour de Mac OS X</h1>
+<p>Après avoir mis à jour Mac OS X, la première chose à faire pour mettre à jour Fink via les sources est d'exécuter la commande <code>fink selfupdate</code> de façon à vous assurer que la version du paquet <code>fink</code> installée est compatible avec la nouvelle version du système. Ensuite il faut exécuter <code>sudo /sw/lib/fink/postintstall.pl</code>. Ceci permet de faire pointer Fink sur la distribution adéquate pour le système MAC OS X installé.</p>
+<p>Si vous utilisez l'option <em>UseBinaryDist</em>, vous devez exécuter <code>sudo apt-get update</code> de façon à ce que la liste des paquets binaires correspondant à votre système soit utilisée. Enfin, que vous utilisiez ou non l'option <em>UseBinaryDist</em>, vous devez  exécuter <code>fink selfupdate</code> une deuxième fois, car la première exécution n'a téléchargé que les paquets destinés à la version précédente de votre système. </p>
 
 <h1>Réparation du chemin de mise à jour</h1>
 

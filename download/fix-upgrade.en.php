@@ -1,14 +1,14 @@
 <?
 $title = "Repairing the Upgrade Path";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2005/06/13 15:53:36 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2005/06/15 19:11:05 $';
 
 include "header.inc";
 ?>
 
 <h1>Source update after updating Mac OS X</h1>
-<p>After you've update the OS, the first thing to do to update Fink via source is to run <pre>fink selfupdate</pre> to make sure you have a version of the <pre>fink</pre> package that is compatible with your new OS version.  Then you should run <pre>sudo /sw/lib/fink/postintstall.pl</pre>.  This should insure that Fink is pointing at the correct distribution for your OS.  </p>
-<p>If you're using the <EM>UseBinaryDist</EM> option, then run <pre>sudo apt-get update</pre> so that the homebuilt binary package listings appropriate for your new OS are used  Lastly, whether you're using <em>UseBinaryDist</em> or not, you should run <pre>fink selupdate</pre> again, since the prior run only downloaded the packages appropriate to your prior OS version.</p>
+<p>After you've updated the OS, the first thing to do to update Fink via source is to run <code>fink selfupdate</code> to make sure you have a version of the <code>fink</code> package that is compatible with your new OS version.  Then you should run <code>sudo /sw/lib/fink/postintstall.pl</code>.  This should insure that Fink is pointing at the correct distribution for your OS.  </p>
+<p>If you're using the <em>UseBinaryDist</em> option, then run <code>sudo apt-get update</code> so that the homebuilt binary package listings appropriate for your new OS are used.  Lastly, whether you're using <em>UseBinaryDist</em> or not, you should run <code>fink selfupdate</code> again, since the prior run only downloaded the packages appropriate to your prior OS version.</p>
 
 <h1>Repairing the Upgrade Path</h1>
 
