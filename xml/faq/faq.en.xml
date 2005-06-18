@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.48 2005/06/01 02:26:52 vasi Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.49 2005/06/18 15:16:19 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -799,7 +799,7 @@ fink selfupdate</codeblock></li>
     <faqentry name="packages-gz">
       <question>
         <p>When I try to do a binary update, there are many messages with
-        "File not found"</p>
+        "File not found" or "Couldn't stat package source list file".</p>
       </question>
       <answer>
         <p>If you see something like the following:</p>
