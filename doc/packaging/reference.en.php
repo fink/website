@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/06/14 12:51:41';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/19 15:24:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -746,19 +746,6 @@ In addition, starting in fink 0.17.0:
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
-<p>
-Also, starting in fink 0.24.3 (and 0.23.7), when the distribution is
-10.3 or 10.4-transitional we have
-</p>
-<pre>
-CXXFLAGS: -fabi-version=1
-</pre>
-<p>
-while when the distribution is 10.4 or later we have
-</p>
-<pre>
-CXXFLAGS: -fabi-version=2
 </pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending

@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.64 2005/06/14 12:51:41 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.65 2005/06/19 15:24:36 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -2079,19 +2079,6 @@ In addition, starting in fink 0.17.0:
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</codeblock>
-<p>
-Also, starting in fink 0.24.3 (and 0.23.7), when the distribution is
-10.3 or 10.4-transitional we have
-</p>
-<codeblock>
-CXXFLAGS: -fabi-version=1
-</codeblock>
-<p>
-while when the distribution is 10.4 or later we have
-</p>
-<codeblock>
-CXXFLAGS: -fabi-version=2
 </codeblock>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
