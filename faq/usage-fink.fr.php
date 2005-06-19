@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/01 06:34:04';
+$cvs_date = 'Date: 2005/06/19 23:20:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -176,7 +176,7 @@ fink selfupdate</pre></li>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Nous déconseillons de le faire. Le jeu n'en vaut vraiment pas la chandelle.</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Lors de la mise à jour binaire, de nombreux messages "File not found" apparaissent.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Lors de la mise à jour binaire, de nombreux messages "File not found" ou "Couldn't stat package source list file" apparaissent.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez ceci :</p><pre>
 Err file: local/main Packages
 File not found

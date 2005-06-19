@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>Fink Project News</title>
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2005-06-10T11:18:35+09:00</dc:date>
+    <dc:date>2005-06-20T01:16:42+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.">
       <title>New Fink releases.</title>
@@ -216,47 +216,47 @@ XCode version 1.2 until the problem has been resolved.
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.">
-      <title>Fink 0.7.1 verÃ¶ffentlich.</title>
+      <title>Fink 0.7.1 veröffentlich.</title>
       <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.</link>
       <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.</guid>
       <description>
 
-Die neueste Fink-VerÃ¶ffentlichung, Version 0.7.1 (fÃ¼r 10.3), ist jetzt fÃ¼r Source- und Binary-Nutzer verfÃ¼gbar. Diese VerÃ¶ffentlichung ist fÃ¼r Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-VerÃ¶ffentlichung bleibt weiterhin fÃ¼r Jaguar (10.2) basierende Mac OS X Versionen verfÃ¼gbar.
+Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
 
 
-Diese neuen VerÃ¶ffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfÃ¼gbare binÃ¤re Pakete wurden hinzugefÃ¼gt, wodurch nun im gesamten 1650 binÃ¤re Pakete bereit stehen. Dies beinhaltet auch binÃ¤re Pakete fÃ¼r KDE 3.1.4 und GNOME 2.4.
+Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 
 
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur VerfÃ¼gung gestellten Anweisungen befolgen. Sie kÃ¶nnen Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfÃ¼gbaren Anweisungen folgen. Eine komplette Liste der Ã„nderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
 
 
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier kÃ¶nnen Sie mehr Ã¼ber sie erfahren.
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
 
 
-Bitte stellen Sie sicher, dass Sie den passenden Installer fÃ¼r Ihre Plattform verwenden. Fink 0.6.3 lÃ¤sst sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lÃ¤sst.
+Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
 
         
-Das Fink-Team mÃ¶chte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese VerÃ¶ffentlichung ermÃ¶glicht haben. Wir danken auch unserer Community fÃ¼r das 130.000-malige herunterladen der 0.7.0-VerÃ¶ffentlichung. Ohne deren konstanten UnterstÃ¼tzung und deren wertvollen Tipps, wÃ¤re Fink nicht da, wo es jetzt ist.
+Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
 
 </description>
       <content:encoded>
 
-Die neueste Fink-VerÃ¶ffentlichung, Version 0.7.1 (fÃ¼r 10.3), ist jetzt fÃ¼r Source- und Binary-Nutzer verfÃ¼gbar. Diese VerÃ¶ffentlichung ist fÃ¼r Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-VerÃ¶ffentlichung bleibt weiterhin fÃ¼r Jaguar (10.2) basierende Mac OS X Versionen verfÃ¼gbar.
+Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
 
 
-Diese neuen VerÃ¶ffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfÃ¼gbare binÃ¤re Pakete wurden hinzugefÃ¼gt, wodurch nun im gesamten 1650 binÃ¤re Pakete bereit stehen. Dies beinhaltet auch binÃ¤re Pakete fÃ¼r KDE 3.1.4 und GNOME 2.4.
+Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 
 
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur VerfÃ¼gung gestellten Anweisungen befolgen. Sie kÃ¶nnen Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfÃ¼gbaren Anweisungen folgen. Eine komplette Liste der Ã„nderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
 
 
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier kÃ¶nnen Sie mehr Ã¼ber sie erfahren.
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
 
 
-Bitte stellen Sie sicher, dass Sie den passenden Installer fÃ¼r Ihre Plattform verwenden. Fink 0.6.3 lÃ¤sst sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lÃ¤sst.
+Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
 
         
-Das Fink-Team mÃ¶chte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese VerÃ¶ffentlichung ermÃ¶glicht haben. Wir danken auch unserer Community fÃ¼r das 130.000-malige herunterladen der 0.7.0-VerÃ¶ffentlichung. Ohne deren konstanten UnterstÃ¼tzung und deren wertvollen Tipps, wÃ¤re Fink nicht da, wo es jetzt ist.
+Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
 
 </content:encoded>
     </item>
@@ -270,7 +270,7 @@ In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit X
 
 
 Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
-teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewÃ¶hnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
+teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
 
 	</description>
       <content:encoded>
@@ -279,7 +279,7 @@ In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit X
 
 
 Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
-teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewÃ¶hnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
+teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
 
 	</content:encoded>
     </item>
@@ -380,48 +380,48 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewÃ¶hnlichen Sym
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.">
-      <title>Fink 0.6.3 and 0.7.0 verÃ¶ffentlicht.</title>
+      <title>Fink 0.6.3 and 0.7.0 veröffentlicht.</title>
       <link>http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.</link>
       <guid>http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.</guid>
       <description>
 
-Die neuesten Fink-VerÃ¶ffentlichungen, Version 0.6.3 (fÃ¼r 10.2) und 0.7.0 (fÃ¼r 10.3), 
-sind jetzt fÃ¼r Source- und Binary-Nutzer verfÃ¼gbar. Die 0.6.3-VerÃ¶ffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-VerÃ¶ffentlichung unter 10.3 erstellt wurde. Dies soll fÃ¼r bessere UnterstÃ¼tzung beider Plattformen sorgen. 
+Die neuesten Fink-Veröffentlichungen, Version 0.6.3 (für 10.2) und 0.7.0 (für 10.3), 
+sind jetzt für Source- und Binary-Nutzer verfügbar. Die 0.6.3-Veröffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-Veröffentlichung unter 10.3 erstellt wurde. Dies soll für bessere Unterstützung beider Plattformen sorgen. 
 
 
-Diese neuen VerÃ¶ffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfÃ¼gbare binÃ¤re Pakete wurden hinzugefÃ¼gt und fÃ¼r Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
+Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt und für Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
 
 
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur VerfÃ¼gung gestellten Anweisungen befolgen.
-Sie kÃ¶nnen Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfÃ¼gbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier kÃ¶nnen Sie mehr Ã¼ber sie erfahren.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen.
+Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
 
 
-Bitte stellen Sie sicher, dass Sie den passenden Installer fÃ¼r Ihre Plattform verwenden.
-Fink 0.6.3 lÃ¤sst sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lÃ¤sst.
+Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden.
+Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
 
 
-Das Fink-Team mÃ¶chte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese VerÃ¶ffentlichung ermÃ¶glicht haben. Wir danken auch unserer Community, ohne deren konstante UnterstÃ¼tzung und wertvollen Tipps Fink nicht da wÃ¤re, wo es jetzt ist. 
+Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community, ohne deren konstante Unterstützung und wertvollen Tipps Fink nicht da wäre, wo es jetzt ist. 
 
 
 </description>
       <content:encoded>
 
-Die neuesten Fink-VerÃ¶ffentlichungen, Version 0.6.3 (fÃ¼r 10.2) und 0.7.0 (fÃ¼r 10.3), 
-sind jetzt fÃ¼r Source- und Binary-Nutzer verfÃ¼gbar. Die 0.6.3-VerÃ¶ffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-VerÃ¶ffentlichung unter 10.3 erstellt wurde. Dies soll fÃ¼r bessere UnterstÃ¼tzung beider Plattformen sorgen. 
+Die neuesten Fink-Veröffentlichungen, Version 0.6.3 (für 10.2) und 0.7.0 (für 10.3), 
+sind jetzt für Source- und Binary-Nutzer verfügbar. Die 0.6.3-Veröffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-Veröffentlichung unter 10.3 erstellt wurde. Dies soll für bessere Unterstützung beider Plattformen sorgen. 
 
 
-Diese neuen VerÃ¶ffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfÃ¼gbare binÃ¤re Pakete wurden hinzugefÃ¼gt und fÃ¼r Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
+Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt und für Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
 
 
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur VerfÃ¼gung gestellten Anweisungen befolgen.
-Sie kÃ¶nnen Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfÃ¼gbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier kÃ¶nnen Sie mehr Ã¼ber sie erfahren.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen.
+Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
 
 
-Bitte stellen Sie sicher, dass Sie den passenden Installer fÃ¼r Ihre Plattform verwenden.
-Fink 0.6.3 lÃ¤sst sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lÃ¤sst.
+Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden.
+Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
 
 
-Das Fink-Team mÃ¶chte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese VerÃ¶ffentlichung ermÃ¶glicht haben. Wir danken auch unserer Community, ohne deren konstante UnterstÃ¼tzung und wertvollen Tipps Fink nicht da wÃ¤re, wo es jetzt ist. 
+Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community, ohne deren konstante Unterstützung und wertvollen Tipps Fink nicht da wäre, wo es jetzt ist. 
 
 
 </content:encoded>
@@ -432,24 +432,24 @@ Das Fink-Team mÃ¶chte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern
       <guid>http://fink.sourceforge.net/news/#19.02.2004%20Hisst%20Eure%20Flagge!</guid>
       <description>
 
-Dank Baba Yoshihiko konnte Fink die notwendigen Schritte unternehmen, um InternationalisierungsbemÃ¼hungen zu ermÃ¶glichen. Die verbesserte Infrastruktur erlaubt uns, unseren Besuchern aus der ganzen Welt, eine mehrsprachige Website zu prÃ¤sentieren. 
+Dank Baba Yoshihiko konnte Fink die notwendigen Schritte unternehmen, um Internationalisierungsbemühungen zu ermöglichen. Die verbesserte Infrastruktur erlaubt uns, unseren Besuchern aus der ganzen Welt, eine mehrsprachige Website zu präsentieren. 
 
 
-Dies bedeutet auch, dass wir Freiwillige brauchen. Die Fink-Website muss in die Sprache Ihrer Wahl Ã¼bersetzt werden. An einer Ãœbersetzung ins Japanische wurde gearbeitet und die Ãœbersetzung ins FranzÃ¶sische wurde von Michele Garoche Ã¼bernommen. Welche Sprache mÃ¶chten Sie Ã¼bersetzen?
+Dies bedeutet auch, dass wir Freiwillige brauchen. Die Fink-Website muss in die Sprache Ihrer Wahl übersetzt werden. An einer Übersetzung ins Japanische wurde gearbeitet und die Übersetzung ins Französische wurde von Michele Garoche übernommen. Welche Sprache möchten Sie übersetzen?
 
 
-Wenn Sie ein Mitglied des Internationalisierungsteams werden mÃ¶chten oder uns Feedback Ã¼ber die Website senden mÃ¶chten, beteiligen Sie sich an der neuen Mailing-Liste. Dies kÃ¶nnen Sie machen, indem Sie auf unsere Mailing-Listen Seite gehen. Die komplette AnkÃ¼ndigung auf den existierenden Mailing-Listen kÃ¶nnen Sie hier nachlesen.
+Wenn Sie ein Mitglied des Internationalisierungsteams werden möchten oder uns Feedback über die Website senden möchten, beteiligen Sie sich an der neuen Mailing-Liste. Dies können Sie machen, indem Sie auf unsere Mailing-Listen Seite gehen. Die komplette Ankündigung auf den existierenden Mailing-Listen können Sie hier nachlesen.
 
 </description>
       <content:encoded>
 
-Dank Baba Yoshihiko konnte Fink die notwendigen Schritte unternehmen, um InternationalisierungsbemÃ¼hungen zu ermÃ¶glichen. Die verbesserte Infrastruktur erlaubt uns, unseren Besuchern aus der ganzen Welt, eine mehrsprachige Website zu prÃ¤sentieren. 
+Dank Baba Yoshihiko konnte Fink die notwendigen Schritte unternehmen, um Internationalisierungsbemühungen zu ermöglichen. Die verbesserte Infrastruktur erlaubt uns, unseren Besuchern aus der ganzen Welt, eine mehrsprachige Website zu präsentieren. 
 
 
-Dies bedeutet auch, dass wir Freiwillige brauchen. Die Fink-Website muss in die Sprache Ihrer Wahl Ã¼bersetzt werden. An einer Ãœbersetzung ins Japanische wurde gearbeitet und die Ãœbersetzung ins FranzÃ¶sische wurde von Michele Garoche Ã¼bernommen. Welche Sprache mÃ¶chten Sie Ã¼bersetzen?
+Dies bedeutet auch, dass wir Freiwillige brauchen. Die Fink-Website muss in die Sprache Ihrer Wahl übersetzt werden. An einer Übersetzung ins Japanische wurde gearbeitet und die Übersetzung ins Französische wurde von Michele Garoche übernommen. Welche Sprache möchten Sie übersetzen?
 
 
-Wenn Sie ein Mitglied des Internationalisierungsteams werden mÃ¶chten oder uns Feedback Ã¼ber die Website senden mÃ¶chten, beteiligen Sie sich an der neuen Mailing-Liste. Dies kÃ¶nnen Sie machen, indem Sie auf unsere Mailing-Listen Seite gehen. Die komplette AnkÃ¼ndigung auf den existierenden Mailing-Listen kÃ¶nnen Sie hier nachlesen.
+Wenn Sie ein Mitglied des Internationalisierungsteams werden möchten oder uns Feedback über die Website senden möchten, beteiligen Sie sich an der neuen Mailing-Liste. Dies können Sie machen, indem Sie auf unsere Mailing-Listen Seite gehen. Die komplette Ankündigung auf den existierenden Mailing-Listen können Sie hier nachlesen.
 
 </content:encoded>
     </item>
@@ -459,12 +459,12 @@ Wenn Sie ein Mitglied des Internationalisierungsteams werden mÃ¶chten oder uns F
       <guid>http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20entfernt%20das%20Java%20SDK</guid>
       <description>
 
-Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.4.2 - Update von Apple die Runtime auf Version 1.4.2 aktualisieren, aber es wird die vorherige Java 1.4.1 Runtime und das SDK entfernen, ohne das JDK zu aktualisieren. Um Java-Pakete in Fink zu erstellen, mÃ¼ssen Sie auf connect.apple.com gehen und das Java 1.4.2 SDK herunterladen. DafÃ¼r benÃ¶tigen Sie eine kostenlose Registrierung.
+Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.4.2 - Update von Apple die Runtime auf Version 1.4.2 aktualisieren, aber es wird die vorherige Java 1.4.1 Runtime und das SDK entfernen, ohne das JDK zu aktualisieren. Um Java-Pakete in Fink zu erstellen, müssen Sie auf connect.apple.com gehen und das Java 1.4.2 SDK herunterladen. Dafür benötigen Sie eine kostenlose Registrierung.
 
 </description>
       <content:encoded>
 
-Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.4.2 - Update von Apple die Runtime auf Version 1.4.2 aktualisieren, aber es wird die vorherige Java 1.4.1 Runtime und das SDK entfernen, ohne das JDK zu aktualisieren. Um Java-Pakete in Fink zu erstellen, mÃ¼ssen Sie auf connect.apple.com gehen und das Java 1.4.2 SDK herunterladen. DafÃ¼r benÃ¶tigen Sie eine kostenlose Registrierung.
+Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.4.2 - Update von Apple die Runtime auf Version 1.4.2 aktualisieren, aber es wird die vorherige Java 1.4.1 Runtime und das SDK entfernen, ohne das JDK zu aktualisieren. Um Java-Pakete in Fink zu erstellen, müssen Sie auf connect.apple.com gehen und das Java 1.4.2 SDK herunterladen. Dafür benötigen Sie eine kostenlose Registrierung.
 
 </content:encoded>
     </item>
@@ -474,41 +474,41 @@ Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.
       <guid>http://fink.sourceforge.net/news/#18.01.2004%2010.3%20Binaries%20aktualisiert</guid>
       <description>
 
-Viele binÃ¤ren Dateien fÃ¼r 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu kÃ¶nnen, aktualisieren Sie Ihren Index von binÃ¤ren Dateien, in dem Sie den Befehl sudo apt-get update ausfÃ¼hren. Danach kÃ¶nnen Sie apt-get, dselect oder FinkCommander benutzen, um binÃ¤re Dateien wie Ã¼blich zu installieren.
+Viele binären Dateien für 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu können, aktualisieren Sie Ihren Index von binären Dateien, in dem Sie den Befehl sudo apt-get update ausführen. Danach können Sie apt-get, dselect oder FinkCommander benutzen, um binäre Dateien wie üblich zu installieren.
 
 </description>
       <content:encoded>
 
-Viele binÃ¤ren Dateien fÃ¼r 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu kÃ¶nnen, aktualisieren Sie Ihren Index von binÃ¤ren Dateien, in dem Sie den Befehl sudo apt-get update ausfÃ¼hren. Danach kÃ¶nnen Sie apt-get, dselect oder FinkCommander benutzen, um binÃ¤re Dateien wie Ã¼blich zu installieren.
+Viele binären Dateien für 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu können, aktualisieren Sie Ihren Index von binären Dateien, in dem Sie den Befehl sudo apt-get update ausführen. Danach können Sie apt-get, dselect oder FinkCommander benutzen, um binäre Dateien wie üblich zu installieren.
 
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#10.01.2004%20Pssst%2C%20m%F6chten%20Sie%20GNOME%202.4%20installieren%3F">
-      <title>Pssst, mÃ¶chten Sie GNOME 2.4 installieren?</title>
+      <title>Pssst, möchten Sie GNOME 2.4 installieren?</title>
       <link>http://fink.sourceforge.net/news/#10.01.2004%20Pssst%2C%20m%F6chten%20Sie%20GNOME%202.4%20installieren%3F</link>
       <guid>http://fink.sourceforge.net/news/#10.01.2004%20Pssst%2C%20m%F6chten%20Sie%20GNOME%202.4%20installieren%3F</guid>
       <description>
 
-Dank des neuen Fink GNOME Core Teams, einschlieÃŸlich vieler harter Arbeit des Packaging-Newcomers Keith Conger und dem GNOME 1.x Maintainer Masanori Sekino, wurde GNOME 2.4 endlich im 10.3-unstable-Tree verÃ¶ffentlicht.
+Dank des neuen Fink GNOME Core Teams, einschließlich vieler harter Arbeit des Packaging-Newcomers Keith Conger und dem GNOME 1.x Maintainer Masanori Sekino, wurde GNOME 2.4 endlich im 10.3-unstable-Tree veröffentlicht.
 
 
-Es ist dort zum Mitnehmen. Bitte bieten Sie etwas von Ihrer Zeit an und testen Sie diese Pakete, wenn Sie unstable verwenden. Auf Grund der groÃŸen Zahl von Ã„nderungen wird erwartet, dass Probleme beim Aktualisieren oder Installieren des neuen GNOMEs auftreten. Wenn Sie Probleme haben, kÃ¶nnen Sie die GNOME-sicheren Leute unter fink-gnome-core@lists.sourceforge.net erreichen. Bitte berichten Sie dort auch Ã¼ber Erfolgsgeschichten. Je mehr gute Berichte wir erhalten, desto schneller kann GNOME 2.4 nach stable verschoben werden.
+Es ist dort zum Mitnehmen. Bitte bieten Sie etwas von Ihrer Zeit an und testen Sie diese Pakete, wenn Sie unstable verwenden. Auf Grund der großen Zahl von Änderungen wird erwartet, dass Probleme beim Aktualisieren oder Installieren des neuen GNOMEs auftreten. Wenn Sie Probleme haben, können Sie die GNOME-sicheren Leute unter fink-gnome-core@lists.sourceforge.net erreichen. Bitte berichten Sie dort auch über Erfolgsgeschichten. Je mehr gute Berichte wir erhalten, desto schneller kann GNOME 2.4 nach stable verschoben werden.
 
 
-FÃ¼r diese von Ihnen, die nicht unsere Mailing-Listen lesen, warum haben Sie sie noch nicht abonniert?
+Für diese von Ihnen, die nicht unsere Mailing-Listen lesen, warum haben Sie sie noch nicht abonniert?
 Hier ist ein Link zu detailierten
 Anleitungen, wie Sie GNOME aktualisieren oder installieren und was es neues bringt.
 
 </description>
       <content:encoded>
 
-Dank des neuen Fink GNOME Core Teams, einschlieÃŸlich vieler harter Arbeit des Packaging-Newcomers Keith Conger und dem GNOME 1.x Maintainer Masanori Sekino, wurde GNOME 2.4 endlich im 10.3-unstable-Tree verÃ¶ffentlicht.
+Dank des neuen Fink GNOME Core Teams, einschließlich vieler harter Arbeit des Packaging-Newcomers Keith Conger und dem GNOME 1.x Maintainer Masanori Sekino, wurde GNOME 2.4 endlich im 10.3-unstable-Tree veröffentlicht.
 
 
-Es ist dort zum Mitnehmen. Bitte bieten Sie etwas von Ihrer Zeit an und testen Sie diese Pakete, wenn Sie unstable verwenden. Auf Grund der groÃŸen Zahl von Ã„nderungen wird erwartet, dass Probleme beim Aktualisieren oder Installieren des neuen GNOMEs auftreten. Wenn Sie Probleme haben, kÃ¶nnen Sie die GNOME-sicheren Leute unter fink-gnome-core@lists.sourceforge.net erreichen. Bitte berichten Sie dort auch Ã¼ber Erfolgsgeschichten. Je mehr gute Berichte wir erhalten, desto schneller kann GNOME 2.4 nach stable verschoben werden.
+Es ist dort zum Mitnehmen. Bitte bieten Sie etwas von Ihrer Zeit an und testen Sie diese Pakete, wenn Sie unstable verwenden. Auf Grund der großen Zahl von Änderungen wird erwartet, dass Probleme beim Aktualisieren oder Installieren des neuen GNOMEs auftreten. Wenn Sie Probleme haben, können Sie die GNOME-sicheren Leute unter fink-gnome-core@lists.sourceforge.net erreichen. Bitte berichten Sie dort auch über Erfolgsgeschichten. Je mehr gute Berichte wir erhalten, desto schneller kann GNOME 2.4 nach stable verschoben werden.
 
 
-FÃ¼r diese von Ihnen, die nicht unsere Mailing-Listen lesen, warum haben Sie sie noch nicht abonniert?
+Für diese von Ihnen, die nicht unsere Mailing-Listen lesen, warum haben Sie sie noch nicht abonniert?
 Hier ist ein Link zu detailierten
 Anleitungen, wie Sie GNOME aktualisieren oder installieren und was es neues bringt.
 

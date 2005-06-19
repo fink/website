@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: vasi';
-$cvs_date = 'Date: 2005/06/01 02:26:52';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/06/18 15:16:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -392,7 +392,7 @@ fink selfupdate</pre></li>
     </a>
     <a name="packages-gz">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.24: When I try to do a binary update, there are many messages with
-        "File not found"</b></p></div>
+        "File not found" or "Couldn't stat package source list file".</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see something like the following:</p><pre>Err file: local/main Packages 
 File not found 
 Ign file: local/main Release 

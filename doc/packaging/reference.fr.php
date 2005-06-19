@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/15 20:03:11';
+$cvs_date = 'Date: 2005/06/19 23:14:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -213,14 +213,6 @@ LDFLAGS: -L%p/lib
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
-<p>Enfin, à partir des versions 0.24.3 et 0.23.7 de fink, on trouve  dans les branches 103 et 10.4-transitionnelle :</p>
-<pre>
-CXXFLAGS: -fabi-version=1
-</pre>
-<p>et dans la branche 10.4 et les branches suivantes :</p>
-<pre>
-CXXFLAGS: -fabi-version=2
 </pre>
 <p>Enfin, la variable MACOSX_DEPLOYMENT_TARGET a une valeur par défaut qui dépend de la version de Mac OS X en cours d'exécution, mais le fait d'affecter une valeur à cette variable pour un paquet donné remplace la valeur par défaut, elle ne vient pas s'ajouter devant la valeur par défaut.</p>
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>

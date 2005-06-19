@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: vasi';
-$cvs_date = 'Date: 2005/06/01 02:26:52';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/06/18 15:16:19';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -32,7 +32,7 @@ include_once "header.en.inc";
         <code>dselect</code>. How can I use it?</a></li><li><a href="usage-fink.php?phpLang=en#perl-undefined-symbol">5.21 Why do I get a bunch of "dyld: perl undefined symbols" errors when
         I run Fink commands?</a></li><li><a href="usage-fink.php?phpLang=en#cant-upgrade">5.22 I can't seem to update Fink's version.</a></li><li><a href="usage-fink.php?phpLang=en#spaces-in-directory">5.23 Can I put Fink in a volume or directory with a space in its
         name?</a></li><li><a href="usage-fink.php?phpLang=en#packages-gz">5.24 When I try to do a binary update, there are many messages with
-        "File not found"</a></li><li><a href="usage-fink.php?phpLang=en#wrong-tree">5.25 I've changed my OS | Developer Tools, but Fink doesn't recognize
+        "File not found" or "Couldn't stat package source list file".</a></li><li><a href="usage-fink.php?phpLang=en#wrong-tree">5.25 I've changed my OS | Developer Tools, but Fink doesn't recognize
         the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
         applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
@@ -76,7 +76,7 @@ include_once "header.en.inc";
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.en.xml,v 1.48 2005/06/01 02:26:52 vasi Exp $-->
+<!--Generated from $Fink: faq.en.xml,v 1.49 2005/06/18 15:16:19 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
