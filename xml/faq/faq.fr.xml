@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.49 2005/06/01 06:34:04 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.50 2005/06/19 23:20:07 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -588,7 +588,7 @@ fink selfupdate</codeblock></li>
 </faqentry>
 <faqentry name="packages-gz">
 <question>
-<p>Lors de la mise à jour binaire, de nombreux messages "File not found" apparaissent.</p>
+<p>Lors de la mise à jour binaire, de nombreux messages "File not found" ou "Couldn't stat package source list file" apparaissent.</p>
 </question>
 <answer>
 <p>Si vous voyez ceci :</p>
