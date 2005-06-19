@@ -1,9 +1,9 @@
-<a name="09/06/2005%20Nouvelles%20versions%20Fink"><span class="news-date">09/06/2005: </span><span class="news-headline">Nouvelles versions Fink</span></a><?php gray_line(); ?>
+<a name="09/06/2005 Nouvelles versions Fink"><span class="news-date">09/06/2005: </span><span class="news-headline">Nouvelles versions Fink</span></a><?php gray_line(); ?>
 <p>Trois nouvelles versions de Fink sont <a href="<?php print $root; ?>download/index.php">disponibles</a> aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.</p>
 <p>La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.</p>
 <p>La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4  devrait fonctionner tout à fait correctement pour quelques années encore.</p>
 <p>Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter <code>fink selfupdate</code>, suivi de <code>sudo /sw/lib/fink/postinstall.pl</code> (pour les personnes qui passent au système 10.4 pour la première fois), de <code>fink scanpackages</code> et de <code>sudo apt-get update</code>. Nous  vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.</p>
-<a name="29/04/2005%20Fink%20et%20Tiger"><span class="news-date">29/04/2005: </span><span class="news-headline">Fink et Tiger</span></a><?php gray_line(); ?>
+<a name="29/04/2005 Fink et Tiger"><span class="news-date">29/04/2005: </span><span class="news-headline">Fink et Tiger</span></a><?php gray_line(); ?>
 <p>Fink fonctionnne sous Mac OS X 10.4 ! Voici les différentes façons de faire la mise à jour :</p>
 <ul>
 <li>Un installeur binaire sera disponible d'ici quelques semaines pour les utilisateurs de binaires. D'ici là, les nouveaux utilisateurs peuvent amorcer l'installation de la version 0.23.10 de fink, comme expliqué ci-dessous aux utilisateurs de la branche stable.</li>
@@ -12,7 +12,7 @@
 </ul>
 <p>Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.</p>
 <p>Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.</p>
-<a name="20/11/2004%20Solution%20aux%20probl%C3%A8mes%20gcc"><span class="news-date">20/11/2004: </span><span class="news-headline">Solution aux problèmes gcc</span></a><?php gray_line(); ?>
+<a name="20/11/2004 Solution aux problèmes gcc"><span class="news-date">20/11/2004: </span><span class="news-headline">Solution aux problèmes gcc</span></a><?php gray_line(); ?>
 <p>Apple a publié une mise à jour de gcc3 en novembre 2004 (November 2004 gcc3 updater). Elle est disponible sur connect.apple.com après enregistrement gratuit. Cette mise à jour résout les problèmes du compilateur gcc3 dans XCode 1.5. Si vous utilisez ce dernier, vous devez installer la mise à jour. Elle s'effectuera correctement, que vous ayez ou non installé précédemment la solution recommandée par Fink.</p>
 <p>Remercions Apple d'avoir répondu à nos rapports sur ce sujet et d'avoir travaillé à la résolution de ce problème aussi rapidement que possible.</p>
 

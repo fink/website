@@ -1,4 +1,4 @@
-<a name="2005-06-09%20%E6%96%B0%E3%81%97%E3%81%84%20Fink%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9."><span class="news-date">2005-06-09: </span><span class="news-headline">新しい Fink リリース.</span></a><?php gray_line(); ?>
+<a name="2005-06-09 新しい Fink リリース."><span class="news-date">2005-06-09: </span><span class="news-headline">新しい Fink リリース.</span></a><?php gray_line(); ?>
 <p>
 ３つの新しい Fink リリースが今日から
 <a href="<?php print $root; ?>download/index.php">ダウンロードできます</a>
@@ -24,7 +24,7 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 これは、Apple の XCode 2.1 では動作しないためです。
 </p>
 
-<a name="2005-04-29%20Fink%20%E3%81%A8%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink と Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29 Fink と Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink と Tiger.</span></a><?php gray_line(); ?>
 			<p>
 Fink が OS X 10.4 に対応! 更新は以下の通り:
 </p>
@@ -53,7 +53,7 @@ unstable ツリーの利用者は、 fink のバージョンが 0.24.6 以前で
 全てのパッケージが 10.4 で動作する訳ではありませんが、数週間で改善されるでしょう。
 stable ツリーのパッケージは 10.3 よりもだいぶ少ないですが、全てがコンパイルできるはずです。
 </p>
-		<a name="2004-11-20%20gcc%20%E5%95%8F%E9%A1%8C%E3%81%AE%E8%A7%A3%E6%B1%BA"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 問題の解決</span></a><?php gray_line(); ?>
+		<a name="2004-11-20 gcc 問題の解決"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 問題の解決</span></a><?php gray_line(); ?>
 			<p>Apple は、2004年11月に gcc3 アップデータをリリースしました。
 (無料登録の後、) connect.apple.com からダウンロードできます。
 このアップデータは、XCode 1.5 に含まれる gcc3 コンパイラの問題を修正しています。

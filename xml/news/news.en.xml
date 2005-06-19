@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.23 2005/06/09 15:39:01 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.24 2005/06/19 15:15:52 dmrrsn Exp $</cvsid>
 
 
 <newsitem>
@@ -36,7 +36,12 @@ on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
 </p>
-
+<p>
+Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
+volume does not support symlinks, try launching Disk Utility (from the 
+Utilities folder inside the Applications folder), selecting the 
+problematic volume and clicking on "repair disk permissions."
+</p>
 </body>
 </newsitem>
 
