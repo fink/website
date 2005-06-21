@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/06/18 15:16:19';
+$cvs_date = 'Date: 2005/06/21 23:11:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -481,15 +481,16 @@ Failed test (./Command/chowname.t at line 27)
       <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
-<a name="four-oh-three"><div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p><ul>
-<li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+    <a name="four-oh-three">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p><ul>
+          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
 <pre>fink reinstall fink</pre>
 <p>or</p>
 <pre>sudo apt-get install --reinstall fink</pre>
 <p>(if for whatever reason you don't want to use the source distribution).</p>
 </li>
-<li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
+          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
 <pre>sudo pico /sw/etc/apt/sources.list</pre>
 <p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
 <pre># Official binary distribution: download location for packages
@@ -501,15 +502,20 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
 <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
-</ul></div></a>
-
-<a name="fc-cache">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
+        </ul></div>
+    </a>
+    <a name="fc-cache">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
 about fontconfig can be found in the fontconfig(3) manual
-page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div></a>
+page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
+    </a>
+    <a name="non-admin-installer">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message most commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p></div>
+    </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=en">6. Compile Problems - General</a></p>
 <? include_once "../footer.inc"; ?>

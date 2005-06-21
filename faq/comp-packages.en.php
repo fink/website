@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/06/18 15:16:19';
+$cvs_date = 'Date: 2005/06/21 23:11:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -79,6 +79,15 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
       <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
+    </a>
+    <a name="cplusplus-filt">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
+          <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
+          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+        </ul><p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=en">8. Package Usage Problems - General</a></p>
