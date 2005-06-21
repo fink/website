@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.49 2005/06/18 15:16:19 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.50 2005/06/21 23:11:47 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -937,18 +937,22 @@ Failed test (./Command/chowname.t at line 27)
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
       </answer>
     </faqentry>
-<faqentry name="four-oh-three"><question><p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p></question>
-<answer><p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
-<ul>
-<li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (>= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+    <faqentry name="four-oh-three">
+      <question>
+        <p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p>
+      </question>
+      <answer>
+        <p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
+        <ul>
+          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
 <codeblock>fink reinstall fink</codeblock>
 <p>or</p>
 <codeblock>sudo apt-get install --reinstall fink</codeblock>
 <p>(if for whatever reason you don't want to use the source distribution).</p>
 </li>
-<li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
+          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
 <codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
-<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with &quot;Official binary distribution:&quot; thusly:</p>
+<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
 <codeblock># Official binary distribution: download location for packages
 # from the latest release
 deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
@@ -958,21 +962,32 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
 <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
-</ul>
-</answer></faqentry>
-
-<faqentry name="fc-cache">
-<question><p>I get a message that says &quot;No fonts found&quot;.</p></question>
-<answer>
-<p>If you see the following (so far only seen on OS 10.4):</p>
-<codeblock>No fonts found; this probably means that the fontconfig
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-cache">
+      <question>
+        <p>I get a message that says "No fonts found".</p>
+      </question>
+      <answer>
+        <p>If you see the following (so far only seen on OS 10.4):</p>
+        <codeblock>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
 about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</codeblock>
-<p>then you can fix it by running</p>
-<codeblock>sudo fc-cache</codeblock>
-</answer></faqentry>
+        <p>then you can fix it by running</p>
+        <codeblock>sudo fc-cache</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="non-admin-installer">
+      <question>
+        <p> I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</p>
+      </question>
+      <answer>
+        <p>This message most commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p>
+      </answer>
+    </faqentry>
   </chapter>
   <chapter filename="comp-general">
     <!-- FAQs in comp-general are coded into VirtPackage.pm
@@ -1526,6 +1541,23 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
         <p>you can solve this problem by running</p>
         <codeblock>fink remove gettext-dev
 fink install libiconv</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="cplusplus-filt">
+      <question>
+        <p>i can't install <code>g77</code> because <filename>c++filt</filename> is missing.  Where do I get it?</p>
+      </question>
+      <answer>
+        <p>If you get errors of the form </p>
+        <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
+        <p>since updating to Tiger, then you need to do the following:</p>
+        <ul>
+          <li>Flush out your old Developer Tools versions via running <codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
+          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+        </ul>
+        <p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p>
       </answer>
     </faqentry>
   </chapter>
@@ -2114,6 +2146,19 @@ fink selfupdate; fink index</codeblock>
           <li>Run it in a terminal window via <codeblock>perl fink-x11-debug</codeblock>
           </li>
         </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="tiger-gtk">
+      <question>
+        <p>After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</p>
+      </question>
+      <answer>
+        <p>This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1).  You can work around this via prefixing the the name of you want as follows:
+</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
+        <p>E.g., if you want to use <code>gnucash</code>, you'd use</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
+        <p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p>
       </answer>
     </faqentry>
   </chapter>
