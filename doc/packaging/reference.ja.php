@@ -1,16 +1,16 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:45:18';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/23 20:16:36';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="Compilers">';
 
 
 include_once "header.ja.inc";
 ?>
-<h1>パッケージ作成 - 5. リファレンスマニュアル</h1>
+<h1>パッケージ作成 - 6. リファレンスマニュアル</h1>
 		
 		
-		<h2><a name="build">5.1 ビルドプロセス</a></h2>
+		<h2><a name="build">6.1 ビルドプロセス</a></h2>
 			
 			<p>
 				各フィールドの意味を理解するには， Fink のビルドプロセスに関する知識がある程度必要です．
@@ -52,7 +52,7 @@ include_once "header.ja.inc";
 				代わりに，パッケージ記述からの様々な情報を使って dpkg 用の <code>control</code> ファイルが作成できます．
 			</p>
 		
-		<h2><a name="fields">5.2 フィールド</a></h2>
+		<h2><a name="fields">6.2 フィールド</a></h2>
 			
 			<p>
 				フィールドを分類して解説します．
@@ -1091,7 +1091,7 @@ AnotherVar: foo bar
 						</p>
 					</td></tr></table>
 		
-		<h2><a name="splitoffs">5.3 スプリットオフ (SplitOff)</a></h2>
+		<h2><a name="splitoffs">6.3 スプリットオフ (SplitOff)</a></h2>
 			
 			<p>
 				Fink 0.9.9 で導入．
@@ -1168,7 +1168,7 @@ SplitOff2: &lt;&lt;
 				よって <code>DocFiles</code> を使えば同一のドキュメントを各 splitoff パッケージ向けに複数回インストールできます．
 			</p>
 		
-		<h2><a name="scripts">5.4 スクリプト</a></h2>
+		<h2><a name="scripts">6.4 スクリプト</a></h2>
 			
 			<p>
 				フィールド PatchScript, CompileScript, InstallScript には，実行させたいシェルコマンドを記述できる．
@@ -1190,7 +1190,7 @@ SplitOff2: &lt;&lt;
 				その場合，フィールド *Script の値全体が一時ファイルにダンプされ，実行されます．
 			</p>
 		
-		<h2><a name="patches">5.5 パッチ</a></h2>
+		<h2><a name="patches">6.5 パッチ</a></h2>
 			
 			<p>
 				パッケージを Darwin でコンパイルするために (または Fink と協調して動作するようにするために) パッチが必要な場合，
@@ -1227,7 +1227,7 @@ SplitOff2: &lt;&lt;
 				パッチが 30KB より大きければ，独立にダウンロードする方法を考慮した方がよいでしょう．
 			</p>
 		
-		<h2><a name="profile.d">5.6 Profile.d スクリプト</a></h2>
+		<h2><a name="profile.d">6.6 Profile.d スクリプト</a></h2>
 			
 			<p>
 				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよいでしょう．

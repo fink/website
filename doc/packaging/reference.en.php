@@ -1,18 +1,18 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/19 15:24:36';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
+$cvs_date = 'Date: 2005/06/23 20:16:35';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
 include_once "header.en.inc";
 ?>
-<h1>Packaging - 5. Reference</h1>
+<h1>Packaging - 6. Reference</h1>
 
 
 
 
-<h2><a name="build">5.1 The Build Process</a></h2>
+<h2><a name="build">6.1 The Build Process</a></h2>
 
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
@@ -49,7 +49,7 @@ but various information from the package description is used to
 generate a <code>control</code> file for dpkg.</p>
 
 
-<h2><a name="fields">5.2 Fields</a></h2>
+<h2><a name="fields">6.2 Fields</a></h2>
 
 <p>We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <code>:-)</code></p>
@@ -1168,7 +1168,7 @@ is necessary" goes here. Multiple lines allowed.
 </td></tr></table>
 
 
-<h2><a name="splitoffs">5.3 SplitOffs</a></h2>
+<h2><a name="splitoffs">6.3 SplitOffs</a></h2>
 <p>Beginning with fink 0.9.9, a single .info file can be used to build
 multiple packages.  
 The install phase begins as usual, with the execution of the 
@@ -1245,7 +1245,7 @@ of the packages by using <code>DocFiles</code> several times.
 
 
 
-<h2><a name="scripts">5.4 Scripts</a></h2>
+<h2><a name="scripts">6.4 Scripts</a></h2>
 
 <p>The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
@@ -1271,7 +1271,7 @@ the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
 </p>
 
 
-<h2><a name="patches">5.5 Patches</a></h2>
+<h2><a name="patches">6.5 Patches</a></h2>
 
 <p>If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the same name as the package description,
@@ -1300,7 +1300,7 @@ separate download.
 </p>
 
 
-<h2><a name="profile.d">5.6 Profile.d scripts</a></h2>
+<h2><a name="profile.d">6.6 Profile.d scripts</a></h2>
 
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.

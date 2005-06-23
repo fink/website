@@ -9,6 +9,7 @@ $navbox = array(
   "doc/packaging/format.php?phpLang=zh", "软件包描述文件",
   "doc/packaging/policy.php?phpLang=zh", "规则",
   "doc/packaging/fslayout.php?phpLang=zh", "文件系统布局",
+  "doc/packaging/compilers.php?phpLang=zh", "Compilers",
   "doc/packaging/reference.php?phpLang=zh", "操作手册",
 );
 $printlink = "doc/packaging/packaging.zh.html";

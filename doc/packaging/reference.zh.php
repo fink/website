@@ -1,18 +1,18 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:45:18';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/23 20:16:37';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
 include_once "header.zh.inc";
 ?>
-<h1>打包 - 5. 操作手册</h1>
+<h1>打包 - 6. 操作手册</h1>
 
 
 
 
-<h2><a name="build">5.1 构建过程</a></h2>
+<h2><a name="build">6.1 构建过程</a></h2>
 
 <p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <code>/sw</code> 的 gimp-1.2.1-1 软件包的。</p>
 <p>在<b>解压阶段</b>，<code>/sw/src/gimp-1.2.1-1</code> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
@@ -28,7 +28,7 @@ include_once "header.zh.inc";
 <p>在<b>构建阶段</b>，会根据临时文件夹的内容构建一个二进制安装包(.deb)文件。你不能直接影响这个步骤，但软件包描述里面的许多字段会用于生成 dpkg 的 <code>control</code> 文件。</p>
 
 
-<h2><a name="fields">5.2 字段</a></h2>
+<h2><a name="fields">6.2 字段</a></h2>
 
 <p>我们在这里把字段分成几类。这里所描述的内容并不一定包括全部的字段。<code>:-)</code></p>
 <p><b>初始化数据：</b></p>
@@ -913,7 +913,7 @@ StartupItems (例如 web 服务器)。
 </td></tr></table>
 
 
-<h2><a name="splitoffs">5.3 剥离分支(SplitOffs)</a></h2>
+<h2><a name="splitoffs">6.3 剥离分支(SplitOffs)</a></h2>
 <p>从 fink 0.9.9 开始，可以用一个单独的 .info 文件来构建多个软件包。
 安装阶段和正常的类似，执行
 <code>InstallScript</code> 和 <code>DocFiles</code> 命令。
@@ -967,7 +967,7 @@ SplitOff2: &lt;&lt;
 
 
 
-<h2><a name="scripts">5.4 脚本</a></h2>
+<h2><a name="scripts">6.4 脚本</a></h2>
 
 <p>PatchScript，CompileScript 和 InstallScript 字段允许你指定需要执行的 shell 命令。
 构建目录(<code>%b</code>)是脚本执行的当前目录。
@@ -984,7 +984,7 @@ shell 脚本类似。不过，命令是通过 system() 调用执行的，每次�
 </p>
 
 
-<h2><a name="patches">5.5 补丁</a></h2>
+<h2><a name="patches">6.5 补丁</a></h2>
 
 <p>如果你的软件包需要补丁采可以在 Darwin 上编译(或与 Fink 配合)，
 把补丁命名为与软件包描述文件相同的名字，使用 ".patch" 来取代 ".info" 作为扩展名，并把它放在和 .info 文件相同的目录下面。
@@ -1005,7 +1005,7 @@ shell 脚本类似。不过，命令是通过 system() 调用执行的，每次�
 </p>
 
 
-<h2><a name="profile.d">5.6 Profile.d 脚本</a></h2>
+<h2><a name="profile.d">6.6 Profile.d 脚本</a></h2>
 
 <p>
 如果你的软件包需要一些运行时的初始化(例如，设置环境变量)，你可以使用 profile.d 脚本。

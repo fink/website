@@ -9,6 +9,7 @@ $navbox = array(
   "doc/packaging/format.php?phpLang=fr", "Descriptions de paquets",
   "doc/packaging/policy.php?phpLang=fr", "Règles",
   "doc/packaging/fslayout.php?phpLang=fr", "Organisation des fichiers",
+  "doc/packaging/compilers.php?phpLang=fr", "Compilers",
   "doc/packaging/reference.php?phpLang=fr", "Référence",
 );
 $printlink = "doc/packaging/packaging.fr.html";

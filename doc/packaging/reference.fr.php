@@ -1,16 +1,16 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/19 23:14:55';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/23 20:16:36';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilers">';
 
 
 include_once "header.fr.inc";
 ?>
-<h1>Paquets - 5. Référence</h1>
+<h1>Paquets - 6. Référence</h1>
 
 
-<h2><a name="build">5.1 Construction d'un paquet</a></h2>
+<h2><a name="build">6.1 Construction d'un paquet</a></h2>
 <p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <code>/sw</code> du paquet gimp-1.2.1-1.</p>
 <p>Lors de la <b>phase de décompression</b>, le répertoire <code>/sw/src/gimp-1.2.1-1</code> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>). Les champs SourceDirectory, NoSourceDirectory et Source<b>N</b>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
 <p>Lors de la <b>phase d'application des rustines</b>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript sont exécutées dans l'ordre d'énumération de ces champs.</p>
@@ -19,7 +19,7 @@ include_once "header.fr.inc";
 <p>(<b>À partir de fink 0.9.9.</b>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié).</p>
 <p>Lors de la <b>phase de construction</b>, un fichier binaire (.deb) est construit à partir du répertoire temporaire. On ne peut agir directement sur cette étape, néanmoins différentes informations issues de la description du paquet sont utilisées afin de générer un fichier de  <code>contrôle</code> pour dpkg.</p>
 
-<h2><a name="fields">5.2 Champs</a></h2><p>Nous avons classé les champs en plusieurs catégories. Cette liste n'est pas forcément exhaustive. <code>:-)</code></p>
+<h2><a name="fields">6.2 Champs</a></h2><p>Nous avons classé les champs en plusieurs catégories. Cette liste n'est pas forcément exhaustive. <code>:-)</code></p>
 <p><b>Données initiales :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Package</td><td>
 <p>Nom du paquet. Peut contenir des minuscules, des nombres ou les caractères spéciaux suivants : '.', '+' et '-'. Pas de trait de soulignement ('_'), ni de majuscules. Champ obligatoire.</p>
@@ -364,7 +364,7 @@ make test</pre>
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>Notes spécifiques au portage du paquet sur Darwin. Les éléments du type : "config.guess and libtool scripts are updated, -no-cpp-precomp is necessary" sont placés dans ce champ. Lignes multiples autorisées.</p>
 </td></tr></table>
-<h2><a name="splitoffs">5.3 Paquets multiples</a></h2>
+<h2><a name="splitoffs">6.3 Paquets multiples</a></h2>
 <p>À partir de la version 0.9.9 de fink, on peut utiliser un seul fichier .info pour construire plusieurs paquets. La phase d'installation commence, comme pour tout autre type de paquet, par l'exécution des scripts <code>InstallScript</code> et <code>DocFiles</code>. Si un champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> est présent, il y a création d'un répertoire d'installation supplémentaire. À l'intérieur des champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>, le nouveau répertoire d'installation est désigné par %i, tandis que le répertoire d'installation du paquet parent est désigné par %I.</p>
 <p>Chaque champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code> doit contenir un certain nombre de champs qui lui sont propres. En fait, cela ressemble à une description de paquet ordinaire, mais certains champs sont omis. Voici les champs qui peuvent y figurer (classés par catégorie) :</p>
 <ul>
@@ -390,12 +390,12 @@ SplitOff2: &lt;&lt;
 <p>Lors de la phase de construction du paquet, les scripts pre/post install/remove de chacun des paquets sont construits à partir des commandes spécifiques de la phase de construction desdits paquets.</p>
 <p>Chaque paquet à construire doit placer les fichiers de licence dans %i/share/doc/%n (avec %n ayant une valeur différente pour chaque paquet). Notez que <code>DocFiles</code> copie les fichiers au lieu de les déplacer ; il est donc possible d'installer une même copie de la documentation dans chacun des paquets en utilisant <code>DocFiles</code> plusieurs fois.</p>
 
-<h2><a name="scripts">5.4 Scripts</a></h2>
+<h2><a name="scripts">6.4 Scripts</a></h2>
 <p>Les champs PatchScript, CompileScript et InstallScript vous permettent d'indiquer des commandes shell à exécuter. Le répertoire de construction (<code>%b</code>) est le répertoire en cours lors de l'exécution des scripts. Vous devez toujours utiliser des chemins relatifs ou des raccourcis pour les fichiers et répertoires de l'arborescence fink, et jamais des chemins absolus. Deux formats différents sont possibles pour ces champs.</p>
 <p>Le champ peut être constitué d'une simple liste de commandes, un peu comme un script shell. Néanmoins, les commandes sont exécutées ligne après ligne via system(). Il en résulte que l'assignation de variables ou les changements de répertoire n'ont d'effet que pour les commandes résidant sur une même ligne. À partir d'une version CVS de fink postérieure à 0.18.2, vous pouvez ajuster la longueur des lignes de la même manière que dans les scripts shell : une barre oblique inversée (<code>\</code>) à la fin de la ligne indique que la ligne suivante est la suite de la ligne précédente.</p>
 <p>Vous pouvez aussi insérer un script complet, en utilisant l'interpréteur que vous voulez. Comme avec tout autre script Unix, la première ligne doit commencer par <code>#!</code> suivi du chemin complet de l'interpréteur et des options désirées (exemple : <code>#!/bin/csh</code>, <code>#!/bin/bash -ev</code>, etc...). Dans ce cas, la totalité du champ *Script est déversé dans un fichier temporaire, qui est alors exécuté.</p>
 
-<h2><a name="patches">5.5 Rustines</a></h2>
+<h2><a name="patches">6.5 Rustines</a></h2>
 <p>Si votre paquet nécessite une rustine pour compiler sous Darwin (ou pour fonctionner avec fink), donnez à la rustine le même nom que celui indiqué dans la description du paquet, en utilisant l'extension ".patch" au lieu de ".info", et placez-la dans le même répertoire que le fichier .info. Si vous utilisez le nom complet du paquet dans le nom du fichier, indiquez-le dans le champ d'une des façons suivantes (elles sont équivalentes) :</p>
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
@@ -407,7 +407,7 @@ SplitOff2: &lt;&lt;
 <p>Si vous utilisez emacs pour modifier les fichiers, vous devez ajouter <code>-x'*~'</code> à la commande diff ci-dessus, pour exclure les fichiers de sauvegarde générés automatiquement.</p>
 <p>Il faut aussi noter que les très grosses rustines ne doivent pas être mises dans cvs. Elles doivent être placées sur un serveur web/ftp et référencées en utilisant le champ <code>SourceN:</code>. Si vous n'avez pas de site web, les administrateurs du projet fink peuvent mettre le fichier à disposition à partir du site web de fink. Si votre rustine fait plus de 30Kb, vous devez la traiter comme un téléchargement distinct.</p>
 
-<h2><a name="profile.d">5.6 Scripts profile.d</a></h2>
+<h2><a name="profile.d">6.6 Scripts profile.d</a></h2>
 <p>Si votre paquet nécessite une initialisation à l'exécution (par exemple, pour définir des variables d'environnement), vous pouvez utiliser des scripts profile.d. Ces scripts sont sourcés par les scripts <code>/sw/bin/init.[c]sh</code>. Normalement, tout utilisateur de fink charge ces scripts dans ses fichiers de démarrage de shell (<code>.cshrc</code> et équivalents). Votre paquet doit fournir deux variantes de scripts : l'une pour les shells compatibles avec sh (sh, zsh, bash, ksh, ...), l'autre pour les shells compatibles avec csh (csh, tcsh). Elles doivent être installées sous la forme <code>/sw/etc/profile.d/%n.[c]sh</code> (où %n représente le nom du paquet). Il faut aussi positionner leurs bits de lecture et d'exécution (c'est-à-dire les installer avec -m 755), autrement elles ne seront pas chargées correctement.</p>
 <p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
 

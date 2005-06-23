@@ -1,8 +1,8 @@
 <?
 $title = "打包 - 文件系统布局";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:45:18';
-$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="reference.php?phpLang=zh" title="操作手册"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/23 20:16:37';
+$metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="compilers.php?phpLang=zh" title="Compilers"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
 
 
 include_once "header.zh.inc";
@@ -130,7 +130,7 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="reference.php?phpLang=zh">5. 操作手册</a></p>
+<a href="compilers.php?phpLang=zh">5. Compilers</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

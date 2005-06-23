@@ -1,8 +1,8 @@
 <?
 $title = "Paquets - Organisation des fichiers";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/19 23:14:55';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/06/23 20:16:36';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="compilers.php?phpLang=fr" title="Compilers"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
 include_once "header.fr.inc";
@@ -49,7 +49,7 @@ include_once "header.fr.inc";
 <p>Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans <code>/sw</code>. En particulier, les répertoires suivant ne doivent pas être utilisés : <code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>, <code>/sw/libexec</code> et <code>/sw/lib/locale</code>.</p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="reference.php?phpLang=fr">5. Référence</a></p>
+<a href="compilers.php?phpLang=fr">5. Compilers</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
