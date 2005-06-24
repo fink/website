@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.50 2005/06/19 23:20:07 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.51 2005/06/24 14:43:06 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -762,6 +762,14 @@ page and on http://fontconfig.org.
 <p>corrigez l'erreur en exécutant :</p>
 <codeblock>sudo fc-cache</codeblock>
 </answer></faqentry>
+<faqentry name="non-admin-installer">
+<question>
+<p>Impossible d'installer Fink à partir du paquet d'installation, un message "Ce volume ne gère pas les liens symboliques" apparaît.</p>
+</question>
+<answer>
+<p>Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p>
+<p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <em>S.O.S.</em> et cliquez sur <em>Réparez les autorisations du disque</em>.</p>
+</answer></faqentry>
 </chapter>
 <chapter filename="comp-general">
 <title>Problèmes de compilation généraux</title>
@@ -1183,6 +1191,23 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 fink install libiconv</codeblock>
 </answer>
 </faqentry>
+ <faqentry name="cplusplus-filt">
+<question>
+ <p>Impossible d'installer <code>g77</code> car le fichier <filename>c++filt</filename> n'existe pas. Où le récupérer ?</p>
+</question>
+<answer>
+<p>Si vous avez des erreurs similaires à la suivante :</p>
+<codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
+<p>après être passé sous Tiger, vous devez suivre les étapes suivantes :</p>
+<ul>
+<li>Désinstallez l'ancienne version des Outils de développements (Developer Tools) en exécutant la commande :
+<codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock> 
+dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure).</li>
+<li>Réinstallez <code>BSD.pkg</code> à partir du DVD d'installation du système Tiger.</li>
+</ul>
+<p>Si le fichier <code>/usr/bin/c++filt</code> n'apparaît pas, recommencez les deux étapes précédentes jusqu'à ce qu'il apparaisse.</p>
+</answer>
+ </faqentry>
 </chapter>
 <chapter filename="usage-general">
 <title>Problème généraux d'utilisation de paquets</title>
@@ -1545,5 +1570,17 @@ fink selfupdate; fink index</codeblock>
 </ul>
 </answer>
 </faqentry>
+<faqentry name="tiger-gtk">
+<question>
+<p>Après passage à Tiger (Mac OS X 10.4), des erreurs à propos de <code>_EVP_idea_cbc</code> apparaissent chaque fois qu'on utilise une application gtk.</p>
+</question>
+<answer>
+<p>Ceci est dû apparemment à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1). Pour éviter cette erreur, vous pouvez préfixer le nom du logiciel que vous souhaitez lancer avec :</p>
+<codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
+<p>Par exemple si vous voulez utiliser <code>gnucash</code>, utilisez :</p>
+<codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
+<p>Cette méthode fonctionne pour les applications lancées à partir du menu Applications de X11 d'Apple ou à partir du terminal.</p>
+</answer>
+ </faqentry>
 </chapter>
 </document>
