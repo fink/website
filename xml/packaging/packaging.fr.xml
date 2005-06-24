@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.58 2005/06/23 20:16:36 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.59 2005/06/24 14:45:30 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Last changed..." pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -25,8 +25,7 @@ L'installation d'un paquet binaire consiste simplement à le dépaqueter, puisqu
 <title>Descriptions de paquets</title>
 <shorttitle>Descriptions de paquets</shorttitle>
 <section name="trees"><title>Arborescence</title>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code>
-situés dans le répertoire <filename>/sw/fink/dists</filename>. La valeur de la variable "Trees" dans <filename>/sw/etc/fink.conf</filename> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <filename>/sw/fink/dists</filename>. La valeur de la variable "Trees" dans <filename>/sw/etc/fink.conf</filename> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
 <li><code>dists</code> est à la racine.  Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
@@ -48,7 +47,7 @@ mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</codeblock>
 <p>Avec ce format, l'indentation est optionnelle, mais vous pouvez l'utiliser pour améliorer la lisibilité.</p>
-<p>On peut imbriquer plusieurs "here-document". Cela arrive souvent dans un champ <code>SplitOff</code> ou <code>SplitOff<em>N</em></code>.  Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document". En voici un exemple :</p>
+<p>On peut imbriquer plusieurs "here-document". Cela arrive souvent dans un champ <code>SplitOff</code> ou <code>SplitOff<em>N</em></code>. Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document". En voici un exemple :</p>
 <codeblock>
 SplitOff: &lt;&lt;
   Package: %N-shlibs
@@ -438,83 +437,21 @@ dans les informations de dépendance doit être changé pour la version/révisio
 <p>Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans <filename>/sw</filename>. En particulier, les répertoires suivant ne doivent pas être utilisés : <filename>/sw/man</filename>, <filename>/sw/info</filename>, <filename>/sw/doc</filename>, <filename>/sw/libexec</filename> et <filename>/sw/lib/locale</filename>.</p>
 </section>
 </chapter>
-<chapter filename="compilers">
-<title>Compilers</title>
-<shorttitle>Compilers</shorttitle>
-
-<section name="versions"><title>Compiler Versions</title>
-<p>Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection.  As these compilers have evolved,
-there have been different fink "distributions" to cope with the changes.
-</p><p>
-Each distribution has had certain default values for the gcc and g++
-compilers, which any user compiling from source is expected to have
-installed.  You can expect that direct calls to "gcc" and "g++" from
-within your package will use these default values.  If you need to use
-a different value (for example, during a transition to a new distribution,
-your packages .info file must specify this using the versioned binaries
-provided by Apple.  Exactly how you will do this depends on the build
-system of your software, but for many packages, the <code>SetCC</code>
-and <code>SetCXX</code> fink fields can be used for this puporse.
-For example, you might change the g++ compiler to version 3.3 by the setting
-<code>SetCXX: g++-3.3</code>.  Examine the output when building your
-package to make sure that the correct compiler is being used.
-</p><p>
-The 10.1 distribution assumes that the compiler version is 2.95; the
-10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
-and 10.3 distributions assume tha the compiler version is 3.3.   The compiler
-for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  This will change again in the 10.4 distribution,
-which will use both gcc-4.0 and g++-4.0.
-</p>
-<p>A new method was introduced for ensuring the correct g++ compiler starting
-with the 10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
-number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct version of g++ is used.
-</p>
-
+<chapter filename="compilers"><title>Compilateurs</title>
+<shorttitle>Compilateurs</shorttitle>
+<section name="versions"><title>Versions du compilateur</title>
+<p>Fink utilise la famille des compilateurs gcc, tel qu'ils sont fournis par Apple Computer sur le site Apple Developer Connection. Comme ces compilateurs évoluent, il y a plusieurs "distributions" de fink différentes pour s'adapter à ces changements.</p>
+<p>Chaque distribution comporte certaines valeurs par défaut pour les compilateurs gcc et g++, qui correspondent à ceux qu'un utilisateur compilant à partir des sources est censé avoir installés. Vous pouvez donc compter sur le fait qu'un appel direct à "gcc" ou "g++" à partir d'un paquet utilisera ces valeurs par défaut. Si vous avez besoin d'utiliser une valeur différente (par exemple, durant la transition vers une nouvelle distribution), le fichier .info du paquet doit le spécifier en utilisant les versions binaires fournies par Apple. La façon exacte de le faire dépend du système de compilation du logiciel, mais pour de nombreux paquets, on peut utiliser les champs fink <code>SetCC</code> et <code>SetCXX</code> à cette fin. Par exemple, vous pouvez passer à la version 3.3 du compilateur g++ avec le champ <code>SetCXX: g++-3.3</code>. Vérifiez le résultat lors de la compilation afin de vous assurer que le bon compilateur est utilisé.</p>
+<p>La distribution 10.1 part du principe que la version du compilateur est la version 2.95 ; la distribution 10.2 que la version du compilateur est la version 3.1 ; les distributions 10.2-gcc3.3 et 10.3 que la version du compilateur est la version 3.3. Pour la distribution 10.4-transitional, c'est un peu plus compliqué :  g++-3.3 est utilisé avec gcc-4.0. Cela changera de nouveau dans la distribution 10.4 où l'on utilisera gcc-4.0 et g++-4.0.</p>
+<p>À partir de la distribution 10.4-transitional, une nouvelle méthode a été introduite pour assurer la sélection du bon compilateur g++. Durant la compilation, un répertoire <filename>/sw/var/lib/fink/path-prefix-g++-XXX</filename> (où XXX est le numéro de version) est ajouté au PATH. Ce répertoire contient des scripts shell qui se charge de sélectionner la bonne version de g++.</p>
 </section>
-<section name="abi"><title>The g++ ABI</title>
-<p>
-The g++ ABI has changed 3 times during the lifetime of OS X: the ABI is
-different for versions 2.95, 3.1, 3.3 and 4.0.  These different ABIs
-are not compatible with each other, and any libraries which use C++
-code and are linked to by your project must be compiled with the same
-ABI as the one currently being used.
-</p>
-<p>
-Fink keeps track of the g++ ABI by means of the GCC field.  This field
-should be defined for any package which invokes the g++ or c++ compilers.
-(It should NOT be defined for packages which don't invoke those compilers.)
-Whenever an ABI upgrade occurs, all the dependencies of the packages must
-be checked for their own GCC field.  When all of the dependencies have
-been upgraded, the package itself may be upgraded.  The versions of the
-dependencies must be changed to guarantee that users will have the correct,
-updated, dependencies in place before they attempt to build the new version
-of your package.
-</p>
-<p>
-A small group of packages which depend only on each other can be left 
-at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgrade.  When the upgrade is eventually done, they
-must be all upgraded together with the correct versioning on all the
-packages.  For this reason, it is best to upgrade most packages at
-the time the distribution changes.
-</p>
-<p>
-Fink uses the GCC field to ensure that users have the correct version of
-the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the <code>gcc_select</code> command has been
-set to the correct current value.  (This correct value is 3.3 for the 10.2
-and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The 
-<code>gcc_select</code> command was not available prior to OS X 10.2.)
-</p>
-
+<section name="abi"><title>L'ABI g++</title>
+<p>L'ABI g++ a changé trois fois depuis la naissance de Mac OS X : elle est différente pour les versions 2.95, 3.1, 3.3 et 4.0. Ces différentes ABI ne sont pas compatibles entre elles, et toute librairie utilisant du code C++ et liée à un projet doit être compilée avec la même ABI que celle en cours d'utilisation.</p>
+<p>Fink garde trace de l'ABI g++ à l'aide du champ GCC. Ce champ doit être défini par tout paquet qui invoque les compilateurs g++ ou c++. Il NE doit PAS être défini pour les paquets qui n'invoque pas ces compilateurs. Quand un changement d'ABI intervient, il faut vérifier le champ GCC de toutes les dépendances d'un paquet. Quand toutes les dépendances ont été mises à jour, le paquet lui-même peut être mis à jour. Les versions des dépendances doivent être modifiées pour assurer que les utilisateurs aient bien toutes les dépendances correctes mises à jour avant de tenter de compiler la nouvelle version d'un paquet.</p>
+<p>Si un petit nombre de paquets dépendent uniquement les uns des autres, on peut laisser la version de l'ABI précédente en place, s'ils ne sont pas prêts pour la mise à jour. Quand la mise à jour aura lieu, ils seront tous mis à jour en même temps avec une version correcte sur tous les paquets. C'est pourquoi il est préférable de ne mettre à jour les paquets qu'au moment de la distribution.</p>
+<p>Fink utilise le champ GCC pour s'assurer que les utilisateurs ont bien la bonne version du compilateur g++ installée sur leur système. Si le champ GCC est defini par le paquet, fink vérifie que la commande <code>gcc_select</code> a reçu la valeur en cours. Cette valeur est 3.3 pour les versions 10.2 et 10.3 de Mac OS X, et 4.0 pour la version 10.4 de Mac OS X. La commande <code>gcc_select</code> n'était pas disponible antérieurement à la version 10.2 de Mac OS X.</p>
 </section>
-
 </chapter>
-
 <chapter filename="reference">
 <title>Référence</title>
 <shorttitle>Référence</shorttitle>
