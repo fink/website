@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/19 23:20:07';
+$cvs_date = 'Date: 2005/06/24 14:43:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -112,6 +112,10 @@ fink selfupdate; fink index</pre><p><b>Note</b> : les barres obliques inversées
 </li>
 </ul></div>
 </a>
+<a name="tiger-gtk">
+<div class="question"><p><b><? echo FINK_Q ; ?>9.14: Après passage à Tiger (Mac OS X 10.4), des erreurs à propos de <code>_EVP_idea_cbc</code> apparaissent chaque fois qu'on utilise une application gtk.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci est dû apparemment à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1). Pour éviter cette erreur, vous pouvez préfixer le nom du logiciel que vous souhaitez lancer avec :</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>Par exemple si vous voulez utiliser <code>gnucash</code>, utilisez :</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>Cette méthode fonctionne pour les applications lancées à partir du menu Applications de X11 d'Apple ou à partir du terminal.</p></div>
+ </a>
 
 <? include_once "../footer.inc"; ?>
 

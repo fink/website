@@ -1,8 +1,8 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/23 20:16:36';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilers">';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/06/24 14:45:30';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
 include_once "header.fr.inc";

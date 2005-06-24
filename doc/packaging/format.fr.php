@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/23 20:16:36';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2005/06/24 14:45:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -11,8 +11,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="trees">2.1 Arborescence</a></h2>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code>
-situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
 <li><code>dists</code> est à la racine.  Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
@@ -34,7 +33,7 @@ mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</pre>
 <p>Avec ce format, l'indentation est optionnelle, mais vous pouvez l'utiliser pour améliorer la lisibilité.</p>
-<p>On peut imbriquer plusieurs "here-document". Cela arrive souvent dans un champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code>.  Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document". En voici un exemple :</p>
+<p>On peut imbriquer plusieurs "here-document". Cela arrive souvent dans un champ <code>SplitOff</code> ou <code>SplitOff<b>N</b></code>. Ces champs contiennent d'autres champs (à lignes multiples), et cette syntaxe permet aux sous-champs de contenir eux mêmes des lignes multiples. Le même code de terminaison <code>&lt;&lt;</code> est utilisé pour les sous-champs utilisant la syntaxe "here-document". En voici un exemple :</p>
 <pre>
 SplitOff: &lt;&lt;
   Package: %N-shlibs
