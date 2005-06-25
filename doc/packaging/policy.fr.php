@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Règles";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/24 14:45:30';
+$cvs_date = 'Date: 2005/06/25 03:19:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 
