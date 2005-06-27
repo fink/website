@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:34:45';
+$cvs_date = 'Date: 2005/06/27 12:56:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -229,6 +229,18 @@ fink selfupdate; fink index</pre><p>
 </li>
 </ul></div>
 </a>
+    <a name="tiger-gtk">
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.14: 
+        	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
+        	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
+        </b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+        	これは、 Tiger (10.4.1 現在) のダイナミックリンカのバグによるものです。
+        	以下のようにコマンド名の前に追加することで、とりあえず起動させることができます:
+		</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>例えば、 <code>gnucash</code> の場合</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>
+        	この方法は、Apple X11 のアプリケーションメニューからでも、ターミナルからでも有効です。
+        </p></div>
+    </a>
 
 <? include_once "../footer.inc"; ?>
 

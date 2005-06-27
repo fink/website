@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:34:45';
+$cvs_date = 'Date: 2005/06/27 12:56:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -306,7 +306,7 @@ fink selfupdate-cvs</pre></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 名前に空白が入っているディレクトリに Fink を入れるないよう薦めます。</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.24: バイナリアップデートをしようとすると、 "File not found" というメッセージが大量に出ます。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし次のようであれば:</p><pre>
 Err file: local/main Packages
 File not found
@@ -462,6 +462,19 @@ library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
 about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>次のように実行します:</p><pre>sudo fc-cache</pre></div>
+    </a>
+    <a name="non-admin-installer">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33: インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+        	このメッセージは、 Fink インストーラを管理者権限のないユーザーで実行すると発生します。
+        	ログイン時に権限のあるユーザーにログインするか、Finder でユーザーを切り替えてください。
+        </p><p>
+        	the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.
+        	管理者アカウントを使っていても問題が発生する場合、システムのトップレベルディレクトリの
+        	パーミッションに問題があるかもしれません。 Apple の ディスクユーティリティを使い、問題の
+        	ボリュームを選択し、 <b>First Aid</b> タブから <b>ディスクのアクセス権を修復</b>
+        	を選択してください。
+        </p></div>
     </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>

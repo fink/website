@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:34:45';
+$cvs_date = 'Date: 2005/06/27 12:56:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -266,7 +266,7 @@ fink selfupdate</pre></li>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 我们不推荐把你的 Fink 目录树放到名字中有空格的目录里面。完全不值得冒这个险。</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 当我进行二进制升级的时候，有很多 "File not found" 错误。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你看到这样的错误：</p><pre>
 Err file: local/main Packages
   File not found
@@ -379,6 +379,10 @@ library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
 about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
+    </a>
+    <a name="non-admin-installer">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p></div>
     </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

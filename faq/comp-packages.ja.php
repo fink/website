@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/09 21:34:45';
+$cvs_date = 'Date: 2005/06/27 12:56:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -63,6 +63,21 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
+    <a name="cplusplus-filt">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: <code>g77</code> 我インストールできません。<code>c++filt</code> がないからです。 
+        これはどこにありますか?</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
+          <li>ターミナルで、
+          <pre>/Developer/Tools/uninstall-devtools.pl</pre>
+          	と実行し、古い Developer Tools を削除します。
+          	次に、 XCode (2.0 以降) をインストールします。
+          </li>
+          <li>(Tiger のインストーラから)  <code>BSD.pkg</code> をインストールします。
+         	<code>/usr/bin/c++filt</code> が現れるまで何度もインストールしてみてください。</li>
+        </ul><p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p></div>
+    </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=ja">8. パッケージ使用上の問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>
