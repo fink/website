@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.29 2005/06/09 21:34:45 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.30 2005/06/27 12:56:55 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -786,7 +786,7 @@ fink selfupdate-cvs</codeblock>
 </faqentry>
 <faqentry name="packages-gz">
 <question>
-<p>バイナリアップデートをしようとすると、 &quot;File not found&quot; というメッセージが大量に出ます。</p>
+<p>バイナリアップデートをしようとすると、 &quot;File not found&quot; または &quot;Couldn't stat package source list file&quot; というメッセージが大量に出ます。</p>
 </question>
 <answer><p>もし次のようであれば:</p>
 <codeblock>
@@ -1001,6 +1001,24 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</codeblock>
         <p>次のように実行します:</p>
 <codeblock>sudo fc-cache</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="non-admin-installer">
+      <question>
+        <p>インストーラから Fink をインストールできません。&quot;volume doesn't support symlinks&quot; エラーが出ます。</p>
+      </question>
+      <answer>
+        <p>
+        	このメッセージは、 Fink インストーラを管理者権限のないユーザーで実行すると発生します。
+        	ログイン時に権限のあるユーザーにログインするか、Finder でユーザーを切り替えてください。
+        </p>
+        <p>
+        	the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.
+        	管理者アカウントを使っていても問題が発生する場合、システムのトップレベルディレクトリの
+        	パーミッションに問題があるかもしれません。 Apple の ディスクユーティリティを使い、問題の
+        	ボリュームを選択し、 <em>First Aid</em> タブから <em>ディスクのアクセス権を修復</em>
+        	を選択してください。
+        </p>
       </answer>
     </faqentry>
 </chapter>
@@ -1500,6 +1518,29 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
 fink install libiconv</codeblock>
 </answer>
 </faqentry>
+    <faqentry name="cplusplus-filt">
+      <question>
+        <p><code>g77</code> 我インストールできません。<filename>c++filt</filename> がないからです。 
+        これはどこにありますか?</p>
+      </question>
+      <answer>
+        <p>もし、Tiger にアップデート後にエラーが</p>
+        <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
+        <p>とでたら、以下のようにします:</p>
+        <ul>
+          <li>ターミナルで、
+          <codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock>
+          	と実行し、古い Developer Tools を削除します。
+          	次に、 XCode (2.0 以降) をインストールします。
+          </li>
+          <li>(Tiger のインストーラから)  <code>BSD.pkg</code> をインストールします。
+         	<code>/usr/bin/c++filt</code> が現れるまで何度もインストールしてみてください。</li>
+        </ul>
+        <p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p>
+      </answer>
+    </faqentry>
 </chapter>
 <chapter filename="usage-general" >
     <!-- FAQs in usage-general are coded into VirtPackage.pm
@@ -2093,5 +2134,25 @@ fink selfupdate; fink index</codeblock>
 </ul>
 </answer>
 </faqentry>
+    <faqentry name="tiger-gtk">
+      <question>
+        <p>
+        	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
+        	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
+        </p>
+      </question>
+      <answer>
+        <p>
+        	これは、 Tiger (10.4.1 現在) のダイナミックリンカのバグによるものです。
+        	以下のようにコマンド名の前に追加することで、とりあえず起動させることができます:
+		</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
+        <p>例えば、 <code>gnucash</code> の場合</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
+        <p>
+        	この方法は、Apple X11 のアプリケーションメニューからでも、ターミナルからでも有効です。
+        </p>
+      </answer>
+    </faqentry>
 </chapter>
 </document>
