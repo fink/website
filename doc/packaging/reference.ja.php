@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/23 20:16:36';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/06/27 12:58:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="Compilers">';
 
 
@@ -327,6 +327,10 @@ Depends: (%type_pkg[-x11]) x11
 							パッケージは，コンパイル時にインストールされた -dev に合った -shlibs パッケージを必要とする．
 							このため， <code>Depends</code> でどちらも満たすようにはできないのである．
 						</p>
+						<p>
+							以前は，必須でないパッケージは暗黙のうちに必須パッケージに依存していたが，
+							現在はそうなっていない．
+						</p>
 					</td></tr><tr valign="top"><td>BuildDepends</td><td>
 						<p>
 							<b>Fink 0.9.0 で導入:</b>
@@ -395,9 +399,9 @@ Depends: (%type_pkg[-x11]) x11
 					</td></tr><tr valign="top"><td>Essential</td><td>
 						<p>
 							必須パッケージを表す真偽値フィールド．
-							必須パッケージはブートストラップ・プロセスの一環としてインストールされる．
 							必須パッケージでないパッケージは必須パッケージに暗黙のうちに依存して構わない．
-							dpkg は，このフィールドの指示に優先する特別なフラグを使わない限り，必須パッケージをシステムから取り除くことを拒む．
+							<code>dpkg</code> は，このフィールドの指示に優先する特別なフラグを使わない限り，必須パッケージをシステムから取り除くことを拒む．
+							以前は，必須でないパッケージは暗黙のうちに必須パッケージに依存していたが，現在はそうではない．
 						</p>
 					</td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 						<p>
@@ -687,19 +691,6 @@ LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </pre>
 						<p>
-							fink 0.24.3 (と 0.23.7) からの 10.3 および 10.4-transitional 用ディストリビューションでは
-						</p>
-<pre>
-CXXFLAGS: -fabi-version=1
-</pre>
-						<p>
-							10.4 以降のディストリビューションでは
-						</p>
-<pre>
-CXXFLAGS: -fabi-version=2
-</pre>
-						<p>
-							となります．
 							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持ちます．
 							これに値を指定することで (値の追加ではなく) 既定値を書き換えることができます．
 						</p>

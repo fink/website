@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/06/23 20:16:37';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/06/27 12:58:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -262,6 +262,10 @@ Depends: (%type_pkg[-x11]) x11
   cannot have a <code>Depends</code> that indicates that either one
   will suffice.
 </p>
+<p>
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+</p>
 
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
@@ -314,7 +318,13 @@ needed package name. As a result, having many variants provide a common surrogat
 </p>
 </td></tr><tr valign="top"><td>Essential</td><td>
 <p>
-一个表明是关键软件包的布尔值。关键软件包会被作为初始环境建立的过程的一部分而安装。所有的非关键软件包都隐含地依赖于关键软件包。dpkg 会拒绝从系统中删除关键软件包，除非设置了特别的标识来覆盖它。
+一个表明是关键软件包的布尔值。
+所有的非关键软件包都隐含地依赖于关键软件包。
+<code>dpkg</code> 会拒绝从系统中删除关键软件包，除非设置了特别的标识来覆盖它。
+
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+
 </p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p>
@@ -549,19 +559,6 @@ In addition, starting in fink 0.17.0:
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
-<p>
-Also, starting in fink 0.24.3 (and 0.23.7), when the distribution is
-10.3 or 10.4-transitional we have
-</p>
-<pre>
-CXXFLAGS: -fabi-version=1
-</pre>
-<p>
-while when the distribution is 10.4 or later we have
-</p>
-<pre>
-CXXFLAGS: -fabi-version=2
 </pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
