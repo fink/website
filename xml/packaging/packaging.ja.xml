@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.29 2005/06/23 20:16:36 dmrrsn Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.30 2005/06/27 12:58:42 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1646,6 +1646,10 @@ Depends: (%type_pkg[-x11]) x11
 							パッケージは，コンパイル時にインストールされた -dev に合った -shlibs パッケージを必要とする．
 							このため， <code>Depends</code> でどちらも満たすようにはできないのである．
 						</p>
+						<p>
+							以前は，必須でないパッケージは暗黙のうちに必須パッケージに依存していたが，
+							現在はそうなっていない．
+						</p>
 					</itemd>
 				</item>
 
@@ -1744,9 +1748,9 @@ Depends: (%type_pkg[-x11]) x11
 					<itemd>
 						<p>
 							必須パッケージを表す真偽値フィールド．
-							必須パッケージはブートストラップ・プロセスの一環としてインストールされる．
 							必須パッケージでないパッケージは必須パッケージに暗黙のうちに依存して構わない．
-							dpkg は，このフィールドの指示に優先する特別なフラグを使わない限り，必須パッケージをシステムから取り除くことを拒む．
+							<code>dpkg</code> は，このフィールドの指示に優先する特別なフラグを使わない限り，必須パッケージをシステムから取り除くことを拒む．
+							以前は，必須でないパッケージは暗黙のうちに必須パッケージに依存していたが，現在はそうではない．
 						</p>
 					</itemd>
 				</item>
@@ -2124,19 +2128,6 @@ LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </codeblock>
 						<p>
-							fink 0.24.3 (と 0.23.7) からの 10.3 および 10.4-transitional 用ディストリビューションでは
-						</p>
-<codeblock>
-CXXFLAGS: -fabi-version=1
-</codeblock>
-						<p>
-							10.4 以降のディストリビューションでは
-						</p>
-<codeblock>
-CXXFLAGS: -fabi-version=2
-</codeblock>
-						<p>
-							となります．
 							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持ちます．
 							これに値を指定することで (値の追加ではなく) 既定値を書き換えることができます．
 						</p>

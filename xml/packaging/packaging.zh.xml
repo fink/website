@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.20 2005/06/23 20:16:37 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.21 2005/06/27 12:58:43 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -1270,6 +1270,10 @@ Depends: (%type_pkg[-x11]) x11
   cannot have a <code>Depends</code> that indicates that either one
   will suffice.
 </p>
+<p>
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+</p>
 <!-- end translation -->
 </itemd></item>
 
@@ -1343,7 +1347,13 @@ needed package name. As a result, having many variants provide a common surrogat
 <item><itemt>Essential</itemt>
 <itemd>
 <p>
-一个表明是关键软件包的布尔值。关键软件包会被作为初始环境建立的过程的一部分而安装。所有的非关键软件包都隐含地依赖于关键软件包。dpkg 会拒绝从系统中删除关键软件包，除非设置了特别的标识来覆盖它。
+一个表明是关键软件包的布尔值。
+所有的非关键软件包都隐含地依赖于关键软件包。
+<code>dpkg</code> 会拒绝从系统中删除关键软件包，除非设置了特别的标识来覆盖它。
+<!-- start translation -->
+In the past, non-essential packages implicitly depended on the
+essential ones; this is no longer true.
+<!-- end translation -->
 </p>
 </itemd></item>
 
@@ -1650,19 +1660,6 @@ In addition, starting in fink 0.17.0:
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</codeblock>
-<p>
-Also, starting in fink 0.24.3 (and 0.23.7), when the distribution is
-10.3 or 10.4-transitional we have
-</p>
-<codeblock>
-CXXFLAGS: -fabi-version=1
-</codeblock>
-<p>
-while when the distribution is 10.4 or later we have
-</p>
-<codeblock>
-CXXFLAGS: -fabi-version=2
 </codeblock>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
