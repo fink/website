@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:56:55';
+$cvs_date = 'Date: 2005/06/27 13:22:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -59,7 +59,7 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
 	</a></li><li><a href="comp-general.php?phpLang=ja#master-problems">6.21 
 		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <q>distfiles</q>
 		と書いてあるだけで、しかもそのファイルはそこに存在しません。
-	</a></li><li><a href="comp-general.php?phpLang=ja#compile-options">6.22 パッケージをビルドするときに、 Fink に違うオプションを使わせたい</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ja#libiconv-gettext">7.5 <code>libiconv</code> が更新できません。</a></li><li><a href="comp-packages.php?phpLang=ja#cplusplus-filt">7.6 <code>g77</code> 我インストールできません。<code>c++filt</code> がないからです。 
+	</a></li><li><a href="comp-general.php?phpLang=ja#compile-options">6.22 パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ja#libiconv-gettext">7.5 <code>libiconv</code> が更新できません。</a></li><li><a href="comp-packages.php?phpLang=ja#cplusplus-filt">7.6 <code>g77</code> がインストールできません。<code>c++filt</code> がないからです。 
         これはどこにありますか?</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</a></li><li><a href="usage-general.php?phpLang=ja#passwd">8.2 いきなり変なユーザーがシステムに現れました。
@@ -84,7 +84,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.30 2005/06/27 12:56:55 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.31 2005/06/27 13:22:34 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

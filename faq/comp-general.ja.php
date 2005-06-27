@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:56:55';
+$cvs_date = 'Date: 2005/06/27 13:22:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -252,7 +252,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	</p><p>これを直すには、 <code>fink configure</code> を実行し、マスターミラーを最後に検索するように設定を変更します。</p></div>
 </a>
 <a name="compile-options">
-	<div class="question"><p><b><? echo FINK_Q ; ?>6.22: パッケージをビルドするときに、 Fink に違うオプションを使わせたい</b></p></div>
+	<div class="question"><p><b><? echo FINK_Q ; ?>6.22: パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
 			これが比較的簡単な方法です。
