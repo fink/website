@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.12 2005/06/12 02:50:22 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.13 2005/06/27 12:57:38 babayoshihiko Exp $</cvsid>
 <newsitem>
 <date>2005-06-09</date>
 <headline>新しい Fink リリース.</headline>
@@ -30,7 +30,12 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 現在は bootstrap を勧めていません。
 これは、Apple の XCode 2.1 では動作しないためです。
 </p>
-
+<p>
+追補 6/19/05: 
+Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
+(アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
+選択し、&quot;ディスクのアクセス権を修復&quot;をクリックします。
+</p>
 </body>
 </newsitem>
 	<newsitem>
