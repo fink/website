@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.30 2005/06/27 12:56:55 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.31 2005/06/27 13:22:34 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1013,7 +1013,6 @@ page and on http://fontconfig.org.</codeblock>
         	ログイン時に権限のあるユーザーにログインするか、Finder でユーザーを切り替えてください。
         </p>
         <p>
-        	the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.
         	管理者アカウントを使っていても問題が発生する場合、システムのトップレベルディレクトリの
         	パーミッションに問題があるかもしれません。 Apple の ディスクユーティリティを使い、問題の
         	ボリュームを選択し、 <em>First Aid</em> タブから <em>ディスクのアクセス権を修復</em>
@@ -1403,7 +1402,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </faqentry>
 <faqentry name="compile-options">
 	<question>
-		<p>パッケージをビルドするときに、 Fink に違うオプションを使わせたい</p>
+		<p>パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</p>
 	</question>
 	<answer>
 		<p>
@@ -1520,7 +1519,7 @@ fink install libiconv</codeblock>
 </faqentry>
     <faqentry name="cplusplus-filt">
       <question>
-        <p><code>g77</code> 我インストールできません。<filename>c++filt</filename> がないからです。 
+        <p><code>g77</code> がインストールできません。<filename>c++filt</filename> がないからです。 
         これはどこにありますか?</p>
       </question>
       <answer>
