@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 2004/11/24 05:37:49 babayoshihiko Exp $
+# $Id: Makefile,v 1.7 2005/06/27 14:30:22 babayoshihiko Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -25,7 +25,7 @@ include $(basedir)/Makefile.i18n.common
 	xmllint --noout --valid $(SOURCE)
 	$(foreach LANGUAGE, $(LANGUAGES), xsltproc -o index.$(LANGUAGE).php.tmp $(STYLESHEET_WEBSITE) news.$(LANGUAGE).xml; )
 	echo '<? include_once "../phpLang.inc.php"; ?>' > index.php.tmp
-	echo '<? include_once "news.en.inc"; ?>' > news.inc.tmp
+	echo '<? include_once dirname(__FILE__) . "/news.en.inc"; ?>' > news.inc.tmp
 
 news.rdf %.rdf: $(SOURCE) $(STYLESHEET_RDF)
 	xmllint --noout --valid $(SOURCE)

@@ -1,1 +1,1 @@
-<? include_once "news.en.inc"; ?>
+<? include_once dirname(__FILE__) . "/news.en.inc"; ?>
