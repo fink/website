@@ -1,8 +1,8 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:25:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="compilers.php?phpLang=ja" title="Compilers"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
+$cvs_date = 'Date: 2005/06/28 00:34:18';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="compilers.php?phpLang=ja" title="コンパイラ"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 
 include_once "header.ja.inc";
@@ -154,7 +154,7 @@ include_once "header.ja.inc";
 			</p>
 		
 	<p align="right"><? echo FINK_NEXT ; ?>:
-<a href="compilers.php?phpLang=ja">5. Compilers</a></p>
+<a href="compilers.php?phpLang=ja">5. コンパイラ</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
