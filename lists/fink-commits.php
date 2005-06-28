@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-commits";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/06/28 02:33:07 $';
+$cvs_date = '$Date: 2005/06/28 02:38:27 $';
 
 include "header.inc";
 ?>
@@ -37,8 +37,8 @@ You can filter the Subject lines that begin with the following strings:
 <tr><td><tt>dists/<i>dist</i>/unstable</tt></td><td></td>
 <td>New or updated unstable packages in a given </i>dist</i> (10.3, 10.4-transtional, etc.). </td></tr>
 
-<tr><td><tt>dists/<i>dist</u>/stable</tt></td><td></td>
-<td>Packages in the &quot;10.3&quot; tree that have been moved from unstable to stable in the given <i>dist</i>.</td></tr>
+<tr><td><tt>dists/<i>dist</i>/stable</tt></td><td></td>
+<td>Packages in the given <i>dist</i> that have been moved from unstable to stable.</td></tr>
 
 <tr><td><tt>web</tt></td><td></td>
 <td>Changes to the <a href="../..">Fink website</a></td></tr>
