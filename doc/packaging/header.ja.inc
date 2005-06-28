@@ -9,7 +9,7 @@ $navbox = array(
   "doc/packaging/format.php?phpLang=ja", "パッケージ記述",
   "doc/packaging/policy.php?phpLang=ja", "ポリシー",
   "doc/packaging/fslayout.php?phpLang=ja", "ファイルシステム",
-  "doc/packaging/compilers.php?phpLang=ja", "Compilers",
+  "doc/packaging/compilers.php?phpLang=ja", "コンパイラ",
   "doc/packaging/reference.php?phpLang=ja", "リファレンス",
 );
 $printlink = "doc/packaging/packaging.ja.html";

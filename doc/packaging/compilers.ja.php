@@ -1,7 +1,7 @@
 <?
-$title = "パッケージ作成 - Compilers";
+$title = "パッケージ作成 - コンパイラ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:58:42';
+$cvs_date = 'Date: 2005/06/28 00:25:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -11,73 +11,64 @@ include_once "header.ja.inc";
 
 
 
-<h2><a name="versions">5.1 Compiler Versions</a></h2>
-<p>Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection.  As these compilers have evolved,
-there have been different fink "distributions" to cope with the changes.
-</p><p>
-Each distribution has had certain default values for the gcc and g++
-compilers, which any user compiling from source is expected to have
-installed.  You can expect that direct calls to "gcc" and "g++" from
-within your package will use these default values.  If you need to use
-a different value (for example, during a transition to a new distribution,
-your packages .info file must specify this using the versioned binaries
-provided by Apple.  Exactly how you will do this depends on the build
-system of your software, but for many packages, the <code>SetCC</code>
-and <code>SetCXX</code> fink fields can be used for this puporse.
-For example, you might change the g++ compiler to version 3.3 by the setting
-<code>SetCXX: g++-3.3</code>.  Examine the output when building your
-package to make sure that the correct compiler is being used.
-</p><p>
-The 10.1 distribution assumes that the compiler version is 2.95; the
-10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
-and 10.3 distributions assume tha the compiler version is 3.3.   The compiler
-for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  This will change again in the 10.4 distribution,
-which will use both gcc-4.0 and g++-4.0.
+<h2><a name="versions">5.1 コンパイラバージョン</a></h2>
+<p>
+gcc ファミリーのコンパイラを使用します．
+これらのコンパイラの発展に伴い，fink は "ディストリビューション" をつくって
+変化に対応してきました．
 </p>
-<p>A new method was introduced for ensuring the correct g++ compiler starting
-with the 10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
-number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct version of g++ is used.
+<p>
+各ディストリビューションには，ソースからコンパイルするユーザー全員がもっていると想定されている
+既定の gcc と g++ コンパイラがあります．
+パッケージ中で直接 "gcc" や "g++" を使用すると，この既定値が使われます． 
+これと違う値を使用する必要がある場合，(例えば，ディストリビューションの移行中に) パッケージ .info ファイルは
+Apple 提供の特定バージョンのバイナリを指定しなければなりません．
+どのように指定するかは，ソフトウェアのビルドシステムによりますが，多くの場合
+<code>SetCC</code> と <code>SetCXX</code> のフィールドを使用します．
+例えば，g＋＋コンパイラのバージョンを 3.3 にするには，<code>SetCXX: g++-3.3</code> とします．
+正しいコンパイラが使われているか，ビルド時の出力を確認してください．
+</p>
+<p>
+10.1 ディストリビューションは，コンパイラに 2.95 の使用を前提とします．
+10.2 ディストリビューションは，コンパイラに 3.1 の使用を前提とします．
+10.2-gcc と 10.3 ディストリビューションは，コンパイラに 3.3 の使用を前提とします．
+10.4-transitional ディストリビューションは複雑です．これは g++-3.3 と gcc-4.0 を使用しています．
+１０．４ディストリビューションでは，gcc-4.0 と g++-4.0 を使用するようになる予定です．
+</p>
+<p>
+正しい g++ コンパイラが使用されるよう新手法が 10.4-transitional ディストリビューションから採用されました．
+コンパイル時に，<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
+ディレクトリが PATH に追加されます．
+このディレクトリには正しい g++ が使われるようなシェルスクリプトが入っています．
 </p>
 
 
-<h2><a name="abi">5.2 The g++ ABI</a></h2>
+<h2><a name="abi">5.2 g++ ABI</a></h2>
 <p>
-The g++ ABI has changed 3 times during the lifetime of OS X: the ABI is
-different for versions 2.95, 3.1, 3.3 and 4.0.  These different ABIs
-are not compatible with each other, and any libraries which use C++
-code and are linked to by your project must be compiled with the same
-ABI as the one currently being used.
+OS X の歴史の中で，g++ ABI は３度変わってきました: ABI は バージョン 2.95, 3.1, 3.3, 4.0 で異なります．
+ABI の相違は互換性がなく，C++ コードを用いたライブラリにリンクする場合は，同じ ABI でコンパイルしなければなりません．
 </p>
 <p>
-Fink keeps track of the g++ ABI by means of the GCC field.  This field
-should be defined for any package which invokes the g++ or c++ compilers.
-(It should NOT be defined for packages which don't invoke those compilers.)
-Whenever an ABI upgrade occurs, all the dependencies of the packages must
-be checked for their own GCC field.  When all of the dependencies have
-been upgraded, the package itself may be upgraded.  The versions of the
-dependencies must be changed to guarantee that users will have the correct,
-updated, dependencies in place before they attempt to build the new version
-of your package.
+Fink では，g++ ABI は GCC フィールドで扱っています．
+g++ あるいは c++ コンパイラを呼び出すパッケージは，GCC フィールドを定義しなければなりません
+(逆に，呼び出さないパッケージには定義してはいけません)．
+ABI が更新された場合，パッケージ依存性に GCC フィールドも確認しなければいけません．
+依存するパッケージ全てがアップグレードされて，パッケージもアップグレードすることができます．
+ユーザーがパッケージをビルドするより前に正しく更新された依存性を持つためには，依存パッケージのバージョンを変える必要があります．
 </p>
 <p>
-A small group of packages which depend only on each other can be left 
-at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgrade.  When the upgrade is eventually done, they
-must be all upgraded together with the correct versioning on all the
-packages.  For this reason, it is best to upgrade most packages at
-the time the distribution changes.
+ある範囲内でのみ依存されているパッケージは，アップグレードの準備ができない場合，
+ディストリビューション変更時に旧バージョンの ABI を使用することもできます．
+アップグレードされる場合は，範囲内の全てのパッケージを同時に正しいバージョンにアップグレードする必要があります．
+このため，ほとんどのパッケージにとって，アップグレードはディストリビューションの変更時にするのがよいでしょう．
 </p>
 <p>
-Fink uses the GCC field to ensure that users have the correct version of
-the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the <code>gcc_select</code> command has been
-set to the correct current value.  (This correct value is 3.3 for the 10.2
-and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The 
-<code>gcc_select</code> command was not available prior to OS X 10.2.)
+Fink は GCC フィールドを使って，ユーザーが正しいコンパイラを使うよう確認します．
+GCC フィールドがパッケージによって定義されている場合，fink は <code>gcc_select</code> 
+コマンドが正しい値に設定されているかを確認します．
+(10.2 と 10.3 での正しい値は　3.3 で，
+10.4 での正しい値は　4.0 です．
+<code>gcc_select</code> は OS X 10.2 以前にはありません．)
 </p>
 
 
