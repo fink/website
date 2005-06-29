@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.66 2005/06/23 20:16:35 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.67 2005/06/29 20:04:07 vasi Exp $</cvsid>
 
 <preface>
 <p>
@@ -1216,12 +1216,26 @@ In particular, the following should not be used:
 <title>Compilers</title>
 <shorttitle>Compilers</shorttitle>
 
-<section name="versions"><title>Compiler Versions</title>
-<p>Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection.  As these compilers have evolved,
-there have been different fink "distributions" to cope with the changes.
+<preface>
+<p>
+Fink uses the gcc family of compilers, as provided by Apple computer
+through the Apple Developer Connection. Different versions of gcc exist,
+and usually more than one is available on a Mac OS X system.
 </p><p>
-Each distribution has had certain default values for the gcc and g++
+This section explains some of the ways Fink deals with these different versions
+of gcc. An email to the Fink mailing list has <link 
+url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html"
+>more explanation</link>.
+</p>
+</preface>
+
+<section name="versions"><title>Compiler Versions</title>
+<p>
+As GCC has evolved,
+there have been different fink "distributions" to cope with the changes.
+</p>
+<p>
+Each Fink distribution has had certain default values for the gcc and g++
 compilers, which any user compiling from source is expected to have
 installed.  You can expect that direct calls to "gcc" and "g++" from
 within your package will use these default values.  If you need to use
