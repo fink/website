@@ -1,4 +1,4 @@
-<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<a name="2005-06-09%20New%20Fink%20releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
 Three new Fink releases are 
 <a href="<?php print $root; ?>download/index.php">available</a>
@@ -31,9 +31,10 @@ not work with the newly-released XCode 2.1 from Apple.
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
-problematic volume and clicking on "repair disk permissions."
+problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
 </p>
-<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the <code>/Developer/Tools/uninstall-devtools.pl</code> script.  For best results, you may want to do this before updating your OS.</p>
+<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
@@ -72,7 +73,7 @@ users with mission-critical applications to check in on the mailing
 lists to verify whether anyone has had experience with the package in 
 question before upgrading.</p>
 
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
+<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
 <p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with

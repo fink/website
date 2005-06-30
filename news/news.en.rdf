@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-06-20T01:16:42+02:00</dc:date>
+    <dc:date>2005-06-30T13:15:13-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.">
       <title>New Fink releases.</title>
@@ -44,8 +44,9 @@ not work with the newly-released XCode 2.1 from Apple.
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
-problematic volume and clicking on "repair disk permissions."
+problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
 
+Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.
 </description>
       <content:encoded>
 
@@ -80,8 +81,9 @@ not work with the newly-released XCode 2.1 from Apple.
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
-problematic volume and clicking on "repair disk permissions."
+problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
 
+Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
