@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.24 2005/06/19 15:15:52 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.25 2005/06/30 17:11:46 alexkhansen Exp $</cvsid>
 
 
 <newsitem>
@@ -40,8 +40,9 @@ not work with the newly-released XCode 2.1 from Apple.
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
-problematic volume and clicking on "repair disk permissions."
+problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
 </p>
+<p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the <code>/Developer/Tools/uninstall-devtools.pl</code> script.  For best results, you may want to do this before updating your OS.</p>
 </body>
 </newsitem>
 
