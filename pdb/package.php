@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/07/08 18:58:06 $';
+$cvs_date = '$Date: 2005/07/08 19:00:06 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -47,6 +47,11 @@ if (!$rs) {
     print '<p><b>error during query:</b> '.mysql_error().'</p>';
   } else {
     $latest = mysql_fetch_array($qs);
+  }
+
+  $is_restrictive = 0;
+  if ($latest[license] && strcasecmp($latest[license],'Restrictive')==0) {
+      $is_restrictive = 1;
   }
 
  function avail_td($text, $rowspan, $colspan) {
@@ -122,7 +127,7 @@ if (!$rs) {
     if(strlen($dists[0][0])) {
       avail_td($dists[0][0],1,1);
       $vers = $rmap[$dists[0][0].'-stable'];
-      avail_td(strlen($vers) ? $vers : '<i>not present</i>',1,1);
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers : '<i>not present</i>',1,1);
     } else {
       avail_td('<i>none available</i>',$rowspan,2);
     }
