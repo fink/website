@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/10/28 01:55:27 $';
+$cvs_date = '$Date: 2005/07/08 18:58:06 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -38,6 +38,15 @@ if (!$rs) {
 	$rmap[$row[release]] = $epoch.$row[version]."-".$row[revision];
     
     $row = mysql_fetch_array($rs);
+  }
+
+  // Get latest version data (use for version-nonspecific pkg metadata)
+  $qlatest = "SELECT * FROM package WHERE name='$package' AND latest=1";
+  $qs = mysql_query($qlatest, $dbh);
+  if (!$qs) {
+    print '<p><b>error during query:</b> '.mysql_error().'</p>';
+  } else {
+    $latest = mysql_fetch_array($qs);
   }
 
  function avail_td($text, $rowspan, $colspan) {
@@ -154,15 +163,6 @@ if (!$rs) {
   print "</table>\n";
 
   print "<br>";
-
-  // Get latest version data (use for version-nonspecific pkg metadata)
-  $qlatest = "SELECT * FROM package WHERE name='$package' AND latest=1";
-  $qs = mysql_query($qlatest, $dbh);
-  if (!$qs) {
-    print '<p><b>error during query:</b> '.mysql_error().'</p>';
-  } else {
-    $latest = mysql_fetch_array($qs);
-  }
 
   it_start();
   $desc = $latest[desclong];
