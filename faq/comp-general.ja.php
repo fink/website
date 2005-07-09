@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 13:22:34';
+$cvs_date = 'Date: 2005/07/09 13:56:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -261,6 +261,48 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			と <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a> をお読みください。
 		</p><p><b>注記:</b>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p></div>
 </a>
+    <a name="gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: 
+        	ソースからビルドするとき、 <code>gettext-dev</code> と <code>libgettext3-dev</code> の間でたらい回しです。
+        </b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+        	パッケージによっては、 <code>gettext</code> ヘッダから <code>libgettext3-dev</code>
+        	へと依存性が更新されました。
+        	この結果、Fink はビルド依存性を満たすためにインストールされていない方に変更しようとします。
+        	さらに、 <code>fink</code> ツールが <code>gettext-dev</code> を必須としているため、
+        	selfupdate 時には必ずインストールします。
+        </p><p>
+        	同様の問題は、他のパッケージペアでも発生しえます。
+        </p><p>
+        	ビルド依存性エンジンの制限のため、このようなパッケージが交互にインストールされ、
+        	不幸にもビルドが不完全で終わるかもしれません。この場合、<code>update</code> コマンドを
+        	繰り返すことで先に進めるでしょう。
+        </p><p>この問題の解決は <code>fink-0.2.5</code> で予定されています。</p></div>
+    </a>
+    <a name="python-mods">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.24: Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 以下のようであれば:</p><pre>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>
+        	<code>python2*</code> パッケージは、ビルド時に <code>MACOSX_DEPLOYMENT_TARGET</code> 
+        	をある設定ファイルに書き、Python ビルドユーティリティはモジュールをコンパイルする際に
+        	この値を使っています。
+        	これは、10.3 上でビルドした <code>python24</code> を 10.4 上で使う場合、
+        	つまり 10.3 =&gt; 10.4 とアップグレードしたり、 <b>10.4-transitional</b> 
+        	バイナリディストリビューションを使ってビルドせずに更新した場合、
+        	Python は、実際は 10.4 のところ <code>MACOSX_DEPLOYMENT_TARGET</code> の
+        	値が 10.3 だと思い込むミスマッチが発生します。
+        </p><p>
+        <code>fink rebuild python24</code> for the case above.
+        	上記の問題の場合であれば、<code>fink rebuild python24</code> を実行し、
+        	<code>python</code> パッケージを更新すれば修正されます。
+        </p></div>
+    </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>
 <? include_once "../footer.inc"; ?>

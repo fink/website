@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:56:55';
+$cvs_date = 'Date: 2005/07/09 13:56:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -194,12 +194,25 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
       <div class="question"><p><b><? echo FINK_Q ; ?>6.21: I'm trying to download a package, but Fink goes to some weird site with <q>distfiles</q> in its name, and the file isn't there.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> What's happened here is that Fink is trying to use one of it's so called <q>Master</q> mirrors.  These were set up to makes sure that sources for Fink packages are available even when the upstream site has moved them around.  Typically these errors occur when a new upstream version of a package is released, but hasn't made it to the Master mirrors yet.</p><p>To remedy this, run <code>fink configure</code> and set the search order to use Master mirrors last.</p></div>
     </a>
-    
-    
     <a name="compile-options">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.22: I want Fink to use different options in building a package.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p>
           <b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
+    </a>
+    <a name="gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Whenever I try to build from source, Fink keeps waffling between <code>gettext-dev</code> and <code>libgettext3-dev</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code>tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p><p>Similar behavior can happen for other pairs of packages, too. </p><p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can proceed by repeating your update command again.</p><p>A permanent fix should hopefully be available in <code>fink-0.2.5</code>.</p></div>
+    </a>
+    <a name="python-mods">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.24: I get errors involving <code>MACOSX_DEPLOYMENT_TARGET </code>when I try to build a Python module.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> For errors that look like the following:</p><pre>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p></div>
     </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

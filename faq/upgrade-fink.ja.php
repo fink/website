@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink のアップグレード";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 13:22:34';
+$cvs_date = 'Date: 2005/07/09 13:56:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス"><link rel="prev" href="mirrors.php?phpLang=ja" title="Fink ミラー">';
 
 
