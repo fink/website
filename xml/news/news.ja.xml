@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.13 2005/06/27 12:57:38 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.14 2005/07/09 13:57:14 babayoshihiko Exp $</cvsid>
 <newsitem>
 <date>2005-06-09</date>
 <headline>新しい Fink リリース.</headline>
@@ -35,7 +35,16 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
 (アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
 選択し、&quot;ディスクのアクセス権を修復&quot;をクリックします。
+また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
 </p>
+<p>
+追補 6/30/05:  
+古いヘッダファイルなどの混在を避けるため、ソースからパッケージをビルドされる方は
+XCode をクリーンインストールすることをお勧めします。これを行うには、
+<code>/Developer/Tools/uninstall-devtools.pl</code> スクリプトを実行します。
+OS を更新する前にこの操作を行うことが一番確実です。
+</p>
+
 </body>
 </newsitem>
 	<newsitem>
