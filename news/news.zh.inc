@@ -31,8 +31,18 @@ not work with the newly-released XCode 2.1 from Apple.
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
-problematic volume and clicking on "repair disk permissions."
+problematic volume and clicking on "repair disk permissions."  
+Also, the installer requires you to have administrative privileges, so be 
+sure that you're running it as such a user.
 </p>
+<p>
+Note added 6/30/05:  To avoid contamination with obsolete headers and 
+the like, we recommend that people who want to build packages from source 
+should perform a clean install of XCode via running the 
+<code>/Developer/Tools/uninstall-devtools.pl</code> script.  For best 
+results, you may want to do this before updating your OS.
+</p>
+
 <a name="2005-04-29%20Fink%20%E5%92%8C%20Tiger"><span class="news-date">2005-04-29: </span><span class="news-headline">Fink 和 Tiger</span></a><?php gray_line(); ?>
 <p>
 Fink 可以在 OS X 10.4 中使用！ 你可以有几种升级的方法：

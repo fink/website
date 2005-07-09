@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:57:38';
+$cvs_date = 'Date: 2005/07/09 13:57:14';
 $metatags = '';
 
 include_once "header.inc";
@@ -37,7 +37,16 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
 (アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
 選択し、"ディスクのアクセス権を修復"をクリックします。
+また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
 </p>
+<p>
+追補 6/30/05:  
+古いヘッダファイルなどの混在を避けるため、ソースからパッケージをビルドされる方は
+XCode をクリーンインストールすることをお勧めします。これを行うには、
+<code>/Developer/Tools/uninstall-devtools.pl</code> スクリプトを実行します。
+OS を更新する前にこの操作を行うことが一番確実です。
+</p>
+
 <a name="2005-04-29%20Fink%20%E3%81%A8%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink と Tiger.</span></a><?php gray_line(); ?>
 			<p>
 Fink が OS X 10.4 に対応! 更新は以下の通り:

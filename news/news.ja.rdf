@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2005-06-27T22:02:28+09:00</dc:date>
+    <dc:date>2005-07-09T23:00:54+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-06-09%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F.">
       <title>新しい Fink リリース.</title>
@@ -41,6 +41,15 @@ fink scanpackages と sudo apt-get update を実行します。
 Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
 (アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
 選択し、"ディスクのアクセス権を修復"をクリックします。
+また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
+
+
+追補 6/30/05:  
+古いヘッダファイルなどの混在を避けるため、ソースからパッケージをビルドされる方は
+XCode をクリーンインストールすることをお勧めします。これを行うには、
+/Developer/Tools/uninstall-devtools.pl スクリプトを実行します。
+OS を更新する前にこの操作を行うことが一番確実です。
+
 
 </description>
       <content:encoded>
@@ -73,6 +82,15 @@ fink scanpackages と sudo apt-get update を実行します。
 Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
 (アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
 選択し、"ディスクのアクセス権を修復"をクリックします。
+また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
+
+
+追補 6/30/05:  
+古いヘッダファイルなどの混在を避けるため、ソースからパッケージをビルドされる方は
+XCode をクリーンインストールすることをお勧めします。これを行うには、
+/Developer/Tools/uninstall-devtools.pl スクリプトを実行します。
+OS を更新する前にこの操作を行うことが一番確実です。
+
 
 </content:encoded>
     </item>
