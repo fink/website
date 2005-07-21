@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.67 2005/06/29 20:04:07 vasi Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.68 2005/07/21 17:27:26 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -2166,10 +2166,12 @@ LDFLAGS: -L%p/lib
 In addition, starting in fink 0.17.0:
 </p>
 <codeblock>
-LD_PREBIND: 1
+LD_PREBIND: 1 (for the 10.4-transitional distribution earlier)
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </codeblock>
+<p>(Note: LD_PREBIND is set to 0 in the 10.4 distribution and later.)
+</p>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 

@@ -213,7 +213,7 @@ Type: -x11 (boolean)
 Depends: (%type_raw[-x11] = -x11) x11
 CompileScript:  &lt;&lt;
   #!/bin/bash -ev
-  if [ "%type_raw[-x11]" == "-x11" ]; then
+  if ["%type_raw[-x11]" == "-x11"]; then
     ./configure %c --with-x11
   else
     ./configure %c --without-x11

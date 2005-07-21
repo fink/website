@@ -1915,10 +1915,12 @@ LDFLAGS: -L%p/lib
 In addition, starting in fink 0.17.0:
 </p>
 <pre>
-LD_PREBIND: 1
+LD_PREBIND: 1 (for the 10.4-transitional distribution earlier)
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </pre>
+<p>(Note: LD_PREBIND is set to 0 in the 10.4 distribution and later.)
+</p>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 
@@ -2492,4 +2494,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.en.xml,v 1.67 2005/06/29 20:04:07 vasi Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.en.xml,v 1.68 2005/07/21 17:27:26 dmrrsn Exp $</i></p></body></html>
