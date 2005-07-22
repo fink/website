@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.69 2005/07/21 17:32:45 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.70 2005/07/22 15:59:29 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -966,8 +966,8 @@ versioned subdirectories of the standard perl directories, such as
 use the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
-perl 5.6.1 (in the 10.2 trees only),  perl 5.8.0, perl 5.8.1, and
-perl 5.8.4 (coming soon).
+perl 5.6.1 (in the 10.2 trees only),  perl 5.8.0, perl 5.8.1, perl 5.8.4
+(in the 10.3 trees only), and perl 5.8.6.
 </p><p>
 The directive <code>Type: perl 5.6.0</code> automatically uses the
 versioned perl binary and stores the files in the correct subdirectories. 
