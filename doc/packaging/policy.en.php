@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/07/21 17:32:45';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/07/22 16:18:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -557,8 +557,8 @@ versioned subdirectories of the standard perl directories, such as
 use the suffix <code>-pm560</code> for
 a perl module of version 5.6.0.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
-perl 5.6.1 (in the 10.2 trees only),  perl 5.8.0, perl 5.8.1, and
-perl 5.8.4 (coming soon).
+perl 5.6.1 (in the 10.2 trees only), perl 5.8.0 (in the 10.3 trees only),
+perl 5.8.1, perl 5.8.4, and perl 5.8.6.
 </p><p>
 The directive <code>Type: perl 5.6.0</code> automatically uses the
 versioned perl binary and stores the files in the correct subdirectories. 
