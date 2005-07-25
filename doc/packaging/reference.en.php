@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/07/25 05:51:10';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/07/25 21:49:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -740,15 +740,15 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
 <p>
-In addition, starting in fink 0.17.0:
+In addition, starting in fink 0.17.0, the following values are set for
+the 10.4-transitional distribution and earlier (but are not set for
+the 10.4 distribution and later):
 </p>
 <pre>
-LD_PREBIND: 1 (for the 10.4-transitional distribution and earlier)
+LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
 LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </pre>
-<p>(Note: LD_PREBIND is set to 0 in the 10.4 distribution and later.)
-</p>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 
