@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/07/08 00:50:06';
+$cvs_date = 'Date: 2005/07/25 15:10:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -264,9 +264,7 @@ fink selfupdate-cvs</pre></div>
         of <code>pathsetup.sh</code>. Alternately, you can run
         the <code>pathsetup.app</code> application on the Fink
         binary distribution disk image.</p><p>On the other hand, if you only have problems in the Apple X11
-        terminal, this probably means that you need to create a <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a>
-        file and add the line</p><pre>. /sw/bin/init.sh</pre><p>near the beginning (i.e. before any programs get run). Restart X11
-        (if running) after you do this.</p><p>These <code>/sw/bin/init.*</code> scripts do much
+        terminal, the easy solution is to modify the "Terminal" entry in the X11 Application menu via the <b>Applications-&gt;Customize Menu... </b>option.  Instead of just</p><pre>xterm</pre><p>change the command field to read</p><pre>xterm -ls</pre><p><code>ls</code> here means <q>login shell</q>, and the result is that your full login setup gets used (just like the OS X Terminal).</p><p>These <code>/sw/bin/init.*</code> scripts do much
 	more than just add <code>/sw/bin</code> to your PATH.
 	Many packages will not work correctly without these additional
 	actions.</p></div>
