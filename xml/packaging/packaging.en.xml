@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.73 2005/07/25 21:49:09 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.74 2005/07/26 08:38:42 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1005,9 +1005,17 @@ any perl-versioned module packages must be written to allow more than
 one version of themselves to be installed concurrently. One must use
 care when installing manpages and binary or other script executables
 in these packages in order to prevent installation conflicts due to
-filename collisions. As a simple solution for manpages, starting in
+filename collisions. 
+You are not allowed to have any files in a package whose name ends
+with -pm<em>XYZ</em> that would have an identical pathname across
+different <em>XYZ</em>. Using <code>Replaces</code> to allow the
+same-named files to overwrite each other in different perl-versions of
+these perl-module packages is no longer acceptable.
+As a simple solution for manpages, starting in
 March 2005, Fink has defined alternate locations in MANPATH:
-<filename>%p/lib/perl5/X.Y.Z/man</filename> for each perl-X.Y.Z. For
+<filename>%p/lib/perl5/X.Y.Z/man</filename> for each perl-X.Y.Z. You
+no longer need to create mutually-exclusive -man or -doc SplitOff
+packages. For
 example, to avoid conflicts between uri-pm581 and uri-pm586, the
 same-named <filename>URI.3pm</filename> manpage is installed
 as <filename>%p/lib/perl5/5.8.1/man/man3/URI.3pm</filename> and
@@ -1087,6 +1095,14 @@ InstallScript: &lt;&lt;
 The user accesses ptksh for whichever perl she wants. For convenience,
 one could use <code>update-alternatives</code> to allow users to be
 able to access these by their generic (no perl-version) names as well.
+</p>
+<p>
+Also as of March 2005, the location of manpages and modules installed
+by fink packages for perl itself (packages perlXYZ and perlXYZ-core
+other than the perl-version provided by Apple) has changed. As a
+result of this relocation, other fink packages that supply updated
+versions of core perl modules should not list any perlXYZ or
+perlXYZ-core packages in the <code>Replaces</code> field.
 </p>
 
 
