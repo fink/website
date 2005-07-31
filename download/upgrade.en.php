@@ -1,13 +1,11 @@
 <?
 $title = "Upgrade Matrix";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2005/07/30 22:47:05 $';
+$cvs_date = '$Date: 2005/07/31 00:12:03 $';
 
 include "header.inc";
 ?>
-<? 
-include "../fink_version.inc";
-?>
+
 <h1>Fink Upgrade Matrix</h1>
 <p>(For OS X versions>= 10.2)</p>
 <h3>Same OS:</h3>
@@ -45,13 +43,14 @@ Check the version of Fink you have by running
 <ol><li>Update Fink to the latest appropriate version supported by your OS (as above in the <em>Source Update</em> item in the <em>Same OS </em>section)--you need not turn on the unstable tree.</li>  
 <li>Remove your old Developer Tools by running "<tt>/Developer/Tools/uninstall-devtools.pl</tt>" in a terminal.</li>
 <li>Then update your OS.</li>
+<li>Now install an appropriate Developer Tools (XCode) version.</li>
 <li>Run "<tt>/sw/lib/fink/postinstall.pl</tt>" in a terminal--this will redirect Fink to the correct distribution for your OS version.</li>
 <li>Run "<tt>fink scanpackages</tt>" in the terminal (Source->scanpackages for Fink Commander users).</li>
 <li>Run "<tt>sudo apt-get update</tt>" in the terminal (Binary->update).</li>
 <p>(The above two commands get rid of binary-distribution related errors.)</p>
 <li>Run "<tt>fink selfupdate</tt>" in the terminal (Source->selfupdate).</li></ol>
 
-<p>Note:  A prior version of this document (appropriate for older Fink versions) can be found <a href=upgrade-old.en.php>here</a>.</p>
+<p>Note:  A prior version of this document (appropriate for older Fink versions) can be found <a href=./upgrade-old.en.php>here</a>.</p>
 
 <?
 include "footer.inc";
