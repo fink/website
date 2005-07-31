@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2005/05/14 14:32:43 $';
+$cvs_date = '$Date: 2005/07/31 16:24:11 $';
 
 include "header.inc";
 ?>
@@ -30,13 +30,17 @@ this list.</p>
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
+<h2>Former Core Team members</h2>
+<ul>
+<li>Peter O'Gorman (<i>pogma</i>)</li>
+</ul>
+
 <h2>Fink Core Team</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
-<li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
