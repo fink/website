@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.74 2005/07/26 08:38:42 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.75 2005/08/01 06:16:15 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -71,7 +71,7 @@ files are in the dpkg format and have the extension .deb.
 A package is identified by three strings: the package name, the
 version and the revision.
 All of these may contain lower-case letters (a-z), numbers (0-9),
-dashes (-), plus signs (+) and dots (.).
+dashes (-; note: not allowed in the revision), plus signs (+) and dots (.).
 Other characters are not allowed.
 In particular, capital letters and underscores are not allowed.
 </p>
@@ -1528,7 +1528,7 @@ Required field.
   removing, or renaming splitoff packages or shifting files among
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
-  increase <code>Revision</code> by 10 in the newer tree in order to
+  increase <code>Revision</code> by 10 (or some other large number) in the newer tree in order to
   leave space for future updates to the package in the older
   tree.
 </p>
