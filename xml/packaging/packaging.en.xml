@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.77 2005/08/01 06:22:01 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.78 2005/08/01 06:23:58 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2829,6 +2829,22 @@ that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
 be modified by declaring the field within the <code>SplitOff</code> or <code>SplitOff<em>N</em></code>.</li>
 </ul>
+<p>
+Because %n-%v-%r is treated as the unique identifier of a package, you
+must not have the same <code>Package</code> (at the
+same <code>Version</code> and <code>Revision</code>) listed as
+a <code>SplitOff</code> (or <code>SplitOff<em>N</em></code>) of
+multiple packages. If you use variants, remember that each variant is
+considered an independent package, so the following package layout is
+forbidden:
+</p>
+<codeblock>
+Package: mime-base64-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.6)
+SplitOff: %lt;%lt;
+  Package: mime-base64-pm-bin
+%lt;%lt;
+</codeblock>
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
