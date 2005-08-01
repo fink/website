@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.76 2005/08/01 06:20:34 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.77 2005/08/01 06:22:01 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -1840,6 +1840,17 @@ fink.)
 <em>Note:</em> Fink itself currently ignores this field.
 However, it is passed on to dpkg and will be handled accordingly.
 In summary, it only effects run-time, not build-time.
+</p>
+</itemd></item>
+
+<item><itemt>BuildConflicts</itemt>
+<itemd>
+<p>
+A list of packages that must not be installed while this package is
+being compiled. This can be used to prevent <code>./configure</code>
+or the compiler from seeing undesired library headers or to avoid use
+of a version of a tool that is known to be broken (for example, a bug
+in a certain version of sed).
 </p>
 </itemd></item>
 
