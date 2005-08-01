@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/07/26 08:38:42';
+$cvs_date = 'Date: 2005/08/01 06:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -243,10 +243,10 @@ and %{Ni} to avoid confusion with the %n and %N expansions.
 </p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
 <p>
-Valid only in <code>*Script</code> fields, the default contents of
+Valid only in <code>PatchScript</code>, <code>CompileScript</code>, and <code>InstallScript</code> fields, the default contents of
 that type of field. The value is often dependent on
 the <code>Type</code> field, and is always defined (though it may be
-blank). When used in a <code>SplitOff: InstallScript</code>, this
+blank). When used in the <code>InstallScript</code> of a <code>SplitOff</code> (or <code>SplitOff<b>N</b></code>), this
 expansion will yield the <b>parent's</b> default, even though the
 default for <code>InstallScript</code> in a <code>SplitOff</code>
 package is blank. (Introduced in fink-0.20.6)

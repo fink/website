@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/07/26 08:38:42';
+$cvs_date = 'Date: 2005/08/01 06:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
 
@@ -48,7 +48,7 @@ files are in the dpkg format and have the extension .deb.
 A package is identified by three strings: the package name, the
 version and the revision.
 All of these may contain lower-case letters (a-z), numbers (0-9),
-dashes (-), plus signs (+) and dots (.).
+dashes (-; note: not allowed in the revision), plus signs (+) and dots (.).
 Other characters are not allowed.
 In particular, capital letters and underscores are not allowed.
 </p>

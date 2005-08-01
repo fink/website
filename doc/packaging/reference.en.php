@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/07/26 08:38:42';
+$cvs_date = 'Date: 2005/08/01 06:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -119,7 +119,7 @@ Required field.
   removing, or renaming splitoff packages or shifting files among
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
-  increase <code>Revision</code> by 10 in the newer tree in order to
+  increase <code>Revision</code> by 10 (or some other large number) in the newer tree in order to
   leave space for future updates to the package in the older
   tree.
 </p>
@@ -396,6 +396,14 @@ fink.)
 <b>Note:</b> Fink itself currently ignores this field.
 However, it is passed on to dpkg and will be handled accordingly.
 In summary, it only effects run-time, not build-time.
+</p>
+</td></tr><tr valign="top"><td>BuildConflicts</td><td>
+<p>
+A list of packages that must not be installed while this package is
+being compiled. This can be used to prevent <code>./configure</code>
+or the compiler from seeing undesired library headers or to avoid use
+of a version of a tool that is known to be broken (for example, a bug
+in a certain version of sed).
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
@@ -1203,6 +1211,22 @@ that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
 be modified by declaring the field within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.</li>
 </ul>
+<p>
+Because %n-%v-%r is treated as the unique identifier of a package, you
+must not have the same <code>Package</code> (at the
+same <code>Version</code> and <code>Revision</code>) listed as
+a <code>SplitOff</code> (or <code>SplitOff<b>N</b></code>) of
+multiple packages. If you use variants, remember that each variant is
+considered an independent package, so the following package layout is
+forbidden:
+</p>
+<pre>
+Package: mime-base64-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.6)
+SplitOff: %lt;%lt;
+  Package: mime-base64-pm-bin
+%lt;%lt;
+</pre>
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
