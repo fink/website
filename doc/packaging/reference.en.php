@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/08/01 06:23:58';
+$cvs_date = 'Date: 2005/08/02 03:52:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -130,6 +130,9 @@ This optional field can be used to specify the epoch of the package
 (which defaults to 0 if not specified). For more information refer to
 the <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
 Policy Manual</a>.
+Because Fink and some of the underlying Debian tools use
+name-version-revision as the unique identifier of a package, you must
+not create a package that differs from another solely by its epoch.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
