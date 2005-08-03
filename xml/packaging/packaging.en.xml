@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.79 2005/08/02 03:52:06 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.80 2005/08/03 06:05:56 vasi Exp $</cvsid>
 
 <preface>
 <p>
@@ -277,7 +277,7 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 <itemd>
 <p>
 the <em>d</em>estination directory where the tree to be packaged is built, e.g.
-<filename>/sw/src/root-gimp-1.2.1-1</filename>. This temporary directory serves
+<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename>. This temporary directory serves
 as root during the installation phase of compiling a package. You must not assume that
 <filename>root-%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
@@ -318,7 +318,7 @@ the path where the p<em>a</em>tches can be found
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-the <em>b</em>uild directory, e.g. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>.
+the <em>b</em>uild directory, e.g. <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>.
 You must not assume that
 <filename>%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
@@ -1419,11 +1419,11 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
 installation in <filename>/sw</filename> and the package gimp-1.2.1-1.</p>
-<p>In the <em>unpack phase</em> the directory <filename>/sw/src/gimp-1.2.1-1</filename> is created
+<p>In the <em>unpack phase</em> the directory <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. <filename>/sw/src/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
+(i.e. <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
 fields.</p>
 <p>In the <em>patch phase</em> the source is patched so that it will
@@ -1435,9 +1435,9 @@ compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.</p>
 <p>In the <em>install phase</em> the package is installed to a temporary
-directory, <filename>/sw/src/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
+directory, <filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
 All files that would normally be installed to <filename>/sw</filename> are installed in
-<filename>/sw/src/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the
+<filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>

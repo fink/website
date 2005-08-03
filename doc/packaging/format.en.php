@@ -167,7 +167,7 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 the <b>d</b>estination directory where the tree to be packaged is built, e.g.
-<code>/sw/src/root-gimp-1.2.1-1</code>. This temporary directory serves
+<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. This temporary directory serves
 as root during the installation phase of compiling a package. You must not assume that
 <code>root-%f</code> will be in <code>%p/src</code> since
 a user can change that directory using the <code>Buildpath</code> field
@@ -193,7 +193,7 @@ the path where the p<b>a</b>tches can be found
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-the <b>b</b>uild directory, e.g. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.
+the <b>b</b>uild directory, e.g. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
 You must not assume that
 <code>%f</code> will be in <code>%p/src</code> since
 a user can change that directory using the <code>Buildpath</code> field

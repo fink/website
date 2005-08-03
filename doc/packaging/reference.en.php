@@ -18,11 +18,11 @@ include_once "header.en.inc";
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
 installation in <code>/sw</code> and the package gimp-1.2.1-1.</p>
-<p>In the <b>unpack phase</b> the directory <code>/sw/src/gimp-1.2.1-1</code> is created
+<p>In the <b>unpack phase</b> the directory <code>/sw/src/fink.build/gimp-1.2.1-1</code> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
+(i.e. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
 fields.</p>
 <p>In the <b>patch phase</b> the source is patched so that it will
@@ -34,9 +34,9 @@ compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
-directory, <code>/sw/src/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
+directory, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
 All files that would normally be installed to <code>/sw</code> are installed in
-<code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) instead. See the
+<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>

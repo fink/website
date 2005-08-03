@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.31 2005/05/22 07:29:56 michga Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.32 2005/08/03 06:05:58 vasi Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -937,12 +937,17 @@ manually.</p>
 	    <em>Buildpath:</em> path</p>
 	  <p>Fink needs to create several temporary directories for
 each package it compiles from source. By default, they are placed
-in <filename>/sw/src</filename> but if you want them to be somewhere
-else, specify the path here. See the descriptions of
+in <filename>/sw/src</filename> on Panther and earlier, and 
+<filename>/sw/src/fink.build</filename> on Tiger. If you want them to be
+somewhere else, specify the path here. See the descriptions of
 the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
 later in this document for more information about these temporary
 directories.
 	    </p>
+	    <p>On Tiger, it is recommended that the Buildpath end with .noindex
+or .build. Otherwise, Spotlight will attempt to index the temporary files in
+the Buildpath, slowing down builds.
+    	</p>
 	</li>
       </ul>
     </section>
@@ -1088,7 +1093,7 @@ them. The following options fall into this category.</p>
         <li>
           <p>
             <em>KeepRootDir:</em> boolean</p>
-          <p>Causes Fink not to delete the /sw/src/root-[name]-[version]-[revision] directory
+          <p>Causes Fink not to delete the directory root-[name]-[version]-[revision] in the <em>Buildpath</em>
 after building a package. Defaults to false. <em>Be careful, this
 option can fill your hard-disk quickly!</em>
 Passing <em>fink</em> the <em>-K</em> flag has the same effect, but
@@ -1098,8 +1103,8 @@ only operates on that single <em>fink</em> invocation.
         <li>
           <p>
             <em>KeepBuildDir:</em> boolean</p>
-          <p>Causes Fink not to delete the /sw/src/[name]-[version]-[revision] directory after
-building a package. Defaults to false. <em>Be careful, this option can
+           <p>Causes Fink not to delete the directory [name]-[version]-[revision] in the <em>Buildpath</em>
+after building a package. Defaults to false. <em>Be careful, this
 fill your hard-disk quickly!</em>
 Passing <em>fink</em> the <em>-k</em> flag has the same effect, but
 only operates on that single <em>fink</em> invocation.
