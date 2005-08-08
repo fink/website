@@ -1,8 +1,8 @@
 <?
 $title = "Porting - Preparing for 10.3";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:49:05';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="prev" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2">';
+$cvs_date = 'Date: 2005/08/08 02:59:00';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.4.php?phpLang=en" title="Preparing for 10.4"><link rel="prev" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2">';
 
 
 include_once "header.en.inc";
@@ -115,7 +115,8 @@ include_once "header.en.inc";
 
 
 
-
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing-10.4.php?phpLang=en">6. Preparing for 10.4</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

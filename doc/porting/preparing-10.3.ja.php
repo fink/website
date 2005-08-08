@@ -1,8 +1,8 @@
 <?
 $title = "移植 - 10.3 に向けて";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/03/25 22:25:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="prev" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて">';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/08/08 02:59:00';
+$metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.4.php?phpLang=ja" title="10.4 に向けて"><link rel="prev" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて">';
 
 
 include_once "header.ja.inc";
@@ -87,7 +87,8 @@ include_once "header.ja.inc";
   </p>
 
 
-
+<p align="right"><? echo FINK_NEXT ; ?>:
+<a href="preparing-10.4.php?phpLang=ja">6. 10.4 に向けて</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

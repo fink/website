@@ -10,6 +10,7 @@ $navbox = array(
   "doc/porting/libtool.php?phpLang=fr", "libtool",
   "doc/porting/preparing-10.2.php?phpLang=fr", "Préparation pour 10.2",
   "doc/porting/preparing-10.3.php?phpLang=fr", "Préparation pour 10.3",
+  "doc/porting/preparing-10.4.php?phpLang=fr", "Préparation pour 10.4",
 );
 $printlink = "doc/porting/porting.fr.html";
 

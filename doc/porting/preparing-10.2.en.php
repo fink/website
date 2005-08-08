@@ -1,7 +1,7 @@
 <?
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/03/16 18:49:05';
+$cvs_date = 'Date: 2005/08/08 02:59:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.3.php?phpLang=en" title="Preparing for 10.3"><link rel="prev" href="libtool.php?phpLang=en" title="GNU libtool">';
 
 

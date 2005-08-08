@@ -10,6 +10,7 @@ $navbox = array(
   "doc/porting/libtool.php?phpLang=zh", "libtool",
   "doc/porting/preparing-10.2.php?phpLang=zh", "为 10.2 做准备",
   "doc/porting/preparing-10.3.php?phpLang=zh", "为 10.3 做准备",
+  "doc/porting/preparing-10.4.php?phpLang=zh", "为 10.4 做准备",
 );
 $printlink = "doc/porting/porting.zh.html";
 

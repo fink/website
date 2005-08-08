@@ -1,7 +1,7 @@
 <?
 $title = "Portage - libtool";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/17 17:09:06';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2005/08/08 02:59:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
 
 
