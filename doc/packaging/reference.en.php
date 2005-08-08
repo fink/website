@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/08/02 03:52:06';
+$cvs_date = 'Date: 2005/08/08 01:24:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -257,12 +257,22 @@ changes in package description files. A given version of fink is
 configured with the maximum integer "N" that it can handle. Any
 package in a higher InfoN field will be ignored, so this mechanism
 should only be used when necessary, lest people with older versions of
-fink be needlessly alienated. The documentation of other fields will
-note when a specific InfoN must be used. To use this mechanism, embed
+fink be needlessly alienated. To use this mechanism, embed
 the entire package description in the desired InfoN field. See the
 "File Format" section earlier in this document for a description of
 the syntax for multiline fields.
+Here are the features added for each InfoN level, along with the
+earliest version of fink that supports it:
 </p>
+<ul>
+<li>
+<code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
+in the main <code>Package</code> field of the .info file and the
+ability to use the <code>%type_*</code> percent-expansions in
+the <code>Package</code> field of <code>SplitOff</code>
+(and <code>SplitOff<b>N</b></code>) packages.
+</li>
+</ul>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
