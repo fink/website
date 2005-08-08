@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.9 2005/03/17 17:09:06 michga Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.10 2005/08/08 02:59:00 dmacks Exp $</cvsid> 
 <preface>
 <p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
@@ -289,6 +289,12 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 </itemtable>
 <p>Lors de la migration d'un paquet vers Mac OS X 10.3, essayez de supprimer ces dépendances obsolètes, car il se peut que ces paquets soient supprimés des arborescences futures. Cela signifie qu'il faut un fichier de description différent pour chaque arborescence. Comme toujours, le champ <code>Revision</code> doit être incrémenté lors de changement fait sur un paquet. De cette façon, les utilisateurs qui passent de Mac OS X 10.2 à Mac OS X 10.3 voient les paquets spécifiques à la branche 10.3 comme &quot;plus récents&quot; que les paquets de l'arborescence 10.2. Par convention, le champ <code>Revision</code> doit être incrémenté de 10 unités lors d'une migration vers un arbre plus récent de façon à laisser une marge pour pouvoir mettre à jour les paquets des branches moins récentes.</p>
 <p>Lors du test d'un paquet en migration, n'oubliez pas de désinstaller les paquets que vous avez supprimé du champ <code>BuildDepends</code>, pour éviter que le compilateur lie avec les librairies Fink installées.</p>
+</section>
+</chapter>
+<chapter filename="preparing-10.4">
+<title>Préparation pour la version 10.4</title>
+<shorttitle>Préparation pour 10.4</shorttitle>
+<section name="perl"><title>Perl</title>
 </section>
 </chapter>
 </document>

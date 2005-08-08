@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.4 2005/03/25 22:25:29 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.5 2005/08/08 02:59:00 dmacks Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -575,6 +575,12 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
     そうでないと Fink が提供するライブラリにリンクする可能性があります．
   </p>
 
+</section>
+</chapter>
+<chapter filename="preparing-10.4">
+<title>10.4 に向けて</title>
+<shorttitle>10.4 に向けて</shorttitle>
+<section name="perl"><title>Perl</title>
 </section>
 </chapter>
 </document>

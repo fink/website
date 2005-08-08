@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 	<title>移植 Unix 软件到 Darwin 和 Mac OS X 上</title>
 	<shorttitle>移植</shorttitle>
-	<cvsid>$Id: porting.zh.xml,v 1.4 2005/04/09 16:15:17 babayoshihiko Exp $</cvsid> 
+	<cvsid>$Id: porting.zh.xml,v 1.5 2005/08/08 02:59:00 dmacks Exp $</cvsid> 
 
 	<preface>
 		<p>本文档包含如何移植 Unix 软件到 Darwin 和 Mac OS X 平台上的提示。
@@ -652,6 +652,13 @@ url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html"
 
 </section>
 
+</chapter>
+
+<chapter filename="preparing-10.4">
+<title>为 10.4 做准备</title>
+<shorttitle>为 10.4 做准备</shorttitle>
+<section name="perl"><title>Perl</title>
+</section>
 </chapter>
 <!-- end tranlation -->
 
