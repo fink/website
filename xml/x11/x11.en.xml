@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.17 2005/06/10 01:04:10 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.18 2005/08/13 15:00:55 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -805,7 +805,7 @@ their menus work.
 <code>exec</code> before the last line like in the examples below.)
 </p>
       <p>
-A simple example that starts up GNOME:
+A simple example that starts up GNOME on XFree86 or Xorg:
 </p>
       <codeblock>. /sw/bin/init.sh
 exec gnome-session</codeblock>
@@ -819,13 +819,13 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
-      <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>
+<!-->      <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>
       <codeblock>. /sw/bin/init.sh
-quartz-wm --only-proxy &amp;
+quartz-wm<--> <!--only-proxy &amp;
 metacity &amp;
 exec gnome-session
-</codeblock>
-      <p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>
+</codeblock> <-->
+      <p>To start GNOME 2.4 and later under Apple's X11:</p>
       <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
