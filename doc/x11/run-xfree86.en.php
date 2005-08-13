@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting X11";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/10 01:04:10';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/08/13 15:00:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=en" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11">';
 
 
@@ -160,7 +160,7 @@ their menus work.
 <code>exec</code> before the last line like in the examples below.)
 </p>
       <p>
-A simple example that starts up GNOME:
+A simple example that starts up GNOME on XFree86 or Xorg:
 </p>
       <pre>. /sw/bin/init.sh
 exec gnome-session</pre>
@@ -174,13 +174,8 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</pre>
-      <p>To start GNOME 2.2 under Apple's X11, use the following sequence:</p>
-      <pre>. /sw/bin/init.sh
-quartz-wm --only-proxy &amp;
-metacity &amp;
-exec gnome-session
-</pre>
-      <p>To start GNOME 2.4 under Apple's X11, metacity is started up automatically, so the sequence is:</p>
+ 
+      <p>To start GNOME 2.4 and later under Apple's X11:</p>
       <pre>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
