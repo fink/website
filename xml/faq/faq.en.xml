@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.53 2005/07/25 15:10:39 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.54 2005/08/13 01:20:37 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -2194,6 +2194,9 @@ fink selfupdate; fink index</codeblock>
         <p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <em>bash</em> users and:</p>
         <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
         <p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <em>tcsh</em> users.</p>
+	<p>This will automatically be set if you install 
+<code>base-files-1.9.7-1</code> or later.</p>
+	<!--TODO This is no longer the case for OS 10.4.3 and later-->
       </answer>
     </faqentry>
   </chapter>
