@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.32 2005/08/03 06:05:58 vasi Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.33 2005/08/13 15:49:18 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -64,7 +64,7 @@ also need:
       <ul>
         <li>
           <p>
-Development tools.
+Developer tools.  
 On Mac OS X, install the Developer.pkg package from the Developer
 Tools CD.
 Note that the tools must match your Mac OS X version.
@@ -89,20 +89,17 @@ I'm talking hours or even days here.
     </section>
     <section name="supported-os">
       <title>Supported Systems</title>
+      <p><em>Mac OS X 10.4</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.</p>
       <p>
-        <em>Mac OS X 10.3</em> is the operating system of choice for running
-Fink.
-All developers run it, and packages are tested on this system.
-It is considered "fully supported and tested", although there may
-still be stray compile problems with single packages.
+        <em>Mac OS X 10.3</em> is is considered to be <quote>fully supported and tested</quote>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
-      <p><em>Mac OS X 10.2</em> is still supported, though some newer packages may not have 10.2 versions available.</p>
+      <p><em>Mac OS X 10.2</em> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
       <p>
         <em>Mac OS X 10.1</em> is still supported to some extent.
 You must run Fink 0.4.1 and no later versions.
 </p>
       <p>
-Darwin 7.0.1 is the Darwin version corresponding to Mac OS X 10.3, and <em>Darwin 6.0.2</em> is the Darwin version corresponding to Mac OS X
+<em>Darwin 8.x</em> is the Darwin version corresponding to Mac OS X 10.4, <em>Darwin 7.x</em> is the Darwin version corresponding to Mac OS X 10.3, and <em>Darwin 6.x</em> is the Darwin version corresponding to Mac OS X
 10.2.
 They should work in general, but are not as well tested as most people
 just run Mac OS X proper instead.
