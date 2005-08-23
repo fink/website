@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/08/13 15:49:18';
+$cvs_date = 'Date: 2005/08/23 01:23:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -160,7 +160,7 @@ The <code>fink</code> tool will allow you to install packages that are not yet
 available in the <a href="intro.php?phpLang=en#src-vs-bin">binary
 distribution</a>.
       </p>
-      <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
+      <p>First of all, you'll need an appropriate version of the Developer Tools for your system.  The latest version is available for free download after registration at <a href="http://connect.apple.com">http://connect.apple.com</a>.  </p>
       <p>
 To get a list of packages that are available for installation from
 source, ask the <code>fink</code> tool:
@@ -220,30 +220,40 @@ More details about the <code>fink</code> tool are available in the chapter
       
       <p>When you want to install a package, you should first check the <a href="http://fink.sourceforge.net/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
-        <li>
-          <p>
-            <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p>
+        <li>Binary Distribution
+<ol>
+            <li><p>
+            <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p></li>
+            <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <li><p><b>0.7.2</b>
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-        <li><b>0.6.3:</b>  this is the version that can be installed from binaries for OS 10.2.</li>
-        <li>
-          <p>
-<b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=en">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.
+</p></li>
+          </ol>
+          
         </li>
-        <li>
+      </ul>
+      <ul>
+        <li>CVS/rsync Distributions
+<ol>
+            <li>
           <p>
-            <b>current-10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-        <li><p><b>current-10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
-</li>
-        <li>
+            <li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.3.</p></li>
+            <li><p><b>10.4-transitional stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4.</p></li>
+            <li>
           <p>
-            <b>current-10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
+            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-        <li><b>current-10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+            <li><p><b>10.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.3.</p></li>
+            <li><p><b>10.4-transitional unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.4.</p></li>
+          </ol></li>
       </ul>
     
     <h2><a name="x11">3.7 Getting X11 Sorted Out</a></h2>

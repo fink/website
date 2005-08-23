@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/08/13 15:49:18';
+$cvs_date = 'Date: 2005/08/23 01:23:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 
@@ -50,7 +50,7 @@ also need:
           <p>
 Developer tools.  
 On Mac OS X, install the Developer.pkg package from the Developer
-Tools CD.
+Tools (known as XCode for 10.3 and 10.4) CD (they're on the main DVD for OS 10.4), or <a href="http://connect.apple.com">download</a> the latest version--this is often desirable, as later versions frequently fix issues (though admittedly sometimes they break things).    
 Note that the tools must match your Mac OS X version.
 On Darwin, the tools should be present in the default install.
 </p>

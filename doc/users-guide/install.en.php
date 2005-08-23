@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/08/13 15:49:18';
+$cvs_date = 'Date: 2005/08/23 01:23:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -125,12 +125,11 @@ In most cases, you can do this by entering the command
       </p>
       <pre>/sw/bin/pathsetup.sh</pre>
       <p>
-	in a terminal window. Note that for some older versions of
-	fink called this <code>pathsetup.command</code>, and one could
-	run it by entering the command:
-      </p>
-      <pre>open /sw/bin/pathsetup.command</pre>
-      <p>However, if that doesn't work for some reason, you can configure it
+	in a terminal window. </p>
+      <p>Note that for some older versions of
+	fink the program was called  <code>pathsetup.command</code>, and one could
+	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
+      <p>However, if this doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
 running the command:
@@ -220,7 +219,7 @@ pico .cshrc</pre>
         </li>
       </ul>
       <p>
-Note that the scripts also add <code>/usr/X11R6/bin</code> and
+Note that the <code>init.sh</code>and <code>init.csh</code> scripts also add <code>/usr/X11R6/bin</code> and
 <code>/usr/X11R6/man</code> to your PATH so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
