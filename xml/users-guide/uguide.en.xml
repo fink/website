@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.33 2005/08/13 15:49:18 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.34 2005/08/23 01:23:11 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -66,7 +66,7 @@ also need:
           <p>
 Developer tools.  
 On Mac OS X, install the Developer.pkg package from the Developer
-Tools CD.
+Tools (known as XCode for 10.3 and 10.4) CD (they're on the main DVD for OS 10.4), or <link url="http://connect.apple.com">download</link> the latest version--this is often desirable, as later versions frequently fix issues (though admittedly sometimes they break things).    
 Note that the tools must match your Mac OS X version.
 On Darwin, the tools should be present in the default install.
 </p>
@@ -266,12 +266,11 @@ In most cases, you can do this by entering the command
       </p>
       <codeblock>/sw/bin/pathsetup.sh</codeblock>
       <p>
-	in a terminal window. Note that for some older versions of
-	fink called this <filename>pathsetup.command</filename>, and one could
-	run it by entering the command:
-      </p>
-      <codeblock>open /sw/bin/pathsetup.command</codeblock>
-      <p>However, if that doesn't work for some reason, you can configure it
+	in a terminal window. </p>
+      <p>Note that for some older versions of
+	fink the program was called  <filename>pathsetup.command</filename>, and one could
+	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
+      <p>However, if this doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
 running the command:
@@ -361,7 +360,7 @@ pico .cshrc</codeblock>
         </li>
       </ul>
       <p>
-Note that the scripts also add <filename>/usr/X11R6/bin</filename> and
+Note that the <filename>init.sh</filename>and <filename>init.csh</filename> scripts also add <filename>/usr/X11R6/bin</filename> and
 <filename>/usr/X11R6/man</filename> to your PATH so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the
@@ -528,7 +527,7 @@ The <code>fink</code> tool will allow you to install packages that are not yet
 available in the <xref chapter="intro" section="src-vs-bin">binary
 distribution</xref>.
       </p>
-      <p>First of all, you'll need an appropriate version of the Development Tools for your system.  These are available for free download after registration at <link url="http://connect.apple.com">http://connect.apple.com</link>.</p>
+      <p>First of all, you'll need an appropriate version of the Developer Tools for your system.  The latest version is available for free download after registration at <link url="http://connect.apple.com">http://connect.apple.com</link>.  </p>
       <p>
 To get a list of packages that are available for installation from
 source, ask the <code>fink</code> tool:
@@ -588,30 +587,40 @@ More details about the <code>fink</code> tool are available in the chapter
       <title>Available versions</title>
       <p>When you want to install a package, you should first check the <link url="http://fink.sourceforge.net/pdb/index.php">package database</link> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
-        <li>
-          <p>
-            <em>0.4.1:</em>  this is the version that can be installed from binaries for OS 10.1.</p>
+        <li>Binary Distribution
+<ol>
+            <li><p>
+            <em>0.4.1:</em>  this is the version that can be installed from binaries for OS 10.1.</p></li>
+            <li><p><em>0.6.4:</em>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <li><p><em>0.7.2</em>
+  This is the base version that can be installed from binaries for OS 10.3.  If you <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</link> Fink, later versions of some packages may be available.</p> 
         </li>
-        <li><em>0.6.3:</em>  this is the version that can be installed from binaries for OS 10.2.</li>
-        <li>
-          <p>
-<em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <xref chapter="upgrade">upgrade</xref> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+            <li><p><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</link> Fink, later versions of some packages may be available.
+</p></li>
+          </ol>
+          
         </li>
-        <li>
+      </ul>
+      <ul>
+        <li>CVS/rsync Distributions
+<ol>
+            <li>
           <p>
-            <em>current-10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <em>10.2-gcc3.3 stable:</em>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-        <li><p><em>current-10.3 stable:</em>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
-</li>
-        <li>
+            <li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.3.</p></li>
+            <li><p><em>10.4-transitional stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4.</p></li>
+            <li>
           <p>
-            <em>current-10.2-gcc3.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
+            <em>10.2-gcc3.3 unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-        <li><em>current-10.3 unstable:</em>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+            <li><p><em>10.3 unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.3.</p></li>
+            <li><p><em>10.4-transitional unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.4.</p></li>
+          </ol></li>
       </ul>
     </section>
     <section name="x11">
