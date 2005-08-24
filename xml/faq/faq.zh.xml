@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.18 2005/07/09 13:56:39 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.19 2005/08/24 00:51:50 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -588,11 +588,12 @@ fink selfupdate-cvs</codeblock>
         of <filename>pathsetup.sh</filename>. Alternately, you can run
         the <filename>pathsetup.app</filename> application on the Fink
         binary distribution disk image.</p>
-        <!-- end translation -->
-        <p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc" >.xinitrc</link> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p>
-        <codeblock>. /sw/bin/init.sh</codeblock>
-        <p>在做完以后，重新运行 X11。</p>
-        <!-- start translation -->
+        <p>On the other hand, if you only have problems in the Apple X11
+        terminal, the easy solution is to modify the "Terminal" entry in the X11 Application menu via the <em>Applications-&gt;Customize Menu... </em>option.  Instead of just</p>
+        <codeblock>xterm</codeblock>
+        <p>change the command field to read</p>
+        <codeblock>xterm -ls</codeblock>
+        <p><code>ls</code> here means <quote>login shell</quote>, and the result is that your full login setup gets used (just like the OS X Terminal).</p>
 		<p>These <filename>/sw/bin/init.*</filename> scripts do much
 		more than just add <filename>/sw/bin</filename> to your PATH.
 		Many packages will not work correctly without these additional
@@ -889,6 +890,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+<p>(The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
             <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
           </li>
         </ul>
@@ -1262,6 +1264,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code>tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p>
         <p>Similar behavior can happen for other pairs of packages, too. </p>
         <p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can proceed by repeating your update command again.</p>
+<p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p>
         <p>A permanent fix should hopefully be available in <code>fink-0.2.5</code>.</p>
       </answer>
     </faqentry>
@@ -1812,8 +1815,9 @@ sudo apt-get install fink</codeblock>
           </li>
           <li>
             <em>You are installing from source:</em>
-	    <p>If you have a current version of <code>fink</code>, then typically this error means that you need to (re)install the X11SDK, which is <em>mandatory</em> if you want to build packages from source. It is on the Xcode CD, and is <em>not</em> installed by default. Even if you install XCode, the X11SDK is <em>not</em> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the X11SDK pkg in the <filename>Packages</filename> folder of the XCode CD.</p>
-	    <p>If you are still having problems, run </p>
+	        <p>If you have a current version of <code>fink</code>, then typically this error means that you need to (re)install the X11SDK, which is <em>mandatory</em> if you want to build packages from source. It is on the Panther Xcode CD or in the XCode Tools folder of a TIger DVD, and is <em>not</em> installed by default when you install XCode on Panther--it has to be installed either with a custom Xcode install, or by clicking on the <filename>X11SDK pkg</filename> icon in the <filename>Packages</filename> folder of the XCode CD.  It <em> is</em>, on the other hand, installed by default when you install Xcode on Tiger (even if X11User isn't present), but it's still possible for the Installer program to miss a file.  </p>
+	        <p>If your computer didn't come with XCode media, then a disk image for it, containing <filename>X11SDK.pkg</filename> among other things, is quite likely present on your computer somewhere--check for a directory like <filename> /Applications/Installers </filename> for an XCode disk image.  <filename>X11User.pkg</filename> may be present in that directory as well. </p>
+	        <p>If you are still having problems, run </p>
             <codeblock>fink list -i system-xfree86  </codeblock>
             <p>It should show the <code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code> packages as installed.  If the <code>-dev</code> package is missing, reinstall the X11SDK, since sometimes the Apple Installer misses a file.  You may need to keep doing this.  If either of the other two are missing, then reinstall the X11User package (same reason).</p>
             <p>
@@ -1889,6 +1893,13 @@ fink selfupdate; fink index</codeblock>
         <p>E.g., if you want to use <code>gnucash</code>, you'd use</p>
         <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
         <p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p>
+        <p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code> , which you may need to do to run GNOME).  Put</p>
+        <codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
+        <p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <em>bash</em> users and:</p>
+        <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
+        <p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <em>tcsh</em> users.</p>
+	<p>This will automatically be set if you install 
+<code>base-files-1.9.7-1</code> or later.</p>
       </answer>
     </faqentry>
     <!-- end translation -->

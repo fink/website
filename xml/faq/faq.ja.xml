@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.32 2005/07/09 13:56:39 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.33 2005/08/24 00:51:50 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -622,14 +622,16 @@ Fink が自動的にここを探しにいきます。
 <em>注記:</em> 古いバージョンの fink では、スクリプト名が <filename>/sw/bin/pathsetup.sh</filename> ではなく <filename>/sw/bin/pathsetup.command</filename> となっていることがあります。
 あるいは、 Fink バイナリディストリビューションのディスクイメージ内にある <filename>pathsetup.app</filename> を実行する方法もあります。
 </p>
-<p>このエラーが Apple X11 ターミナルでのみ出る場合，
-<link url=" http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc ">.xinitrc</link> 
-というファイルを作成し、</p>
-<codeblock>. /sw/bin/init.sh</codeblock> 
-<p>の一行を最初の方
-(他のプログラムが実行される前)
-に追加します。
-X11 が立ち上がっている場合、 X11 を再起動します。</p> 
+<p>
+Apple X11 terminal でのみこの問題が発生するのであれば、
+簡単な解決方法は X11　アプリケーションメニューの&quot;ターミナル&quot;を、<em>アプリケーション-&gt;メニューをカスタマイズ...</em>から変更します。
+</p>
+        <codeblock>xterm</codeblock>
+        <p>cコマンドの欄を</p>
+        <codeblock>xterm -ls</codeblock>
+        <p>とします。ここで<code>ls</code> は <quote>login shell</quote> を意味し、ログインセットアップが (OS X ターミナルと同様に) 使用されることになります。</p>
+        <p><filename>/sw/bin/init.*</filename> スクリプトは、<filename>/sw/bin</filename> をパスに追加する以外にも様々なことをしています。
+	多くのパッケージは、この追加処理がなくては正常に動作しません。</p>
 <codeblock>source ~/.cshrc</codeblock>
 </answer>
 </faqentry>
@@ -980,6 +982,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+<p>(上記は 10.3 を想定しています。 <code>10.3</code> を、現在しよう中有のディストリビューションに変えて使用してください。</p>
             <p>
               とし、保存してエディタを終了します。
               この後、バイナリパッケージリストを更新してください。
@@ -1437,6 +1440,11 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
         	不幸にもビルドが不完全で終わるかもしれません。この場合、<code>update</code> コマンドを
         	繰り返すことで先に進めるでしょう。
         </p>
+		<p>
+			極端な状況では、<code>libgettext3-dev</code> に依存するものと別に、<code>gettext-dev</code> 
+			(など、問題を起こしているペア) にビルド依存するパッケージをインストールする必要があります。
+			パッケージを一つずつインストールする必要があるかもしれません。
+		</p>
         <p>この問題の解決は <code>fink-0.2.5</code> で予定されています。</p>
       </answer>
     </faqentry>
@@ -2081,7 +2089,15 @@ sudo apt-get install fink</codeblock>
 		これは、パッケージをソースからビルドする際に必須です。
 		X11SDK は Xcode CD にありますが、XCode をインストールしても、デフォルトではインストール<em>されません</em>。
 		インストール時にカスタムを選択してパッケージを選択するか、
-		XCode の CD 内の <filename>Packages</filename> フォルダから X11SDK pkg をダブルクリックします。
+		Panther の XCode CD または Tiger DVD の XCode Tools フォルダ内にあります。
+		Panther では、デフォルトではインストールされませんので、カスタムインストールを選択するか、
+		<filename>Packages</filename> フォルダ内の <filename>X11SDK pkg</filename> アイコンをダブルクリックします。
+		Tiger では、 (たとえ X11User がなくても) デフォルトでインストール<em>されます</em>が、一部のファイルがインストールされないことがあります。
+		</p>
+		<p>
+		XCode ディスクが付随されていないコンピュータの場合、<filename>X11SDK.pkg</filename> を含むディスクイメージがある場合があります。
+		<filename> /Applications/Installers </filename> などのディレクトリを探してください。
+		<filename>X11User.pkg</filename> も同じディレクトリにある場合があります。
 		</p>
 		<p>
 		これでも問題がある場合、
@@ -2207,6 +2223,15 @@ fink selfupdate; fink index</codeblock>
         <p>
         	この方法は、Apple X11 のアプリケーションメニューからでも、ターミナルからでも有効です。
         </p>
+        <p>
+        	これをグローバルに設定する (スタートアップスクリプトと <code>.xinitrc</code>、GNOME を使う場合には必須) のも良いでしょう。
+        	(ログインシェルに関わらず) <code>.xinitrc</code> と、 <em>bash</em> ユーザーは <code>.profile</code> (または他のスタートアップスクリプト) に、
+        </p>
+        <codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
+        <p>と記述し、<em>tcsh</em> ユーザーは、同様に <code>.cshrc</code> (または他のスタートアップスクリプト) に、</p>
+        <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
+        <p>と記述します。</p>
+	    <p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p>
       </answer>
     </faqentry>
 </chapter>
