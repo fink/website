@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -211,12 +211,11 @@ Fink が自動的にここを探しにいきます。
 このプログラムは、デフォルトシェルを判定し、シェルの設定に Fink のシェル初期化スクリプトを読み込むコマンドを追加します。
 <b>注記:</b> 古いバージョンの fink では、スクリプト名が <code>/sw/bin/pathsetup.sh</code> ではなく <code>/sw/bin/pathsetup.command</code> となっていることがあります。
 あるいは、 Fink バイナリディストリビューションのディスクイメージ内にある <code>pathsetup.app</code> を実行する方法もあります。
-</p><p>このエラーが Apple X11 ターミナルでのみ出る場合，
-<a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc%20">.xinitrc</a> 
-というファイルを作成し、</p><pre>. /sw/bin/init.sh</pre><p>の一行を最初の方
-(他のプログラムが実行される前)
-に追加します。
-X11 が立ち上がっている場合、 X11 を再起動します。</p><pre>source ~/.cshrc</pre></div>
+</p><p>
+Apple X11 terminal でのみこの問題が発生するのであれば、
+簡単な解決方法は X11　アプリケーションメニューの"ターミナル"を、<b>アプリケーション-&gt;メニューをカスタマイズ...</b>から変更します。
+</p><pre>xterm</pre><p>cコマンドの欄を</p><pre>xterm -ls</pre><p>とします。ここで<code>ls</code> は <q>login shell</q> を意味し、ログインセットアップが (OS X ターミナルと同様に) 使用されることになります。</p><p><code>/sw/bin/init.*</code> スクリプトは、<code>/sw/bin</code> をパスに追加する以外にも様々なことをしています。
+	多くのパッケージは、この追加処理がなくては正常に動作しません。</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="invisible-sw">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.16: Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
@@ -448,6 +447,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
+<p>(上記は 10.3 を想定しています。 <code>10.3</code> を、現在しよう中有のディストリビューションに変えて使用してください。</p>
             <p>
               とし、保存してエディタを終了します。
               この後、バイナリパッケージリストを更新してください。

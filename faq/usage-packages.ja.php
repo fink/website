@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -142,7 +142,15 @@ sudo apt-get install fink</pre>
 		これは、パッケージをソースからビルドする際に必須です。
 		X11SDK は Xcode CD にありますが、XCode をインストールしても、デフォルトではインストール<b>されません</b>。
 		インストール時にカスタムを選択してパッケージを選択するか、
-		XCode の CD 内の <code>Packages</code> フォルダから X11SDK pkg をダブルクリックします。
+		Panther の XCode CD または Tiger DVD の XCode Tools フォルダ内にあります。
+		Panther では、デフォルトではインストールされませんので、カスタムインストールを選択するか、
+		<code>Packages</code> フォルダ内の <code>X11SDK pkg</code> アイコンをダブルクリックします。
+		Tiger では、 (たとえ X11User がなくても) デフォルトでインストール<b>されます</b>が、一部のファイルがインストールされないことがあります。
+		</p>
+		<p>
+		XCode ディスクが付随されていないコンピュータの場合、<code>X11SDK.pkg</code> を含むディスクイメージがある場合があります。
+		<code> /Applications/Installers </code> などのディレクトリを探してください。
+		<code>X11User.pkg</code> も同じディレクトリにある場合があります。
 		</p>
 		<p>
 		これでも問題がある場合、
@@ -239,7 +247,10 @@ fink selfupdate; fink index</pre><p>
         	以下のようにコマンド名の前に追加することで、とりあえず起動させることができます:
 		</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>例えば、 <code>gnucash</code> の場合</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>
         	この方法は、Apple X11 のアプリケーションメニューからでも、ターミナルからでも有効です。
-        </p></div>
+        </p><p>
+        	これをグローバルに設定する (スタートアップスクリプトと <code>.xinitrc</code>、GNOME を使う場合には必須) のも良いでしょう。
+        	(ログインシェルに関わらず) <code>.xinitrc</code> と、 <b>bash</b> ユーザーは <code>.profile</code> (または他のスタートアップスクリプト) に、
+        </p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>と記述し、<b>tcsh</b> ユーザーは、同様に <code>.cshrc</code> (または他のスタートアップスクリプト) に、</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>と記述します。</p><p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p></div>
     </a>
 
 <? include_once "../footer.inc"; ?>

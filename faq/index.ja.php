@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -86,7 +86,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.32 2005/07/09 13:56:39 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.33 2005/08/24 00:51:50 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

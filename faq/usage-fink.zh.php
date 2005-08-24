@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -195,7 +195,8 @@ fink selfupdate-cvs</pre></div>
         script <code>pathsetup.command</code> instead
         of <code>pathsetup.sh</code>. Alternately, you can run
         the <code>pathsetup.app</code> application on the Fink
-        binary distribution disk image.</p><p>另一方面，如果你只在苹果的 X11 终端中碰到这个问题，这也许意味着你需要创建一个 <a href="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</a> 文件并在靠近文件开头的地方（就是说，在运行任何程序以前）添加一行：</p><pre>. /sw/bin/init.sh</pre><p>在做完以后，重新运行 X11。</p><p>These <code>/sw/bin/init.*</code> scripts do much
+        binary distribution disk image.</p><p>On the other hand, if you only have problems in the Apple X11
+        terminal, the easy solution is to modify the "Terminal" entry in the X11 Application menu via the <b>Applications-&gt;Customize Menu... </b>option.  Instead of just</p><pre>xterm</pre><p>change the command field to read</p><pre>xterm -ls</pre><p><code>ls</code> here means <q>login shell</q>, and the result is that your full login setup gets used (just like the OS X Terminal).</p><p>These <code>/sw/bin/init.*</code> scripts do much
 		more than just add <code>/sw/bin</code> to your PATH.
 		Many packages will not work correctly without these additional
 		actions.</p></div>
@@ -368,6 +369,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
+<p>(The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
             <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
           </li>
         </ul></div>

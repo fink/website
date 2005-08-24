@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -277,7 +277,11 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
         	ビルド依存性エンジンの制限のため、このようなパッケージが交互にインストールされ、
         	不幸にもビルドが不完全で終わるかもしれません。この場合、<code>update</code> コマンドを
         	繰り返すことで先に進めるでしょう。
-        </p><p>この問題の解決は <code>fink-0.2.5</code> で予定されています。</p></div>
+        </p><p>
+			極端な状況では、<code>libgettext3-dev</code> に依存するものと別に、<code>gettext-dev</code> 
+			(など、問題を起こしているペア) にビルド依存するパッケージをインストールする必要があります。
+			パッケージを一つずつインストールする必要があるかもしれません。
+		</p><p>この問題の解決は <code>fink-0.2.5</code> で予定されています。</p></div>
     </a>
     <a name="python-mods">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.24: Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</b></p></div>

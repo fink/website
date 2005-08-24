@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/07/09 13:56:39';
+$cvs_date = 'Date: 2005/08/24 00:51:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 
@@ -110,8 +110,9 @@ sudo apt-get install fink</pre>
           </li>
           <li>
             <b>You are installing from source:</b>
-	    <p>If you have a current version of <code>fink</code>, then typically this error means that you need to (re)install the X11SDK, which is <b>mandatory</b> if you want to build packages from source. It is on the Xcode CD, and is <b>not</b> installed by default. Even if you install XCode, the X11SDK is <b>not</b> installed by default. It has to be installed either with a custom Xcode install, or by clicking on the X11SDK pkg in the <code>Packages</code> folder of the XCode CD.</p>
-	    <p>If you are still having problems, run </p>
+	        <p>If you have a current version of <code>fink</code>, then typically this error means that you need to (re)install the X11SDK, which is <b>mandatory</b> if you want to build packages from source. It is on the Panther Xcode CD or in the XCode Tools folder of a TIger DVD, and is <b>not</b> installed by default when you install XCode on Panther--it has to be installed either with a custom Xcode install, or by clicking on the <code>X11SDK pkg</code> icon in the <code>Packages</code> folder of the XCode CD.  It <b> is</b>, on the other hand, installed by default when you install Xcode on Tiger (even if X11User isn't present), but it's still possible for the Installer program to miss a file.  </p>
+	        <p>If your computer didn't come with XCode media, then a disk image for it, containing <code>X11SDK.pkg</code> among other things, is quite likely present on your computer somewhere--check for a directory like <code> /Applications/Installers </code> for an XCode disk image.  <code>X11User.pkg</code> may be present in that directory as well. </p>
+	        <p>If you are still having problems, run </p>
             <pre>fink list -i system-xfree86  </pre>
             <p>It should show the <code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code> packages as installed.  If the <code>-dev</code> package is missing, reinstall the X11SDK, since sometimes the Apple Installer misses a file.  You may need to keep doing this.  If either of the other two are missing, then reinstall the X11User package (same reason).</p>
             <p>
@@ -155,7 +156,8 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
     <a name="tiger-gtk">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.14: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1).  You can work around this via prefixing the the name of you want as follows:
-</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p></div>
+</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code> , which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>This will automatically be set if you install 
+<code>base-files-1.9.7-1</code> or later.</p></div>
     </a>
     
   
