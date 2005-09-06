@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.57 2005/08/15 21:03:45 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.58 2005/09/06 01:28:56 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -2200,6 +2200,10 @@ fink selfupdate; fink index</codeblock>
 <code>base-files-1.9.7-1</code> or later.</p>
 	<!--TODO This is no longer the case for OS 10.4.3 and later-->
       </answer>
+    </faqentry>
+    <faqentry name="yelp">
+    	<question><p>I can't get the help to work for any GNOME application.</p></question>
+	<answer><p>You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></answer>
     </faqentry>
   </chapter>
 </document>
