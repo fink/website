@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.81 2005/08/08 01:24:37 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.82 2005/09/07 04:27:10 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -2357,14 +2357,20 @@ you are currently using.)
 The allowed values are:
 <code>2.95.2</code> (or <code>2.95</code>),
  <code>3.1</code>,
-and <code>3.3</code>.
-This last is expected to be the GCC-ABI for gcc 3.3 and all subsequent
-versions of gcc.
-The default values for the various package trees are:
-<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
-and <code>3.3</code> in the 10.2-gcc3.3, 10.3, and all subsequent trees.
+ <code>3.3</code>,
+and <code>4.0</code>.
+Our understanding is that the GCC authors intend to stabilize the GCC-ABI
+at some point; we can hope that it won't change again.
 </p><p>
-Note that when the GCC value is different from the default, the compiler
+The GCC field does not have a default value, per se, since it is ignored
+if it is not set.  However, for each tree, there is an expected value
+for GCC corresponding to the default g++ compiler for that tree.
+The expected values for the various package trees are:
+<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
+ <code>3.3</code> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
+trees, and <code>4.0</code> in the (upcoming) 10.4 tree.
+</p><p>
+Note that when the GCC value is different from the expected value, the compiler
 must be specified within the package (typically by setting the CC or CXX
 flags), and a dependency on one of the (virtual) gcc packages should be
 specified.
