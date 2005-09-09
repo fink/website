@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/08/24 01:00:48';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/09/09 19:10:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -71,6 +71,9 @@ folder it created.
 The source release must be installed from the command line, so open
 Terminal.app and change to the directory where you put the
 fink-0.x.x-full.tar.gz archive.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
 The following command extracts the archive:
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>

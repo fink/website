@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.21 2005/05/31 15:36:05 rangerrick Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.22 2005/09/09 19:10:31 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -48,6 +48,9 @@ Track</title>
 <p>
 Start out by copying the <filename>fink-&fink_version;-full.tar.gz</filename>
 file to your home folder.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<filename>fink-0.8.0-full-XCode-2.1.tar.gz</filename> instead, and make
+the appropriate changes below.)
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><em>bold face</em></code> (or otherwise highlighted).
@@ -146,6 +149,9 @@ documentation when your problem actually is well-documented.
 <p>
 Start out by copying the <filename>fink-&fink_version;-full.tar.gz</filename>
 file to your home folder.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<filename>fink-0.8.0-full-XCode-2.1.tar.gz</filename> instead, and make
+the appropriate changes below.)
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><em>bold face</em></code> (or otherwise highlighted).
@@ -255,6 +261,9 @@ have been warned.
 <section name="install"><title>Installation</title>
 <p>
 First, you need to unpack the fink-&fink_version;-full.tar.gz tarball.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<filename>fink-0.8.0-full-XCode-2.1.tar.gz</filename> instead, and make
+the appropriate changes below.)
 It is recommended that you do this from the command line -
 StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this

@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:02 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2005/09/09 19:15:03 $';
 
 include "header.inc";
 ?>
@@ -25,8 +25,9 @@ Fink <? print $fink_version; ?> was officially released on
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
-<? print $release_version; ?></a> - 3497K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
+<? print $release_version; ?></a> (for OS X 10.4 with XCode 2.1)
+- 6241K, .tar.gz format</li>
 </ul>
 
 <p>

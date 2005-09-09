@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2005/05/31 15:36:05';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2005/09/09 19:10:31';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -29,6 +29,9 @@ Track</a></h2>
 <p>
 Start out by copying the <code>fink-0.8.0-full.tar.gz</code>
 file to your home folder.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><b>bold face</b></code> (or otherwise highlighted).
@@ -125,6 +128,9 @@ documentation when your problem actually is well-documented.
 <p>
 Start out by copying the <code>fink-0.8.0-full.tar.gz</code>
 file to your home folder.
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
 <code><b>bold face</b></code> (or otherwise highlighted).
