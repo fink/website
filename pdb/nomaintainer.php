@@ -1,13 +1,13 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/03/03 10:01:36 $';
+$cvs_date = '$Date: 2005/09/12 22:43:23 $';
 
 include "header.inc";
 
 if (!param(distro)) {
-  $distro_sql = "AND (release LIKE 'current-10.2-gcc3.3%' OR release LIKE 'current-10.3%')";
-  $distro_txt = ' in the 10.2-gcc3.3 and 10.3 releases';
+  $distro_sql = "AND (release LIKE 'current-10.3%' OR release LIKE 'current-10.4-transitional%')";
+  $distro_txt = ' in the 10.3 and 10.4-transitional releases';
 } else if (!strcmp(param(distro),"all")) {
   $distro_sql = '';
   $distro_txt = '';
