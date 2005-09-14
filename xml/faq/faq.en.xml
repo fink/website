@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.58 2005/09/06 01:28:56 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.59 2005/09/14 16:26:55 rangerrick Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -368,24 +368,39 @@
       </question>
       <answer>
         <p>First make sure you understand what 'unstable' means. Packages in
-        the unstable tree usually have not been tested by more than a few
-        people. For that reason, Fink doesn't search the unstable tree by
-        default. If you do enable unstable, please remember to e-mail the
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p>
+        <p>If you do enable unstable, please remember to e-mail the
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
         <em>packagename</em></code>.</p>
-        <p>Packages often have dependencies, and packages in unstable often
-        depend on other packages in unstable. For that reason, it is best to
-        activate all of unstable.</p>
-        <p>If you want Fink to use all of unstable, edit
+        <p>To configure Fink to use unstable, edit
         <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
         then run <code>fink selfupdate; fink index; fink scanpackages</code>.
         </p>
-        <p>If you only want one or two specific packages, and nothing else
-        from unstable, then you need to switch over to CVS updating (i.e. use
-        <code>fink selfupdate-cvs</code>), because rsync only updates the
+        <p>Also note, if you don't want to install any more from unstable than
+        your specific packages and its dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="unstable-onepackage">
+      <question>
+        <p>Do I <em>really</em> need to enable all of unstable just to install
+        one unstable package that I want?</p>
+      </question>
+      <answer>
+        <p>No, but it is highly recommended you do.  Mixing and matching can
+        cause unforseen issues that make it difficult to debug problems when
+        they do arise.</p>
+        <p>That said, if you only want one or two specific packages, and nothing
+        else from unstable, then you need to switch over to CVS updating (i.e.
+        use <code>fink selfupdate-cvs</code>), because rsync only updates the
         trees that are active in your <filename>fink.conf</filename>. Edit
         <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
         to the <code>Trees:</code> line, if not present. Then you'll need to
