@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 02:01:57 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -32,16 +32,16 @@ Fink では dpkg や apt-get などの <a href="http://www.debian.org/">Debian</
 
 <?
 // Include news items
-include $fsroot."news/news.ja.inc";
+include dirname(__FILE__) . "/news/news.ja.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=ja">Older News...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
-<h1>Status</h1>
+<h1>ステータス</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -84,11 +84,18 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">fink へ�
 アカウントをお持ちでない方は、 <a href="http://sourceforge.net/">SourceForge ウェブサイト</a>で取得することができます。
 </p>
 
+<p>SourceForge 以外でホストされている追加リソース:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>　は、
+<a href="http://www.opendarwin.org">the OpenDarwin プロジェクト</a>のご好意により提供されています。
+</li>
+</ul>
+
 </td></tr></table>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

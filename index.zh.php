@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:57:05 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, 软件, 发布, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>
@@ -30,7 +30,7 @@ Fink 使用 <a href="http://www.debian.org/">Debian</a> 中的象 dpkg
 
 <?
 // Include news items
-include $fsroot."news/news.zh.inc";
+include dirname(__FILE__) . "/news/news.zh.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=zh">以前的消息…</a></div>
 
@@ -39,7 +39,7 @@ include $fsroot."news/news.zh.inc";
 
 <h1>当前状况</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -80,6 +80,12 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">提交 fin
 <p>
 请注意：要使用其中的一些资源（比如，汇报一个软件缺陷或请求一个新的 Fink 软件包），你需要先登录进你的 SourceForge 帐号。如果你现在还没有帐号，你可以在 <a href="http://sourceforge.net/">SourceForge 网站</a>免费注册一个。
 </p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -87,5 +93,5 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">提交 fin
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

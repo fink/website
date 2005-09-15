@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:57:05 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>Проект Fink нацелен на перенос всего мира ПО Unix
@@ -31,7 +31,7 @@ Fink использует такие инструменты<a href="http://www.d
 
 <? 
 // Include news items 
-include $fsroot."news/news.inc";
+include dirname(__FILE__) . "/news/news.inc";
 ?>
  
 <div align="right"><a href="<? print $root; ?>news\index.php?phpLang=en">Предыдущие новости ...</a> </div>
@@ -40,7 +40,7 @@ include $fsroot."news/news.inc";
  
 <h1>Статус</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -85,6 +85,12 @@ href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Отчет
 новом пакете) вам надо зарегистрировать свой счет в SourceForge. Если у вас нет такого счета, можно его открыть
 бесплатно на сайте <a href="http://sourceforge.net/">SourceForge</a>.
 </p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -92,5 +98,5 @@ href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Отчет
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:57:05 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribuzione, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -32,7 +32,7 @@ Potete usare lo strumento che preferite per scaricare i pacchetti precompilati o
 
 <?
 // Include news items
-include $fsroot."news/news.inc";
+include dirname(__FILE__) . "/news/news.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=it">Vecchie notizie...</a></div>
 
@@ -41,7 +41,7 @@ include $fsroot."news/news.inc";
 
 <h1>Stato</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -87,6 +87,12 @@ Per favore ricorda che per usufruire di queste risorse (es., segnalare un bug o 
 dovrai essere registrato con un SourceForge account.  Se non ne hai uno, puoi iscriverti gratuitamente
 su <a href="http://sourceforge.net/">SourceForge web site</a>.
 </p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -94,5 +100,5 @@ su <a href="http://sourceforge.net/">SourceForge web site</a>.
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

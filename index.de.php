@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:57:05 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>
@@ -30,7 +30,7 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 
 <?
 // Include news items
-include $fsroot."news/news.de.inc";
+include dirname(__FILE__) . "/news/news.de.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=de">Ältere News...</a></div>
 
@@ -38,7 +38,7 @@ include $fsroot."news/news.de.inc";
 
 <h1>Status</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -76,6 +76,12 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Einen Patc
 Um uns Bugs zu melden oder manche der anderen Dienste nutzen zu können, brauchen Sie eine Mitgliedschaft bei <a href="http://sourceforge.net/">SourceForge</a>. Diese ist kostenlos und sobald Sie sich angemeldet haben, können Sie schon loslegen. Wir freu
 en uns auf Ihre Mitarbeit!
 </p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -83,5 +89,5 @@ en uns auf Ihre Mitarbeit!
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

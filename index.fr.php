@@ -1,14 +1,14 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/06/09 23:54:27 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, logiciel, distribution, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>Le projet Fink a pour but d'ouvrir toutes grandes les portes du monde des logiciels <a href="http://www.opensource.org/">Open Source</a> Unix à <a href="http://www.opensource.apple.com/">Darwin</a> et à
@@ -19,7 +19,7 @@ include "header.inc";
 <h1>Dernières nouvelles</h1>
 <?
 // Include news items
-include $fsroot."news/news.fr.inc";
+include dirname(__FILE__) . "/news/news.fr.inc";
 ?>
 <div align="right"><a href="news/index.php?phpLang=fr">Nouvelles archivées...</a></div>
 
@@ -27,7 +27,7 @@ include $fsroot."news/news.fr.inc";
 
 <h1>Statut</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>La version <? print $fink_version ?> de Fink est disponible depuis le <? print convert_date_to_locale($release_date) ?>. Cette version comprend le source et les paquets binaires, ainsi qu'un installeur binaire, l'ensemble est conçu pour tourner sur Mac OS X 10.4. Les versions 0.7.2 (pour Mac OS X 10.3), 0.6.4 (pour Mac OS X 10.2) et 0.4.1 (pour Mac OS X 10.1) restent disponibles pour les utilisateurs de ces systèmes.</p>
@@ -46,6 +46,12 @@ include "fink_version.inc";
 <li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">navigation en ligne</a>, <a href="doc/cvsaccess/index.php">instructions d'accès</a>)</li>
 </ul>
 <p>Veuillez noter que pour utiliser certaines de ces ressources (par exemple, envoyer un rapport de bogue ou demander l'intégration d'un nouveau paquet dans Fink), vous devez vous connecter à votre compte SourceForge. Si vous n'en avez pas, vous pouvez en obtenir un gratuitement sur le <a href="http://sourceforge.net/">site web de SourceForge</a>.</p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -53,5 +59,5 @@ include "fink_version.inc";
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>

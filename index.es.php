@@ -1,14 +1,14 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:57:05 $';
+$cvs_date = '$Date: 2005/09/15 01:55:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include "header.inc";
+include dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>
@@ -31,7 +31,7 @@ desde código fuente.
 <h1>Noticias</h1>
 <?
 // Include news items
-include $fsroot."news/news.es.inc";
+include dirname(__FILE__) . "/news/news.es.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=es">Noticias Antiguas...</a></div>
 
@@ -39,7 +39,7 @@ include $fsroot."news/news.es.inc";
 
 <h1>Estado de Fink</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -83,6 +83,12 @@ Por favor, note que para hacer uso de algunos de estos recursos (ie. para
 reportar un bug o solicitar un nuevo paquete de Fink), usted deberá estar
 logeado en una cuenta del SourceForge.  Si no tiene dicha cuenta, deberá obtener una en el <a href="http://sourceforge.net/">sitio web del SourceForge</a>.
 </p>
+<!-- start translation -->
+<p>Additional resources hosted outside SourceForge include:</p>
+<ul>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+</ul>
+<!-- end translation -->
 
 </td></tr></table>
 
@@ -90,5 +96,5 @@ logeado en una cuenta del SourceForge.  Si no tiene dicha cuenta, deberá obtene
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include dirname(__FILE__) . "/footer.inc";
 ?>
