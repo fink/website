@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/08/24 00:51:50';
+$cvs_date = 'Date: 2005/09/17 01:40:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -252,6 +252,14 @@ fink selfupdate; fink index</pre><p>
         	(ログインシェルに関わらず) <code>.xinitrc</code> と、 <b>bash</b> ユーザーは <code>.profile</code> (または他のスタートアップスクリプト) に、
         </p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>と記述し、<b>tcsh</b> ユーザーは、同様に <code>.cshrc</code> (または他のスタートアップスクリプト) に、</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>と記述します。</p><p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p></div>
     </a>
+  <a name="yelp">
+    <div class="question"><p><b><? echo FINK_Q ; ?>9.15: どの GNOME アプリケーションでも、ヘルプ機能が使えません。</b></p></div>
+	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+		  <code>yelp</code> というパッケージをインストーする必要があります。
+		  このパッケージは、暗号化を使用するため GNOME バンドルに含まれていません。
+		  ヘルプシステムを使用するためだけの理由で、GNOME 全てを crypto ツリーに入れることはしないという判断がされています。
+		</p></div>
+  </a>
 
 <? include_once "../footer.inc"; ?>
 
