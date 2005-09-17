@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.19 2005/08/24 00:51:50 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.20 2005/09/17 01:40:27 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -419,15 +419,62 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
         <p>我想安装一个未稳定版本，但 fink 说 'no package found'。我怎么才能安装它？</p>
       </question>
       <answer>
-        <p>首先，请确定你明白“未稳定”的含义。在未稳定代码树的软件包仅仅经过几个人的测试。因此，默认情况下，Fink 不会搜索未稳定代码树。如果你确实启用了未稳定代码树，记得 e-mail 通知维护者某项功能是正常的（或者不正常）。从象你这样的用户的反馈是我们决定一个软件包是否已经稳定的因素！要找出一个软件包的维护者，运行 <code>fink info <em>软件包名</em></code> 命令。</p>
-        <p>软件包通常会有依赖关系，未稳定的软件包通常依赖于未稳定的其它软件包。所以最好启用所有未稳定软件包。</p>
-        <p>如果你希望 Fink 使用所有未稳定软件包，编辑 <filename>/sw/etc/fink.conf</filename> 文件，添加 <code>unstable/main</code> 和 <code>unstable/crypto</code> 到 <code>Trees:</code> 这一行，然后运行 <code>fink selfupdate; fink index; fink scanpackages</code> 命令。</p>
-        <p>如果你只希望安装一两个特别的未稳定软件包，而不希望使用其它的，那么你需要改为从 CVS 更新（也就是说，使用 <code>fink selfupdate-cvs</code> 命令），因为 rsync 只更新那些在你的 <filename>fink.conf</filename> 激活的代码树。
-		编辑 <filename>/sw/etc/fink.conf</filename> 文件并添加 <code>local/main</code> 到 <code>Trees:</code> 这一行，如果还没有添加的话。然后你需要运行 <code>fink selfupdate</code> 来下载软件包描述文件。现在从 <filename>/sw/fink/dists/unstable/main/finkinfo</filename> 拷贝相应的 <code>.info</code> 文件
-		（以及它们相应的 <code>.patch</code> 文件，如果有这些文件的话）到 <filename>/sw/fink/dists/local/main/finkinfo</filename>。不过，记住，你的软件包也许会依赖于其它只有未稳定版本的软件包（或某个特定的版本）。这时你也需要把它们的 <code>.info</code> 文件和 <code>.patch</code> 文件移动到相应的位置。在移动好以后，确定运行 <code>fink index</code> 命令，这样 Fink 关于可用软件包的纪录会得到更新。
-		做完以后，你可以转换会 rsync 方式（<code>fink selfupdate-rsync</code>），如果你希望这样的话。</p>
+        <!-- start translation -->
+        <p>First make sure you understand what 'unstable' means. Packages in
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p>
+        <p>If you do enable unstable, please remember to e-mail the
+        maintainer if something works (or even if it doesn't). Feedback from
+        users like you is what we use to determine if something is ready for
+        stable! To find out the maintainer of a package, run <code>fink info
+        <em>packagename</em></code>.</p>
+        <p>To configure Fink to use unstable, edit
+        <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.
+        </p>
+        <p>Also note, if you don't want to install any more from unstable than
+        your specific packages and its dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p>
+        <!-- end translation -->
       </answer>
     </faqentry>
+    <!-- start translation -->
+    <faqentry name="unstable-onepackage">
+      <question>
+        <p>Do I <em>really</em> need to enable all of unstable just to install
+        one unstable package that I want?</p>
+      </question>
+      <answer>
+        <p>No, but it is highly recommended you do.  Mixing and matching can
+        cause unforseen issues that make it difficult to debug problems when
+        they do arise.</p>
+        <p>That said, if you only want one or two specific packages, and nothing
+        else from unstable, then you need to switch over to CVS updating (i.e.
+        use <code>fink selfupdate-cvs</code>), because rsync only updates the
+        trees that are active in your <filename>fink.conf</filename>. Edit
+        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
+        to the <code>Trees:</code> line, if not present. Then you'll need to
+        run <code>fink selfupdate</code> to download the package description
+        files. Now copy the relevant <code>.info</code> files (and their
+        associated <code>.patch</code> files, if there are any) from
+        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
+        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
+        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
+        that your package may depend on other packages (or particular
+        versions) which are also only in unstable. You will have to move their
+        <code>.info</code> and <code>.patch</code> files as well. After you
+        move all of the files, make sure to run <code>fink index</code>, so
+        that Fink's record of available packages is updated. Once you're done
+        you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
+        you want.</p>
+      </answer>
+    </faqentry>
+    <!-- end translation -->
     <faqentry name="sudo" >
       <question>
         <p>每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</p>
@@ -1901,6 +1948,10 @@ fink selfupdate; fink index</codeblock>
 	<p>This will automatically be set if you install 
 <code>base-files-1.9.7-1</code> or later.</p>
       </answer>
+    </faqentry>
+    <faqentry name="yelp">
+    	<question><p>I can't get the help to work for any GNOME application.</p></question>
+	<answer><p>You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></answer>
     </faqentry>
     <!-- end translation -->
   </chapter>

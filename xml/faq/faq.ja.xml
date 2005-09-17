@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.33 2005/08/24 00:51:50 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.34 2005/09/17 01:40:27 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -429,27 +429,59 @@ dselect からパッケージを選択してインストールする場合、 ro
 <question>
 <p>unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</p>
 </question>
-<answer>
-<p>まず、 'unstable' の意味を理解して下さい。
-unstable ツリーにあるパッケージは通常一人以上にはテストされていません。
-このため、 Fink はデフォルトでは unstable ツリーを検索するようにはなっていません。
-unstable を使用する場合、何か上手くいったら（上手くいかなかっても）メンテナにメールを送るのを忘れないで下さい。
-あなたのようなユーザーからのフィードバックが、 stable にするかどうかの判定材料なのです!
-メンテナの情報は <code>fink info &lt;packagename&gt;</code> で取得できます。</p>
-<p>パッケージには依存性があり、 unstable にあるパッケージは unstable にある他のパッケージに依存していることも多いのです。
-このため、全ての unstable を更新するのが最適です。</p>
-<p>Fink が unstable を使うようにするには、 <filename>/sw/etc/fink.conf</filename> ファイルの <code>Trees:</code> の行に <code>unstable/main</code> と <code>unstable/crypto</code> を追加します。
-この後、 <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
-</p>
-<p>unstable のパッケージのうち、一つか小数だけ使用したいのであれば、 CVS アップデート (<code>fink selfupdate-cvs</code>) に切替えます。デフォルトの rsync は <filename>fink.conf</filename> にあるツリーしかアップデートしないからです。
-次に、<filename>/sw/etc/fink.conf</filename> ファイルの <code>Trees:</code> の行に <code>local/main</code> を追加します。
-次に、 <code>.info</code> ファイルと <code>.patch</code> ファイルを <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (または <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) から、 <filename>/sw/fink/dists/local/main/finkinfo</filename> にコピーします。
-注意すべきことは、依存しているパッケージ (または特定のバージョン) も unstable にある可能性があり、これらのパッケージの <code>.info</code> と <code>.patch</code> もコピーしなければなりません。
-すべてのファイルをコピーしたら、 <code>fink index</code> を実行します。
-これで Fink のパッケージリストがアップデートされます。
-この後、 rsync に戻したい場合、 <code>fink selfupdate-rsync</code> を実行します。</p>
-</answer>
+      <answer>
+        <p>
+          まず、 'unstable' の意味を確認してください。
+          unstable ツリーにあるパッケージは、いくつかの理由により stable にはありません。
+          理ユニは、既知の課題がある、妥当性にエラーがある、動作したというフィードバックが十分ないなどがあります。
+          このため、Fink はデフォルトでは unstable ツリーを検索しません。
+        </p>
+        <p>
+          もし unstable を使用するのであれば、動作する（あるいはしない）ことをメンテナにメールするようにしてください。
+          あなたのようなユーザーからのフィードバックこそが、stable へ移行させる決定要因なのです!
+          パッケージのメンテナを知るには、<code>fink info <em>packagename</em></code> としてください。
+        </p>
+        <p>
+          Fink で unstable を使うには、<filename>/sw/etc/fink.conf</filename> を編集し、
+          <code>Trees:</code> 行に <code>unstable/main</code> と <code>unstable/crypto</code> を追加し、
+          <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
+        </p>
+        <p>
+          また、特定のパッケージとその依存パッケージ以外に unstable からインストールしたくない場合、 
+          unstable ツリーをオフにする前に <code>update-all</code> コマンドを実行しないでください。
+        </p>
+      </answer>
 </faqentry>
+    <faqentry name="unstable-onepackage">
+      <question>
+        <p>
+          unstable にあるパッケージをひとつだけインストールするにも、 unstable 全体を有効にしなければなりませんか?
+        </p>
+      </question>
+      <answer>
+        <p>
+          いいえ。しかし、そうすることをお勧めします。
+          混在によって予期できない問題が発生した場合、これを直すには非常に困難です。
+        </p>
+        <p>
+          もし、unstable からひとつかふたつのパッケージが欲しく、他はいらないのであれば、
+          (<code>fink selfupdate-cvs</code> で) CVS 更新に変更する必要があります。
+          これは、 rsync では <filename>fink.conf</filename> でアクティブなツリーしか更新しないためです。
+          <filename>/sw/etc/fink.conf</filename> を編集し、 <code>Trees:</code> 行に
+          <code>local/main</code> がなければ追加してください。
+          その後、 <code>fink selfupdate</code> を実行して、パッケージ記述ファイルをダウンロードしてください。
+          次に、関連する <code>.info</code> ファイル (および対応する <code>.patch</code> ファイル) を、
+          <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (または
+          <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) から
+          <filename>/sw/fink/dists/local/main/finkinfo</filename> へコピーします。
+          しかし、このパッケージは、 unstable にある他のパッケージ (またはバージョン) に依存していることもあります。
+          この場合、これらの <code>.info</code> と <code>.patch</code> ファイルも同様にコピーします。
+          全てのファイルをコピーしたら、 <code>fink index</code> を実行することで、 Fink は
+          入手可能なパッケージの一覧を更新します。
+          ここまで終わったら、rsync に戻すことができます (<code>fink selfupdate-rsync</code>)。
+        </p>
+      </answer>
+    </faqentry>
 <faqentry name="sudo" >
 <question>
 <p>sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</p>
@@ -2234,5 +2266,15 @@ fink selfupdate; fink index</codeblock>
 	    <p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p>
       </answer>
     </faqentry>
+  <faqentry name="yelp">
+    <question><p>どの GNOME アプリケーションでも、ヘルプ機能が使えません。</p></question>
+	<answer>
+		<p>
+		  <code>yelp</code> というパッケージをインストーする必要があります。
+		  このパッケージは、暗号化を使用するため GNOME バンドルに含まれていません。
+		  ヘルプシステムを使用するためだけの理由で、GNOME 全てを crypto ツリーに入れることはしないという判断がされています。
+		</p>
+	</answer>
+  </faqentry>
 </chapter>
 </document>
