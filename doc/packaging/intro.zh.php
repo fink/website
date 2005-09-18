@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 介绍";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:58:43';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="format.php?phpLang=zh" title="软件包描述文件"><link rel="prev" href="index.php?phpLang=zh" title="打包 Contents">';
 
 
@@ -35,7 +35,7 @@ include_once "header.zh.inc";
 <h2><a name="ident">1.2 识别一个软件包</a></h2>
 <p>
 一个软件包由三个字串来标识：软件包名，版本号和修订版号。
-他们均由小写字母（a-z），数字（0-9），减号（-），加号（+）以及句点（.）组成。不允许使用其它的字符。
+他们均由小写字母（a-z），数字（0-9），减号（-; note: not allowed in the revision），加号（+）以及句点（.）组成。不允许使用其它的字符。
 特别地，不能使用大写字母和下划线。
 </p>
 <p>

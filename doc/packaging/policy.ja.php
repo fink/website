@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:34:18';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -555,7 +555,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				(<code>/sw/lib/perl5/5.6.0</code> や <code>/sw/lib/perl5/5.6.0/darwin</code> など) に格納しなければいけません．
 				命名規約により，バージョン 5.6.0 に依存する Perl モジュールに <code>-pm560</code> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
-				perl 5.6.1 (10.2 ツリー) と perl 5.8.0， perl 5.8.1， perl 5.8.4 (間もなく) でもそのように対応されます．
+				perl 5.6.1 (10.2 ツリー), perl 5.8.0 (10.3 ツリー), perl 5.8.1， perl 5.8.4 または perl 5.8.6 でもそのように対応されます．
 			</p>
 			<p>
 				ディレクティブ <code>Type: perl 5.6.0</code> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
@@ -586,6 +586,111 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
 				その Fink パッケージが XS モジュールで，バージョンの付かないディレクトリにインストールされるかチェックし，そうなら警告を発します．
 			</p>
+
+<p>
+ユーザーは，同時に複数のバージョンの perl を持つことができます．
+このため， perl バージョン指定されたモジュールは，複数のバージョンが同時に存在できるようにインストールされなければなりません．
+manpage やばいなり，その他のスクリプトなど，これらのパッケージでのファイル名の重複を避けるよう，
+注意を払わねばなりません．
+
+You are not allowed to have any files in a package whose name ends
+with -pm<b>XYZ</b> that would have an identical pathname across
+different <b>XYZ</b>. Using <code>Replaces</code> to allow the
+same-named files to overwrite each other in different perl-versions of
+these perl-module packages is no longer acceptable.
+As a simple solution for manpages, starting in
+March 2005, Fink has defined alternate locations in MANPATH:
+<code>%p/lib/perl5/X.Y.Z/man</code> for each perl-X.Y.Z. You
+no longer need to create mutually-exclusive -man or -doc SplitOff
+packages. For
+example, to avoid conflicts between uri-pm581 and uri-pm586, the
+same-named <code>URI.3pm</code> manpage is installed
+as <code>%p/lib/perl5/5.8.1/man/man3/URI.3pm</code> and
+<code>%p/lib/perl5/5.8.6/man/man3/URI.3pm</code>,
+respectively. Note that the default scripts provided by <code>Type:
+perl X.Y.Z</code> have not changed, so you will have to locate the
+manpages here manually in your <code>InstallScript</code>. If you
+don't have a highly customized script, you can still use the default
+one, and then simply move the files manually:
+</p>
+<pre>
+%{default_script}
+mv %i/share/man %i/lib/perl5/5.8.1
+</pre>
+<p>
+That will move all manpages. If you wish to move only one section of
+manpages (for example, only section 3, the module manpages, not script
+manpages in section 1), a similar approach works:
+</p>
+<pre>
+%{default_script}
+mkdir -p %i/lib/perl5/5.8.1/man
+mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+</pre>
+<p>
+If you have executables, for example, demo or utility scripts
+in <code>%p/bin</code>, you have several options. One example
+is to put these files (and their associated manpages and/or other
+related files) in a %N-bin splitoff package. Use of
+<code>Conflicts</code> and <code>Replaces</code> fields ensures that
+installation of different perl-version forms of these packages, which
+contain files of the same name, is mutually excluve. The user can
+install many different perl-versions of the runtime modules, and then
+choose whichever one perl-version of the scripts he wants at a given
+time. For example, Tk.pm comes with an
+executable <code>ptksh</code>, so the set of tk-pm* packages
+could be constructed as follows:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: tk-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.4 5.8.6)
+InstallScript: &lt;&lt;
+  %{default_script}
+  mkdir -p %i/lib/perl5/%type_raw[perl]/man
+  mv %i/share/man/man3 %i/lib/perl5/%type_raw[perl]/man
+&lt;&lt;
+SplitOff: &lt;&lt;
+  Package: %N-bin
+  Depends: %N
+  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Files: bin share/man/man1
+&lt;&lt;
+&lt;&lt;
+</pre>
+<p>
+An alternative arrangement is to rename the scripts and their manpages
+to include perl-version information. This method means there is no
+naming conflict at all, so one does not need the mutually-exclusive
+%N-bin splitoffs:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: tk-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.4 5.8.6)
+InstallScript: &lt;&lt;
+  %{default_script}
+  mkdir -p %i/lib/perl5/%type_raw[perl]/man
+  mv %i/share/man/man3 %i/lib/perl5/%type_raw[perl]/man
+  mv %i/bin/ptksh %i/bin/ptksh%type_raw[perl]
+  mv %i/share/man/man1/ptksh.1 %i/share/man/man1/ptksh%type_raw[perl].1
+&lt;&lt;
+&lt;&lt;
+</pre>
+<p>
+The user accesses ptksh for whichever perl she wants. For convenience,
+one could use <code>update-alternatives</code> to allow users to be
+able to access these by their generic (no perl-version) names as well.
+</p>
+<p>
+Also as of March 2005, the location of manpages and modules installed
+by fink packages for perl itself (packages perlXYZ and perlXYZ-core
+other than the perl-version provided by Apple) has changed. As a
+result of this relocation, other fink packages that supply updated
+versions of core perl modules should not list any perlXYZ or
+perlXYZ-core packages in the <code>Replaces</code> field.
+</p>
 		
 		<h2><a name="emacs">3.6 Emacs ポリシー</a></h2>
 			

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:34:18';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -18,9 +18,9 @@ include_once "header.ja.inc";
 				下記の例では <code>/sw</code> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/gimp-1.2.1-1</code> が作成されてソースの tar ボールがそこに解凍されます．
+				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/fink.build/gimp-1.2.1-1</code> が作成されてソースの tar ボールがそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <code>gimp-1.2.1</code> が作られます．
-				これ以降のステップはすべてこの中 (すなわち <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます．
+				これ以降のステップはすべてこの中 (すなわち <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<b>N</b>ExtractDir (Nは数字) で変更できます．
 			</p>
 			<p>
@@ -34,10 +34,10 @@ include_once "header.ja.inc";
 			</p>
 			<p>
 				<b>インストール段階</b>では，パッケージは仮ディレクトリ
-				<code>/sw/src/root-gimp-1.2.1-1</code> (%d と同じ) にインストールされます
+				<code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (%d と同じ) にインストールされます
 				("root-" が付いていることに注意)．
 				ディレクトリ <code>/sw</code> にインストールされる予定のファイルは全て，
-				<code>/sw/src/root-gimp-1.2.1-1/sw</code> (%i すなわち %d%p に同じ) にインストールされます．
+				<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (%i すなわち %d%p に同じ) にインストールされます．
 				詳細はフィールド InstallScript を参照して下さい．
 			</p>
 			<p>
@@ -111,7 +111,7 @@ include_once "header.ja.inc";
 						<p>
 							Fink のポリシーでは，パッケージのバイナリ (コンパイル済み) 形式 (<code>.deb</code> ファイル)が変わる<b>いかなる</b>場合でも，<code>Revision</code> をあげなければ<b>なりません</b>．
 							例えば，<code>Depends</code> や他のパッケージ一覧フィールド， Splitoff パッケージの追加・削除・名称変更， Splitoff パッケージ間でのファイルの移動など．
-							パッケージのツリーを統合 (例えば 10.2 から 10.3) する場合，新しい方のツリーでは <code>Revision</code> を 10 あげて古い方のツリーでのパッケージの更新に対応できるようにします．
+							パッケージのツリーを統合 (例えば 10.2 から 10.3) する場合，新しい方のツリーでは <code>Revision</code> を 10 (など，大きな数字) あげて古い方のツリーでのパッケージの更新に対応できるようにします．
  						</p>
 					</td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
@@ -120,7 +120,8 @@ include_once "header.ja.inc";
 							詳細は
 							<a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>
 							を参照．
-							省略可能フィールド．
+							Fink と，元となっている Debian ツールは，name-version-revision をパッケージのユニークな識別子としています．
+							epoch のみが異なるような複数のパッケージを作ってはいけません．
 						</p>
 					</td></tr><tr valign="top"><td>Description</td><td>
 						<p>
@@ -213,7 +214,7 @@ Type: -x11 (boolean)
 Depends: (%type_raw[-x11] = -x11) x11
 CompileScript:  &lt;&lt;
   #!/bin/bash -ev
-  if ["%type_raw[-x11]" == "-x11"]; then
+  if [ "%type_raw[-x11]" == "-x11" ]; then
     ./configure %c --with-x11
   else
     ./configure %c --without-x11
@@ -243,15 +244,22 @@ CompileScript:  &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>InfoN</td><td>
 						<p>
-							このフィールドにより Fink はパッケージ記述の構文の非互換な変更に対処できる．
-							任意のバージョンの Fink には扱える "N" (整数) の最大値が設定されている．
-							それより大きいNを持つフィールド InfoN はいずれも無視される．
-							だからこの機構の利用は必要最低限に止めなければいけない．
-							そうしないと古いバージョンの Fink のユーザが必然性なしに仲間外れにされてしまう．
-							他のフィールドの解説には，どのバージョンの Fink ではどのNの InfoN を使わなければいけないか記されているだろう．
-							この機構を使うには，パッケージ記述全体をフィールド InfoN の値に埋め込む．
-							複数行に渡る値の記述方法については，前述の「ファイル形式」を参照．
+							このフィールドにより Fink はパッケージ記述の構文の非互換な変更に対処できます．
+							任意のバージョンの Fink には扱える "N" (整数) の最大値が設定されています．
+							それより大きいNを持つフィールド InfoN はいずれも無視されます．
+							だからこの機構の利用は必要最低限に止めなければいけません．
+							そうでないと，古いバージョンの Fink のユーザが必然性なしに仲間外れにされます．
+							この機構を使うには，パッケージ記述全体をフィールド InfoN の値に埋め込んでください．
+							複数行に渡る値の記述方法については，前述の「ファイル形式」を参照してください．
+							以下は，各 InfoN レベルに於いて追加された機能と，最初にサポートされた fink のバージョンです．
 						</p>
+<ul>
+<li>
+<code>Info2</code> (fink&gt;=0.20.0): 
+.info ファイル中のメインの <code>Package</code> フィールドでのパーセント展開の使用．
+<code>SplitOff</code> (および <code>SplitOff<b>N</b></code>) での <code>%type_*</code> パーセント展開の使用．
+</li>
+</ul>
 					</td></tr></table>
 			<p>
 				<b>依存性関連</b>
@@ -356,20 +364,25 @@ Depends: (%type_pkg[-x11]) x11
 						</p>
 					</td></tr><tr valign="top"><td>Conflicts</td><td>
 						<p>
-							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りのリスト．
-							バーチャルパッケージでは，そのパッケージが提供する「パッケージ名」をここに指定してもよい．
-							それらは適切に扱われる．
-							このフィールドはフィールド Depends のようにバージョン付きの依存性情報にも対応しているが，
-							代替パッケージには対応していない (意味をなさない)．
-							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれる．
+							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りの一覧．
+							バーチャルパッケージでは，そのパッケージが提供する「パッケージ名」をここに指定することができ，適切に扱われます．
+							このフィールドはフィールド Depends のようにバージョン付きの依存性情報にも対応していますが，
+							代替パッケージには対応していません (意味をなさない)．
+							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれます．
 							(Fink のバージョン 0.18.2 CVS 以降で導入)
 						</p>
 						<p>
-							<b>注記:</b> Fink自身はこのフィールドを無視する．
-							しかしこれは dpkg に渡され，そこで適切に扱われる．
-							要するにこのフィールドが影響するのはビルド時でなく実行時だ．
+							<b>注記:</b> Fink 自身はこのフィールドを無視します．
+							これは dpkg に渡され，そこで適切に扱われます．
+							要するに，このフィールドが影響するのはビルド時でなく実行時です．
 						</p>
-					</td></tr><tr valign="top"><td>Replaces</td><td>
+					</td></tr><tr valign="top"><td>BuildConflicts</td><td>
+<p>
+当該パッケージがコンパイル中にインストールされてはいけないパッケージの一覧．
+これは， <code>./configure</code> やコンパイラが，望ましくないライブラリヘッダを見たり，
+壊れることが分かっているツール (例えば，特定のバージョンの sed にあるバグ) のバージョンを使用することを避けるために使います．
+</p>
+</td></tr><tr valign="top"><td>Replaces</td><td>
 						<p>
 							Conflicts と共に使われる．
 							そのパッケ−ジが，衝突するパッケ−ジの機能の代わりになるだけでなく，共通するファイルを持つときに使われる．
@@ -683,7 +696,8 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
 						<p>
-							fink 0.17.0 からはさらに以下が追加されています:
+fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
+(が，10.4 以降では設定されません)．
 						</p>
 <pre>
 LD_PREBIND: 1
@@ -730,11 +744,19 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 						</p><p>
 							値としては:
 							<code>2.95.2</code> (or <code>2.95</code>),
-							<code>3.1</code>,
-							<code>3.3</code>
+							<code>3.1</code>, <code>3.3</code> および <code>4.0</code> 
 							があります．
-							最後の値は， gcc 3.1 およびそれ以降の gcc の GCC-ABI です．
-						</p><p>
+							我々の知る限り，GCC の作者は，ある時点で GCC-ABI を固定するものと思われます．
+							これ以上変わらないことを期待しましょう．
+						</p>
+<p>
+GCC フィールドはそれ自体は既定値を持たず，設定されなければ無視されます．
+しかし，各ツリーには，既定の g++ コンパイラが存在し，これに対応する GCC の値が想定されています．
+想定値は，10.1 ツリーでは <code>2.95</code>， 10.2 ツリーでは <code>3.1</code>，
+10.2-gcc3.3, 10.3, および 10.4-transitional　ツリーでは <code>3.3</code>，
+(将来の) 10.4 ツリーでは <code>4.0</code> となります．
+</p>
+						<p>
 							注記: GCC 値が既定値と異なる場合， (CC や CXX フラグを設定するなど) パッケージ内でコンパイラを指定する必要があります．
 							また， (virtual) gcc パッケージへの依存性を指定します．
 						</p>
@@ -1122,6 +1144,20 @@ AnotherVar: foo bar
 					<code>SplitOff</code> や <code>SplitOff<b>N</b></code> の中で宣言して修正することができます．
 				</li>
 			</ul>
+<p>
+%n-%v-%r は，パッケージのユニークな識別子として扱われるため，
+<code>SplitOff</code> (あるいは <code>SplitOff<b>N</b></code>)
+を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
+バリアントを使う際は，各バリアントが独立したパッケージとなるようにしてください．
+つまり，以下のようなパッケージレイアウトは禁止されます:
+</p>
+<pre>
+Package: mime-base64-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.6)
+SplitOff: %lt;%lt;
+  Package: mime-base64-pm-bin
+%lt;%lt;
+</pre>
 			<p>
 				インストール段階では，まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行されます．
 				次にフィールド <code>SplitOff</code> や <code>SplitOff<b>N</b></code> の処理が行われます．

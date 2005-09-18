@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:34:18';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -153,7 +153,7 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%d</td><td>
 						<p>
 							<b>d</b>estination．パッケージ化するツリーのビルド先．
-							例:<code>/sw/src/root-gimp-1.2.1-1</code>
+							例:<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>
 							この一時ディレクトリはパッケージをコンパイルする際のインストール段階でルートディレクトリの役を果たす．
 							<code>root-%f</code> が <code>%p/src</code> の中にあることを当てにしてはいけない．
 							ユーザが設定ファイル <code>/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
@@ -182,7 +182,7 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%b</td><td>
 						<p>
 							<b>b</b>uild．
-							ビルドディレクトリ．例: <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>
+							ビルドディレクトリ．例: <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>
 							<code>%f</code> が <code>%p/src</code> の中にあることを当てにしてはいけない．
 							ユーザが設定ファイル <code>/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
@@ -230,10 +230,10 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>%{default_script}</td><td>
 						<p>
-							<code>*Script</code> フィールドでのみ有効．
-							<code>*Script</code> フィールドでのデフォルトフィールド．
+							<code>PatchScript</code>, <code>CompileScript</code> および <code>InstallScript</code> フィールドでのみ有効で，
+							デフォルトの値．
 							値は <code>Type</code> に依存するが，常に存在する（または空欄）．
-							<code>SplitOff: InstallScript</code> で使われる場合，
+							<code>SplitOff</code> (または <code>SplitOff<b>N</b></code>) 中の <code>InstallScript</code> で使われる場合，
 							<code>SplitOff</code> パッケージの <code>InstallScript</code> デフォルトが空欄であっても，
 							この展開は<b>親</b>のデフォルトになる．
 							

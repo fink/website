@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - 始めに";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:34:18';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="format.php?phpLang=ja" title="パッケージ記述"><link rel="prev" href="index.php?phpLang=ja" title="パッケージ作成 Contents">';
 
 
@@ -39,7 +39,7 @@ include_once "header.ja.inc";
 			<p>
 				パッケージは3つの文字列で区別されます．
 				すなわち「パッケージ名」，「バージョン」と「版」です．
-				これらのいずれにも英小文字 (a から z)，数字 (0 から 9)， ダッシュ (-)，プラス (+)，ドット (.) のみが使えます．
+				これらのいずれにも英小文字 (a から z)，数字 (0 から 9)， ダッシュ (-; 註: リビジョン中には使えません)，プラス (+)，ドット (.) のみが使えます．
 				この他の字は使えません．
 				特に，大文字と下線 (_) が使えないことに注意して下さい．
 			</p>

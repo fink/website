@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:58:43';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -135,7 +135,7 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
-<code>/sw/src/root-gimp-1.2.1-1</code>。
+<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>。
 这个临时目录在编译过程的安装阶段将作为根目录位置。
 你不应该假设 <code>root-%f</code> 会在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
@@ -157,7 +157,7 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>。
+构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>。
 你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。
 最内部的目录根据 <code>Source</code> 文件名来命名，或是 <code>SourceDirectory</code> 字段(如果存在的话)的值，或在 <code>NoSourceDirectory</code> 为 <code>true</code> 的时候不使用它。
 </p>
@@ -193,10 +193,10 @@ _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版�
 </p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
 <p>
-Valid only in <code>*Script</code> fields, the default contents of
+Valid only in <code>PatchScript</code>, <code>CompileScript</code>, and <code>InstallScript</code> fields, the default contents of
 that type of field. The value is often dependent on
 the <code>Type</code> field, and is always defined (though it may be
-blank). When used in a <code>SplitOff: InstallScript</code>, this
+blank). When used in the <code>InstallScript</code> of a <code>SplitOff</code> (or <code>SplitOff<b>N</b></code>), this
 expansion will yield the <b>parent's</b> default, even though the
 default for <code>InstallScript</code> in a <code>SplitOff</code>
 package is blank. (Introduced in fink-0.20.6)

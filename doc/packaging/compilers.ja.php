@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - コンパイラ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/28 00:34:18';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -11,14 +11,23 @@ include_once "header.ja.inc";
 
 
 
+
+<p>
+Fink は，Apple Developer Connection によってアップルコンピュータから提供される gcc コンパイラを使用しています．
+バージョンはいくつかあり， Mac OS X システムでも通常は複数のバージョンが存在します．
+</p>
+<p>
+<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">より詳しい解説</a>がメーリングリスト中にあります．
+</p>
+
+
 <h2><a name="versions">5.1 コンパイラバージョン</a></h2>
 <p>
-gcc ファミリーのコンパイラを使用します．
-これらのコンパイラの発展に伴い，fink は "ディストリビューション" をつくって
+GCC の発展に伴い，fink は "ディストリビューション" をつくって
 変化に対応してきました．
 </p>
 <p>
-各ディストリビューションには，ソースからコンパイルするユーザー全員がもっていると想定されている
+各 Fink ディストリビューションには，ソースからコンパイルするユーザー全員がもっていると想定されている
 既定の gcc と g++ コンパイラがあります．
 パッケージ中で直接 "gcc" や "g++" を使用すると，この既定値が使われます． 
 これと違う値を使用する必要がある場合，(例えば，ディストリビューションの移行中に) パッケージ .info ファイルは

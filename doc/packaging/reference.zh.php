@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:58:43';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -15,14 +15,14 @@ include_once "header.zh.inc";
 <h2><a name="build">6.1 构建过程</a></h2>
 
 <p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <code>/sw</code> 的 gimp-1.2.1-1 软件包的。</p>
-<p>在<b>解压阶段</b>，<code>/sw/src/gimp-1.2.1-1</code> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
+<p>在<b>解压阶段</b>，<code>/sw/src/fink.build/gimp-1.2.1-1</code> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
 这三个字段来控制有关细节。</p>
 <p>在<b>补丁阶段</b>，源代码会被打上补丁，以使得可以在 Darwin 下面编译。由 UpdateConfigGuess，UpdateLibtool，Patch 和 PatchScrip 这几个字段所指明的操作将被按照顺序执行。</p>
 <p>在<b>编译阶段</b>，源代码被配置和编译。通常这会以某些参数来调用 <code>configure</code> 脚本，然后执行一个 <code>make</code> 命令。
 详细信息请查看 CompileScript 字段的描述。</p>
-<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<code>/sw/src/root-gimp-1.2.1-1</code> (= %d)。(注意 "root-" 部分。)
+<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d)。(注意 "root-" 部分。)
 所有通常应该安装到 <code>/sw</code> 的文件现在被安装在
-<code>/sw/src/root-gimp-1.2.1-1/sw</code> (= %i = %d%p)。 
+<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p)。 
 详细信息请查看 InstallScript 字段的描述。</p>
 <p>(<b>从 fink 0.9.9 开始，</b>可以通过 <code>SplitOff</code> 字段从一个软件包描述文件生成几个软件包。在安装阶段的尾段，会为每个软件包建立一个单独的安装目录，文件会被移到相应的目录中，)</p>
 <p>在<b>构建阶段</b>，会根据临时文件夹的内容构建一个二进制安装包(.deb)文件。你不能直接影响这个步骤，但软件包描述里面的许多字段会用于生成 dpkg 的 <code>control</code> 文件。</p>
@@ -90,7 +90,7 @@ include_once "header.zh.inc";
   removing, or renaming splitoff packages or shifting files among
   them. When migrating a package to a new tree (from 10.2 to 10.3, for
   example) involves such changes, you should
-  increase <code>Revision</code> by 10 in the newer tree in order to
+  increase <code>Revision</code> by 10 (or some other large number) in the newer tree in order to
   leave space for future updates to the package in the older
   tree.
 </p>
@@ -100,6 +100,11 @@ include_once "header.zh.inc";
 <b>从 fink 0.12.0 开始。</b>
 这个可选字段可以用来指明软件包关键版本号(如果没有提供，默认值为 0).更多信息参考<a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
 规则手册</a>.
+
+Because Fink and some of the underlying Debian tools use
+name-version-revision as the unique identifier of a package, you must
+not create a package that differs from another solely by its epoch.
+
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
@@ -191,10 +196,22 @@ CompileScript:  &lt;&lt;
 本字段允许 fink 在软件包描述文件中实现后向兼容的语法改变。
 一个给定版本的 fink 被配置为能够处理某个最大的 "N" 整数值。
 任意在更高的 InfoN 字段的软件包会被忽略，所以这种机制仅在有需要的时候才使用，否则那些使用较旧版本的用户就会被没有必要地区别出去了。
-本文档其它字段的说明会描述必须使用哪个特定的 InfoN。
 要使用这个机制，把整个软件包描述放到合适的 InfoN 字段中间。
 参考前面的 "File Format" 部分了解多行字段的语法。
+
+Here are the features added for each InfoN level, along with the
+earliest version of fink that supports it:
 </p>
+<ul>
+<li>
+<code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
+in the main <code>Package</code> field of the .info file and the
+ability to use the <code>%type_*</code> percent-expansions in
+the <code>Package</code> field of <code>SplitOff</code>
+(and <code>SplitOff<b>N</b></code>) packages.
+</li>
+</ul>
+
 
 </td></tr></table>
 <p><b>依赖关系：</b></p>
@@ -296,6 +313,14 @@ needed package name. As a result, having many variants provide a common surrogat
 </p>
 <p>
 <b>注意：</b>Fink 自己本身会忽略这个字段。不过，它会被传递给 dpkg 并做相应的处理。概括来说，它仅影响运行时，而不应该构建时。
+</p>
+</td></tr><tr valign="top"><td>BuildConflicts</td><td>
+<p>
+A list of packages that must not be installed while this package is
+being compiled. This can be used to prevent <code>./configure</code>
+or the compiler from seeing undesired library headers or to avoid use
+of a version of a tool that is known to be broken (for example, a bug
+in a certain version of sed).
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
@@ -553,7 +578,9 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
 <p>
-In addition, starting in fink 0.17.0:
+In addition, starting in fink 0.17.0, the following values are set for
+the 10.4-transitional distribution and earlier (but are not set for
+the 10.4 distribution and later):
 </p>
 <pre>
 LD_PREBIND: 1
@@ -608,14 +635,20 @@ you are currently using.)
 The allowed values are:
 <code>2.95.2</code> (or <code>2.95</code>),
  <code>3.1</code>,
-and <code>3.3</code>.
-This last is expected to be the GCC-ABI for gcc 3.3 and all subsequent
-versions of gcc.
-The default values for the various package trees are:
-<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
-and <code>3.3</code> in the 10.2-gcc3.3, 10.3, and all subsequent trees.
+ <code>3.3</code>,
+and <code>4.0</code>.
+Our understanding is that the GCC authors intend to stabilize the GCC-ABI
+at some point; we can hope that it won't change again.
 </p><p>
-Note that when the GCC value is different from the default, the compiler
+The GCC field does not have a default value, per se, since it is ignored
+if it is not set.  However, for each tree, there is an expected value
+for GCC corresponding to the default g++ compiler for that tree.
+The expected values for the various package trees are:
+<code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
+ <code>3.3</code> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
+trees, and <code>4.0</code> in the (upcoming) 10.4 tree.
+</p><p>
+Note that when the GCC value is different from the expected value, the compiler
 must be specified within the package (typically by setting the CC or CXX
 flags), and a dependency on one of the (virtual) gcc packages should be
 specified.
@@ -929,6 +962,24 @@ StartupItems (例如 web 服务器)。
 <li>安装阶段，构建阶段：全部的字段都可以使用(除了 SplitOff 不能包括新的 SplitOff 以外)。</li>
 <li>额外数据：这会从父软件包继承，但可以通过在 <code>SplitOff</code> 或 <code>SplitOff<b>N</b></code> 中声明这些字段而进行修改。</li>
 </ul>
+<p>
+
+Because %n-%v-%r is treated as the unique identifier of a package, you
+must not have the same <code>Package</code> (at the
+same <code>Version</code> and <code>Revision</code>) listed as
+a <code>SplitOff</code> (or <code>SplitOff<b>N</b></code>) of
+multiple packages. If you use variants, remember that each variant is
+considered an independent package, so the following package layout is
+forbidden:
+
+</p>
+<pre>
+Package: mime-base64-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.6)
+SplitOff: %lt;%lt;
+  Package: mime-base64-pm-bin
+%lt;%lt;
+</pre>
 <p>
 在安装阶段，父文件包的 <code>InstallScript</code> 和 
 <code>DocFiles</code> 会被首先执行。

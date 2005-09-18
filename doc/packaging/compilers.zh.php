@@ -1,7 +1,7 @@
 <?
 $title = "打包 - Compilers";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/27 12:58:43';
+$cvs_date = 'Date: 2005/09/18 21:16:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="reference.php?phpLang=zh" title="操作手册"><link rel="prev" href="fslayout.php?phpLang=zh" title="文件系统布局">';
 
 
@@ -11,12 +11,24 @@ include_once "header.zh.inc";
 
 
 
-<h2><a name="versions">5.1 Compiler Versions</a></h2>
-<p>Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection.  As these compilers have evolved,
-there have been different fink "distributions" to cope with the changes.
+
+<p>
+Fink uses the gcc family of compilers, as provided by Apple computer
+through the Apple Developer Connection. Different versions of gcc exist,
+and usually more than one is available on a Mac OS X system.
 </p><p>
-Each distribution has had certain default values for the gcc and g++
+This section explains some of the ways Fink deals with these different versions
+of gcc. An email to the Fink mailing list has <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">more explanation</a>.
+</p>
+
+
+<h2><a name="versions">5.1 Compiler Versions</a></h2>
+<p>
+As GCC has evolved,
+there have been different fink "distributions" to cope with the changes.
+</p>
+<p>
+Each Fink distribution has had certain default values for the gcc and g++
 compilers, which any user compiling from source is expected to have
 installed.  You can expect that direct calls to "gcc" and "g++" from
 within your package will use these default values.  If you need to use
