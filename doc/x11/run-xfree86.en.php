@@ -193,7 +193,7 @@ quartz-wm --only-proxy &amp;
     
     <h2><a name="oroborosx">4.7 OroborOSX</a></h2>
     
-    <p><a href="http://oroborosx.sourceforge.net">OroborOSX</a> is a an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <code>X11.app</code> or <code>XDarwin.app</code> continue to function, as well</p>
+    <p><a href="http://oroborosx.sourceforge.net">OroborOSX</a> is an alternative to the X11.app and XDarwin display servers.  It requires a preexisting X11 installation to work.  <code>X11.app</code> or <code>XDarwin.app</code> continue to function, as well</p>
     <p>When run, <b>OroborOSX</b> starts its own rootless-only window manager, and doesn't read in either the system's <code>xinitrc</code> or user's <code>.xinitrc</code> files.  After starting, it does have a menu option to execute <code>.xinitrc</code>.  However, it does have its own method to set up applications to run when it starts.
 It also provides a mechanism to start X11 applications from the Finder via startup scripts.</p>  
 <p>For more information visit the <a href="http://oroborosx.sourceforge.net">OroborOSX homepage</a>.</p>

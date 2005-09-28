@@ -120,7 +120,9 @@ include_once "header.zh.inc";
 <code>exec</code>。）
 </p>
       <p>
-关于启动 GNOME 的一个简单例子：
+
+A simple example that starts up GNOME on XFree86 or Xorg:
+
 </p>
       <pre>. /sw/bin/init.sh
 exec gnome-session</pre>
@@ -137,14 +139,10 @@ xterm &amp;
 
 exec enlightenment</pre>
 
-<p>要在苹果的 X11 下启动 GNOME 2.2，使用下面的命令：</p>    
- <pre>. /sw/bin/init.sh
-quartz-wm --only-proxy &amp;
-metacity &amp;
-exec gnome-session
-</pre> 
 
-<p>要在苹果的 X11 下启动 GNOME 2.4，metacity 会自动被启动，所以命令应该修改为：</p>    
+
+<p>To start GNOME 2.4 and later under Apple's X11:</p>
+
  <pre>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
