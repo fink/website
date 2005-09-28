@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.7 2005/06/10 01:04:11 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.8 2005/09/28 14:23:46 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -628,7 +628,9 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <code>exec</code>。）
 </p>
       <p>
-关于启动 GNOME 的一个简单例子：
+<!-- start translation -->
+A simple example that starts up GNOME on XFree86 or Xorg:
+<!-- end translation -->
 </p>
       <codeblock>. /sw/bin/init.sh
 exec gnome-session</codeblock>
@@ -645,14 +647,15 @@ xterm &amp;
 
 exec enlightenment</codeblock>
 
-<p>要在苹果的 X11 下启动 GNOME 2.2，使用下面的命令：</p>    
+<!--><p>要在苹果的 X11 下启动 GNOME 2.2，使用下面的命令：</p>    
  <codeblock>. /sw/bin/init.sh
-quartz-wm --only-proxy &amp;
+quartz-wm -only-proxy &amp;
 metacity &amp;
 exec gnome-session
-</codeblock> 
-
-<p>要在苹果的 X11 下启动 GNOME 2.4，metacity 会自动被启动，所以命令应该修改为：</p>    
+</codeblock>< -->
+<!-- start translation -->
+<p>To start GNOME 2.4 and later under Apple's X11:</p>
+<!-- end translation -->
  <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session

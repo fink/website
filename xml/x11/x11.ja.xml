@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.10 2005/06/10 01:04:11 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.11 2005/09/28 14:23:46 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -247,7 +247,7 @@ XFree86 version 4.5.0-23 をソースからインストールすることがで�
 <code>xfree86</code> と <code>xfree86-shlibs</code>  の両方が必要です。
 </p>
 <p>
-X.org の X11 リリースをインストールすることもできます (currently version 6.8.2-35) 。
+X.org の X11 リリースをインストールすることもできます (現在のバージョンは 6.8.2-35) 。
 これは unstable ツリーの <code>xorg</code> と <code>xorg-shlibs</code> をインストールします。
 この X11 は、 XFree86-4.5 に似ていますが、バグフィックス、新しい機能があり、係争中のライセンスのコードが除かれています。
 </p>
@@ -731,7 +731,7 @@ Fink を使っている場合、 source <filename>init.sh</filename>
 (注記: メモリと CPU サイクルを節約するために、下記の例のように <code>exec</code> を追加すると良いでしょう。)
 </p>
 <p>
-以下のサンプルでは GNOME を起動しています:
+以下の簡単な例では、XFree86 または Xorg　上で GNOME を起動しています:
 </p>
 <codeblock>source /sw/bin/init.csh
 exec gnome-session</codeblock>
@@ -747,13 +747,13 @@ xterm &amp;
 xterm &amp;
 
 exec enlightenment</codeblock>
-<p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
+<!-- ><p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
 <codeblock>. /sw/bin/init.sh
-quartz-wm --only-proxy &amp;
+quartz-wm -only-proxy &amp;
 metacity &amp;
 exec gnome-session
-</codeblock>
-<p>GNOME2.4 を Apple X11 下で起動するには、 metacity が自動的に起動するため、以下の通りです:</p>
+</codeblock>< -->
+<p>GNOME2.4 以降を Apple X11 下で起動するには:</p>
 <codeblock>. /sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
