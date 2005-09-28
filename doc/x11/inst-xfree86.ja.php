@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - X11 のインストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/06/10 01:04:11';
+$cvs_date = 'Date: 2005/09/28 14:23:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ja" title="X11 の起動"><link rel="prev" href="history.php?phpLang=ja" title="歴史">';
 
 
@@ -44,7 +44,7 @@ XFree86 version 4.5.0-23 をソースからインストールすることがで�
 <code>xfree86</code> と <code>xfree86-shlibs</code>  の両方が必要です。
 </p>
 <p>
-X.org の X11 リリースをインストールすることもできます (currently version 6.8.2-35) 。
+X.org の X11 リリースをインストールすることもできます (現在のバージョンは 6.8.2-35) 。
 これは unstable ツリーの <code>xorg</code> と <code>xorg-shlibs</code> をインストールします。
 この X11 は、 XFree86-4.5 に似ていますが、バグフィックス、新しい機能があり、係争中のライセンスのコードが除かれています。
 </p>
