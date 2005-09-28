@@ -226,9 +226,9 @@ More details about the <code>fink</code> tool are available in the chapter
             <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p></li>
             <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
             <li><p><b>0.7.2</b>
-  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.</p> 
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.
+            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.
 </p></li>
           </ol>
           

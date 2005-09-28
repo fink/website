@@ -222,7 +222,7 @@ pico .cshrc</pre>
         </li>
       </ul>
       <p>
-Note that the <code>init.sh</code>and <code>init.csh</code> scripts also add <code>/usr/X11R6/bin</code> and
+Note that the <code>init.sh</code> and <code>init.csh</code> scripts also add <code>/usr/X11R6/bin</code> and
 <code>/usr/X11R6/man</code> to your PATH so you can use X11 when
 it is installed.
 Fink packages have the ability to add settings of their own, e.g. the

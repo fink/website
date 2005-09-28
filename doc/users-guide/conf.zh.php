@@ -127,7 +127,13 @@ unstable/main   - 其它未稳定软件包
         </li>
         <li>
         		<p><b>Buildpath:</b> 路径</p>
-        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <code>/sw/src</code> 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <code>KeepRootDir</code> 和 <code>KeepBuildDir</code> 字段的描述获取关于这个临时目录的更多信息。</p>
+        		
+        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <code>/sw/src</code> (on Panther and earlier) 下， <code>/sw/src/fink.build</code> (on Tiger) 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <code>KeepRootDir</code> 和 <code>KeepBuildDir</code> 字段的描述获取关于这个临时目录的更多信息。</p>
+	    <p>On Tiger, it is recommended that the Buildpath end with .noindex
+or .build. Otherwise, Spotlight will attempt to index the temporary files in
+the Buildpath, slowing down builds.
+    	</p>
+                
         </li>
       </ul>
     
@@ -245,14 +251,14 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         <li>
           <p>
             <b>KeepRootDir:</b> 布尔值</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/root-[name]-[version]-[revision] 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 root-[name]-[version]-[revision] 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
           传递 <b>-K</b> 标志给 <b>fink</b> 可以起到相同的效果，但只对单次的 <b>fink</b> 调用起作用。
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 /sw/src/[name]-[version]-[revision] 目录。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          <p>使得 Fink 不会在构建好一个软件包以后删除 [name]-[version]-[revision] 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
           传递 <b>-K</b> 标志给 <b>fink</b> 可以起到相同的效果，但只对单次的 <b>fink</b> 调用起作用。
           </p>
         </li>

@@ -157,9 +157,14 @@ High (全て報告する)
 <b>Buildpath:</b> パス</p>
 <p>
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
-デフォルトでは <code>/sw/src</code> 内に作成しますが、別の場所を使いたい場合はここでパスを指定します。
+デフォルトでは Panther 以前では <code>/sw/src</code> 内に、Tiger からは <code>/sw/src/fink.build</code> 内に、
+置かれていますが、別の場所を使いたい場合はここでパスを指定します。
 仮ディレクトリについては、後述の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
 </p>
+	    <p>
+          Tiger では、BuildPath は .noindex または .build とつけることをお勧めします。
+          こうしなければ、Spotlight が BuildPath 内にある仮ファイルをすべてインデックスしようとし、ビルドを遅くします。
+    	</p>
 </li>
 </ul>
 
@@ -287,7 +292,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepRootDir:</b> ブール値</p>
-<p>パッケージのビルド後に /sw/src/root-[name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <b>BuildPath</b> 内の root-[name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 一度だけ使いたい場合、 <b>fink</b> に <b>-K</b> フラグを渡して同じ効果が得られます。
@@ -296,7 +301,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepBuildDir:</b> ブール値</p>
-<p>パッケージのビルド後に /sw/src/[name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <b>BuildPath</b> 内の [name]-[version]-[revision] ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 一度だけ使いたい場合、 <b>fink</b> に <b>-K</b> フラグを渡して同じ効果が得られます。

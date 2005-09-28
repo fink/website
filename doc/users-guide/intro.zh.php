@@ -43,10 +43,13 @@ Fink 是 OS X 和 Darwin 上的开放源代码的 Unix 软件。
       <ul>
         <li>
           <p>
-开发工具。
-对 OS X，安装 Developer　Tools CD　上的 Developer.pkg 软件包。
-请注意这些工具包必须与你的 Mac OS X 版本相对应。
-对 Darwin，这些工具应该已经包括在默认安装中。
+
+Developer tools.  
+On Mac OS X, install the Developer.pkg package from the Developer
+Tools (known as XCode for 10.3 and 10.4) CD (they're on the main DVD for OS 10.4), or <a href="http://connect.apple.com">download</a> the latest version--this is often desirable, as later versions frequently fix issues (though admittedly sometimes they break things).    
+Note that the tools must match your Mac OS X version.
+On Darwin, the tools should be present in the default install.
+
 </p>
           <p>
 即使你不打算从源代码编译安装软件，安装开发工具仍然是个很好的主意。
@@ -65,18 +68,21 @@ Fink 是 OS X 和 Darwin 上的开放源代码的 Unix 软件。
     
     <h2><a name="supported-os">1.3 支持的操作系统</a></h2>
       
+      
+      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.</p>
       <p>
-        <b>Mac OS X 10.3</b> 是运行 Fink 的首选操作系统。
-所有开发者都运行它，所有软件包都在这个系统上经过测试。
-它可以被认为是 "被全面支持和经过完全测试"的，虽然对于特定的软件包可能会有个别的问题。
+        <b>Mac OS X 10.3</b> is is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
-<p><b>Mac OS X 10.2</b> 仍然被支持，但一些新的软件包可能没有适合 10.2 的版本。</p>
+      <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
+      
       <p>
         <b>Mac OS X 10.1</b> 在某种程度仍然被支持。
 你只能运行 Fink 0.4.1，在它上面没有更新的版本。
 </p>
       <p>
-Darwin 7.0.1 是与 Mac OS X 10.3 对应的 Darwin 版本，而 <b>Darwin 6.0.2</b> 则是与 Mac OS X　10.2 相应的版本。
+Darwin 8.x 是与 Mac OS X 10.4 对应的 Darwin 版本，
+而 Darwin 7.x 是与 Mac OS X 10.3 对应的 Darwin 版本，
+而 <b>Darwin 6.x</b> 则是与 Mac OS X　10.2 相应的版本。
 总体来讲它们都可以使用，但没有经过非常详细的测试。因为多数人都只是在 Mac OS X 上运行。
 对于一些使用了 OS X 专有特性的软件你可能会碰到问题 —— 受影响的软件包包括 XFree86，可能也包括 esound。
 </p>

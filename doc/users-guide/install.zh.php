@@ -54,6 +54,11 @@ include_once "header.zh.inc";
       <p>
 源代码发行版必须从命令行安装，因此请打开　Terminal.app 并进入到你保存所下载到的
 fink-0.x.x-full.tar.gz 压缩档的目录。
+
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
+
 以下的命令将解压压缩档：
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
@@ -96,13 +101,10 @@ In most cases, you can do this by entering the command
       </p>
       <pre>/sw/bin/pathsetup.sh</pre>
       
-      <p>
-	in a terminal window. Note that for some older versions of
-	fink called this <code>pathsetup.command</code>, and one could
-	run it by entering the command:
-      </p>
+      <p>Note that for some older versions of
+	fink the program was called  <code>pathsetup.command</code>, and one could
+	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
       
-      <pre>open /sw/bin/pathsetup.command</pre>
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
 你可以通过打开终端窗口并运行下面指令来查看你 shell 类型：
@@ -171,7 +173,7 @@ pico .cshrc</pre>
         </li>
       </ul>
       <p>
-注意这个脚本还添加了 <code>/usr/X11R6/bin</code> 和
+注意这个 <code>init.sh</code> 和 <code>init.csh</code> 脚本还添加了 <code>/usr/X11R6/bin</code> 和
 <code>/usr/X11R6/man</code> 到你 PATH 环境变量中，使得你可以在安装了 X11 以后使用它。
 Fink 软件包可以添加它们自己的设置，例如，qt 软件会设置 QTDIR 环境变量。
 </p>

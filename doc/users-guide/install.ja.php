@@ -54,6 +54,9 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 <p>
 ソースリリースはコマンドラインからインストールする必要があります。
 まずターミナル.app を開き、 fink-0.x.x-full.tar.gz アーカイブをインストールしたディレクトリに移動します。
+(注記: もし、OS X 10.4 を XCode 2.1 を使っている場合は、
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> 
+を代わりに用い、下記の説明も適切に変えてください。)
 次のコマンドでアーカイブを解凍します。
 </p>
 <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
@@ -97,9 +100,7 @@ Fink ディレクトリ階層にインストールされたソフトウェア、
 <p>
 と入力します。
 古いバージョンの fink の場合、ファイル名が <code>pathsetup.command</code> ですので、次のように入力します。
-</p>
-<pre>open /sw/bin/pathsetup.command</pre>
-<p>
+<code>open /sw/bin/pathsetup.command</code>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
 現在のシェルを知るには、ターミナルを開き:
@@ -184,7 +185,7 @@ pico ~/library/init/tcsh/path</pre>
  </li>
 </ul>
 <p>
-スクリプトは <code>/usr/X11R6/bin</code> と <code>/usr/X11R6/man</code> をパスに追加することに注意して下さい。
+<code>init.sh</code> と <code>init.csh</code> スクリプトは <code>/usr/X11R6/bin</code> と <code>/usr/X11R6/man</code> をパスに追加することに注意して下さい。
 これで X11 がインストールされた時に使えるようになります。
 Fink のパッケージはそれぞれ設定を追加することができます。
 例えば、 qt パッケージは QTDIR 環境変数を設定します。

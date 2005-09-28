@@ -134,7 +134,7 @@ available in the <a href="intro.php?phpLang=zh#src-vs-bin">binary
 distribution</a>.
       </p>
       
-      <p>首先，你需要在你的系统中安装合适版本的开发工具。在 <a href="http://connect.apple.com">http://connect.apple.com</a>中免费注册以后可以下载得到它。</p>
+      <p>首先，你需要在你的系统中安装合适版本的开发工具。在 <a href="http://connect.apple.com">http://connect.apple.com</a>中最新版本免费注册以后可以下载得到它。</p>
       <p>
 要获得可以从源代码安装的软件包清单，可以用 <code>fink</code> 工具查询：
 </p>
@@ -189,30 +189,40 @@ More details about the <code>fink</code> tool are available in the chapter
       <p>当你希望安装一个软件包，你应该首先查看 <a href="http://fink.sourceforge.net/pdb/index.php">软件包数据库</a> 来找找是不是可以通过 Fink 获得。软件包的各个可用版本会在一个表格的多个行中出现。就象这样：</p>
       
       <ul>
-        <li>
-          <p>
-            <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p>
+        <li>Binary Distribution
+<ol>
+            <li><p>
+            <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p></li>
+            <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <li><p><b>0.7.2</b>
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-        <li><b>0.6.3:</b>  this is the version that can be installed from binaries for OS 10.2.</li>
-        <li>
-          <p>
-<b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.3, under the current Fink release.  If you <a href="upgrade.php?phpLang=zh">upgrade</a> Fink, there may be an OS-specific newer version that isn't shown here.</p> 
+            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.
+</p></li>
+          </ol>
+          
         </li>
-        <li>
+      </ul>
+      <ul>
+        <li>CVS/rsync Distributions
+<ol>
+            <li>
           <p>
-            <b>current-10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from source for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
-        <li><p><b>current-10.3 stable:</b>  This is the most recent version that can be installed from source for OS 10.3.  Once again, CVS or rsync access may be needed to access this version.</p>
-</li>
-        <li>
+            <li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.3.</p></li>
+            <li><p><b>10.4-transitional stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4.</p></li>
+            <li>
           <p>
-            <b>current-10.2-gcc3.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
+            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
-        <li><b>current-10.3 unstable:</b>  This is the latest unstable version that can be installed from source for OS 10.3.  Enable the unstable tree as mentioned above.</li>
+            <li><p><b>10.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.3.</p></li>
+            <li><p><b>10.4-transitional unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.4.</p></li>
+          </ol></li>
       </ul>
       
     
@@ -220,39 +230,35 @@ More details about the <code>fink</code> tool are available in the chapter
       
       <p>许多 Fink 中的软件包都要求已经安装某种形式的 X11。因此，首先要做的第一件事情是选择一种 X11 实现。</p>
       <p>
-由于在 Mac OS X 上有几种 X11 实现（XFree86, Tenon Xtools, eXodus），以及几种不同的方式去安装它们（手工或通过 Fink），所以存在有几种可选的软件包 - 每种设置方式一个。
-Fink 并不能猜测你需要什么，所以很重要的是在你开始安装 X11 应用程序之前先选择一种合适的安装好。
+由于在 Mac OS X 上有几种 X11 实现（Apple X11, XFree86, X.org），以及几种不同的方式去安装它们（手工或通过 Fink），所以存在有几种可选的软件包 - 每种设置方式一个。
 这里是可用的软件包和　X11　安装方法：
 </p>
       <ul>
+      
         <li>
           <p>
-            <b>xfree86-base:</b>
-（仅限 10.1 或 10.2）这个软件包是一个真正的安装包。它把整个 XFree86 4.2.1.1 作为一个 Fink 包进行安装。为了获取最大的灵活性，这个软件包并不包含实际的 XDarwin 服务器。
-要安装它，你需要先安装 xfree86-rootless 软件包。
+            <b>xfree86, xfree86-shlibs:</b>
+Install both of these packages for XFree86 4.3.0 (OS 10.2 only), 4.4.0 (10.2 or 10.3), or 4.5.0 (10.3 or 10.4).  
+</p>
+        </li>
+        <li><p><b>xorg, xorg-shlibs</b>(10.3 or 10.4)  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
+        <li>
+          <p>
+<b>system-xfree86 + -shlibs, -dev:</b>
+These packages are automatically generated (for Fink 0.6.2 or later) if you install Apple's X11, or manually installed XFree86 or X.org.  
+They will then act as
+dependency placeholders.
 </p>
         </li>
         <li>
           <p>
-            <b>xfree86:</b>
-这是一个单独的软件包（包括显示服务器），它会安装 XFree86 4.3.0 （仅限 10.2)，或 4.3.99 （仅限10.3 ）。
-这个版本比 4.2.1.1 要快，但没有经过非常多的测试。
+            <b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev</b>
+(10.1 or 10.2 only) These packages install all of XFree86 4.2.1.1 (4.2.0 on 10.1).  The <code>-threaded</code> variant was provided for applications that required it, and this functionality is standard in later XFree86 versions.  The <code>-rootless</code> packages include the XDarwin display server--the name is historical.
+</p><p>You must install all six packages to build X11-based packages from source.
 </p>
         </li>
-        <li>
-          <p>
-system-xfree86:
-这个软件包是自动生成的（对于 Fink 0.6.2 或更新），如果你是手工安装 XFree86 的话。这包括从源码安装或从官方（或非官方）的二进制发行包，或者安装苹果的 X11。
-它会作为一个依赖关系的占位符。
-</p>
-        </li>
-        <li>
-          <p>
-system-xtools:
-如果你安装了 Tenon 的 Xtools 产品，你需要安装这个软件包。
-和 system-xfree86 一样，这只是执行一个可用性校验，并不修改实际的文件。
-</p>
-        </li>
+        
+      
       </ul>
       <p>
 关于安装和运行 X11 的更多信息，请参考
