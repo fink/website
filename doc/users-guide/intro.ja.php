@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - はじめに";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/26 02:14:38';
+$cvs_date = 'Date: 2005/09/28 14:23:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="install.php?phpLang=ja" title="初めてのインストール"><link rel="prev" href="index.php?phpLang=ja" title="ユーザーガイド Contents">';
 
 
@@ -80,11 +80,11 @@ Darwin 場では、デフォルトインストールでツールがインスト�
 多くの開発者はこれを使用しますが、所有していない場合は 10.3 ユーザーにテストをしてもらっています。
 </p>
 <p>
-<b>Mac OS X 10.2</b> は現在でも制限付きでサポートされています。
+<b>Mac OS X 10.2</b> は、現在でも制限付きでサポートされています。
 Fink 0.6.4 が使用できる最新バージョンです。
 </p>
 <p>
-<b>Mac OS X 10.1</b> は現在でも制限付きでサポートされています。
+<b>Mac OS X 10.1</b> は、現在でも制限付きでサポートされています。
 Fink 0.4.1 が使用できる最新バージョンです。
 </p>
 <p>

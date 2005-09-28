@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/09/09 19:10:31';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2005/09/28 14:22:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 
@@ -75,7 +75,7 @@ I'm talking hours or even days here.
       
       <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.</p>
       <p>
-        <b>Mac OS X 10.3</b> is is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
+        <b>Mac OS X 10.3</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
       <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
       <p>

@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 软件包";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/26 02:14:38';
+$cvs_date = 'Date: 2005/09/28 14:23:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
 
