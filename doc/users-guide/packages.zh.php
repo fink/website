@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 软件包";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:23:02';
+$cvs_date = 'Date: 2005/09/28 14:41:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
 
@@ -195,9 +195,9 @@ More details about the <code>fink</code> tool are available in the chapter
             <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p></li>
             <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
             <li><p><b>0.7.2</b>
-  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.</p> 
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=zh#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="#bin">update</a> Fink, later versions of some packages may be available.
+            <li><p><b>0.8.0:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=zh#bin">update</a> Fink, later versions of some packages may be available.
 </p></li>
           </ol>
           
