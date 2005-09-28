@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.21 2005/09/28 14:23:02 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.22 2005/09/28 14:41:42 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -527,14 +527,14 @@ Fink をソースからインストールした場合など、別にダウンロ
             <li>
               <p>
                 <em>0.7.2:</em> OS 10.3 用で、バイナリからインストールできるバージョン。
-                もし、Fink を<xref section="bin">更新</xref>
+                もし、Fink を<xref chapter="install" section="bin">更新</xref>
                 したなら、パッケージによっては新しいバージョンがあるかもしれません。
               </p>
             </li>
             <li>
               <p>
                 <em>&fink_version;:</em> OS 10.4 用で、バイナリからインストールできるバージョン。
-                もし、Fink を<xref section="bin">更新</xref>
+                もし、Fink を<xref chapter="install" section="bin">更新</xref>
                 したなら、パッケージによっては新しいバージョンがあるかもしれません。
               </p>
             </li>
