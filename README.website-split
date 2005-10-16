@@ -6,7 +6,7 @@ Thus, to fully update the website requires three steps:
  2) log on to ssh.sourceforge.net, change to the fink htdocs directory,
     and run ./update.sh ;
  3) after an appropriate delay, log on to sampson.opendarwin.org, cd to
-    /Volumes/psrc/finkbindist , and run ./update.sh .
+    /Volumes/src/finkbindist , and run ./update.sh .
 (The reason for a delay in step 3 is that the CVS checkout of the web
 content is via anonymous pserver access, which is only updated at sourceforge
 after a delay.)
