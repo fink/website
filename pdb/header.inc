@@ -1,5 +1,15 @@
 <?
-/* $Id: header.inc,v 1.8 2003/11/02 09:11:57 benh57 Exp $ */
+/* $Id: header.inc,v 1.9 2005/10/25 01:00:51 dmrrsn Exp $ */
+
+$server = $_SERVER['SERVER_NAME'];
+$uri = $_SERVER['REQUEST_URI'];
+
+if ($server == "fink.sourceforge.net") { 
+  header("HTTP/1.1: 301 Moved Permanently");
+  header("Location: http://pdb.finkproject.org$uri");
+  exit();
+}
+
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
@@ -39,6 +49,7 @@ if (substr($root,0,1) == "-") {
 } else {
   $root = $fsroot;
 }
+include "hostlogo.inc";
 include $fsroot."header.inc";
 
 /* connect to database */
