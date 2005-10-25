@@ -1,18 +1,18 @@
 <?
 $title = "Package Database - Maintainer ";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2003/12/29 20:45:16 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2005/10/25 00:57:52 $';
 
 include "header.inc";
 ?>
 
 <?
-if (!isset($maintainer)) {
+if (!isset($_GET['maintainer'])) {
 ?>
 <p><b>No maintainer specified.</b></p>
 <?
 } else { /* if (no maintainer) */
-$maintainer = htmlspecialchars($maintainer);
+$maintainer = htmlspecialchars($_GET['maintainer']);
 ?>
 
 <h1>Packages maintained by <? print $maintainer ?></h1>
