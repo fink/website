@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/09/30 14:57:24 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2005/10/25 00:59:07 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 <p>
 This is a complete list of the packages in the Fink package database.
 Note that it lists all packages, including the unstable tree and
-the latest <a href="../doc/cvsaccess/index.php">packages from
+the latest <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">packages from
 CVS</a>.
 </p>
 

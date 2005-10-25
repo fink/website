@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/02/25 04:45:50 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2005/10/25 00:59:07 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ You can help improve the situation by testing those packages and
 reporting both success and failure to the package maintainer.
 The <a href="testing.php">Packages in Testing</a> page lists all
 packages that still have to pass testing.
-In order to test the packages, you need to configure Fink to <a href="../faq/usage-fink.php#unstable">use
+In order to test the packages, you need to configure Fink to <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">use
 unstable</a> and then download the latest descriptions by running <i>fink selfupdate-rsync</i> 
 (or <i>fink selfupdate-cvs</i> if you can't use rsync for some reason).
 </p>
