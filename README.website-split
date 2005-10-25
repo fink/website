@@ -1,12 +1,13 @@
-As of October, 2004, the Fink website has two portions, hosted in different
-places.  This CVS repository contains all files used by both portions.
+As of October, 2005, the Fink website has three portions, hosted in different
+places.  This CVS repository contains all files used by all portions.
 
 Thus, to fully update the website requires three steps:
  1) update the content in CVS;
  2) log on to ssh.sourceforge.net, change to the fink htdocs directory,
     and run ./update.sh ;
  3) after an appropriate delay, log on to sampson.opendarwin.org, cd to
-    /Volumes/src/finkbindist , and run ./update.sh .
+    /Volumes/src2/fink/finkbindist , and run ./update.sh ; then cd to
+    /Volumes/src2/fink/pdb.finkproject.org/htdocs and run ./update.sh .
 (The reason for a delay in step 3 is that the CVS checkout of the web
 content is via anonymous pserver access, which is only updated at sourceforge
 after a delay.)
@@ -20,4 +21,13 @@ sampson.opendarwin.org), which is how the split works for users.  On the
 other hand, bindist/index.php sets up the index bar on the left of the page
 to point back to the sourceforge.net site.
 
-The .cvsignore file contains
+Similarly, the file header.inc redirects the 'packages' part of the website
+to pdb.finkproject.org .  The file pdb/header.inc makes sure that any
+stray URL's of the form fink.sourceforge.net/pdb/... get redirected to the
+pdb.finkproject.org site.
+
+The .cvsignore file contains an entry for index.shtml; on the two remote
+sites, this is an empty file which prevents the web content one level
+above that of the remote site from being displayed by the remote webserver
+(while allowing us to use the same CVS files for both the main and the
+remote sites).

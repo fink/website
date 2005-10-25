@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.94 2005/06/13 11:50:41 fingolfin Exp $ */
+/* $Id: header.inc,v 1.95 2005/10/25 01:01:48 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -99,13 +99,13 @@ $section_names = array(
 );
 
 $section_files = array(
-	'home' => 'index.php?phpLang='. $lang_code,
-	'download' => 'download/index.php?phpLang='. $lang_code,
-	'packages' => 'pdb/index.php?phpLang='. $lang_code,
-	'help' => 'help/index.php?phpLang='. $lang_code,
-	'faq' => 'faq/index.php?phpLang='. $lang_code,
-	'documentation' => 'doc/index.php?phpLang='. $lang_code, 
-	'mailing-lists' => 'lists/index.php?phpLang='. $lang_code
+	'home' => 'http://fink.sourceforge.net/index.php?phpLang='. $lang_code,
+	'download' => 'http://fink.sourceforge.net/download/index.php?phpLang='. $lang_code,
+	'packages' => 'http://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
+	'help' => 'http://fink.sourceforge.net/help/index.php?phpLang='. $lang_code,
+	'faq' => 'http://fink.sourceforge.net/faq/index.php?phpLang='. $lang_code,
+	'documentation' => 'http://fink.sourceforge.net/doc/index.php?phpLang='. $lang_code, 
+	'mailing-lists' => 'http://fink.sourceforge.net/lists/index.php?phpLang='. $lang_code
 );
 
 if (!$section) $section = "home";
@@ -321,11 +321,11 @@ function insert_sub ($navbox, $active_page) {
 		if ($section == $key && 1 == $nonav) {
 			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
 		} elseif ($section == $key) {
-			echo '<a href="' . $linkroot . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
+			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
 			insert_sub ($navbox, $active_page);
 			echo "\t\t";
 		} else {
-			echo '<a href="' . $linkroot . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
+			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
 		}
 	} 
 ?>
