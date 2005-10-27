@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/07/08 19:00:06 $';
+$cvs_date = '$Date: 2005/10/27 15:26:41 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -70,9 +70,9 @@ if (!$rs) {
  print '<tr bgcolor="#ffecbf">';
  print '<th width="100" align="center" valign="bottom" rowspan="3">System</th>';
  print '<th width="2"   rowspan="3" bgcolor="#ffffff">'.$shim.'</th>';
- print '<th width="150" align="center" colspan="2">Binary Distribution</th>';
+ print '<th width="150" align="center" valign="bottom" rowspan="3">Binary Distributions</th>';
  print '<th width="2"   rowspan="3" bgcolor="#ffffff">'.$shim.'</th>';
- print '<th width="202" align="center" colspan="3">CVS/rsync Distributions</th>';
+ print '<th width="202" align="center" colspan="3">CVS/rsync Source Distributions</th>';
  print "</tr>\n";
 
  print '<tr>';
@@ -81,8 +81,6 @@ if (!$rs) {
  print "</tr>\n";
 
  print '<tr bgcolor="#ffecbf">';
- print '<th width="50"  align="center">dist</th>';
- print '<th width="100" align="center">version</th>';
  print '<th width="100" align="center">stable</th>';
  print '<th width="2"    bgcolor="#ffffff">'.$shim.'</th>';
  print '<th width="100" align="center">unstable</th>';
@@ -125,11 +123,10 @@ if (!$rs) {
 
    // first bindist
     if(strlen($dists[0][0])) {
-      avail_td($dists[0][0],1,1);
       $vers = $rmap[$dists[0][0].'-stable'];
-      avail_td(strlen($vers) && $is_restrictive==0 ? $vers : '<i>not present</i>',1,1);
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' (bindist '.$dists[0][0].')' : '<i>not present</i>',1,1);
     } else {
-      avail_td('<i>none available</i>',$rowspan,2);
+      avail_td('<i>no bindists available</i>',$rowspan,2);
     }
 
     print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
@@ -158,8 +155,8 @@ if (!$rs) {
     for( $bindistrow=1; $bindistrow<sizeof($dists[0]); $bindistrow++ ) {
       print '<th height="2" colspan="2" bgcolor="#f0f0f0">'.$shim.'</th>';
       print "<tr $row_color>";
-      avail_td($dists[0][$bindistrow],1,1);
-      avail_td($rmap[$dists[0][$bindistrow].'-stable'],1,1);
+      $vers = $rmap[$dists[0][$bindistrow].'-stable'];
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' (bindist '.$dists[0][$bindistrow].')' : '<i>not present</i>',1,1);
       print "</tr>\n";
     }
 
