@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Home";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/09/15 01:55:29 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2005/11/17 02:14:39 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -16,7 +16,7 @@ El proyecto de Fink desea traer el gran mundo del software de Unix de <a href="h
 <a href="http://www.opensource.apple.com/">Darwin</a> y al 
 <a href="http://www.apple.com/macosx/">Mac OS X</a>.
 Nosotros modificamos el software de UNIX de manera que pueda ser compilado
- y ejecutado en Mac OS X (hacemos "un puerto") y lo hacemos disponible
+ y ejecutado en Mac OS X (lo "portamos") y lo hacemos disponible
  como una distribución coherente que se pueda descargar.
  Fink usa herramientas de  <a href="http://www.debian.org/">Debian</a>
  tales como dpkg y apt-get para proveer un poderoso manejo de paquetes.
