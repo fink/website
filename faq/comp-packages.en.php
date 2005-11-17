@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/09/06 01:28:56';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2005/09/14 16:26:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -70,7 +70,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
     
     <a name="cctools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "When I try to install KDE, I get the following message: 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
+        resolve dependency "cctools (&gt;= 446-1)"'"</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This somewhat cryptic message means you need to install the
         December 2002 Developer Tools.</p></div>
     </a>
@@ -88,6 +88,11 @@ fink install libiconv</pre></div>
         </ul><p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
+    </a>
+    <a name="all-others">
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      up on the Fink wiki.  Check the <a href="http://wiki.opendarwin.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=en">8. Package Usage Problems - General</a></p>

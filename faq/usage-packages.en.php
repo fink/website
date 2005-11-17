@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/09/06 01:28:56';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2005/09/14 16:26:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
@@ -72,8 +72,8 @@ include_once "header.en.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by using a 10.1 version of XFree86 on 10.2. You must
         upgrade to a 10.2 version.</p><p>If you are using the Fink <code>xfree86</code> packages, then you
         can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
-        fink update-all</code>" for installation from source, <code>fink
-        selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>"
+        fink update-all</code>" for installation from source, "<code>fink
+        selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>"
         for installation from binaries.</p><p>If you have installed XFree86 by other means, you can find patches
         to bring you up to date at the <a href="http://mrcla.com/XonX">XonX
         web site</a>.</p></div>
@@ -191,9 +191,9 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
     </a>
     <a name="tiger-gtk">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.14: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1).  You can work around this via prefixing the the name of you want as follows:
-</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code> , which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>This will automatically be set if you install 
-<code>base-files-1.9.7-1</code> or later.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base_files</code>yet, ou can work around this issue by prefixing the the name of you want as follows:
+</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code> , which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
+	</p></div>
     </a>
     <a name="yelp">
     	<div class="question"><p><b><? echo FINK_Q ; ?>9.15: I can't get the help to work for any GNOME application.</b></p></div>

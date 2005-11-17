@@ -1,4 +1,12 @@
-<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
+<p>
+The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
+</p>
+<p>
+For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
+</p>
+
+<a name="2005-06-09%20New%20Fink%20releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
 Three new Fink releases are 
 <a href="<?php print $root; ?>download/index.php">available</a>
@@ -34,7 +42,7 @@ Utilities folder inside the Applications folder), selecting the
 problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
 </p>
 <p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the <code>/Developer/Tools/uninstall-devtools.pl</code> script.  For best results, you may want to do this before updating your OS.</p>
-<a name="2005-04-29 Fink and Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
@@ -72,19 +80,5 @@ fewer packages than in 10.3, but all of them should compile.
 users with mission-critical applications to check in on the mailing 
 lists to verify whether anyone has had experience with the package in 
 question before upgrading.</p>
-
-<a name="2004-11-20 Solution to gcc problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
-<p>
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
-</p><p>
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
-</p>
-
 
 
