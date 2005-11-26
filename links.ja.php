@@ -1,7 +1,7 @@
 ﻿<?
 $title = "リンク集";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/25 03:14:18 $';
+$cvs_date = '$Date: 2005/11/26 05:25:15 $';
 
 include "header.inc";
 ?>
@@ -83,6 +83,7 @@ Mac 用の GIMP、GTK、X のサイト。</li>
 東大 Fink チームのサイト。</li>
 <li><a href="http://pc7.2ch.net/test/read.cgi/mac/1089767349/l50" target="_blank">ＦＩＮＫ使ってるの洩れだけなのかっ！？</a> -
 「2ちゃんねる」の Fink スレッド。（日本語ページのみ）</li>
+<li><a href="http://mixi.jp/view_community.pl?id=323942" target="_blank">mixi Fink Macで楽にUnixソフトを…</a> - mixi のユーザーアカウントが必要です。（日本語ページのみ）</li>
 </ul>
 
 
