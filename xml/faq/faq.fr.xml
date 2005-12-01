@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.51 2005/06/24 14:43:06 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.52 2005/12/01 13:28:10 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -312,10 +312,19 @@
 <p>Comment installer un paquet instable quand la commande fink ne le trouve pas ('no package found') ?</p>
 </question>
 <answer>
-<p>Assurez-vous d'abord de savoir ce que signifie 'instable'. Peu de personnes ont testés les paquets instables. C'est pourquoi Fink ne recherche pas dans cette arborescence par défaut. Si vous décidez d'activer l'arborescence instable, pensez à envoyer un courriel au responsable du paquet si quelque chose fonctionne (ou ne fonctionne pas). Ce sont vos réactions qui nous permettent de décider si un paquet peut entrer dans l'arborescence stable ! Pour connaître le mainteneur du paquet, lancez la commande <code>fink info &lt;nom_du_paquet&gt;</code>.</p>
-<p>Les paquets ont souvent des dépendances, et les paquets dans l'arborescence instable dépendent souvent d'autres paquets de cette même arborescence. Il est donc conseillé d'activer la totalité de l'arborescence instable.</p>
-<p>Si vous voulez que Fink utilise toute l'arborescence instable, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez <code>fink selfupdate; fink index; fink scanpackages</code>.</p>
-<p>Si vous ne voulez qu'un ou deux paquets instables spécifiques, vous devez changer vos réglages pour utiliser la mise à jour CVS (c'est-à-dire utiliser <code>fink selfupdate-cvs</code>), car rsync met seulement à jour les arborescences activées dans le fichier <filename>fink.conf</filename>. Éditez <filename>/sw/etc/fink.conf</filename> et ajoutez <code>local/main</code> à la ligne <code>Trees:</code>, si elle n'y figure pas déjà. Vous devrez alors exécuter <code>fink selfupdate</code> pour télécharger les fichiers de description des paquets. Copiez ensuite les fichiers <code>.info</code> qui vous intéressent (et leurs fichiers <code>.patch</code> associés, s'ils existent) à partir de  <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou  <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) dans <filename>/sw/fink/dists/local/main/finkinfo</filename>. Notez cependant que votre paquet peut dépendre d'autres paquets (ou de versions particulières) qui sont uniquement présents dans l'arborescence instable. Vous devrez alors déplacer aussi leurs fichiers <code>.info</code> et <code>.patch</code> associés. Après avoir déplacé tous les fichiers, lancez la commande <code>fink index</code> pour que l'index des paquets disponibles de Fink soit mis à jour. Vous pourrez ensuite utiliser rsync à nouveau (<code>fink selfupdate-rsync</code>) si vous le désirez.</p>
+<p>Assurez-vous d'abord de savoir ce que signifie 'instable'. Il existe de nombreuses raisons pour lesquelles un paquet de l'arborescence instable n'est pas mis dans l'arborescence stable. Il se peut qu'il souffre de problèmes connus, qu'il y ait des erreurs de validation, ou simplement qu'un nombre insuffisant de personnes ait signalé qu'il fonctionne correctement. C'est pourquoi Fink ne recherche pas dans cette arborescence par défaut.</p>
+<p>Si vous décidez d'activer l'arborescence instable, pensez à envoyer un courriel au responsable du paquet si quelque chose fonctionne (ou ne fonctionne pas). Ce sont vos réactions qui nous permettent de décider si un paquet peut entrer dans l'arborescence stable ! Pour connaître le mainteneur du paquet, lancez la commande <code>fink info &lt;nom_du_paquet&gt;</code>.</p>
+<p>Pour obliger Fink à utiliser l'arborescence instable, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez <code>fink selfupdate; fink index; fink scanpackages</code>.</p>
+<p>Notez également que, si vous ne souhaitez installer que quelques paquets instables spécifiques et leurs dépendances, vous ne devez pas utiliser la commande <code>update-all</code> aussi longtemps que vous n'êtes pas revenu à l'utilisation de l'arborescence stable.</p>
+</answer>
+</faqentry>
+<faqentry name="unstable-onepackage">
+<question>
+<p>Faut-il <em>vraiment</em> activer toute l'arborescence instable pour n'installer qu'un seul paquet instable ?</p>
+</question>
+<answer>
+<p>Non, mais c'est fortement recommandé. Le mélange des genres peut créer des effets inattendus et rendre difficile un éventuel débogage.</p>
+<p>Ceci dit, si vous ne voulez installer qu'un ou deux paquets instables spécifiques, vous devez changer vos réglages pour utiliser la mise à jour CVS (c'est-à-dire utiliser <code>fink selfupdate-cvs</code>), car rsync ne met à jour que les arborescences activées dans le fichier <filename>fink.conf</filename>. Éditez <filename>/sw/etc/fink.conf</filename> et ajoutez <code>local/main</code> à la ligne <code>Trees:</code>, si elle n'y figure pas déjà. Vous devrez alors exécuter <code>fink selfupdate</code> pour télécharger les fichiers de description des paquets. Copiez ensuite les fichiers <code>.info</code> qui vous intéressent (et leurs fichiers <code>.patch</code> associés, s'ils existent) à partir de  <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou  <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) dans <filename>/sw/fink/dists/local/main/finkinfo</filename>. Notez cependant que votre paquet peut dépendre d'autres paquets (ou de versions particulières) qui sont uniquement présents dans l'arborescence instable. Vous devrez alors déplacer aussi leurs fichiers <code>.info</code> et <code>.patch</code> associés. Après avoir déplacé tous les fichiers, lancez la commande <code>fink index</code> pour que l'index des paquets disponibles de Fink soit mis à jour. Vous pourrez ensuite utiliser rsync à nouveau (<code>fink selfupdate-rsync</code>) si vous le désirez.</p>
 </answer>
 </faqentry>
 <faqentry name="sudo">
@@ -442,9 +451,11 @@ fink selfupdate-cvs</codeblock>
 </question>
 <answer>
 <p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.sh</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre shell par défaut et y ajoutera une commande de chargement du script d'initialisation du shell de Fink dans votre configuration shell. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note</em> : dans certaines versions anciennes de fink, ce script s'appelle <filename>pathsetup.command</filename> au lieu de <filename>pathsetup.sh</filename>. Vous pouvez également lancer l'application <filename>pathsetup.app</filename>, qui se trouve dans l'image disque de la distribution binaire de Fink, pour modifier le script de démarrage.</p>
-<p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, cela signifie probablement que vous devez créer un fichier <link url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link> et y ajouter la ligne :</p>
-<codeblock>. /sw/bin/init.sh</codeblock>
-<p>au tout début (c'est-à-dire avant tout lancement de programme). Relancez ensuite X11 (si celui-ci était actif).</p>
+<p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, la meilleure solution est de modifier la définition de "Terminal" dans le menu Applications via le sous-menu <em>Applications-&gt;Personnaliser le menu...</em>. Au lieu de :</p>
+<codeblock>xterm</codeblock>
+<p>mettez :</p>
+<codeblock>xterm -ls</codeblock>
+<p>dans le champ commande. Ici, <code>ls</code> signifie <quote>login shell (c'est-à-dire shell d'ouverture de session)</quote>. Il en résulte que tous les paramètres de votre ouverture de session sont utilisés (tout comme dans le Terminal de Mac OS X).</p>
 <p>Les scripts <filename>/sw/bin/init.*</filename> font beaucoup plus qu'ajouter <filename>/sw/bin</filename> à votre PATH. La plupart des paquets ne fonctionnent pas correctement si ces scripts n'ont pas été lancés au démarrage.</p>
 </answer>
 </faqentry>
@@ -741,6 +752,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+<p>On suppose ici que vous tournez sous Mac OS X 10.3. Si ce n'est pas le cas, remplacez <code>10.3</code> dans le code ci-dessus par la version de votre système.</p>
 <p>Puis sauvegardez le fichier et quittez l'éditeur de texte. Enfin mettez à jour la liste des paquets binaires.</p>
 </li>
 </ul>
@@ -1077,6 +1089,36 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 <p><em>Note :</em> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p>
 </answer>
 </faqentry>
+<faqentry name="gettext">
+<question>
+<p>Lors de compilation à partir du source, Fink n'arrête pas de passer de  <code>gettext-dev</code> à <code>libgettext3-dev</code>.</p>
+</question>
+<answer>
+<p>Certains paquets utilisant les headers <code>gettext</code> lors de leur compilation ont été mis à jour pour utiliser <code>libgettext3-dev</code>, tandis que d'autres utilisent toujours <code>gettext-dev</code>. En conséquence, il se peut que Fink essaie d'installer le header non-présent pour satisfaire une dépendance de compilation d'un paquet que vous mettez à jour. De plus,  l'outil <code>fink </code> considère <code>gettext-dev</code> comme un paquet essentiel et l'installe donc chaque fois que vous faites une mise à jour.</p>
+<p>D'autres paires de paquets génèrent un effet similaire.</p>
+<p>En raison des limitations du moteur de dépendances de compilation, il est malheureusement possible qu'une compilation échoue pour cause de changement de header dans l'un des paquets, alors qu'un autre paquet, plus loin dans la chaîne de compilation, exige précisément celui qui a été remplacé. On peut généralement résoudre le problème en réexécutant la commande de mise à jour.</p>
+<p>Au pire, on peut avoir à installer séparément les paquets qui dépendent de <code>gettext-dev</code> de ceux qui dépendent de <code>libgettext3-dev</code> (ou de toute autre paire de headers qui fait problème). En dernier ressort, on installe les paquets un par un.</p>
+<p>On espère qu'une solution définitive sera disponible dans la version <code>0.24.9</code> de fink.</p>
+</answer>
+</faqentry>
+<faqentry name="python-mods">
+<question>
+<p>Un message d'erreur comportant <code>MACOSX_DEPLOYMENT_TARGET </code> apparaît lors de la compilation d'un module Python.</p>
+</question>
+<answer>
+<p>Si le message ressemble au suivant :</p>
+<codeblock>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
+<p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <em>10.4-transitionelle</em>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p>
+<p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages">
 <title>Problèmes de compilation de certains paquets</title>
@@ -1164,7 +1206,7 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
 </faqentry><-->
 <faqentry name="cctools">
 <question>
-<p>Lors de l'installation de KDE, le message suivant apparaît : 'Can't resolve dependency "cctools (&gt;= 446-1)"'</p>
+<p>Lors de l'installation de KDE, le message suivant apparaît : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"</p>
 </question>
 <answer>
 <p>Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p>
@@ -1207,7 +1249,15 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 </ul>
 <p>Si le fichier <code>/usr/bin/c++filt</code> n'apparaît pas, recommencez les deux étapes précédentes jusqu'à ce qu'il apparaisse.</p>
 </answer>
- </faqentry>
+</faqentry>
+<faqentry name="all-others">
+<question>
+<p>Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici.</p>
+</question>
+<answer>
+<p>Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <link url="http://wiki.opendarwin.org/index.php/Fink:Package_issues">Package issues</link>.</p>
+</answer>
+</faqentry>
 </chapter>
 <chapter filename="usage-general">
 <title>Problème généraux d'utilisation de paquets</title>
@@ -1431,7 +1481,7 @@ sort this out.</p>
 </question>
 <answer>
 <p>Cela se produit lorsque l'on utilise une version 10.1 de XFree86 sur 10.2. Vous devez passer à une version 10.2.</p>
-<p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source,  <code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p>
+<p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source,  <code>fink selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p>
 <p>Si vous avez installé XFree86 par d'autres moyens, vous trouverez les rustines qui vous permettront de faire la mise à jour sur le <link url="http://mrcla.com/XonX">site web de XonX</link>.</p>
 </answer>
 </faqentry>
@@ -1512,7 +1562,8 @@ sudo apt-get install fink</codeblock>
 </li>
 <li>
 <em>Vous faites une installation à partir du source :</em>
-<p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <em>obligatoire</em> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode. Il n'est pas installé par défaut. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <filename>Packages</filename> du CD XCode.</p>
+<p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <em>obligatoire</em> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode de Panther ou dans le répertoire XCode Tools du DVD de Tiger. Il <em>n'</em>est <em>pas</em> installé par défaut quand on installe XCode sous Panther. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <filename>Packages</filename> du CD XCode. Par contre, il <em>est</em> installé par défaut quand on installe XCode sous Tiger (même si X11User n'est pas installé), mais il est possible que l'installeur oublie un fichier.</p>
+<p>Si les CD ou DVD de XCode ne vous ont pas été livrés avec l'ordinateur, il est fort probable qu'un disque image contenant, entre autres, le fichier <filename>X11SDK.pkg</filename> existe quelque part sur votre ordinateur. Cherchez dans le répertoire <filename>/Applications/Installers</filename> un disque image XCode. Le fichier <filename>X11User.pkg</filename> est probablement lui aussi dans ce répertoire.</p>
 <p>Si le problème persiste, exécutez :</p>
 <codeblock>fink list -i system-xfree86  </codeblock>
 <p>Cela devrait faire apparaître l'installation effective des paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>. Si le paquet <code>-dev</code> n'apparaît pas, réinstallez X11SDK, car il arrive que l'installeur d'Apple omette des fichiers. Il se peut que vous deviez faire la réinstallation plusieurs fois. Si l'un des deux autres paquets n'apparaît pas, réinstallez le paquet X11User (pour les mêmes raisons).</p>
@@ -1575,12 +1626,23 @@ fink selfupdate; fink index</codeblock>
 <p>Après passage à Tiger (Mac OS X 10.4), des erreurs à propos de <code>_EVP_idea_cbc</code> apparaissent chaque fois qu'on utilise une application gtk.</p>
 </question>
 <answer>
-<p>Ceci est dû apparemment à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1). Pour éviter cette erreur, vous pouvez préfixer le nom du logiciel que vous souhaitez lancer avec :</p>
+<p>Ceci était, apparemment, dû à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1), mais il semble être corrigé dans la version 10.4.3. Fink proposait une solution dans le fichier <code>base-files-1.9.7-1</code> et les versions suivantes.</p>
+<p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
 <p>Par exemple si vous voulez utiliser <code>gnucash</code>, utilisez :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
 <p>Cette méthode fonctionne pour les applications lancées à partir du menu Applications de X11 d'Apple ou à partir du terminal.</p>
+<p>Vous pouvez aussi déclarer la variable au niveau global (par exemple dans votre script de démarrage et/ou dans votre fichier<code>.xinitrc</code>, ce qui peut-être nécessaire pour faire tourner GNOME). Mettez : </p>
+<codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
+<p>dans votre fichier <code>.xinitrc</code> (quel que soit votre shell d'ouverture de session) ou dans le fichier <code>.profile</code> (ou tout autre script de démarrage) pour les utilisateurs de <em>bash</em>.</p>
+<codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
+<p>est la commande équivalente à utiliser, par exemple dans votre fichier <code>.cshrc</code> pour les utilisateurs de <em>tcsh</em>.</p>
+<p>Note :  ceci est fait automatiquement quand on installe une version suffisamment récente du fichier <code>base-files</code>.</p>
 </answer>
- </faqentry>
+</faqentry>
+<faqentry name="yelp">
+<question><p>Impossible d'accéder à l'aide dans aucune application GNOME</p></question>
+<answer><p>Vous devez installer le paquet <code>yelp</code>. Ce paquet n'est pas inséré dans le fagot GNOME, car il utilise des outils cryptographiques, et nous avons décidé de ne pas installer l'ensemble de GNOME dans la branche cryptographique, juste pour pouvoir utiliser le système d'aide.</p></answer>
+</faqentry>
 </chapter>
 </document>
