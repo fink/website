@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.61 2005/12/01 13:29:37 michga Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.62 2005/12/01 13:39:28 michga Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -2210,7 +2210,7 @@ fink selfupdate; fink index</codeblock>
       </question>
       <answer>
         <p>This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p>
-<p>If you haven't updated Tiger and/or <code>base-files</code>yet, ou can work around this issue by prefixing the name of the software you want to run as follows:
+<p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
 </p>
         <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
         <p>E.g., if you want to use <code>gnucash</code>, you'd use</p>
