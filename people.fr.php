@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributeurs";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/05/15 05:53:20 $';
+$cvs_date = '$Date: 2005/12/01 06:47:28 $';
 
 include "header.inc";
 ?>
@@ -21,13 +21,17 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
+<h2>Ancien membre de l'équipe fink core</h2>
+<ul>
+<li>Peter O'Gorman (<i>pogma</i>)</li>
+</ul>
+
 <h2>Équipe fink core</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
-<li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
