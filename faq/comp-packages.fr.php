@@ -35,7 +35,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 </a>
 
 <a name="cctools">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.4: Lors de l'installation de KDE, le message suivant apparaît : 'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.4: Lors de l'installation de KDE, le message suivant apparaît : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p></div>
 </a>
 
@@ -52,7 +52,11 @@ fink install libiconv</pre></div>
 dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure).</li>
 <li>Réinstallez <code>BSD.pkg</code> à partir du DVD d'installation du système Tiger.</li>
 </ul><p>Si le fichier <code>/usr/bin/c++filt</code> n'apparaît pas, recommencez les deux étapes précédentes jusqu'à ce qu'il apparaisse.</p></div>
- </a>
+</a>
+<a name="all-others">
+<div class="question"><p><b><? echo FINK_Q ; ?>7.7: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <a href="http://wiki.opendarwin.org/index.php/Fink:Package_issues">Package issues</a>.</p></div>
+</a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=fr">8. Problème généraux d'utilisation de paquets</a></p>
 <? include_once "../footer.inc"; ?>

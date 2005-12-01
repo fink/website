@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2005/09/14 16:26:55';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/11/17 01:23:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -114,7 +114,7 @@ include_once "header.en.inc";
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
         then run <code>fink selfupdate; fink index; fink scanpackages</code>.
         </p><p>Also note, if you don't want to install any more from unstable than
-        your specific packages and its dependencies, don't use the
+        your specific packages and their dependencies, don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p></div>
     </a>
@@ -122,7 +122,7 @@ include_once "header.en.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>5.9: Do I <b>really</b> need to enable all of unstable just to install
         one unstable package that I want?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> No, but it is highly recommended you do.  Mixing and matching can
-        cause unforseen issues that make it difficult to debug problems when
+        cause unforeseen issues that make it difficult to debug problems when
         they do arise.</p><p>That said, if you only want one or two specific packages, and nothing
         else from unstable, then you need to switch over to CVS updating (i.e.
         use <code>fink selfupdate-cvs</code>), because rsync only updates the
@@ -508,7 +508,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 # Official binary distribution: download location for updated
 # packages built between releases
 deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
-<p>(The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
+<p>The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
 <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
         </ul></div>
