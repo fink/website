@@ -1,4 +1,4 @@
-<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<a name="2005-06-09%20New%20Fink%20releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
 Three new Fink releases are 
 <a href="<?php print $root; ?>download/index.php">available</a>
@@ -28,7 +28,7 @@ We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
 </p>
 
-<a name="2005-04-29 Fink y Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink y Tiger.</span></a><?php gray_line(); ?>
+<a name="2005-04-29%20Fink%20y%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink y Tiger.</span></a><?php gray_line(); ?>
 <p>
 ¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
 </p><ul>
@@ -48,7 +48,7 @@ instalando fink-0.24.5, mediante <code>fink selfupdate</code> desde cualquier ve
 <p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
 
 <p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
-<a name="2004-11-20 Solución a los problemas con gcc."><span class="news-date">2004-11-20: </span><span class="news-headline">Solución a los problemas con gcc.</span></a><?php gray_line(); ?>
+<a name="2004-11-20%20Soluci%C3%B3n%20a%20los%20problemas%20con%20gcc."><span class="news-date">2004-11-20: </span><span class="news-headline">Solución a los problemas con gcc.</span></a><?php gray_line(); ?>
 <p>
 Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
 (tras registro gratutito) en connect.apple.com.  Este actualizador elimina

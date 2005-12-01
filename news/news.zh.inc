@@ -1,4 +1,4 @@
-<a name="2005-06-09 New Fink releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
+<a name="2005-06-09%20New%20Fink%20releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
 Three new Fink releases are 
 <a href="<?php print $root; ?>download/index.php">available</a>
@@ -43,7 +43,7 @@ should perform a clean install of XCode via running the
 results, you may want to do this before updating your OS.
 </p>
 
-<a name="2005-04-29 Fink 和 Tiger"><span class="news-date">2005-04-29: </span><span class="news-headline">Fink 和 Tiger</span></a><?php gray_line(); ?>
+<a name="2005-04-29%20Fink%20%E5%92%8C%20Tiger"><span class="news-date">2005-04-29: </span><span class="news-headline">Fink 和 Tiger</span></a><?php gray_line(); ?>
 <p>
 Fink 可以在 OS X 10.4 中使用！ 你可以有几种升级的方法：
 </p><ul>
@@ -75,7 +75,7 @@ fink-0.23.9.tar.gz</a> fink-0.23.9 版本的源代码用 bootstrap 的方式安�
 我们鼓励使用 Fink 中软件做为关键应用的用户加入到邮件列表中，以在升级前可以了解其它人时候曾经碰到过问题。
 </p>
 
-<a name="2004-11-20 gcc 编译器问题的解决方案。"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
+<a name="2004-11-20%20gcc%20%E7%BC%96%E8%AF%91%E5%99%A8%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E3%80%82"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
 <p>
 苹果发布了 2004 年十一月的 gcc3 更新，它可以在 connect.apple.com 下载(需要先免费注册)。这个更新修正了 XCode 1.5 中的 gcc3 编译器的问题。如果你正在使用 XCode 1.5，你应该安装这个更新。(这个更新可以正确地更新未经修改的 XCode 1.5，也可以更新那些实施了以前 fink 所推荐的临时办法的用户。)
 </p><p>
