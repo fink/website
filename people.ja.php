@@ -1,7 +1,7 @@
 ﻿<?
 $title = "貢献している人々";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/16 12:16:12 $';
+$cvs_date = '$Date: 2005/12/12 01:03:08 $';
 
 include "header.inc";
 ?>
@@ -33,13 +33,17 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
+<h2>前 Core Team メンバー</h2>
+<ul>
+<li>Peter O'Gorman (<i>pogma</i>)</li>
+</ul>
+
 <h2>プロジェクトリーダー</h2>
 <ul>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
-<li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
