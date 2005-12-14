@@ -59,6 +59,7 @@ Unix applications to Darwin</li>
       <li><a href="quick-start-pkg/index.php">Packaging Tutorial</a> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
       <li><a href="packaging/index.php">Packaging Manual</a> - how to create and
 maintain Fink packages</li>
+      <li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
     </ul>
   <h2><a name="otherdoc">Other Documents</a></h2>
     
