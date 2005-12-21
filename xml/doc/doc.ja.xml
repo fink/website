@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.16 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.17 2005/12/21 00:49:17 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -63,6 +63,7 @@ Unix アプリケーションを Darwin へポートする際に有用な情報<
 パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">パッケージ化マニュアル</varlink> - 
 Fink パッケージの作り方、メンテナンス方法</li>
+<li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - 作成途中の開発に関連する資料など</li>
 </ul>
 </section>
 <section name="otherdoc">

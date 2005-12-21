@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/07 03:47:50';
+$cvs_date = 'Date: 2005/12/21 00:49:17';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.ja.xml,v 1.16 2005/05/07 03:47:50 babayoshihiko Exp $-->
+<!--Generated from $Fink: doc.ja.xml,v 1.17 2005/12/21 00:49:17 babayoshihiko Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -59,6 +59,7 @@ Unix アプリケーションを Darwin へポートする際に有用な情報<
 パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書</li>
 <li><a href="packaging/index.php">パッケージ化マニュアル</a> - 
 Fink パッケージの作り方、メンテナンス方法</li>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - 作成途中の開発に関連する資料など</li>
 </ul>
 <h2><a name="otherdoc">Other Documents</a></h2>
 
