@@ -1,14 +1,14 @@
 <?
 $title = "文档";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/07 03:47:50';
+$cvs_date = 'Date: 2005/12/26 11:20:44';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink－文档</h1>
-<!--Generated from $Fink: doc.zh.xml,v 1.12 2005/05/07 03:47:50 babayoshihiko Exp $-->
+<!--Generated from $Fink: doc.zh.xml,v 1.13 2005/12/26 11:20:44 babayoshihiko Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。
@@ -44,6 +44,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 <li><a href="porting/index.php">移植技巧提示</a> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
 <li><a href="quick-start-pkg/index.php">Packaging Tutorial</a> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
 <li><a href="packaging/index.php">软件打包手册</a> － 如何创建和维护 Fink 软件包</li>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
 </ul>
 
 <h2><a name="otherdoc">其它文档</a></h2>

@@ -3,7 +3,7 @@
 <article filename="index" lang="es">
   <title>Fink - Documentación</title>
   <shorttitle>Documentación</shorttitle>
-  <cvsid>$Id: doc.es.xml,v 1.9 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: doc.es.xml,v 1.10 2005/12/26 11:20:44 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
@@ -45,6 +45,7 @@ Un grupo de documentos que son más completos, pero ligeramente desactualizados 
       <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Tips para hacer "puerto"</varlink> - notas para hacer "puertos" de aplicaciones de Unix a Darwin</li>
             <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">Tutorial de Empaquetamiento</varlink> - un complemento al Manual de Paquetes el cual se enfoca en ejemplos reales e introduce el empaquetamiento a los principiantes.</li>
       <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">Manual de Paquetes</varlink> - como crear y mantener paquetes de Fink</li>
+      <li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
     </ul>
   </section>
  <section name="otherdoc">

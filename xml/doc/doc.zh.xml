@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.12 2005/05/07 03:47:50 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.13 2005/12/26 11:20:44 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -46,6 +46,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 <li><varlink url="porting/index.php" varurl="porting/porting.zh.html">移植技巧提示</varlink> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
 <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">Packaging Tutorial</varlink> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.zh.html">软件打包手册</varlink> － 如何创建和维护 Fink 软件包</li>
+<li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
 </ul>
 
 </section>
