@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/05/07 03:47:50';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2005/12/14 17:51:03';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.en.xml,v 1.14 2005/05/07 03:47:50 babayoshihiko Exp $-->
+<!--Generated from $Fink: doc.en.xml,v 1.15 2005/12/14 17:51:03 alexkhansen Exp $-->
     <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
