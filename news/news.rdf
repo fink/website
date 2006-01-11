@@ -5,8 +5,47 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2005-12-01T09:53:01+01:00</dc:date>
+    <dc:date>2006-01-10T21:16:35-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
+      <title>Fink ready for XCode 2.2 (but not for Intel).</title>
+      <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
+      <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
+      <description>
+
+Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
+packages (which are expected to function again when we switch to the 10.4
+tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
+XCode 2.2 will be required for running the 10.4 tree when it is released.
+
+
+On the other hand, in spite of today's announcements from Apple, Fink is
+not ready to run on Intel processors.  The Fink team hopes to have an
+Intel-ready version of fink released within a few weeks; the Fink team does 
+not advise early recipients of new iMacs to install Fink on them, but suggests
+waiting until the new version of fink is ready.
+
+Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+
+</description>
+      <content:encoded>
+
+Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
+packages (which are expected to function again when we switch to the 10.4
+tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
+XCode 2.2 will be required for running the 10.4 tree when it is released.
+
+
+On the other hand, in spite of today's announcements from Apple, Fink is
+not ready to run on Intel processors.  The Fink team hopes to have an
+Intel-ready version of fink released within a few weeks; the Fink team does 
+not advise early recipients of new iMacs to install Fink on them, but suggests
+waiting until the new version of fink is ready.
+
+Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).">
       <title>XCode 2.2 (10.4 only).</title>
       <link>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</link>
@@ -698,73 +737,6 @@ apt-get, dselect or FinkCommander to install binary files as usual.
 	Here is a link to detailed 
 	instructions 
 	how to install or upgrade GNOME and what new stuff it brings.
-	
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!">
-      <title>Whaaazaaap Dawgs, Two Zero Zero Four is on!</title>
-      <link>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</link>
-      <guid>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</guid>
-      <description>
-	
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
-   day long.
-	
-	
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
-   happens because of the amazing support and encouragement we get from our users.
-	
-	
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	
-	
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
-	
-	</description>
-      <content:encoded>
-	
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
-   day long.
-	
-	
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
-   happens because of the amazing support and encouragement we get from our users.
-	
-	
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	
-	
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
 	
 	</content:encoded>
     </item>
