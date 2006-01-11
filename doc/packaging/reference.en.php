@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/09/07 04:27:10';
+$cvs_date = 'Date: 2006/01/11 05:02:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -122,6 +122,20 @@ Required field.
   increase <code>Revision</code> by 10 (or some other large number) in the newer tree in order to
   leave space for future updates to the package in the older
   tree.
+</p>
+</td></tr><tr valign="top"><td>Architecture</td><td>
+<p>
+A comma-separated list of architecture(s) the package is intended for.
+At present, the only valid values for architecture are <code>powerpc</code>
+and <code>i386</code>.  A package which is missing this field is treated
+as if the value of the field were <code>powerpc, i386</code>.
+(Introduced in a post-0.24.11 CVS version of fink.)
+</p>
+<p>
+At present, the most common use of this field will be for packages which
+require a compiler earlier than gcc-4.0 (or packages which depend on such
+packages), which should be declared to have architecture 
+<code>powerpc</code>.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
