@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.31 2005/12/01 08:55:21 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.32 2006/01/14 02:30:19 michga Exp $</cvsid>
+
+<newsitem>
+<date>10/01/2006</date>
+<headline>Fink est prêt pour XCode 2.2 (mais par pour Intel).</headline>
+<body>
+<p>Fink est maintenant prêt pour XCode 2.2, à l'exception des paquets openoffice.org (nous espérons qu'ils fonctionneront de nouveau quand nous passerons à l'arborescence 10.4). Nous encourageons les utilisateurs à passer à la version 2.2 de XCode s'ils le désirent ; XCode 2.2 devra être installé quand l'arborescence 10.4 sera mise à disposition.</p>
+<p>D'un autre côté et malgré l'annonce qu'Apple a faite aujourd'hui, Fink n'est pas prêt à tourner sur des processeurs Intel. L'équipe de Fink espère avoir une version prête pour Intel dans quelques semaines ; nous suggérons aux heureux bénéficiaires d'un nouvel iMac de ne pas y installer Fink tout de suite, mais d'attendre que la nouvelle version de Fink soit prête.</p>
+<p>Les mainteneurs de paquets Fink doivent tenir compte du nouveau champ <code>Architecture</code>, dont l'usage est expliqué dans le guide d constructions de paquets.</p>
+</body>
+</newsitem>
 
 <newsitem>
 <date>16/11/2005</date>

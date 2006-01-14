@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2005-12-01T09:53:02+01:00</dc:date>
+    <dc:date>2006-01-14T03:28:21+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#10%2F01%2F2006%20Fink%20est%20pr%EAt%20pour%20XCode%202.2%20(mais%20par%20pour%20Intel).">
+      <title>Fink est prêt pour XCode 2.2 (mais par pour Intel).</title>
+      <link>http://fink.sourceforge.net/news/#10%2F01%2F2006%20Fink%20est%20pr%EAt%20pour%20XCode%202.2%20(mais%20par%20pour%20Intel).</link>
+      <guid>http://fink.sourceforge.net/news/#10%2F01%2F2006%20Fink%20est%20pr%EAt%20pour%20XCode%202.2%20(mais%20par%20pour%20Intel).</guid>
+      <description>
+Fink est maintenant prêt pour XCode 2.2, à l'exception des paquets openoffice.org (nous espérons qu'ils fonctionneront de nouveau quand nous passerons à l'arborescence 10.4). Nous encourageons les utilisateurs à passer à la version 2.2 de XCode s'ils le désirent ; XCode 2.2 devra être installé quand l'arborescence 10.4 sera mise à disposition.
+D'un autre côté et malgré l'annonce qu'Apple a faite aujourd'hui, Fink n'est pas prêt à tourner sur des processeurs Intel. L'équipe de Fink espère avoir une version prête pour Intel dans quelques semaines ; nous suggérons aux heureux bénéficiaires d'un nouvel iMac de ne pas y installer Fink tout de suite, mais d'attendre que la nouvelle version de Fink soit prête.
+Les mainteneurs de paquets Fink doivent tenir compte du nouveau champ Architecture, dont l'usage est expliqué dans le guide d constructions de paquets.
+</description>
+      <content:encoded>
+Fink est maintenant prêt pour XCode 2.2, à l'exception des paquets openoffice.org (nous espérons qu'ils fonctionneront de nouveau quand nous passerons à l'arborescence 10.4). Nous encourageons les utilisateurs à passer à la version 2.2 de XCode s'ils le désirent ; XCode 2.2 devra être installé quand l'arborescence 10.4 sera mise à disposition.
+D'un autre côté et malgré l'annonce qu'Apple a faite aujourd'hui, Fink n'est pas prêt à tourner sur des processeurs Intel. L'équipe de Fink espère avoir une version prête pour Intel dans quelques semaines ; nous suggérons aux heureux bénéficiaires d'un nouvel iMac de ne pas y installer Fink tout de suite, mais d'attendre que la nouvelle version de Fink soit prête.
+Les mainteneurs de paquets Fink doivent tenir compte du nouveau champ Architecture, dont l'usage est expliqué dans le guide d constructions de paquets.
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#16%2F11%2F2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)">
       <title>XCode 2.2 (utilisateurs Mac OS X 10.4 uniquement)</title>
       <link>http://fink.sourceforge.net/news/#16%2F11%2F2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)</link>
@@ -328,43 +343,6 @@ Envoyez-lui aussi un rapport quand tout s'est bien passé. Plus nous recevrons de
 Pour ceux d'entre vous qui ne lisent pas nos listes de diffusion, qu'attendez-vous pour vous abonner ?
 	Voici un lien vers des 
 	instructions détaillées d'installation ou de mise à jour de GNOME. Vous y trouverez aussi la liste des nouvelles fonctionnalités.
-	
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!">
-      <title>Les douze coups de minuit ont sonné !</title>
-      <link>http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!</link>
-      <guid>http://fink.sourceforge.net/news/#02%2F01%2F2004%20Les%20douze%20coups%20de%20minuit%20ont%20sonn%E9%20!</guid>
-      <description>
-	
-	Bonne année à tous de la part de toute l'équipe.
-	
-	
-	L'année passée a été une bonne année pour Fink. Nous avons eu du mal à intégrer les changements introduits par Apple, mais nous avons aussi découvert que nous avions une communauté formidable prête à patienter très longtemps pour nous soutenir.
-	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grâce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
-	
-	
-	En 2004, la tendance devrait s'accélérer. Il y a quelques petites choses intéressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
-	Nous espérons pouvoir étendre le projet par des conférences développeurs, des rencontres et un CD dans votre magasin préféré.
-	
-	
-	Les grandes ambitions peuvent se révéler catastrophiques, c'est pourquoi nous les réaliserons en douceur, mais nous comptons toujours sur votre soutien cette année. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idées d'amélioration. Prêtez-nous vos ressources et sponsorisez un mirroir ou du matériel. Consacrez un peu de votre temps à améliorer le gestionnaire de paquets ou à ajouter un logiciel en créant un fichier info. Faîtes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communauté aussi agréable. Nous espérons que nous vous ferons franchir, à vous et votre Macintosh, l'année 2004 sans encombres.
-	
-	</description>
-      <content:encoded>
-	
-	Bonne année à tous de la part de toute l'équipe.
-	
-	
-	L'année passée a été une bonne année pour Fink. Nous avons eu du mal à intégrer les changements introduits par Apple, mais nous avons aussi découvert que nous avions une communauté formidable prête à patienter très longtemps pour nous soutenir.
-	C'est pourquoi nous vous disons "Merci". Le projet Fink avance principalement grâce au soutien et aux encouragements extraordinaires que nous recevons de nos utilisateurs.
-	
-	
-	En 2004, la tendance devrait s'accélérer. Il y a quelques petites choses intéressantes en vue : GNOME 2.4, une nouvelle version de KDE, des changements majeurs dans le gestionnaire de paquets, et une restructuration de l'organisation.
-	Nous espérons pouvoir étendre le projet par des conférences développeurs, des rencontres et un CD dans votre magasin préféré.
-	
-	
-	Les grandes ambitions peuvent se révéler catastrophiques, c'est pourquoi nous les réaliserons en douceur, mais nous comptons toujours sur votre soutien cette année. Dites-nous ce que vous pensez de Fink ; si vous l'aimez ou non ; proposez-nous des idées d'amélioration. Prêtez-nous vos ressources et sponsorisez un mirroir ou du matériel. Consacrez un peu de votre temps à améliorer le gestionnaire de paquets ou à ajouter un logiciel en créant un fichier info. Faîtes-vous plaisir en navigant sur ce site. Nous sommes heureux de nous mettre au service d'une communauté aussi agréable. Nous espérons que nous vous ferons franchir, à vous et votre Macintosh, l'année 2004 sans encombres.
 	
 	</content:encoded>
     </item>
