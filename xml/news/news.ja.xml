@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.15 2006/01/15 06:57:28 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.16 2006/01/15 07:13:43 babayoshihiko Exp $</cvsid>
 	
 <newsitem>
 <date>2006-01-10</date>
@@ -15,11 +15,11 @@ Fink は XCode 2.2 への準備ができました。例外は openoffice.org パ
 </p>
 <p>
 他方、本日の Apple の発表にも関わらず、Fink はまだ Intel プロセッサに対応していません。
-Fink 値−無は数週間以内に Intel 対応版の fink をリリースできるものを考えております。
+Fink チームは、数週間以内に Intel 対応版の fink をリリースできるものを考えております。
 Fink チームとしては、新しい iMac に Fink をインストールせず、対応バージョンがリリースされるまで待つようお願い申し上げます。
 </p>
 <p>
-Fink パッケージ面て那覇、新しい <code>Architecture</code> フィールドに注意してください。
+Fink パッケージメンテナの方は、新しい <code>Architecture</code> フィールドに注意してください。
 パッケージ化のマニュアルに説明されています。
 </p>
 </body>

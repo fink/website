@@ -7,11 +7,11 @@ Fink は XCode 2.2 への準備ができました。例外は openoffice.org パ
 </p>
 <p>
 他方、本日の Apple の発表にも関わらず、Fink はまだ Intel プロセッサに対応していません。
-Fink 値−無は数週間以内に Intel 対応版の fink をリリースできるものを考えております。
+Fink チームは、数週間以内に Intel 対応版の fink をリリースできるものを考えております。
 Fink チームとしては、新しい iMac に Fink をインストールせず、対応バージョンがリリースされるまで待つようお願い申し上げます。
 </p>
 <p>
-Fink パッケージ面て那覇、新しい <code>Architecture</code> フィールドに注意してください。
+Fink パッケージメンテナの方は、新しい <code>Architecture</code> フィールドに注意してください。
 パッケージ化のマニュアルに説明されています。
 </p>
 <a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
