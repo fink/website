@@ -1,3 +1,27 @@
+<a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
+<p>
+Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
+packages (which are expected to function again when we switch to the 10.4
+tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
+XCode 2.2 will be required for running the 10.4 tree when it is released.
+</p>
+<p>
+On the other hand, in spite of today's announcements from Apple, Fink is
+not ready to run on Intel processors.  The Fink team hopes to have an
+Intel-ready version of fink released within a few weeks; the Fink team does 
+not advise early recipients of new iMacs to install Fink on them, but suggests
+waiting until the new version of fink is ready.
+</p>
+<p>Fink package maintainers please take note of the new <code>Architecture</code> field, now documented in the packaging manual.
+</p>
+<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
+<p>
+The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
+</p>
+<p>
+For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
+</p>
+
 <a name="2005-06-09%20New%20Fink%20releases."><span class="news-date">2005-06-09: </span><span class="news-headline">New Fink releases.</span></a><?php gray_line(); ?>
 <p>
 Three new Fink releases are 
@@ -27,50 +51,5 @@ on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
 </p>
-
-<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
-<p>
-Fink can be used on OS X 10.4!  There are several ways you can update:
-</p><ul>
-<li>
-A binary installer will be available within a few weeks, for binary-only
-users.
-</li><li>
-For users of the stable tree, we recommend that you delete your current
-fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
-installation of fink-0.23.9 using
-<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</a>--download that file and expand it, 
-eg. via
-<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
-<code> ./bootstrap.sh </code> in the resulting
-<code>fink-0.23.9</code> directory,
-you'll need to run <code>fink selfupdate</code>
-</li><li>
-For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then, whether you selfupdated or not, reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
-</li>
-</ul>
-<p>Not all packages are working yet under 10.4, but that situation will
-improve over the next several weeks.  The stable tree contains substantially
-fewer packages than in 10.3, but all of them should compile.
-</p>
-<p>Of course, some wrinkles still need to be ironed out.  We encourage 
-users with mission-critical applications to check in on the mailing 
-lists to verify whether anyone has had experience with the package in 
-question before upgrading.</p>
-
-<a name="2004-11-20%20Solution%20to%20gcc%20problems."><span class="news-date">2004-11-20: </span><span class="news-headline">Solution to gcc problems.</span></a><?php gray_line(); ?>
-<p>
-Apple has released the November 2004 gcc3 updater, available (upon free 
-registration) at connect.apple.com.  This updater fixes the problems with
-the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
-install this updater.  (The updater will update correctly for users with
-an untouched XCode 1.5, and also for users who installed the workaround which
-the fink project had previously recommended.)
-</p><p>
-We would like to thank Apple for responding to our reports about this
-matter, and working to resolve it as quickly as possible.
-</p>
-
 
 

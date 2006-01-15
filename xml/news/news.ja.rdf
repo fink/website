@@ -5,8 +5,74 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2006-01-14T03:28:23+01:00</dc:date>
+    <dc:date>2006-01-15T16:10:16+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20%3F%20XCode%202.2%20%3F%3F%3F%20(Intel%20%3F%3F%3F%3F).">
+      <title>Fink &#12364; XCode 2.2 &#12395;&#23550;&#24540; (Intel &#12399;&#26410;&#23550;&#24540;).</title>
+      <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20%3F%20XCode%202.2%20%3F%3F%3F%20(Intel%20%3F%3F%3F%3F).</link>
+      <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20%3F%20XCode%202.2%20%3F%3F%3F%20(Intel%20%3F%3F%3F%3F).</guid>
+      <description>
+
+Fink &#12399; XCode 2.2 &#12408;&#12398;&#28310;&#20633;&#12364;&#12391;&#12365;&#12414;&#12375;&#12383;&#12290;&#20363;&#22806;&#12399; openoffice.org &#12497;&#12483;&#12465;&#12540;&#12472;&#12391;&#12377;
+(10.4 &#12484;&#12522;&#12540;&#12408;&#31227;&#34892;&#26178;&#12395;&#12399;&#27231;&#33021;&#12377;&#12427;&#12392;&#20104;&#23450;&#12373;&#12428;&#12390;&#12356;&#12414;&#12377;&#65289;&#12290;
+&#12518;&#12540;&#12470;&#12540;&#12399;&#12289;&#37117;&#21512;&#12398;&#12356;&#12356;&#12392;&#12365;&#12395; XCode 2.2 &#12408;&#12450;&#12483;&#12503;&#12464;&#12524;&#12540;&#12489;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+10.4 &#12484;&#12522;&#12540;&#12364;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12427;&#12373;&#12356;&#12395;&#12399;&#12289; XCode 2.2 &#12364;&#24517;&#35201;&#12391;&#12377;&#12290;
+
+
+&#20182;&#26041;&#12289;&#26412;&#26085;&#12398; Apple &#12398;&#30330;&#34920;&#12395;&#12418;&#38306;&#12431;&#12425;&#12378;&#12289;Fink &#12399;&#12414;&#12384; Intel &#12503;&#12525;&#12475;&#12483;&#12469;&#12395;&#23550;&#24540;&#12375;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
+Fink &#20516;&#8722;&#28961;&#12399;&#25968;&#36913;&#38291;&#20197;&#20869;&#12395; Intel &#23550;&#24540;&#29256;&#12398; fink &#12434;&#12522;&#12522;&#12540;&#12473;&#12391;&#12365;&#12427;&#12418;&#12398;&#12434;&#32771;&#12360;&#12390;&#12362;&#12426;&#12414;&#12377;&#12290;
+Fink &#12481;&#12540;&#12512;&#12392;&#12375;&#12390;&#12399;&#12289;&#26032;&#12375;&#12356; iMac &#12395; Fink &#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12379;&#12378;&#12289;&#23550;&#24540;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12427;&#12414;&#12391;&#24453;&#12388;&#12424;&#12358;&#12362;&#39000;&#12356;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;&#12290;
+
+
+Fink &#12497;&#12483;&#12465;&#12540;&#12472;&#38754;&#12390;&#37027;&#35207;&#12289;&#26032;&#12375;&#12356; Architecture &#12501;&#12451;&#12540;&#12523;&#12489;&#12395;&#27880;&#24847;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#12497;&#12483;&#12465;&#12540;&#12472;&#21270;&#12398;&#12510;&#12491;&#12517;&#12450;&#12523;&#12395;&#35500;&#26126;&#12373;&#12428;&#12390;&#12356;&#12414;&#12377;&#12290;
+
+</description>
+      <content:encoded>
+
+Fink &#12399; XCode 2.2 &#12408;&#12398;&#28310;&#20633;&#12364;&#12391;&#12365;&#12414;&#12375;&#12383;&#12290;&#20363;&#22806;&#12399; openoffice.org &#12497;&#12483;&#12465;&#12540;&#12472;&#12391;&#12377;
+(10.4 &#12484;&#12522;&#12540;&#12408;&#31227;&#34892;&#26178;&#12395;&#12399;&#27231;&#33021;&#12377;&#12427;&#12392;&#20104;&#23450;&#12373;&#12428;&#12390;&#12356;&#12414;&#12377;&#65289;&#12290;
+&#12518;&#12540;&#12470;&#12540;&#12399;&#12289;&#37117;&#21512;&#12398;&#12356;&#12356;&#12392;&#12365;&#12395; XCode 2.2 &#12408;&#12450;&#12483;&#12503;&#12464;&#12524;&#12540;&#12489;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+10.4 &#12484;&#12522;&#12540;&#12364;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12427;&#12373;&#12356;&#12395;&#12399;&#12289; XCode 2.2 &#12364;&#24517;&#35201;&#12391;&#12377;&#12290;
+
+
+&#20182;&#26041;&#12289;&#26412;&#26085;&#12398; Apple &#12398;&#30330;&#34920;&#12395;&#12418;&#38306;&#12431;&#12425;&#12378;&#12289;Fink &#12399;&#12414;&#12384; Intel &#12503;&#12525;&#12475;&#12483;&#12469;&#12395;&#23550;&#24540;&#12375;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
+Fink &#20516;&#8722;&#28961;&#12399;&#25968;&#36913;&#38291;&#20197;&#20869;&#12395; Intel &#23550;&#24540;&#29256;&#12398; fink &#12434;&#12522;&#12522;&#12540;&#12473;&#12391;&#12365;&#12427;&#12418;&#12398;&#12434;&#32771;&#12360;&#12390;&#12362;&#12426;&#12414;&#12377;&#12290;
+Fink &#12481;&#12540;&#12512;&#12392;&#12375;&#12390;&#12399;&#12289;&#26032;&#12375;&#12356; iMac &#12395; Fink &#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12379;&#12378;&#12289;&#23550;&#24540;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12427;&#12414;&#12391;&#24453;&#12388;&#12424;&#12358;&#12362;&#39000;&#12356;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;&#12290;
+
+
+Fink &#12497;&#12483;&#12465;&#12540;&#12472;&#38754;&#12390;&#37027;&#35207;&#12289;&#26032;&#12375;&#12356; Architecture &#12501;&#12451;&#12540;&#12523;&#12489;&#12395;&#27880;&#24847;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#12497;&#12483;&#12465;&#12540;&#12472;&#21270;&#12398;&#12510;&#12491;&#12517;&#12450;&#12523;&#12395;&#35500;&#26126;&#12373;&#12428;&#12390;&#12356;&#12414;&#12377;&#12290;
+
+</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).">
+      <title>XCode 2.2 (10.4 only).</title>
+      <link>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</link>
+      <guid>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</guid>
+      <description>
+
+Fink &#12481;&#12540;&#12512;&#12399;&#12289; XCode 2.2 &#12467;&#12531;&#12497;&#12452;&#12521;&#12395;&#12424;&#12427;&#12499;&#12523;&#12489;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12392;&#12356;&#12358;&#22577;&#21578;&#12434;&#21463;&#12369;&#12390;&#12356;&#12414;&#12377;&#12290;
+&#21839;&#38988;&#12364;&#35299;&#27770;&#12373;&#12428;&#12427;&#12354;m&#12391;&#12289;XCode &#12398;&#12450;&#12483;&#12503;&#12464;&#12524;&#12540;&#12489;&#12434;&#25511;&#12360;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+
+
+&#26082;&#12395; XCode 2.2 &#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12289;2.1 &#12395;&#25147;&#12375;&#12383;&#12367;&#12394;&#12356;&#26041;&#12399;&#12289;
+&#21205;&#20316;&#12375;&#12394;&#12356;&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#35211;&#12388;&#12369;&#12289;&#20462;&#27491;&#12375;&#12390;&#12356;&#12383;&#12384;&#12367;&#12424;&#12358;&#12372;&#21332;&#21147;&#12434;&#12362;&#39000;&#12356;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;!
+
+
+</description>
+      <content:encoded>
+
+Fink &#12481;&#12540;&#12512;&#12399;&#12289; XCode 2.2 &#12467;&#12531;&#12497;&#12452;&#12521;&#12395;&#12424;&#12427;&#12499;&#12523;&#12489;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12392;&#12356;&#12358;&#22577;&#21578;&#12434;&#21463;&#12369;&#12390;&#12356;&#12414;&#12377;&#12290;
+&#21839;&#38988;&#12364;&#35299;&#27770;&#12373;&#12428;&#12427;&#12354;m&#12391;&#12289;XCode &#12398;&#12450;&#12483;&#12503;&#12464;&#12524;&#12540;&#12489;&#12434;&#25511;&#12360;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+
+
+&#26082;&#12395; XCode 2.2 &#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12289;2.1 &#12395;&#25147;&#12375;&#12383;&#12367;&#12394;&#12356;&#26041;&#12399;&#12289;
+&#21205;&#20316;&#12375;&#12394;&#12356;&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#35211;&#12388;&#12369;&#12289;&#20462;&#27491;&#12375;&#12390;&#12356;&#12383;&#12384;&#12367;&#12424;&#12358;&#12372;&#21332;&#21147;&#12434;&#12362;&#39000;&#12356;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;!
+
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-06-09%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F.">
       <title>&#26032;&#12375;&#12356; Fink &#12522;&#12522;&#12540;&#12473;.</title>
       <link>http://fink.sourceforge.net/news/#2005-06-09%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F.</link>
@@ -568,112 +634,6 @@ apt-get, dselect or FinkCommander to install binary files as usual.
 	instructions 
 	how to install or upgrade GNOME and what new stuff it brings.
 	
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!">
-      <title>Whaaazaaap Dawgs, Two Zero Zero Four is on!</title>
-      <link>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</link>
-      <guid>http://fink.sourceforge.net/news/#2004-01-02%20Whaaazaaap%20Dawgs%2C%20Two%20Zero%20Zero%20Four%20is%20on!</guid>
-      <description>
-			
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
-   day long.
-	
-			
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
-   happens because of the amazing support and encouragement we get from our users.
-	
-			
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	
-			
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
-	
-		</description>
-      <content:encoded>
-			
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
-   day long.
-	
-			
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
-   happens because of the amazing support and encouragement we get from our users.
-	
-			
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	
-			
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
-	
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year">
-      <title>Merry Christmas and a happy new year</title>
-      <link>http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year</link>
-      <guid>http://fink.sourceforge.net/news/#2003-12-28%20Merry%20Christmas%20and%20a%20happy%20new%20year</guid>
-      <description>
-			
- The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
- forward to yet another year where we can help the Macintosh community grow into the 
- world of UNIX together with Mac OS X.
- 		
-			
- We wish you all, that your hope is not too frail and that you will carry on following 
- through with your wishes. May the world we live in gradually become a better place and
- may peace and understanding settle just for a few days. 
-		
-			
- Enjoy your quiet time and in case we do not get around to saying it soon enough. 
- A happy new year to all of you, stay with us we count on your support.
-		
-		
-		</description>
-      <content:encoded>
-			
- The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
- forward to yet another year where we can help the Macintosh community grow into the 
- world of UNIX together with Mac OS X.
- 		
-			
- We wish you all, that your hope is not too frail and that you will carry on following 
- through with your wishes. May the world we live in gradually become a better place and
- may peace and understanding settle just for a few days. 
-		
-			
- Enjoy your quiet time and in case we do not get around to saying it soon enough. 
- A happy new year to all of you, stay with us we count on your support.
-		
-		
 		</content:encoded>
     </item>
   </channel>
