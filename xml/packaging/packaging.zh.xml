@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.22 2005/09/18 21:16:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.23 2006/01/15 06:57:54 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -1196,6 +1196,24 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
   tree.
 </p>
 <!-- end translation -->
+</itemd></item>
+<item><itemt>Architecture</itemt>
+<itemd>
+<!-- start translation -->
+<p>
+A comma-separated list of architecture(s) the package is intended for.
+At present, the only valid values for architecture are <code>powerpc</code>
+and <code>i386</code>.  A package which is missing this field is treated
+as if the value of the field were <code>powerpc, i386</code>.
+(Introduced in a post-0.24.11 CVS version of fink.)
+</p>
+<p>
+At present, the most common use of this field will be for packages which
+require a compiler earlier than gcc-4.0 (or packages which depend on such
+packages), which should be declared to have architecture 
+<code>powerpc</code>.
+<!-- end translation -->
+</p>
 </itemd></item>
 
 <item><itemt>Epoch</itemt>
