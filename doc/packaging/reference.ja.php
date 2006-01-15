@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/18 21:16:57';
+$cvs_date = 'Date: 2006/01/15 06:57:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -113,7 +113,20 @@ include_once "header.ja.inc";
 							例えば，<code>Depends</code> や他のパッケージ一覧フィールド， Splitoff パッケージの追加・削除・名称変更， Splitoff パッケージ間でのファイルの移動など．
 							パッケージのツリーを統合 (例えば 10.2 から 10.3) する場合，新しい方のツリーでは <code>Revision</code> を 10 (など，大きな数字) あげて古い方のツリーでのパッケージの更新に対応できるようにします．
  						</p>
-					</td></tr><tr valign="top"><td>Epoch</td><td>
+					</td></tr><tr valign="top"><td>Architecture</td><td>
+<p>
+パッケージが対応しているアーキテクチャー一覧を，コンマ区切りで記述．
+現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
+このフィールドが存在しないパッケージは，<code>powerpc, i386</code> が指定されたものとして扱われます．
+(0.24.11 CVS バージョン以降 の fink に導入)
+</p>
+<p>
+gcc-4.0 以前のコンパイラを使うパッケージ
+(およびこれに依存するパッケージ)
+の場合に <code>powerpc</code> と宣言するのが，
+現在のところの主な使用方法です．
+</p>
+</td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
 							<b>Fink 0.12.0 で導入:</b>
 							パッケージの「エポック」を指定します (指定されていない場合は 0 と見なされる)．

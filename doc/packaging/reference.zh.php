@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/18 21:16:57';
+$cvs_date = 'Date: 2006/01/15 06:57:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -95,6 +95,22 @@ include_once "header.zh.inc";
   tree.
 </p>
 
+</td></tr><tr valign="top"><td>Architecture</td><td>
+
+<p>
+A comma-separated list of architecture(s) the package is intended for.
+At present, the only valid values for architecture are <code>powerpc</code>
+and <code>i386</code>.  A package which is missing this field is treated
+as if the value of the field were <code>powerpc, i386</code>.
+(Introduced in a post-0.24.11 CVS version of fink.)
+</p>
+<p>
+At present, the most common use of this field will be for packages which
+require a compiler earlier than gcc-4.0 (or packages which depend on such
+packages), which should be declared to have architecture 
+<code>powerpc</code>.
+
+</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>从 fink 0.12.0 开始。</b>
