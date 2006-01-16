@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.10 2005/08/08 02:59:00 dmacks Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.11 2006/01/16 22:39:33 michga Exp $</cvsid> 
 <preface>
 <p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
@@ -295,6 +295,13 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 <title>Préparation pour la version 10.4</title>
 <shorttitle>Préparation pour 10.4</shorttitle>
 <section name="perl"><title>Perl</title>
+<p><filename>/usr/bin/perl</filename> correspond maintenant à perl 5.8.6 ; la couche architecturale est toujours &quot;darwin-thread-multi-2level&quot;.</p>
+</section>
+<section name="typedef"><title>Nouvelles définitions de symboles</title>
+<p>Dans Mac OS X 10.4, de nombreux symboles ont changé de types. Si vous aviez précedemment défini un type explicitement, comme, par exemple, <code>socklen_t</code> en tant que <code>int</code>, cette définition risque de ne plus être correcte.</p>
+</section>
+<section name="system-libs"><title>Nouvelles librairies système intégrées</title>
+<p>La fonction <code>poll()</code> dans Mac OS X 10.3 n'était qu'une émulation reposant sur <code>select()</code>. Sous Mac OS X 10.4, <code>poll()</code> est une vraie fonction implantée dans le noyau, mais elle est boguée lorsqu'elle est utilisée avec des sockets. Il vaut mieux l'ignorer complètement. On a appliqué sur le paquet glib2 de Fink une rustine qui permet d'utiliser une émulation complètement fonctionnelle. Vous ne courez donc aucun risque à utiliser l'implantation de fonctions similaires à poll de cette librairie.</p>
 </section>
 </chapter>
 </document>
