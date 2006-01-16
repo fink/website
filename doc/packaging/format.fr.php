@@ -69,7 +69,7 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p><b>p</b>réfixe d'installation de Fink, par exemple : <code>/sw</code>. Vous ne devez pas partir du principe que Fink est installé dans <code>/sw</code>, utilisez <code>%p</code> pour obtenir le bon chemin.</p>
 </td></tr><tr valign="top"><td>%d</td><td>
-<p>répertoire <b>d</b>ans lequel le paquet est construit, par exemple : <code>/sw/src/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.</p>
+<p>répertoire <b>d</b>ans lequel le paquet est construit, par exemple : <code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.</p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>répertoire <b>D</b>ans lequel le paquet parent est construit (le même que %d à moins d'être dans un <code>SplitOff</code>)</p>
 </td></tr><tr valign="top"><td>%i</td><td>
@@ -79,7 +79,7 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>chemin des rustines</p>
 </td></tr><tr valign="top"><td>%b</td><td>
-<p>répertoire de compilation, exemple : <code>/sw/src/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
+<p>répertoire de compilation, exemple : <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
 <p>Note : ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
 le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser des chemins relatifs dans les commandes.</p>
 </td></tr><tr valign="top"><td>%c</td><td>
@@ -93,7 +93,7 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés. (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.</p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
-<p>Uniquement valide dans les champs <code>*Script</code>, correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans un <code>SplitOff: InstallScript</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
+<p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un  <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

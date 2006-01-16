@@ -23,6 +23,8 @@ include_once "header.fr.inc";
 <li><code>Artistic</code> - pour la licence "Artistic" et ses dérivées.</li>
 <li><code>Artistic/GPL</code> - licence duale, combinée Artistic/GPL.</li>
 <li><code>GNU Free Documentation License</code> et <code>Linux Documentation Project</code> - si la documentation incluse dans un paquet l'est explicitement sous une de ces licences, alors ce sera indiqué par l'ajout de <code>/GFDL</code> ou <code>/LDP</code> au code de la licence, ce qui donne l'une des combinaisons autorisées suivantes : "GFDL", "GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", ou "GPL/LGPL/LDP". </li>
+<li><code>DFSG-Approved</code> - pour les paquets qui suivent les règles du <a href="http://www.debian.org/social_contract">Pacte social Debian</a>.
+</li>
 <li><code>OSI-Approved</code> - pour les autres licences Open Source approuvées par l'Initiative Open Source (OSI) <a href="http://www.opensource.org/"></a>. L'une des règles de l'OSI est que la libre distribution de binaires et de sources est autorisée. Ce code peut aussi servir de cadre aux paquets à licence duale.</li>
 <li><code>Restrictive</code> - pour les licences restrictives. Utilisez ceci pour les paquets qui sont accessibles en tant que sources à usage libre auprès de l'auteur, mais dont la libre redistribution n'est pas autorisée. </li>
 <li><code>Restrictive/Distributable</code> - pour des licences restrictives qui admettent une distribution des binaires et du source. Utilisez ceci pour les paquets qui sont accessibles en tant que sources auprès de l'auteur, autorisent la distribution du source et des binaires, mais ont des restrictions qui en font des licences non open-sources.</li>
@@ -203,11 +205,59 @@ dans les informations de dépendance doit être changé pour la version/révisio
 <p>La réglementation de Fink pour les modules perl, effective à partir de mai 2003, a été modifiée en avril 2004.</p>
 <p>Traditionnellement, les paquets Fink pour les modules Perl avaient un suffixe <code>-pm</code>, et  étaient compilés en utilisant la directive <code>Type: perl</code>, qui place les modules Perl dans <code>/sw/lib/perl5</code> et/ou dans <code>/sw/lib/perl5/darwin</code>.  Avec la nouvelle réglementation, cet emplacement n'est autorisé que pour les modules perl qui sont indépendants de la version de perl utilisée pour les compiler (et qui ne dépendent pas d'autres modules perl dépendants des versions).</p>
 <p>Les modules Perl qui sont dépendants des versions sont les modules dits XS, qui contiennent fréquemment du code C compilé ainsi que des routines écrites en langage Perl. Il y a de nombreuses façons de les reconnaître, notamment par la présence d'un fichier avec un suffixe <code>.bundle</code>.</p>
-<p>Un module perl qui dépend des versions doit être construit en utilisant un binaire dont le nom comporte le numéro de version de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires des répertoires standards de perl ; les noms de ces sous-répertoires doivent comporter le numéro de version de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>. Par convention, les noms des paquets utilisent le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0.  Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui incluent perl 5.6.1 (dans les seules branches 10.2), perl 5.8.0, perl 5.8.1 et perl 5.8.4 (bientôt disponible).  </p>
+<p>Un module perl qui dépend des versions doit être construit en utilisant un binaire dont le nom comporte le numéro de version de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires des répertoires standards de perl ; les noms de ces sous-répertoires doivent comporter le numéro de version de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>. Par convention, les noms des paquets utilisent le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0.  Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui incluent perl 5.6.1 (dans les seules branches 10.2), perl 5.8.0 (dans les seules branches 10.3), perl 5.8.1, perl 5.8.4 et perl 5.8.6.</p>
 <p>La directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire dont le nom comporte le numéro de version de perl et stocke les fichiers dans les bons sous-répertoires. (Cette directive est disponible à partir de la version 0.13.0 de fink).</p>
 <p>Sous la réglementation de mai 2003, il était permis de créer un paquet <code>-pm</code>, qui est essentiellement un paquet "lot", qui charge la variante <code>-pm560</code> ou une autre variante existante. Cette stratégie est déconseillée sous la réglementation d'avril 2004, et sera complètement interdite après une période de transition. (La seule exception sera le paquet <code>storable-pm</code> qui doit se présenter sous cette forme pour le bootstrap).</p>
 <p>À partir de la version 0.20.2 de fink, le paquet virtuel system-perl "fournit" automatiquement certains modules perl quand la version de Peerl présente sur le système est supérieure ou égale à 5.8.0. Dans le cas de system-perl-5.8.1-1, ces modules sont les suivants : <b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, test-simple-pm581, time-hires-pm581.</b> (Cette liste était légèrement différente dans la version 0.20.1 de fink ; les mainteneurs de paquet sont invités à vérifier que c'est bien sur la nouvelle liste qu'ils se basent).</p>
 <p>Effective à partir de la version 0.13.0 de fink, la commande <code>fink validate</code>, quand elle est appliquée à un fichier <code>.deb</code>, teste si le paquet fink est un module XS qui a été installé dans un répertoire dont le nom ne comporte pas le numéro de version, et, génère, dans ce cas, une alerte.</p>
+<p>Les utilisateurs peuvent avoir plusieurs versions de perl installées au même moment. C'est pourquoi tout paquet de module basé sur une version de perl doit être écrit de tel sorte qu'il permette d'installer concurremment une autre version du même module. Il faut donc prendre soin d'éviter tout conflit d'installation dû à des noms identiques lors de l'installation des pages de manuel, des binaires ou autres scripts exécutables. Il est interdit de mettre dans un paquet un nom de fichier se terminant par -pm<b>XYZ</b> si le chemin complet du fichier est  identique dans une autre version <b>XYZ</b>. L'utilisation de <code>Replaces</code> pour permettre de remplacer des fichiers de nom identique dans des modules correspondant à des versions de perl différentes n'est plus autorisée. En ce qui concerne les pages de manuel, voici la solution de remplacement à partir de mars 2005: on a définit dans Fink des emplacements différents pour le MANPATH : <code>%p/lib/perl5/X.Y.Z/man</code> pour chaque version perl-X.Y.Z. Il n'est plus besoin de créer des paquets SplitOff -man ou -doc mutuellement exclusifs. Par exemple, pour éviter des conflits entre uri-pm581 et uri-pm586, la page de manuel nommée <code>URI.3pm</code> est installée sous le nom <code>%p/lib/perl5/5.8.1/man/man3/URI.3pm</code> pour la version 5.8.1 et sous le nom <code>%p/lib/perl5/5.8.6/man/man3/URI.3pm</code> pour la version 5.8.6. Notez que les scripts par défaut générés par <code>Type: perl X.Y.Z</code> n'ont pas changé, vous devez donc installer les man pages manuellement dans <code>InstallScript</code>. Si, par ailleurs, vous n'utilisez pas un script hautement personnalisé, vous pouvez toujours utiliser le script par défaut, puis déplacer les fichiers manuellement :</p>
+<pre>
+%{default_script}
+mv %i/share/man %i/lib/perl5/5.8.1
+</pre>
+<p>
+Cela déplacera toutes les pages de manuel. Si vous ne désirez déplacer qu'une section des pages de manuel (par exemple, la section 3, page de manuel du module, mais pas la section, page de manuel des scripts), vous pouvez utiliser l'approche suivante :</p>
+<pre>
+%{default_script}
+mkdir -p %i/lib/perl5/5.8.1/man
+mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+</pre>
+<p>Si votre paquet comporte des exécutables, par exemple des scripts démo ou des utilitaires dans <code>%p/bin</code>, vous avez plusieurs options. L'une d'entre elle est de mettre ces fichiers (et leurs pages de manuel et autres fichiers associés) dans un paquet splitoff %N-bin. L'utilisation des champs <code>Conflicts</code> et <code>Replaces</code> assurera que l'installation des différentes versions de perl de ces paquets, qui contiennent des fichiers de même nom, est mutuellement exclusive.  L'utilisateur peut installer de nombreuses versions différentes des modules de runtime basées sur des versions différentes de perl et décider laquelle choisir à tout moment pour exécuter un script. Par exemple, Tk.pm comporte un exécutable <code>ptksh</code>. La collection des paquets tk-pm* peut être construite de la façon suivante :</p>
+<pre>
+Info2: &lt;&lt;
+Package: tk-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.4 5.8.6)
+InstallScript: &lt;&lt;
+  %{default_script}
+  mkdir -p %i/lib/perl5/%type_raw[perl]/man
+  mv %i/share/man/man3 %i/lib/perl5/%type_raw[perl]/man
+&lt;&lt;
+SplitOff: &lt;&lt;
+  Package: %N-bin
+  Depends: %N
+  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Files: bin share/man/man1
+&lt;&lt;
+&lt;&lt;
+</pre>
+<p>Une autre solution est de renommer les scripts et leurs pages de manuel de façon à y inclure la version de perl. Cette méthode assure qu'il n'y a jamais de conflit, il n'est donc pas besoin d'utiliser des splitoffs %N-bin mutuellement exclusifs :
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: tk-pm%type_pkg[perl]
+Type: perl (5.8.1 5.8.4 5.8.6)
+InstallScript: &lt;&lt;
+  %{default_script}
+  mkdir -p %i/lib/perl5/%type_raw[perl]/man
+  mv %i/share/man/man3 %i/lib/perl5/%type_raw[perl]/man
+  mv %i/bin/ptksh %i/bin/ptksh%type_raw[perl]
+  mv %i/share/man/man1/ptksh.1 %i/share/man/man1/ptksh%type_raw[perl].1
+&lt;&lt;
+&lt;&lt;
+</pre>
+<p>L'utilisateur accède à la version de ptksh correspondant à la version de perl désirée. On peut aussi utiliser <code>update-alternatives</code> pour permettre aux utilisateurs d'accéder à ces versions par leurs noms génériques (pas de mention de version de perl dans le nom).</p>
+<p>De mêm, à partir de mars 2005, l'emplacement des pages de manuel et des modules installés par les paquets fink pour perl lui-même (paquets perlXYZ et perlXYZ-core pour des versions de perl différentes de celle fournie par Apple) a changé. Par conséquent, aucun autre paquet de fink fournissant des versions de mises à jour des modules core perl ne doit énumérer des paquets perlXYZ ou perlXYZ-core dans un champ <code>Replaces</code>.</p>
 
 <h2><a name="emacs">3.6 Règles Emacs</a></h2>
 <p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>

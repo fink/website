@@ -33,7 +33,7 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <li><a href="porting/index.php">Trucs et astuces pour le portage</a> - notes sur le portage d'applications Unix sur Darwin</li>
 <li><a href="quick-start-pkg/index.php">Tutoriel d'empaquetage</a> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><a href="packaging/index.php">Guide de construction des paquets</a> - comment créer et maintenir des paquets Fink</li>
-<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
+<li><a href="http://wiki.opendarwin.org/index.php/Fink">Le wiki des développeurs de Fink</a> - includes developer-related material that is under construction.</li>
 </ul>
 <h2><a name="otherdoc">Autres Documents</a></h2>
 

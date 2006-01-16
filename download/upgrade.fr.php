@@ -1,28 +1,16 @@
 <?
 $title = "Tableau de mises à jour";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 21:18:39 $';
+$cvs_date = '$Date: 2006/01/16 23:26:45 $';
 
 include "header.inc";
 ?>
 
 <h1>Tableau de mises à jour de Fink</h1>
 
-<p>
-Toute version de Fink depuis la 0.2.0 peut être mise à jour vers la plus récente.
-Ceci vaut même pour l'installation de GIMP à partir de MacGIMP.com et d'OpenOSX.com ; leurs premières versions sont toutes deux fondées sur Fink 0.2.1.
-Le tableau suivant vous aidera à trouver la meilleure méthode de mise à jour de votre installation Fink.
-</p>
-<p>
-Si vous ignorez la version de Fink en votre possession, exécutez "<code>fink --version</code>" dans une fenêtre du Terminal.
-</p>
-<p>
-Si vous actualisez Fink à partir d'une version antérieure à 0.3.1 et que tetex est installé, vous devez exécuter la commande "fink remove tetex" avant d'effectuer la mise à jour. (Il se peut que vous deviez supprimer les paquets dépendant de tetex, comme lyx, avant de pouvoir désinstaller tetex.)
-Après quoi, vous pourrez réinstaller tetex ainsi que les autres paquets supprimés.
-</p>
-<? 
-include "../fink_version.inc";
-?>
+<p>Toutes les versions en cours de Fink peuvent être mises à jour vers la plus récente correspondant à la version de Mac OS X, c'est-à-dire qu'il <strong>ne faut pas</strong> utiliser le nouvel installeur.</p>
+<p>Si vous ignorez la version de Fink en votre possession, exécutez "<code>fink --version</code>" dans une fenêtre du Terminal.</p>
+<p>Vous pouvez la comparer à la version la plus récente disponible pour votre OS dans la <a href="../../pdb/package.php/fink">base de données des paquets</a>.</p>
 
 <p>
 La réorganisation du site de SourceForge au printemps 2002 et le déplacement des binaires durant l'été 2002, ont rendu les mises à jour un peu plus délicates.
