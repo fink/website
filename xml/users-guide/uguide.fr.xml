@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.32 2005/05/22 08:03:42 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.33 2006/01/17 11:06:39 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -29,7 +29,7 @@
 <p>Si vous comptez utiliser la distribution source (voir plus loin), vous devez aussi avoir :</p>
 <ul>
 <li>
-<p>Les outils de développement. Sous Mac OS X, installez le paquet Developer.pkg à partir du CD DeveloperTools. Notez que la version des outils de développement doit correspondre à celle de Mac OS X. Sous Darwin, les outils de développement sont inclus dans l'installation par défaut.</p>
+<p>Les outils de développement. Sous Mac OS X, installez le paquet Developer.pkg à partir du CD DeveloperTools (appelé XCode sur Mac OS X 10.3 et Mac OS X 10.4) ou <link url="http://connect.apple.com">téléchargez</link> la dernière version - nous vous le recommandons, car les versions les plus récentes corrigent en général des bogues (bien que parfois elles en introduisent de nouveaux). Notez que la version des outils de développement doit correspondre à celle de Mac OS X. Sous Darwin, les outils de développement sont inclus dans l'installation par défaut.</p>
 <p>Il est utile d'installer les Outils de Développement, même si vous ne comptez pas construire les paquets à partir du source. Certains des programmes installés par le paquet Developer.pkg sont en fait des outils de ligne de commande à portée générale. Le fonctionnement de certains paquets dépend de ces outils.</p>
 </li>
 <li>
@@ -39,15 +39,16 @@
 </section>
 <section name="supported-os" >
 <title>Systèmes supportés</title>
-<p><em>Mac OS X 10.3</em> est le meilleur système opératoire pour faire tourner Fink. Tous les développeurs s'en servent et les paquets sont testés sur ce système. On considère qu'il est &quot;complètement supporté et testé&quot;, bien qu'il puisse y avoir quelques problèmes de compilation résiduels pour certains paquets isolés.</p>
-<p><em>Mac OS X 10.2</em> est toujours supporté, mais certains paquets récents peuvent ne pas avoir de versions 10.2 disponibles.</p>
+<p><em>Mac OS X 10.4</em> est la plateforme d'attaque. On considère qu'elle est <quote>complètement supportée et testée</quote>, bien qu'il puisse rester encore quelques problèmes car c'est un système opératoire encore relativement nouveau. La plupart des développeurs s'en servent. Pour ceux qui se servent de Mac OS X 10.3, il y a toujours des utilisateurs de Mac OS X 10.4 qui testent leur travail sur leur propre système.</p>
+<p><em>Mac OS X 10.3</em> est <quote>complètement supporté et testé</quote>, bien qu'il puisse y avoir quelques problèmes de compilation résiduels pour certains paquets isolés. De nombreux développeurs s'en servent. Pour ceux qui ne s'en servent pas, il y a toujours des utilisateurs de Mac OS X 10.3 qui testent leur travail.</p>
+<p><em>Mac OS X 10.2</em> est encore supporté dans une certaine mesure. Fink 0.6.4 est la version la plus récente qui gère ce système.</p>
 <p><em>Mac OS X 10.1</em> est encore supporté dans une certaine mesure. Pour cette version, vous ne pouvez utiliser que Fink 0.4.1 et aucune autre version ultérieure.</p>
-<p>Darwin 7.0.1 est la version Darwin correspondant à Mac OS X 10.3, et <em>Darwin 6.0.2</em> est celle correspondant à Mac OS X 10.2. Elles fonctionnent en général, mais ne sont pas aussi bien testées que les systèmes Mac OS X purs utilisés par la plupart des gens. Il se peut que vous ayez des problèmes avec des paquets qui utilisent des fonctionnalités spécifiques à Mac OS X - les paquets concernés comprennent XFree86 et probablement esound.</p>
+<p><em>Darwin 8.x</em> est la version Darwin correspondant à Mac OS X 10.4, Darwin 7.x est celle correspondant à Mac OS X 10.3, et <em>Darwin 6.x</em> est celle correspondant à Mac OS X 10.2. Elles fonctionnent en général, mais ne sont pas aussi bien testées que les systèmes Mac OS X purs utilisés par la plupart des gens. Il se peut que vous ayez des problèmes avec des paquets qui utilisent des fonctionnalités spécifiques à Mac OS X - les paquets concernés comprennent XFree86 et probablement esound.</p>
 </section>
 <section name="src-vs-bin" >
 <title>Source ou binaire</title>
 <p>Les logiciels sont écrits (&quot;développés&quot;) avec des langages de programmation lisibles par des êtres humains ; sous cette forme, ils sont appelés &quot;code source&quot;. Avant qu'un ordinateur puisse réellement faire tourner un programme, il doit être transformé en instructions machine de bas niveau (non lisibles par la plupart des gens). Ce processus s'appelle la &quot;compilation&quot; et le programme résultant est appelé 
-&quot;exécutable&quot; ou &quot;binaire&quot;. (Le processus est aussi appelé &quot;build&quot;, parce qu'il comporte d'autres étapes que la compilation.)</p>
+&quot;exécutable&quot; ou &quot;binaire&quot;. (Le processus est aussi appelé &quot;construction&quot;, parce qu'il comporte d'autres étapes que la compilation).</p>
 <p>Quand vous achetez un logiciel commercial, vous n'avez pas accès au code source - les SSII le considère comme un secret de fabrication. Vous n'avez que l'exécutable prêt à fonctionner, vous n'avez donc aucun moyen de modifier le programme et de savoir ce qu'il fait réellement.</p>
 <p>Il n'en va pas de même avec les logiciels <link url="http://www.opensource.org/" >Open Source</link>. Comme son nom l'indique en anglais, le code source est ouvert à tous et peut donc être vu et modifié. En fait, la plupart des logiciels Open Source sont distribués sous forme de code source par leurs auteurs et vous devez les compiler sur votre ordinateur pour obtenir un exécutable.</p>
 <p>Fink vous laisse le choix entre les deux formes source ou binaire. La distribution &quot;source&quot; récupère le source original, l'adapte à Mac OS X et aux règles de Fink et le compile sur votre ordinateur. Ce processus est complètement automatisé, mais dure un certain temps. À l'inverse, la distribution &quot;binaire&quot; récupère sur le site de Fink des paquets déjà compilés, ce qui fait gagner le temps de la compilation. 
@@ -72,7 +73,7 @@ Ouvrez l'icône disque  &quot;Fink 0.x.x Installer&quot; qui apparaît sur votre
 <section name="src" >
 <title>Installation de la distribution source</title>
 <p>La distribution source se fait sous forme d'une archive standard tar Unix (.tar.gz). Elle ne contient que le gestionnaire de paquets <code>fink</code> et les descriptions de paquets. Les sources des paquets seront téléchargés à la demande. L'archive est disponible sur la <link url="http://fink.sourceforge.net/download/srcdist.php" >page de téléchargements</link>. N'utilisez surtout pas StuffIt Expander pour extraire l'archive tar. StuffIt ne gère toujours pas correctement les noms de fichiers longs. Si StuffIt Expander a déjà extrait les fichiers de l'archive, mettez à la poubelle le répertoire qu'il a créé.</p>
-<p>La version source doit être installée à partir de la ligne de commande. Ouvrez donc Terminal.app et déplacez-vous dans le répertoire où se trouve l'archive fink-0.x.x-full.tar.gz. La commande suivante extrait l'archive :</p>
+<p>La version source doit être installée à partir de la ligne de commande. Ouvrez donc Terminal.app et déplacez-vous dans le répertoire où se trouve l'archive fink-0.x.x-full.tar.gz (Note : si vous avez installé Mac OS X 10.4 et XCode 2.1, vous devez utiliser <filename>fink-0.8.0-full-XCode-2.1.tar.gz</filename> à la place et faire les changements indiqués ci-dessous). La commande suivante extrait l'archive :</p>
 <codeblock>tar -xzf fink-0.x.x-full.tar.gz</codeblock>
 <p>Elle crée un répertoire qui porte le même nom que l'archive. Ici, nous l'appellerons <code>fink-0.x.x-full</code>. Déplacez-vous dans ce répertoire et lancez le script bootstrap :</p>
 <codeblock>cd fink-0.x.x-full
@@ -85,7 +86,7 @@ Ouvrez l'icône disque  &quot;Fink 0.x.x Installer&quot; qui apparaît sur votre
 <section name="setup" >
 <title>Définition de votre environnement</title>
 <p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH (et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
-<codeblock>open /sw/bin/pathsetup.sh</codeblock>
+<codeblock>/sw/bin/pathsetup.sh</codeblock>
 <p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de fink, cette commande s'appelle <filename>pathsetup.command</filename>. Il suffit alors de la lancer de la façon suivante :</p>
 <codeblock>open /sw/bin/pathsetup.command</codeblock>
 <p>Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez. Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :</p>
@@ -94,7 +95,7 @@ Ouvrez l'icône disque  &quot;Fink 0.x.x Installer&quot; qui apparaît sur votre
 <ul>
 <li>
 <p><strong>Shell Bourne</strong> (par défaut sur Mac OS X 10.3 et versions suivantes) </p>
-<p>Si vous utilisez un shell de type Bourne (sh, bash, zsh), ajoutez la ligne suivante au fichier <code>.profile</code> de votre répertoire utilisateur (s'il existe déjà un fichier <code>.bash_profile</code> dans ce répertoire, vous devez l'utilisez au lieu du fichier <code>.profile</code>) :
+<p>Si vous utilisez un shell de type Bourne (sh, bash, zsh), ajoutez la ligne suivante au fichier <code>.profile</code> de votre répertoire utilisateur (s'il existe déjà un fichier <code>.bash_profile</code> dans ce répertoire, vous devez l'utiliser au lieu du fichier <code>.profile</code>) :
 </p>
 <codeblock>. /sw/bin/init.sh</codeblock>
 <p>Si vous ne savez pas comment ajouter la ligne, utilisez ces commandes :
@@ -112,7 +113,7 @@ pico .profile</codeblock>
 </p>
 <codeblock>cd
 pico .cshrc</codeblock>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.sh</code>.  Ne vous inquiétez pas si vous voyez une note disant  &quot;New file&quot;.  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.csh</code>.  Ne vous inquiétez pas si vous voyez une note disant  &quot;New file&quot;.  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 <p>Vous devrez éditer d'autres fichiers dans les cas suivants :</p>
 <ol>
 <li>
@@ -229,43 +230,54 @@ E: Sorry, broken packages</codeblock>
 <title>Versions disponibles</title>
 <p>Lorsque vous voulez installer un paquet, vous devez d'abord rechercher dans la <link url="http://fink.sourceforge.net/pdb/index.php" >base de données des paquets</link> s'il est disponible via Fink. Les éventuelles versions disponibles apparaissent dans plusieurs lignes d'un tableau. Voici à quoi elles correspondent :</p>
 <ul>
-<li>
-<p><em>0.4.1 :</em>  C'est la version qui peut être installée à partir des binaires pour OS 10.1.</p>
+<li>Distribution binaire
+<ol>
+<li><p><em>0.4.1 :</em> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.1.</p></li>
+<li><p><em>0.6.4 :</em> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.2.</p></li>
+<li><p><em>0.7.2 :</em> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.3. Si vous <xref chapter="upgrade" >mettez à niveau</xref> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
+<li><p><em>&fink_version; :</em> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.4. Si vous <xref chapter="upgrade" >mettez à niveau</xref> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
+</ol>
 </li>
-<li><em>0.6.3 :</em> C'est la version qui peut être installée à partir des binaires pour OS 10.2.</li>
+</ul>
+<ul>
+<li>Distributions CVS/rsync
+<ol>
+<li><p><em>10.2-gcc3.3 stable :</em> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php" >CVS</link> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
+<p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p></li>
+<li><p><em>10.3 stable :</em> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</p></li> 
+<li><p><em>10.4-transitional stable :</em> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</p></li> 
 <li>
-<p><em>&fink_version; :</em>  C'est la version de base qui peut être installée à partir des binaires pour OS 10.2 et OS 10.3, et qui correspond à la version actuelle de Fink. Si vous <xref chapter="upgrade" >mettez à niveau</xref> Fink, il se peut qu'il existe une version plus récente pour un OS spécifique qui ne soit pas encore mentionnée dans le tableau.</p> 
+<p><em>10.2-gcc3.3 unstable :</em> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable" >instructions</link> sur l'installation des paquets instables.</p>
+<p>Note : instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
 </li>
-<li>
-<p><em>current-10.2-gcc3.3 stable :</em>  C'est la version stable la plus récente qui puisse être installée à partir du source pour OS 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php" >CVS</link> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
-<p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p>
+<li><em>10.3 unstable :</em> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</li>
+<li><em>10.4-transitional unstable :</em> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</li>
+</ol>
 </li>
-<li><p><em>current-10.3 stable :</em>  C'est la version la plus récente qui puisse être installée à partir du source sur OS 10.3.  Encore une fois, il vous faudra peut-être activer l'accès à CVS ou rsync pour y avoir accès.</p>
-</li> 
-<li>
-<p><em>current-10.2-gcc3.3 unstable :</em>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable" >instructions</link> sur l'installation des paquets instables.</p>
-<p>Note :  instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
-</li>
-<li><em>current-10.3 unstable :</em>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.3.  Activez l'arborescence instable comme indiqué ci-dessus.</li>
 </ul>
 </section>
 <section name="x11" >
 <title>Implémentation de X11</title>
-<p>De nombreux paquets de Fink requièrent que X11 soit installé. C'est pourquoi, l'une des premières choses à faire est de choisir quelle implémentation vous désirez.</p>
-<p>Comme il existe plusieurs implémentations possibles de X11 sur Mac OS X (XFree86, Tenon Xtools, eXodus) et plusieurs façons de les installer (manuellement ou via Fink), vous avez le choix entre plusieurs paquets - un par type d'implémentation/installation. Fink ne sait pas toujours très bien déterminer si X11 est installé sur votre système et sous quelle forme, il est donc très important de choisir le bon paquet et de l'installer avant de commencer à installer des applications X11. Voici la liste des paquets disponibles et des méthodes d'installation de X11 :</p>
+<p>De nombreux paquets de Fink requièrent que X11 soit installé. C'est pourquoi l'une des premières choses à faire est de choisir quelle implémentation vous désirez.</p>
+<p>Comme il existe plusieurs implémentations possibles de X11 sur Mac OS X (X11 d'Apple, XFree86, X.org) et plusieurs façons de les installer (manuellement ou via Fink), vous avez le choix entre plusieurs paquets - un par type d'implémentation/installation. Voici la liste des paquets disponibles et des méthodes d'installation de X11 :</p>
 <ul>
 <li>
-<p><em>xfree86-base :</em> (uniquement pour 10.1 ou 10.2). Ce paquet correspond à une installation réelle. Il installe le paquet Fink XFree86 4.2.1.1. Pour assurer un maximum de flexibilité, ce paquet ne contient pas le serveur XDarwin. Pour disposer du serveur, vous devez installer le paquet xfree86-rootless.</p>
+<p><em>xfree86, xfree86-shlibs :</em> installez ces deux paquets pour XFree86 4.3.0 (uniquement pour Mac OS X 10.2), 4.4.0 (pour Mac OS X 10.2 ou Mac OS X 10.3) ou 4.5.0 (pour Mac OS X 10.3 ou Mac OS X 10.4).</p>
 </li>
 <li>
-<p><em>xfree86 :</em> c'est un paquet complet (le serveur d'affichage est inclus) qui installe XFree86 4.3.0 (uniquement pour 10.2), ou 4.3.99 (uniquement pour 10.3). Cette version est plus performante que la version 4.2.1.1, mais n'a pas été testée autant.</p>
+<p><em>xorg, xorg-shlibs :</em> (pour Mac OS X 10.3 ou Mac OS X 10.4). Installez ces deux paquets pour avoir la version 6.8.2 de la distribution X11 de X.org.10.1 ou 10.2). Ce paquet correspond à une installation.</p>
 </li>
 <li>
-<p><em>system-xfree86 :</em> ce paquet est généré automatiquement (avec Fink 0.6.2 ou une version ultérieure) quand vous installez manuellement XFree86, soit à partir du source, soit à partir de la distribution officielle (ou non officielle) binaire ; ou quand vous installez X11 d'Apple. Il tient lieu alors de  paquet fantôme pour les dépendances.</p>
+<p><em>system-xfree86 + -shlibs, -dev :</em> ces paquets sont générés automatiquement (avec Fink 0.6.2 ou une version ultérieure) quand vous installez X11 d'Apple ou que vous installez manuellement XFree86 ou X.org. Ils tiennent lieu alors de paquets fantômes pour les dépendances.</p>
 </li>
 <li>
+<p><em>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev :</em> (uniquement pour Mac OS X 10.1 ou Mac OS X 10.2). Ces paquets installent une version complète de XFree86 4.2.1.1 (4.2.0 sur Mac OS X 10.1). La variante <code>-threaded</code> était fournie pour les applications qui l'exigeaient. Cette fonctionnalité est incorporée par défaut dans les versions ultérieures de XFree86. Les paquets <code>-rootless</code> inclut le serveur d'affichage XDarwin - le nom est resté le même.</p>
+<p>Vous devez installer les six paquets pour construire des paquets basés sur X11 à partir des sources.</p>
+</li>
+<!-- OBSOLETE <li>
 <p><em>system-xtools :</em> instaIlez ce paquet si vous avez installé le progiciel Xtools de Tenon. Tout comme system-xfree86, ce paquet ne fait que vérifier si l'installation est correcte et ne modifie pas les fichiers.</p>
 </li>
+-->
 </ul>
 <p>Pour de plus amples informations sur l'installation et l'utilisation de X11, voir le document <link url="http://fink.sourceforge.net/doc/x11/" >X11 sur Darwin et Mac OS X</link>.</p>
 </section>
@@ -353,7 +365,7 @@ local/bootstrap - paquets utilisés pendant l'installation de Fink
 stable/crypto   - paquets cryptographiques stables
 stable/main     - autres paquets stables
 unstable/crypto - paquets cryptographiques instables
-unstable/main   - autres paquets cryptographiques
+unstable/main   - autres paquets instables
 </codeblock>
 <p>Vous pouvez aussi ajouter vos propres arborescences dans le répertoire <code>/sw/fink/dists</code> pour faire ce que vous voulez, mais ce n'est pas nécessaire dans la plupart des cas. Les arborescences par défaut sont &quot;local/main local/bootstrap
 stable/main&quot;. Cette liste doit toujours être identique à celle figurant dans le fichier 
@@ -365,15 +377,13 @@ stable/main&quot;. Cette liste doit toujours être identique à celle figurant d
 </li>
 <li>
 <p><em>FetchAltDir:</em> chemin</p>
-<p>En général, fink sauvegarde les sources qu'il télécharge dans le répertoire 
-<code>/sw/src</code>. Avec cette option, vous pouvez indiquer un autre répertoire pour le code source téléchargé. Par exemple:</p>
+<p>En général, fink sauvegarde les sources qu'il télécharge dans le répertoire <code>/sw/src</code>. Avec cette option, vous pouvez indiquer un autre répertoire pour le code source téléchargé. Par exemple:</p>
 <codeblock>FetchAltDir: /usr/src</codeblock>
 </li>
 <li>
 <p><em>Verbose:</em> un nombre entre 0 et 3</p>
 <p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <em>0</em> <tt>Silencieux</tt> (aucune indication sur les statistiques de téléchargement) <em>1</em> <tt>Faible</tt> (aucune indication pendant la décompression des archives tar)
-<em>2</em> <tt>Moyen</tt> (affiche presque tout) <em>3</em> <tt>Fort</tt> (affiche tout)
-La valeur par défaut est 1.</p>
+<em>2</em> <tt>Moyen</tt> (affiche presque tout) <em>3</em> <tt>Fort</tt> (affiche tout). La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><em>NoAutoIndex:</em> booléen</p>
@@ -385,7 +395,8 @@ La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><em>Buildpath:</em> chemin</p>
-<p>Fink doit créer plusieurs répertoires temporaires pour les paquets compilés à partir du source. Par défaut, ces répertoires sont placés dans <filename>/sw/src</filename>, mais si vous voulez qu'ils soient créés ailleurs, indiquez ici le chemin. Voir les définitions des champs <code>KeepRootDir</code> et <code>KeepBuildDir</code> ci-dessous pour de plus amples informations sur ces répertoires temporaires.</p>
+<p>Fink doit créer plusieurs répertoires temporaires pour les paquets compilés à partir du source. Par défaut, ces répertoires sont placés dans <filename>/sw/src/fink.build</filename>, mais si vous voulez qu'ils soient créés ailleurs, indiquez ici le chemin. Voir les définitions des champs <code>KeepRootDir</code> et <code>KeepBuildDir</code> ci-dessous pour de plus amples informations sur ces répertoires temporaires.</p>
+<p>Sur Tiger, il est préférable que le répertoire de construction Buildpath se termine soit par .noindex, soit par .build, pour éviter que Spotlight n'indexe les fichiers temporaires de ce répertoire, ce qui aurait pour conséquence de diminuer la vitesse de compilation.</p>
 </li>
 </ul>
 </section>
@@ -460,12 +471,12 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
 <ul>
 <li>
 <p><em>KeepRootDir:</em> booléen</p>
-<p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+<p>Empêche Fink de supprimer le sous-répertoire root-[nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
 La commande <em>fink -K</em> a le même effet, restreint à  cette invocation de <em>fink</em>.</p>
 </li>
 <li>
 <p><em>KeepBuildDir:</em> booléen</p>
-<p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+<p>Empêche Fink de supprimer le sous-répertoire [nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
 La commande <em>fink -k</em> a le même effet, restreint à  cette invocation de <em>fink</em>.</p>
 </li>
 </ul>
@@ -591,13 +602,15 @@ main crypto
     la distribution binaire (inverse de l'option
     --use-binary-dist).
 -K, --keep-root-dir
-    Force fink à ne pas supprimer le répertoire
-    /sw/src/root-[nom]-[version]-[révision]
+    Force fink à ne pas supprimer le sous-répertoire
+    root-[nom]-[version]-[révision] du répertoire
+    ChemindeConstruction (Buildpath)
     à la fin du processus de compilation d'un
     paquet.
 -k, --keep-build-dir
-    Force fink à ne pas supprimer le répertoire
-    /sw/src/[nom]-[version]-[révision] à la fin
+    Force fink à ne pas supprimer le sous-répertoire
+    [nom]-[version]-[révision] du répertoire 
+    ChemindeConstruction (Buildpath) à la fin
     du processus de compilation d'un paquet.
 --build-as-nobody
     Utilise un utilisateur n'ayant pas de super

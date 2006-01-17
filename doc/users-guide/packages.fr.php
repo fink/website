@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 08:03:42';
+$cvs_date = 'Date: 2006/01/17 11:06:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -98,43 +98,51 @@ E: Sorry, broken packages</pre>
 
 <p>Lorsque vous voulez installer un paquet, vous devez d'abord rechercher dans la <a href="http://fink.sourceforge.net/pdb/index.php">base de données des paquets</a> s'il est disponible via Fink. Les éventuelles versions disponibles apparaissent dans plusieurs lignes d'un tableau. Voici à quoi elles correspondent :</p>
 <ul>
-<li>
-<p><b>0.4.1 :</b>  C'est la version qui peut être installée à partir des binaires pour OS 10.1.</p>
+<li>Distribution binaire
+<ol>
+<li><p><b>0.4.1 :</b> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.1.</p></li>
+<li><p><b>0.6.4 :</b> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.2.</p></li>
+<li><p><b>0.7.2 :</b> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.3. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
+<li><p><b>0.8.0 :</b> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.4. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
+</ol>
 </li>
-<li><b>0.6.3 :</b> C'est la version qui peut être installée à partir des binaires pour OS 10.2.</li>
+</ul>
+<ul>
+<li>Distributions CVS/rsync
+<ol>
+<li><p><b>10.2-gcc3.3 stable :</b> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
+<p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p></li>
+<li><p><b>10.3 stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</p></li> 
+<li><p><b>10.4-transitional stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</p></li> 
 <li>
-<p><b>0.8.0 :</b>  C'est la version de base qui peut être installée à partir des binaires pour OS 10.2 et OS 10.3, et qui correspond à la version actuelle de Fink. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour un OS spécifique qui ne soit pas encore mentionnée dans le tableau.</p> 
+<p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
+<p>Note : instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
 </li>
-<li>
-<p><b>current-10.2-gcc3.3 stable :</b>  C'est la version stable la plus récente qui puisse être installée à partir du source pour OS 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
-<p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p>
+<li><b>10.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</li>
+<li><b>10.4-transitional unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</li>
+</ol>
 </li>
-<li><p><b>current-10.3 stable :</b>  C'est la version la plus récente qui puisse être installée à partir du source sur OS 10.3.  Encore une fois, il vous faudra peut-être activer l'accès à CVS ou rsync pour y avoir accès.</p>
-</li> 
-<li>
-<p><b>current-10.2-gcc3.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
-<p>Note :  instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
-</li>
-<li><b>current-10.3 unstable :</b>  C'est la version instable la plus récente qui puisse être installée à partir du source sur OS 10.3.  Activez l'arborescence instable comme indiqué ci-dessus.</li>
 </ul>
 
 <h2><a name="x11">3.7 Implémentation de X11</a></h2>
 
-<p>De nombreux paquets de Fink requièrent que X11 soit installé. C'est pourquoi, l'une des premières choses à faire est de choisir quelle implémentation vous désirez.</p>
-<p>Comme il existe plusieurs implémentations possibles de X11 sur Mac OS X (XFree86, Tenon Xtools, eXodus) et plusieurs façons de les installer (manuellement ou via Fink), vous avez le choix entre plusieurs paquets - un par type d'implémentation/installation. Fink ne sait pas toujours très bien déterminer si X11 est installé sur votre système et sous quelle forme, il est donc très important de choisir le bon paquet et de l'installer avant de commencer à installer des applications X11. Voici la liste des paquets disponibles et des méthodes d'installation de X11 :</p>
+<p>De nombreux paquets de Fink requièrent que X11 soit installé. C'est pourquoi l'une des premières choses à faire est de choisir quelle implémentation vous désirez.</p>
+<p>Comme il existe plusieurs implémentations possibles de X11 sur Mac OS X (X11 d'Apple, XFree86, X.org) et plusieurs façons de les installer (manuellement ou via Fink), vous avez le choix entre plusieurs paquets - un par type d'implémentation/installation. Voici la liste des paquets disponibles et des méthodes d'installation de X11 :</p>
 <ul>
 <li>
-<p><b>xfree86-base :</b> (uniquement pour 10.1 ou 10.2). Ce paquet correspond à une installation réelle. Il installe le paquet Fink XFree86 4.2.1.1. Pour assurer un maximum de flexibilité, ce paquet ne contient pas le serveur XDarwin. Pour disposer du serveur, vous devez installer le paquet xfree86-rootless.</p>
+<p><b>xfree86, xfree86-shlibs :</b> installez ces deux paquets pour XFree86 4.3.0 (uniquement pour Mac OS X 10.2), 4.4.0 (pour Mac OS X 10.2 ou Mac OS X 10.3) ou 4.5.0 (pour Mac OS X 10.3 ou Mac OS X 10.4).</p>
 </li>
 <li>
-<p><b>xfree86 :</b> c'est un paquet complet (le serveur d'affichage est inclus) qui installe XFree86 4.3.0 (uniquement pour 10.2), ou 4.3.99 (uniquement pour 10.3). Cette version est plus performante que la version 4.2.1.1, mais n'a pas été testée autant.</p>
+<p><b>xorg, xorg-shlibs :</b> (pour Mac OS X 10.3 ou Mac OS X 10.4). Installez ces deux paquets pour avoir la version 6.8.2 de la distribution X11 de X.org.10.1 ou 10.2). Ce paquet correspond à une installation.</p>
 </li>
 <li>
-<p><b>system-xfree86 :</b> ce paquet est généré automatiquement (avec Fink 0.6.2 ou une version ultérieure) quand vous installez manuellement XFree86, soit à partir du source, soit à partir de la distribution officielle (ou non officielle) binaire ; ou quand vous installez X11 d'Apple. Il tient lieu alors de  paquet fantôme pour les dépendances.</p>
+<p><b>system-xfree86 + -shlibs, -dev :</b> ces paquets sont générés automatiquement (avec Fink 0.6.2 ou une version ultérieure) quand vous installez X11 d'Apple ou que vous installez manuellement XFree86 ou X.org. Ils tiennent lieu alors de paquets fantômes pour les dépendances.</p>
 </li>
 <li>
-<p><b>system-xtools :</b> instaIlez ce paquet si vous avez installé le progiciel Xtools de Tenon. Tout comme system-xfree86, ce paquet ne fait que vérifier si l'installation est correcte et ne modifie pas les fichiers.</p>
+<p><b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev :</b> (uniquement pour Mac OS X 10.1 ou Mac OS X 10.2). Ces paquets installent une version complète de XFree86 4.2.1.1 (4.2.0 sur Mac OS X 10.1). La variante <code>-threaded</code> était fournie pour les applications qui l'exigeaient. Cette fonctionnalité est incorporée par défaut dans les versions ultérieures de XFree86. Les paquets <code>-rootless</code> inclut le serveur d'affichage XDarwin - le nom est resté le même.</p>
+<p>Vous devez installer les six paquets pour construire des paquets basés sur X11 à partir des sources.</p>
 </li>
+
 </ul>
 <p>Pour de plus amples informations sur l'installation et l'utilisation de X11, voir le document <a href="http://fink.sourceforge.net/doc/x11/">X11 sur Darwin et Mac OS X</a>.</p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 08:03:42';
+$cvs_date = 'Date: 2006/01/17 11:06:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -56,7 +56,7 @@ local/bootstrap - paquets utilisés pendant l'installation de Fink
 stable/crypto   - paquets cryptographiques stables
 stable/main     - autres paquets stables
 unstable/crypto - paquets cryptographiques instables
-unstable/main   - autres paquets cryptographiques
+unstable/main   - autres paquets instables
 </pre>
 <p>Vous pouvez aussi ajouter vos propres arborescences dans le répertoire <code>/sw/fink/dists</code> pour faire ce que vous voulez, mais ce n'est pas nécessaire dans la plupart des cas. Les arborescences par défaut sont "local/main local/bootstrap
 stable/main". Cette liste doit toujours être identique à celle figurant dans le fichier 
@@ -68,15 +68,13 @@ stable/main". Cette liste doit toujours être identique à celle figurant dans l
 </li>
 <li>
 <p><b>FetchAltDir:</b> chemin</p>
-<p>En général, fink sauvegarde les sources qu'il télécharge dans le répertoire 
-<code>/sw/src</code>. Avec cette option, vous pouvez indiquer un autre répertoire pour le code source téléchargé. Par exemple:</p>
+<p>En général, fink sauvegarde les sources qu'il télécharge dans le répertoire <code>/sw/src</code>. Avec cette option, vous pouvez indiquer un autre répertoire pour le code source téléchargé. Par exemple:</p>
 <pre>FetchAltDir: /usr/src</pre>
 </li>
 <li>
 <p><b>Verbose:</b> un nombre entre 0 et 3</p>
 <p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <b>0</b> Silencieux (aucune indication sur les statistiques de téléchargement) <b>1</b> Faible (aucune indication pendant la décompression des archives tar)
-<b>2</b> Moyen (affiche presque tout) <b>3</b> Fort (affiche tout)
-La valeur par défaut est 1.</p>
+<b>2</b> Moyen (affiche presque tout) <b>3</b> Fort (affiche tout). La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><b>NoAutoIndex:</b> booléen</p>
@@ -88,7 +86,8 @@ La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><b>Buildpath:</b> chemin</p>
-<p>Fink doit créer plusieurs répertoires temporaires pour les paquets compilés à partir du source. Par défaut, ces répertoires sont placés dans <code>/sw/src</code>, mais si vous voulez qu'ils soient créés ailleurs, indiquez ici le chemin. Voir les définitions des champs <code>KeepRootDir</code> et <code>KeepBuildDir</code> ci-dessous pour de plus amples informations sur ces répertoires temporaires.</p>
+<p>Fink doit créer plusieurs répertoires temporaires pour les paquets compilés à partir du source. Par défaut, ces répertoires sont placés dans <code>/sw/src/fink.build</code>, mais si vous voulez qu'ils soient créés ailleurs, indiquez ici le chemin. Voir les définitions des champs <code>KeepRootDir</code> et <code>KeepBuildDir</code> ci-dessous pour de plus amples informations sur ces répertoires temporaires.</p>
+<p>Sur Tiger, il est préférable que le répertoire de construction Buildpath se termine soit par .noindex, soit par .build, pour éviter que Spotlight n'indexe les fichiers temporaires de ce répertoire, ce qui aurait pour conséquence de diminuer la vitesse de compilation.</p>
 </li>
 </ul>
 
@@ -163,12 +162,12 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
 <ul>
 <li>
 <p><b>KeepRootDir:</b> booléen</p>
-<p>Empêche Fink de supprimer le répertoire /sw/src/root-[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+<p>Empêche Fink de supprimer le sous-répertoire root-[nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <b>fink -K</b> a le même effet, restreint à  cette invocation de <b>fink</b>.</p>
 </li>
 <li>
 <p><b>KeepBuildDir:</b> booléen</p>
-<p>Empêche Fink de supprimer le répertoire /sw/src/[nom]-[version]-[révision] après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+<p>Empêche Fink de supprimer le sous-répertoire [nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <b>fink -k</b> a le même effet, restreint à  cette invocation de <b>fink</b>.</p>
 </li>
 </ul>

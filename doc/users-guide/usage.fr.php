@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 08:03:42';
+$cvs_date = 'Date: 2006/01/17 11:06:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -47,13 +47,15 @@ include_once "header.fr.inc";
     la distribution binaire (inverse de l'option
     --use-binary-dist).
 -K, --keep-root-dir
-    Force fink à ne pas supprimer le répertoire
-    /sw/src/root-[nom]-[version]-[révision]
+    Force fink à ne pas supprimer le sous-répertoire
+    root-[nom]-[version]-[révision] du répertoire
+    ChemindeConstruction (Buildpath)
     à la fin du processus de compilation d'un
     paquet.
 -k, --keep-build-dir
-    Force fink à ne pas supprimer le répertoire
-    /sw/src/[nom]-[version]-[révision] à la fin
+    Force fink à ne pas supprimer le sous-répertoire
+    [nom]-[version]-[révision] du répertoire 
+    ChemindeConstruction (Buildpath) à la fin
     du processus de compilation d'un paquet.
 --build-as-nobody
     Utilise un utilisateur n'ayant pas de super

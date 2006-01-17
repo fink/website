@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/05/22 08:03:42';
+$cvs_date = 'Date: 2006/01/17 11:06:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -25,7 +25,7 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 <h2><a name="src">2.2 Installation de la distribution source</a></h2>
 
 <p>La distribution source se fait sous forme d'une archive standard tar Unix (.tar.gz). Elle ne contient que le gestionnaire de paquets <code>fink</code> et les descriptions de paquets. Les sources des paquets seront téléchargés à la demande. L'archive est disponible sur la <a href="http://fink.sourceforge.net/download/srcdist.php">page de téléchargements</a>. N'utilisez surtout pas StuffIt Expander pour extraire l'archive tar. StuffIt ne gère toujours pas correctement les noms de fichiers longs. Si StuffIt Expander a déjà extrait les fichiers de l'archive, mettez à la poubelle le répertoire qu'il a créé.</p>
-<p>La version source doit être installée à partir de la ligne de commande. Ouvrez donc Terminal.app et déplacez-vous dans le répertoire où se trouve l'archive fink-0.x.x-full.tar.gz. La commande suivante extrait l'archive :</p>
+<p>La version source doit être installée à partir de la ligne de commande. Ouvrez donc Terminal.app et déplacez-vous dans le répertoire où se trouve l'archive fink-0.x.x-full.tar.gz (Note : si vous avez installé Mac OS X 10.4 et XCode 2.1, vous devez utiliser <code>fink-0.8.0-full-XCode-2.1.tar.gz</code> à la place et faire les changements indiqués ci-dessous). La commande suivante extrait l'archive :</p>
 <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
 <p>Elle crée un répertoire qui porte le même nom que l'archive. Ici, nous l'appellerons <code>fink-0.x.x-full</code>. Déplacez-vous dans ce répertoire et lancez le script bootstrap :</p>
 <pre>cd fink-0.x.x-full
@@ -38,7 +38,7 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 <h2><a name="setup">2.3 Définition de votre environnement</a></h2>
 
 <p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH (et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
-<pre>open /sw/bin/pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 <p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de fink, cette commande s'appelle <code>pathsetup.command</code>. Il suffit alors de la lancer de la façon suivante :</p>
 <pre>open /sw/bin/pathsetup.command</pre>
 <p>Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez. Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :</p>
@@ -47,7 +47,7 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 <ul>
 <li>
 <p>Shell Bourne (par défaut sur Mac OS X 10.3 et versions suivantes) </p>
-<p>Si vous utilisez un shell de type Bourne (sh, bash, zsh), ajoutez la ligne suivante au fichier <code>.profile</code> de votre répertoire utilisateur (s'il existe déjà un fichier <code>.bash_profile</code> dans ce répertoire, vous devez l'utilisez au lieu du fichier <code>.profile</code>) :
+<p>Si vous utilisez un shell de type Bourne (sh, bash, zsh), ajoutez la ligne suivante au fichier <code>.profile</code> de votre répertoire utilisateur (s'il existe déjà un fichier <code>.bash_profile</code> dans ce répertoire, vous devez l'utiliser au lieu du fichier <code>.profile</code>) :
 </p>
 <pre>. /sw/bin/init.sh</pre>
 <p>Si vous ne savez pas comment ajouter la ligne, utilisez ces commandes :
@@ -65,7 +65,7 @@ pico .profile</pre>
 </p>
 <pre>cd
 pico .cshrc</pre>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.sh</code>.  Ne vous inquiétez pas si vous voyez une note disant  "New file".  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.csh</code>.  Ne vous inquiétez pas si vous voyez une note disant  "New file".  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 <p>Vous devrez éditer d'autres fichiers dans les cas suivants :</p>
 <ol>
 <li>
