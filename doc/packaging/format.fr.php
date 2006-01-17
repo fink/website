@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/17 07:13:39';
+$cvs_date = 'Date: 2006/01/17 08:00:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -14,7 +14,7 @@ include_once "header.fr.inc";
 <p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
-<li><code>dists</code> est à la racine.  Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
+<li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
 <li>La distribution. Il y en a trois : <code>stable</code>, <code>unstable</code> et <code>local</code>. Le répertoire <code>local</code> est sous le contrôle de l'utilisateur/administrateur local. Les répertoires <code>stable</code> et <code>unstable</code> font partie de Fink.</li>
 <li>L'arbre. L'arbre <code>main</code> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial <code>crypto</code>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
 <li><code>finkinfo</code> et <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contient les descriptions de paquets Fink et leurs rustines, tandis que <code>binary-darwin-powerpc</code> contient les paquets binaires <code>.deb</code>.</li>
@@ -79,21 +79,21 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>chemin des rustines</p>
 </td></tr><tr valign="top"><td>%b</td><td>
-<p>répertoire de compilation, exemple : <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
+<p>répertoire de compilation, exemple : <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>. Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
 <p>Note : ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
 le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser des chemins relatifs dans les commandes.</p>
 </td></tr><tr valign="top"><td>%c</td><td>
 <p>paramètres pour <b>c</b>onfigure : <code>--prefix=%p</code> plus tout autre élément spécifié avec ConfigureParams</p>
 </td></tr><tr valign="top"><td>%m</td><td>
-<p>chaîne spécifiant l'architecture de la <b>m</b>achine .  Identique au résultat de la commande <code>uname -p</code>. Les valeurs habituelles sont 'powerpc' pour les machines ppc and 'i386' pour les machines x86. Introduit dans les versions CVS de fink postérieures à la version 0.12.1.</p>
+<p>chaîne spécifiant l'architecture de la <b>m</b>achine. Identique au résultat de la commande <code>uname -p</code>. Les valeurs habituelles sont 'powerpc' pour les machines ppc and 'i386' pour les machines x86. Introduit dans les versions CVS de fink postérieures à la version 0.12.1.</p>
 </td></tr><tr valign="top"><td>%%</td><td>
-<p>signe pourcentage (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet,  mais représente la chaîne %n.  (Introduit dans fink-0.18.0).</p>
+<p>signe pourcentage (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet, mais représente la chaîne %n. (Introduit dans fink-0.18.0).</p>
 </td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
 <p>fonction de pseudo-hachage retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas. La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2).</p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
-<p>la partie <b>i</b>nvariante du <b>n</b>om  du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés. (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.</p>
+<p>la partie <b>i</b>nvariante du <b>n</b>om du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés. (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.</p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
-<p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un  <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
+<p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
