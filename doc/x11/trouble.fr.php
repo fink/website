@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Résolution de problèmes";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/10 01:56:44';
+$cvs_date = 'Date: 2006/01/19 22:09:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Conseils d\'utilisation"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
 
 
@@ -13,7 +13,7 @@ include_once "header.fr.inc";
 <h2><a name="immedate-quit">7.1 Après lancement, XDarwin se termine ou se plante quasi immédiatement</a></h2>
 
 <p>Tout d'abord : pas de panique ! Il existe un grand nombre de choses qui peuvent ne pas fonctionner correctement avec XFree86 ; et un bon nombre d'entre elles peuvent causer des problèmes de démarrage. De plus, quand XDarwin rencontre des problèmes au démarrage, il est fréquent qu'il se plante. Cette section tente de fournir une liste exhaustive des problèmes que vous pouvez rencontrer. Mais, tout d'abord, vous devez collecter deux informations importantes.</p>
-<p><b>Version de X</b> : vous obtiendrez la version de XDarwin en cliquant <b>une seule fois</b> sur l'icône de XDarwin dans le Finder, puis en choisissant "Lire les informations" à partir du menu (raccourci Cmd-I). Le numéro de version n'est incrémenté que lorsqu'une nouvelle version de test binaire est produite par le projet XonX ; autrement dit, "1.0a1" correspond à n'importe quelle version entre 1.0a1 et 1.0a2.</p>
+<p><b>Version de XDarwin</b> : vous obtiendrez la version de XDarwin en cliquant <b>une seule fois</b> sur l'icône de XDarwin dans le Finder, puis en choisissant "Lire les informations" à partir du menu (raccourci Cmd-I). Le numéro de version n'est incrémenté que lorsqu'une nouvelle version de test binaire est produite par le projet XonX ; autrement dit, "1.0a1" correspond à n'importe quelle version entre 1.0a1 et 1.0a2.</p>
 <p><b>Messages d'erreur</b> : ils sont essentiels à la compréhension du problème auquel vous êtes confronté. Leur emplacement dépend de la façon dont vous avez lancé XDarwin. Si vous avez lancé <code>startx</code> dans une fenêtre de Terminal, les messages apparaissent directement dans cette fenêtre. Vous pouvez utiliser les barres de défilement. Si vous avez lancé XDarwin en double-cliquant sur son icône, les messages apparaissent dans les logs système, auxquels vous avez accès via l'application Console, située dans le répertoire Utilities (situé dans le répertoire Applications). Assurez-vous que vous récupérez les bons messages, c'est-à-dire les derniers.</p>
 <p>Commençons par une liste des messages possibles :</p>
 <pre>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</pre>

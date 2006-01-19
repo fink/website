@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/10 01:56:44';
+$cvs_date = 'Date: 2006/01/19 22:09:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="Historique"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Lancement de X11";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/10 01:56:44';
+$cvs_date = 'Date: 2006/01/19 22:09:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de X11">';
 
 
@@ -43,7 +43,7 @@ include_once "header.fr.inc";
 <h2><a name="starting-apples-x11">4.4 Lancement de X11 d'Apple</a></h2>
 
 <p>X11 d'Apple fonctionne de la manière similaire à XFree86 (c'est-à-dire qu'il utilise un fichier <code>.xinitrc</code> pour contrôler les clients lancés au démarrage). On le lance normalement en double-cliquant sur l'icône de <code>X11.app</code> (situé dans le répertoire <code>/Applications/Utilitaires</code>). Vous pouvez aussi utiliser <code>startx</code>, mais il n'existe pas d'option en ligne de commande pour choisir le mode d'affichage ; dans ce cas, <code>X11.app</code> démarre dans le mode précédemment choisi dans ses préférences.</p>
-<p>Par défaut, le gestionnaire de fenêtres est <code>quartz-wm</code>d'Apple. Vous pouvez passer de mode plein écran en mode sans racine en changeant l'option correspondante dans les préférences de <b>X11.app</b>. Il n'est pas nécessaire de redémarrer pour que le changement ait lieu. Néanmoins, ceci ne fonctionne pas avec <code>quartz-wm</code>, il faut choisir un autre gestionnaire de fenêtres (par exemple dans <code>.xinitrc</code>).</p>
+<p>Par défaut, le gestionnaire de fenêtres est <code>quartz-wm</code> d'Apple. Vous pouvez passer de mode plein écran en mode sans racine en changeant l'option correspondante dans les préférences de <b>X11.app</b>. Il n'est pas nécessaire de redémarrer pour que le changement ait lieu. Néanmoins, ceci ne fonctionne pas avec <code>quartz-wm</code>, il faut choisir un autre gestionnaire de fenêtres (par exemple dans <code>.xinitrc</code>).</p>
  
  <h2><a name="applex11tools">4.5 applex11tools</a></h2>
 

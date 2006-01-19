@@ -3,9 +3,9 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.22 2005/06/10 01:56:44 michga Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.23 2006/01/19 22:09:48 michga Exp $</cvsid>
 <preface>
-<p>Ce document traite de l'utilisation de X11, XFree86, Xtools et Xorg sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
+<p>Ce document traite de l'utilisation de X11, XFree86, et Xtools sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
 <chapter filename="intro">
 <title>Introduction</title>
@@ -95,7 +95,7 @@
 <li><em>Note importante</em> : certains fichiers ne sont pas situés au même endroit dans les différentes versions de X11. Cela signifie, qu'en général, si vous tentez de passer à une version inférieure de X11, les binaires (programmes exécutables, etc...) ne fonctionneront plus. Vous devrez alors reconstruire les paquets concernés par ce phénomène.
 <p>L'inverse n'est pas vrai : les paquets construits avec une ancienne version de X11 fonctionnent en général avec une version ultérieure.</p>
 <p>Pour 10.3 et 10.4, la hiérarchie X11 (postériorité du code source) est la suivante :</p>
-<codeblock>xorg > xfree86 > Apple's X11</codeblock>
+<codeblock>xorg > xfree86 > X11 d'Apple</codeblock>
 </li></ul>
 <p><em>Utilisateurs 10.4</em> :</p>
 <p>Vous pouvez installer la version 4.5.0-23 de XFree86 à partir du source. Vous devez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code> pour obtenir une installation parfaitement fonctionnelle.</p>
@@ -348,7 +348,7 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <section name="starting-apples-x11">
 <title>Lancement de X11 d'Apple</title>
 <p>X11 d'Apple fonctionne de la manière similaire à XFree86 (c'est-à-dire qu'il utilise un fichier <filename>.xinitrc</filename> pour contrôler les clients lancés au démarrage). On le lance normalement en double-cliquant sur l'icône de <filename>X11.app</filename> (situé dans le répertoire <filename>/Applications/Utilitaires</filename>). Vous pouvez aussi utiliser <code>startx</code>, mais il n'existe pas d'option en ligne de commande pour choisir le mode d'affichage ; dans ce cas, <filename>X11.app</filename> démarre dans le mode précédemment choisi dans ses préférences.</p>
-<p>Par défaut, le gestionnaire de fenêtres est <code>quartz-wm</code>d'Apple. Vous pouvez passer de mode plein écran en mode sans racine en changeant l'option correspondante dans les préférences de <em>X11.app</em>. Il n'est pas nécessaire de redémarrer pour que le changement ait lieu. Néanmoins, ceci ne fonctionne pas avec <code>quartz-wm</code>, il faut choisir un autre gestionnaire de fenêtres (par exemple dans <filename>.xinitrc</filename>).</p>
+<p>Par défaut, le gestionnaire de fenêtres est <code>quartz-wm</code> d'Apple. Vous pouvez passer de mode plein écran en mode sans racine en changeant l'option correspondante dans les préférences de <em>X11.app</em>. Il n'est pas nécessaire de redémarrer pour que le changement ait lieu. Néanmoins, ceci ne fonctionne pas avec <code>quartz-wm</code>, il faut choisir un autre gestionnaire de fenêtres (par exemple dans <filename>.xinitrc</filename>).</p>
  </section>
  <section name="applex11tools">
 <title>applex11tools</title>
@@ -443,7 +443,7 @@ quartz-wm --only-proxy &amp;
 <section name="immedate-quit">
 <title>Après lancement, XDarwin se termine ou se plante quasi immédiatement</title>
 <p>Tout d'abord : pas de panique ! Il existe un grand nombre de choses qui peuvent ne pas fonctionner correctement avec XFree86 ; et un bon nombre d'entre elles peuvent causer des problèmes de démarrage. De plus, quand XDarwin rencontre des problèmes au démarrage, il est fréquent qu'il se plante. Cette section tente de fournir une liste exhaustive des problèmes que vous pouvez rencontrer. Mais, tout d'abord, vous devez collecter deux informations importantes.</p>
-<p><em>Version de X</em> : vous obtiendrez la version de XDarwin en cliquant <em>une seule fois</em> sur l'icône de XDarwin dans le Finder, puis en choisissant &quot;Lire les informations&quot; à partir du menu (raccourci Cmd-I). Le numéro de version n'est incrémenté que lorsqu'une nouvelle version de test binaire est produite par le projet XonX ; autrement dit, &quot;1.0a1&quot; correspond à n'importe quelle version entre 1.0a1 et 1.0a2.</p>
+<p><em>Version de XDarwin</em> : vous obtiendrez la version de XDarwin en cliquant <em>une seule fois</em> sur l'icône de XDarwin dans le Finder, puis en choisissant &quot;Lire les informations&quot; à partir du menu (raccourci Cmd-I). Le numéro de version n'est incrémenté que lorsqu'une nouvelle version de test binaire est produite par le projet XonX ; autrement dit, &quot;1.0a1&quot; correspond à n'importe quelle version entre 1.0a1 et 1.0a2.</p>
 <p><em>Messages d'erreur</em> : ils sont essentiels à la compréhension du problème auquel vous êtes confronté. Leur emplacement dépend de la façon dont vous avez lancé XDarwin. Si vous avez lancé <code>startx</code> dans une fenêtre de Terminal, les messages apparaissent directement dans cette fenêtre. Vous pouvez utiliser les barres de défilement. Si vous avez lancé XDarwin en double-cliquant sur son icône, les messages apparaissent dans les logs système, auxquels vous avez accès via l'application Console, située dans le répertoire Utilities (situé dans le répertoire Applications). Assurez-vous que vous récupérez les bons messages, c'est-à-dire les derniers.</p>
 <p>Commençons par une liste des messages possibles :</p>
 <codeblock>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</codeblock>

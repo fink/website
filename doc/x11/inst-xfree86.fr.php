@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Installation de X11";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/10 01:56:44';
+$cvs_date = 'Date: 2006/01/19 22:09:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de X11"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 
@@ -18,7 +18,7 @@ include_once "header.fr.inc";
 <li><b>Note importante</b> : certains fichiers ne sont pas situés au même endroit dans les différentes versions de X11. Cela signifie, qu'en général, si vous tentez de passer à une version inférieure de X11, les binaires (programmes exécutables, etc...) ne fonctionneront plus. Vous devrez alors reconstruire les paquets concernés par ce phénomène.
 <p>L'inverse n'est pas vrai : les paquets construits avec une ancienne version de X11 fonctionnent en général avec une version ultérieure.</p>
 <p>Pour 10.3 et 10.4, la hiérarchie X11 (postériorité du code source) est la suivante :</p>
-<pre>xorg &gt; xfree86 &gt; Apple's X11</pre>
+<pre>xorg &gt; xfree86 &gt; X11 d'Apple</pre>
 </li></ul>
 <p><b>Utilisateurs 10.4</b> :</p>
 <p>Vous pouvez installer la version 4.5.0-23 de XFree86 à partir du source. Vous devez installer les deux paquets <code>xfree86</code> et <code>xfree86-shlibs</code> pour obtenir une installation parfaitement fonctionnelle.</p>
