@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.5 2005/08/08 02:59:00 dmacks Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.6 2006/01/25 03:49:36 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -581,6 +581,35 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
 <title>10.4 に向けて</title>
 <shorttitle>10.4 に向けて</shorttitle>
 <section name="perl"><title>Perl</title>
+
+  <p>
+    <filename>/usr/bin/perl</filename> は perl 5.8.6 です。
+    architecture string は未だに &quot;darwin-thread-multi-2level&quot;。
+  </p>
+
+</section>
+
+<section name="typedef"><title>新しいシンボル定義</title>
+
+  <p>
+    Mac OS X 10.4 は、多くのシンボルの型を変更しました。
+    今までに明示的に型を指定したもの、例えば <code>socklen_t</code> を <code>int</code> と定義したようなもの、
+    この定義は正しくありません。
+  </p>
+
+</section>
+
+<section name="system-libs"><title>新しいシステムライブラリ</title>
+
+  <p>
+    Mac OS X 10.3 の <code>poll()</code> 関数は、実際は <code>select()</code> を利用したエミュレーションでした。
+    Mac OS X 10.4 では、 <code>poll()</code> はカーネルで実装されている実際の関数です。
+    しかし、ソケットと使用する際には壊れています。
+    システムの <code>poll()</code> を完全に無視することも検討してください。
+    Fink の glib2 パッケージは、完全に機能するエミュレーションを使うようパッチされていますので、
+    poll のような機能のライブラリを安全に使うことができます。
+  </p>
+
 </section>
 </chapter>
 </document>

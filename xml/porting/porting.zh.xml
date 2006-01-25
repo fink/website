@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 	<title>移植 Unix 软件到 Darwin 和 Mac OS X 上</title>
 	<shorttitle>移植</shorttitle>
-	<cvsid>$Id: porting.zh.xml,v 1.5 2005/08/08 02:59:00 dmacks Exp $</cvsid> 
+	<cvsid>$Id: porting.zh.xml,v 1.6 2006/01/25 03:49:36 babayoshihiko Exp $</cvsid> 
 
 	<preface>
 		<p>本文档包含如何移植 Unix 软件到 Darwin 和 Mac OS X 平台上的提示。
@@ -658,6 +658,38 @@ url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html"
 <title>为 10.4 做准备</title>
 <shorttitle>为 10.4 做准备</shorttitle>
 <section name="perl"><title>Perl</title>
+
+  <p>
+    <filename>/usr/bin/perl</filename> is now perl 5.8.6; the
+    architecture string is still &quot;darwin-thread-multi-2level&quot;.
+  </p>
+
+</section>
+
+<section name="typedef"><title>New symbol definitions</title>
+
+  <p>
+    Mac OS X 10.4 has changed the types of many symbols. If you
+    previously set a type explicitly, for example,
+    defining <code>socklen_t</code> as <code>int</code>, that
+    definition may no longer be correct.
+  </p>
+
+</section>
+
+<section name="system-libs"><title>New builtin system libraries</title>
+
+  <p>
+    The <code>poll()</code> function in Mac OS X 10.3 was actually an
+    emulation implemented using <code>select()</code>. In Mac OS X
+    10.4, <code>poll()</code> is a real function implemented in the
+    kernel, however it is broken when used with sockets. Consider
+    ignoring the system's <code>poll()</code> completely. Fink's glib2
+    package has been patched to use a fully functional emulation, so
+    it is safe to use that library's implementation of poll-like
+    functions.
+  </p>
+
 </section>
 </chapter>
 <!-- end tranlation -->
