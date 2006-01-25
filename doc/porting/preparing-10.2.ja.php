@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 10.2 に向けて";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/08/08 02:59:00';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/01/25 03:57:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.3.php?phpLang=ja" title="10.3 に向けて"><link rel="prev" href="libtool.php?phpLang=ja" title="GNU libtool">';
 
 

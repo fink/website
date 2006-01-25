@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.6 2006/01/25 03:49:36 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.7 2006/01/25 03:57:27 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -583,8 +583,8 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
 <section name="perl"><title>Perl</title>
 
   <p>
-    <filename>/usr/bin/perl</filename> は perl 5.8.6 です。
-    architecture string は未だに &quot;darwin-thread-multi-2level&quot;。
+    <filename>/usr/bin/perl</filename> は perl 5.8.6 です．
+    architecture string は未だに &quot;darwin-thread-multi-2level&quot; です．
   </p>
 
 </section>
@@ -592,9 +592,9 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
 <section name="typedef"><title>新しいシンボル定義</title>
 
   <p>
-    Mac OS X 10.4 は、多くのシンボルの型を変更しました。
-    今までに明示的に型を指定したもの、例えば <code>socklen_t</code> を <code>int</code> と定義したようなもの、
-    この定義は正しくありません。
+    Mac OS X 10.4 は，多くのシンボルの型を変更しました．
+    今までに明示的に型を指定したもの、例えば <code>socklen_t</code> を <code>int</code> と定義したようなもの，
+    この定義は正しくありません．
   </p>
 
 </section>
