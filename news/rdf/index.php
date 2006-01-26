@@ -18,6 +18,7 @@ include_once "header.inc";
  <li>10.2 (<a href="fink-10.2-stable.rdf">Stable</a>) (<a href="fink-10.2-unstable.rdf">Unstable</a>)</li>
  <li>10.2-gcc3.3 (<a href="fink-10.2-gcc3.3-stable.rdf">Stable</a>) (<a href="fink-10.2-gcc3.3-unstable.rdf">Unstable</a>)</li>
  <li>10.3 (<a href="fink-10.3-stable.rdf">Stable</a>) (<a href="fink-10.3-unstable.rdf">Unstable</a>)</li>
+ <li>10.4-transitional (<a href="fink-10.4-transitional-stable.rdf">Stable</a>) (<a href="fink-10.4-transitional-unstable.rdf">Unstable</a>)</li>
 </ul>
 <h2>Updated Packages By Tree</h2>
 <ul>
