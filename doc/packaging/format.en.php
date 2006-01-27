@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/01/11 05:02:58';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/01/27 03:08:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -150,7 +150,8 @@ the package <b>e</b>poch
 </p>
 </td></tr><tr valign="top"><td>%v</td><td>
 <p>
-the package <b>v</b>ersion
+the package <b>v</b>ersion. Note that the Epoch is not part
+of <code>%v</code>.
 </p>
 </td></tr><tr valign="top"><td>%r</td><td>
 <p>
@@ -158,7 +159,8 @@ the package <b>r</b>evision
 </p>
 </td></tr><tr valign="top"><td>%f</td><td>
 <p>
-the <b>f</b>ull package name, i.e. %n-%v-%r
+the <b>f</b>ull package name (%n-%v-%r). Note that the Epoch is not
+part of <code>%f</code>.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>

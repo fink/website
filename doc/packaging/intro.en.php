@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Intro";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/01/11 05:02:58';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/01/27 03:08:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="format.php?phpLang=en" title="Package Descriptions"><link rel="prev" href="index.php?phpLang=en" title="Packaging Contents">';
 
 

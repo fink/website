@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/01/11 05:02:58';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/01/27 03:08:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -147,6 +147,16 @@ Policy Manual</a>.
 Because Fink and some of the underlying Debian tools use
 name-version-revision as the unique identifier of a package, you must
 not create a package that differs from another solely by its epoch.
+</p>
+<p>
+When used in a version string, the Epoch appears before the Version
+value, separated by a colon (1:3.14-2). Note that the Epoch is not
+of <code>%v</code> (or (<code>%f</code>). If you add an Epoch field to
+a package description file, you may have to adjust versioned
+dependencies on the packages in it. For example, if you
+add <code>Epoch: 1</code> and foo-dev declares <code>Depends:
+foo-shlibs (= %v-%r)</code>, you will need to rewrite that
+as <code>Depends: foo-shlibs (= %e:%v-%r)</code>.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
