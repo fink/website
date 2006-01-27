@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.83 2006/01/11 05:02:58 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.84 2006/01/27 03:08:06 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -248,7 +248,8 @@ the package <em>e</em>poch
 <item><itemt>%v</itemt>
 <itemd>
 <p>
-the package <em>v</em>ersion
+the package <em>v</em>ersion. Note that the Epoch is not part
+of <code>%v</code>.
 </p>
 </itemd></item>
 
@@ -262,7 +263,8 @@ the package <em>r</em>evision
 <item><itemt>%f</itemt>
 <itemd>
 <p>
-the <em>f</em>ull package name, i.e. %n-%v-%r
+the <em>f</em>ull package name (%n-%v-%r). Note that the Epoch is not
+part of <code>%f</code>.
 </p>
 </itemd></item>
 
@@ -1563,6 +1565,16 @@ Policy Manual</link>.
 Because Fink and some of the underlying Debian tools use
 name-version-revision as the unique identifier of a package, you must
 not create a package that differs from another solely by its epoch.
+</p>
+<p>
+When used in a version string, the Epoch appears before the Version
+value, separated by a colon (1:3.14-2). Note that the Epoch is not
+of <code>%v</code> (or (<code>%f</code>). If you add an Epoch field to
+a package description file, you may have to adjust versioned
+dependencies on the packages in it. For example, if you
+add <code>Epoch: 1</code> and foo-dev declares <code>Depends:
+foo-shlibs (= %v-%r)</code>, you will need to rewrite that
+as <code>Depends: foo-shlibs (= %e:%v-%r)</code>.
 </p>
 </itemd></item>
 
