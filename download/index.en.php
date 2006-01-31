@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2005/06/09 13:53:14 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2006/01/31 02:44:47 $';
 
 include "header.inc";
 ?>
@@ -73,7 +73,7 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 <li>Select the <code>fink</code> package.</li>
 <li>Binary->Install</li>
 </ol></li>
-<li><p>The recommended Fink Commander sequence sequence to update <code>fink</code>is as follows:</p>
+<li><p>The recommended Fink Commander sequence to update <code>fink</code> from source is as follows:</p>
 <ol>
 <li>Source->Selfupdate</li> 
 <li>Tools->Interact with Fink...
@@ -92,7 +92,7 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 <p>Once you've updated <code>fink</code>, you can install other packages, using the same syntax, e.g <code>sudo apt-get install gimp</code> to install the Gimp.  Note, however, that not all fink packages are in binary form.</p>
 </li>
 <li>
-<p>Install from source. To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), "rsync".  This will automatically update the <code>fink</code> package.</p>
+<p>Install from source (requires the XCode Tools [Developer Tools on 10.2] to be installed). To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), "rsync".  This will automatically update the <code>fink</code> package.</p>
 <p>Once <code>fink</code> is updated, you can use "<code>fink install</code>" to fetch and compile from source code.  For example, to install the Gimp, run <code>fink install gimp</code>.</p> 
 </li> 
 </ul>
@@ -100,8 +100,51 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 </li> 
 </ol>
 
-<p>
-For more information, please refer to the <a
+<h2>Additional Things to Install</h2>
+<h3>XCode Tools/Developer Tools</h3>
+<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older..  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
+<p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newere one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
+<table>
+  <caption>Recommended Developer Tools  versions by OS</caption>
+  <tbody>
+    <tr>
+      <td>10.2</td>
+      <td>December 2002 Developer Tools and August 2003 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.3</td>
+      <td>XCode 1.5 and the November 2004 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.4 on PowerPC</td>
+      <td>XCode 2.2.1, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+    </tr>
+    <tr>
+      <td>10.4 on Intel</td>
+      <td>XCode 2.2.1</td>
+    </tr>
+  </tbody>
+</table>
+<h3>X11</h3>
+      <p>Almost all of the applications on Fink that have graphical user interfa
+ces (GUIs) require some flavor of X11 (since most were originally developed on p
+latforms that only had that as a GUI option).</p>
+      <p>Apple provides its own X11 distribution for OS 10.3 and 10.4.  This is
+the easiest option with which to get started.  They have elected to split it int
+o two parts:</p>
+      <ul>
+        <li>The <em>X11User </em>package contains everything you need just to ru
+n Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
+ optional install.</li>
+        <li>The
+<em>X11SDK</em>
+package contains the development headers.  You need this if you want to build an
+ything from source that uses X11.  This package is available as part of the XCod
+e Tools, and installed by default with XCode 2.x.</li>
+</ul>
+<p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
+<h2>Further information</h2>
+<p>For more information, please refer to the <a
 href="../faq/index.php">Frequently Asked Questions</a> and the <a
 href="../doc/index.php">documentation section</a>.
 If your questions aren't answered by those documents, check out the <a
