@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/15 06:57:54';
+$cvs_date = 'Date: 2006/02/02 11:31:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -124,7 +124,10 @@ SplitOff: &lt;&lt;
 </p>
 </td></tr><tr valign="top"><td>%f</td><td>
 <p>
-完整的（<b>f</b>ull）软件包名，即 %n-%v-%r
+完整的（<b>f</b>ull）软件包名，即 %n-%v-%r.
+
+Note that the Epoch is not part of <code>%f</code>.
+
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/15 06:57:54';
+$cvs_date = 'Date: 2006/02/02 11:31:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -143,6 +143,7 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%f</td><td>
 						<p>
 							<b>f</b>ull package name．%n-%v-%r と等価．
+							Epoch は <code>%f</code> に含まれない．
 						</p>
 					</td></tr><tr valign="top"><td>%p, %P</td><td>
 						<p>

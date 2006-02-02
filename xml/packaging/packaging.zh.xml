@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.23 2006/01/15 06:57:54 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.24 2006/02/02 11:31:46 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -203,7 +203,10 @@ SplitOff: &lt;&lt;
 <item><itemt>%f</itemt>
 <itemd>
 <p>
-完整的（<em>f</em>ull）软件包名，即 %n-%v-%r
+完整的（<em>f</em>ull）软件包名，即 %n-%v-%r.
+<!-- start translation -->
+Note that the Epoch is not part of <code>%f</code>.
+<!-- end translation -->
 </p>
 </itemd></item>
 

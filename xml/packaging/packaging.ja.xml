@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.34 2006/01/15 06:57:54 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.35 2006/02/02 11:31:46 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -232,6 +232,7 @@ SplitOff: &lt;&lt;
 					<itemd>
 						<p>
 							<em>f</em>ull package name．%n-%v-%r と等価．
+							Epoch は <code>%f</code> に含まれない．
 						</p>
 					</itemd>
 				</item>
