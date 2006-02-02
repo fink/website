@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2006/01/31 02:44:47 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2006/02/02 12:11:42 $';
 
 include "header.inc";
 ?>
@@ -38,8 +38,8 @@ Download the installer disk image:<br>
 </p>
 </li>
 <li><p>
-Double-click "Fink-<? print $fink_version; ?>-Installer.dmg" to mount the disk image,
-then double-click the "Fink <? print $fink_version; ?> Installer.pkg" package
+Double-click &quot;Fink-<? print $fink_version; ?>-Installer.dmg&quot; to mount the disk image,
+then double-click the &quot;Fink <? print $fink_version; ?> Installer.pkg&quot; package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
@@ -58,10 +58,10 @@ each user must run pathsetup in his or her own account.)
 If pathsetup generates errors messages, consult the documentation, 
 particularly 
 <a href="../doc/users-guide/install.php#setup">section
-2.3 "Setting Up Your Environment"</a> of the User's Guide.</p>
+2.3 &quot;Setting Up Your Environment&quot;</a> of the User's Guide.</p>
 </li>
 <li><p>
-Open a new Terminal.app window and run the following: "<code>fink scanpackages; fink index</code>", or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source->scanpackages</em> followed by <em>Source->Utilities->index</em>.
+Open a new Terminal.app window and run the following: &quot;<code>fink scanpackages; fink index</code>&quot;, or use the included Fink Commander GUI application (which must be placed in a real folder on your system, not run from the disk image) and run the following commands from its menu:  <em>Source-&gt;scanpackages</em> followed by <em>Source-&gt;Utilities-&gt;index</em>.
 </p></li>
 <li><p>Once those two commands are finished you should update the <code>fink</code> package, in case there have been significant changes since the last point release.  After you do this you can install other packages.  There are several ways to do this:
 <ul>
@@ -69,21 +69,21 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 <p>Use the included Fink Commander to select and install packages. Fink Commander provides an easy to use GUI for Fink. This is the recommended method for new users, or users who are not comfortable with the command line.  Fink Commander has Binary and Source menus.  You should install from binaries if you don't have the Developer Tools installed, or don't want to build packages yourself.</p>
 <ul><li><p>The Fink Commander sequence to update <code>fink</code> from binaries is as follows:</p>
 <ol>
-<li>Binary->Update descriptions</li>
+<li>Binary-&gt;Update descriptions</li>
 <li>Select the <code>fink</code> package.</li>
-<li>Binary->Install</li>
+<li>Binary-&gt;Install</li>
 </ol></li>
 <li><p>The recommended Fink Commander sequence to update <code>fink</code> from source is as follows:</p>
 <ol>
-<li>Source->Selfupdate</li> 
-<li>Tools->Interact with Fink...
-<li>Make sure "Accept default response" is selected, and click "Submit".</li>
+<li>Source-&gt;Selfupdate</li> 
+<li>Tools-&gt;Interact with Fink...
+<li>Make sure &quot;Accept default response&quot; is selected, and click &quot;Submit&quot;.</li>
 <li><code>fink</code> and other base packages will be built and run automatically</li>
 </ol></li></ul>
 <p>Now that you've updated <code>fink</code>, you can install other packages.</p>  
 <ul>
-<li>To install from binaries, select the package, and use Binary->Install.</li>
-<li>To install from source, select the package, and use Source->Install</li>
+<li>To install from binaries, select the package, and use Binary-&gt;Install.</li>
+<li>To install from source, select the package, and use Source-&gt;Install</li>
 </ul>
 </li>
 <li>
@@ -92,8 +92,9 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 <p>Once you've updated <code>fink</code>, you can install other packages, using the same syntax, e.g <code>sudo apt-get install gimp</code> to install the Gimp.  Note, however, that not all fink packages are in binary form.</p>
 </li>
 <li>
-<p>Install from source (requires the XCode Tools [Developer Tools on 10.2] to be installed). To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), "rsync".  This will automatically update the <code>fink</code> package.</p>
-<p>Once <code>fink</code> is updated, you can use "<code>fink install</code>" to fetch and compile from source code.  For example, to install the Gimp, run <code>fink install gimp</code>.</p> 
+<p>Install from source (requires the XCode Tools [Developer Tools on 10.2] to be installed).
+To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), &quot;rsync&quot;.  This will automatically update the <code>fink</code> package.</p>
+<p>Once <code>fink</code> is updated, you can use &quot;<code>fink install</code>&quot; to fetch and compile from source code.  For example, to install the Gimp, run <code>fink install gimp</code>.</p> 
 </li> 
 </ul>
 
@@ -102,7 +103,7 @@ Open a new Terminal.app window and run the following: "<code>fink scanpackages; 
 
 <h2>Additional Things to Install</h2>
 <h3>XCode Tools/Developer Tools</h3>
-<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older..  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
+<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
 <p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newere one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
 <table>
   <caption>Recommended Developer Tools  versions by OS</caption>
@@ -133,7 +134,7 @@ latforms that only had that as a GUI option).</p>
 the easiest option with which to get started.  They have elected to split it int
 o two parts:</p>
       <ul>
-        <li>The <em>X11User </em>package contains everything you need just to ru
+        <li>The <em>X11User</em> package contains everything you need just to ru
 n Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
  optional install.</li>
         <li>The
