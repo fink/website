@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Download Quick Start";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:44:27 $';
+$cvs_date = '$Date: 2006/02/02 12:12:16 $';
 
 include "header.inc";
 ?>
@@ -123,7 +123,8 @@ Developer Tools がインストールされていない場合が、この方法�
 </p>
 </li>
 <li>
-<p>ソースからインストール。
+<p>ソースからインストール (<!--start translation -->XCode Tools [１０．２では Developer Tools] がインストールされている必要があります<!-- end translation -->).
+。
 <code>fink</code> の更新には <code>fink selfupdate</code> を実行します。
 プロンプトでは option (1), &quot;rsync&quot; を選択します。
 これで自動的に <code>fink</code>  パッケージが更新されます。
@@ -139,6 +140,61 @@ Developer Tools がインストールされていない場合が、この方法�
 </li> 
 </ol>
 
+<h2>この他のインストール</h2>
+<h3>XCode Tools/Developer Tools</h3>
+<p>
+バイナリパッケージを使っているだけでは、制限されていると感じるかもしれません。
+ソース形態に比べ、バイナリ形態で配布されているパッケージの数は少なく、またバイナリバージョンは古いことが多いです。
+パッケージをソースからビルドするには、 Developer Tools (10.3 以降は XCode Tools) をインストールする必要があります。
+</p>
+<p>
+通常、Developer Tools/XCode Tools のあるバージョンは、OS インストールディスクに入っていますが、新しいものが必要かもしれません。
+<a href="http://connect.apple.com">Apple Developer Connection</a> で無料登録後、新しいバージョン (あればアップデート) をダウンロードしてください。
+</p>
+<table>
+  <caption>推奨される Developer Tools のバージョン</caption>
+  <tbody>
+    <tr>
+      <td>10.2</td>
+      <td>December 2002 Developer Tools と August 2003 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.3</td>
+      <td>XCode 1.5 と November 2004 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.4 on PowerPC</td>
+      <td>XCode 2.2.1 と XCode Legacy Tools ( ビルド時に <code>gcc3.1</code> または <code>gcc2.95</code> が必要なパッケージ)</td>
+    </tr>
+    <tr>
+      <td>10.4 on Intel</td>
+      <td>XCode 2.2.1</td>
+    </tr>
+  </tbody>
+</table>
+<h3>X11</h3>
+<p>
+Fink では、グラフィカルユーザーインターフェイス (GUI) を持つほとんど全てのアプリケーションは、いずれかの X11 を必要とします
+(なぜなら、ほとんどは GUI オプションとしてそれしかないプラットフォームで開発されたものが多いので)。
+</p>
+<p>Apple は、OS 10.3 と 10.4 には 独自の X11 を提供しています。
+これが一番簡単な方法で、ふたつに分かれています:
+</p>
+      <ul>
+        <li><em>X11User</em> パッケージは、Apple X11 を実行するのに必要なものが入っています。
+        10.3 では OS インストールディスクに、10.4 はオプションインストールになります。
+        </li>
+        <li><em>X11SDK</em> は、開発用ヘッダを含んでいます。
+        これは、 X11 を使うものをソースからビルドする場合に必要です。
+        このパッケージは XCode Tools の一部として提供され、 XCode 2.x ではデフォルトでインストールされます。
+        </li>
+</ul>
+<p>
+X11 をインストールしたら、 Fink は自動的に登録します。
+何か問題がありましたら、まず X11 インストール問題の
+<a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=ja#apple-x11-wants-xfree86">FAQ </a> を参照ください。</p>
+
+<h2>その他の情報</h2>
 <p>
 詳細や他の情報については、
 <a href="../faq/index.php?phpLang=ja">F.A.Q.</a>
