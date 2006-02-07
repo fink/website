@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/02/02 12:11:42 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2006/02/07 13:43:37 $';
 
 include "header.inc";
 ?>
@@ -80,7 +80,7 @@ Open a new Terminal.app window and run the following: &quot;<code>fink scanpacka
 <li>Make sure &quot;Accept default response&quot; is selected, and click &quot;Submit&quot;.</li>
 <li><code>fink</code> and other base packages will be built and run automatically</li>
 </ol></li></ul>
-<p>Now that you've updated <code>fink</code>, you can install other packages.</p>  
+<p>Now that you've updated <code>fink</code>, you can install other packages.</p>
 <ul>
 <li>To install from binaries, select the package, and use Binary-&gt;Install.</li>
 <li>To install from source, select the package, and use Source-&gt;Install</li>
@@ -104,9 +104,9 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
 <h2>Additional Things to Install</h2>
 <h3>XCode Tools/Developer Tools</h3>
 <p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
-<p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newere one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
+<p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newer one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
 <table>
-  <caption>Recommended Developer Tools  versions by OS</caption>
+  <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
       <td>10.2</td>
@@ -127,21 +127,15 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   </tbody>
 </table>
 <h3>X11</h3>
-      <p>Almost all of the applications on Fink that have graphical user interfa
-ces (GUIs) require some flavor of X11 (since most were originally developed on p
-latforms that only had that as a GUI option).</p>
+      <p>Almost all of the applications on Fink that have graphical user interfaces (GUIs) require some flavor of X11 (since most were originally developed on platforms that only had that as a GUI option).</p>
       <p>Apple provides its own X11 distribution for OS 10.3 and 10.4.  This is
-the easiest option with which to get started.  They have elected to split it int
-o two parts:</p>
+the easiest option with which to get started.  They have elected to split it into two parts:</p>
       <ul>
-        <li>The <em>X11User</em> package contains everything you need just to ru
-n Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
+        <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
  optional install.</li>
         <li>The
 <em>X11SDK</em>
-package contains the development headers.  You need this if you want to build an
-ything from source that uses X11.  This package is available as part of the XCod
-e Tools, and installed by default with XCode 2.x.</li>
+package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the XCode Tools, and installed by default with XCode 2.x.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2>Further information</h2>
