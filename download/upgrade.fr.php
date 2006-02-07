@@ -1,50 +1,48 @@
 <?
 $title = "Tableau de mises à jour";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/01/16 23:26:45 $';
+$cvs_date = '$Date: 2006/02/07 15:02:16 $';
 
 include "header.inc";
 ?>
 
 <h1>Tableau de mises à jour de Fink</h1>
-
+<p>Pour les versions de Mac OS X >= 10.2</p>
+<h3>Invariance de la version du système Mac OS X</h3>
 <p>Toutes les versions en cours de Fink peuvent être mises à jour vers la plus récente correspondant à la version de Mac OS X, c'est-à-dire qu'il <strong>ne faut pas</strong> utiliser le nouvel installeur.</p>
 <p>Si vous ignorez la version de Fink en votre possession, exécutez "<code>fink --version</code>" dans une fenêtre du Terminal.</p>
 <p>Vous pouvez la comparer à la version la plus récente disponible pour votre OS dans la <a href="../../pdb/package.php/fink">base de données des paquets</a>.</p>
-
-<p>
-La réorganisation du site de SourceForge au printemps 2002 et le déplacement des binaires durant l'été 2002, ont rendu les mises à jour un peu plus délicates.
-Pour réussir votre mise à jour, nous vous conseillons de suivre scrupuleusement les instructions de mises à jour.
-Il y a des instructions différentes pour les sources et pour les binaires.
-</p>
-<p>Si vous rencontrez des problèmes dans la mise à jour de sources, consultez <a href="fix-upgrade.php">ces instructions particulières.</a></p>
-<?
-it_start();
-it_item('<b>Installation courante (version binaire)</b>', '<b>Méthode de mise à jour</b>');
-it_item("Distribution binaire officielle de Fink, version 0.5.x",
-  '<p>Réalisez la mise à jour normalement avec <tt>dselect</tt> : choisissez "[U]pdate",
-  puis "[I]nstall".
-Ou bien dans <tt>FinkCommander</tt>, lancez "Update" suivie de
-"Dist-Upgrade" (toutes deux se trouvent dans le menu <tt>Binary</tt>).</p>');
-it_item("Distribution binaire officielle de Fink, version 0.3.x ou 0.4.x",
-  '<p>Faites la mise à jour en utilisant soit les <a href="10.1-upgrade.php">
-  instructions de mise à jour pour la 10.1</a> ou les <a href="10.2-upgrade.php">instructions
-   de mise à jour pour la 10.2</a>.</p>');
-it_item("Distribution binaire officielle de Fink, version 0.2.x",
-  '<p>Essayez le <a href="puma-kit.php"> kit originel de mise à jour 10.1</a>.  (Les personnes en charge de la maintenance de Fink ne sont plus en mesure de tester cette version.)</p>');
-it_item("Installations MacGIMP ou OpenOSX.com de Fink 0.2.1",
-  '<p>Essayez le <a href="puma-kit.php">kit originel de mise à jour 10.1</a>.   (Les personnes en charge de la maintenance de Fink ne sont plus en mesure de tester cette version.)
-  Assurez-vous d\'installer le paquet <code>system-xfree86</code> avant de procéder à la mise à jour de l\'ensemble des paquets.</p>');
-it_item('<b>Installation courante (version source)</b>', '<b>Méthode de mise à jour</b>');
-it_item("Sources Fink version 0.2.5 ou ultérieures",
-  '<p>Lancez "<tt>fink selfupdate</tt>".  Si vous effectuez la mise à jour de la 10.1 à la 10.2, 
-  vous devrez le faire deux fois pour une mise à jour complète.</p>');
-it_item("Sources Fink version 0.2.4 ou antérieures (jusqu'à la 0.2.0)",
-  "<p>Si la mise à jour s'effectue sous la OS X 10.1, téléchargez les <a href=\"http://prdownloads.sourceforge.net/fink/packages-0.4.1.tar.gz\">paquets </a>, décompactez-les avec l'utilitaire <tt>tar</tt> et exécutez \"<code>./inject.pl</code>\" dans le répertoire packages-0.4.1.</p><p>
-Si vous réalisez la mise à jour sous OS X 10.2, téléchargez la <a href=\"http://prdownloads.sourceforge.net/fink/dists-$fink_version.tar.gz\">distribution</a>, décompactez-la avec l'utilitaire <tt>tar</tt> et exécutez \"<code>./inject.pl</code>\" dans le répertoire dists-$fink_version.</p>");
-it_end();
-?>
-
+<h2>Mise à jour binaire</h2>
+<p>Mettez à jour via<tt>dselect</tt> : choisissez "[U]pdate (mise à jour)" puis "[I]nstall (installation)", ou bien exécutez "<tt>sudo apt-get update ; sudo apt-get dist-upgrade</tt>".</p>
+<p>Ou bien dans <em>FinkCommander</em>, choisissez "Update (mise à jour)" suivi de "Dist-Upgrade (mise à jour de la distribution)" dans le menu <tt>Binary (binaire)</tt>.</p>
+<h2>Mise à jour du source</h2>
+<p>Exécutez "<tt>fink selfupdate</tt>".</p>
+<p>Ou bien dans <em>FinkCommander</em>, exécutez Source->selfupdate.</p>
+<h3>Nouvelle version du système Mac OS X</h3>
+<p>Chaque mise à jour de Mac OS X requiert une stratégie différente. Des instructions spécifiques sont indiquées sur la <a href="http://fink.sourceforge.net/">page d'accueil</a> pour résoudre les éventuels problèmes.</p> 
+<h2>Mise à jour binaire</h2>
+<ol>
+<li>Mettez à jour Fink comme indiqué ci-dessus dans la partie <em>Mise à jour binaire</em> de la section <em>Invariance de la version du système Mac OS X</em> pour obtenir la dernière version de Fink correspondant à la version de votre système Mac OS X.</li>
+<li>Si vous envisagez de compiler à partir des sources, vous devez supprimer les anciens Outils de développement en exécutant "<tt>/Developer/Tools/uninstall-devtools.pl</tt>" dans une fenêtre de Terminal.</li>
+<li>Mettez à jour votre système Mac OS X.</li>
+<li>Mettez à jour Fink et le reste des paquets de nouveau, comme indiqué ci-dessus.</li>
+<li>Puis, lorsque vous voudrez compiler un paquet à partir des sources, installez une version des Outils de Développement (XCode) compatible avec votre système Mac OS X.</li>
+</ol>
+<p></p>
+<h2>Mise à jour du source</h2>
+<p>La stratégie générale (valable pour toutes les versions de système Mac OS X à la date d'écriture de ce manuel) est la suivante :</p>
+<ol><li>Mettez à jour Fink à la dernière version compatible avec votre système Mac OS X, comme indiqué dans la partie <em>Mise à jour du source</em> dans la section <em>Invariance de la version du système Mac OS X</em>. Il n'est pas nécessaire d'activer l'arborescence instable.</li>  
+<li>Supprimez les anciens Outils de Développement en exécutant "<tt>/Developer/Tools/uninstall-devtools.pl</tt>" dans une fenêtre de Terminal.</li>
+<li>Mettez à jour votre système Mac OS X.</li>
+<li>Installez une version appropriée des Outils de Développement (XCode).</li>
+<li>Exécutez "<tt>/sw/lib/fink/postinstall.pl</tt>" dans une fenêtre de Terminal. Cela redirige Fink vers la distribution adéquate pour votre version de système Mac OS X.</li>
+<li>Exécutez "<tt>fink scanpackages</tt>" dans une fenêtre de Terminal, ou bien "Source->scanpackages" pour les utilisateurs de Fink Commander.</li>
+<li>Exécutez "<tt>sudo apt-get update</tt>" dans une fenêtre de Terminal, ou bien Binary->update pour les utilisateurs de Fink Commander.</li>
+<p>Les deux commandes précédentes suppriment les erreurs relatives à la distribution binaire.</p>
+<li>Exécutez "<tt>fink selfupdate</tt>" dans une fenêtre de Terminal, ou bien Source->selfupdate pour les utilisateurs de Fink Commander.</li>
+<li>Exécutez "<tt>fink update-all</tt>" dans une fenêtre de Terminal, ou bien Source->update-all pour les utilisateurs de Fink Commander.
+<p>Ceci est nécessaire pour s'assurer que tous les paquets tourneront effectivement sur la version de votre système Mac OS X. Il se peut que vous deviez relancer cette commande pour arriver à ce que tous les nouveaux paquets soient construits.</p></li></ol>
+<p>Note : il existe <a href=./upgrade-old.fr.php>ici</a> une version antérieure de ce document. Elle n'est valable que pour les anciennes versions de Fink.</p>
 
 <?
 include "footer.inc";
