@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Compilers";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/01/27 03:08:06';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -36,14 +36,14 @@ a different value (for example, during a transition to a new distribution,
 your packages .info file must specify this using the versioned binaries
 provided by Apple.  Exactly how you will do this depends on the build
 system of your software, but for many packages, the <code>SetCC</code>
-and <code>SetCXX</code> fink fields can be used for this puporse.
+and <code>SetCXX</code> fink fields can be used for this purpose.
 For example, you might change the g++ compiler to version 3.3 by the setting
 <code>SetCXX: g++-3.3</code>.  Examine the output when building your
 package to make sure that the correct compiler is being used.
 </p><p>
 The 10.1 distribution assumes that the compiler version is 2.95; the
 10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
-and 10.3 distributions assume tha the compiler version is 3.3.   The compiler
+and 10.3 distributions assume that the compiler version is 3.3.   The compiler
 for the 10.4-transitional distribution is complicated: g++-3.3 is being
 used along with gcc-4.0.  This will change again in the 10.4 distribution,
 which will use both gcc-4.0 and g++-4.0.

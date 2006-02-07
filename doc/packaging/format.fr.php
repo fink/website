@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/17 08:00:00';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -61,11 +61,11 @@ SplitOff: &lt;&lt;
 </td></tr><tr valign="top"><td>%e</td><td>
 <p>ère du paqu<b>e</b>t</p>
 </td></tr><tr valign="top"><td>%v</td><td>
-<p><b>v</b>ersion du paquet</p>
+<p><b>v</b>ersion du paquet. Notez que l'ère ne fait partie de <code>%v</code>.</p>
 </td></tr><tr valign="top"><td>%r</td><td>
 <p><b>r</b>évision du paquet</p>
 </td></tr><tr valign="top"><td>%f</td><td>
-<p>nom complet du paquet, c'est-à-dire : %n-%v-%r</p>
+<p>nom complet du paquet, c'est-à-dire : %n-%v-%r. Notez que l'ère ne fait partie de <code>%f</code>.</p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p><b>p</b>réfixe d'installation de Fink, par exemple : <code>/sw</code>. Vous ne devez pas partir du principe que Fink est installé dans <code>/sw</code>, utilisez <code>%p</code> pour obtenir le bon chemin.</p>
 </td></tr><tr valign="top"><td>%d</td><td>

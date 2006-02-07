@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/01/27 03:08:06';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -120,7 +120,7 @@ them.</li>
 (Policy change effective April, 2005.)
 </p>
 <p>
-Due to the apparent incompatibilty of the OpenSSL license with the GPL and 
+Due to the apparent incompatibility of the OpenSSL license with the GPL and 
 LGPL licenses, fink packages which link to openssl but are licensed under 
 the GPL or LGPL are marked as "Restrictive."  As a consequence, the Fink 
 project will not distribute binaries of such packages, although users are 
@@ -638,7 +638,7 @@ is to put these files (and their associated manpages and/or other
 related files) in a %N-bin splitoff package. Use of
 <code>Conflicts</code> and <code>Replaces</code> fields ensures that
 installation of different perl-version forms of these packages, which
-contain files of the same name, is mutually excluve. The user can
+contain files of the same name, is mutually exclusive. The user can
 install many different perl-versions of the runtime modules, and then
 choose whichever one perl-version of the scripts he wants at a given
 time. For example, Tk.pm comes with an

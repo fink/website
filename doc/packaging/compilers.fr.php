@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Compilateurs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/17 08:00:00';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 

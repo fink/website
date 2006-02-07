@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/17 08:00:00';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -42,6 +42,8 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p><b>Introduit à partir de fink 0.12.0.</b> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>. Comme Fink et quelques-uns des outils Debian sous-jacents utilisent nom-version-revision comme identifiant unique d'un paquet, vous ne devez pas créer deux paquets qui ne diffèrent que par le numéro d'ère.</p>
+<p>Quant elle est utilisée dans la version, l'ère apparaît avant la valeur de la version, séparée d'elle par deux-points (1:3.14-2). Notez que l'ère ne fait partie ni de <code>%v</code>, ni de <code>%f</code>. Si vous ajoutez un champ ère au fichier de description d'un paquet, vous pouvez être amené à l'introduire également dans ses dépendances. Par exemple, si vous ajoutez <code>Epoch: 1</code> à foo et que foo-dev déclare <code>Depends: foo-shlibs (= %v-%r)</code>, vous devez le changer en <code>Depends: foo-shlibs (= %e:%v-%r)</code>.
+</p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>Courte description du paquet (répond à la question qu'est-ce c'est ?). C'est une description d'une ligne qui est affichée sous forme de liste, elle doit donc être courte et bien ciblée. Elle peut avoir moins de 45 caractères, mais ne peut dépasser 60 caractères. Il n'est pas nécessaire d'indiquer le nom du paquet, il sera affiché de toute façon. Champ obligatoire.</p>
 </td></tr><tr valign="top"><td>Type</td><td>

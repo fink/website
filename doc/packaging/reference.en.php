@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/01/27 03:08:06';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/02/07 10:37:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -150,7 +150,7 @@ not create a package that differs from another solely by its epoch.
 </p>
 <p>
 When used in a version string, the Epoch appears before the Version
-value, separated by a colon (1:3.14-2). Note that the Epoch is not
+value, separated by a colon (1:3.14-2). Note that the Epoch is not part 
 of <code>%v</code> (or (<code>%f</code>). If you add an Epoch field to
 a package description file, you may have to adjust versioned
 dependencies on the packages in it. For example, if you
@@ -412,7 +412,7 @@ the "Replaces" field.
 <p>
 Note that there is no versioning data associated with Provides
 items. They do not inherit from the parent package that contains the
-Provides list nor is there a syntax for specifing an arbitrary version
+Provides list nor is there a syntax for specifying an arbitrary version
 in the Provides field itself. Further, a dependency that contains a
 version specification is not satisfied by a package that Provides that
 needed package name. As a result, having many variants provide a common surrogate package may be harmful, because it precludes the use of versioned dependencies. For example, if foo-gnome and foo-nognome both have "Provides: foo", another package with "Depends: foo (&gt; 1.1)" will not work.
@@ -1052,7 +1052,7 @@ be stated in the form <code> foo (&gt;= version-revision)</code> where
 the <b>first</b> version of a Fink package which made
 this library (with this compatibility version) available.
 The Shlibs declaration amounts to a promise
-from the maintainer that a libary with this name and a 
+from the maintainer that a library with this name and a 
 <code>-compatibility_version</code>
 of at least this number will always be found in later versions of this
 Fink package.
