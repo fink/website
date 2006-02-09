@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/02/07 10:37:34';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/02/09 02:26:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -125,10 +125,13 @@ Required field.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
-A comma-separated list of architecture(s) the package is intended for.
+A comma-separated list of CPU architecture(s) for which the package
+(and any splitoff packages) are intended.
 At present, the only valid values for architecture are <code>powerpc</code>
-and <code>i386</code>.  A package which is missing this field is treated
-as if the value of the field were <code>powerpc, i386</code>.
+and <code>i386</code>. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine architecture is not listed. If the field is omitted
+or the value is blank, all architectures are assumed.
 (Introduced in a post-0.24.11 CVS version of fink.)
 </p>
 <p>
@@ -136,6 +139,24 @@ At present, the most common use of this field will be for packages which
 require a compiler earlier than gcc-4.0 (or packages which depend on such
 packages), which should be declared to have architecture 
 <code>powerpc</code>.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.4 5.8.6)
+  Architecture: (%type_pkg[perl] = 581) powerpc
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>powerpc</code> and the field being blank for all other
+variants. Remember that omitting a certain architecture value does not
+mean that the package is not for that architecture.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
