@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Download Quick Start";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/06/10 01:44:27 $';
+$cvs_date = '$Date: 2006/02/09 01:18:06 $';
 
 include "header.inc";
 ?>
@@ -84,7 +84,8 @@ include "../fink_version.inc";
 <p>在你更新了 <code>fink</code>以后，你可以使用类似的语法安装其它的软件包，例如：<code>sudo apt-get install gimp</code> 来安装 Gimp。注意，并不是全部 fink 软件包都有二进制安装版本的。</p>
 </li>
 <li>
-<p>从源代码安装。要更新 <code>fink</code>，运行 <code>fink selfupdate</code> 命令。在后面会有提示让你选择，请选择 (1), "rsync"。这会自动更新 <code>fink</code> 软件包。</p>
+<p>从源代码安装 (<!--start translation -->requires the XCode Tools [Developer Tools on 10.2] to be installed<!-- end translation -->)。
+要更新 <code>fink</code>，运行 <code>fink selfupdate</code> 命令。在后面会有提示让你选择，请选择 (1), "rsync"。这会自动更新 <code>fink</code> 软件包。</p>
 <p>一旦 <code>fink</code> 已经更新，你可以使用 "<code>fink install</code>" 来获取和编译源代码形式提供的软件包。例如，要安装 Gimp，运行 <code>fink install gimp</code>。</p> 
 </li> 
 </ul>
@@ -92,6 +93,52 @@ include "../fink_version.inc";
 </li> 
 </ol>
 
+<!-- start translation -->
+<h2>Additional Things to Install</h2>
+<h3>XCode Tools/Developer Tools</h3>
+<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
+<p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newere one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
+<table>
+  <caption>Recommended Developer Tools  versions by OS</caption>
+  <tbody>
+    <tr>
+      <td>10.2</td>
+      <td>December 2002 Developer Tools and August 2003 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.3</td>
+      <td>XCode 1.5 and the November 2004 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.4 on PowerPC</td>
+      <td>XCode 2.2.1, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+    </tr>
+    <tr>
+      <td>10.4 on Intel</td>
+      <td>XCode 2.2.1</td>
+    </tr>
+  </tbody>
+</table>
+<h3>X11</h3>
+      <p>Almost all of the applications on Fink that have graphical user interfa
+ces (GUIs) require some flavor of X11 (since most were originally developed on p
+latforms that only had that as a GUI option).</p>
+      <p>Apple provides its own X11 distribution for OS 10.3 and 10.4.  This is
+the easiest option with which to get started.  They have elected to split it int
+o two parts:</p>
+      <ul>
+        <li>The <em>X11User</em> package contains everything you need just to ru
+n Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
+ optional install.</li>
+        <li>The
+<em>X11SDK</em>
+package contains the development headers.  You need this if you want to build an
+ything from source that uses X11.  This package is available as part of the XCod
+e Tools, and installed by default with XCode 2.x.</li>
+</ul>
+<p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
+<h2>Further information</h2>
+<!-- end translation -->
 <p>
 要了解更多信息，请参考<a
 href="../faq/index.php">常见疑问</a>和<a
