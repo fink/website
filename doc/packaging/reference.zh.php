@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/02 11:31:46';
+$cvs_date = 'Date: 2006/02/12 04:58:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -98,7 +98,7 @@ include_once "header.zh.inc";
 </td></tr><tr valign="top"><td>Architecture</td><td>
 
 <p>
-A comma-separated list of architecture(s) the package is intended for.
+A comma-separated list of CPU architecture(s) the package is intended for.
 At present, the only valid values for architecture are <code>powerpc</code>
 and <code>i386</code>.  A package which is missing this field is treated
 as if the value of the field were <code>powerpc, i386</code>.
@@ -109,8 +109,26 @@ At present, the most common use of this field will be for packages which
 require a compiler earlier than gcc-4.0 (or packages which depend on such
 packages), which should be declared to have architecture 
 <code>powerpc</code>.
-
 </p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.4 5.8.6)
+  Architecture: (%type_pkg[perl] = 581) powerpc
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>powerpc</code> and the field being blank for all other
+variants. Remember that omitting a certain architecture value does not
+mean that the package is not for that architecture.
+</p>
+
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>从 fink 0.12.0 开始。</b>

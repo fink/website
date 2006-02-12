@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/02 11:31:46';
+$cvs_date = 'Date: 2006/02/12 04:58:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -115,7 +115,7 @@ include_once "header.ja.inc";
  						</p>
 					</td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
-パッケージが対応しているアーキテクチャー一覧を，コンマ区切りで記述．
+パッケージが対応している CPU アーキテクチャー一覧を，コンマ区切りで記述．
 現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
 このフィールドが存在しないパッケージは，<code>powerpc, i386</code> が指定されたものとして扱われます．
 (0.24.11 CVS バージョン以降 の fink に導入)
@@ -125,6 +125,21 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 (およびこれに依存するパッケージ)
 の場合に <code>powerpc</code> と宣言するのが，
 現在のところの主な使用方法です．
+</p>
+<p>
+このフィールドでは，値一覧にある値とパーセント展開を，通常の条件文法で使うことができます
+(詳細については，<code>Depends</code> フィールドを参照)．
+これによって，特定の変種を特定のアーキテクチャーに制限することができます．
+例えば:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.4 5.8.6)
+  Architecture: (%type_pkg[perl] = 581) powerpc
+</pre>
+<p>
+によって，foo-pm581 という変種は <code>powerpc</code> となり，他の変種には値無しになります．
+ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
@@ -371,7 +386,7 @@ Depends: (%type_pkg[-x11]) x11
 							Provides 項目には，バージョン番号に関連した情報はない．
 							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
 							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
-							結果として，同一の代理パッケージを提供するバリアントが多数あるのは危険である．
+							結果として，同一の代理パッケージを提供する変種が多数あるのは危険である．
 							これによってバージョンを指定した依存性ができなくなるためである．
 							例えば， foo-gnome と foo-nogome が "Provides: foo" を提供する場合，"Depends: foo (&gt; 1.1)" は動作しない．
 						</p>
@@ -748,7 +763,7 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </pre>
 						<p>
-							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11 バリアントの場合のみ <code>--with-x11</code> を送ってください．
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11 変種の場合のみ <code>--with-x11</code> を送ってください．
 						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
@@ -1161,7 +1176,7 @@ AnotherVar: foo bar
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <code>SplitOff</code> (あるいは <code>SplitOff<b>N</b></code>)
 を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
-バリアントを使う際は，各バリアントが独立したパッケージとなるようにしてください．
+変種を使う際は，各変種が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
 <pre>
