@@ -1,7 +1,7 @@
 ﻿<?
 $title = "貢献している人々";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/12/12 01:03:08 $';
+$cvs_author = '$Author: asari $';
+$cvs_date = '$Date: 2006/02/20 21:01:21 $';
 
 include "header.inc";
 ?>
@@ -58,6 +58,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Jorge Acereda</li> 
 <li>相田 森羅</li>
 <li>浅利 尚志 (<i>asari</i>)</li>
+<li>小田 啓太</li>
 <li>岡山 友昭</li>
 <li>小野田 浩之 (<i>oldGeese</i>)</li>
 <li>鷲田 基 (<i>wm3</i>)</li>

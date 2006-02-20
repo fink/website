@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributors";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/12/12 01:03:08 $';
+$cvs_author = '$Author: asari $';
+$cvs_date = '$Date: 2006/02/20 21:01:15 $';
 
 include "header.inc";
 ?>
@@ -47,6 +47,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Jorge Acereda</li> 
 <li>Aida Shinra</li>
 <li>Asari Takashi (<i>asari</i>)</li>
+<li>Oda Keita</li>
 <li>Okayama Tomoaki</li>
 <li>Onoda Hiroyuki (<i>oldGeese</i>)</li>
 <li>Washida Motoi (<i>wm3</i>)</li>
