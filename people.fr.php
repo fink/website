@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributeurs";
-$cvs_author = '$Author: asari $';
-$cvs_date = '$Date: 2006/02/20 21:01:20 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2006/02/21 03:07:39 $';
 
 include "header.inc";
 ?>
@@ -73,6 +73,7 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 <li>Mamoru Komachi (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
+<li>Sébastien Maret (<i>bmaret</i>)</li>
 <li>Jean-François Mertens</li>
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>

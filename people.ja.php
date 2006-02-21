@@ -1,7 +1,7 @@
 ﻿<?
 $title = "貢献している人々";
-$cvs_author = '$Author: asari $';
-$cvs_date = '$Date: 2006/02/20 21:01:21 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2006/02/21 03:07:39 $';
 
 include "header.inc";
 ?>
@@ -85,6 +85,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>小町 守 (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
+<li>Sébastien Maret (<i>bmaret</i>)</li>
 <li>Jean-François Mertens</li>
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>

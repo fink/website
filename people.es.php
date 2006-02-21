@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Contributors";
-$cvs_author = '$Author: asari $';
-$cvs_date = '$Date: 2006/02/20 21:01:17 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2006/02/21 03:07:39 $';
 
 include "header.inc";
 ?>
@@ -83,6 +83,7 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Mamoru Komachi (<i>usata</i>)</li>
 <li>Thomas Kotzian</li> 
 <li>Rohan Lloyd</li> 
+<li>S�bastien Maret (<i>bmaret</i>)</li>
 <li>Jean-François Mertens</li>
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>
