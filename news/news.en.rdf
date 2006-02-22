@@ -5,8 +5,53 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-01-14T03:28:18+01:00</dc:date>
+    <dc:date>2006-02-21T21:00:54-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel">
+      <title>Preliminary version of Fink on Intel</title>
+      <link>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</link>
+      <guid>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</guid>
+      <description>
+
+A preliminary version of Fink for the Intel architecture is now ready.
+No binary packages are available, and things are still rough around
+the edges, but it should be usable if you are patient!
+
+
+To install, you need to get the file fink-0.24.12.tar.gz
+from the
+Sourceforge file release page for Fink, expand the file, and
+run the command ./bootstrap.sh .  At the end of the
+bootstrap process, run fink selfupdate and you'll get
+the currently available packages.
+
+
+At last check, there were about 1750 packages in the "stable" tree, but
+about 150 of those did not build.  When things are truly stable, another
+annoucement will be made here.
+
+</description>
+      <content:encoded>
+
+A preliminary version of Fink for the Intel architecture is now ready.
+No binary packages are available, and things are still rough around
+the edges, but it should be usable if you are patient!
+
+
+To install, you need to get the file fink-0.24.12.tar.gz
+from the
+Sourceforge file release page for Fink, expand the file, and
+run the command ./bootstrap.sh .  At the end of the
+bootstrap process, run fink selfupdate and you'll get
+the currently available packages.
+
+
+At last check, there were about 1750 packages in the "stable" tree, but
+about 150 of those did not build.  When things are truly stable, another
+annoucement will be made here.
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
       <title>Fink ready for XCode 2.2 (but not for Intel).</title>
       <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
@@ -688,55 +733,6 @@ with qt and kde, among others.  To access the updated files, bring your
 index of binary files up-to-date by running the
 command sudo apt-get update .  After this, you can use
 apt-get, dselect or FinkCommander to install binary files as usual.
-	
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F">
-      <title>Pssst want to install GNOME 2.4?</title>
-      <link>http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2004-01-10%20Pssst%20want%20to%20install%20GNOME%202.4%3F</guid>
-      <description>
-	
-	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
-	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
-	finally been released to the 10.3 unstable tree.
-	
-	
-	It is there for the taking; please offer some of your time and test these packages
-	if you are on unstable already.  Because of the massive number of changes, it is
-	expected that there will be issues upgrading or installing the new GNOME.  If you
-	have problems, you can reach the GNOME-savvy people at
-	fink-gnome-core@lists.sourceforge.net.
-	Please do report success stories there as well.  The more good reports we get, the
-	faster GNOME 2.4 can be moved to stable.
-	
-	
-	For those of you who do not read our mailing lists, why aren't you subscribed yet?
-	Here is a link to detailed 
-	instructions 
-	how to install or upgrade GNOME and what new stuff it brings.
-	
-	</description>
-      <content:encoded>
-	
-	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
-	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
-	finally been released to the 10.3 unstable tree.
-	
-	
-	It is there for the taking; please offer some of your time and test these packages
-	if you are on unstable already.  Because of the massive number of changes, it is
-	expected that there will be issues upgrading or installing the new GNOME.  If you
-	have problems, you can reach the GNOME-savvy people at
-	fink-gnome-core@lists.sourceforge.net.
-	Please do report success stories there as well.  The more good reports we get, the
-	faster GNOME 2.4 can be moved to stable.
-	
-	
-	For those of you who do not read our mailing lists, why aren't you subscribed yet?
-	Here is a link to detailed 
-	instructions 
-	how to install or upgrade GNOME and what new stuff it brings.
 	
 	</content:encoded>
     </item>
