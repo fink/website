@@ -6,7 +6,7 @@ the edges, but it should be usable if you are patient!
 </p>
 <p>
 To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
-from <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203">the
+from <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
 Sourceforge file release page for Fink</a>, expand the file, and
 run the command <code>./bootstrap.sh</code> .  At the end of the
 bootstrap process, run <code>fink selfupdate</code> and you'll get
