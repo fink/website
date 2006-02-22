@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/02/09 02:26:39';
+$cvs_date = 'Date: 2006/02/22 06:31:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -759,10 +759,11 @@ package's version and Fink's version (in
 <p>
 The filename of a patch to be applied with <code>patch -p1
 &lt;<b>patch-file</b></code>. This should be just a filename; the
-appropriate path will be prepended automatically. Percent expansion is
+appropriate path (the same directory where the <code>.info</code> file
+is located) will be prepended automatically. Percent expansion is
 performed on this field, so a typical value is simply
 <code>%f.patch</code> or <code>%n.patch</code>. The patch is applied
-before the PatchScript is run (if any).
+in a separate step before the PatchScript is run (if any).
 </p>
 <p>
 Remember that %n includes all %type_ variant data, so you may want to
@@ -771,13 +772,45 @@ easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
 </p>
+</td></tr><tr valign="top"><td>PatchFile</td><td>
+<p>
+The same syntax as the <code>Patch</code> field. The full path to this
+file is available using the <code>%{PatchFile}</code> percent
+expansion--do not use <code>%a</code> to access this file.
+Unlike <code>Patch</code>, <code>PatchFile</code> is applied as part
+of <code>PatchScript</code>. Fink checks that the listed file exists,
+is readable, and that its checksum matches
+the <code>PatchFile-MD5</code> field.
+</p>
+<p>
+You may not use both <code>Patch</code> and <code>PatchFile</code> in
+the same package description. Any package that
+uses <code>PatchFile</code> must declare at least
+<code>BuildDepends: fink (&gt;= 0.24.12)</code>. Giving a higher version
+requirement is allowed if it is necessary for other reasons.
+</p>
+</td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
+<p>
+The MD5 checksum of the file given in the <code>PatchFile</code>
+field. This field is required if <code>PatchFile</code> is used.
+(Introduced in fink-0.24.12)
+</p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
 A list of commands that are run in the patch phase. This is the place
 to put commands that patch or otherwise modify the package source. See
 the <a href="reference.php?phpLang=en#scripts">note on scripts</a>
-below. Before the commands are executed, <a href="format.php?phpLang=en#percent">percent expansion</a> takes place. There is no
-default.
+below. Before the commands are executed, <a href="format.php?phpLang=en#percent">percent expansion</a> takes place. If
+a <code>PatchFile</code> field exists, the
+default <code>PatchScript</code> is:
+</p>
+<pre>
+patch -p1 &lt; %{PatchFile}
+</pre>
+<p>
+If there is no <code>PatchFile</code>, the default is blank. If you
+have an explicit <code>PatchScript</code>, you must apply
+the <code>PatchFile</code> explicitly.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
@@ -1373,7 +1406,13 @@ filename specify either one of these (they are equivalent):</p>
 <p>If you use the newer simple package filename convention, use %n
 insead of %f. These two fields are not mutually-exclusive - you can
 use both, and they will both be executed. In that case the PatchScript
-is executed last.</p>
+is executed last. Alternately, you can use the
+newer <code>PatchFile</code> instead of <code>Patch</code> and apply
+with an implicit or explicit <code>PatchScript</code>--see the
+descriptions of the <code>PatchFile</code>
+and <code>PatchScript</code> fields for more information.</p>
+
+
 <p>Because you may need to have the users chosen prefix in the patch file
 it is recommended that you have a variable such as <code>@PREFIX@</code> 
 instead of <code>/sw</code> in the patch and then use:</p>

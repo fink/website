@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/02/09 02:26:39';
+$cvs_date = 'Date: 2006/02/22 06:31:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -252,6 +252,11 @@ blank). When used in the <code>InstallScript</code> of a <code>SplitOff</code> (
 expansion will yield the <b>parent's</b> default, even though the
 default for <code>InstallScript</code> in a <code>SplitOff</code>
 package is blank. (Introduced in fink-0.20.6)
+</p>
+</td></tr><tr valign="top"><td>%{PatchFile}</td><td>
+<p>
+The full path to the file given in the <code>PatchFile</code> field.
+(Introduced in fink-0.24.12)
 </p>
 </td></tr></table>
 
