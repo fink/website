@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.16 2006/01/15 07:13:43 babayoshihiko Exp $</cvsid>
-	
+	<cvsid>$Id: news.ja.xml,v 1.17 2006/02/23 06:54:41 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+<date>2006-02-21</date>
+<headline>Intel 上での準備バージョン</headline>
+<body>
+<p>
+Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
+バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
+</p>
+<p>
+インストールには、
+ <varlink
+url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
+Sourceforge の Fink 用ファイルリリースページ</varlink>
+から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
+というコマンドを実行します。
+bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
+</p>
+<p>
+最後に確認した時点では、およそ1750のパッケージが &quot;stable&quot; ツリーにありましたが、
+およそ 150 はビルドできませんでした。
+真の意味で stable となった時には、ここで再度アナウンスされます。
+</p>
+</body>
+</newsitem>
+
 <newsitem>
 <date>2006-01-10</date>
 <headline>Fink が XCode 2.2 に対応 (Intel は未対応).</headline>

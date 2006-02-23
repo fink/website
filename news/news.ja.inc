@@ -1,3 +1,21 @@
+<a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
+<p>
+Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
+バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
+</p>
+<p>
+インストールには、
+ <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
+Sourceforge の Fink 用ファイルリリースページ</a>
+から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
+というコマンドを実行します。
+bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
+</p>
+<p>
+最後に確認した時点では、およそ1750のパッケージが "stable" ツリーにありましたが、
+およそ 150 はビルドできませんでした。
+真の意味で stable となった時には、ここで再度アナウンスされます。
+</p>
 <a name="2006-01-10%20Fink%20%E3%81%8C%20XCode%202.2%20%E3%81%AB%E5%AF%BE%E5%BF%9C%20(Intel%20%E3%81%AF%E6%9C%AA%E5%AF%BE%E5%BF%9C)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink が XCode 2.2 に対応 (Intel は未対応).</span></a><?php gray_line(); ?>
 <p>
 Fink は XCode 2.2 への準備ができました。例外は openoffice.org パッケージです
@@ -22,46 +40,6 @@ Fink チームは、 XCode 2.2 コンパイラによるビルドがうまくい�
 <p>
 既に XCode 2.2 をインストールし、2.1 に戻したくない方は、
 動作しないパッケージを見つけ、修正していただくようご協力をお願い申し上げます!
-</p>
-
-<a name="2005-06-09%20%E6%96%B0%E3%81%97%E3%81%84%20Fink%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9."><span class="news-date">2005-06-09: </span><span class="news-headline">新しい Fink リリース.</span></a><?php gray_line(); ?>
-<p>
-３つの新しい Fink リリースが今日から
-<a href="<?php print $root; ?>download/index.php">ダウンロードできます</a>
- : version 0.8.0 (for 10.4),
-version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
-いずれも、ソースファイル、バイナリパッケージ、新規ユーザー用インストーラが含まれています。
-</p>
-<p>
-10.4 用の新しいリリースは、現在のすべての "stable" パッケージを、ソースとバイナリで提供します:
-これは 1565 あり、10.3 リリースの 1909 パッケージの80%を超えるものです。
-更なるパッケージの提供にむけて fink 開発者は作業を続けています。
-</p>
-<p>
-新しい 10.2 用のリリースは、最後の公式リリースとなります。
-今後の更新は (セキュリティアップデートを含めて) ありませんが、0.6.4 リリ−スは数年間の使用に耐えることができるでしょう。
-</p>
-<p>
-10.4 へアップグレードするには、
-<code>fink selfupdate</code> を実行し、
-(10.4 で初めての更新時には) <code>sudo /sw/lib/fink/postinstall.pl</code> を実行し、
-<code>fink scanpackages</code> と <code>sudo apt-get update</code> を実行します。
-現在は bootstrap を勧めていません。
-これは、Apple の XCode 2.1 では動作しないためです。
-</p>
-<p>
-追補 6/19/05: 
-Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
-(アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
-選択し、"ディスクのアクセス権を修復"をクリックします。
-また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
-</p>
-<p>
-追補 6/30/05:  
-古いヘッダファイルなどの混在を避けるため、ソースからパッケージをビルドされる方は
-XCode をクリーンインストールすることをお勧めします。これを行うには、
-<code>/Developer/Tools/uninstall-devtools.pl</code> スクリプトを実行します。
-OS を更新する前にこの操作を行うことが一番確実です。
 </p>
 
 

@@ -1,12 +1,30 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/15 07:13:43';
+$cvs_date = 'Date: 2006/02/23 06:54:41';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
+<p>
+Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
+バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
+</p>
+<p>
+インストールには、
+ <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
+Sourceforge の Fink 用ファイルリリースページ</a>
+から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
+というコマンドを実行します。
+bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
+</p>
+<p>
+最後に確認した時点では、およそ1750のパッケージが "stable" ツリーにありましたが、
+およそ 150 はビルドできませんでした。
+真の意味で stable となった時には、ここで再度アナウンスされます。
+</p>
 <a name="2006-01-10%20Fink%20%E3%81%8C%20XCode%202.2%20%E3%81%AB%E5%AF%BE%E5%BF%9C%20(Intel%20%E3%81%AF%E6%9C%AA%E5%AF%BE%E5%BF%9C)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink が XCode 2.2 に対応 (Intel は未対応).</span></a><?php gray_line(); ?>
 <p>
 Fink は XCode 2.2 への準備ができました。例外は openoffice.org パッケージです
