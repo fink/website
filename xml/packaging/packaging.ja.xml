@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.37 2006/02/18 03:54:13 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.38 2006/02/23 07:22:43 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1485,9 +1485,10 @@ OS X 10.2 以前には <code>gcc_select</code> はありません．)
 <item><itemt>Architecture</itemt>
 <itemd>
 <p>
-パッケージが対応している CPU アーキテクチャー一覧を，コンマ区切りで記述．
+パッケージ (および Splitoff) が対応している CPU アーキテクチャー一覧を，コンマ区切りで記述します．
 現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
-このフィールドが存在しないパッケージは，<code>powerpc, i386</code> が指定されたものとして扱われます．
+このフィールドがあり，値が条件処理後にブランクでなく，ローカルマシンのアーキテクチャーが一覧にない場合，パッケージ記述は無視されます．
+このフィールドがない場合，あるいは値がブランクであるような場合は，全てのアーキテクチャーに対応していると見なされます．
 (0.24.11 CVS バージョン以降 の fink に導入)
 </p>
 <p>

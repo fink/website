@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/12 04:58:46';
+$cvs_date = 'Date: 2006/02/23 07:22:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -98,10 +98,13 @@ include_once "header.zh.inc";
 </td></tr><tr valign="top"><td>Architecture</td><td>
 
 <p>
-A comma-separated list of CPU architecture(s) the package is intended for.
+A comma-separated list of CPU architecture(s) for which the package
+(and any splitoff packages) are intended.
 At present, the only valid values for architecture are <code>powerpc</code>
-and <code>i386</code>.  A package which is missing this field is treated
-as if the value of the field were <code>powerpc, i386</code>.
+and <code>i386</code>. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine architecture is not listed. If the field is omitted
+or the value is blank, all architectures are assumed.
 (Introduced in a post-0.24.11 CVS version of fink.)
 </p>
 <p>

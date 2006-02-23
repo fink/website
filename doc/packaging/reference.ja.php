@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/18 03:54:13';
+$cvs_date = 'Date: 2006/02/23 07:22:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -115,9 +115,10 @@ include_once "header.ja.inc";
  						</p>
 					</td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
-パッケージが対応している CPU アーキテクチャー一覧を，コンマ区切りで記述．
+パッケージ (および Splitoff) が対応している CPU アーキテクチャー一覧を，コンマ区切りで記述します．
 現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
-このフィールドが存在しないパッケージは，<code>powerpc, i386</code> が指定されたものとして扱われます．
+このフィールドがあり，値が条件処理後にブランクでなく，ローカルマシンのアーキテクチャーが一覧にない場合，パッケージ記述は無視されます．
+このフィールドがない場合，あるいは値がブランクであるような場合は，全てのアーキテクチャーに対応していると見なされます．
 (0.24.11 CVS バージョン以降 の fink に導入)
 </p>
 <p>
