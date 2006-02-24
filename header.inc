@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.95 2005/10/25 01:01:48 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.96 2006/02/24 05:48:10 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -57,6 +57,7 @@ define (FINK_SECTION_HELP, 'Help');
 define (FINK_SECTION_FAQ, 'F.A.Q.');
 define (FINK_SECTION_DOCUMENTATION, 'Documentation');
 define (FINK_SECTION_MAILING_LISTS, 'Mailing Lists');
+define (FINK_SECTION_LANG_SPECIFIC, 'Language Specific');
 
 /* The Home Subsections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME_INDEX, 'Index');
@@ -98,14 +99,17 @@ $section_names = array(
 	'mailing-lists' => FINK_SECTION_MAILING_LISTS
 );
 
+// Set the default $root
+if (!$root) $root='./';
+
 $section_files = array(
-	'home' => 'http://fink.sourceforge.net/index.php?phpLang='. $lang_code,
-	'download' => 'http://fink.sourceforge.net/download/index.php?phpLang='. $lang_code,
-	'packages' => 'http://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
-	'help' => 'http://fink.sourceforge.net/help/index.php?phpLang='. $lang_code,
-	'faq' => 'http://fink.sourceforge.net/faq/index.php?phpLang='. $lang_code,
-	'documentation' => 'http://fink.sourceforge.net/doc/index.php?phpLang='. $lang_code, 
-	'mailing-lists' => 'http://fink.sourceforge.net/lists/index.php?phpLang='. $lang_code
+	'home' => $root . 'index.php',
+	'download' => $root . 'download/index.php',
+	'packages' => 'http://pdb.finkproject.org/pdb/index.php',
+	'help' => $root . 'help/index.php',
+	'faq' => $root . 'faq/index.php',
+	'documentation' => $root . 'doc/index.php',
+	'mailing-lists' => $root . 'lists/index.php'
 );
 
 if (!$section) $section = "home";
@@ -113,11 +117,11 @@ if (!$section) $section = "home";
 // main navigation box
 if (!is_array($navbox) && $nonav != 1) {
 	$navbox = array(
-		'index.php?phpLang='. $lang_code, FINK_SECTION_HOME_INDEX,
-		'news/index.php?phpLang='. $lang_code, FINK_SECTION_HOME_NEWS,
-		'about.php?phpLang='. $lang_code, FINK_SECTION_HOME_ABOUT,
-		'people.php?phpLang='. $lang_code, FINK_SECTION_HOME_CONTRIBUTORS,
-		'links.php?phpLang='. $lang_code, FINK_SECTION_HOME_LINKS
+		'index.php', FINK_SECTION_HOME_INDEX,
+		'news/index.php', FINK_SECTION_HOME_NEWS,
+		'about.php', FINK_SECTION_HOME_ABOUT,
+		'people.php', FINK_SECTION_HOME_CONTRIBUTORS,
+		'links.php', FINK_SECTION_HOME_LINKS
 );
 }
 
