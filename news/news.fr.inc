@@ -1,3 +1,22 @@
+<a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
+<p>
+A preliminary version of Fink for the Intel architecture is now ready.
+No binary packages are available, and things are still rough around
+the edges, but it should be usable if you are patient!
+</p>
+<p>
+To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
+run the command <code>./bootstrap.sh</code> .  At the end of the
+bootstrap process, run <code>fink selfupdate</code> and you'll get
+the currently available packages.
+</p>
+<p>
+At last check, there were about 1750 packages in the "stable" tree, but
+about 150 of those did not build.  When things are truly stable, another
+annoucement will be made here.
+</p>
 <a name="10/01/2006%20Fink%20est%20pr%C3%AAt%20pour%20XCode%202.2%20(mais%20par%20pour%20Intel)."><span class="news-date">10/01/2006: </span><span class="news-headline">Fink est prêt pour XCode 2.2 (mais par pour Intel).</span></a><?php gray_line(); ?>
 <p>Fink est maintenant prêt pour XCode 2.2, à l'exception des paquets openoffice.org (nous espérons qu'ils fonctionneront de nouveau quand nous passerons à l'arborescence 10.4). Nous encourageons les utilisateurs à passer à la version 2.2 de XCode s'ils le désirent ; XCode 2.2 devra être installé quand l'arborescence 10.4 sera mise à disposition.</p>
 <p>D'un autre côté et malgré l'annonce qu'Apple a faite aujourd'hui, Fink n'est pas prêt à tourner sur des processeurs Intel. L'équipe de Fink espère avoir une version prête pour Intel dans quelques semaines ; nous suggérons aux heureux bénéficiaires d'un nouvel iMac de ne pas y installer Fink tout de suite, mais d'attendre que la nouvelle version de Fink soit prête.</p>
@@ -5,11 +24,4 @@
 <a name="16/11/2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)"><span class="news-date">16/11/2005: </span><span class="news-headline">XCode 2.2 (utilisateurs Mac OS X 10.4 uniquement)</span></a><?php gray_line(); ?>
 <p>L'équipe Fink a eu vent de problèmes de compilation avec XCode 2.2. Nous vous recommandons de vous abstenir de mettre à jour XCode tant que ces problèmes ne seront pas résolus.</p>
 <p>Ceux qui ont déjà installé XCode 2.2 et ne souhaitent pas revenir à la version 2.1 sont cordialement invités à nous aider à trouver les paquets qui ne fonctionnent pas et à faire en sorte qu'ils marchent.</p>
-<a name="09/06/2005%20Nouvelles%20versions%20Fink"><span class="news-date">09/06/2005: </span><span class="news-headline">Nouvelles versions Fink</span></a><?php gray_line(); ?>
-<p>Trois nouvelles versions de Fink sont <a href="<?php print $root; ?>download/index.php">disponibles</a> aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.</p>
-<p>La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.</p>
-<p>La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4  devrait fonctionner tout à fait correctement pour quelques années encore.</p>
-<p>Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter <code>fink selfupdate</code>, suivi de <code>sudo /sw/lib/fink/postinstall.pl</code> (pour les personnes qui passent au système 10.4 pour la première fois), de <code>fink scanpackages</code> et de <code>sudo apt-get update</code>. Nous  vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.</p>
-<p>Note ajoutée le 19/06/2005 : si l'installeur binaire Fink-0.8.0 signale que le volume ne gère pas les liens symboliques, lancez l'Utilitaire de disque (situé dans le répertoire Utilitaires du dossier Applications), sélectionnez le volume en cause et cliquez sur "Réparez les autorisations du disque". L'installeur ne peut fonctionner que si vous avez des droits d'administrateur, assurez-vous donc que vous le faites tourner sous un utilisateur qui possèdent ces droits.</p>
-<p>Note ajoutée le 30/06/2005 : pour éviter des problèmes avec d'anciens headers ou fichiers, nous recommandons aux personnes qui souhaitent construire les paquets à partir des sources de faire une installation propre de Xcode à l'aide du script <code>/Developer/Tools/uninstall-devtools.pl</code>. Il est préférable de le faire avant de mettre à jour le système.</p>
 

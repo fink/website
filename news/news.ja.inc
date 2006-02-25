@@ -5,7 +5,7 @@ Fink の Intel アーキテクチュアに向けた準備ジャージョンが�
 </p>
 <p>
 インストールには、
- <a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
+ <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
 Sourceforge の Fink 用ファイルリリースページ</a>
 から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
 というコマンドを実行します。

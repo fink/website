@@ -1,12 +1,31 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/15 06:57:28';
+$cvs_date = 'Date: 2006/02/25 00:04:39';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
+<p>
+A preliminary version of Fink for the Intel architecture is now ready.
+No binary packages are available, and things are still rough around
+the edges, but it should be usable if you are patient!
+</p>
+<p>
+To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
+run the command <code>./bootstrap.sh</code> .  At the end of the
+bootstrap process, run <code>fink selfupdate</code> and you'll get
+the currently available packages.
+</p>
+<p>
+At last check, there were about 1750 packages in the "stable" tree, but
+about 150 of those did not build.  When things are truly stable, another
+annoucement will be made here.
+</p>
 <a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
 <p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
