@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.32 2006/01/14 02:30:19 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.33 2006/02/25 00:04:39 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+<date>2006-02-21</date>
+<headline>Preliminary version of Fink on Intel</headline>
+<body>
+<p>
+A preliminary version of Fink for the Intel architecture is now ready.
+No binary packages are available, and things are still rough around
+the edges, but it should be usable if you are patient!
+</p>
+<p>
+To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
+from <link
+url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</link>, expand the file, and
+run the command <code>./bootstrap.sh</code> .  At the end of the
+bootstrap process, run <code>fink selfupdate</code> and you'll get
+the currently available packages.
+</p>
+<p>
+At last check, there were about 1750 packages in the "stable" tree, but
+about 150 of those did not build.  When things are truly stable, another
+annoucement will be made here.
+</p>
+</body>
+</newsitem>
 
 <newsitem>
 <date>10/01/2006</date>

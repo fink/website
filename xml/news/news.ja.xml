@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.17 2006/02/23 06:54:41 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.18 2006/02/25 00:04:39 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 <date>2006-02-21</date>
@@ -13,9 +13,9 @@ Fink の Intel アーキテクチュアに向けた準備ジャージョンが�
 </p>
 <p>
 インストールには、
- <varlink
+ <link
 url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
-Sourceforge の Fink 用ファイルリリースページ</varlink>
+Sourceforge の Fink 用ファイルリリースページ</link>
 から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
 というコマンドを実行します。
 bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
