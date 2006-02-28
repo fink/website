@@ -1,21 +1,21 @@
 <?
 $title = "Доступ к Fink через CVS";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/01/16 09:43:33';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/02/28 02:44:45';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Настройка доступа к Fink через CVS</h1>
-<!--Generated from $Fink: cvs.ru.xml,v 1.1 2005/01/16 09:43:33 horsager Exp $-->
+<!--Generated from $Fink: cvs.ru.xml,v 1.2 2006/02/28 02:44:45 alexkhansen Exp $-->
         <p> Fink разработан через посредство CVS. Это значит, что вы можете быть в курсе 
          последних разработок между выпусками версий и всегда получать новейший материал. Данная страница рассказывает о том, 
            как можно произвести настройку имеющейся инсталляции Fink для обновления через 
             CVS. Информация на данной странице относится к Fink 0.3.x и более поздним версиям.</p>
     <h2><a name="">Структура CVS Fink </a></h2>
         
-        <p>Fink имеет несколько модулей CVS. Модуль <code>dists</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">ViewCVS</a>)
+        <p>Fink имеет несколько модулей CVS. Модуль <code>dists</code> (<a href="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</a>)
             содержит описание пакетов и патчи для OS X 10.2 и более поздних версий. Есть другие модули, используемые разработчиками Fink,  
             обзор которых доступен всем, но они не представляют интереса для большинства пользователей.</p>
     <h2><a name="">Обновление описания пакетов</a></h2>

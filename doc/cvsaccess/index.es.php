@@ -1,14 +1,14 @@
 <?
 $title = "Acceso al CVS de Fink";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/08/30 19:39:26';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/02/28 02:44:45';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Ajustando el Acceso al CVS de Fink</h1>
-<!--Generated from $Fink: cvs.es.xml,v 1.4 2004/08/30 19:39:26 michga Exp $-->
+<!--Generated from $Fink: cvs.es.xml,v 1.5 2006/02/28 02:44:45 alexkhansen Exp $-->
     <p>
 Fink es desarrollado mediante CVS.
 Esto significa que puedes mantenerte al día entre las liberaciones del Fink y siempre tener lo ultimo.
@@ -17,7 +17,7 @@ La informacion de esta pagina aplica al Fink 0.3.x y posterior.
 </p>
   <h2><a name="">Estructura del CVS de Fink</a></h2>
     
-    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">ViewCVS</a>)
+    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<a href="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</a>)
 contiene las descripciones de los paquetes y parches para OS 10.2 y posterior. Existen otros módulos usados por los desarrolladores de Fink, los cuales cualquiera puede ver, pero no son muy interesantes para la mayoría de los usuarios.</p>
   <h2><a name="">Actualizando las Descripciones de los Paquetes</a></h2>
     

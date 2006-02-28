@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS 访问";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/03/16 04:03:28';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/02/28 02:44:45';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>设置 Fink CVS 访问</h1>
-<!--Generated from $Fink: cvs.zh.xml,v 1.1 2004/03/16 04:03:28 jeff_yecn Exp $-->
+<!--Generated from $Fink: cvs.zh.xml,v 1.2 2006/02/28 02:44:45 alexkhansen Exp $-->
 <p>
 Fink 被开发为支持 CVS。
 这意味着你可以在两个发布版之间都可以一直保持使用当前最新的版本，总是可以获得最新的功能。
@@ -16,7 +16,7 @@ Fink 被开发为支持 CVS。
 本页的资讯适用于 Fink 0.3.x 或更新的版本。
 </p>
 <h2><a name="">Fink CVS 结构</a></h2>
-<p>Fink 有几个 CVS 模块。模块 <code>dists</code>（<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">《查看 CVS》</a>）包含软件包描述和对 OS X 10.2 及更新版本的补丁。
+<p>Fink 有几个 CVS 模块。模块 <code>dists</code>（<a href="http://cvs.sourceforge.net/viewcvs.py/fink">《查看 CVS》</a>）包含软件包描述和对 OS X 10.2 及更新版本的补丁。
 这里面还有被 Fink 开发者使用的其它模块，其它人可以查看，但多数用户都不会对他们感兴趣。</p>
 <h2><a name="">更新软件包描述</a></h2>
 <p>过去，这是一个比较冗长的过程，但在现在的 Fink 版本中，这是一个非常简单的过程。
