@@ -3,7 +3,7 @@
 <article filename="index" lang="es" fsroot="../../">
   <title>Ajustando el Acceso al CVS de Fink</title>
   <shorttitle>Acceso al CVS de Fink</shorttitle>
-  <cvsid>$Id: cvs.es.xml,v 1.4 2004/08/30 19:39:26 michga Exp $</cvsid>
+  <cvsid>$Id: cvs.es.xml,v 1.5 2006/02/28 02:44:45 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 Fink es desarrollado mediante CVS.
@@ -14,7 +14,7 @@ La informacion de esta pagina aplica al Fink 0.3.x y posterior.
   </preface>
   <section>
     <title>Estructura del CVS de Fink</title>
-    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">ViewCVS</link>)
+    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<link url="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</link>)
 contiene las descripciones de los paquetes y parches para OS 10.2 y posterior. Existen otros módulos usados por los desarrolladores de Fink, los cuales cualquiera puede ver, pero no son muy interesantes para la mayoría de los usuarios.</p>
   </section>
   <section>

@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" fsroot="../../">
 <title>设置 Fink CVS 访问</title>
 <shorttitle>Fink CVS 访问</shorttitle>
-<cvsid>$Id: cvs.zh.xml,v 1.1 2004/03/16 04:03:28 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: cvs.zh.xml,v 1.2 2006/02/28 02:44:45 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -18,7 +18,7 @@ Fink 被开发为支持 CVS。
 
 <section><title>Fink CVS 结构</title>
 <p>Fink 有几个 CVS 模块。模块 <code>dists</code>（<link
-url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/">《查看 CVS》</link>）包含软件包描述和对 OS X 10.2 及更新版本的补丁。
+url="http://cvs.sourceforge.net/viewcvs.py/fink">《查看 CVS》</link>）包含软件包描述和对 OS X 10.2 及更新版本的补丁。
 这里面还有被 Fink 开发者使用的其它模块，其它人可以查看，但多数用户都不会对他们感兴趣。</p>
 </section>
 
