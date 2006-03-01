@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.65 2006/03/01 09:48:20 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.66 2006/03/01 09:50:55 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -151,7 +151,6 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <itemd>
 <p>Chemin complet du fichier indiqué dans le champ<code>PatchFile</code>. Introduit dans la version 0.24.12 de fink.</p>
 </itemd></item>
-</itemtable>
 </itemtable>
 </section>
 </chapter>

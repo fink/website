@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/02/07 10:37:34';
+$cvs_date = 'Date: 2006/03/01 09:50:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -94,6 +94,8 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <p>la partie <b>i</b>nvariante du <b>n</b>om du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés. (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.</p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
 <p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
+</td></tr><tr valign="top"><td>%{PatchFile}</td><td>
+<p>Chemin complet du fichier indiqué dans le champ<code>PatchFile</code>. Introduit dans la version 0.24.12 de fink.</p>
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

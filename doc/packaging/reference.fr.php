@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/02/07 10:37:34';
+$cvs_date = 'Date: 2006/03/01 09:50:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -36,10 +36,16 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 <p>Le numéro de révision du paquet. Incrémentez ce numéro quand vous faites une nouvelle description pour la même version en amont. Les numéros de révision commencent à 1. Champ obligatoire.</p>
 <p> Les règles de Fink stipule vous <b>devez</b> incrémenter le champ <code>Revision</code> <b>chaque fois</b> que vous changez un fichier <code>.info</code>, si les changements entraînent une modification de la forme binaire (compilée) du paquet (le fichier <code>.deb</code>). Cela s'applique aux changements opérés dans le champ <code>Depends</code> ou les autres champs incluant une liste de paquets, ainsi qu'à l'ajout, la suppression ou le changement de nom des paquets splitoff, ou bien encore le déplacement de fichiers d'un splitoff à un autre. Quand la migration d'un paquet vers une nouvelle arborescence (par exemple de 10.2 à 10.3) conduit à des modifications de cette nature, vous devez incrémenter le champ <code>Revision</code> de 10 unités dans la nouvelle arborescence, de façon à garder la possibilité de mises à jour ultérieures dans l'arborescence la plus ancienne.</p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
-<p>Liste d'architectures système séparées par des virgules sur lesquelles le paquet est censé tourner. Pour le moment, les seules valeurs valides sont <code>powerpc</code> et <code>i386</code>. Un paquet qui ne comporte pas ce champ est traité comme si la valeur de ce champ était <code>powerpc, i386</code>. (Introduit dans une version CVS de fink postérieure à la version 0.24.11.)
-</p>
+<p>Liste d'architectures système basées sur la CPU et séparées par des virgules sur lesquelles le paquet et tout paquet splitoff sont censés tourner. Pour le moment, les seules valeurs valides sont <code>powerpc</code> et <code>i386</code>. Si ce champ est présent et non vide après vérification conditionnelle, fink ignorera la ou les descriptions de paquet(s) correspondante(s) si l'architecture système de la machine locale n'est pas comprise dans la liste. Si le champ est omis ou s'il est vide, le paquet est géré comme si toutes les architectures système étaient reconnues. Introduit dans une version CVS de fink postérieure à la version 0.24.11.</p>
 <p>Pour l'instant, l'utilisation la plus courante de ce champ est prévue pour les paquets qui requièrent un compilateur antérieur à gcc-4.0 (ou pour les paquets qui en dépendent). Dans ce cas, la valeur du champ sera <code>powerpc</code>.
 </p>
+<p>Ce champ admet la syntaxe conditionnelle standard pour toute valeur de la liste. Les raccourcis clavier peuvent y être utilisés (voir le champ <code>Depends</code> pour de plus amples informations). Il s'ensuit que certaines variantes peuvent être restreintes à certaines architectures systèmes. Par exemple :</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.4 5.8.6)
+  Architecture: (%type_pkg[perl] = 581) powerpc
+</pre>
+<p>est interprété comme une variante foo-pm581 pour l'architecture système <code>powerpc</code>, le champ restant vide pour toute autre variante. N'oubliez pas que le fait d'omettre une certaine valeur d'architecture ne signifie pas que le paquet n'est pas censé tourner sur l'architecture système en question.</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p><b>Introduit à partir de fink 0.12.0.</b> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>. Comme Fink et quelques-uns des outils Debian sous-jacents utilisent nom-version-revision comme identifiant unique d'un paquet, vous ne devez pas créer deux paquets qui ne diffèrent que par le numéro d'ère.</p>
 <p>Quant elle est utilisée dans la version, l'ère apparaît avant la valeur de la version, séparée d'elle par deux-points (1:3.14-2). Notez que l'ère ne fait partie ni de <code>%v</code>, ni de <code>%f</code>. Si vous ajoutez un champ ère au fichier de description d'un paquet, vous pouvez être amené à l'introduire également dans ses dépendances. Par exemple, si vous ajoutez <code>Epoch: 1</code> à foo et que foo-dev déclare <code>Depends: foo-shlibs (= %v-%r)</code>, vous devez le changer en <code>Depends: foo-shlibs (= %e:%v-%r)</code>.
