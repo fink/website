@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.64 2006/02/07 10:37:34 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.65 2006/03/01 09:48:20 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -147,6 +147,11 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <itemd>
 <p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <em>parent</em>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
 </itemd></item>
+<item><itemt>%{PatchFile}</itemt>
+<itemd>
+<p>Chemin complet du fichier indiqué dans le champ<code>PatchFile</code>. Introduit dans la version 0.24.12 de fink.</p>
+</itemd></item>
+</itemtable>
 </itemtable>
 </section>
 </chapter>
@@ -544,10 +549,16 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 </itemd></item>
 <item><itemt>Architecture</itemt>
 <itemd>
-<p>Liste d'architectures système séparées par des virgules sur lesquelles le paquet est censé tourner. Pour le moment, les seules valeurs valides sont <code>powerpc</code> et <code>i386</code>. Un paquet qui ne comporte pas ce champ est traité comme si la valeur de ce champ était <code>powerpc, i386</code>. (Introduit dans une version CVS de fink postérieure à la version 0.24.11.)
-</p>
+<p>Liste d'architectures système basées sur la CPU et séparées par des virgules sur lesquelles le paquet et tout paquet splitoff sont censés tourner. Pour le moment, les seules valeurs valides sont <code>powerpc</code> et <code>i386</code>. Si ce champ est présent et non vide après vérification conditionnelle, fink ignorera la ou les descriptions de paquet(s) correspondante(s) si l'architecture système de la machine locale n'est pas comprise dans la liste. Si le champ est omis ou s'il est vide, le paquet est géré comme si toutes les architectures système étaient reconnues. Introduit dans une version CVS de fink postérieure à la version 0.24.11.</p>
 <p>Pour l'instant, l'utilisation la plus courante de ce champ est prévue pour les paquets qui requièrent un compilateur antérieur à gcc-4.0 (ou pour les paquets qui en dépendent). Dans ce cas, la valeur du champ sera <code>powerpc</code>.
 </p>
+<p>Ce champ admet la syntaxe conditionnelle standard pour toute valeur de la liste. Les raccourcis clavier peuvent y être utilisés (voir le champ <code>Depends</code> pour de plus amples informations). Il s'ensuit que certaines variantes peuvent être restreintes à certaines architectures systèmes. Par exemple :</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.4 5.8.6)
+  Architecture: (%type_pkg[perl] = 581) powerpc
+</codeblock>
+<p>est interprété comme une variante foo-pm581 pour l'architecture système <code>powerpc</code>, le champ restant vide pour toute autre variante. N'oubliez pas que le fait d'omettre une certaine valeur d'architecture ne signifie pas que le paquet n'est pas censé tourner sur l'architecture système en question.</p>
 </itemd></item>
 <item><itemt>Epoch</itemt>
 <itemd>
