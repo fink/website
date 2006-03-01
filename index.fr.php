@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/12/01 07:27:06 $';
+$cvs_date = '$Date: 2006/03/01 08:21:52 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -24,7 +24,6 @@ include dirname(__FILE__) . "/news/news.fr.inc";
 <div align="right"><a href="news/index.php?phpLang=fr">Nouvelles archivées...</a></div>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
-
 <h1>Statut</h1>
 <? 
 include dirname(__FILE__) . "/fink_version.inc";
