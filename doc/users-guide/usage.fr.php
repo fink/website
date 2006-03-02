@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/17 11:06:39';
+$cvs_date = 'Date: 2006/03/02 10:24:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -67,7 +67,7 @@ include_once "header.fr.inc";
     le développement ou le débogage des 
     paquets.
 </pre>
-<p>La plupart de ces options ne nécessite pas d'explication supplémentaire. Elles peuvent être configurées dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
+<p>La plupart de ces options ne nécessite pas d'explication supplémentaire (voir <a href="conf.php?phpLang=fr#optional">ici</a> la définition du ChemindeConstructionfor - Buildpath). Elles peuvent être configurées dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
 
 <h2><a name="install">6.3 install - installation</a></h2>
 

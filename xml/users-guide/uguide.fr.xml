@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.33 2006/01/17 11:06:39 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.34 2006/03/02 10:24:18 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -622,7 +622,7 @@ main crypto
     le développement ou le débogage des 
     paquets.
 </codeblock>
-<p>La plupart de ces options ne nécessite pas d'explication supplémentaire. Elles peuvent être configurées dans le <xref chapter="conf">fichier de configuration de Fink</xref> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
+<p>La plupart de ces options ne nécessite pas d'explication supplémentaire (voir <xref chapter="conf" section="optional">ici</xref> la définition du ChemindeConstructionfor - Buildpath). Elles peuvent être configurées dans le <xref chapter="conf">fichier de configuration de Fink</xref> (fink.conf) si vous souhaitez les rendre permanentes et non pas restreindre leur effet à une seule invocation de <code>fink</code>.</p>
 </section>
 <section name="install" >
 <title>install - installation</title>
