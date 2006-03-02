@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:41:42';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/03/02 03:03:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -43,18 +43,17 @@ type <code>fink --help</code> you get the list of options:
 --no-use-binary-dist  - Don't use pre-compiled binary packages from the
                         binary distribution (opposite of --use-binary-dist)
 -K, --keep-root-dir   - Causes Fink not to delete the
-                        /sw/src/root-[name]-[version]-[revision]
-		        directory after building a package.
+                        root-[name]-[version]-[revision]
+		        directory in the Buildpath after building a package.
 -k, --keep-build-dir  - Causes Fink not to delete the
-                        /sw/src/[name]-[version]-[revision]
-                        directory after building a package.
+                        [name]-[version]-[revision]
+                        directory in the Buildpath after building a package.
 --build-as-nobody     - Drop to a non-root user when performing the unpack,
                         patch, compile,and install phases. Note that packages
                         built with this option may be non-functional. You
                         should use this mode for package development
                         and debugging only.</pre>
-      <p>
-Most of these options are self-explanatory. They can also be set in the 
+      <p>Most of these options are self-explanatory (see <a href="conf.php?phpLang=en#optional">here </a> for the definition of Buildpath) They can also be set in the 
 <a href="conf.php?phpLang=en">Fink configuration file</a> (fink.conf) if you want 
 to set them permanently and not just for that invocation of <code>fink</code>.</p>
     
