@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-03-03T07:27:23-08:00</dc:date>
+    <dc:date>2006-03-03T07:35:31-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
       <title>Problem with Apple's latest Security Update</title>
@@ -14,7 +14,7 @@
       <description>
 
 The Fink team has received reports of problems with the rsync
-program which was modified by Apple's latest Security Update: for some
+program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
@@ -22,8 +22,8 @@ Update.  (The underlying cause appears to be a problem with the
 
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
-who need specific features of the Apple program (such as supported for
-Extended Attribute), another workaround is fink selfupdate-cvs
+who need specific features of the Apple program (such as support for
+Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
 
 
@@ -33,7 +33,7 @@ This news item will be updated as the situation changes.
       <content:encoded>
 
 The Fink team has received reports of problems with the rsync
-program which was modified by Apple's latest Security Update: for some
+program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
@@ -41,8 +41,8 @@ Update.  (The underlying cause appears to be a problem with the
 
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
-who need specific features of the Apple program (such as supported for
-Extended Attribute), another workaround is fink selfupdate-cvs
+who need specific features of the Apple program (such as support for
+Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
 
 
