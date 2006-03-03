@@ -1,44 +1,62 @@
-<a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
+<a name="2004-11-20 Solución a los problemas con gcc."><span class="news-date">2004-11-20: </span><span class="news-headline">Solución a los problemas con gcc.</span></a><?php gray_line(); ?>
 <p>
-A preliminary version of Fink for the Intel architecture is now ready.
-No binary packages are available, and things are still rough around
-the edges, but it should be usable if you are patient!
+Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
+(tras registro gratutito) en connect.apple.com.  Este actualizador elimina
+el problema del compilador gcc3 en XCode 1.5.  Si estás usando  XCode 1.5, 
+debes instalarlo.  (El instalador funcionará correctamente tanto
+para aquellos usuarios que no han utilizado el parche recomendado por
+el proyecto Fink como para aquellos que lo usaron en su momento.)
+</p><p>
+Agradecemos a Apple su respuesta a nuestros informes sobre este asunto
+y el trabajo realizado para resolverlo rápidamente.
 </p>
+
+
+<a name="2004-10-15 Resolución de problemas con gcc."><span class="news-date">2004-10-15: </span><span class="news-headline">Resolución de problemas con gcc.</span></a><?php gray_line(); ?>
+      <p>
+Se sabe que la versión de gcc incluída en XCode 1.5 produce 
+salidas incorrectas desde código c++ bajo determinadas circunstancias.
+Fink tiene ahora un mecanismo para avisar al usuario de esto. Además, 
+Fink pronto rechazará el uso de esta versión "rota" para compilar paquetes
+de los cuales se sepa que tienen este problema.</p>
+      <p>
+Si te has pasado ya a la versión 1.5 de XCode una solución se halla descrita 
+<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> aquí </a> y 
+también <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> aquí </a>.
+</p>
+      <p> Si no te has actualizado aún, nuestro consejo es que 
+consideres no hacerlo y quedarte con  XCode versión 1.2 
+hasta que el problema sea resuelto.
+</p>
+    <a name="2004-09-20 Fink 0.7.1 liberado."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 liberado.</span></a><?php gray_line(); ?>
 <p>
-To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
-from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
-Sourceforge file release page for Fink</a>, expand the file, and
-run the command <code>./bootstrap.sh</code> .  At the end of the
-bootstrap process, run <code>fink selfupdate</code> and you'll get
-the currently available packages.
+La versión más reciente de Fink, versión 0.7.1 (para 10.3), ya está disponible como código fuente y como binario. 
+Ésta ha sido creada para la versión Panther (10.3) de Mac OS X. La versión 0.6.3 sigue estando disponible para la versión Jaguar (10.2) de Mac OS X.
 </p>
+
 <p>
-At last check, there were about 1750 packages in the "stable" tree, but
-about 150 of those did not build.  When things are truly stable, another
-annoucement will be made here.
+Esta nueva versión incorpora varias correcciones al manejador de paquetes e integra numerosos binarios previamiente inaccesibles 
+dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para KDE 3.1.4 y GNOME 2.4.
 </p>
-<a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
+
 <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
+Para realizar una primera instalación de Fink, hay que seguir los consejos 
+de <a href="http://fink.sourceforge.net/download/index.php">esta página</a>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</a> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
+
 <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
+Si tienes alguna pregunta o problema, usa las listas de correo de Fink. Más información acerca de estas 
+listas la encontraras <a href="http://fink.sourceforge.net/lists/index.php">aquí</a>.
+
 </p>
-<p>Fink package maintainers please take note of the new <code>Architecture</code> field, now documented in the packaging manual.
-</p>
-<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
+
 <p>
-The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-</p>
+Asegúrate de seleccionar el <b>instalador adecuado</b> para tu plataforma. Fink 0.6.3 solo se funcionará en Mac OS X 10.2.* mientras que Fink 0.7.1 sólo se funcionará en Mac OS X 10.3.* </p>
+
 <p>
-For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
+El Equipo de Fink desea agradecer a sus muchos contributores, ayudantes frecuentes y a los desarrolladores por hacer que esta liberación ocurriera. 
+También agradecemos a nuestra comunidad por descarger la versión 0.7.0 más de 130.000 veces. 
+Sin su constante apoyo y valiosas indicaciones Fink no estaría donde está ahora...
 </p>
 
 

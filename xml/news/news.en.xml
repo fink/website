@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.31 2006/02/25 00:04:39 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.32 2006/03/03 15:22:12 dmrrsn Exp $</cvsid>
+
+<newsitem>
+<date>2006-03-03</date>
+<headline>Problem with Apple's latest Security Update</headline>
+<body>
+<p>
+The Fink team has received reports of problems with the <code>rsync</code>
+program which was modified by Apple's latest Security Update: for some
+users, <code>fink selfupdate</code> fails to function about the Security
+Update.  (The underlying cause appears to be a problem with the 
+<code>--delete</code> option for <code>rsync</code>.)
+</p>
+<p>
+As a workaround, users can run <code>fink install rsync</code> to use
+fink's rsync package rather than the Apple program.  Or, for those users
+who need specific features of the Apple program (such as supported for
+Extended Attribute), another workaround is <code>fink selfupdate-cvs</code>
+to switch from rsync to cvs updating.  
+</p>
+<p>
+This news item will be updated as the situation changes.
+</p>
+</body>
+</newsitem>
 
 <newsitem>
 <date>2006-02-21</date>

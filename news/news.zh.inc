@@ -1,44 +1,56 @@
-<a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
+<a name="2004-11-20 gcc 编译器问题的解决方案。"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 编译器问题的解决方案。</span></a><?php gray_line(); ?>
 <p>
-A preliminary version of Fink for the Intel architecture is now ready.
-No binary packages are available, and things are still rough around
-the edges, but it should be usable if you are patient!
+苹果发布了 2004 年十一月的 gcc3 更新，它可以在 connect.apple.com 下载(需要先免费注册)。这个更新修正了 XCode 1.5 中的 gcc3 编译器的问题。如果你正在使用 XCode 1.5，你应该安装这个更新。(这个更新可以正确地更新未经修改的 XCode 1.5，也可以更新那些实施了以前 fink 所推荐的临时办法的用户。)
+</p><p>
+我们向苹果能够响应我们提交的关于这个问题的报告，并尽快给予解决表示感谢。
 </p>
+
+
+<a name="2004-10-15 gcc 问题的临时解决办法。"><span class="news-date">2004-10-15: </span><span class="news-headline">gcc 问题的临时解决办法。</span></a><?php gray_line(); ?>
 <p>
-To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
-from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
-Sourceforge file release page for Fink</a>, expand the file, and
-run the command <code>./bootstrap.sh</code> .  At the end of the
-bootstrap process, run <code>fink selfupdate</code> and you'll get
-the currently available packages.
+在 XCode 1.5 中包括的 gcc 版本已经被发现在某些情况下会对 c++ 代码产生错误的输出。
+Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会拒绝使用有问题的 gcc 来编译一直存在这个问题的软件包。
+</p><p>
+如果你已经升级 XCode 到版本 1.5，下面是一个临时解决办法，
+在 <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">这里</a>
+和<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">这里</a>有详细的描述。
+</p><p>如果你还没有升级，你应该考虑继续使用版本 1.2，直到这个问题获得解决。
 </p>
+
+
+<a name="2004-09-20 Fink 0.7.1 released."><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 released.</span></a><?php gray_line(); ?>
 <p>
-At last check, there were about 1750 packages in the "stable" tree, but
-about 150 of those did not build.  When things are truly stable, another
-annoucement will be made here.
+最新的 Fink 发行版，0.7.1 (针对 OS X 10.3),
+现在已经以源代码和二进制版本两种形式向用户提供。这个版本是针对 OS X 的 Panther (10.3) 版本而设计的。针对 Jaguar (10.2) 的 0.6.3 版也仍然可以下载得到。 
 </p>
-<a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
+
 <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
+这个新的发行版包括了对软件包管理器的修正，以及加进了许多以前没有包括的二进制软件包，现在二进制包的总数已经达到 1650 个。其中包括 KDE 3.1.4 和 GNOME 2.4。
 </p>
+
 <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
+要安装一个新的 Fink，你可以按照
+<a href="<?php print $root; ?>download/index.php">这里</a>的指南来进行。
+你可以在你当前的版本的基础上直接升级到最新的版本。
+
+关于 0.7.0 和 0.7.1 的区别的完整清单可以在
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">这个页面</a>查看得到。
 </p>
-<p>Fink package maintainers please take note of the new <code>Architecture</code> field, now documented in the packaging manual.
-</p>
-<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
+
 <p>
-The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
+如果你有任何疑问，请尝试使用 Fink 的邮件列表。你可以在
+<a href="<?php print $root; ?>lists/index.php">这里</a>了解到更多的有关知识。
 </p>
+
 <p>
-For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
+请确定你选择了适合你使用的操作系统版本的<b>合适的安装程序</b>。
+Fink 0.6.3 只能安装在 Mac OS X 10.2 上，* 而 Fink 0.7.1 则只能安装在 Mac OS X 10.3 上。*
+</p>
+
+<p>
+Fink 团队谨向它众多的贡献者，帮助者和开发者致谢。它们使得这个版本的发布成为了现实。
+我们也向我们的用户社区表示感谢，他们下载上一个版本 0.7.0 超过 130,000 次。 
+没有他们一直一来的支持和建议，Fink 不可能取得今天的成就。
 </p>
 
 
