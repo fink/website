@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/03/03 15:22:12';
+$cvs_date = 'Date: 2006/03/03 15:26:19';
 $metatags = '';
 
 include_once "header.inc";
@@ -11,7 +11,7 @@ include_once "header.inc";
 <p>
 The Fink team has received reports of problems with the <code>rsync</code>
 program which was modified by Apple's latest Security Update: for some
-users, <code>fink selfupdate</code> fails to function about the Security
+users, <code>fink selfupdate</code> fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 <code>--delete</code> option for <code>rsync</code>.)
 </p>

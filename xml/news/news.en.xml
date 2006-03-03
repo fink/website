@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-<cvsid>$Id: news.en.xml,v 1.32 2006/03/03 15:22:12 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.en.xml,v 1.33 2006/03/03 15:26:19 dmrrsn Exp $</cvsid>
 
 <newsitem>
 <date>2006-03-03</date>
@@ -10,7 +10,7 @@
 <p>
 The Fink team has received reports of problems with the <code>rsync</code>
 program which was modified by Apple's latest Security Update: for some
-users, <code>fink selfupdate</code> fails to function about the Security
+users, <code>fink selfupdate</code> fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 <code>--delete</code> option for <code>rsync</code>.)
 </p>
