@@ -1,4 +1,4 @@
-<a name="2006-03-03 Problem with Apple's latest Security Update"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's latest Security Update</span></a><?php gray_line(); ?>
+<a name="2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's latest Security Update</span></a><?php gray_line(); ?>
 <p>
 The Fink team has received reports of problems with the <code>rsync</code>
 program which was modified by Apple's new Security Update 2006-001: for some
@@ -16,7 +16,7 @@ to switch from rsync to cvs updating.
 <p>
 This news item will be updated as the situation changes.
 </p>
-<a name="2006-02-21 Preliminary version of Fink on Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
+<a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
 <p>
 A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
@@ -35,7 +35,7 @@ At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
 </p>
-<a name="2006-01-10 Fink ready for XCode 2.2 (but not for Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
+<a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
 <p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
 packages (which are expected to function again when we switch to the 10.4

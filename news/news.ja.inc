@@ -1,24 +1,45 @@
-<a name="2004-11-20 gcc 問題の解決"><span class="news-date">2004-11-20: </span><span class="news-headline">gcc 問題の解決</span></a><?php gray_line(); ?>
-      <p>Apple は、2004年11月に gcc3 アップデータをリリースしました。
-(無料登録の後、) connect.apple.com からダウンロードできます。
-このアップデータは、XCode 1.5 に含まれる gcc3 コンパイラの問題を修正しています。
-XCode 1.5 の利用者はこのアップデータをインストールしてください。
-(このアップデータは、何も手をつけていない XCode 1.5 をアップデートし、また Fink Project が以前推奨していた回避策をインストールしていてもアップデートします)</p>
-      <p>この件に関して、われわれの報告に対処し、迅速に解決していただいた Apple に謝意を表します。</p>
-    <a name="2004-10-15 gcc 問題の回避"><span class="news-date">2004-10-15: </span><span class="news-headline">gcc 問題の回避</span></a><?php gray_line(); ?>
-      <p>XCode 1.5 に付属されているバージョンの gcc は、特定の条件下で c++ コードから間違った出力をすることがわかっています。Fink にはユーザーに警告するメカニズムがあり、この問題のある"壊れた" gcc を使ったパッケージのコンパイルを拒否します。</p>
-      <p>既に XCode をバージョン1.5にアップグレードしている場合の回避方法は、<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">ここ</a>と<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">ここ</a>に書かれています。</p>
-      <p>まだアップグレードしていない方は、この問題が解決されるまで XCode バージョン1.2を使う方が良いかもしれません。
+<a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
+<p>
+Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
+バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
 </p>
-    <a name="2004-09-20 Fink 0.7.1 リリース"><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 リリース</span></a><?php gray_line(); ?>
-      <p>最新版の Fink、バージョン0.7.1 (10.3用) がソースとバイナリユーザーを対象にリリースされました。このリリースは Panther (10.3) 系の Mac OS X 用です。 Jaguar (10.2) 系の Mac OS X バージョンには、今まで通り0.6.3 リリースをお使いください。</p>
-      <p>パッケージマネージャの修正と、多くのバイナリパッケージの追加によって1650のバイナリパッケージ化がこのリリースの内容です。KDE 3.1.4 と GNOME 2.4 のバイナリを含んでいます。</p>
-      <p>Fink を完全にインストールするには、<a href="<?php print $root; ?>download/index.php">ここ</a>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</a>にあります。
+<p>
+インストールには、
+ <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">
+Sourceforge の Fink 用ファイルリリースページ</a>
+から <code>fink-0.24.12.tar.gz</code> ファイルを取得し、解凍後、 <code>./bootstrap.sh</code>
+というコマンドを実行します。
+bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
 </p>
-      <p>疑問や問題がある場合、 Fink メーリングリストをご利用ください。リストについては<a href="<?php print $root; ?>lists/index.php">ここ</a>を参照してください。</p>
-      <p>自分のプラットフォーム用のインストーラを使用してください。
-Fink 0.6.3 が Mac OS X 10.2.* 用で、 Fink 0.7.1 が Mac OS X 10.3.* 用です。</p>
-      <p>Fink Team は、このリリースの貢献者、手伝ってくれた方、開発者の方々に謝意を表します。
-また、 この前の 0.7.0 リリースを 130,000 以上もダウンロードしてくれたコミュニティにも感謝しています。
-彼らの永きにわたる支持と価値あるポインタなくして、現在の Fink はありえませんでした。</p>
-    
+<p>
+最後に確認した時点では、およそ1750のパッケージが "stable" ツリーにありましたが、
+およそ 150 はビルドできませんでした。
+真の意味で stable となった時には、ここで再度アナウンスされます。
+</p>
+<a name="2006-01-10%20Fink%20%E3%81%8C%20XCode%202.2%20%E3%81%AB%E5%AF%BE%E5%BF%9C%20(Intel%20%E3%81%AF%E6%9C%AA%E5%AF%BE%E5%BF%9C)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink が XCode 2.2 に対応 (Intel は未対応).</span></a><?php gray_line(); ?>
+<p>
+Fink は XCode 2.2 への準備ができました。例外は openoffice.org パッケージです
+(10.4 ツリーへ移行時には機能すると予定されています）。
+ユーザーは、都合のいいときに XCode 2.2 へアップグレードしてください。
+10.4 ツリーがリリースされるさいには、 XCode 2.2 が必要です。
+</p>
+<p>
+他方、本日の Apple の発表にも関わらず、Fink はまだ Intel プロセッサに対応していません。
+Fink チームは、数週間以内に Intel 対応版の fink をリリースできるものを考えております。
+Fink チームとしては、新しい iMac に Fink をインストールせず、対応バージョンがリリースされるまで待つようお願い申し上げます。
+</p>
+<p>
+Fink パッケージメンテナの方は、新しい <code>Architecture</code> フィールドに注意してください。
+パッケージ化のマニュアルに説明されています。
+</p>
+<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
+<p>
+Fink チームは、 XCode 2.2 コンパイラによるビルドがうまくいかないという報告を受けています。
+問題が解決されるあmで、XCode のアップグレードを控えてください。
+</p>
+<p>
+既に XCode 2.2 をインストールし、2.1 に戻したくない方は、
+動作しないパッケージを見つけ、修正していただくようご協力をお願い申し上げます!
+</p>
+
+
