@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/02/07 13:43:37 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2006/03/10 02:46:34 $';
 
 include "header.inc";
 ?>
@@ -20,6 +20,7 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 New to Fink?  These quick start instructions are here to get you up to speed
 with the binary release.
 </p>
+<p><strong>Important note:</strong>  These instructions do <em>not</em> apply to Intel users currently.  You need to go to <a href="../news/index.php">the news item on this topic</a>.</p>
 <? 
 include "../fink_version.inc";
 ?>
