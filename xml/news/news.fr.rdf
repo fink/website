@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-03-06T02:39:30+01:00</dc:date>
+    <dc:date>2006-03-11T09:44:05+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#03%2F03%2F2006%20Probl%E8me%20engendr%E9%20par%20la%20derni%E8re%20mise%20%E0%20jour%20de%20s%E9curit%E9%20d'Apple">
       <title>Problème engendré par la dernière mise à jour de sécurité d'Apple</title>
@@ -28,12 +28,12 @@ Nous vous informerons dès que la situation changera.
       <guid>http://fink.sourceforge.net/news/#21%2F02%2F2006%20Version%20initiale%20de%20Fink%20sur%20Intel</guid>
       <description>
 Une première version de Fink pour l'architecture Intel est maintenant prête. Il n'existe pas encore de paquets binaires, et tout n'est pas encore peaufiné, mais elle est utilisable pour ceux qui ont de la patience.
-Pour l'installer, vous devez télécharger le fichier fink-0.24.12.tar.gz à partir de la page de distribution de Fink sur SourceForge, le décompresser et exécuter la commande ./bootstrap.sh. Quand l'amorçage sera terminé, exécutez fink selfupdate ; vous obtiendrez ainsi les paquets actuellement disponibles.
+Pour l'installer, vous devez d'abord installer au minimum les paquets compilateur et SDK de Xcode. Ensuite vous devez télécharger le fichier fink-0.24.12.tar.gz à partir de la page de distribution de Fink sur SourceForge, le décompresser et exécuter la commande ./bootstrap.sh. Quand l'amorçage sera terminé, exécutez fink selfupdate ; vous obtiendrez ainsi les paquets actuellement disponibles.
 Aux dernières nouvelles, il y avait environ 1 750 paquets dans l'arborescence "stable", mais 150 d'entre eux échouaient à la compilation. Quand tout sera vraiment stable, nous l'annoncerons ici.
 </description>
       <content:encoded>
 Une première version de Fink pour l'architecture Intel est maintenant prête. Il n'existe pas encore de paquets binaires, et tout n'est pas encore peaufiné, mais elle est utilisable pour ceux qui ont de la patience.
-Pour l'installer, vous devez télécharger le fichier fink-0.24.12.tar.gz à partir de la page de distribution de Fink sur SourceForge, le décompresser et exécuter la commande ./bootstrap.sh. Quand l'amorçage sera terminé, exécutez fink selfupdate ; vous obtiendrez ainsi les paquets actuellement disponibles.
+Pour l'installer, vous devez d'abord installer au minimum les paquets compilateur et SDK de Xcode. Ensuite vous devez télécharger le fichier fink-0.24.12.tar.gz à partir de la page de distribution de Fink sur SourceForge, le décompresser et exécuter la commande ./bootstrap.sh. Quand l'amorçage sera terminé, exécutez fink selfupdate ; vous obtiendrez ainsi les paquets actuellement disponibles.
 Aux dernières nouvelles, il y avait environ 1 750 paquets dans l'arborescence "stable", mais 150 d'entre eux échouaient à la compilation. Quand tout sera vraiment stable, nous l'annoncerons ici.
 </content:encoded>
     </item>

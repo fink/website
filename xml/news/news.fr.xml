@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.36 2006/03/06 01:39:08 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.37 2006/03/11 08:43:32 michga Exp $</cvsid>
 
 <newsitem>
 <date>03/03/2006</date>
@@ -17,7 +17,7 @@
 <headline>Version initiale de Fink sur Intel</headline>
 <body>
 <p>Une première version de Fink pour l'architecture Intel est maintenant prête. Il n'existe pas encore de paquets binaires, et tout n'est pas encore peaufiné, mais elle est utilisable pour ceux qui ont de la patience.</p>
-<p>Pour l'installer, vous devez télécharger le fichier <code>fink-0.24.12.tar.gz</code> à partir de <link url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">la page de distribution de Fink sur SourceForge</link>, le décompresser et exécuter la commande <code>./bootstrap.sh</code>. Quand l'amorçage sera terminé, exécutez <code>fink selfupdate</code> ; vous obtiendrez ainsi les paquets actuellement disponibles.</p>
+<p>Pour l'installer, vous devez d'abord installer au minimum les paquets compilateur et SDK de Xcode. Ensuite vous devez télécharger le fichier <code>fink-0.24.12.tar.gz</code> à partir de <link url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">la page de distribution de Fink sur SourceForge</link>, le décompresser et exécuter la commande <code>./bootstrap.sh</code>. Quand l'amorçage sera terminé, exécutez <code>fink selfupdate</code> ; vous obtiendrez ainsi les paquets actuellement disponibles.</p>
 <p>Aux dernières nouvelles, il y avait environ 1 750 paquets dans l'arborescence "stable", mais 150 d'entre eux échouaient à la compilation. Quand tout sera vraiment stable, nous l'annoncerons ici.</p>
 </body>
 </newsitem>

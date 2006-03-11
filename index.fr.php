@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/03/06 01:46:32 $';
+$cvs_date = '$Date: 2006/03/11 08:46:14 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -29,7 +29,6 @@ include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>La version <? print $fink_version ?> de Fink est disponible depuis le <? print convert_date_to_locale($release_date) ?>. Cette version comprend le source et les paquets binaires, ainsi qu'un installeur binaire, l'ensemble est conçu pour tourner sur Mac OS X 10.4. Les versions 0.7.2 (pour Mac OS X 10.3), 0.6.4 (pour Mac OS X 10.2) et 0.4.1 (pour Mac OS X 10.1) restent disponibles pour les utilisateurs de ces systèmes.</p>
-
 <h1>Ressources</h1>
 <p>Si vous avez besoin d'aide, allez sur la <a href="help/index.php">page d'aide</a>. Cette page vous présente aussi divers moyens d'apporter votre soutien au projet et d'envoyer un retour d'informations.</p>
 <p>Le projet Fink est hébergé par <a href="http://sourceforge.net/">SourceForge</a>. Outre l'hébergement du site et des fichiers de téléchargement, SourceForge fournit au projet les ressources suivantes :</p>
