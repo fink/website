@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-03-11T09:44:04+01:00</dc:date>
+    <dc:date>2006-03-13T18:16:12-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
       <title>Problem with Apple's latest Security Update</title>
@@ -29,6 +29,10 @@ to switch from rsync to cvs updating.
       
 This news item will be updated as the situation changes.
 
+Update 3/13/06: This has been resolved by security update 2006-002,
+according
+to Apple's documentation.
+
     </description>
       <content:encoded>
       
@@ -47,6 +51,10 @@ to switch from rsync to cvs updating.
 
       
 This news item will be updated as the situation changes.
+
+Update 3/13/06: This has been resolved by security update 2006-002,
+according
+to Apple's documentation.
 
     </content:encoded>
     </item>

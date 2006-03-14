@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.36 2006/03/10 02:14:49 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.37 2006/03/14 02:14:42 dmrrsn Exp $</cvsid>
   <newsitem>
     <date>2006-03-03</date>
     <headline>Problem with Apple's latest Security Update</headline>
@@ -22,6 +22,10 @@ to switch from rsync to cvs updating.
 </p>
       <p>
 This news item will be updated as the situation changes.
+</p>
+<p>Update 3/13/06: This has been resolved by security update 2006-002,
+<link url="http://docs.info.apple.com/article.html?artnum=303453">according
+to Apple's documentation</link>.
 </p>
     </body>
   </newsitem>
