@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-03-11T09:44:05+01:00</dc:date>
+    <dc:date>2006-03-14T07:24:20+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#03%2F03%2F2006%20Probl%E8me%20engendr%E9%20par%20la%20derni%E8re%20mise%20%E0%20jour%20de%20s%E9curit%E9%20d'Apple">
       <title>Problème engendré par la dernière mise à jour de sécurité d'Apple</title>
@@ -15,11 +15,15 @@
 On a rapporté à l'équipe Fink des problèmes avec le programme rsync, programme qui a été modifié par la dernière mise à jour de sécurité d'Apple 2006-001. Certains utilisateurs ne peuvent plus exécuter fink selfupdate après la mise à jour de sécurité. La cause semble être un problème avec l'option --delete de rsync.
 L'une des solutions est d'exécuter fink install rsync pour utiliser le paquet rsync de fink au lieu du programme d'Apple. Pour les utilisateurs qui ont besoin des fonctionnalités spécifiques du programme d'Apple (telle la gestion des attributs étendus), la solution est d'exécuter fink selfupdate-cvs pour passer à la mise à jour via cvs.
 Nous vous informerons dès que la situation changera.
+Mise à jour 13/03/2006 : le problème a été résolu par la mise à jour de sécurité 2006-002, comme indiqué dans la documentation d'Apple.
+
 </description>
       <content:encoded>
 On a rapporté à l'équipe Fink des problèmes avec le programme rsync, programme qui a été modifié par la dernière mise à jour de sécurité d'Apple 2006-001. Certains utilisateurs ne peuvent plus exécuter fink selfupdate après la mise à jour de sécurité. La cause semble être un problème avec l'option --delete de rsync.
 L'une des solutions est d'exécuter fink install rsync pour utiliser le paquet rsync de fink au lieu du programme d'Apple. Pour les utilisateurs qui ont besoin des fonctionnalités spécifiques du programme d'Apple (telle la gestion des attributs étendus), la solution est d'exécuter fink selfupdate-cvs pour passer à la mise à jour via cvs.
 Nous vous informerons dès que la situation changera.
+Mise à jour 13/03/2006 : le problème a été résolu par la mise à jour de sécurité 2006-002, comme indiqué dans la documentation d'Apple.
+
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#21%2F02%2F2006%20Version%20initiale%20de%20Fink%20sur%20Intel">

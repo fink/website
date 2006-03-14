@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.37 2006/03/11 08:43:32 michga Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.38 2006/03/14 06:23:46 michga Exp $</cvsid>
 
 <newsitem>
 <date>03/03/2006</date>
@@ -10,6 +10,8 @@
 <p>On a rapporté à l'équipe Fink des problèmes avec le programme <code>rsync</code>, programme qui a été modifié par la dernière mise à jour de sécurité d'Apple 2006-001. Certains utilisateurs ne peuvent plus exécuter <code>fink selfupdate</code> après la mise à jour de sécurité. La cause semble être un problème avec l'option <code>--delete</code> de <code>rsync</code>.</p>
 <p>L'une des solutions est d'exécuter <code>fink install rsync</code> pour utiliser le paquet rsync de fink au lieu du programme d'Apple. Pour les utilisateurs qui ont besoin des fonctionnalités spécifiques du programme d'Apple (telle la gestion des attributs étendus), la solution est d'exécuter <code>fink selfupdate-cvs</code> pour passer à la mise à jour via cvs.</p>
 <p>Nous vous informerons dès que la situation changera.</p>
+<p>Mise à jour 13/03/2006 : le problème a été résolu par la mise à jour de sécurité 2006-002, <link url="http://docs.info.apple.com/article.html?artnum=303453">comme indiqué dans la documentation d'Apple</link>.
+</p>
 </body>
 </newsitem>
 <newsitem>
