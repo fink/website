@@ -9,7 +9,7 @@ include_once "header.inc";
 
 <a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
 <p>
-Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
+Fink の Intel アーキテクチュアに向けた準備バージョンが用意されました。
 バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
 </p>
 <p>
