@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.19 2006/03/16 07:47:29 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.20 2006/03/19 10:37:54 babayoshihiko Exp $</cvsid>
 
   <newsitem>
     <date>2006-03-03</date>
     <headline>Apple の最新の Security Update　に付随する問題</headline>
     <body>
       <p>
-Fink チームは、 <code>rsync</code> した際の問題についての報告を受けました。
+Fink チームは、 <code>rsync</code> を実行した際の問題についての報告を受けました。
 このプログラムは Apple の Security Update 2006-001 にて更新されました: 
 ユーザーによっては、Security Update 後、<code>fink selfupdate</code> が使用不能になります。
 (原因は <code>rsync</code> の <code>--delete</code> にあるようです。)
@@ -19,8 +19,6 @@ Fink チームは、 <code>rsync</code> した際の問題についての報告�
 <code>fink selfupdate-cvs</code> として、更新時に rsync の代わりに cvs を用います。
 </p>
       <p>
-This news item will be updated as the situation changes.
-
 このニュースは、状況が変わりしだい更新されます。
 </p>
 <p>Update 3/13/06: security update 2006-002 によって修正されました。
