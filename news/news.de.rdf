@@ -5,8 +5,59 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2006-03-14T07:24:18+01:00</dc:date>
+    <dc:date>2006-03-19T19:38:49+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
+      <title>Problem with Apple's latest Security Update</title>
+      <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</link>
+      <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</guid>
+      <description>
+      
+The Fink team has received reports of problems with the rsync
+program which was modified by Apple's new Security Update 2006-001: for some
+users, fink selfupdate fails to function after the Security
+Update.  (The underlying cause appears to be a problem with the 
+--delete option for rsync.)
+
+      
+As a workaround, users can run fink install rsync to use
+fink's rsync package rather than the Apple program.  Or, for those users
+who need specific features of the Apple program (such as support for
+Extended Attributes), another workaround is fink selfupdate-cvs
+to switch from rsync to cvs updating.  
+
+      
+This news item will be updated as the situation changes.
+
+Update 3/13/06: This has been resolved by security update 2006-002,
+according
+to Apple's documentation.
+
+    </description>
+      <content:encoded>
+      
+The Fink team has received reports of problems with the rsync
+program which was modified by Apple's new Security Update 2006-001: for some
+users, fink selfupdate fails to function after the Security
+Update.  (The underlying cause appears to be a problem with the 
+--delete option for rsync.)
+
+      
+As a workaround, users can run fink install rsync to use
+fink's rsync package rather than the Apple program.  Or, for those users
+who need specific features of the Apple program (such as support for
+Extended Attributes), another workaround is fink selfupdate-cvs
+to switch from rsync to cvs updating.  
+
+      
+This news item will be updated as the situation changes.
+
+Update 3/13/06: This has been resolved by security update 2006-002,
+according
+to Apple's documentation.
+
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel">
       <title>Preliminary version of Fink on Intel</title>
       <link>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</link>
@@ -572,21 +623,6 @@ Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.
       <content:encoded>
 
 Wenn Sie vorher Java 1.4.1 und das Java SDK installiert hatten, wird das Java 1.4.2 - Update von Apple die Runtime auf Version 1.4.2 aktualisieren, aber es wird die vorherige Java 1.4.1 Runtime und das SDK entfernen, ohne das JDK zu aktualisieren. Um Java-Pakete in Fink zu erstellen, müssen Sie auf connect.apple.com gehen und das Java 1.4.2 SDK herunterladen. Dafür benötigen Sie eine kostenlose Registrierung.
-
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#18.01.2004%2010.3%20Binaries%20aktualisiert">
-      <title>10.3 Binaries aktualisiert</title>
-      <link>http://fink.sourceforge.net/news/#18.01.2004%2010.3%20Binaries%20aktualisiert</link>
-      <guid>http://fink.sourceforge.net/news/#18.01.2004%2010.3%20Binaries%20aktualisiert</guid>
-      <description>
-
-Viele binären Dateien für 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu können, aktualisieren Sie Ihren Index von binären Dateien, in dem Sie den Befehl sudo apt-get update ausführen. Danach können Sie apt-get, dselect oder FinkCommander benutzen, um binäre Dateien wie üblich zu installieren.
-
-</description>
-      <content:encoded>
-
-Viele binären Dateien für 10.3 wurden aktualisiert, wodurch Probleme, unter anderem mit qt und kde, behoben werden. Um auf die aktualisierten Dateien zugreifen zu können, aktualisieren Sie Ihren Index von binären Dateien, in dem Sie den Befehl sudo apt-get update ausführen. Danach können Sie apt-get, dselect oder FinkCommander benutzen, um binäre Dateien wie üblich zu installieren.
 
 </content:encoded>
     </item>

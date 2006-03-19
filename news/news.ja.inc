@@ -1,4 +1,22 @@
-<a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
+<a name="2006-03-03%20Apple%20%E3%81%AE%E6%9C%80%E6%96%B0%E3%81%AE%20Security%20Update%E3%80%80%E3%81%AB%E4%BB%98%E9%9A%8F%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C"><span class="news-date">2006-03-03: </span><span class="news-headline">Apple の最新の Security Update　に付随する問題</span></a><?php gray_line(); ?>
+      <p>
+Fink チームは、 <code>rsync</code> を実行した際の問題についての報告を受けました。
+このプログラムは Apple の Security Update 2006-001 にて更新されました: 
+ユーザーによっては、Security Update 後、<code>fink selfupdate</code> が使用不能になります。
+(原因は <code>rsync</code> の <code>--delete</code> にあるようです。)
+</p>
+      <p>
+対処方法として、<code>fink install rsync</code> とし、 fink の rsync を用います。
+あるいは、Apple の方に特有の機能 (例えば Extended Attributes のサポート) を使いたい場合、
+<code>fink selfupdate-cvs</code> として、更新時に rsync の代わりに cvs を用います。
+</p>
+      <p>
+このニュースは、状況が変わりしだい更新されます。
+</p>
+<p>Update 3/13/06: security update 2006-002 によって修正されました。
+<a href="http://docs.info.apple.com/article.html?artnum=303453">アップルの文書を参照</a>。
+</p>
+    <a name="2006-02-21%20Intel%20%E4%B8%8A%E3%81%A7%E3%81%AE%E6%BA%96%E5%82%99%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"><span class="news-date">2006-02-21: </span><span class="news-headline">Intel 上での準備バージョン</span></a><?php gray_line(); ?>
 <p>
 Fink の Intel アーキテクチュアに向けた準備ジャージョンが用意されました。
 バイナリパッケージはまだありませんし、まだ細部には荒さが残っていますが、辛抱強いあなたなら使えるでしょう!
@@ -32,14 +50,4 @@ Fink チームとしては、新しい iMac に Fink をインストールせず
 Fink パッケージメンテナの方は、新しい <code>Architecture</code> フィールドに注意してください。
 パッケージ化のマニュアルに説明されています。
 </p>
-<a name="2005-11-16%20XCode%202.2%20(10.4%20only)."><span class="news-date">2005-11-16: </span><span class="news-headline">XCode 2.2 (10.4 only).</span></a><?php gray_line(); ?>
-<p>
-Fink チームは、 XCode 2.2 コンパイラによるビルドがうまくいかないという報告を受けています。
-問題が解決されるあmで、XCode のアップグレードを控えてください。
-</p>
-<p>
-既に XCode 2.2 をインストールし、2.1 に戻したくない方は、
-動作しないパッケージを見つけ、修正していただくようご協力をお願い申し上げます!
-</p>
-
 
