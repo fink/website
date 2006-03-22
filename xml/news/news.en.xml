@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.37 2006/03/14 02:14:42 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.38 2006/03/22 18:35:02 dmrrsn Exp $</cvsid>
   <newsitem>
     <date>2006-03-03</date>
-    <headline>Problem with Apple's latest Security Update</headline>
+    <headline>Problem with Apple's Security Update 2006-001</headline>
     <body>
       <p>
 The Fink team has received reports of problems with the <code>rsync</code>
@@ -19,9 +19,6 @@ fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is <code>fink selfupdate-cvs</code>
 to switch from rsync to cvs updating.  
-</p>
-      <p>
-This news item will be updated as the situation changes.
 </p>
 <p>Update 3/13/06: This has been resolved by security update 2006-002,
 <link url="http://docs.info.apple.com/article.html?artnum=303453">according
@@ -39,7 +36,7 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 </p>
       <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file <code>fink-0.24.12.tar.gz</code>
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file <code>fink-0.24.14.tar.gz</code>
 from <link url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
 Sourceforge file release page for Fink</link>, expand the file, and
 run the command <code>./bootstrap.sh</code> .  At the end of the
