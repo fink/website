@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-03-22T10:35:49-08:00</dc:date>
+    <dc:date>2006-03-25T06:31:02+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001">
       <title>Problem with Apple's Security Update 2006-001</title>

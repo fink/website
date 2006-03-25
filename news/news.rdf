@@ -5,12 +5,12 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-03-14T07:24:17+01:00</dc:date>
+    <dc:date>2006-03-25T06:31:02+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
-      <title>Problem with Apple's latest Security Update</title>
-      <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</link>
-      <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001">
+      <title>Problem with Apple's Security Update 2006-001</title>
+      <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</link>
+      <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</guid>
       <description>
       
 The Fink team has received reports of problems with the rsync
@@ -25,9 +25,6 @@ fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
-
-      
-This news item will be updated as the situation changes.
 
 Update 3/13/06: This has been resolved by security update 2006-002,
 according
@@ -49,9 +46,6 @@ who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
 
-      
-This news item will be updated as the situation changes.
-
 Update 3/13/06: This has been resolved by security update 2006-002,
 according
 to Apple's documentation.
@@ -69,7 +63,7 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 
       
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.12.tar.gz
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.14.tar.gz
 from the
 Sourceforge file release page for Fink, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
@@ -89,7 +83,7 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 
       
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.12.tar.gz
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.14.tar.gz
 from the
 Sourceforge file release page for Fink, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
