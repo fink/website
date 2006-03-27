@@ -1,13 +1,13 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2005/10/27 15:26:41 $';
+$cvs_date = '$Date: 2006/03/27 22:43:30 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
 $package = $pispec;
 
-include "releases.inc";
+include "releases2.inc";
 ?>
 
 
@@ -121,10 +121,13 @@ if (!$rs) {
 
    print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
 
+   $bindists_lbl=array_keys($dists[0]);
+   $bindists_sql=array_values($dists[0]);
+
    // first bindist
-    if(strlen($dists[0][0])) {
-      $vers = $rmap[$dists[0][0].'-stable'];
-      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' (bindist '.$dists[0][0].')' : '<i>not present</i>',1,1);
+    if(strlen($bindists_sql[0])) {
+      $vers = $rmap[$bindists_sql[0]];
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[0].')' : '<i>not present</i>',1,1);
     } else {
       avail_td('<i>no bindists available</i>',$rowspan,2);
     }
@@ -152,11 +155,11 @@ if (!$rs) {
     print "</tr>\n";
 
     // other bindists
-    for( $bindistrow=1; $bindistrow<sizeof($dists[0]); $bindistrow++ ) {
+    for( $bindistrow=1; $bindistrow<sizeof($bindists_sql); $bindistrow++ ) {
       print '<th height="2" colspan="2" bgcolor="#f0f0f0">'.$shim.'</th>';
       print "<tr $row_color>";
-      $vers = $rmap[$dists[0][$bindistrow].'-stable'];
-      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' (bindist '.$dists[0][$bindistrow].')' : '<i>not present</i>',1,1);
+      $vers = $rmap[$bindists_sql[$bindistrow]];
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[$bindistrow].')' : '<i>not present</i>',1,1);
       print "</tr>\n";
     }
 
