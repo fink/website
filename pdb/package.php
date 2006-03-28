@@ -1,13 +1,13 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/03/27 22:43:30 $';
+$cvs_date = '$Date: 2006/03/28 01:50:30 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
 $package = $pispec;
 
-include "releases2.inc";
+include "releases.inc";
 ?>
 
 
