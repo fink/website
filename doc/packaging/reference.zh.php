@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/23 07:22:42';
+$cvs_date = 'Date: 2006/04/11 23:52:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -576,21 +576,56 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 <code>/sw/lib/fink/update</code>)。
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
+
 <p>
 应用于 <code>patch -p1
-&lt;<b>patch-file</b></code> 命令的补丁文件的名字。这应该只是一个文件名；正确的路径会被自动添加。在本字段中会应用百分号展开。所以典型的设置值只是
-<code>%f.patch</code> 或 <code>%n.patch</code>。补丁会在 PatchScript 脚本运行之前应用(如果有的话)。
+&lt;<b>patch-file</b></code> 命令的补丁文件的名字。这应该只是一个文件名；正确的路径会被自动添加(the same directory where the <code>.info</code> file
+ is located)。 在本字段中会应用百分号展开。所以典型的设置值只是
+<code>%f.patch</code> 或 <code>%n.patch</code>。补丁会在 PatchScript 脚本运行之前 in a separate step 应用(如果有的话)。
 </p>
+
 <p>
 记住 %n 包括所有 %type_ 变种数据，所以你可能需要在这里使用 %{ni} (也许需要包括一些特定的 %type_ 展开)。
 维护一个单独的补丁文件，然后在 <code>PatchScript</code> 字段中列出与变种有关的修改会比对每个变种使用单独的补丁文件容易些。
+</p>
+</td></tr><tr valign="top"><td>PatchFile</td><td>
+<p>
+The same syntax as the <code>Patch</code> field. The full path to this
+file is available using the <code>%{PatchFile}</code> percent
+expansion--do not use <code>%a</code> to access this file.
+Unlike <code>Patch</code>, <code>PatchFile</code> is applied as part
+of <code>PatchScript</code>. Fink checks that the listed file exists,
+is readable, and that its checksum matches
+the <code>PatchFile-MD5</code> field.
+</p>
+<p>
+You may not use both <code>Patch</code> and <code>PatchFile</code> in
+the same package description. Any package that
+uses <code>PatchFile</code> must declare at least
+<code>BuildDepends: fink (&gt;= 0.24.12)</code>. Giving a higher version
+requirement is allowed if it is necessary for other reasons.
+</p>
+</td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
+<p>
+The MD5 checksum of the file given in the <code>PatchFile</code>
+field. This field is required if <code>PatchFile</code> is used.
+(Introduced in fink-0.24.12)
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
 在补丁阶段运行的一系列命令。这是对软件包打补丁或修改软件包的地方。
 参阅下面关于<a href="reference.php?phpLang=zh#scripts">脚本的注意事项</a>。
 在命令运行之前，会进行<a href="format.php?phpLang=zh#percent">百分号展开</a>。
-在这里没有默认运行的命令。
+If a <code>PatchFile</code> field exists, the
+default <code>PatchScript</code> is:
+</p>
+<pre>
+patch -p1 &lt; %{PatchFile}
+</pre>
+<p>
+If there is no <code>PatchFile</code>, the default is blank. If you
+have an explicit <code>PatchScript</code>, you must apply
+the <code>PatchFile</code> explicitly.
 </p>
 </td></tr></table>
 <p><b>编译阶段：</b></p>
@@ -1077,7 +1112,16 @@ shell 脚本类似。不过，命令是通过 system() 调用执行的，每次�
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
 <p>如果你使用比较新的简单软件包命名约定，使用 %n
-来代替 %f。这两个字段不是互斥的，你可以两个都使用，它们都会被执行。这种情况下，PatchScript 会在后面被执行。</p>
+来代替 %f。这两个字段不是互斥的，你可以两个都使用，它们都会被执行。这种情况下，PatchScript 会在后面被执行。
+
+Alternately, you can use the
+newer <code>PatchFile</code> instead of <code>Patch</code> and apply
+with an implicit or explicit <code>PatchScript</code>--see the
+descriptions of the <code>PatchFile</code>
+and <code>PatchScript</code> fields for more information.
+
+</p>
+
 <p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <code>@PREFIX@</code> 的变量来代替 <code>/sw</code>，然后使用：</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
 <p>补丁文件应该是 unidiff 格式，而且一般应该通过：</p>

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/23 07:22:43';
+$cvs_date = 'Date: 2006/04/11 23:52:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -239,7 +239,12 @@ SplitOff: &lt;&lt;
 							この展開は<b>親</b>のデフォルトになる．
 							
 						</p>
-					</td></tr></table>
+					</td></tr><tr valign="top"><td>%{PatchFile}</td><td>
+<p>
+<code>PatchFile</code> フィールドで示されたファイルのフルパス．
+(fink-0.24.12 にて導入)
+</p>
+</td></tr></table>
 		
 	<p align="right"><? echo FINK_NEXT ; ?>:
 <a href="policy.php?phpLang=ja">3. パッケージ化ポリシー</a></p>

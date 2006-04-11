@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/02/23 07:22:43';
+$cvs_date = 'Date: 2006/04/11 23:52:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -678,9 +678,9 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						<p>
 							<code>patch -p1 &lt;<b>パッチファイル</b></code> として適用されるパッチのファイル名．
 							ここにはファイル名のみを指定します．
-							適切なパスは自動的に前置されます．
+							適切なパス (<code>.info</code>のあるディレクトリ) は自動的に前置されます．
 							このフィールドではパーセント展開が行われるので，典型的な値は単に <code>%f.patch</code> または <code>%n.patch</code> となります．
-							PatchScript が指定されている場合，パッチはその後に実行されます．
+							PatchScript が指定されている場合，パッチはその後に別のステップとして実行されます．
 						</p>
 						<p>
 							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
@@ -689,15 +689,42 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							各変種固有の変更点を <code>PatchScript</code> に記述する方が，
 							各変種毎にパッチファイルを作るより手間が少ないでしょう．
 						</p>
-					</td></tr><tr valign="top"><td>PatchScript</td><td>
+					</td></tr><tr valign="top"><td>PatchFile</td><td>
+<p>
+<code>Patch</code> フィールドと同じ文法．
+このファイルへのフルパスは， <code>%{PatchFile}</code> パーセント展開で利用することができます．
+<code>Patch</code> と異なり， <code>PatchFile</code> は <code>PatchScript</code> の一部分として適用されます．
+Fink は，そのアイルが存在し，読み取り可能であり，チェックサムが <code>PatchFile-MD5</code> フィールドと適合していることを確認します．
+</p>
+<p>
+<code>Patch</code> と <code>PatchFile</code> を，ひとつのパッケージ記述中に同時に使うことはできません．
+<code>PatchFile</code> を使うパッケージは，<code>BuildDepends: fink (&gt;= 0.24.12)</code> を宣言しなければなりません．
+他の理由があればこれより大きいバージョン番号を使ってもかまいません．
+</p>
+</td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
+<p>
+<code>PatchFile</code> フィールドで与えられたファイルの MD5 チェックサム．
+<code>PatchFile</code> を使用する際には必須．
+(fink-0.24.12 で導入)
+</p>
+</td></tr><tr valign="top"><td>PatchScript</td><td>
 						<p>
 							パッチ段階で実行されるコマンドのリスト．
 							下記のスクリプトの注意書きを参照してください．
 							ここには，パッチを当てるか，またはパッケージに変更を加えるコマンドを指定します．
 							下記の<a href="reference.php?phpLang=ja#scripts">スクリプトに関する注記</a>もあわせて参照してください．
 							コマンド実行前に，<a href="format.php?phpLang=ja#percent">パーセント展開</a>が行われます．
-							デフォルト値はありません．
-						</p>
+<code>PatchFile</code> フィールドが存在する場合，
+<code>PatchScript</code> の既定値は:
+</p>
+<pre>
+patch -p1 &lt; %{PatchFile}
+</pre>
+<p>
+です．
+<code>PatchFile</code> がない場合の既定値は空白となります．
+<code>PatchScript</code> を明示的に用いる場合， <code>PatchFile</code> を明示しなければなりません．
+</p>
 					</td></tr></table>
 			<p>
 				<b>コンパイル段階関連:</b>
@@ -1259,6 +1286,9 @@ SplitOff2: &lt;&lt;
 			<p>
 				新しく導入された方の簡潔なパッケージファイル命名規則を採用しているなら， %f でなく %n を使うこと．
 				これら2つのフィールドは互いに排他的ではなく，両方指定することもできます (PatchScript, Patch の順に両方実行されます)．
+				あるいは，<code>Patch</code> の代わりに，新しい <code>PatchFile</code> を用い，
+				明示的または暗示的に <code>PatchScript</code> を適用します．
+				詳細は <code>PatchFile</code> および <code>PatchScript</code> の説明を参照．
 			</p>
 			<p>
 				パッチファイルではユーザがインストールディレクトリを選択できるようにする方がよいので，
