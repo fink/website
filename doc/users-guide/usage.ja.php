@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:41:42';
+$cvs_date = 'Date: 2006/04/12 00:08:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -37,16 +37,16 @@ include_once "header.ja.inc";
                          するよう Fink に指示します。バイナリ版があるバージョンを無理にダウン
                          ロードすることはありません。
  --no-use-binary-dist  - コンパイル済みバイナリパッケージを使用しない (--use-binary-dist の逆)
- -K, --keep-root-dir   - /sw/src/root-[name]-[version]-[revision] ディレクトリをパッケー
+ -K, --keep-root-dir   - BuildPath 中の root-[name]-[version]-[revision] ディレクトリをパッケー
                          ジビルド後に削除しないように Fink に指示をする
- -k, --keep-build-dir  - /sw/src/[name]-[version]-[revision] ディレクトリをパッケー
+ -k, --keep-build-dir  - BuildPath 中の [name]-[version]-[revision] ディレクトリをパッケー
                          ジビルド後に削除しないように Fink に指示をする
  --build-as-nobody     - 解凍、パッチ、コンパイル、インストール時に root 以外のユーザーになる。
                          このオプションで作成されたパッケージは機能しない可能性があることに注意。
                          このモードはパッケージの開発とデバッグ目的にのみ使用。</pre>
 <p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
 <p>
-ほとんどのオプションは名前から内容が推測できると思います。
+ほとんどのオプションは名前から内容が推測できると思います(<a href="conf.php?phpLang=ja#optional">ここ</a>に Buildpath の定義があります)。
 一回限りではなく、常に使用したいオプションは
 <a href="conf.php?phpLang=ja">Fink 設定ファイル</a> (fink.conf)
 で設定することができます。

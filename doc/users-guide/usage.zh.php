@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:41:42';
+$cvs_date = 'Date: 2006/04/12 00:08:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 
@@ -31,26 +31,26 @@ type <code>fink --help</code> you get the list of options:
                         questions.
 -b, --use-binary-dist - download pre-compiled packages from the binary 
                         distribution if available (e.g. to reduce compile
-		        time or disk usage).
-		        Note that this mode instructs Fink to download the
+                        time or disk usage).
+                        Note that this mode instructs Fink to download the
                         version it wants if that version is available for
-		        download; it does not cause Fink to choose a version
-    		        based on its binary availability.
+                        download; it does not cause Fink to choose a version
+                        based on its binary availability.
 --no-use-binary-dist  - Don't use pre-compiled binary packages from the
                         binary distribution (opposite of --use-binary-dist)
 -K, --keep-root-dir   - Causes Fink not to delete the
-                        /sw/src/root-[name]-[version]-[revision]
-		        directory after building a package.
+                        root-[name]-[version]-[revision]
+                        directory in the Buildpath after building a package.
 -k, --keep-build-dir  - Causes Fink not to delete the
-                        /sw/src/[name]-[version]-[revision]
-                        directory after building a package.
+                        [name]-[version]-[revision]
+                        directory in the Buildpath after building a package.
 --build-as-nobody     - Drop to a non-root user when performing the unpack,
                         patch, compile,and install phases. Note that packages
                         built with this option may be non-functional. You
                         should use this mode for package development
                         and debugging only.</pre>
       <p>
-Most of these options are self-explanatory. They can also be set in the 
+Most of these options are self-explanatory (see <a href="conf.php?phpLang=zh#optional">here </a> for the definition of Buildpath). They can also be set in the 
 <a href="conf.php?phpLang=zh">Fink configuration file</a> (fink.conf) if you want 
 to set them permanently and not just for that invocation of <code>fink</code>.</p>
     
