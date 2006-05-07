@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Mise à jour de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/12/01 13:28:10';
+$cvs_date = 'Date: 2006/05/07 08:27:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink"><link rel="prev" href="mirrors.php?phpLang=fr" title="Miroirs de Fink">';
 
 

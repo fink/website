@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.52 2005/12/01 13:28:10 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.53 2006/05/07 08:27:26 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1068,7 +1068,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 <p>Le message d'erreur suivant apparaît : <quote>configure: error: XML::Parser perl module is required for intltool</quote>. Que faire ?</p>
 </question>
 <answer>
-<p>Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (il se peut que vous ayez le paquet fantôme <code>xml-parser-pm</code>), car, dans votre système est installé <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>. Sous Jaguar, vous devez avoir la variante <code>pm560</code> si vous utilisez la version système de Perl; si vous avez installé <code>Perl 5.8.0</code>, vous devez avoir la variante <code>pm580</code>.</p>
+<p>Si vous utilisez l'arbre instable, you devez installer une version de intltool supérieure ou égale à la version 0.34.1.</p>
+<p>Sinon, vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (il se peut que vous ayez le paquet fantôme <code>xml-parser-pm</code>), car, dans votre système est installé <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>. Sous Jaguar, vous devez avoir la variante <code>pm560</code> si vous utilisez la version système de Perl; si vous avez installé <code>Perl 5.8.0</code>, vous devez avoir la variante <code>pm580</code>.</p>
 </answer>
 </faqentry>
 <faqentry name="master-problems">
@@ -1117,6 +1118,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 ### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
 <p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <em>10.4-transitionelle</em>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p>
 <p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p>
+<p>Si vous obtenez le même genre d'erreur au runtime, recompilez le module après avoir recompilé le paquet <code>python2*</code> concerné.</p>
 </answer>
 </faqentry>
 </chapter>

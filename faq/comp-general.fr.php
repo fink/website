@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/12/01 13:28:10';
+$cvs_date = 'Date: 2006/05/07 08:27:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installer, Utiliser et Entretenir Fink">';
 
 
@@ -164,7 +164,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <a name="xml-parser">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.20: Le message d'erreur suivant apparaît : <q>configure: error: XML::Parser perl module is required for intltool</q>. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (il se peut que vous ayez le paquet fantôme <code>xml-parser-pm</code>), car, dans votre système est installé <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>. Sous Jaguar, vous devez avoir la variante <code>pm560</code> si vous utilisez la version système de Perl; si vous avez installé <code>Perl 5.8.0</code>, vous devez avoir la variante <code>pm580</code>.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous utilisez l'arbre instable, you devez installer une version de intltool supérieure ou égale à la version 0.34.1.</p><p>Sinon, vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (il se peut que vous ayez le paquet fantôme <code>xml-parser-pm</code>), car, dans votre système est installé <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>. Sous Jaguar, vous devez avoir la variante <code>pm560</code> si vous utilisez la version système de Perl; si vous avez installé <code>Perl 5.8.0</code>, vous devez avoir la variante <code>pm580</code>.</p></div>
 </a>
 <a name="master-problems">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.21: Lors du téléchargement d'un paquet, Fink tente de le faire à partir d'un site dont le nom contient <q>distfiles</q> et ne trouve pas le fichier.</b></p></div>
@@ -187,7 +187,7 @@ Traceback (most recent call last):
     depends = ['socketmodule.h'] )
   File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <b>10.4-transitionelle</b>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p><p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p></div>
+### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <b>10.4-transitionelle</b>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p><p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p><p>Si vous obtenez le même genre d'erreur au runtime, recompilez le module après avoir recompilé le paquet <code>python2*</code> concerné.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=fr">7. Problèmes de compilation de certains paquets</a></p>
