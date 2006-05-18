@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/03/28 01:50:30 $';
+$cvs_date = '$Date: 2006/05/18 21:32:50 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -54,35 +54,22 @@ if (!$rs) {
       $is_restrictive = 1;
   }
 
- function avail_td($text, $rowspan, $colspan) {
-   print '<td align="center" valign="top"';
-   print ' rowspan="'.$rowspan.'"';
-   print ' colspan="'.$colspan.'"';
-   print '>';
+ function avail_td($text, $extras='') {
+   print '<td align="center" valign="top" ' . $extras . '>';
    print '<div style="white-space:nowrap">' . $text . '</div>';
    print '</td>';
  }
 
- $shim = '<img src="../../img/shim.gif" width="1" height="1" border="0" alt="">';
-
- print '<table cellspacing="0" border="0">'."\n";
+ print '<table class="pkgversion" cellspacing="2" border="0">'."\n";
 
  print '<tr bgcolor="#ffecbf">';
- print '<th width="100" align="center" valign="bottom" rowspan="3">System</th>';
- print '<th width="2"   rowspan="3" bgcolor="#ffffff">'.$shim.'</th>';
- print '<th width="150" align="center" valign="bottom" rowspan="3">Binary Distributions</th>';
- print '<th width="2"   rowspan="3" bgcolor="#ffffff">'.$shim.'</th>';
- print '<th width="202" align="center" colspan="3">CVS/rsync Source Distributions</th>';
- print "</tr>\n";
-
- print '<tr>';
- print '<th height="2" colspan="2" bgcolor="#ffffff">'.$shim.'</th>';
- print '<th height="2" colspan="3" bgcolor="#ffffff">'.$shim.'</th>';
+ print '<th width="100" align="center" valign="bottom" rowspan="2">System</th>';
+ print '<th width="150" align="center" valign="bottom" rowspan="2">Binary Distributions</th>';
+ print '<th width="202" align="center" colspan="2">CVS/rsync Source Distributions</th>';
  print "</tr>\n";
 
  print '<tr bgcolor="#ffecbf">';
  print '<th width="100" align="center">stable</th>';
- print '<th width="2"    bgcolor="#ffffff">'.$shim.'</th>';
  print '<th width="100" align="center">unstable</th>';
  print "</tr>\n";
 
@@ -101,25 +88,15 @@ if (!$rs) {
    if(!is_array($dists[0]))
      $dists[0]=array($dists[0]);
 
-   // always have first (even if no dist), then need spacer+dist for each other
-   $rowspan=1+2*(sizeof($dists[0])-1);
-   if($rowspan==0) $rowspan=1;
-
-   print '<tr>';
-   print '<th height="2"             bgcolor="#ffffff">'.$shim.'</th>';
-   print '<th height="2" width="2"   bgcolor="#f0f0f0">'.$shim.'</th>';
-   print '<th height="2" colspan="2" bgcolor="#ffffff">'.$shim.'</th>';
-   print '<th height="2" width="2"   bgcolor="#f0f0f0">'.$shim.'</th>';
-   print '<th height="2"             bgcolor="#ffffff">'.$shim.'</th>';
-   print '<th height="2" width="2"   bgcolor="#f0f0f0">'.$shim.'</th>';
-   print '<th height="2"             bgcolor="#ffffff">'.$shim.'</th>';
-   print '</tr>'."\n";
+   // used in System and CVS/rsync entries to leave enough space for bindists
+   if (sizeof($dists[0])>1)
+     $bindist_rowspan='rowspan='.sizeof($dists[0]);
+   else
+     $bindist_rowspan='';
 
    // System
    print "<tr $row_color>";
-   avail_td($os,$rowspan,1);
-
-   print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
+   avail_td($os,$bindist_rowspan);
 
    $bindists_lbl=array_keys($dists[0]);
    $bindists_sql=array_values($dists[0]);
@@ -127,12 +104,10 @@ if (!$rs) {
    // first bindist
     if(strlen($bindists_sql[0])) {
       $vers = $rmap[$bindists_sql[0]];
-      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[0].')' : '<i>not present</i>',1,1);
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[0].')' : '<i>not present</i>');
     } else {
-      avail_td('<i>no bindists available</i>',$rowspan,2);
+      avail_td('<i>no bindists available</i>',$bindist_rowspan);
     }
-
-    print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
 
     // CVS/rsync dist
     if(strlen($dists[1]) || strlen($dists[2])) {
@@ -142,24 +117,22 @@ if (!$rs) {
 	strlen($vers_st)
 	  ? '<!-- a href="../packagedetails.php?tree='.$dists[1]."&pkg=$package&version=$vers_st\" -->".$vers_st #."</a>"
 	  : '<i>not present</i>'
-	, $rowspan,1);
-      print '<th width="2" rowspan="'.$rowspan.'" bgcolor="#f0f0f0">'.$shim.'</th>';
+	, $bindist_rowspan);
       avail_td(
 	strlen($vers_un)
 	  ? '<!-- a href="../packagedetails.php?tree='.$dists[2]."&pkg=$package&version=$vers_un\" -->".$vers_un #."</a>"
 	  : '<i>not present</i>'
-	, $rowspan,1);
+	, $bindist_rowspan);
     } else {
-      avail_td("<i>unsupported</i>",$rowspan,3);
+      avail_td("<i>unsupported</i>",$bindist_rowspan.' colspan=2');
     }
     print "</tr>\n";
 
     // other bindists
     for( $bindistrow=1; $bindistrow<sizeof($bindists_sql); $bindistrow++ ) {
-      print '<th height="2" colspan="2" bgcolor="#f0f0f0">'.$shim.'</th>';
       print "<tr $row_color>";
       $vers = $rmap[$bindists_sql[$bindistrow]];
-      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[$bindistrow].')' : '<i>not present</i>',1,1);
+      avail_td(strlen($vers) && $is_restrictive==0 ? $vers.' ('.$bindists_lbl[$bindistrow].')' : '<i>not present</i>');
       print "</tr>\n";
     }
 
