@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.97 2006/02/25 07:00:49 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.98 2006/05/19 19:13:37 dmacks Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -261,7 +261,7 @@ function insert_sub ($navbox, $active_page) {
 	<title>Fink - <? echo $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="keywords" content="<? echo META_KEYWORDS; ?>">
-	<meta name="description" content="<? echo META_DESCRIPTION; ?>" 
+	<meta name="description" content="<? echo META_DESCRIPTION; ?>">
 	<meta name="robots" content="all">
 <?
 	$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
