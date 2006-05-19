@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/05/18 21:32:50 $';
+$cvs_date = '$Date: 2006/05/19 19:19:27 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -77,11 +77,11 @@ if (!$rs) {
  foreach( $releases as $os=>$dists ) {
    $rel_row++;
    if($rel_row==1) {
-     $row_color='bgcolor=#e3caff';
+     $row_color='bgcolor="#e3caff"';
    } else if ($rel_row==2) {
-     $row_color='bgcolor=#f1e2ff';
+     $row_color='bgcolor="#f1e2ff"';
    } else {
-     $row_color='bgcolor=#f6ecff';
+     $row_color='bgcolor="#f6ecff"';
    }
 
    // massage if only single dist listed as a simple string
