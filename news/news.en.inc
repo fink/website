@@ -1,4 +1,4 @@
-<a name="2006-05-10%20CVS%20Not%20Functioning"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Not Functioning</span></a><?php gray_line(); ?>
+<a name="2006-05-10%20CVS%20Troubles"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Troubles</span></a><?php gray_line(); ?>
       <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
 has not been fully functional since March 30.  The anonymous CVS access
@@ -17,6 +17,14 @@ least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file <code>fink-mirrors-0.24.15.2.tar.gz</code> from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>, expand the file, and run the command
+<code>./inject.pl</code> from within the <code>fink-mirrors-0.24.15.2</code> directory.  After this has been done, the <code>fink selfupdate</code> command
+should again work normally.
 </p>
     <a name="2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's Security Update 2006-001</span></a><?php gray_line(); ?>
       <p>

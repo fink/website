@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.39 2006/05/24 20:36:58 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.40 2006/05/24 23:06:52 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2006-05-10</date>
-    <headline>CVS Not Functioning</headline>
+    <headline>CVS Troubles</headline>
     <body>
       <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
@@ -26,6 +26,15 @@ least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file <code>fink-mirrors-0.24.15.2.tar.gz</code> from <link
+url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</link>, expand the file, and run the command
+<code>./inject.pl</code> from within the <code>fink-mirrors-0.24.15.2</code> directory.  After this has been done, the <code>fink selfupdate</code> command
+should again work normally.
 </p>
     </body>
   </newsitem>

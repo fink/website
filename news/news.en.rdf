@@ -5,12 +5,12 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-05-10T17:44:47-07:00</dc:date>
+    <dc:date>2006-05-24T16:08:06-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Not%20Functioning">
-      <title>CVS Not Functioning</title>
-      <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Not%20Functioning</link>
-      <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Not%20Functioning</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
+      <title>CVS Troubles</title>
+      <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
+      <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</guid>
       <description>
       
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
@@ -30,6 +30,14 @@ least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
+
+Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file fink-mirrors-0.24.15.2.tar.gz from the
+Sourceforge file release page, expand the file, and run the command
+./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
+should again work normally.
 
     </description>
       <content:encoded>
@@ -51,6 +59,14 @@ least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
+
+Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file fink-mirrors-0.24.15.2.tar.gz from the
+Sourceforge file release page, expand the file, and run the command
+./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
+should again work normally.
 
     </content:encoded>
     </item>
