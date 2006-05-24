@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.38 2006/03/22 18:35:02 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.39 2006/05/24 20:36:58 dmrrsn Exp $</cvsid>
+
+  <newsitem>
+    <date>2006-05-10</date>
+    <headline>CVS Not Functioning</headline>
+    <body>
+      <p>
+As many Fink users are aware, the Fink CVS repository at sourceforge.net
+has not been fully functional since March 30.  The anonymous CVS access
+has not been updated since then, and as of several days ago, the developers
+are also unable to update CVS in any form.
+</p><p>
+As we understand the current plans of sourceforge's staff (outlined
+briefly on their <link 
+url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</link>), the old CVS servers will never be brought back in
+their current form.  This is likely to mean disruption for fink users,
+but at present, we cannot say what form this disruption will take.
+</p><p>
+Our current advice to fink users is to switch to the 'rsync' method of
+updating (by running the command 'fink selfupdate-rsync').  This will at
+least give you a fink installation which is current up through May 7.
+If a full update to the new CVS situation turns out to be impossible
+via fink's normal selfupdate command, we will post instructions here
+on how to update when they become available.
+</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2006-03-03</date>
     <headline>Problem with Apple's Security Update 2006-001</headline>
