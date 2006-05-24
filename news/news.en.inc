@@ -1,4 +1,24 @@
-<a name="2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's Security Update 2006-001</span></a><?php gray_line(); ?>
+<a name="2006-05-10%20CVS%20Not%20Functioning"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Not Functioning</span></a><?php gray_line(); ?>
+      <p>
+As many Fink users are aware, the Fink CVS repository at sourceforge.net
+has not been fully functional since March 30.  The anonymous CVS access
+has not been updated since then, and as of several days ago, the developers
+are also unable to update CVS in any form.
+</p><p>
+As we understand the current plans of sourceforge's staff (outlined
+briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</a>), the old CVS servers will never be brought back in
+their current form.  This is likely to mean disruption for fink users,
+but at present, we cannot say what form this disruption will take.
+</p><p>
+Our current advice to fink users is to switch to the 'rsync' method of
+updating (by running the command 'fink selfupdate-rsync').  This will at
+least give you a fink installation which is current up through May 7.
+If a full update to the new CVS situation turns out to be impossible
+via fink's normal selfupdate command, we will post instructions here
+on how to update when they become available.
+</p>
+    <a name="2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's Security Update 2006-001</span></a><?php gray_line(); ?>
       <p>
 The Fink team has received reports of problems with the <code>rsync</code>
 program which was modified by Apple's new Security Update 2006-001: for some
@@ -35,21 +55,5 @@ the currently available packages.
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-</p>
-    <a name="2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink ready for XCode 2.2 (but not for Intel).</span></a><?php gray_line(); ?>
-      <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-      <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-      <p>Fink package maintainers please take note of the new <code>Architecture</code> field, now documented in the packaging manual.
 </p>
     
