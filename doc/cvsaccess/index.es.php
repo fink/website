@@ -1,14 +1,14 @@
 <?
 $title = "Acceso al CVS de Fink";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/02/28 02:44:45';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/05/25 19:57:40';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Ajustando el Acceso al CVS de Fink</h1>
-<!--Generated from $Fink: cvs.es.xml,v 1.5 2006/02/28 02:44:45 alexkhansen Exp $-->
+<!--Generated from $Fink: cvs.es.xml,v 1.6 2006/05/25 19:57:40 dmrrsn Exp $-->
     <p>
 Fink es desarrollado mediante CVS.
 Esto significa que puedes mantenerte al día entre las liberaciones del Fink y siempre tener lo ultimo.
@@ -17,7 +17,7 @@ La informacion de esta pagina aplica al Fink 0.3.x y posterior.
 </p>
   <h2><a name="">Estructura del CVS de Fink</a></h2>
     
-    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<a href="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</a>)
+    <p>Fink posee varios módulos de CVS. El módulo <code>dists</code> (<a href="http://fink.cvs.sourceforge.net/fink/">ViewCVS</a>)
 contiene las descripciones de los paquetes y parches para OS 10.2 y posterior. Existen otros módulos usados por los desarrolladores de Fink, los cuales cualquiera puede ver, pero no son muy interesantes para la mayoría de los usuarios.</p>
   <h2><a name="">Actualizando las Descripciones de los Paquetes</a></h2>
     
@@ -39,8 +39,8 @@ contiene las descripciones de los paquetes y parches para OS 10.2 y posterior. E
     <p>El manejador de paquetes debe ser actualizado a través de un directorio separado y con el script<code>inject.pl</code> Este script pone las descripciones del paquete asi como los archivos tar para el fink y los archivos-bases en tu directorio Fink y entonces los construye.c</p>
     <p>Para ejecutar esto por primera vez, necesitaras un directorio temporal (llamado <code>tempdir</code> en el ejemplo) el cual esta vacío (o por lo menos que no tenga un subdirectorio llamado  'fink'). El procedimiento es como sigue:</p>
     <pre>cd tempdir
-cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
+cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink
 cd fink
 ./inject.pl</pre>
     <p>Este comando de login solicitará un password - presiona return y continua. El directorio temporal puede ser eliminado una vez que el proceso haya concluido, pero si no lo haces asá, la siguiente vez que actualices sera más fácil. El procedimiento entonces será:</p>

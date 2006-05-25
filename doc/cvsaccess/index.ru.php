@@ -1,21 +1,21 @@
 <?
 $title = "Доступ к Fink через CVS";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/02/28 02:44:45';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/05/25 19:57:40';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Настройка доступа к Fink через CVS</h1>
-<!--Generated from $Fink: cvs.ru.xml,v 1.2 2006/02/28 02:44:45 alexkhansen Exp $-->
+<!--Generated from $Fink: cvs.ru.xml,v 1.3 2006/05/25 19:57:40 dmrrsn Exp $-->
         <p> Fink разработан через посредство CVS. Это значит, что вы можете быть в курсе 
          последних разработок между выпусками версий и всегда получать новейший материал. Данная страница рассказывает о том, 
            как можно произвести настройку имеющейся инсталляции Fink для обновления через 
             CVS. Информация на данной странице относится к Fink 0.3.x и более поздним версиям.</p>
     <h2><a name="">Структура CVS Fink </a></h2>
         
-        <p>Fink имеет несколько модулей CVS. Модуль <code>dists</code> (<a href="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</a>)
+        <p>Fink имеет несколько модулей CVS. Модуль <code>dists</code> (<a href="http://fink.cvs.sourceforge.net/fink/">ViewCVS</a>)
             содержит описание пакетов и патчи для OS X 10.2 и более поздних версий. Есть другие модули, используемые разработчиками Fink,  
             обзор которых доступен всем, но они не представляют интереса для большинства пользователей.</p>
     <h2><a name="">Обновление описания пакетов</a></h2>
@@ -48,8 +48,8 @@ include_once "header.inc";
             подкаталог под именем 'fink'). Порядок действий 
             следующий:</p>
         <pre>cd tempdir cvs
-            -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login cvs -z3
-            -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink cd
+            -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login cvs -z3
+            -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink cd
             fink ./inject.pl</pre>
         <p>Команда login запросит пароль - просто нажмите return. Вы
             можете удалить временный каталог после данной процедуры, но если

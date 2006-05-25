@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/02/28 02:30:20';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/05/25 19:57:40';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Setting up Fink CVS Access</h1>
-<!--Generated from $Fink: cvs.en.xml,v 1.4 2006/02/28 02:30:20 alexkhansen Exp $-->
+<!--Generated from $Fink: cvs.en.xml,v 1.5 2006/05/25 19:57:40 dmrrsn Exp $-->
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -18,7 +18,7 @@ updating via CVS.
 The information on this page applies to Fink 0.3.x and later.
 </p>
 <h2><a name="">Fink CVS Structure</a></h2>
-<p>Fink has several CVS modules. The module <code>dists</code> (<a href="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</a>)
+<p>Fink has several CVS modules. The module <code>dists</code> (<a href="http://fink.cvs.sourceforge.net/fink/">ViewCVS</a>)
 contains the package descriptions and patches for OS X 10.2 and above. There are other modules
 used by Fink developers, which anyone can view, but these are
 not interesting for most users.</p>
@@ -56,8 +56,8 @@ Fink tree and builds them.</p>
 doesn't contain a subdirectory named 'fink'). The procedure goes like
 this:</p>
 <pre>cd tempdir
-cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
+cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink
 cd fink
 ./inject.pl</pre>
 <p>The login command will ask for a password - just press return. You

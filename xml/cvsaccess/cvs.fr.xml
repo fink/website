@@ -4,13 +4,13 @@
 <article filename="index" lang="fr" fsroot="../../">
 <title>Configuration de l'accès à Fink via CVS</title>
 <shorttitle>Accès CVS à Fink</shorttitle>
-<cvsid>$Id: cvs.fr.xml,v 1.6 2006/03/01 05:16:38 michga Exp $</cvsid>
+<cvsid>$Id: cvs.fr.xml,v 1.7 2006/05/25 19:57:40 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>Fink est développé via CVS. Cela vous permet de rester à jour entre deux versions et d'avoir toujours les paquets les plus récents. Cette page vous explique comment configurer une installation Fink existante pour qu'elle puisse être mise à jour via CVS. Les informations ci-dessous sont applicables à la version 0.3.x de Fink et aux versions ultérieures.</p>
 </preface>
 <section><title>Structure CVS de Fink</title>
-<p>Fink comporte plusieurs modules CVS. Le module <code>dists</code> (<link url="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</link>) contient les descriptions de paquets et les rustines pour Mac OS X versions 10.2 et ultérieures. Il existe d'autres modules pour les développeurs de Fink. Vous pouvez les afficher, mais ils n'ont aucun intérêt pour la plupart des utilisateurs.</p>
+<p>Fink comporte plusieurs modules CVS. Le module <code>dists</code> (<link url="http://fink.cvs.sourceforge.net/fink/">ViewCVS</link>) contient les descriptions de paquets et les rustines pour Mac OS X versions 10.2 et ultérieures. Il existe d'autres modules pour les développeurs de Fink. Vous pouvez les afficher, mais ils n'ont aucun intérêt pour la plupart des utilisateurs.</p>
 </section>
 <section><title>Mise à jour des descriptions de paquets</title>
 <p>Auparavant, la procédure était compliquée ; mais, avec la version actuelle de Fink, elle s'est grandement simplifiée. Il suffit de lancer cette commande :</p>
@@ -25,8 +25,8 @@
 <p>Le gestionnaire de paquets doit être mis à jour dans un répertoire distinct à l'aide du script <code>inject.pl</code>. Ce script met dans votre arborescence Fink les descriptions de paquets et les archives tar de fink et des paquets fondamentaux, puis les compile.</p>
 <p>La première fois, vous devez utiliser un répertoire temporaire (nommé <code>tempdir</code> par exemple) vide (ou qui ne contient pas lui-même un sous-répertoire 'fink'). Voici la procédure à suivre :</p>
 <codeblock>cd tempdir
-cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
+cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink
 cd fink
 ./inject.pl</codeblock>
 <p>La commande login vous demandera un mot de passe - contentez-vous d'appuyer sur la touche retour chariot. Vous pouvez supprimer le répertoire temporaire à la fin de la procédure. Toutefois, si vous le conservez, les mises à jour suivantes en seront facilitées. La procédure sera alors :</p>

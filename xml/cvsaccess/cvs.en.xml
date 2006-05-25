@@ -4,7 +4,7 @@
 <article filename="index" lang="en" fsroot="../../">
 <title>Setting up Fink CVS Access</title>
 <shorttitle>Fink CVS Access</shorttitle>
-<cvsid>$Id: cvs.en.xml,v 1.4 2006/02/28 02:30:20 alexkhansen Exp $</cvsid>
+<cvsid>$Id: cvs.en.xml,v 1.5 2006/05/25 19:57:40 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -20,7 +20,7 @@ The information on this page applies to Fink 0.3.x and later.
 
 <section><title>Fink CVS Structure</title>
 <p>Fink has several CVS modules. The module <code>dists</code> (<link
-url="http://cvs.sourceforge.net/viewcvs.py/fink">ViewCVS</link>)
+url="http://fink.cvs.sourceforge.net/fink/">ViewCVS</link>)
 contains the package descriptions and patches for OS X 10.2 and above. There are other modules
 used by Fink developers, which anyone can view, but these are
 not interesting for most users.</p>
@@ -62,8 +62,8 @@ Fink tree and builds them.</p>
 doesn't contain a subdirectory named 'fink'). The procedure goes like
 this:</p>
 <codeblock>cd tempdir
-cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login
-cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co fink
+cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink
 cd fink
 ./inject.pl</codeblock>
 <p>The login command will ask for a password - just press return. You
