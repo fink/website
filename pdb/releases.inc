@@ -19,6 +19,16 @@
 # $os_distro_data must be an array, but each entry in it is optional
 
 $releases = array(
+	"10.4 i386" => array(
+			"sta"=>"current-10.4-stable-i386",
+			"uns"=>"current-10.4-unstable-i386",
+			"pri"=>1,
+			),
+	"10.4 powerpc" => array(
+			"sta"=>"current-10.4-stable-powerpc",
+			"uns"=>"current-10.4-unstable-powerpc",
+			"pri"=>2,
+			),
 	"10.4<br>(transitional)" => array(
 			"bin"=>array("bindist 0.8.0"=>"0.8.0-stable"),
 			"sta"=>"current-10.4-transitional-stable",
