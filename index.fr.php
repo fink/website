@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/03/25 05:32:23 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/05/25 16:20:33 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -38,7 +38,7 @@ include dirname(__FILE__) . "/fink_version.inc";
 <li><a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Soumission d'un nouveau paquet Fink (pour les développeurs occasionnels)</a></li>
 <li><a href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Soumission d'une rustine pour le programme fink</a></li>
 <li><a href="lists/index.php">Listes de diffusion</a></li>
-<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">navigation en ligne</a>, <a href="doc/cvsaccess/index.php">instructions d'accès</a>)</li>
+<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">navigation en ligne</a>, <a href="doc/cvsaccess/index.php">instructions d'accès</a>)</li>
 </ul>
 <p>Veuillez noter que pour utiliser certaines de ces ressources (par exemple, envoyer un rapport de bogue ou demander l'intégration d'un nouveau paquet dans Fink), vous devez vous connecter à votre compte SourceForge. Si vous n'en avez pas, vous pouvez en obtenir un gratuitement sur le <a href="http://sourceforge.net/">site web de SourceForge</a>.</p>
 <p>Autres ressources non hébergées sur SourceForge :</p>

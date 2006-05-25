@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Home";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2005/11/17 02:14:39 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/05/25 16:20:33 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -76,7 +76,7 @@ non-core)</a></li>
 <li><a
 href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Someter un patch para fink (el programa)</a></li>
 <li><a href="lists/index.php">Listas de Correo</a></li>
-<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">de navegación en línea</a>, <a href="doc/cvsaccess/index.php">Instrucciones de acceso</a>)</li>
+<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">de navegación en línea</a>, <a href="doc/cvsaccess/index.php">Instrucciones de acceso</a>)</li>
 </ul>
 <p>
 Por favor, note que para hacer uso de algunos de estos recursos (ie. para

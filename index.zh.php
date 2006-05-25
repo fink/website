@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Home";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/09/15 01:55:29 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/05/25 16:20:33 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -75,7 +75,7 @@ href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">提交一�
 <li><a
 href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">提交 fink（程序）的一个补丁。</a></li>
 <li><a href="lists/index.php">邮件列表</a></li>
-<li>CVS (<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink">在线浏览</a>, <a href="doc/cvsaccess/index.php">如何访问</a>)</li>
+<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">在线浏览</a>, <a href="doc/cvsaccess/index.php">如何访问</a>)</li>
 </ul>
 <p>
 请注意：要使用其中的一些资源（比如，汇报一个软件缺陷或请求一个新的 Fink 软件包），你需要先登录进你的 SourceForge 帐号。如果你现在还没有帐号，你可以在 <a href="http://sourceforge.net/">SourceForge 网站</a>免费注册一个。
