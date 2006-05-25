@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/05/19 19:19:27 $';
+$cvs_date = '$Date: 2006/05/25 16:46:40 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -73,33 +73,31 @@ if (!$rs) {
  print '<th width="100" align="center">unstable</th>';
  print "</tr>\n";
 
- $rel_row=0;
  foreach( $releases as $os=>$dists ) {
-   $rel_row++;
-   if($rel_row==1) {
+   if($dists["pri"]==1) {
      $row_color='bgcolor="#e3caff"';
-   } else if ($rel_row==2) {
+   } else if ($dists["pri"]==2) {
      $row_color='bgcolor="#f1e2ff"';
    } else {
      $row_color='bgcolor="#f6ecff"';
    }
 
-   // massage if only single dist listed as a simple string
-   if(!is_array($dists[0]))
-     $dists[0]=array($dists[0]);
 
    // used in System and CVS/rsync entries to leave enough space for bindists
-   if (sizeof($dists[0])>1)
-     $bindist_rowspan='rowspan='.sizeof($dists[0]);
-   else
-     $bindist_rowspan='';
+   $bindist_rowspan='';
+   if (is_array($dists["bin"])) {
+       if (sizeof($dists["bin"])>1)
+         $bindist_rowspan='rowspan='.sizeof($dists["bin"]);
+       $bindists_lbl=array_keys($dists["bin"]);
+       $bindists_sql=array_values($dists["bin"]);
+   } else {
+     $bindists_lbl=array();
+     $bindists_sql=array();
+   }
 
    // System
    print "<tr $row_color>";
    avail_td($os,$bindist_rowspan);
-
-   $bindists_lbl=array_keys($dists[0]);
-   $bindists_sql=array_values($dists[0]);
 
    // first bindist
     if(strlen($bindists_sql[0])) {
@@ -110,17 +108,17 @@ if (!$rs) {
     }
 
     // CVS/rsync dist
-    if(strlen($dists[1]) || strlen($dists[2])) {
-      $vers_st = $rmap[$dists[1]];
-      $vers_un = $rmap[$dists[2]];
+    if(strlen($dists["sta"]) || strlen($dists["uns"])) {
+      $vers_st = $rmap[$dists["sta"]];
+      $vers_un = $rmap[$dists["uns"]];
       avail_td(
 	strlen($vers_st)
-	  ? '<!-- a href="../packagedetails.php?tree='.$dists[1]."&pkg=$package&version=$vers_st\" -->".$vers_st #."</a>"
+	  ? '<!-- a href="../packagedetails.php?tree='.$dists["sta"]."&pkg=$package&version=$vers_st\" -->".$vers_st #."</a>"
 	  : '<i>not present</i>'
 	, $bindist_rowspan);
       avail_td(
 	strlen($vers_un)
-	  ? '<!-- a href="../packagedetails.php?tree='.$dists[2]."&pkg=$package&version=$vers_un\" -->".$vers_un #."</a>"
+	  ? '<!-- a href="../packagedetails.php?tree='.$dists["uns"]."&pkg=$package&version=$vers_un\" -->".$vers_un #."</a>"
 	  : '<i>not present</i>'
 	, $bindist_rowspan);
     } else {
