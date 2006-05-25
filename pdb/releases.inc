@@ -19,12 +19,12 @@
 # $os_distro_data must be an array, but each entry in it is optional
 
 $releases = array(
-	"10.4 i386" => array(
+	"10.4<br>(intel)" => array(
 			"sta"=>"current-10.4-stable-i386",
 			"uns"=>"current-10.4-unstable-i386",
 			"pri"=>1,
 			),
-	"10.4 powerpc" => array(
+	"10.4<br>(powerpc)" => array(
 			"sta"=>"current-10.4-stable-powerpc",
 			"uns"=>"current-10.4-unstable-powerpc",
 			"pri"=>2,
