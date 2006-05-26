@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/07 08:27:26';
+$cvs_date = 'Date: 2006/05/26 12:32:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux">';
 
 
@@ -33,12 +33,10 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 </p><p> <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code>
 </p><p>par les méthodes habituelles : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p></div>
 </a>
-
 <a name="cctools">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.4: Lors de l'installation de KDE, le message suivant apparaît : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p></div>
 </a>
-
 <a name="libiconv-gettext">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.5: Impossible de mettre à jour libiconv <code>libiconv</code>.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez apparaître des messages d'erreur semblables au suivant :</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>vous pouvez résoudre le problème en exécutant :</p><pre>fink remove gettext-dev

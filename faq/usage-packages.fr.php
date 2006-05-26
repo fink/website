@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/07 08:27:26';
+$cvs_date = 'Date: 2006/05/26 12:32:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
@@ -30,7 +30,6 @@ include_once "header.fr.inc";
 <div class="question"><p><b><? echo FINK_Q ; ?>9.4: Au démarrage de XDarwin, le message suivant apparaît : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p><p>Sous Jaguar, il arrive parfois que tous les paquets <code>xfree86</code> soient compilés, mais que seuls les paquets <code>xfree86-base</code> et <code>xfree86-base-shlibs</code> soient installés. Vérifiez que les paquets <code>xfree86-rootless</code> et <code>xfree86-rootless-shlibs</code> sont installés. Si ce n'est pas le cas, lancez <code>fink install xfree86-rootless</code>. Cela devrait résoudre le problème.</p><p>Si ces paquets sont installés, essayez <code>fink rebuild xfree86-rootless</code>. Si cela ne marche pas, vérifiez que <code>/usr/bin/X11R6</code> est dans votre PATH.</p></div>
 </a>
-
 <a name="xterm-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.5: Le lancement de xterm échoue avec le message suivant : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cela se produit lorsque l'on utilise une version 10.1 de XFree86 sur 10.2. Vous devez passer à une version 10.2.</p><p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source,  <code>fink selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p><p>Si vous avez installé XFree86 par d'autres moyens, vous trouverez les rustines qui vous permettront de faire la mise à jour sur le <a href="http://mrcla.com/XonX">site web de XonX</a>.</p></div>
