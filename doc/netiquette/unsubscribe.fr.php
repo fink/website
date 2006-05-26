@@ -1,13 +1,13 @@
 <?
 $title = "Etiquette net - Résiliation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:31:55';
+$cvs_date = 'Date: 2006/05/26 13:14:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="prev" href="reply.php?phpLang=fr" title="Réponses aux messages">';
 
 
 include_once "header.fr.inc";
 ?>
-<h1>Etiquette net - 4. Résiliation d'abonnemnent aux listes de diffusion</h1>
+<h1>Etiquette net - 4. Résiliation d'abonnement aux listes de diffusion</h1>
     
     
     <h2><a name="unsubscribing">4.1 Résiliation d'abonnement</a></h2>

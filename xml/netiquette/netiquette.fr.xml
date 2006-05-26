@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Comment poster sur une liste de diffusion de Fink</title>
   <shorttitle>Etiquette net</shorttitle>
-  <cvsid>$Id: netiquette.fr.xml,v 1.1 2004/03/31 00:31:55 michga Exp $</cvsid>
+  <cvsid>$Id: netiquette.fr.xml,v 1.2 2006/05/26 13:14:22 michga Exp $</cvsid>
   <preface>
     <p><em>Ce document est en cours de rédaction.</em></p>
     <p>Ce document est un guide pour les nouveaux abonnés aux listes de diffusion de Fink. L'idée est de leur apprendre comment écrire des messages adéquats, de façon à susciter des réponses appropriées. </p>
@@ -103,7 +103,7 @@ gcc &lt;drapeaux, fichiers, etc...&gt;
     </section>
   </chapter>
   <chapter filename="unsubscribe">
-    <title>Résiliation d'abonnemnent aux listes de diffusion</title>
+    <title>Résiliation d'abonnement aux listes de diffusion</title>
     <shorttitle>Résiliation</shorttitle>
     <section name="unsubscribing">
       <title>Résiliation d'abonnement</title>

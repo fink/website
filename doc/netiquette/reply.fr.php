@@ -1,8 +1,8 @@
 <?
 $title = "Etiquette net - Réponses";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2004/03/31 00:31:55';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="unsubscribe.php?phpLang=fr" title="Résiliation d\'abonnemnent aux listes de diffusion"><link rel="prev" href="first-post.php?phpLang=fr" title="Premier message">';
+$cvs_date = 'Date: 2006/05/26 13:14:22';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="unsubscribe.php?phpLang=fr" title="Résiliation d\'abonnement aux listes de diffusion"><link rel="prev" href="first-post.php?phpLang=fr" title="Premier message">';
 
 
 include_once "header.fr.inc";
@@ -29,7 +29,7 @@ include_once "header.fr.inc";
       <p>Néanmoins, si vous le faites, pensez à supprimer tout autre destinataire (postes croisés ou autres personnes ayant répondu au fil de discussion).</p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="unsubscribe.php?phpLang=fr">4. Résiliation d'abonnemnent aux listes de diffusion</a></p>
+<a href="unsubscribe.php?phpLang=fr">4. Résiliation d'abonnement aux listes de diffusion</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
