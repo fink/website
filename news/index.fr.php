@@ -1,12 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/03/25 05:30:30';
+$cvs_date = 'Date: 2006/05/26 14:12:36';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="10/05/2006%20Probl%C3%A8mes%20avec%20CVS"><span class="news-date">10/05/2006: </span><span class="news-headline">Problèmes avec CVS</span></a><?php gray_line(); ?>
+<p>Comme la plupart des utilisateurs de Fink ont pu s'en rendre compte, l'accès au serveur CVS de Fink sur sourceforge.net ne fonctionne pas correctement depuis le 30 mars. L'accès CVS anonyme n'a pas été mis à jour depuis cette date et, depuis quelques jours, les développeurs ne peuvent, eux non plus, mettre à jour CVS par quelque moyen que ce soit.</p>
+<p>Il semblerait que les intentions de l'équipe de sourceforge (brièvement expliquées dans la <a href="http://sourceforge.net/docman/display_doc.php%20docid=2352&amp;group_id=1">page de statut de leur site</a>) soient de ne pas réactiver les anciens serveurs CVS dans leur forme antérieure. Cela va conduire à des perturbations pour les utilisateurs de Fink, mais, à l'heure actuelle, nous ne savons pas quelle forme elles vont prendre.</p>
+<p>Nous recommandons aux utilisateurs de Fink de passer à la méthode de mise à jour via 'rsync' (en exécutant la commande 'fink selfupdate-rsync'). Cela permettra au moins d'avoir une installation de Fink mise à jour jusqu'au 7 mai. Si  une mise à jour complète via CVS s'avère impossible par la suite avec la commande normale fink selfupdate, nous indiquerons ici comment effectuer la mise à jour lorsqu'elle sera disponible.</p>
+<p>Mise à jour du 24/05/2006 : CVS fonctionne de nouveau. Les utilisateurs de la méthode de mise à jour via rsync obtiendront automatiquement les dernières mises à jour. Ceux qui utilisent la méthode de mise à jour via cvs et ne peuvent (ou ne veulent) passer à la méthode rsync doivent télécharger le fichier <code>fink-mirrors-0.24.15.2.tar.gz</code> situé sur la <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">page de téléchargement du fichier sur Sourceforge</a>, décompresser ce fichier et exécuter la commande <code>./inject.pl</code> à partir du répertoire <code>fink-mirrors-0.24.15.2</code>. Ensuite, la commande <code>fink selfupdate</code> devrait fonctionner comme auparavant.</p>
 <a name="03/03/2006%20Probl%C3%A8me%20engendr%C3%A9%20par%20la%20derni%C3%A8re%20mise%20%C3%A0%20jour%20de%20s%C3%A9curit%C3%A9%20d'Apple%202006-001"><span class="news-date">03/03/2006: </span><span class="news-headline">Problème engendré par la dernière mise à jour de sécurité d'Apple 2006-001</span></a><?php gray_line(); ?>
 <p>On a rapporté à l'équipe Fink des problèmes avec le programme <code>rsync</code>, programme qui a été modifié par la dernière mise à jour de sécurité d'Apple 2006-001. Certains utilisateurs ne peuvent plus exécuter <code>fink selfupdate</code> après la mise à jour de sécurité. La cause semble être un problème avec l'option <code>--delete</code> de <code>rsync</code>.</p>
 <p>L'une des solutions est d'exécuter <code>fink install rsync</code> pour utiliser le paquet rsync de fink au lieu du programme d'Apple. Pour les utilisateurs qui ont besoin des fonctionnalités spécifiques du programme d'Apple (telle la gestion des attributs étendus), la solution est d'exécuter <code>fink selfupdate-cvs</code> pour passer à la mise à jour via cvs.</p>

@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/05/25 16:20:33 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2006/05/26 14:16:10 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -16,6 +16,7 @@ include dirname(__FILE__) . "/header.inc";
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 <h1>Dernières nouvelles</h1>
+
 <?
 // Include news items
 include dirname(__FILE__) . "/news/news.fr.inc";
