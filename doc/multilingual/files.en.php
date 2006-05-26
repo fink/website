@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/02 07:10:19';
+$cvs_date = 'Date: 2006/05/26 13:04:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -85,16 +85,16 @@ include_once "header.en.inc";
         <li>Move to that directory: 
         <pre>cd ~/Documents/Fink-i18n</pre></li>
         <li><b>For non-leader team members (or leaders awaiting access):
-        </b>Login to cvs.sourceforge.net anonymously: <ol>
+        </b>Login to fink.cvs.sourceforge.net anonymously: <ol>
             <li>
-            <pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login</pre></li>
+            <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login</pre></li>
             <li>Push the enter key (no password, anonymous as default)</li>
             <li>Check out the xml module: 
-            <pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co xml</pre></li>
+            <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre></li>
           </ol><b>Team leaders: </b>Check out using your username:<ol>
             <li>You don't have to do the login step above, but can go right
             to
-            <pre>cvs -d:ext:yourusername@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+            <pre>cvs -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
             where <b>yourusername</b> is of course your
             SourceForge username.  You may get a message about the DSA key of the server
             being unknown. Go ahead and answer yes.</li>
@@ -133,7 +133,7 @@ include_once "header.en.inc";
         e.g: 
         <pre>cd ~/Documents/Fink-i18n/xml</pre></li>
         <li>Update it, e.g:
-        <pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
+        <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
         for team members without commit access,
         or
         <pre>cvs update -dP</pre>
@@ -314,7 +314,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             <li>Move to that directory in a terminal window: 
             <pre>cd ~/Documents/Fink-i18n</pre></li>
             <li>Do the checkout of the xml tree:
-            <pre>cvs -d:ext:yourusername@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+            <pre>cvs -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
             where <b>yourusername</b> is of course your
             SourceForge username. Enter your passphrase where prompted.</li>
             <li>Copy the files that you were working on from your old tree to

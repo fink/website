@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/02 07:10:19';
+$cvs_date = 'Date: 2006/05/26 13:04:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -61,13 +61,13 @@ au fichier <code>.cshrc</code>. <p>
 <pre>cd ~/Documents/Fink-i18n</pre></li>
 <li><b>Pour les membres d'une équipe (ou les chefs d'équipe n'ayant pas encore d'accès commit) :
 </b>Connectez-vous anonymement à cvs.sourceforge.net : <ol>
-<li><pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink login</pre></li>
+<li><pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login</pre></li>
 <li>Appuyez sur la touche retour chariot (pas de mot de passe, anonyme par défaut)</li>
 <li>Faites un check out du module xml : 
-<pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink co xml</pre></li>
+<pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre></li>
 </ol><b>Chefs d'équipe : </b>faites un check out en utilisant votre nom d'utilisateur :<ol>
 <li>Vous n'avez pas à vous connecter, exécutez directement :
-<pre>cvs -d:ext:votrenomutilisateur@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+<pre>cvs -d:ext:votrenomutilisateur@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
 où <b>votrenomutilisateur</b> est, bien sûr, votre nom d'utilisateur sur SourceForge. Il se peut que vous ayez un message vous disant que la clé DSA du serveur est inconnue. Répondez "yes" à ce message. </li>
 <li>Dans ce cas, vous devez saisir votre phrase d'authentification SourceForge à l'invite.</li>
 </ol></li>
@@ -77,7 +77,7 @@ où <b>votrenomutilisateur</b> est, bien sûr, votre nom d'utilisateur sur Sourc
 
 <p>En tant que traducteur, vous devrez distinguer deux types de fichiers :</p>
 <ol>
-<li><b>Fichiers statiques (fichiers PHP seuls)</b> <p>Ce sont des documents dont l'organisation (c'est-à-dire la numérotation des articles) a peu de chances de varier d'un jour sur l'autre. Dans ce cas, le document est représenté par un fichier PHP, que vous devez traduire.</p></li>
+<li><b>Fichiers statiques (fichiers PHP seuls)</b> <p>Ce sont des documents dont l'organisation (c'est-à-dire la numérotation des articles) a peu de chances de varier d'un jour à l'autre. Dans ce cas, le document est représenté par un fichier PHP, que vous devez traduire.</p></li>
 <li><b>Fichiers dynamiques (fichiers XML générant des fichiers PHP et HTML)</b> <p>Ces documents (par exemple les QFP) sont mis à jour et restructurés plus souvent, il faut donc pouvoir les réorganiser dynamiquement. Ils ont pour base un fichier XML à partir duquel sont créés des fichiers PHP et HTML au moyen d'un script. En tant que traducteur, vous devez traduire le fichier XML.</p></li>
 </ol>
 <p>De plus, vous devrez traduire ou modifier d'autres fichiers, tels les Makefile, les fichiers de type nac.xx.inc et constants.xx.inc. En leur absence, soit les pages n'apparaîtront sur le site web, soit elles n'apparaîtront pas correctement.</p>
@@ -90,7 +90,7 @@ où <b>votrenomutilisateur</b> est, bien sûr, votre nom d'utilisateur sur Sourc
  <li>Déplacez-vous dans le répertoire qui contient les fichiers récupérés, par exemple :
 <pre>cd ~/Documents/Fink-i18n/xml</pre></li>
 <li>Mettez-les à jour :
-<pre>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
+<pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
 pour les membres d'équipe sans accès commit, ou :
 <pre>cvs update -dP</pre>
 pour les chefs d'équipe.</li>
@@ -240,7 +240,7 @@ SSH Keys for Shell/CVS"</li>
 <li>Exécutez la commande suivante dans une fenêtre de terminal de façon à vous déplacer dans le répertoire où réside votre arbre : 
 <pre>cd ~/Documents/Fink-i18n</pre></li>
 <li>Faites un check out de l'arbre xml :
-<pre>cvs -d:ext:votrenomutilisateur@cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+<pre>cvs -d:ext:votrenomutilisateur@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
 où <b>votrenomutilisateur</b> est, bien entendu, votre nom d'utilisateur sur SourceForge. Saisissez la phrase d'authentification à l'invite.</li>
 <li>Copiez dans la nouvelle arborescence les fichiers sur lesquels vous aviez travaillé antérieurement, et qui résident dans la copie que vous venez de faire. Vous pouvez utiliser le Finder pour cela, faites cependant très attention de copier les fichiers exactement là où ils se trouvaient dans l'ancienne arborescence.</li>
 </ol></li>
