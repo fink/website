@@ -1,7 +1,7 @@
 <?
 $title = "Notions complexes - Serveur de distribution binaire";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/03/02 06:32:51';
+$cvs_date = 'Date: 2006/05/26 10:24:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Notions complexes Contents"><link rel="prev" href="index.php?phpLang=fr" title="Notions complexes Contents">';
 
 
@@ -21,7 +21,7 @@ include_once "header.fr.inc";
 <ol>
 <li>Installez Fink dans le répertoire <code>/sw</code> (chemin par défaut, utilisez un lien symbolique si nécessaire).</li>
 <li>Construisez les paquets comme d'habitude. Il n'est pas nécessaire de les installer.</li>
-<li><p>Exécutez <code>fink scanpackages</code> chaque fois que le jeu de paquets construits change. Fink génèrera alors des indexs apt pour tous les arbres activés.</p>
+<li><p>Exécutez <code>fink scanpackages</code> chaque fois que le jeu de paquets construits change. Fink générera alors des index apt pour tous les arbres activés.</p>
 <p>Au lieu de la commande précédente, vous pouvez exécuter <code>fink cleanup</code>. Les paquets sources et binaires obsolètes seront alors supprimés. La commande <code>scanpackages</code> est appelée automatiquement à la fin du processus de nettoyage.</p></li>
 <li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <code>/sw/fink</code> en ajoutant les lignes suivantes au fichier <code>/etc/httpd/httpd.conf</code> :
 <pre>
