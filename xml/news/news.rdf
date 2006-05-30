@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-05-26T16:13:03+02:00</dc:date>
+    <dc:date>2006-05-30T16:38:36-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
       <title>CVS Troubles</title>
@@ -126,7 +126,8 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 
       
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.14.tar.gz
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
+fink-0.24.16.tar.gz (or a later version, if it's available)
 from the
 Sourceforge file release page for Fink, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
@@ -146,7 +147,8 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 
       
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file fink-0.24.14.tar.gz
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
+fink-0.24.16.tar.gz (or a later version, if it's available)
 from the
 Sourceforge file release page for Fink, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
