@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
-<news lang="de">
-<cvsid>$Id: news.de.xml,v 1.17 2006/03/16 07:47:29 babayoshihiko Exp $</cvsid>
 
+<news lang="de">
+<cvsid>$Id: news.de.xml,v 1.18 2006/06/02 08:00:33 babayoshihiko Exp $</cvsid>
+  <newsitem>
+    <date>2006-05-10</date>
+    <headline>CVS Troubles</headline>
+    <body>
+      <p>
+As many Fink users are aware, the Fink CVS repository at sourceforge.net
+has not been fully functional since March 30.  The anonymous CVS access
+has not been updated since then, and as of several days ago, the developers
+are also unable to update CVS in any form.
+</p><p>
+As we understand the current plans of sourceforge's staff (outlined
+briefly on their <link 
+url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</link>), the old CVS servers will never be brought back in
+their current form.  This is likely to mean disruption for fink users,
+but at present, we cannot say what form this disruption will take.
+</p><p>
+Our current advice to fink users is to switch to the 'rsync' method of
+updating (by running the command 'fink selfupdate-rsync').  This will at
+least give you a fink installation which is current up through May 7.
+If a full update to the new CVS situation turns out to be impossible
+via fink's normal selfupdate command, we will post instructions here
+on how to update when they become available.
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file <code>fink-mirrors-0.24.15.2.tar.gz</code> from <link
+url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</link>, expand the file, and run the command
+<code>./inject.pl</code> from within the <code>fink-mirrors-0.24.15.2</code> directory.  After this has been done, the <code>fink selfupdate</code> command
+should again work normally.
+</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2006-03-03</date>
     <headline>Problem with Apple's latest Security Update</headline>
