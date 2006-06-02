@@ -1,4 +1,33 @@
-<a name="2006-03-03%20Apple%20%E3%81%AE%E6%9C%80%E6%96%B0%E3%81%AE%20Security%20Update%E3%80%80%E3%81%AB%E4%BB%98%E9%9A%8F%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C"><span class="news-date">2006-03-03: </span><span class="news-headline">Apple の最新の Security Update　に付随する問題</span></a><?php gray_line(); ?>
+<a name="2006-05-10%20CVS%20%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS トラブル</span></a><?php gray_line(); ?>
+      <p>
+Fink ユーザの多くが気づいているように、sourceforge.net の Fink CVS レポジトリは3月30日より、完全には機能していませんでした。
+anonymous CVS アクセスは、この時より update ができていません。
+数日前より、開発者もどのような形であれ CVS update ができませんでした。
+</p><p>
+sourceforge のスタッフによる現在の計画を理解する限り 
+(<a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">サイト状態ページ</a>を参照)、
+古い CVS サーバは、現在の形では戻ってこないようです。
+これにより、Fink ユーザの分断が予想されますが、どのような形で分断されるかは今の段階では述べることができません。
+</p><p>
+Fink ユーザへの現在のアドバイスとしては、更新方法を 'rsync' に変更することです
+(コマンド 'fink selfupdate-rsync' を実行します)。
+これにより、５月７日時点の fink インストールにまで上げることができます。
+もし、fink の通常の selfupdate コマンドで、新しい CVS へ完全に更新することが不可能であれば、
+更新手順が決まり次第、ここでお知らせいたします。
+</p>
+<p>Update 5/24/06: CVS は再び機能しています。
+rsync による selfupdate を行っているユーザは、最新の情報を得ることができます。
+cvs を用いている場合で、 rsync にスイッチできない (またはしたくない) 場合、
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>
+から
+<code>fink-mirrors-0.24.15.2.tar.gz</code>
+というファイルをダウンロードし、解凍し、
+<code>fink-mirrors-0.24.15.2</code> ディレクトリ内で
+<code>./inject.pl</code> を実行します。
+この後、 <code>fink selfupdate</code> コマンドが通常通り機能するはずです。
+</p>
+    <a name="2006-03-03%20Apple%20%E3%81%AE%E6%9C%80%E6%96%B0%E3%81%AE%20Security%20Update%E3%80%80%E3%81%AB%E4%BB%98%E9%9A%8F%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C"><span class="news-date">2006-03-03: </span><span class="news-headline">Apple の最新の Security Update　に付随する問題</span></a><?php gray_line(); ?>
       <p>
 Fink チームは、 <code>rsync</code> を実行した際の問題についての報告を受けました。
 このプログラムは Apple の Security Update 2006-001 にて更新されました: 
@@ -33,21 +62,5 @@ bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し�
 最後に確認した時点では、およそ1750のパッケージが "stable" ツリーにありましたが、
 およそ 150 はビルドできませんでした。
 真の意味で stable となった時には、ここで再度アナウンスされます。
-</p>
-<a name="2006-01-10%20Fink%20%E3%81%8C%20XCode%202.2%20%E3%81%AB%E5%AF%BE%E5%BF%9C%20(Intel%20%E3%81%AF%E6%9C%AA%E5%AF%BE%E5%BF%9C)."><span class="news-date">2006-01-10: </span><span class="news-headline">Fink が XCode 2.2 に対応 (Intel は未対応).</span></a><?php gray_line(); ?>
-<p>
-Fink は XCode 2.2 への準備ができました。例外は openoffice.org パッケージです
-(10.4 ツリーへ移行時には機能すると予定されています）。
-ユーザーは、都合のいいときに XCode 2.2 へアップグレードしてください。
-10.4 ツリーがリリースされるさいには、 XCode 2.2 が必要です。
-</p>
-<p>
-他方、本日の Apple の発表にも関わらず、Fink はまだ Intel プロセッサに対応していません。
-Fink チームは、数週間以内に Intel 対応版の fink をリリースできるものを考えております。
-Fink チームとしては、新しい iMac に Fink をインストールせず、対応バージョンがリリースされるまで待つようお願い申し上げます。
-</p>
-<p>
-Fink パッケージメンテナの方は、新しい <code>Architecture</code> フィールドに注意してください。
-パッケージ化のマニュアルに説明されています。
 </p>
 

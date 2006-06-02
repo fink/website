@@ -1,13 +1,42 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/03/19 10:37:54';
+$cvs_date = 'Date: 2006/06/02 08:00:33';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-03-03%20Apple%20%E3%81%AE%E6%9C%80%E6%96%B0%E3%81%AE%20Security%20Update%E3%80%80%E3%81%AB%E4%BB%98%E9%9A%8F%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C"><span class="news-date">2006-03-03: </span><span class="news-headline">Apple の最新の Security Update　に付随する問題</span></a><?php gray_line(); ?>
+<a name="2006-05-10%20CVS%20%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS トラブル</span></a><?php gray_line(); ?>
+      <p>
+Fink ユーザの多くが気づいているように、sourceforge.net の Fink CVS レポジトリは3月30日より、完全には機能していませんでした。
+anonymous CVS アクセスは、この時より update ができていません。
+数日前より、開発者もどのような形であれ CVS update ができませんでした。
+</p><p>
+sourceforge のスタッフによる現在の計画を理解する限り 
+(<a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">サイト状態ページ</a>を参照)、
+古い CVS サーバは、現在の形では戻ってこないようです。
+これにより、Fink ユーザの分断が予想されますが、どのような形で分断されるかは今の段階では述べることができません。
+</p><p>
+Fink ユーザへの現在のアドバイスとしては、更新方法を 'rsync' に変更することです
+(コマンド 'fink selfupdate-rsync' を実行します)。
+これにより、５月７日時点の fink インストールにまで上げることができます。
+もし、fink の通常の selfupdate コマンドで、新しい CVS へ完全に更新することが不可能であれば、
+更新手順が決まり次第、ここでお知らせいたします。
+</p>
+<p>Update 5/24/06: CVS は再び機能しています。
+rsync による selfupdate を行っているユーザは、最新の情報を得ることができます。
+cvs を用いている場合で、 rsync にスイッチできない (またはしたくない) 場合、
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>
+から
+<code>fink-mirrors-0.24.15.2.tar.gz</code>
+というファイルをダウンロードし、解凍し、
+<code>fink-mirrors-0.24.15.2</code> ディレクトリ内で
+<code>./inject.pl</code> を実行します。
+この後、 <code>fink selfupdate</code> コマンドが通常通り機能するはずです。
+</p>
+    <a name="2006-03-03%20Apple%20%E3%81%AE%E6%9C%80%E6%96%B0%E3%81%AE%20Security%20Update%E3%80%80%E3%81%AB%E4%BB%98%E9%9A%8F%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C"><span class="news-date">2006-03-03: </span><span class="news-headline">Apple の最新の Security Update　に付随する問題</span></a><?php gray_line(); ?>
       <p>
 Fink チームは、 <code>rsync</code> を実行した際の問題についての報告を受けました。
 このプログラムは Apple の Security Update 2006-001 にて更新されました: 

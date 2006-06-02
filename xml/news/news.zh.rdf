@@ -5,8 +5,71 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2006-05-30T16:38:38-04:00</dc:date>
+    <dc:date>2006-06-02T17:04:34+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
+      <title>CVS Troubles</title>
+      <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
+      <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</guid>
+      <description>
+      
+As many Fink users are aware, the Fink CVS repository at sourceforge.net
+has not been fully functional since March 30.  The anonymous CVS access
+has not been updated since then, and as of several days ago, the developers
+are also unable to update CVS in any form.
+
+As we understand the current plans of sourceforge's staff (outlined
+briefly on their site
+status page), the old CVS servers will never be brought back in
+their current form.  This is likely to mean disruption for fink users,
+but at present, we cannot say what form this disruption will take.
+
+Our current advice to fink users is to switch to the 'rsync' method of
+updating (by running the command 'fink selfupdate-rsync').  This will at
+least give you a fink installation which is current up through May 7.
+If a full update to the new CVS situation turns out to be impossible
+via fink's normal selfupdate command, we will post instructions here
+on how to update when they become available.
+
+Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file fink-mirrors-0.24.15.2.tar.gz from the
+Sourceforge file release page, expand the file, and run the command
+./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
+should again work normally.
+
+    </description>
+      <content:encoded>
+      
+As many Fink users are aware, the Fink CVS repository at sourceforge.net
+has not been fully functional since March 30.  The anonymous CVS access
+has not been updated since then, and as of several days ago, the developers
+are also unable to update CVS in any form.
+
+As we understand the current plans of sourceforge's staff (outlined
+briefly on their site
+status page), the old CVS servers will never be brought back in
+their current form.  This is likely to mean disruption for fink users,
+but at present, we cannot say what form this disruption will take.
+
+Our current advice to fink users is to switch to the 'rsync' method of
+updating (by running the command 'fink selfupdate-rsync').  This will at
+least give you a fink installation which is current up through May 7.
+If a full update to the new CVS situation turns out to be impossible
+via fink's normal selfupdate command, we will post instructions here
+on how to update when they become available.
+
+Update 5/24/06: CVS is now functioning again, and users using the rsync
+method of selfupdating are getting up-to-date content.  If you are using
+the cvs method, and can't (or don't wish to) switch to rsync, you should
+download the file fink-mirrors-0.24.15.2.tar.gz from the
+Sourceforge file release page, expand the file, and run the command
+./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
+should again work normally.
+
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
       <title>Problem with Apple's latest Security Update</title>
       <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</link>
@@ -706,33 +769,6 @@ You can do so by going to our mailing-lists page. The full announcement on the e
 mailing lists can be read here.
 
 </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK">
-      <title>Java 1.4.2 Update Removes Java SDK</title>
-      <link>http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK</link>
-      <guid>http://fink.sourceforge.net/news/#2004-02-02%20Java%201.4.2%20Update%20Removes%20Java%20SDK</guid>
-      <description>
-	
-If you previously had Java 1.4.1 and the Java SDK installed, the new
-Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
-but will remove the previous 1.4.1 Java runtime and
-SDK without upgrading the JDK.  To build Java packages in Fink
-you will need to go to
-connect.apple.com and download the Java 1.4.2 SDK (free
-registration required).
-	
-	</description>
-      <content:encoded>
-	
-If you previously had Java 1.4.1 and the Java SDK installed, the new
-Java 1.4.2 update from apple will upgrade the Java runtime to 1.4.2,
-but will remove the previous 1.4.1 Java runtime and
-SDK without upgrading the JDK.  To build Java packages in Fink
-you will need to go to
-connect.apple.com and download the Java 1.4.2 SDK (free
-registration required).
-	
-	</content:encoded>
     </item>
   </channel>
 </rss>
