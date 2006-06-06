@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-beginners";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2004/12/02 10:25:13 $';
+$cvs_date = '$Date: 2006/06/06 15:03:50 $';
 
 include "header.inc";
 ?>
@@ -77,11 +77,11 @@ digest?</td>
 </blockquote>
 
 <p>
-<form Method=POST ACTION="http://lists.sourceforge.net/lists/subscribe/fink-beginners">
+<form Method=POST ACTION="https://lists.sourceforge.net/lists/options/fink-beginners">
 To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:<p>
 <center> 
-<input name="info" type="TEXT" value="" size="30" >  
-<input name="UserOptions" type="SUBMIT" value="Edit Options" >
+<input name="email" type="TEXT" value="" size="30" >  
+<input name="UserOptions" type="SUBMIT" value="Unsubscribe or edit options" >
 </center>
 </form>
 
