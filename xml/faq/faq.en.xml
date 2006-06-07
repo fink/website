@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.64 2006/04/20 00:38:42 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.65 2006/06/07 21:45:48 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -127,8 +127,8 @@
         <p>What is your relation with Darwinports?</p>
       </question>
       <answer>
-        <p>Darwinports and Fink are complementary projects. There is some overlap between the two projects, and several people contribute to both the Fink and OpenDarwin projects. For example, Benjamin Reed is doing the KDE packages for both. Darwinports/OpenDarwin makes use of patches from Fink, and we have discussed collaboration on a new dependency engine.</p>
-        <p>OpenDarwin started from scratch to try a different approach to a packaging system. Read the statement on <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</link>
+        <p>Darwinports and Fink are complementary projects. There is some overlap between the two projects, and several people contribute to both the Fink and DarwinPorts projects. For example, Benjamin Reed is doing the KDE packages for both. Darwinports and Fink are free to make use of each other's patches, and we have discussed collaboration on a new dependency engine.</p>
+        <p>DarwinPorts started from scratch to try a different approach to a packaging system. Read the statement on <link url="http://darwinports.opendarwin.org/">the DarwinPorts homepage</link>
         for details.</p>
       </answer>
     </faqentry>
