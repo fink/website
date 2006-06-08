@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.55 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.56 2006/06/08 17:19:24 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -106,11 +106,11 @@
 </faqentry>
 <faqentry name="darwinports" >
 <question>
-<p>Quelles sont vos relations avec Darwinports ?</p>
+<p>Quelles sont vos relations avec DarwinPorts ?</p>
 </question>
 <answer>
-<p>Darwinports et Fink sont des projets complémentaires. Certaines parties se recouvrent et plusieurs personnes contribuent à la fois au projet Fink et au projet OpenDarwin. Benjamin Reed, par exemple, fait les paquets KDE pour les deux. Darwinports/OpenDarwin utilise des rustines de Fink, et nous envisageons une collaboration sur un nouveau moteur de dépendances.</p>
-<p>OpenDarwin est parti de rien pour tenter une nouvelle approche d'un système de construction de paquets. Lire le communiqué sur <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link> pour de plus amples informations.</p>
+<p>DarwinPorts et Fink sont des projets complémentaires. Certaines parties se recouvrent et plusieurs personnes contribuent aux deux projets. Benjamin Reed, par exemple, fait les paquets KDE pour les deux. DarwinPorts et Fink peuvent utiliser les rustines de l'un ou l'autre projet et nous envisageons une collaboration sur un nouveau moteur de dépendances.</p>
+<p>DarwinPorts est parti de rien pour tenter de créer un nouveau système d'empaquetage. Lire les objectifs du projet sur la page d'<link url="http://darwinports.opendarwin.org/fr/" >Accueil DarwinPorts</link>.</p>
 </answer>
 </faqentry>
 </chapter>
@@ -412,7 +412,7 @@ fink selfupdate-cvs</codeblock>
 <p>Lors de l'utilisation de Fink, ma machine se fige, entre en kernel panic ou bien plante. À l'aide !</p>
 </question>
 <answer>
-<p>De nombreuses personnes ont signalé sur la liste de diffusion <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</link> des problèmes (y compris des kernel panics ou des suspensions infinies lors de l'application d'une rustine) quand on utilise Fink pour compiler des paquets, alors qu'un anti-virus est installé. Il faut alors désactiver l'anti-virus avant d'utiliser Fink.</p>
+<p>À l'automne 2002, de nombreuses personnes ont signalé sur la liste de diffusion <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</link> des problèmes (y compris des kernel panics ou des suspensions infinies lors de l'application d'une rustine) quand on utilise Fink pour compiler des paquets, alors qu'un anti-virus est installé. Il faut alors désactiver l'anti-virus avant d'utiliser Fink.</p>
 </answer>
 </faqentry>
 <faqentry name="not-found">
