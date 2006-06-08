@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists - fink-commits";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/06/06 15:03:50 $';
+$cvs_date = '$Date: 2006/06/08 20:43:08 $';
 
 include "header.inc";
 ?>
@@ -56,7 +56,7 @@ Your email address will not be displayed on any public page.
 </p>
 
 <blockquote>
-<form method="POST" action="http://lists.sourceforge.net/lists/subscribe/fink-commits">
+<form method="POST" action="https://lists.sourceforge.net/lists/subscribe/fink-commits">
 <table border="0" cellpadding="2" cellspacing="5">
 
 <tr><td bgcolor="#dddddd">Your email address:</td>
