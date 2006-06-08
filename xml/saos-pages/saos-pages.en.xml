@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Sao's Fink and X11 Pages</title>
   <shorttitle>Sao's Pages</shorttitle>
-  <cvsid>$Id: saos-pages.en.xml,v 1.5 2004/07/23 10:43:25 sao_x Exp $</cvsid>
+  <cvsid>$Id: saos-pages.en.xml,v 1.6 2006/06/08 22:23:29 dmacks Exp $</cvsid>
   <preface>
     <p>Welcome to Sao's Fink and X11 pages. These have been adapted from <link url="http://homepage.mac.com/sao1/fink/">Sao's place</link> with his permission, as a service to the Fink community</p>
     <p>These pages are intended to supplement the other Fink documentation, and are written with the novice user in mind.</p>
@@ -7701,7 +7701,7 @@ If you open up port 6000, you should be fine.</p>
       <p>
             Then replace the original launch_matlab.sh with the following:</p>
       <codeblock>#!/bin/sh
-# $Revision: 1.5 $
+# $Revision: 1.6 $
 # Copyright 1997-2002 The MathWorks, Inc.
 #modification to work with Apple's X11
 # 1/7/03 John Iversen (iversen@nsi.edu)
@@ -7806,7 +7806,7 @@ exit</codeblock>
       <p>
             The script is available here:</p>
       <p>
-        <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">script</link>
+        <link url="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">script</link>
       </p>
       <p>
             The reponse from Apple has been: </p>
@@ -10366,7 +10366,7 @@ Hit http://192.168.42.7 stable/crypto Packages
       <p>
             You can download the script from here:</p>
       <p>
-        <link url="http://cvs.sourceforge.net/viewcvs.py/*checkout*/fink/experimental/costabel/bomcheck?rev=1.1">bomcheck</link>
+        <link url="http://fink.cvs.sourceforge.net/fink/experimental/costabel/bomcheck?rev=1.1">bomcheck</link>
       </p>
     </section>
     <section>

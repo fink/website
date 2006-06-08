@@ -1,5 +1,5 @@
 <?php
-/* $Id: main.php,v 1.1 2002/12/26 08:23:41 benh57 Exp $ */
+/* $Id: main.php,v 1.2 2006/06/08 22:27:22 dmacks Exp $ */
 // vim: expandtab sw=4 ts=4 sts=4:
 
 
@@ -579,7 +579,7 @@ echo "\n";
             <td>
                 <a href="http://www.phpMyAdmin.net/" target="_new"><?php echo $strHomepageOfficial; ?></a><br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<a href="ChangeLog" target="_new">ChangeLog</a>]
-                &nbsp;&nbsp;&nbsp;[<a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/phpmyadmin/phpMyAdmin/" target="_new">CVS</a>]
+                &nbsp;&nbsp;&nbsp;[<a href="http://fink.cvs.sourceforge.net/phpmyadmin/phpMyAdmin/" target="_new">CVS</a>]
                 &nbsp;&nbsp;&nbsp;[<a href="http://sourceforge.net/mail/?group_id=23067" target="_new">Lists</a>]
             </td>
         </tr>
