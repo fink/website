@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.67 2006/06/08 05:03:58 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.68 2006/06/08 16:08:33 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -104,22 +104,6 @@
       <answer>
         <p>
           <link url="http://www.apple.com/">Apple</link> is aware of Fink and has given us some support as part of their Open Source relations efforts. In the summer and fall of 2001, they provided us with pre-release seeds of new Mac OS X versions in the hope that Fink packages can be adapted in time for the release. Quote:  <em>"Hopefully it underscores the commitment that many suspect we're not willing to provide. We'll get better at the open source game over time."</em> Thanks Apple!</p>
-      </answer>
-    </faqentry>
-    <faqentry name="openosx">
-      <question>
-        <p>What is your relation with OpenOSX.com?</p>
-      </question>
-      <answer>
-        <p>They used Fink to build the first release of their GIMP CD and refuse to acknowledge that properly. Read the <link url="http://fink.sourceforge.net/pr/openosx.php">public statement</link> for details.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="forked">
-      <question>
-        <p>What is your relation with macosx.forked.net?</p>
-      </question>
-      <answer>
-        <p>That site redistributes some Fink packages as Installer.app packages, unchanged but with their own boilerplate that doesn't mention Fink. Read the <link url="http://fink.sourceforge.net/pr/forked.php">public statement</link> for details.</p>
       </answer>
     </faqentry>
     <faqentry name="darwinports">
