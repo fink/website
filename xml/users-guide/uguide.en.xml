@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.39 2006/03/02 03:03:39 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.40 2006/06/08 15:10:32 dmrrsn Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -614,7 +614,12 @@ More details about the <code>fink</code> tool are available in the chapter
 </p>
         </li>
             <li><p><em>10.3 stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.3.</p></li>
-            <li><p><em>10.4-transitional stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4.</p></li>
+            <li><p><em>10.4-transitional stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+who upgraded from 10.3.  Powerpc only.</p></li>
+            <li><p><em>10.4/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+with new fink installations.  Powerpc only.</p></li>
+            <li><p><em>10.4/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+on intel hardware.</p></li>
             <li>
           <p>
             <em>10.2-gcc3.3 unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</link> on how to install unstable packages.</p>
@@ -622,7 +627,12 @@ More details about the <code>fink</code> tool are available in the chapter
 </p>
         </li>
             <li><p><em>10.3 unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.3.</p></li>
-            <li><p><em>10.4-transitional unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.4.</p></li>
+            <li><p><em>10.4-transitional unstable:</em>  This is the latest version that can be installed from the unstable source tree for OS 10.4 users
+who upgraded from 10.3.  Powerpc only.</p></li>
+            <li><p><em>10.4/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+with new fink installations.  Powerpc only.</p></li>
+            <li><p><em>10.4/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on intel hardware.</p></li>
           </ol></li>
       </ul>
     </section>
