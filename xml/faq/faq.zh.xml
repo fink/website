@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.20 2005/09/17 01:40:27 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.21 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -137,28 +137,6 @@ Fink <em>不是</em> Debian GNU/Linux 发布版的一个移植。
 引文：
 <em>&quot;希望这会明确消除对于我们不愿意提供（帮助）的怀疑。我们将在开放源代码的游戏中逐步做得更好。&quot;</em>
 感谢你，苹果公司！
-</p>
-      </answer>
-    </faqentry>
-    <faqentry name="openosx" >
-      <question>
-        <p>你们和 OpenOSX.com 的关系是什么？</p>
-      </question>
-      <answer>
-        <p>
-他们使用 Fink 来建立了他们的 GIMP CD 的第一个发布版本，却拒绝以合适的方式来明确这一点。
-请阅读<link url="http://fink.sourceforge.net/pr/openosx.php" >《公开声明》</link>来了解细节信息。
-</p>
-      </answer>
-    </faqentry>
-    <faqentry name="forked" >
-      <question>
-        <p>你们和 macosx.forked.net 的关系是什么？</p>
-      </question>
-      <answer>
-        <p>
-这个网站把一些 Fink 软件包做成 Installer.app 安装包重新发布，没有改动但附上没有提到 Fink 的模版文件。
-请阅读 <link url="http://fink.sourceforge.net/pr/forked.php" >《公开声明》</link>来了解细节信息。
 </p>
       </answer>
     </faqentry>
@@ -697,18 +675,6 @@ fink selfupdate-cvs</codeblock>
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
   &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>这里做的事情是抽取 .deb 文件的内容，删掉除文件名以外的所有信息，并把文件名信息写回到 .list 文件中。</p>
-      </answer>
-    </faqentry>
-    <faqentry name="error-nineteen" >
-      <question>
-        <p>当我使用 Fink 二进制安装包的时候，我碰到一个很大的 &quot;19&quot; 在窗口中，而不能安装任何东西。</p>
-      </question>
-      <answer>
-        <p>显示数字 19 是因为你的 OS X 系统被本地化为别的语言。（这是苹果安装程序的一个问题，它这时没有显示英语的错误信息）。</p>
-        <p>对应于错误 19 的英语错误信息是：</p>
-        <p>&quot;/sw 目录已存在，请参阅自述文件已获取升级指南，或关于如何安装 Fink 到一个单独的宗卷。&quot;</p>
-        <p>如果你以前使用过 Fink，而又没有删除 <filename>/sw</filename> 目录，你会碰到这个错误信息。如果你以前没有安装过 Fink，最大的可能是你作为 .Mac 用户免费安装了 Virex 程序。
-正如 Fink 的网页所解释的一样，Virex 与 Fink 不兼容（因为 Virex 错误的设置方式）。</p>
       </answer>
     </faqentry>
     <faqentry name="dselect-garbage" >

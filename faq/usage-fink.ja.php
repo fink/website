@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/17 01:40:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -290,24 +290,15 @@ else if (substr($6, length($6), 1) == "/") \
 else { print substr($6, 2, length($6) - 1);}}' \
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
 </a>
-<a name="error-nineteen">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.20: Fink バイナリインストーラを使うと、ウィンドウ中に大きく "19" と出て、何もインストールできません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 19 という数字は、 OS X システムのシステム言語が英語以外になっている時に出ることがあります。
-(これは Apple のインストーラのバグで、英語でエラーメッセージを出さないだけです。)</p><p>この19番のメッセージは、英語ではこうなっています。</p><p>"A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume."</p><p>このエラーは、以前 Fink を使っていて、 <code>/sw</code> を削除していないと発生します。
-もし Fink をインストールしたことがなければ、 いちばん可能性が高いのは Virex プログラムをインストールしたためです。
-これは .Mac ユーザーには無料で、 Fink のウェブサイトにあるとおり Fink とは互換性がありません。
-(Virex 側の独自方式が原因です)
-</p></div>
-</a>
 <a name="dselect-garbage">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.21: <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
+<div class="question"><p><b><? echo FINK_Q ; ?>5.20: <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
 これはどうやったら使えますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>dselect</code> と <code>Terminal.app</code> の関係に問題があります。
 どうにかするには、 <code>dselect</code> を実行する前に次のコマンドを入力してください:
 </p><p>tcsh の場合:</p><pre>setenv TERM xterm-color</pre><p>before you run <code>dselect</code>.</p><p>bash の場合:</p><pre>export TERM=xterm-color</pre><p>このコマンドをログイン時に自動的に実行するには、起動ファイル (例 <code>.cshrc</code> | <code>.profile</code>) に記述して下さい。</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.22: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.21: なぜ Fink コマンドを実行すると "dyld: perl undefined symbols" エラーが大量にでるのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 古すぎる情報</p><p>このようなエラー:</p><pre>dyld: perl Undefined symbols: 
 _Perl_safefree
 _Perl_safemalloc
@@ -324,15 +315,15 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.23: Fink のバージョンをアップデートできないようです。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.22: Fink のバージョンをアップデートできないようです。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
 </a>
 <a name="spaces-in-directory">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.24: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.23: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 名前に空白が入っているディレクトリに Fink を入れるないよう薦めます。</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.25: バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし次のようであれば:</p><pre>
 Err file: local/main Packages
 File not found
@@ -372,13 +363,13 @@ powerpc_Packages) - stat (2 No such file or directory)</pre><p><code>fink scanpa
 これによって見つからなかったファイルを作成します。</p></div>
 </a>
 <a name="wrong-tree"> 
-<div class="question"><p><b><? echo FINK_Q ; ?>5.26: OS | Developer Tools を変えたら、 Fink が認識してくれません。</b></p></div> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.25: OS | Developer Tools を変えたら、 Fink が認識してくれません。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
 これは Fink の新規インストール時に実行するスクリプトを実行します:
 </p><pre>/sw/lib/fink/postinstall.pl</pre><p>これにより、 Fink は正しく場所を指示されます。</p></div> 
 </a> 
 <a name="seg-fault"> 
-<div class="question"><p><b><? echo FINK_Q ; ?>5.27: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.26: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 以下の形式のエラー:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>あるいは</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf - 
 gzip: stdout: Broken pipe 
@@ -388,7 +379,7 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>であれば、バイナリにおけるプリバインドのエラーです。修正するには:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre><p>と実行します。</p></div> 
 </a> 
 <a name="pathsetup-keeps-running"> 
-<div class="question"><p><b><? echo FINK_Q ; ?>5.28: ターミナルウィンドウを開くと、
+<div class="question"><p><b><? echo FINK_Q ; ?>5.27: ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
 というメッセージが出てログアウトします。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
@@ -400,7 +391,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 と書かれている部分を削除します。</p></div> 
 </a>
 <a name="ext-drive">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.29: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.28: 
 	メインパーティション以外に Fink をインストールしていますが、
 	ソースからの更新ができません。
 	<q>chowname</q> を含んだエラーが出ます。
@@ -422,7 +413,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 </p></div>
 </a>
 <a name="mirror-gnu">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.30: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.29: 
 	Fink がパッケージを更新しません。
 	'gnu' ミラーが見つからないと言っています。
 	</b></p></div>
@@ -433,7 +424,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 	</p><pre>fink install fink-mirrors</pre></div>
 </a>
 <a name="cant-move-fink">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.31: 
+<div class="question"><p><b><? echo FINK_Q ; ?>5.30: 
 	Fink を更新できません。
 	/sw/fink を移動できないからです。
 	</b></p></div>
@@ -444,7 +435,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
 </a>
     <a name="four-oh-three">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: 403 errors when I use <code>apt-get</code> または <code>dselect</code> または Fink Commander Binary メニューを使うと、403 エラーが出ます。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: 403 errors when I use <code>apt-get</code> または <code>dselect</code> または Fink Commander Binary メニューを使うと、403 エラーが出ます。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
           SourceForge のダウンロードサーバに問題があるようです。
           このため、バイナリディストリビューション用のレポジトリに移行しました。
@@ -483,7 +474,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
         </ul></div>
     </a>
     <a name="fc-cache">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.33: "No fonts found" というメッセージが出ます。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: "No fonts found" というメッセージが出ます。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 次のようであれば (OS 10.4 のみ):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -491,7 +482,7 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>次のように実行します:</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.34: インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33: インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
         	このメッセージは、 Fink インストーラを管理者権限のないユーザーで実行すると発生します。
         	ログイン時に権限のあるユーザーにログインするか、Finder でユーザーを切り替えてください。

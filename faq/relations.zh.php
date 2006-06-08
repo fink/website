@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 关系";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/17 01:40:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="mirrors.php?phpLang=zh" title="Fink 镜像"><link rel="prev" href="general.php?phpLang=zh" title="一般性问题">';
 
 
@@ -44,22 +44,8 @@ Fink <b>不是</b> Debian GNU/Linux 发布版的一个移植。
 感谢你，苹果公司！
 </p></div>
     </a>
-    <a name="openosx">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.4: 你们和 OpenOSX.com 的关系是什么？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-他们使用 Fink 来建立了他们的 GIMP CD 的第一个发布版本，却拒绝以合适的方式来明确这一点。
-请阅读<a href="http://fink.sourceforge.net/pr/openosx.php">《公开声明》</a>来了解细节信息。
-</p></div>
-    </a>
-    <a name="forked">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.5: 你们和 macosx.forked.net 的关系是什么？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-这个网站把一些 Fink 软件包做成 Installer.app 安装包重新发布，没有改动但附上没有提到 Fink 的模版文件。
-请阅读 <a href="http://fink.sourceforge.net/pr/forked.php">《公开声明》</a>来了解细节信息。
-</p></div>
-    </a>
     <a name="darwinports">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.6: 你们和 Darwinports 的关系是什么？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>2.4: 你们和 Darwinports 的关系是什么？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 			Darwinports 和 Fink 是互补性的项目。在两个项目中有一些重叠的地方，也有些人同时对 Fink 和 OpenDarwin 做出贡献。例如，Benjamin Reed 同时为两个项目做 KDE 软件包。Darwinports/OpenDarwin 利用 Fink 的补丁，我们也曾经讨论过合作建立一个新的依赖关系引擎。
 		</p><p>

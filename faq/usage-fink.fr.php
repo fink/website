@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 12:32:53';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -134,16 +134,12 @@ else if (substr($6, length($6), 1) == "/") \
 else { print substr($6, 2, length($6) - 1);}}' \ 
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Cela a pour effet d'extraire le contenu du fichier .deb, de tout supprimer sauf les noms de fichiers, puis de les écrire dans le fichier .list.</p></div>
 </a>
-<a name="error-nineteen">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.20: Lors de l'utilisation du paquet d'installation binaire de Fink, un gros "19" apparaît dans la fenêtre et plus il n'est plus possible d'installer quoi que ce soit.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Le numéro 19 apparaît car votre système OS X n'utilise pas l'anglais. (C'est un défaut dans l'installeur d'Apple qui l'empêche de vous afficher le message d'erreur en anglais.)</p><p>Le message d'erreur correspondant au numéro 19 est :</p><p>"Un répertoire racine /sw existe. Veuillez lire le fichier Read Me pour des instructions de mise à jour, ou pour savoir comment installer Fink sur un volume différent."</p><p>Il est possible que vous ayez cette erreur si vous avez déjà utilisé Fink auparavant et que vous n'ayez pas supprimé le répertoire <code>/sw</code>. Si vous n'avez jamais utilisé Fink, il est fort probable que vous ayez installé le logiciel Virex disponible gratuitement pour les possesseurs d'un compte .Mac. Comme expliqué sur le site web de Fink, Virex est incompatible avec Fink (à cause d'une erreur de configuration des développeurs de Virex).</p></div>
-</a>
 <a name="dselect-garbage">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.21: La commande <code>dselect</code> produit un tas de lignes incompréhensibles. Comment éviter cela ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.20: La commande <code>dselect</code> produit un tas de lignes incompréhensibles. Comment éviter cela ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>dselect</code> et <code>Terminal.app</code> communiquent assez mal. Pour résoudre ce problème, vous pouvez lancer cette commande :</p><p>Utilisateurs de tcsh :</p><pre>setenv TERM xterm-color</pre><p>Utilisateurs de bash :</p><pre>export TERM=xterm-color</pre><p>avant de lancer <code>dselect</code>. Vous pouvez mettre ceci dans votre fichier de démarrage (par exemple <code>.cshrc</code> ou <code>.profile</code>) pour que cela se fasse automatiquement.</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.22: Pourquoi des erreurs "dyld: perl undefined symbols" apparaissent à l'utilisation de commandes de Fink ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.21: Pourquoi des erreurs "dyld: perl undefined symbols" apparaissent à l'utilisation de commandes de Fink ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolète</p><p>Si vous voyez une erreur analogue à la suivante :</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -157,7 +153,7 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.23: Impossible de mettre à jour Fink.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.22: Impossible de mettre à jour Fink.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="http://fink.sourceforge.net/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p><ul>
 <li><b>10.3.x :</b> (distribution 0.7.1)
 <pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
@@ -176,11 +172,11 @@ fink selfupdate</pre></li>
 </ul><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="spaces-in-directory">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Est-il possible d'installer Fink sur un volume ou dans un répertoire contenant un espace dans le nom?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.23: Est-il possible d'installer Fink sur un volume ou dans un répertoire contenant un espace dans le nom?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Nous déconseillons de le faire. Le jeu n'en vaut vraiment pas la chandelle.</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.25: Lors de la mise à jour binaire, de nombreux messages "File not found" ou "Couldn't stat package source list file" apparaissent.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Lors de la mise à jour binaire, de nombreux messages "File not found" ou "Couldn't stat package source list file" apparaissent.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez ceci :</p><pre>
 Err file: local/main Packages
 File not found
@@ -220,11 +216,11 @@ powerpc_Packages) - stat (2 No such file or directory)
 </pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="wrong-tree">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.26: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.25: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Lorsque vous changez la distribution de Fink (dont la distribution source et la distribution binaire sont des sous-ensembles), il faut le préciser à Fink. Pour cela, vous pouvez lancer le script qui est généralement exécuté lors de la première installation de Fink :</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Fink pointera alors à l'endroit approprié.</p></div>
 </a>
 <a name="seg-fault">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.27: Des erreurs apparaissent lors de l'utilisation de <code>gzip</code> ou <code>dpkg-deb</code> inclus dans le paquet <code>fileutils</code>.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.26: Des erreurs apparaissent lors de l'utilisation de <code>gzip</code> ou <code>dpkg-deb</code> inclus dans le paquet <code>fileutils</code>.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Les erreurs de la forme :</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</pre><p>ou :</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe
@@ -234,11 +230,11 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ou des fautes de segmentation lors de l'utilisation d'utilitaires inclus dans <code>fileutils</code>, par exemple <code>ls</code> ou <code>mv</code>, sont généralement dues à une erreur de lien pré-encodé dans une librairie. Vous pouvez la corriger avec la commande suivante :</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
 </a>
 <a name="pathsetup-keeps-running">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.28: À l'ouverture d'une fenêtre de Terminal, le message "Your environment seems to be set up for Fink already" apparaît, puis le Terminal se déconnecte.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.27: À l'ouverture d'une fenêtre de Terminal, le message "Your environment seems to be set up for Fink already" apparaît, puis le Terminal se déconnecte.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce qui se passe ici est que, d'une façon ou d'une autre, l'application Terminal.app a été chargée d'exécuter <code>/sw/bin/pathsetup.command</code> à chaque connexion. Vous pouvez corriger cela en supprimant le fichier de préférences, <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>Si vous voulez conserver certaines préférences, vous pouvez modifier le fichier avec un éditeur de texte classique et supprimer la référence à <code>/sw/bin/pathsetup.command</code>.</p></div>
 </a>
 <a name="ext-drive">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.29: Quand Fink n'est pas installé sur la partition principale du disque, il est impossible de mettre à jour le paquet fink à partir du source. Des erreurs concernant <q>chowname</q> apparaissent.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.28: Quand Fink n'est pas installé sur la partition principale du disque, il est impossible de mettre à jour le paquet fink à partir du source. Des erreurs concernant <q>chowname</q> apparaissent.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si le message d'erreur ressemble à celui-ci :</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
@@ -253,15 +249,15 @@ Failed test (./Command/chowname.t at line 27)
 #     expected: 'nobody'</pre><p>vous devez exécuter <b>Lire les informations</b> (Cmd-I quand l'icône de la partition ou du disque est selectionnée) sur le disque (ou la partition) sur lequel (laquelle) Fink est installé et décocher l'option "Ignorer les autorisations de ce volume".</p></div>
 </a>
 <a name="mirror-gnu">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.30: Fink refuse de mettre à jour les paquets. Il semble ne pas trouver le miroir 'gnu'.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink refuse de mettre à jour les paquets. Il semble ne pas trouver le miroir 'gnu'.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si un message d'erreur se terminant par :</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>apparaît, il est plus que probable que vous deviez mettre à jour le paquet <code>fink-mirrors</code> via, par exemple :</p><pre>fink install fink-mirrors</pre></div>
 </a>
 <a name="cant-move-fink">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.31: Impossible de mettre à jour Fink, car le répertoire /sw/fink ne peut être déplacé.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.30: Impossible de mettre à jour Fink, car le répertoire /sw/fink ne peut être déplacé.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'erreur suivante :</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les :</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
 </a>  
 <a name="four-oh-three">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.32: Des erreurs de type 403 apparaissent lors de l'utilisation de <code>apt-get</code>, <code>dselect</code> ou du menu binaire de Fink Commander.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.31: Des erreurs de type 403 apparaissent lors de l'utilisation de <code>apt-get</code>, <code>dselect</code> ou du menu binaire de Fink Commander.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Les serveurs de téléchargement de SourceForge ne sont pas toujours disponibles, c'est pourquoi nous sommes en train de changer de serveur pour la distribution binaire.</p><ul>
 <li>Si vous avez installé les Outils de Développement (Developer Tools), installez la dernière version (&gt;= 0.24.4.1) du paquet <code>fink-mirrors</code>, puis réinstallez <code>fink</code>, soit via :
 <pre>fink reinstall fink</pre>
@@ -285,7 +281,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
 </ul></div>
 </a>
 <a name="fc-cache">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.33: Un message "No fonts found" apparaît.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.32: Un message "No fonts found" apparaît.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez le message suivant (signalé uniquement sous Mac OS X 10.4 jusqu'à présent) :</p><pre>
 No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
@@ -294,7 +290,7 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.
 </pre><p>corrigez l'erreur en exécutant :</p><pre>sudo fc-cache</pre></div></a>
 <a name="non-admin-installer">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.34: Impossible d'installer Fink à partir du paquet d'installation, un message "Ce volume ne gère pas les liens symboliques" apparaît.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.33: Impossible d'installer Fink à partir du paquet d'installation, un message "Ce volume ne gère pas les liens symboliques" apparaît.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p><p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <b>S.O.S.</b> et cliquez sur <b>Réparez les autorisations du disque</b>.</p></div></a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=fr">6. Problèmes de compilation généraux</a></p>

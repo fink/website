@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:18:00';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -365,23 +365,8 @@ include_once "header.ru.inc";
                     удалить все, кроме названий файлов, и внести их в файл
                     .list.</p></div>
         </a>
-        <a name="error-nineteen">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.19: При использовании пакета бинарного инсталлятора Fink в окне
-                    появляется большая цифра "19" и я не могу ничего инсталлировать.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Цифра 19 появляется потому, что система OS X локализована
-                    на языке, который не является английским. (Это ошибка в инсталляторе Apple,
-                    который даже не показывает сообщение об ошибке
-                    в связи с английским языком.)</p><p>Сообщение об ошибке в связи с английским языком, соответствующее цифре 19, гласит:</p><p>"Корневой каталог /sw существует. См. файл Read Me для получения
-                    инструкций об обновлении или информации об инсталляции Fink
-                    в отдельном томе."</p><p>Вы можете получить это сообщение, если использовали Fink раньше и не удалили
-                    <code>/sw</code>. Если вы не устанавливали
-                    Fink раньше, наиболее вероятная причина в том, что
-                    вы инсталлировали программу Virex, бесплатно предоставляемую пользователям .Mac.
-                    Как это объясняется на веб-странице Fink, Virex несовместима
-                    с Fink (т.к. создатели Virex допустили ошибки).</p></div>
-        </a>
         <a name="dselect-garbage">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.20: Я получил кучу мусора, когда выбирал пакеты в 
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Я получил кучу мусора, когда выбирал пакеты в 
                     <code>dselect</code>. Как теперь можно его использовать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Есть проблематичные вопросы между <code>dselect</code> и
                     <code>Terminal.app</code>. Решением может быть ввод
@@ -390,7 +375,7 @@ include_once "header.ru.inc";
                     <code>.profile</code>), чтобы всегда иметь возможность использовать.</p></div>
         </a>
         <a name="perl-undefined-symbol">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Почему я получаю кучу сообщений об ошибках "dyld: perl undefined symbols",
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.20: Почему я получаю кучу сообщений об ошибках "dyld: perl undefined symbols",
                     когда применяю команды Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> ПО устарело.</p><p>Если вы получаете сообщение об ошибке, подобное такому:</p><pre>dyld: perl Undefined symbols: _Perl_safefree
                     _Perl_safemalloc _Perl_saferealloc _Perl_sv_2pv
@@ -406,7 +391,7 @@ include_once "header.ru.inc";
                     storable-pm fink selfupdate-cvs</pre></div>
         </a>
         <a name="cant-upgrade">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Не получается обновить версию Fink.</b></p></div>
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Не получается обновить версию Fink.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если <code>fink selfupdate</code> и
                         <code>sudo apt-get update ; sudo apt-get
                     dist-upgrade</code> не делают обновление до новой версии Fink,
@@ -427,12 +412,12 @@ include_once "header.ru.inc";
                 </ul></div>
         </a>
         <a name="spaces-in-directory">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Можно ли разместить Fink в томе или каталоге с пробелом в его имени?</b></p></div>
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Можно ли разместить Fink в томе или каталоге с пробелом в его имени?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Мы не рекомендуем размещать ваше дерево каталогов Fink в
                     каталог с пробелами в его имени. Не стоит этого делать.</p></div>
         </a>
         <a name="packages-gz">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.24: При попытке бинарного обновления появляется много сообщений
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.23: При попытке бинарного обновления появляется много сообщений
                     со словами "File not found"</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы видите что-то вроде следующего: </p><pre>Err file: local/main Packages File not found Ign
                     file: local/main Release Err file: stable/main Packages File
@@ -461,7 +446,7 @@ include_once "header.ru.inc";
                     файлы.</p></div>
         </a>
         <a name="wrong-tree">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Я изменил OS | Developer Tools, но Fink не
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.24: Я изменил OS | Developer Tools, но Fink не
                     признает изменение.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> При изменении дистрибуции Fink (подмножествами которой являются исходные и
                     бинарные distros), Fink нуждается в получении информации о том,
@@ -469,7 +454,7 @@ include_once "header.ru.inc";
                     запускается при первоначальной инсталляции Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Выполнив это, вы укажете Fink правильное место.</p></div>
         </a>
         <a name="seg-fault">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
                     из пакета <code> fileutils </code>! Помогите!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ошибки типа:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf
                     - ### execution of gzip failed, exit code 139</pre><p>или</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar
@@ -484,7 +469,7 @@ include_once "header.ru.inc";
                     /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
         </a>
         <a name="pathsetup-keeps-running">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Когда я открываю окно Terminal, получаю сообщение "Your
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
                     и сеанс завершается.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Дело в том, что каким-то образом программе OSX Terminal поступило указание
@@ -494,7 +479,7 @@ include_once "header.ru.inc";
                     файл при помощи текстового редактора и убрать ссылку на <code>/sw/bin/pathsetup.command</code>.</p></div>
         </a>
         <a name="ext-drive">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
                     с упоминанием <q>chowname</q>.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если сообщение об ошибке выглядит так:</p><pre>This first test is designed to die, so please ignore
@@ -510,13 +495,13 @@ include_once "header.ru.inc";
                     где Fink инсталлирован, и отменить выбор "Ignore ownership".</p></div>
         </a>
         <a name="mirror-gnu">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
                     не может найти зеркало 'gnu'.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке, которое оканчивается на </p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>то наиболее вероятно вам надо обновить пакет
                     <code>fink-mirrors</code> , н-р через:</p><pre>fink install fink-mirrors</pre></div>
         </a>
         <a name="cant-move-fink">
-            <div class="question"><p><b><? echo FINK_Q ; ?>5.30: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
+            <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Эта ошибка:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>обычно обусловлена, хотя и утверждает иное, ошибками
                     разрешений в одном из временных каталогов, создаваемых
                     в процессе автообновления - <code>selfupdate</code>. Удалите</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>

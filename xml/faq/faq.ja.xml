@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.34 2005/09/17 01:40:27 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.35 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -149,24 +149,6 @@ Debian パッケージ管理ツール (dpkg, dselect, apt-get) を移植し、 .
 我々はオープンソースというゲームに強くなると思います。」
 </em>
 Apple ありがとう!</p>
-</answer>
-</faqentry>
-<faqentry name="openosx" >
-<question>
-<p>OpenOSX.com とは関係がありますか?</p>
-</question>
-<answer>
-<p>彼らは Fink を使って GIMP CD のリリースをビルドしましたが、そのことを正しく認めなかった経緯があります。
-<link url="http://fink.sourceforge.net/pr/openosx.php" >公式声明</link>に詳細があります。</p>
-</answer>
-</faqentry>
-<faqentry name="forked" >
-<question>
-<p>macosx.forked.net とは関係がありますか?</p>
-</question>
-<answer>
-<p>このサイトでは、いくつかの Fink パッケージをそのまま Installer.app パッケージとして再配布していますが、Fink については何も書かれていません。
-<link url="http://fink.sourceforge.net/pr/forked.php" >公式声明</link>に詳細があります。</p>
 </answer>
 </faqentry>
 <faqentry name="darwinports" >
@@ -741,22 +723,6 @@ else if (substr($6, length($6), 1) == &quot;/&quot;) \
 else { print substr($6, 2, length($6) - 1);}}' \
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
 <p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p>
-</answer>
-</faqentry>
-<faqentry name="error-nineteen" >
-<question>
-<p>Fink バイナリインストーラを使うと、ウィンドウ中に大きく &quot;19&quot; と出て、何もインストールできません。</p>
-</question>
-<answer>
-<p>19 という数字は、 OS X システムのシステム言語が英語以外になっている時に出ることがあります。
-(これは Apple のインストーラのバグで、英語でエラーメッセージを出さないだけです。)</p>
-<p>この19番のメッセージは、英語ではこうなっています。</p>
-<p>&quot;A root directory /sw exists. Please see the Read Me file for update instructions, or for information on installing Fink on a separate volume.&quot;</p>
-<p>このエラーは、以前 Fink を使っていて、 <filename>/sw</filename> を削除していないと発生します。
-もし Fink をインストールしたことがなければ、 いちばん可能性が高いのは Virex プログラムをインストールしたためです。
-これは .Mac ユーザーには無料で、 Fink のウェブサイトにあるとおり Fink とは互換性がありません。
-(Virex 側の独自方式が原因です)
-</p>
 </answer>
 </faqentry>
 <faqentry name="dselect-garbage" >

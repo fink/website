@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 関係";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/17 01:40:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="mirrors.php?phpLang=ja" title="Fink ミラー"><link rel="prev" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -38,18 +38,8 @@ Debian パッケージ管理ツール (dpkg, dselect, apt-get) を移植し、 .
 </b>
 Apple ありがとう!</p></div>
 </a>
-<a name="openosx">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.4: OpenOSX.com とは関係がありますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 彼らは Fink を使って GIMP CD のリリースをビルドしましたが、そのことを正しく認めなかった経緯があります。
-<a href="http://fink.sourceforge.net/pr/openosx.php">公式声明</a>に詳細があります。</p></div>
-</a>
-<a name="forked">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.5: macosx.forked.net とは関係がありますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このサイトでは、いくつかの Fink パッケージをそのまま Installer.app パッケージとして再配布していますが、Fink については何も書かれていません。
-<a href="http://fink.sourceforge.net/pr/forked.php">公式声明</a>に詳細があります。</p></div>
-</a>
 <a name="darwinports">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.6: Darwinports とは関係がありますか?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>2.4: Darwinports とは関係がありますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports と Fink は補完的なプロジェクトです。
 両者は重なる部分があり、 Fink と OpenDarwin プロジェクトの両方に貢献している人もいま。
 例えば、 Benjamin Reed は双方の KDE パッケージを担当しています。

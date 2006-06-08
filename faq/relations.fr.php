@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Relations";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 12:32:53';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="mirrors.php?phpLang=fr" title="Miroirs de Fink"><link rel="prev" href="general.php?phpLang=fr" title="Questions générales">';
 
 
@@ -27,16 +27,8 @@ include_once "header.fr.inc";
 <div class="question"><p><b><? echo FINK_Q ; ?>2.3: Quelles sont vos relations avec Apple ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://www.apple.com/">Apple</a> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source. Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions  de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle. Citation : <b>"Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps."</b> Merci Apple !</p></div>
 </a>
-<a name="openosx">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.4: Quelles sont vos relations avec OpenOSX.com ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ils ont utilisé Fink pour compiler la première version de leur CD GIMP et refusent de le reconnaître. Lire le <a href="http://fink.sourceforge.net/pr/openosx.php">communiqué officiel</a> pour de plus amples informations.</p></div>
-</a>
-<a name="forked">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.5: Quelles sont vos relations avec macosx.forked.net ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce site redistribue certains paquets Fink en tant que paquets avec installeur, identiques à ceux de Fink, mais avec leur propres textes, dans lesquels Fink n'est pas mentionné. Lire le <a href="http://fink.sourceforge.net/pr/forked.php">communiqué officiel</a> pour de plus amples informations.</p></div>
-</a>
 <a name="darwinports">
-<div class="question"><p><b><? echo FINK_Q ; ?>2.6: Quelles sont vos relations avec Darwinports ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>2.4: Quelles sont vos relations avec Darwinports ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports et Fink sont des projets complémentaires. Certaines parties se recouvrent et plusieurs personnes contribuent à la fois au projet Fink et au projet OpenDarwin. Benjamin Reed, par exemple, fait les paquets KDE pour les deux. Darwinports/OpenDarwin utilise des rustines de Fink, et nous envisageons une collaboration sur un nouveau moteur de dépendances.</p><p>OpenDarwin est parti de rien pour tenter une nouvelle approche d'un système de construction de paquets. Lire le communiqué sur <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a> pour de plus amples informations.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:

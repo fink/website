@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/17 01:40:27';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -262,17 +262,12 @@ fink selfupdate-cvs</pre></div>
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
   &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>这里做的事情是抽取 .deb 文件的内容，删掉除文件名以外的所有信息，并把文件名信息写回到 .list 文件中。</p></div>
     </a>
-    <a name="error-nineteen">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.20: 当我使用 Fink 二进制安装包的时候，我碰到一个很大的 "19" 在窗口中，而不能安装任何东西。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 显示数字 19 是因为你的 OS X 系统被本地化为别的语言。（这是苹果安装程序的一个问题，它这时没有显示英语的错误信息）。</p><p>对应于错误 19 的英语错误信息是：</p><p>"/sw 目录已存在，请参阅自述文件已获取升级指南，或关于如何安装 Fink 到一个单独的宗卷。"</p><p>如果你以前使用过 Fink，而又没有删除 <code>/sw</code> 目录，你会碰到这个错误信息。如果你以前没有安装过 Fink，最大的可能是你作为 .Mac 用户免费安装了 Virex 程序。
-正如 Fink 的网页所解释的一样，Virex 与 Fink 不兼容（因为 Virex 错误的设置方式）。</p></div>
-    </a>
     <a name="dselect-garbage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 当我在 <code>dselect</code> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.20: 当我在 <code>dselect</code> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在 <code>dselect</code> 和 终端程序（<code>Terminal.app</code>）中间存在一些问题。暂时解决方法是在运行 <code>dselect</code> 前输入下面的命令。</p><p>对 tcsh 用户：</p><pre>setenv TERM xterm-color</pre><p>对 bash 用户：</p><pre>export TERM=xterm-color</pre><p>你可以把它放到你的启动文件（比如 <code>.cshrc</code> 或 <code>.profile</code>），这样它就总是会自动运行。</p></div>
     </a>
     <a name="perl-undefined-symbol">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 为什么我运行 Fink 命令时会有一堆的 "dyld: perl undefined symbols" 错误？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 为什么我运行 Fink 命令时会有一堆的 "dyld: perl undefined symbols" 错误？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolete</p><p>如果你看到象下面的错误信息：</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc
@@ -288,7 +283,7 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 我看不到要升级的 Fink 版本。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 我看不到要升级的 Fink 版本。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特别指引</a>。</p><ul>
           <li><b>10.3.x:</b> (0.7.1 distribution)
 		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
@@ -303,11 +298,11 @@ fink selfupdate</pre></li>
         </ul></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 我们不推荐把你的 Fink 目录树放到名字中有空格的目录里面。完全不值得冒这个险。</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你看到这样的错误：</p><pre>
 Err file: local/main Packages
   File not found
@@ -346,11 +341,11 @@ update available list script returned error exit status 1.
 powerpc_Packages) - stat (2 No such file or directory)</pre><p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p></div>
     </a>
     <a name="wrong-tree">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p><pre>/sw/lib/fink/postinstall.pl</pre><p>运行完这个脚本以后，Fink 应该能够适应改动的结果。</p></div>
     </a>
     <a name="seg-fault">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: 当我运行<code> fileutils </code>中的 <code>gzip</code> 或 <code>dpkg-deb</code> 程序时出现错误！救命！</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: 当我运行<code> fileutils </code>中的 <code>gzip</code> 或 <code>dpkg-deb</code> 程序时出现错误！救命！</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 出错的形式：</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</pre><p>或</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe
@@ -360,12 +355,12 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
 set up for Fink already."，然后它就退出登录了。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p><p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p></div>
     </a>
     <a name="ext-drive">
-    <div class="question"><p><b><? echo FINK_Q ; ?>5.29: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>5.28: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你的错误信息是象这样的：</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
@@ -381,17 +376,17 @@ Failed test (./Command/chowname.t at line 27)
     </a>
     
     <a name="mirror-gnu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get an error that ends with</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     
     
     <a name="cant-move-fink">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
     <a name="four-oh-three">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we have moved the binary distribution repository for this very reason.</p><ul>
           <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
 <pre>fink reinstall fink</pre>
@@ -415,7 +410,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
         </ul></div>
     </a>
     <a name="fc-cache">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.33: I get a message that says "No fonts found".</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -423,7 +418,7 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.34:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p></div>
     </a>
     

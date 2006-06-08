@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Fink Usage";
-$cvs_author = 'Author: zifra';
-$cvs_date = 'Date: 2004/11/30 17:27:06';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-general.php?phpLang=es" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -299,22 +299,8 @@ else { print substr($6, 2, length($6) - 1);}}' \
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>What this does is to extract the contents of the .deb file, remove
         everything but the filenames, and write these to the .list file.</p></div>
     </a>
-    <a name="error-nineteen">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Cuando uso el paquete de instalación binario de Fink, me aparece un gran "19" en la ventana y no puedo instalar nada.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The number 19 appears because your OS X system is localized to a
-        language other than English. (This is a bug in Apple's Installer, that
-        it doesn't just show you the English-language error message.)</p><p>The English language error message corresponding to number 19
-        is</p><p>"A root directory /sw exists. Please see the Read Me file for
-        update instructions, or for information on installing Fink on a
-        separate volume."</p><p>You may be getting this error if you've used Fink before, and
-        didn't delete <code>/sw</code>. If you haven't installed Fink
-        before, the most likely cause of this is that you installed the Virex
-        program available for free to .Mac users. As explained on Fink's
-        webpage, Virex is incompatible with Fink (due to the Virex folks
-        having made errors in the way they set things up).</p></div>
-    </a>
     <a name="dselect-garbage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.20: Me aparece un montón de basura cuando selecciono paquetes en <code>dselect</code>. ¿Cómo lo puedo usar?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Me aparece un montón de basura cuando selecciono paquetes en <code>dselect</code>. ¿Cómo lo puedo usar?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are issues between <code>dselect</code> and
         <code>Terminal.app</code>. A workaround is to enter the
         following command</p><p>tcsh users:</p><pre>setenv TERM xterm-color</pre><p>bash users:</p><pre>export TERM=xterm-color</pre><p>before you run <code>dselect</code>. You may want to put
@@ -322,7 +308,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
         <code>.profile</code>) so that it gets run all of the time.</p></div>
     </a>
     <a name="perl-undefined-symbol">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: W ¿Por qué me aparecen un montón de errores con "dyld: perl undefined symbols" cuando corro comandos Fink?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.20: W ¿Por qué me aparecen un montón de errores con "dyld: perl undefined symbols" cuando corro comandos Fink?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see an error sequence like the following:</p><pre>dyld: perl Undefined symbols: 
 _Perl_safefree
 _Perl_safemalloc 
@@ -342,7 +328,7 @@ fink rebuild storable-pm
 fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: No puedo actualizar la versión Fink.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: No puedo actualizar la versión Fink.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si ni ejecutar <code>fink selfupdate</code> ni <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> 
         te actualiza a una versión más nueva de Fink, entonces puedes descargar manualmente una versión más nueva del
         paquete <code>fink</code>.  Los comandos a usar son:</p><ul>
@@ -359,12 +345,12 @@ fink selfupdate</pre></li>
         </ul></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: ¿Puedo colocar a Fink en un volumen o directorio con un espacio en su nombre?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: ¿Puedo colocar a Fink en un volumen o directorio con un espacio en su nombre?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> We recommend against putting your Fink directory tree inside a
         directory with spaces in its name. It's just not worth the hassle.</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: Cuando trato de hacer una actualización binaria, aparecen muchos mensajes con "File not found"  ("archivo no encontrado").</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Cuando trato de hacer una actualización binaria, aparecen muchos mensajes con "File not found"  ("archivo no encontrado").</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see something like the following:</p><pre>Err file: local/main Packages 
 File not found 
 Ign file: local/main Release 
@@ -396,14 +382,14 @@ update available list script returned error exit status 1.</pre><p>then all you 
         generates the files that aren't being found.</p></div>
     </a>
     <a name="wrong-tree">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Cambie mi sistema OS y las herramientas de desarrollo, pero Fink no reconoce el cambio.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: Cambie mi sistema OS y las herramientas de desarrollo, pero Fink no reconoce el cambio.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When changing the Fink distribution (of which the source and binary
         distros are subsets), Fink needs to be told that this has happened. To
         do this, you can run a script that normally gets run when you first
         install Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Doing this will point Fink to the correct place.</p></div>
     </a>
     <a name="seg-fault">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Me salen errores con las aplicaciones de  <code>gzip</code> - <code>dpkg-deb</code> del paquete de fileutils! Ayuda!</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Me salen errores con las aplicaciones de  <code>gzip</code> - <code>dpkg-deb</code> del paquete de fileutils! Ayuda!</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Errors of the form:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>or</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe 
@@ -416,7 +402,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or se
         running</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Cuando abro una ventana terminal, me sale un mensaje  que dice "Your  environment seems to be correctly set up for Fink already." y se desconecta.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Cuando abro una ventana terminal, me sale un mensaje  que dice "Your  environment seems to be correctly set up for Fink already." y se desconecta.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> What happened is that somehow the OSX Terminal program has been
         told to run <code>/sw/bin/pathsetup.command</code> every time you log
         in. You can fix this by removing the Preferences file,
@@ -425,7 +411,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>or se
         <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
     <a name="ext-drive">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente. Hay errores involucrando <q>chowname</q>.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Tengo a Fink instalado afuera  de la  partición principal y no puedo actualizar el paquete Fink desde la fuente. Hay errores involucrando <q>chowname</q>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If your error looks like:</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.

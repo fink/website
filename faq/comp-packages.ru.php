@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Компиляция (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:18:00';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы"><link rel="prev" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы">';
 
 

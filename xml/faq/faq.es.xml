@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.5 2004/11/30 17:27:06 zifra Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.6 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -107,22 +107,6 @@ plataformas.
       </question>
       <answer>
         <p><link url="http://www.apple.com/es/">Apple</link> sabe que Fink existe y nos ha dado apoyo como parte de su esfuerzo de relaciones de Fuente Abierta. En el verano y otoño del 2001, nos otorgaron semillas de pre-lanzamiento de las nuevas versiones Mac OS X esperando que los paquetes Fink pudieran ser adaptados a tiempo para su lanzamiento. Cita: <em>"Esperamos que acentúe el cometido de que muchos sospechan no estamos dispuestos a proveer. Mejoraremos con el tiempo en el juego de Fuente Abierta."</em> ¡Gracias Apple!</p>
-      </answer>
-    </faqentry>
-    <faqentry name="openosx">
-      <question>
-        <p>¿Cuál es su relación con OpenOSX.com?</p>
-      </question>
-      <answer>
-        <p>Utilizaron Fink para construir el primer lanzamiento de su GIMP CD y se rehusan a reconocerlo debidamente. Lea el <link url="http://fink.sourceforge.net/pr/openosx.php">estatuto público</link> para mas detalles.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="forked">
-      <question>
-        <p>¿Cuál es su relación con macosx.forked.net?</p>
-      </question>
-      <answer>
-        <p>That site redistributes some Fink packages as Installer.app packages, unchanged but with their own boilerplate that doesn't mention Fink. Read the <link url="http://fink.sourceforge.net/pr/forked.php">public statement</link> for details.</p>
       </answer>
     </faqentry>
     <faqentry name="darwinports">
@@ -657,27 +641,6 @@ else { print substr($6, 2, length($6) - 1);}}' \
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>What this does is to extract the contents of the .deb file, remove
         everything but the filenames, and write these to the .list file.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="error-nineteen">
-      <question>
-        <p>Cuando uso el paquete de instalación binario de Fink, me aparece un gran "19" en la ventana y no puedo instalar nada.</p>
-      </question>
-      <answer>
-        <p>The number 19 appears because your OS X system is localized to a
-        language other than English. (This is a bug in Apple's Installer, that
-        it doesn't just show you the English-language error message.)</p>
-        <p>The English language error message corresponding to number 19
-        is</p>
-        <p>"A root directory /sw exists. Please see the Read Me file for
-        update instructions, or for information on installing Fink on a
-        separate volume."</p>
-        <p>You may be getting this error if you've used Fink before, and
-        didn't delete <filename>/sw</filename>. If you haven't installed Fink
-        before, the most likely cause of this is that you installed the Virex
-        program available for free to .Mac users. As explained on Fink's
-        webpage, Virex is incompatible with Fink (due to the Virex folks
-        having made errors in the way they set things up).</p>
       </answer>
     </faqentry>
     <faqentry name="dselect-garbage">

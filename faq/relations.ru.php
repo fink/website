@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Связь с другими проектами";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2005/01/24 03:18:00';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 16:15:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="mirrors.php?phpLang=ru" title="Зеркала Fink"><link rel="prev" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
@@ -55,21 +55,8 @@ include_once "header.ru.inc";
                         Со временем наше участие в игре
                     в открытый исходный код станет активнее."</b> Благодарим Apple!</p></div>
         </a>
-        <a name="openosx">
-            <div class="question"><p><b><? echo FINK_Q ; ?>2.4: Какое отношение вы имеете к OpenOSX.com?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Они использовали Fink для построения первой версии своего GIMP CD
-                    и отказываются признать это должным образом. См. <a href="http://fink.sourceforge.net/pr/openosx.php">публичное
-                    заявление</a> для получения более подробной информации.</p></div>
-        </a>
-        <a name="forked">
-            <div class="question"><p><b><? echo FINK_Q ; ?>2.5: Какое отношение вы имеете к macosx.forked.net?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Этот сайт распространяет некоторые неизмененные пакеты Fink как пакеты Installer.app
-                    со своими шаблонами без
-                    упоминания Fink. См. <a href="http://fink.sourceforge.net/pr/forked.php">публичное
-                    заявление</a> для получения более подробной информации.</p></div>
-        </a>
         <a name="darwinports">
-            <div class="question"><p><b><? echo FINK_Q ; ?>2.6: Какое отношение вы имеете к Darwinports?</b></p></div>
+            <div class="question"><p><b><? echo FINK_Q ; ?>2.4: Какое отношение вы имеете к Darwinports?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports и Fink являются взаимодополняющими проектами. Они имеют некоторые
                     точки соприкосновения и несколько человек
                     являются участниками обоих проектов - и Fink, и OpenDarwin.
