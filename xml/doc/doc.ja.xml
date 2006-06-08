@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.17 2005/12/21 00:49:17 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.18 2006/06/08 05:46:07 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -50,7 +50,7 @@ releases</li>
 <section name="developerdoc"><title>開発者向けドキュメント</title>
 
 <ul>
-<li><varlink url="security/index.php" varurl="security/sec-policy.en.html">セキュリティーポリシー</varlink> - 
+<li><varlink url="security/index.php" varurl="security/sec-policy.ja.html">セキュリティーポリシー</varlink> - 
 Fink のパッケージをメンテナンスしている人、したいと思っている人、必見</li>
 <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
 file) - <link
@@ -59,7 +59,7 @@ url="http://conferences.oreillynet.com/macosx2002/"
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</link> もあります) </li>
 <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Porting Tips</varlink> - 
 Unix アプリケーションを Darwin へポートする際に有用な情報</li>
-<li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">パッケージ化チュートリアル</varlink> - 
+<li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quick-start-pkg.en.html">パッケージ化チュートリアル</varlink> - 
 パッケージ化マニュアルへにない、実例を用いた初心者向け紹介文書</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">パッケージ化マニュアル</varlink> - 
 Fink パッケージの作り方、メンテナンス方法</li>

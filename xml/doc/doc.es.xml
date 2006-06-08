@@ -3,7 +3,7 @@
 <article filename="index" lang="es">
   <title>Fink - Documentación</title>
   <shorttitle>Documentación</shorttitle>
-  <cvsid>$Id: doc.es.xml,v 1.10 2005/12/26 11:20:44 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: doc.es.xml,v 1.11 2006/06/08 05:46:06 dmrrsn Exp $</cvsid>
   <preface>
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
@@ -38,12 +38,12 @@ Un grupo de documentos que son más completos, pero ligeramente desactualizados 
   <section name="developerdoc">
     <title>Documentación de Desarrolladores</title>
     <ul>
-          <li><varlink url="security/index.php" varurl="security/security.en.html">Manual de Políticas de Seguridad</varlink> - 
+          <li><varlink url="security/index.php" varurl="security/sec-policy.en.html">Manual de Políticas de Seguridad</varlink> - 
 	  Lectura obligatoria para aquellos que mantienen paquetes en Fink o que les gustaría añadir alguno.</li>
       <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Usando Fink: Un "Cómo hacer" para los desarrolladores</link> (un pdf de 2 Mbs) - transparencias y la presentación de la Conferencias<link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X </link> (Disponible tambien como 
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">archivo de PowerPoint </link>) </li>
       <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Tips para hacer "puerto"</varlink> - notas para hacer "puertos" de aplicaciones de Unix a Darwin</li>
-            <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quickstartpkg.en.html">Tutorial de Empaquetamiento</varlink> - un complemento al Manual de Paquetes el cual se enfoca en ejemplos reales e introduce el empaquetamiento a los principiantes.</li>
+            <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quick-start-pkg.en.html">Tutorial de Empaquetamiento</varlink> - un complemento al Manual de Paquetes el cual se enfoca en ejemplos reales e introduce el empaquetamiento a los principiantes.</li>
       <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">Manual de Paquetes</varlink> - como crear y mantener paquetes de Fink</li>
       <li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
     </ul>

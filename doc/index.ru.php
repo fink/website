@@ -1,14 +1,14 @@
 <?
 $title = "Документация";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/12/26 11:20:44';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 05:46:07';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Документация  </h1>
-<!--Generated from $Fink: doc.ru.xml,v 1.4 2005/12/26 11:20:44 babayoshihiko Exp $-->
+<!--Generated from $Fink: doc.ru.xml,v 1.5 2006/06/08 05:46:07 dmrrsn Exp $-->
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
             Darwin без Fink и хочет узнать о переносе ПО Unix.</p>

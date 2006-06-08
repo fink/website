@@ -3,7 +3,7 @@
 <article filename="index" lang="ru">
     <title>Fink - Документация  </title>
     <shorttitle>Документация</shorttitle>
-    <cvsid>$Id: doc.ru.xml,v 1.4 2005/12/26 11:20:44 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: doc.ru.xml,v 1.5 2006/06/08 05:46:07 dmrrsn Exp $</cvsid>
     <preface>
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
@@ -54,7 +54,7 @@
         <ul>
             <li>
                 <varlink url="security/index.php"
-                    varurl="security/security.en.html">Пособие по политике
+                    varurl="security/sec-policy.en.html">Пособие по политике
                 безопасности</varlink> - обязательное пособие для изучения теми, кто
                 поддерживает пакеты в Fink или хотел бы добавить собственные пакеты.</li>
             <li>
@@ -71,7 +71,7 @@
                 заметки о переносе приложений Unix в Darwin</li>
             <li>
                 <varlink url="quick-start-pkg/index.php"
-                    varurl="quick-start-pkg/quickstartpkg.en.html">Пособие по пакетированию
+                    varurl="quick-start-pkg/quick-start-pkg.en.html">Пособие по пакетированию
                 </varlink> - дополнение к учебнику пакетирования, которое 
                 дает реальные примеры и дает вводную информацию о пакетировании для начинающих.</li>
             <li>
