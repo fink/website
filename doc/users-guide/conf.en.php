@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/03/02 03:03:39';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/08 15:30:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -107,11 +107,14 @@ does this for you automatically.)
         </li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, or 10.3</p>
+            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3, 10.4-transitional, or 10.4</p>
           <p>Fink needs to know which version of Mac OS X you are
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 is no
-longer supported by this version of fink. Mac OS X 10.2 is only still
-supported if the August 2003 Developer Tools update is installed. This
+longer supported by this version of fink. Mac OS X 10.2 users are 
+restricted to fink-0.24.7, released in June 2005.  Mac OS X 10.4 users
+use the 10.4-transitional distribution if they have upgraded from 10.3; there
+is not yet an officially supported upgrade strategy from 10.4-transitional
+to 10.4.  This
 field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
 script. You should not need to alter this value manually.
 </p>
