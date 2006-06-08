@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.42 2006/06/08 15:18:08 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.43 2006/06/08 15:30:41 dmrrsn Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -892,11 +892,14 @@ does this for you automatically.)
         </li>
         <li>
           <p>
-            <em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, or 10.3</p>
+            <em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, 10.3, 10.4-transitional, or 10.4</p>
           <p>Fink needs to know which version of Mac OS X you are
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 is no
-longer supported by this version of fink. Mac OS X 10.2 is only still
-supported if the August 2003 Developer Tools update is installed. This
+longer supported by this version of fink. Mac OS X 10.2 users are 
+restricted to fink-0.24.7, released in June 2005.  Mac OS X 10.4 users
+use the 10.4-transitional distribution if they have upgraded from 10.3; there
+is not yet an officially supported upgrade strategy from 10.4-transitional
+to 10.4.  This
 field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
 script. You should not need to alter this value manually.
 </p>
