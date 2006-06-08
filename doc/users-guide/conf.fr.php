@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/03/02 10:24:18';
+$cvs_date = 'Date: 2006/06/08 18:41:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -63,8 +63,8 @@ stable/main". Cette liste doit toujours être identique à celle figurant dans l
 <code>/sw/etc/apt/sources.list</code>. À partir de la version 0.21.0, fink le fait automatiquement pour vous.</p>
 </li>
 <li>
-<p><b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, ou 10.3</p>
-<p>Fink doit savoir quelle version de Mac OS X est installée sur votre système. Mac OS X 10.0 et les versions antérieures ne sont pas gérées, et Mac OS X 10.1 n'est plus maintenue dans cette version de fink. Mac OS X10.2 n'est gérée que si la mise à jour d'août 2003 des Developer Tools a été installée. Ce champ est configuré par l'exécution du script <code>/sw/lib/fink/postinstall.pl</code>. Il est peu probable que vous ayez à changer cette valeur.</p>
+<p><b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3, 10.4-transitional ou 10.4</p>
+<p>Fink doit savoir quelle version de Mac OS X est installée sur votre système. Mac OS X 10.0 et les versions antérieures ne sont pas gérées, et Mac OS X 10.1 n'est plus maintenue dans cette version de fink. Les utilisateurs de Mac OS X10.2 ne peuvent installer que la version 0.24.7 de fink sortie en juin 2005. Les utilisateurs de Mac OS X 10.4 utiliseront la distribution 10.4-transitional s'ils avaient installé fink auparavant et sont passés de la version Mac OS X 10.3 à la version Mac OS X 10.4. Il n'existe pas, pour l'instant de méthode officiellement reconnue pour passer de la distribution 10.4-transitional à la distribution 10.4. Ce champ est configuré par l'exécution du script <code>/sw/lib/fink/postinstall.pl</code>. Il est peu probable que vous ayez à changer cette valeur.</p>
 </li>
 <li>
 <p><b>FetchAltDir:</b> chemin</p>

@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/03/02 10:24:18';
+$cvs_date = 'Date: 2006/06/08 18:41:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -113,13 +113,16 @@ E: Sorry, broken packages</pre>
 <li><p><b>10.2-gcc3.3 stable :</b> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
 <p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p></li>
 <li><p><b>10.3 stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</p></li> 
-<li><p><b>10.4-transitional stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</p></li> 
-<li>
-<p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
+<li><p><b>10.4-transitional stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui sont passés de la version système Mac OS X 10.3 à Mac OS X 10.4. Pour machine avec processeur PowerPC uniquement</p></li> 
+<li><p><b>10.4/powerpc stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui installent fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
+<li><p><b>10.4/intel stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs dont la machine a un processeur Intel.</p></li>
+<li><p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
 <p>Note : instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
 </li>
-<li><b>10.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</li>
-<li><b>10.4-transitional unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.4.</li>
+<li><b>10.3 unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.3.</li>
+<li><b>10.4-transitional unstable :</b> c'est la version la plus récente qui puisse être installée à partir du sourcede l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs qui sont passés de la version système Mac OS X 10.3 à Mac OS X 10.4. Pour machine avec processeur PowerPC uniquement.</li>
+<li><p><b>10.4/powerpc unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs qui installent fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
+<li><p><b>10.4/intel unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs dont la machine a un processeur Intel.</p></li>
 </ol>
 </li>
 </ul>
