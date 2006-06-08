@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Guide d'internationalisation de Fink (i18n)</title>
 <shorttitle>i18n</shorttitle>
-<cvsid>$Id: multilingual.fr.xml,v 1.15 2006/05/26 13:04:20 michga Exp $</cvsid>
+<cvsid>$Id: multilingual.fr.xml,v 1.16 2006/06/08 22:19:53 dmacks Exp $</cvsid>
 <preface>
 <p><em>Ce document est en cours de rédaction.</em></p>
 <p>Voici le guide d'internationalisation du site web de Fink. Ce document a été conçu pour servir de vade mecum aux personnes qui désirent contribuer à l'internationalisation du site.</p>
@@ -100,7 +100,7 @@ au fichier <filename>.cshrc</filename>. <p>
 <li>Déplacez vous dans ce répertoire :
 <codeblock>cd ~/Documents/Fink-i18n</codeblock></li>
 <li><em>Pour les membres d'une équipe (ou les chefs d'équipe n'ayant pas encore d'accès commit) :
-</em>Connectez-vous anonymement à cvs.sourceforge.net : <ol>
+</em>Connectez-vous anonymement à fink.cvs.sourceforge.net : <ol>
 <li><codeblock>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login</codeblock></li>
 <li>Appuyez sur la touche retour chariot (pas de mot de passe, anonyme par défaut)</li>
 <li>Faites un check out du module xml : 

@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/06/08 22:13:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -27,7 +27,7 @@ finkdev% unecommandequelconque
 
 
 de lire et de tenter de comprendre l'<a href="example.php?phpLang=fr#basics">exemple donné ici</a>.</li>
-<li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://cvs.sourceforge.net/viewcvs.py/fink/dists/10.3/unstable/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
+<li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
 <li>de rechercher dans le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Traqueur de soumissions de paquets</a> si quelqu'un a déjà essayé de construire le même paquet ou dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de demandes de paquets</a> s'il existe déjà une requête pour ce paquet. Vous y trouverez une mine de renseignements.</li>
 <li>de feuilleter le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
 </ul>

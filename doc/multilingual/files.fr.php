@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 13:04:20';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/06/08 22:19:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -60,7 +60,7 @@ au fichier <code>.cshrc</code>. <p>
 <li>Déplacez vous dans ce répertoire :
 <pre>cd ~/Documents/Fink-i18n</pre></li>
 <li><b>Pour les membres d'une équipe (ou les chefs d'équipe n'ayant pas encore d'accès commit) :
-</b>Connectez-vous anonymement à cvs.sourceforge.net : <ol>
+</b>Connectez-vous anonymement à fink.cvs.sourceforge.net : <ol>
 <li><pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login</pre></li>
 <li>Appuyez sur la touche retour chariot (pas de mot de passe, anonyme par défaut)</li>
 <li>Faites un check out du module xml : 

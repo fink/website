@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Exemple";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/02/01 08:31:25';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2006/06/08 22:13:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="prev" href="howtostart.php?phpLang=fr" title="Préliminaires">';
 
 

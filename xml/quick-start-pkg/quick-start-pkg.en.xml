@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.6 2004/07/26 03:53:57 dmacks Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.7 2006/06/08 22:13:34 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -68,7 +68,7 @@ Read and try to understand the
 <li>
 Look at other, similar packages in your 
 <filename>/sw/fink/dists/unstable/main/finkinfo/</filename> directory or 
-<link url="http://cvs.sourceforge.net/viewcvs.py/fink/dists/10.3/unstable/">
+<link url="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">
 in the online CVS repository</link> and take one (or several) info file(s) as 
 a starting point.
 </li>

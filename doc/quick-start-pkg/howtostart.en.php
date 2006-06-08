@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/07/26 03:53:57';
+$cvs_date = 'Date: 2006/06/08 22:13:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -47,7 +47,7 @@ Read and try to understand the
 <li>
 Look at other, similar packages in your 
 <code>/sw/fink/dists/unstable/main/finkinfo/</code> directory or 
-<a href="http://cvs.sourceforge.net/viewcvs.py/fink/dists/10.3/unstable/">
+<a href="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">
 in the online CVS repository</a> and take one (or several) info file(s) as 
 a starting point.
 </li>
