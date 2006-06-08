@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.66 2006/06/08 04:44:34 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.67 2006/06/08 05:03:58 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -709,28 +709,6 @@ else { print substr($6, 2, length($6) - 1);}}' \
 &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>What this does is to extract the contents of the .deb file, remove
         everything but the filenames, and write these to the .list file.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="error-nineteen">
-      <question>
-        <p>When I use the Fink binary installer package, I get a big "19" in
-        the window and can't install anything.</p>
-      </question>
-      <answer>
-        <p>The number 19 appears because your OS X system is localized to a
-        language other than English. (This is a bug in Apple's Installer, that
-        it doesn't just show you the English-language error message.)</p>
-        <p>The English language error message corresponding to number 19
-        is</p>
-        <p>"A root directory /sw exists. Please see the Read Me file for
-        update instructions, or for information on installing Fink on a
-        separate volume."</p>
-        <p>You may be getting this error if you've used Fink before, and
-        didn't delete <filename>/sw</filename>. If you haven't installed Fink
-        before, the most likely cause of this is that you installed the Virex
-        program available for free to .Mac users. As explained on Fink's
-        webpage, Virex is incompatible with Fink (due to the Virex folks
-        having made errors in the way they set things up).</p>
       </answer>
     </faqentry>
     <faqentry name="dselect-garbage">
