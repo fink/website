@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/06/08 17:19:24';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets">';
 
 
