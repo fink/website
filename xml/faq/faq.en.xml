@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.65 2006/06/07 21:45:48 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.66 2006/06/08 04:44:34 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -546,8 +546,8 @@ fink selfupdate-cvs</codeblock>
         Help!</p>
       </question>
       <answer>
-        <p>A number of recent reports on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
-        mailing list</link> have indicated problems (including kernel panics
+        <p>A number of reports in fall, 2002 on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
+        mailing list</link> indicated problems (including kernel panics
         and infinite hangs during patching) when using Fink to compile
         packages while anti-virus software is installed. You may need to
         switch off any anti-virus software before using Fink.</p>
