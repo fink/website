@@ -4,15 +4,18 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.22 2005/09/09 19:10:31 dmrrsn Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.23 2006/06/09 15:08:55 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
-of Fink &fink_version;, intended for use with OS X v.10.3 and later.  
+of Fink &fink_version;, intended for use with OS X v.10.4 and later.  
 The instructions
-can also be used for installation on OS X v.10.2 (replacing
-&fink_version; by 0.6.3 throughout the document) 
+can also be used 
+for installation on OS X v.10.3 (replacing
+&fink_version; by 0.7.2 throughout the document),
+for installation on OS X v.10.2 (replacing
+&fink_version; by 0.6.4 throughout the document),
 and for installation on OS X v.10.1
 (replacing &fink_version; by 0.4.1a).
 </p><p>
