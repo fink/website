@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.41 2006/05/30 20:47:29 rangerrick Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.42 2006/06/09 14:50:12 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2006-05-10</date>
@@ -1085,7 +1085,7 @@ software to build incorrectly, and will break forward-compatibility
 with future X11 releases.
 </p>
       <p>
-	Ben Hines has created a script (available <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</link>) that you can use
+	Ben Hines has created a script (available <link url="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">here</link>) that you can use
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
