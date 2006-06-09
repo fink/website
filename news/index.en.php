@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/05/24 23:06:52';
+$cvs_date = 'Date: 2006/06/09 14:50:12';
 $metatags = '';
 
 include_once "header.inc";
@@ -61,7 +61,8 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 </p>
       <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file <code>fink-0.24.14.tar.gz</code>
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
+<code>fink-0.24.16.tar.gz</code> (or a later version, if it's available)
 from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
 Sourceforge file release page for Fink</a>, expand the file, and
 run the command <code>./bootstrap.sh</code> .  At the end of the
@@ -858,7 +859,7 @@ software to build incorrectly, and will break forward-compatibility
 with future X11 releases.
 </p>
       <p>
-	Ben Hines has created a script (available <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</a>) that you can use
+	Ben Hines has created a script (available <a href="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">here</a>) that you can use
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.

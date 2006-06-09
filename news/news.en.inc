@@ -52,7 +52,8 @@ No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 </p>
       <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file <code>fink-0.24.14.tar.gz</code>
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
+<code>fink-0.24.16.tar.gz</code> (or a later version, if it's available)
 from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
 Sourceforge file release page for Fink</a>, expand the file, and
 run the command <code>./bootstrap.sh</code> .  At the end of the

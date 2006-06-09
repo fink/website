@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 14:12:36';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/09 14:50:12';
 $metatags = '';
 
 include_once "header.inc";
@@ -306,7 +306,7 @@ Fink community informed about the situation as it develops.</p><a name="2003-01-
 has a bug in the install name of the libraries that can cause some
 software to build incorrectly, and will break forward-compatibility
 with future X11 releases.</p>
-<p>Ben Hines has created a script (available <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/fink/fix-fink/install_name_fix.pl">here</a>) that you can use
+<p>Ben Hines has created a script (available <a href="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">here</a>) that you can use
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.</p>
