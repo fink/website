@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.6 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.7 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -236,7 +236,7 @@ plataformas.
         <p>The package <em>cvs-proxy</em> can tunnel through HTTP proxies.</p>
         <ul>
           <li>
-            <p>First download the <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
+            <p>First download the <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
           files (an .info file and a .patch file) and place them into your
           local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
           </li>
@@ -443,14 +443,14 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeb
         <codeblock>### execution of su failed, exit code 1</codeblock>
         <p>you'll need to look further back in the output to see the error. If
         you see a message that your connection was refused:</p>
-        <codeblock>(Logging in to anonymous@cvs.sourceforge.net)
+        <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
         <p>or a message like the following:</p>
-        <codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+        <codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
 Connection reset by peer 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>

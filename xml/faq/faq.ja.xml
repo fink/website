@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.35 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.36 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -324,7 +324,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <ul>
 <li>
 <p>
-まず、 <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 
+まず、 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 
 ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
 </p>
 </li>
@@ -531,14 +531,14 @@ Components: main crypto
 <codeblock>### execution of su failed, exit code 1</codeblock>
 <p>であれば、エラーを詳細に見る必要があります。
 もし接続が拒否されたとあれば:</p>
-<codeblock>(Logging in to anonymous@cvs.sourceforge.net)
+<codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
 <p>あるいは</p>
-<codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net:
+<codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net:
 Connection reset by peer
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>

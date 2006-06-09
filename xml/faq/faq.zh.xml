@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.21 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.22 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -305,7 +305,7 @@ gcc 3.3 compiler is out of date.&quot; 我应该怎么办？</p>
         <p><em>cvs-proxy</em> 这个软件包可以通过 HTTP 代理穿透防火墙。</p>
         <ul>
           <li>
-            <p>首先下载 <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /sw/fink/dists/local/main/finkinfo/）。</p>
+            <p>首先下载 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /sw/fink/dists/local/main/finkinfo/）。</p>
           </li>
           <li>
             <p>使用下面命令安装 <em>cvs-proxy</em> 软件包：</p>
@@ -524,14 +524,14 @@ Components: main crypto
         <p>如果最后一行是：</p>
         <codeblock>### execution of su failed, exit code 1</codeblock>
         <p>你需要往前查看以前输出的错误信息。如果你看到一个信息说你的连接被拒绝：</p>
-        <codeblock>(Logging in to anonymous@cvs.sourceforge.net)
+        <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
         <p>或者象下面的信息：</p>
-        <codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+        <codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
 Connection reset by peer
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>

@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.6 2006/06/08 16:15:56 dmrrsn Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.7 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -392,7 +392,7 @@
                 <ul>
                     <li>
                         <p>Сначала скачайте файлы <link
-                            url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
+                            url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
                             ( .info и .patch) и поместите их
                             на свое локальное дерево (н-р /sw/fink/dists/local/main/finkinfo/).</p>
                     </li>
@@ -622,14 +622,14 @@
                 <codeblock>### execution of su failed, exit code 1</codeblock>
                 <p>то надо сделать обратный просмотр для
                     уточнения ошибки. Если вы увидите сообщение, что вам отказано в соединении:</p>
-                <codeblock>(Logging in to anonymous@cvs.sourceforge.net) CVS
+                <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net) CVS
                     password: cvs [login aborted]: connect to
-                    cvs.sourceforge.net:2401 failed: Connection refused ###
+                    fink.cvs.sourceforge.net:2401 failed: Connection refused ###
                     execution of su failed, exit code 1 Failed: Logging into the
                     CVS server for anonymous read-only access failed.</codeblock>
                 <p>или сообщение типа следующего:</p>
                 <codeblock>cvs [update aborted]: recv() from server
-                    cvs.sourceforge.net: Connection reset by peer ### execution
+                    fink.cvs.sourceforge.net: Connection reset by peer ### execution
                     of su failed, exit code 1 Failed: Updating using CVS failed.
                     Check the error messages above.</codeblock>
                 <p>или</p>

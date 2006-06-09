@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.56 2006/06/08 17:19:24 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.57 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -243,7 +243,7 @@
 <answer>
 <p>Le paquet<em> cvs-proxy</em> peut créer un tunnel à travers les proxies HTTP.</p>
 <ul>
-<li><p>Tout d'abord, téléchargez les fichiers <link url="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch) et placez-les dans votre arborescence locale. (c'est-à-dire /sw/fink/dists/local/main/finkinfo/).</p></li>
+<li><p>Tout d'abord, téléchargez les fichiers <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch) et placez-les dans votre arborescence locale. (c'est-à-dire /sw/fink/dists/local/main/finkinfo/).</p></li>
 <li><p>Installez le paquet <em>cvs-proxy</em> avec la commande :</p>
 <p><code>fink install <em>cvs-proxy</em></code></p></li>
 <li><p>Les paquets sont alors mis à jour avec les commandes :</p>
@@ -364,16 +364,16 @@ crypto</codeblock>
 <p>Si, par contre, la dernière ligne est la suivante :</p>
 <codeblock>### execution of su failed, exit code 1</codeblock>
 <p>vous devrez regarder plus haut pour voir l'erreur. Si vous voyez un message précisant que votre connection à été refusée :</p>
-<codeblock>(Logging in to anonymous@cvs.sourceforge.net)
+<codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
 Failed: Logging into the CVS server for anonymous read-only access \
 failed.</codeblock>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>ou bien un message comme le suivant :</p>
-<codeblock>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+<codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
 Connection reset by peer 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
