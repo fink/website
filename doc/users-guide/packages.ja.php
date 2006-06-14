@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/04/12 00:08:22';
+$cvs_date = 'Date: 2006/06/13 11:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 
@@ -232,7 +232,7 @@ Fink をソースからインストールした場合など、別にダウンロ
           <p>
             <b>10.2-gcc3.3 stable:</b>
             これは、OS 10.2 と Developer Tools の <code>gcc 3.3</code> アップデートの組み合わせにむけた、
-            安定したソースツリーからインストールされる最新の安定バージョンです。
+            stable ソースツリーからインストールされる最新の安定バージョンです。
             このバージョンをインストールするには、 <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a>
             または rsync　でのアクセスが必要です。
             <code>gcc 3.3</code> アップデートを当てていない場合、このバージョン (あるいはパッケージも) は見えないかもしれません。
@@ -247,16 +247,24 @@ Fink をソースからインストールした場合など、別にダウンロ
             <li>
           <p>
             <b>10.3 stable:</b>
-            これは、OS 10.3 用に安定したソースツリーからインストールされる最新の安定バージョンです。
+            これは、OS 10.3 用に stable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
             <li>
           <p>
             <b>10.4-transitional stable:</b>
-            これは、OS 10.4 用に安定したソースツリーからインストールされる最新の安定バージョンです。
+            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、stable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
-            <li>
+            <li><p><b>10.4/powerpc stable:</b>  
+            これは、新規にインストールされた OS 10.4 ユーザ用に stable ソースツリーからインストールされる最新の安定バージョンです。PowerPC のみ。
+		  </p>
+		    </li>
+            <li><p><b>10.4/intel stable:</b>
+            これは、Intel ハードウェアの OS 10.4 ユーザ用に stable ソースツリーからインストールされる最新の安定バージョンです。
+          </p>
+            </li>
+			<li>
           <p>
             <b>10.2-gcc3.3 unstable:</b>
             <code>gcc 3.3</code>. これは、OS 10.2 と <code>gcc 3.3</code> 用の unstable ソースツリーからインストールされる最新の unstable バージョンです。 
@@ -275,8 +283,16 @@ Fink をソースからインストールした場合など、別にダウンロ
             </li>
             <li>
           <p>
-              <b>10.4-transitional unstable:</b>
-            これは、OS 10.4 用に unstable ソースツリーからインストールされる最新の unstable バージョンです。
+            <b>10.4-transitional stable:</b>
+            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、unstable ソースツリーからインストールされる最新の安定バージョンです。
+          </p>
+            </li>
+            <li><p><b>10.4/powerpc stable:</b>  
+            これは、新規にインストールされた OS 10.4 ユーザ用に unstable ソースツリーからインストールされる最新の安定バージョンです。PowerPC のみ。
+		  </p>
+		    </li>
+            <li><p><b>10.4/intel stable:</b>
+            これは、Intel ハードウェアの OS 10.4 ユーザ用に unstable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
           </ol>

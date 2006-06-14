@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - はじめに";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/04/12 00:08:22';
+$cvs_date = 'Date: 2006/06/13 11:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="install.php?phpLang=ja" title="初めてのインストール"><link rel="prev" href="index.php?phpLang=ja" title="ユーザーガイド Contents">';
 
 
@@ -73,6 +73,7 @@ Darwin 場では、デフォルトインストールでツールがインスト�
 <b>Mac OS X 10.4</b> は、最新のプラットフォームで、<q>完全にサポートとテストされている</q>と考えられますが、
 新しいオペレーティングシステムとして課題も残っています。
 開発者のほとんどはこれを用い、10.3 を使用している人は 10.4 ユーザーにテストしてもらっています。
+注意、しかし intel ハードウェア上での fink は、まだ <b>beta</b> 品質と考えられています。
 </p>
 <p>
 <b>Mac OS X 10.3</b> は、最新のプラットフォームで、<q>完全にサポートとテストされている</q>と考えられますが、

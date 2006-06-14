@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 介绍";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/04/12 00:08:22';
+$cvs_date = 'Date: 2006/06/13 11:49:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="install.php?phpLang=zh" title="首次安装"><link rel="prev" href="index.php?phpLang=zh" title="用户指南 Contents">';
 
 
@@ -69,7 +69,8 @@ On Darwin, the tools should be present in the default install.
     <h2><a name="supported-os">1.3 支持的操作系统</a></h2>
       
       
-      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.</p>
+      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work. Note, however, that
+fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
       <p>
         <b>Mac OS X 10.3</b> is is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
