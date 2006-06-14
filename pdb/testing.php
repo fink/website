@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/17 23:42:15 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2006/06/14 21:36:39 $';
 
 $have_key = isset($maintainer);
 
@@ -19,6 +19,8 @@ href="../doc/cvsaccess/index.php">packages from CVS</a>.
 </p>
 
 <?
+// list is actually constructed by 'flag' script during db update
+
 if ($have_key && !ereg("[^ a-zA-Z0-9_.+-]", $maintainer)) {
   $q = "SELECT name,version,revision,descshort FROM package ".
 	   "WHERE needtest=1 AND (maintainer LIKE '%$maintainer%') ". 
