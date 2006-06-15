@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 16:47:23 $';
+$cvs_date = '$Date: 2006/06/15 17:53:49 $';
 
 include "header.inc";
 ?>
@@ -28,9 +28,9 @@ The binary distribution is complete.
 </p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer</a> - <? print $dmg_size; ?>, compressed .dmg disk image (PowerPC)</li>
+<? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?>, compressed .dmg disk image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer</a> - <? print $intel_dmg_size; ?>, compressed .dmg disk image (Intel)</li>
+<? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?>, compressed .dmg disk image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>

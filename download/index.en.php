@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 16:47:23 $';
+$cvs_date = '$Date: 2006/06/15 17:51:19 $';
 
 include "header.inc";
 ?>
@@ -29,9 +29,9 @@ include "../fink_version.inc";
 <li><p>
 Download the installer disk image:<br>
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer</a> - <? print $dmg_size; ?> (PowerPC)<br>
+<? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?><br>
 <a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer</a> - <? print $intel_dmg_size; ?> (Intel)<br>
+<? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?><br>
 (10.3 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink
 0.7.2</a>)<br>
 (10.2 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink
