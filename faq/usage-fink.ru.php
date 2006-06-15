@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_date = 'Date: 2006/06/09 14:57:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -43,7 +43,7 @@ include_once "header.ru.inc";
                     брандмауэромl?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Пакет <b>cvs-proxy</b> может проложить туннель через прокси HTTP.</p><ul>
                     <li>
-                        <p>Сначала скачайте файлы <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
+                        <p>Сначала скачайте файлы <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
                             ( .info и .patch) и поместите их
                             на свое локальное дерево (н-р /sw/fink/dists/local/main/finkinfo/).</p>
                     </li>
@@ -207,12 +207,12 @@ include_once "header.ru.inc";
                     /sw/lib/perl5/Fink/Services.pm line 216,
                     &lt;STDIN&gt; line 3. ### execution of cvs failed,
                     exit code -1</pre><p>то вам надо инсталлировать инструменты разработчика - Developer Tools.</p><p>Но если последняя строка следующая: </p><pre>### execution of su failed, exit code 1</pre><p>то надо сделать обратный просмотр для
-                    уточнения ошибки. Если вы увидите сообщение, что вам отказано в соединении:</p><pre>(Logging in to anonymous@cvs.sourceforge.net) CVS
+                    уточнения ошибки. Если вы увидите сообщение, что вам отказано в соединении:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net) CVS
                     password: cvs [login aborted]: connect to
-                    cvs.sourceforge.net:2401 failed: Connection refused ###
+                    fink.cvs.sourceforge.net:2401 failed: Connection refused ###
                     execution of su failed, exit code 1 Failed: Logging into the
                     CVS server for anonymous read-only access failed.</pre><p>или сообщение типа следующего:</p><pre>cvs [update aborted]: recv() from server
-                    cvs.sourceforge.net: Connection reset by peer ### execution
+                    fink.cvs.sourceforge.net: Connection reset by peer ### execution
                     of su failed, exit code 1 Failed: Updating using CVS failed.
                     Check the error messages above.</pre><p>или</p><pre>cvs [update aborted]: End of file received from server</pre><p>или</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>то возможно, что серверы cvs перегружены и вам надо
                     попытаться сделать обновление позже. </p><p>Другое объяснение: у вас нет соответствующих разрешений в ваших каталогах 

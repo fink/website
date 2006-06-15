@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Компиляция (1)";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_date = 'Date: 2006/06/09 14:57:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты"><link rel="prev" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink">';
 
 

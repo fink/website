@@ -134,7 +134,7 @@ Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("d
         </li>
         <li>
           <p>
-<b>0.8.0:</b> Das ist die Basisversion, die als Binary-Paket für OS 10.2 und 10.3 unter dem aktuellen Fink-Release installiert werden kann. Wenn Sie Fink <a href="upgrade.php?phpLang=de">aktualisieren</a> wollen, kann es eine OS-spezifische, neuere Version geben, die hier nicht gezeigt wird.</p></li>
+<b>0.8.1:</b> Das ist die Basisversion, die als Binary-Paket für OS 10.2 und 10.3 unter dem aktuellen Fink-Release installiert werden kann. Wenn Sie Fink <a href="upgrade.php?phpLang=de">aktualisieren</a> wollen, kann es eine OS-spezifische, neuere Version geben, die hier nicht gezeigt wird.</p></li>
         <li>
           <p>
             <b>10.2-gcc3.3 stable:</b> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>

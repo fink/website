@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Fink Usage";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_date = 'Date: 2006/06/09 14:57:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-general.php?phpLang=es" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -23,7 +23,7 @@ include_once "header.es.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>5.3: ¿Cómo actualizo paquetes disponibles  de CVS cuando estoy atrás de un firewall?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The package <b>cvs-proxy</b> can tunnel through HTTP proxies.</p><ul>
           <li>
-            <p>First download the <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
+            <p>First download the <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
           files (an .info file and a .patch file) and place them into your
           local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
           </li>
@@ -166,12 +166,12 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the message is</p><pre>Can't exec "cvs": No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>then you need to install the Developer Tools.</p><p>If, on the other hand, the last line is</p><pre>### execution of su failed, exit code 1</pre><p>you'll need to look further back in the output to see the error. If
-        you see a message that your connection was refused:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
+        you see a message that your connection was refused:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed: 
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed: 
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>or a message like the following:</p><pre>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
 Connection reset by peer 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>or</p><pre>cvs [update aborted]: End of file received from server</pre><p>or</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>then it's likely that the cvs servers are overloaded and you have

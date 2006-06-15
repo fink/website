@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-05-30T16:38:36-04:00</dc:date>
+    <dc:date>2006-06-09T08:13:38-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
       <title>CVS Troubles</title>

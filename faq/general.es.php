@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Generales";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_date = 'Date: 2006/06/09 14:57:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos"><link rel="prev" href="index.php?phpLang=es" title="P.M.F. Contents">';
 
 

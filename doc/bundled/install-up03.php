@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrade from 0.3";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2005/09/09 19:10:31';
+$cvs_date = 'Date: 2006/06/09 15:08:55';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Upgrading From Fink 0.2.x"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
 include_once "header.inc";
@@ -14,7 +14,7 @@ include_once "header.inc";
 
 <p>
 If you already have Fink 0.3.x installed, you can update your
-installation to 0.8.0 with the built-in 'selfupdate' command.
+installation to 0.8.1 with the built-in 'selfupdate' command.
 </p>
 
 
