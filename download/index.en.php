@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 17:51:19 $';
+$cvs_date = '$Date: 2006/06/15 20:48:06 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,6 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 New to Fink?  These quick start instructions are here to get you up to speed
 with the binary release.
 </p>
-<p><strong>Important note:</strong>  These instructions do <em>not</em> apply to Intel users currently.  You need to go to <a href="../news/index.php">the news item on this topic</a>.</p>
 <? 
 include "../fink_version.inc";
 ?>
@@ -41,8 +40,8 @@ Download the installer disk image:<br>
 </p>
 </li>
 <li><p>
-Double-click &quot;Fink-<? print $fink_version; ?>-Installer.dmg&quot; to mount the disk image,
-then double-click the &quot;Fink <? print $fink_version; ?> Installer.pkg&quot; package
+Double-click &quot;Fink-<? print $fink_version; ?>-XYZ-Installer.dmg&quot; (where XYZ is either PowerPC or Intel) to mount the disk image,
+then double-click the &quot;Fink <? print $fink_version; ?> XYZ Installer.pkg&quot; package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
