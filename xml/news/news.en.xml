@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.43 2006/06/15 18:04:14 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.44 2006/06/15 18:21:43 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2006-06-15</date>
     <headline>New Fink release.</headline>
     <body>
       <p>
-A new Fink release is 
+A new Fink release for OS X 10.4 (Tiger) is 
 <varlink url="download/index.php">available</varlink>
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.

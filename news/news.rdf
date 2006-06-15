@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-06-15T11:04:42-07:00</dc:date>
+    <dc:date>2006-06-15T11:22:14-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.">
       <title>New Fink release.</title>
@@ -13,7 +13,7 @@
       <guid>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</guid>
       <description>
       
-A new Fink release is 
+A new Fink release for OS X 10.4 (Tiger) is 
 available
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.
@@ -39,7 +39,7 @@ will attempt to update an existing fink installation.
 </description>
       <content:encoded>
       
-A new Fink release is 
+A new Fink release for OS X 10.4 (Tiger) is 
 available
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.

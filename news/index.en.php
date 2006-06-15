@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/15 18:04:14';
+$cvs_date = 'Date: 2006/06/15 18:21:43';
 $metatags = '';
 
 include_once "header.inc";
@@ -9,7 +9,7 @@ include_once "header.inc";
 
 <a name="2006-06-15%20New%20Fink%20release."><span class="news-date">2006-06-15: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
       <p>
-A new Fink release is 
+A new Fink release for OS X 10.4 (Tiger) is 
 <a href="<?php print $root; ?>download/index.php">available</a>
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.
