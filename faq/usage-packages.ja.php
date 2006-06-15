@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/06/15 01:58:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 

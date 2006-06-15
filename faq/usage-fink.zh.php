@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/06/15 01:58:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -34,7 +34,7 @@ include_once "header.zh.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>5.3: 我在防火墙后面，我怎么用 CVS 方式升级已安装的软件包？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <b>cvs-proxy</b> 这个软件包可以通过 HTTP 代理穿透防火墙。</p><ul>
           <li>
-            <p>首先下载 <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /sw/fink/dists/local/main/finkinfo/）。</p>
+            <p>首先下载 <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /sw/fink/dists/local/main/finkinfo/）。</p>
           </li>
           <li>
             <p>使用下面命令安装 <b>cvs-proxy</b> 软件包：</p>
@@ -182,12 +182,12 @@ Components: main crypto
       <div class="question"><p><b><? echo FINK_Q ; ?>5.13: 当我试图运行 <q>fink selfupdate</q> 或 "fink selfupdate-cvs" 时，我碰到了 "<code>Updating using CVS failed. Check the error messages above.</code>"这个错误信息。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果错误信息是：</p><pre>Can't exec "cvs": No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
-### execution of cvs failed, exit code -1</pre><p>那么你需要安装开发工具包。</p><p>如果最后一行是：</p><pre>### execution of su failed, exit code 1</pre><p>你需要往前查看以前输出的错误信息。如果你看到一个信息说你的连接被拒绝：</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
+### execution of cvs failed, exit code -1</pre><p>那么你需要安装开发工具包。</p><p>如果最后一行是：</p><pre>### execution of su failed, exit code 1</pre><p>你需要往前查看以前输出的错误信息。如果你看到一个信息说你的连接被拒绝：</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>或者象下面的信息：</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net: 
+Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>或者象下面的信息：</p><pre>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
 Connection reset by peer
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>或者：</p><pre>cvs [update aborted]: End of file received from server</pre><p>或者：</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>那么很象是 cvs 服务器现在过忙，你应该晚些在尝试更新。</p><p>另一个可能是你的 CVS 目录的权限设置有问题，这时会有 "Permission denied" 信息：</p><pre>cvs update: in directory 10.2/stable/main:
@@ -209,7 +209,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="kernel-panics">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.14: 当我使用 Fink 的时候，碰到整个机器没有反应/核心恐慌/死机。救命！</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  最近在
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 200年秋、
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink 用户邮件列表</a> 中有不少关于这个问题的反映（包括核心恐慌和不断旋转的彩轮），这通常在安装有防病毒软件的机器上编译软件包时发生。也许在使用 Fink 之前你应该关闭所有防病毒软件。
 </p></div>
     </a>

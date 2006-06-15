@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/06/15 01:58:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -32,7 +32,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージ <b>cvs-proxy</b> は HTTP プロキシを介して通ります。</p><ul>
 <li>
 <p>
-まず、 <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a> 
+まず、 <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
 ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
 </p>
 </li>
@@ -169,12 +169,12 @@ Components: main crypto
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> メッセージが、</p><pre>Can't exec "cvs": No such file or directory at
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>であれば、 Developer Tools をインストールする必要があります。</p><p>もし最後の行が、</p><pre>### execution of su failed, exit code 1</pre><p>であれば、エラーを詳細に見る必要があります。
-もし接続が拒否されたとあれば:</p><pre>(Logging in to anonymous@cvs.sourceforge.net)
+もし接続が拒否されたとあれば:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
-cvs [login aborted]: connect to cvs.sourceforge.net:2401 failed:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed:
 Connection refused
 ### execution of su failed, exit code 1
-Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>あるいは</p><pre>cvs [update aborted]: recv() from server cvs.sourceforge.net:
+Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>あるいは</p><pre>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net:
 Connection reset by peer
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>あるいは</p><pre>cvs [update aborted]: End of file received from server</pre><p>あるいは</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>であれば、 cvs サーバが過負荷になっていると思われますので、時間をおいてアップデートを試してみて下さい。</p><p>この他、パーミッションをもっていない可能性もあります。
@@ -199,7 +199,7 @@ fink selfupdate-cvs</pre></div>
 </a>
 <a name="kernel-panics">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.14: Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 最近の
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 2002年秋の
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users mailing list</a>
 の報告によると、こういった問題 (カーネルパニックやパッチ当て中の無限ループを含む) が発生するのはアンチウィルスソフトウェアがインストールされている時です。
 Fink を使う際はアンチウィルスソフトウェアを終了する必要があるかもしれません。</p></div>

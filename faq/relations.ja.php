@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 関係";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/06/15 01:58:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="mirrors.php?phpLang=ja" title="Fink ミラー"><link rel="prev" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -43,9 +43,9 @@ Apple ありがとう!</p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports と Fink は補完的なプロジェクトです。
 両者は重なる部分があり、 Fink と OpenDarwin プロジェクトの両方に貢献している人もいま。
 例えば、 Benjamin Reed は双方の KDE パッケージを担当しています。
-Darwinports/OpenDarwin は Fink からのパッチを利用していて、両者は現在新しいディペンダンシー・エンジンの協働を検討しています。</p><p>
+Darwinports と Fink は、自由に双方のパッチを利用し、両者は現在新しいディペンダンシー・エンジンの協働を検討してきました。</p><p>
 OpenDarwin は独自のパッケージ・システムを開発しています。
-<a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a>  に詳細があります。</p></div>
+<a href="http://darwinports.opendarwin.org/">OpenDarwin.org</a>  に詳細があります。</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="mirrors.php?phpLang=ja">3. Fink ミラー</a></p>

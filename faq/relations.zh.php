@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 关系";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 16:15:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/06/15 01:58:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="mirrors.php?phpLang=zh" title="Fink 镜像"><link rel="prev" href="general.php?phpLang=zh" title="一般性问题">';
 
 
@@ -46,10 +46,8 @@ Fink <b>不是</b> Debian GNU/Linux 发布版的一个移植。
     </a>
     <a name="darwinports">
       <div class="question"><p><b><? echo FINK_Q ; ?>2.4: 你们和 Darwinports 的关系是什么？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-			Darwinports 和 Fink 是互补性的项目。在两个项目中有一些重叠的地方，也有些人同时对 Fink 和 OpenDarwin 做出贡献。例如，Benjamin Reed 同时为两个项目做 KDE 软件包。Darwinports/OpenDarwin 利用 Fink 的补丁，我们也曾经讨论过合作建立一个新的依赖关系引擎。
-		</p><p>
-			OpenDarwin 尝试用一种不同的方法来重头建立软件包系统。请阅读 <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a> 上的声明来获取详细信息。
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports and Fink are complementary projects. There is some overlap between the two projects, and several people contribute to both the Fink and DarwinPorts projects. For example, Benjamin Reed is doing the KDE packages for both. Darwinports and Fink are free to make use of each other's patches, and we have discussed collaboration on a new dependency engine.</p><p>
+			OpenDarwin 尝试用一种不同的方法来重头建立软件包系统。请阅读 <a href="http://darwinports.opendarwin.org/">OpenDarwin.org</a> 上的声明来获取详细信息。
 		</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

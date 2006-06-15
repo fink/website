@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.22 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.23 2006/06/15 01:58:52 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -145,11 +145,11 @@ Fink <em>不是</em> Debian GNU/Linux 发布版的一个移植。
         <p>你们和 Darwinports 的关系是什么？</p>
       </question>
       <answer>
+        <!-- start translation -->
+        <p>Darwinports and Fink are complementary projects. There is some overlap between the two projects, and several people contribute to both the Fink and DarwinPorts projects. For example, Benjamin Reed is doing the KDE packages for both. Darwinports and Fink are free to make use of each other's patches, and we have discussed collaboration on a new dependency engine.</p>
+        <!-- end translation -->
         <p>
-			Darwinports 和 Fink 是互补性的项目。在两个项目中有一些重叠的地方，也有些人同时对 Fink 和 OpenDarwin 做出贡献。例如，Benjamin Reed 同时为两个项目做 KDE 软件包。Darwinports/OpenDarwin 利用 Fink 的补丁，我们也曾经讨论过合作建立一个新的依赖关系引擎。
-		</p>
-        <p>
-			OpenDarwin 尝试用一种不同的方法来重头建立软件包系统。请阅读 <link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link> 上的声明来获取详细信息。
+			OpenDarwin 尝试用一种不同的方法来重头建立软件包系统。请阅读 <link url="http://darwinports.opendarwin.org/" >OpenDarwin.org</link> 上的声明来获取详细信息。
 		</p>
       </answer>
     </faqentry>
@@ -571,7 +571,7 @@ fink selfupdate-cvs</codeblock>
         <p>当我使用 Fink 的时候，碰到整个机器没有反应/核心恐慌/死机。救命！</p>
       </question>
       <answer>
-        <p> 最近在
+        <p>200年秋、
 <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users" >fink 用户邮件列表</link> 中有不少关于这个问题的反映（包括核心恐慌和不断旋转的彩轮），这通常在安装有防病毒软件的机器上编译软件包时发生。也许在使用 Fink 之前你应该关闭所有防病毒软件。
 </p>
       </answer>

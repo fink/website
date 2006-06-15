@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.36 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.37 2006/06/15 01:58:52 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -159,10 +159,10 @@ Apple ありがとう!</p>
 <p>Darwinports と Fink は補完的なプロジェクトです。
 両者は重なる部分があり、 Fink と OpenDarwin プロジェクトの両方に貢献している人もいま。
 例えば、 Benjamin Reed は双方の KDE パッケージを担当しています。
-Darwinports/OpenDarwin は Fink からのパッチを利用していて、両者は現在新しいディペンダンシー・エンジンの協働を検討しています。</p>
+Darwinports と Fink は、自由に双方のパッチを利用し、両者は現在新しいディペンダンシー・エンジンの協働を検討してきました。</p>
 <p>
 OpenDarwin は独自のパッケージ・システムを開発しています。
-<link url="http://www.opendarwin.org/projects/darwinports/en/faq.php" >OpenDarwin.org</link>  に詳細があります。</p>
+<link url="http://darwinports.opendarwin.org/" >OpenDarwin.org</link>  に詳細があります。</p>
 </answer>
 </faqentry>
 </chapter>
@@ -324,7 +324,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <ul>
 <li>
 <p>
-まず、 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 
+まず、 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link>
 ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
 </p>
 </li>
@@ -582,7 +582,7 @@ fink selfupdate-cvs</codeblock>
 <p>Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</p>
 </question>
 <answer>
-<p>最近の
+<p>2002年秋の
 <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users" >fink-users mailing list</link>
 の報告によると、こういった問題 (カーネルパニックやパッチ当て中の無限ループを含む) が発生するのはアンチウィルスソフトウェアがインストールされている時です。
 Fink を使う際はアンチウィルスソフトウェアを終了する必要があるかもしれません。</p>
