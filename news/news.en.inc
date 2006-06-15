@@ -1,3 +1,28 @@
+<a name="2006-06-15%20New%20Fink%20release."><span class="news-date">2006-06-15: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
+      <p>
+A new Fink release is 
+<a href="<?php print $root; ?>download/index.php">available</a>
+ today: version 0.8.1, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Fink on the Intel platform is still considered "beta" quality, and a number of
+packages (particularly packages in the "unstable" tree) either do not compile,
+or compile but do not run.  Work to improve this situation is ongoing.
+</p>
+<p>
+Fink users on PowerPC whose existing fink installation uses the 
+10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
+one of two ways.  The upgrade process is problematic, due to the change
+in ABI of g++ libraries which requires many libraries to be recompiled.
+Many users will simply wish to remove their fink installations and
+start anew with the 0.8.1 installer.  Others may wish to use the new
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.1.tar.gz?download">10.4-update tarball</a> (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.
+</p>
 <a name="2006-05-10%20CVS%20Troubles"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Troubles</span></a><?php gray_line(); ?>
       <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
@@ -44,25 +69,5 @@ to switch from rsync to cvs updating.
 <p>Update 3/13/06: This has been resolved by security update 2006-002,
 <a href="http://docs.info.apple.com/article.html?artnum=303453">according
 to Apple's documentation</a>.
-</p>
-    <a name="2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel"><span class="news-date">2006-02-21: </span><span class="news-headline">Preliminary version of Fink on Intel</span></a><?php gray_line(); ?>
-      <p>
-A preliminary version of Fink for the Intel architecture is now ready.
-No binary packages are available, and things are still rough around
-the edges, but it should be usable if you are patient!
-</p>
-      <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
-<code>fink-0.24.16.tar.gz</code> (or a later version, if it's available)
-from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
-Sourceforge file release page for Fink</a>, expand the file, and
-run the command <code>./bootstrap.sh</code> .  At the end of the
-bootstrap process, run <code>fink selfupdate</code> and you'll get
-the currently available packages.
-</p>
-      <p>
-At last check, there were about 1750 packages in the "stable" tree, but
-about 150 of those did not build.  When things are truly stable, another
-annoucement will be made here.
 </p>
     

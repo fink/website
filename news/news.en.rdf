@@ -5,8 +5,65 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-06-09T08:13:38-07:00</dc:date>
+    <dc:date>2006-06-15T11:04:42-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.">
+      <title>New Fink release.</title>
+      <link>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</link>
+      <guid>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</guid>
+      <description>
+      
+A new Fink release is 
+available
+ today: version 0.8.1, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+
+      
+Fink on the Intel platform is still considered "beta" quality, and a number of
+packages (particularly packages in the "unstable" tree) either do not compile,
+or compile but do not run.  Work to improve this situation is ongoing.
+
+
+Fink users on PowerPC whose existing fink installation uses the 
+10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
+one of two ways.  The upgrade process is problematic, due to the change
+in ABI of g++ libraries which requires many libraries to be recompiled.
+Many users will simply wish to remove their fink installations and
+start anew with the 0.8.1 installer.  Others may wish to use the new
+10.4-update tarball (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.
+
+</description>
+      <content:encoded>
+      
+A new Fink release is 
+available
+ today: version 0.8.1, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+
+      
+Fink on the Intel platform is still considered "beta" quality, and a number of
+packages (particularly packages in the "unstable" tree) either do not compile,
+or compile but do not run.  Work to improve this situation is ongoing.
+
+
+Fink users on PowerPC whose existing fink installation uses the 
+10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
+one of two ways.  The upgrade process is problematic, due to the change
+in ABI of g++ libraries which requires many libraries to be recompiled.
+Many users will simply wish to remove their fink installations and
+start anew with the 0.8.1 installer.  Others may wish to use the new
+10.4-update tarball (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.
+
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
       <title>CVS Troubles</title>
       <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
@@ -742,47 +799,6 @@ and developers for making this release happen.
 We also thank our community, without their constant support and valuable 
 pointers Fink would not be where we are now.. 
 
-
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.">
-      <title>Raise your Flag.</title>
-      <link>http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.</guid>
-      <description>
-      
-Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
-internationalisation efforts. 
-The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
-
-      
-This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
-A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
-Which language are you willing to translate?
-
-      
-If you are willing to become a member of the internationalisation team or wish to provide feedback on 
-the web-site feel free to join the new mailing-list.
-You can do so by going to our mailing-lists page. The full announcement on the existing 
-mailing lists can be read here.
-
-    </description>
-      <content:encoded>
-      
-Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
-internationalisation efforts. 
-The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
-
-      
-This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
-A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
-Which language are you willing to translate?
-
-      
-If you are willing to become a member of the internationalisation team or wish to provide feedback on 
-the web-site feel free to join the new mailing-list.
-You can do so by going to our mailing-lists page. The full announcement on the existing 
-mailing lists can be read here.
 
     </content:encoded>
     </item>

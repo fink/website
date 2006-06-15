@@ -1,12 +1,37 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:50:12';
+$cvs_date = 'Date: 2006/06/15 18:04:14';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2006-06-15%20New%20Fink%20release."><span class="news-date">2006-06-15: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
+      <p>
+A new Fink release is 
+<a href="<?php print $root; ?>download/index.php">available</a>
+ today: version 0.8.1, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Fink on the Intel platform is still considered "beta" quality, and a number of
+packages (particularly packages in the "unstable" tree) either do not compile,
+or compile but do not run.  Work to improve this situation is ongoing.
+</p>
+<p>
+Fink users on PowerPC whose existing fink installation uses the 
+10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
+one of two ways.  The upgrade process is problematic, due to the change
+in ABI of g++ libraries which requires many libraries to be recompiled.
+Many users will simply wish to remove their fink installations and
+start anew with the 0.8.1 installer.  Others may wish to use the new
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.1.tar.gz?download">10.4-update tarball</a> (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.
+</p>
 <a name="2006-05-10%20CVS%20Troubles"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Troubles</span></a><?php gray_line(); ?>
       <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
