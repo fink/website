@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.57 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.58 2006/06/16 00:44:03 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -586,14 +586,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
 File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-\
 powerpc/Packages
 File not found
@@ -609,13 +602,18 @@ E: Some index files failed to download,
 they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
 </codeblock>
-<p>ou cela :</p>
+<p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p>
 <codeblock>
 W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)
 </codeblock>
-<p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p>
+<p>Ensuite vous devrez exécuter :</p>
+<codeblock>
+sudo apt-get update
+fink scanpackages
+</codeblock>
+<p>pour corriger définitivement le problème.</p>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 </answer>
 </faqentry>
