@@ -1,12 +1,16 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:50:12';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/06/16 00:03:01';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="15/06/2006%20Nouvelle%20version%20de%20Fink"><span class="news-date">15/06/2006: </span><span class="news-headline">Nouvelle version de Fink</span></a><?php gray_line(); ?>
+<p>Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été <a href="<?php print $root; ?>download/index.php">postée</a>. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.</p>
+<p>Fink sur architecture Intel est toujours considéré comme étant en phase "bêta". Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.</p>
+<p>Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.1.tar.gz?download">paquet de mise à jour pour 10.4</a> (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.</p>
 <a name="10/05/2006%20Probl%C3%A8mes%20avec%20CVS"><span class="news-date">10/05/2006: </span><span class="news-headline">Problèmes avec CVS</span></a><?php gray_line(); ?>
 <p>Comme la plupart des utilisateurs de Fink ont pu s'en rendre compte, l'accès au serveur CVS de Fink sur sourceforge.net ne fonctionne pas correctement depuis le 30 mars. L'accès CVS anonyme n'a pas été mis à jour depuis cette date et, depuis quelques jours, les développeurs ne peuvent, eux non plus, mettre à jour CVS par quelque moyen que ce soit.</p>
 <p>Il semblerait que les intentions de l'équipe de sourceforge (brièvement expliquées dans la <a href="http://sourceforge.net/docman/display_doc.php%20docid=2352&amp;group_id=1">page de statut de leur site</a>) soient de ne pas réactiver les anciens serveurs CVS dans leur forme antérieure. Cela va conduire à des perturbations pour les utilisateurs de Fink, mais, à l'heure actuelle, nous ne savons pas quelle forme elles vont prendre.</p>

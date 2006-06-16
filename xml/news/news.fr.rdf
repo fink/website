@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-06-09T08:13:39-07:00</dc:date>
+    <dc:date>2006-06-16T02:03:46+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#15%2F06%2F2006%20Nouvelle%20version%20de%20Fink">
+      <title>Nouvelle version de Fink</title>
+      <link>http://fink.sourceforge.net/news/#15%2F06%2F2006%20Nouvelle%20version%20de%20Fink</link>
+      <guid>http://fink.sourceforge.net/news/#15%2F06%2F2006%20Nouvelle%20version%20de%20Fink</guid>
+      <description>
+Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été postée. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.
+Fink sur architecture Intel est toujours considéré comme étant en phase "bêta". Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.
+Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau paquet de mise à jour pour 10.4 (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.
+</description>
+      <content:encoded>
+Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été postée. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.
+Fink sur architecture Intel est toujours considéré comme étant en phase "bêta". Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.
+Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau paquet de mise à jour pour 10.4 (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#10%2F05%2F2006%20Probl%E8mes%20avec%20CVS">
       <title>Problèmes avec CVS</title>
       <link>http://fink.sourceforge.net/news/#10%2F05%2F2006%20Probl%E8mes%20avec%20CVS</link>
@@ -237,21 +252,6 @@ Dans ces nouvelles versions on a apporté différentes corrections au gestionnaire
 Pour faire une première installation de Fink, vous devez suivre les instructions données ici. Pour mettre à jour une installation de Fink existante, vous devez suivre les instructions données là. Si vous vous posez des questions ou rencontrez des problèmes à cette occasion, utilisez les listes de diffusion de Fink. Vous en saurez plus ici.
 Vérifiez que vous avez téléchargé le bon installeur pour votre plate-forme. Fink 0.6.3 ne s'installe que sur Mac OS X 10.2.*, et Fink 0.7.0 ne s'installe que sur Mac OS X 10.3.*.
 L'équipe Fink remercie toutes les personnes sans qui cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs. Nous remercions aussi notre communauté. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui. 
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#19%2F02%2F2004%20Hissez%20vos%20couleurs">
-      <title>Hissez vos couleurs</title>
-      <link>http://fink.sourceforge.net/news/#19%2F02%2F2004%20Hissez%20vos%20couleurs</link>
-      <guid>http://fink.sourceforge.net/news/#19%2F02%2F2004%20Hissez%20vos%20couleurs</guid>
-      <description>
-Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
-Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée. Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française. En quelle langue êtes-vous prêt à traduire ?
-Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion. Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve ici.
-</description>
-      <content:encoded>
-Grâce à Baba Yoshihiko, Fink a pris les mesures nécessaires pour autoriser son internationalisation. L'amélioration de l'infrastructure nous permet d'offrir un site web multilingue à nos visiteurs du monde entier. 
-Cela signifie que nous avons besoin de volontaires. Le site web de Fink doit être traduit dans la langue désirée. Une traduction en japonais est en cours et Michèle Garoche est responsable de la traduction française. En quelle langue êtes-vous prêt à traduire ?
-Si vous voulez devenir membre de l'équipe d'internationalisation ou que vous souhaitez donner votre avis sur le site web, n'hésitez pas à vous abonner à la nouvelle liste de diffusion. Pour ce faire, allez sur la page des listes de diffusion. Le texte de l'annonce émise sur les listes de diffusion de Fink se trouve ici.
 </content:encoded>
     </item>
   </channel>

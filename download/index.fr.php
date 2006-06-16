@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/02/07 13:43:37 $';
+$cvs_date = '$Date: 2006/06/16 00:05:40 $';
 
 include "header.inc";
 ?>
@@ -15,8 +15,13 @@ include "header.inc";
 include "../fink_version.inc";
 ?>
 <ol>
-<li><p>Téléchargez l'image disque de l'installeur :<br><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?></a> - <? print $dmg_size; ?><br>(utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a>)<br>(utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a>)<br>(utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a>)</p></li>
-<li><p>Double-cliquez sur "Fink-<? print $fink_version; ?>-Installer.dmg" pour monter l'image disque, puis double-cliquez sur le paquet "Fink <? print $fink_version; ?> Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.</p></li>
+<li><p>Téléchargez l'image disque de l'installeur :<br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?> pour PowerPC</a> - <? print $dmg_size; ?><br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Installeur binaire Fink  <? print $fink_version; ?> pour Intel</a> - <? print $intel_dmg_size; ?><br>
+Utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a><br>
+Utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a><br>
+Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a></p></li>
+<li><p>Double-cliquez sur &quot;Fink-<? print $fink_version; ?>-XYZ-Installer.dmg&quot; (où XYZ correspond à PowerPC ou Intel) pour monter l'image disque, puis double-cliquez sur le paquet "Fink <? print $fink_version; ?> XYZ Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.</p></li>
 <li><p>À la fin de l'installation, le script pathsetup s'exécutera. On vous demandera la permission d'éditer vos fichiers de configuration de shell. Quand le script aura terminé, la configuration sera terminée et vous pourrez continuer !</p></li>
 <li><p>Si quelque chose ne se passe pas bien durant le processus, vous pouvez relancer l'application pathsetup à partir de l'image disque de l'installeur, ou exécuter la commande suivante : </p>
 <pre>/sw/bin/pathsetup.sh </pre>

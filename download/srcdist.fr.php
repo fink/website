@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Téléchargement de la version source";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/12/01 07:14:32 $';
+$cvs_date = '$Date: 2006/06/16 00:05:40 $';
 
 include "header.inc";
 ?>
@@ -23,9 +23,8 @@ La version <? print $fink_version; ?> de Fink a été officiellement mise à dis
 </p>
 <ul>
 <li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
-<? print $release_version; ?></a> (pour Mac OS X 10.4 avec XCode 2.1)
-- 6241K, format .tar.gz</li>
+href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
+<? print $release_version; ?></a>- 6786K, format .tar.gz</li>
 </ul>
 
 <p>
