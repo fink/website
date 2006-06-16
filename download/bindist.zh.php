@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "Binary Release Download";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2006/06/16 15:01:53 $';
 
 include "header.inc";
 ?>
@@ -24,8 +24,10 @@ Fink <? print $fink_version; ?> 的二进制安装版本已经发布。
 本安装版本是完整的。
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
-<? print $fink_version; ?> 基本安装</a> - <? print $dmg_size; ?>，压缩的 .dmg 磁盘映象</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<? print $fink_version; ?>基本安装 (PowerPC)</a> - <? print $dmg_size; ?>，压缩的 .dmg 磁盘映象</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<? print $fink_version; ?>基本安装 (Intel)</a> - <? print $dmg_size; ?>，压缩的 .dmg 磁盘映象</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">查看发布档</a>－这里可以查看到二进制软件包及对应源程序文件。</li>
 </ul>
 <p>

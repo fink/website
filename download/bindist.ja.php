@@ -1,7 +1,7 @@
-<?
+﻿<?
 $title = "バイナリリリースのダウンロード";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/25 01:26:22 $';
+$cvs_date = '$Date: 2006/06/16 15:01:53 $';
 
 include "header.inc";
 ?>
@@ -25,8 +25,10 @@ Fink バイナリインストーラは <? print $fink_version; ?> です。
 </p>
 
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
-<? print $fink_version; ?> バイナリインストーラ</a> - <? print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<? print $fink_version; ?> バイナリインストーラ (PowerPC)</a> - <? print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<? print $fink_version; ?> バイナリインストーラ (Intel)</a> - <? print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">配布アーカイブを閲覧</a> - 
 バイナリパッケージとソースの両方があります。</li>
 </ul>
