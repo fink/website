@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/06/16 00:44:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -187,14 +187,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
 File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-\
 powerpc/Packages
 File not found
@@ -209,11 +202,14 @@ Building Dependency Tree... Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
-</pre><p>ou cela :</p><pre>
+</pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><pre>
 W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)
-</pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
+</pre><p>Ensuite vous devrez exécuter :</p><pre>
+sudo apt-get update
+fink scanpackages
+</pre><p>pour corriger définitivement le problème.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
 </a>
 <a name="wrong-tree">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas le changement.</b></p></div>
