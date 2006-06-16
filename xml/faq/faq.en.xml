@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.69 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.70 2006/06/16 00:30:15 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -789,14 +789,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages 
 File not found 
 Ign file: stable/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/main Release 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/main Release 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release 
+...
 Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found 
 Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
@@ -808,12 +801,18 @@ Building Dependency Tree...Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead. 
 update available list script returned error exit status 1.</codeblock>
-        <p>or</p>
+        <p>then all you need to do is run <code>fink scanpackages</code>. This
+        generates the files that aren't being found.</p>
+        <p>If you get an error of the following form:</p>
         <codeblock>W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</codeblock>
-        <p>then all you need to do is run <code>fink scanpackages</code>. This
-        generates the files that aren't being found.</p>
+<p>then you should run</p>
+<codeblock>
+sudo apt-get update
+fink scanpackages
+</codeblock>
+<p>to fix it.</p>
       </answer>
     </faqentry>
     <faqentry name="wrong-tree">
