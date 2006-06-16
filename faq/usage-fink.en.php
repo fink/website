@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/06/16 00:30:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -395,14 +395,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages 
 File not found 
 Ign file: stable/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/main Release 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release 
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/main Release 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages 
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release 
+...
 Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found 
 Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
@@ -413,10 +406,13 @@ Reading Package Lists... Done
 Building Dependency Tree...Done 
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead. 
-update available list script returned error exit status 1.</pre><p>or</p><pre>W: Couldn't stat source package list file: unstable/main Packages
+update available list script returned error exit status 1.</pre><p>then all you need to do is run <code>fink scanpackages</code>. This
+        generates the files that aren't being found.</p><p>If you get an error of the following form:</p><pre>W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
-powerpc_Packages) - stat (2 No such file or directory)</pre><p>then all you need to do is run <code>fink scanpackages</code>. This
-        generates the files that aren't being found.</p></div>
+powerpc_Packages) - stat (2 No such file or directory)</pre><p>then you should run</p><pre>
+sudo apt-get update
+fink scanpackages
+</pre><p>to fix it.</p></div>
     </a>
     <a name="wrong-tree">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.25: I've changed my OS | Developer Tools, but Fink doesn't recognize
