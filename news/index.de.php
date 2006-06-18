@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/18 17:57:13';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/06/18 18:28:27';
 $metatags = '';
 
 include_once "header.inc";
@@ -28,7 +28,7 @@ one of two ways.  The upgrade process is problematic, due to the change
 in ABI of g++ libraries which requires many libraries to be recompiled.
 Many users will simply wish to remove their fink installations and
 start anew with the 0.8.1 installer.  Others may wish to use the new
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.2.tar.gz?download">10.4-update tarball (v. 0.2)</a> (around 12 MB), which includes 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
 </p>
