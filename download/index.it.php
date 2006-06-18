@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/02/09 01:20:34 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/06/18 18:15:32 $';
 
 include "header.inc";
 ?>
@@ -27,8 +27,10 @@ include "../fink_version.inc";
 <ol>
 <li><p>
 Download dell' installer disk image:<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer</a> - <? print $dmg_size; ?><br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?><br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?><br>
 (10.3 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink
 0.7.2</a>)<br>
 (10.2 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink

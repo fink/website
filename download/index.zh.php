@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/02/09 01:18:06 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/06/18 18:15:32 $';
 
 include "header.inc";
 ?>
@@ -25,8 +25,10 @@ include "../fink_version.inc";
 <ol>
 <li><p>
 下载安装程序磁盘映象：<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Installer.dmg?download">Fink
-<? print $fink_version; ?> 二进制安装包</a> - <? print $dmg_size; ?><br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<? print $fink_version; ?> 二进制安装包 (PowerPC)</a> - <? print $dmg_size; ?><br>
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<? print $fink_version; ?> 二进制安装包 (Intel)</a> - <? print $intel_dmg_size; ?><br>
 （10.3 用户 － 使用 <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-installer.dmg?download">Fink
 0.7.2</a>）
 （10.2 用户 － 使用 <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-installer.dmg?download">Fink
