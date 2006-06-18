@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-06-18T19:57:41+02:00</dc:date>
+    <dc:date>2006-06-18T11:22:31-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.">
       <title>New Fink release.</title>
@@ -32,7 +32,7 @@ one of two ways.  The upgrade process is problematic, due to the change
 in ABI of g++ libraries which requires many libraries to be recompiled.
 Many users will simply wish to remove their fink installations and
 start anew with the 0.8.1 installer.  Others may wish to use the new
-10.4-update tarball (v. 0.2) (around 12 MB), which includes 
+10.4-update tarball (v. 0.3) (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
 
@@ -58,7 +58,7 @@ one of two ways.  The upgrade process is problematic, due to the change
 in ABI of g++ libraries which requires many libraries to be recompiled.
 Many users will simply wish to remove their fink installations and
 start anew with the 0.8.1 installer.  Others may wish to use the new
-10.4-update tarball (v. 0.2) (around 12 MB), which includes 
+10.4-update tarball (v. 0.3) (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
 

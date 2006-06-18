@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.43 2006/06/17 20:13:08 dmrrsn Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.44 2006/06/18 18:22:00 dmrrsn Exp $</cvsid>
 
 <newsitem>
 <date>15/06/2006</date>
@@ -9,7 +9,7 @@
 <body>
 <p>Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été <varlink url="download/index.php">postée</varlink>. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.</p>
 <p>Fink sur architecture Intel est toujours considéré comme étant en phase &quot;bêta&quot;. Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.</p>
-<p>Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau <link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.2.tar.gz?download">paquet de mise à jour pour 10.4 (v. 0.2)</link> (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.</p>
+<p>Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau <link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">paquet de mise à jour pour 10.4 (v. 0.3)</link> (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.</p>
 </body>
 </newsitem>
 <newsitem>
