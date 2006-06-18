@@ -1,12 +1,37 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:50:12';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/06/18 17:57:13';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2006-06-15%20New%20Fink%20release."><span class="news-date">2006-06-15: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
+      <p>
+A new Fink release for OS X 10.4 (Tiger) is 
+<a href="<?php print $root; ?>download/index.php">available</a>
+ today: version 0.8.1, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Fink on the Intel platform is still considered "beta" quality, and a number of
+packages (particularly packages in the "unstable" tree) either do not compile,
+or compile but do not run.  Work to improve this situation is ongoing.
+</p>
+<p>
+Fink users on PowerPC whose existing fink installation uses the 
+10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
+one of two ways.  The upgrade process is problematic, due to the change
+in ABI of g++ libraries which requires many libraries to be recompiled.
+Many users will simply wish to remove their fink installations and
+start anew with the 0.8.1 installer.  Others may wish to use the new
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.2.tar.gz?download">10.4-update tarball (v. 0.2)</a> (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.
+</p>
 <a name="2006-05-10%20CVS%20Troubles"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Troubles</span></a><?php gray_line(); ?>
       <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
@@ -35,7 +60,7 @@ Sourceforge file release page</a>, expand the file, and run the command
 <code>./inject.pl</code> from within the <code>fink-mirrors-0.24.15.2</code> directory.  After this has been done, the <code>fink selfupdate</code> command
 should again work normally.
 </p>
-    <a name="2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's latest Security Update</span></a><?php gray_line(); ?>
+    <a name="2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001"><span class="news-date">2006-03-03: </span><span class="news-headline">Problem with Apple's Security Update 2006-001</span></a><?php gray_line(); ?>
       <p>
 The Fink team has received reports of problems with the <code>rsync</code>
 program which was modified by Apple's new Security Update 2006-001: for some
@@ -50,9 +75,6 @@ who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is <code>fink selfupdate-cvs</code>
 to switch from rsync to cvs updating.  
 </p>
-      <p>
-This news item will be updated as the situation changes.
-</p>
 <p>Update 3/13/06: This has been resolved by security update 2006-002,
 <a href="http://docs.info.apple.com/article.html?artnum=303453">according
 to Apple's documentation</a>.
@@ -63,8 +85,9 @@ A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
 </p>
-<p>
-To install, you need to get the file <code>fink-0.24.12.tar.gz</code>
+      <p>
+To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
+<code>fink-0.24.16.tar.gz</code> (or a later version, if it's available)
 from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
 Sourceforge file release page for Fink</a>, expand the file, and
 run the command <code>./bootstrap.sh</code> .  At the end of the
@@ -129,27 +152,43 @@ on 10.4), <code>fink scanpackages</code> and <code>sudo apt-get update</code>.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
 </p>
-
-<a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
+      <p>
+Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
+volume does not support symlinks, try launching Disk Utility (from the 
+Utilities folder inside the Applications folder), selecting the 
+problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
+</p>
+      <p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the <code>/Developer/Tools/uninstall-devtools.pl</code> script.  For best results, you may want to do this before updating your OS.</p>
+    <a name="2005-04-29%20Fink%20and%20Tiger."><span class="news-date">2005-04-29: </span><span class="news-headline">Fink and Tiger.</span></a><?php gray_line(); ?>
 <p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
 </p><ul>
 <li>
 A binary installer will be available within a few weeks, for binary-only
-users.
-</li><li>
+users.  In the meantime, new users should bootstrap fink 0.23.10, just
+as stable users, below.
+</li>
+        <li>
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
-installation of fink-0.23.9 using
-<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</a>--download that file and expand it, 
+installation of fink-0.23.10 using
+<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+fink-0.23.10.tar.gz</a>--download that file and expand it, 
 eg. via
-<code>tar -xvzf fink-0.23.9.tar.gz</code>.  After running the command
+<code>tar -xvzf fink-0.23.10.tar.gz</code>.  After running the command
 <code> ./bootstrap.sh </code> in the resulting
-<code>fink-0.23.9</code> directory,
+<code>fink-0.23.10</code> directory,
 you'll need to run <code>fink selfupdate</code>
-</li><li>
-For users of the unstable tree, you may be able to upgrade just by running <code>fink selfupdate</code> if your version of fink is less than 0.24.5.  It will install fink-0.24.5 for you.  After upgrading to 10.4, first check that you have the right version of fink by issuing <code>fink --version</code>.  If your version is less than 0.24.5, run <code>fink selfupdate</code> to get the right version of fink.  Then, whether you selfupdated or not, reinstall the fink package using <code>fink reinstall fink</code>, followed by <code>fink selfupdate</code>.
+</li>
+        <li>
+For users of the unstable tree, you may be able to upgrade just by running 
+<code>fink selfupdate</code> if your version of fink is less than 0.24.6.  
+It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
+that you have the right version of fink by issuing <code>fink --version</code>
+.  If your version is less than 0.24.6, run <code>fink selfupdate</code> to 
+get the right version of fink.  Then, whether you selfupdated or not, 
+reinstall the fink package using <code>fink rebuild fink</code>, 
+and follow that with another <code>fink selfupdate</code>.
 </li>
 </ul>
 <p>Not all packages are working yet under 10.4, but that situation will
