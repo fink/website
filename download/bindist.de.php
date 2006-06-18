@@ -1,7 +1,7 @@
 <?
 $title = "Download der Binär-Version von Fink";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/06/16 15:01:53 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/06/18 18:10:01 $';
 
 include "header.inc";
 ?>
@@ -26,7 +26,7 @@ Die Binär-Version ist vollständig.
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
 <? print $fink_version; ?>Binary Installer (PowerPC)</a> - <? print $dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?>Binary Installer (Intel)</a> - <? print $dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
+<? print $fink_version; ?>Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Schauen Sie in das Veröffentlichungsarchiv</a> - hier finden Sie die Binärpakete und den dazugehörigen Quellcode.</li>
 </ul>
 <p>
