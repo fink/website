@@ -21,14 +21,14 @@
 $releases = array(
 	"10.4/intel" => array(
 			"bin"=>array("bindist 0.8.1"=>"0.8.1-i386-stable"),
-			"sta"=>"current-10.4-stable-i386",
-			"uns"=>"current-10.4-unstable-i386",
+			"sta"=>"current-10.4-i386-stable",
+			"uns"=>"current-10.4-i386-unstable",
 			"pri"=>1,
 			),
 	"10.4/powerpc" => array(
 			"bin"=>array("bindist 0.8.1"=>"0.8.1-powerpc-stable"),
-			"sta"=>"current-10.4-stable-powerpc",
-			"uns"=>"current-10.4-unstable-powerpc",
+			"sta"=>"current-10.4-powerpc-stable",
+			"uns"=>"current-10.4-powerpc-unstable",
 			"pri"=>2,
 			),
 	"10.4/powerpc<br>(transitional)" => array(
