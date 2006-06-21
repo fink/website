@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/06/16 00:30:15';
+$cvs_date = 'Date: 2006/06/21 00:46:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -90,8 +90,8 @@ fink install libiconv</pre></div>
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
     <a name="all-others">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.opendarwin.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
