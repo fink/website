@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.70 2006/06/16 00:30:15 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.71 2006/06/21 00:46:32 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -807,12 +807,12 @@ update available list script returned error exit status 1.</codeblock>
         <codeblock>W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</codeblock>
-<p>then you should run</p>
-<codeblock>
+        <p>then you should run</p>
+        <codeblock>
 sudo apt-get update
 fink scanpackages
 </codeblock>
-<p>to fix it.</p>
+        <p>to fix it.</p>
       </answer>
     </faqentry>
     <faqentry name="wrong-tree">
@@ -964,6 +964,17 @@ page and on http://fontconfig.org.</codeblock>
       <answer>
         <p>This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p>
         <p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="wrong-arch">
+      <question>
+        <p>I can't update Fink, because <quote>package architecture (darwin-i386) does not match system (darwin-powerpc).</quote>
+</p>
+      </question>
+      <answer>
+        <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
   </chapter>
@@ -1349,7 +1360,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>I get the following message: <quote>configure: error: XML::Parser perl module is required for intltool</quote>.  What do I do about it?</p>
       </question>
       <answer>
-	<p>If you're using the unstable tree, make sure you have intltool-0.34.1or later installed.</p>
+        <p>If you're using the unstable tree, make sure you have intltool-0.34.1or later installed.</p>
         <p>Otherwise, you need to make sure that you have the right variant of the xml-parser-pm package to match the Perl version for your system.  For example, if you're on Panther you should have <code>xml-parser-pm581</code> rather than <code>xml-parser-pm560</code> (you may also have the <code>xml-parser-pm</code> placeholder), since you have <code>Perl-5.8.1</code> rather than <code>Perl-5.6.0</code>.  If you're on Jaguar, and are using the default system Perl version, you'll have the <code>pm560</code> variant, and if you've installed <code>Perl 5.8.0</code> you may have the <code>pm580</code> variant.</p>
       </answer>
     </faqentry>
@@ -1380,7 +1391,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code> tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p>
         <p>Similar behavior can happen for other pairs of packages, too. </p>
         <p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can usually proceed by repeating your update command again.</p>
-<p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p>
+        <p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p>
         <p>A permanent fix should hopefully be available in <code>fink-0.24.9</code>.</p>
       </answer>
     </faqentry>
@@ -1400,7 +1411,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 ### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
         <p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <em>10.4-transitional</em> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p>
         <p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p>
-<p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p>
+        <p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p>
       </answer>
     </faqentry>
   </chapter>
@@ -1571,13 +1582,13 @@ fink install libiconv</codeblock>
       </answer>
     </faqentry>
     <faqentry name="all-others">
-    <question>
-      <p>I'm having issues with a package that isn't listed here.</p>
-    </question>
-    <answer>
-      <p>Since package problems tend to be transient, we've decided to put them
+      <question>
+        <p>I'm having issues with a package that isn't listed here.</p>
+      </question>
+      <answer>
+        <p>Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <link url="http://wiki.opendarwin.org/index.php/Fink:Package_issues"> Package issues page</link>.</p>
-    </answer>
+      </answer>
     </faqentry>
   </chapter>
   <chapter filename="usage-general">
@@ -2173,7 +2184,7 @@ fink selfupdate; fink index</codeblock>
       </question>
       <answer>
         <p>This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p>
-<p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
+        <p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
 </p>
         <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
         <p>E.g., if you want to use <code>gnucash</code>, you'd use</p>
@@ -2184,13 +2195,17 @@ fink selfupdate; fink index</codeblock>
         <p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <em>bash</em> users and:</p>
         <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
         <p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <em>tcsh</em> users.</p>
-	<p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
+        <p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
 	</p>
       </answer>
     </faqentry>
     <faqentry name="yelp">
-    	<question><p>I can't get the help to work for any GNOME application.</p></question>
-	<answer><p>You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></answer>
+      <question>
+        <p>I can't get the help to work for any GNOME application.</p>
+      </question>
+      <answer>
+        <p>You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p>
+      </answer>
     </faqentry>
   </chapter>
 </document>
