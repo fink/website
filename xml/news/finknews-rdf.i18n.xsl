@@ -73,4 +73,22 @@
 
 </xsl:template>
 
+<xsl:template match="varlink">
+  <a>
+    <xsl:attribute name="href">
+      <xsl:text>http://fink.sourceforge.net/</xsl:text>
+      <xsl:value-of select="@url" />
+    </xsl:attribute>
+    <xsl:apply-templates/>
+  </a>
+</xsl:template>
+
+<xsl:template match="link">
+<a href="{@url}"><xsl:apply-templates/></a>
+</xsl:template>
+
+<xsl:template match="p">
+ <p><xsl:apply-templates /></p>
+</xsl:template>
+
 </xsl:stylesheet>

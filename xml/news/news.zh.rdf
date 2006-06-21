@@ -5,69 +5,69 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2006-06-18T19:57:42+02:00</dc:date>
+    <dc:date>2006-06-21T12:01:11-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
       <title>CVS Troubles</title>
       <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
       <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</guid>
       <description>
-      
+      <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
 has not been fully functional since March 30.  The anonymous CVS access
 has not been updated since then, and as of several days ago, the developers
 are also unable to update CVS in any form.
-
+</p><p>
 As we understand the current plans of sourceforge's staff (outlined
-briefly on their site
-status page), the old CVS servers will never be brought back in
+briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</a>), the old CVS servers will never be brought back in
 their current form.  This is likely to mean disruption for fink users,
 but at present, we cannot say what form this disruption will take.
-
+</p><p>
 Our current advice to fink users is to switch to the 'rsync' method of
 updating (by running the command 'fink selfupdate-rsync').  This will at
 least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
-
-Update 5/24/06: CVS is now functioning again, and users using the rsync
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
 method of selfupdating are getting up-to-date content.  If you are using
 the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from the
-Sourceforge file release page, expand the file, and run the command
+download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>, expand the file, and run the command
 ./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
 should again work normally.
-
+</p>
     </description>
       <content:encoded>
-      
+      <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
 has not been fully functional since March 30.  The anonymous CVS access
 has not been updated since then, and as of several days ago, the developers
 are also unable to update CVS in any form.
-
+</p><p>
 As we understand the current plans of sourceforge's staff (outlined
-briefly on their site
-status page), the old CVS servers will never be brought back in
+briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</a>), the old CVS servers will never be brought back in
 their current form.  This is likely to mean disruption for fink users,
 but at present, we cannot say what form this disruption will take.
-
+</p><p>
 Our current advice to fink users is to switch to the 'rsync' method of
 updating (by running the command 'fink selfupdate-rsync').  This will at
 least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
-
-Update 5/24/06: CVS is now functioning again, and users using the rsync
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
 method of selfupdating are getting up-to-date content.  If you are using
 the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from the
-Sourceforge file release page, expand the file, and run the command
+download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>, expand the file, and run the command
 ./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
 should again work normally.
-
+</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update">
@@ -75,50 +75,50 @@ should again work normally.
       <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</link>
       <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20latest%20Security%20Update</guid>
       <description>
-      
+      <p>
 The Fink team has received reports of problems with the rsync
 program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
-
-      
+</p>
+      <p>
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
-
-      
+</p>
+      <p>
 This news item will be updated as the situation changes.
-
-Update 3/13/06: This has been resolved by security update 2006-002,
-according
-to Apple's documentation.
-
+</p>
+<p>Update 3/13/06: This has been resolved by security update 2006-002,
+<a href="http://docs.info.apple.com/article.html?artnum=303453">according
+to Apple's documentation</a>.
+</p>
     </description>
       <content:encoded>
-      
+      <p>
 The Fink team has received reports of problems with the rsync
 program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
-
-      
+</p>
+      <p>
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
-
-      
+</p>
+      <p>
 This news item will be updated as the situation changes.
-
-Update 3/13/06: This has been resolved by security update 2006-002,
-according
-to Apple's documentation.
-
+</p>
+<p>Update 3/13/06: This has been resolved by security update 2006-002,
+<a href="http://docs.info.apple.com/article.html?artnum=303453">according
+to Apple's documentation</a>.
+</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel">
@@ -126,44 +126,44 @@ to Apple's documentation.
       <link>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</link>
       <guid>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</guid>
       <description>
-
+<p>
 A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
-
-
+</p>
+<p>
 To install, you need to get the file fink-0.24.12.tar.gz
-from the
-Sourceforge file release page for Fink, expand the file, and
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
 bootstrap process, run fink selfupdate and you'll get
 the currently available packages.
-
-
+</p>
+<p>
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-
+</p>
 </description>
       <content:encoded>
-
+<p>
 A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
-
-
+</p>
+<p>
 To install, you need to get the file fink-0.24.12.tar.gz
-from the
-Sourceforge file release page for Fink, expand the file, and
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
 bootstrap process, run fink selfupdate and you'll get
 the currently available packages.
-
-
+</p>
+<p>
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
@@ -171,38 +171,38 @@ annoucement will be made here.
       <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
       <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
       <description>
-
+<p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
 packages (which are expected to function again when we switch to the 10.4
 tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
 XCode 2.2 will be required for running the 10.4 tree when it is released.
-
-
+</p>
+<p>
 On the other hand, in spite of today's announcements from Apple, Fink is
 not ready to run on Intel processors.  The Fink team hopes to have an
 Intel-ready version of fink released within a few weeks; the Fink team does 
 not advise early recipients of new iMacs to install Fink on them, but suggests
 waiting until the new version of fink is ready.
-
-Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-
+</p>
+<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+</p>
 </description>
       <content:encoded>
-
+<p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
 packages (which are expected to function again when we switch to the 10.4
 tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
 XCode 2.2 will be required for running the 10.4 tree when it is released.
-
-
+</p>
+<p>
 On the other hand, in spite of today's announcements from Apple, Fink is
 not ready to run on Intel processors.  The Fink team hopes to have an
 Intel-ready version of fink released within a few weeks; the Fink team does 
 not advise early recipients of new iMacs to install Fink on them, but suggests
 waiting until the new version of fink is ready.
-
-Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-
+</p>
+<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).">
@@ -210,21 +210,21 @@ Fink package maintainers please take note of the new Architecture field, now doc
       <link>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</link>
       <guid>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</guid>
       <description>
-
+<p>
 The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-
-
+</p>
+<p>
 For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-
-
+</p>
+<p>
 For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
-
+</p>
 
 </content:encoded>
     </item>
@@ -233,95 +233,95 @@ For those who have already installed XCode 2.2 and don't want to revert to 2.1, 
       <link>http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.</link>
       <guid>http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.</guid>
       <description>
-
+<p>
 Three new Fink releases are 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
-
-
+</p>
+<p>
 The new release for 10.4 includes all currently-available "stable" packages
 in source and binary form: there are 1565 of these, which constitutes more
 than 80% of the 1909 packages available in the 10.3 release.  Work continues
 by the fink developers on bringing more of the stable packages to Tiger.
-
-
+</p>
+<p>
 The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
-
-
+</p>
+<p>
 Users upgrading to 10.4 can now simply issue a 
 fink selfupdate command, followed by
 sudo /sw/lib/fink/postinstall.pl (for first-time updaters
 on 10.4), fink scanpackages and sudo apt-get update.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
-
-
+</p>
+<p>
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
 problematic volume and clicking on "repair disk permissions."  
 Also, the installer requires you to have administrative privileges, so be 
 sure that you're running it as such a user.
-
-
+</p>
+<p>
 Note added 6/30/05:  To avoid contamination with obsolete headers and 
 the like, we recommend that people who want to build packages from source 
 should perform a clean install of XCode via running the 
 /Developer/Tools/uninstall-devtools.pl script.  For best 
 results, you may want to do this before updating your OS.
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 Three new Fink releases are 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
-
-
+</p>
+<p>
 The new release for 10.4 includes all currently-available "stable" packages
 in source and binary form: there are 1565 of these, which constitutes more
 than 80% of the 1909 packages available in the 10.3 release.  Work continues
 by the fink developers on bringing more of the stable packages to Tiger.
-
-
+</p>
+<p>
 The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
-
-
+</p>
+<p>
 Users upgrading to 10.4 can now simply issue a 
 fink selfupdate command, followed by
 sudo /sw/lib/fink/postinstall.pl (for first-time updaters
 on 10.4), fink scanpackages and sudo apt-get update.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
-
-
+</p>
+<p>
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
 problematic volume and clicking on "repair disk permissions."  
 Also, the installer requires you to have administrative privileges, so be 
 sure that you're running it as such a user.
-
-
+</p>
+<p>
 Note added 6/30/05:  To avoid contamination with obsolete headers and 
 the like, we recommend that people who want to build packages from source 
 should perform a clean install of XCode via running the 
 /Developer/Tools/uninstall-devtools.pl script.  For best 
 results, you may want to do this before updating your OS.
-
+</p>
 
 </content:encoded>
     </item>
@@ -330,15 +330,15 @@ results, you may want to do this before updating your OS.
       <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20%3F%20Tiger</link>
       <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20%3F%20Tiger</guid>
       <description>
-
+<p>
 Fink &#21487;&#20197;&#22312; OS X 10.4 &#20013;&#20351;&#29992;&#65281; &#20320;&#21487;&#20197;&#26377;&#20960;&#31181;&#21319;&#32423;&#30340;&#26041;&#27861;&#65306;
-
+</p>
 
 &#22312;&#26368;&#36817;&#30340;&#20960;&#21608;&#20869;&#65292;&#23558;&#20250;&#26377;&#19968;&#20010;&#23433;&#35013;&#21253;&#21457;&#24067;&#65292;&#25552;&#20379;&#32473;&#37027;&#20123;&#21482;&#20351;&#29992;&#20108;&#36827;&#21046;&#23433;&#35013;&#21253;&#30340;&#29992;&#25143;&#12290;
 
 &#23545;&#20110;&#37027;&#20123;&#20351;&#29992;&#31283;&#23450;&#20195;&#30721;&#26641;&#30340;&#29992;&#25143;&#65292;&#25105;&#20204;&#25512;&#33616;&#20351;&#29992; sudo rm -Rf /sw &#21629;&#20196;&#20808;&#21024;&#38500;&#24403;&#21069;&#30340; fink,
-&#28982;&#21518;&#20351;&#29992; 
-fink-0.23.9.tar.gz fink-0.23.9 &#29256;&#26412;&#30340;&#28304;&#20195;&#30721;&#29992; bootstrap &#30340;&#26041;&#24335;&#23433;&#35013;&#12290;&#20320;&#39318;&#20808;&#38656;&#35201;&#20174;
+&#28982;&#21518;&#20351;&#29992; <a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+fink-0.23.9.tar.gz</a> fink-0.23.9 &#29256;&#26412;&#30340;&#28304;&#20195;&#30721;&#29992; bootstrap &#30340;&#26041;&#24335;&#23433;&#35013;&#12290;&#20320;&#39318;&#20808;&#38656;&#35201;&#20174;
 &#19978;&#38754;&#38142;&#25509;&#19979;&#36733;&#28304;&#20195;&#30721;&#25991;&#20214;&#65292;&#28982;&#21518;&#29992;
 tar -xvzf fink-0.23.9.tar.gz &#21629;&#20196;&#35299;&#21253;&#12290;&#22312;&#35299;&#21387;&#21518;&#29983;&#25104;&#30340; 
 fink-0.23.9 &#25991;&#20214;&#22841;&#20013;&#36816;&#34892;
@@ -353,25 +353,25 @@ fink selfupdate &#26469;&#23433;&#35013; fink-0.24.5&#12290;&#22312;&#21319;&#32
 fink selfupdate &#20570;&#36827;&#19968;&#27493;&#30340;&#26356;&#26032;&#12290;
 
 
-&#30446;&#21069;&#65292;&#24182;&#38750;&#20840;&#37096;&#36719;&#20214;&#21253;&#37117;&#21487;&#20197;&#22312; 10.4 &#19978;&#36816;&#34892;&#65292;
+<p>&#30446;&#21069;&#65292;&#24182;&#38750;&#20840;&#37096;&#36719;&#20214;&#21253;&#37117;&#21487;&#20197;&#22312; 10.4 &#19978;&#36816;&#34892;&#65292;
 &#20294;&#36825;&#31181;&#24773;&#20917;&#20250;&#22312;&#23558;&#26469;&#30340;&#20960;&#21608;&#20869;&#33719;&#24471;&#25913;&#21892;&#65292;&#31283;&#23450;&#20195;&#30721;&#26641;&#20013;&#36719;&#20214;&#21253;&#30340;&#25968;&#37327;&#20250;&#27604; 10.3 &#20013;&#30340;&#26126;&#26174;&#22320;&#23569;&#65292;
 &#20294;&#20182;&#20204;&#24212;&#35813;&#37117;&#21487;&#20197;&#32534;&#35793;&#36890;&#36807;&#12290;
-
-&#24403;&#28982;&#65292;&#36824;&#35201;&#19968;&#20123;&#23567;&#30340;&#32454;&#33410;&#38382;&#39064;&#38656;&#35201;&#23436;&#21892;&#12290;
+</p>
+<p>&#24403;&#28982;&#65292;&#36824;&#35201;&#19968;&#20123;&#23567;&#30340;&#32454;&#33410;&#38382;&#39064;&#38656;&#35201;&#23436;&#21892;&#12290;
 &#25105;&#20204;&#40723;&#21169;&#20351;&#29992; Fink &#20013;&#36719;&#20214;&#20570;&#20026;&#20851;&#38190;&#24212;&#29992;&#30340;&#29992;&#25143;&#21152;&#20837;&#21040;&#37038;&#20214;&#21015;&#34920;&#20013;&#65292;&#20197;&#22312;&#21319;&#32423;&#21069;&#21487;&#20197;&#20102;&#35299;&#20854;&#23427;&#20154;&#26102;&#20505;&#26366;&#32463;&#30896;&#21040;&#36807;&#38382;&#39064;&#12290;
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 Fink &#21487;&#20197;&#22312; OS X 10.4 &#20013;&#20351;&#29992;&#65281; &#20320;&#21487;&#20197;&#26377;&#20960;&#31181;&#21319;&#32423;&#30340;&#26041;&#27861;&#65306;
-
+</p>
 
 &#22312;&#26368;&#36817;&#30340;&#20960;&#21608;&#20869;&#65292;&#23558;&#20250;&#26377;&#19968;&#20010;&#23433;&#35013;&#21253;&#21457;&#24067;&#65292;&#25552;&#20379;&#32473;&#37027;&#20123;&#21482;&#20351;&#29992;&#20108;&#36827;&#21046;&#23433;&#35013;&#21253;&#30340;&#29992;&#25143;&#12290;
 
 &#23545;&#20110;&#37027;&#20123;&#20351;&#29992;&#31283;&#23450;&#20195;&#30721;&#26641;&#30340;&#29992;&#25143;&#65292;&#25105;&#20204;&#25512;&#33616;&#20351;&#29992; sudo rm -Rf /sw &#21629;&#20196;&#20808;&#21024;&#38500;&#24403;&#21069;&#30340; fink,
-&#28982;&#21518;&#20351;&#29992; 
-fink-0.23.9.tar.gz fink-0.23.9 &#29256;&#26412;&#30340;&#28304;&#20195;&#30721;&#29992; bootstrap &#30340;&#26041;&#24335;&#23433;&#35013;&#12290;&#20320;&#39318;&#20808;&#38656;&#35201;&#20174;
+&#28982;&#21518;&#20351;&#29992; <a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
+fink-0.23.9.tar.gz</a> fink-0.23.9 &#29256;&#26412;&#30340;&#28304;&#20195;&#30721;&#29992; bootstrap &#30340;&#26041;&#24335;&#23433;&#35013;&#12290;&#20320;&#39318;&#20808;&#38656;&#35201;&#20174;
 &#19978;&#38754;&#38142;&#25509;&#19979;&#36733;&#28304;&#20195;&#30721;&#25991;&#20214;&#65292;&#28982;&#21518;&#29992;
 tar -xvzf fink-0.23.9.tar.gz &#21629;&#20196;&#35299;&#21253;&#12290;&#22312;&#35299;&#21387;&#21518;&#29983;&#25104;&#30340; 
 fink-0.23.9 &#25991;&#20214;&#22841;&#20013;&#36816;&#34892;
@@ -386,13 +386,13 @@ fink selfupdate &#26469;&#23433;&#35013; fink-0.24.5&#12290;&#22312;&#21319;&#32
 fink selfupdate &#20570;&#36827;&#19968;&#27493;&#30340;&#26356;&#26032;&#12290;
 
 
-&#30446;&#21069;&#65292;&#24182;&#38750;&#20840;&#37096;&#36719;&#20214;&#21253;&#37117;&#21487;&#20197;&#22312; 10.4 &#19978;&#36816;&#34892;&#65292;
+<p>&#30446;&#21069;&#65292;&#24182;&#38750;&#20840;&#37096;&#36719;&#20214;&#21253;&#37117;&#21487;&#20197;&#22312; 10.4 &#19978;&#36816;&#34892;&#65292;
 &#20294;&#36825;&#31181;&#24773;&#20917;&#20250;&#22312;&#23558;&#26469;&#30340;&#20960;&#21608;&#20869;&#33719;&#24471;&#25913;&#21892;&#65292;&#31283;&#23450;&#20195;&#30721;&#26641;&#20013;&#36719;&#20214;&#21253;&#30340;&#25968;&#37327;&#20250;&#27604; 10.3 &#20013;&#30340;&#26126;&#26174;&#22320;&#23569;&#65292;
 &#20294;&#20182;&#20204;&#24212;&#35813;&#37117;&#21487;&#20197;&#32534;&#35793;&#36890;&#36807;&#12290;
-
-&#24403;&#28982;&#65292;&#36824;&#35201;&#19968;&#20123;&#23567;&#30340;&#32454;&#33410;&#38382;&#39064;&#38656;&#35201;&#23436;&#21892;&#12290;
+</p>
+<p>&#24403;&#28982;&#65292;&#36824;&#35201;&#19968;&#20123;&#23567;&#30340;&#32454;&#33410;&#38382;&#39064;&#38656;&#35201;&#23436;&#21892;&#12290;
 &#25105;&#20204;&#40723;&#21169;&#20351;&#29992; Fink &#20013;&#36719;&#20214;&#20570;&#20026;&#20851;&#38190;&#24212;&#29992;&#30340;&#29992;&#25143;&#21152;&#20837;&#21040;&#37038;&#20214;&#21015;&#34920;&#20013;&#65292;&#20197;&#22312;&#21319;&#32423;&#21069;&#21487;&#20197;&#20102;&#35299;&#20854;&#23427;&#20154;&#26102;&#20505;&#26366;&#32463;&#30896;&#21040;&#36807;&#38382;&#39064;&#12290;
-
+</p>
 
 </content:encoded>
     </item>
@@ -401,20 +401,20 @@ fink selfupdate &#20570;&#36827;&#19968;&#27493;&#30340;&#26356;&#26032;&#12290;
       <link>http://fink.sourceforge.net/news/#2004-11-20%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</link>
       <guid>http://fink.sourceforge.net/news/#2004-11-20%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</guid>
       <description>
-
+<p>
 &#33529;&#26524;&#21457;&#24067;&#20102; 2004 &#24180;&#21313;&#19968;&#26376;&#30340; gcc3 &#26356;&#26032;&#65292;&#23427;&#21487;&#20197;&#22312; connect.apple.com &#19979;&#36733;(&#38656;&#35201;&#20808;&#20813;&#36153;&#27880;&#20876;)&#12290;&#36825;&#20010;&#26356;&#26032;&#20462;&#27491;&#20102; XCode 1.5 &#20013;&#30340; gcc3 &#32534;&#35793;&#22120;&#30340;&#38382;&#39064;&#12290;&#22914;&#26524;&#20320;&#27491;&#22312;&#20351;&#29992; XCode 1.5&#65292;&#20320;&#24212;&#35813;&#23433;&#35013;&#36825;&#20010;&#26356;&#26032;&#12290;(&#36825;&#20010;&#26356;&#26032;&#21487;&#20197;&#27491;&#30830;&#22320;&#26356;&#26032;&#26410;&#32463;&#20462;&#25913;&#30340; XCode 1.5&#65292;&#20063;&#21487;&#20197;&#26356;&#26032;&#37027;&#20123;&#23454;&#26045;&#20102;&#20197;&#21069; fink &#25152;&#25512;&#33616;&#30340;&#20020;&#26102;&#21150;&#27861;&#30340;&#29992;&#25143;&#12290;)
-
+</p><p>
 &#25105;&#20204;&#21521;&#33529;&#26524;&#33021;&#22815;&#21709;&#24212;&#25105;&#20204;&#25552;&#20132;&#30340;&#20851;&#20110;&#36825;&#20010;&#38382;&#39064;&#30340;&#25253;&#21578;&#65292;&#24182;&#23613;&#24555;&#32473;&#20104;&#35299;&#20915;&#34920;&#31034;&#24863;&#35874;&#12290;
-
+</p>
 
 
 </description>
       <content:encoded>
-
+<p>
 &#33529;&#26524;&#21457;&#24067;&#20102; 2004 &#24180;&#21313;&#19968;&#26376;&#30340; gcc3 &#26356;&#26032;&#65292;&#23427;&#21487;&#20197;&#22312; connect.apple.com &#19979;&#36733;(&#38656;&#35201;&#20808;&#20813;&#36153;&#27880;&#20876;)&#12290;&#36825;&#20010;&#26356;&#26032;&#20462;&#27491;&#20102; XCode 1.5 &#20013;&#30340; gcc3 &#32534;&#35793;&#22120;&#30340;&#38382;&#39064;&#12290;&#22914;&#26524;&#20320;&#27491;&#22312;&#20351;&#29992; XCode 1.5&#65292;&#20320;&#24212;&#35813;&#23433;&#35013;&#36825;&#20010;&#26356;&#26032;&#12290;(&#36825;&#20010;&#26356;&#26032;&#21487;&#20197;&#27491;&#30830;&#22320;&#26356;&#26032;&#26410;&#32463;&#20462;&#25913;&#30340; XCode 1.5&#65292;&#20063;&#21487;&#20197;&#26356;&#26032;&#37027;&#20123;&#23454;&#26045;&#20102;&#20197;&#21069; fink &#25152;&#25512;&#33616;&#30340;&#20020;&#26102;&#21150;&#27861;&#30340;&#29992;&#25143;&#12290;)
-
+</p><p>
 &#25105;&#20204;&#21521;&#33529;&#26524;&#33021;&#22815;&#21709;&#24212;&#25105;&#20204;&#25552;&#20132;&#30340;&#20851;&#20110;&#36825;&#20010;&#38382;&#39064;&#30340;&#25253;&#21578;&#65292;&#24182;&#23613;&#24555;&#32473;&#20104;&#35299;&#20915;&#34920;&#31034;&#24863;&#35874;&#12290;
-
+</p>
 
 
 </content:encoded>
@@ -424,28 +424,28 @@ fink selfupdate &#20570;&#36827;&#19968;&#27493;&#30340;&#26356;&#26032;&#12290;
       <link>http://fink.sourceforge.net/news/#2004-10-15%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</link>
       <guid>http://fink.sourceforge.net/news/#2004-10-15%20gcc%20%3F%3F%3F%3F%3F%3F%3F%3F%3F%3F</guid>
       <description>
-
+<p>
 &#22312; XCode 1.5 &#20013;&#21253;&#25324;&#30340; gcc &#29256;&#26412;&#24050;&#32463;&#34987;&#21457;&#29616;&#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#20250;&#23545; c++ &#20195;&#30721;&#20135;&#29983;&#38169;&#35823;&#30340;&#36755;&#20986;&#12290;
 Fink &#29616;&#22312;&#20250;&#23545;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#29992;&#25143;&#25552;&#20986;&#21578;&#35686;&#20449;&#24687;&#65292;Fink &#20063;&#23558;&#20250;&#25298;&#32477;&#20351;&#29992;&#26377;&#38382;&#39064;&#30340; gcc &#26469;&#32534;&#35793;&#19968;&#30452;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#36719;&#20214;&#21253;&#12290;
-
+</p><p>
 &#22914;&#26524;&#20320;&#24050;&#32463;&#21319;&#32423; XCode &#21040;&#29256;&#26412; 1.5&#65292;&#19979;&#38754;&#26159;&#19968;&#20010;&#20020;&#26102;&#35299;&#20915;&#21150;&#27861;&#65292;
-&#22312; &#36825;&#37324;
-&#21644;&#36825;&#37324;&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
-&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
-
+&#22312; <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">&#36825;&#37324;</a>
+&#21644;<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">&#36825;&#37324;</a>&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
+</p><p>&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
+</p>
 
 
 </description>
       <content:encoded>
-
+<p>
 &#22312; XCode 1.5 &#20013;&#21253;&#25324;&#30340; gcc &#29256;&#26412;&#24050;&#32463;&#34987;&#21457;&#29616;&#22312;&#26576;&#20123;&#24773;&#20917;&#19979;&#20250;&#23545; c++ &#20195;&#30721;&#20135;&#29983;&#38169;&#35823;&#30340;&#36755;&#20986;&#12290;
 Fink &#29616;&#22312;&#20250;&#23545;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#29992;&#25143;&#25552;&#20986;&#21578;&#35686;&#20449;&#24687;&#65292;Fink &#20063;&#23558;&#20250;&#25298;&#32477;&#20351;&#29992;&#26377;&#38382;&#39064;&#30340; gcc &#26469;&#32534;&#35793;&#19968;&#30452;&#23384;&#22312;&#36825;&#20010;&#38382;&#39064;&#30340;&#36719;&#20214;&#21253;&#12290;
-
+</p><p>
 &#22914;&#26524;&#20320;&#24050;&#32463;&#21319;&#32423; XCode &#21040;&#29256;&#26412; 1.5&#65292;&#19979;&#38754;&#26159;&#19968;&#20010;&#20020;&#26102;&#35299;&#20915;&#21150;&#27861;&#65292;
-&#22312; &#36825;&#37324;
-&#21644;&#36825;&#37324;&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
-&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
-
+&#22312; <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580">&#36825;&#37324;</a>
+&#21644;<a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200">&#36825;&#37324;</a>&#26377;&#35814;&#32454;&#30340;&#25551;&#36848;&#12290;
+</p><p>&#22914;&#26524;&#20320;&#36824;&#27809;&#26377;&#21319;&#32423;&#65292;&#20320;&#24212;&#35813;&#32771;&#34385;&#32487;&#32493;&#20351;&#29992;&#29256;&#26412; 1.2&#65292;&#30452;&#21040;&#36825;&#20010;&#38382;&#39064;&#33719;&#24471;&#35299;&#20915;&#12290;
+</p>
 
 
 </content:encoded>
@@ -455,75 +455,75 @@ Fink &#29616;&#22312;&#20250;&#23545;&#23384;&#22312;&#36825;&#20010;&#38382;&#3
       <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.</link>
       <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.</guid>
       <description>
-
+<p>
 &#26368;&#26032;&#30340; Fink &#21457;&#34892;&#29256;&#65292;0.7.1 (&#38024;&#23545; OS X 10.3),
 &#29616;&#22312;&#24050;&#32463;&#20197;&#28304;&#20195;&#30721;&#21644;&#20108;&#36827;&#21046;&#29256;&#26412;&#20004;&#31181;&#24418;&#24335;&#21521;&#29992;&#25143;&#25552;&#20379;&#12290;&#36825;&#20010;&#29256;&#26412;&#26159;&#38024;&#23545; OS X &#30340; Panther (10.3) &#29256;&#26412;&#32780;&#35774;&#35745;&#30340;&#12290;&#38024;&#23545; Jaguar (10.2) &#30340; 0.6.3 &#29256;&#20063;&#20173;&#28982;&#21487;&#20197;&#19979;&#36733;&#24471;&#21040;&#12290; 
+</p>
 
-
-
+<p>
 &#36825;&#20010;&#26032;&#30340;&#21457;&#34892;&#29256;&#21253;&#25324;&#20102;&#23545;&#36719;&#20214;&#21253;&#31649;&#29702;&#22120;&#30340;&#20462;&#27491;&#65292;&#20197;&#21450;&#21152;&#36827;&#20102;&#35768;&#22810;&#20197;&#21069;&#27809;&#26377;&#21253;&#25324;&#30340;&#20108;&#36827;&#21046;&#36719;&#20214;&#21253;&#65292;&#29616;&#22312;&#20108;&#36827;&#21046;&#21253;&#30340;&#24635;&#25968;&#24050;&#32463;&#36798;&#21040; 1650 &#20010;&#12290;&#20854;&#20013;&#21253;&#25324; KDE 3.1.4 &#21644; GNOME 2.4&#12290;
+</p>
 
-
-
+<p>
 &#35201;&#23433;&#35013;&#19968;&#20010;&#26032;&#30340; Fink&#65292;&#20320;&#21487;&#20197;&#25353;&#29031;
-&#36825;&#37324;&#30340;&#25351;&#21335;&#26469;&#36827;&#34892;&#12290;
+<a href="http://fink.sourceforge.net/download/index.php">&#36825;&#37324;</a>&#30340;&#25351;&#21335;&#26469;&#36827;&#34892;&#12290;
 &#20320;&#21487;&#20197;&#22312;&#20320;&#24403;&#21069;&#30340;&#29256;&#26412;&#30340;&#22522;&#30784;&#19978;&#30452;&#25509;&#21319;&#32423;&#21040;&#26368;&#26032;&#30340;&#29256;&#26412;&#12290;
 
 &#20851;&#20110; 0.7.0 &#21644; 0.7.1 &#30340;&#21306;&#21035;&#30340;&#23436;&#25972;&#28165;&#21333;&#21487;&#20197;&#22312;
-&#36825;&#20010;&#39029;&#38754;&#26597;&#30475;&#24471;&#21040;&#12290;
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">&#36825;&#20010;&#39029;&#38754;</a>&#26597;&#30475;&#24471;&#21040;&#12290;
+</p>
 
-
-
+<p>
 &#22914;&#26524;&#20320;&#26377;&#20219;&#20309;&#30097;&#38382;&#65292;&#35831;&#23581;&#35797;&#20351;&#29992; Fink &#30340;&#37038;&#20214;&#21015;&#34920;&#12290;&#20320;&#21487;&#20197;&#22312;
-&#36825;&#37324;&#20102;&#35299;&#21040;&#26356;&#22810;&#30340;&#26377;&#20851;&#30693;&#35782;&#12290;
+<a href="http://fink.sourceforge.net/lists/index.php">&#36825;&#37324;</a>&#20102;&#35299;&#21040;&#26356;&#22810;&#30340;&#26377;&#20851;&#30693;&#35782;&#12290;
+</p>
 
-
-
+<p>
 &#35831;&#30830;&#23450;&#20320;&#36873;&#25321;&#20102;&#36866;&#21512;&#20320;&#20351;&#29992;&#30340;&#25805;&#20316;&#31995;&#32479;&#29256;&#26412;&#30340;&#21512;&#36866;&#30340;&#23433;&#35013;&#31243;&#24207;&#12290;
 Fink 0.6.3 &#21482;&#33021;&#23433;&#35013;&#22312; Mac OS X 10.2 &#19978;&#65292;* &#32780; Fink 0.7.1 &#21017;&#21482;&#33021;&#23433;&#35013;&#22312; Mac OS X 10.3 &#19978;&#12290;*
+</p>
 
-
-
+<p>
 Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#29486;&#32773;&#65292;&#24110;&#21161;&#32773;&#21644;&#24320;&#21457;&#32773;&#33268;&#35874;&#12290;&#23427;&#20204;&#20351;&#24471;&#36825;&#20010;&#29256;&#26412;&#30340;&#21457;&#24067;&#25104;&#20026;&#20102;&#29616;&#23454;&#12290;
 &#25105;&#20204;&#20063;&#21521;&#25105;&#20204;&#30340;&#29992;&#25143;&#31038;&#21306;&#34920;&#31034;&#24863;&#35874;&#65292;&#20182;&#20204;&#19979;&#36733;&#19978;&#19968;&#20010;&#29256;&#26412; 0.7.0 &#36229;&#36807; 130,000 &#27425;&#12290; 
 &#27809;&#26377;&#20182;&#20204;&#19968;&#30452;&#19968;&#26469;&#30340;&#25903;&#25345;&#21644;&#24314;&#35758;&#65292;Fink &#19981;&#21487;&#33021;&#21462;&#24471;&#20170;&#22825;&#30340;&#25104;&#23601;&#12290;
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 &#26368;&#26032;&#30340; Fink &#21457;&#34892;&#29256;&#65292;0.7.1 (&#38024;&#23545; OS X 10.3),
 &#29616;&#22312;&#24050;&#32463;&#20197;&#28304;&#20195;&#30721;&#21644;&#20108;&#36827;&#21046;&#29256;&#26412;&#20004;&#31181;&#24418;&#24335;&#21521;&#29992;&#25143;&#25552;&#20379;&#12290;&#36825;&#20010;&#29256;&#26412;&#26159;&#38024;&#23545; OS X &#30340; Panther (10.3) &#29256;&#26412;&#32780;&#35774;&#35745;&#30340;&#12290;&#38024;&#23545; Jaguar (10.2) &#30340; 0.6.3 &#29256;&#20063;&#20173;&#28982;&#21487;&#20197;&#19979;&#36733;&#24471;&#21040;&#12290; 
+</p>
 
-
-
+<p>
 &#36825;&#20010;&#26032;&#30340;&#21457;&#34892;&#29256;&#21253;&#25324;&#20102;&#23545;&#36719;&#20214;&#21253;&#31649;&#29702;&#22120;&#30340;&#20462;&#27491;&#65292;&#20197;&#21450;&#21152;&#36827;&#20102;&#35768;&#22810;&#20197;&#21069;&#27809;&#26377;&#21253;&#25324;&#30340;&#20108;&#36827;&#21046;&#36719;&#20214;&#21253;&#65292;&#29616;&#22312;&#20108;&#36827;&#21046;&#21253;&#30340;&#24635;&#25968;&#24050;&#32463;&#36798;&#21040; 1650 &#20010;&#12290;&#20854;&#20013;&#21253;&#25324; KDE 3.1.4 &#21644; GNOME 2.4&#12290;
+</p>
 
-
-
+<p>
 &#35201;&#23433;&#35013;&#19968;&#20010;&#26032;&#30340; Fink&#65292;&#20320;&#21487;&#20197;&#25353;&#29031;
-&#36825;&#37324;&#30340;&#25351;&#21335;&#26469;&#36827;&#34892;&#12290;
+<a href="http://fink.sourceforge.net/download/index.php">&#36825;&#37324;</a>&#30340;&#25351;&#21335;&#26469;&#36827;&#34892;&#12290;
 &#20320;&#21487;&#20197;&#22312;&#20320;&#24403;&#21069;&#30340;&#29256;&#26412;&#30340;&#22522;&#30784;&#19978;&#30452;&#25509;&#21319;&#32423;&#21040;&#26368;&#26032;&#30340;&#29256;&#26412;&#12290;
 
 &#20851;&#20110; 0.7.0 &#21644; 0.7.1 &#30340;&#21306;&#21035;&#30340;&#23436;&#25972;&#28165;&#21333;&#21487;&#20197;&#22312;
-&#36825;&#20010;&#39029;&#38754;&#26597;&#30475;&#24471;&#21040;&#12290;
+<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">&#36825;&#20010;&#39029;&#38754;</a>&#26597;&#30475;&#24471;&#21040;&#12290;
+</p>
 
-
-
+<p>
 &#22914;&#26524;&#20320;&#26377;&#20219;&#20309;&#30097;&#38382;&#65292;&#35831;&#23581;&#35797;&#20351;&#29992; Fink &#30340;&#37038;&#20214;&#21015;&#34920;&#12290;&#20320;&#21487;&#20197;&#22312;
-&#36825;&#37324;&#20102;&#35299;&#21040;&#26356;&#22810;&#30340;&#26377;&#20851;&#30693;&#35782;&#12290;
+<a href="http://fink.sourceforge.net/lists/index.php">&#36825;&#37324;</a>&#20102;&#35299;&#21040;&#26356;&#22810;&#30340;&#26377;&#20851;&#30693;&#35782;&#12290;
+</p>
 
-
-
+<p>
 &#35831;&#30830;&#23450;&#20320;&#36873;&#25321;&#20102;&#36866;&#21512;&#20320;&#20351;&#29992;&#30340;&#25805;&#20316;&#31995;&#32479;&#29256;&#26412;&#30340;&#21512;&#36866;&#30340;&#23433;&#35013;&#31243;&#24207;&#12290;
 Fink 0.6.3 &#21482;&#33021;&#23433;&#35013;&#22312; Mac OS X 10.2 &#19978;&#65292;* &#32780; Fink 0.7.1 &#21017;&#21482;&#33021;&#23433;&#35013;&#22312; Mac OS X 10.3 &#19978;&#12290;*
+</p>
 
-
-
+<p>
 Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#29486;&#32773;&#65292;&#24110;&#21161;&#32773;&#21644;&#24320;&#21457;&#32773;&#33268;&#35874;&#12290;&#23427;&#20204;&#20351;&#24471;&#36825;&#20010;&#29256;&#26412;&#30340;&#21457;&#24067;&#25104;&#20026;&#20102;&#29616;&#23454;&#12290;
 &#25105;&#20204;&#20063;&#21521;&#25105;&#20204;&#30340;&#29992;&#25143;&#31038;&#21306;&#34920;&#31034;&#24863;&#35874;&#65292;&#20182;&#20204;&#19979;&#36733;&#19978;&#19968;&#20010;&#29256;&#26412; 0.7.0 &#36229;&#36807; 130,000 &#27425;&#12290; 
 &#27809;&#26377;&#20182;&#20204;&#19968;&#30452;&#19968;&#26469;&#30340;&#25903;&#25345;&#21644;&#24314;&#35758;&#65292;Fink &#19981;&#21487;&#33021;&#21462;&#24471;&#20170;&#22825;&#30340;&#25104;&#23601;&#12290;
-
+</p>
 
 </content:encoded>
     </item>
@@ -532,12 +532,12 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
       <link>http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-23%20Problems%20with%20XCode%201.5</guid>
       <description>
-	
+	<p>
 	In the past few days, there have been reports that some fink packages 
 	do not compile correctly using XCode 1.5.  If you have not already
 	upgraded to XCode 1.5, we suggest that you wait until this issue
 	is resolved before doing so.
-	
+	</p><p>
 	If you are having problems with a package which compiled under
 	XCode 1.2 but does not compile correctly under XCode 1.5, 
 	please report the package to
@@ -545,15 +545,15 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	are  missing after compiling with g++.)  
 	Packages already known to have this problem include
 	octave, singular-factory, singular-libfac, and possibly sdl.
-	
+	</p>
 	</description>
       <content:encoded>
-	
+	<p>
 	In the past few days, there have been reports that some fink packages 
 	do not compile correctly using XCode 1.5.  If you have not already
 	upgraded to XCode 1.5, we suggest that you wait until this issue
 	is resolved before doing so.
-	
+	</p><p>
 	If you are having problems with a package which compiled under
 	XCode 1.2 but does not compile correctly under XCode 1.5, 
 	please report the package to
@@ -561,7 +561,7 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	are  missing after compiling with g++.)  
 	Packages already known to have this problem include
 	octave, singular-factory, singular-libfac, and possibly sdl.
-	
+	</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0">
@@ -569,7 +569,7 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
       <link>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</guid>
       <description>
-	
+	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further
 	updating via rsync.  If you installed this version of fink, you
@@ -577,22 +577,22 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	fink install fink-0.21.2-1 which will downgrade fink
 	to the version in the stable tree, and subsequently running
 	fink selfupdate
-	
+	</p><p>
 	If for any reason those commands don't work, go to 
-	the 
-	fink file release page at sourceforge and download the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
 	file fink-0.22.1.tar.gz (or a more recent, i.e.,
 	higher numbered, version).  Unpack this file with
 	tar xfz fink-0.22.1.tar.gz , and then from within the
 	fink-0.22.1 directory, run the command ./inject.pl
-	
-	
+	</p>
+	<p>
 	The fink team apologizes for the error, and thanks the user 
 	community for bringing it to our attention quickly.
-	
+	</p>
 	</description>
       <content:encoded>
-	
+	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further
 	updating via rsync.  If you installed this version of fink, you
@@ -600,19 +600,19 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	fink install fink-0.21.2-1 which will downgrade fink
 	to the version in the stable tree, and subsequently running
 	fink selfupdate
-	
+	</p><p>
 	If for any reason those commands don't work, go to 
-	the 
-	fink file release page at sourceforge and download the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
 	file fink-0.22.1.tar.gz (or a more recent, i.e.,
 	higher numbered, version).  Unpack this file with
 	tar xfz fink-0.22.1.tar.gz , and then from within the
 	fink-0.22.1 directory, run the command ./inject.pl
-	
-	
+	</p>
+	<p>
 	The fink team apologizes for the error, and thanks the user 
 	community for bringing it to our attention quickly.
-	
+	</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
@@ -620,7 +620,7 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
       <link>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</guid>
       <description>
-	
+	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
@@ -630,17 +630,17 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
 	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please contact us.
-	
-	
+	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
+	</p>
+	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in contacting us as well.
-	
+	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
+	</p>
 	</description>
       <content:encoded>
-	
+	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
@@ -650,14 +650,14 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
 	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please contact us.
-	
-	
+	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
+	</p>
+	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in contacting us as well.
-	
+	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
+	</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.">
@@ -665,67 +665,67 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
       <link>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</link>
       <guid>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</guid>
       <description>
-	
+	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
 been built on 10.2, while release 
 0.7.0 has been built on 10.3. This should facilitate better support for the different platforms. 
-	
-	
+	</p>
+	<p>
 These new releases incorporate various fixes to the package manager, many previously 
 unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	
-	
+	</p>
+	<p>
 To complete a new Fink installation you should follow the instructions posted 
-here.
-You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted here.
+<a href="http://fink.sourceforge.net/download/index.php?phpLang=en">here</a>.
+You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">here</a>.
 
 If you have questions or problems, please try the Fink mailing lists you can learn more about them 
-here.
-		
-		
+<a href="http://fink.sourceforge.net/lists/index.php?phpLang=en">here</a>.
+		</p>
+		<p>
 Please make sure you pick the appropriate installer for your Platform.
 Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		
-	
+		</p>
+	<p>
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
 We also thank our community, without their constant support and valuable 
 pointers Fink would not be where we are now.. 
 
-
+</p>
 
 </description>
       <content:encoded>
-	
+	<p>
 The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
 are now available for both source and binary users.  The 0.6.3 release has 
 been built on 10.2, while release 
 0.7.0 has been built on 10.3. This should facilitate better support for the different platforms. 
-	
-	
+	</p>
+	<p>
 These new releases incorporate various fixes to the package manager, many previously 
 unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	
-	
+	</p>
+	<p>
 To complete a new Fink installation you should follow the instructions posted 
-here.
-You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted here.
+<a href="http://fink.sourceforge.net/download/index.php?phpLang=en">here</a>.
+You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">here</a>.
 
 If you have questions or problems, please try the Fink mailing lists you can learn more about them 
-here.
-		
-		
+<a href="http://fink.sourceforge.net/lists/index.php?phpLang=en">here</a>.
+		</p>
+		<p>
 Please make sure you pick the appropriate installer for your Platform.
 Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		
-	
+		</p>
+	<p>
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
 We also thank our community, without their constant support and valuable 
 pointers Fink would not be where we are now.. 
 
-
+</p>
 
 </content:encoded>
     </item>
@@ -734,40 +734,40 @@ pointers Fink would not be where we are now..
       <link>http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.</link>
       <guid>http://fink.sourceforge.net/news/#2004-02-19%20Raise%20your%20Flag.</guid>
       <description>
-	
+	<p>
 Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
 internationalisation efforts. 
 The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
-
-
+</p>
+<p>
 This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
 A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
 Which language are you willing to translate?
-
-
+</p>
+<p>
 If you are willing to become a member of the internationalisation team or wish to provide feedback on 
 the web-site feel free to join the new mailing-list.
-You can do so by going to our mailing-lists page. The full announcement on the existing 
-mailing lists can be read here.
-
+You can do so by going to our <a href="http://fink.sourceforge.net/lists/index.php">mailing-lists page</a>. The full announcement on the existing 
+mailing lists can be read <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">here</a>.
+</p>
 </description>
       <content:encoded>
-	
+	<p>
 Thanks to Baba Yoshihiko, Fink has now taken the necessary steps to allow for 
 internationalisation efforts. 
 The improved infrastructure enables us to display a multilingual web-site to our visitors from all over the world. 
-
-
+</p>
+<p>
 This also means that we need volunteers. The Fink web-site needs to be translated into the language of your choice. 
 A translation into Japanese is being worked on and the translation into French has been taken over by Michele Garoche. 
 Which language are you willing to translate?
-
-
+</p>
+<p>
 If you are willing to become a member of the internationalisation team or wish to provide feedback on 
 the web-site feel free to join the new mailing-list.
-You can do so by going to our mailing-lists page. The full announcement on the existing 
-mailing lists can be read here.
-
+You can do so by going to our <a href="http://fink.sourceforge.net/lists/index.php">mailing-lists page</a>. The full announcement on the existing 
+mailing lists can be read <a href="http://article.gmane.org/gmane.os.apple.fink.devel/7554">here</a>.
+</p>
 </content:encoded>
     </item>
   </channel>

@@ -5,63 +5,63 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2006-06-18T19:57:41+02:00</dc:date>
+    <dc:date>2006-06-21T12:01:08-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.">
       <title>New Fink release.</title>
       <link>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</link>
       <guid>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</guid>
       <description>
-      
+      <p>
 A new Fink release for OS X 10.4 (Tiger) is 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.
 The release includes source files, binary packages, and  Fink
 installers for both kinds of hardware.
-
-      
+</p>
+      <p>
 Fink on the Intel platform is still considered "beta" quality, and a number of
 packages (particularly packages in the "unstable" tree) either do not compile,
 or compile but do not run.  Work to improve this situation is ongoing.
-
-
+</p>
+<p>
 Fink users on PowerPC whose existing fink installation uses the 
 10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
 one of two ways.  The upgrade process is problematic, due to the change
 in ABI of g++ libraries which requires many libraries to be recompiled.
 Many users will simply wish to remove their fink installations and
 start anew with the 0.8.1 installer.  Others may wish to use the new
-10.4-update tarball (v. 0.2) (around 12 MB), which includes 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
-
+</p>
 </description>
       <content:encoded>
-      
+      <p>
 A new Fink release for OS X 10.4 (Tiger) is 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.1, which can be installed on either Intel or PowerPC
 hardware.
 The release includes source files, binary packages, and  Fink
 installers for both kinds of hardware.
-
-      
+</p>
+      <p>
 Fink on the Intel platform is still considered "beta" quality, and a number of
 packages (particularly packages in the "unstable" tree) either do not compile,
 or compile but do not run.  Work to improve this situation is ongoing.
-
-
+</p>
+<p>
 Fink users on PowerPC whose existing fink installation uses the 
 10.4-transitional tree (from the 0.8.0 distribution) may upgrade in
 one of two ways.  The upgrade process is problematic, due to the change
 in ABI of g++ libraries which requires many libraries to be recompiled.
 Many users will simply wish to remove their fink installations and
 start anew with the 0.8.1 installer.  Others may wish to use the new
-10.4-update tarball (v. 0.2) (around 12 MB), which includes 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
-
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
@@ -69,62 +69,62 @@ will attempt to update an existing fink installation.
       <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
       <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</guid>
       <description>
-      
+      <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
 has not been fully functional since March 30.  The anonymous CVS access
 has not been updated since then, and as of several days ago, the developers
 are also unable to update CVS in any form.
-
+</p><p>
 As we understand the current plans of sourceforge's staff (outlined
-briefly on their site
-status page), the old CVS servers will never be brought back in
+briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</a>), the old CVS servers will never be brought back in
 their current form.  This is likely to mean disruption for fink users,
 but at present, we cannot say what form this disruption will take.
-
+</p><p>
 Our current advice to fink users is to switch to the 'rsync' method of
 updating (by running the command 'fink selfupdate-rsync').  This will at
 least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
-
-Update 5/24/06: CVS is now functioning again, and users using the rsync
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
 method of selfupdating are getting up-to-date content.  If you are using
 the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from the
-Sourceforge file release page, expand the file, and run the command
+download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>, expand the file, and run the command
 ./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
 should again work normally.
-
+</p>
     </description>
       <content:encoded>
-      
+      <p>
 As many Fink users are aware, the Fink CVS repository at sourceforge.net
 has not been fully functional since March 30.  The anonymous CVS access
 has not been updated since then, and as of several days ago, the developers
 are also unable to update CVS in any form.
-
+</p><p>
 As we understand the current plans of sourceforge's staff (outlined
-briefly on their site
-status page), the old CVS servers will never be brought back in
+briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
+status page</a>), the old CVS servers will never be brought back in
 their current form.  This is likely to mean disruption for fink users,
 but at present, we cannot say what form this disruption will take.
-
+</p><p>
 Our current advice to fink users is to switch to the 'rsync' method of
 updating (by running the command 'fink selfupdate-rsync').  This will at
 least give you a fink installation which is current up through May 7.
 If a full update to the new CVS situation turns out to be impossible
 via fink's normal selfupdate command, we will post instructions here
 on how to update when they become available.
-
-Update 5/24/06: CVS is now functioning again, and users using the rsync
+</p>
+<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
 method of selfupdating are getting up-to-date content.  If you are using
 the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from the
-Sourceforge file release page, expand the file, and run the command
+download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
+Sourceforge file release page</a>, expand the file, and run the command
 ./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
 should again work normally.
-
+</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001">
@@ -132,44 +132,44 @@ should again work normally.
       <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</link>
       <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</guid>
       <description>
-      
+      <p>
 The Fink team has received reports of problems with the rsync
 program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
-
-      
+</p>
+      <p>
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
-
-Update 3/13/06: This has been resolved by security update 2006-002,
-according
-to Apple's documentation.
-
+</p>
+<p>Update 3/13/06: This has been resolved by security update 2006-002,
+<a href="http://docs.info.apple.com/article.html?artnum=303453">according
+to Apple's documentation</a>.
+</p>
     </description>
       <content:encoded>
-      
+      <p>
 The Fink team has received reports of problems with the rsync
 program which was modified by Apple's new Security Update 2006-001: for some
 users, fink selfupdate fails to function after the Security
 Update.  (The underlying cause appears to be a problem with the 
 --delete option for rsync.)
-
-      
+</p>
+      <p>
 As a workaround, users can run fink install rsync to use
 fink's rsync package rather than the Apple program.  Or, for those users
 who need specific features of the Apple program (such as support for
 Extended Attributes), another workaround is fink selfupdate-cvs
 to switch from rsync to cvs updating.  
-
-Update 3/13/06: This has been resolved by security update 2006-002,
-according
-to Apple's documentation.
-
+</p>
+<p>Update 3/13/06: This has been resolved by security update 2006-002,
+<a href="http://docs.info.apple.com/article.html?artnum=303453">according
+to Apple's documentation</a>.
+</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel">
@@ -177,46 +177,46 @@ to Apple's documentation.
       <link>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</link>
       <guid>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</guid>
       <description>
-
+<p>
 A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
-
-      
+</p>
+      <p>
 To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
 fink-0.24.16.tar.gz (or a later version, if it's available)
-from the
-Sourceforge file release page for Fink, expand the file, and
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
 bootstrap process, run fink selfupdate and you'll get
 the currently available packages.
-
-
+</p>
+<p>
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-
+</p>
 </description>
       <content:encoded>
-
+<p>
 A preliminary version of Fink for the Intel architecture is now ready.
 No binary packages are available, and things are still rough around
 the edges, but it should be usable if you are patient!
-
-      
+</p>
+      <p>
 To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
 fink-0.24.16.tar.gz (or a later version, if it's available)
-from the
-Sourceforge file release page for Fink, expand the file, and
+from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
+Sourceforge file release page for Fink</a>, expand the file, and
 run the command ./bootstrap.sh .  At the end of the
 bootstrap process, run fink selfupdate and you'll get
 the currently available packages.
-
-
+</p>
+<p>
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
@@ -224,38 +224,38 @@ annoucement will be made here.
       <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
       <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
       <description>
-
+<p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
 packages (which are expected to function again when we switch to the 10.4
 tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
 XCode 2.2 will be required for running the 10.4 tree when it is released.
-
-
+</p>
+<p>
 On the other hand, in spite of today's announcements from Apple, Fink is
 not ready to run on Intel processors.  The Fink team hopes to have an
 Intel-ready version of fink released within a few weeks; the Fink team does 
 not advise early recipients of new iMacs to install Fink on them, but suggests
 waiting until the new version of fink is ready.
-
-Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-
+</p>
+<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+</p>
 </description>
       <content:encoded>
-
+<p>
 Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
 packages (which are expected to function again when we switch to the 10.4
 tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
 XCode 2.2 will be required for running the 10.4 tree when it is released.
-
-
+</p>
+<p>
 On the other hand, in spite of today's announcements from Apple, Fink is
 not ready to run on Intel processors.  The Fink team hopes to have an
 Intel-ready version of fink released within a few weeks; the Fink team does 
 not advise early recipients of new iMacs to install Fink on them, but suggests
 waiting until the new version of fink is ready.
-
-Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-
+</p>
+<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).">
@@ -263,21 +263,21 @@ Fink package maintainers please take note of the new Architecture field, now doc
       <link>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</link>
       <guid>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</guid>
       <description>
-
+<p>
 The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-
-
+</p>
+<p>
 For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-
-
+</p>
+<p>
 For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
-
+</p>
 
 </content:encoded>
     </item>
@@ -286,78 +286,78 @@ For those who have already installed XCode 2.2 and don't want to revert to 2.1, 
       <link>http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.</link>
       <guid>http://fink.sourceforge.net/news/#2005-06-09%20New%20Fink%20releases.</guid>
       <description>
-
+<p>
 Three new Fink releases are 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
-
-
+</p>
+<p>
 The new release for 10.4 includes all currently-available "stable" packages
 in source and binary form: there are 1565 of these, which constitutes more
 than 80% of the 1909 packages available in the 10.3 release.  Work continues
 by the fink developers on bringing more of the stable packages to Tiger.
-
-
+</p>
+<p>
 The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
-
-
+</p>
+<p>
 Users upgrading to 10.4 can now simply issue a 
 fink selfupdate command, followed by
 sudo /sw/lib/fink/postinstall.pl (for first-time updaters
 on 10.4), fink scanpackages and sudo apt-get update.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
-
-      
+</p>
+      <p>
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
 problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
-
-      Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.
+</p>
+      <p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.</p>
     </description>
       <content:encoded>
-
+<p>
 Three new Fink releases are 
-available
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
  today: version 0.8.0 (for 10.4),
 version 0.7.2 (for 10.3), and version 0.6.4 (for 10.2).
 All three releases include source files, binary packages, and a Fink
 installer for new users.
-
-
+</p>
+<p>
 The new release for 10.4 includes all currently-available "stable" packages
 in source and binary form: there are 1565 of these, which constitutes more
 than 80% of the 1909 packages available in the 10.3 release.  Work continues
 by the fink developers on bringing more of the stable packages to Tiger.
-
-
+</p>
+<p>
 The new release for 10.2 will be the last official release for that
 version of Mac OS X.  Although no further updates (not even security
 updates) will be provided by the Fink team, we anticipate that the
 0.6.4 release will be usable for years to come.
-
-
+</p>
+<p>
 Users upgrading to 10.4 can now simply issue a 
 fink selfupdate command, followed by
 sudo /sw/lib/fink/postinstall.pl (for first-time updaters
 on 10.4), fink scanpackages and sudo apt-get update.
 We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
-
-      
+</p>
+      <p>
 Note added 6/19/05: If the Fink-0.8.0 binary installer complains that the
 volume does not support symlinks, try launching Disk Utility (from the 
 Utilities folder inside the Applications folder), selecting the 
 problematic volume and clicking on "repair disk permissions."  Also, the installer requires you to have administrative privileges, so be sure that you're running it as such a user.
-
-      Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.
+</p>
+      <p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
@@ -365,9 +365,9 @@ problematic volume and clicking on "repair disk permissions."  Also, the install
       <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</link>
       <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</guid>
       <description>
-
+<p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
-
+</p>
 
 A binary installer will be available within a few weeks, for binary-only
 users.  In the meantime, new users should bootstrap fink 0.23.10, just
@@ -377,8 +377,8 @@ as stable users, below.
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an
 installation of fink-0.23.10 using
-
-fink-0.23.10.tar.gz--download that file and expand it, 
+<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+fink-0.23.10.tar.gz</a>--download that file and expand it, 
 eg. via
 tar -xvzf fink-0.23.10.tar.gz.  After running the command
  ./bootstrap.sh  in the resulting
@@ -396,20 +396,20 @@ reinstall the fink package using fink rebuild fink,
 and follow that with another fink selfupdate.
 
 
-Not all packages are working yet under 10.4, but that situation will
+<p>Not all packages are working yet under 10.4, but that situation will
 improve over the next several weeks.  The stable tree contains substantially
 fewer packages than in 10.3, but all of them should compile.
-
-Of course, some wrinkles still need to be ironed out.  We encourage 
+</p>
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
 users with mission-critical applications to check in on the mailing 
 lists to verify whether anyone has had experience with the package in 
-question before upgrading.
+question before upgrading.</p>
 
 </description>
       <content:encoded>
-
+<p>
 Fink can be used on OS X 10.4!  There are several ways you can update:
-
+</p>
 
 A binary installer will be available within a few weeks, for binary-only
 users.  In the meantime, new users should bootstrap fink 0.23.10, just
@@ -419,8 +419,8 @@ as stable users, below.
 For users of the stable tree, we recommend that you delete your current
 fink with sudo rm -Rf /sw and then "bootstrap" an
 installation of fink-0.23.10 using
-
-fink-0.23.10.tar.gz--download that file and expand it, 
+<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+fink-0.23.10.tar.gz</a>--download that file and expand it, 
 eg. via
 tar -xvzf fink-0.23.10.tar.gz.  After running the command
  ./bootstrap.sh  in the resulting
@@ -438,14 +438,14 @@ reinstall the fink package using fink rebuild fink,
 and follow that with another fink selfupdate.
 
 
-Not all packages are working yet under 10.4, but that situation will
+<p>Not all packages are working yet under 10.4, but that situation will
 improve over the next several weeks.  The stable tree contains substantially
 fewer packages than in 10.3, but all of them should compile.
-
-Of course, some wrinkles still need to be ironed out.  We encourage 
+</p>
+<p>Of course, some wrinkles still need to be ironed out.  We encourage 
 users with mission-critical applications to check in on the mailing 
 lists to verify whether anyone has had experience with the package in 
-question before upgrading.
+question before upgrading.</p>
 
 </content:encoded>
     </item>
@@ -454,32 +454,32 @@ question before upgrading.
       <link>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</link>
       <guid>http://fink.sourceforge.net/news/#2004-11-20%20Solution%20to%20gcc%20problems.</guid>
       <description>
-
+<p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
 the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
 install this updater.  (The updater will update correctly for users with
 an untouched XCode 1.5, and also for users who installed the workaround which
 the fink project had previously recommended.)
-
+</p><p>
 We would like to thank Apple for responding to our reports about this
 matter, and working to resolve it as quickly as possible.
-
+</p>
 
 
 </description>
       <content:encoded>
-
+<p>
 Apple has released the November 2004 gcc3 updater, available (upon free 
 registration) at connect.apple.com.  This updater fixes the problems with
 the gcc3 compiler in XCode 1.5.  If you are using XCode 1.5, you should 
 install this updater.  (The updater will update correctly for users with
 an untouched XCode 1.5, and also for users who installed the workaround which
 the fink project had previously recommended.)
-
+</p><p>
 We would like to thank Apple for responding to our reports about this
 matter, and working to resolve it as quickly as possible.
-
+</p>
 
 
 </content:encoded>
@@ -489,36 +489,36 @@ matter, and working to resolve it as quickly as possible.
       <link>http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.</link>
       <guid>http://fink.sourceforge.net/news/#2004-10-15%20Workaround%20for%20gcc%20problems.</guid>
       <description>
-
+<p>
 The version of gcc included with XCode 1.5 is known to produce 
 incorrect output from c++ code under certain circumstances.
 Fink now has a mechanism to warn users about this, and Fink will soon
 refuse
 to use the "broken" gcc to compile packages which are known to
 have this problem.
-
+</p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described  here 
-and  here .
- If you have not yet upgraded, you should consider remaining with
+described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+</p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
-
+</p>
 </description>
       <content:encoded>
-
+<p>
 The version of gcc included with XCode 1.5 is known to produce 
 incorrect output from c++ code under certain circumstances.
 Fink now has a mechanism to warn users about this, and Fink will soon
 refuse
 to use the "broken" gcc to compile packages which are known to
 have this problem.
-
+</p><p>
 If you have already upgraded XCode to version 1.5, there is a workaround,
-described  here 
-and  here .
- If you have not yet upgraded, you should consider remaining with
+described <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/13580"> here </a>
+and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here </a>.
+</p><p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
-
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.">
@@ -526,44 +526,44 @@ XCode version 1.2 until the problem has been resolved.
       <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.</link>
       <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20ver%F6ffentlich.</guid>
       <description>
-
+<p>
 Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
-
-
+</p>
+<p>
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
-
-
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
-
-
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
-
-
+</p>
+<p>
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</a> nachgeschaut werden.
+</p>
+<p>
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="http://fink.sourceforge.net/lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
+</p>
+<p>
 Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
-
-        
+</p>
+        <p>
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
-
+</p>
 </description>
       <content:encoded>
-
+<p>
 Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für Source- und Binary-Nutzer verfügbar. Diese Veröffentlichung ist für Panther (10.3) basierende Mac OS X Versionen gedacht. Die 0.6.3-Veröffentlichung bleibt weiterhin für Jaguar (10.2) basierende Mac OS X Versionen verfügbar.
-
-
+</p>
+<p>
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
-
-
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann hier nachgeschaut werden.
-
-
-Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
-
-
+</p>
+<p>
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</a> nachgeschaut werden.
+</p>
+<p>
+Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="http://fink.sourceforge.net/lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
+</p>
+<p>
 Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden. Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
-
-        
+</p>
+        <p>
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
-
+</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5">
@@ -571,22 +571,22 @@ Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern 
       <link>http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5</guid>
       <description>
-	
+	<p>
 In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit XCode 1.5 kompilieren. Falls Sie noch nicht auf XCode 1.5 aktualisiert haben, empfehlen wir das Sie damit noch warten, bis die Probleme behoben sind.
-
-
+</p>
+<p>
 Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
 teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
-
+</p>
 	</description>
       <content:encoded>
-	
+	<p>
 In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit XCode 1.5 kompilieren. Falls Sie noch nicht auf XCode 1.5 aktualisiert haben, empfehlen wir das Sie damit noch warten, bis die Probleme behoben sind.
-
-
+</p>
+<p>
 Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
 teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
-
+</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0">
@@ -594,7 +594,7 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
       <link>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</guid>
       <description>
-	
+	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further
 	updating via rsync.  If you installed this version of fink, you
@@ -602,22 +602,22 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
 	fink install fink-0.21.2-1 which will downgrade fink
 	to the version in the stable tree, and subsequently running
 	fink selfupdate
-	
+	</p><p>
 	If for any reason those commands don't work, go to 
-	the 
-	fink file release page at sourceforge and download the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
 	file fink-0.22.1.tar.gz (or a more recent, i.e.,
 	higher numbered, version).  Unpack this file with
 	tar xfz fink-0.22.1.tar.gz , and then from within the
 	fink-0.22.1 directory, run the command ./inject.pl
-	
-	
+	</p>
+	<p>
 	The fink team apologizes for the error, and thanks the user 
 	community for bringing it to our attention quickly.
-	
+	</p>
 	</description>
       <content:encoded>
-	
+	<p>
 	The fink-0.22.0 package manager, which was available briefly in the 
 	unstable tree this past week, had a bug which prevents further
 	updating via rsync.  If you installed this version of fink, you
@@ -625,19 +625,19 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
 	fink install fink-0.21.2-1 which will downgrade fink
 	to the version in the stable tree, and subsequently running
 	fink selfupdate
-	
+	</p><p>
 	If for any reason those commands don't work, go to 
-	the 
-	fink file release page at sourceforge and download the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+	fink file release page at sourceforge</a> and download the
 	file fink-0.22.1.tar.gz (or a more recent, i.e.,
 	higher numbered, version).  Unpack this file with
 	tar xfz fink-0.22.1.tar.gz , and then from within the
 	fink-0.22.1 directory, run the command ./inject.pl
-	
-	
+	</p>
+	<p>
 	The fink team apologizes for the error, and thanks the user 
 	community for bringing it to our attention quickly.
-	
+	</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
@@ -645,7 +645,7 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
       <link>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</link>
       <guid>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</guid>
       <description>
-	
+	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
@@ -655,17 +655,17 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
 	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please contact us.
-	
-	
+	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
+	</p>
+	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in contacting us as well.
-	
+	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
+	</p>
 	</description>
       <content:encoded>
-	
+	<p>
 	Fink's decision to gradually build its own network of mirrors
 	has paid off. To make sure that we can continue to offer
 	a high quality service we need to improve our mirror network.
@@ -675,14 +675,14 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
 	community we require an even better mirror system. We especially lack 
 	mirrors in central Europe, Russia and the Far East. If you feel that 
 	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please contact us.
-	
-	
+	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
+	</p>
+	<p>
 	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review finkmirrors.net. This is the official homepage for all mirror related issues.
+	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
 	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in contacting us as well.
-	
+	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
+	</p>
 	</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.">
@@ -690,45 +690,45 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symp
       <link>http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.</link>
       <guid>http://fink.sourceforge.net/news/#06.04.2004%20Fink%200.6.3%20and%200.7.0%20ver%F6ffentlicht.</guid>
       <description>
-
+<p>
 Die neuesten Fink-Veröffentlichungen, Version 0.6.3 (für 10.2) und 0.7.0 (für 10.3), 
 sind jetzt für Source- und Binary-Nutzer verfügbar. Die 0.6.3-Veröffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-Veröffentlichung unter 10.3 erstellt wurde. Dies soll für bessere Unterstützung beider Plattformen sorgen. 
-
-
+</p>
+<p>
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt und für Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
-
-
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen.
-Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
-
-
+</p>
+<p>
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://fink.sourceforge.net/download/index.php?phpLang=en">hier</a> zur Verfügung gestellten Anweisungen befolgen.
+Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">hier</a> verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="http://fink.sourceforge.net/lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
+</p>
+<p>
 Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden.
 Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
-
-
+</p>
+<p>
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community, ohne deren konstante Unterstützung und wertvollen Tipps Fink nicht da wäre, wo es jetzt ist. 
-
+</p>
 
 </description>
       <content:encoded>
-
+<p>
 Die neuesten Fink-Veröffentlichungen, Version 0.6.3 (für 10.2) und 0.7.0 (für 10.3), 
 sind jetzt für Source- und Binary-Nutzer verfügbar. Die 0.6.3-Veröffentlichung  wurde unter 10.2 erstellt, wohingegen die 0.7.0-Veröffentlichung unter 10.3 erstellt wurde. Dies soll für bessere Unterstützung beider Plattformen sorgen. 
-
-
+</p>
+<p>
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt und für Benutzer von 10.3 problematische Pakete wurden neu erstellt. 
-
-
-Um eine neue Fink-Installation zu vollenden, sollten Sie die hier zur Verfügung gestellten Anweisungen befolgen.
-Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den hier verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. Hier können Sie mehr über sie erfahren.
-
-
+</p>
+<p>
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://fink.sourceforge.net/download/index.php?phpLang=en">hier</a> zur Verfügung gestellten Anweisungen befolgen.
+Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">hier</a> verfügbaren Anweisungen folgen. Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="http://fink.sourceforge.net/lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
+</p>
+<p>
 Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform verwenden.
 Fink 0.6.3 lässt sich nur unter Mac OS X 10.2.* installieren, wohingegen Fink 0.7.0 sich nur unter Mac OS X 10.3.* installieren lässt.
-
-
+</p>
+<p>
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community, ohne deren konstante Unterstützung und wertvollen Tipps Fink nicht da wäre, wo es jetzt ist. 
-
+</p>
 
 </content:encoded>
     </item>
