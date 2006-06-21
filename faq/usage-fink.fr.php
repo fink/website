@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/16 00:44:03';
+$cvs_date = 'Date: 2006/06/21 23:53:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -202,11 +202,11 @@ Building Dependency Tree... Done
 E: Some index files failed to download, 
 they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
-</pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><pre>
+</pre><p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p><p>Si l'erreur est du genre :</p><pre>
 W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)
-</pre><p>Ensuite vous devrez exécuter :</p><pre>
+</pre><p>Vous devez exécuter :</p><pre>
 sudo apt-get update
 fink scanpackages
 </pre><p>pour corriger définitivement le problème.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p></div>
@@ -288,6 +288,9 @@ page and on http://fontconfig.org.
 <a name="non-admin-installer">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.33: Impossible d'installer Fink à partir du paquet d'installation, un message "Ce volume ne gère pas les liens symboliques" apparaît.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p><p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <b>S.O.S.</b> et cliquez sur <b>Réparez les autorisations du disque</b>.</p></div></a>
+<a name="wrong-arch">
+<div class="question"><p><b><? echo FINK_Q ; ?>5.34: Le message <q>package architecture (darwin-i386) does not match system (darwin-powerpc) empêche de mettre à jour fink.</q></b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="http://fink.sourceforge.net/download/index.php">pages de téléchargement</a>.</p></div></a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=fr">6. Problèmes de compilation généraux</a></p>
 <? include_once "../footer.inc"; ?>
