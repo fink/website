@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.58 2006/06/16 00:44:03 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.59 2006/06/21 23:53:08 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -603,12 +603,13 @@ they have been ignored, or old ones used instead.
 update available list script returned error exit status 1.
 </codeblock>
 <p>Exécutez simplement <code>fink scanpackages</code>. Cela générera les fichiers introuvables.</p>
+<p>Si l'erreur est du genre :</p>
 <codeblock>
 W: Couldn't stat source package list file: unstable/main Packages
 (/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)
 </codeblock>
-<p>Ensuite vous devrez exécuter :</p>
+<p>Vous devez exécuter :</p>
 <codeblock>
 sudo apt-get update
 fink scanpackages
@@ -752,6 +753,15 @@ page and on http://fontconfig.org.
 <answer>
 <p>Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p>
 <p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <em>S.O.S.</em> et cliquez sur <em>Réparez les autorisations du disque</em>.</p>
+</answer></faqentry>
+<faqentry name="wrong-arch">
+<question>
+<p>Le message <quote>package architecture (darwin-i386) does not match system (darwin-powerpc) empêche de mettre à jour fink.</quote></p>
+</question>
+<answer>
+ <p>L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p>
+<codeblock>sudo rm -rf /sw</codeblock>
+ <p>Puis téléchargez l'image disque pour machines Intel à partir des <link url="http://fink.sourceforge.net/download/index.php">pages de téléchargement</link>.</p>
 </answer></faqentry>
 </chapter>
 <chapter filename="comp-general">
