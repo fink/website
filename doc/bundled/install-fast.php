@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 15:08:55';
+$cvs_author = 'Author: beren12';
+$cvs_date = 'Date: 2006/06/26 05:05:41';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -40,14 +40,14 @@ the output have been omitted (<code>...</code>).
 </p>
 <pre>[frodo:~] testuser% <b>tar xzf fink-0.8.1-full.tar.gz</b>
 [frodo:~] testuser% <b>cd fink-0.8.1-full</b>
-[frodo:~/fink-0.8.1-full] testuser% <b>./bootstrap.sh /sw</b>
+[frodo:~/fink-0.8.1-full] testuser% <b>./bootstrap /sw</b>
 
 Welcome to Fink.
 
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.8.1-full/bootstrap.pl .sudo '/sw'
+sudo /Users/testuser/fink-0.8.1-full/bootstrap .sudo '/sw'
 Password:<b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in

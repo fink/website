@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 15:08:55';
+$cvs_author = 'Author: beren12';
+$cvs_date = 'Date: 2006/06/26 05:05:41';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
@@ -94,14 +94,11 @@ Change to it with <code>cd fink-0.8.1-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
-bootstrap.pl.
-It is accompanied by a small shell script, bootstrap.sh, which checks
-some basic requirements and then hands over control to the perl
-script.
+bootstrap.
 So, to start installation, go to the fink-0.8.1-full directory and run
 this command:
 </p>
-<pre>./bootstrap.sh</pre>
+<pre>./bootstrap</pre>
 <p>
 After running some tests, the script will ask you what method should
 be used to gain root privileges.
