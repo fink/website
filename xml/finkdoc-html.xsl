@@ -11,6 +11,10 @@
 
 <xsl:template match="document">
 <html><head>
+<xsl:text>
+</xsl:text><xsl:comment><xsl:apply-templates select="cvsid" /><xsl:text>
+</xsl:text></xsl:comment><xsl:text>
+</xsl:text>
 <title>Fink Documentation - <xsl:value-of select="title"/></title>
 </head><body>
 
