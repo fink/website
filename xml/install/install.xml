@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.23 2006/06/09 15:08:55 dmrrsn Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.24 2006/06/26 05:05:41 beren12 Exp $</cvsid>
 
 <preface>
 <p>
@@ -62,14 +62,14 @@ the output have been omitted (<code>...</code>).
 </p>
 <codeblock>[frodo:~] testuser% <em>tar xzf fink-&fink_version;-full.tar.gz</em>
 [frodo:~] testuser% <em>cd fink-&fink_version;-full</em>
-[frodo:~/fink-&fink_version;-full] testuser% <em>./bootstrap.sh /sw</em>
+[frodo:~/fink-&fink_version;-full] testuser% <em>./bootstrap /sw</em>
 
 Welcome to Fink.
 
 ...
 Choose a method: [1] <em>1</em>
 
-sudo /Users/testuser/fink-&fink_version;-full/bootstrap.pl .sudo '/sw'
+sudo /Users/testuser/fink-&fink_version;-full/bootstrap .sudo '/sw'
 Password:<em>(your normal password here)</em>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -279,14 +279,11 @@ Change to it with <code>cd fink-&fink_version;-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
-bootstrap.pl.
-It is accompanied by a small shell script, bootstrap.sh, which checks
-some basic requirements and then hands over control to the perl
-script.
+bootstrap.
 So, to start installation, go to the fink-&fink_version;-full directory and run
 this command:
 </p>
-<codeblock>./bootstrap.sh</codeblock>
+<codeblock>./bootstrap</codeblock>
 <p>
 After running some tests, the script will ask you what method should
 be used to gain root privileges.
