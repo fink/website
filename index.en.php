@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 17:28:14 $';
+$cvs_date = '$Date: 2006/06/28 16:07:51 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -64,7 +64,12 @@ href="help/index.php">help page</a>.
 That page also lists various options to help the project and submit
 feedback.
 </p>
-
+<p> 
+If you are looking for the source files which correspond to
+binaries distributed by the Fink project, please consult
+<a href="download/sources_for_binaries.php">this page</a> for
+instructions.
+</p>
 <p>
 The Fink project is hosted by
 <a href="http://sourceforge.net/">SourceForge</a>.
