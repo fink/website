@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.fr.inc,v 1.3 2004/10/12 01:50:28 dmrrsn Exp $ */
+/* $Id: nav.fr.inc,v 1.4 2006/06/28 16:00:04 dmrrsn Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -11,6 +11,7 @@ $navbox = array(
   "download/10.1-upgrade.php?phpLang=fr", "Mise à niveau 10.1",
   "download/10.2-upgrade.php?phpLang=fr", "Mise à niveau 10.2",
   "download/10.3-upgrade.php?phpLang=fr", "Mise à niveau 10.3",
+  "download/sources_for_binaries.php?phpLang=en", "Sources for Binaries",
   "http://bindist.finkmirrors.net/bindist/dists/", "Répertoires archives"
 );
 
