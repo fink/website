@@ -1,13 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/01 03:12:45';
+$cvs_date = 'Date: 2006/07/01 03:31:00';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-07-01%20July%20is%20Fink%20Update%20Month"><span class="news-date">2006-07-01: </span><span class="news-headline">July is Fink Update Month</span></a><?php gray_line(); ?>
+<a name="2006-07-01%20July%20is%20%22Fink%20Update%20Month%22"><span class="news-date">2006-07-01: </span><span class="news-headline">July is "Fink Update Month"</span></a><?php gray_line(); ?>
       <p>
 Fink users on PowerPC machines are advised to update their copies of
 fink from the old "10.4-transitional" tree to the more recent "10.4"
@@ -28,7 +28,7 @@ If you are using OS X 10.4, you can
 find out if you need to update your Fink installation
 by running the command
 <code>fink --version</code>.  If the Distribution version is 0.8.1.cvs
-or 0.8.1.rsync, you do <b>not</b> net to update.  However, if the 
+or 0.8.1.rsync, you do <b>not</b> need to update.  However, if the 
 Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
 as described below.
 </p>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.47 2006/07/01 03:12:45 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.48 2006/07/01 03:31:00 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2006-07-01</date>
-    <headline>July is Fink Update Month</headline>
+    <headline>July is "Fink Update Month"</headline>
     <body>
       <p>
 Fink users on PowerPC machines are advised to update their copies of
@@ -27,7 +27,7 @@ If you are using OS X 10.4, you can
 find out if you need to update your Fink installation
 by running the command
 <code>fink --version</code>.  If the Distribution version is 0.8.1.cvs
-or 0.8.1.rsync, you do <em>not</em> net to update.  However, if the 
+or 0.8.1.rsync, you do <em>not</em> need to update.  However, if the 
 Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
 as described below.
 </p>
