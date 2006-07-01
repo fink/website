@@ -5,8 +5,85 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-06-21T12:01:07-04:00</dc:date>
+    <dc:date>2006-06-30T20:13:12-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20Fink%20Update%20Month">
+      <title>July is Fink Update Month</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20Fink%20Update%20Month</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20Fink%20Update%20Month</guid>
+      <description>
+      <p>
+Fink users on PowerPC machines are advised to update their copies of
+fink from the old "10.4-transitional" tree to the more recent "10.4"
+tree.  We plan to discontinue the 10.4-transitional tree
+by the end of July, 2006.
+</p><p>
+Some background: along with OS X 10.4 came a new version of the g++ compiler
+(one of the workhorses of Fink), which produced code that was binary
+incompatible with previous versions.  Fink, when using the 10.4-transitional 
+tree, mixes the new gcc-4.0 compiler with the older g++-3.3 compiler.
+This strategy gave us some extra time to make packages compatible with
+g++-4.0.  The time has now come to complete that transition, and rely
+exclusively on the newer tree.  The update, however, is slightly
+complicated since all packages using or providing g++ libraries must
+be rebuilt in the correct order.
+</p><p>
+If you are using OS X 10.4, you can
+find out if you need to update your Fink installation
+by running the command
+fink --version.  If the Distribution version is 0.8.1.cvs
+or 0.8.1.rsync, you do not net to update.  However, if the 
+Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
+as described below.
+</p>
+<p>
+Many users will prefer to remove their fink installations and
+start anew with the 0.8.1 installer.  Others will prefer to use the 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update 
+tarball (v. 0.3)</a> (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.  Please consult
+the README file which you will find within the 10.4-update directory 
+(after unpacking the tarball) for further instructions.
+</p>
+</description>
+      <content:encoded>
+      <p>
+Fink users on PowerPC machines are advised to update their copies of
+fink from the old "10.4-transitional" tree to the more recent "10.4"
+tree.  We plan to discontinue the 10.4-transitional tree
+by the end of July, 2006.
+</p><p>
+Some background: along with OS X 10.4 came a new version of the g++ compiler
+(one of the workhorses of Fink), which produced code that was binary
+incompatible with previous versions.  Fink, when using the 10.4-transitional 
+tree, mixes the new gcc-4.0 compiler with the older g++-3.3 compiler.
+This strategy gave us some extra time to make packages compatible with
+g++-4.0.  The time has now come to complete that transition, and rely
+exclusively on the newer tree.  The update, however, is slightly
+complicated since all packages using or providing g++ libraries must
+be rebuilt in the correct order.
+</p><p>
+If you are using OS X 10.4, you can
+find out if you need to update your Fink installation
+by running the command
+fink --version.  If the Distribution version is 0.8.1.cvs
+or 0.8.1.rsync, you do not net to update.  However, if the 
+Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
+as described below.
+</p>
+<p>
+Many users will prefer to remove their fink installations and
+start anew with the 0.8.1 installer.  Others will prefer to use the 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update 
+tarball (v. 0.3)</a> (around 12 MB), which includes 
+precompiled versions of the basic fink packages as well as a script which
+will attempt to update an existing fink installation.  Please consult
+the README file which you will find within the 10.4-update directory 
+(after unpacking the tarball) for further instructions.
+</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.">
       <title>New Fink release.</title>
       <link>http://fink.sourceforge.net/news/#2006-06-15%20New%20Fink%20release.</link>
@@ -733,73 +810,6 @@ Without their constant support and valuable pointers, Fink would not be where we
 	 If you feel that you can offer other types of resources, 
 	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
 	</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.">
-      <title>Fink 0.6.3 and 0.7.0 released.</title>
-      <link>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-04-06%20Fink%200.6.3%20and%200.7.0%20released.</guid>
-      <description>
-      <p>
-The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
-are now available for both source and binary users.  The 0.6.3 release has 
-been built on 10.2, while release 
-0.7.0 has been built on 10.3. This should facilitate better support for the different platforms. 
-	</p>
-      <p>
-These new releases incorporate various fixes to the package manager, many previously 
-unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	</p>
-      <p>
-To complete a new Fink installation you should follow the instructions posted 
-<a href="http://fink.sourceforge.net/download/index.php?phpLang=en">here</a>.
-You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">here</a>.
-
-If you have questions or problems, please try the Fink mailing lists you can learn more about them 
-<a href="http://fink.sourceforge.net/lists/index.php?phpLang=en">here</a>.
-		</p>
-      <p>
-Please make sure you pick the appropriate installer for your Platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		</p>
-      <p>
-The Fink Team would like to thank its many contributors, frequent helpers 
-and developers for making this release happen. 
-We also thank our community, without their constant support and valuable 
-pointers Fink would not be where we are now.. 
-
-</p>
-    </description>
-      <content:encoded>
-      <p>
-The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3), 
-are now available for both source and binary users.  The 0.6.3 release has 
-been built on 10.2, while release 
-0.7.0 has been built on 10.3. This should facilitate better support for the different platforms. 
-	</p>
-      <p>
-These new releases incorporate various fixes to the package manager, many previously 
-unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	</p>
-      <p>
-To complete a new Fink installation you should follow the instructions posted 
-<a href="http://fink.sourceforge.net/download/index.php?phpLang=en">here</a>.
-You may upgrade your existing Fink installation to the latest Fink release by following the instructions posted <a href="http://fink.sourceforge.net/download/upgrade.php?phpLang=en">here</a>.
-
-If you have questions or problems, please try the Fink mailing lists you can learn more about them 
-<a href="http://fink.sourceforge.net/lists/index.php?phpLang=en">here</a>.
-		</p>
-      <p>
-Please make sure you pick the appropriate installer for your Platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		</p>
-      <p>
-The Fink Team would like to thank its many contributors, frequent helpers 
-and developers for making this release happen. 
-We also thank our community, without their constant support and valuable 
-pointers Fink would not be where we are now.. 
-
-</p>
     </content:encoded>
     </item>
   </channel>
