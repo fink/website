@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-06-30T20:31:27-07:00</dc:date>
+    <dc:date>2006-07-03T00:38:44+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">
       <title>July is "Fink Update Month"</title>
