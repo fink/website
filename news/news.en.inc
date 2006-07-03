@@ -33,6 +33,13 @@ will attempt to update an existing fink installation.  Please consult
 the README file which you will find within the 10.4-update directory 
 (after unpacking the tarball) for further instructions.
 </p>
+<p>
+Note: Fink users who are upgrading their systems from OS X 10.3 to OS X 10.4
+can use the same two options to update their fink installations: they can
+either remove their old fink installations and start over, or they can
+use the same 10.4-update tarball.  The update script should not be run
+until after OS X has been upgraded.
+</p>
 <a name="2006-06-15%20New%20Fink%20release."><span class="news-date">2006-06-15: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
       <p>
 A new Fink release for OS X 10.4 (Tiger) is 
@@ -57,13 +64,6 @@ start anew with the 0.8.1 installer.  Others may wish to use the new
 <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
-</p>
-<p>
-Note: Fink users who are upgrading their systems from OS X 10.3 to OS X 10.4
-can use the same two options to update their fink installations: they can
-either remove their old fink installations and start over, or they can
-use the same 10.4-update tarball.  The update script should not be run
-until after OS X has been upgraded.
 </p>
 <a name="2006-05-10%20CVS%20Troubles"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS Troubles</span></a><?php gray_line(); ?>
       <p>
