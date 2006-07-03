@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/07/02 22:38:15';
+$cvs_date = 'Date: 2006/07/03 22:26:49';
 $metatags = '';
 
 include_once "header.inc";
@@ -12,6 +12,7 @@ include_once "header.inc";
 <p>Historique : le système Mac OS X 10.4 a introduit une nouvelle version du compilateur g++ (l'une des bêtes de somme de Fink). Cette version du compilateur produit du code incompatible avec les versions précédentes du compilateur. Dans l'arborescence 10.4-transitional, Fink mélange du code produit par le nouveau compilateur gcc-4.0 et du code produit par l'ancien compilateur g++-3.3. Cette stratégie a permis de dégager du temps pour rendre les paquets compatibles avec le compilateur g++-4.0. L'heure est maintenant venue de clore cette période transitoire et de ne plus utiliser que la nouvelle arborescence. Néanmoins, la mise à jour est compliquée du fait que tous les paquets qui utilisent ou fournissent des librairies g++ doivent être recompilés dans un certain ordre.</p>
 <p>Si vous utilisez Mac OS X 10.4, vous pouvez déterminer si vous devez faire cette mise à jour en exécutant la commande <code>fink --version</code>. Si la version de distribution est la version "0.8.1.cvs" ou "0.8.1.rsync", vous <b>n'avez pas besoin</b> de faire la mise à jour. Mais si la version de distribution est la version "0.8.0.cvs" ou "0.8.0.rsync", vous <b>devez</b> effectuer la mise à jour comme décrit ci-dessous.</p>
 <p>Certains utilisateurs préfèreront supprimer leur installation fink et réinstaller une nouvelle distribution avec l'installeur 0.8.1. D'autres préfèreront utiliser le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">paquet de mise à jour 10.4 (v. 0.3)</a> (environ 12 Mo), qui comprend des versions précompilées des paquets de base de fink ainsi qu'un script de mise à jour de l'installation existante. Voir les instructions détaillées dans le fichier README qui se trouve dans le répertoire 10.4-update après décompression du paquet.</p>
+<p>Note : les utilisateurs de Fink qui passent du système Mac OS X 10.3 au système Mac OS X 10.4 peuvent utiliser les mêmes procédures : soit supprimer complètement leur installation de fink et réinstaller une nouvelle distribution, soit utiliser le paquet le mise à jour 10.4. Le script de mise à jour ne doit pas être exécuté avant d'avoir mis à jour Mac OS X.</p>
 <a name="15/06/2006%20Nouvelle%20version%20de%20Fink"><span class="news-date">15/06/2006: </span><span class="news-headline">Nouvelle version de Fink</span></a><?php gray_line(); ?>
 <p>Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été <a href="<?php print $root; ?>download/index.php">postée</a>. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.</p>
 <p>Fink sur architecture Intel est toujours considéré comme étant en phase "bêta". Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.</p>
