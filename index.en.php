@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/28 16:07:51 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2006/07/05 18:13:10 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -30,8 +30,8 @@ packages or build everything from source.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1>News</h1>
-
+<h1><a href="http://feeds.feedburner.com/FinkProjectNews" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+&nbsp;News</h1>
 <?
 // Include news items
 include $fsroot."news/news.inc";
@@ -101,9 +101,6 @@ for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
 <ul><li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li></ul>
 
 </td></tr></table>
-
-<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
-<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
 include "footer.inc";
