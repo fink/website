@@ -26,8 +26,8 @@ as described below.
 <p>
 Many users will prefer to remove their fink installations and
 start anew with the 0.8.1 installer.  Others will prefer to use the 
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update 
-tarball (v. 0.3)</a> (around 12 MB), which includes 
+<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">10.4-update 
+tarball (v. 0.4)</a> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.  Please consult
 the README file which you will find within the 10.4-update directory 

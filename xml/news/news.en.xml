@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.50 2006/07/03 19:56:42 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.51 2006/07/07 08:39:25 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2006-07-01</date>
@@ -35,8 +35,8 @@ as described below.
 Many users will prefer to remove their fink installations and
 start anew with the 0.8.1 installer.  Others will prefer to use the 
 <link 
-url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update 
-tarball (v. 0.3)</link> (around 12 MB), which includes 
+url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">10.4-update 
+tarball (v. 0.4)</link> (around 12 MB), which includes 
 precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.  Please consult
 the README file which you will find within the 10.4-update directory 
