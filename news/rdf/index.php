@@ -15,15 +15,14 @@ include_once "header.inc";
 
 <h2>Updated Packages By OS</h2>
 <ul>
- <li>10.2 (<a href="fink-10.2-stable.rdf">Stable</a>) (<a href="fink-10.2-unstable.rdf">Unstable</a>)</li>
- <li>10.2-gcc3.3 (<a href="fink-10.2-gcc3.3-stable.rdf">Stable</a>) (<a href="fink-10.2-gcc3.3-unstable.rdf">Unstable</a>)</li>
- <li>10.3 (<a href="fink-10.3-stable.rdf">Stable</a>) (<a href="fink-10.3-unstable.rdf">Unstable</a>)</li>
- <li>10.4-transitional (<a href="fink-10.4-transitional-stable.rdf">Stable</a>) (<a href="fink-10.4-transitional-unstable.rdf">Unstable</a>)</li>
+ <li>10.3 (<a href="http://feeds.feedburner.com/FinkProjectNews-103-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-103-unstable">Unstable</a>)</li>
+ <li>10.4-transitional (<a href="http://feeds.feedburner.com/FinkProjectNews-104-transitional-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-104-transitional-unstable">Unstable</a>)</li>
+ <li>10.4 (<a href="http://feeds.feedburner.com/FinkProjectNews-104-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-104-unstable">Unstable</a>)</li>
 </ul>
 <h2>Updated Packages By Tree</h2>
 <ul>
- <li><a href="fink-stable.rdf">Stable</a></li>
- <li><a href="fink-unstable.rdf">Unstable</a></li>
+ <li><a href="http://feeds.feedburner.com/FinkProjectNews-stable">Stable</a></li>
+ <li><a href="http://feeds.feedburner.com/FinkProjectNews-unstable">Unstable</a></li>
 </ul>
 
 </td></tr></table>
