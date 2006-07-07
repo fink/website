@@ -1,5 +1,6 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
 <?
-/* $Id: constants.de.inc,v 1.3 2006/06/18 19:13:04 michga Exp $ */
+/* $Id: constants.de.inc,v 1.4 2006/07/07 19:32:04 dmalloc Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -16,7 +17,7 @@
 // +--------------------------------------------------------------------------+
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_LC_ALL, 'fr_FR');
+define (FINK_LC_ALL, 'de_DE');
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_SECTION_HOME, 'Home');
