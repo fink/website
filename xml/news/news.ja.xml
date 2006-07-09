@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.22 2006/06/09 14:50:12 dmrrsn Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.23 2006/07/09 05:56:22 babayoshihiko Exp $</cvsid>
+
+  <newsitem>
+    <date>2006-07-01</date>
+    <headline>文月は "Fink 更新月" です</headline>
+    <body>
+      <p>
+PowerPC 上の Fink ユーザは、古い "10.4-transitional" から、より新しい "10.4" ツリーへ fink を更新することをお勧めします。
+2006年7月末には 10.4-transitional ツリーはサポートを終了する予定です。
+</p><p>
+背景: OS X 10.4 とともに来た、新しいバージョンの g++ コンパイラ
+(Fink の馬車馬の一頭) は、以前おバージョンとはバイナリ非互換なコードを生成します。
+10.4-transitional ツリーを使う際は、Fink は新しい gcc-4.0 コンパイラと古い g++-3.3 コンパイラを組み合わせて使います。
+この戦略は、g++-4.0 と語感のパッケージをつくるため、よけいな時間を必要とします。
+移行は完了の時期に達し、新しいツリーにのみ依存します。
+しかし、g++ ライブラリを用いている、あるいは提供している全てのパッケージを、正しい順序で再ビルドしなければ行けないのが少し厄介です。
+</p><p>
+OS X 10.4 を使っている方は、
+<code>fink --version</code>
+というコマンドを実行することで、Fink を更新する必要があるかどうかわかります。
+Distribution version が 0.8.1.cvs か 0.8.1.rsync であれば、更新の必要は<em>ありません</em>。
+Distribution version が 0.8.0.cvs か 0.8.0.rsync であれば、以下に述べるように更新してください。。
+</p>
+<p>
+多くのユーザは、簡単に、fink インストールを削除し、0.8.1 インストーラでインストールしてください。
+他の方は、コンパイル済みの基本 fink パッケージと既存 fink インストールを更新するスクリプトの入っている
+<link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</link> (およそ 12 MB)　
+を使うと良いでしょう。
+(tarball を解凍後、)詳細については 10.4-update ディレクトリ内の README ファイルを参考にしてください。
+</p>
+<p>
+注記: OS X 10.3 から OS X 10.4 へアップグレードする Fink ユーザは、同じく二つの方法があります。
+古い fink インストールを削除して新規にインストールするか、
+同じ 10.4-update tarball を使います。
+更新スクリプトは、OS X がアップグレードされた後には実行しないでください。
+</p>
+</body>
+  </newsitem>
+
+  <newsitem>
+    <date>2006-06-15</date>
+    <headline>新しい Fink リリース</headline>
+    <body>
+      <p>
+本日より、10.4 (Tiger) 用の新しい Fink リリースが
+<varlink url="download/index.php">あります</varlink>
+: version 0.8.1。
+これは、Intel または PowerPC のマシンにインストールすることができます。
+このリリースには、ソースファイル、バイナリパッケージ、両ハードウェアのインストーラがあります。
+</p>
+      <p>
+Intel プラットフォーム上での Fink は、まだ"ベータ"の扱いで、
+多くのパッケージ (特に "unstable" ツリーにあるもの)は、コンパイルできなかったり、
+コンパイルできても動作しません。
+状況の改善作業はこれからも続きます。
+</p>
+<p>
+10.4-transitional ツリー (0.8.0 ディストリビューションから) を使っているこれまでの fink インストールを使っている Fink ユーザには、
+2つのアップグレードプォ右方があります。
+アップグレードの作業には、g++ ライブラリの ABI 変更がライブラリの再コンパイルを必要とするため、問題があります。
+多くのユーザは、簡単に、fink インストールを削除し、0.8.1 インストーラでインストールしてください。
+他の方は、コンパイル済みの基本 fink パッケージと既存 fink インストールを更新するスクリプトの入っている
+<link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</link> (およそ 12 MB)　
+を使うと良いでしょう。
+</p>
+</body>
+  </newsitem>
 
   <newsitem>
     <date>2006-05-10</date>
@@ -28,8 +94,8 @@ Fink ユーザへの現在のアドバイスとしては、更新方法を 'rsyn
 rsync による selfupdate を行っているユーザは、最新の情報を得ることができます。
 cvs を用いている場合で、 rsync にスイッチできない (またはしたくない) 場合、
 <link
-url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
-Sourceforge file release page</link>
+url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">
+Sourceforge ファイルリリースページ</link>
 から
 <code>fink-mirrors-0.24.15.2.tar.gz</code>
 というファイルをダウンロードし、解凍し、
@@ -80,7 +146,7 @@ Sourceforge の Fink 用ファイルリリースページ</link>
 bootstrap プロセスの最後に、 <code>fink selfupdate</code> を実行し、現在インストール可能なパッケージ一覧が取得できます。
 </p>
 <p>
-最後に確認した時点では、およそ1750のパッケージが &quot;stable&quot; ツリーにありましたが、
+最後に確認した時点では、およそ1750のパッケージが "stable" ツリーにありましたが、
 およそ 150 はビルドできませんでした。
 真の意味で stable となった時には、ここで再度アナウンスされます。
 </p>
@@ -137,7 +203,7 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 いずれも、ソースファイル、バイナリパッケージ、新規ユーザー用インストーラが含まれています。
 </p>
 <p>
-10.4 用の新しいリリースは、現在のすべての &quot;stable&quot; パッケージを、ソースとバイナリで提供します:
+10.4 用の新しいリリースは、現在のすべての "stable" パッケージを、ソースとバイナリで提供します:
 これは 1565 あり、10.3 リリースの 1909 パッケージの80%を超えるものです。
 更なるパッケージの提供にむけて fink 開発者は作業を続けています。
 </p>
@@ -157,7 +223,7 @@ version 0.7.2 (for 10.3), および version 0.6.4 (for 10.2).
 追補 6/19/05: 
 Fink-0.8.0 バイナリインストーラが、volume does not support symlinks という場合、
 (アプリケーションフォルダー内のユーティリティ内の) ディスクユーティリティから問題のボリュームを
-選択し、&quot;ディスクのアクセス権を修復&quot;をクリックします。
+選択し、"ディスクのアクセス権を修復"をクリックします。
 また、インストールには管理者権限を必要とします。管理者権限のあるユーザでインストールを行ってください。
 </p>
 <p>
@@ -185,7 +251,7 @@ Fink が OS X 10.4 に対応! 更新は以下の通り:
 				<li>
 stable ツリーの利用者は、現在の fink を <code>sudo rm -Rf /sw</code> で削除し、
 <varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
-fink-0.23.10.tar.gz</varlink> をダウンロード後、解凍し、&quot;bootstrap&quot;します。
+fink-0.23.10.tar.gz</varlink> をダウンロード後、解凍し、"bootstrap"します。
 つまり、 <code>tar -xvzf fink-0.23.10.tar.gz</code> し、
 <filename>fink-0.23.10</filename> 内で <code>./bootstrap.sh </code> を実行します。
 その後、<code>fink selfupdate</code> を実行する必要があります。
