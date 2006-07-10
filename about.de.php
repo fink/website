@@ -1,7 +1,8 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
 <?
 $title = "About";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2006/07/10 22:16:19 $';
 
 include "header.inc";
 ?>
