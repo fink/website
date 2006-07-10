@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2006/07/05 18:13:10 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2006/07/10 22:21:24 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -30,7 +30,7 @@ packages or build everything from source.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="http://feeds.feedburner.com/FinkProjectNews" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="<? print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
 &nbsp;News</h1>
 <?
 // Include news items
