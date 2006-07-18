@@ -1,10 +1,6 @@
-/* $Id: fink.css,v 1.25 2006/05/18 21:32:49 dmacks Exp $ */
-/* A good way to get colors which fit well together is to use the color wheel
- found at http://www.pixy.cz/apps/barvy/. Many of the colors in this CSS style
- were created by starting at #ffcc66 (hue 70, saturation 60, brightness 100),
- and then using the "soft contrast (split complements)" scheme.
- */
-body { color:black; background-color:white;  font-family:"Trebuchet MS",sans-serif;}
+
+
+body { background: white; color:black; font-family:"Trebuchet MS",sans-serif;}
 
 a:link { color:#613D99; }
 
@@ -12,127 +8,113 @@ a:visited { color:#4D3D66; }
 
 a:active { color:#FFCC66; }
 
-table {
-	background-color: transparent ;
-	border-style: solid ;
-	border-width: 0px ;
-	border-color:  #ffffff;
+table { 
+	border: 0 solid #ffffff; 
+	background: transparent; 
 	border-collapse: separate ;
-	border-spacing: 0px ;
-	margin: 0px ;
-	padding: 0px ;
+	border-spacing: 0 ;
+	margin: 0 ;
+	padding: 0 ;
 }
 
-table.pkgversion {
-	background-color: transparent ;
-	border-style: solid ;
-	border-width: 0px ;
-	border-color:  #ffffff;
+table.pkgversion { 
+	border: 0 solid #ffffff; 
+	background: transparent; 
 	border-collapse: separate ;
 	border-spacing: 3px ;
-	margin: 0px ;
-	padding: 0px ;
+	margin: 0 ;
+	padding: 0 ;
 }
 
-p,ul,ol,li,dl,dt,dd,td,th { 
-	color: black ;  
-	font-family: "Trebuchet MS",sans-serif ;
-	font-size: 11pt ;
+p,ul,ol,li,dl,dt,dd,td,th { font: 11pt "Trebuchet MS",sans-serif; 
+	color: black ; 
 }
 
-/* Layout and Spacing.  Use px because others don't work with Mac IE */
+
 td { 
 	margin: 4px ;
 	padding: 4px ;
 }
 
-h1 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:18pt;  font-weight:bold; }
+h1 { font: bold 18pt "Trebuchet MS",sans-serif; color:black; }
 
-h2 {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:12pt;  font-weight:bold; }
+h2 { font: bold 12pt "Trebuchet MS",sans-serif; color:black; }
 
-.default {  color:black;  font-family:"Trebuchet MS",sans-serif;  font-size:11pt; }
+.default { font: 11pt "Trebuchet MS",sans-serif; color:black; }
 
 .attention { color:red; }
 
-/* Used mainly in the Navigation bar on the left */
-ul.menu {
-	background-color: #eee ;
+
+ul.menu { 
+	border: 0 solid #fff; 
+	background: #eee; 
 	font-family: Verdana, Helvetica, Arial, sans-serif ; 
 	border-collapse: collapse ;
-	border-style: solid ;
-	border-width: 0px ;
-	border-color: #fff ;
-	padding: 0px ;
-	margin: 0px ;
+	padding: 0 ;
+	margin: 0 ;
 }
 
-ul.menu li {
-	border-style: solid ;
-	border-width: 0px 0px 1px 0px ;
-	border-color: #fff ;
-	list-style-type: none ;
-	padding: 0px ;
+ul.menu li { 
+	list-style: none; 
+	border: 0 0 1px 0 solid #fff; 
+	padding: 0 ;
 }
 
 ul.menu li.menu_item {
 	font-weight: bold ;
-	margin: 0px ;
+	margin: 0 ;
 }
 
 ul.menu li.menu_subitem {
 	font-weight: normal ;
-	margin: 0px 0px 0px 8px ;
+	margin: 0 0 0 8px ;
 }
 
 ul.menu li div {
+	border: 0 0 0 8px solid #666; 
 	font-size: 9pt ;
-	border-style: solid ;
-	border-width: 0px 0px 0px 8px ;
-	border-color: #666 ;
-	margin: 0px ;
+	margin: 0 ;
 	padding: 3px ;
 	display: block ;
 }
 
 ul.menu li div.selected {
-	background-color: #fc6 ;
+background: #fc6; 
 }
 
-ul.menu li a {
-	background-color: #eee ;
+ul.menu li a { 
+	border: 0 0 0 8px solid #ccc; 
+	background: #eee; 
 	font-size: 9pt ;
 	text-decoration: none ;
-	border-style: solid ;
-	border-width: 0px 0px 0px 8px ;
-	border-color: #ccc ;
-	margin: 0px ;
+	margin: 0 ;
 	padding: 3px ;
 	display: block ;
 }
 
-ul.menu li a:hover {
-	background-color: #ffe6b3 ;
-	border-color: #999 ;
+ul.menu li a:hover { 
+	border: #999; 
+	background: #ffe6b3; 
 }
 
-.nav { color:black;  font-family:Verdana,Helvetica,Arial,sans-serif; font-size:8pt; }
+.nav { font: 8pt Verdana,Helvetica,Arial,sans-serif; color:black; }
 
-/* Used for News */
+
 .news-date { color:rgb(96,96,96); font-size:10pt; font-weight:bold; }
 
 .news-headline { font-size:10pt; font-weight:bold; }
 
-input { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+input { font: 10pt Courier,"Courier New",monospace; color:black; }
 
-tt { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+tt { font: 10pt Courier,"Courier New",monospace; color:black; }
 
-code { color:black;  font-family:Courier,"Courier New",monospace;  font-size:10pt;  white-space:nowrap; }
+code { font: 10pt Courier,"Courier New",monospace; color:black; white-space:nowrap; }
 
-pre { color:black;  background-color:#FFF2D9;  padding:4px;  padding-left:8px;  margin-left:16px;  margin-right:16px;  font-family:Courier,"Courier New",monospace;  font-size:10pt; }
+pre { background: #FFF2D9; font: 10pt Courier,"Courier New",monospace; color:black; padding:4px; padding-left:8px; margin-left:16px; margin-right:16px; }
 
 img { border:0; }
 
-/* For Legal Statement */
+
 .legalheadBig
 {
 	font-size: 2.0em;
@@ -155,24 +137,24 @@ img { border:0; }
 	line-height: 1.3em;
 }
 
-/* DIV tags for Layout */
+
 div#header-left {
 	float: left ;
-	padding: 0px 0px 10px 0px ;
-	margin: 0px ;
+	padding: 0 0 10px 0 ;
+	margin: 0 ;
 	width: 180px ;
 	height: 90px ;
 	border-style: solid ;
-	border-width: 0px 0px 3px 0px ;
+	border-width: 0 0 3px 0 ;
 	border-color: #fc6 ;
 }
 
 div#header {
-	padding: 0px 0px 10px 0px ;
-	margin: 0px ;
+	padding: 0 0 10px 0 ;
+	margin: 0 ;
 	height: 90px ;
 	border-style: solid ;
-	border-width: 0px 0px 3px 180px ;
+	border-width: 0 0 3px 180px ;
 	border-color: #fff #fff #fc6 #fff ;
 	font-family: "Trebuchet MS", sans-serif ;
 	text-align: right ;
@@ -180,59 +162,57 @@ div#header {
 
 div#sidebar {
 	float: left ;
-	padding: 0px ;
-	margin: 0px ;
+	padding: 0 ;
+	margin: 0 ;
 	width: 150px ;
 	border-style: solid ;
-	border-width: 0px ;
+	border-width: 0 ;
 	border-color: #333 ;
 }
 
 div#sections {
+	background: url(http://fink.sourceforge.net/img/stripes.gif); 
 	padding: 6px 3px ;
-	margin: 0px ;
-	background-image: url(http://fink.sourceforge.net/img/stripes.gif) ;
+	margin: 0 ;
 	font-weight: bold ;
 	display: block ;
 	border-style: solid ;
-	border-width: 0px 0px 4px 0px ;
+	border-width: 0 0 4px 0 ;
 	border-color: #fc6 ;
 	font-family: "Trebuchet MS", sans-serif ;
 	text-align: center ;
 }
 
 div#main {
-	padding: 0px 0px 20px 10px ;
-	margin: 0px ;
+	padding: 0 0 20px 10px ;
+	margin: 0 ;
 	border-style: solid ;
-	border-width: 0px 0px 0px 150px ;
+	border-width: 0 0 0 150px ;
 	border-color: #eee ;
 }
 
-div#footer-left {
+div#footer-left { 
+	background: url(http://fink.sourceforge.net/img/stripes.gif); 
+	font: smaller "Trebuchet MS", sans-serif; 
 	clear: both ;
 	float: left;
-	padding: 10px 0px 10px 0px ;
-	margin: 0px ;
+	padding: 10px 0 10px 0 ;
+	margin: 0 ;
 	width: 150px ;
 	height: 50px ;
 	border-style: solid ;
-	border-width: 3px 0px 3px 0px ;
+	border-width: 3px 0 3px 0 ;
 	border-color: #666 ;
 	text-align: center ;
-	font-family: "Trebuchet MS", sans-serif ;
-	font-size: smaller ;
-	background-image: url(http://fink.sourceforge.net/img/stripes.gif) ;
 }
 
 div#footer {
-	padding: 10px 0px 10px 10px ;
-	margin: 0px ;
+	font: smaller "Trebuchet MS", sans-serif; 
+	padding: 10px 0 10px 10px ;
+	margin: 0 ;
 	height: 50px ;
 	border-style: solid ;
-	border-width: 3px 0px 3px 150px ;
+	border-width: 3px 0 3px 150px ;
 	border-color: #fff #fff #666 #eee ;
 	text-align: center ;
-	font-family: "Trebuchet MS", sans-serif ;
-	font-size: smaller ;
 }
