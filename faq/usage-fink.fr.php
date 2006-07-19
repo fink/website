@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/21 23:53:08';
+$cvs_date = 'Date: 2006/07/19 00:05:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -287,7 +287,7 @@ page and on http://fontconfig.org.
 </pre><p>corrigez l'erreur en exécutant :</p><pre>sudo fc-cache</pre></div></a>
 <a name="non-admin-installer">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.33: Impossible d'installer Fink à partir du paquet d'installation, un message "Ce volume ne gère pas les liens symboliques" apparaît.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p><p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <b>S.O.S.</b> et cliquez sur <b>Réparez les autorisations du disque</b>.</p></div></a>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p><p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, situé dans le sous-répertoire Utilitaires du répertoire Applications ; sélectionnez le disque dur en question, choisissez l'onglet <b>S.O.S.</b> et cliquez sur <b>Réparez les autorisations du disque</b>.</p></div></a>
 <a name="wrong-arch">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.34: Le message <q>package architecture (darwin-i386) does not match system (darwin-powerpc) empêche de mettre à jour fink.</q></b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="http://fink.sourceforge.net/download/index.php">pages de téléchargement</a>.</p></div></a>
