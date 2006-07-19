@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.59 2006/06/21 23:53:08 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.60 2006/07/19 00:05:07 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -752,7 +752,7 @@ page and on http://fontconfig.org.
 </question>
 <answer>
 <p>Ce message signifie, généralement, que vous essayez de faire touner l'installeur Fink en tant qu'utilisateur sans privilèges administratifs. Assurez-vous soit de vous connecter dans l'écran de démarrage en tant qu'utilisateur ayant ces privilèges, soit de choisir dans le Finder (à l'aide du menu de changement rapide de session)  un utilisateur ayant ces privilèges avant de lancer l'installeur de Fink.</p>
-<p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus  haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, sélectionnez le disque dur en question, choisissez l'onglet <em>S.O.S.</em> et cliquez sur <em>Réparez les autorisations du disque</em>.</p>
+<p>Si vous avez des problèmes alors que vous utilisez un compte d'administrateur, il est probable que cela soit dû à des permissions incorrectes au niveau le plus haut de la hiérarchie des dossiers. Pour les réparer, utilisez l'Utilitaire de disque d'Apple, situé dans le sous-répertoire Utilitaires du répertoire Applications ; sélectionnez le disque dur en question, choisissez l'onglet <em>S.O.S.</em> et cliquez sur <em>Réparez les autorisations du disque</em>.</p>
 </answer></faqentry>
 <faqentry name="wrong-arch">
 <question>
