@@ -17,7 +17,7 @@ if (!$excluded)
 
 // get relative directory name
 if ($level > 1) {
-  $parts = split("/", $SCRIPT_NAME);
+  $parts = split("/", $_SERVER['SCRIPT_NAME']);
   $dir = join("/", array_slice($parts, -$level, $level))."/";
 } else {
   $dir = "";
