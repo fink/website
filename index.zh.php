@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/07/22 20:00:21 $';
+$cvs_date = '$Date: 2006/07/22 20:15:15 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -83,7 +83,7 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">提交 fin
 <!-- start translation -->
 <p>Additional resources hosted outside SourceForge include:</p>
 <ul>
-<li><a href="http://wiki.finkproject.org/index.php/Fink">The Fink developer wiki</a> (now at a new location).</li>
+<li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a> (now at a new location).</li>
 </ul>
 <!-- end translation -->
 
