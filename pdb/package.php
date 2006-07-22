@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/05/25 16:46:40 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2006/07/22 22:59:34 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -69,8 +69,8 @@ if (!$rs) {
  print "</tr>\n";
 
  print '<tr bgcolor="#ffecbf">';
- print '<th width="100" align="center">stable</th>';
- print '<th width="100" align="center">unstable</th>';
+ print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0" /></a> stable</th>';
+ print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0" /></a> unstable</th>';
  print "</tr>\n";
 
  foreach( $releases as $os=>$dists ) {
