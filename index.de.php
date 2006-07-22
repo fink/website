@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/05/25 16:20:33 $';
+$cvs_date = '$Date: 2006/07/22 20:00:21 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -79,7 +79,7 @@ en uns auf Ihre Mitarbeit!
 <!-- start translation -->
 <p>Additional resources hosted outside SourceForge include:</p>
 <ul>
-<li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li>
+<li><a href="http://wiki.finkproject.org/index.php/Fink">The Fink developer wiki</a> (now at a new location).</li>
 </ul>
 <!-- end translation -->
 

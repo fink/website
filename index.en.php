@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2006/07/10 22:21:24 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2006/07/22 20:00:21 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -98,7 +98,7 @@ will need to be logged in to your SourceForge account.  If you do not have one, 
 for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
 </p>
 <p>Additional resources hosted outside SourceForge include:</p>
-<ul><li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink developer wiki</a>, thanks to the generosity of <a href="http://www.opendarwin.org">the OpenDarwin project</a>.</li></ul>
+<ul><li><a href="http://wiki.finkproject.org/index.php/Fink">The Fink developer wiki</a> (now at a new location).</li>
 
 </td></tr></table>
 
