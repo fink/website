@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.53 2006/07/25 00:32:13 rangerrick Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.54 2006/07/25 00:36:11 rangerrick Exp $</cvsid>
 
 	<newsitem>
 		<date>2006-07-24</date>
-		<headline>Fink Birds-of-a-Feather OSCON 2006</headline>
+		<headline>Fink Birds-of-a-Feather at OSCON 2006</headline>
 		<body>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>

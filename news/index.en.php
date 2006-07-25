@@ -1,13 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2006/07/25 00:06:41';
+$cvs_date = 'Date: 2006/07/25 00:32:13';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-07-24 Fink Birds-of-a-Feather OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather OSCON 2006</span></a><?php gray_line(); ?>
+<a name="2006-07-24 Fink Birds-of-a-Feather at OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
 				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)

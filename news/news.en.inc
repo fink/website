@@ -1,4 +1,4 @@
-<a name="2006-07-24 Fink Birds-of-a-Feather OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather OSCON 2006</span></a><?php gray_line(); ?>
+<a name="2006-07-24 Fink Birds-of-a-Feather at OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
 				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
