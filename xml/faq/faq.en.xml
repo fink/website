@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.72 2006/07/15 17:00:51 rangerrick Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.73 2006/07/25 14:36:39 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1587,7 +1587,7 @@ fink install libiconv</codeblock>
       </question>
       <answer>
         <p>Since package problems tend to be transient, we've decided to put them
-      up on the Fink wiki.  Check the <link url="http://wiki.opendarwin.org/index.php/Fink:Package_issues"> Package issues page</link>.</p>
+      up on the Fink wiki.  Check the <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</link>.</p>
       </answer>
     </faqentry>
   </chapter>

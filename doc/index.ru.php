@@ -1,14 +1,14 @@
 <?
 $title = "Документация";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 05:46:07';
+$cvs_date = 'Date: 2006/07/25 14:41:55';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Документация  </h1>
-<!--Generated from $Fink: doc.ru.xml,v 1.5 2006/06/08 05:46:07 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.ru.xml,v 1.6 2006/07/25 14:41:55 dmrrsn Exp $-->
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
             Darwin без Fink и хочет узнать о переносе ПО Unix.</p>
@@ -70,7 +70,7 @@ include_once "header.inc";
             <li>
                 <a href="packaging/index.php">Учебник пакетирования
                 </a> - о создании и поддержке пакетов Fink</li>
-                <li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
+                <li><a href="http://wiki.finkproject.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
         </ul>
     <h2><a name="otherdoc">Другие документы</a></h2>
         

@@ -1,14 +1,14 @@
 <?
 $title = "Documentación";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/08 05:46:06';
+$cvs_date = 'Date: 2006/07/25 14:41:55';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentación</h1>
-<!--Generated from $Fink: doc.es.xml,v 1.11 2006/06/08 05:46:06 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.es.xml,v 1.12 2006/07/25 14:41:55 dmrrsn Exp $-->
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
 Algunos de ellos tambien pueden ser útiles para la gente que usa Mac OS X
@@ -47,7 +47,7 @@ Un grupo de documentos que son más completos, pero ligeramente desactualizados 
       <li><a href="porting/index.php">Tips para hacer "puerto"</a> - notas para hacer "puertos" de aplicaciones de Unix a Darwin</li>
             <li><a href="quick-start-pkg/index.php">Tutorial de Empaquetamiento</a> - un complemento al Manual de Paquetes el cual se enfoca en ejemplos reales e introduce el empaquetamiento a los principiantes.</li>
       <li><a href="packaging/index.php">Manual de Paquetes</a> - como crear y mantener paquetes de Fink</li>
-      <li><a href="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
+      <li><a href="http://wiki.finkproject.org/index.php/Fink">The Fink Developer Wiki</a> - includes developer-related material that is under construction.</li>
     </ul>
   <h2><a name="otherdoc">Otros Documentos</a></h2>
     

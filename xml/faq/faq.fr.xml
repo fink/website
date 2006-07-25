@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.60 2006/07/19 00:05:07 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.61 2006/07/25 14:36:39 dmrrsn Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1207,7 +1207,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <p>Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici.</p>
 </question>
 <answer>
-<p>Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <link url="http://wiki.opendarwin.org/index.php/Fink:Package_issues">Package issues</link>.</p>
+<p>Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues</link>.</p>
 </answer>
 </faqentry>
 </chapter>

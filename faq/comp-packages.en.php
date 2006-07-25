@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2006/07/15 17:00:51';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/07/25 14:36:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -92,7 +92,7 @@ fink install libiconv</pre></div>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
-      up on the Fink wiki.  Check the <a href="http://wiki.opendarwin.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
+      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=en">8. Package Usage Problems - General</a></p>

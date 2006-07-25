@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/07/19 00:05:07';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/07/25 14:36:39';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux">';
 
 
@@ -53,7 +53,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 </a>
 <a name="all-others">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <a href="http://wiki.opendarwin.org/index.php/Fink:Package_issues">Package issues</a>.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues</a>.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=fr">8. Problème généraux d'utilisation de paquets</a></p>

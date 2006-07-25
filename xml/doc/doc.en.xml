@@ -3,7 +3,7 @@
 <article filename="index" lang="en">
   <title>Fink - Documentation</title>
   <shorttitle>Documentation</shorttitle>
-  <cvsid>$Id: doc.en.xml,v 1.16 2006/06/08 05:46:06 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: doc.en.xml,v 1.17 2006/07/25 14:41:55 dmrrsn Exp $</cvsid>
   <preface>
     <p>
 This is a collection of various documents written for Fink.
@@ -57,7 +57,7 @@ Unix applications to Darwin</li>
       <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quick-start-pkg.en.html">Packaging Tutorial</varlink> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
       <li><varlink url="packaging/index.php" varurl="packaging/packaging.en.html">Packaging Manual</varlink> - how to create and
 maintain Fink packages</li>
-      <li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
+      <li><link url="http://wiki.finkproject.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
     </ul>
   </section>
   <section name="otherdoc">

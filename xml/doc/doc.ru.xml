@@ -3,7 +3,7 @@
 <article filename="index" lang="ru">
     <title>Fink - Документация  </title>
     <shorttitle>Документация</shorttitle>
-    <cvsid>$Id: doc.ru.xml,v 1.5 2006/06/08 05:46:07 dmrrsn Exp $</cvsid>
+    <cvsid>$Id: doc.ru.xml,v 1.6 2006/07/25 14:41:55 dmrrsn Exp $</cvsid>
     <preface>
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
@@ -78,7 +78,7 @@
                 <varlink url="packaging/index.php"
                     varurl="packaging/packaging.en.html">Учебник пакетирования
                 </varlink> - о создании и поддержке пакетов Fink</li>
-                <li><link url="http://wiki.opendarwin.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
+                <li><link url="http://wiki.finkproject.org/index.php/Fink">The Fink Developer Wiki</link> - includes developer-related material that is under construction.</li>
         </ul>
     </section>
     <section name="otherdoc">

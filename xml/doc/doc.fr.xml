@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.17 2006/06/08 05:46:07 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.18 2006/07/25 14:41:55 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>Voici un ensemble de documents écrits pour Fink. Certains de ces documents peuvent également être utiles aux personnes qui ne se servent pas de Fink sous Mac OS X ou Darwin, mais souhaitent apprendre à porter des logiciels Unix sur ces systèmes.</p>
@@ -32,7 +32,7 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <li><varlink url="porting/index.php" varurl="porting/porting.fr.html">Trucs et astuces pour le portage</varlink> - notes sur le portage d'applications Unix sur Darwin</li>
 <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quick-start-pkg.fr.html">Tutoriel d'empaquetage</varlink> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.fr.html">Guide de construction des paquets</varlink> - comment créer et maintenir des paquets Fink</li>
-<li><link url="http://wiki.opendarwin.org/index.php/Fink">Le wiki des développeurs de Fink</link> - inclut du matériel en construction pour les développeurs.</li>
+<li><link url="http://wiki.finkproject.org/index.php/Fink">Le wiki des développeurs de Fink</link> - inclut du matériel en construction pour les développeurs.</li>
 </ul>
 </section>
 <section name="otherdoc">
