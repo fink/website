@@ -1,18 +1,22 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/07 08:39:25';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2006/07/25 00:06:41';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-07-24 OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">OSCON 2006</span></a><?php gray_line(); ?>
-			<p>Are you at OSCON 2006?	Want to meet up?</p>
+<a name="2006-07-24 Fink Birds-of-a-Feather OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather OSCON 2006</span></a><?php gray_line(); ?>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
-				There is no official Birds-of-a-Feather meetup at OSCON 2006, but
-				if you're wanting to get together, <a href="mailto:oscon2006@racoonfink.com">e-mail Benjamin Reed</a> and
-				we'll figure out a way to meet up.
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
 			</p>
 		<a name='2006-07-01 July is "Fink Update Month"'><span class="news-date">2006-07-01: </span><span class="news-headline">July is "Fink Update Month"</span></a><?php gray_line(); ?>
       <p>

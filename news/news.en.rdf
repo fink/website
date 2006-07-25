@@ -5,26 +5,34 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2006-07-24T17:04:31-07:00</dc:date>
+    <dc:date>2006-07-24T17:29:23-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20OSCON%202006">
-      <title>OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20OSCON%202006</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20OSCON%202006">
+      <title>Fink Birds-of-a-Feather OSCON 2006</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20OSCON%202006</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20OSCON%202006</guid>
       <description>
-			<p>Are you at OSCON 2006?	Want to meet up?</p>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
-				There is no official Birds-of-a-Feather meetup at OSCON 2006, but
-				if you're wanting to get together, <a href="mailto:oscon2006@racoonfink.com">e-mail Benjamin Reed</a> and
-				we'll figure out a way to meet up.
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
 			</p>
 		</description>
       <content:encoded>
-			<p>Are you at OSCON 2006?	Want to meet up?</p>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
-				There is no official Birds-of-a-Feather meetup at OSCON 2006, but
-				if you're wanting to get together, <a href="mailto:oscon2006@racoonfink.com">e-mail Benjamin Reed</a> and
-				we'll figure out a way to meet up.
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
 			</p>
 		</content:encoded>
     </item>
