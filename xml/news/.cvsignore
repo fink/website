@@ -5,3 +5,4 @@
 *.tmp
 *.inc
 .DS_Store
+*.rdf
