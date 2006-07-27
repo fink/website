@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.32 2006/02/28 13:05:12 babayoshihiko Exp $ */
+/* $Id: footer.inc,v 1.33 2006/07/27 14:00:35 dmalloc Exp $ */
 ?>
 
 <? /* end content table */ ?>
@@ -40,6 +40,11 @@
 		}
 	?>
 </div>
-
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-305132-1";
+urchinTracker();
+</script>
 </body>
 </html>
