@@ -31,12 +31,6 @@ $releases = array(
 			"uns"=>"current-10.4-powerpc-unstable",
 			"pri"=>2,
 			),
-	"10.4/powerpc<br>(transitional)" => array(
-			"bin"=>array("bindist 0.8.0"=>"0.8.0-stable"),
-			"sta"=>"current-10.4-transitional-stable",
-			"uns"=>"current-10.4-transitional-unstable",
-			"pri"=>2,
-			),
 	"10.3" => array(
 			"bin"=>array("bindist 0.7.2"=>"0.7.2-stable"),
 			"sta"=>"current-10.3-stable",
