@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.73 2006/07/25 14:36:39 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.74 2006/08/02 16:07:26 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -977,6 +977,22 @@ page and on http://fontconfig.org.</codeblock>
         <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
+    <faqentry name="sf-cvs-2006">
+	      <question>
+		<p>I haven't been able to do a cvs selfupdate.</p>
+	      </question>
+	      <answer>
+		<p>If you get errors that include lines like:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+		<p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p>
+<codeblock>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</codeblock>  
+	      </answer>
+	      </faqentry>
   </chapter>
   <chapter filename="comp-general">
     <!-- FAQs in comp-general are coded into VirtPackage.pm
