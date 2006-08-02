@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:36:39';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2006/08/02 16:07:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -511,6 +511,15 @@ page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pr
 </b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://fink.sourceforge.net/download/index.php">the downloads page</a>.</p></div>
     </a>
+    <a name="sf-cvs-2006">
+	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>
+	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors that include lines like:</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p><pre>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</pre></div>
+	      </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=en">6. Compile Problems - General</a></p>
 <? include_once "../footer.inc"; ?>
