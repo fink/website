@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.23 2006/06/15 01:58:52 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.24 2006/08/04 21:44:56 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -763,14 +763,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
   File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch
 file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
@@ -932,6 +925,33 @@ page and on http://fontconfig.org.</codeblock>
         <p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.</p>
       </answer>
     </faqentry>
+    <faqentry name="wrong-arch">
+      <question>
+        <p>I can't update Fink, because <quote>package architecture (darwin-i386) does not match system (darwin-powerpc).</quote>
+</p>
+      </question>
+      <answer>
+        <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="sf-cvs-2006">
+	      <question>
+		<p>I haven't been able to do a cvs selfupdate.</p>
+	      </question>
+	      <answer>
+		<p>If you get errors that include lines like:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+		<p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p>
+<codeblock>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</codeblock>  
+	      </answer>
+	      </faqentry>
     <!-- end translation -->
   </chapter>
   <chapter filename="comp-general" >
@@ -1436,6 +1456,15 @@ fink install libiconv</codeblock>
         <p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p>
+      </answer>
+    </faqentry>
+    <faqentry name="all-others">
+      <question>
+        <p>I'm having issues with a package that isn't listed here.</p>
+      </question>
+      <answer>
+        <p>Since package problems tend to be transient, we've decided to put them
+      up on the Fink wiki.  Check the <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</link>.</p>
       </answer>
     </faqentry>
     <!-- end translation -->

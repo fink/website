@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.37 2006/06/15 01:58:52 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.38 2006/08/04 21:44:56 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -799,14 +799,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
 File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch
 file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
@@ -1021,6 +1014,38 @@ page and on http://fontconfig.org.</codeblock>
         </p>
       </answer>
     </faqentry>
+    <faqentry name="wrong-arch">
+      <question>
+        <p>Fink を更新できない。 <quote>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</quote>
+</p>
+      </question>
+      <answer>
+        <p>このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
+        現在のインストールを、例えば次のように削除してください:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>Intel マシン用のインストーラを、<link url="http://fink.sourceforge.net/download/index.php">ダウンロードページ</link>から入手してください。</p>
+      </answer>
+    </faqentry>
+    <faqentry name="sf-cvs-2006">
+	      <question>
+		<p>cvs selfupdate がここのところできません。</p>
+	      </question>
+	      <answer>
+		<p>次のようなメッセージがある場合:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+		<p>
+		これは最近あった sourceforge.net の CVS サーバ再構成によるものです。
+		現在、Fink のファイルは、 <code>fink.cvs.sourceforge.net</code> にあります。
+		次のバイナリツールで <code>fink-mirrors package</code> を更新する必要があります:
+		</p>
+<codeblock>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</codeblock>  
+	      </answer>
+	      </faqentry>
 </chapter>
 <chapter filename="comp-general" >
     <!-- FAQs in comp-general are coded into VirtPackage.pm
@@ -1600,6 +1625,15 @@ fink install libiconv</codeblock>
         <p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p>
+      </answer>
+    </faqentry>
+    <faqentry name="all-others">
+      <question>
+        <p>ここに載っていないパッケージで問題があります。</p>
+      </question>
+      <answer>
+        <p>パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
+        <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</link> をご確認ください。</p>
       </answer>
     </faqentry>
 </chapter>
