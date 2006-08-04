@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.61 2006/07/25 14:36:39 dmrrsn Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.62 2006/08/04 22:25:02 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -762,6 +762,21 @@ page and on http://fontconfig.org.
  <p>L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p>
 <codeblock>sudo rm -rf /sw</codeblock>
  <p>Puis téléchargez l'image disque pour machines Intel à partir des <link url="http://fink.sourceforge.net/download/index.php">pages de téléchargement</link>.</p>
+</answer></faqentry>
+ <faqentry name="sf-cvs-2006">
+<question>
+<p>Impossible d'exécuter une mise à jour avec cvs</p>
+</question>
+<answer>
+<p>If vous obtenez des messages d'erreurs contenant les lignes suivantes :</p>
+<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+<p>Cela provient d'une récente restructuration des serveurs CVS sur sourceforge.net. Les fichiers Fink sont maintenant accessible à partir de <code>fink.cvs.sourceforge.net</code>. Vous devez mettre à jour le <code>paquet fink-mirrors</code> via les outils binaires suivants :</p>
+<codeblock>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</codeblock>  
 </answer></faqentry>
 </chapter>
 <chapter filename="comp-general">
