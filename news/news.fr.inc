@@ -1,16 +1,48 @@
-<a name="01/07/2006%20Juillet,%20%22mois%20de%20mise%20%C3%A0%20jour%20de%20Fink%22"><span class="news-date">01/07/2006: </span><span class="news-headline">Juillet, "mois de mise à jour de Fink"</span></a><?php gray_line(); ?>
+<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p><b>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</b></p>
+			<p>
+				As we mentioned <a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="<?php print $root; ?>download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="<?php print $root; ?>lists">discussion lists</a>.
+			</p>
+		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
+			</p>
+		<a name="01/07/2006%20Juillet,%20%22mois%20de%20mise%20%C3%A0%20jour%20de%20Fink%22"><span class="news-date">01/07/2006: </span><span class="news-headline">Juillet, "mois de mise à jour de Fink"</span></a><?php gray_line(); ?>
 <p>Les utilisateurs de Fink sur machines PowerPc qui utilisent l'arborescence "10.4-transitional" doivent passer à l'arborescence "10.4". Nous avons prévu de geler l'arborescence 10.4-transitional à la fin du mois de Juillet.</p>
 <p>Historique : le système Mac OS X 10.4 a introduit une nouvelle version du compilateur g++ (l'une des bêtes de somme de Fink). Cette version du compilateur produit du code incompatible avec les versions précédentes du compilateur. Dans l'arborescence 10.4-transitional, Fink mélange du code produit par le nouveau compilateur gcc-4.0 et du code produit par l'ancien compilateur g++-3.3. Cette stratégie a permis de dégager du temps pour rendre les paquets compatibles avec le compilateur g++-4.0. L'heure est maintenant venue de clore cette période transitoire et de ne plus utiliser que la nouvelle arborescence. Néanmoins, la mise à jour est compliquée du fait que tous les paquets qui utilisent ou fournissent des librairies g++ doivent être recompilés dans un certain ordre.</p>
 <p>Si vous utilisez Mac OS X 10.4, vous pouvez déterminer si vous devez faire cette mise à jour en exécutant la commande <code>fink --version</code>. Si la version de distribution est la version "0.8.1.cvs" ou "0.8.1.rsync", vous <b>n'avez pas besoin</b> de faire la mise à jour. Mais si la version de distribution est la version "0.8.0.cvs" ou "0.8.0.rsync", vous <b>devez</b> effectuer la mise à jour comme décrit ci-dessous.</p>
 <p>Certains utilisateurs préfèreront supprimer leur installation fink et réinstaller une nouvelle distribution avec l'installeur 0.8.1. D'autres préfèreront utiliser le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">paquet de mise à jour 10.4 (v. 0.4)</a> (environ 12 Mo), qui comprend des versions précompilées des paquets de base de fink ainsi qu'un script de mise à jour de l'installation existante. Voir les instructions détaillées dans le fichier README qui se trouve dans le répertoire 10.4-update après décompression du paquet.</p>
 <p>Note : les utilisateurs de Fink qui passent du système Mac OS X 10.3 au système Mac OS X 10.4 peuvent utiliser les mêmes procédures : soit supprimer complètement leur installation de fink et réinstaller une nouvelle distribution, soit utiliser le paquet le mise à jour 10.4. Le script de mise à jour ne doit pas être exécuté avant d'avoir mis à jour Mac OS X.</p>
-<a name="15/06/2006%20Nouvelle%20version%20de%20Fink"><span class="news-date">15/06/2006: </span><span class="news-headline">Nouvelle version de Fink</span></a><?php gray_line(); ?>
-<p>Aujourd'hui, une nouvelle version de Fink pour Mac OS X 10.4 (Tiger) a été <a href="<?php print $root; ?>download/index.php">postée</a>. C'est la version 0.8.1 qui peut être installée soit sur architecture Intel, soit sur architecture PowerPC. Cette version inclut les fichiers sources, les paquets binaires et les installeurs Fink pour les deux types d'architecture.</p>
-<p>Fink sur architecture Intel est toujours considéré comme étant en phase "bêta". Un grand nombre de paquets (en particulier les paquets de l'arborescence instable) soit ne compilent pas, soit compilent mais ne marchent pas. Nous travaillons à améliorer la situation.</p>
-<p>Les utilisateurs de Fink sur architecture PowerPC qui utilisent déjà l'arborescence 10.4-transitional à partir de la distribution 0.8.0 peuvent mettre à jour Fink de deux manières différentes. Le processus de mise à jour n'est pas simple en raison des changements dans l'ABI des librairies g++; cela implique de recompiler de nombreuses librairies. La plupart des utilisateurs préfèreront sans supprimer leur installation de fink et repartir de zéro à partir de l'installeur 0.8.1. D'autres préfèreront utiliser le nouveau <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">paquet de mise à jour pour 10.4 (v. 0.3)</a> (environ 12 Mo), qui inclut des versions précompilées des paquets de base de fink ainsi qu'un script qui tentera de mettre à jour l'installation de fink en place.</p>
-<a name="10/05/2006%20Probl%C3%A8mes%20avec%20CVS"><span class="news-date">10/05/2006: </span><span class="news-headline">Problèmes avec CVS</span></a><?php gray_line(); ?>
-<p>Comme la plupart des utilisateurs de Fink ont pu s'en rendre compte, l'accès au serveur CVS de Fink sur sourceforge.net ne fonctionne pas correctement depuis le 30 mars. L'accès CVS anonyme n'a pas été mis à jour depuis cette date et, depuis quelques jours, les développeurs ne peuvent, eux non plus, mettre à jour CVS par quelque moyen que ce soit.</p>
-<p>Il semblerait que les intentions de l'équipe de sourceforge (brièvement expliquées dans la <a href="http://sourceforge.net/docman/display_doc.php%20docid=2352&amp;group_id=1">page de statut de leur site</a>) soient de ne pas réactiver les anciens serveurs CVS dans leur forme antérieure. Cela va conduire à des perturbations pour les utilisateurs de Fink, mais, à l'heure actuelle, nous ne savons pas quelle forme elles vont prendre.</p>
-<p>Nous recommandons aux utilisateurs de Fink de passer à la méthode de mise à jour via 'rsync' (en exécutant la commande 'fink selfupdate-rsync'). Cela permettra au moins d'avoir une installation de Fink mise à jour jusqu'au 7 mai. Si  une mise à jour complète via CVS s'avère impossible par la suite avec la commande normale fink selfupdate, nous indiquerons ici comment effectuer la mise à jour lorsqu'elle sera disponible.</p>
-<p>Mise à jour du 24/05/2006 : CVS fonctionne de nouveau. Les utilisateurs de la méthode de mise à jour via rsync obtiendront automatiquement les dernières mises à jour. Ceux qui utilisent la méthode de mise à jour via cvs et ne peuvent (ou ne veulent) passer à la méthode rsync doivent télécharger le fichier <code>fink-mirrors-0.24.15.2.tar.gz</code> situé sur la <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">page de téléchargement du fichier sur Sourceforge</a>, décompresser ce fichier et exécuter la commande <code>./inject.pl</code> à partir du répertoire <code>fink-mirrors-0.24.15.2</code>. Ensuite, la commande <code>fink selfupdate</code> devrait fonctionner comme auparavant.</p>
 

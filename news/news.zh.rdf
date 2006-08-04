@@ -5,8 +5,104 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2006-07-09T15:04:15+09:00</dc:date>
+    <dc:date>2006-08-05T06:18:41+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
+      <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</guid>
+      <description>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+			<p>
+				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+			</p>
+		</description>
+      <content:encoded>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+			<p>
+				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+			</p>
+		</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">
+      <title>Fink Birds-of-a-Feather at OSCON 2006</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</guid>
+      <description>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
+			</p>
+		</description>
+      <content:encoded>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
+			</p>
+		</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">
       <title>July is "Fink Update Month"</title>
       <link>http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22</link>
@@ -709,102 +805,6 @@ Fink &#22242;&#38431;&#35880;&#21521;&#23427;&#20247;&#22810;&#30340;&#36129;&#2
 	are  missing after compiling with g++.)  
 	Packages already known to have this problem include
 	octave, singular-factory, singular-libfac, and possibly sdl.
-	</p>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0">
-      <title>Error in fink-0.22.0</title>
-      <link>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</link>
-      <guid>http://fink.sourceforge.net/news/#2004-08-21%20Error%20in%20fink-0.22.0</guid>
-      <description>
-	<p>
-	The fink-0.22.0 package manager, which was available briefly in the 
-	unstable tree this past week, had a bug which prevents further
-	updating via rsync.  If you installed this version of fink, you
-	can recover by running the command 
-	fink install fink-0.21.2-1 which will downgrade fink
-	to the version in the stable tree, and subsequently running
-	fink selfupdate
-	</p><p>
-	If for any reason those commands don't work, go to 
-	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
-	fink file release page at sourceforge</a> and download the
-	file fink-0.22.1.tar.gz (or a more recent, i.e.,
-	higher numbered, version).  Unpack this file with
-	tar xfz fink-0.22.1.tar.gz , and then from within the
-	fink-0.22.1 directory, run the command ./inject.pl
-	</p>
-	<p>
-	The fink team apologizes for the error, and thanks the user 
-	community for bringing it to our attention quickly.
-	</p>
-	</description>
-      <content:encoded>
-	<p>
-	The fink-0.22.0 package manager, which was available briefly in the 
-	unstable tree this past week, had a bug which prevents further
-	updating via rsync.  If you installed this version of fink, you
-	can recover by running the command 
-	fink install fink-0.21.2-1 which will downgrade fink
-	to the version in the stable tree, and subsequently running
-	fink selfupdate
-	</p><p>
-	If for any reason those commands don't work, go to 
-	<a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
-	fink file release page at sourceforge</a> and download the
-	file fink-0.22.1.tar.gz (or a more recent, i.e.,
-	higher numbered, version).  Unpack this file with
-	tar xfz fink-0.22.1.tar.gz , and then from within the
-	fink-0.22.1 directory, run the command ./inject.pl
-	</p>
-	<p>
-	The fink team apologizes for the error, and thanks the user 
-	community for bringing it to our attention quickly.
-	</p>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F">
-      <title>Improving our mirrors. Can you help?</title>
-      <link>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2004-08-01%20Improving%20our%20mirrors.%20Can%20you%20help%3F</guid>
-      <description>
-	<p>
-	Fink's decision to gradually build its own network of mirrors
-	has paid off. To make sure that we can continue to offer
-	a high quality service we need to improve our mirror network.
-	It has been some time since we last asked for more mirrors. 
-	It is time to do so again. Fink is very grateful for the resources 
-	granted to us by our community. To further improve our service to the 
-	community we require an even better mirror system. We especially lack 
-	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
-	</p>
-	<p>
-	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
-	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
-	</p>
-	</description>
-      <content:encoded>
-	<p>
-	Fink's decision to gradually build its own network of mirrors
-	has paid off. To make sure that we can continue to offer
-	a high quality service we need to improve our mirror network.
-	It has been some time since we last asked for more mirrors. 
-	It is time to do so again. Fink is very grateful for the resources 
-	granted to us by our community. To further improve our service to the 
-	community we require an even better mirror system. We especially lack 
-	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please <a href="mailto:mirrors@finkmirrors.net">contact us</a>.
-	</p>
-	<p>
-	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review <a href="http://finkmirrors.net/">finkmirrors.net</a>. This is the official homepage for all mirror related issues.
-	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in <a href="mailto:mirrors@finkmirrors.net">contacting us</a> as well.
 	</p>
 	</content:encoded>
     </item>

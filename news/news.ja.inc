@@ -1,4 +1,40 @@
-<a name="2006-07-01%20%E6%96%87%E6%9C%88%E3%81%AF%20%22Fink%20%E6%9B%B4%E6%96%B0%E6%9C%88%22%20%E3%81%A7%E3%81%99"><span class="news-date">2006-07-01: </span><span class="news-headline">文月は "Fink 更新月" です</span></a><?php gray_line(); ?>
+<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
+			<p>
+
+				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
+				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題の暫定的解決策でした。
+				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行していただくよう、
+				"10.4-transitional" ツリーの2006年8月1日をもってサポートを終了いたします。
+			</p>
+			<p><b>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</b></p>
+			<p>
+				<a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
+				"10.4" ツリーへの以降方法は2種類あります。
+			</p>
+			<p>
+				一番簡単なのは、既存の Fink インストールを削除し、<a href="<?php print $root; ?>download">ダウンロードページ</a>から 0.8.1 インストーラを入手してインストールし直すことです。
+			</p>
+			<p>
+				既存の Fink を残す方法は、
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">アップグレードスクリプト</a>
+				をダウンロードし、README を読みながら既存のインストールされているものをアップグレードすることです。
+				これは Fink インストールをソースから再ビルドし、全てをアップグレードします。
+				インストール状況によっては、相当な時間がかかります！
+			</p>
+			<p>
+				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
+				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">リスト</a>にメールをしてください。
+			</p>
+		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
+			</p>
+			<p>
+				7月26日午後8時半、 room F150 にて Fink や Mac OS X 、その他諸々のことを話します、
+			</p>
+		<a name="2006-07-01%20%E6%96%87%E6%9C%88%E3%81%AF%20%22Fink%20%E6%9B%B4%E6%96%B0%E6%9C%88%22%20%E3%81%A7%E3%81%99"><span class="news-date">2006-07-01: </span><span class="news-headline">文月は "Fink 更新月" です</span></a><?php gray_line(); ?>
       <p>
 PowerPC 上の Fink ユーザは、古い "10.4-transitional" から、より新しい "10.4" ツリーへ fink を更新することをお勧めします。
 2006年7月末には 10.4-transitional ツリーはサポートを終了する予定です。
@@ -29,56 +65,4 @@ Distribution version が 0.8.0.cvs か 0.8.0.rsync であれば、以下に述�
 同じ 10.4-update tarball を使います。
 更新スクリプトは、OS X がアップグレードされた後には実行しないでください。
 </p>
-<a name="2006-06-15%20%E6%96%B0%E3%81%97%E3%81%84%20Fink%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2006-06-15: </span><span class="news-headline">新しい Fink リリース</span></a><?php gray_line(); ?>
-      <p>
-本日より、10.4 (Tiger) 用の新しい Fink リリースが
-<a href="<?php print $root; ?>download/index.php">あります</a>
-: version 0.8.1。
-これは、Intel または PowerPC のマシンにインストールすることができます。
-このリリースには、ソースファイル、バイナリパッケージ、両ハードウェアのインストーラがあります。
-</p>
-<p>
-Intel プラットフォーム上での Fink は、まだ"ベータ"の扱いで、
-多くのパッケージ (特に "unstable" ツリーにあるもの)は、コンパイルできなかったり、
-コンパイルできても動作しなかったりします。
-状況の改善作業はこれからも続きます。
-</p>
-<p>
-10.4-transitional ツリー (0.8.0 ディストリビューションから) を使っているこれまでの fink インストールを使っている Fink ユーザには、
-2つのアップグレード方法があります。
-アップグレードの作業には、g++ ライブラリの ABI 変更がライブラリの再コンパイルを必要とするため、問題があります。
-多くのユーザは、簡単に、fink インストールを削除し、0.8.1 インストーラでインストールしてください。
-他の方は、コンパイル済みの基本 fink パッケージと既存 fink インストールを更新するスクリプトの入っている
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (およそ 12 MB)　
-を使うと良いでしょう。
-</p>
-<a name="2006-05-10%20CVS%20%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB"><span class="news-date">2006-05-10: </span><span class="news-headline">CVS トラブル</span></a><?php gray_line(); ?>
-      <p>
-Fink ユーザの多くが気づいているように、sourceforge.net の Fink CVS レポジトリは3月30日より、完全には機能していませんでした。
-anonymous CVS アクセスは、この時より update ができていません。
-数日前より、開発者もどのような形であれ CVS update ができませんでした。
-</p><p>
-sourceforge のスタッフによる現在の計画を理解する限り 
-(<a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">サイト状態ページ</a>を参照)、
-古い CVS サーバは、現在の形では戻ってこないようです。
-これにより、Fink ユーザの分断が予想されますが、どのような形で分断されるかは今の段階では述べることができません。
-</p><p>
-Fink ユーザへの現在のアドバイスとしては、更新方法を 'rsync' に変更することです
-(コマンド 'fink selfupdate-rsync' を実行します)。
-これにより、５月７日時点の fink インストールにまで上げることができます。
-もし、fink の通常の selfupdate コマンドで、新しい CVS へ完全に更新することが不可能であれば、
-更新手順が決まり次第、ここでお知らせいたします。
-</p>
-<p>Update 5/24/06: CVS は再び機能しています。
-rsync による selfupdate を行っているユーザは、最新の情報を得ることができます。
-cvs を用いている場合で、 rsync にスイッチできない (またはしたくない) 場合、
-<a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">
-Sourceforge ファイルリリースページ</a>
-から
-<code>fink-mirrors-0.24.15.2.tar.gz</code>
-というファイルをダウンロードし、解凍し、
-<code>fink-mirrors-0.24.15.2</code> ディレクトリ内で
-<code>./inject.pl</code> を実行します。
-この後、 <code>fink selfupdate</code> コマンドが通常通り機能するはずです。
-</p>
-    
+
