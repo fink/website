@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/15 01:58:52';
+$cvs_date = 'Date: 2006/08/04 21:44:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -313,14 +313,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
   File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch
 file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
@@ -421,6 +414,20 @@ page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pr
       <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p></div>
     </a>
+    <a name="wrong-arch">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://fink.sourceforge.net/download/index.php">the downloads page</a>.</p></div>
+    </a>
+    <a name="sf-cvs-2006">
+	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>
+	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors that include lines like:</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p><pre>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</pre></div>
+	      </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=zh">6. 一般性编译问题</a></p>

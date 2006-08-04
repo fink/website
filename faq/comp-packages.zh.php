@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（２）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/15 01:58:52';
+$cvs_date = 'Date: 2006/08/04 21:44:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题"><link rel="prev" href="comp-general.php?phpLang=zh" title="一般性编译问题">';
 
 
@@ -59,6 +59,11 @@ fink install libiconv</pre></div>
         </ul><p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
+    </a>
+    <a name="all-others">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a>.</p></div>
     </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

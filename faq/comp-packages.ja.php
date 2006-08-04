@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/15 01:58:52';
+$cvs_date = 'Date: 2006/08/04 21:44:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -77,6 +77,11 @@ fink install libiconv</pre></div>
         </ul><p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
+    </a>
+    <a name="all-others">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: ここに載っていないパッケージで問題があります。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
+        <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a> をご確認ください。</p></div>
     </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=ja">8. パッケージ使用上の問題 - 一般</a></p>

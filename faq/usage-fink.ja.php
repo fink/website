@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/15 01:58:52';
+$cvs_date = 'Date: 2006/08/04 21:44:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -334,14 +334,7 @@ Ign file: stable/main Release
 Err file: stable/crypto Packages
 File not found
 Ign file: stable/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/release/main Packages
-Hit http://us.dl.sourceforge.net 10.3/release/main Release
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/release/crypto Release
-Hit http://us.dl.sourceforge.net 10.3/current/main Packages
-Hit http://us.dl.sourceforge.net 10.3/current/main Release
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages
-Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
+...
 Failed to fetch
 file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
@@ -493,6 +486,25 @@ page and on http://fontconfig.org.</pre><p>次のように実行します:</p><p
         	を選択してください。
         </p></div>
     </a>
+    <a name="wrong-arch">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.34: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
+</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
+        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="http://fink.sourceforge.net/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
+    </a>
+    <a name="sf-cvs-2006">
+	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: cvs selfupdate がここのところできません。</b></p></div>
+	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 次のようなメッセージがある場合:</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>
+		これは最近あった sourceforge.net の CVS サーバ再構成によるものです。
+		現在、Fink のファイルは、 <code>fink.cvs.sourceforge.net</code> にあります。
+		次のバイナリツールで <code>fink-mirrors package</code> を更新する必要があります:
+		</p><pre>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</pre></div>
+	      </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=ja">6. コンパイルの問題 - 一般</a></p>
 <? include_once "../footer.inc"; ?>

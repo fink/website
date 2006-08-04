@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 镜像服务器";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/15 01:58:52';
+$cvs_date = 'Date: 2006/08/04 21:44:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）"><link rel="prev" href="relations.php?phpLang=zh" title="与其它项目的关系">';
 
 
