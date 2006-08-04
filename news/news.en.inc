@@ -1,4 +1,4 @@
-<a name='2006-07-24 Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006'><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
+<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
 			<p>
 				The "10.4-transitional" tree was created as an interim solution to the issues of
 				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
@@ -28,7 +28,7 @@
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="<?php print $root; ?>lists">discussion lists</a>.
 			</p>
-		<a name="2006-07-24 Fink Birds-of-a-Feather at OSCON 2006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
+		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
 				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
@@ -39,7 +39,7 @@
 				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
 				Mac OS X, and anything else that takes our fancy.
 			</p>
-		<a name='2006-07-01 July is "Fink Update Month"'><span class="news-date">2006-07-01: </span><span class="news-headline">July is "Fink Update Month"</span></a><?php gray_line(); ?>
+		<a name="2006-07-01%20July%20is%20%22Fink%20Update%20Month%22"><span class="news-date">2006-07-01: </span><span class="news-headline">July is "Fink Update Month"</span></a><?php gray_line(); ?>
       <p>
 Fink users on PowerPC machines are advised to update their copies of
 fink from the old "10.4-transitional" tree to the more recent "10.4"

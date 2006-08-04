@@ -5,103 +5,45 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-08-05T06:18:41+09:00</dc:date>
+    <dc:date>2006-08-05T00:11:56+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
-      <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#24%2F07%2F2006%20Rappel%20%3A%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%E9r%E9e%20au%201er%20ao%FBt%202006">
+      <title>Rappel : l'arborescence "10.4-transitional" ne sera plus gérée au 1er août 2006</title>
+      <link>http://fink.sourceforge.net/news/#24%2F07%2F2006%20Rappel%20%3A%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%E9r%E9e%20au%201er%20ao%FBt%202006</link>
+      <guid>http://fink.sourceforge.net/news/#24%2F07%2F2006%20Rappel%20%3A%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%E9r%E9e%20au%201er%20ao%FBt%202006</guid>
       <description>
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
-			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
-			</p>
-		</description>
+<p>L'arborescence "10.4-transitional" fut créée pour résoudre de façon provisoire les incompatibilités entre binaires construits à partir de GCC 3.3 (le compilateur par défaut du système Mac OS X 10.3) et GCC 4.0 (le compilateur par défaut du système Mac OS X 10.4). À présent que Fink utilise GCC 4.0, l'arborescence "10.4-transitional" sera gelée à partir du 1er août 2006. Seule l'arborescence "10.4" sera gérée à partir de cette date.</p>
+<p>Si la commande "fink --version" a pour résultat "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez rien à faire.</p>
+<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
+<p>Le moyen le plus simple est de supprimer l'installation de Fink et d'en récréer une nouvelle en utilisant l'installeur 0.8.1 disponible sur la <a href="http://fink.sourceforge.net/download">page de téléchargement</a>.</p>
+<p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
+<p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="http://fink.sourceforge.net/lists">listes de discussions</a>.
+</p>
+</description>
       <content:encoded>
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
-			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
-			</p>
-		</content:encoded>
+<p>L'arborescence "10.4-transitional" fut créée pour résoudre de façon provisoire les incompatibilités entre binaires construits à partir de GCC 3.3 (le compilateur par défaut du système Mac OS X 10.3) et GCC 4.0 (le compilateur par défaut du système Mac OS X 10.4). À présent que Fink utilise GCC 4.0, l'arborescence "10.4-transitional" sera gelée à partir du 1er août 2006. Seule l'arborescence "10.4" sera gérée à partir de cette date.</p>
+<p>Si la commande "fink --version" a pour résultat "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez rien à faire.</p>
+<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
+<p>Le moyen le plus simple est de supprimer l'installation de Fink et d'en récréer une nouvelle en utilisant l'installeur 0.8.1 disponible sur la <a href="http://fink.sourceforge.net/download">page de téléchargement</a>.</p>
+<p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
+<p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="http://fink.sourceforge.net/lists">listes de discussions</a>.
+</p>
+</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">
-      <title>Fink Birds-of-a-Feather at OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006">
+      <title>"Les oiseaux de même plumage" de Fink à OSCON 2006</title>
+      <link>http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006</link>
+      <guid>http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006</guid>
       <description>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</description>
+<p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
+<p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
+<p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
+</description>
       <content:encoded>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</content:encoded>
+<p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
+<p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
+<p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
+</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#01%2F07%2F2006%20Juillet%2C%20%22mois%20de%20mise%20%E0%20jour%20de%20Fink%22">
       <title>Juillet, "mois de mise à jour de Fink"</title>
