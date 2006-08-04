@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.24 2006/07/11 06:18:22 okayama Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.25 2006/08/04 21:17:13 babayoshihiko Exp $</cvsid>
+
+	<newsitem>
+		<date>2006-07-24</date>
+		<headline>注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</headline>
+		<body>
+			<p>
+
+				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
+				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題の暫定的解決策でした。
+				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行していただくよう、
+				"10.4-transitional" ツリーの2006年8月1日をもってサポートを終了いたします。
+			</p>
+			<p><em>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</em></p>
+			<p>
+				<varlink url="news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</varlink>、
+				"10.4" ツリーへの以降方法は2種類あります。
+			</p>
+			<p>
+				一番簡単なのは、既存の Fink インストールを削除し、<varlink
+				url="download">ダウンロードページ</varlink>から 0.8.1 インストーラを入手してインストールし直すことです。
+			</p>
+			<p>
+				既存の Fink を残す方法は、
+				<link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">アップグレードスクリプト</link>
+				をダウンロードし、README を読みながら既存のインストールされているものをアップグレードすることです。
+				これは Fink インストールをソースから再ビルドし、全てをアップグレードします。
+				インストール状況によっては、相当な時間がかかります！
+			</p>
+			<p>
+				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
+				それでも何か問題がありましたら、<varlink url="lists">リスト</varlink>にメールをしてください。
+			</p>
+		</body>
+	</newsitem>
+
+	<newsitem>
+		<date>2006-07-24</date>
+		<headline>Fink Birds-of-a-Feather at OSCON 2006</headline>
+		<body>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<link url="mailto:oscon2006@racoonfink.com">Benjamin Reed</link> (RangerRick on #fink)
+				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
+			</p>
+			<p>
+				7月26日午後8時半、 room F150 にて Fink や Mac OS X 、その他諸々のことを話します、
+			</p>
+		</body>
+	</newsitem>
 
   <newsitem>
     <date>2006-07-01</date>
