@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:36:39';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/08/04 22:25:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -291,6 +291,14 @@ page and on http://fontconfig.org.
 <a name="wrong-arch">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.34: Le message <q>package architecture (darwin-i386) does not match system (darwin-powerpc) empêche de mettre à jour fink.</q></b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="http://fink.sourceforge.net/download/index.php">pages de téléchargement</a>.</p></div></a>
+ <a name="sf-cvs-2006">
+<div class="question"><p><b><? echo FINK_Q ; ?>5.35: Impossible d'exécuter une mise à jour avec cvs</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> If vous obtenez des messages d'erreurs contenant les lignes suivantes :</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>Cela provient d'une récente restructuration des serveurs CVS sur sourceforge.net. Les fichiers Fink sont maintenant accessible à partir de <code>fink.cvs.sourceforge.net</code>. Vous devez mettre à jour le <code>paquet fink-mirrors</code> via les outils binaires suivants :</p><pre>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</pre></div></a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=fr">6. Problèmes de compilation généraux</a></p>
 <? include_once "../footer.inc"; ?>
