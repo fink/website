@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/08/02 16:07:26';
+$cvs_date = 'Date: 2006/08/17 01:32:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -143,12 +143,12 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
         instead.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code>, <code>wchar.h</code>, or <code>crt1.o</code>, or that my "C compiler cannot create executables".</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code>, or that my <q>C compiler cannot create executables</q>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
         system. If not, then run the Dev Tools Installer again, and install
-        the DevSDK package using a Custom Install.</p><p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
+        the DevSDK package using a Custom Install.</p><p>The <q>cannot create executables</q> error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
     </a>
     <a name="multiple-dependencies">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: I can't update, because Fink is "unable to resolve version conflict
@@ -167,7 +167,7 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
     </a>
     <a name="freetype-problems">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.15: I get errors involving freetype.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are several varieties of such errors. If your error looks
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are several varieties of such errors.  If you get the following:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>check whether you have an extraneous <code>freetype-config</code> excutable by running</p><pre>where freetype-config</pre><p>if you're using <code>tcsh</code>, or</p><pre>type -a freetype-config</pre><p>if you're using <code>bash</code>.  The Mono Framework has been known to install a <code>/usr/bin/freetype-config</code> that is a symbolic link to a file in that framework.</p><p>If your error looks
         like:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57:
@@ -216,7 +216,7 @@ Failed: compiling gtk+2-2.2.4-2 failed</pre><p>the problem is due to confusion b
         <code>freetype2</code> headers that are included with X11 |
         XFree86.</p><pre>fink remove freetype freetype-hinting</pre><p>will remove whichever variant you have installed. On the other
         hand, if your error looks like:</p><pre>ld: Undefined symbols: _FT_Access_Frame</pre><p>this is typically due to a residual file from a prior installation
-        of X11. Reinstall the X11 SDK. Finally, if you get an error like</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
+        of X11. Reinstall the X11 SDK.</p><p>Finally, if you get an error like</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
 undefined reference to _FT_Access_Frame</pre><p>then you probably have a binary version that built fine with
         <code>gcc3.3</code> on Jaguar but doesn't work on Panther. This has
         now been updated, so you you just need to update your packages, e.g.
@@ -285,6 +285,10 @@ Traceback (most recent call last):
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
 ### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p><p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p></div>
     </a>
+<a name="libtool-unrecognized-dynamic">
+  <div class="question"><p><b><? echo FINK_Q ; ?>6.25: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+</a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>
 <? include_once "../footer.inc"; ?>
