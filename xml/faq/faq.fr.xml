@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.62 2006/08/04 22:25:02 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.63 2006/08/17 21:33:05 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -919,11 +919,11 @@ rerun ranlib(1) (can't load from it)</codeblock>
 </faqentry>
 <faqentry name="basic-headers">
 <question>
-<p>Un message indique qu'il est impossible de trouver <filename>stddef.h</filename>,  ou <filename>wchar.h</filename>, ou <filename>crt1.o</filename>, ou bien encore que le &quot;compilateur C ne peut créer des fichiers exécutables&quot; (C compiler cannot create executables en anglais).</p>
+<p>Un message indique qu'il est impossible de trouver <filename>stddef.h</filename>,  ou <filename>wchar.h</filename>, ou <filename>stdlib.h</filename>, ou <filename>crt1.o</filename>, ou bien encore que le <quote>compilateur C ne peut créer des fichiers exécutables</quote> (C compiler cannot create executables en anglais).</p>
 </question>
 <answer>
 <p>Ces problèmes sont dus, généralement, à l'absence de headers essentiels fournis par le paquet DevSDK des Outils de Développement (Developer Tools). Vérifiez que le répertoire <filename>/Library/Receipts/DevSDK.pkg</filename> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des Outils de Développement et installez le paquet DevSDK en choisissant Custom Install.</p>
-<p>Le message d'erreur &quot;impossible de créer des fichiers exécutables&quot; peut aussi être généré lorsque la version des Outils de Développement installée provient d'une version antérieure du système d'exploitation.</p>
+<p>Le message d'erreur <quote>impossible de créer des fichiers exécutables</quote> peut aussi être généré lorsque la version des Outils de Développement installée provient d'une version antérieure du système d'exploitation.</p>
 </answer>
 </faqentry>
 <faqentry name="multiple-dependencies">
@@ -949,7 +949,14 @@ rerun ranlib(1) (can't load from it)</codeblock>
 <p>Messages d'erreurs concernant freetype.</p>
 </question>
 <answer>
-<p>Il y a plusieurs types d'erreurs concernant freetype. Si le message d'erreur ressemble au suivant : </p>
+<p>Il y a plusieurs types d'erreurs concernant freetype. Si le message d'erreur ressemble au suivant :</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+<p>Vérifiez que vous n'avez pas un exécutable <filename>freetype-config</filename> dans un endroit insolite via la commande :</p>
+<codeblock>where freetype-config</codeblock>
+<p>si vous utilisez <filename>tcsh</filename>, ou :</p>
+<codeblock>type -a freetype-config</codeblock>
+<p>si vous utilisez <filename>bash</filename>. La framework Mono installe <filename>/usr/bin/freetype-config</filename> en tant que lien symbolique vers un fichier de cettre framework.</p>
+<p>Si le message d'erreur ressemble au suivant :</p>
 <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57:
@@ -1002,7 +1009,8 @@ Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
 <codeblock>fink remove freetype freetype-hinting</codeblock>
 <p>supprime la variante que vous avez installée. À contrario, si le message d'erreur est similaire à celui-ci :</p>
 <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
-<p>cela est dû à la présence d'un fichier résultant d'une installation précédente de X11. Réinstallez X11 SDK. Enfin, si le message d'erreur, ressemble à celui-là :</p>
+<p>cela est dû à la présence d'un fichier résultant d'une installation précédente de X11. Réinstallez X11 SDK.</p>
+<p>Enfin, si le message d'erreur, ressemble à celui-là :</p>
 <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
 undefined reference to _FT_Access_Frame</codeblock>
 <p>vous êtes probablement en présence d'une version binaire qui compile correctement avec <code>gcc3.3</code> sous Jaguar, mais pas sous Panther. Ce problème a été résolu, il suffit que vous mettiez à jour vos paquets, par exemple via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
@@ -1115,6 +1123,17 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 <p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <em>10.4-transitionelle</em>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p>
 <p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p>
 <p>Si vous obtenez le même genre d'erreur au runtime, recompilez le module après avoir recompilé le paquet <code>python2*</code> concerné.</p>
+</answer>
+</faqentry>
+<faqentry name="libtool-unrecognized-dynamic">
+<question>
+<p>Un message d'erreur <quote>unrecognized option `-dynamic'</quote> provenant de <filename>libtool</filename> apparaît.</p>
+</question>
+<answer>
+<p>Le message :</p>
+<codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+<p>signifie que vous avez remplacé <filename>/usr/bin/libtool</filename> d'Apple par GNU <filename>libtool</filename>. Malheureusement les deux <code>libtools</code> <em>ne font pas</em> la même chose.</p>
+<p>La seule manière de résoudre le problème est d'installer une version de <filename>libtool</filename> d'Apple en provenance d'ailleurs. Il fait partie du paquet <filename>DeveloperTools.pkg</filename> de XCode. Vous pouvez réinstaller le paquet si vous supprimez d'abord son reçu situé dans le répertoire <filename>/Library/Receipts</filename> (glissez-le dans la corbeille sur les systèmes Mac OS X 10.4 et ultérieurs ou exécutez <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> pour le système Mac OS X 10.3).</p>
 </answer>
 </faqentry>
 </chapter>
