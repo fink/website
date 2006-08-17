@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.74 2006/08/02 16:07:26 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.75 2006/08/17 01:32:10 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1203,7 +1203,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing <filename>stddef.h</filename>, <filename>wchar.h</filename>, or <filename>crt1.o</filename>, or that my "C compiler cannot create executables".</p>
+        <p>I get messages saying that I'm missing <filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>stdlib.h</filename> | <filename>crt1.o</filename>, or that my <quote>C compiler cannot create executables</quote>.</p>
       </question>
       <answer>
         <p>Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
@@ -1211,7 +1211,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
         <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your
         system. If not, then run the Dev Tools Installer again, and install
         the DevSDK package using a Custom Install.</p>
-        <p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p>
+        <p>The <quote>cannot create executables</quote> error can also occur when your Developer Tools version is for an earlier OS version.</p>
       </answer>
     </faqentry>
     <faqentry name="multiple-dependencies">
@@ -1244,7 +1244,14 @@ rerun ranlib(1) (can't load from it)</codeblock>
         <p>I get errors involving freetype.</p>
       </question>
       <answer>
-        <p>There are several varieties of such errors. If your error looks
+        <p>There are several varieties of such errors.  If you get the following:</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+<p>check whether you have an extraneous <filename>freetype-config</filename> excutable by running</p>
+<codeblock>where freetype-config</codeblock>
+<p>if you're using <filename>tcsh</filename>, or</p>
+<codeblock>type -a freetype-config</codeblock>
+<p>if you're using <filename>bash</filename>.  The Mono Framework has been known to install a <filename>/usr/bin/freetype-config</filename> that is a symbolic link to a file in that framework.</p>
+<p>If your error looks
         like:</p>
         <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
@@ -1303,7 +1310,8 @@ Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
         hand, if your error looks like:</p>
         <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
         <p>this is typically due to a residual file from a prior installation
-        of X11. Reinstall the X11 SDK. Finally, if you get an error like</p>
+        of X11. Reinstall the X11 SDK.</p> 
+<p>Finally, if you get an error like</p>
         <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
 undefined reference to _FT_Access_Frame</codeblock>
         <p>then you probably have a binary version that built fine with
@@ -1430,6 +1438,13 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         <p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p>
       </answer>
     </faqentry>
+<faqentry name="libtool-unrecognized-dynamic">
+  <question><p>I get <quote>unrecognized option `-dynamic'</quote> errors from <filename>libtool</filename>.</p></question>
+<answer><p>This error:</p>
+<codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+<p>typically means that you've replaced Apple's <filename>/usr/bin/libtool</filename> with a GNU <filename>libtool</filename>.  Unfortunately, the two <code>libtools</code> <em>do not</em> do the same thing.</p>
+<p>The only way to solve this is to get a working Apple <filename>libtool</filename> from somewhere.  It is installed as part of the <filename>DeveloperTools.pkg</filename> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <filename>/Library/Receipts</filename> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></answer>
+</faqentry>
   </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>
