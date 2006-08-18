@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/07/25 16:49:31 $';
+$cvs_date = '$Date: 2006/08/18 01:31:18 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -100,7 +100,7 @@ for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
 <p>Additional resources hosted outside SourceForge include:</p>
 <ul>
 <li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a> (now at a new location).</li>
-<ul>
+</ul>
 
 </td></tr></table>
 
