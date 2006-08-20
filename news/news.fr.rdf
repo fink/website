@@ -5,8 +5,25 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-08-05T00:11:56+02:00</dc:date>
+    <dc:date>2006-08-20T13:03:53+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#19%2F08%2F2006%20Serveur%20inacessible%20-%20Solutions">
+      <title>Serveur inacessible - Solutions</title>
+      <link>http://fink.sourceforge.net/news/#19%2F08%2F2006%20Serveur%20inacessible%20-%20Solutions</link>
+      <guid>http://fink.sourceforge.net/news/#19%2F08%2F2006%20Serveur%20inacessible%20-%20Solutions</guid>
+      <description>
+<p>Le serveur qui héberge quatre services fink important (mise à jour via rsync, distribution binaire, "serveur maître" des fichiers sources et base de données des paquets) est inaccessible en ce moment. Nous espérons qu'il sera de nouveau fonctionnel lundi 21 août. Voici les solutions provisoires à votre disposition pendant l'indisponibilité du serveur.</p>
+<p>Pour mettre à jours fink, vous devez soit choisir un miroir rsync différent du miroir primaire (voir le paragraphe suivant, soit utilisez la commmande fink selfupdate-cvs. Cette commande ne doit être utilisée qu'une seule fois ; les mises à jour suivantes se feront automatiquement via CVS. Quand le serveur sera de nouveau fonctionnel, vous pourrez revenir à la mise à jour via rsync en exécutant la commande fink selfupdate-rsync.</p>
+<p>Pour pallier l'absence de distribution binaire et celle du "serveur primaire" des fichiers sources, exécutez la commande fink configure. Acceptez les réponses par défaut à toutes les questions, sauf à celles-ci: "Fink doit-il télécharger les paquets pré-compilés de la distribution binaire s'ils existent ?" (en anglais "Should Fink try to download pre-compiled packages from the binary distribution if available?"). Répondez alors "no" (en français "non") pour désactiver la distribution binaire. "Voulez-vous changer les miroirs ?" (en anglais "Do you want the change the mirror settings?"). Répondez "yes" (en français "oui"). "Dans quel ordre les miroirs doivent-ils être utilisés pour le téléchargement des sources ?" (en anglais ("What mirror order should fink use when downloading sources?". Répondez "2: Search Master Mirrors last" (en français "2 : Rechercher sur les miroirs maîtres en dernier lieu") pour désactiver l'utilisation automatique du serveur miroir maître). Enfin, si vous décidez de continuer à faire les mises à jour via rsync, vous devez choisir un autre miroir que rsync://master.us.finkmirrors.net/finkinfo/ en réponse à la question "Choisissez un miroir pour 'les mises à jour rsync'" (en anglais "Choose a mirror for 'RSync SelfUpdate'". Malheureusement, il se peut qu'aucun autre choix ne vous soit possible si vous habitez aux États-Unis.</p>
+<p>Enfin, pour utiliser la base de données des paquets pendant la période d'indisponibilité du serveur, connectez-vous à <a href="http://lists.finkproject.org/pdb">cette copie de sauvegarde de la base de données des paquets</a>. Sachez, toutefois, qu'elle a quelques semaines de retard.</p>
+</description>
+      <content:encoded>
+<p>Le serveur qui héberge quatre services fink important (mise à jour via rsync, distribution binaire, "serveur maître" des fichiers sources et base de données des paquets) est inaccessible en ce moment. Nous espérons qu'il sera de nouveau fonctionnel lundi 21 août. Voici les solutions provisoires à votre disposition pendant l'indisponibilité du serveur.</p>
+<p>Pour mettre à jours fink, vous devez soit choisir un miroir rsync différent du miroir primaire (voir le paragraphe suivant, soit utilisez la commmande fink selfupdate-cvs. Cette commande ne doit être utilisée qu'une seule fois ; les mises à jour suivantes se feront automatiquement via CVS. Quand le serveur sera de nouveau fonctionnel, vous pourrez revenir à la mise à jour via rsync en exécutant la commande fink selfupdate-rsync.</p>
+<p>Pour pallier l'absence de distribution binaire et celle du "serveur primaire" des fichiers sources, exécutez la commande fink configure. Acceptez les réponses par défaut à toutes les questions, sauf à celles-ci: "Fink doit-il télécharger les paquets pré-compilés de la distribution binaire s'ils existent ?" (en anglais "Should Fink try to download pre-compiled packages from the binary distribution if available?"). Répondez alors "no" (en français "non") pour désactiver la distribution binaire. "Voulez-vous changer les miroirs ?" (en anglais "Do you want the change the mirror settings?"). Répondez "yes" (en français "oui"). "Dans quel ordre les miroirs doivent-ils être utilisés pour le téléchargement des sources ?" (en anglais ("What mirror order should fink use when downloading sources?". Répondez "2: Search Master Mirrors last" (en français "2 : Rechercher sur les miroirs maîtres en dernier lieu") pour désactiver l'utilisation automatique du serveur miroir maître). Enfin, si vous décidez de continuer à faire les mises à jour via rsync, vous devez choisir un autre miroir que rsync://master.us.finkmirrors.net/finkinfo/ en réponse à la question "Choisissez un miroir pour 'les mises à jour rsync'" (en anglais "Choose a mirror for 'RSync SelfUpdate'". Malheureusement, il se peut qu'aucun autre choix ne vous soit possible si vous habitez aux États-Unis.</p>
+<p>Enfin, pour utiliser la base de données des paquets pendant la période d'indisponibilité du serveur, connectez-vous à <a href="http://lists.finkproject.org/pdb">cette copie de sauvegarde de la base de données des paquets</a>. Sachez, toutefois, qu'elle a quelques semaines de retard.</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#24%2F07%2F2006%20Rappel%20%3A%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%E9r%E9e%20au%201er%20ao%FBt%202006">
       <title>Rappel : l'arborescence "10.4-transitional" ne sera plus gérée au 1er août 2006</title>
       <link>http://fink.sourceforge.net/news/#24%2F07%2F2006%20Rappel%20%3A%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%E9r%E9e%20au%201er%20ao%FBt%202006</link>
@@ -249,19 +266,6 @@ Les utilisateurs de la branche instable peuvent faire la mise à jour via fink se
 <p>Si vous vous posez des questions ou rencontrez des difficultés, n'hésitez pas à vous servir des listes de diffusion de Fink. Vous en trouverez le détail <a href="http://fink.sourceforge.net/lists/index.php?phpLang=fr">ici</a>.</p>
 <p>Vérifiez que vous avez choisi le bon installeur pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.</p>
 <p>L'équipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs. Nous remercions aussi notre communauté d'avoir téléchargé la version 0.7.0 précédente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5">
-      <title>Problèmes avec XCode 1.5</title>
-      <link>http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5</link>
-      <guid>http://fink.sourceforge.net/news/#23%2F08%2F2004%20Probl%E8mes%20avec%20XCode%201.5</guid>
-      <description>
-<p>Ces derniers jours, on nous a signalé que certains paquets de fink ne peuvent être compilés correctement avec XCode 1.5. Si vous n'avez pas encore effectué la mise à jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problème soit résolu.</p>
-<p>Si vous rencontrez des problèmes lors de la compilation d'un paquet sous XCode 1.5, alors que ce même paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En général, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problème sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-être sdl.</p>
-</description>
-      <content:encoded>
-<p>Ces derniers jours, on nous a signalé que certains paquets de fink ne peuvent être compilés correctement avec XCode 1.5. Si vous n'avez pas encore effectué la mise à jour vers XCode 1.5, nous vous conseillons d'attendre pour le faire que ce problème soit résolu.</p>
-<p>Si vous rencontrez des problèmes lors de la compilation d'un paquet sous XCode 1.5, alors que ce même paquet se compile correctement sous XCode 1.2, veuillez le signaler sur la liste de diffusion fink-devel. (En général, on trouve certains symboles manquants lors d'une compilation avec g++). Les paquets qui semblent souffrir de ce problème sont, pour l'heure, les suivants : octave, singular-factory, singular-libfac et peut-être sdl.</p>
 </content:encoded>
     </item>
   </channel>

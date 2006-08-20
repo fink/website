@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/04 23:20:48 $';
+$cvs_date = '$Date: 2006/08/20 11:07:07 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -16,6 +16,7 @@ include dirname(__FILE__) . "/header.inc";
 <tr valign="top"><td width="50%">
 <h1><a href="http://feeds.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
 &nbsp;Dernières nouvelles</h1>
+
 
 <?
 // Include news items
