@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.25 2006/08/04 21:17:13 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.26 2006/08/21 02:53:59 michga Exp $</cvsid>
+
+<newsitem>
+	<date>2006-08-19</date>
+	<headline>Server down; workarounds available</headline>
+	<body>
+	<p> 
+The server which hosts four important
+fink services (the rsync update, the binary distribution, the "master mirror" 
+of source files, and the package database) is down at the moment.  We are
+hoping that the server will be restored as early as Monday, August 21,
+but are providing these workarounds for use during the period of outage.
+</p><p>
+To update fink, you must either select an rsync mirror other than the
+primary one (see the next paragraph), or use the command
+<code>fink selfupdate-cvs</code>.  You only need to give this command
+once; subsequent updates will continue to be performed using CVS.
+When the server is restored, you can revert to rsync updating by means
+of the command <code>fink selfupdate-rsync</code>.
+</p><p>
+To work around the lack of the binary distribution, and the "master mirror"
+of source files, run the command <code>fink configure</code>.  You should
+accept the default answers to all of the questions, except the following:
+when asked "Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" answer "no" (to disable the binary
+distribution); when asked if you want to change the mirror settings,
+answer "yes", and then you will be asked "What mirror order should fink use 
+when downloading sources?".  The answer is "2: Search Master Mirrors last"
+(to disable the automatic attempts to use the master mirror server).
+Finally, if you have decided to stick with rsync for updates, when asked to
+"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
+rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
+might not be available to you if you are in the U.S.
+</p><p>
+Finally, to use the package database during the outage, you can connect
+to <link url="http://lists.finkproject.org/pdb">this backup copy of the
+package database</link> which is a few weeks out of date.
+</p>
+		</body>
+	</newsitem>
 
 	<newsitem>
 		<date>2006-07-24</date>

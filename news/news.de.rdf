@@ -5,8 +5,81 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2006-08-20T13:03:53+02:00</dc:date>
+    <dc:date>2006-08-21T04:54:24+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
+      <title>Server down; workarounds available</title>
+      <link>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</link>
+      <guid>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</guid>
+      <description>
+	<p> 
+The server which hosts four important
+fink services (the rsync update, the binary distribution, the "master mirror" 
+of source files, and the package database) is down at the moment.  We are
+hoping that the server will be restored as early as Monday, August 21,
+but are providing these workarounds for use during the period of outage.
+</p><p>
+To update fink, you must either select an rsync mirror other than the
+primary one (see the next paragraph), or use the command
+fink selfupdate-cvs.  You only need to give this command
+once; subsequent updates will continue to be performed using CVS.
+When the server is restored, you can revert to rsync updating by means
+of the command fink selfupdate-rsync.
+</p><p>
+To work around the lack of the binary distribution, and the "master mirror"
+of source files, run the command fink configure.  You should
+accept the default answers to all of the questions, except the following:
+when asked "Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" answer "no" (to disable the binary
+distribution); when asked if you want to change the mirror settings,
+answer "yes", and then you will be asked "What mirror order should fink use 
+when downloading sources?".  The answer is "2: Search Master Mirrors last"
+(to disable the automatic attempts to use the master mirror server).
+Finally, if you have decided to stick with rsync for updates, when asked to
+"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
+rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
+might not be available to you if you are in the U.S.
+</p><p>
+Finally, to use the package database during the outage, you can connect
+to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+package database</a> which is a few weeks out of date.
+</p>
+		</description>
+      <content:encoded>
+	<p> 
+The server which hosts four important
+fink services (the rsync update, the binary distribution, the "master mirror" 
+of source files, and the package database) is down at the moment.  We are
+hoping that the server will be restored as early as Monday, August 21,
+but are providing these workarounds for use during the period of outage.
+</p><p>
+To update fink, you must either select an rsync mirror other than the
+primary one (see the next paragraph), or use the command
+fink selfupdate-cvs.  You only need to give this command
+once; subsequent updates will continue to be performed using CVS.
+When the server is restored, you can revert to rsync updating by means
+of the command fink selfupdate-rsync.
+</p><p>
+To work around the lack of the binary distribution, and the "master mirror"
+of source files, run the command fink configure.  You should
+accept the default answers to all of the questions, except the following:
+when asked "Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" answer "no" (to disable the binary
+distribution); when asked if you want to change the mirror settings,
+answer "yes", and then you will be asked "What mirror order should fink use 
+when downloading sources?".  The answer is "2: Search Master Mirrors last"
+(to disable the automatic attempts to use the master mirror server).
+Finally, if you have decided to stick with rsync for updates, when asked to
+"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
+rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
+might not be available to you if you are in the U.S.
+</p><p>
+Finally, to use the package database during the outage, you can connect
+to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+package database</a> which is a few weeks out of date.
+</p>
+		</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
       <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
       <link>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</link>
@@ -752,29 +825,6 @@ Bitte stellen Sie sicher, dass Sie den passenden Installer für Ihre Plattform ve
 Das Fink-Team möchte seinen vielen Mitwirkenden, vielen Helfern und Entwicklern danken, die diese Veröffentlichung ermöglicht haben. Wir danken auch unserer Community für das 130.000-malige herunterladen der 0.7.0-Veröffentlichung. Ohne deren konstanten Unterstützung und deren wertvollen Tipps, wäre Fink nicht da, wo es jetzt ist.
 </p>
 </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5">
-      <title>Probleme mit XCode 1.5</title>
-      <link>http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5</link>
-      <guid>http://fink.sourceforge.net/news/#2004-08-23%20Probleme%20mit%20XCode%201.5</guid>
-      <description>
-	<p>
-In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit XCode 1.5 kompilieren. Falls Sie noch nicht auf XCode 1.5 aktualisiert haben, empfehlen wir das Sie damit noch warten, bis die Probleme behoben sind.
-</p>
-<p>
-Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
-teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
-</p>
-	</description>
-      <content:encoded>
-	<p>
-In den letzten Tagen wurde berichtet, das einige Fink-Pakete nicht korrekt mit XCode 1.5 kompilieren. Falls Sie noch nicht auf XCode 1.5 aktualisiert haben, empfehlen wir das Sie damit noch warten, bis die Probleme behoben sind.
-</p>
-<p>
-Falls Sie Probleme mit einem Paket haben welches unter XCode 1.2 aber nicht unter XCode 1.5 korrekt kompiliert,
-teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Symptome sind: Einige Symbole fehlen nach dem Kompilieren mit g++.) Bereits bekannte Pakete die dieses Problem haben: octave, singular-factory, singular-libfac, und wahrscheinlich sdl.
-</p>
-	</content:encoded>
     </item>
   </channel>
 </rss>

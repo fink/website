@@ -1,4 +1,37 @@
-<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
+<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+	<p> 
+The server which hosts four important
+fink services (the rsync update, the binary distribution, the "master mirror" 
+of source files, and the package database) is down at the moment.  We are
+hoping that the server will be restored as early as Monday, August 21,
+but are providing these workarounds for use during the period of outage.
+</p><p>
+To update fink, you must either select an rsync mirror other than the
+primary one (see the next paragraph), or use the command
+<code>fink selfupdate-cvs</code>.  You only need to give this command
+once; subsequent updates will continue to be performed using CVS.
+When the server is restored, you can revert to rsync updating by means
+of the command <code>fink selfupdate-rsync</code>.
+</p><p>
+To work around the lack of the binary distribution, and the "master mirror"
+of source files, run the command <code>fink configure</code>.  You should
+accept the default answers to all of the questions, except the following:
+when asked "Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" answer "no" (to disable the binary
+distribution); when asked if you want to change the mirror settings,
+answer "yes", and then you will be asked "What mirror order should fink use 
+when downloading sources?".  The answer is "2: Search Master Mirrors last"
+(to disable the automatic attempts to use the master mirror server).
+Finally, if you have decided to stick with rsync for updates, when asked to
+"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
+rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
+might not be available to you if you are in the U.S.
+</p><p>
+Finally, to use the package database during the outage, you can connect
+to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+package database</a> which is a few weeks out of date.
+</p>
+		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
 			<p>
 
 				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
@@ -34,35 +67,4 @@
 			<p>
 				7月26日午後8時半、 room F150 にて Fink や Mac OS X 、その他諸々のことを話します、
 			</p>
-		<a name="2006-07-01%20%E6%96%87%E6%9C%88%E3%81%AF%20%22Fink%20%E6%9B%B4%E6%96%B0%E6%9C%88%22%20%E3%81%A7%E3%81%99"><span class="news-date">2006-07-01: </span><span class="news-headline">文月は "Fink 更新月" です</span></a><?php gray_line(); ?>
-      <p>
-PowerPC 上の Fink ユーザは、古い "10.4-transitional" から、より新しい "10.4" ツリーへ fink を更新することをお勧めします。
-2006年7月末には 10.4-transitional ツリーはサポートを終了する予定です。
-</p><p>
-背景: OS X 10.4 とともに来た、新しいバージョンの g++ コンパイラ
-(Fink の馬車馬の一頭) は、以前のバージョンとはバイナリ非互換なコードを生成します。
-10.4-transitional ツリーを使う際は、Fink は新しい gcc-4.0 コンパイラと古い g++-3.3 コンパイラを組み合わせて使います。
-この戦略は、g++-4.0 と互換のパッケージをつくるため、よけいな時間を必要とします。
-移行は完了の時期に達し、新しいツリーにのみ依存します。
-しかし、g++ ライブラリを用いている、あるいは提供している全てのパッケージを、正しい順序で再ビルドしなければいけないのが少し厄介です。
-</p><p>
-OS X 10.4 を使っている方は、
-<code>fink --version</code>
-というコマンドを実行することで、Fink を更新する必要があるかどうかわかります。
-Distribution version が 0.8.1.cvs か 0.8.1.rsync であれば、更新の必要は<b>ありません</b>。
-Distribution version が 0.8.0.cvs か 0.8.0.rsync であれば、以下に述べるように更新してください。
-</p>
-<p>
-多くのユーザは、簡単に、fink インストールを削除し、0.8.1 インストーラでインストールしてください。
-他の方は、コンパイル済みの基本 fink パッケージと既存 fink インストールを更新するスクリプトの入っている
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.3.tar.gz?download">10.4-update tarball (v. 0.3)</a> (およそ 12 MB)　
-を使うと良いでしょう。
-(tarball を解凍後、)詳細については 10.4-update ディレクトリ内の README ファイルを参考にしてください。
-</p>
-<p>
-注記: OS X 10.3 から OS X 10.4 へアップグレードする Fink ユーザは、同じく二つの方法があります。
-古い fink インストールを削除して新規にインストールするか、
-同じ 10.4-update tarball を使います。
-更新スクリプトは、OS X がアップグレードされた後には実行しないでください。
-</p>
-
+		
