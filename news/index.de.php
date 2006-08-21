@@ -1,13 +1,14 @@
 <?
 $title = "News";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/08/21 02:53:58';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/08/21 11:46:57';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+<p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 

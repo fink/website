@@ -5,13 +5,14 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2006-08-21T04:54:25+02:00</dc:date>
+    <dc:date>2006-08-21T07:48:33-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
       <title>Server down; workarounds available</title>
       <link>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</link>
       <guid>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</guid>
       <description>
+<p> Update: 21 August 2006:  The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
@@ -46,6 +47,7 @@ package database</a> which is a few weeks out of date.
 </p>
 		</description>
       <content:encoded>
+<p> Update: 21 August 2006:  The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 

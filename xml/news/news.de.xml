@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-<cvsid>$Id: news.de.xml,v 1.25 2006/08/21 02:53:58 michga Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.26 2006/08/21 11:46:57 dmrrsn Exp $</cvsid>
 
 <newsitem>
 	<date>2006-08-19</date>
 	<headline>Server down; workarounds available</headline>
 	<body>
+<p><em> Update: 21 August 2006: </em> The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
