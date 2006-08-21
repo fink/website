@@ -1,13 +1,13 @@
 ﻿<?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/07/22 20:15:15 $';
+$cvs_author = '$Author: michga $';
+$cvs_date = '$Date: 2006/08/21 03:04:36 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
-
+ 
 include dirname(__FILE__) . "/header.inc";
 ?>
 

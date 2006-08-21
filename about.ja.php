@@ -1,11 +1,10 @@
 <?
 $title = "Fink とは";
 $cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_date = '$Date: 2006/08/21 03:04:36 $';
 
 include "header.inc";
 ?>
-
 
 <h1>Fink について</h1>
 
