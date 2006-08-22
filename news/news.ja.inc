@@ -1,36 +1,38 @@
-<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
-The server which hosts four important
-fink services (the rsync update, the binary distribution, the "master mirror" 
-of source files, and the package database) is down at the moment.  We are
-hoping that the server will be restored as early as Monday, August 21,
-but are providing these workarounds for use during the period of outage.
+現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
+をホストしているサーバがダウンしています。
+8月21日月曜日頃には復旧すると思われますが、それまでの間は回避策を提供いたします。
 </p><p>
-To update fink, you must either select an rsync mirror other than the
-primary one (see the next paragraph), or use the command
-<code>fink selfupdate-cvs</code>.  You only need to give this command
-once; subsequent updates will continue to be performed using CVS.
-When the server is restored, you can revert to rsync updating by means
-of the command <code>fink selfupdate-rsync</code>.
+fink を更新する際は、primary ミラー以外の rsync ミラーを選択する (次のパラグラフで解説) か、
+<code>fink selfupdate-cvs</code> コマンドを使います。
+このコマンドはいっぱい実行するだけで、次回からの更新も CVS を用いるようになります。
+サーバが復旧したら、<code>fink selfupdate-rsync</code> とすることで rsync 更新に戻すことができます。
 </p><p>
-To work around the lack of the binary distribution, and the "master mirror"
-of source files, run the command <code>fink configure</code>.  You should
-accept the default answers to all of the questions, except the following:
-when asked "Should Fink try to download pre-compiled packages from 
-the binary distribution if available?" answer "no" (to disable the binary
-distribution); when asked if you want to change the mirror settings,
-answer "yes", and then you will be asked "What mirror order should fink use 
-when downloading sources?".  The answer is "2: Search Master Mirrors last"
-(to disable the automatic attempts to use the master mirror server).
-Finally, if you have decided to stick with rsync for updates, when asked to
-"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
-rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
-might not be available to you if you are in the U.S.
+バイナリ配布の不在と、ソースファイルの "master mirror" に関しては、
+<code>fink configure</code> コマンドを実行します。
+以下の質問以外に対しては、既定の答を受け入れてください。
+"Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" には "no" を
+(バイナリ配布を無効化する)。
+ミラー設定を変えるか聞かれた場合 "yes" と答える。
+この後、"What mirror order should fink use 
+when downloading sources?" と聞かれるので、
+"2: Search Master Mirrors last"
+(master mirror サーバを自動的に選択する機能を無効化)
+と答えます。
+最後に、 更新に rsync を用いると決めていて、
+"Choose a mirror for 'RSync SelfUpdate'" 
+と聞かれた場合、
+rsync://master.us.finkmirrors.net/finkinfo/
+以外を選択してください。
+米国にいる場合、残念ながら他の選択肢がないかもしれません。
 </p><p>
-Finally, to use the package database during the outage, you can connect
-to <a href="http://lists.finkproject.org/pdb">this backup copy of the
-package database</a> which is a few weeks out of date.
+最後に、パッケージデータベースを使うには、
+<a href="http://lists.finkproject.org/pdb">データベースのバックアップ</a>
+を使いください。
+ただし、これは数週間遅れたデータになります。
 </p>
 		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
 			<p>

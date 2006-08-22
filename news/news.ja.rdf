@@ -5,80 +5,84 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2006-08-21T19:15:47+02:00</dc:date>
+    <dc:date>2006-08-22T15:54:14+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
-      <title>Server down; workarounds available</title>
-      <link>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</link>
-      <guid>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20%3F%3F%3F%3F%3F%3F%3B%20%3F%3F%3F%3F%3F%3F">
+      <title>&#12469;&#12540;&#12496;&#12480;&#12454;&#12531;; &#22238;&#36991;&#31574;&#26377;&#12426;&#12290;</title>
+      <link>http://fink.sourceforge.net/news/#2006-08-19%20%3F%3F%3F%3F%3F%3F%3B%20%3F%3F%3F%3F%3F%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2006-08-19%20%3F%3F%3F%3F%3F%3F%3B%20%3F%3F%3F%3F%3F%3F</guid>
       <description>
 <p> Update: 21 August 2006:  The server has been restored.</p>
 	<p> 
-The server which hosts four important
-fink services (the rsync update, the binary distribution, the "master mirror" 
-of source files, and the package database) is down at the moment.  We are
-hoping that the server will be restored as early as Monday, August 21,
-but are providing these workarounds for use during the period of outage.
+&#29694;&#22312;&#12289;fink &#12398;&#65300;&#12388;&#12398;&#37325;&#35201;&#12394;&#12469;&#12540;&#12499;&#12473; (rsync &#26356;&#26032;&#12289;&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;, &#12477;&#12540;&#12473;&#12501;&#12449;&#12452;&#12523;&#12398; "master mirror", &#12497;&#12483;&#12465;&#12540;&#12472;&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;)
+&#12434;&#12507;&#12473;&#12488;&#12375;&#12390;&#12356;&#12427;&#12469;&#12540;&#12496;&#12364;&#12480;&#12454;&#12531;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
+8&#26376;21&#26085;&#26376;&#26332;&#26085;&#38915;&#12395;&#12399;&#24489;&#26087;&#12377;&#12427;&#12392;&#24605;&#12431;&#12428;&#12414;&#12377;&#12364;&#12289;&#12381;&#12428;&#12414;&#12391;&#12398;&#38291;&#12399;&#22238;&#36991;&#31574;&#12434;&#25552;&#20379;&#12356;&#12383;&#12375;&#12414;&#12377;&#12290;
 </p><p>
-To update fink, you must either select an rsync mirror other than the
-primary one (see the next paragraph), or use the command
-fink selfupdate-cvs.  You only need to give this command
-once; subsequent updates will continue to be performed using CVS.
-When the server is restored, you can revert to rsync updating by means
-of the command fink selfupdate-rsync.
+fink &#12434;&#26356;&#26032;&#12377;&#12427;&#38555;&#12399;&#12289;primary &#12511;&#12521;&#12540;&#20197;&#22806;&#12398; rsync &#12511;&#12521;&#12540;&#12434;&#36984;&#25246;&#12377;&#12427; (&#27425;&#12398;&#12497;&#12521;&#12464;&#12521;&#12501;&#12391;&#35299;&#35500;) &#12363;&#12289;
+fink selfupdate-cvs &#12467;&#12510;&#12531;&#12489;&#12434;&#20351;&#12356;&#12414;&#12377;&#12290;
+&#12371;&#12398;&#12467;&#12510;&#12531;&#12489;&#12399;&#12356;&#12387;&#12401;&#12356;&#23455;&#34892;&#12377;&#12427;&#12384;&#12369;&#12391;&#12289;&#27425;&#22238;&#12363;&#12425;&#12398;&#26356;&#26032;&#12418; CVS &#12434;&#29992;&#12356;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&#12469;&#12540;&#12496;&#12364;&#24489;&#26087;&#12375;&#12383;&#12425;&#12289;fink selfupdate-rsync &#12392;&#12377;&#12427;&#12371;&#12392;&#12391; rsync &#26356;&#26032;&#12395;&#25147;&#12377;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;
 </p><p>
-To work around the lack of the binary distribution, and the "master mirror"
-of source files, run the command fink configure.  You should
-accept the default answers to all of the questions, except the following:
-when asked "Should Fink try to download pre-compiled packages from 
-the binary distribution if available?" answer "no" (to disable the binary
-distribution); when asked if you want to change the mirror settings,
-answer "yes", and then you will be asked "What mirror order should fink use 
-when downloading sources?".  The answer is "2: Search Master Mirrors last"
-(to disable the automatic attempts to use the master mirror server).
-Finally, if you have decided to stick with rsync for updates, when asked to
-"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
-rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
-might not be available to you if you are in the U.S.
+&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;&#12398;&#19981;&#22312;&#12392;&#12289;&#12477;&#12540;&#12473;&#12501;&#12449;&#12452;&#12523;&#12398; "master mirror" &#12395;&#38306;&#12375;&#12390;&#12399;&#12289;
+fink configure &#12467;&#12510;&#12531;&#12489;&#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&#20197;&#19979;&#12398;&#36074;&#21839;&#20197;&#22806;&#12395;&#23550;&#12375;&#12390;&#12399;&#12289;&#26082;&#23450;&#12398;&#31572;&#12434;&#21463;&#12369;&#20837;&#12428;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+"Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" &#12395;&#12399; "no" &#12434;
+(&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;&#12434;&#28961;&#21177;&#21270;&#12377;&#12427;)&#12290;
+&#12511;&#12521;&#12540;&#35373;&#23450;&#12434;&#22793;&#12360;&#12427;&#12363;&#32862;&#12363;&#12428;&#12383;&#22580;&#21512; "yes" &#12392;&#31572;&#12360;&#12427;&#12290;
+&#12371;&#12398;&#24460;&#12289;"What mirror order should fink use 
+when downloading sources?" &#12392;&#32862;&#12363;&#12428;&#12427;&#12398;&#12391;&#12289;
+"2: Search Master Mirrors last"
+(master mirror &#12469;&#12540;&#12496;&#12434;&#33258;&#21205;&#30340;&#12395;&#36984;&#25246;&#12377;&#12427;&#27231;&#33021;&#12434;&#28961;&#21177;&#21270;)
+&#12392;&#31572;&#12360;&#12414;&#12377;&#12290;
+&#26368;&#24460;&#12395;&#12289; &#26356;&#26032;&#12395; rsync &#12434;&#29992;&#12356;&#12427;&#12392;&#27770;&#12417;&#12390;&#12356;&#12390;&#12289;
+"Choose a mirror for 'RSync SelfUpdate'" 
+&#12392;&#32862;&#12363;&#12428;&#12383;&#22580;&#21512;&#12289;
+rsync://master.us.finkmirrors.net/finkinfo/
+&#20197;&#22806;&#12434;&#36984;&#25246;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#31859;&#22269;&#12395;&#12356;&#12427;&#22580;&#21512;&#12289;&#27531;&#24565;&#12394;&#12364;&#12425;&#20182;&#12398;&#36984;&#25246;&#32930;&#12364;&#12394;&#12356;&#12363;&#12418;&#12375;&#12428;&#12414;&#12379;&#12435;&#12290;
 </p><p>
-Finally, to use the package database during the outage, you can connect
-to <a href="http://lists.finkproject.org/pdb">this backup copy of the
-package database</a> which is a few weeks out of date.
+&#26368;&#24460;&#12395;&#12289;&#12497;&#12483;&#12465;&#12540;&#12472;&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12434;&#20351;&#12358;&#12395;&#12399;&#12289;
+<a href="http://lists.finkproject.org/pdb">&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12398;&#12496;&#12483;&#12463;&#12450;&#12483;&#12503;</a>
+&#12434;&#20351;&#12356;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#12383;&#12384;&#12375;&#12289;&#12371;&#12428;&#12399;&#25968;&#36913;&#38291;&#36933;&#12428;&#12383;&#12487;&#12540;&#12479;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
 </p>
 		</description>
       <content:encoded>
 <p> Update: 21 August 2006:  The server has been restored.</p>
 	<p> 
-The server which hosts four important
-fink services (the rsync update, the binary distribution, the "master mirror" 
-of source files, and the package database) is down at the moment.  We are
-hoping that the server will be restored as early as Monday, August 21,
-but are providing these workarounds for use during the period of outage.
+&#29694;&#22312;&#12289;fink &#12398;&#65300;&#12388;&#12398;&#37325;&#35201;&#12394;&#12469;&#12540;&#12499;&#12473; (rsync &#26356;&#26032;&#12289;&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;, &#12477;&#12540;&#12473;&#12501;&#12449;&#12452;&#12523;&#12398; "master mirror", &#12497;&#12483;&#12465;&#12540;&#12472;&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;)
+&#12434;&#12507;&#12473;&#12488;&#12375;&#12390;&#12356;&#12427;&#12469;&#12540;&#12496;&#12364;&#12480;&#12454;&#12531;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
+8&#26376;21&#26085;&#26376;&#26332;&#26085;&#38915;&#12395;&#12399;&#24489;&#26087;&#12377;&#12427;&#12392;&#24605;&#12431;&#12428;&#12414;&#12377;&#12364;&#12289;&#12381;&#12428;&#12414;&#12391;&#12398;&#38291;&#12399;&#22238;&#36991;&#31574;&#12434;&#25552;&#20379;&#12356;&#12383;&#12375;&#12414;&#12377;&#12290;
 </p><p>
-To update fink, you must either select an rsync mirror other than the
-primary one (see the next paragraph), or use the command
-fink selfupdate-cvs.  You only need to give this command
-once; subsequent updates will continue to be performed using CVS.
-When the server is restored, you can revert to rsync updating by means
-of the command fink selfupdate-rsync.
+fink &#12434;&#26356;&#26032;&#12377;&#12427;&#38555;&#12399;&#12289;primary &#12511;&#12521;&#12540;&#20197;&#22806;&#12398; rsync &#12511;&#12521;&#12540;&#12434;&#36984;&#25246;&#12377;&#12427; (&#27425;&#12398;&#12497;&#12521;&#12464;&#12521;&#12501;&#12391;&#35299;&#35500;) &#12363;&#12289;
+fink selfupdate-cvs &#12467;&#12510;&#12531;&#12489;&#12434;&#20351;&#12356;&#12414;&#12377;&#12290;
+&#12371;&#12398;&#12467;&#12510;&#12531;&#12489;&#12399;&#12356;&#12387;&#12401;&#12356;&#23455;&#34892;&#12377;&#12427;&#12384;&#12369;&#12391;&#12289;&#27425;&#22238;&#12363;&#12425;&#12398;&#26356;&#26032;&#12418; CVS &#12434;&#29992;&#12356;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&#12469;&#12540;&#12496;&#12364;&#24489;&#26087;&#12375;&#12383;&#12425;&#12289;fink selfupdate-rsync &#12392;&#12377;&#12427;&#12371;&#12392;&#12391; rsync &#26356;&#26032;&#12395;&#25147;&#12377;&#12371;&#12392;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;
 </p><p>
-To work around the lack of the binary distribution, and the "master mirror"
-of source files, run the command fink configure.  You should
-accept the default answers to all of the questions, except the following:
-when asked "Should Fink try to download pre-compiled packages from 
-the binary distribution if available?" answer "no" (to disable the binary
-distribution); when asked if you want to change the mirror settings,
-answer "yes", and then you will be asked "What mirror order should fink use 
-when downloading sources?".  The answer is "2: Search Master Mirrors last"
-(to disable the automatic attempts to use the master mirror server).
-Finally, if you have decided to stick with rsync for updates, when asked to
-"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
-rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
-might not be available to you if you are in the U.S.
+&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;&#12398;&#19981;&#22312;&#12392;&#12289;&#12477;&#12540;&#12473;&#12501;&#12449;&#12452;&#12523;&#12398; "master mirror" &#12395;&#38306;&#12375;&#12390;&#12399;&#12289;
+fink configure &#12467;&#12510;&#12531;&#12489;&#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&#20197;&#19979;&#12398;&#36074;&#21839;&#20197;&#22806;&#12395;&#23550;&#12375;&#12390;&#12399;&#12289;&#26082;&#23450;&#12398;&#31572;&#12434;&#21463;&#12369;&#20837;&#12428;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+"Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" &#12395;&#12399; "no" &#12434;
+(&#12496;&#12452;&#12490;&#12522;&#37197;&#24067;&#12434;&#28961;&#21177;&#21270;&#12377;&#12427;)&#12290;
+&#12511;&#12521;&#12540;&#35373;&#23450;&#12434;&#22793;&#12360;&#12427;&#12363;&#32862;&#12363;&#12428;&#12383;&#22580;&#21512; "yes" &#12392;&#31572;&#12360;&#12427;&#12290;
+&#12371;&#12398;&#24460;&#12289;"What mirror order should fink use 
+when downloading sources?" &#12392;&#32862;&#12363;&#12428;&#12427;&#12398;&#12391;&#12289;
+"2: Search Master Mirrors last"
+(master mirror &#12469;&#12540;&#12496;&#12434;&#33258;&#21205;&#30340;&#12395;&#36984;&#25246;&#12377;&#12427;&#27231;&#33021;&#12434;&#28961;&#21177;&#21270;)
+&#12392;&#31572;&#12360;&#12414;&#12377;&#12290;
+&#26368;&#24460;&#12395;&#12289; &#26356;&#26032;&#12395; rsync &#12434;&#29992;&#12356;&#12427;&#12392;&#27770;&#12417;&#12390;&#12356;&#12390;&#12289;
+"Choose a mirror for 'RSync SelfUpdate'" 
+&#12392;&#32862;&#12363;&#12428;&#12383;&#22580;&#21512;&#12289;
+rsync://master.us.finkmirrors.net/finkinfo/
+&#20197;&#22806;&#12434;&#36984;&#25246;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#31859;&#22269;&#12395;&#12356;&#12427;&#22580;&#21512;&#12289;&#27531;&#24565;&#12394;&#12364;&#12425;&#20182;&#12398;&#36984;&#25246;&#32930;&#12364;&#12394;&#12356;&#12363;&#12418;&#12375;&#12428;&#12414;&#12379;&#12435;&#12290;
 </p><p>
-Finally, to use the package database during the outage, you can connect
-to <a href="http://lists.finkproject.org/pdb">this backup copy of the
-package database</a> which is a few weeks out of date.
+&#26368;&#24460;&#12395;&#12289;&#12497;&#12483;&#12465;&#12540;&#12472;&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12434;&#20351;&#12358;&#12395;&#12399;&#12289;
+<a href="http://lists.finkproject.org/pdb">&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;&#12398;&#12496;&#12483;&#12463;&#12450;&#12483;&#12503;</a>
+&#12434;&#20351;&#12356;&#12367;&#12384;&#12373;&#12356;&#12290;
+&#12383;&#12384;&#12375;&#12289;&#12371;&#12428;&#12399;&#25968;&#36913;&#38291;&#36933;&#12428;&#12383;&#12487;&#12540;&#12479;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
 </p>
 		</content:encoded>
     </item>
