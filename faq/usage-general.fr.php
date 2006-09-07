@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/08/17 21:33:05';
+$cvs_date = 'Date: 2006/09/07 05:44:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
 
 
@@ -30,12 +30,14 @@ setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal" 
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</b></p></div>
