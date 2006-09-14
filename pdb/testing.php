@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/06/14 21:36:39 $';
+$cvs_author = '$Author: chris01 $';
+$cvs_date = '$Date: 2006/09/14 16:12:07 $';
 
 $have_key = isset($maintainer);
 
@@ -15,7 +15,7 @@ include "header.inc";
 This is a list of packages that need testing, i.e. the version in
 unstable is newer than the version in stable.
 The list is based on the latest <a
-href="../doc/cvsaccess/index.php">packages from CVS</a>.
+href="http://fink.sourceforge.net/doc/cvsaccess/index.php">packages from CVS</a>.
 </p>
 
 <?
