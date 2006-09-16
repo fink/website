@@ -4,7 +4,7 @@
 <article filename="usage" lang="en">
 <title>Fink Usage</title>
 <shorttitle>Usage</shorttitle>
-<cvsid>$Id: usage.xml,v 1.14 2004/03/05 15:40:26 fingolfin Exp $</cvsid>
+<cvsid>$Id: usage.xml,v 1.15 2006/09/16 23:30:44 dmrrsn Exp $</cvsid>
 
 <section><title>Setting The Paths</title>
 <p>
@@ -184,10 +184,10 @@ descriptions directly from CVS.
 <p>
 If your questions are not answered by this document, read the FAQ at
 the Fink website:
-<link url="http://fink.sourceforge.net/faq/">http://fink.sourceforge.net/faq/</link>.
+<link url="http://www.finkproject.org/faq/">http://www.finkproject.org/faq/</link>.
 If that still doesn't answer your questions, subscribe to the
 fink-users mailing list via <link
-url="http://fink.sourceforge.net/lists/fink-users.php">http://fink.sourceforge.net/lists/fink-users.php</link>
+url="http://www.finkproject.org/lists/fink-users.php">http://www.finkproject.org/lists/fink-users.php</link>
 and ask there.
 </p>
 </section>

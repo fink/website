@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = 'Author: beren12';
-$cvs_date = 'Date: 2006/06/26 05:05:41';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/09/16 23:25:29';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
@@ -78,7 +78,7 @@ have been warned.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.8.1-full.tar.gz tarball.
+First, you need to unpack the fink-0.8.0-full.tar.gz tarball.
 (Note: If you have OS X 10.4 and XCode 2.1, you should use
 <code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
 the appropriate changes below.)
@@ -87,15 +87,15 @@ StuffIt Expander has a tendency to screw up text files.
 So, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.8.1-full.tar.gz</pre>
+<pre>tar xzf fink-0.8.0-full.tar.gz</pre>
 <p>
-You now have a directory named fink-0.8.1-full.
-Change to it with <code>cd fink-0.8.1-full</code>.
+You now have a directory named fink-0.8.0-full.
+Change to it with <code>cd fink-0.8.0-full</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.8.1-full directory and run
+So, to start installation, go to the fink-0.8.0-full directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
@@ -177,7 +177,7 @@ actual files alone.
 </ul>
 <p>
 For more information on installing and running X11, refer to the
-online <a href="http://fink.sourceforge.net/doc/x11/">X11 on Darwin
+online <a href="http://www.finkproject.org/doc/x11/">X11 on Darwin
 and Mac OS X document</a>.
 </p>
 
