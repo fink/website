@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.24 2006/06/26 05:05:41 beren12 Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.25 2006/09/16 23:25:29 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -19,7 +19,7 @@ for installation on OS X v.10.2 (replacing
 and for installation on OS X v.10.1
 (replacing &fink_version; by 0.4.1a).
 </p><p>
-This document does not apply to the "<link url="http://fink.sourceforge.net/download/index.php">binary</link>" distribution.
+This document does not apply to the "<link url="http://www.finkproject.org/download/index.php">binary</link>" distribution.
 </p><p>
 There are instructions for both first time installation and upgrading
 from a previous version.
@@ -139,9 +139,9 @@ Do you want to continue? [Y/n] <em>y</em>
 <p>
 If these instructions don't work for you, well, you'll have to take
 the time to read through the rest of this document and the <link
-url="http://fink.sourceforge.net/faq/">online FAQ</link>.
+url="http://www.finkproject.org/faq/">online FAQ</link>.
 You can also ask on the <link
-url="http://fink.sourceforge.net/lists/fink-users.php">fink-users
+url="http://www.finkproject.org/lists/fink-users.php">fink-users
 mailing list</link>, but expect to be pointed back at the
 documentation when your problem actually is well-documented.
 </p>
@@ -362,7 +362,7 @@ actual files alone.
 </ul>
 <p>
 For more information on installing and running X11, refer to the
-online <link url="http://fink.sourceforge.net/doc/x11/">X11 on Darwin
+online <link url="http://www.finkproject.org/doc/x11/">X11 on Darwin
 and Mac OS X document</link>.
 </p>
 </section>

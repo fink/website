@@ -3,7 +3,7 @@
 <article filename="readme" lang="fr" >
   <title>Fink Lisez-moi</title>
   <shorttitle>Lisez-moi</shorttitle>
-  <cvsid>$Id: readme.fr.xml,v 1.4 2004/03/07 07:11:09 michga Exp $</cvsid>
+  <cvsid>$Id: readme.fr.xml,v 1.5 2006/09/16 23:17:53 dmrrsn Exp $</cvsid>
   <preface>
     <p>
 Voici Fink, un système de gestion de paquets qui a pour but d'ouvrir toutes grandes les portes du monde des logiciels Open Source à  Darwin et Mac OS X.
@@ -78,8 +78,8 @@ Il comprend aussi une liste complète des commandes disponibles.
   <section name="questions" >
     <title>Autres questions</title>
     <p>
-Si la documentation incluse ne répond pas à  vos questions, allez sur le site web de Fink <link url="http://fink.sourceforge.net/" >http://fink.sourceforge.net/</link> et consultez la page Aide :
-<link url="http://fink.sourceforge.net/help/" >http://fink.sourceforge.net/help/</link>.
+Si la documentation incluse ne répond pas à  vos questions, allez sur le site web de Fink <link url="http://www.finkproject.org/" >http://www.finkproject.org/</link> et consultez la page Aide :
+<link url="http://www.finkproject.org/help/" >http://www.finkproject.org/help/</link>.
 Elle vous conduira au reste de la documentation disponible et à d'autres sources de support, le cas échéant.
 </p>
     <p>
@@ -89,10 +89,10 @@ Si vous voulez apporter votre contribution à Fink, la page Aide mentionnée ci-
   <section name="uptodate" >
     <title>Dernières nouvelles</title>
     <p>
-La page du projet se trouve sur <link url="http://fink.sourceforge.net/" >http://fink.sourceforge.net/</link>.
+La page du projet se trouve sur <link url="http://www.finkproject.org/" >http://www.finkproject.org/</link>.
 </p>
     <p>
-Pour vous tenir informé des dernières versions, allez à <link url="http://fink.sourceforge.net/lists/fink-announce.php" >http://fink.sourceforge.net/lists/fink-announce.php</link>
+Pour vous tenir informé des dernières versions, allez à <link url="http://www.finkproject.org/lists/fink-announce.php" >http://www.finkproject.org/lists/fink-announce.php</link>
 et abonnez-vous à la liste de diffusion fink-announce. 
 La liste est modérée et son trafic est très faible.
 </p>

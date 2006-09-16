@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2004/02/29 23:08:22';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/09/16 23:17:53';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $-->
+<!--Generated from $Fink: readme.ja.xml,v 1.3 2006/09/16 23:17:53 dmrrsn Exp $-->
 <p>
 Fink は Open Source ソフトウェアを Darwin と Mac OS X　で使えるようにすることを目的としたパッケージ管理システムです。
 </p>
@@ -70,9 +70,9 @@ USAGE ファイルにパスの通し方やパッケージのインストール�
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
 もしここにあるドキュメントで質問に答えていない場合、 Fink ウェブサイト
-<a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>
+<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
 に来て、ヘルプページを参照してください:
-<a href="http://fink.sourceforge.net/help/">http://fink.sourceforge.net/help/</a> 。
+<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a> 。
 ここにほかのドキュメントやサポートの得られる場所についての情報が書かれています。
 </p>
 <p>
@@ -81,12 +81,12 @@ Fink に貢献をしたい場合、上記のヘルプページに、テストや
 <h2><a name="uptodate">告知</a></h2>
 <p>
 当プロジェクトのウェブサイトは
-<a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>
+<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
 です。
 </p>
 <p>
 新しいリリースの情報は、
-<a href="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</a>
+<a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>
 から fink-announce メーリングリストを購読してください。
 このリストは受信専用で、トラフィック量は小さいです。
 </p>

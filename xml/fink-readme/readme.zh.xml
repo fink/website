@@ -4,7 +4,7 @@
 <article filename="readme" lang="zh">
 <title>Fink 自述文件</title>
 <shorttitle>自述</shorttitle>
-<cvsid>$Id: readme.zh.xml,v 1.1 2004/03/17 20:38:16 jeff_yecn Exp $</cvsid>
+<cvsid>$Id: readme.zh.xml,v 1.2 2006/09/16 23:17:53 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -71,9 +71,9 @@ USAGE 文件描述如何设置你的路径以及如何安装和删除软件包�
 <p>
 如何这里包括的文档不足以回答你的问题，
 你用可以访问 Fink 的网站：
-<link url="http://fink.sourceforge.net/">http://fink.sourceforge.net/</link>
+<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>
 并查阅那里的帮助页：
-<link url="http://fink.sourceforge.net/help/">http://fink.sourceforge.net/help/</link>。
+<link url="http://www.finkproject.org/help/">http://www.finkproject.org/help/</link>。
 它会告诉你有什么其它的文档以及可以在那里获得你需要的支持。
 </p>
 <p>
@@ -84,11 +84,11 @@ USAGE 文件描述如何设置你的路径以及如何安装和删除软件包�
 <section name="uptodate"><title>获取最新信息</title>
 <p>
 项目的网站在 
-<link url="http://fink.sourceforge.net/">http://fink.sourceforge.net/</link>。
+<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>。
 </p>
 <p>
 要获取最新发布版本的通知，可以到
-<link url="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</link>
+<link url="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</link>
 去订阅 fink-announce 邮件列表。
 这个列表是受管的低流量列表。
 </p>

@@ -4,7 +4,7 @@
 <article filename="readme" lang="ja">
 <title>Fink ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.ja.xml,v 1.2 2004/02/29 23:08:22 fingolfin Exp $</cvsid>
+<cvsid>$Id: readme.ja.xml,v 1.3 2006/09/16 23:17:53 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -76,9 +76,9 @@ USAGE ファイルにパスの通し方やパッケージのインストール�
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
 もしここにあるドキュメントで質問に答えていない場合、 Fink ウェブサイト
-<link url="http://fink.sourceforge.net/">http://fink.sourceforge.net/</link>
+<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>
 に来て、ヘルプページを参照してください:
-<link url="http://fink.sourceforge.net/help/">http://fink.sourceforge.net/help/</link> 。
+<link url="http://www.finkproject.org/help/">http://www.finkproject.org/help/</link> 。
 ここにほかのドキュメントやサポートの得られる場所についての情報が書かれています。
 </p>
 <p>
@@ -89,12 +89,12 @@ Fink に貢献をしたい場合、上記のヘルプページに、テストや
 <section name="uptodate"><title>告知</title>
 <p>
 当プロジェクトのウェブサイトは
-<link url="http://fink.sourceforge.net/">http://fink.sourceforge.net/</link>
+<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>
 です。
 </p>
 <p>
 新しいリリースの情報は、
-<link url="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</link>
+<link url="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</link>
 から fink-announce メーリングリストを購読してください。
 このリストは受信専用で、トラフィック量は小さいです。
 </p>

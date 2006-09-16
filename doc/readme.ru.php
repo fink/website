@@ -1,14 +1,14 @@
 <?
 $title = "Ознакомительный файл";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/17 04:55:04';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/09/16 23:17:53';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Ознакомительный файл Fink</h1>
-<!--Generated from $Fink: readme.ru.xml,v 1.1 2005/02/17 04:55:04 horsager Exp $-->
+<!--Generated from $Fink: readme.ru.xml,v 1.2 2006/09/16 23:17:53 dmrrsn Exp $-->
         <p> Система управления пакетами Fink предназначена для переноса
             всего мира ПО с открытым исходным кодом в Darwin и Mac OS X.</p>
         <p> При помощи dpkg она поддерживает отдельную иерархию каталогов.
@@ -60,16 +60,16 @@ include_once "header.inc";
     <h2><a name="questions">Другие вопросы?</a></h2>
         
         <p> Если в предлагаемой документации нет ответа на ваш вопрос,
-            перейдите с веб-сайта Fink на <a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>
-            и посмотрите там страницу Help:<a href="http://fink.sourceforge.net/help/">http://fink.sourceforge.net/help/</a>.
+            перейдите с веб-сайта Fink на <a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
+            и посмотрите там страницу Help:<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a>.
             На ней вы найдете сведения обо всей другой имеющейся документации и источниках
             необходимой вам поддержки.</p>
         <p> Если вы хотите внести свой вклад в развитие Fink,  вышеуказанная страница Help также
             содержит список того, что вы можете сделать - например, тестирование или создание пакетов.</p>
     <h2><a name="uptodate">Регулярное получение информации</a></h2>
         
-        <p> Адрес веб-сайта проекта: <a href="http://fink.sourceforge.net/">http://fink.sourceforge.net/</a>.</p>
-        <p> Для регулярного получения информации о новых версиях можно подписаться на список рассылки fink-announce на <a href="http://fink.sourceforge.net/lists/fink-announce.php">http://fink.sourceforge.net/lists/fink-announce.php</a>.
+        <p> Адрес веб-сайта проекта: <a href="http://www.finkproject.org/">http://www.finkproject.org/</a>.</p>
+        <p> Для регулярного получения информации о новых версиях можно подписаться на список рассылки fink-announce на <a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>.
             Это умеренный список с низким уровнем трафика.
             </p>
     
