@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/02/22 06:31:55';
+$cvs_author = 'Author: msachs';
+$cvs_date = 'Date: 2006/09/18 14:34:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -32,7 +32,10 @@ order.</p>
 <p>In the <b>compile phase</b> the source is configured and
 compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
-CompileScript field description for details.</p>
+CompileScript field description for details.  If test suites are enabled
+for the build (a new feature in fink 0.25, currently achieved by building in
+maintainer mode), the TestScript will be run immediately after the
+CompileScript.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
 directory, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
 All files that would normally be installed to <code>/sw</code> are installed in
@@ -418,7 +421,9 @@ essential ones; this is no longer true.
 A list of dependencies that is applied at build time only.
 This can be used to list tools (e.g. flex) that must be present to
 build the packages, but which are not used at run time.
-Supports the same syntax as Depends.
+Supports the same syntax as Depends.  If a build is being done
+with test suites enabled, the dependencies in the <code>TestDepends</code>
+field will be added to this list.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
@@ -461,7 +466,9 @@ A list of packages that must not be installed while this package is
 being compiled. This can be used to prevent <code>./configure</code>
 or the compiler from seeing undesired library headers or to avoid use
 of a version of a tool that is known to be broken (for example, a bug
-in a certain version of sed).
+in a certain version of sed).  If a build is being done
+with test suites enabled, the packages in the <code>TestConflicts</code>
+field will be added to this list.
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
@@ -572,6 +579,10 @@ default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
 This implicitly-defined <code>Source</code> form is deprecated
 (explicitly-stated simple filename/manual download is still okay).
+</p><p>
+Sources that are only needed in order to run test suites should
+use <code>TestSource</code> and related fields, inside the
+<code>InfoTest</code> block.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
@@ -865,7 +876,9 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 Additional parameters to pass to the configure script. (See
-CompileScript for details.)
+CompileScript for details.)  If a build is being done
+with test suites enabled, the value of the <code>TestConfigureParams</code>
+field will be appended to this.
 
 As of fink &gt; 0.13.7, this parameter will also work with perl modules
 <code>Type: Perl</code>, and will append to the default perl Makefile.PL
@@ -984,6 +997,42 @@ If true, the <code>make test</code> portion
 of the <code>CompileScript</code> will be ignored
 for that specific perl module package.
 </p>
+</td></tr></table>
+<p><b>Test Suites:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>InfoTest</td><td>
+<p>
+<b>Introduced in fink 0.25.</b>
+This field encapsulates information that will only be used when performing
+a build with test suites enabled.  It contains other fields.
+If present, this field <b>must</b> contain a <code>TestScript</code>.
+All other fields are optional.  The following fields are allowed inside
+<code>InfoTest</code>:
+</p><ul>
+<li><code>TestScript</code>: A script which runs the test suite.  This script should exit
+    with status 0 if the suite passes, 1 to indicate warnings, or any other
+    value to indicate failures serious enough to be considered fatal.
+    Because of this tri-state logic, you should explicitly set an exit value in
+    this script.  For instance, <code>make check</code> is a bad script,
+    since it will exit with status 1 if the check target doesn't exist.
+    <code>make check || exit 2</code> would be a better script.</li>
+<li><code>TestConfigureParams</code>: A value which will be appended to <code>ConfigureParams</code>.</li>
+<li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages that will be added to the <code>BuildDepends</code> or <code>BuildConflicts</code> lists.</li>
+<li><code>TestSource</code>: Extra sources necessary to run the test suite.  All of the
+    affiliated fields are also supported, so you <b>must</b> also specify
+    <code>TestSource-MD5</code>, and you may also have
+    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>,
+    <code>TestTarFilesRename</code>, etc.</li>
+<li><code>TestSuiteSize</code>: Describes approximately how long the test suite takes to
+    run.  Valid values are <code>small</code>, <code>medium</code>, and <code>large</code>.
+    This field is currently ignored.</li>
+<li>Any other standard field.  If a field is specified both inside and outside
+<code>InfoTest</code>, the value inside <code>InfoTest</code> will replace
+the other value when test suites are active.</li>
+</ul><p>Here's an example:
+</p><pre>InfoTest: &lt;&lt;
+    TestScript: make check || exit 2
+    TestConfigureParams: --enable-tests
+&lt;&lt;</pre>
 </td></tr></table>
 <p><b>Install Phase:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
