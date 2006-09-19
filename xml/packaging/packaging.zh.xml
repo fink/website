@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.27 2006/04/11 23:52:29 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.28 2006/09/19 05:54:30 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -1123,7 +1123,14 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
 这三个字段来控制有关细节。</p>
 <p>在<em>补丁阶段</em>，源代码会被打上补丁，以使得可以在 Darwin 下面编译。由 UpdateConfigGuess，UpdateLibtool，Patch 和 PatchScrip 这几个字段所指明的操作将被按照顺序执行。</p>
 <p>在<em>编译阶段</em>，源代码被配置和编译。通常这会以某些参数来调用 <code>configure</code> 脚本，然后执行一个 <code>make</code> 命令。
-详细信息请查看 CompileScript 字段的描述。</p>
+详细信息请查看 CompileScript 字段的描述。
+<!-- start translation -->
+If test suites are enabled
+for the build (a new feature in fink 0.25, currently achieved by building in
+maintainer mode), the TestScript will be run immediately after the
+CompileScript.
+<!-- end translation -->
+</p>
 <p>在<em>安装阶段</em>，软件包被安装到一个临时目录，<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d)。(注意 &quot;root-&quot; 部分。)
 所有通常应该安装到 <filename>/sw</filename> 的文件现在被安装在
 <filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p)。 
@@ -1469,6 +1476,11 @@ essential ones; this is no longer true.
 <em>从 fink 0.9.0 开始。</em>
 只在编译时需要的依赖关系的清单。
 这可以用于列出构建软件包必须使用工具(比如 flex)。它支持和 Depends 相同的语法。
+<!-- start translation -->
+If a build is being done
+with test suites enabled, the dependencies in the <code>TestDepends</code>
+field will be added to this list.
+<!-- end translation -->
 </p>
 </itemd></item>
 
@@ -1510,7 +1522,9 @@ A list of packages that must not be installed while this package is
 being compiled. This can be used to prevent <code>./configure</code>
 or the compiler from seeing undesired library headers or to avoid use
 of a version of a tool that is known to be broken (for example, a bug
-in a certain version of sed).
+in a certain version of sed).  If a build is being done
+with test suites enabled, the packages in the <code>TestConflicts</code>
+field will be added to this list.
 </p>
 </itemd></item>
 <!-- end translation -->
@@ -1622,6 +1636,10 @@ Primary: ftp://ftp.barbarorg/pub/
 <!-- start translation -->
 This implicitly-defined <code>Source</code> form is deprecated
 (explicitly-stated simple filename/manual download is still okay).
+</p><p>
+Sources that are only needed in order to run test suites should
+use <code>TestSource</code> and related fields, inside the
+<code>InfoTest</code> block.
 </p>
 <!-- end translation -->
 </itemd></item>
@@ -1929,6 +1947,9 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 传递给 configure 脚本的额外参数(查阅
 CompileScript 字段的说明获取详细信息)。
+If a build is being done
+with test suites enabled, the value of the <code>TestConfigureParams</code>
+field will be appended to this.
 
 对于 &lt; 0.13.7 的 fink 版本，这个参数也对 perl 模块<code>Type: Perl</code>有效，并会添加到默认的 perl Makefile.PL
 字符串中。
@@ -2043,7 +2064,6 @@ make test</codeblock>
 <p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
 earlier, and is 
 "darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
-<!-- end translation -->
 </itemd></item>
 
 <item><itemt>NoPerlTests</itemt>
@@ -2055,6 +2075,48 @@ earlier, and is
 </itemd></item>
 
 </itemtable>
+<p><em>Test Suites:</em></p>
+<itemtable>
+
+<item><itemt>InfoTest</itemt>
+<itemd>
+<p>
+<em>Introduced in fink 0.25.</em>
+This field encapsulates information that will only be used when performing
+a build with test suites enabled.  It contains other fields.
+If present, this field <em>must</em> contain a <code>TestScript</code>.
+All other fields are optional.  The following fields are allowed inside
+<code>InfoTest</code>:
+</p><ul>
+<li><code>TestScript</code>: A script which runs the test suite.  This script should exit
+    with status 0 if the suite passes, 1 to indicate warnings, or any other
+    value to indicate failures serious enough to be considered fatal.
+    Because of this tri-state logic, you should explicitly set an exit value in
+    this script.  For instance, <code>make check</code> is a bad script,
+    since it will exit with status 1 if the check target doesn't exist.
+    <code>make check || exit 2</code> would be a better script.</li>
+<li><code>TestConfigureParams</code>: A value which will be appended to <code>ConfigureParams</code>.</li>
+<li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages that will be added to the <code>BuildDepends</code> or <code>BuildConflicts</code> lists.</li>
+<li><code>TestSource</code>: Extra sources necessary to run the test suite.  All of the
+    affiliated fields are also supported, so you <em>must</em> also specify
+    <code>TestSource-MD5</code>, and you may also have
+    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>,
+    <code>TestTarFilesRename</code>, etc.</li>
+<li><code>TestSuiteSize</code>: Describes approximately how long the test suite takes to
+    run.  Valid values are <code>small</code>, <code>medium</code>, and <code>large</code>.
+    This field is currently ignored.</li>
+<li>Any other standard field.  If a field is specified both inside and outside
+<code>InfoTest</code>, the value inside <code>InfoTest</code> will replace
+the other value when test suites are active.</li>
+</ul><p>Here's an example:
+</p><codeblock>InfoTest: &lt;&lt;
+    TestScript: make check || exit 2
+    TestConfigureParams: --enable-tests
+&lt;&lt;</codeblock>
+</itemd></item>
+</itemtable>
+<!-- end translation -->
+
 <p><em>安装阶段：</em></p>
 <itemtable>
 

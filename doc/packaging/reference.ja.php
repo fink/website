@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/04/11 23:52:29';
+$cvs_date = 'Date: 2006/09/19 05:54:30';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -31,6 +31,8 @@ include_once "header.ja.inc";
 				<b>コンパイル段階</b>ではソースの configure とコンパイルが行われます．
 				普通はスクリプト <code>configure</code> を適切な引数で起動し，コマンド <code>make</code> を実行することになります．
 				詳細はフィールド CompileScript を参照して下さい．
+				ビルドに対しテストスイートが有効な場合 (fink 0.25 の新しい機能で，現在メンテナモードでビルド中に適用される)，
+				CompileScript の直後に TestScript が実行される．
 			</p>
 			<p>
 				<b>インストール段階</b>では，パッケージは仮ディレクトリ
@@ -374,6 +376,9 @@ Depends: (%type_pkg[-x11]) x11
 							ビルド時のみに適用される依存性のリスト．
 							ビルド時には必要だが，実行時には使われないツール (flexなど) を示すのに使う．
 							書式は Depends と同じ．
+							ビルドされる際にテストスイートが有効であれば，
+							<code>TestDepends</code>
+							がこのリストに追加される．
 						</p>
 					</td></tr><tr valign="top"><td>Provides</td><td>
 						<p>
@@ -410,6 +415,7 @@ Depends: (%type_pkg[-x11]) x11
 当該パッケージがコンパイル中にインストールされてはいけないパッケージの一覧．
 これは， <code>./configure</code> やコンパイラが，望ましくないライブラリヘッダを見たり，
 壊れることが分かっているツール (例えば，特定のバージョンの sed にあるバグ) のバージョンを使用することを避けるために使います．
+ビルド時にテストスイートが有効な場合， <code>TestConflicts</code> フィールド内のパッケージはこのリストに追加されます．
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 						<p>
@@ -504,6 +510,9 @@ Primary: ftp://ftp.barbarorg/pub/
 							<code>gnome</code> という値は <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code> の省略形．
 							デフォルト値は <code>%n-%v.tar.gz</code>  (すなわちマニュアル・ダウンロード) になっている．
 							暗示的に <code>Source</code> を指定するのは廃止予定である (明示的に簡単なファイル名指定/手動ダウンロードするのは可)．
+</p><p>
+テストスイートを実行するためだけに必要なソースは，<code>TestSource</code>
+および <code>InfoTest</code> 内の関連フィールドを使ってください．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 						<p>
@@ -775,6 +784,8 @@ LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 						<p>
 							configure スクリプトに渡す付加的なパラメータ．
 							(詳細は CompileScript を参照)
+							ビルド時にテストスイートが有効な場合，<code>TestConfigureParams</code>
+							の値がここに追加されます．
 
 							バージョン 0.13.7 以降の Fink では，
 							このパラメータは <code>Type: Perl</code> となっている perl モジュールにも使えます．
@@ -887,6 +898,48 @@ make test</pre>
 							その perl モジュールのパッケージでは無視されます．
 						</p>
 					</td></tr></table>
+			
+<p><b>テストスイート:</b></p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>InfoTest</td><td>
+<p>
+<b>fink 0.25 にて導入．</b>
+当フィールドは，テストスイートが有効な場合のビルド実行時にのみ使用される情報を包んだものです．
+ここには他のフィールドが含まれます．
+現在のところ，この中に  <code>TestScript</code> がなければ<b>なりません</b>．
+他のフィールドはオプションです．
+以下のフィールドが <code>InfoTest</code> にて許可されています:
+</p><ul>
+<li><code>TestScript</code>: 
+    テストスイートを実行するスクリプト．
+    このスクリプトは，スイートが終了するときは status を返します．
+    0 の場合は通ったことを示し，
+    1 の場合は警告があり，
+    他の値の場合は致命的と考えられる重大な問題があったことを示します．
+    この3状態のため，スクリプト内で終了値を明示的に設定しなければなりません．
+    例えば， <code>make check</code> は悪いスクリプトです．
+    これは終了時に，check のターゲットが存在しなければ status 1 を返すからです．
+    <code>make check || exit 2</code> は比較的良いスクリプトです．
+    </li>
+<li><code>TestConfigureParams</code>: 
+    テストスイートを実行するために必要な追加ソースです．
+    関連する全てのフィールドもサポートされています．
+    <code>TestSource-MD5</code>は指定されなければ<b>なりません</b>．
+    <code>TestSourceN</code> や対応する <code>TestSourceN-MD5</code> , <code>TestTarFilesRename</code> などを追加することも可能です．</li>
+<li><code>TestSuiteSize</code>: 
+    テストスイートどの程度かかるかのおよその時間を示します．
+    値は，<code>small</code>, <code>medium</code>, と <code>large</code> です．
+    このフィールドは現在のところ無視されます．
+    </li>
+<li>
+その他のフィールド．<code>InfoTest</code> 内と外で定義されるフィールドに関して，
+スイートが有効な場合，<code>InfoTest</code> 内の値が他の値を書き換えます．</li>
+</ul><p>例:
+</p><pre>InfoTest: &lt;&lt;
+    TestScript: make check || exit 2
+    TestConfigureParams: --enable-tests
+&lt;&lt;</pre>
+</td></tr></table>
+			
 			<p>
 				<b>インストール段階関連:</b>
 			</p>
