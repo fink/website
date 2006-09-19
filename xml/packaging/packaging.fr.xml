@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.66 2006/03/01 09:50:55 michga Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.67 2006/09/19 20:43:29 michga Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://fink.sourceforge.net/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -518,7 +518,7 @@ url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html"
 <p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <filename>/sw</filename> du paquet gimp-1.2.1-1.</p>
 <p>Lors de la <em>phase de décompression</em>, le répertoire <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>). Les champs SourceDirectory, NoSourceDirectory et Source<em>N</em>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
 <p>Lors de la <em>phase d'application des rustines</em>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript sont exécutées dans l'ordre d'énumération de ces champs.</p>
-<p>Lors de la <em>phase de compilation</em>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations.</p>
+<p>Lors de la <em>phase de compilation</em>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations. Si les séries de tests sont activées (nouvelle fonctionnalité accessible en mode mainteneur dans la version 0.25 de fink), le script TestScript est lancé juste après le script CompileScript.</p>
 <p>Lors de la <em>phase d'installation</em>, le paquet est installé dans un répertoire temporaire, <filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <filename>/sw</filename> sont installés dans <filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
 <p>(<em>À partir de fink 0.9.9.</em>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié).</p>
 <p>Lors de la <em>phase de construction</em>, un fichier binaire (.deb) est construit à partir du répertoire temporaire. On ne peut agir directement sur cette étape, néanmoins différentes informations issues de la description du paquet sont utilisées afin de générer un fichier de <filename>contrôle</filename> pour dpkg.</p>
@@ -662,7 +662,7 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 </itemd></item>
 <item><itemt>BuildDepends</itemt>
 <itemd>
-<p><em>Introduit dans fink 0.9.0.</em> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends.</p>
+<p><em>Introduit dans fink 0.9.0.</em> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends. Si les séries de tests sont activées, les dépendances du champs <code>TestDepends</code> sont ajoutés à cette liste.</p>
 </itemd></item>
 <item><itemt>Provides</itemt>
 <itemd>
@@ -676,7 +676,7 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 </itemd></item>
 <item><itemt>BuildConflicts</itemt>
 <itemd>
-<p>Liste de paquets qui ne doivent pas être installés lorsque le paquet est compilé. Ce champ peut être utilisé pour empêcher <code>./configure</code> ou le compilateur de détecter des headers de libraires ou pour éviter d'utiliser une certaine version d'un outil connue pour être boguée (par exemple, un bogue dans une certaine version de sed).</p>
+<p>Liste de paquets qui ne doivent pas être installés lorsque le paquet est compilé. Ce champ peut être utilisé pour empêcher <code>./configure</code> ou le compilateur de détecter des headers de librairies ou pour éviter d'utiliser une certaine version d'un outil connue pour être boguée (par exemple, un bogue dans une certaine version de sed). Si les séries de tests sont activées, les paquets énumérés dans le champt <code>TestConflicts</code> sont ajoutés à cette liste.</p>
 </itemd></item>
 <item><itemt>Replaces</itemt>
 <itemd>
@@ -718,6 +718,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <itemd>
 <p>URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <em>nom-miroir</em> est récupérée dans le fichier de configuration de Fink, la partie <em>chemin-relatif</em> y est ajoutée, et c'est l'ensemble qui est utilisé comme réelle URL. Chaque <em>nom-miroir</em> reconnu est stocké dans le fichier <filename>/sw/lib/fink/mirror/_list</filename>, qui fait partie du paquet fink ou du paquet fink-mirrors. Par ailleurs, l'utilisation de <code>custom</code> comme <em>nom-miroir</em> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ %type_, il est donc conseillé d'utiliser ici %{ni} (avec, éventuellement, des spécifications de %type_).</p>
 <p>À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire). Cette forme de définition implicite pour <code>Source</code> est obsolète (il est toujours possible de fournir un nom de fichier explicite ou d'opérer un téléchargement manuel).</p>
+<p>Les sources nécessaires à la seule exécution des séries de tests doivent être placés à l'intérieur d'un bloc <code>InfoTest</code> et utilisés les champs de type <code>TestSource</code>.</p>
 </itemd></item>
 <item><itemt>Source<em>N</em></itemt>
 <itemd>
@@ -829,7 +830,7 @@ LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 </itemd></item>
 <item><itemt>ConfigureParams</itemt>
 <itemd>
-<p>Paramètres supplémentaires à passer au script configure. (Voir CompileScript pour de plus amples informations). À partir des versions de fink > 0.13.7, ce champ fonctionne aussi avec les modules perl <code>Type: Perl</code> ; il ajoute les paramètres à la chaîne perl par défaut Makefile.PL.</p>
+<p>Paramètres supplémentaires à passer au script configure. (Voir CompileScript pour de plus amples informations). Si les séries de tests sont activées, la valeur du champ <code>TestConfigureParams</code> est ajoutée à ces paramètres. À partir des versions de fink > 0.13.7, ce champ fonctionne aussi avec les modules perl <code>Type: Perl</code> ; il ajoute les paramètres à la chaîne perl par défaut Makefile.PL.</p>
 <p>À partir de la version 0.22.0 de fink, ce champ gère les expressions conditionnelles. La syntaxe est la même que celle utilisée dans le champ <code>Depends</code> et les autres champs basés sur des listes de paquets. L'expression conditionnelle s'applique au &quot;mot&quot; délimité par des espaces suivant immédiatement l'expression. Par exemple :</p>
 <codeblock>
 Type: -x11 (boolean)
@@ -888,6 +889,26 @@ make test</codeblock>
 <item><itemt>NoPerlTests</itemt>
 <itemd> 
 <p><em>Introduite dans une version de fink > 0.13.7.</em> Valeur booléenne spécifique aux paquets de module perl. Si sa valeur est true (vraie), la partie <code>make test</code> de <code>CompileScript</code> est ignorée pour ce paquet.</p>
+</itemd></item>
+</itemtable>
+<p><em>Séries de tests</em> :</p>
+<itemtable labeld="Utilisation" labelt="Champ">
+<item><itemt>InfoTest</itemt>
+<itemd>
+<p><em>Introduit dans la version 0.25 de fink.</em> Ce champ englobe les données spécifiques à utiliser pour exécuter les séries de tests. Il contient d'autres champs. Si ce champ est présent, il <em>doit</em> inclure un champ <code>TestScript</code>. Tous les autres champs sont facultatifs. Les champs autorisés à l'intérieur du champ <code>InfoTest</code> sont les suivants :</p>
+<ul>
+<li><code>TestScript</code> : script d'exécution de la série de tests. Ce script doit retourner un statut de valeur 0 si la série de tests s'est déroulée sans incident, de 1 s'il y a des messages d'attention, et de n'importe quelle autre valeur si les incidents sont suffisamment sévères pour les considérer comme fatals. Du fait de cette logique à trois états, la valeur du statut doit être explicitement indiquée. Par exemple, <code>make check</code> n'est pas conforme à cette logique, puisqu'il retourne un statut de 1 si la cible à vérifier n'existe pas ; par contre, <code>make check || exit 2</code> respecte la logique à trois états.</li>
+<li><code>TestConfigureParams</code> : valeur ajoutée au champ <code>ConfigureParams</code>.</li>
+<li><code>TestDepends</code> et <code>TestConflicts</code> : liste des paquets à ajouter respectivement aux champs <code>BuildDepends</code> et <code>BuildConflicts</code>.</li>
+<li><code>TestSource</code> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <em>doit</em> donc aussi utiliser le champ <code>TestSource-MD5</code>. On peut aussi se servir des champs <code>TestSourceN</code> et <code>TestSourceN-MD5</code>, <code>TestTarFilesRename</code>, etc...</li>
+<li><code>TestSuiteSize</code> : donne une idée approximative de la durée d'exécution de la série de tests. Les valeurs permises sont les suivantes : <code>small</code>, <code>medium</code> et <code>large</code>. Ce champ est pour l'instant ignoré.</li>
+<li>Tout autre champ standard. Si un champ est indiqué à la fois à l'intérieur et à l'extérieur du bloc <code>InfoTest</code>, c'est sa valeur à l'intérieur du bloc <code>InfoTest</code> qui sera utilisée si la suite de tests est activée.</li>
+</ul>
+<p>Voici un exemple :</p>
+<codeblock>InfoTest: &lt;&lt;
+    TestScript: make check || exit 2
+    TestConfigureParams: --enable-tests
+&lt;&lt;</codeblock>
 </itemd></item>
 </itemtable>
 <p><em>Phase d'installation :</em></p>
