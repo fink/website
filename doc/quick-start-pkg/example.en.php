@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - Example";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/06/08 22:13:34';
+$cvs_author = 'Author: chris01';
+$cvs_date = 'Date: 2006/09/25 23:48:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=en" title="How to Start">';
 
 
@@ -34,7 +34,7 @@ Version, on the other hand is the upstream source version. Since this is the
 first time we have attempted to make a maxwell-0.5.1 package, it is revision 1.
 </p>
 <p>
-The Source field is where fink will grab the source tarball from. Because 
+The Source field is where <code>fink</code> will grab the source tarball from. Because 
 <a href="http://sourceforge.net">Sourceforge</a> has a system where
 packages are mirrored around the world, and since <code>fink</code> knows about it,
 we use <code>mirror:sourceforge:</code>. <code>%n</code> expands to the package name,
@@ -84,7 +84,7 @@ Description: Mac OS X S.M.A.R.T. Tool
 </pre>
 <p>
 But what to do about that warning about MD5 checksums? Well, why don't we just
-ask fink to fetch the source?
+ask <code>fink</code> to fetch the source?
 </p>
 <pre>
 finkdev% fink fetch maxwell
@@ -138,7 +138,7 @@ And now we find that <code>fink validate</code> passes, yippee!
 Now we can build the package, let's just try it:
 </p>
 <pre>
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -180,7 +180,7 @@ make install prefix=%i
 &lt;&lt;
 </pre>
 <p>
-We need to use <code>prefix=%i</code> since fink builds the binary deb file
+We need to use <code>prefix=%i</code> since <code>fink</code> builds the binary deb file
 from the files in <code>%i</code>. These files are later installed into 
 <code>%p</code> (which is <code>/sw</code> by default) when you use 
 <code>fink install maxwell</code>. For more details about <code>%p</code> and
@@ -190,7 +190,7 @@ Packaging Manual</a>.
 </p>
 <p>
 Normally the lines in the Script fields are passed line by line to the shell.
-But the <code>#! /bin/sh -ev</code> line makes fink run it as a separate script.
+But the <code>#! /bin/sh -ev</code> line makes <code>fink</code> run it as a separate script.
 The parameter <code>-e</code> means "die on error" and <code>-v</code> means
 "verbose".
 </p>
@@ -201,7 +201,7 @@ So, let's validate the package again and try to rebuild it:
 finkdev% fink validate maxwell.info 
 Validating package file maxwell.info...
 Package looks good!
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -250,8 +250,8 @@ Fink seems to have installed everything into the correct place:
 <code>maxwell_0.5.1-1_darwin-powerpc.deb</code> was built.
 </p>
 <p>
-Also note how fink automatically included some compiler flags to enable it to
-access other fink packages (e.g. <code>-I/sw/include</code>).
+Also note how <code>fink</code> automatically included some compiler flags to enable it to
+access other Fink packages (e.g. <code>-I/sw/include</code>).
 </p>
 <p>
 Let's have a look at what is in the binary package:
@@ -325,7 +325,7 @@ make install prefix=%i mandir=%i/share/man datadir=%i/share/doc/%n
 and rebuild the package with
 </p>
 <pre>
-finkdev% fink rebuild maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 </pre>
 <p>
 (We used <code>fink rebuild</code> because <code>fink build</code> would not do 

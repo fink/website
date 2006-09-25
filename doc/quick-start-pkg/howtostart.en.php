@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/06/08 22:13:34';
+$cvs_author = 'Author: chris01';
+$cvs_date = 'Date: 2006/09/25 23:48:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -13,7 +13,7 @@ include_once "header.en.inc";
 
 <h2><a name="Learn">1.1 Learn the Basics</a></h2>
 <p>
-<b>Please note:</b> In this document we assume that fink is installed into
+<b>Please note:</b> In this document we assume that <code>fink</code> is installed into
 <code>/sw</code> - the default location. If you see a codeblock similar to
 </p>
 <pre>
@@ -76,9 +76,15 @@ Save your new info file (and patch file - if needed) into your
 <code>packagename</code> is the name of your package. If this directory doesn't 
 exist you need to create it manually.
 </p>
-
 <p>
-Check if fink found your package by typing:
+<b>Please note:</b>
+Make sure you are running an up-to-date <code>fink</code> tool by running
+</p>
+<pre>
+finkdev% fink selfupdate
+</pre>
+<p>
+Check if <code>fink</code> found your package by typing:
 </p>
 <pre>
 finkdev% fink list packagename
@@ -108,8 +114,8 @@ mailing list.
 
 <h2><a name="Validate">1.3 Validate your Package</a></h2>
 <p>
-During validation of your package you should set the verbose level of fink
-to the highest possible value. Check the section on the
+During validation of your package you should set the verbose level of 
+<code>fink</code> to the highest possible value. Check the section on the
 <a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fink configuration file</a>
 about how to change the verbose level.
 </p>
@@ -123,23 +129,23 @@ finkdev% fink validate packagename.info
 If the validation passes try to build your package with:
 </p>
 <pre>
-finkdev% fink build packagename
+finkdev% fink -m --build-as-nobody rebuild packagename
 </pre>
 <p>
 Watch the output of the build process carefully for errors or warnings.
 Especially make sure that everything is installed into the destination directory
 (which is located at <code>/sw/src/root-packagename-%v-%r/sw</code>) from where
-fink builds the binary package. Nothing should be installed directly into
+<code>fink</code> builds the binary package. Nothing should be installed directly into
 <code>/sw</code>.
 </p>
 <p>
-If you use the <code>--keep-build-dir</code> or <code>-k</code> option to fink, it will 
-keep the build directory. This is where fink expands the downloaded source and 
+If you use the <code>--keep-build-dir</code> or <code>-k</code> option to <code>fink</code>, it will 
+keep the build directory. This is where <code>fink</code> expands the downloaded source and 
 where the package gets built. This might help if you need to debug the build
 process. Type <code>man fink</code> for details.
 </p>
 <p>
-You may also want to use the <code>--keep-root-dir</code> or <code>-K</code> option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
+You may also want to use the <code>--keep-root-dir</code> or <code>-K</code> option, it will keep the destination directory. This is where <code>fink</code> builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
 </p>
 <p>
 If the build succeeds check the content of the binary package with:

@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.7 2006/06/08 22:13:34 dmacks Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.8 2006/09/25 23:48:53 chris01 Exp $</cvsid>
 
 <preface>
 <p>
@@ -34,7 +34,7 @@ package for <link url="http://maxwell.sourceforge.net">maxwell</link>.
 
 <section name="Learn"><title>Learn the Basics</title>
 <p>
-<em>Please note:</em> In this document we assume that fink is installed into
+<em>Please note:</em> In this document we assume that <code>fink</code> is installed into
 <filename>/sw</filename> - the default location. If you see a codeblock similar to
 </p>
 <codeblock>
@@ -97,9 +97,15 @@ Save your new info file (and patch file - if needed) into your
 <code>packagename</code> is the name of your package. If this directory doesn't 
 exist you need to create it manually.
 </p>
-
 <p>
-Check if fink found your package by typing:
+<em>Please note:</em>
+Make sure you are running an up-to-date <code>fink</code> tool by running
+</p>
+<codeblock>
+finkdev% fink selfupdate
+</codeblock>
+<p>
+Check if <code>fink</code> found your package by typing:
 </p>
 <codeblock>
 finkdev% fink list packagename
@@ -129,8 +135,8 @@ mailing list.
 
 <section name="Validate"><title>Validate your Package</title>
 <p>
-During validation of your package you should set the verbose level of fink
-to the highest possible value. Check the section on the
+During validation of your package you should set the verbose level of 
+<code>fink</code> to the highest possible value. Check the section on the
 <link url="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fink configuration file</link>
 about how to change the verbose level.
 </p>
@@ -144,23 +150,23 @@ finkdev% fink validate packagename.info
 If the validation passes try to build your package with:
 </p>
 <codeblock>
-finkdev% fink build packagename
+finkdev% fink -m --build-as-nobody rebuild packagename
 </codeblock>
 <p>
 Watch the output of the build process carefully for errors or warnings.
 Especially make sure that everything is installed into the destination directory
 (which is located at <filename>/sw/src/root-packagename-%v-%r/sw</filename>) from where
-fink builds the binary package. Nothing should be installed directly into
+<code>fink</code> builds the binary package. Nothing should be installed directly into
 <filename>/sw</filename>.
 </p>
 <p>
-If you use the <code>--keep-build-dir</code> or <code>-k</code> option to fink, it will 
-keep the build directory. This is where fink expands the downloaded source and 
+If you use the <code>--keep-build-dir</code> or <code>-k</code> option to <code>fink</code>, it will 
+keep the build directory. This is where <code>fink</code> expands the downloaded source and 
 where the package gets built. This might help if you need to debug the build
 process. Type <code>man fink</code> for details.
 </p>
 <p>
-You may also want to use the <code>--keep-root-dir</code> or <code>-K</code> option, it will keep the destination directory. This is where fink builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
+You may also want to use the <code>--keep-root-dir</code> or <code>-K</code> option, it will keep the destination directory. This is where <code>fink</code> builds the installation tree for the package. Comparing build and destination directories may help you debugging the installation phase.
 </p>
 <p>
 If the build succeeds check the content of the binary package with:
@@ -267,7 +273,7 @@ Version, on the other hand is the upstream source version. Since this is the
 first time we have attempted to make a maxwell-0.5.1 package, it is revision 1.
 </p>
 <p>
-The Source field is where fink will grab the source tarball from. Because 
+The Source field is where <code>fink</code> will grab the source tarball from. Because 
 <link url="http://sourceforge.net">Sourceforge</link> has a system where
 packages are mirrored around the world, and since <code>fink</code> knows about it,
 we use <filename>mirror:sourceforge:</filename>. <code>%n</code> expands to the package name,
@@ -317,7 +323,7 @@ Description: Mac OS X S.M.A.R.T. Tool
 </codeblock>
 <p>
 But what to do about that warning about MD5 checksums? Well, why don't we just
-ask fink to fetch the source?
+ask <code>fink</code> to fetch the source?
 </p>
 <codeblock>
 finkdev% fink fetch maxwell
@@ -371,7 +377,7 @@ And now we find that <code>fink validate</code> passes, yippee!
 Now we can build the package, let's just try it:
 </p>
 <codeblock>
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -413,7 +419,7 @@ make install prefix=%i
 &lt;&lt;
 </codeblock>
 <p>
-We need to use <code>prefix=%i</code> since fink builds the binary deb file
+We need to use <code>prefix=%i</code> since <code>fink</code> builds the binary deb file
 from the files in <code>%i</code>. These files are later installed into 
 <code>%p</code> (which is <filename>/sw</filename> by default) when you use 
 <code>fink install maxwell</code>. For more details about <code>%p</code> and
@@ -423,7 +429,7 @@ Packaging Manual</link>.
 </p>
 <p>
 Normally the lines in the Script fields are passed line by line to the shell.
-But the <code>#! /bin/sh -ev</code> line makes fink run it as a separate script.
+But the <code>#! /bin/sh -ev</code> line makes <code>fink</code> run it as a separate script.
 The parameter <code>-e</code> means &quot;die on error&quot; and <code>-v</code> means
 &quot;verbose&quot;.
 </p>
@@ -434,7 +440,7 @@ So, let's validate the package again and try to rebuild it:
 finkdev% fink validate maxwell.info 
 Validating package file maxwell.info...
 Package looks good!
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -483,8 +489,8 @@ Fink seems to have installed everything into the correct place:
 <filename>maxwell_0.5.1-1_darwin-powerpc.deb</filename> was built.
 </p>
 <p>
-Also note how fink automatically included some compiler flags to enable it to
-access other fink packages (e.g. <code>-I/sw/include</code>).
+Also note how <code>fink</code> automatically included some compiler flags to enable it to
+access other Fink packages (e.g. <code>-I/sw/include</code>).
 </p>
 <p>
 Let's have a look at what is in the binary package:
@@ -558,7 +564,7 @@ make install prefix=%i mandir=%i/share/man datadir=%i/share/doc/%n
 and rebuild the package with
 </p>
 <codeblock>
-finkdev% fink rebuild maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 </codeblock>
 <p>
 (We used <code>fink rebuild</code> because <code>fink build</code> would not do 
