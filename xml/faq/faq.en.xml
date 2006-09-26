@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.76 2006/09/07 01:23:10 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.77 2006/09/26 18:31:50 bmaret Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -247,25 +247,16 @@
         <p>The package <em>cvs-proxy</em> can tunnel through HTTP proxies.</p>
         <ul>
           <li>
-            <p>First download the <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
-          files (an .info file and a .patch file) and place them into your
-          local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
-          </li>
-          <li>
             <p>Install the <em>cvs-proxy</em> package with the command:</p>
             <p>
-              <code>fink install <em>cvs-proxy</em>
+              <code>fink --use-binary-dist install <em>cvs-proxy</em>
               </code>
             </p>
           </li>
           <li>
-            <p>Packages are then updated with the commands:</p>
-            <p>
+	    <p>Switch to the CVS update method with the command:</p>
+             <p>
               <code>fink selfupdate-cvs</code>
-            </p>
-            <p>
-              <code>fink
-          update-all</code>
             </p>
           </li>
         </ul>
