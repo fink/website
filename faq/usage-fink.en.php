@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/09/07 01:23:10';
+$cvs_author = 'Author: bmaret';
+$cvs_date = 'Date: 2006/09/26 18:31:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -23,25 +23,16 @@ include_once "header.en.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>5.3: How do I update available packages from CVS when I am behind a firewall?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The package <b>cvs-proxy</b> can tunnel through HTTP proxies.</p><ul>
           <li>
-            <p>First download the <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
-          files (an .info file and a .patch file) and place them into your
-          local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
-          </li>
-          <li>
             <p>Install the <b>cvs-proxy</b> package with the command:</p>
             <p>
-              <code>fink install <b>cvs-proxy</b>
+              <code>fink --use-binary-dist install <b>cvs-proxy</b>
               </code>
             </p>
           </li>
           <li>
-            <p>Packages are then updated with the commands:</p>
-            <p>
+	    <p>Switch to the CVS update method with the command:</p>
+             <p>
               <code>fink selfupdate-cvs</code>
-            </p>
-            <p>
-              <code>fink
-          update-all</code>
             </p>
           </li>
         </ul><p>If fink is not configured to use your proxy, change the settings
