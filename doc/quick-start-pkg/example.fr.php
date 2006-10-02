@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Exemple";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/06/08 22:13:34';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2006/10/02 17:04:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="prev" href="howtostart.php?phpLang=fr" title="Préliminaires">';
 
 
@@ -22,7 +22,7 @@ Revision: 1
 Source: mirror:sourceforge:%n/%n-%v.tar.gz
 </pre>
 <p>Les champs nom (Package) et version sont faciles à comprendre, mais qu'en est-il des autres champs ? Le champ Revision correspond à la "version" du paquet dans Fink, tandis que le champ Version correspond à la version du source en amont. Comme c'est la première fois que nous tentons de construire un paquet maxwell-0.5.1 dans Fink, son numéro de révision est 1.</p>
-<p>Le champ Source donne l'adresse à partir de laquelle fink téléchargera l'archive tar source. Comme <a href="http://sourceforge.net">Sourceforge</a> comprend un système mondial de miroirs pour les paquets et que <code>fink</code> le connaît, on utilise <code>mirror:sourceforge:</code>. <code>%n</code> est un raccourci pour le nom du paquet, maxwell, et <code>%v</code> un raccourci pour la version du paquet, 0.5.1.</p>
+<p>Le champ Source donne l'adresse à partir de laquelle <code>fink</code> téléchargera l'archive tar source. Comme <a href="http://sourceforge.net">Sourceforge</a> comprend un système mondial de miroirs pour les paquets et que <code>fink</code> le connaît, on utilise <code>mirror:sourceforge:</code>. <code>%n</code> est un raccourci pour le nom du paquet, maxwell, et <code>%v</code> un raccourci pour la version du paquet, 0.5.1.</p>
 <p>Nous pouvons maintenant sauvegarder ceci sous le nom <code>maxwell.info</code> dans le répertoire <code>/sw/fink/dists/local/main/finkinfo/</code>. Ceci fait, voyons ce que cela donne avec <code>fink validate</code>.</p>
 <pre>
 finkdev% fink validate maxwell.info 
@@ -48,7 +48,7 @@ Error: No package description supplied. (maxwell.info)
 License: OSI-Approved
 Description: Mac OS X S.M.A.R.T. Tool
 </pre>
-<p>Mais que faire de l'erreur concernant les sommes de contrôle MD5 ? Pourquoi ne pas tout simplement demander à fink de récupérer le source ?</p>
+<p>Mais que faire de l'erreur concernant les sommes de contrôle MD5 ? Pourquoi ne pas tout simplement demander à <code>fink</code> de récupérer le source ?</p>
 <pre>
 finkdev% fink fetch maxwell
 /usr/bin/sudo /sw/bin/fink  fetch maxwell
@@ -87,7 +87,7 @@ Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
 <h2><a name="build">2.2 Construction</a></h2>
 <p>Désormais, nous pouvons construire le paquet, essayons :</p>
 <pre>
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -121,14 +121,14 @@ InstallScript: &lt;&lt;
 make install prefix=%i
 &lt;&lt;
 </pre>
-<p>Nous devons utiliser <code>prefix=%i</code> car fink construit le fichier binaire à partir des fichiers se trouvant dans <code>%i</code>. Ces fichiers seront ensuite installés dans <code>%p</code> (qui correspond par défaut à <code>/sw</code>) quand on exécutera <code>fink install maxwell</code>. Pour de plus amples informations sur <code>%p</code> et <code>%i</code>, consultez le <a href="http://fink.sourceforge.net/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
-<p>Normalement, les lignes des champs Script sont passées au shell ligne après ligne. Mais la ligne  <code>#! /bin/sh -ev</code> permet à fink d'exécuter l'ensemble comme un script séparé. Le paramètre <code>-e</code> correspond à  "die on error" et <code>-v</code> à "verbose".</p>
+<p>Nous devons utiliser <code>prefix=%i</code> car <code>fink</code> construit le fichier binaire à partir des fichiers se trouvant dans <code>%i</code>. Ces fichiers seront ensuite installés dans <code>%p</code> (qui correspond par défaut à <code>/sw</code>) quand on exécutera <code>fink install maxwell</code>. Pour de plus amples informations sur <code>%p</code> et <code>%i</code>, consultez le <a href="http://fink.sourceforge.net/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
+<p>Normalement, les lignes des champs Script sont passées au shell ligne après ligne. Mais la ligne  <code>#! /bin/sh -ev</code> permet à <code>fink</code> d'exécuter l'ensemble comme un script séparé. Le paramètre <code>-e</code> correspond à  "die on error" et <code>-v</code> à "verbose".</p>
 <p>Validons de nouveau le paquet et tentons de le construire :</p>
 <pre>
 finkdev% fink validate maxwell.info 
 Validating package file maxwell.info...
 Package looks good!
-finkdev% fink build maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 /usr/bin/sudo /sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
@@ -172,7 +172,7 @@ dpkg-deb: building package `maxwell' in \
 `/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
 </pre>
 <p>Fink semble avoir tout installé au bon endroit : <code>/sw/src/root-maxwell-0.5.1-1</code> à partir de l'emplacement où le paquet binaire <code>maxwell_0.5.1-1_darwin-powerpc.deb</code> a été construit.</p>
-<p>Notez aussi que fink inclut automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets fink (par exemple <code>-I/sw/include</code>).</p>
+<p>Notez aussi que <code>fink</code> inclut automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets <code>fink</code> (par exemple <code>-I/sw/include</code>).</p>
 <p>Regardons ce qu'il y a à l'intérieur du paquet binaire :</p>
 <pre>
 finkdev% dpkg -c \
@@ -230,9 +230,9 @@ make install prefix=%i mandir=%i/share/man datadir=%i/share/doc/%n
 </pre>
 <p>et reconstruire le paquet avec :</p>
 <pre>
-finkdev% fink rebuild maxwell
+finkdev% fink -m --build-as-nobody rebuild maxwell
 </pre>
-<p>(On utilise <code>fink rebuild</code> car <code>fink build</code> ne ferait rien du tout, puisque le paquet a déjà été construit.)</p>
+<p>(On utilise <code>fink ... rebuild</code> car <code>fink build</code> ne ferait rien du tout, puisque le paquet a déjà été construit.)</p>
 <p>Revérifiez le contenu du fichier .deb (avec <code>dpkg -c</code>) pour voir où les fichiers sont installés maintenant. Puis validez de nouveau le fichier .deb avec <code>fink validate</code>. Si tout se passe bien, vous pouvez installer le nouveau paquet avec :</p>
 <pre>
 finkdev% fink install maxwell

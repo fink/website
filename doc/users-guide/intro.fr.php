@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Introduction";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/08 18:41:30';
+$cvs_date = 'Date: 2006/10/02 16:34:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="install.php?phpLang=fr" title="Première installation"><link rel="prev" href="index.php?phpLang=fr" title="Guide utilisateur Contents">';
 
 
@@ -38,7 +38,7 @@ include_once "header.fr.inc";
 
 <h2><a name="supported-os">1.3 Systèmes supportés</a></h2>
 
-<p><b>Mac OS X 10.4</b> est la plateforme d'attaque. On considère qu'elle est <q>complètement supportée et testée</q>, bien qu'il puisse rester encore quelques problèmes car c'est un système opératoire encore relativement nouveau. La plupart des développeurs s'en servent. Pour ceux qui se servent de Mac OS X 10.3, il y a toujours des utilisateurs de Mac OS X 10.4 qui testent leur travail sur leur propre système. Notez, néanmoins, que fink sur machine intel est considéré comme une version <b>bêta</b>.</p>
+<p><b>Mac OS X 10.4</b> est la plate-forme d'attaque. On considère qu'elle est <q>complètement supportée et testée</q>, bien qu'il puisse rester encore quelques problèmes car c'est un système opératoire encore relativement nouveau. La plupart des développeurs s'en servent. Pour ceux qui se servent de Mac OS X 10.3, il y a toujours des utilisateurs de Mac OS X 10.4 qui testent leur travail sur leur propre système. Notez, néanmoins, que Fink sur machine intel est considéré comme une version <b>bêta</b>.</p>
 <p><b>Mac OS X 10.3</b> est <q>complètement supporté et testé</q>, bien qu'il puisse y avoir quelques problèmes de compilation résiduels pour certains paquets isolés. De nombreux développeurs s'en servent. Pour ceux qui ne s'en servent pas, il y a toujours des utilisateurs de Mac OS X 10.3 qui testent leur travail.</p>
 <p><b>Mac OS X 10.2</b> est encore supporté dans une certaine mesure. Fink 0.6.4 est la version la plus récente qui gère ce système.</p>
 <p><b>Mac OS X 10.1</b> est encore supporté dans une certaine mesure. Pour cette version, vous ne pouvez utiliser que Fink 0.4.1 et aucune autre version ultérieure.</p>

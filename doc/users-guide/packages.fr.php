@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/08 18:41:30';
+$cvs_date = 'Date: 2006/10/02 16:34:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -15,9 +15,9 @@ include_once "header.fr.inc";
 
 <h2><a name="bin-dselect">3.1 Installation de paquets binaires avec dselect</a></h2>
 
-<p><code>dselect</code> est un programme qui vous permet de naviguer dans la liste des paquets disponibles et de choisir ceux que vous voulez installer. Il tourne sous Terminal.app, en mode plein écran, et utilise un système de navigation rudimentaire basé sur les touches du clavier. Comme tous les autres outils de gestion de paquets, <code>dselect</code> nécessite les privilèges du super-utilisateur ; vous devez donc soit devenir super-utilisateur avant de l'utiliser, soit utiliser sudo :  </p>
+<p><code>dselect</code> est un programme qui vous permet de naviguer dans la liste des paquets disponibles et de choisir ceux que vous voulez installer. Il tourne sous Terminal.app, en mode plein écran, et utilise un système de navigation rudimentaire basé sur les touches du clavier. Comme tous les autres outils de gestion de paquets, <code>dselect</code> nécessite les privilèges du super-utilisateur ; vous devez donc soit devenir super-utilisateur avant de l'utiliser, soit utiliser sudo : </p>
 <pre>sudo dselect</pre>
-<p><b>Note :</b> <code>dselect</code> ne cohabite pas très bien avec l'application Terminal de Mac OS X. Vous devez exécuter les commandes suivantes avant de l'utiliser, ou les mettre dans le fichier de démarrage approprié  (<code>.cshrc</code> ou <code>.profile</code>) :</p>
+<p><b>Note :</b> <code>dselect</code> ne cohabite pas très bien avec l'application Terminal de Mac OS X. Vous devez exécuter les commandes suivantes avant de l'utiliser, ou les mettre dans le fichier de démarrage approprié (<code>.cshrc</code> ou <code>.profile</code>) :</p>
 <p>utilisateurs de tcsh :</p>
 <pre>setenv TERM xterm-color</pre>
 <p>utilisateurs de bash :</p>
@@ -28,7 +28,7 @@ include_once "header.fr.inc";
 <p><b>[A]ccess - Accès</b> - permet de configurer la méthode d'accès au réseau. <b>Il n'est pas nécessaire d'exécuter cette commande</b>, car Fink effectue la configuration à votre place. En fait, vous devez éviter d'utiliser cette option, car vous risqueriez en le faisant de remplacer la configuration par défaut, qui fonctionne, par une configuration qui ne fonctionne pas.</p>
 </li>
 <li>
-<p><b>[U]pdate- Mise à jour</b> - permet de télécharger la liste des paquets disponibles sur le site de Fink. Cette commande n'installe et ne met à jour aucun paquet, elle ne fait que mettre à jour les listes utilisées par le navigateur de paquets. 
+<p><b>[U]pdate - Mise à jour</b> - permet de télécharger la liste des paquets disponibles sur le site de Fink. Cette commande n'installe et ne met à jour aucun paquet, elle ne fait que mettre à jour les listes utilisées par le navigateur de paquets. 
 Vous devez l'utiliser au moins une fois après avoir installé Fink.</p>
 </li>
 <li>
@@ -49,14 +49,14 @@ Vous devez l'utiliser au moins une fois après avoir installé Fink.</p>
 
 <h2><a name="bin-apt">3.2 Installation de paquets binaires avec apt-get</a></h2>
 
-<p><code>dselect</code> ne télécharge pas les paquets lui-même.   Il utilise apt pour ce faire.   Si vous préférez utiliser une interface en ligne de commande, vous pouvez accéder à apt directement avec la commande <code>apt-get</code>.</p>
+<p><code>dselect</code> ne télécharge pas les paquets lui-même. Il utilise apt pour ce faire. Si vous préférez utiliser une interface en ligne de commande, vous pouvez accéder à apt directement avec la commande <code>apt-get</code>.</p>
 <p>Tout comme avec dselect, vous devez d'abord télécharger la liste des paquets disponibles avec cette commande :</p>
 <pre>sudo apt-get update</pre>
 <p>Comme le menu "[U]pdate - Mise à jour" dans dselect, cette commande ne fait que mettre à jour la liste des paquets disponibles, mais ne met pas à jour les paquets eux-mêmes sur votre ordinateur. Pour installer un paquet, il suffit de donner son nom à apt-get comme dans la commande suivante :</p>
 <pre>sudo apt-get install lynx</pre>
 <p>Si apt-get détecte que le paquet requiert certaines dépendances, il vous en affiche la liste et vous demande de confirmer. Puis il télécharge et installe les paquets choisis. La suppression de paquets est tout aussi simple :</p>
 <pre>sudo apt-get remove lynx</pre>
-<p>      </p>
+<p></p>
 
 <h2><a name="bin-exceptions">3.3 Installation de paquets dépendants non disponibles dans la distribution binaire</a></h2>
 
@@ -91,7 +91,7 @@ E: Sorry, broken packages</pre>
 
 <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
 
-<p>Fink Commander est une interface Aqua aux outils <code>apt-get</code> et <code>fink</code>.  Le menu Binary (binaire) vous permet d'effectuer des opérations sur la distribution binaire, et le menu Source vous offre les mêmes possibilités pour la distribution source.</p>
+<p>Fink Commander est une interface Aqua aux outils <code>apt-get</code> et <code>fink</code>. Le menu Binary (binaire) vous permet d'effectuer des opérations sur la distribution binaire, et le menu Source vous offre les mêmes possibilités pour la distribution source.</p>
 <p>Fink Commander est inclus dans l'installeur binaire de Fink. Pour le télécharger séparément (dans le cas où vous avez effectué un bootstrap de Fink à partir du source), ou pour de plus amples informations, allez sur le <a href="http://finkcommander.sourceforge.net">site web de Fink Commander</a>.</p>
 
 <h2><a name="available-versions">3.6 Versions disponibles</a></h2>
@@ -113,15 +113,13 @@ E: Sorry, broken packages</pre>
 <li><p><b>10.2-gcc3.3 stable :</b> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
 <p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p></li>
 <li><p><b>10.3 stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</p></li> 
-<li><p><b>10.4-transitional stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui sont passés de la version système Mac OS X 10.3 à Mac OS X 10.4. Pour machine avec processeur PowerPC uniquement</p></li> 
-<li><p><b>10.4/powerpc stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui installent fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
+<li><p><b>10.4/powerpc stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui installent Fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
 <li><p><b>10.4/intel stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs dont la machine a un processeur Intel.</p></li>
-<li><p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>.  Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
+<li><p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>. Pour installer cette version, suivez les <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
 <p>Note : instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
 </li>
 <li><b>10.3 unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.3.</li>
-<li><b>10.4-transitional unstable :</b> c'est la version la plus récente qui puisse être installée à partir du sourcede l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs qui sont passés de la version système Mac OS X 10.3 à Mac OS X 10.4. Pour machine avec processeur PowerPC uniquement.</li>
-<li><p><b>10.4/powerpc unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs qui installent fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
+<li><p><b>10.4/powerpc unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs qui installent Fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
 <li><p><b>10.4/intel unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.4 pour les utilisateurs dont la machine a un processeur Intel.</p></li>
 </ol>
 </li>

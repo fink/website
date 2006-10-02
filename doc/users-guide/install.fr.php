@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/06/08 18:41:30';
+$cvs_date = 'Date: 2006/10/02 16:34:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -19,7 +19,7 @@ include_once "header.fr.inc";
 <p>La distribution binaire se fait sous forme d'une image disque (.dmg) contenant un paquet d'installation Mac OS X (.pkg). Après téléchargement de l'image disque à partir de la 
 <a href="http://fink.sourceforge.net/download/bindist.php">page de téléchargement</a>
 (vous devrez peut-être utiliser les fonctions "Téléchargez le fichier lié sous..." ou "Téléchargez sur le disque"), double-cliquez dessus pour la monter. 
-Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou dans le répertoire de téléchargement que vous avez choisi) après vérification du fichier par Utilitaire de disque (ou Images disques pour les versions antérieures à 10.3). Vous trouverez, à l'intérieur, des documents et un paquet d'installation. Double-cliquez sur le paquet d'installation et suivez les instructions qui apparaîtront à l'écran.</p>
+Ouvrez l'icône disque "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou dans le répertoire de téléchargement que vous avez choisi) après vérification du fichier par Utilitaire de disque (ou Images disques pour les versions antérieures à 10.3). Vous trouverez, à l'intérieur, des documents et un paquet d'installation. Double-cliquez sur le paquet d'installation et suivez les instructions qui apparaîtront à l'écran.</p>
 <p>Un mot de passe administrateur vous sera demandé et un texte s'affichera. Lisez-le - il se peut qu'il soit plus récent que ce guide utilisateur. Quand l'installeur vous demandera de choisir un disque d'installation, assurez-vous que vous cliquez sur le volume système (celui sur lequel vous avez installé Mac OS X). Si vous choisissez un autre volume, l'installation s'effectuera, mais Fink ne fonctionnera pas. Quand le processus d'installation sera terminé, suivez les instructions de la section <a href="#setup">Définition de votre environnement</a>.</p>
 
 <h2><a name="src">2.2 Installation de la distribution source</a></h2>
@@ -39,7 +39,7 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 
 <p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH (et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
 <pre>/sw/bin/pathsetup.sh</pre>
-<p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de fink, cette commande s'appelle <code>pathsetup.command</code>. Il suffit alors de la lancer de la façon suivante :</p>
+<p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de Fink, cette commande s'appelle <code>pathsetup.command</code>. Il suffit alors de la lancer de la façon suivante :</p>
 <pre>open /sw/bin/pathsetup.command</pre>
 <p>Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez. Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :</p>
 <pre>echo $SHELL</pre>
@@ -54,7 +54,7 @@ Ouvrez l'icône disque  "Fink 0.x.x Installer" qui apparaît sur votre bureau (o
 </p>
 <pre>cd
 pico .profile</pre>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>. /sw/bin/init.sh</code>.  Ne vous inquiétez pas si vous voyez une note disant  "New file".  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>. /sw/bin/init.sh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 </li>
 <li>
 <p>Shell C (défaut sur Mac OS X 10.2 et versions antérieures) </p>
@@ -65,26 +65,26 @@ pico .profile</pre>
 </p>
 <pre>cd
 pico .cshrc</pre>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.csh</code>.  Ne vous inquiétez pas si vous voyez une note disant  "New file".  N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.csh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 <p>Vous devrez éditer d'autres fichiers dans les cas suivants :</p>
 <ol>
 <li>
 <p>Vous avez un fichier <code>~/.tcshrc</code>.</p>
-<p>Un tel fichier est parfois créé par des applications de tierce partie, ou vous pouvez l'avoir créé vous-même.   Si tel est le cas, <code>~/.tcshrc</code> est lu, mais <code>~/.cshrc</code> est ignoré. Nous vous recommandons d'éditer le fichier <code>~/.tcshrc</code>, comme expliqué ci-dessus pour le fichier  <code>~/.cshrc</code>, et d'ajouter la ligne suivante à la fin :</p>
+<p>Un tel fichier est parfois créé par des applications de tierce partie, ou vous pouvez l'avoir créé vous-même. Si tel est le cas, <code>~/.tcshrc</code> est lu, mais <code>~/.cshrc</code> est ignoré. Nous vous recommandons d'éditer le fichier <code>~/.tcshrc</code>, comme expliqué ci-dessus pour le fichier <code>~/.cshrc</code>, et d'ajouter la ligne suivante à la fin :</p>
 <pre>source ~/.cshrc</pre>
 <p>De cette façon, si jamais vous supprimez le fichier <code>~/.tcshrc</code>, vous pourrez toujours faire tourner Fink.</p>
 </li>
 <li>
 <p>Vous avez suivi les instructions figurant dans le fichier <code>/usr/share/tcsh/examples/README</code>.</p>
-<p>Vous avez donc créé deux fichiers <code>~/.tcshrc</code> et <code> ~/.login</code> .  Dans ce cas,  <code>~/.login</code>, qui est lu après <code>~/.tcshrc</code>, source le fichier  <code>/usr/share/tcsh/examples/login</code>.  Ce dernier contient une ligne qui écrase la définition précédente de votre variable d'environnement PATH.  Vous devez alors créer un répertoire <code>~/Library/init/tcsh/path</code>:</p>
+<p>Vous avez donc créé deux fichiers <code>~/.tcshrc</code> et <code>~/.login</code>. Dans ce cas, <code>~/.login</code>, qui est lu après <code>~/.tcshrc</code>, source le fichier <code>/usr/share/tcsh/examples/login</code>. Ce dernier contient une ligne qui écrase la définition précédente de votre variable d'environnement PATH. Vous devez alors créer un répertoire <code>~/Library/init/tcsh/path</code> :</p>
 <pre>mkdir -p ~/Library/init/tcsh
-  pico ~/library/init/tcsh/path</pre>
+pico ~/library/init/tcsh/path</pre>
 <p>et y intégrez la ligne suivante :</p>
 <pre>source ~/.cshrc</pre>
 <p>Vous devrez aussi modifier le fichier .tcshrc, comme expliqué au-dessus, de façon à ce que votre PATH soit correctement défini dans les cas où le fichier <code>~/.login</code> n'est pas lu.</p>
 </li>
 </ol>
-<p>Les changements dans .cshrc (et dans les autres fichiers de démarrage) n'affectent que les nouveaux shells (les nouvelles fenêtres de Terminal). Vous devez donc aussi exécuter cette commande dans toutes les fenêtres de Terminal que vous avez ouvertes avant d'éditer le fichier. Vous devez aussi exécuter la commande <code>rehash</code>, car tcsh cache la liste des commandes disponibles.</p>
+<p>Les changements dans <code>.cshrc</code> (et dans les autres fichiers de démarrage) n'affectent que les nouveaux shells (les nouvelles fenêtres de Terminal). Vous devez donc aussi exécuter cette commande dans toutes les fenêtres de Terminal que vous avez ouvertes avant d'éditer le fichier. Vous devez aussi exécuter la commande <code>rehash</code>, car tcsh cache la liste des commandes disponibles.</p>
 </li>
 </ul>
 <p>Notez que les scripts ajoutent <code>/usr/X11R6/bin</code> et <code>/usr/X11R6/man</code> à votre PATH pour que vous puissiez utilisez X11 lorsqu'il sera installé. Les paquets Fink peuvent définir eux-mêmes des variables, tel le paquet qt qui définit la variable d'environnement QTDIR.</p>
