@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.36 2006/10/02 16:11:25 michga Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.37 2006/10/02 16:34:14 michga Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de Fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://fink.sourceforge.net/doc/bundled/install.php" >Installation</link>, <link url="http://fink.sourceforge.net/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://fink.sourceforge.net/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -39,7 +39,7 @@
 </section>
 <section name="supported-os" >
 <title>Systèmes supportés</title>
-<p><em>Mac OS X 10.4</em> est la plateforme d'attaque. On considère qu'elle est <quote>complètement supportée et testée</quote>, bien qu'il puisse rester encore quelques problèmes car c'est un système opératoire encore relativement nouveau. La plupart des développeurs s'en servent. Pour ceux qui se servent de Mac OS X 10.3, il y a toujours des utilisateurs de Mac OS X 10.4 qui testent leur travail sur leur propre système. Notez, néanmoins, que Fink sur machine intel est considéré comme une version <em>bêta</em>.</p>
+<p><em>Mac OS X 10.4</em> est la plate-forme d'attaque. On considère qu'elle est <quote>complètement supportée et testée</quote>, bien qu'il puisse rester encore quelques problèmes car c'est un système opératoire encore relativement nouveau. La plupart des développeurs s'en servent. Pour ceux qui se servent de Mac OS X 10.3, il y a toujours des utilisateurs de Mac OS X 10.4 qui testent leur travail sur leur propre système. Notez, néanmoins, que Fink sur machine intel est considéré comme une version <em>bêta</em>.</p>
 <p><em>Mac OS X 10.3</em> est <quote>complètement supporté et testé</quote>, bien qu'il puisse y avoir quelques problèmes de compilation résiduels pour certains paquets isolés. De nombreux développeurs s'en servent. Pour ceux qui ne s'en servent pas, il y a toujours des utilisateurs de Mac OS X 10.3 qui testent leur travail.</p>
 <p><em>Mac OS X 10.2</em> est encore supporté dans une certaine mesure. Fink 0.6.4 est la version la plus récente qui gère ce système.</p>
 <p><em>Mac OS X 10.1</em> est encore supporté dans une certaine mesure. Pour cette version, vous ne pouvez utiliser que Fink 0.4.1 et aucune autre version ultérieure.</p>
@@ -160,7 +160,7 @@ pico ~/library/init/tcsh/path</codeblock>
 <p><em>[A]ccess - Accès</em> - permet de configurer la méthode d'accès au réseau. <em>Il n'est pas nécessaire d'exécuter cette commande</em>, car Fink effectue la configuration à votre place. En fait, vous devez éviter d'utiliser cette option, car vous risqueriez en le faisant de remplacer la configuration par défaut, qui fonctionne, par une configuration qui ne fonctionne pas.</p>
 </li>
 <li>
-<p><em>[U]pdate- Mise à jour</em> - permet de télécharger la liste des paquets disponibles sur le site de Fink. Cette commande n'installe et ne met à jour aucun paquet, elle ne fait que mettre à jour les listes utilisées par le navigateur de paquets. 
+<p><em>[U]pdate - Mise à jour</em> - permet de télécharger la liste des paquets disponibles sur le site de Fink. Cette commande n'installe et ne met à jour aucun paquet, elle ne fait que mettre à jour les listes utilisées par le navigateur de paquets. 
 Vous devez l'utiliser au moins une fois après avoir installé Fink.</p>
 </li>
 <li>
@@ -391,7 +391,7 @@ stable/main&quot;. Cette liste doit toujours être identique à celle figurant d
 <p><em>SkipPrompts:</em> liste délimitée par des virgules</p>
 <p>Disponible à partir de la version 0.25 de <code>fink</code>. Cette option permet d'utiliser les réponses par défaut à certaines questions. Chaque question appartient à une catégorie. Si cette catégorie apparaît dans la liste SkipPrompts, la réponse par défaut à cette question est choisie par <code>fink</code> après un très court laps de temps.</p>
 <p>À l'heure actuelle, les catégories suivantes sont disponibles :</p>
-<p><em>fetch</em> - téléchargements et mirroirs</p>
+<p><em>fetch</em> - téléchargements et miroirs</p>
 <p><em>virtualdep</em> - choix entre différents paquets</p>
 <p>Par défaut, cette liste est vide.</p>
 </li>
@@ -509,7 +509,7 @@ La commande <code>fink -k</code> a le même effet, restreint à cette invocation
 <p>correspond aux paquets dont le nom commencent par xfree86 ou xfree86-shlibs ou se terminent par '-ssl' ; il n'existe qu'une seule possibilité, <code>fink</code> installera xfree86 et xfree86-shlibs.</p>
 </li>
 <li>
-<p><em>CCacheDir:</em> path</p>
+<p><em>CCacheDir:</em> chemin</p>
 <p>Si le paquet <code>ccache-default</code> est installé, les fichiers cache qu'il génère lorsque des paquets Fink sont installés sont placés dans le répertoire indiqué en tant que valeur du champ. La valeur par défaut est <filename>/sw/var/ccache</filename>. Quand la valeur du champ est <code>none</code>, <code>fink</code> ne définit pas la variable d'environnement CCACHE_DIR et ccache utilise <filename>$HOME/.ccache</filename>, ce qui peut le conduire à placer des fichiers dont le possesseur est le super-utilisateur dans votre répertoire utilisateur. <em>Introduit dans une version de fink postérieure à la version 0.21.0</em>. </p>
 </li>
 <li>
