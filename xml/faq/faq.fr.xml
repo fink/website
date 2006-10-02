@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.64 2006/09/07 05:44:41 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.65 2006/10/02 17:13:32 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -243,12 +243,10 @@
 <answer>
 <p>Le paquet<em> cvs-proxy</em> peut créer un tunnel à travers les proxies HTTP.</p>
 <ul>
-<li><p>Tout d'abord, téléchargez les fichiers <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link> (un fichier .info et un fichier .patch) et placez-les dans votre arborescence locale. (c'est-à-dire /sw/fink/dists/local/main/finkinfo/).</p></li>
 <li><p>Installez le paquet <em>cvs-proxy</em> avec la commande :</p>
-<p><code>fink install <em>cvs-proxy</em></code></p></li>
-<li><p>Les paquets sont alors mis à jour avec les commandes :</p>
-<p><code>fink selfupdate-cvs</code></p>
-<p><code>fink update-all</code></p></li>
+<p><code>fink --use-binary-dist install <em>cvs-proxy</em></code></p></li>
+<li><p>Passez à la mise à jour via cvs avec la commande :</p>
+<p><code>fink selfupdate-cvs</code></p></li>
 </ul>
 <p>Si Fink n'est pas configuré pour utiliser un proxy, changez les réglages en utilisant :</p>
 <p><code>fink configure</code>.</p>
