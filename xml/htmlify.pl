@@ -3,7 +3,7 @@ use strict;
 
 my ($filename, $currentlanguage);
 
-if ($ARGV[0] =~ /(\w+).(\w+).html.tmp/) {
+if ($ARGV[0] =~ /(.+)\.([^.]+)\.html\.tmp/) {
     $filename = $1;
     $currentlanguage = $2;
 }
